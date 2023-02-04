@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Kcp" Version="2.6.1" />
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.2.1" />
   </ItemGroup>
 
 </Project>
