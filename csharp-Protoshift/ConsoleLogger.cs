@@ -143,6 +143,11 @@ namespace csharp_Protoshift
                 Console.Write($":{sender}> ");
                 rtn += $":{sender}> ";
             }
+            else
+            {
+                Console.Write($"> ");
+                rtn += $"> ";
+            }
             return rtn;
         }
         #endregion
