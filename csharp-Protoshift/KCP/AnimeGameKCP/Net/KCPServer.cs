@@ -12,15 +12,21 @@ namespace YSFreedom.Common.Net
     {
         public bool Closed { get { return _Closed; } }
 
-        private UdpClient udpSock;
-        private bool _Closed = false;
-        private Dictionary<IPEndPoint, KCP> clients;
-        private ConcurrentQueue<IPEndPoint> newConnections;
+        protected UdpClient udpSock;
+        protected bool _Closed = false;
+        protected Dictionary<IPEndPoint, KCP> clients;
+        protected ConcurrentQueue<IPEndPoint> newConnections;
 
         public class AcceptAsyncReturn
         {
             public KCP Connection;
             public IPEndPoint RemoteEndpoint;
+        }
+
+        protected KCPServer()
+        {
+            clients = new Dictionary<IPEndPoint, KCP>();
+            newConnections = new ConcurrentQueue<IPEndPoint>();
         }
 
         public KCPServer(IPEndPoint ipEp)
@@ -32,7 +38,7 @@ namespace YSFreedom.Common.Net
             Task.Run(BackgroundUpdate);
         }
 
-        private async Task BackgroundUpdate()
+        protected async Task BackgroundUpdate()
         {
             var packet = await udpSock.ReceiveAsync();
             if (clients.ContainsKey(packet.RemoteEndPoint))
