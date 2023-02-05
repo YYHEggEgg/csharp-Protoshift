@@ -9,6 +9,7 @@ namespace csharp_Protoshift
 {
     internal enum LogLevel
     {
+        Debug = 0,
         Information = 1,
         Warning = 2,
         Error = 3
@@ -94,6 +95,13 @@ namespace csharp_Protoshift
         #endregion
 
         #region Logger
+        public static void Dbug(string content, string? sender = null)
+        {
+#if DEBUG
+            WriteLog(content, LogLevel.Debug, sender);
+#endif
+        }
+
         public static void Info(string content, string? sender = null)
             => WriteLog(content, LogLevel.Information, sender);
 
@@ -121,6 +129,11 @@ namespace csharp_Protoshift
             Console.Write(" <");
             switch (level)
             {
+                case LogLevel.Debug:
+                    Console.ForegroundColor = ConsoleColor.Blue | ConsoleColor.White;
+                    Console.Write("Dbug");
+                    rtn += "Dbug";
+                    break;
                 case LogLevel.Information:
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write("Info");
