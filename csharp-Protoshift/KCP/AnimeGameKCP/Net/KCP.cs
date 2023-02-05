@@ -1,4 +1,6 @@
+using csharp_Protoshift;
 using System;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
@@ -21,26 +23,28 @@ namespace YSFreedom.Common.Net
         public bool Disposed { get { return _Disposed; } }
         public ConnectionState State { get { return _State; } }
         public uint Conv { get { return _Conv; } }
+        public uint Token { get { return _Token; } }
         // Default connection timeout is 30 seconds
         public int Timeout = 30000;
-        public readonly bool AsClient;
 
-        private bool _Disposed = false;
-        private uint _Conv;
-        private uint _Token;
-        private ConnectionState _State = ConnectionState.DISCONNECTED;
-        private UIntPtr ikcpHandle;
-        private object ikcpLock = new object();
-        private long startTime;
-        private IKCP.OutputCallback outputCbThunk;
+        protected bool _Disposed = false;
+        protected uint _Conv;
+        protected uint _Token;
+        protected ConnectionState _State = ConnectionState.DISCONNECTED;
+        protected UIntPtr ikcpHandle;
+        protected object ikcpLock = new object();
+        protected long startTime;
+        protected IKCP.OutputCallback outputCbThunk;
 
-        public KCP(uint conv = 0, uint token = 0, bool asClient = false)
+        public uint ConnectData { get; protected set; }
+
+        public KCP(uint conv = 0, uint token = 0, uint connectData = 0x499602D2)
         {
             _Conv = conv;
             _Token = token;
             startTime = MonotonicTime.Now - 1000;
             outputCbThunk = new IKCP.OutputCallback(thunk_Output);
-            AsClient = asClient;
+            ConnectData = connectData;
         }
 
         public void Initialize()
@@ -66,7 +70,7 @@ namespace YSFreedom.Common.Net
         {
             _State = ConnectionState.HANDSHAKE_CONNECT;
 
-            Handshake h = new Handshake(Handshake.MAGIC_CONNECT, _Conv, _Token, 0x499602D2);
+            Handshake h = new Handshake(Handshake.MAGIC_CONNECT, _Conv, _Token, ConnectData);
             Output(h.AsBytes());
         }
 
@@ -117,7 +121,7 @@ namespace YSFreedom.Common.Net
                     throw new SocketException(10057); // Not connected
                 case ConnectionState.CONNECTED:
                     {
-                        Console.WriteLine($"ConnectedNotify, buf = {Convert.ToHexString(buffer)}");
+                        Log.Dbug($"ConnectedNotify, buf = {Convert.ToHexString(buffer)}", "KCP");
                         if (buffer.Length == 20) // Possibly a "disconnect" packet
                         {
                             var disconn = new Handshake();
@@ -125,7 +129,7 @@ namespace YSFreedom.Common.Net
                             {
                                 disconn.Decode(buffer, Handshake.MAGIC_DISCONNECT);
                                 _State = ConnectionState.CLOSED;
-                                Console.WriteLine($"DisconnectedNotify");
+                                Log.Dbug($"DisconnectedNotify");
                                 return 0;
                             }
                             catch (ArgumentException)
@@ -148,7 +152,7 @@ namespace YSFreedom.Common.Net
                         var handshake = new Handshake();
                         try
                         {
-                            Console.WriteLine($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}");
+                            Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", "KCP");
                             handshake.Decode(buffer, Handshake.MAGIC_CONNECT);
                             _Conv = (uint)(MonotonicTime.Now & 0xFFFFFFFF);
                             _Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
@@ -169,10 +173,11 @@ namespace YSFreedom.Common.Net
                         var handshake = new Handshake();
                         try
                         {
-                            Console.WriteLine($"HandShakeConnectNotify, buf = {Convert.ToHexString(buffer)}");
+                            Log.Dbug($"HandShakeConnectNotify, buf = {Convert.ToHexString(buffer)}", "KCP");
                             handshake.Decode(buffer, Handshake.MAGIC_SEND_BACK_CONV);
                             _Conv = handshake.Conv;
                             _Token = handshake.Token;
+                            Debug.Assert(ConnectData == handshake.Data);
                             Initialize();
 
                             return 0;
@@ -302,7 +307,7 @@ namespace YSFreedom.Common.Net
                 Dispose();
         }
 
-        internal class Handshake
+        public class Handshake
         {
             public static readonly uint[] MAGIC_CONNECT = { 0xFF, 0xFFFFFFFF };
             public static readonly uint[] MAGIC_SEND_BACK_CONV = { 0x145, 0x14514545 };

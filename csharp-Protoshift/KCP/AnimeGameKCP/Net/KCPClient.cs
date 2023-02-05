@@ -8,17 +8,17 @@ namespace csharp_Protoshift.AnimeGameKCP
     {
         public bool Closed { get { return _Closed; } }
 
-        private UdpClient udpSock;
+        protected UdpClient udpSock;
         private bool _Closed = false;
-        private KCP server;
-        private IPEndPoint remoteAddress;
+        protected KCP server;
+        protected IPEndPoint remoteAddress;
 
         public KCPClient(IPEndPoint ipEp)
         {
             udpSock = new UdpClient();
             //udpSock = new();
             udpSock.Connect(ipEp);
-            server = new KCP(asClient: true);
+            server = new KCP();
 
             remoteAddress = ipEp;
 
@@ -32,7 +32,7 @@ namespace csharp_Protoshift.AnimeGameKCP
             Task.Run(BackgroundUpdate);
         }
 
-        private async Task BackgroundUpdate()
+        protected async Task BackgroundUpdate()
         {
             IPEndPoint fromip = new(IPAddress.Loopback, 0);
             var packet = udpSock.Receive(ref fromip);
@@ -40,12 +40,12 @@ namespace csharp_Protoshift.AnimeGameKCP
             {
                 if (fromip.ToString() == remoteAddress.ToString())
                 {
-                    Console.WriteLine($"Client packet, buf = {Convert.ToHexString(packet)}");
+                    Log.Dbug($"Client packet, buf = {Convert.ToHexString(packet)}", "KCPClient");
                     server.Input(packet);
                 }
                 else
                 {
-                    Console.WriteLine($"Bad packet sent to client: {fromip}, buf = {Convert.ToHexString(packet)}");
+                    Log.Warn($"Bad packet sent to client: {fromip}, buf = {Convert.ToHexString(packet)}");
                 }
             }
             catch (Exception ex)
