@@ -94,6 +94,8 @@ namespace csharp_Protoshift
         }
         #endregion
 
+        static object loggerlock = false;
+
         #region Logger
         public static void Dbug(string content, string? sender = null)
         {
@@ -114,10 +116,13 @@ namespace csharp_Protoshift
         private static void WriteLog(string content, LogLevel level, string? sender = null)
         {
             string nowtime = DateTime.Now.ToString("HH:mm:ss");
-            Console.Write(nowtime);
-            string header = WriteAndGetLogInfo(level, sender);
-            Console.WriteLine(content);
-            logwriter.WriteLine($"{nowtime}{header}{content}");
+            lock (loggerlock)
+            {
+                Console.Write(nowtime);
+                string header = WriteAndGetLogInfo(level, sender);
+                Console.WriteLine(content);
+                logwriter.WriteLine($"{nowtime}{header}{content}");
+            }
         }
 
         /// <summary>
