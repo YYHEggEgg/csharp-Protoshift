@@ -130,7 +130,7 @@ namespace csharp_Protoshift
             switch (level)
             {
                 case LogLevel.Debug:
-                    Console.ForegroundColor = ConsoleColor.Blue | ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.Write("Dbug");
                     rtn += "Dbug";
                     break;
