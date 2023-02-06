@@ -27,6 +27,9 @@ namespace OldProtos
             }
         }
 
+        public static int GetCmdIdFromProtoname(string protoname)
+            => protonameToCmdids[protoname];
+
         public static bool TryGetSerializer(int cmdid, out ProtoSerialize serializer)
         {
             if (serializers.ContainsKey(cmdid))
