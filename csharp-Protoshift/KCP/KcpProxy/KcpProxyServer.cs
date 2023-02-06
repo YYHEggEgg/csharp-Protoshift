@@ -63,13 +63,13 @@ namespace csharp_Protoshift.KcpProxy
         /// <summary>
         /// Start a KCP proxy server.
         /// </summary>
-        /// <param name="ServerPacketHandler">Handle packet from server to client as a middleware.</param>
-        /// <param name="ClientPacketHandler">Handle packet from client to server as a middleware.</param>
-        public async void StartProxy(Func<byte[], byte[]>? ServerPacketHandler = null,
-            Func<byte[], byte[]>? ClientPacketHandler = null)
+        /// <param name="ServerPacketHandler">Handle packet from server to client as a middleware. byte[] is packet, uint is session id.</param>
+        /// <param name="ClientPacketHandler">Handle packet from client to server as a middleware. byte[] is packet, uint is session id.</param>
+        public async void StartProxy(Func<byte[], uint, byte[]>? ServerPacketHandler = null,
+            Func<byte[], uint, byte[]>? ClientPacketHandler = null)
         {
-            ServerPacketHandler ??= (data => data);
-            ClientPacketHandler ??= (data => data);
+            ServerPacketHandler ??= ((data, conv) => data);
+            ClientPacketHandler ??= ((data, conv) => data);
 
             while (true)
             {
@@ -90,7 +90,7 @@ namespace csharp_Protoshift.KcpProxy
 
 #pragma warning disable CS8602 // 解引用可能出现空引用。
         protected async void HandleClient(IPEndPoint remotePoint, 
-            Func<byte[], byte[]> PacketHandler)
+            Func<byte[], uint, byte[]> PacketHandler)
         {
             var conn = (KcpProxy)clients[remotePoint];
             Debug.Assert(conn.State == KCP.ConnectionState.CONNECTED);
@@ -100,7 +100,7 @@ namespace csharp_Protoshift.KcpProxy
                 {
                     var beforepacket = await conn.ReceiveAsync();
                     Log.Dbug($"Server Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ServerHandler");
-                    var afterpacket = PacketHandler(beforepacket);
+                    var afterpacket = PacketHandler(beforepacket, conn.Conv);
                     await conn.sendClient.SendAsync(afterpacket);
                     Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerHandler");
                 }
@@ -114,7 +114,7 @@ namespace csharp_Protoshift.KcpProxy
         }
 
         protected async void HandleServer(IPEndPoint remotePoint,
-            Func<byte[], byte[]> PacketHandler)
+            Func<byte[], uint, byte[]> PacketHandler)
         {
             var conn = (KcpProxy)clients[remotePoint];
             Debug.Assert(conn.sendClient.State == KCP.ConnectionState.CONNECTED);
@@ -124,7 +124,7 @@ namespace csharp_Protoshift.KcpProxy
                 {
                     var beforepacket = await conn.sendClient.ReceiveAsync();
                     Log.Dbug($"Client Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ClientHandler");
-                    var afterpacket = PacketHandler(beforepacket);
+                    var afterpacket = PacketHandler(beforepacket, conn.Conv);
                     await conn.SendAsync(afterpacket);
                     Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
                 }

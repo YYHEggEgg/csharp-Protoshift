@@ -1,11 +1,6 @@
 using csharp_Protoshift;
-using System;
 using System.Diagnostics;
-using System.Net;
 using System.Net.Sockets;
-using System.Runtime.InteropServices;
-using System.Threading;
-using System.Threading.Tasks;
 using YSFreedom.Common.Native;
 using YSFreedom.Common.Util;
 
@@ -60,7 +55,7 @@ namespace YSFreedom.Common.Net
 
                 // Added
                 IKCP.ikcp_nodelay(ikcpHandle, 1, 10, 2, 1);
-                IKCP.ikcp_wndsize(ikcpHandle, 256, 256);               
+                IKCP.ikcp_wndsize(ikcpHandle, 256, 256);
 
                 Task.Run(BackgroundUpdate);
             }
@@ -197,7 +192,8 @@ namespace YSFreedom.Common.Net
             if (_State != ConnectionState.CONNECTED)
                 throw new SocketException(10057);
 
-            lock (ikcpLock) {
+            lock (ikcpLock)
+            {
                 int ret = IKCP.ikcp_send(ikcpHandle, buffer, buffer.Length);
                 Flush();
                 return ret;
@@ -297,6 +293,16 @@ namespace YSFreedom.Common.Net
                 lock (ikcpLock) IKCP.ikcp_release(ikcpHandle);
 
             _Disposed = true;
+        }
+
+        public void Disconnect(uint conv = 0, uint token = 0, uint data = 1234567890)
+        {
+            conv = conv == 0 ? _Conv : conv;
+            token = token == 0 ? _Token : token;
+
+            Handshake disconnect = new(Handshake.MAGIC_DISCONNECT, conv, token, data);
+            Output(disconnect.AsBytes());
+            _State = ConnectionState.DISCONNECTED;
         }
 
         ~KCP()

@@ -47,7 +47,9 @@ namespace csharp_Protoshift.KcpProxy
                             {
                                 disconn.Decode(buffer, Handshake.MAGIC_DISCONNECT);
                                 _State = ConnectionState.CLOSED;
-                                Log.Warn($"DisconnectedNotify", "KcpProxy");
+                                Log.Info($"Client requested disconnect, so send disconnect to server", "KcpProxy");
+
+                                sendClient.Disconnect();
                                 return 0;
                             }
                             catch (ArgumentException)
@@ -78,6 +80,11 @@ namespace csharp_Protoshift.KcpProxy
                             Debug.Assert(sendClient == null);
                             sendClient = new(sendToAddress, handshake.Conv, handshake.Token, handshake.Data);
                             Task.WaitAll(sendClient.ConnectAsync());
+                            sendClient.StartDisconnected += () =>
+                            {
+                                Log.Warn("Server requested to disconnect, so send disconnect to client", "KcpProxy");
+                                Disconnect();
+                            };
 
                             var sendBackConv = sendClient.GetSendbackHandshake();
                             Output(sendBackConv.AsBytes());

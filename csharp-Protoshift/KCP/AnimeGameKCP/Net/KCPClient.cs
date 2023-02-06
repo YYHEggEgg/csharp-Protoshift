@@ -32,6 +32,13 @@ namespace csharp_Protoshift.AnimeGameKCP
             Task.Run(BackgroundUpdate);
         }
 
+        /// <summary>
+        /// Invoke when server requested disconnect. 
+        /// </summary>
+        public event Action? StartDisconnected;
+
+        public KCP.ConnectionState State { get => server.State; }
+
         protected async Task BackgroundUpdate()
         {
             IPEndPoint fromip = new(IPAddress.Loopback, 0);
@@ -46,6 +53,12 @@ namespace csharp_Protoshift.AnimeGameKCP
                 else
                 {
                     Log.Warn($"Bad packet sent to client: {fromip}, buf = {Convert.ToHexString(packet)}");
+                }
+                if (server.State != KCP.ConnectionState.CONNECTED)
+                {
+                    StartDisconnected?.Invoke();
+                    _Closed = true;
+                    server.Dispose();
                 }
             }
             catch (Exception ex)
@@ -84,9 +97,30 @@ namespace csharp_Protoshift.AnimeGameKCP
             udpSock.Dispose();
         }
 
-        public async Task<byte[]> ReceiveAsync()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>null if disconnected</returns>
+        public async Task<byte[]?> ReceiveAsync()
         {
-            return await server.ReceiveAsync();
+            try
+            {
+                return await server.ReceiveAsync();
+            }
+            catch
+            {
+                if (server.State != KCP.ConnectionState.CONNECTED)
+                {
+                    StartDisconnected?.Invoke();
+                    return null;
+                }
+                else throw;
+            }
+        }
+
+        public void Disconnect(uint data = 1234567890)
+        {
+            server.Disconnect(data);
         }
     }
 }
