@@ -23,7 +23,7 @@ namespace NewProtos
             var parse_get = parser_pro.GetGetMethod();
             Parser = (MessageParser)parse_get.Invoke(null, null);
             Parser = Parser.WithDiscardUnknownFields(true);
-
+            Protoname = prototype.Name;
             isNull = false;
         }
 #pragma warning restore CS8600 // 将 null 字面量或可能为 null 的值转换为非 null 类型。
@@ -32,10 +32,12 @@ namespace NewProtos
 #pragma warning restore CS8604 // 引用类型参数可能为 null。
 
         public MessageParser Parser;
+        public readonly string Protoname;
 
         private ProtoSerialize() 
         {
             Parser = WindSeedClientNotify.Parser; // Fuck
+            Protoname = "YYHEggEggg#6167";
             isNull = true;
         }
         public readonly bool isNull;
