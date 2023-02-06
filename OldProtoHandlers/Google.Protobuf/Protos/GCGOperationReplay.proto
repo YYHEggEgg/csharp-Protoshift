@@ -1,0 +1,16 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+import "GCGReplayOperationData.proto";
+import "GCGReplayControllerData.proto";
+
+message GCGOperationReplay {
+    uint32 seed = 11;
+    repeated GCGReplayOperationData operation_data_list = 9;
+    repeated GCGReplayControllerData controller_data_list = 13;
+    uint32 game_id = 1;
+}

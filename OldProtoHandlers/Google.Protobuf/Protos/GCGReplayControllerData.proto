@@ -1,0 +1,11 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+message GCGReplayControllerData {
+    uint32 controller_id = 13;
+    repeated uint32 card_id_list = 5;
+}

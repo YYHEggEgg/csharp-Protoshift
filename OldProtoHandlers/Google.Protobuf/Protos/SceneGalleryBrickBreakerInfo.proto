@@ -1,0 +1,13 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+message SceneGalleryBrickBreakerInfo {
+    uint32 score = 10;
+    uint32 life_count = 4;
+    uint32 fever = 2;
+    uint32 combo = 1;
+}

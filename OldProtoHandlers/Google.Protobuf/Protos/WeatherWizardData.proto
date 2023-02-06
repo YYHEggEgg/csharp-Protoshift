@@ -1,0 +1,10 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+message WeatherWizardData {
+    uint32 shield_value = 13;
+}

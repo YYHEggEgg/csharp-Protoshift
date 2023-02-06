@@ -1,0 +1,18 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+import "GCGZoneType.proto";
+import "GCGReason.proto";
+
+message GCGMsgMoveCard {
+    uint32 controller_id = 14;
+    GCGZoneType to = 5;
+    GCGZoneType from = 12;
+    repeated uint32 card_guid_list = 8;
+    GCGReason reason = 6;
+    repeated uint32 fail_guid_list = 11;
+}

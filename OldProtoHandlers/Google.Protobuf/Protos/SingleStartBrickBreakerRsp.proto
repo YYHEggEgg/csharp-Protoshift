@@ -1,0 +1,20 @@
+// Extracted from 3.3 GiO
+// By YYHEggegg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+message SingleStartBrickBreakerRsp {
+    uint32 level_id = 5;
+    int32 retcode = 11;
+    bool is_dungeon = 12;
+    
+    // enum CmdId {
+    //     option allow_alias = true;
+    //     NONE = 0;
+    //     CMD_ID = 20622;
+    //     ENET_CHANNEL_ID = 0;
+    //     ENET_IS_RELIABLE = 1;
+    // }
+}
