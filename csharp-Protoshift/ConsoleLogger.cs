@@ -65,7 +65,7 @@ namespace csharp_Protoshift
                             startinfo.Arguments = cmd;
                             startinfo.RedirectStandardOutput = true;
                             startinfo.RedirectStandardError = true;
-                            Process.Start(startinfo).WaitForExit();
+                            Process.Start(startinfo)?.WaitForExit();
                         }
                         // Delete original files
                         try
