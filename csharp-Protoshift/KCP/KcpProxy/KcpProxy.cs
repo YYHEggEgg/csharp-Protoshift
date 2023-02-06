@@ -49,7 +49,7 @@ namespace csharp_Protoshift.KcpProxy
                                 _State = ConnectionState.CLOSED;
                                 Log.Info($"Client requested disconnect, so send disconnect to server", "KcpProxy");
 
-                                sendClient.Disconnect();
+                                sendClient?.Disconnect();
                                 return 0;
                             }
                             catch (ArgumentException)
