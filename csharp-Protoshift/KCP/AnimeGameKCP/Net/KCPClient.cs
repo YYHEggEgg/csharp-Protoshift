@@ -40,7 +40,7 @@ namespace csharp_Protoshift.AnimeGameKCP
             {
                 if (fromip.ToString() == remoteAddress.ToString())
                 {
-                    Log.Dbug($"Client packet, buf = {Convert.ToHexString(packet)}", "KCPClient");
+                    Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", "KCPClient");
                     server.Input(packet);
                 }
                 else
@@ -60,7 +60,11 @@ namespace csharp_Protoshift.AnimeGameKCP
 
         public async Task ConnectAsync()
         {
+            server.AcceptNonblock();
             await server.ConnectAsync();
+#pragma warning disable CS4014 // 由于此调用不会等待，因此在调用完成前将继续执行当前方法
+            Task.Run(server.BackgroundUpdate);
+#pragma warning restore CS4014 // 由于此调用不会等待，因此在调用完成前将继续执行当前方法
         }
 
         public async Task SendAsync(byte[] data)
@@ -78,6 +82,11 @@ namespace csharp_Protoshift.AnimeGameKCP
         {
             _Closed = true;
             udpSock.Dispose();
+        }
+
+        public async Task<byte[]> ReceiveAsync()
+        {
+            return await server.ReceiveAsync();
         }
     }
 }

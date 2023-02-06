@@ -76,7 +76,6 @@ namespace YSFreedom.Common.Net
 
         public async Task ConnectAsync()
         {
-            // TODO: actually timeout
             ConnectNonblock();
 
             var begin = MonotonicTime.Now;
@@ -121,7 +120,7 @@ namespace YSFreedom.Common.Net
                     throw new SocketException(10057); // Not connected
                 case ConnectionState.CONNECTED:
                     {
-                        Log.Dbug($"ConnectedNotify, buf = {Convert.ToHexString(buffer)}", "KCP");
+                        Log.Dbug($"ConnectedNotify, handle = {ikcpHandle}, buf = {Convert.ToHexString(buffer)}", "KCP");
                         if (buffer.Length == 20) // Possibly a "disconnect" packet
                         {
                             var disconn = new Handshake();
@@ -211,7 +210,7 @@ namespace YSFreedom.Common.Net
             return SendNonblock(buffer);
         }
 
-        private byte[] ReceiveNonblock()
+        private byte[]? ReceiveNonblock()
         {
             lock (ikcpLock)
             {
@@ -221,7 +220,6 @@ namespace YSFreedom.Common.Net
                 int size = IKCP.ikcp_peeksize(ikcpHandle);
                 if (size < 0) return null;
 
-
                 var buffer = new byte[size];
                 int trueSize = IKCP.ikcp_recv(ikcpHandle, buffer, buffer.Length);
                 if (trueSize != size) throw new Exception("Unexpected state");
@@ -230,11 +228,11 @@ namespace YSFreedom.Common.Net
             }
         }
 
-        public byte[] Receive(bool nonblock = false)
+        public byte[]? Receive(bool nonblock = false)
         {
             if (nonblock) return ReceiveNonblock();
 
-            byte[] ret = null;
+            byte[]? ret = null;
             while (ret == null)
             {
                 ret = ReceiveNonblock();
@@ -245,7 +243,7 @@ namespace YSFreedom.Common.Net
 
         public async Task<byte[]> ReceiveAsync()
         {
-            byte[] ret = null;
+            byte[]? ret = null;
             while (ret == null)
             {
                 ret = ReceiveNonblock();
@@ -339,7 +337,7 @@ namespace YSFreedom.Common.Net
                 buffer.SetUInt32(16, Magic2, true);
             }
 
-            public void Decode(byte[] buffer, uint[] verifyMagic = null)
+            public void Decode(byte[] buffer, uint[]? verifyMagic = null)
             {
                 if (buffer.Length < LEN)
                     throw new ArgumentException("Handshake packet too small", "buffer");

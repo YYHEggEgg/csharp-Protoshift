@@ -60,9 +60,16 @@ namespace csharp_Protoshift.KcpProxy
             if (!_Closed) await Task.Run(BackgroundUpdate);
         }
 
-        public async void StartProxy(Func<byte[], byte[]>? PacketHandler = null)
+        /// <summary>
+        /// Start a KCP proxy server.
+        /// </summary>
+        /// <param name="ServerPacketHandler">Handle packet from server to client as a middleware.</param>
+        /// <param name="ClientPacketHandler">Handle packet from client to server as a middleware.</param>
+        public async void StartProxy(Func<byte[], byte[]>? ServerPacketHandler = null,
+            Func<byte[], byte[]>? ClientPacketHandler = null)
         {
-            PacketHandler ??= (data => data);
+            ServerPacketHandler ??= (data => data);
+            ClientPacketHandler ??= (data => data);
 
             while (true)
             {
@@ -71,7 +78,8 @@ namespace csharp_Protoshift.KcpProxy
                     var ret = await AcceptAsync();
                     Log.Info($"New connection from {ret.RemoteEndpoint}.", "KcpProxyServer");
 
-                    HandleClient(ret.RemoteEndpoint, PacketHandler);
+                    HandleServer(ret.RemoteEndpoint, ServerPacketHandler);
+                    HandleClient(ret.RemoteEndpoint, ClientPacketHandler);
                 }
                 catch (Exception ex)
                 {
@@ -80,7 +88,8 @@ namespace csharp_Protoshift.KcpProxy
             }
         }
 
-        protected async void HandleClient(IPEndPoint remotePoint, 
+#pragma warning disable CS8602 // 解引用可能出现空引用。
+        protected async void HandleServer(IPEndPoint remotePoint, 
             Func<byte[], byte[]> PacketHandler)
         {
             var conn = (KcpProxy)clients[remotePoint];
@@ -90,18 +99,43 @@ namespace csharp_Protoshift.KcpProxy
                 try
                 {
                     var beforepacket = await conn.ReceiveAsync();
-                    Log.Dbug($"Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer");
+                    Log.Dbug($"Server Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ServerHandler");
                     var afterpacket = PacketHandler(beforepacket);
                     await conn.sendClient.SendAsync(afterpacket);
-                    Log.Dbug($"Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer");
+                    Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerHandler");
                 }
                 catch (Exception e)
                 {
-                    Log.Erro(e.ToString(), "KcpProxyServer");
+                    Log.Erro(e.ToString(), "KcpProxyServer:ServerHandler");
                     conn.Close();
                     break;
                 }
             }
         }
+
+        protected async void HandleClient(IPEndPoint remotePoint,
+            Func<byte[], byte[]> PacketHandler)
+        {
+            var conn = (KcpProxy)clients[remotePoint];
+            Debug.Assert(conn.sendClient.State == KCP.ConnectionState.CONNECTED);
+            while (conn.sendClient.State == KCP.ConnectionState.CONNECTED)
+            {
+                try
+                {
+                    var beforepacket = await conn.sendClient.ReceiveAsync();
+                    Log.Dbug($"Client Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ClientHandler");
+                    var afterpacket = PacketHandler(beforepacket);
+                    await conn.SendAsync(afterpacket);
+                    Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
+                }
+                catch (Exception e)
+                {
+                    Log.Erro(e.ToString(), "KcpProxyServer:ClientHandler");
+                    conn.sendClient.Close();
+                    break;
+                }
+            }
+        }
+#pragma warning restore CS8602 // 解引用可能出现空引用。
     }
 }
