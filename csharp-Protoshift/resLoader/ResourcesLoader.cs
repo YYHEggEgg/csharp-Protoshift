@@ -19,8 +19,11 @@ namespace csharp_Protoshift.resLoader
             "    /rsakeys\n" +
             "        /ClientPri -- Client Private Keys, CPri\n" +
             "            /2.pem, ..., 5.pem -- PEM format RSA keys with key_id\n" +
+            "       - Hint: Provide either of below two directories is acceptable.\n" +
             "        /ServerPub -- Server Public Keys, SPub\n" +
-            "            /2-pub.pem, ..., 5-pub.pem -- PEM format RSA keys with key_id";
+            "            /2-pub.pem, ..., 5-pub.pem -- PEM format RSA keys with key_id\n" +
+            "        /ServerPri -- Server Private Keys, SPri, used to generate SPub automatically\n" +
+            "            /2-pri.pem, ..., 5-pri.pem -- PEM format RSA keys with key_id\n";
 
         /// <summary>
         /// Check for resources, if not complete then exit with code 114514.
@@ -35,11 +38,36 @@ namespace csharp_Protoshift.resLoader
                 passcheck = false;
             }
             // Resources
-            if (!Directory.Exists("resources"))
+            if (!Directory.Exists("/resources"))
             {
                 Log.Erro("resources dir missing! Please copy it from \"/resources\"!", "ResourcesCheck");
-                Log.Info(ResourcesLoader.StructureDescription, "ResourcesCheck");
+                Log.Info(StructureDescription, "ResourcesCheck");
                 passcheck = false;
+            }
+            else
+            {
+                bool resourcesComplete = true;
+                if (!File.Exists("/resources/xor/dispatchKey.bin"))
+                {
+                    Log.Erro("/resources/xor/dispatchKey.bin not found!");
+                    resourcesComplete = false;
+                }
+                if (!Directory.Exists("resources/rsakeys/ClientPri"))
+                {
+                    Log.Erro("/resources/rsakeys/ClientPri not found!");
+                    resourcesComplete = false;
+                }
+                if (!Directory.Exists("/resources/rsakeys/ServerPub") 
+                    && !Directory.Exists("/resources/rsakeys/ServerPri"))
+                {
+                    Log.Erro("/resources/rsakeys/ServerPub not found!");
+                    resourcesComplete = false;
+                }
+                if (resourcesComplete)
+                {
+                    Log.Info(StructureDescription, "ResourcesCheck");
+                    passcheck = false;
+                }
             }
             // Openssl
             try
@@ -67,21 +95,40 @@ namespace csharp_Protoshift.resLoader
         {
             Resources.dispatchKey = await File.ReadAllBytesAsync("/resources/xor/dispatchKey.bin");
             Resources.dispatchSeed = await File.ReadAllBytesAsync("/resources/xor/dispatchSeed.bin");
-
+            
+            #region RSAKeys
             foreach (var file in Directory.GetFiles("/resources/rsakeys/ClientPri"))
             {
                 FileInfo info = new(file);
+                if (info.Extension != ".pem") continue;
                 uint id = UInt32.Parse(info.Name[0].ToString());
                 string pemKey = await File.ReadAllTextAsync(file);
                 Resources.CPri.Add(id, new Openssl(pemKey, false));
             }
-            foreach (var file in Directory.GetFiles("/resources/rsakeys/ServerPub"))
+            if (Directory.Exists("/resources/rsakeys/ServerPri"))
             {
-                FileInfo info = new(file);
-                uint id = UInt32.Parse(info.Name[0].ToString());
-                string pemKey = await File.ReadAllTextAsync(file);
-                Resources.SPub.Add(id, new Openssl(pemKey, true));
+                foreach (var file in Directory.GetFiles("/resources/rsakeys/ServerPri"))
+                {
+                    FileInfo info = new(file);
+                    if (info.Extension != ".pem") continue;
+                    uint id = UInt32.Parse(info.Name[0].ToString());
+                    string pemKey = await File.ReadAllTextAsync(file);
+                    Resources.SPub.Add(id, new Openssl(pemKey, false));
+                }
             }
+            if (Directory.Exists("/resources/rsakeys/ServerPub"))
+            {
+                foreach (var file in Directory.GetFiles("/resources/rsakeys/ServerPub"))
+                {
+                    FileInfo info = new(file);
+                    if (info.Extension != ".pem") continue;
+                    uint id = UInt32.Parse(info.Name[0].ToString());
+                    if (Resources.SPub.ContainsKey(id)) continue;
+                    string pemKey = await File.ReadAllTextAsync(file);
+                    Resources.SPub.Add(id, new Openssl(pemKey, true));
+                }
+            }
+            #endregion
         }
     }
 }
