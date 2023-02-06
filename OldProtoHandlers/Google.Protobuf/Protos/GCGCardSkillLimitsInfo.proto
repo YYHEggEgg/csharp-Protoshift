@@ -1,0 +1,12 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+import "GCGSkillLimitsInfo.proto";
+
+message GCGCardSkillLimitsInfo {
+    repeated GCGSkillLimitsInfo skill_limits_list = 12;
+}

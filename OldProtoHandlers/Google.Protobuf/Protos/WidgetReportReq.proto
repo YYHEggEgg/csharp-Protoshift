@@ -1,0 +1,23 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+message WidgetReportReq {
+    uint32 weather_wizard_shield_value = 7;
+    bool is_clear_sky_crystal_hint = 5;
+    uint32 material_id = 15;
+    bool is_client_collect = 14;
+    bool is_clear_hint = 13;
+    
+    // enum CmdId {
+    //     option allow_alias = true;
+    //     NONE = 0;
+    //     CMD_ID = 4291;
+    //     ENET_CHANNEL_ID = 0;
+    //     ENET_IS_RELIABLE = 1;
+    //     IS_ALLOW_CLIENT = 1;
+    // }
+}

@@ -1,0 +1,19 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+message BrickBreakerSelectAvatarReq {
+    repeated uint32 avatar_id = 2;
+    
+    // enum CmdId {
+    //     option allow_alias = true;
+    //     NONE = 0;
+    //     CMD_ID = 5337;
+    //     ENET_CHANNEL_ID = 0;
+    //     ENET_IS_RELIABLE = 1;
+    //     IS_ALLOW_CLIENT = 1;
+    // }
+}

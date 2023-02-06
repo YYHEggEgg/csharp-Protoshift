@@ -1,0 +1,12 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+message GCGPlayerGCGState {
+    bool is_reasouce_complete = 7;
+    bool is_gcg_state_open = 5;
+    uint32 uid = 2;
+}

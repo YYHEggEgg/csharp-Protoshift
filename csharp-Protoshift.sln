@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "csharp-Protoshift", "csharp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewProtoHandlers", "NewProtoHandlers\NewProtoHandlers.csproj", "{9B5D2DBD-5EA4-4DCA-9C6D-72F05EA05643}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldProtoHandlers", "OldProtoHandlers\OldProtoHandlers.csproj", "{CC65C9F6-35FD-41A7-8B12-0949B7D0AB8A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9B5D2DBD-5EA4-4DCA-9C6D-72F05EA05643}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B5D2DBD-5EA4-4DCA-9C6D-72F05EA05643}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B5D2DBD-5EA4-4DCA-9C6D-72F05EA05643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC65C9F6-35FD-41A7-8B12-0949B7D0AB8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC65C9F6-35FD-41A7-8B12-0949B7D0AB8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC65C9F6-35FD-41A7-8B12-0949B7D0AB8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC65C9F6-35FD-41A7-8B12-0949B7D0AB8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,38 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+message GetPlayerTokenReq {
+    string account_ext = 9;
+    string account_token = 10;
+    uint32 channel_id = 15;
+    bool is_guest = 6;
+    string psn_region = 4;
+    uint32 sub_channel_id = 8;
+    string account_uid = 11;
+    uint32 key_id = 1787;
+    uint32 account_type = 1;
+    uint32 cloud_client_ip = 14;
+    uint32 minors_reg_min_age = 995;
+    uint32 uid = 2;
+    string online_id = 7;
+    string birthday = 1718;
+    string client_ip_str = 3;
+    uint32 platform_type = 12;
+    string client_rand_key = 760;
+    string country_code = 5;
+    uint32 lang = 892;
+    string psn_id = 13;
+    
+    // enum CmdId {
+    //     option allow_alias = true;
+    //     NONE = 0;
+    //     CMD_ID = 172;
+    //     ENET_CHANNEL_ID = 0;
+    //     ENET_IS_RELIABLE = 1;
+    //     IS_ALLOW_CLIENT = 1;
+    // }
+}

@@ -1,0 +1,19 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+message CoinCollectCheckDoubleStartPlayRsp {
+    uint32 level_id = 3;
+    int32 retcode = 9;
+    
+    // enum CmdId {
+    //     option allow_alias = true;
+    //     NONE = 0;
+    //     CMD_ID = 21244;
+    //     ENET_CHANNEL_ID = 0;
+    //     ENET_IS_RELIABLE = 1;
+    // }
+}

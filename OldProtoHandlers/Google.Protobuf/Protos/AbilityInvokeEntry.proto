@@ -1,0 +1,22 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+import "AbilityInvokeEntryHead.proto";
+import "AbilityInvokeArgument.proto";
+import "ForwardType.proto";
+
+message AbilityInvokeEntry {
+    bytes ability_data = 15;
+    AbilityInvokeEntryHead head = 2;
+    uint32 event_id = 12;
+    uint32 entity_id = 9;
+    double total_tick_time = 14;
+    uint32 forward_peer = 4;
+    AbilityInvokeArgument argument_type = 1;
+    bool is_ignore_auth = 8;
+    ForwardType forward_type = 3;
+}

@@ -1,0 +1,26 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+import "GCGSkillPreviewPlayCardInfo.proto";
+import "GCGSkillPreviewInfo.proto";
+import "GCGChangeOnstageInfo.proto";
+
+message GCGSkillPreviewNotify {
+    uint32 controller_id = 15;
+    repeated GCGSkillPreviewPlayCardInfo play_card_list = 11;
+    repeated GCGSkillPreviewInfo skill_preview_list = 9;
+    repeated GCGChangeOnstageInfo change_onstage_preview_list = 1;
+    uint32 onstage_card_guid = 5;
+    
+    // enum CmdId {
+    //     option allow_alias = true;
+    //     NONE = 0;
+    //     CMD_ID = 7503;
+    //     ENET_CHANNEL_ID = 0;
+    //     ENET_IS_RELIABLE = 1;
+    // }
+}

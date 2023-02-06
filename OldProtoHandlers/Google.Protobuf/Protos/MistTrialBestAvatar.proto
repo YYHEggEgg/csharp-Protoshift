@@ -1,0 +1,14 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.oldproto";
+
+import "AvatarType.proto";
+
+message MistTrialBestAvatar {
+    AvatarType avatar_type = 6;
+    uint32 costume_id = 14;
+    uint32 avatar_id = 5;
+}
