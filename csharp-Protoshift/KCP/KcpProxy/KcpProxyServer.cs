@@ -89,7 +89,7 @@ namespace csharp_Protoshift.KcpProxy
         }
 
 #pragma warning disable CS8602 // 解引用可能出现空引用。
-        protected async void HandleServer(IPEndPoint remotePoint, 
+        protected async void HandleClient(IPEndPoint remotePoint, 
             Func<byte[], byte[]> PacketHandler)
         {
             var conn = (KcpProxy)clients[remotePoint];
@@ -113,7 +113,7 @@ namespace csharp_Protoshift.KcpProxy
             }
         }
 
-        protected async void HandleClient(IPEndPoint remotePoint,
+        protected async void HandleServer(IPEndPoint remotePoint,
             Func<byte[], byte[]> PacketHandler)
         {
             var conn = (KcpProxy)clients[remotePoint];
