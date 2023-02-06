@@ -17,6 +17,7 @@ namespace YSFreedom.Common.Net
         protected Dictionary<IPEndPoint, KCP> clients;
         protected ConcurrentQueue<IPEndPoint> newConnections;
 
+#pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
         public class AcceptAsyncReturn
         {
             public KCP Connection;
@@ -28,6 +29,7 @@ namespace YSFreedom.Common.Net
             clients = new Dictionary<IPEndPoint, KCP>();
             newConnections = new ConcurrentQueue<IPEndPoint>();
         }
+#pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
 
         public KCPServer(IPEndPoint ipEp)
         {
@@ -76,8 +78,8 @@ namespace YSFreedom.Common.Net
 
         public async Task<AcceptAsyncReturn> AcceptAsync()
         {
-            KCP conn = null;
-            IPEndPoint ipEp = null;
+            KCP? conn = null;
+            IPEndPoint? ipEp = null;
 
             while (conn == null)
             {

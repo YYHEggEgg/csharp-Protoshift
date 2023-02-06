@@ -30,5 +30,7 @@ namespace csharp_Protoshift.KcpProxy
             return new KCP.Handshake(KCP.Handshake.MAGIC_SEND_BACK_CONV, 
                 server.Conv, server.Token, server.ConnectData);
         }
+
+        public KCP.ConnectionState State { get => server.State; }
     }
 }
