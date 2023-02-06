@@ -23,7 +23,10 @@ namespace csharp_Protoshift.resLoader
             "        /ServerPub -- Server Public Keys, SPub\n" +
             "            /2-pub.pem, ..., 5-pub.pem -- PEM format RSA keys with key_id\n" +
             "        /ServerPri -- Server Private Keys, SPri, used to generate SPub automatically\n" +
-            "            /2-pri.pem, ..., 5-pri.pem -- PEM format RSA keys with key_id\n";
+            "            /2-pri.pem, ..., 5-pri.pem -- PEM format RSA keys with key_id\n" +
+            "    /protobuf\n" +
+            "        /newcmdid.csv -- New Protos CmdIds" +
+            "        /oldcmdid.csv -- Old Protos CmdIds";
 
         /// <summary>
         /// Check for resources, if not complete then exit with code 114514.
@@ -47,6 +50,16 @@ namespace csharp_Protoshift.resLoader
             else
             {
                 bool resourcesComplete = true;
+                if (!File.Exists("/resources/protobuf/newcmdid.csv"))
+                {
+                    Log.Erro("/resources/protobuf/newcmdid.csv not found!");
+                    resourcesComplete = false;
+                }
+                if (!File.Exists("/resources/protobuf/oldcmdid.csv"))
+                {
+                    Log.Erro("/resources/protobuf/oldcmdid.csv not found!");
+                    resourcesComplete = false;
+                }
                 if (!File.Exists("/resources/xor/dispatchKey.bin"))
                 {
                     Log.Erro("/resources/xor/dispatchKey.bin not found!");
