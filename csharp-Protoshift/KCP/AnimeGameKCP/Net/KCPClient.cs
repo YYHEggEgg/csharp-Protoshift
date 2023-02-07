@@ -47,12 +47,12 @@ namespace csharp_Protoshift.AnimeGameKCP
             {
                 if (fromip.ToString() == remoteAddress.ToString())
                 {
-                    Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", "KCPClient");
+                    // Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", "KCPClient");
                     server.Input(packet);
                 }
                 else
                 {
-                    Log.Warn($"Bad packet sent to client: {fromip}, buf = {Convert.ToHexString(packet)}");
+                    // Log.Warn($"Bad packet sent to client: {fromip}, buf = {Convert.ToHexString(packet)}");
                 }
                 if (server.State != KCP.ConnectionState.CONNECTED)
                 {

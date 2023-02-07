@@ -39,7 +39,7 @@ namespace csharp_Protoshift.KcpProxy
                     throw new SocketException(10057); // Not connected
                 case ConnectionState.CONNECTED:
                     {
-                        Log.Dbug($"ConnectedNotify, buf = {Convert.ToHexString(buffer)}", "KcpProxy");
+                        // Log.Dbug($"ConnectedNotify, buf = {Convert.ToHexString(buffer)}", "KcpProxy");
                         if (buffer.Length == 20) // Possibly a "disconnect" packet
                         {
                             var disconn = new Handshake();
@@ -72,7 +72,7 @@ namespace csharp_Protoshift.KcpProxy
                         var handshake = new Handshake();
                         try
                         {
-                            Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", "KcpProxy");
+                            // Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", "KcpProxy");
                             handshake.Decode(buffer, Handshake.MAGIC_CONNECT);
                             //_Conv = (uint)(MonotonicTime.Now & 0xFFFFFFFF);
                             //_Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
