@@ -115,7 +115,7 @@ namespace YSFreedom.Common.Net
                     throw new SocketException(10057); // Not connected
                 case ConnectionState.CONNECTED:
                     {
-                        Log.Dbug($"ConnectedNotify, handle = {ikcpHandle}, buf = {Convert.ToHexString(buffer)}", "KCP");
+                        // Log.Dbug($"ConnectedNotify, handle = {ikcpHandle}, buf = {Convert.ToHexString(buffer)}", "KCP");
                         if (buffer.Length == 20) // Possibly a "disconnect" packet
                         {
                             var disconn = new Handshake();
@@ -123,7 +123,7 @@ namespace YSFreedom.Common.Net
                             {
                                 disconn.Decode(buffer, Handshake.MAGIC_DISCONNECT);
                                 _State = ConnectionState.CLOSED;
-                                Log.Dbug($"DisconnectedNotify");
+                                // Log.Dbug($"DisconnectedNotify");
                                 return 0;
                             }
                             catch (ArgumentException)
@@ -146,7 +146,7 @@ namespace YSFreedom.Common.Net
                         var handshake = new Handshake();
                         try
                         {
-                            Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", "KCP");
+                            // Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", "KCP");
                             handshake.Decode(buffer, Handshake.MAGIC_CONNECT);
                             _Conv = (uint)(MonotonicTime.Now & 0xFFFFFFFF);
                             _Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
@@ -167,7 +167,7 @@ namespace YSFreedom.Common.Net
                         var handshake = new Handshake();
                         try
                         {
-                            Log.Dbug($"HandShakeConnectNotify, buf = {Convert.ToHexString(buffer)}", "KCP");
+                            // Log.Dbug($"HandShakeConnectNotify, buf = {Convert.ToHexString(buffer)}", "KCP");
                             handshake.Decode(buffer, Handshake.MAGIC_SEND_BACK_CONV);
                             _Conv = handshake.Conv;
                             _Token = handshake.Token;
@@ -336,11 +336,11 @@ namespace YSFreedom.Common.Net
 
             public void Encode(byte[] buffer)
             {
-                buffer.SetUInt32(0, Magic1, true);
-                buffer.SetUInt32(4, Conv, true);
-                buffer.SetUInt32(8, Token, true);
-                buffer.SetUInt32(12, Data, true);
-                buffer.SetUInt32(16, Magic2, true);
+                buffer.SetUInt32(0, Magic1);
+                buffer.SetUInt32(4, Conv);
+                buffer.SetUInt32(8, Token);
+                buffer.SetUInt32(12, Data);
+                buffer.SetUInt32(16, Magic2);
             }
 
             public void Decode(byte[] buffer, uint[]? verifyMagic = null)
@@ -348,11 +348,11 @@ namespace YSFreedom.Common.Net
                 if (buffer.Length < LEN)
                     throw new ArgumentException("Handshake packet too small", "buffer");
 
-                Magic1 = buffer.GetUInt32(0, true);
-                Conv = buffer.GetUInt32(4, true);
-                Token = buffer.GetUInt32(8, true);
-                Data = buffer.GetUInt32(12, true);
-                Magic2 = buffer.GetUInt32(16, true);
+                Magic1 = buffer.GetUInt32(0);
+                Conv = buffer.GetUInt32(4);
+                Token = buffer.GetUInt32(8);
+                Data = buffer.GetUInt32(12);
+                Magic2 = buffer.GetUInt32(16);
 
                 if (verifyMagic != null)
                 {
