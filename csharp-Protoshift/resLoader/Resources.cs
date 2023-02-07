@@ -12,6 +12,6 @@ namespace csharp_Protoshift.resLoader
         public static byte[] dispatchKey = new byte[] { };
         public static byte[] dispatchSeed = new byte[] { };
         public static Dictionary<uint, Openssl> CPri = new();
-        public static Dictionary<uint, Openssl> SPub = new();
+        public static Dictionary<uint, Openssl> SPri = new();
     }
 }
