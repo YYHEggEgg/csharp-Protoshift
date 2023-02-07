@@ -57,5 +57,8 @@ namespace NewProtos
                 return false;
             }
         }
+
+        public static bool ProtoExists(string protoname)
+            => protonameToCmdids.ContainsKey(protoname);
     }
 }
