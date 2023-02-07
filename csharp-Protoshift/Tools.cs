@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace csharp_Protoshift
@@ -31,6 +32,15 @@ namespace csharp_Protoshift
         {
             var p = Process.Start(path, args);
             await p.WaitForExitAsync();
+        }
+
+        public static string GetFieldFromJson(string json, string fieldName)
+        {
+            var doc = JsonDocument.Parse(json);
+            //{"remoteName": "name.pck"}
+#pragma warning disable CS8603 // 可能返回 null 引用。
+            return doc.RootElement.GetProperty(fieldName).GetString();
+#pragma warning restore CS8603 // 可能返回 null 引用。
         }
     }
 }
