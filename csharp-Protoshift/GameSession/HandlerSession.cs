@@ -43,6 +43,7 @@ namespace csharp_Protoshift.GameSession
             SessionId = sessionId;
             PacketRecordLimits = packetLimits;
             client_seed = server_seed = new byte[0];
+            Verbose = true;
         }
 
         public byte[] HandlePacket(byte[] packet, bool isNewCmdid)
@@ -95,13 +96,21 @@ namespace csharp_Protoshift.GameSession
             }
 
             var rtn = GetPacketResult(packet, cmdid, isNewCmdid, body_offset, body_length);
-            XorDecrypt(ref rtn);
+
+            if (!isNewCmdid && cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
+                XorDecrypt(ref rtn, customxorkey: Resources.dispatchKey);
+            else XorDecrypt(ref rtn);
             return rtn;
         }
 
         #region Packet Handle
-        private byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid, 
+#if DEBUG
+        public byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
             int body_offset, uint body_length)
+#else
+        private byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
+            int body_offset, uint body_length)
+#endif
         {
             var bodyfrom = new byte[body_length];
             Array.Copy(packet, body_offset, bodyfrom, 0, body_length);
@@ -135,22 +144,16 @@ namespace csharp_Protoshift.GameSession
                     return new byte[0];
                 }
 
+                // KillSkillIssue fix
+                newjson = Program.skillcmd.ProcessWithRule(cmdid, false, newjson);
+
                 byte[] oldbody = oldserializer.SerializeFromJson(newjson);
 
-                string? oldjson = null; 
-                if (Verbose)
-                {
-                    oldjson = oldserializer.DeserializeToJson(oldbody);
-                    Log.Info($"Send packet {protoname} with " +
-                        $"CmdId:{OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
-                        $"to Server:---{Convert.ToHexString(packet)}",
-                        $"PacketHandler({SessionId})");
-                }
+                string oldjson = oldserializer.DeserializeToJson(oldbody);
 
                 bool dataLostSign = false;
                 #region DEBUG - Detect information lost in Protoshift
 #if DEBUG
-                oldjson ??= oldserializer.DeserializeToJson(oldbody);
                 var newlines = ConvertJsonString(newjson).Split('\n');
                 var oldlines = ConvertJsonString(oldjson).Split('\n');
 
@@ -182,6 +185,7 @@ namespace csharp_Protoshift.GameSession
                         sentByClient = true,
                         dataLostSign = dataLostSign,
                         data = packet,
+                        shiftedData = oldbody,
                         newjsonContent = newjson,
                         oldjsonContent = oldjson
                     };
@@ -190,11 +194,21 @@ namespace csharp_Protoshift.GameSession
                 #endregion
 
                 #region Build New Packet
-                int newpacketLength = body_offset + oldbody.Length;
-                byte[] rtn = new byte[newpacketLength];
+                int rtnpacketLength = body_offset + oldbody.Length + 2;
+                byte[] rtn = new byte[rtnpacketLength];
                 Array.Copy(packet, 0, rtn, 0, body_offset);
+                rtn.SetUInt16(2, (ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
                 rtn.SetUInt32(2 + 2 + 2, (uint)oldbody.Length);
                 Array.Copy(oldbody, 0, rtn, body_offset, oldbody.Length);
+                rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
+
+                if (Verbose)
+                {
+                    Log.Info($"Send packet {protoname} with " +
+                        $"CmdId:{OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
+                        $"to Server:---{Convert.ToHexString(rtn)}",
+                        $"PacketHandler({SessionId})");
+                }
 
                 return rtn;
                 #endregion
@@ -230,20 +244,16 @@ namespace csharp_Protoshift.GameSession
                     return new byte[0];
                 }
 
+                // KillSkillIssue fix
+                oldjson = Program.skillcmd.ProcessWithRule(cmdid, true, oldjson);
+
                 byte[] newbody = newserializer.SerializeFromJson(oldjson);
 
-                string? newjson = null;
-                if (Verbose)
-                {
-                    newjson = oldserializer.DeserializeToJson(newbody);
-                    Log.Info($"Send packet {protoname} with " +
-                        $"CmdId:{NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
-                        $"to Client:---{Convert.ToHexString(packet)}",
-                        $"PacketHandler({SessionId})");
-                }
+                string newjson = oldserializer.DeserializeToJson(newbody);
+                bool dataLostSign = false;
+                
                 #region DEBUG - Detect information lost in Protoshift
 #if DEBUG
-                newjson ??= newserializer.DeserializeToJson(newbody);
                 var newlines = ConvertJsonString(newjson).Split('\n');
                 var oldlines = ConvertJsonString(oldjson).Split('\n');
 
@@ -251,6 +261,7 @@ namespace csharp_Protoshift.GameSession
                 {
                     Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
                         $"new: {newjson}\nold: {oldjson}", $"PacketHandler({SessionId})");
+                    dataLostSign = true;
                 }
 #endif
                 #endregion
@@ -259,7 +270,7 @@ namespace csharp_Protoshift.GameSession
                 #region Notify
                 if (protoname == "GetPlayerTokenRsp")
                 {
-                    Task.WaitAll(GetPlayerTokenRspNotify(newjson));
+                    Task.WaitAll(GetPlayerTokenRspNotify(oldjson));
                 }
                 #endregion
 
@@ -272,7 +283,9 @@ namespace csharp_Protoshift.GameSession
                         Id = packetCounts,
                         CmdId = cmdid,
                         sentByClient = false,
+                        dataLostSign = dataLostSign,
                         data = packet,
+                        shiftedData = newbody,
                         newjsonContent = newjson,
                         oldjsonContent = oldjson
                     };
@@ -281,11 +294,20 @@ namespace csharp_Protoshift.GameSession
                 #endregion
 
                 #region Build New Packet
-                int oldpacketLength = body_offset + newbody.Length;
-                byte[] rtn = new byte[oldpacketLength];
+                int rtnpacketLength = body_offset + newbody.Length + 2;
+                byte[] rtn = new byte[rtnpacketLength];
                 Array.Copy(packet, 0, rtn, 0, body_offset);
+                rtn.SetUInt16(2, (ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
                 rtn.SetUInt32(2 + 2 + 2, (uint)newbody.Length);
                 Array.Copy(newbody, 0, rtn, body_offset, newbody.Length);
+                rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
+                if (Verbose)
+                {
+                    Log.Info($"Send packet {protoname} with " +
+                        $"CmdId:{NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
+                        $"to Client:---{Convert.ToHexString(rtn)}",
+                        $"PacketHandler({SessionId})");
+                }
 
                 return rtn;
                 #endregion
@@ -296,31 +318,34 @@ namespace csharp_Protoshift.GameSession
         protected byte[] client_seed;
         protected byte[] server_seed;
 
+#pragma warning disable CS8604 // 引用类型参数可能为 null。
         private async Task GetPlayerTokenReqNotify(string messageJson)
         {
-            uint key_id = uint.Parse(Tools.GetFieldFromJson(messageJson, "key_id"));
+            uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
             client_seed = await Resources.SPri[key_id].DecryptByPrivateKey(
-                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "client_rand_key")));
+                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "clientRandKey").GetString()));
         }
 
         private async Task GetPlayerTokenRspNotify(string messageJson)
         {
-            uint key_id = uint.Parse(Tools.GetFieldFromJson(messageJson, "key_id"));
+            uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
             server_seed = await Resources.CPri[key_id].DecryptByPrivateKey(
-                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "server_rand_key")));
+                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "serverRandKey").GetString()));
             ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
             XorKey = Generate4096KeyByMT19937(encrypt_seed);
         }
+#pragma warning restore CS8604 // 引用类型参数可能为 null。
         #endregion
 
         #region Crypto
-        private void XorDecrypt(ref byte[] encrypted, int offset = 0, int length = -1)
+        private void XorDecrypt(ref byte[] encrypted, int offset = 0, int length = -1, byte[]? customxorkey = null)
         {
             if (length == -1) length = encrypted.Length;
-            else length = Math.Min(offset + length, encrypted.Length);
+            else length = Math.Min(offset + length, encrypted.Length - offset);
             for (int i = offset; i < offset + length; i++)
             {
-                encrypted[i] = (byte)(encrypted[i] ^ XorKey[i % XorKey.Length]);
+                if (customxorkey == null) encrypted[i] = (byte)(encrypted[i] ^ XorKey[i % XorKey.Length]);
+                else encrypted[i] = (byte)(encrypted[i] ^ customxorkey[i % customxorkey.Length]);
             }
         }
 
