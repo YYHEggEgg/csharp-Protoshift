@@ -123,10 +123,10 @@ namespace csharp_Protoshift.KcpProxy
                 try
                 {
                     var beforepacket = await conn.sendClient.ReceiveAsync();
-                    Log.Dbug($"Client Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ClientHandler");
+                    // Log.Dbug($"Client Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ClientHandler");
                     var afterpacket = PacketHandler(beforepacket, conn.Conv);
                     await conn.SendAsync(afterpacket);
-                    Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
+                    // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
                 }
                 catch (Exception e)
                 {

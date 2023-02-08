@@ -1,11 +1,13 @@
 ﻿using csharp_Protoshift.AnimeGameKCP;
 using csharp_Protoshift.Commands;
+using csharp_Protoshift.Commands.SkillIssueFix;
 using csharp_Protoshift.GameSession;
 using csharp_Protoshift.KcpProxy;
 using csharp_Protoshift.resLoader;
 using System.Net;
 using System.Numerics;
 using System.Text;
+using System.Text.Json;
 using YSFreedom.Common.Net;
 using YSFreedom.Common.Util;
 
@@ -15,19 +17,53 @@ namespace csharp_Protoshift
     {
         static async Task Main(string[] args)
         {
+            Log.Info("csharp-Protoshift v1.0.0");
+            Log.Info("Written by YYHEggEgg#6167, https://github.com/YYHEggEgg.");
             ResourcesLoader.CheckForRequiredResources();
             await ResourcesLoader.Load();
 
-            var kcpServer = new KCPServer(new IPEndPoint(IPAddress.Loopback, 20102));
             var kcpProxy = new KcpProxyServer(new IPEndPoint(IPAddress.Loopback, 22102),
                 new IPEndPoint(IPAddress.Parse("192.168.127.130"), 20041));
 
             kcpProxy.StartProxy(GameSessionDispatch.HandleServerPacket,
                 GameSessionDispatch.HandleClientPacket);
 
+            #region SkillIssueFixCmd
+            SkillIssueFixCmd? sicmd = null;
+            if (File.Exists("skillissue_fix_config.json"))
+            {
+                sicmd = JsonSerializer.Deserialize<SkillIssueFixCmd>(
+                    File.ReadAllText("skillissue_fix_config.json"));
+            }
+            sicmd ??= new();
+            CommandLine.handlers.Add(sicmd);
+            skillcmd = sicmd;
+
+            // Add instances need to be saved here. Repeat time is 60s.
+            savetimer = new((_) =>
+            {
+                File.WriteAllText("skillissue_fix_config.json", JsonSerializer.Serialize(sicmd));
+            }, null, 0, 60000);
+            #endregion
+
+            Log.Info("Protoshift server started on 127.0.0.1:22102");
+            Log.Info("Start loading all protos, it will take some time...");
+            NewProtos.QueryCmdId.Initialize();
+            Log.Info("Client protos loaded, start loading server protos...");
+            OldProtos.QueryCmdId.Initialize();
             Log.Info("Ready! Type 'help' to get command help.");
 
             await CommandLine.Start();
+            Close();
+        }
+
+        public static SkillIssueFixCmd skillcmd = new();
+        private static Timer? savetimer;
+
+        public static void Close()
+        {
+            Log.Erro("Unreachable Close method invoked.");
+            savetimer?.Dispose();
         }
     }
 }
