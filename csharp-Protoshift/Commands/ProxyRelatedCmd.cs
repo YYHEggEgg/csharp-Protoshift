@@ -71,7 +71,8 @@ namespace csharp_Protoshift.Commands
             int packetId = int.Parse(args[1]);
             var packet = GameSessionDispatch.sessions[conv].QueryPacketRecordById(packetId);
             Log.Info($"Packet {packetId}: {packet.PacketName}, CmdId:{packet.CmdId} from {(packet.sentByClient ? "Client" : "Server")}", "ShowRecordCmd");
-            Log.Info($"Original Protobuf bin data: {Convert.ToHexString(packet.data)}", "ShowRecordCmd");
+            Log.Info($"Original body bin data: {Convert.ToHexString(packet.data)}", "ShowRecordCmd");
+            Log.Info($"Shifted body bin data: {Convert.ToHexString(packet.shiftedData)}", "ShowRecordCmd");
             Log.Info($"Packet with old protocol: {packet.oldjsonContent}", "ShowRecordCmd");
             Log.Info($"Packet with new protocol: {packet.newjsonContent}", "ShowRecordCmd");
             if (packet.dataLostSign)

@@ -142,32 +142,43 @@ namespace csharp_Protoshift.GameSession
                 #endregion
 
                 #region Protoshift
-                if (!OldProtos.QueryCmdId.TryGetSerializer(protoname, out var oldserializer))
+                byte[] oldbody;
+                OldProtos.ProtoSerialize? oldserializer = null;
+
+                if (protoname != "UnionCmdNotify")
                 {
-                    Log.Erro($"Packet {protoname} from Client" +
-                        $" has no record in oldcmdid.csv and dropped:---{Convert.ToHexString(packet)}",
-                        $"PacketHandler({SessionId})");
-                    return new byte[0];
+                    if (!OldProtos.QueryCmdId.TryGetSerializer(protoname, out oldserializer))
+                    {
+                        Log.Erro($"Packet {protoname} from Client" +
+                            $" has no record in oldcmdid.csv and dropped:---{Convert.ToHexString(packet)}",
+                            $"PacketHandler({SessionId})");
+                        return new byte[0];
+                    }
+
+                    // KillSkillIssue fix
+                    newjson = Program.skillcmd.ProcessWithRule(cmdid, false, newjson);
+
+                    oldbody = oldserializer.SerializeFromJson(newjson);
                 }
+                else oldbody = UnionCmds.Shift(newjson);
 
-                // KillSkillIssue fix
-                newjson = Program.skillcmd.ProcessWithRule(cmdid, false, newjson);
-
-                byte[] oldbody = oldserializer.SerializeFromJson(newjson);
-
-                string oldjson = oldserializer.DeserializeToJson(oldbody);
+                string oldjson = "Release - not enabled";
 
                 bool dataLostSign = false;
                 #region DEBUG - Detect information lost in Protoshift
 #if DEBUG
-                var newlines = ConvertJsonString(newjson).Split('\n');
-                var oldlines = ConvertJsonString(oldjson).Split('\n');
-
-                if (newlines.Length != oldlines.Length)
+                if (protoname != "UnionCmdNotify")
                 {
-                    Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
-                        $"new: {newjson}\nold: {oldjson}", $"PacketHandler({SessionId})");
-                    dataLostSign = true;
+                    oldjson = oldserializer.DeserializeToJson(oldbody);
+                    var newlines = ConvertJsonString(newjson).Split('\n');
+                    var oldlines = ConvertJsonString(oldjson).Split('\n');
+
+                    if (newlines.Length != oldlines.Length)
+                    {
+                        Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
+                            $"new: {newjson}\nold: {oldjson}", $"PacketHandler({SessionId})");
+                        dataLostSign = true;
+                    }
                 }
 #endif
                 #endregion
@@ -183,19 +194,22 @@ namespace csharp_Protoshift.GameSession
                 #region Record Packet
                 if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
                 {
-                    records[packetCounts % PacketRecordLimits] = new PacketRecord
+                    lock (records)
                     {
-                        PacketName = protoname,
-                        Id = packetCounts,
-                        CmdId = cmdid,
-                        sentByClient = true,
-                        dataLostSign = dataLostSign,
-                        data = packet,
-                        shiftedData = oldbody,
-                        newjsonContent = newjson,
-                        oldjsonContent = oldjson
-                    };
-                    packetCounts++;
+                        records[packetCounts % PacketRecordLimits] = new PacketRecord
+                        {
+                            PacketName = protoname,
+                            Id = packetCounts,
+                            CmdId = cmdid,
+                            sentByClient = true,
+                            dataLostSign = dataLostSign,
+                            data = packet,
+                            shiftedData = oldbody,
+                            newjsonContent = newjson,
+                            oldjsonContent = oldjson
+                        };
+                        packetCounts++;
+                    }
                 }
                 #endregion
 
@@ -283,19 +297,22 @@ namespace csharp_Protoshift.GameSession
                 #region Record Packet
                 if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
                 {
-                    records[packetCounts % PacketRecordLimits] = new PacketRecord
+                    lock (records)
                     {
-                        PacketName = protoname,
-                        Id = packetCounts,
-                        CmdId = cmdid,
-                        sentByClient = false,
-                        dataLostSign = dataLostSign,
-                        data = packet,
-                        shiftedData = newbody,
-                        newjsonContent = newjson,
-                        oldjsonContent = oldjson
-                    };
-                    packetCounts++;
+                        records[packetCounts % PacketRecordLimits] = new PacketRecord
+                        {
+                            PacketName = protoname,
+                            Id = packetCounts,
+                            CmdId = cmdid,
+                            sentByClient = false,
+                            dataLostSign = dataLostSign,
+                            data = packet,
+                            shiftedData = newbody,
+                            newjsonContent = newjson,
+                            oldjsonContent = oldjson
+                        };
+                        packetCounts++;
+                    }
                 }
                 #endregion
 
@@ -347,6 +364,12 @@ namespace csharp_Protoshift.GameSession
                 $"{Environment.NewLine}-----END HEX New 4096 XOR Key-----", "HandlerSession");
         }
 #pragma warning restore CS8604 // 引用类型参数可能为 null。
+
+        /// <summary>
+        /// Used for special UnionCmdNotify shifting.
+        /// </summary>
+        /// <param name="newjson"></param>
+        /// <returns></returns>
         #endregion
 
         #region Crypto
@@ -363,7 +386,7 @@ namespace csharp_Protoshift.GameSession
 
         static JsonSerializer serializer = new();
 
-        private static string ConvertJsonString(string str)
+        public static string ConvertJsonString(string str)
         {
             //格式化json字符串
             TextReader tr = new StringReader(str);
