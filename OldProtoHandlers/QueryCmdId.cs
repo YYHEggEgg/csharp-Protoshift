@@ -15,13 +15,18 @@ namespace OldProtos
 
         static QueryCmdId()
         {
-            var cmdids = File.ReadAllLines("/resources/protobuf/oldcmdid.csv");
+            var cmdids = File.ReadAllLines("resources/protobuf/oldcmdid.csv");
             foreach (var line in cmdids)
             {
                 var csvline = line.Split(',');
                 Debug.Assert(csvline.Length == 2);
                 string name = csvline[0].Trim();
                 int cmdid = int.Parse(csvline[1].Trim());
+                if (serializers.ContainsKey(cmdid))
+                {
+                    Console.WriteLine($"Oldprotos: {cmdid} multiples, dropped proto {name}");
+                    continue;
+                }
                 serializers.Add(cmdid, new ProtoSerialize(name));
                 protonameToCmdids.Add(name, cmdid);
             }
@@ -60,5 +65,10 @@ namespace OldProtos
 
         public static bool ProtoExists(string protoname)
             => protonameToCmdids.ContainsKey(protoname);
+
+        public static string Initialize()
+        {
+            return "OK";
+        }
     }
 }
