@@ -1,10 +1,12 @@
-﻿using csharp_Protoshift.GameSession;
+﻿using csharp_Protoshift.Commands.SkillIssueFix;
+using csharp_Protoshift.GameSession;
 using csharp_Protoshift.resLoader;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using YSFreedom.Common.Net;
 using YSFreedom.Common.Util;
@@ -13,11 +15,9 @@ namespace csharp_Protoshift.Commands
 {
     internal static class CommandLine
     {
-        /// <summary>
-        /// Add commands here.
-        /// </summary>
         static CommandLine()
         {
+            // Add commands here.
             handlers.Add(new MT19937Cmd());
             handlers.Add(new SetVerboseCmd());
             handlers.Add(new SelectRecordCmd());

@@ -42,12 +42,13 @@ namespace csharp_Protoshift.Commands
         {
             uint conv = uint.Parse(args[0]);
             string protoname = args[1];
-            var records = GameSessionDispatch.sessions[conv].QueryPacketRecordIds(protoname);
+            var records = GameSessionDispatch.sessions[conv].QueryPacketRecords(protoname);
             Log.Info($"Found {records.Count} records match. Use 'show <conv> <id>' to show more info of a specified packet.", "SelectRecordCmd");
+            Log.Info($"Notice that packets detected skill issue will be added a star(*).");
             string found = "Match Packets: ";
-            foreach (var recordId in records)
+            foreach (var record in records)
             {
-                found += $"{recordId}; ";
+                found += $"{record.Id}{(record.dataLostSign ? "*" : "")}; ";
             }
             Log.Info(found, "SelectRecordCmd");
         }
