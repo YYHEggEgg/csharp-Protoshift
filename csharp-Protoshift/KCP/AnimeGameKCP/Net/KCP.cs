@@ -103,6 +103,7 @@ namespace YSFreedom.Common.Net
         private int thunk_Output(byte[] buffer, int len, UIntPtr kcp, UIntPtr userdata)
         {
             if (Output == null) return 0;
+            // Log.Dbug($"Output buffer = {Convert.ToHexString(buffer)}", "KCP");
             return Output(buffer);
         }
 

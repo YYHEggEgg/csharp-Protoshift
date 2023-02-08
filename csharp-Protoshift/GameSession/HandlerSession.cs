@@ -48,6 +48,8 @@ namespace csharp_Protoshift.GameSession
 
         public byte[] HandlePacket(byte[] packet, bool isNewCmdid)
         {
+            if (packet == null) throw new ArgumentNullException("Received Null packet!");
+            bool fallback = false; // Whether use dispatchKey
             XorDecrypt(ref packet, 0, 2);
             // Reference: https://sdl.moe/post/magic-sniffer/#%E5%B7%B2%E7%9F%A5%E6%98%8E%E6%96%87%E6%94%BB%E5%87%BB
             var magic_start = packet.GetUInt16(0);
@@ -57,25 +59,29 @@ namespace csharp_Protoshift.GameSession
                 Log.Erro("Invalid Magic Start: Bad packet received from " +
                     $"{(isNewCmdid ? "Client" : "Server")}:---{Convert.ToHexString(packet)}", 
                     $"PacketHandler({SessionId})");
-                XorDecrypt(ref packet, 0, 2);
+                XorDecrypt(ref packet, 0, packet.Length);
                 Log.Info("Fall back to dispatchKey", $"PacketHandler({SessionId})");
-                XorKey = Resources.dispatchKey;
-                XorDecrypt(ref packet, 0, 2);
+                fallback = true;
+                XorDecrypt(ref packet, 0, 2, fallback);
                 magic_start = packet.GetUInt16(0);
                 if (magic_start != 0x4567)
                 {
                     throw new InvalidOperationException();
                 }
+                else
+                {
+                    Log.Info("Success decoded after XOR Key Fallback, continue", $"PacketHandler({SessionId})");
+                }
             }
 
-            XorDecrypt(ref packet, 2, 2 + 2 + 4);
+            XorDecrypt(ref packet, 2, 2 + 2 + 4, fallback);
             var cmdid = packet.GetUInt16(2);
             var head_length = packet.GetUInt16(4);
             var body_length = packet.GetUInt32(6);
             int head_offset = 2 + 2 + 2 + 4;
             if (body_length > int.MaxValue) 
                 throw new InvalidOperationException("Are you downloading anime game through KCP? How in teyvat can you get a 2GB packet?");
-            XorDecrypt(ref packet, head_offset, head_length + (int)body_length + 2 + 2); // read magic start of the next if possible
+            XorDecrypt(ref packet, head_offset, head_length + (int)body_length + 2 + 2, fallback); // read magic start of the next if possible
             int body_offset = head_offset + head_length;
             int magic_end_offset = body_offset + (int)body_length;
             var magic_end = packet.GetUInt16(magic_end_offset);
@@ -98,8 +104,8 @@ namespace csharp_Protoshift.GameSession
             var rtn = GetPacketResult(packet, cmdid, isNewCmdid, body_offset, body_length);
 
             if (!isNewCmdid && cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
-                XorDecrypt(ref rtn, customxorkey: Resources.dispatchKey);
-            else XorDecrypt(ref rtn);
+                XorDecrypt(ref rtn, fallbackToDispatchKey: true);
+            else XorDecrypt(ref rtn, fallbackToDispatchKey: fallback);
             return rtn;
         }
 
@@ -249,7 +255,7 @@ namespace csharp_Protoshift.GameSession
 
                 byte[] newbody = newserializer.SerializeFromJson(oldjson);
 
-                string newjson = oldserializer.DeserializeToJson(newbody);
+                string newjson = newserializer.DeserializeToJson(newbody);
                 bool dataLostSign = false;
                 
                 #region DEBUG - Detect information lost in Protoshift
@@ -297,7 +303,7 @@ namespace csharp_Protoshift.GameSession
                 int rtnpacketLength = body_offset + newbody.Length + 2;
                 byte[] rtn = new byte[rtnpacketLength];
                 Array.Copy(packet, 0, rtn, 0, body_offset);
-                rtn.SetUInt16(2, (ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
+                rtn.SetUInt16(2, (ushort)NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
                 rtn.SetUInt32(2 + 2 + 2, (uint)newbody.Length);
                 Array.Copy(newbody, 0, rtn, body_offset, newbody.Length);
                 rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
@@ -322,30 +328,36 @@ namespace csharp_Protoshift.GameSession
         private async Task GetPlayerTokenReqNotify(string messageJson)
         {
             uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
-            client_seed = await Resources.SPri[key_id].DecryptByPrivateKey(
-                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "clientRandKey").GetString()));
+            client_seed = (await Resources.SPri[key_id].DecryptByPrivateKey(
+                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "clientRandKey").GetString())))
+                .Fill0(8);
         }
 
         private async Task GetPlayerTokenRspNotify(string messageJson)
         {
             uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
-            server_seed = await Resources.CPri[key_id].DecryptByPrivateKey(
-                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "serverRandKey").GetString()));
+            server_seed = (await Resources.CPri[key_id].DecryptByPrivateKey(
+                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "serverRandKey").GetString())))
+                .Fill0(8);
             ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
             XorKey = Generate4096KeyByMT19937(encrypt_seed);
+            Log.Info($"IMPORTANT: New XOR Key built{Environment.NewLine}" +
+                $"-----BEGIN HEX New 4096 XOR Key-----{Environment.NewLine}" +
+                Convert.ToHexString(XorKey) +
+                $"{Environment.NewLine}-----END HEX New 4096 XOR Key-----", "HandlerSession");
         }
 #pragma warning restore CS8604 // 引用类型参数可能为 null。
         #endregion
 
         #region Crypto
-        private void XorDecrypt(ref byte[] encrypted, int offset = 0, int length = -1, byte[]? customxorkey = null)
+        private void XorDecrypt(ref byte[] encrypted, int offset = 0, int length = -1, bool fallbackToDispatchKey = false)
         {
             if (length == -1) length = encrypted.Length;
-            else length = Math.Min(offset + length, encrypted.Length - offset);
+            else length = Math.Min(length, encrypted.Length - offset);
             for (int i = offset; i < offset + length; i++)
             {
-                if (customxorkey == null) encrypted[i] = (byte)(encrypted[i] ^ XorKey[i % XorKey.Length]);
-                else encrypted[i] = (byte)(encrypted[i] ^ customxorkey[i % customxorkey.Length]);
+                if (!fallbackToDispatchKey) encrypted[i] = (byte)(encrypted[i] ^ XorKey[i % XorKey.Length]);
+                else encrypted[i] = (byte)(encrypted[i] ^ Resources.dispatchKey[i % Resources.dispatchKey.Length]);
             }
         }
 
