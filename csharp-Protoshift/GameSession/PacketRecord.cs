@@ -19,11 +19,11 @@ namespace csharp_Protoshift.GameSession
         public int CmdId;
         public bool sentByClient;
         /// <summary>
-        /// Original protobuf bin data
+        /// Original body bin data
         /// </summary>
         public byte[] data;
         /// <summary>
-        /// Another version of protobuf bin data (Proto shifted)
+        /// Another version of body bin data (Proto shifted)
         /// </summary>
         public byte[] shiftedData;
         /// <summary>
