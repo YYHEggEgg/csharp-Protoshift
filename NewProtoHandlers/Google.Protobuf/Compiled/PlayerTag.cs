@@ -9,38 +9,41 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from PlayerTag.proto</summary>
-public static partial class PlayerTagReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for PlayerTag.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from PlayerTag.proto</summary>
+  public static partial class PlayerTagReflection {
 
-  static PlayerTagReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Cg9QbGF5ZXJUYWcucHJvdG8qagoJUGxheWVyVGFnEhUKEVBMQVlFUl9UQUdf",
-          "Tk9STUFMEAASGgoWUExBWUVSX1RBR19TVUJfQUNDT1VOVBADEioKJlBMQVlF",
-          "Ul9UQUdfU1VCX0FDQ09VTlRfVFJBTlNfVE9fTk9STUFMEAVCFgoUb3JnLnNv",
-          "cmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::PlayerTag), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for PlayerTag.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static PlayerTagReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Cg9QbGF5ZXJUYWcucHJvdG8qagoJUGxheWVyVGFnEhUKEVBMQVlFUl9UQUdf",
+            "Tk9STUFMEAASGgoWUExBWUVSX1RBR19TVUJfQUNDT1VOVBADEioKJlBMQVlF",
+            "Ul9UQUdfU1VCX0FDQ09VTlRfVFJBTlNfVE9fTk9STUFMEAVCDKoCCU5ld1By",
+            "b3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.PlayerTag), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum PlayerTag {
+    [pbr::OriginalName("PLAYER_TAG_NORMAL")] Normal = 0,
+    [pbr::OriginalName("PLAYER_TAG_SUB_ACCOUNT")] SubAccount = 3,
+    [pbr::OriginalName("PLAYER_TAG_SUB_ACCOUNT_TRANS_TO_NORMAL")] SubAccountTransToNormal = 5,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum PlayerTag {
-  [pbr::OriginalName("PLAYER_TAG_NORMAL")] Normal = 0,
-  [pbr::OriginalName("PLAYER_TAG_SUB_ACCOUNT")] SubAccount = 3,
-  [pbr::OriginalName("PLAYER_TAG_SUB_ACCOUNT_TRANS_TO_NORMAL")] SubAccountTransToNormal = 5,
-}
-
-#endregion
-
 
 #endregion Designer generated code

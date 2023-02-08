@@ -20,7 +20,7 @@ import "AbilityAttachedModifier.proto";
 import "AbilityString.proto";
 import "ModifierDurability.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message AbilityAppliedModifier {
   int32 modifier_local_id = 1;

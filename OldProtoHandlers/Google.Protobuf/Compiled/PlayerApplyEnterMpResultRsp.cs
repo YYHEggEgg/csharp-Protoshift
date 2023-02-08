@@ -9,339 +9,342 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from PlayerApplyEnterMpResultRsp.proto</summary>
-public static partial class PlayerApplyEnterMpResultRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for PlayerApplyEnterMpResultRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from PlayerApplyEnterMpResultRsp.proto</summary>
+  public static partial class PlayerApplyEnterMpResultRspReflection {
 
-  static PlayerApplyEnterMpResultRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiFQbGF5ZXJBcHBseUVudGVyTXBSZXN1bHRSc3AucHJvdG8iYwobUGxheWVy",
-          "QXBwbHlFbnRlck1wUmVzdWx0UnNwEg8KB3JldGNvZGUYASABKAUSEQoJaXNf",
-          "YWdyZWVkGAMgASgIEhEKCWFwcGx5X3VpZBgKIAEoDRINCgVwYXJhbRgMIAEo",
-          "DUIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::PlayerApplyEnterMpResultRsp), global::PlayerApplyEnterMpResultRsp.Parser, new[]{ "Retcode", "IsAgreed", "ApplyUid", "Param" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for PlayerApplyEnterMpResultRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static PlayerApplyEnterMpResultRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiFQbGF5ZXJBcHBseUVudGVyTXBSZXN1bHRSc3AucHJvdG8iYwobUGxheWVy",
+            "QXBwbHlFbnRlck1wUmVzdWx0UnNwEg8KB3JldGNvZGUYASABKAUSEQoJaXNf",
+            "YWdyZWVkGAMgASgIEhEKCWFwcGx5X3VpZBgKIAEoDRINCgVwYXJhbRgMIAEo",
+            "DUIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.PlayerApplyEnterMpResultRsp), global::OldProtos.PlayerApplyEnterMpResultRsp.Parser, new[]{ "Retcode", "IsAgreed", "ApplyUid", "Param" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 1831
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class PlayerApplyEnterMpResultRsp : pb::IMessage<PlayerApplyEnterMpResultRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PlayerApplyEnterMpResultRsp> _parser = new pb::MessageParser<PlayerApplyEnterMpResultRsp>(() => new PlayerApplyEnterMpResultRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PlayerApplyEnterMpResultRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.PlayerApplyEnterMpResultRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerApplyEnterMpResultRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerApplyEnterMpResultRsp(PlayerApplyEnterMpResultRsp other) : this() {
+      retcode_ = other.retcode_;
+      isAgreed_ = other.isAgreed_;
+      applyUid_ = other.applyUid_;
+      param_ = other.param_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerApplyEnterMpResultRsp Clone() {
+      return new PlayerApplyEnterMpResultRsp(this);
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 1;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_agreed" field.</summary>
+    public const int IsAgreedFieldNumber = 3;
+    private bool isAgreed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsAgreed {
+      get { return isAgreed_; }
+      set {
+        isAgreed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "apply_uid" field.</summary>
+    public const int ApplyUidFieldNumber = 10;
+    private uint applyUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ApplyUid {
+      get { return applyUid_; }
+      set {
+        applyUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "param" field.</summary>
+    public const int ParamFieldNumber = 12;
+    private uint param_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Param {
+      get { return param_; }
+      set {
+        param_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PlayerApplyEnterMpResultRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PlayerApplyEnterMpResultRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Retcode != other.Retcode) return false;
+      if (IsAgreed != other.IsAgreed) return false;
+      if (ApplyUid != other.ApplyUid) return false;
+      if (Param != other.Param) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (IsAgreed != false) hash ^= IsAgreed.GetHashCode();
+      if (ApplyUid != 0) hash ^= ApplyUid.GetHashCode();
+      if (Param != 0) hash ^= Param.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Retcode != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Retcode);
+      }
+      if (IsAgreed != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsAgreed);
+      }
+      if (ApplyUid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ApplyUid);
+      }
+      if (Param != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Param);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Retcode != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Retcode);
+      }
+      if (IsAgreed != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsAgreed);
+      }
+      if (ApplyUid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ApplyUid);
+      }
+      if (Param != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Param);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (IsAgreed != false) {
+        size += 1 + 1;
+      }
+      if (ApplyUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ApplyUid);
+      }
+      if (Param != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PlayerApplyEnterMpResultRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.IsAgreed != false) {
+        IsAgreed = other.IsAgreed;
+      }
+      if (other.ApplyUid != 0) {
+        ApplyUid = other.ApplyUid;
+      }
+      if (other.Param != 0) {
+        Param = other.Param;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            IsAgreed = input.ReadBool();
+            break;
+          }
+          case 80: {
+            ApplyUid = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Param = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            IsAgreed = input.ReadBool();
+            break;
+          }
+          case 80: {
+            ApplyUid = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Param = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 1831
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class PlayerApplyEnterMpResultRsp : pb::IMessage<PlayerApplyEnterMpResultRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<PlayerApplyEnterMpResultRsp> _parser = new pb::MessageParser<PlayerApplyEnterMpResultRsp>(() => new PlayerApplyEnterMpResultRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<PlayerApplyEnterMpResultRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::PlayerApplyEnterMpResultRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerApplyEnterMpResultRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerApplyEnterMpResultRsp(PlayerApplyEnterMpResultRsp other) : this() {
-    retcode_ = other.retcode_;
-    isAgreed_ = other.isAgreed_;
-    applyUid_ = other.applyUid_;
-    param_ = other.param_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerApplyEnterMpResultRsp Clone() {
-    return new PlayerApplyEnterMpResultRsp(this);
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 1;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_agreed" field.</summary>
-  public const int IsAgreedFieldNumber = 3;
-  private bool isAgreed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsAgreed {
-    get { return isAgreed_; }
-    set {
-      isAgreed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "apply_uid" field.</summary>
-  public const int ApplyUidFieldNumber = 10;
-  private uint applyUid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ApplyUid {
-    get { return applyUid_; }
-    set {
-      applyUid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "param" field.</summary>
-  public const int ParamFieldNumber = 12;
-  private uint param_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Param {
-    get { return param_; }
-    set {
-      param_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as PlayerApplyEnterMpResultRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(PlayerApplyEnterMpResultRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Retcode != other.Retcode) return false;
-    if (IsAgreed != other.IsAgreed) return false;
-    if (ApplyUid != other.ApplyUid) return false;
-    if (Param != other.Param) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (IsAgreed != false) hash ^= IsAgreed.GetHashCode();
-    if (ApplyUid != 0) hash ^= ApplyUid.GetHashCode();
-    if (Param != 0) hash ^= Param.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Retcode != 0) {
-      output.WriteRawTag(8);
-      output.WriteInt32(Retcode);
-    }
-    if (IsAgreed != false) {
-      output.WriteRawTag(24);
-      output.WriteBool(IsAgreed);
-    }
-    if (ApplyUid != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(ApplyUid);
-    }
-    if (Param != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Param);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Retcode != 0) {
-      output.WriteRawTag(8);
-      output.WriteInt32(Retcode);
-    }
-    if (IsAgreed != false) {
-      output.WriteRawTag(24);
-      output.WriteBool(IsAgreed);
-    }
-    if (ApplyUid != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(ApplyUid);
-    }
-    if (Param != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Param);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (IsAgreed != false) {
-      size += 1 + 1;
-    }
-    if (ApplyUid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ApplyUid);
-    }
-    if (Param != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(PlayerApplyEnterMpResultRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.IsAgreed != false) {
-      IsAgreed = other.IsAgreed;
-    }
-    if (other.ApplyUid != 0) {
-      ApplyUid = other.ApplyUid;
-    }
-    if (other.Param != 0) {
-      Param = other.Param;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 24: {
-          IsAgreed = input.ReadBool();
-          break;
-        }
-        case 80: {
-          ApplyUid = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Param = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 24: {
-          IsAgreed = input.ReadBool();
-          break;
-        }
-        case 80: {
-          ApplyUid = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Param = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

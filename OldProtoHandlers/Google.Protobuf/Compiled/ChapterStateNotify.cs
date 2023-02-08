@@ -9,824 +9,827 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ChapterStateNotify.proto</summary>
-public static partial class ChapterStateNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ChapterStateNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ChapterStateNotify.proto</summary>
+  public static partial class ChapterStateNotifyReflection {
 
-  static ChapterStateNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhDaGFwdGVyU3RhdGVOb3RpZnkucHJvdG8aEkNoYXB0ZXJTdGF0ZS5wcm90",
-          "byLUAgoSQ2hhcHRlclN0YXRlTm90aWZ5EiQKDWNoYXB0ZXJfc3RhdGUYCSAB",
-          "KA4yDS5DaGFwdGVyU3RhdGUSPgoRbmVlZF9wbGF5ZXJfbGV2ZWwYCiABKAsy",
-          "Iy5DaGFwdGVyU3RhdGVOb3RpZnkuTmVlZFBsYXllckxldmVsEjoKD25lZWRf",
-          "YmVnaW5fdGltZRgBIAEoCzIhLkNoYXB0ZXJTdGF0ZU5vdGlmeS5OZWVkQmVn",
-          "aW5UaW1lEhIKCmNoYXB0ZXJfaWQYAiABKA0aRQoPTmVlZFBsYXllckxldmVs",
-          "EhAKCGlzX2xpbWl0GAIgASgIEiAKGGNvbmZpZ19uZWVkX3BsYXllcl9sZXZl",
-          "bBgLIAEoDRpBCg1OZWVkQmVnaW5UaW1lEh4KFmNvbmZpZ19uZWVkX2JlZ2lu",
-          "X3RpbWUYAyABKA0SEAoIaXNfbGltaXQYByABKAhCHgocZW11LmdyYXNzY3V0",
-          "dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ChapterStateReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ChapterStateNotify), global::ChapterStateNotify.Parser, new[]{ "ChapterState", "NeedPlayerLevel", "NeedBeginTime", "ChapterId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::ChapterStateNotify.Types.NeedPlayerLevel), global::ChapterStateNotify.Types.NeedPlayerLevel.Parser, new[]{ "IsLimit", "ConfigNeedPlayerLevel" }, null, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ChapterStateNotify.Types.NeedBeginTime), global::ChapterStateNotify.Types.NeedBeginTime.Parser, new[]{ "ConfigNeedBeginTime", "IsLimit" }, null, null, null, null)})
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ChapterStateNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ChapterStateNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhDaGFwdGVyU3RhdGVOb3RpZnkucHJvdG8aEkNoYXB0ZXJTdGF0ZS5wcm90",
+            "byLUAgoSQ2hhcHRlclN0YXRlTm90aWZ5EiQKDWNoYXB0ZXJfc3RhdGUYCSAB",
+            "KA4yDS5DaGFwdGVyU3RhdGUSPgoRbmVlZF9wbGF5ZXJfbGV2ZWwYCiABKAsy",
+            "Iy5DaGFwdGVyU3RhdGVOb3RpZnkuTmVlZFBsYXllckxldmVsEjoKD25lZWRf",
+            "YmVnaW5fdGltZRgBIAEoCzIhLkNoYXB0ZXJTdGF0ZU5vdGlmeS5OZWVkQmVn",
+            "aW5UaW1lEhIKCmNoYXB0ZXJfaWQYAiABKA0aRQoPTmVlZFBsYXllckxldmVs",
+            "EhAKCGlzX2xpbWl0GAIgASgIEiAKGGNvbmZpZ19uZWVkX3BsYXllcl9sZXZl",
+            "bBgLIAEoDRpBCg1OZWVkQmVnaW5UaW1lEh4KFmNvbmZpZ19uZWVkX2JlZ2lu",
+            "X3RpbWUYAyABKA0SEAoIaXNfbGltaXQYByABKAhCDKoCCU9sZFByb3Rvc2IG",
+            "cHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ChapterStateReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ChapterStateNotify), global::OldProtos.ChapterStateNotify.Parser, new[]{ "ChapterState", "NeedPlayerLevel", "NeedBeginTime", "ChapterId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ChapterStateNotify.Types.NeedPlayerLevel), global::OldProtos.ChapterStateNotify.Types.NeedPlayerLevel.Parser, new[]{ "IsLimit", "ConfigNeedPlayerLevel" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ChapterStateNotify.Types.NeedBeginTime), global::OldProtos.ChapterStateNotify.Types.NeedBeginTime.Parser, new[]{ "ConfigNeedBeginTime", "IsLimit" }, null, null, null, null)})
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 405
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class ChapterStateNotify : pb::IMessage<ChapterStateNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ChapterStateNotify> _parser = new pb::MessageParser<ChapterStateNotify>(() => new ChapterStateNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ChapterStateNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ChapterStateNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChapterStateNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChapterStateNotify(ChapterStateNotify other) : this() {
+      chapterState_ = other.chapterState_;
+      needPlayerLevel_ = other.needPlayerLevel_ != null ? other.needPlayerLevel_.Clone() : null;
+      needBeginTime_ = other.needBeginTime_ != null ? other.needBeginTime_.Clone() : null;
+      chapterId_ = other.chapterId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChapterStateNotify Clone() {
+      return new ChapterStateNotify(this);
+    }
+
+    /// <summary>Field number for the "chapter_state" field.</summary>
+    public const int ChapterStateFieldNumber = 9;
+    private global::OldProtos.ChapterState chapterState_ = global::OldProtos.ChapterState.Invalid;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ChapterState ChapterState {
+      get { return chapterState_; }
+      set {
+        chapterState_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "need_player_level" field.</summary>
+    public const int NeedPlayerLevelFieldNumber = 10;
+    private global::OldProtos.ChapterStateNotify.Types.NeedPlayerLevel needPlayerLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ChapterStateNotify.Types.NeedPlayerLevel NeedPlayerLevel {
+      get { return needPlayerLevel_; }
+      set {
+        needPlayerLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "need_begin_time" field.</summary>
+    public const int NeedBeginTimeFieldNumber = 1;
+    private global::OldProtos.ChapterStateNotify.Types.NeedBeginTime needBeginTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ChapterStateNotify.Types.NeedBeginTime NeedBeginTime {
+      get { return needBeginTime_; }
+      set {
+        needBeginTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "chapter_id" field.</summary>
+    public const int ChapterIdFieldNumber = 2;
+    private uint chapterId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChapterId {
+      get { return chapterId_; }
+      set {
+        chapterId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ChapterStateNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ChapterStateNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ChapterState != other.ChapterState) return false;
+      if (!object.Equals(NeedPlayerLevel, other.NeedPlayerLevel)) return false;
+      if (!object.Equals(NeedBeginTime, other.NeedBeginTime)) return false;
+      if (ChapterId != other.ChapterId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ChapterState != global::OldProtos.ChapterState.Invalid) hash ^= ChapterState.GetHashCode();
+      if (needPlayerLevel_ != null) hash ^= NeedPlayerLevel.GetHashCode();
+      if (needBeginTime_ != null) hash ^= NeedBeginTime.GetHashCode();
+      if (ChapterId != 0) hash ^= ChapterId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (needBeginTime_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(NeedBeginTime);
+      }
+      if (ChapterId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ChapterId);
+      }
+      if (ChapterState != global::OldProtos.ChapterState.Invalid) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) ChapterState);
+      }
+      if (needPlayerLevel_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(NeedPlayerLevel);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (needBeginTime_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(NeedBeginTime);
+      }
+      if (ChapterId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ChapterId);
+      }
+      if (ChapterState != global::OldProtos.ChapterState.Invalid) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) ChapterState);
+      }
+      if (needPlayerLevel_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(NeedPlayerLevel);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ChapterState != global::OldProtos.ChapterState.Invalid) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChapterState);
+      }
+      if (needPlayerLevel_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(NeedPlayerLevel);
+      }
+      if (needBeginTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(NeedBeginTime);
+      }
+      if (ChapterId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChapterId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ChapterStateNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ChapterState != global::OldProtos.ChapterState.Invalid) {
+        ChapterState = other.ChapterState;
+      }
+      if (other.needPlayerLevel_ != null) {
+        if (needPlayerLevel_ == null) {
+          NeedPlayerLevel = new global::OldProtos.ChapterStateNotify.Types.NeedPlayerLevel();
+        }
+        NeedPlayerLevel.MergeFrom(other.NeedPlayerLevel);
+      }
+      if (other.needBeginTime_ != null) {
+        if (needBeginTime_ == null) {
+          NeedBeginTime = new global::OldProtos.ChapterStateNotify.Types.NeedBeginTime();
+        }
+        NeedBeginTime.MergeFrom(other.NeedBeginTime);
+      }
+      if (other.ChapterId != 0) {
+        ChapterId = other.ChapterId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (needBeginTime_ == null) {
+              NeedBeginTime = new global::OldProtos.ChapterStateNotify.Types.NeedBeginTime();
+            }
+            input.ReadMessage(NeedBeginTime);
+            break;
+          }
+          case 16: {
+            ChapterId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            ChapterState = (global::OldProtos.ChapterState) input.ReadEnum();
+            break;
+          }
+          case 82: {
+            if (needPlayerLevel_ == null) {
+              NeedPlayerLevel = new global::OldProtos.ChapterStateNotify.Types.NeedPlayerLevel();
+            }
+            input.ReadMessage(NeedPlayerLevel);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (needBeginTime_ == null) {
+              NeedBeginTime = new global::OldProtos.ChapterStateNotify.Types.NeedBeginTime();
+            }
+            input.ReadMessage(NeedBeginTime);
+            break;
+          }
+          case 16: {
+            ChapterId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            ChapterState = (global::OldProtos.ChapterState) input.ReadEnum();
+            break;
+          }
+          case 82: {
+            if (needPlayerLevel_ == null) {
+              NeedPlayerLevel = new global::OldProtos.ChapterStateNotify.Types.NeedPlayerLevel();
+            }
+            input.ReadMessage(NeedPlayerLevel);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the ChapterStateNotify message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public sealed partial class NeedPlayerLevel : pb::IMessage<NeedPlayerLevel>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<NeedPlayerLevel> _parser = new pb::MessageParser<NeedPlayerLevel>(() => new NeedPlayerLevel());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<NeedPlayerLevel> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::OldProtos.ChapterStateNotify.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NeedPlayerLevel() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NeedPlayerLevel(NeedPlayerLevel other) : this() {
+          isLimit_ = other.isLimit_;
+          configNeedPlayerLevel_ = other.configNeedPlayerLevel_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NeedPlayerLevel Clone() {
+          return new NeedPlayerLevel(this);
+        }
+
+        /// <summary>Field number for the "is_limit" field.</summary>
+        public const int IsLimitFieldNumber = 2;
+        private bool isLimit_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool IsLimit {
+          get { return isLimit_; }
+          set {
+            isLimit_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "config_need_player_level" field.</summary>
+        public const int ConfigNeedPlayerLevelFieldNumber = 11;
+        private uint configNeedPlayerLevel_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint ConfigNeedPlayerLevel {
+          get { return configNeedPlayerLevel_; }
+          set {
+            configNeedPlayerLevel_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as NeedPlayerLevel);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(NeedPlayerLevel other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (IsLimit != other.IsLimit) return false;
+          if (ConfigNeedPlayerLevel != other.ConfigNeedPlayerLevel) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (IsLimit != false) hash ^= IsLimit.GetHashCode();
+          if (ConfigNeedPlayerLevel != 0) hash ^= ConfigNeedPlayerLevel.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (IsLimit != false) {
+            output.WriteRawTag(16);
+            output.WriteBool(IsLimit);
+          }
+          if (ConfigNeedPlayerLevel != 0) {
+            output.WriteRawTag(88);
+            output.WriteUInt32(ConfigNeedPlayerLevel);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (IsLimit != false) {
+            output.WriteRawTag(16);
+            output.WriteBool(IsLimit);
+          }
+          if (ConfigNeedPlayerLevel != 0) {
+            output.WriteRawTag(88);
+            output.WriteUInt32(ConfigNeedPlayerLevel);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (IsLimit != false) {
+            size += 1 + 1;
+          }
+          if (ConfigNeedPlayerLevel != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigNeedPlayerLevel);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(NeedPlayerLevel other) {
+          if (other == null) {
+            return;
+          }
+          if (other.IsLimit != false) {
+            IsLimit = other.IsLimit;
+          }
+          if (other.ConfigNeedPlayerLevel != 0) {
+            ConfigNeedPlayerLevel = other.ConfigNeedPlayerLevel;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 16: {
+                IsLimit = input.ReadBool();
+                break;
+              }
+              case 88: {
+                ConfigNeedPlayerLevel = input.ReadUInt32();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 16: {
+                IsLimit = input.ReadBool();
+                break;
+              }
+              case 88: {
+                ConfigNeedPlayerLevel = input.ReadUInt32();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+      public sealed partial class NeedBeginTime : pb::IMessage<NeedBeginTime>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<NeedBeginTime> _parser = new pb::MessageParser<NeedBeginTime>(() => new NeedBeginTime());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<NeedBeginTime> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::OldProtos.ChapterStateNotify.Descriptor.NestedTypes[1]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NeedBeginTime() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NeedBeginTime(NeedBeginTime other) : this() {
+          configNeedBeginTime_ = other.configNeedBeginTime_;
+          isLimit_ = other.isLimit_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public NeedBeginTime Clone() {
+          return new NeedBeginTime(this);
+        }
+
+        /// <summary>Field number for the "config_need_begin_time" field.</summary>
+        public const int ConfigNeedBeginTimeFieldNumber = 3;
+        private uint configNeedBeginTime_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint ConfigNeedBeginTime {
+          get { return configNeedBeginTime_; }
+          set {
+            configNeedBeginTime_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "is_limit" field.</summary>
+        public const int IsLimitFieldNumber = 7;
+        private bool isLimit_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool IsLimit {
+          get { return isLimit_; }
+          set {
+            isLimit_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as NeedBeginTime);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(NeedBeginTime other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (ConfigNeedBeginTime != other.ConfigNeedBeginTime) return false;
+          if (IsLimit != other.IsLimit) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (ConfigNeedBeginTime != 0) hash ^= ConfigNeedBeginTime.GetHashCode();
+          if (IsLimit != false) hash ^= IsLimit.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (ConfigNeedBeginTime != 0) {
+            output.WriteRawTag(24);
+            output.WriteUInt32(ConfigNeedBeginTime);
+          }
+          if (IsLimit != false) {
+            output.WriteRawTag(56);
+            output.WriteBool(IsLimit);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (ConfigNeedBeginTime != 0) {
+            output.WriteRawTag(24);
+            output.WriteUInt32(ConfigNeedBeginTime);
+          }
+          if (IsLimit != false) {
+            output.WriteRawTag(56);
+            output.WriteBool(IsLimit);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (ConfigNeedBeginTime != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigNeedBeginTime);
+          }
+          if (IsLimit != false) {
+            size += 1 + 1;
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(NeedBeginTime other) {
+          if (other == null) {
+            return;
+          }
+          if (other.ConfigNeedBeginTime != 0) {
+            ConfigNeedBeginTime = other.ConfigNeedBeginTime;
+          }
+          if (other.IsLimit != false) {
+            IsLimit = other.IsLimit;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 24: {
+                ConfigNeedBeginTime = input.ReadUInt32();
+                break;
+              }
+              case 56: {
+                IsLimit = input.ReadBool();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 24: {
+                ConfigNeedBeginTime = input.ReadUInt32();
+                break;
+              }
+              case 56: {
+                IsLimit = input.ReadBool();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+    }
+    #endregion
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 405
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class ChapterStateNotify : pb::IMessage<ChapterStateNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ChapterStateNotify> _parser = new pb::MessageParser<ChapterStateNotify>(() => new ChapterStateNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ChapterStateNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ChapterStateNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChapterStateNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChapterStateNotify(ChapterStateNotify other) : this() {
-    chapterState_ = other.chapterState_;
-    needPlayerLevel_ = other.needPlayerLevel_ != null ? other.needPlayerLevel_.Clone() : null;
-    needBeginTime_ = other.needBeginTime_ != null ? other.needBeginTime_.Clone() : null;
-    chapterId_ = other.chapterId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChapterStateNotify Clone() {
-    return new ChapterStateNotify(this);
-  }
-
-  /// <summary>Field number for the "chapter_state" field.</summary>
-  public const int ChapterStateFieldNumber = 9;
-  private global::ChapterState chapterState_ = global::ChapterState.Invalid;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ChapterState ChapterState {
-    get { return chapterState_; }
-    set {
-      chapterState_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "need_player_level" field.</summary>
-  public const int NeedPlayerLevelFieldNumber = 10;
-  private global::ChapterStateNotify.Types.NeedPlayerLevel needPlayerLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ChapterStateNotify.Types.NeedPlayerLevel NeedPlayerLevel {
-    get { return needPlayerLevel_; }
-    set {
-      needPlayerLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "need_begin_time" field.</summary>
-  public const int NeedBeginTimeFieldNumber = 1;
-  private global::ChapterStateNotify.Types.NeedBeginTime needBeginTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ChapterStateNotify.Types.NeedBeginTime NeedBeginTime {
-    get { return needBeginTime_; }
-    set {
-      needBeginTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "chapter_id" field.</summary>
-  public const int ChapterIdFieldNumber = 2;
-  private uint chapterId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChapterId {
-    get { return chapterId_; }
-    set {
-      chapterId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ChapterStateNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ChapterStateNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ChapterState != other.ChapterState) return false;
-    if (!object.Equals(NeedPlayerLevel, other.NeedPlayerLevel)) return false;
-    if (!object.Equals(NeedBeginTime, other.NeedBeginTime)) return false;
-    if (ChapterId != other.ChapterId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ChapterState != global::ChapterState.Invalid) hash ^= ChapterState.GetHashCode();
-    if (needPlayerLevel_ != null) hash ^= NeedPlayerLevel.GetHashCode();
-    if (needBeginTime_ != null) hash ^= NeedBeginTime.GetHashCode();
-    if (ChapterId != 0) hash ^= ChapterId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (needBeginTime_ != null) {
-      output.WriteRawTag(10);
-      output.WriteMessage(NeedBeginTime);
-    }
-    if (ChapterId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(ChapterId);
-    }
-    if (ChapterState != global::ChapterState.Invalid) {
-      output.WriteRawTag(72);
-      output.WriteEnum((int) ChapterState);
-    }
-    if (needPlayerLevel_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(NeedPlayerLevel);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (needBeginTime_ != null) {
-      output.WriteRawTag(10);
-      output.WriteMessage(NeedBeginTime);
-    }
-    if (ChapterId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(ChapterId);
-    }
-    if (ChapterState != global::ChapterState.Invalid) {
-      output.WriteRawTag(72);
-      output.WriteEnum((int) ChapterState);
-    }
-    if (needPlayerLevel_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(NeedPlayerLevel);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ChapterState != global::ChapterState.Invalid) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChapterState);
-    }
-    if (needPlayerLevel_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(NeedPlayerLevel);
-    }
-    if (needBeginTime_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(NeedBeginTime);
-    }
-    if (ChapterId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChapterId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ChapterStateNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ChapterState != global::ChapterState.Invalid) {
-      ChapterState = other.ChapterState;
-    }
-    if (other.needPlayerLevel_ != null) {
-      if (needPlayerLevel_ == null) {
-        NeedPlayerLevel = new global::ChapterStateNotify.Types.NeedPlayerLevel();
-      }
-      NeedPlayerLevel.MergeFrom(other.NeedPlayerLevel);
-    }
-    if (other.needBeginTime_ != null) {
-      if (needBeginTime_ == null) {
-        NeedBeginTime = new global::ChapterStateNotify.Types.NeedBeginTime();
-      }
-      NeedBeginTime.MergeFrom(other.NeedBeginTime);
-    }
-    if (other.ChapterId != 0) {
-      ChapterId = other.ChapterId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          if (needBeginTime_ == null) {
-            NeedBeginTime = new global::ChapterStateNotify.Types.NeedBeginTime();
-          }
-          input.ReadMessage(NeedBeginTime);
-          break;
-        }
-        case 16: {
-          ChapterId = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          ChapterState = (global::ChapterState) input.ReadEnum();
-          break;
-        }
-        case 82: {
-          if (needPlayerLevel_ == null) {
-            NeedPlayerLevel = new global::ChapterStateNotify.Types.NeedPlayerLevel();
-          }
-          input.ReadMessage(NeedPlayerLevel);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          if (needBeginTime_ == null) {
-            NeedBeginTime = new global::ChapterStateNotify.Types.NeedBeginTime();
-          }
-          input.ReadMessage(NeedBeginTime);
-          break;
-        }
-        case 16: {
-          ChapterId = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          ChapterState = (global::ChapterState) input.ReadEnum();
-          break;
-        }
-        case 82: {
-          if (needPlayerLevel_ == null) {
-            NeedPlayerLevel = new global::ChapterStateNotify.Types.NeedPlayerLevel();
-          }
-          input.ReadMessage(NeedPlayerLevel);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-  #region Nested types
-  /// <summary>Container for nested types declared in the ChapterStateNotify message type.</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static partial class Types {
-    public sealed partial class NeedPlayerLevel : pb::IMessage<NeedPlayerLevel>
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        , pb::IBufferMessage
-    #endif
-    {
-      private static readonly pb::MessageParser<NeedPlayerLevel> _parser = new pb::MessageParser<NeedPlayerLevel>(() => new NeedPlayerLevel());
-      private pb::UnknownFieldSet _unknownFields;
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public static pb::MessageParser<NeedPlayerLevel> Parser { get { return _parser; } }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public static pbr::MessageDescriptor Descriptor {
-        get { return global::ChapterStateNotify.Descriptor.NestedTypes[0]; }
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      pbr::MessageDescriptor pb::IMessage.Descriptor {
-        get { return Descriptor; }
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public NeedPlayerLevel() {
-        OnConstruction();
-      }
-
-      partial void OnConstruction();
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public NeedPlayerLevel(NeedPlayerLevel other) : this() {
-        isLimit_ = other.isLimit_;
-        configNeedPlayerLevel_ = other.configNeedPlayerLevel_;
-        _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public NeedPlayerLevel Clone() {
-        return new NeedPlayerLevel(this);
-      }
-
-      /// <summary>Field number for the "is_limit" field.</summary>
-      public const int IsLimitFieldNumber = 2;
-      private bool isLimit_;
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public bool IsLimit {
-        get { return isLimit_; }
-        set {
-          isLimit_ = value;
-        }
-      }
-
-      /// <summary>Field number for the "config_need_player_level" field.</summary>
-      public const int ConfigNeedPlayerLevelFieldNumber = 11;
-      private uint configNeedPlayerLevel_;
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public uint ConfigNeedPlayerLevel {
-        get { return configNeedPlayerLevel_; }
-        set {
-          configNeedPlayerLevel_ = value;
-        }
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public override bool Equals(object other) {
-        return Equals(other as NeedPlayerLevel);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public bool Equals(NeedPlayerLevel other) {
-        if (ReferenceEquals(other, null)) {
-          return false;
-        }
-        if (ReferenceEquals(other, this)) {
-          return true;
-        }
-        if (IsLimit != other.IsLimit) return false;
-        if (ConfigNeedPlayerLevel != other.ConfigNeedPlayerLevel) return false;
-        return Equals(_unknownFields, other._unknownFields);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public override int GetHashCode() {
-        int hash = 1;
-        if (IsLimit != false) hash ^= IsLimit.GetHashCode();
-        if (ConfigNeedPlayerLevel != 0) hash ^= ConfigNeedPlayerLevel.GetHashCode();
-        if (_unknownFields != null) {
-          hash ^= _unknownFields.GetHashCode();
-        }
-        return hash;
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public override string ToString() {
-        return pb::JsonFormatter.ToDiagnosticString(this);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public void WriteTo(pb::CodedOutputStream output) {
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        output.WriteRawMessage(this);
-      #else
-        if (IsLimit != false) {
-          output.WriteRawTag(16);
-          output.WriteBool(IsLimit);
-        }
-        if (ConfigNeedPlayerLevel != 0) {
-          output.WriteRawTag(88);
-          output.WriteUInt32(ConfigNeedPlayerLevel);
-        }
-        if (_unknownFields != null) {
-          _unknownFields.WriteTo(output);
-        }
-      #endif
-      }
-
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-        if (IsLimit != false) {
-          output.WriteRawTag(16);
-          output.WriteBool(IsLimit);
-        }
-        if (ConfigNeedPlayerLevel != 0) {
-          output.WriteRawTag(88);
-          output.WriteUInt32(ConfigNeedPlayerLevel);
-        }
-        if (_unknownFields != null) {
-          _unknownFields.WriteTo(ref output);
-        }
-      }
-      #endif
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public int CalculateSize() {
-        int size = 0;
-        if (IsLimit != false) {
-          size += 1 + 1;
-        }
-        if (ConfigNeedPlayerLevel != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigNeedPlayerLevel);
-        }
-        if (_unknownFields != null) {
-          size += _unknownFields.CalculateSize();
-        }
-        return size;
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public void MergeFrom(NeedPlayerLevel other) {
-        if (other == null) {
-          return;
-        }
-        if (other.IsLimit != false) {
-          IsLimit = other.IsLimit;
-        }
-        if (other.ConfigNeedPlayerLevel != 0) {
-          ConfigNeedPlayerLevel = other.ConfigNeedPlayerLevel;
-        }
-        _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public void MergeFrom(pb::CodedInputStream input) {
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        input.ReadRawMessage(this);
-      #else
-        uint tag;
-        while ((tag = input.ReadTag()) != 0) {
-          switch(tag) {
-            default:
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-              break;
-            case 16: {
-              IsLimit = input.ReadBool();
-              break;
-            }
-            case 88: {
-              ConfigNeedPlayerLevel = input.ReadUInt32();
-              break;
-            }
-          }
-        }
-      #endif
-      }
-
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-        uint tag;
-        while ((tag = input.ReadTag()) != 0) {
-          switch(tag) {
-            default:
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-              break;
-            case 16: {
-              IsLimit = input.ReadBool();
-              break;
-            }
-            case 88: {
-              ConfigNeedPlayerLevel = input.ReadUInt32();
-              break;
-            }
-          }
-        }
-      }
-      #endif
-
-    }
-
-    public sealed partial class NeedBeginTime : pb::IMessage<NeedBeginTime>
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        , pb::IBufferMessage
-    #endif
-    {
-      private static readonly pb::MessageParser<NeedBeginTime> _parser = new pb::MessageParser<NeedBeginTime>(() => new NeedBeginTime());
-      private pb::UnknownFieldSet _unknownFields;
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public static pb::MessageParser<NeedBeginTime> Parser { get { return _parser; } }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public static pbr::MessageDescriptor Descriptor {
-        get { return global::ChapterStateNotify.Descriptor.NestedTypes[1]; }
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      pbr::MessageDescriptor pb::IMessage.Descriptor {
-        get { return Descriptor; }
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public NeedBeginTime() {
-        OnConstruction();
-      }
-
-      partial void OnConstruction();
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public NeedBeginTime(NeedBeginTime other) : this() {
-        configNeedBeginTime_ = other.configNeedBeginTime_;
-        isLimit_ = other.isLimit_;
-        _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public NeedBeginTime Clone() {
-        return new NeedBeginTime(this);
-      }
-
-      /// <summary>Field number for the "config_need_begin_time" field.</summary>
-      public const int ConfigNeedBeginTimeFieldNumber = 3;
-      private uint configNeedBeginTime_;
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public uint ConfigNeedBeginTime {
-        get { return configNeedBeginTime_; }
-        set {
-          configNeedBeginTime_ = value;
-        }
-      }
-
-      /// <summary>Field number for the "is_limit" field.</summary>
-      public const int IsLimitFieldNumber = 7;
-      private bool isLimit_;
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public bool IsLimit {
-        get { return isLimit_; }
-        set {
-          isLimit_ = value;
-        }
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public override bool Equals(object other) {
-        return Equals(other as NeedBeginTime);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public bool Equals(NeedBeginTime other) {
-        if (ReferenceEquals(other, null)) {
-          return false;
-        }
-        if (ReferenceEquals(other, this)) {
-          return true;
-        }
-        if (ConfigNeedBeginTime != other.ConfigNeedBeginTime) return false;
-        if (IsLimit != other.IsLimit) return false;
-        return Equals(_unknownFields, other._unknownFields);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public override int GetHashCode() {
-        int hash = 1;
-        if (ConfigNeedBeginTime != 0) hash ^= ConfigNeedBeginTime.GetHashCode();
-        if (IsLimit != false) hash ^= IsLimit.GetHashCode();
-        if (_unknownFields != null) {
-          hash ^= _unknownFields.GetHashCode();
-        }
-        return hash;
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public override string ToString() {
-        return pb::JsonFormatter.ToDiagnosticString(this);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public void WriteTo(pb::CodedOutputStream output) {
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        output.WriteRawMessage(this);
-      #else
-        if (ConfigNeedBeginTime != 0) {
-          output.WriteRawTag(24);
-          output.WriteUInt32(ConfigNeedBeginTime);
-        }
-        if (IsLimit != false) {
-          output.WriteRawTag(56);
-          output.WriteBool(IsLimit);
-        }
-        if (_unknownFields != null) {
-          _unknownFields.WriteTo(output);
-        }
-      #endif
-      }
-
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-        if (ConfigNeedBeginTime != 0) {
-          output.WriteRawTag(24);
-          output.WriteUInt32(ConfigNeedBeginTime);
-        }
-        if (IsLimit != false) {
-          output.WriteRawTag(56);
-          output.WriteBool(IsLimit);
-        }
-        if (_unknownFields != null) {
-          _unknownFields.WriteTo(ref output);
-        }
-      }
-      #endif
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public int CalculateSize() {
-        int size = 0;
-        if (ConfigNeedBeginTime != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigNeedBeginTime);
-        }
-        if (IsLimit != false) {
-          size += 1 + 1;
-        }
-        if (_unknownFields != null) {
-          size += _unknownFields.CalculateSize();
-        }
-        return size;
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public void MergeFrom(NeedBeginTime other) {
-        if (other == null) {
-          return;
-        }
-        if (other.ConfigNeedBeginTime != 0) {
-          ConfigNeedBeginTime = other.ConfigNeedBeginTime;
-        }
-        if (other.IsLimit != false) {
-          IsLimit = other.IsLimit;
-        }
-        _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public void MergeFrom(pb::CodedInputStream input) {
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        input.ReadRawMessage(this);
-      #else
-        uint tag;
-        while ((tag = input.ReadTag()) != 0) {
-          switch(tag) {
-            default:
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-              break;
-            case 24: {
-              ConfigNeedBeginTime = input.ReadUInt32();
-              break;
-            }
-            case 56: {
-              IsLimit = input.ReadBool();
-              break;
-            }
-          }
-        }
-      #endif
-      }
-
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-        uint tag;
-        while ((tag = input.ReadTag()) != 0) {
-          switch(tag) {
-            default:
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-              break;
-            case 24: {
-              ConfigNeedBeginTime = input.ReadUInt32();
-              break;
-            }
-            case 56: {
-              IsLimit = input.ReadBool();
-              break;
-            }
-          }
-        }
-      }
-      #endif
-
-    }
-
-  }
-  #endregion
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

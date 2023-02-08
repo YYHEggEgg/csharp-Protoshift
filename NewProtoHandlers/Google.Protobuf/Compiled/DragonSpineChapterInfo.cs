@@ -9,372 +9,375 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from DragonSpineChapterInfo.proto</summary>
-public static partial class DragonSpineChapterInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for DragonSpineChapterInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from DragonSpineChapterInfo.proto</summary>
+  public static partial class DragonSpineChapterInfoReflection {
 
-  static DragonSpineChapterInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChxEcmFnb25TcGluZUNoYXB0ZXJJbmZvLnByb3RvIoABChZEcmFnb25TcGlu",
-          "ZUNoYXB0ZXJJbmZvEhEKCW9wZW5fdGltZRgBIAEoDRIQCghwcm9ncmVzcxgM",
-          "IAEoDRISCgpjaGFwdGVyX2lkGAYgASgNEhwKFGZpbmlzaGVkX21pc3Npb25f",
-          "bnVtGAUgASgNEg8KB2lzX29wZW4YAiABKAhCFgoUb3JnLnNvcmFwb2ludGEu",
-          "cHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::DragonSpineChapterInfo), global::DragonSpineChapterInfo.Parser, new[]{ "OpenTime", "Progress", "ChapterId", "FinishedMissionNum", "IsOpen" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for DragonSpineChapterInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static DragonSpineChapterInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChxEcmFnb25TcGluZUNoYXB0ZXJJbmZvLnByb3RvIoABChZEcmFnb25TcGlu",
+            "ZUNoYXB0ZXJJbmZvEhEKCW9wZW5fdGltZRgBIAEoDRIQCghwcm9ncmVzcxgM",
+            "IAEoDRISCgpjaGFwdGVyX2lkGAYgASgNEhwKFGZpbmlzaGVkX21pc3Npb25f",
+            "bnVtGAUgASgNEg8KB2lzX29wZW4YAiABKAhCDKoCCU5ld1Byb3Rvc2IGcHJv",
+            "dG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.DragonSpineChapterInfo), global::NewProtos.DragonSpineChapterInfo.Parser, new[]{ "OpenTime", "Progress", "ChapterId", "FinishedMissionNum", "IsOpen" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class DragonSpineChapterInfo : pb::IMessage<DragonSpineChapterInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DragonSpineChapterInfo> _parser = new pb::MessageParser<DragonSpineChapterInfo>(() => new DragonSpineChapterInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DragonSpineChapterInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.DragonSpineChapterInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DragonSpineChapterInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DragonSpineChapterInfo(DragonSpineChapterInfo other) : this() {
+      openTime_ = other.openTime_;
+      progress_ = other.progress_;
+      chapterId_ = other.chapterId_;
+      finishedMissionNum_ = other.finishedMissionNum_;
+      isOpen_ = other.isOpen_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DragonSpineChapterInfo Clone() {
+      return new DragonSpineChapterInfo(this);
+    }
+
+    /// <summary>Field number for the "open_time" field.</summary>
+    public const int OpenTimeFieldNumber = 1;
+    private uint openTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OpenTime {
+      get { return openTime_; }
+      set {
+        openTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "progress" field.</summary>
+    public const int ProgressFieldNumber = 12;
+    private uint progress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Progress {
+      get { return progress_; }
+      set {
+        progress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "chapter_id" field.</summary>
+    public const int ChapterIdFieldNumber = 6;
+    private uint chapterId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChapterId {
+      get { return chapterId_; }
+      set {
+        chapterId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "finished_mission_num" field.</summary>
+    public const int FinishedMissionNumFieldNumber = 5;
+    private uint finishedMissionNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FinishedMissionNum {
+      get { return finishedMissionNum_; }
+      set {
+        finishedMissionNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_open" field.</summary>
+    public const int IsOpenFieldNumber = 2;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DragonSpineChapterInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DragonSpineChapterInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (OpenTime != other.OpenTime) return false;
+      if (Progress != other.Progress) return false;
+      if (ChapterId != other.ChapterId) return false;
+      if (FinishedMissionNum != other.FinishedMissionNum) return false;
+      if (IsOpen != other.IsOpen) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
+      if (Progress != 0) hash ^= Progress.GetHashCode();
+      if (ChapterId != 0) hash ^= ChapterId.GetHashCode();
+      if (FinishedMissionNum != 0) hash ^= FinishedMissionNum.GetHashCode();
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (OpenTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(OpenTime);
+      }
+      if (IsOpen != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsOpen);
+      }
+      if (FinishedMissionNum != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(FinishedMissionNum);
+      }
+      if (ChapterId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ChapterId);
+      }
+      if (Progress != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Progress);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (OpenTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(OpenTime);
+      }
+      if (IsOpen != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsOpen);
+      }
+      if (FinishedMissionNum != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(FinishedMissionNum);
+      }
+      if (ChapterId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ChapterId);
+      }
+      if (Progress != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Progress);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (OpenTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
+      }
+      if (Progress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
+      }
+      if (ChapterId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChapterId);
+      }
+      if (FinishedMissionNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishedMissionNum);
+      }
+      if (IsOpen != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DragonSpineChapterInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.OpenTime != 0) {
+        OpenTime = other.OpenTime;
+      }
+      if (other.Progress != 0) {
+        Progress = other.Progress;
+      }
+      if (other.ChapterId != 0) {
+        ChapterId = other.ChapterId;
+      }
+      if (other.FinishedMissionNum != 0) {
+        FinishedMissionNum = other.FinishedMissionNum;
+      }
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+          case 40: {
+            FinishedMissionNum = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            ChapterId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Progress = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            OpenTime = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+          case 40: {
+            FinishedMissionNum = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            ChapterId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Progress = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class DragonSpineChapterInfo : pb::IMessage<DragonSpineChapterInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<DragonSpineChapterInfo> _parser = new pb::MessageParser<DragonSpineChapterInfo>(() => new DragonSpineChapterInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<DragonSpineChapterInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::DragonSpineChapterInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DragonSpineChapterInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DragonSpineChapterInfo(DragonSpineChapterInfo other) : this() {
-    openTime_ = other.openTime_;
-    progress_ = other.progress_;
-    chapterId_ = other.chapterId_;
-    finishedMissionNum_ = other.finishedMissionNum_;
-    isOpen_ = other.isOpen_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DragonSpineChapterInfo Clone() {
-    return new DragonSpineChapterInfo(this);
-  }
-
-  /// <summary>Field number for the "open_time" field.</summary>
-  public const int OpenTimeFieldNumber = 1;
-  private uint openTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint OpenTime {
-    get { return openTime_; }
-    set {
-      openTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "progress" field.</summary>
-  public const int ProgressFieldNumber = 12;
-  private uint progress_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Progress {
-    get { return progress_; }
-    set {
-      progress_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "chapter_id" field.</summary>
-  public const int ChapterIdFieldNumber = 6;
-  private uint chapterId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChapterId {
-    get { return chapterId_; }
-    set {
-      chapterId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "finished_mission_num" field.</summary>
-  public const int FinishedMissionNumFieldNumber = 5;
-  private uint finishedMissionNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FinishedMissionNum {
-    get { return finishedMissionNum_; }
-    set {
-      finishedMissionNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_open" field.</summary>
-  public const int IsOpenFieldNumber = 2;
-  private bool isOpen_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsOpen {
-    get { return isOpen_; }
-    set {
-      isOpen_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as DragonSpineChapterInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(DragonSpineChapterInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (OpenTime != other.OpenTime) return false;
-    if (Progress != other.Progress) return false;
-    if (ChapterId != other.ChapterId) return false;
-    if (FinishedMissionNum != other.FinishedMissionNum) return false;
-    if (IsOpen != other.IsOpen) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (OpenTime != 0) hash ^= OpenTime.GetHashCode();
-    if (Progress != 0) hash ^= Progress.GetHashCode();
-    if (ChapterId != 0) hash ^= ChapterId.GetHashCode();
-    if (FinishedMissionNum != 0) hash ^= FinishedMissionNum.GetHashCode();
-    if (IsOpen != false) hash ^= IsOpen.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (OpenTime != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(OpenTime);
-    }
-    if (IsOpen != false) {
-      output.WriteRawTag(16);
-      output.WriteBool(IsOpen);
-    }
-    if (FinishedMissionNum != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(FinishedMissionNum);
-    }
-    if (ChapterId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(ChapterId);
-    }
-    if (Progress != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Progress);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (OpenTime != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(OpenTime);
-    }
-    if (IsOpen != false) {
-      output.WriteRawTag(16);
-      output.WriteBool(IsOpen);
-    }
-    if (FinishedMissionNum != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(FinishedMissionNum);
-    }
-    if (ChapterId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(ChapterId);
-    }
-    if (Progress != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Progress);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (OpenTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpenTime);
-    }
-    if (Progress != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Progress);
-    }
-    if (ChapterId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChapterId);
-    }
-    if (FinishedMissionNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishedMissionNum);
-    }
-    if (IsOpen != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(DragonSpineChapterInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.OpenTime != 0) {
-      OpenTime = other.OpenTime;
-    }
-    if (other.Progress != 0) {
-      Progress = other.Progress;
-    }
-    if (other.ChapterId != 0) {
-      ChapterId = other.ChapterId;
-    }
-    if (other.FinishedMissionNum != 0) {
-      FinishedMissionNum = other.FinishedMissionNum;
-    }
-    if (other.IsOpen != false) {
-      IsOpen = other.IsOpen;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          OpenTime = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          IsOpen = input.ReadBool();
-          break;
-        }
-        case 40: {
-          FinishedMissionNum = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          ChapterId = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Progress = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          OpenTime = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          IsOpen = input.ReadBool();
-          break;
-        }
-        case 40: {
-          FinishedMissionNum = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          ChapterId = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Progress = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

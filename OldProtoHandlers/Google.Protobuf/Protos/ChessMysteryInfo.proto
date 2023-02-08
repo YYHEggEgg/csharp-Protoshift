@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ChessEntranceDetailInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message ChessMysteryInfo {
   map<uint32, uint32> entrance_point_map = 13;

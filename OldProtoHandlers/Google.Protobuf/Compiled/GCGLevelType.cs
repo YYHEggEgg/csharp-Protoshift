@@ -9,43 +9,45 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGLevelType.proto</summary>
-public static partial class GCGLevelTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGLevelType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGLevelType.proto</summary>
+  public static partial class GCGLevelTypeReflection {
 
-  static GCGLevelTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChJHQ0dMZXZlbFR5cGUucHJvdG8qqwEKDEdDR0xldmVsVHlwZRIXChNHQ0df",
-          "TEVWRUxfVFlQRV9OT05FEAASGAoUR0NHX0xFVkVMX1RZUEVfQ09OU1QQARIX",
-          "ChNHQ0dfTEVWRUxfVFlQRV9XRUVLEAISGAoUR0NHX0xFVkVMX1RZUEVfV09S",
-          "TEQQAxIXChNHQ0dfTEVWRUxfVFlQRV9CT1NTEAQSHAoYR0NHX0xFVkVMX1RZ",
-          "UEVfQ0hBUkFDVEVSEAVCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90",
-          "b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GCGLevelType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for GCGLevelType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGLevelTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChJHQ0dMZXZlbFR5cGUucHJvdG8qqwEKDEdDR0xldmVsVHlwZRIXChNHQ0df",
+            "TEVWRUxfVFlQRV9OT05FEAASGAoUR0NHX0xFVkVMX1RZUEVfQ09OU1QQARIX",
+            "ChNHQ0dfTEVWRUxfVFlQRV9XRUVLEAISGAoUR0NHX0xFVkVMX1RZUEVfV09S",
+            "TEQQAxIXChNHQ0dfTEVWRUxfVFlQRV9CT1NTEAQSHAoYR0NHX0xFVkVMX1RZ",
+            "UEVfQ0hBUkFDVEVSEAVCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.GCGLevelType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum GCGLevelType {
+    [pbr::OriginalName("GCG_LEVEL_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("GCG_LEVEL_TYPE_CONST")] Const = 1,
+    [pbr::OriginalName("GCG_LEVEL_TYPE_WEEK")] Week = 2,
+    [pbr::OriginalName("GCG_LEVEL_TYPE_WORLD")] World = 3,
+    [pbr::OriginalName("GCG_LEVEL_TYPE_BOSS")] Boss = 4,
+    [pbr::OriginalName("GCG_LEVEL_TYPE_CHARACTER")] Character = 5,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum GCGLevelType {
-  [pbr::OriginalName("GCG_LEVEL_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("GCG_LEVEL_TYPE_CONST")] Const = 1,
-  [pbr::OriginalName("GCG_LEVEL_TYPE_WEEK")] Week = 2,
-  [pbr::OriginalName("GCG_LEVEL_TYPE_WORLD")] World = 3,
-  [pbr::OriginalName("GCG_LEVEL_TYPE_BOSS")] Boss = 4,
-  [pbr::OriginalName("GCG_LEVEL_TYPE_CHARACTER")] Character = 5,
-}
-
-#endregion
-
 
 #endregion Designer generated code

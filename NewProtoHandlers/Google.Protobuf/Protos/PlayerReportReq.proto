@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ReportReasonType.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message PlayerReportReq {
   // enum CmdId {

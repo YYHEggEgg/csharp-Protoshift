@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "FurnitureMakeData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message FurnitureMakeSlot {
   repeated FurnitureMakeData furniture_make_data_list = 14;

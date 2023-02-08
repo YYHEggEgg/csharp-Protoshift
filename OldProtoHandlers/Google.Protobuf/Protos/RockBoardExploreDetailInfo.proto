@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "RockBoardExploreStageData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message RockBoardExploreDetailInfo {
   repeated RockBoardExploreStageData stage_data_list = 9;

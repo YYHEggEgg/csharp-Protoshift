@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 enum MapMarkTipsType {
   MAP_MARK_TIPS_TYPE_DUNGEON_ELEMENT_TRIAL = 0;

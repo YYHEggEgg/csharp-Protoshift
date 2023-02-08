@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message AiSkillCdInfo {
   map<uint32, uint32> skill_group_cd_map = 1;

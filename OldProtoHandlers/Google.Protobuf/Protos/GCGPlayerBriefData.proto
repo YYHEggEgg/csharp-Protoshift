@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ProfilePicture.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message GCGPlayerBriefData {
   map<uint32, uint32> card_face_map = 8;

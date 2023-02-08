@@ -20,7 +20,7 @@ import "MailCollectState.proto";
 import "MailItem.proto";
 import "MailTextContent.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message MailData {
   uint32 mail_id = 1;

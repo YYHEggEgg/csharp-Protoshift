@@ -9,363 +9,366 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from InBattleMechanicusPlayerInfo.proto</summary>
-public static partial class InBattleMechanicusPlayerInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for InBattleMechanicusPlayerInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from InBattleMechanicusPlayerInfo.proto</summary>
+  public static partial class InBattleMechanicusPlayerInfoReflection {
 
-  static InBattleMechanicusPlayerInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiJJbkJhdHRsZU1lY2hhbmljdXNQbGF5ZXJJbmZvLnByb3RvGiRJbkJhdHRs",
-          "ZU1lY2hhbmljdXNCdWlsZGluZ0luZm8ucHJvdG8irQEKHEluQmF0dGxlTWVj",
-          "aGFuaWN1c1BsYXllckluZm8SFAoMcGlja19jYXJkX2lkGAUgASgNEgsKA3Vp",
-          "ZBgOIAEoDRI2Cg1idWlsZGluZ19saXN0GAQgAygLMh8uSW5CYXR0bGVNZWNo",
-          "YW5pY3VzQnVpbGRpbmdJbmZvEhkKEWlzX2NhcmRfY29uZmlybWVkGA0gASgI",
-          "EhcKD2J1aWxkaW5nX3BvaW50cxgDIAEoDUIeChxlbXUuZ3Jhc3NjdXR0ZXIu",
-          "bmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::InBattleMechanicusBuildingInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::InBattleMechanicusPlayerInfo), global::InBattleMechanicusPlayerInfo.Parser, new[]{ "PickCardId", "Uid", "BuildingList", "IsCardConfirmed", "BuildingPoints" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for InBattleMechanicusPlayerInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static InBattleMechanicusPlayerInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiJJbkJhdHRsZU1lY2hhbmljdXNQbGF5ZXJJbmZvLnByb3RvGiRJbkJhdHRs",
+            "ZU1lY2hhbmljdXNCdWlsZGluZ0luZm8ucHJvdG8irQEKHEluQmF0dGxlTWVj",
+            "aGFuaWN1c1BsYXllckluZm8SFAoMcGlja19jYXJkX2lkGAUgASgNEgsKA3Vp",
+            "ZBgOIAEoDRI2Cg1idWlsZGluZ19saXN0GAQgAygLMh8uSW5CYXR0bGVNZWNo",
+            "YW5pY3VzQnVpbGRpbmdJbmZvEhkKEWlzX2NhcmRfY29uZmlybWVkGA0gASgI",
+            "EhcKD2J1aWxkaW5nX3BvaW50cxgDIAEoDUIMqgIJT2xkUHJvdG9zYgZwcm90",
+            "bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.InBattleMechanicusBuildingInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.InBattleMechanicusPlayerInfo), global::OldProtos.InBattleMechanicusPlayerInfo.Parser, new[]{ "PickCardId", "Uid", "BuildingList", "IsCardConfirmed", "BuildingPoints" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class InBattleMechanicusPlayerInfo : pb::IMessage<InBattleMechanicusPlayerInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<InBattleMechanicusPlayerInfo> _parser = new pb::MessageParser<InBattleMechanicusPlayerInfo>(() => new InBattleMechanicusPlayerInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<InBattleMechanicusPlayerInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.InBattleMechanicusPlayerInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InBattleMechanicusPlayerInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InBattleMechanicusPlayerInfo(InBattleMechanicusPlayerInfo other) : this() {
+      pickCardId_ = other.pickCardId_;
+      uid_ = other.uid_;
+      buildingList_ = other.buildingList_.Clone();
+      isCardConfirmed_ = other.isCardConfirmed_;
+      buildingPoints_ = other.buildingPoints_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InBattleMechanicusPlayerInfo Clone() {
+      return new InBattleMechanicusPlayerInfo(this);
+    }
+
+    /// <summary>Field number for the "pick_card_id" field.</summary>
+    public const int PickCardIdFieldNumber = 5;
+    private uint pickCardId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PickCardId {
+      get { return pickCardId_; }
+      set {
+        pickCardId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 14;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "building_list" field.</summary>
+    public const int BuildingListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::OldProtos.InBattleMechanicusBuildingInfo> _repeated_buildingList_codec
+        = pb::FieldCodec.ForMessage(34, global::OldProtos.InBattleMechanicusBuildingInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.InBattleMechanicusBuildingInfo> buildingList_ = new pbc::RepeatedField<global::OldProtos.InBattleMechanicusBuildingInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.InBattleMechanicusBuildingInfo> BuildingList {
+      get { return buildingList_; }
+    }
+
+    /// <summary>Field number for the "is_card_confirmed" field.</summary>
+    public const int IsCardConfirmedFieldNumber = 13;
+    private bool isCardConfirmed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsCardConfirmed {
+      get { return isCardConfirmed_; }
+      set {
+        isCardConfirmed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "building_points" field.</summary>
+    public const int BuildingPointsFieldNumber = 3;
+    private uint buildingPoints_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BuildingPoints {
+      get { return buildingPoints_; }
+      set {
+        buildingPoints_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as InBattleMechanicusPlayerInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(InBattleMechanicusPlayerInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PickCardId != other.PickCardId) return false;
+      if (Uid != other.Uid) return false;
+      if(!buildingList_.Equals(other.buildingList_)) return false;
+      if (IsCardConfirmed != other.IsCardConfirmed) return false;
+      if (BuildingPoints != other.BuildingPoints) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PickCardId != 0) hash ^= PickCardId.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      hash ^= buildingList_.GetHashCode();
+      if (IsCardConfirmed != false) hash ^= IsCardConfirmed.GetHashCode();
+      if (BuildingPoints != 0) hash ^= BuildingPoints.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (BuildingPoints != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(BuildingPoints);
+      }
+      buildingList_.WriteTo(output, _repeated_buildingList_codec);
+      if (PickCardId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(PickCardId);
+      }
+      if (IsCardConfirmed != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsCardConfirmed);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Uid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (BuildingPoints != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(BuildingPoints);
+      }
+      buildingList_.WriteTo(ref output, _repeated_buildingList_codec);
+      if (PickCardId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(PickCardId);
+      }
+      if (IsCardConfirmed != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsCardConfirmed);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Uid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (PickCardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PickCardId);
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      size += buildingList_.CalculateSize(_repeated_buildingList_codec);
+      if (IsCardConfirmed != false) {
+        size += 1 + 1;
+      }
+      if (BuildingPoints != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingPoints);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(InBattleMechanicusPlayerInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PickCardId != 0) {
+        PickCardId = other.PickCardId;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      buildingList_.Add(other.buildingList_);
+      if (other.IsCardConfirmed != false) {
+        IsCardConfirmed = other.IsCardConfirmed;
+      }
+      if (other.BuildingPoints != 0) {
+        BuildingPoints = other.BuildingPoints;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            BuildingPoints = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            buildingList_.AddEntriesFrom(input, _repeated_buildingList_codec);
+            break;
+          }
+          case 40: {
+            PickCardId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsCardConfirmed = input.ReadBool();
+            break;
+          }
+          case 112: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            BuildingPoints = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            buildingList_.AddEntriesFrom(ref input, _repeated_buildingList_codec);
+            break;
+          }
+          case 40: {
+            PickCardId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsCardConfirmed = input.ReadBool();
+            break;
+          }
+          case 112: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class InBattleMechanicusPlayerInfo : pb::IMessage<InBattleMechanicusPlayerInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<InBattleMechanicusPlayerInfo> _parser = new pb::MessageParser<InBattleMechanicusPlayerInfo>(() => new InBattleMechanicusPlayerInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<InBattleMechanicusPlayerInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::InBattleMechanicusPlayerInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InBattleMechanicusPlayerInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InBattleMechanicusPlayerInfo(InBattleMechanicusPlayerInfo other) : this() {
-    pickCardId_ = other.pickCardId_;
-    uid_ = other.uid_;
-    buildingList_ = other.buildingList_.Clone();
-    isCardConfirmed_ = other.isCardConfirmed_;
-    buildingPoints_ = other.buildingPoints_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InBattleMechanicusPlayerInfo Clone() {
-    return new InBattleMechanicusPlayerInfo(this);
-  }
-
-  /// <summary>Field number for the "pick_card_id" field.</summary>
-  public const int PickCardIdFieldNumber = 5;
-  private uint pickCardId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PickCardId {
-    get { return pickCardId_; }
-    set {
-      pickCardId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "uid" field.</summary>
-  public const int UidFieldNumber = 14;
-  private uint uid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Uid {
-    get { return uid_; }
-    set {
-      uid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "building_list" field.</summary>
-  public const int BuildingListFieldNumber = 4;
-  private static readonly pb::FieldCodec<global::InBattleMechanicusBuildingInfo> _repeated_buildingList_codec
-      = pb::FieldCodec.ForMessage(34, global::InBattleMechanicusBuildingInfo.Parser);
-  private readonly pbc::RepeatedField<global::InBattleMechanicusBuildingInfo> buildingList_ = new pbc::RepeatedField<global::InBattleMechanicusBuildingInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::InBattleMechanicusBuildingInfo> BuildingList {
-    get { return buildingList_; }
-  }
-
-  /// <summary>Field number for the "is_card_confirmed" field.</summary>
-  public const int IsCardConfirmedFieldNumber = 13;
-  private bool isCardConfirmed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsCardConfirmed {
-    get { return isCardConfirmed_; }
-    set {
-      isCardConfirmed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "building_points" field.</summary>
-  public const int BuildingPointsFieldNumber = 3;
-  private uint buildingPoints_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BuildingPoints {
-    get { return buildingPoints_; }
-    set {
-      buildingPoints_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as InBattleMechanicusPlayerInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(InBattleMechanicusPlayerInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (PickCardId != other.PickCardId) return false;
-    if (Uid != other.Uid) return false;
-    if(!buildingList_.Equals(other.buildingList_)) return false;
-    if (IsCardConfirmed != other.IsCardConfirmed) return false;
-    if (BuildingPoints != other.BuildingPoints) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (PickCardId != 0) hash ^= PickCardId.GetHashCode();
-    if (Uid != 0) hash ^= Uid.GetHashCode();
-    hash ^= buildingList_.GetHashCode();
-    if (IsCardConfirmed != false) hash ^= IsCardConfirmed.GetHashCode();
-    if (BuildingPoints != 0) hash ^= BuildingPoints.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (BuildingPoints != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(BuildingPoints);
-    }
-    buildingList_.WriteTo(output, _repeated_buildingList_codec);
-    if (PickCardId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(PickCardId);
-    }
-    if (IsCardConfirmed != false) {
-      output.WriteRawTag(104);
-      output.WriteBool(IsCardConfirmed);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Uid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (BuildingPoints != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(BuildingPoints);
-    }
-    buildingList_.WriteTo(ref output, _repeated_buildingList_codec);
-    if (PickCardId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(PickCardId);
-    }
-    if (IsCardConfirmed != false) {
-      output.WriteRawTag(104);
-      output.WriteBool(IsCardConfirmed);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Uid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (PickCardId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PickCardId);
-    }
-    if (Uid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-    }
-    size += buildingList_.CalculateSize(_repeated_buildingList_codec);
-    if (IsCardConfirmed != false) {
-      size += 1 + 1;
-    }
-    if (BuildingPoints != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingPoints);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(InBattleMechanicusPlayerInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.PickCardId != 0) {
-      PickCardId = other.PickCardId;
-    }
-    if (other.Uid != 0) {
-      Uid = other.Uid;
-    }
-    buildingList_.Add(other.buildingList_);
-    if (other.IsCardConfirmed != false) {
-      IsCardConfirmed = other.IsCardConfirmed;
-    }
-    if (other.BuildingPoints != 0) {
-      BuildingPoints = other.BuildingPoints;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          BuildingPoints = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          buildingList_.AddEntriesFrom(input, _repeated_buildingList_codec);
-          break;
-        }
-        case 40: {
-          PickCardId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          IsCardConfirmed = input.ReadBool();
-          break;
-        }
-        case 112: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          BuildingPoints = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          buildingList_.AddEntriesFrom(ref input, _repeated_buildingList_codec);
-          break;
-        }
-        case 40: {
-          PickCardId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          IsCardConfirmed = input.ReadBool();
-          break;
-        }
-        case 112: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

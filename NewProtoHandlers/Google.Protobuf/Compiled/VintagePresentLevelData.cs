@@ -9,334 +9,337 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from VintagePresentLevelData.proto</summary>
-public static partial class VintagePresentLevelDataReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for VintagePresentLevelData.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from VintagePresentLevelData.proto</summary>
+  public static partial class VintagePresentLevelDataReflection {
 
-  static VintagePresentLevelDataReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1WaW50YWdlUHJlc2VudExldmVsRGF0YS5wcm90byJjChdWaW50YWdlUHJl",
-          "c2VudExldmVsRGF0YRIRCglpc19maW5pc2gYBiABKAgSDwoHaXNfb3BlbhgD",
-          "IAEoCBIQCghzdGFnZV9pZBgJIAEoDRISCgpwcmVzZW50X2lkGAEgASgNQhYK",
-          "FG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::VintagePresentLevelData), global::VintagePresentLevelData.Parser, new[]{ "IsFinish", "IsOpen", "StageId", "PresentId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for VintagePresentLevelData.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static VintagePresentLevelDataReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1WaW50YWdlUHJlc2VudExldmVsRGF0YS5wcm90byJjChdWaW50YWdlUHJl",
+            "c2VudExldmVsRGF0YRIRCglpc19maW5pc2gYBiABKAgSDwoHaXNfb3BlbhgD",
+            "IAEoCBIQCghzdGFnZV9pZBgJIAEoDRISCgpwcmVzZW50X2lkGAEgASgNQgyq",
+            "AglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.VintagePresentLevelData), global::NewProtos.VintagePresentLevelData.Parser, new[]{ "IsFinish", "IsOpen", "StageId", "PresentId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class VintagePresentLevelData : pb::IMessage<VintagePresentLevelData>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<VintagePresentLevelData> _parser = new pb::MessageParser<VintagePresentLevelData>(() => new VintagePresentLevelData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<VintagePresentLevelData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.VintagePresentLevelDataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VintagePresentLevelData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VintagePresentLevelData(VintagePresentLevelData other) : this() {
+      isFinish_ = other.isFinish_;
+      isOpen_ = other.isOpen_;
+      stageId_ = other.stageId_;
+      presentId_ = other.presentId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VintagePresentLevelData Clone() {
+      return new VintagePresentLevelData(this);
+    }
+
+    /// <summary>Field number for the "is_finish" field.</summary>
+    public const int IsFinishFieldNumber = 6;
+    private bool isFinish_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFinish {
+      get { return isFinish_; }
+      set {
+        isFinish_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_open" field.</summary>
+    public const int IsOpenFieldNumber = 3;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 9;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "present_id" field.</summary>
+    public const int PresentIdFieldNumber = 1;
+    private uint presentId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PresentId {
+      get { return presentId_; }
+      set {
+        presentId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as VintagePresentLevelData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(VintagePresentLevelData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsFinish != other.IsFinish) return false;
+      if (IsOpen != other.IsOpen) return false;
+      if (StageId != other.StageId) return false;
+      if (PresentId != other.PresentId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsFinish != false) hash ^= IsFinish.GetHashCode();
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (PresentId != 0) hash ^= PresentId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (PresentId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(PresentId);
+      }
+      if (IsOpen != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsOpen);
+      }
+      if (IsFinish != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsFinish);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(StageId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (PresentId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(PresentId);
+      }
+      if (IsOpen != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsOpen);
+      }
+      if (IsFinish != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsFinish);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(StageId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsFinish != false) {
+        size += 1 + 1;
+      }
+      if (IsOpen != false) {
+        size += 1 + 1;
+      }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      if (PresentId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PresentId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(VintagePresentLevelData other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsFinish != false) {
+        IsFinish = other.IsFinish;
+      }
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      if (other.PresentId != 0) {
+        PresentId = other.PresentId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            PresentId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+          case 48: {
+            IsFinish = input.ReadBool();
+            break;
+          }
+          case 72: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            PresentId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+          case 48: {
+            IsFinish = input.ReadBool();
+            break;
+          }
+          case 72: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class VintagePresentLevelData : pb::IMessage<VintagePresentLevelData>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<VintagePresentLevelData> _parser = new pb::MessageParser<VintagePresentLevelData>(() => new VintagePresentLevelData());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<VintagePresentLevelData> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::VintagePresentLevelDataReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public VintagePresentLevelData() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public VintagePresentLevelData(VintagePresentLevelData other) : this() {
-    isFinish_ = other.isFinish_;
-    isOpen_ = other.isOpen_;
-    stageId_ = other.stageId_;
-    presentId_ = other.presentId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public VintagePresentLevelData Clone() {
-    return new VintagePresentLevelData(this);
-  }
-
-  /// <summary>Field number for the "is_finish" field.</summary>
-  public const int IsFinishFieldNumber = 6;
-  private bool isFinish_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsFinish {
-    get { return isFinish_; }
-    set {
-      isFinish_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_open" field.</summary>
-  public const int IsOpenFieldNumber = 3;
-  private bool isOpen_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsOpen {
-    get { return isOpen_; }
-    set {
-      isOpen_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "stage_id" field.</summary>
-  public const int StageIdFieldNumber = 9;
-  private uint stageId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StageId {
-    get { return stageId_; }
-    set {
-      stageId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "present_id" field.</summary>
-  public const int PresentIdFieldNumber = 1;
-  private uint presentId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PresentId {
-    get { return presentId_; }
-    set {
-      presentId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as VintagePresentLevelData);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(VintagePresentLevelData other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsFinish != other.IsFinish) return false;
-    if (IsOpen != other.IsOpen) return false;
-    if (StageId != other.StageId) return false;
-    if (PresentId != other.PresentId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsFinish != false) hash ^= IsFinish.GetHashCode();
-    if (IsOpen != false) hash ^= IsOpen.GetHashCode();
-    if (StageId != 0) hash ^= StageId.GetHashCode();
-    if (PresentId != 0) hash ^= PresentId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (PresentId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(PresentId);
-    }
-    if (IsOpen != false) {
-      output.WriteRawTag(24);
-      output.WriteBool(IsOpen);
-    }
-    if (IsFinish != false) {
-      output.WriteRawTag(48);
-      output.WriteBool(IsFinish);
-    }
-    if (StageId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(StageId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (PresentId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(PresentId);
-    }
-    if (IsOpen != false) {
-      output.WriteRawTag(24);
-      output.WriteBool(IsOpen);
-    }
-    if (IsFinish != false) {
-      output.WriteRawTag(48);
-      output.WriteBool(IsFinish);
-    }
-    if (StageId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(StageId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsFinish != false) {
-      size += 1 + 1;
-    }
-    if (IsOpen != false) {
-      size += 1 + 1;
-    }
-    if (StageId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-    }
-    if (PresentId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PresentId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(VintagePresentLevelData other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsFinish != false) {
-      IsFinish = other.IsFinish;
-    }
-    if (other.IsOpen != false) {
-      IsOpen = other.IsOpen;
-    }
-    if (other.StageId != 0) {
-      StageId = other.StageId;
-    }
-    if (other.PresentId != 0) {
-      PresentId = other.PresentId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          PresentId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          IsOpen = input.ReadBool();
-          break;
-        }
-        case 48: {
-          IsFinish = input.ReadBool();
-          break;
-        }
-        case 72: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          PresentId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          IsOpen = input.ReadBool();
-          break;
-        }
-        case 48: {
-          IsFinish = input.ReadBool();
-          break;
-        }
-        case 72: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

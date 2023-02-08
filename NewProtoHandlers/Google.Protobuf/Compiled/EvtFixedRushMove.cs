@@ -9,448 +9,450 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from EvtFixedRushMove.proto</summary>
-public static partial class EvtFixedRushMoveReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for EvtFixedRushMove.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from EvtFixedRushMove.proto</summary>
+  public static partial class EvtFixedRushMoveReflection {
 
-  static EvtFixedRushMoveReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZFdnRGaXhlZFJ1c2hNb3ZlLnByb3RvGgxWZWN0b3IucHJvdG8ixgEKEEV2",
-          "dEZpeGVkUnVzaE1vdmUSEQoJZW50aXR5X2lkGA0gASgNEhkKEW92ZXJyaWRl",
-          "X2NvbGxpZGVyGAcgASgJEhsKCnRhcmdldF9wb3MYDiABKAsyBy5WZWN0b3IS",
-          "GwoTVW5rMzMwMF9CR09MUExIR0dQTxgIIAEoCBIeChZhbmltYXRvcl9zdGF0",
-          "ZV9pZF9saXN0GAkgAygNEhsKE1VuazMzMDBfQktFRUxDR09MTE4YDCABKAgS",
-          "DQoFc3BlZWQYCiABKAJCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3Rv",
-          "Mw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::EvtFixedRushMove), global::EvtFixedRushMove.Parser, new[]{ "EntityId", "OverrideCollider", "TargetPos", "Unk3300BGOLPLHGGPO", "AnimatorStateIdList", "Unk3300BKEELCGOLLN", "Speed" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for EvtFixedRushMove.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static EvtFixedRushMoveReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZFdnRGaXhlZFJ1c2hNb3ZlLnByb3RvGgxWZWN0b3IucHJvdG8ixgEKEEV2",
+            "dEZpeGVkUnVzaE1vdmUSEQoJZW50aXR5X2lkGA0gASgNEhkKEW92ZXJyaWRl",
+            "X2NvbGxpZGVyGAcgASgJEhsKCnRhcmdldF9wb3MYDiABKAsyBy5WZWN0b3IS",
+            "GwoTVW5rMzMwMF9CR09MUExIR0dQTxgIIAEoCBIeChZhbmltYXRvcl9zdGF0",
+            "ZV9pZF9saXN0GAkgAygNEhsKE1VuazMzMDBfQktFRUxDR09MTE4YDCABKAgS",
+            "DQoFc3BlZWQYCiABKAJCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.EvtFixedRushMove), global::NewProtos.EvtFixedRushMove.Parser, new[]{ "EntityId", "OverrideCollider", "TargetPos", "Unk3300BGOLPLHGGPO", "AnimatorStateIdList", "Unk3300BKEELCGOLLN", "Speed" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class EvtFixedRushMove : pb::IMessage<EvtFixedRushMove>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<EvtFixedRushMove> _parser = new pb::MessageParser<EvtFixedRushMove>(() => new EvtFixedRushMove());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<EvtFixedRushMove> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.EvtFixedRushMoveReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtFixedRushMove() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtFixedRushMove(EvtFixedRushMove other) : this() {
+      entityId_ = other.entityId_;
+      overrideCollider_ = other.overrideCollider_;
+      targetPos_ = other.targetPos_ != null ? other.targetPos_.Clone() : null;
+      unk3300BGOLPLHGGPO_ = other.unk3300BGOLPLHGGPO_;
+      animatorStateIdList_ = other.animatorStateIdList_.Clone();
+      unk3300BKEELCGOLLN_ = other.unk3300BKEELCGOLLN_;
+      speed_ = other.speed_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtFixedRushMove Clone() {
+      return new EvtFixedRushMove(this);
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 13;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "override_collider" field.</summary>
+    public const int OverrideColliderFieldNumber = 7;
+    private string overrideCollider_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string OverrideCollider {
+      get { return overrideCollider_; }
+      set {
+        overrideCollider_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "target_pos" field.</summary>
+    public const int TargetPosFieldNumber = 14;
+    private global::NewProtos.Vector targetPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.Vector TargetPos {
+      get { return targetPos_; }
+      set {
+        targetPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BGOLPLHGGPO" field.</summary>
+    public const int Unk3300BGOLPLHGGPOFieldNumber = 8;
+    private bool unk3300BGOLPLHGGPO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300BGOLPLHGGPO {
+      get { return unk3300BGOLPLHGGPO_; }
+      set {
+        unk3300BGOLPLHGGPO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "animator_state_id_list" field.</summary>
+    public const int AnimatorStateIdListFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_animatorStateIdList_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> animatorStateIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> AnimatorStateIdList {
+      get { return animatorStateIdList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_BKEELCGOLLN" field.</summary>
+    public const int Unk3300BKEELCGOLLNFieldNumber = 12;
+    private bool unk3300BKEELCGOLLN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300BKEELCGOLLN {
+      get { return unk3300BKEELCGOLLN_; }
+      set {
+        unk3300BKEELCGOLLN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "speed" field.</summary>
+    public const int SpeedFieldNumber = 10;
+    private float speed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Speed {
+      get { return speed_; }
+      set {
+        speed_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as EvtFixedRushMove);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(EvtFixedRushMove other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (EntityId != other.EntityId) return false;
+      if (OverrideCollider != other.OverrideCollider) return false;
+      if (!object.Equals(TargetPos, other.TargetPos)) return false;
+      if (Unk3300BGOLPLHGGPO != other.Unk3300BGOLPLHGGPO) return false;
+      if(!animatorStateIdList_.Equals(other.animatorStateIdList_)) return false;
+      if (Unk3300BKEELCGOLLN != other.Unk3300BKEELCGOLLN) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Speed, other.Speed)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (OverrideCollider.Length != 0) hash ^= OverrideCollider.GetHashCode();
+      if (targetPos_ != null) hash ^= TargetPos.GetHashCode();
+      if (Unk3300BGOLPLHGGPO != false) hash ^= Unk3300BGOLPLHGGPO.GetHashCode();
+      hash ^= animatorStateIdList_.GetHashCode();
+      if (Unk3300BKEELCGOLLN != false) hash ^= Unk3300BKEELCGOLLN.GetHashCode();
+      if (Speed != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Speed);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (OverrideCollider.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(OverrideCollider);
+      }
+      if (Unk3300BGOLPLHGGPO != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300BGOLPLHGGPO);
+      }
+      animatorStateIdList_.WriteTo(output, _repeated_animatorStateIdList_codec);
+      if (Speed != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(Speed);
+      }
+      if (Unk3300BKEELCGOLLN != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300BKEELCGOLLN);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(EntityId);
+      }
+      if (targetPos_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(TargetPos);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (OverrideCollider.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(OverrideCollider);
+      }
+      if (Unk3300BGOLPLHGGPO != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300BGOLPLHGGPO);
+      }
+      animatorStateIdList_.WriteTo(ref output, _repeated_animatorStateIdList_codec);
+      if (Speed != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(Speed);
+      }
+      if (Unk3300BKEELCGOLLN != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300BKEELCGOLLN);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(EntityId);
+      }
+      if (targetPos_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(TargetPos);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (OverrideCollider.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OverrideCollider);
+      }
+      if (targetPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TargetPos);
+      }
+      if (Unk3300BGOLPLHGGPO != false) {
+        size += 1 + 1;
+      }
+      size += animatorStateIdList_.CalculateSize(_repeated_animatorStateIdList_codec);
+      if (Unk3300BKEELCGOLLN != false) {
+        size += 1 + 1;
+      }
+      if (Speed != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(EvtFixedRushMove other) {
+      if (other == null) {
+        return;
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.OverrideCollider.Length != 0) {
+        OverrideCollider = other.OverrideCollider;
+      }
+      if (other.targetPos_ != null) {
+        if (targetPos_ == null) {
+          TargetPos = new global::NewProtos.Vector();
+        }
+        TargetPos.MergeFrom(other.TargetPos);
+      }
+      if (other.Unk3300BGOLPLHGGPO != false) {
+        Unk3300BGOLPLHGGPO = other.Unk3300BGOLPLHGGPO;
+      }
+      animatorStateIdList_.Add(other.animatorStateIdList_);
+      if (other.Unk3300BKEELCGOLLN != false) {
+        Unk3300BKEELCGOLLN = other.Unk3300BKEELCGOLLN;
+      }
+      if (other.Speed != 0F) {
+        Speed = other.Speed;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 58: {
+            OverrideCollider = input.ReadString();
+            break;
+          }
+          case 64: {
+            Unk3300BGOLPLHGGPO = input.ReadBool();
+            break;
+          }
+          case 74:
+          case 72: {
+            animatorStateIdList_.AddEntriesFrom(input, _repeated_animatorStateIdList_codec);
+            break;
+          }
+          case 85: {
+            Speed = input.ReadFloat();
+            break;
+          }
+          case 96: {
+            Unk3300BKEELCGOLLN = input.ReadBool();
+            break;
+          }
+          case 104: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            if (targetPos_ == null) {
+              TargetPos = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(TargetPos);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 58: {
+            OverrideCollider = input.ReadString();
+            break;
+          }
+          case 64: {
+            Unk3300BGOLPLHGGPO = input.ReadBool();
+            break;
+          }
+          case 74:
+          case 72: {
+            animatorStateIdList_.AddEntriesFrom(ref input, _repeated_animatorStateIdList_codec);
+            break;
+          }
+          case 85: {
+            Speed = input.ReadFloat();
+            break;
+          }
+          case 96: {
+            Unk3300BKEELCGOLLN = input.ReadBool();
+            break;
+          }
+          case 104: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            if (targetPos_ == null) {
+              TargetPos = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(TargetPos);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class EvtFixedRushMove : pb::IMessage<EvtFixedRushMove>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<EvtFixedRushMove> _parser = new pb::MessageParser<EvtFixedRushMove>(() => new EvtFixedRushMove());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<EvtFixedRushMove> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::EvtFixedRushMoveReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtFixedRushMove() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtFixedRushMove(EvtFixedRushMove other) : this() {
-    entityId_ = other.entityId_;
-    overrideCollider_ = other.overrideCollider_;
-    targetPos_ = other.targetPos_ != null ? other.targetPos_.Clone() : null;
-    unk3300BGOLPLHGGPO_ = other.unk3300BGOLPLHGGPO_;
-    animatorStateIdList_ = other.animatorStateIdList_.Clone();
-    unk3300BKEELCGOLLN_ = other.unk3300BKEELCGOLLN_;
-    speed_ = other.speed_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtFixedRushMove Clone() {
-    return new EvtFixedRushMove(this);
-  }
-
-  /// <summary>Field number for the "entity_id" field.</summary>
-  public const int EntityIdFieldNumber = 13;
-  private uint entityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EntityId {
-    get { return entityId_; }
-    set {
-      entityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "override_collider" field.</summary>
-  public const int OverrideColliderFieldNumber = 7;
-  private string overrideCollider_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string OverrideCollider {
-    get { return overrideCollider_; }
-    set {
-      overrideCollider_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "target_pos" field.</summary>
-  public const int TargetPosFieldNumber = 14;
-  private global::Vector targetPos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector TargetPos {
-    get { return targetPos_; }
-    set {
-      targetPos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_BGOLPLHGGPO" field.</summary>
-  public const int Unk3300BGOLPLHGGPOFieldNumber = 8;
-  private bool unk3300BGOLPLHGGPO_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Unk3300BGOLPLHGGPO {
-    get { return unk3300BGOLPLHGGPO_; }
-    set {
-      unk3300BGOLPLHGGPO_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "animator_state_id_list" field.</summary>
-  public const int AnimatorStateIdListFieldNumber = 9;
-  private static readonly pb::FieldCodec<uint> _repeated_animatorStateIdList_codec
-      = pb::FieldCodec.ForUInt32(74);
-  private readonly pbc::RepeatedField<uint> animatorStateIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> AnimatorStateIdList {
-    get { return animatorStateIdList_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_BKEELCGOLLN" field.</summary>
-  public const int Unk3300BKEELCGOLLNFieldNumber = 12;
-  private bool unk3300BKEELCGOLLN_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Unk3300BKEELCGOLLN {
-    get { return unk3300BKEELCGOLLN_; }
-    set {
-      unk3300BKEELCGOLLN_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "speed" field.</summary>
-  public const int SpeedFieldNumber = 10;
-  private float speed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float Speed {
-    get { return speed_; }
-    set {
-      speed_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as EvtFixedRushMove);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(EvtFixedRushMove other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (EntityId != other.EntityId) return false;
-    if (OverrideCollider != other.OverrideCollider) return false;
-    if (!object.Equals(TargetPos, other.TargetPos)) return false;
-    if (Unk3300BGOLPLHGGPO != other.Unk3300BGOLPLHGGPO) return false;
-    if(!animatorStateIdList_.Equals(other.animatorStateIdList_)) return false;
-    if (Unk3300BKEELCGOLLN != other.Unk3300BKEELCGOLLN) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Speed, other.Speed)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (EntityId != 0) hash ^= EntityId.GetHashCode();
-    if (OverrideCollider.Length != 0) hash ^= OverrideCollider.GetHashCode();
-    if (targetPos_ != null) hash ^= TargetPos.GetHashCode();
-    if (Unk3300BGOLPLHGGPO != false) hash ^= Unk3300BGOLPLHGGPO.GetHashCode();
-    hash ^= animatorStateIdList_.GetHashCode();
-    if (Unk3300BKEELCGOLLN != false) hash ^= Unk3300BKEELCGOLLN.GetHashCode();
-    if (Speed != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Speed);
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (OverrideCollider.Length != 0) {
-      output.WriteRawTag(58);
-      output.WriteString(OverrideCollider);
-    }
-    if (Unk3300BGOLPLHGGPO != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(Unk3300BGOLPLHGGPO);
-    }
-    animatorStateIdList_.WriteTo(output, _repeated_animatorStateIdList_codec);
-    if (Speed != 0F) {
-      output.WriteRawTag(85);
-      output.WriteFloat(Speed);
-    }
-    if (Unk3300BKEELCGOLLN != false) {
-      output.WriteRawTag(96);
-      output.WriteBool(Unk3300BKEELCGOLLN);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(EntityId);
-    }
-    if (targetPos_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(TargetPos);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (OverrideCollider.Length != 0) {
-      output.WriteRawTag(58);
-      output.WriteString(OverrideCollider);
-    }
-    if (Unk3300BGOLPLHGGPO != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(Unk3300BGOLPLHGGPO);
-    }
-    animatorStateIdList_.WriteTo(ref output, _repeated_animatorStateIdList_codec);
-    if (Speed != 0F) {
-      output.WriteRawTag(85);
-      output.WriteFloat(Speed);
-    }
-    if (Unk3300BKEELCGOLLN != false) {
-      output.WriteRawTag(96);
-      output.WriteBool(Unk3300BKEELCGOLLN);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(EntityId);
-    }
-    if (targetPos_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(TargetPos);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (EntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-    }
-    if (OverrideCollider.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(OverrideCollider);
-    }
-    if (targetPos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(TargetPos);
-    }
-    if (Unk3300BGOLPLHGGPO != false) {
-      size += 1 + 1;
-    }
-    size += animatorStateIdList_.CalculateSize(_repeated_animatorStateIdList_codec);
-    if (Unk3300BKEELCGOLLN != false) {
-      size += 1 + 1;
-    }
-    if (Speed != 0F) {
-      size += 1 + 4;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(EvtFixedRushMove other) {
-    if (other == null) {
-      return;
-    }
-    if (other.EntityId != 0) {
-      EntityId = other.EntityId;
-    }
-    if (other.OverrideCollider.Length != 0) {
-      OverrideCollider = other.OverrideCollider;
-    }
-    if (other.targetPos_ != null) {
-      if (targetPos_ == null) {
-        TargetPos = new global::Vector();
-      }
-      TargetPos.MergeFrom(other.TargetPos);
-    }
-    if (other.Unk3300BGOLPLHGGPO != false) {
-      Unk3300BGOLPLHGGPO = other.Unk3300BGOLPLHGGPO;
-    }
-    animatorStateIdList_.Add(other.animatorStateIdList_);
-    if (other.Unk3300BKEELCGOLLN != false) {
-      Unk3300BKEELCGOLLN = other.Unk3300BKEELCGOLLN;
-    }
-    if (other.Speed != 0F) {
-      Speed = other.Speed;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 58: {
-          OverrideCollider = input.ReadString();
-          break;
-        }
-        case 64: {
-          Unk3300BGOLPLHGGPO = input.ReadBool();
-          break;
-        }
-        case 74:
-        case 72: {
-          animatorStateIdList_.AddEntriesFrom(input, _repeated_animatorStateIdList_codec);
-          break;
-        }
-        case 85: {
-          Speed = input.ReadFloat();
-          break;
-        }
-        case 96: {
-          Unk3300BKEELCGOLLN = input.ReadBool();
-          break;
-        }
-        case 104: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 114: {
-          if (targetPos_ == null) {
-            TargetPos = new global::Vector();
-          }
-          input.ReadMessage(TargetPos);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 58: {
-          OverrideCollider = input.ReadString();
-          break;
-        }
-        case 64: {
-          Unk3300BGOLPLHGGPO = input.ReadBool();
-          break;
-        }
-        case 74:
-        case 72: {
-          animatorStateIdList_.AddEntriesFrom(ref input, _repeated_animatorStateIdList_codec);
-          break;
-        }
-        case 85: {
-          Speed = input.ReadFloat();
-          break;
-        }
-        case 96: {
-          Unk3300BKEELCGOLLN = input.ReadBool();
-          break;
-        }
-        case 104: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 114: {
-          if (targetPos_ == null) {
-            TargetPos = new global::Vector();
-          }
-          input.ReadMessage(TargetPos);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

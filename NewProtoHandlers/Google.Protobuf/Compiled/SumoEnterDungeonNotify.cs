@@ -9,409 +9,412 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SumoEnterDungeonNotify.proto</summary>
-public static partial class SumoEnterDungeonNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SumoEnterDungeonNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SumoEnterDungeonNotify.proto</summary>
+  public static partial class SumoEnterDungeonNotifyReflection {
 
-  static SumoEnterDungeonNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChxTdW1vRW50ZXJEdW5nZW9uTm90aWZ5LnByb3RvGhVTdW1vRHVuZ2VvblRl",
-          "YW0ucHJvdG8iwwEKFlN1bW9FbnRlckR1bmdlb25Ob3RpZnkSGwoTVW5rMzMw",
-          "MF9ESkJKQUNHSEdETRgPIAEoDRIbChNVbmszMzAwX0NCQU1MSERNS0pGGAcg",
-          "ASgNEisKEWR1bmdlb25fdGVhbV9saXN0GA4gAygLMhAuU3Vtb0R1bmdlb25U",
-          "ZWFtEhsKE1VuazMzMDBfQk5KQklHSElKT0MYBSABKA0SEwoLYWN0aXZpdHlf",
-          "aWQYAyABKA0SEAoIc3RhZ2VfaWQYCyABKA1CFgoUb3JnLnNvcmFwb2ludGEu",
-          "cHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::SumoDungeonTeamReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SumoEnterDungeonNotify), global::SumoEnterDungeonNotify.Parser, new[]{ "Unk3300DJBJACGHGDM", "Unk3300CBAMLHDMKJF", "DungeonTeamList", "Unk3300BNJBIGHIJOC", "ActivityId", "StageId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SumoEnterDungeonNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SumoEnterDungeonNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChxTdW1vRW50ZXJEdW5nZW9uTm90aWZ5LnByb3RvGhVTdW1vRHVuZ2VvblRl",
+            "YW0ucHJvdG8iwwEKFlN1bW9FbnRlckR1bmdlb25Ob3RpZnkSGwoTVW5rMzMw",
+            "MF9ESkJKQUNHSEdETRgPIAEoDRIbChNVbmszMzAwX0NCQU1MSERNS0pGGAcg",
+            "ASgNEisKEWR1bmdlb25fdGVhbV9saXN0GA4gAygLMhAuU3Vtb0R1bmdlb25U",
+            "ZWFtEhsKE1VuazMzMDBfQk5KQklHSElKT0MYBSABKA0SEwoLYWN0aXZpdHlf",
+            "aWQYAyABKA0SEAoIc3RhZ2VfaWQYCyABKA1CDKoCCU5ld1Byb3Rvc2IGcHJv",
+            "dG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.SumoDungeonTeamReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.SumoEnterDungeonNotify), global::NewProtos.SumoEnterDungeonNotify.Parser, new[]{ "Unk3300DJBJACGHGDM", "Unk3300CBAMLHDMKJF", "DungeonTeamList", "Unk3300BNJBIGHIJOC", "ActivityId", "StageId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8297;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class SumoEnterDungeonNotify : pb::IMessage<SumoEnterDungeonNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SumoEnterDungeonNotify> _parser = new pb::MessageParser<SumoEnterDungeonNotify>(() => new SumoEnterDungeonNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SumoEnterDungeonNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.SumoEnterDungeonNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SumoEnterDungeonNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SumoEnterDungeonNotify(SumoEnterDungeonNotify other) : this() {
+      unk3300DJBJACGHGDM_ = other.unk3300DJBJACGHGDM_;
+      unk3300CBAMLHDMKJF_ = other.unk3300CBAMLHDMKJF_;
+      dungeonTeamList_ = other.dungeonTeamList_.Clone();
+      unk3300BNJBIGHIJOC_ = other.unk3300BNJBIGHIJOC_;
+      activityId_ = other.activityId_;
+      stageId_ = other.stageId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SumoEnterDungeonNotify Clone() {
+      return new SumoEnterDungeonNotify(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_DJBJACGHGDM" field.</summary>
+    public const int Unk3300DJBJACGHGDMFieldNumber = 15;
+    private uint unk3300DJBJACGHGDM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DJBJACGHGDM {
+      get { return unk3300DJBJACGHGDM_; }
+      set {
+        unk3300DJBJACGHGDM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_CBAMLHDMKJF" field.</summary>
+    public const int Unk3300CBAMLHDMKJFFieldNumber = 7;
+    private uint unk3300CBAMLHDMKJF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300CBAMLHDMKJF {
+      get { return unk3300CBAMLHDMKJF_; }
+      set {
+        unk3300CBAMLHDMKJF_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_team_list" field.</summary>
+    public const int DungeonTeamListFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::NewProtos.SumoDungeonTeam> _repeated_dungeonTeamList_codec
+        = pb::FieldCodec.ForMessage(114, global::NewProtos.SumoDungeonTeam.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.SumoDungeonTeam> dungeonTeamList_ = new pbc::RepeatedField<global::NewProtos.SumoDungeonTeam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.SumoDungeonTeam> DungeonTeamList {
+      get { return dungeonTeamList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_BNJBIGHIJOC" field.</summary>
+    public const int Unk3300BNJBIGHIJOCFieldNumber = 5;
+    private uint unk3300BNJBIGHIJOC_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300BNJBIGHIJOC {
+      get { return unk3300BNJBIGHIJOC_; }
+      set {
+        unk3300BNJBIGHIJOC_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "activity_id" field.</summary>
+    public const int ActivityIdFieldNumber = 3;
+    private uint activityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ActivityId {
+      get { return activityId_; }
+      set {
+        activityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 11;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SumoEnterDungeonNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SumoEnterDungeonNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Unk3300DJBJACGHGDM != other.Unk3300DJBJACGHGDM) return false;
+      if (Unk3300CBAMLHDMKJF != other.Unk3300CBAMLHDMKJF) return false;
+      if(!dungeonTeamList_.Equals(other.dungeonTeamList_)) return false;
+      if (Unk3300BNJBIGHIJOC != other.Unk3300BNJBIGHIJOC) return false;
+      if (ActivityId != other.ActivityId) return false;
+      if (StageId != other.StageId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Unk3300DJBJACGHGDM != 0) hash ^= Unk3300DJBJACGHGDM.GetHashCode();
+      if (Unk3300CBAMLHDMKJF != 0) hash ^= Unk3300CBAMLHDMKJF.GetHashCode();
+      hash ^= dungeonTeamList_.GetHashCode();
+      if (Unk3300BNJBIGHIJOC != 0) hash ^= Unk3300BNJBIGHIJOC.GetHashCode();
+      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ActivityId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ActivityId);
+      }
+      if (Unk3300BNJBIGHIJOC != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300BNJBIGHIJOC);
+      }
+      if (Unk3300CBAMLHDMKJF != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300CBAMLHDMKJF);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(StageId);
+      }
+      dungeonTeamList_.WriteTo(output, _repeated_dungeonTeamList_codec);
+      if (Unk3300DJBJACGHGDM != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300DJBJACGHGDM);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ActivityId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ActivityId);
+      }
+      if (Unk3300BNJBIGHIJOC != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300BNJBIGHIJOC);
+      }
+      if (Unk3300CBAMLHDMKJF != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300CBAMLHDMKJF);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(StageId);
+      }
+      dungeonTeamList_.WriteTo(ref output, _repeated_dungeonTeamList_codec);
+      if (Unk3300DJBJACGHGDM != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300DJBJACGHGDM);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Unk3300DJBJACGHGDM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DJBJACGHGDM);
+      }
+      if (Unk3300CBAMLHDMKJF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CBAMLHDMKJF);
+      }
+      size += dungeonTeamList_.CalculateSize(_repeated_dungeonTeamList_codec);
+      if (Unk3300BNJBIGHIJOC != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BNJBIGHIJOC);
+      }
+      if (ActivityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
+      }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SumoEnterDungeonNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Unk3300DJBJACGHGDM != 0) {
+        Unk3300DJBJACGHGDM = other.Unk3300DJBJACGHGDM;
+      }
+      if (other.Unk3300CBAMLHDMKJF != 0) {
+        Unk3300CBAMLHDMKJF = other.Unk3300CBAMLHDMKJF;
+      }
+      dungeonTeamList_.Add(other.dungeonTeamList_);
+      if (other.Unk3300BNJBIGHIJOC != 0) {
+        Unk3300BNJBIGHIJOC = other.Unk3300BNJBIGHIJOC;
+      }
+      if (other.ActivityId != 0) {
+        ActivityId = other.ActivityId;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            ActivityId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Unk3300BNJBIGHIJOC = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300CBAMLHDMKJF = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            dungeonTeamList_.AddEntriesFrom(input, _repeated_dungeonTeamList_codec);
+            break;
+          }
+          case 120: {
+            Unk3300DJBJACGHGDM = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            ActivityId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Unk3300BNJBIGHIJOC = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300CBAMLHDMKJF = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            dungeonTeamList_.AddEntriesFrom(ref input, _repeated_dungeonTeamList_codec);
+            break;
+          }
+          case 120: {
+            Unk3300DJBJACGHGDM = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 8297;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class SumoEnterDungeonNotify : pb::IMessage<SumoEnterDungeonNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SumoEnterDungeonNotify> _parser = new pb::MessageParser<SumoEnterDungeonNotify>(() => new SumoEnterDungeonNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SumoEnterDungeonNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SumoEnterDungeonNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SumoEnterDungeonNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SumoEnterDungeonNotify(SumoEnterDungeonNotify other) : this() {
-    unk3300DJBJACGHGDM_ = other.unk3300DJBJACGHGDM_;
-    unk3300CBAMLHDMKJF_ = other.unk3300CBAMLHDMKJF_;
-    dungeonTeamList_ = other.dungeonTeamList_.Clone();
-    unk3300BNJBIGHIJOC_ = other.unk3300BNJBIGHIJOC_;
-    activityId_ = other.activityId_;
-    stageId_ = other.stageId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SumoEnterDungeonNotify Clone() {
-    return new SumoEnterDungeonNotify(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_DJBJACGHGDM" field.</summary>
-  public const int Unk3300DJBJACGHGDMFieldNumber = 15;
-  private uint unk3300DJBJACGHGDM_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300DJBJACGHGDM {
-    get { return unk3300DJBJACGHGDM_; }
-    set {
-      unk3300DJBJACGHGDM_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_CBAMLHDMKJF" field.</summary>
-  public const int Unk3300CBAMLHDMKJFFieldNumber = 7;
-  private uint unk3300CBAMLHDMKJF_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300CBAMLHDMKJF {
-    get { return unk3300CBAMLHDMKJF_; }
-    set {
-      unk3300CBAMLHDMKJF_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "dungeon_team_list" field.</summary>
-  public const int DungeonTeamListFieldNumber = 14;
-  private static readonly pb::FieldCodec<global::SumoDungeonTeam> _repeated_dungeonTeamList_codec
-      = pb::FieldCodec.ForMessage(114, global::SumoDungeonTeam.Parser);
-  private readonly pbc::RepeatedField<global::SumoDungeonTeam> dungeonTeamList_ = new pbc::RepeatedField<global::SumoDungeonTeam>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::SumoDungeonTeam> DungeonTeamList {
-    get { return dungeonTeamList_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_BNJBIGHIJOC" field.</summary>
-  public const int Unk3300BNJBIGHIJOCFieldNumber = 5;
-  private uint unk3300BNJBIGHIJOC_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300BNJBIGHIJOC {
-    get { return unk3300BNJBIGHIJOC_; }
-    set {
-      unk3300BNJBIGHIJOC_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "activity_id" field.</summary>
-  public const int ActivityIdFieldNumber = 3;
-  private uint activityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ActivityId {
-    get { return activityId_; }
-    set {
-      activityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "stage_id" field.</summary>
-  public const int StageIdFieldNumber = 11;
-  private uint stageId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StageId {
-    get { return stageId_; }
-    set {
-      stageId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SumoEnterDungeonNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SumoEnterDungeonNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Unk3300DJBJACGHGDM != other.Unk3300DJBJACGHGDM) return false;
-    if (Unk3300CBAMLHDMKJF != other.Unk3300CBAMLHDMKJF) return false;
-    if(!dungeonTeamList_.Equals(other.dungeonTeamList_)) return false;
-    if (Unk3300BNJBIGHIJOC != other.Unk3300BNJBIGHIJOC) return false;
-    if (ActivityId != other.ActivityId) return false;
-    if (StageId != other.StageId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Unk3300DJBJACGHGDM != 0) hash ^= Unk3300DJBJACGHGDM.GetHashCode();
-    if (Unk3300CBAMLHDMKJF != 0) hash ^= Unk3300CBAMLHDMKJF.GetHashCode();
-    hash ^= dungeonTeamList_.GetHashCode();
-    if (Unk3300BNJBIGHIJOC != 0) hash ^= Unk3300BNJBIGHIJOC.GetHashCode();
-    if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
-    if (StageId != 0) hash ^= StageId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ActivityId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ActivityId);
-    }
-    if (Unk3300BNJBIGHIJOC != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Unk3300BNJBIGHIJOC);
-    }
-    if (Unk3300CBAMLHDMKJF != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Unk3300CBAMLHDMKJF);
-    }
-    if (StageId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(StageId);
-    }
-    dungeonTeamList_.WriteTo(output, _repeated_dungeonTeamList_codec);
-    if (Unk3300DJBJACGHGDM != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Unk3300DJBJACGHGDM);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ActivityId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ActivityId);
-    }
-    if (Unk3300BNJBIGHIJOC != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Unk3300BNJBIGHIJOC);
-    }
-    if (Unk3300CBAMLHDMKJF != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Unk3300CBAMLHDMKJF);
-    }
-    if (StageId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(StageId);
-    }
-    dungeonTeamList_.WriteTo(ref output, _repeated_dungeonTeamList_codec);
-    if (Unk3300DJBJACGHGDM != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Unk3300DJBJACGHGDM);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Unk3300DJBJACGHGDM != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DJBJACGHGDM);
-    }
-    if (Unk3300CBAMLHDMKJF != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300CBAMLHDMKJF);
-    }
-    size += dungeonTeamList_.CalculateSize(_repeated_dungeonTeamList_codec);
-    if (Unk3300BNJBIGHIJOC != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BNJBIGHIJOC);
-    }
-    if (ActivityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
-    }
-    if (StageId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SumoEnterDungeonNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Unk3300DJBJACGHGDM != 0) {
-      Unk3300DJBJACGHGDM = other.Unk3300DJBJACGHGDM;
-    }
-    if (other.Unk3300CBAMLHDMKJF != 0) {
-      Unk3300CBAMLHDMKJF = other.Unk3300CBAMLHDMKJF;
-    }
-    dungeonTeamList_.Add(other.dungeonTeamList_);
-    if (other.Unk3300BNJBIGHIJOC != 0) {
-      Unk3300BNJBIGHIJOC = other.Unk3300BNJBIGHIJOC;
-    }
-    if (other.ActivityId != 0) {
-      ActivityId = other.ActivityId;
-    }
-    if (other.StageId != 0) {
-      StageId = other.StageId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          ActivityId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Unk3300BNJBIGHIJOC = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Unk3300CBAMLHDMKJF = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 114: {
-          dungeonTeamList_.AddEntriesFrom(input, _repeated_dungeonTeamList_codec);
-          break;
-        }
-        case 120: {
-          Unk3300DJBJACGHGDM = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          ActivityId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Unk3300BNJBIGHIJOC = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Unk3300CBAMLHDMKJF = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 114: {
-          dungeonTeamList_.AddEntriesFrom(ref input, _repeated_dungeonTeamList_codec);
-          break;
-        }
-        case 120: {
-          Unk3300DJBJACGHGDM = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

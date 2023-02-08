@@ -30,7 +30,7 @@ import "TowerLevelEndNotify.proto";
 import "TrialAvatarFirstPassDungeonNotify.proto";
 import "WindFieldDungeonSettleInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 999
 // EnetChannelId: 0

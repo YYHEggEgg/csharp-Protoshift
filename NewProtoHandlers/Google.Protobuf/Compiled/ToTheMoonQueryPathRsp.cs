@@ -9,406 +9,409 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ToTheMoonQueryPathRsp.proto</summary>
-public static partial class ToTheMoonQueryPathRspReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ToTheMoonQueryPathRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ToTheMoonQueryPathRsp.proto</summary>
+  public static partial class ToTheMoonQueryPathRspReflection {
 
-  static ToTheMoonQueryPathRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtUb1RoZU1vb25RdWVyeVBhdGhSc3AucHJvdG8aDFZlY3Rvci5wcm90byKV",
-          "AgoVVG9UaGVNb29uUXVlcnlQYXRoUnNwEg0KBWluZGV4GAUgAygDEhgKB2Nv",
-          "cm5lcnMYAyADKAsyBy5WZWN0b3ISEAoIcXVlcnlfaWQYDyABKAUSDwoHcmV0",
-          "Y29kZRgKIAEoBRINCgVsZXZlbBgIIAMoBRI7CgxxdWVyeV9zdGF0dXMYDiAB",
-          "KA4yJS5Ub1RoZU1vb25RdWVyeVBhdGhSc3AuUGF0aFN0YXR1c1R5cGUiZAoO",
-          "UGF0aFN0YXR1c1R5cGUSGQoVUEFUSF9TVEFUVVNfVFlQRV9GQUlMEAASGQoV",
-          "UEFUSF9TVEFUVVNfVFlQRV9TVUNDEAESHAoYUEFUSF9TVEFUVVNfVFlQRV9Q",
-          "QVJUSUFMEAJCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ToTheMoonQueryPathRsp), global::ToTheMoonQueryPathRsp.Parser, new[]{ "Index", "Corners", "QueryId", "Retcode", "Level", "QueryStatus" }, null, new[]{ typeof(global::ToTheMoonQueryPathRsp.Types.PathStatusType) }, null, null)
-        }));
-  }
-  #endregion
-
-}
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 6130;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class ToTheMoonQueryPathRsp : pb::IMessage<ToTheMoonQueryPathRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ToTheMoonQueryPathRsp> _parser = new pb::MessageParser<ToTheMoonQueryPathRsp>(() => new ToTheMoonQueryPathRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ToTheMoonQueryPathRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ToTheMoonQueryPathRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ToTheMoonQueryPathRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ToTheMoonQueryPathRsp(ToTheMoonQueryPathRsp other) : this() {
-    index_ = other.index_.Clone();
-    corners_ = other.corners_.Clone();
-    queryId_ = other.queryId_;
-    retcode_ = other.retcode_;
-    level_ = other.level_.Clone();
-    queryStatus_ = other.queryStatus_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ToTheMoonQueryPathRsp Clone() {
-    return new ToTheMoonQueryPathRsp(this);
-  }
-
-  /// <summary>Field number for the "index" field.</summary>
-  public const int IndexFieldNumber = 5;
-  private static readonly pb::FieldCodec<long> _repeated_index_codec
-      = pb::FieldCodec.ForInt64(42);
-  private readonly pbc::RepeatedField<long> index_ = new pbc::RepeatedField<long>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<long> Index {
-    get { return index_; }
-  }
-
-  /// <summary>Field number for the "corners" field.</summary>
-  public const int CornersFieldNumber = 3;
-  private static readonly pb::FieldCodec<global::Vector> _repeated_corners_codec
-      = pb::FieldCodec.ForMessage(26, global::Vector.Parser);
-  private readonly pbc::RepeatedField<global::Vector> corners_ = new pbc::RepeatedField<global::Vector>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::Vector> Corners {
-    get { return corners_; }
-  }
-
-  /// <summary>Field number for the "query_id" field.</summary>
-  public const int QueryIdFieldNumber = 15;
-  private int queryId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int QueryId {
-    get { return queryId_; }
-    set {
-      queryId_ = value;
+    #region Descriptor
+    /// <summary>File descriptor for ToTheMoonQueryPathRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
     }
-  }
+    private static pbr::FileDescriptor descriptor;
 
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 10;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
+    static ToTheMoonQueryPathRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtUb1RoZU1vb25RdWVyeVBhdGhSc3AucHJvdG8aDFZlY3Rvci5wcm90byKV",
+            "AgoVVG9UaGVNb29uUXVlcnlQYXRoUnNwEg0KBWluZGV4GAUgAygDEhgKB2Nv",
+            "cm5lcnMYAyADKAsyBy5WZWN0b3ISEAoIcXVlcnlfaWQYDyABKAUSDwoHcmV0",
+            "Y29kZRgKIAEoBRINCgVsZXZlbBgIIAMoBRI7CgxxdWVyeV9zdGF0dXMYDiAB",
+            "KA4yJS5Ub1RoZU1vb25RdWVyeVBhdGhSc3AuUGF0aFN0YXR1c1R5cGUiZAoO",
+            "UGF0aFN0YXR1c1R5cGUSGQoVUEFUSF9TVEFUVVNfVFlQRV9GQUlMEAASGQoV",
+            "UEFUSF9TVEFUVVNfVFlQRV9TVUNDEAESHAoYUEFUSF9TVEFUVVNfVFlQRV9Q",
+            "QVJUSUFMEAJCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.ToTheMoonQueryPathRsp), global::NewProtos.ToTheMoonQueryPathRsp.Parser, new[]{ "Index", "Corners", "QueryId", "Retcode", "Level", "QueryStatus" }, null, new[]{ typeof(global::NewProtos.ToTheMoonQueryPathRsp.Types.PathStatusType) }, null, null)
+          }));
     }
-  }
+    #endregion
 
-  /// <summary>Field number for the "level" field.</summary>
-  public const int LevelFieldNumber = 8;
-  private static readonly pb::FieldCodec<int> _repeated_level_codec
-      = pb::FieldCodec.ForInt32(66);
-  private readonly pbc::RepeatedField<int> level_ = new pbc::RepeatedField<int>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<int> Level {
-    get { return level_; }
   }
-
-  /// <summary>Field number for the "query_status" field.</summary>
-  public const int QueryStatusFieldNumber = 14;
-  private global::ToTheMoonQueryPathRsp.Types.PathStatusType queryStatus_ = global::ToTheMoonQueryPathRsp.Types.PathStatusType.Fail;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ToTheMoonQueryPathRsp.Types.PathStatusType QueryStatus {
-    get { return queryStatus_; }
-    set {
-      queryStatus_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ToTheMoonQueryPathRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ToTheMoonQueryPathRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!index_.Equals(other.index_)) return false;
-    if(!corners_.Equals(other.corners_)) return false;
-    if (QueryId != other.QueryId) return false;
-    if (Retcode != other.Retcode) return false;
-    if(!level_.Equals(other.level_)) return false;
-    if (QueryStatus != other.QueryStatus) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= index_.GetHashCode();
-    hash ^= corners_.GetHashCode();
-    if (QueryId != 0) hash ^= QueryId.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    hash ^= level_.GetHashCode();
-    if (QueryStatus != global::ToTheMoonQueryPathRsp.Types.PathStatusType.Fail) hash ^= QueryStatus.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6130;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class ToTheMoonQueryPathRsp : pb::IMessage<ToTheMoonQueryPathRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    corners_.WriteTo(output, _repeated_corners_codec);
-    index_.WriteTo(output, _repeated_index_codec);
-    level_.WriteTo(output, _repeated_level_codec);
-    if (Retcode != 0) {
-      output.WriteRawTag(80);
-      output.WriteInt32(Retcode);
-    }
-    if (QueryStatus != global::ToTheMoonQueryPathRsp.Types.PathStatusType.Fail) {
-      output.WriteRawTag(112);
-      output.WriteEnum((int) QueryStatus);
-    }
-    if (QueryId != 0) {
-      output.WriteRawTag(120);
-      output.WriteInt32(QueryId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
+      , pb::IBufferMessage
   #endif
-  }
+  {
+    private static readonly pb::MessageParser<ToTheMoonQueryPathRsp> _parser = new pb::MessageParser<ToTheMoonQueryPathRsp>(() => new ToTheMoonQueryPathRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ToTheMoonQueryPathRsp> Parser { get { return _parser; } }
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    corners_.WriteTo(ref output, _repeated_corners_codec);
-    index_.WriteTo(ref output, _repeated_index_codec);
-    level_.WriteTo(ref output, _repeated_level_codec);
-    if (Retcode != 0) {
-      output.WriteRawTag(80);
-      output.WriteInt32(Retcode);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.ToTheMoonQueryPathRspReflection.Descriptor.MessageTypes[0]; }
     }
-    if (QueryStatus != global::ToTheMoonQueryPathRsp.Types.PathStatusType.Fail) {
-      output.WriteRawTag(112);
-      output.WriteEnum((int) QueryStatus);
-    }
-    if (QueryId != 0) {
-      output.WriteRawTag(120);
-      output.WriteInt32(QueryId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += index_.CalculateSize(_repeated_index_codec);
-    size += corners_.CalculateSize(_repeated_corners_codec);
-    if (QueryId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
     }
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    size += level_.CalculateSize(_repeated_level_codec);
-    if (QueryStatus != global::ToTheMoonQueryPathRsp.Types.PathStatusType.Fail) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) QueryStatus);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ToTheMoonQueryPathRsp other) {
-    if (other == null) {
-      return;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ToTheMoonQueryPathRsp() {
+      OnConstruction();
     }
-    index_.Add(other.index_);
-    corners_.Add(other.corners_);
-    if (other.QueryId != 0) {
-      QueryId = other.QueryId;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    level_.Add(other.level_);
-    if (other.QueryStatus != global::ToTheMoonQueryPathRsp.Types.PathStatusType.Fail) {
-      QueryStatus = other.QueryStatus;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 26: {
-          corners_.AddEntriesFrom(input, _repeated_corners_codec);
-          break;
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ToTheMoonQueryPathRsp(ToTheMoonQueryPathRsp other) : this() {
+      index_ = other.index_.Clone();
+      corners_ = other.corners_.Clone();
+      queryId_ = other.queryId_;
+      retcode_ = other.retcode_;
+      level_ = other.level_.Clone();
+      queryStatus_ = other.queryStatus_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ToTheMoonQueryPathRsp Clone() {
+      return new ToTheMoonQueryPathRsp(this);
+    }
+
+    /// <summary>Field number for the "index" field.</summary>
+    public const int IndexFieldNumber = 5;
+    private static readonly pb::FieldCodec<long> _repeated_index_codec
+        = pb::FieldCodec.ForInt64(42);
+    private readonly pbc::RepeatedField<long> index_ = new pbc::RepeatedField<long>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<long> Index {
+      get { return index_; }
+    }
+
+    /// <summary>Field number for the "corners" field.</summary>
+    public const int CornersFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::NewProtos.Vector> _repeated_corners_codec
+        = pb::FieldCodec.ForMessage(26, global::NewProtos.Vector.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.Vector> corners_ = new pbc::RepeatedField<global::NewProtos.Vector>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.Vector> Corners {
+      get { return corners_; }
+    }
+
+    /// <summary>Field number for the "query_id" field.</summary>
+    public const int QueryIdFieldNumber = 15;
+    private int queryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int QueryId {
+      get { return queryId_; }
+      set {
+        queryId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 10;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 8;
+    private static readonly pb::FieldCodec<int> _repeated_level_codec
+        = pb::FieldCodec.ForInt32(66);
+    private readonly pbc::RepeatedField<int> level_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> Level {
+      get { return level_; }
+    }
+
+    /// <summary>Field number for the "query_status" field.</summary>
+    public const int QueryStatusFieldNumber = 14;
+    private global::NewProtos.ToTheMoonQueryPathRsp.Types.PathStatusType queryStatus_ = global::NewProtos.ToTheMoonQueryPathRsp.Types.PathStatusType.Fail;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ToTheMoonQueryPathRsp.Types.PathStatusType QueryStatus {
+      get { return queryStatus_; }
+      set {
+        queryStatus_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ToTheMoonQueryPathRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ToTheMoonQueryPathRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!index_.Equals(other.index_)) return false;
+      if(!corners_.Equals(other.corners_)) return false;
+      if (QueryId != other.QueryId) return false;
+      if (Retcode != other.Retcode) return false;
+      if(!level_.Equals(other.level_)) return false;
+      if (QueryStatus != other.QueryStatus) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= index_.GetHashCode();
+      hash ^= corners_.GetHashCode();
+      if (QueryId != 0) hash ^= QueryId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= level_.GetHashCode();
+      if (QueryStatus != global::NewProtos.ToTheMoonQueryPathRsp.Types.PathStatusType.Fail) hash ^= QueryStatus.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      corners_.WriteTo(output, _repeated_corners_codec);
+      index_.WriteTo(output, _repeated_index_codec);
+      level_.WriteTo(output, _repeated_level_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
+      }
+      if (QueryStatus != global::NewProtos.ToTheMoonQueryPathRsp.Types.PathStatusType.Fail) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) QueryStatus);
+      }
+      if (QueryId != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(QueryId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      corners_.WriteTo(ref output, _repeated_corners_codec);
+      index_.WriteTo(ref output, _repeated_index_codec);
+      level_.WriteTo(ref output, _repeated_level_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
+      }
+      if (QueryStatus != global::NewProtos.ToTheMoonQueryPathRsp.Types.PathStatusType.Fail) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) QueryStatus);
+      }
+      if (QueryId != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(QueryId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += index_.CalculateSize(_repeated_index_codec);
+      size += corners_.CalculateSize(_repeated_corners_codec);
+      if (QueryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      size += level_.CalculateSize(_repeated_level_codec);
+      if (QueryStatus != global::NewProtos.ToTheMoonQueryPathRsp.Types.PathStatusType.Fail) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) QueryStatus);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ToTheMoonQueryPathRsp other) {
+      if (other == null) {
+        return;
+      }
+      index_.Add(other.index_);
+      corners_.Add(other.corners_);
+      if (other.QueryId != 0) {
+        QueryId = other.QueryId;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      level_.Add(other.level_);
+      if (other.QueryStatus != global::NewProtos.ToTheMoonQueryPathRsp.Types.PathStatusType.Fail) {
+        QueryStatus = other.QueryStatus;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 26: {
+            corners_.AddEntriesFrom(input, _repeated_corners_codec);
+            break;
+          }
+          case 42:
+          case 40: {
+            index_.AddEntriesFrom(input, _repeated_index_codec);
+            break;
+          }
+          case 66:
+          case 64: {
+            level_.AddEntriesFrom(input, _repeated_level_codec);
+            break;
+          }
+          case 80: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            QueryStatus = (global::NewProtos.ToTheMoonQueryPathRsp.Types.PathStatusType) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            QueryId = input.ReadInt32();
+            break;
+          }
         }
-        case 42:
-        case 40: {
-          index_.AddEntriesFrom(input, _repeated_index_codec);
-          break;
-        }
-        case 66:
-        case 64: {
-          level_.AddEntriesFrom(input, _repeated_level_codec);
-          break;
-        }
-        case 80: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 112: {
-          QueryStatus = (global::ToTheMoonQueryPathRsp.Types.PathStatusType) input.ReadEnum();
-          break;
-        }
-        case 120: {
-          QueryId = input.ReadInt32();
-          break;
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 26: {
+            corners_.AddEntriesFrom(ref input, _repeated_corners_codec);
+            break;
+          }
+          case 42:
+          case 40: {
+            index_.AddEntriesFrom(ref input, _repeated_index_codec);
+            break;
+          }
+          case 66:
+          case 64: {
+            level_.AddEntriesFrom(ref input, _repeated_level_codec);
+            break;
+          }
+          case 80: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            QueryStatus = (global::NewProtos.ToTheMoonQueryPathRsp.Types.PathStatusType) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            QueryId = input.ReadInt32();
+            break;
+          }
         }
       }
     }
-  #endif
-  }
+    #endif
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 26: {
-          corners_.AddEntriesFrom(ref input, _repeated_corners_codec);
-          break;
-        }
-        case 42:
-        case 40: {
-          index_.AddEntriesFrom(ref input, _repeated_index_codec);
-          break;
-        }
-        case 66:
-        case 64: {
-          level_.AddEntriesFrom(ref input, _repeated_level_codec);
-          break;
-        }
-        case 80: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 112: {
-          QueryStatus = (global::ToTheMoonQueryPathRsp.Types.PathStatusType) input.ReadEnum();
-          break;
-        }
-        case 120: {
-          QueryId = input.ReadInt32();
-          break;
-        }
+    #region Nested types
+    /// <summary>Container for nested types declared in the ToTheMoonQueryPathRsp message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum PathStatusType {
+        [pbr::OriginalName("PATH_STATUS_TYPE_FAIL")] Fail = 0,
+        [pbr::OriginalName("PATH_STATUS_TYPE_SUCC")] Succ = 1,
+        [pbr::OriginalName("PATH_STATUS_TYPE_PARTIAL")] Partial = 2,
       }
-    }
-  }
-  #endif
 
-  #region Nested types
-  /// <summary>Container for nested types declared in the ToTheMoonQueryPathRsp message type.</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static partial class Types {
-    public enum PathStatusType {
-      [pbr::OriginalName("PATH_STATUS_TYPE_FAIL")] Fail = 0,
-      [pbr::OriginalName("PATH_STATUS_TYPE_SUCC")] Succ = 1,
-      [pbr::OriginalName("PATH_STATUS_TYPE_PARTIAL")] Partial = 2,
     }
+    #endregion
 
   }
+
   #endregion
 
 }
-
-#endregion
-
 
 #endregion Designer generated code

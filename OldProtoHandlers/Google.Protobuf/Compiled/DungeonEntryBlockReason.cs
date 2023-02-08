@@ -9,41 +9,44 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from DungeonEntryBlockReason.proto</summary>
-public static partial class DungeonEntryBlockReasonReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for DungeonEntryBlockReason.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from DungeonEntryBlockReason.proto</summary>
+  public static partial class DungeonEntryBlockReasonReflection {
 
-  static DungeonEntryBlockReasonReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1EdW5nZW9uRW50cnlCbG9ja1JlYXNvbi5wcm90byqzAQoXRHVuZ2VvbkVu",
-          "dHJ5QmxvY2tSZWFzb24SIwofRFVOR0VPTl9FTlRSWV9CTE9DS19SRUFTT05f",
-          "Tk9ORRAAEiQKIERVTkdFT05fRU5UUllfQkxPQ0tfUkVBU09OX0xFVkVMEAES",
-          "JAogRFVOR0VPTl9FTlRSWV9CTE9DS19SRUFTT05fUVVFU1QQAhInCiNEVU5H",
-          "RU9OX0VOVFJZX0JMT0NLX1JFQVNPTl9NVUxUSVBMRRADQh4KHGVtdS5ncmFz",
-          "c2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::DungeonEntryBlockReason), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for DungeonEntryBlockReason.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static DungeonEntryBlockReasonReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1EdW5nZW9uRW50cnlCbG9ja1JlYXNvbi5wcm90byqzAQoXRHVuZ2VvbkVu",
+            "dHJ5QmxvY2tSZWFzb24SIwofRFVOR0VPTl9FTlRSWV9CTE9DS19SRUFTT05f",
+            "Tk9ORRAAEiQKIERVTkdFT05fRU5UUllfQkxPQ0tfUkVBU09OX0xFVkVMEAES",
+            "JAogRFVOR0VPTl9FTlRSWV9CTE9DS19SRUFTT05fUVVFU1QQAhInCiNEVU5H",
+            "RU9OX0VOVFJZX0JMT0NLX1JFQVNPTl9NVUxUSVBMRRADQgyqAglPbGRQcm90",
+            "b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.DungeonEntryBlockReason), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum DungeonEntryBlockReason {
+    [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_NONE")] None = 0,
+    [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_LEVEL")] Level = 1,
+    [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_QUEST")] Quest = 2,
+    [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_MULTIPLE")] Multiple = 3,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum DungeonEntryBlockReason {
-  [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_NONE")] None = 0,
-  [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_LEVEL")] Level = 1,
-  [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_QUEST")] Quest = 2,
-  [pbr::OriginalName("DUNGEON_ENTRY_BLOCK_REASON_MULTIPLE")] Multiple = 3,
-}
-
-#endregion
-
 
 #endregion Designer generated code

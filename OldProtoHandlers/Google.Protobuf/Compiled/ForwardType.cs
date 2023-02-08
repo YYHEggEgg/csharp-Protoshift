@@ -9,48 +9,51 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ForwardType.proto</summary>
-public static partial class ForwardTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ForwardType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ForwardType.proto</summary>
+  public static partial class ForwardTypeReflection {
 
-  static ForwardTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChFGb3J3YXJkVHlwZS5wcm90byqYAgoLRm9yd2FyZFR5cGUSFgoSRk9SV0FS",
-          "RF9UWVBFX0xPQ0FMEAASFwoTRk9SV0FSRF9UWVBFX1RPX0FMTBABEiIKHkZP",
-          "UldBUkRfVFlQRV9UT19BTExfRVhDRVBUX0NVUhACEhgKFEZPUldBUkRfVFlQ",
-          "RV9UT19IT1NUEAMSHQoZRk9SV0FSRF9UWVBFX1RPX0FMTF9HVUVTVBAEEhgK",
-          "FEZPUldBUkRfVFlQRV9UT19QRUVSEAUSGQoVRk9SV0FSRF9UWVBFX1RPX1BF",
-          "RVJTEAYSHAoYRk9SV0FSRF9UWVBFX09OTFlfU0VSVkVSEAcSKAokRk9SV0FS",
-          "RF9UWVBFX1RPX0FMTF9FWElTVF9FWENFUFRfQ1VSEAhCHgocZW11LmdyYXNz",
-          "Y3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ForwardType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for ForwardType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ForwardTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChFGb3J3YXJkVHlwZS5wcm90byqYAgoLRm9yd2FyZFR5cGUSFgoSRk9SV0FS",
+            "RF9UWVBFX0xPQ0FMEAASFwoTRk9SV0FSRF9UWVBFX1RPX0FMTBABEiIKHkZP",
+            "UldBUkRfVFlQRV9UT19BTExfRVhDRVBUX0NVUhACEhgKFEZPUldBUkRfVFlQ",
+            "RV9UT19IT1NUEAMSHQoZRk9SV0FSRF9UWVBFX1RPX0FMTF9HVUVTVBAEEhgK",
+            "FEZPUldBUkRfVFlQRV9UT19QRUVSEAUSGQoVRk9SV0FSRF9UWVBFX1RPX1BF",
+            "RVJTEAYSHAoYRk9SV0FSRF9UWVBFX09OTFlfU0VSVkVSEAcSKAokRk9SV0FS",
+            "RF9UWVBFX1RPX0FMTF9FWElTVF9FWENFUFRfQ1VSEAhCDKoCCU9sZFByb3Rv",
+            "c2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.ForwardType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum ForwardType {
+    [pbr::OriginalName("FORWARD_TYPE_LOCAL")] Local = 0,
+    [pbr::OriginalName("FORWARD_TYPE_TO_ALL")] ToAll = 1,
+    [pbr::OriginalName("FORWARD_TYPE_TO_ALL_EXCEPT_CUR")] ToAllExceptCur = 2,
+    [pbr::OriginalName("FORWARD_TYPE_TO_HOST")] ToHost = 3,
+    [pbr::OriginalName("FORWARD_TYPE_TO_ALL_GUEST")] ToAllGuest = 4,
+    [pbr::OriginalName("FORWARD_TYPE_TO_PEER")] ToPeer = 5,
+    [pbr::OriginalName("FORWARD_TYPE_TO_PEERS")] ToPeers = 6,
+    [pbr::OriginalName("FORWARD_TYPE_ONLY_SERVER")] OnlyServer = 7,
+    [pbr::OriginalName("FORWARD_TYPE_TO_ALL_EXIST_EXCEPT_CUR")] ToAllExistExceptCur = 8,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum ForwardType {
-  [pbr::OriginalName("FORWARD_TYPE_LOCAL")] Local = 0,
-  [pbr::OriginalName("FORWARD_TYPE_TO_ALL")] ToAll = 1,
-  [pbr::OriginalName("FORWARD_TYPE_TO_ALL_EXCEPT_CUR")] ToAllExceptCur = 2,
-  [pbr::OriginalName("FORWARD_TYPE_TO_HOST")] ToHost = 3,
-  [pbr::OriginalName("FORWARD_TYPE_TO_ALL_GUEST")] ToAllGuest = 4,
-  [pbr::OriginalName("FORWARD_TYPE_TO_PEER")] ToPeer = 5,
-  [pbr::OriginalName("FORWARD_TYPE_TO_PEERS")] ToPeers = 6,
-  [pbr::OriginalName("FORWARD_TYPE_ONLY_SERVER")] OnlyServer = 7,
-  [pbr::OriginalName("FORWARD_TYPE_TO_ALL_EXIST_EXCEPT_CUR")] ToAllExistExceptCur = 8,
-}
-
-#endregion
-
 
 #endregion Designer generated code

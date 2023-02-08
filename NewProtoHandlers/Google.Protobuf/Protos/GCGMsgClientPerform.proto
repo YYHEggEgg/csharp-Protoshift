@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GCGClientPerformType.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGMsgClientPerform {
   repeated uint32 param_list = 4;

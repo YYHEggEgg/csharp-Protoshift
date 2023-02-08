@@ -9,269 +9,272 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from TowerDailyRewardProgressChangeNotify.proto</summary>
-public static partial class TowerDailyRewardProgressChangeNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for TowerDailyRewardProgressChangeNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from TowerDailyRewardProgressChangeNotify.proto</summary>
+  public static partial class TowerDailyRewardProgressChangeNotifyReflection {
 
-  static TowerDailyRewardProgressChangeNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CipUb3dlckRhaWx5UmV3YXJkUHJvZ3Jlc3NDaGFuZ2VOb3RpZnkucHJvdG8i",
-          "YAokVG93ZXJEYWlseVJld2FyZFByb2dyZXNzQ2hhbmdlTm90aWZ5EhsKE1Vu",
-          "azMzMDBfT0hDSENKR0pJREsYCCABKA0SGwoTVW5rMzMwMF9KQkFDS0VOREhE",
-          "RxgGIAEoDUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::TowerDailyRewardProgressChangeNotify), global::TowerDailyRewardProgressChangeNotify.Parser, new[]{ "Unk3300OHCHCJGJIDK", "Unk3300JBACKENDHDG" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for TowerDailyRewardProgressChangeNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static TowerDailyRewardProgressChangeNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CipUb3dlckRhaWx5UmV3YXJkUHJvZ3Jlc3NDaGFuZ2VOb3RpZnkucHJvdG8i",
+            "YAokVG93ZXJEYWlseVJld2FyZFByb2dyZXNzQ2hhbmdlTm90aWZ5EhsKE1Vu",
+            "azMzMDBfT0hDSENKR0pJREsYCCABKA0SGwoTVW5rMzMwMF9KQkFDS0VOREhE",
+            "RxgGIAEoDUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.TowerDailyRewardProgressChangeNotify), global::NewProtos.TowerDailyRewardProgressChangeNotify.Parser, new[]{ "Unk3300OHCHCJGJIDK", "Unk3300JBACKENDHDG" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2419;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class TowerDailyRewardProgressChangeNotify : pb::IMessage<TowerDailyRewardProgressChangeNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TowerDailyRewardProgressChangeNotify> _parser = new pb::MessageParser<TowerDailyRewardProgressChangeNotify>(() => new TowerDailyRewardProgressChangeNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TowerDailyRewardProgressChangeNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.TowerDailyRewardProgressChangeNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TowerDailyRewardProgressChangeNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TowerDailyRewardProgressChangeNotify(TowerDailyRewardProgressChangeNotify other) : this() {
+      unk3300OHCHCJGJIDK_ = other.unk3300OHCHCJGJIDK_;
+      unk3300JBACKENDHDG_ = other.unk3300JBACKENDHDG_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TowerDailyRewardProgressChangeNotify Clone() {
+      return new TowerDailyRewardProgressChangeNotify(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_OHCHCJGJIDK" field.</summary>
+    public const int Unk3300OHCHCJGJIDKFieldNumber = 8;
+    private uint unk3300OHCHCJGJIDK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300OHCHCJGJIDK {
+      get { return unk3300OHCHCJGJIDK_; }
+      set {
+        unk3300OHCHCJGJIDK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_JBACKENDHDG" field.</summary>
+    public const int Unk3300JBACKENDHDGFieldNumber = 6;
+    private uint unk3300JBACKENDHDG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300JBACKENDHDG {
+      get { return unk3300JBACKENDHDG_; }
+      set {
+        unk3300JBACKENDHDG_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TowerDailyRewardProgressChangeNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TowerDailyRewardProgressChangeNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Unk3300OHCHCJGJIDK != other.Unk3300OHCHCJGJIDK) return false;
+      if (Unk3300JBACKENDHDG != other.Unk3300JBACKENDHDG) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Unk3300OHCHCJGJIDK != 0) hash ^= Unk3300OHCHCJGJIDK.GetHashCode();
+      if (Unk3300JBACKENDHDG != 0) hash ^= Unk3300JBACKENDHDG.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Unk3300JBACKENDHDG != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300JBACKENDHDG);
+      }
+      if (Unk3300OHCHCJGJIDK != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300OHCHCJGJIDK);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300JBACKENDHDG != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300JBACKENDHDG);
+      }
+      if (Unk3300OHCHCJGJIDK != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300OHCHCJGJIDK);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Unk3300OHCHCJGJIDK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OHCHCJGJIDK);
+      }
+      if (Unk3300JBACKENDHDG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JBACKENDHDG);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TowerDailyRewardProgressChangeNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Unk3300OHCHCJGJIDK != 0) {
+        Unk3300OHCHCJGJIDK = other.Unk3300OHCHCJGJIDK;
+      }
+      if (other.Unk3300JBACKENDHDG != 0) {
+        Unk3300JBACKENDHDG = other.Unk3300JBACKENDHDG;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 48: {
+            Unk3300JBACKENDHDG = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Unk3300OHCHCJGJIDK = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 48: {
+            Unk3300JBACKENDHDG = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Unk3300OHCHCJGJIDK = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 2419;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class TowerDailyRewardProgressChangeNotify : pb::IMessage<TowerDailyRewardProgressChangeNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<TowerDailyRewardProgressChangeNotify> _parser = new pb::MessageParser<TowerDailyRewardProgressChangeNotify>(() => new TowerDailyRewardProgressChangeNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<TowerDailyRewardProgressChangeNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::TowerDailyRewardProgressChangeNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TowerDailyRewardProgressChangeNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TowerDailyRewardProgressChangeNotify(TowerDailyRewardProgressChangeNotify other) : this() {
-    unk3300OHCHCJGJIDK_ = other.unk3300OHCHCJGJIDK_;
-    unk3300JBACKENDHDG_ = other.unk3300JBACKENDHDG_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TowerDailyRewardProgressChangeNotify Clone() {
-    return new TowerDailyRewardProgressChangeNotify(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_OHCHCJGJIDK" field.</summary>
-  public const int Unk3300OHCHCJGJIDKFieldNumber = 8;
-  private uint unk3300OHCHCJGJIDK_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300OHCHCJGJIDK {
-    get { return unk3300OHCHCJGJIDK_; }
-    set {
-      unk3300OHCHCJGJIDK_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_JBACKENDHDG" field.</summary>
-  public const int Unk3300JBACKENDHDGFieldNumber = 6;
-  private uint unk3300JBACKENDHDG_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300JBACKENDHDG {
-    get { return unk3300JBACKENDHDG_; }
-    set {
-      unk3300JBACKENDHDG_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as TowerDailyRewardProgressChangeNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(TowerDailyRewardProgressChangeNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Unk3300OHCHCJGJIDK != other.Unk3300OHCHCJGJIDK) return false;
-    if (Unk3300JBACKENDHDG != other.Unk3300JBACKENDHDG) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Unk3300OHCHCJGJIDK != 0) hash ^= Unk3300OHCHCJGJIDK.GetHashCode();
-    if (Unk3300JBACKENDHDG != 0) hash ^= Unk3300JBACKENDHDG.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Unk3300JBACKENDHDG != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Unk3300JBACKENDHDG);
-    }
-    if (Unk3300OHCHCJGJIDK != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Unk3300OHCHCJGJIDK);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Unk3300JBACKENDHDG != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Unk3300JBACKENDHDG);
-    }
-    if (Unk3300OHCHCJGJIDK != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Unk3300OHCHCJGJIDK);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Unk3300OHCHCJGJIDK != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OHCHCJGJIDK);
-    }
-    if (Unk3300JBACKENDHDG != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300JBACKENDHDG);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(TowerDailyRewardProgressChangeNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Unk3300OHCHCJGJIDK != 0) {
-      Unk3300OHCHCJGJIDK = other.Unk3300OHCHCJGJIDK;
-    }
-    if (other.Unk3300JBACKENDHDG != 0) {
-      Unk3300JBACKENDHDG = other.Unk3300JBACKENDHDG;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 48: {
-          Unk3300JBACKENDHDG = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          Unk3300OHCHCJGJIDK = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 48: {
-          Unk3300JBACKENDHDG = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          Unk3300OHCHCJGJIDK = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

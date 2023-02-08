@@ -19,7 +19,7 @@ syntax = "proto3";
 import "ExhibitionDisplayInfo.proto";
 import "OnlinePlayerInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message IslandPartyGallerySettleInfo {
   repeated ExhibitionDisplayInfo card_list = 1;

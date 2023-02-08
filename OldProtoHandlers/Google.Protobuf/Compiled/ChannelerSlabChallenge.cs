@@ -9,250 +9,252 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ChannelerSlabChallenge.proto</summary>
-public static partial class ChannelerSlabChallengeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ChannelerSlabChallenge.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ChannelerSlabChallenge.proto</summary>
+  public static partial class ChannelerSlabChallengeReflection {
 
-  static ChannelerSlabChallengeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChxDaGFubmVsZXJTbGFiQ2hhbGxlbmdlLnByb3RvGhdDaGFubmVsZXJTbGFi",
-          "Q2FtcC5wcm90byJaChZDaGFubmVsZXJTbGFiQ2hhbGxlbmdlEhkKEWFjdGl2",
-          "ZV9jYW1wX2luZGV4GAUgASgNEiUKCWNhbXBfbGlzdBgOIAMoCzISLkNoYW5u",
-          "ZWxlclNsYWJDYW1wQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9i",
-          "BnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ChannelerSlabCampReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ChannelerSlabChallenge), global::ChannelerSlabChallenge.Parser, new[]{ "ActiveCampIndex", "CampList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ChannelerSlabChallenge.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ChannelerSlabChallengeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChxDaGFubmVsZXJTbGFiQ2hhbGxlbmdlLnByb3RvGhdDaGFubmVsZXJTbGFi",
+            "Q2FtcC5wcm90byJaChZDaGFubmVsZXJTbGFiQ2hhbGxlbmdlEhkKEWFjdGl2",
+            "ZV9jYW1wX2luZGV4GAUgASgNEiUKCWNhbXBfbGlzdBgOIAMoCzISLkNoYW5u",
+            "ZWxlclNsYWJDYW1wQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ChannelerSlabCampReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ChannelerSlabChallenge), global::OldProtos.ChannelerSlabChallenge.Parser, new[]{ "ActiveCampIndex", "CampList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class ChannelerSlabChallenge : pb::IMessage<ChannelerSlabChallenge>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ChannelerSlabChallenge> _parser = new pb::MessageParser<ChannelerSlabChallenge>(() => new ChannelerSlabChallenge());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ChannelerSlabChallenge> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ChannelerSlabChallengeReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChannelerSlabChallenge() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChannelerSlabChallenge(ChannelerSlabChallenge other) : this() {
+      activeCampIndex_ = other.activeCampIndex_;
+      campList_ = other.campList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChannelerSlabChallenge Clone() {
+      return new ChannelerSlabChallenge(this);
+    }
+
+    /// <summary>Field number for the "active_camp_index" field.</summary>
+    public const int ActiveCampIndexFieldNumber = 5;
+    private uint activeCampIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ActiveCampIndex {
+      get { return activeCampIndex_; }
+      set {
+        activeCampIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "camp_list" field.</summary>
+    public const int CampListFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::OldProtos.ChannelerSlabCamp> _repeated_campList_codec
+        = pb::FieldCodec.ForMessage(114, global::OldProtos.ChannelerSlabCamp.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.ChannelerSlabCamp> campList_ = new pbc::RepeatedField<global::OldProtos.ChannelerSlabCamp>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.ChannelerSlabCamp> CampList {
+      get { return campList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ChannelerSlabChallenge);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ChannelerSlabChallenge other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ActiveCampIndex != other.ActiveCampIndex) return false;
+      if(!campList_.Equals(other.campList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ActiveCampIndex != 0) hash ^= ActiveCampIndex.GetHashCode();
+      hash ^= campList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ActiveCampIndex != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ActiveCampIndex);
+      }
+      campList_.WriteTo(output, _repeated_campList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ActiveCampIndex != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ActiveCampIndex);
+      }
+      campList_.WriteTo(ref output, _repeated_campList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ActiveCampIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActiveCampIndex);
+      }
+      size += campList_.CalculateSize(_repeated_campList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ChannelerSlabChallenge other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ActiveCampIndex != 0) {
+        ActiveCampIndex = other.ActiveCampIndex;
+      }
+      campList_.Add(other.campList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            ActiveCampIndex = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            campList_.AddEntriesFrom(input, _repeated_campList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            ActiveCampIndex = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            campList_.AddEntriesFrom(ref input, _repeated_campList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ChannelerSlabChallenge : pb::IMessage<ChannelerSlabChallenge>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ChannelerSlabChallenge> _parser = new pb::MessageParser<ChannelerSlabChallenge>(() => new ChannelerSlabChallenge());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ChannelerSlabChallenge> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ChannelerSlabChallengeReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChannelerSlabChallenge() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChannelerSlabChallenge(ChannelerSlabChallenge other) : this() {
-    activeCampIndex_ = other.activeCampIndex_;
-    campList_ = other.campList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChannelerSlabChallenge Clone() {
-    return new ChannelerSlabChallenge(this);
-  }
-
-  /// <summary>Field number for the "active_camp_index" field.</summary>
-  public const int ActiveCampIndexFieldNumber = 5;
-  private uint activeCampIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ActiveCampIndex {
-    get { return activeCampIndex_; }
-    set {
-      activeCampIndex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "camp_list" field.</summary>
-  public const int CampListFieldNumber = 14;
-  private static readonly pb::FieldCodec<global::ChannelerSlabCamp> _repeated_campList_codec
-      = pb::FieldCodec.ForMessage(114, global::ChannelerSlabCamp.Parser);
-  private readonly pbc::RepeatedField<global::ChannelerSlabCamp> campList_ = new pbc::RepeatedField<global::ChannelerSlabCamp>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ChannelerSlabCamp> CampList {
-    get { return campList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ChannelerSlabChallenge);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ChannelerSlabChallenge other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ActiveCampIndex != other.ActiveCampIndex) return false;
-    if(!campList_.Equals(other.campList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ActiveCampIndex != 0) hash ^= ActiveCampIndex.GetHashCode();
-    hash ^= campList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ActiveCampIndex != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(ActiveCampIndex);
-    }
-    campList_.WriteTo(output, _repeated_campList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ActiveCampIndex != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(ActiveCampIndex);
-    }
-    campList_.WriteTo(ref output, _repeated_campList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ActiveCampIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActiveCampIndex);
-    }
-    size += campList_.CalculateSize(_repeated_campList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ChannelerSlabChallenge other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ActiveCampIndex != 0) {
-      ActiveCampIndex = other.ActiveCampIndex;
-    }
-    campList_.Add(other.campList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          ActiveCampIndex = input.ReadUInt32();
-          break;
-        }
-        case 114: {
-          campList_.AddEntriesFrom(input, _repeated_campList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          ActiveCampIndex = input.ReadUInt32();
-          break;
-        }
-        case 114: {
-          campList_.AddEntriesFrom(ref input, _repeated_campList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

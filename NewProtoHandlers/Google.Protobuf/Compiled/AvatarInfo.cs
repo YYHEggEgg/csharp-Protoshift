@@ -9,1092 +9,1095 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AvatarInfo.proto</summary>
-public static partial class AvatarInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AvatarInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AvatarInfo.proto</summary>
+  public static partial class AvatarInfoReflection {
 
-  static AvatarInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChBBdmF0YXJJbmZvLnByb3RvGhpBdmF0YXJFcXVpcEFmZml4SW5mby5wcm90",
-          "bxoVQXZhdGFyRXhjZWxJbmZvLnByb3RvGhtBdmF0YXJFeHBlZGl0aW9uU3Rh",
-          "dGUucHJvdG8aFkF2YXRhckZldHRlckluZm8ucHJvdG8aFUF2YXRhclNraWxs",
-          "SW5mby5wcm90bxoPUHJvcFZhbHVlLnByb3RvGhVUcmlhbEF2YXRhckluZm8u",
-          "cHJvdG8irgkKCkF2YXRhckluZm8SEQoJYXZhdGFyX2lkGAEgASgNEgwKBGd1",
-          "aWQYAiABKAQSKgoIcHJvcF9tYXAYAyADKAsyGC5BdmF0YXJJbmZvLlByb3BN",
-          "YXBFbnRyeRISCgpsaWZlX3N0YXRlGAQgASgNEhcKD2VxdWlwX2d1aWRfbGlz",
-          "dBgFIAMoBBIWCg50YWxlbnRfaWRfbGlzdBgGIAMoDRI1Cg5maWdodF9wcm9w",
-          "X21hcBgHIAMoCzIdLkF2YXRhckluZm8uRmlnaHRQcm9wTWFwRW50cnkSKwoR",
-          "dHJpYWxfYXZhdGFyX2luZm8YCSABKAsyEC5UcmlhbEF2YXRhckluZm8SLAoJ",
-          "c2tpbGxfbWFwGAogAygLMhkuQXZhdGFySW5mby5Ta2lsbE1hcEVudHJ5EhYK",
-          "DnNraWxsX2RlcG90X2lkGAsgASgNEiYKC2ZldHRlcl9pbmZvGAwgASgLMhEu",
-          "QXZhdGFyRmV0dGVySW5mbxIeChZjb3JlX3Byb3VkX3NraWxsX2xldmVsGA0g",
-          "ASgNEiEKGWluaGVyZW50X3Byb3VkX3NraWxsX2xpc3QYDiADKA0SNwoPc2tp",
-          "bGxfbGV2ZWxfbWFwGA8gAygLMh4uQXZhdGFySW5mby5Ta2lsbExldmVsTWFw",
-          "RW50cnkSMAoQZXhwZWRpdGlvbl9zdGF0ZRgQIAEoDjIWLkF2YXRhckV4cGVk",
-          "aXRpb25TdGF0ZRJNChtwcm91ZF9za2lsbF9leHRyYV9sZXZlbF9tYXAYESAD",
-          "KAsyKC5BdmF0YXJJbmZvLlByb3VkU2tpbGxFeHRyYUxldmVsTWFwRW50cnkS",
-          "EAoIaXNfZm9jdXMYEiABKAgSEwoLYXZhdGFyX3R5cGUYEyABKA0SGwoTdGVh",
-          "bV9yZXNvbmFuY2VfbGlzdBgUIAMoDRIbChN3ZWFyaW5nX2ZseWNsb2FrX2lk",
-          "GBUgASgNEi8KEGVxdWlwX2FmZml4X2xpc3QYFiADKAsyFS5BdmF0YXJFcXVp",
-          "cEFmZml4SW5mbxIRCglib3JuX3RpbWUYFyABKA0SIwobcGVuZGluZ19wcm9t",
-          "b3RlX3Jld2FyZF9saXN0GBggAygNEhIKCmNvc3R1bWVfaWQYGSABKA0SJAoK",
-          "ZXhjZWxfaW5mbxgaIAEoCzIQLkF2YXRhckV4Y2VsSW5mbxIRCglhbmltX2hh",
-          "c2gYGyABKA0aOgoMUHJvcE1hcEVudHJ5EgsKA2tleRgBIAEoDRIZCgV2YWx1",
-          "ZRgCIAEoCzIKLlByb3BWYWx1ZToCOAEaMwoRRmlnaHRQcm9wTWFwRW50cnkS",
-          "CwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgCOgI4ARpBCg1Ta2lsbE1hcEVu",
-          "dHJ5EgsKA2tleRgBIAEoDRIfCgV2YWx1ZRgCIAEoCzIQLkF2YXRhclNraWxs",
-          "SW5mbzoCOAEaNAoSU2tpbGxMZXZlbE1hcEVudHJ5EgsKA2tleRgBIAEoDRIN",
-          "CgV2YWx1ZRgCIAEoDToCOAEaPgocUHJvdWRTa2lsbEV4dHJhTGV2ZWxNYXBF",
-          "bnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBQhYKFG9yZy5z",
-          "b3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::AvatarEquipAffixInfoReflection.Descriptor, global::AvatarExcelInfoReflection.Descriptor, global::AvatarExpeditionStateReflection.Descriptor, global::AvatarFetterInfoReflection.Descriptor, global::AvatarSkillInfoReflection.Descriptor, global::PropValueReflection.Descriptor, global::TrialAvatarInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AvatarInfo), global::AvatarInfo.Parser, new[]{ "AvatarId", "Guid", "PropMap", "LifeState", "EquipGuidList", "TalentIdList", "FightPropMap", "TrialAvatarInfo", "SkillMap", "SkillDepotId", "FetterInfo", "CoreProudSkillLevel", "InherentProudSkillList", "SkillLevelMap", "ExpeditionState", "ProudSkillExtraLevelMap", "IsFocus", "AvatarType", "TeamResonanceList", "WearingFlycloakId", "EquipAffixList", "BornTime", "PendingPromoteRewardList", "CostumeId", "ExcelInfo", "AnimHash" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AvatarInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AvatarInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChBBdmF0YXJJbmZvLnByb3RvGhpBdmF0YXJFcXVpcEFmZml4SW5mby5wcm90",
+            "bxoVQXZhdGFyRXhjZWxJbmZvLnByb3RvGhtBdmF0YXJFeHBlZGl0aW9uU3Rh",
+            "dGUucHJvdG8aFkF2YXRhckZldHRlckluZm8ucHJvdG8aFUF2YXRhclNraWxs",
+            "SW5mby5wcm90bxoPUHJvcFZhbHVlLnByb3RvGhVUcmlhbEF2YXRhckluZm8u",
+            "cHJvdG8irgkKCkF2YXRhckluZm8SEQoJYXZhdGFyX2lkGAEgASgNEgwKBGd1",
+            "aWQYAiABKAQSKgoIcHJvcF9tYXAYAyADKAsyGC5BdmF0YXJJbmZvLlByb3BN",
+            "YXBFbnRyeRISCgpsaWZlX3N0YXRlGAQgASgNEhcKD2VxdWlwX2d1aWRfbGlz",
+            "dBgFIAMoBBIWCg50YWxlbnRfaWRfbGlzdBgGIAMoDRI1Cg5maWdodF9wcm9w",
+            "X21hcBgHIAMoCzIdLkF2YXRhckluZm8uRmlnaHRQcm9wTWFwRW50cnkSKwoR",
+            "dHJpYWxfYXZhdGFyX2luZm8YCSABKAsyEC5UcmlhbEF2YXRhckluZm8SLAoJ",
+            "c2tpbGxfbWFwGAogAygLMhkuQXZhdGFySW5mby5Ta2lsbE1hcEVudHJ5EhYK",
+            "DnNraWxsX2RlcG90X2lkGAsgASgNEiYKC2ZldHRlcl9pbmZvGAwgASgLMhEu",
+            "QXZhdGFyRmV0dGVySW5mbxIeChZjb3JlX3Byb3VkX3NraWxsX2xldmVsGA0g",
+            "ASgNEiEKGWluaGVyZW50X3Byb3VkX3NraWxsX2xpc3QYDiADKA0SNwoPc2tp",
+            "bGxfbGV2ZWxfbWFwGA8gAygLMh4uQXZhdGFySW5mby5Ta2lsbExldmVsTWFw",
+            "RW50cnkSMAoQZXhwZWRpdGlvbl9zdGF0ZRgQIAEoDjIWLkF2YXRhckV4cGVk",
+            "aXRpb25TdGF0ZRJNChtwcm91ZF9za2lsbF9leHRyYV9sZXZlbF9tYXAYESAD",
+            "KAsyKC5BdmF0YXJJbmZvLlByb3VkU2tpbGxFeHRyYUxldmVsTWFwRW50cnkS",
+            "EAoIaXNfZm9jdXMYEiABKAgSEwoLYXZhdGFyX3R5cGUYEyABKA0SGwoTdGVh",
+            "bV9yZXNvbmFuY2VfbGlzdBgUIAMoDRIbChN3ZWFyaW5nX2ZseWNsb2FrX2lk",
+            "GBUgASgNEi8KEGVxdWlwX2FmZml4X2xpc3QYFiADKAsyFS5BdmF0YXJFcXVp",
+            "cEFmZml4SW5mbxIRCglib3JuX3RpbWUYFyABKA0SIwobcGVuZGluZ19wcm9t",
+            "b3RlX3Jld2FyZF9saXN0GBggAygNEhIKCmNvc3R1bWVfaWQYGSABKA0SJAoK",
+            "ZXhjZWxfaW5mbxgaIAEoCzIQLkF2YXRhckV4Y2VsSW5mbxIRCglhbmltX2hh",
+            "c2gYGyABKA0aOgoMUHJvcE1hcEVudHJ5EgsKA2tleRgBIAEoDRIZCgV2YWx1",
+            "ZRgCIAEoCzIKLlByb3BWYWx1ZToCOAEaMwoRRmlnaHRQcm9wTWFwRW50cnkS",
+            "CwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgCOgI4ARpBCg1Ta2lsbE1hcEVu",
+            "dHJ5EgsKA2tleRgBIAEoDRIfCgV2YWx1ZRgCIAEoCzIQLkF2YXRhclNraWxs",
+            "SW5mbzoCOAEaNAoSU2tpbGxMZXZlbE1hcEVudHJ5EgsKA2tleRgBIAEoDRIN",
+            "CgV2YWx1ZRgCIAEoDToCOAEaPgocUHJvdWRTa2lsbEV4dHJhTGV2ZWxNYXBF",
+            "bnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBQgyqAglOZXdQ",
+            "cm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.AvatarEquipAffixInfoReflection.Descriptor, global::NewProtos.AvatarExcelInfoReflection.Descriptor, global::NewProtos.AvatarExpeditionStateReflection.Descriptor, global::NewProtos.AvatarFetterInfoReflection.Descriptor, global::NewProtos.AvatarSkillInfoReflection.Descriptor, global::NewProtos.PropValueReflection.Descriptor, global::NewProtos.TrialAvatarInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.AvatarInfo), global::NewProtos.AvatarInfo.Parser, new[]{ "AvatarId", "Guid", "PropMap", "LifeState", "EquipGuidList", "TalentIdList", "FightPropMap", "TrialAvatarInfo", "SkillMap", "SkillDepotId", "FetterInfo", "CoreProudSkillLevel", "InherentProudSkillList", "SkillLevelMap", "ExpeditionState", "ProudSkillExtraLevelMap", "IsFocus", "AvatarType", "TeamResonanceList", "WearingFlycloakId", "EquipAffixList", "BornTime", "PendingPromoteRewardList", "CostumeId", "ExcelInfo", "AnimHash" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, null, null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class AvatarInfo : pb::IMessage<AvatarInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AvatarInfo> _parser = new pb::MessageParser<AvatarInfo>(() => new AvatarInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AvatarInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.AvatarInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarInfo(AvatarInfo other) : this() {
+      avatarId_ = other.avatarId_;
+      guid_ = other.guid_;
+      propMap_ = other.propMap_.Clone();
+      lifeState_ = other.lifeState_;
+      equipGuidList_ = other.equipGuidList_.Clone();
+      talentIdList_ = other.talentIdList_.Clone();
+      fightPropMap_ = other.fightPropMap_.Clone();
+      trialAvatarInfo_ = other.trialAvatarInfo_ != null ? other.trialAvatarInfo_.Clone() : null;
+      skillMap_ = other.skillMap_.Clone();
+      skillDepotId_ = other.skillDepotId_;
+      fetterInfo_ = other.fetterInfo_ != null ? other.fetterInfo_.Clone() : null;
+      coreProudSkillLevel_ = other.coreProudSkillLevel_;
+      inherentProudSkillList_ = other.inherentProudSkillList_.Clone();
+      skillLevelMap_ = other.skillLevelMap_.Clone();
+      expeditionState_ = other.expeditionState_;
+      proudSkillExtraLevelMap_ = other.proudSkillExtraLevelMap_.Clone();
+      isFocus_ = other.isFocus_;
+      avatarType_ = other.avatarType_;
+      teamResonanceList_ = other.teamResonanceList_.Clone();
+      wearingFlycloakId_ = other.wearingFlycloakId_;
+      equipAffixList_ = other.equipAffixList_.Clone();
+      bornTime_ = other.bornTime_;
+      pendingPromoteRewardList_ = other.pendingPromoteRewardList_.Clone();
+      costumeId_ = other.costumeId_;
+      excelInfo_ = other.excelInfo_ != null ? other.excelInfo_.Clone() : null;
+      animHash_ = other.animHash_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarInfo Clone() {
+      return new AvatarInfo(this);
+    }
+
+    /// <summary>Field number for the "avatar_id" field.</summary>
+    public const int AvatarIdFieldNumber = 1;
+    private uint avatarId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AvatarId {
+      get { return avatarId_; }
+      set {
+        avatarId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "guid" field.</summary>
+    public const int GuidFieldNumber = 2;
+    private ulong guid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Guid {
+      get { return guid_; }
+      set {
+        guid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "prop_map" field.</summary>
+    public const int PropMapFieldNumber = 3;
+    private static readonly pbc::MapField<uint, global::NewProtos.PropValue>.Codec _map_propMap_codec
+        = new pbc::MapField<uint, global::NewProtos.PropValue>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::NewProtos.PropValue.Parser), 26);
+    private readonly pbc::MapField<uint, global::NewProtos.PropValue> propMap_ = new pbc::MapField<uint, global::NewProtos.PropValue>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::NewProtos.PropValue> PropMap {
+      get { return propMap_; }
+    }
+
+    /// <summary>Field number for the "life_state" field.</summary>
+    public const int LifeStateFieldNumber = 4;
+    private uint lifeState_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LifeState {
+      get { return lifeState_; }
+      set {
+        lifeState_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "equip_guid_list" field.</summary>
+    public const int EquipGuidListFieldNumber = 5;
+    private static readonly pb::FieldCodec<ulong> _repeated_equipGuidList_codec
+        = pb::FieldCodec.ForUInt64(42);
+    private readonly pbc::RepeatedField<ulong> equipGuidList_ = new pbc::RepeatedField<ulong>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<ulong> EquipGuidList {
+      get { return equipGuidList_; }
+    }
+
+    /// <summary>Field number for the "talent_id_list" field.</summary>
+    public const int TalentIdListFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_talentIdList_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> talentIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> TalentIdList {
+      get { return talentIdList_; }
+    }
+
+    /// <summary>Field number for the "fight_prop_map" field.</summary>
+    public const int FightPropMapFieldNumber = 7;
+    private static readonly pbc::MapField<uint, float>.Codec _map_fightPropMap_codec
+        = new pbc::MapField<uint, float>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForFloat(21, 0F), 58);
+    private readonly pbc::MapField<uint, float> fightPropMap_ = new pbc::MapField<uint, float>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, float> FightPropMap {
+      get { return fightPropMap_; }
+    }
+
+    /// <summary>Field number for the "trial_avatar_info" field.</summary>
+    public const int TrialAvatarInfoFieldNumber = 9;
+    private global::NewProtos.TrialAvatarInfo trialAvatarInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.TrialAvatarInfo TrialAvatarInfo {
+      get { return trialAvatarInfo_; }
+      set {
+        trialAvatarInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_map" field.</summary>
+    public const int SkillMapFieldNumber = 10;
+    private static readonly pbc::MapField<uint, global::NewProtos.AvatarSkillInfo>.Codec _map_skillMap_codec
+        = new pbc::MapField<uint, global::NewProtos.AvatarSkillInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::NewProtos.AvatarSkillInfo.Parser), 82);
+    private readonly pbc::MapField<uint, global::NewProtos.AvatarSkillInfo> skillMap_ = new pbc::MapField<uint, global::NewProtos.AvatarSkillInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::NewProtos.AvatarSkillInfo> SkillMap {
+      get { return skillMap_; }
+    }
+
+    /// <summary>Field number for the "skill_depot_id" field.</summary>
+    public const int SkillDepotIdFieldNumber = 11;
+    private uint skillDepotId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillDepotId {
+      get { return skillDepotId_; }
+      set {
+        skillDepotId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fetter_info" field.</summary>
+    public const int FetterInfoFieldNumber = 12;
+    private global::NewProtos.AvatarFetterInfo fetterInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.AvatarFetterInfo FetterInfo {
+      get { return fetterInfo_; }
+      set {
+        fetterInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "core_proud_skill_level" field.</summary>
+    public const int CoreProudSkillLevelFieldNumber = 13;
+    private uint coreProudSkillLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CoreProudSkillLevel {
+      get { return coreProudSkillLevel_; }
+      set {
+        coreProudSkillLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "inherent_proud_skill_list" field.</summary>
+    public const int InherentProudSkillListFieldNumber = 14;
+    private static readonly pb::FieldCodec<uint> _repeated_inherentProudSkillList_codec
+        = pb::FieldCodec.ForUInt32(114);
+    private readonly pbc::RepeatedField<uint> inherentProudSkillList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> InherentProudSkillList {
+      get { return inherentProudSkillList_; }
+    }
+
+    /// <summary>Field number for the "skill_level_map" field.</summary>
+    public const int SkillLevelMapFieldNumber = 15;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_skillLevelMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 122);
+    private readonly pbc::MapField<uint, uint> skillLevelMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> SkillLevelMap {
+      get { return skillLevelMap_; }
+    }
+
+    /// <summary>Field number for the "expedition_state" field.</summary>
+    public const int ExpeditionStateFieldNumber = 16;
+    private global::NewProtos.AvatarExpeditionState expeditionState_ = global::NewProtos.AvatarExpeditionState.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.AvatarExpeditionState ExpeditionState {
+      get { return expeditionState_; }
+      set {
+        expeditionState_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "proud_skill_extra_level_map" field.</summary>
+    public const int ProudSkillExtraLevelMapFieldNumber = 17;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_proudSkillExtraLevelMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 138);
+    private readonly pbc::MapField<uint, uint> proudSkillExtraLevelMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> ProudSkillExtraLevelMap {
+      get { return proudSkillExtraLevelMap_; }
+    }
+
+    /// <summary>Field number for the "is_focus" field.</summary>
+    public const int IsFocusFieldNumber = 18;
+    private bool isFocus_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFocus {
+      get { return isFocus_; }
+      set {
+        isFocus_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "avatar_type" field.</summary>
+    public const int AvatarTypeFieldNumber = 19;
+    private uint avatarType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AvatarType {
+      get { return avatarType_; }
+      set {
+        avatarType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "team_resonance_list" field.</summary>
+    public const int TeamResonanceListFieldNumber = 20;
+    private static readonly pb::FieldCodec<uint> _repeated_teamResonanceList_codec
+        = pb::FieldCodec.ForUInt32(162);
+    private readonly pbc::RepeatedField<uint> teamResonanceList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> TeamResonanceList {
+      get { return teamResonanceList_; }
+    }
+
+    /// <summary>Field number for the "wearing_flycloak_id" field.</summary>
+    public const int WearingFlycloakIdFieldNumber = 21;
+    private uint wearingFlycloakId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WearingFlycloakId {
+      get { return wearingFlycloakId_; }
+      set {
+        wearingFlycloakId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "equip_affix_list" field.</summary>
+    public const int EquipAffixListFieldNumber = 22;
+    private static readonly pb::FieldCodec<global::NewProtos.AvatarEquipAffixInfo> _repeated_equipAffixList_codec
+        = pb::FieldCodec.ForMessage(178, global::NewProtos.AvatarEquipAffixInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.AvatarEquipAffixInfo> equipAffixList_ = new pbc::RepeatedField<global::NewProtos.AvatarEquipAffixInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.AvatarEquipAffixInfo> EquipAffixList {
+      get { return equipAffixList_; }
+    }
+
+    /// <summary>Field number for the "born_time" field.</summary>
+    public const int BornTimeFieldNumber = 23;
+    private uint bornTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BornTime {
+      get { return bornTime_; }
+      set {
+        bornTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pending_promote_reward_list" field.</summary>
+    public const int PendingPromoteRewardListFieldNumber = 24;
+    private static readonly pb::FieldCodec<uint> _repeated_pendingPromoteRewardList_codec
+        = pb::FieldCodec.ForUInt32(194);
+    private readonly pbc::RepeatedField<uint> pendingPromoteRewardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> PendingPromoteRewardList {
+      get { return pendingPromoteRewardList_; }
+    }
+
+    /// <summary>Field number for the "costume_id" field.</summary>
+    public const int CostumeIdFieldNumber = 25;
+    private uint costumeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CostumeId {
+      get { return costumeId_; }
+      set {
+        costumeId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "excel_info" field.</summary>
+    public const int ExcelInfoFieldNumber = 26;
+    private global::NewProtos.AvatarExcelInfo excelInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.AvatarExcelInfo ExcelInfo {
+      get { return excelInfo_; }
+      set {
+        excelInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "anim_hash" field.</summary>
+    public const int AnimHashFieldNumber = 27;
+    private uint animHash_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AnimHash {
+      get { return animHash_; }
+      set {
+        animHash_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AvatarInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AvatarInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (AvatarId != other.AvatarId) return false;
+      if (Guid != other.Guid) return false;
+      if (!PropMap.Equals(other.PropMap)) return false;
+      if (LifeState != other.LifeState) return false;
+      if(!equipGuidList_.Equals(other.equipGuidList_)) return false;
+      if(!talentIdList_.Equals(other.talentIdList_)) return false;
+      if (!FightPropMap.Equals(other.FightPropMap)) return false;
+      if (!object.Equals(TrialAvatarInfo, other.TrialAvatarInfo)) return false;
+      if (!SkillMap.Equals(other.SkillMap)) return false;
+      if (SkillDepotId != other.SkillDepotId) return false;
+      if (!object.Equals(FetterInfo, other.FetterInfo)) return false;
+      if (CoreProudSkillLevel != other.CoreProudSkillLevel) return false;
+      if(!inherentProudSkillList_.Equals(other.inherentProudSkillList_)) return false;
+      if (!SkillLevelMap.Equals(other.SkillLevelMap)) return false;
+      if (ExpeditionState != other.ExpeditionState) return false;
+      if (!ProudSkillExtraLevelMap.Equals(other.ProudSkillExtraLevelMap)) return false;
+      if (IsFocus != other.IsFocus) return false;
+      if (AvatarType != other.AvatarType) return false;
+      if(!teamResonanceList_.Equals(other.teamResonanceList_)) return false;
+      if (WearingFlycloakId != other.WearingFlycloakId) return false;
+      if(!equipAffixList_.Equals(other.equipAffixList_)) return false;
+      if (BornTime != other.BornTime) return false;
+      if(!pendingPromoteRewardList_.Equals(other.pendingPromoteRewardList_)) return false;
+      if (CostumeId != other.CostumeId) return false;
+      if (!object.Equals(ExcelInfo, other.ExcelInfo)) return false;
+      if (AnimHash != other.AnimHash) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
+      if (Guid != 0UL) hash ^= Guid.GetHashCode();
+      hash ^= PropMap.GetHashCode();
+      if (LifeState != 0) hash ^= LifeState.GetHashCode();
+      hash ^= equipGuidList_.GetHashCode();
+      hash ^= talentIdList_.GetHashCode();
+      hash ^= FightPropMap.GetHashCode();
+      if (trialAvatarInfo_ != null) hash ^= TrialAvatarInfo.GetHashCode();
+      hash ^= SkillMap.GetHashCode();
+      if (SkillDepotId != 0) hash ^= SkillDepotId.GetHashCode();
+      if (fetterInfo_ != null) hash ^= FetterInfo.GetHashCode();
+      if (CoreProudSkillLevel != 0) hash ^= CoreProudSkillLevel.GetHashCode();
+      hash ^= inherentProudSkillList_.GetHashCode();
+      hash ^= SkillLevelMap.GetHashCode();
+      if (ExpeditionState != global::NewProtos.AvatarExpeditionState.None) hash ^= ExpeditionState.GetHashCode();
+      hash ^= ProudSkillExtraLevelMap.GetHashCode();
+      if (IsFocus != false) hash ^= IsFocus.GetHashCode();
+      if (AvatarType != 0) hash ^= AvatarType.GetHashCode();
+      hash ^= teamResonanceList_.GetHashCode();
+      if (WearingFlycloakId != 0) hash ^= WearingFlycloakId.GetHashCode();
+      hash ^= equipAffixList_.GetHashCode();
+      if (BornTime != 0) hash ^= BornTime.GetHashCode();
+      hash ^= pendingPromoteRewardList_.GetHashCode();
+      if (CostumeId != 0) hash ^= CostumeId.GetHashCode();
+      if (excelInfo_ != null) hash ^= ExcelInfo.GetHashCode();
+      if (AnimHash != 0) hash ^= AnimHash.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (AvatarId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(AvatarId);
+      }
+      if (Guid != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(Guid);
+      }
+      propMap_.WriteTo(output, _map_propMap_codec);
+      if (LifeState != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(LifeState);
+      }
+      equipGuidList_.WriteTo(output, _repeated_equipGuidList_codec);
+      talentIdList_.WriteTo(output, _repeated_talentIdList_codec);
+      fightPropMap_.WriteTo(output, _map_fightPropMap_codec);
+      if (trialAvatarInfo_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(TrialAvatarInfo);
+      }
+      skillMap_.WriteTo(output, _map_skillMap_codec);
+      if (SkillDepotId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(SkillDepotId);
+      }
+      if (fetterInfo_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(FetterInfo);
+      }
+      if (CoreProudSkillLevel != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(CoreProudSkillLevel);
+      }
+      inherentProudSkillList_.WriteTo(output, _repeated_inherentProudSkillList_codec);
+      skillLevelMap_.WriteTo(output, _map_skillLevelMap_codec);
+      if (ExpeditionState != global::NewProtos.AvatarExpeditionState.None) {
+        output.WriteRawTag(128, 1);
+        output.WriteEnum((int) ExpeditionState);
+      }
+      proudSkillExtraLevelMap_.WriteTo(output, _map_proudSkillExtraLevelMap_codec);
+      if (IsFocus != false) {
+        output.WriteRawTag(144, 1);
+        output.WriteBool(IsFocus);
+      }
+      if (AvatarType != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteUInt32(AvatarType);
+      }
+      teamResonanceList_.WriteTo(output, _repeated_teamResonanceList_codec);
+      if (WearingFlycloakId != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteUInt32(WearingFlycloakId);
+      }
+      equipAffixList_.WriteTo(output, _repeated_equipAffixList_codec);
+      if (BornTime != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteUInt32(BornTime);
+      }
+      pendingPromoteRewardList_.WriteTo(output, _repeated_pendingPromoteRewardList_codec);
+      if (CostumeId != 0) {
+        output.WriteRawTag(200, 1);
+        output.WriteUInt32(CostumeId);
+      }
+      if (excelInfo_ != null) {
+        output.WriteRawTag(210, 1);
+        output.WriteMessage(ExcelInfo);
+      }
+      if (AnimHash != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteUInt32(AnimHash);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (AvatarId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(AvatarId);
+      }
+      if (Guid != 0UL) {
+        output.WriteRawTag(16);
+        output.WriteUInt64(Guid);
+      }
+      propMap_.WriteTo(ref output, _map_propMap_codec);
+      if (LifeState != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(LifeState);
+      }
+      equipGuidList_.WriteTo(ref output, _repeated_equipGuidList_codec);
+      talentIdList_.WriteTo(ref output, _repeated_talentIdList_codec);
+      fightPropMap_.WriteTo(ref output, _map_fightPropMap_codec);
+      if (trialAvatarInfo_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(TrialAvatarInfo);
+      }
+      skillMap_.WriteTo(ref output, _map_skillMap_codec);
+      if (SkillDepotId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(SkillDepotId);
+      }
+      if (fetterInfo_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(FetterInfo);
+      }
+      if (CoreProudSkillLevel != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(CoreProudSkillLevel);
+      }
+      inherentProudSkillList_.WriteTo(ref output, _repeated_inherentProudSkillList_codec);
+      skillLevelMap_.WriteTo(ref output, _map_skillLevelMap_codec);
+      if (ExpeditionState != global::NewProtos.AvatarExpeditionState.None) {
+        output.WriteRawTag(128, 1);
+        output.WriteEnum((int) ExpeditionState);
+      }
+      proudSkillExtraLevelMap_.WriteTo(ref output, _map_proudSkillExtraLevelMap_codec);
+      if (IsFocus != false) {
+        output.WriteRawTag(144, 1);
+        output.WriteBool(IsFocus);
+      }
+      if (AvatarType != 0) {
+        output.WriteRawTag(152, 1);
+        output.WriteUInt32(AvatarType);
+      }
+      teamResonanceList_.WriteTo(ref output, _repeated_teamResonanceList_codec);
+      if (WearingFlycloakId != 0) {
+        output.WriteRawTag(168, 1);
+        output.WriteUInt32(WearingFlycloakId);
+      }
+      equipAffixList_.WriteTo(ref output, _repeated_equipAffixList_codec);
+      if (BornTime != 0) {
+        output.WriteRawTag(184, 1);
+        output.WriteUInt32(BornTime);
+      }
+      pendingPromoteRewardList_.WriteTo(ref output, _repeated_pendingPromoteRewardList_codec);
+      if (CostumeId != 0) {
+        output.WriteRawTag(200, 1);
+        output.WriteUInt32(CostumeId);
+      }
+      if (excelInfo_ != null) {
+        output.WriteRawTag(210, 1);
+        output.WriteMessage(ExcelInfo);
+      }
+      if (AnimHash != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteUInt32(AnimHash);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (AvatarId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
+      }
+      if (Guid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Guid);
+      }
+      size += propMap_.CalculateSize(_map_propMap_codec);
+      if (LifeState != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LifeState);
+      }
+      size += equipGuidList_.CalculateSize(_repeated_equipGuidList_codec);
+      size += talentIdList_.CalculateSize(_repeated_talentIdList_codec);
+      size += fightPropMap_.CalculateSize(_map_fightPropMap_codec);
+      if (trialAvatarInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TrialAvatarInfo);
+      }
+      size += skillMap_.CalculateSize(_map_skillMap_codec);
+      if (SkillDepotId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillDepotId);
+      }
+      if (fetterInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FetterInfo);
+      }
+      if (CoreProudSkillLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoreProudSkillLevel);
+      }
+      size += inherentProudSkillList_.CalculateSize(_repeated_inherentProudSkillList_codec);
+      size += skillLevelMap_.CalculateSize(_map_skillLevelMap_codec);
+      if (ExpeditionState != global::NewProtos.AvatarExpeditionState.None) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) ExpeditionState);
+      }
+      size += proudSkillExtraLevelMap_.CalculateSize(_map_proudSkillExtraLevelMap_codec);
+      if (IsFocus != false) {
+        size += 2 + 1;
+      }
+      if (AvatarType != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(AvatarType);
+      }
+      size += teamResonanceList_.CalculateSize(_repeated_teamResonanceList_codec);
+      if (WearingFlycloakId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(WearingFlycloakId);
+      }
+      size += equipAffixList_.CalculateSize(_repeated_equipAffixList_codec);
+      if (BornTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(BornTime);
+      }
+      size += pendingPromoteRewardList_.CalculateSize(_repeated_pendingPromoteRewardList_codec);
+      if (CostumeId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CostumeId);
+      }
+      if (excelInfo_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ExcelInfo);
+      }
+      if (AnimHash != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(AnimHash);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AvatarInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.AvatarId != 0) {
+        AvatarId = other.AvatarId;
+      }
+      if (other.Guid != 0UL) {
+        Guid = other.Guid;
+      }
+      propMap_.Add(other.propMap_);
+      if (other.LifeState != 0) {
+        LifeState = other.LifeState;
+      }
+      equipGuidList_.Add(other.equipGuidList_);
+      talentIdList_.Add(other.talentIdList_);
+      fightPropMap_.Add(other.fightPropMap_);
+      if (other.trialAvatarInfo_ != null) {
+        if (trialAvatarInfo_ == null) {
+          TrialAvatarInfo = new global::NewProtos.TrialAvatarInfo();
+        }
+        TrialAvatarInfo.MergeFrom(other.TrialAvatarInfo);
+      }
+      skillMap_.Add(other.skillMap_);
+      if (other.SkillDepotId != 0) {
+        SkillDepotId = other.SkillDepotId;
+      }
+      if (other.fetterInfo_ != null) {
+        if (fetterInfo_ == null) {
+          FetterInfo = new global::NewProtos.AvatarFetterInfo();
+        }
+        FetterInfo.MergeFrom(other.FetterInfo);
+      }
+      if (other.CoreProudSkillLevel != 0) {
+        CoreProudSkillLevel = other.CoreProudSkillLevel;
+      }
+      inherentProudSkillList_.Add(other.inherentProudSkillList_);
+      skillLevelMap_.Add(other.skillLevelMap_);
+      if (other.ExpeditionState != global::NewProtos.AvatarExpeditionState.None) {
+        ExpeditionState = other.ExpeditionState;
+      }
+      proudSkillExtraLevelMap_.Add(other.proudSkillExtraLevelMap_);
+      if (other.IsFocus != false) {
+        IsFocus = other.IsFocus;
+      }
+      if (other.AvatarType != 0) {
+        AvatarType = other.AvatarType;
+      }
+      teamResonanceList_.Add(other.teamResonanceList_);
+      if (other.WearingFlycloakId != 0) {
+        WearingFlycloakId = other.WearingFlycloakId;
+      }
+      equipAffixList_.Add(other.equipAffixList_);
+      if (other.BornTime != 0) {
+        BornTime = other.BornTime;
+      }
+      pendingPromoteRewardList_.Add(other.pendingPromoteRewardList_);
+      if (other.CostumeId != 0) {
+        CostumeId = other.CostumeId;
+      }
+      if (other.excelInfo_ != null) {
+        if (excelInfo_ == null) {
+          ExcelInfo = new global::NewProtos.AvatarExcelInfo();
+        }
+        ExcelInfo.MergeFrom(other.ExcelInfo);
+      }
+      if (other.AnimHash != 0) {
+        AnimHash = other.AnimHash;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            AvatarId = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Guid = input.ReadUInt64();
+            break;
+          }
+          case 26: {
+            propMap_.AddEntriesFrom(input, _map_propMap_codec);
+            break;
+          }
+          case 32: {
+            LifeState = input.ReadUInt32();
+            break;
+          }
+          case 42:
+          case 40: {
+            equipGuidList_.AddEntriesFrom(input, _repeated_equipGuidList_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            talentIdList_.AddEntriesFrom(input, _repeated_talentIdList_codec);
+            break;
+          }
+          case 58: {
+            fightPropMap_.AddEntriesFrom(input, _map_fightPropMap_codec);
+            break;
+          }
+          case 74: {
+            if (trialAvatarInfo_ == null) {
+              TrialAvatarInfo = new global::NewProtos.TrialAvatarInfo();
+            }
+            input.ReadMessage(TrialAvatarInfo);
+            break;
+          }
+          case 82: {
+            skillMap_.AddEntriesFrom(input, _map_skillMap_codec);
+            break;
+          }
+          case 88: {
+            SkillDepotId = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            if (fetterInfo_ == null) {
+              FetterInfo = new global::NewProtos.AvatarFetterInfo();
+            }
+            input.ReadMessage(FetterInfo);
+            break;
+          }
+          case 104: {
+            CoreProudSkillLevel = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            inherentProudSkillList_.AddEntriesFrom(input, _repeated_inherentProudSkillList_codec);
+            break;
+          }
+          case 122: {
+            skillLevelMap_.AddEntriesFrom(input, _map_skillLevelMap_codec);
+            break;
+          }
+          case 128: {
+            ExpeditionState = (global::NewProtos.AvatarExpeditionState) input.ReadEnum();
+            break;
+          }
+          case 138: {
+            proudSkillExtraLevelMap_.AddEntriesFrom(input, _map_proudSkillExtraLevelMap_codec);
+            break;
+          }
+          case 144: {
+            IsFocus = input.ReadBool();
+            break;
+          }
+          case 152: {
+            AvatarType = input.ReadUInt32();
+            break;
+          }
+          case 162:
+          case 160: {
+            teamResonanceList_.AddEntriesFrom(input, _repeated_teamResonanceList_codec);
+            break;
+          }
+          case 168: {
+            WearingFlycloakId = input.ReadUInt32();
+            break;
+          }
+          case 178: {
+            equipAffixList_.AddEntriesFrom(input, _repeated_equipAffixList_codec);
+            break;
+          }
+          case 184: {
+            BornTime = input.ReadUInt32();
+            break;
+          }
+          case 194:
+          case 192: {
+            pendingPromoteRewardList_.AddEntriesFrom(input, _repeated_pendingPromoteRewardList_codec);
+            break;
+          }
+          case 200: {
+            CostumeId = input.ReadUInt32();
+            break;
+          }
+          case 210: {
+            if (excelInfo_ == null) {
+              ExcelInfo = new global::NewProtos.AvatarExcelInfo();
+            }
+            input.ReadMessage(ExcelInfo);
+            break;
+          }
+          case 216: {
+            AnimHash = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            AvatarId = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Guid = input.ReadUInt64();
+            break;
+          }
+          case 26: {
+            propMap_.AddEntriesFrom(ref input, _map_propMap_codec);
+            break;
+          }
+          case 32: {
+            LifeState = input.ReadUInt32();
+            break;
+          }
+          case 42:
+          case 40: {
+            equipGuidList_.AddEntriesFrom(ref input, _repeated_equipGuidList_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            talentIdList_.AddEntriesFrom(ref input, _repeated_talentIdList_codec);
+            break;
+          }
+          case 58: {
+            fightPropMap_.AddEntriesFrom(ref input, _map_fightPropMap_codec);
+            break;
+          }
+          case 74: {
+            if (trialAvatarInfo_ == null) {
+              TrialAvatarInfo = new global::NewProtos.TrialAvatarInfo();
+            }
+            input.ReadMessage(TrialAvatarInfo);
+            break;
+          }
+          case 82: {
+            skillMap_.AddEntriesFrom(ref input, _map_skillMap_codec);
+            break;
+          }
+          case 88: {
+            SkillDepotId = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            if (fetterInfo_ == null) {
+              FetterInfo = new global::NewProtos.AvatarFetterInfo();
+            }
+            input.ReadMessage(FetterInfo);
+            break;
+          }
+          case 104: {
+            CoreProudSkillLevel = input.ReadUInt32();
+            break;
+          }
+          case 114:
+          case 112: {
+            inherentProudSkillList_.AddEntriesFrom(ref input, _repeated_inherentProudSkillList_codec);
+            break;
+          }
+          case 122: {
+            skillLevelMap_.AddEntriesFrom(ref input, _map_skillLevelMap_codec);
+            break;
+          }
+          case 128: {
+            ExpeditionState = (global::NewProtos.AvatarExpeditionState) input.ReadEnum();
+            break;
+          }
+          case 138: {
+            proudSkillExtraLevelMap_.AddEntriesFrom(ref input, _map_proudSkillExtraLevelMap_codec);
+            break;
+          }
+          case 144: {
+            IsFocus = input.ReadBool();
+            break;
+          }
+          case 152: {
+            AvatarType = input.ReadUInt32();
+            break;
+          }
+          case 162:
+          case 160: {
+            teamResonanceList_.AddEntriesFrom(ref input, _repeated_teamResonanceList_codec);
+            break;
+          }
+          case 168: {
+            WearingFlycloakId = input.ReadUInt32();
+            break;
+          }
+          case 178: {
+            equipAffixList_.AddEntriesFrom(ref input, _repeated_equipAffixList_codec);
+            break;
+          }
+          case 184: {
+            BornTime = input.ReadUInt32();
+            break;
+          }
+          case 194:
+          case 192: {
+            pendingPromoteRewardList_.AddEntriesFrom(ref input, _repeated_pendingPromoteRewardList_codec);
+            break;
+          }
+          case 200: {
+            CostumeId = input.ReadUInt32();
+            break;
+          }
+          case 210: {
+            if (excelInfo_ == null) {
+              ExcelInfo = new global::NewProtos.AvatarExcelInfo();
+            }
+            input.ReadMessage(ExcelInfo);
+            break;
+          }
+          case 216: {
+            AnimHash = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class AvatarInfo : pb::IMessage<AvatarInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AvatarInfo> _parser = new pb::MessageParser<AvatarInfo>(() => new AvatarInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AvatarInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AvatarInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarInfo(AvatarInfo other) : this() {
-    avatarId_ = other.avatarId_;
-    guid_ = other.guid_;
-    propMap_ = other.propMap_.Clone();
-    lifeState_ = other.lifeState_;
-    equipGuidList_ = other.equipGuidList_.Clone();
-    talentIdList_ = other.talentIdList_.Clone();
-    fightPropMap_ = other.fightPropMap_.Clone();
-    trialAvatarInfo_ = other.trialAvatarInfo_ != null ? other.trialAvatarInfo_.Clone() : null;
-    skillMap_ = other.skillMap_.Clone();
-    skillDepotId_ = other.skillDepotId_;
-    fetterInfo_ = other.fetterInfo_ != null ? other.fetterInfo_.Clone() : null;
-    coreProudSkillLevel_ = other.coreProudSkillLevel_;
-    inherentProudSkillList_ = other.inherentProudSkillList_.Clone();
-    skillLevelMap_ = other.skillLevelMap_.Clone();
-    expeditionState_ = other.expeditionState_;
-    proudSkillExtraLevelMap_ = other.proudSkillExtraLevelMap_.Clone();
-    isFocus_ = other.isFocus_;
-    avatarType_ = other.avatarType_;
-    teamResonanceList_ = other.teamResonanceList_.Clone();
-    wearingFlycloakId_ = other.wearingFlycloakId_;
-    equipAffixList_ = other.equipAffixList_.Clone();
-    bornTime_ = other.bornTime_;
-    pendingPromoteRewardList_ = other.pendingPromoteRewardList_.Clone();
-    costumeId_ = other.costumeId_;
-    excelInfo_ = other.excelInfo_ != null ? other.excelInfo_.Clone() : null;
-    animHash_ = other.animHash_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarInfo Clone() {
-    return new AvatarInfo(this);
-  }
-
-  /// <summary>Field number for the "avatar_id" field.</summary>
-  public const int AvatarIdFieldNumber = 1;
-  private uint avatarId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint AvatarId {
-    get { return avatarId_; }
-    set {
-      avatarId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "guid" field.</summary>
-  public const int GuidFieldNumber = 2;
-  private ulong guid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong Guid {
-    get { return guid_; }
-    set {
-      guid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "prop_map" field.</summary>
-  public const int PropMapFieldNumber = 3;
-  private static readonly pbc::MapField<uint, global::PropValue>.Codec _map_propMap_codec
-      = new pbc::MapField<uint, global::PropValue>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::PropValue.Parser), 26);
-  private readonly pbc::MapField<uint, global::PropValue> propMap_ = new pbc::MapField<uint, global::PropValue>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::PropValue> PropMap {
-    get { return propMap_; }
-  }
-
-  /// <summary>Field number for the "life_state" field.</summary>
-  public const int LifeStateFieldNumber = 4;
-  private uint lifeState_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LifeState {
-    get { return lifeState_; }
-    set {
-      lifeState_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "equip_guid_list" field.</summary>
-  public const int EquipGuidListFieldNumber = 5;
-  private static readonly pb::FieldCodec<ulong> _repeated_equipGuidList_codec
-      = pb::FieldCodec.ForUInt64(42);
-  private readonly pbc::RepeatedField<ulong> equipGuidList_ = new pbc::RepeatedField<ulong>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<ulong> EquipGuidList {
-    get { return equipGuidList_; }
-  }
-
-  /// <summary>Field number for the "talent_id_list" field.</summary>
-  public const int TalentIdListFieldNumber = 6;
-  private static readonly pb::FieldCodec<uint> _repeated_talentIdList_codec
-      = pb::FieldCodec.ForUInt32(50);
-  private readonly pbc::RepeatedField<uint> talentIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> TalentIdList {
-    get { return talentIdList_; }
-  }
-
-  /// <summary>Field number for the "fight_prop_map" field.</summary>
-  public const int FightPropMapFieldNumber = 7;
-  private static readonly pbc::MapField<uint, float>.Codec _map_fightPropMap_codec
-      = new pbc::MapField<uint, float>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForFloat(21, 0F), 58);
-  private readonly pbc::MapField<uint, float> fightPropMap_ = new pbc::MapField<uint, float>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, float> FightPropMap {
-    get { return fightPropMap_; }
-  }
-
-  /// <summary>Field number for the "trial_avatar_info" field.</summary>
-  public const int TrialAvatarInfoFieldNumber = 9;
-  private global::TrialAvatarInfo trialAvatarInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::TrialAvatarInfo TrialAvatarInfo {
-    get { return trialAvatarInfo_; }
-    set {
-      trialAvatarInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "skill_map" field.</summary>
-  public const int SkillMapFieldNumber = 10;
-  private static readonly pbc::MapField<uint, global::AvatarSkillInfo>.Codec _map_skillMap_codec
-      = new pbc::MapField<uint, global::AvatarSkillInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::AvatarSkillInfo.Parser), 82);
-  private readonly pbc::MapField<uint, global::AvatarSkillInfo> skillMap_ = new pbc::MapField<uint, global::AvatarSkillInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::AvatarSkillInfo> SkillMap {
-    get { return skillMap_; }
-  }
-
-  /// <summary>Field number for the "skill_depot_id" field.</summary>
-  public const int SkillDepotIdFieldNumber = 11;
-  private uint skillDepotId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SkillDepotId {
-    get { return skillDepotId_; }
-    set {
-      skillDepotId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "fetter_info" field.</summary>
-  public const int FetterInfoFieldNumber = 12;
-  private global::AvatarFetterInfo fetterInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::AvatarFetterInfo FetterInfo {
-    get { return fetterInfo_; }
-    set {
-      fetterInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "core_proud_skill_level" field.</summary>
-  public const int CoreProudSkillLevelFieldNumber = 13;
-  private uint coreProudSkillLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CoreProudSkillLevel {
-    get { return coreProudSkillLevel_; }
-    set {
-      coreProudSkillLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "inherent_proud_skill_list" field.</summary>
-  public const int InherentProudSkillListFieldNumber = 14;
-  private static readonly pb::FieldCodec<uint> _repeated_inherentProudSkillList_codec
-      = pb::FieldCodec.ForUInt32(114);
-  private readonly pbc::RepeatedField<uint> inherentProudSkillList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> InherentProudSkillList {
-    get { return inherentProudSkillList_; }
-  }
-
-  /// <summary>Field number for the "skill_level_map" field.</summary>
-  public const int SkillLevelMapFieldNumber = 15;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_skillLevelMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 122);
-  private readonly pbc::MapField<uint, uint> skillLevelMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> SkillLevelMap {
-    get { return skillLevelMap_; }
-  }
-
-  /// <summary>Field number for the "expedition_state" field.</summary>
-  public const int ExpeditionStateFieldNumber = 16;
-  private global::AvatarExpeditionState expeditionState_ = global::AvatarExpeditionState.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::AvatarExpeditionState ExpeditionState {
-    get { return expeditionState_; }
-    set {
-      expeditionState_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "proud_skill_extra_level_map" field.</summary>
-  public const int ProudSkillExtraLevelMapFieldNumber = 17;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_proudSkillExtraLevelMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 138);
-  private readonly pbc::MapField<uint, uint> proudSkillExtraLevelMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> ProudSkillExtraLevelMap {
-    get { return proudSkillExtraLevelMap_; }
-  }
-
-  /// <summary>Field number for the "is_focus" field.</summary>
-  public const int IsFocusFieldNumber = 18;
-  private bool isFocus_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsFocus {
-    get { return isFocus_; }
-    set {
-      isFocus_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "avatar_type" field.</summary>
-  public const int AvatarTypeFieldNumber = 19;
-  private uint avatarType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint AvatarType {
-    get { return avatarType_; }
-    set {
-      avatarType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "team_resonance_list" field.</summary>
-  public const int TeamResonanceListFieldNumber = 20;
-  private static readonly pb::FieldCodec<uint> _repeated_teamResonanceList_codec
-      = pb::FieldCodec.ForUInt32(162);
-  private readonly pbc::RepeatedField<uint> teamResonanceList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> TeamResonanceList {
-    get { return teamResonanceList_; }
-  }
-
-  /// <summary>Field number for the "wearing_flycloak_id" field.</summary>
-  public const int WearingFlycloakIdFieldNumber = 21;
-  private uint wearingFlycloakId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WearingFlycloakId {
-    get { return wearingFlycloakId_; }
-    set {
-      wearingFlycloakId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "equip_affix_list" field.</summary>
-  public const int EquipAffixListFieldNumber = 22;
-  private static readonly pb::FieldCodec<global::AvatarEquipAffixInfo> _repeated_equipAffixList_codec
-      = pb::FieldCodec.ForMessage(178, global::AvatarEquipAffixInfo.Parser);
-  private readonly pbc::RepeatedField<global::AvatarEquipAffixInfo> equipAffixList_ = new pbc::RepeatedField<global::AvatarEquipAffixInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::AvatarEquipAffixInfo> EquipAffixList {
-    get { return equipAffixList_; }
-  }
-
-  /// <summary>Field number for the "born_time" field.</summary>
-  public const int BornTimeFieldNumber = 23;
-  private uint bornTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BornTime {
-    get { return bornTime_; }
-    set {
-      bornTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "pending_promote_reward_list" field.</summary>
-  public const int PendingPromoteRewardListFieldNumber = 24;
-  private static readonly pb::FieldCodec<uint> _repeated_pendingPromoteRewardList_codec
-      = pb::FieldCodec.ForUInt32(194);
-  private readonly pbc::RepeatedField<uint> pendingPromoteRewardList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> PendingPromoteRewardList {
-    get { return pendingPromoteRewardList_; }
-  }
-
-  /// <summary>Field number for the "costume_id" field.</summary>
-  public const int CostumeIdFieldNumber = 25;
-  private uint costumeId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CostumeId {
-    get { return costumeId_; }
-    set {
-      costumeId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "excel_info" field.</summary>
-  public const int ExcelInfoFieldNumber = 26;
-  private global::AvatarExcelInfo excelInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::AvatarExcelInfo ExcelInfo {
-    get { return excelInfo_; }
-    set {
-      excelInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "anim_hash" field.</summary>
-  public const int AnimHashFieldNumber = 27;
-  private uint animHash_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint AnimHash {
-    get { return animHash_; }
-    set {
-      animHash_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AvatarInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AvatarInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (AvatarId != other.AvatarId) return false;
-    if (Guid != other.Guid) return false;
-    if (!PropMap.Equals(other.PropMap)) return false;
-    if (LifeState != other.LifeState) return false;
-    if(!equipGuidList_.Equals(other.equipGuidList_)) return false;
-    if(!talentIdList_.Equals(other.talentIdList_)) return false;
-    if (!FightPropMap.Equals(other.FightPropMap)) return false;
-    if (!object.Equals(TrialAvatarInfo, other.TrialAvatarInfo)) return false;
-    if (!SkillMap.Equals(other.SkillMap)) return false;
-    if (SkillDepotId != other.SkillDepotId) return false;
-    if (!object.Equals(FetterInfo, other.FetterInfo)) return false;
-    if (CoreProudSkillLevel != other.CoreProudSkillLevel) return false;
-    if(!inherentProudSkillList_.Equals(other.inherentProudSkillList_)) return false;
-    if (!SkillLevelMap.Equals(other.SkillLevelMap)) return false;
-    if (ExpeditionState != other.ExpeditionState) return false;
-    if (!ProudSkillExtraLevelMap.Equals(other.ProudSkillExtraLevelMap)) return false;
-    if (IsFocus != other.IsFocus) return false;
-    if (AvatarType != other.AvatarType) return false;
-    if(!teamResonanceList_.Equals(other.teamResonanceList_)) return false;
-    if (WearingFlycloakId != other.WearingFlycloakId) return false;
-    if(!equipAffixList_.Equals(other.equipAffixList_)) return false;
-    if (BornTime != other.BornTime) return false;
-    if(!pendingPromoteRewardList_.Equals(other.pendingPromoteRewardList_)) return false;
-    if (CostumeId != other.CostumeId) return false;
-    if (!object.Equals(ExcelInfo, other.ExcelInfo)) return false;
-    if (AnimHash != other.AnimHash) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
-    if (Guid != 0UL) hash ^= Guid.GetHashCode();
-    hash ^= PropMap.GetHashCode();
-    if (LifeState != 0) hash ^= LifeState.GetHashCode();
-    hash ^= equipGuidList_.GetHashCode();
-    hash ^= talentIdList_.GetHashCode();
-    hash ^= FightPropMap.GetHashCode();
-    if (trialAvatarInfo_ != null) hash ^= TrialAvatarInfo.GetHashCode();
-    hash ^= SkillMap.GetHashCode();
-    if (SkillDepotId != 0) hash ^= SkillDepotId.GetHashCode();
-    if (fetterInfo_ != null) hash ^= FetterInfo.GetHashCode();
-    if (CoreProudSkillLevel != 0) hash ^= CoreProudSkillLevel.GetHashCode();
-    hash ^= inherentProudSkillList_.GetHashCode();
-    hash ^= SkillLevelMap.GetHashCode();
-    if (ExpeditionState != global::AvatarExpeditionState.None) hash ^= ExpeditionState.GetHashCode();
-    hash ^= ProudSkillExtraLevelMap.GetHashCode();
-    if (IsFocus != false) hash ^= IsFocus.GetHashCode();
-    if (AvatarType != 0) hash ^= AvatarType.GetHashCode();
-    hash ^= teamResonanceList_.GetHashCode();
-    if (WearingFlycloakId != 0) hash ^= WearingFlycloakId.GetHashCode();
-    hash ^= equipAffixList_.GetHashCode();
-    if (BornTime != 0) hash ^= BornTime.GetHashCode();
-    hash ^= pendingPromoteRewardList_.GetHashCode();
-    if (CostumeId != 0) hash ^= CostumeId.GetHashCode();
-    if (excelInfo_ != null) hash ^= ExcelInfo.GetHashCode();
-    if (AnimHash != 0) hash ^= AnimHash.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (AvatarId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(AvatarId);
-    }
-    if (Guid != 0UL) {
-      output.WriteRawTag(16);
-      output.WriteUInt64(Guid);
-    }
-    propMap_.WriteTo(output, _map_propMap_codec);
-    if (LifeState != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(LifeState);
-    }
-    equipGuidList_.WriteTo(output, _repeated_equipGuidList_codec);
-    talentIdList_.WriteTo(output, _repeated_talentIdList_codec);
-    fightPropMap_.WriteTo(output, _map_fightPropMap_codec);
-    if (trialAvatarInfo_ != null) {
-      output.WriteRawTag(74);
-      output.WriteMessage(TrialAvatarInfo);
-    }
-    skillMap_.WriteTo(output, _map_skillMap_codec);
-    if (SkillDepotId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(SkillDepotId);
-    }
-    if (fetterInfo_ != null) {
-      output.WriteRawTag(98);
-      output.WriteMessage(FetterInfo);
-    }
-    if (CoreProudSkillLevel != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(CoreProudSkillLevel);
-    }
-    inherentProudSkillList_.WriteTo(output, _repeated_inherentProudSkillList_codec);
-    skillLevelMap_.WriteTo(output, _map_skillLevelMap_codec);
-    if (ExpeditionState != global::AvatarExpeditionState.None) {
-      output.WriteRawTag(128, 1);
-      output.WriteEnum((int) ExpeditionState);
-    }
-    proudSkillExtraLevelMap_.WriteTo(output, _map_proudSkillExtraLevelMap_codec);
-    if (IsFocus != false) {
-      output.WriteRawTag(144, 1);
-      output.WriteBool(IsFocus);
-    }
-    if (AvatarType != 0) {
-      output.WriteRawTag(152, 1);
-      output.WriteUInt32(AvatarType);
-    }
-    teamResonanceList_.WriteTo(output, _repeated_teamResonanceList_codec);
-    if (WearingFlycloakId != 0) {
-      output.WriteRawTag(168, 1);
-      output.WriteUInt32(WearingFlycloakId);
-    }
-    equipAffixList_.WriteTo(output, _repeated_equipAffixList_codec);
-    if (BornTime != 0) {
-      output.WriteRawTag(184, 1);
-      output.WriteUInt32(BornTime);
-    }
-    pendingPromoteRewardList_.WriteTo(output, _repeated_pendingPromoteRewardList_codec);
-    if (CostumeId != 0) {
-      output.WriteRawTag(200, 1);
-      output.WriteUInt32(CostumeId);
-    }
-    if (excelInfo_ != null) {
-      output.WriteRawTag(210, 1);
-      output.WriteMessage(ExcelInfo);
-    }
-    if (AnimHash != 0) {
-      output.WriteRawTag(216, 1);
-      output.WriteUInt32(AnimHash);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (AvatarId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(AvatarId);
-    }
-    if (Guid != 0UL) {
-      output.WriteRawTag(16);
-      output.WriteUInt64(Guid);
-    }
-    propMap_.WriteTo(ref output, _map_propMap_codec);
-    if (LifeState != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(LifeState);
-    }
-    equipGuidList_.WriteTo(ref output, _repeated_equipGuidList_codec);
-    talentIdList_.WriteTo(ref output, _repeated_talentIdList_codec);
-    fightPropMap_.WriteTo(ref output, _map_fightPropMap_codec);
-    if (trialAvatarInfo_ != null) {
-      output.WriteRawTag(74);
-      output.WriteMessage(TrialAvatarInfo);
-    }
-    skillMap_.WriteTo(ref output, _map_skillMap_codec);
-    if (SkillDepotId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(SkillDepotId);
-    }
-    if (fetterInfo_ != null) {
-      output.WriteRawTag(98);
-      output.WriteMessage(FetterInfo);
-    }
-    if (CoreProudSkillLevel != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(CoreProudSkillLevel);
-    }
-    inherentProudSkillList_.WriteTo(ref output, _repeated_inherentProudSkillList_codec);
-    skillLevelMap_.WriteTo(ref output, _map_skillLevelMap_codec);
-    if (ExpeditionState != global::AvatarExpeditionState.None) {
-      output.WriteRawTag(128, 1);
-      output.WriteEnum((int) ExpeditionState);
-    }
-    proudSkillExtraLevelMap_.WriteTo(ref output, _map_proudSkillExtraLevelMap_codec);
-    if (IsFocus != false) {
-      output.WriteRawTag(144, 1);
-      output.WriteBool(IsFocus);
-    }
-    if (AvatarType != 0) {
-      output.WriteRawTag(152, 1);
-      output.WriteUInt32(AvatarType);
-    }
-    teamResonanceList_.WriteTo(ref output, _repeated_teamResonanceList_codec);
-    if (WearingFlycloakId != 0) {
-      output.WriteRawTag(168, 1);
-      output.WriteUInt32(WearingFlycloakId);
-    }
-    equipAffixList_.WriteTo(ref output, _repeated_equipAffixList_codec);
-    if (BornTime != 0) {
-      output.WriteRawTag(184, 1);
-      output.WriteUInt32(BornTime);
-    }
-    pendingPromoteRewardList_.WriteTo(ref output, _repeated_pendingPromoteRewardList_codec);
-    if (CostumeId != 0) {
-      output.WriteRawTag(200, 1);
-      output.WriteUInt32(CostumeId);
-    }
-    if (excelInfo_ != null) {
-      output.WriteRawTag(210, 1);
-      output.WriteMessage(ExcelInfo);
-    }
-    if (AnimHash != 0) {
-      output.WriteRawTag(216, 1);
-      output.WriteUInt32(AnimHash);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (AvatarId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
-    }
-    if (Guid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Guid);
-    }
-    size += propMap_.CalculateSize(_map_propMap_codec);
-    if (LifeState != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LifeState);
-    }
-    size += equipGuidList_.CalculateSize(_repeated_equipGuidList_codec);
-    size += talentIdList_.CalculateSize(_repeated_talentIdList_codec);
-    size += fightPropMap_.CalculateSize(_map_fightPropMap_codec);
-    if (trialAvatarInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(TrialAvatarInfo);
-    }
-    size += skillMap_.CalculateSize(_map_skillMap_codec);
-    if (SkillDepotId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillDepotId);
-    }
-    if (fetterInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(FetterInfo);
-    }
-    if (CoreProudSkillLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoreProudSkillLevel);
-    }
-    size += inherentProudSkillList_.CalculateSize(_repeated_inherentProudSkillList_codec);
-    size += skillLevelMap_.CalculateSize(_map_skillLevelMap_codec);
-    if (ExpeditionState != global::AvatarExpeditionState.None) {
-      size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) ExpeditionState);
-    }
-    size += proudSkillExtraLevelMap_.CalculateSize(_map_proudSkillExtraLevelMap_codec);
-    if (IsFocus != false) {
-      size += 2 + 1;
-    }
-    if (AvatarType != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(AvatarType);
-    }
-    size += teamResonanceList_.CalculateSize(_repeated_teamResonanceList_codec);
-    if (WearingFlycloakId != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(WearingFlycloakId);
-    }
-    size += equipAffixList_.CalculateSize(_repeated_equipAffixList_codec);
-    if (BornTime != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(BornTime);
-    }
-    size += pendingPromoteRewardList_.CalculateSize(_repeated_pendingPromoteRewardList_codec);
-    if (CostumeId != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CostumeId);
-    }
-    if (excelInfo_ != null) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(ExcelInfo);
-    }
-    if (AnimHash != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(AnimHash);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AvatarInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.AvatarId != 0) {
-      AvatarId = other.AvatarId;
-    }
-    if (other.Guid != 0UL) {
-      Guid = other.Guid;
-    }
-    propMap_.Add(other.propMap_);
-    if (other.LifeState != 0) {
-      LifeState = other.LifeState;
-    }
-    equipGuidList_.Add(other.equipGuidList_);
-    talentIdList_.Add(other.talentIdList_);
-    fightPropMap_.Add(other.fightPropMap_);
-    if (other.trialAvatarInfo_ != null) {
-      if (trialAvatarInfo_ == null) {
-        TrialAvatarInfo = new global::TrialAvatarInfo();
-      }
-      TrialAvatarInfo.MergeFrom(other.TrialAvatarInfo);
-    }
-    skillMap_.Add(other.skillMap_);
-    if (other.SkillDepotId != 0) {
-      SkillDepotId = other.SkillDepotId;
-    }
-    if (other.fetterInfo_ != null) {
-      if (fetterInfo_ == null) {
-        FetterInfo = new global::AvatarFetterInfo();
-      }
-      FetterInfo.MergeFrom(other.FetterInfo);
-    }
-    if (other.CoreProudSkillLevel != 0) {
-      CoreProudSkillLevel = other.CoreProudSkillLevel;
-    }
-    inherentProudSkillList_.Add(other.inherentProudSkillList_);
-    skillLevelMap_.Add(other.skillLevelMap_);
-    if (other.ExpeditionState != global::AvatarExpeditionState.None) {
-      ExpeditionState = other.ExpeditionState;
-    }
-    proudSkillExtraLevelMap_.Add(other.proudSkillExtraLevelMap_);
-    if (other.IsFocus != false) {
-      IsFocus = other.IsFocus;
-    }
-    if (other.AvatarType != 0) {
-      AvatarType = other.AvatarType;
-    }
-    teamResonanceList_.Add(other.teamResonanceList_);
-    if (other.WearingFlycloakId != 0) {
-      WearingFlycloakId = other.WearingFlycloakId;
-    }
-    equipAffixList_.Add(other.equipAffixList_);
-    if (other.BornTime != 0) {
-      BornTime = other.BornTime;
-    }
-    pendingPromoteRewardList_.Add(other.pendingPromoteRewardList_);
-    if (other.CostumeId != 0) {
-      CostumeId = other.CostumeId;
-    }
-    if (other.excelInfo_ != null) {
-      if (excelInfo_ == null) {
-        ExcelInfo = new global::AvatarExcelInfo();
-      }
-      ExcelInfo.MergeFrom(other.ExcelInfo);
-    }
-    if (other.AnimHash != 0) {
-      AnimHash = other.AnimHash;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          AvatarId = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          Guid = input.ReadUInt64();
-          break;
-        }
-        case 26: {
-          propMap_.AddEntriesFrom(input, _map_propMap_codec);
-          break;
-        }
-        case 32: {
-          LifeState = input.ReadUInt32();
-          break;
-        }
-        case 42:
-        case 40: {
-          equipGuidList_.AddEntriesFrom(input, _repeated_equipGuidList_codec);
-          break;
-        }
-        case 50:
-        case 48: {
-          talentIdList_.AddEntriesFrom(input, _repeated_talentIdList_codec);
-          break;
-        }
-        case 58: {
-          fightPropMap_.AddEntriesFrom(input, _map_fightPropMap_codec);
-          break;
-        }
-        case 74: {
-          if (trialAvatarInfo_ == null) {
-            TrialAvatarInfo = new global::TrialAvatarInfo();
-          }
-          input.ReadMessage(TrialAvatarInfo);
-          break;
-        }
-        case 82: {
-          skillMap_.AddEntriesFrom(input, _map_skillMap_codec);
-          break;
-        }
-        case 88: {
-          SkillDepotId = input.ReadUInt32();
-          break;
-        }
-        case 98: {
-          if (fetterInfo_ == null) {
-            FetterInfo = new global::AvatarFetterInfo();
-          }
-          input.ReadMessage(FetterInfo);
-          break;
-        }
-        case 104: {
-          CoreProudSkillLevel = input.ReadUInt32();
-          break;
-        }
-        case 114:
-        case 112: {
-          inherentProudSkillList_.AddEntriesFrom(input, _repeated_inherentProudSkillList_codec);
-          break;
-        }
-        case 122: {
-          skillLevelMap_.AddEntriesFrom(input, _map_skillLevelMap_codec);
-          break;
-        }
-        case 128: {
-          ExpeditionState = (global::AvatarExpeditionState) input.ReadEnum();
-          break;
-        }
-        case 138: {
-          proudSkillExtraLevelMap_.AddEntriesFrom(input, _map_proudSkillExtraLevelMap_codec);
-          break;
-        }
-        case 144: {
-          IsFocus = input.ReadBool();
-          break;
-        }
-        case 152: {
-          AvatarType = input.ReadUInt32();
-          break;
-        }
-        case 162:
-        case 160: {
-          teamResonanceList_.AddEntriesFrom(input, _repeated_teamResonanceList_codec);
-          break;
-        }
-        case 168: {
-          WearingFlycloakId = input.ReadUInt32();
-          break;
-        }
-        case 178: {
-          equipAffixList_.AddEntriesFrom(input, _repeated_equipAffixList_codec);
-          break;
-        }
-        case 184: {
-          BornTime = input.ReadUInt32();
-          break;
-        }
-        case 194:
-        case 192: {
-          pendingPromoteRewardList_.AddEntriesFrom(input, _repeated_pendingPromoteRewardList_codec);
-          break;
-        }
-        case 200: {
-          CostumeId = input.ReadUInt32();
-          break;
-        }
-        case 210: {
-          if (excelInfo_ == null) {
-            ExcelInfo = new global::AvatarExcelInfo();
-          }
-          input.ReadMessage(ExcelInfo);
-          break;
-        }
-        case 216: {
-          AnimHash = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          AvatarId = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          Guid = input.ReadUInt64();
-          break;
-        }
-        case 26: {
-          propMap_.AddEntriesFrom(ref input, _map_propMap_codec);
-          break;
-        }
-        case 32: {
-          LifeState = input.ReadUInt32();
-          break;
-        }
-        case 42:
-        case 40: {
-          equipGuidList_.AddEntriesFrom(ref input, _repeated_equipGuidList_codec);
-          break;
-        }
-        case 50:
-        case 48: {
-          talentIdList_.AddEntriesFrom(ref input, _repeated_talentIdList_codec);
-          break;
-        }
-        case 58: {
-          fightPropMap_.AddEntriesFrom(ref input, _map_fightPropMap_codec);
-          break;
-        }
-        case 74: {
-          if (trialAvatarInfo_ == null) {
-            TrialAvatarInfo = new global::TrialAvatarInfo();
-          }
-          input.ReadMessage(TrialAvatarInfo);
-          break;
-        }
-        case 82: {
-          skillMap_.AddEntriesFrom(ref input, _map_skillMap_codec);
-          break;
-        }
-        case 88: {
-          SkillDepotId = input.ReadUInt32();
-          break;
-        }
-        case 98: {
-          if (fetterInfo_ == null) {
-            FetterInfo = new global::AvatarFetterInfo();
-          }
-          input.ReadMessage(FetterInfo);
-          break;
-        }
-        case 104: {
-          CoreProudSkillLevel = input.ReadUInt32();
-          break;
-        }
-        case 114:
-        case 112: {
-          inherentProudSkillList_.AddEntriesFrom(ref input, _repeated_inherentProudSkillList_codec);
-          break;
-        }
-        case 122: {
-          skillLevelMap_.AddEntriesFrom(ref input, _map_skillLevelMap_codec);
-          break;
-        }
-        case 128: {
-          ExpeditionState = (global::AvatarExpeditionState) input.ReadEnum();
-          break;
-        }
-        case 138: {
-          proudSkillExtraLevelMap_.AddEntriesFrom(ref input, _map_proudSkillExtraLevelMap_codec);
-          break;
-        }
-        case 144: {
-          IsFocus = input.ReadBool();
-          break;
-        }
-        case 152: {
-          AvatarType = input.ReadUInt32();
-          break;
-        }
-        case 162:
-        case 160: {
-          teamResonanceList_.AddEntriesFrom(ref input, _repeated_teamResonanceList_codec);
-          break;
-        }
-        case 168: {
-          WearingFlycloakId = input.ReadUInt32();
-          break;
-        }
-        case 178: {
-          equipAffixList_.AddEntriesFrom(ref input, _repeated_equipAffixList_codec);
-          break;
-        }
-        case 184: {
-          BornTime = input.ReadUInt32();
-          break;
-        }
-        case 194:
-        case 192: {
-          pendingPromoteRewardList_.AddEntriesFrom(ref input, _repeated_pendingPromoteRewardList_codec);
-          break;
-        }
-        case 200: {
-          CostumeId = input.ReadUInt32();
-          break;
-        }
-        case 210: {
-          if (excelInfo_ == null) {
-            ExcelInfo = new global::AvatarExcelInfo();
-          }
-          input.ReadMessage(ExcelInfo);
-          break;
-        }
-        case 216: {
-          AnimHash = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 enum ProtEntityType {
   PROT_ENTITY_TYPE_NONE = 0;

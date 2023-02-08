@@ -9,287 +9,290 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from BreakoutSpawnPoint.proto</summary>
-public static partial class BreakoutSpawnPointReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for BreakoutSpawnPoint.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from BreakoutSpawnPoint.proto</summary>
+  public static partial class BreakoutSpawnPointReflection {
 
-  static BreakoutSpawnPointReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhCcmVha291dFNwYXduUG9pbnQucHJvdG8aHEJyZWFrb3V0UGh5c2ljYWxP",
-          "YmplY3QucHJvdG8ibQoSQnJlYWtvdXRTcGF3blBvaW50EgoKAmlkGAEgASgN",
-          "EhYKDmJyaWNrX3N1aXRlX2lkGAIgASgNEjMKEnNwYXduZWRfYnJpY2tfbGlz",
-          "dBgDIAMoCzIXLkJyZWFrb3V0UGh5c2ljYWxPYmplY3RCFgoUb3JnLnNvcmFw",
-          "b2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::BreakoutPhysicalObjectReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::BreakoutSpawnPoint), global::BreakoutSpawnPoint.Parser, new[]{ "Id", "BrickSuiteId", "SpawnedBrickList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for BreakoutSpawnPoint.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static BreakoutSpawnPointReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhCcmVha291dFNwYXduUG9pbnQucHJvdG8aHEJyZWFrb3V0UGh5c2ljYWxP",
+            "YmplY3QucHJvdG8ibQoSQnJlYWtvdXRTcGF3blBvaW50EgoKAmlkGAEgASgN",
+            "EhYKDmJyaWNrX3N1aXRlX2lkGAIgASgNEjMKEnNwYXduZWRfYnJpY2tfbGlz",
+            "dBgDIAMoCzIXLkJyZWFrb3V0UGh5c2ljYWxPYmplY3RCDKoCCU5ld1Byb3Rv",
+            "c2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.BreakoutPhysicalObjectReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.BreakoutSpawnPoint), global::NewProtos.BreakoutSpawnPoint.Parser, new[]{ "Id", "BrickSuiteId", "SpawnedBrickList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class BreakoutSpawnPoint : pb::IMessage<BreakoutSpawnPoint>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BreakoutSpawnPoint> _parser = new pb::MessageParser<BreakoutSpawnPoint>(() => new BreakoutSpawnPoint());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<BreakoutSpawnPoint> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.BreakoutSpawnPointReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BreakoutSpawnPoint() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BreakoutSpawnPoint(BreakoutSpawnPoint other) : this() {
+      id_ = other.id_;
+      brickSuiteId_ = other.brickSuiteId_;
+      spawnedBrickList_ = other.spawnedBrickList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BreakoutSpawnPoint Clone() {
+      return new BreakoutSpawnPoint(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private uint id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "brick_suite_id" field.</summary>
+    public const int BrickSuiteIdFieldNumber = 2;
+    private uint brickSuiteId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BrickSuiteId {
+      get { return brickSuiteId_; }
+      set {
+        brickSuiteId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "spawned_brick_list" field.</summary>
+    public const int SpawnedBrickListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::NewProtos.BreakoutPhysicalObject> _repeated_spawnedBrickList_codec
+        = pb::FieldCodec.ForMessage(26, global::NewProtos.BreakoutPhysicalObject.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.BreakoutPhysicalObject> spawnedBrickList_ = new pbc::RepeatedField<global::NewProtos.BreakoutPhysicalObject>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.BreakoutPhysicalObject> SpawnedBrickList {
+      get { return spawnedBrickList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as BreakoutSpawnPoint);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(BreakoutSpawnPoint other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      if (BrickSuiteId != other.BrickSuiteId) return false;
+      if(!spawnedBrickList_.Equals(other.spawnedBrickList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (BrickSuiteId != 0) hash ^= BrickSuiteId.GetHashCode();
+      hash ^= spawnedBrickList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Id);
+      }
+      if (BrickSuiteId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(BrickSuiteId);
+      }
+      spawnedBrickList_.WriteTo(output, _repeated_spawnedBrickList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Id);
+      }
+      if (BrickSuiteId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(BrickSuiteId);
+      }
+      spawnedBrickList_.WriteTo(ref output, _repeated_spawnedBrickList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
+      }
+      if (BrickSuiteId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BrickSuiteId);
+      }
+      size += spawnedBrickList_.CalculateSize(_repeated_spawnedBrickList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(BreakoutSpawnPoint other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.BrickSuiteId != 0) {
+        BrickSuiteId = other.BrickSuiteId;
+      }
+      spawnedBrickList_.Add(other.spawnedBrickList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            BrickSuiteId = input.ReadUInt32();
+            break;
+          }
+          case 26: {
+            spawnedBrickList_.AddEntriesFrom(input, _repeated_spawnedBrickList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            BrickSuiteId = input.ReadUInt32();
+            break;
+          }
+          case 26: {
+            spawnedBrickList_.AddEntriesFrom(ref input, _repeated_spawnedBrickList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class BreakoutSpawnPoint : pb::IMessage<BreakoutSpawnPoint>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<BreakoutSpawnPoint> _parser = new pb::MessageParser<BreakoutSpawnPoint>(() => new BreakoutSpawnPoint());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<BreakoutSpawnPoint> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::BreakoutSpawnPointReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BreakoutSpawnPoint() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BreakoutSpawnPoint(BreakoutSpawnPoint other) : this() {
-    id_ = other.id_;
-    brickSuiteId_ = other.brickSuiteId_;
-    spawnedBrickList_ = other.spawnedBrickList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BreakoutSpawnPoint Clone() {
-    return new BreakoutSpawnPoint(this);
-  }
-
-  /// <summary>Field number for the "id" field.</summary>
-  public const int IdFieldNumber = 1;
-  private uint id_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Id {
-    get { return id_; }
-    set {
-      id_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "brick_suite_id" field.</summary>
-  public const int BrickSuiteIdFieldNumber = 2;
-  private uint brickSuiteId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BrickSuiteId {
-    get { return brickSuiteId_; }
-    set {
-      brickSuiteId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "spawned_brick_list" field.</summary>
-  public const int SpawnedBrickListFieldNumber = 3;
-  private static readonly pb::FieldCodec<global::BreakoutPhysicalObject> _repeated_spawnedBrickList_codec
-      = pb::FieldCodec.ForMessage(26, global::BreakoutPhysicalObject.Parser);
-  private readonly pbc::RepeatedField<global::BreakoutPhysicalObject> spawnedBrickList_ = new pbc::RepeatedField<global::BreakoutPhysicalObject>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::BreakoutPhysicalObject> SpawnedBrickList {
-    get { return spawnedBrickList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as BreakoutSpawnPoint);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(BreakoutSpawnPoint other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Id != other.Id) return false;
-    if (BrickSuiteId != other.BrickSuiteId) return false;
-    if(!spawnedBrickList_.Equals(other.spawnedBrickList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Id != 0) hash ^= Id.GetHashCode();
-    if (BrickSuiteId != 0) hash ^= BrickSuiteId.GetHashCode();
-    hash ^= spawnedBrickList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Id != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Id);
-    }
-    if (BrickSuiteId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(BrickSuiteId);
-    }
-    spawnedBrickList_.WriteTo(output, _repeated_spawnedBrickList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Id != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Id);
-    }
-    if (BrickSuiteId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(BrickSuiteId);
-    }
-    spawnedBrickList_.WriteTo(ref output, _repeated_spawnedBrickList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Id != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
-    }
-    if (BrickSuiteId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BrickSuiteId);
-    }
-    size += spawnedBrickList_.CalculateSize(_repeated_spawnedBrickList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(BreakoutSpawnPoint other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Id != 0) {
-      Id = other.Id;
-    }
-    if (other.BrickSuiteId != 0) {
-      BrickSuiteId = other.BrickSuiteId;
-    }
-    spawnedBrickList_.Add(other.spawnedBrickList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          Id = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          BrickSuiteId = input.ReadUInt32();
-          break;
-        }
-        case 26: {
-          spawnedBrickList_.AddEntriesFrom(input, _repeated_spawnedBrickList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          Id = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          BrickSuiteId = input.ReadUInt32();
-          break;
-        }
-        case 26: {
-          spawnedBrickList_.AddEntriesFrom(ref input, _repeated_spawnedBrickList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

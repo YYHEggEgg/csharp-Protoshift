@@ -9,339 +9,341 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MarkMapReq.proto</summary>
-public static partial class MarkMapReqReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MarkMapReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MarkMapReq.proto</summary>
+  public static partial class MarkMapReqReflection {
 
-  static MarkMapReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChBNYXJrTWFwUmVxLnByb3RvGhJNYXBNYXJrUG9pbnQucHJvdG8iwQEKCk1h",
-          "cmtNYXBSZXESGwoEbWFyaxgIIAEoCzINLk1hcE1hcmtQb2ludBIaCgNvbGQY",
-          "BiABKAsyDS5NYXBNYXJrUG9pbnQSIQoCb3AYCSABKA4yFS5NYXJrTWFwUmVx",
-          "Lk9wZXJhdGlvbiJXCglPcGVyYXRpb24SEQoNT1BFUkFUSU9OX0FERBAAEhEK",
-          "DU9QRVJBVElPTl9NT0QQARIRCg1PUEVSQVRJT05fREVMEAISEQoNT1BFUkFU",
-          "SU9OX0dFVBADQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnBy",
-          "b3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::MapMarkPointReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MarkMapReq), global::MarkMapReq.Parser, new[]{ "Mark", "Old", "Op" }, null, new[]{ typeof(global::MarkMapReq.Types.Operation) }, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for MarkMapReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MarkMapReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChBNYXJrTWFwUmVxLnByb3RvGhJNYXBNYXJrUG9pbnQucHJvdG8iwQEKCk1h",
+            "cmtNYXBSZXESGwoEbWFyaxgIIAEoCzINLk1hcE1hcmtQb2ludBIaCgNvbGQY",
+            "BiABKAsyDS5NYXBNYXJrUG9pbnQSIQoCb3AYCSABKA4yFS5NYXJrTWFwUmVx",
+            "Lk9wZXJhdGlvbiJXCglPcGVyYXRpb24SEQoNT1BFUkFUSU9OX0FERBAAEhEK",
+            "DU9QRVJBVElPTl9NT0QQARIRCg1PUEVSQVRJT05fREVMEAISEQoNT1BFUkFU",
+            "SU9OX0dFVBADQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.MapMarkPointReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.MarkMapReq), global::OldProtos.MarkMapReq.Parser, new[]{ "Mark", "Old", "Op" }, null, new[]{ typeof(global::OldProtos.MarkMapReq.Types.Operation) }, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 3466
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class MarkMapReq : pb::IMessage<MarkMapReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MarkMapReq> _parser = new pb::MessageParser<MarkMapReq>(() => new MarkMapReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MarkMapReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.MarkMapReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MarkMapReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MarkMapReq(MarkMapReq other) : this() {
+      mark_ = other.mark_ != null ? other.mark_.Clone() : null;
+      old_ = other.old_ != null ? other.old_.Clone() : null;
+      op_ = other.op_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MarkMapReq Clone() {
+      return new MarkMapReq(this);
+    }
+
+    /// <summary>Field number for the "mark" field.</summary>
+    public const int MarkFieldNumber = 8;
+    private global::OldProtos.MapMarkPoint mark_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.MapMarkPoint Mark {
+      get { return mark_; }
+      set {
+        mark_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "old" field.</summary>
+    public const int OldFieldNumber = 6;
+    private global::OldProtos.MapMarkPoint old_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.MapMarkPoint Old {
+      get { return old_; }
+      set {
+        old_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "op" field.</summary>
+    public const int OpFieldNumber = 9;
+    private global::OldProtos.MarkMapReq.Types.Operation op_ = global::OldProtos.MarkMapReq.Types.Operation.Add;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.MarkMapReq.Types.Operation Op {
+      get { return op_; }
+      set {
+        op_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MarkMapReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MarkMapReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Mark, other.Mark)) return false;
+      if (!object.Equals(Old, other.Old)) return false;
+      if (Op != other.Op) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (mark_ != null) hash ^= Mark.GetHashCode();
+      if (old_ != null) hash ^= Old.GetHashCode();
+      if (Op != global::OldProtos.MarkMapReq.Types.Operation.Add) hash ^= Op.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (old_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Old);
+      }
+      if (mark_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Mark);
+      }
+      if (Op != global::OldProtos.MarkMapReq.Types.Operation.Add) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) Op);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (old_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Old);
+      }
+      if (mark_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Mark);
+      }
+      if (Op != global::OldProtos.MarkMapReq.Types.Operation.Add) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) Op);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (mark_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Mark);
+      }
+      if (old_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Old);
+      }
+      if (Op != global::OldProtos.MarkMapReq.Types.Operation.Add) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Op);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MarkMapReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.mark_ != null) {
+        if (mark_ == null) {
+          Mark = new global::OldProtos.MapMarkPoint();
+        }
+        Mark.MergeFrom(other.Mark);
+      }
+      if (other.old_ != null) {
+        if (old_ == null) {
+          Old = new global::OldProtos.MapMarkPoint();
+        }
+        Old.MergeFrom(other.Old);
+      }
+      if (other.Op != global::OldProtos.MarkMapReq.Types.Operation.Add) {
+        Op = other.Op;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 50: {
+            if (old_ == null) {
+              Old = new global::OldProtos.MapMarkPoint();
+            }
+            input.ReadMessage(Old);
+            break;
+          }
+          case 66: {
+            if (mark_ == null) {
+              Mark = new global::OldProtos.MapMarkPoint();
+            }
+            input.ReadMessage(Mark);
+            break;
+          }
+          case 72: {
+            Op = (global::OldProtos.MarkMapReq.Types.Operation) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 50: {
+            if (old_ == null) {
+              Old = new global::OldProtos.MapMarkPoint();
+            }
+            input.ReadMessage(Old);
+            break;
+          }
+          case 66: {
+            if (mark_ == null) {
+              Mark = new global::OldProtos.MapMarkPoint();
+            }
+            input.ReadMessage(Mark);
+            break;
+          }
+          case 72: {
+            Op = (global::OldProtos.MarkMapReq.Types.Operation) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the MarkMapReq message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum Operation {
+        [pbr::OriginalName("OPERATION_ADD")] Add = 0,
+        [pbr::OriginalName("OPERATION_MOD")] Mod = 1,
+        [pbr::OriginalName("OPERATION_DEL")] Del = 2,
+        [pbr::OriginalName("OPERATION_GET")] Get = 3,
+      }
+
+    }
+    #endregion
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 3466
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class MarkMapReq : pb::IMessage<MarkMapReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<MarkMapReq> _parser = new pb::MessageParser<MarkMapReq>(() => new MarkMapReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<MarkMapReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::MarkMapReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MarkMapReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MarkMapReq(MarkMapReq other) : this() {
-    mark_ = other.mark_ != null ? other.mark_.Clone() : null;
-    old_ = other.old_ != null ? other.old_.Clone() : null;
-    op_ = other.op_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MarkMapReq Clone() {
-    return new MarkMapReq(this);
-  }
-
-  /// <summary>Field number for the "mark" field.</summary>
-  public const int MarkFieldNumber = 8;
-  private global::MapMarkPoint mark_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MapMarkPoint Mark {
-    get { return mark_; }
-    set {
-      mark_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "old" field.</summary>
-  public const int OldFieldNumber = 6;
-  private global::MapMarkPoint old_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MapMarkPoint Old {
-    get { return old_; }
-    set {
-      old_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "op" field.</summary>
-  public const int OpFieldNumber = 9;
-  private global::MarkMapReq.Types.Operation op_ = global::MarkMapReq.Types.Operation.Add;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MarkMapReq.Types.Operation Op {
-    get { return op_; }
-    set {
-      op_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as MarkMapReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(MarkMapReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(Mark, other.Mark)) return false;
-    if (!object.Equals(Old, other.Old)) return false;
-    if (Op != other.Op) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (mark_ != null) hash ^= Mark.GetHashCode();
-    if (old_ != null) hash ^= Old.GetHashCode();
-    if (Op != global::MarkMapReq.Types.Operation.Add) hash ^= Op.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (old_ != null) {
-      output.WriteRawTag(50);
-      output.WriteMessage(Old);
-    }
-    if (mark_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(Mark);
-    }
-    if (Op != global::MarkMapReq.Types.Operation.Add) {
-      output.WriteRawTag(72);
-      output.WriteEnum((int) Op);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (old_ != null) {
-      output.WriteRawTag(50);
-      output.WriteMessage(Old);
-    }
-    if (mark_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(Mark);
-    }
-    if (Op != global::MarkMapReq.Types.Operation.Add) {
-      output.WriteRawTag(72);
-      output.WriteEnum((int) Op);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (mark_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Mark);
-    }
-    if (old_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Old);
-    }
-    if (Op != global::MarkMapReq.Types.Operation.Add) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Op);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(MarkMapReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.mark_ != null) {
-      if (mark_ == null) {
-        Mark = new global::MapMarkPoint();
-      }
-      Mark.MergeFrom(other.Mark);
-    }
-    if (other.old_ != null) {
-      if (old_ == null) {
-        Old = new global::MapMarkPoint();
-      }
-      Old.MergeFrom(other.Old);
-    }
-    if (other.Op != global::MarkMapReq.Types.Operation.Add) {
-      Op = other.Op;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 50: {
-          if (old_ == null) {
-            Old = new global::MapMarkPoint();
-          }
-          input.ReadMessage(Old);
-          break;
-        }
-        case 66: {
-          if (mark_ == null) {
-            Mark = new global::MapMarkPoint();
-          }
-          input.ReadMessage(Mark);
-          break;
-        }
-        case 72: {
-          Op = (global::MarkMapReq.Types.Operation) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 50: {
-          if (old_ == null) {
-            Old = new global::MapMarkPoint();
-          }
-          input.ReadMessage(Old);
-          break;
-        }
-        case 66: {
-          if (mark_ == null) {
-            Mark = new global::MapMarkPoint();
-          }
-          input.ReadMessage(Mark);
-          break;
-        }
-        case 72: {
-          Op = (global::MarkMapReq.Types.Operation) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-  #region Nested types
-  /// <summary>Container for nested types declared in the MarkMapReq message type.</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static partial class Types {
-    public enum Operation {
-      [pbr::OriginalName("OPERATION_ADD")] Add = 0,
-      [pbr::OriginalName("OPERATION_MOD")] Mod = 1,
-      [pbr::OriginalName("OPERATION_DEL")] Del = 2,
-      [pbr::OriginalName("OPERATION_GET")] Get = 3,
-    }
-
-  }
-  #endregion
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

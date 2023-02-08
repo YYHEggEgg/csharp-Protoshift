@@ -21,7 +21,7 @@ import "HomeRacingRecord.proto";
 import "HomeSeekFurnitureAllRecord.proto";
 import "HomeStakeRecord.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message HomeGroupRecord {
   uint32 group_id = 5;

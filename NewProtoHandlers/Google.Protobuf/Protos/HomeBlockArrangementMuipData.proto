@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "HomeFurnitureArrangementMuipData.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message HomeBlockArrangementMuipData {
   uint32 block_id = 1;

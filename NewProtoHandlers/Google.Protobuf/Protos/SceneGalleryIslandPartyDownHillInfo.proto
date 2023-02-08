@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GalleryStartSource.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SceneGalleryIslandPartyDownHillInfo {
   uint32 max_kill_monster_count = 10;

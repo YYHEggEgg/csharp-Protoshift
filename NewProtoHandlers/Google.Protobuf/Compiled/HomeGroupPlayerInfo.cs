@@ -9,419 +9,421 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from HomeGroupPlayerInfo.proto</summary>
-public static partial class HomeGroupPlayerInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for HomeGroupPlayerInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from HomeGroupPlayerInfo.proto</summary>
+  public static partial class HomeGroupPlayerInfoReflection {
 
-  static HomeGroupPlayerInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChlIb21lR3JvdXBQbGF5ZXJJbmZvLnByb3RvGhRQcm9maWxlUGljdHVyZS5w",
-          "cm90byKXAQoTSG9tZUdyb3VwUGxheWVySW5mbxIOCgZwc25faWQYCiABKAkS",
-          "EAoIbmlja25hbWUYDSABKAkSCwoDdWlkGAEgASgNEigKD3Byb2ZpbGVfcGlj",
-          "dHVyZRgCIAEoCzIPLlByb2ZpbGVQaWN0dXJlEhQKDHBsYXllcl9sZXZlbBgJ",
-          "IAEoDRIRCglvbmxpbmVfaWQYBCABKAlCFgoUb3JnLnNvcmFwb2ludGEucHJv",
-          "dG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ProfilePictureReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::HomeGroupPlayerInfo), global::HomeGroupPlayerInfo.Parser, new[]{ "PsnId", "Nickname", "Uid", "ProfilePicture", "PlayerLevel", "OnlineId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for HomeGroupPlayerInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static HomeGroupPlayerInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChlIb21lR3JvdXBQbGF5ZXJJbmZvLnByb3RvGhRQcm9maWxlUGljdHVyZS5w",
+            "cm90byKXAQoTSG9tZUdyb3VwUGxheWVySW5mbxIOCgZwc25faWQYCiABKAkS",
+            "EAoIbmlja25hbWUYDSABKAkSCwoDdWlkGAEgASgNEigKD3Byb2ZpbGVfcGlj",
+            "dHVyZRgCIAEoCzIPLlByb2ZpbGVQaWN0dXJlEhQKDHBsYXllcl9sZXZlbBgJ",
+            "IAEoDRIRCglvbmxpbmVfaWQYBCABKAlCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.ProfilePictureReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.HomeGroupPlayerInfo), global::NewProtos.HomeGroupPlayerInfo.Parser, new[]{ "PsnId", "Nickname", "Uid", "ProfilePicture", "PlayerLevel", "OnlineId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class HomeGroupPlayerInfo : pb::IMessage<HomeGroupPlayerInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HomeGroupPlayerInfo> _parser = new pb::MessageParser<HomeGroupPlayerInfo>(() => new HomeGroupPlayerInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HomeGroupPlayerInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.HomeGroupPlayerInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeGroupPlayerInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeGroupPlayerInfo(HomeGroupPlayerInfo other) : this() {
+      psnId_ = other.psnId_;
+      nickname_ = other.nickname_;
+      uid_ = other.uid_;
+      profilePicture_ = other.profilePicture_ != null ? other.profilePicture_.Clone() : null;
+      playerLevel_ = other.playerLevel_;
+      onlineId_ = other.onlineId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeGroupPlayerInfo Clone() {
+      return new HomeGroupPlayerInfo(this);
+    }
+
+    /// <summary>Field number for the "psn_id" field.</summary>
+    public const int PsnIdFieldNumber = 10;
+    private string psnId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PsnId {
+      get { return psnId_; }
+      set {
+        psnId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "nickname" field.</summary>
+    public const int NicknameFieldNumber = 13;
+    private string nickname_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Nickname {
+      get { return nickname_; }
+      set {
+        nickname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 1;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "profile_picture" field.</summary>
+    public const int ProfilePictureFieldNumber = 2;
+    private global::NewProtos.ProfilePicture profilePicture_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ProfilePicture ProfilePicture {
+      get { return profilePicture_; }
+      set {
+        profilePicture_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "player_level" field.</summary>
+    public const int PlayerLevelFieldNumber = 9;
+    private uint playerLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PlayerLevel {
+      get { return playerLevel_; }
+      set {
+        playerLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "online_id" field.</summary>
+    public const int OnlineIdFieldNumber = 4;
+    private string onlineId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string OnlineId {
+      get { return onlineId_; }
+      set {
+        onlineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HomeGroupPlayerInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HomeGroupPlayerInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PsnId != other.PsnId) return false;
+      if (Nickname != other.Nickname) return false;
+      if (Uid != other.Uid) return false;
+      if (!object.Equals(ProfilePicture, other.ProfilePicture)) return false;
+      if (PlayerLevel != other.PlayerLevel) return false;
+      if (OnlineId != other.OnlineId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PsnId.Length != 0) hash ^= PsnId.GetHashCode();
+      if (Nickname.Length != 0) hash ^= Nickname.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (profilePicture_ != null) hash ^= ProfilePicture.GetHashCode();
+      if (PlayerLevel != 0) hash ^= PlayerLevel.GetHashCode();
+      if (OnlineId.Length != 0) hash ^= OnlineId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Uid != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Uid);
+      }
+      if (profilePicture_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(ProfilePicture);
+      }
+      if (OnlineId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(OnlineId);
+      }
+      if (PlayerLevel != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(PlayerLevel);
+      }
+      if (PsnId.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(PsnId);
+      }
+      if (Nickname.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(Nickname);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Uid != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Uid);
+      }
+      if (profilePicture_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(ProfilePicture);
+      }
+      if (OnlineId.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(OnlineId);
+      }
+      if (PlayerLevel != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(PlayerLevel);
+      }
+      if (PsnId.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(PsnId);
+      }
+      if (Nickname.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(Nickname);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (PsnId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PsnId);
+      }
+      if (Nickname.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Nickname);
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (profilePicture_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProfilePicture);
+      }
+      if (PlayerLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerLevel);
+      }
+      if (OnlineId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnlineId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HomeGroupPlayerInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PsnId.Length != 0) {
+        PsnId = other.PsnId;
+      }
+      if (other.Nickname.Length != 0) {
+        Nickname = other.Nickname;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      if (other.profilePicture_ != null) {
+        if (profilePicture_ == null) {
+          ProfilePicture = new global::NewProtos.ProfilePicture();
+        }
+        ProfilePicture.MergeFrom(other.ProfilePicture);
+      }
+      if (other.PlayerLevel != 0) {
+        PlayerLevel = other.PlayerLevel;
+      }
+      if (other.OnlineId.Length != 0) {
+        OnlineId = other.OnlineId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 18: {
+            if (profilePicture_ == null) {
+              ProfilePicture = new global::NewProtos.ProfilePicture();
+            }
+            input.ReadMessage(ProfilePicture);
+            break;
+          }
+          case 34: {
+            OnlineId = input.ReadString();
+            break;
+          }
+          case 72: {
+            PlayerLevel = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            PsnId = input.ReadString();
+            break;
+          }
+          case 106: {
+            Nickname = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 18: {
+            if (profilePicture_ == null) {
+              ProfilePicture = new global::NewProtos.ProfilePicture();
+            }
+            input.ReadMessage(ProfilePicture);
+            break;
+          }
+          case 34: {
+            OnlineId = input.ReadString();
+            break;
+          }
+          case 72: {
+            PlayerLevel = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            PsnId = input.ReadString();
+            break;
+          }
+          case 106: {
+            Nickname = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class HomeGroupPlayerInfo : pb::IMessage<HomeGroupPlayerInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<HomeGroupPlayerInfo> _parser = new pb::MessageParser<HomeGroupPlayerInfo>(() => new HomeGroupPlayerInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<HomeGroupPlayerInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::HomeGroupPlayerInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeGroupPlayerInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeGroupPlayerInfo(HomeGroupPlayerInfo other) : this() {
-    psnId_ = other.psnId_;
-    nickname_ = other.nickname_;
-    uid_ = other.uid_;
-    profilePicture_ = other.profilePicture_ != null ? other.profilePicture_.Clone() : null;
-    playerLevel_ = other.playerLevel_;
-    onlineId_ = other.onlineId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeGroupPlayerInfo Clone() {
-    return new HomeGroupPlayerInfo(this);
-  }
-
-  /// <summary>Field number for the "psn_id" field.</summary>
-  public const int PsnIdFieldNumber = 10;
-  private string psnId_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string PsnId {
-    get { return psnId_; }
-    set {
-      psnId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "nickname" field.</summary>
-  public const int NicknameFieldNumber = 13;
-  private string nickname_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Nickname {
-    get { return nickname_; }
-    set {
-      nickname_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "uid" field.</summary>
-  public const int UidFieldNumber = 1;
-  private uint uid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Uid {
-    get { return uid_; }
-    set {
-      uid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "profile_picture" field.</summary>
-  public const int ProfilePictureFieldNumber = 2;
-  private global::ProfilePicture profilePicture_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ProfilePicture ProfilePicture {
-    get { return profilePicture_; }
-    set {
-      profilePicture_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "player_level" field.</summary>
-  public const int PlayerLevelFieldNumber = 9;
-  private uint playerLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PlayerLevel {
-    get { return playerLevel_; }
-    set {
-      playerLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "online_id" field.</summary>
-  public const int OnlineIdFieldNumber = 4;
-  private string onlineId_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string OnlineId {
-    get { return onlineId_; }
-    set {
-      onlineId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as HomeGroupPlayerInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(HomeGroupPlayerInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (PsnId != other.PsnId) return false;
-    if (Nickname != other.Nickname) return false;
-    if (Uid != other.Uid) return false;
-    if (!object.Equals(ProfilePicture, other.ProfilePicture)) return false;
-    if (PlayerLevel != other.PlayerLevel) return false;
-    if (OnlineId != other.OnlineId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (PsnId.Length != 0) hash ^= PsnId.GetHashCode();
-    if (Nickname.Length != 0) hash ^= Nickname.GetHashCode();
-    if (Uid != 0) hash ^= Uid.GetHashCode();
-    if (profilePicture_ != null) hash ^= ProfilePicture.GetHashCode();
-    if (PlayerLevel != 0) hash ^= PlayerLevel.GetHashCode();
-    if (OnlineId.Length != 0) hash ^= OnlineId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Uid != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Uid);
-    }
-    if (profilePicture_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(ProfilePicture);
-    }
-    if (OnlineId.Length != 0) {
-      output.WriteRawTag(34);
-      output.WriteString(OnlineId);
-    }
-    if (PlayerLevel != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(PlayerLevel);
-    }
-    if (PsnId.Length != 0) {
-      output.WriteRawTag(82);
-      output.WriteString(PsnId);
-    }
-    if (Nickname.Length != 0) {
-      output.WriteRawTag(106);
-      output.WriteString(Nickname);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Uid != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Uid);
-    }
-    if (profilePicture_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(ProfilePicture);
-    }
-    if (OnlineId.Length != 0) {
-      output.WriteRawTag(34);
-      output.WriteString(OnlineId);
-    }
-    if (PlayerLevel != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(PlayerLevel);
-    }
-    if (PsnId.Length != 0) {
-      output.WriteRawTag(82);
-      output.WriteString(PsnId);
-    }
-    if (Nickname.Length != 0) {
-      output.WriteRawTag(106);
-      output.WriteString(Nickname);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (PsnId.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(PsnId);
-    }
-    if (Nickname.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Nickname);
-    }
-    if (Uid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-    }
-    if (profilePicture_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProfilePicture);
-    }
-    if (PlayerLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerLevel);
-    }
-    if (OnlineId.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(OnlineId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(HomeGroupPlayerInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.PsnId.Length != 0) {
-      PsnId = other.PsnId;
-    }
-    if (other.Nickname.Length != 0) {
-      Nickname = other.Nickname;
-    }
-    if (other.Uid != 0) {
-      Uid = other.Uid;
-    }
-    if (other.profilePicture_ != null) {
-      if (profilePicture_ == null) {
-        ProfilePicture = new global::ProfilePicture();
-      }
-      ProfilePicture.MergeFrom(other.ProfilePicture);
-    }
-    if (other.PlayerLevel != 0) {
-      PlayerLevel = other.PlayerLevel;
-    }
-    if (other.OnlineId.Length != 0) {
-      OnlineId = other.OnlineId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 18: {
-          if (profilePicture_ == null) {
-            ProfilePicture = new global::ProfilePicture();
-          }
-          input.ReadMessage(ProfilePicture);
-          break;
-        }
-        case 34: {
-          OnlineId = input.ReadString();
-          break;
-        }
-        case 72: {
-          PlayerLevel = input.ReadUInt32();
-          break;
-        }
-        case 82: {
-          PsnId = input.ReadString();
-          break;
-        }
-        case 106: {
-          Nickname = input.ReadString();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 18: {
-          if (profilePicture_ == null) {
-            ProfilePicture = new global::ProfilePicture();
-          }
-          input.ReadMessage(ProfilePicture);
-          break;
-        }
-        case 34: {
-          OnlineId = input.ReadString();
-          break;
-        }
-        case 72: {
-          PlayerLevel = input.ReadUInt32();
-          break;
-        }
-        case 82: {
-          PsnId = input.ReadString();
-          break;
-        }
-        case 106: {
-          Nickname = input.ReadString();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

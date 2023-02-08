@@ -21,7 +21,7 @@ import "FungusPlotStageDetail.proto";
 import "FungusTrainingDungeonDetail.proto";
 import "FungusTrainingProgressDetail.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message FungusFighterDetailInfo {
   repeated FungusDetail fungus_detail_list = 6;

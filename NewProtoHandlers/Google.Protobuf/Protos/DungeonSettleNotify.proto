@@ -30,7 +30,7 @@ import "TowerLevelEndNotify.proto";
 import "TrialAvatarFirstPassDungeonNotify.proto";
 import "WindFieldDungeonSettleInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message DungeonSettleNotify {
   // enum CmdId {

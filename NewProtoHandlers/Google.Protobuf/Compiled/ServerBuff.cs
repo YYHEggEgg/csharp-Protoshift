@@ -9,372 +9,375 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ServerBuff.proto</summary>
-public static partial class ServerBuffReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ServerBuff.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ServerBuff.proto</summary>
+  public static partial class ServerBuffReflection {
 
-  static ServerBuffReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChBTZXJ2ZXJCdWZmLnByb3RvIpEBCgpTZXJ2ZXJCdWZmEhcKD3NlcnZlcl9i",
-          "dWZmX3VpZBgBIAEoDRIWCg5zZXJ2ZXJfYnVmZl9pZBgCIAEoDRIYChBzZXJ2",
-          "ZXJfYnVmZl90eXBlGAMgASgNEh0KFWluc3RhbmNlZF9tb2RpZmllcl9pZBgE",
-          "IAEoDRIZChFpc19tb2RpZmllcl9hZGRlZBgFIAEoCEIWChRvcmcuc29yYXBv",
-          "aW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ServerBuff), global::ServerBuff.Parser, new[]{ "ServerBuffUid", "ServerBuffId", "ServerBuffType", "InstancedModifierId", "IsModifierAdded" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ServerBuff.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ServerBuffReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChBTZXJ2ZXJCdWZmLnByb3RvIpEBCgpTZXJ2ZXJCdWZmEhcKD3NlcnZlcl9i",
+            "dWZmX3VpZBgBIAEoDRIWCg5zZXJ2ZXJfYnVmZl9pZBgCIAEoDRIYChBzZXJ2",
+            "ZXJfYnVmZl90eXBlGAMgASgNEh0KFWluc3RhbmNlZF9tb2RpZmllcl9pZBgE",
+            "IAEoDRIZChFpc19tb2RpZmllcl9hZGRlZBgFIAEoCEIMqgIJTmV3UHJvdG9z",
+            "YgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.ServerBuff), global::NewProtos.ServerBuff.Parser, new[]{ "ServerBuffUid", "ServerBuffId", "ServerBuffType", "InstancedModifierId", "IsModifierAdded" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class ServerBuff : pb::IMessage<ServerBuff>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ServerBuff> _parser = new pb::MessageParser<ServerBuff>(() => new ServerBuff());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ServerBuff> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.ServerBuffReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ServerBuff() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ServerBuff(ServerBuff other) : this() {
+      serverBuffUid_ = other.serverBuffUid_;
+      serverBuffId_ = other.serverBuffId_;
+      serverBuffType_ = other.serverBuffType_;
+      instancedModifierId_ = other.instancedModifierId_;
+      isModifierAdded_ = other.isModifierAdded_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ServerBuff Clone() {
+      return new ServerBuff(this);
+    }
+
+    /// <summary>Field number for the "server_buff_uid" field.</summary>
+    public const int ServerBuffUidFieldNumber = 1;
+    private uint serverBuffUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ServerBuffUid {
+      get { return serverBuffUid_; }
+      set {
+        serverBuffUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "server_buff_id" field.</summary>
+    public const int ServerBuffIdFieldNumber = 2;
+    private uint serverBuffId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ServerBuffId {
+      get { return serverBuffId_; }
+      set {
+        serverBuffId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "server_buff_type" field.</summary>
+    public const int ServerBuffTypeFieldNumber = 3;
+    private uint serverBuffType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ServerBuffType {
+      get { return serverBuffType_; }
+      set {
+        serverBuffType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "instanced_modifier_id" field.</summary>
+    public const int InstancedModifierIdFieldNumber = 4;
+    private uint instancedModifierId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint InstancedModifierId {
+      get { return instancedModifierId_; }
+      set {
+        instancedModifierId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_modifier_added" field.</summary>
+    public const int IsModifierAddedFieldNumber = 5;
+    private bool isModifierAdded_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsModifierAdded {
+      get { return isModifierAdded_; }
+      set {
+        isModifierAdded_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ServerBuff);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ServerBuff other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ServerBuffUid != other.ServerBuffUid) return false;
+      if (ServerBuffId != other.ServerBuffId) return false;
+      if (ServerBuffType != other.ServerBuffType) return false;
+      if (InstancedModifierId != other.InstancedModifierId) return false;
+      if (IsModifierAdded != other.IsModifierAdded) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ServerBuffUid != 0) hash ^= ServerBuffUid.GetHashCode();
+      if (ServerBuffId != 0) hash ^= ServerBuffId.GetHashCode();
+      if (ServerBuffType != 0) hash ^= ServerBuffType.GetHashCode();
+      if (InstancedModifierId != 0) hash ^= InstancedModifierId.GetHashCode();
+      if (IsModifierAdded != false) hash ^= IsModifierAdded.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ServerBuffUid != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ServerBuffUid);
+      }
+      if (ServerBuffId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ServerBuffId);
+      }
+      if (ServerBuffType != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ServerBuffType);
+      }
+      if (InstancedModifierId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(InstancedModifierId);
+      }
+      if (IsModifierAdded != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsModifierAdded);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ServerBuffUid != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ServerBuffUid);
+      }
+      if (ServerBuffId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ServerBuffId);
+      }
+      if (ServerBuffType != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ServerBuffType);
+      }
+      if (InstancedModifierId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(InstancedModifierId);
+      }
+      if (IsModifierAdded != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsModifierAdded);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ServerBuffUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ServerBuffUid);
+      }
+      if (ServerBuffId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ServerBuffId);
+      }
+      if (ServerBuffType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ServerBuffType);
+      }
+      if (InstancedModifierId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InstancedModifierId);
+      }
+      if (IsModifierAdded != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ServerBuff other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ServerBuffUid != 0) {
+        ServerBuffUid = other.ServerBuffUid;
+      }
+      if (other.ServerBuffId != 0) {
+        ServerBuffId = other.ServerBuffId;
+      }
+      if (other.ServerBuffType != 0) {
+        ServerBuffType = other.ServerBuffType;
+      }
+      if (other.InstancedModifierId != 0) {
+        InstancedModifierId = other.InstancedModifierId;
+      }
+      if (other.IsModifierAdded != false) {
+        IsModifierAdded = other.IsModifierAdded;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            ServerBuffUid = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            ServerBuffId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            ServerBuffType = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            InstancedModifierId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            IsModifierAdded = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            ServerBuffUid = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            ServerBuffId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            ServerBuffType = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            InstancedModifierId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            IsModifierAdded = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ServerBuff : pb::IMessage<ServerBuff>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ServerBuff> _parser = new pb::MessageParser<ServerBuff>(() => new ServerBuff());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ServerBuff> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ServerBuffReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ServerBuff() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ServerBuff(ServerBuff other) : this() {
-    serverBuffUid_ = other.serverBuffUid_;
-    serverBuffId_ = other.serverBuffId_;
-    serverBuffType_ = other.serverBuffType_;
-    instancedModifierId_ = other.instancedModifierId_;
-    isModifierAdded_ = other.isModifierAdded_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ServerBuff Clone() {
-    return new ServerBuff(this);
-  }
-
-  /// <summary>Field number for the "server_buff_uid" field.</summary>
-  public const int ServerBuffUidFieldNumber = 1;
-  private uint serverBuffUid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ServerBuffUid {
-    get { return serverBuffUid_; }
-    set {
-      serverBuffUid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "server_buff_id" field.</summary>
-  public const int ServerBuffIdFieldNumber = 2;
-  private uint serverBuffId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ServerBuffId {
-    get { return serverBuffId_; }
-    set {
-      serverBuffId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "server_buff_type" field.</summary>
-  public const int ServerBuffTypeFieldNumber = 3;
-  private uint serverBuffType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ServerBuffType {
-    get { return serverBuffType_; }
-    set {
-      serverBuffType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "instanced_modifier_id" field.</summary>
-  public const int InstancedModifierIdFieldNumber = 4;
-  private uint instancedModifierId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint InstancedModifierId {
-    get { return instancedModifierId_; }
-    set {
-      instancedModifierId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_modifier_added" field.</summary>
-  public const int IsModifierAddedFieldNumber = 5;
-  private bool isModifierAdded_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsModifierAdded {
-    get { return isModifierAdded_; }
-    set {
-      isModifierAdded_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ServerBuff);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ServerBuff other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ServerBuffUid != other.ServerBuffUid) return false;
-    if (ServerBuffId != other.ServerBuffId) return false;
-    if (ServerBuffType != other.ServerBuffType) return false;
-    if (InstancedModifierId != other.InstancedModifierId) return false;
-    if (IsModifierAdded != other.IsModifierAdded) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ServerBuffUid != 0) hash ^= ServerBuffUid.GetHashCode();
-    if (ServerBuffId != 0) hash ^= ServerBuffId.GetHashCode();
-    if (ServerBuffType != 0) hash ^= ServerBuffType.GetHashCode();
-    if (InstancedModifierId != 0) hash ^= InstancedModifierId.GetHashCode();
-    if (IsModifierAdded != false) hash ^= IsModifierAdded.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ServerBuffUid != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(ServerBuffUid);
-    }
-    if (ServerBuffId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(ServerBuffId);
-    }
-    if (ServerBuffType != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ServerBuffType);
-    }
-    if (InstancedModifierId != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(InstancedModifierId);
-    }
-    if (IsModifierAdded != false) {
-      output.WriteRawTag(40);
-      output.WriteBool(IsModifierAdded);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ServerBuffUid != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(ServerBuffUid);
-    }
-    if (ServerBuffId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(ServerBuffId);
-    }
-    if (ServerBuffType != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ServerBuffType);
-    }
-    if (InstancedModifierId != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(InstancedModifierId);
-    }
-    if (IsModifierAdded != false) {
-      output.WriteRawTag(40);
-      output.WriteBool(IsModifierAdded);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ServerBuffUid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ServerBuffUid);
-    }
-    if (ServerBuffId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ServerBuffId);
-    }
-    if (ServerBuffType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ServerBuffType);
-    }
-    if (InstancedModifierId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InstancedModifierId);
-    }
-    if (IsModifierAdded != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ServerBuff other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ServerBuffUid != 0) {
-      ServerBuffUid = other.ServerBuffUid;
-    }
-    if (other.ServerBuffId != 0) {
-      ServerBuffId = other.ServerBuffId;
-    }
-    if (other.ServerBuffType != 0) {
-      ServerBuffType = other.ServerBuffType;
-    }
-    if (other.InstancedModifierId != 0) {
-      InstancedModifierId = other.InstancedModifierId;
-    }
-    if (other.IsModifierAdded != false) {
-      IsModifierAdded = other.IsModifierAdded;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          ServerBuffUid = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          ServerBuffId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          ServerBuffType = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          InstancedModifierId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          IsModifierAdded = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          ServerBuffUid = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          ServerBuffId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          ServerBuffType = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          InstancedModifierId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          IsModifierAdded = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

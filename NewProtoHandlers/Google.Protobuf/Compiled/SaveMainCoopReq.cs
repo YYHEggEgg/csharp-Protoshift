@@ -9,363 +9,366 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SaveMainCoopReq.proto</summary>
-public static partial class SaveMainCoopReqReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SaveMainCoopReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SaveMainCoopReq.proto</summary>
+  public static partial class SaveMainCoopReqReflection {
 
-  static SaveMainCoopReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVTYXZlTWFpbkNvb3BSZXEucHJvdG8iqQIKD1NhdmVNYWluQ29vcFJlcRI6",
-          "Cg5ub3JtYWxfdmFyX21hcBgOIAMoCzIiLlNhdmVNYWluQ29vcFJlcS5Ob3Jt",
-          "YWxWYXJNYXBFbnRyeRIXCg9zZWxmX2NvbmZpZGVuY2UYBiABKA0SCgoCaWQY",
-          "DSABKA0SFQoNc2F2ZV9wb2ludF9pZBgCIAEoDRI2Cgx0ZW1wX3Zhcl9tYXAY",
-          "DCADKAsyIC5TYXZlTWFpbkNvb3BSZXEuVGVtcFZhck1hcEVudHJ5GjMKEU5v",
-          "cm1hbFZhck1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoBToC",
-          "OAEaMQoPVGVtcFZhck1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgC",
-          "IAEoBToCOAFCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SaveMainCoopReq), global::SaveMainCoopReq.Parser, new[]{ "NormalVarMap", "SelfConfidence", "Id", "SavePointId", "TempVarMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SaveMainCoopReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SaveMainCoopReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVTYXZlTWFpbkNvb3BSZXEucHJvdG8iqQIKD1NhdmVNYWluQ29vcFJlcRI6",
+            "Cg5ub3JtYWxfdmFyX21hcBgOIAMoCzIiLlNhdmVNYWluQ29vcFJlcS5Ob3Jt",
+            "YWxWYXJNYXBFbnRyeRIXCg9zZWxmX2NvbmZpZGVuY2UYBiABKA0SCgoCaWQY",
+            "DSABKA0SFQoNc2F2ZV9wb2ludF9pZBgCIAEoDRI2Cgx0ZW1wX3Zhcl9tYXAY",
+            "DCADKAsyIC5TYXZlTWFpbkNvb3BSZXEuVGVtcFZhck1hcEVudHJ5GjMKEU5v",
+            "cm1hbFZhck1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEoBToC",
+            "OAEaMQoPVGVtcFZhck1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgC",
+            "IAEoBToCOAFCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.SaveMainCoopReq), global::NewProtos.SaveMainCoopReq.Parser, new[]{ "NormalVarMap", "SelfConfidence", "Id", "SavePointId", "TempVarMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1972;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
+  /// </summary>
+  public sealed partial class SaveMainCoopReq : pb::IMessage<SaveMainCoopReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SaveMainCoopReq> _parser = new pb::MessageParser<SaveMainCoopReq>(() => new SaveMainCoopReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SaveMainCoopReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.SaveMainCoopReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SaveMainCoopReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SaveMainCoopReq(SaveMainCoopReq other) : this() {
+      normalVarMap_ = other.normalVarMap_.Clone();
+      selfConfidence_ = other.selfConfidence_;
+      id_ = other.id_;
+      savePointId_ = other.savePointId_;
+      tempVarMap_ = other.tempVarMap_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SaveMainCoopReq Clone() {
+      return new SaveMainCoopReq(this);
+    }
+
+    /// <summary>Field number for the "normal_var_map" field.</summary>
+    public const int NormalVarMapFieldNumber = 14;
+    private static readonly pbc::MapField<uint, int>.Codec _map_normalVarMap_codec
+        = new pbc::MapField<uint, int>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 114);
+    private readonly pbc::MapField<uint, int> normalVarMap_ = new pbc::MapField<uint, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, int> NormalVarMap {
+      get { return normalVarMap_; }
+    }
+
+    /// <summary>Field number for the "self_confidence" field.</summary>
+    public const int SelfConfidenceFieldNumber = 6;
+    private uint selfConfidence_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SelfConfidence {
+      get { return selfConfidence_; }
+      set {
+        selfConfidence_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 13;
+    private uint id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "save_point_id" field.</summary>
+    public const int SavePointIdFieldNumber = 2;
+    private uint savePointId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SavePointId {
+      get { return savePointId_; }
+      set {
+        savePointId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "temp_var_map" field.</summary>
+    public const int TempVarMapFieldNumber = 12;
+    private static readonly pbc::MapField<uint, int>.Codec _map_tempVarMap_codec
+        = new pbc::MapField<uint, int>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 98);
+    private readonly pbc::MapField<uint, int> tempVarMap_ = new pbc::MapField<uint, int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, int> TempVarMap {
+      get { return tempVarMap_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SaveMainCoopReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SaveMainCoopReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!NormalVarMap.Equals(other.NormalVarMap)) return false;
+      if (SelfConfidence != other.SelfConfidence) return false;
+      if (Id != other.Id) return false;
+      if (SavePointId != other.SavePointId) return false;
+      if (!TempVarMap.Equals(other.TempVarMap)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= NormalVarMap.GetHashCode();
+      if (SelfConfidence != 0) hash ^= SelfConfidence.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (SavePointId != 0) hash ^= SavePointId.GetHashCode();
+      hash ^= TempVarMap.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (SavePointId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(SavePointId);
+      }
+      if (SelfConfidence != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(SelfConfidence);
+      }
+      tempVarMap_.WriteTo(output, _map_tempVarMap_codec);
+      if (Id != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Id);
+      }
+      normalVarMap_.WriteTo(output, _map_normalVarMap_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (SavePointId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(SavePointId);
+      }
+      if (SelfConfidence != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(SelfConfidence);
+      }
+      tempVarMap_.WriteTo(ref output, _map_tempVarMap_codec);
+      if (Id != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Id);
+      }
+      normalVarMap_.WriteTo(ref output, _map_normalVarMap_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += normalVarMap_.CalculateSize(_map_normalVarMap_codec);
+      if (SelfConfidence != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SelfConfidence);
+      }
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
+      }
+      if (SavePointId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SavePointId);
+      }
+      size += tempVarMap_.CalculateSize(_map_tempVarMap_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SaveMainCoopReq other) {
+      if (other == null) {
+        return;
+      }
+      normalVarMap_.Add(other.normalVarMap_);
+      if (other.SelfConfidence != 0) {
+        SelfConfidence = other.SelfConfidence;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.SavePointId != 0) {
+        SavePointId = other.SavePointId;
+      }
+      tempVarMap_.Add(other.tempVarMap_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            SavePointId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            SelfConfidence = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            tempVarMap_.AddEntriesFrom(input, _map_tempVarMap_codec);
+            break;
+          }
+          case 104: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            normalVarMap_.AddEntriesFrom(input, _map_normalVarMap_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            SavePointId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            SelfConfidence = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            tempVarMap_.AddEntriesFrom(ref input, _map_tempVarMap_codec);
+            break;
+          }
+          case 104: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            normalVarMap_.AddEntriesFrom(ref input, _map_normalVarMap_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 1972;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-///   IS_ALLOW_CLIENT = 1;
-/// }
-/// </summary>
-public sealed partial class SaveMainCoopReq : pb::IMessage<SaveMainCoopReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SaveMainCoopReq> _parser = new pb::MessageParser<SaveMainCoopReq>(() => new SaveMainCoopReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SaveMainCoopReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SaveMainCoopReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SaveMainCoopReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SaveMainCoopReq(SaveMainCoopReq other) : this() {
-    normalVarMap_ = other.normalVarMap_.Clone();
-    selfConfidence_ = other.selfConfidence_;
-    id_ = other.id_;
-    savePointId_ = other.savePointId_;
-    tempVarMap_ = other.tempVarMap_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SaveMainCoopReq Clone() {
-    return new SaveMainCoopReq(this);
-  }
-
-  /// <summary>Field number for the "normal_var_map" field.</summary>
-  public const int NormalVarMapFieldNumber = 14;
-  private static readonly pbc::MapField<uint, int>.Codec _map_normalVarMap_codec
-      = new pbc::MapField<uint, int>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 114);
-  private readonly pbc::MapField<uint, int> normalVarMap_ = new pbc::MapField<uint, int>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, int> NormalVarMap {
-    get { return normalVarMap_; }
-  }
-
-  /// <summary>Field number for the "self_confidence" field.</summary>
-  public const int SelfConfidenceFieldNumber = 6;
-  private uint selfConfidence_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SelfConfidence {
-    get { return selfConfidence_; }
-    set {
-      selfConfidence_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "id" field.</summary>
-  public const int IdFieldNumber = 13;
-  private uint id_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Id {
-    get { return id_; }
-    set {
-      id_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "save_point_id" field.</summary>
-  public const int SavePointIdFieldNumber = 2;
-  private uint savePointId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SavePointId {
-    get { return savePointId_; }
-    set {
-      savePointId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "temp_var_map" field.</summary>
-  public const int TempVarMapFieldNumber = 12;
-  private static readonly pbc::MapField<uint, int>.Codec _map_tempVarMap_codec
-      = new pbc::MapField<uint, int>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForInt32(16, 0), 98);
-  private readonly pbc::MapField<uint, int> tempVarMap_ = new pbc::MapField<uint, int>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, int> TempVarMap {
-    get { return tempVarMap_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SaveMainCoopReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SaveMainCoopReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!NormalVarMap.Equals(other.NormalVarMap)) return false;
-    if (SelfConfidence != other.SelfConfidence) return false;
-    if (Id != other.Id) return false;
-    if (SavePointId != other.SavePointId) return false;
-    if (!TempVarMap.Equals(other.TempVarMap)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= NormalVarMap.GetHashCode();
-    if (SelfConfidence != 0) hash ^= SelfConfidence.GetHashCode();
-    if (Id != 0) hash ^= Id.GetHashCode();
-    if (SavePointId != 0) hash ^= SavePointId.GetHashCode();
-    hash ^= TempVarMap.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (SavePointId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(SavePointId);
-    }
-    if (SelfConfidence != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(SelfConfidence);
-    }
-    tempVarMap_.WriteTo(output, _map_tempVarMap_codec);
-    if (Id != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Id);
-    }
-    normalVarMap_.WriteTo(output, _map_normalVarMap_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (SavePointId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(SavePointId);
-    }
-    if (SelfConfidence != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(SelfConfidence);
-    }
-    tempVarMap_.WriteTo(ref output, _map_tempVarMap_codec);
-    if (Id != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Id);
-    }
-    normalVarMap_.WriteTo(ref output, _map_normalVarMap_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += normalVarMap_.CalculateSize(_map_normalVarMap_codec);
-    if (SelfConfidence != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SelfConfidence);
-    }
-    if (Id != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
-    }
-    if (SavePointId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SavePointId);
-    }
-    size += tempVarMap_.CalculateSize(_map_tempVarMap_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SaveMainCoopReq other) {
-    if (other == null) {
-      return;
-    }
-    normalVarMap_.Add(other.normalVarMap_);
-    if (other.SelfConfidence != 0) {
-      SelfConfidence = other.SelfConfidence;
-    }
-    if (other.Id != 0) {
-      Id = other.Id;
-    }
-    if (other.SavePointId != 0) {
-      SavePointId = other.SavePointId;
-    }
-    tempVarMap_.Add(other.tempVarMap_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          SavePointId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          SelfConfidence = input.ReadUInt32();
-          break;
-        }
-        case 98: {
-          tempVarMap_.AddEntriesFrom(input, _map_tempVarMap_codec);
-          break;
-        }
-        case 104: {
-          Id = input.ReadUInt32();
-          break;
-        }
-        case 114: {
-          normalVarMap_.AddEntriesFrom(input, _map_normalVarMap_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          SavePointId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          SelfConfidence = input.ReadUInt32();
-          break;
-        }
-        case 98: {
-          tempVarMap_.AddEntriesFrom(ref input, _map_tempVarMap_codec);
-          break;
-        }
-        case 104: {
-          Id = input.ReadUInt32();
-          break;
-        }
-        case 114: {
-          normalVarMap_.AddEntriesFrom(ref input, _map_normalVarMap_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

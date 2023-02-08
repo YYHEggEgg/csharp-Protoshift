@@ -9,484 +9,487 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from H5ActivityInfo.proto</summary>
-public static partial class H5ActivityInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for H5ActivityInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from H5ActivityInfo.proto</summary>
+  public static partial class H5ActivityInfoReflection {
 
-  static H5ActivityInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRINUFjdGl2aXR5SW5mby5wcm90byLIAQoOSDVBY3Rpdml0eUluZm8SGAoQ",
-          "aXNfZW50cmFuY2Vfb3BlbhgCIAEoCBIbChNVbmszMzAwX09CS0VCRENLSEpG",
-          "GAEgASgNEhsKE1VuazMzMDBfRE1CTkZFQ0FLQkgYDiABKA0SGgoSY29udGVu",
-          "dF9jbG9zZV90aW1lGAQgASgNEgsKA3VybBgDIAEoCRITCgtwcmVmYWJfcGF0",
-          "aBgPIAEoCRISCgpiZWdpbl90aW1lGAUgASgNEhAKCGVuZF90aW1lGAcgASgN",
-          "QhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::H5ActivityInfo), global::H5ActivityInfo.Parser, new[]{ "IsEntranceOpen", "Unk3300OBKEBDCKHJF", "Unk3300DMBNFECAKBH", "ContentCloseTime", "Url", "PrefabPath", "BeginTime", "EndTime" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for H5ActivityInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static H5ActivityInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRINUFjdGl2aXR5SW5mby5wcm90byLIAQoOSDVBY3Rpdml0eUluZm8SGAoQ",
+            "aXNfZW50cmFuY2Vfb3BlbhgCIAEoCBIbChNVbmszMzAwX09CS0VCRENLSEpG",
+            "GAEgASgNEhsKE1VuazMzMDBfRE1CTkZFQ0FLQkgYDiABKA0SGgoSY29udGVu",
+            "dF9jbG9zZV90aW1lGAQgASgNEgsKA3VybBgDIAEoCRITCgtwcmVmYWJfcGF0",
+            "aBgPIAEoCRISCgpiZWdpbl90aW1lGAUgASgNEhAKCGVuZF90aW1lGAcgASgN",
+            "QgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.H5ActivityInfo), global::NewProtos.H5ActivityInfo.Parser, new[]{ "IsEntranceOpen", "Unk3300OBKEBDCKHJF", "Unk3300DMBNFECAKBH", "ContentCloseTime", "Url", "PrefabPath", "BeginTime", "EndTime" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class H5ActivityInfo : pb::IMessage<H5ActivityInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<H5ActivityInfo> _parser = new pb::MessageParser<H5ActivityInfo>(() => new H5ActivityInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<H5ActivityInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.H5ActivityInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public H5ActivityInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public H5ActivityInfo(H5ActivityInfo other) : this() {
+      isEntranceOpen_ = other.isEntranceOpen_;
+      unk3300OBKEBDCKHJF_ = other.unk3300OBKEBDCKHJF_;
+      unk3300DMBNFECAKBH_ = other.unk3300DMBNFECAKBH_;
+      contentCloseTime_ = other.contentCloseTime_;
+      url_ = other.url_;
+      prefabPath_ = other.prefabPath_;
+      beginTime_ = other.beginTime_;
+      endTime_ = other.endTime_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public H5ActivityInfo Clone() {
+      return new H5ActivityInfo(this);
+    }
+
+    /// <summary>Field number for the "is_entrance_open" field.</summary>
+    public const int IsEntranceOpenFieldNumber = 2;
+    private bool isEntranceOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsEntranceOpen {
+      get { return isEntranceOpen_; }
+      set {
+        isEntranceOpen_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OBKEBDCKHJF" field.</summary>
+    public const int Unk3300OBKEBDCKHJFFieldNumber = 1;
+    private uint unk3300OBKEBDCKHJF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300OBKEBDCKHJF {
+      get { return unk3300OBKEBDCKHJF_; }
+      set {
+        unk3300OBKEBDCKHJF_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DMBNFECAKBH" field.</summary>
+    public const int Unk3300DMBNFECAKBHFieldNumber = 14;
+    private uint unk3300DMBNFECAKBH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DMBNFECAKBH {
+      get { return unk3300DMBNFECAKBH_; }
+      set {
+        unk3300DMBNFECAKBH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "content_close_time" field.</summary>
+    public const int ContentCloseTimeFieldNumber = 4;
+    private uint contentCloseTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ContentCloseTime {
+      get { return contentCloseTime_; }
+      set {
+        contentCloseTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "url" field.</summary>
+    public const int UrlFieldNumber = 3;
+    private string url_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Url {
+      get { return url_; }
+      set {
+        url_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "prefab_path" field.</summary>
+    public const int PrefabPathFieldNumber = 15;
+    private string prefabPath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PrefabPath {
+      get { return prefabPath_; }
+      set {
+        prefabPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "begin_time" field.</summary>
+    public const int BeginTimeFieldNumber = 5;
+    private uint beginTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BeginTime {
+      get { return beginTime_; }
+      set {
+        beginTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 7;
+    private uint endTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EndTime {
+      get { return endTime_; }
+      set {
+        endTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as H5ActivityInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(H5ActivityInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsEntranceOpen != other.IsEntranceOpen) return false;
+      if (Unk3300OBKEBDCKHJF != other.Unk3300OBKEBDCKHJF) return false;
+      if (Unk3300DMBNFECAKBH != other.Unk3300DMBNFECAKBH) return false;
+      if (ContentCloseTime != other.ContentCloseTime) return false;
+      if (Url != other.Url) return false;
+      if (PrefabPath != other.PrefabPath) return false;
+      if (BeginTime != other.BeginTime) return false;
+      if (EndTime != other.EndTime) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsEntranceOpen != false) hash ^= IsEntranceOpen.GetHashCode();
+      if (Unk3300OBKEBDCKHJF != 0) hash ^= Unk3300OBKEBDCKHJF.GetHashCode();
+      if (Unk3300DMBNFECAKBH != 0) hash ^= Unk3300DMBNFECAKBH.GetHashCode();
+      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
+      if (Url.Length != 0) hash ^= Url.GetHashCode();
+      if (PrefabPath.Length != 0) hash ^= PrefabPath.GetHashCode();
+      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
+      if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Unk3300OBKEBDCKHJF != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300OBKEBDCKHJF);
+      }
+      if (IsEntranceOpen != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsEntranceOpen);
+      }
+      if (Url.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Url);
+      }
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ContentCloseTime);
+      }
+      if (BeginTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(BeginTime);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(EndTime);
+      }
+      if (Unk3300DMBNFECAKBH != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300DMBNFECAKBH);
+      }
+      if (PrefabPath.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(PrefabPath);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300OBKEBDCKHJF != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300OBKEBDCKHJF);
+      }
+      if (IsEntranceOpen != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsEntranceOpen);
+      }
+      if (Url.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Url);
+      }
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ContentCloseTime);
+      }
+      if (BeginTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(BeginTime);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(EndTime);
+      }
+      if (Unk3300DMBNFECAKBH != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300DMBNFECAKBH);
+      }
+      if (PrefabPath.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(PrefabPath);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsEntranceOpen != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300OBKEBDCKHJF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OBKEBDCKHJF);
+      }
+      if (Unk3300DMBNFECAKBH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DMBNFECAKBH);
+      }
+      if (ContentCloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
+      }
+      if (Url.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Url);
+      }
+      if (PrefabPath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PrefabPath);
+      }
+      if (BeginTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      }
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(H5ActivityInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsEntranceOpen != false) {
+        IsEntranceOpen = other.IsEntranceOpen;
+      }
+      if (other.Unk3300OBKEBDCKHJF != 0) {
+        Unk3300OBKEBDCKHJF = other.Unk3300OBKEBDCKHJF;
+      }
+      if (other.Unk3300DMBNFECAKBH != 0) {
+        Unk3300DMBNFECAKBH = other.Unk3300DMBNFECAKBH;
+      }
+      if (other.ContentCloseTime != 0) {
+        ContentCloseTime = other.ContentCloseTime;
+      }
+      if (other.Url.Length != 0) {
+        Url = other.Url;
+      }
+      if (other.PrefabPath.Length != 0) {
+        PrefabPath = other.PrefabPath;
+      }
+      if (other.BeginTime != 0) {
+        BeginTime = other.BeginTime;
+      }
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Unk3300OBKEBDCKHJF = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            IsEntranceOpen = input.ReadBool();
+            break;
+          }
+          case 26: {
+            Url = input.ReadString();
+            break;
+          }
+          case 32: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300DMBNFECAKBH = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            PrefabPath = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Unk3300OBKEBDCKHJF = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            IsEntranceOpen = input.ReadBool();
+            break;
+          }
+          case 26: {
+            Url = input.ReadString();
+            break;
+          }
+          case 32: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300DMBNFECAKBH = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            PrefabPath = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class H5ActivityInfo : pb::IMessage<H5ActivityInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<H5ActivityInfo> _parser = new pb::MessageParser<H5ActivityInfo>(() => new H5ActivityInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<H5ActivityInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::H5ActivityInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public H5ActivityInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public H5ActivityInfo(H5ActivityInfo other) : this() {
-    isEntranceOpen_ = other.isEntranceOpen_;
-    unk3300OBKEBDCKHJF_ = other.unk3300OBKEBDCKHJF_;
-    unk3300DMBNFECAKBH_ = other.unk3300DMBNFECAKBH_;
-    contentCloseTime_ = other.contentCloseTime_;
-    url_ = other.url_;
-    prefabPath_ = other.prefabPath_;
-    beginTime_ = other.beginTime_;
-    endTime_ = other.endTime_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public H5ActivityInfo Clone() {
-    return new H5ActivityInfo(this);
-  }
-
-  /// <summary>Field number for the "is_entrance_open" field.</summary>
-  public const int IsEntranceOpenFieldNumber = 2;
-  private bool isEntranceOpen_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsEntranceOpen {
-    get { return isEntranceOpen_; }
-    set {
-      isEntranceOpen_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_OBKEBDCKHJF" field.</summary>
-  public const int Unk3300OBKEBDCKHJFFieldNumber = 1;
-  private uint unk3300OBKEBDCKHJF_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300OBKEBDCKHJF {
-    get { return unk3300OBKEBDCKHJF_; }
-    set {
-      unk3300OBKEBDCKHJF_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_DMBNFECAKBH" field.</summary>
-  public const int Unk3300DMBNFECAKBHFieldNumber = 14;
-  private uint unk3300DMBNFECAKBH_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300DMBNFECAKBH {
-    get { return unk3300DMBNFECAKBH_; }
-    set {
-      unk3300DMBNFECAKBH_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "content_close_time" field.</summary>
-  public const int ContentCloseTimeFieldNumber = 4;
-  private uint contentCloseTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ContentCloseTime {
-    get { return contentCloseTime_; }
-    set {
-      contentCloseTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "url" field.</summary>
-  public const int UrlFieldNumber = 3;
-  private string url_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Url {
-    get { return url_; }
-    set {
-      url_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "prefab_path" field.</summary>
-  public const int PrefabPathFieldNumber = 15;
-  private string prefabPath_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string PrefabPath {
-    get { return prefabPath_; }
-    set {
-      prefabPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "begin_time" field.</summary>
-  public const int BeginTimeFieldNumber = 5;
-  private uint beginTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BeginTime {
-    get { return beginTime_; }
-    set {
-      beginTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "end_time" field.</summary>
-  public const int EndTimeFieldNumber = 7;
-  private uint endTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EndTime {
-    get { return endTime_; }
-    set {
-      endTime_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as H5ActivityInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(H5ActivityInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsEntranceOpen != other.IsEntranceOpen) return false;
-    if (Unk3300OBKEBDCKHJF != other.Unk3300OBKEBDCKHJF) return false;
-    if (Unk3300DMBNFECAKBH != other.Unk3300DMBNFECAKBH) return false;
-    if (ContentCloseTime != other.ContentCloseTime) return false;
-    if (Url != other.Url) return false;
-    if (PrefabPath != other.PrefabPath) return false;
-    if (BeginTime != other.BeginTime) return false;
-    if (EndTime != other.EndTime) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsEntranceOpen != false) hash ^= IsEntranceOpen.GetHashCode();
-    if (Unk3300OBKEBDCKHJF != 0) hash ^= Unk3300OBKEBDCKHJF.GetHashCode();
-    if (Unk3300DMBNFECAKBH != 0) hash ^= Unk3300DMBNFECAKBH.GetHashCode();
-    if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
-    if (Url.Length != 0) hash ^= Url.GetHashCode();
-    if (PrefabPath.Length != 0) hash ^= PrefabPath.GetHashCode();
-    if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
-    if (EndTime != 0) hash ^= EndTime.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Unk3300OBKEBDCKHJF != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Unk3300OBKEBDCKHJF);
-    }
-    if (IsEntranceOpen != false) {
-      output.WriteRawTag(16);
-      output.WriteBool(IsEntranceOpen);
-    }
-    if (Url.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteString(Url);
-    }
-    if (ContentCloseTime != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(ContentCloseTime);
-    }
-    if (BeginTime != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(BeginTime);
-    }
-    if (EndTime != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(EndTime);
-    }
-    if (Unk3300DMBNFECAKBH != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300DMBNFECAKBH);
-    }
-    if (PrefabPath.Length != 0) {
-      output.WriteRawTag(122);
-      output.WriteString(PrefabPath);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Unk3300OBKEBDCKHJF != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Unk3300OBKEBDCKHJF);
-    }
-    if (IsEntranceOpen != false) {
-      output.WriteRawTag(16);
-      output.WriteBool(IsEntranceOpen);
-    }
-    if (Url.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteString(Url);
-    }
-    if (ContentCloseTime != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(ContentCloseTime);
-    }
-    if (BeginTime != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(BeginTime);
-    }
-    if (EndTime != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(EndTime);
-    }
-    if (Unk3300DMBNFECAKBH != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300DMBNFECAKBH);
-    }
-    if (PrefabPath.Length != 0) {
-      output.WriteRawTag(122);
-      output.WriteString(PrefabPath);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsEntranceOpen != false) {
-      size += 1 + 1;
-    }
-    if (Unk3300OBKEBDCKHJF != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OBKEBDCKHJF);
-    }
-    if (Unk3300DMBNFECAKBH != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DMBNFECAKBH);
-    }
-    if (ContentCloseTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
-    }
-    if (Url.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Url);
-    }
-    if (PrefabPath.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(PrefabPath);
-    }
-    if (BeginTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
-    }
-    if (EndTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(H5ActivityInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsEntranceOpen != false) {
-      IsEntranceOpen = other.IsEntranceOpen;
-    }
-    if (other.Unk3300OBKEBDCKHJF != 0) {
-      Unk3300OBKEBDCKHJF = other.Unk3300OBKEBDCKHJF;
-    }
-    if (other.Unk3300DMBNFECAKBH != 0) {
-      Unk3300DMBNFECAKBH = other.Unk3300DMBNFECAKBH;
-    }
-    if (other.ContentCloseTime != 0) {
-      ContentCloseTime = other.ContentCloseTime;
-    }
-    if (other.Url.Length != 0) {
-      Url = other.Url;
-    }
-    if (other.PrefabPath.Length != 0) {
-      PrefabPath = other.PrefabPath;
-    }
-    if (other.BeginTime != 0) {
-      BeginTime = other.BeginTime;
-    }
-    if (other.EndTime != 0) {
-      EndTime = other.EndTime;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          Unk3300OBKEBDCKHJF = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          IsEntranceOpen = input.ReadBool();
-          break;
-        }
-        case 26: {
-          Url = input.ReadString();
-          break;
-        }
-        case 32: {
-          ContentCloseTime = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          BeginTime = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          EndTime = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300DMBNFECAKBH = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          PrefabPath = input.ReadString();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          Unk3300OBKEBDCKHJF = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          IsEntranceOpen = input.ReadBool();
-          break;
-        }
-        case 26: {
-          Url = input.ReadString();
-          break;
-        }
-        case 32: {
-          ContentCloseTime = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          BeginTime = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          EndTime = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300DMBNFECAKBH = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          PrefabPath = input.ReadString();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

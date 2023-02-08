@@ -9,553 +9,556 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SalesmanActivityDetailInfo.proto</summary>
-public static partial class SalesmanActivityDetailInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SalesmanActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SalesmanActivityDetailInfo.proto</summary>
+  public static partial class SalesmanActivityDetailInfoReflection {
 
-  static SalesmanActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBTYWxlc21hbkFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoYU2FsZXNtYW5T",
-          "dGF0dXNUeXBlLnByb3RvIqsDChpTYWxlc21hbkFjdGl2aXR5RGV0YWlsSW5m",
-          "bxIjCgZzdGF0dXMYBSABKA4yEy5TYWxlc21hblN0YXR1c1R5cGUSVAoWc2Vs",
-          "ZWN0ZWRfcmV3YXJkX2lkX21hcBgMIAMoCzI0LlNhbGVzbWFuQWN0aXZpdHlE",
-          "ZXRhaWxJbmZvLlNlbGVjdGVkUmV3YXJkSWRNYXBFbnRyeRIbChNVbmszMzAw",
-          "X0RJSkZPQ0JHSUFNGAcgASgNEhsKE1VuazMzMDBfREpGQ0VGS0dLUEkYAiAB",
-          "KAgSEQoJZGF5X2luZGV4GAkgASgNEhsKE1VuazMzMDBfTFBBQkhNT1BGQ0UY",
-          "BiABKA0SGwoTVW5rMzMwMF9LTkpDQkdGS0xGRBgKIAEoDRIbChNVbmszMzAw",
-          "X0ZPRkZBRUVCQk5QGAMgASgNEhsKE1VuazMzMDBfSk5BTEJBQ0ZORk4YDiAB",
-          "KAgSFQoNZGF5X3Jld2FyZF9pZBgLIAEoDRo6ChhTZWxlY3RlZFJld2FyZElk",
-          "TWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIWChRv",
-          "cmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::SalesmanStatusTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SalesmanActivityDetailInfo), global::SalesmanActivityDetailInfo.Parser, new[]{ "Status", "SelectedRewardIdMap", "Unk3300DIJFOCBGIAM", "Unk3300DJFCEFKGKPI", "DayIndex", "Unk3300LPABHMOPFCE", "Unk3300KNJCBGFKLFD", "Unk3300FOFFAEEBBNP", "Unk3300JNALBACFNFN", "DayRewardId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SalesmanActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SalesmanActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBTYWxlc21hbkFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoYU2FsZXNtYW5T",
+            "dGF0dXNUeXBlLnByb3RvIqsDChpTYWxlc21hbkFjdGl2aXR5RGV0YWlsSW5m",
+            "bxIjCgZzdGF0dXMYBSABKA4yEy5TYWxlc21hblN0YXR1c1R5cGUSVAoWc2Vs",
+            "ZWN0ZWRfcmV3YXJkX2lkX21hcBgMIAMoCzI0LlNhbGVzbWFuQWN0aXZpdHlE",
+            "ZXRhaWxJbmZvLlNlbGVjdGVkUmV3YXJkSWRNYXBFbnRyeRIbChNVbmszMzAw",
+            "X0RJSkZPQ0JHSUFNGAcgASgNEhsKE1VuazMzMDBfREpGQ0VGS0dLUEkYAiAB",
+            "KAgSEQoJZGF5X2luZGV4GAkgASgNEhsKE1VuazMzMDBfTFBBQkhNT1BGQ0UY",
+            "BiABKA0SGwoTVW5rMzMwMF9LTkpDQkdGS0xGRBgKIAEoDRIbChNVbmszMzAw",
+            "X0ZPRkZBRUVCQk5QGAMgASgNEhsKE1VuazMzMDBfSk5BTEJBQ0ZORk4YDiAB",
+            "KAgSFQoNZGF5X3Jld2FyZF9pZBgLIAEoDRo6ChhTZWxlY3RlZFJld2FyZElk",
+            "TWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIMqgIJ",
+            "TmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.SalesmanStatusTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.SalesmanActivityDetailInfo), global::NewProtos.SalesmanActivityDetailInfo.Parser, new[]{ "Status", "SelectedRewardIdMap", "Unk3300DIJFOCBGIAM", "Unk3300DJFCEFKGKPI", "DayIndex", "Unk3300LPABHMOPFCE", "Unk3300KNJCBGFKLFD", "Unk3300FOFFAEEBBNP", "Unk3300JNALBACFNFN", "DayRewardId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class SalesmanActivityDetailInfo : pb::IMessage<SalesmanActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SalesmanActivityDetailInfo> _parser = new pb::MessageParser<SalesmanActivityDetailInfo>(() => new SalesmanActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SalesmanActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.SalesmanActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SalesmanActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SalesmanActivityDetailInfo(SalesmanActivityDetailInfo other) : this() {
+      status_ = other.status_;
+      selectedRewardIdMap_ = other.selectedRewardIdMap_.Clone();
+      unk3300DIJFOCBGIAM_ = other.unk3300DIJFOCBGIAM_;
+      unk3300DJFCEFKGKPI_ = other.unk3300DJFCEFKGKPI_;
+      dayIndex_ = other.dayIndex_;
+      unk3300LPABHMOPFCE_ = other.unk3300LPABHMOPFCE_;
+      unk3300KNJCBGFKLFD_ = other.unk3300KNJCBGFKLFD_;
+      unk3300FOFFAEEBBNP_ = other.unk3300FOFFAEEBBNP_;
+      unk3300JNALBACFNFN_ = other.unk3300JNALBACFNFN_;
+      dayRewardId_ = other.dayRewardId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SalesmanActivityDetailInfo Clone() {
+      return new SalesmanActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "status" field.</summary>
+    public const int StatusFieldNumber = 5;
+    private global::NewProtos.SalesmanStatusType status_ = global::NewProtos.SalesmanStatusType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SalesmanStatusType Status {
+      get { return status_; }
+      set {
+        status_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "selected_reward_id_map" field.</summary>
+    public const int SelectedRewardIdMapFieldNumber = 12;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_selectedRewardIdMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
+    private readonly pbc::MapField<uint, uint> selectedRewardIdMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> SelectedRewardIdMap {
+      get { return selectedRewardIdMap_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_DIJFOCBGIAM" field.</summary>
+    public const int Unk3300DIJFOCBGIAMFieldNumber = 7;
+    private uint unk3300DIJFOCBGIAM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DIJFOCBGIAM {
+      get { return unk3300DIJFOCBGIAM_; }
+      set {
+        unk3300DIJFOCBGIAM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DJFCEFKGKPI" field.</summary>
+    public const int Unk3300DJFCEFKGKPIFieldNumber = 2;
+    private bool unk3300DJFCEFKGKPI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300DJFCEFKGKPI {
+      get { return unk3300DJFCEFKGKPI_; }
+      set {
+        unk3300DJFCEFKGKPI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "day_index" field.</summary>
+    public const int DayIndexFieldNumber = 9;
+    private uint dayIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DayIndex {
+      get { return dayIndex_; }
+      set {
+        dayIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LPABHMOPFCE" field.</summary>
+    public const int Unk3300LPABHMOPFCEFieldNumber = 6;
+    private uint unk3300LPABHMOPFCE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LPABHMOPFCE {
+      get { return unk3300LPABHMOPFCE_; }
+      set {
+        unk3300LPABHMOPFCE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KNJCBGFKLFD" field.</summary>
+    public const int Unk3300KNJCBGFKLFDFieldNumber = 10;
+    private uint unk3300KNJCBGFKLFD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300KNJCBGFKLFD {
+      get { return unk3300KNJCBGFKLFD_; }
+      set {
+        unk3300KNJCBGFKLFD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FOFFAEEBBNP" field.</summary>
+    public const int Unk3300FOFFAEEBBNPFieldNumber = 3;
+    private uint unk3300FOFFAEEBBNP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FOFFAEEBBNP {
+      get { return unk3300FOFFAEEBBNP_; }
+      set {
+        unk3300FOFFAEEBBNP_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_JNALBACFNFN" field.</summary>
+    public const int Unk3300JNALBACFNFNFieldNumber = 14;
+    private bool unk3300JNALBACFNFN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300JNALBACFNFN {
+      get { return unk3300JNALBACFNFN_; }
+      set {
+        unk3300JNALBACFNFN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "day_reward_id" field.</summary>
+    public const int DayRewardIdFieldNumber = 11;
+    private uint dayRewardId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DayRewardId {
+      get { return dayRewardId_; }
+      set {
+        dayRewardId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SalesmanActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SalesmanActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Status != other.Status) return false;
+      if (!SelectedRewardIdMap.Equals(other.SelectedRewardIdMap)) return false;
+      if (Unk3300DIJFOCBGIAM != other.Unk3300DIJFOCBGIAM) return false;
+      if (Unk3300DJFCEFKGKPI != other.Unk3300DJFCEFKGKPI) return false;
+      if (DayIndex != other.DayIndex) return false;
+      if (Unk3300LPABHMOPFCE != other.Unk3300LPABHMOPFCE) return false;
+      if (Unk3300KNJCBGFKLFD != other.Unk3300KNJCBGFKLFD) return false;
+      if (Unk3300FOFFAEEBBNP != other.Unk3300FOFFAEEBBNP) return false;
+      if (Unk3300JNALBACFNFN != other.Unk3300JNALBACFNFN) return false;
+      if (DayRewardId != other.DayRewardId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Status != global::NewProtos.SalesmanStatusType.None) hash ^= Status.GetHashCode();
+      hash ^= SelectedRewardIdMap.GetHashCode();
+      if (Unk3300DIJFOCBGIAM != 0) hash ^= Unk3300DIJFOCBGIAM.GetHashCode();
+      if (Unk3300DJFCEFKGKPI != false) hash ^= Unk3300DJFCEFKGKPI.GetHashCode();
+      if (DayIndex != 0) hash ^= DayIndex.GetHashCode();
+      if (Unk3300LPABHMOPFCE != 0) hash ^= Unk3300LPABHMOPFCE.GetHashCode();
+      if (Unk3300KNJCBGFKLFD != 0) hash ^= Unk3300KNJCBGFKLFD.GetHashCode();
+      if (Unk3300FOFFAEEBBNP != 0) hash ^= Unk3300FOFFAEEBBNP.GetHashCode();
+      if (Unk3300JNALBACFNFN != false) hash ^= Unk3300JNALBACFNFN.GetHashCode();
+      if (DayRewardId != 0) hash ^= DayRewardId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Unk3300DJFCEFKGKPI != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Unk3300DJFCEFKGKPI);
+      }
+      if (Unk3300FOFFAEEBBNP != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FOFFAEEBBNP);
+      }
+      if (Status != global::NewProtos.SalesmanStatusType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Status);
+      }
+      if (Unk3300LPABHMOPFCE != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300LPABHMOPFCE);
+      }
+      if (Unk3300DIJFOCBGIAM != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300DIJFOCBGIAM);
+      }
+      if (DayIndex != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(DayIndex);
+      }
+      if (Unk3300KNJCBGFKLFD != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300KNJCBGFKLFD);
+      }
+      if (DayRewardId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(DayRewardId);
+      }
+      selectedRewardIdMap_.WriteTo(output, _map_selectedRewardIdMap_codec);
+      if (Unk3300JNALBACFNFN != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300JNALBACFNFN);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300DJFCEFKGKPI != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(Unk3300DJFCEFKGKPI);
+      }
+      if (Unk3300FOFFAEEBBNP != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FOFFAEEBBNP);
+      }
+      if (Status != global::NewProtos.SalesmanStatusType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Status);
+      }
+      if (Unk3300LPABHMOPFCE != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300LPABHMOPFCE);
+      }
+      if (Unk3300DIJFOCBGIAM != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300DIJFOCBGIAM);
+      }
+      if (DayIndex != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(DayIndex);
+      }
+      if (Unk3300KNJCBGFKLFD != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300KNJCBGFKLFD);
+      }
+      if (DayRewardId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(DayRewardId);
+      }
+      selectedRewardIdMap_.WriteTo(ref output, _map_selectedRewardIdMap_codec);
+      if (Unk3300JNALBACFNFN != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300JNALBACFNFN);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Status != global::NewProtos.SalesmanStatusType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
+      }
+      size += selectedRewardIdMap_.CalculateSize(_map_selectedRewardIdMap_codec);
+      if (Unk3300DIJFOCBGIAM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DIJFOCBGIAM);
+      }
+      if (Unk3300DJFCEFKGKPI != false) {
+        size += 1 + 1;
+      }
+      if (DayIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayIndex);
+      }
+      if (Unk3300LPABHMOPFCE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPABHMOPFCE);
+      }
+      if (Unk3300KNJCBGFKLFD != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KNJCBGFKLFD);
+      }
+      if (Unk3300FOFFAEEBBNP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FOFFAEEBBNP);
+      }
+      if (Unk3300JNALBACFNFN != false) {
+        size += 1 + 1;
+      }
+      if (DayRewardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayRewardId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SalesmanActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Status != global::NewProtos.SalesmanStatusType.None) {
+        Status = other.Status;
+      }
+      selectedRewardIdMap_.Add(other.selectedRewardIdMap_);
+      if (other.Unk3300DIJFOCBGIAM != 0) {
+        Unk3300DIJFOCBGIAM = other.Unk3300DIJFOCBGIAM;
+      }
+      if (other.Unk3300DJFCEFKGKPI != false) {
+        Unk3300DJFCEFKGKPI = other.Unk3300DJFCEFKGKPI;
+      }
+      if (other.DayIndex != 0) {
+        DayIndex = other.DayIndex;
+      }
+      if (other.Unk3300LPABHMOPFCE != 0) {
+        Unk3300LPABHMOPFCE = other.Unk3300LPABHMOPFCE;
+      }
+      if (other.Unk3300KNJCBGFKLFD != 0) {
+        Unk3300KNJCBGFKLFD = other.Unk3300KNJCBGFKLFD;
+      }
+      if (other.Unk3300FOFFAEEBBNP != 0) {
+        Unk3300FOFFAEEBBNP = other.Unk3300FOFFAEEBBNP;
+      }
+      if (other.Unk3300JNALBACFNFN != false) {
+        Unk3300JNALBACFNFN = other.Unk3300JNALBACFNFN;
+      }
+      if (other.DayRewardId != 0) {
+        DayRewardId = other.DayRewardId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            Unk3300DJFCEFKGKPI = input.ReadBool();
+            break;
+          }
+          case 24: {
+            Unk3300FOFFAEEBBNP = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Status = (global::NewProtos.SalesmanStatusType) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            Unk3300LPABHMOPFCE = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300DIJFOCBGIAM = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            DayIndex = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            Unk3300KNJCBGFKLFD = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            DayRewardId = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            selectedRewardIdMap_.AddEntriesFrom(input, _map_selectedRewardIdMap_codec);
+            break;
+          }
+          case 112: {
+            Unk3300JNALBACFNFN = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            Unk3300DJFCEFKGKPI = input.ReadBool();
+            break;
+          }
+          case 24: {
+            Unk3300FOFFAEEBBNP = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Status = (global::NewProtos.SalesmanStatusType) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            Unk3300LPABHMOPFCE = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300DIJFOCBGIAM = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            DayIndex = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            Unk3300KNJCBGFKLFD = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            DayRewardId = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            selectedRewardIdMap_.AddEntriesFrom(ref input, _map_selectedRewardIdMap_codec);
+            break;
+          }
+          case 112: {
+            Unk3300JNALBACFNFN = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class SalesmanActivityDetailInfo : pb::IMessage<SalesmanActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SalesmanActivityDetailInfo> _parser = new pb::MessageParser<SalesmanActivityDetailInfo>(() => new SalesmanActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SalesmanActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SalesmanActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SalesmanActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SalesmanActivityDetailInfo(SalesmanActivityDetailInfo other) : this() {
-    status_ = other.status_;
-    selectedRewardIdMap_ = other.selectedRewardIdMap_.Clone();
-    unk3300DIJFOCBGIAM_ = other.unk3300DIJFOCBGIAM_;
-    unk3300DJFCEFKGKPI_ = other.unk3300DJFCEFKGKPI_;
-    dayIndex_ = other.dayIndex_;
-    unk3300LPABHMOPFCE_ = other.unk3300LPABHMOPFCE_;
-    unk3300KNJCBGFKLFD_ = other.unk3300KNJCBGFKLFD_;
-    unk3300FOFFAEEBBNP_ = other.unk3300FOFFAEEBBNP_;
-    unk3300JNALBACFNFN_ = other.unk3300JNALBACFNFN_;
-    dayRewardId_ = other.dayRewardId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SalesmanActivityDetailInfo Clone() {
-    return new SalesmanActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "status" field.</summary>
-  public const int StatusFieldNumber = 5;
-  private global::SalesmanStatusType status_ = global::SalesmanStatusType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SalesmanStatusType Status {
-    get { return status_; }
-    set {
-      status_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "selected_reward_id_map" field.</summary>
-  public const int SelectedRewardIdMapFieldNumber = 12;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_selectedRewardIdMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
-  private readonly pbc::MapField<uint, uint> selectedRewardIdMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> SelectedRewardIdMap {
-    get { return selectedRewardIdMap_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_DIJFOCBGIAM" field.</summary>
-  public const int Unk3300DIJFOCBGIAMFieldNumber = 7;
-  private uint unk3300DIJFOCBGIAM_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300DIJFOCBGIAM {
-    get { return unk3300DIJFOCBGIAM_; }
-    set {
-      unk3300DIJFOCBGIAM_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_DJFCEFKGKPI" field.</summary>
-  public const int Unk3300DJFCEFKGKPIFieldNumber = 2;
-  private bool unk3300DJFCEFKGKPI_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Unk3300DJFCEFKGKPI {
-    get { return unk3300DJFCEFKGKPI_; }
-    set {
-      unk3300DJFCEFKGKPI_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "day_index" field.</summary>
-  public const int DayIndexFieldNumber = 9;
-  private uint dayIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DayIndex {
-    get { return dayIndex_; }
-    set {
-      dayIndex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_LPABHMOPFCE" field.</summary>
-  public const int Unk3300LPABHMOPFCEFieldNumber = 6;
-  private uint unk3300LPABHMOPFCE_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300LPABHMOPFCE {
-    get { return unk3300LPABHMOPFCE_; }
-    set {
-      unk3300LPABHMOPFCE_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_KNJCBGFKLFD" field.</summary>
-  public const int Unk3300KNJCBGFKLFDFieldNumber = 10;
-  private uint unk3300KNJCBGFKLFD_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300KNJCBGFKLFD {
-    get { return unk3300KNJCBGFKLFD_; }
-    set {
-      unk3300KNJCBGFKLFD_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_FOFFAEEBBNP" field.</summary>
-  public const int Unk3300FOFFAEEBBNPFieldNumber = 3;
-  private uint unk3300FOFFAEEBBNP_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300FOFFAEEBBNP {
-    get { return unk3300FOFFAEEBBNP_; }
-    set {
-      unk3300FOFFAEEBBNP_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_JNALBACFNFN" field.</summary>
-  public const int Unk3300JNALBACFNFNFieldNumber = 14;
-  private bool unk3300JNALBACFNFN_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Unk3300JNALBACFNFN {
-    get { return unk3300JNALBACFNFN_; }
-    set {
-      unk3300JNALBACFNFN_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "day_reward_id" field.</summary>
-  public const int DayRewardIdFieldNumber = 11;
-  private uint dayRewardId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DayRewardId {
-    get { return dayRewardId_; }
-    set {
-      dayRewardId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SalesmanActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SalesmanActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Status != other.Status) return false;
-    if (!SelectedRewardIdMap.Equals(other.SelectedRewardIdMap)) return false;
-    if (Unk3300DIJFOCBGIAM != other.Unk3300DIJFOCBGIAM) return false;
-    if (Unk3300DJFCEFKGKPI != other.Unk3300DJFCEFKGKPI) return false;
-    if (DayIndex != other.DayIndex) return false;
-    if (Unk3300LPABHMOPFCE != other.Unk3300LPABHMOPFCE) return false;
-    if (Unk3300KNJCBGFKLFD != other.Unk3300KNJCBGFKLFD) return false;
-    if (Unk3300FOFFAEEBBNP != other.Unk3300FOFFAEEBBNP) return false;
-    if (Unk3300JNALBACFNFN != other.Unk3300JNALBACFNFN) return false;
-    if (DayRewardId != other.DayRewardId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Status != global::SalesmanStatusType.None) hash ^= Status.GetHashCode();
-    hash ^= SelectedRewardIdMap.GetHashCode();
-    if (Unk3300DIJFOCBGIAM != 0) hash ^= Unk3300DIJFOCBGIAM.GetHashCode();
-    if (Unk3300DJFCEFKGKPI != false) hash ^= Unk3300DJFCEFKGKPI.GetHashCode();
-    if (DayIndex != 0) hash ^= DayIndex.GetHashCode();
-    if (Unk3300LPABHMOPFCE != 0) hash ^= Unk3300LPABHMOPFCE.GetHashCode();
-    if (Unk3300KNJCBGFKLFD != 0) hash ^= Unk3300KNJCBGFKLFD.GetHashCode();
-    if (Unk3300FOFFAEEBBNP != 0) hash ^= Unk3300FOFFAEEBBNP.GetHashCode();
-    if (Unk3300JNALBACFNFN != false) hash ^= Unk3300JNALBACFNFN.GetHashCode();
-    if (DayRewardId != 0) hash ^= DayRewardId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Unk3300DJFCEFKGKPI != false) {
-      output.WriteRawTag(16);
-      output.WriteBool(Unk3300DJFCEFKGKPI);
-    }
-    if (Unk3300FOFFAEEBBNP != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(Unk3300FOFFAEEBBNP);
-    }
-    if (Status != global::SalesmanStatusType.None) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) Status);
-    }
-    if (Unk3300LPABHMOPFCE != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Unk3300LPABHMOPFCE);
-    }
-    if (Unk3300DIJFOCBGIAM != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Unk3300DIJFOCBGIAM);
-    }
-    if (DayIndex != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(DayIndex);
-    }
-    if (Unk3300KNJCBGFKLFD != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(Unk3300KNJCBGFKLFD);
-    }
-    if (DayRewardId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(DayRewardId);
-    }
-    selectedRewardIdMap_.WriteTo(output, _map_selectedRewardIdMap_codec);
-    if (Unk3300JNALBACFNFN != false) {
-      output.WriteRawTag(112);
-      output.WriteBool(Unk3300JNALBACFNFN);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Unk3300DJFCEFKGKPI != false) {
-      output.WriteRawTag(16);
-      output.WriteBool(Unk3300DJFCEFKGKPI);
-    }
-    if (Unk3300FOFFAEEBBNP != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(Unk3300FOFFAEEBBNP);
-    }
-    if (Status != global::SalesmanStatusType.None) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) Status);
-    }
-    if (Unk3300LPABHMOPFCE != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Unk3300LPABHMOPFCE);
-    }
-    if (Unk3300DIJFOCBGIAM != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Unk3300DIJFOCBGIAM);
-    }
-    if (DayIndex != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(DayIndex);
-    }
-    if (Unk3300KNJCBGFKLFD != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(Unk3300KNJCBGFKLFD);
-    }
-    if (DayRewardId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(DayRewardId);
-    }
-    selectedRewardIdMap_.WriteTo(ref output, _map_selectedRewardIdMap_codec);
-    if (Unk3300JNALBACFNFN != false) {
-      output.WriteRawTag(112);
-      output.WriteBool(Unk3300JNALBACFNFN);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Status != global::SalesmanStatusType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
-    }
-    size += selectedRewardIdMap_.CalculateSize(_map_selectedRewardIdMap_codec);
-    if (Unk3300DIJFOCBGIAM != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DIJFOCBGIAM);
-    }
-    if (Unk3300DJFCEFKGKPI != false) {
-      size += 1 + 1;
-    }
-    if (DayIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayIndex);
-    }
-    if (Unk3300LPABHMOPFCE != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPABHMOPFCE);
-    }
-    if (Unk3300KNJCBGFKLFD != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KNJCBGFKLFD);
-    }
-    if (Unk3300FOFFAEEBBNP != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FOFFAEEBBNP);
-    }
-    if (Unk3300JNALBACFNFN != false) {
-      size += 1 + 1;
-    }
-    if (DayRewardId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DayRewardId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SalesmanActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Status != global::SalesmanStatusType.None) {
-      Status = other.Status;
-    }
-    selectedRewardIdMap_.Add(other.selectedRewardIdMap_);
-    if (other.Unk3300DIJFOCBGIAM != 0) {
-      Unk3300DIJFOCBGIAM = other.Unk3300DIJFOCBGIAM;
-    }
-    if (other.Unk3300DJFCEFKGKPI != false) {
-      Unk3300DJFCEFKGKPI = other.Unk3300DJFCEFKGKPI;
-    }
-    if (other.DayIndex != 0) {
-      DayIndex = other.DayIndex;
-    }
-    if (other.Unk3300LPABHMOPFCE != 0) {
-      Unk3300LPABHMOPFCE = other.Unk3300LPABHMOPFCE;
-    }
-    if (other.Unk3300KNJCBGFKLFD != 0) {
-      Unk3300KNJCBGFKLFD = other.Unk3300KNJCBGFKLFD;
-    }
-    if (other.Unk3300FOFFAEEBBNP != 0) {
-      Unk3300FOFFAEEBBNP = other.Unk3300FOFFAEEBBNP;
-    }
-    if (other.Unk3300JNALBACFNFN != false) {
-      Unk3300JNALBACFNFN = other.Unk3300JNALBACFNFN;
-    }
-    if (other.DayRewardId != 0) {
-      DayRewardId = other.DayRewardId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          Unk3300DJFCEFKGKPI = input.ReadBool();
-          break;
-        }
-        case 24: {
-          Unk3300FOFFAEEBBNP = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Status = (global::SalesmanStatusType) input.ReadEnum();
-          break;
-        }
-        case 48: {
-          Unk3300LPABHMOPFCE = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Unk3300DIJFOCBGIAM = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          DayIndex = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          Unk3300KNJCBGFKLFD = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          DayRewardId = input.ReadUInt32();
-          break;
-        }
-        case 98: {
-          selectedRewardIdMap_.AddEntriesFrom(input, _map_selectedRewardIdMap_codec);
-          break;
-        }
-        case 112: {
-          Unk3300JNALBACFNFN = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          Unk3300DJFCEFKGKPI = input.ReadBool();
-          break;
-        }
-        case 24: {
-          Unk3300FOFFAEEBBNP = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Status = (global::SalesmanStatusType) input.ReadEnum();
-          break;
-        }
-        case 48: {
-          Unk3300LPABHMOPFCE = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Unk3300DIJFOCBGIAM = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          DayIndex = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          Unk3300KNJCBGFKLFD = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          DayRewardId = input.ReadUInt32();
-          break;
-        }
-        case 98: {
-          selectedRewardIdMap_.AddEntriesFrom(ref input, _map_selectedRewardIdMap_codec);
-          break;
-        }
-        case 112: {
-          Unk3300JNALBACFNFN = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

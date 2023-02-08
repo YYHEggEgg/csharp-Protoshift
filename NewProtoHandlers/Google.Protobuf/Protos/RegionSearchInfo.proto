@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "RegionSearch.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message RegionSearchInfo {
   bool is_entered = 2;

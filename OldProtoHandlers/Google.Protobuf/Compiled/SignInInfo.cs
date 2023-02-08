@@ -9,502 +9,505 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SignInInfo.proto</summary>
-public static partial class SignInInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SignInInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SignInInfo.proto</summary>
+  public static partial class SignInInfoReflection {
 
-  static SignInInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChBTaWduSW5JbmZvLnByb3RvGhBTaWduSW5EYXRhLnByb3RvIucBCgpTaWdu",
-          "SW5JbmZvEhkKEWlzX2NvbmRfc2F0aXNmaWVkGAcgASgIEhcKD3Jld2FyZF9k",
-          "YXlfbGlzdBgPIAMoDRIlChBzaWduaW5fZGF0YV9saXN0GAwgAygLMgsuU2ln",
-          "bkluRGF0YRIRCgljb25maWdfaWQYCCABKA0SFQoNc2lnbl9pbl9jb3VudBgC",
-          "IAEoDRITCgtzY2hlZHVsZV9pZBgDIAEoDRIQCghlbmRfdGltZRgNIAEoDRIZ",
-          "ChFsYXN0X3NpZ25faW5fdGltZRgGIAEoDRISCgpiZWdpbl90aW1lGAUgASgN",
-          "Qh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::SignInDataReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SignInInfo), global::SignInInfo.Parser, new[]{ "IsCondSatisfied", "RewardDayList", "SigninDataList", "ConfigId", "SignInCount", "ScheduleId", "EndTime", "LastSignInTime", "BeginTime" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SignInInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SignInInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChBTaWduSW5JbmZvLnByb3RvGhBTaWduSW5EYXRhLnByb3RvIucBCgpTaWdu",
+            "SW5JbmZvEhkKEWlzX2NvbmRfc2F0aXNmaWVkGAcgASgIEhcKD3Jld2FyZF9k",
+            "YXlfbGlzdBgPIAMoDRIlChBzaWduaW5fZGF0YV9saXN0GAwgAygLMgsuU2ln",
+            "bkluRGF0YRIRCgljb25maWdfaWQYCCABKA0SFQoNc2lnbl9pbl9jb3VudBgC",
+            "IAEoDRITCgtzY2hlZHVsZV9pZBgDIAEoDRIQCghlbmRfdGltZRgNIAEoDRIZ",
+            "ChFsYXN0X3NpZ25faW5fdGltZRgGIAEoDRISCgpiZWdpbl90aW1lGAUgASgN",
+            "QgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.SignInDataReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.SignInInfo), global::OldProtos.SignInInfo.Parser, new[]{ "IsCondSatisfied", "RewardDayList", "SigninDataList", "ConfigId", "SignInCount", "ScheduleId", "EndTime", "LastSignInTime", "BeginTime" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class SignInInfo : pb::IMessage<SignInInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SignInInfo> _parser = new pb::MessageParser<SignInInfo>(() => new SignInInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SignInInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.SignInInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SignInInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SignInInfo(SignInInfo other) : this() {
+      isCondSatisfied_ = other.isCondSatisfied_;
+      rewardDayList_ = other.rewardDayList_.Clone();
+      signinDataList_ = other.signinDataList_.Clone();
+      configId_ = other.configId_;
+      signInCount_ = other.signInCount_;
+      scheduleId_ = other.scheduleId_;
+      endTime_ = other.endTime_;
+      lastSignInTime_ = other.lastSignInTime_;
+      beginTime_ = other.beginTime_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SignInInfo Clone() {
+      return new SignInInfo(this);
+    }
+
+    /// <summary>Field number for the "is_cond_satisfied" field.</summary>
+    public const int IsCondSatisfiedFieldNumber = 7;
+    private bool isCondSatisfied_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsCondSatisfied {
+      get { return isCondSatisfied_; }
+      set {
+        isCondSatisfied_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reward_day_list" field.</summary>
+    public const int RewardDayListFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_rewardDayList_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> rewardDayList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> RewardDayList {
+      get { return rewardDayList_; }
+    }
+
+    /// <summary>Field number for the "signin_data_list" field.</summary>
+    public const int SigninDataListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::OldProtos.SignInData> _repeated_signinDataList_codec
+        = pb::FieldCodec.ForMessage(98, global::OldProtos.SignInData.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.SignInData> signinDataList_ = new pbc::RepeatedField<global::OldProtos.SignInData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.SignInData> SigninDataList {
+      get { return signinDataList_; }
+    }
+
+    /// <summary>Field number for the "config_id" field.</summary>
+    public const int ConfigIdFieldNumber = 8;
+    private uint configId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ConfigId {
+      get { return configId_; }
+      set {
+        configId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sign_in_count" field.</summary>
+    public const int SignInCountFieldNumber = 2;
+    private uint signInCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SignInCount {
+      get { return signInCount_; }
+      set {
+        signInCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "schedule_id" field.</summary>
+    public const int ScheduleIdFieldNumber = 3;
+    private uint scheduleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ScheduleId {
+      get { return scheduleId_; }
+      set {
+        scheduleId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 13;
+    private uint endTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EndTime {
+      get { return endTime_; }
+      set {
+        endTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_sign_in_time" field.</summary>
+    public const int LastSignInTimeFieldNumber = 6;
+    private uint lastSignInTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LastSignInTime {
+      get { return lastSignInTime_; }
+      set {
+        lastSignInTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "begin_time" field.</summary>
+    public const int BeginTimeFieldNumber = 5;
+    private uint beginTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BeginTime {
+      get { return beginTime_; }
+      set {
+        beginTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SignInInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SignInInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsCondSatisfied != other.IsCondSatisfied) return false;
+      if(!rewardDayList_.Equals(other.rewardDayList_)) return false;
+      if(!signinDataList_.Equals(other.signinDataList_)) return false;
+      if (ConfigId != other.ConfigId) return false;
+      if (SignInCount != other.SignInCount) return false;
+      if (ScheduleId != other.ScheduleId) return false;
+      if (EndTime != other.EndTime) return false;
+      if (LastSignInTime != other.LastSignInTime) return false;
+      if (BeginTime != other.BeginTime) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsCondSatisfied != false) hash ^= IsCondSatisfied.GetHashCode();
+      hash ^= rewardDayList_.GetHashCode();
+      hash ^= signinDataList_.GetHashCode();
+      if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
+      if (SignInCount != 0) hash ^= SignInCount.GetHashCode();
+      if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
+      if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      if (LastSignInTime != 0) hash ^= LastSignInTime.GetHashCode();
+      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (SignInCount != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(SignInCount);
+      }
+      if (ScheduleId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ScheduleId);
+      }
+      if (BeginTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(BeginTime);
+      }
+      if (LastSignInTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(LastSignInTime);
+      }
+      if (IsCondSatisfied != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsCondSatisfied);
+      }
+      if (ConfigId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ConfigId);
+      }
+      signinDataList_.WriteTo(output, _repeated_signinDataList_codec);
+      if (EndTime != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(EndTime);
+      }
+      rewardDayList_.WriteTo(output, _repeated_rewardDayList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (SignInCount != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(SignInCount);
+      }
+      if (ScheduleId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ScheduleId);
+      }
+      if (BeginTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(BeginTime);
+      }
+      if (LastSignInTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(LastSignInTime);
+      }
+      if (IsCondSatisfied != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsCondSatisfied);
+      }
+      if (ConfigId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ConfigId);
+      }
+      signinDataList_.WriteTo(ref output, _repeated_signinDataList_codec);
+      if (EndTime != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(EndTime);
+      }
+      rewardDayList_.WriteTo(ref output, _repeated_rewardDayList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsCondSatisfied != false) {
+        size += 1 + 1;
+      }
+      size += rewardDayList_.CalculateSize(_repeated_rewardDayList_codec);
+      size += signinDataList_.CalculateSize(_repeated_signinDataList_codec);
+      if (ConfigId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
+      }
+      if (SignInCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SignInCount);
+      }
+      if (ScheduleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
+      }
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      }
+      if (LastSignInTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastSignInTime);
+      }
+      if (BeginTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SignInInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsCondSatisfied != false) {
+        IsCondSatisfied = other.IsCondSatisfied;
+      }
+      rewardDayList_.Add(other.rewardDayList_);
+      signinDataList_.Add(other.signinDataList_);
+      if (other.ConfigId != 0) {
+        ConfigId = other.ConfigId;
+      }
+      if (other.SignInCount != 0) {
+        SignInCount = other.SignInCount;
+      }
+      if (other.ScheduleId != 0) {
+        ScheduleId = other.ScheduleId;
+      }
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
+      }
+      if (other.LastSignInTime != 0) {
+        LastSignInTime = other.LastSignInTime;
+      }
+      if (other.BeginTime != 0) {
+        BeginTime = other.BeginTime;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            SignInCount = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            LastSignInTime = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            IsCondSatisfied = input.ReadBool();
+            break;
+          }
+          case 64: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            signinDataList_.AddEntriesFrom(input, _repeated_signinDataList_codec);
+            break;
+          }
+          case 104: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            rewardDayList_.AddEntriesFrom(input, _repeated_rewardDayList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            SignInCount = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            LastSignInTime = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            IsCondSatisfied = input.ReadBool();
+            break;
+          }
+          case 64: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            signinDataList_.AddEntriesFrom(ref input, _repeated_signinDataList_codec);
+            break;
+          }
+          case 104: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            rewardDayList_.AddEntriesFrom(ref input, _repeated_rewardDayList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class SignInInfo : pb::IMessage<SignInInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SignInInfo> _parser = new pb::MessageParser<SignInInfo>(() => new SignInInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SignInInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SignInInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SignInInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SignInInfo(SignInInfo other) : this() {
-    isCondSatisfied_ = other.isCondSatisfied_;
-    rewardDayList_ = other.rewardDayList_.Clone();
-    signinDataList_ = other.signinDataList_.Clone();
-    configId_ = other.configId_;
-    signInCount_ = other.signInCount_;
-    scheduleId_ = other.scheduleId_;
-    endTime_ = other.endTime_;
-    lastSignInTime_ = other.lastSignInTime_;
-    beginTime_ = other.beginTime_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SignInInfo Clone() {
-    return new SignInInfo(this);
-  }
-
-  /// <summary>Field number for the "is_cond_satisfied" field.</summary>
-  public const int IsCondSatisfiedFieldNumber = 7;
-  private bool isCondSatisfied_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsCondSatisfied {
-    get { return isCondSatisfied_; }
-    set {
-      isCondSatisfied_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "reward_day_list" field.</summary>
-  public const int RewardDayListFieldNumber = 15;
-  private static readonly pb::FieldCodec<uint> _repeated_rewardDayList_codec
-      = pb::FieldCodec.ForUInt32(122);
-  private readonly pbc::RepeatedField<uint> rewardDayList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> RewardDayList {
-    get { return rewardDayList_; }
-  }
-
-  /// <summary>Field number for the "signin_data_list" field.</summary>
-  public const int SigninDataListFieldNumber = 12;
-  private static readonly pb::FieldCodec<global::SignInData> _repeated_signinDataList_codec
-      = pb::FieldCodec.ForMessage(98, global::SignInData.Parser);
-  private readonly pbc::RepeatedField<global::SignInData> signinDataList_ = new pbc::RepeatedField<global::SignInData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::SignInData> SigninDataList {
-    get { return signinDataList_; }
-  }
-
-  /// <summary>Field number for the "config_id" field.</summary>
-  public const int ConfigIdFieldNumber = 8;
-  private uint configId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ConfigId {
-    get { return configId_; }
-    set {
-      configId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "sign_in_count" field.</summary>
-  public const int SignInCountFieldNumber = 2;
-  private uint signInCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SignInCount {
-    get { return signInCount_; }
-    set {
-      signInCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "schedule_id" field.</summary>
-  public const int ScheduleIdFieldNumber = 3;
-  private uint scheduleId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ScheduleId {
-    get { return scheduleId_; }
-    set {
-      scheduleId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "end_time" field.</summary>
-  public const int EndTimeFieldNumber = 13;
-  private uint endTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EndTime {
-    get { return endTime_; }
-    set {
-      endTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "last_sign_in_time" field.</summary>
-  public const int LastSignInTimeFieldNumber = 6;
-  private uint lastSignInTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LastSignInTime {
-    get { return lastSignInTime_; }
-    set {
-      lastSignInTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "begin_time" field.</summary>
-  public const int BeginTimeFieldNumber = 5;
-  private uint beginTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BeginTime {
-    get { return beginTime_; }
-    set {
-      beginTime_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SignInInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SignInInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsCondSatisfied != other.IsCondSatisfied) return false;
-    if(!rewardDayList_.Equals(other.rewardDayList_)) return false;
-    if(!signinDataList_.Equals(other.signinDataList_)) return false;
-    if (ConfigId != other.ConfigId) return false;
-    if (SignInCount != other.SignInCount) return false;
-    if (ScheduleId != other.ScheduleId) return false;
-    if (EndTime != other.EndTime) return false;
-    if (LastSignInTime != other.LastSignInTime) return false;
-    if (BeginTime != other.BeginTime) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsCondSatisfied != false) hash ^= IsCondSatisfied.GetHashCode();
-    hash ^= rewardDayList_.GetHashCode();
-    hash ^= signinDataList_.GetHashCode();
-    if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
-    if (SignInCount != 0) hash ^= SignInCount.GetHashCode();
-    if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
-    if (EndTime != 0) hash ^= EndTime.GetHashCode();
-    if (LastSignInTime != 0) hash ^= LastSignInTime.GetHashCode();
-    if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (SignInCount != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(SignInCount);
-    }
-    if (ScheduleId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ScheduleId);
-    }
-    if (BeginTime != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(BeginTime);
-    }
-    if (LastSignInTime != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(LastSignInTime);
-    }
-    if (IsCondSatisfied != false) {
-      output.WriteRawTag(56);
-      output.WriteBool(IsCondSatisfied);
-    }
-    if (ConfigId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ConfigId);
-    }
-    signinDataList_.WriteTo(output, _repeated_signinDataList_codec);
-    if (EndTime != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(EndTime);
-    }
-    rewardDayList_.WriteTo(output, _repeated_rewardDayList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (SignInCount != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(SignInCount);
-    }
-    if (ScheduleId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ScheduleId);
-    }
-    if (BeginTime != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(BeginTime);
-    }
-    if (LastSignInTime != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(LastSignInTime);
-    }
-    if (IsCondSatisfied != false) {
-      output.WriteRawTag(56);
-      output.WriteBool(IsCondSatisfied);
-    }
-    if (ConfigId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ConfigId);
-    }
-    signinDataList_.WriteTo(ref output, _repeated_signinDataList_codec);
-    if (EndTime != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(EndTime);
-    }
-    rewardDayList_.WriteTo(ref output, _repeated_rewardDayList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsCondSatisfied != false) {
-      size += 1 + 1;
-    }
-    size += rewardDayList_.CalculateSize(_repeated_rewardDayList_codec);
-    size += signinDataList_.CalculateSize(_repeated_signinDataList_codec);
-    if (ConfigId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
-    }
-    if (SignInCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SignInCount);
-    }
-    if (ScheduleId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
-    }
-    if (EndTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
-    }
-    if (LastSignInTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastSignInTime);
-    }
-    if (BeginTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SignInInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsCondSatisfied != false) {
-      IsCondSatisfied = other.IsCondSatisfied;
-    }
-    rewardDayList_.Add(other.rewardDayList_);
-    signinDataList_.Add(other.signinDataList_);
-    if (other.ConfigId != 0) {
-      ConfigId = other.ConfigId;
-    }
-    if (other.SignInCount != 0) {
-      SignInCount = other.SignInCount;
-    }
-    if (other.ScheduleId != 0) {
-      ScheduleId = other.ScheduleId;
-    }
-    if (other.EndTime != 0) {
-      EndTime = other.EndTime;
-    }
-    if (other.LastSignInTime != 0) {
-      LastSignInTime = other.LastSignInTime;
-    }
-    if (other.BeginTime != 0) {
-      BeginTime = other.BeginTime;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          SignInCount = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          ScheduleId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          BeginTime = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          LastSignInTime = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          IsCondSatisfied = input.ReadBool();
-          break;
-        }
-        case 64: {
-          ConfigId = input.ReadUInt32();
-          break;
-        }
-        case 98: {
-          signinDataList_.AddEntriesFrom(input, _repeated_signinDataList_codec);
-          break;
-        }
-        case 104: {
-          EndTime = input.ReadUInt32();
-          break;
-        }
-        case 122:
-        case 120: {
-          rewardDayList_.AddEntriesFrom(input, _repeated_rewardDayList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          SignInCount = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          ScheduleId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          BeginTime = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          LastSignInTime = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          IsCondSatisfied = input.ReadBool();
-          break;
-        }
-        case 64: {
-          ConfigId = input.ReadUInt32();
-          break;
-        }
-        case 98: {
-          signinDataList_.AddEntriesFrom(ref input, _repeated_signinDataList_codec);
-          break;
-        }
-        case 104: {
-          EndTime = input.ReadUInt32();
-          break;
-        }
-        case 122:
-        case 120: {
-          rewardDayList_.AddEntriesFrom(ref input, _repeated_rewardDayList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

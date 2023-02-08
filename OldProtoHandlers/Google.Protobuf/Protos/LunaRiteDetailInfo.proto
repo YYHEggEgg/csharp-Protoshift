@@ -19,7 +19,7 @@ syntax = "proto3";
 import "LunaRiteAreaInfo.proto";
 import "LunaRiteHintPoint.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message LunaRiteDetailInfo {
   repeated LunaRiteHintPoint hint_point = 3;

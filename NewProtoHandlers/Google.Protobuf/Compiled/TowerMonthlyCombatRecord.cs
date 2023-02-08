@@ -9,448 +9,451 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from TowerMonthlyCombatRecord.proto</summary>
-public static partial class TowerMonthlyCombatRecordReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for TowerMonthlyCombatRecord.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from TowerMonthlyCombatRecord.proto</summary>
+  public static partial class TowerMonthlyCombatRecordReflection {
 
-  static TowerMonthlyCombatRecordReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch5Ub3dlck1vbnRobHlDb21iYXRSZWNvcmQucHJvdG8aGlRvd2VyRmlnaHRS",
-          "ZWNvcmRQYWlyLnByb3RvItYCChhUb3dlck1vbnRobHlDb21iYXRSZWNvcmQS",
-          "NgoXbW9zdF9yZXZlYWxfYXZhdGFyX2xpc3QYAyADKAsyFS5Ub3dlckZpZ2h0",
-          "UmVjb3JkUGFpchIyChNVbmszMzAwX0VJR0VHT0dGSk5EGAggASgLMhUuVG93",
-          "ZXJGaWdodFJlY29yZFBhaXISMgoTVW5rMzMwMF9PQUxMSEpQQk9ITxgCIAEo",
-          "CzIVLlRvd2VyRmlnaHRSZWNvcmRQYWlyEjIKE1VuazMzMDBfS01DTFBIRURO",
-          "Q0oYDiABKAsyFS5Ub3dlckZpZ2h0UmVjb3JkUGFpchIyChNVbmszMzAwX0tJ",
-          "S1BNTlBLTERHGAcgASgLMhUuVG93ZXJGaWdodFJlY29yZFBhaXISMgoTVW5r",
-          "MzMwMF9DQ0ZIT0ZDSUVQRhgPIAEoCzIVLlRvd2VyRmlnaHRSZWNvcmRQYWly",
-          "QhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::TowerFightRecordPairReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::TowerMonthlyCombatRecord), global::TowerMonthlyCombatRecord.Parser, new[]{ "MostRevealAvatarList", "Unk3300EIGEGOGFJND", "Unk3300OALLHJPBOHO", "Unk3300KMCLPHEDNCJ", "Unk3300KIKPMNPKLDG", "Unk3300CCFHOFCIEPF" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for TowerMonthlyCombatRecord.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static TowerMonthlyCombatRecordReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch5Ub3dlck1vbnRobHlDb21iYXRSZWNvcmQucHJvdG8aGlRvd2VyRmlnaHRS",
+            "ZWNvcmRQYWlyLnByb3RvItYCChhUb3dlck1vbnRobHlDb21iYXRSZWNvcmQS",
+            "NgoXbW9zdF9yZXZlYWxfYXZhdGFyX2xpc3QYAyADKAsyFS5Ub3dlckZpZ2h0",
+            "UmVjb3JkUGFpchIyChNVbmszMzAwX0VJR0VHT0dGSk5EGAggASgLMhUuVG93",
+            "ZXJGaWdodFJlY29yZFBhaXISMgoTVW5rMzMwMF9PQUxMSEpQQk9ITxgCIAEo",
+            "CzIVLlRvd2VyRmlnaHRSZWNvcmRQYWlyEjIKE1VuazMzMDBfS01DTFBIRURO",
+            "Q0oYDiABKAsyFS5Ub3dlckZpZ2h0UmVjb3JkUGFpchIyChNVbmszMzAwX0tJ",
+            "S1BNTlBLTERHGAcgASgLMhUuVG93ZXJGaWdodFJlY29yZFBhaXISMgoTVW5r",
+            "MzMwMF9DQ0ZIT0ZDSUVQRhgPIAEoCzIVLlRvd2VyRmlnaHRSZWNvcmRQYWly",
+            "QgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.TowerFightRecordPairReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.TowerMonthlyCombatRecord), global::NewProtos.TowerMonthlyCombatRecord.Parser, new[]{ "MostRevealAvatarList", "Unk3300EIGEGOGFJND", "Unk3300OALLHJPBOHO", "Unk3300KMCLPHEDNCJ", "Unk3300KIKPMNPKLDG", "Unk3300CCFHOFCIEPF" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class TowerMonthlyCombatRecord : pb::IMessage<TowerMonthlyCombatRecord>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TowerMonthlyCombatRecord> _parser = new pb::MessageParser<TowerMonthlyCombatRecord>(() => new TowerMonthlyCombatRecord());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TowerMonthlyCombatRecord> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.TowerMonthlyCombatRecordReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TowerMonthlyCombatRecord() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TowerMonthlyCombatRecord(TowerMonthlyCombatRecord other) : this() {
+      mostRevealAvatarList_ = other.mostRevealAvatarList_.Clone();
+      unk3300EIGEGOGFJND_ = other.unk3300EIGEGOGFJND_ != null ? other.unk3300EIGEGOGFJND_.Clone() : null;
+      unk3300OALLHJPBOHO_ = other.unk3300OALLHJPBOHO_ != null ? other.unk3300OALLHJPBOHO_.Clone() : null;
+      unk3300KMCLPHEDNCJ_ = other.unk3300KMCLPHEDNCJ_ != null ? other.unk3300KMCLPHEDNCJ_.Clone() : null;
+      unk3300KIKPMNPKLDG_ = other.unk3300KIKPMNPKLDG_ != null ? other.unk3300KIKPMNPKLDG_.Clone() : null;
+      unk3300CCFHOFCIEPF_ = other.unk3300CCFHOFCIEPF_ != null ? other.unk3300CCFHOFCIEPF_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TowerMonthlyCombatRecord Clone() {
+      return new TowerMonthlyCombatRecord(this);
+    }
+
+    /// <summary>Field number for the "most_reveal_avatar_list" field.</summary>
+    public const int MostRevealAvatarListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::NewProtos.TowerFightRecordPair> _repeated_mostRevealAvatarList_codec
+        = pb::FieldCodec.ForMessage(26, global::NewProtos.TowerFightRecordPair.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.TowerFightRecordPair> mostRevealAvatarList_ = new pbc::RepeatedField<global::NewProtos.TowerFightRecordPair>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.TowerFightRecordPair> MostRevealAvatarList {
+      get { return mostRevealAvatarList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_EIGEGOGFJND" field.</summary>
+    public const int Unk3300EIGEGOGFJNDFieldNumber = 8;
+    private global::NewProtos.TowerFightRecordPair unk3300EIGEGOGFJND_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.TowerFightRecordPair Unk3300EIGEGOGFJND {
+      get { return unk3300EIGEGOGFJND_; }
+      set {
+        unk3300EIGEGOGFJND_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OALLHJPBOHO" field.</summary>
+    public const int Unk3300OALLHJPBOHOFieldNumber = 2;
+    private global::NewProtos.TowerFightRecordPair unk3300OALLHJPBOHO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.TowerFightRecordPair Unk3300OALLHJPBOHO {
+      get { return unk3300OALLHJPBOHO_; }
+      set {
+        unk3300OALLHJPBOHO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KMCLPHEDNCJ" field.</summary>
+    public const int Unk3300KMCLPHEDNCJFieldNumber = 14;
+    private global::NewProtos.TowerFightRecordPair unk3300KMCLPHEDNCJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.TowerFightRecordPair Unk3300KMCLPHEDNCJ {
+      get { return unk3300KMCLPHEDNCJ_; }
+      set {
+        unk3300KMCLPHEDNCJ_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KIKPMNPKLDG" field.</summary>
+    public const int Unk3300KIKPMNPKLDGFieldNumber = 7;
+    private global::NewProtos.TowerFightRecordPair unk3300KIKPMNPKLDG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.TowerFightRecordPair Unk3300KIKPMNPKLDG {
+      get { return unk3300KIKPMNPKLDG_; }
+      set {
+        unk3300KIKPMNPKLDG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_CCFHOFCIEPF" field.</summary>
+    public const int Unk3300CCFHOFCIEPFFieldNumber = 15;
+    private global::NewProtos.TowerFightRecordPair unk3300CCFHOFCIEPF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.TowerFightRecordPair Unk3300CCFHOFCIEPF {
+      get { return unk3300CCFHOFCIEPF_; }
+      set {
+        unk3300CCFHOFCIEPF_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TowerMonthlyCombatRecord);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TowerMonthlyCombatRecord other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!mostRevealAvatarList_.Equals(other.mostRevealAvatarList_)) return false;
+      if (!object.Equals(Unk3300EIGEGOGFJND, other.Unk3300EIGEGOGFJND)) return false;
+      if (!object.Equals(Unk3300OALLHJPBOHO, other.Unk3300OALLHJPBOHO)) return false;
+      if (!object.Equals(Unk3300KMCLPHEDNCJ, other.Unk3300KMCLPHEDNCJ)) return false;
+      if (!object.Equals(Unk3300KIKPMNPKLDG, other.Unk3300KIKPMNPKLDG)) return false;
+      if (!object.Equals(Unk3300CCFHOFCIEPF, other.Unk3300CCFHOFCIEPF)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= mostRevealAvatarList_.GetHashCode();
+      if (unk3300EIGEGOGFJND_ != null) hash ^= Unk3300EIGEGOGFJND.GetHashCode();
+      if (unk3300OALLHJPBOHO_ != null) hash ^= Unk3300OALLHJPBOHO.GetHashCode();
+      if (unk3300KMCLPHEDNCJ_ != null) hash ^= Unk3300KMCLPHEDNCJ.GetHashCode();
+      if (unk3300KIKPMNPKLDG_ != null) hash ^= Unk3300KIKPMNPKLDG.GetHashCode();
+      if (unk3300CCFHOFCIEPF_ != null) hash ^= Unk3300CCFHOFCIEPF.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (unk3300OALLHJPBOHO_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Unk3300OALLHJPBOHO);
+      }
+      mostRevealAvatarList_.WriteTo(output, _repeated_mostRevealAvatarList_codec);
+      if (unk3300KIKPMNPKLDG_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Unk3300KIKPMNPKLDG);
+      }
+      if (unk3300EIGEGOGFJND_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Unk3300EIGEGOGFJND);
+      }
+      if (unk3300KMCLPHEDNCJ_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Unk3300KMCLPHEDNCJ);
+      }
+      if (unk3300CCFHOFCIEPF_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Unk3300CCFHOFCIEPF);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (unk3300OALLHJPBOHO_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Unk3300OALLHJPBOHO);
+      }
+      mostRevealAvatarList_.WriteTo(ref output, _repeated_mostRevealAvatarList_codec);
+      if (unk3300KIKPMNPKLDG_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Unk3300KIKPMNPKLDG);
+      }
+      if (unk3300EIGEGOGFJND_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Unk3300EIGEGOGFJND);
+      }
+      if (unk3300KMCLPHEDNCJ_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Unk3300KMCLPHEDNCJ);
+      }
+      if (unk3300CCFHOFCIEPF_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Unk3300CCFHOFCIEPF);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += mostRevealAvatarList_.CalculateSize(_repeated_mostRevealAvatarList_codec);
+      if (unk3300EIGEGOGFJND_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300EIGEGOGFJND);
+      }
+      if (unk3300OALLHJPBOHO_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300OALLHJPBOHO);
+      }
+      if (unk3300KMCLPHEDNCJ_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300KMCLPHEDNCJ);
+      }
+      if (unk3300KIKPMNPKLDG_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300KIKPMNPKLDG);
+      }
+      if (unk3300CCFHOFCIEPF_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300CCFHOFCIEPF);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TowerMonthlyCombatRecord other) {
+      if (other == null) {
+        return;
+      }
+      mostRevealAvatarList_.Add(other.mostRevealAvatarList_);
+      if (other.unk3300EIGEGOGFJND_ != null) {
+        if (unk3300EIGEGOGFJND_ == null) {
+          Unk3300EIGEGOGFJND = new global::NewProtos.TowerFightRecordPair();
+        }
+        Unk3300EIGEGOGFJND.MergeFrom(other.Unk3300EIGEGOGFJND);
+      }
+      if (other.unk3300OALLHJPBOHO_ != null) {
+        if (unk3300OALLHJPBOHO_ == null) {
+          Unk3300OALLHJPBOHO = new global::NewProtos.TowerFightRecordPair();
+        }
+        Unk3300OALLHJPBOHO.MergeFrom(other.Unk3300OALLHJPBOHO);
+      }
+      if (other.unk3300KMCLPHEDNCJ_ != null) {
+        if (unk3300KMCLPHEDNCJ_ == null) {
+          Unk3300KMCLPHEDNCJ = new global::NewProtos.TowerFightRecordPair();
+        }
+        Unk3300KMCLPHEDNCJ.MergeFrom(other.Unk3300KMCLPHEDNCJ);
+      }
+      if (other.unk3300KIKPMNPKLDG_ != null) {
+        if (unk3300KIKPMNPKLDG_ == null) {
+          Unk3300KIKPMNPKLDG = new global::NewProtos.TowerFightRecordPair();
+        }
+        Unk3300KIKPMNPKLDG.MergeFrom(other.Unk3300KIKPMNPKLDG);
+      }
+      if (other.unk3300CCFHOFCIEPF_ != null) {
+        if (unk3300CCFHOFCIEPF_ == null) {
+          Unk3300CCFHOFCIEPF = new global::NewProtos.TowerFightRecordPair();
+        }
+        Unk3300CCFHOFCIEPF.MergeFrom(other.Unk3300CCFHOFCIEPF);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            if (unk3300OALLHJPBOHO_ == null) {
+              Unk3300OALLHJPBOHO = new global::NewProtos.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300OALLHJPBOHO);
+            break;
+          }
+          case 26: {
+            mostRevealAvatarList_.AddEntriesFrom(input, _repeated_mostRevealAvatarList_codec);
+            break;
+          }
+          case 58: {
+            if (unk3300KIKPMNPKLDG_ == null) {
+              Unk3300KIKPMNPKLDG = new global::NewProtos.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300KIKPMNPKLDG);
+            break;
+          }
+          case 66: {
+            if (unk3300EIGEGOGFJND_ == null) {
+              Unk3300EIGEGOGFJND = new global::NewProtos.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300EIGEGOGFJND);
+            break;
+          }
+          case 114: {
+            if (unk3300KMCLPHEDNCJ_ == null) {
+              Unk3300KMCLPHEDNCJ = new global::NewProtos.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300KMCLPHEDNCJ);
+            break;
+          }
+          case 122: {
+            if (unk3300CCFHOFCIEPF_ == null) {
+              Unk3300CCFHOFCIEPF = new global::NewProtos.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300CCFHOFCIEPF);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            if (unk3300OALLHJPBOHO_ == null) {
+              Unk3300OALLHJPBOHO = new global::NewProtos.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300OALLHJPBOHO);
+            break;
+          }
+          case 26: {
+            mostRevealAvatarList_.AddEntriesFrom(ref input, _repeated_mostRevealAvatarList_codec);
+            break;
+          }
+          case 58: {
+            if (unk3300KIKPMNPKLDG_ == null) {
+              Unk3300KIKPMNPKLDG = new global::NewProtos.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300KIKPMNPKLDG);
+            break;
+          }
+          case 66: {
+            if (unk3300EIGEGOGFJND_ == null) {
+              Unk3300EIGEGOGFJND = new global::NewProtos.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300EIGEGOGFJND);
+            break;
+          }
+          case 114: {
+            if (unk3300KMCLPHEDNCJ_ == null) {
+              Unk3300KMCLPHEDNCJ = new global::NewProtos.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300KMCLPHEDNCJ);
+            break;
+          }
+          case 122: {
+            if (unk3300CCFHOFCIEPF_ == null) {
+              Unk3300CCFHOFCIEPF = new global::NewProtos.TowerFightRecordPair();
+            }
+            input.ReadMessage(Unk3300CCFHOFCIEPF);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class TowerMonthlyCombatRecord : pb::IMessage<TowerMonthlyCombatRecord>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<TowerMonthlyCombatRecord> _parser = new pb::MessageParser<TowerMonthlyCombatRecord>(() => new TowerMonthlyCombatRecord());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<TowerMonthlyCombatRecord> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::TowerMonthlyCombatRecordReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TowerMonthlyCombatRecord() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TowerMonthlyCombatRecord(TowerMonthlyCombatRecord other) : this() {
-    mostRevealAvatarList_ = other.mostRevealAvatarList_.Clone();
-    unk3300EIGEGOGFJND_ = other.unk3300EIGEGOGFJND_ != null ? other.unk3300EIGEGOGFJND_.Clone() : null;
-    unk3300OALLHJPBOHO_ = other.unk3300OALLHJPBOHO_ != null ? other.unk3300OALLHJPBOHO_.Clone() : null;
-    unk3300KMCLPHEDNCJ_ = other.unk3300KMCLPHEDNCJ_ != null ? other.unk3300KMCLPHEDNCJ_.Clone() : null;
-    unk3300KIKPMNPKLDG_ = other.unk3300KIKPMNPKLDG_ != null ? other.unk3300KIKPMNPKLDG_.Clone() : null;
-    unk3300CCFHOFCIEPF_ = other.unk3300CCFHOFCIEPF_ != null ? other.unk3300CCFHOFCIEPF_.Clone() : null;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TowerMonthlyCombatRecord Clone() {
-    return new TowerMonthlyCombatRecord(this);
-  }
-
-  /// <summary>Field number for the "most_reveal_avatar_list" field.</summary>
-  public const int MostRevealAvatarListFieldNumber = 3;
-  private static readonly pb::FieldCodec<global::TowerFightRecordPair> _repeated_mostRevealAvatarList_codec
-      = pb::FieldCodec.ForMessage(26, global::TowerFightRecordPair.Parser);
-  private readonly pbc::RepeatedField<global::TowerFightRecordPair> mostRevealAvatarList_ = new pbc::RepeatedField<global::TowerFightRecordPair>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::TowerFightRecordPair> MostRevealAvatarList {
-    get { return mostRevealAvatarList_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_EIGEGOGFJND" field.</summary>
-  public const int Unk3300EIGEGOGFJNDFieldNumber = 8;
-  private global::TowerFightRecordPair unk3300EIGEGOGFJND_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::TowerFightRecordPair Unk3300EIGEGOGFJND {
-    get { return unk3300EIGEGOGFJND_; }
-    set {
-      unk3300EIGEGOGFJND_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_OALLHJPBOHO" field.</summary>
-  public const int Unk3300OALLHJPBOHOFieldNumber = 2;
-  private global::TowerFightRecordPair unk3300OALLHJPBOHO_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::TowerFightRecordPair Unk3300OALLHJPBOHO {
-    get { return unk3300OALLHJPBOHO_; }
-    set {
-      unk3300OALLHJPBOHO_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_KMCLPHEDNCJ" field.</summary>
-  public const int Unk3300KMCLPHEDNCJFieldNumber = 14;
-  private global::TowerFightRecordPair unk3300KMCLPHEDNCJ_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::TowerFightRecordPair Unk3300KMCLPHEDNCJ {
-    get { return unk3300KMCLPHEDNCJ_; }
-    set {
-      unk3300KMCLPHEDNCJ_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_KIKPMNPKLDG" field.</summary>
-  public const int Unk3300KIKPMNPKLDGFieldNumber = 7;
-  private global::TowerFightRecordPair unk3300KIKPMNPKLDG_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::TowerFightRecordPair Unk3300KIKPMNPKLDG {
-    get { return unk3300KIKPMNPKLDG_; }
-    set {
-      unk3300KIKPMNPKLDG_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_CCFHOFCIEPF" field.</summary>
-  public const int Unk3300CCFHOFCIEPFFieldNumber = 15;
-  private global::TowerFightRecordPair unk3300CCFHOFCIEPF_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::TowerFightRecordPair Unk3300CCFHOFCIEPF {
-    get { return unk3300CCFHOFCIEPF_; }
-    set {
-      unk3300CCFHOFCIEPF_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as TowerMonthlyCombatRecord);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(TowerMonthlyCombatRecord other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!mostRevealAvatarList_.Equals(other.mostRevealAvatarList_)) return false;
-    if (!object.Equals(Unk3300EIGEGOGFJND, other.Unk3300EIGEGOGFJND)) return false;
-    if (!object.Equals(Unk3300OALLHJPBOHO, other.Unk3300OALLHJPBOHO)) return false;
-    if (!object.Equals(Unk3300KMCLPHEDNCJ, other.Unk3300KMCLPHEDNCJ)) return false;
-    if (!object.Equals(Unk3300KIKPMNPKLDG, other.Unk3300KIKPMNPKLDG)) return false;
-    if (!object.Equals(Unk3300CCFHOFCIEPF, other.Unk3300CCFHOFCIEPF)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= mostRevealAvatarList_.GetHashCode();
-    if (unk3300EIGEGOGFJND_ != null) hash ^= Unk3300EIGEGOGFJND.GetHashCode();
-    if (unk3300OALLHJPBOHO_ != null) hash ^= Unk3300OALLHJPBOHO.GetHashCode();
-    if (unk3300KMCLPHEDNCJ_ != null) hash ^= Unk3300KMCLPHEDNCJ.GetHashCode();
-    if (unk3300KIKPMNPKLDG_ != null) hash ^= Unk3300KIKPMNPKLDG.GetHashCode();
-    if (unk3300CCFHOFCIEPF_ != null) hash ^= Unk3300CCFHOFCIEPF.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (unk3300OALLHJPBOHO_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(Unk3300OALLHJPBOHO);
-    }
-    mostRevealAvatarList_.WriteTo(output, _repeated_mostRevealAvatarList_codec);
-    if (unk3300KIKPMNPKLDG_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(Unk3300KIKPMNPKLDG);
-    }
-    if (unk3300EIGEGOGFJND_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(Unk3300EIGEGOGFJND);
-    }
-    if (unk3300KMCLPHEDNCJ_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(Unk3300KMCLPHEDNCJ);
-    }
-    if (unk3300CCFHOFCIEPF_ != null) {
-      output.WriteRawTag(122);
-      output.WriteMessage(Unk3300CCFHOFCIEPF);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (unk3300OALLHJPBOHO_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(Unk3300OALLHJPBOHO);
-    }
-    mostRevealAvatarList_.WriteTo(ref output, _repeated_mostRevealAvatarList_codec);
-    if (unk3300KIKPMNPKLDG_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(Unk3300KIKPMNPKLDG);
-    }
-    if (unk3300EIGEGOGFJND_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(Unk3300EIGEGOGFJND);
-    }
-    if (unk3300KMCLPHEDNCJ_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(Unk3300KMCLPHEDNCJ);
-    }
-    if (unk3300CCFHOFCIEPF_ != null) {
-      output.WriteRawTag(122);
-      output.WriteMessage(Unk3300CCFHOFCIEPF);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += mostRevealAvatarList_.CalculateSize(_repeated_mostRevealAvatarList_codec);
-    if (unk3300EIGEGOGFJND_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300EIGEGOGFJND);
-    }
-    if (unk3300OALLHJPBOHO_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300OALLHJPBOHO);
-    }
-    if (unk3300KMCLPHEDNCJ_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300KMCLPHEDNCJ);
-    }
-    if (unk3300KIKPMNPKLDG_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300KIKPMNPKLDG);
-    }
-    if (unk3300CCFHOFCIEPF_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300CCFHOFCIEPF);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(TowerMonthlyCombatRecord other) {
-    if (other == null) {
-      return;
-    }
-    mostRevealAvatarList_.Add(other.mostRevealAvatarList_);
-    if (other.unk3300EIGEGOGFJND_ != null) {
-      if (unk3300EIGEGOGFJND_ == null) {
-        Unk3300EIGEGOGFJND = new global::TowerFightRecordPair();
-      }
-      Unk3300EIGEGOGFJND.MergeFrom(other.Unk3300EIGEGOGFJND);
-    }
-    if (other.unk3300OALLHJPBOHO_ != null) {
-      if (unk3300OALLHJPBOHO_ == null) {
-        Unk3300OALLHJPBOHO = new global::TowerFightRecordPair();
-      }
-      Unk3300OALLHJPBOHO.MergeFrom(other.Unk3300OALLHJPBOHO);
-    }
-    if (other.unk3300KMCLPHEDNCJ_ != null) {
-      if (unk3300KMCLPHEDNCJ_ == null) {
-        Unk3300KMCLPHEDNCJ = new global::TowerFightRecordPair();
-      }
-      Unk3300KMCLPHEDNCJ.MergeFrom(other.Unk3300KMCLPHEDNCJ);
-    }
-    if (other.unk3300KIKPMNPKLDG_ != null) {
-      if (unk3300KIKPMNPKLDG_ == null) {
-        Unk3300KIKPMNPKLDG = new global::TowerFightRecordPair();
-      }
-      Unk3300KIKPMNPKLDG.MergeFrom(other.Unk3300KIKPMNPKLDG);
-    }
-    if (other.unk3300CCFHOFCIEPF_ != null) {
-      if (unk3300CCFHOFCIEPF_ == null) {
-        Unk3300CCFHOFCIEPF = new global::TowerFightRecordPair();
-      }
-      Unk3300CCFHOFCIEPF.MergeFrom(other.Unk3300CCFHOFCIEPF);
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18: {
-          if (unk3300OALLHJPBOHO_ == null) {
-            Unk3300OALLHJPBOHO = new global::TowerFightRecordPair();
-          }
-          input.ReadMessage(Unk3300OALLHJPBOHO);
-          break;
-        }
-        case 26: {
-          mostRevealAvatarList_.AddEntriesFrom(input, _repeated_mostRevealAvatarList_codec);
-          break;
-        }
-        case 58: {
-          if (unk3300KIKPMNPKLDG_ == null) {
-            Unk3300KIKPMNPKLDG = new global::TowerFightRecordPair();
-          }
-          input.ReadMessage(Unk3300KIKPMNPKLDG);
-          break;
-        }
-        case 66: {
-          if (unk3300EIGEGOGFJND_ == null) {
-            Unk3300EIGEGOGFJND = new global::TowerFightRecordPair();
-          }
-          input.ReadMessage(Unk3300EIGEGOGFJND);
-          break;
-        }
-        case 114: {
-          if (unk3300KMCLPHEDNCJ_ == null) {
-            Unk3300KMCLPHEDNCJ = new global::TowerFightRecordPair();
-          }
-          input.ReadMessage(Unk3300KMCLPHEDNCJ);
-          break;
-        }
-        case 122: {
-          if (unk3300CCFHOFCIEPF_ == null) {
-            Unk3300CCFHOFCIEPF = new global::TowerFightRecordPair();
-          }
-          input.ReadMessage(Unk3300CCFHOFCIEPF);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18: {
-          if (unk3300OALLHJPBOHO_ == null) {
-            Unk3300OALLHJPBOHO = new global::TowerFightRecordPair();
-          }
-          input.ReadMessage(Unk3300OALLHJPBOHO);
-          break;
-        }
-        case 26: {
-          mostRevealAvatarList_.AddEntriesFrom(ref input, _repeated_mostRevealAvatarList_codec);
-          break;
-        }
-        case 58: {
-          if (unk3300KIKPMNPKLDG_ == null) {
-            Unk3300KIKPMNPKLDG = new global::TowerFightRecordPair();
-          }
-          input.ReadMessage(Unk3300KIKPMNPKLDG);
-          break;
-        }
-        case 66: {
-          if (unk3300EIGEGOGFJND_ == null) {
-            Unk3300EIGEGOGFJND = new global::TowerFightRecordPair();
-          }
-          input.ReadMessage(Unk3300EIGEGOGFJND);
-          break;
-        }
-        case 114: {
-          if (unk3300KMCLPHEDNCJ_ == null) {
-            Unk3300KMCLPHEDNCJ = new global::TowerFightRecordPair();
-          }
-          input.ReadMessage(Unk3300KMCLPHEDNCJ);
-          break;
-        }
-        case 122: {
-          if (unk3300CCFHOFCIEPF_ == null) {
-            Unk3300CCFHOFCIEPF = new global::TowerFightRecordPair();
-          }
-          input.ReadMessage(Unk3300CCFHOFCIEPF);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

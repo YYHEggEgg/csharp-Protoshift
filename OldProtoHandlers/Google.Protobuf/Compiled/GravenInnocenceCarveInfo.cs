@@ -9,279 +9,282 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GravenInnocenceCarveInfo.proto</summary>
-public static partial class GravenInnocenceCarveInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GravenInnocenceCarveInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GravenInnocenceCarveInfo.proto</summary>
+  public static partial class GravenInnocenceCarveInfoReflection {
 
-  static GravenInnocenceCarveInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch5HcmF2ZW5Jbm5vY2VuY2VDYXJ2ZUluZm8ucHJvdG8aI0dyYXZlbklubm9j",
-          "ZW5jZUNhcnZlU3RhZ2VJbmZvLnByb3RvIowBChhHcmF2ZW5Jbm5vY2VuY2VD",
-          "YXJ2ZUluZm8SNwoPc3RhZ2VfaW5mb19saXN0GAogAygLMh4uR3JhdmVuSW5u",
-          "b2NlbmNlQ2FydmVTdGFnZUluZm8SFgoOY2FuX2VkaXRfY291bnQYByABKA0S",
-          "HwoXaGFzX2VkaXRfY29uZmlnX2lkX2xpc3QYBiADKA1CHgocZW11LmdyYXNz",
-          "Y3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GravenInnocenceCarveStageInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GravenInnocenceCarveInfo), global::GravenInnocenceCarveInfo.Parser, new[]{ "StageInfoList", "CanEditCount", "HasEditConfigIdList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GravenInnocenceCarveInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GravenInnocenceCarveInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch5HcmF2ZW5Jbm5vY2VuY2VDYXJ2ZUluZm8ucHJvdG8aI0dyYXZlbklubm9j",
+            "ZW5jZUNhcnZlU3RhZ2VJbmZvLnByb3RvIowBChhHcmF2ZW5Jbm5vY2VuY2VD",
+            "YXJ2ZUluZm8SNwoPc3RhZ2VfaW5mb19saXN0GAogAygLMh4uR3JhdmVuSW5u",
+            "b2NlbmNlQ2FydmVTdGFnZUluZm8SFgoOY2FuX2VkaXRfY291bnQYByABKA0S",
+            "HwoXaGFzX2VkaXRfY29uZmlnX2lkX2xpc3QYBiADKA1CDKoCCU9sZFByb3Rv",
+            "c2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GravenInnocenceCarveStageInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GravenInnocenceCarveInfo), global::OldProtos.GravenInnocenceCarveInfo.Parser, new[]{ "StageInfoList", "CanEditCount", "HasEditConfigIdList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GravenInnocenceCarveInfo : pb::IMessage<GravenInnocenceCarveInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GravenInnocenceCarveInfo> _parser = new pb::MessageParser<GravenInnocenceCarveInfo>(() => new GravenInnocenceCarveInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GravenInnocenceCarveInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GravenInnocenceCarveInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GravenInnocenceCarveInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GravenInnocenceCarveInfo(GravenInnocenceCarveInfo other) : this() {
+      stageInfoList_ = other.stageInfoList_.Clone();
+      canEditCount_ = other.canEditCount_;
+      hasEditConfigIdList_ = other.hasEditConfigIdList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GravenInnocenceCarveInfo Clone() {
+      return new GravenInnocenceCarveInfo(this);
+    }
+
+    /// <summary>Field number for the "stage_info_list" field.</summary>
+    public const int StageInfoListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::OldProtos.GravenInnocenceCarveStageInfo> _repeated_stageInfoList_codec
+        = pb::FieldCodec.ForMessage(82, global::OldProtos.GravenInnocenceCarveStageInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GravenInnocenceCarveStageInfo> stageInfoList_ = new pbc::RepeatedField<global::OldProtos.GravenInnocenceCarveStageInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GravenInnocenceCarveStageInfo> StageInfoList {
+      get { return stageInfoList_; }
+    }
+
+    /// <summary>Field number for the "can_edit_count" field.</summary>
+    public const int CanEditCountFieldNumber = 7;
+    private uint canEditCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CanEditCount {
+      get { return canEditCount_; }
+      set {
+        canEditCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "has_edit_config_id_list" field.</summary>
+    public const int HasEditConfigIdListFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_hasEditConfigIdList_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> hasEditConfigIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> HasEditConfigIdList {
+      get { return hasEditConfigIdList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GravenInnocenceCarveInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GravenInnocenceCarveInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!stageInfoList_.Equals(other.stageInfoList_)) return false;
+      if (CanEditCount != other.CanEditCount) return false;
+      if(!hasEditConfigIdList_.Equals(other.hasEditConfigIdList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= stageInfoList_.GetHashCode();
+      if (CanEditCount != 0) hash ^= CanEditCount.GetHashCode();
+      hash ^= hasEditConfigIdList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      hasEditConfigIdList_.WriteTo(output, _repeated_hasEditConfigIdList_codec);
+      if (CanEditCount != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(CanEditCount);
+      }
+      stageInfoList_.WriteTo(output, _repeated_stageInfoList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      hasEditConfigIdList_.WriteTo(ref output, _repeated_hasEditConfigIdList_codec);
+      if (CanEditCount != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(CanEditCount);
+      }
+      stageInfoList_.WriteTo(ref output, _repeated_stageInfoList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += stageInfoList_.CalculateSize(_repeated_stageInfoList_codec);
+      if (CanEditCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CanEditCount);
+      }
+      size += hasEditConfigIdList_.CalculateSize(_repeated_hasEditConfigIdList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GravenInnocenceCarveInfo other) {
+      if (other == null) {
+        return;
+      }
+      stageInfoList_.Add(other.stageInfoList_);
+      if (other.CanEditCount != 0) {
+        CanEditCount = other.CanEditCount;
+      }
+      hasEditConfigIdList_.Add(other.hasEditConfigIdList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 50:
+          case 48: {
+            hasEditConfigIdList_.AddEntriesFrom(input, _repeated_hasEditConfigIdList_codec);
+            break;
+          }
+          case 56: {
+            CanEditCount = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            stageInfoList_.AddEntriesFrom(input, _repeated_stageInfoList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 50:
+          case 48: {
+            hasEditConfigIdList_.AddEntriesFrom(ref input, _repeated_hasEditConfigIdList_codec);
+            break;
+          }
+          case 56: {
+            CanEditCount = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            stageInfoList_.AddEntriesFrom(ref input, _repeated_stageInfoList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GravenInnocenceCarveInfo : pb::IMessage<GravenInnocenceCarveInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GravenInnocenceCarveInfo> _parser = new pb::MessageParser<GravenInnocenceCarveInfo>(() => new GravenInnocenceCarveInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GravenInnocenceCarveInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GravenInnocenceCarveInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GravenInnocenceCarveInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GravenInnocenceCarveInfo(GravenInnocenceCarveInfo other) : this() {
-    stageInfoList_ = other.stageInfoList_.Clone();
-    canEditCount_ = other.canEditCount_;
-    hasEditConfigIdList_ = other.hasEditConfigIdList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GravenInnocenceCarveInfo Clone() {
-    return new GravenInnocenceCarveInfo(this);
-  }
-
-  /// <summary>Field number for the "stage_info_list" field.</summary>
-  public const int StageInfoListFieldNumber = 10;
-  private static readonly pb::FieldCodec<global::GravenInnocenceCarveStageInfo> _repeated_stageInfoList_codec
-      = pb::FieldCodec.ForMessage(82, global::GravenInnocenceCarveStageInfo.Parser);
-  private readonly pbc::RepeatedField<global::GravenInnocenceCarveStageInfo> stageInfoList_ = new pbc::RepeatedField<global::GravenInnocenceCarveStageInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GravenInnocenceCarveStageInfo> StageInfoList {
-    get { return stageInfoList_; }
-  }
-
-  /// <summary>Field number for the "can_edit_count" field.</summary>
-  public const int CanEditCountFieldNumber = 7;
-  private uint canEditCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CanEditCount {
-    get { return canEditCount_; }
-    set {
-      canEditCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "has_edit_config_id_list" field.</summary>
-  public const int HasEditConfigIdListFieldNumber = 6;
-  private static readonly pb::FieldCodec<uint> _repeated_hasEditConfigIdList_codec
-      = pb::FieldCodec.ForUInt32(50);
-  private readonly pbc::RepeatedField<uint> hasEditConfigIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> HasEditConfigIdList {
-    get { return hasEditConfigIdList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GravenInnocenceCarveInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GravenInnocenceCarveInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!stageInfoList_.Equals(other.stageInfoList_)) return false;
-    if (CanEditCount != other.CanEditCount) return false;
-    if(!hasEditConfigIdList_.Equals(other.hasEditConfigIdList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= stageInfoList_.GetHashCode();
-    if (CanEditCount != 0) hash ^= CanEditCount.GetHashCode();
-    hash ^= hasEditConfigIdList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    hasEditConfigIdList_.WriteTo(output, _repeated_hasEditConfigIdList_codec);
-    if (CanEditCount != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(CanEditCount);
-    }
-    stageInfoList_.WriteTo(output, _repeated_stageInfoList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    hasEditConfigIdList_.WriteTo(ref output, _repeated_hasEditConfigIdList_codec);
-    if (CanEditCount != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(CanEditCount);
-    }
-    stageInfoList_.WriteTo(ref output, _repeated_stageInfoList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += stageInfoList_.CalculateSize(_repeated_stageInfoList_codec);
-    if (CanEditCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CanEditCount);
-    }
-    size += hasEditConfigIdList_.CalculateSize(_repeated_hasEditConfigIdList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GravenInnocenceCarveInfo other) {
-    if (other == null) {
-      return;
-    }
-    stageInfoList_.Add(other.stageInfoList_);
-    if (other.CanEditCount != 0) {
-      CanEditCount = other.CanEditCount;
-    }
-    hasEditConfigIdList_.Add(other.hasEditConfigIdList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 50:
-        case 48: {
-          hasEditConfigIdList_.AddEntriesFrom(input, _repeated_hasEditConfigIdList_codec);
-          break;
-        }
-        case 56: {
-          CanEditCount = input.ReadUInt32();
-          break;
-        }
-        case 82: {
-          stageInfoList_.AddEntriesFrom(input, _repeated_stageInfoList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 50:
-        case 48: {
-          hasEditConfigIdList_.AddEntriesFrom(ref input, _repeated_hasEditConfigIdList_codec);
-          break;
-        }
-        case 56: {
-          CanEditCount = input.ReadUInt32();
-          break;
-        }
-        case 82: {
-          stageInfoList_.AddEntriesFrom(ref input, _repeated_stageInfoList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

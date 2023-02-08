@@ -9,38 +9,41 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MapMarkFromType.proto</summary>
-public static partial class MapMarkFromTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MapMarkFromType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MapMarkFromType.proto</summary>
+  public static partial class MapMarkFromTypeReflection {
 
-  static MapMarkFromTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVNYXBNYXJrRnJvbVR5cGUucHJvdG8qbAoPTWFwTWFya0Zyb21UeXBlEhsK",
-          "F01BUF9NQVJLX0ZST01fVFlQRV9OT05FEAASHgoaTUFQX01BUktfRlJPTV9U",
-          "WVBFX01PTlNURVIQARIcChhNQVBfTUFSS19GUk9NX1RZUEVfUVVFU1QQAkIW",
-          "ChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MapMarkFromType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for MapMarkFromType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MapMarkFromTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVNYXBNYXJrRnJvbVR5cGUucHJvdG8qbAoPTWFwTWFya0Zyb21UeXBlEhsK",
+            "F01BUF9NQVJLX0ZST01fVFlQRV9OT05FEAASHgoaTUFQX01BUktfRlJPTV9U",
+            "WVBFX01PTlNURVIQARIcChhNQVBfTUFSS19GUk9NX1RZUEVfUVVFU1QQAkIM",
+            "qgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.MapMarkFromType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum MapMarkFromType {
+    [pbr::OriginalName("MAP_MARK_FROM_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("MAP_MARK_FROM_TYPE_MONSTER")] Monster = 1,
+    [pbr::OriginalName("MAP_MARK_FROM_TYPE_QUEST")] Quest = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum MapMarkFromType {
-  [pbr::OriginalName("MAP_MARK_FROM_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("MAP_MARK_FROM_TYPE_MONSTER")] Monster = 1,
-  [pbr::OriginalName("MAP_MARK_FROM_TYPE_QUEST")] Quest = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

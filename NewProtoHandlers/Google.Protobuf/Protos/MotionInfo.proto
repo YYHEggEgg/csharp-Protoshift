@@ -19,7 +19,7 @@ syntax = "proto3";
 import "MotionState.proto";
 import "Vector.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message MotionInfo {
   Vector pos = 1;

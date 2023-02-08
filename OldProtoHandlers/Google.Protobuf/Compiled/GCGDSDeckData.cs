@@ -9,466 +9,468 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGDSDeckData.proto</summary>
-public static partial class GCGDSDeckDataReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGDSDeckData.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGDSDeckData.proto</summary>
+  public static partial class GCGDSDeckDataReflection {
 
-  static GCGDSDeckDataReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChNHQ0dEU0RlY2tEYXRhLnByb3RvIqgBCg1HQ0dEU0RlY2tEYXRhEhEKCWNh",
-          "cmRfbGlzdBgBIAMoDRIUCgxjYXJkX2JhY2tfaWQYDyABKA0SGwoTY2hhcmFj",
-          "dGVyX2NhcmRfbGlzdBgKIAMoDRIMCgRuYW1lGAUgASgJEgoKAmlkGAMgASgN",
-          "EhMKC2NyZWF0ZV90aW1lGA0gASgHEhAKCGlzX3ZhbGlkGAQgASgIEhAKCGZp",
-          "ZWxkX2lkGAcgASgNQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9i",
-          "BnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGDSDeckData), global::GCGDSDeckData.Parser, new[]{ "CardList", "CardBackId", "CharacterCardList", "Name", "Id", "CreateTime", "IsValid", "FieldId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGDSDeckData.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGDSDeckDataReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChNHQ0dEU0RlY2tEYXRhLnByb3RvIqgBCg1HQ0dEU0RlY2tEYXRhEhEKCWNh",
+            "cmRfbGlzdBgBIAMoDRIUCgxjYXJkX2JhY2tfaWQYDyABKA0SGwoTY2hhcmFj",
+            "dGVyX2NhcmRfbGlzdBgKIAMoDRIMCgRuYW1lGAUgASgJEgoKAmlkGAMgASgN",
+            "EhMKC2NyZWF0ZV90aW1lGA0gASgHEhAKCGlzX3ZhbGlkGAQgASgIEhAKCGZp",
+            "ZWxkX2lkGAcgASgNQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GCGDSDeckData), global::OldProtos.GCGDSDeckData.Parser, new[]{ "CardList", "CardBackId", "CharacterCardList", "Name", "Id", "CreateTime", "IsValid", "FieldId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GCGDSDeckData : pb::IMessage<GCGDSDeckData>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGDSDeckData> _parser = new pb::MessageParser<GCGDSDeckData>(() => new GCGDSDeckData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGDSDeckData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GCGDSDeckDataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGDSDeckData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGDSDeckData(GCGDSDeckData other) : this() {
+      cardList_ = other.cardList_.Clone();
+      cardBackId_ = other.cardBackId_;
+      characterCardList_ = other.characterCardList_.Clone();
+      name_ = other.name_;
+      id_ = other.id_;
+      createTime_ = other.createTime_;
+      isValid_ = other.isValid_;
+      fieldId_ = other.fieldId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGDSDeckData Clone() {
+      return new GCGDSDeckData(this);
+    }
+
+    /// <summary>Field number for the "card_list" field.</summary>
+    public const int CardListFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_cardList_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> cardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CardList {
+      get { return cardList_; }
+    }
+
+    /// <summary>Field number for the "card_back_id" field.</summary>
+    public const int CardBackIdFieldNumber = 15;
+    private uint cardBackId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CardBackId {
+      get { return cardBackId_; }
+      set {
+        cardBackId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "character_card_list" field.</summary>
+    public const int CharacterCardListFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_characterCardList_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> characterCardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CharacterCardList {
+      get { return characterCardList_; }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 5;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 3;
+    private uint id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "create_time" field.</summary>
+    public const int CreateTimeFieldNumber = 13;
+    private uint createTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CreateTime {
+      get { return createTime_; }
+      set {
+        createTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_valid" field.</summary>
+    public const int IsValidFieldNumber = 4;
+    private bool isValid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsValid {
+      get { return isValid_; }
+      set {
+        isValid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "field_id" field.</summary>
+    public const int FieldIdFieldNumber = 7;
+    private uint fieldId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FieldId {
+      get { return fieldId_; }
+      set {
+        fieldId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGDSDeckData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGDSDeckData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!cardList_.Equals(other.cardList_)) return false;
+      if (CardBackId != other.CardBackId) return false;
+      if(!characterCardList_.Equals(other.characterCardList_)) return false;
+      if (Name != other.Name) return false;
+      if (Id != other.Id) return false;
+      if (CreateTime != other.CreateTime) return false;
+      if (IsValid != other.IsValid) return false;
+      if (FieldId != other.FieldId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= cardList_.GetHashCode();
+      if (CardBackId != 0) hash ^= CardBackId.GetHashCode();
+      hash ^= characterCardList_.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (CreateTime != 0) hash ^= CreateTime.GetHashCode();
+      if (IsValid != false) hash ^= IsValid.GetHashCode();
+      if (FieldId != 0) hash ^= FieldId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      cardList_.WriteTo(output, _repeated_cardList_codec);
+      if (Id != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Id);
+      }
+      if (IsValid != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsValid);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Name);
+      }
+      if (FieldId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(FieldId);
+      }
+      characterCardList_.WriteTo(output, _repeated_characterCardList_codec);
+      if (CreateTime != 0) {
+        output.WriteRawTag(109);
+        output.WriteFixed32(CreateTime);
+      }
+      if (CardBackId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CardBackId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      cardList_.WriteTo(ref output, _repeated_cardList_codec);
+      if (Id != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Id);
+      }
+      if (IsValid != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsValid);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Name);
+      }
+      if (FieldId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(FieldId);
+      }
+      characterCardList_.WriteTo(ref output, _repeated_characterCardList_codec);
+      if (CreateTime != 0) {
+        output.WriteRawTag(109);
+        output.WriteFixed32(CreateTime);
+      }
+      if (CardBackId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CardBackId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += cardList_.CalculateSize(_repeated_cardList_codec);
+      if (CardBackId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardBackId);
+      }
+      size += characterCardList_.CalculateSize(_repeated_characterCardList_codec);
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
+      }
+      if (CreateTime != 0) {
+        size += 1 + 4;
+      }
+      if (IsValid != false) {
+        size += 1 + 1;
+      }
+      if (FieldId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FieldId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGDSDeckData other) {
+      if (other == null) {
+        return;
+      }
+      cardList_.Add(other.cardList_);
+      if (other.CardBackId != 0) {
+        CardBackId = other.CardBackId;
+      }
+      characterCardList_.Add(other.characterCardList_);
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.CreateTime != 0) {
+        CreateTime = other.CreateTime;
+      }
+      if (other.IsValid != false) {
+        IsValid = other.IsValid;
+      }
+      if (other.FieldId != 0) {
+        FieldId = other.FieldId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10:
+          case 8: {
+            cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
+            break;
+          }
+          case 24: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            IsValid = input.ReadBool();
+            break;
+          }
+          case 42: {
+            Name = input.ReadString();
+            break;
+          }
+          case 56: {
+            FieldId = input.ReadUInt32();
+            break;
+          }
+          case 82:
+          case 80: {
+            characterCardList_.AddEntriesFrom(input, _repeated_characterCardList_codec);
+            break;
+          }
+          case 109: {
+            CreateTime = input.ReadFixed32();
+            break;
+          }
+          case 120: {
+            CardBackId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10:
+          case 8: {
+            cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
+            break;
+          }
+          case 24: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            IsValid = input.ReadBool();
+            break;
+          }
+          case 42: {
+            Name = input.ReadString();
+            break;
+          }
+          case 56: {
+            FieldId = input.ReadUInt32();
+            break;
+          }
+          case 82:
+          case 80: {
+            characterCardList_.AddEntriesFrom(ref input, _repeated_characterCardList_codec);
+            break;
+          }
+          case 109: {
+            CreateTime = input.ReadFixed32();
+            break;
+          }
+          case 120: {
+            CardBackId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GCGDSDeckData : pb::IMessage<GCGDSDeckData>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGDSDeckData> _parser = new pb::MessageParser<GCGDSDeckData>(() => new GCGDSDeckData());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGDSDeckData> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGDSDeckDataReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGDSDeckData() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGDSDeckData(GCGDSDeckData other) : this() {
-    cardList_ = other.cardList_.Clone();
-    cardBackId_ = other.cardBackId_;
-    characterCardList_ = other.characterCardList_.Clone();
-    name_ = other.name_;
-    id_ = other.id_;
-    createTime_ = other.createTime_;
-    isValid_ = other.isValid_;
-    fieldId_ = other.fieldId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGDSDeckData Clone() {
-    return new GCGDSDeckData(this);
-  }
-
-  /// <summary>Field number for the "card_list" field.</summary>
-  public const int CardListFieldNumber = 1;
-  private static readonly pb::FieldCodec<uint> _repeated_cardList_codec
-      = pb::FieldCodec.ForUInt32(10);
-  private readonly pbc::RepeatedField<uint> cardList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> CardList {
-    get { return cardList_; }
-  }
-
-  /// <summary>Field number for the "card_back_id" field.</summary>
-  public const int CardBackIdFieldNumber = 15;
-  private uint cardBackId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CardBackId {
-    get { return cardBackId_; }
-    set {
-      cardBackId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "character_card_list" field.</summary>
-  public const int CharacterCardListFieldNumber = 10;
-  private static readonly pb::FieldCodec<uint> _repeated_characterCardList_codec
-      = pb::FieldCodec.ForUInt32(82);
-  private readonly pbc::RepeatedField<uint> characterCardList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> CharacterCardList {
-    get { return characterCardList_; }
-  }
-
-  /// <summary>Field number for the "name" field.</summary>
-  public const int NameFieldNumber = 5;
-  private string name_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Name {
-    get { return name_; }
-    set {
-      name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "id" field.</summary>
-  public const int IdFieldNumber = 3;
-  private uint id_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Id {
-    get { return id_; }
-    set {
-      id_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "create_time" field.</summary>
-  public const int CreateTimeFieldNumber = 13;
-  private uint createTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CreateTime {
-    get { return createTime_; }
-    set {
-      createTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_valid" field.</summary>
-  public const int IsValidFieldNumber = 4;
-  private bool isValid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsValid {
-    get { return isValid_; }
-    set {
-      isValid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "field_id" field.</summary>
-  public const int FieldIdFieldNumber = 7;
-  private uint fieldId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FieldId {
-    get { return fieldId_; }
-    set {
-      fieldId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGDSDeckData);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGDSDeckData other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!cardList_.Equals(other.cardList_)) return false;
-    if (CardBackId != other.CardBackId) return false;
-    if(!characterCardList_.Equals(other.characterCardList_)) return false;
-    if (Name != other.Name) return false;
-    if (Id != other.Id) return false;
-    if (CreateTime != other.CreateTime) return false;
-    if (IsValid != other.IsValid) return false;
-    if (FieldId != other.FieldId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= cardList_.GetHashCode();
-    if (CardBackId != 0) hash ^= CardBackId.GetHashCode();
-    hash ^= characterCardList_.GetHashCode();
-    if (Name.Length != 0) hash ^= Name.GetHashCode();
-    if (Id != 0) hash ^= Id.GetHashCode();
-    if (CreateTime != 0) hash ^= CreateTime.GetHashCode();
-    if (IsValid != false) hash ^= IsValid.GetHashCode();
-    if (FieldId != 0) hash ^= FieldId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    cardList_.WriteTo(output, _repeated_cardList_codec);
-    if (Id != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(Id);
-    }
-    if (IsValid != false) {
-      output.WriteRawTag(32);
-      output.WriteBool(IsValid);
-    }
-    if (Name.Length != 0) {
-      output.WriteRawTag(42);
-      output.WriteString(Name);
-    }
-    if (FieldId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(FieldId);
-    }
-    characterCardList_.WriteTo(output, _repeated_characterCardList_codec);
-    if (CreateTime != 0) {
-      output.WriteRawTag(109);
-      output.WriteFixed32(CreateTime);
-    }
-    if (CardBackId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(CardBackId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    cardList_.WriteTo(ref output, _repeated_cardList_codec);
-    if (Id != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(Id);
-    }
-    if (IsValid != false) {
-      output.WriteRawTag(32);
-      output.WriteBool(IsValid);
-    }
-    if (Name.Length != 0) {
-      output.WriteRawTag(42);
-      output.WriteString(Name);
-    }
-    if (FieldId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(FieldId);
-    }
-    characterCardList_.WriteTo(ref output, _repeated_characterCardList_codec);
-    if (CreateTime != 0) {
-      output.WriteRawTag(109);
-      output.WriteFixed32(CreateTime);
-    }
-    if (CardBackId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(CardBackId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += cardList_.CalculateSize(_repeated_cardList_codec);
-    if (CardBackId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardBackId);
-    }
-    size += characterCardList_.CalculateSize(_repeated_characterCardList_codec);
-    if (Name.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-    }
-    if (Id != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
-    }
-    if (CreateTime != 0) {
-      size += 1 + 4;
-    }
-    if (IsValid != false) {
-      size += 1 + 1;
-    }
-    if (FieldId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FieldId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGDSDeckData other) {
-    if (other == null) {
-      return;
-    }
-    cardList_.Add(other.cardList_);
-    if (other.CardBackId != 0) {
-      CardBackId = other.CardBackId;
-    }
-    characterCardList_.Add(other.characterCardList_);
-    if (other.Name.Length != 0) {
-      Name = other.Name;
-    }
-    if (other.Id != 0) {
-      Id = other.Id;
-    }
-    if (other.CreateTime != 0) {
-      CreateTime = other.CreateTime;
-    }
-    if (other.IsValid != false) {
-      IsValid = other.IsValid;
-    }
-    if (other.FieldId != 0) {
-      FieldId = other.FieldId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10:
-        case 8: {
-          cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
-          break;
-        }
-        case 24: {
-          Id = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          IsValid = input.ReadBool();
-          break;
-        }
-        case 42: {
-          Name = input.ReadString();
-          break;
-        }
-        case 56: {
-          FieldId = input.ReadUInt32();
-          break;
-        }
-        case 82:
-        case 80: {
-          characterCardList_.AddEntriesFrom(input, _repeated_characterCardList_codec);
-          break;
-        }
-        case 109: {
-          CreateTime = input.ReadFixed32();
-          break;
-        }
-        case 120: {
-          CardBackId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10:
-        case 8: {
-          cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
-          break;
-        }
-        case 24: {
-          Id = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          IsValid = input.ReadBool();
-          break;
-        }
-        case 42: {
-          Name = input.ReadString();
-          break;
-        }
-        case 56: {
-          FieldId = input.ReadUInt32();
-          break;
-        }
-        case 82:
-        case 80: {
-          characterCardList_.AddEntriesFrom(ref input, _repeated_characterCardList_codec);
-          break;
-        }
-        case 109: {
-          CreateTime = input.ReadFixed32();
-          break;
-        }
-        case 120: {
-          CardBackId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

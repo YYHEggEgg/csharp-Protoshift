@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "DynamicSVONode.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message DynamicLayerNodes {
   int32 level = 7;

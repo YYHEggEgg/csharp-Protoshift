@@ -20,7 +20,7 @@ import "GetUgcType.proto";
 import "RecordUsage.proto";
 import "UgcType.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GetUgcReq {
   // enum CmdId {

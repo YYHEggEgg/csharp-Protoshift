@@ -9,317 +9,320 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ToTheMoonRemoveObstacleReq.proto</summary>
-public static partial class ToTheMoonRemoveObstacleReqReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ToTheMoonRemoveObstacleReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ToTheMoonRemoveObstacleReq.proto</summary>
+  public static partial class ToTheMoonRemoveObstacleReqReflection {
 
-  static ToTheMoonRemoveObstacleReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBUb1RoZU1vb25SZW1vdmVPYnN0YWNsZVJlcS5wcm90byKSAQoaVG9UaGVN",
-          "b29uUmVtb3ZlT2JzdGFjbGVSZXESDgoGaGFuZGxlGAwgASgFEhAKCHNjZW5l",
-          "X2lkGAogASgNEhAKCHF1ZXJ5X2lkGAsgASgFIkAKDE9ic3RhY2xlVHlwZRIV",
-          "ChFPQlNUQUNMRV9UWVBFX0JPWBAAEhkKFU9CU1RBQ0xFX1RZUEVfQ0FQU1VM",
-          "RRABQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ToTheMoonRemoveObstacleReq), global::ToTheMoonRemoveObstacleReq.Parser, new[]{ "Handle", "SceneId", "QueryId" }, null, new[]{ typeof(global::ToTheMoonRemoveObstacleReq.Types.ObstacleType) }, null, null)
-        }));
-  }
-  #endregion
-
-}
-#region Messages
-/// <summary>
-/// CmdId: 6190
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class ToTheMoonRemoveObstacleReq : pb::IMessage<ToTheMoonRemoveObstacleReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ToTheMoonRemoveObstacleReq> _parser = new pb::MessageParser<ToTheMoonRemoveObstacleReq>(() => new ToTheMoonRemoveObstacleReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ToTheMoonRemoveObstacleReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ToTheMoonRemoveObstacleReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ToTheMoonRemoveObstacleReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ToTheMoonRemoveObstacleReq(ToTheMoonRemoveObstacleReq other) : this() {
-    handle_ = other.handle_;
-    sceneId_ = other.sceneId_;
-    queryId_ = other.queryId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ToTheMoonRemoveObstacleReq Clone() {
-    return new ToTheMoonRemoveObstacleReq(this);
-  }
-
-  /// <summary>Field number for the "handle" field.</summary>
-  public const int HandleFieldNumber = 12;
-  private int handle_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Handle {
-    get { return handle_; }
-    set {
-      handle_ = value;
+    #region Descriptor
+    /// <summary>File descriptor for ToTheMoonRemoveObstacleReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
     }
-  }
+    private static pbr::FileDescriptor descriptor;
 
-  /// <summary>Field number for the "scene_id" field.</summary>
-  public const int SceneIdFieldNumber = 10;
-  private uint sceneId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SceneId {
-    get { return sceneId_; }
-    set {
-      sceneId_ = value;
+    static ToTheMoonRemoveObstacleReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBUb1RoZU1vb25SZW1vdmVPYnN0YWNsZVJlcS5wcm90byKSAQoaVG9UaGVN",
+            "b29uUmVtb3ZlT2JzdGFjbGVSZXESDgoGaGFuZGxlGAwgASgFEhAKCHNjZW5l",
+            "X2lkGAogASgNEhAKCHF1ZXJ5X2lkGAsgASgFIkAKDE9ic3RhY2xlVHlwZRIV",
+            "ChFPQlNUQUNMRV9UWVBFX0JPWBAAEhkKFU9CU1RBQ0xFX1RZUEVfQ0FQU1VM",
+            "RRABQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ToTheMoonRemoveObstacleReq), global::OldProtos.ToTheMoonRemoveObstacleReq.Parser, new[]{ "Handle", "SceneId", "QueryId" }, null, new[]{ typeof(global::OldProtos.ToTheMoonRemoveObstacleReq.Types.ObstacleType) }, null, null)
+          }));
     }
-  }
+    #endregion
 
-  /// <summary>Field number for the "query_id" field.</summary>
-  public const int QueryIdFieldNumber = 11;
-  private int queryId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int QueryId {
-    get { return queryId_; }
-    set {
-      queryId_ = value;
-    }
   }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ToTheMoonRemoveObstacleReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ToTheMoonRemoveObstacleReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Handle != other.Handle) return false;
-    if (SceneId != other.SceneId) return false;
-    if (QueryId != other.QueryId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Handle != 0) hash ^= Handle.GetHashCode();
-    if (SceneId != 0) hash ^= SceneId.GetHashCode();
-    if (QueryId != 0) hash ^= QueryId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
+  #region Messages
+  /// <summary>
+  /// CmdId: 6190
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class ToTheMoonRemoveObstacleReq : pb::IMessage<ToTheMoonRemoveObstacleReq>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (SceneId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(SceneId);
-    }
-    if (QueryId != 0) {
-      output.WriteRawTag(88);
-      output.WriteInt32(QueryId);
-    }
-    if (Handle != 0) {
-      output.WriteRawTag(96);
-      output.WriteInt32(Handle);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
+      , pb::IBufferMessage
   #endif
-  }
+  {
+    private static readonly pb::MessageParser<ToTheMoonRemoveObstacleReq> _parser = new pb::MessageParser<ToTheMoonRemoveObstacleReq>(() => new ToTheMoonRemoveObstacleReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ToTheMoonRemoveObstacleReq> Parser { get { return _parser; } }
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (SceneId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(SceneId);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ToTheMoonRemoveObstacleReqReflection.Descriptor.MessageTypes[0]; }
     }
-    if (QueryId != 0) {
-      output.WriteRawTag(88);
-      output.WriteInt32(QueryId);
-    }
-    if (Handle != 0) {
-      output.WriteRawTag(96);
-      output.WriteInt32(Handle);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Handle != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Handle);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
     }
-    if (SceneId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
-    }
-    if (QueryId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ToTheMoonRemoveObstacleReq other) {
-    if (other == null) {
-      return;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ToTheMoonRemoveObstacleReq() {
+      OnConstruction();
     }
-    if (other.Handle != 0) {
-      Handle = other.Handle;
-    }
-    if (other.SceneId != 0) {
-      SceneId = other.SceneId;
-    }
-    if (other.QueryId != 0) {
-      QueryId = other.QueryId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 80: {
-          SceneId = input.ReadUInt32();
-          break;
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ToTheMoonRemoveObstacleReq(ToTheMoonRemoveObstacleReq other) : this() {
+      handle_ = other.handle_;
+      sceneId_ = other.sceneId_;
+      queryId_ = other.queryId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ToTheMoonRemoveObstacleReq Clone() {
+      return new ToTheMoonRemoveObstacleReq(this);
+    }
+
+    /// <summary>Field number for the "handle" field.</summary>
+    public const int HandleFieldNumber = 12;
+    private int handle_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Handle {
+      get { return handle_; }
+      set {
+        handle_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scene_id" field.</summary>
+    public const int SceneIdFieldNumber = 10;
+    private uint sceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SceneId {
+      get { return sceneId_; }
+      set {
+        sceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "query_id" field.</summary>
+    public const int QueryIdFieldNumber = 11;
+    private int queryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int QueryId {
+      get { return queryId_; }
+      set {
+        queryId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ToTheMoonRemoveObstacleReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ToTheMoonRemoveObstacleReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Handle != other.Handle) return false;
+      if (SceneId != other.SceneId) return false;
+      if (QueryId != other.QueryId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Handle != 0) hash ^= Handle.GetHashCode();
+      if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (QueryId != 0) hash ^= QueryId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (SceneId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(SceneId);
+      }
+      if (QueryId != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(QueryId);
+      }
+      if (Handle != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Handle);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (SceneId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(SceneId);
+      }
+      if (QueryId != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(QueryId);
+      }
+      if (Handle != 0) {
+        output.WriteRawTag(96);
+        output.WriteInt32(Handle);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Handle != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Handle);
+      }
+      if (SceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (QueryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ToTheMoonRemoveObstacleReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Handle != 0) {
+        Handle = other.Handle;
+      }
+      if (other.SceneId != 0) {
+        SceneId = other.SceneId;
+      }
+      if (other.QueryId != 0) {
+        QueryId = other.QueryId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 80: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            QueryId = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Handle = input.ReadInt32();
+            break;
+          }
         }
-        case 88: {
-          QueryId = input.ReadInt32();
-          break;
-        }
-        case 96: {
-          Handle = input.ReadInt32();
-          break;
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 80: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            QueryId = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            Handle = input.ReadInt32();
+            break;
+          }
         }
       }
     }
-  #endif
-  }
+    #endif
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 80: {
-          SceneId = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          QueryId = input.ReadInt32();
-          break;
-        }
-        case 96: {
-          Handle = input.ReadInt32();
-          break;
-        }
+    #region Nested types
+    /// <summary>Container for nested types declared in the ToTheMoonRemoveObstacleReq message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum ObstacleType {
+        [pbr::OriginalName("OBSTACLE_TYPE_BOX")] Box = 0,
+        [pbr::OriginalName("OBSTACLE_TYPE_CAPSULE")] Capsule = 1,
       }
-    }
-  }
-  #endif
 
-  #region Nested types
-  /// <summary>Container for nested types declared in the ToTheMoonRemoveObstacleReq message type.</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static partial class Types {
-    public enum ObstacleType {
-      [pbr::OriginalName("OBSTACLE_TYPE_BOX")] Box = 0,
-      [pbr::OriginalName("OBSTACLE_TYPE_CAPSULE")] Capsule = 1,
     }
+    #endregion
 
   }
+
   #endregion
 
 }
-
-#endregion
-
 
 #endregion Designer generated code

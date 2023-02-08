@@ -9,372 +9,375 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ReunionWatcherInfo.proto</summary>
-public static partial class ReunionWatcherInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ReunionWatcherInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ReunionWatcherInfo.proto</summary>
+  public static partial class ReunionWatcherInfoReflection {
 
-  static ReunionWatcherInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhSZXVuaW9uV2F0Y2hlckluZm8ucHJvdG8iiwEKElJldW5pb25XYXRjaGVy",
-          "SW5mbxIWCg50b3RhbF9wcm9ncmVzcxgEIAEoDRIaChJyZXdhcmRfdW5sb2Nr",
-          "X3RpbWUYASABKA0SEgoKd2F0Y2hlcl9pZBgJIAEoDRIXCg9pc190YWtlbl9y",
-          "ZXdhcmQYDCABKAgSFAoMY3VyX3Byb2dyZXNzGAogASgNQhYKFG9yZy5zb3Jh",
-          "cG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ReunionWatcherInfo), global::ReunionWatcherInfo.Parser, new[]{ "TotalProgress", "RewardUnlockTime", "WatcherId", "IsTakenReward", "CurProgress" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ReunionWatcherInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ReunionWatcherInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhSZXVuaW9uV2F0Y2hlckluZm8ucHJvdG8iiwEKElJldW5pb25XYXRjaGVy",
+            "SW5mbxIWCg50b3RhbF9wcm9ncmVzcxgEIAEoDRIaChJyZXdhcmRfdW5sb2Nr",
+            "X3RpbWUYASABKA0SEgoKd2F0Y2hlcl9pZBgJIAEoDRIXCg9pc190YWtlbl9y",
+            "ZXdhcmQYDCABKAgSFAoMY3VyX3Byb2dyZXNzGAogASgNQgyqAglOZXdQcm90",
+            "b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.ReunionWatcherInfo), global::NewProtos.ReunionWatcherInfo.Parser, new[]{ "TotalProgress", "RewardUnlockTime", "WatcherId", "IsTakenReward", "CurProgress" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class ReunionWatcherInfo : pb::IMessage<ReunionWatcherInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ReunionWatcherInfo> _parser = new pb::MessageParser<ReunionWatcherInfo>(() => new ReunionWatcherInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ReunionWatcherInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.ReunionWatcherInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ReunionWatcherInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ReunionWatcherInfo(ReunionWatcherInfo other) : this() {
+      totalProgress_ = other.totalProgress_;
+      rewardUnlockTime_ = other.rewardUnlockTime_;
+      watcherId_ = other.watcherId_;
+      isTakenReward_ = other.isTakenReward_;
+      curProgress_ = other.curProgress_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ReunionWatcherInfo Clone() {
+      return new ReunionWatcherInfo(this);
+    }
+
+    /// <summary>Field number for the "total_progress" field.</summary>
+    public const int TotalProgressFieldNumber = 4;
+    private uint totalProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TotalProgress {
+      get { return totalProgress_; }
+      set {
+        totalProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reward_unlock_time" field.</summary>
+    public const int RewardUnlockTimeFieldNumber = 1;
+    private uint rewardUnlockTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RewardUnlockTime {
+      get { return rewardUnlockTime_; }
+      set {
+        rewardUnlockTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "watcher_id" field.</summary>
+    public const int WatcherIdFieldNumber = 9;
+    private uint watcherId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WatcherId {
+      get { return watcherId_; }
+      set {
+        watcherId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_taken_reward" field.</summary>
+    public const int IsTakenRewardFieldNumber = 12;
+    private bool isTakenReward_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsTakenReward {
+      get { return isTakenReward_; }
+      set {
+        isTakenReward_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_progress" field.</summary>
+    public const int CurProgressFieldNumber = 10;
+    private uint curProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurProgress {
+      get { return curProgress_; }
+      set {
+        curProgress_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ReunionWatcherInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ReunionWatcherInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (TotalProgress != other.TotalProgress) return false;
+      if (RewardUnlockTime != other.RewardUnlockTime) return false;
+      if (WatcherId != other.WatcherId) return false;
+      if (IsTakenReward != other.IsTakenReward) return false;
+      if (CurProgress != other.CurProgress) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (TotalProgress != 0) hash ^= TotalProgress.GetHashCode();
+      if (RewardUnlockTime != 0) hash ^= RewardUnlockTime.GetHashCode();
+      if (WatcherId != 0) hash ^= WatcherId.GetHashCode();
+      if (IsTakenReward != false) hash ^= IsTakenReward.GetHashCode();
+      if (CurProgress != 0) hash ^= CurProgress.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (RewardUnlockTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(RewardUnlockTime);
+      }
+      if (TotalProgress != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(TotalProgress);
+      }
+      if (WatcherId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(WatcherId);
+      }
+      if (CurProgress != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(CurProgress);
+      }
+      if (IsTakenReward != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsTakenReward);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RewardUnlockTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(RewardUnlockTime);
+      }
+      if (TotalProgress != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(TotalProgress);
+      }
+      if (WatcherId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(WatcherId);
+      }
+      if (CurProgress != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(CurProgress);
+      }
+      if (IsTakenReward != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsTakenReward);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (TotalProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalProgress);
+      }
+      if (RewardUnlockTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardUnlockTime);
+      }
+      if (WatcherId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WatcherId);
+      }
+      if (IsTakenReward != false) {
+        size += 1 + 1;
+      }
+      if (CurProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurProgress);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ReunionWatcherInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.TotalProgress != 0) {
+        TotalProgress = other.TotalProgress;
+      }
+      if (other.RewardUnlockTime != 0) {
+        RewardUnlockTime = other.RewardUnlockTime;
+      }
+      if (other.WatcherId != 0) {
+        WatcherId = other.WatcherId;
+      }
+      if (other.IsTakenReward != false) {
+        IsTakenReward = other.IsTakenReward;
+      }
+      if (other.CurProgress != 0) {
+        CurProgress = other.CurProgress;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            RewardUnlockTime = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            TotalProgress = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            WatcherId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            CurProgress = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            IsTakenReward = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            RewardUnlockTime = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            TotalProgress = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            WatcherId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            CurProgress = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            IsTakenReward = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ReunionWatcherInfo : pb::IMessage<ReunionWatcherInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ReunionWatcherInfo> _parser = new pb::MessageParser<ReunionWatcherInfo>(() => new ReunionWatcherInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ReunionWatcherInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ReunionWatcherInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ReunionWatcherInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ReunionWatcherInfo(ReunionWatcherInfo other) : this() {
-    totalProgress_ = other.totalProgress_;
-    rewardUnlockTime_ = other.rewardUnlockTime_;
-    watcherId_ = other.watcherId_;
-    isTakenReward_ = other.isTakenReward_;
-    curProgress_ = other.curProgress_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ReunionWatcherInfo Clone() {
-    return new ReunionWatcherInfo(this);
-  }
-
-  /// <summary>Field number for the "total_progress" field.</summary>
-  public const int TotalProgressFieldNumber = 4;
-  private uint totalProgress_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TotalProgress {
-    get { return totalProgress_; }
-    set {
-      totalProgress_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "reward_unlock_time" field.</summary>
-  public const int RewardUnlockTimeFieldNumber = 1;
-  private uint rewardUnlockTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RewardUnlockTime {
-    get { return rewardUnlockTime_; }
-    set {
-      rewardUnlockTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "watcher_id" field.</summary>
-  public const int WatcherIdFieldNumber = 9;
-  private uint watcherId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WatcherId {
-    get { return watcherId_; }
-    set {
-      watcherId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_taken_reward" field.</summary>
-  public const int IsTakenRewardFieldNumber = 12;
-  private bool isTakenReward_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsTakenReward {
-    get { return isTakenReward_; }
-    set {
-      isTakenReward_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cur_progress" field.</summary>
-  public const int CurProgressFieldNumber = 10;
-  private uint curProgress_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurProgress {
-    get { return curProgress_; }
-    set {
-      curProgress_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ReunionWatcherInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ReunionWatcherInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (TotalProgress != other.TotalProgress) return false;
-    if (RewardUnlockTime != other.RewardUnlockTime) return false;
-    if (WatcherId != other.WatcherId) return false;
-    if (IsTakenReward != other.IsTakenReward) return false;
-    if (CurProgress != other.CurProgress) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (TotalProgress != 0) hash ^= TotalProgress.GetHashCode();
-    if (RewardUnlockTime != 0) hash ^= RewardUnlockTime.GetHashCode();
-    if (WatcherId != 0) hash ^= WatcherId.GetHashCode();
-    if (IsTakenReward != false) hash ^= IsTakenReward.GetHashCode();
-    if (CurProgress != 0) hash ^= CurProgress.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (RewardUnlockTime != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(RewardUnlockTime);
-    }
-    if (TotalProgress != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(TotalProgress);
-    }
-    if (WatcherId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(WatcherId);
-    }
-    if (CurProgress != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(CurProgress);
-    }
-    if (IsTakenReward != false) {
-      output.WriteRawTag(96);
-      output.WriteBool(IsTakenReward);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (RewardUnlockTime != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(RewardUnlockTime);
-    }
-    if (TotalProgress != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(TotalProgress);
-    }
-    if (WatcherId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(WatcherId);
-    }
-    if (CurProgress != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(CurProgress);
-    }
-    if (IsTakenReward != false) {
-      output.WriteRawTag(96);
-      output.WriteBool(IsTakenReward);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (TotalProgress != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalProgress);
-    }
-    if (RewardUnlockTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardUnlockTime);
-    }
-    if (WatcherId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WatcherId);
-    }
-    if (IsTakenReward != false) {
-      size += 1 + 1;
-    }
-    if (CurProgress != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurProgress);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ReunionWatcherInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.TotalProgress != 0) {
-      TotalProgress = other.TotalProgress;
-    }
-    if (other.RewardUnlockTime != 0) {
-      RewardUnlockTime = other.RewardUnlockTime;
-    }
-    if (other.WatcherId != 0) {
-      WatcherId = other.WatcherId;
-    }
-    if (other.IsTakenReward != false) {
-      IsTakenReward = other.IsTakenReward;
-    }
-    if (other.CurProgress != 0) {
-      CurProgress = other.CurProgress;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          RewardUnlockTime = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          TotalProgress = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          WatcherId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          CurProgress = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          IsTakenReward = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          RewardUnlockTime = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          TotalProgress = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          WatcherId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          CurProgress = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          IsTakenReward = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

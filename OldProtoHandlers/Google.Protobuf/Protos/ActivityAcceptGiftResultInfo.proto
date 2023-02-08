@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message ActivityAcceptGiftResultInfo {
   map<uint32, uint32> unaccept_gift_num_map = 3;

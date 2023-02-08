@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ExpeditionState.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message ExpeditionPathInfo {
   uint32 mark_id = 12;

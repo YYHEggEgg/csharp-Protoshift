@@ -9,348 +9,351 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SeaLampFlyLampNotify.proto</summary>
-public static partial class SeaLampFlyLampNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SeaLampFlyLampNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SeaLampFlyLampNotify.proto</summary>
+  public static partial class SeaLampFlyLampNotifyReflection {
 
-  static SeaLampFlyLampNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpTZWFMYW1wRmx5TGFtcE5vdGlmeS5wcm90bxoMVmVjdG9yLnByb3RvIl4K",
-          "FFNlYUxhbXBGbHlMYW1wTm90aWZ5EhQKA3BvcxgLIAEoCzIHLlZlY3RvchIQ",
-          "CghpdGVtX251bRgKIAEoDRIPCgdpdGVtX2lkGAcgASgNEg0KBXBhcmFtGAUg",
-          "ASgFQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SeaLampFlyLampNotify), global::SeaLampFlyLampNotify.Parser, new[]{ "Pos", "ItemNum", "ItemId", "Param" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SeaLampFlyLampNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SeaLampFlyLampNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpTZWFMYW1wRmx5TGFtcE5vdGlmeS5wcm90bxoMVmVjdG9yLnByb3RvIl4K",
+            "FFNlYUxhbXBGbHlMYW1wTm90aWZ5EhQKA3BvcxgLIAEoCzIHLlZlY3RvchIQ",
+            "CghpdGVtX251bRgKIAEoDRIPCgdpdGVtX2lkGAcgASgNEg0KBXBhcmFtGAUg",
+            "ASgFQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.SeaLampFlyLampNotify), global::OldProtos.SeaLampFlyLampNotify.Parser, new[]{ "Pos", "ItemNum", "ItemId", "Param" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 2105
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class SeaLampFlyLampNotify : pb::IMessage<SeaLampFlyLampNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SeaLampFlyLampNotify> _parser = new pb::MessageParser<SeaLampFlyLampNotify>(() => new SeaLampFlyLampNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SeaLampFlyLampNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.SeaLampFlyLampNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SeaLampFlyLampNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SeaLampFlyLampNotify(SeaLampFlyLampNotify other) : this() {
+      pos_ = other.pos_ != null ? other.pos_.Clone() : null;
+      itemNum_ = other.itemNum_;
+      itemId_ = other.itemId_;
+      param_ = other.param_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SeaLampFlyLampNotify Clone() {
+      return new SeaLampFlyLampNotify(this);
+    }
+
+    /// <summary>Field number for the "pos" field.</summary>
+    public const int PosFieldNumber = 11;
+    private global::OldProtos.Vector pos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector Pos {
+      get { return pos_; }
+      set {
+        pos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item_num" field.</summary>
+    public const int ItemNumFieldNumber = 10;
+    private uint itemNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ItemNum {
+      get { return itemNum_; }
+      set {
+        itemNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item_id" field.</summary>
+    public const int ItemIdFieldNumber = 7;
+    private uint itemId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ItemId {
+      get { return itemId_; }
+      set {
+        itemId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "param" field.</summary>
+    public const int ParamFieldNumber = 5;
+    private int param_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Param {
+      get { return param_; }
+      set {
+        param_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SeaLampFlyLampNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SeaLampFlyLampNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Pos, other.Pos)) return false;
+      if (ItemNum != other.ItemNum) return false;
+      if (ItemId != other.ItemId) return false;
+      if (Param != other.Param) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (pos_ != null) hash ^= Pos.GetHashCode();
+      if (ItemNum != 0) hash ^= ItemNum.GetHashCode();
+      if (ItemId != 0) hash ^= ItemId.GetHashCode();
+      if (Param != 0) hash ^= Param.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Param != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Param);
+      }
+      if (ItemId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ItemId);
+      }
+      if (ItemNum != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ItemNum);
+      }
+      if (pos_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(Pos);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Param != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Param);
+      }
+      if (ItemId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ItemId);
+      }
+      if (ItemNum != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ItemNum);
+      }
+      if (pos_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(Pos);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (pos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
+      }
+      if (ItemNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ItemNum);
+      }
+      if (ItemId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ItemId);
+      }
+      if (Param != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Param);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SeaLampFlyLampNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.pos_ != null) {
+        if (pos_ == null) {
+          Pos = new global::OldProtos.Vector();
+        }
+        Pos.MergeFrom(other.Pos);
+      }
+      if (other.ItemNum != 0) {
+        ItemNum = other.ItemNum;
+      }
+      if (other.ItemId != 0) {
+        ItemId = other.ItemId;
+      }
+      if (other.Param != 0) {
+        Param = other.Param;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            Param = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            ItemId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            ItemNum = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            if (pos_ == null) {
+              Pos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(Pos);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            Param = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            ItemId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            ItemNum = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            if (pos_ == null) {
+              Pos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(Pos);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 2105
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class SeaLampFlyLampNotify : pb::IMessage<SeaLampFlyLampNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SeaLampFlyLampNotify> _parser = new pb::MessageParser<SeaLampFlyLampNotify>(() => new SeaLampFlyLampNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SeaLampFlyLampNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SeaLampFlyLampNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SeaLampFlyLampNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SeaLampFlyLampNotify(SeaLampFlyLampNotify other) : this() {
-    pos_ = other.pos_ != null ? other.pos_.Clone() : null;
-    itemNum_ = other.itemNum_;
-    itemId_ = other.itemId_;
-    param_ = other.param_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SeaLampFlyLampNotify Clone() {
-    return new SeaLampFlyLampNotify(this);
-  }
-
-  /// <summary>Field number for the "pos" field.</summary>
-  public const int PosFieldNumber = 11;
-  private global::Vector pos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector Pos {
-    get { return pos_; }
-    set {
-      pos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "item_num" field.</summary>
-  public const int ItemNumFieldNumber = 10;
-  private uint itemNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ItemNum {
-    get { return itemNum_; }
-    set {
-      itemNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "item_id" field.</summary>
-  public const int ItemIdFieldNumber = 7;
-  private uint itemId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ItemId {
-    get { return itemId_; }
-    set {
-      itemId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "param" field.</summary>
-  public const int ParamFieldNumber = 5;
-  private int param_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Param {
-    get { return param_; }
-    set {
-      param_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SeaLampFlyLampNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SeaLampFlyLampNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(Pos, other.Pos)) return false;
-    if (ItemNum != other.ItemNum) return false;
-    if (ItemId != other.ItemId) return false;
-    if (Param != other.Param) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (pos_ != null) hash ^= Pos.GetHashCode();
-    if (ItemNum != 0) hash ^= ItemNum.GetHashCode();
-    if (ItemId != 0) hash ^= ItemId.GetHashCode();
-    if (Param != 0) hash ^= Param.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Param != 0) {
-      output.WriteRawTag(40);
-      output.WriteInt32(Param);
-    }
-    if (ItemId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(ItemId);
-    }
-    if (ItemNum != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(ItemNum);
-    }
-    if (pos_ != null) {
-      output.WriteRawTag(90);
-      output.WriteMessage(Pos);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Param != 0) {
-      output.WriteRawTag(40);
-      output.WriteInt32(Param);
-    }
-    if (ItemId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(ItemId);
-    }
-    if (ItemNum != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(ItemNum);
-    }
-    if (pos_ != null) {
-      output.WriteRawTag(90);
-      output.WriteMessage(Pos);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (pos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
-    }
-    if (ItemNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ItemNum);
-    }
-    if (ItemId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ItemId);
-    }
-    if (Param != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Param);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SeaLampFlyLampNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.pos_ != null) {
-      if (pos_ == null) {
-        Pos = new global::Vector();
-      }
-      Pos.MergeFrom(other.Pos);
-    }
-    if (other.ItemNum != 0) {
-      ItemNum = other.ItemNum;
-    }
-    if (other.ItemId != 0) {
-      ItemId = other.ItemId;
-    }
-    if (other.Param != 0) {
-      Param = other.Param;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          Param = input.ReadInt32();
-          break;
-        }
-        case 56: {
-          ItemId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          ItemNum = input.ReadUInt32();
-          break;
-        }
-        case 90: {
-          if (pos_ == null) {
-            Pos = new global::Vector();
-          }
-          input.ReadMessage(Pos);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          Param = input.ReadInt32();
-          break;
-        }
-        case 56: {
-          ItemId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          ItemNum = input.ReadUInt32();
-          break;
-        }
-        case 90: {
-          if (pos_ == null) {
-            Pos = new global::Vector();
-          }
-          input.ReadMessage(Pos);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -22,7 +22,7 @@ import "MonsterRoute.proto";
 import "SceneFishInfo.proto";
 import "SceneWeaponInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SceneMonsterInfo {
   uint32 monster_id = 1;

@@ -51,7 +51,7 @@ import "GCGMsgUseSkill.proto";
 import "GCGMsgUseSkillEnd.proto";
 import "GCGMsgWaitingListChange.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGMessage {
   oneof message {

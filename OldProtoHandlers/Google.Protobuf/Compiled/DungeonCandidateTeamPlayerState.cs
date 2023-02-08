@@ -9,40 +9,43 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from DungeonCandidateTeamPlayerState.proto</summary>
-public static partial class DungeonCandidateTeamPlayerStateReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for DungeonCandidateTeamPlayerState.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from DungeonCandidateTeamPlayerState.proto</summary>
+  public static partial class DungeonCandidateTeamPlayerStateReflection {
 
-  static DungeonCandidateTeamPlayerStateReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiVEdW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllclN0YXRlLnByb3RvKrcBCh9E",
-          "dW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllclN0YXRlEiwKKERVTkdFT05fQ0FO",
-          "RElEQVRFX1RFQU1fUExBWUVSX1NUQVRFX0lETEUQABI3CjNEVU5HRU9OX0NB",
-          "TkRJREFURV9URUFNX1BMQVlFUl9TVEFURV9DSEFOR0lOR19BVkFUQVIQARIt",
-          "CilEVU5HRU9OX0NBTkRJREFURV9URUFNX1BMQVlFUl9TVEFURV9SRUFEWRAC",
-          "Qh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::DungeonCandidateTeamPlayerState), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for DungeonCandidateTeamPlayerState.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static DungeonCandidateTeamPlayerStateReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiVEdW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllclN0YXRlLnByb3RvKrcBCh9E",
+            "dW5nZW9uQ2FuZGlkYXRlVGVhbVBsYXllclN0YXRlEiwKKERVTkdFT05fQ0FO",
+            "RElEQVRFX1RFQU1fUExBWUVSX1NUQVRFX0lETEUQABI3CjNEVU5HRU9OX0NB",
+            "TkRJREFURV9URUFNX1BMQVlFUl9TVEFURV9DSEFOR0lOR19BVkFUQVIQARIt",
+            "CilEVU5HRU9OX0NBTkRJREFURV9URUFNX1BMQVlFUl9TVEFURV9SRUFEWRAC",
+            "QgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.DungeonCandidateTeamPlayerState), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum DungeonCandidateTeamPlayerState {
+    [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_IDLE")] Idle = 0,
+    [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_CHANGING_AVATAR")] ChangingAvatar = 1,
+    [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_READY")] Ready = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum DungeonCandidateTeamPlayerState {
-  [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_IDLE")] Idle = 0,
-  [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_CHANGING_AVATAR")] ChangingAvatar = 1,
-  [pbr::OriginalName("DUNGEON_CANDIDATE_TEAM_PLAYER_STATE_READY")] Ready = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

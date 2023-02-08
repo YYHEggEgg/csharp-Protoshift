@@ -21,7 +21,7 @@ import "CustomDungeonSetting.proto";
 import "CustomDungeonSocial.proto";
 import "CustomDungeonState.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message CustomDungeonBrief {
   uint64 dungeon_guid = 14;

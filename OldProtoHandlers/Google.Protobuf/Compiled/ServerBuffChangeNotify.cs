@@ -9,366 +9,368 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ServerBuffChangeNotify.proto</summary>
-public static partial class ServerBuffChangeNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ServerBuffChangeNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ServerBuffChangeNotify.proto</summary>
+  public static partial class ServerBuffChangeNotifyReflection {
 
-  static ServerBuffChangeNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChxTZXJ2ZXJCdWZmQ2hhbmdlTm90aWZ5LnByb3RvGhBTZXJ2ZXJCdWZmLnBy",
-          "b3RvIswCChZTZXJ2ZXJCdWZmQ2hhbmdlTm90aWZ5Ek0KF3NlcnZlcl9idWZm",
-          "X2NoYW5nZV90eXBlGAcgASgOMiwuU2VydmVyQnVmZkNoYW5nZU5vdGlmeS5T",
-          "ZXJ2ZXJCdWZmQ2hhbmdlVHlwZRIYChBpc19jcmVhdHVyZV9idWZmGAogASgI",
-          "EhYKDmVudGl0eV9pZF9saXN0GAEgAygNEhgKEGF2YXRhcl9ndWlkX2xpc3QY",
-          "DCADKAQSJQoQc2VydmVyX2J1ZmZfbGlzdBgLIAMoCzILLlNlcnZlckJ1ZmYi",
-          "cAoUU2VydmVyQnVmZkNoYW5nZVR5cGUSKwonU0VSVkVSX0JVRkZfQ0hBTkdF",
-          "X1RZUEVfQUREX1NFUlZFUl9CVUZGEAASKwonU0VSVkVSX0JVRkZfQ0hBTkdF",
-          "X1RZUEVfREVMX1NFUlZFUl9CVUZGEAFCHgocZW11LmdyYXNzY3V0dGVyLm5l",
-          "dC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ServerBuffReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ServerBuffChangeNotify), global::ServerBuffChangeNotify.Parser, new[]{ "ServerBuffChangeType", "IsCreatureBuff", "EntityIdList", "AvatarGuidList", "ServerBuffList" }, null, new[]{ typeof(global::ServerBuffChangeNotify.Types.ServerBuffChangeType) }, null, null)
-        }));
-  }
-  #endregion
-
-}
-#region Messages
-/// <summary>
-/// CmdId: 361
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class ServerBuffChangeNotify : pb::IMessage<ServerBuffChangeNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ServerBuffChangeNotify> _parser = new pb::MessageParser<ServerBuffChangeNotify>(() => new ServerBuffChangeNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ServerBuffChangeNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ServerBuffChangeNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ServerBuffChangeNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ServerBuffChangeNotify(ServerBuffChangeNotify other) : this() {
-    serverBuffChangeType_ = other.serverBuffChangeType_;
-    isCreatureBuff_ = other.isCreatureBuff_;
-    entityIdList_ = other.entityIdList_.Clone();
-    avatarGuidList_ = other.avatarGuidList_.Clone();
-    serverBuffList_ = other.serverBuffList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ServerBuffChangeNotify Clone() {
-    return new ServerBuffChangeNotify(this);
-  }
-
-  /// <summary>Field number for the "server_buff_change_type" field.</summary>
-  public const int ServerBuffChangeTypeFieldNumber = 7;
-  private global::ServerBuffChangeNotify.Types.ServerBuffChangeType serverBuffChangeType_ = global::ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ServerBuffChangeNotify.Types.ServerBuffChangeType ServerBuffChangeType {
-    get { return serverBuffChangeType_; }
-    set {
-      serverBuffChangeType_ = value;
+    #region Descriptor
+    /// <summary>File descriptor for ServerBuffChangeNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
     }
-  }
+    private static pbr::FileDescriptor descriptor;
 
-  /// <summary>Field number for the "is_creature_buff" field.</summary>
-  public const int IsCreatureBuffFieldNumber = 10;
-  private bool isCreatureBuff_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsCreatureBuff {
-    get { return isCreatureBuff_; }
-    set {
-      isCreatureBuff_ = value;
+    static ServerBuffChangeNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChxTZXJ2ZXJCdWZmQ2hhbmdlTm90aWZ5LnByb3RvGhBTZXJ2ZXJCdWZmLnBy",
+            "b3RvIswCChZTZXJ2ZXJCdWZmQ2hhbmdlTm90aWZ5Ek0KF3NlcnZlcl9idWZm",
+            "X2NoYW5nZV90eXBlGAcgASgOMiwuU2VydmVyQnVmZkNoYW5nZU5vdGlmeS5T",
+            "ZXJ2ZXJCdWZmQ2hhbmdlVHlwZRIYChBpc19jcmVhdHVyZV9idWZmGAogASgI",
+            "EhYKDmVudGl0eV9pZF9saXN0GAEgAygNEhgKEGF2YXRhcl9ndWlkX2xpc3QY",
+            "DCADKAQSJQoQc2VydmVyX2J1ZmZfbGlzdBgLIAMoCzILLlNlcnZlckJ1ZmYi",
+            "cAoUU2VydmVyQnVmZkNoYW5nZVR5cGUSKwonU0VSVkVSX0JVRkZfQ0hBTkdF",
+            "X1RZUEVfQUREX1NFUlZFUl9CVUZGEAASKwonU0VSVkVSX0JVRkZfQ0hBTkdF",
+            "X1RZUEVfREVMX1NFUlZFUl9CVUZGEAFCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ServerBuffReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ServerBuffChangeNotify), global::OldProtos.ServerBuffChangeNotify.Parser, new[]{ "ServerBuffChangeType", "IsCreatureBuff", "EntityIdList", "AvatarGuidList", "ServerBuffList" }, null, new[]{ typeof(global::OldProtos.ServerBuffChangeNotify.Types.ServerBuffChangeType) }, null, null)
+          }));
     }
-  }
+    #endregion
 
-  /// <summary>Field number for the "entity_id_list" field.</summary>
-  public const int EntityIdListFieldNumber = 1;
-  private static readonly pb::FieldCodec<uint> _repeated_entityIdList_codec
-      = pb::FieldCodec.ForUInt32(10);
-  private readonly pbc::RepeatedField<uint> entityIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> EntityIdList {
-    get { return entityIdList_; }
   }
-
-  /// <summary>Field number for the "avatar_guid_list" field.</summary>
-  public const int AvatarGuidListFieldNumber = 12;
-  private static readonly pb::FieldCodec<ulong> _repeated_avatarGuidList_codec
-      = pb::FieldCodec.ForUInt64(98);
-  private readonly pbc::RepeatedField<ulong> avatarGuidList_ = new pbc::RepeatedField<ulong>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<ulong> AvatarGuidList {
-    get { return avatarGuidList_; }
-  }
-
-  /// <summary>Field number for the "server_buff_list" field.</summary>
-  public const int ServerBuffListFieldNumber = 11;
-  private static readonly pb::FieldCodec<global::ServerBuff> _repeated_serverBuffList_codec
-      = pb::FieldCodec.ForMessage(90, global::ServerBuff.Parser);
-  private readonly pbc::RepeatedField<global::ServerBuff> serverBuffList_ = new pbc::RepeatedField<global::ServerBuff>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ServerBuff> ServerBuffList {
-    get { return serverBuffList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ServerBuffChangeNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ServerBuffChangeNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ServerBuffChangeType != other.ServerBuffChangeType) return false;
-    if (IsCreatureBuff != other.IsCreatureBuff) return false;
-    if(!entityIdList_.Equals(other.entityIdList_)) return false;
-    if(!avatarGuidList_.Equals(other.avatarGuidList_)) return false;
-    if(!serverBuffList_.Equals(other.serverBuffList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ServerBuffChangeType != global::ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) hash ^= ServerBuffChangeType.GetHashCode();
-    if (IsCreatureBuff != false) hash ^= IsCreatureBuff.GetHashCode();
-    hash ^= entityIdList_.GetHashCode();
-    hash ^= avatarGuidList_.GetHashCode();
-    hash ^= serverBuffList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
+  #region Messages
+  /// <summary>
+  /// CmdId: 361
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class ServerBuffChangeNotify : pb::IMessage<ServerBuffChangeNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    entityIdList_.WriteTo(output, _repeated_entityIdList_codec);
-    if (ServerBuffChangeType != global::ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
-      output.WriteRawTag(56);
-      output.WriteEnum((int) ServerBuffChangeType);
-    }
-    if (IsCreatureBuff != false) {
-      output.WriteRawTag(80);
-      output.WriteBool(IsCreatureBuff);
-    }
-    serverBuffList_.WriteTo(output, _repeated_serverBuffList_codec);
-    avatarGuidList_.WriteTo(output, _repeated_avatarGuidList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
+      , pb::IBufferMessage
   #endif
-  }
+  {
+    private static readonly pb::MessageParser<ServerBuffChangeNotify> _parser = new pb::MessageParser<ServerBuffChangeNotify>(() => new ServerBuffChangeNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ServerBuffChangeNotify> Parser { get { return _parser; } }
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    entityIdList_.WriteTo(ref output, _repeated_entityIdList_codec);
-    if (ServerBuffChangeType != global::ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
-      output.WriteRawTag(56);
-      output.WriteEnum((int) ServerBuffChangeType);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ServerBuffChangeNotifyReflection.Descriptor.MessageTypes[0]; }
     }
-    if (IsCreatureBuff != false) {
-      output.WriteRawTag(80);
-      output.WriteBool(IsCreatureBuff);
-    }
-    serverBuffList_.WriteTo(ref output, _repeated_serverBuffList_codec);
-    avatarGuidList_.WriteTo(ref output, _repeated_avatarGuidList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ServerBuffChangeType != global::ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ServerBuffChangeType);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
     }
-    if (IsCreatureBuff != false) {
-      size += 1 + 1;
-    }
-    size += entityIdList_.CalculateSize(_repeated_entityIdList_codec);
-    size += avatarGuidList_.CalculateSize(_repeated_avatarGuidList_codec);
-    size += serverBuffList_.CalculateSize(_repeated_serverBuffList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ServerBuffChangeNotify other) {
-    if (other == null) {
-      return;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ServerBuffChangeNotify() {
+      OnConstruction();
     }
-    if (other.ServerBuffChangeType != global::ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
-      ServerBuffChangeType = other.ServerBuffChangeType;
-    }
-    if (other.IsCreatureBuff != false) {
-      IsCreatureBuff = other.IsCreatureBuff;
-    }
-    entityIdList_.Add(other.entityIdList_);
-    avatarGuidList_.Add(other.avatarGuidList_);
-    serverBuffList_.Add(other.serverBuffList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10:
-        case 8: {
-          entityIdList_.AddEntriesFrom(input, _repeated_entityIdList_codec);
-          break;
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ServerBuffChangeNotify(ServerBuffChangeNotify other) : this() {
+      serverBuffChangeType_ = other.serverBuffChangeType_;
+      isCreatureBuff_ = other.isCreatureBuff_;
+      entityIdList_ = other.entityIdList_.Clone();
+      avatarGuidList_ = other.avatarGuidList_.Clone();
+      serverBuffList_ = other.serverBuffList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ServerBuffChangeNotify Clone() {
+      return new ServerBuffChangeNotify(this);
+    }
+
+    /// <summary>Field number for the "server_buff_change_type" field.</summary>
+    public const int ServerBuffChangeTypeFieldNumber = 7;
+    private global::OldProtos.ServerBuffChangeNotify.Types.ServerBuffChangeType serverBuffChangeType_ = global::OldProtos.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ServerBuffChangeNotify.Types.ServerBuffChangeType ServerBuffChangeType {
+      get { return serverBuffChangeType_; }
+      set {
+        serverBuffChangeType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_creature_buff" field.</summary>
+    public const int IsCreatureBuffFieldNumber = 10;
+    private bool isCreatureBuff_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsCreatureBuff {
+      get { return isCreatureBuff_; }
+      set {
+        isCreatureBuff_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id_list" field.</summary>
+    public const int EntityIdListFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_entityIdList_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> entityIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> EntityIdList {
+      get { return entityIdList_; }
+    }
+
+    /// <summary>Field number for the "avatar_guid_list" field.</summary>
+    public const int AvatarGuidListFieldNumber = 12;
+    private static readonly pb::FieldCodec<ulong> _repeated_avatarGuidList_codec
+        = pb::FieldCodec.ForUInt64(98);
+    private readonly pbc::RepeatedField<ulong> avatarGuidList_ = new pbc::RepeatedField<ulong>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<ulong> AvatarGuidList {
+      get { return avatarGuidList_; }
+    }
+
+    /// <summary>Field number for the "server_buff_list" field.</summary>
+    public const int ServerBuffListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::OldProtos.ServerBuff> _repeated_serverBuffList_codec
+        = pb::FieldCodec.ForMessage(90, global::OldProtos.ServerBuff.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.ServerBuff> serverBuffList_ = new pbc::RepeatedField<global::OldProtos.ServerBuff>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.ServerBuff> ServerBuffList {
+      get { return serverBuffList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ServerBuffChangeNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ServerBuffChangeNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ServerBuffChangeType != other.ServerBuffChangeType) return false;
+      if (IsCreatureBuff != other.IsCreatureBuff) return false;
+      if(!entityIdList_.Equals(other.entityIdList_)) return false;
+      if(!avatarGuidList_.Equals(other.avatarGuidList_)) return false;
+      if(!serverBuffList_.Equals(other.serverBuffList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ServerBuffChangeType != global::OldProtos.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) hash ^= ServerBuffChangeType.GetHashCode();
+      if (IsCreatureBuff != false) hash ^= IsCreatureBuff.GetHashCode();
+      hash ^= entityIdList_.GetHashCode();
+      hash ^= avatarGuidList_.GetHashCode();
+      hash ^= serverBuffList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      entityIdList_.WriteTo(output, _repeated_entityIdList_codec);
+      if (ServerBuffChangeType != global::OldProtos.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) ServerBuffChangeType);
+      }
+      if (IsCreatureBuff != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsCreatureBuff);
+      }
+      serverBuffList_.WriteTo(output, _repeated_serverBuffList_codec);
+      avatarGuidList_.WriteTo(output, _repeated_avatarGuidList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      entityIdList_.WriteTo(ref output, _repeated_entityIdList_codec);
+      if (ServerBuffChangeType != global::OldProtos.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) ServerBuffChangeType);
+      }
+      if (IsCreatureBuff != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsCreatureBuff);
+      }
+      serverBuffList_.WriteTo(ref output, _repeated_serverBuffList_codec);
+      avatarGuidList_.WriteTo(ref output, _repeated_avatarGuidList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ServerBuffChangeType != global::OldProtos.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ServerBuffChangeType);
+      }
+      if (IsCreatureBuff != false) {
+        size += 1 + 1;
+      }
+      size += entityIdList_.CalculateSize(_repeated_entityIdList_codec);
+      size += avatarGuidList_.CalculateSize(_repeated_avatarGuidList_codec);
+      size += serverBuffList_.CalculateSize(_repeated_serverBuffList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ServerBuffChangeNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ServerBuffChangeType != global::OldProtos.ServerBuffChangeNotify.Types.ServerBuffChangeType.AddServerBuff) {
+        ServerBuffChangeType = other.ServerBuffChangeType;
+      }
+      if (other.IsCreatureBuff != false) {
+        IsCreatureBuff = other.IsCreatureBuff;
+      }
+      entityIdList_.Add(other.entityIdList_);
+      avatarGuidList_.Add(other.avatarGuidList_);
+      serverBuffList_.Add(other.serverBuffList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10:
+          case 8: {
+            entityIdList_.AddEntriesFrom(input, _repeated_entityIdList_codec);
+            break;
+          }
+          case 56: {
+            ServerBuffChangeType = (global::OldProtos.ServerBuffChangeNotify.Types.ServerBuffChangeType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            IsCreatureBuff = input.ReadBool();
+            break;
+          }
+          case 90: {
+            serverBuffList_.AddEntriesFrom(input, _repeated_serverBuffList_codec);
+            break;
+          }
+          case 98:
+          case 96: {
+            avatarGuidList_.AddEntriesFrom(input, _repeated_avatarGuidList_codec);
+            break;
+          }
         }
-        case 56: {
-          ServerBuffChangeType = (global::ServerBuffChangeNotify.Types.ServerBuffChangeType) input.ReadEnum();
-          break;
-        }
-        case 80: {
-          IsCreatureBuff = input.ReadBool();
-          break;
-        }
-        case 90: {
-          serverBuffList_.AddEntriesFrom(input, _repeated_serverBuffList_codec);
-          break;
-        }
-        case 98:
-        case 96: {
-          avatarGuidList_.AddEntriesFrom(input, _repeated_avatarGuidList_codec);
-          break;
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10:
+          case 8: {
+            entityIdList_.AddEntriesFrom(ref input, _repeated_entityIdList_codec);
+            break;
+          }
+          case 56: {
+            ServerBuffChangeType = (global::OldProtos.ServerBuffChangeNotify.Types.ServerBuffChangeType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            IsCreatureBuff = input.ReadBool();
+            break;
+          }
+          case 90: {
+            serverBuffList_.AddEntriesFrom(ref input, _repeated_serverBuffList_codec);
+            break;
+          }
+          case 98:
+          case 96: {
+            avatarGuidList_.AddEntriesFrom(ref input, _repeated_avatarGuidList_codec);
+            break;
+          }
         }
       }
     }
-  #endif
-  }
+    #endif
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10:
-        case 8: {
-          entityIdList_.AddEntriesFrom(ref input, _repeated_entityIdList_codec);
-          break;
-        }
-        case 56: {
-          ServerBuffChangeType = (global::ServerBuffChangeNotify.Types.ServerBuffChangeType) input.ReadEnum();
-          break;
-        }
-        case 80: {
-          IsCreatureBuff = input.ReadBool();
-          break;
-        }
-        case 90: {
-          serverBuffList_.AddEntriesFrom(ref input, _repeated_serverBuffList_codec);
-          break;
-        }
-        case 98:
-        case 96: {
-          avatarGuidList_.AddEntriesFrom(ref input, _repeated_avatarGuidList_codec);
-          break;
-        }
+    #region Nested types
+    /// <summary>Container for nested types declared in the ServerBuffChangeNotify message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum ServerBuffChangeType {
+        [pbr::OriginalName("SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF")] AddServerBuff = 0,
+        [pbr::OriginalName("SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF")] DelServerBuff = 1,
       }
-    }
-  }
-  #endif
 
-  #region Nested types
-  /// <summary>Container for nested types declared in the ServerBuffChangeNotify message type.</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static partial class Types {
-    public enum ServerBuffChangeType {
-      [pbr::OriginalName("SERVER_BUFF_CHANGE_TYPE_ADD_SERVER_BUFF")] AddServerBuff = 0,
-      [pbr::OriginalName("SERVER_BUFF_CHANGE_TYPE_DEL_SERVER_BUFF")] DelServerBuff = 1,
     }
+    #endregion
 
   }
+
   #endregion
 
 }
-
-#endregion
-
 
 #endregion Designer generated code

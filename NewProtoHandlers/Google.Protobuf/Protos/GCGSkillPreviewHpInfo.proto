@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GCGSkillHpChangeType.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGSkillPreviewHpInfo {
   GCGSkillHpChangeType change_type = 8;

@@ -9,381 +9,384 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from PingReq.proto</summary>
-public static partial class PingReqReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for PingReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from PingReq.proto</summary>
+  public static partial class PingReqReflection {
 
-  static PingReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Cg1QaW5nUmVxLnByb3RvImYKB1BpbmdSZXESEwoLY2xpZW50X3RpbWUYBiAB",
-          "KA0SFwoPdG90YWxfdGlja190aW1lGAkgASgBEg8KB3VlX3RpbWUYAiABKAIS",
-          "CwoDc2VxGAwgASgNEg8KB3NjX2RhdGEYAyABKAxCFgoUb3JnLnNvcmFwb2lu",
-          "dGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::PingReq), global::PingReq.Parser, new[]{ "ClientTime", "TotalTickTime", "UeTime", "Seq", "ScData" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for PingReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static PingReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Cg1QaW5nUmVxLnByb3RvImYKB1BpbmdSZXESEwoLY2xpZW50X3RpbWUYBiAB",
+            "KA0SFwoPdG90YWxfdGlja190aW1lGAkgASgBEg8KB3VlX3RpbWUYAiABKAIS",
+            "CwoDc2VxGAwgASgNEg8KB3NjX2RhdGEYAyABKAxCDKoCCU5ld1Byb3Rvc2IG",
+            "cHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.PingReq), global::NewProtos.PingReq.Parser, new[]{ "ClientTime", "TotalTickTime", "UeTime", "Seq", "ScData" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 100;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
+  /// </summary>
+  public sealed partial class PingReq : pb::IMessage<PingReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PingReq> _parser = new pb::MessageParser<PingReq>(() => new PingReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PingReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.PingReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PingReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PingReq(PingReq other) : this() {
+      clientTime_ = other.clientTime_;
+      totalTickTime_ = other.totalTickTime_;
+      ueTime_ = other.ueTime_;
+      seq_ = other.seq_;
+      scData_ = other.scData_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PingReq Clone() {
+      return new PingReq(this);
+    }
+
+    /// <summary>Field number for the "client_time" field.</summary>
+    public const int ClientTimeFieldNumber = 6;
+    private uint clientTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ClientTime {
+      get { return clientTime_; }
+      set {
+        clientTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_tick_time" field.</summary>
+    public const int TotalTickTimeFieldNumber = 9;
+    private double totalTickTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public double TotalTickTime {
+      get { return totalTickTime_; }
+      set {
+        totalTickTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ue_time" field.</summary>
+    public const int UeTimeFieldNumber = 2;
+    private float ueTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float UeTime {
+      get { return ueTime_; }
+      set {
+        ueTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "seq" field.</summary>
+    public const int SeqFieldNumber = 12;
+    private uint seq_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Seq {
+      get { return seq_; }
+      set {
+        seq_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "sc_data" field.</summary>
+    public const int ScDataFieldNumber = 3;
+    private pb::ByteString scData_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString ScData {
+      get { return scData_; }
+      set {
+        scData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PingReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PingReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ClientTime != other.ClientTime) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(TotalTickTime, other.TotalTickTime)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(UeTime, other.UeTime)) return false;
+      if (Seq != other.Seq) return false;
+      if (ScData != other.ScData) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ClientTime != 0) hash ^= ClientTime.GetHashCode();
+      if (TotalTickTime != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(TotalTickTime);
+      if (UeTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(UeTime);
+      if (Seq != 0) hash ^= Seq.GetHashCode();
+      if (ScData.Length != 0) hash ^= ScData.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (UeTime != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(UeTime);
+      }
+      if (ScData.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(ScData);
+      }
+      if (ClientTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ClientTime);
+      }
+      if (TotalTickTime != 0D) {
+        output.WriteRawTag(73);
+        output.WriteDouble(TotalTickTime);
+      }
+      if (Seq != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Seq);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (UeTime != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(UeTime);
+      }
+      if (ScData.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(ScData);
+      }
+      if (ClientTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ClientTime);
+      }
+      if (TotalTickTime != 0D) {
+        output.WriteRawTag(73);
+        output.WriteDouble(TotalTickTime);
+      }
+      if (Seq != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Seq);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ClientTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ClientTime);
+      }
+      if (TotalTickTime != 0D) {
+        size += 1 + 8;
+      }
+      if (UeTime != 0F) {
+        size += 1 + 4;
+      }
+      if (Seq != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Seq);
+      }
+      if (ScData.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(ScData);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PingReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ClientTime != 0) {
+        ClientTime = other.ClientTime;
+      }
+      if (other.TotalTickTime != 0D) {
+        TotalTickTime = other.TotalTickTime;
+      }
+      if (other.UeTime != 0F) {
+        UeTime = other.UeTime;
+      }
+      if (other.Seq != 0) {
+        Seq = other.Seq;
+      }
+      if (other.ScData.Length != 0) {
+        ScData = other.ScData;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 21: {
+            UeTime = input.ReadFloat();
+            break;
+          }
+          case 26: {
+            ScData = input.ReadBytes();
+            break;
+          }
+          case 48: {
+            ClientTime = input.ReadUInt32();
+            break;
+          }
+          case 73: {
+            TotalTickTime = input.ReadDouble();
+            break;
+          }
+          case 96: {
+            Seq = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 21: {
+            UeTime = input.ReadFloat();
+            break;
+          }
+          case 26: {
+            ScData = input.ReadBytes();
+            break;
+          }
+          case 48: {
+            ClientTime = input.ReadUInt32();
+            break;
+          }
+          case 73: {
+            TotalTickTime = input.ReadDouble();
+            break;
+          }
+          case 96: {
+            Seq = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 100;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-///   IS_ALLOW_CLIENT = 1;
-/// }
-/// </summary>
-public sealed partial class PingReq : pb::IMessage<PingReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<PingReq> _parser = new pb::MessageParser<PingReq>(() => new PingReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<PingReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::PingReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PingReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PingReq(PingReq other) : this() {
-    clientTime_ = other.clientTime_;
-    totalTickTime_ = other.totalTickTime_;
-    ueTime_ = other.ueTime_;
-    seq_ = other.seq_;
-    scData_ = other.scData_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PingReq Clone() {
-    return new PingReq(this);
-  }
-
-  /// <summary>Field number for the "client_time" field.</summary>
-  public const int ClientTimeFieldNumber = 6;
-  private uint clientTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ClientTime {
-    get { return clientTime_; }
-    set {
-      clientTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "total_tick_time" field.</summary>
-  public const int TotalTickTimeFieldNumber = 9;
-  private double totalTickTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public double TotalTickTime {
-    get { return totalTickTime_; }
-    set {
-      totalTickTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ue_time" field.</summary>
-  public const int UeTimeFieldNumber = 2;
-  private float ueTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float UeTime {
-    get { return ueTime_; }
-    set {
-      ueTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "seq" field.</summary>
-  public const int SeqFieldNumber = 12;
-  private uint seq_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Seq {
-    get { return seq_; }
-    set {
-      seq_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "sc_data" field.</summary>
-  public const int ScDataFieldNumber = 3;
-  private pb::ByteString scData_ = pb::ByteString.Empty;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pb::ByteString ScData {
-    get { return scData_; }
-    set {
-      scData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as PingReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(PingReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ClientTime != other.ClientTime) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(TotalTickTime, other.TotalTickTime)) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(UeTime, other.UeTime)) return false;
-    if (Seq != other.Seq) return false;
-    if (ScData != other.ScData) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ClientTime != 0) hash ^= ClientTime.GetHashCode();
-    if (TotalTickTime != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(TotalTickTime);
-    if (UeTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(UeTime);
-    if (Seq != 0) hash ^= Seq.GetHashCode();
-    if (ScData.Length != 0) hash ^= ScData.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (UeTime != 0F) {
-      output.WriteRawTag(21);
-      output.WriteFloat(UeTime);
-    }
-    if (ScData.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteBytes(ScData);
-    }
-    if (ClientTime != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(ClientTime);
-    }
-    if (TotalTickTime != 0D) {
-      output.WriteRawTag(73);
-      output.WriteDouble(TotalTickTime);
-    }
-    if (Seq != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Seq);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (UeTime != 0F) {
-      output.WriteRawTag(21);
-      output.WriteFloat(UeTime);
-    }
-    if (ScData.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteBytes(ScData);
-    }
-    if (ClientTime != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(ClientTime);
-    }
-    if (TotalTickTime != 0D) {
-      output.WriteRawTag(73);
-      output.WriteDouble(TotalTickTime);
-    }
-    if (Seq != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Seq);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ClientTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ClientTime);
-    }
-    if (TotalTickTime != 0D) {
-      size += 1 + 8;
-    }
-    if (UeTime != 0F) {
-      size += 1 + 4;
-    }
-    if (Seq != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Seq);
-    }
-    if (ScData.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeBytesSize(ScData);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(PingReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ClientTime != 0) {
-      ClientTime = other.ClientTime;
-    }
-    if (other.TotalTickTime != 0D) {
-      TotalTickTime = other.TotalTickTime;
-    }
-    if (other.UeTime != 0F) {
-      UeTime = other.UeTime;
-    }
-    if (other.Seq != 0) {
-      Seq = other.Seq;
-    }
-    if (other.ScData.Length != 0) {
-      ScData = other.ScData;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 21: {
-          UeTime = input.ReadFloat();
-          break;
-        }
-        case 26: {
-          ScData = input.ReadBytes();
-          break;
-        }
-        case 48: {
-          ClientTime = input.ReadUInt32();
-          break;
-        }
-        case 73: {
-          TotalTickTime = input.ReadDouble();
-          break;
-        }
-        case 96: {
-          Seq = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 21: {
-          UeTime = input.ReadFloat();
-          break;
-        }
-        case 26: {
-          ScData = input.ReadBytes();
-          break;
-        }
-        case 48: {
-          ClientTime = input.ReadUInt32();
-          break;
-        }
-        case 73: {
-          TotalTickTime = input.ReadDouble();
-          break;
-        }
-        case 96: {
-          Seq = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

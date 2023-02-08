@@ -9,40 +9,43 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGSettleOption.proto</summary>
-public static partial class GCGSettleOptionReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGSettleOption.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGSettleOption.proto</summary>
+  public static partial class GCGSettleOptionReflection {
 
-  static GCGSettleOptionReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVHQ0dTZXR0bGVPcHRpb24ucHJvdG8qmAEKD0dDR1NldHRsZU9wdGlvbhIe",
-          "ChpHQ0dfU0VUVExFX09QVElPTl9PUFRfTk9ORRAAEh4KGkdDR19TRVRUTEVf",
-          "T1BUSU9OX09QVF9FWElUEAESIgoeR0NHX1NFVFRMRV9PUFRJT05fT1BUX0NP",
-          "TlRJTlVFEAISIQodR0NHX1NFVFRMRV9PUFRJT05fT1BUX1JFU1RBUlQQA0Ie",
-          "ChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GCGSettleOption), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for GCGSettleOption.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGSettleOptionReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVHQ0dTZXR0bGVPcHRpb24ucHJvdG8qmAEKD0dDR1NldHRsZU9wdGlvbhIe",
+            "ChpHQ0dfU0VUVExFX09QVElPTl9PUFRfTk9ORRAAEh4KGkdDR19TRVRUTEVf",
+            "T1BUSU9OX09QVF9FWElUEAESIgoeR0NHX1NFVFRMRV9PUFRJT05fT1BUX0NP",
+            "TlRJTlVFEAISIQodR0NHX1NFVFRMRV9PUFRJT05fT1BUX1JFU1RBUlQQA0IM",
+            "qgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.GCGSettleOption), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum GCGSettleOption {
+    [pbr::OriginalName("GCG_SETTLE_OPTION_OPT_NONE")] OptNone = 0,
+    [pbr::OriginalName("GCG_SETTLE_OPTION_OPT_EXIT")] OptExit = 1,
+    [pbr::OriginalName("GCG_SETTLE_OPTION_OPT_CONTINUE")] OptContinue = 2,
+    [pbr::OriginalName("GCG_SETTLE_OPTION_OPT_RESTART")] OptRestart = 3,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum GCGSettleOption {
-  [pbr::OriginalName("GCG_SETTLE_OPTION_OPT_NONE")] OptNone = 0,
-  [pbr::OriginalName("GCG_SETTLE_OPTION_OPT_EXIT")] OptExit = 1,
-  [pbr::OriginalName("GCG_SETTLE_OPTION_OPT_CONTINUE")] OptContinue = 2,
-  [pbr::OriginalName("GCG_SETTLE_OPTION_OPT_RESTART")] OptRestart = 3,
-}
-
-#endregion
-
 
 #endregion Designer generated code

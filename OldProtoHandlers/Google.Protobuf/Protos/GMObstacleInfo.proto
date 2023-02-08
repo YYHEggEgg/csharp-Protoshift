@@ -20,7 +20,7 @@ import "MathQuaternion.proto";
 import "Vector.proto";
 import "Vector3Int.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message GMObstacleInfo {
   int64 timestamp = 14;

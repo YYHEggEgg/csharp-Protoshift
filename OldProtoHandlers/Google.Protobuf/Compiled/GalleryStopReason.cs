@@ -9,54 +9,57 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GalleryStopReason.proto</summary>
-public static partial class GalleryStopReasonReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GalleryStopReason.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GalleryStopReason.proto</summary>
+  public static partial class GalleryStopReasonReflection {
 
-  static GalleryStopReasonReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdHYWxsZXJ5U3RvcFJlYXNvbi5wcm90byrFAwoRR2FsbGVyeVN0b3BSZWFz",
-          "b24SHAoYR0FMTEVSWV9TVE9QX1JFQVNPTl9OT05FEAASHgoaR0FMTEVSWV9T",
-          "VE9QX1JFQVNPTl9USU1FVVAQARIoCiRHQUxMRVJZX1NUT1BfUkVBU09OX0NM",
-          "SUVOVF9JTlRFUlJVUFQQAhItCilHQUxMRVJZX1NUT1BfUkVBU09OX0xVQV9J",
-          "TlRFUlJVUFRfU1VDQ0VTUxADEioKJkdBTExFUllfU1RPUF9SRUFTT05fTFVB",
-          "X0lOVEVSUlVQVF9GQUlMEAQSKQolR0FMTEVSWV9TVE9QX1JFQVNPTl9PV05F",
-          "Ul9MRUFWRV9TQ0VORRAFEigKJEdBTExFUllfU1RPUF9SRUFTT05fUExBWV9J",
-          "TklUX0ZBSUxFRBAGEioKJkdBTExFUllfU1RPUF9SRUFTT05fT1RIRVJfUExB",
-          "WUVSX0VOVEVSEAcSIgoeR0FMTEVSWV9TVE9QX1JFQVNPTl9BVkFUQVJfRElF",
-          "EAgSIAocR0FMTEVSWV9TVE9QX1JFQVNPTl9GSU5JU0hFRBAJEiYKIkdBTExF",
-          "UllfU1RPUF9SRUFTT05fRlVOR1VTX0FMTF9ESUUQCkIeChxlbXUuZ3Jhc3Nj",
-          "dXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GalleryStopReason), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for GalleryStopReason.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GalleryStopReasonReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdHYWxsZXJ5U3RvcFJlYXNvbi5wcm90byrFAwoRR2FsbGVyeVN0b3BSZWFz",
+            "b24SHAoYR0FMTEVSWV9TVE9QX1JFQVNPTl9OT05FEAASHgoaR0FMTEVSWV9T",
+            "VE9QX1JFQVNPTl9USU1FVVAQARIoCiRHQUxMRVJZX1NUT1BfUkVBU09OX0NM",
+            "SUVOVF9JTlRFUlJVUFQQAhItCilHQUxMRVJZX1NUT1BfUkVBU09OX0xVQV9J",
+            "TlRFUlJVUFRfU1VDQ0VTUxADEioKJkdBTExFUllfU1RPUF9SRUFTT05fTFVB",
+            "X0lOVEVSUlVQVF9GQUlMEAQSKQolR0FMTEVSWV9TVE9QX1JFQVNPTl9PV05F",
+            "Ul9MRUFWRV9TQ0VORRAFEigKJEdBTExFUllfU1RPUF9SRUFTT05fUExBWV9J",
+            "TklUX0ZBSUxFRBAGEioKJkdBTExFUllfU1RPUF9SRUFTT05fT1RIRVJfUExB",
+            "WUVSX0VOVEVSEAcSIgoeR0FMTEVSWV9TVE9QX1JFQVNPTl9BVkFUQVJfRElF",
+            "EAgSIAocR0FMTEVSWV9TVE9QX1JFQVNPTl9GSU5JU0hFRBAJEiYKIkdBTExF",
+            "UllfU1RPUF9SRUFTT05fRlVOR1VTX0FMTF9ESUUQCkIMqgIJT2xkUHJvdG9z",
+            "YgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.GalleryStopReason), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum GalleryStopReason {
+    [pbr::OriginalName("GALLERY_STOP_REASON_NONE")] None = 0,
+    [pbr::OriginalName("GALLERY_STOP_REASON_TIMEUP")] Timeup = 1,
+    [pbr::OriginalName("GALLERY_STOP_REASON_CLIENT_INTERRUPT")] ClientInterrupt = 2,
+    [pbr::OriginalName("GALLERY_STOP_REASON_LUA_INTERRUPT_SUCCESS")] LuaInterruptSuccess = 3,
+    [pbr::OriginalName("GALLERY_STOP_REASON_LUA_INTERRUPT_FAIL")] LuaInterruptFail = 4,
+    [pbr::OriginalName("GALLERY_STOP_REASON_OWNER_LEAVE_SCENE")] OwnerLeaveScene = 5,
+    [pbr::OriginalName("GALLERY_STOP_REASON_PLAY_INIT_FAILED")] PlayInitFailed = 6,
+    [pbr::OriginalName("GALLERY_STOP_REASON_OTHER_PLAYER_ENTER")] OtherPlayerEnter = 7,
+    [pbr::OriginalName("GALLERY_STOP_REASON_AVATAR_DIE")] AvatarDie = 8,
+    [pbr::OriginalName("GALLERY_STOP_REASON_FINISHED")] Finished = 9,
+    [pbr::OriginalName("GALLERY_STOP_REASON_FUNGUS_ALL_DIE")] FungusAllDie = 10,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum GalleryStopReason {
-  [pbr::OriginalName("GALLERY_STOP_REASON_NONE")] None = 0,
-  [pbr::OriginalName("GALLERY_STOP_REASON_TIMEUP")] Timeup = 1,
-  [pbr::OriginalName("GALLERY_STOP_REASON_CLIENT_INTERRUPT")] ClientInterrupt = 2,
-  [pbr::OriginalName("GALLERY_STOP_REASON_LUA_INTERRUPT_SUCCESS")] LuaInterruptSuccess = 3,
-  [pbr::OriginalName("GALLERY_STOP_REASON_LUA_INTERRUPT_FAIL")] LuaInterruptFail = 4,
-  [pbr::OriginalName("GALLERY_STOP_REASON_OWNER_LEAVE_SCENE")] OwnerLeaveScene = 5,
-  [pbr::OriginalName("GALLERY_STOP_REASON_PLAY_INIT_FAILED")] PlayInitFailed = 6,
-  [pbr::OriginalName("GALLERY_STOP_REASON_OTHER_PLAYER_ENTER")] OtherPlayerEnter = 7,
-  [pbr::OriginalName("GALLERY_STOP_REASON_AVATAR_DIE")] AvatarDie = 8,
-  [pbr::OriginalName("GALLERY_STOP_REASON_FINISHED")] Finished = 9,
-  [pbr::OriginalName("GALLERY_STOP_REASON_FUNGUS_ALL_DIE")] FungusAllDie = 10,
-}
-
-#endregion
-
 
 #endregion Designer generated code

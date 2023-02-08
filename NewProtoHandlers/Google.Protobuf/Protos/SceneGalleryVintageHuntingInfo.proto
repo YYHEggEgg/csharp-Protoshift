@@ -20,7 +20,7 @@ import "VintageHuntingFirstStageInfo.proto";
 import "VintageHuntingSecondStageInfo.proto";
 import "VintageHuntingThirdStageInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SceneGalleryVintageHuntingInfo {
   uint32 stage_id = 9;

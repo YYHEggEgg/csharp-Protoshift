@@ -9,565 +9,568 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GetHomeExchangeWoodInfoRsp.proto</summary>
-public static partial class GetHomeExchangeWoodInfoRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GetHomeExchangeWoodInfoRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GetHomeExchangeWoodInfoRsp.proto</summary>
+  public static partial class GetHomeExchangeWoodInfoRspReflection {
 
-  static GetHomeExchangeWoodInfoRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBHZXRIb21lRXhjaGFuZ2VXb29kSW5mb1JzcC5wcm90byLsAQoaR2V0SG9t",
-          "ZUV4Y2hhbmdlV29vZEluZm9Sc3ASDwoHcmV0Y29kZRgKIAEoBRJICg53b29k",
-          "X2luZm9fbGlzdBgFIAMoCzIwLkdldEhvbWVFeGNoYW5nZVdvb2RJbmZvUnNw",
-          "LkhvbWVFeGNoYW5nZVdvb2RJbmZvGnMKFEhvbWVFeGNoYW5nZVdvb2RJbmZv",
-          "EhYKDmV4Y2hhbmdlX2xpbWl0GAcgASgNEhcKD2V4Y2hhbmdlZF9jb3VudBgM",
-          "IAEoDRIZChFuZXh0X3JlZnJlc2hfdGltZRgOIAEoBxIPCgd3b29kX2lkGAIg",
-          "ASgNQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GetHomeExchangeWoodInfoRsp), global::GetHomeExchangeWoodInfoRsp.Parser, new[]{ "Retcode", "WoodInfoList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo), global::GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo.Parser, new[]{ "ExchangeLimit", "ExchangedCount", "NextRefreshTime", "WoodId" }, null, null, null, null)})
-        }));
-  }
-  #endregion
-
-}
-#region Messages
-/// <summary>
-/// CmdId: 4659
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class GetHomeExchangeWoodInfoRsp : pb::IMessage<GetHomeExchangeWoodInfoRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GetHomeExchangeWoodInfoRsp> _parser = new pb::MessageParser<GetHomeExchangeWoodInfoRsp>(() => new GetHomeExchangeWoodInfoRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GetHomeExchangeWoodInfoRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GetHomeExchangeWoodInfoRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetHomeExchangeWoodInfoRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetHomeExchangeWoodInfoRsp(GetHomeExchangeWoodInfoRsp other) : this() {
-    retcode_ = other.retcode_;
-    woodInfoList_ = other.woodInfoList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetHomeExchangeWoodInfoRsp Clone() {
-    return new GetHomeExchangeWoodInfoRsp(this);
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 10;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
+    #region Descriptor
+    /// <summary>File descriptor for GetHomeExchangeWoodInfoRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
     }
-  }
+    private static pbr::FileDescriptor descriptor;
 
-  /// <summary>Field number for the "wood_info_list" field.</summary>
-  public const int WoodInfoListFieldNumber = 5;
-  private static readonly pb::FieldCodec<global::GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo> _repeated_woodInfoList_codec
-      = pb::FieldCodec.ForMessage(42, global::GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo.Parser);
-  private readonly pbc::RepeatedField<global::GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo> woodInfoList_ = new pbc::RepeatedField<global::GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo> WoodInfoList {
-    get { return woodInfoList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GetHomeExchangeWoodInfoRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GetHomeExchangeWoodInfoRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
+    static GetHomeExchangeWoodInfoRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBHZXRIb21lRXhjaGFuZ2VXb29kSW5mb1JzcC5wcm90byLsAQoaR2V0SG9t",
+            "ZUV4Y2hhbmdlV29vZEluZm9Sc3ASDwoHcmV0Y29kZRgKIAEoBRJICg53b29k",
+            "X2luZm9fbGlzdBgFIAMoCzIwLkdldEhvbWVFeGNoYW5nZVdvb2RJbmZvUnNw",
+            "LkhvbWVFeGNoYW5nZVdvb2RJbmZvGnMKFEhvbWVFeGNoYW5nZVdvb2RJbmZv",
+            "EhYKDmV4Y2hhbmdlX2xpbWl0GAcgASgNEhcKD2V4Y2hhbmdlZF9jb3VudBgM",
+            "IAEoDRIZChFuZXh0X3JlZnJlc2hfdGltZRgOIAEoBxIPCgd3b29kX2lkGAIg",
+            "ASgNQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GetHomeExchangeWoodInfoRsp), global::OldProtos.GetHomeExchangeWoodInfoRsp.Parser, new[]{ "Retcode", "WoodInfoList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo), global::OldProtos.GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo.Parser, new[]{ "ExchangeLimit", "ExchangedCount", "NextRefreshTime", "WoodId" }, null, null, null, null)})
+          }));
     }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Retcode != other.Retcode) return false;
-    if(!woodInfoList_.Equals(other.woodInfoList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
+    #endregion
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    hash ^= woodInfoList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
   }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
+  #region Messages
+  /// <summary>
+  /// CmdId: 4659
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class GetHomeExchangeWoodInfoRsp : pb::IMessage<GetHomeExchangeWoodInfoRsp>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    woodInfoList_.WriteTo(output, _repeated_woodInfoList_codec);
-    if (Retcode != 0) {
-      output.WriteRawTag(80);
-      output.WriteInt32(Retcode);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
+      , pb::IBufferMessage
   #endif
-  }
+  {
+    private static readonly pb::MessageParser<GetHomeExchangeWoodInfoRsp> _parser = new pb::MessageParser<GetHomeExchangeWoodInfoRsp>(() => new GetHomeExchangeWoodInfoRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GetHomeExchangeWoodInfoRsp> Parser { get { return _parser; } }
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    woodInfoList_.WriteTo(ref output, _repeated_woodInfoList_codec);
-    if (Retcode != 0) {
-      output.WriteRawTag(80);
-      output.WriteInt32(Retcode);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GetHomeExchangeWoodInfoRspReflection.Descriptor.MessageTypes[0]; }
     }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
     }
-    size += woodInfoList_.CalculateSize(_repeated_woodInfoList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GetHomeExchangeWoodInfoRsp other) {
-    if (other == null) {
-      return;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetHomeExchangeWoodInfoRsp() {
+      OnConstruction();
     }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    woodInfoList_.Add(other.woodInfoList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 42: {
-          woodInfoList_.AddEntriesFrom(input, _repeated_woodInfoList_codec);
-          break;
-        }
-        case 80: {
-          Retcode = input.ReadInt32();
-          break;
-        }
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetHomeExchangeWoodInfoRsp(GetHomeExchangeWoodInfoRsp other) : this() {
+      retcode_ = other.retcode_;
+      woodInfoList_ = other.woodInfoList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetHomeExchangeWoodInfoRsp Clone() {
+      return new GetHomeExchangeWoodInfoRsp(this);
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 10;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
       }
     }
-  #endif
-  }
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 42: {
-          woodInfoList_.AddEntriesFrom(ref input, _repeated_woodInfoList_codec);
-          break;
-        }
-        case 80: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-      }
+    /// <summary>Field number for the "wood_info_list" field.</summary>
+    public const int WoodInfoListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::OldProtos.GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo> _repeated_woodInfoList_codec
+        = pb::FieldCodec.ForMessage(42, global::OldProtos.GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo> woodInfoList_ = new pbc::RepeatedField<global::OldProtos.GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GetHomeExchangeWoodInfoRsp.Types.HomeExchangeWoodInfo> WoodInfoList {
+      get { return woodInfoList_; }
     }
-  }
-  #endif
 
-  #region Nested types
-  /// <summary>Container for nested types declared in the GetHomeExchangeWoodInfoRsp message type.</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static partial class Types {
-    public sealed partial class HomeExchangeWoodInfo : pb::IMessage<HomeExchangeWoodInfo>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GetHomeExchangeWoodInfoRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GetHomeExchangeWoodInfoRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Retcode != other.Retcode) return false;
+      if(!woodInfoList_.Equals(other.woodInfoList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= woodInfoList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        , pb::IBufferMessage
+      output.WriteRawMessage(this);
+    #else
+      woodInfoList_.WriteTo(output, _repeated_woodInfoList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
     #endif
-    {
-      private static readonly pb::MessageParser<HomeExchangeWoodInfo> _parser = new pb::MessageParser<HomeExchangeWoodInfo>(() => new HomeExchangeWoodInfo());
-      private pb::UnknownFieldSet _unknownFields;
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public static pb::MessageParser<HomeExchangeWoodInfo> Parser { get { return _parser; } }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public static pbr::MessageDescriptor Descriptor {
-        get { return global::GetHomeExchangeWoodInfoRsp.Descriptor.NestedTypes[0]; }
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      pbr::MessageDescriptor pb::IMessage.Descriptor {
-        get { return Descriptor; }
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public HomeExchangeWoodInfo() {
-        OnConstruction();
-      }
-
-      partial void OnConstruction();
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public HomeExchangeWoodInfo(HomeExchangeWoodInfo other) : this() {
-        exchangeLimit_ = other.exchangeLimit_;
-        exchangedCount_ = other.exchangedCount_;
-        nextRefreshTime_ = other.nextRefreshTime_;
-        woodId_ = other.woodId_;
-        _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public HomeExchangeWoodInfo Clone() {
-        return new HomeExchangeWoodInfo(this);
-      }
-
-      /// <summary>Field number for the "exchange_limit" field.</summary>
-      public const int ExchangeLimitFieldNumber = 7;
-      private uint exchangeLimit_;
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public uint ExchangeLimit {
-        get { return exchangeLimit_; }
-        set {
-          exchangeLimit_ = value;
-        }
-      }
-
-      /// <summary>Field number for the "exchanged_count" field.</summary>
-      public const int ExchangedCountFieldNumber = 12;
-      private uint exchangedCount_;
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public uint ExchangedCount {
-        get { return exchangedCount_; }
-        set {
-          exchangedCount_ = value;
-        }
-      }
-
-      /// <summary>Field number for the "next_refresh_time" field.</summary>
-      public const int NextRefreshTimeFieldNumber = 14;
-      private uint nextRefreshTime_;
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public uint NextRefreshTime {
-        get { return nextRefreshTime_; }
-        set {
-          nextRefreshTime_ = value;
-        }
-      }
-
-      /// <summary>Field number for the "wood_id" field.</summary>
-      public const int WoodIdFieldNumber = 2;
-      private uint woodId_;
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public uint WoodId {
-        get { return woodId_; }
-        set {
-          woodId_ = value;
-        }
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public override bool Equals(object other) {
-        return Equals(other as HomeExchangeWoodInfo);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public bool Equals(HomeExchangeWoodInfo other) {
-        if (ReferenceEquals(other, null)) {
-          return false;
-        }
-        if (ReferenceEquals(other, this)) {
-          return true;
-        }
-        if (ExchangeLimit != other.ExchangeLimit) return false;
-        if (ExchangedCount != other.ExchangedCount) return false;
-        if (NextRefreshTime != other.NextRefreshTime) return false;
-        if (WoodId != other.WoodId) return false;
-        return Equals(_unknownFields, other._unknownFields);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public override int GetHashCode() {
-        int hash = 1;
-        if (ExchangeLimit != 0) hash ^= ExchangeLimit.GetHashCode();
-        if (ExchangedCount != 0) hash ^= ExchangedCount.GetHashCode();
-        if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
-        if (WoodId != 0) hash ^= WoodId.GetHashCode();
-        if (_unknownFields != null) {
-          hash ^= _unknownFields.GetHashCode();
-        }
-        return hash;
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public override string ToString() {
-        return pb::JsonFormatter.ToDiagnosticString(this);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public void WriteTo(pb::CodedOutputStream output) {
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        output.WriteRawMessage(this);
-      #else
-        if (WoodId != 0) {
-          output.WriteRawTag(16);
-          output.WriteUInt32(WoodId);
-        }
-        if (ExchangeLimit != 0) {
-          output.WriteRawTag(56);
-          output.WriteUInt32(ExchangeLimit);
-        }
-        if (ExchangedCount != 0) {
-          output.WriteRawTag(96);
-          output.WriteUInt32(ExchangedCount);
-        }
-        if (NextRefreshTime != 0) {
-          output.WriteRawTag(117);
-          output.WriteFixed32(NextRefreshTime);
-        }
-        if (_unknownFields != null) {
-          _unknownFields.WriteTo(output);
-        }
-      #endif
-      }
-
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-        if (WoodId != 0) {
-          output.WriteRawTag(16);
-          output.WriteUInt32(WoodId);
-        }
-        if (ExchangeLimit != 0) {
-          output.WriteRawTag(56);
-          output.WriteUInt32(ExchangeLimit);
-        }
-        if (ExchangedCount != 0) {
-          output.WriteRawTag(96);
-          output.WriteUInt32(ExchangedCount);
-        }
-        if (NextRefreshTime != 0) {
-          output.WriteRawTag(117);
-          output.WriteFixed32(NextRefreshTime);
-        }
-        if (_unknownFields != null) {
-          _unknownFields.WriteTo(ref output);
-        }
-      }
-      #endif
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public int CalculateSize() {
-        int size = 0;
-        if (ExchangeLimit != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExchangeLimit);
-        }
-        if (ExchangedCount != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExchangedCount);
-        }
-        if (NextRefreshTime != 0) {
-          size += 1 + 4;
-        }
-        if (WoodId != 0) {
-          size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WoodId);
-        }
-        if (_unknownFields != null) {
-          size += _unknownFields.CalculateSize();
-        }
-        return size;
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public void MergeFrom(HomeExchangeWoodInfo other) {
-        if (other == null) {
-          return;
-        }
-        if (other.ExchangeLimit != 0) {
-          ExchangeLimit = other.ExchangeLimit;
-        }
-        if (other.ExchangedCount != 0) {
-          ExchangedCount = other.ExchangedCount;
-        }
-        if (other.NextRefreshTime != 0) {
-          NextRefreshTime = other.NextRefreshTime;
-        }
-        if (other.WoodId != 0) {
-          WoodId = other.WoodId;
-        }
-        _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-      }
-
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      public void MergeFrom(pb::CodedInputStream input) {
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        input.ReadRawMessage(this);
-      #else
-        uint tag;
-        while ((tag = input.ReadTag()) != 0) {
-          switch(tag) {
-            default:
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-              break;
-            case 16: {
-              WoodId = input.ReadUInt32();
-              break;
-            }
-            case 56: {
-              ExchangeLimit = input.ReadUInt32();
-              break;
-            }
-            case 96: {
-              ExchangedCount = input.ReadUInt32();
-              break;
-            }
-            case 117: {
-              NextRefreshTime = input.ReadFixed32();
-              break;
-            }
-          }
-        }
-      #endif
-      }
-
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-      [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-      void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-        uint tag;
-        while ((tag = input.ReadTag()) != 0) {
-          switch(tag) {
-            default:
-              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-              break;
-            case 16: {
-              WoodId = input.ReadUInt32();
-              break;
-            }
-            case 56: {
-              ExchangeLimit = input.ReadUInt32();
-              break;
-            }
-            case 96: {
-              ExchangedCount = input.ReadUInt32();
-              break;
-            }
-            case 117: {
-              NextRefreshTime = input.ReadFixed32();
-              break;
-            }
-          }
-        }
-      }
-      #endif
-
     }
 
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      woodInfoList_.WriteTo(ref output, _repeated_woodInfoList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      size += woodInfoList_.CalculateSize(_repeated_woodInfoList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GetHomeExchangeWoodInfoRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      woodInfoList_.Add(other.woodInfoList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 42: {
+            woodInfoList_.AddEntriesFrom(input, _repeated_woodInfoList_codec);
+            break;
+          }
+          case 80: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 42: {
+            woodInfoList_.AddEntriesFrom(ref input, _repeated_woodInfoList_codec);
+            break;
+          }
+          case 80: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the GetHomeExchangeWoodInfoRsp message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public sealed partial class HomeExchangeWoodInfo : pb::IMessage<HomeExchangeWoodInfo>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<HomeExchangeWoodInfo> _parser = new pb::MessageParser<HomeExchangeWoodInfo>(() => new HomeExchangeWoodInfo());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<HomeExchangeWoodInfo> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::OldProtos.GetHomeExchangeWoodInfoRsp.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public HomeExchangeWoodInfo() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public HomeExchangeWoodInfo(HomeExchangeWoodInfo other) : this() {
+          exchangeLimit_ = other.exchangeLimit_;
+          exchangedCount_ = other.exchangedCount_;
+          nextRefreshTime_ = other.nextRefreshTime_;
+          woodId_ = other.woodId_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public HomeExchangeWoodInfo Clone() {
+          return new HomeExchangeWoodInfo(this);
+        }
+
+        /// <summary>Field number for the "exchange_limit" field.</summary>
+        public const int ExchangeLimitFieldNumber = 7;
+        private uint exchangeLimit_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint ExchangeLimit {
+          get { return exchangeLimit_; }
+          set {
+            exchangeLimit_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "exchanged_count" field.</summary>
+        public const int ExchangedCountFieldNumber = 12;
+        private uint exchangedCount_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint ExchangedCount {
+          get { return exchangedCount_; }
+          set {
+            exchangedCount_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "next_refresh_time" field.</summary>
+        public const int NextRefreshTimeFieldNumber = 14;
+        private uint nextRefreshTime_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint NextRefreshTime {
+          get { return nextRefreshTime_; }
+          set {
+            nextRefreshTime_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "wood_id" field.</summary>
+        public const int WoodIdFieldNumber = 2;
+        private uint woodId_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public uint WoodId {
+          get { return woodId_; }
+          set {
+            woodId_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as HomeExchangeWoodInfo);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(HomeExchangeWoodInfo other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (ExchangeLimit != other.ExchangeLimit) return false;
+          if (ExchangedCount != other.ExchangedCount) return false;
+          if (NextRefreshTime != other.NextRefreshTime) return false;
+          if (WoodId != other.WoodId) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (ExchangeLimit != 0) hash ^= ExchangeLimit.GetHashCode();
+          if (ExchangedCount != 0) hash ^= ExchangedCount.GetHashCode();
+          if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
+          if (WoodId != 0) hash ^= WoodId.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (WoodId != 0) {
+            output.WriteRawTag(16);
+            output.WriteUInt32(WoodId);
+          }
+          if (ExchangeLimit != 0) {
+            output.WriteRawTag(56);
+            output.WriteUInt32(ExchangeLimit);
+          }
+          if (ExchangedCount != 0) {
+            output.WriteRawTag(96);
+            output.WriteUInt32(ExchangedCount);
+          }
+          if (NextRefreshTime != 0) {
+            output.WriteRawTag(117);
+            output.WriteFixed32(NextRefreshTime);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (WoodId != 0) {
+            output.WriteRawTag(16);
+            output.WriteUInt32(WoodId);
+          }
+          if (ExchangeLimit != 0) {
+            output.WriteRawTag(56);
+            output.WriteUInt32(ExchangeLimit);
+          }
+          if (ExchangedCount != 0) {
+            output.WriteRawTag(96);
+            output.WriteUInt32(ExchangedCount);
+          }
+          if (NextRefreshTime != 0) {
+            output.WriteRawTag(117);
+            output.WriteFixed32(NextRefreshTime);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (ExchangeLimit != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExchangeLimit);
+          }
+          if (ExchangedCount != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExchangedCount);
+          }
+          if (NextRefreshTime != 0) {
+            size += 1 + 4;
+          }
+          if (WoodId != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WoodId);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(HomeExchangeWoodInfo other) {
+          if (other == null) {
+            return;
+          }
+          if (other.ExchangeLimit != 0) {
+            ExchangeLimit = other.ExchangeLimit;
+          }
+          if (other.ExchangedCount != 0) {
+            ExchangedCount = other.ExchangedCount;
+          }
+          if (other.NextRefreshTime != 0) {
+            NextRefreshTime = other.NextRefreshTime;
+          }
+          if (other.WoodId != 0) {
+            WoodId = other.WoodId;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 16: {
+                WoodId = input.ReadUInt32();
+                break;
+              }
+              case 56: {
+                ExchangeLimit = input.ReadUInt32();
+                break;
+              }
+              case 96: {
+                ExchangedCount = input.ReadUInt32();
+                break;
+              }
+              case 117: {
+                NextRefreshTime = input.ReadFixed32();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 16: {
+                WoodId = input.ReadUInt32();
+                break;
+              }
+              case 56: {
+                ExchangeLimit = input.ReadUInt32();
+                break;
+              }
+              case 96: {
+                ExchangedCount = input.ReadUInt32();
+                break;
+              }
+              case 117: {
+                NextRefreshTime = input.ReadFixed32();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+    }
+    #endregion
+
   }
+
   #endregion
 
 }
-
-#endregion
-
 
 #endregion Designer generated code

@@ -19,7 +19,7 @@ syntax = "proto3";
 import "ActivityDungeonAvatar.proto";
 import "RogueDiaryAvatarDisableStatus.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message RogueDiaryAvatar {
   ActivityDungeonAvatar avatar = 2;

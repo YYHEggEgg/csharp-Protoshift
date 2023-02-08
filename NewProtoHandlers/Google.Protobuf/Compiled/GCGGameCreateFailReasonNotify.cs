@@ -9,256 +9,258 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGGameCreateFailReasonNotify.proto</summary>
-public static partial class GCGGameCreateFailReasonNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGGameCreateFailReasonNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGGameCreateFailReasonNotify.proto</summary>
+  public static partial class GCGGameCreateFailReasonNotifyReflection {
 
-  static GCGGameCreateFailReasonNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiNHQ0dHYW1lQ3JlYXRlRmFpbFJlYXNvbk5vdGlmeS5wcm90byL9AgodR0NH",
-          "R2FtZUNyZWF0ZUZhaWxSZWFzb25Ob3RpZnkSQgoGcmVhc29uGAcgASgOMjIu",
-          "R0NHR2FtZUNyZWF0ZUZhaWxSZWFzb25Ob3RpZnkuR0NHR2FtZUNyZWF0ZVJl",
-          "YXNvbiKXAgoTR0NHR2FtZUNyZWF0ZVJlYXNvbhIfChtHQ0dfR0FNRV9DUkVB",
-          "VEVfUkVBU09OX05PTkUQABIjCh9HQ0dfR0FNRV9DUkVBVEVfUkVBU09OX0dB",
-          "TUVfTUFYEAESNAowR0NHX0dBTUVfQ1JFQVRFX1JFQVNPTl9DTElFTlRfVkVS",
-          "U0lPTl9OT1RfTEFURVNUEAISMAosR0NHX0dBTUVfQ1JFQVRFX1JFQVNPTl9S",
-          "RVNPVVJDRV9OT1RfQ09NUExFVEUQAxIiCh5HQ0dfR0FNRV9DUkVBVEVfUkVB",
-          "U09OX1RJTUVPVVQQBBIuCipHQ0dfR0FNRV9DUkVBVEVfUkVBU09OX1VuazMz",
-          "MDBfRU1DREZHR0ZGQUgQBUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJv",
-          "dG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGGameCreateFailReasonNotify), global::GCGGameCreateFailReasonNotify.Parser, new[]{ "Reason" }, null, new[]{ typeof(global::GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason) }, null, null)
-        }));
-  }
-  #endregion
-
-}
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 7658;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class GCGGameCreateFailReasonNotify : pb::IMessage<GCGGameCreateFailReasonNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGGameCreateFailReasonNotify> _parser = new pb::MessageParser<GCGGameCreateFailReasonNotify>(() => new GCGGameCreateFailReasonNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGGameCreateFailReasonNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGGameCreateFailReasonNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGGameCreateFailReasonNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGGameCreateFailReasonNotify(GCGGameCreateFailReasonNotify other) : this() {
-    reason_ = other.reason_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGGameCreateFailReasonNotify Clone() {
-    return new GCGGameCreateFailReasonNotify(this);
-  }
-
-  /// <summary>Field number for the "reason" field.</summary>
-  public const int ReasonFieldNumber = 7;
-  private global::GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason reason_ = global::GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason Reason {
-    get { return reason_; }
-    set {
-      reason_ = value;
+    #region Descriptor
+    /// <summary>File descriptor for GCGGameCreateFailReasonNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
     }
-  }
+    private static pbr::FileDescriptor descriptor;
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGGameCreateFailReasonNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGGameCreateFailReasonNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
+    static GCGGameCreateFailReasonNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiNHQ0dHYW1lQ3JlYXRlRmFpbFJlYXNvbk5vdGlmeS5wcm90byL9AgodR0NH",
+            "R2FtZUNyZWF0ZUZhaWxSZWFzb25Ob3RpZnkSQgoGcmVhc29uGAcgASgOMjIu",
+            "R0NHR2FtZUNyZWF0ZUZhaWxSZWFzb25Ob3RpZnkuR0NHR2FtZUNyZWF0ZVJl",
+            "YXNvbiKXAgoTR0NHR2FtZUNyZWF0ZVJlYXNvbhIfChtHQ0dfR0FNRV9DUkVB",
+            "VEVfUkVBU09OX05PTkUQABIjCh9HQ0dfR0FNRV9DUkVBVEVfUkVBU09OX0dB",
+            "TUVfTUFYEAESNAowR0NHX0dBTUVfQ1JFQVRFX1JFQVNPTl9DTElFTlRfVkVS",
+            "U0lPTl9OT1RfTEFURVNUEAISMAosR0NHX0dBTUVfQ1JFQVRFX1JFQVNPTl9S",
+            "RVNPVVJDRV9OT1RfQ09NUExFVEUQAxIiCh5HQ0dfR0FNRV9DUkVBVEVfUkVB",
+            "U09OX1RJTUVPVVQQBBIuCipHQ0dfR0FNRV9DUkVBVEVfUkVBU09OX1VuazMz",
+            "MDBfRU1DREZHR0ZGQUgQBUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GCGGameCreateFailReasonNotify), global::NewProtos.GCGGameCreateFailReasonNotify.Parser, new[]{ "Reason" }, null, new[]{ typeof(global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason) }, null, null)
+          }));
     }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Reason != other.Reason) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
+    #endregion
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Reason != global::GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) hash ^= Reason.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
   }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 7658;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class GCGGameCreateFailReasonNotify : pb::IMessage<GCGGameCreateFailReasonNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Reason != global::GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) {
-      output.WriteRawTag(56);
-      output.WriteEnum((int) Reason);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
+      , pb::IBufferMessage
   #endif
-  }
+  {
+    private static readonly pb::MessageParser<GCGGameCreateFailReasonNotify> _parser = new pb::MessageParser<GCGGameCreateFailReasonNotify>(() => new GCGGameCreateFailReasonNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGGameCreateFailReasonNotify> Parser { get { return _parser; } }
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Reason != global::GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) {
-      output.WriteRawTag(56);
-      output.WriteEnum((int) Reason);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.GCGGameCreateFailReasonNotifyReflection.Descriptor.MessageTypes[0]; }
     }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Reason != global::GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
     }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGGameCreateFailReasonNotify other) {
-    if (other == null) {
-      return;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGGameCreateFailReasonNotify() {
+      OnConstruction();
     }
-    if (other.Reason != global::GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) {
-      Reason = other.Reason;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 56: {
-          Reason = (global::GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason) input.ReadEnum();
-          break;
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGGameCreateFailReasonNotify(GCGGameCreateFailReasonNotify other) : this() {
+      reason_ = other.reason_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGGameCreateFailReasonNotify Clone() {
+      return new GCGGameCreateFailReasonNotify(this);
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 7;
+    private global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason reason_ = global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGGameCreateFailReasonNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGGameCreateFailReasonNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Reason != other.Reason) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) hash ^= Reason.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Reason);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Reason);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGGameCreateFailReasonNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) {
+        Reason = other.Reason;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 56: {
+            Reason = (global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 56: {
+            Reason = (global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason) input.ReadEnum();
+            break;
+          }
         }
       }
     }
-  #endif
-  }
+    #endif
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 56: {
-          Reason = (global::GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason) input.ReadEnum();
-          break;
-        }
+    #region Nested types
+    /// <summary>Container for nested types declared in the GCGGameCreateFailReasonNotify message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum GCGGameCreateReason {
+        [pbr::OriginalName("GCG_GAME_CREATE_REASON_NONE")] None = 0,
+        [pbr::OriginalName("GCG_GAME_CREATE_REASON_GAME_MAX")] GameMax = 1,
+        [pbr::OriginalName("GCG_GAME_CREATE_REASON_CLIENT_VERSION_NOT_LATEST")] ClientVersionNotLatest = 2,
+        [pbr::OriginalName("GCG_GAME_CREATE_REASON_RESOURCE_NOT_COMPLETE")] ResourceNotComplete = 3,
+        [pbr::OriginalName("GCG_GAME_CREATE_REASON_TIMEOUT")] Timeout = 4,
+        [pbr::OriginalName("GCG_GAME_CREATE_REASON_Unk3300_EMCDFGGFFAH")] Unk3300Emcdfggffah = 5,
       }
-    }
-  }
-  #endif
 
-  #region Nested types
-  /// <summary>Container for nested types declared in the GCGGameCreateFailReasonNotify message type.</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static partial class Types {
-    public enum GCGGameCreateReason {
-      [pbr::OriginalName("GCG_GAME_CREATE_REASON_NONE")] None = 0,
-      [pbr::OriginalName("GCG_GAME_CREATE_REASON_GAME_MAX")] GameMax = 1,
-      [pbr::OriginalName("GCG_GAME_CREATE_REASON_CLIENT_VERSION_NOT_LATEST")] ClientVersionNotLatest = 2,
-      [pbr::OriginalName("GCG_GAME_CREATE_REASON_RESOURCE_NOT_COMPLETE")] ResourceNotComplete = 3,
-      [pbr::OriginalName("GCG_GAME_CREATE_REASON_TIMEOUT")] Timeout = 4,
-      [pbr::OriginalName("GCG_GAME_CREATE_REASON_Unk3300_EMCDFGGFFAH")] Unk3300Emcdfggffah = 5,
     }
+    #endregion
 
   }
+
   #endregion
 
 }
-
-#endregion
-
 
 #endregion Designer generated code

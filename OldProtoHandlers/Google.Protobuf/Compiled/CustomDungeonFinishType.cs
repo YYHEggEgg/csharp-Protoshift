@@ -9,42 +9,44 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CustomDungeonFinishType.proto</summary>
-public static partial class CustomDungeonFinishTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CustomDungeonFinishType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CustomDungeonFinishType.proto</summary>
+  public static partial class CustomDungeonFinishTypeReflection {
 
-  static CustomDungeonFinishTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1DdXN0b21EdW5nZW9uRmluaXNoVHlwZS5wcm90byrIAQoXQ3VzdG9tRHVu",
-          "Z2VvbkZpbmlzaFR5cGUSKgomQ1VTVE9NX0RVTkdFT05fRklOSVNIX1RZUEVf",
-          "UExBWV9OT1JNQUwQABInCiNDVVNUT01fRFVOR0VPTl9GSU5JU0hfVFlQRV9Q",
-          "TEFZX1RSWRABEicKI0NVU1RPTV9EVU5HRU9OX0ZJTklTSF9UWVBFX0VESVRf",
-          "VFJZEAISLworQ1VTVE9NX0RVTkdFT05fRklOSVNIX1RZUEVfU0VMRl9QTEFZ",
-          "X05PUk1BTBADQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnBy",
-          "b3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::CustomDungeonFinishType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for CustomDungeonFinishType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CustomDungeonFinishTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1DdXN0b21EdW5nZW9uRmluaXNoVHlwZS5wcm90byrIAQoXQ3VzdG9tRHVu",
+            "Z2VvbkZpbmlzaFR5cGUSKgomQ1VTVE9NX0RVTkdFT05fRklOSVNIX1RZUEVf",
+            "UExBWV9OT1JNQUwQABInCiNDVVNUT01fRFVOR0VPTl9GSU5JU0hfVFlQRV9Q",
+            "TEFZX1RSWRABEicKI0NVU1RPTV9EVU5HRU9OX0ZJTklTSF9UWVBFX0VESVRf",
+            "VFJZEAISLworQ1VTVE9NX0RVTkdFT05fRklOSVNIX1RZUEVfU0VMRl9QTEFZ",
+            "X05PUk1BTBADQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.CustomDungeonFinishType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum CustomDungeonFinishType {
+    [pbr::OriginalName("CUSTOM_DUNGEON_FINISH_TYPE_PLAY_NORMAL")] PlayNormal = 0,
+    [pbr::OriginalName("CUSTOM_DUNGEON_FINISH_TYPE_PLAY_TRY")] PlayTry = 1,
+    [pbr::OriginalName("CUSTOM_DUNGEON_FINISH_TYPE_EDIT_TRY")] EditTry = 2,
+    [pbr::OriginalName("CUSTOM_DUNGEON_FINISH_TYPE_SELF_PLAY_NORMAL")] SelfPlayNormal = 3,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum CustomDungeonFinishType {
-  [pbr::OriginalName("CUSTOM_DUNGEON_FINISH_TYPE_PLAY_NORMAL")] PlayNormal = 0,
-  [pbr::OriginalName("CUSTOM_DUNGEON_FINISH_TYPE_PLAY_TRY")] PlayTry = 1,
-  [pbr::OriginalName("CUSTOM_DUNGEON_FINISH_TYPE_EDIT_TRY")] EditTry = 2,
-  [pbr::OriginalName("CUSTOM_DUNGEON_FINISH_TYPE_SELF_PLAY_NORMAL")] SelfPlayNormal = 3,
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -9,47 +9,49 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CodexType.proto</summary>
-public static partial class CodexTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CodexType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CodexType.proto</summary>
+  public static partial class CodexTypeReflection {
 
-  static CodexTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Cg9Db2RleFR5cGUucHJvdG8q2wEKCUNvZGV4VHlwZRITCg9DT0RFWF9UWVBF",
-          "X05PTkUQABIUChBDT0RFWF9UWVBFX1FVRVNUEAESFQoRQ09ERVhfVFlQRV9X",
-          "RUFQT04QAhIVChFDT0RFWF9UWVBFX0FOSU1BTBADEhcKE0NPREVYX1RZUEVf",
-          "TUFURVJJQUwQBBIUChBDT0RFWF9UWVBFX0JPT0tTEAUSFwoTQ09ERVhfVFlQ",
-          "RV9QVVNIVElQUxAGEhMKD0NPREVYX1RZUEVfVklFVxAHEhgKFENPREVYX1RZ",
-          "UEVfUkVMSVFVQVJZEAhCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90",
-          "b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::CodexType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for CodexType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CodexTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Cg9Db2RleFR5cGUucHJvdG8q2wEKCUNvZGV4VHlwZRITCg9DT0RFWF9UWVBF",
+            "X05PTkUQABIUChBDT0RFWF9UWVBFX1FVRVNUEAESFQoRQ09ERVhfVFlQRV9X",
+            "RUFQT04QAhIVChFDT0RFWF9UWVBFX0FOSU1BTBADEhcKE0NPREVYX1RZUEVf",
+            "TUFURVJJQUwQBBIUChBDT0RFWF9UWVBFX0JPT0tTEAUSFwoTQ09ERVhfVFlQ",
+            "RV9QVVNIVElQUxAGEhMKD0NPREVYX1RZUEVfVklFVxAHEhgKFENPREVYX1RZ",
+            "UEVfUkVMSVFVQVJZEAhCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.CodexType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum CodexType {
+    [pbr::OriginalName("CODEX_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("CODEX_TYPE_QUEST")] Quest = 1,
+    [pbr::OriginalName("CODEX_TYPE_WEAPON")] Weapon = 2,
+    [pbr::OriginalName("CODEX_TYPE_ANIMAL")] Animal = 3,
+    [pbr::OriginalName("CODEX_TYPE_MATERIAL")] Material = 4,
+    [pbr::OriginalName("CODEX_TYPE_BOOKS")] Books = 5,
+    [pbr::OriginalName("CODEX_TYPE_PUSHTIPS")] Pushtips = 6,
+    [pbr::OriginalName("CODEX_TYPE_VIEW")] View = 7,
+    [pbr::OriginalName("CODEX_TYPE_RELIQUARY")] Reliquary = 8,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum CodexType {
-  [pbr::OriginalName("CODEX_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("CODEX_TYPE_QUEST")] Quest = 1,
-  [pbr::OriginalName("CODEX_TYPE_WEAPON")] Weapon = 2,
-  [pbr::OriginalName("CODEX_TYPE_ANIMAL")] Animal = 3,
-  [pbr::OriginalName("CODEX_TYPE_MATERIAL")] Material = 4,
-  [pbr::OriginalName("CODEX_TYPE_BOOKS")] Books = 5,
-  [pbr::OriginalName("CODEX_TYPE_PUSHTIPS")] Pushtips = 6,
-  [pbr::OriginalName("CODEX_TYPE_VIEW")] View = 7,
-  [pbr::OriginalName("CODEX_TYPE_RELIQUARY")] Reliquary = 8,
-}
-
-#endregion
-
 
 #endregion Designer generated code

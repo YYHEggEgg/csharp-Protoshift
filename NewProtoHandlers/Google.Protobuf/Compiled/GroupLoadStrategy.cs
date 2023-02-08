@@ -9,40 +9,43 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GroupLoadStrategy.proto</summary>
-public static partial class GroupLoadStrategyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GroupLoadStrategy.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GroupLoadStrategy.proto</summary>
+  public static partial class GroupLoadStrategyReflection {
 
-  static GroupLoadStrategyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdHcm91cExvYWRTdHJhdGVneS5wcm90byqNAQoRR3JvdXBMb2FkU3RyYXRl",
-          "Z3kSHAoYR1JPVVBfTE9BRF9TVFJBVEVHWV9OT05FEAASHgoaR1JPVVBfTE9B",
-          "RF9TVFJBVEVHWV9TSU5HTEUQARIdChlHUk9VUF9MT0FEX1NUUkFURUdZX01V",
-          "TFRJEAISGwoXR1JPVVBfTE9BRF9TVFJBVEVHWV9BTEwQA0IWChRvcmcuc29y",
-          "YXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GroupLoadStrategy), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for GroupLoadStrategy.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GroupLoadStrategyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdHcm91cExvYWRTdHJhdGVneS5wcm90byqNAQoRR3JvdXBMb2FkU3RyYXRl",
+            "Z3kSHAoYR1JPVVBfTE9BRF9TVFJBVEVHWV9OT05FEAASHgoaR1JPVVBfTE9B",
+            "RF9TVFJBVEVHWV9TSU5HTEUQARIdChlHUk9VUF9MT0FEX1NUUkFURUdZX01V",
+            "TFRJEAISGwoXR1JPVVBfTE9BRF9TVFJBVEVHWV9BTEwQA0IMqgIJTmV3UHJv",
+            "dG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.GroupLoadStrategy), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum GroupLoadStrategy {
+    [pbr::OriginalName("GROUP_LOAD_STRATEGY_NONE")] None = 0,
+    [pbr::OriginalName("GROUP_LOAD_STRATEGY_SINGLE")] Single = 1,
+    [pbr::OriginalName("GROUP_LOAD_STRATEGY_MULTI")] Multi = 2,
+    [pbr::OriginalName("GROUP_LOAD_STRATEGY_ALL")] All = 3,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum GroupLoadStrategy {
-  [pbr::OriginalName("GROUP_LOAD_STRATEGY_NONE")] None = 0,
-  [pbr::OriginalName("GROUP_LOAD_STRATEGY_SINGLE")] Single = 1,
-  [pbr::OriginalName("GROUP_LOAD_STRATEGY_MULTI")] Multi = 2,
-  [pbr::OriginalName("GROUP_LOAD_STRATEGY_ALL")] All = 3,
-}
-
-#endregion
-
 
 #endregion Designer generated code

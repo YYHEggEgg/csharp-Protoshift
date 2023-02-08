@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "FallSettleInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message FleurFairFallSettleInfo {
   FallSettleInfo settle_info = 3;

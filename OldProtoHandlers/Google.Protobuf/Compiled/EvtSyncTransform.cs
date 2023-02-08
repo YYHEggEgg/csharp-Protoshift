@@ -9,315 +9,318 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from EvtSyncTransform.proto</summary>
-public static partial class EvtSyncTransformReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for EvtSyncTransform.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from EvtSyncTransform.proto</summary>
+  public static partial class EvtSyncTransformReflection {
 
-  static EvtSyncTransformReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZFdnRTeW5jVHJhbnNmb3JtLnByb3RvGgxWZWN0b3IucHJvdG8iXwoQRXZ0",
-          "U3luY1RyYW5zZm9ybRIRCgllbnRpdHlfaWQYDyABKA0SGwoKZW50aXR5X3Bv",
-          "cxgGIAEoCzIHLlZlY3RvchIbCgplbnRpdHlfcm90GAEgASgLMgcuVmVjdG9y",
-          "Qh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::EvtSyncTransform), global::EvtSyncTransform.Parser, new[]{ "EntityId", "EntityPos", "EntityRot" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for EvtSyncTransform.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static EvtSyncTransformReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZFdnRTeW5jVHJhbnNmb3JtLnByb3RvGgxWZWN0b3IucHJvdG8iXwoQRXZ0",
+            "U3luY1RyYW5zZm9ybRIRCgllbnRpdHlfaWQYDyABKA0SGwoKZW50aXR5X3Bv",
+            "cxgGIAEoCzIHLlZlY3RvchIbCgplbnRpdHlfcm90GAEgASgLMgcuVmVjdG9y",
+            "QgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.EvtSyncTransform), global::OldProtos.EvtSyncTransform.Parser, new[]{ "EntityId", "EntityPos", "EntityRot" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class EvtSyncTransform : pb::IMessage<EvtSyncTransform>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<EvtSyncTransform> _parser = new pb::MessageParser<EvtSyncTransform>(() => new EvtSyncTransform());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<EvtSyncTransform> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.EvtSyncTransformReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtSyncTransform() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtSyncTransform(EvtSyncTransform other) : this() {
+      entityId_ = other.entityId_;
+      entityPos_ = other.entityPos_ != null ? other.entityPos_.Clone() : null;
+      entityRot_ = other.entityRot_ != null ? other.entityRot_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtSyncTransform Clone() {
+      return new EvtSyncTransform(this);
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 15;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_pos" field.</summary>
+    public const int EntityPosFieldNumber = 6;
+    private global::OldProtos.Vector entityPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector EntityPos {
+      get { return entityPos_; }
+      set {
+        entityPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_rot" field.</summary>
+    public const int EntityRotFieldNumber = 1;
+    private global::OldProtos.Vector entityRot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector EntityRot {
+      get { return entityRot_; }
+      set {
+        entityRot_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as EvtSyncTransform);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(EvtSyncTransform other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (EntityId != other.EntityId) return false;
+      if (!object.Equals(EntityPos, other.EntityPos)) return false;
+      if (!object.Equals(EntityRot, other.EntityRot)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (entityPos_ != null) hash ^= EntityPos.GetHashCode();
+      if (entityRot_ != null) hash ^= EntityRot.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (entityRot_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(EntityRot);
+      }
+      if (entityPos_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(EntityPos);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(EntityId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (entityRot_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(EntityRot);
+      }
+      if (entityPos_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(EntityPos);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(EntityId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (entityPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EntityPos);
+      }
+      if (entityRot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EntityRot);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(EvtSyncTransform other) {
+      if (other == null) {
+        return;
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.entityPos_ != null) {
+        if (entityPos_ == null) {
+          EntityPos = new global::OldProtos.Vector();
+        }
+        EntityPos.MergeFrom(other.EntityPos);
+      }
+      if (other.entityRot_ != null) {
+        if (entityRot_ == null) {
+          EntityRot = new global::OldProtos.Vector();
+        }
+        EntityRot.MergeFrom(other.EntityRot);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (entityRot_ == null) {
+              EntityRot = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(EntityRot);
+            break;
+          }
+          case 50: {
+            if (entityPos_ == null) {
+              EntityPos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(EntityPos);
+            break;
+          }
+          case 120: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (entityRot_ == null) {
+              EntityRot = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(EntityRot);
+            break;
+          }
+          case 50: {
+            if (entityPos_ == null) {
+              EntityPos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(EntityPos);
+            break;
+          }
+          case 120: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class EvtSyncTransform : pb::IMessage<EvtSyncTransform>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<EvtSyncTransform> _parser = new pb::MessageParser<EvtSyncTransform>(() => new EvtSyncTransform());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<EvtSyncTransform> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::EvtSyncTransformReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtSyncTransform() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtSyncTransform(EvtSyncTransform other) : this() {
-    entityId_ = other.entityId_;
-    entityPos_ = other.entityPos_ != null ? other.entityPos_.Clone() : null;
-    entityRot_ = other.entityRot_ != null ? other.entityRot_.Clone() : null;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtSyncTransform Clone() {
-    return new EvtSyncTransform(this);
-  }
-
-  /// <summary>Field number for the "entity_id" field.</summary>
-  public const int EntityIdFieldNumber = 15;
-  private uint entityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EntityId {
-    get { return entityId_; }
-    set {
-      entityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity_pos" field.</summary>
-  public const int EntityPosFieldNumber = 6;
-  private global::Vector entityPos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector EntityPos {
-    get { return entityPos_; }
-    set {
-      entityPos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity_rot" field.</summary>
-  public const int EntityRotFieldNumber = 1;
-  private global::Vector entityRot_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector EntityRot {
-    get { return entityRot_; }
-    set {
-      entityRot_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as EvtSyncTransform);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(EvtSyncTransform other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (EntityId != other.EntityId) return false;
-    if (!object.Equals(EntityPos, other.EntityPos)) return false;
-    if (!object.Equals(EntityRot, other.EntityRot)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (EntityId != 0) hash ^= EntityId.GetHashCode();
-    if (entityPos_ != null) hash ^= EntityPos.GetHashCode();
-    if (entityRot_ != null) hash ^= EntityRot.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (entityRot_ != null) {
-      output.WriteRawTag(10);
-      output.WriteMessage(EntityRot);
-    }
-    if (entityPos_ != null) {
-      output.WriteRawTag(50);
-      output.WriteMessage(EntityPos);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(EntityId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (entityRot_ != null) {
-      output.WriteRawTag(10);
-      output.WriteMessage(EntityRot);
-    }
-    if (entityPos_ != null) {
-      output.WriteRawTag(50);
-      output.WriteMessage(EntityPos);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(EntityId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (EntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-    }
-    if (entityPos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(EntityPos);
-    }
-    if (entityRot_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(EntityRot);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(EvtSyncTransform other) {
-    if (other == null) {
-      return;
-    }
-    if (other.EntityId != 0) {
-      EntityId = other.EntityId;
-    }
-    if (other.entityPos_ != null) {
-      if (entityPos_ == null) {
-        EntityPos = new global::Vector();
-      }
-      EntityPos.MergeFrom(other.EntityPos);
-    }
-    if (other.entityRot_ != null) {
-      if (entityRot_ == null) {
-        EntityRot = new global::Vector();
-      }
-      EntityRot.MergeFrom(other.EntityRot);
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          if (entityRot_ == null) {
-            EntityRot = new global::Vector();
-          }
-          input.ReadMessage(EntityRot);
-          break;
-        }
-        case 50: {
-          if (entityPos_ == null) {
-            EntityPos = new global::Vector();
-          }
-          input.ReadMessage(EntityPos);
-          break;
-        }
-        case 120: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          if (entityRot_ == null) {
-            EntityRot = new global::Vector();
-          }
-          input.ReadMessage(EntityRot);
-          break;
-        }
-        case 50: {
-          if (entityPos_ == null) {
-            EntityPos = new global::Vector();
-          }
-          input.ReadMessage(EntityPos);
-          break;
-        }
-        case 120: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

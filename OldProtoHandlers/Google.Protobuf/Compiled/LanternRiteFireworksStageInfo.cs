@@ -9,288 +9,291 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from LanternRiteFireworksStageInfo.proto</summary>
-public static partial class LanternRiteFireworksStageInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for LanternRiteFireworksStageInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from LanternRiteFireworksStageInfo.proto</summary>
+  public static partial class LanternRiteFireworksStageInfoReflection {
 
-  static LanternRiteFireworksStageInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiNMYW50ZXJuUml0ZUZpcmV3b3Jrc1N0YWdlSW5mby5wcm90bxonTGFudGVy",
-          "blJpdGVGaXJld29ya3NDaGFsbGVuZ2VJbmZvLnByb3RvIoMBCh1MYW50ZXJu",
-          "Uml0ZUZpcmV3b3Jrc1N0YWdlSW5mbxIPCgdpc19vcGVuGAggASgIEj8KE2No",
-          "YWxsZW5nZV9pbmZvX2xpc3QYCSADKAsyIi5MYW50ZXJuUml0ZUZpcmV3b3Jr",
-          "c0NoYWxsZW5nZUluZm8SEAoIc3RhZ2VfaWQYDyABKA1CHgocZW11LmdyYXNz",
-          "Y3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::LanternRiteFireworksChallengeInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::LanternRiteFireworksStageInfo), global::LanternRiteFireworksStageInfo.Parser, new[]{ "IsOpen", "ChallengeInfoList", "StageId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for LanternRiteFireworksStageInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static LanternRiteFireworksStageInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiNMYW50ZXJuUml0ZUZpcmV3b3Jrc1N0YWdlSW5mby5wcm90bxonTGFudGVy",
+            "blJpdGVGaXJld29ya3NDaGFsbGVuZ2VJbmZvLnByb3RvIoMBCh1MYW50ZXJu",
+            "Uml0ZUZpcmV3b3Jrc1N0YWdlSW5mbxIPCgdpc19vcGVuGAggASgIEj8KE2No",
+            "YWxsZW5nZV9pbmZvX2xpc3QYCSADKAsyIi5MYW50ZXJuUml0ZUZpcmV3b3Jr",
+            "c0NoYWxsZW5nZUluZm8SEAoIc3RhZ2VfaWQYDyABKA1CDKoCCU9sZFByb3Rv",
+            "c2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.LanternRiteFireworksChallengeInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.LanternRiteFireworksStageInfo), global::OldProtos.LanternRiteFireworksStageInfo.Parser, new[]{ "IsOpen", "ChallengeInfoList", "StageId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class LanternRiteFireworksStageInfo : pb::IMessage<LanternRiteFireworksStageInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<LanternRiteFireworksStageInfo> _parser = new pb::MessageParser<LanternRiteFireworksStageInfo>(() => new LanternRiteFireworksStageInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<LanternRiteFireworksStageInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.LanternRiteFireworksStageInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LanternRiteFireworksStageInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LanternRiteFireworksStageInfo(LanternRiteFireworksStageInfo other) : this() {
+      isOpen_ = other.isOpen_;
+      challengeInfoList_ = other.challengeInfoList_.Clone();
+      stageId_ = other.stageId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LanternRiteFireworksStageInfo Clone() {
+      return new LanternRiteFireworksStageInfo(this);
+    }
+
+    /// <summary>Field number for the "is_open" field.</summary>
+    public const int IsOpenFieldNumber = 8;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_info_list" field.</summary>
+    public const int ChallengeInfoListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::OldProtos.LanternRiteFireworksChallengeInfo> _repeated_challengeInfoList_codec
+        = pb::FieldCodec.ForMessage(74, global::OldProtos.LanternRiteFireworksChallengeInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.LanternRiteFireworksChallengeInfo> challengeInfoList_ = new pbc::RepeatedField<global::OldProtos.LanternRiteFireworksChallengeInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.LanternRiteFireworksChallengeInfo> ChallengeInfoList {
+      get { return challengeInfoList_; }
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 15;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as LanternRiteFireworksStageInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(LanternRiteFireworksStageInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsOpen != other.IsOpen) return false;
+      if(!challengeInfoList_.Equals(other.challengeInfoList_)) return false;
+      if (StageId != other.StageId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      hash ^= challengeInfoList_.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsOpen != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsOpen);
+      }
+      challengeInfoList_.WriteTo(output, _repeated_challengeInfoList_codec);
+      if (StageId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(StageId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsOpen != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsOpen);
+      }
+      challengeInfoList_.WriteTo(ref output, _repeated_challengeInfoList_codec);
+      if (StageId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(StageId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsOpen != false) {
+        size += 1 + 1;
+      }
+      size += challengeInfoList_.CalculateSize(_repeated_challengeInfoList_codec);
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(LanternRiteFireworksStageInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
+      }
+      challengeInfoList_.Add(other.challengeInfoList_);
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 64: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+          case 74: {
+            challengeInfoList_.AddEntriesFrom(input, _repeated_challengeInfoList_codec);
+            break;
+          }
+          case 120: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 64: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+          case 74: {
+            challengeInfoList_.AddEntriesFrom(ref input, _repeated_challengeInfoList_codec);
+            break;
+          }
+          case 120: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class LanternRiteFireworksStageInfo : pb::IMessage<LanternRiteFireworksStageInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<LanternRiteFireworksStageInfo> _parser = new pb::MessageParser<LanternRiteFireworksStageInfo>(() => new LanternRiteFireworksStageInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<LanternRiteFireworksStageInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::LanternRiteFireworksStageInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public LanternRiteFireworksStageInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public LanternRiteFireworksStageInfo(LanternRiteFireworksStageInfo other) : this() {
-    isOpen_ = other.isOpen_;
-    challengeInfoList_ = other.challengeInfoList_.Clone();
-    stageId_ = other.stageId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public LanternRiteFireworksStageInfo Clone() {
-    return new LanternRiteFireworksStageInfo(this);
-  }
-
-  /// <summary>Field number for the "is_open" field.</summary>
-  public const int IsOpenFieldNumber = 8;
-  private bool isOpen_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsOpen {
-    get { return isOpen_; }
-    set {
-      isOpen_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "challenge_info_list" field.</summary>
-  public const int ChallengeInfoListFieldNumber = 9;
-  private static readonly pb::FieldCodec<global::LanternRiteFireworksChallengeInfo> _repeated_challengeInfoList_codec
-      = pb::FieldCodec.ForMessage(74, global::LanternRiteFireworksChallengeInfo.Parser);
-  private readonly pbc::RepeatedField<global::LanternRiteFireworksChallengeInfo> challengeInfoList_ = new pbc::RepeatedField<global::LanternRiteFireworksChallengeInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::LanternRiteFireworksChallengeInfo> ChallengeInfoList {
-    get { return challengeInfoList_; }
-  }
-
-  /// <summary>Field number for the "stage_id" field.</summary>
-  public const int StageIdFieldNumber = 15;
-  private uint stageId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StageId {
-    get { return stageId_; }
-    set {
-      stageId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as LanternRiteFireworksStageInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(LanternRiteFireworksStageInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsOpen != other.IsOpen) return false;
-    if(!challengeInfoList_.Equals(other.challengeInfoList_)) return false;
-    if (StageId != other.StageId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsOpen != false) hash ^= IsOpen.GetHashCode();
-    hash ^= challengeInfoList_.GetHashCode();
-    if (StageId != 0) hash ^= StageId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsOpen != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsOpen);
-    }
-    challengeInfoList_.WriteTo(output, _repeated_challengeInfoList_codec);
-    if (StageId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(StageId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsOpen != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsOpen);
-    }
-    challengeInfoList_.WriteTo(ref output, _repeated_challengeInfoList_codec);
-    if (StageId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(StageId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsOpen != false) {
-      size += 1 + 1;
-    }
-    size += challengeInfoList_.CalculateSize(_repeated_challengeInfoList_codec);
-    if (StageId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(LanternRiteFireworksStageInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsOpen != false) {
-      IsOpen = other.IsOpen;
-    }
-    challengeInfoList_.Add(other.challengeInfoList_);
-    if (other.StageId != 0) {
-      StageId = other.StageId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 64: {
-          IsOpen = input.ReadBool();
-          break;
-        }
-        case 74: {
-          challengeInfoList_.AddEntriesFrom(input, _repeated_challengeInfoList_codec);
-          break;
-        }
-        case 120: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 64: {
-          IsOpen = input.ReadBool();
-          break;
-        }
-        case 74: {
-          challengeInfoList_.AddEntriesFrom(ref input, _repeated_challengeInfoList_codec);
-          break;
-        }
-        case 120: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

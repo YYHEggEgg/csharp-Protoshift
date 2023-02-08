@@ -19,7 +19,7 @@ syntax = "proto3";
 import "HomeMarkPointFurnitureData.proto";
 import "Vector.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message HomeMarkPointSceneData {
   Vector teapot_spirit_pos = 9;

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "TowerLevelRecord.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message TowerFloorRecord {
   map<uint32, uint32> passed_level_map = 11;

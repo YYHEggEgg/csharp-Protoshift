@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "IrodoriChessPlayerInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message IrodoriChessPlayerInfoNotify {
   // enum CmdId {

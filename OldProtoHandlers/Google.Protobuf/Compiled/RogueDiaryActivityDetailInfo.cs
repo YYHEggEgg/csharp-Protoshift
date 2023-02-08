@@ -9,335 +9,338 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from RogueDiaryActivityDetailInfo.proto</summary>
-public static partial class RogueDiaryActivityDetailInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for RogueDiaryActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from RogueDiaryActivityDetailInfo.proto</summary>
+  public static partial class RogueDiaryActivityDetailInfoReflection {
 
-  static RogueDiaryActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiJSb2d1ZURpYXJ5QWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhhSb2d1ZURp",
-          "YXJ5UHJvZ3Jlc3MucHJvdG8aGVJvZ3VlRGlhcnlTdGFnZUluZm8ucHJvdG8i",
-          "qAEKHFJvZ3VlRGlhcnlBY3Rpdml0eURldGFpbEluZm8SKAoKc3RhZ2VfbGlz",
-          "dBgLIAMoCzIULlJvZ3VlRGlhcnlTdGFnZUluZm8SGAoQaXNfaGF2ZV9wcm9n",
-          "cmVzcxgKIAEoCBIZChFpc19jb250ZW50X2Nsb3NlZBgCIAEoCBIpCgxjdXJf",
-          "cHJvZ3Jlc3MYByABKAsyEy5Sb2d1ZURpYXJ5UHJvZ3Jlc3NCHgocZW11Lmdy",
-          "YXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::RogueDiaryProgressReflection.Descriptor, global::RogueDiaryStageInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::RogueDiaryActivityDetailInfo), global::RogueDiaryActivityDetailInfo.Parser, new[]{ "StageList", "IsHaveProgress", "IsContentClosed", "CurProgress" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for RogueDiaryActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static RogueDiaryActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiJSb2d1ZURpYXJ5QWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhhSb2d1ZURp",
+            "YXJ5UHJvZ3Jlc3MucHJvdG8aGVJvZ3VlRGlhcnlTdGFnZUluZm8ucHJvdG8i",
+            "qAEKHFJvZ3VlRGlhcnlBY3Rpdml0eURldGFpbEluZm8SKAoKc3RhZ2VfbGlz",
+            "dBgLIAMoCzIULlJvZ3VlRGlhcnlTdGFnZUluZm8SGAoQaXNfaGF2ZV9wcm9n",
+            "cmVzcxgKIAEoCBIZChFpc19jb250ZW50X2Nsb3NlZBgCIAEoCBIpCgxjdXJf",
+            "cHJvZ3Jlc3MYByABKAsyEy5Sb2d1ZURpYXJ5UHJvZ3Jlc3NCDKoCCU9sZFBy",
+            "b3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.RogueDiaryProgressReflection.Descriptor, global::OldProtos.RogueDiaryStageInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.RogueDiaryActivityDetailInfo), global::OldProtos.RogueDiaryActivityDetailInfo.Parser, new[]{ "StageList", "IsHaveProgress", "IsContentClosed", "CurProgress" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class RogueDiaryActivityDetailInfo : pb::IMessage<RogueDiaryActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RogueDiaryActivityDetailInfo> _parser = new pb::MessageParser<RogueDiaryActivityDetailInfo>(() => new RogueDiaryActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RogueDiaryActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.RogueDiaryActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RogueDiaryActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RogueDiaryActivityDetailInfo(RogueDiaryActivityDetailInfo other) : this() {
+      stageList_ = other.stageList_.Clone();
+      isHaveProgress_ = other.isHaveProgress_;
+      isContentClosed_ = other.isContentClosed_;
+      curProgress_ = other.curProgress_ != null ? other.curProgress_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RogueDiaryActivityDetailInfo Clone() {
+      return new RogueDiaryActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "stage_list" field.</summary>
+    public const int StageListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::OldProtos.RogueDiaryStageInfo> _repeated_stageList_codec
+        = pb::FieldCodec.ForMessage(90, global::OldProtos.RogueDiaryStageInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.RogueDiaryStageInfo> stageList_ = new pbc::RepeatedField<global::OldProtos.RogueDiaryStageInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.RogueDiaryStageInfo> StageList {
+      get { return stageList_; }
+    }
+
+    /// <summary>Field number for the "is_have_progress" field.</summary>
+    public const int IsHaveProgressFieldNumber = 10;
+    private bool isHaveProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsHaveProgress {
+      get { return isHaveProgress_; }
+      set {
+        isHaveProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 2;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_progress" field.</summary>
+    public const int CurProgressFieldNumber = 7;
+    private global::OldProtos.RogueDiaryProgress curProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.RogueDiaryProgress CurProgress {
+      get { return curProgress_; }
+      set {
+        curProgress_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RogueDiaryActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RogueDiaryActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!stageList_.Equals(other.stageList_)) return false;
+      if (IsHaveProgress != other.IsHaveProgress) return false;
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if (!object.Equals(CurProgress, other.CurProgress)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= stageList_.GetHashCode();
+      if (IsHaveProgress != false) hash ^= IsHaveProgress.GetHashCode();
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      if (curProgress_ != null) hash ^= CurProgress.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsContentClosed != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsContentClosed);
+      }
+      if (curProgress_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(CurProgress);
+      }
+      if (IsHaveProgress != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsHaveProgress);
+      }
+      stageList_.WriteTo(output, _repeated_stageList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsContentClosed != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsContentClosed);
+      }
+      if (curProgress_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(CurProgress);
+      }
+      if (IsHaveProgress != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsHaveProgress);
+      }
+      stageList_.WriteTo(ref output, _repeated_stageList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += stageList_.CalculateSize(_repeated_stageList_codec);
+      if (IsHaveProgress != false) {
+        size += 1 + 1;
+      }
+      if (IsContentClosed != false) {
+        size += 1 + 1;
+      }
+      if (curProgress_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurProgress);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RogueDiaryActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      stageList_.Add(other.stageList_);
+      if (other.IsHaveProgress != false) {
+        IsHaveProgress = other.IsHaveProgress;
+      }
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
+      if (other.curProgress_ != null) {
+        if (curProgress_ == null) {
+          CurProgress = new global::OldProtos.RogueDiaryProgress();
+        }
+        CurProgress.MergeFrom(other.CurProgress);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 58: {
+            if (curProgress_ == null) {
+              CurProgress = new global::OldProtos.RogueDiaryProgress();
+            }
+            input.ReadMessage(CurProgress);
+            break;
+          }
+          case 80: {
+            IsHaveProgress = input.ReadBool();
+            break;
+          }
+          case 90: {
+            stageList_.AddEntriesFrom(input, _repeated_stageList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 58: {
+            if (curProgress_ == null) {
+              CurProgress = new global::OldProtos.RogueDiaryProgress();
+            }
+            input.ReadMessage(CurProgress);
+            break;
+          }
+          case 80: {
+            IsHaveProgress = input.ReadBool();
+            break;
+          }
+          case 90: {
+            stageList_.AddEntriesFrom(ref input, _repeated_stageList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class RogueDiaryActivityDetailInfo : pb::IMessage<RogueDiaryActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<RogueDiaryActivityDetailInfo> _parser = new pb::MessageParser<RogueDiaryActivityDetailInfo>(() => new RogueDiaryActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<RogueDiaryActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::RogueDiaryActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RogueDiaryActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RogueDiaryActivityDetailInfo(RogueDiaryActivityDetailInfo other) : this() {
-    stageList_ = other.stageList_.Clone();
-    isHaveProgress_ = other.isHaveProgress_;
-    isContentClosed_ = other.isContentClosed_;
-    curProgress_ = other.curProgress_ != null ? other.curProgress_.Clone() : null;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RogueDiaryActivityDetailInfo Clone() {
-    return new RogueDiaryActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "stage_list" field.</summary>
-  public const int StageListFieldNumber = 11;
-  private static readonly pb::FieldCodec<global::RogueDiaryStageInfo> _repeated_stageList_codec
-      = pb::FieldCodec.ForMessage(90, global::RogueDiaryStageInfo.Parser);
-  private readonly pbc::RepeatedField<global::RogueDiaryStageInfo> stageList_ = new pbc::RepeatedField<global::RogueDiaryStageInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::RogueDiaryStageInfo> StageList {
-    get { return stageList_; }
-  }
-
-  /// <summary>Field number for the "is_have_progress" field.</summary>
-  public const int IsHaveProgressFieldNumber = 10;
-  private bool isHaveProgress_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsHaveProgress {
-    get { return isHaveProgress_; }
-    set {
-      isHaveProgress_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_content_closed" field.</summary>
-  public const int IsContentClosedFieldNumber = 2;
-  private bool isContentClosed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsContentClosed {
-    get { return isContentClosed_; }
-    set {
-      isContentClosed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cur_progress" field.</summary>
-  public const int CurProgressFieldNumber = 7;
-  private global::RogueDiaryProgress curProgress_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::RogueDiaryProgress CurProgress {
-    get { return curProgress_; }
-    set {
-      curProgress_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as RogueDiaryActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(RogueDiaryActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!stageList_.Equals(other.stageList_)) return false;
-    if (IsHaveProgress != other.IsHaveProgress) return false;
-    if (IsContentClosed != other.IsContentClosed) return false;
-    if (!object.Equals(CurProgress, other.CurProgress)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= stageList_.GetHashCode();
-    if (IsHaveProgress != false) hash ^= IsHaveProgress.GetHashCode();
-    if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-    if (curProgress_ != null) hash ^= CurProgress.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsContentClosed != false) {
-      output.WriteRawTag(16);
-      output.WriteBool(IsContentClosed);
-    }
-    if (curProgress_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(CurProgress);
-    }
-    if (IsHaveProgress != false) {
-      output.WriteRawTag(80);
-      output.WriteBool(IsHaveProgress);
-    }
-    stageList_.WriteTo(output, _repeated_stageList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsContentClosed != false) {
-      output.WriteRawTag(16);
-      output.WriteBool(IsContentClosed);
-    }
-    if (curProgress_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(CurProgress);
-    }
-    if (IsHaveProgress != false) {
-      output.WriteRawTag(80);
-      output.WriteBool(IsHaveProgress);
-    }
-    stageList_.WriteTo(ref output, _repeated_stageList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += stageList_.CalculateSize(_repeated_stageList_codec);
-    if (IsHaveProgress != false) {
-      size += 1 + 1;
-    }
-    if (IsContentClosed != false) {
-      size += 1 + 1;
-    }
-    if (curProgress_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurProgress);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(RogueDiaryActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    stageList_.Add(other.stageList_);
-    if (other.IsHaveProgress != false) {
-      IsHaveProgress = other.IsHaveProgress;
-    }
-    if (other.IsContentClosed != false) {
-      IsContentClosed = other.IsContentClosed;
-    }
-    if (other.curProgress_ != null) {
-      if (curProgress_ == null) {
-        CurProgress = new global::RogueDiaryProgress();
-      }
-      CurProgress.MergeFrom(other.CurProgress);
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 58: {
-          if (curProgress_ == null) {
-            CurProgress = new global::RogueDiaryProgress();
-          }
-          input.ReadMessage(CurProgress);
-          break;
-        }
-        case 80: {
-          IsHaveProgress = input.ReadBool();
-          break;
-        }
-        case 90: {
-          stageList_.AddEntriesFrom(input, _repeated_stageList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 58: {
-          if (curProgress_ == null) {
-            CurProgress = new global::RogueDiaryProgress();
-          }
-          input.ReadMessage(CurProgress);
-          break;
-        }
-        case 80: {
-          IsHaveProgress = input.ReadBool();
-          break;
-        }
-        case 90: {
-          stageList_.AddEntriesFrom(ref input, _repeated_stageList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

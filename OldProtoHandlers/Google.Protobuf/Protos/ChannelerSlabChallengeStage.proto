@@ -19,7 +19,7 @@ syntax = "proto3";
 import "ChannelerSlabChallenge.proto";
 import "ChannelerSlabOneofDungeon.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message ChannelerSlabChallengeStage {
   uint32 open_time = 3;

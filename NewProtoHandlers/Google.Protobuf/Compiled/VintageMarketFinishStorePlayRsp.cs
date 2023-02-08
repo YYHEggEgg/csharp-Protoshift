@@ -9,534 +9,537 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from VintageMarketFinishStorePlayRsp.proto</summary>
-public static partial class VintageMarketFinishStorePlayRspReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for VintageMarketFinishStorePlayRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from VintageMarketFinishStorePlayRsp.proto</summary>
+  public static partial class VintageMarketFinishStorePlayRspReflection {
 
-  static VintageMarketFinishStorePlayRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiVWaW50YWdlTWFya2V0RmluaXNoU3RvcmVQbGF5UnNwLnByb3RvIpkDCh9W",
-          "aW50YWdlTWFya2V0RmluaXNoU3RvcmVQbGF5UnNwEhMKC3N0b3JlX3JvdW5k",
-          "GAogASgNEhsKE1VuazMzMDBfSEpJSElPSUdBUFAYDyADKA0SDwoHcmV0Y29k",
-          "ZRgJIAEoBRJOChBzdG9yZV9pbmNvbWVfbWFwGAIgAygLMjQuVmludGFnZU1h",
-          "cmtldEZpbmlzaFN0b3JlUGxheVJzcC5TdG9yZUluY29tZU1hcEVudHJ5EhsK",
-          "E1VuazMzMDBfREpJTEVMRkhGSEoYBiABKA0SGwoTVW5rMzMwMF9PQ0lNS0VQ",
-          "Sk9PTBgDIAMoDRIbChNVbmszMzAwX0dDRE5PUEpFSUJHGAQgASgNEhsKE1Vu",
-          "azMzMDBfQkRBSU9ORVBLSUsYASADKA0SGwoTVW5rMzMwMF9ER0VDSk9LTURH",
-          "ThgLIAEoDRIbChNVbmszMzAwX0RMTkZDQlBEQkJIGA4gASgNGjUKE1N0b3Jl",
-          "SW5jb21lTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4",
-          "AUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::VintageMarketFinishStorePlayRsp), global::VintageMarketFinishStorePlayRsp.Parser, new[]{ "StoreRound", "Unk3300HJIHIOIGAPP", "Retcode", "StoreIncomeMap", "Unk3300DJILELFHFHJ", "Unk3300OCIMKEPJOOL", "Unk3300GCDNOPJEIBG", "Unk3300BDAIONEPKIK", "Unk3300DGECJOKMDGN", "Unk3300DLNFCBPDBBH" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for VintageMarketFinishStorePlayRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static VintageMarketFinishStorePlayRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiVWaW50YWdlTWFya2V0RmluaXNoU3RvcmVQbGF5UnNwLnByb3RvIpkDCh9W",
+            "aW50YWdlTWFya2V0RmluaXNoU3RvcmVQbGF5UnNwEhMKC3N0b3JlX3JvdW5k",
+            "GAogASgNEhsKE1VuazMzMDBfSEpJSElPSUdBUFAYDyADKA0SDwoHcmV0Y29k",
+            "ZRgJIAEoBRJOChBzdG9yZV9pbmNvbWVfbWFwGAIgAygLMjQuVmludGFnZU1h",
+            "cmtldEZpbmlzaFN0b3JlUGxheVJzcC5TdG9yZUluY29tZU1hcEVudHJ5EhsK",
+            "E1VuazMzMDBfREpJTEVMRkhGSEoYBiABKA0SGwoTVW5rMzMwMF9PQ0lNS0VQ",
+            "Sk9PTBgDIAMoDRIbChNVbmszMzAwX0dDRE5PUEpFSUJHGAQgASgNEhsKE1Vu",
+            "azMzMDBfQkRBSU9ORVBLSUsYASADKA0SGwoTVW5rMzMwMF9ER0VDSk9LTURH",
+            "ThgLIAEoDRIbChNVbmszMzAwX0RMTkZDQlBEQkJIGA4gASgNGjUKE1N0b3Jl",
+            "SW5jb21lTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4",
+            "AUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.VintageMarketFinishStorePlayRsp), global::NewProtos.VintageMarketFinishStorePlayRsp.Parser, new[]{ "StoreRound", "Unk3300HJIHIOIGAPP", "Retcode", "StoreIncomeMap", "Unk3300DJILELFHFHJ", "Unk3300OCIMKEPJOOL", "Unk3300GCDNOPJEIBG", "Unk3300BDAIONEPKIK", "Unk3300DGECJOKMDGN", "Unk3300DLNFCBPDBBH" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 20941;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class VintageMarketFinishStorePlayRsp : pb::IMessage<VintageMarketFinishStorePlayRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<VintageMarketFinishStorePlayRsp> _parser = new pb::MessageParser<VintageMarketFinishStorePlayRsp>(() => new VintageMarketFinishStorePlayRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<VintageMarketFinishStorePlayRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.VintageMarketFinishStorePlayRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VintageMarketFinishStorePlayRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VintageMarketFinishStorePlayRsp(VintageMarketFinishStorePlayRsp other) : this() {
+      storeRound_ = other.storeRound_;
+      unk3300HJIHIOIGAPP_ = other.unk3300HJIHIOIGAPP_.Clone();
+      retcode_ = other.retcode_;
+      storeIncomeMap_ = other.storeIncomeMap_.Clone();
+      unk3300DJILELFHFHJ_ = other.unk3300DJILELFHFHJ_;
+      unk3300OCIMKEPJOOL_ = other.unk3300OCIMKEPJOOL_.Clone();
+      unk3300GCDNOPJEIBG_ = other.unk3300GCDNOPJEIBG_;
+      unk3300BDAIONEPKIK_ = other.unk3300BDAIONEPKIK_.Clone();
+      unk3300DGECJOKMDGN_ = other.unk3300DGECJOKMDGN_;
+      unk3300DLNFCBPDBBH_ = other.unk3300DLNFCBPDBBH_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VintageMarketFinishStorePlayRsp Clone() {
+      return new VintageMarketFinishStorePlayRsp(this);
+    }
+
+    /// <summary>Field number for the "store_round" field.</summary>
+    public const int StoreRoundFieldNumber = 10;
+    private uint storeRound_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StoreRound {
+      get { return storeRound_; }
+      set {
+        storeRound_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_HJIHIOIGAPP" field.</summary>
+    public const int Unk3300HJIHIOIGAPPFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300HJIHIOIGAPP_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> unk3300HJIHIOIGAPP_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300HJIHIOIGAPP {
+      get { return unk3300HJIHIOIGAPP_; }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 9;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "store_income_map" field.</summary>
+    public const int StoreIncomeMapFieldNumber = 2;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_storeIncomeMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 18);
+    private readonly pbc::MapField<uint, uint> storeIncomeMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> StoreIncomeMap {
+      get { return storeIncomeMap_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_DJILELFHFHJ" field.</summary>
+    public const int Unk3300DJILELFHFHJFieldNumber = 6;
+    private uint unk3300DJILELFHFHJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DJILELFHFHJ {
+      get { return unk3300DJILELFHFHJ_; }
+      set {
+        unk3300DJILELFHFHJ_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OCIMKEPJOOL" field.</summary>
+    public const int Unk3300OCIMKEPJOOLFieldNumber = 3;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300OCIMKEPJOOL_codec
+        = pb::FieldCodec.ForUInt32(26);
+    private readonly pbc::RepeatedField<uint> unk3300OCIMKEPJOOL_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300OCIMKEPJOOL {
+      get { return unk3300OCIMKEPJOOL_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_GCDNOPJEIBG" field.</summary>
+    public const int Unk3300GCDNOPJEIBGFieldNumber = 4;
+    private uint unk3300GCDNOPJEIBG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GCDNOPJEIBG {
+      get { return unk3300GCDNOPJEIBG_; }
+      set {
+        unk3300GCDNOPJEIBG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BDAIONEPKIK" field.</summary>
+    public const int Unk3300BDAIONEPKIKFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300BDAIONEPKIK_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> unk3300BDAIONEPKIK_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300BDAIONEPKIK {
+      get { return unk3300BDAIONEPKIK_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_DGECJOKMDGN" field.</summary>
+    public const int Unk3300DGECJOKMDGNFieldNumber = 11;
+    private uint unk3300DGECJOKMDGN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DGECJOKMDGN {
+      get { return unk3300DGECJOKMDGN_; }
+      set {
+        unk3300DGECJOKMDGN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DLNFCBPDBBH" field.</summary>
+    public const int Unk3300DLNFCBPDBBHFieldNumber = 14;
+    private uint unk3300DLNFCBPDBBH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DLNFCBPDBBH {
+      get { return unk3300DLNFCBPDBBH_; }
+      set {
+        unk3300DLNFCBPDBBH_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as VintageMarketFinishStorePlayRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(VintageMarketFinishStorePlayRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (StoreRound != other.StoreRound) return false;
+      if(!unk3300HJIHIOIGAPP_.Equals(other.unk3300HJIHIOIGAPP_)) return false;
+      if (Retcode != other.Retcode) return false;
+      if (!StoreIncomeMap.Equals(other.StoreIncomeMap)) return false;
+      if (Unk3300DJILELFHFHJ != other.Unk3300DJILELFHFHJ) return false;
+      if(!unk3300OCIMKEPJOOL_.Equals(other.unk3300OCIMKEPJOOL_)) return false;
+      if (Unk3300GCDNOPJEIBG != other.Unk3300GCDNOPJEIBG) return false;
+      if(!unk3300BDAIONEPKIK_.Equals(other.unk3300BDAIONEPKIK_)) return false;
+      if (Unk3300DGECJOKMDGN != other.Unk3300DGECJOKMDGN) return false;
+      if (Unk3300DLNFCBPDBBH != other.Unk3300DLNFCBPDBBH) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (StoreRound != 0) hash ^= StoreRound.GetHashCode();
+      hash ^= unk3300HJIHIOIGAPP_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= StoreIncomeMap.GetHashCode();
+      if (Unk3300DJILELFHFHJ != 0) hash ^= Unk3300DJILELFHFHJ.GetHashCode();
+      hash ^= unk3300OCIMKEPJOOL_.GetHashCode();
+      if (Unk3300GCDNOPJEIBG != 0) hash ^= Unk3300GCDNOPJEIBG.GetHashCode();
+      hash ^= unk3300BDAIONEPKIK_.GetHashCode();
+      if (Unk3300DGECJOKMDGN != 0) hash ^= Unk3300DGECJOKMDGN.GetHashCode();
+      if (Unk3300DLNFCBPDBBH != 0) hash ^= Unk3300DLNFCBPDBBH.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      unk3300BDAIONEPKIK_.WriteTo(output, _repeated_unk3300BDAIONEPKIK_codec);
+      storeIncomeMap_.WriteTo(output, _map_storeIncomeMap_codec);
+      unk3300OCIMKEPJOOL_.WriteTo(output, _repeated_unk3300OCIMKEPJOOL_codec);
+      if (Unk3300GCDNOPJEIBG != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300GCDNOPJEIBG);
+      }
+      if (Unk3300DJILELFHFHJ != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300DJILELFHFHJ);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Retcode);
+      }
+      if (StoreRound != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(StoreRound);
+      }
+      if (Unk3300DGECJOKMDGN != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300DGECJOKMDGN);
+      }
+      if (Unk3300DLNFCBPDBBH != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300DLNFCBPDBBH);
+      }
+      unk3300HJIHIOIGAPP_.WriteTo(output, _repeated_unk3300HJIHIOIGAPP_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unk3300BDAIONEPKIK_.WriteTo(ref output, _repeated_unk3300BDAIONEPKIK_codec);
+      storeIncomeMap_.WriteTo(ref output, _map_storeIncomeMap_codec);
+      unk3300OCIMKEPJOOL_.WriteTo(ref output, _repeated_unk3300OCIMKEPJOOL_codec);
+      if (Unk3300GCDNOPJEIBG != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300GCDNOPJEIBG);
+      }
+      if (Unk3300DJILELFHFHJ != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Unk3300DJILELFHFHJ);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Retcode);
+      }
+      if (StoreRound != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(StoreRound);
+      }
+      if (Unk3300DGECJOKMDGN != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Unk3300DGECJOKMDGN);
+      }
+      if (Unk3300DLNFCBPDBBH != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300DLNFCBPDBBH);
+      }
+      unk3300HJIHIOIGAPP_.WriteTo(ref output, _repeated_unk3300HJIHIOIGAPP_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (StoreRound != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StoreRound);
+      }
+      size += unk3300HJIHIOIGAPP_.CalculateSize(_repeated_unk3300HJIHIOIGAPP_codec);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      size += storeIncomeMap_.CalculateSize(_map_storeIncomeMap_codec);
+      if (Unk3300DJILELFHFHJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DJILELFHFHJ);
+      }
+      size += unk3300OCIMKEPJOOL_.CalculateSize(_repeated_unk3300OCIMKEPJOOL_codec);
+      if (Unk3300GCDNOPJEIBG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GCDNOPJEIBG);
+      }
+      size += unk3300BDAIONEPKIK_.CalculateSize(_repeated_unk3300BDAIONEPKIK_codec);
+      if (Unk3300DGECJOKMDGN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DGECJOKMDGN);
+      }
+      if (Unk3300DLNFCBPDBBH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DLNFCBPDBBH);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(VintageMarketFinishStorePlayRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.StoreRound != 0) {
+        StoreRound = other.StoreRound;
+      }
+      unk3300HJIHIOIGAPP_.Add(other.unk3300HJIHIOIGAPP_);
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      storeIncomeMap_.Add(other.storeIncomeMap_);
+      if (other.Unk3300DJILELFHFHJ != 0) {
+        Unk3300DJILELFHFHJ = other.Unk3300DJILELFHFHJ;
+      }
+      unk3300OCIMKEPJOOL_.Add(other.unk3300OCIMKEPJOOL_);
+      if (other.Unk3300GCDNOPJEIBG != 0) {
+        Unk3300GCDNOPJEIBG = other.Unk3300GCDNOPJEIBG;
+      }
+      unk3300BDAIONEPKIK_.Add(other.unk3300BDAIONEPKIK_);
+      if (other.Unk3300DGECJOKMDGN != 0) {
+        Unk3300DGECJOKMDGN = other.Unk3300DGECJOKMDGN;
+      }
+      if (other.Unk3300DLNFCBPDBBH != 0) {
+        Unk3300DLNFCBPDBBH = other.Unk3300DLNFCBPDBBH;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10:
+          case 8: {
+            unk3300BDAIONEPKIK_.AddEntriesFrom(input, _repeated_unk3300BDAIONEPKIK_codec);
+            break;
+          }
+          case 18: {
+            storeIncomeMap_.AddEntriesFrom(input, _map_storeIncomeMap_codec);
+            break;
+          }
+          case 26:
+          case 24: {
+            unk3300OCIMKEPJOOL_.AddEntriesFrom(input, _repeated_unk3300OCIMKEPJOOL_codec);
+            break;
+          }
+          case 32: {
+            Unk3300GCDNOPJEIBG = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Unk3300DJILELFHFHJ = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            StoreRound = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Unk3300DGECJOKMDGN = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300DLNFCBPDBBH = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            unk3300HJIHIOIGAPP_.AddEntriesFrom(input, _repeated_unk3300HJIHIOIGAPP_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10:
+          case 8: {
+            unk3300BDAIONEPKIK_.AddEntriesFrom(ref input, _repeated_unk3300BDAIONEPKIK_codec);
+            break;
+          }
+          case 18: {
+            storeIncomeMap_.AddEntriesFrom(ref input, _map_storeIncomeMap_codec);
+            break;
+          }
+          case 26:
+          case 24: {
+            unk3300OCIMKEPJOOL_.AddEntriesFrom(ref input, _repeated_unk3300OCIMKEPJOOL_codec);
+            break;
+          }
+          case 32: {
+            Unk3300GCDNOPJEIBG = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Unk3300DJILELFHFHJ = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 80: {
+            StoreRound = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Unk3300DGECJOKMDGN = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300DLNFCBPDBBH = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            unk3300HJIHIOIGAPP_.AddEntriesFrom(ref input, _repeated_unk3300HJIHIOIGAPP_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 20941;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class VintageMarketFinishStorePlayRsp : pb::IMessage<VintageMarketFinishStorePlayRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<VintageMarketFinishStorePlayRsp> _parser = new pb::MessageParser<VintageMarketFinishStorePlayRsp>(() => new VintageMarketFinishStorePlayRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<VintageMarketFinishStorePlayRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::VintageMarketFinishStorePlayRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public VintageMarketFinishStorePlayRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public VintageMarketFinishStorePlayRsp(VintageMarketFinishStorePlayRsp other) : this() {
-    storeRound_ = other.storeRound_;
-    unk3300HJIHIOIGAPP_ = other.unk3300HJIHIOIGAPP_.Clone();
-    retcode_ = other.retcode_;
-    storeIncomeMap_ = other.storeIncomeMap_.Clone();
-    unk3300DJILELFHFHJ_ = other.unk3300DJILELFHFHJ_;
-    unk3300OCIMKEPJOOL_ = other.unk3300OCIMKEPJOOL_.Clone();
-    unk3300GCDNOPJEIBG_ = other.unk3300GCDNOPJEIBG_;
-    unk3300BDAIONEPKIK_ = other.unk3300BDAIONEPKIK_.Clone();
-    unk3300DGECJOKMDGN_ = other.unk3300DGECJOKMDGN_;
-    unk3300DLNFCBPDBBH_ = other.unk3300DLNFCBPDBBH_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public VintageMarketFinishStorePlayRsp Clone() {
-    return new VintageMarketFinishStorePlayRsp(this);
-  }
-
-  /// <summary>Field number for the "store_round" field.</summary>
-  public const int StoreRoundFieldNumber = 10;
-  private uint storeRound_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StoreRound {
-    get { return storeRound_; }
-    set {
-      storeRound_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_HJIHIOIGAPP" field.</summary>
-  public const int Unk3300HJIHIOIGAPPFieldNumber = 15;
-  private static readonly pb::FieldCodec<uint> _repeated_unk3300HJIHIOIGAPP_codec
-      = pb::FieldCodec.ForUInt32(122);
-  private readonly pbc::RepeatedField<uint> unk3300HJIHIOIGAPP_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> Unk3300HJIHIOIGAPP {
-    get { return unk3300HJIHIOIGAPP_; }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 9;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "store_income_map" field.</summary>
-  public const int StoreIncomeMapFieldNumber = 2;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_storeIncomeMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 18);
-  private readonly pbc::MapField<uint, uint> storeIncomeMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> StoreIncomeMap {
-    get { return storeIncomeMap_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_DJILELFHFHJ" field.</summary>
-  public const int Unk3300DJILELFHFHJFieldNumber = 6;
-  private uint unk3300DJILELFHFHJ_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300DJILELFHFHJ {
-    get { return unk3300DJILELFHFHJ_; }
-    set {
-      unk3300DJILELFHFHJ_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_OCIMKEPJOOL" field.</summary>
-  public const int Unk3300OCIMKEPJOOLFieldNumber = 3;
-  private static readonly pb::FieldCodec<uint> _repeated_unk3300OCIMKEPJOOL_codec
-      = pb::FieldCodec.ForUInt32(26);
-  private readonly pbc::RepeatedField<uint> unk3300OCIMKEPJOOL_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> Unk3300OCIMKEPJOOL {
-    get { return unk3300OCIMKEPJOOL_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_GCDNOPJEIBG" field.</summary>
-  public const int Unk3300GCDNOPJEIBGFieldNumber = 4;
-  private uint unk3300GCDNOPJEIBG_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300GCDNOPJEIBG {
-    get { return unk3300GCDNOPJEIBG_; }
-    set {
-      unk3300GCDNOPJEIBG_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_BDAIONEPKIK" field.</summary>
-  public const int Unk3300BDAIONEPKIKFieldNumber = 1;
-  private static readonly pb::FieldCodec<uint> _repeated_unk3300BDAIONEPKIK_codec
-      = pb::FieldCodec.ForUInt32(10);
-  private readonly pbc::RepeatedField<uint> unk3300BDAIONEPKIK_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> Unk3300BDAIONEPKIK {
-    get { return unk3300BDAIONEPKIK_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_DGECJOKMDGN" field.</summary>
-  public const int Unk3300DGECJOKMDGNFieldNumber = 11;
-  private uint unk3300DGECJOKMDGN_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300DGECJOKMDGN {
-    get { return unk3300DGECJOKMDGN_; }
-    set {
-      unk3300DGECJOKMDGN_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_DLNFCBPDBBH" field.</summary>
-  public const int Unk3300DLNFCBPDBBHFieldNumber = 14;
-  private uint unk3300DLNFCBPDBBH_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300DLNFCBPDBBH {
-    get { return unk3300DLNFCBPDBBH_; }
-    set {
-      unk3300DLNFCBPDBBH_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as VintageMarketFinishStorePlayRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(VintageMarketFinishStorePlayRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (StoreRound != other.StoreRound) return false;
-    if(!unk3300HJIHIOIGAPP_.Equals(other.unk3300HJIHIOIGAPP_)) return false;
-    if (Retcode != other.Retcode) return false;
-    if (!StoreIncomeMap.Equals(other.StoreIncomeMap)) return false;
-    if (Unk3300DJILELFHFHJ != other.Unk3300DJILELFHFHJ) return false;
-    if(!unk3300OCIMKEPJOOL_.Equals(other.unk3300OCIMKEPJOOL_)) return false;
-    if (Unk3300GCDNOPJEIBG != other.Unk3300GCDNOPJEIBG) return false;
-    if(!unk3300BDAIONEPKIK_.Equals(other.unk3300BDAIONEPKIK_)) return false;
-    if (Unk3300DGECJOKMDGN != other.Unk3300DGECJOKMDGN) return false;
-    if (Unk3300DLNFCBPDBBH != other.Unk3300DLNFCBPDBBH) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (StoreRound != 0) hash ^= StoreRound.GetHashCode();
-    hash ^= unk3300HJIHIOIGAPP_.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    hash ^= StoreIncomeMap.GetHashCode();
-    if (Unk3300DJILELFHFHJ != 0) hash ^= Unk3300DJILELFHFHJ.GetHashCode();
-    hash ^= unk3300OCIMKEPJOOL_.GetHashCode();
-    if (Unk3300GCDNOPJEIBG != 0) hash ^= Unk3300GCDNOPJEIBG.GetHashCode();
-    hash ^= unk3300BDAIONEPKIK_.GetHashCode();
-    if (Unk3300DGECJOKMDGN != 0) hash ^= Unk3300DGECJOKMDGN.GetHashCode();
-    if (Unk3300DLNFCBPDBBH != 0) hash ^= Unk3300DLNFCBPDBBH.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    unk3300BDAIONEPKIK_.WriteTo(output, _repeated_unk3300BDAIONEPKIK_codec);
-    storeIncomeMap_.WriteTo(output, _map_storeIncomeMap_codec);
-    unk3300OCIMKEPJOOL_.WriteTo(output, _repeated_unk3300OCIMKEPJOOL_codec);
-    if (Unk3300GCDNOPJEIBG != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Unk3300GCDNOPJEIBG);
-    }
-    if (Unk3300DJILELFHFHJ != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Unk3300DJILELFHFHJ);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(72);
-      output.WriteInt32(Retcode);
-    }
-    if (StoreRound != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(StoreRound);
-    }
-    if (Unk3300DGECJOKMDGN != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(Unk3300DGECJOKMDGN);
-    }
-    if (Unk3300DLNFCBPDBBH != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300DLNFCBPDBBH);
-    }
-    unk3300HJIHIOIGAPP_.WriteTo(output, _repeated_unk3300HJIHIOIGAPP_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    unk3300BDAIONEPKIK_.WriteTo(ref output, _repeated_unk3300BDAIONEPKIK_codec);
-    storeIncomeMap_.WriteTo(ref output, _map_storeIncomeMap_codec);
-    unk3300OCIMKEPJOOL_.WriteTo(ref output, _repeated_unk3300OCIMKEPJOOL_codec);
-    if (Unk3300GCDNOPJEIBG != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Unk3300GCDNOPJEIBG);
-    }
-    if (Unk3300DJILELFHFHJ != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Unk3300DJILELFHFHJ);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(72);
-      output.WriteInt32(Retcode);
-    }
-    if (StoreRound != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(StoreRound);
-    }
-    if (Unk3300DGECJOKMDGN != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(Unk3300DGECJOKMDGN);
-    }
-    if (Unk3300DLNFCBPDBBH != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300DLNFCBPDBBH);
-    }
-    unk3300HJIHIOIGAPP_.WriteTo(ref output, _repeated_unk3300HJIHIOIGAPP_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (StoreRound != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StoreRound);
-    }
-    size += unk3300HJIHIOIGAPP_.CalculateSize(_repeated_unk3300HJIHIOIGAPP_codec);
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    size += storeIncomeMap_.CalculateSize(_map_storeIncomeMap_codec);
-    if (Unk3300DJILELFHFHJ != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DJILELFHFHJ);
-    }
-    size += unk3300OCIMKEPJOOL_.CalculateSize(_repeated_unk3300OCIMKEPJOOL_codec);
-    if (Unk3300GCDNOPJEIBG != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GCDNOPJEIBG);
-    }
-    size += unk3300BDAIONEPKIK_.CalculateSize(_repeated_unk3300BDAIONEPKIK_codec);
-    if (Unk3300DGECJOKMDGN != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DGECJOKMDGN);
-    }
-    if (Unk3300DLNFCBPDBBH != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DLNFCBPDBBH);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(VintageMarketFinishStorePlayRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.StoreRound != 0) {
-      StoreRound = other.StoreRound;
-    }
-    unk3300HJIHIOIGAPP_.Add(other.unk3300HJIHIOIGAPP_);
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    storeIncomeMap_.Add(other.storeIncomeMap_);
-    if (other.Unk3300DJILELFHFHJ != 0) {
-      Unk3300DJILELFHFHJ = other.Unk3300DJILELFHFHJ;
-    }
-    unk3300OCIMKEPJOOL_.Add(other.unk3300OCIMKEPJOOL_);
-    if (other.Unk3300GCDNOPJEIBG != 0) {
-      Unk3300GCDNOPJEIBG = other.Unk3300GCDNOPJEIBG;
-    }
-    unk3300BDAIONEPKIK_.Add(other.unk3300BDAIONEPKIK_);
-    if (other.Unk3300DGECJOKMDGN != 0) {
-      Unk3300DGECJOKMDGN = other.Unk3300DGECJOKMDGN;
-    }
-    if (other.Unk3300DLNFCBPDBBH != 0) {
-      Unk3300DLNFCBPDBBH = other.Unk3300DLNFCBPDBBH;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10:
-        case 8: {
-          unk3300BDAIONEPKIK_.AddEntriesFrom(input, _repeated_unk3300BDAIONEPKIK_codec);
-          break;
-        }
-        case 18: {
-          storeIncomeMap_.AddEntriesFrom(input, _map_storeIncomeMap_codec);
-          break;
-        }
-        case 26:
-        case 24: {
-          unk3300OCIMKEPJOOL_.AddEntriesFrom(input, _repeated_unk3300OCIMKEPJOOL_codec);
-          break;
-        }
-        case 32: {
-          Unk3300GCDNOPJEIBG = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          Unk3300DJILELFHFHJ = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 80: {
-          StoreRound = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          Unk3300DGECJOKMDGN = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300DLNFCBPDBBH = input.ReadUInt32();
-          break;
-        }
-        case 122:
-        case 120: {
-          unk3300HJIHIOIGAPP_.AddEntriesFrom(input, _repeated_unk3300HJIHIOIGAPP_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10:
-        case 8: {
-          unk3300BDAIONEPKIK_.AddEntriesFrom(ref input, _repeated_unk3300BDAIONEPKIK_codec);
-          break;
-        }
-        case 18: {
-          storeIncomeMap_.AddEntriesFrom(ref input, _map_storeIncomeMap_codec);
-          break;
-        }
-        case 26:
-        case 24: {
-          unk3300OCIMKEPJOOL_.AddEntriesFrom(ref input, _repeated_unk3300OCIMKEPJOOL_codec);
-          break;
-        }
-        case 32: {
-          Unk3300GCDNOPJEIBG = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          Unk3300DJILELFHFHJ = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 80: {
-          StoreRound = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          Unk3300DGECJOKMDGN = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300DLNFCBPDBBH = input.ReadUInt32();
-          break;
-        }
-        case 122:
-        case 120: {
-          unk3300HJIHIOIGAPP_.AddEntriesFrom(ref input, _repeated_unk3300HJIHIOIGAPP_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

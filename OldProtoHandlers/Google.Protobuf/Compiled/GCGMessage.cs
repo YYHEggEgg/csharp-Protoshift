@@ -9,2067 +9,2070 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGMessage.proto</summary>
-public static partial class GCGMessageReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGMessage.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGMessage.proto</summary>
+  public static partial class GCGMessageReflection {
 
-  static GCGMessageReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChBHQ0dNZXNzYWdlLnByb3RvGhRHQ0dNc2dBZGRDYXJkcy5wcm90bxoTR0NH",
-          "TXNnQWRkRGljZS5wcm90bxoWR0NHTXNnQ2FyZFVwZGF0ZS5wcm90bxoTR0NH",
-          "TXNnQ2hhckRpZS5wcm90bxoZR0NHTXNnQ2xpZW50UGVyZm9ybS5wcm90bxoU",
-          "R0NHTXNnQ29zdERpY2UucHJvdG8aFkdDR01zZ0Nvc3RSZXZpc2UucHJvdG8a",
-          "FkdDR01zZ0RpY2VSZXJvbGwucHJvdG8aFEdDR01zZ0RpY2VSb2xsLnByb3Rv",
-          "GhpHQ0dNc2dEdWVsRGF0YUNoYW5nZS5wcm90bxoUR0NHTXNnR2FtZU92ZXIu",
-          "cHJvdG8aFUdDR01zZ01vZGlmeUFkZC5wcm90bxoYR0NHTXNnTW9kaWZ5UmVt",
-          "b3ZlLnByb3RvGhRHQ0dNc2dNb3ZlQ2FyZC5wcm90bxoTR0NHTXNnTmV3Q2Fy",
-          "ZC5wcm90bxofR0NHTXNnTm9EYW1hZ2VTa2lsbFJlc3VsdC5wcm90bxoTR0NH",
-          "TXNnT3BUaW1lci5wcm90bxoeR0NHTXNnUFZFSW50ZW50aW9uQ2hhbmdlLnBy",
-          "b3RvGhxHQ0dNc2dQVkVJbnRlbnRpb25JbmZvLnByb3RvGhBHQ0dNc2dQYXNz",
-          "LnByb3RvGhdHQ0dNc2dQaGFzZUNoYW5nZS5wcm90bxoZR0NHTXNnUGhhc2VD",
-          "b250aW51ZS5wcm90bxoZR0NHTXNnUmVhY3Rpb25CZWdpbi5wcm90bxoXR0NH",
-          "TXNnUmVhY3Rpb25FbmQucHJvdG8aF0dDR01zZ1JlbW92ZUNhcmRzLnByb3Rv",
-          "GhlHQ0dNc2dTZWxlY3RPblN0YWdlLnByb3RvGiFHQ0dNc2dTZWxlY3RPblN0",
-          "YWdlQnlFZmZlY3QucHJvdG8aHUdDR01zZ1NraWxsTGltaXRzQ2hhbmdlLnBy",
-          "b3RvGhdHQ0dNc2dTa2lsbFJlc3VsdC5wcm90bxoXR0NHTXNnVG9rZW5DaGFu",
-          "Z2UucHJvdG8aHEdDR01zZ1VwZGF0ZUNvbnRyb2xsZXIucHJvdG8aFEdDR01z",
-          "Z1VzZVNraWxsLnByb3RvGhdHQ0dNc2dVc2VTa2lsbEVuZC5wcm90bxodR0NH",
-          "TXNnV2FpdGluZ0xpc3RDaGFuZ2UucHJvdG8ipwwKCkdDR01lc3NhZ2USKgoM",
-          "dG9rZW5fY2hhbmdlGAwgASgLMhIuR0NHTXNnVG9rZW5DaGFuZ2VIABIqCgxw",
-          "aGFzZV9jaGFuZ2UYDSABKAsyEi5HQ0dNc2dQaGFzZUNoYW5nZUgAEiQKCWFk",
-          "ZF9jYXJkcxgKIAEoCzIPLkdDR01zZ0FkZENhcmRzSAASKgoMcmVtb3ZlX2Nh",
-          "cmRzGA4gASgLMhIuR0NHTXNnUmVtb3ZlQ2FyZHNIABIvCg9zZWxlY3Rfb25f",
-          "c3RhZ2UYBiABKAsyFC5HQ0dNc2dTZWxlY3RPblN0YWdlSAASJAoJZGljZV9y",
-          "b2xsGAkgASgLMg8uR0NHTXNnRGljZVJvbGxIABIoCgtkaWNlX3Jlcm9sbBgL",
-          "IAEoCzIRLkdDR01zZ0RpY2VSZXJvbGxIABIbCgRwYXNzGAUgASgLMgsuR0NH",
-          "TXNnUGFzc0gAEiIKCGNoYXJfZGllGAIgASgLMg4uR0NHTXNnQ2hhckRpZUgA",
-          "EioKDHNraWxsX3Jlc3VsdBgBIAEoCzISLkdDR01zZ1NraWxsUmVzdWx0SAAS",
-          "JAoJY29zdF9kaWNlGAcgASgLMg8uR0NHTXNnQ29zdERpY2VIABIiCghhZGRf",
-          "ZGljZRgDIAEoCzIOLkdDR01zZ0FkZERpY2VIABIkCgltb3ZlX2NhcmQYDyAB",
-          "KAsyDy5HQ0dNc2dNb3ZlQ2FyZEgAEiQKCXVzZV9za2lsbBgEIAEoCzIPLkdD",
-          "R01zZ1VzZVNraWxsSAASIwoIbmV3X2NhcmQYuA4gASgLMg4uR0NHTXNnTmV3",
-          "Q2FyZEgAEjUKEXVwZGF0ZV9jb250cm9sbGVyGK0DIAEoCzIXLkdDR01zZ1Vw",
-          "ZGF0ZUNvbnRyb2xsZXJIABInCgptb2RpZnlfYWRkGLsOIAEoCzIQLkdDR01z",
-          "Z01vZGlmeUFkZEgAEi0KDW1vZGlmeV9yZW1vdmUY1wMgASgLMhMuR0NHTXNn",
-          "TW9kaWZ5UmVtb3ZlSAASLAoNdXNlX3NraWxsX2VuZBiDCyABKAsyEi5HQ0dN",
-          "c2dVc2VTa2lsbEVuZEgAEjIKEGR1ZWxfZGF0YV9jaGFuZ2UY8AcgASgLMhUu",
-          "R0NHTXNnRHVlbERhdGFDaGFuZ2VIABIvCg5jbGllbnRfcGVyZm9ybRiLCCAB",
-          "KAsyFC5HQ0dNc2dDbGllbnRQZXJmb3JtSAASJQoJZ2FtZV9vdmVyGMoFIAEo",
-          "CzIPLkdDR01zZ0dhbWVPdmVySAASIwoIb3BfdGltZXIYxg4gASgLMg4uR0NH",
-          "TXNnT3BUaW1lckgAEjgKE3dhaXRpbmdfbGlzdF9jaGFuZ2UYjg0gASgLMhgu",
-          "R0NHTXNnV2FpdGluZ0xpc3RDaGFuZ2VIABIpCgtjYXJkX3VwZGF0ZRjXDiAB",
-          "KAsyES5HQ0dNc2dDYXJkVXBkYXRlSAASQgoZc2VsZWN0X29uX3N0YWdlX2J5",
-          "X2VmZmVjdBj6DyABKAsyHC5HQ0dNc2dTZWxlY3RPblN0YWdlQnlFZmZlY3RI",
-          "ABIpCgtjb3N0X3JldmlzZRjGCiABKAsyES5HQ0dNc2dDb3N0UmV2aXNlSAAS",
-          "LwoOcGhhc2VfY29udGludWUYwgsgASgLMhQuR0NHTXNnUGhhc2VDb250aW51",
-          "ZUgAEjYKEnB2ZV9pbnRlbnRpb25faW5mbxjkCSABKAsyFy5HQ0dNc2dQVkVJ",
-          "bnRlbnRpb25JbmZvSAASOgoUcHZlX2ludGVudGlvbl9jaGFuZ2UY/QYgASgL",
-          "MhkuR0NHTXNnUFZFSW50ZW50aW9uQ2hhbmdlSAASOAoTc2tpbGxfbGltaXRz",
-          "X2NoYW5nZRiDAiABKAsyGC5HQ0dNc2dTa2lsbExpbWl0c0NoYW5nZUgAEjwK",
-          "Fm5vX2RhbWFnZV9za2lsbF9yZXN1bHQYGCABKAsyGi5HQ0dNc2dOb0RhbWFn",
-          "ZVNraWxsUmVzdWx0SAASLwoOcmVhY3Rpb25fYmVnaW4Y2wYgASgLMhQuR0NH",
-          "TXNnUmVhY3Rpb25CZWdpbkgAEisKDHJlYWN0aW9uX2VuZBjzCiABKAsyEi5H",
-          "Q0dNc2dSZWFjdGlvbkVuZEgAQgkKB21lc3NhZ2VCHgocZW11LmdyYXNzY3V0",
-          "dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GCGMsgAddCardsReflection.Descriptor, global::GCGMsgAddDiceReflection.Descriptor, global::GCGMsgCardUpdateReflection.Descriptor, global::GCGMsgCharDieReflection.Descriptor, global::GCGMsgClientPerformReflection.Descriptor, global::GCGMsgCostDiceReflection.Descriptor, global::GCGMsgCostReviseReflection.Descriptor, global::GCGMsgDiceRerollReflection.Descriptor, global::GCGMsgDiceRollReflection.Descriptor, global::GCGMsgDuelDataChangeReflection.Descriptor, global::GCGMsgGameOverReflection.Descriptor, global::GCGMsgModifyAddReflection.Descriptor, global::GCGMsgModifyRemoveReflection.Descriptor, global::GCGMsgMoveCardReflection.Descriptor, global::GCGMsgNewCardReflection.Descriptor, global::GCGMsgNoDamageSkillResultReflection.Descriptor, global::GCGMsgOpTimerReflection.Descriptor, global::GCGMsgPVEIntentionChangeReflection.Descriptor, global::GCGMsgPVEIntentionInfoReflection.Descriptor, global::GCGMsgPassReflection.Descriptor, global::GCGMsgPhaseChangeReflection.Descriptor, global::GCGMsgPhaseContinueReflection.Descriptor, global::GCGMsgReactionBeginReflection.Descriptor, global::GCGMsgReactionEndReflection.Descriptor, global::GCGMsgRemoveCardsReflection.Descriptor, global::GCGMsgSelectOnStageReflection.Descriptor, global::GCGMsgSelectOnStageByEffectReflection.Descriptor, global::GCGMsgSkillLimitsChangeReflection.Descriptor, global::GCGMsgSkillResultReflection.Descriptor, global::GCGMsgTokenChangeReflection.Descriptor, global::GCGMsgUpdateControllerReflection.Descriptor, global::GCGMsgUseSkillReflection.Descriptor, global::GCGMsgUseSkillEndReflection.Descriptor, global::GCGMsgWaitingListChangeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGMessage), global::GCGMessage.Parser, new[]{ "TokenChange", "PhaseChange", "AddCards", "RemoveCards", "SelectOnStage", "DiceRoll", "DiceReroll", "Pass", "CharDie", "SkillResult", "CostDice", "AddDice", "MoveCard", "UseSkill", "NewCard", "UpdateController", "ModifyAdd", "ModifyRemove", "UseSkillEnd", "DuelDataChange", "ClientPerform", "GameOver", "OpTimer", "WaitingListChange", "CardUpdate", "SelectOnStageByEffect", "CostRevise", "PhaseContinue", "PveIntentionInfo", "PveIntentionChange", "SkillLimitsChange", "NoDamageSkillResult", "ReactionBegin", "ReactionEnd" }, new[]{ "Message" }, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGMessage.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGMessageReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChBHQ0dNZXNzYWdlLnByb3RvGhRHQ0dNc2dBZGRDYXJkcy5wcm90bxoTR0NH",
+            "TXNnQWRkRGljZS5wcm90bxoWR0NHTXNnQ2FyZFVwZGF0ZS5wcm90bxoTR0NH",
+            "TXNnQ2hhckRpZS5wcm90bxoZR0NHTXNnQ2xpZW50UGVyZm9ybS5wcm90bxoU",
+            "R0NHTXNnQ29zdERpY2UucHJvdG8aFkdDR01zZ0Nvc3RSZXZpc2UucHJvdG8a",
+            "FkdDR01zZ0RpY2VSZXJvbGwucHJvdG8aFEdDR01zZ0RpY2VSb2xsLnByb3Rv",
+            "GhpHQ0dNc2dEdWVsRGF0YUNoYW5nZS5wcm90bxoUR0NHTXNnR2FtZU92ZXIu",
+            "cHJvdG8aFUdDR01zZ01vZGlmeUFkZC5wcm90bxoYR0NHTXNnTW9kaWZ5UmVt",
+            "b3ZlLnByb3RvGhRHQ0dNc2dNb3ZlQ2FyZC5wcm90bxoTR0NHTXNnTmV3Q2Fy",
+            "ZC5wcm90bxofR0NHTXNnTm9EYW1hZ2VTa2lsbFJlc3VsdC5wcm90bxoTR0NH",
+            "TXNnT3BUaW1lci5wcm90bxoeR0NHTXNnUFZFSW50ZW50aW9uQ2hhbmdlLnBy",
+            "b3RvGhxHQ0dNc2dQVkVJbnRlbnRpb25JbmZvLnByb3RvGhBHQ0dNc2dQYXNz",
+            "LnByb3RvGhdHQ0dNc2dQaGFzZUNoYW5nZS5wcm90bxoZR0NHTXNnUGhhc2VD",
+            "b250aW51ZS5wcm90bxoZR0NHTXNnUmVhY3Rpb25CZWdpbi5wcm90bxoXR0NH",
+            "TXNnUmVhY3Rpb25FbmQucHJvdG8aF0dDR01zZ1JlbW92ZUNhcmRzLnByb3Rv",
+            "GhlHQ0dNc2dTZWxlY3RPblN0YWdlLnByb3RvGiFHQ0dNc2dTZWxlY3RPblN0",
+            "YWdlQnlFZmZlY3QucHJvdG8aHUdDR01zZ1NraWxsTGltaXRzQ2hhbmdlLnBy",
+            "b3RvGhdHQ0dNc2dTa2lsbFJlc3VsdC5wcm90bxoXR0NHTXNnVG9rZW5DaGFu",
+            "Z2UucHJvdG8aHEdDR01zZ1VwZGF0ZUNvbnRyb2xsZXIucHJvdG8aFEdDR01z",
+            "Z1VzZVNraWxsLnByb3RvGhdHQ0dNc2dVc2VTa2lsbEVuZC5wcm90bxodR0NH",
+            "TXNnV2FpdGluZ0xpc3RDaGFuZ2UucHJvdG8ipwwKCkdDR01lc3NhZ2USKgoM",
+            "dG9rZW5fY2hhbmdlGAwgASgLMhIuR0NHTXNnVG9rZW5DaGFuZ2VIABIqCgxw",
+            "aGFzZV9jaGFuZ2UYDSABKAsyEi5HQ0dNc2dQaGFzZUNoYW5nZUgAEiQKCWFk",
+            "ZF9jYXJkcxgKIAEoCzIPLkdDR01zZ0FkZENhcmRzSAASKgoMcmVtb3ZlX2Nh",
+            "cmRzGA4gASgLMhIuR0NHTXNnUmVtb3ZlQ2FyZHNIABIvCg9zZWxlY3Rfb25f",
+            "c3RhZ2UYBiABKAsyFC5HQ0dNc2dTZWxlY3RPblN0YWdlSAASJAoJZGljZV9y",
+            "b2xsGAkgASgLMg8uR0NHTXNnRGljZVJvbGxIABIoCgtkaWNlX3Jlcm9sbBgL",
+            "IAEoCzIRLkdDR01zZ0RpY2VSZXJvbGxIABIbCgRwYXNzGAUgASgLMgsuR0NH",
+            "TXNnUGFzc0gAEiIKCGNoYXJfZGllGAIgASgLMg4uR0NHTXNnQ2hhckRpZUgA",
+            "EioKDHNraWxsX3Jlc3VsdBgBIAEoCzISLkdDR01zZ1NraWxsUmVzdWx0SAAS",
+            "JAoJY29zdF9kaWNlGAcgASgLMg8uR0NHTXNnQ29zdERpY2VIABIiCghhZGRf",
+            "ZGljZRgDIAEoCzIOLkdDR01zZ0FkZERpY2VIABIkCgltb3ZlX2NhcmQYDyAB",
+            "KAsyDy5HQ0dNc2dNb3ZlQ2FyZEgAEiQKCXVzZV9za2lsbBgEIAEoCzIPLkdD",
+            "R01zZ1VzZVNraWxsSAASIwoIbmV3X2NhcmQYuA4gASgLMg4uR0NHTXNnTmV3",
+            "Q2FyZEgAEjUKEXVwZGF0ZV9jb250cm9sbGVyGK0DIAEoCzIXLkdDR01zZ1Vw",
+            "ZGF0ZUNvbnRyb2xsZXJIABInCgptb2RpZnlfYWRkGLsOIAEoCzIQLkdDR01z",
+            "Z01vZGlmeUFkZEgAEi0KDW1vZGlmeV9yZW1vdmUY1wMgASgLMhMuR0NHTXNn",
+            "TW9kaWZ5UmVtb3ZlSAASLAoNdXNlX3NraWxsX2VuZBiDCyABKAsyEi5HQ0dN",
+            "c2dVc2VTa2lsbEVuZEgAEjIKEGR1ZWxfZGF0YV9jaGFuZ2UY8AcgASgLMhUu",
+            "R0NHTXNnRHVlbERhdGFDaGFuZ2VIABIvCg5jbGllbnRfcGVyZm9ybRiLCCAB",
+            "KAsyFC5HQ0dNc2dDbGllbnRQZXJmb3JtSAASJQoJZ2FtZV9vdmVyGMoFIAEo",
+            "CzIPLkdDR01zZ0dhbWVPdmVySAASIwoIb3BfdGltZXIYxg4gASgLMg4uR0NH",
+            "TXNnT3BUaW1lckgAEjgKE3dhaXRpbmdfbGlzdF9jaGFuZ2UYjg0gASgLMhgu",
+            "R0NHTXNnV2FpdGluZ0xpc3RDaGFuZ2VIABIpCgtjYXJkX3VwZGF0ZRjXDiAB",
+            "KAsyES5HQ0dNc2dDYXJkVXBkYXRlSAASQgoZc2VsZWN0X29uX3N0YWdlX2J5",
+            "X2VmZmVjdBj6DyABKAsyHC5HQ0dNc2dTZWxlY3RPblN0YWdlQnlFZmZlY3RI",
+            "ABIpCgtjb3N0X3JldmlzZRjGCiABKAsyES5HQ0dNc2dDb3N0UmV2aXNlSAAS",
+            "LwoOcGhhc2VfY29udGludWUYwgsgASgLMhQuR0NHTXNnUGhhc2VDb250aW51",
+            "ZUgAEjYKEnB2ZV9pbnRlbnRpb25faW5mbxjkCSABKAsyFy5HQ0dNc2dQVkVJ",
+            "bnRlbnRpb25JbmZvSAASOgoUcHZlX2ludGVudGlvbl9jaGFuZ2UY/QYgASgL",
+            "MhkuR0NHTXNnUFZFSW50ZW50aW9uQ2hhbmdlSAASOAoTc2tpbGxfbGltaXRz",
+            "X2NoYW5nZRiDAiABKAsyGC5HQ0dNc2dTa2lsbExpbWl0c0NoYW5nZUgAEjwK",
+            "Fm5vX2RhbWFnZV9za2lsbF9yZXN1bHQYGCABKAsyGi5HQ0dNc2dOb0RhbWFn",
+            "ZVNraWxsUmVzdWx0SAASLwoOcmVhY3Rpb25fYmVnaW4Y2wYgASgLMhQuR0NH",
+            "TXNnUmVhY3Rpb25CZWdpbkgAEisKDHJlYWN0aW9uX2VuZBjzCiABKAsyEi5H",
+            "Q0dNc2dSZWFjdGlvbkVuZEgAQgkKB21lc3NhZ2VCDKoCCU9sZFByb3Rvc2IG",
+            "cHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GCGMsgAddCardsReflection.Descriptor, global::OldProtos.GCGMsgAddDiceReflection.Descriptor, global::OldProtos.GCGMsgCardUpdateReflection.Descriptor, global::OldProtos.GCGMsgCharDieReflection.Descriptor, global::OldProtos.GCGMsgClientPerformReflection.Descriptor, global::OldProtos.GCGMsgCostDiceReflection.Descriptor, global::OldProtos.GCGMsgCostReviseReflection.Descriptor, global::OldProtos.GCGMsgDiceRerollReflection.Descriptor, global::OldProtos.GCGMsgDiceRollReflection.Descriptor, global::OldProtos.GCGMsgDuelDataChangeReflection.Descriptor, global::OldProtos.GCGMsgGameOverReflection.Descriptor, global::OldProtos.GCGMsgModifyAddReflection.Descriptor, global::OldProtos.GCGMsgModifyRemoveReflection.Descriptor, global::OldProtos.GCGMsgMoveCardReflection.Descriptor, global::OldProtos.GCGMsgNewCardReflection.Descriptor, global::OldProtos.GCGMsgNoDamageSkillResultReflection.Descriptor, global::OldProtos.GCGMsgOpTimerReflection.Descriptor, global::OldProtos.GCGMsgPVEIntentionChangeReflection.Descriptor, global::OldProtos.GCGMsgPVEIntentionInfoReflection.Descriptor, global::OldProtos.GCGMsgPassReflection.Descriptor, global::OldProtos.GCGMsgPhaseChangeReflection.Descriptor, global::OldProtos.GCGMsgPhaseContinueReflection.Descriptor, global::OldProtos.GCGMsgReactionBeginReflection.Descriptor, global::OldProtos.GCGMsgReactionEndReflection.Descriptor, global::OldProtos.GCGMsgRemoveCardsReflection.Descriptor, global::OldProtos.GCGMsgSelectOnStageReflection.Descriptor, global::OldProtos.GCGMsgSelectOnStageByEffectReflection.Descriptor, global::OldProtos.GCGMsgSkillLimitsChangeReflection.Descriptor, global::OldProtos.GCGMsgSkillResultReflection.Descriptor, global::OldProtos.GCGMsgTokenChangeReflection.Descriptor, global::OldProtos.GCGMsgUpdateControllerReflection.Descriptor, global::OldProtos.GCGMsgUseSkillReflection.Descriptor, global::OldProtos.GCGMsgUseSkillEndReflection.Descriptor, global::OldProtos.GCGMsgWaitingListChangeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GCGMessage), global::OldProtos.GCGMessage.Parser, new[]{ "TokenChange", "PhaseChange", "AddCards", "RemoveCards", "SelectOnStage", "DiceRoll", "DiceReroll", "Pass", "CharDie", "SkillResult", "CostDice", "AddDice", "MoveCard", "UseSkill", "NewCard", "UpdateController", "ModifyAdd", "ModifyRemove", "UseSkillEnd", "DuelDataChange", "ClientPerform", "GameOver", "OpTimer", "WaitingListChange", "CardUpdate", "SelectOnStageByEffect", "CostRevise", "PhaseContinue", "PveIntentionInfo", "PveIntentionChange", "SkillLimitsChange", "NoDamageSkillResult", "ReactionBegin", "ReactionEnd" }, new[]{ "Message" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GCGMessage : pb::IMessage<GCGMessage>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGMessage> _parser = new pb::MessageParser<GCGMessage>(() => new GCGMessage());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGMessage> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GCGMessageReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGMessage(GCGMessage other) : this() {
+      switch (other.MessageCase) {
+        case MessageOneofCase.TokenChange:
+          TokenChange = other.TokenChange.Clone();
+          break;
+        case MessageOneofCase.PhaseChange:
+          PhaseChange = other.PhaseChange.Clone();
+          break;
+        case MessageOneofCase.AddCards:
+          AddCards = other.AddCards.Clone();
+          break;
+        case MessageOneofCase.RemoveCards:
+          RemoveCards = other.RemoveCards.Clone();
+          break;
+        case MessageOneofCase.SelectOnStage:
+          SelectOnStage = other.SelectOnStage.Clone();
+          break;
+        case MessageOneofCase.DiceRoll:
+          DiceRoll = other.DiceRoll.Clone();
+          break;
+        case MessageOneofCase.DiceReroll:
+          DiceReroll = other.DiceReroll.Clone();
+          break;
+        case MessageOneofCase.Pass:
+          Pass = other.Pass.Clone();
+          break;
+        case MessageOneofCase.CharDie:
+          CharDie = other.CharDie.Clone();
+          break;
+        case MessageOneofCase.SkillResult:
+          SkillResult = other.SkillResult.Clone();
+          break;
+        case MessageOneofCase.CostDice:
+          CostDice = other.CostDice.Clone();
+          break;
+        case MessageOneofCase.AddDice:
+          AddDice = other.AddDice.Clone();
+          break;
+        case MessageOneofCase.MoveCard:
+          MoveCard = other.MoveCard.Clone();
+          break;
+        case MessageOneofCase.UseSkill:
+          UseSkill = other.UseSkill.Clone();
+          break;
+        case MessageOneofCase.NewCard:
+          NewCard = other.NewCard.Clone();
+          break;
+        case MessageOneofCase.UpdateController:
+          UpdateController = other.UpdateController.Clone();
+          break;
+        case MessageOneofCase.ModifyAdd:
+          ModifyAdd = other.ModifyAdd.Clone();
+          break;
+        case MessageOneofCase.ModifyRemove:
+          ModifyRemove = other.ModifyRemove.Clone();
+          break;
+        case MessageOneofCase.UseSkillEnd:
+          UseSkillEnd = other.UseSkillEnd.Clone();
+          break;
+        case MessageOneofCase.DuelDataChange:
+          DuelDataChange = other.DuelDataChange.Clone();
+          break;
+        case MessageOneofCase.ClientPerform:
+          ClientPerform = other.ClientPerform.Clone();
+          break;
+        case MessageOneofCase.GameOver:
+          GameOver = other.GameOver.Clone();
+          break;
+        case MessageOneofCase.OpTimer:
+          OpTimer = other.OpTimer.Clone();
+          break;
+        case MessageOneofCase.WaitingListChange:
+          WaitingListChange = other.WaitingListChange.Clone();
+          break;
+        case MessageOneofCase.CardUpdate:
+          CardUpdate = other.CardUpdate.Clone();
+          break;
+        case MessageOneofCase.SelectOnStageByEffect:
+          SelectOnStageByEffect = other.SelectOnStageByEffect.Clone();
+          break;
+        case MessageOneofCase.CostRevise:
+          CostRevise = other.CostRevise.Clone();
+          break;
+        case MessageOneofCase.PhaseContinue:
+          PhaseContinue = other.PhaseContinue.Clone();
+          break;
+        case MessageOneofCase.PveIntentionInfo:
+          PveIntentionInfo = other.PveIntentionInfo.Clone();
+          break;
+        case MessageOneofCase.PveIntentionChange:
+          PveIntentionChange = other.PveIntentionChange.Clone();
+          break;
+        case MessageOneofCase.SkillLimitsChange:
+          SkillLimitsChange = other.SkillLimitsChange.Clone();
+          break;
+        case MessageOneofCase.NoDamageSkillResult:
+          NoDamageSkillResult = other.NoDamageSkillResult.Clone();
+          break;
+        case MessageOneofCase.ReactionBegin:
+          ReactionBegin = other.ReactionBegin.Clone();
+          break;
+        case MessageOneofCase.ReactionEnd:
+          ReactionEnd = other.ReactionEnd.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGMessage Clone() {
+      return new GCGMessage(this);
+    }
+
+    /// <summary>Field number for the "token_change" field.</summary>
+    public const int TokenChangeFieldNumber = 12;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgTokenChange TokenChange {
+      get { return messageCase_ == MessageOneofCase.TokenChange ? (global::OldProtos.GCGMsgTokenChange) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.TokenChange;
+      }
+    }
+
+    /// <summary>Field number for the "phase_change" field.</summary>
+    public const int PhaseChangeFieldNumber = 13;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgPhaseChange PhaseChange {
+      get { return messageCase_ == MessageOneofCase.PhaseChange ? (global::OldProtos.GCGMsgPhaseChange) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PhaseChange;
+      }
+    }
+
+    /// <summary>Field number for the "add_cards" field.</summary>
+    public const int AddCardsFieldNumber = 10;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgAddCards AddCards {
+      get { return messageCase_ == MessageOneofCase.AddCards ? (global::OldProtos.GCGMsgAddCards) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.AddCards;
+      }
+    }
+
+    /// <summary>Field number for the "remove_cards" field.</summary>
+    public const int RemoveCardsFieldNumber = 14;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgRemoveCards RemoveCards {
+      get { return messageCase_ == MessageOneofCase.RemoveCards ? (global::OldProtos.GCGMsgRemoveCards) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.RemoveCards;
+      }
+    }
+
+    /// <summary>Field number for the "select_on_stage" field.</summary>
+    public const int SelectOnStageFieldNumber = 6;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgSelectOnStage SelectOnStage {
+      get { return messageCase_ == MessageOneofCase.SelectOnStage ? (global::OldProtos.GCGMsgSelectOnStage) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.SelectOnStage;
+      }
+    }
+
+    /// <summary>Field number for the "dice_roll" field.</summary>
+    public const int DiceRollFieldNumber = 9;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgDiceRoll DiceRoll {
+      get { return messageCase_ == MessageOneofCase.DiceRoll ? (global::OldProtos.GCGMsgDiceRoll) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.DiceRoll;
+      }
+    }
+
+    /// <summary>Field number for the "dice_reroll" field.</summary>
+    public const int DiceRerollFieldNumber = 11;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgDiceReroll DiceReroll {
+      get { return messageCase_ == MessageOneofCase.DiceReroll ? (global::OldProtos.GCGMsgDiceReroll) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.DiceReroll;
+      }
+    }
+
+    /// <summary>Field number for the "pass" field.</summary>
+    public const int PassFieldNumber = 5;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgPass Pass {
+      get { return messageCase_ == MessageOneofCase.Pass ? (global::OldProtos.GCGMsgPass) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.Pass;
+      }
+    }
+
+    /// <summary>Field number for the "char_die" field.</summary>
+    public const int CharDieFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgCharDie CharDie {
+      get { return messageCase_ == MessageOneofCase.CharDie ? (global::OldProtos.GCGMsgCharDie) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.CharDie;
+      }
+    }
+
+    /// <summary>Field number for the "skill_result" field.</summary>
+    public const int SkillResultFieldNumber = 1;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgSkillResult SkillResult {
+      get { return messageCase_ == MessageOneofCase.SkillResult ? (global::OldProtos.GCGMsgSkillResult) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.SkillResult;
+      }
+    }
+
+    /// <summary>Field number for the "cost_dice" field.</summary>
+    public const int CostDiceFieldNumber = 7;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgCostDice CostDice {
+      get { return messageCase_ == MessageOneofCase.CostDice ? (global::OldProtos.GCGMsgCostDice) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.CostDice;
+      }
+    }
+
+    /// <summary>Field number for the "add_dice" field.</summary>
+    public const int AddDiceFieldNumber = 3;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgAddDice AddDice {
+      get { return messageCase_ == MessageOneofCase.AddDice ? (global::OldProtos.GCGMsgAddDice) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.AddDice;
+      }
+    }
+
+    /// <summary>Field number for the "move_card" field.</summary>
+    public const int MoveCardFieldNumber = 15;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgMoveCard MoveCard {
+      get { return messageCase_ == MessageOneofCase.MoveCard ? (global::OldProtos.GCGMsgMoveCard) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.MoveCard;
+      }
+    }
+
+    /// <summary>Field number for the "use_skill" field.</summary>
+    public const int UseSkillFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgUseSkill UseSkill {
+      get { return messageCase_ == MessageOneofCase.UseSkill ? (global::OldProtos.GCGMsgUseSkill) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.UseSkill;
+      }
+    }
+
+    /// <summary>Field number for the "new_card" field.</summary>
+    public const int NewCardFieldNumber = 1848;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgNewCard NewCard {
+      get { return messageCase_ == MessageOneofCase.NewCard ? (global::OldProtos.GCGMsgNewCard) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.NewCard;
+      }
+    }
+
+    /// <summary>Field number for the "update_controller" field.</summary>
+    public const int UpdateControllerFieldNumber = 429;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgUpdateController UpdateController {
+      get { return messageCase_ == MessageOneofCase.UpdateController ? (global::OldProtos.GCGMsgUpdateController) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.UpdateController;
+      }
+    }
+
+    /// <summary>Field number for the "modify_add" field.</summary>
+    public const int ModifyAddFieldNumber = 1851;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgModifyAdd ModifyAdd {
+      get { return messageCase_ == MessageOneofCase.ModifyAdd ? (global::OldProtos.GCGMsgModifyAdd) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.ModifyAdd;
+      }
+    }
+
+    /// <summary>Field number for the "modify_remove" field.</summary>
+    public const int ModifyRemoveFieldNumber = 471;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgModifyRemove ModifyRemove {
+      get { return messageCase_ == MessageOneofCase.ModifyRemove ? (global::OldProtos.GCGMsgModifyRemove) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.ModifyRemove;
+      }
+    }
+
+    /// <summary>Field number for the "use_skill_end" field.</summary>
+    public const int UseSkillEndFieldNumber = 1411;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgUseSkillEnd UseSkillEnd {
+      get { return messageCase_ == MessageOneofCase.UseSkillEnd ? (global::OldProtos.GCGMsgUseSkillEnd) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.UseSkillEnd;
+      }
+    }
+
+    /// <summary>Field number for the "duel_data_change" field.</summary>
+    public const int DuelDataChangeFieldNumber = 1008;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgDuelDataChange DuelDataChange {
+      get { return messageCase_ == MessageOneofCase.DuelDataChange ? (global::OldProtos.GCGMsgDuelDataChange) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.DuelDataChange;
+      }
+    }
+
+    /// <summary>Field number for the "client_perform" field.</summary>
+    public const int ClientPerformFieldNumber = 1035;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgClientPerform ClientPerform {
+      get { return messageCase_ == MessageOneofCase.ClientPerform ? (global::OldProtos.GCGMsgClientPerform) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.ClientPerform;
+      }
+    }
+
+    /// <summary>Field number for the "game_over" field.</summary>
+    public const int GameOverFieldNumber = 714;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgGameOver GameOver {
+      get { return messageCase_ == MessageOneofCase.GameOver ? (global::OldProtos.GCGMsgGameOver) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.GameOver;
+      }
+    }
+
+    /// <summary>Field number for the "op_timer" field.</summary>
+    public const int OpTimerFieldNumber = 1862;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgOpTimer OpTimer {
+      get { return messageCase_ == MessageOneofCase.OpTimer ? (global::OldProtos.GCGMsgOpTimer) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.OpTimer;
+      }
+    }
+
+    /// <summary>Field number for the "waiting_list_change" field.</summary>
+    public const int WaitingListChangeFieldNumber = 1678;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgWaitingListChange WaitingListChange {
+      get { return messageCase_ == MessageOneofCase.WaitingListChange ? (global::OldProtos.GCGMsgWaitingListChange) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.WaitingListChange;
+      }
+    }
+
+    /// <summary>Field number for the "card_update" field.</summary>
+    public const int CardUpdateFieldNumber = 1879;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgCardUpdate CardUpdate {
+      get { return messageCase_ == MessageOneofCase.CardUpdate ? (global::OldProtos.GCGMsgCardUpdate) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.CardUpdate;
+      }
+    }
+
+    /// <summary>Field number for the "select_on_stage_by_effect" field.</summary>
+    public const int SelectOnStageByEffectFieldNumber = 2042;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgSelectOnStageByEffect SelectOnStageByEffect {
+      get { return messageCase_ == MessageOneofCase.SelectOnStageByEffect ? (global::OldProtos.GCGMsgSelectOnStageByEffect) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.SelectOnStageByEffect;
+      }
+    }
+
+    /// <summary>Field number for the "cost_revise" field.</summary>
+    public const int CostReviseFieldNumber = 1350;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgCostRevise CostRevise {
+      get { return messageCase_ == MessageOneofCase.CostRevise ? (global::OldProtos.GCGMsgCostRevise) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.CostRevise;
+      }
+    }
+
+    /// <summary>Field number for the "phase_continue" field.</summary>
+    public const int PhaseContinueFieldNumber = 1474;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgPhaseContinue PhaseContinue {
+      get { return messageCase_ == MessageOneofCase.PhaseContinue ? (global::OldProtos.GCGMsgPhaseContinue) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PhaseContinue;
+      }
+    }
+
+    /// <summary>Field number for the "pve_intention_info" field.</summary>
+    public const int PveIntentionInfoFieldNumber = 1252;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgPVEIntentionInfo PveIntentionInfo {
+      get { return messageCase_ == MessageOneofCase.PveIntentionInfo ? (global::OldProtos.GCGMsgPVEIntentionInfo) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PveIntentionInfo;
+      }
+    }
+
+    /// <summary>Field number for the "pve_intention_change" field.</summary>
+    public const int PveIntentionChangeFieldNumber = 893;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgPVEIntentionChange PveIntentionChange {
+      get { return messageCase_ == MessageOneofCase.PveIntentionChange ? (global::OldProtos.GCGMsgPVEIntentionChange) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PveIntentionChange;
+      }
+    }
+
+    /// <summary>Field number for the "skill_limits_change" field.</summary>
+    public const int SkillLimitsChangeFieldNumber = 259;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgSkillLimitsChange SkillLimitsChange {
+      get { return messageCase_ == MessageOneofCase.SkillLimitsChange ? (global::OldProtos.GCGMsgSkillLimitsChange) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.SkillLimitsChange;
+      }
+    }
+
+    /// <summary>Field number for the "no_damage_skill_result" field.</summary>
+    public const int NoDamageSkillResultFieldNumber = 24;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgNoDamageSkillResult NoDamageSkillResult {
+      get { return messageCase_ == MessageOneofCase.NoDamageSkillResult ? (global::OldProtos.GCGMsgNoDamageSkillResult) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.NoDamageSkillResult;
+      }
+    }
+
+    /// <summary>Field number for the "reaction_begin" field.</summary>
+    public const int ReactionBeginFieldNumber = 859;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgReactionBegin ReactionBegin {
+      get { return messageCase_ == MessageOneofCase.ReactionBegin ? (global::OldProtos.GCGMsgReactionBegin) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.ReactionBegin;
+      }
+    }
+
+    /// <summary>Field number for the "reaction_end" field.</summary>
+    public const int ReactionEndFieldNumber = 1395;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMsgReactionEnd ReactionEnd {
+      get { return messageCase_ == MessageOneofCase.ReactionEnd ? (global::OldProtos.GCGMsgReactionEnd) message_ : null; }
+      set {
+        message_ = value;
+        messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.ReactionEnd;
+      }
+    }
+
+    private object message_;
+    /// <summary>Enum of possible cases for the "message" oneof.</summary>
+    public enum MessageOneofCase {
+      None = 0,
+      TokenChange = 12,
+      PhaseChange = 13,
+      AddCards = 10,
+      RemoveCards = 14,
+      SelectOnStage = 6,
+      DiceRoll = 9,
+      DiceReroll = 11,
+      Pass = 5,
+      CharDie = 2,
+      SkillResult = 1,
+      CostDice = 7,
+      AddDice = 3,
+      MoveCard = 15,
+      UseSkill = 4,
+      NewCard = 1848,
+      UpdateController = 429,
+      ModifyAdd = 1851,
+      ModifyRemove = 471,
+      UseSkillEnd = 1411,
+      DuelDataChange = 1008,
+      ClientPerform = 1035,
+      GameOver = 714,
+      OpTimer = 1862,
+      WaitingListChange = 1678,
+      CardUpdate = 1879,
+      SelectOnStageByEffect = 2042,
+      CostRevise = 1350,
+      PhaseContinue = 1474,
+      PveIntentionInfo = 1252,
+      PveIntentionChange = 893,
+      SkillLimitsChange = 259,
+      NoDamageSkillResult = 24,
+      ReactionBegin = 859,
+      ReactionEnd = 1395,
+    }
+    private MessageOneofCase messageCase_ = MessageOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MessageOneofCase MessageCase {
+      get { return messageCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearMessage() {
+      messageCase_ = MessageOneofCase.None;
+      message_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGMessage);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(TokenChange, other.TokenChange)) return false;
+      if (!object.Equals(PhaseChange, other.PhaseChange)) return false;
+      if (!object.Equals(AddCards, other.AddCards)) return false;
+      if (!object.Equals(RemoveCards, other.RemoveCards)) return false;
+      if (!object.Equals(SelectOnStage, other.SelectOnStage)) return false;
+      if (!object.Equals(DiceRoll, other.DiceRoll)) return false;
+      if (!object.Equals(DiceReroll, other.DiceReroll)) return false;
+      if (!object.Equals(Pass, other.Pass)) return false;
+      if (!object.Equals(CharDie, other.CharDie)) return false;
+      if (!object.Equals(SkillResult, other.SkillResult)) return false;
+      if (!object.Equals(CostDice, other.CostDice)) return false;
+      if (!object.Equals(AddDice, other.AddDice)) return false;
+      if (!object.Equals(MoveCard, other.MoveCard)) return false;
+      if (!object.Equals(UseSkill, other.UseSkill)) return false;
+      if (!object.Equals(NewCard, other.NewCard)) return false;
+      if (!object.Equals(UpdateController, other.UpdateController)) return false;
+      if (!object.Equals(ModifyAdd, other.ModifyAdd)) return false;
+      if (!object.Equals(ModifyRemove, other.ModifyRemove)) return false;
+      if (!object.Equals(UseSkillEnd, other.UseSkillEnd)) return false;
+      if (!object.Equals(DuelDataChange, other.DuelDataChange)) return false;
+      if (!object.Equals(ClientPerform, other.ClientPerform)) return false;
+      if (!object.Equals(GameOver, other.GameOver)) return false;
+      if (!object.Equals(OpTimer, other.OpTimer)) return false;
+      if (!object.Equals(WaitingListChange, other.WaitingListChange)) return false;
+      if (!object.Equals(CardUpdate, other.CardUpdate)) return false;
+      if (!object.Equals(SelectOnStageByEffect, other.SelectOnStageByEffect)) return false;
+      if (!object.Equals(CostRevise, other.CostRevise)) return false;
+      if (!object.Equals(PhaseContinue, other.PhaseContinue)) return false;
+      if (!object.Equals(PveIntentionInfo, other.PveIntentionInfo)) return false;
+      if (!object.Equals(PveIntentionChange, other.PveIntentionChange)) return false;
+      if (!object.Equals(SkillLimitsChange, other.SkillLimitsChange)) return false;
+      if (!object.Equals(NoDamageSkillResult, other.NoDamageSkillResult)) return false;
+      if (!object.Equals(ReactionBegin, other.ReactionBegin)) return false;
+      if (!object.Equals(ReactionEnd, other.ReactionEnd)) return false;
+      if (MessageCase != other.MessageCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (messageCase_ == MessageOneofCase.TokenChange) hash ^= TokenChange.GetHashCode();
+      if (messageCase_ == MessageOneofCase.PhaseChange) hash ^= PhaseChange.GetHashCode();
+      if (messageCase_ == MessageOneofCase.AddCards) hash ^= AddCards.GetHashCode();
+      if (messageCase_ == MessageOneofCase.RemoveCards) hash ^= RemoveCards.GetHashCode();
+      if (messageCase_ == MessageOneofCase.SelectOnStage) hash ^= SelectOnStage.GetHashCode();
+      if (messageCase_ == MessageOneofCase.DiceRoll) hash ^= DiceRoll.GetHashCode();
+      if (messageCase_ == MessageOneofCase.DiceReroll) hash ^= DiceReroll.GetHashCode();
+      if (messageCase_ == MessageOneofCase.Pass) hash ^= Pass.GetHashCode();
+      if (messageCase_ == MessageOneofCase.CharDie) hash ^= CharDie.GetHashCode();
+      if (messageCase_ == MessageOneofCase.SkillResult) hash ^= SkillResult.GetHashCode();
+      if (messageCase_ == MessageOneofCase.CostDice) hash ^= CostDice.GetHashCode();
+      if (messageCase_ == MessageOneofCase.AddDice) hash ^= AddDice.GetHashCode();
+      if (messageCase_ == MessageOneofCase.MoveCard) hash ^= MoveCard.GetHashCode();
+      if (messageCase_ == MessageOneofCase.UseSkill) hash ^= UseSkill.GetHashCode();
+      if (messageCase_ == MessageOneofCase.NewCard) hash ^= NewCard.GetHashCode();
+      if (messageCase_ == MessageOneofCase.UpdateController) hash ^= UpdateController.GetHashCode();
+      if (messageCase_ == MessageOneofCase.ModifyAdd) hash ^= ModifyAdd.GetHashCode();
+      if (messageCase_ == MessageOneofCase.ModifyRemove) hash ^= ModifyRemove.GetHashCode();
+      if (messageCase_ == MessageOneofCase.UseSkillEnd) hash ^= UseSkillEnd.GetHashCode();
+      if (messageCase_ == MessageOneofCase.DuelDataChange) hash ^= DuelDataChange.GetHashCode();
+      if (messageCase_ == MessageOneofCase.ClientPerform) hash ^= ClientPerform.GetHashCode();
+      if (messageCase_ == MessageOneofCase.GameOver) hash ^= GameOver.GetHashCode();
+      if (messageCase_ == MessageOneofCase.OpTimer) hash ^= OpTimer.GetHashCode();
+      if (messageCase_ == MessageOneofCase.WaitingListChange) hash ^= WaitingListChange.GetHashCode();
+      if (messageCase_ == MessageOneofCase.CardUpdate) hash ^= CardUpdate.GetHashCode();
+      if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) hash ^= SelectOnStageByEffect.GetHashCode();
+      if (messageCase_ == MessageOneofCase.CostRevise) hash ^= CostRevise.GetHashCode();
+      if (messageCase_ == MessageOneofCase.PhaseContinue) hash ^= PhaseContinue.GetHashCode();
+      if (messageCase_ == MessageOneofCase.PveIntentionInfo) hash ^= PveIntentionInfo.GetHashCode();
+      if (messageCase_ == MessageOneofCase.PveIntentionChange) hash ^= PveIntentionChange.GetHashCode();
+      if (messageCase_ == MessageOneofCase.SkillLimitsChange) hash ^= SkillLimitsChange.GetHashCode();
+      if (messageCase_ == MessageOneofCase.NoDamageSkillResult) hash ^= NoDamageSkillResult.GetHashCode();
+      if (messageCase_ == MessageOneofCase.ReactionBegin) hash ^= ReactionBegin.GetHashCode();
+      if (messageCase_ == MessageOneofCase.ReactionEnd) hash ^= ReactionEnd.GetHashCode();
+      hash ^= (int) messageCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (messageCase_ == MessageOneofCase.SkillResult) {
+        output.WriteRawTag(10);
+        output.WriteMessage(SkillResult);
+      }
+      if (messageCase_ == MessageOneofCase.CharDie) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CharDie);
+      }
+      if (messageCase_ == MessageOneofCase.AddDice) {
+        output.WriteRawTag(26);
+        output.WriteMessage(AddDice);
+      }
+      if (messageCase_ == MessageOneofCase.UseSkill) {
+        output.WriteRawTag(34);
+        output.WriteMessage(UseSkill);
+      }
+      if (messageCase_ == MessageOneofCase.Pass) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Pass);
+      }
+      if (messageCase_ == MessageOneofCase.SelectOnStage) {
+        output.WriteRawTag(50);
+        output.WriteMessage(SelectOnStage);
+      }
+      if (messageCase_ == MessageOneofCase.CostDice) {
+        output.WriteRawTag(58);
+        output.WriteMessage(CostDice);
+      }
+      if (messageCase_ == MessageOneofCase.DiceRoll) {
+        output.WriteRawTag(74);
+        output.WriteMessage(DiceRoll);
+      }
+      if (messageCase_ == MessageOneofCase.AddCards) {
+        output.WriteRawTag(82);
+        output.WriteMessage(AddCards);
+      }
+      if (messageCase_ == MessageOneofCase.DiceReroll) {
+        output.WriteRawTag(90);
+        output.WriteMessage(DiceReroll);
+      }
+      if (messageCase_ == MessageOneofCase.TokenChange) {
+        output.WriteRawTag(98);
+        output.WriteMessage(TokenChange);
+      }
+      if (messageCase_ == MessageOneofCase.PhaseChange) {
+        output.WriteRawTag(106);
+        output.WriteMessage(PhaseChange);
+      }
+      if (messageCase_ == MessageOneofCase.RemoveCards) {
+        output.WriteRawTag(114);
+        output.WriteMessage(RemoveCards);
+      }
+      if (messageCase_ == MessageOneofCase.MoveCard) {
+        output.WriteRawTag(122);
+        output.WriteMessage(MoveCard);
+      }
+      if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
+        output.WriteRawTag(194, 1);
+        output.WriteMessage(NoDamageSkillResult);
+      }
+      if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
+        output.WriteRawTag(154, 16);
+        output.WriteMessage(SkillLimitsChange);
+      }
+      if (messageCase_ == MessageOneofCase.UpdateController) {
+        output.WriteRawTag(234, 26);
+        output.WriteMessage(UpdateController);
+      }
+      if (messageCase_ == MessageOneofCase.ModifyRemove) {
+        output.WriteRawTag(186, 29);
+        output.WriteMessage(ModifyRemove);
+      }
+      if (messageCase_ == MessageOneofCase.GameOver) {
+        output.WriteRawTag(210, 44);
+        output.WriteMessage(GameOver);
+      }
+      if (messageCase_ == MessageOneofCase.ReactionBegin) {
+        output.WriteRawTag(218, 53);
+        output.WriteMessage(ReactionBegin);
+      }
+      if (messageCase_ == MessageOneofCase.PveIntentionChange) {
+        output.WriteRawTag(234, 55);
+        output.WriteMessage(PveIntentionChange);
+      }
+      if (messageCase_ == MessageOneofCase.DuelDataChange) {
+        output.WriteRawTag(130, 63);
+        output.WriteMessage(DuelDataChange);
+      }
+      if (messageCase_ == MessageOneofCase.ClientPerform) {
+        output.WriteRawTag(218, 64);
+        output.WriteMessage(ClientPerform);
+      }
+      if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
+        output.WriteRawTag(162, 78);
+        output.WriteMessage(PveIntentionInfo);
+      }
+      if (messageCase_ == MessageOneofCase.CostRevise) {
+        output.WriteRawTag(178, 84);
+        output.WriteMessage(CostRevise);
+      }
+      if (messageCase_ == MessageOneofCase.ReactionEnd) {
+        output.WriteRawTag(154, 87);
+        output.WriteMessage(ReactionEnd);
+      }
+      if (messageCase_ == MessageOneofCase.UseSkillEnd) {
+        output.WriteRawTag(154, 88);
+        output.WriteMessage(UseSkillEnd);
+      }
+      if (messageCase_ == MessageOneofCase.PhaseContinue) {
+        output.WriteRawTag(146, 92);
+        output.WriteMessage(PhaseContinue);
+      }
+      if (messageCase_ == MessageOneofCase.WaitingListChange) {
+        output.WriteRawTag(242, 104);
+        output.WriteMessage(WaitingListChange);
+      }
+      if (messageCase_ == MessageOneofCase.NewCard) {
+        output.WriteRawTag(194, 115);
+        output.WriteMessage(NewCard);
+      }
+      if (messageCase_ == MessageOneofCase.ModifyAdd) {
+        output.WriteRawTag(218, 115);
+        output.WriteMessage(ModifyAdd);
+      }
+      if (messageCase_ == MessageOneofCase.OpTimer) {
+        output.WriteRawTag(178, 116);
+        output.WriteMessage(OpTimer);
+      }
+      if (messageCase_ == MessageOneofCase.CardUpdate) {
+        output.WriteRawTag(186, 117);
+        output.WriteMessage(CardUpdate);
+      }
+      if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
+        output.WriteRawTag(210, 127);
+        output.WriteMessage(SelectOnStageByEffect);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (messageCase_ == MessageOneofCase.SkillResult) {
+        output.WriteRawTag(10);
+        output.WriteMessage(SkillResult);
+      }
+      if (messageCase_ == MessageOneofCase.CharDie) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CharDie);
+      }
+      if (messageCase_ == MessageOneofCase.AddDice) {
+        output.WriteRawTag(26);
+        output.WriteMessage(AddDice);
+      }
+      if (messageCase_ == MessageOneofCase.UseSkill) {
+        output.WriteRawTag(34);
+        output.WriteMessage(UseSkill);
+      }
+      if (messageCase_ == MessageOneofCase.Pass) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Pass);
+      }
+      if (messageCase_ == MessageOneofCase.SelectOnStage) {
+        output.WriteRawTag(50);
+        output.WriteMessage(SelectOnStage);
+      }
+      if (messageCase_ == MessageOneofCase.CostDice) {
+        output.WriteRawTag(58);
+        output.WriteMessage(CostDice);
+      }
+      if (messageCase_ == MessageOneofCase.DiceRoll) {
+        output.WriteRawTag(74);
+        output.WriteMessage(DiceRoll);
+      }
+      if (messageCase_ == MessageOneofCase.AddCards) {
+        output.WriteRawTag(82);
+        output.WriteMessage(AddCards);
+      }
+      if (messageCase_ == MessageOneofCase.DiceReroll) {
+        output.WriteRawTag(90);
+        output.WriteMessage(DiceReroll);
+      }
+      if (messageCase_ == MessageOneofCase.TokenChange) {
+        output.WriteRawTag(98);
+        output.WriteMessage(TokenChange);
+      }
+      if (messageCase_ == MessageOneofCase.PhaseChange) {
+        output.WriteRawTag(106);
+        output.WriteMessage(PhaseChange);
+      }
+      if (messageCase_ == MessageOneofCase.RemoveCards) {
+        output.WriteRawTag(114);
+        output.WriteMessage(RemoveCards);
+      }
+      if (messageCase_ == MessageOneofCase.MoveCard) {
+        output.WriteRawTag(122);
+        output.WriteMessage(MoveCard);
+      }
+      if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
+        output.WriteRawTag(194, 1);
+        output.WriteMessage(NoDamageSkillResult);
+      }
+      if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
+        output.WriteRawTag(154, 16);
+        output.WriteMessage(SkillLimitsChange);
+      }
+      if (messageCase_ == MessageOneofCase.UpdateController) {
+        output.WriteRawTag(234, 26);
+        output.WriteMessage(UpdateController);
+      }
+      if (messageCase_ == MessageOneofCase.ModifyRemove) {
+        output.WriteRawTag(186, 29);
+        output.WriteMessage(ModifyRemove);
+      }
+      if (messageCase_ == MessageOneofCase.GameOver) {
+        output.WriteRawTag(210, 44);
+        output.WriteMessage(GameOver);
+      }
+      if (messageCase_ == MessageOneofCase.ReactionBegin) {
+        output.WriteRawTag(218, 53);
+        output.WriteMessage(ReactionBegin);
+      }
+      if (messageCase_ == MessageOneofCase.PveIntentionChange) {
+        output.WriteRawTag(234, 55);
+        output.WriteMessage(PveIntentionChange);
+      }
+      if (messageCase_ == MessageOneofCase.DuelDataChange) {
+        output.WriteRawTag(130, 63);
+        output.WriteMessage(DuelDataChange);
+      }
+      if (messageCase_ == MessageOneofCase.ClientPerform) {
+        output.WriteRawTag(218, 64);
+        output.WriteMessage(ClientPerform);
+      }
+      if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
+        output.WriteRawTag(162, 78);
+        output.WriteMessage(PveIntentionInfo);
+      }
+      if (messageCase_ == MessageOneofCase.CostRevise) {
+        output.WriteRawTag(178, 84);
+        output.WriteMessage(CostRevise);
+      }
+      if (messageCase_ == MessageOneofCase.ReactionEnd) {
+        output.WriteRawTag(154, 87);
+        output.WriteMessage(ReactionEnd);
+      }
+      if (messageCase_ == MessageOneofCase.UseSkillEnd) {
+        output.WriteRawTag(154, 88);
+        output.WriteMessage(UseSkillEnd);
+      }
+      if (messageCase_ == MessageOneofCase.PhaseContinue) {
+        output.WriteRawTag(146, 92);
+        output.WriteMessage(PhaseContinue);
+      }
+      if (messageCase_ == MessageOneofCase.WaitingListChange) {
+        output.WriteRawTag(242, 104);
+        output.WriteMessage(WaitingListChange);
+      }
+      if (messageCase_ == MessageOneofCase.NewCard) {
+        output.WriteRawTag(194, 115);
+        output.WriteMessage(NewCard);
+      }
+      if (messageCase_ == MessageOneofCase.ModifyAdd) {
+        output.WriteRawTag(218, 115);
+        output.WriteMessage(ModifyAdd);
+      }
+      if (messageCase_ == MessageOneofCase.OpTimer) {
+        output.WriteRawTag(178, 116);
+        output.WriteMessage(OpTimer);
+      }
+      if (messageCase_ == MessageOneofCase.CardUpdate) {
+        output.WriteRawTag(186, 117);
+        output.WriteMessage(CardUpdate);
+      }
+      if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
+        output.WriteRawTag(210, 127);
+        output.WriteMessage(SelectOnStageByEffect);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (messageCase_ == MessageOneofCase.TokenChange) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TokenChange);
+      }
+      if (messageCase_ == MessageOneofCase.PhaseChange) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PhaseChange);
+      }
+      if (messageCase_ == MessageOneofCase.AddCards) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AddCards);
+      }
+      if (messageCase_ == MessageOneofCase.RemoveCards) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RemoveCards);
+      }
+      if (messageCase_ == MessageOneofCase.SelectOnStage) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SelectOnStage);
+      }
+      if (messageCase_ == MessageOneofCase.DiceRoll) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DiceRoll);
+      }
+      if (messageCase_ == MessageOneofCase.DiceReroll) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DiceReroll);
+      }
+      if (messageCase_ == MessageOneofCase.Pass) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pass);
+      }
+      if (messageCase_ == MessageOneofCase.CharDie) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CharDie);
+      }
+      if (messageCase_ == MessageOneofCase.SkillResult) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SkillResult);
+      }
+      if (messageCase_ == MessageOneofCase.CostDice) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CostDice);
+      }
+      if (messageCase_ == MessageOneofCase.AddDice) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AddDice);
+      }
+      if (messageCase_ == MessageOneofCase.MoveCard) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MoveCard);
+      }
+      if (messageCase_ == MessageOneofCase.UseSkill) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UseSkill);
+      }
+      if (messageCase_ == MessageOneofCase.NewCard) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(NewCard);
+      }
+      if (messageCase_ == MessageOneofCase.UpdateController) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(UpdateController);
+      }
+      if (messageCase_ == MessageOneofCase.ModifyAdd) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ModifyAdd);
+      }
+      if (messageCase_ == MessageOneofCase.ModifyRemove) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ModifyRemove);
+      }
+      if (messageCase_ == MessageOneofCase.UseSkillEnd) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(UseSkillEnd);
+      }
+      if (messageCase_ == MessageOneofCase.DuelDataChange) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(DuelDataChange);
+      }
+      if (messageCase_ == MessageOneofCase.ClientPerform) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ClientPerform);
+      }
+      if (messageCase_ == MessageOneofCase.GameOver) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(GameOver);
+      }
+      if (messageCase_ == MessageOneofCase.OpTimer) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(OpTimer);
+      }
+      if (messageCase_ == MessageOneofCase.WaitingListChange) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(WaitingListChange);
+      }
+      if (messageCase_ == MessageOneofCase.CardUpdate) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CardUpdate);
+      }
+      if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SelectOnStageByEffect);
+      }
+      if (messageCase_ == MessageOneofCase.CostRevise) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CostRevise);
+      }
+      if (messageCase_ == MessageOneofCase.PhaseContinue) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PhaseContinue);
+      }
+      if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PveIntentionInfo);
+      }
+      if (messageCase_ == MessageOneofCase.PveIntentionChange) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PveIntentionChange);
+      }
+      if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SkillLimitsChange);
+      }
+      if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(NoDamageSkillResult);
+      }
+      if (messageCase_ == MessageOneofCase.ReactionBegin) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ReactionBegin);
+      }
+      if (messageCase_ == MessageOneofCase.ReactionEnd) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ReactionEnd);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGMessage other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.MessageCase) {
+        case MessageOneofCase.TokenChange:
+          if (TokenChange == null) {
+            TokenChange = new global::OldProtos.GCGMsgTokenChange();
+          }
+          TokenChange.MergeFrom(other.TokenChange);
+          break;
+        case MessageOneofCase.PhaseChange:
+          if (PhaseChange == null) {
+            PhaseChange = new global::OldProtos.GCGMsgPhaseChange();
+          }
+          PhaseChange.MergeFrom(other.PhaseChange);
+          break;
+        case MessageOneofCase.AddCards:
+          if (AddCards == null) {
+            AddCards = new global::OldProtos.GCGMsgAddCards();
+          }
+          AddCards.MergeFrom(other.AddCards);
+          break;
+        case MessageOneofCase.RemoveCards:
+          if (RemoveCards == null) {
+            RemoveCards = new global::OldProtos.GCGMsgRemoveCards();
+          }
+          RemoveCards.MergeFrom(other.RemoveCards);
+          break;
+        case MessageOneofCase.SelectOnStage:
+          if (SelectOnStage == null) {
+            SelectOnStage = new global::OldProtos.GCGMsgSelectOnStage();
+          }
+          SelectOnStage.MergeFrom(other.SelectOnStage);
+          break;
+        case MessageOneofCase.DiceRoll:
+          if (DiceRoll == null) {
+            DiceRoll = new global::OldProtos.GCGMsgDiceRoll();
+          }
+          DiceRoll.MergeFrom(other.DiceRoll);
+          break;
+        case MessageOneofCase.DiceReroll:
+          if (DiceReroll == null) {
+            DiceReroll = new global::OldProtos.GCGMsgDiceReroll();
+          }
+          DiceReroll.MergeFrom(other.DiceReroll);
+          break;
+        case MessageOneofCase.Pass:
+          if (Pass == null) {
+            Pass = new global::OldProtos.GCGMsgPass();
+          }
+          Pass.MergeFrom(other.Pass);
+          break;
+        case MessageOneofCase.CharDie:
+          if (CharDie == null) {
+            CharDie = new global::OldProtos.GCGMsgCharDie();
+          }
+          CharDie.MergeFrom(other.CharDie);
+          break;
+        case MessageOneofCase.SkillResult:
+          if (SkillResult == null) {
+            SkillResult = new global::OldProtos.GCGMsgSkillResult();
+          }
+          SkillResult.MergeFrom(other.SkillResult);
+          break;
+        case MessageOneofCase.CostDice:
+          if (CostDice == null) {
+            CostDice = new global::OldProtos.GCGMsgCostDice();
+          }
+          CostDice.MergeFrom(other.CostDice);
+          break;
+        case MessageOneofCase.AddDice:
+          if (AddDice == null) {
+            AddDice = new global::OldProtos.GCGMsgAddDice();
+          }
+          AddDice.MergeFrom(other.AddDice);
+          break;
+        case MessageOneofCase.MoveCard:
+          if (MoveCard == null) {
+            MoveCard = new global::OldProtos.GCGMsgMoveCard();
+          }
+          MoveCard.MergeFrom(other.MoveCard);
+          break;
+        case MessageOneofCase.UseSkill:
+          if (UseSkill == null) {
+            UseSkill = new global::OldProtos.GCGMsgUseSkill();
+          }
+          UseSkill.MergeFrom(other.UseSkill);
+          break;
+        case MessageOneofCase.NewCard:
+          if (NewCard == null) {
+            NewCard = new global::OldProtos.GCGMsgNewCard();
+          }
+          NewCard.MergeFrom(other.NewCard);
+          break;
+        case MessageOneofCase.UpdateController:
+          if (UpdateController == null) {
+            UpdateController = new global::OldProtos.GCGMsgUpdateController();
+          }
+          UpdateController.MergeFrom(other.UpdateController);
+          break;
+        case MessageOneofCase.ModifyAdd:
+          if (ModifyAdd == null) {
+            ModifyAdd = new global::OldProtos.GCGMsgModifyAdd();
+          }
+          ModifyAdd.MergeFrom(other.ModifyAdd);
+          break;
+        case MessageOneofCase.ModifyRemove:
+          if (ModifyRemove == null) {
+            ModifyRemove = new global::OldProtos.GCGMsgModifyRemove();
+          }
+          ModifyRemove.MergeFrom(other.ModifyRemove);
+          break;
+        case MessageOneofCase.UseSkillEnd:
+          if (UseSkillEnd == null) {
+            UseSkillEnd = new global::OldProtos.GCGMsgUseSkillEnd();
+          }
+          UseSkillEnd.MergeFrom(other.UseSkillEnd);
+          break;
+        case MessageOneofCase.DuelDataChange:
+          if (DuelDataChange == null) {
+            DuelDataChange = new global::OldProtos.GCGMsgDuelDataChange();
+          }
+          DuelDataChange.MergeFrom(other.DuelDataChange);
+          break;
+        case MessageOneofCase.ClientPerform:
+          if (ClientPerform == null) {
+            ClientPerform = new global::OldProtos.GCGMsgClientPerform();
+          }
+          ClientPerform.MergeFrom(other.ClientPerform);
+          break;
+        case MessageOneofCase.GameOver:
+          if (GameOver == null) {
+            GameOver = new global::OldProtos.GCGMsgGameOver();
+          }
+          GameOver.MergeFrom(other.GameOver);
+          break;
+        case MessageOneofCase.OpTimer:
+          if (OpTimer == null) {
+            OpTimer = new global::OldProtos.GCGMsgOpTimer();
+          }
+          OpTimer.MergeFrom(other.OpTimer);
+          break;
+        case MessageOneofCase.WaitingListChange:
+          if (WaitingListChange == null) {
+            WaitingListChange = new global::OldProtos.GCGMsgWaitingListChange();
+          }
+          WaitingListChange.MergeFrom(other.WaitingListChange);
+          break;
+        case MessageOneofCase.CardUpdate:
+          if (CardUpdate == null) {
+            CardUpdate = new global::OldProtos.GCGMsgCardUpdate();
+          }
+          CardUpdate.MergeFrom(other.CardUpdate);
+          break;
+        case MessageOneofCase.SelectOnStageByEffect:
+          if (SelectOnStageByEffect == null) {
+            SelectOnStageByEffect = new global::OldProtos.GCGMsgSelectOnStageByEffect();
+          }
+          SelectOnStageByEffect.MergeFrom(other.SelectOnStageByEffect);
+          break;
+        case MessageOneofCase.CostRevise:
+          if (CostRevise == null) {
+            CostRevise = new global::OldProtos.GCGMsgCostRevise();
+          }
+          CostRevise.MergeFrom(other.CostRevise);
+          break;
+        case MessageOneofCase.PhaseContinue:
+          if (PhaseContinue == null) {
+            PhaseContinue = new global::OldProtos.GCGMsgPhaseContinue();
+          }
+          PhaseContinue.MergeFrom(other.PhaseContinue);
+          break;
+        case MessageOneofCase.PveIntentionInfo:
+          if (PveIntentionInfo == null) {
+            PveIntentionInfo = new global::OldProtos.GCGMsgPVEIntentionInfo();
+          }
+          PveIntentionInfo.MergeFrom(other.PveIntentionInfo);
+          break;
+        case MessageOneofCase.PveIntentionChange:
+          if (PveIntentionChange == null) {
+            PveIntentionChange = new global::OldProtos.GCGMsgPVEIntentionChange();
+          }
+          PveIntentionChange.MergeFrom(other.PveIntentionChange);
+          break;
+        case MessageOneofCase.SkillLimitsChange:
+          if (SkillLimitsChange == null) {
+            SkillLimitsChange = new global::OldProtos.GCGMsgSkillLimitsChange();
+          }
+          SkillLimitsChange.MergeFrom(other.SkillLimitsChange);
+          break;
+        case MessageOneofCase.NoDamageSkillResult:
+          if (NoDamageSkillResult == null) {
+            NoDamageSkillResult = new global::OldProtos.GCGMsgNoDamageSkillResult();
+          }
+          NoDamageSkillResult.MergeFrom(other.NoDamageSkillResult);
+          break;
+        case MessageOneofCase.ReactionBegin:
+          if (ReactionBegin == null) {
+            ReactionBegin = new global::OldProtos.GCGMsgReactionBegin();
+          }
+          ReactionBegin.MergeFrom(other.ReactionBegin);
+          break;
+        case MessageOneofCase.ReactionEnd:
+          if (ReactionEnd == null) {
+            ReactionEnd = new global::OldProtos.GCGMsgReactionEnd();
+          }
+          ReactionEnd.MergeFrom(other.ReactionEnd);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            global::OldProtos.GCGMsgSkillResult subBuilder = new global::OldProtos.GCGMsgSkillResult();
+            if (messageCase_ == MessageOneofCase.SkillResult) {
+              subBuilder.MergeFrom(SkillResult);
+            }
+            input.ReadMessage(subBuilder);
+            SkillResult = subBuilder;
+            break;
+          }
+          case 18: {
+            global::OldProtos.GCGMsgCharDie subBuilder = new global::OldProtos.GCGMsgCharDie();
+            if (messageCase_ == MessageOneofCase.CharDie) {
+              subBuilder.MergeFrom(CharDie);
+            }
+            input.ReadMessage(subBuilder);
+            CharDie = subBuilder;
+            break;
+          }
+          case 26: {
+            global::OldProtos.GCGMsgAddDice subBuilder = new global::OldProtos.GCGMsgAddDice();
+            if (messageCase_ == MessageOneofCase.AddDice) {
+              subBuilder.MergeFrom(AddDice);
+            }
+            input.ReadMessage(subBuilder);
+            AddDice = subBuilder;
+            break;
+          }
+          case 34: {
+            global::OldProtos.GCGMsgUseSkill subBuilder = new global::OldProtos.GCGMsgUseSkill();
+            if (messageCase_ == MessageOneofCase.UseSkill) {
+              subBuilder.MergeFrom(UseSkill);
+            }
+            input.ReadMessage(subBuilder);
+            UseSkill = subBuilder;
+            break;
+          }
+          case 42: {
+            global::OldProtos.GCGMsgPass subBuilder = new global::OldProtos.GCGMsgPass();
+            if (messageCase_ == MessageOneofCase.Pass) {
+              subBuilder.MergeFrom(Pass);
+            }
+            input.ReadMessage(subBuilder);
+            Pass = subBuilder;
+            break;
+          }
+          case 50: {
+            global::OldProtos.GCGMsgSelectOnStage subBuilder = new global::OldProtos.GCGMsgSelectOnStage();
+            if (messageCase_ == MessageOneofCase.SelectOnStage) {
+              subBuilder.MergeFrom(SelectOnStage);
+            }
+            input.ReadMessage(subBuilder);
+            SelectOnStage = subBuilder;
+            break;
+          }
+          case 58: {
+            global::OldProtos.GCGMsgCostDice subBuilder = new global::OldProtos.GCGMsgCostDice();
+            if (messageCase_ == MessageOneofCase.CostDice) {
+              subBuilder.MergeFrom(CostDice);
+            }
+            input.ReadMessage(subBuilder);
+            CostDice = subBuilder;
+            break;
+          }
+          case 74: {
+            global::OldProtos.GCGMsgDiceRoll subBuilder = new global::OldProtos.GCGMsgDiceRoll();
+            if (messageCase_ == MessageOneofCase.DiceRoll) {
+              subBuilder.MergeFrom(DiceRoll);
+            }
+            input.ReadMessage(subBuilder);
+            DiceRoll = subBuilder;
+            break;
+          }
+          case 82: {
+            global::OldProtos.GCGMsgAddCards subBuilder = new global::OldProtos.GCGMsgAddCards();
+            if (messageCase_ == MessageOneofCase.AddCards) {
+              subBuilder.MergeFrom(AddCards);
+            }
+            input.ReadMessage(subBuilder);
+            AddCards = subBuilder;
+            break;
+          }
+          case 90: {
+            global::OldProtos.GCGMsgDiceReroll subBuilder = new global::OldProtos.GCGMsgDiceReroll();
+            if (messageCase_ == MessageOneofCase.DiceReroll) {
+              subBuilder.MergeFrom(DiceReroll);
+            }
+            input.ReadMessage(subBuilder);
+            DiceReroll = subBuilder;
+            break;
+          }
+          case 98: {
+            global::OldProtos.GCGMsgTokenChange subBuilder = new global::OldProtos.GCGMsgTokenChange();
+            if (messageCase_ == MessageOneofCase.TokenChange) {
+              subBuilder.MergeFrom(TokenChange);
+            }
+            input.ReadMessage(subBuilder);
+            TokenChange = subBuilder;
+            break;
+          }
+          case 106: {
+            global::OldProtos.GCGMsgPhaseChange subBuilder = new global::OldProtos.GCGMsgPhaseChange();
+            if (messageCase_ == MessageOneofCase.PhaseChange) {
+              subBuilder.MergeFrom(PhaseChange);
+            }
+            input.ReadMessage(subBuilder);
+            PhaseChange = subBuilder;
+            break;
+          }
+          case 114: {
+            global::OldProtos.GCGMsgRemoveCards subBuilder = new global::OldProtos.GCGMsgRemoveCards();
+            if (messageCase_ == MessageOneofCase.RemoveCards) {
+              subBuilder.MergeFrom(RemoveCards);
+            }
+            input.ReadMessage(subBuilder);
+            RemoveCards = subBuilder;
+            break;
+          }
+          case 122: {
+            global::OldProtos.GCGMsgMoveCard subBuilder = new global::OldProtos.GCGMsgMoveCard();
+            if (messageCase_ == MessageOneofCase.MoveCard) {
+              subBuilder.MergeFrom(MoveCard);
+            }
+            input.ReadMessage(subBuilder);
+            MoveCard = subBuilder;
+            break;
+          }
+          case 194: {
+            global::OldProtos.GCGMsgNoDamageSkillResult subBuilder = new global::OldProtos.GCGMsgNoDamageSkillResult();
+            if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
+              subBuilder.MergeFrom(NoDamageSkillResult);
+            }
+            input.ReadMessage(subBuilder);
+            NoDamageSkillResult = subBuilder;
+            break;
+          }
+          case 2074: {
+            global::OldProtos.GCGMsgSkillLimitsChange subBuilder = new global::OldProtos.GCGMsgSkillLimitsChange();
+            if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
+              subBuilder.MergeFrom(SkillLimitsChange);
+            }
+            input.ReadMessage(subBuilder);
+            SkillLimitsChange = subBuilder;
+            break;
+          }
+          case 3434: {
+            global::OldProtos.GCGMsgUpdateController subBuilder = new global::OldProtos.GCGMsgUpdateController();
+            if (messageCase_ == MessageOneofCase.UpdateController) {
+              subBuilder.MergeFrom(UpdateController);
+            }
+            input.ReadMessage(subBuilder);
+            UpdateController = subBuilder;
+            break;
+          }
+          case 3770: {
+            global::OldProtos.GCGMsgModifyRemove subBuilder = new global::OldProtos.GCGMsgModifyRemove();
+            if (messageCase_ == MessageOneofCase.ModifyRemove) {
+              subBuilder.MergeFrom(ModifyRemove);
+            }
+            input.ReadMessage(subBuilder);
+            ModifyRemove = subBuilder;
+            break;
+          }
+          case 5714: {
+            global::OldProtos.GCGMsgGameOver subBuilder = new global::OldProtos.GCGMsgGameOver();
+            if (messageCase_ == MessageOneofCase.GameOver) {
+              subBuilder.MergeFrom(GameOver);
+            }
+            input.ReadMessage(subBuilder);
+            GameOver = subBuilder;
+            break;
+          }
+          case 6874: {
+            global::OldProtos.GCGMsgReactionBegin subBuilder = new global::OldProtos.GCGMsgReactionBegin();
+            if (messageCase_ == MessageOneofCase.ReactionBegin) {
+              subBuilder.MergeFrom(ReactionBegin);
+            }
+            input.ReadMessage(subBuilder);
+            ReactionBegin = subBuilder;
+            break;
+          }
+          case 7146: {
+            global::OldProtos.GCGMsgPVEIntentionChange subBuilder = new global::OldProtos.GCGMsgPVEIntentionChange();
+            if (messageCase_ == MessageOneofCase.PveIntentionChange) {
+              subBuilder.MergeFrom(PveIntentionChange);
+            }
+            input.ReadMessage(subBuilder);
+            PveIntentionChange = subBuilder;
+            break;
+          }
+          case 8066: {
+            global::OldProtos.GCGMsgDuelDataChange subBuilder = new global::OldProtos.GCGMsgDuelDataChange();
+            if (messageCase_ == MessageOneofCase.DuelDataChange) {
+              subBuilder.MergeFrom(DuelDataChange);
+            }
+            input.ReadMessage(subBuilder);
+            DuelDataChange = subBuilder;
+            break;
+          }
+          case 8282: {
+            global::OldProtos.GCGMsgClientPerform subBuilder = new global::OldProtos.GCGMsgClientPerform();
+            if (messageCase_ == MessageOneofCase.ClientPerform) {
+              subBuilder.MergeFrom(ClientPerform);
+            }
+            input.ReadMessage(subBuilder);
+            ClientPerform = subBuilder;
+            break;
+          }
+          case 10018: {
+            global::OldProtos.GCGMsgPVEIntentionInfo subBuilder = new global::OldProtos.GCGMsgPVEIntentionInfo();
+            if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
+              subBuilder.MergeFrom(PveIntentionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PveIntentionInfo = subBuilder;
+            break;
+          }
+          case 10802: {
+            global::OldProtos.GCGMsgCostRevise subBuilder = new global::OldProtos.GCGMsgCostRevise();
+            if (messageCase_ == MessageOneofCase.CostRevise) {
+              subBuilder.MergeFrom(CostRevise);
+            }
+            input.ReadMessage(subBuilder);
+            CostRevise = subBuilder;
+            break;
+          }
+          case 11162: {
+            global::OldProtos.GCGMsgReactionEnd subBuilder = new global::OldProtos.GCGMsgReactionEnd();
+            if (messageCase_ == MessageOneofCase.ReactionEnd) {
+              subBuilder.MergeFrom(ReactionEnd);
+            }
+            input.ReadMessage(subBuilder);
+            ReactionEnd = subBuilder;
+            break;
+          }
+          case 11290: {
+            global::OldProtos.GCGMsgUseSkillEnd subBuilder = new global::OldProtos.GCGMsgUseSkillEnd();
+            if (messageCase_ == MessageOneofCase.UseSkillEnd) {
+              subBuilder.MergeFrom(UseSkillEnd);
+            }
+            input.ReadMessage(subBuilder);
+            UseSkillEnd = subBuilder;
+            break;
+          }
+          case 11794: {
+            global::OldProtos.GCGMsgPhaseContinue subBuilder = new global::OldProtos.GCGMsgPhaseContinue();
+            if (messageCase_ == MessageOneofCase.PhaseContinue) {
+              subBuilder.MergeFrom(PhaseContinue);
+            }
+            input.ReadMessage(subBuilder);
+            PhaseContinue = subBuilder;
+            break;
+          }
+          case 13426: {
+            global::OldProtos.GCGMsgWaitingListChange subBuilder = new global::OldProtos.GCGMsgWaitingListChange();
+            if (messageCase_ == MessageOneofCase.WaitingListChange) {
+              subBuilder.MergeFrom(WaitingListChange);
+            }
+            input.ReadMessage(subBuilder);
+            WaitingListChange = subBuilder;
+            break;
+          }
+          case 14786: {
+            global::OldProtos.GCGMsgNewCard subBuilder = new global::OldProtos.GCGMsgNewCard();
+            if (messageCase_ == MessageOneofCase.NewCard) {
+              subBuilder.MergeFrom(NewCard);
+            }
+            input.ReadMessage(subBuilder);
+            NewCard = subBuilder;
+            break;
+          }
+          case 14810: {
+            global::OldProtos.GCGMsgModifyAdd subBuilder = new global::OldProtos.GCGMsgModifyAdd();
+            if (messageCase_ == MessageOneofCase.ModifyAdd) {
+              subBuilder.MergeFrom(ModifyAdd);
+            }
+            input.ReadMessage(subBuilder);
+            ModifyAdd = subBuilder;
+            break;
+          }
+          case 14898: {
+            global::OldProtos.GCGMsgOpTimer subBuilder = new global::OldProtos.GCGMsgOpTimer();
+            if (messageCase_ == MessageOneofCase.OpTimer) {
+              subBuilder.MergeFrom(OpTimer);
+            }
+            input.ReadMessage(subBuilder);
+            OpTimer = subBuilder;
+            break;
+          }
+          case 15034: {
+            global::OldProtos.GCGMsgCardUpdate subBuilder = new global::OldProtos.GCGMsgCardUpdate();
+            if (messageCase_ == MessageOneofCase.CardUpdate) {
+              subBuilder.MergeFrom(CardUpdate);
+            }
+            input.ReadMessage(subBuilder);
+            CardUpdate = subBuilder;
+            break;
+          }
+          case 16338: {
+            global::OldProtos.GCGMsgSelectOnStageByEffect subBuilder = new global::OldProtos.GCGMsgSelectOnStageByEffect();
+            if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
+              subBuilder.MergeFrom(SelectOnStageByEffect);
+            }
+            input.ReadMessage(subBuilder);
+            SelectOnStageByEffect = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            global::OldProtos.GCGMsgSkillResult subBuilder = new global::OldProtos.GCGMsgSkillResult();
+            if (messageCase_ == MessageOneofCase.SkillResult) {
+              subBuilder.MergeFrom(SkillResult);
+            }
+            input.ReadMessage(subBuilder);
+            SkillResult = subBuilder;
+            break;
+          }
+          case 18: {
+            global::OldProtos.GCGMsgCharDie subBuilder = new global::OldProtos.GCGMsgCharDie();
+            if (messageCase_ == MessageOneofCase.CharDie) {
+              subBuilder.MergeFrom(CharDie);
+            }
+            input.ReadMessage(subBuilder);
+            CharDie = subBuilder;
+            break;
+          }
+          case 26: {
+            global::OldProtos.GCGMsgAddDice subBuilder = new global::OldProtos.GCGMsgAddDice();
+            if (messageCase_ == MessageOneofCase.AddDice) {
+              subBuilder.MergeFrom(AddDice);
+            }
+            input.ReadMessage(subBuilder);
+            AddDice = subBuilder;
+            break;
+          }
+          case 34: {
+            global::OldProtos.GCGMsgUseSkill subBuilder = new global::OldProtos.GCGMsgUseSkill();
+            if (messageCase_ == MessageOneofCase.UseSkill) {
+              subBuilder.MergeFrom(UseSkill);
+            }
+            input.ReadMessage(subBuilder);
+            UseSkill = subBuilder;
+            break;
+          }
+          case 42: {
+            global::OldProtos.GCGMsgPass subBuilder = new global::OldProtos.GCGMsgPass();
+            if (messageCase_ == MessageOneofCase.Pass) {
+              subBuilder.MergeFrom(Pass);
+            }
+            input.ReadMessage(subBuilder);
+            Pass = subBuilder;
+            break;
+          }
+          case 50: {
+            global::OldProtos.GCGMsgSelectOnStage subBuilder = new global::OldProtos.GCGMsgSelectOnStage();
+            if (messageCase_ == MessageOneofCase.SelectOnStage) {
+              subBuilder.MergeFrom(SelectOnStage);
+            }
+            input.ReadMessage(subBuilder);
+            SelectOnStage = subBuilder;
+            break;
+          }
+          case 58: {
+            global::OldProtos.GCGMsgCostDice subBuilder = new global::OldProtos.GCGMsgCostDice();
+            if (messageCase_ == MessageOneofCase.CostDice) {
+              subBuilder.MergeFrom(CostDice);
+            }
+            input.ReadMessage(subBuilder);
+            CostDice = subBuilder;
+            break;
+          }
+          case 74: {
+            global::OldProtos.GCGMsgDiceRoll subBuilder = new global::OldProtos.GCGMsgDiceRoll();
+            if (messageCase_ == MessageOneofCase.DiceRoll) {
+              subBuilder.MergeFrom(DiceRoll);
+            }
+            input.ReadMessage(subBuilder);
+            DiceRoll = subBuilder;
+            break;
+          }
+          case 82: {
+            global::OldProtos.GCGMsgAddCards subBuilder = new global::OldProtos.GCGMsgAddCards();
+            if (messageCase_ == MessageOneofCase.AddCards) {
+              subBuilder.MergeFrom(AddCards);
+            }
+            input.ReadMessage(subBuilder);
+            AddCards = subBuilder;
+            break;
+          }
+          case 90: {
+            global::OldProtos.GCGMsgDiceReroll subBuilder = new global::OldProtos.GCGMsgDiceReroll();
+            if (messageCase_ == MessageOneofCase.DiceReroll) {
+              subBuilder.MergeFrom(DiceReroll);
+            }
+            input.ReadMessage(subBuilder);
+            DiceReroll = subBuilder;
+            break;
+          }
+          case 98: {
+            global::OldProtos.GCGMsgTokenChange subBuilder = new global::OldProtos.GCGMsgTokenChange();
+            if (messageCase_ == MessageOneofCase.TokenChange) {
+              subBuilder.MergeFrom(TokenChange);
+            }
+            input.ReadMessage(subBuilder);
+            TokenChange = subBuilder;
+            break;
+          }
+          case 106: {
+            global::OldProtos.GCGMsgPhaseChange subBuilder = new global::OldProtos.GCGMsgPhaseChange();
+            if (messageCase_ == MessageOneofCase.PhaseChange) {
+              subBuilder.MergeFrom(PhaseChange);
+            }
+            input.ReadMessage(subBuilder);
+            PhaseChange = subBuilder;
+            break;
+          }
+          case 114: {
+            global::OldProtos.GCGMsgRemoveCards subBuilder = new global::OldProtos.GCGMsgRemoveCards();
+            if (messageCase_ == MessageOneofCase.RemoveCards) {
+              subBuilder.MergeFrom(RemoveCards);
+            }
+            input.ReadMessage(subBuilder);
+            RemoveCards = subBuilder;
+            break;
+          }
+          case 122: {
+            global::OldProtos.GCGMsgMoveCard subBuilder = new global::OldProtos.GCGMsgMoveCard();
+            if (messageCase_ == MessageOneofCase.MoveCard) {
+              subBuilder.MergeFrom(MoveCard);
+            }
+            input.ReadMessage(subBuilder);
+            MoveCard = subBuilder;
+            break;
+          }
+          case 194: {
+            global::OldProtos.GCGMsgNoDamageSkillResult subBuilder = new global::OldProtos.GCGMsgNoDamageSkillResult();
+            if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
+              subBuilder.MergeFrom(NoDamageSkillResult);
+            }
+            input.ReadMessage(subBuilder);
+            NoDamageSkillResult = subBuilder;
+            break;
+          }
+          case 2074: {
+            global::OldProtos.GCGMsgSkillLimitsChange subBuilder = new global::OldProtos.GCGMsgSkillLimitsChange();
+            if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
+              subBuilder.MergeFrom(SkillLimitsChange);
+            }
+            input.ReadMessage(subBuilder);
+            SkillLimitsChange = subBuilder;
+            break;
+          }
+          case 3434: {
+            global::OldProtos.GCGMsgUpdateController subBuilder = new global::OldProtos.GCGMsgUpdateController();
+            if (messageCase_ == MessageOneofCase.UpdateController) {
+              subBuilder.MergeFrom(UpdateController);
+            }
+            input.ReadMessage(subBuilder);
+            UpdateController = subBuilder;
+            break;
+          }
+          case 3770: {
+            global::OldProtos.GCGMsgModifyRemove subBuilder = new global::OldProtos.GCGMsgModifyRemove();
+            if (messageCase_ == MessageOneofCase.ModifyRemove) {
+              subBuilder.MergeFrom(ModifyRemove);
+            }
+            input.ReadMessage(subBuilder);
+            ModifyRemove = subBuilder;
+            break;
+          }
+          case 5714: {
+            global::OldProtos.GCGMsgGameOver subBuilder = new global::OldProtos.GCGMsgGameOver();
+            if (messageCase_ == MessageOneofCase.GameOver) {
+              subBuilder.MergeFrom(GameOver);
+            }
+            input.ReadMessage(subBuilder);
+            GameOver = subBuilder;
+            break;
+          }
+          case 6874: {
+            global::OldProtos.GCGMsgReactionBegin subBuilder = new global::OldProtos.GCGMsgReactionBegin();
+            if (messageCase_ == MessageOneofCase.ReactionBegin) {
+              subBuilder.MergeFrom(ReactionBegin);
+            }
+            input.ReadMessage(subBuilder);
+            ReactionBegin = subBuilder;
+            break;
+          }
+          case 7146: {
+            global::OldProtos.GCGMsgPVEIntentionChange subBuilder = new global::OldProtos.GCGMsgPVEIntentionChange();
+            if (messageCase_ == MessageOneofCase.PveIntentionChange) {
+              subBuilder.MergeFrom(PveIntentionChange);
+            }
+            input.ReadMessage(subBuilder);
+            PveIntentionChange = subBuilder;
+            break;
+          }
+          case 8066: {
+            global::OldProtos.GCGMsgDuelDataChange subBuilder = new global::OldProtos.GCGMsgDuelDataChange();
+            if (messageCase_ == MessageOneofCase.DuelDataChange) {
+              subBuilder.MergeFrom(DuelDataChange);
+            }
+            input.ReadMessage(subBuilder);
+            DuelDataChange = subBuilder;
+            break;
+          }
+          case 8282: {
+            global::OldProtos.GCGMsgClientPerform subBuilder = new global::OldProtos.GCGMsgClientPerform();
+            if (messageCase_ == MessageOneofCase.ClientPerform) {
+              subBuilder.MergeFrom(ClientPerform);
+            }
+            input.ReadMessage(subBuilder);
+            ClientPerform = subBuilder;
+            break;
+          }
+          case 10018: {
+            global::OldProtos.GCGMsgPVEIntentionInfo subBuilder = new global::OldProtos.GCGMsgPVEIntentionInfo();
+            if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
+              subBuilder.MergeFrom(PveIntentionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PveIntentionInfo = subBuilder;
+            break;
+          }
+          case 10802: {
+            global::OldProtos.GCGMsgCostRevise subBuilder = new global::OldProtos.GCGMsgCostRevise();
+            if (messageCase_ == MessageOneofCase.CostRevise) {
+              subBuilder.MergeFrom(CostRevise);
+            }
+            input.ReadMessage(subBuilder);
+            CostRevise = subBuilder;
+            break;
+          }
+          case 11162: {
+            global::OldProtos.GCGMsgReactionEnd subBuilder = new global::OldProtos.GCGMsgReactionEnd();
+            if (messageCase_ == MessageOneofCase.ReactionEnd) {
+              subBuilder.MergeFrom(ReactionEnd);
+            }
+            input.ReadMessage(subBuilder);
+            ReactionEnd = subBuilder;
+            break;
+          }
+          case 11290: {
+            global::OldProtos.GCGMsgUseSkillEnd subBuilder = new global::OldProtos.GCGMsgUseSkillEnd();
+            if (messageCase_ == MessageOneofCase.UseSkillEnd) {
+              subBuilder.MergeFrom(UseSkillEnd);
+            }
+            input.ReadMessage(subBuilder);
+            UseSkillEnd = subBuilder;
+            break;
+          }
+          case 11794: {
+            global::OldProtos.GCGMsgPhaseContinue subBuilder = new global::OldProtos.GCGMsgPhaseContinue();
+            if (messageCase_ == MessageOneofCase.PhaseContinue) {
+              subBuilder.MergeFrom(PhaseContinue);
+            }
+            input.ReadMessage(subBuilder);
+            PhaseContinue = subBuilder;
+            break;
+          }
+          case 13426: {
+            global::OldProtos.GCGMsgWaitingListChange subBuilder = new global::OldProtos.GCGMsgWaitingListChange();
+            if (messageCase_ == MessageOneofCase.WaitingListChange) {
+              subBuilder.MergeFrom(WaitingListChange);
+            }
+            input.ReadMessage(subBuilder);
+            WaitingListChange = subBuilder;
+            break;
+          }
+          case 14786: {
+            global::OldProtos.GCGMsgNewCard subBuilder = new global::OldProtos.GCGMsgNewCard();
+            if (messageCase_ == MessageOneofCase.NewCard) {
+              subBuilder.MergeFrom(NewCard);
+            }
+            input.ReadMessage(subBuilder);
+            NewCard = subBuilder;
+            break;
+          }
+          case 14810: {
+            global::OldProtos.GCGMsgModifyAdd subBuilder = new global::OldProtos.GCGMsgModifyAdd();
+            if (messageCase_ == MessageOneofCase.ModifyAdd) {
+              subBuilder.MergeFrom(ModifyAdd);
+            }
+            input.ReadMessage(subBuilder);
+            ModifyAdd = subBuilder;
+            break;
+          }
+          case 14898: {
+            global::OldProtos.GCGMsgOpTimer subBuilder = new global::OldProtos.GCGMsgOpTimer();
+            if (messageCase_ == MessageOneofCase.OpTimer) {
+              subBuilder.MergeFrom(OpTimer);
+            }
+            input.ReadMessage(subBuilder);
+            OpTimer = subBuilder;
+            break;
+          }
+          case 15034: {
+            global::OldProtos.GCGMsgCardUpdate subBuilder = new global::OldProtos.GCGMsgCardUpdate();
+            if (messageCase_ == MessageOneofCase.CardUpdate) {
+              subBuilder.MergeFrom(CardUpdate);
+            }
+            input.ReadMessage(subBuilder);
+            CardUpdate = subBuilder;
+            break;
+          }
+          case 16338: {
+            global::OldProtos.GCGMsgSelectOnStageByEffect subBuilder = new global::OldProtos.GCGMsgSelectOnStageByEffect();
+            if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
+              subBuilder.MergeFrom(SelectOnStageByEffect);
+            }
+            input.ReadMessage(subBuilder);
+            SelectOnStageByEffect = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GCGMessage : pb::IMessage<GCGMessage>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGMessage> _parser = new pb::MessageParser<GCGMessage>(() => new GCGMessage());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGMessage> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGMessageReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGMessage() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGMessage(GCGMessage other) : this() {
-    switch (other.MessageCase) {
-      case MessageOneofCase.TokenChange:
-        TokenChange = other.TokenChange.Clone();
-        break;
-      case MessageOneofCase.PhaseChange:
-        PhaseChange = other.PhaseChange.Clone();
-        break;
-      case MessageOneofCase.AddCards:
-        AddCards = other.AddCards.Clone();
-        break;
-      case MessageOneofCase.RemoveCards:
-        RemoveCards = other.RemoveCards.Clone();
-        break;
-      case MessageOneofCase.SelectOnStage:
-        SelectOnStage = other.SelectOnStage.Clone();
-        break;
-      case MessageOneofCase.DiceRoll:
-        DiceRoll = other.DiceRoll.Clone();
-        break;
-      case MessageOneofCase.DiceReroll:
-        DiceReroll = other.DiceReroll.Clone();
-        break;
-      case MessageOneofCase.Pass:
-        Pass = other.Pass.Clone();
-        break;
-      case MessageOneofCase.CharDie:
-        CharDie = other.CharDie.Clone();
-        break;
-      case MessageOneofCase.SkillResult:
-        SkillResult = other.SkillResult.Clone();
-        break;
-      case MessageOneofCase.CostDice:
-        CostDice = other.CostDice.Clone();
-        break;
-      case MessageOneofCase.AddDice:
-        AddDice = other.AddDice.Clone();
-        break;
-      case MessageOneofCase.MoveCard:
-        MoveCard = other.MoveCard.Clone();
-        break;
-      case MessageOneofCase.UseSkill:
-        UseSkill = other.UseSkill.Clone();
-        break;
-      case MessageOneofCase.NewCard:
-        NewCard = other.NewCard.Clone();
-        break;
-      case MessageOneofCase.UpdateController:
-        UpdateController = other.UpdateController.Clone();
-        break;
-      case MessageOneofCase.ModifyAdd:
-        ModifyAdd = other.ModifyAdd.Clone();
-        break;
-      case MessageOneofCase.ModifyRemove:
-        ModifyRemove = other.ModifyRemove.Clone();
-        break;
-      case MessageOneofCase.UseSkillEnd:
-        UseSkillEnd = other.UseSkillEnd.Clone();
-        break;
-      case MessageOneofCase.DuelDataChange:
-        DuelDataChange = other.DuelDataChange.Clone();
-        break;
-      case MessageOneofCase.ClientPerform:
-        ClientPerform = other.ClientPerform.Clone();
-        break;
-      case MessageOneofCase.GameOver:
-        GameOver = other.GameOver.Clone();
-        break;
-      case MessageOneofCase.OpTimer:
-        OpTimer = other.OpTimer.Clone();
-        break;
-      case MessageOneofCase.WaitingListChange:
-        WaitingListChange = other.WaitingListChange.Clone();
-        break;
-      case MessageOneofCase.CardUpdate:
-        CardUpdate = other.CardUpdate.Clone();
-        break;
-      case MessageOneofCase.SelectOnStageByEffect:
-        SelectOnStageByEffect = other.SelectOnStageByEffect.Clone();
-        break;
-      case MessageOneofCase.CostRevise:
-        CostRevise = other.CostRevise.Clone();
-        break;
-      case MessageOneofCase.PhaseContinue:
-        PhaseContinue = other.PhaseContinue.Clone();
-        break;
-      case MessageOneofCase.PveIntentionInfo:
-        PveIntentionInfo = other.PveIntentionInfo.Clone();
-        break;
-      case MessageOneofCase.PveIntentionChange:
-        PveIntentionChange = other.PveIntentionChange.Clone();
-        break;
-      case MessageOneofCase.SkillLimitsChange:
-        SkillLimitsChange = other.SkillLimitsChange.Clone();
-        break;
-      case MessageOneofCase.NoDamageSkillResult:
-        NoDamageSkillResult = other.NoDamageSkillResult.Clone();
-        break;
-      case MessageOneofCase.ReactionBegin:
-        ReactionBegin = other.ReactionBegin.Clone();
-        break;
-      case MessageOneofCase.ReactionEnd:
-        ReactionEnd = other.ReactionEnd.Clone();
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGMessage Clone() {
-    return new GCGMessage(this);
-  }
-
-  /// <summary>Field number for the "token_change" field.</summary>
-  public const int TokenChangeFieldNumber = 12;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgTokenChange TokenChange {
-    get { return messageCase_ == MessageOneofCase.TokenChange ? (global::GCGMsgTokenChange) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.TokenChange;
-    }
-  }
-
-  /// <summary>Field number for the "phase_change" field.</summary>
-  public const int PhaseChangeFieldNumber = 13;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgPhaseChange PhaseChange {
-    get { return messageCase_ == MessageOneofCase.PhaseChange ? (global::GCGMsgPhaseChange) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PhaseChange;
-    }
-  }
-
-  /// <summary>Field number for the "add_cards" field.</summary>
-  public const int AddCardsFieldNumber = 10;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgAddCards AddCards {
-    get { return messageCase_ == MessageOneofCase.AddCards ? (global::GCGMsgAddCards) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.AddCards;
-    }
-  }
-
-  /// <summary>Field number for the "remove_cards" field.</summary>
-  public const int RemoveCardsFieldNumber = 14;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgRemoveCards RemoveCards {
-    get { return messageCase_ == MessageOneofCase.RemoveCards ? (global::GCGMsgRemoveCards) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.RemoveCards;
-    }
-  }
-
-  /// <summary>Field number for the "select_on_stage" field.</summary>
-  public const int SelectOnStageFieldNumber = 6;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgSelectOnStage SelectOnStage {
-    get { return messageCase_ == MessageOneofCase.SelectOnStage ? (global::GCGMsgSelectOnStage) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.SelectOnStage;
-    }
-  }
-
-  /// <summary>Field number for the "dice_roll" field.</summary>
-  public const int DiceRollFieldNumber = 9;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgDiceRoll DiceRoll {
-    get { return messageCase_ == MessageOneofCase.DiceRoll ? (global::GCGMsgDiceRoll) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.DiceRoll;
-    }
-  }
-
-  /// <summary>Field number for the "dice_reroll" field.</summary>
-  public const int DiceRerollFieldNumber = 11;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgDiceReroll DiceReroll {
-    get { return messageCase_ == MessageOneofCase.DiceReroll ? (global::GCGMsgDiceReroll) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.DiceReroll;
-    }
-  }
-
-  /// <summary>Field number for the "pass" field.</summary>
-  public const int PassFieldNumber = 5;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgPass Pass {
-    get { return messageCase_ == MessageOneofCase.Pass ? (global::GCGMsgPass) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.Pass;
-    }
-  }
-
-  /// <summary>Field number for the "char_die" field.</summary>
-  public const int CharDieFieldNumber = 2;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgCharDie CharDie {
-    get { return messageCase_ == MessageOneofCase.CharDie ? (global::GCGMsgCharDie) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.CharDie;
-    }
-  }
-
-  /// <summary>Field number for the "skill_result" field.</summary>
-  public const int SkillResultFieldNumber = 1;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgSkillResult SkillResult {
-    get { return messageCase_ == MessageOneofCase.SkillResult ? (global::GCGMsgSkillResult) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.SkillResult;
-    }
-  }
-
-  /// <summary>Field number for the "cost_dice" field.</summary>
-  public const int CostDiceFieldNumber = 7;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgCostDice CostDice {
-    get { return messageCase_ == MessageOneofCase.CostDice ? (global::GCGMsgCostDice) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.CostDice;
-    }
-  }
-
-  /// <summary>Field number for the "add_dice" field.</summary>
-  public const int AddDiceFieldNumber = 3;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgAddDice AddDice {
-    get { return messageCase_ == MessageOneofCase.AddDice ? (global::GCGMsgAddDice) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.AddDice;
-    }
-  }
-
-  /// <summary>Field number for the "move_card" field.</summary>
-  public const int MoveCardFieldNumber = 15;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgMoveCard MoveCard {
-    get { return messageCase_ == MessageOneofCase.MoveCard ? (global::GCGMsgMoveCard) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.MoveCard;
-    }
-  }
-
-  /// <summary>Field number for the "use_skill" field.</summary>
-  public const int UseSkillFieldNumber = 4;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgUseSkill UseSkill {
-    get { return messageCase_ == MessageOneofCase.UseSkill ? (global::GCGMsgUseSkill) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.UseSkill;
-    }
-  }
-
-  /// <summary>Field number for the "new_card" field.</summary>
-  public const int NewCardFieldNumber = 1848;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgNewCard NewCard {
-    get { return messageCase_ == MessageOneofCase.NewCard ? (global::GCGMsgNewCard) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.NewCard;
-    }
-  }
-
-  /// <summary>Field number for the "update_controller" field.</summary>
-  public const int UpdateControllerFieldNumber = 429;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgUpdateController UpdateController {
-    get { return messageCase_ == MessageOneofCase.UpdateController ? (global::GCGMsgUpdateController) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.UpdateController;
-    }
-  }
-
-  /// <summary>Field number for the "modify_add" field.</summary>
-  public const int ModifyAddFieldNumber = 1851;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgModifyAdd ModifyAdd {
-    get { return messageCase_ == MessageOneofCase.ModifyAdd ? (global::GCGMsgModifyAdd) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.ModifyAdd;
-    }
-  }
-
-  /// <summary>Field number for the "modify_remove" field.</summary>
-  public const int ModifyRemoveFieldNumber = 471;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgModifyRemove ModifyRemove {
-    get { return messageCase_ == MessageOneofCase.ModifyRemove ? (global::GCGMsgModifyRemove) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.ModifyRemove;
-    }
-  }
-
-  /// <summary>Field number for the "use_skill_end" field.</summary>
-  public const int UseSkillEndFieldNumber = 1411;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgUseSkillEnd UseSkillEnd {
-    get { return messageCase_ == MessageOneofCase.UseSkillEnd ? (global::GCGMsgUseSkillEnd) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.UseSkillEnd;
-    }
-  }
-
-  /// <summary>Field number for the "duel_data_change" field.</summary>
-  public const int DuelDataChangeFieldNumber = 1008;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgDuelDataChange DuelDataChange {
-    get { return messageCase_ == MessageOneofCase.DuelDataChange ? (global::GCGMsgDuelDataChange) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.DuelDataChange;
-    }
-  }
-
-  /// <summary>Field number for the "client_perform" field.</summary>
-  public const int ClientPerformFieldNumber = 1035;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgClientPerform ClientPerform {
-    get { return messageCase_ == MessageOneofCase.ClientPerform ? (global::GCGMsgClientPerform) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.ClientPerform;
-    }
-  }
-
-  /// <summary>Field number for the "game_over" field.</summary>
-  public const int GameOverFieldNumber = 714;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgGameOver GameOver {
-    get { return messageCase_ == MessageOneofCase.GameOver ? (global::GCGMsgGameOver) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.GameOver;
-    }
-  }
-
-  /// <summary>Field number for the "op_timer" field.</summary>
-  public const int OpTimerFieldNumber = 1862;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgOpTimer OpTimer {
-    get { return messageCase_ == MessageOneofCase.OpTimer ? (global::GCGMsgOpTimer) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.OpTimer;
-    }
-  }
-
-  /// <summary>Field number for the "waiting_list_change" field.</summary>
-  public const int WaitingListChangeFieldNumber = 1678;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgWaitingListChange WaitingListChange {
-    get { return messageCase_ == MessageOneofCase.WaitingListChange ? (global::GCGMsgWaitingListChange) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.WaitingListChange;
-    }
-  }
-
-  /// <summary>Field number for the "card_update" field.</summary>
-  public const int CardUpdateFieldNumber = 1879;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgCardUpdate CardUpdate {
-    get { return messageCase_ == MessageOneofCase.CardUpdate ? (global::GCGMsgCardUpdate) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.CardUpdate;
-    }
-  }
-
-  /// <summary>Field number for the "select_on_stage_by_effect" field.</summary>
-  public const int SelectOnStageByEffectFieldNumber = 2042;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgSelectOnStageByEffect SelectOnStageByEffect {
-    get { return messageCase_ == MessageOneofCase.SelectOnStageByEffect ? (global::GCGMsgSelectOnStageByEffect) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.SelectOnStageByEffect;
-    }
-  }
-
-  /// <summary>Field number for the "cost_revise" field.</summary>
-  public const int CostReviseFieldNumber = 1350;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgCostRevise CostRevise {
-    get { return messageCase_ == MessageOneofCase.CostRevise ? (global::GCGMsgCostRevise) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.CostRevise;
-    }
-  }
-
-  /// <summary>Field number for the "phase_continue" field.</summary>
-  public const int PhaseContinueFieldNumber = 1474;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgPhaseContinue PhaseContinue {
-    get { return messageCase_ == MessageOneofCase.PhaseContinue ? (global::GCGMsgPhaseContinue) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PhaseContinue;
-    }
-  }
-
-  /// <summary>Field number for the "pve_intention_info" field.</summary>
-  public const int PveIntentionInfoFieldNumber = 1252;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgPVEIntentionInfo PveIntentionInfo {
-    get { return messageCase_ == MessageOneofCase.PveIntentionInfo ? (global::GCGMsgPVEIntentionInfo) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PveIntentionInfo;
-    }
-  }
-
-  /// <summary>Field number for the "pve_intention_change" field.</summary>
-  public const int PveIntentionChangeFieldNumber = 893;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgPVEIntentionChange PveIntentionChange {
-    get { return messageCase_ == MessageOneofCase.PveIntentionChange ? (global::GCGMsgPVEIntentionChange) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.PveIntentionChange;
-    }
-  }
-
-  /// <summary>Field number for the "skill_limits_change" field.</summary>
-  public const int SkillLimitsChangeFieldNumber = 259;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgSkillLimitsChange SkillLimitsChange {
-    get { return messageCase_ == MessageOneofCase.SkillLimitsChange ? (global::GCGMsgSkillLimitsChange) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.SkillLimitsChange;
-    }
-  }
-
-  /// <summary>Field number for the "no_damage_skill_result" field.</summary>
-  public const int NoDamageSkillResultFieldNumber = 24;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgNoDamageSkillResult NoDamageSkillResult {
-    get { return messageCase_ == MessageOneofCase.NoDamageSkillResult ? (global::GCGMsgNoDamageSkillResult) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.NoDamageSkillResult;
-    }
-  }
-
-  /// <summary>Field number for the "reaction_begin" field.</summary>
-  public const int ReactionBeginFieldNumber = 859;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgReactionBegin ReactionBegin {
-    get { return messageCase_ == MessageOneofCase.ReactionBegin ? (global::GCGMsgReactionBegin) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.ReactionBegin;
-    }
-  }
-
-  /// <summary>Field number for the "reaction_end" field.</summary>
-  public const int ReactionEndFieldNumber = 1395;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMsgReactionEnd ReactionEnd {
-    get { return messageCase_ == MessageOneofCase.ReactionEnd ? (global::GCGMsgReactionEnd) message_ : null; }
-    set {
-      message_ = value;
-      messageCase_ = value == null ? MessageOneofCase.None : MessageOneofCase.ReactionEnd;
-    }
-  }
-
-  private object message_;
-  /// <summary>Enum of possible cases for the "message" oneof.</summary>
-  public enum MessageOneofCase {
-    None = 0,
-    TokenChange = 12,
-    PhaseChange = 13,
-    AddCards = 10,
-    RemoveCards = 14,
-    SelectOnStage = 6,
-    DiceRoll = 9,
-    DiceReroll = 11,
-    Pass = 5,
-    CharDie = 2,
-    SkillResult = 1,
-    CostDice = 7,
-    AddDice = 3,
-    MoveCard = 15,
-    UseSkill = 4,
-    NewCard = 1848,
-    UpdateController = 429,
-    ModifyAdd = 1851,
-    ModifyRemove = 471,
-    UseSkillEnd = 1411,
-    DuelDataChange = 1008,
-    ClientPerform = 1035,
-    GameOver = 714,
-    OpTimer = 1862,
-    WaitingListChange = 1678,
-    CardUpdate = 1879,
-    SelectOnStageByEffect = 2042,
-    CostRevise = 1350,
-    PhaseContinue = 1474,
-    PveIntentionInfo = 1252,
-    PveIntentionChange = 893,
-    SkillLimitsChange = 259,
-    NoDamageSkillResult = 24,
-    ReactionBegin = 859,
-    ReactionEnd = 1395,
-  }
-  private MessageOneofCase messageCase_ = MessageOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MessageOneofCase MessageCase {
-    get { return messageCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearMessage() {
-    messageCase_ = MessageOneofCase.None;
-    message_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGMessage);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGMessage other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(TokenChange, other.TokenChange)) return false;
-    if (!object.Equals(PhaseChange, other.PhaseChange)) return false;
-    if (!object.Equals(AddCards, other.AddCards)) return false;
-    if (!object.Equals(RemoveCards, other.RemoveCards)) return false;
-    if (!object.Equals(SelectOnStage, other.SelectOnStage)) return false;
-    if (!object.Equals(DiceRoll, other.DiceRoll)) return false;
-    if (!object.Equals(DiceReroll, other.DiceReroll)) return false;
-    if (!object.Equals(Pass, other.Pass)) return false;
-    if (!object.Equals(CharDie, other.CharDie)) return false;
-    if (!object.Equals(SkillResult, other.SkillResult)) return false;
-    if (!object.Equals(CostDice, other.CostDice)) return false;
-    if (!object.Equals(AddDice, other.AddDice)) return false;
-    if (!object.Equals(MoveCard, other.MoveCard)) return false;
-    if (!object.Equals(UseSkill, other.UseSkill)) return false;
-    if (!object.Equals(NewCard, other.NewCard)) return false;
-    if (!object.Equals(UpdateController, other.UpdateController)) return false;
-    if (!object.Equals(ModifyAdd, other.ModifyAdd)) return false;
-    if (!object.Equals(ModifyRemove, other.ModifyRemove)) return false;
-    if (!object.Equals(UseSkillEnd, other.UseSkillEnd)) return false;
-    if (!object.Equals(DuelDataChange, other.DuelDataChange)) return false;
-    if (!object.Equals(ClientPerform, other.ClientPerform)) return false;
-    if (!object.Equals(GameOver, other.GameOver)) return false;
-    if (!object.Equals(OpTimer, other.OpTimer)) return false;
-    if (!object.Equals(WaitingListChange, other.WaitingListChange)) return false;
-    if (!object.Equals(CardUpdate, other.CardUpdate)) return false;
-    if (!object.Equals(SelectOnStageByEffect, other.SelectOnStageByEffect)) return false;
-    if (!object.Equals(CostRevise, other.CostRevise)) return false;
-    if (!object.Equals(PhaseContinue, other.PhaseContinue)) return false;
-    if (!object.Equals(PveIntentionInfo, other.PveIntentionInfo)) return false;
-    if (!object.Equals(PveIntentionChange, other.PveIntentionChange)) return false;
-    if (!object.Equals(SkillLimitsChange, other.SkillLimitsChange)) return false;
-    if (!object.Equals(NoDamageSkillResult, other.NoDamageSkillResult)) return false;
-    if (!object.Equals(ReactionBegin, other.ReactionBegin)) return false;
-    if (!object.Equals(ReactionEnd, other.ReactionEnd)) return false;
-    if (MessageCase != other.MessageCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (messageCase_ == MessageOneofCase.TokenChange) hash ^= TokenChange.GetHashCode();
-    if (messageCase_ == MessageOneofCase.PhaseChange) hash ^= PhaseChange.GetHashCode();
-    if (messageCase_ == MessageOneofCase.AddCards) hash ^= AddCards.GetHashCode();
-    if (messageCase_ == MessageOneofCase.RemoveCards) hash ^= RemoveCards.GetHashCode();
-    if (messageCase_ == MessageOneofCase.SelectOnStage) hash ^= SelectOnStage.GetHashCode();
-    if (messageCase_ == MessageOneofCase.DiceRoll) hash ^= DiceRoll.GetHashCode();
-    if (messageCase_ == MessageOneofCase.DiceReroll) hash ^= DiceReroll.GetHashCode();
-    if (messageCase_ == MessageOneofCase.Pass) hash ^= Pass.GetHashCode();
-    if (messageCase_ == MessageOneofCase.CharDie) hash ^= CharDie.GetHashCode();
-    if (messageCase_ == MessageOneofCase.SkillResult) hash ^= SkillResult.GetHashCode();
-    if (messageCase_ == MessageOneofCase.CostDice) hash ^= CostDice.GetHashCode();
-    if (messageCase_ == MessageOneofCase.AddDice) hash ^= AddDice.GetHashCode();
-    if (messageCase_ == MessageOneofCase.MoveCard) hash ^= MoveCard.GetHashCode();
-    if (messageCase_ == MessageOneofCase.UseSkill) hash ^= UseSkill.GetHashCode();
-    if (messageCase_ == MessageOneofCase.NewCard) hash ^= NewCard.GetHashCode();
-    if (messageCase_ == MessageOneofCase.UpdateController) hash ^= UpdateController.GetHashCode();
-    if (messageCase_ == MessageOneofCase.ModifyAdd) hash ^= ModifyAdd.GetHashCode();
-    if (messageCase_ == MessageOneofCase.ModifyRemove) hash ^= ModifyRemove.GetHashCode();
-    if (messageCase_ == MessageOneofCase.UseSkillEnd) hash ^= UseSkillEnd.GetHashCode();
-    if (messageCase_ == MessageOneofCase.DuelDataChange) hash ^= DuelDataChange.GetHashCode();
-    if (messageCase_ == MessageOneofCase.ClientPerform) hash ^= ClientPerform.GetHashCode();
-    if (messageCase_ == MessageOneofCase.GameOver) hash ^= GameOver.GetHashCode();
-    if (messageCase_ == MessageOneofCase.OpTimer) hash ^= OpTimer.GetHashCode();
-    if (messageCase_ == MessageOneofCase.WaitingListChange) hash ^= WaitingListChange.GetHashCode();
-    if (messageCase_ == MessageOneofCase.CardUpdate) hash ^= CardUpdate.GetHashCode();
-    if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) hash ^= SelectOnStageByEffect.GetHashCode();
-    if (messageCase_ == MessageOneofCase.CostRevise) hash ^= CostRevise.GetHashCode();
-    if (messageCase_ == MessageOneofCase.PhaseContinue) hash ^= PhaseContinue.GetHashCode();
-    if (messageCase_ == MessageOneofCase.PveIntentionInfo) hash ^= PveIntentionInfo.GetHashCode();
-    if (messageCase_ == MessageOneofCase.PveIntentionChange) hash ^= PveIntentionChange.GetHashCode();
-    if (messageCase_ == MessageOneofCase.SkillLimitsChange) hash ^= SkillLimitsChange.GetHashCode();
-    if (messageCase_ == MessageOneofCase.NoDamageSkillResult) hash ^= NoDamageSkillResult.GetHashCode();
-    if (messageCase_ == MessageOneofCase.ReactionBegin) hash ^= ReactionBegin.GetHashCode();
-    if (messageCase_ == MessageOneofCase.ReactionEnd) hash ^= ReactionEnd.GetHashCode();
-    hash ^= (int) messageCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (messageCase_ == MessageOneofCase.SkillResult) {
-      output.WriteRawTag(10);
-      output.WriteMessage(SkillResult);
-    }
-    if (messageCase_ == MessageOneofCase.CharDie) {
-      output.WriteRawTag(18);
-      output.WriteMessage(CharDie);
-    }
-    if (messageCase_ == MessageOneofCase.AddDice) {
-      output.WriteRawTag(26);
-      output.WriteMessage(AddDice);
-    }
-    if (messageCase_ == MessageOneofCase.UseSkill) {
-      output.WriteRawTag(34);
-      output.WriteMessage(UseSkill);
-    }
-    if (messageCase_ == MessageOneofCase.Pass) {
-      output.WriteRawTag(42);
-      output.WriteMessage(Pass);
-    }
-    if (messageCase_ == MessageOneofCase.SelectOnStage) {
-      output.WriteRawTag(50);
-      output.WriteMessage(SelectOnStage);
-    }
-    if (messageCase_ == MessageOneofCase.CostDice) {
-      output.WriteRawTag(58);
-      output.WriteMessage(CostDice);
-    }
-    if (messageCase_ == MessageOneofCase.DiceRoll) {
-      output.WriteRawTag(74);
-      output.WriteMessage(DiceRoll);
-    }
-    if (messageCase_ == MessageOneofCase.AddCards) {
-      output.WriteRawTag(82);
-      output.WriteMessage(AddCards);
-    }
-    if (messageCase_ == MessageOneofCase.DiceReroll) {
-      output.WriteRawTag(90);
-      output.WriteMessage(DiceReroll);
-    }
-    if (messageCase_ == MessageOneofCase.TokenChange) {
-      output.WriteRawTag(98);
-      output.WriteMessage(TokenChange);
-    }
-    if (messageCase_ == MessageOneofCase.PhaseChange) {
-      output.WriteRawTag(106);
-      output.WriteMessage(PhaseChange);
-    }
-    if (messageCase_ == MessageOneofCase.RemoveCards) {
-      output.WriteRawTag(114);
-      output.WriteMessage(RemoveCards);
-    }
-    if (messageCase_ == MessageOneofCase.MoveCard) {
-      output.WriteRawTag(122);
-      output.WriteMessage(MoveCard);
-    }
-    if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
-      output.WriteRawTag(194, 1);
-      output.WriteMessage(NoDamageSkillResult);
-    }
-    if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
-      output.WriteRawTag(154, 16);
-      output.WriteMessage(SkillLimitsChange);
-    }
-    if (messageCase_ == MessageOneofCase.UpdateController) {
-      output.WriteRawTag(234, 26);
-      output.WriteMessage(UpdateController);
-    }
-    if (messageCase_ == MessageOneofCase.ModifyRemove) {
-      output.WriteRawTag(186, 29);
-      output.WriteMessage(ModifyRemove);
-    }
-    if (messageCase_ == MessageOneofCase.GameOver) {
-      output.WriteRawTag(210, 44);
-      output.WriteMessage(GameOver);
-    }
-    if (messageCase_ == MessageOneofCase.ReactionBegin) {
-      output.WriteRawTag(218, 53);
-      output.WriteMessage(ReactionBegin);
-    }
-    if (messageCase_ == MessageOneofCase.PveIntentionChange) {
-      output.WriteRawTag(234, 55);
-      output.WriteMessage(PveIntentionChange);
-    }
-    if (messageCase_ == MessageOneofCase.DuelDataChange) {
-      output.WriteRawTag(130, 63);
-      output.WriteMessage(DuelDataChange);
-    }
-    if (messageCase_ == MessageOneofCase.ClientPerform) {
-      output.WriteRawTag(218, 64);
-      output.WriteMessage(ClientPerform);
-    }
-    if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
-      output.WriteRawTag(162, 78);
-      output.WriteMessage(PveIntentionInfo);
-    }
-    if (messageCase_ == MessageOneofCase.CostRevise) {
-      output.WriteRawTag(178, 84);
-      output.WriteMessage(CostRevise);
-    }
-    if (messageCase_ == MessageOneofCase.ReactionEnd) {
-      output.WriteRawTag(154, 87);
-      output.WriteMessage(ReactionEnd);
-    }
-    if (messageCase_ == MessageOneofCase.UseSkillEnd) {
-      output.WriteRawTag(154, 88);
-      output.WriteMessage(UseSkillEnd);
-    }
-    if (messageCase_ == MessageOneofCase.PhaseContinue) {
-      output.WriteRawTag(146, 92);
-      output.WriteMessage(PhaseContinue);
-    }
-    if (messageCase_ == MessageOneofCase.WaitingListChange) {
-      output.WriteRawTag(242, 104);
-      output.WriteMessage(WaitingListChange);
-    }
-    if (messageCase_ == MessageOneofCase.NewCard) {
-      output.WriteRawTag(194, 115);
-      output.WriteMessage(NewCard);
-    }
-    if (messageCase_ == MessageOneofCase.ModifyAdd) {
-      output.WriteRawTag(218, 115);
-      output.WriteMessage(ModifyAdd);
-    }
-    if (messageCase_ == MessageOneofCase.OpTimer) {
-      output.WriteRawTag(178, 116);
-      output.WriteMessage(OpTimer);
-    }
-    if (messageCase_ == MessageOneofCase.CardUpdate) {
-      output.WriteRawTag(186, 117);
-      output.WriteMessage(CardUpdate);
-    }
-    if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
-      output.WriteRawTag(210, 127);
-      output.WriteMessage(SelectOnStageByEffect);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (messageCase_ == MessageOneofCase.SkillResult) {
-      output.WriteRawTag(10);
-      output.WriteMessage(SkillResult);
-    }
-    if (messageCase_ == MessageOneofCase.CharDie) {
-      output.WriteRawTag(18);
-      output.WriteMessage(CharDie);
-    }
-    if (messageCase_ == MessageOneofCase.AddDice) {
-      output.WriteRawTag(26);
-      output.WriteMessage(AddDice);
-    }
-    if (messageCase_ == MessageOneofCase.UseSkill) {
-      output.WriteRawTag(34);
-      output.WriteMessage(UseSkill);
-    }
-    if (messageCase_ == MessageOneofCase.Pass) {
-      output.WriteRawTag(42);
-      output.WriteMessage(Pass);
-    }
-    if (messageCase_ == MessageOneofCase.SelectOnStage) {
-      output.WriteRawTag(50);
-      output.WriteMessage(SelectOnStage);
-    }
-    if (messageCase_ == MessageOneofCase.CostDice) {
-      output.WriteRawTag(58);
-      output.WriteMessage(CostDice);
-    }
-    if (messageCase_ == MessageOneofCase.DiceRoll) {
-      output.WriteRawTag(74);
-      output.WriteMessage(DiceRoll);
-    }
-    if (messageCase_ == MessageOneofCase.AddCards) {
-      output.WriteRawTag(82);
-      output.WriteMessage(AddCards);
-    }
-    if (messageCase_ == MessageOneofCase.DiceReroll) {
-      output.WriteRawTag(90);
-      output.WriteMessage(DiceReroll);
-    }
-    if (messageCase_ == MessageOneofCase.TokenChange) {
-      output.WriteRawTag(98);
-      output.WriteMessage(TokenChange);
-    }
-    if (messageCase_ == MessageOneofCase.PhaseChange) {
-      output.WriteRawTag(106);
-      output.WriteMessage(PhaseChange);
-    }
-    if (messageCase_ == MessageOneofCase.RemoveCards) {
-      output.WriteRawTag(114);
-      output.WriteMessage(RemoveCards);
-    }
-    if (messageCase_ == MessageOneofCase.MoveCard) {
-      output.WriteRawTag(122);
-      output.WriteMessage(MoveCard);
-    }
-    if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
-      output.WriteRawTag(194, 1);
-      output.WriteMessage(NoDamageSkillResult);
-    }
-    if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
-      output.WriteRawTag(154, 16);
-      output.WriteMessage(SkillLimitsChange);
-    }
-    if (messageCase_ == MessageOneofCase.UpdateController) {
-      output.WriteRawTag(234, 26);
-      output.WriteMessage(UpdateController);
-    }
-    if (messageCase_ == MessageOneofCase.ModifyRemove) {
-      output.WriteRawTag(186, 29);
-      output.WriteMessage(ModifyRemove);
-    }
-    if (messageCase_ == MessageOneofCase.GameOver) {
-      output.WriteRawTag(210, 44);
-      output.WriteMessage(GameOver);
-    }
-    if (messageCase_ == MessageOneofCase.ReactionBegin) {
-      output.WriteRawTag(218, 53);
-      output.WriteMessage(ReactionBegin);
-    }
-    if (messageCase_ == MessageOneofCase.PveIntentionChange) {
-      output.WriteRawTag(234, 55);
-      output.WriteMessage(PveIntentionChange);
-    }
-    if (messageCase_ == MessageOneofCase.DuelDataChange) {
-      output.WriteRawTag(130, 63);
-      output.WriteMessage(DuelDataChange);
-    }
-    if (messageCase_ == MessageOneofCase.ClientPerform) {
-      output.WriteRawTag(218, 64);
-      output.WriteMessage(ClientPerform);
-    }
-    if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
-      output.WriteRawTag(162, 78);
-      output.WriteMessage(PveIntentionInfo);
-    }
-    if (messageCase_ == MessageOneofCase.CostRevise) {
-      output.WriteRawTag(178, 84);
-      output.WriteMessage(CostRevise);
-    }
-    if (messageCase_ == MessageOneofCase.ReactionEnd) {
-      output.WriteRawTag(154, 87);
-      output.WriteMessage(ReactionEnd);
-    }
-    if (messageCase_ == MessageOneofCase.UseSkillEnd) {
-      output.WriteRawTag(154, 88);
-      output.WriteMessage(UseSkillEnd);
-    }
-    if (messageCase_ == MessageOneofCase.PhaseContinue) {
-      output.WriteRawTag(146, 92);
-      output.WriteMessage(PhaseContinue);
-    }
-    if (messageCase_ == MessageOneofCase.WaitingListChange) {
-      output.WriteRawTag(242, 104);
-      output.WriteMessage(WaitingListChange);
-    }
-    if (messageCase_ == MessageOneofCase.NewCard) {
-      output.WriteRawTag(194, 115);
-      output.WriteMessage(NewCard);
-    }
-    if (messageCase_ == MessageOneofCase.ModifyAdd) {
-      output.WriteRawTag(218, 115);
-      output.WriteMessage(ModifyAdd);
-    }
-    if (messageCase_ == MessageOneofCase.OpTimer) {
-      output.WriteRawTag(178, 116);
-      output.WriteMessage(OpTimer);
-    }
-    if (messageCase_ == MessageOneofCase.CardUpdate) {
-      output.WriteRawTag(186, 117);
-      output.WriteMessage(CardUpdate);
-    }
-    if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
-      output.WriteRawTag(210, 127);
-      output.WriteMessage(SelectOnStageByEffect);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (messageCase_ == MessageOneofCase.TokenChange) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(TokenChange);
-    }
-    if (messageCase_ == MessageOneofCase.PhaseChange) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(PhaseChange);
-    }
-    if (messageCase_ == MessageOneofCase.AddCards) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(AddCards);
-    }
-    if (messageCase_ == MessageOneofCase.RemoveCards) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(RemoveCards);
-    }
-    if (messageCase_ == MessageOneofCase.SelectOnStage) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(SelectOnStage);
-    }
-    if (messageCase_ == MessageOneofCase.DiceRoll) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(DiceRoll);
-    }
-    if (messageCase_ == MessageOneofCase.DiceReroll) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(DiceReroll);
-    }
-    if (messageCase_ == MessageOneofCase.Pass) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pass);
-    }
-    if (messageCase_ == MessageOneofCase.CharDie) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(CharDie);
-    }
-    if (messageCase_ == MessageOneofCase.SkillResult) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(SkillResult);
-    }
-    if (messageCase_ == MessageOneofCase.CostDice) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(CostDice);
-    }
-    if (messageCase_ == MessageOneofCase.AddDice) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(AddDice);
-    }
-    if (messageCase_ == MessageOneofCase.MoveCard) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(MoveCard);
-    }
-    if (messageCase_ == MessageOneofCase.UseSkill) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(UseSkill);
-    }
-    if (messageCase_ == MessageOneofCase.NewCard) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(NewCard);
-    }
-    if (messageCase_ == MessageOneofCase.UpdateController) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(UpdateController);
-    }
-    if (messageCase_ == MessageOneofCase.ModifyAdd) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(ModifyAdd);
-    }
-    if (messageCase_ == MessageOneofCase.ModifyRemove) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(ModifyRemove);
-    }
-    if (messageCase_ == MessageOneofCase.UseSkillEnd) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(UseSkillEnd);
-    }
-    if (messageCase_ == MessageOneofCase.DuelDataChange) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(DuelDataChange);
-    }
-    if (messageCase_ == MessageOneofCase.ClientPerform) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(ClientPerform);
-    }
-    if (messageCase_ == MessageOneofCase.GameOver) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(GameOver);
-    }
-    if (messageCase_ == MessageOneofCase.OpTimer) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(OpTimer);
-    }
-    if (messageCase_ == MessageOneofCase.WaitingListChange) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(WaitingListChange);
-    }
-    if (messageCase_ == MessageOneofCase.CardUpdate) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(CardUpdate);
-    }
-    if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(SelectOnStageByEffect);
-    }
-    if (messageCase_ == MessageOneofCase.CostRevise) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(CostRevise);
-    }
-    if (messageCase_ == MessageOneofCase.PhaseContinue) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(PhaseContinue);
-    }
-    if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(PveIntentionInfo);
-    }
-    if (messageCase_ == MessageOneofCase.PveIntentionChange) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(PveIntentionChange);
-    }
-    if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(SkillLimitsChange);
-    }
-    if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(NoDamageSkillResult);
-    }
-    if (messageCase_ == MessageOneofCase.ReactionBegin) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(ReactionBegin);
-    }
-    if (messageCase_ == MessageOneofCase.ReactionEnd) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(ReactionEnd);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGMessage other) {
-    if (other == null) {
-      return;
-    }
-    switch (other.MessageCase) {
-      case MessageOneofCase.TokenChange:
-        if (TokenChange == null) {
-          TokenChange = new global::GCGMsgTokenChange();
-        }
-        TokenChange.MergeFrom(other.TokenChange);
-        break;
-      case MessageOneofCase.PhaseChange:
-        if (PhaseChange == null) {
-          PhaseChange = new global::GCGMsgPhaseChange();
-        }
-        PhaseChange.MergeFrom(other.PhaseChange);
-        break;
-      case MessageOneofCase.AddCards:
-        if (AddCards == null) {
-          AddCards = new global::GCGMsgAddCards();
-        }
-        AddCards.MergeFrom(other.AddCards);
-        break;
-      case MessageOneofCase.RemoveCards:
-        if (RemoveCards == null) {
-          RemoveCards = new global::GCGMsgRemoveCards();
-        }
-        RemoveCards.MergeFrom(other.RemoveCards);
-        break;
-      case MessageOneofCase.SelectOnStage:
-        if (SelectOnStage == null) {
-          SelectOnStage = new global::GCGMsgSelectOnStage();
-        }
-        SelectOnStage.MergeFrom(other.SelectOnStage);
-        break;
-      case MessageOneofCase.DiceRoll:
-        if (DiceRoll == null) {
-          DiceRoll = new global::GCGMsgDiceRoll();
-        }
-        DiceRoll.MergeFrom(other.DiceRoll);
-        break;
-      case MessageOneofCase.DiceReroll:
-        if (DiceReroll == null) {
-          DiceReroll = new global::GCGMsgDiceReroll();
-        }
-        DiceReroll.MergeFrom(other.DiceReroll);
-        break;
-      case MessageOneofCase.Pass:
-        if (Pass == null) {
-          Pass = new global::GCGMsgPass();
-        }
-        Pass.MergeFrom(other.Pass);
-        break;
-      case MessageOneofCase.CharDie:
-        if (CharDie == null) {
-          CharDie = new global::GCGMsgCharDie();
-        }
-        CharDie.MergeFrom(other.CharDie);
-        break;
-      case MessageOneofCase.SkillResult:
-        if (SkillResult == null) {
-          SkillResult = new global::GCGMsgSkillResult();
-        }
-        SkillResult.MergeFrom(other.SkillResult);
-        break;
-      case MessageOneofCase.CostDice:
-        if (CostDice == null) {
-          CostDice = new global::GCGMsgCostDice();
-        }
-        CostDice.MergeFrom(other.CostDice);
-        break;
-      case MessageOneofCase.AddDice:
-        if (AddDice == null) {
-          AddDice = new global::GCGMsgAddDice();
-        }
-        AddDice.MergeFrom(other.AddDice);
-        break;
-      case MessageOneofCase.MoveCard:
-        if (MoveCard == null) {
-          MoveCard = new global::GCGMsgMoveCard();
-        }
-        MoveCard.MergeFrom(other.MoveCard);
-        break;
-      case MessageOneofCase.UseSkill:
-        if (UseSkill == null) {
-          UseSkill = new global::GCGMsgUseSkill();
-        }
-        UseSkill.MergeFrom(other.UseSkill);
-        break;
-      case MessageOneofCase.NewCard:
-        if (NewCard == null) {
-          NewCard = new global::GCGMsgNewCard();
-        }
-        NewCard.MergeFrom(other.NewCard);
-        break;
-      case MessageOneofCase.UpdateController:
-        if (UpdateController == null) {
-          UpdateController = new global::GCGMsgUpdateController();
-        }
-        UpdateController.MergeFrom(other.UpdateController);
-        break;
-      case MessageOneofCase.ModifyAdd:
-        if (ModifyAdd == null) {
-          ModifyAdd = new global::GCGMsgModifyAdd();
-        }
-        ModifyAdd.MergeFrom(other.ModifyAdd);
-        break;
-      case MessageOneofCase.ModifyRemove:
-        if (ModifyRemove == null) {
-          ModifyRemove = new global::GCGMsgModifyRemove();
-        }
-        ModifyRemove.MergeFrom(other.ModifyRemove);
-        break;
-      case MessageOneofCase.UseSkillEnd:
-        if (UseSkillEnd == null) {
-          UseSkillEnd = new global::GCGMsgUseSkillEnd();
-        }
-        UseSkillEnd.MergeFrom(other.UseSkillEnd);
-        break;
-      case MessageOneofCase.DuelDataChange:
-        if (DuelDataChange == null) {
-          DuelDataChange = new global::GCGMsgDuelDataChange();
-        }
-        DuelDataChange.MergeFrom(other.DuelDataChange);
-        break;
-      case MessageOneofCase.ClientPerform:
-        if (ClientPerform == null) {
-          ClientPerform = new global::GCGMsgClientPerform();
-        }
-        ClientPerform.MergeFrom(other.ClientPerform);
-        break;
-      case MessageOneofCase.GameOver:
-        if (GameOver == null) {
-          GameOver = new global::GCGMsgGameOver();
-        }
-        GameOver.MergeFrom(other.GameOver);
-        break;
-      case MessageOneofCase.OpTimer:
-        if (OpTimer == null) {
-          OpTimer = new global::GCGMsgOpTimer();
-        }
-        OpTimer.MergeFrom(other.OpTimer);
-        break;
-      case MessageOneofCase.WaitingListChange:
-        if (WaitingListChange == null) {
-          WaitingListChange = new global::GCGMsgWaitingListChange();
-        }
-        WaitingListChange.MergeFrom(other.WaitingListChange);
-        break;
-      case MessageOneofCase.CardUpdate:
-        if (CardUpdate == null) {
-          CardUpdate = new global::GCGMsgCardUpdate();
-        }
-        CardUpdate.MergeFrom(other.CardUpdate);
-        break;
-      case MessageOneofCase.SelectOnStageByEffect:
-        if (SelectOnStageByEffect == null) {
-          SelectOnStageByEffect = new global::GCGMsgSelectOnStageByEffect();
-        }
-        SelectOnStageByEffect.MergeFrom(other.SelectOnStageByEffect);
-        break;
-      case MessageOneofCase.CostRevise:
-        if (CostRevise == null) {
-          CostRevise = new global::GCGMsgCostRevise();
-        }
-        CostRevise.MergeFrom(other.CostRevise);
-        break;
-      case MessageOneofCase.PhaseContinue:
-        if (PhaseContinue == null) {
-          PhaseContinue = new global::GCGMsgPhaseContinue();
-        }
-        PhaseContinue.MergeFrom(other.PhaseContinue);
-        break;
-      case MessageOneofCase.PveIntentionInfo:
-        if (PveIntentionInfo == null) {
-          PveIntentionInfo = new global::GCGMsgPVEIntentionInfo();
-        }
-        PveIntentionInfo.MergeFrom(other.PveIntentionInfo);
-        break;
-      case MessageOneofCase.PveIntentionChange:
-        if (PveIntentionChange == null) {
-          PveIntentionChange = new global::GCGMsgPVEIntentionChange();
-        }
-        PveIntentionChange.MergeFrom(other.PveIntentionChange);
-        break;
-      case MessageOneofCase.SkillLimitsChange:
-        if (SkillLimitsChange == null) {
-          SkillLimitsChange = new global::GCGMsgSkillLimitsChange();
-        }
-        SkillLimitsChange.MergeFrom(other.SkillLimitsChange);
-        break;
-      case MessageOneofCase.NoDamageSkillResult:
-        if (NoDamageSkillResult == null) {
-          NoDamageSkillResult = new global::GCGMsgNoDamageSkillResult();
-        }
-        NoDamageSkillResult.MergeFrom(other.NoDamageSkillResult);
-        break;
-      case MessageOneofCase.ReactionBegin:
-        if (ReactionBegin == null) {
-          ReactionBegin = new global::GCGMsgReactionBegin();
-        }
-        ReactionBegin.MergeFrom(other.ReactionBegin);
-        break;
-      case MessageOneofCase.ReactionEnd:
-        if (ReactionEnd == null) {
-          ReactionEnd = new global::GCGMsgReactionEnd();
-        }
-        ReactionEnd.MergeFrom(other.ReactionEnd);
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          global::GCGMsgSkillResult subBuilder = new global::GCGMsgSkillResult();
-          if (messageCase_ == MessageOneofCase.SkillResult) {
-            subBuilder.MergeFrom(SkillResult);
-          }
-          input.ReadMessage(subBuilder);
-          SkillResult = subBuilder;
-          break;
-        }
-        case 18: {
-          global::GCGMsgCharDie subBuilder = new global::GCGMsgCharDie();
-          if (messageCase_ == MessageOneofCase.CharDie) {
-            subBuilder.MergeFrom(CharDie);
-          }
-          input.ReadMessage(subBuilder);
-          CharDie = subBuilder;
-          break;
-        }
-        case 26: {
-          global::GCGMsgAddDice subBuilder = new global::GCGMsgAddDice();
-          if (messageCase_ == MessageOneofCase.AddDice) {
-            subBuilder.MergeFrom(AddDice);
-          }
-          input.ReadMessage(subBuilder);
-          AddDice = subBuilder;
-          break;
-        }
-        case 34: {
-          global::GCGMsgUseSkill subBuilder = new global::GCGMsgUseSkill();
-          if (messageCase_ == MessageOneofCase.UseSkill) {
-            subBuilder.MergeFrom(UseSkill);
-          }
-          input.ReadMessage(subBuilder);
-          UseSkill = subBuilder;
-          break;
-        }
-        case 42: {
-          global::GCGMsgPass subBuilder = new global::GCGMsgPass();
-          if (messageCase_ == MessageOneofCase.Pass) {
-            subBuilder.MergeFrom(Pass);
-          }
-          input.ReadMessage(subBuilder);
-          Pass = subBuilder;
-          break;
-        }
-        case 50: {
-          global::GCGMsgSelectOnStage subBuilder = new global::GCGMsgSelectOnStage();
-          if (messageCase_ == MessageOneofCase.SelectOnStage) {
-            subBuilder.MergeFrom(SelectOnStage);
-          }
-          input.ReadMessage(subBuilder);
-          SelectOnStage = subBuilder;
-          break;
-        }
-        case 58: {
-          global::GCGMsgCostDice subBuilder = new global::GCGMsgCostDice();
-          if (messageCase_ == MessageOneofCase.CostDice) {
-            subBuilder.MergeFrom(CostDice);
-          }
-          input.ReadMessage(subBuilder);
-          CostDice = subBuilder;
-          break;
-        }
-        case 74: {
-          global::GCGMsgDiceRoll subBuilder = new global::GCGMsgDiceRoll();
-          if (messageCase_ == MessageOneofCase.DiceRoll) {
-            subBuilder.MergeFrom(DiceRoll);
-          }
-          input.ReadMessage(subBuilder);
-          DiceRoll = subBuilder;
-          break;
-        }
-        case 82: {
-          global::GCGMsgAddCards subBuilder = new global::GCGMsgAddCards();
-          if (messageCase_ == MessageOneofCase.AddCards) {
-            subBuilder.MergeFrom(AddCards);
-          }
-          input.ReadMessage(subBuilder);
-          AddCards = subBuilder;
-          break;
-        }
-        case 90: {
-          global::GCGMsgDiceReroll subBuilder = new global::GCGMsgDiceReroll();
-          if (messageCase_ == MessageOneofCase.DiceReroll) {
-            subBuilder.MergeFrom(DiceReroll);
-          }
-          input.ReadMessage(subBuilder);
-          DiceReroll = subBuilder;
-          break;
-        }
-        case 98: {
-          global::GCGMsgTokenChange subBuilder = new global::GCGMsgTokenChange();
-          if (messageCase_ == MessageOneofCase.TokenChange) {
-            subBuilder.MergeFrom(TokenChange);
-          }
-          input.ReadMessage(subBuilder);
-          TokenChange = subBuilder;
-          break;
-        }
-        case 106: {
-          global::GCGMsgPhaseChange subBuilder = new global::GCGMsgPhaseChange();
-          if (messageCase_ == MessageOneofCase.PhaseChange) {
-            subBuilder.MergeFrom(PhaseChange);
-          }
-          input.ReadMessage(subBuilder);
-          PhaseChange = subBuilder;
-          break;
-        }
-        case 114: {
-          global::GCGMsgRemoveCards subBuilder = new global::GCGMsgRemoveCards();
-          if (messageCase_ == MessageOneofCase.RemoveCards) {
-            subBuilder.MergeFrom(RemoveCards);
-          }
-          input.ReadMessage(subBuilder);
-          RemoveCards = subBuilder;
-          break;
-        }
-        case 122: {
-          global::GCGMsgMoveCard subBuilder = new global::GCGMsgMoveCard();
-          if (messageCase_ == MessageOneofCase.MoveCard) {
-            subBuilder.MergeFrom(MoveCard);
-          }
-          input.ReadMessage(subBuilder);
-          MoveCard = subBuilder;
-          break;
-        }
-        case 194: {
-          global::GCGMsgNoDamageSkillResult subBuilder = new global::GCGMsgNoDamageSkillResult();
-          if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
-            subBuilder.MergeFrom(NoDamageSkillResult);
-          }
-          input.ReadMessage(subBuilder);
-          NoDamageSkillResult = subBuilder;
-          break;
-        }
-        case 2074: {
-          global::GCGMsgSkillLimitsChange subBuilder = new global::GCGMsgSkillLimitsChange();
-          if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
-            subBuilder.MergeFrom(SkillLimitsChange);
-          }
-          input.ReadMessage(subBuilder);
-          SkillLimitsChange = subBuilder;
-          break;
-        }
-        case 3434: {
-          global::GCGMsgUpdateController subBuilder = new global::GCGMsgUpdateController();
-          if (messageCase_ == MessageOneofCase.UpdateController) {
-            subBuilder.MergeFrom(UpdateController);
-          }
-          input.ReadMessage(subBuilder);
-          UpdateController = subBuilder;
-          break;
-        }
-        case 3770: {
-          global::GCGMsgModifyRemove subBuilder = new global::GCGMsgModifyRemove();
-          if (messageCase_ == MessageOneofCase.ModifyRemove) {
-            subBuilder.MergeFrom(ModifyRemove);
-          }
-          input.ReadMessage(subBuilder);
-          ModifyRemove = subBuilder;
-          break;
-        }
-        case 5714: {
-          global::GCGMsgGameOver subBuilder = new global::GCGMsgGameOver();
-          if (messageCase_ == MessageOneofCase.GameOver) {
-            subBuilder.MergeFrom(GameOver);
-          }
-          input.ReadMessage(subBuilder);
-          GameOver = subBuilder;
-          break;
-        }
-        case 6874: {
-          global::GCGMsgReactionBegin subBuilder = new global::GCGMsgReactionBegin();
-          if (messageCase_ == MessageOneofCase.ReactionBegin) {
-            subBuilder.MergeFrom(ReactionBegin);
-          }
-          input.ReadMessage(subBuilder);
-          ReactionBegin = subBuilder;
-          break;
-        }
-        case 7146: {
-          global::GCGMsgPVEIntentionChange subBuilder = new global::GCGMsgPVEIntentionChange();
-          if (messageCase_ == MessageOneofCase.PveIntentionChange) {
-            subBuilder.MergeFrom(PveIntentionChange);
-          }
-          input.ReadMessage(subBuilder);
-          PveIntentionChange = subBuilder;
-          break;
-        }
-        case 8066: {
-          global::GCGMsgDuelDataChange subBuilder = new global::GCGMsgDuelDataChange();
-          if (messageCase_ == MessageOneofCase.DuelDataChange) {
-            subBuilder.MergeFrom(DuelDataChange);
-          }
-          input.ReadMessage(subBuilder);
-          DuelDataChange = subBuilder;
-          break;
-        }
-        case 8282: {
-          global::GCGMsgClientPerform subBuilder = new global::GCGMsgClientPerform();
-          if (messageCase_ == MessageOneofCase.ClientPerform) {
-            subBuilder.MergeFrom(ClientPerform);
-          }
-          input.ReadMessage(subBuilder);
-          ClientPerform = subBuilder;
-          break;
-        }
-        case 10018: {
-          global::GCGMsgPVEIntentionInfo subBuilder = new global::GCGMsgPVEIntentionInfo();
-          if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
-            subBuilder.MergeFrom(PveIntentionInfo);
-          }
-          input.ReadMessage(subBuilder);
-          PveIntentionInfo = subBuilder;
-          break;
-        }
-        case 10802: {
-          global::GCGMsgCostRevise subBuilder = new global::GCGMsgCostRevise();
-          if (messageCase_ == MessageOneofCase.CostRevise) {
-            subBuilder.MergeFrom(CostRevise);
-          }
-          input.ReadMessage(subBuilder);
-          CostRevise = subBuilder;
-          break;
-        }
-        case 11162: {
-          global::GCGMsgReactionEnd subBuilder = new global::GCGMsgReactionEnd();
-          if (messageCase_ == MessageOneofCase.ReactionEnd) {
-            subBuilder.MergeFrom(ReactionEnd);
-          }
-          input.ReadMessage(subBuilder);
-          ReactionEnd = subBuilder;
-          break;
-        }
-        case 11290: {
-          global::GCGMsgUseSkillEnd subBuilder = new global::GCGMsgUseSkillEnd();
-          if (messageCase_ == MessageOneofCase.UseSkillEnd) {
-            subBuilder.MergeFrom(UseSkillEnd);
-          }
-          input.ReadMessage(subBuilder);
-          UseSkillEnd = subBuilder;
-          break;
-        }
-        case 11794: {
-          global::GCGMsgPhaseContinue subBuilder = new global::GCGMsgPhaseContinue();
-          if (messageCase_ == MessageOneofCase.PhaseContinue) {
-            subBuilder.MergeFrom(PhaseContinue);
-          }
-          input.ReadMessage(subBuilder);
-          PhaseContinue = subBuilder;
-          break;
-        }
-        case 13426: {
-          global::GCGMsgWaitingListChange subBuilder = new global::GCGMsgWaitingListChange();
-          if (messageCase_ == MessageOneofCase.WaitingListChange) {
-            subBuilder.MergeFrom(WaitingListChange);
-          }
-          input.ReadMessage(subBuilder);
-          WaitingListChange = subBuilder;
-          break;
-        }
-        case 14786: {
-          global::GCGMsgNewCard subBuilder = new global::GCGMsgNewCard();
-          if (messageCase_ == MessageOneofCase.NewCard) {
-            subBuilder.MergeFrom(NewCard);
-          }
-          input.ReadMessage(subBuilder);
-          NewCard = subBuilder;
-          break;
-        }
-        case 14810: {
-          global::GCGMsgModifyAdd subBuilder = new global::GCGMsgModifyAdd();
-          if (messageCase_ == MessageOneofCase.ModifyAdd) {
-            subBuilder.MergeFrom(ModifyAdd);
-          }
-          input.ReadMessage(subBuilder);
-          ModifyAdd = subBuilder;
-          break;
-        }
-        case 14898: {
-          global::GCGMsgOpTimer subBuilder = new global::GCGMsgOpTimer();
-          if (messageCase_ == MessageOneofCase.OpTimer) {
-            subBuilder.MergeFrom(OpTimer);
-          }
-          input.ReadMessage(subBuilder);
-          OpTimer = subBuilder;
-          break;
-        }
-        case 15034: {
-          global::GCGMsgCardUpdate subBuilder = new global::GCGMsgCardUpdate();
-          if (messageCase_ == MessageOneofCase.CardUpdate) {
-            subBuilder.MergeFrom(CardUpdate);
-          }
-          input.ReadMessage(subBuilder);
-          CardUpdate = subBuilder;
-          break;
-        }
-        case 16338: {
-          global::GCGMsgSelectOnStageByEffect subBuilder = new global::GCGMsgSelectOnStageByEffect();
-          if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
-            subBuilder.MergeFrom(SelectOnStageByEffect);
-          }
-          input.ReadMessage(subBuilder);
-          SelectOnStageByEffect = subBuilder;
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          global::GCGMsgSkillResult subBuilder = new global::GCGMsgSkillResult();
-          if (messageCase_ == MessageOneofCase.SkillResult) {
-            subBuilder.MergeFrom(SkillResult);
-          }
-          input.ReadMessage(subBuilder);
-          SkillResult = subBuilder;
-          break;
-        }
-        case 18: {
-          global::GCGMsgCharDie subBuilder = new global::GCGMsgCharDie();
-          if (messageCase_ == MessageOneofCase.CharDie) {
-            subBuilder.MergeFrom(CharDie);
-          }
-          input.ReadMessage(subBuilder);
-          CharDie = subBuilder;
-          break;
-        }
-        case 26: {
-          global::GCGMsgAddDice subBuilder = new global::GCGMsgAddDice();
-          if (messageCase_ == MessageOneofCase.AddDice) {
-            subBuilder.MergeFrom(AddDice);
-          }
-          input.ReadMessage(subBuilder);
-          AddDice = subBuilder;
-          break;
-        }
-        case 34: {
-          global::GCGMsgUseSkill subBuilder = new global::GCGMsgUseSkill();
-          if (messageCase_ == MessageOneofCase.UseSkill) {
-            subBuilder.MergeFrom(UseSkill);
-          }
-          input.ReadMessage(subBuilder);
-          UseSkill = subBuilder;
-          break;
-        }
-        case 42: {
-          global::GCGMsgPass subBuilder = new global::GCGMsgPass();
-          if (messageCase_ == MessageOneofCase.Pass) {
-            subBuilder.MergeFrom(Pass);
-          }
-          input.ReadMessage(subBuilder);
-          Pass = subBuilder;
-          break;
-        }
-        case 50: {
-          global::GCGMsgSelectOnStage subBuilder = new global::GCGMsgSelectOnStage();
-          if (messageCase_ == MessageOneofCase.SelectOnStage) {
-            subBuilder.MergeFrom(SelectOnStage);
-          }
-          input.ReadMessage(subBuilder);
-          SelectOnStage = subBuilder;
-          break;
-        }
-        case 58: {
-          global::GCGMsgCostDice subBuilder = new global::GCGMsgCostDice();
-          if (messageCase_ == MessageOneofCase.CostDice) {
-            subBuilder.MergeFrom(CostDice);
-          }
-          input.ReadMessage(subBuilder);
-          CostDice = subBuilder;
-          break;
-        }
-        case 74: {
-          global::GCGMsgDiceRoll subBuilder = new global::GCGMsgDiceRoll();
-          if (messageCase_ == MessageOneofCase.DiceRoll) {
-            subBuilder.MergeFrom(DiceRoll);
-          }
-          input.ReadMessage(subBuilder);
-          DiceRoll = subBuilder;
-          break;
-        }
-        case 82: {
-          global::GCGMsgAddCards subBuilder = new global::GCGMsgAddCards();
-          if (messageCase_ == MessageOneofCase.AddCards) {
-            subBuilder.MergeFrom(AddCards);
-          }
-          input.ReadMessage(subBuilder);
-          AddCards = subBuilder;
-          break;
-        }
-        case 90: {
-          global::GCGMsgDiceReroll subBuilder = new global::GCGMsgDiceReroll();
-          if (messageCase_ == MessageOneofCase.DiceReroll) {
-            subBuilder.MergeFrom(DiceReroll);
-          }
-          input.ReadMessage(subBuilder);
-          DiceReroll = subBuilder;
-          break;
-        }
-        case 98: {
-          global::GCGMsgTokenChange subBuilder = new global::GCGMsgTokenChange();
-          if (messageCase_ == MessageOneofCase.TokenChange) {
-            subBuilder.MergeFrom(TokenChange);
-          }
-          input.ReadMessage(subBuilder);
-          TokenChange = subBuilder;
-          break;
-        }
-        case 106: {
-          global::GCGMsgPhaseChange subBuilder = new global::GCGMsgPhaseChange();
-          if (messageCase_ == MessageOneofCase.PhaseChange) {
-            subBuilder.MergeFrom(PhaseChange);
-          }
-          input.ReadMessage(subBuilder);
-          PhaseChange = subBuilder;
-          break;
-        }
-        case 114: {
-          global::GCGMsgRemoveCards subBuilder = new global::GCGMsgRemoveCards();
-          if (messageCase_ == MessageOneofCase.RemoveCards) {
-            subBuilder.MergeFrom(RemoveCards);
-          }
-          input.ReadMessage(subBuilder);
-          RemoveCards = subBuilder;
-          break;
-        }
-        case 122: {
-          global::GCGMsgMoveCard subBuilder = new global::GCGMsgMoveCard();
-          if (messageCase_ == MessageOneofCase.MoveCard) {
-            subBuilder.MergeFrom(MoveCard);
-          }
-          input.ReadMessage(subBuilder);
-          MoveCard = subBuilder;
-          break;
-        }
-        case 194: {
-          global::GCGMsgNoDamageSkillResult subBuilder = new global::GCGMsgNoDamageSkillResult();
-          if (messageCase_ == MessageOneofCase.NoDamageSkillResult) {
-            subBuilder.MergeFrom(NoDamageSkillResult);
-          }
-          input.ReadMessage(subBuilder);
-          NoDamageSkillResult = subBuilder;
-          break;
-        }
-        case 2074: {
-          global::GCGMsgSkillLimitsChange subBuilder = new global::GCGMsgSkillLimitsChange();
-          if (messageCase_ == MessageOneofCase.SkillLimitsChange) {
-            subBuilder.MergeFrom(SkillLimitsChange);
-          }
-          input.ReadMessage(subBuilder);
-          SkillLimitsChange = subBuilder;
-          break;
-        }
-        case 3434: {
-          global::GCGMsgUpdateController subBuilder = new global::GCGMsgUpdateController();
-          if (messageCase_ == MessageOneofCase.UpdateController) {
-            subBuilder.MergeFrom(UpdateController);
-          }
-          input.ReadMessage(subBuilder);
-          UpdateController = subBuilder;
-          break;
-        }
-        case 3770: {
-          global::GCGMsgModifyRemove subBuilder = new global::GCGMsgModifyRemove();
-          if (messageCase_ == MessageOneofCase.ModifyRemove) {
-            subBuilder.MergeFrom(ModifyRemove);
-          }
-          input.ReadMessage(subBuilder);
-          ModifyRemove = subBuilder;
-          break;
-        }
-        case 5714: {
-          global::GCGMsgGameOver subBuilder = new global::GCGMsgGameOver();
-          if (messageCase_ == MessageOneofCase.GameOver) {
-            subBuilder.MergeFrom(GameOver);
-          }
-          input.ReadMessage(subBuilder);
-          GameOver = subBuilder;
-          break;
-        }
-        case 6874: {
-          global::GCGMsgReactionBegin subBuilder = new global::GCGMsgReactionBegin();
-          if (messageCase_ == MessageOneofCase.ReactionBegin) {
-            subBuilder.MergeFrom(ReactionBegin);
-          }
-          input.ReadMessage(subBuilder);
-          ReactionBegin = subBuilder;
-          break;
-        }
-        case 7146: {
-          global::GCGMsgPVEIntentionChange subBuilder = new global::GCGMsgPVEIntentionChange();
-          if (messageCase_ == MessageOneofCase.PveIntentionChange) {
-            subBuilder.MergeFrom(PveIntentionChange);
-          }
-          input.ReadMessage(subBuilder);
-          PveIntentionChange = subBuilder;
-          break;
-        }
-        case 8066: {
-          global::GCGMsgDuelDataChange subBuilder = new global::GCGMsgDuelDataChange();
-          if (messageCase_ == MessageOneofCase.DuelDataChange) {
-            subBuilder.MergeFrom(DuelDataChange);
-          }
-          input.ReadMessage(subBuilder);
-          DuelDataChange = subBuilder;
-          break;
-        }
-        case 8282: {
-          global::GCGMsgClientPerform subBuilder = new global::GCGMsgClientPerform();
-          if (messageCase_ == MessageOneofCase.ClientPerform) {
-            subBuilder.MergeFrom(ClientPerform);
-          }
-          input.ReadMessage(subBuilder);
-          ClientPerform = subBuilder;
-          break;
-        }
-        case 10018: {
-          global::GCGMsgPVEIntentionInfo subBuilder = new global::GCGMsgPVEIntentionInfo();
-          if (messageCase_ == MessageOneofCase.PveIntentionInfo) {
-            subBuilder.MergeFrom(PveIntentionInfo);
-          }
-          input.ReadMessage(subBuilder);
-          PveIntentionInfo = subBuilder;
-          break;
-        }
-        case 10802: {
-          global::GCGMsgCostRevise subBuilder = new global::GCGMsgCostRevise();
-          if (messageCase_ == MessageOneofCase.CostRevise) {
-            subBuilder.MergeFrom(CostRevise);
-          }
-          input.ReadMessage(subBuilder);
-          CostRevise = subBuilder;
-          break;
-        }
-        case 11162: {
-          global::GCGMsgReactionEnd subBuilder = new global::GCGMsgReactionEnd();
-          if (messageCase_ == MessageOneofCase.ReactionEnd) {
-            subBuilder.MergeFrom(ReactionEnd);
-          }
-          input.ReadMessage(subBuilder);
-          ReactionEnd = subBuilder;
-          break;
-        }
-        case 11290: {
-          global::GCGMsgUseSkillEnd subBuilder = new global::GCGMsgUseSkillEnd();
-          if (messageCase_ == MessageOneofCase.UseSkillEnd) {
-            subBuilder.MergeFrom(UseSkillEnd);
-          }
-          input.ReadMessage(subBuilder);
-          UseSkillEnd = subBuilder;
-          break;
-        }
-        case 11794: {
-          global::GCGMsgPhaseContinue subBuilder = new global::GCGMsgPhaseContinue();
-          if (messageCase_ == MessageOneofCase.PhaseContinue) {
-            subBuilder.MergeFrom(PhaseContinue);
-          }
-          input.ReadMessage(subBuilder);
-          PhaseContinue = subBuilder;
-          break;
-        }
-        case 13426: {
-          global::GCGMsgWaitingListChange subBuilder = new global::GCGMsgWaitingListChange();
-          if (messageCase_ == MessageOneofCase.WaitingListChange) {
-            subBuilder.MergeFrom(WaitingListChange);
-          }
-          input.ReadMessage(subBuilder);
-          WaitingListChange = subBuilder;
-          break;
-        }
-        case 14786: {
-          global::GCGMsgNewCard subBuilder = new global::GCGMsgNewCard();
-          if (messageCase_ == MessageOneofCase.NewCard) {
-            subBuilder.MergeFrom(NewCard);
-          }
-          input.ReadMessage(subBuilder);
-          NewCard = subBuilder;
-          break;
-        }
-        case 14810: {
-          global::GCGMsgModifyAdd subBuilder = new global::GCGMsgModifyAdd();
-          if (messageCase_ == MessageOneofCase.ModifyAdd) {
-            subBuilder.MergeFrom(ModifyAdd);
-          }
-          input.ReadMessage(subBuilder);
-          ModifyAdd = subBuilder;
-          break;
-        }
-        case 14898: {
-          global::GCGMsgOpTimer subBuilder = new global::GCGMsgOpTimer();
-          if (messageCase_ == MessageOneofCase.OpTimer) {
-            subBuilder.MergeFrom(OpTimer);
-          }
-          input.ReadMessage(subBuilder);
-          OpTimer = subBuilder;
-          break;
-        }
-        case 15034: {
-          global::GCGMsgCardUpdate subBuilder = new global::GCGMsgCardUpdate();
-          if (messageCase_ == MessageOneofCase.CardUpdate) {
-            subBuilder.MergeFrom(CardUpdate);
-          }
-          input.ReadMessage(subBuilder);
-          CardUpdate = subBuilder;
-          break;
-        }
-        case 16338: {
-          global::GCGMsgSelectOnStageByEffect subBuilder = new global::GCGMsgSelectOnStageByEffect();
-          if (messageCase_ == MessageOneofCase.SelectOnStageByEffect) {
-            subBuilder.MergeFrom(SelectOnStageByEffect);
-          }
-          input.ReadMessage(subBuilder);
-          SelectOnStageByEffect = subBuilder;
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

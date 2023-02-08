@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 enum GalleryStartSource {
   GALLERY_START_SOURCE_BY_NONE = 0;

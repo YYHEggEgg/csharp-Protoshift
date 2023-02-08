@@ -9,298 +9,301 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FungusFighterTrainingSettleInfo.proto</summary>
-public static partial class FungusFighterTrainingSettleInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FungusFighterTrainingSettleInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FungusFighterTrainingSettleInfo.proto</summary>
+  public static partial class FungusFighterTrainingSettleInfoReflection {
 
-  static FungusFighterTrainingSettleInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiVGdW5ndXNGaWdodGVyVHJhaW5pbmdTZXR0bGVJbmZvLnByb3RvGhdHYWxs",
-          "ZXJ5U3RvcFJlYXNvbi5wcm90byJtCh9GdW5ndXNGaWdodGVyVHJhaW5pbmdT",
-          "ZXR0bGVJbmZvEhEKCXVzZWRfdGltZRgPIAEoDRIiCgZyZWFzb24YAyABKA4y",
-          "Ei5HYWxsZXJ5U3RvcFJlYXNvbhITCgt0cmFuc2FjdGlvbhgBIAEoCUIeChxl",
-          "bXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GalleryStopReasonReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FungusFighterTrainingSettleInfo), global::FungusFighterTrainingSettleInfo.Parser, new[]{ "UsedTime", "Reason", "Transaction" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for FungusFighterTrainingSettleInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FungusFighterTrainingSettleInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiVGdW5ndXNGaWdodGVyVHJhaW5pbmdTZXR0bGVJbmZvLnByb3RvGhdHYWxs",
+            "ZXJ5U3RvcFJlYXNvbi5wcm90byJtCh9GdW5ndXNGaWdodGVyVHJhaW5pbmdT",
+            "ZXR0bGVJbmZvEhEKCXVzZWRfdGltZRgPIAEoDRIiCgZyZWFzb24YAyABKA4y",
+            "Ei5HYWxsZXJ5U3RvcFJlYXNvbhITCgt0cmFuc2FjdGlvbhgBIAEoCUIMqgIJ",
+            "T2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GalleryStopReasonReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.FungusFighterTrainingSettleInfo), global::OldProtos.FungusFighterTrainingSettleInfo.Parser, new[]{ "UsedTime", "Reason", "Transaction" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class FungusFighterTrainingSettleInfo : pb::IMessage<FungusFighterTrainingSettleInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FungusFighterTrainingSettleInfo> _parser = new pb::MessageParser<FungusFighterTrainingSettleInfo>(() => new FungusFighterTrainingSettleInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FungusFighterTrainingSettleInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.FungusFighterTrainingSettleInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusFighterTrainingSettleInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusFighterTrainingSettleInfo(FungusFighterTrainingSettleInfo other) : this() {
+      usedTime_ = other.usedTime_;
+      reason_ = other.reason_;
+      transaction_ = other.transaction_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusFighterTrainingSettleInfo Clone() {
+      return new FungusFighterTrainingSettleInfo(this);
+    }
+
+    /// <summary>Field number for the "used_time" field.</summary>
+    public const int UsedTimeFieldNumber = 15;
+    private uint usedTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint UsedTime {
+      get { return usedTime_; }
+      set {
+        usedTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 3;
+    private global::OldProtos.GalleryStopReason reason_ = global::OldProtos.GalleryStopReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GalleryStopReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "transaction" field.</summary>
+    public const int TransactionFieldNumber = 1;
+    private string transaction_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Transaction {
+      get { return transaction_; }
+      set {
+        transaction_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FungusFighterTrainingSettleInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FungusFighterTrainingSettleInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (UsedTime != other.UsedTime) return false;
+      if (Reason != other.Reason) return false;
+      if (Transaction != other.Transaction) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (UsedTime != 0) hash ^= UsedTime.GetHashCode();
+      if (Reason != global::OldProtos.GalleryStopReason.None) hash ^= Reason.GetHashCode();
+      if (Transaction.Length != 0) hash ^= Transaction.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Transaction.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Transaction);
+      }
+      if (Reason != global::OldProtos.GalleryStopReason.None) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Reason);
+      }
+      if (UsedTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(UsedTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Transaction.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Transaction);
+      }
+      if (Reason != global::OldProtos.GalleryStopReason.None) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Reason);
+      }
+      if (UsedTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(UsedTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (UsedTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UsedTime);
+      }
+      if (Reason != global::OldProtos.GalleryStopReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
+      if (Transaction.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Transaction);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FungusFighterTrainingSettleInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.UsedTime != 0) {
+        UsedTime = other.UsedTime;
+      }
+      if (other.Reason != global::OldProtos.GalleryStopReason.None) {
+        Reason = other.Reason;
+      }
+      if (other.Transaction.Length != 0) {
+        Transaction = other.Transaction;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Transaction = input.ReadString();
+            break;
+          }
+          case 24: {
+            Reason = (global::OldProtos.GalleryStopReason) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            UsedTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Transaction = input.ReadString();
+            break;
+          }
+          case 24: {
+            Reason = (global::OldProtos.GalleryStopReason) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            UsedTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class FungusFighterTrainingSettleInfo : pb::IMessage<FungusFighterTrainingSettleInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<FungusFighterTrainingSettleInfo> _parser = new pb::MessageParser<FungusFighterTrainingSettleInfo>(() => new FungusFighterTrainingSettleInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<FungusFighterTrainingSettleInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::FungusFighterTrainingSettleInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusFighterTrainingSettleInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusFighterTrainingSettleInfo(FungusFighterTrainingSettleInfo other) : this() {
-    usedTime_ = other.usedTime_;
-    reason_ = other.reason_;
-    transaction_ = other.transaction_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusFighterTrainingSettleInfo Clone() {
-    return new FungusFighterTrainingSettleInfo(this);
-  }
-
-  /// <summary>Field number for the "used_time" field.</summary>
-  public const int UsedTimeFieldNumber = 15;
-  private uint usedTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint UsedTime {
-    get { return usedTime_; }
-    set {
-      usedTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "reason" field.</summary>
-  public const int ReasonFieldNumber = 3;
-  private global::GalleryStopReason reason_ = global::GalleryStopReason.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GalleryStopReason Reason {
-    get { return reason_; }
-    set {
-      reason_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "transaction" field.</summary>
-  public const int TransactionFieldNumber = 1;
-  private string transaction_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Transaction {
-    get { return transaction_; }
-    set {
-      transaction_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as FungusFighterTrainingSettleInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(FungusFighterTrainingSettleInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (UsedTime != other.UsedTime) return false;
-    if (Reason != other.Reason) return false;
-    if (Transaction != other.Transaction) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (UsedTime != 0) hash ^= UsedTime.GetHashCode();
-    if (Reason != global::GalleryStopReason.None) hash ^= Reason.GetHashCode();
-    if (Transaction.Length != 0) hash ^= Transaction.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Transaction.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(Transaction);
-    }
-    if (Reason != global::GalleryStopReason.None) {
-      output.WriteRawTag(24);
-      output.WriteEnum((int) Reason);
-    }
-    if (UsedTime != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(UsedTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Transaction.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(Transaction);
-    }
-    if (Reason != global::GalleryStopReason.None) {
-      output.WriteRawTag(24);
-      output.WriteEnum((int) Reason);
-    }
-    if (UsedTime != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(UsedTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (UsedTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UsedTime);
-    }
-    if (Reason != global::GalleryStopReason.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-    }
-    if (Transaction.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Transaction);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(FungusFighterTrainingSettleInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.UsedTime != 0) {
-      UsedTime = other.UsedTime;
-    }
-    if (other.Reason != global::GalleryStopReason.None) {
-      Reason = other.Reason;
-    }
-    if (other.Transaction.Length != 0) {
-      Transaction = other.Transaction;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          Transaction = input.ReadString();
-          break;
-        }
-        case 24: {
-          Reason = (global::GalleryStopReason) input.ReadEnum();
-          break;
-        }
-        case 120: {
-          UsedTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          Transaction = input.ReadString();
-          break;
-        }
-        case 24: {
-          Reason = (global::GalleryStopReason) input.ReadEnum();
-          break;
-        }
-        case 120: {
-          UsedTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

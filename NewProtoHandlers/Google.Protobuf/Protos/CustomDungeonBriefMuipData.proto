@@ -20,7 +20,7 @@ import "CustomDungeonAbstractMuipData.proto";
 import "CustomDungeonSettingMuipData.proto";
 import "CustomDungeonSocialMuipData.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message CustomDungeonBriefMuipData {
   uint64 dungeon_guid = 1;

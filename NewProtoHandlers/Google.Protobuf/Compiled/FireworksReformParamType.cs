@@ -9,45 +9,48 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FireworksReformParamType.proto</summary>
-public static partial class FireworksReformParamTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FireworksReformParamType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FireworksReformParamType.proto</summary>
+  public static partial class FireworksReformParamTypeReflection {
 
-  static FireworksReformParamTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch5GaXJld29ya3NSZWZvcm1QYXJhbVR5cGUucHJvdG8qiAIKGEZpcmV3b3Jr",
-          "c1JlZm9ybVBhcmFtVHlwZRIkCiBGSVJFV09SS1NfUkVGT1JNX1BBUkFNX1RZ",
-          "UEVfTk9ORRAAEiUKIUZJUkVXT1JLU19SRUZPUk1fUEFSQU1fVFlQRV9DT0xP",
-          "UhABEiYKIkZJUkVXT1JLU19SRUZPUk1fUEFSQU1fVFlQRV9IRUlHSFQQAhIk",
-          "CiBGSVJFV09SS1NfUkVGT1JNX1BBUkFNX1RZUEVfU0laRRADEicKI0ZJUkVX",
-          "T1JLU19SRUZPUk1fUEFSQU1fVFlQRV9ERU5TSVRZEAQSKAokRklSRVdPUktT",
-          "X1JFRk9STV9QQVJBTV9UWVBFX1JPVEFUSU9OEAVCFgoUb3JnLnNvcmFwb2lu",
-          "dGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::FireworksReformParamType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for FireworksReformParamType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FireworksReformParamTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch5GaXJld29ya3NSZWZvcm1QYXJhbVR5cGUucHJvdG8qiAIKGEZpcmV3b3Jr",
+            "c1JlZm9ybVBhcmFtVHlwZRIkCiBGSVJFV09SS1NfUkVGT1JNX1BBUkFNX1RZ",
+            "UEVfTk9ORRAAEiUKIUZJUkVXT1JLU19SRUZPUk1fUEFSQU1fVFlQRV9DT0xP",
+            "UhABEiYKIkZJUkVXT1JLU19SRUZPUk1fUEFSQU1fVFlQRV9IRUlHSFQQAhIk",
+            "CiBGSVJFV09SS1NfUkVGT1JNX1BBUkFNX1RZUEVfU0laRRADEicKI0ZJUkVX",
+            "T1JLU19SRUZPUk1fUEFSQU1fVFlQRV9ERU5TSVRZEAQSKAokRklSRVdPUktT",
+            "X1JFRk9STV9QQVJBTV9UWVBFX1JPVEFUSU9OEAVCDKoCCU5ld1Byb3Rvc2IG",
+            "cHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.FireworksReformParamType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum FireworksReformParamType {
+    [pbr::OriginalName("FIREWORKS_REFORM_PARAM_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("FIREWORKS_REFORM_PARAM_TYPE_COLOR")] Color = 1,
+    [pbr::OriginalName("FIREWORKS_REFORM_PARAM_TYPE_HEIGHT")] Height = 2,
+    [pbr::OriginalName("FIREWORKS_REFORM_PARAM_TYPE_SIZE")] Size = 3,
+    [pbr::OriginalName("FIREWORKS_REFORM_PARAM_TYPE_DENSITY")] Density = 4,
+    [pbr::OriginalName("FIREWORKS_REFORM_PARAM_TYPE_ROTATION")] Rotation = 5,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum FireworksReformParamType {
-  [pbr::OriginalName("FIREWORKS_REFORM_PARAM_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("FIREWORKS_REFORM_PARAM_TYPE_COLOR")] Color = 1,
-  [pbr::OriginalName("FIREWORKS_REFORM_PARAM_TYPE_HEIGHT")] Height = 2,
-  [pbr::OriginalName("FIREWORKS_REFORM_PARAM_TYPE_SIZE")] Size = 3,
-  [pbr::OriginalName("FIREWORKS_REFORM_PARAM_TYPE_DENSITY")] Density = 4,
-  [pbr::OriginalName("FIREWORKS_REFORM_PARAM_TYPE_ROTATION")] Rotation = 5,
-}
-
-#endregion
-
 
 #endregion Designer generated code

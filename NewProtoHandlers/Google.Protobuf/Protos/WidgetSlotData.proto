@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "WidgetSlotTag.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message WidgetSlotData {
   uint32 cd_over_time = 15;

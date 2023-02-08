@@ -23,7 +23,7 @@ import "SceneAvatarInfo.proto";
 import "SceneEntityInfo.proto";
 import "ServerBuff.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SceneTeamAvatar {
   AbilitySyncStateInfo avatar_ability_info = 5;

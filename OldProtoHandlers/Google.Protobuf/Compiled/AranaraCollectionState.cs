@@ -9,41 +9,44 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AranaraCollectionState.proto</summary>
-public static partial class AranaraCollectionStateReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AranaraCollectionState.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AranaraCollectionState.proto</summary>
+  public static partial class AranaraCollectionStateReflection {
 
-  static AranaraCollectionStateReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChxBcmFuYXJhQ29sbGVjdGlvblN0YXRlLnByb3RvKrQBChZBcmFuYXJhQ29s",
-          "bGVjdGlvblN0YXRlEiEKHUFSQU5BUkFfQ09MTEVDVElPTl9TVEFURV9OT05F",
-          "EAASKAokQVJBTkFSQV9DT0xMRUNUSU9OX1NUQVRFX0NPTExFQ1RBQkxFEAES",
-          "JgoiQVJBTkFSQV9DT0xMRUNUSU9OX1NUQVRFX0NPTExFQ1RFRBACEiUKIUFS",
-          "QU5BUkFfQ09MTEVDVElPTl9TVEFURV9GSU5JU0hFRBADQh4KHGVtdS5ncmFz",
-          "c2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::AranaraCollectionState), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for AranaraCollectionState.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AranaraCollectionStateReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChxBcmFuYXJhQ29sbGVjdGlvblN0YXRlLnByb3RvKrQBChZBcmFuYXJhQ29s",
+            "bGVjdGlvblN0YXRlEiEKHUFSQU5BUkFfQ09MTEVDVElPTl9TVEFURV9OT05F",
+            "EAASKAokQVJBTkFSQV9DT0xMRUNUSU9OX1NUQVRFX0NPTExFQ1RBQkxFEAES",
+            "JgoiQVJBTkFSQV9DT0xMRUNUSU9OX1NUQVRFX0NPTExFQ1RFRBACEiUKIUFS",
+            "QU5BUkFfQ09MTEVDVElPTl9TVEFURV9GSU5JU0hFRBADQgyqAglPbGRQcm90",
+            "b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.AranaraCollectionState), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum AranaraCollectionState {
+    [pbr::OriginalName("ARANARA_COLLECTION_STATE_NONE")] None = 0,
+    [pbr::OriginalName("ARANARA_COLLECTION_STATE_COLLECTABLE")] Collectable = 1,
+    [pbr::OriginalName("ARANARA_COLLECTION_STATE_COLLECTED")] Collected = 2,
+    [pbr::OriginalName("ARANARA_COLLECTION_STATE_FINISHED")] Finished = 3,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum AranaraCollectionState {
-  [pbr::OriginalName("ARANARA_COLLECTION_STATE_NONE")] None = 0,
-  [pbr::OriginalName("ARANARA_COLLECTION_STATE_COLLECTABLE")] Collectable = 1,
-  [pbr::OriginalName("ARANARA_COLLECTION_STATE_COLLECTED")] Collected = 2,
-  [pbr::OriginalName("ARANARA_COLLECTION_STATE_FINISHED")] Finished = 3,
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -9,336 +9,339 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ChannelerSlabBuffInfo.proto</summary>
-public static partial class ChannelerSlabBuffInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ChannelerSlabBuffInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ChannelerSlabBuffInfo.proto</summary>
+  public static partial class ChannelerSlabBuffInfoReflection {
 
-  static ChannelerSlabBuffInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtDaGFubmVsZXJTbGFiQnVmZkluZm8ucHJvdG8aHUNoYW5uZWxlclNsYWJB",
-          "c3Npc3RJbmZvLnByb3RvGiFDaGFubmVsZXJTbGFiQnVmZlNjaGVtZUluZm8u",
-          "cHJvdG8i1wEKFUNoYW5uZWxlclNsYWJCdWZmSW5mbxIyChBhc3Npc3RfaW5m",
-          "b19saXN0GAsgAygLMhguQ2hhbm5lbGVyU2xhYkFzc2lzdEluZm8SOQoTVW5r",
-          "MzMwMF9DREZMSU9OR0tDSBgIIAEoCzIcLkNoYW5uZWxlclNsYWJCdWZmU2No",
-          "ZW1lSW5mbxI5ChNVbmszMzAwX0FORU5ITUFBRExOGA4gASgLMhwuQ2hhbm5l",
-          "bGVyU2xhYkJ1ZmZTY2hlbWVJbmZvEhQKDGJ1ZmZfaWRfbGlzdBgGIAMoDUIW",
-          "ChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ChannelerSlabAssistInfoReflection.Descriptor, global::ChannelerSlabBuffSchemeInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ChannelerSlabBuffInfo), global::ChannelerSlabBuffInfo.Parser, new[]{ "AssistInfoList", "Unk3300CDFLIONGKCH", "Unk3300ANENHMAADLN", "BuffIdList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ChannelerSlabBuffInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ChannelerSlabBuffInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtDaGFubmVsZXJTbGFiQnVmZkluZm8ucHJvdG8aHUNoYW5uZWxlclNsYWJB",
+            "c3Npc3RJbmZvLnByb3RvGiFDaGFubmVsZXJTbGFiQnVmZlNjaGVtZUluZm8u",
+            "cHJvdG8i1wEKFUNoYW5uZWxlclNsYWJCdWZmSW5mbxIyChBhc3Npc3RfaW5m",
+            "b19saXN0GAsgAygLMhguQ2hhbm5lbGVyU2xhYkFzc2lzdEluZm8SOQoTVW5r",
+            "MzMwMF9DREZMSU9OR0tDSBgIIAEoCzIcLkNoYW5uZWxlclNsYWJCdWZmU2No",
+            "ZW1lSW5mbxI5ChNVbmszMzAwX0FORU5ITUFBRExOGA4gASgLMhwuQ2hhbm5l",
+            "bGVyU2xhYkJ1ZmZTY2hlbWVJbmZvEhQKDGJ1ZmZfaWRfbGlzdBgGIAMoDUIM",
+            "qgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.ChannelerSlabAssistInfoReflection.Descriptor, global::NewProtos.ChannelerSlabBuffSchemeInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.ChannelerSlabBuffInfo), global::NewProtos.ChannelerSlabBuffInfo.Parser, new[]{ "AssistInfoList", "Unk3300CDFLIONGKCH", "Unk3300ANENHMAADLN", "BuffIdList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class ChannelerSlabBuffInfo : pb::IMessage<ChannelerSlabBuffInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ChannelerSlabBuffInfo> _parser = new pb::MessageParser<ChannelerSlabBuffInfo>(() => new ChannelerSlabBuffInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ChannelerSlabBuffInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.ChannelerSlabBuffInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChannelerSlabBuffInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChannelerSlabBuffInfo(ChannelerSlabBuffInfo other) : this() {
+      assistInfoList_ = other.assistInfoList_.Clone();
+      unk3300CDFLIONGKCH_ = other.unk3300CDFLIONGKCH_ != null ? other.unk3300CDFLIONGKCH_.Clone() : null;
+      unk3300ANENHMAADLN_ = other.unk3300ANENHMAADLN_ != null ? other.unk3300ANENHMAADLN_.Clone() : null;
+      buffIdList_ = other.buffIdList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChannelerSlabBuffInfo Clone() {
+      return new ChannelerSlabBuffInfo(this);
+    }
+
+    /// <summary>Field number for the "assist_info_list" field.</summary>
+    public const int AssistInfoListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::NewProtos.ChannelerSlabAssistInfo> _repeated_assistInfoList_codec
+        = pb::FieldCodec.ForMessage(90, global::NewProtos.ChannelerSlabAssistInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ChannelerSlabAssistInfo> assistInfoList_ = new pbc::RepeatedField<global::NewProtos.ChannelerSlabAssistInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ChannelerSlabAssistInfo> AssistInfoList {
+      get { return assistInfoList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_CDFLIONGKCH" field.</summary>
+    public const int Unk3300CDFLIONGKCHFieldNumber = 8;
+    private global::NewProtos.ChannelerSlabBuffSchemeInfo unk3300CDFLIONGKCH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ChannelerSlabBuffSchemeInfo Unk3300CDFLIONGKCH {
+      get { return unk3300CDFLIONGKCH_; }
+      set {
+        unk3300CDFLIONGKCH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ANENHMAADLN" field.</summary>
+    public const int Unk3300ANENHMAADLNFieldNumber = 14;
+    private global::NewProtos.ChannelerSlabBuffSchemeInfo unk3300ANENHMAADLN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ChannelerSlabBuffSchemeInfo Unk3300ANENHMAADLN {
+      get { return unk3300ANENHMAADLN_; }
+      set {
+        unk3300ANENHMAADLN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "buff_id_list" field.</summary>
+    public const int BuffIdListFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_buffIdList_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> buffIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> BuffIdList {
+      get { return buffIdList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ChannelerSlabBuffInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ChannelerSlabBuffInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!assistInfoList_.Equals(other.assistInfoList_)) return false;
+      if (!object.Equals(Unk3300CDFLIONGKCH, other.Unk3300CDFLIONGKCH)) return false;
+      if (!object.Equals(Unk3300ANENHMAADLN, other.Unk3300ANENHMAADLN)) return false;
+      if(!buffIdList_.Equals(other.buffIdList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= assistInfoList_.GetHashCode();
+      if (unk3300CDFLIONGKCH_ != null) hash ^= Unk3300CDFLIONGKCH.GetHashCode();
+      if (unk3300ANENHMAADLN_ != null) hash ^= Unk3300ANENHMAADLN.GetHashCode();
+      hash ^= buffIdList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      buffIdList_.WriteTo(output, _repeated_buffIdList_codec);
+      if (unk3300CDFLIONGKCH_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Unk3300CDFLIONGKCH);
+      }
+      assistInfoList_.WriteTo(output, _repeated_assistInfoList_codec);
+      if (unk3300ANENHMAADLN_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Unk3300ANENHMAADLN);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      buffIdList_.WriteTo(ref output, _repeated_buffIdList_codec);
+      if (unk3300CDFLIONGKCH_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Unk3300CDFLIONGKCH);
+      }
+      assistInfoList_.WriteTo(ref output, _repeated_assistInfoList_codec);
+      if (unk3300ANENHMAADLN_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(Unk3300ANENHMAADLN);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += assistInfoList_.CalculateSize(_repeated_assistInfoList_codec);
+      if (unk3300CDFLIONGKCH_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300CDFLIONGKCH);
+      }
+      if (unk3300ANENHMAADLN_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300ANENHMAADLN);
+      }
+      size += buffIdList_.CalculateSize(_repeated_buffIdList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ChannelerSlabBuffInfo other) {
+      if (other == null) {
+        return;
+      }
+      assistInfoList_.Add(other.assistInfoList_);
+      if (other.unk3300CDFLIONGKCH_ != null) {
+        if (unk3300CDFLIONGKCH_ == null) {
+          Unk3300CDFLIONGKCH = new global::NewProtos.ChannelerSlabBuffSchemeInfo();
+        }
+        Unk3300CDFLIONGKCH.MergeFrom(other.Unk3300CDFLIONGKCH);
+      }
+      if (other.unk3300ANENHMAADLN_ != null) {
+        if (unk3300ANENHMAADLN_ == null) {
+          Unk3300ANENHMAADLN = new global::NewProtos.ChannelerSlabBuffSchemeInfo();
+        }
+        Unk3300ANENHMAADLN.MergeFrom(other.Unk3300ANENHMAADLN);
+      }
+      buffIdList_.Add(other.buffIdList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 50:
+          case 48: {
+            buffIdList_.AddEntriesFrom(input, _repeated_buffIdList_codec);
+            break;
+          }
+          case 66: {
+            if (unk3300CDFLIONGKCH_ == null) {
+              Unk3300CDFLIONGKCH = new global::NewProtos.ChannelerSlabBuffSchemeInfo();
+            }
+            input.ReadMessage(Unk3300CDFLIONGKCH);
+            break;
+          }
+          case 90: {
+            assistInfoList_.AddEntriesFrom(input, _repeated_assistInfoList_codec);
+            break;
+          }
+          case 114: {
+            if (unk3300ANENHMAADLN_ == null) {
+              Unk3300ANENHMAADLN = new global::NewProtos.ChannelerSlabBuffSchemeInfo();
+            }
+            input.ReadMessage(Unk3300ANENHMAADLN);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 50:
+          case 48: {
+            buffIdList_.AddEntriesFrom(ref input, _repeated_buffIdList_codec);
+            break;
+          }
+          case 66: {
+            if (unk3300CDFLIONGKCH_ == null) {
+              Unk3300CDFLIONGKCH = new global::NewProtos.ChannelerSlabBuffSchemeInfo();
+            }
+            input.ReadMessage(Unk3300CDFLIONGKCH);
+            break;
+          }
+          case 90: {
+            assistInfoList_.AddEntriesFrom(ref input, _repeated_assistInfoList_codec);
+            break;
+          }
+          case 114: {
+            if (unk3300ANENHMAADLN_ == null) {
+              Unk3300ANENHMAADLN = new global::NewProtos.ChannelerSlabBuffSchemeInfo();
+            }
+            input.ReadMessage(Unk3300ANENHMAADLN);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ChannelerSlabBuffInfo : pb::IMessage<ChannelerSlabBuffInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ChannelerSlabBuffInfo> _parser = new pb::MessageParser<ChannelerSlabBuffInfo>(() => new ChannelerSlabBuffInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ChannelerSlabBuffInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ChannelerSlabBuffInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChannelerSlabBuffInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChannelerSlabBuffInfo(ChannelerSlabBuffInfo other) : this() {
-    assistInfoList_ = other.assistInfoList_.Clone();
-    unk3300CDFLIONGKCH_ = other.unk3300CDFLIONGKCH_ != null ? other.unk3300CDFLIONGKCH_.Clone() : null;
-    unk3300ANENHMAADLN_ = other.unk3300ANENHMAADLN_ != null ? other.unk3300ANENHMAADLN_.Clone() : null;
-    buffIdList_ = other.buffIdList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChannelerSlabBuffInfo Clone() {
-    return new ChannelerSlabBuffInfo(this);
-  }
-
-  /// <summary>Field number for the "assist_info_list" field.</summary>
-  public const int AssistInfoListFieldNumber = 11;
-  private static readonly pb::FieldCodec<global::ChannelerSlabAssistInfo> _repeated_assistInfoList_codec
-      = pb::FieldCodec.ForMessage(90, global::ChannelerSlabAssistInfo.Parser);
-  private readonly pbc::RepeatedField<global::ChannelerSlabAssistInfo> assistInfoList_ = new pbc::RepeatedField<global::ChannelerSlabAssistInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ChannelerSlabAssistInfo> AssistInfoList {
-    get { return assistInfoList_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_CDFLIONGKCH" field.</summary>
-  public const int Unk3300CDFLIONGKCHFieldNumber = 8;
-  private global::ChannelerSlabBuffSchemeInfo unk3300CDFLIONGKCH_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ChannelerSlabBuffSchemeInfo Unk3300CDFLIONGKCH {
-    get { return unk3300CDFLIONGKCH_; }
-    set {
-      unk3300CDFLIONGKCH_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_ANENHMAADLN" field.</summary>
-  public const int Unk3300ANENHMAADLNFieldNumber = 14;
-  private global::ChannelerSlabBuffSchemeInfo unk3300ANENHMAADLN_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ChannelerSlabBuffSchemeInfo Unk3300ANENHMAADLN {
-    get { return unk3300ANENHMAADLN_; }
-    set {
-      unk3300ANENHMAADLN_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "buff_id_list" field.</summary>
-  public const int BuffIdListFieldNumber = 6;
-  private static readonly pb::FieldCodec<uint> _repeated_buffIdList_codec
-      = pb::FieldCodec.ForUInt32(50);
-  private readonly pbc::RepeatedField<uint> buffIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> BuffIdList {
-    get { return buffIdList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ChannelerSlabBuffInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ChannelerSlabBuffInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!assistInfoList_.Equals(other.assistInfoList_)) return false;
-    if (!object.Equals(Unk3300CDFLIONGKCH, other.Unk3300CDFLIONGKCH)) return false;
-    if (!object.Equals(Unk3300ANENHMAADLN, other.Unk3300ANENHMAADLN)) return false;
-    if(!buffIdList_.Equals(other.buffIdList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= assistInfoList_.GetHashCode();
-    if (unk3300CDFLIONGKCH_ != null) hash ^= Unk3300CDFLIONGKCH.GetHashCode();
-    if (unk3300ANENHMAADLN_ != null) hash ^= Unk3300ANENHMAADLN.GetHashCode();
-    hash ^= buffIdList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    buffIdList_.WriteTo(output, _repeated_buffIdList_codec);
-    if (unk3300CDFLIONGKCH_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(Unk3300CDFLIONGKCH);
-    }
-    assistInfoList_.WriteTo(output, _repeated_assistInfoList_codec);
-    if (unk3300ANENHMAADLN_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(Unk3300ANENHMAADLN);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    buffIdList_.WriteTo(ref output, _repeated_buffIdList_codec);
-    if (unk3300CDFLIONGKCH_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(Unk3300CDFLIONGKCH);
-    }
-    assistInfoList_.WriteTo(ref output, _repeated_assistInfoList_codec);
-    if (unk3300ANENHMAADLN_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(Unk3300ANENHMAADLN);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += assistInfoList_.CalculateSize(_repeated_assistInfoList_codec);
-    if (unk3300CDFLIONGKCH_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300CDFLIONGKCH);
-    }
-    if (unk3300ANENHMAADLN_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300ANENHMAADLN);
-    }
-    size += buffIdList_.CalculateSize(_repeated_buffIdList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ChannelerSlabBuffInfo other) {
-    if (other == null) {
-      return;
-    }
-    assistInfoList_.Add(other.assistInfoList_);
-    if (other.unk3300CDFLIONGKCH_ != null) {
-      if (unk3300CDFLIONGKCH_ == null) {
-        Unk3300CDFLIONGKCH = new global::ChannelerSlabBuffSchemeInfo();
-      }
-      Unk3300CDFLIONGKCH.MergeFrom(other.Unk3300CDFLIONGKCH);
-    }
-    if (other.unk3300ANENHMAADLN_ != null) {
-      if (unk3300ANENHMAADLN_ == null) {
-        Unk3300ANENHMAADLN = new global::ChannelerSlabBuffSchemeInfo();
-      }
-      Unk3300ANENHMAADLN.MergeFrom(other.Unk3300ANENHMAADLN);
-    }
-    buffIdList_.Add(other.buffIdList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 50:
-        case 48: {
-          buffIdList_.AddEntriesFrom(input, _repeated_buffIdList_codec);
-          break;
-        }
-        case 66: {
-          if (unk3300CDFLIONGKCH_ == null) {
-            Unk3300CDFLIONGKCH = new global::ChannelerSlabBuffSchemeInfo();
-          }
-          input.ReadMessage(Unk3300CDFLIONGKCH);
-          break;
-        }
-        case 90: {
-          assistInfoList_.AddEntriesFrom(input, _repeated_assistInfoList_codec);
-          break;
-        }
-        case 114: {
-          if (unk3300ANENHMAADLN_ == null) {
-            Unk3300ANENHMAADLN = new global::ChannelerSlabBuffSchemeInfo();
-          }
-          input.ReadMessage(Unk3300ANENHMAADLN);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 50:
-        case 48: {
-          buffIdList_.AddEntriesFrom(ref input, _repeated_buffIdList_codec);
-          break;
-        }
-        case 66: {
-          if (unk3300CDFLIONGKCH_ == null) {
-            Unk3300CDFLIONGKCH = new global::ChannelerSlabBuffSchemeInfo();
-          }
-          input.ReadMessage(Unk3300CDFLIONGKCH);
-          break;
-        }
-        case 90: {
-          assistInfoList_.AddEntriesFrom(ref input, _repeated_assistInfoList_codec);
-          break;
-        }
-        case 114: {
-          if (unk3300ANENHMAADLN_ == null) {
-            Unk3300ANENHMAADLN = new global::ChannelerSlabBuffSchemeInfo();
-          }
-          input.ReadMessage(Unk3300ANENHMAADLN);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

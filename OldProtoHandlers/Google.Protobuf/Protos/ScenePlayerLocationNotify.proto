@@ -19,7 +19,7 @@ syntax = "proto3";
 import "PlayerLocationInfo.proto";
 import "VehicleLocationInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 248
 // EnetChannelId: 1

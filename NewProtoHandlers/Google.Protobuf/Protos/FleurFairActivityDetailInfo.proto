@@ -20,7 +20,7 @@ import "FleurFairChapterInfo.proto";
 import "FleurFairDungeonSectionInfo.proto";
 import "FleurFairMinigameInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message FleurFairActivityDetailInfo {
   uint32 Unk3300_KONOCAMIIIE = 3;

@@ -9,379 +9,381 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from PlayerReportReq.proto</summary>
-public static partial class PlayerReportReqReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for PlayerReportReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from PlayerReportReq.proto</summary>
+  public static partial class PlayerReportReqReflection {
 
-  static PlayerReportReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVQbGF5ZXJSZXBvcnRSZXEucHJvdG8aFlJlcG9ydFJlYXNvblR5cGUucHJv",
-          "dG8imQEKD1BsYXllclJlcG9ydFJlcRIhCgZyZWFzb24YDCABKA4yES5SZXBv",
-          "cnRSZWFzb25UeXBlEg8KB2NvbnRlbnQYCCABKAkSHQoVdGFyZ2V0X2hvbWVf",
-          "bW9kdWxlX2lkGAUgASgNEh8KF3RhcmdldF9ob21lX21vZHVsZV9uYW1lGAYg",
-          "ASgJEhIKCnRhcmdldF91aWQYDiABKA1CHgocZW11LmdyYXNzY3V0dGVyLm5l",
-          "dC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ReportReasonTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::PlayerReportReq), global::PlayerReportReq.Parser, new[]{ "Reason", "Content", "TargetHomeModuleId", "TargetHomeModuleName", "TargetUid" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for PlayerReportReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static PlayerReportReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVQbGF5ZXJSZXBvcnRSZXEucHJvdG8aFlJlcG9ydFJlYXNvblR5cGUucHJv",
+            "dG8imQEKD1BsYXllclJlcG9ydFJlcRIhCgZyZWFzb24YDCABKA4yES5SZXBv",
+            "cnRSZWFzb25UeXBlEg8KB2NvbnRlbnQYCCABKAkSHQoVdGFyZ2V0X2hvbWVf",
+            "bW9kdWxlX2lkGAUgASgNEh8KF3RhcmdldF9ob21lX21vZHVsZV9uYW1lGAYg",
+            "ASgJEhIKCnRhcmdldF91aWQYDiABKA1CDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ReportReasonTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.PlayerReportReq), global::OldProtos.PlayerReportReq.Parser, new[]{ "Reason", "Content", "TargetHomeModuleId", "TargetHomeModuleName", "TargetUid" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 4024
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class PlayerReportReq : pb::IMessage<PlayerReportReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PlayerReportReq> _parser = new pb::MessageParser<PlayerReportReq>(() => new PlayerReportReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PlayerReportReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.PlayerReportReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerReportReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerReportReq(PlayerReportReq other) : this() {
+      reason_ = other.reason_;
+      content_ = other.content_;
+      targetHomeModuleId_ = other.targetHomeModuleId_;
+      targetHomeModuleName_ = other.targetHomeModuleName_;
+      targetUid_ = other.targetUid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerReportReq Clone() {
+      return new PlayerReportReq(this);
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 12;
+    private global::OldProtos.ReportReasonType reason_ = global::OldProtos.ReportReasonType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ReportReasonType Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "content" field.</summary>
+    public const int ContentFieldNumber = 8;
+    private string content_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Content {
+      get { return content_; }
+      set {
+        content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "target_home_module_id" field.</summary>
+    public const int TargetHomeModuleIdFieldNumber = 5;
+    private uint targetHomeModuleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TargetHomeModuleId {
+      get { return targetHomeModuleId_; }
+      set {
+        targetHomeModuleId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_home_module_name" field.</summary>
+    public const int TargetHomeModuleNameFieldNumber = 6;
+    private string targetHomeModuleName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TargetHomeModuleName {
+      get { return targetHomeModuleName_; }
+      set {
+        targetHomeModuleName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "target_uid" field.</summary>
+    public const int TargetUidFieldNumber = 14;
+    private uint targetUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TargetUid {
+      get { return targetUid_; }
+      set {
+        targetUid_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PlayerReportReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PlayerReportReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Reason != other.Reason) return false;
+      if (Content != other.Content) return false;
+      if (TargetHomeModuleId != other.TargetHomeModuleId) return false;
+      if (TargetHomeModuleName != other.TargetHomeModuleName) return false;
+      if (TargetUid != other.TargetUid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Reason != global::OldProtos.ReportReasonType.None) hash ^= Reason.GetHashCode();
+      if (Content.Length != 0) hash ^= Content.GetHashCode();
+      if (TargetHomeModuleId != 0) hash ^= TargetHomeModuleId.GetHashCode();
+      if (TargetHomeModuleName.Length != 0) hash ^= TargetHomeModuleName.GetHashCode();
+      if (TargetUid != 0) hash ^= TargetUid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (TargetHomeModuleId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(TargetHomeModuleId);
+      }
+      if (TargetHomeModuleName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(TargetHomeModuleName);
+      }
+      if (Content.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Content);
+      }
+      if (Reason != global::OldProtos.ReportReasonType.None) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) Reason);
+      }
+      if (TargetUid != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(TargetUid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (TargetHomeModuleId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(TargetHomeModuleId);
+      }
+      if (TargetHomeModuleName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(TargetHomeModuleName);
+      }
+      if (Content.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(Content);
+      }
+      if (Reason != global::OldProtos.ReportReasonType.None) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) Reason);
+      }
+      if (TargetUid != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(TargetUid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Reason != global::OldProtos.ReportReasonType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
+      if (Content.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
+      }
+      if (TargetHomeModuleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetHomeModuleId);
+      }
+      if (TargetHomeModuleName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(TargetHomeModuleName);
+      }
+      if (TargetUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PlayerReportReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Reason != global::OldProtos.ReportReasonType.None) {
+        Reason = other.Reason;
+      }
+      if (other.Content.Length != 0) {
+        Content = other.Content;
+      }
+      if (other.TargetHomeModuleId != 0) {
+        TargetHomeModuleId = other.TargetHomeModuleId;
+      }
+      if (other.TargetHomeModuleName.Length != 0) {
+        TargetHomeModuleName = other.TargetHomeModuleName;
+      }
+      if (other.TargetUid != 0) {
+        TargetUid = other.TargetUid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            TargetHomeModuleId = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            TargetHomeModuleName = input.ReadString();
+            break;
+          }
+          case 66: {
+            Content = input.ReadString();
+            break;
+          }
+          case 96: {
+            Reason = (global::OldProtos.ReportReasonType) input.ReadEnum();
+            break;
+          }
+          case 112: {
+            TargetUid = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            TargetHomeModuleId = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            TargetHomeModuleName = input.ReadString();
+            break;
+          }
+          case 66: {
+            Content = input.ReadString();
+            break;
+          }
+          case 96: {
+            Reason = (global::OldProtos.ReportReasonType) input.ReadEnum();
+            break;
+          }
+          case 112: {
+            TargetUid = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 4024
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class PlayerReportReq : pb::IMessage<PlayerReportReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<PlayerReportReq> _parser = new pb::MessageParser<PlayerReportReq>(() => new PlayerReportReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<PlayerReportReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::PlayerReportReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerReportReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerReportReq(PlayerReportReq other) : this() {
-    reason_ = other.reason_;
-    content_ = other.content_;
-    targetHomeModuleId_ = other.targetHomeModuleId_;
-    targetHomeModuleName_ = other.targetHomeModuleName_;
-    targetUid_ = other.targetUid_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerReportReq Clone() {
-    return new PlayerReportReq(this);
-  }
-
-  /// <summary>Field number for the "reason" field.</summary>
-  public const int ReasonFieldNumber = 12;
-  private global::ReportReasonType reason_ = global::ReportReasonType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ReportReasonType Reason {
-    get { return reason_; }
-    set {
-      reason_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "content" field.</summary>
-  public const int ContentFieldNumber = 8;
-  private string content_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Content {
-    get { return content_; }
-    set {
-      content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "target_home_module_id" field.</summary>
-  public const int TargetHomeModuleIdFieldNumber = 5;
-  private uint targetHomeModuleId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TargetHomeModuleId {
-    get { return targetHomeModuleId_; }
-    set {
-      targetHomeModuleId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "target_home_module_name" field.</summary>
-  public const int TargetHomeModuleNameFieldNumber = 6;
-  private string targetHomeModuleName_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string TargetHomeModuleName {
-    get { return targetHomeModuleName_; }
-    set {
-      targetHomeModuleName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "target_uid" field.</summary>
-  public const int TargetUidFieldNumber = 14;
-  private uint targetUid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TargetUid {
-    get { return targetUid_; }
-    set {
-      targetUid_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as PlayerReportReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(PlayerReportReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Reason != other.Reason) return false;
-    if (Content != other.Content) return false;
-    if (TargetHomeModuleId != other.TargetHomeModuleId) return false;
-    if (TargetHomeModuleName != other.TargetHomeModuleName) return false;
-    if (TargetUid != other.TargetUid) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Reason != global::ReportReasonType.None) hash ^= Reason.GetHashCode();
-    if (Content.Length != 0) hash ^= Content.GetHashCode();
-    if (TargetHomeModuleId != 0) hash ^= TargetHomeModuleId.GetHashCode();
-    if (TargetHomeModuleName.Length != 0) hash ^= TargetHomeModuleName.GetHashCode();
-    if (TargetUid != 0) hash ^= TargetUid.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (TargetHomeModuleId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(TargetHomeModuleId);
-    }
-    if (TargetHomeModuleName.Length != 0) {
-      output.WriteRawTag(50);
-      output.WriteString(TargetHomeModuleName);
-    }
-    if (Content.Length != 0) {
-      output.WriteRawTag(66);
-      output.WriteString(Content);
-    }
-    if (Reason != global::ReportReasonType.None) {
-      output.WriteRawTag(96);
-      output.WriteEnum((int) Reason);
-    }
-    if (TargetUid != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(TargetUid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (TargetHomeModuleId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(TargetHomeModuleId);
-    }
-    if (TargetHomeModuleName.Length != 0) {
-      output.WriteRawTag(50);
-      output.WriteString(TargetHomeModuleName);
-    }
-    if (Content.Length != 0) {
-      output.WriteRawTag(66);
-      output.WriteString(Content);
-    }
-    if (Reason != global::ReportReasonType.None) {
-      output.WriteRawTag(96);
-      output.WriteEnum((int) Reason);
-    }
-    if (TargetUid != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(TargetUid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Reason != global::ReportReasonType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-    }
-    if (Content.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
-    }
-    if (TargetHomeModuleId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetHomeModuleId);
-    }
-    if (TargetHomeModuleName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(TargetHomeModuleName);
-    }
-    if (TargetUid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(PlayerReportReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Reason != global::ReportReasonType.None) {
-      Reason = other.Reason;
-    }
-    if (other.Content.Length != 0) {
-      Content = other.Content;
-    }
-    if (other.TargetHomeModuleId != 0) {
-      TargetHomeModuleId = other.TargetHomeModuleId;
-    }
-    if (other.TargetHomeModuleName.Length != 0) {
-      TargetHomeModuleName = other.TargetHomeModuleName;
-    }
-    if (other.TargetUid != 0) {
-      TargetUid = other.TargetUid;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          TargetHomeModuleId = input.ReadUInt32();
-          break;
-        }
-        case 50: {
-          TargetHomeModuleName = input.ReadString();
-          break;
-        }
-        case 66: {
-          Content = input.ReadString();
-          break;
-        }
-        case 96: {
-          Reason = (global::ReportReasonType) input.ReadEnum();
-          break;
-        }
-        case 112: {
-          TargetUid = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          TargetHomeModuleId = input.ReadUInt32();
-          break;
-        }
-        case 50: {
-          TargetHomeModuleName = input.ReadString();
-          break;
-        }
-        case 66: {
-          Content = input.ReadString();
-          break;
-        }
-        case 96: {
-          Reason = (global::ReportReasonType) input.ReadEnum();
-          break;
-        }
-        case 112: {
-          TargetUid = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

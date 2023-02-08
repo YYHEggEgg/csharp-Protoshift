@@ -19,7 +19,7 @@ syntax = "proto3";
 import "RogueStageInfo.proto";
 import "RoguelikeShikigamiRecord.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message RoguelikeDungeonActivityDetailInfo {
   repeated RogueStageInfo stage_list = 14;

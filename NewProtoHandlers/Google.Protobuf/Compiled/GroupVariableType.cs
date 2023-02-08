@@ -9,37 +9,40 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GroupVariableType.proto</summary>
-public static partial class GroupVariableTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GroupVariableType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GroupVariableType.proto</summary>
+  public static partial class GroupVariableTypeReflection {
 
-  static GroupVariableTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdHcm91cFZhcmlhYmxlVHlwZS5wcm90bypYChFHcm91cFZhcmlhYmxlVHlw",
-          "ZRIeChpHUk9VUF9WQVJJQUJMRV9UWVBFX05PUk1BTBAAEiMKH0dST1VQX1ZB",
-          "UklBQkxFX1RZUEVfTE9HSUNfU1RBVEUQAUIWChRvcmcuc29yYXBvaW50YS5w",
-          "cm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GroupVariableType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for GroupVariableType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GroupVariableTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdHcm91cFZhcmlhYmxlVHlwZS5wcm90bypYChFHcm91cFZhcmlhYmxlVHlw",
+            "ZRIeChpHUk9VUF9WQVJJQUJMRV9UWVBFX05PUk1BTBAAEiMKH0dST1VQX1ZB",
+            "UklBQkxFX1RZUEVfTE9HSUNfU1RBVEUQAUIMqgIJTmV3UHJvdG9zYgZwcm90",
+            "bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.GroupVariableType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum GroupVariableType {
+    [pbr::OriginalName("GROUP_VARIABLE_TYPE_NORMAL")] Normal = 0,
+    [pbr::OriginalName("GROUP_VARIABLE_TYPE_LOGIC_STATE")] LogicState = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum GroupVariableType {
-  [pbr::OriginalName("GROUP_VARIABLE_TYPE_NORMAL")] Normal = 0,
-  [pbr::OriginalName("GROUP_VARIABLE_TYPE_LOGIC_STATE")] LogicState = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

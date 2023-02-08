@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 enum LunaRiteHintStatusType {
   LUNA_RITE_HINT_STATUS_TYPE_DEFAULT = 0;

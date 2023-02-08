@@ -3,7 +3,7 @@
 
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message MistTrialSelectAvatarAndEnterDungeonReq {
     uint32 enter_point_id = 7;

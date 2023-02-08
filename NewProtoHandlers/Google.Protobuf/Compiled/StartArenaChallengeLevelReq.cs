@@ -9,308 +9,310 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from StartArenaChallengeLevelReq.proto</summary>
-public static partial class StartArenaChallengeLevelReqReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for StartArenaChallengeLevelReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from StartArenaChallengeLevelReq.proto</summary>
+  public static partial class StartArenaChallengeLevelReqReflection {
 
-  static StartArenaChallengeLevelReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiFTdGFydEFyZW5hQ2hhbGxlbmdlTGV2ZWxSZXEucHJvdG8icQobU3RhcnRB",
-          "cmVuYUNoYWxsZW5nZUxldmVsUmVxEhsKE1VuazMzMDBfRkRGTkZMQUtPTkcY",
-          "DSABKA0SGAoQZ2FkZ2V0X2VudGl0eV9pZBgDIAEoDRIbChNVbmszMzAwX0RC",
-          "SEFHSE1NTEFJGAwgASgNQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90",
-          "bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::StartArenaChallengeLevelReq), global::StartArenaChallengeLevelReq.Parser, new[]{ "Unk3300FDFNFLAKONG", "GadgetEntityId", "Unk3300DBHAGHMMLAI" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for StartArenaChallengeLevelReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static StartArenaChallengeLevelReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiFTdGFydEFyZW5hQ2hhbGxlbmdlTGV2ZWxSZXEucHJvdG8icQobU3RhcnRB",
+            "cmVuYUNoYWxsZW5nZUxldmVsUmVxEhsKE1VuazMzMDBfRkRGTkZMQUtPTkcY",
+            "DSABKA0SGAoQZ2FkZ2V0X2VudGl0eV9pZBgDIAEoDRIbChNVbmszMzAwX0RC",
+            "SEFHSE1NTEFJGAwgASgNQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.StartArenaChallengeLevelReq), global::NewProtos.StartArenaChallengeLevelReq.Parser, new[]{ "Unk3300FDFNFLAKONG", "GadgetEntityId", "Unk3300DBHAGHMMLAI" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2196;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
+  /// </summary>
+  public sealed partial class StartArenaChallengeLevelReq : pb::IMessage<StartArenaChallengeLevelReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<StartArenaChallengeLevelReq> _parser = new pb::MessageParser<StartArenaChallengeLevelReq>(() => new StartArenaChallengeLevelReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<StartArenaChallengeLevelReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.StartArenaChallengeLevelReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public StartArenaChallengeLevelReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public StartArenaChallengeLevelReq(StartArenaChallengeLevelReq other) : this() {
+      unk3300FDFNFLAKONG_ = other.unk3300FDFNFLAKONG_;
+      gadgetEntityId_ = other.gadgetEntityId_;
+      unk3300DBHAGHMMLAI_ = other.unk3300DBHAGHMMLAI_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public StartArenaChallengeLevelReq Clone() {
+      return new StartArenaChallengeLevelReq(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_FDFNFLAKONG" field.</summary>
+    public const int Unk3300FDFNFLAKONGFieldNumber = 13;
+    private uint unk3300FDFNFLAKONG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FDFNFLAKONG {
+      get { return unk3300FDFNFLAKONG_; }
+      set {
+        unk3300FDFNFLAKONG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gadget_entity_id" field.</summary>
+    public const int GadgetEntityIdFieldNumber = 3;
+    private uint gadgetEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GadgetEntityId {
+      get { return gadgetEntityId_; }
+      set {
+        gadgetEntityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DBHAGHMMLAI" field.</summary>
+    public const int Unk3300DBHAGHMMLAIFieldNumber = 12;
+    private uint unk3300DBHAGHMMLAI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300DBHAGHMMLAI {
+      get { return unk3300DBHAGHMMLAI_; }
+      set {
+        unk3300DBHAGHMMLAI_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as StartArenaChallengeLevelReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(StartArenaChallengeLevelReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Unk3300FDFNFLAKONG != other.Unk3300FDFNFLAKONG) return false;
+      if (GadgetEntityId != other.GadgetEntityId) return false;
+      if (Unk3300DBHAGHMMLAI != other.Unk3300DBHAGHMMLAI) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Unk3300FDFNFLAKONG != 0) hash ^= Unk3300FDFNFLAKONG.GetHashCode();
+      if (GadgetEntityId != 0) hash ^= GadgetEntityId.GetHashCode();
+      if (Unk3300DBHAGHMMLAI != 0) hash ^= Unk3300DBHAGHMMLAI.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (GadgetEntityId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(GadgetEntityId);
+      }
+      if (Unk3300DBHAGHMMLAI != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300DBHAGHMMLAI);
+      }
+      if (Unk3300FDFNFLAKONG != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300FDFNFLAKONG);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (GadgetEntityId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(GadgetEntityId);
+      }
+      if (Unk3300DBHAGHMMLAI != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300DBHAGHMMLAI);
+      }
+      if (Unk3300FDFNFLAKONG != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300FDFNFLAKONG);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Unk3300FDFNFLAKONG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FDFNFLAKONG);
+      }
+      if (GadgetEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetEntityId);
+      }
+      if (Unk3300DBHAGHMMLAI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DBHAGHMMLAI);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(StartArenaChallengeLevelReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Unk3300FDFNFLAKONG != 0) {
+        Unk3300FDFNFLAKONG = other.Unk3300FDFNFLAKONG;
+      }
+      if (other.GadgetEntityId != 0) {
+        GadgetEntityId = other.GadgetEntityId;
+      }
+      if (other.Unk3300DBHAGHMMLAI != 0) {
+        Unk3300DBHAGHMMLAI = other.Unk3300DBHAGHMMLAI;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            GadgetEntityId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300DBHAGHMMLAI = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300FDFNFLAKONG = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            GadgetEntityId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300DBHAGHMMLAI = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300FDFNFLAKONG = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 2196;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-///   IS_ALLOW_CLIENT = 1;
-/// }
-/// </summary>
-public sealed partial class StartArenaChallengeLevelReq : pb::IMessage<StartArenaChallengeLevelReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<StartArenaChallengeLevelReq> _parser = new pb::MessageParser<StartArenaChallengeLevelReq>(() => new StartArenaChallengeLevelReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<StartArenaChallengeLevelReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::StartArenaChallengeLevelReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public StartArenaChallengeLevelReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public StartArenaChallengeLevelReq(StartArenaChallengeLevelReq other) : this() {
-    unk3300FDFNFLAKONG_ = other.unk3300FDFNFLAKONG_;
-    gadgetEntityId_ = other.gadgetEntityId_;
-    unk3300DBHAGHMMLAI_ = other.unk3300DBHAGHMMLAI_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public StartArenaChallengeLevelReq Clone() {
-    return new StartArenaChallengeLevelReq(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_FDFNFLAKONG" field.</summary>
-  public const int Unk3300FDFNFLAKONGFieldNumber = 13;
-  private uint unk3300FDFNFLAKONG_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300FDFNFLAKONG {
-    get { return unk3300FDFNFLAKONG_; }
-    set {
-      unk3300FDFNFLAKONG_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gadget_entity_id" field.</summary>
-  public const int GadgetEntityIdFieldNumber = 3;
-  private uint gadgetEntityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GadgetEntityId {
-    get { return gadgetEntityId_; }
-    set {
-      gadgetEntityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_DBHAGHMMLAI" field.</summary>
-  public const int Unk3300DBHAGHMMLAIFieldNumber = 12;
-  private uint unk3300DBHAGHMMLAI_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300DBHAGHMMLAI {
-    get { return unk3300DBHAGHMMLAI_; }
-    set {
-      unk3300DBHAGHMMLAI_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as StartArenaChallengeLevelReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(StartArenaChallengeLevelReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Unk3300FDFNFLAKONG != other.Unk3300FDFNFLAKONG) return false;
-    if (GadgetEntityId != other.GadgetEntityId) return false;
-    if (Unk3300DBHAGHMMLAI != other.Unk3300DBHAGHMMLAI) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Unk3300FDFNFLAKONG != 0) hash ^= Unk3300FDFNFLAKONG.GetHashCode();
-    if (GadgetEntityId != 0) hash ^= GadgetEntityId.GetHashCode();
-    if (Unk3300DBHAGHMMLAI != 0) hash ^= Unk3300DBHAGHMMLAI.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (GadgetEntityId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(GadgetEntityId);
-    }
-    if (Unk3300DBHAGHMMLAI != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300DBHAGHMMLAI);
-    }
-    if (Unk3300FDFNFLAKONG != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Unk3300FDFNFLAKONG);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (GadgetEntityId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(GadgetEntityId);
-    }
-    if (Unk3300DBHAGHMMLAI != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300DBHAGHMMLAI);
-    }
-    if (Unk3300FDFNFLAKONG != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Unk3300FDFNFLAKONG);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Unk3300FDFNFLAKONG != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FDFNFLAKONG);
-    }
-    if (GadgetEntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetEntityId);
-    }
-    if (Unk3300DBHAGHMMLAI != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300DBHAGHMMLAI);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(StartArenaChallengeLevelReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Unk3300FDFNFLAKONG != 0) {
-      Unk3300FDFNFLAKONG = other.Unk3300FDFNFLAKONG;
-    }
-    if (other.GadgetEntityId != 0) {
-      GadgetEntityId = other.GadgetEntityId;
-    }
-    if (other.Unk3300DBHAGHMMLAI != 0) {
-      Unk3300DBHAGHMMLAI = other.Unk3300DBHAGHMMLAI;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          GadgetEntityId = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Unk3300DBHAGHMMLAI = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Unk3300FDFNFLAKONG = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          GadgetEntityId = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Unk3300DBHAGHMMLAI = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Unk3300FDFNFLAKONG = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "AvatarExpeditionState.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message AvatarExpeditionInfo {
   AvatarExpeditionState state = 1;

@@ -9,316 +9,318 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from EvtSyncTransform.proto</summary>
-public static partial class EvtSyncTransformReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for EvtSyncTransform.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from EvtSyncTransform.proto</summary>
+  public static partial class EvtSyncTransformReflection {
 
-  static EvtSyncTransformReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZFdnRTeW5jVHJhbnNmb3JtLnByb3RvGgxWZWN0b3IucHJvdG8icQoQRXZ0",
-          "U3luY1RyYW5zZm9ybRIkChNVbmszMzAwX0pBTUtMTkZCQkFEGA8gASgLMgcu",
-          "VmVjdG9yEhEKCWVudGl0eV9pZBgNIAEoDRIkChNVbmszMzAwX1BNSEZMQ09Q",
-          "RkJDGAkgASgLMgcuVmVjdG9yQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZw",
-          "cm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::EvtSyncTransform), global::EvtSyncTransform.Parser, new[]{ "Unk3300JAMKLNFBBAD", "EntityId", "Unk3300PMHFLCOPFBC" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for EvtSyncTransform.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static EvtSyncTransformReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZFdnRTeW5jVHJhbnNmb3JtLnByb3RvGgxWZWN0b3IucHJvdG8icQoQRXZ0",
+            "U3luY1RyYW5zZm9ybRIkChNVbmszMzAwX0pBTUtMTkZCQkFEGA8gASgLMgcu",
+            "VmVjdG9yEhEKCWVudGl0eV9pZBgNIAEoDRIkChNVbmszMzAwX1BNSEZMQ09Q",
+            "RkJDGAkgASgLMgcuVmVjdG9yQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.EvtSyncTransform), global::NewProtos.EvtSyncTransform.Parser, new[]{ "Unk3300JAMKLNFBBAD", "EntityId", "Unk3300PMHFLCOPFBC" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class EvtSyncTransform : pb::IMessage<EvtSyncTransform>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<EvtSyncTransform> _parser = new pb::MessageParser<EvtSyncTransform>(() => new EvtSyncTransform());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<EvtSyncTransform> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.EvtSyncTransformReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtSyncTransform() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtSyncTransform(EvtSyncTransform other) : this() {
+      unk3300JAMKLNFBBAD_ = other.unk3300JAMKLNFBBAD_ != null ? other.unk3300JAMKLNFBBAD_.Clone() : null;
+      entityId_ = other.entityId_;
+      unk3300PMHFLCOPFBC_ = other.unk3300PMHFLCOPFBC_ != null ? other.unk3300PMHFLCOPFBC_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtSyncTransform Clone() {
+      return new EvtSyncTransform(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_JAMKLNFBBAD" field.</summary>
+    public const int Unk3300JAMKLNFBBADFieldNumber = 15;
+    private global::NewProtos.Vector unk3300JAMKLNFBBAD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.Vector Unk3300JAMKLNFBBAD {
+      get { return unk3300JAMKLNFBBAD_; }
+      set {
+        unk3300JAMKLNFBBAD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 13;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PMHFLCOPFBC" field.</summary>
+    public const int Unk3300PMHFLCOPFBCFieldNumber = 9;
+    private global::NewProtos.Vector unk3300PMHFLCOPFBC_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.Vector Unk3300PMHFLCOPFBC {
+      get { return unk3300PMHFLCOPFBC_; }
+      set {
+        unk3300PMHFLCOPFBC_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as EvtSyncTransform);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(EvtSyncTransform other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Unk3300JAMKLNFBBAD, other.Unk3300JAMKLNFBBAD)) return false;
+      if (EntityId != other.EntityId) return false;
+      if (!object.Equals(Unk3300PMHFLCOPFBC, other.Unk3300PMHFLCOPFBC)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (unk3300JAMKLNFBBAD_ != null) hash ^= Unk3300JAMKLNFBBAD.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (unk3300PMHFLCOPFBC_ != null) hash ^= Unk3300PMHFLCOPFBC.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (unk3300PMHFLCOPFBC_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Unk3300PMHFLCOPFBC);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(EntityId);
+      }
+      if (unk3300JAMKLNFBBAD_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Unk3300JAMKLNFBBAD);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (unk3300PMHFLCOPFBC_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Unk3300PMHFLCOPFBC);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(EntityId);
+      }
+      if (unk3300JAMKLNFBBAD_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Unk3300JAMKLNFBBAD);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (unk3300JAMKLNFBBAD_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300JAMKLNFBBAD);
+      }
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (unk3300PMHFLCOPFBC_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300PMHFLCOPFBC);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(EvtSyncTransform other) {
+      if (other == null) {
+        return;
+      }
+      if (other.unk3300JAMKLNFBBAD_ != null) {
+        if (unk3300JAMKLNFBBAD_ == null) {
+          Unk3300JAMKLNFBBAD = new global::NewProtos.Vector();
+        }
+        Unk3300JAMKLNFBBAD.MergeFrom(other.Unk3300JAMKLNFBBAD);
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.unk3300PMHFLCOPFBC_ != null) {
+        if (unk3300PMHFLCOPFBC_ == null) {
+          Unk3300PMHFLCOPFBC = new global::NewProtos.Vector();
+        }
+        Unk3300PMHFLCOPFBC.MergeFrom(other.Unk3300PMHFLCOPFBC);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 74: {
+            if (unk3300PMHFLCOPFBC_ == null) {
+              Unk3300PMHFLCOPFBC = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(Unk3300PMHFLCOPFBC);
+            break;
+          }
+          case 104: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            if (unk3300JAMKLNFBBAD_ == null) {
+              Unk3300JAMKLNFBBAD = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(Unk3300JAMKLNFBBAD);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 74: {
+            if (unk3300PMHFLCOPFBC_ == null) {
+              Unk3300PMHFLCOPFBC = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(Unk3300PMHFLCOPFBC);
+            break;
+          }
+          case 104: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            if (unk3300JAMKLNFBBAD_ == null) {
+              Unk3300JAMKLNFBBAD = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(Unk3300JAMKLNFBBAD);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class EvtSyncTransform : pb::IMessage<EvtSyncTransform>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<EvtSyncTransform> _parser = new pb::MessageParser<EvtSyncTransform>(() => new EvtSyncTransform());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<EvtSyncTransform> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::EvtSyncTransformReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtSyncTransform() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtSyncTransform(EvtSyncTransform other) : this() {
-    unk3300JAMKLNFBBAD_ = other.unk3300JAMKLNFBBAD_ != null ? other.unk3300JAMKLNFBBAD_.Clone() : null;
-    entityId_ = other.entityId_;
-    unk3300PMHFLCOPFBC_ = other.unk3300PMHFLCOPFBC_ != null ? other.unk3300PMHFLCOPFBC_.Clone() : null;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtSyncTransform Clone() {
-    return new EvtSyncTransform(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_JAMKLNFBBAD" field.</summary>
-  public const int Unk3300JAMKLNFBBADFieldNumber = 15;
-  private global::Vector unk3300JAMKLNFBBAD_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector Unk3300JAMKLNFBBAD {
-    get { return unk3300JAMKLNFBBAD_; }
-    set {
-      unk3300JAMKLNFBBAD_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity_id" field.</summary>
-  public const int EntityIdFieldNumber = 13;
-  private uint entityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EntityId {
-    get { return entityId_; }
-    set {
-      entityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_PMHFLCOPFBC" field.</summary>
-  public const int Unk3300PMHFLCOPFBCFieldNumber = 9;
-  private global::Vector unk3300PMHFLCOPFBC_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector Unk3300PMHFLCOPFBC {
-    get { return unk3300PMHFLCOPFBC_; }
-    set {
-      unk3300PMHFLCOPFBC_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as EvtSyncTransform);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(EvtSyncTransform other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(Unk3300JAMKLNFBBAD, other.Unk3300JAMKLNFBBAD)) return false;
-    if (EntityId != other.EntityId) return false;
-    if (!object.Equals(Unk3300PMHFLCOPFBC, other.Unk3300PMHFLCOPFBC)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (unk3300JAMKLNFBBAD_ != null) hash ^= Unk3300JAMKLNFBBAD.GetHashCode();
-    if (EntityId != 0) hash ^= EntityId.GetHashCode();
-    if (unk3300PMHFLCOPFBC_ != null) hash ^= Unk3300PMHFLCOPFBC.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (unk3300PMHFLCOPFBC_ != null) {
-      output.WriteRawTag(74);
-      output.WriteMessage(Unk3300PMHFLCOPFBC);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(EntityId);
-    }
-    if (unk3300JAMKLNFBBAD_ != null) {
-      output.WriteRawTag(122);
-      output.WriteMessage(Unk3300JAMKLNFBBAD);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (unk3300PMHFLCOPFBC_ != null) {
-      output.WriteRawTag(74);
-      output.WriteMessage(Unk3300PMHFLCOPFBC);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(EntityId);
-    }
-    if (unk3300JAMKLNFBBAD_ != null) {
-      output.WriteRawTag(122);
-      output.WriteMessage(Unk3300JAMKLNFBBAD);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (unk3300JAMKLNFBBAD_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300JAMKLNFBBAD);
-    }
-    if (EntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-    }
-    if (unk3300PMHFLCOPFBC_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300PMHFLCOPFBC);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(EvtSyncTransform other) {
-    if (other == null) {
-      return;
-    }
-    if (other.unk3300JAMKLNFBBAD_ != null) {
-      if (unk3300JAMKLNFBBAD_ == null) {
-        Unk3300JAMKLNFBBAD = new global::Vector();
-      }
-      Unk3300JAMKLNFBBAD.MergeFrom(other.Unk3300JAMKLNFBBAD);
-    }
-    if (other.EntityId != 0) {
-      EntityId = other.EntityId;
-    }
-    if (other.unk3300PMHFLCOPFBC_ != null) {
-      if (unk3300PMHFLCOPFBC_ == null) {
-        Unk3300PMHFLCOPFBC = new global::Vector();
-      }
-      Unk3300PMHFLCOPFBC.MergeFrom(other.Unk3300PMHFLCOPFBC);
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 74: {
-          if (unk3300PMHFLCOPFBC_ == null) {
-            Unk3300PMHFLCOPFBC = new global::Vector();
-          }
-          input.ReadMessage(Unk3300PMHFLCOPFBC);
-          break;
-        }
-        case 104: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          if (unk3300JAMKLNFBBAD_ == null) {
-            Unk3300JAMKLNFBBAD = new global::Vector();
-          }
-          input.ReadMessage(Unk3300JAMKLNFBBAD);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 74: {
-          if (unk3300PMHFLCOPFBC_ == null) {
-            Unk3300PMHFLCOPFBC = new global::Vector();
-          }
-          input.ReadMessage(Unk3300PMHFLCOPFBC);
-          break;
-        }
-        case 104: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          if (unk3300JAMKLNFBBAD_ == null) {
-            Unk3300JAMKLNFBBAD = new global::Vector();
-          }
-          input.ReadMessage(Unk3300JAMKLNFBBAD);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

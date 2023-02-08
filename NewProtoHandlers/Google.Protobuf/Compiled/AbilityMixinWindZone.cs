@@ -9,242 +9,244 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AbilityMixinWindZone.proto</summary>
-public static partial class AbilityMixinWindZoneReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AbilityMixinWindZone.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AbilityMixinWindZone.proto</summary>
+  public static partial class AbilityMixinWindZoneReflection {
 
-  static AbilityMixinWindZoneReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpBYmlsaXR5TWl4aW5XaW5kWm9uZS5wcm90byJQChRBYmlsaXR5TWl4aW5X",
-          "aW5kWm9uZRIbChNVbmszMzAwX09KUEZBSUdJQkxHGAMgAygNEhsKE1VuazMz",
-          "MDBfREpFTEJHREVEQkgYDCADKA1CFgoUb3JnLnNvcmFwb2ludGEucHJvdG9i",
-          "BnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AbilityMixinWindZone), global::AbilityMixinWindZone.Parser, new[]{ "Unk3300OJPFAIGIBLG", "Unk3300DJELBGDEDBH" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AbilityMixinWindZone.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AbilityMixinWindZoneReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpBYmlsaXR5TWl4aW5XaW5kWm9uZS5wcm90byJQChRBYmlsaXR5TWl4aW5X",
+            "aW5kWm9uZRIbChNVbmszMzAwX09KUEZBSUdJQkxHGAMgAygNEhsKE1VuazMz",
+            "MDBfREpFTEJHREVEQkgYDCADKA1CDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.AbilityMixinWindZone), global::NewProtos.AbilityMixinWindZone.Parser, new[]{ "Unk3300OJPFAIGIBLG", "Unk3300DJELBGDEDBH" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class AbilityMixinWindZone : pb::IMessage<AbilityMixinWindZone>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AbilityMixinWindZone> _parser = new pb::MessageParser<AbilityMixinWindZone>(() => new AbilityMixinWindZone());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AbilityMixinWindZone> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.AbilityMixinWindZoneReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AbilityMixinWindZone() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AbilityMixinWindZone(AbilityMixinWindZone other) : this() {
+      unk3300OJPFAIGIBLG_ = other.unk3300OJPFAIGIBLG_.Clone();
+      unk3300DJELBGDEDBH_ = other.unk3300DJELBGDEDBH_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AbilityMixinWindZone Clone() {
+      return new AbilityMixinWindZone(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_OJPFAIGIBLG" field.</summary>
+    public const int Unk3300OJPFAIGIBLGFieldNumber = 3;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300OJPFAIGIBLG_codec
+        = pb::FieldCodec.ForUInt32(26);
+    private readonly pbc::RepeatedField<uint> unk3300OJPFAIGIBLG_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300OJPFAIGIBLG {
+      get { return unk3300OJPFAIGIBLG_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_DJELBGDEDBH" field.</summary>
+    public const int Unk3300DJELBGDEDBHFieldNumber = 12;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300DJELBGDEDBH_codec
+        = pb::FieldCodec.ForUInt32(98);
+    private readonly pbc::RepeatedField<uint> unk3300DJELBGDEDBH_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300DJELBGDEDBH {
+      get { return unk3300DJELBGDEDBH_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AbilityMixinWindZone);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AbilityMixinWindZone other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!unk3300OJPFAIGIBLG_.Equals(other.unk3300OJPFAIGIBLG_)) return false;
+      if(!unk3300DJELBGDEDBH_.Equals(other.unk3300DJELBGDEDBH_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= unk3300OJPFAIGIBLG_.GetHashCode();
+      hash ^= unk3300DJELBGDEDBH_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      unk3300OJPFAIGIBLG_.WriteTo(output, _repeated_unk3300OJPFAIGIBLG_codec);
+      unk3300DJELBGDEDBH_.WriteTo(output, _repeated_unk3300DJELBGDEDBH_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unk3300OJPFAIGIBLG_.WriteTo(ref output, _repeated_unk3300OJPFAIGIBLG_codec);
+      unk3300DJELBGDEDBH_.WriteTo(ref output, _repeated_unk3300DJELBGDEDBH_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += unk3300OJPFAIGIBLG_.CalculateSize(_repeated_unk3300OJPFAIGIBLG_codec);
+      size += unk3300DJELBGDEDBH_.CalculateSize(_repeated_unk3300DJELBGDEDBH_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AbilityMixinWindZone other) {
+      if (other == null) {
+        return;
+      }
+      unk3300OJPFAIGIBLG_.Add(other.unk3300OJPFAIGIBLG_);
+      unk3300DJELBGDEDBH_.Add(other.unk3300DJELBGDEDBH_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 26:
+          case 24: {
+            unk3300OJPFAIGIBLG_.AddEntriesFrom(input, _repeated_unk3300OJPFAIGIBLG_codec);
+            break;
+          }
+          case 98:
+          case 96: {
+            unk3300DJELBGDEDBH_.AddEntriesFrom(input, _repeated_unk3300DJELBGDEDBH_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 26:
+          case 24: {
+            unk3300OJPFAIGIBLG_.AddEntriesFrom(ref input, _repeated_unk3300OJPFAIGIBLG_codec);
+            break;
+          }
+          case 98:
+          case 96: {
+            unk3300DJELBGDEDBH_.AddEntriesFrom(ref input, _repeated_unk3300DJELBGDEDBH_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class AbilityMixinWindZone : pb::IMessage<AbilityMixinWindZone>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AbilityMixinWindZone> _parser = new pb::MessageParser<AbilityMixinWindZone>(() => new AbilityMixinWindZone());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AbilityMixinWindZone> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AbilityMixinWindZoneReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AbilityMixinWindZone() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AbilityMixinWindZone(AbilityMixinWindZone other) : this() {
-    unk3300OJPFAIGIBLG_ = other.unk3300OJPFAIGIBLG_.Clone();
-    unk3300DJELBGDEDBH_ = other.unk3300DJELBGDEDBH_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AbilityMixinWindZone Clone() {
-    return new AbilityMixinWindZone(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_OJPFAIGIBLG" field.</summary>
-  public const int Unk3300OJPFAIGIBLGFieldNumber = 3;
-  private static readonly pb::FieldCodec<uint> _repeated_unk3300OJPFAIGIBLG_codec
-      = pb::FieldCodec.ForUInt32(26);
-  private readonly pbc::RepeatedField<uint> unk3300OJPFAIGIBLG_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> Unk3300OJPFAIGIBLG {
-    get { return unk3300OJPFAIGIBLG_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_DJELBGDEDBH" field.</summary>
-  public const int Unk3300DJELBGDEDBHFieldNumber = 12;
-  private static readonly pb::FieldCodec<uint> _repeated_unk3300DJELBGDEDBH_codec
-      = pb::FieldCodec.ForUInt32(98);
-  private readonly pbc::RepeatedField<uint> unk3300DJELBGDEDBH_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> Unk3300DJELBGDEDBH {
-    get { return unk3300DJELBGDEDBH_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AbilityMixinWindZone);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AbilityMixinWindZone other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!unk3300OJPFAIGIBLG_.Equals(other.unk3300OJPFAIGIBLG_)) return false;
-    if(!unk3300DJELBGDEDBH_.Equals(other.unk3300DJELBGDEDBH_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= unk3300OJPFAIGIBLG_.GetHashCode();
-    hash ^= unk3300DJELBGDEDBH_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    unk3300OJPFAIGIBLG_.WriteTo(output, _repeated_unk3300OJPFAIGIBLG_codec);
-    unk3300DJELBGDEDBH_.WriteTo(output, _repeated_unk3300DJELBGDEDBH_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    unk3300OJPFAIGIBLG_.WriteTo(ref output, _repeated_unk3300OJPFAIGIBLG_codec);
-    unk3300DJELBGDEDBH_.WriteTo(ref output, _repeated_unk3300DJELBGDEDBH_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += unk3300OJPFAIGIBLG_.CalculateSize(_repeated_unk3300OJPFAIGIBLG_codec);
-    size += unk3300DJELBGDEDBH_.CalculateSize(_repeated_unk3300DJELBGDEDBH_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AbilityMixinWindZone other) {
-    if (other == null) {
-      return;
-    }
-    unk3300OJPFAIGIBLG_.Add(other.unk3300OJPFAIGIBLG_);
-    unk3300DJELBGDEDBH_.Add(other.unk3300DJELBGDEDBH_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 26:
-        case 24: {
-          unk3300OJPFAIGIBLG_.AddEntriesFrom(input, _repeated_unk3300OJPFAIGIBLG_codec);
-          break;
-        }
-        case 98:
-        case 96: {
-          unk3300DJELBGDEDBH_.AddEntriesFrom(input, _repeated_unk3300DJELBGDEDBH_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 26:
-        case 24: {
-          unk3300OJPFAIGIBLG_.AddEntriesFrom(ref input, _repeated_unk3300OJPFAIGIBLG_codec);
-          break;
-        }
-        case 98:
-        case 96: {
-          unk3300DJELBGDEDBH_.AddEntriesFrom(ref input, _repeated_unk3300DJELBGDEDBH_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

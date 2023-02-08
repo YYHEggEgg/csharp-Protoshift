@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "AvatarType.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message MistTrialBestAvatar {
   uint32 avatar_id = 4;

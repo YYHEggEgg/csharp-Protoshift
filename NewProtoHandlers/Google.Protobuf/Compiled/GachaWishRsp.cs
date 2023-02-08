@@ -9,418 +9,421 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GachaWishRsp.proto</summary>
-public static partial class GachaWishRspReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GachaWishRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GachaWishRsp.proto</summary>
+  public static partial class GachaWishRspReflection {
 
-  static GachaWishRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChJHYWNoYVdpc2hSc3AucHJvdG8ilgEKDEdhY2hhV2lzaFJzcBIVCg13aXNo",
-          "X3Byb2dyZXNzGAYgASgNEhQKDHdpc2hfaXRlbV9pZBgPIAEoDRIZChFnYWNo",
-          "YV9zY2hlZHVsZV9pZBgLIAEoDRIPCgdyZXRjb2RlGA0gASgFEhkKEXdpc2hf",
-          "bWF4X3Byb2dyZXNzGAogASgNEhIKCmdhY2hhX3R5cGUYCCABKA1CFgoUb3Jn",
-          "LnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GachaWishRsp), global::GachaWishRsp.Parser, new[]{ "WishProgress", "WishItemId", "GachaScheduleId", "Retcode", "WishMaxProgress", "GachaType" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GachaWishRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GachaWishRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChJHYWNoYVdpc2hSc3AucHJvdG8ilgEKDEdhY2hhV2lzaFJzcBIVCg13aXNo",
+            "X3Byb2dyZXNzGAYgASgNEhQKDHdpc2hfaXRlbV9pZBgPIAEoDRIZChFnYWNo",
+            "YV9zY2hlZHVsZV9pZBgLIAEoDRIPCgdyZXRjb2RlGA0gASgFEhkKEXdpc2hf",
+            "bWF4X3Byb2dyZXNzGAogASgNEhIKCmdhY2hhX3R5cGUYCCABKA1CDKoCCU5l",
+            "d1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GachaWishRsp), global::NewProtos.GachaWishRsp.Parser, new[]{ "WishProgress", "WishItemId", "GachaScheduleId", "Retcode", "WishMaxProgress", "GachaType" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1543;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class GachaWishRsp : pb::IMessage<GachaWishRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GachaWishRsp> _parser = new pb::MessageParser<GachaWishRsp>(() => new GachaWishRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GachaWishRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.GachaWishRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GachaWishRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GachaWishRsp(GachaWishRsp other) : this() {
+      wishProgress_ = other.wishProgress_;
+      wishItemId_ = other.wishItemId_;
+      gachaScheduleId_ = other.gachaScheduleId_;
+      retcode_ = other.retcode_;
+      wishMaxProgress_ = other.wishMaxProgress_;
+      gachaType_ = other.gachaType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GachaWishRsp Clone() {
+      return new GachaWishRsp(this);
+    }
+
+    /// <summary>Field number for the "wish_progress" field.</summary>
+    public const int WishProgressFieldNumber = 6;
+    private uint wishProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WishProgress {
+      get { return wishProgress_; }
+      set {
+        wishProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "wish_item_id" field.</summary>
+    public const int WishItemIdFieldNumber = 15;
+    private uint wishItemId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WishItemId {
+      get { return wishItemId_; }
+      set {
+        wishItemId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gacha_schedule_id" field.</summary>
+    public const int GachaScheduleIdFieldNumber = 11;
+    private uint gachaScheduleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GachaScheduleId {
+      get { return gachaScheduleId_; }
+      set {
+        gachaScheduleId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 13;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "wish_max_progress" field.</summary>
+    public const int WishMaxProgressFieldNumber = 10;
+    private uint wishMaxProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WishMaxProgress {
+      get { return wishMaxProgress_; }
+      set {
+        wishMaxProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gacha_type" field.</summary>
+    public const int GachaTypeFieldNumber = 8;
+    private uint gachaType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GachaType {
+      get { return gachaType_; }
+      set {
+        gachaType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GachaWishRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GachaWishRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (WishProgress != other.WishProgress) return false;
+      if (WishItemId != other.WishItemId) return false;
+      if (GachaScheduleId != other.GachaScheduleId) return false;
+      if (Retcode != other.Retcode) return false;
+      if (WishMaxProgress != other.WishMaxProgress) return false;
+      if (GachaType != other.GachaType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (WishProgress != 0) hash ^= WishProgress.GetHashCode();
+      if (WishItemId != 0) hash ^= WishItemId.GetHashCode();
+      if (GachaScheduleId != 0) hash ^= GachaScheduleId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (WishMaxProgress != 0) hash ^= WishMaxProgress.GetHashCode();
+      if (GachaType != 0) hash ^= GachaType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (WishProgress != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(WishProgress);
+      }
+      if (GachaType != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(GachaType);
+      }
+      if (WishMaxProgress != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(WishMaxProgress);
+      }
+      if (GachaScheduleId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GachaScheduleId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Retcode);
+      }
+      if (WishItemId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(WishItemId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (WishProgress != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(WishProgress);
+      }
+      if (GachaType != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(GachaType);
+      }
+      if (WishMaxProgress != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(WishMaxProgress);
+      }
+      if (GachaScheduleId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GachaScheduleId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Retcode);
+      }
+      if (WishItemId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(WishItemId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (WishProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishProgress);
+      }
+      if (WishItemId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishItemId);
+      }
+      if (GachaScheduleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaScheduleId);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (WishMaxProgress != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishMaxProgress);
+      }
+      if (GachaType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GachaWishRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.WishProgress != 0) {
+        WishProgress = other.WishProgress;
+      }
+      if (other.WishItemId != 0) {
+        WishItemId = other.WishItemId;
+      }
+      if (other.GachaScheduleId != 0) {
+        GachaScheduleId = other.GachaScheduleId;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.WishMaxProgress != 0) {
+        WishMaxProgress = other.WishMaxProgress;
+      }
+      if (other.GachaType != 0) {
+        GachaType = other.GachaType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 48: {
+            WishProgress = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            GachaType = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            WishMaxProgress = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            GachaScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            WishItemId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 48: {
+            WishProgress = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            GachaType = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            WishMaxProgress = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            GachaScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            WishItemId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 1543;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class GachaWishRsp : pb::IMessage<GachaWishRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GachaWishRsp> _parser = new pb::MessageParser<GachaWishRsp>(() => new GachaWishRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GachaWishRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GachaWishRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GachaWishRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GachaWishRsp(GachaWishRsp other) : this() {
-    wishProgress_ = other.wishProgress_;
-    wishItemId_ = other.wishItemId_;
-    gachaScheduleId_ = other.gachaScheduleId_;
-    retcode_ = other.retcode_;
-    wishMaxProgress_ = other.wishMaxProgress_;
-    gachaType_ = other.gachaType_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GachaWishRsp Clone() {
-    return new GachaWishRsp(this);
-  }
-
-  /// <summary>Field number for the "wish_progress" field.</summary>
-  public const int WishProgressFieldNumber = 6;
-  private uint wishProgress_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WishProgress {
-    get { return wishProgress_; }
-    set {
-      wishProgress_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "wish_item_id" field.</summary>
-  public const int WishItemIdFieldNumber = 15;
-  private uint wishItemId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WishItemId {
-    get { return wishItemId_; }
-    set {
-      wishItemId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gacha_schedule_id" field.</summary>
-  public const int GachaScheduleIdFieldNumber = 11;
-  private uint gachaScheduleId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GachaScheduleId {
-    get { return gachaScheduleId_; }
-    set {
-      gachaScheduleId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 13;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "wish_max_progress" field.</summary>
-  public const int WishMaxProgressFieldNumber = 10;
-  private uint wishMaxProgress_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WishMaxProgress {
-    get { return wishMaxProgress_; }
-    set {
-      wishMaxProgress_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gacha_type" field.</summary>
-  public const int GachaTypeFieldNumber = 8;
-  private uint gachaType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GachaType {
-    get { return gachaType_; }
-    set {
-      gachaType_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GachaWishRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GachaWishRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (WishProgress != other.WishProgress) return false;
-    if (WishItemId != other.WishItemId) return false;
-    if (GachaScheduleId != other.GachaScheduleId) return false;
-    if (Retcode != other.Retcode) return false;
-    if (WishMaxProgress != other.WishMaxProgress) return false;
-    if (GachaType != other.GachaType) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (WishProgress != 0) hash ^= WishProgress.GetHashCode();
-    if (WishItemId != 0) hash ^= WishItemId.GetHashCode();
-    if (GachaScheduleId != 0) hash ^= GachaScheduleId.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (WishMaxProgress != 0) hash ^= WishMaxProgress.GetHashCode();
-    if (GachaType != 0) hash ^= GachaType.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (WishProgress != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(WishProgress);
-    }
-    if (GachaType != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(GachaType);
-    }
-    if (WishMaxProgress != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(WishMaxProgress);
-    }
-    if (GachaScheduleId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(GachaScheduleId);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(104);
-      output.WriteInt32(Retcode);
-    }
-    if (WishItemId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(WishItemId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (WishProgress != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(WishProgress);
-    }
-    if (GachaType != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(GachaType);
-    }
-    if (WishMaxProgress != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(WishMaxProgress);
-    }
-    if (GachaScheduleId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(GachaScheduleId);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(104);
-      output.WriteInt32(Retcode);
-    }
-    if (WishItemId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(WishItemId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (WishProgress != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishProgress);
-    }
-    if (WishItemId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishItemId);
-    }
-    if (GachaScheduleId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaScheduleId);
-    }
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (WishMaxProgress != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WishMaxProgress);
-    }
-    if (GachaType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaType);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GachaWishRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.WishProgress != 0) {
-      WishProgress = other.WishProgress;
-    }
-    if (other.WishItemId != 0) {
-      WishItemId = other.WishItemId;
-    }
-    if (other.GachaScheduleId != 0) {
-      GachaScheduleId = other.GachaScheduleId;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.WishMaxProgress != 0) {
-      WishMaxProgress = other.WishMaxProgress;
-    }
-    if (other.GachaType != 0) {
-      GachaType = other.GachaType;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 48: {
-          WishProgress = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          GachaType = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          WishMaxProgress = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          GachaScheduleId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 120: {
-          WishItemId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 48: {
-          WishProgress = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          GachaType = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          WishMaxProgress = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          GachaScheduleId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 120: {
-          WishItemId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

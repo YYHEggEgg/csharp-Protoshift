@@ -9,494 +9,497 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SummerTimeSprintBoatSettleNotify.proto</summary>
-public static partial class SummerTimeSprintBoatSettleNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SummerTimeSprintBoatSettleNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SummerTimeSprintBoatSettleNotify.proto</summary>
+  public static partial class SummerTimeSprintBoatSettleNotifyReflection {
 
-  static SummerTimeSprintBoatSettleNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiZTdW1tZXJUaW1lU3ByaW50Qm9hdFNldHRsZU5vdGlmeS5wcm90byLOAQog",
-          "U3VtbWVyVGltZVNwcmludEJvYXRTZXR0bGVOb3RpZnkSDQoFc2NvcmUYBiAB",
-          "KA0SEQoJbGVmdF90aW1lGAIgASgNEhIKCmlzX3N1Y2Nlc3MYBCABKAgSEAoI",
-          "Z3JvdXBfaWQYBSABKA0SGwoTVW5rMzMwMF9QTEZNSlBOUFBMSRgMIAEoDRIR",
-          "Cgl0b3RhbF9udW0YCiABKA0SFQoNaXNfbmV3X3JlY29yZBgPIAEoCBIbChNV",
-          "bmszMzAwX01FRUtGSkpJT0tFGA4gASgNQhYKFG9yZy5zb3JhcG9pbnRhLnBy",
-          "b3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SummerTimeSprintBoatSettleNotify), global::SummerTimeSprintBoatSettleNotify.Parser, new[]{ "Score", "LeftTime", "IsSuccess", "GroupId", "Unk3300PLFMJPNPPLI", "TotalNum", "IsNewRecord", "Unk3300MEEKFJJIOKE" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SummerTimeSprintBoatSettleNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SummerTimeSprintBoatSettleNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiZTdW1tZXJUaW1lU3ByaW50Qm9hdFNldHRsZU5vdGlmeS5wcm90byLOAQog",
+            "U3VtbWVyVGltZVNwcmludEJvYXRTZXR0bGVOb3RpZnkSDQoFc2NvcmUYBiAB",
+            "KA0SEQoJbGVmdF90aW1lGAIgASgNEhIKCmlzX3N1Y2Nlc3MYBCABKAgSEAoI",
+            "Z3JvdXBfaWQYBSABKA0SGwoTVW5rMzMwMF9QTEZNSlBOUFBMSRgMIAEoDRIR",
+            "Cgl0b3RhbF9udW0YCiABKA0SFQoNaXNfbmV3X3JlY29yZBgPIAEoCBIbChNV",
+            "bmszMzAwX01FRUtGSkpJT0tFGA4gASgNQgyqAglOZXdQcm90b3NiBnByb3Rv",
+            "Mw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.SummerTimeSprintBoatSettleNotify), global::NewProtos.SummerTimeSprintBoatSettleNotify.Parser, new[]{ "Score", "LeftTime", "IsSuccess", "GroupId", "Unk3300PLFMJPNPPLI", "TotalNum", "IsNewRecord", "Unk3300MEEKFJJIOKE" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8451;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class SummerTimeSprintBoatSettleNotify : pb::IMessage<SummerTimeSprintBoatSettleNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SummerTimeSprintBoatSettleNotify> _parser = new pb::MessageParser<SummerTimeSprintBoatSettleNotify>(() => new SummerTimeSprintBoatSettleNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SummerTimeSprintBoatSettleNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.SummerTimeSprintBoatSettleNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SummerTimeSprintBoatSettleNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SummerTimeSprintBoatSettleNotify(SummerTimeSprintBoatSettleNotify other) : this() {
+      score_ = other.score_;
+      leftTime_ = other.leftTime_;
+      isSuccess_ = other.isSuccess_;
+      groupId_ = other.groupId_;
+      unk3300PLFMJPNPPLI_ = other.unk3300PLFMJPNPPLI_;
+      totalNum_ = other.totalNum_;
+      isNewRecord_ = other.isNewRecord_;
+      unk3300MEEKFJJIOKE_ = other.unk3300MEEKFJJIOKE_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SummerTimeSprintBoatSettleNotify Clone() {
+      return new SummerTimeSprintBoatSettleNotify(this);
+    }
+
+    /// <summary>Field number for the "score" field.</summary>
+    public const int ScoreFieldNumber = 6;
+    private uint score_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Score {
+      get { return score_; }
+      set {
+        score_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "left_time" field.</summary>
+    public const int LeftTimeFieldNumber = 2;
+    private uint leftTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LeftTime {
+      get { return leftTime_; }
+      set {
+        leftTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_success" field.</summary>
+    public const int IsSuccessFieldNumber = 4;
+    private bool isSuccess_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSuccess {
+      get { return isSuccess_; }
+      set {
+        isSuccess_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "group_id" field.</summary>
+    public const int GroupIdFieldNumber = 5;
+    private uint groupId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GroupId {
+      get { return groupId_; }
+      set {
+        groupId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PLFMJPNPPLI" field.</summary>
+    public const int Unk3300PLFMJPNPPLIFieldNumber = 12;
+    private uint unk3300PLFMJPNPPLI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PLFMJPNPPLI {
+      get { return unk3300PLFMJPNPPLI_; }
+      set {
+        unk3300PLFMJPNPPLI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_num" field.</summary>
+    public const int TotalNumFieldNumber = 10;
+    private uint totalNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TotalNum {
+      get { return totalNum_; }
+      set {
+        totalNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_new_record" field.</summary>
+    public const int IsNewRecordFieldNumber = 15;
+    private bool isNewRecord_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsNewRecord {
+      get { return isNewRecord_; }
+      set {
+        isNewRecord_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_MEEKFJJIOKE" field.</summary>
+    public const int Unk3300MEEKFJJIOKEFieldNumber = 14;
+    private uint unk3300MEEKFJJIOKE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300MEEKFJJIOKE {
+      get { return unk3300MEEKFJJIOKE_; }
+      set {
+        unk3300MEEKFJJIOKE_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SummerTimeSprintBoatSettleNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SummerTimeSprintBoatSettleNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Score != other.Score) return false;
+      if (LeftTime != other.LeftTime) return false;
+      if (IsSuccess != other.IsSuccess) return false;
+      if (GroupId != other.GroupId) return false;
+      if (Unk3300PLFMJPNPPLI != other.Unk3300PLFMJPNPPLI) return false;
+      if (TotalNum != other.TotalNum) return false;
+      if (IsNewRecord != other.IsNewRecord) return false;
+      if (Unk3300MEEKFJJIOKE != other.Unk3300MEEKFJJIOKE) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Score != 0) hash ^= Score.GetHashCode();
+      if (LeftTime != 0) hash ^= LeftTime.GetHashCode();
+      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
+      if (GroupId != 0) hash ^= GroupId.GetHashCode();
+      if (Unk3300PLFMJPNPPLI != 0) hash ^= Unk3300PLFMJPNPPLI.GetHashCode();
+      if (TotalNum != 0) hash ^= TotalNum.GetHashCode();
+      if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
+      if (Unk3300MEEKFJJIOKE != 0) hash ^= Unk3300MEEKFJJIOKE.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (LeftTime != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(LeftTime);
+      }
+      if (IsSuccess != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsSuccess);
+      }
+      if (GroupId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(GroupId);
+      }
+      if (Score != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Score);
+      }
+      if (TotalNum != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(TotalNum);
+      }
+      if (Unk3300PLFMJPNPPLI != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300PLFMJPNPPLI);
+      }
+      if (Unk3300MEEKFJJIOKE != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300MEEKFJJIOKE);
+      }
+      if (IsNewRecord != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsNewRecord);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (LeftTime != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(LeftTime);
+      }
+      if (IsSuccess != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsSuccess);
+      }
+      if (GroupId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(GroupId);
+      }
+      if (Score != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Score);
+      }
+      if (TotalNum != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(TotalNum);
+      }
+      if (Unk3300PLFMJPNPPLI != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300PLFMJPNPPLI);
+      }
+      if (Unk3300MEEKFJJIOKE != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300MEEKFJJIOKE);
+      }
+      if (IsNewRecord != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsNewRecord);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Score != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
+      }
+      if (LeftTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftTime);
+      }
+      if (IsSuccess != false) {
+        size += 1 + 1;
+      }
+      if (GroupId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
+      }
+      if (Unk3300PLFMJPNPPLI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PLFMJPNPPLI);
+      }
+      if (TotalNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalNum);
+      }
+      if (IsNewRecord != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300MEEKFJJIOKE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MEEKFJJIOKE);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SummerTimeSprintBoatSettleNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Score != 0) {
+        Score = other.Score;
+      }
+      if (other.LeftTime != 0) {
+        LeftTime = other.LeftTime;
+      }
+      if (other.IsSuccess != false) {
+        IsSuccess = other.IsSuccess;
+      }
+      if (other.GroupId != 0) {
+        GroupId = other.GroupId;
+      }
+      if (other.Unk3300PLFMJPNPPLI != 0) {
+        Unk3300PLFMJPNPPLI = other.Unk3300PLFMJPNPPLI;
+      }
+      if (other.TotalNum != 0) {
+        TotalNum = other.TotalNum;
+      }
+      if (other.IsNewRecord != false) {
+        IsNewRecord = other.IsNewRecord;
+      }
+      if (other.Unk3300MEEKFJJIOKE != 0) {
+        Unk3300MEEKFJJIOKE = other.Unk3300MEEKFJJIOKE;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            LeftTime = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 40: {
+            GroupId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Score = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            TotalNum = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300PLFMJPNPPLI = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300MEEKFJJIOKE = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            IsNewRecord = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            LeftTime = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 40: {
+            GroupId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Score = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            TotalNum = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300PLFMJPNPPLI = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300MEEKFJJIOKE = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            IsNewRecord = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 8451;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class SummerTimeSprintBoatSettleNotify : pb::IMessage<SummerTimeSprintBoatSettleNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SummerTimeSprintBoatSettleNotify> _parser = new pb::MessageParser<SummerTimeSprintBoatSettleNotify>(() => new SummerTimeSprintBoatSettleNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SummerTimeSprintBoatSettleNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SummerTimeSprintBoatSettleNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SummerTimeSprintBoatSettleNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SummerTimeSprintBoatSettleNotify(SummerTimeSprintBoatSettleNotify other) : this() {
-    score_ = other.score_;
-    leftTime_ = other.leftTime_;
-    isSuccess_ = other.isSuccess_;
-    groupId_ = other.groupId_;
-    unk3300PLFMJPNPPLI_ = other.unk3300PLFMJPNPPLI_;
-    totalNum_ = other.totalNum_;
-    isNewRecord_ = other.isNewRecord_;
-    unk3300MEEKFJJIOKE_ = other.unk3300MEEKFJJIOKE_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SummerTimeSprintBoatSettleNotify Clone() {
-    return new SummerTimeSprintBoatSettleNotify(this);
-  }
-
-  /// <summary>Field number for the "score" field.</summary>
-  public const int ScoreFieldNumber = 6;
-  private uint score_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Score {
-    get { return score_; }
-    set {
-      score_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "left_time" field.</summary>
-  public const int LeftTimeFieldNumber = 2;
-  private uint leftTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LeftTime {
-    get { return leftTime_; }
-    set {
-      leftTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_success" field.</summary>
-  public const int IsSuccessFieldNumber = 4;
-  private bool isSuccess_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsSuccess {
-    get { return isSuccess_; }
-    set {
-      isSuccess_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "group_id" field.</summary>
-  public const int GroupIdFieldNumber = 5;
-  private uint groupId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GroupId {
-    get { return groupId_; }
-    set {
-      groupId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_PLFMJPNPPLI" field.</summary>
-  public const int Unk3300PLFMJPNPPLIFieldNumber = 12;
-  private uint unk3300PLFMJPNPPLI_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300PLFMJPNPPLI {
-    get { return unk3300PLFMJPNPPLI_; }
-    set {
-      unk3300PLFMJPNPPLI_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "total_num" field.</summary>
-  public const int TotalNumFieldNumber = 10;
-  private uint totalNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TotalNum {
-    get { return totalNum_; }
-    set {
-      totalNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_new_record" field.</summary>
-  public const int IsNewRecordFieldNumber = 15;
-  private bool isNewRecord_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsNewRecord {
-    get { return isNewRecord_; }
-    set {
-      isNewRecord_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_MEEKFJJIOKE" field.</summary>
-  public const int Unk3300MEEKFJJIOKEFieldNumber = 14;
-  private uint unk3300MEEKFJJIOKE_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300MEEKFJJIOKE {
-    get { return unk3300MEEKFJJIOKE_; }
-    set {
-      unk3300MEEKFJJIOKE_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SummerTimeSprintBoatSettleNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SummerTimeSprintBoatSettleNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Score != other.Score) return false;
-    if (LeftTime != other.LeftTime) return false;
-    if (IsSuccess != other.IsSuccess) return false;
-    if (GroupId != other.GroupId) return false;
-    if (Unk3300PLFMJPNPPLI != other.Unk3300PLFMJPNPPLI) return false;
-    if (TotalNum != other.TotalNum) return false;
-    if (IsNewRecord != other.IsNewRecord) return false;
-    if (Unk3300MEEKFJJIOKE != other.Unk3300MEEKFJJIOKE) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Score != 0) hash ^= Score.GetHashCode();
-    if (LeftTime != 0) hash ^= LeftTime.GetHashCode();
-    if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-    if (GroupId != 0) hash ^= GroupId.GetHashCode();
-    if (Unk3300PLFMJPNPPLI != 0) hash ^= Unk3300PLFMJPNPPLI.GetHashCode();
-    if (TotalNum != 0) hash ^= TotalNum.GetHashCode();
-    if (IsNewRecord != false) hash ^= IsNewRecord.GetHashCode();
-    if (Unk3300MEEKFJJIOKE != 0) hash ^= Unk3300MEEKFJJIOKE.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (LeftTime != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(LeftTime);
-    }
-    if (IsSuccess != false) {
-      output.WriteRawTag(32);
-      output.WriteBool(IsSuccess);
-    }
-    if (GroupId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(GroupId);
-    }
-    if (Score != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Score);
-    }
-    if (TotalNum != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(TotalNum);
-    }
-    if (Unk3300PLFMJPNPPLI != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300PLFMJPNPPLI);
-    }
-    if (Unk3300MEEKFJJIOKE != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300MEEKFJJIOKE);
-    }
-    if (IsNewRecord != false) {
-      output.WriteRawTag(120);
-      output.WriteBool(IsNewRecord);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (LeftTime != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(LeftTime);
-    }
-    if (IsSuccess != false) {
-      output.WriteRawTag(32);
-      output.WriteBool(IsSuccess);
-    }
-    if (GroupId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(GroupId);
-    }
-    if (Score != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Score);
-    }
-    if (TotalNum != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(TotalNum);
-    }
-    if (Unk3300PLFMJPNPPLI != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300PLFMJPNPPLI);
-    }
-    if (Unk3300MEEKFJJIOKE != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300MEEKFJJIOKE);
-    }
-    if (IsNewRecord != false) {
-      output.WriteRawTag(120);
-      output.WriteBool(IsNewRecord);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Score != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
-    }
-    if (LeftTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftTime);
-    }
-    if (IsSuccess != false) {
-      size += 1 + 1;
-    }
-    if (GroupId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
-    }
-    if (Unk3300PLFMJPNPPLI != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PLFMJPNPPLI);
-    }
-    if (TotalNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalNum);
-    }
-    if (IsNewRecord != false) {
-      size += 1 + 1;
-    }
-    if (Unk3300MEEKFJJIOKE != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300MEEKFJJIOKE);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SummerTimeSprintBoatSettleNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Score != 0) {
-      Score = other.Score;
-    }
-    if (other.LeftTime != 0) {
-      LeftTime = other.LeftTime;
-    }
-    if (other.IsSuccess != false) {
-      IsSuccess = other.IsSuccess;
-    }
-    if (other.GroupId != 0) {
-      GroupId = other.GroupId;
-    }
-    if (other.Unk3300PLFMJPNPPLI != 0) {
-      Unk3300PLFMJPNPPLI = other.Unk3300PLFMJPNPPLI;
-    }
-    if (other.TotalNum != 0) {
-      TotalNum = other.TotalNum;
-    }
-    if (other.IsNewRecord != false) {
-      IsNewRecord = other.IsNewRecord;
-    }
-    if (other.Unk3300MEEKFJJIOKE != 0) {
-      Unk3300MEEKFJJIOKE = other.Unk3300MEEKFJJIOKE;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          LeftTime = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          IsSuccess = input.ReadBool();
-          break;
-        }
-        case 40: {
-          GroupId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          Score = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          TotalNum = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Unk3300PLFMJPNPPLI = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300MEEKFJJIOKE = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          IsNewRecord = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          LeftTime = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          IsSuccess = input.ReadBool();
-          break;
-        }
-        case 40: {
-          GroupId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          Score = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          TotalNum = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Unk3300PLFMJPNPPLI = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300MEEKFJJIOKE = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          IsNewRecord = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

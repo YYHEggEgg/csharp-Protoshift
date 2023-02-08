@@ -9,38 +9,40 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GetUgcType.proto</summary>
-public static partial class GetUgcTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GetUgcType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GetUgcType.proto</summary>
+  public static partial class GetUgcTypeReflection {
 
-  static GetUgcTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChBHZXRVZ2NUeXBlLnByb3RvKlQKCkdldFVnY1R5cGUSFQoRR0VUX1VHQ19U",
-          "WVBFX05PTkUQABIVChFHRVRfVUdDX1RZUEVfTUlORRABEhgKFEdFVF9VR0Nf",
-          "VFlQRV9QVUJMSVNIEAJCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90",
-          "b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GetUgcType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for GetUgcType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GetUgcTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChBHZXRVZ2NUeXBlLnByb3RvKlQKCkdldFVnY1R5cGUSFQoRR0VUX1VHQ19U",
+            "WVBFX05PTkUQABIVChFHRVRfVUdDX1RZUEVfTUlORRABEhgKFEdFVF9VR0Nf",
+            "VFlQRV9QVUJMSVNIEAJCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.GetUgcType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum GetUgcType {
+    [pbr::OriginalName("GET_UGC_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("GET_UGC_TYPE_MINE")] Mine = 1,
+    [pbr::OriginalName("GET_UGC_TYPE_PUBLISH")] Publish = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum GetUgcType {
-  [pbr::OriginalName("GET_UGC_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("GET_UGC_TYPE_MINE")] Mine = 1,
-  [pbr::OriginalName("GET_UGC_TYPE_PUBLISH")] Publish = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

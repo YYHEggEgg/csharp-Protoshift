@@ -9,41 +9,44 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FeatureBlockType.proto</summary>
-public static partial class FeatureBlockTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FeatureBlockType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FeatureBlockType.proto</summary>
+  public static partial class FeatureBlockTypeReflection {
 
-  static FeatureBlockTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZGZWF0dXJlQmxvY2tUeXBlLnByb3RvKqABChBGZWF0dXJlQmxvY2tUeXBl",
-          "EhsKF0ZFQVRVUkVfQkxPQ0tfVFlQRV9OT05FEAASGwoXRkVBVFVSRV9CTE9D",
-          "S19UWVBFX0NIQVQQARIZChVGRUFUVVJFX0JMT0NLX1RZUEVfTVAQAhIaChZG",
-          "RUFUVVJFX0JMT0NLX1RZUEVfQ1JDEAMSGwoXRkVBVFVSRV9CTE9DS19UWVBF",
-          "X0hPTUUQBEIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::FeatureBlockType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for FeatureBlockType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FeatureBlockTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZGZWF0dXJlQmxvY2tUeXBlLnByb3RvKqABChBGZWF0dXJlQmxvY2tUeXBl",
+            "EhsKF0ZFQVRVUkVfQkxPQ0tfVFlQRV9OT05FEAASGwoXRkVBVFVSRV9CTE9D",
+            "S19UWVBFX0NIQVQQARIZChVGRUFUVVJFX0JMT0NLX1RZUEVfTVAQAhIaChZG",
+            "RUFUVVJFX0JMT0NLX1RZUEVfQ1JDEAMSGwoXRkVBVFVSRV9CTE9DS19UWVBF",
+            "X0hPTUUQBEIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.FeatureBlockType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum FeatureBlockType {
+    [pbr::OriginalName("FEATURE_BLOCK_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("FEATURE_BLOCK_TYPE_CHAT")] Chat = 1,
+    [pbr::OriginalName("FEATURE_BLOCK_TYPE_MP")] Mp = 2,
+    [pbr::OriginalName("FEATURE_BLOCK_TYPE_CRC")] Crc = 3,
+    [pbr::OriginalName("FEATURE_BLOCK_TYPE_HOME")] Home = 4,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum FeatureBlockType {
-  [pbr::OriginalName("FEATURE_BLOCK_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("FEATURE_BLOCK_TYPE_CHAT")] Chat = 1,
-  [pbr::OriginalName("FEATURE_BLOCK_TYPE_MP")] Mp = 2,
-  [pbr::OriginalName("FEATURE_BLOCK_TYPE_CRC")] Crc = 3,
-  [pbr::OriginalName("FEATURE_BLOCK_TYPE_HOME")] Home = 4,
-}
-
-#endregion
-
 
 #endregion Designer generated code

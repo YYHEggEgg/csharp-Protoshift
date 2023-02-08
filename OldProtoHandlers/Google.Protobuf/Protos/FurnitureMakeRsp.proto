@@ -21,7 +21,7 @@ import "FurnitureMakeHelpData.proto";
 import "FurnitureMakeInfo.proto";
 import "FurnitureMakeSlot.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 4782
 // EnetChannelId: 0

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ProfilePicture.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message ActivityFriendGiftWishData {
   map<uint32, uint32> gift_num_map = 5;

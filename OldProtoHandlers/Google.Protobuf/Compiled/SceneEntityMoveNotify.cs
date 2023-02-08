@@ -9,349 +9,352 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SceneEntityMoveNotify.proto</summary>
-public static partial class SceneEntityMoveNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SceneEntityMoveNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SceneEntityMoveNotify.proto</summary>
+  public static partial class SceneEntityMoveNotifyReflection {
 
-  static SceneEntityMoveNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtTY2VuZUVudGl0eU1vdmVOb3RpZnkucHJvdG8aEE1vdGlvbkluZm8ucHJv",
-          "dG8idgoVU2NlbmVFbnRpdHlNb3ZlTm90aWZ5EiAKC21vdGlvbl9pbmZvGAYg",
-          "ASgLMgsuTW90aW9uSW5mbxIRCgllbnRpdHlfaWQYCCABKA0SEgoKc2NlbmVf",
-          "dGltZRgPIAEoDRIUCgxyZWxpYWJsZV9zZXEYAiABKA1CHgocZW11LmdyYXNz",
-          "Y3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::MotionInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SceneEntityMoveNotify), global::SceneEntityMoveNotify.Parser, new[]{ "MotionInfo", "EntityId", "SceneTime", "ReliableSeq" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SceneEntityMoveNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SceneEntityMoveNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtTY2VuZUVudGl0eU1vdmVOb3RpZnkucHJvdG8aEE1vdGlvbkluZm8ucHJv",
+            "dG8idgoVU2NlbmVFbnRpdHlNb3ZlTm90aWZ5EiAKC21vdGlvbl9pbmZvGAYg",
+            "ASgLMgsuTW90aW9uSW5mbxIRCgllbnRpdHlfaWQYCCABKA0SEgoKc2NlbmVf",
+            "dGltZRgPIAEoDRIUCgxyZWxpYWJsZV9zZXEYAiABKA1CDKoCCU9sZFByb3Rv",
+            "c2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.MotionInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.SceneEntityMoveNotify), global::OldProtos.SceneEntityMoveNotify.Parser, new[]{ "MotionInfo", "EntityId", "SceneTime", "ReliableSeq" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 275
+  /// EnetChannelId: 1
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class SceneEntityMoveNotify : pb::IMessage<SceneEntityMoveNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SceneEntityMoveNotify> _parser = new pb::MessageParser<SceneEntityMoveNotify>(() => new SceneEntityMoveNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SceneEntityMoveNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.SceneEntityMoveNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneEntityMoveNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneEntityMoveNotify(SceneEntityMoveNotify other) : this() {
+      motionInfo_ = other.motionInfo_ != null ? other.motionInfo_.Clone() : null;
+      entityId_ = other.entityId_;
+      sceneTime_ = other.sceneTime_;
+      reliableSeq_ = other.reliableSeq_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneEntityMoveNotify Clone() {
+      return new SceneEntityMoveNotify(this);
+    }
+
+    /// <summary>Field number for the "motion_info" field.</summary>
+    public const int MotionInfoFieldNumber = 6;
+    private global::OldProtos.MotionInfo motionInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.MotionInfo MotionInfo {
+      get { return motionInfo_; }
+      set {
+        motionInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 8;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scene_time" field.</summary>
+    public const int SceneTimeFieldNumber = 15;
+    private uint sceneTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SceneTime {
+      get { return sceneTime_; }
+      set {
+        sceneTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reliable_seq" field.</summary>
+    public const int ReliableSeqFieldNumber = 2;
+    private uint reliableSeq_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ReliableSeq {
+      get { return reliableSeq_; }
+      set {
+        reliableSeq_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SceneEntityMoveNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SceneEntityMoveNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(MotionInfo, other.MotionInfo)) return false;
+      if (EntityId != other.EntityId) return false;
+      if (SceneTime != other.SceneTime) return false;
+      if (ReliableSeq != other.ReliableSeq) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (motionInfo_ != null) hash ^= MotionInfo.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (SceneTime != 0) hash ^= SceneTime.GetHashCode();
+      if (ReliableSeq != 0) hash ^= ReliableSeq.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ReliableSeq != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ReliableSeq);
+      }
+      if (motionInfo_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(MotionInfo);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(EntityId);
+      }
+      if (SceneTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(SceneTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ReliableSeq != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ReliableSeq);
+      }
+      if (motionInfo_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(MotionInfo);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(EntityId);
+      }
+      if (SceneTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(SceneTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (motionInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MotionInfo);
+      }
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (SceneTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneTime);
+      }
+      if (ReliableSeq != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReliableSeq);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SceneEntityMoveNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.motionInfo_ != null) {
+        if (motionInfo_ == null) {
+          MotionInfo = new global::OldProtos.MotionInfo();
+        }
+        MotionInfo.MergeFrom(other.MotionInfo);
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.SceneTime != 0) {
+        SceneTime = other.SceneTime;
+      }
+      if (other.ReliableSeq != 0) {
+        ReliableSeq = other.ReliableSeq;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            ReliableSeq = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            if (motionInfo_ == null) {
+              MotionInfo = new global::OldProtos.MotionInfo();
+            }
+            input.ReadMessage(MotionInfo);
+            break;
+          }
+          case 64: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            SceneTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            ReliableSeq = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            if (motionInfo_ == null) {
+              MotionInfo = new global::OldProtos.MotionInfo();
+            }
+            input.ReadMessage(MotionInfo);
+            break;
+          }
+          case 64: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            SceneTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 275
-/// EnetChannelId: 1
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class SceneEntityMoveNotify : pb::IMessage<SceneEntityMoveNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SceneEntityMoveNotify> _parser = new pb::MessageParser<SceneEntityMoveNotify>(() => new SceneEntityMoveNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SceneEntityMoveNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SceneEntityMoveNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneEntityMoveNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneEntityMoveNotify(SceneEntityMoveNotify other) : this() {
-    motionInfo_ = other.motionInfo_ != null ? other.motionInfo_.Clone() : null;
-    entityId_ = other.entityId_;
-    sceneTime_ = other.sceneTime_;
-    reliableSeq_ = other.reliableSeq_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneEntityMoveNotify Clone() {
-    return new SceneEntityMoveNotify(this);
-  }
-
-  /// <summary>Field number for the "motion_info" field.</summary>
-  public const int MotionInfoFieldNumber = 6;
-  private global::MotionInfo motionInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MotionInfo MotionInfo {
-    get { return motionInfo_; }
-    set {
-      motionInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity_id" field.</summary>
-  public const int EntityIdFieldNumber = 8;
-  private uint entityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EntityId {
-    get { return entityId_; }
-    set {
-      entityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "scene_time" field.</summary>
-  public const int SceneTimeFieldNumber = 15;
-  private uint sceneTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SceneTime {
-    get { return sceneTime_; }
-    set {
-      sceneTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "reliable_seq" field.</summary>
-  public const int ReliableSeqFieldNumber = 2;
-  private uint reliableSeq_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ReliableSeq {
-    get { return reliableSeq_; }
-    set {
-      reliableSeq_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SceneEntityMoveNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SceneEntityMoveNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(MotionInfo, other.MotionInfo)) return false;
-    if (EntityId != other.EntityId) return false;
-    if (SceneTime != other.SceneTime) return false;
-    if (ReliableSeq != other.ReliableSeq) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (motionInfo_ != null) hash ^= MotionInfo.GetHashCode();
-    if (EntityId != 0) hash ^= EntityId.GetHashCode();
-    if (SceneTime != 0) hash ^= SceneTime.GetHashCode();
-    if (ReliableSeq != 0) hash ^= ReliableSeq.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ReliableSeq != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(ReliableSeq);
-    }
-    if (motionInfo_ != null) {
-      output.WriteRawTag(50);
-      output.WriteMessage(MotionInfo);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(EntityId);
-    }
-    if (SceneTime != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(SceneTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ReliableSeq != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(ReliableSeq);
-    }
-    if (motionInfo_ != null) {
-      output.WriteRawTag(50);
-      output.WriteMessage(MotionInfo);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(EntityId);
-    }
-    if (SceneTime != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(SceneTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (motionInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(MotionInfo);
-    }
-    if (EntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-    }
-    if (SceneTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneTime);
-    }
-    if (ReliableSeq != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReliableSeq);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SceneEntityMoveNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.motionInfo_ != null) {
-      if (motionInfo_ == null) {
-        MotionInfo = new global::MotionInfo();
-      }
-      MotionInfo.MergeFrom(other.MotionInfo);
-    }
-    if (other.EntityId != 0) {
-      EntityId = other.EntityId;
-    }
-    if (other.SceneTime != 0) {
-      SceneTime = other.SceneTime;
-    }
-    if (other.ReliableSeq != 0) {
-      ReliableSeq = other.ReliableSeq;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          ReliableSeq = input.ReadUInt32();
-          break;
-        }
-        case 50: {
-          if (motionInfo_ == null) {
-            MotionInfo = new global::MotionInfo();
-          }
-          input.ReadMessage(MotionInfo);
-          break;
-        }
-        case 64: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          SceneTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          ReliableSeq = input.ReadUInt32();
-          break;
-        }
-        case 50: {
-          if (motionInfo_ == null) {
-            MotionInfo = new global::MotionInfo();
-          }
-          input.ReadMessage(MotionInfo);
-          break;
-        }
-        case 64: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          SceneTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

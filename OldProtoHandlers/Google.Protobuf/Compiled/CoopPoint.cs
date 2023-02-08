@@ -9,312 +9,315 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CoopPoint.proto</summary>
-public static partial class CoopPointReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CoopPoint.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CoopPoint.proto</summary>
+  public static partial class CoopPointReflection {
 
-  static CoopPointReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Cg9Db29wUG9pbnQucHJvdG8ilgEKCUNvb3BQb2ludBIXCg9zZWxmX2NvbmZp",
-          "ZGVuY2UYDyABKA0SHwoFc3RhdGUYCiABKA4yEC5Db29wUG9pbnQuU3RhdGUS",
-          "CgoCaWQYDiABKA0iQwoFU3RhdGUSEwoPU1RBVEVfVU5TVEFSVEVEEAASEQoN",
-          "U1RBVEVfU1RBUlRFRBABEhIKDlNUQVRFX0ZJTklTSEVEEAJCHgocZW11Lmdy",
-          "YXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::CoopPoint), global::CoopPoint.Parser, new[]{ "SelfConfidence", "State", "Id" }, null, new[]{ typeof(global::CoopPoint.Types.State) }, null, null)
-        }));
-  }
-  #endregion
-
-}
-#region Messages
-public sealed partial class CoopPoint : pb::IMessage<CoopPoint>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<CoopPoint> _parser = new pb::MessageParser<CoopPoint>(() => new CoopPoint());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<CoopPoint> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::CoopPointReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CoopPoint() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CoopPoint(CoopPoint other) : this() {
-    selfConfidence_ = other.selfConfidence_;
-    state_ = other.state_;
-    id_ = other.id_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CoopPoint Clone() {
-    return new CoopPoint(this);
-  }
-
-  /// <summary>Field number for the "self_confidence" field.</summary>
-  public const int SelfConfidenceFieldNumber = 15;
-  private uint selfConfidence_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SelfConfidence {
-    get { return selfConfidence_; }
-    set {
-      selfConfidence_ = value;
+    #region Descriptor
+    /// <summary>File descriptor for CoopPoint.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
     }
-  }
+    private static pbr::FileDescriptor descriptor;
 
-  /// <summary>Field number for the "state" field.</summary>
-  public const int StateFieldNumber = 10;
-  private global::CoopPoint.Types.State state_ = global::CoopPoint.Types.State.Unstarted;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CoopPoint.Types.State State {
-    get { return state_; }
-    set {
-      state_ = value;
+    static CoopPointReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Cg9Db29wUG9pbnQucHJvdG8ilgEKCUNvb3BQb2ludBIXCg9zZWxmX2NvbmZp",
+            "ZGVuY2UYDyABKA0SHwoFc3RhdGUYCiABKA4yEC5Db29wUG9pbnQuU3RhdGUS",
+            "CgoCaWQYDiABKA0iQwoFU3RhdGUSEwoPU1RBVEVfVU5TVEFSVEVEEAASEQoN",
+            "U1RBVEVfU1RBUlRFRBABEhIKDlNUQVRFX0ZJTklTSEVEEAJCDKoCCU9sZFBy",
+            "b3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.CoopPoint), global::OldProtos.CoopPoint.Parser, new[]{ "SelfConfidence", "State", "Id" }, null, new[]{ typeof(global::OldProtos.CoopPoint.Types.State) }, null, null)
+          }));
     }
-  }
+    #endregion
 
-  /// <summary>Field number for the "id" field.</summary>
-  public const int IdFieldNumber = 14;
-  private uint id_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Id {
-    get { return id_; }
-    set {
-      id_ = value;
-    }
   }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as CoopPoint);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(CoopPoint other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (SelfConfidence != other.SelfConfidence) return false;
-    if (State != other.State) return false;
-    if (Id != other.Id) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (SelfConfidence != 0) hash ^= SelfConfidence.GetHashCode();
-    if (State != global::CoopPoint.Types.State.Unstarted) hash ^= State.GetHashCode();
-    if (Id != 0) hash ^= Id.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
+  #region Messages
+  public sealed partial class CoopPoint : pb::IMessage<CoopPoint>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (State != global::CoopPoint.Types.State.Unstarted) {
-      output.WriteRawTag(80);
-      output.WriteEnum((int) State);
-    }
-    if (Id != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Id);
-    }
-    if (SelfConfidence != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(SelfConfidence);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
+      , pb::IBufferMessage
   #endif
-  }
+  {
+    private static readonly pb::MessageParser<CoopPoint> _parser = new pb::MessageParser<CoopPoint>(() => new CoopPoint());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CoopPoint> Parser { get { return _parser; } }
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (State != global::CoopPoint.Types.State.Unstarted) {
-      output.WriteRawTag(80);
-      output.WriteEnum((int) State);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.CoopPointReflection.Descriptor.MessageTypes[0]; }
     }
-    if (Id != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Id);
-    }
-    if (SelfConfidence != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(SelfConfidence);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (SelfConfidence != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SelfConfidence);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
     }
-    if (State != global::CoopPoint.Types.State.Unstarted) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
-    }
-    if (Id != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(CoopPoint other) {
-    if (other == null) {
-      return;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CoopPoint() {
+      OnConstruction();
     }
-    if (other.SelfConfidence != 0) {
-      SelfConfidence = other.SelfConfidence;
-    }
-    if (other.State != global::CoopPoint.Types.State.Unstarted) {
-      State = other.State;
-    }
-    if (other.Id != 0) {
-      Id = other.Id;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 80: {
-          State = (global::CoopPoint.Types.State) input.ReadEnum();
-          break;
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CoopPoint(CoopPoint other) : this() {
+      selfConfidence_ = other.selfConfidence_;
+      state_ = other.state_;
+      id_ = other.id_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CoopPoint Clone() {
+      return new CoopPoint(this);
+    }
+
+    /// <summary>Field number for the "self_confidence" field.</summary>
+    public const int SelfConfidenceFieldNumber = 15;
+    private uint selfConfidence_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SelfConfidence {
+      get { return selfConfidence_; }
+      set {
+        selfConfidence_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "state" field.</summary>
+    public const int StateFieldNumber = 10;
+    private global::OldProtos.CoopPoint.Types.State state_ = global::OldProtos.CoopPoint.Types.State.Unstarted;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.CoopPoint.Types.State State {
+      get { return state_; }
+      set {
+        state_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 14;
+    private uint id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CoopPoint);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CoopPoint other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SelfConfidence != other.SelfConfidence) return false;
+      if (State != other.State) return false;
+      if (Id != other.Id) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SelfConfidence != 0) hash ^= SelfConfidence.GetHashCode();
+      if (State != global::OldProtos.CoopPoint.Types.State.Unstarted) hash ^= State.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (State != global::OldProtos.CoopPoint.Types.State.Unstarted) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) State);
+      }
+      if (Id != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Id);
+      }
+      if (SelfConfidence != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(SelfConfidence);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (State != global::OldProtos.CoopPoint.Types.State.Unstarted) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) State);
+      }
+      if (Id != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Id);
+      }
+      if (SelfConfidence != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(SelfConfidence);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (SelfConfidence != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SelfConfidence);
+      }
+      if (State != global::OldProtos.CoopPoint.Types.State.Unstarted) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
+      }
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CoopPoint other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SelfConfidence != 0) {
+        SelfConfidence = other.SelfConfidence;
+      }
+      if (other.State != global::OldProtos.CoopPoint.Types.State.Unstarted) {
+        State = other.State;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 80: {
+            State = (global::OldProtos.CoopPoint.Types.State) input.ReadEnum();
+            break;
+          }
+          case 112: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            SelfConfidence = input.ReadUInt32();
+            break;
+          }
         }
-        case 112: {
-          Id = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          SelfConfidence = input.ReadUInt32();
-          break;
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 80: {
+            State = (global::OldProtos.CoopPoint.Types.State) input.ReadEnum();
+            break;
+          }
+          case 112: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            SelfConfidence = input.ReadUInt32();
+            break;
+          }
         }
       }
     }
-  #endif
-  }
+    #endif
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 80: {
-          State = (global::CoopPoint.Types.State) input.ReadEnum();
-          break;
-        }
-        case 112: {
-          Id = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          SelfConfidence = input.ReadUInt32();
-          break;
-        }
+    #region Nested types
+    /// <summary>Container for nested types declared in the CoopPoint message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum State {
+        [pbr::OriginalName("STATE_UNSTARTED")] Unstarted = 0,
+        [pbr::OriginalName("STATE_STARTED")] Started = 1,
+        [pbr::OriginalName("STATE_FINISHED")] Finished = 2,
       }
-    }
-  }
-  #endif
 
-  #region Nested types
-  /// <summary>Container for nested types declared in the CoopPoint message type.</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static partial class Types {
-    public enum State {
-      [pbr::OriginalName("STATE_UNSTARTED")] Unstarted = 0,
-      [pbr::OriginalName("STATE_STARTED")] Started = 1,
-      [pbr::OriginalName("STATE_FINISHED")] Finished = 2,
     }
+    #endregion
 
   }
+
   #endregion
 
 }
-
-#endregion
-
 
 #endregion Designer generated code

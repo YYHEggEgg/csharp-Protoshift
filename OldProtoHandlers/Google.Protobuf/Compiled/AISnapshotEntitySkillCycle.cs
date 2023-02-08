@@ -9,372 +9,374 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AISnapshotEntitySkillCycle.proto</summary>
-public static partial class AISnapshotEntitySkillCycleReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AISnapshotEntitySkillCycle.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AISnapshotEntitySkillCycle.proto</summary>
+  public static partial class AISnapshotEntitySkillCycleReflection {
 
-  static AISnapshotEntitySkillCycleReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBBSVNuYXBzaG90RW50aXR5U2tpbGxDeWNsZS5wcm90byJ1ChpBSVNuYXBz",
-          "aG90RW50aXR5U2tpbGxDeWNsZRIOCgZmYWlsZWQYDCABKAgSEgoKdHJ5ZG9z",
-          "a2lsbBgIIAEoCBIPCgdzdWNjZXNzGAkgASgIEhAKCHNlbGVjdGVkGAEgASgI",
-          "EhAKCHNraWxsX2lkGAIgASgNQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xk",
-          "cHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AISnapshotEntitySkillCycle), global::AISnapshotEntitySkillCycle.Parser, new[]{ "Failed", "Trydoskill", "Success", "Selected", "SkillId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AISnapshotEntitySkillCycle.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AISnapshotEntitySkillCycleReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBBSVNuYXBzaG90RW50aXR5U2tpbGxDeWNsZS5wcm90byJ1ChpBSVNuYXBz",
+            "aG90RW50aXR5U2tpbGxDeWNsZRIOCgZmYWlsZWQYDCABKAgSEgoKdHJ5ZG9z",
+            "a2lsbBgIIAEoCBIPCgdzdWNjZXNzGAkgASgIEhAKCHNlbGVjdGVkGAEgASgI",
+            "EhAKCHNraWxsX2lkGAIgASgNQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.AISnapshotEntitySkillCycle), global::OldProtos.AISnapshotEntitySkillCycle.Parser, new[]{ "Failed", "Trydoskill", "Success", "Selected", "SkillId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class AISnapshotEntitySkillCycle : pb::IMessage<AISnapshotEntitySkillCycle>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AISnapshotEntitySkillCycle> _parser = new pb::MessageParser<AISnapshotEntitySkillCycle>(() => new AISnapshotEntitySkillCycle());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AISnapshotEntitySkillCycle> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.AISnapshotEntitySkillCycleReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AISnapshotEntitySkillCycle() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AISnapshotEntitySkillCycle(AISnapshotEntitySkillCycle other) : this() {
+      failed_ = other.failed_;
+      trydoskill_ = other.trydoskill_;
+      success_ = other.success_;
+      selected_ = other.selected_;
+      skillId_ = other.skillId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AISnapshotEntitySkillCycle Clone() {
+      return new AISnapshotEntitySkillCycle(this);
+    }
+
+    /// <summary>Field number for the "failed" field.</summary>
+    public const int FailedFieldNumber = 12;
+    private bool failed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Failed {
+      get { return failed_; }
+      set {
+        failed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "trydoskill" field.</summary>
+    public const int TrydoskillFieldNumber = 8;
+    private bool trydoskill_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Trydoskill {
+      get { return trydoskill_; }
+      set {
+        trydoskill_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 9;
+    private bool success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "selected" field.</summary>
+    public const int SelectedFieldNumber = 1;
+    private bool selected_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Selected {
+      get { return selected_; }
+      set {
+        selected_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_id" field.</summary>
+    public const int SkillIdFieldNumber = 2;
+    private uint skillId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillId {
+      get { return skillId_; }
+      set {
+        skillId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AISnapshotEntitySkillCycle);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AISnapshotEntitySkillCycle other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Failed != other.Failed) return false;
+      if (Trydoskill != other.Trydoskill) return false;
+      if (Success != other.Success) return false;
+      if (Selected != other.Selected) return false;
+      if (SkillId != other.SkillId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Failed != false) hash ^= Failed.GetHashCode();
+      if (Trydoskill != false) hash ^= Trydoskill.GetHashCode();
+      if (Success != false) hash ^= Success.GetHashCode();
+      if (Selected != false) hash ^= Selected.GetHashCode();
+      if (SkillId != 0) hash ^= SkillId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Selected != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Selected);
+      }
+      if (SkillId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(SkillId);
+      }
+      if (Trydoskill != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Trydoskill);
+      }
+      if (Success != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Success);
+      }
+      if (Failed != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Failed);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Selected != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Selected);
+      }
+      if (SkillId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(SkillId);
+      }
+      if (Trydoskill != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Trydoskill);
+      }
+      if (Success != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(Success);
+      }
+      if (Failed != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Failed);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Failed != false) {
+        size += 1 + 1;
+      }
+      if (Trydoskill != false) {
+        size += 1 + 1;
+      }
+      if (Success != false) {
+        size += 1 + 1;
+      }
+      if (Selected != false) {
+        size += 1 + 1;
+      }
+      if (SkillId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AISnapshotEntitySkillCycle other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Failed != false) {
+        Failed = other.Failed;
+      }
+      if (other.Trydoskill != false) {
+        Trydoskill = other.Trydoskill;
+      }
+      if (other.Success != false) {
+        Success = other.Success;
+      }
+      if (other.Selected != false) {
+        Selected = other.Selected;
+      }
+      if (other.SkillId != 0) {
+        SkillId = other.SkillId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Selected = input.ReadBool();
+            break;
+          }
+          case 16: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Trydoskill = input.ReadBool();
+            break;
+          }
+          case 72: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 96: {
+            Failed = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Selected = input.ReadBool();
+            break;
+          }
+          case 16: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Trydoskill = input.ReadBool();
+            break;
+          }
+          case 72: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 96: {
+            Failed = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class AISnapshotEntitySkillCycle : pb::IMessage<AISnapshotEntitySkillCycle>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AISnapshotEntitySkillCycle> _parser = new pb::MessageParser<AISnapshotEntitySkillCycle>(() => new AISnapshotEntitySkillCycle());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AISnapshotEntitySkillCycle> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AISnapshotEntitySkillCycleReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AISnapshotEntitySkillCycle() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AISnapshotEntitySkillCycle(AISnapshotEntitySkillCycle other) : this() {
-    failed_ = other.failed_;
-    trydoskill_ = other.trydoskill_;
-    success_ = other.success_;
-    selected_ = other.selected_;
-    skillId_ = other.skillId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AISnapshotEntitySkillCycle Clone() {
-    return new AISnapshotEntitySkillCycle(this);
-  }
-
-  /// <summary>Field number for the "failed" field.</summary>
-  public const int FailedFieldNumber = 12;
-  private bool failed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Failed {
-    get { return failed_; }
-    set {
-      failed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "trydoskill" field.</summary>
-  public const int TrydoskillFieldNumber = 8;
-  private bool trydoskill_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Trydoskill {
-    get { return trydoskill_; }
-    set {
-      trydoskill_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "success" field.</summary>
-  public const int SuccessFieldNumber = 9;
-  private bool success_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Success {
-    get { return success_; }
-    set {
-      success_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "selected" field.</summary>
-  public const int SelectedFieldNumber = 1;
-  private bool selected_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Selected {
-    get { return selected_; }
-    set {
-      selected_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "skill_id" field.</summary>
-  public const int SkillIdFieldNumber = 2;
-  private uint skillId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SkillId {
-    get { return skillId_; }
-    set {
-      skillId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AISnapshotEntitySkillCycle);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AISnapshotEntitySkillCycle other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Failed != other.Failed) return false;
-    if (Trydoskill != other.Trydoskill) return false;
-    if (Success != other.Success) return false;
-    if (Selected != other.Selected) return false;
-    if (SkillId != other.SkillId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Failed != false) hash ^= Failed.GetHashCode();
-    if (Trydoskill != false) hash ^= Trydoskill.GetHashCode();
-    if (Success != false) hash ^= Success.GetHashCode();
-    if (Selected != false) hash ^= Selected.GetHashCode();
-    if (SkillId != 0) hash ^= SkillId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Selected != false) {
-      output.WriteRawTag(8);
-      output.WriteBool(Selected);
-    }
-    if (SkillId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(SkillId);
-    }
-    if (Trydoskill != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(Trydoskill);
-    }
-    if (Success != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(Success);
-    }
-    if (Failed != false) {
-      output.WriteRawTag(96);
-      output.WriteBool(Failed);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Selected != false) {
-      output.WriteRawTag(8);
-      output.WriteBool(Selected);
-    }
-    if (SkillId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(SkillId);
-    }
-    if (Trydoskill != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(Trydoskill);
-    }
-    if (Success != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(Success);
-    }
-    if (Failed != false) {
-      output.WriteRawTag(96);
-      output.WriteBool(Failed);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Failed != false) {
-      size += 1 + 1;
-    }
-    if (Trydoskill != false) {
-      size += 1 + 1;
-    }
-    if (Success != false) {
-      size += 1 + 1;
-    }
-    if (Selected != false) {
-      size += 1 + 1;
-    }
-    if (SkillId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AISnapshotEntitySkillCycle other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Failed != false) {
-      Failed = other.Failed;
-    }
-    if (other.Trydoskill != false) {
-      Trydoskill = other.Trydoskill;
-    }
-    if (other.Success != false) {
-      Success = other.Success;
-    }
-    if (other.Selected != false) {
-      Selected = other.Selected;
-    }
-    if (other.SkillId != 0) {
-      SkillId = other.SkillId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          Selected = input.ReadBool();
-          break;
-        }
-        case 16: {
-          SkillId = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          Trydoskill = input.ReadBool();
-          break;
-        }
-        case 72: {
-          Success = input.ReadBool();
-          break;
-        }
-        case 96: {
-          Failed = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          Selected = input.ReadBool();
-          break;
-        }
-        case 16: {
-          SkillId = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          Trydoskill = input.ReadBool();
-          break;
-        }
-        case 72: {
-          Success = input.ReadBool();
-          break;
-        }
-        case 96: {
-          Failed = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

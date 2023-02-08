@@ -9,504 +9,507 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from TreasureMapActivityDetailInfo.proto</summary>
-public static partial class TreasureMapActivityDetailInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for TreasureMapActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from TreasureMapActivityDetailInfo.proto</summary>
+  public static partial class TreasureMapActivityDetailInfoReflection {
 
-  static TreasureMapActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiNUcmVhc3VyZU1hcEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxojVHJlYXN1",
-          "cmVNYXBCb251c0NoYWxsZW5nZUluZm8ucHJvdG8aG1RyZWFzdXJlTWFwUmVn",
-          "aW9uSW5mby5wcm90byLVAgodVHJlYXN1cmVNYXBBY3Rpdml0eURldGFpbElu",
-          "Zm8SGwoTYWN0aXZlX3JlZ2lvbl9pbmRleBgBIAEoDRIwChByZWdpb25faW5m",
-          "b19saXN0GAYgAygLMhYuVHJlYXN1cmVNYXBSZWdpb25JbmZvEh8KF2lzX21w",
-          "X2NoYWxsZW5nZV90b3VjaGVkGAcgASgIEhsKE3RyZWFzdXJlX2Nsb3NlX3Rp",
-          "bWUYCiABKA0SPAoUYm9udXNfY2hhbGxlbmdlX2xpc3QYBSADKAsyHi5UcmVh",
-          "c3VyZU1hcEJvbnVzQ2hhbGxlbmdlSW5mbxIUCgxjdXJyZW5jeV9udW0YAiAB",
-          "KA0SGQoRcHJldmlld19yZXdhcmRfaWQYDiABKA0SHQoVbWluX29wZW5fcGxh",
-          "eWVyX2xldmVsGAggASgNEhkKEXRvdGFsX21wX3Nwb3RfbnVtGA0gASgNQh4K",
-          "HGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::TreasureMapBonusChallengeInfoReflection.Descriptor, global::TreasureMapRegionInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::TreasureMapActivityDetailInfo), global::TreasureMapActivityDetailInfo.Parser, new[]{ "ActiveRegionIndex", "RegionInfoList", "IsMpChallengeTouched", "TreasureCloseTime", "BonusChallengeList", "CurrencyNum", "PreviewRewardId", "MinOpenPlayerLevel", "TotalMpSpotNum" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for TreasureMapActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static TreasureMapActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiNUcmVhc3VyZU1hcEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxojVHJlYXN1",
+            "cmVNYXBCb251c0NoYWxsZW5nZUluZm8ucHJvdG8aG1RyZWFzdXJlTWFwUmVn",
+            "aW9uSW5mby5wcm90byLVAgodVHJlYXN1cmVNYXBBY3Rpdml0eURldGFpbElu",
+            "Zm8SGwoTYWN0aXZlX3JlZ2lvbl9pbmRleBgBIAEoDRIwChByZWdpb25faW5m",
+            "b19saXN0GAYgAygLMhYuVHJlYXN1cmVNYXBSZWdpb25JbmZvEh8KF2lzX21w",
+            "X2NoYWxsZW5nZV90b3VjaGVkGAcgASgIEhsKE3RyZWFzdXJlX2Nsb3NlX3Rp",
+            "bWUYCiABKA0SPAoUYm9udXNfY2hhbGxlbmdlX2xpc3QYBSADKAsyHi5UcmVh",
+            "c3VyZU1hcEJvbnVzQ2hhbGxlbmdlSW5mbxIUCgxjdXJyZW5jeV9udW0YAiAB",
+            "KA0SGQoRcHJldmlld19yZXdhcmRfaWQYDiABKA0SHQoVbWluX29wZW5fcGxh",
+            "eWVyX2xldmVsGAggASgNEhkKEXRvdGFsX21wX3Nwb3RfbnVtGA0gASgNQgyq",
+            "AglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.TreasureMapBonusChallengeInfoReflection.Descriptor, global::OldProtos.TreasureMapRegionInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.TreasureMapActivityDetailInfo), global::OldProtos.TreasureMapActivityDetailInfo.Parser, new[]{ "ActiveRegionIndex", "RegionInfoList", "IsMpChallengeTouched", "TreasureCloseTime", "BonusChallengeList", "CurrencyNum", "PreviewRewardId", "MinOpenPlayerLevel", "TotalMpSpotNum" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class TreasureMapActivityDetailInfo : pb::IMessage<TreasureMapActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TreasureMapActivityDetailInfo> _parser = new pb::MessageParser<TreasureMapActivityDetailInfo>(() => new TreasureMapActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TreasureMapActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.TreasureMapActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TreasureMapActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TreasureMapActivityDetailInfo(TreasureMapActivityDetailInfo other) : this() {
+      activeRegionIndex_ = other.activeRegionIndex_;
+      regionInfoList_ = other.regionInfoList_.Clone();
+      isMpChallengeTouched_ = other.isMpChallengeTouched_;
+      treasureCloseTime_ = other.treasureCloseTime_;
+      bonusChallengeList_ = other.bonusChallengeList_.Clone();
+      currencyNum_ = other.currencyNum_;
+      previewRewardId_ = other.previewRewardId_;
+      minOpenPlayerLevel_ = other.minOpenPlayerLevel_;
+      totalMpSpotNum_ = other.totalMpSpotNum_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TreasureMapActivityDetailInfo Clone() {
+      return new TreasureMapActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "active_region_index" field.</summary>
+    public const int ActiveRegionIndexFieldNumber = 1;
+    private uint activeRegionIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ActiveRegionIndex {
+      get { return activeRegionIndex_; }
+      set {
+        activeRegionIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "region_info_list" field.</summary>
+    public const int RegionInfoListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::OldProtos.TreasureMapRegionInfo> _repeated_regionInfoList_codec
+        = pb::FieldCodec.ForMessage(50, global::OldProtos.TreasureMapRegionInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.TreasureMapRegionInfo> regionInfoList_ = new pbc::RepeatedField<global::OldProtos.TreasureMapRegionInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.TreasureMapRegionInfo> RegionInfoList {
+      get { return regionInfoList_; }
+    }
+
+    /// <summary>Field number for the "is_mp_challenge_touched" field.</summary>
+    public const int IsMpChallengeTouchedFieldNumber = 7;
+    private bool isMpChallengeTouched_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsMpChallengeTouched {
+      get { return isMpChallengeTouched_; }
+      set {
+        isMpChallengeTouched_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "treasure_close_time" field.</summary>
+    public const int TreasureCloseTimeFieldNumber = 10;
+    private uint treasureCloseTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TreasureCloseTime {
+      get { return treasureCloseTime_; }
+      set {
+        treasureCloseTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "bonus_challenge_list" field.</summary>
+    public const int BonusChallengeListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::OldProtos.TreasureMapBonusChallengeInfo> _repeated_bonusChallengeList_codec
+        = pb::FieldCodec.ForMessage(42, global::OldProtos.TreasureMapBonusChallengeInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.TreasureMapBonusChallengeInfo> bonusChallengeList_ = new pbc::RepeatedField<global::OldProtos.TreasureMapBonusChallengeInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.TreasureMapBonusChallengeInfo> BonusChallengeList {
+      get { return bonusChallengeList_; }
+    }
+
+    /// <summary>Field number for the "currency_num" field.</summary>
+    public const int CurrencyNumFieldNumber = 2;
+    private uint currencyNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurrencyNum {
+      get { return currencyNum_; }
+      set {
+        currencyNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "preview_reward_id" field.</summary>
+    public const int PreviewRewardIdFieldNumber = 14;
+    private uint previewRewardId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PreviewRewardId {
+      get { return previewRewardId_; }
+      set {
+        previewRewardId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "min_open_player_level" field.</summary>
+    public const int MinOpenPlayerLevelFieldNumber = 8;
+    private uint minOpenPlayerLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MinOpenPlayerLevel {
+      get { return minOpenPlayerLevel_; }
+      set {
+        minOpenPlayerLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_mp_spot_num" field.</summary>
+    public const int TotalMpSpotNumFieldNumber = 13;
+    private uint totalMpSpotNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TotalMpSpotNum {
+      get { return totalMpSpotNum_; }
+      set {
+        totalMpSpotNum_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TreasureMapActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TreasureMapActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ActiveRegionIndex != other.ActiveRegionIndex) return false;
+      if(!regionInfoList_.Equals(other.regionInfoList_)) return false;
+      if (IsMpChallengeTouched != other.IsMpChallengeTouched) return false;
+      if (TreasureCloseTime != other.TreasureCloseTime) return false;
+      if(!bonusChallengeList_.Equals(other.bonusChallengeList_)) return false;
+      if (CurrencyNum != other.CurrencyNum) return false;
+      if (PreviewRewardId != other.PreviewRewardId) return false;
+      if (MinOpenPlayerLevel != other.MinOpenPlayerLevel) return false;
+      if (TotalMpSpotNum != other.TotalMpSpotNum) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ActiveRegionIndex != 0) hash ^= ActiveRegionIndex.GetHashCode();
+      hash ^= regionInfoList_.GetHashCode();
+      if (IsMpChallengeTouched != false) hash ^= IsMpChallengeTouched.GetHashCode();
+      if (TreasureCloseTime != 0) hash ^= TreasureCloseTime.GetHashCode();
+      hash ^= bonusChallengeList_.GetHashCode();
+      if (CurrencyNum != 0) hash ^= CurrencyNum.GetHashCode();
+      if (PreviewRewardId != 0) hash ^= PreviewRewardId.GetHashCode();
+      if (MinOpenPlayerLevel != 0) hash ^= MinOpenPlayerLevel.GetHashCode();
+      if (TotalMpSpotNum != 0) hash ^= TotalMpSpotNum.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ActiveRegionIndex != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ActiveRegionIndex);
+      }
+      if (CurrencyNum != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CurrencyNum);
+      }
+      bonusChallengeList_.WriteTo(output, _repeated_bonusChallengeList_codec);
+      regionInfoList_.WriteTo(output, _repeated_regionInfoList_codec);
+      if (IsMpChallengeTouched != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsMpChallengeTouched);
+      }
+      if (MinOpenPlayerLevel != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(MinOpenPlayerLevel);
+      }
+      if (TreasureCloseTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(TreasureCloseTime);
+      }
+      if (TotalMpSpotNum != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(TotalMpSpotNum);
+      }
+      if (PreviewRewardId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(PreviewRewardId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ActiveRegionIndex != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ActiveRegionIndex);
+      }
+      if (CurrencyNum != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CurrencyNum);
+      }
+      bonusChallengeList_.WriteTo(ref output, _repeated_bonusChallengeList_codec);
+      regionInfoList_.WriteTo(ref output, _repeated_regionInfoList_codec);
+      if (IsMpChallengeTouched != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsMpChallengeTouched);
+      }
+      if (MinOpenPlayerLevel != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(MinOpenPlayerLevel);
+      }
+      if (TreasureCloseTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(TreasureCloseTime);
+      }
+      if (TotalMpSpotNum != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(TotalMpSpotNum);
+      }
+      if (PreviewRewardId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(PreviewRewardId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ActiveRegionIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActiveRegionIndex);
+      }
+      size += regionInfoList_.CalculateSize(_repeated_regionInfoList_codec);
+      if (IsMpChallengeTouched != false) {
+        size += 1 + 1;
+      }
+      if (TreasureCloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TreasureCloseTime);
+      }
+      size += bonusChallengeList_.CalculateSize(_repeated_bonusChallengeList_codec);
+      if (CurrencyNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurrencyNum);
+      }
+      if (PreviewRewardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PreviewRewardId);
+      }
+      if (MinOpenPlayerLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinOpenPlayerLevel);
+      }
+      if (TotalMpSpotNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalMpSpotNum);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TreasureMapActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ActiveRegionIndex != 0) {
+        ActiveRegionIndex = other.ActiveRegionIndex;
+      }
+      regionInfoList_.Add(other.regionInfoList_);
+      if (other.IsMpChallengeTouched != false) {
+        IsMpChallengeTouched = other.IsMpChallengeTouched;
+      }
+      if (other.TreasureCloseTime != 0) {
+        TreasureCloseTime = other.TreasureCloseTime;
+      }
+      bonusChallengeList_.Add(other.bonusChallengeList_);
+      if (other.CurrencyNum != 0) {
+        CurrencyNum = other.CurrencyNum;
+      }
+      if (other.PreviewRewardId != 0) {
+        PreviewRewardId = other.PreviewRewardId;
+      }
+      if (other.MinOpenPlayerLevel != 0) {
+        MinOpenPlayerLevel = other.MinOpenPlayerLevel;
+      }
+      if (other.TotalMpSpotNum != 0) {
+        TotalMpSpotNum = other.TotalMpSpotNum;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            ActiveRegionIndex = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            CurrencyNum = input.ReadUInt32();
+            break;
+          }
+          case 42: {
+            bonusChallengeList_.AddEntriesFrom(input, _repeated_bonusChallengeList_codec);
+            break;
+          }
+          case 50: {
+            regionInfoList_.AddEntriesFrom(input, _repeated_regionInfoList_codec);
+            break;
+          }
+          case 56: {
+            IsMpChallengeTouched = input.ReadBool();
+            break;
+          }
+          case 64: {
+            MinOpenPlayerLevel = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            TreasureCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            TotalMpSpotNum = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            PreviewRewardId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            ActiveRegionIndex = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            CurrencyNum = input.ReadUInt32();
+            break;
+          }
+          case 42: {
+            bonusChallengeList_.AddEntriesFrom(ref input, _repeated_bonusChallengeList_codec);
+            break;
+          }
+          case 50: {
+            regionInfoList_.AddEntriesFrom(ref input, _repeated_regionInfoList_codec);
+            break;
+          }
+          case 56: {
+            IsMpChallengeTouched = input.ReadBool();
+            break;
+          }
+          case 64: {
+            MinOpenPlayerLevel = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            TreasureCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            TotalMpSpotNum = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            PreviewRewardId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class TreasureMapActivityDetailInfo : pb::IMessage<TreasureMapActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<TreasureMapActivityDetailInfo> _parser = new pb::MessageParser<TreasureMapActivityDetailInfo>(() => new TreasureMapActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<TreasureMapActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::TreasureMapActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TreasureMapActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TreasureMapActivityDetailInfo(TreasureMapActivityDetailInfo other) : this() {
-    activeRegionIndex_ = other.activeRegionIndex_;
-    regionInfoList_ = other.regionInfoList_.Clone();
-    isMpChallengeTouched_ = other.isMpChallengeTouched_;
-    treasureCloseTime_ = other.treasureCloseTime_;
-    bonusChallengeList_ = other.bonusChallengeList_.Clone();
-    currencyNum_ = other.currencyNum_;
-    previewRewardId_ = other.previewRewardId_;
-    minOpenPlayerLevel_ = other.minOpenPlayerLevel_;
-    totalMpSpotNum_ = other.totalMpSpotNum_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TreasureMapActivityDetailInfo Clone() {
-    return new TreasureMapActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "active_region_index" field.</summary>
-  public const int ActiveRegionIndexFieldNumber = 1;
-  private uint activeRegionIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ActiveRegionIndex {
-    get { return activeRegionIndex_; }
-    set {
-      activeRegionIndex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "region_info_list" field.</summary>
-  public const int RegionInfoListFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::TreasureMapRegionInfo> _repeated_regionInfoList_codec
-      = pb::FieldCodec.ForMessage(50, global::TreasureMapRegionInfo.Parser);
-  private readonly pbc::RepeatedField<global::TreasureMapRegionInfo> regionInfoList_ = new pbc::RepeatedField<global::TreasureMapRegionInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::TreasureMapRegionInfo> RegionInfoList {
-    get { return regionInfoList_; }
-  }
-
-  /// <summary>Field number for the "is_mp_challenge_touched" field.</summary>
-  public const int IsMpChallengeTouchedFieldNumber = 7;
-  private bool isMpChallengeTouched_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsMpChallengeTouched {
-    get { return isMpChallengeTouched_; }
-    set {
-      isMpChallengeTouched_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "treasure_close_time" field.</summary>
-  public const int TreasureCloseTimeFieldNumber = 10;
-  private uint treasureCloseTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TreasureCloseTime {
-    get { return treasureCloseTime_; }
-    set {
-      treasureCloseTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "bonus_challenge_list" field.</summary>
-  public const int BonusChallengeListFieldNumber = 5;
-  private static readonly pb::FieldCodec<global::TreasureMapBonusChallengeInfo> _repeated_bonusChallengeList_codec
-      = pb::FieldCodec.ForMessage(42, global::TreasureMapBonusChallengeInfo.Parser);
-  private readonly pbc::RepeatedField<global::TreasureMapBonusChallengeInfo> bonusChallengeList_ = new pbc::RepeatedField<global::TreasureMapBonusChallengeInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::TreasureMapBonusChallengeInfo> BonusChallengeList {
-    get { return bonusChallengeList_; }
-  }
-
-  /// <summary>Field number for the "currency_num" field.</summary>
-  public const int CurrencyNumFieldNumber = 2;
-  private uint currencyNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurrencyNum {
-    get { return currencyNum_; }
-    set {
-      currencyNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "preview_reward_id" field.</summary>
-  public const int PreviewRewardIdFieldNumber = 14;
-  private uint previewRewardId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PreviewRewardId {
-    get { return previewRewardId_; }
-    set {
-      previewRewardId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "min_open_player_level" field.</summary>
-  public const int MinOpenPlayerLevelFieldNumber = 8;
-  private uint minOpenPlayerLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MinOpenPlayerLevel {
-    get { return minOpenPlayerLevel_; }
-    set {
-      minOpenPlayerLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "total_mp_spot_num" field.</summary>
-  public const int TotalMpSpotNumFieldNumber = 13;
-  private uint totalMpSpotNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TotalMpSpotNum {
-    get { return totalMpSpotNum_; }
-    set {
-      totalMpSpotNum_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as TreasureMapActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(TreasureMapActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ActiveRegionIndex != other.ActiveRegionIndex) return false;
-    if(!regionInfoList_.Equals(other.regionInfoList_)) return false;
-    if (IsMpChallengeTouched != other.IsMpChallengeTouched) return false;
-    if (TreasureCloseTime != other.TreasureCloseTime) return false;
-    if(!bonusChallengeList_.Equals(other.bonusChallengeList_)) return false;
-    if (CurrencyNum != other.CurrencyNum) return false;
-    if (PreviewRewardId != other.PreviewRewardId) return false;
-    if (MinOpenPlayerLevel != other.MinOpenPlayerLevel) return false;
-    if (TotalMpSpotNum != other.TotalMpSpotNum) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ActiveRegionIndex != 0) hash ^= ActiveRegionIndex.GetHashCode();
-    hash ^= regionInfoList_.GetHashCode();
-    if (IsMpChallengeTouched != false) hash ^= IsMpChallengeTouched.GetHashCode();
-    if (TreasureCloseTime != 0) hash ^= TreasureCloseTime.GetHashCode();
-    hash ^= bonusChallengeList_.GetHashCode();
-    if (CurrencyNum != 0) hash ^= CurrencyNum.GetHashCode();
-    if (PreviewRewardId != 0) hash ^= PreviewRewardId.GetHashCode();
-    if (MinOpenPlayerLevel != 0) hash ^= MinOpenPlayerLevel.GetHashCode();
-    if (TotalMpSpotNum != 0) hash ^= TotalMpSpotNum.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ActiveRegionIndex != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(ActiveRegionIndex);
-    }
-    if (CurrencyNum != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(CurrencyNum);
-    }
-    bonusChallengeList_.WriteTo(output, _repeated_bonusChallengeList_codec);
-    regionInfoList_.WriteTo(output, _repeated_regionInfoList_codec);
-    if (IsMpChallengeTouched != false) {
-      output.WriteRawTag(56);
-      output.WriteBool(IsMpChallengeTouched);
-    }
-    if (MinOpenPlayerLevel != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(MinOpenPlayerLevel);
-    }
-    if (TreasureCloseTime != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(TreasureCloseTime);
-    }
-    if (TotalMpSpotNum != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(TotalMpSpotNum);
-    }
-    if (PreviewRewardId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(PreviewRewardId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ActiveRegionIndex != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(ActiveRegionIndex);
-    }
-    if (CurrencyNum != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(CurrencyNum);
-    }
-    bonusChallengeList_.WriteTo(ref output, _repeated_bonusChallengeList_codec);
-    regionInfoList_.WriteTo(ref output, _repeated_regionInfoList_codec);
-    if (IsMpChallengeTouched != false) {
-      output.WriteRawTag(56);
-      output.WriteBool(IsMpChallengeTouched);
-    }
-    if (MinOpenPlayerLevel != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(MinOpenPlayerLevel);
-    }
-    if (TreasureCloseTime != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(TreasureCloseTime);
-    }
-    if (TotalMpSpotNum != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(TotalMpSpotNum);
-    }
-    if (PreviewRewardId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(PreviewRewardId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ActiveRegionIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActiveRegionIndex);
-    }
-    size += regionInfoList_.CalculateSize(_repeated_regionInfoList_codec);
-    if (IsMpChallengeTouched != false) {
-      size += 1 + 1;
-    }
-    if (TreasureCloseTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TreasureCloseTime);
-    }
-    size += bonusChallengeList_.CalculateSize(_repeated_bonusChallengeList_codec);
-    if (CurrencyNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurrencyNum);
-    }
-    if (PreviewRewardId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PreviewRewardId);
-    }
-    if (MinOpenPlayerLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinOpenPlayerLevel);
-    }
-    if (TotalMpSpotNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalMpSpotNum);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(TreasureMapActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ActiveRegionIndex != 0) {
-      ActiveRegionIndex = other.ActiveRegionIndex;
-    }
-    regionInfoList_.Add(other.regionInfoList_);
-    if (other.IsMpChallengeTouched != false) {
-      IsMpChallengeTouched = other.IsMpChallengeTouched;
-    }
-    if (other.TreasureCloseTime != 0) {
-      TreasureCloseTime = other.TreasureCloseTime;
-    }
-    bonusChallengeList_.Add(other.bonusChallengeList_);
-    if (other.CurrencyNum != 0) {
-      CurrencyNum = other.CurrencyNum;
-    }
-    if (other.PreviewRewardId != 0) {
-      PreviewRewardId = other.PreviewRewardId;
-    }
-    if (other.MinOpenPlayerLevel != 0) {
-      MinOpenPlayerLevel = other.MinOpenPlayerLevel;
-    }
-    if (other.TotalMpSpotNum != 0) {
-      TotalMpSpotNum = other.TotalMpSpotNum;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          ActiveRegionIndex = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          CurrencyNum = input.ReadUInt32();
-          break;
-        }
-        case 42: {
-          bonusChallengeList_.AddEntriesFrom(input, _repeated_bonusChallengeList_codec);
-          break;
-        }
-        case 50: {
-          regionInfoList_.AddEntriesFrom(input, _repeated_regionInfoList_codec);
-          break;
-        }
-        case 56: {
-          IsMpChallengeTouched = input.ReadBool();
-          break;
-        }
-        case 64: {
-          MinOpenPlayerLevel = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          TreasureCloseTime = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          TotalMpSpotNum = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          PreviewRewardId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          ActiveRegionIndex = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          CurrencyNum = input.ReadUInt32();
-          break;
-        }
-        case 42: {
-          bonusChallengeList_.AddEntriesFrom(ref input, _repeated_bonusChallengeList_codec);
-          break;
-        }
-        case 50: {
-          regionInfoList_.AddEntriesFrom(ref input, _repeated_regionInfoList_codec);
-          break;
-        }
-        case 56: {
-          IsMpChallengeTouched = input.ReadBool();
-          break;
-        }
-        case 64: {
-          MinOpenPlayerLevel = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          TreasureCloseTime = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          TotalMpSpotNum = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          PreviewRewardId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

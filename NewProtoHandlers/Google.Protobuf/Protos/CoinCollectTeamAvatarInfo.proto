@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message CoinCollectTeamAvatarInfo {
   uint32 avatar_id = 5;

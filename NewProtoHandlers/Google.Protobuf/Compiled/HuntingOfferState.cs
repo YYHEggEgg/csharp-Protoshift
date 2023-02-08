@@ -9,40 +9,43 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from HuntingOfferState.proto</summary>
-public static partial class HuntingOfferStateReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for HuntingOfferState.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from HuntingOfferState.proto</summary>
+  public static partial class HuntingOfferStateReflection {
 
-  static HuntingOfferStateReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdIdW50aW5nT2ZmZXJTdGF0ZS5wcm90byqTAQoRSHVudGluZ09mZmVyU3Rh",
-          "dGUSHAoYSFVOVElOR19PRkZFUl9TVEFURV9OT05FEAASHwobSFVOVElOR19P",
-          "RkZFUl9TVEFURV9TVEFSVEVEEAESIQodSFVOVElOR19PRkZFUl9TVEFURV9V",
-          "TlNUQVJURUQQAhIcChhIVU5USU5HX09GRkVSX1NUQVRFX1NVQ0MQA0IWChRv",
-          "cmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::HuntingOfferState), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for HuntingOfferState.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static HuntingOfferStateReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdIdW50aW5nT2ZmZXJTdGF0ZS5wcm90byqTAQoRSHVudGluZ09mZmVyU3Rh",
+            "dGUSHAoYSFVOVElOR19PRkZFUl9TVEFURV9OT05FEAASHwobSFVOVElOR19P",
+            "RkZFUl9TVEFURV9TVEFSVEVEEAESIQodSFVOVElOR19PRkZFUl9TVEFURV9V",
+            "TlNUQVJURUQQAhIcChhIVU5USU5HX09GRkVSX1NUQVRFX1NVQ0MQA0IMqgIJ",
+            "TmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.HuntingOfferState), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum HuntingOfferState {
+    [pbr::OriginalName("HUNTING_OFFER_STATE_NONE")] None = 0,
+    [pbr::OriginalName("HUNTING_OFFER_STATE_STARTED")] Started = 1,
+    [pbr::OriginalName("HUNTING_OFFER_STATE_UNSTARTED")] Unstarted = 2,
+    [pbr::OriginalName("HUNTING_OFFER_STATE_SUCC")] Succ = 3,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum HuntingOfferState {
-  [pbr::OriginalName("HUNTING_OFFER_STATE_NONE")] None = 0,
-  [pbr::OriginalName("HUNTING_OFFER_STATE_STARTED")] Started = 1,
-  [pbr::OriginalName("HUNTING_OFFER_STATE_UNSTARTED")] Unstarted = 2,
-  [pbr::OriginalName("HUNTING_OFFER_STATE_SUCC")] Succ = 3,
-}
-
-#endregion
-
 
 #endregion Designer generated code

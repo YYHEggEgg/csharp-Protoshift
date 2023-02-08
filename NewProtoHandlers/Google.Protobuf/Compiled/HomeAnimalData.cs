@@ -9,315 +9,318 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from HomeAnimalData.proto</summary>
-public static partial class HomeAnimalDataReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for HomeAnimalData.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from HomeAnimalData.proto</summary>
+  public static partial class HomeAnimalDataReflection {
 
-  static HomeAnimalDataReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRIb21lQW5pbWFsRGF0YS5wcm90bxoMVmVjdG9yLnByb3RvIl4KDkhvbWVB",
-          "bmltYWxEYXRhEhQKDGZ1cm5pdHVyZV9pZBgGIAEoDRIaCglzcGF3bl9yb3QY",
-          "DiABKAsyBy5WZWN0b3ISGgoJc3Bhd25fcG9zGAsgASgLMgcuVmVjdG9yQhYK",
-          "FG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::HomeAnimalData), global::HomeAnimalData.Parser, new[]{ "FurnitureId", "SpawnRot", "SpawnPos" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for HomeAnimalData.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static HomeAnimalDataReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRIb21lQW5pbWFsRGF0YS5wcm90bxoMVmVjdG9yLnByb3RvIl4KDkhvbWVB",
+            "bmltYWxEYXRhEhQKDGZ1cm5pdHVyZV9pZBgGIAEoDRIaCglzcGF3bl9yb3QY",
+            "DiABKAsyBy5WZWN0b3ISGgoJc3Bhd25fcG9zGAsgASgLMgcuVmVjdG9yQgyq",
+            "AglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.HomeAnimalData), global::NewProtos.HomeAnimalData.Parser, new[]{ "FurnitureId", "SpawnRot", "SpawnPos" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class HomeAnimalData : pb::IMessage<HomeAnimalData>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HomeAnimalData> _parser = new pb::MessageParser<HomeAnimalData>(() => new HomeAnimalData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HomeAnimalData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.HomeAnimalDataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeAnimalData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeAnimalData(HomeAnimalData other) : this() {
+      furnitureId_ = other.furnitureId_;
+      spawnRot_ = other.spawnRot_ != null ? other.spawnRot_.Clone() : null;
+      spawnPos_ = other.spawnPos_ != null ? other.spawnPos_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeAnimalData Clone() {
+      return new HomeAnimalData(this);
+    }
+
+    /// <summary>Field number for the "furniture_id" field.</summary>
+    public const int FurnitureIdFieldNumber = 6;
+    private uint furnitureId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FurnitureId {
+      get { return furnitureId_; }
+      set {
+        furnitureId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "spawn_rot" field.</summary>
+    public const int SpawnRotFieldNumber = 14;
+    private global::NewProtos.Vector spawnRot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.Vector SpawnRot {
+      get { return spawnRot_; }
+      set {
+        spawnRot_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "spawn_pos" field.</summary>
+    public const int SpawnPosFieldNumber = 11;
+    private global::NewProtos.Vector spawnPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.Vector SpawnPos {
+      get { return spawnPos_; }
+      set {
+        spawnPos_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HomeAnimalData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HomeAnimalData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (FurnitureId != other.FurnitureId) return false;
+      if (!object.Equals(SpawnRot, other.SpawnRot)) return false;
+      if (!object.Equals(SpawnPos, other.SpawnPos)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (FurnitureId != 0) hash ^= FurnitureId.GetHashCode();
+      if (spawnRot_ != null) hash ^= SpawnRot.GetHashCode();
+      if (spawnPos_ != null) hash ^= SpawnPos.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (FurnitureId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(FurnitureId);
+      }
+      if (spawnPos_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(SpawnPos);
+      }
+      if (spawnRot_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(SpawnRot);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (FurnitureId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(FurnitureId);
+      }
+      if (spawnPos_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(SpawnPos);
+      }
+      if (spawnRot_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(SpawnRot);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (FurnitureId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FurnitureId);
+      }
+      if (spawnRot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SpawnRot);
+      }
+      if (spawnPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SpawnPos);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HomeAnimalData other) {
+      if (other == null) {
+        return;
+      }
+      if (other.FurnitureId != 0) {
+        FurnitureId = other.FurnitureId;
+      }
+      if (other.spawnRot_ != null) {
+        if (spawnRot_ == null) {
+          SpawnRot = new global::NewProtos.Vector();
+        }
+        SpawnRot.MergeFrom(other.SpawnRot);
+      }
+      if (other.spawnPos_ != null) {
+        if (spawnPos_ == null) {
+          SpawnPos = new global::NewProtos.Vector();
+        }
+        SpawnPos.MergeFrom(other.SpawnPos);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 48: {
+            FurnitureId = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            if (spawnPos_ == null) {
+              SpawnPos = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(SpawnPos);
+            break;
+          }
+          case 114: {
+            if (spawnRot_ == null) {
+              SpawnRot = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(SpawnRot);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 48: {
+            FurnitureId = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            if (spawnPos_ == null) {
+              SpawnPos = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(SpawnPos);
+            break;
+          }
+          case 114: {
+            if (spawnRot_ == null) {
+              SpawnRot = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(SpawnRot);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class HomeAnimalData : pb::IMessage<HomeAnimalData>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<HomeAnimalData> _parser = new pb::MessageParser<HomeAnimalData>(() => new HomeAnimalData());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<HomeAnimalData> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::HomeAnimalDataReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeAnimalData() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeAnimalData(HomeAnimalData other) : this() {
-    furnitureId_ = other.furnitureId_;
-    spawnRot_ = other.spawnRot_ != null ? other.spawnRot_.Clone() : null;
-    spawnPos_ = other.spawnPos_ != null ? other.spawnPos_.Clone() : null;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeAnimalData Clone() {
-    return new HomeAnimalData(this);
-  }
-
-  /// <summary>Field number for the "furniture_id" field.</summary>
-  public const int FurnitureIdFieldNumber = 6;
-  private uint furnitureId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FurnitureId {
-    get { return furnitureId_; }
-    set {
-      furnitureId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "spawn_rot" field.</summary>
-  public const int SpawnRotFieldNumber = 14;
-  private global::Vector spawnRot_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector SpawnRot {
-    get { return spawnRot_; }
-    set {
-      spawnRot_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "spawn_pos" field.</summary>
-  public const int SpawnPosFieldNumber = 11;
-  private global::Vector spawnPos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector SpawnPos {
-    get { return spawnPos_; }
-    set {
-      spawnPos_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as HomeAnimalData);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(HomeAnimalData other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (FurnitureId != other.FurnitureId) return false;
-    if (!object.Equals(SpawnRot, other.SpawnRot)) return false;
-    if (!object.Equals(SpawnPos, other.SpawnPos)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (FurnitureId != 0) hash ^= FurnitureId.GetHashCode();
-    if (spawnRot_ != null) hash ^= SpawnRot.GetHashCode();
-    if (spawnPos_ != null) hash ^= SpawnPos.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (FurnitureId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(FurnitureId);
-    }
-    if (spawnPos_ != null) {
-      output.WriteRawTag(90);
-      output.WriteMessage(SpawnPos);
-    }
-    if (spawnRot_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(SpawnRot);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (FurnitureId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(FurnitureId);
-    }
-    if (spawnPos_ != null) {
-      output.WriteRawTag(90);
-      output.WriteMessage(SpawnPos);
-    }
-    if (spawnRot_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(SpawnRot);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (FurnitureId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FurnitureId);
-    }
-    if (spawnRot_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(SpawnRot);
-    }
-    if (spawnPos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(SpawnPos);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(HomeAnimalData other) {
-    if (other == null) {
-      return;
-    }
-    if (other.FurnitureId != 0) {
-      FurnitureId = other.FurnitureId;
-    }
-    if (other.spawnRot_ != null) {
-      if (spawnRot_ == null) {
-        SpawnRot = new global::Vector();
-      }
-      SpawnRot.MergeFrom(other.SpawnRot);
-    }
-    if (other.spawnPos_ != null) {
-      if (spawnPos_ == null) {
-        SpawnPos = new global::Vector();
-      }
-      SpawnPos.MergeFrom(other.SpawnPos);
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 48: {
-          FurnitureId = input.ReadUInt32();
-          break;
-        }
-        case 90: {
-          if (spawnPos_ == null) {
-            SpawnPos = new global::Vector();
-          }
-          input.ReadMessage(SpawnPos);
-          break;
-        }
-        case 114: {
-          if (spawnRot_ == null) {
-            SpawnRot = new global::Vector();
-          }
-          input.ReadMessage(SpawnRot);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 48: {
-          FurnitureId = input.ReadUInt32();
-          break;
-        }
-        case 90: {
-          if (spawnPos_ == null) {
-            SpawnPos = new global::Vector();
-          }
-          input.ReadMessage(SpawnPos);
-          break;
-        }
-        case 114: {
-          if (spawnRot_ == null) {
-            SpawnRot = new global::Vector();
-          }
-          input.ReadMessage(SpawnRot);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

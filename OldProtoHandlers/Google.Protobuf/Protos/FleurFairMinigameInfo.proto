@@ -20,7 +20,7 @@ import "FleurFairBalloonInfo.proto";
 import "FleurFairFallInfo.proto";
 import "FleurFairMusicGameInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message FleurFairMinigameInfo {
   uint32 minigame_id = 13;

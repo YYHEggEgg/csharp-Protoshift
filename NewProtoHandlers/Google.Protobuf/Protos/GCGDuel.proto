@@ -27,7 +27,7 @@ import "GCGPhase.proto";
 import "GCGPlayerField.proto";
 import "Unk3300_ADHENCIFKNI.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGDuel {
   uint32 server_seq = 3;

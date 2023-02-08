@@ -9,249 +9,251 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FungusFighterTrainingSelectFungusReq.proto</summary>
-public static partial class FungusFighterTrainingSelectFungusReqReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FungusFighterTrainingSelectFungusReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FungusFighterTrainingSelectFungusReq.proto</summary>
+  public static partial class FungusFighterTrainingSelectFungusReqReflection {
 
-  static FungusFighterTrainingSelectFungusReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CipGdW5ndXNGaWdodGVyVHJhaW5pbmdTZWxlY3RGdW5ndXNSZXEucHJvdG8i",
-          "YwokRnVuZ3VzRmlnaHRlclRyYWluaW5nU2VsZWN0RnVuZ3VzUmVxEh0KFWJh",
-          "Y2t1cF9mdW5ndXNfaWRfbGlzdBgLIAMoDRIcChRmaWdodF9mdW5ndXNfaWRf",
-          "bGlzdBgHIAMoDUIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZw",
-          "cm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FungusFighterTrainingSelectFungusReq), global::FungusFighterTrainingSelectFungusReq.Parser, new[]{ "BackupFungusIdList", "FightFungusIdList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for FungusFighterTrainingSelectFungusReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FungusFighterTrainingSelectFungusReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CipGdW5ndXNGaWdodGVyVHJhaW5pbmdTZWxlY3RGdW5ndXNSZXEucHJvdG8i",
+            "YwokRnVuZ3VzRmlnaHRlclRyYWluaW5nU2VsZWN0RnVuZ3VzUmVxEh0KFWJh",
+            "Y2t1cF9mdW5ndXNfaWRfbGlzdBgLIAMoDRIcChRmaWdodF9mdW5ndXNfaWRf",
+            "bGlzdBgHIAMoDUIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.FungusFighterTrainingSelectFungusReq), global::OldProtos.FungusFighterTrainingSelectFungusReq.Parser, new[]{ "BackupFungusIdList", "FightFungusIdList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 23903
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class FungusFighterTrainingSelectFungusReq : pb::IMessage<FungusFighterTrainingSelectFungusReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FungusFighterTrainingSelectFungusReq> _parser = new pb::MessageParser<FungusFighterTrainingSelectFungusReq>(() => new FungusFighterTrainingSelectFungusReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FungusFighterTrainingSelectFungusReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.FungusFighterTrainingSelectFungusReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusFighterTrainingSelectFungusReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusFighterTrainingSelectFungusReq(FungusFighterTrainingSelectFungusReq other) : this() {
+      backupFungusIdList_ = other.backupFungusIdList_.Clone();
+      fightFungusIdList_ = other.fightFungusIdList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusFighterTrainingSelectFungusReq Clone() {
+      return new FungusFighterTrainingSelectFungusReq(this);
+    }
+
+    /// <summary>Field number for the "backup_fungus_id_list" field.</summary>
+    public const int BackupFungusIdListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_backupFungusIdList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> backupFungusIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> BackupFungusIdList {
+      get { return backupFungusIdList_; }
+    }
+
+    /// <summary>Field number for the "fight_fungus_id_list" field.</summary>
+    public const int FightFungusIdListFieldNumber = 7;
+    private static readonly pb::FieldCodec<uint> _repeated_fightFungusIdList_codec
+        = pb::FieldCodec.ForUInt32(58);
+    private readonly pbc::RepeatedField<uint> fightFungusIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FightFungusIdList {
+      get { return fightFungusIdList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FungusFighterTrainingSelectFungusReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FungusFighterTrainingSelectFungusReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!backupFungusIdList_.Equals(other.backupFungusIdList_)) return false;
+      if(!fightFungusIdList_.Equals(other.fightFungusIdList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= backupFungusIdList_.GetHashCode();
+      hash ^= fightFungusIdList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      fightFungusIdList_.WriteTo(output, _repeated_fightFungusIdList_codec);
+      backupFungusIdList_.WriteTo(output, _repeated_backupFungusIdList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      fightFungusIdList_.WriteTo(ref output, _repeated_fightFungusIdList_codec);
+      backupFungusIdList_.WriteTo(ref output, _repeated_backupFungusIdList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += backupFungusIdList_.CalculateSize(_repeated_backupFungusIdList_codec);
+      size += fightFungusIdList_.CalculateSize(_repeated_fightFungusIdList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FungusFighterTrainingSelectFungusReq other) {
+      if (other == null) {
+        return;
+      }
+      backupFungusIdList_.Add(other.backupFungusIdList_);
+      fightFungusIdList_.Add(other.fightFungusIdList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 58:
+          case 56: {
+            fightFungusIdList_.AddEntriesFrom(input, _repeated_fightFungusIdList_codec);
+            break;
+          }
+          case 90:
+          case 88: {
+            backupFungusIdList_.AddEntriesFrom(input, _repeated_backupFungusIdList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 58:
+          case 56: {
+            fightFungusIdList_.AddEntriesFrom(ref input, _repeated_fightFungusIdList_codec);
+            break;
+          }
+          case 90:
+          case 88: {
+            backupFungusIdList_.AddEntriesFrom(ref input, _repeated_backupFungusIdList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 23903
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class FungusFighterTrainingSelectFungusReq : pb::IMessage<FungusFighterTrainingSelectFungusReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<FungusFighterTrainingSelectFungusReq> _parser = new pb::MessageParser<FungusFighterTrainingSelectFungusReq>(() => new FungusFighterTrainingSelectFungusReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<FungusFighterTrainingSelectFungusReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::FungusFighterTrainingSelectFungusReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusFighterTrainingSelectFungusReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusFighterTrainingSelectFungusReq(FungusFighterTrainingSelectFungusReq other) : this() {
-    backupFungusIdList_ = other.backupFungusIdList_.Clone();
-    fightFungusIdList_ = other.fightFungusIdList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusFighterTrainingSelectFungusReq Clone() {
-    return new FungusFighterTrainingSelectFungusReq(this);
-  }
-
-  /// <summary>Field number for the "backup_fungus_id_list" field.</summary>
-  public const int BackupFungusIdListFieldNumber = 11;
-  private static readonly pb::FieldCodec<uint> _repeated_backupFungusIdList_codec
-      = pb::FieldCodec.ForUInt32(90);
-  private readonly pbc::RepeatedField<uint> backupFungusIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> BackupFungusIdList {
-    get { return backupFungusIdList_; }
-  }
-
-  /// <summary>Field number for the "fight_fungus_id_list" field.</summary>
-  public const int FightFungusIdListFieldNumber = 7;
-  private static readonly pb::FieldCodec<uint> _repeated_fightFungusIdList_codec
-      = pb::FieldCodec.ForUInt32(58);
-  private readonly pbc::RepeatedField<uint> fightFungusIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> FightFungusIdList {
-    get { return fightFungusIdList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as FungusFighterTrainingSelectFungusReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(FungusFighterTrainingSelectFungusReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!backupFungusIdList_.Equals(other.backupFungusIdList_)) return false;
-    if(!fightFungusIdList_.Equals(other.fightFungusIdList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= backupFungusIdList_.GetHashCode();
-    hash ^= fightFungusIdList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    fightFungusIdList_.WriteTo(output, _repeated_fightFungusIdList_codec);
-    backupFungusIdList_.WriteTo(output, _repeated_backupFungusIdList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    fightFungusIdList_.WriteTo(ref output, _repeated_fightFungusIdList_codec);
-    backupFungusIdList_.WriteTo(ref output, _repeated_backupFungusIdList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += backupFungusIdList_.CalculateSize(_repeated_backupFungusIdList_codec);
-    size += fightFungusIdList_.CalculateSize(_repeated_fightFungusIdList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(FungusFighterTrainingSelectFungusReq other) {
-    if (other == null) {
-      return;
-    }
-    backupFungusIdList_.Add(other.backupFungusIdList_);
-    fightFungusIdList_.Add(other.fightFungusIdList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 58:
-        case 56: {
-          fightFungusIdList_.AddEntriesFrom(input, _repeated_fightFungusIdList_codec);
-          break;
-        }
-        case 90:
-        case 88: {
-          backupFungusIdList_.AddEntriesFrom(input, _repeated_backupFungusIdList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 58:
-        case 56: {
-          fightFungusIdList_.AddEntriesFrom(ref input, _repeated_fightFungusIdList_codec);
-          break;
-        }
-        case 90:
-        case 88: {
-          backupFungusIdList_.AddEntriesFrom(ref input, _repeated_backupFungusIdList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

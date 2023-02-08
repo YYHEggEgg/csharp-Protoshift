@@ -9,242 +9,245 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AttackResultCreateCount.proto</summary>
-public static partial class AttackResultCreateCountReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AttackResultCreateCount.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AttackResultCreateCount.proto</summary>
+  public static partial class AttackResultCreateCountReflection {
 
-  static AttackResultCreateCountReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1BdHRhY2tSZXN1bHRDcmVhdGVDb3VudC5wcm90byJTChdBdHRhY2tSZXN1",
-          "bHRDcmVhdGVDb3VudBIbChNVbmszMzAwX1BGRkZGSkJQS0dOGAggAygNEhsK",
-          "E1VuazMzMDBfTURHRkJGQkFIUEIYCiADKA1CFgoUb3JnLnNvcmFwb2ludGEu",
-          "cHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AttackResultCreateCount), global::AttackResultCreateCount.Parser, new[]{ "Unk3300PFFFFJBPKGN", "Unk3300MDGFBFBAHPB" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AttackResultCreateCount.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AttackResultCreateCountReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1BdHRhY2tSZXN1bHRDcmVhdGVDb3VudC5wcm90byJTChdBdHRhY2tSZXN1",
+            "bHRDcmVhdGVDb3VudBIbChNVbmszMzAwX1BGRkZGSkJQS0dOGAggAygNEhsK",
+            "E1VuazMzMDBfTURHRkJGQkFIUEIYCiADKA1CDKoCCU5ld1Byb3Rvc2IGcHJv",
+            "dG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.AttackResultCreateCount), global::NewProtos.AttackResultCreateCount.Parser, new[]{ "Unk3300PFFFFJBPKGN", "Unk3300MDGFBFBAHPB" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class AttackResultCreateCount : pb::IMessage<AttackResultCreateCount>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AttackResultCreateCount> _parser = new pb::MessageParser<AttackResultCreateCount>(() => new AttackResultCreateCount());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AttackResultCreateCount> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.AttackResultCreateCountReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AttackResultCreateCount() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AttackResultCreateCount(AttackResultCreateCount other) : this() {
+      unk3300PFFFFJBPKGN_ = other.unk3300PFFFFJBPKGN_.Clone();
+      unk3300MDGFBFBAHPB_ = other.unk3300MDGFBFBAHPB_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AttackResultCreateCount Clone() {
+      return new AttackResultCreateCount(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_PFFFFJBPKGN" field.</summary>
+    public const int Unk3300PFFFFJBPKGNFieldNumber = 8;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300PFFFFJBPKGN_codec
+        = pb::FieldCodec.ForUInt32(66);
+    private readonly pbc::RepeatedField<uint> unk3300PFFFFJBPKGN_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300PFFFFJBPKGN {
+      get { return unk3300PFFFFJBPKGN_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_MDGFBFBAHPB" field.</summary>
+    public const int Unk3300MDGFBFBAHPBFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_unk3300MDGFBFBAHPB_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> unk3300MDGFBFBAHPB_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Unk3300MDGFBFBAHPB {
+      get { return unk3300MDGFBFBAHPB_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AttackResultCreateCount);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AttackResultCreateCount other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!unk3300PFFFFJBPKGN_.Equals(other.unk3300PFFFFJBPKGN_)) return false;
+      if(!unk3300MDGFBFBAHPB_.Equals(other.unk3300MDGFBFBAHPB_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= unk3300PFFFFJBPKGN_.GetHashCode();
+      hash ^= unk3300MDGFBFBAHPB_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      unk3300PFFFFJBPKGN_.WriteTo(output, _repeated_unk3300PFFFFJBPKGN_codec);
+      unk3300MDGFBFBAHPB_.WriteTo(output, _repeated_unk3300MDGFBFBAHPB_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unk3300PFFFFJBPKGN_.WriteTo(ref output, _repeated_unk3300PFFFFJBPKGN_codec);
+      unk3300MDGFBFBAHPB_.WriteTo(ref output, _repeated_unk3300MDGFBFBAHPB_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += unk3300PFFFFJBPKGN_.CalculateSize(_repeated_unk3300PFFFFJBPKGN_codec);
+      size += unk3300MDGFBFBAHPB_.CalculateSize(_repeated_unk3300MDGFBFBAHPB_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AttackResultCreateCount other) {
+      if (other == null) {
+        return;
+      }
+      unk3300PFFFFJBPKGN_.Add(other.unk3300PFFFFJBPKGN_);
+      unk3300MDGFBFBAHPB_.Add(other.unk3300MDGFBFBAHPB_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 66:
+          case 64: {
+            unk3300PFFFFJBPKGN_.AddEntriesFrom(input, _repeated_unk3300PFFFFJBPKGN_codec);
+            break;
+          }
+          case 82:
+          case 80: {
+            unk3300MDGFBFBAHPB_.AddEntriesFrom(input, _repeated_unk3300MDGFBFBAHPB_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 66:
+          case 64: {
+            unk3300PFFFFJBPKGN_.AddEntriesFrom(ref input, _repeated_unk3300PFFFFJBPKGN_codec);
+            break;
+          }
+          case 82:
+          case 80: {
+            unk3300MDGFBFBAHPB_.AddEntriesFrom(ref input, _repeated_unk3300MDGFBFBAHPB_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class AttackResultCreateCount : pb::IMessage<AttackResultCreateCount>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AttackResultCreateCount> _parser = new pb::MessageParser<AttackResultCreateCount>(() => new AttackResultCreateCount());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AttackResultCreateCount> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AttackResultCreateCountReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AttackResultCreateCount() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AttackResultCreateCount(AttackResultCreateCount other) : this() {
-    unk3300PFFFFJBPKGN_ = other.unk3300PFFFFJBPKGN_.Clone();
-    unk3300MDGFBFBAHPB_ = other.unk3300MDGFBFBAHPB_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AttackResultCreateCount Clone() {
-    return new AttackResultCreateCount(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_PFFFFJBPKGN" field.</summary>
-  public const int Unk3300PFFFFJBPKGNFieldNumber = 8;
-  private static readonly pb::FieldCodec<uint> _repeated_unk3300PFFFFJBPKGN_codec
-      = pb::FieldCodec.ForUInt32(66);
-  private readonly pbc::RepeatedField<uint> unk3300PFFFFJBPKGN_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> Unk3300PFFFFJBPKGN {
-    get { return unk3300PFFFFJBPKGN_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_MDGFBFBAHPB" field.</summary>
-  public const int Unk3300MDGFBFBAHPBFieldNumber = 10;
-  private static readonly pb::FieldCodec<uint> _repeated_unk3300MDGFBFBAHPB_codec
-      = pb::FieldCodec.ForUInt32(82);
-  private readonly pbc::RepeatedField<uint> unk3300MDGFBFBAHPB_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> Unk3300MDGFBFBAHPB {
-    get { return unk3300MDGFBFBAHPB_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AttackResultCreateCount);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AttackResultCreateCount other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!unk3300PFFFFJBPKGN_.Equals(other.unk3300PFFFFJBPKGN_)) return false;
-    if(!unk3300MDGFBFBAHPB_.Equals(other.unk3300MDGFBFBAHPB_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= unk3300PFFFFJBPKGN_.GetHashCode();
-    hash ^= unk3300MDGFBFBAHPB_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    unk3300PFFFFJBPKGN_.WriteTo(output, _repeated_unk3300PFFFFJBPKGN_codec);
-    unk3300MDGFBFBAHPB_.WriteTo(output, _repeated_unk3300MDGFBFBAHPB_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    unk3300PFFFFJBPKGN_.WriteTo(ref output, _repeated_unk3300PFFFFJBPKGN_codec);
-    unk3300MDGFBFBAHPB_.WriteTo(ref output, _repeated_unk3300MDGFBFBAHPB_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += unk3300PFFFFJBPKGN_.CalculateSize(_repeated_unk3300PFFFFJBPKGN_codec);
-    size += unk3300MDGFBFBAHPB_.CalculateSize(_repeated_unk3300MDGFBFBAHPB_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AttackResultCreateCount other) {
-    if (other == null) {
-      return;
-    }
-    unk3300PFFFFJBPKGN_.Add(other.unk3300PFFFFJBPKGN_);
-    unk3300MDGFBFBAHPB_.Add(other.unk3300MDGFBFBAHPB_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 66:
-        case 64: {
-          unk3300PFFFFJBPKGN_.AddEntriesFrom(input, _repeated_unk3300PFFFFJBPKGN_codec);
-          break;
-        }
-        case 82:
-        case 80: {
-          unk3300MDGFBFBAHPB_.AddEntriesFrom(input, _repeated_unk3300MDGFBFBAHPB_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 66:
-        case 64: {
-          unk3300PFFFFJBPKGN_.AddEntriesFrom(ref input, _repeated_unk3300PFFFFJBPKGN_codec);
-          break;
-        }
-        case 82:
-        case 80: {
-          unk3300MDGFBFBAHPB_.AddEntriesFrom(ref input, _repeated_unk3300MDGFBFBAHPB_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

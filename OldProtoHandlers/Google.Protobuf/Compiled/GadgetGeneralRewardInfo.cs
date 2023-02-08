@@ -9,364 +9,366 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GadgetGeneralRewardInfo.proto</summary>
-public static partial class GadgetGeneralRewardInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GadgetGeneralRewardInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GadgetGeneralRewardInfo.proto</summary>
+  public static partial class GadgetGeneralRewardInfoReflection {
 
-  static GadgetGeneralRewardInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1HYWRnZXRHZW5lcmFsUmV3YXJkSW5mby5wcm90bxoPSXRlbVBhcmFtLnBy",
-          "b3RvIo4BChdHYWRnZXRHZW5lcmFsUmV3YXJkSW5mbxINCgVyZXNpbhgBIAEo",
-          "DRIRCglkZWFkX3RpbWUYAiABKA0SFwoPcmVtYWluX3VpZF9saXN0GAMgAygN",
-          "EhgKEHF1YWxpZnlfdWlkX2xpc3QYBCADKA0SHgoKaXRlbV9wYXJhbRgFIAEo",
-          "CzIKLkl0ZW1QYXJhbUIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3Rv",
-          "YgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ItemParamReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GadgetGeneralRewardInfo), global::GadgetGeneralRewardInfo.Parser, new[]{ "Resin", "DeadTime", "RemainUidList", "QualifyUidList", "ItemParam" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GadgetGeneralRewardInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GadgetGeneralRewardInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1HYWRnZXRHZW5lcmFsUmV3YXJkSW5mby5wcm90bxoPSXRlbVBhcmFtLnBy",
+            "b3RvIo4BChdHYWRnZXRHZW5lcmFsUmV3YXJkSW5mbxINCgVyZXNpbhgBIAEo",
+            "DRIRCglkZWFkX3RpbWUYAiABKA0SFwoPcmVtYWluX3VpZF9saXN0GAMgAygN",
+            "EhgKEHF1YWxpZnlfdWlkX2xpc3QYBCADKA0SHgoKaXRlbV9wYXJhbRgFIAEo",
+            "CzIKLkl0ZW1QYXJhbUIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ItemParamReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GadgetGeneralRewardInfo), global::OldProtos.GadgetGeneralRewardInfo.Parser, new[]{ "Resin", "DeadTime", "RemainUidList", "QualifyUidList", "ItemParam" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GadgetGeneralRewardInfo : pb::IMessage<GadgetGeneralRewardInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GadgetGeneralRewardInfo> _parser = new pb::MessageParser<GadgetGeneralRewardInfo>(() => new GadgetGeneralRewardInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GadgetGeneralRewardInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GadgetGeneralRewardInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GadgetGeneralRewardInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GadgetGeneralRewardInfo(GadgetGeneralRewardInfo other) : this() {
+      resin_ = other.resin_;
+      deadTime_ = other.deadTime_;
+      remainUidList_ = other.remainUidList_.Clone();
+      qualifyUidList_ = other.qualifyUidList_.Clone();
+      itemParam_ = other.itemParam_ != null ? other.itemParam_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GadgetGeneralRewardInfo Clone() {
+      return new GadgetGeneralRewardInfo(this);
+    }
+
+    /// <summary>Field number for the "resin" field.</summary>
+    public const int ResinFieldNumber = 1;
+    private uint resin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Resin {
+      get { return resin_; }
+      set {
+        resin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dead_time" field.</summary>
+    public const int DeadTimeFieldNumber = 2;
+    private uint deadTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DeadTime {
+      get { return deadTime_; }
+      set {
+        deadTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "remain_uid_list" field.</summary>
+    public const int RemainUidListFieldNumber = 3;
+    private static readonly pb::FieldCodec<uint> _repeated_remainUidList_codec
+        = pb::FieldCodec.ForUInt32(26);
+    private readonly pbc::RepeatedField<uint> remainUidList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> RemainUidList {
+      get { return remainUidList_; }
+    }
+
+    /// <summary>Field number for the "qualify_uid_list" field.</summary>
+    public const int QualifyUidListFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_qualifyUidList_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> qualifyUidList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> QualifyUidList {
+      get { return qualifyUidList_; }
+    }
+
+    /// <summary>Field number for the "item_param" field.</summary>
+    public const int ItemParamFieldNumber = 5;
+    private global::OldProtos.ItemParam itemParam_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ItemParam ItemParam {
+      get { return itemParam_; }
+      set {
+        itemParam_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GadgetGeneralRewardInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GadgetGeneralRewardInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Resin != other.Resin) return false;
+      if (DeadTime != other.DeadTime) return false;
+      if(!remainUidList_.Equals(other.remainUidList_)) return false;
+      if(!qualifyUidList_.Equals(other.qualifyUidList_)) return false;
+      if (!object.Equals(ItemParam, other.ItemParam)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Resin != 0) hash ^= Resin.GetHashCode();
+      if (DeadTime != 0) hash ^= DeadTime.GetHashCode();
+      hash ^= remainUidList_.GetHashCode();
+      hash ^= qualifyUidList_.GetHashCode();
+      if (itemParam_ != null) hash ^= ItemParam.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Resin != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Resin);
+      }
+      if (DeadTime != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(DeadTime);
+      }
+      remainUidList_.WriteTo(output, _repeated_remainUidList_codec);
+      qualifyUidList_.WriteTo(output, _repeated_qualifyUidList_codec);
+      if (itemParam_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ItemParam);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Resin != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Resin);
+      }
+      if (DeadTime != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(DeadTime);
+      }
+      remainUidList_.WriteTo(ref output, _repeated_remainUidList_codec);
+      qualifyUidList_.WriteTo(ref output, _repeated_qualifyUidList_codec);
+      if (itemParam_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(ItemParam);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Resin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Resin);
+      }
+      if (DeadTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DeadTime);
+      }
+      size += remainUidList_.CalculateSize(_repeated_remainUidList_codec);
+      size += qualifyUidList_.CalculateSize(_repeated_qualifyUidList_codec);
+      if (itemParam_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ItemParam);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GadgetGeneralRewardInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Resin != 0) {
+        Resin = other.Resin;
+      }
+      if (other.DeadTime != 0) {
+        DeadTime = other.DeadTime;
+      }
+      remainUidList_.Add(other.remainUidList_);
+      qualifyUidList_.Add(other.qualifyUidList_);
+      if (other.itemParam_ != null) {
+        if (itemParam_ == null) {
+          ItemParam = new global::OldProtos.ItemParam();
+        }
+        ItemParam.MergeFrom(other.ItemParam);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Resin = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            DeadTime = input.ReadUInt32();
+            break;
+          }
+          case 26:
+          case 24: {
+            remainUidList_.AddEntriesFrom(input, _repeated_remainUidList_codec);
+            break;
+          }
+          case 34:
+          case 32: {
+            qualifyUidList_.AddEntriesFrom(input, _repeated_qualifyUidList_codec);
+            break;
+          }
+          case 42: {
+            if (itemParam_ == null) {
+              ItemParam = new global::OldProtos.ItemParam();
+            }
+            input.ReadMessage(ItemParam);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Resin = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            DeadTime = input.ReadUInt32();
+            break;
+          }
+          case 26:
+          case 24: {
+            remainUidList_.AddEntriesFrom(ref input, _repeated_remainUidList_codec);
+            break;
+          }
+          case 34:
+          case 32: {
+            qualifyUidList_.AddEntriesFrom(ref input, _repeated_qualifyUidList_codec);
+            break;
+          }
+          case 42: {
+            if (itemParam_ == null) {
+              ItemParam = new global::OldProtos.ItemParam();
+            }
+            input.ReadMessage(ItemParam);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GadgetGeneralRewardInfo : pb::IMessage<GadgetGeneralRewardInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GadgetGeneralRewardInfo> _parser = new pb::MessageParser<GadgetGeneralRewardInfo>(() => new GadgetGeneralRewardInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GadgetGeneralRewardInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GadgetGeneralRewardInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GadgetGeneralRewardInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GadgetGeneralRewardInfo(GadgetGeneralRewardInfo other) : this() {
-    resin_ = other.resin_;
-    deadTime_ = other.deadTime_;
-    remainUidList_ = other.remainUidList_.Clone();
-    qualifyUidList_ = other.qualifyUidList_.Clone();
-    itemParam_ = other.itemParam_ != null ? other.itemParam_.Clone() : null;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GadgetGeneralRewardInfo Clone() {
-    return new GadgetGeneralRewardInfo(this);
-  }
-
-  /// <summary>Field number for the "resin" field.</summary>
-  public const int ResinFieldNumber = 1;
-  private uint resin_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Resin {
-    get { return resin_; }
-    set {
-      resin_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "dead_time" field.</summary>
-  public const int DeadTimeFieldNumber = 2;
-  private uint deadTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DeadTime {
-    get { return deadTime_; }
-    set {
-      deadTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "remain_uid_list" field.</summary>
-  public const int RemainUidListFieldNumber = 3;
-  private static readonly pb::FieldCodec<uint> _repeated_remainUidList_codec
-      = pb::FieldCodec.ForUInt32(26);
-  private readonly pbc::RepeatedField<uint> remainUidList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> RemainUidList {
-    get { return remainUidList_; }
-  }
-
-  /// <summary>Field number for the "qualify_uid_list" field.</summary>
-  public const int QualifyUidListFieldNumber = 4;
-  private static readonly pb::FieldCodec<uint> _repeated_qualifyUidList_codec
-      = pb::FieldCodec.ForUInt32(34);
-  private readonly pbc::RepeatedField<uint> qualifyUidList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> QualifyUidList {
-    get { return qualifyUidList_; }
-  }
-
-  /// <summary>Field number for the "item_param" field.</summary>
-  public const int ItemParamFieldNumber = 5;
-  private global::ItemParam itemParam_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ItemParam ItemParam {
-    get { return itemParam_; }
-    set {
-      itemParam_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GadgetGeneralRewardInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GadgetGeneralRewardInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Resin != other.Resin) return false;
-    if (DeadTime != other.DeadTime) return false;
-    if(!remainUidList_.Equals(other.remainUidList_)) return false;
-    if(!qualifyUidList_.Equals(other.qualifyUidList_)) return false;
-    if (!object.Equals(ItemParam, other.ItemParam)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Resin != 0) hash ^= Resin.GetHashCode();
-    if (DeadTime != 0) hash ^= DeadTime.GetHashCode();
-    hash ^= remainUidList_.GetHashCode();
-    hash ^= qualifyUidList_.GetHashCode();
-    if (itemParam_ != null) hash ^= ItemParam.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Resin != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Resin);
-    }
-    if (DeadTime != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(DeadTime);
-    }
-    remainUidList_.WriteTo(output, _repeated_remainUidList_codec);
-    qualifyUidList_.WriteTo(output, _repeated_qualifyUidList_codec);
-    if (itemParam_ != null) {
-      output.WriteRawTag(42);
-      output.WriteMessage(ItemParam);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Resin != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Resin);
-    }
-    if (DeadTime != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(DeadTime);
-    }
-    remainUidList_.WriteTo(ref output, _repeated_remainUidList_codec);
-    qualifyUidList_.WriteTo(ref output, _repeated_qualifyUidList_codec);
-    if (itemParam_ != null) {
-      output.WriteRawTag(42);
-      output.WriteMessage(ItemParam);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Resin != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Resin);
-    }
-    if (DeadTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DeadTime);
-    }
-    size += remainUidList_.CalculateSize(_repeated_remainUidList_codec);
-    size += qualifyUidList_.CalculateSize(_repeated_qualifyUidList_codec);
-    if (itemParam_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(ItemParam);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GadgetGeneralRewardInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Resin != 0) {
-      Resin = other.Resin;
-    }
-    if (other.DeadTime != 0) {
-      DeadTime = other.DeadTime;
-    }
-    remainUidList_.Add(other.remainUidList_);
-    qualifyUidList_.Add(other.qualifyUidList_);
-    if (other.itemParam_ != null) {
-      if (itemParam_ == null) {
-        ItemParam = new global::ItemParam();
-      }
-      ItemParam.MergeFrom(other.ItemParam);
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          Resin = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          DeadTime = input.ReadUInt32();
-          break;
-        }
-        case 26:
-        case 24: {
-          remainUidList_.AddEntriesFrom(input, _repeated_remainUidList_codec);
-          break;
-        }
-        case 34:
-        case 32: {
-          qualifyUidList_.AddEntriesFrom(input, _repeated_qualifyUidList_codec);
-          break;
-        }
-        case 42: {
-          if (itemParam_ == null) {
-            ItemParam = new global::ItemParam();
-          }
-          input.ReadMessage(ItemParam);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          Resin = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          DeadTime = input.ReadUInt32();
-          break;
-        }
-        case 26:
-        case 24: {
-          remainUidList_.AddEntriesFrom(ref input, _repeated_remainUidList_codec);
-          break;
-        }
-        case 34:
-        case 32: {
-          qualifyUidList_.AddEntriesFrom(ref input, _repeated_qualifyUidList_codec);
-          break;
-        }
-        case 42: {
-          if (itemParam_ == null) {
-            ItemParam = new global::ItemParam();
-          }
-          input.ReadMessage(ItemParam);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

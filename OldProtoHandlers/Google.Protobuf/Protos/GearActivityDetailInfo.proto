@@ -19,7 +19,7 @@ syntax = "proto3";
 import "GearLevelData.proto";
 import "JigsawPictureData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message GearActivityDetailInfo {
   repeated GearLevelData gear_level_data_list = 14;

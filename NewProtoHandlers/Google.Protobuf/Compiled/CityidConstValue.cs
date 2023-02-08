@@ -9,42 +9,44 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CityidConstValue.proto</summary>
-public static partial class CityidConstValueReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CityidConstValue.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CityidConstValue.proto</summary>
+  public static partial class CityidConstValueReflection {
 
-  static CityidConstValueReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZDaXR5aWRDb25zdFZhbHVlLnByb3RvKqcBChBDaXR5aWRDb25zdFZhbHVl",
-          "EhsKF0NJVFlJRF9DT05TVF9WQUxVRV9OT05FEAASHQoZQ0lUWUlEX0NPTlNU",
-          "X1ZBTFVFX01FTkdERRABEhwKGENJVFlJRF9DT05TVF9WQUxVRV9MSVlVRRAC",
-          "EhwKGENJVFlJRF9DT05TVF9WQUxVRV9EQU9RSRADEhsKF0NJVFlJRF9DT05T",
-          "VF9WQUxVRV9YVU1JEARCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3Rv",
-          "Mw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::CityidConstValue), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for CityidConstValue.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CityidConstValueReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZDaXR5aWRDb25zdFZhbHVlLnByb3RvKqcBChBDaXR5aWRDb25zdFZhbHVl",
+            "EhsKF0NJVFlJRF9DT05TVF9WQUxVRV9OT05FEAASHQoZQ0lUWUlEX0NPTlNU",
+            "X1ZBTFVFX01FTkdERRABEhwKGENJVFlJRF9DT05TVF9WQUxVRV9MSVlVRRAC",
+            "EhwKGENJVFlJRF9DT05TVF9WQUxVRV9EQU9RSRADEhsKF0NJVFlJRF9DT05T",
+            "VF9WQUxVRV9YVU1JEARCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.CityidConstValue), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum CityidConstValue {
+    [pbr::OriginalName("CITYID_CONST_VALUE_NONE")] None = 0,
+    [pbr::OriginalName("CITYID_CONST_VALUE_MENGDE")] Mengde = 1,
+    [pbr::OriginalName("CITYID_CONST_VALUE_LIYUE")] Liyue = 2,
+    [pbr::OriginalName("CITYID_CONST_VALUE_DAOQI")] Daoqi = 3,
+    [pbr::OriginalName("CITYID_CONST_VALUE_XUMI")] Xumi = 4,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum CityidConstValue {
-  [pbr::OriginalName("CITYID_CONST_VALUE_NONE")] None = 0,
-  [pbr::OriginalName("CITYID_CONST_VALUE_MENGDE")] Mengde = 1,
-  [pbr::OriginalName("CITYID_CONST_VALUE_LIYUE")] Liyue = 2,
-  [pbr::OriginalName("CITYID_CONST_VALUE_DAOQI")] Daoqi = 3,
-  [pbr::OriginalName("CITYID_CONST_VALUE_XUMI")] Xumi = 4,
-}
-
-#endregion
-
 
 #endregion Designer generated code

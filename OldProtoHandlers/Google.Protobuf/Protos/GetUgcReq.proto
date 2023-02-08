@@ -20,7 +20,7 @@ import "GetUgcType.proto";
 import "RecordUsage.proto";
 import "UgcType.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 6326
 // EnetChannelId: 0

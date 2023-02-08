@@ -9,307 +9,309 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from EffigyChallengeV2DungeonInfoNotify.proto</summary>
-public static partial class EffigyChallengeV2DungeonInfoNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for EffigyChallengeV2DungeonInfoNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from EffigyChallengeV2DungeonInfoNotify.proto</summary>
+  public static partial class EffigyChallengeV2DungeonInfoNotifyReflection {
 
-  static EffigyChallengeV2DungeonInfoNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CihFZmZpZ3lDaGFsbGVuZ2VWMkR1bmdlb25JbmZvTm90aWZ5LnByb3RvImsK",
-          "IkVmZmlneUNoYWxsZW5nZVYyRHVuZ2VvbkluZm9Ob3RpZnkSIQoZY2hhbGxl",
-          "bmdlX21vZGVfZGlmZmljdWx0eRgNIAEoDRIQCghza2lsbF9ubxgPIAEoDRIQ",
-          "CghsZXZlbF9pZBgCIAEoDUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJv",
-          "dG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::EffigyChallengeV2DungeonInfoNotify), global::EffigyChallengeV2DungeonInfoNotify.Parser, new[]{ "ChallengeModeDifficulty", "SkillNo", "LevelId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for EffigyChallengeV2DungeonInfoNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static EffigyChallengeV2DungeonInfoNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CihFZmZpZ3lDaGFsbGVuZ2VWMkR1bmdlb25JbmZvTm90aWZ5LnByb3RvImsK",
+            "IkVmZmlneUNoYWxsZW5nZVYyRHVuZ2VvbkluZm9Ob3RpZnkSIQoZY2hhbGxl",
+            "bmdlX21vZGVfZGlmZmljdWx0eRgNIAEoDRIQCghza2lsbF9ubxgPIAEoDRIQ",
+            "CghsZXZlbF9pZBgCIAEoDUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.EffigyChallengeV2DungeonInfoNotify), global::NewProtos.EffigyChallengeV2DungeonInfoNotify.Parser, new[]{ "ChallengeModeDifficulty", "SkillNo", "LevelId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 24761;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class EffigyChallengeV2DungeonInfoNotify : pb::IMessage<EffigyChallengeV2DungeonInfoNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<EffigyChallengeV2DungeonInfoNotify> _parser = new pb::MessageParser<EffigyChallengeV2DungeonInfoNotify>(() => new EffigyChallengeV2DungeonInfoNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<EffigyChallengeV2DungeonInfoNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.EffigyChallengeV2DungeonInfoNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EffigyChallengeV2DungeonInfoNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EffigyChallengeV2DungeonInfoNotify(EffigyChallengeV2DungeonInfoNotify other) : this() {
+      challengeModeDifficulty_ = other.challengeModeDifficulty_;
+      skillNo_ = other.skillNo_;
+      levelId_ = other.levelId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EffigyChallengeV2DungeonInfoNotify Clone() {
+      return new EffigyChallengeV2DungeonInfoNotify(this);
+    }
+
+    /// <summary>Field number for the "challenge_mode_difficulty" field.</summary>
+    public const int ChallengeModeDifficultyFieldNumber = 13;
+    private uint challengeModeDifficulty_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeModeDifficulty {
+      get { return challengeModeDifficulty_; }
+      set {
+        challengeModeDifficulty_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_no" field.</summary>
+    public const int SkillNoFieldNumber = 15;
+    private uint skillNo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillNo {
+      get { return skillNo_; }
+      set {
+        skillNo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level_id" field.</summary>
+    public const int LevelIdFieldNumber = 2;
+    private uint levelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LevelId {
+      get { return levelId_; }
+      set {
+        levelId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as EffigyChallengeV2DungeonInfoNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(EffigyChallengeV2DungeonInfoNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ChallengeModeDifficulty != other.ChallengeModeDifficulty) return false;
+      if (SkillNo != other.SkillNo) return false;
+      if (LevelId != other.LevelId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ChallengeModeDifficulty != 0) hash ^= ChallengeModeDifficulty.GetHashCode();
+      if (SkillNo != 0) hash ^= SkillNo.GetHashCode();
+      if (LevelId != 0) hash ^= LevelId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (LevelId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(LevelId);
+      }
+      if (ChallengeModeDifficulty != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ChallengeModeDifficulty);
+      }
+      if (SkillNo != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(SkillNo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (LevelId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(LevelId);
+      }
+      if (ChallengeModeDifficulty != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ChallengeModeDifficulty);
+      }
+      if (SkillNo != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(SkillNo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ChallengeModeDifficulty != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeModeDifficulty);
+      }
+      if (SkillNo != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillNo);
+      }
+      if (LevelId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(EffigyChallengeV2DungeonInfoNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ChallengeModeDifficulty != 0) {
+        ChallengeModeDifficulty = other.ChallengeModeDifficulty;
+      }
+      if (other.SkillNo != 0) {
+        SkillNo = other.SkillNo;
+      }
+      if (other.LevelId != 0) {
+        LevelId = other.LevelId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            LevelId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            ChallengeModeDifficulty = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            SkillNo = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            LevelId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            ChallengeModeDifficulty = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            SkillNo = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 24761;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class EffigyChallengeV2DungeonInfoNotify : pb::IMessage<EffigyChallengeV2DungeonInfoNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<EffigyChallengeV2DungeonInfoNotify> _parser = new pb::MessageParser<EffigyChallengeV2DungeonInfoNotify>(() => new EffigyChallengeV2DungeonInfoNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<EffigyChallengeV2DungeonInfoNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::EffigyChallengeV2DungeonInfoNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EffigyChallengeV2DungeonInfoNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EffigyChallengeV2DungeonInfoNotify(EffigyChallengeV2DungeonInfoNotify other) : this() {
-    challengeModeDifficulty_ = other.challengeModeDifficulty_;
-    skillNo_ = other.skillNo_;
-    levelId_ = other.levelId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EffigyChallengeV2DungeonInfoNotify Clone() {
-    return new EffigyChallengeV2DungeonInfoNotify(this);
-  }
-
-  /// <summary>Field number for the "challenge_mode_difficulty" field.</summary>
-  public const int ChallengeModeDifficultyFieldNumber = 13;
-  private uint challengeModeDifficulty_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChallengeModeDifficulty {
-    get { return challengeModeDifficulty_; }
-    set {
-      challengeModeDifficulty_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "skill_no" field.</summary>
-  public const int SkillNoFieldNumber = 15;
-  private uint skillNo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SkillNo {
-    get { return skillNo_; }
-    set {
-      skillNo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "level_id" field.</summary>
-  public const int LevelIdFieldNumber = 2;
-  private uint levelId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LevelId {
-    get { return levelId_; }
-    set {
-      levelId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as EffigyChallengeV2DungeonInfoNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(EffigyChallengeV2DungeonInfoNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ChallengeModeDifficulty != other.ChallengeModeDifficulty) return false;
-    if (SkillNo != other.SkillNo) return false;
-    if (LevelId != other.LevelId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ChallengeModeDifficulty != 0) hash ^= ChallengeModeDifficulty.GetHashCode();
-    if (SkillNo != 0) hash ^= SkillNo.GetHashCode();
-    if (LevelId != 0) hash ^= LevelId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (LevelId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(LevelId);
-    }
-    if (ChallengeModeDifficulty != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(ChallengeModeDifficulty);
-    }
-    if (SkillNo != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(SkillNo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (LevelId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(LevelId);
-    }
-    if (ChallengeModeDifficulty != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(ChallengeModeDifficulty);
-    }
-    if (SkillNo != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(SkillNo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ChallengeModeDifficulty != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeModeDifficulty);
-    }
-    if (SkillNo != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillNo);
-    }
-    if (LevelId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(EffigyChallengeV2DungeonInfoNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ChallengeModeDifficulty != 0) {
-      ChallengeModeDifficulty = other.ChallengeModeDifficulty;
-    }
-    if (other.SkillNo != 0) {
-      SkillNo = other.SkillNo;
-    }
-    if (other.LevelId != 0) {
-      LevelId = other.LevelId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          LevelId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          ChallengeModeDifficulty = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          SkillNo = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          LevelId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          ChallengeModeDifficulty = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          SkillNo = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

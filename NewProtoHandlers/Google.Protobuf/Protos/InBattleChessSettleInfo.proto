@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ExhibitionDisplayInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message InBattleChessSettleInfo {
   uint32 Unk3300_LPANFEBFJOJ = 5;

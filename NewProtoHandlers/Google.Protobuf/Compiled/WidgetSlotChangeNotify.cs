@@ -9,279 +9,281 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from WidgetSlotChangeNotify.proto</summary>
-public static partial class WidgetSlotChangeNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for WidgetSlotChangeNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from WidgetSlotChangeNotify.proto</summary>
+  public static partial class WidgetSlotChangeNotifyReflection {
 
-  static WidgetSlotChangeNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChxXaWRnZXRTbG90Q2hhbmdlTm90aWZ5LnByb3RvGhRXaWRnZXRTbG90RGF0",
-          "YS5wcm90bxoSV2lkZ2V0U2xvdE9wLnByb3RvIlIKFldpZGdldFNsb3RDaGFu",
-          "Z2VOb3RpZnkSGQoCb3AYBSABKA4yDS5XaWRnZXRTbG90T3ASHQoEc2xvdBgC",
-          "IAEoCzIPLldpZGdldFNsb3REYXRhQhYKFG9yZy5zb3JhcG9pbnRhLnByb3Rv",
-          "YgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::WidgetSlotDataReflection.Descriptor, global::WidgetSlotOpReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::WidgetSlotChangeNotify), global::WidgetSlotChangeNotify.Parser, new[]{ "Op", "Slot" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for WidgetSlotChangeNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static WidgetSlotChangeNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChxXaWRnZXRTbG90Q2hhbmdlTm90aWZ5LnByb3RvGhRXaWRnZXRTbG90RGF0",
+            "YS5wcm90bxoSV2lkZ2V0U2xvdE9wLnByb3RvIlIKFldpZGdldFNsb3RDaGFu",
+            "Z2VOb3RpZnkSGQoCb3AYBSABKA4yDS5XaWRnZXRTbG90T3ASHQoEc2xvdBgC",
+            "IAEoCzIPLldpZGdldFNsb3REYXRhQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.WidgetSlotDataReflection.Descriptor, global::NewProtos.WidgetSlotOpReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.WidgetSlotChangeNotify), global::NewProtos.WidgetSlotChangeNotify.Parser, new[]{ "Op", "Slot" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4278;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class WidgetSlotChangeNotify : pb::IMessage<WidgetSlotChangeNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<WidgetSlotChangeNotify> _parser = new pb::MessageParser<WidgetSlotChangeNotify>(() => new WidgetSlotChangeNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<WidgetSlotChangeNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.WidgetSlotChangeNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WidgetSlotChangeNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WidgetSlotChangeNotify(WidgetSlotChangeNotify other) : this() {
+      op_ = other.op_;
+      slot_ = other.slot_ != null ? other.slot_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WidgetSlotChangeNotify Clone() {
+      return new WidgetSlotChangeNotify(this);
+    }
+
+    /// <summary>Field number for the "op" field.</summary>
+    public const int OpFieldNumber = 5;
+    private global::NewProtos.WidgetSlotOp op_ = global::NewProtos.WidgetSlotOp.Attach;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.WidgetSlotOp Op {
+      get { return op_; }
+      set {
+        op_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "slot" field.</summary>
+    public const int SlotFieldNumber = 2;
+    private global::NewProtos.WidgetSlotData slot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.WidgetSlotData Slot {
+      get { return slot_; }
+      set {
+        slot_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as WidgetSlotChangeNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(WidgetSlotChangeNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Op != other.Op) return false;
+      if (!object.Equals(Slot, other.Slot)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Op != global::NewProtos.WidgetSlotOp.Attach) hash ^= Op.GetHashCode();
+      if (slot_ != null) hash ^= Slot.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (slot_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Slot);
+      }
+      if (Op != global::NewProtos.WidgetSlotOp.Attach) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Op);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (slot_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Slot);
+      }
+      if (Op != global::NewProtos.WidgetSlotOp.Attach) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Op);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Op != global::NewProtos.WidgetSlotOp.Attach) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Op);
+      }
+      if (slot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Slot);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(WidgetSlotChangeNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Op != global::NewProtos.WidgetSlotOp.Attach) {
+        Op = other.Op;
+      }
+      if (other.slot_ != null) {
+        if (slot_ == null) {
+          Slot = new global::NewProtos.WidgetSlotData();
+        }
+        Slot.MergeFrom(other.Slot);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            if (slot_ == null) {
+              Slot = new global::NewProtos.WidgetSlotData();
+            }
+            input.ReadMessage(Slot);
+            break;
+          }
+          case 40: {
+            Op = (global::NewProtos.WidgetSlotOp) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            if (slot_ == null) {
+              Slot = new global::NewProtos.WidgetSlotData();
+            }
+            input.ReadMessage(Slot);
+            break;
+          }
+          case 40: {
+            Op = (global::NewProtos.WidgetSlotOp) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 4278;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class WidgetSlotChangeNotify : pb::IMessage<WidgetSlotChangeNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<WidgetSlotChangeNotify> _parser = new pb::MessageParser<WidgetSlotChangeNotify>(() => new WidgetSlotChangeNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<WidgetSlotChangeNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::WidgetSlotChangeNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WidgetSlotChangeNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WidgetSlotChangeNotify(WidgetSlotChangeNotify other) : this() {
-    op_ = other.op_;
-    slot_ = other.slot_ != null ? other.slot_.Clone() : null;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WidgetSlotChangeNotify Clone() {
-    return new WidgetSlotChangeNotify(this);
-  }
-
-  /// <summary>Field number for the "op" field.</summary>
-  public const int OpFieldNumber = 5;
-  private global::WidgetSlotOp op_ = global::WidgetSlotOp.Attach;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::WidgetSlotOp Op {
-    get { return op_; }
-    set {
-      op_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "slot" field.</summary>
-  public const int SlotFieldNumber = 2;
-  private global::WidgetSlotData slot_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::WidgetSlotData Slot {
-    get { return slot_; }
-    set {
-      slot_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as WidgetSlotChangeNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(WidgetSlotChangeNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Op != other.Op) return false;
-    if (!object.Equals(Slot, other.Slot)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Op != global::WidgetSlotOp.Attach) hash ^= Op.GetHashCode();
-    if (slot_ != null) hash ^= Slot.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (slot_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(Slot);
-    }
-    if (Op != global::WidgetSlotOp.Attach) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) Op);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (slot_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(Slot);
-    }
-    if (Op != global::WidgetSlotOp.Attach) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) Op);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Op != global::WidgetSlotOp.Attach) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Op);
-    }
-    if (slot_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Slot);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(WidgetSlotChangeNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Op != global::WidgetSlotOp.Attach) {
-      Op = other.Op;
-    }
-    if (other.slot_ != null) {
-      if (slot_ == null) {
-        Slot = new global::WidgetSlotData();
-      }
-      Slot.MergeFrom(other.Slot);
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18: {
-          if (slot_ == null) {
-            Slot = new global::WidgetSlotData();
-          }
-          input.ReadMessage(Slot);
-          break;
-        }
-        case 40: {
-          Op = (global::WidgetSlotOp) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18: {
-          if (slot_ == null) {
-            Slot = new global::WidgetSlotData();
-          }
-          input.ReadMessage(Slot);
-          break;
-        }
-        case 40: {
-          Op = (global::WidgetSlotOp) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

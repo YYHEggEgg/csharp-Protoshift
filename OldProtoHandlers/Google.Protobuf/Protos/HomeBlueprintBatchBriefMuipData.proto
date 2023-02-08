@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "HomeBlueprintBriefMuipData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message HomeBlueprintBatchBriefMuipData {
   repeated HomeBlueprintBriefMuipData brief_list = 1;

@@ -19,7 +19,7 @@ syntax = "proto3";
 import "HomePlantSubFieldData.proto";
 import "Vector.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message HomePlantFieldData {
   repeated HomePlantSubFieldData sub_field_list = 13;

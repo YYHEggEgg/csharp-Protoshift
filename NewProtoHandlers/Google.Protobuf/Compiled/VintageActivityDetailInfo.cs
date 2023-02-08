@@ -9,409 +9,412 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from VintageActivityDetailInfo.proto</summary>
-public static partial class VintageActivityDetailInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for VintageActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from VintageActivityDetailInfo.proto</summary>
+  public static partial class VintageActivityDetailInfoReflection {
 
-  static VintageActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch9WaW50YWdlQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGh5WaW50YWdlQm9v",
-          "dGhVc2VkSXRlbURhdGEucHJvdG8aI1ZpbnRhZ2VDYW1wQ2hhbGxlbmdlU3Rh",
-          "Z2VEYXRhLnByb3RvGh1WaW50YWdlSHVudGluZ1N0YWdlRGF0YS5wcm90bxoX",
-          "VmludGFnZU1hcmtldEluZm8ucHJvdG8aHVZpbnRhZ2VQcmVzZW50U3RhZ2VE",
-          "YXRhLnByb3RvIoYFChlWaW50YWdlQWN0aXZpdHlEZXRhaWxJbmZvEk8KE1Vu",
-          "azMzMDBfUENJSUdQSkpIR0YYCyADKAsyMi5WaW50YWdlQWN0aXZpdHlEZXRh",
-          "aWxJbmZvLlVuazMzMDBQQ0lJR1BKSkhHRkVudHJ5EhkKEWlzX2NvbnRlbnRf",
-          "Y2xvc2VkGA0gASgIEk8KE1VuazMzMDBfRUhIUEZLSU9LT08YCiADKAsyMi5W",
-          "aW50YWdlQWN0aXZpdHlEZXRhaWxJbmZvLlVuazMzMDBFSEhQRktJT0tPT0Vu",
-          "dHJ5Ei0KCmJvb3RoX2RhdGEYCSABKAsyGS5WaW50YWdlQm9vdGhVc2VkSXRl",
-          "bURhdGESTwoTVW5rMzMwMF9OUEtNREZDTEdCShgCIAMoCzIyLlZpbnRhZ2VB",
-          "Y3Rpdml0eURldGFpbEluZm8uVW5rMzMwME5QS01ERkNMR0JKRW50cnkSJwoL",
-          "bWFya2V0X2luZm8YDiABKAsyEi5WaW50YWdlTWFya2V0SW5mbxpTChdVbmsz",
-          "MzAwUENJSUdQSkpIR0ZFbnRyeRILCgNrZXkYASABKA0SJwoFdmFsdWUYAiAB",
-          "KAsyGC5WaW50YWdlUHJlc2VudFN0YWdlRGF0YToCOAEaUwoXVW5rMzMwMEVI",
-          "SFBGS0lPS09PRW50cnkSCwoDa2V5GAEgASgNEicKBXZhbHVlGAIgASgLMhgu",
-          "VmludGFnZUh1bnRpbmdTdGFnZURhdGE6AjgBGlkKF1VuazMzMDBOUEtNREZD",
-          "TEdCSkVudHJ5EgsKA2tleRgBIAEoDRItCgV2YWx1ZRgCIAEoCzIeLlZpbnRh",
-          "Z2VDYW1wQ2hhbGxlbmdlU3RhZ2VEYXRhOgI4AUIWChRvcmcuc29yYXBvaW50",
-          "YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::VintageBoothUsedItemDataReflection.Descriptor, global::VintageCampChallengeStageDataReflection.Descriptor, global::VintageHuntingStageDataReflection.Descriptor, global::VintageMarketInfoReflection.Descriptor, global::VintagePresentStageDataReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::VintageActivityDetailInfo), global::VintageActivityDetailInfo.Parser, new[]{ "Unk3300PCIIGPJJHGF", "IsContentClosed", "Unk3300EHHPFKIOKOO", "BoothData", "Unk3300NPKMDFCLGBJ", "MarketInfo" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for VintageActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static VintageActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch9WaW50YWdlQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGh5WaW50YWdlQm9v",
+            "dGhVc2VkSXRlbURhdGEucHJvdG8aI1ZpbnRhZ2VDYW1wQ2hhbGxlbmdlU3Rh",
+            "Z2VEYXRhLnByb3RvGh1WaW50YWdlSHVudGluZ1N0YWdlRGF0YS5wcm90bxoX",
+            "VmludGFnZU1hcmtldEluZm8ucHJvdG8aHVZpbnRhZ2VQcmVzZW50U3RhZ2VE",
+            "YXRhLnByb3RvIoYFChlWaW50YWdlQWN0aXZpdHlEZXRhaWxJbmZvEk8KE1Vu",
+            "azMzMDBfUENJSUdQSkpIR0YYCyADKAsyMi5WaW50YWdlQWN0aXZpdHlEZXRh",
+            "aWxJbmZvLlVuazMzMDBQQ0lJR1BKSkhHRkVudHJ5EhkKEWlzX2NvbnRlbnRf",
+            "Y2xvc2VkGA0gASgIEk8KE1VuazMzMDBfRUhIUEZLSU9LT08YCiADKAsyMi5W",
+            "aW50YWdlQWN0aXZpdHlEZXRhaWxJbmZvLlVuazMzMDBFSEhQRktJT0tPT0Vu",
+            "dHJ5Ei0KCmJvb3RoX2RhdGEYCSABKAsyGS5WaW50YWdlQm9vdGhVc2VkSXRl",
+            "bURhdGESTwoTVW5rMzMwMF9OUEtNREZDTEdCShgCIAMoCzIyLlZpbnRhZ2VB",
+            "Y3Rpdml0eURldGFpbEluZm8uVW5rMzMwME5QS01ERkNMR0JKRW50cnkSJwoL",
+            "bWFya2V0X2luZm8YDiABKAsyEi5WaW50YWdlTWFya2V0SW5mbxpTChdVbmsz",
+            "MzAwUENJSUdQSkpIR0ZFbnRyeRILCgNrZXkYASABKA0SJwoFdmFsdWUYAiAB",
+            "KAsyGC5WaW50YWdlUHJlc2VudFN0YWdlRGF0YToCOAEaUwoXVW5rMzMwMEVI",
+            "SFBGS0lPS09PRW50cnkSCwoDa2V5GAEgASgNEicKBXZhbHVlGAIgASgLMhgu",
+            "VmludGFnZUh1bnRpbmdTdGFnZURhdGE6AjgBGlkKF1VuazMzMDBOUEtNREZD",
+            "TEdCSkVudHJ5EgsKA2tleRgBIAEoDRItCgV2YWx1ZRgCIAEoCzIeLlZpbnRh",
+            "Z2VDYW1wQ2hhbGxlbmdlU3RhZ2VEYXRhOgI4AUIMqgIJTmV3UHJvdG9zYgZw",
+            "cm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.VintageBoothUsedItemDataReflection.Descriptor, global::NewProtos.VintageCampChallengeStageDataReflection.Descriptor, global::NewProtos.VintageHuntingStageDataReflection.Descriptor, global::NewProtos.VintageMarketInfoReflection.Descriptor, global::NewProtos.VintagePresentStageDataReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.VintageActivityDetailInfo), global::NewProtos.VintageActivityDetailInfo.Parser, new[]{ "Unk3300PCIIGPJJHGF", "IsContentClosed", "Unk3300EHHPFKIOKOO", "BoothData", "Unk3300NPKMDFCLGBJ", "MarketInfo" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class VintageActivityDetailInfo : pb::IMessage<VintageActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<VintageActivityDetailInfo> _parser = new pb::MessageParser<VintageActivityDetailInfo>(() => new VintageActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<VintageActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.VintageActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VintageActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VintageActivityDetailInfo(VintageActivityDetailInfo other) : this() {
+      unk3300PCIIGPJJHGF_ = other.unk3300PCIIGPJJHGF_.Clone();
+      isContentClosed_ = other.isContentClosed_;
+      unk3300EHHPFKIOKOO_ = other.unk3300EHHPFKIOKOO_.Clone();
+      boothData_ = other.boothData_ != null ? other.boothData_.Clone() : null;
+      unk3300NPKMDFCLGBJ_ = other.unk3300NPKMDFCLGBJ_.Clone();
+      marketInfo_ = other.marketInfo_ != null ? other.marketInfo_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VintageActivityDetailInfo Clone() {
+      return new VintageActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_PCIIGPJJHGF" field.</summary>
+    public const int Unk3300PCIIGPJJHGFFieldNumber = 11;
+    private static readonly pbc::MapField<uint, global::NewProtos.VintagePresentStageData>.Codec _map_unk3300PCIIGPJJHGF_codec
+        = new pbc::MapField<uint, global::NewProtos.VintagePresentStageData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::NewProtos.VintagePresentStageData.Parser), 90);
+    private readonly pbc::MapField<uint, global::NewProtos.VintagePresentStageData> unk3300PCIIGPJJHGF_ = new pbc::MapField<uint, global::NewProtos.VintagePresentStageData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::NewProtos.VintagePresentStageData> Unk3300PCIIGPJJHGF {
+      get { return unk3300PCIIGPJJHGF_; }
+    }
+
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 13;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EHHPFKIOKOO" field.</summary>
+    public const int Unk3300EHHPFKIOKOOFieldNumber = 10;
+    private static readonly pbc::MapField<uint, global::NewProtos.VintageHuntingStageData>.Codec _map_unk3300EHHPFKIOKOO_codec
+        = new pbc::MapField<uint, global::NewProtos.VintageHuntingStageData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::NewProtos.VintageHuntingStageData.Parser), 82);
+    private readonly pbc::MapField<uint, global::NewProtos.VintageHuntingStageData> unk3300EHHPFKIOKOO_ = new pbc::MapField<uint, global::NewProtos.VintageHuntingStageData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::NewProtos.VintageHuntingStageData> Unk3300EHHPFKIOKOO {
+      get { return unk3300EHHPFKIOKOO_; }
+    }
+
+    /// <summary>Field number for the "booth_data" field.</summary>
+    public const int BoothDataFieldNumber = 9;
+    private global::NewProtos.VintageBoothUsedItemData boothData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.VintageBoothUsedItemData BoothData {
+      get { return boothData_; }
+      set {
+        boothData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NPKMDFCLGBJ" field.</summary>
+    public const int Unk3300NPKMDFCLGBJFieldNumber = 2;
+    private static readonly pbc::MapField<uint, global::NewProtos.VintageCampChallengeStageData>.Codec _map_unk3300NPKMDFCLGBJ_codec
+        = new pbc::MapField<uint, global::NewProtos.VintageCampChallengeStageData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::NewProtos.VintageCampChallengeStageData.Parser), 18);
+    private readonly pbc::MapField<uint, global::NewProtos.VintageCampChallengeStageData> unk3300NPKMDFCLGBJ_ = new pbc::MapField<uint, global::NewProtos.VintageCampChallengeStageData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::NewProtos.VintageCampChallengeStageData> Unk3300NPKMDFCLGBJ {
+      get { return unk3300NPKMDFCLGBJ_; }
+    }
+
+    /// <summary>Field number for the "market_info" field.</summary>
+    public const int MarketInfoFieldNumber = 14;
+    private global::NewProtos.VintageMarketInfo marketInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.VintageMarketInfo MarketInfo {
+      get { return marketInfo_; }
+      set {
+        marketInfo_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as VintageActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(VintageActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!Unk3300PCIIGPJJHGF.Equals(other.Unk3300PCIIGPJJHGF)) return false;
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if (!Unk3300EHHPFKIOKOO.Equals(other.Unk3300EHHPFKIOKOO)) return false;
+      if (!object.Equals(BoothData, other.BoothData)) return false;
+      if (!Unk3300NPKMDFCLGBJ.Equals(other.Unk3300NPKMDFCLGBJ)) return false;
+      if (!object.Equals(MarketInfo, other.MarketInfo)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= Unk3300PCIIGPJJHGF.GetHashCode();
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      hash ^= Unk3300EHHPFKIOKOO.GetHashCode();
+      if (boothData_ != null) hash ^= BoothData.GetHashCode();
+      hash ^= Unk3300NPKMDFCLGBJ.GetHashCode();
+      if (marketInfo_ != null) hash ^= MarketInfo.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      unk3300NPKMDFCLGBJ_.WriteTo(output, _map_unk3300NPKMDFCLGBJ_codec);
+      if (boothData_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(BoothData);
+      }
+      unk3300EHHPFKIOKOO_.WriteTo(output, _map_unk3300EHHPFKIOKOO_codec);
+      unk3300PCIIGPJJHGF_.WriteTo(output, _map_unk3300PCIIGPJJHGF_codec);
+      if (IsContentClosed != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsContentClosed);
+      }
+      if (marketInfo_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(MarketInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unk3300NPKMDFCLGBJ_.WriteTo(ref output, _map_unk3300NPKMDFCLGBJ_codec);
+      if (boothData_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(BoothData);
+      }
+      unk3300EHHPFKIOKOO_.WriteTo(ref output, _map_unk3300EHHPFKIOKOO_codec);
+      unk3300PCIIGPJJHGF_.WriteTo(ref output, _map_unk3300PCIIGPJJHGF_codec);
+      if (IsContentClosed != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsContentClosed);
+      }
+      if (marketInfo_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(MarketInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += unk3300PCIIGPJJHGF_.CalculateSize(_map_unk3300PCIIGPJJHGF_codec);
+      if (IsContentClosed != false) {
+        size += 1 + 1;
+      }
+      size += unk3300EHHPFKIOKOO_.CalculateSize(_map_unk3300EHHPFKIOKOO_codec);
+      if (boothData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BoothData);
+      }
+      size += unk3300NPKMDFCLGBJ_.CalculateSize(_map_unk3300NPKMDFCLGBJ_codec);
+      if (marketInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MarketInfo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(VintageActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      unk3300PCIIGPJJHGF_.Add(other.unk3300PCIIGPJJHGF_);
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
+      unk3300EHHPFKIOKOO_.Add(other.unk3300EHHPFKIOKOO_);
+      if (other.boothData_ != null) {
+        if (boothData_ == null) {
+          BoothData = new global::NewProtos.VintageBoothUsedItemData();
+        }
+        BoothData.MergeFrom(other.BoothData);
+      }
+      unk3300NPKMDFCLGBJ_.Add(other.unk3300NPKMDFCLGBJ_);
+      if (other.marketInfo_ != null) {
+        if (marketInfo_ == null) {
+          MarketInfo = new global::NewProtos.VintageMarketInfo();
+        }
+        MarketInfo.MergeFrom(other.MarketInfo);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            unk3300NPKMDFCLGBJ_.AddEntriesFrom(input, _map_unk3300NPKMDFCLGBJ_codec);
+            break;
+          }
+          case 74: {
+            if (boothData_ == null) {
+              BoothData = new global::NewProtos.VintageBoothUsedItemData();
+            }
+            input.ReadMessage(BoothData);
+            break;
+          }
+          case 82: {
+            unk3300EHHPFKIOKOO_.AddEntriesFrom(input, _map_unk3300EHHPFKIOKOO_codec);
+            break;
+          }
+          case 90: {
+            unk3300PCIIGPJJHGF_.AddEntriesFrom(input, _map_unk3300PCIIGPJJHGF_codec);
+            break;
+          }
+          case 104: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 114: {
+            if (marketInfo_ == null) {
+              MarketInfo = new global::NewProtos.VintageMarketInfo();
+            }
+            input.ReadMessage(MarketInfo);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            unk3300NPKMDFCLGBJ_.AddEntriesFrom(ref input, _map_unk3300NPKMDFCLGBJ_codec);
+            break;
+          }
+          case 74: {
+            if (boothData_ == null) {
+              BoothData = new global::NewProtos.VintageBoothUsedItemData();
+            }
+            input.ReadMessage(BoothData);
+            break;
+          }
+          case 82: {
+            unk3300EHHPFKIOKOO_.AddEntriesFrom(ref input, _map_unk3300EHHPFKIOKOO_codec);
+            break;
+          }
+          case 90: {
+            unk3300PCIIGPJJHGF_.AddEntriesFrom(ref input, _map_unk3300PCIIGPJJHGF_codec);
+            break;
+          }
+          case 104: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 114: {
+            if (marketInfo_ == null) {
+              MarketInfo = new global::NewProtos.VintageMarketInfo();
+            }
+            input.ReadMessage(MarketInfo);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class VintageActivityDetailInfo : pb::IMessage<VintageActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<VintageActivityDetailInfo> _parser = new pb::MessageParser<VintageActivityDetailInfo>(() => new VintageActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<VintageActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::VintageActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public VintageActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public VintageActivityDetailInfo(VintageActivityDetailInfo other) : this() {
-    unk3300PCIIGPJJHGF_ = other.unk3300PCIIGPJJHGF_.Clone();
-    isContentClosed_ = other.isContentClosed_;
-    unk3300EHHPFKIOKOO_ = other.unk3300EHHPFKIOKOO_.Clone();
-    boothData_ = other.boothData_ != null ? other.boothData_.Clone() : null;
-    unk3300NPKMDFCLGBJ_ = other.unk3300NPKMDFCLGBJ_.Clone();
-    marketInfo_ = other.marketInfo_ != null ? other.marketInfo_.Clone() : null;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public VintageActivityDetailInfo Clone() {
-    return new VintageActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_PCIIGPJJHGF" field.</summary>
-  public const int Unk3300PCIIGPJJHGFFieldNumber = 11;
-  private static readonly pbc::MapField<uint, global::VintagePresentStageData>.Codec _map_unk3300PCIIGPJJHGF_codec
-      = new pbc::MapField<uint, global::VintagePresentStageData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::VintagePresentStageData.Parser), 90);
-  private readonly pbc::MapField<uint, global::VintagePresentStageData> unk3300PCIIGPJJHGF_ = new pbc::MapField<uint, global::VintagePresentStageData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::VintagePresentStageData> Unk3300PCIIGPJJHGF {
-    get { return unk3300PCIIGPJJHGF_; }
-  }
-
-  /// <summary>Field number for the "is_content_closed" field.</summary>
-  public const int IsContentClosedFieldNumber = 13;
-  private bool isContentClosed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsContentClosed {
-    get { return isContentClosed_; }
-    set {
-      isContentClosed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_EHHPFKIOKOO" field.</summary>
-  public const int Unk3300EHHPFKIOKOOFieldNumber = 10;
-  private static readonly pbc::MapField<uint, global::VintageHuntingStageData>.Codec _map_unk3300EHHPFKIOKOO_codec
-      = new pbc::MapField<uint, global::VintageHuntingStageData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::VintageHuntingStageData.Parser), 82);
-  private readonly pbc::MapField<uint, global::VintageHuntingStageData> unk3300EHHPFKIOKOO_ = new pbc::MapField<uint, global::VintageHuntingStageData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::VintageHuntingStageData> Unk3300EHHPFKIOKOO {
-    get { return unk3300EHHPFKIOKOO_; }
-  }
-
-  /// <summary>Field number for the "booth_data" field.</summary>
-  public const int BoothDataFieldNumber = 9;
-  private global::VintageBoothUsedItemData boothData_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::VintageBoothUsedItemData BoothData {
-    get { return boothData_; }
-    set {
-      boothData_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_NPKMDFCLGBJ" field.</summary>
-  public const int Unk3300NPKMDFCLGBJFieldNumber = 2;
-  private static readonly pbc::MapField<uint, global::VintageCampChallengeStageData>.Codec _map_unk3300NPKMDFCLGBJ_codec
-      = new pbc::MapField<uint, global::VintageCampChallengeStageData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::VintageCampChallengeStageData.Parser), 18);
-  private readonly pbc::MapField<uint, global::VintageCampChallengeStageData> unk3300NPKMDFCLGBJ_ = new pbc::MapField<uint, global::VintageCampChallengeStageData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::VintageCampChallengeStageData> Unk3300NPKMDFCLGBJ {
-    get { return unk3300NPKMDFCLGBJ_; }
-  }
-
-  /// <summary>Field number for the "market_info" field.</summary>
-  public const int MarketInfoFieldNumber = 14;
-  private global::VintageMarketInfo marketInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::VintageMarketInfo MarketInfo {
-    get { return marketInfo_; }
-    set {
-      marketInfo_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as VintageActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(VintageActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!Unk3300PCIIGPJJHGF.Equals(other.Unk3300PCIIGPJJHGF)) return false;
-    if (IsContentClosed != other.IsContentClosed) return false;
-    if (!Unk3300EHHPFKIOKOO.Equals(other.Unk3300EHHPFKIOKOO)) return false;
-    if (!object.Equals(BoothData, other.BoothData)) return false;
-    if (!Unk3300NPKMDFCLGBJ.Equals(other.Unk3300NPKMDFCLGBJ)) return false;
-    if (!object.Equals(MarketInfo, other.MarketInfo)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= Unk3300PCIIGPJJHGF.GetHashCode();
-    if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-    hash ^= Unk3300EHHPFKIOKOO.GetHashCode();
-    if (boothData_ != null) hash ^= BoothData.GetHashCode();
-    hash ^= Unk3300NPKMDFCLGBJ.GetHashCode();
-    if (marketInfo_ != null) hash ^= MarketInfo.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    unk3300NPKMDFCLGBJ_.WriteTo(output, _map_unk3300NPKMDFCLGBJ_codec);
-    if (boothData_ != null) {
-      output.WriteRawTag(74);
-      output.WriteMessage(BoothData);
-    }
-    unk3300EHHPFKIOKOO_.WriteTo(output, _map_unk3300EHHPFKIOKOO_codec);
-    unk3300PCIIGPJJHGF_.WriteTo(output, _map_unk3300PCIIGPJJHGF_codec);
-    if (IsContentClosed != false) {
-      output.WriteRawTag(104);
-      output.WriteBool(IsContentClosed);
-    }
-    if (marketInfo_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(MarketInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    unk3300NPKMDFCLGBJ_.WriteTo(ref output, _map_unk3300NPKMDFCLGBJ_codec);
-    if (boothData_ != null) {
-      output.WriteRawTag(74);
-      output.WriteMessage(BoothData);
-    }
-    unk3300EHHPFKIOKOO_.WriteTo(ref output, _map_unk3300EHHPFKIOKOO_codec);
-    unk3300PCIIGPJJHGF_.WriteTo(ref output, _map_unk3300PCIIGPJJHGF_codec);
-    if (IsContentClosed != false) {
-      output.WriteRawTag(104);
-      output.WriteBool(IsContentClosed);
-    }
-    if (marketInfo_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(MarketInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += unk3300PCIIGPJJHGF_.CalculateSize(_map_unk3300PCIIGPJJHGF_codec);
-    if (IsContentClosed != false) {
-      size += 1 + 1;
-    }
-    size += unk3300EHHPFKIOKOO_.CalculateSize(_map_unk3300EHHPFKIOKOO_codec);
-    if (boothData_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(BoothData);
-    }
-    size += unk3300NPKMDFCLGBJ_.CalculateSize(_map_unk3300NPKMDFCLGBJ_codec);
-    if (marketInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(MarketInfo);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(VintageActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    unk3300PCIIGPJJHGF_.Add(other.unk3300PCIIGPJJHGF_);
-    if (other.IsContentClosed != false) {
-      IsContentClosed = other.IsContentClosed;
-    }
-    unk3300EHHPFKIOKOO_.Add(other.unk3300EHHPFKIOKOO_);
-    if (other.boothData_ != null) {
-      if (boothData_ == null) {
-        BoothData = new global::VintageBoothUsedItemData();
-      }
-      BoothData.MergeFrom(other.BoothData);
-    }
-    unk3300NPKMDFCLGBJ_.Add(other.unk3300NPKMDFCLGBJ_);
-    if (other.marketInfo_ != null) {
-      if (marketInfo_ == null) {
-        MarketInfo = new global::VintageMarketInfo();
-      }
-      MarketInfo.MergeFrom(other.MarketInfo);
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18: {
-          unk3300NPKMDFCLGBJ_.AddEntriesFrom(input, _map_unk3300NPKMDFCLGBJ_codec);
-          break;
-        }
-        case 74: {
-          if (boothData_ == null) {
-            BoothData = new global::VintageBoothUsedItemData();
-          }
-          input.ReadMessage(BoothData);
-          break;
-        }
-        case 82: {
-          unk3300EHHPFKIOKOO_.AddEntriesFrom(input, _map_unk3300EHHPFKIOKOO_codec);
-          break;
-        }
-        case 90: {
-          unk3300PCIIGPJJHGF_.AddEntriesFrom(input, _map_unk3300PCIIGPJJHGF_codec);
-          break;
-        }
-        case 104: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 114: {
-          if (marketInfo_ == null) {
-            MarketInfo = new global::VintageMarketInfo();
-          }
-          input.ReadMessage(MarketInfo);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18: {
-          unk3300NPKMDFCLGBJ_.AddEntriesFrom(ref input, _map_unk3300NPKMDFCLGBJ_codec);
-          break;
-        }
-        case 74: {
-          if (boothData_ == null) {
-            BoothData = new global::VintageBoothUsedItemData();
-          }
-          input.ReadMessage(BoothData);
-          break;
-        }
-        case 82: {
-          unk3300EHHPFKIOKOO_.AddEntriesFrom(ref input, _map_unk3300EHHPFKIOKOO_codec);
-          break;
-        }
-        case 90: {
-          unk3300PCIIGPJJHGF_.AddEntriesFrom(ref input, _map_unk3300PCIIGPJJHGF_codec);
-          break;
-        }
-        case 104: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 114: {
-          if (marketInfo_ == null) {
-            MarketInfo = new global::VintageMarketInfo();
-          }
-          input.ReadMessage(MarketInfo);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

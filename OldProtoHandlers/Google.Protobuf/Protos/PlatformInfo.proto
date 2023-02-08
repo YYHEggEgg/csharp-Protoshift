@@ -21,7 +21,7 @@ import "MovingPlatformType.proto";
 import "Route.proto";
 import "Vector.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message PlatformInfo {
   uint32 route_id = 1;

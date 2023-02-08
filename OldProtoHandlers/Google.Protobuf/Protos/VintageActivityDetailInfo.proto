@@ -22,7 +22,7 @@ import "VintageHuntingStageData.proto";
 import "VintageMarketInfo.proto";
 import "VintagePresentStageData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message VintageActivityDetailInfo {
   VintageMarketInfo market_info = 2;

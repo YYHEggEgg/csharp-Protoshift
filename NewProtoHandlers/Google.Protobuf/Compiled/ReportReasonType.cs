@@ -9,45 +9,48 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ReportReasonType.proto</summary>
-public static partial class ReportReasonTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ReportReasonType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ReportReasonType.proto</summary>
+  public static partial class ReportReasonTypeReflection {
 
-  static ReportReasonTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZSZXBvcnRSZWFzb25UeXBlLnByb3RvKvABChBSZXBvcnRSZWFzb25UeXBl",
-          "EhsKF1JFUE9SVF9SRUFTT05fVFlQRV9OT05FEAASJAogUkVQT1JUX1JFQVNP",
-          "Tl9UWVBFX0RFQ0VQVElWRV9BRFMQARIeChpSRVBPUlRfUkVBU09OX1RZUEVf",
-          "QUJVU0lORxACEhwKGFJFUE9SVF9SRUFTT05fVFlQRV9DSEVBVBADEiAKHFJF",
-          "UE9SVF9SRUFTT05fVFlQRV9QT0xJVElDQUwQBBIcChhSRVBPUlRfUkVBU09O",
-          "X1RZUEVfT1RIRVIQBRIbChdSRVBPUlRfUkVBU09OX1RZUEVfSE9NRRAGQhYK",
-          "FG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ReportReasonType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for ReportReasonType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ReportReasonTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZSZXBvcnRSZWFzb25UeXBlLnByb3RvKvABChBSZXBvcnRSZWFzb25UeXBl",
+            "EhsKF1JFUE9SVF9SRUFTT05fVFlQRV9OT05FEAASJAogUkVQT1JUX1JFQVNP",
+            "Tl9UWVBFX0RFQ0VQVElWRV9BRFMQARIeChpSRVBPUlRfUkVBU09OX1RZUEVf",
+            "QUJVU0lORxACEhwKGFJFUE9SVF9SRUFTT05fVFlQRV9DSEVBVBADEiAKHFJF",
+            "UE9SVF9SRUFTT05fVFlQRV9QT0xJVElDQUwQBBIcChhSRVBPUlRfUkVBU09O",
+            "X1RZUEVfT1RIRVIQBRIbChdSRVBPUlRfUkVBU09OX1RZUEVfSE9NRRAGQgyq",
+            "AglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.ReportReasonType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum ReportReasonType {
+    [pbr::OriginalName("REPORT_REASON_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("REPORT_REASON_TYPE_DECEPTIVE_ADS")] DeceptiveAds = 1,
+    [pbr::OriginalName("REPORT_REASON_TYPE_ABUSING")] Abusing = 2,
+    [pbr::OriginalName("REPORT_REASON_TYPE_CHEAT")] Cheat = 3,
+    [pbr::OriginalName("REPORT_REASON_TYPE_POLITICAL")] Political = 4,
+    [pbr::OriginalName("REPORT_REASON_TYPE_OTHER")] Other = 5,
+    [pbr::OriginalName("REPORT_REASON_TYPE_HOME")] Home = 6,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum ReportReasonType {
-  [pbr::OriginalName("REPORT_REASON_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("REPORT_REASON_TYPE_DECEPTIVE_ADS")] DeceptiveAds = 1,
-  [pbr::OriginalName("REPORT_REASON_TYPE_ABUSING")] Abusing = 2,
-  [pbr::OriginalName("REPORT_REASON_TYPE_CHEAT")] Cheat = 3,
-  [pbr::OriginalName("REPORT_REASON_TYPE_POLITICAL")] Political = 4,
-  [pbr::OriginalName("REPORT_REASON_TYPE_OTHER")] Other = 5,
-  [pbr::OriginalName("REPORT_REASON_TYPE_HOME")] Home = 6,
-}
-
-#endregion
-
 
 #endregion Designer generated code

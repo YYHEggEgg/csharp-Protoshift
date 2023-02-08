@@ -9,324 +9,327 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from RemoveRandTaskInfoNotify.proto</summary>
-public static partial class RemoveRandTaskInfoNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for RemoveRandTaskInfoNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from RemoveRandTaskInfoNotify.proto</summary>
+  public static partial class RemoveRandTaskInfoNotifyReflection {
 
-  static RemoveRandTaskInfoNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch5SZW1vdmVSYW5kVGFza0luZm9Ob3RpZnkucHJvdG8i8wEKGFJlbW92ZVJh",
-          "bmRUYXNrSW5mb05vdGlmeRIUCgxyYW5kX3Rhc2tfaWQYCiABKA0SNgoGcmVh",
-          "c29uGA0gASgOMiYuUmVtb3ZlUmFuZFRhc2tJbmZvTm90aWZ5LkZpbmlzaFJl",
-          "YXNvbhIPCgdpc19zdWNjGAUgASgIIngKDEZpbmlzaFJlYXNvbhIZChVGSU5J",
-          "U0hfUkVBU09OX0RFRkFVTFQQABIXChNGSU5JU0hfUkVBU09OX0NMRUFSEAES",
-          "GgoWRklOSVNIX1JFQVNPTl9ESVNUQU5DRRACEhgKFEZJTklTSF9SRUFTT05f",
-          "RklOSVNIEANCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::RemoveRandTaskInfoNotify), global::RemoveRandTaskInfoNotify.Parser, new[]{ "RandTaskId", "Reason", "IsSucc" }, null, new[]{ typeof(global::RemoveRandTaskInfoNotify.Types.FinishReason) }, null, null)
-        }));
-  }
-  #endregion
-
-}
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 198;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class RemoveRandTaskInfoNotify : pb::IMessage<RemoveRandTaskInfoNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<RemoveRandTaskInfoNotify> _parser = new pb::MessageParser<RemoveRandTaskInfoNotify>(() => new RemoveRandTaskInfoNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<RemoveRandTaskInfoNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::RemoveRandTaskInfoNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RemoveRandTaskInfoNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RemoveRandTaskInfoNotify(RemoveRandTaskInfoNotify other) : this() {
-    randTaskId_ = other.randTaskId_;
-    reason_ = other.reason_;
-    isSucc_ = other.isSucc_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RemoveRandTaskInfoNotify Clone() {
-    return new RemoveRandTaskInfoNotify(this);
-  }
-
-  /// <summary>Field number for the "rand_task_id" field.</summary>
-  public const int RandTaskIdFieldNumber = 10;
-  private uint randTaskId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RandTaskId {
-    get { return randTaskId_; }
-    set {
-      randTaskId_ = value;
+    #region Descriptor
+    /// <summary>File descriptor for RemoveRandTaskInfoNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
     }
-  }
+    private static pbr::FileDescriptor descriptor;
 
-  /// <summary>Field number for the "reason" field.</summary>
-  public const int ReasonFieldNumber = 13;
-  private global::RemoveRandTaskInfoNotify.Types.FinishReason reason_ = global::RemoveRandTaskInfoNotify.Types.FinishReason.Default;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::RemoveRandTaskInfoNotify.Types.FinishReason Reason {
-    get { return reason_; }
-    set {
-      reason_ = value;
+    static RemoveRandTaskInfoNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch5SZW1vdmVSYW5kVGFza0luZm9Ob3RpZnkucHJvdG8i8wEKGFJlbW92ZVJh",
+            "bmRUYXNrSW5mb05vdGlmeRIUCgxyYW5kX3Rhc2tfaWQYCiABKA0SNgoGcmVh",
+            "c29uGA0gASgOMiYuUmVtb3ZlUmFuZFRhc2tJbmZvTm90aWZ5LkZpbmlzaFJl",
+            "YXNvbhIPCgdpc19zdWNjGAUgASgIIngKDEZpbmlzaFJlYXNvbhIZChVGSU5J",
+            "U0hfUkVBU09OX0RFRkFVTFQQABIXChNGSU5JU0hfUkVBU09OX0NMRUFSEAES",
+            "GgoWRklOSVNIX1JFQVNPTl9ESVNUQU5DRRACEhgKFEZJTklTSF9SRUFTT05f",
+            "RklOSVNIEANCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.RemoveRandTaskInfoNotify), global::NewProtos.RemoveRandTaskInfoNotify.Parser, new[]{ "RandTaskId", "Reason", "IsSucc" }, null, new[]{ typeof(global::NewProtos.RemoveRandTaskInfoNotify.Types.FinishReason) }, null, null)
+          }));
     }
-  }
+    #endregion
 
-  /// <summary>Field number for the "is_succ" field.</summary>
-  public const int IsSuccFieldNumber = 5;
-  private bool isSucc_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsSucc {
-    get { return isSucc_; }
-    set {
-      isSucc_ = value;
-    }
   }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as RemoveRandTaskInfoNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(RemoveRandTaskInfoNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (RandTaskId != other.RandTaskId) return false;
-    if (Reason != other.Reason) return false;
-    if (IsSucc != other.IsSucc) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (RandTaskId != 0) hash ^= RandTaskId.GetHashCode();
-    if (Reason != global::RemoveRandTaskInfoNotify.Types.FinishReason.Default) hash ^= Reason.GetHashCode();
-    if (IsSucc != false) hash ^= IsSucc.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 198;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class RemoveRandTaskInfoNotify : pb::IMessage<RemoveRandTaskInfoNotify>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsSucc != false) {
-      output.WriteRawTag(40);
-      output.WriteBool(IsSucc);
-    }
-    if (RandTaskId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(RandTaskId);
-    }
-    if (Reason != global::RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
-      output.WriteRawTag(104);
-      output.WriteEnum((int) Reason);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
+      , pb::IBufferMessage
   #endif
-  }
+  {
+    private static readonly pb::MessageParser<RemoveRandTaskInfoNotify> _parser = new pb::MessageParser<RemoveRandTaskInfoNotify>(() => new RemoveRandTaskInfoNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RemoveRandTaskInfoNotify> Parser { get { return _parser; } }
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsSucc != false) {
-      output.WriteRawTag(40);
-      output.WriteBool(IsSucc);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.RemoveRandTaskInfoNotifyReflection.Descriptor.MessageTypes[0]; }
     }
-    if (RandTaskId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(RandTaskId);
-    }
-    if (Reason != global::RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
-      output.WriteRawTag(104);
-      output.WriteEnum((int) Reason);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (RandTaskId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RandTaskId);
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
     }
-    if (Reason != global::RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-    }
-    if (IsSucc != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(RemoveRandTaskInfoNotify other) {
-    if (other == null) {
-      return;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RemoveRandTaskInfoNotify() {
+      OnConstruction();
     }
-    if (other.RandTaskId != 0) {
-      RandTaskId = other.RandTaskId;
-    }
-    if (other.Reason != global::RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
-      Reason = other.Reason;
-    }
-    if (other.IsSucc != false) {
-      IsSucc = other.IsSucc;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          IsSucc = input.ReadBool();
-          break;
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RemoveRandTaskInfoNotify(RemoveRandTaskInfoNotify other) : this() {
+      randTaskId_ = other.randTaskId_;
+      reason_ = other.reason_;
+      isSucc_ = other.isSucc_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RemoveRandTaskInfoNotify Clone() {
+      return new RemoveRandTaskInfoNotify(this);
+    }
+
+    /// <summary>Field number for the "rand_task_id" field.</summary>
+    public const int RandTaskIdFieldNumber = 10;
+    private uint randTaskId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RandTaskId {
+      get { return randTaskId_; }
+      set {
+        randTaskId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 13;
+    private global::NewProtos.RemoveRandTaskInfoNotify.Types.FinishReason reason_ = global::NewProtos.RemoveRandTaskInfoNotify.Types.FinishReason.Default;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.RemoveRandTaskInfoNotify.Types.FinishReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_succ" field.</summary>
+    public const int IsSuccFieldNumber = 5;
+    private bool isSucc_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSucc {
+      get { return isSucc_; }
+      set {
+        isSucc_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RemoveRandTaskInfoNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RemoveRandTaskInfoNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RandTaskId != other.RandTaskId) return false;
+      if (Reason != other.Reason) return false;
+      if (IsSucc != other.IsSucc) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RandTaskId != 0) hash ^= RandTaskId.GetHashCode();
+      if (Reason != global::NewProtos.RemoveRandTaskInfoNotify.Types.FinishReason.Default) hash ^= Reason.GetHashCode();
+      if (IsSucc != false) hash ^= IsSucc.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsSucc != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsSucc);
+      }
+      if (RandTaskId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(RandTaskId);
+      }
+      if (Reason != global::NewProtos.RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) Reason);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsSucc != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsSucc);
+      }
+      if (RandTaskId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(RandTaskId);
+      }
+      if (Reason != global::NewProtos.RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) Reason);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (RandTaskId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RandTaskId);
+      }
+      if (Reason != global::NewProtos.RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
+      if (IsSucc != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RemoveRandTaskInfoNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RandTaskId != 0) {
+        RandTaskId = other.RandTaskId;
+      }
+      if (other.Reason != global::NewProtos.RemoveRandTaskInfoNotify.Types.FinishReason.Default) {
+        Reason = other.Reason;
+      }
+      if (other.IsSucc != false) {
+        IsSucc = other.IsSucc;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            IsSucc = input.ReadBool();
+            break;
+          }
+          case 80: {
+            RandTaskId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Reason = (global::NewProtos.RemoveRandTaskInfoNotify.Types.FinishReason) input.ReadEnum();
+            break;
+          }
         }
-        case 80: {
-          RandTaskId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Reason = (global::RemoveRandTaskInfoNotify.Types.FinishReason) input.ReadEnum();
-          break;
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            IsSucc = input.ReadBool();
+            break;
+          }
+          case 80: {
+            RandTaskId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Reason = (global::NewProtos.RemoveRandTaskInfoNotify.Types.FinishReason) input.ReadEnum();
+            break;
+          }
         }
       }
     }
-  #endif
-  }
+    #endif
 
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          IsSucc = input.ReadBool();
-          break;
-        }
-        case 80: {
-          RandTaskId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Reason = (global::RemoveRandTaskInfoNotify.Types.FinishReason) input.ReadEnum();
-          break;
-        }
+    #region Nested types
+    /// <summary>Container for nested types declared in the RemoveRandTaskInfoNotify message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum FinishReason {
+        [pbr::OriginalName("FINISH_REASON_DEFAULT")] Default = 0,
+        [pbr::OriginalName("FINISH_REASON_CLEAR")] Clear = 1,
+        [pbr::OriginalName("FINISH_REASON_DISTANCE")] Distance = 2,
+        [pbr::OriginalName("FINISH_REASON_FINISH")] Finish = 3,
       }
-    }
-  }
-  #endif
 
-  #region Nested types
-  /// <summary>Container for nested types declared in the RemoveRandTaskInfoNotify message type.</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static partial class Types {
-    public enum FinishReason {
-      [pbr::OriginalName("FINISH_REASON_DEFAULT")] Default = 0,
-      [pbr::OriginalName("FINISH_REASON_CLEAR")] Clear = 1,
-      [pbr::OriginalName("FINISH_REASON_DISTANCE")] Distance = 2,
-      [pbr::OriginalName("FINISH_REASON_FINISH")] Finish = 3,
     }
+    #endregion
 
   }
+
   #endregion
 
 }
-
-#endregion
-
 
 #endregion Designer generated code

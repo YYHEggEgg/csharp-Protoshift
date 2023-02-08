@@ -9,446 +9,449 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from TrackingIOInfo.proto</summary>
-public static partial class TrackingIOInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for TrackingIOInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from TrackingIOInfo.proto</summary>
+  public static partial class TrackingIOInfoReflection {
 
-  static TrackingIOInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRUcmFja2luZ0lPSW5mby5wcm90byKSAQoOVHJhY2tpbmdJT0luZm8SFAoM",
-          "cnlkZXZpY2V0eXBlGAsgASgJEgsKA21hYxgGIAEoCRIQCghkZXZpY2VpZBgJ",
-          "IAEoCRIRCgljbGllbnRfdHoYBSABKAkSFAoMY3VycmVudF9jYWlkGAcgASgJ",
-          "EhMKC2NhY2hlZF9jYWlkGA8gASgJEg0KBWFwcGlkGAEgASgJQh4KHGVtdS5n",
-          "cmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::TrackingIOInfo), global::TrackingIOInfo.Parser, new[]{ "Rydevicetype", "Mac", "Deviceid", "ClientTz", "CurrentCaid", "CachedCaid", "Appid" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for TrackingIOInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static TrackingIOInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRUcmFja2luZ0lPSW5mby5wcm90byKSAQoOVHJhY2tpbmdJT0luZm8SFAoM",
+            "cnlkZXZpY2V0eXBlGAsgASgJEgsKA21hYxgGIAEoCRIQCghkZXZpY2VpZBgJ",
+            "IAEoCRIRCgljbGllbnRfdHoYBSABKAkSFAoMY3VycmVudF9jYWlkGAcgASgJ",
+            "EhMKC2NhY2hlZF9jYWlkGA8gASgJEg0KBWFwcGlkGAEgASgJQgyqAglPbGRQ",
+            "cm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.TrackingIOInfo), global::OldProtos.TrackingIOInfo.Parser, new[]{ "Rydevicetype", "Mac", "Deviceid", "ClientTz", "CurrentCaid", "CachedCaid", "Appid" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class TrackingIOInfo : pb::IMessage<TrackingIOInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TrackingIOInfo> _parser = new pb::MessageParser<TrackingIOInfo>(() => new TrackingIOInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TrackingIOInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.TrackingIOInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TrackingIOInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TrackingIOInfo(TrackingIOInfo other) : this() {
+      rydevicetype_ = other.rydevicetype_;
+      mac_ = other.mac_;
+      deviceid_ = other.deviceid_;
+      clientTz_ = other.clientTz_;
+      currentCaid_ = other.currentCaid_;
+      cachedCaid_ = other.cachedCaid_;
+      appid_ = other.appid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TrackingIOInfo Clone() {
+      return new TrackingIOInfo(this);
+    }
+
+    /// <summary>Field number for the "rydevicetype" field.</summary>
+    public const int RydevicetypeFieldNumber = 11;
+    private string rydevicetype_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Rydevicetype {
+      get { return rydevicetype_; }
+      set {
+        rydevicetype_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "mac" field.</summary>
+    public const int MacFieldNumber = 6;
+    private string mac_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Mac {
+      get { return mac_; }
+      set {
+        mac_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "deviceid" field.</summary>
+    public const int DeviceidFieldNumber = 9;
+    private string deviceid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Deviceid {
+      get { return deviceid_; }
+      set {
+        deviceid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "client_tz" field.</summary>
+    public const int ClientTzFieldNumber = 5;
+    private string clientTz_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClientTz {
+      get { return clientTz_; }
+      set {
+        clientTz_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "current_caid" field.</summary>
+    public const int CurrentCaidFieldNumber = 7;
+    private string currentCaid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CurrentCaid {
+      get { return currentCaid_; }
+      set {
+        currentCaid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "cached_caid" field.</summary>
+    public const int CachedCaidFieldNumber = 15;
+    private string cachedCaid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CachedCaid {
+      get { return cachedCaid_; }
+      set {
+        cachedCaid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "appid" field.</summary>
+    public const int AppidFieldNumber = 1;
+    private string appid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Appid {
+      get { return appid_; }
+      set {
+        appid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TrackingIOInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TrackingIOInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Rydevicetype != other.Rydevicetype) return false;
+      if (Mac != other.Mac) return false;
+      if (Deviceid != other.Deviceid) return false;
+      if (ClientTz != other.ClientTz) return false;
+      if (CurrentCaid != other.CurrentCaid) return false;
+      if (CachedCaid != other.CachedCaid) return false;
+      if (Appid != other.Appid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Rydevicetype.Length != 0) hash ^= Rydevicetype.GetHashCode();
+      if (Mac.Length != 0) hash ^= Mac.GetHashCode();
+      if (Deviceid.Length != 0) hash ^= Deviceid.GetHashCode();
+      if (ClientTz.Length != 0) hash ^= ClientTz.GetHashCode();
+      if (CurrentCaid.Length != 0) hash ^= CurrentCaid.GetHashCode();
+      if (CachedCaid.Length != 0) hash ^= CachedCaid.GetHashCode();
+      if (Appid.Length != 0) hash ^= Appid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Appid.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Appid);
+      }
+      if (ClientTz.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(ClientTz);
+      }
+      if (Mac.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Mac);
+      }
+      if (CurrentCaid.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(CurrentCaid);
+      }
+      if (Deviceid.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(Deviceid);
+      }
+      if (Rydevicetype.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Rydevicetype);
+      }
+      if (CachedCaid.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(CachedCaid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Appid.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Appid);
+      }
+      if (ClientTz.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(ClientTz);
+      }
+      if (Mac.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Mac);
+      }
+      if (CurrentCaid.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(CurrentCaid);
+      }
+      if (Deviceid.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(Deviceid);
+      }
+      if (Rydevicetype.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Rydevicetype);
+      }
+      if (CachedCaid.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(CachedCaid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Rydevicetype.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Rydevicetype);
+      }
+      if (Mac.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Mac);
+      }
+      if (Deviceid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Deviceid);
+      }
+      if (ClientTz.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientTz);
+      }
+      if (CurrentCaid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CurrentCaid);
+      }
+      if (CachedCaid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CachedCaid);
+      }
+      if (Appid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Appid);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TrackingIOInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Rydevicetype.Length != 0) {
+        Rydevicetype = other.Rydevicetype;
+      }
+      if (other.Mac.Length != 0) {
+        Mac = other.Mac;
+      }
+      if (other.Deviceid.Length != 0) {
+        Deviceid = other.Deviceid;
+      }
+      if (other.ClientTz.Length != 0) {
+        ClientTz = other.ClientTz;
+      }
+      if (other.CurrentCaid.Length != 0) {
+        CurrentCaid = other.CurrentCaid;
+      }
+      if (other.CachedCaid.Length != 0) {
+        CachedCaid = other.CachedCaid;
+      }
+      if (other.Appid.Length != 0) {
+        Appid = other.Appid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Appid = input.ReadString();
+            break;
+          }
+          case 42: {
+            ClientTz = input.ReadString();
+            break;
+          }
+          case 50: {
+            Mac = input.ReadString();
+            break;
+          }
+          case 58: {
+            CurrentCaid = input.ReadString();
+            break;
+          }
+          case 74: {
+            Deviceid = input.ReadString();
+            break;
+          }
+          case 90: {
+            Rydevicetype = input.ReadString();
+            break;
+          }
+          case 122: {
+            CachedCaid = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Appid = input.ReadString();
+            break;
+          }
+          case 42: {
+            ClientTz = input.ReadString();
+            break;
+          }
+          case 50: {
+            Mac = input.ReadString();
+            break;
+          }
+          case 58: {
+            CurrentCaid = input.ReadString();
+            break;
+          }
+          case 74: {
+            Deviceid = input.ReadString();
+            break;
+          }
+          case 90: {
+            Rydevicetype = input.ReadString();
+            break;
+          }
+          case 122: {
+            CachedCaid = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class TrackingIOInfo : pb::IMessage<TrackingIOInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<TrackingIOInfo> _parser = new pb::MessageParser<TrackingIOInfo>(() => new TrackingIOInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<TrackingIOInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::TrackingIOInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TrackingIOInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TrackingIOInfo(TrackingIOInfo other) : this() {
-    rydevicetype_ = other.rydevicetype_;
-    mac_ = other.mac_;
-    deviceid_ = other.deviceid_;
-    clientTz_ = other.clientTz_;
-    currentCaid_ = other.currentCaid_;
-    cachedCaid_ = other.cachedCaid_;
-    appid_ = other.appid_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TrackingIOInfo Clone() {
-    return new TrackingIOInfo(this);
-  }
-
-  /// <summary>Field number for the "rydevicetype" field.</summary>
-  public const int RydevicetypeFieldNumber = 11;
-  private string rydevicetype_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Rydevicetype {
-    get { return rydevicetype_; }
-    set {
-      rydevicetype_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "mac" field.</summary>
-  public const int MacFieldNumber = 6;
-  private string mac_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Mac {
-    get { return mac_; }
-    set {
-      mac_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "deviceid" field.</summary>
-  public const int DeviceidFieldNumber = 9;
-  private string deviceid_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Deviceid {
-    get { return deviceid_; }
-    set {
-      deviceid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "client_tz" field.</summary>
-  public const int ClientTzFieldNumber = 5;
-  private string clientTz_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string ClientTz {
-    get { return clientTz_; }
-    set {
-      clientTz_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "current_caid" field.</summary>
-  public const int CurrentCaidFieldNumber = 7;
-  private string currentCaid_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string CurrentCaid {
-    get { return currentCaid_; }
-    set {
-      currentCaid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "cached_caid" field.</summary>
-  public const int CachedCaidFieldNumber = 15;
-  private string cachedCaid_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string CachedCaid {
-    get { return cachedCaid_; }
-    set {
-      cachedCaid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "appid" field.</summary>
-  public const int AppidFieldNumber = 1;
-  private string appid_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Appid {
-    get { return appid_; }
-    set {
-      appid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as TrackingIOInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(TrackingIOInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Rydevicetype != other.Rydevicetype) return false;
-    if (Mac != other.Mac) return false;
-    if (Deviceid != other.Deviceid) return false;
-    if (ClientTz != other.ClientTz) return false;
-    if (CurrentCaid != other.CurrentCaid) return false;
-    if (CachedCaid != other.CachedCaid) return false;
-    if (Appid != other.Appid) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Rydevicetype.Length != 0) hash ^= Rydevicetype.GetHashCode();
-    if (Mac.Length != 0) hash ^= Mac.GetHashCode();
-    if (Deviceid.Length != 0) hash ^= Deviceid.GetHashCode();
-    if (ClientTz.Length != 0) hash ^= ClientTz.GetHashCode();
-    if (CurrentCaid.Length != 0) hash ^= CurrentCaid.GetHashCode();
-    if (CachedCaid.Length != 0) hash ^= CachedCaid.GetHashCode();
-    if (Appid.Length != 0) hash ^= Appid.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Appid.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(Appid);
-    }
-    if (ClientTz.Length != 0) {
-      output.WriteRawTag(42);
-      output.WriteString(ClientTz);
-    }
-    if (Mac.Length != 0) {
-      output.WriteRawTag(50);
-      output.WriteString(Mac);
-    }
-    if (CurrentCaid.Length != 0) {
-      output.WriteRawTag(58);
-      output.WriteString(CurrentCaid);
-    }
-    if (Deviceid.Length != 0) {
-      output.WriteRawTag(74);
-      output.WriteString(Deviceid);
-    }
-    if (Rydevicetype.Length != 0) {
-      output.WriteRawTag(90);
-      output.WriteString(Rydevicetype);
-    }
-    if (CachedCaid.Length != 0) {
-      output.WriteRawTag(122);
-      output.WriteString(CachedCaid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Appid.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(Appid);
-    }
-    if (ClientTz.Length != 0) {
-      output.WriteRawTag(42);
-      output.WriteString(ClientTz);
-    }
-    if (Mac.Length != 0) {
-      output.WriteRawTag(50);
-      output.WriteString(Mac);
-    }
-    if (CurrentCaid.Length != 0) {
-      output.WriteRawTag(58);
-      output.WriteString(CurrentCaid);
-    }
-    if (Deviceid.Length != 0) {
-      output.WriteRawTag(74);
-      output.WriteString(Deviceid);
-    }
-    if (Rydevicetype.Length != 0) {
-      output.WriteRawTag(90);
-      output.WriteString(Rydevicetype);
-    }
-    if (CachedCaid.Length != 0) {
-      output.WriteRawTag(122);
-      output.WriteString(CachedCaid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Rydevicetype.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Rydevicetype);
-    }
-    if (Mac.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Mac);
-    }
-    if (Deviceid.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Deviceid);
-    }
-    if (ClientTz.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(ClientTz);
-    }
-    if (CurrentCaid.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(CurrentCaid);
-    }
-    if (CachedCaid.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(CachedCaid);
-    }
-    if (Appid.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Appid);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(TrackingIOInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Rydevicetype.Length != 0) {
-      Rydevicetype = other.Rydevicetype;
-    }
-    if (other.Mac.Length != 0) {
-      Mac = other.Mac;
-    }
-    if (other.Deviceid.Length != 0) {
-      Deviceid = other.Deviceid;
-    }
-    if (other.ClientTz.Length != 0) {
-      ClientTz = other.ClientTz;
-    }
-    if (other.CurrentCaid.Length != 0) {
-      CurrentCaid = other.CurrentCaid;
-    }
-    if (other.CachedCaid.Length != 0) {
-      CachedCaid = other.CachedCaid;
-    }
-    if (other.Appid.Length != 0) {
-      Appid = other.Appid;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          Appid = input.ReadString();
-          break;
-        }
-        case 42: {
-          ClientTz = input.ReadString();
-          break;
-        }
-        case 50: {
-          Mac = input.ReadString();
-          break;
-        }
-        case 58: {
-          CurrentCaid = input.ReadString();
-          break;
-        }
-        case 74: {
-          Deviceid = input.ReadString();
-          break;
-        }
-        case 90: {
-          Rydevicetype = input.ReadString();
-          break;
-        }
-        case 122: {
-          CachedCaid = input.ReadString();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          Appid = input.ReadString();
-          break;
-        }
-        case 42: {
-          ClientTz = input.ReadString();
-          break;
-        }
-        case 50: {
-          Mac = input.ReadString();
-          break;
-        }
-        case 58: {
-          CurrentCaid = input.ReadString();
-          break;
-        }
-        case 74: {
-          Deviceid = input.ReadString();
-          break;
-        }
-        case 90: {
-          Rydevicetype = input.ReadString();
-          break;
-        }
-        case 122: {
-          CachedCaid = input.ReadString();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GravenInnocenceCarveStageInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GravenInnocenceCarveInfo {
   uint32 can_edit_count = 8;

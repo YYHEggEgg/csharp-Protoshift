@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message BlessingActivityDetailInfo {
   uint32 cur_day_scan_num = 10;

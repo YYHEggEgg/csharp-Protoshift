@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GachaUpInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message GachaInfo {
   uint32 ten_cost_item_id = 2;

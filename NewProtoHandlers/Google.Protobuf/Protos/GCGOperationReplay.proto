@@ -20,7 +20,7 @@ import "GCGReplayControllerData.proto";
 import "GCGReplayOperationData.proto";
 import "Unk3300_PPKPCOCOMDH.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGOperationReplay {
   repeated Unk3300_PPKPCOCOMDH Unk3300_FKBLJIMBHEA = 6;

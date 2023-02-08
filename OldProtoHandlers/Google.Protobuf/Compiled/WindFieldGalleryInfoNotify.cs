@@ -9,491 +9,493 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from WindFieldGalleryInfoNotify.proto</summary>
-public static partial class WindFieldGalleryInfoNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for WindFieldGalleryInfoNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from WindFieldGalleryInfoNotify.proto</summary>
+  public static partial class WindFieldGalleryInfoNotifyReflection {
 
-  static WindFieldGalleryInfoNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBXaW5kRmllbGRHYWxsZXJ5SW5mb05vdGlmeS5wcm90byL0AQoaV2luZEZp",
-          "ZWxkR2FsbGVyeUluZm9Ob3RpZnkSDwoHc2hvd19pZBgDIAEoDRIaChJraWxs",
-          "ZWRfbW9uc3Rlcl9udW0YByABKA0SEAoIY29pbl9udW0YCSABKA0SIAoYY2hh",
-          "bGxlbmdlX2JhbGxfbWF4X2NvdW50GAEgASgNEhwKFGNoYWxsZW5nZV90b3Rh",
-          "bF90aW1lGAUgASgNEiAKGGNoYWxsZW5nZV9iYWxsX2N1cl9jb3VudBgKIAEo",
-          "DRIbChNjaGFsbGVuZ2VfdGltZXN0YW1wGAQgASgNEhgKEGVsZW1lbnRfYmFs",
-          "bF9udW0YDiABKA1CHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IG",
-          "cHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::WindFieldGalleryInfoNotify), global::WindFieldGalleryInfoNotify.Parser, new[]{ "ShowId", "KilledMonsterNum", "CoinNum", "ChallengeBallMaxCount", "ChallengeTotalTime", "ChallengeBallCurCount", "ChallengeTimestamp", "ElementBallNum" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for WindFieldGalleryInfoNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static WindFieldGalleryInfoNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBXaW5kRmllbGRHYWxsZXJ5SW5mb05vdGlmeS5wcm90byL0AQoaV2luZEZp",
+            "ZWxkR2FsbGVyeUluZm9Ob3RpZnkSDwoHc2hvd19pZBgDIAEoDRIaChJraWxs",
+            "ZWRfbW9uc3Rlcl9udW0YByABKA0SEAoIY29pbl9udW0YCSABKA0SIAoYY2hh",
+            "bGxlbmdlX2JhbGxfbWF4X2NvdW50GAEgASgNEhwKFGNoYWxsZW5nZV90b3Rh",
+            "bF90aW1lGAUgASgNEiAKGGNoYWxsZW5nZV9iYWxsX2N1cl9jb3VudBgKIAEo",
+            "DRIbChNjaGFsbGVuZ2VfdGltZXN0YW1wGAQgASgNEhgKEGVsZW1lbnRfYmFs",
+            "bF9udW0YDiABKA1CDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.WindFieldGalleryInfoNotify), global::OldProtos.WindFieldGalleryInfoNotify.Parser, new[]{ "ShowId", "KilledMonsterNum", "CoinNum", "ChallengeBallMaxCount", "ChallengeTotalTime", "ChallengeBallCurCount", "ChallengeTimestamp", "ElementBallNum" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 5526
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class WindFieldGalleryInfoNotify : pb::IMessage<WindFieldGalleryInfoNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<WindFieldGalleryInfoNotify> _parser = new pb::MessageParser<WindFieldGalleryInfoNotify>(() => new WindFieldGalleryInfoNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<WindFieldGalleryInfoNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.WindFieldGalleryInfoNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WindFieldGalleryInfoNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WindFieldGalleryInfoNotify(WindFieldGalleryInfoNotify other) : this() {
+      showId_ = other.showId_;
+      killedMonsterNum_ = other.killedMonsterNum_;
+      coinNum_ = other.coinNum_;
+      challengeBallMaxCount_ = other.challengeBallMaxCount_;
+      challengeTotalTime_ = other.challengeTotalTime_;
+      challengeBallCurCount_ = other.challengeBallCurCount_;
+      challengeTimestamp_ = other.challengeTimestamp_;
+      elementBallNum_ = other.elementBallNum_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WindFieldGalleryInfoNotify Clone() {
+      return new WindFieldGalleryInfoNotify(this);
+    }
+
+    /// <summary>Field number for the "show_id" field.</summary>
+    public const int ShowIdFieldNumber = 3;
+    private uint showId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ShowId {
+      get { return showId_; }
+      set {
+        showId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "killed_monster_num" field.</summary>
+    public const int KilledMonsterNumFieldNumber = 7;
+    private uint killedMonsterNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint KilledMonsterNum {
+      get { return killedMonsterNum_; }
+      set {
+        killedMonsterNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "coin_num" field.</summary>
+    public const int CoinNumFieldNumber = 9;
+    private uint coinNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CoinNum {
+      get { return coinNum_; }
+      set {
+        coinNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_ball_max_count" field.</summary>
+    public const int ChallengeBallMaxCountFieldNumber = 1;
+    private uint challengeBallMaxCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeBallMaxCount {
+      get { return challengeBallMaxCount_; }
+      set {
+        challengeBallMaxCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_total_time" field.</summary>
+    public const int ChallengeTotalTimeFieldNumber = 5;
+    private uint challengeTotalTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeTotalTime {
+      get { return challengeTotalTime_; }
+      set {
+        challengeTotalTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_ball_cur_count" field.</summary>
+    public const int ChallengeBallCurCountFieldNumber = 10;
+    private uint challengeBallCurCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeBallCurCount {
+      get { return challengeBallCurCount_; }
+      set {
+        challengeBallCurCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_timestamp" field.</summary>
+    public const int ChallengeTimestampFieldNumber = 4;
+    private uint challengeTimestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeTimestamp {
+      get { return challengeTimestamp_; }
+      set {
+        challengeTimestamp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "element_ball_num" field.</summary>
+    public const int ElementBallNumFieldNumber = 14;
+    private uint elementBallNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ElementBallNum {
+      get { return elementBallNum_; }
+      set {
+        elementBallNum_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as WindFieldGalleryInfoNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(WindFieldGalleryInfoNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ShowId != other.ShowId) return false;
+      if (KilledMonsterNum != other.KilledMonsterNum) return false;
+      if (CoinNum != other.CoinNum) return false;
+      if (ChallengeBallMaxCount != other.ChallengeBallMaxCount) return false;
+      if (ChallengeTotalTime != other.ChallengeTotalTime) return false;
+      if (ChallengeBallCurCount != other.ChallengeBallCurCount) return false;
+      if (ChallengeTimestamp != other.ChallengeTimestamp) return false;
+      if (ElementBallNum != other.ElementBallNum) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ShowId != 0) hash ^= ShowId.GetHashCode();
+      if (KilledMonsterNum != 0) hash ^= KilledMonsterNum.GetHashCode();
+      if (CoinNum != 0) hash ^= CoinNum.GetHashCode();
+      if (ChallengeBallMaxCount != 0) hash ^= ChallengeBallMaxCount.GetHashCode();
+      if (ChallengeTotalTime != 0) hash ^= ChallengeTotalTime.GetHashCode();
+      if (ChallengeBallCurCount != 0) hash ^= ChallengeBallCurCount.GetHashCode();
+      if (ChallengeTimestamp != 0) hash ^= ChallengeTimestamp.GetHashCode();
+      if (ElementBallNum != 0) hash ^= ElementBallNum.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ChallengeBallMaxCount != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ChallengeBallMaxCount);
+      }
+      if (ShowId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ShowId);
+      }
+      if (ChallengeTimestamp != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ChallengeTimestamp);
+      }
+      if (ChallengeTotalTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ChallengeTotalTime);
+      }
+      if (KilledMonsterNum != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(KilledMonsterNum);
+      }
+      if (CoinNum != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(CoinNum);
+      }
+      if (ChallengeBallCurCount != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ChallengeBallCurCount);
+      }
+      if (ElementBallNum != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ElementBallNum);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ChallengeBallMaxCount != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(ChallengeBallMaxCount);
+      }
+      if (ShowId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ShowId);
+      }
+      if (ChallengeTimestamp != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ChallengeTimestamp);
+      }
+      if (ChallengeTotalTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ChallengeTotalTime);
+      }
+      if (KilledMonsterNum != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(KilledMonsterNum);
+      }
+      if (CoinNum != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(CoinNum);
+      }
+      if (ChallengeBallCurCount != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ChallengeBallCurCount);
+      }
+      if (ElementBallNum != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ElementBallNum);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ShowId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShowId);
+      }
+      if (KilledMonsterNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KilledMonsterNum);
+      }
+      if (CoinNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoinNum);
+      }
+      if (ChallengeBallMaxCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeBallMaxCount);
+      }
+      if (ChallengeTotalTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeTotalTime);
+      }
+      if (ChallengeBallCurCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeBallCurCount);
+      }
+      if (ChallengeTimestamp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeTimestamp);
+      }
+      if (ElementBallNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ElementBallNum);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(WindFieldGalleryInfoNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ShowId != 0) {
+        ShowId = other.ShowId;
+      }
+      if (other.KilledMonsterNum != 0) {
+        KilledMonsterNum = other.KilledMonsterNum;
+      }
+      if (other.CoinNum != 0) {
+        CoinNum = other.CoinNum;
+      }
+      if (other.ChallengeBallMaxCount != 0) {
+        ChallengeBallMaxCount = other.ChallengeBallMaxCount;
+      }
+      if (other.ChallengeTotalTime != 0) {
+        ChallengeTotalTime = other.ChallengeTotalTime;
+      }
+      if (other.ChallengeBallCurCount != 0) {
+        ChallengeBallCurCount = other.ChallengeBallCurCount;
+      }
+      if (other.ChallengeTimestamp != 0) {
+        ChallengeTimestamp = other.ChallengeTimestamp;
+      }
+      if (other.ElementBallNum != 0) {
+        ElementBallNum = other.ElementBallNum;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            ChallengeBallMaxCount = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            ShowId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            ChallengeTimestamp = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            ChallengeTotalTime = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            KilledMonsterNum = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            CoinNum = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            ChallengeBallCurCount = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            ElementBallNum = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            ChallengeBallMaxCount = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            ShowId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            ChallengeTimestamp = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            ChallengeTotalTime = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            KilledMonsterNum = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            CoinNum = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            ChallengeBallCurCount = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            ElementBallNum = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 5526
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class WindFieldGalleryInfoNotify : pb::IMessage<WindFieldGalleryInfoNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<WindFieldGalleryInfoNotify> _parser = new pb::MessageParser<WindFieldGalleryInfoNotify>(() => new WindFieldGalleryInfoNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<WindFieldGalleryInfoNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::WindFieldGalleryInfoNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WindFieldGalleryInfoNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WindFieldGalleryInfoNotify(WindFieldGalleryInfoNotify other) : this() {
-    showId_ = other.showId_;
-    killedMonsterNum_ = other.killedMonsterNum_;
-    coinNum_ = other.coinNum_;
-    challengeBallMaxCount_ = other.challengeBallMaxCount_;
-    challengeTotalTime_ = other.challengeTotalTime_;
-    challengeBallCurCount_ = other.challengeBallCurCount_;
-    challengeTimestamp_ = other.challengeTimestamp_;
-    elementBallNum_ = other.elementBallNum_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WindFieldGalleryInfoNotify Clone() {
-    return new WindFieldGalleryInfoNotify(this);
-  }
-
-  /// <summary>Field number for the "show_id" field.</summary>
-  public const int ShowIdFieldNumber = 3;
-  private uint showId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ShowId {
-    get { return showId_; }
-    set {
-      showId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "killed_monster_num" field.</summary>
-  public const int KilledMonsterNumFieldNumber = 7;
-  private uint killedMonsterNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint KilledMonsterNum {
-    get { return killedMonsterNum_; }
-    set {
-      killedMonsterNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "coin_num" field.</summary>
-  public const int CoinNumFieldNumber = 9;
-  private uint coinNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CoinNum {
-    get { return coinNum_; }
-    set {
-      coinNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "challenge_ball_max_count" field.</summary>
-  public const int ChallengeBallMaxCountFieldNumber = 1;
-  private uint challengeBallMaxCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChallengeBallMaxCount {
-    get { return challengeBallMaxCount_; }
-    set {
-      challengeBallMaxCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "challenge_total_time" field.</summary>
-  public const int ChallengeTotalTimeFieldNumber = 5;
-  private uint challengeTotalTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChallengeTotalTime {
-    get { return challengeTotalTime_; }
-    set {
-      challengeTotalTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "challenge_ball_cur_count" field.</summary>
-  public const int ChallengeBallCurCountFieldNumber = 10;
-  private uint challengeBallCurCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChallengeBallCurCount {
-    get { return challengeBallCurCount_; }
-    set {
-      challengeBallCurCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "challenge_timestamp" field.</summary>
-  public const int ChallengeTimestampFieldNumber = 4;
-  private uint challengeTimestamp_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChallengeTimestamp {
-    get { return challengeTimestamp_; }
-    set {
-      challengeTimestamp_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "element_ball_num" field.</summary>
-  public const int ElementBallNumFieldNumber = 14;
-  private uint elementBallNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ElementBallNum {
-    get { return elementBallNum_; }
-    set {
-      elementBallNum_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as WindFieldGalleryInfoNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(WindFieldGalleryInfoNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ShowId != other.ShowId) return false;
-    if (KilledMonsterNum != other.KilledMonsterNum) return false;
-    if (CoinNum != other.CoinNum) return false;
-    if (ChallengeBallMaxCount != other.ChallengeBallMaxCount) return false;
-    if (ChallengeTotalTime != other.ChallengeTotalTime) return false;
-    if (ChallengeBallCurCount != other.ChallengeBallCurCount) return false;
-    if (ChallengeTimestamp != other.ChallengeTimestamp) return false;
-    if (ElementBallNum != other.ElementBallNum) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ShowId != 0) hash ^= ShowId.GetHashCode();
-    if (KilledMonsterNum != 0) hash ^= KilledMonsterNum.GetHashCode();
-    if (CoinNum != 0) hash ^= CoinNum.GetHashCode();
-    if (ChallengeBallMaxCount != 0) hash ^= ChallengeBallMaxCount.GetHashCode();
-    if (ChallengeTotalTime != 0) hash ^= ChallengeTotalTime.GetHashCode();
-    if (ChallengeBallCurCount != 0) hash ^= ChallengeBallCurCount.GetHashCode();
-    if (ChallengeTimestamp != 0) hash ^= ChallengeTimestamp.GetHashCode();
-    if (ElementBallNum != 0) hash ^= ElementBallNum.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ChallengeBallMaxCount != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(ChallengeBallMaxCount);
-    }
-    if (ShowId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ShowId);
-    }
-    if (ChallengeTimestamp != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(ChallengeTimestamp);
-    }
-    if (ChallengeTotalTime != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(ChallengeTotalTime);
-    }
-    if (KilledMonsterNum != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(KilledMonsterNum);
-    }
-    if (CoinNum != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(CoinNum);
-    }
-    if (ChallengeBallCurCount != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(ChallengeBallCurCount);
-    }
-    if (ElementBallNum != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(ElementBallNum);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ChallengeBallMaxCount != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(ChallengeBallMaxCount);
-    }
-    if (ShowId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ShowId);
-    }
-    if (ChallengeTimestamp != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(ChallengeTimestamp);
-    }
-    if (ChallengeTotalTime != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(ChallengeTotalTime);
-    }
-    if (KilledMonsterNum != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(KilledMonsterNum);
-    }
-    if (CoinNum != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(CoinNum);
-    }
-    if (ChallengeBallCurCount != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(ChallengeBallCurCount);
-    }
-    if (ElementBallNum != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(ElementBallNum);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ShowId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShowId);
-    }
-    if (KilledMonsterNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KilledMonsterNum);
-    }
-    if (CoinNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoinNum);
-    }
-    if (ChallengeBallMaxCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeBallMaxCount);
-    }
-    if (ChallengeTotalTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeTotalTime);
-    }
-    if (ChallengeBallCurCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeBallCurCount);
-    }
-    if (ChallengeTimestamp != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeTimestamp);
-    }
-    if (ElementBallNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ElementBallNum);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(WindFieldGalleryInfoNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ShowId != 0) {
-      ShowId = other.ShowId;
-    }
-    if (other.KilledMonsterNum != 0) {
-      KilledMonsterNum = other.KilledMonsterNum;
-    }
-    if (other.CoinNum != 0) {
-      CoinNum = other.CoinNum;
-    }
-    if (other.ChallengeBallMaxCount != 0) {
-      ChallengeBallMaxCount = other.ChallengeBallMaxCount;
-    }
-    if (other.ChallengeTotalTime != 0) {
-      ChallengeTotalTime = other.ChallengeTotalTime;
-    }
-    if (other.ChallengeBallCurCount != 0) {
-      ChallengeBallCurCount = other.ChallengeBallCurCount;
-    }
-    if (other.ChallengeTimestamp != 0) {
-      ChallengeTimestamp = other.ChallengeTimestamp;
-    }
-    if (other.ElementBallNum != 0) {
-      ElementBallNum = other.ElementBallNum;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          ChallengeBallMaxCount = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          ShowId = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          ChallengeTimestamp = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          ChallengeTotalTime = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          KilledMonsterNum = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          CoinNum = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          ChallengeBallCurCount = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          ElementBallNum = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          ChallengeBallMaxCount = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          ShowId = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          ChallengeTimestamp = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          ChallengeTotalTime = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          KilledMonsterNum = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          CoinNum = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          ChallengeBallCurCount = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          ElementBallNum = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "Route.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 3458
 // EnetChannelId: 0

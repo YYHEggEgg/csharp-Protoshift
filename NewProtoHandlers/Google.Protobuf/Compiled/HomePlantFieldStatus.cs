@@ -9,41 +9,44 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from HomePlantFieldStatus.proto</summary>
-public static partial class HomePlantFieldStatusReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for HomePlantFieldStatus.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from HomePlantFieldStatus.proto</summary>
+  public static partial class HomePlantFieldStatusReflection {
 
-  static HomePlantFieldStatusReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpIb21lUGxhbnRGaWVsZFN0YXR1cy5wcm90byq+AQoUSG9tZVBsYW50Rmll",
-          "bGRTdGF0dXMSJwojSE9NRV9QTEFOVF9GSUVMRF9TVEFUVVNfU1RBVFVFX05P",
-          "TkUQABInCiNIT01FX1BMQU5UX0ZJRUxEX1NUQVRVU19TVEFUVUVfU0VFRBAB",
-          "EikKJUhPTUVfUExBTlRfRklFTERfU1RBVFVTX1NUQVRVRV9TUFJPVVQQAhIp",
-          "CiVIT01FX1BMQU5UX0ZJRUxEX1NUQVRVU19TVEFUVUVfR0FUSEVSEANCFgoU",
-          "b3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::HomePlantFieldStatus), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for HomePlantFieldStatus.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static HomePlantFieldStatusReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpIb21lUGxhbnRGaWVsZFN0YXR1cy5wcm90byq+AQoUSG9tZVBsYW50Rmll",
+            "bGRTdGF0dXMSJwojSE9NRV9QTEFOVF9GSUVMRF9TVEFUVVNfU1RBVFVFX05P",
+            "TkUQABInCiNIT01FX1BMQU5UX0ZJRUxEX1NUQVRVU19TVEFUVUVfU0VFRBAB",
+            "EikKJUhPTUVfUExBTlRfRklFTERfU1RBVFVTX1NUQVRVRV9TUFJPVVQQAhIp",
+            "CiVIT01FX1BMQU5UX0ZJRUxEX1NUQVRVU19TVEFUVUVfR0FUSEVSEANCDKoC",
+            "CU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.HomePlantFieldStatus), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum HomePlantFieldStatus {
+    [pbr::OriginalName("HOME_PLANT_FIELD_STATUS_STATUE_NONE")] StatueNone = 0,
+    [pbr::OriginalName("HOME_PLANT_FIELD_STATUS_STATUE_SEED")] StatueSeed = 1,
+    [pbr::OriginalName("HOME_PLANT_FIELD_STATUS_STATUE_SPROUT")] StatueSprout = 2,
+    [pbr::OriginalName("HOME_PLANT_FIELD_STATUS_STATUE_GATHER")] StatueGather = 3,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum HomePlantFieldStatus {
-  [pbr::OriginalName("HOME_PLANT_FIELD_STATUS_STATUE_NONE")] StatueNone = 0,
-  [pbr::OriginalName("HOME_PLANT_FIELD_STATUS_STATUE_SEED")] StatueSeed = 1,
-  [pbr::OriginalName("HOME_PLANT_FIELD_STATUS_STATUE_SPROUT")] StatueSprout = 2,
-  [pbr::OriginalName("HOME_PLANT_FIELD_STATUS_STATUE_GATHER")] StatueGather = 3,
-}
-
-#endregion
-
 
 #endregion Designer generated code

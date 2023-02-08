@@ -9,507 +9,510 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GetUgcRsp.proto</summary>
-public static partial class GetUgcRspReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GetUgcRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GetUgcRsp.proto</summary>
+  public static partial class GetUgcRspReflection {
 
-  static GetUgcRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Cg9HZXRVZ2NSc3AucHJvdG8aEVJlY29yZFVzYWdlLnByb3RvGhdVZ2NNdXNp",
-          "Y0JyaWVmSW5mby5wcm90bxoUVWdjTXVzaWNSZWNvcmQucHJvdG8aDVVnY1R5",
-          "cGUucHJvdG8i3wEKCUdldFVnY1JzcBIPCgdyZXRjb2RlGAogASgFEiYKEHVn",
-          "Y19yZWNvcmRfdXNhZ2UYBSABKA4yDC5SZWNvcmRVc2FnZRIaCgh1Z2NfdHlw",
-          "ZRgGIAEoDjIILlVnY1R5cGUSEAoIdWdjX2d1aWQYAyABKAQSJwoMbXVzaWNf",
-          "cmVjb3JkGAIgASgLMg8uVWdjTXVzaWNSZWNvcmRIABIvChBtdXNpY19icmll",
-          "Zl9pbmZvGIQMIAEoCzISLlVnY011c2ljQnJpZWZJbmZvSAFCCAoGcmVjb3Jk",
-          "QgcKBWJyaWVmQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::RecordUsageReflection.Descriptor, global::UgcMusicBriefInfoReflection.Descriptor, global::UgcMusicRecordReflection.Descriptor, global::UgcTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GetUgcRsp), global::GetUgcRsp.Parser, new[]{ "Retcode", "UgcRecordUsage", "UgcType", "UgcGuid", "MusicRecord", "MusicBriefInfo" }, new[]{ "Record", "Brief" }, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GetUgcRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GetUgcRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Cg9HZXRVZ2NSc3AucHJvdG8aEVJlY29yZFVzYWdlLnByb3RvGhdVZ2NNdXNp",
+            "Y0JyaWVmSW5mby5wcm90bxoUVWdjTXVzaWNSZWNvcmQucHJvdG8aDVVnY1R5",
+            "cGUucHJvdG8i3wEKCUdldFVnY1JzcBIPCgdyZXRjb2RlGAogASgFEiYKEHVn",
+            "Y19yZWNvcmRfdXNhZ2UYBSABKA4yDC5SZWNvcmRVc2FnZRIaCgh1Z2NfdHlw",
+            "ZRgGIAEoDjIILlVnY1R5cGUSEAoIdWdjX2d1aWQYAyABKAQSJwoMbXVzaWNf",
+            "cmVjb3JkGAIgASgLMg8uVWdjTXVzaWNSZWNvcmRIABIvChBtdXNpY19icmll",
+            "Zl9pbmZvGIQMIAEoCzISLlVnY011c2ljQnJpZWZJbmZvSAFCCAoGcmVjb3Jk",
+            "QgcKBWJyaWVmQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.RecordUsageReflection.Descriptor, global::NewProtos.UgcMusicBriefInfoReflection.Descriptor, global::NewProtos.UgcMusicRecordReflection.Descriptor, global::NewProtos.UgcTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GetUgcRsp), global::NewProtos.GetUgcRsp.Parser, new[]{ "Retcode", "UgcRecordUsage", "UgcType", "UgcGuid", "MusicRecord", "MusicBriefInfo" }, new[]{ "Record", "Brief" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 6341;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class GetUgcRsp : pb::IMessage<GetUgcRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetUgcRsp> _parser = new pb::MessageParser<GetUgcRsp>(() => new GetUgcRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GetUgcRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.GetUgcRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetUgcRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetUgcRsp(GetUgcRsp other) : this() {
+      retcode_ = other.retcode_;
+      ugcRecordUsage_ = other.ugcRecordUsage_;
+      ugcType_ = other.ugcType_;
+      ugcGuid_ = other.ugcGuid_;
+      switch (other.RecordCase) {
+        case RecordOneofCase.MusicRecord:
+          MusicRecord = other.MusicRecord.Clone();
+          break;
+      }
+
+      switch (other.BriefCase) {
+        case BriefOneofCase.MusicBriefInfo:
+          MusicBriefInfo = other.MusicBriefInfo.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetUgcRsp Clone() {
+      return new GetUgcRsp(this);
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 10;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ugc_record_usage" field.</summary>
+    public const int UgcRecordUsageFieldNumber = 5;
+    private global::NewProtos.RecordUsage ugcRecordUsage_ = global::NewProtos.RecordUsage.UgcRecordUsageNone;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.RecordUsage UgcRecordUsage {
+      get { return ugcRecordUsage_; }
+      set {
+        ugcRecordUsage_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ugc_type" field.</summary>
+    public const int UgcTypeFieldNumber = 6;
+    private global::NewProtos.UgcType ugcType_ = global::NewProtos.UgcType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.UgcType UgcType {
+      get { return ugcType_; }
+      set {
+        ugcType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ugc_guid" field.</summary>
+    public const int UgcGuidFieldNumber = 3;
+    private ulong ugcGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong UgcGuid {
+      get { return ugcGuid_; }
+      set {
+        ugcGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "music_record" field.</summary>
+    public const int MusicRecordFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.UgcMusicRecord MusicRecord {
+      get { return recordCase_ == RecordOneofCase.MusicRecord ? (global::NewProtos.UgcMusicRecord) record_ : null; }
+      set {
+        record_ = value;
+        recordCase_ = value == null ? RecordOneofCase.None : RecordOneofCase.MusicRecord;
+      }
+    }
+
+    /// <summary>Field number for the "music_brief_info" field.</summary>
+    public const int MusicBriefInfoFieldNumber = 1540;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.UgcMusicBriefInfo MusicBriefInfo {
+      get { return briefCase_ == BriefOneofCase.MusicBriefInfo ? (global::NewProtos.UgcMusicBriefInfo) brief_ : null; }
+      set {
+        brief_ = value;
+        briefCase_ = value == null ? BriefOneofCase.None : BriefOneofCase.MusicBriefInfo;
+      }
+    }
+
+    private object record_;
+    /// <summary>Enum of possible cases for the "record" oneof.</summary>
+    public enum RecordOneofCase {
+      None = 0,
+      MusicRecord = 2,
+    }
+    private RecordOneofCase recordCase_ = RecordOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RecordOneofCase RecordCase {
+      get { return recordCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearRecord() {
+      recordCase_ = RecordOneofCase.None;
+      record_ = null;
+    }
+
+    private object brief_;
+    /// <summary>Enum of possible cases for the "brief" oneof.</summary>
+    public enum BriefOneofCase {
+      None = 0,
+      MusicBriefInfo = 1540,
+    }
+    private BriefOneofCase briefCase_ = BriefOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BriefOneofCase BriefCase {
+      get { return briefCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearBrief() {
+      briefCase_ = BriefOneofCase.None;
+      brief_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GetUgcRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GetUgcRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Retcode != other.Retcode) return false;
+      if (UgcRecordUsage != other.UgcRecordUsage) return false;
+      if (UgcType != other.UgcType) return false;
+      if (UgcGuid != other.UgcGuid) return false;
+      if (!object.Equals(MusicRecord, other.MusicRecord)) return false;
+      if (!object.Equals(MusicBriefInfo, other.MusicBriefInfo)) return false;
+      if (RecordCase != other.RecordCase) return false;
+      if (BriefCase != other.BriefCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (UgcRecordUsage != global::NewProtos.RecordUsage.UgcRecordUsageNone) hash ^= UgcRecordUsage.GetHashCode();
+      if (UgcType != global::NewProtos.UgcType.None) hash ^= UgcType.GetHashCode();
+      if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
+      if (recordCase_ == RecordOneofCase.MusicRecord) hash ^= MusicRecord.GetHashCode();
+      if (briefCase_ == BriefOneofCase.MusicBriefInfo) hash ^= MusicBriefInfo.GetHashCode();
+      hash ^= (int) recordCase_;
+      hash ^= (int) briefCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (recordCase_ == RecordOneofCase.MusicRecord) {
+        output.WriteRawTag(18);
+        output.WriteMessage(MusicRecord);
+      }
+      if (UgcGuid != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(UgcGuid);
+      }
+      if (UgcRecordUsage != global::NewProtos.RecordUsage.UgcRecordUsageNone) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) UgcRecordUsage);
+      }
+      if (UgcType != global::NewProtos.UgcType.None) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) UgcType);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
+      }
+      if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
+        output.WriteRawTag(162, 96);
+        output.WriteMessage(MusicBriefInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (recordCase_ == RecordOneofCase.MusicRecord) {
+        output.WriteRawTag(18);
+        output.WriteMessage(MusicRecord);
+      }
+      if (UgcGuid != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(UgcGuid);
+      }
+      if (UgcRecordUsage != global::NewProtos.RecordUsage.UgcRecordUsageNone) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) UgcRecordUsage);
+      }
+      if (UgcType != global::NewProtos.UgcType.None) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) UgcType);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
+      }
+      if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
+        output.WriteRawTag(162, 96);
+        output.WriteMessage(MusicBriefInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (UgcRecordUsage != global::NewProtos.RecordUsage.UgcRecordUsageNone) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UgcRecordUsage);
+      }
+      if (UgcType != global::NewProtos.UgcType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UgcType);
+      }
+      if (UgcGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
+      }
+      if (recordCase_ == RecordOneofCase.MusicRecord) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MusicRecord);
+      }
+      if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(MusicBriefInfo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GetUgcRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.UgcRecordUsage != global::NewProtos.RecordUsage.UgcRecordUsageNone) {
+        UgcRecordUsage = other.UgcRecordUsage;
+      }
+      if (other.UgcType != global::NewProtos.UgcType.None) {
+        UgcType = other.UgcType;
+      }
+      if (other.UgcGuid != 0UL) {
+        UgcGuid = other.UgcGuid;
+      }
+      switch (other.RecordCase) {
+        case RecordOneofCase.MusicRecord:
+          if (MusicRecord == null) {
+            MusicRecord = new global::NewProtos.UgcMusicRecord();
+          }
+          MusicRecord.MergeFrom(other.MusicRecord);
+          break;
+      }
+
+      switch (other.BriefCase) {
+        case BriefOneofCase.MusicBriefInfo:
+          if (MusicBriefInfo == null) {
+            MusicBriefInfo = new global::NewProtos.UgcMusicBriefInfo();
+          }
+          MusicBriefInfo.MergeFrom(other.MusicBriefInfo);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            global::NewProtos.UgcMusicRecord subBuilder = new global::NewProtos.UgcMusicRecord();
+            if (recordCase_ == RecordOneofCase.MusicRecord) {
+              subBuilder.MergeFrom(MusicRecord);
+            }
+            input.ReadMessage(subBuilder);
+            MusicRecord = subBuilder;
+            break;
+          }
+          case 24: {
+            UgcGuid = input.ReadUInt64();
+            break;
+          }
+          case 40: {
+            UgcRecordUsage = (global::NewProtos.RecordUsage) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            UgcType = (global::NewProtos.UgcType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 12322: {
+            global::NewProtos.UgcMusicBriefInfo subBuilder = new global::NewProtos.UgcMusicBriefInfo();
+            if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
+              subBuilder.MergeFrom(MusicBriefInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MusicBriefInfo = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            global::NewProtos.UgcMusicRecord subBuilder = new global::NewProtos.UgcMusicRecord();
+            if (recordCase_ == RecordOneofCase.MusicRecord) {
+              subBuilder.MergeFrom(MusicRecord);
+            }
+            input.ReadMessage(subBuilder);
+            MusicRecord = subBuilder;
+            break;
+          }
+          case 24: {
+            UgcGuid = input.ReadUInt64();
+            break;
+          }
+          case 40: {
+            UgcRecordUsage = (global::NewProtos.RecordUsage) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            UgcType = (global::NewProtos.UgcType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 12322: {
+            global::NewProtos.UgcMusicBriefInfo subBuilder = new global::NewProtos.UgcMusicBriefInfo();
+            if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
+              subBuilder.MergeFrom(MusicBriefInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MusicBriefInfo = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 6341;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class GetUgcRsp : pb::IMessage<GetUgcRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GetUgcRsp> _parser = new pb::MessageParser<GetUgcRsp>(() => new GetUgcRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GetUgcRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GetUgcRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetUgcRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetUgcRsp(GetUgcRsp other) : this() {
-    retcode_ = other.retcode_;
-    ugcRecordUsage_ = other.ugcRecordUsage_;
-    ugcType_ = other.ugcType_;
-    ugcGuid_ = other.ugcGuid_;
-    switch (other.RecordCase) {
-      case RecordOneofCase.MusicRecord:
-        MusicRecord = other.MusicRecord.Clone();
-        break;
-    }
-
-    switch (other.BriefCase) {
-      case BriefOneofCase.MusicBriefInfo:
-        MusicBriefInfo = other.MusicBriefInfo.Clone();
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetUgcRsp Clone() {
-    return new GetUgcRsp(this);
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 10;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ugc_record_usage" field.</summary>
-  public const int UgcRecordUsageFieldNumber = 5;
-  private global::RecordUsage ugcRecordUsage_ = global::RecordUsage.UgcRecordUsageNone;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::RecordUsage UgcRecordUsage {
-    get { return ugcRecordUsage_; }
-    set {
-      ugcRecordUsage_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ugc_type" field.</summary>
-  public const int UgcTypeFieldNumber = 6;
-  private global::UgcType ugcType_ = global::UgcType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::UgcType UgcType {
-    get { return ugcType_; }
-    set {
-      ugcType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ugc_guid" field.</summary>
-  public const int UgcGuidFieldNumber = 3;
-  private ulong ugcGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong UgcGuid {
-    get { return ugcGuid_; }
-    set {
-      ugcGuid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "music_record" field.</summary>
-  public const int MusicRecordFieldNumber = 2;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::UgcMusicRecord MusicRecord {
-    get { return recordCase_ == RecordOneofCase.MusicRecord ? (global::UgcMusicRecord) record_ : null; }
-    set {
-      record_ = value;
-      recordCase_ = value == null ? RecordOneofCase.None : RecordOneofCase.MusicRecord;
-    }
-  }
-
-  /// <summary>Field number for the "music_brief_info" field.</summary>
-  public const int MusicBriefInfoFieldNumber = 1540;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::UgcMusicBriefInfo MusicBriefInfo {
-    get { return briefCase_ == BriefOneofCase.MusicBriefInfo ? (global::UgcMusicBriefInfo) brief_ : null; }
-    set {
-      brief_ = value;
-      briefCase_ = value == null ? BriefOneofCase.None : BriefOneofCase.MusicBriefInfo;
-    }
-  }
-
-  private object record_;
-  /// <summary>Enum of possible cases for the "record" oneof.</summary>
-  public enum RecordOneofCase {
-    None = 0,
-    MusicRecord = 2,
-  }
-  private RecordOneofCase recordCase_ = RecordOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RecordOneofCase RecordCase {
-    get { return recordCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearRecord() {
-    recordCase_ = RecordOneofCase.None;
-    record_ = null;
-  }
-
-  private object brief_;
-  /// <summary>Enum of possible cases for the "brief" oneof.</summary>
-  public enum BriefOneofCase {
-    None = 0,
-    MusicBriefInfo = 1540,
-  }
-  private BriefOneofCase briefCase_ = BriefOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BriefOneofCase BriefCase {
-    get { return briefCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearBrief() {
-    briefCase_ = BriefOneofCase.None;
-    brief_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GetUgcRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GetUgcRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Retcode != other.Retcode) return false;
-    if (UgcRecordUsage != other.UgcRecordUsage) return false;
-    if (UgcType != other.UgcType) return false;
-    if (UgcGuid != other.UgcGuid) return false;
-    if (!object.Equals(MusicRecord, other.MusicRecord)) return false;
-    if (!object.Equals(MusicBriefInfo, other.MusicBriefInfo)) return false;
-    if (RecordCase != other.RecordCase) return false;
-    if (BriefCase != other.BriefCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (UgcRecordUsage != global::RecordUsage.UgcRecordUsageNone) hash ^= UgcRecordUsage.GetHashCode();
-    if (UgcType != global::UgcType.None) hash ^= UgcType.GetHashCode();
-    if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
-    if (recordCase_ == RecordOneofCase.MusicRecord) hash ^= MusicRecord.GetHashCode();
-    if (briefCase_ == BriefOneofCase.MusicBriefInfo) hash ^= MusicBriefInfo.GetHashCode();
-    hash ^= (int) recordCase_;
-    hash ^= (int) briefCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (recordCase_ == RecordOneofCase.MusicRecord) {
-      output.WriteRawTag(18);
-      output.WriteMessage(MusicRecord);
-    }
-    if (UgcGuid != 0UL) {
-      output.WriteRawTag(24);
-      output.WriteUInt64(UgcGuid);
-    }
-    if (UgcRecordUsage != global::RecordUsage.UgcRecordUsageNone) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) UgcRecordUsage);
-    }
-    if (UgcType != global::UgcType.None) {
-      output.WriteRawTag(48);
-      output.WriteEnum((int) UgcType);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(80);
-      output.WriteInt32(Retcode);
-    }
-    if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
-      output.WriteRawTag(162, 96);
-      output.WriteMessage(MusicBriefInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (recordCase_ == RecordOneofCase.MusicRecord) {
-      output.WriteRawTag(18);
-      output.WriteMessage(MusicRecord);
-    }
-    if (UgcGuid != 0UL) {
-      output.WriteRawTag(24);
-      output.WriteUInt64(UgcGuid);
-    }
-    if (UgcRecordUsage != global::RecordUsage.UgcRecordUsageNone) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) UgcRecordUsage);
-    }
-    if (UgcType != global::UgcType.None) {
-      output.WriteRawTag(48);
-      output.WriteEnum((int) UgcType);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(80);
-      output.WriteInt32(Retcode);
-    }
-    if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
-      output.WriteRawTag(162, 96);
-      output.WriteMessage(MusicBriefInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (UgcRecordUsage != global::RecordUsage.UgcRecordUsageNone) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UgcRecordUsage);
-    }
-    if (UgcType != global::UgcType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) UgcType);
-    }
-    if (UgcGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
-    }
-    if (recordCase_ == RecordOneofCase.MusicRecord) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(MusicRecord);
-    }
-    if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(MusicBriefInfo);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GetUgcRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.UgcRecordUsage != global::RecordUsage.UgcRecordUsageNone) {
-      UgcRecordUsage = other.UgcRecordUsage;
-    }
-    if (other.UgcType != global::UgcType.None) {
-      UgcType = other.UgcType;
-    }
-    if (other.UgcGuid != 0UL) {
-      UgcGuid = other.UgcGuid;
-    }
-    switch (other.RecordCase) {
-      case RecordOneofCase.MusicRecord:
-        if (MusicRecord == null) {
-          MusicRecord = new global::UgcMusicRecord();
-        }
-        MusicRecord.MergeFrom(other.MusicRecord);
-        break;
-    }
-
-    switch (other.BriefCase) {
-      case BriefOneofCase.MusicBriefInfo:
-        if (MusicBriefInfo == null) {
-          MusicBriefInfo = new global::UgcMusicBriefInfo();
-        }
-        MusicBriefInfo.MergeFrom(other.MusicBriefInfo);
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18: {
-          global::UgcMusicRecord subBuilder = new global::UgcMusicRecord();
-          if (recordCase_ == RecordOneofCase.MusicRecord) {
-            subBuilder.MergeFrom(MusicRecord);
-          }
-          input.ReadMessage(subBuilder);
-          MusicRecord = subBuilder;
-          break;
-        }
-        case 24: {
-          UgcGuid = input.ReadUInt64();
-          break;
-        }
-        case 40: {
-          UgcRecordUsage = (global::RecordUsage) input.ReadEnum();
-          break;
-        }
-        case 48: {
-          UgcType = (global::UgcType) input.ReadEnum();
-          break;
-        }
-        case 80: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 12322: {
-          global::UgcMusicBriefInfo subBuilder = new global::UgcMusicBriefInfo();
-          if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
-            subBuilder.MergeFrom(MusicBriefInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MusicBriefInfo = subBuilder;
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18: {
-          global::UgcMusicRecord subBuilder = new global::UgcMusicRecord();
-          if (recordCase_ == RecordOneofCase.MusicRecord) {
-            subBuilder.MergeFrom(MusicRecord);
-          }
-          input.ReadMessage(subBuilder);
-          MusicRecord = subBuilder;
-          break;
-        }
-        case 24: {
-          UgcGuid = input.ReadUInt64();
-          break;
-        }
-        case 40: {
-          UgcRecordUsage = (global::RecordUsage) input.ReadEnum();
-          break;
-        }
-        case 48: {
-          UgcType = (global::UgcType) input.ReadEnum();
-          break;
-        }
-        case 80: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 12322: {
-          global::UgcMusicBriefInfo subBuilder = new global::UgcMusicBriefInfo();
-          if (briefCase_ == BriefOneofCase.MusicBriefInfo) {
-            subBuilder.MergeFrom(MusicBriefInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MusicBriefInfo = subBuilder;
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

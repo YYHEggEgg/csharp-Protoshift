@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "Vector.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message AbilityActionBlink {
   Vector rot = 8;

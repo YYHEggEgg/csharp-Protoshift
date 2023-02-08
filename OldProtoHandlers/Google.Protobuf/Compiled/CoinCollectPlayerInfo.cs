@@ -9,362 +9,365 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CoinCollectPlayerInfo.proto</summary>
-public static partial class CoinCollectPlayerInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CoinCollectPlayerInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CoinCollectPlayerInfo.proto</summary>
+  public static partial class CoinCollectPlayerInfoReflection {
 
-  static CoinCollectPlayerInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtDb2luQ29sbGVjdFBsYXllckluZm8ucHJvdG8aH0NvaW5Db2xsZWN0VGVh",
-          "bUF2YXRhckluZm8ucHJvdG8iowEKFUNvaW5Db2xsZWN0UGxheWVySW5mbxIX",
-          "Cg9jaG9vc2Vfc2tpbGxfbm8YBSABKA0SEgoKcGxheWVyX3VpZBgMIAEoDRIT",
-          "CgtwbGF5ZXJfbmFtZRgLIAEoCRISCgppc19wcmVwYXJlGA4gASgIEjQKEGF2",
-          "YXRhcl9pbmZvX2xpc3QYCiADKAsyGi5Db2luQ29sbGVjdFRlYW1BdmF0YXJJ",
-          "bmZvQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::CoinCollectTeamAvatarInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::CoinCollectPlayerInfo), global::CoinCollectPlayerInfo.Parser, new[]{ "ChooseSkillNo", "PlayerUid", "PlayerName", "IsPrepare", "AvatarInfoList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for CoinCollectPlayerInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CoinCollectPlayerInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtDb2luQ29sbGVjdFBsYXllckluZm8ucHJvdG8aH0NvaW5Db2xsZWN0VGVh",
+            "bUF2YXRhckluZm8ucHJvdG8iowEKFUNvaW5Db2xsZWN0UGxheWVySW5mbxIX",
+            "Cg9jaG9vc2Vfc2tpbGxfbm8YBSABKA0SEgoKcGxheWVyX3VpZBgMIAEoDRIT",
+            "CgtwbGF5ZXJfbmFtZRgLIAEoCRISCgppc19wcmVwYXJlGA4gASgIEjQKEGF2",
+            "YXRhcl9pbmZvX2xpc3QYCiADKAsyGi5Db2luQ29sbGVjdFRlYW1BdmF0YXJJ",
+            "bmZvQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.CoinCollectTeamAvatarInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.CoinCollectPlayerInfo), global::OldProtos.CoinCollectPlayerInfo.Parser, new[]{ "ChooseSkillNo", "PlayerUid", "PlayerName", "IsPrepare", "AvatarInfoList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class CoinCollectPlayerInfo : pb::IMessage<CoinCollectPlayerInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CoinCollectPlayerInfo> _parser = new pb::MessageParser<CoinCollectPlayerInfo>(() => new CoinCollectPlayerInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CoinCollectPlayerInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.CoinCollectPlayerInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CoinCollectPlayerInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CoinCollectPlayerInfo(CoinCollectPlayerInfo other) : this() {
+      chooseSkillNo_ = other.chooseSkillNo_;
+      playerUid_ = other.playerUid_;
+      playerName_ = other.playerName_;
+      isPrepare_ = other.isPrepare_;
+      avatarInfoList_ = other.avatarInfoList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CoinCollectPlayerInfo Clone() {
+      return new CoinCollectPlayerInfo(this);
+    }
+
+    /// <summary>Field number for the "choose_skill_no" field.</summary>
+    public const int ChooseSkillNoFieldNumber = 5;
+    private uint chooseSkillNo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChooseSkillNo {
+      get { return chooseSkillNo_; }
+      set {
+        chooseSkillNo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "player_uid" field.</summary>
+    public const int PlayerUidFieldNumber = 12;
+    private uint playerUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PlayerUid {
+      get { return playerUid_; }
+      set {
+        playerUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "player_name" field.</summary>
+    public const int PlayerNameFieldNumber = 11;
+    private string playerName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PlayerName {
+      get { return playerName_; }
+      set {
+        playerName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "is_prepare" field.</summary>
+    public const int IsPrepareFieldNumber = 14;
+    private bool isPrepare_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsPrepare {
+      get { return isPrepare_; }
+      set {
+        isPrepare_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "avatar_info_list" field.</summary>
+    public const int AvatarInfoListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::OldProtos.CoinCollectTeamAvatarInfo> _repeated_avatarInfoList_codec
+        = pb::FieldCodec.ForMessage(82, global::OldProtos.CoinCollectTeamAvatarInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.CoinCollectTeamAvatarInfo> avatarInfoList_ = new pbc::RepeatedField<global::OldProtos.CoinCollectTeamAvatarInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.CoinCollectTeamAvatarInfo> AvatarInfoList {
+      get { return avatarInfoList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CoinCollectPlayerInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CoinCollectPlayerInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ChooseSkillNo != other.ChooseSkillNo) return false;
+      if (PlayerUid != other.PlayerUid) return false;
+      if (PlayerName != other.PlayerName) return false;
+      if (IsPrepare != other.IsPrepare) return false;
+      if(!avatarInfoList_.Equals(other.avatarInfoList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ChooseSkillNo != 0) hash ^= ChooseSkillNo.GetHashCode();
+      if (PlayerUid != 0) hash ^= PlayerUid.GetHashCode();
+      if (PlayerName.Length != 0) hash ^= PlayerName.GetHashCode();
+      if (IsPrepare != false) hash ^= IsPrepare.GetHashCode();
+      hash ^= avatarInfoList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ChooseSkillNo != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ChooseSkillNo);
+      }
+      avatarInfoList_.WriteTo(output, _repeated_avatarInfoList_codec);
+      if (PlayerName.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(PlayerName);
+      }
+      if (PlayerUid != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(PlayerUid);
+      }
+      if (IsPrepare != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsPrepare);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ChooseSkillNo != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ChooseSkillNo);
+      }
+      avatarInfoList_.WriteTo(ref output, _repeated_avatarInfoList_codec);
+      if (PlayerName.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(PlayerName);
+      }
+      if (PlayerUid != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(PlayerUid);
+      }
+      if (IsPrepare != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsPrepare);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ChooseSkillNo != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChooseSkillNo);
+      }
+      if (PlayerUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerUid);
+      }
+      if (PlayerName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerName);
+      }
+      if (IsPrepare != false) {
+        size += 1 + 1;
+      }
+      size += avatarInfoList_.CalculateSize(_repeated_avatarInfoList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CoinCollectPlayerInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ChooseSkillNo != 0) {
+        ChooseSkillNo = other.ChooseSkillNo;
+      }
+      if (other.PlayerUid != 0) {
+        PlayerUid = other.PlayerUid;
+      }
+      if (other.PlayerName.Length != 0) {
+        PlayerName = other.PlayerName;
+      }
+      if (other.IsPrepare != false) {
+        IsPrepare = other.IsPrepare;
+      }
+      avatarInfoList_.Add(other.avatarInfoList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            ChooseSkillNo = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            avatarInfoList_.AddEntriesFrom(input, _repeated_avatarInfoList_codec);
+            break;
+          }
+          case 90: {
+            PlayerName = input.ReadString();
+            break;
+          }
+          case 96: {
+            PlayerUid = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            IsPrepare = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            ChooseSkillNo = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            avatarInfoList_.AddEntriesFrom(ref input, _repeated_avatarInfoList_codec);
+            break;
+          }
+          case 90: {
+            PlayerName = input.ReadString();
+            break;
+          }
+          case 96: {
+            PlayerUid = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            IsPrepare = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class CoinCollectPlayerInfo : pb::IMessage<CoinCollectPlayerInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<CoinCollectPlayerInfo> _parser = new pb::MessageParser<CoinCollectPlayerInfo>(() => new CoinCollectPlayerInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<CoinCollectPlayerInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::CoinCollectPlayerInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CoinCollectPlayerInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CoinCollectPlayerInfo(CoinCollectPlayerInfo other) : this() {
-    chooseSkillNo_ = other.chooseSkillNo_;
-    playerUid_ = other.playerUid_;
-    playerName_ = other.playerName_;
-    isPrepare_ = other.isPrepare_;
-    avatarInfoList_ = other.avatarInfoList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CoinCollectPlayerInfo Clone() {
-    return new CoinCollectPlayerInfo(this);
-  }
-
-  /// <summary>Field number for the "choose_skill_no" field.</summary>
-  public const int ChooseSkillNoFieldNumber = 5;
-  private uint chooseSkillNo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChooseSkillNo {
-    get { return chooseSkillNo_; }
-    set {
-      chooseSkillNo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "player_uid" field.</summary>
-  public const int PlayerUidFieldNumber = 12;
-  private uint playerUid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PlayerUid {
-    get { return playerUid_; }
-    set {
-      playerUid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "player_name" field.</summary>
-  public const int PlayerNameFieldNumber = 11;
-  private string playerName_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string PlayerName {
-    get { return playerName_; }
-    set {
-      playerName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "is_prepare" field.</summary>
-  public const int IsPrepareFieldNumber = 14;
-  private bool isPrepare_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsPrepare {
-    get { return isPrepare_; }
-    set {
-      isPrepare_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "avatar_info_list" field.</summary>
-  public const int AvatarInfoListFieldNumber = 10;
-  private static readonly pb::FieldCodec<global::CoinCollectTeamAvatarInfo> _repeated_avatarInfoList_codec
-      = pb::FieldCodec.ForMessage(82, global::CoinCollectTeamAvatarInfo.Parser);
-  private readonly pbc::RepeatedField<global::CoinCollectTeamAvatarInfo> avatarInfoList_ = new pbc::RepeatedField<global::CoinCollectTeamAvatarInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::CoinCollectTeamAvatarInfo> AvatarInfoList {
-    get { return avatarInfoList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as CoinCollectPlayerInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(CoinCollectPlayerInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ChooseSkillNo != other.ChooseSkillNo) return false;
-    if (PlayerUid != other.PlayerUid) return false;
-    if (PlayerName != other.PlayerName) return false;
-    if (IsPrepare != other.IsPrepare) return false;
-    if(!avatarInfoList_.Equals(other.avatarInfoList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ChooseSkillNo != 0) hash ^= ChooseSkillNo.GetHashCode();
-    if (PlayerUid != 0) hash ^= PlayerUid.GetHashCode();
-    if (PlayerName.Length != 0) hash ^= PlayerName.GetHashCode();
-    if (IsPrepare != false) hash ^= IsPrepare.GetHashCode();
-    hash ^= avatarInfoList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ChooseSkillNo != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(ChooseSkillNo);
-    }
-    avatarInfoList_.WriteTo(output, _repeated_avatarInfoList_codec);
-    if (PlayerName.Length != 0) {
-      output.WriteRawTag(90);
-      output.WriteString(PlayerName);
-    }
-    if (PlayerUid != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(PlayerUid);
-    }
-    if (IsPrepare != false) {
-      output.WriteRawTag(112);
-      output.WriteBool(IsPrepare);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ChooseSkillNo != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(ChooseSkillNo);
-    }
-    avatarInfoList_.WriteTo(ref output, _repeated_avatarInfoList_codec);
-    if (PlayerName.Length != 0) {
-      output.WriteRawTag(90);
-      output.WriteString(PlayerName);
-    }
-    if (PlayerUid != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(PlayerUid);
-    }
-    if (IsPrepare != false) {
-      output.WriteRawTag(112);
-      output.WriteBool(IsPrepare);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ChooseSkillNo != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChooseSkillNo);
-    }
-    if (PlayerUid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerUid);
-    }
-    if (PlayerName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerName);
-    }
-    if (IsPrepare != false) {
-      size += 1 + 1;
-    }
-    size += avatarInfoList_.CalculateSize(_repeated_avatarInfoList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(CoinCollectPlayerInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ChooseSkillNo != 0) {
-      ChooseSkillNo = other.ChooseSkillNo;
-    }
-    if (other.PlayerUid != 0) {
-      PlayerUid = other.PlayerUid;
-    }
-    if (other.PlayerName.Length != 0) {
-      PlayerName = other.PlayerName;
-    }
-    if (other.IsPrepare != false) {
-      IsPrepare = other.IsPrepare;
-    }
-    avatarInfoList_.Add(other.avatarInfoList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          ChooseSkillNo = input.ReadUInt32();
-          break;
-        }
-        case 82: {
-          avatarInfoList_.AddEntriesFrom(input, _repeated_avatarInfoList_codec);
-          break;
-        }
-        case 90: {
-          PlayerName = input.ReadString();
-          break;
-        }
-        case 96: {
-          PlayerUid = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          IsPrepare = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          ChooseSkillNo = input.ReadUInt32();
-          break;
-        }
-        case 82: {
-          avatarInfoList_.AddEntriesFrom(ref input, _repeated_avatarInfoList_codec);
-          break;
-        }
-        case 90: {
-          PlayerName = input.ReadString();
-          break;
-        }
-        case 96: {
-          PlayerUid = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          IsPrepare = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

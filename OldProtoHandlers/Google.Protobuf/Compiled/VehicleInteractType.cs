@@ -9,39 +9,41 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from VehicleInteractType.proto</summary>
-public static partial class VehicleInteractTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for VehicleInteractType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from VehicleInteractType.proto</summary>
+  public static partial class VehicleInteractTypeReflection {
 
-  static VehicleInteractTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChlWZWhpY2xlSW50ZXJhY3RUeXBlLnByb3RvKnIKE1ZlaGljbGVJbnRlcmFj",
-          "dFR5cGUSHgoaVkVISUNMRV9JTlRFUkFDVF9UWVBFX05PTkUQABIcChhWRUhJ",
-          "Q0xFX0lOVEVSQUNUX1RZUEVfSU4QARIdChlWRUhJQ0xFX0lOVEVSQUNUX1RZ",
-          "UEVfT1VUEAJCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJv",
-          "dG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::VehicleInteractType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for VehicleInteractType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static VehicleInteractTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChlWZWhpY2xlSW50ZXJhY3RUeXBlLnByb3RvKnIKE1ZlaGljbGVJbnRlcmFj",
+            "dFR5cGUSHgoaVkVISUNMRV9JTlRFUkFDVF9UWVBFX05PTkUQABIcChhWRUhJ",
+            "Q0xFX0lOVEVSQUNUX1RZUEVfSU4QARIdChlWRUhJQ0xFX0lOVEVSQUNUX1RZ",
+            "UEVfT1VUEAJCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.VehicleInteractType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum VehicleInteractType {
+    [pbr::OriginalName("VEHICLE_INTERACT_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("VEHICLE_INTERACT_TYPE_IN")] In = 1,
+    [pbr::OriginalName("VEHICLE_INTERACT_TYPE_OUT")] Out = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum VehicleInteractType {
-  [pbr::OriginalName("VEHICLE_INTERACT_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("VEHICLE_INTERACT_TYPE_IN")] In = 1,
-  [pbr::OriginalName("VEHICLE_INTERACT_TYPE_OUT")] Out = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "BuoyantCombatGallerySettleInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message BuoyantCombatSettleInfo {
   bool is_new_record = 1;

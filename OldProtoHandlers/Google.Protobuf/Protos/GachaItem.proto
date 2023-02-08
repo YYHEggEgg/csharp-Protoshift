@@ -19,7 +19,7 @@ syntax = "proto3";
 import "GachaTransferItem.proto";
 import "ItemParam.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message GachaItem {
   ItemParam gacha_item = 7;

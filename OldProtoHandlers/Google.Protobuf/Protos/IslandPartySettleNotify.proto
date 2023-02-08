@@ -20,7 +20,7 @@ import "ExhibitionDisplayInfo.proto";
 import "GalleryStopReason.proto";
 import "IslandPartyGallerySettleInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 24601
 // EnetChannelId: 0

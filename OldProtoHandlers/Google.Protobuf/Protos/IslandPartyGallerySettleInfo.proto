@@ -19,7 +19,7 @@ syntax = "proto3";
 import "ExhibitionDisplayInfo.proto";
 import "OnlinePlayerInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message IslandPartyGallerySettleInfo {
   OnlinePlayerInfo player_info = 13;

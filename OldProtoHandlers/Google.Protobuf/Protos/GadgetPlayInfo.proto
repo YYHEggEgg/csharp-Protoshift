@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GadgetCrucibleInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message GadgetPlayInfo {
   uint32 play_type = 1;

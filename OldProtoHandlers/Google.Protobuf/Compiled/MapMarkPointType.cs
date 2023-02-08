@@ -9,45 +9,48 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MapMarkPointType.proto</summary>
-public static partial class MapMarkPointTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MapMarkPointType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MapMarkPointType.proto</summary>
+  public static partial class MapMarkPointTypeReflection {
 
-  static MapMarkPointTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZNYXBNYXJrUG9pbnRUeXBlLnByb3RvKvUBChBNYXBNYXJrUG9pbnRUeXBl",
-          "EhsKF01BUF9NQVJLX1BPSU5UX1RZUEVfTlBDEAASHQoZTUFQX01BUktfUE9J",
-          "TlRfVFlQRV9RVUVTVBABEh8KG01BUF9NQVJLX1BPSU5UX1RZUEVfU1BFQ0lB",
-          "TBACEhwKGE1BUF9NQVJLX1BPSU5UX1RZUEVfTUlORRADEiIKHk1BUF9NQVJL",
-          "X1BPSU5UX1RZUEVfQ09MTEVDVElPThAEEh8KG01BUF9NQVJLX1BPSU5UX1RZ",
-          "UEVfTU9OU1RFUhAFEiEKHU1BUF9NQVJLX1BPSU5UX1RZUEVfRklTSF9QT09M",
-          "EAZCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MapMarkPointType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for MapMarkPointType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MapMarkPointTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZNYXBNYXJrUG9pbnRUeXBlLnByb3RvKvUBChBNYXBNYXJrUG9pbnRUeXBl",
+            "EhsKF01BUF9NQVJLX1BPSU5UX1RZUEVfTlBDEAASHQoZTUFQX01BUktfUE9J",
+            "TlRfVFlQRV9RVUVTVBABEh8KG01BUF9NQVJLX1BPSU5UX1RZUEVfU1BFQ0lB",
+            "TBACEhwKGE1BUF9NQVJLX1BPSU5UX1RZUEVfTUlORRADEiIKHk1BUF9NQVJL",
+            "X1BPSU5UX1RZUEVfQ09MTEVDVElPThAEEh8KG01BUF9NQVJLX1BPSU5UX1RZ",
+            "UEVfTU9OU1RFUhAFEiEKHU1BUF9NQVJLX1BPSU5UX1RZUEVfRklTSF9QT09M",
+            "EAZCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.MapMarkPointType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum MapMarkPointType {
+    [pbr::OriginalName("MAP_MARK_POINT_TYPE_NPC")] Npc = 0,
+    [pbr::OriginalName("MAP_MARK_POINT_TYPE_QUEST")] Quest = 1,
+    [pbr::OriginalName("MAP_MARK_POINT_TYPE_SPECIAL")] Special = 2,
+    [pbr::OriginalName("MAP_MARK_POINT_TYPE_MINE")] Mine = 3,
+    [pbr::OriginalName("MAP_MARK_POINT_TYPE_COLLECTION")] Collection = 4,
+    [pbr::OriginalName("MAP_MARK_POINT_TYPE_MONSTER")] Monster = 5,
+    [pbr::OriginalName("MAP_MARK_POINT_TYPE_FISH_POOL")] FishPool = 6,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum MapMarkPointType {
-  [pbr::OriginalName("MAP_MARK_POINT_TYPE_NPC")] Npc = 0,
-  [pbr::OriginalName("MAP_MARK_POINT_TYPE_QUEST")] Quest = 1,
-  [pbr::OriginalName("MAP_MARK_POINT_TYPE_SPECIAL")] Special = 2,
-  [pbr::OriginalName("MAP_MARK_POINT_TYPE_MINE")] Mine = 3,
-  [pbr::OriginalName("MAP_MARK_POINT_TYPE_COLLECTION")] Collection = 4,
-  [pbr::OriginalName("MAP_MARK_POINT_TYPE_MONSTER")] Monster = 5,
-  [pbr::OriginalName("MAP_MARK_POINT_TYPE_FISH_POOL")] FishPool = 6,
-}
-
-#endregion
-
 
 #endregion Designer generated code

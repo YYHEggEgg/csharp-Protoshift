@@ -9,281 +9,284 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from WindFieldDungeonSettleInfo.proto</summary>
-public static partial class WindFieldDungeonSettleInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for WindFieldDungeonSettleInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from WindFieldDungeonSettleInfo.proto</summary>
+  public static partial class WindFieldDungeonSettleInfoReflection {
 
-  static WindFieldDungeonSettleInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBXaW5kRmllbGREdW5nZW9uU2V0dGxlSW5mby5wcm90bxogV2luZEZpZWxk",
-          "RHVuZ2VvbkZhaWxSZWFzb24ucHJvdG8ijQEKGldpbmRGaWVsZER1bmdlb25T",
-          "ZXR0bGVJbmZvEh0KFWFmdGVyX3dhdGNoZXJfaWRfbGlzdBgLIAMoDRIeChZi",
-          "ZWZvcmVfd2F0Y2hlcl9pZF9saXN0GAcgAygNEjAKC2ZhaWxfcmVhc29uGAIg",
-          "ASgOMhsuV2luZEZpZWxkRHVuZ2VvbkZhaWxSZWFzb25CHgocZW11LmdyYXNz",
-          "Y3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::WindFieldDungeonFailReasonReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::WindFieldDungeonSettleInfo), global::WindFieldDungeonSettleInfo.Parser, new[]{ "AfterWatcherIdList", "BeforeWatcherIdList", "FailReason" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for WindFieldDungeonSettleInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static WindFieldDungeonSettleInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBXaW5kRmllbGREdW5nZW9uU2V0dGxlSW5mby5wcm90bxogV2luZEZpZWxk",
+            "RHVuZ2VvbkZhaWxSZWFzb24ucHJvdG8ijQEKGldpbmRGaWVsZER1bmdlb25T",
+            "ZXR0bGVJbmZvEh0KFWFmdGVyX3dhdGNoZXJfaWRfbGlzdBgLIAMoDRIeChZi",
+            "ZWZvcmVfd2F0Y2hlcl9pZF9saXN0GAcgAygNEjAKC2ZhaWxfcmVhc29uGAIg",
+            "ASgOMhsuV2luZEZpZWxkRHVuZ2VvbkZhaWxSZWFzb25CDKoCCU9sZFByb3Rv",
+            "c2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.WindFieldDungeonFailReasonReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.WindFieldDungeonSettleInfo), global::OldProtos.WindFieldDungeonSettleInfo.Parser, new[]{ "AfterWatcherIdList", "BeforeWatcherIdList", "FailReason" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class WindFieldDungeonSettleInfo : pb::IMessage<WindFieldDungeonSettleInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<WindFieldDungeonSettleInfo> _parser = new pb::MessageParser<WindFieldDungeonSettleInfo>(() => new WindFieldDungeonSettleInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<WindFieldDungeonSettleInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.WindFieldDungeonSettleInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WindFieldDungeonSettleInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WindFieldDungeonSettleInfo(WindFieldDungeonSettleInfo other) : this() {
+      afterWatcherIdList_ = other.afterWatcherIdList_.Clone();
+      beforeWatcherIdList_ = other.beforeWatcherIdList_.Clone();
+      failReason_ = other.failReason_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WindFieldDungeonSettleInfo Clone() {
+      return new WindFieldDungeonSettleInfo(this);
+    }
+
+    /// <summary>Field number for the "after_watcher_id_list" field.</summary>
+    public const int AfterWatcherIdListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_afterWatcherIdList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> afterWatcherIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> AfterWatcherIdList {
+      get { return afterWatcherIdList_; }
+    }
+
+    /// <summary>Field number for the "before_watcher_id_list" field.</summary>
+    public const int BeforeWatcherIdListFieldNumber = 7;
+    private static readonly pb::FieldCodec<uint> _repeated_beforeWatcherIdList_codec
+        = pb::FieldCodec.ForUInt32(58);
+    private readonly pbc::RepeatedField<uint> beforeWatcherIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> BeforeWatcherIdList {
+      get { return beforeWatcherIdList_; }
+    }
+
+    /// <summary>Field number for the "fail_reason" field.</summary>
+    public const int FailReasonFieldNumber = 2;
+    private global::OldProtos.WindFieldDungeonFailReason failReason_ = global::OldProtos.WindFieldDungeonFailReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.WindFieldDungeonFailReason FailReason {
+      get { return failReason_; }
+      set {
+        failReason_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as WindFieldDungeonSettleInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(WindFieldDungeonSettleInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!afterWatcherIdList_.Equals(other.afterWatcherIdList_)) return false;
+      if(!beforeWatcherIdList_.Equals(other.beforeWatcherIdList_)) return false;
+      if (FailReason != other.FailReason) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= afterWatcherIdList_.GetHashCode();
+      hash ^= beforeWatcherIdList_.GetHashCode();
+      if (FailReason != global::OldProtos.WindFieldDungeonFailReason.None) hash ^= FailReason.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (FailReason != global::OldProtos.WindFieldDungeonFailReason.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) FailReason);
+      }
+      beforeWatcherIdList_.WriteTo(output, _repeated_beforeWatcherIdList_codec);
+      afterWatcherIdList_.WriteTo(output, _repeated_afterWatcherIdList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (FailReason != global::OldProtos.WindFieldDungeonFailReason.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) FailReason);
+      }
+      beforeWatcherIdList_.WriteTo(ref output, _repeated_beforeWatcherIdList_codec);
+      afterWatcherIdList_.WriteTo(ref output, _repeated_afterWatcherIdList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += afterWatcherIdList_.CalculateSize(_repeated_afterWatcherIdList_codec);
+      size += beforeWatcherIdList_.CalculateSize(_repeated_beforeWatcherIdList_codec);
+      if (FailReason != global::OldProtos.WindFieldDungeonFailReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FailReason);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(WindFieldDungeonSettleInfo other) {
+      if (other == null) {
+        return;
+      }
+      afterWatcherIdList_.Add(other.afterWatcherIdList_);
+      beforeWatcherIdList_.Add(other.beforeWatcherIdList_);
+      if (other.FailReason != global::OldProtos.WindFieldDungeonFailReason.None) {
+        FailReason = other.FailReason;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            FailReason = (global::OldProtos.WindFieldDungeonFailReason) input.ReadEnum();
+            break;
+          }
+          case 58:
+          case 56: {
+            beforeWatcherIdList_.AddEntriesFrom(input, _repeated_beforeWatcherIdList_codec);
+            break;
+          }
+          case 90:
+          case 88: {
+            afterWatcherIdList_.AddEntriesFrom(input, _repeated_afterWatcherIdList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            FailReason = (global::OldProtos.WindFieldDungeonFailReason) input.ReadEnum();
+            break;
+          }
+          case 58:
+          case 56: {
+            beforeWatcherIdList_.AddEntriesFrom(ref input, _repeated_beforeWatcherIdList_codec);
+            break;
+          }
+          case 90:
+          case 88: {
+            afterWatcherIdList_.AddEntriesFrom(ref input, _repeated_afterWatcherIdList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class WindFieldDungeonSettleInfo : pb::IMessage<WindFieldDungeonSettleInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<WindFieldDungeonSettleInfo> _parser = new pb::MessageParser<WindFieldDungeonSettleInfo>(() => new WindFieldDungeonSettleInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<WindFieldDungeonSettleInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::WindFieldDungeonSettleInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WindFieldDungeonSettleInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WindFieldDungeonSettleInfo(WindFieldDungeonSettleInfo other) : this() {
-    afterWatcherIdList_ = other.afterWatcherIdList_.Clone();
-    beforeWatcherIdList_ = other.beforeWatcherIdList_.Clone();
-    failReason_ = other.failReason_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WindFieldDungeonSettleInfo Clone() {
-    return new WindFieldDungeonSettleInfo(this);
-  }
-
-  /// <summary>Field number for the "after_watcher_id_list" field.</summary>
-  public const int AfterWatcherIdListFieldNumber = 11;
-  private static readonly pb::FieldCodec<uint> _repeated_afterWatcherIdList_codec
-      = pb::FieldCodec.ForUInt32(90);
-  private readonly pbc::RepeatedField<uint> afterWatcherIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> AfterWatcherIdList {
-    get { return afterWatcherIdList_; }
-  }
-
-  /// <summary>Field number for the "before_watcher_id_list" field.</summary>
-  public const int BeforeWatcherIdListFieldNumber = 7;
-  private static readonly pb::FieldCodec<uint> _repeated_beforeWatcherIdList_codec
-      = pb::FieldCodec.ForUInt32(58);
-  private readonly pbc::RepeatedField<uint> beforeWatcherIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> BeforeWatcherIdList {
-    get { return beforeWatcherIdList_; }
-  }
-
-  /// <summary>Field number for the "fail_reason" field.</summary>
-  public const int FailReasonFieldNumber = 2;
-  private global::WindFieldDungeonFailReason failReason_ = global::WindFieldDungeonFailReason.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::WindFieldDungeonFailReason FailReason {
-    get { return failReason_; }
-    set {
-      failReason_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as WindFieldDungeonSettleInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(WindFieldDungeonSettleInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!afterWatcherIdList_.Equals(other.afterWatcherIdList_)) return false;
-    if(!beforeWatcherIdList_.Equals(other.beforeWatcherIdList_)) return false;
-    if (FailReason != other.FailReason) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= afterWatcherIdList_.GetHashCode();
-    hash ^= beforeWatcherIdList_.GetHashCode();
-    if (FailReason != global::WindFieldDungeonFailReason.None) hash ^= FailReason.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (FailReason != global::WindFieldDungeonFailReason.None) {
-      output.WriteRawTag(16);
-      output.WriteEnum((int) FailReason);
-    }
-    beforeWatcherIdList_.WriteTo(output, _repeated_beforeWatcherIdList_codec);
-    afterWatcherIdList_.WriteTo(output, _repeated_afterWatcherIdList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (FailReason != global::WindFieldDungeonFailReason.None) {
-      output.WriteRawTag(16);
-      output.WriteEnum((int) FailReason);
-    }
-    beforeWatcherIdList_.WriteTo(ref output, _repeated_beforeWatcherIdList_codec);
-    afterWatcherIdList_.WriteTo(ref output, _repeated_afterWatcherIdList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += afterWatcherIdList_.CalculateSize(_repeated_afterWatcherIdList_codec);
-    size += beforeWatcherIdList_.CalculateSize(_repeated_beforeWatcherIdList_codec);
-    if (FailReason != global::WindFieldDungeonFailReason.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FailReason);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(WindFieldDungeonSettleInfo other) {
-    if (other == null) {
-      return;
-    }
-    afterWatcherIdList_.Add(other.afterWatcherIdList_);
-    beforeWatcherIdList_.Add(other.beforeWatcherIdList_);
-    if (other.FailReason != global::WindFieldDungeonFailReason.None) {
-      FailReason = other.FailReason;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          FailReason = (global::WindFieldDungeonFailReason) input.ReadEnum();
-          break;
-        }
-        case 58:
-        case 56: {
-          beforeWatcherIdList_.AddEntriesFrom(input, _repeated_beforeWatcherIdList_codec);
-          break;
-        }
-        case 90:
-        case 88: {
-          afterWatcherIdList_.AddEntriesFrom(input, _repeated_afterWatcherIdList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          FailReason = (global::WindFieldDungeonFailReason) input.ReadEnum();
-          break;
-        }
-        case 58:
-        case 56: {
-          beforeWatcherIdList_.AddEntriesFrom(ref input, _repeated_beforeWatcherIdList_codec);
-          break;
-        }
-        case 90:
-        case 88: {
-          afterWatcherIdList_.AddEntriesFrom(ref input, _repeated_afterWatcherIdList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

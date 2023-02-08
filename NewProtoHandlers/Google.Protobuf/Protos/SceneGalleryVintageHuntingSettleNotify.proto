@@ -20,7 +20,7 @@ import "VintageHuntingFirstStageSettleInfo.proto";
 import "VintageHuntingSecondStageSettleInfo.proto";
 import "VintageHuntingThirdStageSettleInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SceneGalleryVintageHuntingSettleNotify {
   // enum CmdId {

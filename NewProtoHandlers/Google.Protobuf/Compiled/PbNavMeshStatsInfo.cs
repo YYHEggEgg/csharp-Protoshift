@@ -9,335 +9,338 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from PbNavMeshStatsInfo.proto</summary>
-public static partial class PbNavMeshStatsInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for PbNavMeshStatsInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from PbNavMeshStatsInfo.proto</summary>
+  public static partial class PbNavMeshStatsInfoReflection {
 
-  static PbNavMeshStatsInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhQYk5hdk1lc2hTdGF0c0luZm8ucHJvdG8iiAEKElBiTmF2TWVzaFN0YXRz",
-          "SW5mbxIbChNVbmszMzAwX01PS1BKQklQSE5JGAggASgFEhsKE1VuazMzMDBf",
-          "SU1MSExKQU9CTEYYAyABKAUSGwoTVW5rMzMwMF9ESEpLS0pMS0RIQhgPIAEo",
-          "BRIbChNVbmszMzAwX0VFT05LQURCSk1FGA0gASgFQhYKFG9yZy5zb3JhcG9p",
-          "bnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::PbNavMeshStatsInfo), global::PbNavMeshStatsInfo.Parser, new[]{ "Unk3300MOKPJBIPHNI", "Unk3300IMLHLJAOBLF", "Unk3300DHJKKJLKDHB", "Unk3300EEONKADBJME" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for PbNavMeshStatsInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static PbNavMeshStatsInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhQYk5hdk1lc2hTdGF0c0luZm8ucHJvdG8iiAEKElBiTmF2TWVzaFN0YXRz",
+            "SW5mbxIbChNVbmszMzAwX01PS1BKQklQSE5JGAggASgFEhsKE1VuazMzMDBf",
+            "SU1MSExKQU9CTEYYAyABKAUSGwoTVW5rMzMwMF9ESEpLS0pMS0RIQhgPIAEo",
+            "BRIbChNVbmszMzAwX0VFT05LQURCSk1FGA0gASgFQgyqAglOZXdQcm90b3Ni",
+            "BnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.PbNavMeshStatsInfo), global::NewProtos.PbNavMeshStatsInfo.Parser, new[]{ "Unk3300MOKPJBIPHNI", "Unk3300IMLHLJAOBLF", "Unk3300DHJKKJLKDHB", "Unk3300EEONKADBJME" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class PbNavMeshStatsInfo : pb::IMessage<PbNavMeshStatsInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PbNavMeshStatsInfo> _parser = new pb::MessageParser<PbNavMeshStatsInfo>(() => new PbNavMeshStatsInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PbNavMeshStatsInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.PbNavMeshStatsInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PbNavMeshStatsInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PbNavMeshStatsInfo(PbNavMeshStatsInfo other) : this() {
+      unk3300MOKPJBIPHNI_ = other.unk3300MOKPJBIPHNI_;
+      unk3300IMLHLJAOBLF_ = other.unk3300IMLHLJAOBLF_;
+      unk3300DHJKKJLKDHB_ = other.unk3300DHJKKJLKDHB_;
+      unk3300EEONKADBJME_ = other.unk3300EEONKADBJME_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PbNavMeshStatsInfo Clone() {
+      return new PbNavMeshStatsInfo(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_MOKPJBIPHNI" field.</summary>
+    public const int Unk3300MOKPJBIPHNIFieldNumber = 8;
+    private int unk3300MOKPJBIPHNI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Unk3300MOKPJBIPHNI {
+      get { return unk3300MOKPJBIPHNI_; }
+      set {
+        unk3300MOKPJBIPHNI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IMLHLJAOBLF" field.</summary>
+    public const int Unk3300IMLHLJAOBLFFieldNumber = 3;
+    private int unk3300IMLHLJAOBLF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Unk3300IMLHLJAOBLF {
+      get { return unk3300IMLHLJAOBLF_; }
+      set {
+        unk3300IMLHLJAOBLF_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DHJKKJLKDHB" field.</summary>
+    public const int Unk3300DHJKKJLKDHBFieldNumber = 15;
+    private int unk3300DHJKKJLKDHB_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Unk3300DHJKKJLKDHB {
+      get { return unk3300DHJKKJLKDHB_; }
+      set {
+        unk3300DHJKKJLKDHB_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EEONKADBJME" field.</summary>
+    public const int Unk3300EEONKADBJMEFieldNumber = 13;
+    private int unk3300EEONKADBJME_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Unk3300EEONKADBJME {
+      get { return unk3300EEONKADBJME_; }
+      set {
+        unk3300EEONKADBJME_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PbNavMeshStatsInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PbNavMeshStatsInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Unk3300MOKPJBIPHNI != other.Unk3300MOKPJBIPHNI) return false;
+      if (Unk3300IMLHLJAOBLF != other.Unk3300IMLHLJAOBLF) return false;
+      if (Unk3300DHJKKJLKDHB != other.Unk3300DHJKKJLKDHB) return false;
+      if (Unk3300EEONKADBJME != other.Unk3300EEONKADBJME) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Unk3300MOKPJBIPHNI != 0) hash ^= Unk3300MOKPJBIPHNI.GetHashCode();
+      if (Unk3300IMLHLJAOBLF != 0) hash ^= Unk3300IMLHLJAOBLF.GetHashCode();
+      if (Unk3300DHJKKJLKDHB != 0) hash ^= Unk3300DHJKKJLKDHB.GetHashCode();
+      if (Unk3300EEONKADBJME != 0) hash ^= Unk3300EEONKADBJME.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Unk3300IMLHLJAOBLF != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Unk3300IMLHLJAOBLF);
+      }
+      if (Unk3300MOKPJBIPHNI != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Unk3300MOKPJBIPHNI);
+      }
+      if (Unk3300EEONKADBJME != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Unk3300EEONKADBJME);
+      }
+      if (Unk3300DHJKKJLKDHB != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Unk3300DHJKKJLKDHB);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300IMLHLJAOBLF != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Unk3300IMLHLJAOBLF);
+      }
+      if (Unk3300MOKPJBIPHNI != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Unk3300MOKPJBIPHNI);
+      }
+      if (Unk3300EEONKADBJME != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Unk3300EEONKADBJME);
+      }
+      if (Unk3300DHJKKJLKDHB != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Unk3300DHJKKJLKDHB);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Unk3300MOKPJBIPHNI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300MOKPJBIPHNI);
+      }
+      if (Unk3300IMLHLJAOBLF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300IMLHLJAOBLF);
+      }
+      if (Unk3300DHJKKJLKDHB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300DHJKKJLKDHB);
+      }
+      if (Unk3300EEONKADBJME != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300EEONKADBJME);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PbNavMeshStatsInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Unk3300MOKPJBIPHNI != 0) {
+        Unk3300MOKPJBIPHNI = other.Unk3300MOKPJBIPHNI;
+      }
+      if (other.Unk3300IMLHLJAOBLF != 0) {
+        Unk3300IMLHLJAOBLF = other.Unk3300IMLHLJAOBLF;
+      }
+      if (other.Unk3300DHJKKJLKDHB != 0) {
+        Unk3300DHJKKJLKDHB = other.Unk3300DHJKKJLKDHB;
+      }
+      if (other.Unk3300EEONKADBJME != 0) {
+        Unk3300EEONKADBJME = other.Unk3300EEONKADBJME;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            Unk3300IMLHLJAOBLF = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            Unk3300MOKPJBIPHNI = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            Unk3300EEONKADBJME = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            Unk3300DHJKKJLKDHB = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            Unk3300IMLHLJAOBLF = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            Unk3300MOKPJBIPHNI = input.ReadInt32();
+            break;
+          }
+          case 104: {
+            Unk3300EEONKADBJME = input.ReadInt32();
+            break;
+          }
+          case 120: {
+            Unk3300DHJKKJLKDHB = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class PbNavMeshStatsInfo : pb::IMessage<PbNavMeshStatsInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<PbNavMeshStatsInfo> _parser = new pb::MessageParser<PbNavMeshStatsInfo>(() => new PbNavMeshStatsInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<PbNavMeshStatsInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::PbNavMeshStatsInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PbNavMeshStatsInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PbNavMeshStatsInfo(PbNavMeshStatsInfo other) : this() {
-    unk3300MOKPJBIPHNI_ = other.unk3300MOKPJBIPHNI_;
-    unk3300IMLHLJAOBLF_ = other.unk3300IMLHLJAOBLF_;
-    unk3300DHJKKJLKDHB_ = other.unk3300DHJKKJLKDHB_;
-    unk3300EEONKADBJME_ = other.unk3300EEONKADBJME_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PbNavMeshStatsInfo Clone() {
-    return new PbNavMeshStatsInfo(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_MOKPJBIPHNI" field.</summary>
-  public const int Unk3300MOKPJBIPHNIFieldNumber = 8;
-  private int unk3300MOKPJBIPHNI_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Unk3300MOKPJBIPHNI {
-    get { return unk3300MOKPJBIPHNI_; }
-    set {
-      unk3300MOKPJBIPHNI_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_IMLHLJAOBLF" field.</summary>
-  public const int Unk3300IMLHLJAOBLFFieldNumber = 3;
-  private int unk3300IMLHLJAOBLF_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Unk3300IMLHLJAOBLF {
-    get { return unk3300IMLHLJAOBLF_; }
-    set {
-      unk3300IMLHLJAOBLF_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_DHJKKJLKDHB" field.</summary>
-  public const int Unk3300DHJKKJLKDHBFieldNumber = 15;
-  private int unk3300DHJKKJLKDHB_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Unk3300DHJKKJLKDHB {
-    get { return unk3300DHJKKJLKDHB_; }
-    set {
-      unk3300DHJKKJLKDHB_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_EEONKADBJME" field.</summary>
-  public const int Unk3300EEONKADBJMEFieldNumber = 13;
-  private int unk3300EEONKADBJME_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Unk3300EEONKADBJME {
-    get { return unk3300EEONKADBJME_; }
-    set {
-      unk3300EEONKADBJME_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as PbNavMeshStatsInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(PbNavMeshStatsInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Unk3300MOKPJBIPHNI != other.Unk3300MOKPJBIPHNI) return false;
-    if (Unk3300IMLHLJAOBLF != other.Unk3300IMLHLJAOBLF) return false;
-    if (Unk3300DHJKKJLKDHB != other.Unk3300DHJKKJLKDHB) return false;
-    if (Unk3300EEONKADBJME != other.Unk3300EEONKADBJME) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Unk3300MOKPJBIPHNI != 0) hash ^= Unk3300MOKPJBIPHNI.GetHashCode();
-    if (Unk3300IMLHLJAOBLF != 0) hash ^= Unk3300IMLHLJAOBLF.GetHashCode();
-    if (Unk3300DHJKKJLKDHB != 0) hash ^= Unk3300DHJKKJLKDHB.GetHashCode();
-    if (Unk3300EEONKADBJME != 0) hash ^= Unk3300EEONKADBJME.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Unk3300IMLHLJAOBLF != 0) {
-      output.WriteRawTag(24);
-      output.WriteInt32(Unk3300IMLHLJAOBLF);
-    }
-    if (Unk3300MOKPJBIPHNI != 0) {
-      output.WriteRawTag(64);
-      output.WriteInt32(Unk3300MOKPJBIPHNI);
-    }
-    if (Unk3300EEONKADBJME != 0) {
-      output.WriteRawTag(104);
-      output.WriteInt32(Unk3300EEONKADBJME);
-    }
-    if (Unk3300DHJKKJLKDHB != 0) {
-      output.WriteRawTag(120);
-      output.WriteInt32(Unk3300DHJKKJLKDHB);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Unk3300IMLHLJAOBLF != 0) {
-      output.WriteRawTag(24);
-      output.WriteInt32(Unk3300IMLHLJAOBLF);
-    }
-    if (Unk3300MOKPJBIPHNI != 0) {
-      output.WriteRawTag(64);
-      output.WriteInt32(Unk3300MOKPJBIPHNI);
-    }
-    if (Unk3300EEONKADBJME != 0) {
-      output.WriteRawTag(104);
-      output.WriteInt32(Unk3300EEONKADBJME);
-    }
-    if (Unk3300DHJKKJLKDHB != 0) {
-      output.WriteRawTag(120);
-      output.WriteInt32(Unk3300DHJKKJLKDHB);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Unk3300MOKPJBIPHNI != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300MOKPJBIPHNI);
-    }
-    if (Unk3300IMLHLJAOBLF != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300IMLHLJAOBLF);
-    }
-    if (Unk3300DHJKKJLKDHB != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300DHJKKJLKDHB);
-    }
-    if (Unk3300EEONKADBJME != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300EEONKADBJME);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(PbNavMeshStatsInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Unk3300MOKPJBIPHNI != 0) {
-      Unk3300MOKPJBIPHNI = other.Unk3300MOKPJBIPHNI;
-    }
-    if (other.Unk3300IMLHLJAOBLF != 0) {
-      Unk3300IMLHLJAOBLF = other.Unk3300IMLHLJAOBLF;
-    }
-    if (other.Unk3300DHJKKJLKDHB != 0) {
-      Unk3300DHJKKJLKDHB = other.Unk3300DHJKKJLKDHB;
-    }
-    if (other.Unk3300EEONKADBJME != 0) {
-      Unk3300EEONKADBJME = other.Unk3300EEONKADBJME;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          Unk3300IMLHLJAOBLF = input.ReadInt32();
-          break;
-        }
-        case 64: {
-          Unk3300MOKPJBIPHNI = input.ReadInt32();
-          break;
-        }
-        case 104: {
-          Unk3300EEONKADBJME = input.ReadInt32();
-          break;
-        }
-        case 120: {
-          Unk3300DHJKKJLKDHB = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          Unk3300IMLHLJAOBLF = input.ReadInt32();
-          break;
-        }
-        case 64: {
-          Unk3300MOKPJBIPHNI = input.ReadInt32();
-          break;
-        }
-        case 104: {
-          Unk3300EEONKADBJME = input.ReadInt32();
-          break;
-        }
-        case 120: {
-          Unk3300DHJKKJLKDHB = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

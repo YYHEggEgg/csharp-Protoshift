@@ -21,7 +21,7 @@ import "CityReputationHuntInfo.proto";
 import "CityReputationQuestInfo.proto";
 import "CityReputationRequestInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message CityReputationInfo {
   uint32 exp = 8;

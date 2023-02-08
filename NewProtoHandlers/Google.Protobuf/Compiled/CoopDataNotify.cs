@@ -9,324 +9,327 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CoopDataNotify.proto</summary>
-public static partial class CoopDataNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CoopDataNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CoopDataNotify.proto</summary>
+  public static partial class CoopDataNotifyReflection {
 
-  static CoopDataNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRDb29wRGF0YU5vdGlmeS5wcm90bxoRQ29vcENoYXB0ZXIucHJvdG8igwEK",
-          "DkNvb3BEYXRhTm90aWZ5EhgKEGlzX2hhdmVfcHJvZ3Jlc3MYCyABKAgSFgoO",
-          "Y3VyX2Nvb3BfcG9pbnQYASABKA0SGwoTdmlld2VkX2NoYXB0ZXJfbGlzdBgG",
-          "IAMoDRIiCgxjaGFwdGVyX2xpc3QYAyADKAsyDC5Db29wQ2hhcHRlckIWChRv",
-          "cmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::CoopChapterReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::CoopDataNotify), global::CoopDataNotify.Parser, new[]{ "IsHaveProgress", "CurCoopPoint", "ViewedChapterList", "ChapterList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for CoopDataNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CoopDataNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRDb29wRGF0YU5vdGlmeS5wcm90bxoRQ29vcENoYXB0ZXIucHJvdG8igwEK",
+            "DkNvb3BEYXRhTm90aWZ5EhgKEGlzX2hhdmVfcHJvZ3Jlc3MYCyABKAgSFgoO",
+            "Y3VyX2Nvb3BfcG9pbnQYASABKA0SGwoTdmlld2VkX2NoYXB0ZXJfbGlzdBgG",
+            "IAMoDRIiCgxjaGFwdGVyX2xpc3QYAyADKAsyDC5Db29wQ2hhcHRlckIMqgIJ",
+            "TmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.CoopChapterReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.CoopDataNotify), global::NewProtos.CoopDataNotify.Parser, new[]{ "IsHaveProgress", "CurCoopPoint", "ViewedChapterList", "ChapterList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1994;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class CoopDataNotify : pb::IMessage<CoopDataNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CoopDataNotify> _parser = new pb::MessageParser<CoopDataNotify>(() => new CoopDataNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CoopDataNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.CoopDataNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CoopDataNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CoopDataNotify(CoopDataNotify other) : this() {
+      isHaveProgress_ = other.isHaveProgress_;
+      curCoopPoint_ = other.curCoopPoint_;
+      viewedChapterList_ = other.viewedChapterList_.Clone();
+      chapterList_ = other.chapterList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CoopDataNotify Clone() {
+      return new CoopDataNotify(this);
+    }
+
+    /// <summary>Field number for the "is_have_progress" field.</summary>
+    public const int IsHaveProgressFieldNumber = 11;
+    private bool isHaveProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsHaveProgress {
+      get { return isHaveProgress_; }
+      set {
+        isHaveProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_coop_point" field.</summary>
+    public const int CurCoopPointFieldNumber = 1;
+    private uint curCoopPoint_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurCoopPoint {
+      get { return curCoopPoint_; }
+      set {
+        curCoopPoint_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "viewed_chapter_list" field.</summary>
+    public const int ViewedChapterListFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_viewedChapterList_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> viewedChapterList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ViewedChapterList {
+      get { return viewedChapterList_; }
+    }
+
+    /// <summary>Field number for the "chapter_list" field.</summary>
+    public const int ChapterListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::NewProtos.CoopChapter> _repeated_chapterList_codec
+        = pb::FieldCodec.ForMessage(26, global::NewProtos.CoopChapter.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.CoopChapter> chapterList_ = new pbc::RepeatedField<global::NewProtos.CoopChapter>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.CoopChapter> ChapterList {
+      get { return chapterList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CoopDataNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CoopDataNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsHaveProgress != other.IsHaveProgress) return false;
+      if (CurCoopPoint != other.CurCoopPoint) return false;
+      if(!viewedChapterList_.Equals(other.viewedChapterList_)) return false;
+      if(!chapterList_.Equals(other.chapterList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsHaveProgress != false) hash ^= IsHaveProgress.GetHashCode();
+      if (CurCoopPoint != 0) hash ^= CurCoopPoint.GetHashCode();
+      hash ^= viewedChapterList_.GetHashCode();
+      hash ^= chapterList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (CurCoopPoint != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(CurCoopPoint);
+      }
+      chapterList_.WriteTo(output, _repeated_chapterList_codec);
+      viewedChapterList_.WriteTo(output, _repeated_viewedChapterList_codec);
+      if (IsHaveProgress != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsHaveProgress);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CurCoopPoint != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(CurCoopPoint);
+      }
+      chapterList_.WriteTo(ref output, _repeated_chapterList_codec);
+      viewedChapterList_.WriteTo(ref output, _repeated_viewedChapterList_codec);
+      if (IsHaveProgress != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsHaveProgress);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsHaveProgress != false) {
+        size += 1 + 1;
+      }
+      if (CurCoopPoint != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurCoopPoint);
+      }
+      size += viewedChapterList_.CalculateSize(_repeated_viewedChapterList_codec);
+      size += chapterList_.CalculateSize(_repeated_chapterList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CoopDataNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsHaveProgress != false) {
+        IsHaveProgress = other.IsHaveProgress;
+      }
+      if (other.CurCoopPoint != 0) {
+        CurCoopPoint = other.CurCoopPoint;
+      }
+      viewedChapterList_.Add(other.viewedChapterList_);
+      chapterList_.Add(other.chapterList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            CurCoopPoint = input.ReadUInt32();
+            break;
+          }
+          case 26: {
+            chapterList_.AddEntriesFrom(input, _repeated_chapterList_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            viewedChapterList_.AddEntriesFrom(input, _repeated_viewedChapterList_codec);
+            break;
+          }
+          case 88: {
+            IsHaveProgress = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            CurCoopPoint = input.ReadUInt32();
+            break;
+          }
+          case 26: {
+            chapterList_.AddEntriesFrom(ref input, _repeated_chapterList_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            viewedChapterList_.AddEntriesFrom(ref input, _repeated_viewedChapterList_codec);
+            break;
+          }
+          case 88: {
+            IsHaveProgress = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 1994;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class CoopDataNotify : pb::IMessage<CoopDataNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<CoopDataNotify> _parser = new pb::MessageParser<CoopDataNotify>(() => new CoopDataNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<CoopDataNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::CoopDataNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CoopDataNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CoopDataNotify(CoopDataNotify other) : this() {
-    isHaveProgress_ = other.isHaveProgress_;
-    curCoopPoint_ = other.curCoopPoint_;
-    viewedChapterList_ = other.viewedChapterList_.Clone();
-    chapterList_ = other.chapterList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CoopDataNotify Clone() {
-    return new CoopDataNotify(this);
-  }
-
-  /// <summary>Field number for the "is_have_progress" field.</summary>
-  public const int IsHaveProgressFieldNumber = 11;
-  private bool isHaveProgress_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsHaveProgress {
-    get { return isHaveProgress_; }
-    set {
-      isHaveProgress_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cur_coop_point" field.</summary>
-  public const int CurCoopPointFieldNumber = 1;
-  private uint curCoopPoint_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurCoopPoint {
-    get { return curCoopPoint_; }
-    set {
-      curCoopPoint_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "viewed_chapter_list" field.</summary>
-  public const int ViewedChapterListFieldNumber = 6;
-  private static readonly pb::FieldCodec<uint> _repeated_viewedChapterList_codec
-      = pb::FieldCodec.ForUInt32(50);
-  private readonly pbc::RepeatedField<uint> viewedChapterList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> ViewedChapterList {
-    get { return viewedChapterList_; }
-  }
-
-  /// <summary>Field number for the "chapter_list" field.</summary>
-  public const int ChapterListFieldNumber = 3;
-  private static readonly pb::FieldCodec<global::CoopChapter> _repeated_chapterList_codec
-      = pb::FieldCodec.ForMessage(26, global::CoopChapter.Parser);
-  private readonly pbc::RepeatedField<global::CoopChapter> chapterList_ = new pbc::RepeatedField<global::CoopChapter>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::CoopChapter> ChapterList {
-    get { return chapterList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as CoopDataNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(CoopDataNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsHaveProgress != other.IsHaveProgress) return false;
-    if (CurCoopPoint != other.CurCoopPoint) return false;
-    if(!viewedChapterList_.Equals(other.viewedChapterList_)) return false;
-    if(!chapterList_.Equals(other.chapterList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsHaveProgress != false) hash ^= IsHaveProgress.GetHashCode();
-    if (CurCoopPoint != 0) hash ^= CurCoopPoint.GetHashCode();
-    hash ^= viewedChapterList_.GetHashCode();
-    hash ^= chapterList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (CurCoopPoint != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(CurCoopPoint);
-    }
-    chapterList_.WriteTo(output, _repeated_chapterList_codec);
-    viewedChapterList_.WriteTo(output, _repeated_viewedChapterList_codec);
-    if (IsHaveProgress != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(IsHaveProgress);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (CurCoopPoint != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(CurCoopPoint);
-    }
-    chapterList_.WriteTo(ref output, _repeated_chapterList_codec);
-    viewedChapterList_.WriteTo(ref output, _repeated_viewedChapterList_codec);
-    if (IsHaveProgress != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(IsHaveProgress);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsHaveProgress != false) {
-      size += 1 + 1;
-    }
-    if (CurCoopPoint != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurCoopPoint);
-    }
-    size += viewedChapterList_.CalculateSize(_repeated_viewedChapterList_codec);
-    size += chapterList_.CalculateSize(_repeated_chapterList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(CoopDataNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsHaveProgress != false) {
-      IsHaveProgress = other.IsHaveProgress;
-    }
-    if (other.CurCoopPoint != 0) {
-      CurCoopPoint = other.CurCoopPoint;
-    }
-    viewedChapterList_.Add(other.viewedChapterList_);
-    chapterList_.Add(other.chapterList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          CurCoopPoint = input.ReadUInt32();
-          break;
-        }
-        case 26: {
-          chapterList_.AddEntriesFrom(input, _repeated_chapterList_codec);
-          break;
-        }
-        case 50:
-        case 48: {
-          viewedChapterList_.AddEntriesFrom(input, _repeated_viewedChapterList_codec);
-          break;
-        }
-        case 88: {
-          IsHaveProgress = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          CurCoopPoint = input.ReadUInt32();
-          break;
-        }
-        case 26: {
-          chapterList_.AddEntriesFrom(ref input, _repeated_chapterList_codec);
-          break;
-        }
-        case 50:
-        case 48: {
-          viewedChapterList_.AddEntriesFrom(ref input, _repeated_viewedChapterList_codec);
-          break;
-        }
-        case 88: {
-          IsHaveProgress = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

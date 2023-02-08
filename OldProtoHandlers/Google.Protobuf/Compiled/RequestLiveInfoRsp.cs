@@ -9,339 +9,342 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from RequestLiveInfoRsp.proto</summary>
-public static partial class RequestLiveInfoRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for RequestLiveInfoRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from RequestLiveInfoRsp.proto</summary>
+  public static partial class RequestLiveInfoRspReflection {
 
-  static RequestLiveInfoRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhSZXF1ZXN0TGl2ZUluZm9Sc3AucHJvdG8iYAoSUmVxdWVzdExpdmVJbmZv",
-          "UnNwEhYKDnNwYXJlX2xpdmVfdXJsGA4gASgJEg8KB3JldGNvZGUYCSABKAUS",
-          "EAoIbGl2ZV91cmwYDCABKAkSDwoHbGl2ZV9pZBgCIAEoDUIeChxlbXUuZ3Jh",
-          "c3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::RequestLiveInfoRsp), global::RequestLiveInfoRsp.Parser, new[]{ "SpareLiveUrl", "Retcode", "LiveUrl", "LiveId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for RequestLiveInfoRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static RequestLiveInfoRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhSZXF1ZXN0TGl2ZUluZm9Sc3AucHJvdG8iYAoSUmVxdWVzdExpdmVJbmZv",
+            "UnNwEhYKDnNwYXJlX2xpdmVfdXJsGA4gASgJEg8KB3JldGNvZGUYCSABKAUS",
+            "EAoIbGl2ZV91cmwYDCABKAkSDwoHbGl2ZV9pZBgCIAEoDUIMqgIJT2xkUHJv",
+            "dG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.RequestLiveInfoRsp), global::OldProtos.RequestLiveInfoRsp.Parser, new[]{ "SpareLiveUrl", "Retcode", "LiveUrl", "LiveId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 888
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class RequestLiveInfoRsp : pb::IMessage<RequestLiveInfoRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RequestLiveInfoRsp> _parser = new pb::MessageParser<RequestLiveInfoRsp>(() => new RequestLiveInfoRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RequestLiveInfoRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.RequestLiveInfoRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RequestLiveInfoRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RequestLiveInfoRsp(RequestLiveInfoRsp other) : this() {
+      spareLiveUrl_ = other.spareLiveUrl_;
+      retcode_ = other.retcode_;
+      liveUrl_ = other.liveUrl_;
+      liveId_ = other.liveId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RequestLiveInfoRsp Clone() {
+      return new RequestLiveInfoRsp(this);
+    }
+
+    /// <summary>Field number for the "spare_live_url" field.</summary>
+    public const int SpareLiveUrlFieldNumber = 14;
+    private string spareLiveUrl_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string SpareLiveUrl {
+      get { return spareLiveUrl_; }
+      set {
+        spareLiveUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 9;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "live_url" field.</summary>
+    public const int LiveUrlFieldNumber = 12;
+    private string liveUrl_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string LiveUrl {
+      get { return liveUrl_; }
+      set {
+        liveUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "live_id" field.</summary>
+    public const int LiveIdFieldNumber = 2;
+    private uint liveId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LiveId {
+      get { return liveId_; }
+      set {
+        liveId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RequestLiveInfoRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RequestLiveInfoRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SpareLiveUrl != other.SpareLiveUrl) return false;
+      if (Retcode != other.Retcode) return false;
+      if (LiveUrl != other.LiveUrl) return false;
+      if (LiveId != other.LiveId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SpareLiveUrl.Length != 0) hash ^= SpareLiveUrl.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (LiveUrl.Length != 0) hash ^= LiveUrl.GetHashCode();
+      if (LiveId != 0) hash ^= LiveId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (LiveId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(LiveId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Retcode);
+      }
+      if (LiveUrl.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(LiveUrl);
+      }
+      if (SpareLiveUrl.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(SpareLiveUrl);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (LiveId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(LiveId);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Retcode);
+      }
+      if (LiveUrl.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(LiveUrl);
+      }
+      if (SpareLiveUrl.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(SpareLiveUrl);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (SpareLiveUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SpareLiveUrl);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (LiveUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LiveUrl);
+      }
+      if (LiveId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LiveId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RequestLiveInfoRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SpareLiveUrl.Length != 0) {
+        SpareLiveUrl = other.SpareLiveUrl;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.LiveUrl.Length != 0) {
+        LiveUrl = other.LiveUrl;
+      }
+      if (other.LiveId != 0) {
+        LiveId = other.LiveId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            LiveId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 98: {
+            LiveUrl = input.ReadString();
+            break;
+          }
+          case 114: {
+            SpareLiveUrl = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            LiveId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 98: {
+            LiveUrl = input.ReadString();
+            break;
+          }
+          case 114: {
+            SpareLiveUrl = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 888
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class RequestLiveInfoRsp : pb::IMessage<RequestLiveInfoRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<RequestLiveInfoRsp> _parser = new pb::MessageParser<RequestLiveInfoRsp>(() => new RequestLiveInfoRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<RequestLiveInfoRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::RequestLiveInfoRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RequestLiveInfoRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RequestLiveInfoRsp(RequestLiveInfoRsp other) : this() {
-    spareLiveUrl_ = other.spareLiveUrl_;
-    retcode_ = other.retcode_;
-    liveUrl_ = other.liveUrl_;
-    liveId_ = other.liveId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RequestLiveInfoRsp Clone() {
-    return new RequestLiveInfoRsp(this);
-  }
-
-  /// <summary>Field number for the "spare_live_url" field.</summary>
-  public const int SpareLiveUrlFieldNumber = 14;
-  private string spareLiveUrl_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string SpareLiveUrl {
-    get { return spareLiveUrl_; }
-    set {
-      spareLiveUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 9;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "live_url" field.</summary>
-  public const int LiveUrlFieldNumber = 12;
-  private string liveUrl_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string LiveUrl {
-    get { return liveUrl_; }
-    set {
-      liveUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "live_id" field.</summary>
-  public const int LiveIdFieldNumber = 2;
-  private uint liveId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LiveId {
-    get { return liveId_; }
-    set {
-      liveId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as RequestLiveInfoRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(RequestLiveInfoRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (SpareLiveUrl != other.SpareLiveUrl) return false;
-    if (Retcode != other.Retcode) return false;
-    if (LiveUrl != other.LiveUrl) return false;
-    if (LiveId != other.LiveId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (SpareLiveUrl.Length != 0) hash ^= SpareLiveUrl.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (LiveUrl.Length != 0) hash ^= LiveUrl.GetHashCode();
-    if (LiveId != 0) hash ^= LiveId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (LiveId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(LiveId);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(72);
-      output.WriteInt32(Retcode);
-    }
-    if (LiveUrl.Length != 0) {
-      output.WriteRawTag(98);
-      output.WriteString(LiveUrl);
-    }
-    if (SpareLiveUrl.Length != 0) {
-      output.WriteRawTag(114);
-      output.WriteString(SpareLiveUrl);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (LiveId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(LiveId);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(72);
-      output.WriteInt32(Retcode);
-    }
-    if (LiveUrl.Length != 0) {
-      output.WriteRawTag(98);
-      output.WriteString(LiveUrl);
-    }
-    if (SpareLiveUrl.Length != 0) {
-      output.WriteRawTag(114);
-      output.WriteString(SpareLiveUrl);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (SpareLiveUrl.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(SpareLiveUrl);
-    }
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (LiveUrl.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(LiveUrl);
-    }
-    if (LiveId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LiveId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(RequestLiveInfoRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.SpareLiveUrl.Length != 0) {
-      SpareLiveUrl = other.SpareLiveUrl;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.LiveUrl.Length != 0) {
-      LiveUrl = other.LiveUrl;
-    }
-    if (other.LiveId != 0) {
-      LiveId = other.LiveId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          LiveId = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 98: {
-          LiveUrl = input.ReadString();
-          break;
-        }
-        case 114: {
-          SpareLiveUrl = input.ReadString();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          LiveId = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 98: {
-          LiveUrl = input.ReadString();
-          break;
-        }
-        case 114: {
-          SpareLiveUrl = input.ReadString();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

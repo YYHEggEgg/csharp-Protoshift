@@ -19,7 +19,7 @@ syntax = "proto3";
 import "ExhibitionDisplayInfo.proto";
 import "ProfilePicture.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message HideAndSeekSettleInfo {
   repeated ExhibitionDisplayInfo card_list = 2;

@@ -9,617 +9,620 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AISnapshotEntityData.proto</summary>
-public static partial class AISnapshotEntityDataReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AISnapshotEntityData.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AISnapshotEntityData.proto</summary>
+  public static partial class AISnapshotEntityDataReflection {
 
-  static AISnapshotEntityDataReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpBSVNuYXBzaG90RW50aXR5RGF0YS5wcm90bxogQUlTbmFwc2hvdEVudGl0",
-          "eVNraWxsQ3ljbGUucHJvdG8i4gMKFEFJU25hcHNob3RFbnRpdHlEYXRhEjoK",
-          "FWZpbmlzaGVkX3NraWxsX2N5Y2xlcxgOIAMoCzIbLkFJU25hcHNob3RFbnRp",
-          "dHlTa2lsbEN5Y2xlEhgKEGF0dGFja190YXJnZXRfaWQYAiABKA0SEQoJZW50",
-          "aXR5X2lkGAYgASgNEhsKE1VuazMzMDBfQUxCTUVNTUpFSkEYDSABKAISGwoT",
-          "VW5rMzMwMF9JQURKQ0RKT0tORBgFIAEoDRIbChNVbmszMzAwX0ZOQ0lETERL",
-          "QU5PGAcgASgNEhsKE1VuazMzMDBfR1BDRk9DSUZIQ0QYDyABKAISGwoTVW5r",
-          "MzMwMF9GTUJCRUlIQ0NKTxgMIAEoAhIbChNVbmszMzAwX0xJSklESk9MTEVC",
-          "GAsgASgCEhsKE1VuazMzMDBfR05CT0FKSE1OSk8YCSABKA0SQgoPaGl0dGlu",
-          "Z19hdmF0YXJzGAQgAygLMikuQUlTbmFwc2hvdEVudGl0eURhdGEuSGl0dGlu",
-          "Z0F2YXRhcnNFbnRyeRIbChNVbmszMzAwX0ZJS0VBRVBMT0hKGAMgASgNGjUK",
-          "E0hpdHRpbmdBdmF0YXJzRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIg",
-          "ASgNOgI4AUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::AISnapshotEntitySkillCycleReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AISnapshotEntityData), global::AISnapshotEntityData.Parser, new[]{ "FinishedSkillCycles", "AttackTargetId", "EntityId", "Unk3300ALBMEMMJEJA", "Unk3300IADJCDJOKND", "Unk3300FNCIDLDKANO", "Unk3300GPCFOCIFHCD", "Unk3300FMBBEIHCCJO", "Unk3300LIJIDJOLLEB", "Unk3300GNBOAJHMNJO", "HittingAvatars", "Unk3300FIKEAEPLOHJ" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AISnapshotEntityData.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AISnapshotEntityDataReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpBSVNuYXBzaG90RW50aXR5RGF0YS5wcm90bxogQUlTbmFwc2hvdEVudGl0",
+            "eVNraWxsQ3ljbGUucHJvdG8i4gMKFEFJU25hcHNob3RFbnRpdHlEYXRhEjoK",
+            "FWZpbmlzaGVkX3NraWxsX2N5Y2xlcxgOIAMoCzIbLkFJU25hcHNob3RFbnRp",
+            "dHlTa2lsbEN5Y2xlEhgKEGF0dGFja190YXJnZXRfaWQYAiABKA0SEQoJZW50",
+            "aXR5X2lkGAYgASgNEhsKE1VuazMzMDBfQUxCTUVNTUpFSkEYDSABKAISGwoT",
+            "VW5rMzMwMF9JQURKQ0RKT0tORBgFIAEoDRIbChNVbmszMzAwX0ZOQ0lETERL",
+            "QU5PGAcgASgNEhsKE1VuazMzMDBfR1BDRk9DSUZIQ0QYDyABKAISGwoTVW5r",
+            "MzMwMF9GTUJCRUlIQ0NKTxgMIAEoAhIbChNVbmszMzAwX0xJSklESk9MTEVC",
+            "GAsgASgCEhsKE1VuazMzMDBfR05CT0FKSE1OSk8YCSABKA0SQgoPaGl0dGlu",
+            "Z19hdmF0YXJzGAQgAygLMikuQUlTbmFwc2hvdEVudGl0eURhdGEuSGl0dGlu",
+            "Z0F2YXRhcnNFbnRyeRIbChNVbmszMzAwX0ZJS0VBRVBMT0hKGAMgASgNGjUK",
+            "E0hpdHRpbmdBdmF0YXJzRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIg",
+            "ASgNOgI4AUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.AISnapshotEntitySkillCycleReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.AISnapshotEntityData), global::NewProtos.AISnapshotEntityData.Parser, new[]{ "FinishedSkillCycles", "AttackTargetId", "EntityId", "Unk3300ALBMEMMJEJA", "Unk3300IADJCDJOKND", "Unk3300FNCIDLDKANO", "Unk3300GPCFOCIFHCD", "Unk3300FMBBEIHCCJO", "Unk3300LIJIDJOLLEB", "Unk3300GNBOAJHMNJO", "HittingAvatars", "Unk3300FIKEAEPLOHJ" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class AISnapshotEntityData : pb::IMessage<AISnapshotEntityData>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AISnapshotEntityData> _parser = new pb::MessageParser<AISnapshotEntityData>(() => new AISnapshotEntityData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AISnapshotEntityData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.AISnapshotEntityDataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AISnapshotEntityData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AISnapshotEntityData(AISnapshotEntityData other) : this() {
+      finishedSkillCycles_ = other.finishedSkillCycles_.Clone();
+      attackTargetId_ = other.attackTargetId_;
+      entityId_ = other.entityId_;
+      unk3300ALBMEMMJEJA_ = other.unk3300ALBMEMMJEJA_;
+      unk3300IADJCDJOKND_ = other.unk3300IADJCDJOKND_;
+      unk3300FNCIDLDKANO_ = other.unk3300FNCIDLDKANO_;
+      unk3300GPCFOCIFHCD_ = other.unk3300GPCFOCIFHCD_;
+      unk3300FMBBEIHCCJO_ = other.unk3300FMBBEIHCCJO_;
+      unk3300LIJIDJOLLEB_ = other.unk3300LIJIDJOLLEB_;
+      unk3300GNBOAJHMNJO_ = other.unk3300GNBOAJHMNJO_;
+      hittingAvatars_ = other.hittingAvatars_.Clone();
+      unk3300FIKEAEPLOHJ_ = other.unk3300FIKEAEPLOHJ_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AISnapshotEntityData Clone() {
+      return new AISnapshotEntityData(this);
+    }
+
+    /// <summary>Field number for the "finished_skill_cycles" field.</summary>
+    public const int FinishedSkillCyclesFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::NewProtos.AISnapshotEntitySkillCycle> _repeated_finishedSkillCycles_codec
+        = pb::FieldCodec.ForMessage(114, global::NewProtos.AISnapshotEntitySkillCycle.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.AISnapshotEntitySkillCycle> finishedSkillCycles_ = new pbc::RepeatedField<global::NewProtos.AISnapshotEntitySkillCycle>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.AISnapshotEntitySkillCycle> FinishedSkillCycles {
+      get { return finishedSkillCycles_; }
+    }
+
+    /// <summary>Field number for the "attack_target_id" field.</summary>
+    public const int AttackTargetIdFieldNumber = 2;
+    private uint attackTargetId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AttackTargetId {
+      get { return attackTargetId_; }
+      set {
+        attackTargetId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 6;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ALBMEMMJEJA" field.</summary>
+    public const int Unk3300ALBMEMMJEJAFieldNumber = 13;
+    private float unk3300ALBMEMMJEJA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Unk3300ALBMEMMJEJA {
+      get { return unk3300ALBMEMMJEJA_; }
+      set {
+        unk3300ALBMEMMJEJA_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IADJCDJOKND" field.</summary>
+    public const int Unk3300IADJCDJOKNDFieldNumber = 5;
+    private uint unk3300IADJCDJOKND_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IADJCDJOKND {
+      get { return unk3300IADJCDJOKND_; }
+      set {
+        unk3300IADJCDJOKND_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FNCIDLDKANO" field.</summary>
+    public const int Unk3300FNCIDLDKANOFieldNumber = 7;
+    private uint unk3300FNCIDLDKANO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FNCIDLDKANO {
+      get { return unk3300FNCIDLDKANO_; }
+      set {
+        unk3300FNCIDLDKANO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GPCFOCIFHCD" field.</summary>
+    public const int Unk3300GPCFOCIFHCDFieldNumber = 15;
+    private float unk3300GPCFOCIFHCD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Unk3300GPCFOCIFHCD {
+      get { return unk3300GPCFOCIFHCD_; }
+      set {
+        unk3300GPCFOCIFHCD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FMBBEIHCCJO" field.</summary>
+    public const int Unk3300FMBBEIHCCJOFieldNumber = 12;
+    private float unk3300FMBBEIHCCJO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Unk3300FMBBEIHCCJO {
+      get { return unk3300FMBBEIHCCJO_; }
+      set {
+        unk3300FMBBEIHCCJO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LIJIDJOLLEB" field.</summary>
+    public const int Unk3300LIJIDJOLLEBFieldNumber = 11;
+    private float unk3300LIJIDJOLLEB_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Unk3300LIJIDJOLLEB {
+      get { return unk3300LIJIDJOLLEB_; }
+      set {
+        unk3300LIJIDJOLLEB_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GNBOAJHMNJO" field.</summary>
+    public const int Unk3300GNBOAJHMNJOFieldNumber = 9;
+    private uint unk3300GNBOAJHMNJO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GNBOAJHMNJO {
+      get { return unk3300GNBOAJHMNJO_; }
+      set {
+        unk3300GNBOAJHMNJO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hitting_avatars" field.</summary>
+    public const int HittingAvatarsFieldNumber = 4;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_hittingAvatars_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 34);
+    private readonly pbc::MapField<uint, uint> hittingAvatars_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> HittingAvatars {
+      get { return hittingAvatars_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_FIKEAEPLOHJ" field.</summary>
+    public const int Unk3300FIKEAEPLOHJFieldNumber = 3;
+    private uint unk3300FIKEAEPLOHJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FIKEAEPLOHJ {
+      get { return unk3300FIKEAEPLOHJ_; }
+      set {
+        unk3300FIKEAEPLOHJ_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AISnapshotEntityData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AISnapshotEntityData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!finishedSkillCycles_.Equals(other.finishedSkillCycles_)) return false;
+      if (AttackTargetId != other.AttackTargetId) return false;
+      if (EntityId != other.EntityId) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300ALBMEMMJEJA, other.Unk3300ALBMEMMJEJA)) return false;
+      if (Unk3300IADJCDJOKND != other.Unk3300IADJCDJOKND) return false;
+      if (Unk3300FNCIDLDKANO != other.Unk3300FNCIDLDKANO) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300GPCFOCIFHCD, other.Unk3300GPCFOCIFHCD)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300FMBBEIHCCJO, other.Unk3300FMBBEIHCCJO)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300LIJIDJOLLEB, other.Unk3300LIJIDJOLLEB)) return false;
+      if (Unk3300GNBOAJHMNJO != other.Unk3300GNBOAJHMNJO) return false;
+      if (!HittingAvatars.Equals(other.HittingAvatars)) return false;
+      if (Unk3300FIKEAEPLOHJ != other.Unk3300FIKEAEPLOHJ) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= finishedSkillCycles_.GetHashCode();
+      if (AttackTargetId != 0) hash ^= AttackTargetId.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (Unk3300ALBMEMMJEJA != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300ALBMEMMJEJA);
+      if (Unk3300IADJCDJOKND != 0) hash ^= Unk3300IADJCDJOKND.GetHashCode();
+      if (Unk3300FNCIDLDKANO != 0) hash ^= Unk3300FNCIDLDKANO.GetHashCode();
+      if (Unk3300GPCFOCIFHCD != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300GPCFOCIFHCD);
+      if (Unk3300FMBBEIHCCJO != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300FMBBEIHCCJO);
+      if (Unk3300LIJIDJOLLEB != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300LIJIDJOLLEB);
+      if (Unk3300GNBOAJHMNJO != 0) hash ^= Unk3300GNBOAJHMNJO.GetHashCode();
+      hash ^= HittingAvatars.GetHashCode();
+      if (Unk3300FIKEAEPLOHJ != 0) hash ^= Unk3300FIKEAEPLOHJ.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (AttackTargetId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(AttackTargetId);
+      }
+      if (Unk3300FIKEAEPLOHJ != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FIKEAEPLOHJ);
+      }
+      hittingAvatars_.WriteTo(output, _map_hittingAvatars_codec);
+      if (Unk3300IADJCDJOKND != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300IADJCDJOKND);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(EntityId);
+      }
+      if (Unk3300FNCIDLDKANO != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300FNCIDLDKANO);
+      }
+      if (Unk3300GNBOAJHMNJO != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300GNBOAJHMNJO);
+      }
+      if (Unk3300LIJIDJOLLEB != 0F) {
+        output.WriteRawTag(93);
+        output.WriteFloat(Unk3300LIJIDJOLLEB);
+      }
+      if (Unk3300FMBBEIHCCJO != 0F) {
+        output.WriteRawTag(101);
+        output.WriteFloat(Unk3300FMBBEIHCCJO);
+      }
+      if (Unk3300ALBMEMMJEJA != 0F) {
+        output.WriteRawTag(109);
+        output.WriteFloat(Unk3300ALBMEMMJEJA);
+      }
+      finishedSkillCycles_.WriteTo(output, _repeated_finishedSkillCycles_codec);
+      if (Unk3300GPCFOCIFHCD != 0F) {
+        output.WriteRawTag(125);
+        output.WriteFloat(Unk3300GPCFOCIFHCD);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (AttackTargetId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(AttackTargetId);
+      }
+      if (Unk3300FIKEAEPLOHJ != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FIKEAEPLOHJ);
+      }
+      hittingAvatars_.WriteTo(ref output, _map_hittingAvatars_codec);
+      if (Unk3300IADJCDJOKND != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300IADJCDJOKND);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(EntityId);
+      }
+      if (Unk3300FNCIDLDKANO != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300FNCIDLDKANO);
+      }
+      if (Unk3300GNBOAJHMNJO != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300GNBOAJHMNJO);
+      }
+      if (Unk3300LIJIDJOLLEB != 0F) {
+        output.WriteRawTag(93);
+        output.WriteFloat(Unk3300LIJIDJOLLEB);
+      }
+      if (Unk3300FMBBEIHCCJO != 0F) {
+        output.WriteRawTag(101);
+        output.WriteFloat(Unk3300FMBBEIHCCJO);
+      }
+      if (Unk3300ALBMEMMJEJA != 0F) {
+        output.WriteRawTag(109);
+        output.WriteFloat(Unk3300ALBMEMMJEJA);
+      }
+      finishedSkillCycles_.WriteTo(ref output, _repeated_finishedSkillCycles_codec);
+      if (Unk3300GPCFOCIFHCD != 0F) {
+        output.WriteRawTag(125);
+        output.WriteFloat(Unk3300GPCFOCIFHCD);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += finishedSkillCycles_.CalculateSize(_repeated_finishedSkillCycles_codec);
+      if (AttackTargetId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AttackTargetId);
+      }
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (Unk3300ALBMEMMJEJA != 0F) {
+        size += 1 + 4;
+      }
+      if (Unk3300IADJCDJOKND != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IADJCDJOKND);
+      }
+      if (Unk3300FNCIDLDKANO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FNCIDLDKANO);
+      }
+      if (Unk3300GPCFOCIFHCD != 0F) {
+        size += 1 + 4;
+      }
+      if (Unk3300FMBBEIHCCJO != 0F) {
+        size += 1 + 4;
+      }
+      if (Unk3300LIJIDJOLLEB != 0F) {
+        size += 1 + 4;
+      }
+      if (Unk3300GNBOAJHMNJO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GNBOAJHMNJO);
+      }
+      size += hittingAvatars_.CalculateSize(_map_hittingAvatars_codec);
+      if (Unk3300FIKEAEPLOHJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FIKEAEPLOHJ);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AISnapshotEntityData other) {
+      if (other == null) {
+        return;
+      }
+      finishedSkillCycles_.Add(other.finishedSkillCycles_);
+      if (other.AttackTargetId != 0) {
+        AttackTargetId = other.AttackTargetId;
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.Unk3300ALBMEMMJEJA != 0F) {
+        Unk3300ALBMEMMJEJA = other.Unk3300ALBMEMMJEJA;
+      }
+      if (other.Unk3300IADJCDJOKND != 0) {
+        Unk3300IADJCDJOKND = other.Unk3300IADJCDJOKND;
+      }
+      if (other.Unk3300FNCIDLDKANO != 0) {
+        Unk3300FNCIDLDKANO = other.Unk3300FNCIDLDKANO;
+      }
+      if (other.Unk3300GPCFOCIFHCD != 0F) {
+        Unk3300GPCFOCIFHCD = other.Unk3300GPCFOCIFHCD;
+      }
+      if (other.Unk3300FMBBEIHCCJO != 0F) {
+        Unk3300FMBBEIHCCJO = other.Unk3300FMBBEIHCCJO;
+      }
+      if (other.Unk3300LIJIDJOLLEB != 0F) {
+        Unk3300LIJIDJOLLEB = other.Unk3300LIJIDJOLLEB;
+      }
+      if (other.Unk3300GNBOAJHMNJO != 0) {
+        Unk3300GNBOAJHMNJO = other.Unk3300GNBOAJHMNJO;
+      }
+      hittingAvatars_.Add(other.hittingAvatars_);
+      if (other.Unk3300FIKEAEPLOHJ != 0) {
+        Unk3300FIKEAEPLOHJ = other.Unk3300FIKEAEPLOHJ;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            AttackTargetId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Unk3300FIKEAEPLOHJ = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            hittingAvatars_.AddEntriesFrom(input, _map_hittingAvatars_codec);
+            break;
+          }
+          case 40: {
+            Unk3300IADJCDJOKND = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300FNCIDLDKANO = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300GNBOAJHMNJO = input.ReadUInt32();
+            break;
+          }
+          case 93: {
+            Unk3300LIJIDJOLLEB = input.ReadFloat();
+            break;
+          }
+          case 101: {
+            Unk3300FMBBEIHCCJO = input.ReadFloat();
+            break;
+          }
+          case 109: {
+            Unk3300ALBMEMMJEJA = input.ReadFloat();
+            break;
+          }
+          case 114: {
+            finishedSkillCycles_.AddEntriesFrom(input, _repeated_finishedSkillCycles_codec);
+            break;
+          }
+          case 125: {
+            Unk3300GPCFOCIFHCD = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            AttackTargetId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Unk3300FIKEAEPLOHJ = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            hittingAvatars_.AddEntriesFrom(ref input, _map_hittingAvatars_codec);
+            break;
+          }
+          case 40: {
+            Unk3300IADJCDJOKND = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300FNCIDLDKANO = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300GNBOAJHMNJO = input.ReadUInt32();
+            break;
+          }
+          case 93: {
+            Unk3300LIJIDJOLLEB = input.ReadFloat();
+            break;
+          }
+          case 101: {
+            Unk3300FMBBEIHCCJO = input.ReadFloat();
+            break;
+          }
+          case 109: {
+            Unk3300ALBMEMMJEJA = input.ReadFloat();
+            break;
+          }
+          case 114: {
+            finishedSkillCycles_.AddEntriesFrom(ref input, _repeated_finishedSkillCycles_codec);
+            break;
+          }
+          case 125: {
+            Unk3300GPCFOCIFHCD = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class AISnapshotEntityData : pb::IMessage<AISnapshotEntityData>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AISnapshotEntityData> _parser = new pb::MessageParser<AISnapshotEntityData>(() => new AISnapshotEntityData());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AISnapshotEntityData> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AISnapshotEntityDataReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AISnapshotEntityData() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AISnapshotEntityData(AISnapshotEntityData other) : this() {
-    finishedSkillCycles_ = other.finishedSkillCycles_.Clone();
-    attackTargetId_ = other.attackTargetId_;
-    entityId_ = other.entityId_;
-    unk3300ALBMEMMJEJA_ = other.unk3300ALBMEMMJEJA_;
-    unk3300IADJCDJOKND_ = other.unk3300IADJCDJOKND_;
-    unk3300FNCIDLDKANO_ = other.unk3300FNCIDLDKANO_;
-    unk3300GPCFOCIFHCD_ = other.unk3300GPCFOCIFHCD_;
-    unk3300FMBBEIHCCJO_ = other.unk3300FMBBEIHCCJO_;
-    unk3300LIJIDJOLLEB_ = other.unk3300LIJIDJOLLEB_;
-    unk3300GNBOAJHMNJO_ = other.unk3300GNBOAJHMNJO_;
-    hittingAvatars_ = other.hittingAvatars_.Clone();
-    unk3300FIKEAEPLOHJ_ = other.unk3300FIKEAEPLOHJ_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AISnapshotEntityData Clone() {
-    return new AISnapshotEntityData(this);
-  }
-
-  /// <summary>Field number for the "finished_skill_cycles" field.</summary>
-  public const int FinishedSkillCyclesFieldNumber = 14;
-  private static readonly pb::FieldCodec<global::AISnapshotEntitySkillCycle> _repeated_finishedSkillCycles_codec
-      = pb::FieldCodec.ForMessage(114, global::AISnapshotEntitySkillCycle.Parser);
-  private readonly pbc::RepeatedField<global::AISnapshotEntitySkillCycle> finishedSkillCycles_ = new pbc::RepeatedField<global::AISnapshotEntitySkillCycle>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::AISnapshotEntitySkillCycle> FinishedSkillCycles {
-    get { return finishedSkillCycles_; }
-  }
-
-  /// <summary>Field number for the "attack_target_id" field.</summary>
-  public const int AttackTargetIdFieldNumber = 2;
-  private uint attackTargetId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint AttackTargetId {
-    get { return attackTargetId_; }
-    set {
-      attackTargetId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity_id" field.</summary>
-  public const int EntityIdFieldNumber = 6;
-  private uint entityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EntityId {
-    get { return entityId_; }
-    set {
-      entityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_ALBMEMMJEJA" field.</summary>
-  public const int Unk3300ALBMEMMJEJAFieldNumber = 13;
-  private float unk3300ALBMEMMJEJA_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float Unk3300ALBMEMMJEJA {
-    get { return unk3300ALBMEMMJEJA_; }
-    set {
-      unk3300ALBMEMMJEJA_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_IADJCDJOKND" field.</summary>
-  public const int Unk3300IADJCDJOKNDFieldNumber = 5;
-  private uint unk3300IADJCDJOKND_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300IADJCDJOKND {
-    get { return unk3300IADJCDJOKND_; }
-    set {
-      unk3300IADJCDJOKND_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_FNCIDLDKANO" field.</summary>
-  public const int Unk3300FNCIDLDKANOFieldNumber = 7;
-  private uint unk3300FNCIDLDKANO_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300FNCIDLDKANO {
-    get { return unk3300FNCIDLDKANO_; }
-    set {
-      unk3300FNCIDLDKANO_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_GPCFOCIFHCD" field.</summary>
-  public const int Unk3300GPCFOCIFHCDFieldNumber = 15;
-  private float unk3300GPCFOCIFHCD_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float Unk3300GPCFOCIFHCD {
-    get { return unk3300GPCFOCIFHCD_; }
-    set {
-      unk3300GPCFOCIFHCD_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_FMBBEIHCCJO" field.</summary>
-  public const int Unk3300FMBBEIHCCJOFieldNumber = 12;
-  private float unk3300FMBBEIHCCJO_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float Unk3300FMBBEIHCCJO {
-    get { return unk3300FMBBEIHCCJO_; }
-    set {
-      unk3300FMBBEIHCCJO_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_LIJIDJOLLEB" field.</summary>
-  public const int Unk3300LIJIDJOLLEBFieldNumber = 11;
-  private float unk3300LIJIDJOLLEB_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float Unk3300LIJIDJOLLEB {
-    get { return unk3300LIJIDJOLLEB_; }
-    set {
-      unk3300LIJIDJOLLEB_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_GNBOAJHMNJO" field.</summary>
-  public const int Unk3300GNBOAJHMNJOFieldNumber = 9;
-  private uint unk3300GNBOAJHMNJO_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300GNBOAJHMNJO {
-    get { return unk3300GNBOAJHMNJO_; }
-    set {
-      unk3300GNBOAJHMNJO_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "hitting_avatars" field.</summary>
-  public const int HittingAvatarsFieldNumber = 4;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_hittingAvatars_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 34);
-  private readonly pbc::MapField<uint, uint> hittingAvatars_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> HittingAvatars {
-    get { return hittingAvatars_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_FIKEAEPLOHJ" field.</summary>
-  public const int Unk3300FIKEAEPLOHJFieldNumber = 3;
-  private uint unk3300FIKEAEPLOHJ_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300FIKEAEPLOHJ {
-    get { return unk3300FIKEAEPLOHJ_; }
-    set {
-      unk3300FIKEAEPLOHJ_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AISnapshotEntityData);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AISnapshotEntityData other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!finishedSkillCycles_.Equals(other.finishedSkillCycles_)) return false;
-    if (AttackTargetId != other.AttackTargetId) return false;
-    if (EntityId != other.EntityId) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300ALBMEMMJEJA, other.Unk3300ALBMEMMJEJA)) return false;
-    if (Unk3300IADJCDJOKND != other.Unk3300IADJCDJOKND) return false;
-    if (Unk3300FNCIDLDKANO != other.Unk3300FNCIDLDKANO) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300GPCFOCIFHCD, other.Unk3300GPCFOCIFHCD)) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300FMBBEIHCCJO, other.Unk3300FMBBEIHCCJO)) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300LIJIDJOLLEB, other.Unk3300LIJIDJOLLEB)) return false;
-    if (Unk3300GNBOAJHMNJO != other.Unk3300GNBOAJHMNJO) return false;
-    if (!HittingAvatars.Equals(other.HittingAvatars)) return false;
-    if (Unk3300FIKEAEPLOHJ != other.Unk3300FIKEAEPLOHJ) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= finishedSkillCycles_.GetHashCode();
-    if (AttackTargetId != 0) hash ^= AttackTargetId.GetHashCode();
-    if (EntityId != 0) hash ^= EntityId.GetHashCode();
-    if (Unk3300ALBMEMMJEJA != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300ALBMEMMJEJA);
-    if (Unk3300IADJCDJOKND != 0) hash ^= Unk3300IADJCDJOKND.GetHashCode();
-    if (Unk3300FNCIDLDKANO != 0) hash ^= Unk3300FNCIDLDKANO.GetHashCode();
-    if (Unk3300GPCFOCIFHCD != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300GPCFOCIFHCD);
-    if (Unk3300FMBBEIHCCJO != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300FMBBEIHCCJO);
-    if (Unk3300LIJIDJOLLEB != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300LIJIDJOLLEB);
-    if (Unk3300GNBOAJHMNJO != 0) hash ^= Unk3300GNBOAJHMNJO.GetHashCode();
-    hash ^= HittingAvatars.GetHashCode();
-    if (Unk3300FIKEAEPLOHJ != 0) hash ^= Unk3300FIKEAEPLOHJ.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (AttackTargetId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(AttackTargetId);
-    }
-    if (Unk3300FIKEAEPLOHJ != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(Unk3300FIKEAEPLOHJ);
-    }
-    hittingAvatars_.WriteTo(output, _map_hittingAvatars_codec);
-    if (Unk3300IADJCDJOKND != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Unk3300IADJCDJOKND);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(EntityId);
-    }
-    if (Unk3300FNCIDLDKANO != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Unk3300FNCIDLDKANO);
-    }
-    if (Unk3300GNBOAJHMNJO != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(Unk3300GNBOAJHMNJO);
-    }
-    if (Unk3300LIJIDJOLLEB != 0F) {
-      output.WriteRawTag(93);
-      output.WriteFloat(Unk3300LIJIDJOLLEB);
-    }
-    if (Unk3300FMBBEIHCCJO != 0F) {
-      output.WriteRawTag(101);
-      output.WriteFloat(Unk3300FMBBEIHCCJO);
-    }
-    if (Unk3300ALBMEMMJEJA != 0F) {
-      output.WriteRawTag(109);
-      output.WriteFloat(Unk3300ALBMEMMJEJA);
-    }
-    finishedSkillCycles_.WriteTo(output, _repeated_finishedSkillCycles_codec);
-    if (Unk3300GPCFOCIFHCD != 0F) {
-      output.WriteRawTag(125);
-      output.WriteFloat(Unk3300GPCFOCIFHCD);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (AttackTargetId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(AttackTargetId);
-    }
-    if (Unk3300FIKEAEPLOHJ != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(Unk3300FIKEAEPLOHJ);
-    }
-    hittingAvatars_.WriteTo(ref output, _map_hittingAvatars_codec);
-    if (Unk3300IADJCDJOKND != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Unk3300IADJCDJOKND);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(EntityId);
-    }
-    if (Unk3300FNCIDLDKANO != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Unk3300FNCIDLDKANO);
-    }
-    if (Unk3300GNBOAJHMNJO != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(Unk3300GNBOAJHMNJO);
-    }
-    if (Unk3300LIJIDJOLLEB != 0F) {
-      output.WriteRawTag(93);
-      output.WriteFloat(Unk3300LIJIDJOLLEB);
-    }
-    if (Unk3300FMBBEIHCCJO != 0F) {
-      output.WriteRawTag(101);
-      output.WriteFloat(Unk3300FMBBEIHCCJO);
-    }
-    if (Unk3300ALBMEMMJEJA != 0F) {
-      output.WriteRawTag(109);
-      output.WriteFloat(Unk3300ALBMEMMJEJA);
-    }
-    finishedSkillCycles_.WriteTo(ref output, _repeated_finishedSkillCycles_codec);
-    if (Unk3300GPCFOCIFHCD != 0F) {
-      output.WriteRawTag(125);
-      output.WriteFloat(Unk3300GPCFOCIFHCD);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += finishedSkillCycles_.CalculateSize(_repeated_finishedSkillCycles_codec);
-    if (AttackTargetId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AttackTargetId);
-    }
-    if (EntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-    }
-    if (Unk3300ALBMEMMJEJA != 0F) {
-      size += 1 + 4;
-    }
-    if (Unk3300IADJCDJOKND != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IADJCDJOKND);
-    }
-    if (Unk3300FNCIDLDKANO != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FNCIDLDKANO);
-    }
-    if (Unk3300GPCFOCIFHCD != 0F) {
-      size += 1 + 4;
-    }
-    if (Unk3300FMBBEIHCCJO != 0F) {
-      size += 1 + 4;
-    }
-    if (Unk3300LIJIDJOLLEB != 0F) {
-      size += 1 + 4;
-    }
-    if (Unk3300GNBOAJHMNJO != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GNBOAJHMNJO);
-    }
-    size += hittingAvatars_.CalculateSize(_map_hittingAvatars_codec);
-    if (Unk3300FIKEAEPLOHJ != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FIKEAEPLOHJ);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AISnapshotEntityData other) {
-    if (other == null) {
-      return;
-    }
-    finishedSkillCycles_.Add(other.finishedSkillCycles_);
-    if (other.AttackTargetId != 0) {
-      AttackTargetId = other.AttackTargetId;
-    }
-    if (other.EntityId != 0) {
-      EntityId = other.EntityId;
-    }
-    if (other.Unk3300ALBMEMMJEJA != 0F) {
-      Unk3300ALBMEMMJEJA = other.Unk3300ALBMEMMJEJA;
-    }
-    if (other.Unk3300IADJCDJOKND != 0) {
-      Unk3300IADJCDJOKND = other.Unk3300IADJCDJOKND;
-    }
-    if (other.Unk3300FNCIDLDKANO != 0) {
-      Unk3300FNCIDLDKANO = other.Unk3300FNCIDLDKANO;
-    }
-    if (other.Unk3300GPCFOCIFHCD != 0F) {
-      Unk3300GPCFOCIFHCD = other.Unk3300GPCFOCIFHCD;
-    }
-    if (other.Unk3300FMBBEIHCCJO != 0F) {
-      Unk3300FMBBEIHCCJO = other.Unk3300FMBBEIHCCJO;
-    }
-    if (other.Unk3300LIJIDJOLLEB != 0F) {
-      Unk3300LIJIDJOLLEB = other.Unk3300LIJIDJOLLEB;
-    }
-    if (other.Unk3300GNBOAJHMNJO != 0) {
-      Unk3300GNBOAJHMNJO = other.Unk3300GNBOAJHMNJO;
-    }
-    hittingAvatars_.Add(other.hittingAvatars_);
-    if (other.Unk3300FIKEAEPLOHJ != 0) {
-      Unk3300FIKEAEPLOHJ = other.Unk3300FIKEAEPLOHJ;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          AttackTargetId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          Unk3300FIKEAEPLOHJ = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          hittingAvatars_.AddEntriesFrom(input, _map_hittingAvatars_codec);
-          break;
-        }
-        case 40: {
-          Unk3300IADJCDJOKND = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Unk3300FNCIDLDKANO = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Unk3300GNBOAJHMNJO = input.ReadUInt32();
-          break;
-        }
-        case 93: {
-          Unk3300LIJIDJOLLEB = input.ReadFloat();
-          break;
-        }
-        case 101: {
-          Unk3300FMBBEIHCCJO = input.ReadFloat();
-          break;
-        }
-        case 109: {
-          Unk3300ALBMEMMJEJA = input.ReadFloat();
-          break;
-        }
-        case 114: {
-          finishedSkillCycles_.AddEntriesFrom(input, _repeated_finishedSkillCycles_codec);
-          break;
-        }
-        case 125: {
-          Unk3300GPCFOCIFHCD = input.ReadFloat();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          AttackTargetId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          Unk3300FIKEAEPLOHJ = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          hittingAvatars_.AddEntriesFrom(ref input, _map_hittingAvatars_codec);
-          break;
-        }
-        case 40: {
-          Unk3300IADJCDJOKND = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Unk3300FNCIDLDKANO = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Unk3300GNBOAJHMNJO = input.ReadUInt32();
-          break;
-        }
-        case 93: {
-          Unk3300LIJIDJOLLEB = input.ReadFloat();
-          break;
-        }
-        case 101: {
-          Unk3300FMBBEIHCCJO = input.ReadFloat();
-          break;
-        }
-        case 109: {
-          Unk3300ALBMEMMJEJA = input.ReadFloat();
-          break;
-        }
-        case 114: {
-          finishedSkillCycles_.AddEntriesFrom(ref input, _repeated_finishedSkillCycles_codec);
-          break;
-        }
-        case 125: {
-          Unk3300GPCFOCIFHCD = input.ReadFloat();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -21,7 +21,7 @@ import "ShopCardProduct.proto";
 import "ShopConcertProduct.proto";
 import "ShopMcoinProduct.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message RechargeReq {
   // enum CmdId {

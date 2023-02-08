@@ -9,1385 +9,1388 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GetPlayerTokenRsp.proto</summary>
-public static partial class GetPlayerTokenRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GetPlayerTokenRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GetPlayerTokenRsp.proto</summary>
+  public static partial class GetPlayerTokenRspReflection {
 
-  static GetPlayerTokenRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdHZXRQbGF5ZXJUb2tlblJzcC5wcm90bxoUU3RvcFNlcnZlckluZm8ucHJv",
-          "dG8i8QUKEUdldFBsYXllclRva2VuUnNwEhsKEm1pbm9yc19yZWdfbWluX2Fn",
-          "ZRiZDCABKA0SEwoKY2hhbm5lbF9pZBiAByABKA0SFQoNcGxhdGZvcm1fdHlw",
-          "ZRgIIAEoDRITCgthY2NvdW50X3VpZBgMIAEoCRIcChNpc19sb2dpbl93aGl0",
-          "ZV9saXN0GL0EIAEoCBIQCghpc19ndWVzdBgEIAEoCBIaChJibGFja191aWRf",
-          "ZW5kX3RpbWUYDiABKA0SGAoPaXNfd2F0Y2hkb2dfdWlkGOwPIAEoCBIPCgZw",
-          "c25faWQYkw4gASgJEgwKA3RhZxjjDCABKA0SFQoMY291bnRyeV9jb2RlGN0P",
-          "IAEoCRINCgV0b2tlbhgLIAEoCRIXCg5zdWJfY2hhbm5lbF9pZBiKDiABKA0S",
-          "GwoTc2VjdXJpdHlfY21kX2J1ZmZlchgGIAEoDBIiChljbGllbnRfdmVyc2lv",
-          "bl9yYW5kb21fa2V5GPkLIAEoCRIRCghiaXJ0aGRheRipByABKAkSFwoPc2Vj",
-          "cmV0X2tleV9zZWVkGA0gASgEEhQKDGFjY291bnRfdHlwZRgFIAEoDRILCgNt",
-          "c2cYByABKAkSIgoZZmluaXNoX2NvbGxlY3Rpb25faWRfbGlzdBjoDCADKA0S",
-          "DQoEc2lnbhj0CCABKAkSEgoKc2VjcmV0X2tleRgPIAEoCRIlCgtzdG9wX3Nl",
-          "cnZlchjmCiABKAsyDy5TdG9wU2VydmVySW5mbxIPCgdyZXRjb2RlGAIgASgF",
-          "EgsKA3VpZBgBIAEoDRIcChRpc19wcm9maWNpZW50X3BsYXllchgJIAEoCBIV",
-          "CgxyZWdfcGxhdGZvcm0Y2AggASgNEhgKD3NlcnZlcl9yYW5kX2tleRjVCyAB",
-          "KAkSFgoOZXh0cmFfYmluX2RhdGEYAyABKAwSFgoNY2xpZW50X2lwX3N0chjc",
-          "BiABKAkSDgoGZ21fdWlkGAogASgNEg8KBmtleV9pZBiUCSABKA1CHgocZW11",
-          "LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::StopServerInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GetPlayerTokenRsp), global::GetPlayerTokenRsp.Parser, new[]{ "MinorsRegMinAge", "ChannelId", "PlatformType", "AccountUid", "IsLoginWhiteList", "IsGuest", "BlackUidEndTime", "IsWatchdogUid", "PsnId", "Tag", "CountryCode", "Token", "SubChannelId", "SecurityCmdBuffer", "ClientVersionRandomKey", "Birthday", "SecretKeySeed", "AccountType", "Msg", "FinishCollectionIdList", "Sign", "SecretKey", "StopServer", "Retcode", "Uid", "IsProficientPlayer", "RegPlatform", "ServerRandKey", "ExtraBinData", "ClientIpStr", "GmUid", "KeyId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GetPlayerTokenRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GetPlayerTokenRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdHZXRQbGF5ZXJUb2tlblJzcC5wcm90bxoUU3RvcFNlcnZlckluZm8ucHJv",
+            "dG8i8QUKEUdldFBsYXllclRva2VuUnNwEhsKEm1pbm9yc19yZWdfbWluX2Fn",
+            "ZRiZDCABKA0SEwoKY2hhbm5lbF9pZBiAByABKA0SFQoNcGxhdGZvcm1fdHlw",
+            "ZRgIIAEoDRITCgthY2NvdW50X3VpZBgMIAEoCRIcChNpc19sb2dpbl93aGl0",
+            "ZV9saXN0GL0EIAEoCBIQCghpc19ndWVzdBgEIAEoCBIaChJibGFja191aWRf",
+            "ZW5kX3RpbWUYDiABKA0SGAoPaXNfd2F0Y2hkb2dfdWlkGOwPIAEoCBIPCgZw",
+            "c25faWQYkw4gASgJEgwKA3RhZxjjDCABKA0SFQoMY291bnRyeV9jb2RlGN0P",
+            "IAEoCRINCgV0b2tlbhgLIAEoCRIXCg5zdWJfY2hhbm5lbF9pZBiKDiABKA0S",
+            "GwoTc2VjdXJpdHlfY21kX2J1ZmZlchgGIAEoDBIiChljbGllbnRfdmVyc2lv",
+            "bl9yYW5kb21fa2V5GPkLIAEoCRIRCghiaXJ0aGRheRipByABKAkSFwoPc2Vj",
+            "cmV0X2tleV9zZWVkGA0gASgEEhQKDGFjY291bnRfdHlwZRgFIAEoDRILCgNt",
+            "c2cYByABKAkSIgoZZmluaXNoX2NvbGxlY3Rpb25faWRfbGlzdBjoDCADKA0S",
+            "DQoEc2lnbhj0CCABKAkSEgoKc2VjcmV0X2tleRgPIAEoCRIlCgtzdG9wX3Nl",
+            "cnZlchjmCiABKAsyDy5TdG9wU2VydmVySW5mbxIPCgdyZXRjb2RlGAIgASgF",
+            "EgsKA3VpZBgBIAEoDRIcChRpc19wcm9maWNpZW50X3BsYXllchgJIAEoCBIV",
+            "CgxyZWdfcGxhdGZvcm0Y2AggASgNEhgKD3NlcnZlcl9yYW5kX2tleRjVCyAB",
+            "KAkSFgoOZXh0cmFfYmluX2RhdGEYAyABKAwSFgoNY2xpZW50X2lwX3N0chjc",
+            "BiABKAkSDgoGZ21fdWlkGAogASgNEg8KBmtleV9pZBiUCSABKA1CDKoCCU9s",
+            "ZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.StopServerInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GetPlayerTokenRsp), global::OldProtos.GetPlayerTokenRsp.Parser, new[]{ "MinorsRegMinAge", "ChannelId", "PlatformType", "AccountUid", "IsLoginWhiteList", "IsGuest", "BlackUidEndTime", "IsWatchdogUid", "PsnId", "Tag", "CountryCode", "Token", "SubChannelId", "SecurityCmdBuffer", "ClientVersionRandomKey", "Birthday", "SecretKeySeed", "AccountType", "Msg", "FinishCollectionIdList", "Sign", "SecretKey", "StopServer", "Retcode", "Uid", "IsProficientPlayer", "RegPlatform", "ServerRandKey", "ExtraBinData", "ClientIpStr", "GmUid", "KeyId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GetPlayerTokenRsp : pb::IMessage<GetPlayerTokenRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetPlayerTokenRsp> _parser = new pb::MessageParser<GetPlayerTokenRsp>(() => new GetPlayerTokenRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GetPlayerTokenRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GetPlayerTokenRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetPlayerTokenRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetPlayerTokenRsp(GetPlayerTokenRsp other) : this() {
+      minorsRegMinAge_ = other.minorsRegMinAge_;
+      channelId_ = other.channelId_;
+      platformType_ = other.platformType_;
+      accountUid_ = other.accountUid_;
+      isLoginWhiteList_ = other.isLoginWhiteList_;
+      isGuest_ = other.isGuest_;
+      blackUidEndTime_ = other.blackUidEndTime_;
+      isWatchdogUid_ = other.isWatchdogUid_;
+      psnId_ = other.psnId_;
+      tag_ = other.tag_;
+      countryCode_ = other.countryCode_;
+      token_ = other.token_;
+      subChannelId_ = other.subChannelId_;
+      securityCmdBuffer_ = other.securityCmdBuffer_;
+      clientVersionRandomKey_ = other.clientVersionRandomKey_;
+      birthday_ = other.birthday_;
+      secretKeySeed_ = other.secretKeySeed_;
+      accountType_ = other.accountType_;
+      msg_ = other.msg_;
+      finishCollectionIdList_ = other.finishCollectionIdList_.Clone();
+      sign_ = other.sign_;
+      secretKey_ = other.secretKey_;
+      stopServer_ = other.stopServer_ != null ? other.stopServer_.Clone() : null;
+      retcode_ = other.retcode_;
+      uid_ = other.uid_;
+      isProficientPlayer_ = other.isProficientPlayer_;
+      regPlatform_ = other.regPlatform_;
+      serverRandKey_ = other.serverRandKey_;
+      extraBinData_ = other.extraBinData_;
+      clientIpStr_ = other.clientIpStr_;
+      gmUid_ = other.gmUid_;
+      keyId_ = other.keyId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetPlayerTokenRsp Clone() {
+      return new GetPlayerTokenRsp(this);
+    }
+
+    /// <summary>Field number for the "minors_reg_min_age" field.</summary>
+    public const int MinorsRegMinAgeFieldNumber = 1561;
+    private uint minorsRegMinAge_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MinorsRegMinAge {
+      get { return minorsRegMinAge_; }
+      set {
+        minorsRegMinAge_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "channel_id" field.</summary>
+    public const int ChannelIdFieldNumber = 896;
+    private uint channelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChannelId {
+      get { return channelId_; }
+      set {
+        channelId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "platform_type" field.</summary>
+    public const int PlatformTypeFieldNumber = 8;
+    private uint platformType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PlatformType {
+      get { return platformType_; }
+      set {
+        platformType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "account_uid" field.</summary>
+    public const int AccountUidFieldNumber = 12;
+    private string accountUid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AccountUid {
+      get { return accountUid_; }
+      set {
+        accountUid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "is_login_white_list" field.</summary>
+    public const int IsLoginWhiteListFieldNumber = 573;
+    private bool isLoginWhiteList_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsLoginWhiteList {
+      get { return isLoginWhiteList_; }
+      set {
+        isLoginWhiteList_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_guest" field.</summary>
+    public const int IsGuestFieldNumber = 4;
+    private bool isGuest_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsGuest {
+      get { return isGuest_; }
+      set {
+        isGuest_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "black_uid_end_time" field.</summary>
+    public const int BlackUidEndTimeFieldNumber = 14;
+    private uint blackUidEndTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BlackUidEndTime {
+      get { return blackUidEndTime_; }
+      set {
+        blackUidEndTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_watchdog_uid" field.</summary>
+    public const int IsWatchdogUidFieldNumber = 2028;
+    private bool isWatchdogUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsWatchdogUid {
+      get { return isWatchdogUid_; }
+      set {
+        isWatchdogUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "psn_id" field.</summary>
+    public const int PsnIdFieldNumber = 1811;
+    private string psnId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PsnId {
+      get { return psnId_; }
+      set {
+        psnId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "tag" field.</summary>
+    public const int TagFieldNumber = 1635;
+    private uint tag_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Tag {
+      get { return tag_; }
+      set {
+        tag_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "country_code" field.</summary>
+    public const int CountryCodeFieldNumber = 2013;
+    private string countryCode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CountryCode {
+      get { return countryCode_; }
+      set {
+        countryCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "token" field.</summary>
+    public const int TokenFieldNumber = 11;
+    private string token_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Token {
+      get { return token_; }
+      set {
+        token_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "sub_channel_id" field.</summary>
+    public const int SubChannelIdFieldNumber = 1802;
+    private uint subChannelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SubChannelId {
+      get { return subChannelId_; }
+      set {
+        subChannelId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "security_cmd_buffer" field.</summary>
+    public const int SecurityCmdBufferFieldNumber = 6;
+    private pb::ByteString securityCmdBuffer_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString SecurityCmdBuffer {
+      get { return securityCmdBuffer_; }
+      set {
+        securityCmdBuffer_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "client_version_random_key" field.</summary>
+    public const int ClientVersionRandomKeyFieldNumber = 1529;
+    private string clientVersionRandomKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClientVersionRandomKey {
+      get { return clientVersionRandomKey_; }
+      set {
+        clientVersionRandomKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "birthday" field.</summary>
+    public const int BirthdayFieldNumber = 937;
+    private string birthday_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Birthday {
+      get { return birthday_; }
+      set {
+        birthday_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "secret_key_seed" field.</summary>
+    public const int SecretKeySeedFieldNumber = 13;
+    private ulong secretKeySeed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong SecretKeySeed {
+      get { return secretKeySeed_; }
+      set {
+        secretKeySeed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "account_type" field.</summary>
+    public const int AccountTypeFieldNumber = 5;
+    private uint accountType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AccountType {
+      get { return accountType_; }
+      set {
+        accountType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "msg" field.</summary>
+    public const int MsgFieldNumber = 7;
+    private string msg_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Msg {
+      get { return msg_; }
+      set {
+        msg_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "finish_collection_id_list" field.</summary>
+    public const int FinishCollectionIdListFieldNumber = 1640;
+    private static readonly pb::FieldCodec<uint> _repeated_finishCollectionIdList_codec
+        = pb::FieldCodec.ForUInt32(13122);
+    private readonly pbc::RepeatedField<uint> finishCollectionIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FinishCollectionIdList {
+      get { return finishCollectionIdList_; }
+    }
+
+    /// <summary>Field number for the "sign" field.</summary>
+    public const int SignFieldNumber = 1140;
+    private string sign_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Sign {
+      get { return sign_; }
+      set {
+        sign_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "secret_key" field.</summary>
+    public const int SecretKeyFieldNumber = 15;
+    private string secretKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string SecretKey {
+      get { return secretKey_; }
+      set {
+        secretKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "stop_server" field.</summary>
+    public const int StopServerFieldNumber = 1382;
+    private global::OldProtos.StopServerInfo stopServer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.StopServerInfo StopServer {
+      get { return stopServer_; }
+      set {
+        stopServer_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 2;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 1;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_proficient_player" field.</summary>
+    public const int IsProficientPlayerFieldNumber = 9;
+    private bool isProficientPlayer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsProficientPlayer {
+      get { return isProficientPlayer_; }
+      set {
+        isProficientPlayer_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reg_platform" field.</summary>
+    public const int RegPlatformFieldNumber = 1112;
+    private uint regPlatform_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RegPlatform {
+      get { return regPlatform_; }
+      set {
+        regPlatform_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "server_rand_key" field.</summary>
+    public const int ServerRandKeyFieldNumber = 1493;
+    private string serverRandKey_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ServerRandKey {
+      get { return serverRandKey_; }
+      set {
+        serverRandKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "extra_bin_data" field.</summary>
+    public const int ExtraBinDataFieldNumber = 3;
+    private pb::ByteString extraBinData_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pb::ByteString ExtraBinData {
+      get { return extraBinData_; }
+      set {
+        extraBinData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "client_ip_str" field.</summary>
+    public const int ClientIpStrFieldNumber = 860;
+    private string clientIpStr_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ClientIpStr {
+      get { return clientIpStr_; }
+      set {
+        clientIpStr_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "gm_uid" field.</summary>
+    public const int GmUidFieldNumber = 10;
+    private uint gmUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GmUid {
+      get { return gmUid_; }
+      set {
+        gmUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "key_id" field.</summary>
+    public const int KeyIdFieldNumber = 1172;
+    private uint keyId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint KeyId {
+      get { return keyId_; }
+      set {
+        keyId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GetPlayerTokenRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GetPlayerTokenRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MinorsRegMinAge != other.MinorsRegMinAge) return false;
+      if (ChannelId != other.ChannelId) return false;
+      if (PlatformType != other.PlatformType) return false;
+      if (AccountUid != other.AccountUid) return false;
+      if (IsLoginWhiteList != other.IsLoginWhiteList) return false;
+      if (IsGuest != other.IsGuest) return false;
+      if (BlackUidEndTime != other.BlackUidEndTime) return false;
+      if (IsWatchdogUid != other.IsWatchdogUid) return false;
+      if (PsnId != other.PsnId) return false;
+      if (Tag != other.Tag) return false;
+      if (CountryCode != other.CountryCode) return false;
+      if (Token != other.Token) return false;
+      if (SubChannelId != other.SubChannelId) return false;
+      if (SecurityCmdBuffer != other.SecurityCmdBuffer) return false;
+      if (ClientVersionRandomKey != other.ClientVersionRandomKey) return false;
+      if (Birthday != other.Birthday) return false;
+      if (SecretKeySeed != other.SecretKeySeed) return false;
+      if (AccountType != other.AccountType) return false;
+      if (Msg != other.Msg) return false;
+      if(!finishCollectionIdList_.Equals(other.finishCollectionIdList_)) return false;
+      if (Sign != other.Sign) return false;
+      if (SecretKey != other.SecretKey) return false;
+      if (!object.Equals(StopServer, other.StopServer)) return false;
+      if (Retcode != other.Retcode) return false;
+      if (Uid != other.Uid) return false;
+      if (IsProficientPlayer != other.IsProficientPlayer) return false;
+      if (RegPlatform != other.RegPlatform) return false;
+      if (ServerRandKey != other.ServerRandKey) return false;
+      if (ExtraBinData != other.ExtraBinData) return false;
+      if (ClientIpStr != other.ClientIpStr) return false;
+      if (GmUid != other.GmUid) return false;
+      if (KeyId != other.KeyId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MinorsRegMinAge != 0) hash ^= MinorsRegMinAge.GetHashCode();
+      if (ChannelId != 0) hash ^= ChannelId.GetHashCode();
+      if (PlatformType != 0) hash ^= PlatformType.GetHashCode();
+      if (AccountUid.Length != 0) hash ^= AccountUid.GetHashCode();
+      if (IsLoginWhiteList != false) hash ^= IsLoginWhiteList.GetHashCode();
+      if (IsGuest != false) hash ^= IsGuest.GetHashCode();
+      if (BlackUidEndTime != 0) hash ^= BlackUidEndTime.GetHashCode();
+      if (IsWatchdogUid != false) hash ^= IsWatchdogUid.GetHashCode();
+      if (PsnId.Length != 0) hash ^= PsnId.GetHashCode();
+      if (Tag != 0) hash ^= Tag.GetHashCode();
+      if (CountryCode.Length != 0) hash ^= CountryCode.GetHashCode();
+      if (Token.Length != 0) hash ^= Token.GetHashCode();
+      if (SubChannelId != 0) hash ^= SubChannelId.GetHashCode();
+      if (SecurityCmdBuffer.Length != 0) hash ^= SecurityCmdBuffer.GetHashCode();
+      if (ClientVersionRandomKey.Length != 0) hash ^= ClientVersionRandomKey.GetHashCode();
+      if (Birthday.Length != 0) hash ^= Birthday.GetHashCode();
+      if (SecretKeySeed != 0UL) hash ^= SecretKeySeed.GetHashCode();
+      if (AccountType != 0) hash ^= AccountType.GetHashCode();
+      if (Msg.Length != 0) hash ^= Msg.GetHashCode();
+      hash ^= finishCollectionIdList_.GetHashCode();
+      if (Sign.Length != 0) hash ^= Sign.GetHashCode();
+      if (SecretKey.Length != 0) hash ^= SecretKey.GetHashCode();
+      if (stopServer_ != null) hash ^= StopServer.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (IsProficientPlayer != false) hash ^= IsProficientPlayer.GetHashCode();
+      if (RegPlatform != 0) hash ^= RegPlatform.GetHashCode();
+      if (ServerRandKey.Length != 0) hash ^= ServerRandKey.GetHashCode();
+      if (ExtraBinData.Length != 0) hash ^= ExtraBinData.GetHashCode();
+      if (ClientIpStr.Length != 0) hash ^= ClientIpStr.GetHashCode();
+      if (GmUid != 0) hash ^= GmUid.GetHashCode();
+      if (KeyId != 0) hash ^= KeyId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Uid != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Uid);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Retcode);
+      }
+      if (ExtraBinData.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(ExtraBinData);
+      }
+      if (IsGuest != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsGuest);
+      }
+      if (AccountType != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(AccountType);
+      }
+      if (SecurityCmdBuffer.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteBytes(SecurityCmdBuffer);
+      }
+      if (Msg.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Msg);
+      }
+      if (PlatformType != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(PlatformType);
+      }
+      if (IsProficientPlayer != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsProficientPlayer);
+      }
+      if (GmUid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(GmUid);
+      }
+      if (Token.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Token);
+      }
+      if (AccountUid.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(AccountUid);
+      }
+      if (SecretKeySeed != 0UL) {
+        output.WriteRawTag(104);
+        output.WriteUInt64(SecretKeySeed);
+      }
+      if (BlackUidEndTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(BlackUidEndTime);
+      }
+      if (SecretKey.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(SecretKey);
+      }
+      if (IsLoginWhiteList != false) {
+        output.WriteRawTag(232, 35);
+        output.WriteBool(IsLoginWhiteList);
+      }
+      if (ClientIpStr.Length != 0) {
+        output.WriteRawTag(226, 53);
+        output.WriteString(ClientIpStr);
+      }
+      if (ChannelId != 0) {
+        output.WriteRawTag(128, 56);
+        output.WriteUInt32(ChannelId);
+      }
+      if (Birthday.Length != 0) {
+        output.WriteRawTag(202, 58);
+        output.WriteString(Birthday);
+      }
+      if (RegPlatform != 0) {
+        output.WriteRawTag(192, 69);
+        output.WriteUInt32(RegPlatform);
+      }
+      if (Sign.Length != 0) {
+        output.WriteRawTag(162, 71);
+        output.WriteString(Sign);
+      }
+      if (KeyId != 0) {
+        output.WriteRawTag(160, 73);
+        output.WriteUInt32(KeyId);
+      }
+      if (stopServer_ != null) {
+        output.WriteRawTag(178, 86);
+        output.WriteMessage(StopServer);
+      }
+      if (ServerRandKey.Length != 0) {
+        output.WriteRawTag(170, 93);
+        output.WriteString(ServerRandKey);
+      }
+      if (ClientVersionRandomKey.Length != 0) {
+        output.WriteRawTag(202, 95);
+        output.WriteString(ClientVersionRandomKey);
+      }
+      if (MinorsRegMinAge != 0) {
+        output.WriteRawTag(200, 97);
+        output.WriteUInt32(MinorsRegMinAge);
+      }
+      if (Tag != 0) {
+        output.WriteRawTag(152, 102);
+        output.WriteUInt32(Tag);
+      }
+      finishCollectionIdList_.WriteTo(output, _repeated_finishCollectionIdList_codec);
+      if (SubChannelId != 0) {
+        output.WriteRawTag(208, 112);
+        output.WriteUInt32(SubChannelId);
+      }
+      if (PsnId.Length != 0) {
+        output.WriteRawTag(154, 113);
+        output.WriteString(PsnId);
+      }
+      if (CountryCode.Length != 0) {
+        output.WriteRawTag(234, 125);
+        output.WriteString(CountryCode);
+      }
+      if (IsWatchdogUid != false) {
+        output.WriteRawTag(224, 126);
+        output.WriteBool(IsWatchdogUid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Uid != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Uid);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Retcode);
+      }
+      if (ExtraBinData.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(ExtraBinData);
+      }
+      if (IsGuest != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsGuest);
+      }
+      if (AccountType != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(AccountType);
+      }
+      if (SecurityCmdBuffer.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteBytes(SecurityCmdBuffer);
+      }
+      if (Msg.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Msg);
+      }
+      if (PlatformType != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(PlatformType);
+      }
+      if (IsProficientPlayer != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsProficientPlayer);
+      }
+      if (GmUid != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(GmUid);
+      }
+      if (Token.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Token);
+      }
+      if (AccountUid.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(AccountUid);
+      }
+      if (SecretKeySeed != 0UL) {
+        output.WriteRawTag(104);
+        output.WriteUInt64(SecretKeySeed);
+      }
+      if (BlackUidEndTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(BlackUidEndTime);
+      }
+      if (SecretKey.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(SecretKey);
+      }
+      if (IsLoginWhiteList != false) {
+        output.WriteRawTag(232, 35);
+        output.WriteBool(IsLoginWhiteList);
+      }
+      if (ClientIpStr.Length != 0) {
+        output.WriteRawTag(226, 53);
+        output.WriteString(ClientIpStr);
+      }
+      if (ChannelId != 0) {
+        output.WriteRawTag(128, 56);
+        output.WriteUInt32(ChannelId);
+      }
+      if (Birthday.Length != 0) {
+        output.WriteRawTag(202, 58);
+        output.WriteString(Birthday);
+      }
+      if (RegPlatform != 0) {
+        output.WriteRawTag(192, 69);
+        output.WriteUInt32(RegPlatform);
+      }
+      if (Sign.Length != 0) {
+        output.WriteRawTag(162, 71);
+        output.WriteString(Sign);
+      }
+      if (KeyId != 0) {
+        output.WriteRawTag(160, 73);
+        output.WriteUInt32(KeyId);
+      }
+      if (stopServer_ != null) {
+        output.WriteRawTag(178, 86);
+        output.WriteMessage(StopServer);
+      }
+      if (ServerRandKey.Length != 0) {
+        output.WriteRawTag(170, 93);
+        output.WriteString(ServerRandKey);
+      }
+      if (ClientVersionRandomKey.Length != 0) {
+        output.WriteRawTag(202, 95);
+        output.WriteString(ClientVersionRandomKey);
+      }
+      if (MinorsRegMinAge != 0) {
+        output.WriteRawTag(200, 97);
+        output.WriteUInt32(MinorsRegMinAge);
+      }
+      if (Tag != 0) {
+        output.WriteRawTag(152, 102);
+        output.WriteUInt32(Tag);
+      }
+      finishCollectionIdList_.WriteTo(ref output, _repeated_finishCollectionIdList_codec);
+      if (SubChannelId != 0) {
+        output.WriteRawTag(208, 112);
+        output.WriteUInt32(SubChannelId);
+      }
+      if (PsnId.Length != 0) {
+        output.WriteRawTag(154, 113);
+        output.WriteString(PsnId);
+      }
+      if (CountryCode.Length != 0) {
+        output.WriteRawTag(234, 125);
+        output.WriteString(CountryCode);
+      }
+      if (IsWatchdogUid != false) {
+        output.WriteRawTag(224, 126);
+        output.WriteBool(IsWatchdogUid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (MinorsRegMinAge != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(MinorsRegMinAge);
+      }
+      if (ChannelId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ChannelId);
+      }
+      if (PlatformType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlatformType);
+      }
+      if (AccountUid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountUid);
+      }
+      if (IsLoginWhiteList != false) {
+        size += 2 + 1;
+      }
+      if (IsGuest != false) {
+        size += 1 + 1;
+      }
+      if (BlackUidEndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BlackUidEndTime);
+      }
+      if (IsWatchdogUid != false) {
+        size += 2 + 1;
+      }
+      if (PsnId.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(PsnId);
+      }
+      if (Tag != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Tag);
+      }
+      if (CountryCode.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(CountryCode);
+      }
+      if (Token.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Token);
+      }
+      if (SubChannelId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(SubChannelId);
+      }
+      if (SecurityCmdBuffer.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(SecurityCmdBuffer);
+      }
+      if (ClientVersionRandomKey.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ClientVersionRandomKey);
+      }
+      if (Birthday.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Birthday);
+      }
+      if (SecretKeySeed != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SecretKeySeed);
+      }
+      if (AccountType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AccountType);
+      }
+      if (Msg.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Msg);
+      }
+      size += finishCollectionIdList_.CalculateSize(_repeated_finishCollectionIdList_codec);
+      if (Sign.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Sign);
+      }
+      if (SecretKey.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(SecretKey);
+      }
+      if (stopServer_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(StopServer);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (IsProficientPlayer != false) {
+        size += 1 + 1;
+      }
+      if (RegPlatform != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(RegPlatform);
+      }
+      if (ServerRandKey.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ServerRandKey);
+      }
+      if (ExtraBinData.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(ExtraBinData);
+      }
+      if (ClientIpStr.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(ClientIpStr);
+      }
+      if (GmUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GmUid);
+      }
+      if (KeyId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(KeyId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GetPlayerTokenRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MinorsRegMinAge != 0) {
+        MinorsRegMinAge = other.MinorsRegMinAge;
+      }
+      if (other.ChannelId != 0) {
+        ChannelId = other.ChannelId;
+      }
+      if (other.PlatformType != 0) {
+        PlatformType = other.PlatformType;
+      }
+      if (other.AccountUid.Length != 0) {
+        AccountUid = other.AccountUid;
+      }
+      if (other.IsLoginWhiteList != false) {
+        IsLoginWhiteList = other.IsLoginWhiteList;
+      }
+      if (other.IsGuest != false) {
+        IsGuest = other.IsGuest;
+      }
+      if (other.BlackUidEndTime != 0) {
+        BlackUidEndTime = other.BlackUidEndTime;
+      }
+      if (other.IsWatchdogUid != false) {
+        IsWatchdogUid = other.IsWatchdogUid;
+      }
+      if (other.PsnId.Length != 0) {
+        PsnId = other.PsnId;
+      }
+      if (other.Tag != 0) {
+        Tag = other.Tag;
+      }
+      if (other.CountryCode.Length != 0) {
+        CountryCode = other.CountryCode;
+      }
+      if (other.Token.Length != 0) {
+        Token = other.Token;
+      }
+      if (other.SubChannelId != 0) {
+        SubChannelId = other.SubChannelId;
+      }
+      if (other.SecurityCmdBuffer.Length != 0) {
+        SecurityCmdBuffer = other.SecurityCmdBuffer;
+      }
+      if (other.ClientVersionRandomKey.Length != 0) {
+        ClientVersionRandomKey = other.ClientVersionRandomKey;
+      }
+      if (other.Birthday.Length != 0) {
+        Birthday = other.Birthday;
+      }
+      if (other.SecretKeySeed != 0UL) {
+        SecretKeySeed = other.SecretKeySeed;
+      }
+      if (other.AccountType != 0) {
+        AccountType = other.AccountType;
+      }
+      if (other.Msg.Length != 0) {
+        Msg = other.Msg;
+      }
+      finishCollectionIdList_.Add(other.finishCollectionIdList_);
+      if (other.Sign.Length != 0) {
+        Sign = other.Sign;
+      }
+      if (other.SecretKey.Length != 0) {
+        SecretKey = other.SecretKey;
+      }
+      if (other.stopServer_ != null) {
+        if (stopServer_ == null) {
+          StopServer = new global::OldProtos.StopServerInfo();
+        }
+        StopServer.MergeFrom(other.StopServer);
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      if (other.IsProficientPlayer != false) {
+        IsProficientPlayer = other.IsProficientPlayer;
+      }
+      if (other.RegPlatform != 0) {
+        RegPlatform = other.RegPlatform;
+      }
+      if (other.ServerRandKey.Length != 0) {
+        ServerRandKey = other.ServerRandKey;
+      }
+      if (other.ExtraBinData.Length != 0) {
+        ExtraBinData = other.ExtraBinData;
+      }
+      if (other.ClientIpStr.Length != 0) {
+        ClientIpStr = other.ClientIpStr;
+      }
+      if (other.GmUid != 0) {
+        GmUid = other.GmUid;
+      }
+      if (other.KeyId != 0) {
+        KeyId = other.KeyId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            ExtraBinData = input.ReadBytes();
+            break;
+          }
+          case 32: {
+            IsGuest = input.ReadBool();
+            break;
+          }
+          case 40: {
+            AccountType = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            SecurityCmdBuffer = input.ReadBytes();
+            break;
+          }
+          case 58: {
+            Msg = input.ReadString();
+            break;
+          }
+          case 64: {
+            PlatformType = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            IsProficientPlayer = input.ReadBool();
+            break;
+          }
+          case 80: {
+            GmUid = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            Token = input.ReadString();
+            break;
+          }
+          case 98: {
+            AccountUid = input.ReadString();
+            break;
+          }
+          case 104: {
+            SecretKeySeed = input.ReadUInt64();
+            break;
+          }
+          case 112: {
+            BlackUidEndTime = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            SecretKey = input.ReadString();
+            break;
+          }
+          case 4584: {
+            IsLoginWhiteList = input.ReadBool();
+            break;
+          }
+          case 6882: {
+            ClientIpStr = input.ReadString();
+            break;
+          }
+          case 7168: {
+            ChannelId = input.ReadUInt32();
+            break;
+          }
+          case 7498: {
+            Birthday = input.ReadString();
+            break;
+          }
+          case 8896: {
+            RegPlatform = input.ReadUInt32();
+            break;
+          }
+          case 9122: {
+            Sign = input.ReadString();
+            break;
+          }
+          case 9376: {
+            KeyId = input.ReadUInt32();
+            break;
+          }
+          case 11058: {
+            if (stopServer_ == null) {
+              StopServer = new global::OldProtos.StopServerInfo();
+            }
+            input.ReadMessage(StopServer);
+            break;
+          }
+          case 11946: {
+            ServerRandKey = input.ReadString();
+            break;
+          }
+          case 12234: {
+            ClientVersionRandomKey = input.ReadString();
+            break;
+          }
+          case 12488: {
+            MinorsRegMinAge = input.ReadUInt32();
+            break;
+          }
+          case 13080: {
+            Tag = input.ReadUInt32();
+            break;
+          }
+          case 13122:
+          case 13120: {
+            finishCollectionIdList_.AddEntriesFrom(input, _repeated_finishCollectionIdList_codec);
+            break;
+          }
+          case 14416: {
+            SubChannelId = input.ReadUInt32();
+            break;
+          }
+          case 14490: {
+            PsnId = input.ReadString();
+            break;
+          }
+          case 16106: {
+            CountryCode = input.ReadString();
+            break;
+          }
+          case 16224: {
+            IsWatchdogUid = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            ExtraBinData = input.ReadBytes();
+            break;
+          }
+          case 32: {
+            IsGuest = input.ReadBool();
+            break;
+          }
+          case 40: {
+            AccountType = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            SecurityCmdBuffer = input.ReadBytes();
+            break;
+          }
+          case 58: {
+            Msg = input.ReadString();
+            break;
+          }
+          case 64: {
+            PlatformType = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            IsProficientPlayer = input.ReadBool();
+            break;
+          }
+          case 80: {
+            GmUid = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            Token = input.ReadString();
+            break;
+          }
+          case 98: {
+            AccountUid = input.ReadString();
+            break;
+          }
+          case 104: {
+            SecretKeySeed = input.ReadUInt64();
+            break;
+          }
+          case 112: {
+            BlackUidEndTime = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            SecretKey = input.ReadString();
+            break;
+          }
+          case 4584: {
+            IsLoginWhiteList = input.ReadBool();
+            break;
+          }
+          case 6882: {
+            ClientIpStr = input.ReadString();
+            break;
+          }
+          case 7168: {
+            ChannelId = input.ReadUInt32();
+            break;
+          }
+          case 7498: {
+            Birthday = input.ReadString();
+            break;
+          }
+          case 8896: {
+            RegPlatform = input.ReadUInt32();
+            break;
+          }
+          case 9122: {
+            Sign = input.ReadString();
+            break;
+          }
+          case 9376: {
+            KeyId = input.ReadUInt32();
+            break;
+          }
+          case 11058: {
+            if (stopServer_ == null) {
+              StopServer = new global::OldProtos.StopServerInfo();
+            }
+            input.ReadMessage(StopServer);
+            break;
+          }
+          case 11946: {
+            ServerRandKey = input.ReadString();
+            break;
+          }
+          case 12234: {
+            ClientVersionRandomKey = input.ReadString();
+            break;
+          }
+          case 12488: {
+            MinorsRegMinAge = input.ReadUInt32();
+            break;
+          }
+          case 13080: {
+            Tag = input.ReadUInt32();
+            break;
+          }
+          case 13122:
+          case 13120: {
+            finishCollectionIdList_.AddEntriesFrom(ref input, _repeated_finishCollectionIdList_codec);
+            break;
+          }
+          case 14416: {
+            SubChannelId = input.ReadUInt32();
+            break;
+          }
+          case 14490: {
+            PsnId = input.ReadString();
+            break;
+          }
+          case 16106: {
+            CountryCode = input.ReadString();
+            break;
+          }
+          case 16224: {
+            IsWatchdogUid = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GetPlayerTokenRsp : pb::IMessage<GetPlayerTokenRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GetPlayerTokenRsp> _parser = new pb::MessageParser<GetPlayerTokenRsp>(() => new GetPlayerTokenRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GetPlayerTokenRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GetPlayerTokenRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetPlayerTokenRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetPlayerTokenRsp(GetPlayerTokenRsp other) : this() {
-    minorsRegMinAge_ = other.minorsRegMinAge_;
-    channelId_ = other.channelId_;
-    platformType_ = other.platformType_;
-    accountUid_ = other.accountUid_;
-    isLoginWhiteList_ = other.isLoginWhiteList_;
-    isGuest_ = other.isGuest_;
-    blackUidEndTime_ = other.blackUidEndTime_;
-    isWatchdogUid_ = other.isWatchdogUid_;
-    psnId_ = other.psnId_;
-    tag_ = other.tag_;
-    countryCode_ = other.countryCode_;
-    token_ = other.token_;
-    subChannelId_ = other.subChannelId_;
-    securityCmdBuffer_ = other.securityCmdBuffer_;
-    clientVersionRandomKey_ = other.clientVersionRandomKey_;
-    birthday_ = other.birthday_;
-    secretKeySeed_ = other.secretKeySeed_;
-    accountType_ = other.accountType_;
-    msg_ = other.msg_;
-    finishCollectionIdList_ = other.finishCollectionIdList_.Clone();
-    sign_ = other.sign_;
-    secretKey_ = other.secretKey_;
-    stopServer_ = other.stopServer_ != null ? other.stopServer_.Clone() : null;
-    retcode_ = other.retcode_;
-    uid_ = other.uid_;
-    isProficientPlayer_ = other.isProficientPlayer_;
-    regPlatform_ = other.regPlatform_;
-    serverRandKey_ = other.serverRandKey_;
-    extraBinData_ = other.extraBinData_;
-    clientIpStr_ = other.clientIpStr_;
-    gmUid_ = other.gmUid_;
-    keyId_ = other.keyId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetPlayerTokenRsp Clone() {
-    return new GetPlayerTokenRsp(this);
-  }
-
-  /// <summary>Field number for the "minors_reg_min_age" field.</summary>
-  public const int MinorsRegMinAgeFieldNumber = 1561;
-  private uint minorsRegMinAge_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MinorsRegMinAge {
-    get { return minorsRegMinAge_; }
-    set {
-      minorsRegMinAge_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "channel_id" field.</summary>
-  public const int ChannelIdFieldNumber = 896;
-  private uint channelId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChannelId {
-    get { return channelId_; }
-    set {
-      channelId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "platform_type" field.</summary>
-  public const int PlatformTypeFieldNumber = 8;
-  private uint platformType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PlatformType {
-    get { return platformType_; }
-    set {
-      platformType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "account_uid" field.</summary>
-  public const int AccountUidFieldNumber = 12;
-  private string accountUid_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string AccountUid {
-    get { return accountUid_; }
-    set {
-      accountUid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "is_login_white_list" field.</summary>
-  public const int IsLoginWhiteListFieldNumber = 573;
-  private bool isLoginWhiteList_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsLoginWhiteList {
-    get { return isLoginWhiteList_; }
-    set {
-      isLoginWhiteList_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_guest" field.</summary>
-  public const int IsGuestFieldNumber = 4;
-  private bool isGuest_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsGuest {
-    get { return isGuest_; }
-    set {
-      isGuest_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "black_uid_end_time" field.</summary>
-  public const int BlackUidEndTimeFieldNumber = 14;
-  private uint blackUidEndTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BlackUidEndTime {
-    get { return blackUidEndTime_; }
-    set {
-      blackUidEndTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_watchdog_uid" field.</summary>
-  public const int IsWatchdogUidFieldNumber = 2028;
-  private bool isWatchdogUid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsWatchdogUid {
-    get { return isWatchdogUid_; }
-    set {
-      isWatchdogUid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "psn_id" field.</summary>
-  public const int PsnIdFieldNumber = 1811;
-  private string psnId_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string PsnId {
-    get { return psnId_; }
-    set {
-      psnId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "tag" field.</summary>
-  public const int TagFieldNumber = 1635;
-  private uint tag_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Tag {
-    get { return tag_; }
-    set {
-      tag_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "country_code" field.</summary>
-  public const int CountryCodeFieldNumber = 2013;
-  private string countryCode_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string CountryCode {
-    get { return countryCode_; }
-    set {
-      countryCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "token" field.</summary>
-  public const int TokenFieldNumber = 11;
-  private string token_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Token {
-    get { return token_; }
-    set {
-      token_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "sub_channel_id" field.</summary>
-  public const int SubChannelIdFieldNumber = 1802;
-  private uint subChannelId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SubChannelId {
-    get { return subChannelId_; }
-    set {
-      subChannelId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "security_cmd_buffer" field.</summary>
-  public const int SecurityCmdBufferFieldNumber = 6;
-  private pb::ByteString securityCmdBuffer_ = pb::ByteString.Empty;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pb::ByteString SecurityCmdBuffer {
-    get { return securityCmdBuffer_; }
-    set {
-      securityCmdBuffer_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "client_version_random_key" field.</summary>
-  public const int ClientVersionRandomKeyFieldNumber = 1529;
-  private string clientVersionRandomKey_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string ClientVersionRandomKey {
-    get { return clientVersionRandomKey_; }
-    set {
-      clientVersionRandomKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "birthday" field.</summary>
-  public const int BirthdayFieldNumber = 937;
-  private string birthday_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Birthday {
-    get { return birthday_; }
-    set {
-      birthday_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "secret_key_seed" field.</summary>
-  public const int SecretKeySeedFieldNumber = 13;
-  private ulong secretKeySeed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong SecretKeySeed {
-    get { return secretKeySeed_; }
-    set {
-      secretKeySeed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "account_type" field.</summary>
-  public const int AccountTypeFieldNumber = 5;
-  private uint accountType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint AccountType {
-    get { return accountType_; }
-    set {
-      accountType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "msg" field.</summary>
-  public const int MsgFieldNumber = 7;
-  private string msg_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Msg {
-    get { return msg_; }
-    set {
-      msg_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "finish_collection_id_list" field.</summary>
-  public const int FinishCollectionIdListFieldNumber = 1640;
-  private static readonly pb::FieldCodec<uint> _repeated_finishCollectionIdList_codec
-      = pb::FieldCodec.ForUInt32(13122);
-  private readonly pbc::RepeatedField<uint> finishCollectionIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> FinishCollectionIdList {
-    get { return finishCollectionIdList_; }
-  }
-
-  /// <summary>Field number for the "sign" field.</summary>
-  public const int SignFieldNumber = 1140;
-  private string sign_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Sign {
-    get { return sign_; }
-    set {
-      sign_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "secret_key" field.</summary>
-  public const int SecretKeyFieldNumber = 15;
-  private string secretKey_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string SecretKey {
-    get { return secretKey_; }
-    set {
-      secretKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "stop_server" field.</summary>
-  public const int StopServerFieldNumber = 1382;
-  private global::StopServerInfo stopServer_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::StopServerInfo StopServer {
-    get { return stopServer_; }
-    set {
-      stopServer_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 2;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "uid" field.</summary>
-  public const int UidFieldNumber = 1;
-  private uint uid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Uid {
-    get { return uid_; }
-    set {
-      uid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_proficient_player" field.</summary>
-  public const int IsProficientPlayerFieldNumber = 9;
-  private bool isProficientPlayer_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsProficientPlayer {
-    get { return isProficientPlayer_; }
-    set {
-      isProficientPlayer_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "reg_platform" field.</summary>
-  public const int RegPlatformFieldNumber = 1112;
-  private uint regPlatform_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RegPlatform {
-    get { return regPlatform_; }
-    set {
-      regPlatform_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "server_rand_key" field.</summary>
-  public const int ServerRandKeyFieldNumber = 1493;
-  private string serverRandKey_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string ServerRandKey {
-    get { return serverRandKey_; }
-    set {
-      serverRandKey_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "extra_bin_data" field.</summary>
-  public const int ExtraBinDataFieldNumber = 3;
-  private pb::ByteString extraBinData_ = pb::ByteString.Empty;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pb::ByteString ExtraBinData {
-    get { return extraBinData_; }
-    set {
-      extraBinData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "client_ip_str" field.</summary>
-  public const int ClientIpStrFieldNumber = 860;
-  private string clientIpStr_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string ClientIpStr {
-    get { return clientIpStr_; }
-    set {
-      clientIpStr_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "gm_uid" field.</summary>
-  public const int GmUidFieldNumber = 10;
-  private uint gmUid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GmUid {
-    get { return gmUid_; }
-    set {
-      gmUid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "key_id" field.</summary>
-  public const int KeyIdFieldNumber = 1172;
-  private uint keyId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint KeyId {
-    get { return keyId_; }
-    set {
-      keyId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GetPlayerTokenRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GetPlayerTokenRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (MinorsRegMinAge != other.MinorsRegMinAge) return false;
-    if (ChannelId != other.ChannelId) return false;
-    if (PlatformType != other.PlatformType) return false;
-    if (AccountUid != other.AccountUid) return false;
-    if (IsLoginWhiteList != other.IsLoginWhiteList) return false;
-    if (IsGuest != other.IsGuest) return false;
-    if (BlackUidEndTime != other.BlackUidEndTime) return false;
-    if (IsWatchdogUid != other.IsWatchdogUid) return false;
-    if (PsnId != other.PsnId) return false;
-    if (Tag != other.Tag) return false;
-    if (CountryCode != other.CountryCode) return false;
-    if (Token != other.Token) return false;
-    if (SubChannelId != other.SubChannelId) return false;
-    if (SecurityCmdBuffer != other.SecurityCmdBuffer) return false;
-    if (ClientVersionRandomKey != other.ClientVersionRandomKey) return false;
-    if (Birthday != other.Birthday) return false;
-    if (SecretKeySeed != other.SecretKeySeed) return false;
-    if (AccountType != other.AccountType) return false;
-    if (Msg != other.Msg) return false;
-    if(!finishCollectionIdList_.Equals(other.finishCollectionIdList_)) return false;
-    if (Sign != other.Sign) return false;
-    if (SecretKey != other.SecretKey) return false;
-    if (!object.Equals(StopServer, other.StopServer)) return false;
-    if (Retcode != other.Retcode) return false;
-    if (Uid != other.Uid) return false;
-    if (IsProficientPlayer != other.IsProficientPlayer) return false;
-    if (RegPlatform != other.RegPlatform) return false;
-    if (ServerRandKey != other.ServerRandKey) return false;
-    if (ExtraBinData != other.ExtraBinData) return false;
-    if (ClientIpStr != other.ClientIpStr) return false;
-    if (GmUid != other.GmUid) return false;
-    if (KeyId != other.KeyId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (MinorsRegMinAge != 0) hash ^= MinorsRegMinAge.GetHashCode();
-    if (ChannelId != 0) hash ^= ChannelId.GetHashCode();
-    if (PlatformType != 0) hash ^= PlatformType.GetHashCode();
-    if (AccountUid.Length != 0) hash ^= AccountUid.GetHashCode();
-    if (IsLoginWhiteList != false) hash ^= IsLoginWhiteList.GetHashCode();
-    if (IsGuest != false) hash ^= IsGuest.GetHashCode();
-    if (BlackUidEndTime != 0) hash ^= BlackUidEndTime.GetHashCode();
-    if (IsWatchdogUid != false) hash ^= IsWatchdogUid.GetHashCode();
-    if (PsnId.Length != 0) hash ^= PsnId.GetHashCode();
-    if (Tag != 0) hash ^= Tag.GetHashCode();
-    if (CountryCode.Length != 0) hash ^= CountryCode.GetHashCode();
-    if (Token.Length != 0) hash ^= Token.GetHashCode();
-    if (SubChannelId != 0) hash ^= SubChannelId.GetHashCode();
-    if (SecurityCmdBuffer.Length != 0) hash ^= SecurityCmdBuffer.GetHashCode();
-    if (ClientVersionRandomKey.Length != 0) hash ^= ClientVersionRandomKey.GetHashCode();
-    if (Birthday.Length != 0) hash ^= Birthday.GetHashCode();
-    if (SecretKeySeed != 0UL) hash ^= SecretKeySeed.GetHashCode();
-    if (AccountType != 0) hash ^= AccountType.GetHashCode();
-    if (Msg.Length != 0) hash ^= Msg.GetHashCode();
-    hash ^= finishCollectionIdList_.GetHashCode();
-    if (Sign.Length != 0) hash ^= Sign.GetHashCode();
-    if (SecretKey.Length != 0) hash ^= SecretKey.GetHashCode();
-    if (stopServer_ != null) hash ^= StopServer.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (Uid != 0) hash ^= Uid.GetHashCode();
-    if (IsProficientPlayer != false) hash ^= IsProficientPlayer.GetHashCode();
-    if (RegPlatform != 0) hash ^= RegPlatform.GetHashCode();
-    if (ServerRandKey.Length != 0) hash ^= ServerRandKey.GetHashCode();
-    if (ExtraBinData.Length != 0) hash ^= ExtraBinData.GetHashCode();
-    if (ClientIpStr.Length != 0) hash ^= ClientIpStr.GetHashCode();
-    if (GmUid != 0) hash ^= GmUid.GetHashCode();
-    if (KeyId != 0) hash ^= KeyId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Uid != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Uid);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(16);
-      output.WriteInt32(Retcode);
-    }
-    if (ExtraBinData.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteBytes(ExtraBinData);
-    }
-    if (IsGuest != false) {
-      output.WriteRawTag(32);
-      output.WriteBool(IsGuest);
-    }
-    if (AccountType != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(AccountType);
-    }
-    if (SecurityCmdBuffer.Length != 0) {
-      output.WriteRawTag(50);
-      output.WriteBytes(SecurityCmdBuffer);
-    }
-    if (Msg.Length != 0) {
-      output.WriteRawTag(58);
-      output.WriteString(Msg);
-    }
-    if (PlatformType != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(PlatformType);
-    }
-    if (IsProficientPlayer != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(IsProficientPlayer);
-    }
-    if (GmUid != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(GmUid);
-    }
-    if (Token.Length != 0) {
-      output.WriteRawTag(90);
-      output.WriteString(Token);
-    }
-    if (AccountUid.Length != 0) {
-      output.WriteRawTag(98);
-      output.WriteString(AccountUid);
-    }
-    if (SecretKeySeed != 0UL) {
-      output.WriteRawTag(104);
-      output.WriteUInt64(SecretKeySeed);
-    }
-    if (BlackUidEndTime != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(BlackUidEndTime);
-    }
-    if (SecretKey.Length != 0) {
-      output.WriteRawTag(122);
-      output.WriteString(SecretKey);
-    }
-    if (IsLoginWhiteList != false) {
-      output.WriteRawTag(232, 35);
-      output.WriteBool(IsLoginWhiteList);
-    }
-    if (ClientIpStr.Length != 0) {
-      output.WriteRawTag(226, 53);
-      output.WriteString(ClientIpStr);
-    }
-    if (ChannelId != 0) {
-      output.WriteRawTag(128, 56);
-      output.WriteUInt32(ChannelId);
-    }
-    if (Birthday.Length != 0) {
-      output.WriteRawTag(202, 58);
-      output.WriteString(Birthday);
-    }
-    if (RegPlatform != 0) {
-      output.WriteRawTag(192, 69);
-      output.WriteUInt32(RegPlatform);
-    }
-    if (Sign.Length != 0) {
-      output.WriteRawTag(162, 71);
-      output.WriteString(Sign);
-    }
-    if (KeyId != 0) {
-      output.WriteRawTag(160, 73);
-      output.WriteUInt32(KeyId);
-    }
-    if (stopServer_ != null) {
-      output.WriteRawTag(178, 86);
-      output.WriteMessage(StopServer);
-    }
-    if (ServerRandKey.Length != 0) {
-      output.WriteRawTag(170, 93);
-      output.WriteString(ServerRandKey);
-    }
-    if (ClientVersionRandomKey.Length != 0) {
-      output.WriteRawTag(202, 95);
-      output.WriteString(ClientVersionRandomKey);
-    }
-    if (MinorsRegMinAge != 0) {
-      output.WriteRawTag(200, 97);
-      output.WriteUInt32(MinorsRegMinAge);
-    }
-    if (Tag != 0) {
-      output.WriteRawTag(152, 102);
-      output.WriteUInt32(Tag);
-    }
-    finishCollectionIdList_.WriteTo(output, _repeated_finishCollectionIdList_codec);
-    if (SubChannelId != 0) {
-      output.WriteRawTag(208, 112);
-      output.WriteUInt32(SubChannelId);
-    }
-    if (PsnId.Length != 0) {
-      output.WriteRawTag(154, 113);
-      output.WriteString(PsnId);
-    }
-    if (CountryCode.Length != 0) {
-      output.WriteRawTag(234, 125);
-      output.WriteString(CountryCode);
-    }
-    if (IsWatchdogUid != false) {
-      output.WriteRawTag(224, 126);
-      output.WriteBool(IsWatchdogUid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Uid != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Uid);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(16);
-      output.WriteInt32(Retcode);
-    }
-    if (ExtraBinData.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteBytes(ExtraBinData);
-    }
-    if (IsGuest != false) {
-      output.WriteRawTag(32);
-      output.WriteBool(IsGuest);
-    }
-    if (AccountType != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(AccountType);
-    }
-    if (SecurityCmdBuffer.Length != 0) {
-      output.WriteRawTag(50);
-      output.WriteBytes(SecurityCmdBuffer);
-    }
-    if (Msg.Length != 0) {
-      output.WriteRawTag(58);
-      output.WriteString(Msg);
-    }
-    if (PlatformType != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(PlatformType);
-    }
-    if (IsProficientPlayer != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(IsProficientPlayer);
-    }
-    if (GmUid != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(GmUid);
-    }
-    if (Token.Length != 0) {
-      output.WriteRawTag(90);
-      output.WriteString(Token);
-    }
-    if (AccountUid.Length != 0) {
-      output.WriteRawTag(98);
-      output.WriteString(AccountUid);
-    }
-    if (SecretKeySeed != 0UL) {
-      output.WriteRawTag(104);
-      output.WriteUInt64(SecretKeySeed);
-    }
-    if (BlackUidEndTime != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(BlackUidEndTime);
-    }
-    if (SecretKey.Length != 0) {
-      output.WriteRawTag(122);
-      output.WriteString(SecretKey);
-    }
-    if (IsLoginWhiteList != false) {
-      output.WriteRawTag(232, 35);
-      output.WriteBool(IsLoginWhiteList);
-    }
-    if (ClientIpStr.Length != 0) {
-      output.WriteRawTag(226, 53);
-      output.WriteString(ClientIpStr);
-    }
-    if (ChannelId != 0) {
-      output.WriteRawTag(128, 56);
-      output.WriteUInt32(ChannelId);
-    }
-    if (Birthday.Length != 0) {
-      output.WriteRawTag(202, 58);
-      output.WriteString(Birthday);
-    }
-    if (RegPlatform != 0) {
-      output.WriteRawTag(192, 69);
-      output.WriteUInt32(RegPlatform);
-    }
-    if (Sign.Length != 0) {
-      output.WriteRawTag(162, 71);
-      output.WriteString(Sign);
-    }
-    if (KeyId != 0) {
-      output.WriteRawTag(160, 73);
-      output.WriteUInt32(KeyId);
-    }
-    if (stopServer_ != null) {
-      output.WriteRawTag(178, 86);
-      output.WriteMessage(StopServer);
-    }
-    if (ServerRandKey.Length != 0) {
-      output.WriteRawTag(170, 93);
-      output.WriteString(ServerRandKey);
-    }
-    if (ClientVersionRandomKey.Length != 0) {
-      output.WriteRawTag(202, 95);
-      output.WriteString(ClientVersionRandomKey);
-    }
-    if (MinorsRegMinAge != 0) {
-      output.WriteRawTag(200, 97);
-      output.WriteUInt32(MinorsRegMinAge);
-    }
-    if (Tag != 0) {
-      output.WriteRawTag(152, 102);
-      output.WriteUInt32(Tag);
-    }
-    finishCollectionIdList_.WriteTo(ref output, _repeated_finishCollectionIdList_codec);
-    if (SubChannelId != 0) {
-      output.WriteRawTag(208, 112);
-      output.WriteUInt32(SubChannelId);
-    }
-    if (PsnId.Length != 0) {
-      output.WriteRawTag(154, 113);
-      output.WriteString(PsnId);
-    }
-    if (CountryCode.Length != 0) {
-      output.WriteRawTag(234, 125);
-      output.WriteString(CountryCode);
-    }
-    if (IsWatchdogUid != false) {
-      output.WriteRawTag(224, 126);
-      output.WriteBool(IsWatchdogUid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (MinorsRegMinAge != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(MinorsRegMinAge);
-    }
-    if (ChannelId != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ChannelId);
-    }
-    if (PlatformType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlatformType);
-    }
-    if (AccountUid.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountUid);
-    }
-    if (IsLoginWhiteList != false) {
-      size += 2 + 1;
-    }
-    if (IsGuest != false) {
-      size += 1 + 1;
-    }
-    if (BlackUidEndTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BlackUidEndTime);
-    }
-    if (IsWatchdogUid != false) {
-      size += 2 + 1;
-    }
-    if (PsnId.Length != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeStringSize(PsnId);
-    }
-    if (Tag != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Tag);
-    }
-    if (CountryCode.Length != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeStringSize(CountryCode);
-    }
-    if (Token.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Token);
-    }
-    if (SubChannelId != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(SubChannelId);
-    }
-    if (SecurityCmdBuffer.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeBytesSize(SecurityCmdBuffer);
-    }
-    if (ClientVersionRandomKey.Length != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeStringSize(ClientVersionRandomKey);
-    }
-    if (Birthday.Length != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeStringSize(Birthday);
-    }
-    if (SecretKeySeed != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SecretKeySeed);
-    }
-    if (AccountType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AccountType);
-    }
-    if (Msg.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Msg);
-    }
-    size += finishCollectionIdList_.CalculateSize(_repeated_finishCollectionIdList_codec);
-    if (Sign.Length != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeStringSize(Sign);
-    }
-    if (SecretKey.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(SecretKey);
-    }
-    if (stopServer_ != null) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(StopServer);
-    }
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (Uid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-    }
-    if (IsProficientPlayer != false) {
-      size += 1 + 1;
-    }
-    if (RegPlatform != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(RegPlatform);
-    }
-    if (ServerRandKey.Length != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeStringSize(ServerRandKey);
-    }
-    if (ExtraBinData.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeBytesSize(ExtraBinData);
-    }
-    if (ClientIpStr.Length != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeStringSize(ClientIpStr);
-    }
-    if (GmUid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GmUid);
-    }
-    if (KeyId != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(KeyId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GetPlayerTokenRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.MinorsRegMinAge != 0) {
-      MinorsRegMinAge = other.MinorsRegMinAge;
-    }
-    if (other.ChannelId != 0) {
-      ChannelId = other.ChannelId;
-    }
-    if (other.PlatformType != 0) {
-      PlatformType = other.PlatformType;
-    }
-    if (other.AccountUid.Length != 0) {
-      AccountUid = other.AccountUid;
-    }
-    if (other.IsLoginWhiteList != false) {
-      IsLoginWhiteList = other.IsLoginWhiteList;
-    }
-    if (other.IsGuest != false) {
-      IsGuest = other.IsGuest;
-    }
-    if (other.BlackUidEndTime != 0) {
-      BlackUidEndTime = other.BlackUidEndTime;
-    }
-    if (other.IsWatchdogUid != false) {
-      IsWatchdogUid = other.IsWatchdogUid;
-    }
-    if (other.PsnId.Length != 0) {
-      PsnId = other.PsnId;
-    }
-    if (other.Tag != 0) {
-      Tag = other.Tag;
-    }
-    if (other.CountryCode.Length != 0) {
-      CountryCode = other.CountryCode;
-    }
-    if (other.Token.Length != 0) {
-      Token = other.Token;
-    }
-    if (other.SubChannelId != 0) {
-      SubChannelId = other.SubChannelId;
-    }
-    if (other.SecurityCmdBuffer.Length != 0) {
-      SecurityCmdBuffer = other.SecurityCmdBuffer;
-    }
-    if (other.ClientVersionRandomKey.Length != 0) {
-      ClientVersionRandomKey = other.ClientVersionRandomKey;
-    }
-    if (other.Birthday.Length != 0) {
-      Birthday = other.Birthday;
-    }
-    if (other.SecretKeySeed != 0UL) {
-      SecretKeySeed = other.SecretKeySeed;
-    }
-    if (other.AccountType != 0) {
-      AccountType = other.AccountType;
-    }
-    if (other.Msg.Length != 0) {
-      Msg = other.Msg;
-    }
-    finishCollectionIdList_.Add(other.finishCollectionIdList_);
-    if (other.Sign.Length != 0) {
-      Sign = other.Sign;
-    }
-    if (other.SecretKey.Length != 0) {
-      SecretKey = other.SecretKey;
-    }
-    if (other.stopServer_ != null) {
-      if (stopServer_ == null) {
-        StopServer = new global::StopServerInfo();
-      }
-      StopServer.MergeFrom(other.StopServer);
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.Uid != 0) {
-      Uid = other.Uid;
-    }
-    if (other.IsProficientPlayer != false) {
-      IsProficientPlayer = other.IsProficientPlayer;
-    }
-    if (other.RegPlatform != 0) {
-      RegPlatform = other.RegPlatform;
-    }
-    if (other.ServerRandKey.Length != 0) {
-      ServerRandKey = other.ServerRandKey;
-    }
-    if (other.ExtraBinData.Length != 0) {
-      ExtraBinData = other.ExtraBinData;
-    }
-    if (other.ClientIpStr.Length != 0) {
-      ClientIpStr = other.ClientIpStr;
-    }
-    if (other.GmUid != 0) {
-      GmUid = other.GmUid;
-    }
-    if (other.KeyId != 0) {
-      KeyId = other.KeyId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 26: {
-          ExtraBinData = input.ReadBytes();
-          break;
-        }
-        case 32: {
-          IsGuest = input.ReadBool();
-          break;
-        }
-        case 40: {
-          AccountType = input.ReadUInt32();
-          break;
-        }
-        case 50: {
-          SecurityCmdBuffer = input.ReadBytes();
-          break;
-        }
-        case 58: {
-          Msg = input.ReadString();
-          break;
-        }
-        case 64: {
-          PlatformType = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          IsProficientPlayer = input.ReadBool();
-          break;
-        }
-        case 80: {
-          GmUid = input.ReadUInt32();
-          break;
-        }
-        case 90: {
-          Token = input.ReadString();
-          break;
-        }
-        case 98: {
-          AccountUid = input.ReadString();
-          break;
-        }
-        case 104: {
-          SecretKeySeed = input.ReadUInt64();
-          break;
-        }
-        case 112: {
-          BlackUidEndTime = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          SecretKey = input.ReadString();
-          break;
-        }
-        case 4584: {
-          IsLoginWhiteList = input.ReadBool();
-          break;
-        }
-        case 6882: {
-          ClientIpStr = input.ReadString();
-          break;
-        }
-        case 7168: {
-          ChannelId = input.ReadUInt32();
-          break;
-        }
-        case 7498: {
-          Birthday = input.ReadString();
-          break;
-        }
-        case 8896: {
-          RegPlatform = input.ReadUInt32();
-          break;
-        }
-        case 9122: {
-          Sign = input.ReadString();
-          break;
-        }
-        case 9376: {
-          KeyId = input.ReadUInt32();
-          break;
-        }
-        case 11058: {
-          if (stopServer_ == null) {
-            StopServer = new global::StopServerInfo();
-          }
-          input.ReadMessage(StopServer);
-          break;
-        }
-        case 11946: {
-          ServerRandKey = input.ReadString();
-          break;
-        }
-        case 12234: {
-          ClientVersionRandomKey = input.ReadString();
-          break;
-        }
-        case 12488: {
-          MinorsRegMinAge = input.ReadUInt32();
-          break;
-        }
-        case 13080: {
-          Tag = input.ReadUInt32();
-          break;
-        }
-        case 13122:
-        case 13120: {
-          finishCollectionIdList_.AddEntriesFrom(input, _repeated_finishCollectionIdList_codec);
-          break;
-        }
-        case 14416: {
-          SubChannelId = input.ReadUInt32();
-          break;
-        }
-        case 14490: {
-          PsnId = input.ReadString();
-          break;
-        }
-        case 16106: {
-          CountryCode = input.ReadString();
-          break;
-        }
-        case 16224: {
-          IsWatchdogUid = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 26: {
-          ExtraBinData = input.ReadBytes();
-          break;
-        }
-        case 32: {
-          IsGuest = input.ReadBool();
-          break;
-        }
-        case 40: {
-          AccountType = input.ReadUInt32();
-          break;
-        }
-        case 50: {
-          SecurityCmdBuffer = input.ReadBytes();
-          break;
-        }
-        case 58: {
-          Msg = input.ReadString();
-          break;
-        }
-        case 64: {
-          PlatformType = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          IsProficientPlayer = input.ReadBool();
-          break;
-        }
-        case 80: {
-          GmUid = input.ReadUInt32();
-          break;
-        }
-        case 90: {
-          Token = input.ReadString();
-          break;
-        }
-        case 98: {
-          AccountUid = input.ReadString();
-          break;
-        }
-        case 104: {
-          SecretKeySeed = input.ReadUInt64();
-          break;
-        }
-        case 112: {
-          BlackUidEndTime = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          SecretKey = input.ReadString();
-          break;
-        }
-        case 4584: {
-          IsLoginWhiteList = input.ReadBool();
-          break;
-        }
-        case 6882: {
-          ClientIpStr = input.ReadString();
-          break;
-        }
-        case 7168: {
-          ChannelId = input.ReadUInt32();
-          break;
-        }
-        case 7498: {
-          Birthday = input.ReadString();
-          break;
-        }
-        case 8896: {
-          RegPlatform = input.ReadUInt32();
-          break;
-        }
-        case 9122: {
-          Sign = input.ReadString();
-          break;
-        }
-        case 9376: {
-          KeyId = input.ReadUInt32();
-          break;
-        }
-        case 11058: {
-          if (stopServer_ == null) {
-            StopServer = new global::StopServerInfo();
-          }
-          input.ReadMessage(StopServer);
-          break;
-        }
-        case 11946: {
-          ServerRandKey = input.ReadString();
-          break;
-        }
-        case 12234: {
-          ClientVersionRandomKey = input.ReadString();
-          break;
-        }
-        case 12488: {
-          MinorsRegMinAge = input.ReadUInt32();
-          break;
-        }
-        case 13080: {
-          Tag = input.ReadUInt32();
-          break;
-        }
-        case 13122:
-        case 13120: {
-          finishCollectionIdList_.AddEntriesFrom(ref input, _repeated_finishCollectionIdList_codec);
-          break;
-        }
-        case 14416: {
-          SubChannelId = input.ReadUInt32();
-          break;
-        }
-        case 14490: {
-          PsnId = input.ReadString();
-          break;
-        }
-        case 16106: {
-          CountryCode = input.ReadString();
-          break;
-        }
-        case 16224: {
-          IsWatchdogUid = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

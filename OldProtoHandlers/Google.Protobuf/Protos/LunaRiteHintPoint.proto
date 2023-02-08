@@ -19,7 +19,7 @@ syntax = "proto3";
 import "LunaRiteHintPointType.proto";
 import "Vector.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message LunaRiteHintPoint {
   uint32 area_id = 11;

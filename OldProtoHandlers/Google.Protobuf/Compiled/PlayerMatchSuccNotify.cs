@@ -9,510 +9,513 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from PlayerMatchSuccNotify.proto</summary>
-public static partial class PlayerMatchSuccNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for PlayerMatchSuccNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from PlayerMatchSuccNotify.proto</summary>
+  public static partial class PlayerMatchSuccNotifyReflection {
 
-  static PlayerMatchSuccNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtQbGF5ZXJNYXRjaFN1Y2NOb3RpZnkucHJvdG8aEkdDR01hdGNoSW5mby5w",
-          "cm90bxoWR2VuZXJhbE1hdGNoSW5mby5wcm90bxoPTWF0Y2hUeXBlLnByb3Rv",
-          "IoUCChVQbGF5ZXJNYXRjaFN1Y2NOb3RpZnkSLQoSZ2VuZXJhbF9tYXRjaF9p",
-          "bmZvGAcgASgLMhEuR2VuZXJhbE1hdGNoSW5mbxISCgptcF9wbGF5X2lkGA8g",
-          "ASgNEhAKCGhvc3RfdWlkGAMgASgNEh4KCm1hdGNoX3R5cGUYBSABKA4yCi5N",
-          "YXRjaFR5cGUSJQoOZ2NnX21hdGNoX2luZm8YCyABKAsyDS5HQ0dNYXRjaElu",
-          "Zm8SGAoQY29uZmlybV9lbmRfdGltZRgCIAEoDRISCgpkdW5nZW9uX2lkGAYg",
-          "ASgNEiIKGm1lY2hhbmljdXNfZGlmZmljdWx0X2xldmVsGAEgASgNQh4KHGVt",
-          "dS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GCGMatchInfoReflection.Descriptor, global::GeneralMatchInfoReflection.Descriptor, global::MatchTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::PlayerMatchSuccNotify), global::PlayerMatchSuccNotify.Parser, new[]{ "GeneralMatchInfo", "MpPlayId", "HostUid", "MatchType", "GcgMatchInfo", "ConfirmEndTime", "DungeonId", "MechanicusDifficultLevel" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for PlayerMatchSuccNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static PlayerMatchSuccNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtQbGF5ZXJNYXRjaFN1Y2NOb3RpZnkucHJvdG8aEkdDR01hdGNoSW5mby5w",
+            "cm90bxoWR2VuZXJhbE1hdGNoSW5mby5wcm90bxoPTWF0Y2hUeXBlLnByb3Rv",
+            "IoUCChVQbGF5ZXJNYXRjaFN1Y2NOb3RpZnkSLQoSZ2VuZXJhbF9tYXRjaF9p",
+            "bmZvGAcgASgLMhEuR2VuZXJhbE1hdGNoSW5mbxISCgptcF9wbGF5X2lkGA8g",
+            "ASgNEhAKCGhvc3RfdWlkGAMgASgNEh4KCm1hdGNoX3R5cGUYBSABKA4yCi5N",
+            "YXRjaFR5cGUSJQoOZ2NnX21hdGNoX2luZm8YCyABKAsyDS5HQ0dNYXRjaElu",
+            "Zm8SGAoQY29uZmlybV9lbmRfdGltZRgCIAEoDRISCgpkdW5nZW9uX2lkGAYg",
+            "ASgNEiIKGm1lY2hhbmljdXNfZGlmZmljdWx0X2xldmVsGAEgASgNQgyqAglP",
+            "bGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GCGMatchInfoReflection.Descriptor, global::OldProtos.GeneralMatchInfoReflection.Descriptor, global::OldProtos.MatchTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.PlayerMatchSuccNotify), global::OldProtos.PlayerMatchSuccNotify.Parser, new[]{ "GeneralMatchInfo", "MpPlayId", "HostUid", "MatchType", "GcgMatchInfo", "ConfirmEndTime", "DungeonId", "MechanicusDifficultLevel" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 4179
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class PlayerMatchSuccNotify : pb::IMessage<PlayerMatchSuccNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PlayerMatchSuccNotify> _parser = new pb::MessageParser<PlayerMatchSuccNotify>(() => new PlayerMatchSuccNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PlayerMatchSuccNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.PlayerMatchSuccNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerMatchSuccNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerMatchSuccNotify(PlayerMatchSuccNotify other) : this() {
+      generalMatchInfo_ = other.generalMatchInfo_ != null ? other.generalMatchInfo_.Clone() : null;
+      mpPlayId_ = other.mpPlayId_;
+      hostUid_ = other.hostUid_;
+      matchType_ = other.matchType_;
+      gcgMatchInfo_ = other.gcgMatchInfo_ != null ? other.gcgMatchInfo_.Clone() : null;
+      confirmEndTime_ = other.confirmEndTime_;
+      dungeonId_ = other.dungeonId_;
+      mechanicusDifficultLevel_ = other.mechanicusDifficultLevel_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerMatchSuccNotify Clone() {
+      return new PlayerMatchSuccNotify(this);
+    }
+
+    /// <summary>Field number for the "general_match_info" field.</summary>
+    public const int GeneralMatchInfoFieldNumber = 7;
+    private global::OldProtos.GeneralMatchInfo generalMatchInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GeneralMatchInfo GeneralMatchInfo {
+      get { return generalMatchInfo_; }
+      set {
+        generalMatchInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mp_play_id" field.</summary>
+    public const int MpPlayIdFieldNumber = 15;
+    private uint mpPlayId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MpPlayId {
+      get { return mpPlayId_; }
+      set {
+        mpPlayId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "host_uid" field.</summary>
+    public const int HostUidFieldNumber = 3;
+    private uint hostUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint HostUid {
+      get { return hostUid_; }
+      set {
+        hostUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "match_type" field.</summary>
+    public const int MatchTypeFieldNumber = 5;
+    private global::OldProtos.MatchType matchType_ = global::OldProtos.MatchType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.MatchType MatchType {
+      get { return matchType_; }
+      set {
+        matchType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gcg_match_info" field.</summary>
+    public const int GcgMatchInfoFieldNumber = 11;
+    private global::OldProtos.GCGMatchInfo gcgMatchInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGMatchInfo GcgMatchInfo {
+      get { return gcgMatchInfo_; }
+      set {
+        gcgMatchInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "confirm_end_time" field.</summary>
+    public const int ConfirmEndTimeFieldNumber = 2;
+    private uint confirmEndTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ConfirmEndTime {
+      get { return confirmEndTime_; }
+      set {
+        confirmEndTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_id" field.</summary>
+    public const int DungeonIdFieldNumber = 6;
+    private uint dungeonId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonId {
+      get { return dungeonId_; }
+      set {
+        dungeonId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mechanicus_difficult_level" field.</summary>
+    public const int MechanicusDifficultLevelFieldNumber = 1;
+    private uint mechanicusDifficultLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MechanicusDifficultLevel {
+      get { return mechanicusDifficultLevel_; }
+      set {
+        mechanicusDifficultLevel_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PlayerMatchSuccNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PlayerMatchSuccNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(GeneralMatchInfo, other.GeneralMatchInfo)) return false;
+      if (MpPlayId != other.MpPlayId) return false;
+      if (HostUid != other.HostUid) return false;
+      if (MatchType != other.MatchType) return false;
+      if (!object.Equals(GcgMatchInfo, other.GcgMatchInfo)) return false;
+      if (ConfirmEndTime != other.ConfirmEndTime) return false;
+      if (DungeonId != other.DungeonId) return false;
+      if (MechanicusDifficultLevel != other.MechanicusDifficultLevel) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (generalMatchInfo_ != null) hash ^= GeneralMatchInfo.GetHashCode();
+      if (MpPlayId != 0) hash ^= MpPlayId.GetHashCode();
+      if (HostUid != 0) hash ^= HostUid.GetHashCode();
+      if (MatchType != global::OldProtos.MatchType.None) hash ^= MatchType.GetHashCode();
+      if (gcgMatchInfo_ != null) hash ^= GcgMatchInfo.GetHashCode();
+      if (ConfirmEndTime != 0) hash ^= ConfirmEndTime.GetHashCode();
+      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
+      if (MechanicusDifficultLevel != 0) hash ^= MechanicusDifficultLevel.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (MechanicusDifficultLevel != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(MechanicusDifficultLevel);
+      }
+      if (ConfirmEndTime != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ConfirmEndTime);
+      }
+      if (HostUid != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(HostUid);
+      }
+      if (MatchType != global::OldProtos.MatchType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) MatchType);
+      }
+      if (DungeonId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(DungeonId);
+      }
+      if (generalMatchInfo_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(GeneralMatchInfo);
+      }
+      if (gcgMatchInfo_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(GcgMatchInfo);
+      }
+      if (MpPlayId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(MpPlayId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (MechanicusDifficultLevel != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(MechanicusDifficultLevel);
+      }
+      if (ConfirmEndTime != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ConfirmEndTime);
+      }
+      if (HostUid != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(HostUid);
+      }
+      if (MatchType != global::OldProtos.MatchType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) MatchType);
+      }
+      if (DungeonId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(DungeonId);
+      }
+      if (generalMatchInfo_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(GeneralMatchInfo);
+      }
+      if (gcgMatchInfo_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(GcgMatchInfo);
+      }
+      if (MpPlayId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(MpPlayId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (generalMatchInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(GeneralMatchInfo);
+      }
+      if (MpPlayId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MpPlayId);
+      }
+      if (HostUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HostUid);
+      }
+      if (MatchType != global::OldProtos.MatchType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MatchType);
+      }
+      if (gcgMatchInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(GcgMatchInfo);
+      }
+      if (ConfirmEndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfirmEndTime);
+      }
+      if (DungeonId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
+      }
+      if (MechanicusDifficultLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MechanicusDifficultLevel);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PlayerMatchSuccNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.generalMatchInfo_ != null) {
+        if (generalMatchInfo_ == null) {
+          GeneralMatchInfo = new global::OldProtos.GeneralMatchInfo();
+        }
+        GeneralMatchInfo.MergeFrom(other.GeneralMatchInfo);
+      }
+      if (other.MpPlayId != 0) {
+        MpPlayId = other.MpPlayId;
+      }
+      if (other.HostUid != 0) {
+        HostUid = other.HostUid;
+      }
+      if (other.MatchType != global::OldProtos.MatchType.None) {
+        MatchType = other.MatchType;
+      }
+      if (other.gcgMatchInfo_ != null) {
+        if (gcgMatchInfo_ == null) {
+          GcgMatchInfo = new global::OldProtos.GCGMatchInfo();
+        }
+        GcgMatchInfo.MergeFrom(other.GcgMatchInfo);
+      }
+      if (other.ConfirmEndTime != 0) {
+        ConfirmEndTime = other.ConfirmEndTime;
+      }
+      if (other.DungeonId != 0) {
+        DungeonId = other.DungeonId;
+      }
+      if (other.MechanicusDifficultLevel != 0) {
+        MechanicusDifficultLevel = other.MechanicusDifficultLevel;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            MechanicusDifficultLevel = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            ConfirmEndTime = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            HostUid = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            MatchType = (global::OldProtos.MatchType) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 58: {
+            if (generalMatchInfo_ == null) {
+              GeneralMatchInfo = new global::OldProtos.GeneralMatchInfo();
+            }
+            input.ReadMessage(GeneralMatchInfo);
+            break;
+          }
+          case 90: {
+            if (gcgMatchInfo_ == null) {
+              GcgMatchInfo = new global::OldProtos.GCGMatchInfo();
+            }
+            input.ReadMessage(GcgMatchInfo);
+            break;
+          }
+          case 120: {
+            MpPlayId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            MechanicusDifficultLevel = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            ConfirmEndTime = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            HostUid = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            MatchType = (global::OldProtos.MatchType) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 58: {
+            if (generalMatchInfo_ == null) {
+              GeneralMatchInfo = new global::OldProtos.GeneralMatchInfo();
+            }
+            input.ReadMessage(GeneralMatchInfo);
+            break;
+          }
+          case 90: {
+            if (gcgMatchInfo_ == null) {
+              GcgMatchInfo = new global::OldProtos.GCGMatchInfo();
+            }
+            input.ReadMessage(GcgMatchInfo);
+            break;
+          }
+          case 120: {
+            MpPlayId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 4179
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class PlayerMatchSuccNotify : pb::IMessage<PlayerMatchSuccNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<PlayerMatchSuccNotify> _parser = new pb::MessageParser<PlayerMatchSuccNotify>(() => new PlayerMatchSuccNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<PlayerMatchSuccNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::PlayerMatchSuccNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerMatchSuccNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerMatchSuccNotify(PlayerMatchSuccNotify other) : this() {
-    generalMatchInfo_ = other.generalMatchInfo_ != null ? other.generalMatchInfo_.Clone() : null;
-    mpPlayId_ = other.mpPlayId_;
-    hostUid_ = other.hostUid_;
-    matchType_ = other.matchType_;
-    gcgMatchInfo_ = other.gcgMatchInfo_ != null ? other.gcgMatchInfo_.Clone() : null;
-    confirmEndTime_ = other.confirmEndTime_;
-    dungeonId_ = other.dungeonId_;
-    mechanicusDifficultLevel_ = other.mechanicusDifficultLevel_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerMatchSuccNotify Clone() {
-    return new PlayerMatchSuccNotify(this);
-  }
-
-  /// <summary>Field number for the "general_match_info" field.</summary>
-  public const int GeneralMatchInfoFieldNumber = 7;
-  private global::GeneralMatchInfo generalMatchInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GeneralMatchInfo GeneralMatchInfo {
-    get { return generalMatchInfo_; }
-    set {
-      generalMatchInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "mp_play_id" field.</summary>
-  public const int MpPlayIdFieldNumber = 15;
-  private uint mpPlayId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MpPlayId {
-    get { return mpPlayId_; }
-    set {
-      mpPlayId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "host_uid" field.</summary>
-  public const int HostUidFieldNumber = 3;
-  private uint hostUid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint HostUid {
-    get { return hostUid_; }
-    set {
-      hostUid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "match_type" field.</summary>
-  public const int MatchTypeFieldNumber = 5;
-  private global::MatchType matchType_ = global::MatchType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MatchType MatchType {
-    get { return matchType_; }
-    set {
-      matchType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gcg_match_info" field.</summary>
-  public const int GcgMatchInfoFieldNumber = 11;
-  private global::GCGMatchInfo gcgMatchInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGMatchInfo GcgMatchInfo {
-    get { return gcgMatchInfo_; }
-    set {
-      gcgMatchInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "confirm_end_time" field.</summary>
-  public const int ConfirmEndTimeFieldNumber = 2;
-  private uint confirmEndTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ConfirmEndTime {
-    get { return confirmEndTime_; }
-    set {
-      confirmEndTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "dungeon_id" field.</summary>
-  public const int DungeonIdFieldNumber = 6;
-  private uint dungeonId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DungeonId {
-    get { return dungeonId_; }
-    set {
-      dungeonId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "mechanicus_difficult_level" field.</summary>
-  public const int MechanicusDifficultLevelFieldNumber = 1;
-  private uint mechanicusDifficultLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MechanicusDifficultLevel {
-    get { return mechanicusDifficultLevel_; }
-    set {
-      mechanicusDifficultLevel_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as PlayerMatchSuccNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(PlayerMatchSuccNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(GeneralMatchInfo, other.GeneralMatchInfo)) return false;
-    if (MpPlayId != other.MpPlayId) return false;
-    if (HostUid != other.HostUid) return false;
-    if (MatchType != other.MatchType) return false;
-    if (!object.Equals(GcgMatchInfo, other.GcgMatchInfo)) return false;
-    if (ConfirmEndTime != other.ConfirmEndTime) return false;
-    if (DungeonId != other.DungeonId) return false;
-    if (MechanicusDifficultLevel != other.MechanicusDifficultLevel) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (generalMatchInfo_ != null) hash ^= GeneralMatchInfo.GetHashCode();
-    if (MpPlayId != 0) hash ^= MpPlayId.GetHashCode();
-    if (HostUid != 0) hash ^= HostUid.GetHashCode();
-    if (MatchType != global::MatchType.None) hash ^= MatchType.GetHashCode();
-    if (gcgMatchInfo_ != null) hash ^= GcgMatchInfo.GetHashCode();
-    if (ConfirmEndTime != 0) hash ^= ConfirmEndTime.GetHashCode();
-    if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
-    if (MechanicusDifficultLevel != 0) hash ^= MechanicusDifficultLevel.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (MechanicusDifficultLevel != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(MechanicusDifficultLevel);
-    }
-    if (ConfirmEndTime != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(ConfirmEndTime);
-    }
-    if (HostUid != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(HostUid);
-    }
-    if (MatchType != global::MatchType.None) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) MatchType);
-    }
-    if (DungeonId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(DungeonId);
-    }
-    if (generalMatchInfo_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(GeneralMatchInfo);
-    }
-    if (gcgMatchInfo_ != null) {
-      output.WriteRawTag(90);
-      output.WriteMessage(GcgMatchInfo);
-    }
-    if (MpPlayId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(MpPlayId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MechanicusDifficultLevel != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(MechanicusDifficultLevel);
-    }
-    if (ConfirmEndTime != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(ConfirmEndTime);
-    }
-    if (HostUid != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(HostUid);
-    }
-    if (MatchType != global::MatchType.None) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) MatchType);
-    }
-    if (DungeonId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(DungeonId);
-    }
-    if (generalMatchInfo_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(GeneralMatchInfo);
-    }
-    if (gcgMatchInfo_ != null) {
-      output.WriteRawTag(90);
-      output.WriteMessage(GcgMatchInfo);
-    }
-    if (MpPlayId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(MpPlayId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (generalMatchInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(GeneralMatchInfo);
-    }
-    if (MpPlayId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MpPlayId);
-    }
-    if (HostUid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HostUid);
-    }
-    if (MatchType != global::MatchType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MatchType);
-    }
-    if (gcgMatchInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(GcgMatchInfo);
-    }
-    if (ConfirmEndTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfirmEndTime);
-    }
-    if (DungeonId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
-    }
-    if (MechanicusDifficultLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MechanicusDifficultLevel);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(PlayerMatchSuccNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.generalMatchInfo_ != null) {
-      if (generalMatchInfo_ == null) {
-        GeneralMatchInfo = new global::GeneralMatchInfo();
-      }
-      GeneralMatchInfo.MergeFrom(other.GeneralMatchInfo);
-    }
-    if (other.MpPlayId != 0) {
-      MpPlayId = other.MpPlayId;
-    }
-    if (other.HostUid != 0) {
-      HostUid = other.HostUid;
-    }
-    if (other.MatchType != global::MatchType.None) {
-      MatchType = other.MatchType;
-    }
-    if (other.gcgMatchInfo_ != null) {
-      if (gcgMatchInfo_ == null) {
-        GcgMatchInfo = new global::GCGMatchInfo();
-      }
-      GcgMatchInfo.MergeFrom(other.GcgMatchInfo);
-    }
-    if (other.ConfirmEndTime != 0) {
-      ConfirmEndTime = other.ConfirmEndTime;
-    }
-    if (other.DungeonId != 0) {
-      DungeonId = other.DungeonId;
-    }
-    if (other.MechanicusDifficultLevel != 0) {
-      MechanicusDifficultLevel = other.MechanicusDifficultLevel;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          MechanicusDifficultLevel = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          ConfirmEndTime = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          HostUid = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          MatchType = (global::MatchType) input.ReadEnum();
-          break;
-        }
-        case 48: {
-          DungeonId = input.ReadUInt32();
-          break;
-        }
-        case 58: {
-          if (generalMatchInfo_ == null) {
-            GeneralMatchInfo = new global::GeneralMatchInfo();
-          }
-          input.ReadMessage(GeneralMatchInfo);
-          break;
-        }
-        case 90: {
-          if (gcgMatchInfo_ == null) {
-            GcgMatchInfo = new global::GCGMatchInfo();
-          }
-          input.ReadMessage(GcgMatchInfo);
-          break;
-        }
-        case 120: {
-          MpPlayId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          MechanicusDifficultLevel = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          ConfirmEndTime = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          HostUid = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          MatchType = (global::MatchType) input.ReadEnum();
-          break;
-        }
-        case 48: {
-          DungeonId = input.ReadUInt32();
-          break;
-        }
-        case 58: {
-          if (generalMatchInfo_ == null) {
-            GeneralMatchInfo = new global::GeneralMatchInfo();
-          }
-          input.ReadMessage(GeneralMatchInfo);
-          break;
-        }
-        case 90: {
-          if (gcgMatchInfo_ == null) {
-            GcgMatchInfo = new global::GCGMatchInfo();
-          }
-          input.ReadMessage(GcgMatchInfo);
-          break;
-        }
-        case 120: {
-          MpPlayId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

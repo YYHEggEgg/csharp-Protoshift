@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ChannelerSlabLoopDungeonInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message ChannelerSlabLoopDungeonStageInfo {
   repeated ChannelerSlabLoopDungeonInfo dungeon_info_list = 15;

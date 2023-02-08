@@ -19,7 +19,7 @@ syntax = "proto3";
 import "HuntingPair.proto";
 import "Vector.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 4322
 // EnetChannelId: 0

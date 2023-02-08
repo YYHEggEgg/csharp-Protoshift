@@ -9,411 +9,414 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from EffigyChallengeV2SettleInfo.proto</summary>
-public static partial class EffigyChallengeV2SettleInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for EffigyChallengeV2SettleInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from EffigyChallengeV2SettleInfo.proto</summary>
+  public static partial class EffigyChallengeV2SettleInfoReflection {
 
-  static EffigyChallengeV2SettleInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiFFZmZpZ3lDaGFsbGVuZ2VWMlNldHRsZUluZm8ucHJvdG8i4wEKG0VmZmln",
-          "eUNoYWxsZW5nZVYyU2V0dGxlSW5mbxInCh9pc19jaGFsbGVuZ2VfaGlnaGVz",
-          "dF9kaWZmaWN1bHR5GAcgASgIEiEKGWNyZWF0ZV9kdW5nZW9uX3BsYXllcl91",
-          "aWQYBCABKA0SIQoZY2hhbGxlbmdlX21vZGVfZGlmZmljdWx0eRgGIAEoDRIa",
-          "ChJpc19uZXdfcmVjb3JkX3RpbWUYASABKAgSEwoLcmVjb3JkX3RpbWUYDCAB",
-          "KA0SJAocZmlyc3RfdGltZV9maW5pc2hfZGlmZmljdWx0eRgFIAEoDUIeChxl",
-          "bXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::EffigyChallengeV2SettleInfo), global::EffigyChallengeV2SettleInfo.Parser, new[]{ "IsChallengeHighestDifficulty", "CreateDungeonPlayerUid", "ChallengeModeDifficulty", "IsNewRecordTime", "RecordTime", "FirstTimeFinishDifficulty" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for EffigyChallengeV2SettleInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static EffigyChallengeV2SettleInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiFFZmZpZ3lDaGFsbGVuZ2VWMlNldHRsZUluZm8ucHJvdG8i4wEKG0VmZmln",
+            "eUNoYWxsZW5nZVYyU2V0dGxlSW5mbxInCh9pc19jaGFsbGVuZ2VfaGlnaGVz",
+            "dF9kaWZmaWN1bHR5GAcgASgIEiEKGWNyZWF0ZV9kdW5nZW9uX3BsYXllcl91",
+            "aWQYBCABKA0SIQoZY2hhbGxlbmdlX21vZGVfZGlmZmljdWx0eRgGIAEoDRIa",
+            "ChJpc19uZXdfcmVjb3JkX3RpbWUYASABKAgSEwoLcmVjb3JkX3RpbWUYDCAB",
+            "KA0SJAocZmlyc3RfdGltZV9maW5pc2hfZGlmZmljdWx0eRgFIAEoDUIMqgIJ",
+            "T2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.EffigyChallengeV2SettleInfo), global::OldProtos.EffigyChallengeV2SettleInfo.Parser, new[]{ "IsChallengeHighestDifficulty", "CreateDungeonPlayerUid", "ChallengeModeDifficulty", "IsNewRecordTime", "RecordTime", "FirstTimeFinishDifficulty" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class EffigyChallengeV2SettleInfo : pb::IMessage<EffigyChallengeV2SettleInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<EffigyChallengeV2SettleInfo> _parser = new pb::MessageParser<EffigyChallengeV2SettleInfo>(() => new EffigyChallengeV2SettleInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<EffigyChallengeV2SettleInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.EffigyChallengeV2SettleInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EffigyChallengeV2SettleInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EffigyChallengeV2SettleInfo(EffigyChallengeV2SettleInfo other) : this() {
+      isChallengeHighestDifficulty_ = other.isChallengeHighestDifficulty_;
+      createDungeonPlayerUid_ = other.createDungeonPlayerUid_;
+      challengeModeDifficulty_ = other.challengeModeDifficulty_;
+      isNewRecordTime_ = other.isNewRecordTime_;
+      recordTime_ = other.recordTime_;
+      firstTimeFinishDifficulty_ = other.firstTimeFinishDifficulty_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EffigyChallengeV2SettleInfo Clone() {
+      return new EffigyChallengeV2SettleInfo(this);
+    }
+
+    /// <summary>Field number for the "is_challenge_highest_difficulty" field.</summary>
+    public const int IsChallengeHighestDifficultyFieldNumber = 7;
+    private bool isChallengeHighestDifficulty_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsChallengeHighestDifficulty {
+      get { return isChallengeHighestDifficulty_; }
+      set {
+        isChallengeHighestDifficulty_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "create_dungeon_player_uid" field.</summary>
+    public const int CreateDungeonPlayerUidFieldNumber = 4;
+    private uint createDungeonPlayerUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CreateDungeonPlayerUid {
+      get { return createDungeonPlayerUid_; }
+      set {
+        createDungeonPlayerUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_mode_difficulty" field.</summary>
+    public const int ChallengeModeDifficultyFieldNumber = 6;
+    private uint challengeModeDifficulty_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeModeDifficulty {
+      get { return challengeModeDifficulty_; }
+      set {
+        challengeModeDifficulty_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_new_record_time" field.</summary>
+    public const int IsNewRecordTimeFieldNumber = 1;
+    private bool isNewRecordTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsNewRecordTime {
+      get { return isNewRecordTime_; }
+      set {
+        isNewRecordTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "record_time" field.</summary>
+    public const int RecordTimeFieldNumber = 12;
+    private uint recordTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RecordTime {
+      get { return recordTime_; }
+      set {
+        recordTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "first_time_finish_difficulty" field.</summary>
+    public const int FirstTimeFinishDifficultyFieldNumber = 5;
+    private uint firstTimeFinishDifficulty_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FirstTimeFinishDifficulty {
+      get { return firstTimeFinishDifficulty_; }
+      set {
+        firstTimeFinishDifficulty_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as EffigyChallengeV2SettleInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(EffigyChallengeV2SettleInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsChallengeHighestDifficulty != other.IsChallengeHighestDifficulty) return false;
+      if (CreateDungeonPlayerUid != other.CreateDungeonPlayerUid) return false;
+      if (ChallengeModeDifficulty != other.ChallengeModeDifficulty) return false;
+      if (IsNewRecordTime != other.IsNewRecordTime) return false;
+      if (RecordTime != other.RecordTime) return false;
+      if (FirstTimeFinishDifficulty != other.FirstTimeFinishDifficulty) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsChallengeHighestDifficulty != false) hash ^= IsChallengeHighestDifficulty.GetHashCode();
+      if (CreateDungeonPlayerUid != 0) hash ^= CreateDungeonPlayerUid.GetHashCode();
+      if (ChallengeModeDifficulty != 0) hash ^= ChallengeModeDifficulty.GetHashCode();
+      if (IsNewRecordTime != false) hash ^= IsNewRecordTime.GetHashCode();
+      if (RecordTime != 0) hash ^= RecordTime.GetHashCode();
+      if (FirstTimeFinishDifficulty != 0) hash ^= FirstTimeFinishDifficulty.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsNewRecordTime != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsNewRecordTime);
+      }
+      if (CreateDungeonPlayerUid != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(CreateDungeonPlayerUid);
+      }
+      if (FirstTimeFinishDifficulty != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(FirstTimeFinishDifficulty);
+      }
+      if (ChallengeModeDifficulty != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ChallengeModeDifficulty);
+      }
+      if (IsChallengeHighestDifficulty != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsChallengeHighestDifficulty);
+      }
+      if (RecordTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(RecordTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsNewRecordTime != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsNewRecordTime);
+      }
+      if (CreateDungeonPlayerUid != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(CreateDungeonPlayerUid);
+      }
+      if (FirstTimeFinishDifficulty != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(FirstTimeFinishDifficulty);
+      }
+      if (ChallengeModeDifficulty != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ChallengeModeDifficulty);
+      }
+      if (IsChallengeHighestDifficulty != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsChallengeHighestDifficulty);
+      }
+      if (RecordTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(RecordTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsChallengeHighestDifficulty != false) {
+        size += 1 + 1;
+      }
+      if (CreateDungeonPlayerUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CreateDungeonPlayerUid);
+      }
+      if (ChallengeModeDifficulty != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeModeDifficulty);
+      }
+      if (IsNewRecordTime != false) {
+        size += 1 + 1;
+      }
+      if (RecordTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RecordTime);
+      }
+      if (FirstTimeFinishDifficulty != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FirstTimeFinishDifficulty);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(EffigyChallengeV2SettleInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsChallengeHighestDifficulty != false) {
+        IsChallengeHighestDifficulty = other.IsChallengeHighestDifficulty;
+      }
+      if (other.CreateDungeonPlayerUid != 0) {
+        CreateDungeonPlayerUid = other.CreateDungeonPlayerUid;
+      }
+      if (other.ChallengeModeDifficulty != 0) {
+        ChallengeModeDifficulty = other.ChallengeModeDifficulty;
+      }
+      if (other.IsNewRecordTime != false) {
+        IsNewRecordTime = other.IsNewRecordTime;
+      }
+      if (other.RecordTime != 0) {
+        RecordTime = other.RecordTime;
+      }
+      if (other.FirstTimeFinishDifficulty != 0) {
+        FirstTimeFinishDifficulty = other.FirstTimeFinishDifficulty;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            IsNewRecordTime = input.ReadBool();
+            break;
+          }
+          case 32: {
+            CreateDungeonPlayerUid = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            FirstTimeFinishDifficulty = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            ChallengeModeDifficulty = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            IsChallengeHighestDifficulty = input.ReadBool();
+            break;
+          }
+          case 96: {
+            RecordTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            IsNewRecordTime = input.ReadBool();
+            break;
+          }
+          case 32: {
+            CreateDungeonPlayerUid = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            FirstTimeFinishDifficulty = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            ChallengeModeDifficulty = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            IsChallengeHighestDifficulty = input.ReadBool();
+            break;
+          }
+          case 96: {
+            RecordTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class EffigyChallengeV2SettleInfo : pb::IMessage<EffigyChallengeV2SettleInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<EffigyChallengeV2SettleInfo> _parser = new pb::MessageParser<EffigyChallengeV2SettleInfo>(() => new EffigyChallengeV2SettleInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<EffigyChallengeV2SettleInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::EffigyChallengeV2SettleInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EffigyChallengeV2SettleInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EffigyChallengeV2SettleInfo(EffigyChallengeV2SettleInfo other) : this() {
-    isChallengeHighestDifficulty_ = other.isChallengeHighestDifficulty_;
-    createDungeonPlayerUid_ = other.createDungeonPlayerUid_;
-    challengeModeDifficulty_ = other.challengeModeDifficulty_;
-    isNewRecordTime_ = other.isNewRecordTime_;
-    recordTime_ = other.recordTime_;
-    firstTimeFinishDifficulty_ = other.firstTimeFinishDifficulty_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EffigyChallengeV2SettleInfo Clone() {
-    return new EffigyChallengeV2SettleInfo(this);
-  }
-
-  /// <summary>Field number for the "is_challenge_highest_difficulty" field.</summary>
-  public const int IsChallengeHighestDifficultyFieldNumber = 7;
-  private bool isChallengeHighestDifficulty_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsChallengeHighestDifficulty {
-    get { return isChallengeHighestDifficulty_; }
-    set {
-      isChallengeHighestDifficulty_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "create_dungeon_player_uid" field.</summary>
-  public const int CreateDungeonPlayerUidFieldNumber = 4;
-  private uint createDungeonPlayerUid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CreateDungeonPlayerUid {
-    get { return createDungeonPlayerUid_; }
-    set {
-      createDungeonPlayerUid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "challenge_mode_difficulty" field.</summary>
-  public const int ChallengeModeDifficultyFieldNumber = 6;
-  private uint challengeModeDifficulty_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChallengeModeDifficulty {
-    get { return challengeModeDifficulty_; }
-    set {
-      challengeModeDifficulty_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_new_record_time" field.</summary>
-  public const int IsNewRecordTimeFieldNumber = 1;
-  private bool isNewRecordTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsNewRecordTime {
-    get { return isNewRecordTime_; }
-    set {
-      isNewRecordTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "record_time" field.</summary>
-  public const int RecordTimeFieldNumber = 12;
-  private uint recordTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RecordTime {
-    get { return recordTime_; }
-    set {
-      recordTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "first_time_finish_difficulty" field.</summary>
-  public const int FirstTimeFinishDifficultyFieldNumber = 5;
-  private uint firstTimeFinishDifficulty_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FirstTimeFinishDifficulty {
-    get { return firstTimeFinishDifficulty_; }
-    set {
-      firstTimeFinishDifficulty_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as EffigyChallengeV2SettleInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(EffigyChallengeV2SettleInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsChallengeHighestDifficulty != other.IsChallengeHighestDifficulty) return false;
-    if (CreateDungeonPlayerUid != other.CreateDungeonPlayerUid) return false;
-    if (ChallengeModeDifficulty != other.ChallengeModeDifficulty) return false;
-    if (IsNewRecordTime != other.IsNewRecordTime) return false;
-    if (RecordTime != other.RecordTime) return false;
-    if (FirstTimeFinishDifficulty != other.FirstTimeFinishDifficulty) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsChallengeHighestDifficulty != false) hash ^= IsChallengeHighestDifficulty.GetHashCode();
-    if (CreateDungeonPlayerUid != 0) hash ^= CreateDungeonPlayerUid.GetHashCode();
-    if (ChallengeModeDifficulty != 0) hash ^= ChallengeModeDifficulty.GetHashCode();
-    if (IsNewRecordTime != false) hash ^= IsNewRecordTime.GetHashCode();
-    if (RecordTime != 0) hash ^= RecordTime.GetHashCode();
-    if (FirstTimeFinishDifficulty != 0) hash ^= FirstTimeFinishDifficulty.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsNewRecordTime != false) {
-      output.WriteRawTag(8);
-      output.WriteBool(IsNewRecordTime);
-    }
-    if (CreateDungeonPlayerUid != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(CreateDungeonPlayerUid);
-    }
-    if (FirstTimeFinishDifficulty != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(FirstTimeFinishDifficulty);
-    }
-    if (ChallengeModeDifficulty != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(ChallengeModeDifficulty);
-    }
-    if (IsChallengeHighestDifficulty != false) {
-      output.WriteRawTag(56);
-      output.WriteBool(IsChallengeHighestDifficulty);
-    }
-    if (RecordTime != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(RecordTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsNewRecordTime != false) {
-      output.WriteRawTag(8);
-      output.WriteBool(IsNewRecordTime);
-    }
-    if (CreateDungeonPlayerUid != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(CreateDungeonPlayerUid);
-    }
-    if (FirstTimeFinishDifficulty != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(FirstTimeFinishDifficulty);
-    }
-    if (ChallengeModeDifficulty != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(ChallengeModeDifficulty);
-    }
-    if (IsChallengeHighestDifficulty != false) {
-      output.WriteRawTag(56);
-      output.WriteBool(IsChallengeHighestDifficulty);
-    }
-    if (RecordTime != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(RecordTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsChallengeHighestDifficulty != false) {
-      size += 1 + 1;
-    }
-    if (CreateDungeonPlayerUid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CreateDungeonPlayerUid);
-    }
-    if (ChallengeModeDifficulty != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeModeDifficulty);
-    }
-    if (IsNewRecordTime != false) {
-      size += 1 + 1;
-    }
-    if (RecordTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RecordTime);
-    }
-    if (FirstTimeFinishDifficulty != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FirstTimeFinishDifficulty);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(EffigyChallengeV2SettleInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsChallengeHighestDifficulty != false) {
-      IsChallengeHighestDifficulty = other.IsChallengeHighestDifficulty;
-    }
-    if (other.CreateDungeonPlayerUid != 0) {
-      CreateDungeonPlayerUid = other.CreateDungeonPlayerUid;
-    }
-    if (other.ChallengeModeDifficulty != 0) {
-      ChallengeModeDifficulty = other.ChallengeModeDifficulty;
-    }
-    if (other.IsNewRecordTime != false) {
-      IsNewRecordTime = other.IsNewRecordTime;
-    }
-    if (other.RecordTime != 0) {
-      RecordTime = other.RecordTime;
-    }
-    if (other.FirstTimeFinishDifficulty != 0) {
-      FirstTimeFinishDifficulty = other.FirstTimeFinishDifficulty;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          IsNewRecordTime = input.ReadBool();
-          break;
-        }
-        case 32: {
-          CreateDungeonPlayerUid = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          FirstTimeFinishDifficulty = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          ChallengeModeDifficulty = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          IsChallengeHighestDifficulty = input.ReadBool();
-          break;
-        }
-        case 96: {
-          RecordTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          IsNewRecordTime = input.ReadBool();
-          break;
-        }
-        case 32: {
-          CreateDungeonPlayerUid = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          FirstTimeFinishDifficulty = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          ChallengeModeDifficulty = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          IsChallengeHighestDifficulty = input.ReadBool();
-          break;
-        }
-        case 96: {
-          RecordTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -20,7 +20,7 @@ import "ChangeEnergyReason.proto";
 import "ChangeHpReason.proto";
 import "PropChangeReason.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 1203
 // EnetChannelId: 0

@@ -9,38 +9,41 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FishEscapeReason.proto</summary>
-public static partial class FishEscapeReasonReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FishEscapeReason.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FishEscapeReason.proto</summary>
+  public static partial class FishEscapeReasonReflection {
 
-  static FishEscapeReasonReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZGaXNoRXNjYXBlUmVhc29uLnByb3RvKm4KEEZpc2hFc2NhcGVSZWFzb24S",
-          "GwoXRklTSF9FU0NBUEVfUkVBU09OX05PTkUQABIeChpGSVNIX0VTQ0FQRV9S",
-          "RUFTT05fU0hPQ0tFRBABEh0KGUZJU0hfRVNDQVBFX1JFQVNPTl9VTkhPT0sQ",
-          "AkIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::FishEscapeReason), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for FishEscapeReason.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FishEscapeReasonReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZGaXNoRXNjYXBlUmVhc29uLnByb3RvKm4KEEZpc2hFc2NhcGVSZWFzb24S",
+            "GwoXRklTSF9FU0NBUEVfUkVBU09OX05PTkUQABIeChpGSVNIX0VTQ0FQRV9S",
+            "RUFTT05fU0hPQ0tFRBABEh0KGUZJU0hfRVNDQVBFX1JFQVNPTl9VTkhPT0sQ",
+            "AkIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.FishEscapeReason), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum FishEscapeReason {
+    [pbr::OriginalName("FISH_ESCAPE_REASON_NONE")] None = 0,
+    [pbr::OriginalName("FISH_ESCAPE_REASON_SHOCKED")] Shocked = 1,
+    [pbr::OriginalName("FISH_ESCAPE_REASON_UNHOOK")] Unhook = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum FishEscapeReason {
-  [pbr::OriginalName("FISH_ESCAPE_REASON_NONE")] None = 0,
-  [pbr::OriginalName("FISH_ESCAPE_REASON_SHOCKED")] Shocked = 1,
-  [pbr::OriginalName("FISH_ESCAPE_REASON_UNHOOK")] Unhook = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

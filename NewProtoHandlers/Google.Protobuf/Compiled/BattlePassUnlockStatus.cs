@@ -9,39 +9,42 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from BattlePassUnlockStatus.proto</summary>
-public static partial class BattlePassUnlockStatusReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for BattlePassUnlockStatus.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from BattlePassUnlockStatus.proto</summary>
+  public static partial class BattlePassUnlockStatusReflection {
 
-  static BattlePassUnlockStatusReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChxCYXR0bGVQYXNzVW5sb2NrU3RhdHVzLnByb3RvKocBChZCYXR0bGVQYXNz",
-          "VW5sb2NrU3RhdHVzEiUKIUJBVFRMRV9QQVNTX1VOTE9DS19TVEFUVVNfSU5W",
-          "QUxJRBAAEiIKHkJBVFRMRV9QQVNTX1VOTE9DS19TVEFUVVNfRlJFRRABEiIK",
-          "HkJBVFRMRV9QQVNTX1VOTE9DS19TVEFUVVNfUEFJRBACQhYKFG9yZy5zb3Jh",
-          "cG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::BattlePassUnlockStatus), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for BattlePassUnlockStatus.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static BattlePassUnlockStatusReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChxCYXR0bGVQYXNzVW5sb2NrU3RhdHVzLnByb3RvKocBChZCYXR0bGVQYXNz",
+            "VW5sb2NrU3RhdHVzEiUKIUJBVFRMRV9QQVNTX1VOTE9DS19TVEFUVVNfSU5W",
+            "QUxJRBAAEiIKHkJBVFRMRV9QQVNTX1VOTE9DS19TVEFUVVNfRlJFRRABEiIK",
+            "HkJBVFRMRV9QQVNTX1VOTE9DS19TVEFUVVNfUEFJRBACQgyqAglOZXdQcm90",
+            "b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.BattlePassUnlockStatus), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum BattlePassUnlockStatus {
+    [pbr::OriginalName("BATTLE_PASS_UNLOCK_STATUS_INVALID")] Invalid = 0,
+    [pbr::OriginalName("BATTLE_PASS_UNLOCK_STATUS_FREE")] Free = 1,
+    [pbr::OriginalName("BATTLE_PASS_UNLOCK_STATUS_PAID")] Paid = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum BattlePassUnlockStatus {
-  [pbr::OriginalName("BATTLE_PASS_UNLOCK_STATUS_INVALID")] Invalid = 0,
-  [pbr::OriginalName("BATTLE_PASS_UNLOCK_STATUS_FREE")] Free = 1,
-  [pbr::OriginalName("BATTLE_PASS_UNLOCK_STATUS_PAID")] Paid = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

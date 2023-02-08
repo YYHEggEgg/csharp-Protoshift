@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "TransmitReason.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 224
 // EnetChannelId: 0

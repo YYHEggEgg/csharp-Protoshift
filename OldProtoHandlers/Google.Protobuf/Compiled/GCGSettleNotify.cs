@@ -9,458 +9,461 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGSettleNotify.proto</summary>
-public static partial class GCGSettleNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGSettleNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGSettleNotify.proto</summary>
+  public static partial class GCGSettleNotifyReflection {
 
-  static GCGSettleNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVHQ0dTZXR0bGVOb3RpZnkucHJvdG8aEkdDR0VuZFJlYXNvbi5wcm90bxoZ",
-          "R0NHR2FtZUJ1c2luZXNzVHlwZS5wcm90bxoPSXRlbVBhcmFtLnByb3RvIokC",
-          "Cg9HQ0dTZXR0bGVOb3RpZnkSDgoGaXNfd2luGA0gASgIEg8KB2dhbWVfaWQY",
-          "ByABKA0SHQoGcmVhc29uGAMgASgOMg0uR0NHRW5kUmVhc29uEisKDWJ1c2lu",
-          "ZXNzX3R5cGUYAiABKA4yFC5HQ0dHYW1lQnVzaW5lc3NUeXBlEiIKGmZpbmlz",
-          "aGVkX2NoYWxsZW5nZV9pZF9saXN0GAYgAygNEhkKEXdpbl9jb250cm9sbGVy",
-          "X2lkGA8gASgNEiQKHGZvcmJpZF9maW5pc2hfY2hhbGxlbmdlX2xpc3QYDCAD",
-          "KA0SJAoQcmV3YXJkX2l0ZW1fbGlzdBgJIAMoCzIKLkl0ZW1QYXJhbUIeChxl",
-          "bXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GCGEndReasonReflection.Descriptor, global::GCGGameBusinessTypeReflection.Descriptor, global::ItemParamReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGSettleNotify), global::GCGSettleNotify.Parser, new[]{ "IsWin", "GameId", "Reason", "BusinessType", "FinishedChallengeIdList", "WinControllerId", "ForbidFinishChallengeList", "RewardItemList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGSettleNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGSettleNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVHQ0dTZXR0bGVOb3RpZnkucHJvdG8aEkdDR0VuZFJlYXNvbi5wcm90bxoZ",
+            "R0NHR2FtZUJ1c2luZXNzVHlwZS5wcm90bxoPSXRlbVBhcmFtLnByb3RvIokC",
+            "Cg9HQ0dTZXR0bGVOb3RpZnkSDgoGaXNfd2luGA0gASgIEg8KB2dhbWVfaWQY",
+            "ByABKA0SHQoGcmVhc29uGAMgASgOMg0uR0NHRW5kUmVhc29uEisKDWJ1c2lu",
+            "ZXNzX3R5cGUYAiABKA4yFC5HQ0dHYW1lQnVzaW5lc3NUeXBlEiIKGmZpbmlz",
+            "aGVkX2NoYWxsZW5nZV9pZF9saXN0GAYgAygNEhkKEXdpbl9jb250cm9sbGVy",
+            "X2lkGA8gASgNEiQKHGZvcmJpZF9maW5pc2hfY2hhbGxlbmdlX2xpc3QYDCAD",
+            "KA0SJAoQcmV3YXJkX2l0ZW1fbGlzdBgJIAMoCzIKLkl0ZW1QYXJhbUIMqgIJ",
+            "T2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GCGEndReasonReflection.Descriptor, global::OldProtos.GCGGameBusinessTypeReflection.Descriptor, global::OldProtos.ItemParamReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GCGSettleNotify), global::OldProtos.GCGSettleNotify.Parser, new[]{ "IsWin", "GameId", "Reason", "BusinessType", "FinishedChallengeIdList", "WinControllerId", "ForbidFinishChallengeList", "RewardItemList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GCGSettleNotify : pb::IMessage<GCGSettleNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGSettleNotify> _parser = new pb::MessageParser<GCGSettleNotify>(() => new GCGSettleNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGSettleNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GCGSettleNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGSettleNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGSettleNotify(GCGSettleNotify other) : this() {
+      isWin_ = other.isWin_;
+      gameId_ = other.gameId_;
+      reason_ = other.reason_;
+      businessType_ = other.businessType_;
+      finishedChallengeIdList_ = other.finishedChallengeIdList_.Clone();
+      winControllerId_ = other.winControllerId_;
+      forbidFinishChallengeList_ = other.forbidFinishChallengeList_.Clone();
+      rewardItemList_ = other.rewardItemList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGSettleNotify Clone() {
+      return new GCGSettleNotify(this);
+    }
+
+    /// <summary>Field number for the "is_win" field.</summary>
+    public const int IsWinFieldNumber = 13;
+    private bool isWin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsWin {
+      get { return isWin_; }
+      set {
+        isWin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "game_id" field.</summary>
+    public const int GameIdFieldNumber = 7;
+    private uint gameId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GameId {
+      get { return gameId_; }
+      set {
+        gameId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 3;
+    private global::OldProtos.GCGEndReason reason_ = global::OldProtos.GCGEndReason.Default;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGEndReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "business_type" field.</summary>
+    public const int BusinessTypeFieldNumber = 2;
+    private global::OldProtos.GCGGameBusinessType businessType_ = global::OldProtos.GCGGameBusinessType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGGameBusinessType BusinessType {
+      get { return businessType_; }
+      set {
+        businessType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "finished_challenge_id_list" field.</summary>
+    public const int FinishedChallengeIdListFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_finishedChallengeIdList_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> finishedChallengeIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FinishedChallengeIdList {
+      get { return finishedChallengeIdList_; }
+    }
+
+    /// <summary>Field number for the "win_controller_id" field.</summary>
+    public const int WinControllerIdFieldNumber = 15;
+    private uint winControllerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WinControllerId {
+      get { return winControllerId_; }
+      set {
+        winControllerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forbid_finish_challenge_list" field.</summary>
+    public const int ForbidFinishChallengeListFieldNumber = 12;
+    private static readonly pb::FieldCodec<uint> _repeated_forbidFinishChallengeList_codec
+        = pb::FieldCodec.ForUInt32(98);
+    private readonly pbc::RepeatedField<uint> forbidFinishChallengeList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ForbidFinishChallengeList {
+      get { return forbidFinishChallengeList_; }
+    }
+
+    /// <summary>Field number for the "reward_item_list" field.</summary>
+    public const int RewardItemListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::OldProtos.ItemParam> _repeated_rewardItemList_codec
+        = pb::FieldCodec.ForMessage(74, global::OldProtos.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.ItemParam> rewardItemList_ = new pbc::RepeatedField<global::OldProtos.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.ItemParam> RewardItemList {
+      get { return rewardItemList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGSettleNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGSettleNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsWin != other.IsWin) return false;
+      if (GameId != other.GameId) return false;
+      if (Reason != other.Reason) return false;
+      if (BusinessType != other.BusinessType) return false;
+      if(!finishedChallengeIdList_.Equals(other.finishedChallengeIdList_)) return false;
+      if (WinControllerId != other.WinControllerId) return false;
+      if(!forbidFinishChallengeList_.Equals(other.forbidFinishChallengeList_)) return false;
+      if(!rewardItemList_.Equals(other.rewardItemList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsWin != false) hash ^= IsWin.GetHashCode();
+      if (GameId != 0) hash ^= GameId.GetHashCode();
+      if (Reason != global::OldProtos.GCGEndReason.Default) hash ^= Reason.GetHashCode();
+      if (BusinessType != global::OldProtos.GCGGameBusinessType.None) hash ^= BusinessType.GetHashCode();
+      hash ^= finishedChallengeIdList_.GetHashCode();
+      if (WinControllerId != 0) hash ^= WinControllerId.GetHashCode();
+      hash ^= forbidFinishChallengeList_.GetHashCode();
+      hash ^= rewardItemList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (BusinessType != global::OldProtos.GCGGameBusinessType.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) BusinessType);
+      }
+      if (Reason != global::OldProtos.GCGEndReason.Default) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Reason);
+      }
+      finishedChallengeIdList_.WriteTo(output, _repeated_finishedChallengeIdList_codec);
+      if (GameId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(GameId);
+      }
+      rewardItemList_.WriteTo(output, _repeated_rewardItemList_codec);
+      forbidFinishChallengeList_.WriteTo(output, _repeated_forbidFinishChallengeList_codec);
+      if (IsWin != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsWin);
+      }
+      if (WinControllerId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(WinControllerId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (BusinessType != global::OldProtos.GCGGameBusinessType.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) BusinessType);
+      }
+      if (Reason != global::OldProtos.GCGEndReason.Default) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Reason);
+      }
+      finishedChallengeIdList_.WriteTo(ref output, _repeated_finishedChallengeIdList_codec);
+      if (GameId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(GameId);
+      }
+      rewardItemList_.WriteTo(ref output, _repeated_rewardItemList_codec);
+      forbidFinishChallengeList_.WriteTo(ref output, _repeated_forbidFinishChallengeList_codec);
+      if (IsWin != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsWin);
+      }
+      if (WinControllerId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(WinControllerId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsWin != false) {
+        size += 1 + 1;
+      }
+      if (GameId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameId);
+      }
+      if (Reason != global::OldProtos.GCGEndReason.Default) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
+      if (BusinessType != global::OldProtos.GCGGameBusinessType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BusinessType);
+      }
+      size += finishedChallengeIdList_.CalculateSize(_repeated_finishedChallengeIdList_codec);
+      if (WinControllerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WinControllerId);
+      }
+      size += forbidFinishChallengeList_.CalculateSize(_repeated_forbidFinishChallengeList_codec);
+      size += rewardItemList_.CalculateSize(_repeated_rewardItemList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGSettleNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsWin != false) {
+        IsWin = other.IsWin;
+      }
+      if (other.GameId != 0) {
+        GameId = other.GameId;
+      }
+      if (other.Reason != global::OldProtos.GCGEndReason.Default) {
+        Reason = other.Reason;
+      }
+      if (other.BusinessType != global::OldProtos.GCGGameBusinessType.None) {
+        BusinessType = other.BusinessType;
+      }
+      finishedChallengeIdList_.Add(other.finishedChallengeIdList_);
+      if (other.WinControllerId != 0) {
+        WinControllerId = other.WinControllerId;
+      }
+      forbidFinishChallengeList_.Add(other.forbidFinishChallengeList_);
+      rewardItemList_.Add(other.rewardItemList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            BusinessType = (global::OldProtos.GCGGameBusinessType) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            Reason = (global::OldProtos.GCGEndReason) input.ReadEnum();
+            break;
+          }
+          case 50:
+          case 48: {
+            finishedChallengeIdList_.AddEntriesFrom(input, _repeated_finishedChallengeIdList_codec);
+            break;
+          }
+          case 56: {
+            GameId = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            rewardItemList_.AddEntriesFrom(input, _repeated_rewardItemList_codec);
+            break;
+          }
+          case 98:
+          case 96: {
+            forbidFinishChallengeList_.AddEntriesFrom(input, _repeated_forbidFinishChallengeList_codec);
+            break;
+          }
+          case 104: {
+            IsWin = input.ReadBool();
+            break;
+          }
+          case 120: {
+            WinControllerId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            BusinessType = (global::OldProtos.GCGGameBusinessType) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            Reason = (global::OldProtos.GCGEndReason) input.ReadEnum();
+            break;
+          }
+          case 50:
+          case 48: {
+            finishedChallengeIdList_.AddEntriesFrom(ref input, _repeated_finishedChallengeIdList_codec);
+            break;
+          }
+          case 56: {
+            GameId = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            rewardItemList_.AddEntriesFrom(ref input, _repeated_rewardItemList_codec);
+            break;
+          }
+          case 98:
+          case 96: {
+            forbidFinishChallengeList_.AddEntriesFrom(ref input, _repeated_forbidFinishChallengeList_codec);
+            break;
+          }
+          case 104: {
+            IsWin = input.ReadBool();
+            break;
+          }
+          case 120: {
+            WinControllerId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GCGSettleNotify : pb::IMessage<GCGSettleNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGSettleNotify> _parser = new pb::MessageParser<GCGSettleNotify>(() => new GCGSettleNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGSettleNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGSettleNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGSettleNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGSettleNotify(GCGSettleNotify other) : this() {
-    isWin_ = other.isWin_;
-    gameId_ = other.gameId_;
-    reason_ = other.reason_;
-    businessType_ = other.businessType_;
-    finishedChallengeIdList_ = other.finishedChallengeIdList_.Clone();
-    winControllerId_ = other.winControllerId_;
-    forbidFinishChallengeList_ = other.forbidFinishChallengeList_.Clone();
-    rewardItemList_ = other.rewardItemList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGSettleNotify Clone() {
-    return new GCGSettleNotify(this);
-  }
-
-  /// <summary>Field number for the "is_win" field.</summary>
-  public const int IsWinFieldNumber = 13;
-  private bool isWin_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsWin {
-    get { return isWin_; }
-    set {
-      isWin_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "game_id" field.</summary>
-  public const int GameIdFieldNumber = 7;
-  private uint gameId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GameId {
-    get { return gameId_; }
-    set {
-      gameId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "reason" field.</summary>
-  public const int ReasonFieldNumber = 3;
-  private global::GCGEndReason reason_ = global::GCGEndReason.Default;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGEndReason Reason {
-    get { return reason_; }
-    set {
-      reason_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "business_type" field.</summary>
-  public const int BusinessTypeFieldNumber = 2;
-  private global::GCGGameBusinessType businessType_ = global::GCGGameBusinessType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGGameBusinessType BusinessType {
-    get { return businessType_; }
-    set {
-      businessType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "finished_challenge_id_list" field.</summary>
-  public const int FinishedChallengeIdListFieldNumber = 6;
-  private static readonly pb::FieldCodec<uint> _repeated_finishedChallengeIdList_codec
-      = pb::FieldCodec.ForUInt32(50);
-  private readonly pbc::RepeatedField<uint> finishedChallengeIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> FinishedChallengeIdList {
-    get { return finishedChallengeIdList_; }
-  }
-
-  /// <summary>Field number for the "win_controller_id" field.</summary>
-  public const int WinControllerIdFieldNumber = 15;
-  private uint winControllerId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WinControllerId {
-    get { return winControllerId_; }
-    set {
-      winControllerId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "forbid_finish_challenge_list" field.</summary>
-  public const int ForbidFinishChallengeListFieldNumber = 12;
-  private static readonly pb::FieldCodec<uint> _repeated_forbidFinishChallengeList_codec
-      = pb::FieldCodec.ForUInt32(98);
-  private readonly pbc::RepeatedField<uint> forbidFinishChallengeList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> ForbidFinishChallengeList {
-    get { return forbidFinishChallengeList_; }
-  }
-
-  /// <summary>Field number for the "reward_item_list" field.</summary>
-  public const int RewardItemListFieldNumber = 9;
-  private static readonly pb::FieldCodec<global::ItemParam> _repeated_rewardItemList_codec
-      = pb::FieldCodec.ForMessage(74, global::ItemParam.Parser);
-  private readonly pbc::RepeatedField<global::ItemParam> rewardItemList_ = new pbc::RepeatedField<global::ItemParam>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ItemParam> RewardItemList {
-    get { return rewardItemList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGSettleNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGSettleNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsWin != other.IsWin) return false;
-    if (GameId != other.GameId) return false;
-    if (Reason != other.Reason) return false;
-    if (BusinessType != other.BusinessType) return false;
-    if(!finishedChallengeIdList_.Equals(other.finishedChallengeIdList_)) return false;
-    if (WinControllerId != other.WinControllerId) return false;
-    if(!forbidFinishChallengeList_.Equals(other.forbidFinishChallengeList_)) return false;
-    if(!rewardItemList_.Equals(other.rewardItemList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsWin != false) hash ^= IsWin.GetHashCode();
-    if (GameId != 0) hash ^= GameId.GetHashCode();
-    if (Reason != global::GCGEndReason.Default) hash ^= Reason.GetHashCode();
-    if (BusinessType != global::GCGGameBusinessType.None) hash ^= BusinessType.GetHashCode();
-    hash ^= finishedChallengeIdList_.GetHashCode();
-    if (WinControllerId != 0) hash ^= WinControllerId.GetHashCode();
-    hash ^= forbidFinishChallengeList_.GetHashCode();
-    hash ^= rewardItemList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (BusinessType != global::GCGGameBusinessType.None) {
-      output.WriteRawTag(16);
-      output.WriteEnum((int) BusinessType);
-    }
-    if (Reason != global::GCGEndReason.Default) {
-      output.WriteRawTag(24);
-      output.WriteEnum((int) Reason);
-    }
-    finishedChallengeIdList_.WriteTo(output, _repeated_finishedChallengeIdList_codec);
-    if (GameId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(GameId);
-    }
-    rewardItemList_.WriteTo(output, _repeated_rewardItemList_codec);
-    forbidFinishChallengeList_.WriteTo(output, _repeated_forbidFinishChallengeList_codec);
-    if (IsWin != false) {
-      output.WriteRawTag(104);
-      output.WriteBool(IsWin);
-    }
-    if (WinControllerId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(WinControllerId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (BusinessType != global::GCGGameBusinessType.None) {
-      output.WriteRawTag(16);
-      output.WriteEnum((int) BusinessType);
-    }
-    if (Reason != global::GCGEndReason.Default) {
-      output.WriteRawTag(24);
-      output.WriteEnum((int) Reason);
-    }
-    finishedChallengeIdList_.WriteTo(ref output, _repeated_finishedChallengeIdList_codec);
-    if (GameId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(GameId);
-    }
-    rewardItemList_.WriteTo(ref output, _repeated_rewardItemList_codec);
-    forbidFinishChallengeList_.WriteTo(ref output, _repeated_forbidFinishChallengeList_codec);
-    if (IsWin != false) {
-      output.WriteRawTag(104);
-      output.WriteBool(IsWin);
-    }
-    if (WinControllerId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(WinControllerId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsWin != false) {
-      size += 1 + 1;
-    }
-    if (GameId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameId);
-    }
-    if (Reason != global::GCGEndReason.Default) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-    }
-    if (BusinessType != global::GCGGameBusinessType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BusinessType);
-    }
-    size += finishedChallengeIdList_.CalculateSize(_repeated_finishedChallengeIdList_codec);
-    if (WinControllerId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WinControllerId);
-    }
-    size += forbidFinishChallengeList_.CalculateSize(_repeated_forbidFinishChallengeList_codec);
-    size += rewardItemList_.CalculateSize(_repeated_rewardItemList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGSettleNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsWin != false) {
-      IsWin = other.IsWin;
-    }
-    if (other.GameId != 0) {
-      GameId = other.GameId;
-    }
-    if (other.Reason != global::GCGEndReason.Default) {
-      Reason = other.Reason;
-    }
-    if (other.BusinessType != global::GCGGameBusinessType.None) {
-      BusinessType = other.BusinessType;
-    }
-    finishedChallengeIdList_.Add(other.finishedChallengeIdList_);
-    if (other.WinControllerId != 0) {
-      WinControllerId = other.WinControllerId;
-    }
-    forbidFinishChallengeList_.Add(other.forbidFinishChallengeList_);
-    rewardItemList_.Add(other.rewardItemList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          BusinessType = (global::GCGGameBusinessType) input.ReadEnum();
-          break;
-        }
-        case 24: {
-          Reason = (global::GCGEndReason) input.ReadEnum();
-          break;
-        }
-        case 50:
-        case 48: {
-          finishedChallengeIdList_.AddEntriesFrom(input, _repeated_finishedChallengeIdList_codec);
-          break;
-        }
-        case 56: {
-          GameId = input.ReadUInt32();
-          break;
-        }
-        case 74: {
-          rewardItemList_.AddEntriesFrom(input, _repeated_rewardItemList_codec);
-          break;
-        }
-        case 98:
-        case 96: {
-          forbidFinishChallengeList_.AddEntriesFrom(input, _repeated_forbidFinishChallengeList_codec);
-          break;
-        }
-        case 104: {
-          IsWin = input.ReadBool();
-          break;
-        }
-        case 120: {
-          WinControllerId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          BusinessType = (global::GCGGameBusinessType) input.ReadEnum();
-          break;
-        }
-        case 24: {
-          Reason = (global::GCGEndReason) input.ReadEnum();
-          break;
-        }
-        case 50:
-        case 48: {
-          finishedChallengeIdList_.AddEntriesFrom(ref input, _repeated_finishedChallengeIdList_codec);
-          break;
-        }
-        case 56: {
-          GameId = input.ReadUInt32();
-          break;
-        }
-        case 74: {
-          rewardItemList_.AddEntriesFrom(ref input, _repeated_rewardItemList_codec);
-          break;
-        }
-        case 98:
-        case 96: {
-          forbidFinishChallengeList_.AddEntriesFrom(ref input, _repeated_forbidFinishChallengeList_codec);
-          break;
-        }
-        case 104: {
-          IsWin = input.ReadBool();
-          break;
-        }
-        case 120: {
-          WinControllerId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -9,292 +9,295 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GetActivityShopSheetInfoRsp.proto</summary>
-public static partial class GetActivityShopSheetInfoRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GetActivityShopSheetInfoRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GetActivityShopSheetInfoRsp.proto</summary>
+  public static partial class GetActivityShopSheetInfoRspReflection {
 
-  static GetActivityShopSheetInfoRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiFHZXRBY3Rpdml0eVNob3BTaGVldEluZm9Sc3AucHJvdG8aG0FjdGl2aXR5",
-          "U2hvcFNoZWV0SW5mby5wcm90byJyChtHZXRBY3Rpdml0eVNob3BTaGVldElu",
-          "Zm9Sc3ASLwoPc2hlZXRfaW5mb19saXN0GAYgAygLMhYuQWN0aXZpdHlTaG9w",
-          "U2hlZXRJbmZvEhEKCXNob3BfdHlwZRgIIAEoDRIPCgdyZXRjb2RlGA0gASgF",
-          "Qh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ActivityShopSheetInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GetActivityShopSheetInfoRsp), global::GetActivityShopSheetInfoRsp.Parser, new[]{ "SheetInfoList", "ShopType", "Retcode" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GetActivityShopSheetInfoRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GetActivityShopSheetInfoRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiFHZXRBY3Rpdml0eVNob3BTaGVldEluZm9Sc3AucHJvdG8aG0FjdGl2aXR5",
+            "U2hvcFNoZWV0SW5mby5wcm90byJyChtHZXRBY3Rpdml0eVNob3BTaGVldElu",
+            "Zm9Sc3ASLwoPc2hlZXRfaW5mb19saXN0GAYgAygLMhYuQWN0aXZpdHlTaG9w",
+            "U2hlZXRJbmZvEhEKCXNob3BfdHlwZRgIIAEoDRIPCgdyZXRjb2RlGA0gASgF",
+            "QgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ActivityShopSheetInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GetActivityShopSheetInfoRsp), global::OldProtos.GetActivityShopSheetInfoRsp.Parser, new[]{ "SheetInfoList", "ShopType", "Retcode" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 790
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class GetActivityShopSheetInfoRsp : pb::IMessage<GetActivityShopSheetInfoRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetActivityShopSheetInfoRsp> _parser = new pb::MessageParser<GetActivityShopSheetInfoRsp>(() => new GetActivityShopSheetInfoRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GetActivityShopSheetInfoRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GetActivityShopSheetInfoRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetActivityShopSheetInfoRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetActivityShopSheetInfoRsp(GetActivityShopSheetInfoRsp other) : this() {
+      sheetInfoList_ = other.sheetInfoList_.Clone();
+      shopType_ = other.shopType_;
+      retcode_ = other.retcode_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetActivityShopSheetInfoRsp Clone() {
+      return new GetActivityShopSheetInfoRsp(this);
+    }
+
+    /// <summary>Field number for the "sheet_info_list" field.</summary>
+    public const int SheetInfoListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::OldProtos.ActivityShopSheetInfo> _repeated_sheetInfoList_codec
+        = pb::FieldCodec.ForMessage(50, global::OldProtos.ActivityShopSheetInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.ActivityShopSheetInfo> sheetInfoList_ = new pbc::RepeatedField<global::OldProtos.ActivityShopSheetInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.ActivityShopSheetInfo> SheetInfoList {
+      get { return sheetInfoList_; }
+    }
+
+    /// <summary>Field number for the "shop_type" field.</summary>
+    public const int ShopTypeFieldNumber = 8;
+    private uint shopType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ShopType {
+      get { return shopType_; }
+      set {
+        shopType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 13;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GetActivityShopSheetInfoRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GetActivityShopSheetInfoRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!sheetInfoList_.Equals(other.sheetInfoList_)) return false;
+      if (ShopType != other.ShopType) return false;
+      if (Retcode != other.Retcode) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= sheetInfoList_.GetHashCode();
+      if (ShopType != 0) hash ^= ShopType.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      sheetInfoList_.WriteTo(output, _repeated_sheetInfoList_codec);
+      if (ShopType != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ShopType);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Retcode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      sheetInfoList_.WriteTo(ref output, _repeated_sheetInfoList_codec);
+      if (ShopType != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ShopType);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(104);
+        output.WriteInt32(Retcode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += sheetInfoList_.CalculateSize(_repeated_sheetInfoList_codec);
+      if (ShopType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShopType);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GetActivityShopSheetInfoRsp other) {
+      if (other == null) {
+        return;
+      }
+      sheetInfoList_.Add(other.sheetInfoList_);
+      if (other.ShopType != 0) {
+        ShopType = other.ShopType;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 50: {
+            sheetInfoList_.AddEntriesFrom(input, _repeated_sheetInfoList_codec);
+            break;
+          }
+          case 64: {
+            ShopType = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 50: {
+            sheetInfoList_.AddEntriesFrom(ref input, _repeated_sheetInfoList_codec);
+            break;
+          }
+          case 64: {
+            ShopType = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 790
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class GetActivityShopSheetInfoRsp : pb::IMessage<GetActivityShopSheetInfoRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GetActivityShopSheetInfoRsp> _parser = new pb::MessageParser<GetActivityShopSheetInfoRsp>(() => new GetActivityShopSheetInfoRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GetActivityShopSheetInfoRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GetActivityShopSheetInfoRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetActivityShopSheetInfoRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetActivityShopSheetInfoRsp(GetActivityShopSheetInfoRsp other) : this() {
-    sheetInfoList_ = other.sheetInfoList_.Clone();
-    shopType_ = other.shopType_;
-    retcode_ = other.retcode_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetActivityShopSheetInfoRsp Clone() {
-    return new GetActivityShopSheetInfoRsp(this);
-  }
-
-  /// <summary>Field number for the "sheet_info_list" field.</summary>
-  public const int SheetInfoListFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::ActivityShopSheetInfo> _repeated_sheetInfoList_codec
-      = pb::FieldCodec.ForMessage(50, global::ActivityShopSheetInfo.Parser);
-  private readonly pbc::RepeatedField<global::ActivityShopSheetInfo> sheetInfoList_ = new pbc::RepeatedField<global::ActivityShopSheetInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ActivityShopSheetInfo> SheetInfoList {
-    get { return sheetInfoList_; }
-  }
-
-  /// <summary>Field number for the "shop_type" field.</summary>
-  public const int ShopTypeFieldNumber = 8;
-  private uint shopType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ShopType {
-    get { return shopType_; }
-    set {
-      shopType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 13;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GetActivityShopSheetInfoRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GetActivityShopSheetInfoRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!sheetInfoList_.Equals(other.sheetInfoList_)) return false;
-    if (ShopType != other.ShopType) return false;
-    if (Retcode != other.Retcode) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= sheetInfoList_.GetHashCode();
-    if (ShopType != 0) hash ^= ShopType.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    sheetInfoList_.WriteTo(output, _repeated_sheetInfoList_codec);
-    if (ShopType != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ShopType);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(104);
-      output.WriteInt32(Retcode);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    sheetInfoList_.WriteTo(ref output, _repeated_sheetInfoList_codec);
-    if (ShopType != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ShopType);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(104);
-      output.WriteInt32(Retcode);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += sheetInfoList_.CalculateSize(_repeated_sheetInfoList_codec);
-    if (ShopType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ShopType);
-    }
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GetActivityShopSheetInfoRsp other) {
-    if (other == null) {
-      return;
-    }
-    sheetInfoList_.Add(other.sheetInfoList_);
-    if (other.ShopType != 0) {
-      ShopType = other.ShopType;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 50: {
-          sheetInfoList_.AddEntriesFrom(input, _repeated_sheetInfoList_codec);
-          break;
-        }
-        case 64: {
-          ShopType = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 50: {
-          sheetInfoList_.AddEntriesFrom(ref input, _repeated_sheetInfoList_codec);
-          break;
-        }
-        case 64: {
-          ShopType = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

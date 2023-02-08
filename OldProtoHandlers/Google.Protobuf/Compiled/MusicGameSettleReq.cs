@@ -9,847 +9,849 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MusicGameSettleReq.proto</summary>
-public static partial class MusicGameSettleReqReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MusicGameSettleReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MusicGameSettleReq.proto</summary>
+  public static partial class MusicGameSettleReqReflection {
 
-  static MusicGameSettleReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhNdXNpY0dhbWVTZXR0bGVSZXEucHJvdG8igwMKEk11c2ljR2FtZVNldHRs",
-          "ZVJlcRIUCgtidXR0b25fbGlzdBiAAyADKA0SDgoFZGVsYXkYmwYgASgNEhEK",
-          "CW5vdGVfbGlzdBgEIAMoDRIUCgxzY29yZV9yYXRpbmcYDyABKA0SDQoFc2Nv",
-          "cmUYCSABKA0SEAoIdWdjX2d1aWQYBiABKAQSFQoNcmVzdGFydF90aW1lcxgN",
-          "IAEoDRIYCg9pc19jdXN0b21fZGVsYXkYpgMgASgIEhEKCW1heF9jb21ibxgF",
-          "IAEoDRIWCg1pc19mdWxsX2NvbWJvGKIIIAEoDRIOCgVzcGVlZBiZAyABKAIS",
-          "FQoNaXNfc2F2ZV9zY29yZRgDIAEoCBINCgVjb21ibxgBIAEoDRIWCg5tdXNp",
-          "Y19iYXNpY19pZBgHIAEoDRITCgtzdGFyX3JhdGluZxgCIAEoDRIPCgZ2b2x1",
-          "bWUYoQ8gASgNEhMKC2NvcnJlY3RfaGl0GA4gASgNEhgKD2lzX2N1c3RvbV9z",
-          "cGVlZBiFCiABKAhCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IG",
-          "cHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MusicGameSettleReq), global::MusicGameSettleReq.Parser, new[]{ "ButtonList", "Delay", "NoteList", "ScoreRating", "Score", "UgcGuid", "RestartTimes", "IsCustomDelay", "MaxCombo", "IsFullCombo", "Speed", "IsSaveScore", "Combo", "MusicBasicId", "StarRating", "Volume", "CorrectHit", "IsCustomSpeed" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for MusicGameSettleReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MusicGameSettleReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhNdXNpY0dhbWVTZXR0bGVSZXEucHJvdG8igwMKEk11c2ljR2FtZVNldHRs",
+            "ZVJlcRIUCgtidXR0b25fbGlzdBiAAyADKA0SDgoFZGVsYXkYmwYgASgNEhEK",
+            "CW5vdGVfbGlzdBgEIAMoDRIUCgxzY29yZV9yYXRpbmcYDyABKA0SDQoFc2Nv",
+            "cmUYCSABKA0SEAoIdWdjX2d1aWQYBiABKAQSFQoNcmVzdGFydF90aW1lcxgN",
+            "IAEoDRIYCg9pc19jdXN0b21fZGVsYXkYpgMgASgIEhEKCW1heF9jb21ibxgF",
+            "IAEoDRIWCg1pc19mdWxsX2NvbWJvGKIIIAEoDRIOCgVzcGVlZBiZAyABKAIS",
+            "FQoNaXNfc2F2ZV9zY29yZRgDIAEoCBINCgVjb21ibxgBIAEoDRIWCg5tdXNp",
+            "Y19iYXNpY19pZBgHIAEoDRITCgtzdGFyX3JhdGluZxgCIAEoDRIPCgZ2b2x1",
+            "bWUYoQ8gASgNEhMKC2NvcnJlY3RfaGl0GA4gASgNEhgKD2lzX2N1c3RvbV9z",
+            "cGVlZBiFCiABKAhCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.MusicGameSettleReq), global::OldProtos.MusicGameSettleReq.Parser, new[]{ "ButtonList", "Delay", "NoteList", "ScoreRating", "Score", "UgcGuid", "RestartTimes", "IsCustomDelay", "MaxCombo", "IsFullCombo", "Speed", "IsSaveScore", "Combo", "MusicBasicId", "StarRating", "Volume", "CorrectHit", "IsCustomSpeed" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 8892
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class MusicGameSettleReq : pb::IMessage<MusicGameSettleReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MusicGameSettleReq> _parser = new pb::MessageParser<MusicGameSettleReq>(() => new MusicGameSettleReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MusicGameSettleReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.MusicGameSettleReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MusicGameSettleReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MusicGameSettleReq(MusicGameSettleReq other) : this() {
+      buttonList_ = other.buttonList_.Clone();
+      delay_ = other.delay_;
+      noteList_ = other.noteList_.Clone();
+      scoreRating_ = other.scoreRating_;
+      score_ = other.score_;
+      ugcGuid_ = other.ugcGuid_;
+      restartTimes_ = other.restartTimes_;
+      isCustomDelay_ = other.isCustomDelay_;
+      maxCombo_ = other.maxCombo_;
+      isFullCombo_ = other.isFullCombo_;
+      speed_ = other.speed_;
+      isSaveScore_ = other.isSaveScore_;
+      combo_ = other.combo_;
+      musicBasicId_ = other.musicBasicId_;
+      starRating_ = other.starRating_;
+      volume_ = other.volume_;
+      correctHit_ = other.correctHit_;
+      isCustomSpeed_ = other.isCustomSpeed_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MusicGameSettleReq Clone() {
+      return new MusicGameSettleReq(this);
+    }
+
+    /// <summary>Field number for the "button_list" field.</summary>
+    public const int ButtonListFieldNumber = 384;
+    private static readonly pb::FieldCodec<uint> _repeated_buttonList_codec
+        = pb::FieldCodec.ForUInt32(3074);
+    private readonly pbc::RepeatedField<uint> buttonList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ButtonList {
+      get { return buttonList_; }
+    }
+
+    /// <summary>Field number for the "delay" field.</summary>
+    public const int DelayFieldNumber = 795;
+    private uint delay_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Delay {
+      get { return delay_; }
+      set {
+        delay_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "note_list" field.</summary>
+    public const int NoteListFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_noteList_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> noteList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> NoteList {
+      get { return noteList_; }
+    }
+
+    /// <summary>Field number for the "score_rating" field.</summary>
+    public const int ScoreRatingFieldNumber = 15;
+    private uint scoreRating_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ScoreRating {
+      get { return scoreRating_; }
+      set {
+        scoreRating_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "score" field.</summary>
+    public const int ScoreFieldNumber = 9;
+    private uint score_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Score {
+      get { return score_; }
+      set {
+        score_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ugc_guid" field.</summary>
+    public const int UgcGuidFieldNumber = 6;
+    private ulong ugcGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong UgcGuid {
+      get { return ugcGuid_; }
+      set {
+        ugcGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "restart_times" field.</summary>
+    public const int RestartTimesFieldNumber = 13;
+    private uint restartTimes_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RestartTimes {
+      get { return restartTimes_; }
+      set {
+        restartTimes_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_custom_delay" field.</summary>
+    public const int IsCustomDelayFieldNumber = 422;
+    private bool isCustomDelay_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsCustomDelay {
+      get { return isCustomDelay_; }
+      set {
+        isCustomDelay_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_combo" field.</summary>
+    public const int MaxComboFieldNumber = 5;
+    private uint maxCombo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxCombo {
+      get { return maxCombo_; }
+      set {
+        maxCombo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_full_combo" field.</summary>
+    public const int IsFullComboFieldNumber = 1058;
+    private uint isFullCombo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint IsFullCombo {
+      get { return isFullCombo_; }
+      set {
+        isFullCombo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "speed" field.</summary>
+    public const int SpeedFieldNumber = 409;
+    private float speed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float Speed {
+      get { return speed_; }
+      set {
+        speed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_save_score" field.</summary>
+    public const int IsSaveScoreFieldNumber = 3;
+    private bool isSaveScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSaveScore {
+      get { return isSaveScore_; }
+      set {
+        isSaveScore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "combo" field.</summary>
+    public const int ComboFieldNumber = 1;
+    private uint combo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Combo {
+      get { return combo_; }
+      set {
+        combo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "music_basic_id" field.</summary>
+    public const int MusicBasicIdFieldNumber = 7;
+    private uint musicBasicId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MusicBasicId {
+      get { return musicBasicId_; }
+      set {
+        musicBasicId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "star_rating" field.</summary>
+    public const int StarRatingFieldNumber = 2;
+    private uint starRating_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StarRating {
+      get { return starRating_; }
+      set {
+        starRating_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "volume" field.</summary>
+    public const int VolumeFieldNumber = 1953;
+    private uint volume_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Volume {
+      get { return volume_; }
+      set {
+        volume_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "correct_hit" field.</summary>
+    public const int CorrectHitFieldNumber = 14;
+    private uint correctHit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CorrectHit {
+      get { return correctHit_; }
+      set {
+        correctHit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_custom_speed" field.</summary>
+    public const int IsCustomSpeedFieldNumber = 1285;
+    private bool isCustomSpeed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsCustomSpeed {
+      get { return isCustomSpeed_; }
+      set {
+        isCustomSpeed_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MusicGameSettleReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MusicGameSettleReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!buttonList_.Equals(other.buttonList_)) return false;
+      if (Delay != other.Delay) return false;
+      if(!noteList_.Equals(other.noteList_)) return false;
+      if (ScoreRating != other.ScoreRating) return false;
+      if (Score != other.Score) return false;
+      if (UgcGuid != other.UgcGuid) return false;
+      if (RestartTimes != other.RestartTimes) return false;
+      if (IsCustomDelay != other.IsCustomDelay) return false;
+      if (MaxCombo != other.MaxCombo) return false;
+      if (IsFullCombo != other.IsFullCombo) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Speed, other.Speed)) return false;
+      if (IsSaveScore != other.IsSaveScore) return false;
+      if (Combo != other.Combo) return false;
+      if (MusicBasicId != other.MusicBasicId) return false;
+      if (StarRating != other.StarRating) return false;
+      if (Volume != other.Volume) return false;
+      if (CorrectHit != other.CorrectHit) return false;
+      if (IsCustomSpeed != other.IsCustomSpeed) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= buttonList_.GetHashCode();
+      if (Delay != 0) hash ^= Delay.GetHashCode();
+      hash ^= noteList_.GetHashCode();
+      if (ScoreRating != 0) hash ^= ScoreRating.GetHashCode();
+      if (Score != 0) hash ^= Score.GetHashCode();
+      if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
+      if (RestartTimes != 0) hash ^= RestartTimes.GetHashCode();
+      if (IsCustomDelay != false) hash ^= IsCustomDelay.GetHashCode();
+      if (MaxCombo != 0) hash ^= MaxCombo.GetHashCode();
+      if (IsFullCombo != 0) hash ^= IsFullCombo.GetHashCode();
+      if (Speed != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Speed);
+      if (IsSaveScore != false) hash ^= IsSaveScore.GetHashCode();
+      if (Combo != 0) hash ^= Combo.GetHashCode();
+      if (MusicBasicId != 0) hash ^= MusicBasicId.GetHashCode();
+      if (StarRating != 0) hash ^= StarRating.GetHashCode();
+      if (Volume != 0) hash ^= Volume.GetHashCode();
+      if (CorrectHit != 0) hash ^= CorrectHit.GetHashCode();
+      if (IsCustomSpeed != false) hash ^= IsCustomSpeed.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Combo != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Combo);
+      }
+      if (StarRating != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(StarRating);
+      }
+      if (IsSaveScore != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsSaveScore);
+      }
+      noteList_.WriteTo(output, _repeated_noteList_codec);
+      if (MaxCombo != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(MaxCombo);
+      }
+      if (UgcGuid != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(UgcGuid);
+      }
+      if (MusicBasicId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MusicBasicId);
+      }
+      if (Score != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Score);
+      }
+      if (RestartTimes != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(RestartTimes);
+      }
+      if (CorrectHit != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(CorrectHit);
+      }
+      if (ScoreRating != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ScoreRating);
+      }
+      buttonList_.WriteTo(output, _repeated_buttonList_codec);
+      if (Speed != 0F) {
+        output.WriteRawTag(205, 25);
+        output.WriteFloat(Speed);
+      }
+      if (IsCustomDelay != false) {
+        output.WriteRawTag(176, 26);
+        output.WriteBool(IsCustomDelay);
+      }
+      if (Delay != 0) {
+        output.WriteRawTag(216, 49);
+        output.WriteUInt32(Delay);
+      }
+      if (IsFullCombo != 0) {
+        output.WriteRawTag(144, 66);
+        output.WriteUInt32(IsFullCombo);
+      }
+      if (IsCustomSpeed != false) {
+        output.WriteRawTag(168, 80);
+        output.WriteBool(IsCustomSpeed);
+      }
+      if (Volume != 0) {
+        output.WriteRawTag(136, 122);
+        output.WriteUInt32(Volume);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Combo != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Combo);
+      }
+      if (StarRating != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(StarRating);
+      }
+      if (IsSaveScore != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsSaveScore);
+      }
+      noteList_.WriteTo(ref output, _repeated_noteList_codec);
+      if (MaxCombo != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(MaxCombo);
+      }
+      if (UgcGuid != 0UL) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(UgcGuid);
+      }
+      if (MusicBasicId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MusicBasicId);
+      }
+      if (Score != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Score);
+      }
+      if (RestartTimes != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(RestartTimes);
+      }
+      if (CorrectHit != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(CorrectHit);
+      }
+      if (ScoreRating != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ScoreRating);
+      }
+      buttonList_.WriteTo(ref output, _repeated_buttonList_codec);
+      if (Speed != 0F) {
+        output.WriteRawTag(205, 25);
+        output.WriteFloat(Speed);
+      }
+      if (IsCustomDelay != false) {
+        output.WriteRawTag(176, 26);
+        output.WriteBool(IsCustomDelay);
+      }
+      if (Delay != 0) {
+        output.WriteRawTag(216, 49);
+        output.WriteUInt32(Delay);
+      }
+      if (IsFullCombo != 0) {
+        output.WriteRawTag(144, 66);
+        output.WriteUInt32(IsFullCombo);
+      }
+      if (IsCustomSpeed != false) {
+        output.WriteRawTag(168, 80);
+        output.WriteBool(IsCustomSpeed);
+      }
+      if (Volume != 0) {
+        output.WriteRawTag(136, 122);
+        output.WriteUInt32(Volume);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += buttonList_.CalculateSize(_repeated_buttonList_codec);
+      if (Delay != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Delay);
+      }
+      size += noteList_.CalculateSize(_repeated_noteList_codec);
+      if (ScoreRating != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScoreRating);
+      }
+      if (Score != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
+      }
+      if (UgcGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
+      }
+      if (RestartTimes != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RestartTimes);
+      }
+      if (IsCustomDelay != false) {
+        size += 2 + 1;
+      }
+      if (MaxCombo != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxCombo);
+      }
+      if (IsFullCombo != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(IsFullCombo);
+      }
+      if (Speed != 0F) {
+        size += 2 + 4;
+      }
+      if (IsSaveScore != false) {
+        size += 1 + 1;
+      }
+      if (Combo != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Combo);
+      }
+      if (MusicBasicId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MusicBasicId);
+      }
+      if (StarRating != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StarRating);
+      }
+      if (Volume != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Volume);
+      }
+      if (CorrectHit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CorrectHit);
+      }
+      if (IsCustomSpeed != false) {
+        size += 2 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MusicGameSettleReq other) {
+      if (other == null) {
+        return;
+      }
+      buttonList_.Add(other.buttonList_);
+      if (other.Delay != 0) {
+        Delay = other.Delay;
+      }
+      noteList_.Add(other.noteList_);
+      if (other.ScoreRating != 0) {
+        ScoreRating = other.ScoreRating;
+      }
+      if (other.Score != 0) {
+        Score = other.Score;
+      }
+      if (other.UgcGuid != 0UL) {
+        UgcGuid = other.UgcGuid;
+      }
+      if (other.RestartTimes != 0) {
+        RestartTimes = other.RestartTimes;
+      }
+      if (other.IsCustomDelay != false) {
+        IsCustomDelay = other.IsCustomDelay;
+      }
+      if (other.MaxCombo != 0) {
+        MaxCombo = other.MaxCombo;
+      }
+      if (other.IsFullCombo != 0) {
+        IsFullCombo = other.IsFullCombo;
+      }
+      if (other.Speed != 0F) {
+        Speed = other.Speed;
+      }
+      if (other.IsSaveScore != false) {
+        IsSaveScore = other.IsSaveScore;
+      }
+      if (other.Combo != 0) {
+        Combo = other.Combo;
+      }
+      if (other.MusicBasicId != 0) {
+        MusicBasicId = other.MusicBasicId;
+      }
+      if (other.StarRating != 0) {
+        StarRating = other.StarRating;
+      }
+      if (other.Volume != 0) {
+        Volume = other.Volume;
+      }
+      if (other.CorrectHit != 0) {
+        CorrectHit = other.CorrectHit;
+      }
+      if (other.IsCustomSpeed != false) {
+        IsCustomSpeed = other.IsCustomSpeed;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Combo = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            StarRating = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            IsSaveScore = input.ReadBool();
+            break;
+          }
+          case 34:
+          case 32: {
+            noteList_.AddEntriesFrom(input, _repeated_noteList_codec);
+            break;
+          }
+          case 40: {
+            MaxCombo = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            UgcGuid = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            MusicBasicId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Score = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            RestartTimes = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            CorrectHit = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ScoreRating = input.ReadUInt32();
+            break;
+          }
+          case 3074:
+          case 3072: {
+            buttonList_.AddEntriesFrom(input, _repeated_buttonList_codec);
+            break;
+          }
+          case 3277: {
+            Speed = input.ReadFloat();
+            break;
+          }
+          case 3376: {
+            IsCustomDelay = input.ReadBool();
+            break;
+          }
+          case 6360: {
+            Delay = input.ReadUInt32();
+            break;
+          }
+          case 8464: {
+            IsFullCombo = input.ReadUInt32();
+            break;
+          }
+          case 10280: {
+            IsCustomSpeed = input.ReadBool();
+            break;
+          }
+          case 15624: {
+            Volume = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Combo = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            StarRating = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            IsSaveScore = input.ReadBool();
+            break;
+          }
+          case 34:
+          case 32: {
+            noteList_.AddEntriesFrom(ref input, _repeated_noteList_codec);
+            break;
+          }
+          case 40: {
+            MaxCombo = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            UgcGuid = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            MusicBasicId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Score = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            RestartTimes = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            CorrectHit = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ScoreRating = input.ReadUInt32();
+            break;
+          }
+          case 3074:
+          case 3072: {
+            buttonList_.AddEntriesFrom(ref input, _repeated_buttonList_codec);
+            break;
+          }
+          case 3277: {
+            Speed = input.ReadFloat();
+            break;
+          }
+          case 3376: {
+            IsCustomDelay = input.ReadBool();
+            break;
+          }
+          case 6360: {
+            Delay = input.ReadUInt32();
+            break;
+          }
+          case 8464: {
+            IsFullCombo = input.ReadUInt32();
+            break;
+          }
+          case 10280: {
+            IsCustomSpeed = input.ReadBool();
+            break;
+          }
+          case 15624: {
+            Volume = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 8892
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class MusicGameSettleReq : pb::IMessage<MusicGameSettleReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<MusicGameSettleReq> _parser = new pb::MessageParser<MusicGameSettleReq>(() => new MusicGameSettleReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<MusicGameSettleReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::MusicGameSettleReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MusicGameSettleReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MusicGameSettleReq(MusicGameSettleReq other) : this() {
-    buttonList_ = other.buttonList_.Clone();
-    delay_ = other.delay_;
-    noteList_ = other.noteList_.Clone();
-    scoreRating_ = other.scoreRating_;
-    score_ = other.score_;
-    ugcGuid_ = other.ugcGuid_;
-    restartTimes_ = other.restartTimes_;
-    isCustomDelay_ = other.isCustomDelay_;
-    maxCombo_ = other.maxCombo_;
-    isFullCombo_ = other.isFullCombo_;
-    speed_ = other.speed_;
-    isSaveScore_ = other.isSaveScore_;
-    combo_ = other.combo_;
-    musicBasicId_ = other.musicBasicId_;
-    starRating_ = other.starRating_;
-    volume_ = other.volume_;
-    correctHit_ = other.correctHit_;
-    isCustomSpeed_ = other.isCustomSpeed_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MusicGameSettleReq Clone() {
-    return new MusicGameSettleReq(this);
-  }
-
-  /// <summary>Field number for the "button_list" field.</summary>
-  public const int ButtonListFieldNumber = 384;
-  private static readonly pb::FieldCodec<uint> _repeated_buttonList_codec
-      = pb::FieldCodec.ForUInt32(3074);
-  private readonly pbc::RepeatedField<uint> buttonList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> ButtonList {
-    get { return buttonList_; }
-  }
-
-  /// <summary>Field number for the "delay" field.</summary>
-  public const int DelayFieldNumber = 795;
-  private uint delay_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Delay {
-    get { return delay_; }
-    set {
-      delay_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "note_list" field.</summary>
-  public const int NoteListFieldNumber = 4;
-  private static readonly pb::FieldCodec<uint> _repeated_noteList_codec
-      = pb::FieldCodec.ForUInt32(34);
-  private readonly pbc::RepeatedField<uint> noteList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> NoteList {
-    get { return noteList_; }
-  }
-
-  /// <summary>Field number for the "score_rating" field.</summary>
-  public const int ScoreRatingFieldNumber = 15;
-  private uint scoreRating_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ScoreRating {
-    get { return scoreRating_; }
-    set {
-      scoreRating_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "score" field.</summary>
-  public const int ScoreFieldNumber = 9;
-  private uint score_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Score {
-    get { return score_; }
-    set {
-      score_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ugc_guid" field.</summary>
-  public const int UgcGuidFieldNumber = 6;
-  private ulong ugcGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong UgcGuid {
-    get { return ugcGuid_; }
-    set {
-      ugcGuid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "restart_times" field.</summary>
-  public const int RestartTimesFieldNumber = 13;
-  private uint restartTimes_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RestartTimes {
-    get { return restartTimes_; }
-    set {
-      restartTimes_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_custom_delay" field.</summary>
-  public const int IsCustomDelayFieldNumber = 422;
-  private bool isCustomDelay_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsCustomDelay {
-    get { return isCustomDelay_; }
-    set {
-      isCustomDelay_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "max_combo" field.</summary>
-  public const int MaxComboFieldNumber = 5;
-  private uint maxCombo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MaxCombo {
-    get { return maxCombo_; }
-    set {
-      maxCombo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_full_combo" field.</summary>
-  public const int IsFullComboFieldNumber = 1058;
-  private uint isFullCombo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint IsFullCombo {
-    get { return isFullCombo_; }
-    set {
-      isFullCombo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "speed" field.</summary>
-  public const int SpeedFieldNumber = 409;
-  private float speed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float Speed {
-    get { return speed_; }
-    set {
-      speed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_save_score" field.</summary>
-  public const int IsSaveScoreFieldNumber = 3;
-  private bool isSaveScore_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsSaveScore {
-    get { return isSaveScore_; }
-    set {
-      isSaveScore_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "combo" field.</summary>
-  public const int ComboFieldNumber = 1;
-  private uint combo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Combo {
-    get { return combo_; }
-    set {
-      combo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "music_basic_id" field.</summary>
-  public const int MusicBasicIdFieldNumber = 7;
-  private uint musicBasicId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MusicBasicId {
-    get { return musicBasicId_; }
-    set {
-      musicBasicId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "star_rating" field.</summary>
-  public const int StarRatingFieldNumber = 2;
-  private uint starRating_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StarRating {
-    get { return starRating_; }
-    set {
-      starRating_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "volume" field.</summary>
-  public const int VolumeFieldNumber = 1953;
-  private uint volume_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Volume {
-    get { return volume_; }
-    set {
-      volume_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "correct_hit" field.</summary>
-  public const int CorrectHitFieldNumber = 14;
-  private uint correctHit_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CorrectHit {
-    get { return correctHit_; }
-    set {
-      correctHit_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_custom_speed" field.</summary>
-  public const int IsCustomSpeedFieldNumber = 1285;
-  private bool isCustomSpeed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsCustomSpeed {
-    get { return isCustomSpeed_; }
-    set {
-      isCustomSpeed_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as MusicGameSettleReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(MusicGameSettleReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!buttonList_.Equals(other.buttonList_)) return false;
-    if (Delay != other.Delay) return false;
-    if(!noteList_.Equals(other.noteList_)) return false;
-    if (ScoreRating != other.ScoreRating) return false;
-    if (Score != other.Score) return false;
-    if (UgcGuid != other.UgcGuid) return false;
-    if (RestartTimes != other.RestartTimes) return false;
-    if (IsCustomDelay != other.IsCustomDelay) return false;
-    if (MaxCombo != other.MaxCombo) return false;
-    if (IsFullCombo != other.IsFullCombo) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Speed, other.Speed)) return false;
-    if (IsSaveScore != other.IsSaveScore) return false;
-    if (Combo != other.Combo) return false;
-    if (MusicBasicId != other.MusicBasicId) return false;
-    if (StarRating != other.StarRating) return false;
-    if (Volume != other.Volume) return false;
-    if (CorrectHit != other.CorrectHit) return false;
-    if (IsCustomSpeed != other.IsCustomSpeed) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= buttonList_.GetHashCode();
-    if (Delay != 0) hash ^= Delay.GetHashCode();
-    hash ^= noteList_.GetHashCode();
-    if (ScoreRating != 0) hash ^= ScoreRating.GetHashCode();
-    if (Score != 0) hash ^= Score.GetHashCode();
-    if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
-    if (RestartTimes != 0) hash ^= RestartTimes.GetHashCode();
-    if (IsCustomDelay != false) hash ^= IsCustomDelay.GetHashCode();
-    if (MaxCombo != 0) hash ^= MaxCombo.GetHashCode();
-    if (IsFullCombo != 0) hash ^= IsFullCombo.GetHashCode();
-    if (Speed != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Speed);
-    if (IsSaveScore != false) hash ^= IsSaveScore.GetHashCode();
-    if (Combo != 0) hash ^= Combo.GetHashCode();
-    if (MusicBasicId != 0) hash ^= MusicBasicId.GetHashCode();
-    if (StarRating != 0) hash ^= StarRating.GetHashCode();
-    if (Volume != 0) hash ^= Volume.GetHashCode();
-    if (CorrectHit != 0) hash ^= CorrectHit.GetHashCode();
-    if (IsCustomSpeed != false) hash ^= IsCustomSpeed.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Combo != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Combo);
-    }
-    if (StarRating != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(StarRating);
-    }
-    if (IsSaveScore != false) {
-      output.WriteRawTag(24);
-      output.WriteBool(IsSaveScore);
-    }
-    noteList_.WriteTo(output, _repeated_noteList_codec);
-    if (MaxCombo != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(MaxCombo);
-    }
-    if (UgcGuid != 0UL) {
-      output.WriteRawTag(48);
-      output.WriteUInt64(UgcGuid);
-    }
-    if (MusicBasicId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(MusicBasicId);
-    }
-    if (Score != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(Score);
-    }
-    if (RestartTimes != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(RestartTimes);
-    }
-    if (CorrectHit != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(CorrectHit);
-    }
-    if (ScoreRating != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(ScoreRating);
-    }
-    buttonList_.WriteTo(output, _repeated_buttonList_codec);
-    if (Speed != 0F) {
-      output.WriteRawTag(205, 25);
-      output.WriteFloat(Speed);
-    }
-    if (IsCustomDelay != false) {
-      output.WriteRawTag(176, 26);
-      output.WriteBool(IsCustomDelay);
-    }
-    if (Delay != 0) {
-      output.WriteRawTag(216, 49);
-      output.WriteUInt32(Delay);
-    }
-    if (IsFullCombo != 0) {
-      output.WriteRawTag(144, 66);
-      output.WriteUInt32(IsFullCombo);
-    }
-    if (IsCustomSpeed != false) {
-      output.WriteRawTag(168, 80);
-      output.WriteBool(IsCustomSpeed);
-    }
-    if (Volume != 0) {
-      output.WriteRawTag(136, 122);
-      output.WriteUInt32(Volume);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Combo != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Combo);
-    }
-    if (StarRating != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(StarRating);
-    }
-    if (IsSaveScore != false) {
-      output.WriteRawTag(24);
-      output.WriteBool(IsSaveScore);
-    }
-    noteList_.WriteTo(ref output, _repeated_noteList_codec);
-    if (MaxCombo != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(MaxCombo);
-    }
-    if (UgcGuid != 0UL) {
-      output.WriteRawTag(48);
-      output.WriteUInt64(UgcGuid);
-    }
-    if (MusicBasicId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(MusicBasicId);
-    }
-    if (Score != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(Score);
-    }
-    if (RestartTimes != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(RestartTimes);
-    }
-    if (CorrectHit != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(CorrectHit);
-    }
-    if (ScoreRating != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(ScoreRating);
-    }
-    buttonList_.WriteTo(ref output, _repeated_buttonList_codec);
-    if (Speed != 0F) {
-      output.WriteRawTag(205, 25);
-      output.WriteFloat(Speed);
-    }
-    if (IsCustomDelay != false) {
-      output.WriteRawTag(176, 26);
-      output.WriteBool(IsCustomDelay);
-    }
-    if (Delay != 0) {
-      output.WriteRawTag(216, 49);
-      output.WriteUInt32(Delay);
-    }
-    if (IsFullCombo != 0) {
-      output.WriteRawTag(144, 66);
-      output.WriteUInt32(IsFullCombo);
-    }
-    if (IsCustomSpeed != false) {
-      output.WriteRawTag(168, 80);
-      output.WriteBool(IsCustomSpeed);
-    }
-    if (Volume != 0) {
-      output.WriteRawTag(136, 122);
-      output.WriteUInt32(Volume);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += buttonList_.CalculateSize(_repeated_buttonList_codec);
-    if (Delay != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Delay);
-    }
-    size += noteList_.CalculateSize(_repeated_noteList_codec);
-    if (ScoreRating != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScoreRating);
-    }
-    if (Score != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Score);
-    }
-    if (UgcGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
-    }
-    if (RestartTimes != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RestartTimes);
-    }
-    if (IsCustomDelay != false) {
-      size += 2 + 1;
-    }
-    if (MaxCombo != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxCombo);
-    }
-    if (IsFullCombo != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(IsFullCombo);
-    }
-    if (Speed != 0F) {
-      size += 2 + 4;
-    }
-    if (IsSaveScore != false) {
-      size += 1 + 1;
-    }
-    if (Combo != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Combo);
-    }
-    if (MusicBasicId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MusicBasicId);
-    }
-    if (StarRating != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StarRating);
-    }
-    if (Volume != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Volume);
-    }
-    if (CorrectHit != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CorrectHit);
-    }
-    if (IsCustomSpeed != false) {
-      size += 2 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(MusicGameSettleReq other) {
-    if (other == null) {
-      return;
-    }
-    buttonList_.Add(other.buttonList_);
-    if (other.Delay != 0) {
-      Delay = other.Delay;
-    }
-    noteList_.Add(other.noteList_);
-    if (other.ScoreRating != 0) {
-      ScoreRating = other.ScoreRating;
-    }
-    if (other.Score != 0) {
-      Score = other.Score;
-    }
-    if (other.UgcGuid != 0UL) {
-      UgcGuid = other.UgcGuid;
-    }
-    if (other.RestartTimes != 0) {
-      RestartTimes = other.RestartTimes;
-    }
-    if (other.IsCustomDelay != false) {
-      IsCustomDelay = other.IsCustomDelay;
-    }
-    if (other.MaxCombo != 0) {
-      MaxCombo = other.MaxCombo;
-    }
-    if (other.IsFullCombo != 0) {
-      IsFullCombo = other.IsFullCombo;
-    }
-    if (other.Speed != 0F) {
-      Speed = other.Speed;
-    }
-    if (other.IsSaveScore != false) {
-      IsSaveScore = other.IsSaveScore;
-    }
-    if (other.Combo != 0) {
-      Combo = other.Combo;
-    }
-    if (other.MusicBasicId != 0) {
-      MusicBasicId = other.MusicBasicId;
-    }
-    if (other.StarRating != 0) {
-      StarRating = other.StarRating;
-    }
-    if (other.Volume != 0) {
-      Volume = other.Volume;
-    }
-    if (other.CorrectHit != 0) {
-      CorrectHit = other.CorrectHit;
-    }
-    if (other.IsCustomSpeed != false) {
-      IsCustomSpeed = other.IsCustomSpeed;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          Combo = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          StarRating = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          IsSaveScore = input.ReadBool();
-          break;
-        }
-        case 34:
-        case 32: {
-          noteList_.AddEntriesFrom(input, _repeated_noteList_codec);
-          break;
-        }
-        case 40: {
-          MaxCombo = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          UgcGuid = input.ReadUInt64();
-          break;
-        }
-        case 56: {
-          MusicBasicId = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Score = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          RestartTimes = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          CorrectHit = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          ScoreRating = input.ReadUInt32();
-          break;
-        }
-        case 3074:
-        case 3072: {
-          buttonList_.AddEntriesFrom(input, _repeated_buttonList_codec);
-          break;
-        }
-        case 3277: {
-          Speed = input.ReadFloat();
-          break;
-        }
-        case 3376: {
-          IsCustomDelay = input.ReadBool();
-          break;
-        }
-        case 6360: {
-          Delay = input.ReadUInt32();
-          break;
-        }
-        case 8464: {
-          IsFullCombo = input.ReadUInt32();
-          break;
-        }
-        case 10280: {
-          IsCustomSpeed = input.ReadBool();
-          break;
-        }
-        case 15624: {
-          Volume = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          Combo = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          StarRating = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          IsSaveScore = input.ReadBool();
-          break;
-        }
-        case 34:
-        case 32: {
-          noteList_.AddEntriesFrom(ref input, _repeated_noteList_codec);
-          break;
-        }
-        case 40: {
-          MaxCombo = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          UgcGuid = input.ReadUInt64();
-          break;
-        }
-        case 56: {
-          MusicBasicId = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Score = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          RestartTimes = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          CorrectHit = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          ScoreRating = input.ReadUInt32();
-          break;
-        }
-        case 3074:
-        case 3072: {
-          buttonList_.AddEntriesFrom(ref input, _repeated_buttonList_codec);
-          break;
-        }
-        case 3277: {
-          Speed = input.ReadFloat();
-          break;
-        }
-        case 3376: {
-          IsCustomDelay = input.ReadBool();
-          break;
-        }
-        case 6360: {
-          Delay = input.ReadUInt32();
-          break;
-        }
-        case 8464: {
-          IsFullCombo = input.ReadUInt32();
-          break;
-        }
-        case 10280: {
-          IsCustomSpeed = input.ReadBool();
-          break;
-        }
-        case 15624: {
-          Volume = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

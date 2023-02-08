@@ -9,343 +9,346 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGSkillPreviewNotify.proto</summary>
-public static partial class GCGSkillPreviewNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGSkillPreviewNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGSkillPreviewNotify.proto</summary>
+  public static partial class GCGSkillPreviewNotifyReflection {
 
-  static GCGSkillPreviewNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtHQ0dTa2lsbFByZXZpZXdOb3RpZnkucHJvdG8aIUdDR1NraWxsUHJldmll",
-          "d1BsYXlDYXJkSW5mby5wcm90bxoZR0NHU2tpbGxQcmV2aWV3SW5mby5wcm90",
-          "bxoaR0NHQ2hhbmdlT25zdGFnZUluZm8ucHJvdG8i7QEKFUdDR1NraWxsUHJl",
-          "dmlld05vdGlmeRIVCg1jb250cm9sbGVyX2lkGA8gASgNEjQKDnBsYXlfY2Fy",
-          "ZF9saXN0GAsgAygLMhwuR0NHU2tpbGxQcmV2aWV3UGxheUNhcmRJbmZvEjAK",
-          "EnNraWxsX3ByZXZpZXdfbGlzdBgJIAMoCzIULkdDR1NraWxsUHJldmlld0lu",
-          "Zm8SOgobY2hhbmdlX29uc3RhZ2VfcHJldmlld19saXN0GAEgAygLMhUuR0NH",
-          "Q2hhbmdlT25zdGFnZUluZm8SGQoRb25zdGFnZV9jYXJkX2d1aWQYBSABKA1C",
-          "HgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GCGSkillPreviewPlayCardInfoReflection.Descriptor, global::GCGSkillPreviewInfoReflection.Descriptor, global::GCGChangeOnstageInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGSkillPreviewNotify), global::GCGSkillPreviewNotify.Parser, new[]{ "ControllerId", "PlayCardList", "SkillPreviewList", "ChangeOnstagePreviewList", "OnstageCardGuid" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGSkillPreviewNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGSkillPreviewNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtHQ0dTa2lsbFByZXZpZXdOb3RpZnkucHJvdG8aIUdDR1NraWxsUHJldmll",
+            "d1BsYXlDYXJkSW5mby5wcm90bxoZR0NHU2tpbGxQcmV2aWV3SW5mby5wcm90",
+            "bxoaR0NHQ2hhbmdlT25zdGFnZUluZm8ucHJvdG8i7QEKFUdDR1NraWxsUHJl",
+            "dmlld05vdGlmeRIVCg1jb250cm9sbGVyX2lkGA8gASgNEjQKDnBsYXlfY2Fy",
+            "ZF9saXN0GAsgAygLMhwuR0NHU2tpbGxQcmV2aWV3UGxheUNhcmRJbmZvEjAK",
+            "EnNraWxsX3ByZXZpZXdfbGlzdBgJIAMoCzIULkdDR1NraWxsUHJldmlld0lu",
+            "Zm8SOgobY2hhbmdlX29uc3RhZ2VfcHJldmlld19saXN0GAEgAygLMhUuR0NH",
+            "Q2hhbmdlT25zdGFnZUluZm8SGQoRb25zdGFnZV9jYXJkX2d1aWQYBSABKA1C",
+            "DKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GCGSkillPreviewPlayCardInfoReflection.Descriptor, global::OldProtos.GCGSkillPreviewInfoReflection.Descriptor, global::OldProtos.GCGChangeOnstageInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GCGSkillPreviewNotify), global::OldProtos.GCGSkillPreviewNotify.Parser, new[]{ "ControllerId", "PlayCardList", "SkillPreviewList", "ChangeOnstagePreviewList", "OnstageCardGuid" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GCGSkillPreviewNotify : pb::IMessage<GCGSkillPreviewNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGSkillPreviewNotify> _parser = new pb::MessageParser<GCGSkillPreviewNotify>(() => new GCGSkillPreviewNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGSkillPreviewNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GCGSkillPreviewNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGSkillPreviewNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGSkillPreviewNotify(GCGSkillPreviewNotify other) : this() {
+      controllerId_ = other.controllerId_;
+      playCardList_ = other.playCardList_.Clone();
+      skillPreviewList_ = other.skillPreviewList_.Clone();
+      changeOnstagePreviewList_ = other.changeOnstagePreviewList_.Clone();
+      onstageCardGuid_ = other.onstageCardGuid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGSkillPreviewNotify Clone() {
+      return new GCGSkillPreviewNotify(this);
+    }
+
+    /// <summary>Field number for the "controller_id" field.</summary>
+    public const int ControllerIdFieldNumber = 15;
+    private uint controllerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ControllerId {
+      get { return controllerId_; }
+      set {
+        controllerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "play_card_list" field.</summary>
+    public const int PlayCardListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGSkillPreviewPlayCardInfo> _repeated_playCardList_codec
+        = pb::FieldCodec.ForMessage(90, global::OldProtos.GCGSkillPreviewPlayCardInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGSkillPreviewPlayCardInfo> playCardList_ = new pbc::RepeatedField<global::OldProtos.GCGSkillPreviewPlayCardInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGSkillPreviewPlayCardInfo> PlayCardList {
+      get { return playCardList_; }
+    }
+
+    /// <summary>Field number for the "skill_preview_list" field.</summary>
+    public const int SkillPreviewListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGSkillPreviewInfo> _repeated_skillPreviewList_codec
+        = pb::FieldCodec.ForMessage(74, global::OldProtos.GCGSkillPreviewInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGSkillPreviewInfo> skillPreviewList_ = new pbc::RepeatedField<global::OldProtos.GCGSkillPreviewInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGSkillPreviewInfo> SkillPreviewList {
+      get { return skillPreviewList_; }
+    }
+
+    /// <summary>Field number for the "change_onstage_preview_list" field.</summary>
+    public const int ChangeOnstagePreviewListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGChangeOnstageInfo> _repeated_changeOnstagePreviewList_codec
+        = pb::FieldCodec.ForMessage(10, global::OldProtos.GCGChangeOnstageInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGChangeOnstageInfo> changeOnstagePreviewList_ = new pbc::RepeatedField<global::OldProtos.GCGChangeOnstageInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGChangeOnstageInfo> ChangeOnstagePreviewList {
+      get { return changeOnstagePreviewList_; }
+    }
+
+    /// <summary>Field number for the "onstage_card_guid" field.</summary>
+    public const int OnstageCardGuidFieldNumber = 5;
+    private uint onstageCardGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OnstageCardGuid {
+      get { return onstageCardGuid_; }
+      set {
+        onstageCardGuid_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGSkillPreviewNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGSkillPreviewNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ControllerId != other.ControllerId) return false;
+      if(!playCardList_.Equals(other.playCardList_)) return false;
+      if(!skillPreviewList_.Equals(other.skillPreviewList_)) return false;
+      if(!changeOnstagePreviewList_.Equals(other.changeOnstagePreviewList_)) return false;
+      if (OnstageCardGuid != other.OnstageCardGuid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
+      hash ^= playCardList_.GetHashCode();
+      hash ^= skillPreviewList_.GetHashCode();
+      hash ^= changeOnstagePreviewList_.GetHashCode();
+      if (OnstageCardGuid != 0) hash ^= OnstageCardGuid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      changeOnstagePreviewList_.WriteTo(output, _repeated_changeOnstagePreviewList_codec);
+      if (OnstageCardGuid != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(OnstageCardGuid);
+      }
+      skillPreviewList_.WriteTo(output, _repeated_skillPreviewList_codec);
+      playCardList_.WriteTo(output, _repeated_playCardList_codec);
+      if (ControllerId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ControllerId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      changeOnstagePreviewList_.WriteTo(ref output, _repeated_changeOnstagePreviewList_codec);
+      if (OnstageCardGuid != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(OnstageCardGuid);
+      }
+      skillPreviewList_.WriteTo(ref output, _repeated_skillPreviewList_codec);
+      playCardList_.WriteTo(ref output, _repeated_playCardList_codec);
+      if (ControllerId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ControllerId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ControllerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
+      }
+      size += playCardList_.CalculateSize(_repeated_playCardList_codec);
+      size += skillPreviewList_.CalculateSize(_repeated_skillPreviewList_codec);
+      size += changeOnstagePreviewList_.CalculateSize(_repeated_changeOnstagePreviewList_codec);
+      if (OnstageCardGuid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OnstageCardGuid);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGSkillPreviewNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ControllerId != 0) {
+        ControllerId = other.ControllerId;
+      }
+      playCardList_.Add(other.playCardList_);
+      skillPreviewList_.Add(other.skillPreviewList_);
+      changeOnstagePreviewList_.Add(other.changeOnstagePreviewList_);
+      if (other.OnstageCardGuid != 0) {
+        OnstageCardGuid = other.OnstageCardGuid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            changeOnstagePreviewList_.AddEntriesFrom(input, _repeated_changeOnstagePreviewList_codec);
+            break;
+          }
+          case 40: {
+            OnstageCardGuid = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            skillPreviewList_.AddEntriesFrom(input, _repeated_skillPreviewList_codec);
+            break;
+          }
+          case 90: {
+            playCardList_.AddEntriesFrom(input, _repeated_playCardList_codec);
+            break;
+          }
+          case 120: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            changeOnstagePreviewList_.AddEntriesFrom(ref input, _repeated_changeOnstagePreviewList_codec);
+            break;
+          }
+          case 40: {
+            OnstageCardGuid = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            skillPreviewList_.AddEntriesFrom(ref input, _repeated_skillPreviewList_codec);
+            break;
+          }
+          case 90: {
+            playCardList_.AddEntriesFrom(ref input, _repeated_playCardList_codec);
+            break;
+          }
+          case 120: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GCGSkillPreviewNotify : pb::IMessage<GCGSkillPreviewNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGSkillPreviewNotify> _parser = new pb::MessageParser<GCGSkillPreviewNotify>(() => new GCGSkillPreviewNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGSkillPreviewNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGSkillPreviewNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGSkillPreviewNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGSkillPreviewNotify(GCGSkillPreviewNotify other) : this() {
-    controllerId_ = other.controllerId_;
-    playCardList_ = other.playCardList_.Clone();
-    skillPreviewList_ = other.skillPreviewList_.Clone();
-    changeOnstagePreviewList_ = other.changeOnstagePreviewList_.Clone();
-    onstageCardGuid_ = other.onstageCardGuid_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGSkillPreviewNotify Clone() {
-    return new GCGSkillPreviewNotify(this);
-  }
-
-  /// <summary>Field number for the "controller_id" field.</summary>
-  public const int ControllerIdFieldNumber = 15;
-  private uint controllerId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ControllerId {
-    get { return controllerId_; }
-    set {
-      controllerId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "play_card_list" field.</summary>
-  public const int PlayCardListFieldNumber = 11;
-  private static readonly pb::FieldCodec<global::GCGSkillPreviewPlayCardInfo> _repeated_playCardList_codec
-      = pb::FieldCodec.ForMessage(90, global::GCGSkillPreviewPlayCardInfo.Parser);
-  private readonly pbc::RepeatedField<global::GCGSkillPreviewPlayCardInfo> playCardList_ = new pbc::RepeatedField<global::GCGSkillPreviewPlayCardInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGSkillPreviewPlayCardInfo> PlayCardList {
-    get { return playCardList_; }
-  }
-
-  /// <summary>Field number for the "skill_preview_list" field.</summary>
-  public const int SkillPreviewListFieldNumber = 9;
-  private static readonly pb::FieldCodec<global::GCGSkillPreviewInfo> _repeated_skillPreviewList_codec
-      = pb::FieldCodec.ForMessage(74, global::GCGSkillPreviewInfo.Parser);
-  private readonly pbc::RepeatedField<global::GCGSkillPreviewInfo> skillPreviewList_ = new pbc::RepeatedField<global::GCGSkillPreviewInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGSkillPreviewInfo> SkillPreviewList {
-    get { return skillPreviewList_; }
-  }
-
-  /// <summary>Field number for the "change_onstage_preview_list" field.</summary>
-  public const int ChangeOnstagePreviewListFieldNumber = 1;
-  private static readonly pb::FieldCodec<global::GCGChangeOnstageInfo> _repeated_changeOnstagePreviewList_codec
-      = pb::FieldCodec.ForMessage(10, global::GCGChangeOnstageInfo.Parser);
-  private readonly pbc::RepeatedField<global::GCGChangeOnstageInfo> changeOnstagePreviewList_ = new pbc::RepeatedField<global::GCGChangeOnstageInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGChangeOnstageInfo> ChangeOnstagePreviewList {
-    get { return changeOnstagePreviewList_; }
-  }
-
-  /// <summary>Field number for the "onstage_card_guid" field.</summary>
-  public const int OnstageCardGuidFieldNumber = 5;
-  private uint onstageCardGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint OnstageCardGuid {
-    get { return onstageCardGuid_; }
-    set {
-      onstageCardGuid_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGSkillPreviewNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGSkillPreviewNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ControllerId != other.ControllerId) return false;
-    if(!playCardList_.Equals(other.playCardList_)) return false;
-    if(!skillPreviewList_.Equals(other.skillPreviewList_)) return false;
-    if(!changeOnstagePreviewList_.Equals(other.changeOnstagePreviewList_)) return false;
-    if (OnstageCardGuid != other.OnstageCardGuid) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
-    hash ^= playCardList_.GetHashCode();
-    hash ^= skillPreviewList_.GetHashCode();
-    hash ^= changeOnstagePreviewList_.GetHashCode();
-    if (OnstageCardGuid != 0) hash ^= OnstageCardGuid.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    changeOnstagePreviewList_.WriteTo(output, _repeated_changeOnstagePreviewList_codec);
-    if (OnstageCardGuid != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(OnstageCardGuid);
-    }
-    skillPreviewList_.WriteTo(output, _repeated_skillPreviewList_codec);
-    playCardList_.WriteTo(output, _repeated_playCardList_codec);
-    if (ControllerId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(ControllerId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    changeOnstagePreviewList_.WriteTo(ref output, _repeated_changeOnstagePreviewList_codec);
-    if (OnstageCardGuid != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(OnstageCardGuid);
-    }
-    skillPreviewList_.WriteTo(ref output, _repeated_skillPreviewList_codec);
-    playCardList_.WriteTo(ref output, _repeated_playCardList_codec);
-    if (ControllerId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(ControllerId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ControllerId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
-    }
-    size += playCardList_.CalculateSize(_repeated_playCardList_codec);
-    size += skillPreviewList_.CalculateSize(_repeated_skillPreviewList_codec);
-    size += changeOnstagePreviewList_.CalculateSize(_repeated_changeOnstagePreviewList_codec);
-    if (OnstageCardGuid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OnstageCardGuid);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGSkillPreviewNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ControllerId != 0) {
-      ControllerId = other.ControllerId;
-    }
-    playCardList_.Add(other.playCardList_);
-    skillPreviewList_.Add(other.skillPreviewList_);
-    changeOnstagePreviewList_.Add(other.changeOnstagePreviewList_);
-    if (other.OnstageCardGuid != 0) {
-      OnstageCardGuid = other.OnstageCardGuid;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          changeOnstagePreviewList_.AddEntriesFrom(input, _repeated_changeOnstagePreviewList_codec);
-          break;
-        }
-        case 40: {
-          OnstageCardGuid = input.ReadUInt32();
-          break;
-        }
-        case 74: {
-          skillPreviewList_.AddEntriesFrom(input, _repeated_skillPreviewList_codec);
-          break;
-        }
-        case 90: {
-          playCardList_.AddEntriesFrom(input, _repeated_playCardList_codec);
-          break;
-        }
-        case 120: {
-          ControllerId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          changeOnstagePreviewList_.AddEntriesFrom(ref input, _repeated_changeOnstagePreviewList_codec);
-          break;
-        }
-        case 40: {
-          OnstageCardGuid = input.ReadUInt32();
-          break;
-        }
-        case 74: {
-          skillPreviewList_.AddEntriesFrom(ref input, _repeated_skillPreviewList_codec);
-          break;
-        }
-        case 90: {
-          playCardList_.AddEntriesFrom(ref input, _repeated_playCardList_codec);
-          break;
-        }
-        case 120: {
-          ControllerId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

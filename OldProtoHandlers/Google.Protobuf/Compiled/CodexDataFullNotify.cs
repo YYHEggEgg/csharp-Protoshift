@@ -9,321 +9,324 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CodexDataFullNotify.proto</summary>
-public static partial class CodexDataFullNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CodexDataFullNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CodexDataFullNotify.proto</summary>
+  public static partial class CodexDataFullNotifyReflection {
 
-  static CodexDataFullNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChlDb2RleERhdGFGdWxsTm90aWZ5LnByb3RvGhNDb2RleFR5cGVEYXRhLnBy",
-          "b3RvIqsBChNDb2RleERhdGFGdWxsTm90aWZ5EiMKG2xhc3RfcmVhZF9wdXNo",
-          "dGlwc19jb2RleF9pZBgEIAEoDRIjChtyZWNlbnRfdmlld2VkX3B1c2h0aXBz",
-          "X2xpc3QYAiADKA0SIgoabGFzdF9yZWFkX3B1c2h0aXBzX3R5cGVfaWQYAyAB",
-          "KA0SJgoOdHlwZV9kYXRhX2xpc3QYBiADKAsyDi5Db2RleFR5cGVEYXRhQh4K",
-          "HGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::CodexTypeDataReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::CodexDataFullNotify), global::CodexDataFullNotify.Parser, new[]{ "LastReadPushtipsCodexId", "RecentViewedPushtipsList", "LastReadPushtipsTypeId", "TypeDataList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for CodexDataFullNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CodexDataFullNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChlDb2RleERhdGFGdWxsTm90aWZ5LnByb3RvGhNDb2RleFR5cGVEYXRhLnBy",
+            "b3RvIqsBChNDb2RleERhdGFGdWxsTm90aWZ5EiMKG2xhc3RfcmVhZF9wdXNo",
+            "dGlwc19jb2RleF9pZBgEIAEoDRIjChtyZWNlbnRfdmlld2VkX3B1c2h0aXBz",
+            "X2xpc3QYAiADKA0SIgoabGFzdF9yZWFkX3B1c2h0aXBzX3R5cGVfaWQYAyAB",
+            "KA0SJgoOdHlwZV9kYXRhX2xpc3QYBiADKAsyDi5Db2RleFR5cGVEYXRhQgyq",
+            "AglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.CodexTypeDataReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.CodexDataFullNotify), global::OldProtos.CodexDataFullNotify.Parser, new[]{ "LastReadPushtipsCodexId", "RecentViewedPushtipsList", "LastReadPushtipsTypeId", "TypeDataList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 4205
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class CodexDataFullNotify : pb::IMessage<CodexDataFullNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CodexDataFullNotify> _parser = new pb::MessageParser<CodexDataFullNotify>(() => new CodexDataFullNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CodexDataFullNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.CodexDataFullNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CodexDataFullNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CodexDataFullNotify(CodexDataFullNotify other) : this() {
+      lastReadPushtipsCodexId_ = other.lastReadPushtipsCodexId_;
+      recentViewedPushtipsList_ = other.recentViewedPushtipsList_.Clone();
+      lastReadPushtipsTypeId_ = other.lastReadPushtipsTypeId_;
+      typeDataList_ = other.typeDataList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CodexDataFullNotify Clone() {
+      return new CodexDataFullNotify(this);
+    }
+
+    /// <summary>Field number for the "last_read_pushtips_codex_id" field.</summary>
+    public const int LastReadPushtipsCodexIdFieldNumber = 4;
+    private uint lastReadPushtipsCodexId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LastReadPushtipsCodexId {
+      get { return lastReadPushtipsCodexId_; }
+      set {
+        lastReadPushtipsCodexId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "recent_viewed_pushtips_list" field.</summary>
+    public const int RecentViewedPushtipsListFieldNumber = 2;
+    private static readonly pb::FieldCodec<uint> _repeated_recentViewedPushtipsList_codec
+        = pb::FieldCodec.ForUInt32(18);
+    private readonly pbc::RepeatedField<uint> recentViewedPushtipsList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> RecentViewedPushtipsList {
+      get { return recentViewedPushtipsList_; }
+    }
+
+    /// <summary>Field number for the "last_read_pushtips_type_id" field.</summary>
+    public const int LastReadPushtipsTypeIdFieldNumber = 3;
+    private uint lastReadPushtipsTypeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LastReadPushtipsTypeId {
+      get { return lastReadPushtipsTypeId_; }
+      set {
+        lastReadPushtipsTypeId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "type_data_list" field.</summary>
+    public const int TypeDataListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::OldProtos.CodexTypeData> _repeated_typeDataList_codec
+        = pb::FieldCodec.ForMessage(50, global::OldProtos.CodexTypeData.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.CodexTypeData> typeDataList_ = new pbc::RepeatedField<global::OldProtos.CodexTypeData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.CodexTypeData> TypeDataList {
+      get { return typeDataList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CodexDataFullNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CodexDataFullNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (LastReadPushtipsCodexId != other.LastReadPushtipsCodexId) return false;
+      if(!recentViewedPushtipsList_.Equals(other.recentViewedPushtipsList_)) return false;
+      if (LastReadPushtipsTypeId != other.LastReadPushtipsTypeId) return false;
+      if(!typeDataList_.Equals(other.typeDataList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (LastReadPushtipsCodexId != 0) hash ^= LastReadPushtipsCodexId.GetHashCode();
+      hash ^= recentViewedPushtipsList_.GetHashCode();
+      if (LastReadPushtipsTypeId != 0) hash ^= LastReadPushtipsTypeId.GetHashCode();
+      hash ^= typeDataList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      recentViewedPushtipsList_.WriteTo(output, _repeated_recentViewedPushtipsList_codec);
+      if (LastReadPushtipsTypeId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(LastReadPushtipsTypeId);
+      }
+      if (LastReadPushtipsCodexId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(LastReadPushtipsCodexId);
+      }
+      typeDataList_.WriteTo(output, _repeated_typeDataList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      recentViewedPushtipsList_.WriteTo(ref output, _repeated_recentViewedPushtipsList_codec);
+      if (LastReadPushtipsTypeId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(LastReadPushtipsTypeId);
+      }
+      if (LastReadPushtipsCodexId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(LastReadPushtipsCodexId);
+      }
+      typeDataList_.WriteTo(ref output, _repeated_typeDataList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (LastReadPushtipsCodexId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastReadPushtipsCodexId);
+      }
+      size += recentViewedPushtipsList_.CalculateSize(_repeated_recentViewedPushtipsList_codec);
+      if (LastReadPushtipsTypeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastReadPushtipsTypeId);
+      }
+      size += typeDataList_.CalculateSize(_repeated_typeDataList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CodexDataFullNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.LastReadPushtipsCodexId != 0) {
+        LastReadPushtipsCodexId = other.LastReadPushtipsCodexId;
+      }
+      recentViewedPushtipsList_.Add(other.recentViewedPushtipsList_);
+      if (other.LastReadPushtipsTypeId != 0) {
+        LastReadPushtipsTypeId = other.LastReadPushtipsTypeId;
+      }
+      typeDataList_.Add(other.typeDataList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18:
+          case 16: {
+            recentViewedPushtipsList_.AddEntriesFrom(input, _repeated_recentViewedPushtipsList_codec);
+            break;
+          }
+          case 24: {
+            LastReadPushtipsTypeId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            LastReadPushtipsCodexId = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            typeDataList_.AddEntriesFrom(input, _repeated_typeDataList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18:
+          case 16: {
+            recentViewedPushtipsList_.AddEntriesFrom(ref input, _repeated_recentViewedPushtipsList_codec);
+            break;
+          }
+          case 24: {
+            LastReadPushtipsTypeId = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            LastReadPushtipsCodexId = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            typeDataList_.AddEntriesFrom(ref input, _repeated_typeDataList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 4205
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class CodexDataFullNotify : pb::IMessage<CodexDataFullNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<CodexDataFullNotify> _parser = new pb::MessageParser<CodexDataFullNotify>(() => new CodexDataFullNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<CodexDataFullNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::CodexDataFullNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CodexDataFullNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CodexDataFullNotify(CodexDataFullNotify other) : this() {
-    lastReadPushtipsCodexId_ = other.lastReadPushtipsCodexId_;
-    recentViewedPushtipsList_ = other.recentViewedPushtipsList_.Clone();
-    lastReadPushtipsTypeId_ = other.lastReadPushtipsTypeId_;
-    typeDataList_ = other.typeDataList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CodexDataFullNotify Clone() {
-    return new CodexDataFullNotify(this);
-  }
-
-  /// <summary>Field number for the "last_read_pushtips_codex_id" field.</summary>
-  public const int LastReadPushtipsCodexIdFieldNumber = 4;
-  private uint lastReadPushtipsCodexId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LastReadPushtipsCodexId {
-    get { return lastReadPushtipsCodexId_; }
-    set {
-      lastReadPushtipsCodexId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "recent_viewed_pushtips_list" field.</summary>
-  public const int RecentViewedPushtipsListFieldNumber = 2;
-  private static readonly pb::FieldCodec<uint> _repeated_recentViewedPushtipsList_codec
-      = pb::FieldCodec.ForUInt32(18);
-  private readonly pbc::RepeatedField<uint> recentViewedPushtipsList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> RecentViewedPushtipsList {
-    get { return recentViewedPushtipsList_; }
-  }
-
-  /// <summary>Field number for the "last_read_pushtips_type_id" field.</summary>
-  public const int LastReadPushtipsTypeIdFieldNumber = 3;
-  private uint lastReadPushtipsTypeId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LastReadPushtipsTypeId {
-    get { return lastReadPushtipsTypeId_; }
-    set {
-      lastReadPushtipsTypeId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "type_data_list" field.</summary>
-  public const int TypeDataListFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::CodexTypeData> _repeated_typeDataList_codec
-      = pb::FieldCodec.ForMessage(50, global::CodexTypeData.Parser);
-  private readonly pbc::RepeatedField<global::CodexTypeData> typeDataList_ = new pbc::RepeatedField<global::CodexTypeData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::CodexTypeData> TypeDataList {
-    get { return typeDataList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as CodexDataFullNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(CodexDataFullNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (LastReadPushtipsCodexId != other.LastReadPushtipsCodexId) return false;
-    if(!recentViewedPushtipsList_.Equals(other.recentViewedPushtipsList_)) return false;
-    if (LastReadPushtipsTypeId != other.LastReadPushtipsTypeId) return false;
-    if(!typeDataList_.Equals(other.typeDataList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (LastReadPushtipsCodexId != 0) hash ^= LastReadPushtipsCodexId.GetHashCode();
-    hash ^= recentViewedPushtipsList_.GetHashCode();
-    if (LastReadPushtipsTypeId != 0) hash ^= LastReadPushtipsTypeId.GetHashCode();
-    hash ^= typeDataList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    recentViewedPushtipsList_.WriteTo(output, _repeated_recentViewedPushtipsList_codec);
-    if (LastReadPushtipsTypeId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(LastReadPushtipsTypeId);
-    }
-    if (LastReadPushtipsCodexId != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(LastReadPushtipsCodexId);
-    }
-    typeDataList_.WriteTo(output, _repeated_typeDataList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    recentViewedPushtipsList_.WriteTo(ref output, _repeated_recentViewedPushtipsList_codec);
-    if (LastReadPushtipsTypeId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(LastReadPushtipsTypeId);
-    }
-    if (LastReadPushtipsCodexId != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(LastReadPushtipsCodexId);
-    }
-    typeDataList_.WriteTo(ref output, _repeated_typeDataList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (LastReadPushtipsCodexId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastReadPushtipsCodexId);
-    }
-    size += recentViewedPushtipsList_.CalculateSize(_repeated_recentViewedPushtipsList_codec);
-    if (LastReadPushtipsTypeId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastReadPushtipsTypeId);
-    }
-    size += typeDataList_.CalculateSize(_repeated_typeDataList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(CodexDataFullNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.LastReadPushtipsCodexId != 0) {
-      LastReadPushtipsCodexId = other.LastReadPushtipsCodexId;
-    }
-    recentViewedPushtipsList_.Add(other.recentViewedPushtipsList_);
-    if (other.LastReadPushtipsTypeId != 0) {
-      LastReadPushtipsTypeId = other.LastReadPushtipsTypeId;
-    }
-    typeDataList_.Add(other.typeDataList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18:
-        case 16: {
-          recentViewedPushtipsList_.AddEntriesFrom(input, _repeated_recentViewedPushtipsList_codec);
-          break;
-        }
-        case 24: {
-          LastReadPushtipsTypeId = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          LastReadPushtipsCodexId = input.ReadUInt32();
-          break;
-        }
-        case 50: {
-          typeDataList_.AddEntriesFrom(input, _repeated_typeDataList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18:
-        case 16: {
-          recentViewedPushtipsList_.AddEntriesFrom(ref input, _repeated_recentViewedPushtipsList_codec);
-          break;
-        }
-        case 24: {
-          LastReadPushtipsTypeId = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          LastReadPushtipsCodexId = input.ReadUInt32();
-          break;
-        }
-        case 50: {
-          typeDataList_.AddEntriesFrom(ref input, _repeated_typeDataList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

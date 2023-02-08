@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "AbilitySyncStateInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message TeamEntityInfo {
   uint32 team_entity_id = 3;

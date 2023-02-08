@@ -19,7 +19,7 @@ syntax = "proto3";
 import "HitColliderType.proto";
 import "Vector.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message HitCollision {
   int32 hit_box_index = 8;

@@ -9,316 +9,319 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FishingGallerySettleNotify.proto</summary>
-public static partial class FishingGallerySettleNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FishingGallerySettleNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FishingGallerySettleNotify.proto</summary>
+  public static partial class FishingGallerySettleNotifyReflection {
 
-  static FishingGallerySettleNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBGaXNoaW5nR2FsbGVyeVNldHRsZU5vdGlmeS5wcm90bxoeRmlzaGluZ0dh",
-          "bGxlcnlTZXR0bGVJbmZvLnByb3RvInIKGkZpc2hpbmdHYWxsZXJ5U2V0dGxl",
-          "Tm90aWZ5EhIKCmdhbGxlcnlfaWQYBSABKA0SLgoLc2V0dGxlX2luZm8YBCAB",
-          "KAsyGS5GaXNoaW5nR2FsbGVyeVNldHRsZUluZm8SEAoIbGV2ZWxfaWQYDCAB",
-          "KA1CFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::FishingGallerySettleInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FishingGallerySettleNotify), global::FishingGallerySettleNotify.Parser, new[]{ "GalleryId", "SettleInfo", "LevelId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for FishingGallerySettleNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FishingGallerySettleNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBGaXNoaW5nR2FsbGVyeVNldHRsZU5vdGlmeS5wcm90bxoeRmlzaGluZ0dh",
+            "bGxlcnlTZXR0bGVJbmZvLnByb3RvInIKGkZpc2hpbmdHYWxsZXJ5U2V0dGxl",
+            "Tm90aWZ5EhIKCmdhbGxlcnlfaWQYBSABKA0SLgoLc2V0dGxlX2luZm8YBCAB",
+            "KAsyGS5GaXNoaW5nR2FsbGVyeVNldHRsZUluZm8SEAoIbGV2ZWxfaWQYDCAB",
+            "KA1CDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.FishingGallerySettleInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.FishingGallerySettleNotify), global::NewProtos.FishingGallerySettleNotify.Parser, new[]{ "GalleryId", "SettleInfo", "LevelId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8464;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class FishingGallerySettleNotify : pb::IMessage<FishingGallerySettleNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FishingGallerySettleNotify> _parser = new pb::MessageParser<FishingGallerySettleNotify>(() => new FishingGallerySettleNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FishingGallerySettleNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.FishingGallerySettleNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FishingGallerySettleNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FishingGallerySettleNotify(FishingGallerySettleNotify other) : this() {
+      galleryId_ = other.galleryId_;
+      settleInfo_ = other.settleInfo_ != null ? other.settleInfo_.Clone() : null;
+      levelId_ = other.levelId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FishingGallerySettleNotify Clone() {
+      return new FishingGallerySettleNotify(this);
+    }
+
+    /// <summary>Field number for the "gallery_id" field.</summary>
+    public const int GalleryIdFieldNumber = 5;
+    private uint galleryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GalleryId {
+      get { return galleryId_; }
+      set {
+        galleryId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "settle_info" field.</summary>
+    public const int SettleInfoFieldNumber = 4;
+    private global::NewProtos.FishingGallerySettleInfo settleInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.FishingGallerySettleInfo SettleInfo {
+      get { return settleInfo_; }
+      set {
+        settleInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level_id" field.</summary>
+    public const int LevelIdFieldNumber = 12;
+    private uint levelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LevelId {
+      get { return levelId_; }
+      set {
+        levelId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FishingGallerySettleNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FishingGallerySettleNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (GalleryId != other.GalleryId) return false;
+      if (!object.Equals(SettleInfo, other.SettleInfo)) return false;
+      if (LevelId != other.LevelId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
+      if (settleInfo_ != null) hash ^= SettleInfo.GetHashCode();
+      if (LevelId != 0) hash ^= LevelId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (settleInfo_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(SettleInfo);
+      }
+      if (GalleryId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(GalleryId);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(LevelId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (settleInfo_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(SettleInfo);
+      }
+      if (GalleryId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(GalleryId);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(LevelId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (GalleryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
+      }
+      if (settleInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SettleInfo);
+      }
+      if (LevelId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FishingGallerySettleNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.GalleryId != 0) {
+        GalleryId = other.GalleryId;
+      }
+      if (other.settleInfo_ != null) {
+        if (settleInfo_ == null) {
+          SettleInfo = new global::NewProtos.FishingGallerySettleInfo();
+        }
+        SettleInfo.MergeFrom(other.SettleInfo);
+      }
+      if (other.LevelId != 0) {
+        LevelId = other.LevelId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 34: {
+            if (settleInfo_ == null) {
+              SettleInfo = new global::NewProtos.FishingGallerySettleInfo();
+            }
+            input.ReadMessage(SettleInfo);
+            break;
+          }
+          case 40: {
+            GalleryId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            LevelId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 34: {
+            if (settleInfo_ == null) {
+              SettleInfo = new global::NewProtos.FishingGallerySettleInfo();
+            }
+            input.ReadMessage(SettleInfo);
+            break;
+          }
+          case 40: {
+            GalleryId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            LevelId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 8464;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class FishingGallerySettleNotify : pb::IMessage<FishingGallerySettleNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<FishingGallerySettleNotify> _parser = new pb::MessageParser<FishingGallerySettleNotify>(() => new FishingGallerySettleNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<FishingGallerySettleNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::FishingGallerySettleNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FishingGallerySettleNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FishingGallerySettleNotify(FishingGallerySettleNotify other) : this() {
-    galleryId_ = other.galleryId_;
-    settleInfo_ = other.settleInfo_ != null ? other.settleInfo_.Clone() : null;
-    levelId_ = other.levelId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FishingGallerySettleNotify Clone() {
-    return new FishingGallerySettleNotify(this);
-  }
-
-  /// <summary>Field number for the "gallery_id" field.</summary>
-  public const int GalleryIdFieldNumber = 5;
-  private uint galleryId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GalleryId {
-    get { return galleryId_; }
-    set {
-      galleryId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "settle_info" field.</summary>
-  public const int SettleInfoFieldNumber = 4;
-  private global::FishingGallerySettleInfo settleInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::FishingGallerySettleInfo SettleInfo {
-    get { return settleInfo_; }
-    set {
-      settleInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "level_id" field.</summary>
-  public const int LevelIdFieldNumber = 12;
-  private uint levelId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LevelId {
-    get { return levelId_; }
-    set {
-      levelId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as FishingGallerySettleNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(FishingGallerySettleNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (GalleryId != other.GalleryId) return false;
-    if (!object.Equals(SettleInfo, other.SettleInfo)) return false;
-    if (LevelId != other.LevelId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
-    if (settleInfo_ != null) hash ^= SettleInfo.GetHashCode();
-    if (LevelId != 0) hash ^= LevelId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (settleInfo_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(SettleInfo);
-    }
-    if (GalleryId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(GalleryId);
-    }
-    if (LevelId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(LevelId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (settleInfo_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(SettleInfo);
-    }
-    if (GalleryId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(GalleryId);
-    }
-    if (LevelId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(LevelId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (GalleryId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
-    }
-    if (settleInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(SettleInfo);
-    }
-    if (LevelId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(FishingGallerySettleNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.GalleryId != 0) {
-      GalleryId = other.GalleryId;
-    }
-    if (other.settleInfo_ != null) {
-      if (settleInfo_ == null) {
-        SettleInfo = new global::FishingGallerySettleInfo();
-      }
-      SettleInfo.MergeFrom(other.SettleInfo);
-    }
-    if (other.LevelId != 0) {
-      LevelId = other.LevelId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 34: {
-          if (settleInfo_ == null) {
-            SettleInfo = new global::FishingGallerySettleInfo();
-          }
-          input.ReadMessage(SettleInfo);
-          break;
-        }
-        case 40: {
-          GalleryId = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          LevelId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 34: {
-          if (settleInfo_ == null) {
-            SettleInfo = new global::FishingGallerySettleInfo();
-          }
-          input.ReadMessage(SettleInfo);
-          break;
-        }
-        case 40: {
-          GalleryId = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          LevelId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -20,7 +20,7 @@ import "CoopCg.proto";
 import "CoopPoint.proto";
 import "CoopReward.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message CoopChapter {
   repeated CoopCg coop_cg_list = 1;

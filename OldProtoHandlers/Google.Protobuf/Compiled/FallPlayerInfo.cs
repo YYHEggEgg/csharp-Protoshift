@@ -9,363 +9,365 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FallPlayerInfo.proto</summary>
-public static partial class FallPlayerInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FallPlayerInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FallPlayerInfo.proto</summary>
+  public static partial class FallPlayerInfoReflection {
 
-  static FallPlayerInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRGYWxsUGxheWVySW5mby5wcm90byLWAQoORmFsbFBsYXllckluZm8SEQoJ",
-          "dGltZV9jb3N0GAsgASgNEgsKA3VpZBgJIAEoDRJEChRiYWxsX2NhdGNoX2Nv",
-          "dW50X21hcBgGIAMoCzImLkZhbGxQbGF5ZXJJbmZvLkJhbGxDYXRjaENvdW50",
-          "TWFwRW50cnkSEQoJY3VyX3Njb3JlGAcgASgNEhEKCWlzX2dyb3VuZBgPIAEo",
-          "CBo4ChZCYWxsQ2F0Y2hDb3VudE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2",
-          "YWx1ZRgCIAEoDToCOAFCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90",
-          "b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FallPlayerInfo), global::FallPlayerInfo.Parser, new[]{ "TimeCost", "Uid", "BallCatchCountMap", "CurScore", "IsGround" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for FallPlayerInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FallPlayerInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRGYWxsUGxheWVySW5mby5wcm90byLWAQoORmFsbFBsYXllckluZm8SEQoJ",
+            "dGltZV9jb3N0GAsgASgNEgsKA3VpZBgJIAEoDRJEChRiYWxsX2NhdGNoX2Nv",
+            "dW50X21hcBgGIAMoCzImLkZhbGxQbGF5ZXJJbmZvLkJhbGxDYXRjaENvdW50",
+            "TWFwRW50cnkSEQoJY3VyX3Njb3JlGAcgASgNEhEKCWlzX2dyb3VuZBgPIAEo",
+            "CBo4ChZCYWxsQ2F0Y2hDb3VudE1hcEVudHJ5EgsKA2tleRgBIAEoDRINCgV2",
+            "YWx1ZRgCIAEoDToCOAFCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.FallPlayerInfo), global::OldProtos.FallPlayerInfo.Parser, new[]{ "TimeCost", "Uid", "BallCatchCountMap", "CurScore", "IsGround" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class FallPlayerInfo : pb::IMessage<FallPlayerInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FallPlayerInfo> _parser = new pb::MessageParser<FallPlayerInfo>(() => new FallPlayerInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FallPlayerInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.FallPlayerInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FallPlayerInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FallPlayerInfo(FallPlayerInfo other) : this() {
+      timeCost_ = other.timeCost_;
+      uid_ = other.uid_;
+      ballCatchCountMap_ = other.ballCatchCountMap_.Clone();
+      curScore_ = other.curScore_;
+      isGround_ = other.isGround_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FallPlayerInfo Clone() {
+      return new FallPlayerInfo(this);
+    }
+
+    /// <summary>Field number for the "time_cost" field.</summary>
+    public const int TimeCostFieldNumber = 11;
+    private uint timeCost_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TimeCost {
+      get { return timeCost_; }
+      set {
+        timeCost_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 9;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ball_catch_count_map" field.</summary>
+    public const int BallCatchCountMapFieldNumber = 6;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_ballCatchCountMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 50);
+    private readonly pbc::MapField<uint, uint> ballCatchCountMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> BallCatchCountMap {
+      get { return ballCatchCountMap_; }
+    }
+
+    /// <summary>Field number for the "cur_score" field.</summary>
+    public const int CurScoreFieldNumber = 7;
+    private uint curScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurScore {
+      get { return curScore_; }
+      set {
+        curScore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_ground" field.</summary>
+    public const int IsGroundFieldNumber = 15;
+    private bool isGround_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsGround {
+      get { return isGround_; }
+      set {
+        isGround_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FallPlayerInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FallPlayerInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (TimeCost != other.TimeCost) return false;
+      if (Uid != other.Uid) return false;
+      if (!BallCatchCountMap.Equals(other.BallCatchCountMap)) return false;
+      if (CurScore != other.CurScore) return false;
+      if (IsGround != other.IsGround) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (TimeCost != 0) hash ^= TimeCost.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      hash ^= BallCatchCountMap.GetHashCode();
+      if (CurScore != 0) hash ^= CurScore.GetHashCode();
+      if (IsGround != false) hash ^= IsGround.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      ballCatchCountMap_.WriteTo(output, _map_ballCatchCountMap_codec);
+      if (CurScore != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(CurScore);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Uid);
+      }
+      if (TimeCost != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(TimeCost);
+      }
+      if (IsGround != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsGround);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      ballCatchCountMap_.WriteTo(ref output, _map_ballCatchCountMap_codec);
+      if (CurScore != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(CurScore);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Uid);
+      }
+      if (TimeCost != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(TimeCost);
+      }
+      if (IsGround != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsGround);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (TimeCost != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TimeCost);
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      size += ballCatchCountMap_.CalculateSize(_map_ballCatchCountMap_codec);
+      if (CurScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
+      }
+      if (IsGround != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FallPlayerInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.TimeCost != 0) {
+        TimeCost = other.TimeCost;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      ballCatchCountMap_.Add(other.ballCatchCountMap_);
+      if (other.CurScore != 0) {
+        CurScore = other.CurScore;
+      }
+      if (other.IsGround != false) {
+        IsGround = other.IsGround;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 50: {
+            ballCatchCountMap_.AddEntriesFrom(input, _map_ballCatchCountMap_codec);
+            break;
+          }
+          case 56: {
+            CurScore = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            TimeCost = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            IsGround = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 50: {
+            ballCatchCountMap_.AddEntriesFrom(ref input, _map_ballCatchCountMap_codec);
+            break;
+          }
+          case 56: {
+            CurScore = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            TimeCost = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            IsGround = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class FallPlayerInfo : pb::IMessage<FallPlayerInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<FallPlayerInfo> _parser = new pb::MessageParser<FallPlayerInfo>(() => new FallPlayerInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<FallPlayerInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::FallPlayerInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FallPlayerInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FallPlayerInfo(FallPlayerInfo other) : this() {
-    timeCost_ = other.timeCost_;
-    uid_ = other.uid_;
-    ballCatchCountMap_ = other.ballCatchCountMap_.Clone();
-    curScore_ = other.curScore_;
-    isGround_ = other.isGround_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FallPlayerInfo Clone() {
-    return new FallPlayerInfo(this);
-  }
-
-  /// <summary>Field number for the "time_cost" field.</summary>
-  public const int TimeCostFieldNumber = 11;
-  private uint timeCost_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TimeCost {
-    get { return timeCost_; }
-    set {
-      timeCost_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "uid" field.</summary>
-  public const int UidFieldNumber = 9;
-  private uint uid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Uid {
-    get { return uid_; }
-    set {
-      uid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ball_catch_count_map" field.</summary>
-  public const int BallCatchCountMapFieldNumber = 6;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_ballCatchCountMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 50);
-  private readonly pbc::MapField<uint, uint> ballCatchCountMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> BallCatchCountMap {
-    get { return ballCatchCountMap_; }
-  }
-
-  /// <summary>Field number for the "cur_score" field.</summary>
-  public const int CurScoreFieldNumber = 7;
-  private uint curScore_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurScore {
-    get { return curScore_; }
-    set {
-      curScore_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_ground" field.</summary>
-  public const int IsGroundFieldNumber = 15;
-  private bool isGround_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsGround {
-    get { return isGround_; }
-    set {
-      isGround_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as FallPlayerInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(FallPlayerInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (TimeCost != other.TimeCost) return false;
-    if (Uid != other.Uid) return false;
-    if (!BallCatchCountMap.Equals(other.BallCatchCountMap)) return false;
-    if (CurScore != other.CurScore) return false;
-    if (IsGround != other.IsGround) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (TimeCost != 0) hash ^= TimeCost.GetHashCode();
-    if (Uid != 0) hash ^= Uid.GetHashCode();
-    hash ^= BallCatchCountMap.GetHashCode();
-    if (CurScore != 0) hash ^= CurScore.GetHashCode();
-    if (IsGround != false) hash ^= IsGround.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    ballCatchCountMap_.WriteTo(output, _map_ballCatchCountMap_codec);
-    if (CurScore != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(CurScore);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(Uid);
-    }
-    if (TimeCost != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(TimeCost);
-    }
-    if (IsGround != false) {
-      output.WriteRawTag(120);
-      output.WriteBool(IsGround);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    ballCatchCountMap_.WriteTo(ref output, _map_ballCatchCountMap_codec);
-    if (CurScore != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(CurScore);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(Uid);
-    }
-    if (TimeCost != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(TimeCost);
-    }
-    if (IsGround != false) {
-      output.WriteRawTag(120);
-      output.WriteBool(IsGround);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (TimeCost != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TimeCost);
-    }
-    if (Uid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-    }
-    size += ballCatchCountMap_.CalculateSize(_map_ballCatchCountMap_codec);
-    if (CurScore != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
-    }
-    if (IsGround != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(FallPlayerInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.TimeCost != 0) {
-      TimeCost = other.TimeCost;
-    }
-    if (other.Uid != 0) {
-      Uid = other.Uid;
-    }
-    ballCatchCountMap_.Add(other.ballCatchCountMap_);
-    if (other.CurScore != 0) {
-      CurScore = other.CurScore;
-    }
-    if (other.IsGround != false) {
-      IsGround = other.IsGround;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 50: {
-          ballCatchCountMap_.AddEntriesFrom(input, _map_ballCatchCountMap_codec);
-          break;
-        }
-        case 56: {
-          CurScore = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          TimeCost = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          IsGround = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 50: {
-          ballCatchCountMap_.AddEntriesFrom(ref input, _map_ballCatchCountMap_codec);
-          break;
-        }
-        case 56: {
-          CurScore = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          TimeCost = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          IsGround = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

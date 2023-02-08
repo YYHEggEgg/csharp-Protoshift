@@ -9,260 +9,262 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GearActivityDetailInfo.proto</summary>
-public static partial class GearActivityDetailInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GearActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GearActivityDetailInfo.proto</summary>
+  public static partial class GearActivityDetailInfoReflection {
 
-  static GearActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChxHZWFyQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhNHZWFyTGV2ZWxEYXRh",
-          "LnByb3RvGhdKaWdzYXdQaWN0dXJlRGF0YS5wcm90byJ3ChZHZWFyQWN0aXZp",
-          "dHlEZXRhaWxJbmZvEiwKFGdlYXJfbGV2ZWxfZGF0YV9saXN0GA4gAygLMg4u",
-          "R2VhckxldmVsRGF0YRIvChNqaWdzYXdfcGljdHVyZV9kYXRhGAggASgLMhIu",
-          "Smlnc2F3UGljdHVyZURhdGFCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRw",
-          "cm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GearLevelDataReflection.Descriptor, global::JigsawPictureDataReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GearActivityDetailInfo), global::GearActivityDetailInfo.Parser, new[]{ "GearLevelDataList", "JigsawPictureData" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GearActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GearActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChxHZWFyQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhNHZWFyTGV2ZWxEYXRh",
+            "LnByb3RvGhdKaWdzYXdQaWN0dXJlRGF0YS5wcm90byJ3ChZHZWFyQWN0aXZp",
+            "dHlEZXRhaWxJbmZvEiwKFGdlYXJfbGV2ZWxfZGF0YV9saXN0GA4gAygLMg4u",
+            "R2VhckxldmVsRGF0YRIvChNqaWdzYXdfcGljdHVyZV9kYXRhGAggASgLMhIu",
+            "Smlnc2F3UGljdHVyZURhdGFCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GearLevelDataReflection.Descriptor, global::OldProtos.JigsawPictureDataReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GearActivityDetailInfo), global::OldProtos.GearActivityDetailInfo.Parser, new[]{ "GearLevelDataList", "JigsawPictureData" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GearActivityDetailInfo : pb::IMessage<GearActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GearActivityDetailInfo> _parser = new pb::MessageParser<GearActivityDetailInfo>(() => new GearActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GearActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GearActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GearActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GearActivityDetailInfo(GearActivityDetailInfo other) : this() {
+      gearLevelDataList_ = other.gearLevelDataList_.Clone();
+      jigsawPictureData_ = other.jigsawPictureData_ != null ? other.jigsawPictureData_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GearActivityDetailInfo Clone() {
+      return new GearActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "gear_level_data_list" field.</summary>
+    public const int GearLevelDataListFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::OldProtos.GearLevelData> _repeated_gearLevelDataList_codec
+        = pb::FieldCodec.ForMessage(114, global::OldProtos.GearLevelData.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GearLevelData> gearLevelDataList_ = new pbc::RepeatedField<global::OldProtos.GearLevelData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GearLevelData> GearLevelDataList {
+      get { return gearLevelDataList_; }
+    }
+
+    /// <summary>Field number for the "jigsaw_picture_data" field.</summary>
+    public const int JigsawPictureDataFieldNumber = 8;
+    private global::OldProtos.JigsawPictureData jigsawPictureData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.JigsawPictureData JigsawPictureData {
+      get { return jigsawPictureData_; }
+      set {
+        jigsawPictureData_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GearActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GearActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!gearLevelDataList_.Equals(other.gearLevelDataList_)) return false;
+      if (!object.Equals(JigsawPictureData, other.JigsawPictureData)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= gearLevelDataList_.GetHashCode();
+      if (jigsawPictureData_ != null) hash ^= JigsawPictureData.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (jigsawPictureData_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(JigsawPictureData);
+      }
+      gearLevelDataList_.WriteTo(output, _repeated_gearLevelDataList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (jigsawPictureData_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(JigsawPictureData);
+      }
+      gearLevelDataList_.WriteTo(ref output, _repeated_gearLevelDataList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += gearLevelDataList_.CalculateSize(_repeated_gearLevelDataList_codec);
+      if (jigsawPictureData_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(JigsawPictureData);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GearActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      gearLevelDataList_.Add(other.gearLevelDataList_);
+      if (other.jigsawPictureData_ != null) {
+        if (jigsawPictureData_ == null) {
+          JigsawPictureData = new global::OldProtos.JigsawPictureData();
+        }
+        JigsawPictureData.MergeFrom(other.JigsawPictureData);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 66: {
+            if (jigsawPictureData_ == null) {
+              JigsawPictureData = new global::OldProtos.JigsawPictureData();
+            }
+            input.ReadMessage(JigsawPictureData);
+            break;
+          }
+          case 114: {
+            gearLevelDataList_.AddEntriesFrom(input, _repeated_gearLevelDataList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 66: {
+            if (jigsawPictureData_ == null) {
+              JigsawPictureData = new global::OldProtos.JigsawPictureData();
+            }
+            input.ReadMessage(JigsawPictureData);
+            break;
+          }
+          case 114: {
+            gearLevelDataList_.AddEntriesFrom(ref input, _repeated_gearLevelDataList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GearActivityDetailInfo : pb::IMessage<GearActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GearActivityDetailInfo> _parser = new pb::MessageParser<GearActivityDetailInfo>(() => new GearActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GearActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GearActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GearActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GearActivityDetailInfo(GearActivityDetailInfo other) : this() {
-    gearLevelDataList_ = other.gearLevelDataList_.Clone();
-    jigsawPictureData_ = other.jigsawPictureData_ != null ? other.jigsawPictureData_.Clone() : null;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GearActivityDetailInfo Clone() {
-    return new GearActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "gear_level_data_list" field.</summary>
-  public const int GearLevelDataListFieldNumber = 14;
-  private static readonly pb::FieldCodec<global::GearLevelData> _repeated_gearLevelDataList_codec
-      = pb::FieldCodec.ForMessage(114, global::GearLevelData.Parser);
-  private readonly pbc::RepeatedField<global::GearLevelData> gearLevelDataList_ = new pbc::RepeatedField<global::GearLevelData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GearLevelData> GearLevelDataList {
-    get { return gearLevelDataList_; }
-  }
-
-  /// <summary>Field number for the "jigsaw_picture_data" field.</summary>
-  public const int JigsawPictureDataFieldNumber = 8;
-  private global::JigsawPictureData jigsawPictureData_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::JigsawPictureData JigsawPictureData {
-    get { return jigsawPictureData_; }
-    set {
-      jigsawPictureData_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GearActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GearActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!gearLevelDataList_.Equals(other.gearLevelDataList_)) return false;
-    if (!object.Equals(JigsawPictureData, other.JigsawPictureData)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= gearLevelDataList_.GetHashCode();
-    if (jigsawPictureData_ != null) hash ^= JigsawPictureData.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (jigsawPictureData_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(JigsawPictureData);
-    }
-    gearLevelDataList_.WriteTo(output, _repeated_gearLevelDataList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (jigsawPictureData_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(JigsawPictureData);
-    }
-    gearLevelDataList_.WriteTo(ref output, _repeated_gearLevelDataList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += gearLevelDataList_.CalculateSize(_repeated_gearLevelDataList_codec);
-    if (jigsawPictureData_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(JigsawPictureData);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GearActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    gearLevelDataList_.Add(other.gearLevelDataList_);
-    if (other.jigsawPictureData_ != null) {
-      if (jigsawPictureData_ == null) {
-        JigsawPictureData = new global::JigsawPictureData();
-      }
-      JigsawPictureData.MergeFrom(other.JigsawPictureData);
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 66: {
-          if (jigsawPictureData_ == null) {
-            JigsawPictureData = new global::JigsawPictureData();
-          }
-          input.ReadMessage(JigsawPictureData);
-          break;
-        }
-        case 114: {
-          gearLevelDataList_.AddEntriesFrom(input, _repeated_gearLevelDataList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 66: {
-          if (jigsawPictureData_ == null) {
-            JigsawPictureData = new global::JigsawPictureData();
-          }
-          input.ReadMessage(JigsawPictureData);
-          break;
-        }
-        case 114: {
-          gearLevelDataList_.AddEntriesFrom(ref input, _repeated_gearLevelDataList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

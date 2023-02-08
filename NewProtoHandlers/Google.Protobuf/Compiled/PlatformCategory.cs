@@ -9,38 +9,41 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from PlatformCategory.proto</summary>
-public static partial class PlatformCategoryReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for PlatformCategory.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from PlatformCategory.proto</summary>
+  public static partial class PlatformCategoryReflection {
 
-  static PlatformCategoryReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZQbGF0Zm9ybUNhdGVnb3J5LnByb3RvKmQKEFBsYXRmb3JtQ2F0ZWdvcnkS",
-          "GgoWUExBVEZPUk1fQ0FURUdPUllfTk9ORRAAEhkKFVBMQVRGT1JNX0NBVEVH",
-          "T1JZX1BDTRABEhkKFVBMQVRGT1JNX0NBVEVHT1JZX1BTThACQhYKFG9yZy5z",
-          "b3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::PlatformCategory), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for PlatformCategory.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static PlatformCategoryReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZQbGF0Zm9ybUNhdGVnb3J5LnByb3RvKmQKEFBsYXRmb3JtQ2F0ZWdvcnkS",
+            "GgoWUExBVEZPUk1fQ0FURUdPUllfTk9ORRAAEhkKFVBMQVRGT1JNX0NBVEVH",
+            "T1JZX1BDTRABEhkKFVBMQVRGT1JNX0NBVEVHT1JZX1BTThACQgyqAglOZXdQ",
+            "cm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.PlatformCategory), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum PlatformCategory {
+    [pbr::OriginalName("PLATFORM_CATEGORY_NONE")] None = 0,
+    [pbr::OriginalName("PLATFORM_CATEGORY_PCM")] Pcm = 1,
+    [pbr::OriginalName("PLATFORM_CATEGORY_PSN")] Psn = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum PlatformCategory {
-  [pbr::OriginalName("PLATFORM_CATEGORY_NONE")] None = 0,
-  [pbr::OriginalName("PLATFORM_CATEGORY_PCM")] Pcm = 1,
-  [pbr::OriginalName("PLATFORM_CATEGORY_PSN")] Psn = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

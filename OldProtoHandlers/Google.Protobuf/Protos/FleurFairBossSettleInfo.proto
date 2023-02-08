@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "FleurFairPlayerStatInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message FleurFairBossSettleInfo {
   uint32 reward_token_num = 15;

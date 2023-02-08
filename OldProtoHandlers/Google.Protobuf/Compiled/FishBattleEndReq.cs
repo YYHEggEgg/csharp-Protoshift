@@ -9,304 +9,307 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FishBattleEndReq.proto</summary>
-public static partial class FishBattleEndReqReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FishBattleEndReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FishBattleEndReq.proto</summary>
+  public static partial class FishBattleEndReqReflection {
 
-  static FishBattleEndReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZGaXNoQmF0dGxlRW5kUmVxLnByb3RvGhZGaXNoQmF0dGxlUmVzdWx0LnBy",
-          "b3RvIm0KEEZpc2hCYXR0bGVFbmRSZXESFgoObWF4X2JvbnVzX3RpbWUYAyAB",
-          "KA0SKAoNYmF0dGxlX3Jlc3VsdBgKIAEoDjIRLkZpc2hCYXR0bGVSZXN1bHQS",
-          "FwoPaXNfYWx3YXlzX2JvbnVzGAsgASgIQh4KHGVtdS5ncmFzc2N1dHRlci5u",
-          "ZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::FishBattleResultReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FishBattleEndReq), global::FishBattleEndReq.Parser, new[]{ "MaxBonusTime", "BattleResult", "IsAlwaysBonus" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for FishBattleEndReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FishBattleEndReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZGaXNoQmF0dGxlRW5kUmVxLnByb3RvGhZGaXNoQmF0dGxlUmVzdWx0LnBy",
+            "b3RvIm0KEEZpc2hCYXR0bGVFbmRSZXESFgoObWF4X2JvbnVzX3RpbWUYAyAB",
+            "KA0SKAoNYmF0dGxlX3Jlc3VsdBgKIAEoDjIRLkZpc2hCYXR0bGVSZXN1bHQS",
+            "FwoPaXNfYWx3YXlzX2JvbnVzGAsgASgIQgyqAglPbGRQcm90b3NiBnByb3Rv",
+            "Mw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.FishBattleResultReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.FishBattleEndReq), global::OldProtos.FishBattleEndReq.Parser, new[]{ "MaxBonusTime", "BattleResult", "IsAlwaysBonus" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 5841
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class FishBattleEndReq : pb::IMessage<FishBattleEndReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FishBattleEndReq> _parser = new pb::MessageParser<FishBattleEndReq>(() => new FishBattleEndReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FishBattleEndReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.FishBattleEndReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FishBattleEndReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FishBattleEndReq(FishBattleEndReq other) : this() {
+      maxBonusTime_ = other.maxBonusTime_;
+      battleResult_ = other.battleResult_;
+      isAlwaysBonus_ = other.isAlwaysBonus_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FishBattleEndReq Clone() {
+      return new FishBattleEndReq(this);
+    }
+
+    /// <summary>Field number for the "max_bonus_time" field.</summary>
+    public const int MaxBonusTimeFieldNumber = 3;
+    private uint maxBonusTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxBonusTime {
+      get { return maxBonusTime_; }
+      set {
+        maxBonusTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "battle_result" field.</summary>
+    public const int BattleResultFieldNumber = 10;
+    private global::OldProtos.FishBattleResult battleResult_ = global::OldProtos.FishBattleResult.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.FishBattleResult BattleResult {
+      get { return battleResult_; }
+      set {
+        battleResult_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_always_bonus" field.</summary>
+    public const int IsAlwaysBonusFieldNumber = 11;
+    private bool isAlwaysBonus_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsAlwaysBonus {
+      get { return isAlwaysBonus_; }
+      set {
+        isAlwaysBonus_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FishBattleEndReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FishBattleEndReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MaxBonusTime != other.MaxBonusTime) return false;
+      if (BattleResult != other.BattleResult) return false;
+      if (IsAlwaysBonus != other.IsAlwaysBonus) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MaxBonusTime != 0) hash ^= MaxBonusTime.GetHashCode();
+      if (BattleResult != global::OldProtos.FishBattleResult.None) hash ^= BattleResult.GetHashCode();
+      if (IsAlwaysBonus != false) hash ^= IsAlwaysBonus.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (MaxBonusTime != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MaxBonusTime);
+      }
+      if (BattleResult != global::OldProtos.FishBattleResult.None) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) BattleResult);
+      }
+      if (IsAlwaysBonus != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsAlwaysBonus);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (MaxBonusTime != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MaxBonusTime);
+      }
+      if (BattleResult != global::OldProtos.FishBattleResult.None) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) BattleResult);
+      }
+      if (IsAlwaysBonus != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsAlwaysBonus);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (MaxBonusTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxBonusTime);
+      }
+      if (BattleResult != global::OldProtos.FishBattleResult.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BattleResult);
+      }
+      if (IsAlwaysBonus != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FishBattleEndReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MaxBonusTime != 0) {
+        MaxBonusTime = other.MaxBonusTime;
+      }
+      if (other.BattleResult != global::OldProtos.FishBattleResult.None) {
+        BattleResult = other.BattleResult;
+      }
+      if (other.IsAlwaysBonus != false) {
+        IsAlwaysBonus = other.IsAlwaysBonus;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            MaxBonusTime = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            BattleResult = (global::OldProtos.FishBattleResult) input.ReadEnum();
+            break;
+          }
+          case 88: {
+            IsAlwaysBonus = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            MaxBonusTime = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            BattleResult = (global::OldProtos.FishBattleResult) input.ReadEnum();
+            break;
+          }
+          case 88: {
+            IsAlwaysBonus = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 5841
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class FishBattleEndReq : pb::IMessage<FishBattleEndReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<FishBattleEndReq> _parser = new pb::MessageParser<FishBattleEndReq>(() => new FishBattleEndReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<FishBattleEndReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::FishBattleEndReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FishBattleEndReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FishBattleEndReq(FishBattleEndReq other) : this() {
-    maxBonusTime_ = other.maxBonusTime_;
-    battleResult_ = other.battleResult_;
-    isAlwaysBonus_ = other.isAlwaysBonus_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FishBattleEndReq Clone() {
-    return new FishBattleEndReq(this);
-  }
-
-  /// <summary>Field number for the "max_bonus_time" field.</summary>
-  public const int MaxBonusTimeFieldNumber = 3;
-  private uint maxBonusTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MaxBonusTime {
-    get { return maxBonusTime_; }
-    set {
-      maxBonusTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "battle_result" field.</summary>
-  public const int BattleResultFieldNumber = 10;
-  private global::FishBattleResult battleResult_ = global::FishBattleResult.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::FishBattleResult BattleResult {
-    get { return battleResult_; }
-    set {
-      battleResult_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_always_bonus" field.</summary>
-  public const int IsAlwaysBonusFieldNumber = 11;
-  private bool isAlwaysBonus_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsAlwaysBonus {
-    get { return isAlwaysBonus_; }
-    set {
-      isAlwaysBonus_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as FishBattleEndReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(FishBattleEndReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (MaxBonusTime != other.MaxBonusTime) return false;
-    if (BattleResult != other.BattleResult) return false;
-    if (IsAlwaysBonus != other.IsAlwaysBonus) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (MaxBonusTime != 0) hash ^= MaxBonusTime.GetHashCode();
-    if (BattleResult != global::FishBattleResult.None) hash ^= BattleResult.GetHashCode();
-    if (IsAlwaysBonus != false) hash ^= IsAlwaysBonus.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (MaxBonusTime != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(MaxBonusTime);
-    }
-    if (BattleResult != global::FishBattleResult.None) {
-      output.WriteRawTag(80);
-      output.WriteEnum((int) BattleResult);
-    }
-    if (IsAlwaysBonus != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(IsAlwaysBonus);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MaxBonusTime != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(MaxBonusTime);
-    }
-    if (BattleResult != global::FishBattleResult.None) {
-      output.WriteRawTag(80);
-      output.WriteEnum((int) BattleResult);
-    }
-    if (IsAlwaysBonus != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(IsAlwaysBonus);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (MaxBonusTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxBonusTime);
-    }
-    if (BattleResult != global::FishBattleResult.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BattleResult);
-    }
-    if (IsAlwaysBonus != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(FishBattleEndReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.MaxBonusTime != 0) {
-      MaxBonusTime = other.MaxBonusTime;
-    }
-    if (other.BattleResult != global::FishBattleResult.None) {
-      BattleResult = other.BattleResult;
-    }
-    if (other.IsAlwaysBonus != false) {
-      IsAlwaysBonus = other.IsAlwaysBonus;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          MaxBonusTime = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          BattleResult = (global::FishBattleResult) input.ReadEnum();
-          break;
-        }
-        case 88: {
-          IsAlwaysBonus = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          MaxBonusTime = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          BattleResult = (global::FishBattleResult) input.ReadEnum();
-          break;
-        }
-        case 88: {
-          IsAlwaysBonus = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

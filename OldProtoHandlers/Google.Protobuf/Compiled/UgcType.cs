@@ -9,36 +9,39 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from UgcType.proto</summary>
-public static partial class UgcTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for UgcType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from UgcType.proto</summary>
+  public static partial class UgcTypeReflection {
 
-  static UgcTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Cg1VZ2NUeXBlLnByb3RvKjUKB1VnY1R5cGUSEQoNVUdDX1RZUEVfTk9ORRAA",
-          "EhcKE1VHQ19UWVBFX01VU0lDX0dBTUUQAUIeChxlbXUuZ3Jhc3NjdXR0ZXIu",
-          "bmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::UgcType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for UgcType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static UgcTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Cg1VZ2NUeXBlLnByb3RvKjUKB1VnY1R5cGUSEQoNVUdDX1RZUEVfTk9ORRAA",
+            "EhcKE1VHQ19UWVBFX01VU0lDX0dBTUUQAUIMqgIJT2xkUHJvdG9zYgZwcm90",
+            "bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.UgcType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum UgcType {
+    [pbr::OriginalName("UGC_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("UGC_TYPE_MUSIC_GAME")] MusicGame = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum UgcType {
-  [pbr::OriginalName("UGC_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("UGC_TYPE_MUSIC_GAME")] MusicGame = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

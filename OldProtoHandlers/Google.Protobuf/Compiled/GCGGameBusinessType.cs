@@ -9,50 +9,53 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGGameBusinessType.proto</summary>
-public static partial class GCGGameBusinessTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGGameBusinessType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGGameBusinessType.proto</summary>
+  public static partial class GCGGameBusinessTypeReflection {
 
-  static GCGGameBusinessTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChlHQ0dHYW1lQnVzaW5lc3NUeXBlLnByb3RvKvICChNHQ0dHYW1lQnVzaW5l",
-          "c3NUeXBlEh8KG0dDR19HQU1FX0JVU0lORVNTX1RZUEVfTk9ORRAAEh0KGUdD",
-          "R19HQU1FX0JVU0lORVNTX1RZUEVfR00QARIgChxHQ0dfR0FNRV9CVVNJTkVT",
-          "U19UWVBFX01BVENIEAISHgoaR0NHX0dBTUVfQlVTSU5FU1NfVFlQRV9QVlAQ",
-          "AxIrCidHQ0dfR0FNRV9CVVNJTkVTU19UWVBFX1RBVkVSTl9DSEFMTEVOR0UQ",
-          "BBIqCiZHQ0dfR0FNRV9CVVNJTkVTU19UWVBFX0NPTlNUX0NIQUxMRU5HRRAF",
-          "EioKJkdDR19HQU1FX0JVU0lORVNTX1RZUEVfV09STERfQ0hBTExFTkdFEAYS",
-          "KQolR0NHX0dBTUVfQlVTSU5FU1NfVFlQRV9CT1NTX0NIQUxMRU5HRRAHEikK",
-          "JUdDR19HQU1FX0JVU0lORVNTX1RZUEVfV0VFS19DSEFMTEVOR0UQCEIeChxl",
-          "bXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GCGGameBusinessType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for GCGGameBusinessType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGGameBusinessTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChlHQ0dHYW1lQnVzaW5lc3NUeXBlLnByb3RvKvICChNHQ0dHYW1lQnVzaW5l",
+            "c3NUeXBlEh8KG0dDR19HQU1FX0JVU0lORVNTX1RZUEVfTk9ORRAAEh0KGUdD",
+            "R19HQU1FX0JVU0lORVNTX1RZUEVfR00QARIgChxHQ0dfR0FNRV9CVVNJTkVT",
+            "U19UWVBFX01BVENIEAISHgoaR0NHX0dBTUVfQlVTSU5FU1NfVFlQRV9QVlAQ",
+            "AxIrCidHQ0dfR0FNRV9CVVNJTkVTU19UWVBFX1RBVkVSTl9DSEFMTEVOR0UQ",
+            "BBIqCiZHQ0dfR0FNRV9CVVNJTkVTU19UWVBFX0NPTlNUX0NIQUxMRU5HRRAF",
+            "EioKJkdDR19HQU1FX0JVU0lORVNTX1RZUEVfV09STERfQ0hBTExFTkdFEAYS",
+            "KQolR0NHX0dBTUVfQlVTSU5FU1NfVFlQRV9CT1NTX0NIQUxMRU5HRRAHEikK",
+            "JUdDR19HQU1FX0JVU0lORVNTX1RZUEVfV0VFS19DSEFMTEVOR0UQCEIMqgIJ",
+            "T2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.GCGGameBusinessType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum GCGGameBusinessType {
+    [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_GM")] Gm = 1,
+    [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_MATCH")] Match = 2,
+    [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_PVP")] Pvp = 3,
+    [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_TAVERN_CHALLENGE")] TavernChallenge = 4,
+    [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_CONST_CHALLENGE")] ConstChallenge = 5,
+    [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_WORLD_CHALLENGE")] WorldChallenge = 6,
+    [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_BOSS_CHALLENGE")] BossChallenge = 7,
+    [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_WEEK_CHALLENGE")] WeekChallenge = 8,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum GCGGameBusinessType {
-  [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_GM")] Gm = 1,
-  [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_MATCH")] Match = 2,
-  [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_PVP")] Pvp = 3,
-  [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_TAVERN_CHALLENGE")] TavernChallenge = 4,
-  [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_CONST_CHALLENGE")] ConstChallenge = 5,
-  [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_WORLD_CHALLENGE")] WorldChallenge = 6,
-  [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_BOSS_CHALLENGE")] BossChallenge = 7,
-  [pbr::OriginalName("GCG_GAME_BUSINESS_TYPE_WEEK_CHALLENGE")] WeekChallenge = 8,
-}
-
-#endregion
-
 
 #endregion Designer generated code

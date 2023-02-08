@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ChessEntranceInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message ChessEntranceDetailInfo {
   repeated ChessEntranceInfo info_list = 4;

@@ -19,7 +19,7 @@ syntax = "proto3";
 import "AbilitySyncStateInfo.proto";
 import "ServerBuff.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message AvatarEnterSceneInfo {
   uint32 weapon_entity_id = 5;

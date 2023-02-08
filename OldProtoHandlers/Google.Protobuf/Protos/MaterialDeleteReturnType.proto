@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 enum MaterialDeleteReturnType {
   MATERIAL_DELETE_RETURN_TYPE_BAG = 0;

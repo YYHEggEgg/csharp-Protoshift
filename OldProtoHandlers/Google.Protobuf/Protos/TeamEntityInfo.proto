@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "AbilitySyncStateInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message TeamEntityInfo {
   uint32 authority_peer_id = 10;

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "SumoDungeonAvatar.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SumoDungeonTeam {
   repeated SumoDungeonAvatar dungeon_avatar_list = 15;

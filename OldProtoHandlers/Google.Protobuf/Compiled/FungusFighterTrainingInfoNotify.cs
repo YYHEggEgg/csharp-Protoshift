@@ -9,453 +9,456 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FungusFighterTrainingInfoNotify.proto</summary>
-public static partial class FungusFighterTrainingInfoNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FungusFighterTrainingInfoNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FungusFighterTrainingInfoNotify.proto</summary>
+  public static partial class FungusFighterTrainingInfoNotifyReflection {
 
-  static FungusFighterTrainingInfoNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiVGdW5ndXNGaWdodGVyVHJhaW5pbmdJbmZvTm90aWZ5LnByb3RvIs8BCh9G",
-          "dW5ndXNGaWdodGVyVHJhaW5pbmdJbmZvTm90aWZ5EhcKD2J1ZmZfc3RhcnRf",
-          "dGltZRgDIAEoDRIXCg9tYXhfc2tpbGxfY291bnQYByABKA0SGQoRbWF4X21v",
-          "bnN0ZXJfY291bnQYCCABKA0SDwoHYnVmZl9pZBgOIAEoDRIWCg5idWZmX2xh",
-          "c3RfdGltZRgEIAEoDRIYChByZXN0X3NraWxsX2NvdW50GAYgASgNEhwKFGtp",
-          "bGxlZF9tb25zdGVyX2NvdW50GA8gASgNQh4KHGVtdS5ncmFzc2N1dHRlci5u",
-          "ZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FungusFighterTrainingInfoNotify), global::FungusFighterTrainingInfoNotify.Parser, new[]{ "BuffStartTime", "MaxSkillCount", "MaxMonsterCount", "BuffId", "BuffLastTime", "RestSkillCount", "KilledMonsterCount" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for FungusFighterTrainingInfoNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FungusFighterTrainingInfoNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiVGdW5ndXNGaWdodGVyVHJhaW5pbmdJbmZvTm90aWZ5LnByb3RvIs8BCh9G",
+            "dW5ndXNGaWdodGVyVHJhaW5pbmdJbmZvTm90aWZ5EhcKD2J1ZmZfc3RhcnRf",
+            "dGltZRgDIAEoDRIXCg9tYXhfc2tpbGxfY291bnQYByABKA0SGQoRbWF4X21v",
+            "bnN0ZXJfY291bnQYCCABKA0SDwoHYnVmZl9pZBgOIAEoDRIWCg5idWZmX2xh",
+            "c3RfdGltZRgEIAEoDRIYChByZXN0X3NraWxsX2NvdW50GAYgASgNEhwKFGtp",
+            "bGxlZF9tb25zdGVyX2NvdW50GA8gASgNQgyqAglPbGRQcm90b3NiBnByb3Rv",
+            "Mw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.FungusFighterTrainingInfoNotify), global::OldProtos.FungusFighterTrainingInfoNotify.Parser, new[]{ "BuffStartTime", "MaxSkillCount", "MaxMonsterCount", "BuffId", "BuffLastTime", "RestSkillCount", "KilledMonsterCount" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 5595
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class FungusFighterTrainingInfoNotify : pb::IMessage<FungusFighterTrainingInfoNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FungusFighterTrainingInfoNotify> _parser = new pb::MessageParser<FungusFighterTrainingInfoNotify>(() => new FungusFighterTrainingInfoNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FungusFighterTrainingInfoNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.FungusFighterTrainingInfoNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusFighterTrainingInfoNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusFighterTrainingInfoNotify(FungusFighterTrainingInfoNotify other) : this() {
+      buffStartTime_ = other.buffStartTime_;
+      maxSkillCount_ = other.maxSkillCount_;
+      maxMonsterCount_ = other.maxMonsterCount_;
+      buffId_ = other.buffId_;
+      buffLastTime_ = other.buffLastTime_;
+      restSkillCount_ = other.restSkillCount_;
+      killedMonsterCount_ = other.killedMonsterCount_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusFighterTrainingInfoNotify Clone() {
+      return new FungusFighterTrainingInfoNotify(this);
+    }
+
+    /// <summary>Field number for the "buff_start_time" field.</summary>
+    public const int BuffStartTimeFieldNumber = 3;
+    private uint buffStartTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BuffStartTime {
+      get { return buffStartTime_; }
+      set {
+        buffStartTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_skill_count" field.</summary>
+    public const int MaxSkillCountFieldNumber = 7;
+    private uint maxSkillCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxSkillCount {
+      get { return maxSkillCount_; }
+      set {
+        maxSkillCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_monster_count" field.</summary>
+    public const int MaxMonsterCountFieldNumber = 8;
+    private uint maxMonsterCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxMonsterCount {
+      get { return maxMonsterCount_; }
+      set {
+        maxMonsterCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "buff_id" field.</summary>
+    public const int BuffIdFieldNumber = 14;
+    private uint buffId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BuffId {
+      get { return buffId_; }
+      set {
+        buffId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "buff_last_time" field.</summary>
+    public const int BuffLastTimeFieldNumber = 4;
+    private uint buffLastTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BuffLastTime {
+      get { return buffLastTime_; }
+      set {
+        buffLastTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rest_skill_count" field.</summary>
+    public const int RestSkillCountFieldNumber = 6;
+    private uint restSkillCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RestSkillCount {
+      get { return restSkillCount_; }
+      set {
+        restSkillCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "killed_monster_count" field.</summary>
+    public const int KilledMonsterCountFieldNumber = 15;
+    private uint killedMonsterCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint KilledMonsterCount {
+      get { return killedMonsterCount_; }
+      set {
+        killedMonsterCount_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FungusFighterTrainingInfoNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FungusFighterTrainingInfoNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (BuffStartTime != other.BuffStartTime) return false;
+      if (MaxSkillCount != other.MaxSkillCount) return false;
+      if (MaxMonsterCount != other.MaxMonsterCount) return false;
+      if (BuffId != other.BuffId) return false;
+      if (BuffLastTime != other.BuffLastTime) return false;
+      if (RestSkillCount != other.RestSkillCount) return false;
+      if (KilledMonsterCount != other.KilledMonsterCount) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (BuffStartTime != 0) hash ^= BuffStartTime.GetHashCode();
+      if (MaxSkillCount != 0) hash ^= MaxSkillCount.GetHashCode();
+      if (MaxMonsterCount != 0) hash ^= MaxMonsterCount.GetHashCode();
+      if (BuffId != 0) hash ^= BuffId.GetHashCode();
+      if (BuffLastTime != 0) hash ^= BuffLastTime.GetHashCode();
+      if (RestSkillCount != 0) hash ^= RestSkillCount.GetHashCode();
+      if (KilledMonsterCount != 0) hash ^= KilledMonsterCount.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (BuffStartTime != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(BuffStartTime);
+      }
+      if (BuffLastTime != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(BuffLastTime);
+      }
+      if (RestSkillCount != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(RestSkillCount);
+      }
+      if (MaxSkillCount != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MaxSkillCount);
+      }
+      if (MaxMonsterCount != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(MaxMonsterCount);
+      }
+      if (BuffId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(BuffId);
+      }
+      if (KilledMonsterCount != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(KilledMonsterCount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (BuffStartTime != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(BuffStartTime);
+      }
+      if (BuffLastTime != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(BuffLastTime);
+      }
+      if (RestSkillCount != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(RestSkillCount);
+      }
+      if (MaxSkillCount != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(MaxSkillCount);
+      }
+      if (MaxMonsterCount != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(MaxMonsterCount);
+      }
+      if (BuffId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(BuffId);
+      }
+      if (KilledMonsterCount != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(KilledMonsterCount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (BuffStartTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuffStartTime);
+      }
+      if (MaxSkillCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxSkillCount);
+      }
+      if (MaxMonsterCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxMonsterCount);
+      }
+      if (BuffId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuffId);
+      }
+      if (BuffLastTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuffLastTime);
+      }
+      if (RestSkillCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RestSkillCount);
+      }
+      if (KilledMonsterCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KilledMonsterCount);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FungusFighterTrainingInfoNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.BuffStartTime != 0) {
+        BuffStartTime = other.BuffStartTime;
+      }
+      if (other.MaxSkillCount != 0) {
+        MaxSkillCount = other.MaxSkillCount;
+      }
+      if (other.MaxMonsterCount != 0) {
+        MaxMonsterCount = other.MaxMonsterCount;
+      }
+      if (other.BuffId != 0) {
+        BuffId = other.BuffId;
+      }
+      if (other.BuffLastTime != 0) {
+        BuffLastTime = other.BuffLastTime;
+      }
+      if (other.RestSkillCount != 0) {
+        RestSkillCount = other.RestSkillCount;
+      }
+      if (other.KilledMonsterCount != 0) {
+        KilledMonsterCount = other.KilledMonsterCount;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            BuffStartTime = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            BuffLastTime = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            RestSkillCount = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            MaxSkillCount = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            MaxMonsterCount = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            BuffId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            KilledMonsterCount = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            BuffStartTime = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            BuffLastTime = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            RestSkillCount = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            MaxSkillCount = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            MaxMonsterCount = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            BuffId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            KilledMonsterCount = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 5595
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class FungusFighterTrainingInfoNotify : pb::IMessage<FungusFighterTrainingInfoNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<FungusFighterTrainingInfoNotify> _parser = new pb::MessageParser<FungusFighterTrainingInfoNotify>(() => new FungusFighterTrainingInfoNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<FungusFighterTrainingInfoNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::FungusFighterTrainingInfoNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusFighterTrainingInfoNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusFighterTrainingInfoNotify(FungusFighterTrainingInfoNotify other) : this() {
-    buffStartTime_ = other.buffStartTime_;
-    maxSkillCount_ = other.maxSkillCount_;
-    maxMonsterCount_ = other.maxMonsterCount_;
-    buffId_ = other.buffId_;
-    buffLastTime_ = other.buffLastTime_;
-    restSkillCount_ = other.restSkillCount_;
-    killedMonsterCount_ = other.killedMonsterCount_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusFighterTrainingInfoNotify Clone() {
-    return new FungusFighterTrainingInfoNotify(this);
-  }
-
-  /// <summary>Field number for the "buff_start_time" field.</summary>
-  public const int BuffStartTimeFieldNumber = 3;
-  private uint buffStartTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BuffStartTime {
-    get { return buffStartTime_; }
-    set {
-      buffStartTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "max_skill_count" field.</summary>
-  public const int MaxSkillCountFieldNumber = 7;
-  private uint maxSkillCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MaxSkillCount {
-    get { return maxSkillCount_; }
-    set {
-      maxSkillCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "max_monster_count" field.</summary>
-  public const int MaxMonsterCountFieldNumber = 8;
-  private uint maxMonsterCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MaxMonsterCount {
-    get { return maxMonsterCount_; }
-    set {
-      maxMonsterCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "buff_id" field.</summary>
-  public const int BuffIdFieldNumber = 14;
-  private uint buffId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BuffId {
-    get { return buffId_; }
-    set {
-      buffId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "buff_last_time" field.</summary>
-  public const int BuffLastTimeFieldNumber = 4;
-  private uint buffLastTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BuffLastTime {
-    get { return buffLastTime_; }
-    set {
-      buffLastTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "rest_skill_count" field.</summary>
-  public const int RestSkillCountFieldNumber = 6;
-  private uint restSkillCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RestSkillCount {
-    get { return restSkillCount_; }
-    set {
-      restSkillCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "killed_monster_count" field.</summary>
-  public const int KilledMonsterCountFieldNumber = 15;
-  private uint killedMonsterCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint KilledMonsterCount {
-    get { return killedMonsterCount_; }
-    set {
-      killedMonsterCount_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as FungusFighterTrainingInfoNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(FungusFighterTrainingInfoNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (BuffStartTime != other.BuffStartTime) return false;
-    if (MaxSkillCount != other.MaxSkillCount) return false;
-    if (MaxMonsterCount != other.MaxMonsterCount) return false;
-    if (BuffId != other.BuffId) return false;
-    if (BuffLastTime != other.BuffLastTime) return false;
-    if (RestSkillCount != other.RestSkillCount) return false;
-    if (KilledMonsterCount != other.KilledMonsterCount) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (BuffStartTime != 0) hash ^= BuffStartTime.GetHashCode();
-    if (MaxSkillCount != 0) hash ^= MaxSkillCount.GetHashCode();
-    if (MaxMonsterCount != 0) hash ^= MaxMonsterCount.GetHashCode();
-    if (BuffId != 0) hash ^= BuffId.GetHashCode();
-    if (BuffLastTime != 0) hash ^= BuffLastTime.GetHashCode();
-    if (RestSkillCount != 0) hash ^= RestSkillCount.GetHashCode();
-    if (KilledMonsterCount != 0) hash ^= KilledMonsterCount.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (BuffStartTime != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(BuffStartTime);
-    }
-    if (BuffLastTime != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(BuffLastTime);
-    }
-    if (RestSkillCount != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(RestSkillCount);
-    }
-    if (MaxSkillCount != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(MaxSkillCount);
-    }
-    if (MaxMonsterCount != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(MaxMonsterCount);
-    }
-    if (BuffId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(BuffId);
-    }
-    if (KilledMonsterCount != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(KilledMonsterCount);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (BuffStartTime != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(BuffStartTime);
-    }
-    if (BuffLastTime != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(BuffLastTime);
-    }
-    if (RestSkillCount != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(RestSkillCount);
-    }
-    if (MaxSkillCount != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(MaxSkillCount);
-    }
-    if (MaxMonsterCount != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(MaxMonsterCount);
-    }
-    if (BuffId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(BuffId);
-    }
-    if (KilledMonsterCount != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(KilledMonsterCount);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (BuffStartTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuffStartTime);
-    }
-    if (MaxSkillCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxSkillCount);
-    }
-    if (MaxMonsterCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxMonsterCount);
-    }
-    if (BuffId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuffId);
-    }
-    if (BuffLastTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuffLastTime);
-    }
-    if (RestSkillCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RestSkillCount);
-    }
-    if (KilledMonsterCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(KilledMonsterCount);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(FungusFighterTrainingInfoNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.BuffStartTime != 0) {
-      BuffStartTime = other.BuffStartTime;
-    }
-    if (other.MaxSkillCount != 0) {
-      MaxSkillCount = other.MaxSkillCount;
-    }
-    if (other.MaxMonsterCount != 0) {
-      MaxMonsterCount = other.MaxMonsterCount;
-    }
-    if (other.BuffId != 0) {
-      BuffId = other.BuffId;
-    }
-    if (other.BuffLastTime != 0) {
-      BuffLastTime = other.BuffLastTime;
-    }
-    if (other.RestSkillCount != 0) {
-      RestSkillCount = other.RestSkillCount;
-    }
-    if (other.KilledMonsterCount != 0) {
-      KilledMonsterCount = other.KilledMonsterCount;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          BuffStartTime = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          BuffLastTime = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          RestSkillCount = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          MaxSkillCount = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          MaxMonsterCount = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          BuffId = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          KilledMonsterCount = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          BuffStartTime = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          BuffLastTime = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          RestSkillCount = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          MaxSkillCount = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          MaxMonsterCount = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          BuffId = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          KilledMonsterCount = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

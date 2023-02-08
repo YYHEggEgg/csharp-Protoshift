@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "HomeSeekFurnitureOneRecord.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message HomeSeekFurnitureAllRecord {
   repeated HomeSeekFurnitureOneRecord record_list = 9;

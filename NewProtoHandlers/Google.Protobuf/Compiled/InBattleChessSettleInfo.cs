@@ -9,438 +9,440 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from InBattleChessSettleInfo.proto</summary>
-public static partial class InBattleChessSettleInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for InBattleChessSettleInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from InBattleChessSettleInfo.proto</summary>
+  public static partial class InBattleChessSettleInfoReflection {
 
-  static InBattleChessSettleInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1JbkJhdHRsZUNoZXNzU2V0dGxlSW5mby5wcm90bxobRXhoaWJpdGlvbkRp",
-          "c3BsYXlJbmZvLnByb3RvIuQBChdJbkJhdHRsZUNoZXNzU2V0dGxlSW5mbxIb",
-          "ChNVbmszMzAwX0xQQU5GRUJGSk9KGAUgASgNEhUKDXNjZW5lX3RpbWVfbXMY",
-          "CCABKAQSGwoTVW5rMzMwMF9OS0hERkhBUE5DThgNIAEoDRISCgppc19zdWNj",
-          "ZXNzGAYgASgIEhsKE1VuazMzMDBfRU1OTExESkhNRUkYASABKA0SKgoKc2Nv",
-          "cmVfbGlzdBgEIAMoCzIWLkV4aGliaXRpb25EaXNwbGF5SW5mbxIbChNVbmsz",
-          "MzAwX0lQR0lMSkNCQUJLGAIgASgNQhYKFG9yZy5zb3JhcG9pbnRhLnByb3Rv",
-          "YgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ExhibitionDisplayInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::InBattleChessSettleInfo), global::InBattleChessSettleInfo.Parser, new[]{ "Unk3300LPANFEBFJOJ", "SceneTimeMs", "Unk3300NKHDFHAPNCN", "IsSuccess", "Unk3300EMNLLDJHMEI", "ScoreList", "Unk3300IPGILJCBABK" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for InBattleChessSettleInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static InBattleChessSettleInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1JbkJhdHRsZUNoZXNzU2V0dGxlSW5mby5wcm90bxobRXhoaWJpdGlvbkRp",
+            "c3BsYXlJbmZvLnByb3RvIuQBChdJbkJhdHRsZUNoZXNzU2V0dGxlSW5mbxIb",
+            "ChNVbmszMzAwX0xQQU5GRUJGSk9KGAUgASgNEhUKDXNjZW5lX3RpbWVfbXMY",
+            "CCABKAQSGwoTVW5rMzMwMF9OS0hERkhBUE5DThgNIAEoDRISCgppc19zdWNj",
+            "ZXNzGAYgASgIEhsKE1VuazMzMDBfRU1OTExESkhNRUkYASABKA0SKgoKc2Nv",
+            "cmVfbGlzdBgEIAMoCzIWLkV4aGliaXRpb25EaXNwbGF5SW5mbxIbChNVbmsz",
+            "MzAwX0lQR0lMSkNCQUJLGAIgASgNQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.ExhibitionDisplayInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.InBattleChessSettleInfo), global::NewProtos.InBattleChessSettleInfo.Parser, new[]{ "Unk3300LPANFEBFJOJ", "SceneTimeMs", "Unk3300NKHDFHAPNCN", "IsSuccess", "Unk3300EMNLLDJHMEI", "ScoreList", "Unk3300IPGILJCBABK" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class InBattleChessSettleInfo : pb::IMessage<InBattleChessSettleInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<InBattleChessSettleInfo> _parser = new pb::MessageParser<InBattleChessSettleInfo>(() => new InBattleChessSettleInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<InBattleChessSettleInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.InBattleChessSettleInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InBattleChessSettleInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InBattleChessSettleInfo(InBattleChessSettleInfo other) : this() {
+      unk3300LPANFEBFJOJ_ = other.unk3300LPANFEBFJOJ_;
+      sceneTimeMs_ = other.sceneTimeMs_;
+      unk3300NKHDFHAPNCN_ = other.unk3300NKHDFHAPNCN_;
+      isSuccess_ = other.isSuccess_;
+      unk3300EMNLLDJHMEI_ = other.unk3300EMNLLDJHMEI_;
+      scoreList_ = other.scoreList_.Clone();
+      unk3300IPGILJCBABK_ = other.unk3300IPGILJCBABK_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InBattleChessSettleInfo Clone() {
+      return new InBattleChessSettleInfo(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_LPANFEBFJOJ" field.</summary>
+    public const int Unk3300LPANFEBFJOJFieldNumber = 5;
+    private uint unk3300LPANFEBFJOJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LPANFEBFJOJ {
+      get { return unk3300LPANFEBFJOJ_; }
+      set {
+        unk3300LPANFEBFJOJ_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scene_time_ms" field.</summary>
+    public const int SceneTimeMsFieldNumber = 8;
+    private ulong sceneTimeMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong SceneTimeMs {
+      get { return sceneTimeMs_; }
+      set {
+        sceneTimeMs_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NKHDFHAPNCN" field.</summary>
+    public const int Unk3300NKHDFHAPNCNFieldNumber = 13;
+    private uint unk3300NKHDFHAPNCN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NKHDFHAPNCN {
+      get { return unk3300NKHDFHAPNCN_; }
+      set {
+        unk3300NKHDFHAPNCN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_success" field.</summary>
+    public const int IsSuccessFieldNumber = 6;
+    private bool isSuccess_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSuccess {
+      get { return isSuccess_; }
+      set {
+        isSuccess_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EMNLLDJHMEI" field.</summary>
+    public const int Unk3300EMNLLDJHMEIFieldNumber = 1;
+    private uint unk3300EMNLLDJHMEI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300EMNLLDJHMEI {
+      get { return unk3300EMNLLDJHMEI_; }
+      set {
+        unk3300EMNLLDJHMEI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "score_list" field.</summary>
+    public const int ScoreListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::NewProtos.ExhibitionDisplayInfo> _repeated_scoreList_codec
+        = pb::FieldCodec.ForMessage(34, global::NewProtos.ExhibitionDisplayInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ExhibitionDisplayInfo> scoreList_ = new pbc::RepeatedField<global::NewProtos.ExhibitionDisplayInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ExhibitionDisplayInfo> ScoreList {
+      get { return scoreList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_IPGILJCBABK" field.</summary>
+    public const int Unk3300IPGILJCBABKFieldNumber = 2;
+    private uint unk3300IPGILJCBABK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IPGILJCBABK {
+      get { return unk3300IPGILJCBABK_; }
+      set {
+        unk3300IPGILJCBABK_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as InBattleChessSettleInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(InBattleChessSettleInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Unk3300LPANFEBFJOJ != other.Unk3300LPANFEBFJOJ) return false;
+      if (SceneTimeMs != other.SceneTimeMs) return false;
+      if (Unk3300NKHDFHAPNCN != other.Unk3300NKHDFHAPNCN) return false;
+      if (IsSuccess != other.IsSuccess) return false;
+      if (Unk3300EMNLLDJHMEI != other.Unk3300EMNLLDJHMEI) return false;
+      if(!scoreList_.Equals(other.scoreList_)) return false;
+      if (Unk3300IPGILJCBABK != other.Unk3300IPGILJCBABK) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Unk3300LPANFEBFJOJ != 0) hash ^= Unk3300LPANFEBFJOJ.GetHashCode();
+      if (SceneTimeMs != 0UL) hash ^= SceneTimeMs.GetHashCode();
+      if (Unk3300NKHDFHAPNCN != 0) hash ^= Unk3300NKHDFHAPNCN.GetHashCode();
+      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
+      if (Unk3300EMNLLDJHMEI != 0) hash ^= Unk3300EMNLLDJHMEI.GetHashCode();
+      hash ^= scoreList_.GetHashCode();
+      if (Unk3300IPGILJCBABK != 0) hash ^= Unk3300IPGILJCBABK.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Unk3300EMNLLDJHMEI != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300EMNLLDJHMEI);
+      }
+      if (Unk3300IPGILJCBABK != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300IPGILJCBABK);
+      }
+      scoreList_.WriteTo(output, _repeated_scoreList_codec);
+      if (Unk3300LPANFEBFJOJ != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300LPANFEBFJOJ);
+      }
+      if (IsSuccess != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsSuccess);
+      }
+      if (SceneTimeMs != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(SceneTimeMs);
+      }
+      if (Unk3300NKHDFHAPNCN != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300NKHDFHAPNCN);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300EMNLLDJHMEI != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Unk3300EMNLLDJHMEI);
+      }
+      if (Unk3300IPGILJCBABK != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300IPGILJCBABK);
+      }
+      scoreList_.WriteTo(ref output, _repeated_scoreList_codec);
+      if (Unk3300LPANFEBFJOJ != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300LPANFEBFJOJ);
+      }
+      if (IsSuccess != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsSuccess);
+      }
+      if (SceneTimeMs != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(SceneTimeMs);
+      }
+      if (Unk3300NKHDFHAPNCN != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300NKHDFHAPNCN);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Unk3300LPANFEBFJOJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPANFEBFJOJ);
+      }
+      if (SceneTimeMs != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SceneTimeMs);
+      }
+      if (Unk3300NKHDFHAPNCN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NKHDFHAPNCN);
+      }
+      if (IsSuccess != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300EMNLLDJHMEI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EMNLLDJHMEI);
+      }
+      size += scoreList_.CalculateSize(_repeated_scoreList_codec);
+      if (Unk3300IPGILJCBABK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IPGILJCBABK);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(InBattleChessSettleInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Unk3300LPANFEBFJOJ != 0) {
+        Unk3300LPANFEBFJOJ = other.Unk3300LPANFEBFJOJ;
+      }
+      if (other.SceneTimeMs != 0UL) {
+        SceneTimeMs = other.SceneTimeMs;
+      }
+      if (other.Unk3300NKHDFHAPNCN != 0) {
+        Unk3300NKHDFHAPNCN = other.Unk3300NKHDFHAPNCN;
+      }
+      if (other.IsSuccess != false) {
+        IsSuccess = other.IsSuccess;
+      }
+      if (other.Unk3300EMNLLDJHMEI != 0) {
+        Unk3300EMNLLDJHMEI = other.Unk3300EMNLLDJHMEI;
+      }
+      scoreList_.Add(other.scoreList_);
+      if (other.Unk3300IPGILJCBABK != 0) {
+        Unk3300IPGILJCBABK = other.Unk3300IPGILJCBABK;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Unk3300EMNLLDJHMEI = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Unk3300IPGILJCBABK = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            scoreList_.AddEntriesFrom(input, _repeated_scoreList_codec);
+            break;
+          }
+          case 40: {
+            Unk3300LPANFEBFJOJ = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 64: {
+            SceneTimeMs = input.ReadUInt64();
+            break;
+          }
+          case 104: {
+            Unk3300NKHDFHAPNCN = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Unk3300EMNLLDJHMEI = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Unk3300IPGILJCBABK = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            scoreList_.AddEntriesFrom(ref input, _repeated_scoreList_codec);
+            break;
+          }
+          case 40: {
+            Unk3300LPANFEBFJOJ = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 64: {
+            SceneTimeMs = input.ReadUInt64();
+            break;
+          }
+          case 104: {
+            Unk3300NKHDFHAPNCN = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class InBattleChessSettleInfo : pb::IMessage<InBattleChessSettleInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<InBattleChessSettleInfo> _parser = new pb::MessageParser<InBattleChessSettleInfo>(() => new InBattleChessSettleInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<InBattleChessSettleInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::InBattleChessSettleInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InBattleChessSettleInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InBattleChessSettleInfo(InBattleChessSettleInfo other) : this() {
-    unk3300LPANFEBFJOJ_ = other.unk3300LPANFEBFJOJ_;
-    sceneTimeMs_ = other.sceneTimeMs_;
-    unk3300NKHDFHAPNCN_ = other.unk3300NKHDFHAPNCN_;
-    isSuccess_ = other.isSuccess_;
-    unk3300EMNLLDJHMEI_ = other.unk3300EMNLLDJHMEI_;
-    scoreList_ = other.scoreList_.Clone();
-    unk3300IPGILJCBABK_ = other.unk3300IPGILJCBABK_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InBattleChessSettleInfo Clone() {
-    return new InBattleChessSettleInfo(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_LPANFEBFJOJ" field.</summary>
-  public const int Unk3300LPANFEBFJOJFieldNumber = 5;
-  private uint unk3300LPANFEBFJOJ_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300LPANFEBFJOJ {
-    get { return unk3300LPANFEBFJOJ_; }
-    set {
-      unk3300LPANFEBFJOJ_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "scene_time_ms" field.</summary>
-  public const int SceneTimeMsFieldNumber = 8;
-  private ulong sceneTimeMs_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong SceneTimeMs {
-    get { return sceneTimeMs_; }
-    set {
-      sceneTimeMs_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_NKHDFHAPNCN" field.</summary>
-  public const int Unk3300NKHDFHAPNCNFieldNumber = 13;
-  private uint unk3300NKHDFHAPNCN_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300NKHDFHAPNCN {
-    get { return unk3300NKHDFHAPNCN_; }
-    set {
-      unk3300NKHDFHAPNCN_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_success" field.</summary>
-  public const int IsSuccessFieldNumber = 6;
-  private bool isSuccess_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsSuccess {
-    get { return isSuccess_; }
-    set {
-      isSuccess_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_EMNLLDJHMEI" field.</summary>
-  public const int Unk3300EMNLLDJHMEIFieldNumber = 1;
-  private uint unk3300EMNLLDJHMEI_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300EMNLLDJHMEI {
-    get { return unk3300EMNLLDJHMEI_; }
-    set {
-      unk3300EMNLLDJHMEI_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "score_list" field.</summary>
-  public const int ScoreListFieldNumber = 4;
-  private static readonly pb::FieldCodec<global::ExhibitionDisplayInfo> _repeated_scoreList_codec
-      = pb::FieldCodec.ForMessage(34, global::ExhibitionDisplayInfo.Parser);
-  private readonly pbc::RepeatedField<global::ExhibitionDisplayInfo> scoreList_ = new pbc::RepeatedField<global::ExhibitionDisplayInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ExhibitionDisplayInfo> ScoreList {
-    get { return scoreList_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_IPGILJCBABK" field.</summary>
-  public const int Unk3300IPGILJCBABKFieldNumber = 2;
-  private uint unk3300IPGILJCBABK_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300IPGILJCBABK {
-    get { return unk3300IPGILJCBABK_; }
-    set {
-      unk3300IPGILJCBABK_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as InBattleChessSettleInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(InBattleChessSettleInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Unk3300LPANFEBFJOJ != other.Unk3300LPANFEBFJOJ) return false;
-    if (SceneTimeMs != other.SceneTimeMs) return false;
-    if (Unk3300NKHDFHAPNCN != other.Unk3300NKHDFHAPNCN) return false;
-    if (IsSuccess != other.IsSuccess) return false;
-    if (Unk3300EMNLLDJHMEI != other.Unk3300EMNLLDJHMEI) return false;
-    if(!scoreList_.Equals(other.scoreList_)) return false;
-    if (Unk3300IPGILJCBABK != other.Unk3300IPGILJCBABK) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Unk3300LPANFEBFJOJ != 0) hash ^= Unk3300LPANFEBFJOJ.GetHashCode();
-    if (SceneTimeMs != 0UL) hash ^= SceneTimeMs.GetHashCode();
-    if (Unk3300NKHDFHAPNCN != 0) hash ^= Unk3300NKHDFHAPNCN.GetHashCode();
-    if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-    if (Unk3300EMNLLDJHMEI != 0) hash ^= Unk3300EMNLLDJHMEI.GetHashCode();
-    hash ^= scoreList_.GetHashCode();
-    if (Unk3300IPGILJCBABK != 0) hash ^= Unk3300IPGILJCBABK.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Unk3300EMNLLDJHMEI != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Unk3300EMNLLDJHMEI);
-    }
-    if (Unk3300IPGILJCBABK != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(Unk3300IPGILJCBABK);
-    }
-    scoreList_.WriteTo(output, _repeated_scoreList_codec);
-    if (Unk3300LPANFEBFJOJ != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Unk3300LPANFEBFJOJ);
-    }
-    if (IsSuccess != false) {
-      output.WriteRawTag(48);
-      output.WriteBool(IsSuccess);
-    }
-    if (SceneTimeMs != 0UL) {
-      output.WriteRawTag(64);
-      output.WriteUInt64(SceneTimeMs);
-    }
-    if (Unk3300NKHDFHAPNCN != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Unk3300NKHDFHAPNCN);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Unk3300EMNLLDJHMEI != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Unk3300EMNLLDJHMEI);
-    }
-    if (Unk3300IPGILJCBABK != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(Unk3300IPGILJCBABK);
-    }
-    scoreList_.WriteTo(ref output, _repeated_scoreList_codec);
-    if (Unk3300LPANFEBFJOJ != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Unk3300LPANFEBFJOJ);
-    }
-    if (IsSuccess != false) {
-      output.WriteRawTag(48);
-      output.WriteBool(IsSuccess);
-    }
-    if (SceneTimeMs != 0UL) {
-      output.WriteRawTag(64);
-      output.WriteUInt64(SceneTimeMs);
-    }
-    if (Unk3300NKHDFHAPNCN != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Unk3300NKHDFHAPNCN);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Unk3300LPANFEBFJOJ != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPANFEBFJOJ);
-    }
-    if (SceneTimeMs != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SceneTimeMs);
-    }
-    if (Unk3300NKHDFHAPNCN != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NKHDFHAPNCN);
-    }
-    if (IsSuccess != false) {
-      size += 1 + 1;
-    }
-    if (Unk3300EMNLLDJHMEI != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EMNLLDJHMEI);
-    }
-    size += scoreList_.CalculateSize(_repeated_scoreList_codec);
-    if (Unk3300IPGILJCBABK != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IPGILJCBABK);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(InBattleChessSettleInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Unk3300LPANFEBFJOJ != 0) {
-      Unk3300LPANFEBFJOJ = other.Unk3300LPANFEBFJOJ;
-    }
-    if (other.SceneTimeMs != 0UL) {
-      SceneTimeMs = other.SceneTimeMs;
-    }
-    if (other.Unk3300NKHDFHAPNCN != 0) {
-      Unk3300NKHDFHAPNCN = other.Unk3300NKHDFHAPNCN;
-    }
-    if (other.IsSuccess != false) {
-      IsSuccess = other.IsSuccess;
-    }
-    if (other.Unk3300EMNLLDJHMEI != 0) {
-      Unk3300EMNLLDJHMEI = other.Unk3300EMNLLDJHMEI;
-    }
-    scoreList_.Add(other.scoreList_);
-    if (other.Unk3300IPGILJCBABK != 0) {
-      Unk3300IPGILJCBABK = other.Unk3300IPGILJCBABK;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          Unk3300EMNLLDJHMEI = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          Unk3300IPGILJCBABK = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          scoreList_.AddEntriesFrom(input, _repeated_scoreList_codec);
-          break;
-        }
-        case 40: {
-          Unk3300LPANFEBFJOJ = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          IsSuccess = input.ReadBool();
-          break;
-        }
-        case 64: {
-          SceneTimeMs = input.ReadUInt64();
-          break;
-        }
-        case 104: {
-          Unk3300NKHDFHAPNCN = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          Unk3300EMNLLDJHMEI = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          Unk3300IPGILJCBABK = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          scoreList_.AddEntriesFrom(ref input, _repeated_scoreList_codec);
-          break;
-        }
-        case 40: {
-          Unk3300LPANFEBFJOJ = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          IsSuccess = input.ReadBool();
-          break;
-        }
-        case 64: {
-          SceneTimeMs = input.ReadUInt64();
-          break;
-        }
-        case 104: {
-          Unk3300NKHDFHAPNCN = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

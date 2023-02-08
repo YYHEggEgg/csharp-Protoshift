@@ -9,37 +9,39 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SecurityCheckType.proto</summary>
-public static partial class SecurityCheckTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SecurityCheckType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SecurityCheckType.proto</summary>
+  public static partial class SecurityCheckTypeReflection {
 
-  static SecurityCheckTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdTZWN1cml0eUNoZWNrVHlwZS5wcm90bypQChFTZWN1cml0eUNoZWNrVHlw",
-          "ZRIcChhTRUNVUklUWV9DSEVDS19UWVBFX05PTkUQABIdChlTRUNVUklUWV9D",
-          "SEVDS19UWVBFX0xPR0lOEAFCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnBy",
-          "b3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SecurityCheckType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for SecurityCheckType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SecurityCheckTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdTZWN1cml0eUNoZWNrVHlwZS5wcm90bypQChFTZWN1cml0eUNoZWNrVHlw",
+            "ZRIcChhTRUNVUklUWV9DSEVDS19UWVBFX05PTkUQABIdChlTRUNVUklUWV9D",
+            "SEVDS19UWVBFX0xPR0lOEAFCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.SecurityCheckType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum SecurityCheckType {
+    [pbr::OriginalName("SECURITY_CHECK_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("SECURITY_CHECK_TYPE_LOGIN")] Login = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum SecurityCheckType {
-  [pbr::OriginalName("SECURITY_CHECK_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("SECURITY_CHECK_TYPE_LOGIN")] Login = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

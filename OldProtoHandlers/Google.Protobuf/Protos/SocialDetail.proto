@@ -22,7 +22,7 @@ import "FriendOnlineState.proto";
 import "ProfilePicture.proto";
 import "SocialShowAvatarInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SocialDetail {
   uint32 uid = 1;

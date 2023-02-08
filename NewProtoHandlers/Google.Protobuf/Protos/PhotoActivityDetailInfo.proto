@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "PhotoPosData.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message PhotoActivityDetailInfo {
   bool is_content_closed = 5;

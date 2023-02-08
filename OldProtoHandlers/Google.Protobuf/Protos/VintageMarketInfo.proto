@@ -19,7 +19,7 @@ syntax = "proto3";
 import "VintageMarketDealInfo.proto";
 import "VintageMarketStoreInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message VintageMarketInfo {
   bool is_help_module_open = 1485;

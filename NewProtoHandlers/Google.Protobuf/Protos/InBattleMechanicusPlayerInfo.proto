@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "InBattleMechanicusBuildingInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message InBattleMechanicusPlayerInfo {
   uint32 uid = 13;

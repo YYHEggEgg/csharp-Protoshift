@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ChessEntranceDetailInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message ChessMysteryInfo {
   repeated uint32 exit_point_id_list = 15;

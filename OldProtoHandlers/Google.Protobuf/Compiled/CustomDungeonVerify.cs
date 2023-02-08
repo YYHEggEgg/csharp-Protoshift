@@ -9,371 +9,374 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CustomDungeonVerify.proto</summary>
-public static partial class CustomDungeonVerifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CustomDungeonVerify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CustomDungeonVerify.proto</summary>
+  public static partial class CustomDungeonVerifyReflection {
 
-  static CustomDungeonVerifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChlDdXN0b21EdW5nZW9uVmVyaWZ5LnByb3RvImkKE0N1c3RvbUR1bmdlb25W",
-          "ZXJpZnkSFAoMZHVuZ2Vvbl9ndWlkGAMgASgEEgsKA3VpZBgPIAEoDRIRCgl0",
-          "aW1lc3RhbXAYBCABKA0SDgoGcmVnaW9uGAsgASgJEgwKBGxhbmcYDSABKA1C",
-          "HgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::CustomDungeonVerify), global::CustomDungeonVerify.Parser, new[]{ "DungeonGuid", "Uid", "Timestamp", "Region", "Lang" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for CustomDungeonVerify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CustomDungeonVerifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChlDdXN0b21EdW5nZW9uVmVyaWZ5LnByb3RvImkKE0N1c3RvbUR1bmdlb25W",
+            "ZXJpZnkSFAoMZHVuZ2Vvbl9ndWlkGAMgASgEEgsKA3VpZBgPIAEoDRIRCgl0",
+            "aW1lc3RhbXAYBCABKA0SDgoGcmVnaW9uGAsgASgJEgwKBGxhbmcYDSABKA1C",
+            "DKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.CustomDungeonVerify), global::OldProtos.CustomDungeonVerify.Parser, new[]{ "DungeonGuid", "Uid", "Timestamp", "Region", "Lang" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class CustomDungeonVerify : pb::IMessage<CustomDungeonVerify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CustomDungeonVerify> _parser = new pb::MessageParser<CustomDungeonVerify>(() => new CustomDungeonVerify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CustomDungeonVerify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.CustomDungeonVerifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CustomDungeonVerify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CustomDungeonVerify(CustomDungeonVerify other) : this() {
+      dungeonGuid_ = other.dungeonGuid_;
+      uid_ = other.uid_;
+      timestamp_ = other.timestamp_;
+      region_ = other.region_;
+      lang_ = other.lang_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CustomDungeonVerify Clone() {
+      return new CustomDungeonVerify(this);
+    }
+
+    /// <summary>Field number for the "dungeon_guid" field.</summary>
+    public const int DungeonGuidFieldNumber = 3;
+    private ulong dungeonGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong DungeonGuid {
+      get { return dungeonGuid_; }
+      set {
+        dungeonGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 15;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "timestamp" field.</summary>
+    public const int TimestampFieldNumber = 4;
+    private uint timestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Timestamp {
+      get { return timestamp_; }
+      set {
+        timestamp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "region" field.</summary>
+    public const int RegionFieldNumber = 11;
+    private string region_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Region {
+      get { return region_; }
+      set {
+        region_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "lang" field.</summary>
+    public const int LangFieldNumber = 13;
+    private uint lang_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Lang {
+      get { return lang_; }
+      set {
+        lang_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CustomDungeonVerify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CustomDungeonVerify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DungeonGuid != other.DungeonGuid) return false;
+      if (Uid != other.Uid) return false;
+      if (Timestamp != other.Timestamp) return false;
+      if (Region != other.Region) return false;
+      if (Lang != other.Lang) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (Timestamp != 0) hash ^= Timestamp.GetHashCode();
+      if (Region.Length != 0) hash ^= Region.GetHashCode();
+      if (Lang != 0) hash ^= Lang.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (DungeonGuid != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(DungeonGuid);
+      }
+      if (Timestamp != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Timestamp);
+      }
+      if (Region.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Region);
+      }
+      if (Lang != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Lang);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Uid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (DungeonGuid != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(DungeonGuid);
+      }
+      if (Timestamp != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Timestamp);
+      }
+      if (Region.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(Region);
+      }
+      if (Lang != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Lang);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Uid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (DungeonGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (Timestamp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Timestamp);
+      }
+      if (Region.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Region);
+      }
+      if (Lang != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Lang);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CustomDungeonVerify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DungeonGuid != 0UL) {
+        DungeonGuid = other.DungeonGuid;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      if (other.Timestamp != 0) {
+        Timestamp = other.Timestamp;
+      }
+      if (other.Region.Length != 0) {
+        Region = other.Region;
+      }
+      if (other.Lang != 0) {
+        Lang = other.Lang;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            DungeonGuid = input.ReadUInt64();
+            break;
+          }
+          case 32: {
+            Timestamp = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            Region = input.ReadString();
+            break;
+          }
+          case 104: {
+            Lang = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            DungeonGuid = input.ReadUInt64();
+            break;
+          }
+          case 32: {
+            Timestamp = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            Region = input.ReadString();
+            break;
+          }
+          case 104: {
+            Lang = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class CustomDungeonVerify : pb::IMessage<CustomDungeonVerify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<CustomDungeonVerify> _parser = new pb::MessageParser<CustomDungeonVerify>(() => new CustomDungeonVerify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<CustomDungeonVerify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::CustomDungeonVerifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CustomDungeonVerify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CustomDungeonVerify(CustomDungeonVerify other) : this() {
-    dungeonGuid_ = other.dungeonGuid_;
-    uid_ = other.uid_;
-    timestamp_ = other.timestamp_;
-    region_ = other.region_;
-    lang_ = other.lang_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CustomDungeonVerify Clone() {
-    return new CustomDungeonVerify(this);
-  }
-
-  /// <summary>Field number for the "dungeon_guid" field.</summary>
-  public const int DungeonGuidFieldNumber = 3;
-  private ulong dungeonGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong DungeonGuid {
-    get { return dungeonGuid_; }
-    set {
-      dungeonGuid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "uid" field.</summary>
-  public const int UidFieldNumber = 15;
-  private uint uid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Uid {
-    get { return uid_; }
-    set {
-      uid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "timestamp" field.</summary>
-  public const int TimestampFieldNumber = 4;
-  private uint timestamp_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Timestamp {
-    get { return timestamp_; }
-    set {
-      timestamp_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "region" field.</summary>
-  public const int RegionFieldNumber = 11;
-  private string region_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Region {
-    get { return region_; }
-    set {
-      region_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "lang" field.</summary>
-  public const int LangFieldNumber = 13;
-  private uint lang_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Lang {
-    get { return lang_; }
-    set {
-      lang_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as CustomDungeonVerify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(CustomDungeonVerify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (DungeonGuid != other.DungeonGuid) return false;
-    if (Uid != other.Uid) return false;
-    if (Timestamp != other.Timestamp) return false;
-    if (Region != other.Region) return false;
-    if (Lang != other.Lang) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
-    if (Uid != 0) hash ^= Uid.GetHashCode();
-    if (Timestamp != 0) hash ^= Timestamp.GetHashCode();
-    if (Region.Length != 0) hash ^= Region.GetHashCode();
-    if (Lang != 0) hash ^= Lang.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (DungeonGuid != 0UL) {
-      output.WriteRawTag(24);
-      output.WriteUInt64(DungeonGuid);
-    }
-    if (Timestamp != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Timestamp);
-    }
-    if (Region.Length != 0) {
-      output.WriteRawTag(90);
-      output.WriteString(Region);
-    }
-    if (Lang != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Lang);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Uid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (DungeonGuid != 0UL) {
-      output.WriteRawTag(24);
-      output.WriteUInt64(DungeonGuid);
-    }
-    if (Timestamp != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Timestamp);
-    }
-    if (Region.Length != 0) {
-      output.WriteRawTag(90);
-      output.WriteString(Region);
-    }
-    if (Lang != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Lang);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Uid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (DungeonGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
-    }
-    if (Uid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-    }
-    if (Timestamp != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Timestamp);
-    }
-    if (Region.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Region);
-    }
-    if (Lang != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Lang);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(CustomDungeonVerify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.DungeonGuid != 0UL) {
-      DungeonGuid = other.DungeonGuid;
-    }
-    if (other.Uid != 0) {
-      Uid = other.Uid;
-    }
-    if (other.Timestamp != 0) {
-      Timestamp = other.Timestamp;
-    }
-    if (other.Region.Length != 0) {
-      Region = other.Region;
-    }
-    if (other.Lang != 0) {
-      Lang = other.Lang;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          DungeonGuid = input.ReadUInt64();
-          break;
-        }
-        case 32: {
-          Timestamp = input.ReadUInt32();
-          break;
-        }
-        case 90: {
-          Region = input.ReadString();
-          break;
-        }
-        case 104: {
-          Lang = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          DungeonGuid = input.ReadUInt64();
-          break;
-        }
-        case 32: {
-          Timestamp = input.ReadUInt32();
-          break;
-        }
-        case 90: {
-          Region = input.ReadString();
-          break;
-        }
-        case 104: {
-          Lang = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -20,7 +20,7 @@ import "CylinderRegionSize.proto";
 import "PolygonRegionSize.proto";
 import "Vector.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 3051
 // EnetChannelId: 0

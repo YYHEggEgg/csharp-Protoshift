@@ -9,39 +9,42 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FriendEnterHomeOption.proto</summary>
-public static partial class FriendEnterHomeOptionReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FriendEnterHomeOption.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FriendEnterHomeOption.proto</summary>
+  public static partial class FriendEnterHomeOptionReflection {
 
-  static FriendEnterHomeOptionReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtGcmllbmRFbnRlckhvbWVPcHRpb24ucHJvdG8qjAEKFUZyaWVuZEVudGVy",
-          "SG9tZU9wdGlvbhIpCiVGUklFTkRfRU5URVJfSE9NRV9PUFRJT05fTkVFRF9D",
-          "T05GSVJNEAASIwofRlJJRU5EX0VOVEVSX0hPTUVfT1BUSU9OX1JFRlVTRRAB",
-          "EiMKH0ZSSUVORF9FTlRFUl9IT01FX09QVElPTl9ESVJFQ1QQAkIWChRvcmcu",
-          "c29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::FriendEnterHomeOption), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for FriendEnterHomeOption.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FriendEnterHomeOptionReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtGcmllbmRFbnRlckhvbWVPcHRpb24ucHJvdG8qjAEKFUZyaWVuZEVudGVy",
+            "SG9tZU9wdGlvbhIpCiVGUklFTkRfRU5URVJfSE9NRV9PUFRJT05fTkVFRF9D",
+            "T05GSVJNEAASIwofRlJJRU5EX0VOVEVSX0hPTUVfT1BUSU9OX1JFRlVTRRAB",
+            "EiMKH0ZSSUVORF9FTlRFUl9IT01FX09QVElPTl9ESVJFQ1QQAkIMqgIJTmV3",
+            "UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.FriendEnterHomeOption), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum FriendEnterHomeOption {
+    [pbr::OriginalName("FRIEND_ENTER_HOME_OPTION_NEED_CONFIRM")] NeedConfirm = 0,
+    [pbr::OriginalName("FRIEND_ENTER_HOME_OPTION_REFUSE")] Refuse = 1,
+    [pbr::OriginalName("FRIEND_ENTER_HOME_OPTION_DIRECT")] Direct = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum FriendEnterHomeOption {
-  [pbr::OriginalName("FRIEND_ENTER_HOME_OPTION_NEED_CONFIRM")] NeedConfirm = 0,
-  [pbr::OriginalName("FRIEND_ENTER_HOME_OPTION_REFUSE")] Refuse = 1,
-  [pbr::OriginalName("FRIEND_ENTER_HOME_OPTION_DIRECT")] Direct = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -9,350 +9,353 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from EvtDoSkillSuccNotify.proto</summary>
-public static partial class EvtDoSkillSuccNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for EvtDoSkillSuccNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from EvtDoSkillSuccNotify.proto</summary>
+  public static partial class EvtDoSkillSuccNotifyReflection {
 
-  static EvtDoSkillSuccNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpFdnREb1NraWxsU3VjY05vdGlmeS5wcm90bxoRRm9yd2FyZFR5cGUucHJv",
-          "dG8aDFZlY3Rvci5wcm90byJ5ChRFdnREb1NraWxsU3VjY05vdGlmeRIRCglj",
-          "YXN0ZXJfaWQYDSABKA0SIgoMZm9yd2FyZF90eXBlGAogASgOMgwuRm9yd2Fy",
-          "ZFR5cGUSGAoHZm9yd2FyZBgPIAEoCzIHLlZlY3RvchIQCghza2lsbF9pZBgH",
-          "IAEoDUIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ForwardTypeReflection.Descriptor, global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::EvtDoSkillSuccNotify), global::EvtDoSkillSuccNotify.Parser, new[]{ "CasterId", "ForwardType", "Forward", "SkillId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for EvtDoSkillSuccNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static EvtDoSkillSuccNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpFdnREb1NraWxsU3VjY05vdGlmeS5wcm90bxoRRm9yd2FyZFR5cGUucHJv",
+            "dG8aDFZlY3Rvci5wcm90byJ5ChRFdnREb1NraWxsU3VjY05vdGlmeRIRCglj",
+            "YXN0ZXJfaWQYDSABKA0SIgoMZm9yd2FyZF90eXBlGAogASgOMgwuRm9yd2Fy",
+            "ZFR5cGUSGAoHZm9yd2FyZBgPIAEoCzIHLlZlY3RvchIQCghza2lsbF9pZBgH",
+            "IAEoDUIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ForwardTypeReflection.Descriptor, global::OldProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.EvtDoSkillSuccNotify), global::OldProtos.EvtDoSkillSuccNotify.Parser, new[]{ "CasterId", "ForwardType", "Forward", "SkillId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 335
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class EvtDoSkillSuccNotify : pb::IMessage<EvtDoSkillSuccNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<EvtDoSkillSuccNotify> _parser = new pb::MessageParser<EvtDoSkillSuccNotify>(() => new EvtDoSkillSuccNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<EvtDoSkillSuccNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.EvtDoSkillSuccNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtDoSkillSuccNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtDoSkillSuccNotify(EvtDoSkillSuccNotify other) : this() {
+      casterId_ = other.casterId_;
+      forwardType_ = other.forwardType_;
+      forward_ = other.forward_ != null ? other.forward_.Clone() : null;
+      skillId_ = other.skillId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtDoSkillSuccNotify Clone() {
+      return new EvtDoSkillSuccNotify(this);
+    }
+
+    /// <summary>Field number for the "caster_id" field.</summary>
+    public const int CasterIdFieldNumber = 13;
+    private uint casterId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CasterId {
+      get { return casterId_; }
+      set {
+        casterId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forward_type" field.</summary>
+    public const int ForwardTypeFieldNumber = 10;
+    private global::OldProtos.ForwardType forwardType_ = global::OldProtos.ForwardType.Local;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ForwardType ForwardType {
+      get { return forwardType_; }
+      set {
+        forwardType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forward" field.</summary>
+    public const int ForwardFieldNumber = 15;
+    private global::OldProtos.Vector forward_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector Forward {
+      get { return forward_; }
+      set {
+        forward_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_id" field.</summary>
+    public const int SkillIdFieldNumber = 7;
+    private uint skillId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillId {
+      get { return skillId_; }
+      set {
+        skillId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as EvtDoSkillSuccNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(EvtDoSkillSuccNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CasterId != other.CasterId) return false;
+      if (ForwardType != other.ForwardType) return false;
+      if (!object.Equals(Forward, other.Forward)) return false;
+      if (SkillId != other.SkillId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CasterId != 0) hash ^= CasterId.GetHashCode();
+      if (ForwardType != global::OldProtos.ForwardType.Local) hash ^= ForwardType.GetHashCode();
+      if (forward_ != null) hash ^= Forward.GetHashCode();
+      if (SkillId != 0) hash ^= SkillId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (SkillId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(SkillId);
+      }
+      if (ForwardType != global::OldProtos.ForwardType.Local) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) ForwardType);
+      }
+      if (CasterId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(CasterId);
+      }
+      if (forward_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Forward);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (SkillId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(SkillId);
+      }
+      if (ForwardType != global::OldProtos.ForwardType.Local) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) ForwardType);
+      }
+      if (CasterId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(CasterId);
+      }
+      if (forward_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(Forward);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (CasterId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CasterId);
+      }
+      if (ForwardType != global::OldProtos.ForwardType.Local) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
+      }
+      if (forward_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Forward);
+      }
+      if (SkillId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(EvtDoSkillSuccNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CasterId != 0) {
+        CasterId = other.CasterId;
+      }
+      if (other.ForwardType != global::OldProtos.ForwardType.Local) {
+        ForwardType = other.ForwardType;
+      }
+      if (other.forward_ != null) {
+        if (forward_ == null) {
+          Forward = new global::OldProtos.Vector();
+        }
+        Forward.MergeFrom(other.Forward);
+      }
+      if (other.SkillId != 0) {
+        SkillId = other.SkillId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 56: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            ForwardType = (global::OldProtos.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 104: {
+            CasterId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            if (forward_ == null) {
+              Forward = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(Forward);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 56: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            ForwardType = (global::OldProtos.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 104: {
+            CasterId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            if (forward_ == null) {
+              Forward = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(Forward);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 335
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class EvtDoSkillSuccNotify : pb::IMessage<EvtDoSkillSuccNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<EvtDoSkillSuccNotify> _parser = new pb::MessageParser<EvtDoSkillSuccNotify>(() => new EvtDoSkillSuccNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<EvtDoSkillSuccNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::EvtDoSkillSuccNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtDoSkillSuccNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtDoSkillSuccNotify(EvtDoSkillSuccNotify other) : this() {
-    casterId_ = other.casterId_;
-    forwardType_ = other.forwardType_;
-    forward_ = other.forward_ != null ? other.forward_.Clone() : null;
-    skillId_ = other.skillId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtDoSkillSuccNotify Clone() {
-    return new EvtDoSkillSuccNotify(this);
-  }
-
-  /// <summary>Field number for the "caster_id" field.</summary>
-  public const int CasterIdFieldNumber = 13;
-  private uint casterId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CasterId {
-    get { return casterId_; }
-    set {
-      casterId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "forward_type" field.</summary>
-  public const int ForwardTypeFieldNumber = 10;
-  private global::ForwardType forwardType_ = global::ForwardType.Local;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ForwardType ForwardType {
-    get { return forwardType_; }
-    set {
-      forwardType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "forward" field.</summary>
-  public const int ForwardFieldNumber = 15;
-  private global::Vector forward_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector Forward {
-    get { return forward_; }
-    set {
-      forward_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "skill_id" field.</summary>
-  public const int SkillIdFieldNumber = 7;
-  private uint skillId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SkillId {
-    get { return skillId_; }
-    set {
-      skillId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as EvtDoSkillSuccNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(EvtDoSkillSuccNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (CasterId != other.CasterId) return false;
-    if (ForwardType != other.ForwardType) return false;
-    if (!object.Equals(Forward, other.Forward)) return false;
-    if (SkillId != other.SkillId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (CasterId != 0) hash ^= CasterId.GetHashCode();
-    if (ForwardType != global::ForwardType.Local) hash ^= ForwardType.GetHashCode();
-    if (forward_ != null) hash ^= Forward.GetHashCode();
-    if (SkillId != 0) hash ^= SkillId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (SkillId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(SkillId);
-    }
-    if (ForwardType != global::ForwardType.Local) {
-      output.WriteRawTag(80);
-      output.WriteEnum((int) ForwardType);
-    }
-    if (CasterId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(CasterId);
-    }
-    if (forward_ != null) {
-      output.WriteRawTag(122);
-      output.WriteMessage(Forward);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (SkillId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(SkillId);
-    }
-    if (ForwardType != global::ForwardType.Local) {
-      output.WriteRawTag(80);
-      output.WriteEnum((int) ForwardType);
-    }
-    if (CasterId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(CasterId);
-    }
-    if (forward_ != null) {
-      output.WriteRawTag(122);
-      output.WriteMessage(Forward);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (CasterId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CasterId);
-    }
-    if (ForwardType != global::ForwardType.Local) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
-    }
-    if (forward_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Forward);
-    }
-    if (SkillId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(EvtDoSkillSuccNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.CasterId != 0) {
-      CasterId = other.CasterId;
-    }
-    if (other.ForwardType != global::ForwardType.Local) {
-      ForwardType = other.ForwardType;
-    }
-    if (other.forward_ != null) {
-      if (forward_ == null) {
-        Forward = new global::Vector();
-      }
-      Forward.MergeFrom(other.Forward);
-    }
-    if (other.SkillId != 0) {
-      SkillId = other.SkillId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 56: {
-          SkillId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          ForwardType = (global::ForwardType) input.ReadEnum();
-          break;
-        }
-        case 104: {
-          CasterId = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          if (forward_ == null) {
-            Forward = new global::Vector();
-          }
-          input.ReadMessage(Forward);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 56: {
-          SkillId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          ForwardType = (global::ForwardType) input.ReadEnum();
-          break;
-        }
-        case 104: {
-          CasterId = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          if (forward_ == null) {
-            Forward = new global::Vector();
-          }
-          input.ReadMessage(Forward);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "TreasureSeelieRegionData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message TreasureSeelieActivityDetailInfo {
   uint32 treasure_close_time = 10;

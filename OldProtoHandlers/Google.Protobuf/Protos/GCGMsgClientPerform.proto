@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GCGClientPerformType.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message GCGMsgClientPerform {
   repeated uint32 param_list = 2;

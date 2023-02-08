@@ -20,7 +20,7 @@ import "InBattleChessSettleInfo.proto";
 import "InBattleIrodoriChessSettleInfo.proto";
 import "InBattleMechanicusSettleInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message MultistagePlaySettleNotify {
   // enum CmdId {

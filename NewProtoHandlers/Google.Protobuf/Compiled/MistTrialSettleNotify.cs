@@ -9,402 +9,405 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MistTrialSettleNotify.proto</summary>
-public static partial class MistTrialSettleNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MistTrialSettleNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MistTrialSettleNotify.proto</summary>
+  public static partial class MistTrialSettleNotifyReflection {
 
-  static MistTrialSettleNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtNaXN0VHJpYWxTZXR0bGVOb3RpZnkucHJvdG8aGU1pc3RUcmlhbEJlc3RB",
-          "dmF0YXIucHJvdG8iuQMKFU1pc3RUcmlhbFNldHRsZU5vdGlmeRJLChNVbmsz",
-          "MzAwX0tGS0hBQUNESkRKGAUgAygLMi4uTWlzdFRyaWFsU2V0dGxlTm90aWZ5",
-          "LlVuazMzMDBLRktIQUFDREpESkVudHJ5EksKE1VuazMzMDBfR01QRUVMTEFO",
-          "TEkYAiADKAsyLi5NaXN0VHJpYWxTZXR0bGVOb3RpZnkuVW5rMzMwMEdNUEVF",
-          "TExBTkxJRW50cnkSGAoQZHVuZ2Vvbl9zY2VuZV9pZBgMIAEoDRIXCg9maXJz",
-          "dF9wYXNzX3RpbWUYCCABKA0SLQoPYmVzdF9oaXRfYXZhdGFyGAMgASgLMhQu",
-          "TWlzdFRyaWFsQmVzdEF2YXRhchIuChBiZXN0X2F2YXRhcl9saXN0GAkgAygL",
-          "MhQuTWlzdFRyaWFsQmVzdEF2YXRhcho5ChdVbmszMzAwS0ZLSEFBQ0RKREpF",
-          "bnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBGjkKF1VuazMz",
-          "MDBHTVBFRUxMQU5MSUVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEo",
-          "DToCOAFCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::MistTrialBestAvatarReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MistTrialSettleNotify), global::MistTrialSettleNotify.Parser, new[]{ "Unk3300KFKHAACDJDJ", "Unk3300GMPEELLANLI", "DungeonSceneId", "FirstPassTime", "BestHitAvatar", "BestAvatarList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for MistTrialSettleNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MistTrialSettleNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtNaXN0VHJpYWxTZXR0bGVOb3RpZnkucHJvdG8aGU1pc3RUcmlhbEJlc3RB",
+            "dmF0YXIucHJvdG8iuQMKFU1pc3RUcmlhbFNldHRsZU5vdGlmeRJLChNVbmsz",
+            "MzAwX0tGS0hBQUNESkRKGAUgAygLMi4uTWlzdFRyaWFsU2V0dGxlTm90aWZ5",
+            "LlVuazMzMDBLRktIQUFDREpESkVudHJ5EksKE1VuazMzMDBfR01QRUVMTEFO",
+            "TEkYAiADKAsyLi5NaXN0VHJpYWxTZXR0bGVOb3RpZnkuVW5rMzMwMEdNUEVF",
+            "TExBTkxJRW50cnkSGAoQZHVuZ2Vvbl9zY2VuZV9pZBgMIAEoDRIXCg9maXJz",
+            "dF9wYXNzX3RpbWUYCCABKA0SLQoPYmVzdF9oaXRfYXZhdGFyGAMgASgLMhQu",
+            "TWlzdFRyaWFsQmVzdEF2YXRhchIuChBiZXN0X2F2YXRhcl9saXN0GAkgAygL",
+            "MhQuTWlzdFRyaWFsQmVzdEF2YXRhcho5ChdVbmszMzAwS0ZLSEFBQ0RKREpF",
+            "bnRyeRILCgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBGjkKF1VuazMz",
+            "MDBHTVBFRUxMQU5MSUVudHJ5EgsKA2tleRgBIAEoDRINCgV2YWx1ZRgCIAEo",
+            "DToCOAFCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.MistTrialBestAvatarReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.MistTrialSettleNotify), global::NewProtos.MistTrialSettleNotify.Parser, new[]{ "Unk3300KFKHAACDJDJ", "Unk3300GMPEELLANLI", "DungeonSceneId", "FirstPassTime", "BestHitAvatar", "BestAvatarList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8116;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
+  /// </summary>
+  public sealed partial class MistTrialSettleNotify : pb::IMessage<MistTrialSettleNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MistTrialSettleNotify> _parser = new pb::MessageParser<MistTrialSettleNotify>(() => new MistTrialSettleNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MistTrialSettleNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.MistTrialSettleNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MistTrialSettleNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MistTrialSettleNotify(MistTrialSettleNotify other) : this() {
+      unk3300KFKHAACDJDJ_ = other.unk3300KFKHAACDJDJ_.Clone();
+      unk3300GMPEELLANLI_ = other.unk3300GMPEELLANLI_.Clone();
+      dungeonSceneId_ = other.dungeonSceneId_;
+      firstPassTime_ = other.firstPassTime_;
+      bestHitAvatar_ = other.bestHitAvatar_ != null ? other.bestHitAvatar_.Clone() : null;
+      bestAvatarList_ = other.bestAvatarList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MistTrialSettleNotify Clone() {
+      return new MistTrialSettleNotify(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_KFKHAACDJDJ" field.</summary>
+    public const int Unk3300KFKHAACDJDJFieldNumber = 5;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300KFKHAACDJDJ_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 42);
+    private readonly pbc::MapField<uint, uint> unk3300KFKHAACDJDJ_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> Unk3300KFKHAACDJDJ {
+      get { return unk3300KFKHAACDJDJ_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_GMPEELLANLI" field.</summary>
+    public const int Unk3300GMPEELLANLIFieldNumber = 2;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300GMPEELLANLI_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 18);
+    private readonly pbc::MapField<uint, uint> unk3300GMPEELLANLI_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> Unk3300GMPEELLANLI {
+      get { return unk3300GMPEELLANLI_; }
+    }
+
+    /// <summary>Field number for the "dungeon_scene_id" field.</summary>
+    public const int DungeonSceneIdFieldNumber = 12;
+    private uint dungeonSceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonSceneId {
+      get { return dungeonSceneId_; }
+      set {
+        dungeonSceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "first_pass_time" field.</summary>
+    public const int FirstPassTimeFieldNumber = 8;
+    private uint firstPassTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FirstPassTime {
+      get { return firstPassTime_; }
+      set {
+        firstPassTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "best_hit_avatar" field.</summary>
+    public const int BestHitAvatarFieldNumber = 3;
+    private global::NewProtos.MistTrialBestAvatar bestHitAvatar_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.MistTrialBestAvatar BestHitAvatar {
+      get { return bestHitAvatar_; }
+      set {
+        bestHitAvatar_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "best_avatar_list" field.</summary>
+    public const int BestAvatarListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::NewProtos.MistTrialBestAvatar> _repeated_bestAvatarList_codec
+        = pb::FieldCodec.ForMessage(74, global::NewProtos.MistTrialBestAvatar.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.MistTrialBestAvatar> bestAvatarList_ = new pbc::RepeatedField<global::NewProtos.MistTrialBestAvatar>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.MistTrialBestAvatar> BestAvatarList {
+      get { return bestAvatarList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MistTrialSettleNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MistTrialSettleNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!Unk3300KFKHAACDJDJ.Equals(other.Unk3300KFKHAACDJDJ)) return false;
+      if (!Unk3300GMPEELLANLI.Equals(other.Unk3300GMPEELLANLI)) return false;
+      if (DungeonSceneId != other.DungeonSceneId) return false;
+      if (FirstPassTime != other.FirstPassTime) return false;
+      if (!object.Equals(BestHitAvatar, other.BestHitAvatar)) return false;
+      if(!bestAvatarList_.Equals(other.bestAvatarList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= Unk3300KFKHAACDJDJ.GetHashCode();
+      hash ^= Unk3300GMPEELLANLI.GetHashCode();
+      if (DungeonSceneId != 0) hash ^= DungeonSceneId.GetHashCode();
+      if (FirstPassTime != 0) hash ^= FirstPassTime.GetHashCode();
+      if (bestHitAvatar_ != null) hash ^= BestHitAvatar.GetHashCode();
+      hash ^= bestAvatarList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      unk3300GMPEELLANLI_.WriteTo(output, _map_unk3300GMPEELLANLI_codec);
+      if (bestHitAvatar_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(BestHitAvatar);
+      }
+      unk3300KFKHAACDJDJ_.WriteTo(output, _map_unk3300KFKHAACDJDJ_codec);
+      if (FirstPassTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(FirstPassTime);
+      }
+      bestAvatarList_.WriteTo(output, _repeated_bestAvatarList_codec);
+      if (DungeonSceneId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(DungeonSceneId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unk3300GMPEELLANLI_.WriteTo(ref output, _map_unk3300GMPEELLANLI_codec);
+      if (bestHitAvatar_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(BestHitAvatar);
+      }
+      unk3300KFKHAACDJDJ_.WriteTo(ref output, _map_unk3300KFKHAACDJDJ_codec);
+      if (FirstPassTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(FirstPassTime);
+      }
+      bestAvatarList_.WriteTo(ref output, _repeated_bestAvatarList_codec);
+      if (DungeonSceneId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(DungeonSceneId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += unk3300KFKHAACDJDJ_.CalculateSize(_map_unk3300KFKHAACDJDJ_codec);
+      size += unk3300GMPEELLANLI_.CalculateSize(_map_unk3300GMPEELLANLI_codec);
+      if (DungeonSceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonSceneId);
+      }
+      if (FirstPassTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FirstPassTime);
+      }
+      if (bestHitAvatar_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BestHitAvatar);
+      }
+      size += bestAvatarList_.CalculateSize(_repeated_bestAvatarList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MistTrialSettleNotify other) {
+      if (other == null) {
+        return;
+      }
+      unk3300KFKHAACDJDJ_.Add(other.unk3300KFKHAACDJDJ_);
+      unk3300GMPEELLANLI_.Add(other.unk3300GMPEELLANLI_);
+      if (other.DungeonSceneId != 0) {
+        DungeonSceneId = other.DungeonSceneId;
+      }
+      if (other.FirstPassTime != 0) {
+        FirstPassTime = other.FirstPassTime;
+      }
+      if (other.bestHitAvatar_ != null) {
+        if (bestHitAvatar_ == null) {
+          BestHitAvatar = new global::NewProtos.MistTrialBestAvatar();
+        }
+        BestHitAvatar.MergeFrom(other.BestHitAvatar);
+      }
+      bestAvatarList_.Add(other.bestAvatarList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            unk3300GMPEELLANLI_.AddEntriesFrom(input, _map_unk3300GMPEELLANLI_codec);
+            break;
+          }
+          case 26: {
+            if (bestHitAvatar_ == null) {
+              BestHitAvatar = new global::NewProtos.MistTrialBestAvatar();
+            }
+            input.ReadMessage(BestHitAvatar);
+            break;
+          }
+          case 42: {
+            unk3300KFKHAACDJDJ_.AddEntriesFrom(input, _map_unk3300KFKHAACDJDJ_codec);
+            break;
+          }
+          case 64: {
+            FirstPassTime = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            bestAvatarList_.AddEntriesFrom(input, _repeated_bestAvatarList_codec);
+            break;
+          }
+          case 96: {
+            DungeonSceneId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            unk3300GMPEELLANLI_.AddEntriesFrom(ref input, _map_unk3300GMPEELLANLI_codec);
+            break;
+          }
+          case 26: {
+            if (bestHitAvatar_ == null) {
+              BestHitAvatar = new global::NewProtos.MistTrialBestAvatar();
+            }
+            input.ReadMessage(BestHitAvatar);
+            break;
+          }
+          case 42: {
+            unk3300KFKHAACDJDJ_.AddEntriesFrom(ref input, _map_unk3300KFKHAACDJDJ_codec);
+            break;
+          }
+          case 64: {
+            FirstPassTime = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            bestAvatarList_.AddEntriesFrom(ref input, _repeated_bestAvatarList_codec);
+            break;
+          }
+          case 96: {
+            DungeonSceneId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 8116;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-///   IS_ALLOW_CLIENT = 1;
-/// }
-/// </summary>
-public sealed partial class MistTrialSettleNotify : pb::IMessage<MistTrialSettleNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<MistTrialSettleNotify> _parser = new pb::MessageParser<MistTrialSettleNotify>(() => new MistTrialSettleNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<MistTrialSettleNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::MistTrialSettleNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MistTrialSettleNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MistTrialSettleNotify(MistTrialSettleNotify other) : this() {
-    unk3300KFKHAACDJDJ_ = other.unk3300KFKHAACDJDJ_.Clone();
-    unk3300GMPEELLANLI_ = other.unk3300GMPEELLANLI_.Clone();
-    dungeonSceneId_ = other.dungeonSceneId_;
-    firstPassTime_ = other.firstPassTime_;
-    bestHitAvatar_ = other.bestHitAvatar_ != null ? other.bestHitAvatar_.Clone() : null;
-    bestAvatarList_ = other.bestAvatarList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MistTrialSettleNotify Clone() {
-    return new MistTrialSettleNotify(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_KFKHAACDJDJ" field.</summary>
-  public const int Unk3300KFKHAACDJDJFieldNumber = 5;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300KFKHAACDJDJ_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 42);
-  private readonly pbc::MapField<uint, uint> unk3300KFKHAACDJDJ_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> Unk3300KFKHAACDJDJ {
-    get { return unk3300KFKHAACDJDJ_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_GMPEELLANLI" field.</summary>
-  public const int Unk3300GMPEELLANLIFieldNumber = 2;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300GMPEELLANLI_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 18);
-  private readonly pbc::MapField<uint, uint> unk3300GMPEELLANLI_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> Unk3300GMPEELLANLI {
-    get { return unk3300GMPEELLANLI_; }
-  }
-
-  /// <summary>Field number for the "dungeon_scene_id" field.</summary>
-  public const int DungeonSceneIdFieldNumber = 12;
-  private uint dungeonSceneId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DungeonSceneId {
-    get { return dungeonSceneId_; }
-    set {
-      dungeonSceneId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "first_pass_time" field.</summary>
-  public const int FirstPassTimeFieldNumber = 8;
-  private uint firstPassTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FirstPassTime {
-    get { return firstPassTime_; }
-    set {
-      firstPassTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "best_hit_avatar" field.</summary>
-  public const int BestHitAvatarFieldNumber = 3;
-  private global::MistTrialBestAvatar bestHitAvatar_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MistTrialBestAvatar BestHitAvatar {
-    get { return bestHitAvatar_; }
-    set {
-      bestHitAvatar_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "best_avatar_list" field.</summary>
-  public const int BestAvatarListFieldNumber = 9;
-  private static readonly pb::FieldCodec<global::MistTrialBestAvatar> _repeated_bestAvatarList_codec
-      = pb::FieldCodec.ForMessage(74, global::MistTrialBestAvatar.Parser);
-  private readonly pbc::RepeatedField<global::MistTrialBestAvatar> bestAvatarList_ = new pbc::RepeatedField<global::MistTrialBestAvatar>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::MistTrialBestAvatar> BestAvatarList {
-    get { return bestAvatarList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as MistTrialSettleNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(MistTrialSettleNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!Unk3300KFKHAACDJDJ.Equals(other.Unk3300KFKHAACDJDJ)) return false;
-    if (!Unk3300GMPEELLANLI.Equals(other.Unk3300GMPEELLANLI)) return false;
-    if (DungeonSceneId != other.DungeonSceneId) return false;
-    if (FirstPassTime != other.FirstPassTime) return false;
-    if (!object.Equals(BestHitAvatar, other.BestHitAvatar)) return false;
-    if(!bestAvatarList_.Equals(other.bestAvatarList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= Unk3300KFKHAACDJDJ.GetHashCode();
-    hash ^= Unk3300GMPEELLANLI.GetHashCode();
-    if (DungeonSceneId != 0) hash ^= DungeonSceneId.GetHashCode();
-    if (FirstPassTime != 0) hash ^= FirstPassTime.GetHashCode();
-    if (bestHitAvatar_ != null) hash ^= BestHitAvatar.GetHashCode();
-    hash ^= bestAvatarList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    unk3300GMPEELLANLI_.WriteTo(output, _map_unk3300GMPEELLANLI_codec);
-    if (bestHitAvatar_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(BestHitAvatar);
-    }
-    unk3300KFKHAACDJDJ_.WriteTo(output, _map_unk3300KFKHAACDJDJ_codec);
-    if (FirstPassTime != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(FirstPassTime);
-    }
-    bestAvatarList_.WriteTo(output, _repeated_bestAvatarList_codec);
-    if (DungeonSceneId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(DungeonSceneId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    unk3300GMPEELLANLI_.WriteTo(ref output, _map_unk3300GMPEELLANLI_codec);
-    if (bestHitAvatar_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(BestHitAvatar);
-    }
-    unk3300KFKHAACDJDJ_.WriteTo(ref output, _map_unk3300KFKHAACDJDJ_codec);
-    if (FirstPassTime != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(FirstPassTime);
-    }
-    bestAvatarList_.WriteTo(ref output, _repeated_bestAvatarList_codec);
-    if (DungeonSceneId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(DungeonSceneId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += unk3300KFKHAACDJDJ_.CalculateSize(_map_unk3300KFKHAACDJDJ_codec);
-    size += unk3300GMPEELLANLI_.CalculateSize(_map_unk3300GMPEELLANLI_codec);
-    if (DungeonSceneId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonSceneId);
-    }
-    if (FirstPassTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FirstPassTime);
-    }
-    if (bestHitAvatar_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(BestHitAvatar);
-    }
-    size += bestAvatarList_.CalculateSize(_repeated_bestAvatarList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(MistTrialSettleNotify other) {
-    if (other == null) {
-      return;
-    }
-    unk3300KFKHAACDJDJ_.Add(other.unk3300KFKHAACDJDJ_);
-    unk3300GMPEELLANLI_.Add(other.unk3300GMPEELLANLI_);
-    if (other.DungeonSceneId != 0) {
-      DungeonSceneId = other.DungeonSceneId;
-    }
-    if (other.FirstPassTime != 0) {
-      FirstPassTime = other.FirstPassTime;
-    }
-    if (other.bestHitAvatar_ != null) {
-      if (bestHitAvatar_ == null) {
-        BestHitAvatar = new global::MistTrialBestAvatar();
-      }
-      BestHitAvatar.MergeFrom(other.BestHitAvatar);
-    }
-    bestAvatarList_.Add(other.bestAvatarList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18: {
-          unk3300GMPEELLANLI_.AddEntriesFrom(input, _map_unk3300GMPEELLANLI_codec);
-          break;
-        }
-        case 26: {
-          if (bestHitAvatar_ == null) {
-            BestHitAvatar = new global::MistTrialBestAvatar();
-          }
-          input.ReadMessage(BestHitAvatar);
-          break;
-        }
-        case 42: {
-          unk3300KFKHAACDJDJ_.AddEntriesFrom(input, _map_unk3300KFKHAACDJDJ_codec);
-          break;
-        }
-        case 64: {
-          FirstPassTime = input.ReadUInt32();
-          break;
-        }
-        case 74: {
-          bestAvatarList_.AddEntriesFrom(input, _repeated_bestAvatarList_codec);
-          break;
-        }
-        case 96: {
-          DungeonSceneId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18: {
-          unk3300GMPEELLANLI_.AddEntriesFrom(ref input, _map_unk3300GMPEELLANLI_codec);
-          break;
-        }
-        case 26: {
-          if (bestHitAvatar_ == null) {
-            BestHitAvatar = new global::MistTrialBestAvatar();
-          }
-          input.ReadMessage(BestHitAvatar);
-          break;
-        }
-        case 42: {
-          unk3300KFKHAACDJDJ_.AddEntriesFrom(ref input, _map_unk3300KFKHAACDJDJ_codec);
-          break;
-        }
-        case 64: {
-          FirstPassTime = input.ReadUInt32();
-          break;
-        }
-        case 74: {
-          bestAvatarList_.AddEntriesFrom(ref input, _repeated_bestAvatarList_codec);
-          break;
-        }
-        case 96: {
-          DungeonSceneId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

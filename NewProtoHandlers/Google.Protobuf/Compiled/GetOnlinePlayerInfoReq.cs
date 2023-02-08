@@ -9,381 +9,383 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GetOnlinePlayerInfoReq.proto</summary>
-public static partial class GetOnlinePlayerInfoReqReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GetOnlinePlayerInfoReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GetOnlinePlayerInfoReq.proto</summary>
+  public static partial class GetOnlinePlayerInfoReqReflection {
 
-  static GetOnlinePlayerInfoReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChxHZXRPbmxpbmVQbGF5ZXJJbmZvUmVxLnByb3RvIngKFkdldE9ubGluZVBs",
-          "YXllckluZm9SZXESFAoMaXNfb25saW5lX2lkGAggASgIEhQKCnRhcmdldF91",
-          "aWQYASABKA1IABITCglvbmxpbmVfaWQYByABKAlIABIQCgZwc25faWQYBCAB",
-          "KAlIAEILCglwbGF5ZXJfaWRCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnBy",
-          "b3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GetOnlinePlayerInfoReq), global::GetOnlinePlayerInfoReq.Parser, new[]{ "IsOnlineId", "TargetUid", "OnlineId", "PsnId" }, new[]{ "PlayerId" }, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GetOnlinePlayerInfoReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GetOnlinePlayerInfoReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChxHZXRPbmxpbmVQbGF5ZXJJbmZvUmVxLnByb3RvIngKFkdldE9ubGluZVBs",
+            "YXllckluZm9SZXESFAoMaXNfb25saW5lX2lkGAggASgIEhQKCnRhcmdldF91",
+            "aWQYASABKA1IABITCglvbmxpbmVfaWQYByABKAlIABIQCgZwc25faWQYBCAB",
+            "KAlIAEILCglwbGF5ZXJfaWRCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GetOnlinePlayerInfoReq), global::NewProtos.GetOnlinePlayerInfoReq.Parser, new[]{ "IsOnlineId", "TargetUid", "OnlineId", "PsnId" }, new[]{ "PlayerId" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 90;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
+  /// </summary>
+  public sealed partial class GetOnlinePlayerInfoReq : pb::IMessage<GetOnlinePlayerInfoReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetOnlinePlayerInfoReq> _parser = new pb::MessageParser<GetOnlinePlayerInfoReq>(() => new GetOnlinePlayerInfoReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GetOnlinePlayerInfoReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.GetOnlinePlayerInfoReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetOnlinePlayerInfoReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetOnlinePlayerInfoReq(GetOnlinePlayerInfoReq other) : this() {
+      isOnlineId_ = other.isOnlineId_;
+      switch (other.PlayerIdCase) {
+        case PlayerIdOneofCase.TargetUid:
+          TargetUid = other.TargetUid;
+          break;
+        case PlayerIdOneofCase.OnlineId:
+          OnlineId = other.OnlineId;
+          break;
+        case PlayerIdOneofCase.PsnId:
+          PsnId = other.PsnId;
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetOnlinePlayerInfoReq Clone() {
+      return new GetOnlinePlayerInfoReq(this);
+    }
+
+    /// <summary>Field number for the "is_online_id" field.</summary>
+    public const int IsOnlineIdFieldNumber = 8;
+    private bool isOnlineId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsOnlineId {
+      get { return isOnlineId_; }
+      set {
+        isOnlineId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_uid" field.</summary>
+    public const int TargetUidFieldNumber = 1;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TargetUid {
+      get { return playerIdCase_ == PlayerIdOneofCase.TargetUid ? (uint) playerId_ : 0; }
+      set {
+        playerId_ = value;
+        playerIdCase_ = PlayerIdOneofCase.TargetUid;
+      }
+    }
+
+    /// <summary>Field number for the "online_id" field.</summary>
+    public const int OnlineIdFieldNumber = 7;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string OnlineId {
+      get { return playerIdCase_ == PlayerIdOneofCase.OnlineId ? (string) playerId_ : ""; }
+      set {
+        playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        playerIdCase_ = PlayerIdOneofCase.OnlineId;
+      }
+    }
+
+    /// <summary>Field number for the "psn_id" field.</summary>
+    public const int PsnIdFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PsnId {
+      get { return playerIdCase_ == PlayerIdOneofCase.PsnId ? (string) playerId_ : ""; }
+      set {
+        playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        playerIdCase_ = PlayerIdOneofCase.PsnId;
+      }
+    }
+
+    private object playerId_;
+    /// <summary>Enum of possible cases for the "player_id" oneof.</summary>
+    public enum PlayerIdOneofCase {
+      None = 0,
+      TargetUid = 1,
+      OnlineId = 7,
+      PsnId = 4,
+    }
+    private PlayerIdOneofCase playerIdCase_ = PlayerIdOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerIdOneofCase PlayerIdCase {
+      get { return playerIdCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearPlayerId() {
+      playerIdCase_ = PlayerIdOneofCase.None;
+      playerId_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GetOnlinePlayerInfoReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GetOnlinePlayerInfoReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsOnlineId != other.IsOnlineId) return false;
+      if (TargetUid != other.TargetUid) return false;
+      if (OnlineId != other.OnlineId) return false;
+      if (PsnId != other.PsnId) return false;
+      if (PlayerIdCase != other.PlayerIdCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsOnlineId != false) hash ^= IsOnlineId.GetHashCode();
+      if (playerIdCase_ == PlayerIdOneofCase.TargetUid) hash ^= TargetUid.GetHashCode();
+      if (playerIdCase_ == PlayerIdOneofCase.OnlineId) hash ^= OnlineId.GetHashCode();
+      if (playerIdCase_ == PlayerIdOneofCase.PsnId) hash ^= PsnId.GetHashCode();
+      hash ^= (int) playerIdCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (playerIdCase_ == PlayerIdOneofCase.TargetUid) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(TargetUid);
+      }
+      if (playerIdCase_ == PlayerIdOneofCase.PsnId) {
+        output.WriteRawTag(34);
+        output.WriteString(PsnId);
+      }
+      if (playerIdCase_ == PlayerIdOneofCase.OnlineId) {
+        output.WriteRawTag(58);
+        output.WriteString(OnlineId);
+      }
+      if (IsOnlineId != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsOnlineId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (playerIdCase_ == PlayerIdOneofCase.TargetUid) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(TargetUid);
+      }
+      if (playerIdCase_ == PlayerIdOneofCase.PsnId) {
+        output.WriteRawTag(34);
+        output.WriteString(PsnId);
+      }
+      if (playerIdCase_ == PlayerIdOneofCase.OnlineId) {
+        output.WriteRawTag(58);
+        output.WriteString(OnlineId);
+      }
+      if (IsOnlineId != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsOnlineId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsOnlineId != false) {
+        size += 1 + 1;
+      }
+      if (playerIdCase_ == PlayerIdOneofCase.TargetUid) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
+      }
+      if (playerIdCase_ == PlayerIdOneofCase.OnlineId) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OnlineId);
+      }
+      if (playerIdCase_ == PlayerIdOneofCase.PsnId) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PsnId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GetOnlinePlayerInfoReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsOnlineId != false) {
+        IsOnlineId = other.IsOnlineId;
+      }
+      switch (other.PlayerIdCase) {
+        case PlayerIdOneofCase.TargetUid:
+          TargetUid = other.TargetUid;
+          break;
+        case PlayerIdOneofCase.OnlineId:
+          OnlineId = other.OnlineId;
+          break;
+        case PlayerIdOneofCase.PsnId:
+          PsnId = other.PsnId;
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            TargetUid = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            PsnId = input.ReadString();
+            break;
+          }
+          case 58: {
+            OnlineId = input.ReadString();
+            break;
+          }
+          case 64: {
+            IsOnlineId = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            TargetUid = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            PsnId = input.ReadString();
+            break;
+          }
+          case 58: {
+            OnlineId = input.ReadString();
+            break;
+          }
+          case 64: {
+            IsOnlineId = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 90;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-///   IS_ALLOW_CLIENT = 1;
-/// }
-/// </summary>
-public sealed partial class GetOnlinePlayerInfoReq : pb::IMessage<GetOnlinePlayerInfoReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GetOnlinePlayerInfoReq> _parser = new pb::MessageParser<GetOnlinePlayerInfoReq>(() => new GetOnlinePlayerInfoReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GetOnlinePlayerInfoReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GetOnlinePlayerInfoReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetOnlinePlayerInfoReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetOnlinePlayerInfoReq(GetOnlinePlayerInfoReq other) : this() {
-    isOnlineId_ = other.isOnlineId_;
-    switch (other.PlayerIdCase) {
-      case PlayerIdOneofCase.TargetUid:
-        TargetUid = other.TargetUid;
-        break;
-      case PlayerIdOneofCase.OnlineId:
-        OnlineId = other.OnlineId;
-        break;
-      case PlayerIdOneofCase.PsnId:
-        PsnId = other.PsnId;
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetOnlinePlayerInfoReq Clone() {
-    return new GetOnlinePlayerInfoReq(this);
-  }
-
-  /// <summary>Field number for the "is_online_id" field.</summary>
-  public const int IsOnlineIdFieldNumber = 8;
-  private bool isOnlineId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsOnlineId {
-    get { return isOnlineId_; }
-    set {
-      isOnlineId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "target_uid" field.</summary>
-  public const int TargetUidFieldNumber = 1;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TargetUid {
-    get { return playerIdCase_ == PlayerIdOneofCase.TargetUid ? (uint) playerId_ : 0; }
-    set {
-      playerId_ = value;
-      playerIdCase_ = PlayerIdOneofCase.TargetUid;
-    }
-  }
-
-  /// <summary>Field number for the "online_id" field.</summary>
-  public const int OnlineIdFieldNumber = 7;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string OnlineId {
-    get { return playerIdCase_ == PlayerIdOneofCase.OnlineId ? (string) playerId_ : ""; }
-    set {
-      playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      playerIdCase_ = PlayerIdOneofCase.OnlineId;
-    }
-  }
-
-  /// <summary>Field number for the "psn_id" field.</summary>
-  public const int PsnIdFieldNumber = 4;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string PsnId {
-    get { return playerIdCase_ == PlayerIdOneofCase.PsnId ? (string) playerId_ : ""; }
-    set {
-      playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      playerIdCase_ = PlayerIdOneofCase.PsnId;
-    }
-  }
-
-  private object playerId_;
-  /// <summary>Enum of possible cases for the "player_id" oneof.</summary>
-  public enum PlayerIdOneofCase {
-    None = 0,
-    TargetUid = 1,
-    OnlineId = 7,
-    PsnId = 4,
-  }
-  private PlayerIdOneofCase playerIdCase_ = PlayerIdOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerIdOneofCase PlayerIdCase {
-    get { return playerIdCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearPlayerId() {
-    playerIdCase_ = PlayerIdOneofCase.None;
-    playerId_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GetOnlinePlayerInfoReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GetOnlinePlayerInfoReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsOnlineId != other.IsOnlineId) return false;
-    if (TargetUid != other.TargetUid) return false;
-    if (OnlineId != other.OnlineId) return false;
-    if (PsnId != other.PsnId) return false;
-    if (PlayerIdCase != other.PlayerIdCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsOnlineId != false) hash ^= IsOnlineId.GetHashCode();
-    if (playerIdCase_ == PlayerIdOneofCase.TargetUid) hash ^= TargetUid.GetHashCode();
-    if (playerIdCase_ == PlayerIdOneofCase.OnlineId) hash ^= OnlineId.GetHashCode();
-    if (playerIdCase_ == PlayerIdOneofCase.PsnId) hash ^= PsnId.GetHashCode();
-    hash ^= (int) playerIdCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (playerIdCase_ == PlayerIdOneofCase.TargetUid) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(TargetUid);
-    }
-    if (playerIdCase_ == PlayerIdOneofCase.PsnId) {
-      output.WriteRawTag(34);
-      output.WriteString(PsnId);
-    }
-    if (playerIdCase_ == PlayerIdOneofCase.OnlineId) {
-      output.WriteRawTag(58);
-      output.WriteString(OnlineId);
-    }
-    if (IsOnlineId != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsOnlineId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (playerIdCase_ == PlayerIdOneofCase.TargetUid) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(TargetUid);
-    }
-    if (playerIdCase_ == PlayerIdOneofCase.PsnId) {
-      output.WriteRawTag(34);
-      output.WriteString(PsnId);
-    }
-    if (playerIdCase_ == PlayerIdOneofCase.OnlineId) {
-      output.WriteRawTag(58);
-      output.WriteString(OnlineId);
-    }
-    if (IsOnlineId != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsOnlineId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsOnlineId != false) {
-      size += 1 + 1;
-    }
-    if (playerIdCase_ == PlayerIdOneofCase.TargetUid) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
-    }
-    if (playerIdCase_ == PlayerIdOneofCase.OnlineId) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(OnlineId);
-    }
-    if (playerIdCase_ == PlayerIdOneofCase.PsnId) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(PsnId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GetOnlinePlayerInfoReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsOnlineId != false) {
-      IsOnlineId = other.IsOnlineId;
-    }
-    switch (other.PlayerIdCase) {
-      case PlayerIdOneofCase.TargetUid:
-        TargetUid = other.TargetUid;
-        break;
-      case PlayerIdOneofCase.OnlineId:
-        OnlineId = other.OnlineId;
-        break;
-      case PlayerIdOneofCase.PsnId:
-        PsnId = other.PsnId;
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          TargetUid = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          PsnId = input.ReadString();
-          break;
-        }
-        case 58: {
-          OnlineId = input.ReadString();
-          break;
-        }
-        case 64: {
-          IsOnlineId = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          TargetUid = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          PsnId = input.ReadString();
-          break;
-        }
-        case 58: {
-          OnlineId = input.ReadString();
-          break;
-        }
-        case 64: {
-          IsOnlineId = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

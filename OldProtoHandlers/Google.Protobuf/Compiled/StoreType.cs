@@ -9,37 +9,40 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from StoreType.proto</summary>
-public static partial class StoreTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for StoreType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from StoreType.proto</summary>
+  public static partial class StoreTypeReflection {
 
-  static StoreTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Cg9TdG9yZVR5cGUucHJvdG8qSwoJU3RvcmVUeXBlEhMKD1NUT1JFX1RZUEVf",
-          "Tk9ORRAAEhMKD1NUT1JFX1RZUEVfUEFDSxABEhQKEFNUT1JFX1RZUEVfREVQ",
-          "T1QQAkIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::StoreType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for StoreType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static StoreTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Cg9TdG9yZVR5cGUucHJvdG8qSwoJU3RvcmVUeXBlEhMKD1NUT1JFX1RZUEVf",
+            "Tk9ORRAAEhMKD1NUT1JFX1RZUEVfUEFDSxABEhQKEFNUT1JFX1RZUEVfREVQ",
+            "T1QQAkIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.StoreType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum StoreType {
+    [pbr::OriginalName("STORE_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("STORE_TYPE_PACK")] Pack = 1,
+    [pbr::OriginalName("STORE_TYPE_DEPOT")] Depot = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum StoreType {
-  [pbr::OriginalName("STORE_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("STORE_TYPE_PACK")] Pack = 1,
-  [pbr::OriginalName("STORE_TYPE_DEPOT")] Depot = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

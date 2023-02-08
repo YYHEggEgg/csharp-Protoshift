@@ -9,747 +9,750 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from RogueStageInfo.proto</summary>
-public static partial class RogueStageInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for RogueStageInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from RogueStageInfo.proto</summary>
+  public static partial class RogueStageInfoReflection {
 
-  static RogueStageInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRSb2d1ZVN0YWdlSW5mby5wcm90bxodUm9ndWVTaG93QXZhdGFyVGVhbUlu",
-          "Zm8ucHJvdG8aGVJvZ3VlbGlrZVJ1bmVSZWNvcmQucHJvdG8imgMKDlJvZ3Vl",
-          "U3RhZ2VJbmZvEi0KC2F2YXRhcl90ZWFtGAIgASgLMhguUm9ndWVTaG93QXZh",
-          "dGFyVGVhbUluZm8SEQoJaXNfcGFzc2VkGAUgASgIEhAKCHN0YWdlX2lkGAcg",
-          "ASgNEh0KFHJldmlzZV9tb25zdGVyX2xldmVsGM0BIAEoDRIuChBydW5lX3Jl",
-          "Y29yZF9saXN0GAYgAygLMhQuUm9ndWVsaWtlUnVuZVJlY29yZBIPCgdpc19v",
-          "cGVuGAEgASgIEhEKCWN1cl9sZXZlbBgEIAEoDRIaChFjYWNoZWRfY29pbl9j",
-          "X251bRiBCyABKA0SFwoPaXNfdGFrZW5fcmV3YXJkGAsgASgIEhQKDGlzX2lu",
-          "X2NvbWJhdBgMIAEoCBIZChFjYWNoZWRfY29pbl9iX251bRgOIAEoDRIYChBl",
-          "eHBsb3JlX2NlbGxfbnVtGA8gASgNEhIKCmNvaW5fY19udW0YCCABKA0SEwoL",
-          "aXNfZXhwbG9yZWQYCSABKAgSGAoQbWF4X3Bhc3NlZF9sZXZlbBgDIAEoDUIe",
-          "ChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::RogueShowAvatarTeamInfoReflection.Descriptor, global::RoguelikeRuneRecordReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::RogueStageInfo), global::RogueStageInfo.Parser, new[]{ "AvatarTeam", "IsPassed", "StageId", "ReviseMonsterLevel", "RuneRecordList", "IsOpen", "CurLevel", "CachedCoinCNum", "IsTakenReward", "IsInCombat", "CachedCoinBNum", "ExploreCellNum", "CoinCNum", "IsExplored", "MaxPassedLevel" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for RogueStageInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static RogueStageInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRSb2d1ZVN0YWdlSW5mby5wcm90bxodUm9ndWVTaG93QXZhdGFyVGVhbUlu",
+            "Zm8ucHJvdG8aGVJvZ3VlbGlrZVJ1bmVSZWNvcmQucHJvdG8imgMKDlJvZ3Vl",
+            "U3RhZ2VJbmZvEi0KC2F2YXRhcl90ZWFtGAIgASgLMhguUm9ndWVTaG93QXZh",
+            "dGFyVGVhbUluZm8SEQoJaXNfcGFzc2VkGAUgASgIEhAKCHN0YWdlX2lkGAcg",
+            "ASgNEh0KFHJldmlzZV9tb25zdGVyX2xldmVsGM0BIAEoDRIuChBydW5lX3Jl",
+            "Y29yZF9saXN0GAYgAygLMhQuUm9ndWVsaWtlUnVuZVJlY29yZBIPCgdpc19v",
+            "cGVuGAEgASgIEhEKCWN1cl9sZXZlbBgEIAEoDRIaChFjYWNoZWRfY29pbl9j",
+            "X251bRiBCyABKA0SFwoPaXNfdGFrZW5fcmV3YXJkGAsgASgIEhQKDGlzX2lu",
+            "X2NvbWJhdBgMIAEoCBIZChFjYWNoZWRfY29pbl9iX251bRgOIAEoDRIYChBl",
+            "eHBsb3JlX2NlbGxfbnVtGA8gASgNEhIKCmNvaW5fY19udW0YCCABKA0SEwoL",
+            "aXNfZXhwbG9yZWQYCSABKAgSGAoQbWF4X3Bhc3NlZF9sZXZlbBgDIAEoDUIM",
+            "qgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.RogueShowAvatarTeamInfoReflection.Descriptor, global::OldProtos.RoguelikeRuneRecordReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.RogueStageInfo), global::OldProtos.RogueStageInfo.Parser, new[]{ "AvatarTeam", "IsPassed", "StageId", "ReviseMonsterLevel", "RuneRecordList", "IsOpen", "CurLevel", "CachedCoinCNum", "IsTakenReward", "IsInCombat", "CachedCoinBNum", "ExploreCellNum", "CoinCNum", "IsExplored", "MaxPassedLevel" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class RogueStageInfo : pb::IMessage<RogueStageInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RogueStageInfo> _parser = new pb::MessageParser<RogueStageInfo>(() => new RogueStageInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RogueStageInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.RogueStageInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RogueStageInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RogueStageInfo(RogueStageInfo other) : this() {
+      avatarTeam_ = other.avatarTeam_ != null ? other.avatarTeam_.Clone() : null;
+      isPassed_ = other.isPassed_;
+      stageId_ = other.stageId_;
+      reviseMonsterLevel_ = other.reviseMonsterLevel_;
+      runeRecordList_ = other.runeRecordList_.Clone();
+      isOpen_ = other.isOpen_;
+      curLevel_ = other.curLevel_;
+      cachedCoinCNum_ = other.cachedCoinCNum_;
+      isTakenReward_ = other.isTakenReward_;
+      isInCombat_ = other.isInCombat_;
+      cachedCoinBNum_ = other.cachedCoinBNum_;
+      exploreCellNum_ = other.exploreCellNum_;
+      coinCNum_ = other.coinCNum_;
+      isExplored_ = other.isExplored_;
+      maxPassedLevel_ = other.maxPassedLevel_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RogueStageInfo Clone() {
+      return new RogueStageInfo(this);
+    }
+
+    /// <summary>Field number for the "avatar_team" field.</summary>
+    public const int AvatarTeamFieldNumber = 2;
+    private global::OldProtos.RogueShowAvatarTeamInfo avatarTeam_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.RogueShowAvatarTeamInfo AvatarTeam {
+      get { return avatarTeam_; }
+      set {
+        avatarTeam_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_passed" field.</summary>
+    public const int IsPassedFieldNumber = 5;
+    private bool isPassed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsPassed {
+      get { return isPassed_; }
+      set {
+        isPassed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 7;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "revise_monster_level" field.</summary>
+    public const int ReviseMonsterLevelFieldNumber = 205;
+    private uint reviseMonsterLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ReviseMonsterLevel {
+      get { return reviseMonsterLevel_; }
+      set {
+        reviseMonsterLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rune_record_list" field.</summary>
+    public const int RuneRecordListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::OldProtos.RoguelikeRuneRecord> _repeated_runeRecordList_codec
+        = pb::FieldCodec.ForMessage(50, global::OldProtos.RoguelikeRuneRecord.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.RoguelikeRuneRecord> runeRecordList_ = new pbc::RepeatedField<global::OldProtos.RoguelikeRuneRecord>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.RoguelikeRuneRecord> RuneRecordList {
+      get { return runeRecordList_; }
+    }
+
+    /// <summary>Field number for the "is_open" field.</summary>
+    public const int IsOpenFieldNumber = 1;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_level" field.</summary>
+    public const int CurLevelFieldNumber = 4;
+    private uint curLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurLevel {
+      get { return curLevel_; }
+      set {
+        curLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cached_coin_c_num" field.</summary>
+    public const int CachedCoinCNumFieldNumber = 1409;
+    private uint cachedCoinCNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CachedCoinCNum {
+      get { return cachedCoinCNum_; }
+      set {
+        cachedCoinCNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_taken_reward" field.</summary>
+    public const int IsTakenRewardFieldNumber = 11;
+    private bool isTakenReward_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsTakenReward {
+      get { return isTakenReward_; }
+      set {
+        isTakenReward_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_in_combat" field.</summary>
+    public const int IsInCombatFieldNumber = 12;
+    private bool isInCombat_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsInCombat {
+      get { return isInCombat_; }
+      set {
+        isInCombat_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cached_coin_b_num" field.</summary>
+    public const int CachedCoinBNumFieldNumber = 14;
+    private uint cachedCoinBNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CachedCoinBNum {
+      get { return cachedCoinBNum_; }
+      set {
+        cachedCoinBNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "explore_cell_num" field.</summary>
+    public const int ExploreCellNumFieldNumber = 15;
+    private uint exploreCellNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ExploreCellNum {
+      get { return exploreCellNum_; }
+      set {
+        exploreCellNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "coin_c_num" field.</summary>
+    public const int CoinCNumFieldNumber = 8;
+    private uint coinCNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CoinCNum {
+      get { return coinCNum_; }
+      set {
+        coinCNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_explored" field.</summary>
+    public const int IsExploredFieldNumber = 9;
+    private bool isExplored_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsExplored {
+      get { return isExplored_; }
+      set {
+        isExplored_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_passed_level" field.</summary>
+    public const int MaxPassedLevelFieldNumber = 3;
+    private uint maxPassedLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxPassedLevel {
+      get { return maxPassedLevel_; }
+      set {
+        maxPassedLevel_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RogueStageInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RogueStageInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(AvatarTeam, other.AvatarTeam)) return false;
+      if (IsPassed != other.IsPassed) return false;
+      if (StageId != other.StageId) return false;
+      if (ReviseMonsterLevel != other.ReviseMonsterLevel) return false;
+      if(!runeRecordList_.Equals(other.runeRecordList_)) return false;
+      if (IsOpen != other.IsOpen) return false;
+      if (CurLevel != other.CurLevel) return false;
+      if (CachedCoinCNum != other.CachedCoinCNum) return false;
+      if (IsTakenReward != other.IsTakenReward) return false;
+      if (IsInCombat != other.IsInCombat) return false;
+      if (CachedCoinBNum != other.CachedCoinBNum) return false;
+      if (ExploreCellNum != other.ExploreCellNum) return false;
+      if (CoinCNum != other.CoinCNum) return false;
+      if (IsExplored != other.IsExplored) return false;
+      if (MaxPassedLevel != other.MaxPassedLevel) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (avatarTeam_ != null) hash ^= AvatarTeam.GetHashCode();
+      if (IsPassed != false) hash ^= IsPassed.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (ReviseMonsterLevel != 0) hash ^= ReviseMonsterLevel.GetHashCode();
+      hash ^= runeRecordList_.GetHashCode();
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
+      if (CachedCoinCNum != 0) hash ^= CachedCoinCNum.GetHashCode();
+      if (IsTakenReward != false) hash ^= IsTakenReward.GetHashCode();
+      if (IsInCombat != false) hash ^= IsInCombat.GetHashCode();
+      if (CachedCoinBNum != 0) hash ^= CachedCoinBNum.GetHashCode();
+      if (ExploreCellNum != 0) hash ^= ExploreCellNum.GetHashCode();
+      if (CoinCNum != 0) hash ^= CoinCNum.GetHashCode();
+      if (IsExplored != false) hash ^= IsExplored.GetHashCode();
+      if (MaxPassedLevel != 0) hash ^= MaxPassedLevel.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsOpen != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsOpen);
+      }
+      if (avatarTeam_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(AvatarTeam);
+      }
+      if (MaxPassedLevel != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MaxPassedLevel);
+      }
+      if (CurLevel != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(CurLevel);
+      }
+      if (IsPassed != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsPassed);
+      }
+      runeRecordList_.WriteTo(output, _repeated_runeRecordList_codec);
+      if (StageId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(StageId);
+      }
+      if (CoinCNum != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(CoinCNum);
+      }
+      if (IsExplored != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsExplored);
+      }
+      if (IsTakenReward != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsTakenReward);
+      }
+      if (IsInCombat != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsInCombat);
+      }
+      if (CachedCoinBNum != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(CachedCoinBNum);
+      }
+      if (ExploreCellNum != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ExploreCellNum);
+      }
+      if (ReviseMonsterLevel != 0) {
+        output.WriteRawTag(232, 12);
+        output.WriteUInt32(ReviseMonsterLevel);
+      }
+      if (CachedCoinCNum != 0) {
+        output.WriteRawTag(136, 88);
+        output.WriteUInt32(CachedCoinCNum);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsOpen != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsOpen);
+      }
+      if (avatarTeam_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(AvatarTeam);
+      }
+      if (MaxPassedLevel != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MaxPassedLevel);
+      }
+      if (CurLevel != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(CurLevel);
+      }
+      if (IsPassed != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsPassed);
+      }
+      runeRecordList_.WriteTo(ref output, _repeated_runeRecordList_codec);
+      if (StageId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(StageId);
+      }
+      if (CoinCNum != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(CoinCNum);
+      }
+      if (IsExplored != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsExplored);
+      }
+      if (IsTakenReward != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsTakenReward);
+      }
+      if (IsInCombat != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsInCombat);
+      }
+      if (CachedCoinBNum != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(CachedCoinBNum);
+      }
+      if (ExploreCellNum != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ExploreCellNum);
+      }
+      if (ReviseMonsterLevel != 0) {
+        output.WriteRawTag(232, 12);
+        output.WriteUInt32(ReviseMonsterLevel);
+      }
+      if (CachedCoinCNum != 0) {
+        output.WriteRawTag(136, 88);
+        output.WriteUInt32(CachedCoinCNum);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (avatarTeam_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(AvatarTeam);
+      }
+      if (IsPassed != false) {
+        size += 1 + 1;
+      }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      if (ReviseMonsterLevel != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ReviseMonsterLevel);
+      }
+      size += runeRecordList_.CalculateSize(_repeated_runeRecordList_codec);
+      if (IsOpen != false) {
+        size += 1 + 1;
+      }
+      if (CurLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
+      }
+      if (CachedCoinCNum != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CachedCoinCNum);
+      }
+      if (IsTakenReward != false) {
+        size += 1 + 1;
+      }
+      if (IsInCombat != false) {
+        size += 1 + 1;
+      }
+      if (CachedCoinBNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CachedCoinBNum);
+      }
+      if (ExploreCellNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExploreCellNum);
+      }
+      if (CoinCNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoinCNum);
+      }
+      if (IsExplored != false) {
+        size += 1 + 1;
+      }
+      if (MaxPassedLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxPassedLevel);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RogueStageInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.avatarTeam_ != null) {
+        if (avatarTeam_ == null) {
+          AvatarTeam = new global::OldProtos.RogueShowAvatarTeamInfo();
+        }
+        AvatarTeam.MergeFrom(other.AvatarTeam);
+      }
+      if (other.IsPassed != false) {
+        IsPassed = other.IsPassed;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      if (other.ReviseMonsterLevel != 0) {
+        ReviseMonsterLevel = other.ReviseMonsterLevel;
+      }
+      runeRecordList_.Add(other.runeRecordList_);
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
+      }
+      if (other.CurLevel != 0) {
+        CurLevel = other.CurLevel;
+      }
+      if (other.CachedCoinCNum != 0) {
+        CachedCoinCNum = other.CachedCoinCNum;
+      }
+      if (other.IsTakenReward != false) {
+        IsTakenReward = other.IsTakenReward;
+      }
+      if (other.IsInCombat != false) {
+        IsInCombat = other.IsInCombat;
+      }
+      if (other.CachedCoinBNum != 0) {
+        CachedCoinBNum = other.CachedCoinBNum;
+      }
+      if (other.ExploreCellNum != 0) {
+        ExploreCellNum = other.ExploreCellNum;
+      }
+      if (other.CoinCNum != 0) {
+        CoinCNum = other.CoinCNum;
+      }
+      if (other.IsExplored != false) {
+        IsExplored = other.IsExplored;
+      }
+      if (other.MaxPassedLevel != 0) {
+        MaxPassedLevel = other.MaxPassedLevel;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+          case 18: {
+            if (avatarTeam_ == null) {
+              AvatarTeam = new global::OldProtos.RogueShowAvatarTeamInfo();
+            }
+            input.ReadMessage(AvatarTeam);
+            break;
+          }
+          case 24: {
+            MaxPassedLevel = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            CurLevel = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            IsPassed = input.ReadBool();
+            break;
+          }
+          case 50: {
+            runeRecordList_.AddEntriesFrom(input, _repeated_runeRecordList_codec);
+            break;
+          }
+          case 56: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            CoinCNum = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            IsExplored = input.ReadBool();
+            break;
+          }
+          case 88: {
+            IsTakenReward = input.ReadBool();
+            break;
+          }
+          case 96: {
+            IsInCombat = input.ReadBool();
+            break;
+          }
+          case 112: {
+            CachedCoinBNum = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ExploreCellNum = input.ReadUInt32();
+            break;
+          }
+          case 1640: {
+            ReviseMonsterLevel = input.ReadUInt32();
+            break;
+          }
+          case 11272: {
+            CachedCoinCNum = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+          case 18: {
+            if (avatarTeam_ == null) {
+              AvatarTeam = new global::OldProtos.RogueShowAvatarTeamInfo();
+            }
+            input.ReadMessage(AvatarTeam);
+            break;
+          }
+          case 24: {
+            MaxPassedLevel = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            CurLevel = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            IsPassed = input.ReadBool();
+            break;
+          }
+          case 50: {
+            runeRecordList_.AddEntriesFrom(ref input, _repeated_runeRecordList_codec);
+            break;
+          }
+          case 56: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            CoinCNum = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            IsExplored = input.ReadBool();
+            break;
+          }
+          case 88: {
+            IsTakenReward = input.ReadBool();
+            break;
+          }
+          case 96: {
+            IsInCombat = input.ReadBool();
+            break;
+          }
+          case 112: {
+            CachedCoinBNum = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ExploreCellNum = input.ReadUInt32();
+            break;
+          }
+          case 1640: {
+            ReviseMonsterLevel = input.ReadUInt32();
+            break;
+          }
+          case 11272: {
+            CachedCoinCNum = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class RogueStageInfo : pb::IMessage<RogueStageInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<RogueStageInfo> _parser = new pb::MessageParser<RogueStageInfo>(() => new RogueStageInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<RogueStageInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::RogueStageInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RogueStageInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RogueStageInfo(RogueStageInfo other) : this() {
-    avatarTeam_ = other.avatarTeam_ != null ? other.avatarTeam_.Clone() : null;
-    isPassed_ = other.isPassed_;
-    stageId_ = other.stageId_;
-    reviseMonsterLevel_ = other.reviseMonsterLevel_;
-    runeRecordList_ = other.runeRecordList_.Clone();
-    isOpen_ = other.isOpen_;
-    curLevel_ = other.curLevel_;
-    cachedCoinCNum_ = other.cachedCoinCNum_;
-    isTakenReward_ = other.isTakenReward_;
-    isInCombat_ = other.isInCombat_;
-    cachedCoinBNum_ = other.cachedCoinBNum_;
-    exploreCellNum_ = other.exploreCellNum_;
-    coinCNum_ = other.coinCNum_;
-    isExplored_ = other.isExplored_;
-    maxPassedLevel_ = other.maxPassedLevel_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RogueStageInfo Clone() {
-    return new RogueStageInfo(this);
-  }
-
-  /// <summary>Field number for the "avatar_team" field.</summary>
-  public const int AvatarTeamFieldNumber = 2;
-  private global::RogueShowAvatarTeamInfo avatarTeam_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::RogueShowAvatarTeamInfo AvatarTeam {
-    get { return avatarTeam_; }
-    set {
-      avatarTeam_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_passed" field.</summary>
-  public const int IsPassedFieldNumber = 5;
-  private bool isPassed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsPassed {
-    get { return isPassed_; }
-    set {
-      isPassed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "stage_id" field.</summary>
-  public const int StageIdFieldNumber = 7;
-  private uint stageId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StageId {
-    get { return stageId_; }
-    set {
-      stageId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "revise_monster_level" field.</summary>
-  public const int ReviseMonsterLevelFieldNumber = 205;
-  private uint reviseMonsterLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ReviseMonsterLevel {
-    get { return reviseMonsterLevel_; }
-    set {
-      reviseMonsterLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "rune_record_list" field.</summary>
-  public const int RuneRecordListFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::RoguelikeRuneRecord> _repeated_runeRecordList_codec
-      = pb::FieldCodec.ForMessage(50, global::RoguelikeRuneRecord.Parser);
-  private readonly pbc::RepeatedField<global::RoguelikeRuneRecord> runeRecordList_ = new pbc::RepeatedField<global::RoguelikeRuneRecord>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::RoguelikeRuneRecord> RuneRecordList {
-    get { return runeRecordList_; }
-  }
-
-  /// <summary>Field number for the "is_open" field.</summary>
-  public const int IsOpenFieldNumber = 1;
-  private bool isOpen_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsOpen {
-    get { return isOpen_; }
-    set {
-      isOpen_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cur_level" field.</summary>
-  public const int CurLevelFieldNumber = 4;
-  private uint curLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurLevel {
-    get { return curLevel_; }
-    set {
-      curLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cached_coin_c_num" field.</summary>
-  public const int CachedCoinCNumFieldNumber = 1409;
-  private uint cachedCoinCNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CachedCoinCNum {
-    get { return cachedCoinCNum_; }
-    set {
-      cachedCoinCNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_taken_reward" field.</summary>
-  public const int IsTakenRewardFieldNumber = 11;
-  private bool isTakenReward_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsTakenReward {
-    get { return isTakenReward_; }
-    set {
-      isTakenReward_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_in_combat" field.</summary>
-  public const int IsInCombatFieldNumber = 12;
-  private bool isInCombat_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsInCombat {
-    get { return isInCombat_; }
-    set {
-      isInCombat_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cached_coin_b_num" field.</summary>
-  public const int CachedCoinBNumFieldNumber = 14;
-  private uint cachedCoinBNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CachedCoinBNum {
-    get { return cachedCoinBNum_; }
-    set {
-      cachedCoinBNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "explore_cell_num" field.</summary>
-  public const int ExploreCellNumFieldNumber = 15;
-  private uint exploreCellNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ExploreCellNum {
-    get { return exploreCellNum_; }
-    set {
-      exploreCellNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "coin_c_num" field.</summary>
-  public const int CoinCNumFieldNumber = 8;
-  private uint coinCNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CoinCNum {
-    get { return coinCNum_; }
-    set {
-      coinCNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_explored" field.</summary>
-  public const int IsExploredFieldNumber = 9;
-  private bool isExplored_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsExplored {
-    get { return isExplored_; }
-    set {
-      isExplored_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "max_passed_level" field.</summary>
-  public const int MaxPassedLevelFieldNumber = 3;
-  private uint maxPassedLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MaxPassedLevel {
-    get { return maxPassedLevel_; }
-    set {
-      maxPassedLevel_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as RogueStageInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(RogueStageInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(AvatarTeam, other.AvatarTeam)) return false;
-    if (IsPassed != other.IsPassed) return false;
-    if (StageId != other.StageId) return false;
-    if (ReviseMonsterLevel != other.ReviseMonsterLevel) return false;
-    if(!runeRecordList_.Equals(other.runeRecordList_)) return false;
-    if (IsOpen != other.IsOpen) return false;
-    if (CurLevel != other.CurLevel) return false;
-    if (CachedCoinCNum != other.CachedCoinCNum) return false;
-    if (IsTakenReward != other.IsTakenReward) return false;
-    if (IsInCombat != other.IsInCombat) return false;
-    if (CachedCoinBNum != other.CachedCoinBNum) return false;
-    if (ExploreCellNum != other.ExploreCellNum) return false;
-    if (CoinCNum != other.CoinCNum) return false;
-    if (IsExplored != other.IsExplored) return false;
-    if (MaxPassedLevel != other.MaxPassedLevel) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (avatarTeam_ != null) hash ^= AvatarTeam.GetHashCode();
-    if (IsPassed != false) hash ^= IsPassed.GetHashCode();
-    if (StageId != 0) hash ^= StageId.GetHashCode();
-    if (ReviseMonsterLevel != 0) hash ^= ReviseMonsterLevel.GetHashCode();
-    hash ^= runeRecordList_.GetHashCode();
-    if (IsOpen != false) hash ^= IsOpen.GetHashCode();
-    if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
-    if (CachedCoinCNum != 0) hash ^= CachedCoinCNum.GetHashCode();
-    if (IsTakenReward != false) hash ^= IsTakenReward.GetHashCode();
-    if (IsInCombat != false) hash ^= IsInCombat.GetHashCode();
-    if (CachedCoinBNum != 0) hash ^= CachedCoinBNum.GetHashCode();
-    if (ExploreCellNum != 0) hash ^= ExploreCellNum.GetHashCode();
-    if (CoinCNum != 0) hash ^= CoinCNum.GetHashCode();
-    if (IsExplored != false) hash ^= IsExplored.GetHashCode();
-    if (MaxPassedLevel != 0) hash ^= MaxPassedLevel.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsOpen != false) {
-      output.WriteRawTag(8);
-      output.WriteBool(IsOpen);
-    }
-    if (avatarTeam_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(AvatarTeam);
-    }
-    if (MaxPassedLevel != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(MaxPassedLevel);
-    }
-    if (CurLevel != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(CurLevel);
-    }
-    if (IsPassed != false) {
-      output.WriteRawTag(40);
-      output.WriteBool(IsPassed);
-    }
-    runeRecordList_.WriteTo(output, _repeated_runeRecordList_codec);
-    if (StageId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(StageId);
-    }
-    if (CoinCNum != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(CoinCNum);
-    }
-    if (IsExplored != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(IsExplored);
-    }
-    if (IsTakenReward != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(IsTakenReward);
-    }
-    if (IsInCombat != false) {
-      output.WriteRawTag(96);
-      output.WriteBool(IsInCombat);
-    }
-    if (CachedCoinBNum != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(CachedCoinBNum);
-    }
-    if (ExploreCellNum != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(ExploreCellNum);
-    }
-    if (ReviseMonsterLevel != 0) {
-      output.WriteRawTag(232, 12);
-      output.WriteUInt32(ReviseMonsterLevel);
-    }
-    if (CachedCoinCNum != 0) {
-      output.WriteRawTag(136, 88);
-      output.WriteUInt32(CachedCoinCNum);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsOpen != false) {
-      output.WriteRawTag(8);
-      output.WriteBool(IsOpen);
-    }
-    if (avatarTeam_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(AvatarTeam);
-    }
-    if (MaxPassedLevel != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(MaxPassedLevel);
-    }
-    if (CurLevel != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(CurLevel);
-    }
-    if (IsPassed != false) {
-      output.WriteRawTag(40);
-      output.WriteBool(IsPassed);
-    }
-    runeRecordList_.WriteTo(ref output, _repeated_runeRecordList_codec);
-    if (StageId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(StageId);
-    }
-    if (CoinCNum != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(CoinCNum);
-    }
-    if (IsExplored != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(IsExplored);
-    }
-    if (IsTakenReward != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(IsTakenReward);
-    }
-    if (IsInCombat != false) {
-      output.WriteRawTag(96);
-      output.WriteBool(IsInCombat);
-    }
-    if (CachedCoinBNum != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(CachedCoinBNum);
-    }
-    if (ExploreCellNum != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(ExploreCellNum);
-    }
-    if (ReviseMonsterLevel != 0) {
-      output.WriteRawTag(232, 12);
-      output.WriteUInt32(ReviseMonsterLevel);
-    }
-    if (CachedCoinCNum != 0) {
-      output.WriteRawTag(136, 88);
-      output.WriteUInt32(CachedCoinCNum);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (avatarTeam_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(AvatarTeam);
-    }
-    if (IsPassed != false) {
-      size += 1 + 1;
-    }
-    if (StageId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-    }
-    if (ReviseMonsterLevel != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ReviseMonsterLevel);
-    }
-    size += runeRecordList_.CalculateSize(_repeated_runeRecordList_codec);
-    if (IsOpen != false) {
-      size += 1 + 1;
-    }
-    if (CurLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
-    }
-    if (CachedCoinCNum != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CachedCoinCNum);
-    }
-    if (IsTakenReward != false) {
-      size += 1 + 1;
-    }
-    if (IsInCombat != false) {
-      size += 1 + 1;
-    }
-    if (CachedCoinBNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CachedCoinBNum);
-    }
-    if (ExploreCellNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExploreCellNum);
-    }
-    if (CoinCNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CoinCNum);
-    }
-    if (IsExplored != false) {
-      size += 1 + 1;
-    }
-    if (MaxPassedLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxPassedLevel);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(RogueStageInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.avatarTeam_ != null) {
-      if (avatarTeam_ == null) {
-        AvatarTeam = new global::RogueShowAvatarTeamInfo();
-      }
-      AvatarTeam.MergeFrom(other.AvatarTeam);
-    }
-    if (other.IsPassed != false) {
-      IsPassed = other.IsPassed;
-    }
-    if (other.StageId != 0) {
-      StageId = other.StageId;
-    }
-    if (other.ReviseMonsterLevel != 0) {
-      ReviseMonsterLevel = other.ReviseMonsterLevel;
-    }
-    runeRecordList_.Add(other.runeRecordList_);
-    if (other.IsOpen != false) {
-      IsOpen = other.IsOpen;
-    }
-    if (other.CurLevel != 0) {
-      CurLevel = other.CurLevel;
-    }
-    if (other.CachedCoinCNum != 0) {
-      CachedCoinCNum = other.CachedCoinCNum;
-    }
-    if (other.IsTakenReward != false) {
-      IsTakenReward = other.IsTakenReward;
-    }
-    if (other.IsInCombat != false) {
-      IsInCombat = other.IsInCombat;
-    }
-    if (other.CachedCoinBNum != 0) {
-      CachedCoinBNum = other.CachedCoinBNum;
-    }
-    if (other.ExploreCellNum != 0) {
-      ExploreCellNum = other.ExploreCellNum;
-    }
-    if (other.CoinCNum != 0) {
-      CoinCNum = other.CoinCNum;
-    }
-    if (other.IsExplored != false) {
-      IsExplored = other.IsExplored;
-    }
-    if (other.MaxPassedLevel != 0) {
-      MaxPassedLevel = other.MaxPassedLevel;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          IsOpen = input.ReadBool();
-          break;
-        }
-        case 18: {
-          if (avatarTeam_ == null) {
-            AvatarTeam = new global::RogueShowAvatarTeamInfo();
-          }
-          input.ReadMessage(AvatarTeam);
-          break;
-        }
-        case 24: {
-          MaxPassedLevel = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          CurLevel = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          IsPassed = input.ReadBool();
-          break;
-        }
-        case 50: {
-          runeRecordList_.AddEntriesFrom(input, _repeated_runeRecordList_codec);
-          break;
-        }
-        case 56: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          CoinCNum = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          IsExplored = input.ReadBool();
-          break;
-        }
-        case 88: {
-          IsTakenReward = input.ReadBool();
-          break;
-        }
-        case 96: {
-          IsInCombat = input.ReadBool();
-          break;
-        }
-        case 112: {
-          CachedCoinBNum = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          ExploreCellNum = input.ReadUInt32();
-          break;
-        }
-        case 1640: {
-          ReviseMonsterLevel = input.ReadUInt32();
-          break;
-        }
-        case 11272: {
-          CachedCoinCNum = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          IsOpen = input.ReadBool();
-          break;
-        }
-        case 18: {
-          if (avatarTeam_ == null) {
-            AvatarTeam = new global::RogueShowAvatarTeamInfo();
-          }
-          input.ReadMessage(AvatarTeam);
-          break;
-        }
-        case 24: {
-          MaxPassedLevel = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          CurLevel = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          IsPassed = input.ReadBool();
-          break;
-        }
-        case 50: {
-          runeRecordList_.AddEntriesFrom(ref input, _repeated_runeRecordList_codec);
-          break;
-        }
-        case 56: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          CoinCNum = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          IsExplored = input.ReadBool();
-          break;
-        }
-        case 88: {
-          IsTakenReward = input.ReadBool();
-          break;
-        }
-        case 96: {
-          IsInCombat = input.ReadBool();
-          break;
-        }
-        case 112: {
-          CachedCoinBNum = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          ExploreCellNum = input.ReadUInt32();
-          break;
-        }
-        case 1640: {
-          ReviseMonsterLevel = input.ReadUInt32();
-          break;
-        }
-        case 11272: {
-          CachedCoinCNum = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

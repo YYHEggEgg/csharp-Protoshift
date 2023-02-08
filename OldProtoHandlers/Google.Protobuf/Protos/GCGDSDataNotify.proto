@@ -19,7 +19,7 @@ syntax = "proto3";
 import "GCGDSCardData.proto";
 import "GCGDSDeckData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 7122
 // EnetChannelId: 0

@@ -19,7 +19,7 @@ syntax = "proto3";
 import "BattlePassMission.proto";
 import "BattlePassSchedule.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message BattlePassAllDataNotify {
   // enum CmdId {

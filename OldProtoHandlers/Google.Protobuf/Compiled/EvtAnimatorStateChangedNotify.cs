@@ -9,278 +9,280 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from EvtAnimatorStateChangedNotify.proto</summary>
-public static partial class EvtAnimatorStateChangedNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for EvtAnimatorStateChangedNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from EvtAnimatorStateChangedNotify.proto</summary>
+  public static partial class EvtAnimatorStateChangedNotifyReflection {
 
-  static EvtAnimatorStateChangedNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiNFdnRBbmltYXRvclN0YXRlQ2hhbmdlZE5vdGlmeS5wcm90bxohRXZ0QW5p",
-          "bWF0b3JTdGF0ZUNoYW5nZWRJbmZvLnByb3RvGhFGb3J3YXJkVHlwZS5wcm90",
-          "byKKAQodRXZ0QW5pbWF0b3JTdGF0ZUNoYW5nZWROb3RpZnkSIgoMZm9yd2Fy",
-          "ZF90eXBlGAMgASgOMgwuRm9yd2FyZFR5cGUSRQofZXZ0X2FuaW1hdG9yX3N0",
-          "YXRlX2NoYW5nZWRfaW5mbxgKIAEoCzIcLkV2dEFuaW1hdG9yU3RhdGVDaGFu",
-          "Z2VkSW5mb0IeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90",
-          "bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::EvtAnimatorStateChangedInfoReflection.Descriptor, global::ForwardTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::EvtAnimatorStateChangedNotify), global::EvtAnimatorStateChangedNotify.Parser, new[]{ "ForwardType", "EvtAnimatorStateChangedInfo" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for EvtAnimatorStateChangedNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static EvtAnimatorStateChangedNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiNFdnRBbmltYXRvclN0YXRlQ2hhbmdlZE5vdGlmeS5wcm90bxohRXZ0QW5p",
+            "bWF0b3JTdGF0ZUNoYW5nZWRJbmZvLnByb3RvGhFGb3J3YXJkVHlwZS5wcm90",
+            "byKKAQodRXZ0QW5pbWF0b3JTdGF0ZUNoYW5nZWROb3RpZnkSIgoMZm9yd2Fy",
+            "ZF90eXBlGAMgASgOMgwuRm9yd2FyZFR5cGUSRQofZXZ0X2FuaW1hdG9yX3N0",
+            "YXRlX2NoYW5nZWRfaW5mbxgKIAEoCzIcLkV2dEFuaW1hdG9yU3RhdGVDaGFu",
+            "Z2VkSW5mb0IMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.EvtAnimatorStateChangedInfoReflection.Descriptor, global::OldProtos.ForwardTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.EvtAnimatorStateChangedNotify), global::OldProtos.EvtAnimatorStateChangedNotify.Parser, new[]{ "ForwardType", "EvtAnimatorStateChangedInfo" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 331
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class EvtAnimatorStateChangedNotify : pb::IMessage<EvtAnimatorStateChangedNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<EvtAnimatorStateChangedNotify> _parser = new pb::MessageParser<EvtAnimatorStateChangedNotify>(() => new EvtAnimatorStateChangedNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<EvtAnimatorStateChangedNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.EvtAnimatorStateChangedNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtAnimatorStateChangedNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtAnimatorStateChangedNotify(EvtAnimatorStateChangedNotify other) : this() {
+      forwardType_ = other.forwardType_;
+      evtAnimatorStateChangedInfo_ = other.evtAnimatorStateChangedInfo_ != null ? other.evtAnimatorStateChangedInfo_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtAnimatorStateChangedNotify Clone() {
+      return new EvtAnimatorStateChangedNotify(this);
+    }
+
+    /// <summary>Field number for the "forward_type" field.</summary>
+    public const int ForwardTypeFieldNumber = 3;
+    private global::OldProtos.ForwardType forwardType_ = global::OldProtos.ForwardType.Local;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ForwardType ForwardType {
+      get { return forwardType_; }
+      set {
+        forwardType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "evt_animator_state_changed_info" field.</summary>
+    public const int EvtAnimatorStateChangedInfoFieldNumber = 10;
+    private global::OldProtos.EvtAnimatorStateChangedInfo evtAnimatorStateChangedInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.EvtAnimatorStateChangedInfo EvtAnimatorStateChangedInfo {
+      get { return evtAnimatorStateChangedInfo_; }
+      set {
+        evtAnimatorStateChangedInfo_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as EvtAnimatorStateChangedNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(EvtAnimatorStateChangedNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ForwardType != other.ForwardType) return false;
+      if (!object.Equals(EvtAnimatorStateChangedInfo, other.EvtAnimatorStateChangedInfo)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ForwardType != global::OldProtos.ForwardType.Local) hash ^= ForwardType.GetHashCode();
+      if (evtAnimatorStateChangedInfo_ != null) hash ^= EvtAnimatorStateChangedInfo.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ForwardType != global::OldProtos.ForwardType.Local) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) ForwardType);
+      }
+      if (evtAnimatorStateChangedInfo_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(EvtAnimatorStateChangedInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ForwardType != global::OldProtos.ForwardType.Local) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) ForwardType);
+      }
+      if (evtAnimatorStateChangedInfo_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(EvtAnimatorStateChangedInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ForwardType != global::OldProtos.ForwardType.Local) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
+      }
+      if (evtAnimatorStateChangedInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(EvtAnimatorStateChangedInfo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(EvtAnimatorStateChangedNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ForwardType != global::OldProtos.ForwardType.Local) {
+        ForwardType = other.ForwardType;
+      }
+      if (other.evtAnimatorStateChangedInfo_ != null) {
+        if (evtAnimatorStateChangedInfo_ == null) {
+          EvtAnimatorStateChangedInfo = new global::OldProtos.EvtAnimatorStateChangedInfo();
+        }
+        EvtAnimatorStateChangedInfo.MergeFrom(other.EvtAnimatorStateChangedInfo);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            ForwardType = (global::OldProtos.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 82: {
+            if (evtAnimatorStateChangedInfo_ == null) {
+              EvtAnimatorStateChangedInfo = new global::OldProtos.EvtAnimatorStateChangedInfo();
+            }
+            input.ReadMessage(EvtAnimatorStateChangedInfo);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            ForwardType = (global::OldProtos.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 82: {
+            if (evtAnimatorStateChangedInfo_ == null) {
+              EvtAnimatorStateChangedInfo = new global::OldProtos.EvtAnimatorStateChangedInfo();
+            }
+            input.ReadMessage(EvtAnimatorStateChangedInfo);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 331
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class EvtAnimatorStateChangedNotify : pb::IMessage<EvtAnimatorStateChangedNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<EvtAnimatorStateChangedNotify> _parser = new pb::MessageParser<EvtAnimatorStateChangedNotify>(() => new EvtAnimatorStateChangedNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<EvtAnimatorStateChangedNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::EvtAnimatorStateChangedNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtAnimatorStateChangedNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtAnimatorStateChangedNotify(EvtAnimatorStateChangedNotify other) : this() {
-    forwardType_ = other.forwardType_;
-    evtAnimatorStateChangedInfo_ = other.evtAnimatorStateChangedInfo_ != null ? other.evtAnimatorStateChangedInfo_.Clone() : null;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtAnimatorStateChangedNotify Clone() {
-    return new EvtAnimatorStateChangedNotify(this);
-  }
-
-  /// <summary>Field number for the "forward_type" field.</summary>
-  public const int ForwardTypeFieldNumber = 3;
-  private global::ForwardType forwardType_ = global::ForwardType.Local;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ForwardType ForwardType {
-    get { return forwardType_; }
-    set {
-      forwardType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "evt_animator_state_changed_info" field.</summary>
-  public const int EvtAnimatorStateChangedInfoFieldNumber = 10;
-  private global::EvtAnimatorStateChangedInfo evtAnimatorStateChangedInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::EvtAnimatorStateChangedInfo EvtAnimatorStateChangedInfo {
-    get { return evtAnimatorStateChangedInfo_; }
-    set {
-      evtAnimatorStateChangedInfo_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as EvtAnimatorStateChangedNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(EvtAnimatorStateChangedNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ForwardType != other.ForwardType) return false;
-    if (!object.Equals(EvtAnimatorStateChangedInfo, other.EvtAnimatorStateChangedInfo)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ForwardType != global::ForwardType.Local) hash ^= ForwardType.GetHashCode();
-    if (evtAnimatorStateChangedInfo_ != null) hash ^= EvtAnimatorStateChangedInfo.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ForwardType != global::ForwardType.Local) {
-      output.WriteRawTag(24);
-      output.WriteEnum((int) ForwardType);
-    }
-    if (evtAnimatorStateChangedInfo_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(EvtAnimatorStateChangedInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ForwardType != global::ForwardType.Local) {
-      output.WriteRawTag(24);
-      output.WriteEnum((int) ForwardType);
-    }
-    if (evtAnimatorStateChangedInfo_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(EvtAnimatorStateChangedInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ForwardType != global::ForwardType.Local) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
-    }
-    if (evtAnimatorStateChangedInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(EvtAnimatorStateChangedInfo);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(EvtAnimatorStateChangedNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ForwardType != global::ForwardType.Local) {
-      ForwardType = other.ForwardType;
-    }
-    if (other.evtAnimatorStateChangedInfo_ != null) {
-      if (evtAnimatorStateChangedInfo_ == null) {
-        EvtAnimatorStateChangedInfo = new global::EvtAnimatorStateChangedInfo();
-      }
-      EvtAnimatorStateChangedInfo.MergeFrom(other.EvtAnimatorStateChangedInfo);
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          ForwardType = (global::ForwardType) input.ReadEnum();
-          break;
-        }
-        case 82: {
-          if (evtAnimatorStateChangedInfo_ == null) {
-            EvtAnimatorStateChangedInfo = new global::EvtAnimatorStateChangedInfo();
-          }
-          input.ReadMessage(EvtAnimatorStateChangedInfo);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          ForwardType = (global::ForwardType) input.ReadEnum();
-          break;
-        }
-        case 82: {
-          if (evtAnimatorStateChangedInfo_ == null) {
-            EvtAnimatorStateChangedInfo = new global::EvtAnimatorStateChangedInfo();
-          }
-          input.ReadMessage(EvtAnimatorStateChangedInfo);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

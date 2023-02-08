@@ -9,240 +9,242 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from HomeBlueprintBatchBriefMuipData.proto</summary>
-public static partial class HomeBlueprintBatchBriefMuipDataReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for HomeBlueprintBatchBriefMuipData.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from HomeBlueprintBatchBriefMuipData.proto</summary>
+  public static partial class HomeBlueprintBatchBriefMuipDataReflection {
 
-  static HomeBlueprintBatchBriefMuipDataReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiVIb21lQmx1ZXByaW50QmF0Y2hCcmllZk11aXBEYXRhLnByb3RvGiBIb21l",
-          "Qmx1ZXByaW50QnJpZWZNdWlwRGF0YS5wcm90byJ1Ch9Ib21lQmx1ZXByaW50",
-          "QmF0Y2hCcmllZk11aXBEYXRhEi8KCmJyaWVmX2xpc3QYASADKAsyGy5Ib21l",
-          "Qmx1ZXByaW50QnJpZWZNdWlwRGF0YRIhChlub3RfZXhpc3Rfc2hhcmVfY29k",
-          "ZV9saXN0GAIgAygJQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9i",
-          "BnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::HomeBlueprintBriefMuipDataReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::HomeBlueprintBatchBriefMuipData), global::HomeBlueprintBatchBriefMuipData.Parser, new[]{ "BriefList", "NotExistShareCodeList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for HomeBlueprintBatchBriefMuipData.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static HomeBlueprintBatchBriefMuipDataReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiVIb21lQmx1ZXByaW50QmF0Y2hCcmllZk11aXBEYXRhLnByb3RvGiBIb21l",
+            "Qmx1ZXByaW50QnJpZWZNdWlwRGF0YS5wcm90byJ1Ch9Ib21lQmx1ZXByaW50",
+            "QmF0Y2hCcmllZk11aXBEYXRhEi8KCmJyaWVmX2xpc3QYASADKAsyGy5Ib21l",
+            "Qmx1ZXByaW50QnJpZWZNdWlwRGF0YRIhChlub3RfZXhpc3Rfc2hhcmVfY29k",
+            "ZV9saXN0GAIgAygJQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.HomeBlueprintBriefMuipDataReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.HomeBlueprintBatchBriefMuipData), global::OldProtos.HomeBlueprintBatchBriefMuipData.Parser, new[]{ "BriefList", "NotExistShareCodeList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class HomeBlueprintBatchBriefMuipData : pb::IMessage<HomeBlueprintBatchBriefMuipData>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HomeBlueprintBatchBriefMuipData> _parser = new pb::MessageParser<HomeBlueprintBatchBriefMuipData>(() => new HomeBlueprintBatchBriefMuipData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HomeBlueprintBatchBriefMuipData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.HomeBlueprintBatchBriefMuipDataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeBlueprintBatchBriefMuipData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeBlueprintBatchBriefMuipData(HomeBlueprintBatchBriefMuipData other) : this() {
+      briefList_ = other.briefList_.Clone();
+      notExistShareCodeList_ = other.notExistShareCodeList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeBlueprintBatchBriefMuipData Clone() {
+      return new HomeBlueprintBatchBriefMuipData(this);
+    }
+
+    /// <summary>Field number for the "brief_list" field.</summary>
+    public const int BriefListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::OldProtos.HomeBlueprintBriefMuipData> _repeated_briefList_codec
+        = pb::FieldCodec.ForMessage(10, global::OldProtos.HomeBlueprintBriefMuipData.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.HomeBlueprintBriefMuipData> briefList_ = new pbc::RepeatedField<global::OldProtos.HomeBlueprintBriefMuipData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.HomeBlueprintBriefMuipData> BriefList {
+      get { return briefList_; }
+    }
+
+    /// <summary>Field number for the "not_exist_share_code_list" field.</summary>
+    public const int NotExistShareCodeListFieldNumber = 2;
+    private static readonly pb::FieldCodec<string> _repeated_notExistShareCodeList_codec
+        = pb::FieldCodec.ForString(18);
+    private readonly pbc::RepeatedField<string> notExistShareCodeList_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> NotExistShareCodeList {
+      get { return notExistShareCodeList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HomeBlueprintBatchBriefMuipData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HomeBlueprintBatchBriefMuipData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!briefList_.Equals(other.briefList_)) return false;
+      if(!notExistShareCodeList_.Equals(other.notExistShareCodeList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= briefList_.GetHashCode();
+      hash ^= notExistShareCodeList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      briefList_.WriteTo(output, _repeated_briefList_codec);
+      notExistShareCodeList_.WriteTo(output, _repeated_notExistShareCodeList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      briefList_.WriteTo(ref output, _repeated_briefList_codec);
+      notExistShareCodeList_.WriteTo(ref output, _repeated_notExistShareCodeList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += briefList_.CalculateSize(_repeated_briefList_codec);
+      size += notExistShareCodeList_.CalculateSize(_repeated_notExistShareCodeList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HomeBlueprintBatchBriefMuipData other) {
+      if (other == null) {
+        return;
+      }
+      briefList_.Add(other.briefList_);
+      notExistShareCodeList_.Add(other.notExistShareCodeList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            briefList_.AddEntriesFrom(input, _repeated_briefList_codec);
+            break;
+          }
+          case 18: {
+            notExistShareCodeList_.AddEntriesFrom(input, _repeated_notExistShareCodeList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            briefList_.AddEntriesFrom(ref input, _repeated_briefList_codec);
+            break;
+          }
+          case 18: {
+            notExistShareCodeList_.AddEntriesFrom(ref input, _repeated_notExistShareCodeList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class HomeBlueprintBatchBriefMuipData : pb::IMessage<HomeBlueprintBatchBriefMuipData>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<HomeBlueprintBatchBriefMuipData> _parser = new pb::MessageParser<HomeBlueprintBatchBriefMuipData>(() => new HomeBlueprintBatchBriefMuipData());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<HomeBlueprintBatchBriefMuipData> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::HomeBlueprintBatchBriefMuipDataReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeBlueprintBatchBriefMuipData() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeBlueprintBatchBriefMuipData(HomeBlueprintBatchBriefMuipData other) : this() {
-    briefList_ = other.briefList_.Clone();
-    notExistShareCodeList_ = other.notExistShareCodeList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeBlueprintBatchBriefMuipData Clone() {
-    return new HomeBlueprintBatchBriefMuipData(this);
-  }
-
-  /// <summary>Field number for the "brief_list" field.</summary>
-  public const int BriefListFieldNumber = 1;
-  private static readonly pb::FieldCodec<global::HomeBlueprintBriefMuipData> _repeated_briefList_codec
-      = pb::FieldCodec.ForMessage(10, global::HomeBlueprintBriefMuipData.Parser);
-  private readonly pbc::RepeatedField<global::HomeBlueprintBriefMuipData> briefList_ = new pbc::RepeatedField<global::HomeBlueprintBriefMuipData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::HomeBlueprintBriefMuipData> BriefList {
-    get { return briefList_; }
-  }
-
-  /// <summary>Field number for the "not_exist_share_code_list" field.</summary>
-  public const int NotExistShareCodeListFieldNumber = 2;
-  private static readonly pb::FieldCodec<string> _repeated_notExistShareCodeList_codec
-      = pb::FieldCodec.ForString(18);
-  private readonly pbc::RepeatedField<string> notExistShareCodeList_ = new pbc::RepeatedField<string>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<string> NotExistShareCodeList {
-    get { return notExistShareCodeList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as HomeBlueprintBatchBriefMuipData);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(HomeBlueprintBatchBriefMuipData other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!briefList_.Equals(other.briefList_)) return false;
-    if(!notExistShareCodeList_.Equals(other.notExistShareCodeList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= briefList_.GetHashCode();
-    hash ^= notExistShareCodeList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    briefList_.WriteTo(output, _repeated_briefList_codec);
-    notExistShareCodeList_.WriteTo(output, _repeated_notExistShareCodeList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    briefList_.WriteTo(ref output, _repeated_briefList_codec);
-    notExistShareCodeList_.WriteTo(ref output, _repeated_notExistShareCodeList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += briefList_.CalculateSize(_repeated_briefList_codec);
-    size += notExistShareCodeList_.CalculateSize(_repeated_notExistShareCodeList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(HomeBlueprintBatchBriefMuipData other) {
-    if (other == null) {
-      return;
-    }
-    briefList_.Add(other.briefList_);
-    notExistShareCodeList_.Add(other.notExistShareCodeList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          briefList_.AddEntriesFrom(input, _repeated_briefList_codec);
-          break;
-        }
-        case 18: {
-          notExistShareCodeList_.AddEntriesFrom(input, _repeated_notExistShareCodeList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          briefList_.AddEntriesFrom(ref input, _repeated_briefList_codec);
-          break;
-        }
-        case 18: {
-          notExistShareCodeList_.AddEntriesFrom(ref input, _repeated_notExistShareCodeList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

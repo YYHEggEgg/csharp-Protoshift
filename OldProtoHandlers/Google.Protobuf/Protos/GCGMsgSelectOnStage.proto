@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GCGReason.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message GCGMsgSelectOnStage {
   uint32 controller_id = 6;

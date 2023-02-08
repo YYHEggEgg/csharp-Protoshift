@@ -20,7 +20,7 @@ import "MapMarkFromType.proto";
 import "MapMarkPointType.proto";
 import "Vector.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message MapMarkPoint {
   uint32 scene_id = 1;

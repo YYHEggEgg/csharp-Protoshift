@@ -9,372 +9,375 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from BartenderActivityDetailInfo.proto</summary>
-public static partial class BartenderActivityDetailInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for BartenderActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from BartenderActivityDetailInfo.proto</summary>
+  public static partial class BartenderActivityDetailInfoReflection {
 
-  static BartenderActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiFCYXJ0ZW5kZXJBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aGEJhcnRlbmRl",
-          "ckxldmVsSW5mby5wcm90bxoXQmFydGVuZGVyVGFza0luZm8ucHJvdG8i7QEK",
-          "G0JhcnRlbmRlckFjdGl2aXR5RGV0YWlsSW5mbxIZChFpc19jb250ZW50X2Ns",
-          "b3NlZBgPIAEoCBIuChF1bmxvY2tfbGV2ZWxfbGlzdBgKIAMoCzITLkJhcnRl",
-          "bmRlckxldmVsSW5mbxIYChB1bmxvY2tfaXRlbV9saXN0GAMgAygNEhsKE3Vu",
-          "bG9ja19mb3JtdWxhX2xpc3QYBiADKA0SLAoQdW5sb2NrX3Rhc2tfbGlzdBgF",
-          "IAMoCzISLkJhcnRlbmRlclRhc2tJbmZvEh4KFmlzX2RldmVsb3BfbW9kdWxl",
-          "X29wZW4YCSABKAhCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::BartenderLevelInfoReflection.Descriptor, global::BartenderTaskInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::BartenderActivityDetailInfo), global::BartenderActivityDetailInfo.Parser, new[]{ "IsContentClosed", "UnlockLevelList", "UnlockItemList", "UnlockFormulaList", "UnlockTaskList", "IsDevelopModuleOpen" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for BartenderActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static BartenderActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiFCYXJ0ZW5kZXJBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aGEJhcnRlbmRl",
+            "ckxldmVsSW5mby5wcm90bxoXQmFydGVuZGVyVGFza0luZm8ucHJvdG8i7QEK",
+            "G0JhcnRlbmRlckFjdGl2aXR5RGV0YWlsSW5mbxIZChFpc19jb250ZW50X2Ns",
+            "b3NlZBgPIAEoCBIuChF1bmxvY2tfbGV2ZWxfbGlzdBgKIAMoCzITLkJhcnRl",
+            "bmRlckxldmVsSW5mbxIYChB1bmxvY2tfaXRlbV9saXN0GAMgAygNEhsKE3Vu",
+            "bG9ja19mb3JtdWxhX2xpc3QYBiADKA0SLAoQdW5sb2NrX3Rhc2tfbGlzdBgF",
+            "IAMoCzISLkJhcnRlbmRlclRhc2tJbmZvEh4KFmlzX2RldmVsb3BfbW9kdWxl",
+            "X29wZW4YCSABKAhCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.BartenderLevelInfoReflection.Descriptor, global::NewProtos.BartenderTaskInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.BartenderActivityDetailInfo), global::NewProtos.BartenderActivityDetailInfo.Parser, new[]{ "IsContentClosed", "UnlockLevelList", "UnlockItemList", "UnlockFormulaList", "UnlockTaskList", "IsDevelopModuleOpen" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class BartenderActivityDetailInfo : pb::IMessage<BartenderActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BartenderActivityDetailInfo> _parser = new pb::MessageParser<BartenderActivityDetailInfo>(() => new BartenderActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<BartenderActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.BartenderActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BartenderActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BartenderActivityDetailInfo(BartenderActivityDetailInfo other) : this() {
+      isContentClosed_ = other.isContentClosed_;
+      unlockLevelList_ = other.unlockLevelList_.Clone();
+      unlockItemList_ = other.unlockItemList_.Clone();
+      unlockFormulaList_ = other.unlockFormulaList_.Clone();
+      unlockTaskList_ = other.unlockTaskList_.Clone();
+      isDevelopModuleOpen_ = other.isDevelopModuleOpen_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BartenderActivityDetailInfo Clone() {
+      return new BartenderActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 15;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "unlock_level_list" field.</summary>
+    public const int UnlockLevelListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::NewProtos.BartenderLevelInfo> _repeated_unlockLevelList_codec
+        = pb::FieldCodec.ForMessage(82, global::NewProtos.BartenderLevelInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.BartenderLevelInfo> unlockLevelList_ = new pbc::RepeatedField<global::NewProtos.BartenderLevelInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.BartenderLevelInfo> UnlockLevelList {
+      get { return unlockLevelList_; }
+    }
+
+    /// <summary>Field number for the "unlock_item_list" field.</summary>
+    public const int UnlockItemListFieldNumber = 3;
+    private static readonly pb::FieldCodec<uint> _repeated_unlockItemList_codec
+        = pb::FieldCodec.ForUInt32(26);
+    private readonly pbc::RepeatedField<uint> unlockItemList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> UnlockItemList {
+      get { return unlockItemList_; }
+    }
+
+    /// <summary>Field number for the "unlock_formula_list" field.</summary>
+    public const int UnlockFormulaListFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_unlockFormulaList_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> unlockFormulaList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> UnlockFormulaList {
+      get { return unlockFormulaList_; }
+    }
+
+    /// <summary>Field number for the "unlock_task_list" field.</summary>
+    public const int UnlockTaskListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::NewProtos.BartenderTaskInfo> _repeated_unlockTaskList_codec
+        = pb::FieldCodec.ForMessage(42, global::NewProtos.BartenderTaskInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.BartenderTaskInfo> unlockTaskList_ = new pbc::RepeatedField<global::NewProtos.BartenderTaskInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.BartenderTaskInfo> UnlockTaskList {
+      get { return unlockTaskList_; }
+    }
+
+    /// <summary>Field number for the "is_develop_module_open" field.</summary>
+    public const int IsDevelopModuleOpenFieldNumber = 9;
+    private bool isDevelopModuleOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsDevelopModuleOpen {
+      get { return isDevelopModuleOpen_; }
+      set {
+        isDevelopModuleOpen_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as BartenderActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(BartenderActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if(!unlockLevelList_.Equals(other.unlockLevelList_)) return false;
+      if(!unlockItemList_.Equals(other.unlockItemList_)) return false;
+      if(!unlockFormulaList_.Equals(other.unlockFormulaList_)) return false;
+      if(!unlockTaskList_.Equals(other.unlockTaskList_)) return false;
+      if (IsDevelopModuleOpen != other.IsDevelopModuleOpen) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      hash ^= unlockLevelList_.GetHashCode();
+      hash ^= unlockItemList_.GetHashCode();
+      hash ^= unlockFormulaList_.GetHashCode();
+      hash ^= unlockTaskList_.GetHashCode();
+      if (IsDevelopModuleOpen != false) hash ^= IsDevelopModuleOpen.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      unlockItemList_.WriteTo(output, _repeated_unlockItemList_codec);
+      unlockTaskList_.WriteTo(output, _repeated_unlockTaskList_codec);
+      unlockFormulaList_.WriteTo(output, _repeated_unlockFormulaList_codec);
+      if (IsDevelopModuleOpen != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsDevelopModuleOpen);
+      }
+      unlockLevelList_.WriteTo(output, _repeated_unlockLevelList_codec);
+      if (IsContentClosed != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsContentClosed);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unlockItemList_.WriteTo(ref output, _repeated_unlockItemList_codec);
+      unlockTaskList_.WriteTo(ref output, _repeated_unlockTaskList_codec);
+      unlockFormulaList_.WriteTo(ref output, _repeated_unlockFormulaList_codec);
+      if (IsDevelopModuleOpen != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsDevelopModuleOpen);
+      }
+      unlockLevelList_.WriteTo(ref output, _repeated_unlockLevelList_codec);
+      if (IsContentClosed != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsContentClosed);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsContentClosed != false) {
+        size += 1 + 1;
+      }
+      size += unlockLevelList_.CalculateSize(_repeated_unlockLevelList_codec);
+      size += unlockItemList_.CalculateSize(_repeated_unlockItemList_codec);
+      size += unlockFormulaList_.CalculateSize(_repeated_unlockFormulaList_codec);
+      size += unlockTaskList_.CalculateSize(_repeated_unlockTaskList_codec);
+      if (IsDevelopModuleOpen != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(BartenderActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
+      unlockLevelList_.Add(other.unlockLevelList_);
+      unlockItemList_.Add(other.unlockItemList_);
+      unlockFormulaList_.Add(other.unlockFormulaList_);
+      unlockTaskList_.Add(other.unlockTaskList_);
+      if (other.IsDevelopModuleOpen != false) {
+        IsDevelopModuleOpen = other.IsDevelopModuleOpen;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 26:
+          case 24: {
+            unlockItemList_.AddEntriesFrom(input, _repeated_unlockItemList_codec);
+            break;
+          }
+          case 42: {
+            unlockTaskList_.AddEntriesFrom(input, _repeated_unlockTaskList_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            unlockFormulaList_.AddEntriesFrom(input, _repeated_unlockFormulaList_codec);
+            break;
+          }
+          case 72: {
+            IsDevelopModuleOpen = input.ReadBool();
+            break;
+          }
+          case 82: {
+            unlockLevelList_.AddEntriesFrom(input, _repeated_unlockLevelList_codec);
+            break;
+          }
+          case 120: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 26:
+          case 24: {
+            unlockItemList_.AddEntriesFrom(ref input, _repeated_unlockItemList_codec);
+            break;
+          }
+          case 42: {
+            unlockTaskList_.AddEntriesFrom(ref input, _repeated_unlockTaskList_codec);
+            break;
+          }
+          case 50:
+          case 48: {
+            unlockFormulaList_.AddEntriesFrom(ref input, _repeated_unlockFormulaList_codec);
+            break;
+          }
+          case 72: {
+            IsDevelopModuleOpen = input.ReadBool();
+            break;
+          }
+          case 82: {
+            unlockLevelList_.AddEntriesFrom(ref input, _repeated_unlockLevelList_codec);
+            break;
+          }
+          case 120: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class BartenderActivityDetailInfo : pb::IMessage<BartenderActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<BartenderActivityDetailInfo> _parser = new pb::MessageParser<BartenderActivityDetailInfo>(() => new BartenderActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<BartenderActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::BartenderActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BartenderActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BartenderActivityDetailInfo(BartenderActivityDetailInfo other) : this() {
-    isContentClosed_ = other.isContentClosed_;
-    unlockLevelList_ = other.unlockLevelList_.Clone();
-    unlockItemList_ = other.unlockItemList_.Clone();
-    unlockFormulaList_ = other.unlockFormulaList_.Clone();
-    unlockTaskList_ = other.unlockTaskList_.Clone();
-    isDevelopModuleOpen_ = other.isDevelopModuleOpen_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BartenderActivityDetailInfo Clone() {
-    return new BartenderActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "is_content_closed" field.</summary>
-  public const int IsContentClosedFieldNumber = 15;
-  private bool isContentClosed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsContentClosed {
-    get { return isContentClosed_; }
-    set {
-      isContentClosed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "unlock_level_list" field.</summary>
-  public const int UnlockLevelListFieldNumber = 10;
-  private static readonly pb::FieldCodec<global::BartenderLevelInfo> _repeated_unlockLevelList_codec
-      = pb::FieldCodec.ForMessage(82, global::BartenderLevelInfo.Parser);
-  private readonly pbc::RepeatedField<global::BartenderLevelInfo> unlockLevelList_ = new pbc::RepeatedField<global::BartenderLevelInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::BartenderLevelInfo> UnlockLevelList {
-    get { return unlockLevelList_; }
-  }
-
-  /// <summary>Field number for the "unlock_item_list" field.</summary>
-  public const int UnlockItemListFieldNumber = 3;
-  private static readonly pb::FieldCodec<uint> _repeated_unlockItemList_codec
-      = pb::FieldCodec.ForUInt32(26);
-  private readonly pbc::RepeatedField<uint> unlockItemList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> UnlockItemList {
-    get { return unlockItemList_; }
-  }
-
-  /// <summary>Field number for the "unlock_formula_list" field.</summary>
-  public const int UnlockFormulaListFieldNumber = 6;
-  private static readonly pb::FieldCodec<uint> _repeated_unlockFormulaList_codec
-      = pb::FieldCodec.ForUInt32(50);
-  private readonly pbc::RepeatedField<uint> unlockFormulaList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> UnlockFormulaList {
-    get { return unlockFormulaList_; }
-  }
-
-  /// <summary>Field number for the "unlock_task_list" field.</summary>
-  public const int UnlockTaskListFieldNumber = 5;
-  private static readonly pb::FieldCodec<global::BartenderTaskInfo> _repeated_unlockTaskList_codec
-      = pb::FieldCodec.ForMessage(42, global::BartenderTaskInfo.Parser);
-  private readonly pbc::RepeatedField<global::BartenderTaskInfo> unlockTaskList_ = new pbc::RepeatedField<global::BartenderTaskInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::BartenderTaskInfo> UnlockTaskList {
-    get { return unlockTaskList_; }
-  }
-
-  /// <summary>Field number for the "is_develop_module_open" field.</summary>
-  public const int IsDevelopModuleOpenFieldNumber = 9;
-  private bool isDevelopModuleOpen_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsDevelopModuleOpen {
-    get { return isDevelopModuleOpen_; }
-    set {
-      isDevelopModuleOpen_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as BartenderActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(BartenderActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsContentClosed != other.IsContentClosed) return false;
-    if(!unlockLevelList_.Equals(other.unlockLevelList_)) return false;
-    if(!unlockItemList_.Equals(other.unlockItemList_)) return false;
-    if(!unlockFormulaList_.Equals(other.unlockFormulaList_)) return false;
-    if(!unlockTaskList_.Equals(other.unlockTaskList_)) return false;
-    if (IsDevelopModuleOpen != other.IsDevelopModuleOpen) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-    hash ^= unlockLevelList_.GetHashCode();
-    hash ^= unlockItemList_.GetHashCode();
-    hash ^= unlockFormulaList_.GetHashCode();
-    hash ^= unlockTaskList_.GetHashCode();
-    if (IsDevelopModuleOpen != false) hash ^= IsDevelopModuleOpen.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    unlockItemList_.WriteTo(output, _repeated_unlockItemList_codec);
-    unlockTaskList_.WriteTo(output, _repeated_unlockTaskList_codec);
-    unlockFormulaList_.WriteTo(output, _repeated_unlockFormulaList_codec);
-    if (IsDevelopModuleOpen != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(IsDevelopModuleOpen);
-    }
-    unlockLevelList_.WriteTo(output, _repeated_unlockLevelList_codec);
-    if (IsContentClosed != false) {
-      output.WriteRawTag(120);
-      output.WriteBool(IsContentClosed);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    unlockItemList_.WriteTo(ref output, _repeated_unlockItemList_codec);
-    unlockTaskList_.WriteTo(ref output, _repeated_unlockTaskList_codec);
-    unlockFormulaList_.WriteTo(ref output, _repeated_unlockFormulaList_codec);
-    if (IsDevelopModuleOpen != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(IsDevelopModuleOpen);
-    }
-    unlockLevelList_.WriteTo(ref output, _repeated_unlockLevelList_codec);
-    if (IsContentClosed != false) {
-      output.WriteRawTag(120);
-      output.WriteBool(IsContentClosed);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsContentClosed != false) {
-      size += 1 + 1;
-    }
-    size += unlockLevelList_.CalculateSize(_repeated_unlockLevelList_codec);
-    size += unlockItemList_.CalculateSize(_repeated_unlockItemList_codec);
-    size += unlockFormulaList_.CalculateSize(_repeated_unlockFormulaList_codec);
-    size += unlockTaskList_.CalculateSize(_repeated_unlockTaskList_codec);
-    if (IsDevelopModuleOpen != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(BartenderActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsContentClosed != false) {
-      IsContentClosed = other.IsContentClosed;
-    }
-    unlockLevelList_.Add(other.unlockLevelList_);
-    unlockItemList_.Add(other.unlockItemList_);
-    unlockFormulaList_.Add(other.unlockFormulaList_);
-    unlockTaskList_.Add(other.unlockTaskList_);
-    if (other.IsDevelopModuleOpen != false) {
-      IsDevelopModuleOpen = other.IsDevelopModuleOpen;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 26:
-        case 24: {
-          unlockItemList_.AddEntriesFrom(input, _repeated_unlockItemList_codec);
-          break;
-        }
-        case 42: {
-          unlockTaskList_.AddEntriesFrom(input, _repeated_unlockTaskList_codec);
-          break;
-        }
-        case 50:
-        case 48: {
-          unlockFormulaList_.AddEntriesFrom(input, _repeated_unlockFormulaList_codec);
-          break;
-        }
-        case 72: {
-          IsDevelopModuleOpen = input.ReadBool();
-          break;
-        }
-        case 82: {
-          unlockLevelList_.AddEntriesFrom(input, _repeated_unlockLevelList_codec);
-          break;
-        }
-        case 120: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 26:
-        case 24: {
-          unlockItemList_.AddEntriesFrom(ref input, _repeated_unlockItemList_codec);
-          break;
-        }
-        case 42: {
-          unlockTaskList_.AddEntriesFrom(ref input, _repeated_unlockTaskList_codec);
-          break;
-        }
-        case 50:
-        case 48: {
-          unlockFormulaList_.AddEntriesFrom(ref input, _repeated_unlockFormulaList_codec);
-          break;
-        }
-        case 72: {
-          IsDevelopModuleOpen = input.ReadBool();
-          break;
-        }
-        case 82: {
-          unlockLevelList_.AddEntriesFrom(ref input, _repeated_unlockLevelList_codec);
-          break;
-        }
-        case 120: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

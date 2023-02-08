@@ -9,37 +9,40 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from DealAddFriendResultType.proto</summary>
-public static partial class DealAddFriendResultTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for DealAddFriendResultType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from DealAddFriendResultType.proto</summary>
+  public static partial class DealAddFriendResultTypeReflection {
 
-  static DealAddFriendResultTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1EZWFsQWRkRnJpZW5kUmVzdWx0VHlwZS5wcm90byppChdEZWFsQWRkRnJp",
-          "ZW5kUmVzdWx0VHlwZRImCiJERUFMX0FERF9GUklFTkRfUkVTVUxUX1RZUEVf",
-          "UkVKRUNUEAASJgoiREVBTF9BRERfRlJJRU5EX1JFU1VMVF9UWVBFX0FDQ0VQ",
-          "VBABQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::DealAddFriendResultType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for DealAddFriendResultType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static DealAddFriendResultTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1EZWFsQWRkRnJpZW5kUmVzdWx0VHlwZS5wcm90byppChdEZWFsQWRkRnJp",
+            "ZW5kUmVzdWx0VHlwZRImCiJERUFMX0FERF9GUklFTkRfUkVTVUxUX1RZUEVf",
+            "UkVKRUNUEAASJgoiREVBTF9BRERfRlJJRU5EX1JFU1VMVF9UWVBFX0FDQ0VQ",
+            "VBABQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.DealAddFriendResultType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum DealAddFriendResultType {
+    [pbr::OriginalName("DEAL_ADD_FRIEND_RESULT_TYPE_REJECT")] Reject = 0,
+    [pbr::OriginalName("DEAL_ADD_FRIEND_RESULT_TYPE_ACCEPT")] Accept = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum DealAddFriendResultType {
-  [pbr::OriginalName("DEAL_ADD_FRIEND_RESULT_TYPE_REJECT")] Reject = 0,
-  [pbr::OriginalName("DEAL_ADD_FRIEND_RESULT_TYPE_ACCEPT")] Accept = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

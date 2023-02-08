@@ -9,709 +9,711 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ClientLogHead.proto</summary>
-public static partial class ClientLogHeadReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ClientLogHead.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ClientLogHead.proto</summary>
+  public static partial class ClientLogHeadReflection {
 
-  static ClientLogHeadReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChNDbGllbnRMb2dIZWFkLnByb3RvIrQCCg1DbGllbnRMb2dIZWFkEhIKCmV2",
-          "ZW50X3RpbWUYASABKAkSGQoRbG9nX3NlcmlhbF9udW1iZXIYAiABKAkSEQoJ",
-          "YWN0aW9uX2lkGAMgASgNEhMKC2FjdGlvbl9uYW1lGAQgASgJEhEKCXVwbG9h",
-          "ZF9pcBgFIAEoCRISCgpwcm9kdWN0X2lkGAYgASgJEhIKCmNoYW5uZWxfaWQY",
-          "ByABKAkSEwoLcmVnaW9uX25hbWUYCCABKAkSFAoMZ2FtZV92ZXJzaW9uGAkg",
-          "ASgJEhMKC2RldmljZV90eXBlGAogASgJEhMKC2RldmljZV91dWlkGAsgASgJ",
-          "EhAKCG1hY19hZGRyGAwgASgJEhQKDGFjY291bnRfbmFtZRgNIAEoCRIUCgxh",
-          "Y2NvdW50X3V1aWQYDiABKAlCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRw",
-          "cm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ClientLogHead), global::ClientLogHead.Parser, new[]{ "EventTime", "LogSerialNumber", "ActionId", "ActionName", "UploadIp", "ProductId", "ChannelId", "RegionName", "GameVersion", "DeviceType", "DeviceUuid", "MacAddr", "AccountName", "AccountUuid" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ClientLogHead.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ClientLogHeadReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChNDbGllbnRMb2dIZWFkLnByb3RvIrQCCg1DbGllbnRMb2dIZWFkEhIKCmV2",
+            "ZW50X3RpbWUYASABKAkSGQoRbG9nX3NlcmlhbF9udW1iZXIYAiABKAkSEQoJ",
+            "YWN0aW9uX2lkGAMgASgNEhMKC2FjdGlvbl9uYW1lGAQgASgJEhEKCXVwbG9h",
+            "ZF9pcBgFIAEoCRISCgpwcm9kdWN0X2lkGAYgASgJEhIKCmNoYW5uZWxfaWQY",
+            "ByABKAkSEwoLcmVnaW9uX25hbWUYCCABKAkSFAoMZ2FtZV92ZXJzaW9uGAkg",
+            "ASgJEhMKC2RldmljZV90eXBlGAogASgJEhMKC2RldmljZV91dWlkGAsgASgJ",
+            "EhAKCG1hY19hZGRyGAwgASgJEhQKDGFjY291bnRfbmFtZRgNIAEoCRIUCgxh",
+            "Y2NvdW50X3V1aWQYDiABKAlCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ClientLogHead), global::OldProtos.ClientLogHead.Parser, new[]{ "EventTime", "LogSerialNumber", "ActionId", "ActionName", "UploadIp", "ProductId", "ChannelId", "RegionName", "GameVersion", "DeviceType", "DeviceUuid", "MacAddr", "AccountName", "AccountUuid" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class ClientLogHead : pb::IMessage<ClientLogHead>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ClientLogHead> _parser = new pb::MessageParser<ClientLogHead>(() => new ClientLogHead());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ClientLogHead> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ClientLogHeadReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ClientLogHead() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ClientLogHead(ClientLogHead other) : this() {
+      eventTime_ = other.eventTime_;
+      logSerialNumber_ = other.logSerialNumber_;
+      actionId_ = other.actionId_;
+      actionName_ = other.actionName_;
+      uploadIp_ = other.uploadIp_;
+      productId_ = other.productId_;
+      channelId_ = other.channelId_;
+      regionName_ = other.regionName_;
+      gameVersion_ = other.gameVersion_;
+      deviceType_ = other.deviceType_;
+      deviceUuid_ = other.deviceUuid_;
+      macAddr_ = other.macAddr_;
+      accountName_ = other.accountName_;
+      accountUuid_ = other.accountUuid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ClientLogHead Clone() {
+      return new ClientLogHead(this);
+    }
+
+    /// <summary>Field number for the "event_time" field.</summary>
+    public const int EventTimeFieldNumber = 1;
+    private string eventTime_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string EventTime {
+      get { return eventTime_; }
+      set {
+        eventTime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "log_serial_number" field.</summary>
+    public const int LogSerialNumberFieldNumber = 2;
+    private string logSerialNumber_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string LogSerialNumber {
+      get { return logSerialNumber_; }
+      set {
+        logSerialNumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "action_id" field.</summary>
+    public const int ActionIdFieldNumber = 3;
+    private uint actionId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ActionId {
+      get { return actionId_; }
+      set {
+        actionId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "action_name" field.</summary>
+    public const int ActionNameFieldNumber = 4;
+    private string actionName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ActionName {
+      get { return actionName_; }
+      set {
+        actionName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "upload_ip" field.</summary>
+    public const int UploadIpFieldNumber = 5;
+    private string uploadIp_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string UploadIp {
+      get { return uploadIp_; }
+      set {
+        uploadIp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "product_id" field.</summary>
+    public const int ProductIdFieldNumber = 6;
+    private string productId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ProductId {
+      get { return productId_; }
+      set {
+        productId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "channel_id" field.</summary>
+    public const int ChannelIdFieldNumber = 7;
+    private string channelId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ChannelId {
+      get { return channelId_; }
+      set {
+        channelId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "region_name" field.</summary>
+    public const int RegionNameFieldNumber = 8;
+    private string regionName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RegionName {
+      get { return regionName_; }
+      set {
+        regionName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "game_version" field.</summary>
+    public const int GameVersionFieldNumber = 9;
+    private string gameVersion_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string GameVersion {
+      get { return gameVersion_; }
+      set {
+        gameVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "device_type" field.</summary>
+    public const int DeviceTypeFieldNumber = 10;
+    private string deviceType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DeviceType {
+      get { return deviceType_; }
+      set {
+        deviceType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "device_uuid" field.</summary>
+    public const int DeviceUuidFieldNumber = 11;
+    private string deviceUuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string DeviceUuid {
+      get { return deviceUuid_; }
+      set {
+        deviceUuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "mac_addr" field.</summary>
+    public const int MacAddrFieldNumber = 12;
+    private string macAddr_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string MacAddr {
+      get { return macAddr_; }
+      set {
+        macAddr_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "account_name" field.</summary>
+    public const int AccountNameFieldNumber = 13;
+    private string accountName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AccountName {
+      get { return accountName_; }
+      set {
+        accountName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "account_uuid" field.</summary>
+    public const int AccountUuidFieldNumber = 14;
+    private string accountUuid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string AccountUuid {
+      get { return accountUuid_; }
+      set {
+        accountUuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ClientLogHead);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ClientLogHead other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (EventTime != other.EventTime) return false;
+      if (LogSerialNumber != other.LogSerialNumber) return false;
+      if (ActionId != other.ActionId) return false;
+      if (ActionName != other.ActionName) return false;
+      if (UploadIp != other.UploadIp) return false;
+      if (ProductId != other.ProductId) return false;
+      if (ChannelId != other.ChannelId) return false;
+      if (RegionName != other.RegionName) return false;
+      if (GameVersion != other.GameVersion) return false;
+      if (DeviceType != other.DeviceType) return false;
+      if (DeviceUuid != other.DeviceUuid) return false;
+      if (MacAddr != other.MacAddr) return false;
+      if (AccountName != other.AccountName) return false;
+      if (AccountUuid != other.AccountUuid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (EventTime.Length != 0) hash ^= EventTime.GetHashCode();
+      if (LogSerialNumber.Length != 0) hash ^= LogSerialNumber.GetHashCode();
+      if (ActionId != 0) hash ^= ActionId.GetHashCode();
+      if (ActionName.Length != 0) hash ^= ActionName.GetHashCode();
+      if (UploadIp.Length != 0) hash ^= UploadIp.GetHashCode();
+      if (ProductId.Length != 0) hash ^= ProductId.GetHashCode();
+      if (ChannelId.Length != 0) hash ^= ChannelId.GetHashCode();
+      if (RegionName.Length != 0) hash ^= RegionName.GetHashCode();
+      if (GameVersion.Length != 0) hash ^= GameVersion.GetHashCode();
+      if (DeviceType.Length != 0) hash ^= DeviceType.GetHashCode();
+      if (DeviceUuid.Length != 0) hash ^= DeviceUuid.GetHashCode();
+      if (MacAddr.Length != 0) hash ^= MacAddr.GetHashCode();
+      if (AccountName.Length != 0) hash ^= AccountName.GetHashCode();
+      if (AccountUuid.Length != 0) hash ^= AccountUuid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (EventTime.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(EventTime);
+      }
+      if (LogSerialNumber.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(LogSerialNumber);
+      }
+      if (ActionId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ActionId);
+      }
+      if (ActionName.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ActionName);
+      }
+      if (UploadIp.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(UploadIp);
+      }
+      if (ProductId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(ProductId);
+      }
+      if (ChannelId.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(ChannelId);
+      }
+      if (RegionName.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(RegionName);
+      }
+      if (GameVersion.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(GameVersion);
+      }
+      if (DeviceType.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(DeviceType);
+      }
+      if (DeviceUuid.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(DeviceUuid);
+      }
+      if (MacAddr.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(MacAddr);
+      }
+      if (AccountName.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(AccountName);
+      }
+      if (AccountUuid.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(AccountUuid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (EventTime.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(EventTime);
+      }
+      if (LogSerialNumber.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(LogSerialNumber);
+      }
+      if (ActionId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ActionId);
+      }
+      if (ActionName.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(ActionName);
+      }
+      if (UploadIp.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(UploadIp);
+      }
+      if (ProductId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(ProductId);
+      }
+      if (ChannelId.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(ChannelId);
+      }
+      if (RegionName.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(RegionName);
+      }
+      if (GameVersion.Length != 0) {
+        output.WriteRawTag(74);
+        output.WriteString(GameVersion);
+      }
+      if (DeviceType.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(DeviceType);
+      }
+      if (DeviceUuid.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(DeviceUuid);
+      }
+      if (MacAddr.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(MacAddr);
+      }
+      if (AccountName.Length != 0) {
+        output.WriteRawTag(106);
+        output.WriteString(AccountName);
+      }
+      if (AccountUuid.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(AccountUuid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (EventTime.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(EventTime);
+      }
+      if (LogSerialNumber.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LogSerialNumber);
+      }
+      if (ActionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActionId);
+      }
+      if (ActionName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ActionName);
+      }
+      if (UploadIp.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(UploadIp);
+      }
+      if (ProductId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ProductId);
+      }
+      if (ChannelId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ChannelId);
+      }
+      if (RegionName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RegionName);
+      }
+      if (GameVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GameVersion);
+      }
+      if (DeviceType.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceType);
+      }
+      if (DeviceUuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceUuid);
+      }
+      if (MacAddr.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MacAddr);
+      }
+      if (AccountName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountName);
+      }
+      if (AccountUuid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountUuid);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ClientLogHead other) {
+      if (other == null) {
+        return;
+      }
+      if (other.EventTime.Length != 0) {
+        EventTime = other.EventTime;
+      }
+      if (other.LogSerialNumber.Length != 0) {
+        LogSerialNumber = other.LogSerialNumber;
+      }
+      if (other.ActionId != 0) {
+        ActionId = other.ActionId;
+      }
+      if (other.ActionName.Length != 0) {
+        ActionName = other.ActionName;
+      }
+      if (other.UploadIp.Length != 0) {
+        UploadIp = other.UploadIp;
+      }
+      if (other.ProductId.Length != 0) {
+        ProductId = other.ProductId;
+      }
+      if (other.ChannelId.Length != 0) {
+        ChannelId = other.ChannelId;
+      }
+      if (other.RegionName.Length != 0) {
+        RegionName = other.RegionName;
+      }
+      if (other.GameVersion.Length != 0) {
+        GameVersion = other.GameVersion;
+      }
+      if (other.DeviceType.Length != 0) {
+        DeviceType = other.DeviceType;
+      }
+      if (other.DeviceUuid.Length != 0) {
+        DeviceUuid = other.DeviceUuid;
+      }
+      if (other.MacAddr.Length != 0) {
+        MacAddr = other.MacAddr;
+      }
+      if (other.AccountName.Length != 0) {
+        AccountName = other.AccountName;
+      }
+      if (other.AccountUuid.Length != 0) {
+        AccountUuid = other.AccountUuid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            EventTime = input.ReadString();
+            break;
+          }
+          case 18: {
+            LogSerialNumber = input.ReadString();
+            break;
+          }
+          case 24: {
+            ActionId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            ActionName = input.ReadString();
+            break;
+          }
+          case 42: {
+            UploadIp = input.ReadString();
+            break;
+          }
+          case 50: {
+            ProductId = input.ReadString();
+            break;
+          }
+          case 58: {
+            ChannelId = input.ReadString();
+            break;
+          }
+          case 66: {
+            RegionName = input.ReadString();
+            break;
+          }
+          case 74: {
+            GameVersion = input.ReadString();
+            break;
+          }
+          case 82: {
+            DeviceType = input.ReadString();
+            break;
+          }
+          case 90: {
+            DeviceUuid = input.ReadString();
+            break;
+          }
+          case 98: {
+            MacAddr = input.ReadString();
+            break;
+          }
+          case 106: {
+            AccountName = input.ReadString();
+            break;
+          }
+          case 114: {
+            AccountUuid = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            EventTime = input.ReadString();
+            break;
+          }
+          case 18: {
+            LogSerialNumber = input.ReadString();
+            break;
+          }
+          case 24: {
+            ActionId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            ActionName = input.ReadString();
+            break;
+          }
+          case 42: {
+            UploadIp = input.ReadString();
+            break;
+          }
+          case 50: {
+            ProductId = input.ReadString();
+            break;
+          }
+          case 58: {
+            ChannelId = input.ReadString();
+            break;
+          }
+          case 66: {
+            RegionName = input.ReadString();
+            break;
+          }
+          case 74: {
+            GameVersion = input.ReadString();
+            break;
+          }
+          case 82: {
+            DeviceType = input.ReadString();
+            break;
+          }
+          case 90: {
+            DeviceUuid = input.ReadString();
+            break;
+          }
+          case 98: {
+            MacAddr = input.ReadString();
+            break;
+          }
+          case 106: {
+            AccountName = input.ReadString();
+            break;
+          }
+          case 114: {
+            AccountUuid = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ClientLogHead : pb::IMessage<ClientLogHead>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ClientLogHead> _parser = new pb::MessageParser<ClientLogHead>(() => new ClientLogHead());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ClientLogHead> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientLogHeadReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ClientLogHead() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ClientLogHead(ClientLogHead other) : this() {
-    eventTime_ = other.eventTime_;
-    logSerialNumber_ = other.logSerialNumber_;
-    actionId_ = other.actionId_;
-    actionName_ = other.actionName_;
-    uploadIp_ = other.uploadIp_;
-    productId_ = other.productId_;
-    channelId_ = other.channelId_;
-    regionName_ = other.regionName_;
-    gameVersion_ = other.gameVersion_;
-    deviceType_ = other.deviceType_;
-    deviceUuid_ = other.deviceUuid_;
-    macAddr_ = other.macAddr_;
-    accountName_ = other.accountName_;
-    accountUuid_ = other.accountUuid_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ClientLogHead Clone() {
-    return new ClientLogHead(this);
-  }
-
-  /// <summary>Field number for the "event_time" field.</summary>
-  public const int EventTimeFieldNumber = 1;
-  private string eventTime_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string EventTime {
-    get { return eventTime_; }
-    set {
-      eventTime_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "log_serial_number" field.</summary>
-  public const int LogSerialNumberFieldNumber = 2;
-  private string logSerialNumber_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string LogSerialNumber {
-    get { return logSerialNumber_; }
-    set {
-      logSerialNumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "action_id" field.</summary>
-  public const int ActionIdFieldNumber = 3;
-  private uint actionId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ActionId {
-    get { return actionId_; }
-    set {
-      actionId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "action_name" field.</summary>
-  public const int ActionNameFieldNumber = 4;
-  private string actionName_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string ActionName {
-    get { return actionName_; }
-    set {
-      actionName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "upload_ip" field.</summary>
-  public const int UploadIpFieldNumber = 5;
-  private string uploadIp_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string UploadIp {
-    get { return uploadIp_; }
-    set {
-      uploadIp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "product_id" field.</summary>
-  public const int ProductIdFieldNumber = 6;
-  private string productId_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string ProductId {
-    get { return productId_; }
-    set {
-      productId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "channel_id" field.</summary>
-  public const int ChannelIdFieldNumber = 7;
-  private string channelId_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string ChannelId {
-    get { return channelId_; }
-    set {
-      channelId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "region_name" field.</summary>
-  public const int RegionNameFieldNumber = 8;
-  private string regionName_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string RegionName {
-    get { return regionName_; }
-    set {
-      regionName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "game_version" field.</summary>
-  public const int GameVersionFieldNumber = 9;
-  private string gameVersion_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string GameVersion {
-    get { return gameVersion_; }
-    set {
-      gameVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "device_type" field.</summary>
-  public const int DeviceTypeFieldNumber = 10;
-  private string deviceType_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string DeviceType {
-    get { return deviceType_; }
-    set {
-      deviceType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "device_uuid" field.</summary>
-  public const int DeviceUuidFieldNumber = 11;
-  private string deviceUuid_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string DeviceUuid {
-    get { return deviceUuid_; }
-    set {
-      deviceUuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "mac_addr" field.</summary>
-  public const int MacAddrFieldNumber = 12;
-  private string macAddr_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string MacAddr {
-    get { return macAddr_; }
-    set {
-      macAddr_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "account_name" field.</summary>
-  public const int AccountNameFieldNumber = 13;
-  private string accountName_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string AccountName {
-    get { return accountName_; }
-    set {
-      accountName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "account_uuid" field.</summary>
-  public const int AccountUuidFieldNumber = 14;
-  private string accountUuid_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string AccountUuid {
-    get { return accountUuid_; }
-    set {
-      accountUuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ClientLogHead);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ClientLogHead other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (EventTime != other.EventTime) return false;
-    if (LogSerialNumber != other.LogSerialNumber) return false;
-    if (ActionId != other.ActionId) return false;
-    if (ActionName != other.ActionName) return false;
-    if (UploadIp != other.UploadIp) return false;
-    if (ProductId != other.ProductId) return false;
-    if (ChannelId != other.ChannelId) return false;
-    if (RegionName != other.RegionName) return false;
-    if (GameVersion != other.GameVersion) return false;
-    if (DeviceType != other.DeviceType) return false;
-    if (DeviceUuid != other.DeviceUuid) return false;
-    if (MacAddr != other.MacAddr) return false;
-    if (AccountName != other.AccountName) return false;
-    if (AccountUuid != other.AccountUuid) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (EventTime.Length != 0) hash ^= EventTime.GetHashCode();
-    if (LogSerialNumber.Length != 0) hash ^= LogSerialNumber.GetHashCode();
-    if (ActionId != 0) hash ^= ActionId.GetHashCode();
-    if (ActionName.Length != 0) hash ^= ActionName.GetHashCode();
-    if (UploadIp.Length != 0) hash ^= UploadIp.GetHashCode();
-    if (ProductId.Length != 0) hash ^= ProductId.GetHashCode();
-    if (ChannelId.Length != 0) hash ^= ChannelId.GetHashCode();
-    if (RegionName.Length != 0) hash ^= RegionName.GetHashCode();
-    if (GameVersion.Length != 0) hash ^= GameVersion.GetHashCode();
-    if (DeviceType.Length != 0) hash ^= DeviceType.GetHashCode();
-    if (DeviceUuid.Length != 0) hash ^= DeviceUuid.GetHashCode();
-    if (MacAddr.Length != 0) hash ^= MacAddr.GetHashCode();
-    if (AccountName.Length != 0) hash ^= AccountName.GetHashCode();
-    if (AccountUuid.Length != 0) hash ^= AccountUuid.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (EventTime.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(EventTime);
-    }
-    if (LogSerialNumber.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(LogSerialNumber);
-    }
-    if (ActionId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ActionId);
-    }
-    if (ActionName.Length != 0) {
-      output.WriteRawTag(34);
-      output.WriteString(ActionName);
-    }
-    if (UploadIp.Length != 0) {
-      output.WriteRawTag(42);
-      output.WriteString(UploadIp);
-    }
-    if (ProductId.Length != 0) {
-      output.WriteRawTag(50);
-      output.WriteString(ProductId);
-    }
-    if (ChannelId.Length != 0) {
-      output.WriteRawTag(58);
-      output.WriteString(ChannelId);
-    }
-    if (RegionName.Length != 0) {
-      output.WriteRawTag(66);
-      output.WriteString(RegionName);
-    }
-    if (GameVersion.Length != 0) {
-      output.WriteRawTag(74);
-      output.WriteString(GameVersion);
-    }
-    if (DeviceType.Length != 0) {
-      output.WriteRawTag(82);
-      output.WriteString(DeviceType);
-    }
-    if (DeviceUuid.Length != 0) {
-      output.WriteRawTag(90);
-      output.WriteString(DeviceUuid);
-    }
-    if (MacAddr.Length != 0) {
-      output.WriteRawTag(98);
-      output.WriteString(MacAddr);
-    }
-    if (AccountName.Length != 0) {
-      output.WriteRawTag(106);
-      output.WriteString(AccountName);
-    }
-    if (AccountUuid.Length != 0) {
-      output.WriteRawTag(114);
-      output.WriteString(AccountUuid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (EventTime.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(EventTime);
-    }
-    if (LogSerialNumber.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(LogSerialNumber);
-    }
-    if (ActionId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ActionId);
-    }
-    if (ActionName.Length != 0) {
-      output.WriteRawTag(34);
-      output.WriteString(ActionName);
-    }
-    if (UploadIp.Length != 0) {
-      output.WriteRawTag(42);
-      output.WriteString(UploadIp);
-    }
-    if (ProductId.Length != 0) {
-      output.WriteRawTag(50);
-      output.WriteString(ProductId);
-    }
-    if (ChannelId.Length != 0) {
-      output.WriteRawTag(58);
-      output.WriteString(ChannelId);
-    }
-    if (RegionName.Length != 0) {
-      output.WriteRawTag(66);
-      output.WriteString(RegionName);
-    }
-    if (GameVersion.Length != 0) {
-      output.WriteRawTag(74);
-      output.WriteString(GameVersion);
-    }
-    if (DeviceType.Length != 0) {
-      output.WriteRawTag(82);
-      output.WriteString(DeviceType);
-    }
-    if (DeviceUuid.Length != 0) {
-      output.WriteRawTag(90);
-      output.WriteString(DeviceUuid);
-    }
-    if (MacAddr.Length != 0) {
-      output.WriteRawTag(98);
-      output.WriteString(MacAddr);
-    }
-    if (AccountName.Length != 0) {
-      output.WriteRawTag(106);
-      output.WriteString(AccountName);
-    }
-    if (AccountUuid.Length != 0) {
-      output.WriteRawTag(114);
-      output.WriteString(AccountUuid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (EventTime.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(EventTime);
-    }
-    if (LogSerialNumber.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(LogSerialNumber);
-    }
-    if (ActionId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActionId);
-    }
-    if (ActionName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(ActionName);
-    }
-    if (UploadIp.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(UploadIp);
-    }
-    if (ProductId.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(ProductId);
-    }
-    if (ChannelId.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(ChannelId);
-    }
-    if (RegionName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(RegionName);
-    }
-    if (GameVersion.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(GameVersion);
-    }
-    if (DeviceType.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceType);
-    }
-    if (DeviceUuid.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(DeviceUuid);
-    }
-    if (MacAddr.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(MacAddr);
-    }
-    if (AccountName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountName);
-    }
-    if (AccountUuid.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(AccountUuid);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ClientLogHead other) {
-    if (other == null) {
-      return;
-    }
-    if (other.EventTime.Length != 0) {
-      EventTime = other.EventTime;
-    }
-    if (other.LogSerialNumber.Length != 0) {
-      LogSerialNumber = other.LogSerialNumber;
-    }
-    if (other.ActionId != 0) {
-      ActionId = other.ActionId;
-    }
-    if (other.ActionName.Length != 0) {
-      ActionName = other.ActionName;
-    }
-    if (other.UploadIp.Length != 0) {
-      UploadIp = other.UploadIp;
-    }
-    if (other.ProductId.Length != 0) {
-      ProductId = other.ProductId;
-    }
-    if (other.ChannelId.Length != 0) {
-      ChannelId = other.ChannelId;
-    }
-    if (other.RegionName.Length != 0) {
-      RegionName = other.RegionName;
-    }
-    if (other.GameVersion.Length != 0) {
-      GameVersion = other.GameVersion;
-    }
-    if (other.DeviceType.Length != 0) {
-      DeviceType = other.DeviceType;
-    }
-    if (other.DeviceUuid.Length != 0) {
-      DeviceUuid = other.DeviceUuid;
-    }
-    if (other.MacAddr.Length != 0) {
-      MacAddr = other.MacAddr;
-    }
-    if (other.AccountName.Length != 0) {
-      AccountName = other.AccountName;
-    }
-    if (other.AccountUuid.Length != 0) {
-      AccountUuid = other.AccountUuid;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          EventTime = input.ReadString();
-          break;
-        }
-        case 18: {
-          LogSerialNumber = input.ReadString();
-          break;
-        }
-        case 24: {
-          ActionId = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          ActionName = input.ReadString();
-          break;
-        }
-        case 42: {
-          UploadIp = input.ReadString();
-          break;
-        }
-        case 50: {
-          ProductId = input.ReadString();
-          break;
-        }
-        case 58: {
-          ChannelId = input.ReadString();
-          break;
-        }
-        case 66: {
-          RegionName = input.ReadString();
-          break;
-        }
-        case 74: {
-          GameVersion = input.ReadString();
-          break;
-        }
-        case 82: {
-          DeviceType = input.ReadString();
-          break;
-        }
-        case 90: {
-          DeviceUuid = input.ReadString();
-          break;
-        }
-        case 98: {
-          MacAddr = input.ReadString();
-          break;
-        }
-        case 106: {
-          AccountName = input.ReadString();
-          break;
-        }
-        case 114: {
-          AccountUuid = input.ReadString();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          EventTime = input.ReadString();
-          break;
-        }
-        case 18: {
-          LogSerialNumber = input.ReadString();
-          break;
-        }
-        case 24: {
-          ActionId = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          ActionName = input.ReadString();
-          break;
-        }
-        case 42: {
-          UploadIp = input.ReadString();
-          break;
-        }
-        case 50: {
-          ProductId = input.ReadString();
-          break;
-        }
-        case 58: {
-          ChannelId = input.ReadString();
-          break;
-        }
-        case 66: {
-          RegionName = input.ReadString();
-          break;
-        }
-        case 74: {
-          GameVersion = input.ReadString();
-          break;
-        }
-        case 82: {
-          DeviceType = input.ReadString();
-          break;
-        }
-        case 90: {
-          DeviceUuid = input.ReadString();
-          break;
-        }
-        case 98: {
-          MacAddr = input.ReadString();
-          break;
-        }
-        case 106: {
-          AccountName = input.ReadString();
-          break;
-        }
-        case 114: {
-          AccountUuid = input.ReadString();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "FallPlayerInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SceneGalleryFallInfo {
   uint32 end_time = 4;

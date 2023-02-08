@@ -22,7 +22,7 @@ import "MonsterRoute.proto";
 import "SceneFishInfo.proto";
 import "SceneWeaponInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SceneMonsterInfo {
   uint32 monster_id = 1;

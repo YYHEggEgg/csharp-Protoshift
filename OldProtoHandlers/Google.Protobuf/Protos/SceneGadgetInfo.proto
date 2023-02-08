@@ -41,7 +41,7 @@ import "VehicleInfo.proto";
 import "WeatherInfo.proto";
 import "WorktopInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SceneGadgetInfo {
   uint32 gadget_id = 1;

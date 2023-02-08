@@ -9,292 +9,295 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GetAllH5ActivityInfoRsp.proto</summary>
-public static partial class GetAllH5ActivityInfoRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GetAllH5ActivityInfoRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GetAllH5ActivityInfoRsp.proto</summary>
+  public static partial class GetAllH5ActivityInfoRspReflection {
 
-  static GetAllH5ActivityInfoRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1HZXRBbGxINUFjdGl2aXR5SW5mb1JzcC5wcm90bxoUSDVBY3Rpdml0eUlu",
-          "Zm8ucHJvdG8ifAoXR2V0QWxsSDVBY3Rpdml0eUluZm9Sc3ASLgoVaDVfYWN0",
-          "aXZpdHlfaW5mb19saXN0GA8gAygLMg8uSDVBY3Rpdml0eUluZm8SDwoHcmV0",
-          "Y29kZRgFIAEoBRIgChhjbGllbnRfcmVkX2RvdF90aW1lc3RhbXAYDCABKA1C",
-          "HgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::H5ActivityInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GetAllH5ActivityInfoRsp), global::GetAllH5ActivityInfoRsp.Parser, new[]{ "H5ActivityInfoList", "Retcode", "ClientRedDotTimestamp" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GetAllH5ActivityInfoRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GetAllH5ActivityInfoRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1HZXRBbGxINUFjdGl2aXR5SW5mb1JzcC5wcm90bxoUSDVBY3Rpdml0eUlu",
+            "Zm8ucHJvdG8ifAoXR2V0QWxsSDVBY3Rpdml0eUluZm9Sc3ASLgoVaDVfYWN0",
+            "aXZpdHlfaW5mb19saXN0GA8gAygLMg8uSDVBY3Rpdml0eUluZm8SDwoHcmV0",
+            "Y29kZRgFIAEoBRIgChhjbGllbnRfcmVkX2RvdF90aW1lc3RhbXAYDCABKA1C",
+            "DKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.H5ActivityInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GetAllH5ActivityInfoRsp), global::OldProtos.GetAllH5ActivityInfoRsp.Parser, new[]{ "H5ActivityInfoList", "Retcode", "ClientRedDotTimestamp" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 5676
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class GetAllH5ActivityInfoRsp : pb::IMessage<GetAllH5ActivityInfoRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetAllH5ActivityInfoRsp> _parser = new pb::MessageParser<GetAllH5ActivityInfoRsp>(() => new GetAllH5ActivityInfoRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GetAllH5ActivityInfoRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GetAllH5ActivityInfoRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetAllH5ActivityInfoRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetAllH5ActivityInfoRsp(GetAllH5ActivityInfoRsp other) : this() {
+      h5ActivityInfoList_ = other.h5ActivityInfoList_.Clone();
+      retcode_ = other.retcode_;
+      clientRedDotTimestamp_ = other.clientRedDotTimestamp_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GetAllH5ActivityInfoRsp Clone() {
+      return new GetAllH5ActivityInfoRsp(this);
+    }
+
+    /// <summary>Field number for the "h5_activity_info_list" field.</summary>
+    public const int H5ActivityInfoListFieldNumber = 15;
+    private static readonly pb::FieldCodec<global::OldProtos.H5ActivityInfo> _repeated_h5ActivityInfoList_codec
+        = pb::FieldCodec.ForMessage(122, global::OldProtos.H5ActivityInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.H5ActivityInfo> h5ActivityInfoList_ = new pbc::RepeatedField<global::OldProtos.H5ActivityInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.H5ActivityInfo> H5ActivityInfoList {
+      get { return h5ActivityInfoList_; }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 5;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "client_red_dot_timestamp" field.</summary>
+    public const int ClientRedDotTimestampFieldNumber = 12;
+    private uint clientRedDotTimestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ClientRedDotTimestamp {
+      get { return clientRedDotTimestamp_; }
+      set {
+        clientRedDotTimestamp_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GetAllH5ActivityInfoRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GetAllH5ActivityInfoRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!h5ActivityInfoList_.Equals(other.h5ActivityInfoList_)) return false;
+      if (Retcode != other.Retcode) return false;
+      if (ClientRedDotTimestamp != other.ClientRedDotTimestamp) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= h5ActivityInfoList_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (ClientRedDotTimestamp != 0) hash ^= ClientRedDotTimestamp.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Retcode != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Retcode);
+      }
+      if (ClientRedDotTimestamp != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ClientRedDotTimestamp);
+      }
+      h5ActivityInfoList_.WriteTo(output, _repeated_h5ActivityInfoList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Retcode != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Retcode);
+      }
+      if (ClientRedDotTimestamp != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ClientRedDotTimestamp);
+      }
+      h5ActivityInfoList_.WriteTo(ref output, _repeated_h5ActivityInfoList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += h5ActivityInfoList_.CalculateSize(_repeated_h5ActivityInfoList_codec);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (ClientRedDotTimestamp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ClientRedDotTimestamp);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GetAllH5ActivityInfoRsp other) {
+      if (other == null) {
+        return;
+      }
+      h5ActivityInfoList_.Add(other.h5ActivityInfoList_);
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.ClientRedDotTimestamp != 0) {
+        ClientRedDotTimestamp = other.ClientRedDotTimestamp;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            ClientRedDotTimestamp = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            h5ActivityInfoList_.AddEntriesFrom(input, _repeated_h5ActivityInfoList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 96: {
+            ClientRedDotTimestamp = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            h5ActivityInfoList_.AddEntriesFrom(ref input, _repeated_h5ActivityInfoList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 5676
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class GetAllH5ActivityInfoRsp : pb::IMessage<GetAllH5ActivityInfoRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GetAllH5ActivityInfoRsp> _parser = new pb::MessageParser<GetAllH5ActivityInfoRsp>(() => new GetAllH5ActivityInfoRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GetAllH5ActivityInfoRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GetAllH5ActivityInfoRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetAllH5ActivityInfoRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetAllH5ActivityInfoRsp(GetAllH5ActivityInfoRsp other) : this() {
-    h5ActivityInfoList_ = other.h5ActivityInfoList_.Clone();
-    retcode_ = other.retcode_;
-    clientRedDotTimestamp_ = other.clientRedDotTimestamp_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GetAllH5ActivityInfoRsp Clone() {
-    return new GetAllH5ActivityInfoRsp(this);
-  }
-
-  /// <summary>Field number for the "h5_activity_info_list" field.</summary>
-  public const int H5ActivityInfoListFieldNumber = 15;
-  private static readonly pb::FieldCodec<global::H5ActivityInfo> _repeated_h5ActivityInfoList_codec
-      = pb::FieldCodec.ForMessage(122, global::H5ActivityInfo.Parser);
-  private readonly pbc::RepeatedField<global::H5ActivityInfo> h5ActivityInfoList_ = new pbc::RepeatedField<global::H5ActivityInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::H5ActivityInfo> H5ActivityInfoList {
-    get { return h5ActivityInfoList_; }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 5;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "client_red_dot_timestamp" field.</summary>
-  public const int ClientRedDotTimestampFieldNumber = 12;
-  private uint clientRedDotTimestamp_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ClientRedDotTimestamp {
-    get { return clientRedDotTimestamp_; }
-    set {
-      clientRedDotTimestamp_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GetAllH5ActivityInfoRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GetAllH5ActivityInfoRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!h5ActivityInfoList_.Equals(other.h5ActivityInfoList_)) return false;
-    if (Retcode != other.Retcode) return false;
-    if (ClientRedDotTimestamp != other.ClientRedDotTimestamp) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= h5ActivityInfoList_.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (ClientRedDotTimestamp != 0) hash ^= ClientRedDotTimestamp.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Retcode != 0) {
-      output.WriteRawTag(40);
-      output.WriteInt32(Retcode);
-    }
-    if (ClientRedDotTimestamp != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(ClientRedDotTimestamp);
-    }
-    h5ActivityInfoList_.WriteTo(output, _repeated_h5ActivityInfoList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Retcode != 0) {
-      output.WriteRawTag(40);
-      output.WriteInt32(Retcode);
-    }
-    if (ClientRedDotTimestamp != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(ClientRedDotTimestamp);
-    }
-    h5ActivityInfoList_.WriteTo(ref output, _repeated_h5ActivityInfoList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += h5ActivityInfoList_.CalculateSize(_repeated_h5ActivityInfoList_codec);
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (ClientRedDotTimestamp != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ClientRedDotTimestamp);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GetAllH5ActivityInfoRsp other) {
-    if (other == null) {
-      return;
-    }
-    h5ActivityInfoList_.Add(other.h5ActivityInfoList_);
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.ClientRedDotTimestamp != 0) {
-      ClientRedDotTimestamp = other.ClientRedDotTimestamp;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 96: {
-          ClientRedDotTimestamp = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          h5ActivityInfoList_.AddEntriesFrom(input, _repeated_h5ActivityInfoList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 96: {
-          ClientRedDotTimestamp = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          h5ActivityInfoList_.AddEntriesFrom(ref input, _repeated_h5ActivityInfoList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ActivityRecvGiftData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 8120
 // EnetChannelId: 0

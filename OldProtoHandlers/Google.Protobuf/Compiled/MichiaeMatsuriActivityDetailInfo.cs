@@ -9,336 +9,338 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MichiaeMatsuriActivityDetailInfo.proto</summary>
-public static partial class MichiaeMatsuriActivityDetailInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MichiaeMatsuriActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MichiaeMatsuriActivityDetailInfo.proto</summary>
+  public static partial class MichiaeMatsuriActivityDetailInfoReflection {
 
-  static MichiaeMatsuriActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiZNaWNoaWFlTWF0c3VyaUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxopTWlj",
-          "aGlhZU1hdHN1cmlDaGFsbGVuZ2VQb3NpdGlvbkluZm8ucHJvdG8aJU1pY2hp",
-          "YWVNYXRzdXJpQ2hlc3RQb3NpdGlvbkluZm8ucHJvdG8aGU1pY2hpYWVNYXRz",
-          "dXJpU3RhZ2UucHJvdG8ihwIKIE1pY2hpYWVNYXRzdXJpQWN0aXZpdHlEZXRh",
-          "aWxJbmZvEkAKEmNoYWxsZW5nZV9wb3NfbGlzdBgGIAMoCzIkLk1pY2hpYWVN",
-          "YXRzdXJpQ2hhbGxlbmdlUG9zaXRpb25JbmZvEhgKEGdhaW5fY3J5c3RhbF9l",
-          "eHAYDSABKA0SIwobdW5sb2NrZWRfY3J5c3RhbF9za2lsbF9saXN0GAIgAygN",
-          "EjgKDmNoZXN0X3Bvc19saXN0GAogAygLMiAuTWljaGlhZU1hdHN1cmlDaGVz",
-          "dFBvc2l0aW9uSW5mbxIoCgpzdGFnZV9saXN0GA4gAygLMhQuTWljaGlhZU1h",
-          "dHN1cmlTdGFnZUIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZw",
-          "cm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::MichiaeMatsuriChallengePositionInfoReflection.Descriptor, global::MichiaeMatsuriChestPositionInfoReflection.Descriptor, global::MichiaeMatsuriStageReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MichiaeMatsuriActivityDetailInfo), global::MichiaeMatsuriActivityDetailInfo.Parser, new[]{ "ChallengePosList", "GainCrystalExp", "UnlockedCrystalSkillList", "ChestPosList", "StageList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for MichiaeMatsuriActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MichiaeMatsuriActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiZNaWNoaWFlTWF0c3VyaUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxopTWlj",
+            "aGlhZU1hdHN1cmlDaGFsbGVuZ2VQb3NpdGlvbkluZm8ucHJvdG8aJU1pY2hp",
+            "YWVNYXRzdXJpQ2hlc3RQb3NpdGlvbkluZm8ucHJvdG8aGU1pY2hpYWVNYXRz",
+            "dXJpU3RhZ2UucHJvdG8ihwIKIE1pY2hpYWVNYXRzdXJpQWN0aXZpdHlEZXRh",
+            "aWxJbmZvEkAKEmNoYWxsZW5nZV9wb3NfbGlzdBgGIAMoCzIkLk1pY2hpYWVN",
+            "YXRzdXJpQ2hhbGxlbmdlUG9zaXRpb25JbmZvEhgKEGdhaW5fY3J5c3RhbF9l",
+            "eHAYDSABKA0SIwobdW5sb2NrZWRfY3J5c3RhbF9za2lsbF9saXN0GAIgAygN",
+            "EjgKDmNoZXN0X3Bvc19saXN0GAogAygLMiAuTWljaGlhZU1hdHN1cmlDaGVz",
+            "dFBvc2l0aW9uSW5mbxIoCgpzdGFnZV9saXN0GA4gAygLMhQuTWljaGlhZU1h",
+            "dHN1cmlTdGFnZUIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.MichiaeMatsuriChallengePositionInfoReflection.Descriptor, global::OldProtos.MichiaeMatsuriChestPositionInfoReflection.Descriptor, global::OldProtos.MichiaeMatsuriStageReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.MichiaeMatsuriActivityDetailInfo), global::OldProtos.MichiaeMatsuriActivityDetailInfo.Parser, new[]{ "ChallengePosList", "GainCrystalExp", "UnlockedCrystalSkillList", "ChestPosList", "StageList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class MichiaeMatsuriActivityDetailInfo : pb::IMessage<MichiaeMatsuriActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MichiaeMatsuriActivityDetailInfo> _parser = new pb::MessageParser<MichiaeMatsuriActivityDetailInfo>(() => new MichiaeMatsuriActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MichiaeMatsuriActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.MichiaeMatsuriActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MichiaeMatsuriActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MichiaeMatsuriActivityDetailInfo(MichiaeMatsuriActivityDetailInfo other) : this() {
+      challengePosList_ = other.challengePosList_.Clone();
+      gainCrystalExp_ = other.gainCrystalExp_;
+      unlockedCrystalSkillList_ = other.unlockedCrystalSkillList_.Clone();
+      chestPosList_ = other.chestPosList_.Clone();
+      stageList_ = other.stageList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MichiaeMatsuriActivityDetailInfo Clone() {
+      return new MichiaeMatsuriActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "challenge_pos_list" field.</summary>
+    public const int ChallengePosListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::OldProtos.MichiaeMatsuriChallengePositionInfo> _repeated_challengePosList_codec
+        = pb::FieldCodec.ForMessage(50, global::OldProtos.MichiaeMatsuriChallengePositionInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.MichiaeMatsuriChallengePositionInfo> challengePosList_ = new pbc::RepeatedField<global::OldProtos.MichiaeMatsuriChallengePositionInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.MichiaeMatsuriChallengePositionInfo> ChallengePosList {
+      get { return challengePosList_; }
+    }
+
+    /// <summary>Field number for the "gain_crystal_exp" field.</summary>
+    public const int GainCrystalExpFieldNumber = 13;
+    private uint gainCrystalExp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GainCrystalExp {
+      get { return gainCrystalExp_; }
+      set {
+        gainCrystalExp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "unlocked_crystal_skill_list" field.</summary>
+    public const int UnlockedCrystalSkillListFieldNumber = 2;
+    private static readonly pb::FieldCodec<uint> _repeated_unlockedCrystalSkillList_codec
+        = pb::FieldCodec.ForUInt32(18);
+    private readonly pbc::RepeatedField<uint> unlockedCrystalSkillList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> UnlockedCrystalSkillList {
+      get { return unlockedCrystalSkillList_; }
+    }
+
+    /// <summary>Field number for the "chest_pos_list" field.</summary>
+    public const int ChestPosListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::OldProtos.MichiaeMatsuriChestPositionInfo> _repeated_chestPosList_codec
+        = pb::FieldCodec.ForMessage(82, global::OldProtos.MichiaeMatsuriChestPositionInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.MichiaeMatsuriChestPositionInfo> chestPosList_ = new pbc::RepeatedField<global::OldProtos.MichiaeMatsuriChestPositionInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.MichiaeMatsuriChestPositionInfo> ChestPosList {
+      get { return chestPosList_; }
+    }
+
+    /// <summary>Field number for the "stage_list" field.</summary>
+    public const int StageListFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::OldProtos.MichiaeMatsuriStage> _repeated_stageList_codec
+        = pb::FieldCodec.ForMessage(114, global::OldProtos.MichiaeMatsuriStage.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.MichiaeMatsuriStage> stageList_ = new pbc::RepeatedField<global::OldProtos.MichiaeMatsuriStage>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.MichiaeMatsuriStage> StageList {
+      get { return stageList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MichiaeMatsuriActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MichiaeMatsuriActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!challengePosList_.Equals(other.challengePosList_)) return false;
+      if (GainCrystalExp != other.GainCrystalExp) return false;
+      if(!unlockedCrystalSkillList_.Equals(other.unlockedCrystalSkillList_)) return false;
+      if(!chestPosList_.Equals(other.chestPosList_)) return false;
+      if(!stageList_.Equals(other.stageList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= challengePosList_.GetHashCode();
+      if (GainCrystalExp != 0) hash ^= GainCrystalExp.GetHashCode();
+      hash ^= unlockedCrystalSkillList_.GetHashCode();
+      hash ^= chestPosList_.GetHashCode();
+      hash ^= stageList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      unlockedCrystalSkillList_.WriteTo(output, _repeated_unlockedCrystalSkillList_codec);
+      challengePosList_.WriteTo(output, _repeated_challengePosList_codec);
+      chestPosList_.WriteTo(output, _repeated_chestPosList_codec);
+      if (GainCrystalExp != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(GainCrystalExp);
+      }
+      stageList_.WriteTo(output, _repeated_stageList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      unlockedCrystalSkillList_.WriteTo(ref output, _repeated_unlockedCrystalSkillList_codec);
+      challengePosList_.WriteTo(ref output, _repeated_challengePosList_codec);
+      chestPosList_.WriteTo(ref output, _repeated_chestPosList_codec);
+      if (GainCrystalExp != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(GainCrystalExp);
+      }
+      stageList_.WriteTo(ref output, _repeated_stageList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += challengePosList_.CalculateSize(_repeated_challengePosList_codec);
+      if (GainCrystalExp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GainCrystalExp);
+      }
+      size += unlockedCrystalSkillList_.CalculateSize(_repeated_unlockedCrystalSkillList_codec);
+      size += chestPosList_.CalculateSize(_repeated_chestPosList_codec);
+      size += stageList_.CalculateSize(_repeated_stageList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MichiaeMatsuriActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      challengePosList_.Add(other.challengePosList_);
+      if (other.GainCrystalExp != 0) {
+        GainCrystalExp = other.GainCrystalExp;
+      }
+      unlockedCrystalSkillList_.Add(other.unlockedCrystalSkillList_);
+      chestPosList_.Add(other.chestPosList_);
+      stageList_.Add(other.stageList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18:
+          case 16: {
+            unlockedCrystalSkillList_.AddEntriesFrom(input, _repeated_unlockedCrystalSkillList_codec);
+            break;
+          }
+          case 50: {
+            challengePosList_.AddEntriesFrom(input, _repeated_challengePosList_codec);
+            break;
+          }
+          case 82: {
+            chestPosList_.AddEntriesFrom(input, _repeated_chestPosList_codec);
+            break;
+          }
+          case 104: {
+            GainCrystalExp = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            stageList_.AddEntriesFrom(input, _repeated_stageList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18:
+          case 16: {
+            unlockedCrystalSkillList_.AddEntriesFrom(ref input, _repeated_unlockedCrystalSkillList_codec);
+            break;
+          }
+          case 50: {
+            challengePosList_.AddEntriesFrom(ref input, _repeated_challengePosList_codec);
+            break;
+          }
+          case 82: {
+            chestPosList_.AddEntriesFrom(ref input, _repeated_chestPosList_codec);
+            break;
+          }
+          case 104: {
+            GainCrystalExp = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            stageList_.AddEntriesFrom(ref input, _repeated_stageList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class MichiaeMatsuriActivityDetailInfo : pb::IMessage<MichiaeMatsuriActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<MichiaeMatsuriActivityDetailInfo> _parser = new pb::MessageParser<MichiaeMatsuriActivityDetailInfo>(() => new MichiaeMatsuriActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<MichiaeMatsuriActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::MichiaeMatsuriActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MichiaeMatsuriActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MichiaeMatsuriActivityDetailInfo(MichiaeMatsuriActivityDetailInfo other) : this() {
-    challengePosList_ = other.challengePosList_.Clone();
-    gainCrystalExp_ = other.gainCrystalExp_;
-    unlockedCrystalSkillList_ = other.unlockedCrystalSkillList_.Clone();
-    chestPosList_ = other.chestPosList_.Clone();
-    stageList_ = other.stageList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MichiaeMatsuriActivityDetailInfo Clone() {
-    return new MichiaeMatsuriActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "challenge_pos_list" field.</summary>
-  public const int ChallengePosListFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::MichiaeMatsuriChallengePositionInfo> _repeated_challengePosList_codec
-      = pb::FieldCodec.ForMessage(50, global::MichiaeMatsuriChallengePositionInfo.Parser);
-  private readonly pbc::RepeatedField<global::MichiaeMatsuriChallengePositionInfo> challengePosList_ = new pbc::RepeatedField<global::MichiaeMatsuriChallengePositionInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::MichiaeMatsuriChallengePositionInfo> ChallengePosList {
-    get { return challengePosList_; }
-  }
-
-  /// <summary>Field number for the "gain_crystal_exp" field.</summary>
-  public const int GainCrystalExpFieldNumber = 13;
-  private uint gainCrystalExp_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GainCrystalExp {
-    get { return gainCrystalExp_; }
-    set {
-      gainCrystalExp_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "unlocked_crystal_skill_list" field.</summary>
-  public const int UnlockedCrystalSkillListFieldNumber = 2;
-  private static readonly pb::FieldCodec<uint> _repeated_unlockedCrystalSkillList_codec
-      = pb::FieldCodec.ForUInt32(18);
-  private readonly pbc::RepeatedField<uint> unlockedCrystalSkillList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> UnlockedCrystalSkillList {
-    get { return unlockedCrystalSkillList_; }
-  }
-
-  /// <summary>Field number for the "chest_pos_list" field.</summary>
-  public const int ChestPosListFieldNumber = 10;
-  private static readonly pb::FieldCodec<global::MichiaeMatsuriChestPositionInfo> _repeated_chestPosList_codec
-      = pb::FieldCodec.ForMessage(82, global::MichiaeMatsuriChestPositionInfo.Parser);
-  private readonly pbc::RepeatedField<global::MichiaeMatsuriChestPositionInfo> chestPosList_ = new pbc::RepeatedField<global::MichiaeMatsuriChestPositionInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::MichiaeMatsuriChestPositionInfo> ChestPosList {
-    get { return chestPosList_; }
-  }
-
-  /// <summary>Field number for the "stage_list" field.</summary>
-  public const int StageListFieldNumber = 14;
-  private static readonly pb::FieldCodec<global::MichiaeMatsuriStage> _repeated_stageList_codec
-      = pb::FieldCodec.ForMessage(114, global::MichiaeMatsuriStage.Parser);
-  private readonly pbc::RepeatedField<global::MichiaeMatsuriStage> stageList_ = new pbc::RepeatedField<global::MichiaeMatsuriStage>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::MichiaeMatsuriStage> StageList {
-    get { return stageList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as MichiaeMatsuriActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(MichiaeMatsuriActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!challengePosList_.Equals(other.challengePosList_)) return false;
-    if (GainCrystalExp != other.GainCrystalExp) return false;
-    if(!unlockedCrystalSkillList_.Equals(other.unlockedCrystalSkillList_)) return false;
-    if(!chestPosList_.Equals(other.chestPosList_)) return false;
-    if(!stageList_.Equals(other.stageList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= challengePosList_.GetHashCode();
-    if (GainCrystalExp != 0) hash ^= GainCrystalExp.GetHashCode();
-    hash ^= unlockedCrystalSkillList_.GetHashCode();
-    hash ^= chestPosList_.GetHashCode();
-    hash ^= stageList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    unlockedCrystalSkillList_.WriteTo(output, _repeated_unlockedCrystalSkillList_codec);
-    challengePosList_.WriteTo(output, _repeated_challengePosList_codec);
-    chestPosList_.WriteTo(output, _repeated_chestPosList_codec);
-    if (GainCrystalExp != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(GainCrystalExp);
-    }
-    stageList_.WriteTo(output, _repeated_stageList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    unlockedCrystalSkillList_.WriteTo(ref output, _repeated_unlockedCrystalSkillList_codec);
-    challengePosList_.WriteTo(ref output, _repeated_challengePosList_codec);
-    chestPosList_.WriteTo(ref output, _repeated_chestPosList_codec);
-    if (GainCrystalExp != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(GainCrystalExp);
-    }
-    stageList_.WriteTo(ref output, _repeated_stageList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += challengePosList_.CalculateSize(_repeated_challengePosList_codec);
-    if (GainCrystalExp != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GainCrystalExp);
-    }
-    size += unlockedCrystalSkillList_.CalculateSize(_repeated_unlockedCrystalSkillList_codec);
-    size += chestPosList_.CalculateSize(_repeated_chestPosList_codec);
-    size += stageList_.CalculateSize(_repeated_stageList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(MichiaeMatsuriActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    challengePosList_.Add(other.challengePosList_);
-    if (other.GainCrystalExp != 0) {
-      GainCrystalExp = other.GainCrystalExp;
-    }
-    unlockedCrystalSkillList_.Add(other.unlockedCrystalSkillList_);
-    chestPosList_.Add(other.chestPosList_);
-    stageList_.Add(other.stageList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18:
-        case 16: {
-          unlockedCrystalSkillList_.AddEntriesFrom(input, _repeated_unlockedCrystalSkillList_codec);
-          break;
-        }
-        case 50: {
-          challengePosList_.AddEntriesFrom(input, _repeated_challengePosList_codec);
-          break;
-        }
-        case 82: {
-          chestPosList_.AddEntriesFrom(input, _repeated_chestPosList_codec);
-          break;
-        }
-        case 104: {
-          GainCrystalExp = input.ReadUInt32();
-          break;
-        }
-        case 114: {
-          stageList_.AddEntriesFrom(input, _repeated_stageList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18:
-        case 16: {
-          unlockedCrystalSkillList_.AddEntriesFrom(ref input, _repeated_unlockedCrystalSkillList_codec);
-          break;
-        }
-        case 50: {
-          challengePosList_.AddEntriesFrom(ref input, _repeated_challengePosList_codec);
-          break;
-        }
-        case 82: {
-          chestPosList_.AddEntriesFrom(ref input, _repeated_chestPosList_codec);
-          break;
-        }
-        case 104: {
-          GainCrystalExp = input.ReadUInt32();
-          break;
-        }
-        case 114: {
-          stageList_.AddEntriesFrom(ref input, _repeated_stageList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

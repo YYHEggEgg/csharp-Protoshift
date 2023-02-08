@@ -19,7 +19,7 @@ syntax = "proto3";
 import "ContentAuditAuxiliaryField.proto";
 import "ContentAuditField.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message NicknameSignatureAuditData {
   string aid = 1;

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "SalvagePreventStopReason.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SalvagePreventGallerySettleInfo {
   uint32 monster_count = 2;

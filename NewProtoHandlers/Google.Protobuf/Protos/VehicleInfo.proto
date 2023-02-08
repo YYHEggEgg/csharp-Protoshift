@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "VehicleMember.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message VehicleInfo {
   repeated VehicleMember member_list = 1;

@@ -9,44 +9,47 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ChatChannel.proto</summary>
-public static partial class ChatChannelReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ChatChannel.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ChatChannel.proto</summary>
+  public static partial class ChatChannelReflection {
 
-  static ChatChannelReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChFDaGF0Q2hhbm5lbC5wcm90byrCAQoLQ2hhdENoYW5uZWwSFQoRQ0hBVF9D",
-          "SEFOTkVMX1RFQU0QABIXChNDSEFUX0NIQU5ORUxfRlJJRU5EEAESFQoRQ0hB",
-          "VF9DSEFOTkVMX05PTkUQAhIcChhDSEFUX0NIQU5ORUxfSElERUFORFNFRUsQ",
-          "AxIhCh1DSEFUX0NIQU5ORUxfSElERUFORFNFRUtfVEVBTRAFEhQKEENIQVRf",
-          "Q0hBTk5FTF9BTEwQChIVChFDSEFUX0NIQU5ORUxfVEVTVBBkQhYKFG9yZy5z",
-          "b3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ChatChannel), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for ChatChannel.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ChatChannelReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChFDaGF0Q2hhbm5lbC5wcm90byrCAQoLQ2hhdENoYW5uZWwSFQoRQ0hBVF9D",
+            "SEFOTkVMX1RFQU0QABIXChNDSEFUX0NIQU5ORUxfRlJJRU5EEAESFQoRQ0hB",
+            "VF9DSEFOTkVMX05PTkUQAhIcChhDSEFUX0NIQU5ORUxfSElERUFORFNFRUsQ",
+            "AxIhCh1DSEFUX0NIQU5ORUxfSElERUFORFNFRUtfVEVBTRAFEhQKEENIQVRf",
+            "Q0hBTk5FTF9BTEwQChIVChFDSEFUX0NIQU5ORUxfVEVTVBBkQgyqAglOZXdQ",
+            "cm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.ChatChannel), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum ChatChannel {
+    [pbr::OriginalName("CHAT_CHANNEL_TEAM")] Team = 0,
+    [pbr::OriginalName("CHAT_CHANNEL_FRIEND")] Friend = 1,
+    [pbr::OriginalName("CHAT_CHANNEL_NONE")] None = 2,
+    [pbr::OriginalName("CHAT_CHANNEL_HIDEANDSEEK")] Hideandseek = 3,
+    [pbr::OriginalName("CHAT_CHANNEL_HIDEANDSEEK_TEAM")] HideandseekTeam = 5,
+    [pbr::OriginalName("CHAT_CHANNEL_ALL")] All = 10,
+    [pbr::OriginalName("CHAT_CHANNEL_TEST")] Test = 100,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum ChatChannel {
-  [pbr::OriginalName("CHAT_CHANNEL_TEAM")] Team = 0,
-  [pbr::OriginalName("CHAT_CHANNEL_FRIEND")] Friend = 1,
-  [pbr::OriginalName("CHAT_CHANNEL_NONE")] None = 2,
-  [pbr::OriginalName("CHAT_CHANNEL_HIDEANDSEEK")] Hideandseek = 3,
-  [pbr::OriginalName("CHAT_CHANNEL_HIDEANDSEEK_TEAM")] HideandseekTeam = 5,
-  [pbr::OriginalName("CHAT_CHANNEL_ALL")] All = 10,
-  [pbr::OriginalName("CHAT_CHANNEL_TEST")] Test = 100,
-}
-
-#endregion
-
 
 #endregion Designer generated code

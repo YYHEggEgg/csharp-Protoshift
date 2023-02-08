@@ -9,444 +9,446 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGSkillPreviewInfo.proto</summary>
-public static partial class GCGSkillPreviewInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGSkillPreviewInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGSkillPreviewInfo.proto</summary>
+  public static partial class GCGSkillPreviewInfoReflection {
 
-  static GCGSkillPreviewInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChlHQ0dTa2lsbFByZXZpZXdJbmZvLnByb3RvGiRHQ0dTa2lsbFByZXZpZXdU",
-          "b2tlbkNoYW5nZUluZm8ucHJvdG8aKEdDR1NraWxsUHJldmlld0VsZW1lbnRS",
-          "ZWFjdGlvbkluZm8ucHJvdG8aG0dDR1NraWxsUHJldmlld0hwSW5mby5wcm90",
-          "bxoeR0NHU2tpbGxQcmV2aWV3RXh0cmFJbmZvLnByb3RvGiZHQ0dTa2lsbFBy",
-          "ZXZpZXdPbnN0YWdlQ2hhbmdlSW5mby5wcm90bxodR0NHU2tpbGxQcmV2aWV3",
-          "Q2FyZEluZm8ucHJvdG8i0QUKE0dDR1NraWxsUHJldmlld0luZm8SSwoVY2Fy",
-          "ZF90b2tlbl9jaGFuZ2VfbWFwGAMgAygLMiwuR0NHU2tpbGxQcmV2aWV3SW5m",
-          "by5DYXJkVG9rZW5DaGFuZ2VNYXBFbnRyeRJEChFyZWFjdGlvbl9pbmZvX21h",
-          "cBgFIAMoCzIpLkdDR1NraWxsUHJldmlld0luZm8uUmVhY3Rpb25JbmZvTWFw",
-          "RW50cnkSOAoLaHBfaW5mb19tYXAYCCADKAsyIy5HQ0dTa2lsbFByZXZpZXdJ",
-          "bmZvLkhwSW5mb01hcEVudHJ5Ei8KDWFkZF9jYXJkX2xpc3QYCyADKAsyGC5H",
-          "Q0dTa2lsbFByZXZpZXdDYXJkSW5mbxItCgpleHRyYV9pbmZvGAogASgLMhku",
-          "R0NHU2tpbGxQcmV2aWV3RXh0cmFJbmZvEhAKCHNraWxsX2lkGAYgASgNEkgK",
-          "HWNoYW5nZV9vbnN0YWdlX2NoYXJhY3Rlcl9saXN0GAkgAygLMiEuR0NHU2tp",
-          "bGxQcmV2aWV3T25zdGFnZUNoYW5nZUluZm8SLgoMcm1fY2FyZF9saXN0GAwg",
-          "AygLMhguR0NHU2tpbGxQcmV2aWV3Q2FyZEluZm8aWgoXQ2FyZFRva2VuQ2hh",
-          "bmdlTWFwRW50cnkSCwoDa2V5GAEgASgNEi4KBXZhbHVlGAIgASgLMh8uR0NH",
-          "U2tpbGxQcmV2aWV3VG9rZW5DaGFuZ2VJbmZvOgI4ARpbChRSZWFjdGlvbklu",
-          "Zm9NYXBFbnRyeRILCgNrZXkYASABKA0SMgoFdmFsdWUYAiABKAsyIy5HQ0dT",
-          "a2lsbFByZXZpZXdFbGVtZW50UmVhY3Rpb25JbmZvOgI4ARpICg5IcEluZm9N",
-          "YXBFbnRyeRILCgNrZXkYASABKA0SJQoFdmFsdWUYAiABKAsyFi5HQ0dTa2ls",
-          "bFByZXZpZXdIcEluZm86AjgBQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xk",
-          "cHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GCGSkillPreviewTokenChangeInfoReflection.Descriptor, global::GCGSkillPreviewElementReactionInfoReflection.Descriptor, global::GCGSkillPreviewHpInfoReflection.Descriptor, global::GCGSkillPreviewExtraInfoReflection.Descriptor, global::GCGSkillPreviewOnstageChangeInfoReflection.Descriptor, global::GCGSkillPreviewCardInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGSkillPreviewInfo), global::GCGSkillPreviewInfo.Parser, new[]{ "CardTokenChangeMap", "ReactionInfoMap", "HpInfoMap", "AddCardList", "ExtraInfo", "SkillId", "ChangeOnstageCharacterList", "RmCardList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGSkillPreviewInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGSkillPreviewInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChlHQ0dTa2lsbFByZXZpZXdJbmZvLnByb3RvGiRHQ0dTa2lsbFByZXZpZXdU",
+            "b2tlbkNoYW5nZUluZm8ucHJvdG8aKEdDR1NraWxsUHJldmlld0VsZW1lbnRS",
+            "ZWFjdGlvbkluZm8ucHJvdG8aG0dDR1NraWxsUHJldmlld0hwSW5mby5wcm90",
+            "bxoeR0NHU2tpbGxQcmV2aWV3RXh0cmFJbmZvLnByb3RvGiZHQ0dTa2lsbFBy",
+            "ZXZpZXdPbnN0YWdlQ2hhbmdlSW5mby5wcm90bxodR0NHU2tpbGxQcmV2aWV3",
+            "Q2FyZEluZm8ucHJvdG8i0QUKE0dDR1NraWxsUHJldmlld0luZm8SSwoVY2Fy",
+            "ZF90b2tlbl9jaGFuZ2VfbWFwGAMgAygLMiwuR0NHU2tpbGxQcmV2aWV3SW5m",
+            "by5DYXJkVG9rZW5DaGFuZ2VNYXBFbnRyeRJEChFyZWFjdGlvbl9pbmZvX21h",
+            "cBgFIAMoCzIpLkdDR1NraWxsUHJldmlld0luZm8uUmVhY3Rpb25JbmZvTWFw",
+            "RW50cnkSOAoLaHBfaW5mb19tYXAYCCADKAsyIy5HQ0dTa2lsbFByZXZpZXdJ",
+            "bmZvLkhwSW5mb01hcEVudHJ5Ei8KDWFkZF9jYXJkX2xpc3QYCyADKAsyGC5H",
+            "Q0dTa2lsbFByZXZpZXdDYXJkSW5mbxItCgpleHRyYV9pbmZvGAogASgLMhku",
+            "R0NHU2tpbGxQcmV2aWV3RXh0cmFJbmZvEhAKCHNraWxsX2lkGAYgASgNEkgK",
+            "HWNoYW5nZV9vbnN0YWdlX2NoYXJhY3Rlcl9saXN0GAkgAygLMiEuR0NHU2tp",
+            "bGxQcmV2aWV3T25zdGFnZUNoYW5nZUluZm8SLgoMcm1fY2FyZF9saXN0GAwg",
+            "AygLMhguR0NHU2tpbGxQcmV2aWV3Q2FyZEluZm8aWgoXQ2FyZFRva2VuQ2hh",
+            "bmdlTWFwRW50cnkSCwoDa2V5GAEgASgNEi4KBXZhbHVlGAIgASgLMh8uR0NH",
+            "U2tpbGxQcmV2aWV3VG9rZW5DaGFuZ2VJbmZvOgI4ARpbChRSZWFjdGlvbklu",
+            "Zm9NYXBFbnRyeRILCgNrZXkYASABKA0SMgoFdmFsdWUYAiABKAsyIy5HQ0dT",
+            "a2lsbFByZXZpZXdFbGVtZW50UmVhY3Rpb25JbmZvOgI4ARpICg5IcEluZm9N",
+            "YXBFbnRyeRILCgNrZXkYASABKA0SJQoFdmFsdWUYAiABKAsyFi5HQ0dTa2ls",
+            "bFByZXZpZXdIcEluZm86AjgBQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GCGSkillPreviewTokenChangeInfoReflection.Descriptor, global::OldProtos.GCGSkillPreviewElementReactionInfoReflection.Descriptor, global::OldProtos.GCGSkillPreviewHpInfoReflection.Descriptor, global::OldProtos.GCGSkillPreviewExtraInfoReflection.Descriptor, global::OldProtos.GCGSkillPreviewOnstageChangeInfoReflection.Descriptor, global::OldProtos.GCGSkillPreviewCardInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GCGSkillPreviewInfo), global::OldProtos.GCGSkillPreviewInfo.Parser, new[]{ "CardTokenChangeMap", "ReactionInfoMap", "HpInfoMap", "AddCardList", "ExtraInfo", "SkillId", "ChangeOnstageCharacterList", "RmCardList" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GCGSkillPreviewInfo : pb::IMessage<GCGSkillPreviewInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGSkillPreviewInfo> _parser = new pb::MessageParser<GCGSkillPreviewInfo>(() => new GCGSkillPreviewInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGSkillPreviewInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GCGSkillPreviewInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGSkillPreviewInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGSkillPreviewInfo(GCGSkillPreviewInfo other) : this() {
+      cardTokenChangeMap_ = other.cardTokenChangeMap_.Clone();
+      reactionInfoMap_ = other.reactionInfoMap_.Clone();
+      hpInfoMap_ = other.hpInfoMap_.Clone();
+      addCardList_ = other.addCardList_.Clone();
+      extraInfo_ = other.extraInfo_ != null ? other.extraInfo_.Clone() : null;
+      skillId_ = other.skillId_;
+      changeOnstageCharacterList_ = other.changeOnstageCharacterList_.Clone();
+      rmCardList_ = other.rmCardList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGSkillPreviewInfo Clone() {
+      return new GCGSkillPreviewInfo(this);
+    }
+
+    /// <summary>Field number for the "card_token_change_map" field.</summary>
+    public const int CardTokenChangeMapFieldNumber = 3;
+    private static readonly pbc::MapField<uint, global::OldProtos.GCGSkillPreviewTokenChangeInfo>.Codec _map_cardTokenChangeMap_codec
+        = new pbc::MapField<uint, global::OldProtos.GCGSkillPreviewTokenChangeInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::OldProtos.GCGSkillPreviewTokenChangeInfo.Parser), 26);
+    private readonly pbc::MapField<uint, global::OldProtos.GCGSkillPreviewTokenChangeInfo> cardTokenChangeMap_ = new pbc::MapField<uint, global::OldProtos.GCGSkillPreviewTokenChangeInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::OldProtos.GCGSkillPreviewTokenChangeInfo> CardTokenChangeMap {
+      get { return cardTokenChangeMap_; }
+    }
+
+    /// <summary>Field number for the "reaction_info_map" field.</summary>
+    public const int ReactionInfoMapFieldNumber = 5;
+    private static readonly pbc::MapField<uint, global::OldProtos.GCGSkillPreviewElementReactionInfo>.Codec _map_reactionInfoMap_codec
+        = new pbc::MapField<uint, global::OldProtos.GCGSkillPreviewElementReactionInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::OldProtos.GCGSkillPreviewElementReactionInfo.Parser), 42);
+    private readonly pbc::MapField<uint, global::OldProtos.GCGSkillPreviewElementReactionInfo> reactionInfoMap_ = new pbc::MapField<uint, global::OldProtos.GCGSkillPreviewElementReactionInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::OldProtos.GCGSkillPreviewElementReactionInfo> ReactionInfoMap {
+      get { return reactionInfoMap_; }
+    }
+
+    /// <summary>Field number for the "hp_info_map" field.</summary>
+    public const int HpInfoMapFieldNumber = 8;
+    private static readonly pbc::MapField<uint, global::OldProtos.GCGSkillPreviewHpInfo>.Codec _map_hpInfoMap_codec
+        = new pbc::MapField<uint, global::OldProtos.GCGSkillPreviewHpInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::OldProtos.GCGSkillPreviewHpInfo.Parser), 66);
+    private readonly pbc::MapField<uint, global::OldProtos.GCGSkillPreviewHpInfo> hpInfoMap_ = new pbc::MapField<uint, global::OldProtos.GCGSkillPreviewHpInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::OldProtos.GCGSkillPreviewHpInfo> HpInfoMap {
+      get { return hpInfoMap_; }
+    }
+
+    /// <summary>Field number for the "add_card_list" field.</summary>
+    public const int AddCardListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGSkillPreviewCardInfo> _repeated_addCardList_codec
+        = pb::FieldCodec.ForMessage(90, global::OldProtos.GCGSkillPreviewCardInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGSkillPreviewCardInfo> addCardList_ = new pbc::RepeatedField<global::OldProtos.GCGSkillPreviewCardInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGSkillPreviewCardInfo> AddCardList {
+      get { return addCardList_; }
+    }
+
+    /// <summary>Field number for the "extra_info" field.</summary>
+    public const int ExtraInfoFieldNumber = 10;
+    private global::OldProtos.GCGSkillPreviewExtraInfo extraInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGSkillPreviewExtraInfo ExtraInfo {
+      get { return extraInfo_; }
+      set {
+        extraInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_id" field.</summary>
+    public const int SkillIdFieldNumber = 6;
+    private uint skillId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillId {
+      get { return skillId_; }
+      set {
+        skillId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "change_onstage_character_list" field.</summary>
+    public const int ChangeOnstageCharacterListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGSkillPreviewOnstageChangeInfo> _repeated_changeOnstageCharacterList_codec
+        = pb::FieldCodec.ForMessage(74, global::OldProtos.GCGSkillPreviewOnstageChangeInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGSkillPreviewOnstageChangeInfo> changeOnstageCharacterList_ = new pbc::RepeatedField<global::OldProtos.GCGSkillPreviewOnstageChangeInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGSkillPreviewOnstageChangeInfo> ChangeOnstageCharacterList {
+      get { return changeOnstageCharacterList_; }
+    }
+
+    /// <summary>Field number for the "rm_card_list" field.</summary>
+    public const int RmCardListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGSkillPreviewCardInfo> _repeated_rmCardList_codec
+        = pb::FieldCodec.ForMessage(98, global::OldProtos.GCGSkillPreviewCardInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGSkillPreviewCardInfo> rmCardList_ = new pbc::RepeatedField<global::OldProtos.GCGSkillPreviewCardInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGSkillPreviewCardInfo> RmCardList {
+      get { return rmCardList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGSkillPreviewInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGSkillPreviewInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!CardTokenChangeMap.Equals(other.CardTokenChangeMap)) return false;
+      if (!ReactionInfoMap.Equals(other.ReactionInfoMap)) return false;
+      if (!HpInfoMap.Equals(other.HpInfoMap)) return false;
+      if(!addCardList_.Equals(other.addCardList_)) return false;
+      if (!object.Equals(ExtraInfo, other.ExtraInfo)) return false;
+      if (SkillId != other.SkillId) return false;
+      if(!changeOnstageCharacterList_.Equals(other.changeOnstageCharacterList_)) return false;
+      if(!rmCardList_.Equals(other.rmCardList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= CardTokenChangeMap.GetHashCode();
+      hash ^= ReactionInfoMap.GetHashCode();
+      hash ^= HpInfoMap.GetHashCode();
+      hash ^= addCardList_.GetHashCode();
+      if (extraInfo_ != null) hash ^= ExtraInfo.GetHashCode();
+      if (SkillId != 0) hash ^= SkillId.GetHashCode();
+      hash ^= changeOnstageCharacterList_.GetHashCode();
+      hash ^= rmCardList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      cardTokenChangeMap_.WriteTo(output, _map_cardTokenChangeMap_codec);
+      reactionInfoMap_.WriteTo(output, _map_reactionInfoMap_codec);
+      if (SkillId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(SkillId);
+      }
+      hpInfoMap_.WriteTo(output, _map_hpInfoMap_codec);
+      changeOnstageCharacterList_.WriteTo(output, _repeated_changeOnstageCharacterList_codec);
+      if (extraInfo_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(ExtraInfo);
+      }
+      addCardList_.WriteTo(output, _repeated_addCardList_codec);
+      rmCardList_.WriteTo(output, _repeated_rmCardList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      cardTokenChangeMap_.WriteTo(ref output, _map_cardTokenChangeMap_codec);
+      reactionInfoMap_.WriteTo(ref output, _map_reactionInfoMap_codec);
+      if (SkillId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(SkillId);
+      }
+      hpInfoMap_.WriteTo(ref output, _map_hpInfoMap_codec);
+      changeOnstageCharacterList_.WriteTo(ref output, _repeated_changeOnstageCharacterList_codec);
+      if (extraInfo_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(ExtraInfo);
+      }
+      addCardList_.WriteTo(ref output, _repeated_addCardList_codec);
+      rmCardList_.WriteTo(ref output, _repeated_rmCardList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += cardTokenChangeMap_.CalculateSize(_map_cardTokenChangeMap_codec);
+      size += reactionInfoMap_.CalculateSize(_map_reactionInfoMap_codec);
+      size += hpInfoMap_.CalculateSize(_map_hpInfoMap_codec);
+      size += addCardList_.CalculateSize(_repeated_addCardList_codec);
+      if (extraInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ExtraInfo);
+      }
+      if (SkillId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
+      }
+      size += changeOnstageCharacterList_.CalculateSize(_repeated_changeOnstageCharacterList_codec);
+      size += rmCardList_.CalculateSize(_repeated_rmCardList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGSkillPreviewInfo other) {
+      if (other == null) {
+        return;
+      }
+      cardTokenChangeMap_.Add(other.cardTokenChangeMap_);
+      reactionInfoMap_.Add(other.reactionInfoMap_);
+      hpInfoMap_.Add(other.hpInfoMap_);
+      addCardList_.Add(other.addCardList_);
+      if (other.extraInfo_ != null) {
+        if (extraInfo_ == null) {
+          ExtraInfo = new global::OldProtos.GCGSkillPreviewExtraInfo();
+        }
+        ExtraInfo.MergeFrom(other.ExtraInfo);
+      }
+      if (other.SkillId != 0) {
+        SkillId = other.SkillId;
+      }
+      changeOnstageCharacterList_.Add(other.changeOnstageCharacterList_);
+      rmCardList_.Add(other.rmCardList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 26: {
+            cardTokenChangeMap_.AddEntriesFrom(input, _map_cardTokenChangeMap_codec);
+            break;
+          }
+          case 42: {
+            reactionInfoMap_.AddEntriesFrom(input, _map_reactionInfoMap_codec);
+            break;
+          }
+          case 48: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            hpInfoMap_.AddEntriesFrom(input, _map_hpInfoMap_codec);
+            break;
+          }
+          case 74: {
+            changeOnstageCharacterList_.AddEntriesFrom(input, _repeated_changeOnstageCharacterList_codec);
+            break;
+          }
+          case 82: {
+            if (extraInfo_ == null) {
+              ExtraInfo = new global::OldProtos.GCGSkillPreviewExtraInfo();
+            }
+            input.ReadMessage(ExtraInfo);
+            break;
+          }
+          case 90: {
+            addCardList_.AddEntriesFrom(input, _repeated_addCardList_codec);
+            break;
+          }
+          case 98: {
+            rmCardList_.AddEntriesFrom(input, _repeated_rmCardList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 26: {
+            cardTokenChangeMap_.AddEntriesFrom(ref input, _map_cardTokenChangeMap_codec);
+            break;
+          }
+          case 42: {
+            reactionInfoMap_.AddEntriesFrom(ref input, _map_reactionInfoMap_codec);
+            break;
+          }
+          case 48: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            hpInfoMap_.AddEntriesFrom(ref input, _map_hpInfoMap_codec);
+            break;
+          }
+          case 74: {
+            changeOnstageCharacterList_.AddEntriesFrom(ref input, _repeated_changeOnstageCharacterList_codec);
+            break;
+          }
+          case 82: {
+            if (extraInfo_ == null) {
+              ExtraInfo = new global::OldProtos.GCGSkillPreviewExtraInfo();
+            }
+            input.ReadMessage(ExtraInfo);
+            break;
+          }
+          case 90: {
+            addCardList_.AddEntriesFrom(ref input, _repeated_addCardList_codec);
+            break;
+          }
+          case 98: {
+            rmCardList_.AddEntriesFrom(ref input, _repeated_rmCardList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GCGSkillPreviewInfo : pb::IMessage<GCGSkillPreviewInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGSkillPreviewInfo> _parser = new pb::MessageParser<GCGSkillPreviewInfo>(() => new GCGSkillPreviewInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGSkillPreviewInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGSkillPreviewInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGSkillPreviewInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGSkillPreviewInfo(GCGSkillPreviewInfo other) : this() {
-    cardTokenChangeMap_ = other.cardTokenChangeMap_.Clone();
-    reactionInfoMap_ = other.reactionInfoMap_.Clone();
-    hpInfoMap_ = other.hpInfoMap_.Clone();
-    addCardList_ = other.addCardList_.Clone();
-    extraInfo_ = other.extraInfo_ != null ? other.extraInfo_.Clone() : null;
-    skillId_ = other.skillId_;
-    changeOnstageCharacterList_ = other.changeOnstageCharacterList_.Clone();
-    rmCardList_ = other.rmCardList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGSkillPreviewInfo Clone() {
-    return new GCGSkillPreviewInfo(this);
-  }
-
-  /// <summary>Field number for the "card_token_change_map" field.</summary>
-  public const int CardTokenChangeMapFieldNumber = 3;
-  private static readonly pbc::MapField<uint, global::GCGSkillPreviewTokenChangeInfo>.Codec _map_cardTokenChangeMap_codec
-      = new pbc::MapField<uint, global::GCGSkillPreviewTokenChangeInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::GCGSkillPreviewTokenChangeInfo.Parser), 26);
-  private readonly pbc::MapField<uint, global::GCGSkillPreviewTokenChangeInfo> cardTokenChangeMap_ = new pbc::MapField<uint, global::GCGSkillPreviewTokenChangeInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::GCGSkillPreviewTokenChangeInfo> CardTokenChangeMap {
-    get { return cardTokenChangeMap_; }
-  }
-
-  /// <summary>Field number for the "reaction_info_map" field.</summary>
-  public const int ReactionInfoMapFieldNumber = 5;
-  private static readonly pbc::MapField<uint, global::GCGSkillPreviewElementReactionInfo>.Codec _map_reactionInfoMap_codec
-      = new pbc::MapField<uint, global::GCGSkillPreviewElementReactionInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::GCGSkillPreviewElementReactionInfo.Parser), 42);
-  private readonly pbc::MapField<uint, global::GCGSkillPreviewElementReactionInfo> reactionInfoMap_ = new pbc::MapField<uint, global::GCGSkillPreviewElementReactionInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::GCGSkillPreviewElementReactionInfo> ReactionInfoMap {
-    get { return reactionInfoMap_; }
-  }
-
-  /// <summary>Field number for the "hp_info_map" field.</summary>
-  public const int HpInfoMapFieldNumber = 8;
-  private static readonly pbc::MapField<uint, global::GCGSkillPreviewHpInfo>.Codec _map_hpInfoMap_codec
-      = new pbc::MapField<uint, global::GCGSkillPreviewHpInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::GCGSkillPreviewHpInfo.Parser), 66);
-  private readonly pbc::MapField<uint, global::GCGSkillPreviewHpInfo> hpInfoMap_ = new pbc::MapField<uint, global::GCGSkillPreviewHpInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::GCGSkillPreviewHpInfo> HpInfoMap {
-    get { return hpInfoMap_; }
-  }
-
-  /// <summary>Field number for the "add_card_list" field.</summary>
-  public const int AddCardListFieldNumber = 11;
-  private static readonly pb::FieldCodec<global::GCGSkillPreviewCardInfo> _repeated_addCardList_codec
-      = pb::FieldCodec.ForMessage(90, global::GCGSkillPreviewCardInfo.Parser);
-  private readonly pbc::RepeatedField<global::GCGSkillPreviewCardInfo> addCardList_ = new pbc::RepeatedField<global::GCGSkillPreviewCardInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGSkillPreviewCardInfo> AddCardList {
-    get { return addCardList_; }
-  }
-
-  /// <summary>Field number for the "extra_info" field.</summary>
-  public const int ExtraInfoFieldNumber = 10;
-  private global::GCGSkillPreviewExtraInfo extraInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGSkillPreviewExtraInfo ExtraInfo {
-    get { return extraInfo_; }
-    set {
-      extraInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "skill_id" field.</summary>
-  public const int SkillIdFieldNumber = 6;
-  private uint skillId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SkillId {
-    get { return skillId_; }
-    set {
-      skillId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "change_onstage_character_list" field.</summary>
-  public const int ChangeOnstageCharacterListFieldNumber = 9;
-  private static readonly pb::FieldCodec<global::GCGSkillPreviewOnstageChangeInfo> _repeated_changeOnstageCharacterList_codec
-      = pb::FieldCodec.ForMessage(74, global::GCGSkillPreviewOnstageChangeInfo.Parser);
-  private readonly pbc::RepeatedField<global::GCGSkillPreviewOnstageChangeInfo> changeOnstageCharacterList_ = new pbc::RepeatedField<global::GCGSkillPreviewOnstageChangeInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGSkillPreviewOnstageChangeInfo> ChangeOnstageCharacterList {
-    get { return changeOnstageCharacterList_; }
-  }
-
-  /// <summary>Field number for the "rm_card_list" field.</summary>
-  public const int RmCardListFieldNumber = 12;
-  private static readonly pb::FieldCodec<global::GCGSkillPreviewCardInfo> _repeated_rmCardList_codec
-      = pb::FieldCodec.ForMessage(98, global::GCGSkillPreviewCardInfo.Parser);
-  private readonly pbc::RepeatedField<global::GCGSkillPreviewCardInfo> rmCardList_ = new pbc::RepeatedField<global::GCGSkillPreviewCardInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGSkillPreviewCardInfo> RmCardList {
-    get { return rmCardList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGSkillPreviewInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGSkillPreviewInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!CardTokenChangeMap.Equals(other.CardTokenChangeMap)) return false;
-    if (!ReactionInfoMap.Equals(other.ReactionInfoMap)) return false;
-    if (!HpInfoMap.Equals(other.HpInfoMap)) return false;
-    if(!addCardList_.Equals(other.addCardList_)) return false;
-    if (!object.Equals(ExtraInfo, other.ExtraInfo)) return false;
-    if (SkillId != other.SkillId) return false;
-    if(!changeOnstageCharacterList_.Equals(other.changeOnstageCharacterList_)) return false;
-    if(!rmCardList_.Equals(other.rmCardList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= CardTokenChangeMap.GetHashCode();
-    hash ^= ReactionInfoMap.GetHashCode();
-    hash ^= HpInfoMap.GetHashCode();
-    hash ^= addCardList_.GetHashCode();
-    if (extraInfo_ != null) hash ^= ExtraInfo.GetHashCode();
-    if (SkillId != 0) hash ^= SkillId.GetHashCode();
-    hash ^= changeOnstageCharacterList_.GetHashCode();
-    hash ^= rmCardList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    cardTokenChangeMap_.WriteTo(output, _map_cardTokenChangeMap_codec);
-    reactionInfoMap_.WriteTo(output, _map_reactionInfoMap_codec);
-    if (SkillId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(SkillId);
-    }
-    hpInfoMap_.WriteTo(output, _map_hpInfoMap_codec);
-    changeOnstageCharacterList_.WriteTo(output, _repeated_changeOnstageCharacterList_codec);
-    if (extraInfo_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(ExtraInfo);
-    }
-    addCardList_.WriteTo(output, _repeated_addCardList_codec);
-    rmCardList_.WriteTo(output, _repeated_rmCardList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    cardTokenChangeMap_.WriteTo(ref output, _map_cardTokenChangeMap_codec);
-    reactionInfoMap_.WriteTo(ref output, _map_reactionInfoMap_codec);
-    if (SkillId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(SkillId);
-    }
-    hpInfoMap_.WriteTo(ref output, _map_hpInfoMap_codec);
-    changeOnstageCharacterList_.WriteTo(ref output, _repeated_changeOnstageCharacterList_codec);
-    if (extraInfo_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(ExtraInfo);
-    }
-    addCardList_.WriteTo(ref output, _repeated_addCardList_codec);
-    rmCardList_.WriteTo(ref output, _repeated_rmCardList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += cardTokenChangeMap_.CalculateSize(_map_cardTokenChangeMap_codec);
-    size += reactionInfoMap_.CalculateSize(_map_reactionInfoMap_codec);
-    size += hpInfoMap_.CalculateSize(_map_hpInfoMap_codec);
-    size += addCardList_.CalculateSize(_repeated_addCardList_codec);
-    if (extraInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(ExtraInfo);
-    }
-    if (SkillId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
-    }
-    size += changeOnstageCharacterList_.CalculateSize(_repeated_changeOnstageCharacterList_codec);
-    size += rmCardList_.CalculateSize(_repeated_rmCardList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGSkillPreviewInfo other) {
-    if (other == null) {
-      return;
-    }
-    cardTokenChangeMap_.Add(other.cardTokenChangeMap_);
-    reactionInfoMap_.Add(other.reactionInfoMap_);
-    hpInfoMap_.Add(other.hpInfoMap_);
-    addCardList_.Add(other.addCardList_);
-    if (other.extraInfo_ != null) {
-      if (extraInfo_ == null) {
-        ExtraInfo = new global::GCGSkillPreviewExtraInfo();
-      }
-      ExtraInfo.MergeFrom(other.ExtraInfo);
-    }
-    if (other.SkillId != 0) {
-      SkillId = other.SkillId;
-    }
-    changeOnstageCharacterList_.Add(other.changeOnstageCharacterList_);
-    rmCardList_.Add(other.rmCardList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 26: {
-          cardTokenChangeMap_.AddEntriesFrom(input, _map_cardTokenChangeMap_codec);
-          break;
-        }
-        case 42: {
-          reactionInfoMap_.AddEntriesFrom(input, _map_reactionInfoMap_codec);
-          break;
-        }
-        case 48: {
-          SkillId = input.ReadUInt32();
-          break;
-        }
-        case 66: {
-          hpInfoMap_.AddEntriesFrom(input, _map_hpInfoMap_codec);
-          break;
-        }
-        case 74: {
-          changeOnstageCharacterList_.AddEntriesFrom(input, _repeated_changeOnstageCharacterList_codec);
-          break;
-        }
-        case 82: {
-          if (extraInfo_ == null) {
-            ExtraInfo = new global::GCGSkillPreviewExtraInfo();
-          }
-          input.ReadMessage(ExtraInfo);
-          break;
-        }
-        case 90: {
-          addCardList_.AddEntriesFrom(input, _repeated_addCardList_codec);
-          break;
-        }
-        case 98: {
-          rmCardList_.AddEntriesFrom(input, _repeated_rmCardList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 26: {
-          cardTokenChangeMap_.AddEntriesFrom(ref input, _map_cardTokenChangeMap_codec);
-          break;
-        }
-        case 42: {
-          reactionInfoMap_.AddEntriesFrom(ref input, _map_reactionInfoMap_codec);
-          break;
-        }
-        case 48: {
-          SkillId = input.ReadUInt32();
-          break;
-        }
-        case 66: {
-          hpInfoMap_.AddEntriesFrom(ref input, _map_hpInfoMap_codec);
-          break;
-        }
-        case 74: {
-          changeOnstageCharacterList_.AddEntriesFrom(ref input, _repeated_changeOnstageCharacterList_codec);
-          break;
-        }
-        case 82: {
-          if (extraInfo_ == null) {
-            ExtraInfo = new global::GCGSkillPreviewExtraInfo();
-          }
-          input.ReadMessage(ExtraInfo);
-          break;
-        }
-        case 90: {
-          addCardList_.AddEntriesFrom(ref input, _repeated_addCardList_codec);
-          break;
-        }
-        case 98: {
-          rmCardList_.AddEntriesFrom(ref input, _repeated_rmCardList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

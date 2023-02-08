@@ -19,7 +19,7 @@ syntax = "proto3";
 import "GCGSkillLimitsInfo.proto";
 import "GCGToken.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGCard {
   repeated uint32 tag_list = 7;

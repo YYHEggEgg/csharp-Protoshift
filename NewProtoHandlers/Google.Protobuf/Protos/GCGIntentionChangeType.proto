@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 enum GCGIntentionChangeType {
   GCG_INTENTION_CHANGE_TYPE_NONE = 0;

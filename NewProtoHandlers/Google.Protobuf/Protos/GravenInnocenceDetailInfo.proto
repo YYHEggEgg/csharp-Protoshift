@@ -21,7 +21,7 @@ import "GravenInnocenceCarveInfo.proto";
 import "GravenInnocencePhotoInfo.proto";
 import "GravenInnocenceRaceInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GravenInnocenceDetailInfo {
   bool is_content_closed = 8;

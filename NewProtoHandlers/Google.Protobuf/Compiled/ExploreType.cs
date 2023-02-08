@@ -9,41 +9,44 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ExploreType.proto</summary>
-public static partial class ExploreTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ExploreType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ExploreType.proto</summary>
+  public static partial class ExploreTypeReflection {
 
-  static ExploreTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChFFeHBsb3JlVHlwZS5wcm90byqKAQoLRXhwbG9yZVR5cGUSFQoRRVhQTE9S",
-          "RV9UWVBFX05PTkUQABIYChRFWFBMT1JFX1RZUEVfQ1JZU1RBTBABEhYKEkVY",
-          "UExPUkVfVFlQRV9DSEVTVBACEhcKE0VYUExPUkVfVFlQRV9URU1QTEUQAxIZ",
-          "ChVFWFBMT1JFX1RZUEVfVEVMRVBPUlQQBEIWChRvcmcuc29yYXBvaW50YS5w",
-          "cm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ExploreType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for ExploreType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ExploreTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChFFeHBsb3JlVHlwZS5wcm90byqKAQoLRXhwbG9yZVR5cGUSFQoRRVhQTE9S",
+            "RV9UWVBFX05PTkUQABIYChRFWFBMT1JFX1RZUEVfQ1JZU1RBTBABEhYKEkVY",
+            "UExPUkVfVFlQRV9DSEVTVBACEhcKE0VYUExPUkVfVFlQRV9URU1QTEUQAxIZ",
+            "ChVFWFBMT1JFX1RZUEVfVEVMRVBPUlQQBEIMqgIJTmV3UHJvdG9zYgZwcm90",
+            "bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.ExploreType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum ExploreType {
+    [pbr::OriginalName("EXPLORE_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("EXPLORE_TYPE_CRYSTAL")] Crystal = 1,
+    [pbr::OriginalName("EXPLORE_TYPE_CHEST")] Chest = 2,
+    [pbr::OriginalName("EXPLORE_TYPE_TEMPLE")] Temple = 3,
+    [pbr::OriginalName("EXPLORE_TYPE_TELEPORT")] Teleport = 4,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum ExploreType {
-  [pbr::OriginalName("EXPLORE_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("EXPLORE_TYPE_CRYSTAL")] Crystal = 1,
-  [pbr::OriginalName("EXPLORE_TYPE_CHEST")] Chest = 2,
-  [pbr::OriginalName("EXPLORE_TYPE_TEMPLE")] Temple = 3,
-  [pbr::OriginalName("EXPLORE_TYPE_TELEPORT")] Teleport = 4,
-}
-
-#endregion
-
 
 #endregion Designer generated code

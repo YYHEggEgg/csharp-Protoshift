@@ -9,360 +9,363 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GachaItem.proto</summary>
-public static partial class GachaItemReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GachaItem.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GachaItem.proto</summary>
+  public static partial class GachaItemReflection {
 
-  static GachaItemReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Cg9HYWNoYUl0ZW0ucHJvdG8aF0dhY2hhVHJhbnNmZXJJdGVtLnByb3RvGg9J",
-          "dGVtUGFyYW0ucHJvdG8irgEKCUdhY2hhSXRlbRIVCg1pc19mbGFzaF9jYXJk",
-          "GAggASgIEioKDnRyYW5zZmVyX2l0ZW1zGAYgAygLMhIuR2FjaGFUcmFuc2Zl",
-          "ckl0ZW0SGQoRaXNfZ2FjaGFfaXRlbV9uZXcYDSABKAgSHgoKZ2FjaGFfaXRl",
-          "bRgFIAEoCzIKLkl0ZW1QYXJhbRIjCg90b2tlbl9pdGVtX2xpc3QYCiADKAsy",
-          "Ci5JdGVtUGFyYW1CFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GachaTransferItemReflection.Descriptor, global::ItemParamReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GachaItem), global::GachaItem.Parser, new[]{ "IsFlashCard", "TransferItems", "IsGachaItemNew", "GachaItem_", "TokenItemList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GachaItem.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GachaItemReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Cg9HYWNoYUl0ZW0ucHJvdG8aF0dhY2hhVHJhbnNmZXJJdGVtLnByb3RvGg9J",
+            "dGVtUGFyYW0ucHJvdG8irgEKCUdhY2hhSXRlbRIVCg1pc19mbGFzaF9jYXJk",
+            "GAggASgIEioKDnRyYW5zZmVyX2l0ZW1zGAYgAygLMhIuR2FjaGFUcmFuc2Zl",
+            "ckl0ZW0SGQoRaXNfZ2FjaGFfaXRlbV9uZXcYDSABKAgSHgoKZ2FjaGFfaXRl",
+            "bRgFIAEoCzIKLkl0ZW1QYXJhbRIjCg90b2tlbl9pdGVtX2xpc3QYCiADKAsy",
+            "Ci5JdGVtUGFyYW1CDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.GachaTransferItemReflection.Descriptor, global::NewProtos.ItemParamReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GachaItem), global::NewProtos.GachaItem.Parser, new[]{ "IsFlashCard", "TransferItems", "IsGachaItemNew", "GachaItem_", "TokenItemList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GachaItem : pb::IMessage<GachaItem>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GachaItem> _parser = new pb::MessageParser<GachaItem>(() => new GachaItem());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GachaItem> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.GachaItemReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GachaItem() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GachaItem(GachaItem other) : this() {
+      isFlashCard_ = other.isFlashCard_;
+      transferItems_ = other.transferItems_.Clone();
+      isGachaItemNew_ = other.isGachaItemNew_;
+      gachaItem_ = other.gachaItem_ != null ? other.gachaItem_.Clone() : null;
+      tokenItemList_ = other.tokenItemList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GachaItem Clone() {
+      return new GachaItem(this);
+    }
+
+    /// <summary>Field number for the "is_flash_card" field.</summary>
+    public const int IsFlashCardFieldNumber = 8;
+    private bool isFlashCard_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFlashCard {
+      get { return isFlashCard_; }
+      set {
+        isFlashCard_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "transfer_items" field.</summary>
+    public const int TransferItemsFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::NewProtos.GachaTransferItem> _repeated_transferItems_codec
+        = pb::FieldCodec.ForMessage(50, global::NewProtos.GachaTransferItem.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.GachaTransferItem> transferItems_ = new pbc::RepeatedField<global::NewProtos.GachaTransferItem>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.GachaTransferItem> TransferItems {
+      get { return transferItems_; }
+    }
+
+    /// <summary>Field number for the "is_gacha_item_new" field.</summary>
+    public const int IsGachaItemNewFieldNumber = 13;
+    private bool isGachaItemNew_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsGachaItemNew {
+      get { return isGachaItemNew_; }
+      set {
+        isGachaItemNew_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gacha_item" field.</summary>
+    public const int GachaItem_FieldNumber = 5;
+    private global::NewProtos.ItemParam gachaItem_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ItemParam GachaItem_ {
+      get { return gachaItem_; }
+      set {
+        gachaItem_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "token_item_list" field.</summary>
+    public const int TokenItemListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::NewProtos.ItemParam> _repeated_tokenItemList_codec
+        = pb::FieldCodec.ForMessage(82, global::NewProtos.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ItemParam> tokenItemList_ = new pbc::RepeatedField<global::NewProtos.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ItemParam> TokenItemList {
+      get { return tokenItemList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GachaItem);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GachaItem other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsFlashCard != other.IsFlashCard) return false;
+      if(!transferItems_.Equals(other.transferItems_)) return false;
+      if (IsGachaItemNew != other.IsGachaItemNew) return false;
+      if (!object.Equals(GachaItem_, other.GachaItem_)) return false;
+      if(!tokenItemList_.Equals(other.tokenItemList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsFlashCard != false) hash ^= IsFlashCard.GetHashCode();
+      hash ^= transferItems_.GetHashCode();
+      if (IsGachaItemNew != false) hash ^= IsGachaItemNew.GetHashCode();
+      if (gachaItem_ != null) hash ^= GachaItem_.GetHashCode();
+      hash ^= tokenItemList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (gachaItem_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(GachaItem_);
+      }
+      transferItems_.WriteTo(output, _repeated_transferItems_codec);
+      if (IsFlashCard != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsFlashCard);
+      }
+      tokenItemList_.WriteTo(output, _repeated_tokenItemList_codec);
+      if (IsGachaItemNew != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsGachaItemNew);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (gachaItem_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(GachaItem_);
+      }
+      transferItems_.WriteTo(ref output, _repeated_transferItems_codec);
+      if (IsFlashCard != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsFlashCard);
+      }
+      tokenItemList_.WriteTo(ref output, _repeated_tokenItemList_codec);
+      if (IsGachaItemNew != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsGachaItemNew);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsFlashCard != false) {
+        size += 1 + 1;
+      }
+      size += transferItems_.CalculateSize(_repeated_transferItems_codec);
+      if (IsGachaItemNew != false) {
+        size += 1 + 1;
+      }
+      if (gachaItem_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(GachaItem_);
+      }
+      size += tokenItemList_.CalculateSize(_repeated_tokenItemList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GachaItem other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsFlashCard != false) {
+        IsFlashCard = other.IsFlashCard;
+      }
+      transferItems_.Add(other.transferItems_);
+      if (other.IsGachaItemNew != false) {
+        IsGachaItemNew = other.IsGachaItemNew;
+      }
+      if (other.gachaItem_ != null) {
+        if (gachaItem_ == null) {
+          GachaItem_ = new global::NewProtos.ItemParam();
+        }
+        GachaItem_.MergeFrom(other.GachaItem_);
+      }
+      tokenItemList_.Add(other.tokenItemList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 42: {
+            if (gachaItem_ == null) {
+              GachaItem_ = new global::NewProtos.ItemParam();
+            }
+            input.ReadMessage(GachaItem_);
+            break;
+          }
+          case 50: {
+            transferItems_.AddEntriesFrom(input, _repeated_transferItems_codec);
+            break;
+          }
+          case 64: {
+            IsFlashCard = input.ReadBool();
+            break;
+          }
+          case 82: {
+            tokenItemList_.AddEntriesFrom(input, _repeated_tokenItemList_codec);
+            break;
+          }
+          case 104: {
+            IsGachaItemNew = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 42: {
+            if (gachaItem_ == null) {
+              GachaItem_ = new global::NewProtos.ItemParam();
+            }
+            input.ReadMessage(GachaItem_);
+            break;
+          }
+          case 50: {
+            transferItems_.AddEntriesFrom(ref input, _repeated_transferItems_codec);
+            break;
+          }
+          case 64: {
+            IsFlashCard = input.ReadBool();
+            break;
+          }
+          case 82: {
+            tokenItemList_.AddEntriesFrom(ref input, _repeated_tokenItemList_codec);
+            break;
+          }
+          case 104: {
+            IsGachaItemNew = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GachaItem : pb::IMessage<GachaItem>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GachaItem> _parser = new pb::MessageParser<GachaItem>(() => new GachaItem());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GachaItem> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GachaItemReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GachaItem() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GachaItem(GachaItem other) : this() {
-    isFlashCard_ = other.isFlashCard_;
-    transferItems_ = other.transferItems_.Clone();
-    isGachaItemNew_ = other.isGachaItemNew_;
-    gachaItem_ = other.gachaItem_ != null ? other.gachaItem_.Clone() : null;
-    tokenItemList_ = other.tokenItemList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GachaItem Clone() {
-    return new GachaItem(this);
-  }
-
-  /// <summary>Field number for the "is_flash_card" field.</summary>
-  public const int IsFlashCardFieldNumber = 8;
-  private bool isFlashCard_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsFlashCard {
-    get { return isFlashCard_; }
-    set {
-      isFlashCard_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "transfer_items" field.</summary>
-  public const int TransferItemsFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::GachaTransferItem> _repeated_transferItems_codec
-      = pb::FieldCodec.ForMessage(50, global::GachaTransferItem.Parser);
-  private readonly pbc::RepeatedField<global::GachaTransferItem> transferItems_ = new pbc::RepeatedField<global::GachaTransferItem>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GachaTransferItem> TransferItems {
-    get { return transferItems_; }
-  }
-
-  /// <summary>Field number for the "is_gacha_item_new" field.</summary>
-  public const int IsGachaItemNewFieldNumber = 13;
-  private bool isGachaItemNew_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsGachaItemNew {
-    get { return isGachaItemNew_; }
-    set {
-      isGachaItemNew_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gacha_item" field.</summary>
-  public const int GachaItem_FieldNumber = 5;
-  private global::ItemParam gachaItem_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ItemParam GachaItem_ {
-    get { return gachaItem_; }
-    set {
-      gachaItem_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "token_item_list" field.</summary>
-  public const int TokenItemListFieldNumber = 10;
-  private static readonly pb::FieldCodec<global::ItemParam> _repeated_tokenItemList_codec
-      = pb::FieldCodec.ForMessage(82, global::ItemParam.Parser);
-  private readonly pbc::RepeatedField<global::ItemParam> tokenItemList_ = new pbc::RepeatedField<global::ItemParam>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ItemParam> TokenItemList {
-    get { return tokenItemList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GachaItem);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GachaItem other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsFlashCard != other.IsFlashCard) return false;
-    if(!transferItems_.Equals(other.transferItems_)) return false;
-    if (IsGachaItemNew != other.IsGachaItemNew) return false;
-    if (!object.Equals(GachaItem_, other.GachaItem_)) return false;
-    if(!tokenItemList_.Equals(other.tokenItemList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsFlashCard != false) hash ^= IsFlashCard.GetHashCode();
-    hash ^= transferItems_.GetHashCode();
-    if (IsGachaItemNew != false) hash ^= IsGachaItemNew.GetHashCode();
-    if (gachaItem_ != null) hash ^= GachaItem_.GetHashCode();
-    hash ^= tokenItemList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (gachaItem_ != null) {
-      output.WriteRawTag(42);
-      output.WriteMessage(GachaItem_);
-    }
-    transferItems_.WriteTo(output, _repeated_transferItems_codec);
-    if (IsFlashCard != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsFlashCard);
-    }
-    tokenItemList_.WriteTo(output, _repeated_tokenItemList_codec);
-    if (IsGachaItemNew != false) {
-      output.WriteRawTag(104);
-      output.WriteBool(IsGachaItemNew);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (gachaItem_ != null) {
-      output.WriteRawTag(42);
-      output.WriteMessage(GachaItem_);
-    }
-    transferItems_.WriteTo(ref output, _repeated_transferItems_codec);
-    if (IsFlashCard != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsFlashCard);
-    }
-    tokenItemList_.WriteTo(ref output, _repeated_tokenItemList_codec);
-    if (IsGachaItemNew != false) {
-      output.WriteRawTag(104);
-      output.WriteBool(IsGachaItemNew);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsFlashCard != false) {
-      size += 1 + 1;
-    }
-    size += transferItems_.CalculateSize(_repeated_transferItems_codec);
-    if (IsGachaItemNew != false) {
-      size += 1 + 1;
-    }
-    if (gachaItem_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(GachaItem_);
-    }
-    size += tokenItemList_.CalculateSize(_repeated_tokenItemList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GachaItem other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsFlashCard != false) {
-      IsFlashCard = other.IsFlashCard;
-    }
-    transferItems_.Add(other.transferItems_);
-    if (other.IsGachaItemNew != false) {
-      IsGachaItemNew = other.IsGachaItemNew;
-    }
-    if (other.gachaItem_ != null) {
-      if (gachaItem_ == null) {
-        GachaItem_ = new global::ItemParam();
-      }
-      GachaItem_.MergeFrom(other.GachaItem_);
-    }
-    tokenItemList_.Add(other.tokenItemList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 42: {
-          if (gachaItem_ == null) {
-            GachaItem_ = new global::ItemParam();
-          }
-          input.ReadMessage(GachaItem_);
-          break;
-        }
-        case 50: {
-          transferItems_.AddEntriesFrom(input, _repeated_transferItems_codec);
-          break;
-        }
-        case 64: {
-          IsFlashCard = input.ReadBool();
-          break;
-        }
-        case 82: {
-          tokenItemList_.AddEntriesFrom(input, _repeated_tokenItemList_codec);
-          break;
-        }
-        case 104: {
-          IsGachaItemNew = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 42: {
-          if (gachaItem_ == null) {
-            GachaItem_ = new global::ItemParam();
-          }
-          input.ReadMessage(GachaItem_);
-          break;
-        }
-        case 50: {
-          transferItems_.AddEntriesFrom(ref input, _repeated_transferItems_codec);
-          break;
-        }
-        case 64: {
-          IsFlashCard = input.ReadBool();
-          break;
-        }
-        case 82: {
-          tokenItemList_.AddEntriesFrom(ref input, _repeated_tokenItemList_codec);
-          break;
-        }
-        case 104: {
-          IsGachaItemNew = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -82,7 +82,7 @@ import "WaterSpiritActivityDetailInfo.proto";
 import "WindFieldDetailInfo.proto";
 import "WinterCampActivityDetailInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message ActivityInfo {
   bool Unk3300_MJNPGEKLOCG = 360;

@@ -9,39 +9,42 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AvatarType.proto</summary>
-public static partial class AvatarTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AvatarType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AvatarType.proto</summary>
+  public static partial class AvatarTypeReflection {
 
-  static AvatarTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChBBdmF0YXJUeXBlLnByb3RvKmkKCkF2YXRhclR5cGUSFAoQQVZBVEFSX1RZ",
-          "UEVfTk9ORRAAEhYKEkFWQVRBUl9UWVBFX0ZPUk1BTBABEhUKEUFWQVRBUl9U",
-          "WVBFX1RSSUFMEAISFgoSQVZBVEFSX1RZUEVfTUlSUk9SEANCHgocZW11Lmdy",
-          "YXNzY3V0dGVyLm5ldC5uZXdwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::AvatarType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for AvatarType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AvatarTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChBBdmF0YXJUeXBlLnByb3RvKmkKCkF2YXRhclR5cGUSFAoQQVZBVEFSX1RZ",
+            "UEVfTk9ORRAAEhYKEkFWQVRBUl9UWVBFX0ZPUk1BTBABEhUKEUFWQVRBUl9U",
+            "WVBFX1RSSUFMEAISFgoSQVZBVEFSX1RZUEVfTUlSUk9SEANCDKoCCU9sZFBy",
+            "b3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.AvatarType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum AvatarType {
+    [pbr::OriginalName("AVATAR_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("AVATAR_TYPE_FORMAL")] Formal = 1,
+    [pbr::OriginalName("AVATAR_TYPE_TRIAL")] Trial = 2,
+    [pbr::OriginalName("AVATAR_TYPE_MIRROR")] Mirror = 3,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum AvatarType {
-  [pbr::OriginalName("AVATAR_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("AVATAR_TYPE_FORMAL")] Formal = 1,
-  [pbr::OriginalName("AVATAR_TYPE_TRIAL")] Trial = 2,
-  [pbr::OriginalName("AVATAR_TYPE_MIRROR")] Mirror = 3,
-}
-
-#endregion
-
 
 #endregion Designer generated code

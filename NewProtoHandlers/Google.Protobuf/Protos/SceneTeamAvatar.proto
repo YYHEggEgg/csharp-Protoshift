@@ -23,7 +23,7 @@ import "SceneAvatarInfo.proto";
 import "SceneEntityInfo.proto";
 import "ServerBuff.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SceneTeamAvatar {
   SceneAvatarInfo scene_avatar_info = 14;

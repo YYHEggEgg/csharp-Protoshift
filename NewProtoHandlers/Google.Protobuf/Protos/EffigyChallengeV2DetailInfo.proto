@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "EffigyChallengeV2LevelData.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message EffigyChallengeV2DetailInfo {
   repeated EffigyChallengeV2LevelData level_data_list = 1;

@@ -9,429 +9,432 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from HitCollision.proto</summary>
-public static partial class HitCollisionReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for HitCollision.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from HitCollision.proto</summary>
+  public static partial class HitCollisionReflection {
 
-  static HitCollisionReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChJIaXRDb2xsaXNpb24ucHJvdG8aFUhpdENvbGxpZGVyVHlwZS5wcm90bxoM",
-          "VmVjdG9yLnByb3RvIs0BCgxIaXRDb2xsaXNpb24SFQoNaGl0X2JveF9pbmRl",
-          "eBgIIAEoBRIrChFoaXRfY29sbGlkZXJfdHlwZRgFIAEoDjIQLkhpdENvbGxp",
-          "ZGVyVHlwZRIhChlhdHRhY2tlZV9oaXRfZW50aXR5X2FuZ2xlGAcgASgCEhgK",
-          "B2hpdF9kaXIYAyABKAsyBy5WZWN0b3ISGgoJaGl0X3BvaW50GA4gASgLMgcu",
-          "VmVjdG9yEiAKGGF0dGFja2VlX2hpdF9mb3JjZV9hbmdsZRgKIAEoAkIWChRv",
-          "cmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::HitColliderTypeReflection.Descriptor, global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::HitCollision), global::HitCollision.Parser, new[]{ "HitBoxIndex", "HitColliderType", "AttackeeHitEntityAngle", "HitDir", "HitPoint", "AttackeeHitForceAngle" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for HitCollision.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static HitCollisionReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChJIaXRDb2xsaXNpb24ucHJvdG8aFUhpdENvbGxpZGVyVHlwZS5wcm90bxoM",
+            "VmVjdG9yLnByb3RvIs0BCgxIaXRDb2xsaXNpb24SFQoNaGl0X2JveF9pbmRl",
+            "eBgIIAEoBRIrChFoaXRfY29sbGlkZXJfdHlwZRgFIAEoDjIQLkhpdENvbGxp",
+            "ZGVyVHlwZRIhChlhdHRhY2tlZV9oaXRfZW50aXR5X2FuZ2xlGAcgASgCEhgK",
+            "B2hpdF9kaXIYAyABKAsyBy5WZWN0b3ISGgoJaGl0X3BvaW50GA4gASgLMgcu",
+            "VmVjdG9yEiAKGGF0dGFja2VlX2hpdF9mb3JjZV9hbmdsZRgKIAEoAkIMqgIJ",
+            "TmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.HitColliderTypeReflection.Descriptor, global::NewProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.HitCollision), global::NewProtos.HitCollision.Parser, new[]{ "HitBoxIndex", "HitColliderType", "AttackeeHitEntityAngle", "HitDir", "HitPoint", "AttackeeHitForceAngle" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class HitCollision : pb::IMessage<HitCollision>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HitCollision> _parser = new pb::MessageParser<HitCollision>(() => new HitCollision());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HitCollision> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.HitCollisionReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HitCollision() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HitCollision(HitCollision other) : this() {
+      hitBoxIndex_ = other.hitBoxIndex_;
+      hitColliderType_ = other.hitColliderType_;
+      attackeeHitEntityAngle_ = other.attackeeHitEntityAngle_;
+      hitDir_ = other.hitDir_ != null ? other.hitDir_.Clone() : null;
+      hitPoint_ = other.hitPoint_ != null ? other.hitPoint_.Clone() : null;
+      attackeeHitForceAngle_ = other.attackeeHitForceAngle_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HitCollision Clone() {
+      return new HitCollision(this);
+    }
+
+    /// <summary>Field number for the "hit_box_index" field.</summary>
+    public const int HitBoxIndexFieldNumber = 8;
+    private int hitBoxIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int HitBoxIndex {
+      get { return hitBoxIndex_; }
+      set {
+        hitBoxIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_collider_type" field.</summary>
+    public const int HitColliderTypeFieldNumber = 5;
+    private global::NewProtos.HitColliderType hitColliderType_ = global::NewProtos.HitColliderType.Invalid;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.HitColliderType HitColliderType {
+      get { return hitColliderType_; }
+      set {
+        hitColliderType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attackee_hit_entity_angle" field.</summary>
+    public const int AttackeeHitEntityAngleFieldNumber = 7;
+    private float attackeeHitEntityAngle_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AttackeeHitEntityAngle {
+      get { return attackeeHitEntityAngle_; }
+      set {
+        attackeeHitEntityAngle_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_dir" field.</summary>
+    public const int HitDirFieldNumber = 3;
+    private global::NewProtos.Vector hitDir_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.Vector HitDir {
+      get { return hitDir_; }
+      set {
+        hitDir_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_point" field.</summary>
+    public const int HitPointFieldNumber = 14;
+    private global::NewProtos.Vector hitPoint_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.Vector HitPoint {
+      get { return hitPoint_; }
+      set {
+        hitPoint_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attackee_hit_force_angle" field.</summary>
+    public const int AttackeeHitForceAngleFieldNumber = 10;
+    private float attackeeHitForceAngle_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AttackeeHitForceAngle {
+      get { return attackeeHitForceAngle_; }
+      set {
+        attackeeHitForceAngle_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HitCollision);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HitCollision other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (HitBoxIndex != other.HitBoxIndex) return false;
+      if (HitColliderType != other.HitColliderType) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AttackeeHitEntityAngle, other.AttackeeHitEntityAngle)) return false;
+      if (!object.Equals(HitDir, other.HitDir)) return false;
+      if (!object.Equals(HitPoint, other.HitPoint)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AttackeeHitForceAngle, other.AttackeeHitForceAngle)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (HitBoxIndex != 0) hash ^= HitBoxIndex.GetHashCode();
+      if (HitColliderType != global::NewProtos.HitColliderType.Invalid) hash ^= HitColliderType.GetHashCode();
+      if (AttackeeHitEntityAngle != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AttackeeHitEntityAngle);
+      if (hitDir_ != null) hash ^= HitDir.GetHashCode();
+      if (hitPoint_ != null) hash ^= HitPoint.GetHashCode();
+      if (AttackeeHitForceAngle != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AttackeeHitForceAngle);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (hitDir_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(HitDir);
+      }
+      if (HitColliderType != global::NewProtos.HitColliderType.Invalid) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) HitColliderType);
+      }
+      if (AttackeeHitEntityAngle != 0F) {
+        output.WriteRawTag(61);
+        output.WriteFloat(AttackeeHitEntityAngle);
+      }
+      if (HitBoxIndex != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(HitBoxIndex);
+      }
+      if (AttackeeHitForceAngle != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(AttackeeHitForceAngle);
+      }
+      if (hitPoint_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(HitPoint);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (hitDir_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(HitDir);
+      }
+      if (HitColliderType != global::NewProtos.HitColliderType.Invalid) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) HitColliderType);
+      }
+      if (AttackeeHitEntityAngle != 0F) {
+        output.WriteRawTag(61);
+        output.WriteFloat(AttackeeHitEntityAngle);
+      }
+      if (HitBoxIndex != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(HitBoxIndex);
+      }
+      if (AttackeeHitForceAngle != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(AttackeeHitForceAngle);
+      }
+      if (hitPoint_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(HitPoint);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (HitBoxIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HitBoxIndex);
+      }
+      if (HitColliderType != global::NewProtos.HitColliderType.Invalid) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) HitColliderType);
+      }
+      if (AttackeeHitEntityAngle != 0F) {
+        size += 1 + 4;
+      }
+      if (hitDir_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HitDir);
+      }
+      if (hitPoint_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HitPoint);
+      }
+      if (AttackeeHitForceAngle != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HitCollision other) {
+      if (other == null) {
+        return;
+      }
+      if (other.HitBoxIndex != 0) {
+        HitBoxIndex = other.HitBoxIndex;
+      }
+      if (other.HitColliderType != global::NewProtos.HitColliderType.Invalid) {
+        HitColliderType = other.HitColliderType;
+      }
+      if (other.AttackeeHitEntityAngle != 0F) {
+        AttackeeHitEntityAngle = other.AttackeeHitEntityAngle;
+      }
+      if (other.hitDir_ != null) {
+        if (hitDir_ == null) {
+          HitDir = new global::NewProtos.Vector();
+        }
+        HitDir.MergeFrom(other.HitDir);
+      }
+      if (other.hitPoint_ != null) {
+        if (hitPoint_ == null) {
+          HitPoint = new global::NewProtos.Vector();
+        }
+        HitPoint.MergeFrom(other.HitPoint);
+      }
+      if (other.AttackeeHitForceAngle != 0F) {
+        AttackeeHitForceAngle = other.AttackeeHitForceAngle;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 26: {
+            if (hitDir_ == null) {
+              HitDir = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(HitDir);
+            break;
+          }
+          case 40: {
+            HitColliderType = (global::NewProtos.HitColliderType) input.ReadEnum();
+            break;
+          }
+          case 61: {
+            AttackeeHitEntityAngle = input.ReadFloat();
+            break;
+          }
+          case 64: {
+            HitBoxIndex = input.ReadInt32();
+            break;
+          }
+          case 85: {
+            AttackeeHitForceAngle = input.ReadFloat();
+            break;
+          }
+          case 114: {
+            if (hitPoint_ == null) {
+              HitPoint = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(HitPoint);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 26: {
+            if (hitDir_ == null) {
+              HitDir = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(HitDir);
+            break;
+          }
+          case 40: {
+            HitColliderType = (global::NewProtos.HitColliderType) input.ReadEnum();
+            break;
+          }
+          case 61: {
+            AttackeeHitEntityAngle = input.ReadFloat();
+            break;
+          }
+          case 64: {
+            HitBoxIndex = input.ReadInt32();
+            break;
+          }
+          case 85: {
+            AttackeeHitForceAngle = input.ReadFloat();
+            break;
+          }
+          case 114: {
+            if (hitPoint_ == null) {
+              HitPoint = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(HitPoint);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class HitCollision : pb::IMessage<HitCollision>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<HitCollision> _parser = new pb::MessageParser<HitCollision>(() => new HitCollision());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<HitCollision> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::HitCollisionReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HitCollision() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HitCollision(HitCollision other) : this() {
-    hitBoxIndex_ = other.hitBoxIndex_;
-    hitColliderType_ = other.hitColliderType_;
-    attackeeHitEntityAngle_ = other.attackeeHitEntityAngle_;
-    hitDir_ = other.hitDir_ != null ? other.hitDir_.Clone() : null;
-    hitPoint_ = other.hitPoint_ != null ? other.hitPoint_.Clone() : null;
-    attackeeHitForceAngle_ = other.attackeeHitForceAngle_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HitCollision Clone() {
-    return new HitCollision(this);
-  }
-
-  /// <summary>Field number for the "hit_box_index" field.</summary>
-  public const int HitBoxIndexFieldNumber = 8;
-  private int hitBoxIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int HitBoxIndex {
-    get { return hitBoxIndex_; }
-    set {
-      hitBoxIndex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "hit_collider_type" field.</summary>
-  public const int HitColliderTypeFieldNumber = 5;
-  private global::HitColliderType hitColliderType_ = global::HitColliderType.Invalid;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::HitColliderType HitColliderType {
-    get { return hitColliderType_; }
-    set {
-      hitColliderType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "attackee_hit_entity_angle" field.</summary>
-  public const int AttackeeHitEntityAngleFieldNumber = 7;
-  private float attackeeHitEntityAngle_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float AttackeeHitEntityAngle {
-    get { return attackeeHitEntityAngle_; }
-    set {
-      attackeeHitEntityAngle_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "hit_dir" field.</summary>
-  public const int HitDirFieldNumber = 3;
-  private global::Vector hitDir_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector HitDir {
-    get { return hitDir_; }
-    set {
-      hitDir_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "hit_point" field.</summary>
-  public const int HitPointFieldNumber = 14;
-  private global::Vector hitPoint_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector HitPoint {
-    get { return hitPoint_; }
-    set {
-      hitPoint_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "attackee_hit_force_angle" field.</summary>
-  public const int AttackeeHitForceAngleFieldNumber = 10;
-  private float attackeeHitForceAngle_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float AttackeeHitForceAngle {
-    get { return attackeeHitForceAngle_; }
-    set {
-      attackeeHitForceAngle_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as HitCollision);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(HitCollision other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (HitBoxIndex != other.HitBoxIndex) return false;
-    if (HitColliderType != other.HitColliderType) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AttackeeHitEntityAngle, other.AttackeeHitEntityAngle)) return false;
-    if (!object.Equals(HitDir, other.HitDir)) return false;
-    if (!object.Equals(HitPoint, other.HitPoint)) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AttackeeHitForceAngle, other.AttackeeHitForceAngle)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (HitBoxIndex != 0) hash ^= HitBoxIndex.GetHashCode();
-    if (HitColliderType != global::HitColliderType.Invalid) hash ^= HitColliderType.GetHashCode();
-    if (AttackeeHitEntityAngle != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AttackeeHitEntityAngle);
-    if (hitDir_ != null) hash ^= HitDir.GetHashCode();
-    if (hitPoint_ != null) hash ^= HitPoint.GetHashCode();
-    if (AttackeeHitForceAngle != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AttackeeHitForceAngle);
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (hitDir_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(HitDir);
-    }
-    if (HitColliderType != global::HitColliderType.Invalid) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) HitColliderType);
-    }
-    if (AttackeeHitEntityAngle != 0F) {
-      output.WriteRawTag(61);
-      output.WriteFloat(AttackeeHitEntityAngle);
-    }
-    if (HitBoxIndex != 0) {
-      output.WriteRawTag(64);
-      output.WriteInt32(HitBoxIndex);
-    }
-    if (AttackeeHitForceAngle != 0F) {
-      output.WriteRawTag(85);
-      output.WriteFloat(AttackeeHitForceAngle);
-    }
-    if (hitPoint_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(HitPoint);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (hitDir_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(HitDir);
-    }
-    if (HitColliderType != global::HitColliderType.Invalid) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) HitColliderType);
-    }
-    if (AttackeeHitEntityAngle != 0F) {
-      output.WriteRawTag(61);
-      output.WriteFloat(AttackeeHitEntityAngle);
-    }
-    if (HitBoxIndex != 0) {
-      output.WriteRawTag(64);
-      output.WriteInt32(HitBoxIndex);
-    }
-    if (AttackeeHitForceAngle != 0F) {
-      output.WriteRawTag(85);
-      output.WriteFloat(AttackeeHitForceAngle);
-    }
-    if (hitPoint_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(HitPoint);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (HitBoxIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(HitBoxIndex);
-    }
-    if (HitColliderType != global::HitColliderType.Invalid) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) HitColliderType);
-    }
-    if (AttackeeHitEntityAngle != 0F) {
-      size += 1 + 4;
-    }
-    if (hitDir_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(HitDir);
-    }
-    if (hitPoint_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(HitPoint);
-    }
-    if (AttackeeHitForceAngle != 0F) {
-      size += 1 + 4;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(HitCollision other) {
-    if (other == null) {
-      return;
-    }
-    if (other.HitBoxIndex != 0) {
-      HitBoxIndex = other.HitBoxIndex;
-    }
-    if (other.HitColliderType != global::HitColliderType.Invalid) {
-      HitColliderType = other.HitColliderType;
-    }
-    if (other.AttackeeHitEntityAngle != 0F) {
-      AttackeeHitEntityAngle = other.AttackeeHitEntityAngle;
-    }
-    if (other.hitDir_ != null) {
-      if (hitDir_ == null) {
-        HitDir = new global::Vector();
-      }
-      HitDir.MergeFrom(other.HitDir);
-    }
-    if (other.hitPoint_ != null) {
-      if (hitPoint_ == null) {
-        HitPoint = new global::Vector();
-      }
-      HitPoint.MergeFrom(other.HitPoint);
-    }
-    if (other.AttackeeHitForceAngle != 0F) {
-      AttackeeHitForceAngle = other.AttackeeHitForceAngle;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 26: {
-          if (hitDir_ == null) {
-            HitDir = new global::Vector();
-          }
-          input.ReadMessage(HitDir);
-          break;
-        }
-        case 40: {
-          HitColliderType = (global::HitColliderType) input.ReadEnum();
-          break;
-        }
-        case 61: {
-          AttackeeHitEntityAngle = input.ReadFloat();
-          break;
-        }
-        case 64: {
-          HitBoxIndex = input.ReadInt32();
-          break;
-        }
-        case 85: {
-          AttackeeHitForceAngle = input.ReadFloat();
-          break;
-        }
-        case 114: {
-          if (hitPoint_ == null) {
-            HitPoint = new global::Vector();
-          }
-          input.ReadMessage(HitPoint);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 26: {
-          if (hitDir_ == null) {
-            HitDir = new global::Vector();
-          }
-          input.ReadMessage(HitDir);
-          break;
-        }
-        case 40: {
-          HitColliderType = (global::HitColliderType) input.ReadEnum();
-          break;
-        }
-        case 61: {
-          AttackeeHitEntityAngle = input.ReadFloat();
-          break;
-        }
-        case 64: {
-          HitBoxIndex = input.ReadInt32();
-          break;
-        }
-        case 85: {
-          AttackeeHitForceAngle = input.ReadFloat();
-          break;
-        }
-        case 114: {
-          if (hitPoint_ == null) {
-            HitPoint = new global::Vector();
-          }
-          input.ReadMessage(HitPoint);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

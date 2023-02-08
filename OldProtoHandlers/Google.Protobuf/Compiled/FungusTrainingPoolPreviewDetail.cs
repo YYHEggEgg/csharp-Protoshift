@@ -9,251 +9,254 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FungusTrainingPoolPreviewDetail.proto</summary>
-public static partial class FungusTrainingPoolPreviewDetailReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FungusTrainingPoolPreviewDetail.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FungusTrainingPoolPreviewDetail.proto</summary>
+  public static partial class FungusTrainingPoolPreviewDetailReflection {
 
-  static FungusTrainingPoolPreviewDetailReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiVGdW5ndXNUcmFpbmluZ1Bvb2xQcmV2aWV3RGV0YWlsLnByb3RvGihGdW5n",
-          "dXNUcmFpbmluZ01vbnN0ZXJQcmV2aWV3RGV0YWlsLnByb3RvInwKH0Z1bmd1",
-          "c1RyYWluaW5nUG9vbFByZXZpZXdEZXRhaWwSDwoHcG9vbF9pZBgIIAEoDRJI",
-          "Chttb25zdGVyX3ByZXZpZXdfZGV0YWlsX2xpc3QYBiADKAsyIy5GdW5ndXNU",
-          "cmFpbmluZ01vbnN0ZXJQcmV2aWV3RGV0YWlsQh4KHGVtdS5ncmFzc2N1dHRl",
-          "ci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::FungusTrainingMonsterPreviewDetailReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FungusTrainingPoolPreviewDetail), global::FungusTrainingPoolPreviewDetail.Parser, new[]{ "PoolId", "MonsterPreviewDetailList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for FungusTrainingPoolPreviewDetail.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FungusTrainingPoolPreviewDetailReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiVGdW5ndXNUcmFpbmluZ1Bvb2xQcmV2aWV3RGV0YWlsLnByb3RvGihGdW5n",
+            "dXNUcmFpbmluZ01vbnN0ZXJQcmV2aWV3RGV0YWlsLnByb3RvInwKH0Z1bmd1",
+            "c1RyYWluaW5nUG9vbFByZXZpZXdEZXRhaWwSDwoHcG9vbF9pZBgIIAEoDRJI",
+            "Chttb25zdGVyX3ByZXZpZXdfZGV0YWlsX2xpc3QYBiADKAsyIy5GdW5ndXNU",
+            "cmFpbmluZ01vbnN0ZXJQcmV2aWV3RGV0YWlsQgyqAglPbGRQcm90b3NiBnBy",
+            "b3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.FungusTrainingMonsterPreviewDetailReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.FungusTrainingPoolPreviewDetail), global::OldProtos.FungusTrainingPoolPreviewDetail.Parser, new[]{ "PoolId", "MonsterPreviewDetailList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class FungusTrainingPoolPreviewDetail : pb::IMessage<FungusTrainingPoolPreviewDetail>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FungusTrainingPoolPreviewDetail> _parser = new pb::MessageParser<FungusTrainingPoolPreviewDetail>(() => new FungusTrainingPoolPreviewDetail());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FungusTrainingPoolPreviewDetail> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.FungusTrainingPoolPreviewDetailReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusTrainingPoolPreviewDetail() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusTrainingPoolPreviewDetail(FungusTrainingPoolPreviewDetail other) : this() {
+      poolId_ = other.poolId_;
+      monsterPreviewDetailList_ = other.monsterPreviewDetailList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusTrainingPoolPreviewDetail Clone() {
+      return new FungusTrainingPoolPreviewDetail(this);
+    }
+
+    /// <summary>Field number for the "pool_id" field.</summary>
+    public const int PoolIdFieldNumber = 8;
+    private uint poolId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PoolId {
+      get { return poolId_; }
+      set {
+        poolId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "monster_preview_detail_list" field.</summary>
+    public const int MonsterPreviewDetailListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::OldProtos.FungusTrainingMonsterPreviewDetail> _repeated_monsterPreviewDetailList_codec
+        = pb::FieldCodec.ForMessage(50, global::OldProtos.FungusTrainingMonsterPreviewDetail.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.FungusTrainingMonsterPreviewDetail> monsterPreviewDetailList_ = new pbc::RepeatedField<global::OldProtos.FungusTrainingMonsterPreviewDetail>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.FungusTrainingMonsterPreviewDetail> MonsterPreviewDetailList {
+      get { return monsterPreviewDetailList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FungusTrainingPoolPreviewDetail);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FungusTrainingPoolPreviewDetail other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PoolId != other.PoolId) return false;
+      if(!monsterPreviewDetailList_.Equals(other.monsterPreviewDetailList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PoolId != 0) hash ^= PoolId.GetHashCode();
+      hash ^= monsterPreviewDetailList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      monsterPreviewDetailList_.WriteTo(output, _repeated_monsterPreviewDetailList_codec);
+      if (PoolId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(PoolId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      monsterPreviewDetailList_.WriteTo(ref output, _repeated_monsterPreviewDetailList_codec);
+      if (PoolId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(PoolId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (PoolId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PoolId);
+      }
+      size += monsterPreviewDetailList_.CalculateSize(_repeated_monsterPreviewDetailList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FungusTrainingPoolPreviewDetail other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PoolId != 0) {
+        PoolId = other.PoolId;
+      }
+      monsterPreviewDetailList_.Add(other.monsterPreviewDetailList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 50: {
+            monsterPreviewDetailList_.AddEntriesFrom(input, _repeated_monsterPreviewDetailList_codec);
+            break;
+          }
+          case 64: {
+            PoolId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 50: {
+            monsterPreviewDetailList_.AddEntriesFrom(ref input, _repeated_monsterPreviewDetailList_codec);
+            break;
+          }
+          case 64: {
+            PoolId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class FungusTrainingPoolPreviewDetail : pb::IMessage<FungusTrainingPoolPreviewDetail>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<FungusTrainingPoolPreviewDetail> _parser = new pb::MessageParser<FungusTrainingPoolPreviewDetail>(() => new FungusTrainingPoolPreviewDetail());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<FungusTrainingPoolPreviewDetail> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::FungusTrainingPoolPreviewDetailReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusTrainingPoolPreviewDetail() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusTrainingPoolPreviewDetail(FungusTrainingPoolPreviewDetail other) : this() {
-    poolId_ = other.poolId_;
-    monsterPreviewDetailList_ = other.monsterPreviewDetailList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusTrainingPoolPreviewDetail Clone() {
-    return new FungusTrainingPoolPreviewDetail(this);
-  }
-
-  /// <summary>Field number for the "pool_id" field.</summary>
-  public const int PoolIdFieldNumber = 8;
-  private uint poolId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PoolId {
-    get { return poolId_; }
-    set {
-      poolId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "monster_preview_detail_list" field.</summary>
-  public const int MonsterPreviewDetailListFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::FungusTrainingMonsterPreviewDetail> _repeated_monsterPreviewDetailList_codec
-      = pb::FieldCodec.ForMessage(50, global::FungusTrainingMonsterPreviewDetail.Parser);
-  private readonly pbc::RepeatedField<global::FungusTrainingMonsterPreviewDetail> monsterPreviewDetailList_ = new pbc::RepeatedField<global::FungusTrainingMonsterPreviewDetail>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::FungusTrainingMonsterPreviewDetail> MonsterPreviewDetailList {
-    get { return monsterPreviewDetailList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as FungusTrainingPoolPreviewDetail);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(FungusTrainingPoolPreviewDetail other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (PoolId != other.PoolId) return false;
-    if(!monsterPreviewDetailList_.Equals(other.monsterPreviewDetailList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (PoolId != 0) hash ^= PoolId.GetHashCode();
-    hash ^= monsterPreviewDetailList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    monsterPreviewDetailList_.WriteTo(output, _repeated_monsterPreviewDetailList_codec);
-    if (PoolId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(PoolId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    monsterPreviewDetailList_.WriteTo(ref output, _repeated_monsterPreviewDetailList_codec);
-    if (PoolId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(PoolId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (PoolId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PoolId);
-    }
-    size += monsterPreviewDetailList_.CalculateSize(_repeated_monsterPreviewDetailList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(FungusTrainingPoolPreviewDetail other) {
-    if (other == null) {
-      return;
-    }
-    if (other.PoolId != 0) {
-      PoolId = other.PoolId;
-    }
-    monsterPreviewDetailList_.Add(other.monsterPreviewDetailList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 50: {
-          monsterPreviewDetailList_.AddEntriesFrom(input, _repeated_monsterPreviewDetailList_codec);
-          break;
-        }
-        case 64: {
-          PoolId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 50: {
-          monsterPreviewDetailList_.AddEntriesFrom(ref input, _repeated_monsterPreviewDetailList_codec);
-          break;
-        }
-        case 64: {
-          PoolId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

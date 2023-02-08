@@ -21,7 +21,7 @@ import "CityReputationHuntInfo.proto";
 import "CityReputationQuestInfo.proto";
 import "CityReputationRequestInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message CityReputationInfo {
   uint32 level = 4;

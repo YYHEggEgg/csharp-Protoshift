@@ -9,377 +9,380 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from WorldPlayerDieNotify.proto</summary>
-public static partial class WorldPlayerDieNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for WorldPlayerDieNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from WorldPlayerDieNotify.proto</summary>
+  public static partial class WorldPlayerDieNotifyReflection {
 
-  static WorldPlayerDieNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpXb3JsZFBsYXllckRpZU5vdGlmeS5wcm90bxoTUGxheWVyRGllVHlwZS5w",
-          "cm90byKJAQoUV29ybGRQbGF5ZXJEaWVOb3RpZnkSGgoSbXVyZGVyZXJfZW50",
-          "aXR5X2lkGAMgASgNEiAKCGRpZV90eXBlGA0gASgOMg4uUGxheWVyRGllVHlw",
-          "ZRIUCgptb25zdGVyX2lkGAYgASgNSAASEwoJZ2FkZ2V0X2lkGAwgASgNSABC",
-          "CAoGZW50aXR5QhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::PlayerDieTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::WorldPlayerDieNotify), global::WorldPlayerDieNotify.Parser, new[]{ "MurdererEntityId", "DieType", "MonsterId", "GadgetId" }, new[]{ "Entity" }, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for WorldPlayerDieNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static WorldPlayerDieNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpXb3JsZFBsYXllckRpZU5vdGlmeS5wcm90bxoTUGxheWVyRGllVHlwZS5w",
+            "cm90byKJAQoUV29ybGRQbGF5ZXJEaWVOb3RpZnkSGgoSbXVyZGVyZXJfZW50",
+            "aXR5X2lkGAMgASgNEiAKCGRpZV90eXBlGA0gASgOMg4uUGxheWVyRGllVHlw",
+            "ZRIUCgptb25zdGVyX2lkGAYgASgNSAASEwoJZ2FkZ2V0X2lkGAwgASgNSABC",
+            "CAoGZW50aXR5QgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.PlayerDieTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.WorldPlayerDieNotify), global::NewProtos.WorldPlayerDieNotify.Parser, new[]{ "MurdererEntityId", "DieType", "MonsterId", "GadgetId" }, new[]{ "Entity" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 259;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class WorldPlayerDieNotify : pb::IMessage<WorldPlayerDieNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<WorldPlayerDieNotify> _parser = new pb::MessageParser<WorldPlayerDieNotify>(() => new WorldPlayerDieNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<WorldPlayerDieNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.WorldPlayerDieNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WorldPlayerDieNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WorldPlayerDieNotify(WorldPlayerDieNotify other) : this() {
+      murdererEntityId_ = other.murdererEntityId_;
+      dieType_ = other.dieType_;
+      switch (other.EntityCase) {
+        case EntityOneofCase.MonsterId:
+          MonsterId = other.MonsterId;
+          break;
+        case EntityOneofCase.GadgetId:
+          GadgetId = other.GadgetId;
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WorldPlayerDieNotify Clone() {
+      return new WorldPlayerDieNotify(this);
+    }
+
+    /// <summary>Field number for the "murderer_entity_id" field.</summary>
+    public const int MurdererEntityIdFieldNumber = 3;
+    private uint murdererEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MurdererEntityId {
+      get { return murdererEntityId_; }
+      set {
+        murdererEntityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "die_type" field.</summary>
+    public const int DieTypeFieldNumber = 13;
+    private global::NewProtos.PlayerDieType dieType_ = global::NewProtos.PlayerDieType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.PlayerDieType DieType {
+      get { return dieType_; }
+      set {
+        dieType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "monster_id" field.</summary>
+    public const int MonsterIdFieldNumber = 6;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MonsterId {
+      get { return entityCase_ == EntityOneofCase.MonsterId ? (uint) entity_ : 0; }
+      set {
+        entity_ = value;
+        entityCase_ = EntityOneofCase.MonsterId;
+      }
+    }
+
+    /// <summary>Field number for the "gadget_id" field.</summary>
+    public const int GadgetIdFieldNumber = 12;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GadgetId {
+      get { return entityCase_ == EntityOneofCase.GadgetId ? (uint) entity_ : 0; }
+      set {
+        entity_ = value;
+        entityCase_ = EntityOneofCase.GadgetId;
+      }
+    }
+
+    private object entity_;
+    /// <summary>Enum of possible cases for the "entity" oneof.</summary>
+    public enum EntityOneofCase {
+      None = 0,
+      MonsterId = 6,
+      GadgetId = 12,
+    }
+    private EntityOneofCase entityCase_ = EntityOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EntityOneofCase EntityCase {
+      get { return entityCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearEntity() {
+      entityCase_ = EntityOneofCase.None;
+      entity_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as WorldPlayerDieNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(WorldPlayerDieNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MurdererEntityId != other.MurdererEntityId) return false;
+      if (DieType != other.DieType) return false;
+      if (MonsterId != other.MonsterId) return false;
+      if (GadgetId != other.GadgetId) return false;
+      if (EntityCase != other.EntityCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MurdererEntityId != 0) hash ^= MurdererEntityId.GetHashCode();
+      if (DieType != global::NewProtos.PlayerDieType.None) hash ^= DieType.GetHashCode();
+      if (entityCase_ == EntityOneofCase.MonsterId) hash ^= MonsterId.GetHashCode();
+      if (entityCase_ == EntityOneofCase.GadgetId) hash ^= GadgetId.GetHashCode();
+      hash ^= (int) entityCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (MurdererEntityId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MurdererEntityId);
+      }
+      if (entityCase_ == EntityOneofCase.MonsterId) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(MonsterId);
+      }
+      if (entityCase_ == EntityOneofCase.GadgetId) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(GadgetId);
+      }
+      if (DieType != global::NewProtos.PlayerDieType.None) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) DieType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (MurdererEntityId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MurdererEntityId);
+      }
+      if (entityCase_ == EntityOneofCase.MonsterId) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(MonsterId);
+      }
+      if (entityCase_ == EntityOneofCase.GadgetId) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(GadgetId);
+      }
+      if (DieType != global::NewProtos.PlayerDieType.None) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) DieType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (MurdererEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MurdererEntityId);
+      }
+      if (DieType != global::NewProtos.PlayerDieType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DieType);
+      }
+      if (entityCase_ == EntityOneofCase.MonsterId) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MonsterId);
+      }
+      if (entityCase_ == EntityOneofCase.GadgetId) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(WorldPlayerDieNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MurdererEntityId != 0) {
+        MurdererEntityId = other.MurdererEntityId;
+      }
+      if (other.DieType != global::NewProtos.PlayerDieType.None) {
+        DieType = other.DieType;
+      }
+      switch (other.EntityCase) {
+        case EntityOneofCase.MonsterId:
+          MonsterId = other.MonsterId;
+          break;
+        case EntityOneofCase.GadgetId:
+          GadgetId = other.GadgetId;
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            MurdererEntityId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            MonsterId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            GadgetId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            DieType = (global::NewProtos.PlayerDieType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            MurdererEntityId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            MonsterId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            GadgetId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            DieType = (global::NewProtos.PlayerDieType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 259;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class WorldPlayerDieNotify : pb::IMessage<WorldPlayerDieNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<WorldPlayerDieNotify> _parser = new pb::MessageParser<WorldPlayerDieNotify>(() => new WorldPlayerDieNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<WorldPlayerDieNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::WorldPlayerDieNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WorldPlayerDieNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WorldPlayerDieNotify(WorldPlayerDieNotify other) : this() {
-    murdererEntityId_ = other.murdererEntityId_;
-    dieType_ = other.dieType_;
-    switch (other.EntityCase) {
-      case EntityOneofCase.MonsterId:
-        MonsterId = other.MonsterId;
-        break;
-      case EntityOneofCase.GadgetId:
-        GadgetId = other.GadgetId;
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WorldPlayerDieNotify Clone() {
-    return new WorldPlayerDieNotify(this);
-  }
-
-  /// <summary>Field number for the "murderer_entity_id" field.</summary>
-  public const int MurdererEntityIdFieldNumber = 3;
-  private uint murdererEntityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MurdererEntityId {
-    get { return murdererEntityId_; }
-    set {
-      murdererEntityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "die_type" field.</summary>
-  public const int DieTypeFieldNumber = 13;
-  private global::PlayerDieType dieType_ = global::PlayerDieType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::PlayerDieType DieType {
-    get { return dieType_; }
-    set {
-      dieType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "monster_id" field.</summary>
-  public const int MonsterIdFieldNumber = 6;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MonsterId {
-    get { return entityCase_ == EntityOneofCase.MonsterId ? (uint) entity_ : 0; }
-    set {
-      entity_ = value;
-      entityCase_ = EntityOneofCase.MonsterId;
-    }
-  }
-
-  /// <summary>Field number for the "gadget_id" field.</summary>
-  public const int GadgetIdFieldNumber = 12;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GadgetId {
-    get { return entityCase_ == EntityOneofCase.GadgetId ? (uint) entity_ : 0; }
-    set {
-      entity_ = value;
-      entityCase_ = EntityOneofCase.GadgetId;
-    }
-  }
-
-  private object entity_;
-  /// <summary>Enum of possible cases for the "entity" oneof.</summary>
-  public enum EntityOneofCase {
-    None = 0,
-    MonsterId = 6,
-    GadgetId = 12,
-  }
-  private EntityOneofCase entityCase_ = EntityOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EntityOneofCase EntityCase {
-    get { return entityCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearEntity() {
-    entityCase_ = EntityOneofCase.None;
-    entity_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as WorldPlayerDieNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(WorldPlayerDieNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (MurdererEntityId != other.MurdererEntityId) return false;
-    if (DieType != other.DieType) return false;
-    if (MonsterId != other.MonsterId) return false;
-    if (GadgetId != other.GadgetId) return false;
-    if (EntityCase != other.EntityCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (MurdererEntityId != 0) hash ^= MurdererEntityId.GetHashCode();
-    if (DieType != global::PlayerDieType.None) hash ^= DieType.GetHashCode();
-    if (entityCase_ == EntityOneofCase.MonsterId) hash ^= MonsterId.GetHashCode();
-    if (entityCase_ == EntityOneofCase.GadgetId) hash ^= GadgetId.GetHashCode();
-    hash ^= (int) entityCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (MurdererEntityId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(MurdererEntityId);
-    }
-    if (entityCase_ == EntityOneofCase.MonsterId) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(MonsterId);
-    }
-    if (entityCase_ == EntityOneofCase.GadgetId) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(GadgetId);
-    }
-    if (DieType != global::PlayerDieType.None) {
-      output.WriteRawTag(104);
-      output.WriteEnum((int) DieType);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MurdererEntityId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(MurdererEntityId);
-    }
-    if (entityCase_ == EntityOneofCase.MonsterId) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(MonsterId);
-    }
-    if (entityCase_ == EntityOneofCase.GadgetId) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(GadgetId);
-    }
-    if (DieType != global::PlayerDieType.None) {
-      output.WriteRawTag(104);
-      output.WriteEnum((int) DieType);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (MurdererEntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MurdererEntityId);
-    }
-    if (DieType != global::PlayerDieType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) DieType);
-    }
-    if (entityCase_ == EntityOneofCase.MonsterId) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MonsterId);
-    }
-    if (entityCase_ == EntityOneofCase.GadgetId) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(WorldPlayerDieNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.MurdererEntityId != 0) {
-      MurdererEntityId = other.MurdererEntityId;
-    }
-    if (other.DieType != global::PlayerDieType.None) {
-      DieType = other.DieType;
-    }
-    switch (other.EntityCase) {
-      case EntityOneofCase.MonsterId:
-        MonsterId = other.MonsterId;
-        break;
-      case EntityOneofCase.GadgetId:
-        GadgetId = other.GadgetId;
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          MurdererEntityId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          MonsterId = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          GadgetId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          DieType = (global::PlayerDieType) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          MurdererEntityId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          MonsterId = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          GadgetId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          DieType = (global::PlayerDieType) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

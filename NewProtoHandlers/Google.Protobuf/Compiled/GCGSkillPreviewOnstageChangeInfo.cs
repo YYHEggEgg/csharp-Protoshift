@@ -9,260 +9,263 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGSkillPreviewOnstageChangeInfo.proto</summary>
-public static partial class GCGSkillPreviewOnstageChangeInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGSkillPreviewOnstageChangeInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGSkillPreviewOnstageChangeInfo.proto</summary>
+  public static partial class GCGSkillPreviewOnstageChangeInfoReflection {
 
-  static GCGSkillPreviewOnstageChangeInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiZHQ0dTa2lsbFByZXZpZXdPbnN0YWdlQ2hhbmdlSW5mby5wcm90byJcCiBH",
-          "Q0dTa2lsbFByZXZpZXdPbnN0YWdlQ2hhbmdlSW5mbxIbChNVbmszMzAwX0VI",
-          "SERQUEZESUZCGAggASgNEhsKE1VuazMzMDBfQkFMQURHRkFQS0wYDiABKA1C",
-          "FgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGSkillPreviewOnstageChangeInfo), global::GCGSkillPreviewOnstageChangeInfo.Parser, new[]{ "Unk3300EHHDPPFDIFB", "Unk3300BALADGFAPKL" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGSkillPreviewOnstageChangeInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGSkillPreviewOnstageChangeInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiZHQ0dTa2lsbFByZXZpZXdPbnN0YWdlQ2hhbmdlSW5mby5wcm90byJcCiBH",
+            "Q0dTa2lsbFByZXZpZXdPbnN0YWdlQ2hhbmdlSW5mbxIbChNVbmszMzAwX0VI",
+            "SERQUEZESUZCGAggASgNEhsKE1VuazMzMDBfQkFMQURHRkFQS0wYDiABKA1C",
+            "DKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GCGSkillPreviewOnstageChangeInfo), global::NewProtos.GCGSkillPreviewOnstageChangeInfo.Parser, new[]{ "Unk3300EHHDPPFDIFB", "Unk3300BALADGFAPKL" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GCGSkillPreviewOnstageChangeInfo : pb::IMessage<GCGSkillPreviewOnstageChangeInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGSkillPreviewOnstageChangeInfo> _parser = new pb::MessageParser<GCGSkillPreviewOnstageChangeInfo>(() => new GCGSkillPreviewOnstageChangeInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGSkillPreviewOnstageChangeInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.GCGSkillPreviewOnstageChangeInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGSkillPreviewOnstageChangeInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGSkillPreviewOnstageChangeInfo(GCGSkillPreviewOnstageChangeInfo other) : this() {
+      unk3300EHHDPPFDIFB_ = other.unk3300EHHDPPFDIFB_;
+      unk3300BALADGFAPKL_ = other.unk3300BALADGFAPKL_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGSkillPreviewOnstageChangeInfo Clone() {
+      return new GCGSkillPreviewOnstageChangeInfo(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_EHHDPPFDIFB" field.</summary>
+    public const int Unk3300EHHDPPFDIFBFieldNumber = 8;
+    private uint unk3300EHHDPPFDIFB_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300EHHDPPFDIFB {
+      get { return unk3300EHHDPPFDIFB_; }
+      set {
+        unk3300EHHDPPFDIFB_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BALADGFAPKL" field.</summary>
+    public const int Unk3300BALADGFAPKLFieldNumber = 14;
+    private uint unk3300BALADGFAPKL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300BALADGFAPKL {
+      get { return unk3300BALADGFAPKL_; }
+      set {
+        unk3300BALADGFAPKL_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGSkillPreviewOnstageChangeInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGSkillPreviewOnstageChangeInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Unk3300EHHDPPFDIFB != other.Unk3300EHHDPPFDIFB) return false;
+      if (Unk3300BALADGFAPKL != other.Unk3300BALADGFAPKL) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Unk3300EHHDPPFDIFB != 0) hash ^= Unk3300EHHDPPFDIFB.GetHashCode();
+      if (Unk3300BALADGFAPKL != 0) hash ^= Unk3300BALADGFAPKL.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Unk3300EHHDPPFDIFB != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300EHHDPPFDIFB);
+      }
+      if (Unk3300BALADGFAPKL != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300BALADGFAPKL);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300EHHDPPFDIFB != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300EHHDPPFDIFB);
+      }
+      if (Unk3300BALADGFAPKL != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300BALADGFAPKL);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Unk3300EHHDPPFDIFB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EHHDPPFDIFB);
+      }
+      if (Unk3300BALADGFAPKL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BALADGFAPKL);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGSkillPreviewOnstageChangeInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Unk3300EHHDPPFDIFB != 0) {
+        Unk3300EHHDPPFDIFB = other.Unk3300EHHDPPFDIFB;
+      }
+      if (other.Unk3300BALADGFAPKL != 0) {
+        Unk3300BALADGFAPKL = other.Unk3300BALADGFAPKL;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 64: {
+            Unk3300EHHDPPFDIFB = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300BALADGFAPKL = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 64: {
+            Unk3300EHHDPPFDIFB = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300BALADGFAPKL = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GCGSkillPreviewOnstageChangeInfo : pb::IMessage<GCGSkillPreviewOnstageChangeInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGSkillPreviewOnstageChangeInfo> _parser = new pb::MessageParser<GCGSkillPreviewOnstageChangeInfo>(() => new GCGSkillPreviewOnstageChangeInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGSkillPreviewOnstageChangeInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGSkillPreviewOnstageChangeInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGSkillPreviewOnstageChangeInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGSkillPreviewOnstageChangeInfo(GCGSkillPreviewOnstageChangeInfo other) : this() {
-    unk3300EHHDPPFDIFB_ = other.unk3300EHHDPPFDIFB_;
-    unk3300BALADGFAPKL_ = other.unk3300BALADGFAPKL_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGSkillPreviewOnstageChangeInfo Clone() {
-    return new GCGSkillPreviewOnstageChangeInfo(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_EHHDPPFDIFB" field.</summary>
-  public const int Unk3300EHHDPPFDIFBFieldNumber = 8;
-  private uint unk3300EHHDPPFDIFB_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300EHHDPPFDIFB {
-    get { return unk3300EHHDPPFDIFB_; }
-    set {
-      unk3300EHHDPPFDIFB_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_BALADGFAPKL" field.</summary>
-  public const int Unk3300BALADGFAPKLFieldNumber = 14;
-  private uint unk3300BALADGFAPKL_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300BALADGFAPKL {
-    get { return unk3300BALADGFAPKL_; }
-    set {
-      unk3300BALADGFAPKL_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGSkillPreviewOnstageChangeInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGSkillPreviewOnstageChangeInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Unk3300EHHDPPFDIFB != other.Unk3300EHHDPPFDIFB) return false;
-    if (Unk3300BALADGFAPKL != other.Unk3300BALADGFAPKL) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Unk3300EHHDPPFDIFB != 0) hash ^= Unk3300EHHDPPFDIFB.GetHashCode();
-    if (Unk3300BALADGFAPKL != 0) hash ^= Unk3300BALADGFAPKL.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Unk3300EHHDPPFDIFB != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Unk3300EHHDPPFDIFB);
-    }
-    if (Unk3300BALADGFAPKL != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300BALADGFAPKL);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Unk3300EHHDPPFDIFB != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Unk3300EHHDPPFDIFB);
-    }
-    if (Unk3300BALADGFAPKL != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300BALADGFAPKL);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Unk3300EHHDPPFDIFB != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EHHDPPFDIFB);
-    }
-    if (Unk3300BALADGFAPKL != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BALADGFAPKL);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGSkillPreviewOnstageChangeInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Unk3300EHHDPPFDIFB != 0) {
-      Unk3300EHHDPPFDIFB = other.Unk3300EHHDPPFDIFB;
-    }
-    if (other.Unk3300BALADGFAPKL != 0) {
-      Unk3300BALADGFAPKL = other.Unk3300BALADGFAPKL;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 64: {
-          Unk3300EHHDPPFDIFB = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300BALADGFAPKL = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 64: {
-          Unk3300EHHDPPFDIFB = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300BALADGFAPKL = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

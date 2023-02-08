@@ -9,45 +9,48 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MathExpressionType.proto</summary>
-public static partial class MathExpressionTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MathExpressionType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MathExpressionType.proto</summary>
+  public static partial class MathExpressionTypeReflection {
 
-  static MathExpressionTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhNYXRoRXhwcmVzc2lvblR5cGUucHJvdG8qkQIKEk1hdGhFeHByZXNzaW9u",
-          "VHlwZRIiCh5NQVRIX0VYUFJFU1NJT05fVFlQRV9FWFBSX05PTkUQABIjCh9N",
-          "QVRIX0VYUFJFU1NJT05fVFlQRV9FWFBSX0xFVkVMEAESKwonTUFUSF9FWFBS",
-          "RVNTSU9OX1RZUEVfRVhQUl9SRUdJU1RFUl9USU1FEAISLQopTUFUSF9FWFBS",
-          "RVNTSU9OX1RZUEVfRVhQUl9MQVNUX0xPR0lOX1RJTUUQAxIuCipNQVRIX0VY",
-          "UFJFU1NJT05fVFlQRV9FWFBSX1RPVEFMX0xPR0lOX0RBWVMQBBImCiJNQVRI",
-          "X0VYUFJFU1NJT05fVFlQRV9FWFBSX1BMQVRGT1JNEAVCFgoUb3JnLnNvcmFw",
-          "b2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MathExpressionType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for MathExpressionType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MathExpressionTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhNYXRoRXhwcmVzc2lvblR5cGUucHJvdG8qkQIKEk1hdGhFeHByZXNzaW9u",
+            "VHlwZRIiCh5NQVRIX0VYUFJFU1NJT05fVFlQRV9FWFBSX05PTkUQABIjCh9N",
+            "QVRIX0VYUFJFU1NJT05fVFlQRV9FWFBSX0xFVkVMEAESKwonTUFUSF9FWFBS",
+            "RVNTSU9OX1RZUEVfRVhQUl9SRUdJU1RFUl9USU1FEAISLQopTUFUSF9FWFBS",
+            "RVNTSU9OX1RZUEVfRVhQUl9MQVNUX0xPR0lOX1RJTUUQAxIuCipNQVRIX0VY",
+            "UFJFU1NJT05fVFlQRV9FWFBSX1RPVEFMX0xPR0lOX0RBWVMQBBImCiJNQVRI",
+            "X0VYUFJFU1NJT05fVFlQRV9FWFBSX1BMQVRGT1JNEAVCDKoCCU5ld1Byb3Rv",
+            "c2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.MathExpressionType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum MathExpressionType {
+    [pbr::OriginalName("MATH_EXPRESSION_TYPE_EXPR_NONE")] ExprNone = 0,
+    [pbr::OriginalName("MATH_EXPRESSION_TYPE_EXPR_LEVEL")] ExprLevel = 1,
+    [pbr::OriginalName("MATH_EXPRESSION_TYPE_EXPR_REGISTER_TIME")] ExprRegisterTime = 2,
+    [pbr::OriginalName("MATH_EXPRESSION_TYPE_EXPR_LAST_LOGIN_TIME")] ExprLastLoginTime = 3,
+    [pbr::OriginalName("MATH_EXPRESSION_TYPE_EXPR_TOTAL_LOGIN_DAYS")] ExprTotalLoginDays = 4,
+    [pbr::OriginalName("MATH_EXPRESSION_TYPE_EXPR_PLATFORM")] ExprPlatform = 5,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum MathExpressionType {
-  [pbr::OriginalName("MATH_EXPRESSION_TYPE_EXPR_NONE")] ExprNone = 0,
-  [pbr::OriginalName("MATH_EXPRESSION_TYPE_EXPR_LEVEL")] ExprLevel = 1,
-  [pbr::OriginalName("MATH_EXPRESSION_TYPE_EXPR_REGISTER_TIME")] ExprRegisterTime = 2,
-  [pbr::OriginalName("MATH_EXPRESSION_TYPE_EXPR_LAST_LOGIN_TIME")] ExprLastLoginTime = 3,
-  [pbr::OriginalName("MATH_EXPRESSION_TYPE_EXPR_TOTAL_LOGIN_DAYS")] ExprTotalLoginDays = 4,
-  [pbr::OriginalName("MATH_EXPRESSION_TYPE_EXPR_PLATFORM")] ExprPlatform = 5,
-}
-
-#endregion
-
 
 #endregion Designer generated code

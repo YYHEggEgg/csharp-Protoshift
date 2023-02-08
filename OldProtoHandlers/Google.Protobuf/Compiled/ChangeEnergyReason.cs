@@ -9,37 +9,40 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ChangeEnergyReason.proto</summary>
-public static partial class ChangeEnergyReasonReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ChangeEnergyReason.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ChangeEnergyReason.proto</summary>
+  public static partial class ChangeEnergyReasonReflection {
 
-  static ChangeEnergyReasonReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhDaGFuZ2VFbmVyZ3lSZWFzb24ucHJvdG8qWQoSQ2hhbmdlRW5lcmd5UmVh",
-          "c29uEh0KGUNIQU5HRV9FTkVSR1lfUkVBU09OX05PTkUQABIkCiBDSEFOR0Vf",
-          "RU5FUkdZX1JFQVNPTl9TS0lMTF9TVEFSVBABQh4KHGVtdS5ncmFzc2N1dHRl",
-          "ci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ChangeEnergyReason), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for ChangeEnergyReason.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ChangeEnergyReasonReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhDaGFuZ2VFbmVyZ3lSZWFzb24ucHJvdG8qWQoSQ2hhbmdlRW5lcmd5UmVh",
+            "c29uEh0KGUNIQU5HRV9FTkVSR1lfUkVBU09OX05PTkUQABIkCiBDSEFOR0Vf",
+            "RU5FUkdZX1JFQVNPTl9TS0lMTF9TVEFSVBABQgyqAglPbGRQcm90b3NiBnBy",
+            "b3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.ChangeEnergyReason), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum ChangeEnergyReason {
+    [pbr::OriginalName("CHANGE_ENERGY_REASON_NONE")] None = 0,
+    [pbr::OriginalName("CHANGE_ENERGY_REASON_SKILL_START")] SkillStart = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum ChangeEnergyReason {
-  [pbr::OriginalName("CHANGE_ENERGY_REASON_NONE")] None = 0,
-  [pbr::OriginalName("CHANGE_ENERGY_REASON_SKILL_START")] SkillStart = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -9,58 +9,61 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ProtEntityType.proto</summary>
-public static partial class ProtEntityTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ProtEntityType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ProtEntityType.proto</summary>
+  public static partial class ProtEntityTypeReflection {
 
-  static ProtEntityTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRQcm90RW50aXR5VHlwZS5wcm90byrRAwoOUHJvdEVudGl0eVR5cGUSGQoV",
-          "UFJPVF9FTlRJVFlfVFlQRV9OT05FEAASGwoXUFJPVF9FTlRJVFlfVFlQRV9B",
-          "VkFUQVIQARIcChhQUk9UX0VOVElUWV9UWVBFX01PTlNURVIQAhIYChRQUk9U",
-          "X0VOVElUWV9UWVBFX05QQxADEhsKF1BST1RfRU5USVRZX1RZUEVfR0FER0VU",
-          "EAQSGwoXUFJPVF9FTlRJVFlfVFlQRV9SRUdJT04QBRIbChdQUk9UX0VOVElU",
-          "WV9UWVBFX1dFQVBPThAGEhwKGFBST1RfRU5USVRZX1RZUEVfV0VBVEhFUhAH",
-          "EhoKFlBST1RfRU5USVRZX1RZUEVfU0NFTkUQCBIZChVQUk9UX0VOVElUWV9U",
-          "WVBFX1RFQU0QCRIjCh9QUk9UX0VOVElUWV9UWVBFX01BU1NJVkVfRU5USVRZ",
-          "EAoSHQoZUFJPVF9FTlRJVFlfVFlQRV9NUF9MRVZFTBALEiUKIVBST1RfRU5U",
-          "SVRZX1RZUEVfUExBWV9URUFNX0VOVElUWRAMEh4KGlBST1RfRU5USVRZX1RZ",
-          "UEVfRVlFX1BPSU5UEA0SGAoUUFJPVF9FTlRJVFlfVFlQRV9NQVgQDkIeChxl",
-          "bXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ProtEntityType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for ProtEntityType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ProtEntityTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRQcm90RW50aXR5VHlwZS5wcm90byrRAwoOUHJvdEVudGl0eVR5cGUSGQoV",
+            "UFJPVF9FTlRJVFlfVFlQRV9OT05FEAASGwoXUFJPVF9FTlRJVFlfVFlQRV9B",
+            "VkFUQVIQARIcChhQUk9UX0VOVElUWV9UWVBFX01PTlNURVIQAhIYChRQUk9U",
+            "X0VOVElUWV9UWVBFX05QQxADEhsKF1BST1RfRU5USVRZX1RZUEVfR0FER0VU",
+            "EAQSGwoXUFJPVF9FTlRJVFlfVFlQRV9SRUdJT04QBRIbChdQUk9UX0VOVElU",
+            "WV9UWVBFX1dFQVBPThAGEhwKGFBST1RfRU5USVRZX1RZUEVfV0VBVEhFUhAH",
+            "EhoKFlBST1RfRU5USVRZX1RZUEVfU0NFTkUQCBIZChVQUk9UX0VOVElUWV9U",
+            "WVBFX1RFQU0QCRIjCh9QUk9UX0VOVElUWV9UWVBFX01BU1NJVkVfRU5USVRZ",
+            "EAoSHQoZUFJPVF9FTlRJVFlfVFlQRV9NUF9MRVZFTBALEiUKIVBST1RfRU5U",
+            "SVRZX1RZUEVfUExBWV9URUFNX0VOVElUWRAMEh4KGlBST1RfRU5USVRZX1RZ",
+            "UEVfRVlFX1BPSU5UEA0SGAoUUFJPVF9FTlRJVFlfVFlQRV9NQVgQDkIMqgIJ",
+            "T2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.ProtEntityType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum ProtEntityType {
+    [pbr::OriginalName("PROT_ENTITY_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_AVATAR")] Avatar = 1,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_MONSTER")] Monster = 2,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_NPC")] Npc = 3,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_GADGET")] Gadget = 4,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_REGION")] Region = 5,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_WEAPON")] Weapon = 6,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_WEATHER")] Weather = 7,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_SCENE")] Scene = 8,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_TEAM")] Team = 9,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_MASSIVE_ENTITY")] MassiveEntity = 10,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_MP_LEVEL")] MpLevel = 11,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_PLAY_TEAM_ENTITY")] PlayTeamEntity = 12,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_EYE_POINT")] EyePoint = 13,
+    [pbr::OriginalName("PROT_ENTITY_TYPE_MAX")] Max = 14,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum ProtEntityType {
-  [pbr::OriginalName("PROT_ENTITY_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_AVATAR")] Avatar = 1,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_MONSTER")] Monster = 2,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_NPC")] Npc = 3,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_GADGET")] Gadget = 4,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_REGION")] Region = 5,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_WEAPON")] Weapon = 6,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_WEATHER")] Weather = 7,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_SCENE")] Scene = 8,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_TEAM")] Team = 9,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_MASSIVE_ENTITY")] MassiveEntity = 10,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_MP_LEVEL")] MpLevel = 11,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_PLAY_TEAM_ENTITY")] PlayTeamEntity = 12,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_EYE_POINT")] EyePoint = 13,
-  [pbr::OriginalName("PROT_ENTITY_TYPE_MAX")] Max = 14,
-}
-
-#endregion
-
 
 #endregion Designer generated code

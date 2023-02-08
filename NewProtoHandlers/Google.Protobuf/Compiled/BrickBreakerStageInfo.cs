@@ -9,289 +9,291 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from BrickBreakerStageInfo.proto</summary>
-public static partial class BrickBreakerStageInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for BrickBreakerStageInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from BrickBreakerStageInfo.proto</summary>
+  public static partial class BrickBreakerStageInfoReflection {
 
-  static BrickBreakerStageInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtCcmlja0JyZWFrZXJTdGFnZUluZm8ucHJvdG8aIkJyaWNrQnJlYWtlclBs",
-          "YXllckJhdHRsZUluZm8ucHJvdG8aG0JyaWNrQnJlYWtlclN0YWdlVHlwZS5w",
-          "cm90byKOAQoVQnJpY2tCcmVha2VyU3RhZ2VJbmZvEhAKCGxldmVsX2lkGAcg",
-          "ASgNEjcKEGJhdHRsZV9pbmZvX2xpc3QYAyADKAsyHS5Ccmlja0JyZWFrZXJQ",
-          "bGF5ZXJCYXR0bGVJbmZvEioKCnN0YWdlX3R5cGUYBSABKA4yFi5Ccmlja0Jy",
-          "ZWFrZXJTdGFnZVR5cGVCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3Rv",
-          "Mw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::BrickBreakerPlayerBattleInfoReflection.Descriptor, global::BrickBreakerStageTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::BrickBreakerStageInfo), global::BrickBreakerStageInfo.Parser, new[]{ "LevelId", "BattleInfoList", "StageType" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for BrickBreakerStageInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static BrickBreakerStageInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtCcmlja0JyZWFrZXJTdGFnZUluZm8ucHJvdG8aIkJyaWNrQnJlYWtlclBs",
+            "YXllckJhdHRsZUluZm8ucHJvdG8aG0JyaWNrQnJlYWtlclN0YWdlVHlwZS5w",
+            "cm90byKOAQoVQnJpY2tCcmVha2VyU3RhZ2VJbmZvEhAKCGxldmVsX2lkGAcg",
+            "ASgNEjcKEGJhdHRsZV9pbmZvX2xpc3QYAyADKAsyHS5Ccmlja0JyZWFrZXJQ",
+            "bGF5ZXJCYXR0bGVJbmZvEioKCnN0YWdlX3R5cGUYBSABKA4yFi5Ccmlja0Jy",
+            "ZWFrZXJTdGFnZVR5cGVCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.BrickBreakerPlayerBattleInfoReflection.Descriptor, global::NewProtos.BrickBreakerStageTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.BrickBreakerStageInfo), global::NewProtos.BrickBreakerStageInfo.Parser, new[]{ "LevelId", "BattleInfoList", "StageType" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class BrickBreakerStageInfo : pb::IMessage<BrickBreakerStageInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BrickBreakerStageInfo> _parser = new pb::MessageParser<BrickBreakerStageInfo>(() => new BrickBreakerStageInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<BrickBreakerStageInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.BrickBreakerStageInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BrickBreakerStageInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BrickBreakerStageInfo(BrickBreakerStageInfo other) : this() {
+      levelId_ = other.levelId_;
+      battleInfoList_ = other.battleInfoList_.Clone();
+      stageType_ = other.stageType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BrickBreakerStageInfo Clone() {
+      return new BrickBreakerStageInfo(this);
+    }
+
+    /// <summary>Field number for the "level_id" field.</summary>
+    public const int LevelIdFieldNumber = 7;
+    private uint levelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LevelId {
+      get { return levelId_; }
+      set {
+        levelId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "battle_info_list" field.</summary>
+    public const int BattleInfoListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::NewProtos.BrickBreakerPlayerBattleInfo> _repeated_battleInfoList_codec
+        = pb::FieldCodec.ForMessage(26, global::NewProtos.BrickBreakerPlayerBattleInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.BrickBreakerPlayerBattleInfo> battleInfoList_ = new pbc::RepeatedField<global::NewProtos.BrickBreakerPlayerBattleInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.BrickBreakerPlayerBattleInfo> BattleInfoList {
+      get { return battleInfoList_; }
+    }
+
+    /// <summary>Field number for the "stage_type" field.</summary>
+    public const int StageTypeFieldNumber = 5;
+    private global::NewProtos.BrickBreakerStageType stageType_ = global::NewProtos.BrickBreakerStageType.Prepare;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.BrickBreakerStageType StageType {
+      get { return stageType_; }
+      set {
+        stageType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as BrickBreakerStageInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(BrickBreakerStageInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (LevelId != other.LevelId) return false;
+      if(!battleInfoList_.Equals(other.battleInfoList_)) return false;
+      if (StageType != other.StageType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (LevelId != 0) hash ^= LevelId.GetHashCode();
+      hash ^= battleInfoList_.GetHashCode();
+      if (StageType != global::NewProtos.BrickBreakerStageType.Prepare) hash ^= StageType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      battleInfoList_.WriteTo(output, _repeated_battleInfoList_codec);
+      if (StageType != global::NewProtos.BrickBreakerStageType.Prepare) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) StageType);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(LevelId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      battleInfoList_.WriteTo(ref output, _repeated_battleInfoList_codec);
+      if (StageType != global::NewProtos.BrickBreakerStageType.Prepare) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) StageType);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(LevelId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (LevelId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
+      }
+      size += battleInfoList_.CalculateSize(_repeated_battleInfoList_codec);
+      if (StageType != global::NewProtos.BrickBreakerStageType.Prepare) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StageType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(BrickBreakerStageInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.LevelId != 0) {
+        LevelId = other.LevelId;
+      }
+      battleInfoList_.Add(other.battleInfoList_);
+      if (other.StageType != global::NewProtos.BrickBreakerStageType.Prepare) {
+        StageType = other.StageType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 26: {
+            battleInfoList_.AddEntriesFrom(input, _repeated_battleInfoList_codec);
+            break;
+          }
+          case 40: {
+            StageType = (global::NewProtos.BrickBreakerStageType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            LevelId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 26: {
+            battleInfoList_.AddEntriesFrom(ref input, _repeated_battleInfoList_codec);
+            break;
+          }
+          case 40: {
+            StageType = (global::NewProtos.BrickBreakerStageType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            LevelId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class BrickBreakerStageInfo : pb::IMessage<BrickBreakerStageInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<BrickBreakerStageInfo> _parser = new pb::MessageParser<BrickBreakerStageInfo>(() => new BrickBreakerStageInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<BrickBreakerStageInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::BrickBreakerStageInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BrickBreakerStageInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BrickBreakerStageInfo(BrickBreakerStageInfo other) : this() {
-    levelId_ = other.levelId_;
-    battleInfoList_ = other.battleInfoList_.Clone();
-    stageType_ = other.stageType_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BrickBreakerStageInfo Clone() {
-    return new BrickBreakerStageInfo(this);
-  }
-
-  /// <summary>Field number for the "level_id" field.</summary>
-  public const int LevelIdFieldNumber = 7;
-  private uint levelId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LevelId {
-    get { return levelId_; }
-    set {
-      levelId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "battle_info_list" field.</summary>
-  public const int BattleInfoListFieldNumber = 3;
-  private static readonly pb::FieldCodec<global::BrickBreakerPlayerBattleInfo> _repeated_battleInfoList_codec
-      = pb::FieldCodec.ForMessage(26, global::BrickBreakerPlayerBattleInfo.Parser);
-  private readonly pbc::RepeatedField<global::BrickBreakerPlayerBattleInfo> battleInfoList_ = new pbc::RepeatedField<global::BrickBreakerPlayerBattleInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::BrickBreakerPlayerBattleInfo> BattleInfoList {
-    get { return battleInfoList_; }
-  }
-
-  /// <summary>Field number for the "stage_type" field.</summary>
-  public const int StageTypeFieldNumber = 5;
-  private global::BrickBreakerStageType stageType_ = global::BrickBreakerStageType.Prepare;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::BrickBreakerStageType StageType {
-    get { return stageType_; }
-    set {
-      stageType_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as BrickBreakerStageInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(BrickBreakerStageInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (LevelId != other.LevelId) return false;
-    if(!battleInfoList_.Equals(other.battleInfoList_)) return false;
-    if (StageType != other.StageType) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (LevelId != 0) hash ^= LevelId.GetHashCode();
-    hash ^= battleInfoList_.GetHashCode();
-    if (StageType != global::BrickBreakerStageType.Prepare) hash ^= StageType.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    battleInfoList_.WriteTo(output, _repeated_battleInfoList_codec);
-    if (StageType != global::BrickBreakerStageType.Prepare) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) StageType);
-    }
-    if (LevelId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(LevelId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    battleInfoList_.WriteTo(ref output, _repeated_battleInfoList_codec);
-    if (StageType != global::BrickBreakerStageType.Prepare) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) StageType);
-    }
-    if (LevelId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(LevelId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (LevelId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
-    }
-    size += battleInfoList_.CalculateSize(_repeated_battleInfoList_codec);
-    if (StageType != global::BrickBreakerStageType.Prepare) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StageType);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(BrickBreakerStageInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.LevelId != 0) {
-      LevelId = other.LevelId;
-    }
-    battleInfoList_.Add(other.battleInfoList_);
-    if (other.StageType != global::BrickBreakerStageType.Prepare) {
-      StageType = other.StageType;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 26: {
-          battleInfoList_.AddEntriesFrom(input, _repeated_battleInfoList_codec);
-          break;
-        }
-        case 40: {
-          StageType = (global::BrickBreakerStageType) input.ReadEnum();
-          break;
-        }
-        case 56: {
-          LevelId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 26: {
-          battleInfoList_.AddEntriesFrom(ref input, _repeated_battleInfoList_codec);
-          break;
-        }
-        case 40: {
-          StageType = (global::BrickBreakerStageType) input.ReadEnum();
-          break;
-        }
-        case 56: {
-          LevelId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

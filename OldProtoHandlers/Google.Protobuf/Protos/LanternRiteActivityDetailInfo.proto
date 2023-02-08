@@ -20,7 +20,7 @@ import "LanternProjectionInfo.proto";
 import "LanternRiteFireworksInfo.proto";
 import "SalvageStageInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message LanternRiteActivityDetailInfo {
   LanternProjectionInfo projection_info = 13;

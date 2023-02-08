@@ -9,35 +9,37 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from VehicleSlot.proto</summary>
-public static partial class VehicleSlotReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for VehicleSlot.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from VehicleSlot.proto</summary>
+  public static partial class VehicleSlotReflection {
 
-  static VehicleSlotReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChFWZWhpY2xlU2xvdC5wcm90byooCgtWZWhpY2xlU2xvdBIZChVWRUhJQ0xF",
-          "X1NMT1RfT1BFUkFUT1IQAEIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJv",
-          "dG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::VehicleSlot), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for VehicleSlot.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static VehicleSlotReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChFWZWhpY2xlU2xvdC5wcm90byooCgtWZWhpY2xlU2xvdBIZChVWRUhJQ0xF",
+            "X1NMT1RfT1BFUkFUT1IQAEIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.VehicleSlot), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum VehicleSlot {
+    [pbr::OriginalName("VEHICLE_SLOT_OPERATOR")] Operator = 0,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum VehicleSlot {
-  [pbr::OriginalName("VEHICLE_SLOT_OPERATOR")] Operator = 0,
-}
-
-#endregion
-
 
 #endregion Designer generated code

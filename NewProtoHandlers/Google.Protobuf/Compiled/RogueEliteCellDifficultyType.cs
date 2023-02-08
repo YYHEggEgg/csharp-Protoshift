@@ -9,38 +9,40 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from RogueEliteCellDifficultyType.proto</summary>
-public static partial class RogueEliteCellDifficultyTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for RogueEliteCellDifficultyType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from RogueEliteCellDifficultyType.proto</summary>
+  public static partial class RogueEliteCellDifficultyTypeReflection {
 
-  static RogueEliteCellDifficultyTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiJSb2d1ZUVsaXRlQ2VsbERpZmZpY3VsdHlUeXBlLnByb3RvKnYKHFJvZ3Vl",
-          "RWxpdGVDZWxsRGlmZmljdWx0eVR5cGUSKwonUk9HVUVfRUxJVEVfQ0VMTF9E",
-          "SUZGSUNVTFRZX1RZUEVfTk9STUFMEAASKQolUk9HVUVfRUxJVEVfQ0VMTF9E",
-          "SUZGSUNVTFRZX1RZUEVfSEFSRBABQhYKFG9yZy5zb3JhcG9pbnRhLnByb3Rv",
-          "YgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::RogueEliteCellDifficultyType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for RogueEliteCellDifficultyType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static RogueEliteCellDifficultyTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiJSb2d1ZUVsaXRlQ2VsbERpZmZpY3VsdHlUeXBlLnByb3RvKnYKHFJvZ3Vl",
+            "RWxpdGVDZWxsRGlmZmljdWx0eVR5cGUSKwonUk9HVUVfRUxJVEVfQ0VMTF9E",
+            "SUZGSUNVTFRZX1RZUEVfTk9STUFMEAASKQolUk9HVUVfRUxJVEVfQ0VMTF9E",
+            "SUZGSUNVTFRZX1RZUEVfSEFSRBABQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.RogueEliteCellDifficultyType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum RogueEliteCellDifficultyType {
+    [pbr::OriginalName("ROGUE_ELITE_CELL_DIFFICULTY_TYPE_NORMAL")] Normal = 0,
+    [pbr::OriginalName("ROGUE_ELITE_CELL_DIFFICULTY_TYPE_HARD")] Hard = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum RogueEliteCellDifficultyType {
-  [pbr::OriginalName("ROGUE_ELITE_CELL_DIFFICULTY_TYPE_NORMAL")] Normal = 0,
-  [pbr::OriginalName("ROGUE_ELITE_CELL_DIFFICULTY_TYPE_HARD")] Hard = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

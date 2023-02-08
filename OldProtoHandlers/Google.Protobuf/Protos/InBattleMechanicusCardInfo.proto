@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "InBattleMechanicusCardChallengeState.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message InBattleMechanicusCardInfo {
   uint32 rand_effect_id = 12;

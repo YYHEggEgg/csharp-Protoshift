@@ -9,40 +9,43 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ClientInputType.proto</summary>
-public static partial class ClientInputTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ClientInputType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ClientInputType.proto</summary>
+  public static partial class ClientInputTypeReflection {
 
-  static ClientInputTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVDbGllbnRJbnB1dFR5cGUucHJvdG8qlQEKD0NsaWVudElucHV0VHlwZRIa",
-          "ChZDTElFTlRfSU5QVVRfVFlQRV9OT05FEAASJAogQ0xJRU5UX0lOUFVUX1RZ",
-          "UEVfS0VZQk9BUkRfTU9VU0UQARIdChlDTElFTlRfSU5QVVRfVFlQRV9HQU1F",
-          "UEFEEAISIQodQ0xJRU5UX0lOUFVUX1RZUEVfVE9VQ0hfUEFORUwQA0IWChRv",
-          "cmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ClientInputType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for ClientInputType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ClientInputTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVDbGllbnRJbnB1dFR5cGUucHJvdG8qlQEKD0NsaWVudElucHV0VHlwZRIa",
+            "ChZDTElFTlRfSU5QVVRfVFlQRV9OT05FEAASJAogQ0xJRU5UX0lOUFVUX1RZ",
+            "UEVfS0VZQk9BUkRfTU9VU0UQARIdChlDTElFTlRfSU5QVVRfVFlQRV9HQU1F",
+            "UEFEEAISIQodQ0xJRU5UX0lOUFVUX1RZUEVfVE9VQ0hfUEFORUwQA0IMqgIJ",
+            "TmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.ClientInputType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum ClientInputType {
+    [pbr::OriginalName("CLIENT_INPUT_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("CLIENT_INPUT_TYPE_KEYBOARD_MOUSE")] KeyboardMouse = 1,
+    [pbr::OriginalName("CLIENT_INPUT_TYPE_GAMEPAD")] Gamepad = 2,
+    [pbr::OriginalName("CLIENT_INPUT_TYPE_TOUCH_PANEL")] TouchPanel = 3,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum ClientInputType {
-  [pbr::OriginalName("CLIENT_INPUT_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("CLIENT_INPUT_TYPE_KEYBOARD_MOUSE")] KeyboardMouse = 1,
-  [pbr::OriginalName("CLIENT_INPUT_TYPE_GAMEPAD")] Gamepad = 2,
-  [pbr::OriginalName("CLIENT_INPUT_TYPE_TOUCH_PANEL")] TouchPanel = 3,
-}
-
-#endregion
-
 
 #endregion Designer generated code
