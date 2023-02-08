@@ -9,391 +9,393 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ExpeditionActivityDetailInfo.proto</summary>
-public static partial class ExpeditionActivityDetailInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ExpeditionActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ExpeditionActivityDetailInfo.proto</summary>
+  public static partial class ExpeditionActivityDetailInfoReflection {
 
-  static ExpeditionActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiJFeHBlZGl0aW9uQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGh1FeHBlZGl0",
-          "aW9uQ2hhbGxlbmdlSW5mby5wcm90bxoYRXhwZWRpdGlvblBhdGhJbmZvLnBy",
-          "b3RvIu0BChxFeHBlZGl0aW9uQWN0aXZpdHlEZXRhaWxJbmZvEhgKEGN1cl9j",
-          "aGFsbGVuZ2VfaWQYBSABKA0SNQoTY2hhbGxlbmdlX2luZm9fbGlzdBgKIAMo",
-          "CzIYLkV4cGVkaXRpb25DaGFsbGVuZ2VJbmZvEhgKEGV4cGVkaXRpb25fY291",
-          "bnQYAiABKA0SGgoSY29udGVudF9jbG9zZV90aW1lGAQgASgNEhkKEWlzX2Nv",
-          "bnRlbnRfY2xvc2VkGAggASgIEisKDnBhdGhfaW5mb19saXN0GA8gAygLMhMu",
-          "RXhwZWRpdGlvblBhdGhJbmZvQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xk",
-          "cHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ExpeditionChallengeInfoReflection.Descriptor, global::ExpeditionPathInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ExpeditionActivityDetailInfo), global::ExpeditionActivityDetailInfo.Parser, new[]{ "CurChallengeId", "ChallengeInfoList", "ExpeditionCount", "ContentCloseTime", "IsContentClosed", "PathInfoList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ExpeditionActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ExpeditionActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiJFeHBlZGl0aW9uQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGh1FeHBlZGl0",
+            "aW9uQ2hhbGxlbmdlSW5mby5wcm90bxoYRXhwZWRpdGlvblBhdGhJbmZvLnBy",
+            "b3RvIu0BChxFeHBlZGl0aW9uQWN0aXZpdHlEZXRhaWxJbmZvEhgKEGN1cl9j",
+            "aGFsbGVuZ2VfaWQYBSABKA0SNQoTY2hhbGxlbmdlX2luZm9fbGlzdBgKIAMo",
+            "CzIYLkV4cGVkaXRpb25DaGFsbGVuZ2VJbmZvEhgKEGV4cGVkaXRpb25fY291",
+            "bnQYAiABKA0SGgoSY29udGVudF9jbG9zZV90aW1lGAQgASgNEhkKEWlzX2Nv",
+            "bnRlbnRfY2xvc2VkGAggASgIEisKDnBhdGhfaW5mb19saXN0GA8gAygLMhMu",
+            "RXhwZWRpdGlvblBhdGhJbmZvQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ExpeditionChallengeInfoReflection.Descriptor, global::OldProtos.ExpeditionPathInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ExpeditionActivityDetailInfo), global::OldProtos.ExpeditionActivityDetailInfo.Parser, new[]{ "CurChallengeId", "ChallengeInfoList", "ExpeditionCount", "ContentCloseTime", "IsContentClosed", "PathInfoList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class ExpeditionActivityDetailInfo : pb::IMessage<ExpeditionActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ExpeditionActivityDetailInfo> _parser = new pb::MessageParser<ExpeditionActivityDetailInfo>(() => new ExpeditionActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ExpeditionActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ExpeditionActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ExpeditionActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ExpeditionActivityDetailInfo(ExpeditionActivityDetailInfo other) : this() {
+      curChallengeId_ = other.curChallengeId_;
+      challengeInfoList_ = other.challengeInfoList_.Clone();
+      expeditionCount_ = other.expeditionCount_;
+      contentCloseTime_ = other.contentCloseTime_;
+      isContentClosed_ = other.isContentClosed_;
+      pathInfoList_ = other.pathInfoList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ExpeditionActivityDetailInfo Clone() {
+      return new ExpeditionActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "cur_challenge_id" field.</summary>
+    public const int CurChallengeIdFieldNumber = 5;
+    private uint curChallengeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurChallengeId {
+      get { return curChallengeId_; }
+      set {
+        curChallengeId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_info_list" field.</summary>
+    public const int ChallengeInfoListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::OldProtos.ExpeditionChallengeInfo> _repeated_challengeInfoList_codec
+        = pb::FieldCodec.ForMessage(82, global::OldProtos.ExpeditionChallengeInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.ExpeditionChallengeInfo> challengeInfoList_ = new pbc::RepeatedField<global::OldProtos.ExpeditionChallengeInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.ExpeditionChallengeInfo> ChallengeInfoList {
+      get { return challengeInfoList_; }
+    }
+
+    /// <summary>Field number for the "expedition_count" field.</summary>
+    public const int ExpeditionCountFieldNumber = 2;
+    private uint expeditionCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ExpeditionCount {
+      get { return expeditionCount_; }
+      set {
+        expeditionCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "content_close_time" field.</summary>
+    public const int ContentCloseTimeFieldNumber = 4;
+    private uint contentCloseTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ContentCloseTime {
+      get { return contentCloseTime_; }
+      set {
+        contentCloseTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 8;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "path_info_list" field.</summary>
+    public const int PathInfoListFieldNumber = 15;
+    private static readonly pb::FieldCodec<global::OldProtos.ExpeditionPathInfo> _repeated_pathInfoList_codec
+        = pb::FieldCodec.ForMessage(122, global::OldProtos.ExpeditionPathInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.ExpeditionPathInfo> pathInfoList_ = new pbc::RepeatedField<global::OldProtos.ExpeditionPathInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.ExpeditionPathInfo> PathInfoList {
+      get { return pathInfoList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ExpeditionActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ExpeditionActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CurChallengeId != other.CurChallengeId) return false;
+      if(!challengeInfoList_.Equals(other.challengeInfoList_)) return false;
+      if (ExpeditionCount != other.ExpeditionCount) return false;
+      if (ContentCloseTime != other.ContentCloseTime) return false;
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if(!pathInfoList_.Equals(other.pathInfoList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CurChallengeId != 0) hash ^= CurChallengeId.GetHashCode();
+      hash ^= challengeInfoList_.GetHashCode();
+      if (ExpeditionCount != 0) hash ^= ExpeditionCount.GetHashCode();
+      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      hash ^= pathInfoList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ExpeditionCount != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ExpeditionCount);
+      }
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ContentCloseTime);
+      }
+      if (CurChallengeId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(CurChallengeId);
+      }
+      if (IsContentClosed != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsContentClosed);
+      }
+      challengeInfoList_.WriteTo(output, _repeated_challengeInfoList_codec);
+      pathInfoList_.WriteTo(output, _repeated_pathInfoList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ExpeditionCount != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ExpeditionCount);
+      }
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ContentCloseTime);
+      }
+      if (CurChallengeId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(CurChallengeId);
+      }
+      if (IsContentClosed != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsContentClosed);
+      }
+      challengeInfoList_.WriteTo(ref output, _repeated_challengeInfoList_codec);
+      pathInfoList_.WriteTo(ref output, _repeated_pathInfoList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (CurChallengeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurChallengeId);
+      }
+      size += challengeInfoList_.CalculateSize(_repeated_challengeInfoList_codec);
+      if (ExpeditionCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExpeditionCount);
+      }
+      if (ContentCloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
+      }
+      if (IsContentClosed != false) {
+        size += 1 + 1;
+      }
+      size += pathInfoList_.CalculateSize(_repeated_pathInfoList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ExpeditionActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CurChallengeId != 0) {
+        CurChallengeId = other.CurChallengeId;
+      }
+      challengeInfoList_.Add(other.challengeInfoList_);
+      if (other.ExpeditionCount != 0) {
+        ExpeditionCount = other.ExpeditionCount;
+      }
+      if (other.ContentCloseTime != 0) {
+        ContentCloseTime = other.ContentCloseTime;
+      }
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
+      pathInfoList_.Add(other.pathInfoList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            ExpeditionCount = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            CurChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 82: {
+            challengeInfoList_.AddEntriesFrom(input, _repeated_challengeInfoList_codec);
+            break;
+          }
+          case 122: {
+            pathInfoList_.AddEntriesFrom(input, _repeated_pathInfoList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            ExpeditionCount = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            CurChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 82: {
+            challengeInfoList_.AddEntriesFrom(ref input, _repeated_challengeInfoList_codec);
+            break;
+          }
+          case 122: {
+            pathInfoList_.AddEntriesFrom(ref input, _repeated_pathInfoList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ExpeditionActivityDetailInfo : pb::IMessage<ExpeditionActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ExpeditionActivityDetailInfo> _parser = new pb::MessageParser<ExpeditionActivityDetailInfo>(() => new ExpeditionActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ExpeditionActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ExpeditionActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ExpeditionActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ExpeditionActivityDetailInfo(ExpeditionActivityDetailInfo other) : this() {
-    curChallengeId_ = other.curChallengeId_;
-    challengeInfoList_ = other.challengeInfoList_.Clone();
-    expeditionCount_ = other.expeditionCount_;
-    contentCloseTime_ = other.contentCloseTime_;
-    isContentClosed_ = other.isContentClosed_;
-    pathInfoList_ = other.pathInfoList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ExpeditionActivityDetailInfo Clone() {
-    return new ExpeditionActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "cur_challenge_id" field.</summary>
-  public const int CurChallengeIdFieldNumber = 5;
-  private uint curChallengeId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurChallengeId {
-    get { return curChallengeId_; }
-    set {
-      curChallengeId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "challenge_info_list" field.</summary>
-  public const int ChallengeInfoListFieldNumber = 10;
-  private static readonly pb::FieldCodec<global::ExpeditionChallengeInfo> _repeated_challengeInfoList_codec
-      = pb::FieldCodec.ForMessage(82, global::ExpeditionChallengeInfo.Parser);
-  private readonly pbc::RepeatedField<global::ExpeditionChallengeInfo> challengeInfoList_ = new pbc::RepeatedField<global::ExpeditionChallengeInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ExpeditionChallengeInfo> ChallengeInfoList {
-    get { return challengeInfoList_; }
-  }
-
-  /// <summary>Field number for the "expedition_count" field.</summary>
-  public const int ExpeditionCountFieldNumber = 2;
-  private uint expeditionCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ExpeditionCount {
-    get { return expeditionCount_; }
-    set {
-      expeditionCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "content_close_time" field.</summary>
-  public const int ContentCloseTimeFieldNumber = 4;
-  private uint contentCloseTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ContentCloseTime {
-    get { return contentCloseTime_; }
-    set {
-      contentCloseTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_content_closed" field.</summary>
-  public const int IsContentClosedFieldNumber = 8;
-  private bool isContentClosed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsContentClosed {
-    get { return isContentClosed_; }
-    set {
-      isContentClosed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "path_info_list" field.</summary>
-  public const int PathInfoListFieldNumber = 15;
-  private static readonly pb::FieldCodec<global::ExpeditionPathInfo> _repeated_pathInfoList_codec
-      = pb::FieldCodec.ForMessage(122, global::ExpeditionPathInfo.Parser);
-  private readonly pbc::RepeatedField<global::ExpeditionPathInfo> pathInfoList_ = new pbc::RepeatedField<global::ExpeditionPathInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ExpeditionPathInfo> PathInfoList {
-    get { return pathInfoList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ExpeditionActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ExpeditionActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (CurChallengeId != other.CurChallengeId) return false;
-    if(!challengeInfoList_.Equals(other.challengeInfoList_)) return false;
-    if (ExpeditionCount != other.ExpeditionCount) return false;
-    if (ContentCloseTime != other.ContentCloseTime) return false;
-    if (IsContentClosed != other.IsContentClosed) return false;
-    if(!pathInfoList_.Equals(other.pathInfoList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (CurChallengeId != 0) hash ^= CurChallengeId.GetHashCode();
-    hash ^= challengeInfoList_.GetHashCode();
-    if (ExpeditionCount != 0) hash ^= ExpeditionCount.GetHashCode();
-    if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
-    if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-    hash ^= pathInfoList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ExpeditionCount != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(ExpeditionCount);
-    }
-    if (ContentCloseTime != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(ContentCloseTime);
-    }
-    if (CurChallengeId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(CurChallengeId);
-    }
-    if (IsContentClosed != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsContentClosed);
-    }
-    challengeInfoList_.WriteTo(output, _repeated_challengeInfoList_codec);
-    pathInfoList_.WriteTo(output, _repeated_pathInfoList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ExpeditionCount != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(ExpeditionCount);
-    }
-    if (ContentCloseTime != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(ContentCloseTime);
-    }
-    if (CurChallengeId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(CurChallengeId);
-    }
-    if (IsContentClosed != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsContentClosed);
-    }
-    challengeInfoList_.WriteTo(ref output, _repeated_challengeInfoList_codec);
-    pathInfoList_.WriteTo(ref output, _repeated_pathInfoList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (CurChallengeId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurChallengeId);
-    }
-    size += challengeInfoList_.CalculateSize(_repeated_challengeInfoList_codec);
-    if (ExpeditionCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExpeditionCount);
-    }
-    if (ContentCloseTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
-    }
-    if (IsContentClosed != false) {
-      size += 1 + 1;
-    }
-    size += pathInfoList_.CalculateSize(_repeated_pathInfoList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ExpeditionActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.CurChallengeId != 0) {
-      CurChallengeId = other.CurChallengeId;
-    }
-    challengeInfoList_.Add(other.challengeInfoList_);
-    if (other.ExpeditionCount != 0) {
-      ExpeditionCount = other.ExpeditionCount;
-    }
-    if (other.ContentCloseTime != 0) {
-      ContentCloseTime = other.ContentCloseTime;
-    }
-    if (other.IsContentClosed != false) {
-      IsContentClosed = other.IsContentClosed;
-    }
-    pathInfoList_.Add(other.pathInfoList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          ExpeditionCount = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          ContentCloseTime = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          CurChallengeId = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 82: {
-          challengeInfoList_.AddEntriesFrom(input, _repeated_challengeInfoList_codec);
-          break;
-        }
-        case 122: {
-          pathInfoList_.AddEntriesFrom(input, _repeated_pathInfoList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          ExpeditionCount = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          ContentCloseTime = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          CurChallengeId = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 82: {
-          challengeInfoList_.AddEntriesFrom(ref input, _repeated_challengeInfoList_codec);
-          break;
-        }
-        case 122: {
-          pathInfoList_.AddEntriesFrom(ref input, _repeated_pathInfoList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

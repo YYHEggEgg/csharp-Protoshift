@@ -9,47 +9,50 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SalvagePreventStopReason.proto</summary>
-public static partial class SalvagePreventStopReasonReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SalvagePreventStopReason.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SalvagePreventStopReason.proto</summary>
+  public static partial class SalvagePreventStopReasonReflection {
 
-  static SalvagePreventStopReasonReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch5TYWx2YWdlUHJldmVudFN0b3BSZWFzb24ucHJvdG8qsAIKGFNhbHZhZ2VQ",
-          "cmV2ZW50U3RvcFJlYXNvbhIkCiBTQUxWQUdFX1BSRVZFTlRfU1RPUF9SRUFT",
-          "T05fTk9ORRAAEicKI1NBTFZBR0VfUFJFVkVOVF9TVE9QX1JFQVNPTl9TVUND",
-          "RVNTEAESJwojU0FMVkFHRV9QUkVWRU5UX1NUT1BfUkVBU09OX0FSUklWQUwQ",
-          "AhIpCiVTQUxWQUdFX1BSRVZFTlRfU1RPUF9SRUFTT05fSU5URVJSVVBUEAMS",
-          "JQohU0FMVkFHRV9QUkVWRU5UX1NUT1BfUkVBU09OX0xFQVZFEAQSJAogU0FM",
-          "VkFHRV9QUkVWRU5UX1NUT1BfUkVBU09OX0ZVTEwQBRIkCiBTQUxWQUdFX1BS",
-          "RVZFTlRfU1RPUF9SRUFTT05fQVdBWRAGQh4KHGVtdS5ncmFzc2N1dHRlci5u",
-          "ZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SalvagePreventStopReason), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for SalvagePreventStopReason.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SalvagePreventStopReasonReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch5TYWx2YWdlUHJldmVudFN0b3BSZWFzb24ucHJvdG8qsAIKGFNhbHZhZ2VQ",
+            "cmV2ZW50U3RvcFJlYXNvbhIkCiBTQUxWQUdFX1BSRVZFTlRfU1RPUF9SRUFT",
+            "T05fTk9ORRAAEicKI1NBTFZBR0VfUFJFVkVOVF9TVE9QX1JFQVNPTl9TVUND",
+            "RVNTEAESJwojU0FMVkFHRV9QUkVWRU5UX1NUT1BfUkVBU09OX0FSUklWQUwQ",
+            "AhIpCiVTQUxWQUdFX1BSRVZFTlRfU1RPUF9SRUFTT05fSU5URVJSVVBUEAMS",
+            "JQohU0FMVkFHRV9QUkVWRU5UX1NUT1BfUkVBU09OX0xFQVZFEAQSJAogU0FM",
+            "VkFHRV9QUkVWRU5UX1NUT1BfUkVBU09OX0ZVTEwQBRIkCiBTQUxWQUdFX1BS",
+            "RVZFTlRfU1RPUF9SRUFTT05fQVdBWRAGQgyqAglPbGRQcm90b3NiBnByb3Rv",
+            "Mw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.SalvagePreventStopReason), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum SalvagePreventStopReason {
+    [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_NONE")] None = 0,
+    [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_SUCCESS")] Success = 1,
+    [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_ARRIVAL")] Arrival = 2,
+    [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_INTERRUPT")] Interrupt = 3,
+    [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_LEAVE")] Leave = 4,
+    [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_FULL")] Full = 5,
+    [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_AWAY")] Away = 6,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum SalvagePreventStopReason {
-  [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_NONE")] None = 0,
-  [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_SUCCESS")] Success = 1,
-  [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_ARRIVAL")] Arrival = 2,
-  [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_INTERRUPT")] Interrupt = 3,
-  [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_LEAVE")] Leave = 4,
-  [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_FULL")] Full = 5,
-  [pbr::OriginalName("SALVAGE_PREVENT_STOP_REASON_AWAY")] Away = 6,
-}
-
-#endregion
-
 
 #endregion Designer generated code

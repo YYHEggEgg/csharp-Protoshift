@@ -9,306 +9,309 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from BattlePassAllDataNotify.proto</summary>
-public static partial class BattlePassAllDataNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for BattlePassAllDataNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from BattlePassAllDataNotify.proto</summary>
+  public static partial class BattlePassAllDataNotifyReflection {
 
-  static BattlePassAllDataNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1CYXR0bGVQYXNzQWxsRGF0YU5vdGlmeS5wcm90bxoXQmF0dGxlUGFzc01p",
-          "c3Npb24ucHJvdG8aGEJhdHRsZVBhc3NTY2hlZHVsZS5wcm90byKJAQoXQmF0",
-          "dGxlUGFzc0FsbERhdGFOb3RpZnkSKAoMbWlzc2lvbl9saXN0GAEgAygLMhIu",
-          "QmF0dGxlUGFzc01pc3Npb24SKQoMY3VyX3NjaGVkdWxlGAogASgLMhMuQmF0",
-          "dGxlUGFzc1NjaGVkdWxlEhkKEWhhdmVfY3VyX3NjaGVkdWxlGAMgASgIQhYK",
-          "FG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::BattlePassMissionReflection.Descriptor, global::BattlePassScheduleReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::BattlePassAllDataNotify), global::BattlePassAllDataNotify.Parser, new[]{ "MissionList", "CurSchedule", "HaveCurSchedule" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for BattlePassAllDataNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static BattlePassAllDataNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1CYXR0bGVQYXNzQWxsRGF0YU5vdGlmeS5wcm90bxoXQmF0dGxlUGFzc01p",
+            "c3Npb24ucHJvdG8aGEJhdHRsZVBhc3NTY2hlZHVsZS5wcm90byKJAQoXQmF0",
+            "dGxlUGFzc0FsbERhdGFOb3RpZnkSKAoMbWlzc2lvbl9saXN0GAEgAygLMhIu",
+            "QmF0dGxlUGFzc01pc3Npb24SKQoMY3VyX3NjaGVkdWxlGAogASgLMhMuQmF0",
+            "dGxlUGFzc1NjaGVkdWxlEhkKEWhhdmVfY3VyX3NjaGVkdWxlGAMgASgIQgyq",
+            "AglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.BattlePassMissionReflection.Descriptor, global::NewProtos.BattlePassScheduleReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.BattlePassAllDataNotify), global::NewProtos.BattlePassAllDataNotify.Parser, new[]{ "MissionList", "CurSchedule", "HaveCurSchedule" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2642;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class BattlePassAllDataNotify : pb::IMessage<BattlePassAllDataNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BattlePassAllDataNotify> _parser = new pb::MessageParser<BattlePassAllDataNotify>(() => new BattlePassAllDataNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<BattlePassAllDataNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.BattlePassAllDataNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BattlePassAllDataNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BattlePassAllDataNotify(BattlePassAllDataNotify other) : this() {
+      missionList_ = other.missionList_.Clone();
+      curSchedule_ = other.curSchedule_ != null ? other.curSchedule_.Clone() : null;
+      haveCurSchedule_ = other.haveCurSchedule_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BattlePassAllDataNotify Clone() {
+      return new BattlePassAllDataNotify(this);
+    }
+
+    /// <summary>Field number for the "mission_list" field.</summary>
+    public const int MissionListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::NewProtos.BattlePassMission> _repeated_missionList_codec
+        = pb::FieldCodec.ForMessage(10, global::NewProtos.BattlePassMission.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.BattlePassMission> missionList_ = new pbc::RepeatedField<global::NewProtos.BattlePassMission>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.BattlePassMission> MissionList {
+      get { return missionList_; }
+    }
+
+    /// <summary>Field number for the "cur_schedule" field.</summary>
+    public const int CurScheduleFieldNumber = 10;
+    private global::NewProtos.BattlePassSchedule curSchedule_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.BattlePassSchedule CurSchedule {
+      get { return curSchedule_; }
+      set {
+        curSchedule_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "have_cur_schedule" field.</summary>
+    public const int HaveCurScheduleFieldNumber = 3;
+    private bool haveCurSchedule_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HaveCurSchedule {
+      get { return haveCurSchedule_; }
+      set {
+        haveCurSchedule_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as BattlePassAllDataNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(BattlePassAllDataNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!missionList_.Equals(other.missionList_)) return false;
+      if (!object.Equals(CurSchedule, other.CurSchedule)) return false;
+      if (HaveCurSchedule != other.HaveCurSchedule) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= missionList_.GetHashCode();
+      if (curSchedule_ != null) hash ^= CurSchedule.GetHashCode();
+      if (HaveCurSchedule != false) hash ^= HaveCurSchedule.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      missionList_.WriteTo(output, _repeated_missionList_codec);
+      if (HaveCurSchedule != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(HaveCurSchedule);
+      }
+      if (curSchedule_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(CurSchedule);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      missionList_.WriteTo(ref output, _repeated_missionList_codec);
+      if (HaveCurSchedule != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(HaveCurSchedule);
+      }
+      if (curSchedule_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(CurSchedule);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += missionList_.CalculateSize(_repeated_missionList_codec);
+      if (curSchedule_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurSchedule);
+      }
+      if (HaveCurSchedule != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(BattlePassAllDataNotify other) {
+      if (other == null) {
+        return;
+      }
+      missionList_.Add(other.missionList_);
+      if (other.curSchedule_ != null) {
+        if (curSchedule_ == null) {
+          CurSchedule = new global::NewProtos.BattlePassSchedule();
+        }
+        CurSchedule.MergeFrom(other.CurSchedule);
+      }
+      if (other.HaveCurSchedule != false) {
+        HaveCurSchedule = other.HaveCurSchedule;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            missionList_.AddEntriesFrom(input, _repeated_missionList_codec);
+            break;
+          }
+          case 24: {
+            HaveCurSchedule = input.ReadBool();
+            break;
+          }
+          case 82: {
+            if (curSchedule_ == null) {
+              CurSchedule = new global::NewProtos.BattlePassSchedule();
+            }
+            input.ReadMessage(CurSchedule);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            missionList_.AddEntriesFrom(ref input, _repeated_missionList_codec);
+            break;
+          }
+          case 24: {
+            HaveCurSchedule = input.ReadBool();
+            break;
+          }
+          case 82: {
+            if (curSchedule_ == null) {
+              CurSchedule = new global::NewProtos.BattlePassSchedule();
+            }
+            input.ReadMessage(CurSchedule);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 2642;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class BattlePassAllDataNotify : pb::IMessage<BattlePassAllDataNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<BattlePassAllDataNotify> _parser = new pb::MessageParser<BattlePassAllDataNotify>(() => new BattlePassAllDataNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<BattlePassAllDataNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::BattlePassAllDataNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BattlePassAllDataNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BattlePassAllDataNotify(BattlePassAllDataNotify other) : this() {
-    missionList_ = other.missionList_.Clone();
-    curSchedule_ = other.curSchedule_ != null ? other.curSchedule_.Clone() : null;
-    haveCurSchedule_ = other.haveCurSchedule_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BattlePassAllDataNotify Clone() {
-    return new BattlePassAllDataNotify(this);
-  }
-
-  /// <summary>Field number for the "mission_list" field.</summary>
-  public const int MissionListFieldNumber = 1;
-  private static readonly pb::FieldCodec<global::BattlePassMission> _repeated_missionList_codec
-      = pb::FieldCodec.ForMessage(10, global::BattlePassMission.Parser);
-  private readonly pbc::RepeatedField<global::BattlePassMission> missionList_ = new pbc::RepeatedField<global::BattlePassMission>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::BattlePassMission> MissionList {
-    get { return missionList_; }
-  }
-
-  /// <summary>Field number for the "cur_schedule" field.</summary>
-  public const int CurScheduleFieldNumber = 10;
-  private global::BattlePassSchedule curSchedule_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::BattlePassSchedule CurSchedule {
-    get { return curSchedule_; }
-    set {
-      curSchedule_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "have_cur_schedule" field.</summary>
-  public const int HaveCurScheduleFieldNumber = 3;
-  private bool haveCurSchedule_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool HaveCurSchedule {
-    get { return haveCurSchedule_; }
-    set {
-      haveCurSchedule_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as BattlePassAllDataNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(BattlePassAllDataNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!missionList_.Equals(other.missionList_)) return false;
-    if (!object.Equals(CurSchedule, other.CurSchedule)) return false;
-    if (HaveCurSchedule != other.HaveCurSchedule) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= missionList_.GetHashCode();
-    if (curSchedule_ != null) hash ^= CurSchedule.GetHashCode();
-    if (HaveCurSchedule != false) hash ^= HaveCurSchedule.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    missionList_.WriteTo(output, _repeated_missionList_codec);
-    if (HaveCurSchedule != false) {
-      output.WriteRawTag(24);
-      output.WriteBool(HaveCurSchedule);
-    }
-    if (curSchedule_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(CurSchedule);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    missionList_.WriteTo(ref output, _repeated_missionList_codec);
-    if (HaveCurSchedule != false) {
-      output.WriteRawTag(24);
-      output.WriteBool(HaveCurSchedule);
-    }
-    if (curSchedule_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(CurSchedule);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += missionList_.CalculateSize(_repeated_missionList_codec);
-    if (curSchedule_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurSchedule);
-    }
-    if (HaveCurSchedule != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(BattlePassAllDataNotify other) {
-    if (other == null) {
-      return;
-    }
-    missionList_.Add(other.missionList_);
-    if (other.curSchedule_ != null) {
-      if (curSchedule_ == null) {
-        CurSchedule = new global::BattlePassSchedule();
-      }
-      CurSchedule.MergeFrom(other.CurSchedule);
-    }
-    if (other.HaveCurSchedule != false) {
-      HaveCurSchedule = other.HaveCurSchedule;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          missionList_.AddEntriesFrom(input, _repeated_missionList_codec);
-          break;
-        }
-        case 24: {
-          HaveCurSchedule = input.ReadBool();
-          break;
-        }
-        case 82: {
-          if (curSchedule_ == null) {
-            CurSchedule = new global::BattlePassSchedule();
-          }
-          input.ReadMessage(CurSchedule);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          missionList_.AddEntriesFrom(ref input, _repeated_missionList_codec);
-          break;
-        }
-        case 24: {
-          HaveCurSchedule = input.ReadBool();
-          break;
-        }
-        case 82: {
-          if (curSchedule_ == null) {
-            CurSchedule = new global::BattlePassSchedule();
-          }
-          input.ReadMessage(CurSchedule);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

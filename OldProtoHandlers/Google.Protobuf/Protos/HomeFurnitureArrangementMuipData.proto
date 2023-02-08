@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "Vector.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message HomeFurnitureArrangementMuipData {
   uint32 furniture_id = 1;

@@ -9,857 +9,859 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from InvestigationMonster.proto</summary>
-public static partial class InvestigationMonsterReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for InvestigationMonster.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from InvestigationMonster.proto</summary>
+  public static partial class InvestigationMonsterReflection {
 
-  static InvestigationMonsterReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpJbnZlc3RpZ2F0aW9uTW9uc3Rlci5wcm90bxoMVmVjdG9yLnByb3RvGiFX",
-          "ZWVrbHlCb3NzUmVzaW5EaXNjb3VudEluZm8ucHJvdG8ijgQKFEludmVzdGln",
-          "YXRpb25Nb25zdGVyEhAKCGlzX2FsaXZlGA0gASgIEhQKA3BvcxgHIAEoCzIH",
-          "LlZlY3RvchIQCghzY2VuZV9pZBgMIAEoDRIZChFuZXh0X3JlZnJlc2hfdGlt",
-          "ZRgIIAEoDRIPCgdjaXR5X2lkGA4gASgNEhEKCGdyb3VwX2lkGMcNIAEoDRIk",
-          "ChxuZXh0X2Jvc3NfY2hlc3RfcmVmcmVzaF90aW1lGAEgASgNEkUKH3dlZWts",
-          "eV9ib3NzX3Jlc2luX2Rpc2NvdW50X2luZm8YAyABKAsyHC5XZWVrbHlCb3Nz",
-          "UmVzaW5EaXNjb3VudEluZm8SFgoOYm9zc19jaGVzdF9udW0YBiABKA0SCgoC",
-          "aWQYCSABKA0SEwoKbW9uc3Rlcl9pZBiyBCABKA0SMwoKbG9ja19zdGF0ZRgE",
-          "IAEoDjIfLkludmVzdGlnYXRpb25Nb25zdGVyLkxvY2tTdGF0ZRIYChByZWZy",
-          "ZXNoX2ludGVydmFsGAogASgNEhYKDmlzX2FyZWFfbG9ja2VkGAUgASgIEg0K",
-          "BWxldmVsGAIgASgNEhoKEm1heF9ib3NzX2NoZXN0X251bRgLIAEoDRINCgVy",
-          "ZXNpbhgPIAEoDSI2CglMb2NrU3RhdGUSEwoPTE9DS19TVEFURV9OT05FEAAS",
-          "FAoQTE9DS19TVEFURV9RVUVTVBABQhYKFG9yZy5zb3JhcG9pbnRhLnByb3Rv",
-          "YgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::VectorReflection.Descriptor, global::WeeklyBossResinDiscountInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::InvestigationMonster), global::InvestigationMonster.Parser, new[]{ "IsAlive", "Pos", "SceneId", "NextRefreshTime", "CityId", "GroupId", "NextBossChestRefreshTime", "WeeklyBossResinDiscountInfo", "BossChestNum", "Id", "MonsterId", "LockState", "RefreshInterval", "IsAreaLocked", "Level", "MaxBossChestNum", "Resin" }, null, new[]{ typeof(global::InvestigationMonster.Types.LockState) }, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for InvestigationMonster.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static InvestigationMonsterReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpJbnZlc3RpZ2F0aW9uTW9uc3Rlci5wcm90bxoMVmVjdG9yLnByb3RvGiFX",
+            "ZWVrbHlCb3NzUmVzaW5EaXNjb3VudEluZm8ucHJvdG8ijgQKFEludmVzdGln",
+            "YXRpb25Nb25zdGVyEhAKCGlzX2FsaXZlGA0gASgIEhQKA3BvcxgHIAEoCzIH",
+            "LlZlY3RvchIQCghzY2VuZV9pZBgMIAEoDRIZChFuZXh0X3JlZnJlc2hfdGlt",
+            "ZRgIIAEoDRIPCgdjaXR5X2lkGA4gASgNEhEKCGdyb3VwX2lkGMcNIAEoDRIk",
+            "ChxuZXh0X2Jvc3NfY2hlc3RfcmVmcmVzaF90aW1lGAEgASgNEkUKH3dlZWts",
+            "eV9ib3NzX3Jlc2luX2Rpc2NvdW50X2luZm8YAyABKAsyHC5XZWVrbHlCb3Nz",
+            "UmVzaW5EaXNjb3VudEluZm8SFgoOYm9zc19jaGVzdF9udW0YBiABKA0SCgoC",
+            "aWQYCSABKA0SEwoKbW9uc3Rlcl9pZBiyBCABKA0SMwoKbG9ja19zdGF0ZRgE",
+            "IAEoDjIfLkludmVzdGlnYXRpb25Nb25zdGVyLkxvY2tTdGF0ZRIYChByZWZy",
+            "ZXNoX2ludGVydmFsGAogASgNEhYKDmlzX2FyZWFfbG9ja2VkGAUgASgIEg0K",
+            "BWxldmVsGAIgASgNEhoKEm1heF9ib3NzX2NoZXN0X251bRgLIAEoDRINCgVy",
+            "ZXNpbhgPIAEoDSI2CglMb2NrU3RhdGUSEwoPTE9DS19TVEFURV9OT05FEAAS",
+            "FAoQTE9DS19TVEFURV9RVUVTVBABQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.VectorReflection.Descriptor, global::NewProtos.WeeklyBossResinDiscountInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.InvestigationMonster), global::NewProtos.InvestigationMonster.Parser, new[]{ "IsAlive", "Pos", "SceneId", "NextRefreshTime", "CityId", "GroupId", "NextBossChestRefreshTime", "WeeklyBossResinDiscountInfo", "BossChestNum", "Id", "MonsterId", "LockState", "RefreshInterval", "IsAreaLocked", "Level", "MaxBossChestNum", "Resin" }, null, new[]{ typeof(global::NewProtos.InvestigationMonster.Types.LockState) }, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class InvestigationMonster : pb::IMessage<InvestigationMonster>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<InvestigationMonster> _parser = new pb::MessageParser<InvestigationMonster>(() => new InvestigationMonster());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<InvestigationMonster> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.InvestigationMonsterReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InvestigationMonster() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InvestigationMonster(InvestigationMonster other) : this() {
+      isAlive_ = other.isAlive_;
+      pos_ = other.pos_ != null ? other.pos_.Clone() : null;
+      sceneId_ = other.sceneId_;
+      nextRefreshTime_ = other.nextRefreshTime_;
+      cityId_ = other.cityId_;
+      groupId_ = other.groupId_;
+      nextBossChestRefreshTime_ = other.nextBossChestRefreshTime_;
+      weeklyBossResinDiscountInfo_ = other.weeklyBossResinDiscountInfo_ != null ? other.weeklyBossResinDiscountInfo_.Clone() : null;
+      bossChestNum_ = other.bossChestNum_;
+      id_ = other.id_;
+      monsterId_ = other.monsterId_;
+      lockState_ = other.lockState_;
+      refreshInterval_ = other.refreshInterval_;
+      isAreaLocked_ = other.isAreaLocked_;
+      level_ = other.level_;
+      maxBossChestNum_ = other.maxBossChestNum_;
+      resin_ = other.resin_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InvestigationMonster Clone() {
+      return new InvestigationMonster(this);
+    }
+
+    /// <summary>Field number for the "is_alive" field.</summary>
+    public const int IsAliveFieldNumber = 13;
+    private bool isAlive_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsAlive {
+      get { return isAlive_; }
+      set {
+        isAlive_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pos" field.</summary>
+    public const int PosFieldNumber = 7;
+    private global::NewProtos.Vector pos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.Vector Pos {
+      get { return pos_; }
+      set {
+        pos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "scene_id" field.</summary>
+    public const int SceneIdFieldNumber = 12;
+    private uint sceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SceneId {
+      get { return sceneId_; }
+      set {
+        sceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "next_refresh_time" field.</summary>
+    public const int NextRefreshTimeFieldNumber = 8;
+    private uint nextRefreshTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint NextRefreshTime {
+      get { return nextRefreshTime_; }
+      set {
+        nextRefreshTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "city_id" field.</summary>
+    public const int CityIdFieldNumber = 14;
+    private uint cityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CityId {
+      get { return cityId_; }
+      set {
+        cityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "group_id" field.</summary>
+    public const int GroupIdFieldNumber = 1735;
+    private uint groupId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GroupId {
+      get { return groupId_; }
+      set {
+        groupId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "next_boss_chest_refresh_time" field.</summary>
+    public const int NextBossChestRefreshTimeFieldNumber = 1;
+    private uint nextBossChestRefreshTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint NextBossChestRefreshTime {
+      get { return nextBossChestRefreshTime_; }
+      set {
+        nextBossChestRefreshTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "weekly_boss_resin_discount_info" field.</summary>
+    public const int WeeklyBossResinDiscountInfoFieldNumber = 3;
+    private global::NewProtos.WeeklyBossResinDiscountInfo weeklyBossResinDiscountInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.WeeklyBossResinDiscountInfo WeeklyBossResinDiscountInfo {
+      get { return weeklyBossResinDiscountInfo_; }
+      set {
+        weeklyBossResinDiscountInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "boss_chest_num" field.</summary>
+    public const int BossChestNumFieldNumber = 6;
+    private uint bossChestNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BossChestNum {
+      get { return bossChestNum_; }
+      set {
+        bossChestNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 9;
+    private uint id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "monster_id" field.</summary>
+    public const int MonsterIdFieldNumber = 562;
+    private uint monsterId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MonsterId {
+      get { return monsterId_; }
+      set {
+        monsterId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "lock_state" field.</summary>
+    public const int LockStateFieldNumber = 4;
+    private global::NewProtos.InvestigationMonster.Types.LockState lockState_ = global::NewProtos.InvestigationMonster.Types.LockState.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.InvestigationMonster.Types.LockState LockState {
+      get { return lockState_; }
+      set {
+        lockState_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "refresh_interval" field.</summary>
+    public const int RefreshIntervalFieldNumber = 10;
+    private uint refreshInterval_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RefreshInterval {
+      get { return refreshInterval_; }
+      set {
+        refreshInterval_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_area_locked" field.</summary>
+    public const int IsAreaLockedFieldNumber = 5;
+    private bool isAreaLocked_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsAreaLocked {
+      get { return isAreaLocked_; }
+      set {
+        isAreaLocked_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 2;
+    private uint level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "max_boss_chest_num" field.</summary>
+    public const int MaxBossChestNumFieldNumber = 11;
+    private uint maxBossChestNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaxBossChestNum {
+      get { return maxBossChestNum_; }
+      set {
+        maxBossChestNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "resin" field.</summary>
+    public const int ResinFieldNumber = 15;
+    private uint resin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Resin {
+      get { return resin_; }
+      set {
+        resin_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as InvestigationMonster);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(InvestigationMonster other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsAlive != other.IsAlive) return false;
+      if (!object.Equals(Pos, other.Pos)) return false;
+      if (SceneId != other.SceneId) return false;
+      if (NextRefreshTime != other.NextRefreshTime) return false;
+      if (CityId != other.CityId) return false;
+      if (GroupId != other.GroupId) return false;
+      if (NextBossChestRefreshTime != other.NextBossChestRefreshTime) return false;
+      if (!object.Equals(WeeklyBossResinDiscountInfo, other.WeeklyBossResinDiscountInfo)) return false;
+      if (BossChestNum != other.BossChestNum) return false;
+      if (Id != other.Id) return false;
+      if (MonsterId != other.MonsterId) return false;
+      if (LockState != other.LockState) return false;
+      if (RefreshInterval != other.RefreshInterval) return false;
+      if (IsAreaLocked != other.IsAreaLocked) return false;
+      if (Level != other.Level) return false;
+      if (MaxBossChestNum != other.MaxBossChestNum) return false;
+      if (Resin != other.Resin) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsAlive != false) hash ^= IsAlive.GetHashCode();
+      if (pos_ != null) hash ^= Pos.GetHashCode();
+      if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
+      if (CityId != 0) hash ^= CityId.GetHashCode();
+      if (GroupId != 0) hash ^= GroupId.GetHashCode();
+      if (NextBossChestRefreshTime != 0) hash ^= NextBossChestRefreshTime.GetHashCode();
+      if (weeklyBossResinDiscountInfo_ != null) hash ^= WeeklyBossResinDiscountInfo.GetHashCode();
+      if (BossChestNum != 0) hash ^= BossChestNum.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (MonsterId != 0) hash ^= MonsterId.GetHashCode();
+      if (LockState != global::NewProtos.InvestigationMonster.Types.LockState.None) hash ^= LockState.GetHashCode();
+      if (RefreshInterval != 0) hash ^= RefreshInterval.GetHashCode();
+      if (IsAreaLocked != false) hash ^= IsAreaLocked.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (MaxBossChestNum != 0) hash ^= MaxBossChestNum.GetHashCode();
+      if (Resin != 0) hash ^= Resin.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (NextBossChestRefreshTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(NextBossChestRefreshTime);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Level);
+      }
+      if (weeklyBossResinDiscountInfo_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(WeeklyBossResinDiscountInfo);
+      }
+      if (LockState != global::NewProtos.InvestigationMonster.Types.LockState.None) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) LockState);
+      }
+      if (IsAreaLocked != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsAreaLocked);
+      }
+      if (BossChestNum != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(BossChestNum);
+      }
+      if (pos_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Pos);
+      }
+      if (NextRefreshTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(NextRefreshTime);
+      }
+      if (Id != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Id);
+      }
+      if (RefreshInterval != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(RefreshInterval);
+      }
+      if (MaxBossChestNum != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(MaxBossChestNum);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(SceneId);
+      }
+      if (IsAlive != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsAlive);
+      }
+      if (CityId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(CityId);
+      }
+      if (Resin != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Resin);
+      }
+      if (MonsterId != 0) {
+        output.WriteRawTag(144, 35);
+        output.WriteUInt32(MonsterId);
+      }
+      if (GroupId != 0) {
+        output.WriteRawTag(184, 108);
+        output.WriteUInt32(GroupId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (NextBossChestRefreshTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(NextBossChestRefreshTime);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Level);
+      }
+      if (weeklyBossResinDiscountInfo_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(WeeklyBossResinDiscountInfo);
+      }
+      if (LockState != global::NewProtos.InvestigationMonster.Types.LockState.None) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) LockState);
+      }
+      if (IsAreaLocked != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsAreaLocked);
+      }
+      if (BossChestNum != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(BossChestNum);
+      }
+      if (pos_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Pos);
+      }
+      if (NextRefreshTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(NextRefreshTime);
+      }
+      if (Id != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Id);
+      }
+      if (RefreshInterval != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(RefreshInterval);
+      }
+      if (MaxBossChestNum != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(MaxBossChestNum);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(SceneId);
+      }
+      if (IsAlive != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsAlive);
+      }
+      if (CityId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(CityId);
+      }
+      if (Resin != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Resin);
+      }
+      if (MonsterId != 0) {
+        output.WriteRawTag(144, 35);
+        output.WriteUInt32(MonsterId);
+      }
+      if (GroupId != 0) {
+        output.WriteRawTag(184, 108);
+        output.WriteUInt32(GroupId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsAlive != false) {
+        size += 1 + 1;
+      }
+      if (pos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
+      }
+      if (SceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (NextRefreshTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
+      }
+      if (CityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityId);
+      }
+      if (GroupId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
+      }
+      if (NextBossChestRefreshTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextBossChestRefreshTime);
+      }
+      if (weeklyBossResinDiscountInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(WeeklyBossResinDiscountInfo);
+      }
+      if (BossChestNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BossChestNum);
+      }
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
+      }
+      if (MonsterId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(MonsterId);
+      }
+      if (LockState != global::NewProtos.InvestigationMonster.Types.LockState.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) LockState);
+      }
+      if (RefreshInterval != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RefreshInterval);
+      }
+      if (IsAreaLocked != false) {
+        size += 1 + 1;
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
+      }
+      if (MaxBossChestNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxBossChestNum);
+      }
+      if (Resin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Resin);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(InvestigationMonster other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsAlive != false) {
+        IsAlive = other.IsAlive;
+      }
+      if (other.pos_ != null) {
+        if (pos_ == null) {
+          Pos = new global::NewProtos.Vector();
+        }
+        Pos.MergeFrom(other.Pos);
+      }
+      if (other.SceneId != 0) {
+        SceneId = other.SceneId;
+      }
+      if (other.NextRefreshTime != 0) {
+        NextRefreshTime = other.NextRefreshTime;
+      }
+      if (other.CityId != 0) {
+        CityId = other.CityId;
+      }
+      if (other.GroupId != 0) {
+        GroupId = other.GroupId;
+      }
+      if (other.NextBossChestRefreshTime != 0) {
+        NextBossChestRefreshTime = other.NextBossChestRefreshTime;
+      }
+      if (other.weeklyBossResinDiscountInfo_ != null) {
+        if (weeklyBossResinDiscountInfo_ == null) {
+          WeeklyBossResinDiscountInfo = new global::NewProtos.WeeklyBossResinDiscountInfo();
+        }
+        WeeklyBossResinDiscountInfo.MergeFrom(other.WeeklyBossResinDiscountInfo);
+      }
+      if (other.BossChestNum != 0) {
+        BossChestNum = other.BossChestNum;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      if (other.MonsterId != 0) {
+        MonsterId = other.MonsterId;
+      }
+      if (other.LockState != global::NewProtos.InvestigationMonster.Types.LockState.None) {
+        LockState = other.LockState;
+      }
+      if (other.RefreshInterval != 0) {
+        RefreshInterval = other.RefreshInterval;
+      }
+      if (other.IsAreaLocked != false) {
+        IsAreaLocked = other.IsAreaLocked;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      if (other.MaxBossChestNum != 0) {
+        MaxBossChestNum = other.MaxBossChestNum;
+      }
+      if (other.Resin != 0) {
+        Resin = other.Resin;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            NextBossChestRefreshTime = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 26: {
+            if (weeklyBossResinDiscountInfo_ == null) {
+              WeeklyBossResinDiscountInfo = new global::NewProtos.WeeklyBossResinDiscountInfo();
+            }
+            input.ReadMessage(WeeklyBossResinDiscountInfo);
+            break;
+          }
+          case 32: {
+            LockState = (global::NewProtos.InvestigationMonster.Types.LockState) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            IsAreaLocked = input.ReadBool();
+            break;
+          }
+          case 48: {
+            BossChestNum = input.ReadUInt32();
+            break;
+          }
+          case 58: {
+            if (pos_ == null) {
+              Pos = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(Pos);
+            break;
+          }
+          case 64: {
+            NextRefreshTime = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            RefreshInterval = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            MaxBossChestNum = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsAlive = input.ReadBool();
+            break;
+          }
+          case 112: {
+            CityId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Resin = input.ReadUInt32();
+            break;
+          }
+          case 4496: {
+            MonsterId = input.ReadUInt32();
+            break;
+          }
+          case 13880: {
+            GroupId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            NextBossChestRefreshTime = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 26: {
+            if (weeklyBossResinDiscountInfo_ == null) {
+              WeeklyBossResinDiscountInfo = new global::NewProtos.WeeklyBossResinDiscountInfo();
+            }
+            input.ReadMessage(WeeklyBossResinDiscountInfo);
+            break;
+          }
+          case 32: {
+            LockState = (global::NewProtos.InvestigationMonster.Types.LockState) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            IsAreaLocked = input.ReadBool();
+            break;
+          }
+          case 48: {
+            BossChestNum = input.ReadUInt32();
+            break;
+          }
+          case 58: {
+            if (pos_ == null) {
+              Pos = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(Pos);
+            break;
+          }
+          case 64: {
+            NextRefreshTime = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            RefreshInterval = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            MaxBossChestNum = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsAlive = input.ReadBool();
+            break;
+          }
+          case 112: {
+            CityId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Resin = input.ReadUInt32();
+            break;
+          }
+          case 4496: {
+            MonsterId = input.ReadUInt32();
+            break;
+          }
+          case 13880: {
+            GroupId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the InvestigationMonster message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum LockState {
+        [pbr::OriginalName("LOCK_STATE_NONE")] None = 0,
+        [pbr::OriginalName("LOCK_STATE_QUEST")] Quest = 1,
+      }
+
+    }
+    #endregion
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class InvestigationMonster : pb::IMessage<InvestigationMonster>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<InvestigationMonster> _parser = new pb::MessageParser<InvestigationMonster>(() => new InvestigationMonster());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<InvestigationMonster> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::InvestigationMonsterReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InvestigationMonster() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InvestigationMonster(InvestigationMonster other) : this() {
-    isAlive_ = other.isAlive_;
-    pos_ = other.pos_ != null ? other.pos_.Clone() : null;
-    sceneId_ = other.sceneId_;
-    nextRefreshTime_ = other.nextRefreshTime_;
-    cityId_ = other.cityId_;
-    groupId_ = other.groupId_;
-    nextBossChestRefreshTime_ = other.nextBossChestRefreshTime_;
-    weeklyBossResinDiscountInfo_ = other.weeklyBossResinDiscountInfo_ != null ? other.weeklyBossResinDiscountInfo_.Clone() : null;
-    bossChestNum_ = other.bossChestNum_;
-    id_ = other.id_;
-    monsterId_ = other.monsterId_;
-    lockState_ = other.lockState_;
-    refreshInterval_ = other.refreshInterval_;
-    isAreaLocked_ = other.isAreaLocked_;
-    level_ = other.level_;
-    maxBossChestNum_ = other.maxBossChestNum_;
-    resin_ = other.resin_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InvestigationMonster Clone() {
-    return new InvestigationMonster(this);
-  }
-
-  /// <summary>Field number for the "is_alive" field.</summary>
-  public const int IsAliveFieldNumber = 13;
-  private bool isAlive_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsAlive {
-    get { return isAlive_; }
-    set {
-      isAlive_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "pos" field.</summary>
-  public const int PosFieldNumber = 7;
-  private global::Vector pos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector Pos {
-    get { return pos_; }
-    set {
-      pos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "scene_id" field.</summary>
-  public const int SceneIdFieldNumber = 12;
-  private uint sceneId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SceneId {
-    get { return sceneId_; }
-    set {
-      sceneId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "next_refresh_time" field.</summary>
-  public const int NextRefreshTimeFieldNumber = 8;
-  private uint nextRefreshTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint NextRefreshTime {
-    get { return nextRefreshTime_; }
-    set {
-      nextRefreshTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "city_id" field.</summary>
-  public const int CityIdFieldNumber = 14;
-  private uint cityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CityId {
-    get { return cityId_; }
-    set {
-      cityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "group_id" field.</summary>
-  public const int GroupIdFieldNumber = 1735;
-  private uint groupId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GroupId {
-    get { return groupId_; }
-    set {
-      groupId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "next_boss_chest_refresh_time" field.</summary>
-  public const int NextBossChestRefreshTimeFieldNumber = 1;
-  private uint nextBossChestRefreshTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint NextBossChestRefreshTime {
-    get { return nextBossChestRefreshTime_; }
-    set {
-      nextBossChestRefreshTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "weekly_boss_resin_discount_info" field.</summary>
-  public const int WeeklyBossResinDiscountInfoFieldNumber = 3;
-  private global::WeeklyBossResinDiscountInfo weeklyBossResinDiscountInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::WeeklyBossResinDiscountInfo WeeklyBossResinDiscountInfo {
-    get { return weeklyBossResinDiscountInfo_; }
-    set {
-      weeklyBossResinDiscountInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "boss_chest_num" field.</summary>
-  public const int BossChestNumFieldNumber = 6;
-  private uint bossChestNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BossChestNum {
-    get { return bossChestNum_; }
-    set {
-      bossChestNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "id" field.</summary>
-  public const int IdFieldNumber = 9;
-  private uint id_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Id {
-    get { return id_; }
-    set {
-      id_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "monster_id" field.</summary>
-  public const int MonsterIdFieldNumber = 562;
-  private uint monsterId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MonsterId {
-    get { return monsterId_; }
-    set {
-      monsterId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "lock_state" field.</summary>
-  public const int LockStateFieldNumber = 4;
-  private global::InvestigationMonster.Types.LockState lockState_ = global::InvestigationMonster.Types.LockState.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::InvestigationMonster.Types.LockState LockState {
-    get { return lockState_; }
-    set {
-      lockState_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "refresh_interval" field.</summary>
-  public const int RefreshIntervalFieldNumber = 10;
-  private uint refreshInterval_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RefreshInterval {
-    get { return refreshInterval_; }
-    set {
-      refreshInterval_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_area_locked" field.</summary>
-  public const int IsAreaLockedFieldNumber = 5;
-  private bool isAreaLocked_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsAreaLocked {
-    get { return isAreaLocked_; }
-    set {
-      isAreaLocked_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "level" field.</summary>
-  public const int LevelFieldNumber = 2;
-  private uint level_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Level {
-    get { return level_; }
-    set {
-      level_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "max_boss_chest_num" field.</summary>
-  public const int MaxBossChestNumFieldNumber = 11;
-  private uint maxBossChestNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MaxBossChestNum {
-    get { return maxBossChestNum_; }
-    set {
-      maxBossChestNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "resin" field.</summary>
-  public const int ResinFieldNumber = 15;
-  private uint resin_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Resin {
-    get { return resin_; }
-    set {
-      resin_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as InvestigationMonster);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(InvestigationMonster other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsAlive != other.IsAlive) return false;
-    if (!object.Equals(Pos, other.Pos)) return false;
-    if (SceneId != other.SceneId) return false;
-    if (NextRefreshTime != other.NextRefreshTime) return false;
-    if (CityId != other.CityId) return false;
-    if (GroupId != other.GroupId) return false;
-    if (NextBossChestRefreshTime != other.NextBossChestRefreshTime) return false;
-    if (!object.Equals(WeeklyBossResinDiscountInfo, other.WeeklyBossResinDiscountInfo)) return false;
-    if (BossChestNum != other.BossChestNum) return false;
-    if (Id != other.Id) return false;
-    if (MonsterId != other.MonsterId) return false;
-    if (LockState != other.LockState) return false;
-    if (RefreshInterval != other.RefreshInterval) return false;
-    if (IsAreaLocked != other.IsAreaLocked) return false;
-    if (Level != other.Level) return false;
-    if (MaxBossChestNum != other.MaxBossChestNum) return false;
-    if (Resin != other.Resin) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsAlive != false) hash ^= IsAlive.GetHashCode();
-    if (pos_ != null) hash ^= Pos.GetHashCode();
-    if (SceneId != 0) hash ^= SceneId.GetHashCode();
-    if (NextRefreshTime != 0) hash ^= NextRefreshTime.GetHashCode();
-    if (CityId != 0) hash ^= CityId.GetHashCode();
-    if (GroupId != 0) hash ^= GroupId.GetHashCode();
-    if (NextBossChestRefreshTime != 0) hash ^= NextBossChestRefreshTime.GetHashCode();
-    if (weeklyBossResinDiscountInfo_ != null) hash ^= WeeklyBossResinDiscountInfo.GetHashCode();
-    if (BossChestNum != 0) hash ^= BossChestNum.GetHashCode();
-    if (Id != 0) hash ^= Id.GetHashCode();
-    if (MonsterId != 0) hash ^= MonsterId.GetHashCode();
-    if (LockState != global::InvestigationMonster.Types.LockState.None) hash ^= LockState.GetHashCode();
-    if (RefreshInterval != 0) hash ^= RefreshInterval.GetHashCode();
-    if (IsAreaLocked != false) hash ^= IsAreaLocked.GetHashCode();
-    if (Level != 0) hash ^= Level.GetHashCode();
-    if (MaxBossChestNum != 0) hash ^= MaxBossChestNum.GetHashCode();
-    if (Resin != 0) hash ^= Resin.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (NextBossChestRefreshTime != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(NextBossChestRefreshTime);
-    }
-    if (Level != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(Level);
-    }
-    if (weeklyBossResinDiscountInfo_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(WeeklyBossResinDiscountInfo);
-    }
-    if (LockState != global::InvestigationMonster.Types.LockState.None) {
-      output.WriteRawTag(32);
-      output.WriteEnum((int) LockState);
-    }
-    if (IsAreaLocked != false) {
-      output.WriteRawTag(40);
-      output.WriteBool(IsAreaLocked);
-    }
-    if (BossChestNum != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(BossChestNum);
-    }
-    if (pos_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(Pos);
-    }
-    if (NextRefreshTime != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(NextRefreshTime);
-    }
-    if (Id != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(Id);
-    }
-    if (RefreshInterval != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(RefreshInterval);
-    }
-    if (MaxBossChestNum != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(MaxBossChestNum);
-    }
-    if (SceneId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(SceneId);
-    }
-    if (IsAlive != false) {
-      output.WriteRawTag(104);
-      output.WriteBool(IsAlive);
-    }
-    if (CityId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(CityId);
-    }
-    if (Resin != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Resin);
-    }
-    if (MonsterId != 0) {
-      output.WriteRawTag(144, 35);
-      output.WriteUInt32(MonsterId);
-    }
-    if (GroupId != 0) {
-      output.WriteRawTag(184, 108);
-      output.WriteUInt32(GroupId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (NextBossChestRefreshTime != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(NextBossChestRefreshTime);
-    }
-    if (Level != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(Level);
-    }
-    if (weeklyBossResinDiscountInfo_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(WeeklyBossResinDiscountInfo);
-    }
-    if (LockState != global::InvestigationMonster.Types.LockState.None) {
-      output.WriteRawTag(32);
-      output.WriteEnum((int) LockState);
-    }
-    if (IsAreaLocked != false) {
-      output.WriteRawTag(40);
-      output.WriteBool(IsAreaLocked);
-    }
-    if (BossChestNum != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(BossChestNum);
-    }
-    if (pos_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(Pos);
-    }
-    if (NextRefreshTime != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(NextRefreshTime);
-    }
-    if (Id != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(Id);
-    }
-    if (RefreshInterval != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(RefreshInterval);
-    }
-    if (MaxBossChestNum != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(MaxBossChestNum);
-    }
-    if (SceneId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(SceneId);
-    }
-    if (IsAlive != false) {
-      output.WriteRawTag(104);
-      output.WriteBool(IsAlive);
-    }
-    if (CityId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(CityId);
-    }
-    if (Resin != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Resin);
-    }
-    if (MonsterId != 0) {
-      output.WriteRawTag(144, 35);
-      output.WriteUInt32(MonsterId);
-    }
-    if (GroupId != 0) {
-      output.WriteRawTag(184, 108);
-      output.WriteUInt32(GroupId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsAlive != false) {
-      size += 1 + 1;
-    }
-    if (pos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
-    }
-    if (SceneId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
-    }
-    if (NextRefreshTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextRefreshTime);
-    }
-    if (CityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityId);
-    }
-    if (GroupId != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
-    }
-    if (NextBossChestRefreshTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextBossChestRefreshTime);
-    }
-    if (weeklyBossResinDiscountInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(WeeklyBossResinDiscountInfo);
-    }
-    if (BossChestNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BossChestNum);
-    }
-    if (Id != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
-    }
-    if (MonsterId != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(MonsterId);
-    }
-    if (LockState != global::InvestigationMonster.Types.LockState.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) LockState);
-    }
-    if (RefreshInterval != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RefreshInterval);
-    }
-    if (IsAreaLocked != false) {
-      size += 1 + 1;
-    }
-    if (Level != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
-    }
-    if (MaxBossChestNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaxBossChestNum);
-    }
-    if (Resin != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Resin);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(InvestigationMonster other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsAlive != false) {
-      IsAlive = other.IsAlive;
-    }
-    if (other.pos_ != null) {
-      if (pos_ == null) {
-        Pos = new global::Vector();
-      }
-      Pos.MergeFrom(other.Pos);
-    }
-    if (other.SceneId != 0) {
-      SceneId = other.SceneId;
-    }
-    if (other.NextRefreshTime != 0) {
-      NextRefreshTime = other.NextRefreshTime;
-    }
-    if (other.CityId != 0) {
-      CityId = other.CityId;
-    }
-    if (other.GroupId != 0) {
-      GroupId = other.GroupId;
-    }
-    if (other.NextBossChestRefreshTime != 0) {
-      NextBossChestRefreshTime = other.NextBossChestRefreshTime;
-    }
-    if (other.weeklyBossResinDiscountInfo_ != null) {
-      if (weeklyBossResinDiscountInfo_ == null) {
-        WeeklyBossResinDiscountInfo = new global::WeeklyBossResinDiscountInfo();
-      }
-      WeeklyBossResinDiscountInfo.MergeFrom(other.WeeklyBossResinDiscountInfo);
-    }
-    if (other.BossChestNum != 0) {
-      BossChestNum = other.BossChestNum;
-    }
-    if (other.Id != 0) {
-      Id = other.Id;
-    }
-    if (other.MonsterId != 0) {
-      MonsterId = other.MonsterId;
-    }
-    if (other.LockState != global::InvestigationMonster.Types.LockState.None) {
-      LockState = other.LockState;
-    }
-    if (other.RefreshInterval != 0) {
-      RefreshInterval = other.RefreshInterval;
-    }
-    if (other.IsAreaLocked != false) {
-      IsAreaLocked = other.IsAreaLocked;
-    }
-    if (other.Level != 0) {
-      Level = other.Level;
-    }
-    if (other.MaxBossChestNum != 0) {
-      MaxBossChestNum = other.MaxBossChestNum;
-    }
-    if (other.Resin != 0) {
-      Resin = other.Resin;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          NextBossChestRefreshTime = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          Level = input.ReadUInt32();
-          break;
-        }
-        case 26: {
-          if (weeklyBossResinDiscountInfo_ == null) {
-            WeeklyBossResinDiscountInfo = new global::WeeklyBossResinDiscountInfo();
-          }
-          input.ReadMessage(WeeklyBossResinDiscountInfo);
-          break;
-        }
-        case 32: {
-          LockState = (global::InvestigationMonster.Types.LockState) input.ReadEnum();
-          break;
-        }
-        case 40: {
-          IsAreaLocked = input.ReadBool();
-          break;
-        }
-        case 48: {
-          BossChestNum = input.ReadUInt32();
-          break;
-        }
-        case 58: {
-          if (pos_ == null) {
-            Pos = new global::Vector();
-          }
-          input.ReadMessage(Pos);
-          break;
-        }
-        case 64: {
-          NextRefreshTime = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Id = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          RefreshInterval = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          MaxBossChestNum = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          SceneId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          IsAlive = input.ReadBool();
-          break;
-        }
-        case 112: {
-          CityId = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          Resin = input.ReadUInt32();
-          break;
-        }
-        case 4496: {
-          MonsterId = input.ReadUInt32();
-          break;
-        }
-        case 13880: {
-          GroupId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          NextBossChestRefreshTime = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          Level = input.ReadUInt32();
-          break;
-        }
-        case 26: {
-          if (weeklyBossResinDiscountInfo_ == null) {
-            WeeklyBossResinDiscountInfo = new global::WeeklyBossResinDiscountInfo();
-          }
-          input.ReadMessage(WeeklyBossResinDiscountInfo);
-          break;
-        }
-        case 32: {
-          LockState = (global::InvestigationMonster.Types.LockState) input.ReadEnum();
-          break;
-        }
-        case 40: {
-          IsAreaLocked = input.ReadBool();
-          break;
-        }
-        case 48: {
-          BossChestNum = input.ReadUInt32();
-          break;
-        }
-        case 58: {
-          if (pos_ == null) {
-            Pos = new global::Vector();
-          }
-          input.ReadMessage(Pos);
-          break;
-        }
-        case 64: {
-          NextRefreshTime = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Id = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          RefreshInterval = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          MaxBossChestNum = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          SceneId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          IsAlive = input.ReadBool();
-          break;
-        }
-        case 112: {
-          CityId = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          Resin = input.ReadUInt32();
-          break;
-        }
-        case 4496: {
-          MonsterId = input.ReadUInt32();
-          break;
-        }
-        case 13880: {
-          GroupId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-  #region Nested types
-  /// <summary>Container for nested types declared in the InvestigationMonster message type.</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static partial class Types {
-    public enum LockState {
-      [pbr::OriginalName("LOCK_STATE_NONE")] None = 0,
-      [pbr::OriginalName("LOCK_STATE_QUEST")] Quest = 1,
-    }
-
-  }
-  #endregion
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

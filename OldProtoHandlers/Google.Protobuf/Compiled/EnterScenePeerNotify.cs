@@ -9,340 +9,342 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from EnterScenePeerNotify.proto</summary>
-public static partial class EnterScenePeerNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for EnterScenePeerNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from EnterScenePeerNotify.proto</summary>
+  public static partial class EnterScenePeerNotifyReflection {
 
-  static EnterScenePeerNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpFbnRlclNjZW5lUGVlck5vdGlmeS5wcm90byJvChRFbnRlclNjZW5lUGVl",
-          "ck5vdGlmeRIVCg1kZXN0X3NjZW5lX2lkGAwgASgNEhkKEWVudGVyX3NjZW5l",
-          "X3Rva2VuGAsgASgNEhQKDGhvc3RfcGVlcl9pZBgOIAEoDRIPCgdwZWVyX2lk",
-          "GAEgASgNQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3Rv",
-          "Mw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::EnterScenePeerNotify), global::EnterScenePeerNotify.Parser, new[]{ "DestSceneId", "EnterSceneToken", "HostPeerId", "PeerId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for EnterScenePeerNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static EnterScenePeerNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpFbnRlclNjZW5lUGVlck5vdGlmeS5wcm90byJvChRFbnRlclNjZW5lUGVl",
+            "ck5vdGlmeRIVCg1kZXN0X3NjZW5lX2lkGAwgASgNEhkKEWVudGVyX3NjZW5l",
+            "X3Rva2VuGAsgASgNEhQKDGhvc3RfcGVlcl9pZBgOIAEoDRIPCgdwZWVyX2lk",
+            "GAEgASgNQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.EnterScenePeerNotify), global::OldProtos.EnterScenePeerNotify.Parser, new[]{ "DestSceneId", "EnterSceneToken", "HostPeerId", "PeerId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 252
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class EnterScenePeerNotify : pb::IMessage<EnterScenePeerNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<EnterScenePeerNotify> _parser = new pb::MessageParser<EnterScenePeerNotify>(() => new EnterScenePeerNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<EnterScenePeerNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.EnterScenePeerNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EnterScenePeerNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EnterScenePeerNotify(EnterScenePeerNotify other) : this() {
+      destSceneId_ = other.destSceneId_;
+      enterSceneToken_ = other.enterSceneToken_;
+      hostPeerId_ = other.hostPeerId_;
+      peerId_ = other.peerId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EnterScenePeerNotify Clone() {
+      return new EnterScenePeerNotify(this);
+    }
+
+    /// <summary>Field number for the "dest_scene_id" field.</summary>
+    public const int DestSceneIdFieldNumber = 12;
+    private uint destSceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DestSceneId {
+      get { return destSceneId_; }
+      set {
+        destSceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "enter_scene_token" field.</summary>
+    public const int EnterSceneTokenFieldNumber = 11;
+    private uint enterSceneToken_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EnterSceneToken {
+      get { return enterSceneToken_; }
+      set {
+        enterSceneToken_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "host_peer_id" field.</summary>
+    public const int HostPeerIdFieldNumber = 14;
+    private uint hostPeerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint HostPeerId {
+      get { return hostPeerId_; }
+      set {
+        hostPeerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "peer_id" field.</summary>
+    public const int PeerIdFieldNumber = 1;
+    private uint peerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PeerId {
+      get { return peerId_; }
+      set {
+        peerId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as EnterScenePeerNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(EnterScenePeerNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DestSceneId != other.DestSceneId) return false;
+      if (EnterSceneToken != other.EnterSceneToken) return false;
+      if (HostPeerId != other.HostPeerId) return false;
+      if (PeerId != other.PeerId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DestSceneId != 0) hash ^= DestSceneId.GetHashCode();
+      if (EnterSceneToken != 0) hash ^= EnterSceneToken.GetHashCode();
+      if (HostPeerId != 0) hash ^= HostPeerId.GetHashCode();
+      if (PeerId != 0) hash ^= PeerId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (PeerId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(PeerId);
+      }
+      if (EnterSceneToken != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(EnterSceneToken);
+      }
+      if (DestSceneId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(DestSceneId);
+      }
+      if (HostPeerId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(HostPeerId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (PeerId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(PeerId);
+      }
+      if (EnterSceneToken != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(EnterSceneToken);
+      }
+      if (DestSceneId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(DestSceneId);
+      }
+      if (HostPeerId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(HostPeerId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (DestSceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DestSceneId);
+      }
+      if (EnterSceneToken != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EnterSceneToken);
+      }
+      if (HostPeerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HostPeerId);
+      }
+      if (PeerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PeerId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(EnterScenePeerNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DestSceneId != 0) {
+        DestSceneId = other.DestSceneId;
+      }
+      if (other.EnterSceneToken != 0) {
+        EnterSceneToken = other.EnterSceneToken;
+      }
+      if (other.HostPeerId != 0) {
+        HostPeerId = other.HostPeerId;
+      }
+      if (other.PeerId != 0) {
+        PeerId = other.PeerId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            PeerId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            EnterSceneToken = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            DestSceneId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            HostPeerId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            PeerId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            EnterSceneToken = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            DestSceneId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            HostPeerId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 252
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class EnterScenePeerNotify : pb::IMessage<EnterScenePeerNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<EnterScenePeerNotify> _parser = new pb::MessageParser<EnterScenePeerNotify>(() => new EnterScenePeerNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<EnterScenePeerNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::EnterScenePeerNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EnterScenePeerNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EnterScenePeerNotify(EnterScenePeerNotify other) : this() {
-    destSceneId_ = other.destSceneId_;
-    enterSceneToken_ = other.enterSceneToken_;
-    hostPeerId_ = other.hostPeerId_;
-    peerId_ = other.peerId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EnterScenePeerNotify Clone() {
-    return new EnterScenePeerNotify(this);
-  }
-
-  /// <summary>Field number for the "dest_scene_id" field.</summary>
-  public const int DestSceneIdFieldNumber = 12;
-  private uint destSceneId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DestSceneId {
-    get { return destSceneId_; }
-    set {
-      destSceneId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "enter_scene_token" field.</summary>
-  public const int EnterSceneTokenFieldNumber = 11;
-  private uint enterSceneToken_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EnterSceneToken {
-    get { return enterSceneToken_; }
-    set {
-      enterSceneToken_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "host_peer_id" field.</summary>
-  public const int HostPeerIdFieldNumber = 14;
-  private uint hostPeerId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint HostPeerId {
-    get { return hostPeerId_; }
-    set {
-      hostPeerId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "peer_id" field.</summary>
-  public const int PeerIdFieldNumber = 1;
-  private uint peerId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PeerId {
-    get { return peerId_; }
-    set {
-      peerId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as EnterScenePeerNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(EnterScenePeerNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (DestSceneId != other.DestSceneId) return false;
-    if (EnterSceneToken != other.EnterSceneToken) return false;
-    if (HostPeerId != other.HostPeerId) return false;
-    if (PeerId != other.PeerId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (DestSceneId != 0) hash ^= DestSceneId.GetHashCode();
-    if (EnterSceneToken != 0) hash ^= EnterSceneToken.GetHashCode();
-    if (HostPeerId != 0) hash ^= HostPeerId.GetHashCode();
-    if (PeerId != 0) hash ^= PeerId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (PeerId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(PeerId);
-    }
-    if (EnterSceneToken != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(EnterSceneToken);
-    }
-    if (DestSceneId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(DestSceneId);
-    }
-    if (HostPeerId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(HostPeerId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (PeerId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(PeerId);
-    }
-    if (EnterSceneToken != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(EnterSceneToken);
-    }
-    if (DestSceneId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(DestSceneId);
-    }
-    if (HostPeerId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(HostPeerId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (DestSceneId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DestSceneId);
-    }
-    if (EnterSceneToken != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EnterSceneToken);
-    }
-    if (HostPeerId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HostPeerId);
-    }
-    if (PeerId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PeerId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(EnterScenePeerNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.DestSceneId != 0) {
-      DestSceneId = other.DestSceneId;
-    }
-    if (other.EnterSceneToken != 0) {
-      EnterSceneToken = other.EnterSceneToken;
-    }
-    if (other.HostPeerId != 0) {
-      HostPeerId = other.HostPeerId;
-    }
-    if (other.PeerId != 0) {
-      PeerId = other.PeerId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          PeerId = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          EnterSceneToken = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          DestSceneId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          HostPeerId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          PeerId = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          EnterSceneToken = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          DestSceneId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          HostPeerId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

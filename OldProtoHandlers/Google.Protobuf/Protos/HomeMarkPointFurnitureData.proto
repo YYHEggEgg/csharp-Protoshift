@@ -20,7 +20,7 @@ import "HomeMarkPointNPCData.proto";
 import "HomeMarkPointSuiteData.proto";
 import "Vector.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message HomeMarkPointFurnitureData {
   uint32 guid = 1;

@@ -9,440 +9,443 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from BeginCameraSceneLookWithTemplateNotify.proto</summary>
-public static partial class BeginCameraSceneLookWithTemplateNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for BeginCameraSceneLookWithTemplateNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from BeginCameraSceneLookWithTemplateNotify.proto</summary>
+  public static partial class BeginCameraSceneLookWithTemplateNotifyReflection {
 
-  static BeginCameraSceneLookWithTemplateNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CixCZWdpbkNhbWVyYVNjZW5lTG9va1dpdGhUZW1wbGF0ZU5vdGlmeS5wcm90",
-          "bxoMVmVjdG9yLnByb3RvItoCCiZCZWdpbkNhbWVyYVNjZW5lTG9va1dpdGhU",
-          "ZW1wbGF0ZU5vdGlmeRIZCghsb29rX3BvcxgIIAEoCzIHLlZlY3RvchITCgt0",
-          "ZW1wbGF0ZV9pZBgFIAEoDRIbCgpmb2xsb3dfcG9zGAIgASgLMgcuVmVjdG9y",
-          "EhEKCWVudGl0eV9pZBgMIAEoDRIUCgxvdGhlcl9wYXJhbXMYDSADKAkSRwoL",
-          "Zm9sbG93X3R5cGUYCSABKA4yMi5CZWdpbkNhbWVyYVNjZW5lTG9va1dpdGhU",
-          "ZW1wbGF0ZU5vdGlmeS5Gb2xsb3dUeXBlInEKCkZvbGxvd1R5cGUSHwobRk9M",
-          "TE9XX1RZUEVfSU5JVF9GT0xMT1dfUE9TEAASHgoaRk9MTE9XX1RZUEVfU0VU",
-          "X0ZPTExPV19QT1MQARIiCh5GT0xMT1dfVFlQRV9TRVRfQUJTX0ZPTExPV19Q",
-          "T1MQAkIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::BeginCameraSceneLookWithTemplateNotify), global::BeginCameraSceneLookWithTemplateNotify.Parser, new[]{ "LookPos", "TemplateId", "FollowPos", "EntityId", "OtherParams", "FollowType" }, null, new[]{ typeof(global::BeginCameraSceneLookWithTemplateNotify.Types.FollowType) }, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for BeginCameraSceneLookWithTemplateNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static BeginCameraSceneLookWithTemplateNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CixCZWdpbkNhbWVyYVNjZW5lTG9va1dpdGhUZW1wbGF0ZU5vdGlmeS5wcm90",
+            "bxoMVmVjdG9yLnByb3RvItoCCiZCZWdpbkNhbWVyYVNjZW5lTG9va1dpdGhU",
+            "ZW1wbGF0ZU5vdGlmeRIZCghsb29rX3BvcxgIIAEoCzIHLlZlY3RvchITCgt0",
+            "ZW1wbGF0ZV9pZBgFIAEoDRIbCgpmb2xsb3dfcG9zGAIgASgLMgcuVmVjdG9y",
+            "EhEKCWVudGl0eV9pZBgMIAEoDRIUCgxvdGhlcl9wYXJhbXMYDSADKAkSRwoL",
+            "Zm9sbG93X3R5cGUYCSABKA4yMi5CZWdpbkNhbWVyYVNjZW5lTG9va1dpdGhU",
+            "ZW1wbGF0ZU5vdGlmeS5Gb2xsb3dUeXBlInEKCkZvbGxvd1R5cGUSHwobRk9M",
+            "TE9XX1RZUEVfSU5JVF9GT0xMT1dfUE9TEAASHgoaRk9MTE9XX1RZUEVfU0VU",
+            "X0ZPTExPV19QT1MQARIiCh5GT0xMT1dfVFlQRV9TRVRfQUJTX0ZPTExPV19Q",
+            "T1MQAkIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.BeginCameraSceneLookWithTemplateNotify), global::OldProtos.BeginCameraSceneLookWithTemplateNotify.Parser, new[]{ "LookPos", "TemplateId", "FollowPos", "EntityId", "OtherParams", "FollowType" }, null, new[]{ typeof(global::OldProtos.BeginCameraSceneLookWithTemplateNotify.Types.FollowType) }, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 3160
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class BeginCameraSceneLookWithTemplateNotify : pb::IMessage<BeginCameraSceneLookWithTemplateNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BeginCameraSceneLookWithTemplateNotify> _parser = new pb::MessageParser<BeginCameraSceneLookWithTemplateNotify>(() => new BeginCameraSceneLookWithTemplateNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<BeginCameraSceneLookWithTemplateNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.BeginCameraSceneLookWithTemplateNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BeginCameraSceneLookWithTemplateNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BeginCameraSceneLookWithTemplateNotify(BeginCameraSceneLookWithTemplateNotify other) : this() {
+      lookPos_ = other.lookPos_ != null ? other.lookPos_.Clone() : null;
+      templateId_ = other.templateId_;
+      followPos_ = other.followPos_ != null ? other.followPos_.Clone() : null;
+      entityId_ = other.entityId_;
+      otherParams_ = other.otherParams_.Clone();
+      followType_ = other.followType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BeginCameraSceneLookWithTemplateNotify Clone() {
+      return new BeginCameraSceneLookWithTemplateNotify(this);
+    }
+
+    /// <summary>Field number for the "look_pos" field.</summary>
+    public const int LookPosFieldNumber = 8;
+    private global::OldProtos.Vector lookPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector LookPos {
+      get { return lookPos_; }
+      set {
+        lookPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "template_id" field.</summary>
+    public const int TemplateIdFieldNumber = 5;
+    private uint templateId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TemplateId {
+      get { return templateId_; }
+      set {
+        templateId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "follow_pos" field.</summary>
+    public const int FollowPosFieldNumber = 2;
+    private global::OldProtos.Vector followPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector FollowPos {
+      get { return followPos_; }
+      set {
+        followPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 12;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "other_params" field.</summary>
+    public const int OtherParamsFieldNumber = 13;
+    private static readonly pb::FieldCodec<string> _repeated_otherParams_codec
+        = pb::FieldCodec.ForString(106);
+    private readonly pbc::RepeatedField<string> otherParams_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> OtherParams {
+      get { return otherParams_; }
+    }
+
+    /// <summary>Field number for the "follow_type" field.</summary>
+    public const int FollowTypeFieldNumber = 9;
+    private global::OldProtos.BeginCameraSceneLookWithTemplateNotify.Types.FollowType followType_ = global::OldProtos.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.BeginCameraSceneLookWithTemplateNotify.Types.FollowType FollowType {
+      get { return followType_; }
+      set {
+        followType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as BeginCameraSceneLookWithTemplateNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(BeginCameraSceneLookWithTemplateNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(LookPos, other.LookPos)) return false;
+      if (TemplateId != other.TemplateId) return false;
+      if (!object.Equals(FollowPos, other.FollowPos)) return false;
+      if (EntityId != other.EntityId) return false;
+      if(!otherParams_.Equals(other.otherParams_)) return false;
+      if (FollowType != other.FollowType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (lookPos_ != null) hash ^= LookPos.GetHashCode();
+      if (TemplateId != 0) hash ^= TemplateId.GetHashCode();
+      if (followPos_ != null) hash ^= FollowPos.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      hash ^= otherParams_.GetHashCode();
+      if (FollowType != global::OldProtos.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) hash ^= FollowType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (followPos_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(FollowPos);
+      }
+      if (TemplateId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(TemplateId);
+      }
+      if (lookPos_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(LookPos);
+      }
+      if (FollowType != global::OldProtos.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) FollowType);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(EntityId);
+      }
+      otherParams_.WriteTo(output, _repeated_otherParams_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (followPos_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(FollowPos);
+      }
+      if (TemplateId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(TemplateId);
+      }
+      if (lookPos_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(LookPos);
+      }
+      if (FollowType != global::OldProtos.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) FollowType);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(EntityId);
+      }
+      otherParams_.WriteTo(ref output, _repeated_otherParams_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (lookPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LookPos);
+      }
+      if (TemplateId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TemplateId);
+      }
+      if (followPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FollowPos);
+      }
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      size += otherParams_.CalculateSize(_repeated_otherParams_codec);
+      if (FollowType != global::OldProtos.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FollowType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(BeginCameraSceneLookWithTemplateNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.lookPos_ != null) {
+        if (lookPos_ == null) {
+          LookPos = new global::OldProtos.Vector();
+        }
+        LookPos.MergeFrom(other.LookPos);
+      }
+      if (other.TemplateId != 0) {
+        TemplateId = other.TemplateId;
+      }
+      if (other.followPos_ != null) {
+        if (followPos_ == null) {
+          FollowPos = new global::OldProtos.Vector();
+        }
+        FollowPos.MergeFrom(other.FollowPos);
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      otherParams_.Add(other.otherParams_);
+      if (other.FollowType != global::OldProtos.BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
+        FollowType = other.FollowType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            if (followPos_ == null) {
+              FollowPos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(FollowPos);
+            break;
+          }
+          case 40: {
+            TemplateId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            if (lookPos_ == null) {
+              LookPos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(LookPos);
+            break;
+          }
+          case 72: {
+            FollowType = (global::OldProtos.BeginCameraSceneLookWithTemplateNotify.Types.FollowType) input.ReadEnum();
+            break;
+          }
+          case 96: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 106: {
+            otherParams_.AddEntriesFrom(input, _repeated_otherParams_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            if (followPos_ == null) {
+              FollowPos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(FollowPos);
+            break;
+          }
+          case 40: {
+            TemplateId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            if (lookPos_ == null) {
+              LookPos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(LookPos);
+            break;
+          }
+          case 72: {
+            FollowType = (global::OldProtos.BeginCameraSceneLookWithTemplateNotify.Types.FollowType) input.ReadEnum();
+            break;
+          }
+          case 96: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 106: {
+            otherParams_.AddEntriesFrom(ref input, _repeated_otherParams_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the BeginCameraSceneLookWithTemplateNotify message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum FollowType {
+        [pbr::OriginalName("FOLLOW_TYPE_INIT_FOLLOW_POS")] InitFollowPos = 0,
+        [pbr::OriginalName("FOLLOW_TYPE_SET_FOLLOW_POS")] SetFollowPos = 1,
+        [pbr::OriginalName("FOLLOW_TYPE_SET_ABS_FOLLOW_POS")] SetAbsFollowPos = 2,
+      }
+
+    }
+    #endregion
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 3160
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class BeginCameraSceneLookWithTemplateNotify : pb::IMessage<BeginCameraSceneLookWithTemplateNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<BeginCameraSceneLookWithTemplateNotify> _parser = new pb::MessageParser<BeginCameraSceneLookWithTemplateNotify>(() => new BeginCameraSceneLookWithTemplateNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<BeginCameraSceneLookWithTemplateNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::BeginCameraSceneLookWithTemplateNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BeginCameraSceneLookWithTemplateNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BeginCameraSceneLookWithTemplateNotify(BeginCameraSceneLookWithTemplateNotify other) : this() {
-    lookPos_ = other.lookPos_ != null ? other.lookPos_.Clone() : null;
-    templateId_ = other.templateId_;
-    followPos_ = other.followPos_ != null ? other.followPos_.Clone() : null;
-    entityId_ = other.entityId_;
-    otherParams_ = other.otherParams_.Clone();
-    followType_ = other.followType_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BeginCameraSceneLookWithTemplateNotify Clone() {
-    return new BeginCameraSceneLookWithTemplateNotify(this);
-  }
-
-  /// <summary>Field number for the "look_pos" field.</summary>
-  public const int LookPosFieldNumber = 8;
-  private global::Vector lookPos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector LookPos {
-    get { return lookPos_; }
-    set {
-      lookPos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "template_id" field.</summary>
-  public const int TemplateIdFieldNumber = 5;
-  private uint templateId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TemplateId {
-    get { return templateId_; }
-    set {
-      templateId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "follow_pos" field.</summary>
-  public const int FollowPosFieldNumber = 2;
-  private global::Vector followPos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector FollowPos {
-    get { return followPos_; }
-    set {
-      followPos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity_id" field.</summary>
-  public const int EntityIdFieldNumber = 12;
-  private uint entityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EntityId {
-    get { return entityId_; }
-    set {
-      entityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "other_params" field.</summary>
-  public const int OtherParamsFieldNumber = 13;
-  private static readonly pb::FieldCodec<string> _repeated_otherParams_codec
-      = pb::FieldCodec.ForString(106);
-  private readonly pbc::RepeatedField<string> otherParams_ = new pbc::RepeatedField<string>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<string> OtherParams {
-    get { return otherParams_; }
-  }
-
-  /// <summary>Field number for the "follow_type" field.</summary>
-  public const int FollowTypeFieldNumber = 9;
-  private global::BeginCameraSceneLookWithTemplateNotify.Types.FollowType followType_ = global::BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::BeginCameraSceneLookWithTemplateNotify.Types.FollowType FollowType {
-    get { return followType_; }
-    set {
-      followType_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as BeginCameraSceneLookWithTemplateNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(BeginCameraSceneLookWithTemplateNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(LookPos, other.LookPos)) return false;
-    if (TemplateId != other.TemplateId) return false;
-    if (!object.Equals(FollowPos, other.FollowPos)) return false;
-    if (EntityId != other.EntityId) return false;
-    if(!otherParams_.Equals(other.otherParams_)) return false;
-    if (FollowType != other.FollowType) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (lookPos_ != null) hash ^= LookPos.GetHashCode();
-    if (TemplateId != 0) hash ^= TemplateId.GetHashCode();
-    if (followPos_ != null) hash ^= FollowPos.GetHashCode();
-    if (EntityId != 0) hash ^= EntityId.GetHashCode();
-    hash ^= otherParams_.GetHashCode();
-    if (FollowType != global::BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) hash ^= FollowType.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (followPos_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(FollowPos);
-    }
-    if (TemplateId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(TemplateId);
-    }
-    if (lookPos_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(LookPos);
-    }
-    if (FollowType != global::BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
-      output.WriteRawTag(72);
-      output.WriteEnum((int) FollowType);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(EntityId);
-    }
-    otherParams_.WriteTo(output, _repeated_otherParams_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (followPos_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(FollowPos);
-    }
-    if (TemplateId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(TemplateId);
-    }
-    if (lookPos_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(LookPos);
-    }
-    if (FollowType != global::BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
-      output.WriteRawTag(72);
-      output.WriteEnum((int) FollowType);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(EntityId);
-    }
-    otherParams_.WriteTo(ref output, _repeated_otherParams_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (lookPos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(LookPos);
-    }
-    if (TemplateId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TemplateId);
-    }
-    if (followPos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(FollowPos);
-    }
-    if (EntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-    }
-    size += otherParams_.CalculateSize(_repeated_otherParams_codec);
-    if (FollowType != global::BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FollowType);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(BeginCameraSceneLookWithTemplateNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.lookPos_ != null) {
-      if (lookPos_ == null) {
-        LookPos = new global::Vector();
-      }
-      LookPos.MergeFrom(other.LookPos);
-    }
-    if (other.TemplateId != 0) {
-      TemplateId = other.TemplateId;
-    }
-    if (other.followPos_ != null) {
-      if (followPos_ == null) {
-        FollowPos = new global::Vector();
-      }
-      FollowPos.MergeFrom(other.FollowPos);
-    }
-    if (other.EntityId != 0) {
-      EntityId = other.EntityId;
-    }
-    otherParams_.Add(other.otherParams_);
-    if (other.FollowType != global::BeginCameraSceneLookWithTemplateNotify.Types.FollowType.InitFollowPos) {
-      FollowType = other.FollowType;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18: {
-          if (followPos_ == null) {
-            FollowPos = new global::Vector();
-          }
-          input.ReadMessage(FollowPos);
-          break;
-        }
-        case 40: {
-          TemplateId = input.ReadUInt32();
-          break;
-        }
-        case 66: {
-          if (lookPos_ == null) {
-            LookPos = new global::Vector();
-          }
-          input.ReadMessage(LookPos);
-          break;
-        }
-        case 72: {
-          FollowType = (global::BeginCameraSceneLookWithTemplateNotify.Types.FollowType) input.ReadEnum();
-          break;
-        }
-        case 96: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 106: {
-          otherParams_.AddEntriesFrom(input, _repeated_otherParams_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18: {
-          if (followPos_ == null) {
-            FollowPos = new global::Vector();
-          }
-          input.ReadMessage(FollowPos);
-          break;
-        }
-        case 40: {
-          TemplateId = input.ReadUInt32();
-          break;
-        }
-        case 66: {
-          if (lookPos_ == null) {
-            LookPos = new global::Vector();
-          }
-          input.ReadMessage(LookPos);
-          break;
-        }
-        case 72: {
-          FollowType = (global::BeginCameraSceneLookWithTemplateNotify.Types.FollowType) input.ReadEnum();
-          break;
-        }
-        case 96: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 106: {
-          otherParams_.AddEntriesFrom(ref input, _repeated_otherParams_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-  #region Nested types
-  /// <summary>Container for nested types declared in the BeginCameraSceneLookWithTemplateNotify message type.</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static partial class Types {
-    public enum FollowType {
-      [pbr::OriginalName("FOLLOW_TYPE_INIT_FOLLOW_POS")] InitFollowPos = 0,
-      [pbr::OriginalName("FOLLOW_TYPE_SET_FOLLOW_POS")] SetFollowPos = 1,
-      [pbr::OriginalName("FOLLOW_TYPE_SET_ABS_FOLLOW_POS")] SetAbsFollowPos = 2,
-    }
-
-  }
-  #endregion
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

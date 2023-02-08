@@ -9,306 +9,308 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from UnlockAvatarTalentRsp.proto</summary>
-public static partial class UnlockAvatarTalentRspReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for UnlockAvatarTalentRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from UnlockAvatarTalentRsp.proto</summary>
+  public static partial class UnlockAvatarTalentRspReflection {
 
-  static UnlockAvatarTalentRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtVbmxvY2tBdmF0YXJUYWxlbnRSc3AucHJvdG8iUAoVVW5sb2NrQXZhdGFy",
-          "VGFsZW50UnNwEhEKCXRhbGVudF9pZBgOIAEoDRITCgthdmF0YXJfZ3VpZBgB",
-          "IAEoBBIPCgdyZXRjb2RlGAMgASgFQhYKFG9yZy5zb3JhcG9pbnRhLnByb3Rv",
-          "YgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::UnlockAvatarTalentRsp), global::UnlockAvatarTalentRsp.Parser, new[]{ "TalentId", "AvatarGuid", "Retcode" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for UnlockAvatarTalentRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static UnlockAvatarTalentRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtVbmxvY2tBdmF0YXJUYWxlbnRSc3AucHJvdG8iUAoVVW5sb2NrQXZhdGFy",
+            "VGFsZW50UnNwEhEKCXRhbGVudF9pZBgOIAEoDRITCgthdmF0YXJfZ3VpZBgB",
+            "IAEoBBIPCgdyZXRjb2RlGAMgASgFQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.UnlockAvatarTalentRsp), global::NewProtos.UnlockAvatarTalentRsp.Parser, new[]{ "TalentId", "AvatarGuid", "Retcode" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1030;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class UnlockAvatarTalentRsp : pb::IMessage<UnlockAvatarTalentRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<UnlockAvatarTalentRsp> _parser = new pb::MessageParser<UnlockAvatarTalentRsp>(() => new UnlockAvatarTalentRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<UnlockAvatarTalentRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.UnlockAvatarTalentRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UnlockAvatarTalentRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UnlockAvatarTalentRsp(UnlockAvatarTalentRsp other) : this() {
+      talentId_ = other.talentId_;
+      avatarGuid_ = other.avatarGuid_;
+      retcode_ = other.retcode_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UnlockAvatarTalentRsp Clone() {
+      return new UnlockAvatarTalentRsp(this);
+    }
+
+    /// <summary>Field number for the "talent_id" field.</summary>
+    public const int TalentIdFieldNumber = 14;
+    private uint talentId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TalentId {
+      get { return talentId_; }
+      set {
+        talentId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "avatar_guid" field.</summary>
+    public const int AvatarGuidFieldNumber = 1;
+    private ulong avatarGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong AvatarGuid {
+      get { return avatarGuid_; }
+      set {
+        avatarGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 3;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as UnlockAvatarTalentRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(UnlockAvatarTalentRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (TalentId != other.TalentId) return false;
+      if (AvatarGuid != other.AvatarGuid) return false;
+      if (Retcode != other.Retcode) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (TalentId != 0) hash ^= TalentId.GetHashCode();
+      if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(8);
+        output.WriteUInt64(AvatarGuid);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Retcode);
+      }
+      if (TalentId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(TalentId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(8);
+        output.WriteUInt64(AvatarGuid);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Retcode);
+      }
+      if (TalentId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(TalentId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (TalentId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TalentId);
+      }
+      if (AvatarGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(UnlockAvatarTalentRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.TalentId != 0) {
+        TalentId = other.TalentId;
+      }
+      if (other.AvatarGuid != 0UL) {
+        AvatarGuid = other.AvatarGuid;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            AvatarGuid = input.ReadUInt64();
+            break;
+          }
+          case 24: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            TalentId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            AvatarGuid = input.ReadUInt64();
+            break;
+          }
+          case 24: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            TalentId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 1030;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class UnlockAvatarTalentRsp : pb::IMessage<UnlockAvatarTalentRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<UnlockAvatarTalentRsp> _parser = new pb::MessageParser<UnlockAvatarTalentRsp>(() => new UnlockAvatarTalentRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<UnlockAvatarTalentRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::UnlockAvatarTalentRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public UnlockAvatarTalentRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public UnlockAvatarTalentRsp(UnlockAvatarTalentRsp other) : this() {
-    talentId_ = other.talentId_;
-    avatarGuid_ = other.avatarGuid_;
-    retcode_ = other.retcode_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public UnlockAvatarTalentRsp Clone() {
-    return new UnlockAvatarTalentRsp(this);
-  }
-
-  /// <summary>Field number for the "talent_id" field.</summary>
-  public const int TalentIdFieldNumber = 14;
-  private uint talentId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TalentId {
-    get { return talentId_; }
-    set {
-      talentId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "avatar_guid" field.</summary>
-  public const int AvatarGuidFieldNumber = 1;
-  private ulong avatarGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong AvatarGuid {
-    get { return avatarGuid_; }
-    set {
-      avatarGuid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 3;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as UnlockAvatarTalentRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(UnlockAvatarTalentRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (TalentId != other.TalentId) return false;
-    if (AvatarGuid != other.AvatarGuid) return false;
-    if (Retcode != other.Retcode) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (TalentId != 0) hash ^= TalentId.GetHashCode();
-    if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (AvatarGuid != 0UL) {
-      output.WriteRawTag(8);
-      output.WriteUInt64(AvatarGuid);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(24);
-      output.WriteInt32(Retcode);
-    }
-    if (TalentId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(TalentId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (AvatarGuid != 0UL) {
-      output.WriteRawTag(8);
-      output.WriteUInt64(AvatarGuid);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(24);
-      output.WriteInt32(Retcode);
-    }
-    if (TalentId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(TalentId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (TalentId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TalentId);
-    }
-    if (AvatarGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
-    }
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(UnlockAvatarTalentRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.TalentId != 0) {
-      TalentId = other.TalentId;
-    }
-    if (other.AvatarGuid != 0UL) {
-      AvatarGuid = other.AvatarGuid;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          AvatarGuid = input.ReadUInt64();
-          break;
-        }
-        case 24: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 112: {
-          TalentId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          AvatarGuid = input.ReadUInt64();
-          break;
-        }
-        case 24: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 112: {
-          TalentId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

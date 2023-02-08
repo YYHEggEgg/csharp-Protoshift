@@ -9,316 +9,319 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AvatarDieAnimationEndReq.proto</summary>
-public static partial class AvatarDieAnimationEndReqReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AvatarDieAnimationEndReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AvatarDieAnimationEndReq.proto</summary>
+  public static partial class AvatarDieAnimationEndReqReflection {
 
-  static AvatarDieAnimationEndReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch5BdmF0YXJEaWVBbmltYXRpb25FbmRSZXEucHJvdG8aDFZlY3Rvci5wcm90",
-          "byJbChhBdmF0YXJEaWVBbmltYXRpb25FbmRSZXESEAoIZGllX2d1aWQYDSAB",
-          "KAQSGwoKcmVib3JuX3BvcxgOIAEoCzIHLlZlY3RvchIQCghza2lsbF9pZBgJ",
-          "IAEoDUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AvatarDieAnimationEndReq), global::AvatarDieAnimationEndReq.Parser, new[]{ "DieGuid", "RebornPos", "SkillId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AvatarDieAnimationEndReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AvatarDieAnimationEndReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch5BdmF0YXJEaWVBbmltYXRpb25FbmRSZXEucHJvdG8aDFZlY3Rvci5wcm90",
+            "byJbChhBdmF0YXJEaWVBbmltYXRpb25FbmRSZXESEAoIZGllX2d1aWQYDSAB",
+            "KAQSGwoKcmVib3JuX3BvcxgOIAEoCzIHLlZlY3RvchIQCghza2lsbF9pZBgJ",
+            "IAEoDUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.AvatarDieAnimationEndReq), global::NewProtos.AvatarDieAnimationEndReq.Parser, new[]{ "DieGuid", "RebornPos", "SkillId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1695;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
+  /// </summary>
+  public sealed partial class AvatarDieAnimationEndReq : pb::IMessage<AvatarDieAnimationEndReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AvatarDieAnimationEndReq> _parser = new pb::MessageParser<AvatarDieAnimationEndReq>(() => new AvatarDieAnimationEndReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AvatarDieAnimationEndReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.AvatarDieAnimationEndReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarDieAnimationEndReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarDieAnimationEndReq(AvatarDieAnimationEndReq other) : this() {
+      dieGuid_ = other.dieGuid_;
+      rebornPos_ = other.rebornPos_ != null ? other.rebornPos_.Clone() : null;
+      skillId_ = other.skillId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarDieAnimationEndReq Clone() {
+      return new AvatarDieAnimationEndReq(this);
+    }
+
+    /// <summary>Field number for the "die_guid" field.</summary>
+    public const int DieGuidFieldNumber = 13;
+    private ulong dieGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong DieGuid {
+      get { return dieGuid_; }
+      set {
+        dieGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reborn_pos" field.</summary>
+    public const int RebornPosFieldNumber = 14;
+    private global::NewProtos.Vector rebornPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.Vector RebornPos {
+      get { return rebornPos_; }
+      set {
+        rebornPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_id" field.</summary>
+    public const int SkillIdFieldNumber = 9;
+    private uint skillId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillId {
+      get { return skillId_; }
+      set {
+        skillId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AvatarDieAnimationEndReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AvatarDieAnimationEndReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DieGuid != other.DieGuid) return false;
+      if (!object.Equals(RebornPos, other.RebornPos)) return false;
+      if (SkillId != other.SkillId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DieGuid != 0UL) hash ^= DieGuid.GetHashCode();
+      if (rebornPos_ != null) hash ^= RebornPos.GetHashCode();
+      if (SkillId != 0) hash ^= SkillId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (SkillId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(SkillId);
+      }
+      if (DieGuid != 0UL) {
+        output.WriteRawTag(104);
+        output.WriteUInt64(DieGuid);
+      }
+      if (rebornPos_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(RebornPos);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (SkillId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(SkillId);
+      }
+      if (DieGuid != 0UL) {
+        output.WriteRawTag(104);
+        output.WriteUInt64(DieGuid);
+      }
+      if (rebornPos_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(RebornPos);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (DieGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DieGuid);
+      }
+      if (rebornPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RebornPos);
+      }
+      if (SkillId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AvatarDieAnimationEndReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DieGuid != 0UL) {
+        DieGuid = other.DieGuid;
+      }
+      if (other.rebornPos_ != null) {
+        if (rebornPos_ == null) {
+          RebornPos = new global::NewProtos.Vector();
+        }
+        RebornPos.MergeFrom(other.RebornPos);
+      }
+      if (other.SkillId != 0) {
+        SkillId = other.SkillId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 72: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            DieGuid = input.ReadUInt64();
+            break;
+          }
+          case 114: {
+            if (rebornPos_ == null) {
+              RebornPos = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(RebornPos);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 72: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            DieGuid = input.ReadUInt64();
+            break;
+          }
+          case 114: {
+            if (rebornPos_ == null) {
+              RebornPos = new global::NewProtos.Vector();
+            }
+            input.ReadMessage(RebornPos);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 1695;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-///   IS_ALLOW_CLIENT = 1;
-/// }
-/// </summary>
-public sealed partial class AvatarDieAnimationEndReq : pb::IMessage<AvatarDieAnimationEndReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AvatarDieAnimationEndReq> _parser = new pb::MessageParser<AvatarDieAnimationEndReq>(() => new AvatarDieAnimationEndReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AvatarDieAnimationEndReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AvatarDieAnimationEndReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarDieAnimationEndReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarDieAnimationEndReq(AvatarDieAnimationEndReq other) : this() {
-    dieGuid_ = other.dieGuid_;
-    rebornPos_ = other.rebornPos_ != null ? other.rebornPos_.Clone() : null;
-    skillId_ = other.skillId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarDieAnimationEndReq Clone() {
-    return new AvatarDieAnimationEndReq(this);
-  }
-
-  /// <summary>Field number for the "die_guid" field.</summary>
-  public const int DieGuidFieldNumber = 13;
-  private ulong dieGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong DieGuid {
-    get { return dieGuid_; }
-    set {
-      dieGuid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "reborn_pos" field.</summary>
-  public const int RebornPosFieldNumber = 14;
-  private global::Vector rebornPos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector RebornPos {
-    get { return rebornPos_; }
-    set {
-      rebornPos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "skill_id" field.</summary>
-  public const int SkillIdFieldNumber = 9;
-  private uint skillId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SkillId {
-    get { return skillId_; }
-    set {
-      skillId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AvatarDieAnimationEndReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AvatarDieAnimationEndReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (DieGuid != other.DieGuid) return false;
-    if (!object.Equals(RebornPos, other.RebornPos)) return false;
-    if (SkillId != other.SkillId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (DieGuid != 0UL) hash ^= DieGuid.GetHashCode();
-    if (rebornPos_ != null) hash ^= RebornPos.GetHashCode();
-    if (SkillId != 0) hash ^= SkillId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (SkillId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(SkillId);
-    }
-    if (DieGuid != 0UL) {
-      output.WriteRawTag(104);
-      output.WriteUInt64(DieGuid);
-    }
-    if (rebornPos_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(RebornPos);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (SkillId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(SkillId);
-    }
-    if (DieGuid != 0UL) {
-      output.WriteRawTag(104);
-      output.WriteUInt64(DieGuid);
-    }
-    if (rebornPos_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(RebornPos);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (DieGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DieGuid);
-    }
-    if (rebornPos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(RebornPos);
-    }
-    if (SkillId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AvatarDieAnimationEndReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.DieGuid != 0UL) {
-      DieGuid = other.DieGuid;
-    }
-    if (other.rebornPos_ != null) {
-      if (rebornPos_ == null) {
-        RebornPos = new global::Vector();
-      }
-      RebornPos.MergeFrom(other.RebornPos);
-    }
-    if (other.SkillId != 0) {
-      SkillId = other.SkillId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 72: {
-          SkillId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          DieGuid = input.ReadUInt64();
-          break;
-        }
-        case 114: {
-          if (rebornPos_ == null) {
-            RebornPos = new global::Vector();
-          }
-          input.ReadMessage(RebornPos);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 72: {
-          SkillId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          DieGuid = input.ReadUInt64();
-          break;
-        }
-        case 114: {
-          if (rebornPos_ == null) {
-            RebornPos = new global::Vector();
-          }
-          input.ReadMessage(RebornPos);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

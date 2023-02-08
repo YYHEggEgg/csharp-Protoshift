@@ -19,7 +19,7 @@ syntax = "proto3";
 import "AbilitySyncStateInfo.proto";
 import "EntityRendererChangedInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SceneWeaponInfo {
   uint32 entity_id = 1;

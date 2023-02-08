@@ -26,7 +26,7 @@ import "HomeFurnitureSuiteData.proto";
 import "HomeNpcData.proto";
 import "WeekendDjinnInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message HomeBlockArrangementInfo {
   repeated HomeFurnitureData deploy_furniure_list = 10;

@@ -9,302 +9,305 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AcceptCityReputationRequestRsp.proto</summary>
-public static partial class AcceptCityReputationRequestRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AcceptCityReputationRequestRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AcceptCityReputationRequestRsp.proto</summary>
+  public static partial class AcceptCityReputationRequestRspReflection {
 
-  static AcceptCityReputationRequestRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiRBY2NlcHRDaXR5UmVwdXRhdGlvblJlcXVlc3RSc3AucHJvdG8iVgoeQWNj",
-          "ZXB0Q2l0eVJlcHV0YXRpb25SZXF1ZXN0UnNwEhIKCnJlcXVlc3RfaWQYBSAB",
-          "KA0SDwoHY2l0eV9pZBgNIAEoDRIPCgdyZXRjb2RlGAIgASgFQh4KHGVtdS5n",
-          "cmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AcceptCityReputationRequestRsp), global::AcceptCityReputationRequestRsp.Parser, new[]{ "RequestId", "CityId", "Retcode" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AcceptCityReputationRequestRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AcceptCityReputationRequestRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiRBY2NlcHRDaXR5UmVwdXRhdGlvblJlcXVlc3RSc3AucHJvdG8iVgoeQWNj",
+            "ZXB0Q2l0eVJlcHV0YXRpb25SZXF1ZXN0UnNwEhIKCnJlcXVlc3RfaWQYBSAB",
+            "KA0SDwoHY2l0eV9pZBgNIAEoDRIPCgdyZXRjb2RlGAIgASgFQgyqAglPbGRQ",
+            "cm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.AcceptCityReputationRequestRsp), global::OldProtos.AcceptCityReputationRequestRsp.Parser, new[]{ "RequestId", "CityId", "Retcode" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 2873
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class AcceptCityReputationRequestRsp : pb::IMessage<AcceptCityReputationRequestRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AcceptCityReputationRequestRsp> _parser = new pb::MessageParser<AcceptCityReputationRequestRsp>(() => new AcceptCityReputationRequestRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AcceptCityReputationRequestRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.AcceptCityReputationRequestRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AcceptCityReputationRequestRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AcceptCityReputationRequestRsp(AcceptCityReputationRequestRsp other) : this() {
+      requestId_ = other.requestId_;
+      cityId_ = other.cityId_;
+      retcode_ = other.retcode_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AcceptCityReputationRequestRsp Clone() {
+      return new AcceptCityReputationRequestRsp(this);
+    }
+
+    /// <summary>Field number for the "request_id" field.</summary>
+    public const int RequestIdFieldNumber = 5;
+    private uint requestId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RequestId {
+      get { return requestId_; }
+      set {
+        requestId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "city_id" field.</summary>
+    public const int CityIdFieldNumber = 13;
+    private uint cityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CityId {
+      get { return cityId_; }
+      set {
+        cityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 2;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AcceptCityReputationRequestRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AcceptCityReputationRequestRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RequestId != other.RequestId) return false;
+      if (CityId != other.CityId) return false;
+      if (Retcode != other.Retcode) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RequestId != 0) hash ^= RequestId.GetHashCode();
+      if (CityId != 0) hash ^= CityId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Retcode != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Retcode);
+      }
+      if (RequestId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(RequestId);
+      }
+      if (CityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(CityId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Retcode != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Retcode);
+      }
+      if (RequestId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(RequestId);
+      }
+      if (CityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(CityId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (RequestId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RequestId);
+      }
+      if (CityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityId);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AcceptCityReputationRequestRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RequestId != 0) {
+        RequestId = other.RequestId;
+      }
+      if (other.CityId != 0) {
+        CityId = other.CityId;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            RequestId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            CityId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 40: {
+            RequestId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            CityId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 2873
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class AcceptCityReputationRequestRsp : pb::IMessage<AcceptCityReputationRequestRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AcceptCityReputationRequestRsp> _parser = new pb::MessageParser<AcceptCityReputationRequestRsp>(() => new AcceptCityReputationRequestRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AcceptCityReputationRequestRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AcceptCityReputationRequestRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AcceptCityReputationRequestRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AcceptCityReputationRequestRsp(AcceptCityReputationRequestRsp other) : this() {
-    requestId_ = other.requestId_;
-    cityId_ = other.cityId_;
-    retcode_ = other.retcode_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AcceptCityReputationRequestRsp Clone() {
-    return new AcceptCityReputationRequestRsp(this);
-  }
-
-  /// <summary>Field number for the "request_id" field.</summary>
-  public const int RequestIdFieldNumber = 5;
-  private uint requestId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RequestId {
-    get { return requestId_; }
-    set {
-      requestId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "city_id" field.</summary>
-  public const int CityIdFieldNumber = 13;
-  private uint cityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CityId {
-    get { return cityId_; }
-    set {
-      cityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 2;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AcceptCityReputationRequestRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AcceptCityReputationRequestRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (RequestId != other.RequestId) return false;
-    if (CityId != other.CityId) return false;
-    if (Retcode != other.Retcode) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (RequestId != 0) hash ^= RequestId.GetHashCode();
-    if (CityId != 0) hash ^= CityId.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Retcode != 0) {
-      output.WriteRawTag(16);
-      output.WriteInt32(Retcode);
-    }
-    if (RequestId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(RequestId);
-    }
-    if (CityId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(CityId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Retcode != 0) {
-      output.WriteRawTag(16);
-      output.WriteInt32(Retcode);
-    }
-    if (RequestId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(RequestId);
-    }
-    if (CityId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(CityId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (RequestId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RequestId);
-    }
-    if (CityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CityId);
-    }
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AcceptCityReputationRequestRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.RequestId != 0) {
-      RequestId = other.RequestId;
-    }
-    if (other.CityId != 0) {
-      CityId = other.CityId;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 40: {
-          RequestId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          CityId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 40: {
-          RequestId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          CityId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

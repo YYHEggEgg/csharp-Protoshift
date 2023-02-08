@@ -20,7 +20,7 @@ import "VintageHuntingFirstStageInfo.proto";
 import "VintageHuntingSecondStageInfo.proto";
 import "VintageHuntingThirdStageInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SceneGalleryVintageHuntingInfo {
   uint32 stage_id = 7;

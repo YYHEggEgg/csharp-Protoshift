@@ -19,7 +19,7 @@ syntax = "proto3";
 import "GalleryStartSource.proto";
 import "IslandPartySailStage.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SceneGalleryIslandPartySailInfo {
   uint32 max_clean_progress = 14;

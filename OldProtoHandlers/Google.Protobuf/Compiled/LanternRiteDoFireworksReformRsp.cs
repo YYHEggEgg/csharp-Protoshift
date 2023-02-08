@@ -9,519 +9,521 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from LanternRiteDoFireworksReformRsp.proto</summary>
-public static partial class LanternRiteDoFireworksReformRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for LanternRiteDoFireworksReformRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from LanternRiteDoFireworksReformRsp.proto</summary>
+  public static partial class LanternRiteDoFireworksReformRspReflection {
 
-  static LanternRiteDoFireworksReformRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiVMYW50ZXJuUml0ZURvRmlyZXdvcmtzUmVmb3JtUnNwLnByb3RvGipMYW50",
-          "ZXJuUml0ZUZpcmV3b3Jrc1JlZm9ybUZhY3RvckluZm8ucHJvdG8imwIKH0xh",
-          "bnRlcm5SaXRlRG9GaXJld29ya3NSZWZvcm1Sc3ASEAoIc3RhZ2VfaWQYByAB",
-          "KA0SEAoIaXNfbHVja3kYDSABKAgSFAoMY2hhbGxlbmdlX2lkGAggASgNEj8K",
-          "EGZhY3Rvcl9pbmZvX2xpc3QYAiADKAsyJS5MYW50ZXJuUml0ZUZpcmV3b3Jr",
-          "c1JlZm9ybUZhY3RvckluZm8SFQoNc3RhbWluYV92YWx1ZRgKIAEoDRIUCgxy",
-          "ZWZvcm1fc2NvcmUYDyABKA0SGgoSZmlyZV9lbGVtZW50X3ZhbHVlGAsgASgN",
-          "Eg8KB3JldGNvZGUYAyABKAUSIwobZmlyZV9lbGVtZW50X2FkZGl0aW9uX3Jh",
-          "dGlvGAwgASgNQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnBy",
-          "b3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::LanternRiteFireworksReformFactorInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::LanternRiteDoFireworksReformRsp), global::LanternRiteDoFireworksReformRsp.Parser, new[]{ "StageId", "IsLucky", "ChallengeId", "FactorInfoList", "StaminaValue", "ReformScore", "FireElementValue", "Retcode", "FireElementAdditionRatio" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for LanternRiteDoFireworksReformRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static LanternRiteDoFireworksReformRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiVMYW50ZXJuUml0ZURvRmlyZXdvcmtzUmVmb3JtUnNwLnByb3RvGipMYW50",
+            "ZXJuUml0ZUZpcmV3b3Jrc1JlZm9ybUZhY3RvckluZm8ucHJvdG8imwIKH0xh",
+            "bnRlcm5SaXRlRG9GaXJld29ya3NSZWZvcm1Sc3ASEAoIc3RhZ2VfaWQYByAB",
+            "KA0SEAoIaXNfbHVja3kYDSABKAgSFAoMY2hhbGxlbmdlX2lkGAggASgNEj8K",
+            "EGZhY3Rvcl9pbmZvX2xpc3QYAiADKAsyJS5MYW50ZXJuUml0ZUZpcmV3b3Jr",
+            "c1JlZm9ybUZhY3RvckluZm8SFQoNc3RhbWluYV92YWx1ZRgKIAEoDRIUCgxy",
+            "ZWZvcm1fc2NvcmUYDyABKA0SGgoSZmlyZV9lbGVtZW50X3ZhbHVlGAsgASgN",
+            "Eg8KB3JldGNvZGUYAyABKAUSIwobZmlyZV9lbGVtZW50X2FkZGl0aW9uX3Jh",
+            "dGlvGAwgASgNQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.LanternRiteFireworksReformFactorInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.LanternRiteDoFireworksReformRsp), global::OldProtos.LanternRiteDoFireworksReformRsp.Parser, new[]{ "StageId", "IsLucky", "ChallengeId", "FactorInfoList", "StaminaValue", "ReformScore", "FireElementValue", "Retcode", "FireElementAdditionRatio" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 8657
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class LanternRiteDoFireworksReformRsp : pb::IMessage<LanternRiteDoFireworksReformRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<LanternRiteDoFireworksReformRsp> _parser = new pb::MessageParser<LanternRiteDoFireworksReformRsp>(() => new LanternRiteDoFireworksReformRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<LanternRiteDoFireworksReformRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.LanternRiteDoFireworksReformRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LanternRiteDoFireworksReformRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LanternRiteDoFireworksReformRsp(LanternRiteDoFireworksReformRsp other) : this() {
+      stageId_ = other.stageId_;
+      isLucky_ = other.isLucky_;
+      challengeId_ = other.challengeId_;
+      factorInfoList_ = other.factorInfoList_.Clone();
+      staminaValue_ = other.staminaValue_;
+      reformScore_ = other.reformScore_;
+      fireElementValue_ = other.fireElementValue_;
+      retcode_ = other.retcode_;
+      fireElementAdditionRatio_ = other.fireElementAdditionRatio_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LanternRiteDoFireworksReformRsp Clone() {
+      return new LanternRiteDoFireworksReformRsp(this);
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 7;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_lucky" field.</summary>
+    public const int IsLuckyFieldNumber = 13;
+    private bool isLucky_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsLucky {
+      get { return isLucky_; }
+      set {
+        isLucky_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_id" field.</summary>
+    public const int ChallengeIdFieldNumber = 8;
+    private uint challengeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeId {
+      get { return challengeId_; }
+      set {
+        challengeId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "factor_info_list" field.</summary>
+    public const int FactorInfoListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::OldProtos.LanternRiteFireworksReformFactorInfo> _repeated_factorInfoList_codec
+        = pb::FieldCodec.ForMessage(18, global::OldProtos.LanternRiteFireworksReformFactorInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.LanternRiteFireworksReformFactorInfo> factorInfoList_ = new pbc::RepeatedField<global::OldProtos.LanternRiteFireworksReformFactorInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.LanternRiteFireworksReformFactorInfo> FactorInfoList {
+      get { return factorInfoList_; }
+    }
+
+    /// <summary>Field number for the "stamina_value" field.</summary>
+    public const int StaminaValueFieldNumber = 10;
+    private uint staminaValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StaminaValue {
+      get { return staminaValue_; }
+      set {
+        staminaValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reform_score" field.</summary>
+    public const int ReformScoreFieldNumber = 15;
+    private uint reformScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ReformScore {
+      get { return reformScore_; }
+      set {
+        reformScore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fire_element_value" field.</summary>
+    public const int FireElementValueFieldNumber = 11;
+    private uint fireElementValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FireElementValue {
+      get { return fireElementValue_; }
+      set {
+        fireElementValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 3;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fire_element_addition_ratio" field.</summary>
+    public const int FireElementAdditionRatioFieldNumber = 12;
+    private uint fireElementAdditionRatio_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FireElementAdditionRatio {
+      get { return fireElementAdditionRatio_; }
+      set {
+        fireElementAdditionRatio_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as LanternRiteDoFireworksReformRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(LanternRiteDoFireworksReformRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (StageId != other.StageId) return false;
+      if (IsLucky != other.IsLucky) return false;
+      if (ChallengeId != other.ChallengeId) return false;
+      if(!factorInfoList_.Equals(other.factorInfoList_)) return false;
+      if (StaminaValue != other.StaminaValue) return false;
+      if (ReformScore != other.ReformScore) return false;
+      if (FireElementValue != other.FireElementValue) return false;
+      if (Retcode != other.Retcode) return false;
+      if (FireElementAdditionRatio != other.FireElementAdditionRatio) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (IsLucky != false) hash ^= IsLucky.GetHashCode();
+      if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
+      hash ^= factorInfoList_.GetHashCode();
+      if (StaminaValue != 0) hash ^= StaminaValue.GetHashCode();
+      if (ReformScore != 0) hash ^= ReformScore.GetHashCode();
+      if (FireElementValue != 0) hash ^= FireElementValue.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (FireElementAdditionRatio != 0) hash ^= FireElementAdditionRatio.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      factorInfoList_.WriteTo(output, _repeated_factorInfoList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Retcode);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(StageId);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ChallengeId);
+      }
+      if (StaminaValue != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(StaminaValue);
+      }
+      if (FireElementValue != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(FireElementValue);
+      }
+      if (FireElementAdditionRatio != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(FireElementAdditionRatio);
+      }
+      if (IsLucky != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsLucky);
+      }
+      if (ReformScore != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ReformScore);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      factorInfoList_.WriteTo(ref output, _repeated_factorInfoList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Retcode);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(StageId);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ChallengeId);
+      }
+      if (StaminaValue != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(StaminaValue);
+      }
+      if (FireElementValue != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(FireElementValue);
+      }
+      if (FireElementAdditionRatio != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(FireElementAdditionRatio);
+      }
+      if (IsLucky != false) {
+        output.WriteRawTag(104);
+        output.WriteBool(IsLucky);
+      }
+      if (ReformScore != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ReformScore);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      if (IsLucky != false) {
+        size += 1 + 1;
+      }
+      if (ChallengeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
+      }
+      size += factorInfoList_.CalculateSize(_repeated_factorInfoList_codec);
+      if (StaminaValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StaminaValue);
+      }
+      if (ReformScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReformScore);
+      }
+      if (FireElementValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FireElementValue);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (FireElementAdditionRatio != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FireElementAdditionRatio);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(LanternRiteDoFireworksReformRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      if (other.IsLucky != false) {
+        IsLucky = other.IsLucky;
+      }
+      if (other.ChallengeId != 0) {
+        ChallengeId = other.ChallengeId;
+      }
+      factorInfoList_.Add(other.factorInfoList_);
+      if (other.StaminaValue != 0) {
+        StaminaValue = other.StaminaValue;
+      }
+      if (other.ReformScore != 0) {
+        ReformScore = other.ReformScore;
+      }
+      if (other.FireElementValue != 0) {
+        FireElementValue = other.FireElementValue;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.FireElementAdditionRatio != 0) {
+        FireElementAdditionRatio = other.FireElementAdditionRatio;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            factorInfoList_.AddEntriesFrom(input, _repeated_factorInfoList_codec);
+            break;
+          }
+          case 24: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            ChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            StaminaValue = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            FireElementValue = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            FireElementAdditionRatio = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsLucky = input.ReadBool();
+            break;
+          }
+          case 120: {
+            ReformScore = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            factorInfoList_.AddEntriesFrom(ref input, _repeated_factorInfoList_codec);
+            break;
+          }
+          case 24: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 56: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            ChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            StaminaValue = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            FireElementValue = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            FireElementAdditionRatio = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            IsLucky = input.ReadBool();
+            break;
+          }
+          case 120: {
+            ReformScore = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 8657
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class LanternRiteDoFireworksReformRsp : pb::IMessage<LanternRiteDoFireworksReformRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<LanternRiteDoFireworksReformRsp> _parser = new pb::MessageParser<LanternRiteDoFireworksReformRsp>(() => new LanternRiteDoFireworksReformRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<LanternRiteDoFireworksReformRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::LanternRiteDoFireworksReformRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public LanternRiteDoFireworksReformRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public LanternRiteDoFireworksReformRsp(LanternRiteDoFireworksReformRsp other) : this() {
-    stageId_ = other.stageId_;
-    isLucky_ = other.isLucky_;
-    challengeId_ = other.challengeId_;
-    factorInfoList_ = other.factorInfoList_.Clone();
-    staminaValue_ = other.staminaValue_;
-    reformScore_ = other.reformScore_;
-    fireElementValue_ = other.fireElementValue_;
-    retcode_ = other.retcode_;
-    fireElementAdditionRatio_ = other.fireElementAdditionRatio_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public LanternRiteDoFireworksReformRsp Clone() {
-    return new LanternRiteDoFireworksReformRsp(this);
-  }
-
-  /// <summary>Field number for the "stage_id" field.</summary>
-  public const int StageIdFieldNumber = 7;
-  private uint stageId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StageId {
-    get { return stageId_; }
-    set {
-      stageId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_lucky" field.</summary>
-  public const int IsLuckyFieldNumber = 13;
-  private bool isLucky_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsLucky {
-    get { return isLucky_; }
-    set {
-      isLucky_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "challenge_id" field.</summary>
-  public const int ChallengeIdFieldNumber = 8;
-  private uint challengeId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChallengeId {
-    get { return challengeId_; }
-    set {
-      challengeId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "factor_info_list" field.</summary>
-  public const int FactorInfoListFieldNumber = 2;
-  private static readonly pb::FieldCodec<global::LanternRiteFireworksReformFactorInfo> _repeated_factorInfoList_codec
-      = pb::FieldCodec.ForMessage(18, global::LanternRiteFireworksReformFactorInfo.Parser);
-  private readonly pbc::RepeatedField<global::LanternRiteFireworksReformFactorInfo> factorInfoList_ = new pbc::RepeatedField<global::LanternRiteFireworksReformFactorInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::LanternRiteFireworksReformFactorInfo> FactorInfoList {
-    get { return factorInfoList_; }
-  }
-
-  /// <summary>Field number for the "stamina_value" field.</summary>
-  public const int StaminaValueFieldNumber = 10;
-  private uint staminaValue_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StaminaValue {
-    get { return staminaValue_; }
-    set {
-      staminaValue_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "reform_score" field.</summary>
-  public const int ReformScoreFieldNumber = 15;
-  private uint reformScore_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ReformScore {
-    get { return reformScore_; }
-    set {
-      reformScore_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "fire_element_value" field.</summary>
-  public const int FireElementValueFieldNumber = 11;
-  private uint fireElementValue_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FireElementValue {
-    get { return fireElementValue_; }
-    set {
-      fireElementValue_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 3;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "fire_element_addition_ratio" field.</summary>
-  public const int FireElementAdditionRatioFieldNumber = 12;
-  private uint fireElementAdditionRatio_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FireElementAdditionRatio {
-    get { return fireElementAdditionRatio_; }
-    set {
-      fireElementAdditionRatio_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as LanternRiteDoFireworksReformRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(LanternRiteDoFireworksReformRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (StageId != other.StageId) return false;
-    if (IsLucky != other.IsLucky) return false;
-    if (ChallengeId != other.ChallengeId) return false;
-    if(!factorInfoList_.Equals(other.factorInfoList_)) return false;
-    if (StaminaValue != other.StaminaValue) return false;
-    if (ReformScore != other.ReformScore) return false;
-    if (FireElementValue != other.FireElementValue) return false;
-    if (Retcode != other.Retcode) return false;
-    if (FireElementAdditionRatio != other.FireElementAdditionRatio) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (StageId != 0) hash ^= StageId.GetHashCode();
-    if (IsLucky != false) hash ^= IsLucky.GetHashCode();
-    if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
-    hash ^= factorInfoList_.GetHashCode();
-    if (StaminaValue != 0) hash ^= StaminaValue.GetHashCode();
-    if (ReformScore != 0) hash ^= ReformScore.GetHashCode();
-    if (FireElementValue != 0) hash ^= FireElementValue.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (FireElementAdditionRatio != 0) hash ^= FireElementAdditionRatio.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    factorInfoList_.WriteTo(output, _repeated_factorInfoList_codec);
-    if (Retcode != 0) {
-      output.WriteRawTag(24);
-      output.WriteInt32(Retcode);
-    }
-    if (StageId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(StageId);
-    }
-    if (ChallengeId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ChallengeId);
-    }
-    if (StaminaValue != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(StaminaValue);
-    }
-    if (FireElementValue != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(FireElementValue);
-    }
-    if (FireElementAdditionRatio != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(FireElementAdditionRatio);
-    }
-    if (IsLucky != false) {
-      output.WriteRawTag(104);
-      output.WriteBool(IsLucky);
-    }
-    if (ReformScore != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(ReformScore);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    factorInfoList_.WriteTo(ref output, _repeated_factorInfoList_codec);
-    if (Retcode != 0) {
-      output.WriteRawTag(24);
-      output.WriteInt32(Retcode);
-    }
-    if (StageId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(StageId);
-    }
-    if (ChallengeId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ChallengeId);
-    }
-    if (StaminaValue != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(StaminaValue);
-    }
-    if (FireElementValue != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(FireElementValue);
-    }
-    if (FireElementAdditionRatio != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(FireElementAdditionRatio);
-    }
-    if (IsLucky != false) {
-      output.WriteRawTag(104);
-      output.WriteBool(IsLucky);
-    }
-    if (ReformScore != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(ReformScore);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (StageId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-    }
-    if (IsLucky != false) {
-      size += 1 + 1;
-    }
-    if (ChallengeId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
-    }
-    size += factorInfoList_.CalculateSize(_repeated_factorInfoList_codec);
-    if (StaminaValue != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StaminaValue);
-    }
-    if (ReformScore != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReformScore);
-    }
-    if (FireElementValue != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FireElementValue);
-    }
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (FireElementAdditionRatio != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FireElementAdditionRatio);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(LanternRiteDoFireworksReformRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.StageId != 0) {
-      StageId = other.StageId;
-    }
-    if (other.IsLucky != false) {
-      IsLucky = other.IsLucky;
-    }
-    if (other.ChallengeId != 0) {
-      ChallengeId = other.ChallengeId;
-    }
-    factorInfoList_.Add(other.factorInfoList_);
-    if (other.StaminaValue != 0) {
-      StaminaValue = other.StaminaValue;
-    }
-    if (other.ReformScore != 0) {
-      ReformScore = other.ReformScore;
-    }
-    if (other.FireElementValue != 0) {
-      FireElementValue = other.FireElementValue;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.FireElementAdditionRatio != 0) {
-      FireElementAdditionRatio = other.FireElementAdditionRatio;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18: {
-          factorInfoList_.AddEntriesFrom(input, _repeated_factorInfoList_codec);
-          break;
-        }
-        case 24: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 56: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          ChallengeId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          StaminaValue = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          FireElementValue = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          FireElementAdditionRatio = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          IsLucky = input.ReadBool();
-          break;
-        }
-        case 120: {
-          ReformScore = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18: {
-          factorInfoList_.AddEntriesFrom(ref input, _repeated_factorInfoList_codec);
-          break;
-        }
-        case 24: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 56: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          ChallengeId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          StaminaValue = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          FireElementValue = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          FireElementAdditionRatio = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          IsLucky = input.ReadBool();
-          break;
-        }
-        case 120: {
-          ReformScore = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

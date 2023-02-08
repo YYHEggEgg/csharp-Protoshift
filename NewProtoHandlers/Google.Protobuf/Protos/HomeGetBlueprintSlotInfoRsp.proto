@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "HomeBlueprintSlotInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message HomeGetBlueprintSlotInfoRsp {
   // enum CmdId {

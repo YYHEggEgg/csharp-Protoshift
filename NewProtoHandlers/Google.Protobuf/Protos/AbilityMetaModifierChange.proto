@@ -21,7 +21,7 @@ import "AbilityString.proto";
 import "ModifierAction.proto";
 import "ModifierProperty.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message AbilityMetaModifierChange {
   AbilityAttachedModifier attached_instanced_modifier = 3;

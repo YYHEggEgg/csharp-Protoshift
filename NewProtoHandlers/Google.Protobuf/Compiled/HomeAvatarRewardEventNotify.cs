@@ -9,306 +9,309 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from HomeAvatarRewardEventNotify.proto</summary>
-public static partial class HomeAvatarRewardEventNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for HomeAvatarRewardEventNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from HomeAvatarRewardEventNotify.proto</summary>
+  public static partial class HomeAvatarRewardEventNotifyReflection {
 
-  static HomeAvatarRewardEventNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiFIb21lQXZhdGFyUmV3YXJkRXZlbnROb3RpZnkucHJvdG8aH0hvbWVBdmF0",
-          "YXJSZXdhcmRFdmVudEluZm8ucHJvdG8imwEKG0hvbWVBdmF0YXJSZXdhcmRF",
-          "dmVudE5vdGlmeRIwCgxwZW5kaW5nX2xpc3QYCCADKAsyGi5Ib21lQXZhdGFy",
-          "UmV3YXJkRXZlbnRJbmZvEjAKDHJld2FyZF9ldmVudBgOIAEoCzIaLkhvbWVB",
-          "dmF0YXJSZXdhcmRFdmVudEluZm8SGAoQaXNfZXZlbnRfdHJpZ2dlchgDIAEo",
-          "CEIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::HomeAvatarRewardEventInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::HomeAvatarRewardEventNotify), global::HomeAvatarRewardEventNotify.Parser, new[]{ "PendingList", "RewardEvent", "IsEventTrigger" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for HomeAvatarRewardEventNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static HomeAvatarRewardEventNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiFIb21lQXZhdGFyUmV3YXJkRXZlbnROb3RpZnkucHJvdG8aH0hvbWVBdmF0",
+            "YXJSZXdhcmRFdmVudEluZm8ucHJvdG8imwEKG0hvbWVBdmF0YXJSZXdhcmRF",
+            "dmVudE5vdGlmeRIwCgxwZW5kaW5nX2xpc3QYCCADKAsyGi5Ib21lQXZhdGFy",
+            "UmV3YXJkRXZlbnRJbmZvEjAKDHJld2FyZF9ldmVudBgOIAEoCzIaLkhvbWVB",
+            "dmF0YXJSZXdhcmRFdmVudEluZm8SGAoQaXNfZXZlbnRfdHJpZ2dlchgDIAEo",
+            "CEIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.HomeAvatarRewardEventInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.HomeAvatarRewardEventNotify), global::NewProtos.HomeAvatarRewardEventNotify.Parser, new[]{ "PendingList", "RewardEvent", "IsEventTrigger" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4849;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class HomeAvatarRewardEventNotify : pb::IMessage<HomeAvatarRewardEventNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HomeAvatarRewardEventNotify> _parser = new pb::MessageParser<HomeAvatarRewardEventNotify>(() => new HomeAvatarRewardEventNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HomeAvatarRewardEventNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.HomeAvatarRewardEventNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeAvatarRewardEventNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeAvatarRewardEventNotify(HomeAvatarRewardEventNotify other) : this() {
+      pendingList_ = other.pendingList_.Clone();
+      rewardEvent_ = other.rewardEvent_ != null ? other.rewardEvent_.Clone() : null;
+      isEventTrigger_ = other.isEventTrigger_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeAvatarRewardEventNotify Clone() {
+      return new HomeAvatarRewardEventNotify(this);
+    }
+
+    /// <summary>Field number for the "pending_list" field.</summary>
+    public const int PendingListFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::NewProtos.HomeAvatarRewardEventInfo> _repeated_pendingList_codec
+        = pb::FieldCodec.ForMessage(66, global::NewProtos.HomeAvatarRewardEventInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.HomeAvatarRewardEventInfo> pendingList_ = new pbc::RepeatedField<global::NewProtos.HomeAvatarRewardEventInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.HomeAvatarRewardEventInfo> PendingList {
+      get { return pendingList_; }
+    }
+
+    /// <summary>Field number for the "reward_event" field.</summary>
+    public const int RewardEventFieldNumber = 14;
+    private global::NewProtos.HomeAvatarRewardEventInfo rewardEvent_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.HomeAvatarRewardEventInfo RewardEvent {
+      get { return rewardEvent_; }
+      set {
+        rewardEvent_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_event_trigger" field.</summary>
+    public const int IsEventTriggerFieldNumber = 3;
+    private bool isEventTrigger_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsEventTrigger {
+      get { return isEventTrigger_; }
+      set {
+        isEventTrigger_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HomeAvatarRewardEventNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HomeAvatarRewardEventNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!pendingList_.Equals(other.pendingList_)) return false;
+      if (!object.Equals(RewardEvent, other.RewardEvent)) return false;
+      if (IsEventTrigger != other.IsEventTrigger) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= pendingList_.GetHashCode();
+      if (rewardEvent_ != null) hash ^= RewardEvent.GetHashCode();
+      if (IsEventTrigger != false) hash ^= IsEventTrigger.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsEventTrigger != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsEventTrigger);
+      }
+      pendingList_.WriteTo(output, _repeated_pendingList_codec);
+      if (rewardEvent_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(RewardEvent);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsEventTrigger != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsEventTrigger);
+      }
+      pendingList_.WriteTo(ref output, _repeated_pendingList_codec);
+      if (rewardEvent_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(RewardEvent);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += pendingList_.CalculateSize(_repeated_pendingList_codec);
+      if (rewardEvent_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RewardEvent);
+      }
+      if (IsEventTrigger != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HomeAvatarRewardEventNotify other) {
+      if (other == null) {
+        return;
+      }
+      pendingList_.Add(other.pendingList_);
+      if (other.rewardEvent_ != null) {
+        if (rewardEvent_ == null) {
+          RewardEvent = new global::NewProtos.HomeAvatarRewardEventInfo();
+        }
+        RewardEvent.MergeFrom(other.RewardEvent);
+      }
+      if (other.IsEventTrigger != false) {
+        IsEventTrigger = other.IsEventTrigger;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            IsEventTrigger = input.ReadBool();
+            break;
+          }
+          case 66: {
+            pendingList_.AddEntriesFrom(input, _repeated_pendingList_codec);
+            break;
+          }
+          case 114: {
+            if (rewardEvent_ == null) {
+              RewardEvent = new global::NewProtos.HomeAvatarRewardEventInfo();
+            }
+            input.ReadMessage(RewardEvent);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            IsEventTrigger = input.ReadBool();
+            break;
+          }
+          case 66: {
+            pendingList_.AddEntriesFrom(ref input, _repeated_pendingList_codec);
+            break;
+          }
+          case 114: {
+            if (rewardEvent_ == null) {
+              RewardEvent = new global::NewProtos.HomeAvatarRewardEventInfo();
+            }
+            input.ReadMessage(RewardEvent);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 4849;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class HomeAvatarRewardEventNotify : pb::IMessage<HomeAvatarRewardEventNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<HomeAvatarRewardEventNotify> _parser = new pb::MessageParser<HomeAvatarRewardEventNotify>(() => new HomeAvatarRewardEventNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<HomeAvatarRewardEventNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::HomeAvatarRewardEventNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeAvatarRewardEventNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeAvatarRewardEventNotify(HomeAvatarRewardEventNotify other) : this() {
-    pendingList_ = other.pendingList_.Clone();
-    rewardEvent_ = other.rewardEvent_ != null ? other.rewardEvent_.Clone() : null;
-    isEventTrigger_ = other.isEventTrigger_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeAvatarRewardEventNotify Clone() {
-    return new HomeAvatarRewardEventNotify(this);
-  }
-
-  /// <summary>Field number for the "pending_list" field.</summary>
-  public const int PendingListFieldNumber = 8;
-  private static readonly pb::FieldCodec<global::HomeAvatarRewardEventInfo> _repeated_pendingList_codec
-      = pb::FieldCodec.ForMessage(66, global::HomeAvatarRewardEventInfo.Parser);
-  private readonly pbc::RepeatedField<global::HomeAvatarRewardEventInfo> pendingList_ = new pbc::RepeatedField<global::HomeAvatarRewardEventInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::HomeAvatarRewardEventInfo> PendingList {
-    get { return pendingList_; }
-  }
-
-  /// <summary>Field number for the "reward_event" field.</summary>
-  public const int RewardEventFieldNumber = 14;
-  private global::HomeAvatarRewardEventInfo rewardEvent_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::HomeAvatarRewardEventInfo RewardEvent {
-    get { return rewardEvent_; }
-    set {
-      rewardEvent_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_event_trigger" field.</summary>
-  public const int IsEventTriggerFieldNumber = 3;
-  private bool isEventTrigger_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsEventTrigger {
-    get { return isEventTrigger_; }
-    set {
-      isEventTrigger_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as HomeAvatarRewardEventNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(HomeAvatarRewardEventNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!pendingList_.Equals(other.pendingList_)) return false;
-    if (!object.Equals(RewardEvent, other.RewardEvent)) return false;
-    if (IsEventTrigger != other.IsEventTrigger) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= pendingList_.GetHashCode();
-    if (rewardEvent_ != null) hash ^= RewardEvent.GetHashCode();
-    if (IsEventTrigger != false) hash ^= IsEventTrigger.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsEventTrigger != false) {
-      output.WriteRawTag(24);
-      output.WriteBool(IsEventTrigger);
-    }
-    pendingList_.WriteTo(output, _repeated_pendingList_codec);
-    if (rewardEvent_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(RewardEvent);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsEventTrigger != false) {
-      output.WriteRawTag(24);
-      output.WriteBool(IsEventTrigger);
-    }
-    pendingList_.WriteTo(ref output, _repeated_pendingList_codec);
-    if (rewardEvent_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(RewardEvent);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += pendingList_.CalculateSize(_repeated_pendingList_codec);
-    if (rewardEvent_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(RewardEvent);
-    }
-    if (IsEventTrigger != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(HomeAvatarRewardEventNotify other) {
-    if (other == null) {
-      return;
-    }
-    pendingList_.Add(other.pendingList_);
-    if (other.rewardEvent_ != null) {
-      if (rewardEvent_ == null) {
-        RewardEvent = new global::HomeAvatarRewardEventInfo();
-      }
-      RewardEvent.MergeFrom(other.RewardEvent);
-    }
-    if (other.IsEventTrigger != false) {
-      IsEventTrigger = other.IsEventTrigger;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          IsEventTrigger = input.ReadBool();
-          break;
-        }
-        case 66: {
-          pendingList_.AddEntriesFrom(input, _repeated_pendingList_codec);
-          break;
-        }
-        case 114: {
-          if (rewardEvent_ == null) {
-            RewardEvent = new global::HomeAvatarRewardEventInfo();
-          }
-          input.ReadMessage(RewardEvent);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          IsEventTrigger = input.ReadBool();
-          break;
-        }
-        case 66: {
-          pendingList_.AddEntriesFrom(ref input, _repeated_pendingList_codec);
-          break;
-        }
-        case 114: {
-          if (rewardEvent_ == null) {
-            RewardEvent = new global::HomeAvatarRewardEventInfo();
-          }
-          input.ReadMessage(RewardEvent);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

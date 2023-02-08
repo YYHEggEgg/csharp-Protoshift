@@ -9,251 +9,253 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from HomeAvatarTalkFinishInfo.proto</summary>
-public static partial class HomeAvatarTalkFinishInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for HomeAvatarTalkFinishInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from HomeAvatarTalkFinishInfo.proto</summary>
+  public static partial class HomeAvatarTalkFinishInfoReflection {
 
-  static HomeAvatarTalkFinishInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch5Ib21lQXZhdGFyVGFsa0ZpbmlzaEluZm8ucHJvdG8iSgoYSG9tZUF2YXRh",
-          "clRhbGtGaW5pc2hJbmZvEhsKE2ZpbmlzaF90YWxrX2lkX2xpc3QYBCADKA0S",
-          "EQoJYXZhdGFyX2lkGAIgASgNQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZw",
-          "cm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::HomeAvatarTalkFinishInfo), global::HomeAvatarTalkFinishInfo.Parser, new[]{ "FinishTalkIdList", "AvatarId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for HomeAvatarTalkFinishInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static HomeAvatarTalkFinishInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch5Ib21lQXZhdGFyVGFsa0ZpbmlzaEluZm8ucHJvdG8iSgoYSG9tZUF2YXRh",
+            "clRhbGtGaW5pc2hJbmZvEhsKE2ZpbmlzaF90YWxrX2lkX2xpc3QYBCADKA0S",
+            "EQoJYXZhdGFyX2lkGAIgASgNQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.HomeAvatarTalkFinishInfo), global::NewProtos.HomeAvatarTalkFinishInfo.Parser, new[]{ "FinishTalkIdList", "AvatarId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class HomeAvatarTalkFinishInfo : pb::IMessage<HomeAvatarTalkFinishInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HomeAvatarTalkFinishInfo> _parser = new pb::MessageParser<HomeAvatarTalkFinishInfo>(() => new HomeAvatarTalkFinishInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HomeAvatarTalkFinishInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.HomeAvatarTalkFinishInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeAvatarTalkFinishInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeAvatarTalkFinishInfo(HomeAvatarTalkFinishInfo other) : this() {
+      finishTalkIdList_ = other.finishTalkIdList_.Clone();
+      avatarId_ = other.avatarId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeAvatarTalkFinishInfo Clone() {
+      return new HomeAvatarTalkFinishInfo(this);
+    }
+
+    /// <summary>Field number for the "finish_talk_id_list" field.</summary>
+    public const int FinishTalkIdListFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_finishTalkIdList_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> finishTalkIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FinishTalkIdList {
+      get { return finishTalkIdList_; }
+    }
+
+    /// <summary>Field number for the "avatar_id" field.</summary>
+    public const int AvatarIdFieldNumber = 2;
+    private uint avatarId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AvatarId {
+      get { return avatarId_; }
+      set {
+        avatarId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HomeAvatarTalkFinishInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HomeAvatarTalkFinishInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!finishTalkIdList_.Equals(other.finishTalkIdList_)) return false;
+      if (AvatarId != other.AvatarId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= finishTalkIdList_.GetHashCode();
+      if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (AvatarId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(AvatarId);
+      }
+      finishTalkIdList_.WriteTo(output, _repeated_finishTalkIdList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (AvatarId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(AvatarId);
+      }
+      finishTalkIdList_.WriteTo(ref output, _repeated_finishTalkIdList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += finishTalkIdList_.CalculateSize(_repeated_finishTalkIdList_codec);
+      if (AvatarId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HomeAvatarTalkFinishInfo other) {
+      if (other == null) {
+        return;
+      }
+      finishTalkIdList_.Add(other.finishTalkIdList_);
+      if (other.AvatarId != 0) {
+        AvatarId = other.AvatarId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            AvatarId = input.ReadUInt32();
+            break;
+          }
+          case 34:
+          case 32: {
+            finishTalkIdList_.AddEntriesFrom(input, _repeated_finishTalkIdList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            AvatarId = input.ReadUInt32();
+            break;
+          }
+          case 34:
+          case 32: {
+            finishTalkIdList_.AddEntriesFrom(ref input, _repeated_finishTalkIdList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class HomeAvatarTalkFinishInfo : pb::IMessage<HomeAvatarTalkFinishInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<HomeAvatarTalkFinishInfo> _parser = new pb::MessageParser<HomeAvatarTalkFinishInfo>(() => new HomeAvatarTalkFinishInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<HomeAvatarTalkFinishInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::HomeAvatarTalkFinishInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeAvatarTalkFinishInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeAvatarTalkFinishInfo(HomeAvatarTalkFinishInfo other) : this() {
-    finishTalkIdList_ = other.finishTalkIdList_.Clone();
-    avatarId_ = other.avatarId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeAvatarTalkFinishInfo Clone() {
-    return new HomeAvatarTalkFinishInfo(this);
-  }
-
-  /// <summary>Field number for the "finish_talk_id_list" field.</summary>
-  public const int FinishTalkIdListFieldNumber = 4;
-  private static readonly pb::FieldCodec<uint> _repeated_finishTalkIdList_codec
-      = pb::FieldCodec.ForUInt32(34);
-  private readonly pbc::RepeatedField<uint> finishTalkIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> FinishTalkIdList {
-    get { return finishTalkIdList_; }
-  }
-
-  /// <summary>Field number for the "avatar_id" field.</summary>
-  public const int AvatarIdFieldNumber = 2;
-  private uint avatarId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint AvatarId {
-    get { return avatarId_; }
-    set {
-      avatarId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as HomeAvatarTalkFinishInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(HomeAvatarTalkFinishInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!finishTalkIdList_.Equals(other.finishTalkIdList_)) return false;
-    if (AvatarId != other.AvatarId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= finishTalkIdList_.GetHashCode();
-    if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (AvatarId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(AvatarId);
-    }
-    finishTalkIdList_.WriteTo(output, _repeated_finishTalkIdList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (AvatarId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(AvatarId);
-    }
-    finishTalkIdList_.WriteTo(ref output, _repeated_finishTalkIdList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += finishTalkIdList_.CalculateSize(_repeated_finishTalkIdList_codec);
-    if (AvatarId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(HomeAvatarTalkFinishInfo other) {
-    if (other == null) {
-      return;
-    }
-    finishTalkIdList_.Add(other.finishTalkIdList_);
-    if (other.AvatarId != 0) {
-      AvatarId = other.AvatarId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          AvatarId = input.ReadUInt32();
-          break;
-        }
-        case 34:
-        case 32: {
-          finishTalkIdList_.AddEntriesFrom(input, _repeated_finishTalkIdList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          AvatarId = input.ReadUInt32();
-          break;
-        }
-        case 34:
-        case 32: {
-          finishTalkIdList_.AddEntriesFrom(ref input, _repeated_finishTalkIdList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

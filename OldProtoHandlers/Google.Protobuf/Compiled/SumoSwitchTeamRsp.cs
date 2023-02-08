@@ -9,404 +9,407 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SumoSwitchTeamRsp.proto</summary>
-public static partial class SumoSwitchTeamRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SumoSwitchTeamRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SumoSwitchTeamRsp.proto</summary>
+  public static partial class SumoSwitchTeamRspReflection {
 
-  static SumoSwitchTeamRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdTdW1vU3dpdGNoVGVhbVJzcC5wcm90bxoVU3Vtb0R1bmdlb25UZWFtLnBy",
-          "b3RvIrABChFTdW1vU3dpdGNoVGVhbVJzcBIeChZuZXh0X3ZhbGlkX3N3aXRj",
-          "aF90aW1lGAcgASgNEisKEWR1bmdlb25fdGVhbV9saXN0GAogAygLMhAuU3Vt",
-          "b0R1bmdlb25UZWFtEhMKC2FjdGl2aXR5X2lkGAYgASgNEg8KB3JldGNvZGUY",
-          "DiABKAUSFgoOY3VyX3RlYW1faW5kZXgYCyABKA0SEAoIc3RhZ2VfaWQYBSAB",
-          "KA1CHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::SumoDungeonTeamReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SumoSwitchTeamRsp), global::SumoSwitchTeamRsp.Parser, new[]{ "NextValidSwitchTime", "DungeonTeamList", "ActivityId", "Retcode", "CurTeamIndex", "StageId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SumoSwitchTeamRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SumoSwitchTeamRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdTdW1vU3dpdGNoVGVhbVJzcC5wcm90bxoVU3Vtb0R1bmdlb25UZWFtLnBy",
+            "b3RvIrABChFTdW1vU3dpdGNoVGVhbVJzcBIeChZuZXh0X3ZhbGlkX3N3aXRj",
+            "aF90aW1lGAcgASgNEisKEWR1bmdlb25fdGVhbV9saXN0GAogAygLMhAuU3Vt",
+            "b0R1bmdlb25UZWFtEhMKC2FjdGl2aXR5X2lkGAYgASgNEg8KB3JldGNvZGUY",
+            "DiABKAUSFgoOY3VyX3RlYW1faW5kZXgYCyABKA0SEAoIc3RhZ2VfaWQYBSAB",
+            "KA1CDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.SumoDungeonTeamReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.SumoSwitchTeamRsp), global::OldProtos.SumoSwitchTeamRsp.Parser, new[]{ "NextValidSwitchTime", "DungeonTeamList", "ActivityId", "Retcode", "CurTeamIndex", "StageId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 8525
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class SumoSwitchTeamRsp : pb::IMessage<SumoSwitchTeamRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SumoSwitchTeamRsp> _parser = new pb::MessageParser<SumoSwitchTeamRsp>(() => new SumoSwitchTeamRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SumoSwitchTeamRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.SumoSwitchTeamRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SumoSwitchTeamRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SumoSwitchTeamRsp(SumoSwitchTeamRsp other) : this() {
+      nextValidSwitchTime_ = other.nextValidSwitchTime_;
+      dungeonTeamList_ = other.dungeonTeamList_.Clone();
+      activityId_ = other.activityId_;
+      retcode_ = other.retcode_;
+      curTeamIndex_ = other.curTeamIndex_;
+      stageId_ = other.stageId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SumoSwitchTeamRsp Clone() {
+      return new SumoSwitchTeamRsp(this);
+    }
+
+    /// <summary>Field number for the "next_valid_switch_time" field.</summary>
+    public const int NextValidSwitchTimeFieldNumber = 7;
+    private uint nextValidSwitchTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint NextValidSwitchTime {
+      get { return nextValidSwitchTime_; }
+      set {
+        nextValidSwitchTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_team_list" field.</summary>
+    public const int DungeonTeamListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::OldProtos.SumoDungeonTeam> _repeated_dungeonTeamList_codec
+        = pb::FieldCodec.ForMessage(82, global::OldProtos.SumoDungeonTeam.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.SumoDungeonTeam> dungeonTeamList_ = new pbc::RepeatedField<global::OldProtos.SumoDungeonTeam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.SumoDungeonTeam> DungeonTeamList {
+      get { return dungeonTeamList_; }
+    }
+
+    /// <summary>Field number for the "activity_id" field.</summary>
+    public const int ActivityIdFieldNumber = 6;
+    private uint activityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ActivityId {
+      get { return activityId_; }
+      set {
+        activityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 14;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_team_index" field.</summary>
+    public const int CurTeamIndexFieldNumber = 11;
+    private uint curTeamIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurTeamIndex {
+      get { return curTeamIndex_; }
+      set {
+        curTeamIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 5;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SumoSwitchTeamRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SumoSwitchTeamRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (NextValidSwitchTime != other.NextValidSwitchTime) return false;
+      if(!dungeonTeamList_.Equals(other.dungeonTeamList_)) return false;
+      if (ActivityId != other.ActivityId) return false;
+      if (Retcode != other.Retcode) return false;
+      if (CurTeamIndex != other.CurTeamIndex) return false;
+      if (StageId != other.StageId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (NextValidSwitchTime != 0) hash ^= NextValidSwitchTime.GetHashCode();
+      hash ^= dungeonTeamList_.GetHashCode();
+      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (CurTeamIndex != 0) hash ^= CurTeamIndex.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (StageId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(StageId);
+      }
+      if (ActivityId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ActivityId);
+      }
+      if (NextValidSwitchTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(NextValidSwitchTime);
+      }
+      dungeonTeamList_.WriteTo(output, _repeated_dungeonTeamList_codec);
+      if (CurTeamIndex != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(CurTeamIndex);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(Retcode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (StageId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(StageId);
+      }
+      if (ActivityId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ActivityId);
+      }
+      if (NextValidSwitchTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(NextValidSwitchTime);
+      }
+      dungeonTeamList_.WriteTo(ref output, _repeated_dungeonTeamList_codec);
+      if (CurTeamIndex != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(CurTeamIndex);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(112);
+        output.WriteInt32(Retcode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (NextValidSwitchTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextValidSwitchTime);
+      }
+      size += dungeonTeamList_.CalculateSize(_repeated_dungeonTeamList_codec);
+      if (ActivityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (CurTeamIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurTeamIndex);
+      }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SumoSwitchTeamRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.NextValidSwitchTime != 0) {
+        NextValidSwitchTime = other.NextValidSwitchTime;
+      }
+      dungeonTeamList_.Add(other.dungeonTeamList_);
+      if (other.ActivityId != 0) {
+        ActivityId = other.ActivityId;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.CurTeamIndex != 0) {
+        CurTeamIndex = other.CurTeamIndex;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            ActivityId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            NextValidSwitchTime = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            dungeonTeamList_.AddEntriesFrom(input, _repeated_dungeonTeamList_codec);
+            break;
+          }
+          case 88: {
+            CurTeamIndex = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            ActivityId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            NextValidSwitchTime = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            dungeonTeamList_.AddEntriesFrom(ref input, _repeated_dungeonTeamList_codec);
+            break;
+          }
+          case 88: {
+            CurTeamIndex = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 8525
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class SumoSwitchTeamRsp : pb::IMessage<SumoSwitchTeamRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SumoSwitchTeamRsp> _parser = new pb::MessageParser<SumoSwitchTeamRsp>(() => new SumoSwitchTeamRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SumoSwitchTeamRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SumoSwitchTeamRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SumoSwitchTeamRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SumoSwitchTeamRsp(SumoSwitchTeamRsp other) : this() {
-    nextValidSwitchTime_ = other.nextValidSwitchTime_;
-    dungeonTeamList_ = other.dungeonTeamList_.Clone();
-    activityId_ = other.activityId_;
-    retcode_ = other.retcode_;
-    curTeamIndex_ = other.curTeamIndex_;
-    stageId_ = other.stageId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SumoSwitchTeamRsp Clone() {
-    return new SumoSwitchTeamRsp(this);
-  }
-
-  /// <summary>Field number for the "next_valid_switch_time" field.</summary>
-  public const int NextValidSwitchTimeFieldNumber = 7;
-  private uint nextValidSwitchTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint NextValidSwitchTime {
-    get { return nextValidSwitchTime_; }
-    set {
-      nextValidSwitchTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "dungeon_team_list" field.</summary>
-  public const int DungeonTeamListFieldNumber = 10;
-  private static readonly pb::FieldCodec<global::SumoDungeonTeam> _repeated_dungeonTeamList_codec
-      = pb::FieldCodec.ForMessage(82, global::SumoDungeonTeam.Parser);
-  private readonly pbc::RepeatedField<global::SumoDungeonTeam> dungeonTeamList_ = new pbc::RepeatedField<global::SumoDungeonTeam>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::SumoDungeonTeam> DungeonTeamList {
-    get { return dungeonTeamList_; }
-  }
-
-  /// <summary>Field number for the "activity_id" field.</summary>
-  public const int ActivityIdFieldNumber = 6;
-  private uint activityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ActivityId {
-    get { return activityId_; }
-    set {
-      activityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 14;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cur_team_index" field.</summary>
-  public const int CurTeamIndexFieldNumber = 11;
-  private uint curTeamIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurTeamIndex {
-    get { return curTeamIndex_; }
-    set {
-      curTeamIndex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "stage_id" field.</summary>
-  public const int StageIdFieldNumber = 5;
-  private uint stageId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StageId {
-    get { return stageId_; }
-    set {
-      stageId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SumoSwitchTeamRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SumoSwitchTeamRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (NextValidSwitchTime != other.NextValidSwitchTime) return false;
-    if(!dungeonTeamList_.Equals(other.dungeonTeamList_)) return false;
-    if (ActivityId != other.ActivityId) return false;
-    if (Retcode != other.Retcode) return false;
-    if (CurTeamIndex != other.CurTeamIndex) return false;
-    if (StageId != other.StageId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (NextValidSwitchTime != 0) hash ^= NextValidSwitchTime.GetHashCode();
-    hash ^= dungeonTeamList_.GetHashCode();
-    if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (CurTeamIndex != 0) hash ^= CurTeamIndex.GetHashCode();
-    if (StageId != 0) hash ^= StageId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (StageId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(StageId);
-    }
-    if (ActivityId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(ActivityId);
-    }
-    if (NextValidSwitchTime != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(NextValidSwitchTime);
-    }
-    dungeonTeamList_.WriteTo(output, _repeated_dungeonTeamList_codec);
-    if (CurTeamIndex != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(CurTeamIndex);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(112);
-      output.WriteInt32(Retcode);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (StageId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(StageId);
-    }
-    if (ActivityId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(ActivityId);
-    }
-    if (NextValidSwitchTime != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(NextValidSwitchTime);
-    }
-    dungeonTeamList_.WriteTo(ref output, _repeated_dungeonTeamList_codec);
-    if (CurTeamIndex != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(CurTeamIndex);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(112);
-      output.WriteInt32(Retcode);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (NextValidSwitchTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextValidSwitchTime);
-    }
-    size += dungeonTeamList_.CalculateSize(_repeated_dungeonTeamList_codec);
-    if (ActivityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
-    }
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (CurTeamIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurTeamIndex);
-    }
-    if (StageId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SumoSwitchTeamRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.NextValidSwitchTime != 0) {
-      NextValidSwitchTime = other.NextValidSwitchTime;
-    }
-    dungeonTeamList_.Add(other.dungeonTeamList_);
-    if (other.ActivityId != 0) {
-      ActivityId = other.ActivityId;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.CurTeamIndex != 0) {
-      CurTeamIndex = other.CurTeamIndex;
-    }
-    if (other.StageId != 0) {
-      StageId = other.StageId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          ActivityId = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          NextValidSwitchTime = input.ReadUInt32();
-          break;
-        }
-        case 82: {
-          dungeonTeamList_.AddEntriesFrom(input, _repeated_dungeonTeamList_codec);
-          break;
-        }
-        case 88: {
-          CurTeamIndex = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          ActivityId = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          NextValidSwitchTime = input.ReadUInt32();
-          break;
-        }
-        case 82: {
-          dungeonTeamList_.AddEntriesFrom(ref input, _repeated_dungeonTeamList_codec);
-          break;
-        }
-        case 88: {
-          CurTeamIndex = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

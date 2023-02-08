@@ -9,255 +9,258 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from PlayerRechargeDataNotify.proto</summary>
-public static partial class PlayerRechargeDataNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for PlayerRechargeDataNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from PlayerRechargeDataNotify.proto</summary>
+  public static partial class PlayerRechargeDataNotifyReflection {
 
-  static PlayerRechargeDataNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch5QbGF5ZXJSZWNoYXJnZURhdGFOb3RpZnkucHJvdG8aFlByb2R1Y3RQcmlj",
-          "ZVRpZXIucHJvdG8icAoYUGxheWVyUmVjaGFyZ2VEYXRhTm90aWZ5EiAKGGNh",
-          "cmRfcHJvZHVjdF9yZW1haW5fZGF5cxgMIAEoDRIyChdwcm9kdWN0X3ByaWNl",
-          "X3RpZXJfbGlzdBgLIAMoCzIRLlByb2R1Y3RQcmljZVRpZXJCHgocZW11Lmdy",
-          "YXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ProductPriceTierReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::PlayerRechargeDataNotify), global::PlayerRechargeDataNotify.Parser, new[]{ "CardProductRemainDays", "ProductPriceTierList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for PlayerRechargeDataNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static PlayerRechargeDataNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch5QbGF5ZXJSZWNoYXJnZURhdGFOb3RpZnkucHJvdG8aFlByb2R1Y3RQcmlj",
+            "ZVRpZXIucHJvdG8icAoYUGxheWVyUmVjaGFyZ2VEYXRhTm90aWZ5EiAKGGNh",
+            "cmRfcHJvZHVjdF9yZW1haW5fZGF5cxgMIAEoDRIyChdwcm9kdWN0X3ByaWNl",
+            "X3RpZXJfbGlzdBgLIAMoCzIRLlByb2R1Y3RQcmljZVRpZXJCDKoCCU9sZFBy",
+            "b3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ProductPriceTierReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.PlayerRechargeDataNotify), global::OldProtos.PlayerRechargeDataNotify.Parser, new[]{ "CardProductRemainDays", "ProductPriceTierList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 4102
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class PlayerRechargeDataNotify : pb::IMessage<PlayerRechargeDataNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PlayerRechargeDataNotify> _parser = new pb::MessageParser<PlayerRechargeDataNotify>(() => new PlayerRechargeDataNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PlayerRechargeDataNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.PlayerRechargeDataNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerRechargeDataNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerRechargeDataNotify(PlayerRechargeDataNotify other) : this() {
+      cardProductRemainDays_ = other.cardProductRemainDays_;
+      productPriceTierList_ = other.productPriceTierList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerRechargeDataNotify Clone() {
+      return new PlayerRechargeDataNotify(this);
+    }
+
+    /// <summary>Field number for the "card_product_remain_days" field.</summary>
+    public const int CardProductRemainDaysFieldNumber = 12;
+    private uint cardProductRemainDays_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CardProductRemainDays {
+      get { return cardProductRemainDays_; }
+      set {
+        cardProductRemainDays_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "product_price_tier_list" field.</summary>
+    public const int ProductPriceTierListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::OldProtos.ProductPriceTier> _repeated_productPriceTierList_codec
+        = pb::FieldCodec.ForMessage(90, global::OldProtos.ProductPriceTier.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.ProductPriceTier> productPriceTierList_ = new pbc::RepeatedField<global::OldProtos.ProductPriceTier>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.ProductPriceTier> ProductPriceTierList {
+      get { return productPriceTierList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PlayerRechargeDataNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PlayerRechargeDataNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CardProductRemainDays != other.CardProductRemainDays) return false;
+      if(!productPriceTierList_.Equals(other.productPriceTierList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CardProductRemainDays != 0) hash ^= CardProductRemainDays.GetHashCode();
+      hash ^= productPriceTierList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      productPriceTierList_.WriteTo(output, _repeated_productPriceTierList_codec);
+      if (CardProductRemainDays != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CardProductRemainDays);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      productPriceTierList_.WriteTo(ref output, _repeated_productPriceTierList_codec);
+      if (CardProductRemainDays != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CardProductRemainDays);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (CardProductRemainDays != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardProductRemainDays);
+      }
+      size += productPriceTierList_.CalculateSize(_repeated_productPriceTierList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PlayerRechargeDataNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CardProductRemainDays != 0) {
+        CardProductRemainDays = other.CardProductRemainDays;
+      }
+      productPriceTierList_.Add(other.productPriceTierList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 90: {
+            productPriceTierList_.AddEntriesFrom(input, _repeated_productPriceTierList_codec);
+            break;
+          }
+          case 96: {
+            CardProductRemainDays = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 90: {
+            productPriceTierList_.AddEntriesFrom(ref input, _repeated_productPriceTierList_codec);
+            break;
+          }
+          case 96: {
+            CardProductRemainDays = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 4102
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class PlayerRechargeDataNotify : pb::IMessage<PlayerRechargeDataNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<PlayerRechargeDataNotify> _parser = new pb::MessageParser<PlayerRechargeDataNotify>(() => new PlayerRechargeDataNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<PlayerRechargeDataNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::PlayerRechargeDataNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerRechargeDataNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerRechargeDataNotify(PlayerRechargeDataNotify other) : this() {
-    cardProductRemainDays_ = other.cardProductRemainDays_;
-    productPriceTierList_ = other.productPriceTierList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerRechargeDataNotify Clone() {
-    return new PlayerRechargeDataNotify(this);
-  }
-
-  /// <summary>Field number for the "card_product_remain_days" field.</summary>
-  public const int CardProductRemainDaysFieldNumber = 12;
-  private uint cardProductRemainDays_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CardProductRemainDays {
-    get { return cardProductRemainDays_; }
-    set {
-      cardProductRemainDays_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "product_price_tier_list" field.</summary>
-  public const int ProductPriceTierListFieldNumber = 11;
-  private static readonly pb::FieldCodec<global::ProductPriceTier> _repeated_productPriceTierList_codec
-      = pb::FieldCodec.ForMessage(90, global::ProductPriceTier.Parser);
-  private readonly pbc::RepeatedField<global::ProductPriceTier> productPriceTierList_ = new pbc::RepeatedField<global::ProductPriceTier>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ProductPriceTier> ProductPriceTierList {
-    get { return productPriceTierList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as PlayerRechargeDataNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(PlayerRechargeDataNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (CardProductRemainDays != other.CardProductRemainDays) return false;
-    if(!productPriceTierList_.Equals(other.productPriceTierList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (CardProductRemainDays != 0) hash ^= CardProductRemainDays.GetHashCode();
-    hash ^= productPriceTierList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    productPriceTierList_.WriteTo(output, _repeated_productPriceTierList_codec);
-    if (CardProductRemainDays != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(CardProductRemainDays);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    productPriceTierList_.WriteTo(ref output, _repeated_productPriceTierList_codec);
-    if (CardProductRemainDays != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(CardProductRemainDays);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (CardProductRemainDays != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardProductRemainDays);
-    }
-    size += productPriceTierList_.CalculateSize(_repeated_productPriceTierList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(PlayerRechargeDataNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.CardProductRemainDays != 0) {
-      CardProductRemainDays = other.CardProductRemainDays;
-    }
-    productPriceTierList_.Add(other.productPriceTierList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 90: {
-          productPriceTierList_.AddEntriesFrom(input, _repeated_productPriceTierList_codec);
-          break;
-        }
-        case 96: {
-          CardProductRemainDays = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 90: {
-          productPriceTierList_.AddEntriesFrom(ref input, _repeated_productPriceTierList_codec);
-          break;
-        }
-        case 96: {
-          CardProductRemainDays = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

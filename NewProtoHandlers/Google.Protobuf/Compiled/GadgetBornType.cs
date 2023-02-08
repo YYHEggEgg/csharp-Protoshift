@@ -9,45 +9,48 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GadgetBornType.proto</summary>
-public static partial class GadgetBornTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GadgetBornType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GadgetBornType.proto</summary>
+  public static partial class GadgetBornTypeReflection {
 
-  static GadgetBornTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRHYWRnZXRCb3JuVHlwZS5wcm90byrjAQoOR2FkZ2V0Qm9yblR5cGUSGQoV",
-          "R0FER0VUX0JPUk5fVFlQRV9OT05FEAASGwoXR0FER0VUX0JPUk5fVFlQRV9J",
-          "Tl9BSVIQARIbChdHQURHRVRfQk9STl9UWVBFX1BMQVlFUhACEiAKHEdBREdF",
-          "VF9CT1JOX1RZUEVfTU9OU1RFUl9ISVQQAxIgChxHQURHRVRfQk9STl9UWVBF",
-          "X01PTlNURVJfRElFEAQSGwoXR0FER0VUX0JPUk5fVFlQRV9HQURHRVQQBRIb",
-          "ChdHQURHRVRfQk9STl9UWVBFX0dST1VORBAGQhYKFG9yZy5zb3JhcG9pbnRh",
-          "LnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GadgetBornType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for GadgetBornType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GadgetBornTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRHYWRnZXRCb3JuVHlwZS5wcm90byrjAQoOR2FkZ2V0Qm9yblR5cGUSGQoV",
+            "R0FER0VUX0JPUk5fVFlQRV9OT05FEAASGwoXR0FER0VUX0JPUk5fVFlQRV9J",
+            "Tl9BSVIQARIbChdHQURHRVRfQk9STl9UWVBFX1BMQVlFUhACEiAKHEdBREdF",
+            "VF9CT1JOX1RZUEVfTU9OU1RFUl9ISVQQAxIgChxHQURHRVRfQk9STl9UWVBF",
+            "X01PTlNURVJfRElFEAQSGwoXR0FER0VUX0JPUk5fVFlQRV9HQURHRVQQBRIb",
+            "ChdHQURHRVRfQk9STl9UWVBFX0dST1VORBAGQgyqAglOZXdQcm90b3NiBnBy",
+            "b3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.GadgetBornType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum GadgetBornType {
+    [pbr::OriginalName("GADGET_BORN_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("GADGET_BORN_TYPE_IN_AIR")] InAir = 1,
+    [pbr::OriginalName("GADGET_BORN_TYPE_PLAYER")] Player = 2,
+    [pbr::OriginalName("GADGET_BORN_TYPE_MONSTER_HIT")] MonsterHit = 3,
+    [pbr::OriginalName("GADGET_BORN_TYPE_MONSTER_DIE")] MonsterDie = 4,
+    [pbr::OriginalName("GADGET_BORN_TYPE_GADGET")] Gadget = 5,
+    [pbr::OriginalName("GADGET_BORN_TYPE_GROUND")] Ground = 6,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum GadgetBornType {
-  [pbr::OriginalName("GADGET_BORN_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("GADGET_BORN_TYPE_IN_AIR")] InAir = 1,
-  [pbr::OriginalName("GADGET_BORN_TYPE_PLAYER")] Player = 2,
-  [pbr::OriginalName("GADGET_BORN_TYPE_MONSTER_HIT")] MonsterHit = 3,
-  [pbr::OriginalName("GADGET_BORN_TYPE_MONSTER_DIE")] MonsterDie = 4,
-  [pbr::OriginalName("GADGET_BORN_TYPE_GADGET")] Gadget = 5,
-  [pbr::OriginalName("GADGET_BORN_TYPE_GROUND")] Ground = 6,
-}
-
-#endregion
-
 
 #endregion Designer generated code

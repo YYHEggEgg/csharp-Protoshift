@@ -19,7 +19,7 @@ syntax = "proto3";
 import "WidgetCreateLocationInfo.proto";
 import "WidgetCreatorOpType.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message WidgetCreatorInfo {
   WidgetCreatorOpType op_type = 10;

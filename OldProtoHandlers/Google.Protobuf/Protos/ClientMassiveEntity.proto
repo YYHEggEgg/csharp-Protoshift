@@ -20,7 +20,7 @@ import "MassiveBoxInfo.proto";
 import "MassiveGrassInfo.proto";
 import "MassiveWaterInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message ClientMassiveEntity {
   uint32 entity_type = 1;

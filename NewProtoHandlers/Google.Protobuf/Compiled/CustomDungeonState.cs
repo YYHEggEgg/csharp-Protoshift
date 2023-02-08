@@ -9,39 +9,41 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CustomDungeonState.proto</summary>
-public static partial class CustomDungeonStateReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CustomDungeonState.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CustomDungeonState.proto</summary>
+  public static partial class CustomDungeonStateReflection {
 
-  static CustomDungeonStateReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhDdXN0b21EdW5nZW9uU3RhdGUucHJvdG8qewoSQ3VzdG9tRHVuZ2VvblN0",
-          "YXRlEh0KGUNVU1RPTV9EVU5HRU9OX1NUQVRFX0VESVQQABIiCh5DVVNUT01f",
-          "RFVOR0VPTl9TVEFURV9TRUxGX1BBU1MQARIiCh5DVVNUT01fRFVOR0VPTl9T",
-          "VEFURV9QVUJMSVNIRUQQAkIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJv",
-          "dG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::CustomDungeonState), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for CustomDungeonState.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CustomDungeonStateReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhDdXN0b21EdW5nZW9uU3RhdGUucHJvdG8qewoSQ3VzdG9tRHVuZ2VvblN0",
+            "YXRlEh0KGUNVU1RPTV9EVU5HRU9OX1NUQVRFX0VESVQQABIiCh5DVVNUT01f",
+            "RFVOR0VPTl9TVEFURV9TRUxGX1BBU1MQARIiCh5DVVNUT01fRFVOR0VPTl9T",
+            "VEFURV9QVUJMSVNIRUQQAkIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.CustomDungeonState), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum CustomDungeonState {
+    [pbr::OriginalName("CUSTOM_DUNGEON_STATE_EDIT")] Edit = 0,
+    [pbr::OriginalName("CUSTOM_DUNGEON_STATE_SELF_PASS")] SelfPass = 1,
+    [pbr::OriginalName("CUSTOM_DUNGEON_STATE_PUBLISHED")] Published = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum CustomDungeonState {
-  [pbr::OriginalName("CUSTOM_DUNGEON_STATE_EDIT")] Edit = 0,
-  [pbr::OriginalName("CUSTOM_DUNGEON_STATE_SELF_PASS")] SelfPass = 1,
-  [pbr::OriginalName("CUSTOM_DUNGEON_STATE_PUBLISHED")] Published = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

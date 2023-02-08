@@ -9,294 +9,297 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from WeaponAwakenReq.proto</summary>
-public static partial class WeaponAwakenReqReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for WeaponAwakenReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from WeaponAwakenReq.proto</summary>
+  public static partial class WeaponAwakenReqReflection {
 
-  static WeaponAwakenReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVXZWFwb25Bd2FrZW5SZXEucHJvdG8itAEKD1dlYXBvbkF3YWtlblJlcRIR",
-          "CglpdGVtX2d1aWQYCiABKAQSPAoPYWZmaXhfbGV2ZWxfbWFwGAcgAygLMiMu",
-          "V2VhcG9uQXdha2VuUmVxLkFmZml4TGV2ZWxNYXBFbnRyeRIaChJ0YXJnZXRf",
-          "d2VhcG9uX2d1aWQYCSABKAQaNAoSQWZmaXhMZXZlbE1hcEVudHJ5EgsKA2tl",
-          "eRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFCHgocZW11LmdyYXNzY3V0dGVy",
-          "Lm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::WeaponAwakenReq), global::WeaponAwakenReq.Parser, new[]{ "ItemGuid", "AffixLevelMap", "TargetWeaponGuid" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for WeaponAwakenReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static WeaponAwakenReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVXZWFwb25Bd2FrZW5SZXEucHJvdG8itAEKD1dlYXBvbkF3YWtlblJlcRIR",
+            "CglpdGVtX2d1aWQYCiABKAQSPAoPYWZmaXhfbGV2ZWxfbWFwGAcgAygLMiMu",
+            "V2VhcG9uQXdha2VuUmVxLkFmZml4TGV2ZWxNYXBFbnRyeRIaChJ0YXJnZXRf",
+            "d2VhcG9uX2d1aWQYCSABKAQaNAoSQWZmaXhMZXZlbE1hcEVudHJ5EgsKA2tl",
+            "eRgBIAEoDRINCgV2YWx1ZRgCIAEoDToCOAFCDKoCCU9sZFByb3Rvc2IGcHJv",
+            "dG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.WeaponAwakenReq), global::OldProtos.WeaponAwakenReq.Parser, new[]{ "ItemGuid", "AffixLevelMap", "TargetWeaponGuid" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 695
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class WeaponAwakenReq : pb::IMessage<WeaponAwakenReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<WeaponAwakenReq> _parser = new pb::MessageParser<WeaponAwakenReq>(() => new WeaponAwakenReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<WeaponAwakenReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.WeaponAwakenReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WeaponAwakenReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WeaponAwakenReq(WeaponAwakenReq other) : this() {
+      itemGuid_ = other.itemGuid_;
+      affixLevelMap_ = other.affixLevelMap_.Clone();
+      targetWeaponGuid_ = other.targetWeaponGuid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WeaponAwakenReq Clone() {
+      return new WeaponAwakenReq(this);
+    }
+
+    /// <summary>Field number for the "item_guid" field.</summary>
+    public const int ItemGuidFieldNumber = 10;
+    private ulong itemGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong ItemGuid {
+      get { return itemGuid_; }
+      set {
+        itemGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "affix_level_map" field.</summary>
+    public const int AffixLevelMapFieldNumber = 7;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_affixLevelMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 58);
+    private readonly pbc::MapField<uint, uint> affixLevelMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> AffixLevelMap {
+      get { return affixLevelMap_; }
+    }
+
+    /// <summary>Field number for the "target_weapon_guid" field.</summary>
+    public const int TargetWeaponGuidFieldNumber = 9;
+    private ulong targetWeaponGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong TargetWeaponGuid {
+      get { return targetWeaponGuid_; }
+      set {
+        targetWeaponGuid_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as WeaponAwakenReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(WeaponAwakenReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ItemGuid != other.ItemGuid) return false;
+      if (!AffixLevelMap.Equals(other.AffixLevelMap)) return false;
+      if (TargetWeaponGuid != other.TargetWeaponGuid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ItemGuid != 0UL) hash ^= ItemGuid.GetHashCode();
+      hash ^= AffixLevelMap.GetHashCode();
+      if (TargetWeaponGuid != 0UL) hash ^= TargetWeaponGuid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      affixLevelMap_.WriteTo(output, _map_affixLevelMap_codec);
+      if (TargetWeaponGuid != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(TargetWeaponGuid);
+      }
+      if (ItemGuid != 0UL) {
+        output.WriteRawTag(80);
+        output.WriteUInt64(ItemGuid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      affixLevelMap_.WriteTo(ref output, _map_affixLevelMap_codec);
+      if (TargetWeaponGuid != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(TargetWeaponGuid);
+      }
+      if (ItemGuid != 0UL) {
+        output.WriteRawTag(80);
+        output.WriteUInt64(ItemGuid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ItemGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ItemGuid);
+      }
+      size += affixLevelMap_.CalculateSize(_map_affixLevelMap_codec);
+      if (TargetWeaponGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetWeaponGuid);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(WeaponAwakenReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ItemGuid != 0UL) {
+        ItemGuid = other.ItemGuid;
+      }
+      affixLevelMap_.Add(other.affixLevelMap_);
+      if (other.TargetWeaponGuid != 0UL) {
+        TargetWeaponGuid = other.TargetWeaponGuid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 58: {
+            affixLevelMap_.AddEntriesFrom(input, _map_affixLevelMap_codec);
+            break;
+          }
+          case 72: {
+            TargetWeaponGuid = input.ReadUInt64();
+            break;
+          }
+          case 80: {
+            ItemGuid = input.ReadUInt64();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 58: {
+            affixLevelMap_.AddEntriesFrom(ref input, _map_affixLevelMap_codec);
+            break;
+          }
+          case 72: {
+            TargetWeaponGuid = input.ReadUInt64();
+            break;
+          }
+          case 80: {
+            ItemGuid = input.ReadUInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 695
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class WeaponAwakenReq : pb::IMessage<WeaponAwakenReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<WeaponAwakenReq> _parser = new pb::MessageParser<WeaponAwakenReq>(() => new WeaponAwakenReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<WeaponAwakenReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::WeaponAwakenReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WeaponAwakenReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WeaponAwakenReq(WeaponAwakenReq other) : this() {
-    itemGuid_ = other.itemGuid_;
-    affixLevelMap_ = other.affixLevelMap_.Clone();
-    targetWeaponGuid_ = other.targetWeaponGuid_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WeaponAwakenReq Clone() {
-    return new WeaponAwakenReq(this);
-  }
-
-  /// <summary>Field number for the "item_guid" field.</summary>
-  public const int ItemGuidFieldNumber = 10;
-  private ulong itemGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong ItemGuid {
-    get { return itemGuid_; }
-    set {
-      itemGuid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "affix_level_map" field.</summary>
-  public const int AffixLevelMapFieldNumber = 7;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_affixLevelMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 58);
-  private readonly pbc::MapField<uint, uint> affixLevelMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> AffixLevelMap {
-    get { return affixLevelMap_; }
-  }
-
-  /// <summary>Field number for the "target_weapon_guid" field.</summary>
-  public const int TargetWeaponGuidFieldNumber = 9;
-  private ulong targetWeaponGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong TargetWeaponGuid {
-    get { return targetWeaponGuid_; }
-    set {
-      targetWeaponGuid_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as WeaponAwakenReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(WeaponAwakenReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ItemGuid != other.ItemGuid) return false;
-    if (!AffixLevelMap.Equals(other.AffixLevelMap)) return false;
-    if (TargetWeaponGuid != other.TargetWeaponGuid) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ItemGuid != 0UL) hash ^= ItemGuid.GetHashCode();
-    hash ^= AffixLevelMap.GetHashCode();
-    if (TargetWeaponGuid != 0UL) hash ^= TargetWeaponGuid.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    affixLevelMap_.WriteTo(output, _map_affixLevelMap_codec);
-    if (TargetWeaponGuid != 0UL) {
-      output.WriteRawTag(72);
-      output.WriteUInt64(TargetWeaponGuid);
-    }
-    if (ItemGuid != 0UL) {
-      output.WriteRawTag(80);
-      output.WriteUInt64(ItemGuid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    affixLevelMap_.WriteTo(ref output, _map_affixLevelMap_codec);
-    if (TargetWeaponGuid != 0UL) {
-      output.WriteRawTag(72);
-      output.WriteUInt64(TargetWeaponGuid);
-    }
-    if (ItemGuid != 0UL) {
-      output.WriteRawTag(80);
-      output.WriteUInt64(ItemGuid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ItemGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ItemGuid);
-    }
-    size += affixLevelMap_.CalculateSize(_map_affixLevelMap_codec);
-    if (TargetWeaponGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetWeaponGuid);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(WeaponAwakenReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ItemGuid != 0UL) {
-      ItemGuid = other.ItemGuid;
-    }
-    affixLevelMap_.Add(other.affixLevelMap_);
-    if (other.TargetWeaponGuid != 0UL) {
-      TargetWeaponGuid = other.TargetWeaponGuid;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 58: {
-          affixLevelMap_.AddEntriesFrom(input, _map_affixLevelMap_codec);
-          break;
-        }
-        case 72: {
-          TargetWeaponGuid = input.ReadUInt64();
-          break;
-        }
-        case 80: {
-          ItemGuid = input.ReadUInt64();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 58: {
-          affixLevelMap_.AddEntriesFrom(ref input, _map_affixLevelMap_codec);
-          break;
-        }
-        case 72: {
-          TargetWeaponGuid = input.ReadUInt64();
-          break;
-        }
-        case 80: {
-          ItemGuid = input.ReadUInt64();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

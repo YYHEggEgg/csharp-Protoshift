@@ -9,419 +9,421 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ScenePlayerInfo.proto</summary>
-public static partial class ScenePlayerInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ScenePlayerInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ScenePlayerInfo.proto</summary>
+  public static partial class ScenePlayerInfoReflection {
 
-  static ScenePlayerInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVTY2VuZVBsYXllckluZm8ucHJvdG8aFk9ubGluZVBsYXllckluZm8ucHJv",
-          "dG8ilAEKD1NjZW5lUGxheWVySW5mbxIQCghzY2VuZV9pZBgKIAEoDRIPCgdw",
-          "ZWVyX2lkGAYgASgNEi0KEm9ubGluZV9wbGF5ZXJfaW5mbxgNIAEoCzIRLk9u",
-          "bGluZVBsYXllckluZm8SFAoMaXNfY29ubmVjdGVkGAIgASgIEgwKBG5hbWUY",
-          "DyABKAkSCwoDdWlkGAggASgNQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xk",
-          "cHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::OnlinePlayerInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ScenePlayerInfo), global::ScenePlayerInfo.Parser, new[]{ "SceneId", "PeerId", "OnlinePlayerInfo", "IsConnected", "Name", "Uid" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ScenePlayerInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ScenePlayerInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVTY2VuZVBsYXllckluZm8ucHJvdG8aFk9ubGluZVBsYXllckluZm8ucHJv",
+            "dG8ilAEKD1NjZW5lUGxheWVySW5mbxIQCghzY2VuZV9pZBgKIAEoDRIPCgdw",
+            "ZWVyX2lkGAYgASgNEi0KEm9ubGluZV9wbGF5ZXJfaW5mbxgNIAEoCzIRLk9u",
+            "bGluZVBsYXllckluZm8SFAoMaXNfY29ubmVjdGVkGAIgASgIEgwKBG5hbWUY",
+            "DyABKAkSCwoDdWlkGAggASgNQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.OnlinePlayerInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ScenePlayerInfo), global::OldProtos.ScenePlayerInfo.Parser, new[]{ "SceneId", "PeerId", "OnlinePlayerInfo", "IsConnected", "Name", "Uid" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class ScenePlayerInfo : pb::IMessage<ScenePlayerInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ScenePlayerInfo> _parser = new pb::MessageParser<ScenePlayerInfo>(() => new ScenePlayerInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ScenePlayerInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ScenePlayerInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ScenePlayerInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ScenePlayerInfo(ScenePlayerInfo other) : this() {
+      sceneId_ = other.sceneId_;
+      peerId_ = other.peerId_;
+      onlinePlayerInfo_ = other.onlinePlayerInfo_ != null ? other.onlinePlayerInfo_.Clone() : null;
+      isConnected_ = other.isConnected_;
+      name_ = other.name_;
+      uid_ = other.uid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ScenePlayerInfo Clone() {
+      return new ScenePlayerInfo(this);
+    }
+
+    /// <summary>Field number for the "scene_id" field.</summary>
+    public const int SceneIdFieldNumber = 10;
+    private uint sceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SceneId {
+      get { return sceneId_; }
+      set {
+        sceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "peer_id" field.</summary>
+    public const int PeerIdFieldNumber = 6;
+    private uint peerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PeerId {
+      get { return peerId_; }
+      set {
+        peerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "online_player_info" field.</summary>
+    public const int OnlinePlayerInfoFieldNumber = 13;
+    private global::OldProtos.OnlinePlayerInfo onlinePlayerInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.OnlinePlayerInfo OnlinePlayerInfo {
+      get { return onlinePlayerInfo_; }
+      set {
+        onlinePlayerInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_connected" field.</summary>
+    public const int IsConnectedFieldNumber = 2;
+    private bool isConnected_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsConnected {
+      get { return isConnected_; }
+      set {
+        isConnected_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 15;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 8;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ScenePlayerInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ScenePlayerInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SceneId != other.SceneId) return false;
+      if (PeerId != other.PeerId) return false;
+      if (!object.Equals(OnlinePlayerInfo, other.OnlinePlayerInfo)) return false;
+      if (IsConnected != other.IsConnected) return false;
+      if (Name != other.Name) return false;
+      if (Uid != other.Uid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (PeerId != 0) hash ^= PeerId.GetHashCode();
+      if (onlinePlayerInfo_ != null) hash ^= OnlinePlayerInfo.GetHashCode();
+      if (IsConnected != false) hash ^= IsConnected.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsConnected != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsConnected);
+      }
+      if (PeerId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(PeerId);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Uid);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(SceneId);
+      }
+      if (onlinePlayerInfo_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(OnlinePlayerInfo);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(Name);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsConnected != false) {
+        output.WriteRawTag(16);
+        output.WriteBool(IsConnected);
+      }
+      if (PeerId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(PeerId);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Uid);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(SceneId);
+      }
+      if (onlinePlayerInfo_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(OnlinePlayerInfo);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(Name);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (SceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (PeerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PeerId);
+      }
+      if (onlinePlayerInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OnlinePlayerInfo);
+      }
+      if (IsConnected != false) {
+        size += 1 + 1;
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ScenePlayerInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SceneId != 0) {
+        SceneId = other.SceneId;
+      }
+      if (other.PeerId != 0) {
+        PeerId = other.PeerId;
+      }
+      if (other.onlinePlayerInfo_ != null) {
+        if (onlinePlayerInfo_ == null) {
+          OnlinePlayerInfo = new global::OldProtos.OnlinePlayerInfo();
+        }
+        OnlinePlayerInfo.MergeFrom(other.OnlinePlayerInfo);
+      }
+      if (other.IsConnected != false) {
+        IsConnected = other.IsConnected;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            IsConnected = input.ReadBool();
+            break;
+          }
+          case 48: {
+            PeerId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 106: {
+            if (onlinePlayerInfo_ == null) {
+              OnlinePlayerInfo = new global::OldProtos.OnlinePlayerInfo();
+            }
+            input.ReadMessage(OnlinePlayerInfo);
+            break;
+          }
+          case 122: {
+            Name = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            IsConnected = input.ReadBool();
+            break;
+          }
+          case 48: {
+            PeerId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 106: {
+            if (onlinePlayerInfo_ == null) {
+              OnlinePlayerInfo = new global::OldProtos.OnlinePlayerInfo();
+            }
+            input.ReadMessage(OnlinePlayerInfo);
+            break;
+          }
+          case 122: {
+            Name = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ScenePlayerInfo : pb::IMessage<ScenePlayerInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ScenePlayerInfo> _parser = new pb::MessageParser<ScenePlayerInfo>(() => new ScenePlayerInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ScenePlayerInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ScenePlayerInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ScenePlayerInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ScenePlayerInfo(ScenePlayerInfo other) : this() {
-    sceneId_ = other.sceneId_;
-    peerId_ = other.peerId_;
-    onlinePlayerInfo_ = other.onlinePlayerInfo_ != null ? other.onlinePlayerInfo_.Clone() : null;
-    isConnected_ = other.isConnected_;
-    name_ = other.name_;
-    uid_ = other.uid_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ScenePlayerInfo Clone() {
-    return new ScenePlayerInfo(this);
-  }
-
-  /// <summary>Field number for the "scene_id" field.</summary>
-  public const int SceneIdFieldNumber = 10;
-  private uint sceneId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SceneId {
-    get { return sceneId_; }
-    set {
-      sceneId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "peer_id" field.</summary>
-  public const int PeerIdFieldNumber = 6;
-  private uint peerId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PeerId {
-    get { return peerId_; }
-    set {
-      peerId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "online_player_info" field.</summary>
-  public const int OnlinePlayerInfoFieldNumber = 13;
-  private global::OnlinePlayerInfo onlinePlayerInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::OnlinePlayerInfo OnlinePlayerInfo {
-    get { return onlinePlayerInfo_; }
-    set {
-      onlinePlayerInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_connected" field.</summary>
-  public const int IsConnectedFieldNumber = 2;
-  private bool isConnected_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsConnected {
-    get { return isConnected_; }
-    set {
-      isConnected_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "name" field.</summary>
-  public const int NameFieldNumber = 15;
-  private string name_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Name {
-    get { return name_; }
-    set {
-      name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "uid" field.</summary>
-  public const int UidFieldNumber = 8;
-  private uint uid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Uid {
-    get { return uid_; }
-    set {
-      uid_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ScenePlayerInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ScenePlayerInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (SceneId != other.SceneId) return false;
-    if (PeerId != other.PeerId) return false;
-    if (!object.Equals(OnlinePlayerInfo, other.OnlinePlayerInfo)) return false;
-    if (IsConnected != other.IsConnected) return false;
-    if (Name != other.Name) return false;
-    if (Uid != other.Uid) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (SceneId != 0) hash ^= SceneId.GetHashCode();
-    if (PeerId != 0) hash ^= PeerId.GetHashCode();
-    if (onlinePlayerInfo_ != null) hash ^= OnlinePlayerInfo.GetHashCode();
-    if (IsConnected != false) hash ^= IsConnected.GetHashCode();
-    if (Name.Length != 0) hash ^= Name.GetHashCode();
-    if (Uid != 0) hash ^= Uid.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsConnected != false) {
-      output.WriteRawTag(16);
-      output.WriteBool(IsConnected);
-    }
-    if (PeerId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(PeerId);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Uid);
-    }
-    if (SceneId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(SceneId);
-    }
-    if (onlinePlayerInfo_ != null) {
-      output.WriteRawTag(106);
-      output.WriteMessage(OnlinePlayerInfo);
-    }
-    if (Name.Length != 0) {
-      output.WriteRawTag(122);
-      output.WriteString(Name);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsConnected != false) {
-      output.WriteRawTag(16);
-      output.WriteBool(IsConnected);
-    }
-    if (PeerId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(PeerId);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Uid);
-    }
-    if (SceneId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(SceneId);
-    }
-    if (onlinePlayerInfo_ != null) {
-      output.WriteRawTag(106);
-      output.WriteMessage(OnlinePlayerInfo);
-    }
-    if (Name.Length != 0) {
-      output.WriteRawTag(122);
-      output.WriteString(Name);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (SceneId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
-    }
-    if (PeerId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PeerId);
-    }
-    if (onlinePlayerInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(OnlinePlayerInfo);
-    }
-    if (IsConnected != false) {
-      size += 1 + 1;
-    }
-    if (Name.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-    }
-    if (Uid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ScenePlayerInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.SceneId != 0) {
-      SceneId = other.SceneId;
-    }
-    if (other.PeerId != 0) {
-      PeerId = other.PeerId;
-    }
-    if (other.onlinePlayerInfo_ != null) {
-      if (onlinePlayerInfo_ == null) {
-        OnlinePlayerInfo = new global::OnlinePlayerInfo();
-      }
-      OnlinePlayerInfo.MergeFrom(other.OnlinePlayerInfo);
-    }
-    if (other.IsConnected != false) {
-      IsConnected = other.IsConnected;
-    }
-    if (other.Name.Length != 0) {
-      Name = other.Name;
-    }
-    if (other.Uid != 0) {
-      Uid = other.Uid;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          IsConnected = input.ReadBool();
-          break;
-        }
-        case 48: {
-          PeerId = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          SceneId = input.ReadUInt32();
-          break;
-        }
-        case 106: {
-          if (onlinePlayerInfo_ == null) {
-            OnlinePlayerInfo = new global::OnlinePlayerInfo();
-          }
-          input.ReadMessage(OnlinePlayerInfo);
-          break;
-        }
-        case 122: {
-          Name = input.ReadString();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          IsConnected = input.ReadBool();
-          break;
-        }
-        case 48: {
-          PeerId = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          SceneId = input.ReadUInt32();
-          break;
-        }
-        case 106: {
-          if (onlinePlayerInfo_ == null) {
-            OnlinePlayerInfo = new global::OnlinePlayerInfo();
-          }
-          input.ReadMessage(OnlinePlayerInfo);
-          break;
-        }
-        case 122: {
-          Name = input.ReadString();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

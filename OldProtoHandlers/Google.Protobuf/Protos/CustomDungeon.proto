@@ -19,7 +19,7 @@ syntax = "proto3";
 import "CustomDungeonRoom.proto";
 import "CustomDungeonSetting.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message CustomDungeon {
   CustomDungeonSetting setting = 1;

@@ -20,7 +20,7 @@ import "GameplayRecommendationElementReliquaryRequest.proto";
 import "GameplayRecommendationReliquaryRequest.proto";
 import "GameplayRecommendationSkillRequest.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 151
 // EnetChannelId: 0

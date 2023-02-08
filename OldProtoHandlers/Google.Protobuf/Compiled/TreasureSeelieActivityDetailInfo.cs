@@ -9,288 +9,291 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from TreasureSeelieActivityDetailInfo.proto</summary>
-public static partial class TreasureSeelieActivityDetailInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for TreasureSeelieActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from TreasureSeelieActivityDetailInfo.proto</summary>
+  public static partial class TreasureSeelieActivityDetailInfoReflection {
 
-  static TreasureSeelieActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiZUcmVhc3VyZVNlZWxpZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoeVHJl",
-          "YXN1cmVTZWVsaWVSZWdpb25EYXRhLnByb3RvIo8BCiBUcmVhc3VyZVNlZWxp",
-          "ZUFjdGl2aXR5RGV0YWlsSW5mbxIbChN0cmVhc3VyZV9jbG9zZV90aW1lGAog",
-          "ASgNEhkKEWlzX2NvbnRlbnRfY2xvc2VkGAggASgIEjMKEHJlZ2lvbl9kYXRh",
-          "X2xpc3QYDiADKAsyGS5UcmVhc3VyZVNlZWxpZVJlZ2lvbkRhdGFCHgocZW11",
-          "LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::TreasureSeelieRegionDataReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::TreasureSeelieActivityDetailInfo), global::TreasureSeelieActivityDetailInfo.Parser, new[]{ "TreasureCloseTime", "IsContentClosed", "RegionDataList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for TreasureSeelieActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static TreasureSeelieActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiZUcmVhc3VyZVNlZWxpZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoeVHJl",
+            "YXN1cmVTZWVsaWVSZWdpb25EYXRhLnByb3RvIo8BCiBUcmVhc3VyZVNlZWxp",
+            "ZUFjdGl2aXR5RGV0YWlsSW5mbxIbChN0cmVhc3VyZV9jbG9zZV90aW1lGAog",
+            "ASgNEhkKEWlzX2NvbnRlbnRfY2xvc2VkGAggASgIEjMKEHJlZ2lvbl9kYXRh",
+            "X2xpc3QYDiADKAsyGS5UcmVhc3VyZVNlZWxpZVJlZ2lvbkRhdGFCDKoCCU9s",
+            "ZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.TreasureSeelieRegionDataReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.TreasureSeelieActivityDetailInfo), global::OldProtos.TreasureSeelieActivityDetailInfo.Parser, new[]{ "TreasureCloseTime", "IsContentClosed", "RegionDataList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class TreasureSeelieActivityDetailInfo : pb::IMessage<TreasureSeelieActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TreasureSeelieActivityDetailInfo> _parser = new pb::MessageParser<TreasureSeelieActivityDetailInfo>(() => new TreasureSeelieActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TreasureSeelieActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.TreasureSeelieActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TreasureSeelieActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TreasureSeelieActivityDetailInfo(TreasureSeelieActivityDetailInfo other) : this() {
+      treasureCloseTime_ = other.treasureCloseTime_;
+      isContentClosed_ = other.isContentClosed_;
+      regionDataList_ = other.regionDataList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TreasureSeelieActivityDetailInfo Clone() {
+      return new TreasureSeelieActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "treasure_close_time" field.</summary>
+    public const int TreasureCloseTimeFieldNumber = 10;
+    private uint treasureCloseTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TreasureCloseTime {
+      get { return treasureCloseTime_; }
+      set {
+        treasureCloseTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 8;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "region_data_list" field.</summary>
+    public const int RegionDataListFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::OldProtos.TreasureSeelieRegionData> _repeated_regionDataList_codec
+        = pb::FieldCodec.ForMessage(114, global::OldProtos.TreasureSeelieRegionData.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.TreasureSeelieRegionData> regionDataList_ = new pbc::RepeatedField<global::OldProtos.TreasureSeelieRegionData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.TreasureSeelieRegionData> RegionDataList {
+      get { return regionDataList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TreasureSeelieActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TreasureSeelieActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (TreasureCloseTime != other.TreasureCloseTime) return false;
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if(!regionDataList_.Equals(other.regionDataList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (TreasureCloseTime != 0) hash ^= TreasureCloseTime.GetHashCode();
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      hash ^= regionDataList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsContentClosed != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsContentClosed);
+      }
+      if (TreasureCloseTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(TreasureCloseTime);
+      }
+      regionDataList_.WriteTo(output, _repeated_regionDataList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsContentClosed != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsContentClosed);
+      }
+      if (TreasureCloseTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(TreasureCloseTime);
+      }
+      regionDataList_.WriteTo(ref output, _repeated_regionDataList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (TreasureCloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TreasureCloseTime);
+      }
+      if (IsContentClosed != false) {
+        size += 1 + 1;
+      }
+      size += regionDataList_.CalculateSize(_repeated_regionDataList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TreasureSeelieActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.TreasureCloseTime != 0) {
+        TreasureCloseTime = other.TreasureCloseTime;
+      }
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
+      regionDataList_.Add(other.regionDataList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 64: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 80: {
+            TreasureCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            regionDataList_.AddEntriesFrom(input, _repeated_regionDataList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 64: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 80: {
+            TreasureCloseTime = input.ReadUInt32();
+            break;
+          }
+          case 114: {
+            regionDataList_.AddEntriesFrom(ref input, _repeated_regionDataList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class TreasureSeelieActivityDetailInfo : pb::IMessage<TreasureSeelieActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<TreasureSeelieActivityDetailInfo> _parser = new pb::MessageParser<TreasureSeelieActivityDetailInfo>(() => new TreasureSeelieActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<TreasureSeelieActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::TreasureSeelieActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TreasureSeelieActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TreasureSeelieActivityDetailInfo(TreasureSeelieActivityDetailInfo other) : this() {
-    treasureCloseTime_ = other.treasureCloseTime_;
-    isContentClosed_ = other.isContentClosed_;
-    regionDataList_ = other.regionDataList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TreasureSeelieActivityDetailInfo Clone() {
-    return new TreasureSeelieActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "treasure_close_time" field.</summary>
-  public const int TreasureCloseTimeFieldNumber = 10;
-  private uint treasureCloseTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TreasureCloseTime {
-    get { return treasureCloseTime_; }
-    set {
-      treasureCloseTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_content_closed" field.</summary>
-  public const int IsContentClosedFieldNumber = 8;
-  private bool isContentClosed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsContentClosed {
-    get { return isContentClosed_; }
-    set {
-      isContentClosed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "region_data_list" field.</summary>
-  public const int RegionDataListFieldNumber = 14;
-  private static readonly pb::FieldCodec<global::TreasureSeelieRegionData> _repeated_regionDataList_codec
-      = pb::FieldCodec.ForMessage(114, global::TreasureSeelieRegionData.Parser);
-  private readonly pbc::RepeatedField<global::TreasureSeelieRegionData> regionDataList_ = new pbc::RepeatedField<global::TreasureSeelieRegionData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::TreasureSeelieRegionData> RegionDataList {
-    get { return regionDataList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as TreasureSeelieActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(TreasureSeelieActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (TreasureCloseTime != other.TreasureCloseTime) return false;
-    if (IsContentClosed != other.IsContentClosed) return false;
-    if(!regionDataList_.Equals(other.regionDataList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (TreasureCloseTime != 0) hash ^= TreasureCloseTime.GetHashCode();
-    if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-    hash ^= regionDataList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsContentClosed != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsContentClosed);
-    }
-    if (TreasureCloseTime != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(TreasureCloseTime);
-    }
-    regionDataList_.WriteTo(output, _repeated_regionDataList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsContentClosed != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsContentClosed);
-    }
-    if (TreasureCloseTime != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(TreasureCloseTime);
-    }
-    regionDataList_.WriteTo(ref output, _repeated_regionDataList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (TreasureCloseTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TreasureCloseTime);
-    }
-    if (IsContentClosed != false) {
-      size += 1 + 1;
-    }
-    size += regionDataList_.CalculateSize(_repeated_regionDataList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(TreasureSeelieActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.TreasureCloseTime != 0) {
-      TreasureCloseTime = other.TreasureCloseTime;
-    }
-    if (other.IsContentClosed != false) {
-      IsContentClosed = other.IsContentClosed;
-    }
-    regionDataList_.Add(other.regionDataList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 64: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 80: {
-          TreasureCloseTime = input.ReadUInt32();
-          break;
-        }
-        case 114: {
-          regionDataList_.AddEntriesFrom(input, _repeated_regionDataList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 64: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 80: {
-          TreasureCloseTime = input.ReadUInt32();
-          break;
-        }
-        case 114: {
-          regionDataList_.AddEntriesFrom(ref input, _repeated_regionDataList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

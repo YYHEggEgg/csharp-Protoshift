@@ -9,291 +9,293 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MaterialDeleteReturnNotify.proto</summary>
-public static partial class MaterialDeleteReturnNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MaterialDeleteReturnNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MaterialDeleteReturnNotify.proto</summary>
+  public static partial class MaterialDeleteReturnNotifyReflection {
 
-  static MaterialDeleteReturnNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBNYXRlcmlhbERlbGV0ZVJldHVybk5vdGlmeS5wcm90bxoeTWF0ZXJpYWxE",
-          "ZWxldGVSZXR1cm5UeXBlLnByb3RvIt8CChpNYXRlcmlhbERlbGV0ZVJldHVy",
-          "bk5vdGlmeRInCgR0eXBlGAcgASgOMhkuTWF0ZXJpYWxEZWxldGVSZXR1cm5U",
-          "eXBlElAKE1VuazMzMDBfT0ZPS0ZLQkFMSkQYDCADKAsyMy5NYXRlcmlhbERl",
-          "bGV0ZVJldHVybk5vdGlmeS5VbmszMzAwT0ZPS0ZLQkFMSkRFbnRyeRJQChNV",
-          "bmszMzAwX0xBSUhES0pBSEFGGAggAygLMjMuTWF0ZXJpYWxEZWxldGVSZXR1",
-          "cm5Ob3RpZnkuVW5rMzMwMExBSUhES0pBSEFGRW50cnkaOQoXVW5rMzMwME9G",
-          "T0tGS0JBTEpERW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4",
-          "ARo5ChdVbmszMzAwTEFJSERLSkFIQUZFbnRyeRILCgNrZXkYASABKA0SDQoF",
-          "dmFsdWUYAiABKA06AjgBQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90",
-          "bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::MaterialDeleteReturnTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MaterialDeleteReturnNotify), global::MaterialDeleteReturnNotify.Parser, new[]{ "Type", "Unk3300OFOKFKBALJD", "Unk3300LAIHDKJAHAF" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for MaterialDeleteReturnNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MaterialDeleteReturnNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBNYXRlcmlhbERlbGV0ZVJldHVybk5vdGlmeS5wcm90bxoeTWF0ZXJpYWxE",
+            "ZWxldGVSZXR1cm5UeXBlLnByb3RvIt8CChpNYXRlcmlhbERlbGV0ZVJldHVy",
+            "bk5vdGlmeRInCgR0eXBlGAcgASgOMhkuTWF0ZXJpYWxEZWxldGVSZXR1cm5U",
+            "eXBlElAKE1VuazMzMDBfT0ZPS0ZLQkFMSkQYDCADKAsyMy5NYXRlcmlhbERl",
+            "bGV0ZVJldHVybk5vdGlmeS5VbmszMzAwT0ZPS0ZLQkFMSkRFbnRyeRJQChNV",
+            "bmszMzAwX0xBSUhES0pBSEFGGAggAygLMjMuTWF0ZXJpYWxEZWxldGVSZXR1",
+            "cm5Ob3RpZnkuVW5rMzMwMExBSUhES0pBSEFGRW50cnkaOQoXVW5rMzMwME9G",
+            "T0tGS0JBTEpERW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4",
+            "ARo5ChdVbmszMzAwTEFJSERLSkFIQUZFbnRyeRILCgNrZXkYASABKA0SDQoF",
+            "dmFsdWUYAiABKA06AjgBQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.MaterialDeleteReturnTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.MaterialDeleteReturnNotify), global::NewProtos.MaterialDeleteReturnNotify.Parser, new[]{ "Type", "Unk3300OFOKFKBALJD", "Unk3300LAIHDKJAHAF" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 698;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class MaterialDeleteReturnNotify : pb::IMessage<MaterialDeleteReturnNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MaterialDeleteReturnNotify> _parser = new pb::MessageParser<MaterialDeleteReturnNotify>(() => new MaterialDeleteReturnNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MaterialDeleteReturnNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.MaterialDeleteReturnNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MaterialDeleteReturnNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MaterialDeleteReturnNotify(MaterialDeleteReturnNotify other) : this() {
+      type_ = other.type_;
+      unk3300OFOKFKBALJD_ = other.unk3300OFOKFKBALJD_.Clone();
+      unk3300LAIHDKJAHAF_ = other.unk3300LAIHDKJAHAF_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MaterialDeleteReturnNotify Clone() {
+      return new MaterialDeleteReturnNotify(this);
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 7;
+    private global::NewProtos.MaterialDeleteReturnType type_ = global::NewProtos.MaterialDeleteReturnType.Bag;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.MaterialDeleteReturnType Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OFOKFKBALJD" field.</summary>
+    public const int Unk3300OFOKFKBALJDFieldNumber = 12;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300OFOKFKBALJD_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
+    private readonly pbc::MapField<uint, uint> unk3300OFOKFKBALJD_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> Unk3300OFOKFKBALJD {
+      get { return unk3300OFOKFKBALJD_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_LAIHDKJAHAF" field.</summary>
+    public const int Unk3300LAIHDKJAHAFFieldNumber = 8;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300LAIHDKJAHAF_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 66);
+    private readonly pbc::MapField<uint, uint> unk3300LAIHDKJAHAF_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> Unk3300LAIHDKJAHAF {
+      get { return unk3300LAIHDKJAHAF_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MaterialDeleteReturnNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MaterialDeleteReturnNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Type != other.Type) return false;
+      if (!Unk3300OFOKFKBALJD.Equals(other.Unk3300OFOKFKBALJD)) return false;
+      if (!Unk3300LAIHDKJAHAF.Equals(other.Unk3300LAIHDKJAHAF)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Type != global::NewProtos.MaterialDeleteReturnType.Bag) hash ^= Type.GetHashCode();
+      hash ^= Unk3300OFOKFKBALJD.GetHashCode();
+      hash ^= Unk3300LAIHDKJAHAF.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Type != global::NewProtos.MaterialDeleteReturnType.Bag) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Type);
+      }
+      unk3300LAIHDKJAHAF_.WriteTo(output, _map_unk3300LAIHDKJAHAF_codec);
+      unk3300OFOKFKBALJD_.WriteTo(output, _map_unk3300OFOKFKBALJD_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Type != global::NewProtos.MaterialDeleteReturnType.Bag) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) Type);
+      }
+      unk3300LAIHDKJAHAF_.WriteTo(ref output, _map_unk3300LAIHDKJAHAF_codec);
+      unk3300OFOKFKBALJD_.WriteTo(ref output, _map_unk3300OFOKFKBALJD_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Type != global::NewProtos.MaterialDeleteReturnType.Bag) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      size += unk3300OFOKFKBALJD_.CalculateSize(_map_unk3300OFOKFKBALJD_codec);
+      size += unk3300LAIHDKJAHAF_.CalculateSize(_map_unk3300LAIHDKJAHAF_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MaterialDeleteReturnNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Type != global::NewProtos.MaterialDeleteReturnType.Bag) {
+        Type = other.Type;
+      }
+      unk3300OFOKFKBALJD_.Add(other.unk3300OFOKFKBALJD_);
+      unk3300LAIHDKJAHAF_.Add(other.unk3300LAIHDKJAHAF_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 56: {
+            Type = (global::NewProtos.MaterialDeleteReturnType) input.ReadEnum();
+            break;
+          }
+          case 66: {
+            unk3300LAIHDKJAHAF_.AddEntriesFrom(input, _map_unk3300LAIHDKJAHAF_codec);
+            break;
+          }
+          case 98: {
+            unk3300OFOKFKBALJD_.AddEntriesFrom(input, _map_unk3300OFOKFKBALJD_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 56: {
+            Type = (global::NewProtos.MaterialDeleteReturnType) input.ReadEnum();
+            break;
+          }
+          case 66: {
+            unk3300LAIHDKJAHAF_.AddEntriesFrom(ref input, _map_unk3300LAIHDKJAHAF_codec);
+            break;
+          }
+          case 98: {
+            unk3300OFOKFKBALJD_.AddEntriesFrom(ref input, _map_unk3300OFOKFKBALJD_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 698;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class MaterialDeleteReturnNotify : pb::IMessage<MaterialDeleteReturnNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<MaterialDeleteReturnNotify> _parser = new pb::MessageParser<MaterialDeleteReturnNotify>(() => new MaterialDeleteReturnNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<MaterialDeleteReturnNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::MaterialDeleteReturnNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MaterialDeleteReturnNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MaterialDeleteReturnNotify(MaterialDeleteReturnNotify other) : this() {
-    type_ = other.type_;
-    unk3300OFOKFKBALJD_ = other.unk3300OFOKFKBALJD_.Clone();
-    unk3300LAIHDKJAHAF_ = other.unk3300LAIHDKJAHAF_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MaterialDeleteReturnNotify Clone() {
-    return new MaterialDeleteReturnNotify(this);
-  }
-
-  /// <summary>Field number for the "type" field.</summary>
-  public const int TypeFieldNumber = 7;
-  private global::MaterialDeleteReturnType type_ = global::MaterialDeleteReturnType.Bag;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MaterialDeleteReturnType Type {
-    get { return type_; }
-    set {
-      type_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_OFOKFKBALJD" field.</summary>
-  public const int Unk3300OFOKFKBALJDFieldNumber = 12;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300OFOKFKBALJD_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
-  private readonly pbc::MapField<uint, uint> unk3300OFOKFKBALJD_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> Unk3300OFOKFKBALJD {
-    get { return unk3300OFOKFKBALJD_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_LAIHDKJAHAF" field.</summary>
-  public const int Unk3300LAIHDKJAHAFFieldNumber = 8;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_unk3300LAIHDKJAHAF_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 66);
-  private readonly pbc::MapField<uint, uint> unk3300LAIHDKJAHAF_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> Unk3300LAIHDKJAHAF {
-    get { return unk3300LAIHDKJAHAF_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as MaterialDeleteReturnNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(MaterialDeleteReturnNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Type != other.Type) return false;
-    if (!Unk3300OFOKFKBALJD.Equals(other.Unk3300OFOKFKBALJD)) return false;
-    if (!Unk3300LAIHDKJAHAF.Equals(other.Unk3300LAIHDKJAHAF)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Type != global::MaterialDeleteReturnType.Bag) hash ^= Type.GetHashCode();
-    hash ^= Unk3300OFOKFKBALJD.GetHashCode();
-    hash ^= Unk3300LAIHDKJAHAF.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Type != global::MaterialDeleteReturnType.Bag) {
-      output.WriteRawTag(56);
-      output.WriteEnum((int) Type);
-    }
-    unk3300LAIHDKJAHAF_.WriteTo(output, _map_unk3300LAIHDKJAHAF_codec);
-    unk3300OFOKFKBALJD_.WriteTo(output, _map_unk3300OFOKFKBALJD_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Type != global::MaterialDeleteReturnType.Bag) {
-      output.WriteRawTag(56);
-      output.WriteEnum((int) Type);
-    }
-    unk3300LAIHDKJAHAF_.WriteTo(ref output, _map_unk3300LAIHDKJAHAF_codec);
-    unk3300OFOKFKBALJD_.WriteTo(ref output, _map_unk3300OFOKFKBALJD_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Type != global::MaterialDeleteReturnType.Bag) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
-    }
-    size += unk3300OFOKFKBALJD_.CalculateSize(_map_unk3300OFOKFKBALJD_codec);
-    size += unk3300LAIHDKJAHAF_.CalculateSize(_map_unk3300LAIHDKJAHAF_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(MaterialDeleteReturnNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Type != global::MaterialDeleteReturnType.Bag) {
-      Type = other.Type;
-    }
-    unk3300OFOKFKBALJD_.Add(other.unk3300OFOKFKBALJD_);
-    unk3300LAIHDKJAHAF_.Add(other.unk3300LAIHDKJAHAF_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 56: {
-          Type = (global::MaterialDeleteReturnType) input.ReadEnum();
-          break;
-        }
-        case 66: {
-          unk3300LAIHDKJAHAF_.AddEntriesFrom(input, _map_unk3300LAIHDKJAHAF_codec);
-          break;
-        }
-        case 98: {
-          unk3300OFOKFKBALJD_.AddEntriesFrom(input, _map_unk3300OFOKFKBALJD_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 56: {
-          Type = (global::MaterialDeleteReturnType) input.ReadEnum();
-          break;
-        }
-        case 66: {
-          unk3300LAIHDKJAHAF_.AddEntriesFrom(ref input, _map_unk3300LAIHDKJAHAF_codec);
-          break;
-        }
-        case 98: {
-          unk3300OFOKFKBALJD_.AddEntriesFrom(ref input, _map_unk3300OFOKFKBALJD_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

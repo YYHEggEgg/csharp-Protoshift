@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "LunaRiteHintStatusType.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message LunaRiteAreaInfo {
   repeated uint32 sacrifice_reward_list = 11;

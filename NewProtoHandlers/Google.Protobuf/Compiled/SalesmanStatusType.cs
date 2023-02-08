@@ -9,40 +9,43 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SalesmanStatusType.proto</summary>
-public static partial class SalesmanStatusTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SalesmanStatusType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SalesmanStatusType.proto</summary>
+  public static partial class SalesmanStatusTypeReflection {
 
-  static SalesmanStatusTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhTYWxlc21hblN0YXR1c1R5cGUucHJvdG8qnQEKElNhbGVzbWFuU3RhdHVz",
-          "VHlwZRIdChlTQUxFU01BTl9TVEFUVVNfVFlQRV9OT05FEAASIgoeU0FMRVNN",
-          "QU5fU1RBVFVTX1RZUEVfVU5TVEFSVEVEEAESIAocU0FMRVNNQU5fU1RBVFVT",
-          "X1RZUEVfU1RBUlRFRBACEiIKHlNBTEVTTUFOX1NUQVRVU19UWVBFX0RFTElW",
-          "RVJFRBADQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SalesmanStatusType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for SalesmanStatusType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SalesmanStatusTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhTYWxlc21hblN0YXR1c1R5cGUucHJvdG8qnQEKElNhbGVzbWFuU3RhdHVz",
+            "VHlwZRIdChlTQUxFU01BTl9TVEFUVVNfVFlQRV9OT05FEAASIgoeU0FMRVNN",
+            "QU5fU1RBVFVTX1RZUEVfVU5TVEFSVEVEEAESIAocU0FMRVNNQU5fU1RBVFVT",
+            "X1RZUEVfU1RBUlRFRBACEiIKHlNBTEVTTUFOX1NUQVRVU19UWVBFX0RFTElW",
+            "RVJFRBADQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.SalesmanStatusType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum SalesmanStatusType {
+    [pbr::OriginalName("SALESMAN_STATUS_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("SALESMAN_STATUS_TYPE_UNSTARTED")] Unstarted = 1,
+    [pbr::OriginalName("SALESMAN_STATUS_TYPE_STARTED")] Started = 2,
+    [pbr::OriginalName("SALESMAN_STATUS_TYPE_DELIVERED")] Delivered = 3,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum SalesmanStatusType {
-  [pbr::OriginalName("SALESMAN_STATUS_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("SALESMAN_STATUS_TYPE_UNSTARTED")] Unstarted = 1,
-  [pbr::OriginalName("SALESMAN_STATUS_TYPE_STARTED")] Started = 2,
-  [pbr::OriginalName("SALESMAN_STATUS_TYPE_DELIVERED")] Delivered = 3,
-}
-
-#endregion
-
 
 #endregion Designer generated code

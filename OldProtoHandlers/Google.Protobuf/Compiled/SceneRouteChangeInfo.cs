@@ -9,324 +9,327 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SceneRouteChangeInfo.proto</summary>
-public static partial class SceneRouteChangeInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SceneRouteChangeInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SceneRouteChangeInfo.proto</summary>
+  public static partial class SceneRouteChangeInfoReflection {
 
-  static SceneRouteChangeInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpTY2VuZVJvdXRlQ2hhbmdlSW5mby5wcm90bxoaUm91dGVQb2ludENoYW5n",
-          "ZUluZm8ucHJvdG8idQoUU2NlbmVSb3V0ZUNoYW5nZUluZm8SEgoKaXNfZm9y",
-          "d2FyZBgMIAEoCBIQCghyb3V0ZV9pZBgPIAEoDRIMCgR0eXBlGAQgASgNEikK",
-          "CnBvaW50X2xpc3QYASADKAsyFS5Sb3V0ZVBvaW50Q2hhbmdlSW5mb0IeChxl",
-          "bXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::RoutePointChangeInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SceneRouteChangeInfo), global::SceneRouteChangeInfo.Parser, new[]{ "IsForward", "RouteId", "Type", "PointList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SceneRouteChangeInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SceneRouteChangeInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpTY2VuZVJvdXRlQ2hhbmdlSW5mby5wcm90bxoaUm91dGVQb2ludENoYW5n",
+            "ZUluZm8ucHJvdG8idQoUU2NlbmVSb3V0ZUNoYW5nZUluZm8SEgoKaXNfZm9y",
+            "d2FyZBgMIAEoCBIQCghyb3V0ZV9pZBgPIAEoDRIMCgR0eXBlGAQgASgNEikK",
+            "CnBvaW50X2xpc3QYASADKAsyFS5Sb3V0ZVBvaW50Q2hhbmdlSW5mb0IMqgIJ",
+            "T2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.RoutePointChangeInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.SceneRouteChangeInfo), global::OldProtos.SceneRouteChangeInfo.Parser, new[]{ "IsForward", "RouteId", "Type", "PointList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class SceneRouteChangeInfo : pb::IMessage<SceneRouteChangeInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SceneRouteChangeInfo> _parser = new pb::MessageParser<SceneRouteChangeInfo>(() => new SceneRouteChangeInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SceneRouteChangeInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.SceneRouteChangeInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneRouteChangeInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneRouteChangeInfo(SceneRouteChangeInfo other) : this() {
+      isForward_ = other.isForward_;
+      routeId_ = other.routeId_;
+      type_ = other.type_;
+      pointList_ = other.pointList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneRouteChangeInfo Clone() {
+      return new SceneRouteChangeInfo(this);
+    }
+
+    /// <summary>Field number for the "is_forward" field.</summary>
+    public const int IsForwardFieldNumber = 12;
+    private bool isForward_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsForward {
+      get { return isForward_; }
+      set {
+        isForward_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "route_id" field.</summary>
+    public const int RouteIdFieldNumber = 15;
+    private uint routeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RouteId {
+      get { return routeId_; }
+      set {
+        routeId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 4;
+    private uint type_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "point_list" field.</summary>
+    public const int PointListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::OldProtos.RoutePointChangeInfo> _repeated_pointList_codec
+        = pb::FieldCodec.ForMessage(10, global::OldProtos.RoutePointChangeInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.RoutePointChangeInfo> pointList_ = new pbc::RepeatedField<global::OldProtos.RoutePointChangeInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.RoutePointChangeInfo> PointList {
+      get { return pointList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SceneRouteChangeInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SceneRouteChangeInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsForward != other.IsForward) return false;
+      if (RouteId != other.RouteId) return false;
+      if (Type != other.Type) return false;
+      if(!pointList_.Equals(other.pointList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsForward != false) hash ^= IsForward.GetHashCode();
+      if (RouteId != 0) hash ^= RouteId.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
+      hash ^= pointList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      pointList_.WriteTo(output, _repeated_pointList_codec);
+      if (Type != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Type);
+      }
+      if (IsForward != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsForward);
+      }
+      if (RouteId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(RouteId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      pointList_.WriteTo(ref output, _repeated_pointList_codec);
+      if (Type != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Type);
+      }
+      if (IsForward != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(IsForward);
+      }
+      if (RouteId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(RouteId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsForward != false) {
+        size += 1 + 1;
+      }
+      if (RouteId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RouteId);
+      }
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Type);
+      }
+      size += pointList_.CalculateSize(_repeated_pointList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SceneRouteChangeInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsForward != false) {
+        IsForward = other.IsForward;
+      }
+      if (other.RouteId != 0) {
+        RouteId = other.RouteId;
+      }
+      if (other.Type != 0) {
+        Type = other.Type;
+      }
+      pointList_.Add(other.pointList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            pointList_.AddEntriesFrom(input, _repeated_pointList_codec);
+            break;
+          }
+          case 32: {
+            Type = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            IsForward = input.ReadBool();
+            break;
+          }
+          case 120: {
+            RouteId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            pointList_.AddEntriesFrom(ref input, _repeated_pointList_codec);
+            break;
+          }
+          case 32: {
+            Type = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            IsForward = input.ReadBool();
+            break;
+          }
+          case 120: {
+            RouteId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class SceneRouteChangeInfo : pb::IMessage<SceneRouteChangeInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SceneRouteChangeInfo> _parser = new pb::MessageParser<SceneRouteChangeInfo>(() => new SceneRouteChangeInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SceneRouteChangeInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SceneRouteChangeInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneRouteChangeInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneRouteChangeInfo(SceneRouteChangeInfo other) : this() {
-    isForward_ = other.isForward_;
-    routeId_ = other.routeId_;
-    type_ = other.type_;
-    pointList_ = other.pointList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneRouteChangeInfo Clone() {
-    return new SceneRouteChangeInfo(this);
-  }
-
-  /// <summary>Field number for the "is_forward" field.</summary>
-  public const int IsForwardFieldNumber = 12;
-  private bool isForward_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsForward {
-    get { return isForward_; }
-    set {
-      isForward_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "route_id" field.</summary>
-  public const int RouteIdFieldNumber = 15;
-  private uint routeId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RouteId {
-    get { return routeId_; }
-    set {
-      routeId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "type" field.</summary>
-  public const int TypeFieldNumber = 4;
-  private uint type_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Type {
-    get { return type_; }
-    set {
-      type_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "point_list" field.</summary>
-  public const int PointListFieldNumber = 1;
-  private static readonly pb::FieldCodec<global::RoutePointChangeInfo> _repeated_pointList_codec
-      = pb::FieldCodec.ForMessage(10, global::RoutePointChangeInfo.Parser);
-  private readonly pbc::RepeatedField<global::RoutePointChangeInfo> pointList_ = new pbc::RepeatedField<global::RoutePointChangeInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::RoutePointChangeInfo> PointList {
-    get { return pointList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SceneRouteChangeInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SceneRouteChangeInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsForward != other.IsForward) return false;
-    if (RouteId != other.RouteId) return false;
-    if (Type != other.Type) return false;
-    if(!pointList_.Equals(other.pointList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsForward != false) hash ^= IsForward.GetHashCode();
-    if (RouteId != 0) hash ^= RouteId.GetHashCode();
-    if (Type != 0) hash ^= Type.GetHashCode();
-    hash ^= pointList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    pointList_.WriteTo(output, _repeated_pointList_codec);
-    if (Type != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Type);
-    }
-    if (IsForward != false) {
-      output.WriteRawTag(96);
-      output.WriteBool(IsForward);
-    }
-    if (RouteId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(RouteId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    pointList_.WriteTo(ref output, _repeated_pointList_codec);
-    if (Type != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Type);
-    }
-    if (IsForward != false) {
-      output.WriteRawTag(96);
-      output.WriteBool(IsForward);
-    }
-    if (RouteId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(RouteId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsForward != false) {
-      size += 1 + 1;
-    }
-    if (RouteId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RouteId);
-    }
-    if (Type != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Type);
-    }
-    size += pointList_.CalculateSize(_repeated_pointList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SceneRouteChangeInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsForward != false) {
-      IsForward = other.IsForward;
-    }
-    if (other.RouteId != 0) {
-      RouteId = other.RouteId;
-    }
-    if (other.Type != 0) {
-      Type = other.Type;
-    }
-    pointList_.Add(other.pointList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          pointList_.AddEntriesFrom(input, _repeated_pointList_codec);
-          break;
-        }
-        case 32: {
-          Type = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          IsForward = input.ReadBool();
-          break;
-        }
-        case 120: {
-          RouteId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          pointList_.AddEntriesFrom(ref input, _repeated_pointList_codec);
-          break;
-        }
-        case 32: {
-          Type = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          IsForward = input.ReadBool();
-          break;
-        }
-        case 120: {
-          RouteId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SceneGalleryBounceConjuringInfo {
   uint32 total_destroyed_machine_count = 4;

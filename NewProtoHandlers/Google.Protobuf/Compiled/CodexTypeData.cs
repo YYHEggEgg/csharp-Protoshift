@@ -9,308 +9,311 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CodexTypeData.proto</summary>
-public static partial class CodexTypeDataReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CodexTypeData.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CodexTypeData.proto</summary>
+  public static partial class CodexTypeDataReflection {
 
-  static CodexTypeDataReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChNDb2RleFR5cGVEYXRhLnByb3RvGg9Db2RleFR5cGUucHJvdG8i7wEKDUNv",
-          "ZGV4VHlwZURhdGESGAoQaGF2ZV92aWV3ZWRfbGlzdBgNIAMoCBIVCg1jb2Rl",
-          "eF9pZF9saXN0GAkgAygNElIKHHdlYXBvbl9tYXhfcHJvbW90ZV9sZXZlbF9t",
-          "YXAYDCADKAsyLC5Db2RleFR5cGVEYXRhLldlYXBvbk1heFByb21vdGVMZXZl",
-          "bE1hcEVudHJ5EhgKBHR5cGUYDiABKA4yCi5Db2RleFR5cGUaPwodV2VhcG9u",
-          "TWF4UHJvbW90ZUxldmVsTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVl",
-          "GAIgASgNOgI4AUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::CodexTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::CodexTypeData), global::CodexTypeData.Parser, new[]{ "HaveViewedList", "CodexIdList", "WeaponMaxPromoteLevelMap", "Type" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for CodexTypeData.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CodexTypeDataReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChNDb2RleFR5cGVEYXRhLnByb3RvGg9Db2RleFR5cGUucHJvdG8i7wEKDUNv",
+            "ZGV4VHlwZURhdGESGAoQaGF2ZV92aWV3ZWRfbGlzdBgNIAMoCBIVCg1jb2Rl",
+            "eF9pZF9saXN0GAkgAygNElIKHHdlYXBvbl9tYXhfcHJvbW90ZV9sZXZlbF9t",
+            "YXAYDCADKAsyLC5Db2RleFR5cGVEYXRhLldlYXBvbk1heFByb21vdGVMZXZl",
+            "bE1hcEVudHJ5EhgKBHR5cGUYDiABKA4yCi5Db2RleFR5cGUaPwodV2VhcG9u",
+            "TWF4UHJvbW90ZUxldmVsTWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVl",
+            "GAIgASgNOgI4AUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.CodexTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.CodexTypeData), global::NewProtos.CodexTypeData.Parser, new[]{ "HaveViewedList", "CodexIdList", "WeaponMaxPromoteLevelMap", "Type" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class CodexTypeData : pb::IMessage<CodexTypeData>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CodexTypeData> _parser = new pb::MessageParser<CodexTypeData>(() => new CodexTypeData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CodexTypeData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.CodexTypeDataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CodexTypeData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CodexTypeData(CodexTypeData other) : this() {
+      haveViewedList_ = other.haveViewedList_.Clone();
+      codexIdList_ = other.codexIdList_.Clone();
+      weaponMaxPromoteLevelMap_ = other.weaponMaxPromoteLevelMap_.Clone();
+      type_ = other.type_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CodexTypeData Clone() {
+      return new CodexTypeData(this);
+    }
+
+    /// <summary>Field number for the "have_viewed_list" field.</summary>
+    public const int HaveViewedListFieldNumber = 13;
+    private static readonly pb::FieldCodec<bool> _repeated_haveViewedList_codec
+        = pb::FieldCodec.ForBool(106);
+    private readonly pbc::RepeatedField<bool> haveViewedList_ = new pbc::RepeatedField<bool>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<bool> HaveViewedList {
+      get { return haveViewedList_; }
+    }
+
+    /// <summary>Field number for the "codex_id_list" field.</summary>
+    public const int CodexIdListFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_codexIdList_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> codexIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CodexIdList {
+      get { return codexIdList_; }
+    }
+
+    /// <summary>Field number for the "weapon_max_promote_level_map" field.</summary>
+    public const int WeaponMaxPromoteLevelMapFieldNumber = 12;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_weaponMaxPromoteLevelMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
+    private readonly pbc::MapField<uint, uint> weaponMaxPromoteLevelMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> WeaponMaxPromoteLevelMap {
+      get { return weaponMaxPromoteLevelMap_; }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 14;
+    private global::NewProtos.CodexType type_ = global::NewProtos.CodexType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CodexType Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CodexTypeData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CodexTypeData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!haveViewedList_.Equals(other.haveViewedList_)) return false;
+      if(!codexIdList_.Equals(other.codexIdList_)) return false;
+      if (!WeaponMaxPromoteLevelMap.Equals(other.WeaponMaxPromoteLevelMap)) return false;
+      if (Type != other.Type) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= haveViewedList_.GetHashCode();
+      hash ^= codexIdList_.GetHashCode();
+      hash ^= WeaponMaxPromoteLevelMap.GetHashCode();
+      if (Type != global::NewProtos.CodexType.None) hash ^= Type.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      codexIdList_.WriteTo(output, _repeated_codexIdList_codec);
+      weaponMaxPromoteLevelMap_.WriteTo(output, _map_weaponMaxPromoteLevelMap_codec);
+      haveViewedList_.WriteTo(output, _repeated_haveViewedList_codec);
+      if (Type != global::NewProtos.CodexType.None) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) Type);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      codexIdList_.WriteTo(ref output, _repeated_codexIdList_codec);
+      weaponMaxPromoteLevelMap_.WriteTo(ref output, _map_weaponMaxPromoteLevelMap_codec);
+      haveViewedList_.WriteTo(ref output, _repeated_haveViewedList_codec);
+      if (Type != global::NewProtos.CodexType.None) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) Type);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += haveViewedList_.CalculateSize(_repeated_haveViewedList_codec);
+      size += codexIdList_.CalculateSize(_repeated_codexIdList_codec);
+      size += weaponMaxPromoteLevelMap_.CalculateSize(_map_weaponMaxPromoteLevelMap_codec);
+      if (Type != global::NewProtos.CodexType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CodexTypeData other) {
+      if (other == null) {
+        return;
+      }
+      haveViewedList_.Add(other.haveViewedList_);
+      codexIdList_.Add(other.codexIdList_);
+      weaponMaxPromoteLevelMap_.Add(other.weaponMaxPromoteLevelMap_);
+      if (other.Type != global::NewProtos.CodexType.None) {
+        Type = other.Type;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 74:
+          case 72: {
+            codexIdList_.AddEntriesFrom(input, _repeated_codexIdList_codec);
+            break;
+          }
+          case 98: {
+            weaponMaxPromoteLevelMap_.AddEntriesFrom(input, _map_weaponMaxPromoteLevelMap_codec);
+            break;
+          }
+          case 106:
+          case 104: {
+            haveViewedList_.AddEntriesFrom(input, _repeated_haveViewedList_codec);
+            break;
+          }
+          case 112: {
+            Type = (global::NewProtos.CodexType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 74:
+          case 72: {
+            codexIdList_.AddEntriesFrom(ref input, _repeated_codexIdList_codec);
+            break;
+          }
+          case 98: {
+            weaponMaxPromoteLevelMap_.AddEntriesFrom(ref input, _map_weaponMaxPromoteLevelMap_codec);
+            break;
+          }
+          case 106:
+          case 104: {
+            haveViewedList_.AddEntriesFrom(ref input, _repeated_haveViewedList_codec);
+            break;
+          }
+          case 112: {
+            Type = (global::NewProtos.CodexType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class CodexTypeData : pb::IMessage<CodexTypeData>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<CodexTypeData> _parser = new pb::MessageParser<CodexTypeData>(() => new CodexTypeData());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<CodexTypeData> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::CodexTypeDataReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CodexTypeData() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CodexTypeData(CodexTypeData other) : this() {
-    haveViewedList_ = other.haveViewedList_.Clone();
-    codexIdList_ = other.codexIdList_.Clone();
-    weaponMaxPromoteLevelMap_ = other.weaponMaxPromoteLevelMap_.Clone();
-    type_ = other.type_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CodexTypeData Clone() {
-    return new CodexTypeData(this);
-  }
-
-  /// <summary>Field number for the "have_viewed_list" field.</summary>
-  public const int HaveViewedListFieldNumber = 13;
-  private static readonly pb::FieldCodec<bool> _repeated_haveViewedList_codec
-      = pb::FieldCodec.ForBool(106);
-  private readonly pbc::RepeatedField<bool> haveViewedList_ = new pbc::RepeatedField<bool>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<bool> HaveViewedList {
-    get { return haveViewedList_; }
-  }
-
-  /// <summary>Field number for the "codex_id_list" field.</summary>
-  public const int CodexIdListFieldNumber = 9;
-  private static readonly pb::FieldCodec<uint> _repeated_codexIdList_codec
-      = pb::FieldCodec.ForUInt32(74);
-  private readonly pbc::RepeatedField<uint> codexIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> CodexIdList {
-    get { return codexIdList_; }
-  }
-
-  /// <summary>Field number for the "weapon_max_promote_level_map" field.</summary>
-  public const int WeaponMaxPromoteLevelMapFieldNumber = 12;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_weaponMaxPromoteLevelMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 98);
-  private readonly pbc::MapField<uint, uint> weaponMaxPromoteLevelMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> WeaponMaxPromoteLevelMap {
-    get { return weaponMaxPromoteLevelMap_; }
-  }
-
-  /// <summary>Field number for the "type" field.</summary>
-  public const int TypeFieldNumber = 14;
-  private global::CodexType type_ = global::CodexType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CodexType Type {
-    get { return type_; }
-    set {
-      type_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as CodexTypeData);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(CodexTypeData other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!haveViewedList_.Equals(other.haveViewedList_)) return false;
-    if(!codexIdList_.Equals(other.codexIdList_)) return false;
-    if (!WeaponMaxPromoteLevelMap.Equals(other.WeaponMaxPromoteLevelMap)) return false;
-    if (Type != other.Type) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= haveViewedList_.GetHashCode();
-    hash ^= codexIdList_.GetHashCode();
-    hash ^= WeaponMaxPromoteLevelMap.GetHashCode();
-    if (Type != global::CodexType.None) hash ^= Type.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    codexIdList_.WriteTo(output, _repeated_codexIdList_codec);
-    weaponMaxPromoteLevelMap_.WriteTo(output, _map_weaponMaxPromoteLevelMap_codec);
-    haveViewedList_.WriteTo(output, _repeated_haveViewedList_codec);
-    if (Type != global::CodexType.None) {
-      output.WriteRawTag(112);
-      output.WriteEnum((int) Type);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    codexIdList_.WriteTo(ref output, _repeated_codexIdList_codec);
-    weaponMaxPromoteLevelMap_.WriteTo(ref output, _map_weaponMaxPromoteLevelMap_codec);
-    haveViewedList_.WriteTo(ref output, _repeated_haveViewedList_codec);
-    if (Type != global::CodexType.None) {
-      output.WriteRawTag(112);
-      output.WriteEnum((int) Type);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += haveViewedList_.CalculateSize(_repeated_haveViewedList_codec);
-    size += codexIdList_.CalculateSize(_repeated_codexIdList_codec);
-    size += weaponMaxPromoteLevelMap_.CalculateSize(_map_weaponMaxPromoteLevelMap_codec);
-    if (Type != global::CodexType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(CodexTypeData other) {
-    if (other == null) {
-      return;
-    }
-    haveViewedList_.Add(other.haveViewedList_);
-    codexIdList_.Add(other.codexIdList_);
-    weaponMaxPromoteLevelMap_.Add(other.weaponMaxPromoteLevelMap_);
-    if (other.Type != global::CodexType.None) {
-      Type = other.Type;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 74:
-        case 72: {
-          codexIdList_.AddEntriesFrom(input, _repeated_codexIdList_codec);
-          break;
-        }
-        case 98: {
-          weaponMaxPromoteLevelMap_.AddEntriesFrom(input, _map_weaponMaxPromoteLevelMap_codec);
-          break;
-        }
-        case 106:
-        case 104: {
-          haveViewedList_.AddEntriesFrom(input, _repeated_haveViewedList_codec);
-          break;
-        }
-        case 112: {
-          Type = (global::CodexType) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 74:
-        case 72: {
-          codexIdList_.AddEntriesFrom(ref input, _repeated_codexIdList_codec);
-          break;
-        }
-        case 98: {
-          weaponMaxPromoteLevelMap_.AddEntriesFrom(ref input, _map_weaponMaxPromoteLevelMap_codec);
-          break;
-        }
-        case 106:
-        case 104: {
-          haveViewedList_.AddEntriesFrom(ref input, _repeated_haveViewedList_codec);
-          break;
-        }
-        case 112: {
-          Type = (global::CodexType) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

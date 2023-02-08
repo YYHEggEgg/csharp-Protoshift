@@ -19,7 +19,7 @@ syntax = "proto3";
 import "GCGBossChallengeData.proto";
 import "GCGLevelData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 7055
 // EnetChannelId: 0

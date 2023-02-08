@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GCGReason.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGMsgModifyRemove {
   uint32 owner_card_guid = 7;

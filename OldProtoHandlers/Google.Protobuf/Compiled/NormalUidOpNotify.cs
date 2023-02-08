@@ -9,321 +9,324 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from NormalUidOpNotify.proto</summary>
-public static partial class NormalUidOpNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for NormalUidOpNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from NormalUidOpNotify.proto</summary>
+  public static partial class NormalUidOpNotifyReflection {
 
-  static NormalUidOpNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdOb3JtYWxVaWRPcE5vdGlmeS5wcm90byJmChFOb3JtYWxVaWRPcE5vdGlm",
-          "eRIQCghkdXJhdGlvbhgGIAEoDRISCgpwYXJhbV9saXN0GAQgAygNEhYKDnBh",
-          "cmFtX3VpZF9saXN0GAUgAygNEhMKC3BhcmFtX2luZGV4GAggASgNQh4KHGVt",
-          "dS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::NormalUidOpNotify), global::NormalUidOpNotify.Parser, new[]{ "Duration", "ParamList", "ParamUidList", "ParamIndex" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for NormalUidOpNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static NormalUidOpNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdOb3JtYWxVaWRPcE5vdGlmeS5wcm90byJmChFOb3JtYWxVaWRPcE5vdGlm",
+            "eRIQCghkdXJhdGlvbhgGIAEoDRISCgpwYXJhbV9saXN0GAQgAygNEhYKDnBh",
+            "cmFtX3VpZF9saXN0GAUgAygNEhMKC3BhcmFtX2luZGV4GAggASgNQgyqAglP",
+            "bGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.NormalUidOpNotify), global::OldProtos.NormalUidOpNotify.Parser, new[]{ "Duration", "ParamList", "ParamUidList", "ParamIndex" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 5726
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class NormalUidOpNotify : pb::IMessage<NormalUidOpNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<NormalUidOpNotify> _parser = new pb::MessageParser<NormalUidOpNotify>(() => new NormalUidOpNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<NormalUidOpNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.NormalUidOpNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public NormalUidOpNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public NormalUidOpNotify(NormalUidOpNotify other) : this() {
+      duration_ = other.duration_;
+      paramList_ = other.paramList_.Clone();
+      paramUidList_ = other.paramUidList_.Clone();
+      paramIndex_ = other.paramIndex_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public NormalUidOpNotify Clone() {
+      return new NormalUidOpNotify(this);
+    }
+
+    /// <summary>Field number for the "duration" field.</summary>
+    public const int DurationFieldNumber = 6;
+    private uint duration_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Duration {
+      get { return duration_; }
+      set {
+        duration_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "param_list" field.</summary>
+    public const int ParamListFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_paramList_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> paramList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ParamList {
+      get { return paramList_; }
+    }
+
+    /// <summary>Field number for the "param_uid_list" field.</summary>
+    public const int ParamUidListFieldNumber = 5;
+    private static readonly pb::FieldCodec<uint> _repeated_paramUidList_codec
+        = pb::FieldCodec.ForUInt32(42);
+    private readonly pbc::RepeatedField<uint> paramUidList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ParamUidList {
+      get { return paramUidList_; }
+    }
+
+    /// <summary>Field number for the "param_index" field.</summary>
+    public const int ParamIndexFieldNumber = 8;
+    private uint paramIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ParamIndex {
+      get { return paramIndex_; }
+      set {
+        paramIndex_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as NormalUidOpNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(NormalUidOpNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Duration != other.Duration) return false;
+      if(!paramList_.Equals(other.paramList_)) return false;
+      if(!paramUidList_.Equals(other.paramUidList_)) return false;
+      if (ParamIndex != other.ParamIndex) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Duration != 0) hash ^= Duration.GetHashCode();
+      hash ^= paramList_.GetHashCode();
+      hash ^= paramUidList_.GetHashCode();
+      if (ParamIndex != 0) hash ^= ParamIndex.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      paramList_.WriteTo(output, _repeated_paramList_codec);
+      paramUidList_.WriteTo(output, _repeated_paramUidList_codec);
+      if (Duration != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Duration);
+      }
+      if (ParamIndex != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ParamIndex);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      paramList_.WriteTo(ref output, _repeated_paramList_codec);
+      paramUidList_.WriteTo(ref output, _repeated_paramUidList_codec);
+      if (Duration != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Duration);
+      }
+      if (ParamIndex != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ParamIndex);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Duration != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Duration);
+      }
+      size += paramList_.CalculateSize(_repeated_paramList_codec);
+      size += paramUidList_.CalculateSize(_repeated_paramUidList_codec);
+      if (ParamIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ParamIndex);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(NormalUidOpNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Duration != 0) {
+        Duration = other.Duration;
+      }
+      paramList_.Add(other.paramList_);
+      paramUidList_.Add(other.paramUidList_);
+      if (other.ParamIndex != 0) {
+        ParamIndex = other.ParamIndex;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 34:
+          case 32: {
+            paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
+            break;
+          }
+          case 42:
+          case 40: {
+            paramUidList_.AddEntriesFrom(input, _repeated_paramUidList_codec);
+            break;
+          }
+          case 48: {
+            Duration = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            ParamIndex = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 34:
+          case 32: {
+            paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
+            break;
+          }
+          case 42:
+          case 40: {
+            paramUidList_.AddEntriesFrom(ref input, _repeated_paramUidList_codec);
+            break;
+          }
+          case 48: {
+            Duration = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            ParamIndex = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 5726
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class NormalUidOpNotify : pb::IMessage<NormalUidOpNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<NormalUidOpNotify> _parser = new pb::MessageParser<NormalUidOpNotify>(() => new NormalUidOpNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<NormalUidOpNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::NormalUidOpNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public NormalUidOpNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public NormalUidOpNotify(NormalUidOpNotify other) : this() {
-    duration_ = other.duration_;
-    paramList_ = other.paramList_.Clone();
-    paramUidList_ = other.paramUidList_.Clone();
-    paramIndex_ = other.paramIndex_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public NormalUidOpNotify Clone() {
-    return new NormalUidOpNotify(this);
-  }
-
-  /// <summary>Field number for the "duration" field.</summary>
-  public const int DurationFieldNumber = 6;
-  private uint duration_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Duration {
-    get { return duration_; }
-    set {
-      duration_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "param_list" field.</summary>
-  public const int ParamListFieldNumber = 4;
-  private static readonly pb::FieldCodec<uint> _repeated_paramList_codec
-      = pb::FieldCodec.ForUInt32(34);
-  private readonly pbc::RepeatedField<uint> paramList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> ParamList {
-    get { return paramList_; }
-  }
-
-  /// <summary>Field number for the "param_uid_list" field.</summary>
-  public const int ParamUidListFieldNumber = 5;
-  private static readonly pb::FieldCodec<uint> _repeated_paramUidList_codec
-      = pb::FieldCodec.ForUInt32(42);
-  private readonly pbc::RepeatedField<uint> paramUidList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> ParamUidList {
-    get { return paramUidList_; }
-  }
-
-  /// <summary>Field number for the "param_index" field.</summary>
-  public const int ParamIndexFieldNumber = 8;
-  private uint paramIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ParamIndex {
-    get { return paramIndex_; }
-    set {
-      paramIndex_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as NormalUidOpNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(NormalUidOpNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Duration != other.Duration) return false;
-    if(!paramList_.Equals(other.paramList_)) return false;
-    if(!paramUidList_.Equals(other.paramUidList_)) return false;
-    if (ParamIndex != other.ParamIndex) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Duration != 0) hash ^= Duration.GetHashCode();
-    hash ^= paramList_.GetHashCode();
-    hash ^= paramUidList_.GetHashCode();
-    if (ParamIndex != 0) hash ^= ParamIndex.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    paramList_.WriteTo(output, _repeated_paramList_codec);
-    paramUidList_.WriteTo(output, _repeated_paramUidList_codec);
-    if (Duration != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Duration);
-    }
-    if (ParamIndex != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ParamIndex);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    paramList_.WriteTo(ref output, _repeated_paramList_codec);
-    paramUidList_.WriteTo(ref output, _repeated_paramUidList_codec);
-    if (Duration != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Duration);
-    }
-    if (ParamIndex != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ParamIndex);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Duration != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Duration);
-    }
-    size += paramList_.CalculateSize(_repeated_paramList_codec);
-    size += paramUidList_.CalculateSize(_repeated_paramUidList_codec);
-    if (ParamIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ParamIndex);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(NormalUidOpNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Duration != 0) {
-      Duration = other.Duration;
-    }
-    paramList_.Add(other.paramList_);
-    paramUidList_.Add(other.paramUidList_);
-    if (other.ParamIndex != 0) {
-      ParamIndex = other.ParamIndex;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 34:
-        case 32: {
-          paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
-          break;
-        }
-        case 42:
-        case 40: {
-          paramUidList_.AddEntriesFrom(input, _repeated_paramUidList_codec);
-          break;
-        }
-        case 48: {
-          Duration = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          ParamIndex = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 34:
-        case 32: {
-          paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
-          break;
-        }
-        case 42:
-        case 40: {
-          paramUidList_.AddEntriesFrom(ref input, _repeated_paramUidList_codec);
-          break;
-        }
-        case 48: {
-          Duration = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          ParamIndex = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

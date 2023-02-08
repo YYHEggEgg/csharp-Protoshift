@@ -9,4478 +9,4481 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ActivityInfo.proto</summary>
-public static partial class ActivityInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ActivityInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ActivityInfo.proto</summary>
+  public static partial class ActivityInfoReflection {
 
-  static ActivityInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChJBY3Rpdml0eUluZm8ucHJvdG8aGkFjdGl2aXR5UHVzaFRpcHNEYXRhLnBy",
-          "b3RvGhlBY3Rpdml0eVdhdGNoZXJJbmZvLnByb3RvGiZBcmVuYUNoYWxsZW5n",
-          "ZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxodQXN0ZXJBY3Rpdml0eURldGFp",
-          "bEluZm8ucHJvdG8aIUJhcnRlbmRlckFjdGl2aXR5RGV0YWlsSW5mby5wcm90",
-          "bxogQmxlc3NpbmdBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aIUJsaXR6UnVz",
-          "aEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxonQm91bmNlQ29uanVyaW5nQWN0",
-          "aXZpdHlEZXRhaWxJbmZvLnByb3RvGhxCcmlja0JyZWFrZXJEZXRhaWxJbmZv",
-          "LnByb3RvGh1CdW95YW50Q29tYmF0RGV0YWlsSW5mby5wcm90bxolQ2hhbm5l",
-          "bGVyU2xhYkFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxodQ2hhckFtdXNlbWVu",
-          "dERldGFpbEluZm8ucHJvdG8aHUNoZXNzQWN0aXZpdHlEZXRhaWxJbmZvLnBy",
-          "b3RvGhtDb2luQ29sbGVjdERldGFpbEluZm8ucHJvdG8aIENydWNpYmxlQWN0",
-          "aXZpdHlEZXRhaWxJbmZvLnByb3RvGiNDcnlzdGFsTGlua0FjdGl2aXR5RGV0",
-          "YWlsSW5mby5wcm90bxogRGVsaXZlcnlBY3Rpdml0eURldGFpbEluZm8ucHJv",
-          "dG8aG0RpZ0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxojRHJhZ29uU3BpbmVB",
-          "Y3Rpdml0eURldGFpbEluZm8ucHJvdG8aGUVjaG9TaGVsbERldGFpbEluZm8u",
-          "cHJvdG8aHkVmZmlneUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxohRWZmaWd5",
-          "Q2hhbGxlbmdlVjJEZXRhaWxJbmZvLnByb3RvGiJFeHBlZGl0aW9uQWN0aXZp",
-          "dHlEZXRhaWxJbmZvLnByb3RvGh1GaW5kSGlsaWNodXJsRGV0YWlsSW5mby5w",
-          "cm90bxohRmxldXJGYWlyQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGh5GbGln",
-          "aHRBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aHUZ1bmd1c0ZpZ2h0ZXJEZXRh",
-          "aWxJbmZvLnByb3RvGh1HYWNoYUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoc",
-          "R2VhckFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxofR3JhdmVuSW5ub2NlbmNl",
-          "RGV0YWlsSW5mby5wcm90bxodSGFjaGlBY3Rpdml0eURldGFpbEluZm8ucHJv",
-          "dG8aI0hpZGVBbmRTZWVrQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGh1JbnN0",
-          "YWJsZVNwcmF5RGV0YWlsSW5mby5wcm90bxofSXJvZG9yaUFjdGl2aXR5RGV0",
-          "YWlsSW5mby5wcm90bxobSXNsYW5kUGFydHlEZXRhaWxJbmZvLnByb3RvGiNM",
-          "YW50ZXJuUml0ZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxovTHVtaW5hbmNl",
-          "U3RvbmVDaGFsbGVuZ2VBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aGEx1bmFS",
-          "aXRlRGV0YWlsSW5mby5wcm90bxomTWljaGlhZU1hdHN1cmlBY3Rpdml0eURl",
-          "dGFpbEluZm8ucHJvdG8aIU1pc3RUcmlhbEFjdGl2aXR5RGV0YWlsSW5mby5w",
-          "cm90bxokTW9vbmZpblRyaWFsQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiVN",
-          "dXFhZGFzUG90aW9uQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiFNdXNpY0dh",
-          "bWVBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aHVBob3RvQWN0aXZpdHlEZXRh",
-          "aWxJbmZvLnByb3RvGiNQbGFudEZsb3dlckFjdGl2aXR5RGV0YWlsSW5mby5w",
-          "cm90bxoeUG90aW9uQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiBSb2NrQm9h",
-          "cmRFeHBsb3JlRGV0YWlsSW5mby5wcm90bxoiUm9ndWVEaWFyeUFjdGl2aXR5",
-          "RGV0YWlsSW5mby5wcm90bxooUm9ndWVsaWtlRHVuZ2VvbkFjdGl2aXR5RGV0",
-          "YWlsSW5mby5wcm90bxogU2FsZXNtYW5BY3Rpdml0eURldGFpbEluZm8ucHJv",
-          "dG8aH1NlYUxhbXBBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aGVNlYUxhbXBB",
-          "Y3Rpdml0eUluZm8ucHJvdG8aHVNwaWNlQWN0aXZpdHlEZXRhaWxJbmZvLnBy",
-          "b3RvGhpTdW1tZXJUaW1lRGV0YWlsSW5mby5wcm90bxocU3VtbWVyVGltZVYy",
-          "RGV0YWlsSW5mby5wcm90bxocU3Vtb0FjdGl2aXR5RGV0YWlsSW5mby5wcm90",
-          "bxokVGFudWtpVHJhdmVsQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiNUcmVh",
-          "c3VyZU1hcEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxomVHJlYXN1cmVTZWVs",
-          "aWVBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aI1RyaWFsQXZhdGFyQWN0aXZp",
-          "dHlEZXRhaWxJbmZvLnByb3RvGhtVZ2NBY3Rpdml0eURldGFpbEluZm8ucHJv",
-          "dG8aH1ZpbnRhZ2VBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aI1dhdGVyU3Bp",
-          "cml0QWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhlXaW5kRmllbGREZXRhaWxJ",
-          "bmZvLnByb3RvGiJXaW50ZXJDYW1wQWN0aXZpdHlEZXRhaWxJbmZvLnByb3Rv",
-          "IpYjCgxBY3Rpdml0eUluZm8SHAoTVW5rMzMwMF9NSk5QR0VLTE9DRxjoAiAB",
-          "KAgSEwoLaXNfZmluaXNoZWQYCCABKAgSEgoJY3VyX3Njb3JlGPQJIAEoDRIT",
-          "CgtzY2hlZHVsZV9pZBgHIAEoDRIUCgtzY29yZV9saW1pdBjODiABKA0SGwoT",
-          "VW5rMzMwMF9JQ05KSktESFBDSBgOIAEoCBIWCg5tZWV0X2NvbmRfbGlzdBgL",
-          "IAMoDRIcChNVbmszMzAwX05FUEtMTEJKRktLGO0MIAEoCBIvChF3YXRjaGVy",
-          "X2luZm9fbGlzdBgGIAMoCzIULkFjdGl2aXR5V2F0Y2hlckluZm8SPAocYWN0",
-          "aXZpdHlfcHVzaF90aXBzX2RhdGFfbGlzdBjLDiADKAsyFS5BY3Rpdml0eVB1",
-          "c2hUaXBzRGF0YRITCgthY3Rpdml0eV9pZBgNIAEoDRIaChF0YWtlbl9yZXdh",
-          "cmRfbGlzdBjhDiADKA0SIgoZc2VsZWN0ZWRfYXZhdGFyX3Jld2FyZF9pZBi5",
-          "BSABKA0SPQoRYWN0aXZpdHlfY29pbl9tYXAYJCADKAsyIi5BY3Rpdml0eUlu",
-          "Zm8uQWN0aXZpdHlDb2luTWFwRW50cnkSHQoUZmlyc3RfZGF5X3N0YXJ0X3Rp",
-          "bWUYkgYgASgNEhwKE1VuazMzMDBfQUJKS0xBTEtMREcYzgsgASgIEhUKDWFj",
-          "dGl2aXR5X3R5cGUYAyABKA0SHAoTVW5rMzMwMF9DQkNFSExKSk9HSRjfCiAB",
-          "KAgSEgoKYmVnaW5fdGltZRgBIAEoDRIbChNVbmszMzAwX01EQkRQSUJFR0dI",
-          "GAwgASgIEj0KEXdpc2hfZ2lmdF9udW1fbWFwGKsHIAMoCzIhLkFjdGl2aXR5",
-          "SW5mby5XaXNoR2lmdE51bU1hcEVudHJ5EhAKCGVuZF90aW1lGAogASgNEhgK",
-          "EGV4cGlyZV9jb25kX2xpc3QYBSADKA0SMwoNc2FtX2xhbXBfaW5mbxgCIAEo",
-          "CzIaLlNlYUxhbXBBY3Rpdml0eURldGFpbEluZm9IABI0Cg1jcnVjaWJsZV9p",
-          "bmZvGA8gASgLMhsuQ3J1Y2libGVBY3Rpdml0eURldGFpbEluZm9IABI0Cg1z",
-          "YWxlc21hbl9pbmZvGAkgASgLMhsuU2FsZXNtYW5BY3Rpdml0eURldGFpbElu",
-          "Zm9IABI7ChF0cmlhbF9hdmF0YXJfaW5mbxgEIAEoCzIeLlRyaWFsQXZhdGFy",
-          "QWN0aXZpdHlEZXRhaWxJbmZvSAASNQoNZGVsaXZlcnlfaW5mbxj1CCABKAsy",
-          "Gy5EZWxpdmVyeUFjdGl2aXR5RGV0YWlsSW5mb0gAEi8KCmFzdGVyX2luZm8Y",
-          "uQ8gASgLMhguQXN0ZXJBY3Rpdml0eURldGFpbEluZm9IABIxCgtmbGlnaHRf",
-          "aW5mbxjbDyABKAsyGS5GbGlnaHRBY3Rpdml0eURldGFpbEluZm9IABI8ChFk",
-          "cmFnb25fc3BpbmVfaW5mbxieCiABKAsyHi5EcmFnb25TcGluZUFjdGl2aXR5",
-          "RGV0YWlsSW5mb0gAEjEKC2VmZmlneV9pbmZvGN4KIAEoCzIZLkVmZmlneUFj",
-          "dGl2aXR5RGV0YWlsSW5mb0gAEjwKEXRyZWFzdXJlX21hcF9pbmZvGIUPIAEo",
-          "CzIeLlRyZWFzdXJlTWFwQWN0aXZpdHlEZXRhaWxJbmZvSAASNQoNYmxlc3Np",
-          "bmdfaW5mbxiqDyABKAsyGy5CbGVzc2luZ0FjdGl2aXR5RGV0YWlsSW5mb0gA",
-          "Ei4KDXNlYV9sYW1wX2luZm8Y9wEgASgLMhQuU2VhTGFtcEFjdGl2aXR5SW5m",
-          "b0gAEjkKD2V4cGVkaXRpb25faW5mbxjYDSABKAsyHS5FeHBlZGl0aW9uQWN0",
-          "aXZpdHlEZXRhaWxJbmZvSAASQgoUYXJlbmFfY2hhbGxlbmdlX2luZm8YmgQg",
-          "ASgLMiEuQXJlbmFDaGFsbGVuZ2VBY3Rpdml0eURldGFpbEluZm9IABI4Cg9m",
-          "bGV1cl9mYWlyX2luZm8YpwsgASgLMhwuRmxldXJGYWlyQWN0aXZpdHlEZXRh",
-          "aWxJbmZvSAASPAoRd2F0ZXJfc3Bpcml0X2luZm8Y+wQgASgLMh4uV2F0ZXJT",
-          "cGlyaXRBY3Rpdml0eURldGFpbEluZm9IABJAChNjaGFubmVsZXJfc2xhYl9p",
-          "bmZvGM4GIAEoCzIgLkNoYW5uZWxlclNsYWJBY3Rpdml0eURldGFpbEluZm9I",
-          "ABJBChhtaXN0X3RyaWFsX2FjdGl2aXR5X2luZm8YsAMgASgLMhwuTWlzdFRy",
-          "aWFsQWN0aXZpdHlEZXRhaWxJbmZvSAASPQoSaGlkZV9hbmRfc2Vla19pbmZv",
-          "GMcGIAEoCzIeLkhpZGVBbmRTZWVrQWN0aXZpdHlEZXRhaWxJbmZvSAASOAoT",
-          "ZmluZF9oaWxpY2h1cmxfaW5mbxj6AiABKAsyGC5GaW5kSGlsaWNodXJsRGV0",
-          "YWlsSW5mb0gAEjIKEHN1bW1lcl90aW1lX2luZm8Y9g4gASgLMhUuU3VtbWVy",
-          "VGltZURldGFpbEluZm9IABI4ChNidW95YW50X2NvbWJhdF9pbmZvGK4FIAEo",
-          "CzIYLkJ1b3lhbnRDb21iYXREZXRhaWxJbmZvSAASMAoPZWNob19zaGVsbF9p",
-          "bmZvGIoJIAEoCzIULkVjaG9TaGVsbERldGFpbEluZm9IABJEChVib3VuY2Vf",
-          "Y29uanVyaW5nX2luZm8YmgcgASgLMiIuQm91bmNlQ29uanVyaW5nQWN0aXZp",
-          "dHlEZXRhaWxJbmZvSAASNwoPYmxpdHpfcnVzaF9pbmZvGEAgASgLMhwuQmxp",
-          "dHpSdXNoQWN0aXZpdHlEZXRhaWxJbmZvSAASLwoKY2hlc3NfaW5mbxjuByAB",
-          "KAsyGC5DaGVzc0FjdGl2aXR5RGV0YWlsSW5mb0gAEi0KCXN1bW9faW5mbxj5",
-          "AyABKAsyFy5TdW1vQWN0aXZpdHlEZXRhaWxJbmZvSAASPgoSbW9vbmZpbl90",
-          "cmlhbF9pbmZvGP4FIAEoCzIfLk1vb25maW5UcmlhbEFjdGl2aXR5RGV0YWls",
-          "SW5mb0gAEi4KDmx1bmFfcml0ZV9pbmZvGIkMIAEoCzITLkx1bmFSaXRlRGV0",
-          "YWlsSW5mb0gAEjwKEXBsYW50X2Zsb3dlcl9pbmZvGPoJIAEoCzIeLlBsYW50",
-          "Rmxvd2VyQWN0aXZpdHlEZXRhaWxJbmZvSAASOAoPbXVzaWNfZ2FtZV9pbmZv",
-          "GMUPIAEoCzIcLk11c2ljR2FtZUFjdGl2aXR5RGV0YWlsSW5mb0gAEkYKFnJv",
-          "Z3VlbGlrZV9kdW5nZW9uX2luZm8YygcgASgLMiMuUm9ndWVsaWtlRHVuZ2Vv",
-          "bkFjdGl2aXR5RGV0YWlsSW5mb0gAEisKCGRpZ19pbmZvGMYOIAEoCzIWLkRp",
-          "Z0FjdGl2aXR5RGV0YWlsSW5mb0gAEi8KCmhhY2hpX2luZm8Y/wMgASgLMhgu",
-          "SGFjaGlBY3Rpdml0eURldGFpbEluZm9IABI6ChB3aW50ZXJfY2FtcF9pbmZv",
-          "GLsFIAEoCzIdLldpbnRlckNhbXBBY3Rpdml0eURldGFpbEluZm9IABIxCgtw",
-          "b3Rpb25faW5mbxifDCABKAsyGS5Qb3Rpb25BY3Rpdml0eURldGFpbEluZm9I",
-          "ABJHCht0YW51a2lfdHJhdmVsX2FjdGl2aXR5X2luZm8YxAogASgLMh8uVGFu",
-          "dWtpVHJhdmVsQWN0aXZpdHlEZXRhaWxJbmZvSAASRQoabGFudGVybl9yaXRl",
-          "X2FjdGl2aXR5X2luZm8Y7QEgASgLMh4uTGFudGVyblJpdGVBY3Rpdml0eURl",
-          "dGFpbEluZm9IABJCChRtaWNoaWFlX21hdHN1cmlfaW5mbxivDiABKAsyIS5N",
-          "aWNoaWFlTWF0c3VyaUFjdGl2aXR5RGV0YWlsSW5mb0gAEjcKDmJhcnRlbmRl",
-          "cl9pbmZvGKcEIAEoCzIcLkJhcnRlbmRlckFjdGl2aXR5RGV0YWlsSW5mb0gA",
-          "EisKCHVnY19pbmZvGJ4JIAEoCzIWLlVnY0FjdGl2aXR5RGV0YWlsSW5mb0gA",
-          "EjwKEWNyeXN0YWxfbGlua19pbmZvGKwGIAEoCzIeLkNyeXN0YWxMaW5rQWN0",
-          "aXZpdHlEZXRhaWxJbmZvSAASMwoMaXJvZG9yaV9pbmZvGKAIIAEoCzIaLkly",
-          "b2RvcmlBY3Rpdml0eURldGFpbEluZm9IABIvCgpwaG90b19pbmZvGJ4OIAEo",
-          "CzIYLlBob3RvQWN0aXZpdHlEZXRhaWxJbmZvSAASLwoKc3BpY2VfaW5mbxiV",
-          "BiABKAsyGC5TcGljZUFjdGl2aXR5RGV0YWlsSW5mb0gAEi8KCmdhY2hhX2lu",
-          "Zm8YkQogASgLMhguR2FjaGFBY3Rpdml0eURldGFpbEluZm9IABJVCh5sdW1p",
-          "bmFuY2Vfc3RvbmVfY2hhbGxlbmdlX2luZm8YvAMgASgLMiouTHVtaW5hbmNl",
-          "U3RvbmVDaGFsbGVuZ2VBY3Rpdml0eURldGFpbEluZm9IABI6ChByb2d1ZV9k",
-          "aWFyeV9pbmZvGLAEIAEoCzIdLlJvZ3VlRGlhcnlBY3Rpdml0eURldGFpbElu",
-          "Zm9IABI3ChNzdW1tZXJfdGltZV92Ml9pbmZvGJsDIAEoCzIXLlN1bW1lclRp",
-          "bWVWMkRldGFpbEluZm9IABI0ChFpc2xhbmRfcGFydHlfaW5mbxjkBSABKAsy",
-          "Fi5Jc2xhbmRQYXJ0eURldGFpbEluZm9IABItCglnZWFyX2luZm8YygsgASgL",
-          "MhcuR2VhckFjdGl2aXR5RGV0YWlsSW5mb0gAEjwKFWdyYXZlbl9pbm5vY2Vu",
-          "Y2VfaW5mbxiIDyABKAsyGi5HcmF2ZW5Jbm5vY2VuY2VEZXRhaWxJbmZvSAAS",
-          "OAoTaW5zdGFibGVfc3ByYXlfaW5mbxj5CCABKAsyGC5JbnN0YWJsZVNwcmF5",
-          "RGV0YWlsSW5mb0gAEkAKE211cWFkYXNfcG90aW9uX2luZm8Y/gwgASgLMiAu",
-          "TXVxYWRhc1BvdGlvbkFjdGl2aXR5RGV0YWlsSW5mb0gAEkIKFHRyZWFzdXJl",
-          "X3NlZWxpZV9pbmZvGIgIIAEoCzIhLlRyZWFzdXJlU2VlbGllQWN0aXZpdHlE",
-          "ZXRhaWxJbmZvSAASPwoXcm9ja19ib2FyZF9leHBsb3JlX2luZm8Y8QkgASgL",
-          "MhsuUm9ja0JvYXJkRXhwbG9yZURldGFpbEluZm9IABIzCgx2aW50YWdlX2lu",
-          "Zm8YnAogASgLMhouVmludGFnZUFjdGl2aXR5RGV0YWlsSW5mb0gAEjAKD3dp",
-          "bmRfZmllbGRfaW5mbxjUAyABKAsyFC5XaW5kRmllbGREZXRhaWxJbmZvSAAS",
-          "OAoTZnVuZ3VzX2ZpZ2h0ZXJfaW5mbxjdDSABKAsyGC5GdW5ndXNGaWdodGVy",
-          "RGV0YWlsSW5mb0gAEjgKE2NoYXJfYW11c2VtZW50X2luZm8Y7QQgASgLMhgu",
-          "Q2hhckFtdXNlbWVudERldGFpbEluZm9IABI+ChVlZmZpZ3lfY2hhbGxlbmdl",
-          "X2luZm8Y6QEgASgLMhwuRWZmaWd5Q2hhbGxlbmdlVjJEZXRhaWxJbmZvSAAS",
-          "NAoRY29pbl9jb2xsZWN0X2luZm8Y0g8gASgLMhYuQ29pbkNvbGxlY3REZXRh",
-          "aWxJbmZvSAASNgoSYnJpY2tfYnJlYWtlcl9pbmZvGPILIAEoCzIXLkJyaWNr",
-          "QnJlYWtlckRldGFpbEluZm9IABo2ChRBY3Rpdml0eUNvaW5NYXBFbnRyeRIL",
-          "CgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBGjUKE1dpc2hHaWZ0TnVt",
-          "TWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIICgZk",
-          "ZXRhaWxCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ActivityPushTipsDataReflection.Descriptor, global::ActivityWatcherInfoReflection.Descriptor, global::ArenaChallengeActivityDetailInfoReflection.Descriptor, global::AsterActivityDetailInfoReflection.Descriptor, global::BartenderActivityDetailInfoReflection.Descriptor, global::BlessingActivityDetailInfoReflection.Descriptor, global::BlitzRushActivityDetailInfoReflection.Descriptor, global::BounceConjuringActivityDetailInfoReflection.Descriptor, global::BrickBreakerDetailInfoReflection.Descriptor, global::BuoyantCombatDetailInfoReflection.Descriptor, global::ChannelerSlabActivityDetailInfoReflection.Descriptor, global::CharAmusementDetailInfoReflection.Descriptor, global::ChessActivityDetailInfoReflection.Descriptor, global::CoinCollectDetailInfoReflection.Descriptor, global::CrucibleActivityDetailInfoReflection.Descriptor, global::CrystalLinkActivityDetailInfoReflection.Descriptor, global::DeliveryActivityDetailInfoReflection.Descriptor, global::DigActivityDetailInfoReflection.Descriptor, global::DragonSpineActivityDetailInfoReflection.Descriptor, global::EchoShellDetailInfoReflection.Descriptor, global::EffigyActivityDetailInfoReflection.Descriptor, global::EffigyChallengeV2DetailInfoReflection.Descriptor, global::ExpeditionActivityDetailInfoReflection.Descriptor, global::FindHilichurlDetailInfoReflection.Descriptor, global::FleurFairActivityDetailInfoReflection.Descriptor, global::FlightActivityDetailInfoReflection.Descriptor, global::FungusFighterDetailInfoReflection.Descriptor, global::GachaActivityDetailInfoReflection.Descriptor, global::GearActivityDetailInfoReflection.Descriptor, global::GravenInnocenceDetailInfoReflection.Descriptor, global::HachiActivityDetailInfoReflection.Descriptor, global::HideAndSeekActivityDetailInfoReflection.Descriptor, global::InstableSprayDetailInfoReflection.Descriptor, global::IrodoriActivityDetailInfoReflection.Descriptor, global::IslandPartyDetailInfoReflection.Descriptor, global::LanternRiteActivityDetailInfoReflection.Descriptor, global::LuminanceStoneChallengeActivityDetailInfoReflection.Descriptor, global::LunaRiteDetailInfoReflection.Descriptor, global::MichiaeMatsuriActivityDetailInfoReflection.Descriptor, global::MistTrialActivityDetailInfoReflection.Descriptor, global::MoonfinTrialActivityDetailInfoReflection.Descriptor, global::MuqadasPotionActivityDetailInfoReflection.Descriptor, global::MusicGameActivityDetailInfoReflection.Descriptor, global::PhotoActivityDetailInfoReflection.Descriptor, global::PlantFlowerActivityDetailInfoReflection.Descriptor, global::PotionActivityDetailInfoReflection.Descriptor, global::RockBoardExploreDetailInfoReflection.Descriptor, global::RogueDiaryActivityDetailInfoReflection.Descriptor, global::RoguelikeDungeonActivityDetailInfoReflection.Descriptor, global::SalesmanActivityDetailInfoReflection.Descriptor, global::SeaLampActivityDetailInfoReflection.Descriptor, global::SeaLampActivityInfoReflection.Descriptor, global::SpiceActivityDetailInfoReflection.Descriptor, global::SummerTimeDetailInfoReflection.Descriptor, global::SummerTimeV2DetailInfoReflection.Descriptor, global::SumoActivityDetailInfoReflection.Descriptor, global::TanukiTravelActivityDetailInfoReflection.Descriptor, global::TreasureMapActivityDetailInfoReflection.Descriptor, global::TreasureSeelieActivityDetailInfoReflection.Descriptor, global::TrialAvatarActivityDetailInfoReflection.Descriptor, global::UgcActivityDetailInfoReflection.Descriptor, global::VintageActivityDetailInfoReflection.Descriptor, global::WaterSpiritActivityDetailInfoReflection.Descriptor, global::WindFieldDetailInfoReflection.Descriptor, global::WinterCampActivityDetailInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ActivityInfo), global::ActivityInfo.Parser, new[]{ "Unk3300MJNPGEKLOCG", "IsFinished", "CurScore", "ScheduleId", "ScoreLimit", "Unk3300ICNJJKDHPCH", "MeetCondList", "Unk3300NEPKLLBJFKK", "WatcherInfoList", "ActivityPushTipsDataList", "ActivityId", "TakenRewardList", "SelectedAvatarRewardId", "ActivityCoinMap", "FirstDayStartTime", "Unk3300ABJKLALKLDG", "ActivityType", "Unk3300CBCEHLJJOGI", "BeginTime", "Unk3300MDBDPIBEGGH", "WishGiftNumMap", "EndTime", "ExpireCondList", "SamLampInfo", "CrucibleInfo", "SalesmanInfo", "TrialAvatarInfo", "DeliveryInfo", "AsterInfo", "FlightInfo", "DragonSpineInfo", "EffigyInfo", "TreasureMapInfo", "BlessingInfo", "SeaLampInfo", "ExpeditionInfo", "ArenaChallengeInfo", "FleurFairInfo", "WaterSpiritInfo", "ChannelerSlabInfo", "MistTrialActivityInfo", "HideAndSeekInfo", "FindHilichurlInfo", "SummerTimeInfo", "BuoyantCombatInfo", "EchoShellInfo", "BounceConjuringInfo", "BlitzRushInfo", "ChessInfo", "SumoInfo", "MoonfinTrialInfo", "LunaRiteInfo", "PlantFlowerInfo", "MusicGameInfo", "RoguelikeDungeonInfo", "DigInfo", "HachiInfo", "WinterCampInfo", "PotionInfo", "TanukiTravelActivityInfo", "LanternRiteActivityInfo", "MichiaeMatsuriInfo", "BartenderInfo", "UgcInfo", "CrystalLinkInfo", "IrodoriInfo", "PhotoInfo", "SpiceInfo", "GachaInfo", "LuminanceStoneChallengeInfo", "RogueDiaryInfo", "SummerTimeV2Info", "IslandPartyInfo", "GearInfo", "GravenInnocenceInfo", "InstableSprayInfo", "MuqadasPotionInfo", "TreasureSeelieInfo", "RockBoardExploreInfo", "VintageInfo", "WindFieldInfo", "FungusFighterInfo", "CharAmusementInfo", "EffigyChallengeInfo", "CoinCollectInfo", "BrickBreakerInfo" }, new[]{ "Detail" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ActivityInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ActivityInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChJBY3Rpdml0eUluZm8ucHJvdG8aGkFjdGl2aXR5UHVzaFRpcHNEYXRhLnBy",
+            "b3RvGhlBY3Rpdml0eVdhdGNoZXJJbmZvLnByb3RvGiZBcmVuYUNoYWxsZW5n",
+            "ZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxodQXN0ZXJBY3Rpdml0eURldGFp",
+            "bEluZm8ucHJvdG8aIUJhcnRlbmRlckFjdGl2aXR5RGV0YWlsSW5mby5wcm90",
+            "bxogQmxlc3NpbmdBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aIUJsaXR6UnVz",
+            "aEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxonQm91bmNlQ29uanVyaW5nQWN0",
+            "aXZpdHlEZXRhaWxJbmZvLnByb3RvGhxCcmlja0JyZWFrZXJEZXRhaWxJbmZv",
+            "LnByb3RvGh1CdW95YW50Q29tYmF0RGV0YWlsSW5mby5wcm90bxolQ2hhbm5l",
+            "bGVyU2xhYkFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxodQ2hhckFtdXNlbWVu",
+            "dERldGFpbEluZm8ucHJvdG8aHUNoZXNzQWN0aXZpdHlEZXRhaWxJbmZvLnBy",
+            "b3RvGhtDb2luQ29sbGVjdERldGFpbEluZm8ucHJvdG8aIENydWNpYmxlQWN0",
+            "aXZpdHlEZXRhaWxJbmZvLnByb3RvGiNDcnlzdGFsTGlua0FjdGl2aXR5RGV0",
+            "YWlsSW5mby5wcm90bxogRGVsaXZlcnlBY3Rpdml0eURldGFpbEluZm8ucHJv",
+            "dG8aG0RpZ0FjdGl2aXR5RGV0YWlsSW5mby5wcm90bxojRHJhZ29uU3BpbmVB",
+            "Y3Rpdml0eURldGFpbEluZm8ucHJvdG8aGUVjaG9TaGVsbERldGFpbEluZm8u",
+            "cHJvdG8aHkVmZmlneUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxohRWZmaWd5",
+            "Q2hhbGxlbmdlVjJEZXRhaWxJbmZvLnByb3RvGiJFeHBlZGl0aW9uQWN0aXZp",
+            "dHlEZXRhaWxJbmZvLnByb3RvGh1GaW5kSGlsaWNodXJsRGV0YWlsSW5mby5w",
+            "cm90bxohRmxldXJGYWlyQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGh5GbGln",
+            "aHRBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aHUZ1bmd1c0ZpZ2h0ZXJEZXRh",
+            "aWxJbmZvLnByb3RvGh1HYWNoYUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxoc",
+            "R2VhckFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxofR3JhdmVuSW5ub2NlbmNl",
+            "RGV0YWlsSW5mby5wcm90bxodSGFjaGlBY3Rpdml0eURldGFpbEluZm8ucHJv",
+            "dG8aI0hpZGVBbmRTZWVrQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGh1JbnN0",
+            "YWJsZVNwcmF5RGV0YWlsSW5mby5wcm90bxofSXJvZG9yaUFjdGl2aXR5RGV0",
+            "YWlsSW5mby5wcm90bxobSXNsYW5kUGFydHlEZXRhaWxJbmZvLnByb3RvGiNM",
+            "YW50ZXJuUml0ZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxovTHVtaW5hbmNl",
+            "U3RvbmVDaGFsbGVuZ2VBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aGEx1bmFS",
+            "aXRlRGV0YWlsSW5mby5wcm90bxomTWljaGlhZU1hdHN1cmlBY3Rpdml0eURl",
+            "dGFpbEluZm8ucHJvdG8aIU1pc3RUcmlhbEFjdGl2aXR5RGV0YWlsSW5mby5w",
+            "cm90bxokTW9vbmZpblRyaWFsQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiVN",
+            "dXFhZGFzUG90aW9uQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiFNdXNpY0dh",
+            "bWVBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aHVBob3RvQWN0aXZpdHlEZXRh",
+            "aWxJbmZvLnByb3RvGiNQbGFudEZsb3dlckFjdGl2aXR5RGV0YWlsSW5mby5w",
+            "cm90bxoeUG90aW9uQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiBSb2NrQm9h",
+            "cmRFeHBsb3JlRGV0YWlsSW5mby5wcm90bxoiUm9ndWVEaWFyeUFjdGl2aXR5",
+            "RGV0YWlsSW5mby5wcm90bxooUm9ndWVsaWtlRHVuZ2VvbkFjdGl2aXR5RGV0",
+            "YWlsSW5mby5wcm90bxogU2FsZXNtYW5BY3Rpdml0eURldGFpbEluZm8ucHJv",
+            "dG8aH1NlYUxhbXBBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aGVNlYUxhbXBB",
+            "Y3Rpdml0eUluZm8ucHJvdG8aHVNwaWNlQWN0aXZpdHlEZXRhaWxJbmZvLnBy",
+            "b3RvGhpTdW1tZXJUaW1lRGV0YWlsSW5mby5wcm90bxocU3VtbWVyVGltZVYy",
+            "RGV0YWlsSW5mby5wcm90bxocU3Vtb0FjdGl2aXR5RGV0YWlsSW5mby5wcm90",
+            "bxokVGFudWtpVHJhdmVsQWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGiNUcmVh",
+            "c3VyZU1hcEFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxomVHJlYXN1cmVTZWVs",
+            "aWVBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aI1RyaWFsQXZhdGFyQWN0aXZp",
+            "dHlEZXRhaWxJbmZvLnByb3RvGhtVZ2NBY3Rpdml0eURldGFpbEluZm8ucHJv",
+            "dG8aH1ZpbnRhZ2VBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aI1dhdGVyU3Bp",
+            "cml0QWN0aXZpdHlEZXRhaWxJbmZvLnByb3RvGhlXaW5kRmllbGREZXRhaWxJ",
+            "bmZvLnByb3RvGiJXaW50ZXJDYW1wQWN0aXZpdHlEZXRhaWxJbmZvLnByb3Rv",
+            "IpYjCgxBY3Rpdml0eUluZm8SHAoTVW5rMzMwMF9NSk5QR0VLTE9DRxjoAiAB",
+            "KAgSEwoLaXNfZmluaXNoZWQYCCABKAgSEgoJY3VyX3Njb3JlGPQJIAEoDRIT",
+            "CgtzY2hlZHVsZV9pZBgHIAEoDRIUCgtzY29yZV9saW1pdBjODiABKA0SGwoT",
+            "VW5rMzMwMF9JQ05KSktESFBDSBgOIAEoCBIWCg5tZWV0X2NvbmRfbGlzdBgL",
+            "IAMoDRIcChNVbmszMzAwX05FUEtMTEJKRktLGO0MIAEoCBIvChF3YXRjaGVy",
+            "X2luZm9fbGlzdBgGIAMoCzIULkFjdGl2aXR5V2F0Y2hlckluZm8SPAocYWN0",
+            "aXZpdHlfcHVzaF90aXBzX2RhdGFfbGlzdBjLDiADKAsyFS5BY3Rpdml0eVB1",
+            "c2hUaXBzRGF0YRITCgthY3Rpdml0eV9pZBgNIAEoDRIaChF0YWtlbl9yZXdh",
+            "cmRfbGlzdBjhDiADKA0SIgoZc2VsZWN0ZWRfYXZhdGFyX3Jld2FyZF9pZBi5",
+            "BSABKA0SPQoRYWN0aXZpdHlfY29pbl9tYXAYJCADKAsyIi5BY3Rpdml0eUlu",
+            "Zm8uQWN0aXZpdHlDb2luTWFwRW50cnkSHQoUZmlyc3RfZGF5X3N0YXJ0X3Rp",
+            "bWUYkgYgASgNEhwKE1VuazMzMDBfQUJKS0xBTEtMREcYzgsgASgIEhUKDWFj",
+            "dGl2aXR5X3R5cGUYAyABKA0SHAoTVW5rMzMwMF9DQkNFSExKSk9HSRjfCiAB",
+            "KAgSEgoKYmVnaW5fdGltZRgBIAEoDRIbChNVbmszMzAwX01EQkRQSUJFR0dI",
+            "GAwgASgIEj0KEXdpc2hfZ2lmdF9udW1fbWFwGKsHIAMoCzIhLkFjdGl2aXR5",
+            "SW5mby5XaXNoR2lmdE51bU1hcEVudHJ5EhAKCGVuZF90aW1lGAogASgNEhgK",
+            "EGV4cGlyZV9jb25kX2xpc3QYBSADKA0SMwoNc2FtX2xhbXBfaW5mbxgCIAEo",
+            "CzIaLlNlYUxhbXBBY3Rpdml0eURldGFpbEluZm9IABI0Cg1jcnVjaWJsZV9p",
+            "bmZvGA8gASgLMhsuQ3J1Y2libGVBY3Rpdml0eURldGFpbEluZm9IABI0Cg1z",
+            "YWxlc21hbl9pbmZvGAkgASgLMhsuU2FsZXNtYW5BY3Rpdml0eURldGFpbElu",
+            "Zm9IABI7ChF0cmlhbF9hdmF0YXJfaW5mbxgEIAEoCzIeLlRyaWFsQXZhdGFy",
+            "QWN0aXZpdHlEZXRhaWxJbmZvSAASNQoNZGVsaXZlcnlfaW5mbxj1CCABKAsy",
+            "Gy5EZWxpdmVyeUFjdGl2aXR5RGV0YWlsSW5mb0gAEi8KCmFzdGVyX2luZm8Y",
+            "uQ8gASgLMhguQXN0ZXJBY3Rpdml0eURldGFpbEluZm9IABIxCgtmbGlnaHRf",
+            "aW5mbxjbDyABKAsyGS5GbGlnaHRBY3Rpdml0eURldGFpbEluZm9IABI8ChFk",
+            "cmFnb25fc3BpbmVfaW5mbxieCiABKAsyHi5EcmFnb25TcGluZUFjdGl2aXR5",
+            "RGV0YWlsSW5mb0gAEjEKC2VmZmlneV9pbmZvGN4KIAEoCzIZLkVmZmlneUFj",
+            "dGl2aXR5RGV0YWlsSW5mb0gAEjwKEXRyZWFzdXJlX21hcF9pbmZvGIUPIAEo",
+            "CzIeLlRyZWFzdXJlTWFwQWN0aXZpdHlEZXRhaWxJbmZvSAASNQoNYmxlc3Np",
+            "bmdfaW5mbxiqDyABKAsyGy5CbGVzc2luZ0FjdGl2aXR5RGV0YWlsSW5mb0gA",
+            "Ei4KDXNlYV9sYW1wX2luZm8Y9wEgASgLMhQuU2VhTGFtcEFjdGl2aXR5SW5m",
+            "b0gAEjkKD2V4cGVkaXRpb25faW5mbxjYDSABKAsyHS5FeHBlZGl0aW9uQWN0",
+            "aXZpdHlEZXRhaWxJbmZvSAASQgoUYXJlbmFfY2hhbGxlbmdlX2luZm8YmgQg",
+            "ASgLMiEuQXJlbmFDaGFsbGVuZ2VBY3Rpdml0eURldGFpbEluZm9IABI4Cg9m",
+            "bGV1cl9mYWlyX2luZm8YpwsgASgLMhwuRmxldXJGYWlyQWN0aXZpdHlEZXRh",
+            "aWxJbmZvSAASPAoRd2F0ZXJfc3Bpcml0X2luZm8Y+wQgASgLMh4uV2F0ZXJT",
+            "cGlyaXRBY3Rpdml0eURldGFpbEluZm9IABJAChNjaGFubmVsZXJfc2xhYl9p",
+            "bmZvGM4GIAEoCzIgLkNoYW5uZWxlclNsYWJBY3Rpdml0eURldGFpbEluZm9I",
+            "ABJBChhtaXN0X3RyaWFsX2FjdGl2aXR5X2luZm8YsAMgASgLMhwuTWlzdFRy",
+            "aWFsQWN0aXZpdHlEZXRhaWxJbmZvSAASPQoSaGlkZV9hbmRfc2Vla19pbmZv",
+            "GMcGIAEoCzIeLkhpZGVBbmRTZWVrQWN0aXZpdHlEZXRhaWxJbmZvSAASOAoT",
+            "ZmluZF9oaWxpY2h1cmxfaW5mbxj6AiABKAsyGC5GaW5kSGlsaWNodXJsRGV0",
+            "YWlsSW5mb0gAEjIKEHN1bW1lcl90aW1lX2luZm8Y9g4gASgLMhUuU3VtbWVy",
+            "VGltZURldGFpbEluZm9IABI4ChNidW95YW50X2NvbWJhdF9pbmZvGK4FIAEo",
+            "CzIYLkJ1b3lhbnRDb21iYXREZXRhaWxJbmZvSAASMAoPZWNob19zaGVsbF9p",
+            "bmZvGIoJIAEoCzIULkVjaG9TaGVsbERldGFpbEluZm9IABJEChVib3VuY2Vf",
+            "Y29uanVyaW5nX2luZm8YmgcgASgLMiIuQm91bmNlQ29uanVyaW5nQWN0aXZp",
+            "dHlEZXRhaWxJbmZvSAASNwoPYmxpdHpfcnVzaF9pbmZvGEAgASgLMhwuQmxp",
+            "dHpSdXNoQWN0aXZpdHlEZXRhaWxJbmZvSAASLwoKY2hlc3NfaW5mbxjuByAB",
+            "KAsyGC5DaGVzc0FjdGl2aXR5RGV0YWlsSW5mb0gAEi0KCXN1bW9faW5mbxj5",
+            "AyABKAsyFy5TdW1vQWN0aXZpdHlEZXRhaWxJbmZvSAASPgoSbW9vbmZpbl90",
+            "cmlhbF9pbmZvGP4FIAEoCzIfLk1vb25maW5UcmlhbEFjdGl2aXR5RGV0YWls",
+            "SW5mb0gAEi4KDmx1bmFfcml0ZV9pbmZvGIkMIAEoCzITLkx1bmFSaXRlRGV0",
+            "YWlsSW5mb0gAEjwKEXBsYW50X2Zsb3dlcl9pbmZvGPoJIAEoCzIeLlBsYW50",
+            "Rmxvd2VyQWN0aXZpdHlEZXRhaWxJbmZvSAASOAoPbXVzaWNfZ2FtZV9pbmZv",
+            "GMUPIAEoCzIcLk11c2ljR2FtZUFjdGl2aXR5RGV0YWlsSW5mb0gAEkYKFnJv",
+            "Z3VlbGlrZV9kdW5nZW9uX2luZm8YygcgASgLMiMuUm9ndWVsaWtlRHVuZ2Vv",
+            "bkFjdGl2aXR5RGV0YWlsSW5mb0gAEisKCGRpZ19pbmZvGMYOIAEoCzIWLkRp",
+            "Z0FjdGl2aXR5RGV0YWlsSW5mb0gAEi8KCmhhY2hpX2luZm8Y/wMgASgLMhgu",
+            "SGFjaGlBY3Rpdml0eURldGFpbEluZm9IABI6ChB3aW50ZXJfY2FtcF9pbmZv",
+            "GLsFIAEoCzIdLldpbnRlckNhbXBBY3Rpdml0eURldGFpbEluZm9IABIxCgtw",
+            "b3Rpb25faW5mbxifDCABKAsyGS5Qb3Rpb25BY3Rpdml0eURldGFpbEluZm9I",
+            "ABJHCht0YW51a2lfdHJhdmVsX2FjdGl2aXR5X2luZm8YxAogASgLMh8uVGFu",
+            "dWtpVHJhdmVsQWN0aXZpdHlEZXRhaWxJbmZvSAASRQoabGFudGVybl9yaXRl",
+            "X2FjdGl2aXR5X2luZm8Y7QEgASgLMh4uTGFudGVyblJpdGVBY3Rpdml0eURl",
+            "dGFpbEluZm9IABJCChRtaWNoaWFlX21hdHN1cmlfaW5mbxivDiABKAsyIS5N",
+            "aWNoaWFlTWF0c3VyaUFjdGl2aXR5RGV0YWlsSW5mb0gAEjcKDmJhcnRlbmRl",
+            "cl9pbmZvGKcEIAEoCzIcLkJhcnRlbmRlckFjdGl2aXR5RGV0YWlsSW5mb0gA",
+            "EisKCHVnY19pbmZvGJ4JIAEoCzIWLlVnY0FjdGl2aXR5RGV0YWlsSW5mb0gA",
+            "EjwKEWNyeXN0YWxfbGlua19pbmZvGKwGIAEoCzIeLkNyeXN0YWxMaW5rQWN0",
+            "aXZpdHlEZXRhaWxJbmZvSAASMwoMaXJvZG9yaV9pbmZvGKAIIAEoCzIaLkly",
+            "b2RvcmlBY3Rpdml0eURldGFpbEluZm9IABIvCgpwaG90b19pbmZvGJ4OIAEo",
+            "CzIYLlBob3RvQWN0aXZpdHlEZXRhaWxJbmZvSAASLwoKc3BpY2VfaW5mbxiV",
+            "BiABKAsyGC5TcGljZUFjdGl2aXR5RGV0YWlsSW5mb0gAEi8KCmdhY2hhX2lu",
+            "Zm8YkQogASgLMhguR2FjaGFBY3Rpdml0eURldGFpbEluZm9IABJVCh5sdW1p",
+            "bmFuY2Vfc3RvbmVfY2hhbGxlbmdlX2luZm8YvAMgASgLMiouTHVtaW5hbmNl",
+            "U3RvbmVDaGFsbGVuZ2VBY3Rpdml0eURldGFpbEluZm9IABI6ChByb2d1ZV9k",
+            "aWFyeV9pbmZvGLAEIAEoCzIdLlJvZ3VlRGlhcnlBY3Rpdml0eURldGFpbElu",
+            "Zm9IABI3ChNzdW1tZXJfdGltZV92Ml9pbmZvGJsDIAEoCzIXLlN1bW1lclRp",
+            "bWVWMkRldGFpbEluZm9IABI0ChFpc2xhbmRfcGFydHlfaW5mbxjkBSABKAsy",
+            "Fi5Jc2xhbmRQYXJ0eURldGFpbEluZm9IABItCglnZWFyX2luZm8YygsgASgL",
+            "MhcuR2VhckFjdGl2aXR5RGV0YWlsSW5mb0gAEjwKFWdyYXZlbl9pbm5vY2Vu",
+            "Y2VfaW5mbxiIDyABKAsyGi5HcmF2ZW5Jbm5vY2VuY2VEZXRhaWxJbmZvSAAS",
+            "OAoTaW5zdGFibGVfc3ByYXlfaW5mbxj5CCABKAsyGC5JbnN0YWJsZVNwcmF5",
+            "RGV0YWlsSW5mb0gAEkAKE211cWFkYXNfcG90aW9uX2luZm8Y/gwgASgLMiAu",
+            "TXVxYWRhc1BvdGlvbkFjdGl2aXR5RGV0YWlsSW5mb0gAEkIKFHRyZWFzdXJl",
+            "X3NlZWxpZV9pbmZvGIgIIAEoCzIhLlRyZWFzdXJlU2VlbGllQWN0aXZpdHlE",
+            "ZXRhaWxJbmZvSAASPwoXcm9ja19ib2FyZF9leHBsb3JlX2luZm8Y8QkgASgL",
+            "MhsuUm9ja0JvYXJkRXhwbG9yZURldGFpbEluZm9IABIzCgx2aW50YWdlX2lu",
+            "Zm8YnAogASgLMhouVmludGFnZUFjdGl2aXR5RGV0YWlsSW5mb0gAEjAKD3dp",
+            "bmRfZmllbGRfaW5mbxjUAyABKAsyFC5XaW5kRmllbGREZXRhaWxJbmZvSAAS",
+            "OAoTZnVuZ3VzX2ZpZ2h0ZXJfaW5mbxjdDSABKAsyGC5GdW5ndXNGaWdodGVy",
+            "RGV0YWlsSW5mb0gAEjgKE2NoYXJfYW11c2VtZW50X2luZm8Y7QQgASgLMhgu",
+            "Q2hhckFtdXNlbWVudERldGFpbEluZm9IABI+ChVlZmZpZ3lfY2hhbGxlbmdl",
+            "X2luZm8Y6QEgASgLMhwuRWZmaWd5Q2hhbGxlbmdlVjJEZXRhaWxJbmZvSAAS",
+            "NAoRY29pbl9jb2xsZWN0X2luZm8Y0g8gASgLMhYuQ29pbkNvbGxlY3REZXRh",
+            "aWxJbmZvSAASNgoSYnJpY2tfYnJlYWtlcl9pbmZvGPILIAEoCzIXLkJyaWNr",
+            "QnJlYWtlckRldGFpbEluZm9IABo2ChRBY3Rpdml0eUNvaW5NYXBFbnRyeRIL",
+            "CgNrZXkYASABKA0SDQoFdmFsdWUYAiABKA06AjgBGjUKE1dpc2hHaWZ0TnVt",
+            "TWFwRW50cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIICgZk",
+            "ZXRhaWxCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.ActivityPushTipsDataReflection.Descriptor, global::NewProtos.ActivityWatcherInfoReflection.Descriptor, global::NewProtos.ArenaChallengeActivityDetailInfoReflection.Descriptor, global::NewProtos.AsterActivityDetailInfoReflection.Descriptor, global::NewProtos.BartenderActivityDetailInfoReflection.Descriptor, global::NewProtos.BlessingActivityDetailInfoReflection.Descriptor, global::NewProtos.BlitzRushActivityDetailInfoReflection.Descriptor, global::NewProtos.BounceConjuringActivityDetailInfoReflection.Descriptor, global::NewProtos.BrickBreakerDetailInfoReflection.Descriptor, global::NewProtos.BuoyantCombatDetailInfoReflection.Descriptor, global::NewProtos.ChannelerSlabActivityDetailInfoReflection.Descriptor, global::NewProtos.CharAmusementDetailInfoReflection.Descriptor, global::NewProtos.ChessActivityDetailInfoReflection.Descriptor, global::NewProtos.CoinCollectDetailInfoReflection.Descriptor, global::NewProtos.CrucibleActivityDetailInfoReflection.Descriptor, global::NewProtos.CrystalLinkActivityDetailInfoReflection.Descriptor, global::NewProtos.DeliveryActivityDetailInfoReflection.Descriptor, global::NewProtos.DigActivityDetailInfoReflection.Descriptor, global::NewProtos.DragonSpineActivityDetailInfoReflection.Descriptor, global::NewProtos.EchoShellDetailInfoReflection.Descriptor, global::NewProtos.EffigyActivityDetailInfoReflection.Descriptor, global::NewProtos.EffigyChallengeV2DetailInfoReflection.Descriptor, global::NewProtos.ExpeditionActivityDetailInfoReflection.Descriptor, global::NewProtos.FindHilichurlDetailInfoReflection.Descriptor, global::NewProtos.FleurFairActivityDetailInfoReflection.Descriptor, global::NewProtos.FlightActivityDetailInfoReflection.Descriptor, global::NewProtos.FungusFighterDetailInfoReflection.Descriptor, global::NewProtos.GachaActivityDetailInfoReflection.Descriptor, global::NewProtos.GearActivityDetailInfoReflection.Descriptor, global::NewProtos.GravenInnocenceDetailInfoReflection.Descriptor, global::NewProtos.HachiActivityDetailInfoReflection.Descriptor, global::NewProtos.HideAndSeekActivityDetailInfoReflection.Descriptor, global::NewProtos.InstableSprayDetailInfoReflection.Descriptor, global::NewProtos.IrodoriActivityDetailInfoReflection.Descriptor, global::NewProtos.IslandPartyDetailInfoReflection.Descriptor, global::NewProtos.LanternRiteActivityDetailInfoReflection.Descriptor, global::NewProtos.LuminanceStoneChallengeActivityDetailInfoReflection.Descriptor, global::NewProtos.LunaRiteDetailInfoReflection.Descriptor, global::NewProtos.MichiaeMatsuriActivityDetailInfoReflection.Descriptor, global::NewProtos.MistTrialActivityDetailInfoReflection.Descriptor, global::NewProtos.MoonfinTrialActivityDetailInfoReflection.Descriptor, global::NewProtos.MuqadasPotionActivityDetailInfoReflection.Descriptor, global::NewProtos.MusicGameActivityDetailInfoReflection.Descriptor, global::NewProtos.PhotoActivityDetailInfoReflection.Descriptor, global::NewProtos.PlantFlowerActivityDetailInfoReflection.Descriptor, global::NewProtos.PotionActivityDetailInfoReflection.Descriptor, global::NewProtos.RockBoardExploreDetailInfoReflection.Descriptor, global::NewProtos.RogueDiaryActivityDetailInfoReflection.Descriptor, global::NewProtos.RoguelikeDungeonActivityDetailInfoReflection.Descriptor, global::NewProtos.SalesmanActivityDetailInfoReflection.Descriptor, global::NewProtos.SeaLampActivityDetailInfoReflection.Descriptor, global::NewProtos.SeaLampActivityInfoReflection.Descriptor, global::NewProtos.SpiceActivityDetailInfoReflection.Descriptor, global::NewProtos.SummerTimeDetailInfoReflection.Descriptor, global::NewProtos.SummerTimeV2DetailInfoReflection.Descriptor, global::NewProtos.SumoActivityDetailInfoReflection.Descriptor, global::NewProtos.TanukiTravelActivityDetailInfoReflection.Descriptor, global::NewProtos.TreasureMapActivityDetailInfoReflection.Descriptor, global::NewProtos.TreasureSeelieActivityDetailInfoReflection.Descriptor, global::NewProtos.TrialAvatarActivityDetailInfoReflection.Descriptor, global::NewProtos.UgcActivityDetailInfoReflection.Descriptor, global::NewProtos.VintageActivityDetailInfoReflection.Descriptor, global::NewProtos.WaterSpiritActivityDetailInfoReflection.Descriptor, global::NewProtos.WindFieldDetailInfoReflection.Descriptor, global::NewProtos.WinterCampActivityDetailInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.ActivityInfo), global::NewProtos.ActivityInfo.Parser, new[]{ "Unk3300MJNPGEKLOCG", "IsFinished", "CurScore", "ScheduleId", "ScoreLimit", "Unk3300ICNJJKDHPCH", "MeetCondList", "Unk3300NEPKLLBJFKK", "WatcherInfoList", "ActivityPushTipsDataList", "ActivityId", "TakenRewardList", "SelectedAvatarRewardId", "ActivityCoinMap", "FirstDayStartTime", "Unk3300ABJKLALKLDG", "ActivityType", "Unk3300CBCEHLJJOGI", "BeginTime", "Unk3300MDBDPIBEGGH", "WishGiftNumMap", "EndTime", "ExpireCondList", "SamLampInfo", "CrucibleInfo", "SalesmanInfo", "TrialAvatarInfo", "DeliveryInfo", "AsterInfo", "FlightInfo", "DragonSpineInfo", "EffigyInfo", "TreasureMapInfo", "BlessingInfo", "SeaLampInfo", "ExpeditionInfo", "ArenaChallengeInfo", "FleurFairInfo", "WaterSpiritInfo", "ChannelerSlabInfo", "MistTrialActivityInfo", "HideAndSeekInfo", "FindHilichurlInfo", "SummerTimeInfo", "BuoyantCombatInfo", "EchoShellInfo", "BounceConjuringInfo", "BlitzRushInfo", "ChessInfo", "SumoInfo", "MoonfinTrialInfo", "LunaRiteInfo", "PlantFlowerInfo", "MusicGameInfo", "RoguelikeDungeonInfo", "DigInfo", "HachiInfo", "WinterCampInfo", "PotionInfo", "TanukiTravelActivityInfo", "LanternRiteActivityInfo", "MichiaeMatsuriInfo", "BartenderInfo", "UgcInfo", "CrystalLinkInfo", "IrodoriInfo", "PhotoInfo", "SpiceInfo", "GachaInfo", "LuminanceStoneChallengeInfo", "RogueDiaryInfo", "SummerTimeV2Info", "IslandPartyInfo", "GearInfo", "GravenInnocenceInfo", "InstableSprayInfo", "MuqadasPotionInfo", "TreasureSeelieInfo", "RockBoardExploreInfo", "VintageInfo", "WindFieldInfo", "FungusFighterInfo", "CharAmusementInfo", "EffigyChallengeInfo", "CoinCollectInfo", "BrickBreakerInfo" }, new[]{ "Detail" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class ActivityInfo : pb::IMessage<ActivityInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ActivityInfo> _parser = new pb::MessageParser<ActivityInfo>(() => new ActivityInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ActivityInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.ActivityInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ActivityInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ActivityInfo(ActivityInfo other) : this() {
+      unk3300MJNPGEKLOCG_ = other.unk3300MJNPGEKLOCG_;
+      isFinished_ = other.isFinished_;
+      curScore_ = other.curScore_;
+      scheduleId_ = other.scheduleId_;
+      scoreLimit_ = other.scoreLimit_;
+      unk3300ICNJJKDHPCH_ = other.unk3300ICNJJKDHPCH_;
+      meetCondList_ = other.meetCondList_.Clone();
+      unk3300NEPKLLBJFKK_ = other.unk3300NEPKLLBJFKK_;
+      watcherInfoList_ = other.watcherInfoList_.Clone();
+      activityPushTipsDataList_ = other.activityPushTipsDataList_.Clone();
+      activityId_ = other.activityId_;
+      takenRewardList_ = other.takenRewardList_.Clone();
+      selectedAvatarRewardId_ = other.selectedAvatarRewardId_;
+      activityCoinMap_ = other.activityCoinMap_.Clone();
+      firstDayStartTime_ = other.firstDayStartTime_;
+      unk3300ABJKLALKLDG_ = other.unk3300ABJKLALKLDG_;
+      activityType_ = other.activityType_;
+      unk3300CBCEHLJJOGI_ = other.unk3300CBCEHLJJOGI_;
+      beginTime_ = other.beginTime_;
+      unk3300MDBDPIBEGGH_ = other.unk3300MDBDPIBEGGH_;
+      wishGiftNumMap_ = other.wishGiftNumMap_.Clone();
+      endTime_ = other.endTime_;
+      expireCondList_ = other.expireCondList_.Clone();
+      switch (other.DetailCase) {
+        case DetailOneofCase.SamLampInfo:
+          SamLampInfo = other.SamLampInfo.Clone();
+          break;
+        case DetailOneofCase.CrucibleInfo:
+          CrucibleInfo = other.CrucibleInfo.Clone();
+          break;
+        case DetailOneofCase.SalesmanInfo:
+          SalesmanInfo = other.SalesmanInfo.Clone();
+          break;
+        case DetailOneofCase.TrialAvatarInfo:
+          TrialAvatarInfo = other.TrialAvatarInfo.Clone();
+          break;
+        case DetailOneofCase.DeliveryInfo:
+          DeliveryInfo = other.DeliveryInfo.Clone();
+          break;
+        case DetailOneofCase.AsterInfo:
+          AsterInfo = other.AsterInfo.Clone();
+          break;
+        case DetailOneofCase.FlightInfo:
+          FlightInfo = other.FlightInfo.Clone();
+          break;
+        case DetailOneofCase.DragonSpineInfo:
+          DragonSpineInfo = other.DragonSpineInfo.Clone();
+          break;
+        case DetailOneofCase.EffigyInfo:
+          EffigyInfo = other.EffigyInfo.Clone();
+          break;
+        case DetailOneofCase.TreasureMapInfo:
+          TreasureMapInfo = other.TreasureMapInfo.Clone();
+          break;
+        case DetailOneofCase.BlessingInfo:
+          BlessingInfo = other.BlessingInfo.Clone();
+          break;
+        case DetailOneofCase.SeaLampInfo:
+          SeaLampInfo = other.SeaLampInfo.Clone();
+          break;
+        case DetailOneofCase.ExpeditionInfo:
+          ExpeditionInfo = other.ExpeditionInfo.Clone();
+          break;
+        case DetailOneofCase.ArenaChallengeInfo:
+          ArenaChallengeInfo = other.ArenaChallengeInfo.Clone();
+          break;
+        case DetailOneofCase.FleurFairInfo:
+          FleurFairInfo = other.FleurFairInfo.Clone();
+          break;
+        case DetailOneofCase.WaterSpiritInfo:
+          WaterSpiritInfo = other.WaterSpiritInfo.Clone();
+          break;
+        case DetailOneofCase.ChannelerSlabInfo:
+          ChannelerSlabInfo = other.ChannelerSlabInfo.Clone();
+          break;
+        case DetailOneofCase.MistTrialActivityInfo:
+          MistTrialActivityInfo = other.MistTrialActivityInfo.Clone();
+          break;
+        case DetailOneofCase.HideAndSeekInfo:
+          HideAndSeekInfo = other.HideAndSeekInfo.Clone();
+          break;
+        case DetailOneofCase.FindHilichurlInfo:
+          FindHilichurlInfo = other.FindHilichurlInfo.Clone();
+          break;
+        case DetailOneofCase.SummerTimeInfo:
+          SummerTimeInfo = other.SummerTimeInfo.Clone();
+          break;
+        case DetailOneofCase.BuoyantCombatInfo:
+          BuoyantCombatInfo = other.BuoyantCombatInfo.Clone();
+          break;
+        case DetailOneofCase.EchoShellInfo:
+          EchoShellInfo = other.EchoShellInfo.Clone();
+          break;
+        case DetailOneofCase.BounceConjuringInfo:
+          BounceConjuringInfo = other.BounceConjuringInfo.Clone();
+          break;
+        case DetailOneofCase.BlitzRushInfo:
+          BlitzRushInfo = other.BlitzRushInfo.Clone();
+          break;
+        case DetailOneofCase.ChessInfo:
+          ChessInfo = other.ChessInfo.Clone();
+          break;
+        case DetailOneofCase.SumoInfo:
+          SumoInfo = other.SumoInfo.Clone();
+          break;
+        case DetailOneofCase.MoonfinTrialInfo:
+          MoonfinTrialInfo = other.MoonfinTrialInfo.Clone();
+          break;
+        case DetailOneofCase.LunaRiteInfo:
+          LunaRiteInfo = other.LunaRiteInfo.Clone();
+          break;
+        case DetailOneofCase.PlantFlowerInfo:
+          PlantFlowerInfo = other.PlantFlowerInfo.Clone();
+          break;
+        case DetailOneofCase.MusicGameInfo:
+          MusicGameInfo = other.MusicGameInfo.Clone();
+          break;
+        case DetailOneofCase.RoguelikeDungeonInfo:
+          RoguelikeDungeonInfo = other.RoguelikeDungeonInfo.Clone();
+          break;
+        case DetailOneofCase.DigInfo:
+          DigInfo = other.DigInfo.Clone();
+          break;
+        case DetailOneofCase.HachiInfo:
+          HachiInfo = other.HachiInfo.Clone();
+          break;
+        case DetailOneofCase.WinterCampInfo:
+          WinterCampInfo = other.WinterCampInfo.Clone();
+          break;
+        case DetailOneofCase.PotionInfo:
+          PotionInfo = other.PotionInfo.Clone();
+          break;
+        case DetailOneofCase.TanukiTravelActivityInfo:
+          TanukiTravelActivityInfo = other.TanukiTravelActivityInfo.Clone();
+          break;
+        case DetailOneofCase.LanternRiteActivityInfo:
+          LanternRiteActivityInfo = other.LanternRiteActivityInfo.Clone();
+          break;
+        case DetailOneofCase.MichiaeMatsuriInfo:
+          MichiaeMatsuriInfo = other.MichiaeMatsuriInfo.Clone();
+          break;
+        case DetailOneofCase.BartenderInfo:
+          BartenderInfo = other.BartenderInfo.Clone();
+          break;
+        case DetailOneofCase.UgcInfo:
+          UgcInfo = other.UgcInfo.Clone();
+          break;
+        case DetailOneofCase.CrystalLinkInfo:
+          CrystalLinkInfo = other.CrystalLinkInfo.Clone();
+          break;
+        case DetailOneofCase.IrodoriInfo:
+          IrodoriInfo = other.IrodoriInfo.Clone();
+          break;
+        case DetailOneofCase.PhotoInfo:
+          PhotoInfo = other.PhotoInfo.Clone();
+          break;
+        case DetailOneofCase.SpiceInfo:
+          SpiceInfo = other.SpiceInfo.Clone();
+          break;
+        case DetailOneofCase.GachaInfo:
+          GachaInfo = other.GachaInfo.Clone();
+          break;
+        case DetailOneofCase.LuminanceStoneChallengeInfo:
+          LuminanceStoneChallengeInfo = other.LuminanceStoneChallengeInfo.Clone();
+          break;
+        case DetailOneofCase.RogueDiaryInfo:
+          RogueDiaryInfo = other.RogueDiaryInfo.Clone();
+          break;
+        case DetailOneofCase.SummerTimeV2Info:
+          SummerTimeV2Info = other.SummerTimeV2Info.Clone();
+          break;
+        case DetailOneofCase.IslandPartyInfo:
+          IslandPartyInfo = other.IslandPartyInfo.Clone();
+          break;
+        case DetailOneofCase.GearInfo:
+          GearInfo = other.GearInfo.Clone();
+          break;
+        case DetailOneofCase.GravenInnocenceInfo:
+          GravenInnocenceInfo = other.GravenInnocenceInfo.Clone();
+          break;
+        case DetailOneofCase.InstableSprayInfo:
+          InstableSprayInfo = other.InstableSprayInfo.Clone();
+          break;
+        case DetailOneofCase.MuqadasPotionInfo:
+          MuqadasPotionInfo = other.MuqadasPotionInfo.Clone();
+          break;
+        case DetailOneofCase.TreasureSeelieInfo:
+          TreasureSeelieInfo = other.TreasureSeelieInfo.Clone();
+          break;
+        case DetailOneofCase.RockBoardExploreInfo:
+          RockBoardExploreInfo = other.RockBoardExploreInfo.Clone();
+          break;
+        case DetailOneofCase.VintageInfo:
+          VintageInfo = other.VintageInfo.Clone();
+          break;
+        case DetailOneofCase.WindFieldInfo:
+          WindFieldInfo = other.WindFieldInfo.Clone();
+          break;
+        case DetailOneofCase.FungusFighterInfo:
+          FungusFighterInfo = other.FungusFighterInfo.Clone();
+          break;
+        case DetailOneofCase.CharAmusementInfo:
+          CharAmusementInfo = other.CharAmusementInfo.Clone();
+          break;
+        case DetailOneofCase.EffigyChallengeInfo:
+          EffigyChallengeInfo = other.EffigyChallengeInfo.Clone();
+          break;
+        case DetailOneofCase.CoinCollectInfo:
+          CoinCollectInfo = other.CoinCollectInfo.Clone();
+          break;
+        case DetailOneofCase.BrickBreakerInfo:
+          BrickBreakerInfo = other.BrickBreakerInfo.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ActivityInfo Clone() {
+      return new ActivityInfo(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_MJNPGEKLOCG" field.</summary>
+    public const int Unk3300MJNPGEKLOCGFieldNumber = 360;
+    private bool unk3300MJNPGEKLOCG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300MJNPGEKLOCG {
+      get { return unk3300MJNPGEKLOCG_; }
+      set {
+        unk3300MJNPGEKLOCG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_finished" field.</summary>
+    public const int IsFinishedFieldNumber = 8;
+    private bool isFinished_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFinished {
+      get { return isFinished_; }
+      set {
+        isFinished_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_score" field.</summary>
+    public const int CurScoreFieldNumber = 1268;
+    private uint curScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurScore {
+      get { return curScore_; }
+      set {
+        curScore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "schedule_id" field.</summary>
+    public const int ScheduleIdFieldNumber = 7;
+    private uint scheduleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ScheduleId {
+      get { return scheduleId_; }
+      set {
+        scheduleId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "score_limit" field.</summary>
+    public const int ScoreLimitFieldNumber = 1870;
+    private uint scoreLimit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ScoreLimit {
+      get { return scoreLimit_; }
+      set {
+        scoreLimit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ICNJJKDHPCH" field.</summary>
+    public const int Unk3300ICNJJKDHPCHFieldNumber = 14;
+    private bool unk3300ICNJJKDHPCH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300ICNJJKDHPCH {
+      get { return unk3300ICNJJKDHPCH_; }
+      set {
+        unk3300ICNJJKDHPCH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "meet_cond_list" field.</summary>
+    public const int MeetCondListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_meetCondList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> meetCondList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> MeetCondList {
+      get { return meetCondList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_NEPKLLBJFKK" field.</summary>
+    public const int Unk3300NEPKLLBJFKKFieldNumber = 1645;
+    private bool unk3300NEPKLLBJFKK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300NEPKLLBJFKK {
+      get { return unk3300NEPKLLBJFKK_; }
+      set {
+        unk3300NEPKLLBJFKK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "watcher_info_list" field.</summary>
+    public const int WatcherInfoListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::NewProtos.ActivityWatcherInfo> _repeated_watcherInfoList_codec
+        = pb::FieldCodec.ForMessage(50, global::NewProtos.ActivityWatcherInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ActivityWatcherInfo> watcherInfoList_ = new pbc::RepeatedField<global::NewProtos.ActivityWatcherInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ActivityWatcherInfo> WatcherInfoList {
+      get { return watcherInfoList_; }
+    }
+
+    /// <summary>Field number for the "activity_push_tips_data_list" field.</summary>
+    public const int ActivityPushTipsDataListFieldNumber = 1867;
+    private static readonly pb::FieldCodec<global::NewProtos.ActivityPushTipsData> _repeated_activityPushTipsDataList_codec
+        = pb::FieldCodec.ForMessage(14938, global::NewProtos.ActivityPushTipsData.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ActivityPushTipsData> activityPushTipsDataList_ = new pbc::RepeatedField<global::NewProtos.ActivityPushTipsData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ActivityPushTipsData> ActivityPushTipsDataList {
+      get { return activityPushTipsDataList_; }
+    }
+
+    /// <summary>Field number for the "activity_id" field.</summary>
+    public const int ActivityIdFieldNumber = 13;
+    private uint activityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ActivityId {
+      get { return activityId_; }
+      set {
+        activityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "taken_reward_list" field.</summary>
+    public const int TakenRewardListFieldNumber = 1889;
+    private static readonly pb::FieldCodec<uint> _repeated_takenRewardList_codec
+        = pb::FieldCodec.ForUInt32(15114);
+    private readonly pbc::RepeatedField<uint> takenRewardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> TakenRewardList {
+      get { return takenRewardList_; }
+    }
+
+    /// <summary>Field number for the "selected_avatar_reward_id" field.</summary>
+    public const int SelectedAvatarRewardIdFieldNumber = 697;
+    private uint selectedAvatarRewardId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SelectedAvatarRewardId {
+      get { return selectedAvatarRewardId_; }
+      set {
+        selectedAvatarRewardId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "activity_coin_map" field.</summary>
+    public const int ActivityCoinMapFieldNumber = 36;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_activityCoinMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 290);
+    private readonly pbc::MapField<uint, uint> activityCoinMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> ActivityCoinMap {
+      get { return activityCoinMap_; }
+    }
+
+    /// <summary>Field number for the "first_day_start_time" field.</summary>
+    public const int FirstDayStartTimeFieldNumber = 786;
+    private uint firstDayStartTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FirstDayStartTime {
+      get { return firstDayStartTime_; }
+      set {
+        firstDayStartTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_ABJKLALKLDG" field.</summary>
+    public const int Unk3300ABJKLALKLDGFieldNumber = 1486;
+    private bool unk3300ABJKLALKLDG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300ABJKLALKLDG {
+      get { return unk3300ABJKLALKLDG_; }
+      set {
+        unk3300ABJKLALKLDG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "activity_type" field.</summary>
+    public const int ActivityTypeFieldNumber = 3;
+    private uint activityType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ActivityType {
+      get { return activityType_; }
+      set {
+        activityType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_CBCEHLJJOGI" field.</summary>
+    public const int Unk3300CBCEHLJJOGIFieldNumber = 1375;
+    private bool unk3300CBCEHLJJOGI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300CBCEHLJJOGI {
+      get { return unk3300CBCEHLJJOGI_; }
+      set {
+        unk3300CBCEHLJJOGI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "begin_time" field.</summary>
+    public const int BeginTimeFieldNumber = 1;
+    private uint beginTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BeginTime {
+      get { return beginTime_; }
+      set {
+        beginTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_MDBDPIBEGGH" field.</summary>
+    public const int Unk3300MDBDPIBEGGHFieldNumber = 12;
+    private bool unk3300MDBDPIBEGGH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300MDBDPIBEGGH {
+      get { return unk3300MDBDPIBEGGH_; }
+      set {
+        unk3300MDBDPIBEGGH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "wish_gift_num_map" field.</summary>
+    public const int WishGiftNumMapFieldNumber = 939;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_wishGiftNumMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 7514);
+    private readonly pbc::MapField<uint, uint> wishGiftNumMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> WishGiftNumMap {
+      get { return wishGiftNumMap_; }
+    }
+
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 10;
+    private uint endTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EndTime {
+      get { return endTime_; }
+      set {
+        endTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "expire_cond_list" field.</summary>
+    public const int ExpireCondListFieldNumber = 5;
+    private static readonly pb::FieldCodec<uint> _repeated_expireCondList_codec
+        = pb::FieldCodec.ForUInt32(42);
+    private readonly pbc::RepeatedField<uint> expireCondList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ExpireCondList {
+      get { return expireCondList_; }
+    }
+
+    /// <summary>Field number for the "sam_lamp_info" field.</summary>
+    public const int SamLampInfoFieldNumber = 2;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SeaLampActivityDetailInfo SamLampInfo {
+      get { return detailCase_ == DetailOneofCase.SamLampInfo ? (global::NewProtos.SeaLampActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SamLampInfo;
+      }
+    }
+
+    /// <summary>Field number for the "crucible_info" field.</summary>
+    public const int CrucibleInfoFieldNumber = 15;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CrucibleActivityDetailInfo CrucibleInfo {
+      get { return detailCase_ == DetailOneofCase.CrucibleInfo ? (global::NewProtos.CrucibleActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.CrucibleInfo;
+      }
+    }
+
+    /// <summary>Field number for the "salesman_info" field.</summary>
+    public const int SalesmanInfoFieldNumber = 9;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SalesmanActivityDetailInfo SalesmanInfo {
+      get { return detailCase_ == DetailOneofCase.SalesmanInfo ? (global::NewProtos.SalesmanActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SalesmanInfo;
+      }
+    }
+
+    /// <summary>Field number for the "trial_avatar_info" field.</summary>
+    public const int TrialAvatarInfoFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.TrialAvatarActivityDetailInfo TrialAvatarInfo {
+      get { return detailCase_ == DetailOneofCase.TrialAvatarInfo ? (global::NewProtos.TrialAvatarActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.TrialAvatarInfo;
+      }
+    }
+
+    /// <summary>Field number for the "delivery_info" field.</summary>
+    public const int DeliveryInfoFieldNumber = 1141;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.DeliveryActivityDetailInfo DeliveryInfo {
+      get { return detailCase_ == DetailOneofCase.DeliveryInfo ? (global::NewProtos.DeliveryActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.DeliveryInfo;
+      }
+    }
+
+    /// <summary>Field number for the "aster_info" field.</summary>
+    public const int AsterInfoFieldNumber = 1977;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.AsterActivityDetailInfo AsterInfo {
+      get { return detailCase_ == DetailOneofCase.AsterInfo ? (global::NewProtos.AsterActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.AsterInfo;
+      }
+    }
+
+    /// <summary>Field number for the "flight_info" field.</summary>
+    public const int FlightInfoFieldNumber = 2011;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.FlightActivityDetailInfo FlightInfo {
+      get { return detailCase_ == DetailOneofCase.FlightInfo ? (global::NewProtos.FlightActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.FlightInfo;
+      }
+    }
+
+    /// <summary>Field number for the "dragon_spine_info" field.</summary>
+    public const int DragonSpineInfoFieldNumber = 1310;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.DragonSpineActivityDetailInfo DragonSpineInfo {
+      get { return detailCase_ == DetailOneofCase.DragonSpineInfo ? (global::NewProtos.DragonSpineActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.DragonSpineInfo;
+      }
+    }
+
+    /// <summary>Field number for the "effigy_info" field.</summary>
+    public const int EffigyInfoFieldNumber = 1374;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.EffigyActivityDetailInfo EffigyInfo {
+      get { return detailCase_ == DetailOneofCase.EffigyInfo ? (global::NewProtos.EffigyActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.EffigyInfo;
+      }
+    }
+
+    /// <summary>Field number for the "treasure_map_info" field.</summary>
+    public const int TreasureMapInfoFieldNumber = 1925;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.TreasureMapActivityDetailInfo TreasureMapInfo {
+      get { return detailCase_ == DetailOneofCase.TreasureMapInfo ? (global::NewProtos.TreasureMapActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.TreasureMapInfo;
+      }
+    }
+
+    /// <summary>Field number for the "blessing_info" field.</summary>
+    public const int BlessingInfoFieldNumber = 1962;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.BlessingActivityDetailInfo BlessingInfo {
+      get { return detailCase_ == DetailOneofCase.BlessingInfo ? (global::NewProtos.BlessingActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BlessingInfo;
+      }
+    }
+
+    /// <summary>Field number for the "sea_lamp_info" field.</summary>
+    public const int SeaLampInfoFieldNumber = 247;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SeaLampActivityInfo SeaLampInfo {
+      get { return detailCase_ == DetailOneofCase.SeaLampInfo ? (global::NewProtos.SeaLampActivityInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SeaLampInfo;
+      }
+    }
+
+    /// <summary>Field number for the "expedition_info" field.</summary>
+    public const int ExpeditionInfoFieldNumber = 1752;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ExpeditionActivityDetailInfo ExpeditionInfo {
+      get { return detailCase_ == DetailOneofCase.ExpeditionInfo ? (global::NewProtos.ExpeditionActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ExpeditionInfo;
+      }
+    }
+
+    /// <summary>Field number for the "arena_challenge_info" field.</summary>
+    public const int ArenaChallengeInfoFieldNumber = 538;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ArenaChallengeActivityDetailInfo ArenaChallengeInfo {
+      get { return detailCase_ == DetailOneofCase.ArenaChallengeInfo ? (global::NewProtos.ArenaChallengeActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ArenaChallengeInfo;
+      }
+    }
+
+    /// <summary>Field number for the "fleur_fair_info" field.</summary>
+    public const int FleurFairInfoFieldNumber = 1447;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.FleurFairActivityDetailInfo FleurFairInfo {
+      get { return detailCase_ == DetailOneofCase.FleurFairInfo ? (global::NewProtos.FleurFairActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.FleurFairInfo;
+      }
+    }
+
+    /// <summary>Field number for the "water_spirit_info" field.</summary>
+    public const int WaterSpiritInfoFieldNumber = 635;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.WaterSpiritActivityDetailInfo WaterSpiritInfo {
+      get { return detailCase_ == DetailOneofCase.WaterSpiritInfo ? (global::NewProtos.WaterSpiritActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.WaterSpiritInfo;
+      }
+    }
+
+    /// <summary>Field number for the "channeler_slab_info" field.</summary>
+    public const int ChannelerSlabInfoFieldNumber = 846;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ChannelerSlabActivityDetailInfo ChannelerSlabInfo {
+      get { return detailCase_ == DetailOneofCase.ChannelerSlabInfo ? (global::NewProtos.ChannelerSlabActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ChannelerSlabInfo;
+      }
+    }
+
+    /// <summary>Field number for the "mist_trial_activity_info" field.</summary>
+    public const int MistTrialActivityInfoFieldNumber = 432;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.MistTrialActivityDetailInfo MistTrialActivityInfo {
+      get { return detailCase_ == DetailOneofCase.MistTrialActivityInfo ? (global::NewProtos.MistTrialActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.MistTrialActivityInfo;
+      }
+    }
+
+    /// <summary>Field number for the "hide_and_seek_info" field.</summary>
+    public const int HideAndSeekInfoFieldNumber = 839;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.HideAndSeekActivityDetailInfo HideAndSeekInfo {
+      get { return detailCase_ == DetailOneofCase.HideAndSeekInfo ? (global::NewProtos.HideAndSeekActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.HideAndSeekInfo;
+      }
+    }
+
+    /// <summary>Field number for the "find_hilichurl_info" field.</summary>
+    public const int FindHilichurlInfoFieldNumber = 378;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.FindHilichurlDetailInfo FindHilichurlInfo {
+      get { return detailCase_ == DetailOneofCase.FindHilichurlInfo ? (global::NewProtos.FindHilichurlDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.FindHilichurlInfo;
+      }
+    }
+
+    /// <summary>Field number for the "summer_time_info" field.</summary>
+    public const int SummerTimeInfoFieldNumber = 1910;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SummerTimeDetailInfo SummerTimeInfo {
+      get { return detailCase_ == DetailOneofCase.SummerTimeInfo ? (global::NewProtos.SummerTimeDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SummerTimeInfo;
+      }
+    }
+
+    /// <summary>Field number for the "buoyant_combat_info" field.</summary>
+    public const int BuoyantCombatInfoFieldNumber = 686;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.BuoyantCombatDetailInfo BuoyantCombatInfo {
+      get { return detailCase_ == DetailOneofCase.BuoyantCombatInfo ? (global::NewProtos.BuoyantCombatDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BuoyantCombatInfo;
+      }
+    }
+
+    /// <summary>Field number for the "echo_shell_info" field.</summary>
+    public const int EchoShellInfoFieldNumber = 1162;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.EchoShellDetailInfo EchoShellInfo {
+      get { return detailCase_ == DetailOneofCase.EchoShellInfo ? (global::NewProtos.EchoShellDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.EchoShellInfo;
+      }
+    }
+
+    /// <summary>Field number for the "bounce_conjuring_info" field.</summary>
+    public const int BounceConjuringInfoFieldNumber = 922;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.BounceConjuringActivityDetailInfo BounceConjuringInfo {
+      get { return detailCase_ == DetailOneofCase.BounceConjuringInfo ? (global::NewProtos.BounceConjuringActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BounceConjuringInfo;
+      }
+    }
+
+    /// <summary>Field number for the "blitz_rush_info" field.</summary>
+    public const int BlitzRushInfoFieldNumber = 64;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.BlitzRushActivityDetailInfo BlitzRushInfo {
+      get { return detailCase_ == DetailOneofCase.BlitzRushInfo ? (global::NewProtos.BlitzRushActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BlitzRushInfo;
+      }
+    }
+
+    /// <summary>Field number for the "chess_info" field.</summary>
+    public const int ChessInfoFieldNumber = 1006;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ChessActivityDetailInfo ChessInfo {
+      get { return detailCase_ == DetailOneofCase.ChessInfo ? (global::NewProtos.ChessActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ChessInfo;
+      }
+    }
+
+    /// <summary>Field number for the "sumo_info" field.</summary>
+    public const int SumoInfoFieldNumber = 505;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SumoActivityDetailInfo SumoInfo {
+      get { return detailCase_ == DetailOneofCase.SumoInfo ? (global::NewProtos.SumoActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SumoInfo;
+      }
+    }
+
+    /// <summary>Field number for the "moonfin_trial_info" field.</summary>
+    public const int MoonfinTrialInfoFieldNumber = 766;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.MoonfinTrialActivityDetailInfo MoonfinTrialInfo {
+      get { return detailCase_ == DetailOneofCase.MoonfinTrialInfo ? (global::NewProtos.MoonfinTrialActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.MoonfinTrialInfo;
+      }
+    }
+
+    /// <summary>Field number for the "luna_rite_info" field.</summary>
+    public const int LunaRiteInfoFieldNumber = 1545;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.LunaRiteDetailInfo LunaRiteInfo {
+      get { return detailCase_ == DetailOneofCase.LunaRiteInfo ? (global::NewProtos.LunaRiteDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.LunaRiteInfo;
+      }
+    }
+
+    /// <summary>Field number for the "plant_flower_info" field.</summary>
+    public const int PlantFlowerInfoFieldNumber = 1274;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.PlantFlowerActivityDetailInfo PlantFlowerInfo {
+      get { return detailCase_ == DetailOneofCase.PlantFlowerInfo ? (global::NewProtos.PlantFlowerActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.PlantFlowerInfo;
+      }
+    }
+
+    /// <summary>Field number for the "music_game_info" field.</summary>
+    public const int MusicGameInfoFieldNumber = 1989;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.MusicGameActivityDetailInfo MusicGameInfo {
+      get { return detailCase_ == DetailOneofCase.MusicGameInfo ? (global::NewProtos.MusicGameActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.MusicGameInfo;
+      }
+    }
+
+    /// <summary>Field number for the "roguelike_dungeon_info" field.</summary>
+    public const int RoguelikeDungeonInfoFieldNumber = 970;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.RoguelikeDungeonActivityDetailInfo RoguelikeDungeonInfo {
+      get { return detailCase_ == DetailOneofCase.RoguelikeDungeonInfo ? (global::NewProtos.RoguelikeDungeonActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.RoguelikeDungeonInfo;
+      }
+    }
+
+    /// <summary>Field number for the "dig_info" field.</summary>
+    public const int DigInfoFieldNumber = 1862;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.DigActivityDetailInfo DigInfo {
+      get { return detailCase_ == DetailOneofCase.DigInfo ? (global::NewProtos.DigActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.DigInfo;
+      }
+    }
+
+    /// <summary>Field number for the "hachi_info" field.</summary>
+    public const int HachiInfoFieldNumber = 511;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.HachiActivityDetailInfo HachiInfo {
+      get { return detailCase_ == DetailOneofCase.HachiInfo ? (global::NewProtos.HachiActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.HachiInfo;
+      }
+    }
+
+    /// <summary>Field number for the "winter_camp_info" field.</summary>
+    public const int WinterCampInfoFieldNumber = 699;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.WinterCampActivityDetailInfo WinterCampInfo {
+      get { return detailCase_ == DetailOneofCase.WinterCampInfo ? (global::NewProtos.WinterCampActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.WinterCampInfo;
+      }
+    }
+
+    /// <summary>Field number for the "potion_info" field.</summary>
+    public const int PotionInfoFieldNumber = 1567;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.PotionActivityDetailInfo PotionInfo {
+      get { return detailCase_ == DetailOneofCase.PotionInfo ? (global::NewProtos.PotionActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.PotionInfo;
+      }
+    }
+
+    /// <summary>Field number for the "tanuki_travel_activity_info" field.</summary>
+    public const int TanukiTravelActivityInfoFieldNumber = 1348;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.TanukiTravelActivityDetailInfo TanukiTravelActivityInfo {
+      get { return detailCase_ == DetailOneofCase.TanukiTravelActivityInfo ? (global::NewProtos.TanukiTravelActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.TanukiTravelActivityInfo;
+      }
+    }
+
+    /// <summary>Field number for the "lantern_rite_activity_info" field.</summary>
+    public const int LanternRiteActivityInfoFieldNumber = 237;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.LanternRiteActivityDetailInfo LanternRiteActivityInfo {
+      get { return detailCase_ == DetailOneofCase.LanternRiteActivityInfo ? (global::NewProtos.LanternRiteActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.LanternRiteActivityInfo;
+      }
+    }
+
+    /// <summary>Field number for the "michiae_matsuri_info" field.</summary>
+    public const int MichiaeMatsuriInfoFieldNumber = 1839;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.MichiaeMatsuriActivityDetailInfo MichiaeMatsuriInfo {
+      get { return detailCase_ == DetailOneofCase.MichiaeMatsuriInfo ? (global::NewProtos.MichiaeMatsuriActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.MichiaeMatsuriInfo;
+      }
+    }
+
+    /// <summary>Field number for the "bartender_info" field.</summary>
+    public const int BartenderInfoFieldNumber = 551;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.BartenderActivityDetailInfo BartenderInfo {
+      get { return detailCase_ == DetailOneofCase.BartenderInfo ? (global::NewProtos.BartenderActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BartenderInfo;
+      }
+    }
+
+    /// <summary>Field number for the "ugc_info" field.</summary>
+    public const int UgcInfoFieldNumber = 1182;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.UgcActivityDetailInfo UgcInfo {
+      get { return detailCase_ == DetailOneofCase.UgcInfo ? (global::NewProtos.UgcActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.UgcInfo;
+      }
+    }
+
+    /// <summary>Field number for the "crystal_link_info" field.</summary>
+    public const int CrystalLinkInfoFieldNumber = 812;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CrystalLinkActivityDetailInfo CrystalLinkInfo {
+      get { return detailCase_ == DetailOneofCase.CrystalLinkInfo ? (global::NewProtos.CrystalLinkActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.CrystalLinkInfo;
+      }
+    }
+
+    /// <summary>Field number for the "irodori_info" field.</summary>
+    public const int IrodoriInfoFieldNumber = 1056;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.IrodoriActivityDetailInfo IrodoriInfo {
+      get { return detailCase_ == DetailOneofCase.IrodoriInfo ? (global::NewProtos.IrodoriActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.IrodoriInfo;
+      }
+    }
+
+    /// <summary>Field number for the "photo_info" field.</summary>
+    public const int PhotoInfoFieldNumber = 1822;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.PhotoActivityDetailInfo PhotoInfo {
+      get { return detailCase_ == DetailOneofCase.PhotoInfo ? (global::NewProtos.PhotoActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.PhotoInfo;
+      }
+    }
+
+    /// <summary>Field number for the "spice_info" field.</summary>
+    public const int SpiceInfoFieldNumber = 789;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SpiceActivityDetailInfo SpiceInfo {
+      get { return detailCase_ == DetailOneofCase.SpiceInfo ? (global::NewProtos.SpiceActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SpiceInfo;
+      }
+    }
+
+    /// <summary>Field number for the "gacha_info" field.</summary>
+    public const int GachaInfoFieldNumber = 1297;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GachaActivityDetailInfo GachaInfo {
+      get { return detailCase_ == DetailOneofCase.GachaInfo ? (global::NewProtos.GachaActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.GachaInfo;
+      }
+    }
+
+    /// <summary>Field number for the "luminance_stone_challenge_info" field.</summary>
+    public const int LuminanceStoneChallengeInfoFieldNumber = 444;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.LuminanceStoneChallengeActivityDetailInfo LuminanceStoneChallengeInfo {
+      get { return detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo ? (global::NewProtos.LuminanceStoneChallengeActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.LuminanceStoneChallengeInfo;
+      }
+    }
+
+    /// <summary>Field number for the "rogue_diary_info" field.</summary>
+    public const int RogueDiaryInfoFieldNumber = 560;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.RogueDiaryActivityDetailInfo RogueDiaryInfo {
+      get { return detailCase_ == DetailOneofCase.RogueDiaryInfo ? (global::NewProtos.RogueDiaryActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.RogueDiaryInfo;
+      }
+    }
+
+    /// <summary>Field number for the "summer_time_v2_info" field.</summary>
+    public const int SummerTimeV2InfoFieldNumber = 411;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SummerTimeV2DetailInfo SummerTimeV2Info {
+      get { return detailCase_ == DetailOneofCase.SummerTimeV2Info ? (global::NewProtos.SummerTimeV2DetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SummerTimeV2Info;
+      }
+    }
+
+    /// <summary>Field number for the "island_party_info" field.</summary>
+    public const int IslandPartyInfoFieldNumber = 740;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.IslandPartyDetailInfo IslandPartyInfo {
+      get { return detailCase_ == DetailOneofCase.IslandPartyInfo ? (global::NewProtos.IslandPartyDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.IslandPartyInfo;
+      }
+    }
+
+    /// <summary>Field number for the "gear_info" field.</summary>
+    public const int GearInfoFieldNumber = 1482;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GearActivityDetailInfo GearInfo {
+      get { return detailCase_ == DetailOneofCase.GearInfo ? (global::NewProtos.GearActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.GearInfo;
+      }
+    }
+
+    /// <summary>Field number for the "graven_innocence_info" field.</summary>
+    public const int GravenInnocenceInfoFieldNumber = 1928;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GravenInnocenceDetailInfo GravenInnocenceInfo {
+      get { return detailCase_ == DetailOneofCase.GravenInnocenceInfo ? (global::NewProtos.GravenInnocenceDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.GravenInnocenceInfo;
+      }
+    }
+
+    /// <summary>Field number for the "instable_spray_info" field.</summary>
+    public const int InstableSprayInfoFieldNumber = 1145;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.InstableSprayDetailInfo InstableSprayInfo {
+      get { return detailCase_ == DetailOneofCase.InstableSprayInfo ? (global::NewProtos.InstableSprayDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.InstableSprayInfo;
+      }
+    }
+
+    /// <summary>Field number for the "muqadas_potion_info" field.</summary>
+    public const int MuqadasPotionInfoFieldNumber = 1662;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.MuqadasPotionActivityDetailInfo MuqadasPotionInfo {
+      get { return detailCase_ == DetailOneofCase.MuqadasPotionInfo ? (global::NewProtos.MuqadasPotionActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.MuqadasPotionInfo;
+      }
+    }
+
+    /// <summary>Field number for the "treasure_seelie_info" field.</summary>
+    public const int TreasureSeelieInfoFieldNumber = 1032;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.TreasureSeelieActivityDetailInfo TreasureSeelieInfo {
+      get { return detailCase_ == DetailOneofCase.TreasureSeelieInfo ? (global::NewProtos.TreasureSeelieActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.TreasureSeelieInfo;
+      }
+    }
+
+    /// <summary>Field number for the "rock_board_explore_info" field.</summary>
+    public const int RockBoardExploreInfoFieldNumber = 1265;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.RockBoardExploreDetailInfo RockBoardExploreInfo {
+      get { return detailCase_ == DetailOneofCase.RockBoardExploreInfo ? (global::NewProtos.RockBoardExploreDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.RockBoardExploreInfo;
+      }
+    }
+
+    /// <summary>Field number for the "vintage_info" field.</summary>
+    public const int VintageInfoFieldNumber = 1308;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.VintageActivityDetailInfo VintageInfo {
+      get { return detailCase_ == DetailOneofCase.VintageInfo ? (global::NewProtos.VintageActivityDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.VintageInfo;
+      }
+    }
+
+    /// <summary>Field number for the "wind_field_info" field.</summary>
+    public const int WindFieldInfoFieldNumber = 468;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.WindFieldDetailInfo WindFieldInfo {
+      get { return detailCase_ == DetailOneofCase.WindFieldInfo ? (global::NewProtos.WindFieldDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.WindFieldInfo;
+      }
+    }
+
+    /// <summary>Field number for the "fungus_fighter_info" field.</summary>
+    public const int FungusFighterInfoFieldNumber = 1757;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.FungusFighterDetailInfo FungusFighterInfo {
+      get { return detailCase_ == DetailOneofCase.FungusFighterInfo ? (global::NewProtos.FungusFighterDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.FungusFighterInfo;
+      }
+    }
+
+    /// <summary>Field number for the "char_amusement_info" field.</summary>
+    public const int CharAmusementInfoFieldNumber = 621;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CharAmusementDetailInfo CharAmusementInfo {
+      get { return detailCase_ == DetailOneofCase.CharAmusementInfo ? (global::NewProtos.CharAmusementDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.CharAmusementInfo;
+      }
+    }
+
+    /// <summary>Field number for the "effigy_challenge_info" field.</summary>
+    public const int EffigyChallengeInfoFieldNumber = 233;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.EffigyChallengeV2DetailInfo EffigyChallengeInfo {
+      get { return detailCase_ == DetailOneofCase.EffigyChallengeInfo ? (global::NewProtos.EffigyChallengeV2DetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.EffigyChallengeInfo;
+      }
+    }
+
+    /// <summary>Field number for the "coin_collect_info" field.</summary>
+    public const int CoinCollectInfoFieldNumber = 2002;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CoinCollectDetailInfo CoinCollectInfo {
+      get { return detailCase_ == DetailOneofCase.CoinCollectInfo ? (global::NewProtos.CoinCollectDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.CoinCollectInfo;
+      }
+    }
+
+    /// <summary>Field number for the "brick_breaker_info" field.</summary>
+    public const int BrickBreakerInfoFieldNumber = 1522;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.BrickBreakerDetailInfo BrickBreakerInfo {
+      get { return detailCase_ == DetailOneofCase.BrickBreakerInfo ? (global::NewProtos.BrickBreakerDetailInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BrickBreakerInfo;
+      }
+    }
+
+    private object detail_;
+    /// <summary>Enum of possible cases for the "detail" oneof.</summary>
+    public enum DetailOneofCase {
+      None = 0,
+      SamLampInfo = 2,
+      CrucibleInfo = 15,
+      SalesmanInfo = 9,
+      TrialAvatarInfo = 4,
+      DeliveryInfo = 1141,
+      AsterInfo = 1977,
+      FlightInfo = 2011,
+      DragonSpineInfo = 1310,
+      EffigyInfo = 1374,
+      TreasureMapInfo = 1925,
+      BlessingInfo = 1962,
+      SeaLampInfo = 247,
+      ExpeditionInfo = 1752,
+      ArenaChallengeInfo = 538,
+      FleurFairInfo = 1447,
+      WaterSpiritInfo = 635,
+      ChannelerSlabInfo = 846,
+      MistTrialActivityInfo = 432,
+      HideAndSeekInfo = 839,
+      FindHilichurlInfo = 378,
+      SummerTimeInfo = 1910,
+      BuoyantCombatInfo = 686,
+      EchoShellInfo = 1162,
+      BounceConjuringInfo = 922,
+      BlitzRushInfo = 64,
+      ChessInfo = 1006,
+      SumoInfo = 505,
+      MoonfinTrialInfo = 766,
+      LunaRiteInfo = 1545,
+      PlantFlowerInfo = 1274,
+      MusicGameInfo = 1989,
+      RoguelikeDungeonInfo = 970,
+      DigInfo = 1862,
+      HachiInfo = 511,
+      WinterCampInfo = 699,
+      PotionInfo = 1567,
+      TanukiTravelActivityInfo = 1348,
+      LanternRiteActivityInfo = 237,
+      MichiaeMatsuriInfo = 1839,
+      BartenderInfo = 551,
+      UgcInfo = 1182,
+      CrystalLinkInfo = 812,
+      IrodoriInfo = 1056,
+      PhotoInfo = 1822,
+      SpiceInfo = 789,
+      GachaInfo = 1297,
+      LuminanceStoneChallengeInfo = 444,
+      RogueDiaryInfo = 560,
+      SummerTimeV2Info = 411,
+      IslandPartyInfo = 740,
+      GearInfo = 1482,
+      GravenInnocenceInfo = 1928,
+      InstableSprayInfo = 1145,
+      MuqadasPotionInfo = 1662,
+      TreasureSeelieInfo = 1032,
+      RockBoardExploreInfo = 1265,
+      VintageInfo = 1308,
+      WindFieldInfo = 468,
+      FungusFighterInfo = 1757,
+      CharAmusementInfo = 621,
+      EffigyChallengeInfo = 233,
+      CoinCollectInfo = 2002,
+      BrickBreakerInfo = 1522,
+    }
+    private DetailOneofCase detailCase_ = DetailOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DetailOneofCase DetailCase {
+      get { return detailCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearDetail() {
+      detailCase_ = DetailOneofCase.None;
+      detail_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ActivityInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ActivityInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Unk3300MJNPGEKLOCG != other.Unk3300MJNPGEKLOCG) return false;
+      if (IsFinished != other.IsFinished) return false;
+      if (CurScore != other.CurScore) return false;
+      if (ScheduleId != other.ScheduleId) return false;
+      if (ScoreLimit != other.ScoreLimit) return false;
+      if (Unk3300ICNJJKDHPCH != other.Unk3300ICNJJKDHPCH) return false;
+      if(!meetCondList_.Equals(other.meetCondList_)) return false;
+      if (Unk3300NEPKLLBJFKK != other.Unk3300NEPKLLBJFKK) return false;
+      if(!watcherInfoList_.Equals(other.watcherInfoList_)) return false;
+      if(!activityPushTipsDataList_.Equals(other.activityPushTipsDataList_)) return false;
+      if (ActivityId != other.ActivityId) return false;
+      if(!takenRewardList_.Equals(other.takenRewardList_)) return false;
+      if (SelectedAvatarRewardId != other.SelectedAvatarRewardId) return false;
+      if (!ActivityCoinMap.Equals(other.ActivityCoinMap)) return false;
+      if (FirstDayStartTime != other.FirstDayStartTime) return false;
+      if (Unk3300ABJKLALKLDG != other.Unk3300ABJKLALKLDG) return false;
+      if (ActivityType != other.ActivityType) return false;
+      if (Unk3300CBCEHLJJOGI != other.Unk3300CBCEHLJJOGI) return false;
+      if (BeginTime != other.BeginTime) return false;
+      if (Unk3300MDBDPIBEGGH != other.Unk3300MDBDPIBEGGH) return false;
+      if (!WishGiftNumMap.Equals(other.WishGiftNumMap)) return false;
+      if (EndTime != other.EndTime) return false;
+      if(!expireCondList_.Equals(other.expireCondList_)) return false;
+      if (!object.Equals(SamLampInfo, other.SamLampInfo)) return false;
+      if (!object.Equals(CrucibleInfo, other.CrucibleInfo)) return false;
+      if (!object.Equals(SalesmanInfo, other.SalesmanInfo)) return false;
+      if (!object.Equals(TrialAvatarInfo, other.TrialAvatarInfo)) return false;
+      if (!object.Equals(DeliveryInfo, other.DeliveryInfo)) return false;
+      if (!object.Equals(AsterInfo, other.AsterInfo)) return false;
+      if (!object.Equals(FlightInfo, other.FlightInfo)) return false;
+      if (!object.Equals(DragonSpineInfo, other.DragonSpineInfo)) return false;
+      if (!object.Equals(EffigyInfo, other.EffigyInfo)) return false;
+      if (!object.Equals(TreasureMapInfo, other.TreasureMapInfo)) return false;
+      if (!object.Equals(BlessingInfo, other.BlessingInfo)) return false;
+      if (!object.Equals(SeaLampInfo, other.SeaLampInfo)) return false;
+      if (!object.Equals(ExpeditionInfo, other.ExpeditionInfo)) return false;
+      if (!object.Equals(ArenaChallengeInfo, other.ArenaChallengeInfo)) return false;
+      if (!object.Equals(FleurFairInfo, other.FleurFairInfo)) return false;
+      if (!object.Equals(WaterSpiritInfo, other.WaterSpiritInfo)) return false;
+      if (!object.Equals(ChannelerSlabInfo, other.ChannelerSlabInfo)) return false;
+      if (!object.Equals(MistTrialActivityInfo, other.MistTrialActivityInfo)) return false;
+      if (!object.Equals(HideAndSeekInfo, other.HideAndSeekInfo)) return false;
+      if (!object.Equals(FindHilichurlInfo, other.FindHilichurlInfo)) return false;
+      if (!object.Equals(SummerTimeInfo, other.SummerTimeInfo)) return false;
+      if (!object.Equals(BuoyantCombatInfo, other.BuoyantCombatInfo)) return false;
+      if (!object.Equals(EchoShellInfo, other.EchoShellInfo)) return false;
+      if (!object.Equals(BounceConjuringInfo, other.BounceConjuringInfo)) return false;
+      if (!object.Equals(BlitzRushInfo, other.BlitzRushInfo)) return false;
+      if (!object.Equals(ChessInfo, other.ChessInfo)) return false;
+      if (!object.Equals(SumoInfo, other.SumoInfo)) return false;
+      if (!object.Equals(MoonfinTrialInfo, other.MoonfinTrialInfo)) return false;
+      if (!object.Equals(LunaRiteInfo, other.LunaRiteInfo)) return false;
+      if (!object.Equals(PlantFlowerInfo, other.PlantFlowerInfo)) return false;
+      if (!object.Equals(MusicGameInfo, other.MusicGameInfo)) return false;
+      if (!object.Equals(RoguelikeDungeonInfo, other.RoguelikeDungeonInfo)) return false;
+      if (!object.Equals(DigInfo, other.DigInfo)) return false;
+      if (!object.Equals(HachiInfo, other.HachiInfo)) return false;
+      if (!object.Equals(WinterCampInfo, other.WinterCampInfo)) return false;
+      if (!object.Equals(PotionInfo, other.PotionInfo)) return false;
+      if (!object.Equals(TanukiTravelActivityInfo, other.TanukiTravelActivityInfo)) return false;
+      if (!object.Equals(LanternRiteActivityInfo, other.LanternRiteActivityInfo)) return false;
+      if (!object.Equals(MichiaeMatsuriInfo, other.MichiaeMatsuriInfo)) return false;
+      if (!object.Equals(BartenderInfo, other.BartenderInfo)) return false;
+      if (!object.Equals(UgcInfo, other.UgcInfo)) return false;
+      if (!object.Equals(CrystalLinkInfo, other.CrystalLinkInfo)) return false;
+      if (!object.Equals(IrodoriInfo, other.IrodoriInfo)) return false;
+      if (!object.Equals(PhotoInfo, other.PhotoInfo)) return false;
+      if (!object.Equals(SpiceInfo, other.SpiceInfo)) return false;
+      if (!object.Equals(GachaInfo, other.GachaInfo)) return false;
+      if (!object.Equals(LuminanceStoneChallengeInfo, other.LuminanceStoneChallengeInfo)) return false;
+      if (!object.Equals(RogueDiaryInfo, other.RogueDiaryInfo)) return false;
+      if (!object.Equals(SummerTimeV2Info, other.SummerTimeV2Info)) return false;
+      if (!object.Equals(IslandPartyInfo, other.IslandPartyInfo)) return false;
+      if (!object.Equals(GearInfo, other.GearInfo)) return false;
+      if (!object.Equals(GravenInnocenceInfo, other.GravenInnocenceInfo)) return false;
+      if (!object.Equals(InstableSprayInfo, other.InstableSprayInfo)) return false;
+      if (!object.Equals(MuqadasPotionInfo, other.MuqadasPotionInfo)) return false;
+      if (!object.Equals(TreasureSeelieInfo, other.TreasureSeelieInfo)) return false;
+      if (!object.Equals(RockBoardExploreInfo, other.RockBoardExploreInfo)) return false;
+      if (!object.Equals(VintageInfo, other.VintageInfo)) return false;
+      if (!object.Equals(WindFieldInfo, other.WindFieldInfo)) return false;
+      if (!object.Equals(FungusFighterInfo, other.FungusFighterInfo)) return false;
+      if (!object.Equals(CharAmusementInfo, other.CharAmusementInfo)) return false;
+      if (!object.Equals(EffigyChallengeInfo, other.EffigyChallengeInfo)) return false;
+      if (!object.Equals(CoinCollectInfo, other.CoinCollectInfo)) return false;
+      if (!object.Equals(BrickBreakerInfo, other.BrickBreakerInfo)) return false;
+      if (DetailCase != other.DetailCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Unk3300MJNPGEKLOCG != false) hash ^= Unk3300MJNPGEKLOCG.GetHashCode();
+      if (IsFinished != false) hash ^= IsFinished.GetHashCode();
+      if (CurScore != 0) hash ^= CurScore.GetHashCode();
+      if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
+      if (ScoreLimit != 0) hash ^= ScoreLimit.GetHashCode();
+      if (Unk3300ICNJJKDHPCH != false) hash ^= Unk3300ICNJJKDHPCH.GetHashCode();
+      hash ^= meetCondList_.GetHashCode();
+      if (Unk3300NEPKLLBJFKK != false) hash ^= Unk3300NEPKLLBJFKK.GetHashCode();
+      hash ^= watcherInfoList_.GetHashCode();
+      hash ^= activityPushTipsDataList_.GetHashCode();
+      if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
+      hash ^= takenRewardList_.GetHashCode();
+      if (SelectedAvatarRewardId != 0) hash ^= SelectedAvatarRewardId.GetHashCode();
+      hash ^= ActivityCoinMap.GetHashCode();
+      if (FirstDayStartTime != 0) hash ^= FirstDayStartTime.GetHashCode();
+      if (Unk3300ABJKLALKLDG != false) hash ^= Unk3300ABJKLALKLDG.GetHashCode();
+      if (ActivityType != 0) hash ^= ActivityType.GetHashCode();
+      if (Unk3300CBCEHLJJOGI != false) hash ^= Unk3300CBCEHLJJOGI.GetHashCode();
+      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
+      if (Unk3300MDBDPIBEGGH != false) hash ^= Unk3300MDBDPIBEGGH.GetHashCode();
+      hash ^= WishGiftNumMap.GetHashCode();
+      if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      hash ^= expireCondList_.GetHashCode();
+      if (detailCase_ == DetailOneofCase.SamLampInfo) hash ^= SamLampInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.CrucibleInfo) hash ^= CrucibleInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.SalesmanInfo) hash ^= SalesmanInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.TrialAvatarInfo) hash ^= TrialAvatarInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.DeliveryInfo) hash ^= DeliveryInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.AsterInfo) hash ^= AsterInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.FlightInfo) hash ^= FlightInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.DragonSpineInfo) hash ^= DragonSpineInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.EffigyInfo) hash ^= EffigyInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.TreasureMapInfo) hash ^= TreasureMapInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.BlessingInfo) hash ^= BlessingInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.SeaLampInfo) hash ^= SeaLampInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.ExpeditionInfo) hash ^= ExpeditionInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) hash ^= ArenaChallengeInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.FleurFairInfo) hash ^= FleurFairInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.WaterSpiritInfo) hash ^= WaterSpiritInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) hash ^= ChannelerSlabInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) hash ^= MistTrialActivityInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.HideAndSeekInfo) hash ^= HideAndSeekInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.FindHilichurlInfo) hash ^= FindHilichurlInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.SummerTimeInfo) hash ^= SummerTimeInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) hash ^= BuoyantCombatInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.EchoShellInfo) hash ^= EchoShellInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.BounceConjuringInfo) hash ^= BounceConjuringInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.BlitzRushInfo) hash ^= BlitzRushInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.ChessInfo) hash ^= ChessInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.SumoInfo) hash ^= SumoInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) hash ^= MoonfinTrialInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.LunaRiteInfo) hash ^= LunaRiteInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.PlantFlowerInfo) hash ^= PlantFlowerInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.MusicGameInfo) hash ^= MusicGameInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) hash ^= RoguelikeDungeonInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.DigInfo) hash ^= DigInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.HachiInfo) hash ^= HachiInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.WinterCampInfo) hash ^= WinterCampInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.PotionInfo) hash ^= PotionInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) hash ^= TanukiTravelActivityInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) hash ^= LanternRiteActivityInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) hash ^= MichiaeMatsuriInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.BartenderInfo) hash ^= BartenderInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.UgcInfo) hash ^= UgcInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.CrystalLinkInfo) hash ^= CrystalLinkInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.IrodoriInfo) hash ^= IrodoriInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.PhotoInfo) hash ^= PhotoInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.SpiceInfo) hash ^= SpiceInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.GachaInfo) hash ^= GachaInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) hash ^= LuminanceStoneChallengeInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.RogueDiaryInfo) hash ^= RogueDiaryInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.SummerTimeV2Info) hash ^= SummerTimeV2Info.GetHashCode();
+      if (detailCase_ == DetailOneofCase.IslandPartyInfo) hash ^= IslandPartyInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.GearInfo) hash ^= GearInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) hash ^= GravenInnocenceInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.InstableSprayInfo) hash ^= InstableSprayInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) hash ^= MuqadasPotionInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) hash ^= TreasureSeelieInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) hash ^= RockBoardExploreInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.VintageInfo) hash ^= VintageInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.WindFieldInfo) hash ^= WindFieldInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.FungusFighterInfo) hash ^= FungusFighterInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.CharAmusementInfo) hash ^= CharAmusementInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) hash ^= EffigyChallengeInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.CoinCollectInfo) hash ^= CoinCollectInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.BrickBreakerInfo) hash ^= BrickBreakerInfo.GetHashCode();
+      hash ^= (int) detailCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (BeginTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(BeginTime);
+      }
+      if (detailCase_ == DetailOneofCase.SamLampInfo) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SamLampInfo);
+      }
+      if (ActivityType != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ActivityType);
+      }
+      if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
+        output.WriteRawTag(34);
+        output.WriteMessage(TrialAvatarInfo);
+      }
+      expireCondList_.WriteTo(output, _repeated_expireCondList_codec);
+      watcherInfoList_.WriteTo(output, _repeated_watcherInfoList_codec);
+      if (ScheduleId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ScheduleId);
+      }
+      if (IsFinished != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsFinished);
+      }
+      if (detailCase_ == DetailOneofCase.SalesmanInfo) {
+        output.WriteRawTag(74);
+        output.WriteMessage(SalesmanInfo);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EndTime);
+      }
+      meetCondList_.WriteTo(output, _repeated_meetCondList_codec);
+      if (Unk3300MDBDPIBEGGH != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300MDBDPIBEGGH);
+      }
+      if (ActivityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ActivityId);
+      }
+      if (Unk3300ICNJJKDHPCH != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300ICNJJKDHPCH);
+      }
+      if (detailCase_ == DetailOneofCase.CrucibleInfo) {
+        output.WriteRawTag(122);
+        output.WriteMessage(CrucibleInfo);
+      }
+      activityCoinMap_.WriteTo(output, _map_activityCoinMap_codec);
+      if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
+        output.WriteRawTag(130, 4);
+        output.WriteMessage(BlitzRushInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
+        output.WriteRawTag(202, 14);
+        output.WriteMessage(EffigyChallengeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
+        output.WriteRawTag(234, 14);
+        output.WriteMessage(LanternRiteActivityInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SeaLampInfo) {
+        output.WriteRawTag(186, 15);
+        output.WriteMessage(SeaLampInfo);
+      }
+      if (Unk3300MJNPGEKLOCG != false) {
+        output.WriteRawTag(192, 22);
+        output.WriteBool(Unk3300MJNPGEKLOCG);
+      }
+      if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
+        output.WriteRawTag(210, 23);
+        output.WriteMessage(FindHilichurlInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
+        output.WriteRawTag(218, 25);
+        output.WriteMessage(SummerTimeV2Info);
+      }
+      if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
+        output.WriteRawTag(130, 27);
+        output.WriteMessage(MistTrialActivityInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
+        output.WriteRawTag(226, 27);
+        output.WriteMessage(LuminanceStoneChallengeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WindFieldInfo) {
+        output.WriteRawTag(162, 29);
+        output.WriteMessage(WindFieldInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SumoInfo) {
+        output.WriteRawTag(202, 31);
+        output.WriteMessage(SumoInfo);
+      }
+      if (detailCase_ == DetailOneofCase.HachiInfo) {
+        output.WriteRawTag(250, 31);
+        output.WriteMessage(HachiInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
+        output.WriteRawTag(210, 33);
+        output.WriteMessage(ArenaChallengeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BartenderInfo) {
+        output.WriteRawTag(186, 34);
+        output.WriteMessage(BartenderInfo);
+      }
+      if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
+        output.WriteRawTag(130, 35);
+        output.WriteMessage(RogueDiaryInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
+        output.WriteRawTag(234, 38);
+        output.WriteMessage(CharAmusementInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
+        output.WriteRawTag(218, 39);
+        output.WriteMessage(WaterSpiritInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
+        output.WriteRawTag(242, 42);
+        output.WriteMessage(BuoyantCombatInfo);
+      }
+      if (SelectedAvatarRewardId != 0) {
+        output.WriteRawTag(200, 43);
+        output.WriteUInt32(SelectedAvatarRewardId);
+      }
+      if (detailCase_ == DetailOneofCase.WinterCampInfo) {
+        output.WriteRawTag(218, 43);
+        output.WriteMessage(WinterCampInfo);
+      }
+      if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
+        output.WriteRawTag(162, 46);
+        output.WriteMessage(IslandPartyInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
+        output.WriteRawTag(242, 47);
+        output.WriteMessage(MoonfinTrialInfo);
+      }
+      if (FirstDayStartTime != 0) {
+        output.WriteRawTag(144, 49);
+        output.WriteUInt32(FirstDayStartTime);
+      }
+      if (detailCase_ == DetailOneofCase.SpiceInfo) {
+        output.WriteRawTag(170, 49);
+        output.WriteMessage(SpiceInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
+        output.WriteRawTag(226, 50);
+        output.WriteMessage(CrystalLinkInfo);
+      }
+      if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+        output.WriteRawTag(186, 52);
+        output.WriteMessage(HideAndSeekInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
+        output.WriteRawTag(242, 52);
+        output.WriteMessage(ChannelerSlabInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
+        output.WriteRawTag(210, 57);
+        output.WriteMessage(BounceConjuringInfo);
+      }
+      wishGiftNumMap_.WriteTo(output, _map_wishGiftNumMap_codec);
+      if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
+        output.WriteRawTag(210, 60);
+        output.WriteMessage(RoguelikeDungeonInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChessInfo) {
+        output.WriteRawTag(242, 62);
+        output.WriteMessage(ChessInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
+        output.WriteRawTag(194, 64);
+        output.WriteMessage(TreasureSeelieInfo);
+      }
+      if (detailCase_ == DetailOneofCase.IrodoriInfo) {
+        output.WriteRawTag(130, 66);
+        output.WriteMessage(IrodoriInfo);
+      }
+      if (detailCase_ == DetailOneofCase.DeliveryInfo) {
+        output.WriteRawTag(170, 71);
+        output.WriteMessage(DeliveryInfo);
+      }
+      if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
+        output.WriteRawTag(202, 71);
+        output.WriteMessage(InstableSprayInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EchoShellInfo) {
+        output.WriteRawTag(210, 72);
+        output.WriteMessage(EchoShellInfo);
+      }
+      if (detailCase_ == DetailOneofCase.UgcInfo) {
+        output.WriteRawTag(242, 73);
+        output.WriteMessage(UgcInfo);
+      }
+      if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
+        output.WriteRawTag(138, 79);
+        output.WriteMessage(RockBoardExploreInfo);
+      }
+      if (CurScore != 0) {
+        output.WriteRawTag(160, 79);
+        output.WriteUInt32(CurScore);
+      }
+      if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
+        output.WriteRawTag(210, 79);
+        output.WriteMessage(PlantFlowerInfo);
+      }
+      if (detailCase_ == DetailOneofCase.GachaInfo) {
+        output.WriteRawTag(138, 81);
+        output.WriteMessage(GachaInfo);
+      }
+      if (detailCase_ == DetailOneofCase.VintageInfo) {
+        output.WriteRawTag(226, 81);
+        output.WriteMessage(VintageInfo);
+      }
+      if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
+        output.WriteRawTag(242, 81);
+        output.WriteMessage(DragonSpineInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
+        output.WriteRawTag(162, 84);
+        output.WriteMessage(TanukiTravelActivityInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EffigyInfo) {
+        output.WriteRawTag(242, 85);
+        output.WriteMessage(EffigyInfo);
+      }
+      if (Unk3300CBCEHLJJOGI != false) {
+        output.WriteRawTag(248, 85);
+        output.WriteBool(Unk3300CBCEHLJJOGI);
+      }
+      if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+        output.WriteRawTag(186, 90);
+        output.WriteMessage(FleurFairInfo);
+      }
+      if (detailCase_ == DetailOneofCase.GearInfo) {
+        output.WriteRawTag(210, 92);
+        output.WriteMessage(GearInfo);
+      }
+      if (Unk3300ABJKLALKLDG != false) {
+        output.WriteRawTag(240, 92);
+        output.WriteBool(Unk3300ABJKLALKLDG);
+      }
+      if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+        output.WriteRawTag(146, 95);
+        output.WriteMessage(BrickBreakerInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
+        output.WriteRawTag(202, 96);
+        output.WriteMessage(LunaRiteInfo);
+      }
+      if (detailCase_ == DetailOneofCase.PotionInfo) {
+        output.WriteRawTag(250, 97);
+        output.WriteMessage(PotionInfo);
+      }
+      if (Unk3300NEPKLLBJFKK != false) {
+        output.WriteRawTag(232, 102);
+        output.WriteBool(Unk3300NEPKLLBJFKK);
+      }
+      if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
+        output.WriteRawTag(242, 103);
+        output.WriteMessage(MuqadasPotionInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
+        output.WriteRawTag(194, 109);
+        output.WriteMessage(ExpeditionInfo);
+      }
+      if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
+        output.WriteRawTag(234, 109);
+        output.WriteMessage(FungusFighterInfo);
+      }
+      if (detailCase_ == DetailOneofCase.PhotoInfo) {
+        output.WriteRawTag(242, 113);
+        output.WriteMessage(PhotoInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
+        output.WriteRawTag(250, 114);
+        output.WriteMessage(MichiaeMatsuriInfo);
+      }
+      if (detailCase_ == DetailOneofCase.DigInfo) {
+        output.WriteRawTag(178, 116);
+        output.WriteMessage(DigInfo);
+      }
+      activityPushTipsDataList_.WriteTo(output, _repeated_activityPushTipsDataList_codec);
+      if (ScoreLimit != 0) {
+        output.WriteRawTag(240, 116);
+        output.WriteUInt32(ScoreLimit);
+      }
+      takenRewardList_.WriteTo(output, _repeated_takenRewardList_codec);
+      if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
+        output.WriteRawTag(178, 119);
+        output.WriteMessage(SummerTimeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
+        output.WriteRawTag(170, 120);
+        output.WriteMessage(TreasureMapInfo);
+      }
+      if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
+        output.WriteRawTag(194, 120);
+        output.WriteMessage(GravenInnocenceInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BlessingInfo) {
+        output.WriteRawTag(210, 122);
+        output.WriteMessage(BlessingInfo);
+      }
+      if (detailCase_ == DetailOneofCase.AsterInfo) {
+        output.WriteRawTag(202, 123);
+        output.WriteMessage(AsterInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MusicGameInfo) {
+        output.WriteRawTag(170, 124);
+        output.WriteMessage(MusicGameInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+        output.WriteRawTag(146, 125);
+        output.WriteMessage(CoinCollectInfo);
+      }
+      if (detailCase_ == DetailOneofCase.FlightInfo) {
+        output.WriteRawTag(218, 125);
+        output.WriteMessage(FlightInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (BeginTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(BeginTime);
+      }
+      if (detailCase_ == DetailOneofCase.SamLampInfo) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SamLampInfo);
+      }
+      if (ActivityType != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ActivityType);
+      }
+      if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
+        output.WriteRawTag(34);
+        output.WriteMessage(TrialAvatarInfo);
+      }
+      expireCondList_.WriteTo(ref output, _repeated_expireCondList_codec);
+      watcherInfoList_.WriteTo(ref output, _repeated_watcherInfoList_codec);
+      if (ScheduleId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ScheduleId);
+      }
+      if (IsFinished != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsFinished);
+      }
+      if (detailCase_ == DetailOneofCase.SalesmanInfo) {
+        output.WriteRawTag(74);
+        output.WriteMessage(SalesmanInfo);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(EndTime);
+      }
+      meetCondList_.WriteTo(ref output, _repeated_meetCondList_codec);
+      if (Unk3300MDBDPIBEGGH != false) {
+        output.WriteRawTag(96);
+        output.WriteBool(Unk3300MDBDPIBEGGH);
+      }
+      if (ActivityId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ActivityId);
+      }
+      if (Unk3300ICNJJKDHPCH != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(Unk3300ICNJJKDHPCH);
+      }
+      if (detailCase_ == DetailOneofCase.CrucibleInfo) {
+        output.WriteRawTag(122);
+        output.WriteMessage(CrucibleInfo);
+      }
+      activityCoinMap_.WriteTo(ref output, _map_activityCoinMap_codec);
+      if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
+        output.WriteRawTag(130, 4);
+        output.WriteMessage(BlitzRushInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
+        output.WriteRawTag(202, 14);
+        output.WriteMessage(EffigyChallengeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
+        output.WriteRawTag(234, 14);
+        output.WriteMessage(LanternRiteActivityInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SeaLampInfo) {
+        output.WriteRawTag(186, 15);
+        output.WriteMessage(SeaLampInfo);
+      }
+      if (Unk3300MJNPGEKLOCG != false) {
+        output.WriteRawTag(192, 22);
+        output.WriteBool(Unk3300MJNPGEKLOCG);
+      }
+      if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
+        output.WriteRawTag(210, 23);
+        output.WriteMessage(FindHilichurlInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
+        output.WriteRawTag(218, 25);
+        output.WriteMessage(SummerTimeV2Info);
+      }
+      if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
+        output.WriteRawTag(130, 27);
+        output.WriteMessage(MistTrialActivityInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
+        output.WriteRawTag(226, 27);
+        output.WriteMessage(LuminanceStoneChallengeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WindFieldInfo) {
+        output.WriteRawTag(162, 29);
+        output.WriteMessage(WindFieldInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SumoInfo) {
+        output.WriteRawTag(202, 31);
+        output.WriteMessage(SumoInfo);
+      }
+      if (detailCase_ == DetailOneofCase.HachiInfo) {
+        output.WriteRawTag(250, 31);
+        output.WriteMessage(HachiInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
+        output.WriteRawTag(210, 33);
+        output.WriteMessage(ArenaChallengeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BartenderInfo) {
+        output.WriteRawTag(186, 34);
+        output.WriteMessage(BartenderInfo);
+      }
+      if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
+        output.WriteRawTag(130, 35);
+        output.WriteMessage(RogueDiaryInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
+        output.WriteRawTag(234, 38);
+        output.WriteMessage(CharAmusementInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
+        output.WriteRawTag(218, 39);
+        output.WriteMessage(WaterSpiritInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
+        output.WriteRawTag(242, 42);
+        output.WriteMessage(BuoyantCombatInfo);
+      }
+      if (SelectedAvatarRewardId != 0) {
+        output.WriteRawTag(200, 43);
+        output.WriteUInt32(SelectedAvatarRewardId);
+      }
+      if (detailCase_ == DetailOneofCase.WinterCampInfo) {
+        output.WriteRawTag(218, 43);
+        output.WriteMessage(WinterCampInfo);
+      }
+      if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
+        output.WriteRawTag(162, 46);
+        output.WriteMessage(IslandPartyInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
+        output.WriteRawTag(242, 47);
+        output.WriteMessage(MoonfinTrialInfo);
+      }
+      if (FirstDayStartTime != 0) {
+        output.WriteRawTag(144, 49);
+        output.WriteUInt32(FirstDayStartTime);
+      }
+      if (detailCase_ == DetailOneofCase.SpiceInfo) {
+        output.WriteRawTag(170, 49);
+        output.WriteMessage(SpiceInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
+        output.WriteRawTag(226, 50);
+        output.WriteMessage(CrystalLinkInfo);
+      }
+      if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+        output.WriteRawTag(186, 52);
+        output.WriteMessage(HideAndSeekInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
+        output.WriteRawTag(242, 52);
+        output.WriteMessage(ChannelerSlabInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
+        output.WriteRawTag(210, 57);
+        output.WriteMessage(BounceConjuringInfo);
+      }
+      wishGiftNumMap_.WriteTo(ref output, _map_wishGiftNumMap_codec);
+      if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
+        output.WriteRawTag(210, 60);
+        output.WriteMessage(RoguelikeDungeonInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChessInfo) {
+        output.WriteRawTag(242, 62);
+        output.WriteMessage(ChessInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
+        output.WriteRawTag(194, 64);
+        output.WriteMessage(TreasureSeelieInfo);
+      }
+      if (detailCase_ == DetailOneofCase.IrodoriInfo) {
+        output.WriteRawTag(130, 66);
+        output.WriteMessage(IrodoriInfo);
+      }
+      if (detailCase_ == DetailOneofCase.DeliveryInfo) {
+        output.WriteRawTag(170, 71);
+        output.WriteMessage(DeliveryInfo);
+      }
+      if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
+        output.WriteRawTag(202, 71);
+        output.WriteMessage(InstableSprayInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EchoShellInfo) {
+        output.WriteRawTag(210, 72);
+        output.WriteMessage(EchoShellInfo);
+      }
+      if (detailCase_ == DetailOneofCase.UgcInfo) {
+        output.WriteRawTag(242, 73);
+        output.WriteMessage(UgcInfo);
+      }
+      if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
+        output.WriteRawTag(138, 79);
+        output.WriteMessage(RockBoardExploreInfo);
+      }
+      if (CurScore != 0) {
+        output.WriteRawTag(160, 79);
+        output.WriteUInt32(CurScore);
+      }
+      if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
+        output.WriteRawTag(210, 79);
+        output.WriteMessage(PlantFlowerInfo);
+      }
+      if (detailCase_ == DetailOneofCase.GachaInfo) {
+        output.WriteRawTag(138, 81);
+        output.WriteMessage(GachaInfo);
+      }
+      if (detailCase_ == DetailOneofCase.VintageInfo) {
+        output.WriteRawTag(226, 81);
+        output.WriteMessage(VintageInfo);
+      }
+      if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
+        output.WriteRawTag(242, 81);
+        output.WriteMessage(DragonSpineInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
+        output.WriteRawTag(162, 84);
+        output.WriteMessage(TanukiTravelActivityInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EffigyInfo) {
+        output.WriteRawTag(242, 85);
+        output.WriteMessage(EffigyInfo);
+      }
+      if (Unk3300CBCEHLJJOGI != false) {
+        output.WriteRawTag(248, 85);
+        output.WriteBool(Unk3300CBCEHLJJOGI);
+      }
+      if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+        output.WriteRawTag(186, 90);
+        output.WriteMessage(FleurFairInfo);
+      }
+      if (detailCase_ == DetailOneofCase.GearInfo) {
+        output.WriteRawTag(210, 92);
+        output.WriteMessage(GearInfo);
+      }
+      if (Unk3300ABJKLALKLDG != false) {
+        output.WriteRawTag(240, 92);
+        output.WriteBool(Unk3300ABJKLALKLDG);
+      }
+      if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+        output.WriteRawTag(146, 95);
+        output.WriteMessage(BrickBreakerInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
+        output.WriteRawTag(202, 96);
+        output.WriteMessage(LunaRiteInfo);
+      }
+      if (detailCase_ == DetailOneofCase.PotionInfo) {
+        output.WriteRawTag(250, 97);
+        output.WriteMessage(PotionInfo);
+      }
+      if (Unk3300NEPKLLBJFKK != false) {
+        output.WriteRawTag(232, 102);
+        output.WriteBool(Unk3300NEPKLLBJFKK);
+      }
+      if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
+        output.WriteRawTag(242, 103);
+        output.WriteMessage(MuqadasPotionInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
+        output.WriteRawTag(194, 109);
+        output.WriteMessage(ExpeditionInfo);
+      }
+      if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
+        output.WriteRawTag(234, 109);
+        output.WriteMessage(FungusFighterInfo);
+      }
+      if (detailCase_ == DetailOneofCase.PhotoInfo) {
+        output.WriteRawTag(242, 113);
+        output.WriteMessage(PhotoInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
+        output.WriteRawTag(250, 114);
+        output.WriteMessage(MichiaeMatsuriInfo);
+      }
+      if (detailCase_ == DetailOneofCase.DigInfo) {
+        output.WriteRawTag(178, 116);
+        output.WriteMessage(DigInfo);
+      }
+      activityPushTipsDataList_.WriteTo(ref output, _repeated_activityPushTipsDataList_codec);
+      if (ScoreLimit != 0) {
+        output.WriteRawTag(240, 116);
+        output.WriteUInt32(ScoreLimit);
+      }
+      takenRewardList_.WriteTo(ref output, _repeated_takenRewardList_codec);
+      if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
+        output.WriteRawTag(178, 119);
+        output.WriteMessage(SummerTimeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
+        output.WriteRawTag(170, 120);
+        output.WriteMessage(TreasureMapInfo);
+      }
+      if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
+        output.WriteRawTag(194, 120);
+        output.WriteMessage(GravenInnocenceInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BlessingInfo) {
+        output.WriteRawTag(210, 122);
+        output.WriteMessage(BlessingInfo);
+      }
+      if (detailCase_ == DetailOneofCase.AsterInfo) {
+        output.WriteRawTag(202, 123);
+        output.WriteMessage(AsterInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MusicGameInfo) {
+        output.WriteRawTag(170, 124);
+        output.WriteMessage(MusicGameInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+        output.WriteRawTag(146, 125);
+        output.WriteMessage(CoinCollectInfo);
+      }
+      if (detailCase_ == DetailOneofCase.FlightInfo) {
+        output.WriteRawTag(218, 125);
+        output.WriteMessage(FlightInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Unk3300MJNPGEKLOCG != false) {
+        size += 2 + 1;
+      }
+      if (IsFinished != false) {
+        size += 1 + 1;
+      }
+      if (CurScore != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
+      }
+      if (ScheduleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
+      }
+      if (ScoreLimit != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ScoreLimit);
+      }
+      if (Unk3300ICNJJKDHPCH != false) {
+        size += 1 + 1;
+      }
+      size += meetCondList_.CalculateSize(_repeated_meetCondList_codec);
+      if (Unk3300NEPKLLBJFKK != false) {
+        size += 2 + 1;
+      }
+      size += watcherInfoList_.CalculateSize(_repeated_watcherInfoList_codec);
+      size += activityPushTipsDataList_.CalculateSize(_repeated_activityPushTipsDataList_codec);
+      if (ActivityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
+      }
+      size += takenRewardList_.CalculateSize(_repeated_takenRewardList_codec);
+      if (SelectedAvatarRewardId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(SelectedAvatarRewardId);
+      }
+      size += activityCoinMap_.CalculateSize(_map_activityCoinMap_codec);
+      if (FirstDayStartTime != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(FirstDayStartTime);
+      }
+      if (Unk3300ABJKLALKLDG != false) {
+        size += 2 + 1;
+      }
+      if (ActivityType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityType);
+      }
+      if (Unk3300CBCEHLJJOGI != false) {
+        size += 2 + 1;
+      }
+      if (BeginTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      }
+      if (Unk3300MDBDPIBEGGH != false) {
+        size += 1 + 1;
+      }
+      size += wishGiftNumMap_.CalculateSize(_map_wishGiftNumMap_codec);
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      }
+      size += expireCondList_.CalculateSize(_repeated_expireCondList_codec);
+      if (detailCase_ == DetailOneofCase.SamLampInfo) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SamLampInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CrucibleInfo) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CrucibleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SalesmanInfo) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SalesmanInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TrialAvatarInfo);
+      }
+      if (detailCase_ == DetailOneofCase.DeliveryInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(DeliveryInfo);
+      }
+      if (detailCase_ == DetailOneofCase.AsterInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(AsterInfo);
+      }
+      if (detailCase_ == DetailOneofCase.FlightInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(FlightInfo);
+      }
+      if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(DragonSpineInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EffigyInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(EffigyInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TreasureMapInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BlessingInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(BlessingInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SeaLampInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SeaLampInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ExpeditionInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ArenaChallengeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(FleurFairInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(WaterSpiritInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ChannelerSlabInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(MistTrialActivityInfo);
+      }
+      if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(HideAndSeekInfo);
+      }
+      if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(FindHilichurlInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SummerTimeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(BuoyantCombatInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EchoShellInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(EchoShellInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(BounceConjuringInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(BlitzRushInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChessInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ChessInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SumoInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SumoInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(MoonfinTrialInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(LunaRiteInfo);
+      }
+      if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PlantFlowerInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MusicGameInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(MusicGameInfo);
+      }
+      if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(RoguelikeDungeonInfo);
+      }
+      if (detailCase_ == DetailOneofCase.DigInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(DigInfo);
+      }
+      if (detailCase_ == DetailOneofCase.HachiInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(HachiInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WinterCampInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(WinterCampInfo);
+      }
+      if (detailCase_ == DetailOneofCase.PotionInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PotionInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TanukiTravelActivityInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(LanternRiteActivityInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(MichiaeMatsuriInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BartenderInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(BartenderInfo);
+      }
+      if (detailCase_ == DetailOneofCase.UgcInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(UgcInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CrystalLinkInfo);
+      }
+      if (detailCase_ == DetailOneofCase.IrodoriInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(IrodoriInfo);
+      }
+      if (detailCase_ == DetailOneofCase.PhotoInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(PhotoInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SpiceInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SpiceInfo);
+      }
+      if (detailCase_ == DetailOneofCase.GachaInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(GachaInfo);
+      }
+      if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(LuminanceStoneChallengeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(RogueDiaryInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SummerTimeV2Info);
+      }
+      if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(IslandPartyInfo);
+      }
+      if (detailCase_ == DetailOneofCase.GearInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(GearInfo);
+      }
+      if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(GravenInnocenceInfo);
+      }
+      if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(InstableSprayInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(MuqadasPotionInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TreasureSeelieInfo);
+      }
+      if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(RockBoardExploreInfo);
+      }
+      if (detailCase_ == DetailOneofCase.VintageInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(VintageInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WindFieldInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(WindFieldInfo);
+      }
+      if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(FungusFighterInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CharAmusementInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(EffigyChallengeInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CoinCollectInfo);
+      }
+      if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(BrickBreakerInfo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ActivityInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Unk3300MJNPGEKLOCG != false) {
+        Unk3300MJNPGEKLOCG = other.Unk3300MJNPGEKLOCG;
+      }
+      if (other.IsFinished != false) {
+        IsFinished = other.IsFinished;
+      }
+      if (other.CurScore != 0) {
+        CurScore = other.CurScore;
+      }
+      if (other.ScheduleId != 0) {
+        ScheduleId = other.ScheduleId;
+      }
+      if (other.ScoreLimit != 0) {
+        ScoreLimit = other.ScoreLimit;
+      }
+      if (other.Unk3300ICNJJKDHPCH != false) {
+        Unk3300ICNJJKDHPCH = other.Unk3300ICNJJKDHPCH;
+      }
+      meetCondList_.Add(other.meetCondList_);
+      if (other.Unk3300NEPKLLBJFKK != false) {
+        Unk3300NEPKLLBJFKK = other.Unk3300NEPKLLBJFKK;
+      }
+      watcherInfoList_.Add(other.watcherInfoList_);
+      activityPushTipsDataList_.Add(other.activityPushTipsDataList_);
+      if (other.ActivityId != 0) {
+        ActivityId = other.ActivityId;
+      }
+      takenRewardList_.Add(other.takenRewardList_);
+      if (other.SelectedAvatarRewardId != 0) {
+        SelectedAvatarRewardId = other.SelectedAvatarRewardId;
+      }
+      activityCoinMap_.Add(other.activityCoinMap_);
+      if (other.FirstDayStartTime != 0) {
+        FirstDayStartTime = other.FirstDayStartTime;
+      }
+      if (other.Unk3300ABJKLALKLDG != false) {
+        Unk3300ABJKLALKLDG = other.Unk3300ABJKLALKLDG;
+      }
+      if (other.ActivityType != 0) {
+        ActivityType = other.ActivityType;
+      }
+      if (other.Unk3300CBCEHLJJOGI != false) {
+        Unk3300CBCEHLJJOGI = other.Unk3300CBCEHLJJOGI;
+      }
+      if (other.BeginTime != 0) {
+        BeginTime = other.BeginTime;
+      }
+      if (other.Unk3300MDBDPIBEGGH != false) {
+        Unk3300MDBDPIBEGGH = other.Unk3300MDBDPIBEGGH;
+      }
+      wishGiftNumMap_.Add(other.wishGiftNumMap_);
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
+      }
+      expireCondList_.Add(other.expireCondList_);
+      switch (other.DetailCase) {
+        case DetailOneofCase.SamLampInfo:
+          if (SamLampInfo == null) {
+            SamLampInfo = new global::NewProtos.SeaLampActivityDetailInfo();
+          }
+          SamLampInfo.MergeFrom(other.SamLampInfo);
+          break;
+        case DetailOneofCase.CrucibleInfo:
+          if (CrucibleInfo == null) {
+            CrucibleInfo = new global::NewProtos.CrucibleActivityDetailInfo();
+          }
+          CrucibleInfo.MergeFrom(other.CrucibleInfo);
+          break;
+        case DetailOneofCase.SalesmanInfo:
+          if (SalesmanInfo == null) {
+            SalesmanInfo = new global::NewProtos.SalesmanActivityDetailInfo();
+          }
+          SalesmanInfo.MergeFrom(other.SalesmanInfo);
+          break;
+        case DetailOneofCase.TrialAvatarInfo:
+          if (TrialAvatarInfo == null) {
+            TrialAvatarInfo = new global::NewProtos.TrialAvatarActivityDetailInfo();
+          }
+          TrialAvatarInfo.MergeFrom(other.TrialAvatarInfo);
+          break;
+        case DetailOneofCase.DeliveryInfo:
+          if (DeliveryInfo == null) {
+            DeliveryInfo = new global::NewProtos.DeliveryActivityDetailInfo();
+          }
+          DeliveryInfo.MergeFrom(other.DeliveryInfo);
+          break;
+        case DetailOneofCase.AsterInfo:
+          if (AsterInfo == null) {
+            AsterInfo = new global::NewProtos.AsterActivityDetailInfo();
+          }
+          AsterInfo.MergeFrom(other.AsterInfo);
+          break;
+        case DetailOneofCase.FlightInfo:
+          if (FlightInfo == null) {
+            FlightInfo = new global::NewProtos.FlightActivityDetailInfo();
+          }
+          FlightInfo.MergeFrom(other.FlightInfo);
+          break;
+        case DetailOneofCase.DragonSpineInfo:
+          if (DragonSpineInfo == null) {
+            DragonSpineInfo = new global::NewProtos.DragonSpineActivityDetailInfo();
+          }
+          DragonSpineInfo.MergeFrom(other.DragonSpineInfo);
+          break;
+        case DetailOneofCase.EffigyInfo:
+          if (EffigyInfo == null) {
+            EffigyInfo = new global::NewProtos.EffigyActivityDetailInfo();
+          }
+          EffigyInfo.MergeFrom(other.EffigyInfo);
+          break;
+        case DetailOneofCase.TreasureMapInfo:
+          if (TreasureMapInfo == null) {
+            TreasureMapInfo = new global::NewProtos.TreasureMapActivityDetailInfo();
+          }
+          TreasureMapInfo.MergeFrom(other.TreasureMapInfo);
+          break;
+        case DetailOneofCase.BlessingInfo:
+          if (BlessingInfo == null) {
+            BlessingInfo = new global::NewProtos.BlessingActivityDetailInfo();
+          }
+          BlessingInfo.MergeFrom(other.BlessingInfo);
+          break;
+        case DetailOneofCase.SeaLampInfo:
+          if (SeaLampInfo == null) {
+            SeaLampInfo = new global::NewProtos.SeaLampActivityInfo();
+          }
+          SeaLampInfo.MergeFrom(other.SeaLampInfo);
+          break;
+        case DetailOneofCase.ExpeditionInfo:
+          if (ExpeditionInfo == null) {
+            ExpeditionInfo = new global::NewProtos.ExpeditionActivityDetailInfo();
+          }
+          ExpeditionInfo.MergeFrom(other.ExpeditionInfo);
+          break;
+        case DetailOneofCase.ArenaChallengeInfo:
+          if (ArenaChallengeInfo == null) {
+            ArenaChallengeInfo = new global::NewProtos.ArenaChallengeActivityDetailInfo();
+          }
+          ArenaChallengeInfo.MergeFrom(other.ArenaChallengeInfo);
+          break;
+        case DetailOneofCase.FleurFairInfo:
+          if (FleurFairInfo == null) {
+            FleurFairInfo = new global::NewProtos.FleurFairActivityDetailInfo();
+          }
+          FleurFairInfo.MergeFrom(other.FleurFairInfo);
+          break;
+        case DetailOneofCase.WaterSpiritInfo:
+          if (WaterSpiritInfo == null) {
+            WaterSpiritInfo = new global::NewProtos.WaterSpiritActivityDetailInfo();
+          }
+          WaterSpiritInfo.MergeFrom(other.WaterSpiritInfo);
+          break;
+        case DetailOneofCase.ChannelerSlabInfo:
+          if (ChannelerSlabInfo == null) {
+            ChannelerSlabInfo = new global::NewProtos.ChannelerSlabActivityDetailInfo();
+          }
+          ChannelerSlabInfo.MergeFrom(other.ChannelerSlabInfo);
+          break;
+        case DetailOneofCase.MistTrialActivityInfo:
+          if (MistTrialActivityInfo == null) {
+            MistTrialActivityInfo = new global::NewProtos.MistTrialActivityDetailInfo();
+          }
+          MistTrialActivityInfo.MergeFrom(other.MistTrialActivityInfo);
+          break;
+        case DetailOneofCase.HideAndSeekInfo:
+          if (HideAndSeekInfo == null) {
+            HideAndSeekInfo = new global::NewProtos.HideAndSeekActivityDetailInfo();
+          }
+          HideAndSeekInfo.MergeFrom(other.HideAndSeekInfo);
+          break;
+        case DetailOneofCase.FindHilichurlInfo:
+          if (FindHilichurlInfo == null) {
+            FindHilichurlInfo = new global::NewProtos.FindHilichurlDetailInfo();
+          }
+          FindHilichurlInfo.MergeFrom(other.FindHilichurlInfo);
+          break;
+        case DetailOneofCase.SummerTimeInfo:
+          if (SummerTimeInfo == null) {
+            SummerTimeInfo = new global::NewProtos.SummerTimeDetailInfo();
+          }
+          SummerTimeInfo.MergeFrom(other.SummerTimeInfo);
+          break;
+        case DetailOneofCase.BuoyantCombatInfo:
+          if (BuoyantCombatInfo == null) {
+            BuoyantCombatInfo = new global::NewProtos.BuoyantCombatDetailInfo();
+          }
+          BuoyantCombatInfo.MergeFrom(other.BuoyantCombatInfo);
+          break;
+        case DetailOneofCase.EchoShellInfo:
+          if (EchoShellInfo == null) {
+            EchoShellInfo = new global::NewProtos.EchoShellDetailInfo();
+          }
+          EchoShellInfo.MergeFrom(other.EchoShellInfo);
+          break;
+        case DetailOneofCase.BounceConjuringInfo:
+          if (BounceConjuringInfo == null) {
+            BounceConjuringInfo = new global::NewProtos.BounceConjuringActivityDetailInfo();
+          }
+          BounceConjuringInfo.MergeFrom(other.BounceConjuringInfo);
+          break;
+        case DetailOneofCase.BlitzRushInfo:
+          if (BlitzRushInfo == null) {
+            BlitzRushInfo = new global::NewProtos.BlitzRushActivityDetailInfo();
+          }
+          BlitzRushInfo.MergeFrom(other.BlitzRushInfo);
+          break;
+        case DetailOneofCase.ChessInfo:
+          if (ChessInfo == null) {
+            ChessInfo = new global::NewProtos.ChessActivityDetailInfo();
+          }
+          ChessInfo.MergeFrom(other.ChessInfo);
+          break;
+        case DetailOneofCase.SumoInfo:
+          if (SumoInfo == null) {
+            SumoInfo = new global::NewProtos.SumoActivityDetailInfo();
+          }
+          SumoInfo.MergeFrom(other.SumoInfo);
+          break;
+        case DetailOneofCase.MoonfinTrialInfo:
+          if (MoonfinTrialInfo == null) {
+            MoonfinTrialInfo = new global::NewProtos.MoonfinTrialActivityDetailInfo();
+          }
+          MoonfinTrialInfo.MergeFrom(other.MoonfinTrialInfo);
+          break;
+        case DetailOneofCase.LunaRiteInfo:
+          if (LunaRiteInfo == null) {
+            LunaRiteInfo = new global::NewProtos.LunaRiteDetailInfo();
+          }
+          LunaRiteInfo.MergeFrom(other.LunaRiteInfo);
+          break;
+        case DetailOneofCase.PlantFlowerInfo:
+          if (PlantFlowerInfo == null) {
+            PlantFlowerInfo = new global::NewProtos.PlantFlowerActivityDetailInfo();
+          }
+          PlantFlowerInfo.MergeFrom(other.PlantFlowerInfo);
+          break;
+        case DetailOneofCase.MusicGameInfo:
+          if (MusicGameInfo == null) {
+            MusicGameInfo = new global::NewProtos.MusicGameActivityDetailInfo();
+          }
+          MusicGameInfo.MergeFrom(other.MusicGameInfo);
+          break;
+        case DetailOneofCase.RoguelikeDungeonInfo:
+          if (RoguelikeDungeonInfo == null) {
+            RoguelikeDungeonInfo = new global::NewProtos.RoguelikeDungeonActivityDetailInfo();
+          }
+          RoguelikeDungeonInfo.MergeFrom(other.RoguelikeDungeonInfo);
+          break;
+        case DetailOneofCase.DigInfo:
+          if (DigInfo == null) {
+            DigInfo = new global::NewProtos.DigActivityDetailInfo();
+          }
+          DigInfo.MergeFrom(other.DigInfo);
+          break;
+        case DetailOneofCase.HachiInfo:
+          if (HachiInfo == null) {
+            HachiInfo = new global::NewProtos.HachiActivityDetailInfo();
+          }
+          HachiInfo.MergeFrom(other.HachiInfo);
+          break;
+        case DetailOneofCase.WinterCampInfo:
+          if (WinterCampInfo == null) {
+            WinterCampInfo = new global::NewProtos.WinterCampActivityDetailInfo();
+          }
+          WinterCampInfo.MergeFrom(other.WinterCampInfo);
+          break;
+        case DetailOneofCase.PotionInfo:
+          if (PotionInfo == null) {
+            PotionInfo = new global::NewProtos.PotionActivityDetailInfo();
+          }
+          PotionInfo.MergeFrom(other.PotionInfo);
+          break;
+        case DetailOneofCase.TanukiTravelActivityInfo:
+          if (TanukiTravelActivityInfo == null) {
+            TanukiTravelActivityInfo = new global::NewProtos.TanukiTravelActivityDetailInfo();
+          }
+          TanukiTravelActivityInfo.MergeFrom(other.TanukiTravelActivityInfo);
+          break;
+        case DetailOneofCase.LanternRiteActivityInfo:
+          if (LanternRiteActivityInfo == null) {
+            LanternRiteActivityInfo = new global::NewProtos.LanternRiteActivityDetailInfo();
+          }
+          LanternRiteActivityInfo.MergeFrom(other.LanternRiteActivityInfo);
+          break;
+        case DetailOneofCase.MichiaeMatsuriInfo:
+          if (MichiaeMatsuriInfo == null) {
+            MichiaeMatsuriInfo = new global::NewProtos.MichiaeMatsuriActivityDetailInfo();
+          }
+          MichiaeMatsuriInfo.MergeFrom(other.MichiaeMatsuriInfo);
+          break;
+        case DetailOneofCase.BartenderInfo:
+          if (BartenderInfo == null) {
+            BartenderInfo = new global::NewProtos.BartenderActivityDetailInfo();
+          }
+          BartenderInfo.MergeFrom(other.BartenderInfo);
+          break;
+        case DetailOneofCase.UgcInfo:
+          if (UgcInfo == null) {
+            UgcInfo = new global::NewProtos.UgcActivityDetailInfo();
+          }
+          UgcInfo.MergeFrom(other.UgcInfo);
+          break;
+        case DetailOneofCase.CrystalLinkInfo:
+          if (CrystalLinkInfo == null) {
+            CrystalLinkInfo = new global::NewProtos.CrystalLinkActivityDetailInfo();
+          }
+          CrystalLinkInfo.MergeFrom(other.CrystalLinkInfo);
+          break;
+        case DetailOneofCase.IrodoriInfo:
+          if (IrodoriInfo == null) {
+            IrodoriInfo = new global::NewProtos.IrodoriActivityDetailInfo();
+          }
+          IrodoriInfo.MergeFrom(other.IrodoriInfo);
+          break;
+        case DetailOneofCase.PhotoInfo:
+          if (PhotoInfo == null) {
+            PhotoInfo = new global::NewProtos.PhotoActivityDetailInfo();
+          }
+          PhotoInfo.MergeFrom(other.PhotoInfo);
+          break;
+        case DetailOneofCase.SpiceInfo:
+          if (SpiceInfo == null) {
+            SpiceInfo = new global::NewProtos.SpiceActivityDetailInfo();
+          }
+          SpiceInfo.MergeFrom(other.SpiceInfo);
+          break;
+        case DetailOneofCase.GachaInfo:
+          if (GachaInfo == null) {
+            GachaInfo = new global::NewProtos.GachaActivityDetailInfo();
+          }
+          GachaInfo.MergeFrom(other.GachaInfo);
+          break;
+        case DetailOneofCase.LuminanceStoneChallengeInfo:
+          if (LuminanceStoneChallengeInfo == null) {
+            LuminanceStoneChallengeInfo = new global::NewProtos.LuminanceStoneChallengeActivityDetailInfo();
+          }
+          LuminanceStoneChallengeInfo.MergeFrom(other.LuminanceStoneChallengeInfo);
+          break;
+        case DetailOneofCase.RogueDiaryInfo:
+          if (RogueDiaryInfo == null) {
+            RogueDiaryInfo = new global::NewProtos.RogueDiaryActivityDetailInfo();
+          }
+          RogueDiaryInfo.MergeFrom(other.RogueDiaryInfo);
+          break;
+        case DetailOneofCase.SummerTimeV2Info:
+          if (SummerTimeV2Info == null) {
+            SummerTimeV2Info = new global::NewProtos.SummerTimeV2DetailInfo();
+          }
+          SummerTimeV2Info.MergeFrom(other.SummerTimeV2Info);
+          break;
+        case DetailOneofCase.IslandPartyInfo:
+          if (IslandPartyInfo == null) {
+            IslandPartyInfo = new global::NewProtos.IslandPartyDetailInfo();
+          }
+          IslandPartyInfo.MergeFrom(other.IslandPartyInfo);
+          break;
+        case DetailOneofCase.GearInfo:
+          if (GearInfo == null) {
+            GearInfo = new global::NewProtos.GearActivityDetailInfo();
+          }
+          GearInfo.MergeFrom(other.GearInfo);
+          break;
+        case DetailOneofCase.GravenInnocenceInfo:
+          if (GravenInnocenceInfo == null) {
+            GravenInnocenceInfo = new global::NewProtos.GravenInnocenceDetailInfo();
+          }
+          GravenInnocenceInfo.MergeFrom(other.GravenInnocenceInfo);
+          break;
+        case DetailOneofCase.InstableSprayInfo:
+          if (InstableSprayInfo == null) {
+            InstableSprayInfo = new global::NewProtos.InstableSprayDetailInfo();
+          }
+          InstableSprayInfo.MergeFrom(other.InstableSprayInfo);
+          break;
+        case DetailOneofCase.MuqadasPotionInfo:
+          if (MuqadasPotionInfo == null) {
+            MuqadasPotionInfo = new global::NewProtos.MuqadasPotionActivityDetailInfo();
+          }
+          MuqadasPotionInfo.MergeFrom(other.MuqadasPotionInfo);
+          break;
+        case DetailOneofCase.TreasureSeelieInfo:
+          if (TreasureSeelieInfo == null) {
+            TreasureSeelieInfo = new global::NewProtos.TreasureSeelieActivityDetailInfo();
+          }
+          TreasureSeelieInfo.MergeFrom(other.TreasureSeelieInfo);
+          break;
+        case DetailOneofCase.RockBoardExploreInfo:
+          if (RockBoardExploreInfo == null) {
+            RockBoardExploreInfo = new global::NewProtos.RockBoardExploreDetailInfo();
+          }
+          RockBoardExploreInfo.MergeFrom(other.RockBoardExploreInfo);
+          break;
+        case DetailOneofCase.VintageInfo:
+          if (VintageInfo == null) {
+            VintageInfo = new global::NewProtos.VintageActivityDetailInfo();
+          }
+          VintageInfo.MergeFrom(other.VintageInfo);
+          break;
+        case DetailOneofCase.WindFieldInfo:
+          if (WindFieldInfo == null) {
+            WindFieldInfo = new global::NewProtos.WindFieldDetailInfo();
+          }
+          WindFieldInfo.MergeFrom(other.WindFieldInfo);
+          break;
+        case DetailOneofCase.FungusFighterInfo:
+          if (FungusFighterInfo == null) {
+            FungusFighterInfo = new global::NewProtos.FungusFighterDetailInfo();
+          }
+          FungusFighterInfo.MergeFrom(other.FungusFighterInfo);
+          break;
+        case DetailOneofCase.CharAmusementInfo:
+          if (CharAmusementInfo == null) {
+            CharAmusementInfo = new global::NewProtos.CharAmusementDetailInfo();
+          }
+          CharAmusementInfo.MergeFrom(other.CharAmusementInfo);
+          break;
+        case DetailOneofCase.EffigyChallengeInfo:
+          if (EffigyChallengeInfo == null) {
+            EffigyChallengeInfo = new global::NewProtos.EffigyChallengeV2DetailInfo();
+          }
+          EffigyChallengeInfo.MergeFrom(other.EffigyChallengeInfo);
+          break;
+        case DetailOneofCase.CoinCollectInfo:
+          if (CoinCollectInfo == null) {
+            CoinCollectInfo = new global::NewProtos.CoinCollectDetailInfo();
+          }
+          CoinCollectInfo.MergeFrom(other.CoinCollectInfo);
+          break;
+        case DetailOneofCase.BrickBreakerInfo:
+          if (BrickBreakerInfo == null) {
+            BrickBreakerInfo = new global::NewProtos.BrickBreakerDetailInfo();
+          }
+          BrickBreakerInfo.MergeFrom(other.BrickBreakerInfo);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 18: {
+            global::NewProtos.SeaLampActivityDetailInfo subBuilder = new global::NewProtos.SeaLampActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.SamLampInfo) {
+              subBuilder.MergeFrom(SamLampInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SamLampInfo = subBuilder;
+            break;
+          }
+          case 24: {
+            ActivityType = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            global::NewProtos.TrialAvatarActivityDetailInfo subBuilder = new global::NewProtos.TrialAvatarActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
+              subBuilder.MergeFrom(TrialAvatarInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TrialAvatarInfo = subBuilder;
+            break;
+          }
+          case 42:
+          case 40: {
+            expireCondList_.AddEntriesFrom(input, _repeated_expireCondList_codec);
+            break;
+          }
+          case 50: {
+            watcherInfoList_.AddEntriesFrom(input, _repeated_watcherInfoList_codec);
+            break;
+          }
+          case 56: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            IsFinished = input.ReadBool();
+            break;
+          }
+          case 74: {
+            global::NewProtos.SalesmanActivityDetailInfo subBuilder = new global::NewProtos.SalesmanActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.SalesmanInfo) {
+              subBuilder.MergeFrom(SalesmanInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SalesmanInfo = subBuilder;
+            break;
+          }
+          case 80: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 90:
+          case 88: {
+            meetCondList_.AddEntriesFrom(input, _repeated_meetCondList_codec);
+            break;
+          }
+          case 96: {
+            Unk3300MDBDPIBEGGH = input.ReadBool();
+            break;
+          }
+          case 104: {
+            ActivityId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300ICNJJKDHPCH = input.ReadBool();
+            break;
+          }
+          case 122: {
+            global::NewProtos.CrucibleActivityDetailInfo subBuilder = new global::NewProtos.CrucibleActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.CrucibleInfo) {
+              subBuilder.MergeFrom(CrucibleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CrucibleInfo = subBuilder;
+            break;
+          }
+          case 290: {
+            activityCoinMap_.AddEntriesFrom(input, _map_activityCoinMap_codec);
+            break;
+          }
+          case 514: {
+            global::NewProtos.BlitzRushActivityDetailInfo subBuilder = new global::NewProtos.BlitzRushActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
+              subBuilder.MergeFrom(BlitzRushInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BlitzRushInfo = subBuilder;
+            break;
+          }
+          case 1866: {
+            global::NewProtos.EffigyChallengeV2DetailInfo subBuilder = new global::NewProtos.EffigyChallengeV2DetailInfo();
+            if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
+              subBuilder.MergeFrom(EffigyChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EffigyChallengeInfo = subBuilder;
+            break;
+          }
+          case 1898: {
+            global::NewProtos.LanternRiteActivityDetailInfo subBuilder = new global::NewProtos.LanternRiteActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
+              subBuilder.MergeFrom(LanternRiteActivityInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LanternRiteActivityInfo = subBuilder;
+            break;
+          }
+          case 1978: {
+            global::NewProtos.SeaLampActivityInfo subBuilder = new global::NewProtos.SeaLampActivityInfo();
+            if (detailCase_ == DetailOneofCase.SeaLampInfo) {
+              subBuilder.MergeFrom(SeaLampInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SeaLampInfo = subBuilder;
+            break;
+          }
+          case 2880: {
+            Unk3300MJNPGEKLOCG = input.ReadBool();
+            break;
+          }
+          case 3026: {
+            global::NewProtos.FindHilichurlDetailInfo subBuilder = new global::NewProtos.FindHilichurlDetailInfo();
+            if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
+              subBuilder.MergeFrom(FindHilichurlInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FindHilichurlInfo = subBuilder;
+            break;
+          }
+          case 3290: {
+            global::NewProtos.SummerTimeV2DetailInfo subBuilder = new global::NewProtos.SummerTimeV2DetailInfo();
+            if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
+              subBuilder.MergeFrom(SummerTimeV2Info);
+            }
+            input.ReadMessage(subBuilder);
+            SummerTimeV2Info = subBuilder;
+            break;
+          }
+          case 3458: {
+            global::NewProtos.MistTrialActivityDetailInfo subBuilder = new global::NewProtos.MistTrialActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
+              subBuilder.MergeFrom(MistTrialActivityInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MistTrialActivityInfo = subBuilder;
+            break;
+          }
+          case 3554: {
+            global::NewProtos.LuminanceStoneChallengeActivityDetailInfo subBuilder = new global::NewProtos.LuminanceStoneChallengeActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
+              subBuilder.MergeFrom(LuminanceStoneChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LuminanceStoneChallengeInfo = subBuilder;
+            break;
+          }
+          case 3746: {
+            global::NewProtos.WindFieldDetailInfo subBuilder = new global::NewProtos.WindFieldDetailInfo();
+            if (detailCase_ == DetailOneofCase.WindFieldInfo) {
+              subBuilder.MergeFrom(WindFieldInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WindFieldInfo = subBuilder;
+            break;
+          }
+          case 4042: {
+            global::NewProtos.SumoActivityDetailInfo subBuilder = new global::NewProtos.SumoActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.SumoInfo) {
+              subBuilder.MergeFrom(SumoInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SumoInfo = subBuilder;
+            break;
+          }
+          case 4090: {
+            global::NewProtos.HachiActivityDetailInfo subBuilder = new global::NewProtos.HachiActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.HachiInfo) {
+              subBuilder.MergeFrom(HachiInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HachiInfo = subBuilder;
+            break;
+          }
+          case 4306: {
+            global::NewProtos.ArenaChallengeActivityDetailInfo subBuilder = new global::NewProtos.ArenaChallengeActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
+              subBuilder.MergeFrom(ArenaChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ArenaChallengeInfo = subBuilder;
+            break;
+          }
+          case 4410: {
+            global::NewProtos.BartenderActivityDetailInfo subBuilder = new global::NewProtos.BartenderActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BartenderInfo) {
+              subBuilder.MergeFrom(BartenderInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BartenderInfo = subBuilder;
+            break;
+          }
+          case 4482: {
+            global::NewProtos.RogueDiaryActivityDetailInfo subBuilder = new global::NewProtos.RogueDiaryActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
+              subBuilder.MergeFrom(RogueDiaryInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RogueDiaryInfo = subBuilder;
+            break;
+          }
+          case 4970: {
+            global::NewProtos.CharAmusementDetailInfo subBuilder = new global::NewProtos.CharAmusementDetailInfo();
+            if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
+              subBuilder.MergeFrom(CharAmusementInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CharAmusementInfo = subBuilder;
+            break;
+          }
+          case 5082: {
+            global::NewProtos.WaterSpiritActivityDetailInfo subBuilder = new global::NewProtos.WaterSpiritActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
+              subBuilder.MergeFrom(WaterSpiritInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WaterSpiritInfo = subBuilder;
+            break;
+          }
+          case 5490: {
+            global::NewProtos.BuoyantCombatDetailInfo subBuilder = new global::NewProtos.BuoyantCombatDetailInfo();
+            if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
+              subBuilder.MergeFrom(BuoyantCombatInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BuoyantCombatInfo = subBuilder;
+            break;
+          }
+          case 5576: {
+            SelectedAvatarRewardId = input.ReadUInt32();
+            break;
+          }
+          case 5594: {
+            global::NewProtos.WinterCampActivityDetailInfo subBuilder = new global::NewProtos.WinterCampActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.WinterCampInfo) {
+              subBuilder.MergeFrom(WinterCampInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WinterCampInfo = subBuilder;
+            break;
+          }
+          case 5922: {
+            global::NewProtos.IslandPartyDetailInfo subBuilder = new global::NewProtos.IslandPartyDetailInfo();
+            if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
+              subBuilder.MergeFrom(IslandPartyInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IslandPartyInfo = subBuilder;
+            break;
+          }
+          case 6130: {
+            global::NewProtos.MoonfinTrialActivityDetailInfo subBuilder = new global::NewProtos.MoonfinTrialActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
+              subBuilder.MergeFrom(MoonfinTrialInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MoonfinTrialInfo = subBuilder;
+            break;
+          }
+          case 6288: {
+            FirstDayStartTime = input.ReadUInt32();
+            break;
+          }
+          case 6314: {
+            global::NewProtos.SpiceActivityDetailInfo subBuilder = new global::NewProtos.SpiceActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.SpiceInfo) {
+              subBuilder.MergeFrom(SpiceInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SpiceInfo = subBuilder;
+            break;
+          }
+          case 6498: {
+            global::NewProtos.CrystalLinkActivityDetailInfo subBuilder = new global::NewProtos.CrystalLinkActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
+              subBuilder.MergeFrom(CrystalLinkInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CrystalLinkInfo = subBuilder;
+            break;
+          }
+          case 6714: {
+            global::NewProtos.HideAndSeekActivityDetailInfo subBuilder = new global::NewProtos.HideAndSeekActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+              subBuilder.MergeFrom(HideAndSeekInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HideAndSeekInfo = subBuilder;
+            break;
+          }
+          case 6770: {
+            global::NewProtos.ChannelerSlabActivityDetailInfo subBuilder = new global::NewProtos.ChannelerSlabActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
+              subBuilder.MergeFrom(ChannelerSlabInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChannelerSlabInfo = subBuilder;
+            break;
+          }
+          case 7378: {
+            global::NewProtos.BounceConjuringActivityDetailInfo subBuilder = new global::NewProtos.BounceConjuringActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
+              subBuilder.MergeFrom(BounceConjuringInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BounceConjuringInfo = subBuilder;
+            break;
+          }
+          case 7514: {
+            wishGiftNumMap_.AddEntriesFrom(input, _map_wishGiftNumMap_codec);
+            break;
+          }
+          case 7762: {
+            global::NewProtos.RoguelikeDungeonActivityDetailInfo subBuilder = new global::NewProtos.RoguelikeDungeonActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
+              subBuilder.MergeFrom(RoguelikeDungeonInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RoguelikeDungeonInfo = subBuilder;
+            break;
+          }
+          case 8050: {
+            global::NewProtos.ChessActivityDetailInfo subBuilder = new global::NewProtos.ChessActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ChessInfo) {
+              subBuilder.MergeFrom(ChessInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChessInfo = subBuilder;
+            break;
+          }
+          case 8258: {
+            global::NewProtos.TreasureSeelieActivityDetailInfo subBuilder = new global::NewProtos.TreasureSeelieActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
+              subBuilder.MergeFrom(TreasureSeelieInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TreasureSeelieInfo = subBuilder;
+            break;
+          }
+          case 8450: {
+            global::NewProtos.IrodoriActivityDetailInfo subBuilder = new global::NewProtos.IrodoriActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.IrodoriInfo) {
+              subBuilder.MergeFrom(IrodoriInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IrodoriInfo = subBuilder;
+            break;
+          }
+          case 9130: {
+            global::NewProtos.DeliveryActivityDetailInfo subBuilder = new global::NewProtos.DeliveryActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.DeliveryInfo) {
+              subBuilder.MergeFrom(DeliveryInfo);
+            }
+            input.ReadMessage(subBuilder);
+            DeliveryInfo = subBuilder;
+            break;
+          }
+          case 9162: {
+            global::NewProtos.InstableSprayDetailInfo subBuilder = new global::NewProtos.InstableSprayDetailInfo();
+            if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
+              subBuilder.MergeFrom(InstableSprayInfo);
+            }
+            input.ReadMessage(subBuilder);
+            InstableSprayInfo = subBuilder;
+            break;
+          }
+          case 9298: {
+            global::NewProtos.EchoShellDetailInfo subBuilder = new global::NewProtos.EchoShellDetailInfo();
+            if (detailCase_ == DetailOneofCase.EchoShellInfo) {
+              subBuilder.MergeFrom(EchoShellInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EchoShellInfo = subBuilder;
+            break;
+          }
+          case 9458: {
+            global::NewProtos.UgcActivityDetailInfo subBuilder = new global::NewProtos.UgcActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.UgcInfo) {
+              subBuilder.MergeFrom(UgcInfo);
+            }
+            input.ReadMessage(subBuilder);
+            UgcInfo = subBuilder;
+            break;
+          }
+          case 10122: {
+            global::NewProtos.RockBoardExploreDetailInfo subBuilder = new global::NewProtos.RockBoardExploreDetailInfo();
+            if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
+              subBuilder.MergeFrom(RockBoardExploreInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RockBoardExploreInfo = subBuilder;
+            break;
+          }
+          case 10144: {
+            CurScore = input.ReadUInt32();
+            break;
+          }
+          case 10194: {
+            global::NewProtos.PlantFlowerActivityDetailInfo subBuilder = new global::NewProtos.PlantFlowerActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
+              subBuilder.MergeFrom(PlantFlowerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PlantFlowerInfo = subBuilder;
+            break;
+          }
+          case 10378: {
+            global::NewProtos.GachaActivityDetailInfo subBuilder = new global::NewProtos.GachaActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.GachaInfo) {
+              subBuilder.MergeFrom(GachaInfo);
+            }
+            input.ReadMessage(subBuilder);
+            GachaInfo = subBuilder;
+            break;
+          }
+          case 10466: {
+            global::NewProtos.VintageActivityDetailInfo subBuilder = new global::NewProtos.VintageActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.VintageInfo) {
+              subBuilder.MergeFrom(VintageInfo);
+            }
+            input.ReadMessage(subBuilder);
+            VintageInfo = subBuilder;
+            break;
+          }
+          case 10482: {
+            global::NewProtos.DragonSpineActivityDetailInfo subBuilder = new global::NewProtos.DragonSpineActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
+              subBuilder.MergeFrom(DragonSpineInfo);
+            }
+            input.ReadMessage(subBuilder);
+            DragonSpineInfo = subBuilder;
+            break;
+          }
+          case 10786: {
+            global::NewProtos.TanukiTravelActivityDetailInfo subBuilder = new global::NewProtos.TanukiTravelActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
+              subBuilder.MergeFrom(TanukiTravelActivityInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TanukiTravelActivityInfo = subBuilder;
+            break;
+          }
+          case 10994: {
+            global::NewProtos.EffigyActivityDetailInfo subBuilder = new global::NewProtos.EffigyActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.EffigyInfo) {
+              subBuilder.MergeFrom(EffigyInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EffigyInfo = subBuilder;
+            break;
+          }
+          case 11000: {
+            Unk3300CBCEHLJJOGI = input.ReadBool();
+            break;
+          }
+          case 11578: {
+            global::NewProtos.FleurFairActivityDetailInfo subBuilder = new global::NewProtos.FleurFairActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+              subBuilder.MergeFrom(FleurFairInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FleurFairInfo = subBuilder;
+            break;
+          }
+          case 11858: {
+            global::NewProtos.GearActivityDetailInfo subBuilder = new global::NewProtos.GearActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.GearInfo) {
+              subBuilder.MergeFrom(GearInfo);
+            }
+            input.ReadMessage(subBuilder);
+            GearInfo = subBuilder;
+            break;
+          }
+          case 11888: {
+            Unk3300ABJKLALKLDG = input.ReadBool();
+            break;
+          }
+          case 12178: {
+            global::NewProtos.BrickBreakerDetailInfo subBuilder = new global::NewProtos.BrickBreakerDetailInfo();
+            if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+              subBuilder.MergeFrom(BrickBreakerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BrickBreakerInfo = subBuilder;
+            break;
+          }
+          case 12362: {
+            global::NewProtos.LunaRiteDetailInfo subBuilder = new global::NewProtos.LunaRiteDetailInfo();
+            if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
+              subBuilder.MergeFrom(LunaRiteInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LunaRiteInfo = subBuilder;
+            break;
+          }
+          case 12538: {
+            global::NewProtos.PotionActivityDetailInfo subBuilder = new global::NewProtos.PotionActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.PotionInfo) {
+              subBuilder.MergeFrom(PotionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PotionInfo = subBuilder;
+            break;
+          }
+          case 13160: {
+            Unk3300NEPKLLBJFKK = input.ReadBool();
+            break;
+          }
+          case 13298: {
+            global::NewProtos.MuqadasPotionActivityDetailInfo subBuilder = new global::NewProtos.MuqadasPotionActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
+              subBuilder.MergeFrom(MuqadasPotionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MuqadasPotionInfo = subBuilder;
+            break;
+          }
+          case 14018: {
+            global::NewProtos.ExpeditionActivityDetailInfo subBuilder = new global::NewProtos.ExpeditionActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
+              subBuilder.MergeFrom(ExpeditionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ExpeditionInfo = subBuilder;
+            break;
+          }
+          case 14058: {
+            global::NewProtos.FungusFighterDetailInfo subBuilder = new global::NewProtos.FungusFighterDetailInfo();
+            if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
+              subBuilder.MergeFrom(FungusFighterInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FungusFighterInfo = subBuilder;
+            break;
+          }
+          case 14578: {
+            global::NewProtos.PhotoActivityDetailInfo subBuilder = new global::NewProtos.PhotoActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.PhotoInfo) {
+              subBuilder.MergeFrom(PhotoInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PhotoInfo = subBuilder;
+            break;
+          }
+          case 14714: {
+            global::NewProtos.MichiaeMatsuriActivityDetailInfo subBuilder = new global::NewProtos.MichiaeMatsuriActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
+              subBuilder.MergeFrom(MichiaeMatsuriInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MichiaeMatsuriInfo = subBuilder;
+            break;
+          }
+          case 14898: {
+            global::NewProtos.DigActivityDetailInfo subBuilder = new global::NewProtos.DigActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.DigInfo) {
+              subBuilder.MergeFrom(DigInfo);
+            }
+            input.ReadMessage(subBuilder);
+            DigInfo = subBuilder;
+            break;
+          }
+          case 14938: {
+            activityPushTipsDataList_.AddEntriesFrom(input, _repeated_activityPushTipsDataList_codec);
+            break;
+          }
+          case 14960: {
+            ScoreLimit = input.ReadUInt32();
+            break;
+          }
+          case 15114:
+          case 15112: {
+            takenRewardList_.AddEntriesFrom(input, _repeated_takenRewardList_codec);
+            break;
+          }
+          case 15282: {
+            global::NewProtos.SummerTimeDetailInfo subBuilder = new global::NewProtos.SummerTimeDetailInfo();
+            if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
+              subBuilder.MergeFrom(SummerTimeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SummerTimeInfo = subBuilder;
+            break;
+          }
+          case 15402: {
+            global::NewProtos.TreasureMapActivityDetailInfo subBuilder = new global::NewProtos.TreasureMapActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
+              subBuilder.MergeFrom(TreasureMapInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TreasureMapInfo = subBuilder;
+            break;
+          }
+          case 15426: {
+            global::NewProtos.GravenInnocenceDetailInfo subBuilder = new global::NewProtos.GravenInnocenceDetailInfo();
+            if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
+              subBuilder.MergeFrom(GravenInnocenceInfo);
+            }
+            input.ReadMessage(subBuilder);
+            GravenInnocenceInfo = subBuilder;
+            break;
+          }
+          case 15698: {
+            global::NewProtos.BlessingActivityDetailInfo subBuilder = new global::NewProtos.BlessingActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BlessingInfo) {
+              subBuilder.MergeFrom(BlessingInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BlessingInfo = subBuilder;
+            break;
+          }
+          case 15818: {
+            global::NewProtos.AsterActivityDetailInfo subBuilder = new global::NewProtos.AsterActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.AsterInfo) {
+              subBuilder.MergeFrom(AsterInfo);
+            }
+            input.ReadMessage(subBuilder);
+            AsterInfo = subBuilder;
+            break;
+          }
+          case 15914: {
+            global::NewProtos.MusicGameActivityDetailInfo subBuilder = new global::NewProtos.MusicGameActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MusicGameInfo) {
+              subBuilder.MergeFrom(MusicGameInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MusicGameInfo = subBuilder;
+            break;
+          }
+          case 16018: {
+            global::NewProtos.CoinCollectDetailInfo subBuilder = new global::NewProtos.CoinCollectDetailInfo();
+            if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+              subBuilder.MergeFrom(CoinCollectInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CoinCollectInfo = subBuilder;
+            break;
+          }
+          case 16090: {
+            global::NewProtos.FlightActivityDetailInfo subBuilder = new global::NewProtos.FlightActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.FlightInfo) {
+              subBuilder.MergeFrom(FlightInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FlightInfo = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 18: {
+            global::NewProtos.SeaLampActivityDetailInfo subBuilder = new global::NewProtos.SeaLampActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.SamLampInfo) {
+              subBuilder.MergeFrom(SamLampInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SamLampInfo = subBuilder;
+            break;
+          }
+          case 24: {
+            ActivityType = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            global::NewProtos.TrialAvatarActivityDetailInfo subBuilder = new global::NewProtos.TrialAvatarActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
+              subBuilder.MergeFrom(TrialAvatarInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TrialAvatarInfo = subBuilder;
+            break;
+          }
+          case 42:
+          case 40: {
+            expireCondList_.AddEntriesFrom(ref input, _repeated_expireCondList_codec);
+            break;
+          }
+          case 50: {
+            watcherInfoList_.AddEntriesFrom(ref input, _repeated_watcherInfoList_codec);
+            break;
+          }
+          case 56: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            IsFinished = input.ReadBool();
+            break;
+          }
+          case 74: {
+            global::NewProtos.SalesmanActivityDetailInfo subBuilder = new global::NewProtos.SalesmanActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.SalesmanInfo) {
+              subBuilder.MergeFrom(SalesmanInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SalesmanInfo = subBuilder;
+            break;
+          }
+          case 80: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 90:
+          case 88: {
+            meetCondList_.AddEntriesFrom(ref input, _repeated_meetCondList_codec);
+            break;
+          }
+          case 96: {
+            Unk3300MDBDPIBEGGH = input.ReadBool();
+            break;
+          }
+          case 104: {
+            ActivityId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300ICNJJKDHPCH = input.ReadBool();
+            break;
+          }
+          case 122: {
+            global::NewProtos.CrucibleActivityDetailInfo subBuilder = new global::NewProtos.CrucibleActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.CrucibleInfo) {
+              subBuilder.MergeFrom(CrucibleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CrucibleInfo = subBuilder;
+            break;
+          }
+          case 290: {
+            activityCoinMap_.AddEntriesFrom(ref input, _map_activityCoinMap_codec);
+            break;
+          }
+          case 514: {
+            global::NewProtos.BlitzRushActivityDetailInfo subBuilder = new global::NewProtos.BlitzRushActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
+              subBuilder.MergeFrom(BlitzRushInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BlitzRushInfo = subBuilder;
+            break;
+          }
+          case 1866: {
+            global::NewProtos.EffigyChallengeV2DetailInfo subBuilder = new global::NewProtos.EffigyChallengeV2DetailInfo();
+            if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
+              subBuilder.MergeFrom(EffigyChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EffigyChallengeInfo = subBuilder;
+            break;
+          }
+          case 1898: {
+            global::NewProtos.LanternRiteActivityDetailInfo subBuilder = new global::NewProtos.LanternRiteActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
+              subBuilder.MergeFrom(LanternRiteActivityInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LanternRiteActivityInfo = subBuilder;
+            break;
+          }
+          case 1978: {
+            global::NewProtos.SeaLampActivityInfo subBuilder = new global::NewProtos.SeaLampActivityInfo();
+            if (detailCase_ == DetailOneofCase.SeaLampInfo) {
+              subBuilder.MergeFrom(SeaLampInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SeaLampInfo = subBuilder;
+            break;
+          }
+          case 2880: {
+            Unk3300MJNPGEKLOCG = input.ReadBool();
+            break;
+          }
+          case 3026: {
+            global::NewProtos.FindHilichurlDetailInfo subBuilder = new global::NewProtos.FindHilichurlDetailInfo();
+            if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
+              subBuilder.MergeFrom(FindHilichurlInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FindHilichurlInfo = subBuilder;
+            break;
+          }
+          case 3290: {
+            global::NewProtos.SummerTimeV2DetailInfo subBuilder = new global::NewProtos.SummerTimeV2DetailInfo();
+            if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
+              subBuilder.MergeFrom(SummerTimeV2Info);
+            }
+            input.ReadMessage(subBuilder);
+            SummerTimeV2Info = subBuilder;
+            break;
+          }
+          case 3458: {
+            global::NewProtos.MistTrialActivityDetailInfo subBuilder = new global::NewProtos.MistTrialActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
+              subBuilder.MergeFrom(MistTrialActivityInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MistTrialActivityInfo = subBuilder;
+            break;
+          }
+          case 3554: {
+            global::NewProtos.LuminanceStoneChallengeActivityDetailInfo subBuilder = new global::NewProtos.LuminanceStoneChallengeActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
+              subBuilder.MergeFrom(LuminanceStoneChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LuminanceStoneChallengeInfo = subBuilder;
+            break;
+          }
+          case 3746: {
+            global::NewProtos.WindFieldDetailInfo subBuilder = new global::NewProtos.WindFieldDetailInfo();
+            if (detailCase_ == DetailOneofCase.WindFieldInfo) {
+              subBuilder.MergeFrom(WindFieldInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WindFieldInfo = subBuilder;
+            break;
+          }
+          case 4042: {
+            global::NewProtos.SumoActivityDetailInfo subBuilder = new global::NewProtos.SumoActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.SumoInfo) {
+              subBuilder.MergeFrom(SumoInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SumoInfo = subBuilder;
+            break;
+          }
+          case 4090: {
+            global::NewProtos.HachiActivityDetailInfo subBuilder = new global::NewProtos.HachiActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.HachiInfo) {
+              subBuilder.MergeFrom(HachiInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HachiInfo = subBuilder;
+            break;
+          }
+          case 4306: {
+            global::NewProtos.ArenaChallengeActivityDetailInfo subBuilder = new global::NewProtos.ArenaChallengeActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
+              subBuilder.MergeFrom(ArenaChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ArenaChallengeInfo = subBuilder;
+            break;
+          }
+          case 4410: {
+            global::NewProtos.BartenderActivityDetailInfo subBuilder = new global::NewProtos.BartenderActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BartenderInfo) {
+              subBuilder.MergeFrom(BartenderInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BartenderInfo = subBuilder;
+            break;
+          }
+          case 4482: {
+            global::NewProtos.RogueDiaryActivityDetailInfo subBuilder = new global::NewProtos.RogueDiaryActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
+              subBuilder.MergeFrom(RogueDiaryInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RogueDiaryInfo = subBuilder;
+            break;
+          }
+          case 4970: {
+            global::NewProtos.CharAmusementDetailInfo subBuilder = new global::NewProtos.CharAmusementDetailInfo();
+            if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
+              subBuilder.MergeFrom(CharAmusementInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CharAmusementInfo = subBuilder;
+            break;
+          }
+          case 5082: {
+            global::NewProtos.WaterSpiritActivityDetailInfo subBuilder = new global::NewProtos.WaterSpiritActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
+              subBuilder.MergeFrom(WaterSpiritInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WaterSpiritInfo = subBuilder;
+            break;
+          }
+          case 5490: {
+            global::NewProtos.BuoyantCombatDetailInfo subBuilder = new global::NewProtos.BuoyantCombatDetailInfo();
+            if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
+              subBuilder.MergeFrom(BuoyantCombatInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BuoyantCombatInfo = subBuilder;
+            break;
+          }
+          case 5576: {
+            SelectedAvatarRewardId = input.ReadUInt32();
+            break;
+          }
+          case 5594: {
+            global::NewProtos.WinterCampActivityDetailInfo subBuilder = new global::NewProtos.WinterCampActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.WinterCampInfo) {
+              subBuilder.MergeFrom(WinterCampInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WinterCampInfo = subBuilder;
+            break;
+          }
+          case 5922: {
+            global::NewProtos.IslandPartyDetailInfo subBuilder = new global::NewProtos.IslandPartyDetailInfo();
+            if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
+              subBuilder.MergeFrom(IslandPartyInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IslandPartyInfo = subBuilder;
+            break;
+          }
+          case 6130: {
+            global::NewProtos.MoonfinTrialActivityDetailInfo subBuilder = new global::NewProtos.MoonfinTrialActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
+              subBuilder.MergeFrom(MoonfinTrialInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MoonfinTrialInfo = subBuilder;
+            break;
+          }
+          case 6288: {
+            FirstDayStartTime = input.ReadUInt32();
+            break;
+          }
+          case 6314: {
+            global::NewProtos.SpiceActivityDetailInfo subBuilder = new global::NewProtos.SpiceActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.SpiceInfo) {
+              subBuilder.MergeFrom(SpiceInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SpiceInfo = subBuilder;
+            break;
+          }
+          case 6498: {
+            global::NewProtos.CrystalLinkActivityDetailInfo subBuilder = new global::NewProtos.CrystalLinkActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
+              subBuilder.MergeFrom(CrystalLinkInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CrystalLinkInfo = subBuilder;
+            break;
+          }
+          case 6714: {
+            global::NewProtos.HideAndSeekActivityDetailInfo subBuilder = new global::NewProtos.HideAndSeekActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
+              subBuilder.MergeFrom(HideAndSeekInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HideAndSeekInfo = subBuilder;
+            break;
+          }
+          case 6770: {
+            global::NewProtos.ChannelerSlabActivityDetailInfo subBuilder = new global::NewProtos.ChannelerSlabActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
+              subBuilder.MergeFrom(ChannelerSlabInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChannelerSlabInfo = subBuilder;
+            break;
+          }
+          case 7378: {
+            global::NewProtos.BounceConjuringActivityDetailInfo subBuilder = new global::NewProtos.BounceConjuringActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
+              subBuilder.MergeFrom(BounceConjuringInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BounceConjuringInfo = subBuilder;
+            break;
+          }
+          case 7514: {
+            wishGiftNumMap_.AddEntriesFrom(ref input, _map_wishGiftNumMap_codec);
+            break;
+          }
+          case 7762: {
+            global::NewProtos.RoguelikeDungeonActivityDetailInfo subBuilder = new global::NewProtos.RoguelikeDungeonActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
+              subBuilder.MergeFrom(RoguelikeDungeonInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RoguelikeDungeonInfo = subBuilder;
+            break;
+          }
+          case 8050: {
+            global::NewProtos.ChessActivityDetailInfo subBuilder = new global::NewProtos.ChessActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ChessInfo) {
+              subBuilder.MergeFrom(ChessInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChessInfo = subBuilder;
+            break;
+          }
+          case 8258: {
+            global::NewProtos.TreasureSeelieActivityDetailInfo subBuilder = new global::NewProtos.TreasureSeelieActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
+              subBuilder.MergeFrom(TreasureSeelieInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TreasureSeelieInfo = subBuilder;
+            break;
+          }
+          case 8450: {
+            global::NewProtos.IrodoriActivityDetailInfo subBuilder = new global::NewProtos.IrodoriActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.IrodoriInfo) {
+              subBuilder.MergeFrom(IrodoriInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IrodoriInfo = subBuilder;
+            break;
+          }
+          case 9130: {
+            global::NewProtos.DeliveryActivityDetailInfo subBuilder = new global::NewProtos.DeliveryActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.DeliveryInfo) {
+              subBuilder.MergeFrom(DeliveryInfo);
+            }
+            input.ReadMessage(subBuilder);
+            DeliveryInfo = subBuilder;
+            break;
+          }
+          case 9162: {
+            global::NewProtos.InstableSprayDetailInfo subBuilder = new global::NewProtos.InstableSprayDetailInfo();
+            if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
+              subBuilder.MergeFrom(InstableSprayInfo);
+            }
+            input.ReadMessage(subBuilder);
+            InstableSprayInfo = subBuilder;
+            break;
+          }
+          case 9298: {
+            global::NewProtos.EchoShellDetailInfo subBuilder = new global::NewProtos.EchoShellDetailInfo();
+            if (detailCase_ == DetailOneofCase.EchoShellInfo) {
+              subBuilder.MergeFrom(EchoShellInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EchoShellInfo = subBuilder;
+            break;
+          }
+          case 9458: {
+            global::NewProtos.UgcActivityDetailInfo subBuilder = new global::NewProtos.UgcActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.UgcInfo) {
+              subBuilder.MergeFrom(UgcInfo);
+            }
+            input.ReadMessage(subBuilder);
+            UgcInfo = subBuilder;
+            break;
+          }
+          case 10122: {
+            global::NewProtos.RockBoardExploreDetailInfo subBuilder = new global::NewProtos.RockBoardExploreDetailInfo();
+            if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
+              subBuilder.MergeFrom(RockBoardExploreInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RockBoardExploreInfo = subBuilder;
+            break;
+          }
+          case 10144: {
+            CurScore = input.ReadUInt32();
+            break;
+          }
+          case 10194: {
+            global::NewProtos.PlantFlowerActivityDetailInfo subBuilder = new global::NewProtos.PlantFlowerActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
+              subBuilder.MergeFrom(PlantFlowerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PlantFlowerInfo = subBuilder;
+            break;
+          }
+          case 10378: {
+            global::NewProtos.GachaActivityDetailInfo subBuilder = new global::NewProtos.GachaActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.GachaInfo) {
+              subBuilder.MergeFrom(GachaInfo);
+            }
+            input.ReadMessage(subBuilder);
+            GachaInfo = subBuilder;
+            break;
+          }
+          case 10466: {
+            global::NewProtos.VintageActivityDetailInfo subBuilder = new global::NewProtos.VintageActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.VintageInfo) {
+              subBuilder.MergeFrom(VintageInfo);
+            }
+            input.ReadMessage(subBuilder);
+            VintageInfo = subBuilder;
+            break;
+          }
+          case 10482: {
+            global::NewProtos.DragonSpineActivityDetailInfo subBuilder = new global::NewProtos.DragonSpineActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
+              subBuilder.MergeFrom(DragonSpineInfo);
+            }
+            input.ReadMessage(subBuilder);
+            DragonSpineInfo = subBuilder;
+            break;
+          }
+          case 10786: {
+            global::NewProtos.TanukiTravelActivityDetailInfo subBuilder = new global::NewProtos.TanukiTravelActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
+              subBuilder.MergeFrom(TanukiTravelActivityInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TanukiTravelActivityInfo = subBuilder;
+            break;
+          }
+          case 10994: {
+            global::NewProtos.EffigyActivityDetailInfo subBuilder = new global::NewProtos.EffigyActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.EffigyInfo) {
+              subBuilder.MergeFrom(EffigyInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EffigyInfo = subBuilder;
+            break;
+          }
+          case 11000: {
+            Unk3300CBCEHLJJOGI = input.ReadBool();
+            break;
+          }
+          case 11578: {
+            global::NewProtos.FleurFairActivityDetailInfo subBuilder = new global::NewProtos.FleurFairActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.FleurFairInfo) {
+              subBuilder.MergeFrom(FleurFairInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FleurFairInfo = subBuilder;
+            break;
+          }
+          case 11858: {
+            global::NewProtos.GearActivityDetailInfo subBuilder = new global::NewProtos.GearActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.GearInfo) {
+              subBuilder.MergeFrom(GearInfo);
+            }
+            input.ReadMessage(subBuilder);
+            GearInfo = subBuilder;
+            break;
+          }
+          case 11888: {
+            Unk3300ABJKLALKLDG = input.ReadBool();
+            break;
+          }
+          case 12178: {
+            global::NewProtos.BrickBreakerDetailInfo subBuilder = new global::NewProtos.BrickBreakerDetailInfo();
+            if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
+              subBuilder.MergeFrom(BrickBreakerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BrickBreakerInfo = subBuilder;
+            break;
+          }
+          case 12362: {
+            global::NewProtos.LunaRiteDetailInfo subBuilder = new global::NewProtos.LunaRiteDetailInfo();
+            if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
+              subBuilder.MergeFrom(LunaRiteInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LunaRiteInfo = subBuilder;
+            break;
+          }
+          case 12538: {
+            global::NewProtos.PotionActivityDetailInfo subBuilder = new global::NewProtos.PotionActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.PotionInfo) {
+              subBuilder.MergeFrom(PotionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PotionInfo = subBuilder;
+            break;
+          }
+          case 13160: {
+            Unk3300NEPKLLBJFKK = input.ReadBool();
+            break;
+          }
+          case 13298: {
+            global::NewProtos.MuqadasPotionActivityDetailInfo subBuilder = new global::NewProtos.MuqadasPotionActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
+              subBuilder.MergeFrom(MuqadasPotionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MuqadasPotionInfo = subBuilder;
+            break;
+          }
+          case 14018: {
+            global::NewProtos.ExpeditionActivityDetailInfo subBuilder = new global::NewProtos.ExpeditionActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
+              subBuilder.MergeFrom(ExpeditionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ExpeditionInfo = subBuilder;
+            break;
+          }
+          case 14058: {
+            global::NewProtos.FungusFighterDetailInfo subBuilder = new global::NewProtos.FungusFighterDetailInfo();
+            if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
+              subBuilder.MergeFrom(FungusFighterInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FungusFighterInfo = subBuilder;
+            break;
+          }
+          case 14578: {
+            global::NewProtos.PhotoActivityDetailInfo subBuilder = new global::NewProtos.PhotoActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.PhotoInfo) {
+              subBuilder.MergeFrom(PhotoInfo);
+            }
+            input.ReadMessage(subBuilder);
+            PhotoInfo = subBuilder;
+            break;
+          }
+          case 14714: {
+            global::NewProtos.MichiaeMatsuriActivityDetailInfo subBuilder = new global::NewProtos.MichiaeMatsuriActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
+              subBuilder.MergeFrom(MichiaeMatsuriInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MichiaeMatsuriInfo = subBuilder;
+            break;
+          }
+          case 14898: {
+            global::NewProtos.DigActivityDetailInfo subBuilder = new global::NewProtos.DigActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.DigInfo) {
+              subBuilder.MergeFrom(DigInfo);
+            }
+            input.ReadMessage(subBuilder);
+            DigInfo = subBuilder;
+            break;
+          }
+          case 14938: {
+            activityPushTipsDataList_.AddEntriesFrom(ref input, _repeated_activityPushTipsDataList_codec);
+            break;
+          }
+          case 14960: {
+            ScoreLimit = input.ReadUInt32();
+            break;
+          }
+          case 15114:
+          case 15112: {
+            takenRewardList_.AddEntriesFrom(ref input, _repeated_takenRewardList_codec);
+            break;
+          }
+          case 15282: {
+            global::NewProtos.SummerTimeDetailInfo subBuilder = new global::NewProtos.SummerTimeDetailInfo();
+            if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
+              subBuilder.MergeFrom(SummerTimeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SummerTimeInfo = subBuilder;
+            break;
+          }
+          case 15402: {
+            global::NewProtos.TreasureMapActivityDetailInfo subBuilder = new global::NewProtos.TreasureMapActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
+              subBuilder.MergeFrom(TreasureMapInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TreasureMapInfo = subBuilder;
+            break;
+          }
+          case 15426: {
+            global::NewProtos.GravenInnocenceDetailInfo subBuilder = new global::NewProtos.GravenInnocenceDetailInfo();
+            if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
+              subBuilder.MergeFrom(GravenInnocenceInfo);
+            }
+            input.ReadMessage(subBuilder);
+            GravenInnocenceInfo = subBuilder;
+            break;
+          }
+          case 15698: {
+            global::NewProtos.BlessingActivityDetailInfo subBuilder = new global::NewProtos.BlessingActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.BlessingInfo) {
+              subBuilder.MergeFrom(BlessingInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BlessingInfo = subBuilder;
+            break;
+          }
+          case 15818: {
+            global::NewProtos.AsterActivityDetailInfo subBuilder = new global::NewProtos.AsterActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.AsterInfo) {
+              subBuilder.MergeFrom(AsterInfo);
+            }
+            input.ReadMessage(subBuilder);
+            AsterInfo = subBuilder;
+            break;
+          }
+          case 15914: {
+            global::NewProtos.MusicGameActivityDetailInfo subBuilder = new global::NewProtos.MusicGameActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.MusicGameInfo) {
+              subBuilder.MergeFrom(MusicGameInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MusicGameInfo = subBuilder;
+            break;
+          }
+          case 16018: {
+            global::NewProtos.CoinCollectDetailInfo subBuilder = new global::NewProtos.CoinCollectDetailInfo();
+            if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
+              subBuilder.MergeFrom(CoinCollectInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CoinCollectInfo = subBuilder;
+            break;
+          }
+          case 16090: {
+            global::NewProtos.FlightActivityDetailInfo subBuilder = new global::NewProtos.FlightActivityDetailInfo();
+            if (detailCase_ == DetailOneofCase.FlightInfo) {
+              subBuilder.MergeFrom(FlightInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FlightInfo = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ActivityInfo : pb::IMessage<ActivityInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ActivityInfo> _parser = new pb::MessageParser<ActivityInfo>(() => new ActivityInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ActivityInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ActivityInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ActivityInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ActivityInfo(ActivityInfo other) : this() {
-    unk3300MJNPGEKLOCG_ = other.unk3300MJNPGEKLOCG_;
-    isFinished_ = other.isFinished_;
-    curScore_ = other.curScore_;
-    scheduleId_ = other.scheduleId_;
-    scoreLimit_ = other.scoreLimit_;
-    unk3300ICNJJKDHPCH_ = other.unk3300ICNJJKDHPCH_;
-    meetCondList_ = other.meetCondList_.Clone();
-    unk3300NEPKLLBJFKK_ = other.unk3300NEPKLLBJFKK_;
-    watcherInfoList_ = other.watcherInfoList_.Clone();
-    activityPushTipsDataList_ = other.activityPushTipsDataList_.Clone();
-    activityId_ = other.activityId_;
-    takenRewardList_ = other.takenRewardList_.Clone();
-    selectedAvatarRewardId_ = other.selectedAvatarRewardId_;
-    activityCoinMap_ = other.activityCoinMap_.Clone();
-    firstDayStartTime_ = other.firstDayStartTime_;
-    unk3300ABJKLALKLDG_ = other.unk3300ABJKLALKLDG_;
-    activityType_ = other.activityType_;
-    unk3300CBCEHLJJOGI_ = other.unk3300CBCEHLJJOGI_;
-    beginTime_ = other.beginTime_;
-    unk3300MDBDPIBEGGH_ = other.unk3300MDBDPIBEGGH_;
-    wishGiftNumMap_ = other.wishGiftNumMap_.Clone();
-    endTime_ = other.endTime_;
-    expireCondList_ = other.expireCondList_.Clone();
-    switch (other.DetailCase) {
-      case DetailOneofCase.SamLampInfo:
-        SamLampInfo = other.SamLampInfo.Clone();
-        break;
-      case DetailOneofCase.CrucibleInfo:
-        CrucibleInfo = other.CrucibleInfo.Clone();
-        break;
-      case DetailOneofCase.SalesmanInfo:
-        SalesmanInfo = other.SalesmanInfo.Clone();
-        break;
-      case DetailOneofCase.TrialAvatarInfo:
-        TrialAvatarInfo = other.TrialAvatarInfo.Clone();
-        break;
-      case DetailOneofCase.DeliveryInfo:
-        DeliveryInfo = other.DeliveryInfo.Clone();
-        break;
-      case DetailOneofCase.AsterInfo:
-        AsterInfo = other.AsterInfo.Clone();
-        break;
-      case DetailOneofCase.FlightInfo:
-        FlightInfo = other.FlightInfo.Clone();
-        break;
-      case DetailOneofCase.DragonSpineInfo:
-        DragonSpineInfo = other.DragonSpineInfo.Clone();
-        break;
-      case DetailOneofCase.EffigyInfo:
-        EffigyInfo = other.EffigyInfo.Clone();
-        break;
-      case DetailOneofCase.TreasureMapInfo:
-        TreasureMapInfo = other.TreasureMapInfo.Clone();
-        break;
-      case DetailOneofCase.BlessingInfo:
-        BlessingInfo = other.BlessingInfo.Clone();
-        break;
-      case DetailOneofCase.SeaLampInfo:
-        SeaLampInfo = other.SeaLampInfo.Clone();
-        break;
-      case DetailOneofCase.ExpeditionInfo:
-        ExpeditionInfo = other.ExpeditionInfo.Clone();
-        break;
-      case DetailOneofCase.ArenaChallengeInfo:
-        ArenaChallengeInfo = other.ArenaChallengeInfo.Clone();
-        break;
-      case DetailOneofCase.FleurFairInfo:
-        FleurFairInfo = other.FleurFairInfo.Clone();
-        break;
-      case DetailOneofCase.WaterSpiritInfo:
-        WaterSpiritInfo = other.WaterSpiritInfo.Clone();
-        break;
-      case DetailOneofCase.ChannelerSlabInfo:
-        ChannelerSlabInfo = other.ChannelerSlabInfo.Clone();
-        break;
-      case DetailOneofCase.MistTrialActivityInfo:
-        MistTrialActivityInfo = other.MistTrialActivityInfo.Clone();
-        break;
-      case DetailOneofCase.HideAndSeekInfo:
-        HideAndSeekInfo = other.HideAndSeekInfo.Clone();
-        break;
-      case DetailOneofCase.FindHilichurlInfo:
-        FindHilichurlInfo = other.FindHilichurlInfo.Clone();
-        break;
-      case DetailOneofCase.SummerTimeInfo:
-        SummerTimeInfo = other.SummerTimeInfo.Clone();
-        break;
-      case DetailOneofCase.BuoyantCombatInfo:
-        BuoyantCombatInfo = other.BuoyantCombatInfo.Clone();
-        break;
-      case DetailOneofCase.EchoShellInfo:
-        EchoShellInfo = other.EchoShellInfo.Clone();
-        break;
-      case DetailOneofCase.BounceConjuringInfo:
-        BounceConjuringInfo = other.BounceConjuringInfo.Clone();
-        break;
-      case DetailOneofCase.BlitzRushInfo:
-        BlitzRushInfo = other.BlitzRushInfo.Clone();
-        break;
-      case DetailOneofCase.ChessInfo:
-        ChessInfo = other.ChessInfo.Clone();
-        break;
-      case DetailOneofCase.SumoInfo:
-        SumoInfo = other.SumoInfo.Clone();
-        break;
-      case DetailOneofCase.MoonfinTrialInfo:
-        MoonfinTrialInfo = other.MoonfinTrialInfo.Clone();
-        break;
-      case DetailOneofCase.LunaRiteInfo:
-        LunaRiteInfo = other.LunaRiteInfo.Clone();
-        break;
-      case DetailOneofCase.PlantFlowerInfo:
-        PlantFlowerInfo = other.PlantFlowerInfo.Clone();
-        break;
-      case DetailOneofCase.MusicGameInfo:
-        MusicGameInfo = other.MusicGameInfo.Clone();
-        break;
-      case DetailOneofCase.RoguelikeDungeonInfo:
-        RoguelikeDungeonInfo = other.RoguelikeDungeonInfo.Clone();
-        break;
-      case DetailOneofCase.DigInfo:
-        DigInfo = other.DigInfo.Clone();
-        break;
-      case DetailOneofCase.HachiInfo:
-        HachiInfo = other.HachiInfo.Clone();
-        break;
-      case DetailOneofCase.WinterCampInfo:
-        WinterCampInfo = other.WinterCampInfo.Clone();
-        break;
-      case DetailOneofCase.PotionInfo:
-        PotionInfo = other.PotionInfo.Clone();
-        break;
-      case DetailOneofCase.TanukiTravelActivityInfo:
-        TanukiTravelActivityInfo = other.TanukiTravelActivityInfo.Clone();
-        break;
-      case DetailOneofCase.LanternRiteActivityInfo:
-        LanternRiteActivityInfo = other.LanternRiteActivityInfo.Clone();
-        break;
-      case DetailOneofCase.MichiaeMatsuriInfo:
-        MichiaeMatsuriInfo = other.MichiaeMatsuriInfo.Clone();
-        break;
-      case DetailOneofCase.BartenderInfo:
-        BartenderInfo = other.BartenderInfo.Clone();
-        break;
-      case DetailOneofCase.UgcInfo:
-        UgcInfo = other.UgcInfo.Clone();
-        break;
-      case DetailOneofCase.CrystalLinkInfo:
-        CrystalLinkInfo = other.CrystalLinkInfo.Clone();
-        break;
-      case DetailOneofCase.IrodoriInfo:
-        IrodoriInfo = other.IrodoriInfo.Clone();
-        break;
-      case DetailOneofCase.PhotoInfo:
-        PhotoInfo = other.PhotoInfo.Clone();
-        break;
-      case DetailOneofCase.SpiceInfo:
-        SpiceInfo = other.SpiceInfo.Clone();
-        break;
-      case DetailOneofCase.GachaInfo:
-        GachaInfo = other.GachaInfo.Clone();
-        break;
-      case DetailOneofCase.LuminanceStoneChallengeInfo:
-        LuminanceStoneChallengeInfo = other.LuminanceStoneChallengeInfo.Clone();
-        break;
-      case DetailOneofCase.RogueDiaryInfo:
-        RogueDiaryInfo = other.RogueDiaryInfo.Clone();
-        break;
-      case DetailOneofCase.SummerTimeV2Info:
-        SummerTimeV2Info = other.SummerTimeV2Info.Clone();
-        break;
-      case DetailOneofCase.IslandPartyInfo:
-        IslandPartyInfo = other.IslandPartyInfo.Clone();
-        break;
-      case DetailOneofCase.GearInfo:
-        GearInfo = other.GearInfo.Clone();
-        break;
-      case DetailOneofCase.GravenInnocenceInfo:
-        GravenInnocenceInfo = other.GravenInnocenceInfo.Clone();
-        break;
-      case DetailOneofCase.InstableSprayInfo:
-        InstableSprayInfo = other.InstableSprayInfo.Clone();
-        break;
-      case DetailOneofCase.MuqadasPotionInfo:
-        MuqadasPotionInfo = other.MuqadasPotionInfo.Clone();
-        break;
-      case DetailOneofCase.TreasureSeelieInfo:
-        TreasureSeelieInfo = other.TreasureSeelieInfo.Clone();
-        break;
-      case DetailOneofCase.RockBoardExploreInfo:
-        RockBoardExploreInfo = other.RockBoardExploreInfo.Clone();
-        break;
-      case DetailOneofCase.VintageInfo:
-        VintageInfo = other.VintageInfo.Clone();
-        break;
-      case DetailOneofCase.WindFieldInfo:
-        WindFieldInfo = other.WindFieldInfo.Clone();
-        break;
-      case DetailOneofCase.FungusFighterInfo:
-        FungusFighterInfo = other.FungusFighterInfo.Clone();
-        break;
-      case DetailOneofCase.CharAmusementInfo:
-        CharAmusementInfo = other.CharAmusementInfo.Clone();
-        break;
-      case DetailOneofCase.EffigyChallengeInfo:
-        EffigyChallengeInfo = other.EffigyChallengeInfo.Clone();
-        break;
-      case DetailOneofCase.CoinCollectInfo:
-        CoinCollectInfo = other.CoinCollectInfo.Clone();
-        break;
-      case DetailOneofCase.BrickBreakerInfo:
-        BrickBreakerInfo = other.BrickBreakerInfo.Clone();
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ActivityInfo Clone() {
-    return new ActivityInfo(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_MJNPGEKLOCG" field.</summary>
-  public const int Unk3300MJNPGEKLOCGFieldNumber = 360;
-  private bool unk3300MJNPGEKLOCG_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Unk3300MJNPGEKLOCG {
-    get { return unk3300MJNPGEKLOCG_; }
-    set {
-      unk3300MJNPGEKLOCG_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_finished" field.</summary>
-  public const int IsFinishedFieldNumber = 8;
-  private bool isFinished_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsFinished {
-    get { return isFinished_; }
-    set {
-      isFinished_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cur_score" field.</summary>
-  public const int CurScoreFieldNumber = 1268;
-  private uint curScore_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurScore {
-    get { return curScore_; }
-    set {
-      curScore_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "schedule_id" field.</summary>
-  public const int ScheduleIdFieldNumber = 7;
-  private uint scheduleId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ScheduleId {
-    get { return scheduleId_; }
-    set {
-      scheduleId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "score_limit" field.</summary>
-  public const int ScoreLimitFieldNumber = 1870;
-  private uint scoreLimit_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ScoreLimit {
-    get { return scoreLimit_; }
-    set {
-      scoreLimit_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_ICNJJKDHPCH" field.</summary>
-  public const int Unk3300ICNJJKDHPCHFieldNumber = 14;
-  private bool unk3300ICNJJKDHPCH_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Unk3300ICNJJKDHPCH {
-    get { return unk3300ICNJJKDHPCH_; }
-    set {
-      unk3300ICNJJKDHPCH_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "meet_cond_list" field.</summary>
-  public const int MeetCondListFieldNumber = 11;
-  private static readonly pb::FieldCodec<uint> _repeated_meetCondList_codec
-      = pb::FieldCodec.ForUInt32(90);
-  private readonly pbc::RepeatedField<uint> meetCondList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> MeetCondList {
-    get { return meetCondList_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_NEPKLLBJFKK" field.</summary>
-  public const int Unk3300NEPKLLBJFKKFieldNumber = 1645;
-  private bool unk3300NEPKLLBJFKK_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Unk3300NEPKLLBJFKK {
-    get { return unk3300NEPKLLBJFKK_; }
-    set {
-      unk3300NEPKLLBJFKK_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "watcher_info_list" field.</summary>
-  public const int WatcherInfoListFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::ActivityWatcherInfo> _repeated_watcherInfoList_codec
-      = pb::FieldCodec.ForMessage(50, global::ActivityWatcherInfo.Parser);
-  private readonly pbc::RepeatedField<global::ActivityWatcherInfo> watcherInfoList_ = new pbc::RepeatedField<global::ActivityWatcherInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ActivityWatcherInfo> WatcherInfoList {
-    get { return watcherInfoList_; }
-  }
-
-  /// <summary>Field number for the "activity_push_tips_data_list" field.</summary>
-  public const int ActivityPushTipsDataListFieldNumber = 1867;
-  private static readonly pb::FieldCodec<global::ActivityPushTipsData> _repeated_activityPushTipsDataList_codec
-      = pb::FieldCodec.ForMessage(14938, global::ActivityPushTipsData.Parser);
-  private readonly pbc::RepeatedField<global::ActivityPushTipsData> activityPushTipsDataList_ = new pbc::RepeatedField<global::ActivityPushTipsData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ActivityPushTipsData> ActivityPushTipsDataList {
-    get { return activityPushTipsDataList_; }
-  }
-
-  /// <summary>Field number for the "activity_id" field.</summary>
-  public const int ActivityIdFieldNumber = 13;
-  private uint activityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ActivityId {
-    get { return activityId_; }
-    set {
-      activityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "taken_reward_list" field.</summary>
-  public const int TakenRewardListFieldNumber = 1889;
-  private static readonly pb::FieldCodec<uint> _repeated_takenRewardList_codec
-      = pb::FieldCodec.ForUInt32(15114);
-  private readonly pbc::RepeatedField<uint> takenRewardList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> TakenRewardList {
-    get { return takenRewardList_; }
-  }
-
-  /// <summary>Field number for the "selected_avatar_reward_id" field.</summary>
-  public const int SelectedAvatarRewardIdFieldNumber = 697;
-  private uint selectedAvatarRewardId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SelectedAvatarRewardId {
-    get { return selectedAvatarRewardId_; }
-    set {
-      selectedAvatarRewardId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "activity_coin_map" field.</summary>
-  public const int ActivityCoinMapFieldNumber = 36;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_activityCoinMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 290);
-  private readonly pbc::MapField<uint, uint> activityCoinMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> ActivityCoinMap {
-    get { return activityCoinMap_; }
-  }
-
-  /// <summary>Field number for the "first_day_start_time" field.</summary>
-  public const int FirstDayStartTimeFieldNumber = 786;
-  private uint firstDayStartTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FirstDayStartTime {
-    get { return firstDayStartTime_; }
-    set {
-      firstDayStartTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_ABJKLALKLDG" field.</summary>
-  public const int Unk3300ABJKLALKLDGFieldNumber = 1486;
-  private bool unk3300ABJKLALKLDG_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Unk3300ABJKLALKLDG {
-    get { return unk3300ABJKLALKLDG_; }
-    set {
-      unk3300ABJKLALKLDG_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "activity_type" field.</summary>
-  public const int ActivityTypeFieldNumber = 3;
-  private uint activityType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ActivityType {
-    get { return activityType_; }
-    set {
-      activityType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_CBCEHLJJOGI" field.</summary>
-  public const int Unk3300CBCEHLJJOGIFieldNumber = 1375;
-  private bool unk3300CBCEHLJJOGI_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Unk3300CBCEHLJJOGI {
-    get { return unk3300CBCEHLJJOGI_; }
-    set {
-      unk3300CBCEHLJJOGI_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "begin_time" field.</summary>
-  public const int BeginTimeFieldNumber = 1;
-  private uint beginTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BeginTime {
-    get { return beginTime_; }
-    set {
-      beginTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_MDBDPIBEGGH" field.</summary>
-  public const int Unk3300MDBDPIBEGGHFieldNumber = 12;
-  private bool unk3300MDBDPIBEGGH_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Unk3300MDBDPIBEGGH {
-    get { return unk3300MDBDPIBEGGH_; }
-    set {
-      unk3300MDBDPIBEGGH_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "wish_gift_num_map" field.</summary>
-  public const int WishGiftNumMapFieldNumber = 939;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_wishGiftNumMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 7514);
-  private readonly pbc::MapField<uint, uint> wishGiftNumMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> WishGiftNumMap {
-    get { return wishGiftNumMap_; }
-  }
-
-  /// <summary>Field number for the "end_time" field.</summary>
-  public const int EndTimeFieldNumber = 10;
-  private uint endTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EndTime {
-    get { return endTime_; }
-    set {
-      endTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "expire_cond_list" field.</summary>
-  public const int ExpireCondListFieldNumber = 5;
-  private static readonly pb::FieldCodec<uint> _repeated_expireCondList_codec
-      = pb::FieldCodec.ForUInt32(42);
-  private readonly pbc::RepeatedField<uint> expireCondList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> ExpireCondList {
-    get { return expireCondList_; }
-  }
-
-  /// <summary>Field number for the "sam_lamp_info" field.</summary>
-  public const int SamLampInfoFieldNumber = 2;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SeaLampActivityDetailInfo SamLampInfo {
-    get { return detailCase_ == DetailOneofCase.SamLampInfo ? (global::SeaLampActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SamLampInfo;
-    }
-  }
-
-  /// <summary>Field number for the "crucible_info" field.</summary>
-  public const int CrucibleInfoFieldNumber = 15;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CrucibleActivityDetailInfo CrucibleInfo {
-    get { return detailCase_ == DetailOneofCase.CrucibleInfo ? (global::CrucibleActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.CrucibleInfo;
-    }
-  }
-
-  /// <summary>Field number for the "salesman_info" field.</summary>
-  public const int SalesmanInfoFieldNumber = 9;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SalesmanActivityDetailInfo SalesmanInfo {
-    get { return detailCase_ == DetailOneofCase.SalesmanInfo ? (global::SalesmanActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SalesmanInfo;
-    }
-  }
-
-  /// <summary>Field number for the "trial_avatar_info" field.</summary>
-  public const int TrialAvatarInfoFieldNumber = 4;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::TrialAvatarActivityDetailInfo TrialAvatarInfo {
-    get { return detailCase_ == DetailOneofCase.TrialAvatarInfo ? (global::TrialAvatarActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.TrialAvatarInfo;
-    }
-  }
-
-  /// <summary>Field number for the "delivery_info" field.</summary>
-  public const int DeliveryInfoFieldNumber = 1141;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::DeliveryActivityDetailInfo DeliveryInfo {
-    get { return detailCase_ == DetailOneofCase.DeliveryInfo ? (global::DeliveryActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.DeliveryInfo;
-    }
-  }
-
-  /// <summary>Field number for the "aster_info" field.</summary>
-  public const int AsterInfoFieldNumber = 1977;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::AsterActivityDetailInfo AsterInfo {
-    get { return detailCase_ == DetailOneofCase.AsterInfo ? (global::AsterActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.AsterInfo;
-    }
-  }
-
-  /// <summary>Field number for the "flight_info" field.</summary>
-  public const int FlightInfoFieldNumber = 2011;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::FlightActivityDetailInfo FlightInfo {
-    get { return detailCase_ == DetailOneofCase.FlightInfo ? (global::FlightActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.FlightInfo;
-    }
-  }
-
-  /// <summary>Field number for the "dragon_spine_info" field.</summary>
-  public const int DragonSpineInfoFieldNumber = 1310;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::DragonSpineActivityDetailInfo DragonSpineInfo {
-    get { return detailCase_ == DetailOneofCase.DragonSpineInfo ? (global::DragonSpineActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.DragonSpineInfo;
-    }
-  }
-
-  /// <summary>Field number for the "effigy_info" field.</summary>
-  public const int EffigyInfoFieldNumber = 1374;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::EffigyActivityDetailInfo EffigyInfo {
-    get { return detailCase_ == DetailOneofCase.EffigyInfo ? (global::EffigyActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.EffigyInfo;
-    }
-  }
-
-  /// <summary>Field number for the "treasure_map_info" field.</summary>
-  public const int TreasureMapInfoFieldNumber = 1925;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::TreasureMapActivityDetailInfo TreasureMapInfo {
-    get { return detailCase_ == DetailOneofCase.TreasureMapInfo ? (global::TreasureMapActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.TreasureMapInfo;
-    }
-  }
-
-  /// <summary>Field number for the "blessing_info" field.</summary>
-  public const int BlessingInfoFieldNumber = 1962;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::BlessingActivityDetailInfo BlessingInfo {
-    get { return detailCase_ == DetailOneofCase.BlessingInfo ? (global::BlessingActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BlessingInfo;
-    }
-  }
-
-  /// <summary>Field number for the "sea_lamp_info" field.</summary>
-  public const int SeaLampInfoFieldNumber = 247;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SeaLampActivityInfo SeaLampInfo {
-    get { return detailCase_ == DetailOneofCase.SeaLampInfo ? (global::SeaLampActivityInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SeaLampInfo;
-    }
-  }
-
-  /// <summary>Field number for the "expedition_info" field.</summary>
-  public const int ExpeditionInfoFieldNumber = 1752;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ExpeditionActivityDetailInfo ExpeditionInfo {
-    get { return detailCase_ == DetailOneofCase.ExpeditionInfo ? (global::ExpeditionActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ExpeditionInfo;
-    }
-  }
-
-  /// <summary>Field number for the "arena_challenge_info" field.</summary>
-  public const int ArenaChallengeInfoFieldNumber = 538;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ArenaChallengeActivityDetailInfo ArenaChallengeInfo {
-    get { return detailCase_ == DetailOneofCase.ArenaChallengeInfo ? (global::ArenaChallengeActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ArenaChallengeInfo;
-    }
-  }
-
-  /// <summary>Field number for the "fleur_fair_info" field.</summary>
-  public const int FleurFairInfoFieldNumber = 1447;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::FleurFairActivityDetailInfo FleurFairInfo {
-    get { return detailCase_ == DetailOneofCase.FleurFairInfo ? (global::FleurFairActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.FleurFairInfo;
-    }
-  }
-
-  /// <summary>Field number for the "water_spirit_info" field.</summary>
-  public const int WaterSpiritInfoFieldNumber = 635;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::WaterSpiritActivityDetailInfo WaterSpiritInfo {
-    get { return detailCase_ == DetailOneofCase.WaterSpiritInfo ? (global::WaterSpiritActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.WaterSpiritInfo;
-    }
-  }
-
-  /// <summary>Field number for the "channeler_slab_info" field.</summary>
-  public const int ChannelerSlabInfoFieldNumber = 846;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ChannelerSlabActivityDetailInfo ChannelerSlabInfo {
-    get { return detailCase_ == DetailOneofCase.ChannelerSlabInfo ? (global::ChannelerSlabActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ChannelerSlabInfo;
-    }
-  }
-
-  /// <summary>Field number for the "mist_trial_activity_info" field.</summary>
-  public const int MistTrialActivityInfoFieldNumber = 432;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MistTrialActivityDetailInfo MistTrialActivityInfo {
-    get { return detailCase_ == DetailOneofCase.MistTrialActivityInfo ? (global::MistTrialActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.MistTrialActivityInfo;
-    }
-  }
-
-  /// <summary>Field number for the "hide_and_seek_info" field.</summary>
-  public const int HideAndSeekInfoFieldNumber = 839;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::HideAndSeekActivityDetailInfo HideAndSeekInfo {
-    get { return detailCase_ == DetailOneofCase.HideAndSeekInfo ? (global::HideAndSeekActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.HideAndSeekInfo;
-    }
-  }
-
-  /// <summary>Field number for the "find_hilichurl_info" field.</summary>
-  public const int FindHilichurlInfoFieldNumber = 378;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::FindHilichurlDetailInfo FindHilichurlInfo {
-    get { return detailCase_ == DetailOneofCase.FindHilichurlInfo ? (global::FindHilichurlDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.FindHilichurlInfo;
-    }
-  }
-
-  /// <summary>Field number for the "summer_time_info" field.</summary>
-  public const int SummerTimeInfoFieldNumber = 1910;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SummerTimeDetailInfo SummerTimeInfo {
-    get { return detailCase_ == DetailOneofCase.SummerTimeInfo ? (global::SummerTimeDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SummerTimeInfo;
-    }
-  }
-
-  /// <summary>Field number for the "buoyant_combat_info" field.</summary>
-  public const int BuoyantCombatInfoFieldNumber = 686;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::BuoyantCombatDetailInfo BuoyantCombatInfo {
-    get { return detailCase_ == DetailOneofCase.BuoyantCombatInfo ? (global::BuoyantCombatDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BuoyantCombatInfo;
-    }
-  }
-
-  /// <summary>Field number for the "echo_shell_info" field.</summary>
-  public const int EchoShellInfoFieldNumber = 1162;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::EchoShellDetailInfo EchoShellInfo {
-    get { return detailCase_ == DetailOneofCase.EchoShellInfo ? (global::EchoShellDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.EchoShellInfo;
-    }
-  }
-
-  /// <summary>Field number for the "bounce_conjuring_info" field.</summary>
-  public const int BounceConjuringInfoFieldNumber = 922;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::BounceConjuringActivityDetailInfo BounceConjuringInfo {
-    get { return detailCase_ == DetailOneofCase.BounceConjuringInfo ? (global::BounceConjuringActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BounceConjuringInfo;
-    }
-  }
-
-  /// <summary>Field number for the "blitz_rush_info" field.</summary>
-  public const int BlitzRushInfoFieldNumber = 64;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::BlitzRushActivityDetailInfo BlitzRushInfo {
-    get { return detailCase_ == DetailOneofCase.BlitzRushInfo ? (global::BlitzRushActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BlitzRushInfo;
-    }
-  }
-
-  /// <summary>Field number for the "chess_info" field.</summary>
-  public const int ChessInfoFieldNumber = 1006;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ChessActivityDetailInfo ChessInfo {
-    get { return detailCase_ == DetailOneofCase.ChessInfo ? (global::ChessActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ChessInfo;
-    }
-  }
-
-  /// <summary>Field number for the "sumo_info" field.</summary>
-  public const int SumoInfoFieldNumber = 505;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SumoActivityDetailInfo SumoInfo {
-    get { return detailCase_ == DetailOneofCase.SumoInfo ? (global::SumoActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SumoInfo;
-    }
-  }
-
-  /// <summary>Field number for the "moonfin_trial_info" field.</summary>
-  public const int MoonfinTrialInfoFieldNumber = 766;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MoonfinTrialActivityDetailInfo MoonfinTrialInfo {
-    get { return detailCase_ == DetailOneofCase.MoonfinTrialInfo ? (global::MoonfinTrialActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.MoonfinTrialInfo;
-    }
-  }
-
-  /// <summary>Field number for the "luna_rite_info" field.</summary>
-  public const int LunaRiteInfoFieldNumber = 1545;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::LunaRiteDetailInfo LunaRiteInfo {
-    get { return detailCase_ == DetailOneofCase.LunaRiteInfo ? (global::LunaRiteDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.LunaRiteInfo;
-    }
-  }
-
-  /// <summary>Field number for the "plant_flower_info" field.</summary>
-  public const int PlantFlowerInfoFieldNumber = 1274;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::PlantFlowerActivityDetailInfo PlantFlowerInfo {
-    get { return detailCase_ == DetailOneofCase.PlantFlowerInfo ? (global::PlantFlowerActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.PlantFlowerInfo;
-    }
-  }
-
-  /// <summary>Field number for the "music_game_info" field.</summary>
-  public const int MusicGameInfoFieldNumber = 1989;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MusicGameActivityDetailInfo MusicGameInfo {
-    get { return detailCase_ == DetailOneofCase.MusicGameInfo ? (global::MusicGameActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.MusicGameInfo;
-    }
-  }
-
-  /// <summary>Field number for the "roguelike_dungeon_info" field.</summary>
-  public const int RoguelikeDungeonInfoFieldNumber = 970;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::RoguelikeDungeonActivityDetailInfo RoguelikeDungeonInfo {
-    get { return detailCase_ == DetailOneofCase.RoguelikeDungeonInfo ? (global::RoguelikeDungeonActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.RoguelikeDungeonInfo;
-    }
-  }
-
-  /// <summary>Field number for the "dig_info" field.</summary>
-  public const int DigInfoFieldNumber = 1862;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::DigActivityDetailInfo DigInfo {
-    get { return detailCase_ == DetailOneofCase.DigInfo ? (global::DigActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.DigInfo;
-    }
-  }
-
-  /// <summary>Field number for the "hachi_info" field.</summary>
-  public const int HachiInfoFieldNumber = 511;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::HachiActivityDetailInfo HachiInfo {
-    get { return detailCase_ == DetailOneofCase.HachiInfo ? (global::HachiActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.HachiInfo;
-    }
-  }
-
-  /// <summary>Field number for the "winter_camp_info" field.</summary>
-  public const int WinterCampInfoFieldNumber = 699;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::WinterCampActivityDetailInfo WinterCampInfo {
-    get { return detailCase_ == DetailOneofCase.WinterCampInfo ? (global::WinterCampActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.WinterCampInfo;
-    }
-  }
-
-  /// <summary>Field number for the "potion_info" field.</summary>
-  public const int PotionInfoFieldNumber = 1567;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::PotionActivityDetailInfo PotionInfo {
-    get { return detailCase_ == DetailOneofCase.PotionInfo ? (global::PotionActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.PotionInfo;
-    }
-  }
-
-  /// <summary>Field number for the "tanuki_travel_activity_info" field.</summary>
-  public const int TanukiTravelActivityInfoFieldNumber = 1348;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::TanukiTravelActivityDetailInfo TanukiTravelActivityInfo {
-    get { return detailCase_ == DetailOneofCase.TanukiTravelActivityInfo ? (global::TanukiTravelActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.TanukiTravelActivityInfo;
-    }
-  }
-
-  /// <summary>Field number for the "lantern_rite_activity_info" field.</summary>
-  public const int LanternRiteActivityInfoFieldNumber = 237;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::LanternRiteActivityDetailInfo LanternRiteActivityInfo {
-    get { return detailCase_ == DetailOneofCase.LanternRiteActivityInfo ? (global::LanternRiteActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.LanternRiteActivityInfo;
-    }
-  }
-
-  /// <summary>Field number for the "michiae_matsuri_info" field.</summary>
-  public const int MichiaeMatsuriInfoFieldNumber = 1839;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MichiaeMatsuriActivityDetailInfo MichiaeMatsuriInfo {
-    get { return detailCase_ == DetailOneofCase.MichiaeMatsuriInfo ? (global::MichiaeMatsuriActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.MichiaeMatsuriInfo;
-    }
-  }
-
-  /// <summary>Field number for the "bartender_info" field.</summary>
-  public const int BartenderInfoFieldNumber = 551;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::BartenderActivityDetailInfo BartenderInfo {
-    get { return detailCase_ == DetailOneofCase.BartenderInfo ? (global::BartenderActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BartenderInfo;
-    }
-  }
-
-  /// <summary>Field number for the "ugc_info" field.</summary>
-  public const int UgcInfoFieldNumber = 1182;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::UgcActivityDetailInfo UgcInfo {
-    get { return detailCase_ == DetailOneofCase.UgcInfo ? (global::UgcActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.UgcInfo;
-    }
-  }
-
-  /// <summary>Field number for the "crystal_link_info" field.</summary>
-  public const int CrystalLinkInfoFieldNumber = 812;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CrystalLinkActivityDetailInfo CrystalLinkInfo {
-    get { return detailCase_ == DetailOneofCase.CrystalLinkInfo ? (global::CrystalLinkActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.CrystalLinkInfo;
-    }
-  }
-
-  /// <summary>Field number for the "irodori_info" field.</summary>
-  public const int IrodoriInfoFieldNumber = 1056;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::IrodoriActivityDetailInfo IrodoriInfo {
-    get { return detailCase_ == DetailOneofCase.IrodoriInfo ? (global::IrodoriActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.IrodoriInfo;
-    }
-  }
-
-  /// <summary>Field number for the "photo_info" field.</summary>
-  public const int PhotoInfoFieldNumber = 1822;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::PhotoActivityDetailInfo PhotoInfo {
-    get { return detailCase_ == DetailOneofCase.PhotoInfo ? (global::PhotoActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.PhotoInfo;
-    }
-  }
-
-  /// <summary>Field number for the "spice_info" field.</summary>
-  public const int SpiceInfoFieldNumber = 789;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SpiceActivityDetailInfo SpiceInfo {
-    get { return detailCase_ == DetailOneofCase.SpiceInfo ? (global::SpiceActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SpiceInfo;
-    }
-  }
-
-  /// <summary>Field number for the "gacha_info" field.</summary>
-  public const int GachaInfoFieldNumber = 1297;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GachaActivityDetailInfo GachaInfo {
-    get { return detailCase_ == DetailOneofCase.GachaInfo ? (global::GachaActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.GachaInfo;
-    }
-  }
-
-  /// <summary>Field number for the "luminance_stone_challenge_info" field.</summary>
-  public const int LuminanceStoneChallengeInfoFieldNumber = 444;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::LuminanceStoneChallengeActivityDetailInfo LuminanceStoneChallengeInfo {
-    get { return detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo ? (global::LuminanceStoneChallengeActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.LuminanceStoneChallengeInfo;
-    }
-  }
-
-  /// <summary>Field number for the "rogue_diary_info" field.</summary>
-  public const int RogueDiaryInfoFieldNumber = 560;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::RogueDiaryActivityDetailInfo RogueDiaryInfo {
-    get { return detailCase_ == DetailOneofCase.RogueDiaryInfo ? (global::RogueDiaryActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.RogueDiaryInfo;
-    }
-  }
-
-  /// <summary>Field number for the "summer_time_v2_info" field.</summary>
-  public const int SummerTimeV2InfoFieldNumber = 411;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SummerTimeV2DetailInfo SummerTimeV2Info {
-    get { return detailCase_ == DetailOneofCase.SummerTimeV2Info ? (global::SummerTimeV2DetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SummerTimeV2Info;
-    }
-  }
-
-  /// <summary>Field number for the "island_party_info" field.</summary>
-  public const int IslandPartyInfoFieldNumber = 740;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::IslandPartyDetailInfo IslandPartyInfo {
-    get { return detailCase_ == DetailOneofCase.IslandPartyInfo ? (global::IslandPartyDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.IslandPartyInfo;
-    }
-  }
-
-  /// <summary>Field number for the "gear_info" field.</summary>
-  public const int GearInfoFieldNumber = 1482;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GearActivityDetailInfo GearInfo {
-    get { return detailCase_ == DetailOneofCase.GearInfo ? (global::GearActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.GearInfo;
-    }
-  }
-
-  /// <summary>Field number for the "graven_innocence_info" field.</summary>
-  public const int GravenInnocenceInfoFieldNumber = 1928;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GravenInnocenceDetailInfo GravenInnocenceInfo {
-    get { return detailCase_ == DetailOneofCase.GravenInnocenceInfo ? (global::GravenInnocenceDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.GravenInnocenceInfo;
-    }
-  }
-
-  /// <summary>Field number for the "instable_spray_info" field.</summary>
-  public const int InstableSprayInfoFieldNumber = 1145;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::InstableSprayDetailInfo InstableSprayInfo {
-    get { return detailCase_ == DetailOneofCase.InstableSprayInfo ? (global::InstableSprayDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.InstableSprayInfo;
-    }
-  }
-
-  /// <summary>Field number for the "muqadas_potion_info" field.</summary>
-  public const int MuqadasPotionInfoFieldNumber = 1662;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MuqadasPotionActivityDetailInfo MuqadasPotionInfo {
-    get { return detailCase_ == DetailOneofCase.MuqadasPotionInfo ? (global::MuqadasPotionActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.MuqadasPotionInfo;
-    }
-  }
-
-  /// <summary>Field number for the "treasure_seelie_info" field.</summary>
-  public const int TreasureSeelieInfoFieldNumber = 1032;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::TreasureSeelieActivityDetailInfo TreasureSeelieInfo {
-    get { return detailCase_ == DetailOneofCase.TreasureSeelieInfo ? (global::TreasureSeelieActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.TreasureSeelieInfo;
-    }
-  }
-
-  /// <summary>Field number for the "rock_board_explore_info" field.</summary>
-  public const int RockBoardExploreInfoFieldNumber = 1265;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::RockBoardExploreDetailInfo RockBoardExploreInfo {
-    get { return detailCase_ == DetailOneofCase.RockBoardExploreInfo ? (global::RockBoardExploreDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.RockBoardExploreInfo;
-    }
-  }
-
-  /// <summary>Field number for the "vintage_info" field.</summary>
-  public const int VintageInfoFieldNumber = 1308;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::VintageActivityDetailInfo VintageInfo {
-    get { return detailCase_ == DetailOneofCase.VintageInfo ? (global::VintageActivityDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.VintageInfo;
-    }
-  }
-
-  /// <summary>Field number for the "wind_field_info" field.</summary>
-  public const int WindFieldInfoFieldNumber = 468;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::WindFieldDetailInfo WindFieldInfo {
-    get { return detailCase_ == DetailOneofCase.WindFieldInfo ? (global::WindFieldDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.WindFieldInfo;
-    }
-  }
-
-  /// <summary>Field number for the "fungus_fighter_info" field.</summary>
-  public const int FungusFighterInfoFieldNumber = 1757;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::FungusFighterDetailInfo FungusFighterInfo {
-    get { return detailCase_ == DetailOneofCase.FungusFighterInfo ? (global::FungusFighterDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.FungusFighterInfo;
-    }
-  }
-
-  /// <summary>Field number for the "char_amusement_info" field.</summary>
-  public const int CharAmusementInfoFieldNumber = 621;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CharAmusementDetailInfo CharAmusementInfo {
-    get { return detailCase_ == DetailOneofCase.CharAmusementInfo ? (global::CharAmusementDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.CharAmusementInfo;
-    }
-  }
-
-  /// <summary>Field number for the "effigy_challenge_info" field.</summary>
-  public const int EffigyChallengeInfoFieldNumber = 233;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::EffigyChallengeV2DetailInfo EffigyChallengeInfo {
-    get { return detailCase_ == DetailOneofCase.EffigyChallengeInfo ? (global::EffigyChallengeV2DetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.EffigyChallengeInfo;
-    }
-  }
-
-  /// <summary>Field number for the "coin_collect_info" field.</summary>
-  public const int CoinCollectInfoFieldNumber = 2002;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CoinCollectDetailInfo CoinCollectInfo {
-    get { return detailCase_ == DetailOneofCase.CoinCollectInfo ? (global::CoinCollectDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.CoinCollectInfo;
-    }
-  }
-
-  /// <summary>Field number for the "brick_breaker_info" field.</summary>
-  public const int BrickBreakerInfoFieldNumber = 1522;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::BrickBreakerDetailInfo BrickBreakerInfo {
-    get { return detailCase_ == DetailOneofCase.BrickBreakerInfo ? (global::BrickBreakerDetailInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.BrickBreakerInfo;
-    }
-  }
-
-  private object detail_;
-  /// <summary>Enum of possible cases for the "detail" oneof.</summary>
-  public enum DetailOneofCase {
-    None = 0,
-    SamLampInfo = 2,
-    CrucibleInfo = 15,
-    SalesmanInfo = 9,
-    TrialAvatarInfo = 4,
-    DeliveryInfo = 1141,
-    AsterInfo = 1977,
-    FlightInfo = 2011,
-    DragonSpineInfo = 1310,
-    EffigyInfo = 1374,
-    TreasureMapInfo = 1925,
-    BlessingInfo = 1962,
-    SeaLampInfo = 247,
-    ExpeditionInfo = 1752,
-    ArenaChallengeInfo = 538,
-    FleurFairInfo = 1447,
-    WaterSpiritInfo = 635,
-    ChannelerSlabInfo = 846,
-    MistTrialActivityInfo = 432,
-    HideAndSeekInfo = 839,
-    FindHilichurlInfo = 378,
-    SummerTimeInfo = 1910,
-    BuoyantCombatInfo = 686,
-    EchoShellInfo = 1162,
-    BounceConjuringInfo = 922,
-    BlitzRushInfo = 64,
-    ChessInfo = 1006,
-    SumoInfo = 505,
-    MoonfinTrialInfo = 766,
-    LunaRiteInfo = 1545,
-    PlantFlowerInfo = 1274,
-    MusicGameInfo = 1989,
-    RoguelikeDungeonInfo = 970,
-    DigInfo = 1862,
-    HachiInfo = 511,
-    WinterCampInfo = 699,
-    PotionInfo = 1567,
-    TanukiTravelActivityInfo = 1348,
-    LanternRiteActivityInfo = 237,
-    MichiaeMatsuriInfo = 1839,
-    BartenderInfo = 551,
-    UgcInfo = 1182,
-    CrystalLinkInfo = 812,
-    IrodoriInfo = 1056,
-    PhotoInfo = 1822,
-    SpiceInfo = 789,
-    GachaInfo = 1297,
-    LuminanceStoneChallengeInfo = 444,
-    RogueDiaryInfo = 560,
-    SummerTimeV2Info = 411,
-    IslandPartyInfo = 740,
-    GearInfo = 1482,
-    GravenInnocenceInfo = 1928,
-    InstableSprayInfo = 1145,
-    MuqadasPotionInfo = 1662,
-    TreasureSeelieInfo = 1032,
-    RockBoardExploreInfo = 1265,
-    VintageInfo = 1308,
-    WindFieldInfo = 468,
-    FungusFighterInfo = 1757,
-    CharAmusementInfo = 621,
-    EffigyChallengeInfo = 233,
-    CoinCollectInfo = 2002,
-    BrickBreakerInfo = 1522,
-  }
-  private DetailOneofCase detailCase_ = DetailOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DetailOneofCase DetailCase {
-    get { return detailCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearDetail() {
-    detailCase_ = DetailOneofCase.None;
-    detail_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ActivityInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ActivityInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Unk3300MJNPGEKLOCG != other.Unk3300MJNPGEKLOCG) return false;
-    if (IsFinished != other.IsFinished) return false;
-    if (CurScore != other.CurScore) return false;
-    if (ScheduleId != other.ScheduleId) return false;
-    if (ScoreLimit != other.ScoreLimit) return false;
-    if (Unk3300ICNJJKDHPCH != other.Unk3300ICNJJKDHPCH) return false;
-    if(!meetCondList_.Equals(other.meetCondList_)) return false;
-    if (Unk3300NEPKLLBJFKK != other.Unk3300NEPKLLBJFKK) return false;
-    if(!watcherInfoList_.Equals(other.watcherInfoList_)) return false;
-    if(!activityPushTipsDataList_.Equals(other.activityPushTipsDataList_)) return false;
-    if (ActivityId != other.ActivityId) return false;
-    if(!takenRewardList_.Equals(other.takenRewardList_)) return false;
-    if (SelectedAvatarRewardId != other.SelectedAvatarRewardId) return false;
-    if (!ActivityCoinMap.Equals(other.ActivityCoinMap)) return false;
-    if (FirstDayStartTime != other.FirstDayStartTime) return false;
-    if (Unk3300ABJKLALKLDG != other.Unk3300ABJKLALKLDG) return false;
-    if (ActivityType != other.ActivityType) return false;
-    if (Unk3300CBCEHLJJOGI != other.Unk3300CBCEHLJJOGI) return false;
-    if (BeginTime != other.BeginTime) return false;
-    if (Unk3300MDBDPIBEGGH != other.Unk3300MDBDPIBEGGH) return false;
-    if (!WishGiftNumMap.Equals(other.WishGiftNumMap)) return false;
-    if (EndTime != other.EndTime) return false;
-    if(!expireCondList_.Equals(other.expireCondList_)) return false;
-    if (!object.Equals(SamLampInfo, other.SamLampInfo)) return false;
-    if (!object.Equals(CrucibleInfo, other.CrucibleInfo)) return false;
-    if (!object.Equals(SalesmanInfo, other.SalesmanInfo)) return false;
-    if (!object.Equals(TrialAvatarInfo, other.TrialAvatarInfo)) return false;
-    if (!object.Equals(DeliveryInfo, other.DeliveryInfo)) return false;
-    if (!object.Equals(AsterInfo, other.AsterInfo)) return false;
-    if (!object.Equals(FlightInfo, other.FlightInfo)) return false;
-    if (!object.Equals(DragonSpineInfo, other.DragonSpineInfo)) return false;
-    if (!object.Equals(EffigyInfo, other.EffigyInfo)) return false;
-    if (!object.Equals(TreasureMapInfo, other.TreasureMapInfo)) return false;
-    if (!object.Equals(BlessingInfo, other.BlessingInfo)) return false;
-    if (!object.Equals(SeaLampInfo, other.SeaLampInfo)) return false;
-    if (!object.Equals(ExpeditionInfo, other.ExpeditionInfo)) return false;
-    if (!object.Equals(ArenaChallengeInfo, other.ArenaChallengeInfo)) return false;
-    if (!object.Equals(FleurFairInfo, other.FleurFairInfo)) return false;
-    if (!object.Equals(WaterSpiritInfo, other.WaterSpiritInfo)) return false;
-    if (!object.Equals(ChannelerSlabInfo, other.ChannelerSlabInfo)) return false;
-    if (!object.Equals(MistTrialActivityInfo, other.MistTrialActivityInfo)) return false;
-    if (!object.Equals(HideAndSeekInfo, other.HideAndSeekInfo)) return false;
-    if (!object.Equals(FindHilichurlInfo, other.FindHilichurlInfo)) return false;
-    if (!object.Equals(SummerTimeInfo, other.SummerTimeInfo)) return false;
-    if (!object.Equals(BuoyantCombatInfo, other.BuoyantCombatInfo)) return false;
-    if (!object.Equals(EchoShellInfo, other.EchoShellInfo)) return false;
-    if (!object.Equals(BounceConjuringInfo, other.BounceConjuringInfo)) return false;
-    if (!object.Equals(BlitzRushInfo, other.BlitzRushInfo)) return false;
-    if (!object.Equals(ChessInfo, other.ChessInfo)) return false;
-    if (!object.Equals(SumoInfo, other.SumoInfo)) return false;
-    if (!object.Equals(MoonfinTrialInfo, other.MoonfinTrialInfo)) return false;
-    if (!object.Equals(LunaRiteInfo, other.LunaRiteInfo)) return false;
-    if (!object.Equals(PlantFlowerInfo, other.PlantFlowerInfo)) return false;
-    if (!object.Equals(MusicGameInfo, other.MusicGameInfo)) return false;
-    if (!object.Equals(RoguelikeDungeonInfo, other.RoguelikeDungeonInfo)) return false;
-    if (!object.Equals(DigInfo, other.DigInfo)) return false;
-    if (!object.Equals(HachiInfo, other.HachiInfo)) return false;
-    if (!object.Equals(WinterCampInfo, other.WinterCampInfo)) return false;
-    if (!object.Equals(PotionInfo, other.PotionInfo)) return false;
-    if (!object.Equals(TanukiTravelActivityInfo, other.TanukiTravelActivityInfo)) return false;
-    if (!object.Equals(LanternRiteActivityInfo, other.LanternRiteActivityInfo)) return false;
-    if (!object.Equals(MichiaeMatsuriInfo, other.MichiaeMatsuriInfo)) return false;
-    if (!object.Equals(BartenderInfo, other.BartenderInfo)) return false;
-    if (!object.Equals(UgcInfo, other.UgcInfo)) return false;
-    if (!object.Equals(CrystalLinkInfo, other.CrystalLinkInfo)) return false;
-    if (!object.Equals(IrodoriInfo, other.IrodoriInfo)) return false;
-    if (!object.Equals(PhotoInfo, other.PhotoInfo)) return false;
-    if (!object.Equals(SpiceInfo, other.SpiceInfo)) return false;
-    if (!object.Equals(GachaInfo, other.GachaInfo)) return false;
-    if (!object.Equals(LuminanceStoneChallengeInfo, other.LuminanceStoneChallengeInfo)) return false;
-    if (!object.Equals(RogueDiaryInfo, other.RogueDiaryInfo)) return false;
-    if (!object.Equals(SummerTimeV2Info, other.SummerTimeV2Info)) return false;
-    if (!object.Equals(IslandPartyInfo, other.IslandPartyInfo)) return false;
-    if (!object.Equals(GearInfo, other.GearInfo)) return false;
-    if (!object.Equals(GravenInnocenceInfo, other.GravenInnocenceInfo)) return false;
-    if (!object.Equals(InstableSprayInfo, other.InstableSprayInfo)) return false;
-    if (!object.Equals(MuqadasPotionInfo, other.MuqadasPotionInfo)) return false;
-    if (!object.Equals(TreasureSeelieInfo, other.TreasureSeelieInfo)) return false;
-    if (!object.Equals(RockBoardExploreInfo, other.RockBoardExploreInfo)) return false;
-    if (!object.Equals(VintageInfo, other.VintageInfo)) return false;
-    if (!object.Equals(WindFieldInfo, other.WindFieldInfo)) return false;
-    if (!object.Equals(FungusFighterInfo, other.FungusFighterInfo)) return false;
-    if (!object.Equals(CharAmusementInfo, other.CharAmusementInfo)) return false;
-    if (!object.Equals(EffigyChallengeInfo, other.EffigyChallengeInfo)) return false;
-    if (!object.Equals(CoinCollectInfo, other.CoinCollectInfo)) return false;
-    if (!object.Equals(BrickBreakerInfo, other.BrickBreakerInfo)) return false;
-    if (DetailCase != other.DetailCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Unk3300MJNPGEKLOCG != false) hash ^= Unk3300MJNPGEKLOCG.GetHashCode();
-    if (IsFinished != false) hash ^= IsFinished.GetHashCode();
-    if (CurScore != 0) hash ^= CurScore.GetHashCode();
-    if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
-    if (ScoreLimit != 0) hash ^= ScoreLimit.GetHashCode();
-    if (Unk3300ICNJJKDHPCH != false) hash ^= Unk3300ICNJJKDHPCH.GetHashCode();
-    hash ^= meetCondList_.GetHashCode();
-    if (Unk3300NEPKLLBJFKK != false) hash ^= Unk3300NEPKLLBJFKK.GetHashCode();
-    hash ^= watcherInfoList_.GetHashCode();
-    hash ^= activityPushTipsDataList_.GetHashCode();
-    if (ActivityId != 0) hash ^= ActivityId.GetHashCode();
-    hash ^= takenRewardList_.GetHashCode();
-    if (SelectedAvatarRewardId != 0) hash ^= SelectedAvatarRewardId.GetHashCode();
-    hash ^= ActivityCoinMap.GetHashCode();
-    if (FirstDayStartTime != 0) hash ^= FirstDayStartTime.GetHashCode();
-    if (Unk3300ABJKLALKLDG != false) hash ^= Unk3300ABJKLALKLDG.GetHashCode();
-    if (ActivityType != 0) hash ^= ActivityType.GetHashCode();
-    if (Unk3300CBCEHLJJOGI != false) hash ^= Unk3300CBCEHLJJOGI.GetHashCode();
-    if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
-    if (Unk3300MDBDPIBEGGH != false) hash ^= Unk3300MDBDPIBEGGH.GetHashCode();
-    hash ^= WishGiftNumMap.GetHashCode();
-    if (EndTime != 0) hash ^= EndTime.GetHashCode();
-    hash ^= expireCondList_.GetHashCode();
-    if (detailCase_ == DetailOneofCase.SamLampInfo) hash ^= SamLampInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.CrucibleInfo) hash ^= CrucibleInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.SalesmanInfo) hash ^= SalesmanInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.TrialAvatarInfo) hash ^= TrialAvatarInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.DeliveryInfo) hash ^= DeliveryInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.AsterInfo) hash ^= AsterInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.FlightInfo) hash ^= FlightInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.DragonSpineInfo) hash ^= DragonSpineInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.EffigyInfo) hash ^= EffigyInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.TreasureMapInfo) hash ^= TreasureMapInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.BlessingInfo) hash ^= BlessingInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.SeaLampInfo) hash ^= SeaLampInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.ExpeditionInfo) hash ^= ExpeditionInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) hash ^= ArenaChallengeInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.FleurFairInfo) hash ^= FleurFairInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.WaterSpiritInfo) hash ^= WaterSpiritInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) hash ^= ChannelerSlabInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) hash ^= MistTrialActivityInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.HideAndSeekInfo) hash ^= HideAndSeekInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.FindHilichurlInfo) hash ^= FindHilichurlInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.SummerTimeInfo) hash ^= SummerTimeInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) hash ^= BuoyantCombatInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.EchoShellInfo) hash ^= EchoShellInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.BounceConjuringInfo) hash ^= BounceConjuringInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.BlitzRushInfo) hash ^= BlitzRushInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.ChessInfo) hash ^= ChessInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.SumoInfo) hash ^= SumoInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) hash ^= MoonfinTrialInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.LunaRiteInfo) hash ^= LunaRiteInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.PlantFlowerInfo) hash ^= PlantFlowerInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.MusicGameInfo) hash ^= MusicGameInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) hash ^= RoguelikeDungeonInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.DigInfo) hash ^= DigInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.HachiInfo) hash ^= HachiInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.WinterCampInfo) hash ^= WinterCampInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.PotionInfo) hash ^= PotionInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) hash ^= TanukiTravelActivityInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) hash ^= LanternRiteActivityInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) hash ^= MichiaeMatsuriInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.BartenderInfo) hash ^= BartenderInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.UgcInfo) hash ^= UgcInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.CrystalLinkInfo) hash ^= CrystalLinkInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.IrodoriInfo) hash ^= IrodoriInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.PhotoInfo) hash ^= PhotoInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.SpiceInfo) hash ^= SpiceInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.GachaInfo) hash ^= GachaInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) hash ^= LuminanceStoneChallengeInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.RogueDiaryInfo) hash ^= RogueDiaryInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.SummerTimeV2Info) hash ^= SummerTimeV2Info.GetHashCode();
-    if (detailCase_ == DetailOneofCase.IslandPartyInfo) hash ^= IslandPartyInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.GearInfo) hash ^= GearInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) hash ^= GravenInnocenceInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.InstableSprayInfo) hash ^= InstableSprayInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) hash ^= MuqadasPotionInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) hash ^= TreasureSeelieInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) hash ^= RockBoardExploreInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.VintageInfo) hash ^= VintageInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.WindFieldInfo) hash ^= WindFieldInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.FungusFighterInfo) hash ^= FungusFighterInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.CharAmusementInfo) hash ^= CharAmusementInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) hash ^= EffigyChallengeInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.CoinCollectInfo) hash ^= CoinCollectInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.BrickBreakerInfo) hash ^= BrickBreakerInfo.GetHashCode();
-    hash ^= (int) detailCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (BeginTime != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(BeginTime);
-    }
-    if (detailCase_ == DetailOneofCase.SamLampInfo) {
-      output.WriteRawTag(18);
-      output.WriteMessage(SamLampInfo);
-    }
-    if (ActivityType != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ActivityType);
-    }
-    if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
-      output.WriteRawTag(34);
-      output.WriteMessage(TrialAvatarInfo);
-    }
-    expireCondList_.WriteTo(output, _repeated_expireCondList_codec);
-    watcherInfoList_.WriteTo(output, _repeated_watcherInfoList_codec);
-    if (ScheduleId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(ScheduleId);
-    }
-    if (IsFinished != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsFinished);
-    }
-    if (detailCase_ == DetailOneofCase.SalesmanInfo) {
-      output.WriteRawTag(74);
-      output.WriteMessage(SalesmanInfo);
-    }
-    if (EndTime != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(EndTime);
-    }
-    meetCondList_.WriteTo(output, _repeated_meetCondList_codec);
-    if (Unk3300MDBDPIBEGGH != false) {
-      output.WriteRawTag(96);
-      output.WriteBool(Unk3300MDBDPIBEGGH);
-    }
-    if (ActivityId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(ActivityId);
-    }
-    if (Unk3300ICNJJKDHPCH != false) {
-      output.WriteRawTag(112);
-      output.WriteBool(Unk3300ICNJJKDHPCH);
-    }
-    if (detailCase_ == DetailOneofCase.CrucibleInfo) {
-      output.WriteRawTag(122);
-      output.WriteMessage(CrucibleInfo);
-    }
-    activityCoinMap_.WriteTo(output, _map_activityCoinMap_codec);
-    if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
-      output.WriteRawTag(130, 4);
-      output.WriteMessage(BlitzRushInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
-      output.WriteRawTag(202, 14);
-      output.WriteMessage(EffigyChallengeInfo);
-    }
-    if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
-      output.WriteRawTag(234, 14);
-      output.WriteMessage(LanternRiteActivityInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SeaLampInfo) {
-      output.WriteRawTag(186, 15);
-      output.WriteMessage(SeaLampInfo);
-    }
-    if (Unk3300MJNPGEKLOCG != false) {
-      output.WriteRawTag(192, 22);
-      output.WriteBool(Unk3300MJNPGEKLOCG);
-    }
-    if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
-      output.WriteRawTag(210, 23);
-      output.WriteMessage(FindHilichurlInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
-      output.WriteRawTag(218, 25);
-      output.WriteMessage(SummerTimeV2Info);
-    }
-    if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
-      output.WriteRawTag(130, 27);
-      output.WriteMessage(MistTrialActivityInfo);
-    }
-    if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
-      output.WriteRawTag(226, 27);
-      output.WriteMessage(LuminanceStoneChallengeInfo);
-    }
-    if (detailCase_ == DetailOneofCase.WindFieldInfo) {
-      output.WriteRawTag(162, 29);
-      output.WriteMessage(WindFieldInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SumoInfo) {
-      output.WriteRawTag(202, 31);
-      output.WriteMessage(SumoInfo);
-    }
-    if (detailCase_ == DetailOneofCase.HachiInfo) {
-      output.WriteRawTag(250, 31);
-      output.WriteMessage(HachiInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
-      output.WriteRawTag(210, 33);
-      output.WriteMessage(ArenaChallengeInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BartenderInfo) {
-      output.WriteRawTag(186, 34);
-      output.WriteMessage(BartenderInfo);
-    }
-    if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
-      output.WriteRawTag(130, 35);
-      output.WriteMessage(RogueDiaryInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
-      output.WriteRawTag(234, 38);
-      output.WriteMessage(CharAmusementInfo);
-    }
-    if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
-      output.WriteRawTag(218, 39);
-      output.WriteMessage(WaterSpiritInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
-      output.WriteRawTag(242, 42);
-      output.WriteMessage(BuoyantCombatInfo);
-    }
-    if (SelectedAvatarRewardId != 0) {
-      output.WriteRawTag(200, 43);
-      output.WriteUInt32(SelectedAvatarRewardId);
-    }
-    if (detailCase_ == DetailOneofCase.WinterCampInfo) {
-      output.WriteRawTag(218, 43);
-      output.WriteMessage(WinterCampInfo);
-    }
-    if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
-      output.WriteRawTag(162, 46);
-      output.WriteMessage(IslandPartyInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
-      output.WriteRawTag(242, 47);
-      output.WriteMessage(MoonfinTrialInfo);
-    }
-    if (FirstDayStartTime != 0) {
-      output.WriteRawTag(144, 49);
-      output.WriteUInt32(FirstDayStartTime);
-    }
-    if (detailCase_ == DetailOneofCase.SpiceInfo) {
-      output.WriteRawTag(170, 49);
-      output.WriteMessage(SpiceInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
-      output.WriteRawTag(226, 50);
-      output.WriteMessage(CrystalLinkInfo);
-    }
-    if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-      output.WriteRawTag(186, 52);
-      output.WriteMessage(HideAndSeekInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
-      output.WriteRawTag(242, 52);
-      output.WriteMessage(ChannelerSlabInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
-      output.WriteRawTag(210, 57);
-      output.WriteMessage(BounceConjuringInfo);
-    }
-    wishGiftNumMap_.WriteTo(output, _map_wishGiftNumMap_codec);
-    if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
-      output.WriteRawTag(210, 60);
-      output.WriteMessage(RoguelikeDungeonInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ChessInfo) {
-      output.WriteRawTag(242, 62);
-      output.WriteMessage(ChessInfo);
-    }
-    if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
-      output.WriteRawTag(194, 64);
-      output.WriteMessage(TreasureSeelieInfo);
-    }
-    if (detailCase_ == DetailOneofCase.IrodoriInfo) {
-      output.WriteRawTag(130, 66);
-      output.WriteMessage(IrodoriInfo);
-    }
-    if (detailCase_ == DetailOneofCase.DeliveryInfo) {
-      output.WriteRawTag(170, 71);
-      output.WriteMessage(DeliveryInfo);
-    }
-    if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
-      output.WriteRawTag(202, 71);
-      output.WriteMessage(InstableSprayInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EchoShellInfo) {
-      output.WriteRawTag(210, 72);
-      output.WriteMessage(EchoShellInfo);
-    }
-    if (detailCase_ == DetailOneofCase.UgcInfo) {
-      output.WriteRawTag(242, 73);
-      output.WriteMessage(UgcInfo);
-    }
-    if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
-      output.WriteRawTag(138, 79);
-      output.WriteMessage(RockBoardExploreInfo);
-    }
-    if (CurScore != 0) {
-      output.WriteRawTag(160, 79);
-      output.WriteUInt32(CurScore);
-    }
-    if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
-      output.WriteRawTag(210, 79);
-      output.WriteMessage(PlantFlowerInfo);
-    }
-    if (detailCase_ == DetailOneofCase.GachaInfo) {
-      output.WriteRawTag(138, 81);
-      output.WriteMessage(GachaInfo);
-    }
-    if (detailCase_ == DetailOneofCase.VintageInfo) {
-      output.WriteRawTag(226, 81);
-      output.WriteMessage(VintageInfo);
-    }
-    if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
-      output.WriteRawTag(242, 81);
-      output.WriteMessage(DragonSpineInfo);
-    }
-    if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
-      output.WriteRawTag(162, 84);
-      output.WriteMessage(TanukiTravelActivityInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EffigyInfo) {
-      output.WriteRawTag(242, 85);
-      output.WriteMessage(EffigyInfo);
-    }
-    if (Unk3300CBCEHLJJOGI != false) {
-      output.WriteRawTag(248, 85);
-      output.WriteBool(Unk3300CBCEHLJJOGI);
-    }
-    if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-      output.WriteRawTag(186, 90);
-      output.WriteMessage(FleurFairInfo);
-    }
-    if (detailCase_ == DetailOneofCase.GearInfo) {
-      output.WriteRawTag(210, 92);
-      output.WriteMessage(GearInfo);
-    }
-    if (Unk3300ABJKLALKLDG != false) {
-      output.WriteRawTag(240, 92);
-      output.WriteBool(Unk3300ABJKLALKLDG);
-    }
-    if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
-      output.WriteRawTag(146, 95);
-      output.WriteMessage(BrickBreakerInfo);
-    }
-    if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
-      output.WriteRawTag(202, 96);
-      output.WriteMessage(LunaRiteInfo);
-    }
-    if (detailCase_ == DetailOneofCase.PotionInfo) {
-      output.WriteRawTag(250, 97);
-      output.WriteMessage(PotionInfo);
-    }
-    if (Unk3300NEPKLLBJFKK != false) {
-      output.WriteRawTag(232, 102);
-      output.WriteBool(Unk3300NEPKLLBJFKK);
-    }
-    if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
-      output.WriteRawTag(242, 103);
-      output.WriteMessage(MuqadasPotionInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
-      output.WriteRawTag(194, 109);
-      output.WriteMessage(ExpeditionInfo);
-    }
-    if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
-      output.WriteRawTag(234, 109);
-      output.WriteMessage(FungusFighterInfo);
-    }
-    if (detailCase_ == DetailOneofCase.PhotoInfo) {
-      output.WriteRawTag(242, 113);
-      output.WriteMessage(PhotoInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
-      output.WriteRawTag(250, 114);
-      output.WriteMessage(MichiaeMatsuriInfo);
-    }
-    if (detailCase_ == DetailOneofCase.DigInfo) {
-      output.WriteRawTag(178, 116);
-      output.WriteMessage(DigInfo);
-    }
-    activityPushTipsDataList_.WriteTo(output, _repeated_activityPushTipsDataList_codec);
-    if (ScoreLimit != 0) {
-      output.WriteRawTag(240, 116);
-      output.WriteUInt32(ScoreLimit);
-    }
-    takenRewardList_.WriteTo(output, _repeated_takenRewardList_codec);
-    if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
-      output.WriteRawTag(178, 119);
-      output.WriteMessage(SummerTimeInfo);
-    }
-    if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
-      output.WriteRawTag(170, 120);
-      output.WriteMessage(TreasureMapInfo);
-    }
-    if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
-      output.WriteRawTag(194, 120);
-      output.WriteMessage(GravenInnocenceInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BlessingInfo) {
-      output.WriteRawTag(210, 122);
-      output.WriteMessage(BlessingInfo);
-    }
-    if (detailCase_ == DetailOneofCase.AsterInfo) {
-      output.WriteRawTag(202, 123);
-      output.WriteMessage(AsterInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MusicGameInfo) {
-      output.WriteRawTag(170, 124);
-      output.WriteMessage(MusicGameInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
-      output.WriteRawTag(146, 125);
-      output.WriteMessage(CoinCollectInfo);
-    }
-    if (detailCase_ == DetailOneofCase.FlightInfo) {
-      output.WriteRawTag(218, 125);
-      output.WriteMessage(FlightInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (BeginTime != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(BeginTime);
-    }
-    if (detailCase_ == DetailOneofCase.SamLampInfo) {
-      output.WriteRawTag(18);
-      output.WriteMessage(SamLampInfo);
-    }
-    if (ActivityType != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ActivityType);
-    }
-    if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
-      output.WriteRawTag(34);
-      output.WriteMessage(TrialAvatarInfo);
-    }
-    expireCondList_.WriteTo(ref output, _repeated_expireCondList_codec);
-    watcherInfoList_.WriteTo(ref output, _repeated_watcherInfoList_codec);
-    if (ScheduleId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(ScheduleId);
-    }
-    if (IsFinished != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsFinished);
-    }
-    if (detailCase_ == DetailOneofCase.SalesmanInfo) {
-      output.WriteRawTag(74);
-      output.WriteMessage(SalesmanInfo);
-    }
-    if (EndTime != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(EndTime);
-    }
-    meetCondList_.WriteTo(ref output, _repeated_meetCondList_codec);
-    if (Unk3300MDBDPIBEGGH != false) {
-      output.WriteRawTag(96);
-      output.WriteBool(Unk3300MDBDPIBEGGH);
-    }
-    if (ActivityId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(ActivityId);
-    }
-    if (Unk3300ICNJJKDHPCH != false) {
-      output.WriteRawTag(112);
-      output.WriteBool(Unk3300ICNJJKDHPCH);
-    }
-    if (detailCase_ == DetailOneofCase.CrucibleInfo) {
-      output.WriteRawTag(122);
-      output.WriteMessage(CrucibleInfo);
-    }
-    activityCoinMap_.WriteTo(ref output, _map_activityCoinMap_codec);
-    if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
-      output.WriteRawTag(130, 4);
-      output.WriteMessage(BlitzRushInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
-      output.WriteRawTag(202, 14);
-      output.WriteMessage(EffigyChallengeInfo);
-    }
-    if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
-      output.WriteRawTag(234, 14);
-      output.WriteMessage(LanternRiteActivityInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SeaLampInfo) {
-      output.WriteRawTag(186, 15);
-      output.WriteMessage(SeaLampInfo);
-    }
-    if (Unk3300MJNPGEKLOCG != false) {
-      output.WriteRawTag(192, 22);
-      output.WriteBool(Unk3300MJNPGEKLOCG);
-    }
-    if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
-      output.WriteRawTag(210, 23);
-      output.WriteMessage(FindHilichurlInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
-      output.WriteRawTag(218, 25);
-      output.WriteMessage(SummerTimeV2Info);
-    }
-    if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
-      output.WriteRawTag(130, 27);
-      output.WriteMessage(MistTrialActivityInfo);
-    }
-    if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
-      output.WriteRawTag(226, 27);
-      output.WriteMessage(LuminanceStoneChallengeInfo);
-    }
-    if (detailCase_ == DetailOneofCase.WindFieldInfo) {
-      output.WriteRawTag(162, 29);
-      output.WriteMessage(WindFieldInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SumoInfo) {
-      output.WriteRawTag(202, 31);
-      output.WriteMessage(SumoInfo);
-    }
-    if (detailCase_ == DetailOneofCase.HachiInfo) {
-      output.WriteRawTag(250, 31);
-      output.WriteMessage(HachiInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
-      output.WriteRawTag(210, 33);
-      output.WriteMessage(ArenaChallengeInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BartenderInfo) {
-      output.WriteRawTag(186, 34);
-      output.WriteMessage(BartenderInfo);
-    }
-    if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
-      output.WriteRawTag(130, 35);
-      output.WriteMessage(RogueDiaryInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
-      output.WriteRawTag(234, 38);
-      output.WriteMessage(CharAmusementInfo);
-    }
-    if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
-      output.WriteRawTag(218, 39);
-      output.WriteMessage(WaterSpiritInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
-      output.WriteRawTag(242, 42);
-      output.WriteMessage(BuoyantCombatInfo);
-    }
-    if (SelectedAvatarRewardId != 0) {
-      output.WriteRawTag(200, 43);
-      output.WriteUInt32(SelectedAvatarRewardId);
-    }
-    if (detailCase_ == DetailOneofCase.WinterCampInfo) {
-      output.WriteRawTag(218, 43);
-      output.WriteMessage(WinterCampInfo);
-    }
-    if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
-      output.WriteRawTag(162, 46);
-      output.WriteMessage(IslandPartyInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
-      output.WriteRawTag(242, 47);
-      output.WriteMessage(MoonfinTrialInfo);
-    }
-    if (FirstDayStartTime != 0) {
-      output.WriteRawTag(144, 49);
-      output.WriteUInt32(FirstDayStartTime);
-    }
-    if (detailCase_ == DetailOneofCase.SpiceInfo) {
-      output.WriteRawTag(170, 49);
-      output.WriteMessage(SpiceInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
-      output.WriteRawTag(226, 50);
-      output.WriteMessage(CrystalLinkInfo);
-    }
-    if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-      output.WriteRawTag(186, 52);
-      output.WriteMessage(HideAndSeekInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
-      output.WriteRawTag(242, 52);
-      output.WriteMessage(ChannelerSlabInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
-      output.WriteRawTag(210, 57);
-      output.WriteMessage(BounceConjuringInfo);
-    }
-    wishGiftNumMap_.WriteTo(ref output, _map_wishGiftNumMap_codec);
-    if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
-      output.WriteRawTag(210, 60);
-      output.WriteMessage(RoguelikeDungeonInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ChessInfo) {
-      output.WriteRawTag(242, 62);
-      output.WriteMessage(ChessInfo);
-    }
-    if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
-      output.WriteRawTag(194, 64);
-      output.WriteMessage(TreasureSeelieInfo);
-    }
-    if (detailCase_ == DetailOneofCase.IrodoriInfo) {
-      output.WriteRawTag(130, 66);
-      output.WriteMessage(IrodoriInfo);
-    }
-    if (detailCase_ == DetailOneofCase.DeliveryInfo) {
-      output.WriteRawTag(170, 71);
-      output.WriteMessage(DeliveryInfo);
-    }
-    if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
-      output.WriteRawTag(202, 71);
-      output.WriteMessage(InstableSprayInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EchoShellInfo) {
-      output.WriteRawTag(210, 72);
-      output.WriteMessage(EchoShellInfo);
-    }
-    if (detailCase_ == DetailOneofCase.UgcInfo) {
-      output.WriteRawTag(242, 73);
-      output.WriteMessage(UgcInfo);
-    }
-    if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
-      output.WriteRawTag(138, 79);
-      output.WriteMessage(RockBoardExploreInfo);
-    }
-    if (CurScore != 0) {
-      output.WriteRawTag(160, 79);
-      output.WriteUInt32(CurScore);
-    }
-    if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
-      output.WriteRawTag(210, 79);
-      output.WriteMessage(PlantFlowerInfo);
-    }
-    if (detailCase_ == DetailOneofCase.GachaInfo) {
-      output.WriteRawTag(138, 81);
-      output.WriteMessage(GachaInfo);
-    }
-    if (detailCase_ == DetailOneofCase.VintageInfo) {
-      output.WriteRawTag(226, 81);
-      output.WriteMessage(VintageInfo);
-    }
-    if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
-      output.WriteRawTag(242, 81);
-      output.WriteMessage(DragonSpineInfo);
-    }
-    if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
-      output.WriteRawTag(162, 84);
-      output.WriteMessage(TanukiTravelActivityInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EffigyInfo) {
-      output.WriteRawTag(242, 85);
-      output.WriteMessage(EffigyInfo);
-    }
-    if (Unk3300CBCEHLJJOGI != false) {
-      output.WriteRawTag(248, 85);
-      output.WriteBool(Unk3300CBCEHLJJOGI);
-    }
-    if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-      output.WriteRawTag(186, 90);
-      output.WriteMessage(FleurFairInfo);
-    }
-    if (detailCase_ == DetailOneofCase.GearInfo) {
-      output.WriteRawTag(210, 92);
-      output.WriteMessage(GearInfo);
-    }
-    if (Unk3300ABJKLALKLDG != false) {
-      output.WriteRawTag(240, 92);
-      output.WriteBool(Unk3300ABJKLALKLDG);
-    }
-    if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
-      output.WriteRawTag(146, 95);
-      output.WriteMessage(BrickBreakerInfo);
-    }
-    if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
-      output.WriteRawTag(202, 96);
-      output.WriteMessage(LunaRiteInfo);
-    }
-    if (detailCase_ == DetailOneofCase.PotionInfo) {
-      output.WriteRawTag(250, 97);
-      output.WriteMessage(PotionInfo);
-    }
-    if (Unk3300NEPKLLBJFKK != false) {
-      output.WriteRawTag(232, 102);
-      output.WriteBool(Unk3300NEPKLLBJFKK);
-    }
-    if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
-      output.WriteRawTag(242, 103);
-      output.WriteMessage(MuqadasPotionInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
-      output.WriteRawTag(194, 109);
-      output.WriteMessage(ExpeditionInfo);
-    }
-    if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
-      output.WriteRawTag(234, 109);
-      output.WriteMessage(FungusFighterInfo);
-    }
-    if (detailCase_ == DetailOneofCase.PhotoInfo) {
-      output.WriteRawTag(242, 113);
-      output.WriteMessage(PhotoInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
-      output.WriteRawTag(250, 114);
-      output.WriteMessage(MichiaeMatsuriInfo);
-    }
-    if (detailCase_ == DetailOneofCase.DigInfo) {
-      output.WriteRawTag(178, 116);
-      output.WriteMessage(DigInfo);
-    }
-    activityPushTipsDataList_.WriteTo(ref output, _repeated_activityPushTipsDataList_codec);
-    if (ScoreLimit != 0) {
-      output.WriteRawTag(240, 116);
-      output.WriteUInt32(ScoreLimit);
-    }
-    takenRewardList_.WriteTo(ref output, _repeated_takenRewardList_codec);
-    if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
-      output.WriteRawTag(178, 119);
-      output.WriteMessage(SummerTimeInfo);
-    }
-    if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
-      output.WriteRawTag(170, 120);
-      output.WriteMessage(TreasureMapInfo);
-    }
-    if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
-      output.WriteRawTag(194, 120);
-      output.WriteMessage(GravenInnocenceInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BlessingInfo) {
-      output.WriteRawTag(210, 122);
-      output.WriteMessage(BlessingInfo);
-    }
-    if (detailCase_ == DetailOneofCase.AsterInfo) {
-      output.WriteRawTag(202, 123);
-      output.WriteMessage(AsterInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MusicGameInfo) {
-      output.WriteRawTag(170, 124);
-      output.WriteMessage(MusicGameInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
-      output.WriteRawTag(146, 125);
-      output.WriteMessage(CoinCollectInfo);
-    }
-    if (detailCase_ == DetailOneofCase.FlightInfo) {
-      output.WriteRawTag(218, 125);
-      output.WriteMessage(FlightInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Unk3300MJNPGEKLOCG != false) {
-      size += 2 + 1;
-    }
-    if (IsFinished != false) {
-      size += 1 + 1;
-    }
-    if (CurScore != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
-    }
-    if (ScheduleId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
-    }
-    if (ScoreLimit != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(ScoreLimit);
-    }
-    if (Unk3300ICNJJKDHPCH != false) {
-      size += 1 + 1;
-    }
-    size += meetCondList_.CalculateSize(_repeated_meetCondList_codec);
-    if (Unk3300NEPKLLBJFKK != false) {
-      size += 2 + 1;
-    }
-    size += watcherInfoList_.CalculateSize(_repeated_watcherInfoList_codec);
-    size += activityPushTipsDataList_.CalculateSize(_repeated_activityPushTipsDataList_codec);
-    if (ActivityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityId);
-    }
-    size += takenRewardList_.CalculateSize(_repeated_takenRewardList_codec);
-    if (SelectedAvatarRewardId != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(SelectedAvatarRewardId);
-    }
-    size += activityCoinMap_.CalculateSize(_map_activityCoinMap_codec);
-    if (FirstDayStartTime != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(FirstDayStartTime);
-    }
-    if (Unk3300ABJKLALKLDG != false) {
-      size += 2 + 1;
-    }
-    if (ActivityType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ActivityType);
-    }
-    if (Unk3300CBCEHLJJOGI != false) {
-      size += 2 + 1;
-    }
-    if (BeginTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
-    }
-    if (Unk3300MDBDPIBEGGH != false) {
-      size += 1 + 1;
-    }
-    size += wishGiftNumMap_.CalculateSize(_map_wishGiftNumMap_codec);
-    if (EndTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
-    }
-    size += expireCondList_.CalculateSize(_repeated_expireCondList_codec);
-    if (detailCase_ == DetailOneofCase.SamLampInfo) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(SamLampInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CrucibleInfo) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(CrucibleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SalesmanInfo) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(SalesmanInfo);
-    }
-    if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(TrialAvatarInfo);
-    }
-    if (detailCase_ == DetailOneofCase.DeliveryInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(DeliveryInfo);
-    }
-    if (detailCase_ == DetailOneofCase.AsterInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(AsterInfo);
-    }
-    if (detailCase_ == DetailOneofCase.FlightInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(FlightInfo);
-    }
-    if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(DragonSpineInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EffigyInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(EffigyInfo);
-    }
-    if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(TreasureMapInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BlessingInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(BlessingInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SeaLampInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(SeaLampInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(ExpeditionInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(ArenaChallengeInfo);
-    }
-    if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(FleurFairInfo);
-    }
-    if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(WaterSpiritInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(ChannelerSlabInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(MistTrialActivityInfo);
-    }
-    if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(HideAndSeekInfo);
-    }
-    if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(FindHilichurlInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(SummerTimeInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(BuoyantCombatInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EchoShellInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(EchoShellInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(BounceConjuringInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(BlitzRushInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ChessInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(ChessInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SumoInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(SumoInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(MoonfinTrialInfo);
-    }
-    if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(LunaRiteInfo);
-    }
-    if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(PlantFlowerInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MusicGameInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(MusicGameInfo);
-    }
-    if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(RoguelikeDungeonInfo);
-    }
-    if (detailCase_ == DetailOneofCase.DigInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(DigInfo);
-    }
-    if (detailCase_ == DetailOneofCase.HachiInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(HachiInfo);
-    }
-    if (detailCase_ == DetailOneofCase.WinterCampInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(WinterCampInfo);
-    }
-    if (detailCase_ == DetailOneofCase.PotionInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(PotionInfo);
-    }
-    if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(TanukiTravelActivityInfo);
-    }
-    if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(LanternRiteActivityInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(MichiaeMatsuriInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BartenderInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(BartenderInfo);
-    }
-    if (detailCase_ == DetailOneofCase.UgcInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(UgcInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(CrystalLinkInfo);
-    }
-    if (detailCase_ == DetailOneofCase.IrodoriInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(IrodoriInfo);
-    }
-    if (detailCase_ == DetailOneofCase.PhotoInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(PhotoInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SpiceInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(SpiceInfo);
-    }
-    if (detailCase_ == DetailOneofCase.GachaInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(GachaInfo);
-    }
-    if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(LuminanceStoneChallengeInfo);
-    }
-    if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(RogueDiaryInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(SummerTimeV2Info);
-    }
-    if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(IslandPartyInfo);
-    }
-    if (detailCase_ == DetailOneofCase.GearInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(GearInfo);
-    }
-    if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(GravenInnocenceInfo);
-    }
-    if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(InstableSprayInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(MuqadasPotionInfo);
-    }
-    if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(TreasureSeelieInfo);
-    }
-    if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(RockBoardExploreInfo);
-    }
-    if (detailCase_ == DetailOneofCase.VintageInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(VintageInfo);
-    }
-    if (detailCase_ == DetailOneofCase.WindFieldInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(WindFieldInfo);
-    }
-    if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(FungusFighterInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(CharAmusementInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(EffigyChallengeInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(CoinCollectInfo);
-    }
-    if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(BrickBreakerInfo);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ActivityInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Unk3300MJNPGEKLOCG != false) {
-      Unk3300MJNPGEKLOCG = other.Unk3300MJNPGEKLOCG;
-    }
-    if (other.IsFinished != false) {
-      IsFinished = other.IsFinished;
-    }
-    if (other.CurScore != 0) {
-      CurScore = other.CurScore;
-    }
-    if (other.ScheduleId != 0) {
-      ScheduleId = other.ScheduleId;
-    }
-    if (other.ScoreLimit != 0) {
-      ScoreLimit = other.ScoreLimit;
-    }
-    if (other.Unk3300ICNJJKDHPCH != false) {
-      Unk3300ICNJJKDHPCH = other.Unk3300ICNJJKDHPCH;
-    }
-    meetCondList_.Add(other.meetCondList_);
-    if (other.Unk3300NEPKLLBJFKK != false) {
-      Unk3300NEPKLLBJFKK = other.Unk3300NEPKLLBJFKK;
-    }
-    watcherInfoList_.Add(other.watcherInfoList_);
-    activityPushTipsDataList_.Add(other.activityPushTipsDataList_);
-    if (other.ActivityId != 0) {
-      ActivityId = other.ActivityId;
-    }
-    takenRewardList_.Add(other.takenRewardList_);
-    if (other.SelectedAvatarRewardId != 0) {
-      SelectedAvatarRewardId = other.SelectedAvatarRewardId;
-    }
-    activityCoinMap_.Add(other.activityCoinMap_);
-    if (other.FirstDayStartTime != 0) {
-      FirstDayStartTime = other.FirstDayStartTime;
-    }
-    if (other.Unk3300ABJKLALKLDG != false) {
-      Unk3300ABJKLALKLDG = other.Unk3300ABJKLALKLDG;
-    }
-    if (other.ActivityType != 0) {
-      ActivityType = other.ActivityType;
-    }
-    if (other.Unk3300CBCEHLJJOGI != false) {
-      Unk3300CBCEHLJJOGI = other.Unk3300CBCEHLJJOGI;
-    }
-    if (other.BeginTime != 0) {
-      BeginTime = other.BeginTime;
-    }
-    if (other.Unk3300MDBDPIBEGGH != false) {
-      Unk3300MDBDPIBEGGH = other.Unk3300MDBDPIBEGGH;
-    }
-    wishGiftNumMap_.Add(other.wishGiftNumMap_);
-    if (other.EndTime != 0) {
-      EndTime = other.EndTime;
-    }
-    expireCondList_.Add(other.expireCondList_);
-    switch (other.DetailCase) {
-      case DetailOneofCase.SamLampInfo:
-        if (SamLampInfo == null) {
-          SamLampInfo = new global::SeaLampActivityDetailInfo();
-        }
-        SamLampInfo.MergeFrom(other.SamLampInfo);
-        break;
-      case DetailOneofCase.CrucibleInfo:
-        if (CrucibleInfo == null) {
-          CrucibleInfo = new global::CrucibleActivityDetailInfo();
-        }
-        CrucibleInfo.MergeFrom(other.CrucibleInfo);
-        break;
-      case DetailOneofCase.SalesmanInfo:
-        if (SalesmanInfo == null) {
-          SalesmanInfo = new global::SalesmanActivityDetailInfo();
-        }
-        SalesmanInfo.MergeFrom(other.SalesmanInfo);
-        break;
-      case DetailOneofCase.TrialAvatarInfo:
-        if (TrialAvatarInfo == null) {
-          TrialAvatarInfo = new global::TrialAvatarActivityDetailInfo();
-        }
-        TrialAvatarInfo.MergeFrom(other.TrialAvatarInfo);
-        break;
-      case DetailOneofCase.DeliveryInfo:
-        if (DeliveryInfo == null) {
-          DeliveryInfo = new global::DeliveryActivityDetailInfo();
-        }
-        DeliveryInfo.MergeFrom(other.DeliveryInfo);
-        break;
-      case DetailOneofCase.AsterInfo:
-        if (AsterInfo == null) {
-          AsterInfo = new global::AsterActivityDetailInfo();
-        }
-        AsterInfo.MergeFrom(other.AsterInfo);
-        break;
-      case DetailOneofCase.FlightInfo:
-        if (FlightInfo == null) {
-          FlightInfo = new global::FlightActivityDetailInfo();
-        }
-        FlightInfo.MergeFrom(other.FlightInfo);
-        break;
-      case DetailOneofCase.DragonSpineInfo:
-        if (DragonSpineInfo == null) {
-          DragonSpineInfo = new global::DragonSpineActivityDetailInfo();
-        }
-        DragonSpineInfo.MergeFrom(other.DragonSpineInfo);
-        break;
-      case DetailOneofCase.EffigyInfo:
-        if (EffigyInfo == null) {
-          EffigyInfo = new global::EffigyActivityDetailInfo();
-        }
-        EffigyInfo.MergeFrom(other.EffigyInfo);
-        break;
-      case DetailOneofCase.TreasureMapInfo:
-        if (TreasureMapInfo == null) {
-          TreasureMapInfo = new global::TreasureMapActivityDetailInfo();
-        }
-        TreasureMapInfo.MergeFrom(other.TreasureMapInfo);
-        break;
-      case DetailOneofCase.BlessingInfo:
-        if (BlessingInfo == null) {
-          BlessingInfo = new global::BlessingActivityDetailInfo();
-        }
-        BlessingInfo.MergeFrom(other.BlessingInfo);
-        break;
-      case DetailOneofCase.SeaLampInfo:
-        if (SeaLampInfo == null) {
-          SeaLampInfo = new global::SeaLampActivityInfo();
-        }
-        SeaLampInfo.MergeFrom(other.SeaLampInfo);
-        break;
-      case DetailOneofCase.ExpeditionInfo:
-        if (ExpeditionInfo == null) {
-          ExpeditionInfo = new global::ExpeditionActivityDetailInfo();
-        }
-        ExpeditionInfo.MergeFrom(other.ExpeditionInfo);
-        break;
-      case DetailOneofCase.ArenaChallengeInfo:
-        if (ArenaChallengeInfo == null) {
-          ArenaChallengeInfo = new global::ArenaChallengeActivityDetailInfo();
-        }
-        ArenaChallengeInfo.MergeFrom(other.ArenaChallengeInfo);
-        break;
-      case DetailOneofCase.FleurFairInfo:
-        if (FleurFairInfo == null) {
-          FleurFairInfo = new global::FleurFairActivityDetailInfo();
-        }
-        FleurFairInfo.MergeFrom(other.FleurFairInfo);
-        break;
-      case DetailOneofCase.WaterSpiritInfo:
-        if (WaterSpiritInfo == null) {
-          WaterSpiritInfo = new global::WaterSpiritActivityDetailInfo();
-        }
-        WaterSpiritInfo.MergeFrom(other.WaterSpiritInfo);
-        break;
-      case DetailOneofCase.ChannelerSlabInfo:
-        if (ChannelerSlabInfo == null) {
-          ChannelerSlabInfo = new global::ChannelerSlabActivityDetailInfo();
-        }
-        ChannelerSlabInfo.MergeFrom(other.ChannelerSlabInfo);
-        break;
-      case DetailOneofCase.MistTrialActivityInfo:
-        if (MistTrialActivityInfo == null) {
-          MistTrialActivityInfo = new global::MistTrialActivityDetailInfo();
-        }
-        MistTrialActivityInfo.MergeFrom(other.MistTrialActivityInfo);
-        break;
-      case DetailOneofCase.HideAndSeekInfo:
-        if (HideAndSeekInfo == null) {
-          HideAndSeekInfo = new global::HideAndSeekActivityDetailInfo();
-        }
-        HideAndSeekInfo.MergeFrom(other.HideAndSeekInfo);
-        break;
-      case DetailOneofCase.FindHilichurlInfo:
-        if (FindHilichurlInfo == null) {
-          FindHilichurlInfo = new global::FindHilichurlDetailInfo();
-        }
-        FindHilichurlInfo.MergeFrom(other.FindHilichurlInfo);
-        break;
-      case DetailOneofCase.SummerTimeInfo:
-        if (SummerTimeInfo == null) {
-          SummerTimeInfo = new global::SummerTimeDetailInfo();
-        }
-        SummerTimeInfo.MergeFrom(other.SummerTimeInfo);
-        break;
-      case DetailOneofCase.BuoyantCombatInfo:
-        if (BuoyantCombatInfo == null) {
-          BuoyantCombatInfo = new global::BuoyantCombatDetailInfo();
-        }
-        BuoyantCombatInfo.MergeFrom(other.BuoyantCombatInfo);
-        break;
-      case DetailOneofCase.EchoShellInfo:
-        if (EchoShellInfo == null) {
-          EchoShellInfo = new global::EchoShellDetailInfo();
-        }
-        EchoShellInfo.MergeFrom(other.EchoShellInfo);
-        break;
-      case DetailOneofCase.BounceConjuringInfo:
-        if (BounceConjuringInfo == null) {
-          BounceConjuringInfo = new global::BounceConjuringActivityDetailInfo();
-        }
-        BounceConjuringInfo.MergeFrom(other.BounceConjuringInfo);
-        break;
-      case DetailOneofCase.BlitzRushInfo:
-        if (BlitzRushInfo == null) {
-          BlitzRushInfo = new global::BlitzRushActivityDetailInfo();
-        }
-        BlitzRushInfo.MergeFrom(other.BlitzRushInfo);
-        break;
-      case DetailOneofCase.ChessInfo:
-        if (ChessInfo == null) {
-          ChessInfo = new global::ChessActivityDetailInfo();
-        }
-        ChessInfo.MergeFrom(other.ChessInfo);
-        break;
-      case DetailOneofCase.SumoInfo:
-        if (SumoInfo == null) {
-          SumoInfo = new global::SumoActivityDetailInfo();
-        }
-        SumoInfo.MergeFrom(other.SumoInfo);
-        break;
-      case DetailOneofCase.MoonfinTrialInfo:
-        if (MoonfinTrialInfo == null) {
-          MoonfinTrialInfo = new global::MoonfinTrialActivityDetailInfo();
-        }
-        MoonfinTrialInfo.MergeFrom(other.MoonfinTrialInfo);
-        break;
-      case DetailOneofCase.LunaRiteInfo:
-        if (LunaRiteInfo == null) {
-          LunaRiteInfo = new global::LunaRiteDetailInfo();
-        }
-        LunaRiteInfo.MergeFrom(other.LunaRiteInfo);
-        break;
-      case DetailOneofCase.PlantFlowerInfo:
-        if (PlantFlowerInfo == null) {
-          PlantFlowerInfo = new global::PlantFlowerActivityDetailInfo();
-        }
-        PlantFlowerInfo.MergeFrom(other.PlantFlowerInfo);
-        break;
-      case DetailOneofCase.MusicGameInfo:
-        if (MusicGameInfo == null) {
-          MusicGameInfo = new global::MusicGameActivityDetailInfo();
-        }
-        MusicGameInfo.MergeFrom(other.MusicGameInfo);
-        break;
-      case DetailOneofCase.RoguelikeDungeonInfo:
-        if (RoguelikeDungeonInfo == null) {
-          RoguelikeDungeonInfo = new global::RoguelikeDungeonActivityDetailInfo();
-        }
-        RoguelikeDungeonInfo.MergeFrom(other.RoguelikeDungeonInfo);
-        break;
-      case DetailOneofCase.DigInfo:
-        if (DigInfo == null) {
-          DigInfo = new global::DigActivityDetailInfo();
-        }
-        DigInfo.MergeFrom(other.DigInfo);
-        break;
-      case DetailOneofCase.HachiInfo:
-        if (HachiInfo == null) {
-          HachiInfo = new global::HachiActivityDetailInfo();
-        }
-        HachiInfo.MergeFrom(other.HachiInfo);
-        break;
-      case DetailOneofCase.WinterCampInfo:
-        if (WinterCampInfo == null) {
-          WinterCampInfo = new global::WinterCampActivityDetailInfo();
-        }
-        WinterCampInfo.MergeFrom(other.WinterCampInfo);
-        break;
-      case DetailOneofCase.PotionInfo:
-        if (PotionInfo == null) {
-          PotionInfo = new global::PotionActivityDetailInfo();
-        }
-        PotionInfo.MergeFrom(other.PotionInfo);
-        break;
-      case DetailOneofCase.TanukiTravelActivityInfo:
-        if (TanukiTravelActivityInfo == null) {
-          TanukiTravelActivityInfo = new global::TanukiTravelActivityDetailInfo();
-        }
-        TanukiTravelActivityInfo.MergeFrom(other.TanukiTravelActivityInfo);
-        break;
-      case DetailOneofCase.LanternRiteActivityInfo:
-        if (LanternRiteActivityInfo == null) {
-          LanternRiteActivityInfo = new global::LanternRiteActivityDetailInfo();
-        }
-        LanternRiteActivityInfo.MergeFrom(other.LanternRiteActivityInfo);
-        break;
-      case DetailOneofCase.MichiaeMatsuriInfo:
-        if (MichiaeMatsuriInfo == null) {
-          MichiaeMatsuriInfo = new global::MichiaeMatsuriActivityDetailInfo();
-        }
-        MichiaeMatsuriInfo.MergeFrom(other.MichiaeMatsuriInfo);
-        break;
-      case DetailOneofCase.BartenderInfo:
-        if (BartenderInfo == null) {
-          BartenderInfo = new global::BartenderActivityDetailInfo();
-        }
-        BartenderInfo.MergeFrom(other.BartenderInfo);
-        break;
-      case DetailOneofCase.UgcInfo:
-        if (UgcInfo == null) {
-          UgcInfo = new global::UgcActivityDetailInfo();
-        }
-        UgcInfo.MergeFrom(other.UgcInfo);
-        break;
-      case DetailOneofCase.CrystalLinkInfo:
-        if (CrystalLinkInfo == null) {
-          CrystalLinkInfo = new global::CrystalLinkActivityDetailInfo();
-        }
-        CrystalLinkInfo.MergeFrom(other.CrystalLinkInfo);
-        break;
-      case DetailOneofCase.IrodoriInfo:
-        if (IrodoriInfo == null) {
-          IrodoriInfo = new global::IrodoriActivityDetailInfo();
-        }
-        IrodoriInfo.MergeFrom(other.IrodoriInfo);
-        break;
-      case DetailOneofCase.PhotoInfo:
-        if (PhotoInfo == null) {
-          PhotoInfo = new global::PhotoActivityDetailInfo();
-        }
-        PhotoInfo.MergeFrom(other.PhotoInfo);
-        break;
-      case DetailOneofCase.SpiceInfo:
-        if (SpiceInfo == null) {
-          SpiceInfo = new global::SpiceActivityDetailInfo();
-        }
-        SpiceInfo.MergeFrom(other.SpiceInfo);
-        break;
-      case DetailOneofCase.GachaInfo:
-        if (GachaInfo == null) {
-          GachaInfo = new global::GachaActivityDetailInfo();
-        }
-        GachaInfo.MergeFrom(other.GachaInfo);
-        break;
-      case DetailOneofCase.LuminanceStoneChallengeInfo:
-        if (LuminanceStoneChallengeInfo == null) {
-          LuminanceStoneChallengeInfo = new global::LuminanceStoneChallengeActivityDetailInfo();
-        }
-        LuminanceStoneChallengeInfo.MergeFrom(other.LuminanceStoneChallengeInfo);
-        break;
-      case DetailOneofCase.RogueDiaryInfo:
-        if (RogueDiaryInfo == null) {
-          RogueDiaryInfo = new global::RogueDiaryActivityDetailInfo();
-        }
-        RogueDiaryInfo.MergeFrom(other.RogueDiaryInfo);
-        break;
-      case DetailOneofCase.SummerTimeV2Info:
-        if (SummerTimeV2Info == null) {
-          SummerTimeV2Info = new global::SummerTimeV2DetailInfo();
-        }
-        SummerTimeV2Info.MergeFrom(other.SummerTimeV2Info);
-        break;
-      case DetailOneofCase.IslandPartyInfo:
-        if (IslandPartyInfo == null) {
-          IslandPartyInfo = new global::IslandPartyDetailInfo();
-        }
-        IslandPartyInfo.MergeFrom(other.IslandPartyInfo);
-        break;
-      case DetailOneofCase.GearInfo:
-        if (GearInfo == null) {
-          GearInfo = new global::GearActivityDetailInfo();
-        }
-        GearInfo.MergeFrom(other.GearInfo);
-        break;
-      case DetailOneofCase.GravenInnocenceInfo:
-        if (GravenInnocenceInfo == null) {
-          GravenInnocenceInfo = new global::GravenInnocenceDetailInfo();
-        }
-        GravenInnocenceInfo.MergeFrom(other.GravenInnocenceInfo);
-        break;
-      case DetailOneofCase.InstableSprayInfo:
-        if (InstableSprayInfo == null) {
-          InstableSprayInfo = new global::InstableSprayDetailInfo();
-        }
-        InstableSprayInfo.MergeFrom(other.InstableSprayInfo);
-        break;
-      case DetailOneofCase.MuqadasPotionInfo:
-        if (MuqadasPotionInfo == null) {
-          MuqadasPotionInfo = new global::MuqadasPotionActivityDetailInfo();
-        }
-        MuqadasPotionInfo.MergeFrom(other.MuqadasPotionInfo);
-        break;
-      case DetailOneofCase.TreasureSeelieInfo:
-        if (TreasureSeelieInfo == null) {
-          TreasureSeelieInfo = new global::TreasureSeelieActivityDetailInfo();
-        }
-        TreasureSeelieInfo.MergeFrom(other.TreasureSeelieInfo);
-        break;
-      case DetailOneofCase.RockBoardExploreInfo:
-        if (RockBoardExploreInfo == null) {
-          RockBoardExploreInfo = new global::RockBoardExploreDetailInfo();
-        }
-        RockBoardExploreInfo.MergeFrom(other.RockBoardExploreInfo);
-        break;
-      case DetailOneofCase.VintageInfo:
-        if (VintageInfo == null) {
-          VintageInfo = new global::VintageActivityDetailInfo();
-        }
-        VintageInfo.MergeFrom(other.VintageInfo);
-        break;
-      case DetailOneofCase.WindFieldInfo:
-        if (WindFieldInfo == null) {
-          WindFieldInfo = new global::WindFieldDetailInfo();
-        }
-        WindFieldInfo.MergeFrom(other.WindFieldInfo);
-        break;
-      case DetailOneofCase.FungusFighterInfo:
-        if (FungusFighterInfo == null) {
-          FungusFighterInfo = new global::FungusFighterDetailInfo();
-        }
-        FungusFighterInfo.MergeFrom(other.FungusFighterInfo);
-        break;
-      case DetailOneofCase.CharAmusementInfo:
-        if (CharAmusementInfo == null) {
-          CharAmusementInfo = new global::CharAmusementDetailInfo();
-        }
-        CharAmusementInfo.MergeFrom(other.CharAmusementInfo);
-        break;
-      case DetailOneofCase.EffigyChallengeInfo:
-        if (EffigyChallengeInfo == null) {
-          EffigyChallengeInfo = new global::EffigyChallengeV2DetailInfo();
-        }
-        EffigyChallengeInfo.MergeFrom(other.EffigyChallengeInfo);
-        break;
-      case DetailOneofCase.CoinCollectInfo:
-        if (CoinCollectInfo == null) {
-          CoinCollectInfo = new global::CoinCollectDetailInfo();
-        }
-        CoinCollectInfo.MergeFrom(other.CoinCollectInfo);
-        break;
-      case DetailOneofCase.BrickBreakerInfo:
-        if (BrickBreakerInfo == null) {
-          BrickBreakerInfo = new global::BrickBreakerDetailInfo();
-        }
-        BrickBreakerInfo.MergeFrom(other.BrickBreakerInfo);
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          BeginTime = input.ReadUInt32();
-          break;
-        }
-        case 18: {
-          global::SeaLampActivityDetailInfo subBuilder = new global::SeaLampActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.SamLampInfo) {
-            subBuilder.MergeFrom(SamLampInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SamLampInfo = subBuilder;
-          break;
-        }
-        case 24: {
-          ActivityType = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          global::TrialAvatarActivityDetailInfo subBuilder = new global::TrialAvatarActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
-            subBuilder.MergeFrom(TrialAvatarInfo);
-          }
-          input.ReadMessage(subBuilder);
-          TrialAvatarInfo = subBuilder;
-          break;
-        }
-        case 42:
-        case 40: {
-          expireCondList_.AddEntriesFrom(input, _repeated_expireCondList_codec);
-          break;
-        }
-        case 50: {
-          watcherInfoList_.AddEntriesFrom(input, _repeated_watcherInfoList_codec);
-          break;
-        }
-        case 56: {
-          ScheduleId = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          IsFinished = input.ReadBool();
-          break;
-        }
-        case 74: {
-          global::SalesmanActivityDetailInfo subBuilder = new global::SalesmanActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.SalesmanInfo) {
-            subBuilder.MergeFrom(SalesmanInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SalesmanInfo = subBuilder;
-          break;
-        }
-        case 80: {
-          EndTime = input.ReadUInt32();
-          break;
-        }
-        case 90:
-        case 88: {
-          meetCondList_.AddEntriesFrom(input, _repeated_meetCondList_codec);
-          break;
-        }
-        case 96: {
-          Unk3300MDBDPIBEGGH = input.ReadBool();
-          break;
-        }
-        case 104: {
-          ActivityId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300ICNJJKDHPCH = input.ReadBool();
-          break;
-        }
-        case 122: {
-          global::CrucibleActivityDetailInfo subBuilder = new global::CrucibleActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.CrucibleInfo) {
-            subBuilder.MergeFrom(CrucibleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CrucibleInfo = subBuilder;
-          break;
-        }
-        case 290: {
-          activityCoinMap_.AddEntriesFrom(input, _map_activityCoinMap_codec);
-          break;
-        }
-        case 514: {
-          global::BlitzRushActivityDetailInfo subBuilder = new global::BlitzRushActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
-            subBuilder.MergeFrom(BlitzRushInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BlitzRushInfo = subBuilder;
-          break;
-        }
-        case 1866: {
-          global::EffigyChallengeV2DetailInfo subBuilder = new global::EffigyChallengeV2DetailInfo();
-          if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
-            subBuilder.MergeFrom(EffigyChallengeInfo);
-          }
-          input.ReadMessage(subBuilder);
-          EffigyChallengeInfo = subBuilder;
-          break;
-        }
-        case 1898: {
-          global::LanternRiteActivityDetailInfo subBuilder = new global::LanternRiteActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
-            subBuilder.MergeFrom(LanternRiteActivityInfo);
-          }
-          input.ReadMessage(subBuilder);
-          LanternRiteActivityInfo = subBuilder;
-          break;
-        }
-        case 1978: {
-          global::SeaLampActivityInfo subBuilder = new global::SeaLampActivityInfo();
-          if (detailCase_ == DetailOneofCase.SeaLampInfo) {
-            subBuilder.MergeFrom(SeaLampInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SeaLampInfo = subBuilder;
-          break;
-        }
-        case 2880: {
-          Unk3300MJNPGEKLOCG = input.ReadBool();
-          break;
-        }
-        case 3026: {
-          global::FindHilichurlDetailInfo subBuilder = new global::FindHilichurlDetailInfo();
-          if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
-            subBuilder.MergeFrom(FindHilichurlInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FindHilichurlInfo = subBuilder;
-          break;
-        }
-        case 3290: {
-          global::SummerTimeV2DetailInfo subBuilder = new global::SummerTimeV2DetailInfo();
-          if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
-            subBuilder.MergeFrom(SummerTimeV2Info);
-          }
-          input.ReadMessage(subBuilder);
-          SummerTimeV2Info = subBuilder;
-          break;
-        }
-        case 3458: {
-          global::MistTrialActivityDetailInfo subBuilder = new global::MistTrialActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
-            subBuilder.MergeFrom(MistTrialActivityInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MistTrialActivityInfo = subBuilder;
-          break;
-        }
-        case 3554: {
-          global::LuminanceStoneChallengeActivityDetailInfo subBuilder = new global::LuminanceStoneChallengeActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
-            subBuilder.MergeFrom(LuminanceStoneChallengeInfo);
-          }
-          input.ReadMessage(subBuilder);
-          LuminanceStoneChallengeInfo = subBuilder;
-          break;
-        }
-        case 3746: {
-          global::WindFieldDetailInfo subBuilder = new global::WindFieldDetailInfo();
-          if (detailCase_ == DetailOneofCase.WindFieldInfo) {
-            subBuilder.MergeFrom(WindFieldInfo);
-          }
-          input.ReadMessage(subBuilder);
-          WindFieldInfo = subBuilder;
-          break;
-        }
-        case 4042: {
-          global::SumoActivityDetailInfo subBuilder = new global::SumoActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.SumoInfo) {
-            subBuilder.MergeFrom(SumoInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SumoInfo = subBuilder;
-          break;
-        }
-        case 4090: {
-          global::HachiActivityDetailInfo subBuilder = new global::HachiActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.HachiInfo) {
-            subBuilder.MergeFrom(HachiInfo);
-          }
-          input.ReadMessage(subBuilder);
-          HachiInfo = subBuilder;
-          break;
-        }
-        case 4306: {
-          global::ArenaChallengeActivityDetailInfo subBuilder = new global::ArenaChallengeActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
-            subBuilder.MergeFrom(ArenaChallengeInfo);
-          }
-          input.ReadMessage(subBuilder);
-          ArenaChallengeInfo = subBuilder;
-          break;
-        }
-        case 4410: {
-          global::BartenderActivityDetailInfo subBuilder = new global::BartenderActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.BartenderInfo) {
-            subBuilder.MergeFrom(BartenderInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BartenderInfo = subBuilder;
-          break;
-        }
-        case 4482: {
-          global::RogueDiaryActivityDetailInfo subBuilder = new global::RogueDiaryActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
-            subBuilder.MergeFrom(RogueDiaryInfo);
-          }
-          input.ReadMessage(subBuilder);
-          RogueDiaryInfo = subBuilder;
-          break;
-        }
-        case 4970: {
-          global::CharAmusementDetailInfo subBuilder = new global::CharAmusementDetailInfo();
-          if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
-            subBuilder.MergeFrom(CharAmusementInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CharAmusementInfo = subBuilder;
-          break;
-        }
-        case 5082: {
-          global::WaterSpiritActivityDetailInfo subBuilder = new global::WaterSpiritActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
-            subBuilder.MergeFrom(WaterSpiritInfo);
-          }
-          input.ReadMessage(subBuilder);
-          WaterSpiritInfo = subBuilder;
-          break;
-        }
-        case 5490: {
-          global::BuoyantCombatDetailInfo subBuilder = new global::BuoyantCombatDetailInfo();
-          if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
-            subBuilder.MergeFrom(BuoyantCombatInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BuoyantCombatInfo = subBuilder;
-          break;
-        }
-        case 5576: {
-          SelectedAvatarRewardId = input.ReadUInt32();
-          break;
-        }
-        case 5594: {
-          global::WinterCampActivityDetailInfo subBuilder = new global::WinterCampActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.WinterCampInfo) {
-            subBuilder.MergeFrom(WinterCampInfo);
-          }
-          input.ReadMessage(subBuilder);
-          WinterCampInfo = subBuilder;
-          break;
-        }
-        case 5922: {
-          global::IslandPartyDetailInfo subBuilder = new global::IslandPartyDetailInfo();
-          if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
-            subBuilder.MergeFrom(IslandPartyInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IslandPartyInfo = subBuilder;
-          break;
-        }
-        case 6130: {
-          global::MoonfinTrialActivityDetailInfo subBuilder = new global::MoonfinTrialActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
-            subBuilder.MergeFrom(MoonfinTrialInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MoonfinTrialInfo = subBuilder;
-          break;
-        }
-        case 6288: {
-          FirstDayStartTime = input.ReadUInt32();
-          break;
-        }
-        case 6314: {
-          global::SpiceActivityDetailInfo subBuilder = new global::SpiceActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.SpiceInfo) {
-            subBuilder.MergeFrom(SpiceInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SpiceInfo = subBuilder;
-          break;
-        }
-        case 6498: {
-          global::CrystalLinkActivityDetailInfo subBuilder = new global::CrystalLinkActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
-            subBuilder.MergeFrom(CrystalLinkInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CrystalLinkInfo = subBuilder;
-          break;
-        }
-        case 6714: {
-          global::HideAndSeekActivityDetailInfo subBuilder = new global::HideAndSeekActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-            subBuilder.MergeFrom(HideAndSeekInfo);
-          }
-          input.ReadMessage(subBuilder);
-          HideAndSeekInfo = subBuilder;
-          break;
-        }
-        case 6770: {
-          global::ChannelerSlabActivityDetailInfo subBuilder = new global::ChannelerSlabActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
-            subBuilder.MergeFrom(ChannelerSlabInfo);
-          }
-          input.ReadMessage(subBuilder);
-          ChannelerSlabInfo = subBuilder;
-          break;
-        }
-        case 7378: {
-          global::BounceConjuringActivityDetailInfo subBuilder = new global::BounceConjuringActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
-            subBuilder.MergeFrom(BounceConjuringInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BounceConjuringInfo = subBuilder;
-          break;
-        }
-        case 7514: {
-          wishGiftNumMap_.AddEntriesFrom(input, _map_wishGiftNumMap_codec);
-          break;
-        }
-        case 7762: {
-          global::RoguelikeDungeonActivityDetailInfo subBuilder = new global::RoguelikeDungeonActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
-            subBuilder.MergeFrom(RoguelikeDungeonInfo);
-          }
-          input.ReadMessage(subBuilder);
-          RoguelikeDungeonInfo = subBuilder;
-          break;
-        }
-        case 8050: {
-          global::ChessActivityDetailInfo subBuilder = new global::ChessActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.ChessInfo) {
-            subBuilder.MergeFrom(ChessInfo);
-          }
-          input.ReadMessage(subBuilder);
-          ChessInfo = subBuilder;
-          break;
-        }
-        case 8258: {
-          global::TreasureSeelieActivityDetailInfo subBuilder = new global::TreasureSeelieActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
-            subBuilder.MergeFrom(TreasureSeelieInfo);
-          }
-          input.ReadMessage(subBuilder);
-          TreasureSeelieInfo = subBuilder;
-          break;
-        }
-        case 8450: {
-          global::IrodoriActivityDetailInfo subBuilder = new global::IrodoriActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.IrodoriInfo) {
-            subBuilder.MergeFrom(IrodoriInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IrodoriInfo = subBuilder;
-          break;
-        }
-        case 9130: {
-          global::DeliveryActivityDetailInfo subBuilder = new global::DeliveryActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.DeliveryInfo) {
-            subBuilder.MergeFrom(DeliveryInfo);
-          }
-          input.ReadMessage(subBuilder);
-          DeliveryInfo = subBuilder;
-          break;
-        }
-        case 9162: {
-          global::InstableSprayDetailInfo subBuilder = new global::InstableSprayDetailInfo();
-          if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
-            subBuilder.MergeFrom(InstableSprayInfo);
-          }
-          input.ReadMessage(subBuilder);
-          InstableSprayInfo = subBuilder;
-          break;
-        }
-        case 9298: {
-          global::EchoShellDetailInfo subBuilder = new global::EchoShellDetailInfo();
-          if (detailCase_ == DetailOneofCase.EchoShellInfo) {
-            subBuilder.MergeFrom(EchoShellInfo);
-          }
-          input.ReadMessage(subBuilder);
-          EchoShellInfo = subBuilder;
-          break;
-        }
-        case 9458: {
-          global::UgcActivityDetailInfo subBuilder = new global::UgcActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.UgcInfo) {
-            subBuilder.MergeFrom(UgcInfo);
-          }
-          input.ReadMessage(subBuilder);
-          UgcInfo = subBuilder;
-          break;
-        }
-        case 10122: {
-          global::RockBoardExploreDetailInfo subBuilder = new global::RockBoardExploreDetailInfo();
-          if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
-            subBuilder.MergeFrom(RockBoardExploreInfo);
-          }
-          input.ReadMessage(subBuilder);
-          RockBoardExploreInfo = subBuilder;
-          break;
-        }
-        case 10144: {
-          CurScore = input.ReadUInt32();
-          break;
-        }
-        case 10194: {
-          global::PlantFlowerActivityDetailInfo subBuilder = new global::PlantFlowerActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
-            subBuilder.MergeFrom(PlantFlowerInfo);
-          }
-          input.ReadMessage(subBuilder);
-          PlantFlowerInfo = subBuilder;
-          break;
-        }
-        case 10378: {
-          global::GachaActivityDetailInfo subBuilder = new global::GachaActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.GachaInfo) {
-            subBuilder.MergeFrom(GachaInfo);
-          }
-          input.ReadMessage(subBuilder);
-          GachaInfo = subBuilder;
-          break;
-        }
-        case 10466: {
-          global::VintageActivityDetailInfo subBuilder = new global::VintageActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.VintageInfo) {
-            subBuilder.MergeFrom(VintageInfo);
-          }
-          input.ReadMessage(subBuilder);
-          VintageInfo = subBuilder;
-          break;
-        }
-        case 10482: {
-          global::DragonSpineActivityDetailInfo subBuilder = new global::DragonSpineActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
-            subBuilder.MergeFrom(DragonSpineInfo);
-          }
-          input.ReadMessage(subBuilder);
-          DragonSpineInfo = subBuilder;
-          break;
-        }
-        case 10786: {
-          global::TanukiTravelActivityDetailInfo subBuilder = new global::TanukiTravelActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
-            subBuilder.MergeFrom(TanukiTravelActivityInfo);
-          }
-          input.ReadMessage(subBuilder);
-          TanukiTravelActivityInfo = subBuilder;
-          break;
-        }
-        case 10994: {
-          global::EffigyActivityDetailInfo subBuilder = new global::EffigyActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.EffigyInfo) {
-            subBuilder.MergeFrom(EffigyInfo);
-          }
-          input.ReadMessage(subBuilder);
-          EffigyInfo = subBuilder;
-          break;
-        }
-        case 11000: {
-          Unk3300CBCEHLJJOGI = input.ReadBool();
-          break;
-        }
-        case 11578: {
-          global::FleurFairActivityDetailInfo subBuilder = new global::FleurFairActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-            subBuilder.MergeFrom(FleurFairInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FleurFairInfo = subBuilder;
-          break;
-        }
-        case 11858: {
-          global::GearActivityDetailInfo subBuilder = new global::GearActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.GearInfo) {
-            subBuilder.MergeFrom(GearInfo);
-          }
-          input.ReadMessage(subBuilder);
-          GearInfo = subBuilder;
-          break;
-        }
-        case 11888: {
-          Unk3300ABJKLALKLDG = input.ReadBool();
-          break;
-        }
-        case 12178: {
-          global::BrickBreakerDetailInfo subBuilder = new global::BrickBreakerDetailInfo();
-          if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
-            subBuilder.MergeFrom(BrickBreakerInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BrickBreakerInfo = subBuilder;
-          break;
-        }
-        case 12362: {
-          global::LunaRiteDetailInfo subBuilder = new global::LunaRiteDetailInfo();
-          if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
-            subBuilder.MergeFrom(LunaRiteInfo);
-          }
-          input.ReadMessage(subBuilder);
-          LunaRiteInfo = subBuilder;
-          break;
-        }
-        case 12538: {
-          global::PotionActivityDetailInfo subBuilder = new global::PotionActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.PotionInfo) {
-            subBuilder.MergeFrom(PotionInfo);
-          }
-          input.ReadMessage(subBuilder);
-          PotionInfo = subBuilder;
-          break;
-        }
-        case 13160: {
-          Unk3300NEPKLLBJFKK = input.ReadBool();
-          break;
-        }
-        case 13298: {
-          global::MuqadasPotionActivityDetailInfo subBuilder = new global::MuqadasPotionActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
-            subBuilder.MergeFrom(MuqadasPotionInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MuqadasPotionInfo = subBuilder;
-          break;
-        }
-        case 14018: {
-          global::ExpeditionActivityDetailInfo subBuilder = new global::ExpeditionActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
-            subBuilder.MergeFrom(ExpeditionInfo);
-          }
-          input.ReadMessage(subBuilder);
-          ExpeditionInfo = subBuilder;
-          break;
-        }
-        case 14058: {
-          global::FungusFighterDetailInfo subBuilder = new global::FungusFighterDetailInfo();
-          if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
-            subBuilder.MergeFrom(FungusFighterInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FungusFighterInfo = subBuilder;
-          break;
-        }
-        case 14578: {
-          global::PhotoActivityDetailInfo subBuilder = new global::PhotoActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.PhotoInfo) {
-            subBuilder.MergeFrom(PhotoInfo);
-          }
-          input.ReadMessage(subBuilder);
-          PhotoInfo = subBuilder;
-          break;
-        }
-        case 14714: {
-          global::MichiaeMatsuriActivityDetailInfo subBuilder = new global::MichiaeMatsuriActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
-            subBuilder.MergeFrom(MichiaeMatsuriInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MichiaeMatsuriInfo = subBuilder;
-          break;
-        }
-        case 14898: {
-          global::DigActivityDetailInfo subBuilder = new global::DigActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.DigInfo) {
-            subBuilder.MergeFrom(DigInfo);
-          }
-          input.ReadMessage(subBuilder);
-          DigInfo = subBuilder;
-          break;
-        }
-        case 14938: {
-          activityPushTipsDataList_.AddEntriesFrom(input, _repeated_activityPushTipsDataList_codec);
-          break;
-        }
-        case 14960: {
-          ScoreLimit = input.ReadUInt32();
-          break;
-        }
-        case 15114:
-        case 15112: {
-          takenRewardList_.AddEntriesFrom(input, _repeated_takenRewardList_codec);
-          break;
-        }
-        case 15282: {
-          global::SummerTimeDetailInfo subBuilder = new global::SummerTimeDetailInfo();
-          if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
-            subBuilder.MergeFrom(SummerTimeInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SummerTimeInfo = subBuilder;
-          break;
-        }
-        case 15402: {
-          global::TreasureMapActivityDetailInfo subBuilder = new global::TreasureMapActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
-            subBuilder.MergeFrom(TreasureMapInfo);
-          }
-          input.ReadMessage(subBuilder);
-          TreasureMapInfo = subBuilder;
-          break;
-        }
-        case 15426: {
-          global::GravenInnocenceDetailInfo subBuilder = new global::GravenInnocenceDetailInfo();
-          if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
-            subBuilder.MergeFrom(GravenInnocenceInfo);
-          }
-          input.ReadMessage(subBuilder);
-          GravenInnocenceInfo = subBuilder;
-          break;
-        }
-        case 15698: {
-          global::BlessingActivityDetailInfo subBuilder = new global::BlessingActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.BlessingInfo) {
-            subBuilder.MergeFrom(BlessingInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BlessingInfo = subBuilder;
-          break;
-        }
-        case 15818: {
-          global::AsterActivityDetailInfo subBuilder = new global::AsterActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.AsterInfo) {
-            subBuilder.MergeFrom(AsterInfo);
-          }
-          input.ReadMessage(subBuilder);
-          AsterInfo = subBuilder;
-          break;
-        }
-        case 15914: {
-          global::MusicGameActivityDetailInfo subBuilder = new global::MusicGameActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.MusicGameInfo) {
-            subBuilder.MergeFrom(MusicGameInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MusicGameInfo = subBuilder;
-          break;
-        }
-        case 16018: {
-          global::CoinCollectDetailInfo subBuilder = new global::CoinCollectDetailInfo();
-          if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
-            subBuilder.MergeFrom(CoinCollectInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CoinCollectInfo = subBuilder;
-          break;
-        }
-        case 16090: {
-          global::FlightActivityDetailInfo subBuilder = new global::FlightActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.FlightInfo) {
-            subBuilder.MergeFrom(FlightInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FlightInfo = subBuilder;
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          BeginTime = input.ReadUInt32();
-          break;
-        }
-        case 18: {
-          global::SeaLampActivityDetailInfo subBuilder = new global::SeaLampActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.SamLampInfo) {
-            subBuilder.MergeFrom(SamLampInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SamLampInfo = subBuilder;
-          break;
-        }
-        case 24: {
-          ActivityType = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          global::TrialAvatarActivityDetailInfo subBuilder = new global::TrialAvatarActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.TrialAvatarInfo) {
-            subBuilder.MergeFrom(TrialAvatarInfo);
-          }
-          input.ReadMessage(subBuilder);
-          TrialAvatarInfo = subBuilder;
-          break;
-        }
-        case 42:
-        case 40: {
-          expireCondList_.AddEntriesFrom(ref input, _repeated_expireCondList_codec);
-          break;
-        }
-        case 50: {
-          watcherInfoList_.AddEntriesFrom(ref input, _repeated_watcherInfoList_codec);
-          break;
-        }
-        case 56: {
-          ScheduleId = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          IsFinished = input.ReadBool();
-          break;
-        }
-        case 74: {
-          global::SalesmanActivityDetailInfo subBuilder = new global::SalesmanActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.SalesmanInfo) {
-            subBuilder.MergeFrom(SalesmanInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SalesmanInfo = subBuilder;
-          break;
-        }
-        case 80: {
-          EndTime = input.ReadUInt32();
-          break;
-        }
-        case 90:
-        case 88: {
-          meetCondList_.AddEntriesFrom(ref input, _repeated_meetCondList_codec);
-          break;
-        }
-        case 96: {
-          Unk3300MDBDPIBEGGH = input.ReadBool();
-          break;
-        }
-        case 104: {
-          ActivityId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300ICNJJKDHPCH = input.ReadBool();
-          break;
-        }
-        case 122: {
-          global::CrucibleActivityDetailInfo subBuilder = new global::CrucibleActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.CrucibleInfo) {
-            subBuilder.MergeFrom(CrucibleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CrucibleInfo = subBuilder;
-          break;
-        }
-        case 290: {
-          activityCoinMap_.AddEntriesFrom(ref input, _map_activityCoinMap_codec);
-          break;
-        }
-        case 514: {
-          global::BlitzRushActivityDetailInfo subBuilder = new global::BlitzRushActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.BlitzRushInfo) {
-            subBuilder.MergeFrom(BlitzRushInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BlitzRushInfo = subBuilder;
-          break;
-        }
-        case 1866: {
-          global::EffigyChallengeV2DetailInfo subBuilder = new global::EffigyChallengeV2DetailInfo();
-          if (detailCase_ == DetailOneofCase.EffigyChallengeInfo) {
-            subBuilder.MergeFrom(EffigyChallengeInfo);
-          }
-          input.ReadMessage(subBuilder);
-          EffigyChallengeInfo = subBuilder;
-          break;
-        }
-        case 1898: {
-          global::LanternRiteActivityDetailInfo subBuilder = new global::LanternRiteActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.LanternRiteActivityInfo) {
-            subBuilder.MergeFrom(LanternRiteActivityInfo);
-          }
-          input.ReadMessage(subBuilder);
-          LanternRiteActivityInfo = subBuilder;
-          break;
-        }
-        case 1978: {
-          global::SeaLampActivityInfo subBuilder = new global::SeaLampActivityInfo();
-          if (detailCase_ == DetailOneofCase.SeaLampInfo) {
-            subBuilder.MergeFrom(SeaLampInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SeaLampInfo = subBuilder;
-          break;
-        }
-        case 2880: {
-          Unk3300MJNPGEKLOCG = input.ReadBool();
-          break;
-        }
-        case 3026: {
-          global::FindHilichurlDetailInfo subBuilder = new global::FindHilichurlDetailInfo();
-          if (detailCase_ == DetailOneofCase.FindHilichurlInfo) {
-            subBuilder.MergeFrom(FindHilichurlInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FindHilichurlInfo = subBuilder;
-          break;
-        }
-        case 3290: {
-          global::SummerTimeV2DetailInfo subBuilder = new global::SummerTimeV2DetailInfo();
-          if (detailCase_ == DetailOneofCase.SummerTimeV2Info) {
-            subBuilder.MergeFrom(SummerTimeV2Info);
-          }
-          input.ReadMessage(subBuilder);
-          SummerTimeV2Info = subBuilder;
-          break;
-        }
-        case 3458: {
-          global::MistTrialActivityDetailInfo subBuilder = new global::MistTrialActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.MistTrialActivityInfo) {
-            subBuilder.MergeFrom(MistTrialActivityInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MistTrialActivityInfo = subBuilder;
-          break;
-        }
-        case 3554: {
-          global::LuminanceStoneChallengeActivityDetailInfo subBuilder = new global::LuminanceStoneChallengeActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.LuminanceStoneChallengeInfo) {
-            subBuilder.MergeFrom(LuminanceStoneChallengeInfo);
-          }
-          input.ReadMessage(subBuilder);
-          LuminanceStoneChallengeInfo = subBuilder;
-          break;
-        }
-        case 3746: {
-          global::WindFieldDetailInfo subBuilder = new global::WindFieldDetailInfo();
-          if (detailCase_ == DetailOneofCase.WindFieldInfo) {
-            subBuilder.MergeFrom(WindFieldInfo);
-          }
-          input.ReadMessage(subBuilder);
-          WindFieldInfo = subBuilder;
-          break;
-        }
-        case 4042: {
-          global::SumoActivityDetailInfo subBuilder = new global::SumoActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.SumoInfo) {
-            subBuilder.MergeFrom(SumoInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SumoInfo = subBuilder;
-          break;
-        }
-        case 4090: {
-          global::HachiActivityDetailInfo subBuilder = new global::HachiActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.HachiInfo) {
-            subBuilder.MergeFrom(HachiInfo);
-          }
-          input.ReadMessage(subBuilder);
-          HachiInfo = subBuilder;
-          break;
-        }
-        case 4306: {
-          global::ArenaChallengeActivityDetailInfo subBuilder = new global::ArenaChallengeActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.ArenaChallengeInfo) {
-            subBuilder.MergeFrom(ArenaChallengeInfo);
-          }
-          input.ReadMessage(subBuilder);
-          ArenaChallengeInfo = subBuilder;
-          break;
-        }
-        case 4410: {
-          global::BartenderActivityDetailInfo subBuilder = new global::BartenderActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.BartenderInfo) {
-            subBuilder.MergeFrom(BartenderInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BartenderInfo = subBuilder;
-          break;
-        }
-        case 4482: {
-          global::RogueDiaryActivityDetailInfo subBuilder = new global::RogueDiaryActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.RogueDiaryInfo) {
-            subBuilder.MergeFrom(RogueDiaryInfo);
-          }
-          input.ReadMessage(subBuilder);
-          RogueDiaryInfo = subBuilder;
-          break;
-        }
-        case 4970: {
-          global::CharAmusementDetailInfo subBuilder = new global::CharAmusementDetailInfo();
-          if (detailCase_ == DetailOneofCase.CharAmusementInfo) {
-            subBuilder.MergeFrom(CharAmusementInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CharAmusementInfo = subBuilder;
-          break;
-        }
-        case 5082: {
-          global::WaterSpiritActivityDetailInfo subBuilder = new global::WaterSpiritActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.WaterSpiritInfo) {
-            subBuilder.MergeFrom(WaterSpiritInfo);
-          }
-          input.ReadMessage(subBuilder);
-          WaterSpiritInfo = subBuilder;
-          break;
-        }
-        case 5490: {
-          global::BuoyantCombatDetailInfo subBuilder = new global::BuoyantCombatDetailInfo();
-          if (detailCase_ == DetailOneofCase.BuoyantCombatInfo) {
-            subBuilder.MergeFrom(BuoyantCombatInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BuoyantCombatInfo = subBuilder;
-          break;
-        }
-        case 5576: {
-          SelectedAvatarRewardId = input.ReadUInt32();
-          break;
-        }
-        case 5594: {
-          global::WinterCampActivityDetailInfo subBuilder = new global::WinterCampActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.WinterCampInfo) {
-            subBuilder.MergeFrom(WinterCampInfo);
-          }
-          input.ReadMessage(subBuilder);
-          WinterCampInfo = subBuilder;
-          break;
-        }
-        case 5922: {
-          global::IslandPartyDetailInfo subBuilder = new global::IslandPartyDetailInfo();
-          if (detailCase_ == DetailOneofCase.IslandPartyInfo) {
-            subBuilder.MergeFrom(IslandPartyInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IslandPartyInfo = subBuilder;
-          break;
-        }
-        case 6130: {
-          global::MoonfinTrialActivityDetailInfo subBuilder = new global::MoonfinTrialActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.MoonfinTrialInfo) {
-            subBuilder.MergeFrom(MoonfinTrialInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MoonfinTrialInfo = subBuilder;
-          break;
-        }
-        case 6288: {
-          FirstDayStartTime = input.ReadUInt32();
-          break;
-        }
-        case 6314: {
-          global::SpiceActivityDetailInfo subBuilder = new global::SpiceActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.SpiceInfo) {
-            subBuilder.MergeFrom(SpiceInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SpiceInfo = subBuilder;
-          break;
-        }
-        case 6498: {
-          global::CrystalLinkActivityDetailInfo subBuilder = new global::CrystalLinkActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.CrystalLinkInfo) {
-            subBuilder.MergeFrom(CrystalLinkInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CrystalLinkInfo = subBuilder;
-          break;
-        }
-        case 6714: {
-          global::HideAndSeekActivityDetailInfo subBuilder = new global::HideAndSeekActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.HideAndSeekInfo) {
-            subBuilder.MergeFrom(HideAndSeekInfo);
-          }
-          input.ReadMessage(subBuilder);
-          HideAndSeekInfo = subBuilder;
-          break;
-        }
-        case 6770: {
-          global::ChannelerSlabActivityDetailInfo subBuilder = new global::ChannelerSlabActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.ChannelerSlabInfo) {
-            subBuilder.MergeFrom(ChannelerSlabInfo);
-          }
-          input.ReadMessage(subBuilder);
-          ChannelerSlabInfo = subBuilder;
-          break;
-        }
-        case 7378: {
-          global::BounceConjuringActivityDetailInfo subBuilder = new global::BounceConjuringActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.BounceConjuringInfo) {
-            subBuilder.MergeFrom(BounceConjuringInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BounceConjuringInfo = subBuilder;
-          break;
-        }
-        case 7514: {
-          wishGiftNumMap_.AddEntriesFrom(ref input, _map_wishGiftNumMap_codec);
-          break;
-        }
-        case 7762: {
-          global::RoguelikeDungeonActivityDetailInfo subBuilder = new global::RoguelikeDungeonActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.RoguelikeDungeonInfo) {
-            subBuilder.MergeFrom(RoguelikeDungeonInfo);
-          }
-          input.ReadMessage(subBuilder);
-          RoguelikeDungeonInfo = subBuilder;
-          break;
-        }
-        case 8050: {
-          global::ChessActivityDetailInfo subBuilder = new global::ChessActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.ChessInfo) {
-            subBuilder.MergeFrom(ChessInfo);
-          }
-          input.ReadMessage(subBuilder);
-          ChessInfo = subBuilder;
-          break;
-        }
-        case 8258: {
-          global::TreasureSeelieActivityDetailInfo subBuilder = new global::TreasureSeelieActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.TreasureSeelieInfo) {
-            subBuilder.MergeFrom(TreasureSeelieInfo);
-          }
-          input.ReadMessage(subBuilder);
-          TreasureSeelieInfo = subBuilder;
-          break;
-        }
-        case 8450: {
-          global::IrodoriActivityDetailInfo subBuilder = new global::IrodoriActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.IrodoriInfo) {
-            subBuilder.MergeFrom(IrodoriInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IrodoriInfo = subBuilder;
-          break;
-        }
-        case 9130: {
-          global::DeliveryActivityDetailInfo subBuilder = new global::DeliveryActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.DeliveryInfo) {
-            subBuilder.MergeFrom(DeliveryInfo);
-          }
-          input.ReadMessage(subBuilder);
-          DeliveryInfo = subBuilder;
-          break;
-        }
-        case 9162: {
-          global::InstableSprayDetailInfo subBuilder = new global::InstableSprayDetailInfo();
-          if (detailCase_ == DetailOneofCase.InstableSprayInfo) {
-            subBuilder.MergeFrom(InstableSprayInfo);
-          }
-          input.ReadMessage(subBuilder);
-          InstableSprayInfo = subBuilder;
-          break;
-        }
-        case 9298: {
-          global::EchoShellDetailInfo subBuilder = new global::EchoShellDetailInfo();
-          if (detailCase_ == DetailOneofCase.EchoShellInfo) {
-            subBuilder.MergeFrom(EchoShellInfo);
-          }
-          input.ReadMessage(subBuilder);
-          EchoShellInfo = subBuilder;
-          break;
-        }
-        case 9458: {
-          global::UgcActivityDetailInfo subBuilder = new global::UgcActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.UgcInfo) {
-            subBuilder.MergeFrom(UgcInfo);
-          }
-          input.ReadMessage(subBuilder);
-          UgcInfo = subBuilder;
-          break;
-        }
-        case 10122: {
-          global::RockBoardExploreDetailInfo subBuilder = new global::RockBoardExploreDetailInfo();
-          if (detailCase_ == DetailOneofCase.RockBoardExploreInfo) {
-            subBuilder.MergeFrom(RockBoardExploreInfo);
-          }
-          input.ReadMessage(subBuilder);
-          RockBoardExploreInfo = subBuilder;
-          break;
-        }
-        case 10144: {
-          CurScore = input.ReadUInt32();
-          break;
-        }
-        case 10194: {
-          global::PlantFlowerActivityDetailInfo subBuilder = new global::PlantFlowerActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.PlantFlowerInfo) {
-            subBuilder.MergeFrom(PlantFlowerInfo);
-          }
-          input.ReadMessage(subBuilder);
-          PlantFlowerInfo = subBuilder;
-          break;
-        }
-        case 10378: {
-          global::GachaActivityDetailInfo subBuilder = new global::GachaActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.GachaInfo) {
-            subBuilder.MergeFrom(GachaInfo);
-          }
-          input.ReadMessage(subBuilder);
-          GachaInfo = subBuilder;
-          break;
-        }
-        case 10466: {
-          global::VintageActivityDetailInfo subBuilder = new global::VintageActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.VintageInfo) {
-            subBuilder.MergeFrom(VintageInfo);
-          }
-          input.ReadMessage(subBuilder);
-          VintageInfo = subBuilder;
-          break;
-        }
-        case 10482: {
-          global::DragonSpineActivityDetailInfo subBuilder = new global::DragonSpineActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.DragonSpineInfo) {
-            subBuilder.MergeFrom(DragonSpineInfo);
-          }
-          input.ReadMessage(subBuilder);
-          DragonSpineInfo = subBuilder;
-          break;
-        }
-        case 10786: {
-          global::TanukiTravelActivityDetailInfo subBuilder = new global::TanukiTravelActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.TanukiTravelActivityInfo) {
-            subBuilder.MergeFrom(TanukiTravelActivityInfo);
-          }
-          input.ReadMessage(subBuilder);
-          TanukiTravelActivityInfo = subBuilder;
-          break;
-        }
-        case 10994: {
-          global::EffigyActivityDetailInfo subBuilder = new global::EffigyActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.EffigyInfo) {
-            subBuilder.MergeFrom(EffigyInfo);
-          }
-          input.ReadMessage(subBuilder);
-          EffigyInfo = subBuilder;
-          break;
-        }
-        case 11000: {
-          Unk3300CBCEHLJJOGI = input.ReadBool();
-          break;
-        }
-        case 11578: {
-          global::FleurFairActivityDetailInfo subBuilder = new global::FleurFairActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.FleurFairInfo) {
-            subBuilder.MergeFrom(FleurFairInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FleurFairInfo = subBuilder;
-          break;
-        }
-        case 11858: {
-          global::GearActivityDetailInfo subBuilder = new global::GearActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.GearInfo) {
-            subBuilder.MergeFrom(GearInfo);
-          }
-          input.ReadMessage(subBuilder);
-          GearInfo = subBuilder;
-          break;
-        }
-        case 11888: {
-          Unk3300ABJKLALKLDG = input.ReadBool();
-          break;
-        }
-        case 12178: {
-          global::BrickBreakerDetailInfo subBuilder = new global::BrickBreakerDetailInfo();
-          if (detailCase_ == DetailOneofCase.BrickBreakerInfo) {
-            subBuilder.MergeFrom(BrickBreakerInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BrickBreakerInfo = subBuilder;
-          break;
-        }
-        case 12362: {
-          global::LunaRiteDetailInfo subBuilder = new global::LunaRiteDetailInfo();
-          if (detailCase_ == DetailOneofCase.LunaRiteInfo) {
-            subBuilder.MergeFrom(LunaRiteInfo);
-          }
-          input.ReadMessage(subBuilder);
-          LunaRiteInfo = subBuilder;
-          break;
-        }
-        case 12538: {
-          global::PotionActivityDetailInfo subBuilder = new global::PotionActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.PotionInfo) {
-            subBuilder.MergeFrom(PotionInfo);
-          }
-          input.ReadMessage(subBuilder);
-          PotionInfo = subBuilder;
-          break;
-        }
-        case 13160: {
-          Unk3300NEPKLLBJFKK = input.ReadBool();
-          break;
-        }
-        case 13298: {
-          global::MuqadasPotionActivityDetailInfo subBuilder = new global::MuqadasPotionActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.MuqadasPotionInfo) {
-            subBuilder.MergeFrom(MuqadasPotionInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MuqadasPotionInfo = subBuilder;
-          break;
-        }
-        case 14018: {
-          global::ExpeditionActivityDetailInfo subBuilder = new global::ExpeditionActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.ExpeditionInfo) {
-            subBuilder.MergeFrom(ExpeditionInfo);
-          }
-          input.ReadMessage(subBuilder);
-          ExpeditionInfo = subBuilder;
-          break;
-        }
-        case 14058: {
-          global::FungusFighterDetailInfo subBuilder = new global::FungusFighterDetailInfo();
-          if (detailCase_ == DetailOneofCase.FungusFighterInfo) {
-            subBuilder.MergeFrom(FungusFighterInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FungusFighterInfo = subBuilder;
-          break;
-        }
-        case 14578: {
-          global::PhotoActivityDetailInfo subBuilder = new global::PhotoActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.PhotoInfo) {
-            subBuilder.MergeFrom(PhotoInfo);
-          }
-          input.ReadMessage(subBuilder);
-          PhotoInfo = subBuilder;
-          break;
-        }
-        case 14714: {
-          global::MichiaeMatsuriActivityDetailInfo subBuilder = new global::MichiaeMatsuriActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.MichiaeMatsuriInfo) {
-            subBuilder.MergeFrom(MichiaeMatsuriInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MichiaeMatsuriInfo = subBuilder;
-          break;
-        }
-        case 14898: {
-          global::DigActivityDetailInfo subBuilder = new global::DigActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.DigInfo) {
-            subBuilder.MergeFrom(DigInfo);
-          }
-          input.ReadMessage(subBuilder);
-          DigInfo = subBuilder;
-          break;
-        }
-        case 14938: {
-          activityPushTipsDataList_.AddEntriesFrom(ref input, _repeated_activityPushTipsDataList_codec);
-          break;
-        }
-        case 14960: {
-          ScoreLimit = input.ReadUInt32();
-          break;
-        }
-        case 15114:
-        case 15112: {
-          takenRewardList_.AddEntriesFrom(ref input, _repeated_takenRewardList_codec);
-          break;
-        }
-        case 15282: {
-          global::SummerTimeDetailInfo subBuilder = new global::SummerTimeDetailInfo();
-          if (detailCase_ == DetailOneofCase.SummerTimeInfo) {
-            subBuilder.MergeFrom(SummerTimeInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SummerTimeInfo = subBuilder;
-          break;
-        }
-        case 15402: {
-          global::TreasureMapActivityDetailInfo subBuilder = new global::TreasureMapActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.TreasureMapInfo) {
-            subBuilder.MergeFrom(TreasureMapInfo);
-          }
-          input.ReadMessage(subBuilder);
-          TreasureMapInfo = subBuilder;
-          break;
-        }
-        case 15426: {
-          global::GravenInnocenceDetailInfo subBuilder = new global::GravenInnocenceDetailInfo();
-          if (detailCase_ == DetailOneofCase.GravenInnocenceInfo) {
-            subBuilder.MergeFrom(GravenInnocenceInfo);
-          }
-          input.ReadMessage(subBuilder);
-          GravenInnocenceInfo = subBuilder;
-          break;
-        }
-        case 15698: {
-          global::BlessingActivityDetailInfo subBuilder = new global::BlessingActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.BlessingInfo) {
-            subBuilder.MergeFrom(BlessingInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BlessingInfo = subBuilder;
-          break;
-        }
-        case 15818: {
-          global::AsterActivityDetailInfo subBuilder = new global::AsterActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.AsterInfo) {
-            subBuilder.MergeFrom(AsterInfo);
-          }
-          input.ReadMessage(subBuilder);
-          AsterInfo = subBuilder;
-          break;
-        }
-        case 15914: {
-          global::MusicGameActivityDetailInfo subBuilder = new global::MusicGameActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.MusicGameInfo) {
-            subBuilder.MergeFrom(MusicGameInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MusicGameInfo = subBuilder;
-          break;
-        }
-        case 16018: {
-          global::CoinCollectDetailInfo subBuilder = new global::CoinCollectDetailInfo();
-          if (detailCase_ == DetailOneofCase.CoinCollectInfo) {
-            subBuilder.MergeFrom(CoinCollectInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CoinCollectInfo = subBuilder;
-          break;
-        }
-        case 16090: {
-          global::FlightActivityDetailInfo subBuilder = new global::FlightActivityDetailInfo();
-          if (detailCase_ == DetailOneofCase.FlightInfo) {
-            subBuilder.MergeFrom(FlightInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FlightInfo = subBuilder;
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

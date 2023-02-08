@@ -9,42 +9,45 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from RegionSearchState.proto</summary>
-public static partial class RegionSearchStateReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for RegionSearchState.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from RegionSearchState.proto</summary>
+  public static partial class RegionSearchStateReflection {
 
-  static RegionSearchStateReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdSZWdpb25TZWFyY2hTdGF0ZS5wcm90byq8AQoRUmVnaW9uU2VhcmNoU3Rh",
-          "dGUSHAoYUkVHSU9OX1NFQVJDSF9TVEFURV9OT05FEAASIQodUkVHSU9OX1NF",
-          "QVJDSF9TVEFURV9VTlNUQVJURUQQARIfChtSRUdJT05fU0VBUkNIX1NUQVRF",
-          "X1NUQVJURUQQAhIjCh9SRUdJT05fU0VBUkNIX1NUQVRFX1dBSVRfUkVXQVJE",
-          "EAMSIAocUkVHSU9OX1NFQVJDSF9TVEFURV9GSU5JU0hFRBAEQhYKFG9yZy5z",
-          "b3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::RegionSearchState), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for RegionSearchState.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static RegionSearchStateReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdSZWdpb25TZWFyY2hTdGF0ZS5wcm90byq8AQoRUmVnaW9uU2VhcmNoU3Rh",
+            "dGUSHAoYUkVHSU9OX1NFQVJDSF9TVEFURV9OT05FEAASIQodUkVHSU9OX1NF",
+            "QVJDSF9TVEFURV9VTlNUQVJURUQQARIfChtSRUdJT05fU0VBUkNIX1NUQVRF",
+            "X1NUQVJURUQQAhIjCh9SRUdJT05fU0VBUkNIX1NUQVRFX1dBSVRfUkVXQVJE",
+            "EAMSIAocUkVHSU9OX1NFQVJDSF9TVEFURV9GSU5JU0hFRBAEQgyqAglOZXdQ",
+            "cm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.RegionSearchState), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum RegionSearchState {
+    [pbr::OriginalName("REGION_SEARCH_STATE_NONE")] None = 0,
+    [pbr::OriginalName("REGION_SEARCH_STATE_UNSTARTED")] Unstarted = 1,
+    [pbr::OriginalName("REGION_SEARCH_STATE_STARTED")] Started = 2,
+    [pbr::OriginalName("REGION_SEARCH_STATE_WAIT_REWARD")] WaitReward = 3,
+    [pbr::OriginalName("REGION_SEARCH_STATE_FINISHED")] Finished = 4,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum RegionSearchState {
-  [pbr::OriginalName("REGION_SEARCH_STATE_NONE")] None = 0,
-  [pbr::OriginalName("REGION_SEARCH_STATE_UNSTARTED")] Unstarted = 1,
-  [pbr::OriginalName("REGION_SEARCH_STATE_STARTED")] Started = 2,
-  [pbr::OriginalName("REGION_SEARCH_STATE_WAIT_REWARD")] WaitReward = 3,
-  [pbr::OriginalName("REGION_SEARCH_STATE_FINISHED")] Finished = 4,
-}
-
-#endregion
-
 
 #endregion Designer generated code

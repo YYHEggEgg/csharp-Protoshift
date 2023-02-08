@@ -9,459 +9,461 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GalleryStartNotify.proto</summary>
-public static partial class GalleryStartNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GalleryStartNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GalleryStartNotify.proto</summary>
+  public static partial class GalleryStartNotifyReflection {
 
-  static GalleryStartNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhHYWxsZXJ5U3RhcnROb3RpZnkucHJvdG8aHUdhbGxlcnlGbG93ZXJTdGFy",
-          "dFBhcmFtLnByb3RvIrkBChJHYWxsZXJ5U3RhcnROb3RpZnkSEAoIZW5kX3Rp",
-          "bWUYBiABKA0SFAoMcGxheWVyX2NvdW50GAsgASgNEhEKCW93bmVyX3VpZBgJ",
-          "IAEoDRISCgpnYWxsZXJ5X2lkGA0gASgNEhIKCnN0YXJ0X3RpbWUYBSABKA0S",
-          "NgoSZmxvd2VyX3N0YXJ0X3BhcmFtGA8gASgLMhguR2FsbGVyeUZsb3dlclN0",
-          "YXJ0UGFyYW1IAEIICgZkZXRhaWxCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5v",
-          "bGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GalleryFlowerStartParamReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GalleryStartNotify), global::GalleryStartNotify.Parser, new[]{ "EndTime", "PlayerCount", "OwnerUid", "GalleryId", "StartTime", "FlowerStartParam" }, new[]{ "Detail" }, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GalleryStartNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GalleryStartNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhHYWxsZXJ5U3RhcnROb3RpZnkucHJvdG8aHUdhbGxlcnlGbG93ZXJTdGFy",
+            "dFBhcmFtLnByb3RvIrkBChJHYWxsZXJ5U3RhcnROb3RpZnkSEAoIZW5kX3Rp",
+            "bWUYBiABKA0SFAoMcGxheWVyX2NvdW50GAsgASgNEhEKCW93bmVyX3VpZBgJ",
+            "IAEoDRISCgpnYWxsZXJ5X2lkGA0gASgNEhIKCnN0YXJ0X3RpbWUYBSABKA0S",
+            "NgoSZmxvd2VyX3N0YXJ0X3BhcmFtGA8gASgLMhguR2FsbGVyeUZsb3dlclN0",
+            "YXJ0UGFyYW1IAEIICgZkZXRhaWxCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GalleryFlowerStartParamReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GalleryStartNotify), global::OldProtos.GalleryStartNotify.Parser, new[]{ "EndTime", "PlayerCount", "OwnerUid", "GalleryId", "StartTime", "FlowerStartParam" }, new[]{ "Detail" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 5572
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class GalleryStartNotify : pb::IMessage<GalleryStartNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GalleryStartNotify> _parser = new pb::MessageParser<GalleryStartNotify>(() => new GalleryStartNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GalleryStartNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GalleryStartNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GalleryStartNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GalleryStartNotify(GalleryStartNotify other) : this() {
+      endTime_ = other.endTime_;
+      playerCount_ = other.playerCount_;
+      ownerUid_ = other.ownerUid_;
+      galleryId_ = other.galleryId_;
+      startTime_ = other.startTime_;
+      switch (other.DetailCase) {
+        case DetailOneofCase.FlowerStartParam:
+          FlowerStartParam = other.FlowerStartParam.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GalleryStartNotify Clone() {
+      return new GalleryStartNotify(this);
+    }
+
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 6;
+    private uint endTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EndTime {
+      get { return endTime_; }
+      set {
+        endTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "player_count" field.</summary>
+    public const int PlayerCountFieldNumber = 11;
+    private uint playerCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PlayerCount {
+      get { return playerCount_; }
+      set {
+        playerCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "owner_uid" field.</summary>
+    public const int OwnerUidFieldNumber = 9;
+    private uint ownerUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OwnerUid {
+      get { return ownerUid_; }
+      set {
+        ownerUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gallery_id" field.</summary>
+    public const int GalleryIdFieldNumber = 13;
+    private uint galleryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GalleryId {
+      get { return galleryId_; }
+      set {
+        galleryId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "start_time" field.</summary>
+    public const int StartTimeFieldNumber = 5;
+    private uint startTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StartTime {
+      get { return startTime_; }
+      set {
+        startTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "flower_start_param" field.</summary>
+    public const int FlowerStartParamFieldNumber = 15;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GalleryFlowerStartParam FlowerStartParam {
+      get { return detailCase_ == DetailOneofCase.FlowerStartParam ? (global::OldProtos.GalleryFlowerStartParam) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.FlowerStartParam;
+      }
+    }
+
+    private object detail_;
+    /// <summary>Enum of possible cases for the "detail" oneof.</summary>
+    public enum DetailOneofCase {
+      None = 0,
+      FlowerStartParam = 15,
+    }
+    private DetailOneofCase detailCase_ = DetailOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DetailOneofCase DetailCase {
+      get { return detailCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearDetail() {
+      detailCase_ = DetailOneofCase.None;
+      detail_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GalleryStartNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GalleryStartNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (EndTime != other.EndTime) return false;
+      if (PlayerCount != other.PlayerCount) return false;
+      if (OwnerUid != other.OwnerUid) return false;
+      if (GalleryId != other.GalleryId) return false;
+      if (StartTime != other.StartTime) return false;
+      if (!object.Equals(FlowerStartParam, other.FlowerStartParam)) return false;
+      if (DetailCase != other.DetailCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      if (PlayerCount != 0) hash ^= PlayerCount.GetHashCode();
+      if (OwnerUid != 0) hash ^= OwnerUid.GetHashCode();
+      if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
+      if (StartTime != 0) hash ^= StartTime.GetHashCode();
+      if (detailCase_ == DetailOneofCase.FlowerStartParam) hash ^= FlowerStartParam.GetHashCode();
+      hash ^= (int) detailCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (StartTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(StartTime);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(EndTime);
+      }
+      if (OwnerUid != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(OwnerUid);
+      }
+      if (PlayerCount != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(PlayerCount);
+      }
+      if (GalleryId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(GalleryId);
+      }
+      if (detailCase_ == DetailOneofCase.FlowerStartParam) {
+        output.WriteRawTag(122);
+        output.WriteMessage(FlowerStartParam);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (StartTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(StartTime);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(EndTime);
+      }
+      if (OwnerUid != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(OwnerUid);
+      }
+      if (PlayerCount != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(PlayerCount);
+      }
+      if (GalleryId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(GalleryId);
+      }
+      if (detailCase_ == DetailOneofCase.FlowerStartParam) {
+        output.WriteRawTag(122);
+        output.WriteMessage(FlowerStartParam);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      }
+      if (PlayerCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerCount);
+      }
+      if (OwnerUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OwnerUid);
+      }
+      if (GalleryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
+      }
+      if (StartTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StartTime);
+      }
+      if (detailCase_ == DetailOneofCase.FlowerStartParam) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FlowerStartParam);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GalleryStartNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
+      }
+      if (other.PlayerCount != 0) {
+        PlayerCount = other.PlayerCount;
+      }
+      if (other.OwnerUid != 0) {
+        OwnerUid = other.OwnerUid;
+      }
+      if (other.GalleryId != 0) {
+        GalleryId = other.GalleryId;
+      }
+      if (other.StartTime != 0) {
+        StartTime = other.StartTime;
+      }
+      switch (other.DetailCase) {
+        case DetailOneofCase.FlowerStartParam:
+          if (FlowerStartParam == null) {
+            FlowerStartParam = new global::OldProtos.GalleryFlowerStartParam();
+          }
+          FlowerStartParam.MergeFrom(other.FlowerStartParam);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            StartTime = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            OwnerUid = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            PlayerCount = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            GalleryId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            global::OldProtos.GalleryFlowerStartParam subBuilder = new global::OldProtos.GalleryFlowerStartParam();
+            if (detailCase_ == DetailOneofCase.FlowerStartParam) {
+              subBuilder.MergeFrom(FlowerStartParam);
+            }
+            input.ReadMessage(subBuilder);
+            FlowerStartParam = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            StartTime = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            OwnerUid = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            PlayerCount = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            GalleryId = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            global::OldProtos.GalleryFlowerStartParam subBuilder = new global::OldProtos.GalleryFlowerStartParam();
+            if (detailCase_ == DetailOneofCase.FlowerStartParam) {
+              subBuilder.MergeFrom(FlowerStartParam);
+            }
+            input.ReadMessage(subBuilder);
+            FlowerStartParam = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 5572
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class GalleryStartNotify : pb::IMessage<GalleryStartNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GalleryStartNotify> _parser = new pb::MessageParser<GalleryStartNotify>(() => new GalleryStartNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GalleryStartNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GalleryStartNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GalleryStartNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GalleryStartNotify(GalleryStartNotify other) : this() {
-    endTime_ = other.endTime_;
-    playerCount_ = other.playerCount_;
-    ownerUid_ = other.ownerUid_;
-    galleryId_ = other.galleryId_;
-    startTime_ = other.startTime_;
-    switch (other.DetailCase) {
-      case DetailOneofCase.FlowerStartParam:
-        FlowerStartParam = other.FlowerStartParam.Clone();
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GalleryStartNotify Clone() {
-    return new GalleryStartNotify(this);
-  }
-
-  /// <summary>Field number for the "end_time" field.</summary>
-  public const int EndTimeFieldNumber = 6;
-  private uint endTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EndTime {
-    get { return endTime_; }
-    set {
-      endTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "player_count" field.</summary>
-  public const int PlayerCountFieldNumber = 11;
-  private uint playerCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PlayerCount {
-    get { return playerCount_; }
-    set {
-      playerCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "owner_uid" field.</summary>
-  public const int OwnerUidFieldNumber = 9;
-  private uint ownerUid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint OwnerUid {
-    get { return ownerUid_; }
-    set {
-      ownerUid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gallery_id" field.</summary>
-  public const int GalleryIdFieldNumber = 13;
-  private uint galleryId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GalleryId {
-    get { return galleryId_; }
-    set {
-      galleryId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "start_time" field.</summary>
-  public const int StartTimeFieldNumber = 5;
-  private uint startTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StartTime {
-    get { return startTime_; }
-    set {
-      startTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "flower_start_param" field.</summary>
-  public const int FlowerStartParamFieldNumber = 15;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GalleryFlowerStartParam FlowerStartParam {
-    get { return detailCase_ == DetailOneofCase.FlowerStartParam ? (global::GalleryFlowerStartParam) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.FlowerStartParam;
-    }
-  }
-
-  private object detail_;
-  /// <summary>Enum of possible cases for the "detail" oneof.</summary>
-  public enum DetailOneofCase {
-    None = 0,
-    FlowerStartParam = 15,
-  }
-  private DetailOneofCase detailCase_ = DetailOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DetailOneofCase DetailCase {
-    get { return detailCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearDetail() {
-    detailCase_ = DetailOneofCase.None;
-    detail_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GalleryStartNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GalleryStartNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (EndTime != other.EndTime) return false;
-    if (PlayerCount != other.PlayerCount) return false;
-    if (OwnerUid != other.OwnerUid) return false;
-    if (GalleryId != other.GalleryId) return false;
-    if (StartTime != other.StartTime) return false;
-    if (!object.Equals(FlowerStartParam, other.FlowerStartParam)) return false;
-    if (DetailCase != other.DetailCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (EndTime != 0) hash ^= EndTime.GetHashCode();
-    if (PlayerCount != 0) hash ^= PlayerCount.GetHashCode();
-    if (OwnerUid != 0) hash ^= OwnerUid.GetHashCode();
-    if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
-    if (StartTime != 0) hash ^= StartTime.GetHashCode();
-    if (detailCase_ == DetailOneofCase.FlowerStartParam) hash ^= FlowerStartParam.GetHashCode();
-    hash ^= (int) detailCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (StartTime != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(StartTime);
-    }
-    if (EndTime != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(EndTime);
-    }
-    if (OwnerUid != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(OwnerUid);
-    }
-    if (PlayerCount != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(PlayerCount);
-    }
-    if (GalleryId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(GalleryId);
-    }
-    if (detailCase_ == DetailOneofCase.FlowerStartParam) {
-      output.WriteRawTag(122);
-      output.WriteMessage(FlowerStartParam);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (StartTime != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(StartTime);
-    }
-    if (EndTime != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(EndTime);
-    }
-    if (OwnerUid != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(OwnerUid);
-    }
-    if (PlayerCount != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(PlayerCount);
-    }
-    if (GalleryId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(GalleryId);
-    }
-    if (detailCase_ == DetailOneofCase.FlowerStartParam) {
-      output.WriteRawTag(122);
-      output.WriteMessage(FlowerStartParam);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (EndTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
-    }
-    if (PlayerCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerCount);
-    }
-    if (OwnerUid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OwnerUid);
-    }
-    if (GalleryId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
-    }
-    if (StartTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StartTime);
-    }
-    if (detailCase_ == DetailOneofCase.FlowerStartParam) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(FlowerStartParam);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GalleryStartNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.EndTime != 0) {
-      EndTime = other.EndTime;
-    }
-    if (other.PlayerCount != 0) {
-      PlayerCount = other.PlayerCount;
-    }
-    if (other.OwnerUid != 0) {
-      OwnerUid = other.OwnerUid;
-    }
-    if (other.GalleryId != 0) {
-      GalleryId = other.GalleryId;
-    }
-    if (other.StartTime != 0) {
-      StartTime = other.StartTime;
-    }
-    switch (other.DetailCase) {
-      case DetailOneofCase.FlowerStartParam:
-        if (FlowerStartParam == null) {
-          FlowerStartParam = new global::GalleryFlowerStartParam();
-        }
-        FlowerStartParam.MergeFrom(other.FlowerStartParam);
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          StartTime = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          EndTime = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          OwnerUid = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          PlayerCount = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          GalleryId = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          global::GalleryFlowerStartParam subBuilder = new global::GalleryFlowerStartParam();
-          if (detailCase_ == DetailOneofCase.FlowerStartParam) {
-            subBuilder.MergeFrom(FlowerStartParam);
-          }
-          input.ReadMessage(subBuilder);
-          FlowerStartParam = subBuilder;
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          StartTime = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          EndTime = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          OwnerUid = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          PlayerCount = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          GalleryId = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          global::GalleryFlowerStartParam subBuilder = new global::GalleryFlowerStartParam();
-          if (detailCase_ == DetailOneofCase.FlowerStartParam) {
-            subBuilder.MergeFrom(FlowerStartParam);
-          }
-          input.ReadMessage(subBuilder);
-          FlowerStartParam = subBuilder;
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

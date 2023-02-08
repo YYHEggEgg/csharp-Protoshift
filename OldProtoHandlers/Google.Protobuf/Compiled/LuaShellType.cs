@@ -9,40 +9,43 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from LuaShellType.proto</summary>
-public static partial class LuaShellTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for LuaShellType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from LuaShellType.proto</summary>
+  public static partial class LuaShellTypeReflection {
 
-  static LuaShellTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChJMdWFTaGVsbFR5cGUucHJvdG8qogEKDEx1YVNoZWxsVHlwZRIgChxMVUFf",
-          "U0hFTExfVFlQRV9MVUFTSEVMTF9OT05FEAASIgoeTFVBX1NIRUxMX1RZUEVf",
-          "TFVBU0hFTExfTk9STUFMEAESJAogTFVBX1NIRUxMX1RZUEVfTFVBU0hFTExf",
-          "U0VDVVJJVFkQAhImCiJMVUFfU0hFTExfVFlQRV9MVUFTSEVMTF9TSEVMTF9D",
-          "T0RFEANCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::LuaShellType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for LuaShellType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static LuaShellTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChJMdWFTaGVsbFR5cGUucHJvdG8qogEKDEx1YVNoZWxsVHlwZRIgChxMVUFf",
+            "U0hFTExfVFlQRV9MVUFTSEVMTF9OT05FEAASIgoeTFVBX1NIRUxMX1RZUEVf",
+            "TFVBU0hFTExfTk9STUFMEAESJAogTFVBX1NIRUxMX1RZUEVfTFVBU0hFTExf",
+            "U0VDVVJJVFkQAhImCiJMVUFfU0hFTExfVFlQRV9MVUFTSEVMTF9TSEVMTF9D",
+            "T0RFEANCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.LuaShellType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum LuaShellType {
+    [pbr::OriginalName("LUA_SHELL_TYPE_LUASHELL_NONE")] LuashellNone = 0,
+    [pbr::OriginalName("LUA_SHELL_TYPE_LUASHELL_NORMAL")] LuashellNormal = 1,
+    [pbr::OriginalName("LUA_SHELL_TYPE_LUASHELL_SECURITY")] LuashellSecurity = 2,
+    [pbr::OriginalName("LUA_SHELL_TYPE_LUASHELL_SHELL_CODE")] LuashellShellCode = 3,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum LuaShellType {
-  [pbr::OriginalName("LUA_SHELL_TYPE_LUASHELL_NONE")] LuashellNone = 0,
-  [pbr::OriginalName("LUA_SHELL_TYPE_LUASHELL_NORMAL")] LuashellNormal = 1,
-  [pbr::OriginalName("LUA_SHELL_TYPE_LUASHELL_SECURITY")] LuashellSecurity = 2,
-  [pbr::OriginalName("LUA_SHELL_TYPE_LUASHELL_SHELL_CODE")] LuashellShellCode = 3,
-}
-
-#endregion
-
 
 #endregion Designer generated code

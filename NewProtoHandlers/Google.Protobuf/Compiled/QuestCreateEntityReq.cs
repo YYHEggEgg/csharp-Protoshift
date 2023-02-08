@@ -9,354 +9,357 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from QuestCreateEntityReq.proto</summary>
-public static partial class QuestCreateEntityReqReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for QuestCreateEntityReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from QuestCreateEntityReq.proto</summary>
+  public static partial class QuestCreateEntityReqReflection {
 
-  static QuestCreateEntityReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpRdWVzdENyZWF0ZUVudGl0eVJlcS5wcm90bxoWQ3JlYXRlRW50aXR5SW5m",
-          "by5wcm90byJ3ChRRdWVzdENyZWF0ZUVudGl0eVJlcRIXCg9wYXJlbnRfcXVl",
-          "c3RfaWQYDiABKA0SIQoGZW50aXR5GAMgASgLMhEuQ3JlYXRlRW50aXR5SW5m",
-          "bxIQCghxdWVzdF9pZBgFIAEoDRIRCglpc19yZXdpbmQYCyABKAhCFgoUb3Jn",
-          "LnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::CreateEntityInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::QuestCreateEntityReq), global::QuestCreateEntityReq.Parser, new[]{ "ParentQuestId", "Entity", "QuestId", "IsRewind" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for QuestCreateEntityReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static QuestCreateEntityReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpRdWVzdENyZWF0ZUVudGl0eVJlcS5wcm90bxoWQ3JlYXRlRW50aXR5SW5m",
+            "by5wcm90byJ3ChRRdWVzdENyZWF0ZUVudGl0eVJlcRIXCg9wYXJlbnRfcXVl",
+            "c3RfaWQYDiABKA0SIQoGZW50aXR5GAMgASgLMhEuQ3JlYXRlRW50aXR5SW5m",
+            "bxIQCghxdWVzdF9pZBgFIAEoDRIRCglpc19yZXdpbmQYCyABKAhCDKoCCU5l",
+            "d1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.CreateEntityInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.QuestCreateEntityReq), global::NewProtos.QuestCreateEntityReq.Parser, new[]{ "ParentQuestId", "Entity", "QuestId", "IsRewind" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 457;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
+  /// </summary>
+  public sealed partial class QuestCreateEntityReq : pb::IMessage<QuestCreateEntityReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<QuestCreateEntityReq> _parser = new pb::MessageParser<QuestCreateEntityReq>(() => new QuestCreateEntityReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<QuestCreateEntityReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.QuestCreateEntityReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public QuestCreateEntityReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public QuestCreateEntityReq(QuestCreateEntityReq other) : this() {
+      parentQuestId_ = other.parentQuestId_;
+      entity_ = other.entity_ != null ? other.entity_.Clone() : null;
+      questId_ = other.questId_;
+      isRewind_ = other.isRewind_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public QuestCreateEntityReq Clone() {
+      return new QuestCreateEntityReq(this);
+    }
+
+    /// <summary>Field number for the "parent_quest_id" field.</summary>
+    public const int ParentQuestIdFieldNumber = 14;
+    private uint parentQuestId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ParentQuestId {
+      get { return parentQuestId_; }
+      set {
+        parentQuestId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity" field.</summary>
+    public const int EntityFieldNumber = 3;
+    private global::NewProtos.CreateEntityInfo entity_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CreateEntityInfo Entity {
+      get { return entity_; }
+      set {
+        entity_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "quest_id" field.</summary>
+    public const int QuestIdFieldNumber = 5;
+    private uint questId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint QuestId {
+      get { return questId_; }
+      set {
+        questId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_rewind" field.</summary>
+    public const int IsRewindFieldNumber = 11;
+    private bool isRewind_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsRewind {
+      get { return isRewind_; }
+      set {
+        isRewind_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as QuestCreateEntityReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(QuestCreateEntityReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ParentQuestId != other.ParentQuestId) return false;
+      if (!object.Equals(Entity, other.Entity)) return false;
+      if (QuestId != other.QuestId) return false;
+      if (IsRewind != other.IsRewind) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ParentQuestId != 0) hash ^= ParentQuestId.GetHashCode();
+      if (entity_ != null) hash ^= Entity.GetHashCode();
+      if (QuestId != 0) hash ^= QuestId.GetHashCode();
+      if (IsRewind != false) hash ^= IsRewind.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (entity_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Entity);
+      }
+      if (QuestId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(QuestId);
+      }
+      if (IsRewind != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsRewind);
+      }
+      if (ParentQuestId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ParentQuestId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (entity_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(Entity);
+      }
+      if (QuestId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(QuestId);
+      }
+      if (IsRewind != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsRewind);
+      }
+      if (ParentQuestId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ParentQuestId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ParentQuestId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ParentQuestId);
+      }
+      if (entity_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Entity);
+      }
+      if (QuestId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
+      }
+      if (IsRewind != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(QuestCreateEntityReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ParentQuestId != 0) {
+        ParentQuestId = other.ParentQuestId;
+      }
+      if (other.entity_ != null) {
+        if (entity_ == null) {
+          Entity = new global::NewProtos.CreateEntityInfo();
+        }
+        Entity.MergeFrom(other.Entity);
+      }
+      if (other.QuestId != 0) {
+        QuestId = other.QuestId;
+      }
+      if (other.IsRewind != false) {
+        IsRewind = other.IsRewind;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 26: {
+            if (entity_ == null) {
+              Entity = new global::NewProtos.CreateEntityInfo();
+            }
+            input.ReadMessage(Entity);
+            break;
+          }
+          case 40: {
+            QuestId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            IsRewind = input.ReadBool();
+            break;
+          }
+          case 112: {
+            ParentQuestId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 26: {
+            if (entity_ == null) {
+              Entity = new global::NewProtos.CreateEntityInfo();
+            }
+            input.ReadMessage(Entity);
+            break;
+          }
+          case 40: {
+            QuestId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            IsRewind = input.ReadBool();
+            break;
+          }
+          case 112: {
+            ParentQuestId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 457;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-///   IS_ALLOW_CLIENT = 1;
-/// }
-/// </summary>
-public sealed partial class QuestCreateEntityReq : pb::IMessage<QuestCreateEntityReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<QuestCreateEntityReq> _parser = new pb::MessageParser<QuestCreateEntityReq>(() => new QuestCreateEntityReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<QuestCreateEntityReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::QuestCreateEntityReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public QuestCreateEntityReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public QuestCreateEntityReq(QuestCreateEntityReq other) : this() {
-    parentQuestId_ = other.parentQuestId_;
-    entity_ = other.entity_ != null ? other.entity_.Clone() : null;
-    questId_ = other.questId_;
-    isRewind_ = other.isRewind_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public QuestCreateEntityReq Clone() {
-    return new QuestCreateEntityReq(this);
-  }
-
-  /// <summary>Field number for the "parent_quest_id" field.</summary>
-  public const int ParentQuestIdFieldNumber = 14;
-  private uint parentQuestId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ParentQuestId {
-    get { return parentQuestId_; }
-    set {
-      parentQuestId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity" field.</summary>
-  public const int EntityFieldNumber = 3;
-  private global::CreateEntityInfo entity_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CreateEntityInfo Entity {
-    get { return entity_; }
-    set {
-      entity_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "quest_id" field.</summary>
-  public const int QuestIdFieldNumber = 5;
-  private uint questId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint QuestId {
-    get { return questId_; }
-    set {
-      questId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_rewind" field.</summary>
-  public const int IsRewindFieldNumber = 11;
-  private bool isRewind_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsRewind {
-    get { return isRewind_; }
-    set {
-      isRewind_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as QuestCreateEntityReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(QuestCreateEntityReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ParentQuestId != other.ParentQuestId) return false;
-    if (!object.Equals(Entity, other.Entity)) return false;
-    if (QuestId != other.QuestId) return false;
-    if (IsRewind != other.IsRewind) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ParentQuestId != 0) hash ^= ParentQuestId.GetHashCode();
-    if (entity_ != null) hash ^= Entity.GetHashCode();
-    if (QuestId != 0) hash ^= QuestId.GetHashCode();
-    if (IsRewind != false) hash ^= IsRewind.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (entity_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(Entity);
-    }
-    if (QuestId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(QuestId);
-    }
-    if (IsRewind != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(IsRewind);
-    }
-    if (ParentQuestId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(ParentQuestId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (entity_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(Entity);
-    }
-    if (QuestId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(QuestId);
-    }
-    if (IsRewind != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(IsRewind);
-    }
-    if (ParentQuestId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(ParentQuestId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ParentQuestId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ParentQuestId);
-    }
-    if (entity_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Entity);
-    }
-    if (QuestId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QuestId);
-    }
-    if (IsRewind != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(QuestCreateEntityReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ParentQuestId != 0) {
-      ParentQuestId = other.ParentQuestId;
-    }
-    if (other.entity_ != null) {
-      if (entity_ == null) {
-        Entity = new global::CreateEntityInfo();
-      }
-      Entity.MergeFrom(other.Entity);
-    }
-    if (other.QuestId != 0) {
-      QuestId = other.QuestId;
-    }
-    if (other.IsRewind != false) {
-      IsRewind = other.IsRewind;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 26: {
-          if (entity_ == null) {
-            Entity = new global::CreateEntityInfo();
-          }
-          input.ReadMessage(Entity);
-          break;
-        }
-        case 40: {
-          QuestId = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          IsRewind = input.ReadBool();
-          break;
-        }
-        case 112: {
-          ParentQuestId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 26: {
-          if (entity_ == null) {
-            Entity = new global::CreateEntityInfo();
-          }
-          input.ReadMessage(Entity);
-          break;
-        }
-        case 40: {
-          QuestId = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          IsRewind = input.ReadBool();
-          break;
-        }
-        case 112: {
-          ParentQuestId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

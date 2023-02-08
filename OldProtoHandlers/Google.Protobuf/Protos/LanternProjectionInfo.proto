@@ -19,7 +19,7 @@ syntax = "proto3";
 import "ClientInputType.proto";
 import "LanternProjectionLevelInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message LanternProjectionInfo {
   repeated ClientInputType view_switch_tips_list = 12;

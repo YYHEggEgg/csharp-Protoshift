@@ -9,961 +9,964 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SceneEntityInfo.proto</summary>
-public static partial class SceneEntityInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SceneEntityInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SceneEntityInfo.proto</summary>
+  public static partial class SceneEntityInfoReflection {
 
-  static SceneEntityInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVTY2VuZUVudGl0eUluZm8ucHJvdG8aJEFuaW1hdG9yUGFyYW1ldGVyVmFs",
-          "dWVJbmZvUGFpci5wcm90bxoZRW50aXR5QXV0aG9yaXR5SW5mby5wcm90bxoW",
-          "RW50aXR5Q2xpZW50RGF0YS5wcm90bxobRW50aXR5RW52aXJvbm1lbnRJbmZv",
-          "LnByb3RvGhNGaWdodFByb3BQYWlyLnByb3RvGhBNb3Rpb25JbmZvLnByb3Rv",
-          "Gg5Qcm9wUGFpci5wcm90bxoUUHJvdEVudGl0eVR5cGUucHJvdG8aFVNjZW5l",
-          "QXZhdGFySW5mby5wcm90bxoVU2NlbmVHYWRnZXRJbmZvLnByb3RvGhZTY2Vu",
-          "ZU1vbnN0ZXJJbmZvLnByb3RvGhJTY2VuZU5wY0luZm8ucHJvdG8aEFNlcnZl",
-          "ckJ1ZmYucHJvdG8ixAUKD1NjZW5lRW50aXR5SW5mbxIkCgtlbnRpdHlfdHlw",
-          "ZRgBIAEoDjIPLlByb3RFbnRpdHlUeXBlEhEKCWVudGl0eV9pZBgCIAEoDRIM",
-          "CgRuYW1lGAMgASgJEiAKC21vdGlvbl9pbmZvGAQgASgLMgsuTW90aW9uSW5m",
-          "bxIcCglwcm9wX2xpc3QYBSADKAsyCS5Qcm9wUGFpchInCg9maWdodF9wcm9w",
-          "X2xpc3QYBiADKAsyDi5GaWdodFByb3BQYWlyEhIKCmxpZmVfc3RhdGUYByAB",
-          "KA0SOwoSYW5pbWF0b3JfcGFyYV9saXN0GAkgAygLMh8uQW5pbWF0b3JQYXJh",
-          "bWV0ZXJWYWx1ZUluZm9QYWlyEh8KF2xhc3RfbW92ZV9zY2VuZV90aW1lX21z",
-          "GBEgASgNEh4KFmxhc3RfbW92ZV9yZWxpYWJsZV9zZXEYEiABKA0SLQoSZW50",
-          "aXR5X2NsaWVudF9kYXRhGBMgASgLMhEuRW50aXR5Q2xpZW50RGF0YRI8Chxl",
-          "bnRpdHlfZW52aXJvbm1lbnRfaW5mb19saXN0GBQgAygLMhYuRW50aXR5RW52",
-          "aXJvbm1lbnRJbmZvEjMKFWVudGl0eV9hdXRob3JpdHlfaW5mbxgVIAEoCzIU",
-          "LkVudGl0eUF1dGhvcml0eUluZm8SEAoIdGFnX2xpc3QYFiADKAkSJQoQc2Vy",
-          "dmVyX2J1ZmZfbGlzdBgXIAMoCzILLlNlcnZlckJ1ZmYSIgoGYXZhdGFyGAog",
-          "ASgLMhAuU2NlbmVBdmF0YXJJbmZvSAASJAoHbW9uc3RlchgLIAEoCzIRLlNj",
-          "ZW5lTW9uc3RlckluZm9IABIcCgNucGMYDCABKAsyDS5TY2VuZU5wY0luZm9I",
-          "ABIiCgZnYWRnZXQYDSABKAsyEC5TY2VuZUdhZGdldEluZm9IAEIICgZlbnRp",
-          "dHlCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::AnimatorParameterValueInfoPairReflection.Descriptor, global::EntityAuthorityInfoReflection.Descriptor, global::EntityClientDataReflection.Descriptor, global::EntityEnvironmentInfoReflection.Descriptor, global::FightPropPairReflection.Descriptor, global::MotionInfoReflection.Descriptor, global::PropPairReflection.Descriptor, global::ProtEntityTypeReflection.Descriptor, global::SceneAvatarInfoReflection.Descriptor, global::SceneGadgetInfoReflection.Descriptor, global::SceneMonsterInfoReflection.Descriptor, global::SceneNpcInfoReflection.Descriptor, global::ServerBuffReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SceneEntityInfo), global::SceneEntityInfo.Parser, new[]{ "EntityType", "EntityId", "Name", "MotionInfo", "PropList", "FightPropList", "LifeState", "AnimatorParaList", "LastMoveSceneTimeMs", "LastMoveReliableSeq", "EntityClientData", "EntityEnvironmentInfoList", "EntityAuthorityInfo", "TagList", "ServerBuffList", "Avatar", "Monster", "Npc", "Gadget" }, new[]{ "Entity" }, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SceneEntityInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SceneEntityInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVTY2VuZUVudGl0eUluZm8ucHJvdG8aJEFuaW1hdG9yUGFyYW1ldGVyVmFs",
+            "dWVJbmZvUGFpci5wcm90bxoZRW50aXR5QXV0aG9yaXR5SW5mby5wcm90bxoW",
+            "RW50aXR5Q2xpZW50RGF0YS5wcm90bxobRW50aXR5RW52aXJvbm1lbnRJbmZv",
+            "LnByb3RvGhNGaWdodFByb3BQYWlyLnByb3RvGhBNb3Rpb25JbmZvLnByb3Rv",
+            "Gg5Qcm9wUGFpci5wcm90bxoUUHJvdEVudGl0eVR5cGUucHJvdG8aFVNjZW5l",
+            "QXZhdGFySW5mby5wcm90bxoVU2NlbmVHYWRnZXRJbmZvLnByb3RvGhZTY2Vu",
+            "ZU1vbnN0ZXJJbmZvLnByb3RvGhJTY2VuZU5wY0luZm8ucHJvdG8aEFNlcnZl",
+            "ckJ1ZmYucHJvdG8ixAUKD1NjZW5lRW50aXR5SW5mbxIkCgtlbnRpdHlfdHlw",
+            "ZRgBIAEoDjIPLlByb3RFbnRpdHlUeXBlEhEKCWVudGl0eV9pZBgCIAEoDRIM",
+            "CgRuYW1lGAMgASgJEiAKC21vdGlvbl9pbmZvGAQgASgLMgsuTW90aW9uSW5m",
+            "bxIcCglwcm9wX2xpc3QYBSADKAsyCS5Qcm9wUGFpchInCg9maWdodF9wcm9w",
+            "X2xpc3QYBiADKAsyDi5GaWdodFByb3BQYWlyEhIKCmxpZmVfc3RhdGUYByAB",
+            "KA0SOwoSYW5pbWF0b3JfcGFyYV9saXN0GAkgAygLMh8uQW5pbWF0b3JQYXJh",
+            "bWV0ZXJWYWx1ZUluZm9QYWlyEh8KF2xhc3RfbW92ZV9zY2VuZV90aW1lX21z",
+            "GBEgASgNEh4KFmxhc3RfbW92ZV9yZWxpYWJsZV9zZXEYEiABKA0SLQoSZW50",
+            "aXR5X2NsaWVudF9kYXRhGBMgASgLMhEuRW50aXR5Q2xpZW50RGF0YRI8Chxl",
+            "bnRpdHlfZW52aXJvbm1lbnRfaW5mb19saXN0GBQgAygLMhYuRW50aXR5RW52",
+            "aXJvbm1lbnRJbmZvEjMKFWVudGl0eV9hdXRob3JpdHlfaW5mbxgVIAEoCzIU",
+            "LkVudGl0eUF1dGhvcml0eUluZm8SEAoIdGFnX2xpc3QYFiADKAkSJQoQc2Vy",
+            "dmVyX2J1ZmZfbGlzdBgXIAMoCzILLlNlcnZlckJ1ZmYSIgoGYXZhdGFyGAog",
+            "ASgLMhAuU2NlbmVBdmF0YXJJbmZvSAASJAoHbW9uc3RlchgLIAEoCzIRLlNj",
+            "ZW5lTW9uc3RlckluZm9IABIcCgNucGMYDCABKAsyDS5TY2VuZU5wY0luZm9I",
+            "ABIiCgZnYWRnZXQYDSABKAsyEC5TY2VuZUdhZGdldEluZm9IAEIICgZlbnRp",
+            "dHlCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.AnimatorParameterValueInfoPairReflection.Descriptor, global::NewProtos.EntityAuthorityInfoReflection.Descriptor, global::NewProtos.EntityClientDataReflection.Descriptor, global::NewProtos.EntityEnvironmentInfoReflection.Descriptor, global::NewProtos.FightPropPairReflection.Descriptor, global::NewProtos.MotionInfoReflection.Descriptor, global::NewProtos.PropPairReflection.Descriptor, global::NewProtos.ProtEntityTypeReflection.Descriptor, global::NewProtos.SceneAvatarInfoReflection.Descriptor, global::NewProtos.SceneGadgetInfoReflection.Descriptor, global::NewProtos.SceneMonsterInfoReflection.Descriptor, global::NewProtos.SceneNpcInfoReflection.Descriptor, global::NewProtos.ServerBuffReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.SceneEntityInfo), global::NewProtos.SceneEntityInfo.Parser, new[]{ "EntityType", "EntityId", "Name", "MotionInfo", "PropList", "FightPropList", "LifeState", "AnimatorParaList", "LastMoveSceneTimeMs", "LastMoveReliableSeq", "EntityClientData", "EntityEnvironmentInfoList", "EntityAuthorityInfo", "TagList", "ServerBuffList", "Avatar", "Monster", "Npc", "Gadget" }, new[]{ "Entity" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class SceneEntityInfo : pb::IMessage<SceneEntityInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SceneEntityInfo> _parser = new pb::MessageParser<SceneEntityInfo>(() => new SceneEntityInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SceneEntityInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.SceneEntityInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneEntityInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneEntityInfo(SceneEntityInfo other) : this() {
+      entityType_ = other.entityType_;
+      entityId_ = other.entityId_;
+      name_ = other.name_;
+      motionInfo_ = other.motionInfo_ != null ? other.motionInfo_.Clone() : null;
+      propList_ = other.propList_.Clone();
+      fightPropList_ = other.fightPropList_.Clone();
+      lifeState_ = other.lifeState_;
+      animatorParaList_ = other.animatorParaList_.Clone();
+      lastMoveSceneTimeMs_ = other.lastMoveSceneTimeMs_;
+      lastMoveReliableSeq_ = other.lastMoveReliableSeq_;
+      entityClientData_ = other.entityClientData_ != null ? other.entityClientData_.Clone() : null;
+      entityEnvironmentInfoList_ = other.entityEnvironmentInfoList_.Clone();
+      entityAuthorityInfo_ = other.entityAuthorityInfo_ != null ? other.entityAuthorityInfo_.Clone() : null;
+      tagList_ = other.tagList_.Clone();
+      serverBuffList_ = other.serverBuffList_.Clone();
+      switch (other.EntityCase) {
+        case EntityOneofCase.Avatar:
+          Avatar = other.Avatar.Clone();
+          break;
+        case EntityOneofCase.Monster:
+          Monster = other.Monster.Clone();
+          break;
+        case EntityOneofCase.Npc:
+          Npc = other.Npc.Clone();
+          break;
+        case EntityOneofCase.Gadget:
+          Gadget = other.Gadget.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneEntityInfo Clone() {
+      return new SceneEntityInfo(this);
+    }
+
+    /// <summary>Field number for the "entity_type" field.</summary>
+    public const int EntityTypeFieldNumber = 1;
+    private global::NewProtos.ProtEntityType entityType_ = global::NewProtos.ProtEntityType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ProtEntityType EntityType {
+      get { return entityType_; }
+      set {
+        entityType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 2;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 3;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "motion_info" field.</summary>
+    public const int MotionInfoFieldNumber = 4;
+    private global::NewProtos.MotionInfo motionInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.MotionInfo MotionInfo {
+      get { return motionInfo_; }
+      set {
+        motionInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "prop_list" field.</summary>
+    public const int PropListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::NewProtos.PropPair> _repeated_propList_codec
+        = pb::FieldCodec.ForMessage(42, global::NewProtos.PropPair.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.PropPair> propList_ = new pbc::RepeatedField<global::NewProtos.PropPair>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.PropPair> PropList {
+      get { return propList_; }
+    }
+
+    /// <summary>Field number for the "fight_prop_list" field.</summary>
+    public const int FightPropListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::NewProtos.FightPropPair> _repeated_fightPropList_codec
+        = pb::FieldCodec.ForMessage(50, global::NewProtos.FightPropPair.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.FightPropPair> fightPropList_ = new pbc::RepeatedField<global::NewProtos.FightPropPair>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.FightPropPair> FightPropList {
+      get { return fightPropList_; }
+    }
+
+    /// <summary>Field number for the "life_state" field.</summary>
+    public const int LifeStateFieldNumber = 7;
+    private uint lifeState_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LifeState {
+      get { return lifeState_; }
+      set {
+        lifeState_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "animator_para_list" field.</summary>
+    public const int AnimatorParaListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::NewProtos.AnimatorParameterValueInfoPair> _repeated_animatorParaList_codec
+        = pb::FieldCodec.ForMessage(74, global::NewProtos.AnimatorParameterValueInfoPair.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.AnimatorParameterValueInfoPair> animatorParaList_ = new pbc::RepeatedField<global::NewProtos.AnimatorParameterValueInfoPair>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.AnimatorParameterValueInfoPair> AnimatorParaList {
+      get { return animatorParaList_; }
+    }
+
+    /// <summary>Field number for the "last_move_scene_time_ms" field.</summary>
+    public const int LastMoveSceneTimeMsFieldNumber = 17;
+    private uint lastMoveSceneTimeMs_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LastMoveSceneTimeMs {
+      get { return lastMoveSceneTimeMs_; }
+      set {
+        lastMoveSceneTimeMs_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_move_reliable_seq" field.</summary>
+    public const int LastMoveReliableSeqFieldNumber = 18;
+    private uint lastMoveReliableSeq_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LastMoveReliableSeq {
+      get { return lastMoveReliableSeq_; }
+      set {
+        lastMoveReliableSeq_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_client_data" field.</summary>
+    public const int EntityClientDataFieldNumber = 19;
+    private global::NewProtos.EntityClientData entityClientData_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.EntityClientData EntityClientData {
+      get { return entityClientData_; }
+      set {
+        entityClientData_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_environment_info_list" field.</summary>
+    public const int EntityEnvironmentInfoListFieldNumber = 20;
+    private static readonly pb::FieldCodec<global::NewProtos.EntityEnvironmentInfo> _repeated_entityEnvironmentInfoList_codec
+        = pb::FieldCodec.ForMessage(162, global::NewProtos.EntityEnvironmentInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.EntityEnvironmentInfo> entityEnvironmentInfoList_ = new pbc::RepeatedField<global::NewProtos.EntityEnvironmentInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.EntityEnvironmentInfo> EntityEnvironmentInfoList {
+      get { return entityEnvironmentInfoList_; }
+    }
+
+    /// <summary>Field number for the "entity_authority_info" field.</summary>
+    public const int EntityAuthorityInfoFieldNumber = 21;
+    private global::NewProtos.EntityAuthorityInfo entityAuthorityInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.EntityAuthorityInfo EntityAuthorityInfo {
+      get { return entityAuthorityInfo_; }
+      set {
+        entityAuthorityInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tag_list" field.</summary>
+    public const int TagListFieldNumber = 22;
+    private static readonly pb::FieldCodec<string> _repeated_tagList_codec
+        = pb::FieldCodec.ForString(178);
+    private readonly pbc::RepeatedField<string> tagList_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> TagList {
+      get { return tagList_; }
+    }
+
+    /// <summary>Field number for the "server_buff_list" field.</summary>
+    public const int ServerBuffListFieldNumber = 23;
+    private static readonly pb::FieldCodec<global::NewProtos.ServerBuff> _repeated_serverBuffList_codec
+        = pb::FieldCodec.ForMessage(186, global::NewProtos.ServerBuff.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ServerBuff> serverBuffList_ = new pbc::RepeatedField<global::NewProtos.ServerBuff>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ServerBuff> ServerBuffList {
+      get { return serverBuffList_; }
+    }
+
+    /// <summary>Field number for the "avatar" field.</summary>
+    public const int AvatarFieldNumber = 10;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SceneAvatarInfo Avatar {
+      get { return entityCase_ == EntityOneofCase.Avatar ? (global::NewProtos.SceneAvatarInfo) entity_ : null; }
+      set {
+        entity_ = value;
+        entityCase_ = value == null ? EntityOneofCase.None : EntityOneofCase.Avatar;
+      }
+    }
+
+    /// <summary>Field number for the "monster" field.</summary>
+    public const int MonsterFieldNumber = 11;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SceneMonsterInfo Monster {
+      get { return entityCase_ == EntityOneofCase.Monster ? (global::NewProtos.SceneMonsterInfo) entity_ : null; }
+      set {
+        entity_ = value;
+        entityCase_ = value == null ? EntityOneofCase.None : EntityOneofCase.Monster;
+      }
+    }
+
+    /// <summary>Field number for the "npc" field.</summary>
+    public const int NpcFieldNumber = 12;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SceneNpcInfo Npc {
+      get { return entityCase_ == EntityOneofCase.Npc ? (global::NewProtos.SceneNpcInfo) entity_ : null; }
+      set {
+        entity_ = value;
+        entityCase_ = value == null ? EntityOneofCase.None : EntityOneofCase.Npc;
+      }
+    }
+
+    /// <summary>Field number for the "gadget" field.</summary>
+    public const int GadgetFieldNumber = 13;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SceneGadgetInfo Gadget {
+      get { return entityCase_ == EntityOneofCase.Gadget ? (global::NewProtos.SceneGadgetInfo) entity_ : null; }
+      set {
+        entity_ = value;
+        entityCase_ = value == null ? EntityOneofCase.None : EntityOneofCase.Gadget;
+      }
+    }
+
+    private object entity_;
+    /// <summary>Enum of possible cases for the "entity" oneof.</summary>
+    public enum EntityOneofCase {
+      None = 0,
+      Avatar = 10,
+      Monster = 11,
+      Npc = 12,
+      Gadget = 13,
+    }
+    private EntityOneofCase entityCase_ = EntityOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EntityOneofCase EntityCase {
+      get { return entityCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearEntity() {
+      entityCase_ = EntityOneofCase.None;
+      entity_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SceneEntityInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SceneEntityInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (EntityType != other.EntityType) return false;
+      if (EntityId != other.EntityId) return false;
+      if (Name != other.Name) return false;
+      if (!object.Equals(MotionInfo, other.MotionInfo)) return false;
+      if(!propList_.Equals(other.propList_)) return false;
+      if(!fightPropList_.Equals(other.fightPropList_)) return false;
+      if (LifeState != other.LifeState) return false;
+      if(!animatorParaList_.Equals(other.animatorParaList_)) return false;
+      if (LastMoveSceneTimeMs != other.LastMoveSceneTimeMs) return false;
+      if (LastMoveReliableSeq != other.LastMoveReliableSeq) return false;
+      if (!object.Equals(EntityClientData, other.EntityClientData)) return false;
+      if(!entityEnvironmentInfoList_.Equals(other.entityEnvironmentInfoList_)) return false;
+      if (!object.Equals(EntityAuthorityInfo, other.EntityAuthorityInfo)) return false;
+      if(!tagList_.Equals(other.tagList_)) return false;
+      if(!serverBuffList_.Equals(other.serverBuffList_)) return false;
+      if (!object.Equals(Avatar, other.Avatar)) return false;
+      if (!object.Equals(Monster, other.Monster)) return false;
+      if (!object.Equals(Npc, other.Npc)) return false;
+      if (!object.Equals(Gadget, other.Gadget)) return false;
+      if (EntityCase != other.EntityCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (EntityType != global::NewProtos.ProtEntityType.None) hash ^= EntityType.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (motionInfo_ != null) hash ^= MotionInfo.GetHashCode();
+      hash ^= propList_.GetHashCode();
+      hash ^= fightPropList_.GetHashCode();
+      if (LifeState != 0) hash ^= LifeState.GetHashCode();
+      hash ^= animatorParaList_.GetHashCode();
+      if (LastMoveSceneTimeMs != 0) hash ^= LastMoveSceneTimeMs.GetHashCode();
+      if (LastMoveReliableSeq != 0) hash ^= LastMoveReliableSeq.GetHashCode();
+      if (entityClientData_ != null) hash ^= EntityClientData.GetHashCode();
+      hash ^= entityEnvironmentInfoList_.GetHashCode();
+      if (entityAuthorityInfo_ != null) hash ^= EntityAuthorityInfo.GetHashCode();
+      hash ^= tagList_.GetHashCode();
+      hash ^= serverBuffList_.GetHashCode();
+      if (entityCase_ == EntityOneofCase.Avatar) hash ^= Avatar.GetHashCode();
+      if (entityCase_ == EntityOneofCase.Monster) hash ^= Monster.GetHashCode();
+      if (entityCase_ == EntityOneofCase.Npc) hash ^= Npc.GetHashCode();
+      if (entityCase_ == EntityOneofCase.Gadget) hash ^= Gadget.GetHashCode();
+      hash ^= (int) entityCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (EntityType != global::NewProtos.ProtEntityType.None) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) EntityType);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(EntityId);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Name);
+      }
+      if (motionInfo_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(MotionInfo);
+      }
+      propList_.WriteTo(output, _repeated_propList_codec);
+      fightPropList_.WriteTo(output, _repeated_fightPropList_codec);
+      if (LifeState != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(LifeState);
+      }
+      animatorParaList_.WriteTo(output, _repeated_animatorParaList_codec);
+      if (entityCase_ == EntityOneofCase.Avatar) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Avatar);
+      }
+      if (entityCase_ == EntityOneofCase.Monster) {
+        output.WriteRawTag(90);
+        output.WriteMessage(Monster);
+      }
+      if (entityCase_ == EntityOneofCase.Npc) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Npc);
+      }
+      if (entityCase_ == EntityOneofCase.Gadget) {
+        output.WriteRawTag(106);
+        output.WriteMessage(Gadget);
+      }
+      if (LastMoveSceneTimeMs != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteUInt32(LastMoveSceneTimeMs);
+      }
+      if (LastMoveReliableSeq != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteUInt32(LastMoveReliableSeq);
+      }
+      if (entityClientData_ != null) {
+        output.WriteRawTag(154, 1);
+        output.WriteMessage(EntityClientData);
+      }
+      entityEnvironmentInfoList_.WriteTo(output, _repeated_entityEnvironmentInfoList_codec);
+      if (entityAuthorityInfo_ != null) {
+        output.WriteRawTag(170, 1);
+        output.WriteMessage(EntityAuthorityInfo);
+      }
+      tagList_.WriteTo(output, _repeated_tagList_codec);
+      serverBuffList_.WriteTo(output, _repeated_serverBuffList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (EntityType != global::NewProtos.ProtEntityType.None) {
+        output.WriteRawTag(8);
+        output.WriteEnum((int) EntityType);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(EntityId);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Name);
+      }
+      if (motionInfo_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(MotionInfo);
+      }
+      propList_.WriteTo(ref output, _repeated_propList_codec);
+      fightPropList_.WriteTo(ref output, _repeated_fightPropList_codec);
+      if (LifeState != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(LifeState);
+      }
+      animatorParaList_.WriteTo(ref output, _repeated_animatorParaList_codec);
+      if (entityCase_ == EntityOneofCase.Avatar) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Avatar);
+      }
+      if (entityCase_ == EntityOneofCase.Monster) {
+        output.WriteRawTag(90);
+        output.WriteMessage(Monster);
+      }
+      if (entityCase_ == EntityOneofCase.Npc) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Npc);
+      }
+      if (entityCase_ == EntityOneofCase.Gadget) {
+        output.WriteRawTag(106);
+        output.WriteMessage(Gadget);
+      }
+      if (LastMoveSceneTimeMs != 0) {
+        output.WriteRawTag(136, 1);
+        output.WriteUInt32(LastMoveSceneTimeMs);
+      }
+      if (LastMoveReliableSeq != 0) {
+        output.WriteRawTag(144, 1);
+        output.WriteUInt32(LastMoveReliableSeq);
+      }
+      if (entityClientData_ != null) {
+        output.WriteRawTag(154, 1);
+        output.WriteMessage(EntityClientData);
+      }
+      entityEnvironmentInfoList_.WriteTo(ref output, _repeated_entityEnvironmentInfoList_codec);
+      if (entityAuthorityInfo_ != null) {
+        output.WriteRawTag(170, 1);
+        output.WriteMessage(EntityAuthorityInfo);
+      }
+      tagList_.WriteTo(ref output, _repeated_tagList_codec);
+      serverBuffList_.WriteTo(ref output, _repeated_serverBuffList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (EntityType != global::NewProtos.ProtEntityType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) EntityType);
+      }
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (motionInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MotionInfo);
+      }
+      size += propList_.CalculateSize(_repeated_propList_codec);
+      size += fightPropList_.CalculateSize(_repeated_fightPropList_codec);
+      if (LifeState != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LifeState);
+      }
+      size += animatorParaList_.CalculateSize(_repeated_animatorParaList_codec);
+      if (LastMoveSceneTimeMs != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(LastMoveSceneTimeMs);
+      }
+      if (LastMoveReliableSeq != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(LastMoveReliableSeq);
+      }
+      if (entityClientData_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(EntityClientData);
+      }
+      size += entityEnvironmentInfoList_.CalculateSize(_repeated_entityEnvironmentInfoList_codec);
+      if (entityAuthorityInfo_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(EntityAuthorityInfo);
+      }
+      size += tagList_.CalculateSize(_repeated_tagList_codec);
+      size += serverBuffList_.CalculateSize(_repeated_serverBuffList_codec);
+      if (entityCase_ == EntityOneofCase.Avatar) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Avatar);
+      }
+      if (entityCase_ == EntityOneofCase.Monster) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Monster);
+      }
+      if (entityCase_ == EntityOneofCase.Npc) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Npc);
+      }
+      if (entityCase_ == EntityOneofCase.Gadget) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Gadget);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SceneEntityInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.EntityType != global::NewProtos.ProtEntityType.None) {
+        EntityType = other.EntityType;
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.motionInfo_ != null) {
+        if (motionInfo_ == null) {
+          MotionInfo = new global::NewProtos.MotionInfo();
+        }
+        MotionInfo.MergeFrom(other.MotionInfo);
+      }
+      propList_.Add(other.propList_);
+      fightPropList_.Add(other.fightPropList_);
+      if (other.LifeState != 0) {
+        LifeState = other.LifeState;
+      }
+      animatorParaList_.Add(other.animatorParaList_);
+      if (other.LastMoveSceneTimeMs != 0) {
+        LastMoveSceneTimeMs = other.LastMoveSceneTimeMs;
+      }
+      if (other.LastMoveReliableSeq != 0) {
+        LastMoveReliableSeq = other.LastMoveReliableSeq;
+      }
+      if (other.entityClientData_ != null) {
+        if (entityClientData_ == null) {
+          EntityClientData = new global::NewProtos.EntityClientData();
+        }
+        EntityClientData.MergeFrom(other.EntityClientData);
+      }
+      entityEnvironmentInfoList_.Add(other.entityEnvironmentInfoList_);
+      if (other.entityAuthorityInfo_ != null) {
+        if (entityAuthorityInfo_ == null) {
+          EntityAuthorityInfo = new global::NewProtos.EntityAuthorityInfo();
+        }
+        EntityAuthorityInfo.MergeFrom(other.EntityAuthorityInfo);
+      }
+      tagList_.Add(other.tagList_);
+      serverBuffList_.Add(other.serverBuffList_);
+      switch (other.EntityCase) {
+        case EntityOneofCase.Avatar:
+          if (Avatar == null) {
+            Avatar = new global::NewProtos.SceneAvatarInfo();
+          }
+          Avatar.MergeFrom(other.Avatar);
+          break;
+        case EntityOneofCase.Monster:
+          if (Monster == null) {
+            Monster = new global::NewProtos.SceneMonsterInfo();
+          }
+          Monster.MergeFrom(other.Monster);
+          break;
+        case EntityOneofCase.Npc:
+          if (Npc == null) {
+            Npc = new global::NewProtos.SceneNpcInfo();
+          }
+          Npc.MergeFrom(other.Npc);
+          break;
+        case EntityOneofCase.Gadget:
+          if (Gadget == null) {
+            Gadget = new global::NewProtos.SceneGadgetInfo();
+          }
+          Gadget.MergeFrom(other.Gadget);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            EntityType = (global::NewProtos.ProtEntityType) input.ReadEnum();
+            break;
+          }
+          case 16: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 26: {
+            Name = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (motionInfo_ == null) {
+              MotionInfo = new global::NewProtos.MotionInfo();
+            }
+            input.ReadMessage(MotionInfo);
+            break;
+          }
+          case 42: {
+            propList_.AddEntriesFrom(input, _repeated_propList_codec);
+            break;
+          }
+          case 50: {
+            fightPropList_.AddEntriesFrom(input, _repeated_fightPropList_codec);
+            break;
+          }
+          case 56: {
+            LifeState = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            animatorParaList_.AddEntriesFrom(input, _repeated_animatorParaList_codec);
+            break;
+          }
+          case 82: {
+            global::NewProtos.SceneAvatarInfo subBuilder = new global::NewProtos.SceneAvatarInfo();
+            if (entityCase_ == EntityOneofCase.Avatar) {
+              subBuilder.MergeFrom(Avatar);
+            }
+            input.ReadMessage(subBuilder);
+            Avatar = subBuilder;
+            break;
+          }
+          case 90: {
+            global::NewProtos.SceneMonsterInfo subBuilder = new global::NewProtos.SceneMonsterInfo();
+            if (entityCase_ == EntityOneofCase.Monster) {
+              subBuilder.MergeFrom(Monster);
+            }
+            input.ReadMessage(subBuilder);
+            Monster = subBuilder;
+            break;
+          }
+          case 98: {
+            global::NewProtos.SceneNpcInfo subBuilder = new global::NewProtos.SceneNpcInfo();
+            if (entityCase_ == EntityOneofCase.Npc) {
+              subBuilder.MergeFrom(Npc);
+            }
+            input.ReadMessage(subBuilder);
+            Npc = subBuilder;
+            break;
+          }
+          case 106: {
+            global::NewProtos.SceneGadgetInfo subBuilder = new global::NewProtos.SceneGadgetInfo();
+            if (entityCase_ == EntityOneofCase.Gadget) {
+              subBuilder.MergeFrom(Gadget);
+            }
+            input.ReadMessage(subBuilder);
+            Gadget = subBuilder;
+            break;
+          }
+          case 136: {
+            LastMoveSceneTimeMs = input.ReadUInt32();
+            break;
+          }
+          case 144: {
+            LastMoveReliableSeq = input.ReadUInt32();
+            break;
+          }
+          case 154: {
+            if (entityClientData_ == null) {
+              EntityClientData = new global::NewProtos.EntityClientData();
+            }
+            input.ReadMessage(EntityClientData);
+            break;
+          }
+          case 162: {
+            entityEnvironmentInfoList_.AddEntriesFrom(input, _repeated_entityEnvironmentInfoList_codec);
+            break;
+          }
+          case 170: {
+            if (entityAuthorityInfo_ == null) {
+              EntityAuthorityInfo = new global::NewProtos.EntityAuthorityInfo();
+            }
+            input.ReadMessage(EntityAuthorityInfo);
+            break;
+          }
+          case 178: {
+            tagList_.AddEntriesFrom(input, _repeated_tagList_codec);
+            break;
+          }
+          case 186: {
+            serverBuffList_.AddEntriesFrom(input, _repeated_serverBuffList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            EntityType = (global::NewProtos.ProtEntityType) input.ReadEnum();
+            break;
+          }
+          case 16: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 26: {
+            Name = input.ReadString();
+            break;
+          }
+          case 34: {
+            if (motionInfo_ == null) {
+              MotionInfo = new global::NewProtos.MotionInfo();
+            }
+            input.ReadMessage(MotionInfo);
+            break;
+          }
+          case 42: {
+            propList_.AddEntriesFrom(ref input, _repeated_propList_codec);
+            break;
+          }
+          case 50: {
+            fightPropList_.AddEntriesFrom(ref input, _repeated_fightPropList_codec);
+            break;
+          }
+          case 56: {
+            LifeState = input.ReadUInt32();
+            break;
+          }
+          case 74: {
+            animatorParaList_.AddEntriesFrom(ref input, _repeated_animatorParaList_codec);
+            break;
+          }
+          case 82: {
+            global::NewProtos.SceneAvatarInfo subBuilder = new global::NewProtos.SceneAvatarInfo();
+            if (entityCase_ == EntityOneofCase.Avatar) {
+              subBuilder.MergeFrom(Avatar);
+            }
+            input.ReadMessage(subBuilder);
+            Avatar = subBuilder;
+            break;
+          }
+          case 90: {
+            global::NewProtos.SceneMonsterInfo subBuilder = new global::NewProtos.SceneMonsterInfo();
+            if (entityCase_ == EntityOneofCase.Monster) {
+              subBuilder.MergeFrom(Monster);
+            }
+            input.ReadMessage(subBuilder);
+            Monster = subBuilder;
+            break;
+          }
+          case 98: {
+            global::NewProtos.SceneNpcInfo subBuilder = new global::NewProtos.SceneNpcInfo();
+            if (entityCase_ == EntityOneofCase.Npc) {
+              subBuilder.MergeFrom(Npc);
+            }
+            input.ReadMessage(subBuilder);
+            Npc = subBuilder;
+            break;
+          }
+          case 106: {
+            global::NewProtos.SceneGadgetInfo subBuilder = new global::NewProtos.SceneGadgetInfo();
+            if (entityCase_ == EntityOneofCase.Gadget) {
+              subBuilder.MergeFrom(Gadget);
+            }
+            input.ReadMessage(subBuilder);
+            Gadget = subBuilder;
+            break;
+          }
+          case 136: {
+            LastMoveSceneTimeMs = input.ReadUInt32();
+            break;
+          }
+          case 144: {
+            LastMoveReliableSeq = input.ReadUInt32();
+            break;
+          }
+          case 154: {
+            if (entityClientData_ == null) {
+              EntityClientData = new global::NewProtos.EntityClientData();
+            }
+            input.ReadMessage(EntityClientData);
+            break;
+          }
+          case 162: {
+            entityEnvironmentInfoList_.AddEntriesFrom(ref input, _repeated_entityEnvironmentInfoList_codec);
+            break;
+          }
+          case 170: {
+            if (entityAuthorityInfo_ == null) {
+              EntityAuthorityInfo = new global::NewProtos.EntityAuthorityInfo();
+            }
+            input.ReadMessage(EntityAuthorityInfo);
+            break;
+          }
+          case 178: {
+            tagList_.AddEntriesFrom(ref input, _repeated_tagList_codec);
+            break;
+          }
+          case 186: {
+            serverBuffList_.AddEntriesFrom(ref input, _repeated_serverBuffList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class SceneEntityInfo : pb::IMessage<SceneEntityInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SceneEntityInfo> _parser = new pb::MessageParser<SceneEntityInfo>(() => new SceneEntityInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SceneEntityInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SceneEntityInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneEntityInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneEntityInfo(SceneEntityInfo other) : this() {
-    entityType_ = other.entityType_;
-    entityId_ = other.entityId_;
-    name_ = other.name_;
-    motionInfo_ = other.motionInfo_ != null ? other.motionInfo_.Clone() : null;
-    propList_ = other.propList_.Clone();
-    fightPropList_ = other.fightPropList_.Clone();
-    lifeState_ = other.lifeState_;
-    animatorParaList_ = other.animatorParaList_.Clone();
-    lastMoveSceneTimeMs_ = other.lastMoveSceneTimeMs_;
-    lastMoveReliableSeq_ = other.lastMoveReliableSeq_;
-    entityClientData_ = other.entityClientData_ != null ? other.entityClientData_.Clone() : null;
-    entityEnvironmentInfoList_ = other.entityEnvironmentInfoList_.Clone();
-    entityAuthorityInfo_ = other.entityAuthorityInfo_ != null ? other.entityAuthorityInfo_.Clone() : null;
-    tagList_ = other.tagList_.Clone();
-    serverBuffList_ = other.serverBuffList_.Clone();
-    switch (other.EntityCase) {
-      case EntityOneofCase.Avatar:
-        Avatar = other.Avatar.Clone();
-        break;
-      case EntityOneofCase.Monster:
-        Monster = other.Monster.Clone();
-        break;
-      case EntityOneofCase.Npc:
-        Npc = other.Npc.Clone();
-        break;
-      case EntityOneofCase.Gadget:
-        Gadget = other.Gadget.Clone();
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneEntityInfo Clone() {
-    return new SceneEntityInfo(this);
-  }
-
-  /// <summary>Field number for the "entity_type" field.</summary>
-  public const int EntityTypeFieldNumber = 1;
-  private global::ProtEntityType entityType_ = global::ProtEntityType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ProtEntityType EntityType {
-    get { return entityType_; }
-    set {
-      entityType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity_id" field.</summary>
-  public const int EntityIdFieldNumber = 2;
-  private uint entityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EntityId {
-    get { return entityId_; }
-    set {
-      entityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "name" field.</summary>
-  public const int NameFieldNumber = 3;
-  private string name_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string Name {
-    get { return name_; }
-    set {
-      name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "motion_info" field.</summary>
-  public const int MotionInfoFieldNumber = 4;
-  private global::MotionInfo motionInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MotionInfo MotionInfo {
-    get { return motionInfo_; }
-    set {
-      motionInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "prop_list" field.</summary>
-  public const int PropListFieldNumber = 5;
-  private static readonly pb::FieldCodec<global::PropPair> _repeated_propList_codec
-      = pb::FieldCodec.ForMessage(42, global::PropPair.Parser);
-  private readonly pbc::RepeatedField<global::PropPair> propList_ = new pbc::RepeatedField<global::PropPair>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::PropPair> PropList {
-    get { return propList_; }
-  }
-
-  /// <summary>Field number for the "fight_prop_list" field.</summary>
-  public const int FightPropListFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::FightPropPair> _repeated_fightPropList_codec
-      = pb::FieldCodec.ForMessage(50, global::FightPropPair.Parser);
-  private readonly pbc::RepeatedField<global::FightPropPair> fightPropList_ = new pbc::RepeatedField<global::FightPropPair>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::FightPropPair> FightPropList {
-    get { return fightPropList_; }
-  }
-
-  /// <summary>Field number for the "life_state" field.</summary>
-  public const int LifeStateFieldNumber = 7;
-  private uint lifeState_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LifeState {
-    get { return lifeState_; }
-    set {
-      lifeState_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "animator_para_list" field.</summary>
-  public const int AnimatorParaListFieldNumber = 9;
-  private static readonly pb::FieldCodec<global::AnimatorParameterValueInfoPair> _repeated_animatorParaList_codec
-      = pb::FieldCodec.ForMessage(74, global::AnimatorParameterValueInfoPair.Parser);
-  private readonly pbc::RepeatedField<global::AnimatorParameterValueInfoPair> animatorParaList_ = new pbc::RepeatedField<global::AnimatorParameterValueInfoPair>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::AnimatorParameterValueInfoPair> AnimatorParaList {
-    get { return animatorParaList_; }
-  }
-
-  /// <summary>Field number for the "last_move_scene_time_ms" field.</summary>
-  public const int LastMoveSceneTimeMsFieldNumber = 17;
-  private uint lastMoveSceneTimeMs_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LastMoveSceneTimeMs {
-    get { return lastMoveSceneTimeMs_; }
-    set {
-      lastMoveSceneTimeMs_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "last_move_reliable_seq" field.</summary>
-  public const int LastMoveReliableSeqFieldNumber = 18;
-  private uint lastMoveReliableSeq_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LastMoveReliableSeq {
-    get { return lastMoveReliableSeq_; }
-    set {
-      lastMoveReliableSeq_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity_client_data" field.</summary>
-  public const int EntityClientDataFieldNumber = 19;
-  private global::EntityClientData entityClientData_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::EntityClientData EntityClientData {
-    get { return entityClientData_; }
-    set {
-      entityClientData_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity_environment_info_list" field.</summary>
-  public const int EntityEnvironmentInfoListFieldNumber = 20;
-  private static readonly pb::FieldCodec<global::EntityEnvironmentInfo> _repeated_entityEnvironmentInfoList_codec
-      = pb::FieldCodec.ForMessage(162, global::EntityEnvironmentInfo.Parser);
-  private readonly pbc::RepeatedField<global::EntityEnvironmentInfo> entityEnvironmentInfoList_ = new pbc::RepeatedField<global::EntityEnvironmentInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::EntityEnvironmentInfo> EntityEnvironmentInfoList {
-    get { return entityEnvironmentInfoList_; }
-  }
-
-  /// <summary>Field number for the "entity_authority_info" field.</summary>
-  public const int EntityAuthorityInfoFieldNumber = 21;
-  private global::EntityAuthorityInfo entityAuthorityInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::EntityAuthorityInfo EntityAuthorityInfo {
-    get { return entityAuthorityInfo_; }
-    set {
-      entityAuthorityInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "tag_list" field.</summary>
-  public const int TagListFieldNumber = 22;
-  private static readonly pb::FieldCodec<string> _repeated_tagList_codec
-      = pb::FieldCodec.ForString(178);
-  private readonly pbc::RepeatedField<string> tagList_ = new pbc::RepeatedField<string>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<string> TagList {
-    get { return tagList_; }
-  }
-
-  /// <summary>Field number for the "server_buff_list" field.</summary>
-  public const int ServerBuffListFieldNumber = 23;
-  private static readonly pb::FieldCodec<global::ServerBuff> _repeated_serverBuffList_codec
-      = pb::FieldCodec.ForMessage(186, global::ServerBuff.Parser);
-  private readonly pbc::RepeatedField<global::ServerBuff> serverBuffList_ = new pbc::RepeatedField<global::ServerBuff>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ServerBuff> ServerBuffList {
-    get { return serverBuffList_; }
-  }
-
-  /// <summary>Field number for the "avatar" field.</summary>
-  public const int AvatarFieldNumber = 10;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneAvatarInfo Avatar {
-    get { return entityCase_ == EntityOneofCase.Avatar ? (global::SceneAvatarInfo) entity_ : null; }
-    set {
-      entity_ = value;
-      entityCase_ = value == null ? EntityOneofCase.None : EntityOneofCase.Avatar;
-    }
-  }
-
-  /// <summary>Field number for the "monster" field.</summary>
-  public const int MonsterFieldNumber = 11;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneMonsterInfo Monster {
-    get { return entityCase_ == EntityOneofCase.Monster ? (global::SceneMonsterInfo) entity_ : null; }
-    set {
-      entity_ = value;
-      entityCase_ = value == null ? EntityOneofCase.None : EntityOneofCase.Monster;
-    }
-  }
-
-  /// <summary>Field number for the "npc" field.</summary>
-  public const int NpcFieldNumber = 12;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneNpcInfo Npc {
-    get { return entityCase_ == EntityOneofCase.Npc ? (global::SceneNpcInfo) entity_ : null; }
-    set {
-      entity_ = value;
-      entityCase_ = value == null ? EntityOneofCase.None : EntityOneofCase.Npc;
-    }
-  }
-
-  /// <summary>Field number for the "gadget" field.</summary>
-  public const int GadgetFieldNumber = 13;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGadgetInfo Gadget {
-    get { return entityCase_ == EntityOneofCase.Gadget ? (global::SceneGadgetInfo) entity_ : null; }
-    set {
-      entity_ = value;
-      entityCase_ = value == null ? EntityOneofCase.None : EntityOneofCase.Gadget;
-    }
-  }
-
-  private object entity_;
-  /// <summary>Enum of possible cases for the "entity" oneof.</summary>
-  public enum EntityOneofCase {
-    None = 0,
-    Avatar = 10,
-    Monster = 11,
-    Npc = 12,
-    Gadget = 13,
-  }
-  private EntityOneofCase entityCase_ = EntityOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EntityOneofCase EntityCase {
-    get { return entityCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearEntity() {
-    entityCase_ = EntityOneofCase.None;
-    entity_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SceneEntityInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SceneEntityInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (EntityType != other.EntityType) return false;
-    if (EntityId != other.EntityId) return false;
-    if (Name != other.Name) return false;
-    if (!object.Equals(MotionInfo, other.MotionInfo)) return false;
-    if(!propList_.Equals(other.propList_)) return false;
-    if(!fightPropList_.Equals(other.fightPropList_)) return false;
-    if (LifeState != other.LifeState) return false;
-    if(!animatorParaList_.Equals(other.animatorParaList_)) return false;
-    if (LastMoveSceneTimeMs != other.LastMoveSceneTimeMs) return false;
-    if (LastMoveReliableSeq != other.LastMoveReliableSeq) return false;
-    if (!object.Equals(EntityClientData, other.EntityClientData)) return false;
-    if(!entityEnvironmentInfoList_.Equals(other.entityEnvironmentInfoList_)) return false;
-    if (!object.Equals(EntityAuthorityInfo, other.EntityAuthorityInfo)) return false;
-    if(!tagList_.Equals(other.tagList_)) return false;
-    if(!serverBuffList_.Equals(other.serverBuffList_)) return false;
-    if (!object.Equals(Avatar, other.Avatar)) return false;
-    if (!object.Equals(Monster, other.Monster)) return false;
-    if (!object.Equals(Npc, other.Npc)) return false;
-    if (!object.Equals(Gadget, other.Gadget)) return false;
-    if (EntityCase != other.EntityCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (EntityType != global::ProtEntityType.None) hash ^= EntityType.GetHashCode();
-    if (EntityId != 0) hash ^= EntityId.GetHashCode();
-    if (Name.Length != 0) hash ^= Name.GetHashCode();
-    if (motionInfo_ != null) hash ^= MotionInfo.GetHashCode();
-    hash ^= propList_.GetHashCode();
-    hash ^= fightPropList_.GetHashCode();
-    if (LifeState != 0) hash ^= LifeState.GetHashCode();
-    hash ^= animatorParaList_.GetHashCode();
-    if (LastMoveSceneTimeMs != 0) hash ^= LastMoveSceneTimeMs.GetHashCode();
-    if (LastMoveReliableSeq != 0) hash ^= LastMoveReliableSeq.GetHashCode();
-    if (entityClientData_ != null) hash ^= EntityClientData.GetHashCode();
-    hash ^= entityEnvironmentInfoList_.GetHashCode();
-    if (entityAuthorityInfo_ != null) hash ^= EntityAuthorityInfo.GetHashCode();
-    hash ^= tagList_.GetHashCode();
-    hash ^= serverBuffList_.GetHashCode();
-    if (entityCase_ == EntityOneofCase.Avatar) hash ^= Avatar.GetHashCode();
-    if (entityCase_ == EntityOneofCase.Monster) hash ^= Monster.GetHashCode();
-    if (entityCase_ == EntityOneofCase.Npc) hash ^= Npc.GetHashCode();
-    if (entityCase_ == EntityOneofCase.Gadget) hash ^= Gadget.GetHashCode();
-    hash ^= (int) entityCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (EntityType != global::ProtEntityType.None) {
-      output.WriteRawTag(8);
-      output.WriteEnum((int) EntityType);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(EntityId);
-    }
-    if (Name.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteString(Name);
-    }
-    if (motionInfo_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(MotionInfo);
-    }
-    propList_.WriteTo(output, _repeated_propList_codec);
-    fightPropList_.WriteTo(output, _repeated_fightPropList_codec);
-    if (LifeState != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(LifeState);
-    }
-    animatorParaList_.WriteTo(output, _repeated_animatorParaList_codec);
-    if (entityCase_ == EntityOneofCase.Avatar) {
-      output.WriteRawTag(82);
-      output.WriteMessage(Avatar);
-    }
-    if (entityCase_ == EntityOneofCase.Monster) {
-      output.WriteRawTag(90);
-      output.WriteMessage(Monster);
-    }
-    if (entityCase_ == EntityOneofCase.Npc) {
-      output.WriteRawTag(98);
-      output.WriteMessage(Npc);
-    }
-    if (entityCase_ == EntityOneofCase.Gadget) {
-      output.WriteRawTag(106);
-      output.WriteMessage(Gadget);
-    }
-    if (LastMoveSceneTimeMs != 0) {
-      output.WriteRawTag(136, 1);
-      output.WriteUInt32(LastMoveSceneTimeMs);
-    }
-    if (LastMoveReliableSeq != 0) {
-      output.WriteRawTag(144, 1);
-      output.WriteUInt32(LastMoveReliableSeq);
-    }
-    if (entityClientData_ != null) {
-      output.WriteRawTag(154, 1);
-      output.WriteMessage(EntityClientData);
-    }
-    entityEnvironmentInfoList_.WriteTo(output, _repeated_entityEnvironmentInfoList_codec);
-    if (entityAuthorityInfo_ != null) {
-      output.WriteRawTag(170, 1);
-      output.WriteMessage(EntityAuthorityInfo);
-    }
-    tagList_.WriteTo(output, _repeated_tagList_codec);
-    serverBuffList_.WriteTo(output, _repeated_serverBuffList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (EntityType != global::ProtEntityType.None) {
-      output.WriteRawTag(8);
-      output.WriteEnum((int) EntityType);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(EntityId);
-    }
-    if (Name.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteString(Name);
-    }
-    if (motionInfo_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(MotionInfo);
-    }
-    propList_.WriteTo(ref output, _repeated_propList_codec);
-    fightPropList_.WriteTo(ref output, _repeated_fightPropList_codec);
-    if (LifeState != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(LifeState);
-    }
-    animatorParaList_.WriteTo(ref output, _repeated_animatorParaList_codec);
-    if (entityCase_ == EntityOneofCase.Avatar) {
-      output.WriteRawTag(82);
-      output.WriteMessage(Avatar);
-    }
-    if (entityCase_ == EntityOneofCase.Monster) {
-      output.WriteRawTag(90);
-      output.WriteMessage(Monster);
-    }
-    if (entityCase_ == EntityOneofCase.Npc) {
-      output.WriteRawTag(98);
-      output.WriteMessage(Npc);
-    }
-    if (entityCase_ == EntityOneofCase.Gadget) {
-      output.WriteRawTag(106);
-      output.WriteMessage(Gadget);
-    }
-    if (LastMoveSceneTimeMs != 0) {
-      output.WriteRawTag(136, 1);
-      output.WriteUInt32(LastMoveSceneTimeMs);
-    }
-    if (LastMoveReliableSeq != 0) {
-      output.WriteRawTag(144, 1);
-      output.WriteUInt32(LastMoveReliableSeq);
-    }
-    if (entityClientData_ != null) {
-      output.WriteRawTag(154, 1);
-      output.WriteMessage(EntityClientData);
-    }
-    entityEnvironmentInfoList_.WriteTo(ref output, _repeated_entityEnvironmentInfoList_codec);
-    if (entityAuthorityInfo_ != null) {
-      output.WriteRawTag(170, 1);
-      output.WriteMessage(EntityAuthorityInfo);
-    }
-    tagList_.WriteTo(ref output, _repeated_tagList_codec);
-    serverBuffList_.WriteTo(ref output, _repeated_serverBuffList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (EntityType != global::ProtEntityType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) EntityType);
-    }
-    if (EntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-    }
-    if (Name.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
-    }
-    if (motionInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(MotionInfo);
-    }
-    size += propList_.CalculateSize(_repeated_propList_codec);
-    size += fightPropList_.CalculateSize(_repeated_fightPropList_codec);
-    if (LifeState != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LifeState);
-    }
-    size += animatorParaList_.CalculateSize(_repeated_animatorParaList_codec);
-    if (LastMoveSceneTimeMs != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(LastMoveSceneTimeMs);
-    }
-    if (LastMoveReliableSeq != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(LastMoveReliableSeq);
-    }
-    if (entityClientData_ != null) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(EntityClientData);
-    }
-    size += entityEnvironmentInfoList_.CalculateSize(_repeated_entityEnvironmentInfoList_codec);
-    if (entityAuthorityInfo_ != null) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(EntityAuthorityInfo);
-    }
-    size += tagList_.CalculateSize(_repeated_tagList_codec);
-    size += serverBuffList_.CalculateSize(_repeated_serverBuffList_codec);
-    if (entityCase_ == EntityOneofCase.Avatar) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Avatar);
-    }
-    if (entityCase_ == EntityOneofCase.Monster) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Monster);
-    }
-    if (entityCase_ == EntityOneofCase.Npc) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Npc);
-    }
-    if (entityCase_ == EntityOneofCase.Gadget) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Gadget);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SceneEntityInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.EntityType != global::ProtEntityType.None) {
-      EntityType = other.EntityType;
-    }
-    if (other.EntityId != 0) {
-      EntityId = other.EntityId;
-    }
-    if (other.Name.Length != 0) {
-      Name = other.Name;
-    }
-    if (other.motionInfo_ != null) {
-      if (motionInfo_ == null) {
-        MotionInfo = new global::MotionInfo();
-      }
-      MotionInfo.MergeFrom(other.MotionInfo);
-    }
-    propList_.Add(other.propList_);
-    fightPropList_.Add(other.fightPropList_);
-    if (other.LifeState != 0) {
-      LifeState = other.LifeState;
-    }
-    animatorParaList_.Add(other.animatorParaList_);
-    if (other.LastMoveSceneTimeMs != 0) {
-      LastMoveSceneTimeMs = other.LastMoveSceneTimeMs;
-    }
-    if (other.LastMoveReliableSeq != 0) {
-      LastMoveReliableSeq = other.LastMoveReliableSeq;
-    }
-    if (other.entityClientData_ != null) {
-      if (entityClientData_ == null) {
-        EntityClientData = new global::EntityClientData();
-      }
-      EntityClientData.MergeFrom(other.EntityClientData);
-    }
-    entityEnvironmentInfoList_.Add(other.entityEnvironmentInfoList_);
-    if (other.entityAuthorityInfo_ != null) {
-      if (entityAuthorityInfo_ == null) {
-        EntityAuthorityInfo = new global::EntityAuthorityInfo();
-      }
-      EntityAuthorityInfo.MergeFrom(other.EntityAuthorityInfo);
-    }
-    tagList_.Add(other.tagList_);
-    serverBuffList_.Add(other.serverBuffList_);
-    switch (other.EntityCase) {
-      case EntityOneofCase.Avatar:
-        if (Avatar == null) {
-          Avatar = new global::SceneAvatarInfo();
-        }
-        Avatar.MergeFrom(other.Avatar);
-        break;
-      case EntityOneofCase.Monster:
-        if (Monster == null) {
-          Monster = new global::SceneMonsterInfo();
-        }
-        Monster.MergeFrom(other.Monster);
-        break;
-      case EntityOneofCase.Npc:
-        if (Npc == null) {
-          Npc = new global::SceneNpcInfo();
-        }
-        Npc.MergeFrom(other.Npc);
-        break;
-      case EntityOneofCase.Gadget:
-        if (Gadget == null) {
-          Gadget = new global::SceneGadgetInfo();
-        }
-        Gadget.MergeFrom(other.Gadget);
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          EntityType = (global::ProtEntityType) input.ReadEnum();
-          break;
-        }
-        case 16: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 26: {
-          Name = input.ReadString();
-          break;
-        }
-        case 34: {
-          if (motionInfo_ == null) {
-            MotionInfo = new global::MotionInfo();
-          }
-          input.ReadMessage(MotionInfo);
-          break;
-        }
-        case 42: {
-          propList_.AddEntriesFrom(input, _repeated_propList_codec);
-          break;
-        }
-        case 50: {
-          fightPropList_.AddEntriesFrom(input, _repeated_fightPropList_codec);
-          break;
-        }
-        case 56: {
-          LifeState = input.ReadUInt32();
-          break;
-        }
-        case 74: {
-          animatorParaList_.AddEntriesFrom(input, _repeated_animatorParaList_codec);
-          break;
-        }
-        case 82: {
-          global::SceneAvatarInfo subBuilder = new global::SceneAvatarInfo();
-          if (entityCase_ == EntityOneofCase.Avatar) {
-            subBuilder.MergeFrom(Avatar);
-          }
-          input.ReadMessage(subBuilder);
-          Avatar = subBuilder;
-          break;
-        }
-        case 90: {
-          global::SceneMonsterInfo subBuilder = new global::SceneMonsterInfo();
-          if (entityCase_ == EntityOneofCase.Monster) {
-            subBuilder.MergeFrom(Monster);
-          }
-          input.ReadMessage(subBuilder);
-          Monster = subBuilder;
-          break;
-        }
-        case 98: {
-          global::SceneNpcInfo subBuilder = new global::SceneNpcInfo();
-          if (entityCase_ == EntityOneofCase.Npc) {
-            subBuilder.MergeFrom(Npc);
-          }
-          input.ReadMessage(subBuilder);
-          Npc = subBuilder;
-          break;
-        }
-        case 106: {
-          global::SceneGadgetInfo subBuilder = new global::SceneGadgetInfo();
-          if (entityCase_ == EntityOneofCase.Gadget) {
-            subBuilder.MergeFrom(Gadget);
-          }
-          input.ReadMessage(subBuilder);
-          Gadget = subBuilder;
-          break;
-        }
-        case 136: {
-          LastMoveSceneTimeMs = input.ReadUInt32();
-          break;
-        }
-        case 144: {
-          LastMoveReliableSeq = input.ReadUInt32();
-          break;
-        }
-        case 154: {
-          if (entityClientData_ == null) {
-            EntityClientData = new global::EntityClientData();
-          }
-          input.ReadMessage(EntityClientData);
-          break;
-        }
-        case 162: {
-          entityEnvironmentInfoList_.AddEntriesFrom(input, _repeated_entityEnvironmentInfoList_codec);
-          break;
-        }
-        case 170: {
-          if (entityAuthorityInfo_ == null) {
-            EntityAuthorityInfo = new global::EntityAuthorityInfo();
-          }
-          input.ReadMessage(EntityAuthorityInfo);
-          break;
-        }
-        case 178: {
-          tagList_.AddEntriesFrom(input, _repeated_tagList_codec);
-          break;
-        }
-        case 186: {
-          serverBuffList_.AddEntriesFrom(input, _repeated_serverBuffList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          EntityType = (global::ProtEntityType) input.ReadEnum();
-          break;
-        }
-        case 16: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 26: {
-          Name = input.ReadString();
-          break;
-        }
-        case 34: {
-          if (motionInfo_ == null) {
-            MotionInfo = new global::MotionInfo();
-          }
-          input.ReadMessage(MotionInfo);
-          break;
-        }
-        case 42: {
-          propList_.AddEntriesFrom(ref input, _repeated_propList_codec);
-          break;
-        }
-        case 50: {
-          fightPropList_.AddEntriesFrom(ref input, _repeated_fightPropList_codec);
-          break;
-        }
-        case 56: {
-          LifeState = input.ReadUInt32();
-          break;
-        }
-        case 74: {
-          animatorParaList_.AddEntriesFrom(ref input, _repeated_animatorParaList_codec);
-          break;
-        }
-        case 82: {
-          global::SceneAvatarInfo subBuilder = new global::SceneAvatarInfo();
-          if (entityCase_ == EntityOneofCase.Avatar) {
-            subBuilder.MergeFrom(Avatar);
-          }
-          input.ReadMessage(subBuilder);
-          Avatar = subBuilder;
-          break;
-        }
-        case 90: {
-          global::SceneMonsterInfo subBuilder = new global::SceneMonsterInfo();
-          if (entityCase_ == EntityOneofCase.Monster) {
-            subBuilder.MergeFrom(Monster);
-          }
-          input.ReadMessage(subBuilder);
-          Monster = subBuilder;
-          break;
-        }
-        case 98: {
-          global::SceneNpcInfo subBuilder = new global::SceneNpcInfo();
-          if (entityCase_ == EntityOneofCase.Npc) {
-            subBuilder.MergeFrom(Npc);
-          }
-          input.ReadMessage(subBuilder);
-          Npc = subBuilder;
-          break;
-        }
-        case 106: {
-          global::SceneGadgetInfo subBuilder = new global::SceneGadgetInfo();
-          if (entityCase_ == EntityOneofCase.Gadget) {
-            subBuilder.MergeFrom(Gadget);
-          }
-          input.ReadMessage(subBuilder);
-          Gadget = subBuilder;
-          break;
-        }
-        case 136: {
-          LastMoveSceneTimeMs = input.ReadUInt32();
-          break;
-        }
-        case 144: {
-          LastMoveReliableSeq = input.ReadUInt32();
-          break;
-        }
-        case 154: {
-          if (entityClientData_ == null) {
-            EntityClientData = new global::EntityClientData();
-          }
-          input.ReadMessage(EntityClientData);
-          break;
-        }
-        case 162: {
-          entityEnvironmentInfoList_.AddEntriesFrom(ref input, _repeated_entityEnvironmentInfoList_codec);
-          break;
-        }
-        case 170: {
-          if (entityAuthorityInfo_ == null) {
-            EntityAuthorityInfo = new global::EntityAuthorityInfo();
-          }
-          input.ReadMessage(EntityAuthorityInfo);
-          break;
-        }
-        case 178: {
-          tagList_.AddEntriesFrom(ref input, _repeated_tagList_codec);
-          break;
-        }
-        case 186: {
-          serverBuffList_.AddEntriesFrom(ref input, _repeated_serverBuffList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

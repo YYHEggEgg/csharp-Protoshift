@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "RegionSearchState.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message RegionSearch {
   bool is_entered = 13;

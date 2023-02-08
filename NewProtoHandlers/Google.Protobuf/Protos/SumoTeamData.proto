@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "SumoAvatarInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SumoTeamData {
   repeated uint32 skill_id_list = 12;

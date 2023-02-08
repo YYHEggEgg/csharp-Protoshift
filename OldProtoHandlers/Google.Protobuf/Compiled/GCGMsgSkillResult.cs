@@ -9,512 +9,514 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGMsgSkillResult.proto</summary>
-public static partial class GCGMsgSkillResultReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGMsgSkillResult.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGMsgSkillResult.proto</summary>
+  public static partial class GCGMsgSkillResultReflection {
 
-  static GCGMsgSkillResultReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdHQ0dNc2dTa2lsbFJlc3VsdC5wcm90bxoVR0NHRGFtYWdlRGV0YWlsLnBy",
-          "b3RvIuMBChFHQ0dNc2dTa2lsbFJlc3VsdBIQCghza2lsbF9pZBgMIAEoDRIP",
-          "CgdsYXN0X2hwGA4gASgNEiUKC2RldGFpbF9saXN0GAIgAygLMhAuR0NHRGFt",
-          "YWdlRGV0YWlsEhgKEHRhcmdldF9jYXJkX2d1aWQYByABKA0SFgoOZWZmZWN0",
-          "X2VsZW1lbnQYBSABKA0SFwoPZnJvbV9yZXN1bHRfc2VxGA8gASgNEg4KBmRh",
-          "bWFnZRgGIAEoDRISCgpyZXN1bHRfc2VxGAQgASgNEhUKDXNyY19jYXJkX2d1",
-          "aWQYCCABKA1CHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJv",
-          "dG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GCGDamageDetailReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGMsgSkillResult), global::GCGMsgSkillResult.Parser, new[]{ "SkillId", "LastHp", "DetailList", "TargetCardGuid", "EffectElement", "FromResultSeq", "Damage", "ResultSeq", "SrcCardGuid" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGMsgSkillResult.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGMsgSkillResultReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdHQ0dNc2dTa2lsbFJlc3VsdC5wcm90bxoVR0NHRGFtYWdlRGV0YWlsLnBy",
+            "b3RvIuMBChFHQ0dNc2dTa2lsbFJlc3VsdBIQCghza2lsbF9pZBgMIAEoDRIP",
+            "CgdsYXN0X2hwGA4gASgNEiUKC2RldGFpbF9saXN0GAIgAygLMhAuR0NHRGFt",
+            "YWdlRGV0YWlsEhgKEHRhcmdldF9jYXJkX2d1aWQYByABKA0SFgoOZWZmZWN0",
+            "X2VsZW1lbnQYBSABKA0SFwoPZnJvbV9yZXN1bHRfc2VxGA8gASgNEg4KBmRh",
+            "bWFnZRgGIAEoDRISCgpyZXN1bHRfc2VxGAQgASgNEhUKDXNyY19jYXJkX2d1",
+            "aWQYCCABKA1CDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GCGDamageDetailReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GCGMsgSkillResult), global::OldProtos.GCGMsgSkillResult.Parser, new[]{ "SkillId", "LastHp", "DetailList", "TargetCardGuid", "EffectElement", "FromResultSeq", "Damage", "ResultSeq", "SrcCardGuid" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GCGMsgSkillResult : pb::IMessage<GCGMsgSkillResult>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGMsgSkillResult> _parser = new pb::MessageParser<GCGMsgSkillResult>(() => new GCGMsgSkillResult());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGMsgSkillResult> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GCGMsgSkillResultReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGMsgSkillResult() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGMsgSkillResult(GCGMsgSkillResult other) : this() {
+      skillId_ = other.skillId_;
+      lastHp_ = other.lastHp_;
+      detailList_ = other.detailList_.Clone();
+      targetCardGuid_ = other.targetCardGuid_;
+      effectElement_ = other.effectElement_;
+      fromResultSeq_ = other.fromResultSeq_;
+      damage_ = other.damage_;
+      resultSeq_ = other.resultSeq_;
+      srcCardGuid_ = other.srcCardGuid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGMsgSkillResult Clone() {
+      return new GCGMsgSkillResult(this);
+    }
+
+    /// <summary>Field number for the "skill_id" field.</summary>
+    public const int SkillIdFieldNumber = 12;
+    private uint skillId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillId {
+      get { return skillId_; }
+      set {
+        skillId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_hp" field.</summary>
+    public const int LastHpFieldNumber = 14;
+    private uint lastHp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LastHp {
+      get { return lastHp_; }
+      set {
+        lastHp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "detail_list" field.</summary>
+    public const int DetailListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGDamageDetail> _repeated_detailList_codec
+        = pb::FieldCodec.ForMessage(18, global::OldProtos.GCGDamageDetail.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGDamageDetail> detailList_ = new pbc::RepeatedField<global::OldProtos.GCGDamageDetail>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGDamageDetail> DetailList {
+      get { return detailList_; }
+    }
+
+    /// <summary>Field number for the "target_card_guid" field.</summary>
+    public const int TargetCardGuidFieldNumber = 7;
+    private uint targetCardGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TargetCardGuid {
+      get { return targetCardGuid_; }
+      set {
+        targetCardGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "effect_element" field.</summary>
+    public const int EffectElementFieldNumber = 5;
+    private uint effectElement_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EffectElement {
+      get { return effectElement_; }
+      set {
+        effectElement_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "from_result_seq" field.</summary>
+    public const int FromResultSeqFieldNumber = 15;
+    private uint fromResultSeq_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FromResultSeq {
+      get { return fromResultSeq_; }
+      set {
+        fromResultSeq_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "damage" field.</summary>
+    public const int DamageFieldNumber = 6;
+    private uint damage_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Damage {
+      get { return damage_; }
+      set {
+        damage_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "result_seq" field.</summary>
+    public const int ResultSeqFieldNumber = 4;
+    private uint resultSeq_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ResultSeq {
+      get { return resultSeq_; }
+      set {
+        resultSeq_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "src_card_guid" field.</summary>
+    public const int SrcCardGuidFieldNumber = 8;
+    private uint srcCardGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SrcCardGuid {
+      get { return srcCardGuid_; }
+      set {
+        srcCardGuid_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGMsgSkillResult);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGMsgSkillResult other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SkillId != other.SkillId) return false;
+      if (LastHp != other.LastHp) return false;
+      if(!detailList_.Equals(other.detailList_)) return false;
+      if (TargetCardGuid != other.TargetCardGuid) return false;
+      if (EffectElement != other.EffectElement) return false;
+      if (FromResultSeq != other.FromResultSeq) return false;
+      if (Damage != other.Damage) return false;
+      if (ResultSeq != other.ResultSeq) return false;
+      if (SrcCardGuid != other.SrcCardGuid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SkillId != 0) hash ^= SkillId.GetHashCode();
+      if (LastHp != 0) hash ^= LastHp.GetHashCode();
+      hash ^= detailList_.GetHashCode();
+      if (TargetCardGuid != 0) hash ^= TargetCardGuid.GetHashCode();
+      if (EffectElement != 0) hash ^= EffectElement.GetHashCode();
+      if (FromResultSeq != 0) hash ^= FromResultSeq.GetHashCode();
+      if (Damage != 0) hash ^= Damage.GetHashCode();
+      if (ResultSeq != 0) hash ^= ResultSeq.GetHashCode();
+      if (SrcCardGuid != 0) hash ^= SrcCardGuid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      detailList_.WriteTo(output, _repeated_detailList_codec);
+      if (ResultSeq != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ResultSeq);
+      }
+      if (EffectElement != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(EffectElement);
+      }
+      if (Damage != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Damage);
+      }
+      if (TargetCardGuid != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(TargetCardGuid);
+      }
+      if (SrcCardGuid != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(SrcCardGuid);
+      }
+      if (SkillId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(SkillId);
+      }
+      if (LastHp != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(LastHp);
+      }
+      if (FromResultSeq != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(FromResultSeq);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      detailList_.WriteTo(ref output, _repeated_detailList_codec);
+      if (ResultSeq != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ResultSeq);
+      }
+      if (EffectElement != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(EffectElement);
+      }
+      if (Damage != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Damage);
+      }
+      if (TargetCardGuid != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(TargetCardGuid);
+      }
+      if (SrcCardGuid != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(SrcCardGuid);
+      }
+      if (SkillId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(SkillId);
+      }
+      if (LastHp != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(LastHp);
+      }
+      if (FromResultSeq != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(FromResultSeq);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (SkillId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
+      }
+      if (LastHp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastHp);
+      }
+      size += detailList_.CalculateSize(_repeated_detailList_codec);
+      if (TargetCardGuid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetCardGuid);
+      }
+      if (EffectElement != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EffectElement);
+      }
+      if (FromResultSeq != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FromResultSeq);
+      }
+      if (Damage != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Damage);
+      }
+      if (ResultSeq != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ResultSeq);
+      }
+      if (SrcCardGuid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SrcCardGuid);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGMsgSkillResult other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SkillId != 0) {
+        SkillId = other.SkillId;
+      }
+      if (other.LastHp != 0) {
+        LastHp = other.LastHp;
+      }
+      detailList_.Add(other.detailList_);
+      if (other.TargetCardGuid != 0) {
+        TargetCardGuid = other.TargetCardGuid;
+      }
+      if (other.EffectElement != 0) {
+        EffectElement = other.EffectElement;
+      }
+      if (other.FromResultSeq != 0) {
+        FromResultSeq = other.FromResultSeq;
+      }
+      if (other.Damage != 0) {
+        Damage = other.Damage;
+      }
+      if (other.ResultSeq != 0) {
+        ResultSeq = other.ResultSeq;
+      }
+      if (other.SrcCardGuid != 0) {
+        SrcCardGuid = other.SrcCardGuid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            detailList_.AddEntriesFrom(input, _repeated_detailList_codec);
+            break;
+          }
+          case 32: {
+            ResultSeq = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            EffectElement = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Damage = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            TargetCardGuid = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            SrcCardGuid = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            LastHp = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            FromResultSeq = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            detailList_.AddEntriesFrom(ref input, _repeated_detailList_codec);
+            break;
+          }
+          case 32: {
+            ResultSeq = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            EffectElement = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            Damage = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            TargetCardGuid = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            SrcCardGuid = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            LastHp = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            FromResultSeq = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GCGMsgSkillResult : pb::IMessage<GCGMsgSkillResult>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGMsgSkillResult> _parser = new pb::MessageParser<GCGMsgSkillResult>(() => new GCGMsgSkillResult());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGMsgSkillResult> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGMsgSkillResultReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGMsgSkillResult() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGMsgSkillResult(GCGMsgSkillResult other) : this() {
-    skillId_ = other.skillId_;
-    lastHp_ = other.lastHp_;
-    detailList_ = other.detailList_.Clone();
-    targetCardGuid_ = other.targetCardGuid_;
-    effectElement_ = other.effectElement_;
-    fromResultSeq_ = other.fromResultSeq_;
-    damage_ = other.damage_;
-    resultSeq_ = other.resultSeq_;
-    srcCardGuid_ = other.srcCardGuid_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGMsgSkillResult Clone() {
-    return new GCGMsgSkillResult(this);
-  }
-
-  /// <summary>Field number for the "skill_id" field.</summary>
-  public const int SkillIdFieldNumber = 12;
-  private uint skillId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SkillId {
-    get { return skillId_; }
-    set {
-      skillId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "last_hp" field.</summary>
-  public const int LastHpFieldNumber = 14;
-  private uint lastHp_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LastHp {
-    get { return lastHp_; }
-    set {
-      lastHp_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "detail_list" field.</summary>
-  public const int DetailListFieldNumber = 2;
-  private static readonly pb::FieldCodec<global::GCGDamageDetail> _repeated_detailList_codec
-      = pb::FieldCodec.ForMessage(18, global::GCGDamageDetail.Parser);
-  private readonly pbc::RepeatedField<global::GCGDamageDetail> detailList_ = new pbc::RepeatedField<global::GCGDamageDetail>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGDamageDetail> DetailList {
-    get { return detailList_; }
-  }
-
-  /// <summary>Field number for the "target_card_guid" field.</summary>
-  public const int TargetCardGuidFieldNumber = 7;
-  private uint targetCardGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TargetCardGuid {
-    get { return targetCardGuid_; }
-    set {
-      targetCardGuid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "effect_element" field.</summary>
-  public const int EffectElementFieldNumber = 5;
-  private uint effectElement_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EffectElement {
-    get { return effectElement_; }
-    set {
-      effectElement_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "from_result_seq" field.</summary>
-  public const int FromResultSeqFieldNumber = 15;
-  private uint fromResultSeq_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FromResultSeq {
-    get { return fromResultSeq_; }
-    set {
-      fromResultSeq_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "damage" field.</summary>
-  public const int DamageFieldNumber = 6;
-  private uint damage_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Damage {
-    get { return damage_; }
-    set {
-      damage_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "result_seq" field.</summary>
-  public const int ResultSeqFieldNumber = 4;
-  private uint resultSeq_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ResultSeq {
-    get { return resultSeq_; }
-    set {
-      resultSeq_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "src_card_guid" field.</summary>
-  public const int SrcCardGuidFieldNumber = 8;
-  private uint srcCardGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SrcCardGuid {
-    get { return srcCardGuid_; }
-    set {
-      srcCardGuid_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGMsgSkillResult);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGMsgSkillResult other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (SkillId != other.SkillId) return false;
-    if (LastHp != other.LastHp) return false;
-    if(!detailList_.Equals(other.detailList_)) return false;
-    if (TargetCardGuid != other.TargetCardGuid) return false;
-    if (EffectElement != other.EffectElement) return false;
-    if (FromResultSeq != other.FromResultSeq) return false;
-    if (Damage != other.Damage) return false;
-    if (ResultSeq != other.ResultSeq) return false;
-    if (SrcCardGuid != other.SrcCardGuid) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (SkillId != 0) hash ^= SkillId.GetHashCode();
-    if (LastHp != 0) hash ^= LastHp.GetHashCode();
-    hash ^= detailList_.GetHashCode();
-    if (TargetCardGuid != 0) hash ^= TargetCardGuid.GetHashCode();
-    if (EffectElement != 0) hash ^= EffectElement.GetHashCode();
-    if (FromResultSeq != 0) hash ^= FromResultSeq.GetHashCode();
-    if (Damage != 0) hash ^= Damage.GetHashCode();
-    if (ResultSeq != 0) hash ^= ResultSeq.GetHashCode();
-    if (SrcCardGuid != 0) hash ^= SrcCardGuid.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    detailList_.WriteTo(output, _repeated_detailList_codec);
-    if (ResultSeq != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(ResultSeq);
-    }
-    if (EffectElement != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(EffectElement);
-    }
-    if (Damage != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Damage);
-    }
-    if (TargetCardGuid != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(TargetCardGuid);
-    }
-    if (SrcCardGuid != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(SrcCardGuid);
-    }
-    if (SkillId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(SkillId);
-    }
-    if (LastHp != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(LastHp);
-    }
-    if (FromResultSeq != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(FromResultSeq);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    detailList_.WriteTo(ref output, _repeated_detailList_codec);
-    if (ResultSeq != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(ResultSeq);
-    }
-    if (EffectElement != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(EffectElement);
-    }
-    if (Damage != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Damage);
-    }
-    if (TargetCardGuid != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(TargetCardGuid);
-    }
-    if (SrcCardGuid != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(SrcCardGuid);
-    }
-    if (SkillId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(SkillId);
-    }
-    if (LastHp != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(LastHp);
-    }
-    if (FromResultSeq != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(FromResultSeq);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (SkillId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
-    }
-    if (LastHp != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastHp);
-    }
-    size += detailList_.CalculateSize(_repeated_detailList_codec);
-    if (TargetCardGuid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetCardGuid);
-    }
-    if (EffectElement != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EffectElement);
-    }
-    if (FromResultSeq != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FromResultSeq);
-    }
-    if (Damage != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Damage);
-    }
-    if (ResultSeq != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ResultSeq);
-    }
-    if (SrcCardGuid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SrcCardGuid);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGMsgSkillResult other) {
-    if (other == null) {
-      return;
-    }
-    if (other.SkillId != 0) {
-      SkillId = other.SkillId;
-    }
-    if (other.LastHp != 0) {
-      LastHp = other.LastHp;
-    }
-    detailList_.Add(other.detailList_);
-    if (other.TargetCardGuid != 0) {
-      TargetCardGuid = other.TargetCardGuid;
-    }
-    if (other.EffectElement != 0) {
-      EffectElement = other.EffectElement;
-    }
-    if (other.FromResultSeq != 0) {
-      FromResultSeq = other.FromResultSeq;
-    }
-    if (other.Damage != 0) {
-      Damage = other.Damage;
-    }
-    if (other.ResultSeq != 0) {
-      ResultSeq = other.ResultSeq;
-    }
-    if (other.SrcCardGuid != 0) {
-      SrcCardGuid = other.SrcCardGuid;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18: {
-          detailList_.AddEntriesFrom(input, _repeated_detailList_codec);
-          break;
-        }
-        case 32: {
-          ResultSeq = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          EffectElement = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          Damage = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          TargetCardGuid = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          SrcCardGuid = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          SkillId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          LastHp = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          FromResultSeq = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18: {
-          detailList_.AddEntriesFrom(ref input, _repeated_detailList_codec);
-          break;
-        }
-        case 32: {
-          ResultSeq = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          EffectElement = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          Damage = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          TargetCardGuid = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          SrcCardGuid = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          SkillId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          LastHp = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          FromResultSeq = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

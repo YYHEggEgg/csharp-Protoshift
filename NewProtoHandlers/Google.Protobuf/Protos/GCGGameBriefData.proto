@@ -19,7 +19,7 @@ syntax = "proto3";
 import "GCGGameBusinessType.proto";
 import "GCGPlayerBriefData.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGGameBriefData {
   uint32 Unk3300_NCLDOGNCHGF = 13;

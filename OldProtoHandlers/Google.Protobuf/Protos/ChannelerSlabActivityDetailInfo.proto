@@ -20,7 +20,7 @@ import "ChannelerSlabBuffInfo.proto";
 import "ChannelerSlabChallengeStage.proto";
 import "ChannelerSlabLoopDungeonStageInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message ChannelerSlabActivityDetailInfo {
   ChannelerSlabBuffInfo buff_info = 1;

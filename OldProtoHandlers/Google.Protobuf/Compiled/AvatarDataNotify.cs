@@ -9,458 +9,461 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AvatarDataNotify.proto</summary>
-public static partial class AvatarDataNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AvatarDataNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AvatarDataNotify.proto</summary>
+  public static partial class AvatarDataNotifyReflection {
 
-  static AvatarDataNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZBdmF0YXJEYXRhTm90aWZ5LnByb3RvGhBBdmF0YXJJbmZvLnByb3RvGhZB",
-          "dmF0YXJSZW5hbWVJbmZvLnByb3RvGhBBdmF0YXJUZWFtLnByb3RvIpwDChBB",
-          "dmF0YXJEYXRhTm90aWZ5EiUKHWJhY2t1cF9hdmF0YXJfdGVhbV9vcmRlcl9s",
-          "aXN0GAkgAygNEh0KFXRlbXBfYXZhdGFyX2d1aWRfbGlzdBgMIAMoBBIgCgth",
-          "dmF0YXJfbGlzdBgGIAMoCzILLkF2YXRhckluZm8SGgoSY3VyX2F2YXRhcl90",
-          "ZWFtX2lkGAIgASgNEi0KEmF2YXRhcl9yZW5hbWVfbGlzdBgEIAMoCzIRLkF2",
-          "YXRhclJlbmFtZUluZm8SGwoTb3duZWRfZmx5Y2xvYWtfbGlzdBgBIAMoDRIa",
-          "ChJvd25lZF9jb3N0dW1lX2xpc3QYCyADKA0SPQoPYXZhdGFyX3RlYW1fbWFw",
-          "GAcgAygLMiQuQXZhdGFyRGF0YU5vdGlmeS5BdmF0YXJUZWFtTWFwRW50cnkS",
-          "GgoSY2hvb3NlX2F2YXRhcl9ndWlkGAggASgEGkEKEkF2YXRhclRlYW1NYXBF",
-          "bnRyeRILCgNrZXkYASABKA0SGgoFdmFsdWUYAiABKAsyCy5BdmF0YXJUZWFt",
-          "OgI4AUIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::AvatarInfoReflection.Descriptor, global::AvatarRenameInfoReflection.Descriptor, global::AvatarTeamReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AvatarDataNotify), global::AvatarDataNotify.Parser, new[]{ "BackupAvatarTeamOrderList", "TempAvatarGuidList", "AvatarList", "CurAvatarTeamId", "AvatarRenameList", "OwnedFlycloakList", "OwnedCostumeList", "AvatarTeamMap", "ChooseAvatarGuid" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AvatarDataNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AvatarDataNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZBdmF0YXJEYXRhTm90aWZ5LnByb3RvGhBBdmF0YXJJbmZvLnByb3RvGhZB",
+            "dmF0YXJSZW5hbWVJbmZvLnByb3RvGhBBdmF0YXJUZWFtLnByb3RvIpwDChBB",
+            "dmF0YXJEYXRhTm90aWZ5EiUKHWJhY2t1cF9hdmF0YXJfdGVhbV9vcmRlcl9s",
+            "aXN0GAkgAygNEh0KFXRlbXBfYXZhdGFyX2d1aWRfbGlzdBgMIAMoBBIgCgth",
+            "dmF0YXJfbGlzdBgGIAMoCzILLkF2YXRhckluZm8SGgoSY3VyX2F2YXRhcl90",
+            "ZWFtX2lkGAIgASgNEi0KEmF2YXRhcl9yZW5hbWVfbGlzdBgEIAMoCzIRLkF2",
+            "YXRhclJlbmFtZUluZm8SGwoTb3duZWRfZmx5Y2xvYWtfbGlzdBgBIAMoDRIa",
+            "ChJvd25lZF9jb3N0dW1lX2xpc3QYCyADKA0SPQoPYXZhdGFyX3RlYW1fbWFw",
+            "GAcgAygLMiQuQXZhdGFyRGF0YU5vdGlmeS5BdmF0YXJUZWFtTWFwRW50cnkS",
+            "GgoSY2hvb3NlX2F2YXRhcl9ndWlkGAggASgEGkEKEkF2YXRhclRlYW1NYXBF",
+            "bnRyeRILCgNrZXkYASABKA0SGgoFdmFsdWUYAiABKAsyCy5BdmF0YXJUZWFt",
+            "OgI4AUIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.AvatarInfoReflection.Descriptor, global::OldProtos.AvatarRenameInfoReflection.Descriptor, global::OldProtos.AvatarTeamReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.AvatarDataNotify), global::OldProtos.AvatarDataNotify.Parser, new[]{ "BackupAvatarTeamOrderList", "TempAvatarGuidList", "AvatarList", "CurAvatarTeamId", "AvatarRenameList", "OwnedFlycloakList", "OwnedCostumeList", "AvatarTeamMap", "ChooseAvatarGuid" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class AvatarDataNotify : pb::IMessage<AvatarDataNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AvatarDataNotify> _parser = new pb::MessageParser<AvatarDataNotify>(() => new AvatarDataNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AvatarDataNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.AvatarDataNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarDataNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarDataNotify(AvatarDataNotify other) : this() {
+      backupAvatarTeamOrderList_ = other.backupAvatarTeamOrderList_.Clone();
+      tempAvatarGuidList_ = other.tempAvatarGuidList_.Clone();
+      avatarList_ = other.avatarList_.Clone();
+      curAvatarTeamId_ = other.curAvatarTeamId_;
+      avatarRenameList_ = other.avatarRenameList_.Clone();
+      ownedFlycloakList_ = other.ownedFlycloakList_.Clone();
+      ownedCostumeList_ = other.ownedCostumeList_.Clone();
+      avatarTeamMap_ = other.avatarTeamMap_.Clone();
+      chooseAvatarGuid_ = other.chooseAvatarGuid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarDataNotify Clone() {
+      return new AvatarDataNotify(this);
+    }
+
+    /// <summary>Field number for the "backup_avatar_team_order_list" field.</summary>
+    public const int BackupAvatarTeamOrderListFieldNumber = 9;
+    private static readonly pb::FieldCodec<uint> _repeated_backupAvatarTeamOrderList_codec
+        = pb::FieldCodec.ForUInt32(74);
+    private readonly pbc::RepeatedField<uint> backupAvatarTeamOrderList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> BackupAvatarTeamOrderList {
+      get { return backupAvatarTeamOrderList_; }
+    }
+
+    /// <summary>Field number for the "temp_avatar_guid_list" field.</summary>
+    public const int TempAvatarGuidListFieldNumber = 12;
+    private static readonly pb::FieldCodec<ulong> _repeated_tempAvatarGuidList_codec
+        = pb::FieldCodec.ForUInt64(98);
+    private readonly pbc::RepeatedField<ulong> tempAvatarGuidList_ = new pbc::RepeatedField<ulong>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<ulong> TempAvatarGuidList {
+      get { return tempAvatarGuidList_; }
+    }
+
+    /// <summary>Field number for the "avatar_list" field.</summary>
+    public const int AvatarListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::OldProtos.AvatarInfo> _repeated_avatarList_codec
+        = pb::FieldCodec.ForMessage(50, global::OldProtos.AvatarInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.AvatarInfo> avatarList_ = new pbc::RepeatedField<global::OldProtos.AvatarInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.AvatarInfo> AvatarList {
+      get { return avatarList_; }
+    }
+
+    /// <summary>Field number for the "cur_avatar_team_id" field.</summary>
+    public const int CurAvatarTeamIdFieldNumber = 2;
+    private uint curAvatarTeamId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurAvatarTeamId {
+      get { return curAvatarTeamId_; }
+      set {
+        curAvatarTeamId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "avatar_rename_list" field.</summary>
+    public const int AvatarRenameListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::OldProtos.AvatarRenameInfo> _repeated_avatarRenameList_codec
+        = pb::FieldCodec.ForMessage(34, global::OldProtos.AvatarRenameInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.AvatarRenameInfo> avatarRenameList_ = new pbc::RepeatedField<global::OldProtos.AvatarRenameInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.AvatarRenameInfo> AvatarRenameList {
+      get { return avatarRenameList_; }
+    }
+
+    /// <summary>Field number for the "owned_flycloak_list" field.</summary>
+    public const int OwnedFlycloakListFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_ownedFlycloakList_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> ownedFlycloakList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> OwnedFlycloakList {
+      get { return ownedFlycloakList_; }
+    }
+
+    /// <summary>Field number for the "owned_costume_list" field.</summary>
+    public const int OwnedCostumeListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_ownedCostumeList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> ownedCostumeList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> OwnedCostumeList {
+      get { return ownedCostumeList_; }
+    }
+
+    /// <summary>Field number for the "avatar_team_map" field.</summary>
+    public const int AvatarTeamMapFieldNumber = 7;
+    private static readonly pbc::MapField<uint, global::OldProtos.AvatarTeam>.Codec _map_avatarTeamMap_codec
+        = new pbc::MapField<uint, global::OldProtos.AvatarTeam>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::OldProtos.AvatarTeam.Parser), 58);
+    private readonly pbc::MapField<uint, global::OldProtos.AvatarTeam> avatarTeamMap_ = new pbc::MapField<uint, global::OldProtos.AvatarTeam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::OldProtos.AvatarTeam> AvatarTeamMap {
+      get { return avatarTeamMap_; }
+    }
+
+    /// <summary>Field number for the "choose_avatar_guid" field.</summary>
+    public const int ChooseAvatarGuidFieldNumber = 8;
+    private ulong chooseAvatarGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong ChooseAvatarGuid {
+      get { return chooseAvatarGuid_; }
+      set {
+        chooseAvatarGuid_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AvatarDataNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AvatarDataNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!backupAvatarTeamOrderList_.Equals(other.backupAvatarTeamOrderList_)) return false;
+      if(!tempAvatarGuidList_.Equals(other.tempAvatarGuidList_)) return false;
+      if(!avatarList_.Equals(other.avatarList_)) return false;
+      if (CurAvatarTeamId != other.CurAvatarTeamId) return false;
+      if(!avatarRenameList_.Equals(other.avatarRenameList_)) return false;
+      if(!ownedFlycloakList_.Equals(other.ownedFlycloakList_)) return false;
+      if(!ownedCostumeList_.Equals(other.ownedCostumeList_)) return false;
+      if (!AvatarTeamMap.Equals(other.AvatarTeamMap)) return false;
+      if (ChooseAvatarGuid != other.ChooseAvatarGuid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= backupAvatarTeamOrderList_.GetHashCode();
+      hash ^= tempAvatarGuidList_.GetHashCode();
+      hash ^= avatarList_.GetHashCode();
+      if (CurAvatarTeamId != 0) hash ^= CurAvatarTeamId.GetHashCode();
+      hash ^= avatarRenameList_.GetHashCode();
+      hash ^= ownedFlycloakList_.GetHashCode();
+      hash ^= ownedCostumeList_.GetHashCode();
+      hash ^= AvatarTeamMap.GetHashCode();
+      if (ChooseAvatarGuid != 0UL) hash ^= ChooseAvatarGuid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      ownedFlycloakList_.WriteTo(output, _repeated_ownedFlycloakList_codec);
+      if (CurAvatarTeamId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CurAvatarTeamId);
+      }
+      avatarRenameList_.WriteTo(output, _repeated_avatarRenameList_codec);
+      avatarList_.WriteTo(output, _repeated_avatarList_codec);
+      avatarTeamMap_.WriteTo(output, _map_avatarTeamMap_codec);
+      if (ChooseAvatarGuid != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(ChooseAvatarGuid);
+      }
+      backupAvatarTeamOrderList_.WriteTo(output, _repeated_backupAvatarTeamOrderList_codec);
+      ownedCostumeList_.WriteTo(output, _repeated_ownedCostumeList_codec);
+      tempAvatarGuidList_.WriteTo(output, _repeated_tempAvatarGuidList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      ownedFlycloakList_.WriteTo(ref output, _repeated_ownedFlycloakList_codec);
+      if (CurAvatarTeamId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CurAvatarTeamId);
+      }
+      avatarRenameList_.WriteTo(ref output, _repeated_avatarRenameList_codec);
+      avatarList_.WriteTo(ref output, _repeated_avatarList_codec);
+      avatarTeamMap_.WriteTo(ref output, _map_avatarTeamMap_codec);
+      if (ChooseAvatarGuid != 0UL) {
+        output.WriteRawTag(64);
+        output.WriteUInt64(ChooseAvatarGuid);
+      }
+      backupAvatarTeamOrderList_.WriteTo(ref output, _repeated_backupAvatarTeamOrderList_codec);
+      ownedCostumeList_.WriteTo(ref output, _repeated_ownedCostumeList_codec);
+      tempAvatarGuidList_.WriteTo(ref output, _repeated_tempAvatarGuidList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += backupAvatarTeamOrderList_.CalculateSize(_repeated_backupAvatarTeamOrderList_codec);
+      size += tempAvatarGuidList_.CalculateSize(_repeated_tempAvatarGuidList_codec);
+      size += avatarList_.CalculateSize(_repeated_avatarList_codec);
+      if (CurAvatarTeamId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurAvatarTeamId);
+      }
+      size += avatarRenameList_.CalculateSize(_repeated_avatarRenameList_codec);
+      size += ownedFlycloakList_.CalculateSize(_repeated_ownedFlycloakList_codec);
+      size += ownedCostumeList_.CalculateSize(_repeated_ownedCostumeList_codec);
+      size += avatarTeamMap_.CalculateSize(_map_avatarTeamMap_codec);
+      if (ChooseAvatarGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ChooseAvatarGuid);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AvatarDataNotify other) {
+      if (other == null) {
+        return;
+      }
+      backupAvatarTeamOrderList_.Add(other.backupAvatarTeamOrderList_);
+      tempAvatarGuidList_.Add(other.tempAvatarGuidList_);
+      avatarList_.Add(other.avatarList_);
+      if (other.CurAvatarTeamId != 0) {
+        CurAvatarTeamId = other.CurAvatarTeamId;
+      }
+      avatarRenameList_.Add(other.avatarRenameList_);
+      ownedFlycloakList_.Add(other.ownedFlycloakList_);
+      ownedCostumeList_.Add(other.ownedCostumeList_);
+      avatarTeamMap_.Add(other.avatarTeamMap_);
+      if (other.ChooseAvatarGuid != 0UL) {
+        ChooseAvatarGuid = other.ChooseAvatarGuid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10:
+          case 8: {
+            ownedFlycloakList_.AddEntriesFrom(input, _repeated_ownedFlycloakList_codec);
+            break;
+          }
+          case 16: {
+            CurAvatarTeamId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            avatarRenameList_.AddEntriesFrom(input, _repeated_avatarRenameList_codec);
+            break;
+          }
+          case 50: {
+            avatarList_.AddEntriesFrom(input, _repeated_avatarList_codec);
+            break;
+          }
+          case 58: {
+            avatarTeamMap_.AddEntriesFrom(input, _map_avatarTeamMap_codec);
+            break;
+          }
+          case 64: {
+            ChooseAvatarGuid = input.ReadUInt64();
+            break;
+          }
+          case 74:
+          case 72: {
+            backupAvatarTeamOrderList_.AddEntriesFrom(input, _repeated_backupAvatarTeamOrderList_codec);
+            break;
+          }
+          case 90:
+          case 88: {
+            ownedCostumeList_.AddEntriesFrom(input, _repeated_ownedCostumeList_codec);
+            break;
+          }
+          case 98:
+          case 96: {
+            tempAvatarGuidList_.AddEntriesFrom(input, _repeated_tempAvatarGuidList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10:
+          case 8: {
+            ownedFlycloakList_.AddEntriesFrom(ref input, _repeated_ownedFlycloakList_codec);
+            break;
+          }
+          case 16: {
+            CurAvatarTeamId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            avatarRenameList_.AddEntriesFrom(ref input, _repeated_avatarRenameList_codec);
+            break;
+          }
+          case 50: {
+            avatarList_.AddEntriesFrom(ref input, _repeated_avatarList_codec);
+            break;
+          }
+          case 58: {
+            avatarTeamMap_.AddEntriesFrom(ref input, _map_avatarTeamMap_codec);
+            break;
+          }
+          case 64: {
+            ChooseAvatarGuid = input.ReadUInt64();
+            break;
+          }
+          case 74:
+          case 72: {
+            backupAvatarTeamOrderList_.AddEntriesFrom(ref input, _repeated_backupAvatarTeamOrderList_codec);
+            break;
+          }
+          case 90:
+          case 88: {
+            ownedCostumeList_.AddEntriesFrom(ref input, _repeated_ownedCostumeList_codec);
+            break;
+          }
+          case 98:
+          case 96: {
+            tempAvatarGuidList_.AddEntriesFrom(ref input, _repeated_tempAvatarGuidList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class AvatarDataNotify : pb::IMessage<AvatarDataNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AvatarDataNotify> _parser = new pb::MessageParser<AvatarDataNotify>(() => new AvatarDataNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AvatarDataNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AvatarDataNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarDataNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarDataNotify(AvatarDataNotify other) : this() {
-    backupAvatarTeamOrderList_ = other.backupAvatarTeamOrderList_.Clone();
-    tempAvatarGuidList_ = other.tempAvatarGuidList_.Clone();
-    avatarList_ = other.avatarList_.Clone();
-    curAvatarTeamId_ = other.curAvatarTeamId_;
-    avatarRenameList_ = other.avatarRenameList_.Clone();
-    ownedFlycloakList_ = other.ownedFlycloakList_.Clone();
-    ownedCostumeList_ = other.ownedCostumeList_.Clone();
-    avatarTeamMap_ = other.avatarTeamMap_.Clone();
-    chooseAvatarGuid_ = other.chooseAvatarGuid_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarDataNotify Clone() {
-    return new AvatarDataNotify(this);
-  }
-
-  /// <summary>Field number for the "backup_avatar_team_order_list" field.</summary>
-  public const int BackupAvatarTeamOrderListFieldNumber = 9;
-  private static readonly pb::FieldCodec<uint> _repeated_backupAvatarTeamOrderList_codec
-      = pb::FieldCodec.ForUInt32(74);
-  private readonly pbc::RepeatedField<uint> backupAvatarTeamOrderList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> BackupAvatarTeamOrderList {
-    get { return backupAvatarTeamOrderList_; }
-  }
-
-  /// <summary>Field number for the "temp_avatar_guid_list" field.</summary>
-  public const int TempAvatarGuidListFieldNumber = 12;
-  private static readonly pb::FieldCodec<ulong> _repeated_tempAvatarGuidList_codec
-      = pb::FieldCodec.ForUInt64(98);
-  private readonly pbc::RepeatedField<ulong> tempAvatarGuidList_ = new pbc::RepeatedField<ulong>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<ulong> TempAvatarGuidList {
-    get { return tempAvatarGuidList_; }
-  }
-
-  /// <summary>Field number for the "avatar_list" field.</summary>
-  public const int AvatarListFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::AvatarInfo> _repeated_avatarList_codec
-      = pb::FieldCodec.ForMessage(50, global::AvatarInfo.Parser);
-  private readonly pbc::RepeatedField<global::AvatarInfo> avatarList_ = new pbc::RepeatedField<global::AvatarInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::AvatarInfo> AvatarList {
-    get { return avatarList_; }
-  }
-
-  /// <summary>Field number for the "cur_avatar_team_id" field.</summary>
-  public const int CurAvatarTeamIdFieldNumber = 2;
-  private uint curAvatarTeamId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurAvatarTeamId {
-    get { return curAvatarTeamId_; }
-    set {
-      curAvatarTeamId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "avatar_rename_list" field.</summary>
-  public const int AvatarRenameListFieldNumber = 4;
-  private static readonly pb::FieldCodec<global::AvatarRenameInfo> _repeated_avatarRenameList_codec
-      = pb::FieldCodec.ForMessage(34, global::AvatarRenameInfo.Parser);
-  private readonly pbc::RepeatedField<global::AvatarRenameInfo> avatarRenameList_ = new pbc::RepeatedField<global::AvatarRenameInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::AvatarRenameInfo> AvatarRenameList {
-    get { return avatarRenameList_; }
-  }
-
-  /// <summary>Field number for the "owned_flycloak_list" field.</summary>
-  public const int OwnedFlycloakListFieldNumber = 1;
-  private static readonly pb::FieldCodec<uint> _repeated_ownedFlycloakList_codec
-      = pb::FieldCodec.ForUInt32(10);
-  private readonly pbc::RepeatedField<uint> ownedFlycloakList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> OwnedFlycloakList {
-    get { return ownedFlycloakList_; }
-  }
-
-  /// <summary>Field number for the "owned_costume_list" field.</summary>
-  public const int OwnedCostumeListFieldNumber = 11;
-  private static readonly pb::FieldCodec<uint> _repeated_ownedCostumeList_codec
-      = pb::FieldCodec.ForUInt32(90);
-  private readonly pbc::RepeatedField<uint> ownedCostumeList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> OwnedCostumeList {
-    get { return ownedCostumeList_; }
-  }
-
-  /// <summary>Field number for the "avatar_team_map" field.</summary>
-  public const int AvatarTeamMapFieldNumber = 7;
-  private static readonly pbc::MapField<uint, global::AvatarTeam>.Codec _map_avatarTeamMap_codec
-      = new pbc::MapField<uint, global::AvatarTeam>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::AvatarTeam.Parser), 58);
-  private readonly pbc::MapField<uint, global::AvatarTeam> avatarTeamMap_ = new pbc::MapField<uint, global::AvatarTeam>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::AvatarTeam> AvatarTeamMap {
-    get { return avatarTeamMap_; }
-  }
-
-  /// <summary>Field number for the "choose_avatar_guid" field.</summary>
-  public const int ChooseAvatarGuidFieldNumber = 8;
-  private ulong chooseAvatarGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong ChooseAvatarGuid {
-    get { return chooseAvatarGuid_; }
-    set {
-      chooseAvatarGuid_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AvatarDataNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AvatarDataNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!backupAvatarTeamOrderList_.Equals(other.backupAvatarTeamOrderList_)) return false;
-    if(!tempAvatarGuidList_.Equals(other.tempAvatarGuidList_)) return false;
-    if(!avatarList_.Equals(other.avatarList_)) return false;
-    if (CurAvatarTeamId != other.CurAvatarTeamId) return false;
-    if(!avatarRenameList_.Equals(other.avatarRenameList_)) return false;
-    if(!ownedFlycloakList_.Equals(other.ownedFlycloakList_)) return false;
-    if(!ownedCostumeList_.Equals(other.ownedCostumeList_)) return false;
-    if (!AvatarTeamMap.Equals(other.AvatarTeamMap)) return false;
-    if (ChooseAvatarGuid != other.ChooseAvatarGuid) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= backupAvatarTeamOrderList_.GetHashCode();
-    hash ^= tempAvatarGuidList_.GetHashCode();
-    hash ^= avatarList_.GetHashCode();
-    if (CurAvatarTeamId != 0) hash ^= CurAvatarTeamId.GetHashCode();
-    hash ^= avatarRenameList_.GetHashCode();
-    hash ^= ownedFlycloakList_.GetHashCode();
-    hash ^= ownedCostumeList_.GetHashCode();
-    hash ^= AvatarTeamMap.GetHashCode();
-    if (ChooseAvatarGuid != 0UL) hash ^= ChooseAvatarGuid.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    ownedFlycloakList_.WriteTo(output, _repeated_ownedFlycloakList_codec);
-    if (CurAvatarTeamId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(CurAvatarTeamId);
-    }
-    avatarRenameList_.WriteTo(output, _repeated_avatarRenameList_codec);
-    avatarList_.WriteTo(output, _repeated_avatarList_codec);
-    avatarTeamMap_.WriteTo(output, _map_avatarTeamMap_codec);
-    if (ChooseAvatarGuid != 0UL) {
-      output.WriteRawTag(64);
-      output.WriteUInt64(ChooseAvatarGuid);
-    }
-    backupAvatarTeamOrderList_.WriteTo(output, _repeated_backupAvatarTeamOrderList_codec);
-    ownedCostumeList_.WriteTo(output, _repeated_ownedCostumeList_codec);
-    tempAvatarGuidList_.WriteTo(output, _repeated_tempAvatarGuidList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    ownedFlycloakList_.WriteTo(ref output, _repeated_ownedFlycloakList_codec);
-    if (CurAvatarTeamId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(CurAvatarTeamId);
-    }
-    avatarRenameList_.WriteTo(ref output, _repeated_avatarRenameList_codec);
-    avatarList_.WriteTo(ref output, _repeated_avatarList_codec);
-    avatarTeamMap_.WriteTo(ref output, _map_avatarTeamMap_codec);
-    if (ChooseAvatarGuid != 0UL) {
-      output.WriteRawTag(64);
-      output.WriteUInt64(ChooseAvatarGuid);
-    }
-    backupAvatarTeamOrderList_.WriteTo(ref output, _repeated_backupAvatarTeamOrderList_codec);
-    ownedCostumeList_.WriteTo(ref output, _repeated_ownedCostumeList_codec);
-    tempAvatarGuidList_.WriteTo(ref output, _repeated_tempAvatarGuidList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += backupAvatarTeamOrderList_.CalculateSize(_repeated_backupAvatarTeamOrderList_codec);
-    size += tempAvatarGuidList_.CalculateSize(_repeated_tempAvatarGuidList_codec);
-    size += avatarList_.CalculateSize(_repeated_avatarList_codec);
-    if (CurAvatarTeamId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurAvatarTeamId);
-    }
-    size += avatarRenameList_.CalculateSize(_repeated_avatarRenameList_codec);
-    size += ownedFlycloakList_.CalculateSize(_repeated_ownedFlycloakList_codec);
-    size += ownedCostumeList_.CalculateSize(_repeated_ownedCostumeList_codec);
-    size += avatarTeamMap_.CalculateSize(_map_avatarTeamMap_codec);
-    if (ChooseAvatarGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(ChooseAvatarGuid);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AvatarDataNotify other) {
-    if (other == null) {
-      return;
-    }
-    backupAvatarTeamOrderList_.Add(other.backupAvatarTeamOrderList_);
-    tempAvatarGuidList_.Add(other.tempAvatarGuidList_);
-    avatarList_.Add(other.avatarList_);
-    if (other.CurAvatarTeamId != 0) {
-      CurAvatarTeamId = other.CurAvatarTeamId;
-    }
-    avatarRenameList_.Add(other.avatarRenameList_);
-    ownedFlycloakList_.Add(other.ownedFlycloakList_);
-    ownedCostumeList_.Add(other.ownedCostumeList_);
-    avatarTeamMap_.Add(other.avatarTeamMap_);
-    if (other.ChooseAvatarGuid != 0UL) {
-      ChooseAvatarGuid = other.ChooseAvatarGuid;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10:
-        case 8: {
-          ownedFlycloakList_.AddEntriesFrom(input, _repeated_ownedFlycloakList_codec);
-          break;
-        }
-        case 16: {
-          CurAvatarTeamId = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          avatarRenameList_.AddEntriesFrom(input, _repeated_avatarRenameList_codec);
-          break;
-        }
-        case 50: {
-          avatarList_.AddEntriesFrom(input, _repeated_avatarList_codec);
-          break;
-        }
-        case 58: {
-          avatarTeamMap_.AddEntriesFrom(input, _map_avatarTeamMap_codec);
-          break;
-        }
-        case 64: {
-          ChooseAvatarGuid = input.ReadUInt64();
-          break;
-        }
-        case 74:
-        case 72: {
-          backupAvatarTeamOrderList_.AddEntriesFrom(input, _repeated_backupAvatarTeamOrderList_codec);
-          break;
-        }
-        case 90:
-        case 88: {
-          ownedCostumeList_.AddEntriesFrom(input, _repeated_ownedCostumeList_codec);
-          break;
-        }
-        case 98:
-        case 96: {
-          tempAvatarGuidList_.AddEntriesFrom(input, _repeated_tempAvatarGuidList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10:
-        case 8: {
-          ownedFlycloakList_.AddEntriesFrom(ref input, _repeated_ownedFlycloakList_codec);
-          break;
-        }
-        case 16: {
-          CurAvatarTeamId = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          avatarRenameList_.AddEntriesFrom(ref input, _repeated_avatarRenameList_codec);
-          break;
-        }
-        case 50: {
-          avatarList_.AddEntriesFrom(ref input, _repeated_avatarList_codec);
-          break;
-        }
-        case 58: {
-          avatarTeamMap_.AddEntriesFrom(ref input, _map_avatarTeamMap_codec);
-          break;
-        }
-        case 64: {
-          ChooseAvatarGuid = input.ReadUInt64();
-          break;
-        }
-        case 74:
-        case 72: {
-          backupAvatarTeamOrderList_.AddEntriesFrom(ref input, _repeated_backupAvatarTeamOrderList_codec);
-          break;
-        }
-        case 90:
-        case 88: {
-          ownedCostumeList_.AddEntriesFrom(ref input, _repeated_ownedCostumeList_codec);
-          break;
-        }
-        case 98:
-        case 96: {
-          tempAvatarGuidList_.AddEntriesFrom(ref input, _repeated_tempAvatarGuidList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

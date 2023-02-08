@@ -9,437 +9,440 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ChessPlayerInfo.proto</summary>
-public static partial class ChessPlayerInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ChessPlayerInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ChessPlayerInfo.proto</summary>
+  public static partial class ChessPlayerInfoReflection {
 
-  static ChessPlayerInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVDaGVzc1BsYXllckluZm8ucHJvdG8aGUNoZXNzTm9ybWFsQ2FyZEluZm8u",
-          "cHJvdG8i4wEKD0NoZXNzUGxheWVySW5mbxI2ChhjYW5kaWRhdGVfY2FyZF9p",
-          "bmZvX2xpc3QYASADKAsyFC5DaGVzc05vcm1hbENhcmRJbmZvEgsKA3VpZBgF",
-          "IAEoDRIbChNVbmszMzAwX0FPQ0pIT0tDRERNGAIgASgNEhsKE1VuazMzMDBf",
-          "R1BORE5DQ0xIS0UYCiABKA0SFwoPYnVpbGRpbmdfcG9pbnRzGAggASgNEhsK",
-          "E1VuazMzMDBfUFBGQkdJREtDREoYDCABKA0SGwoTVW5rMzMwMF9QUEZQRUFH",
-          "QkhMUBgNIAEoDUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ChessNormalCardInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ChessPlayerInfo), global::ChessPlayerInfo.Parser, new[]{ "CandidateCardInfoList", "Uid", "Unk3300AOCJHOKCDDM", "Unk3300GPNDNCCLHKE", "BuildingPoints", "Unk3300PPFBGIDKCDJ", "Unk3300PPFPEAGBHLP" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ChessPlayerInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ChessPlayerInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVDaGVzc1BsYXllckluZm8ucHJvdG8aGUNoZXNzTm9ybWFsQ2FyZEluZm8u",
+            "cHJvdG8i4wEKD0NoZXNzUGxheWVySW5mbxI2ChhjYW5kaWRhdGVfY2FyZF9p",
+            "bmZvX2xpc3QYASADKAsyFC5DaGVzc05vcm1hbENhcmRJbmZvEgsKA3VpZBgF",
+            "IAEoDRIbChNVbmszMzAwX0FPQ0pIT0tDRERNGAIgASgNEhsKE1VuazMzMDBf",
+            "R1BORE5DQ0xIS0UYCiABKA0SFwoPYnVpbGRpbmdfcG9pbnRzGAggASgNEhsK",
+            "E1VuazMzMDBfUFBGQkdJREtDREoYDCABKA0SGwoTVW5rMzMwMF9QUEZQRUFH",
+            "QkhMUBgNIAEoDUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.ChessNormalCardInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.ChessPlayerInfo), global::NewProtos.ChessPlayerInfo.Parser, new[]{ "CandidateCardInfoList", "Uid", "Unk3300AOCJHOKCDDM", "Unk3300GPNDNCCLHKE", "BuildingPoints", "Unk3300PPFBGIDKCDJ", "Unk3300PPFPEAGBHLP" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class ChessPlayerInfo : pb::IMessage<ChessPlayerInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ChessPlayerInfo> _parser = new pb::MessageParser<ChessPlayerInfo>(() => new ChessPlayerInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ChessPlayerInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.ChessPlayerInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChessPlayerInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChessPlayerInfo(ChessPlayerInfo other) : this() {
+      candidateCardInfoList_ = other.candidateCardInfoList_.Clone();
+      uid_ = other.uid_;
+      unk3300AOCJHOKCDDM_ = other.unk3300AOCJHOKCDDM_;
+      unk3300GPNDNCCLHKE_ = other.unk3300GPNDNCCLHKE_;
+      buildingPoints_ = other.buildingPoints_;
+      unk3300PPFBGIDKCDJ_ = other.unk3300PPFBGIDKCDJ_;
+      unk3300PPFPEAGBHLP_ = other.unk3300PPFPEAGBHLP_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChessPlayerInfo Clone() {
+      return new ChessPlayerInfo(this);
+    }
+
+    /// <summary>Field number for the "candidate_card_info_list" field.</summary>
+    public const int CandidateCardInfoListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::NewProtos.ChessNormalCardInfo> _repeated_candidateCardInfoList_codec
+        = pb::FieldCodec.ForMessage(10, global::NewProtos.ChessNormalCardInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ChessNormalCardInfo> candidateCardInfoList_ = new pbc::RepeatedField<global::NewProtos.ChessNormalCardInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ChessNormalCardInfo> CandidateCardInfoList {
+      get { return candidateCardInfoList_; }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 5;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_AOCJHOKCDDM" field.</summary>
+    public const int Unk3300AOCJHOKCDDMFieldNumber = 2;
+    private uint unk3300AOCJHOKCDDM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300AOCJHOKCDDM {
+      get { return unk3300AOCJHOKCDDM_; }
+      set {
+        unk3300AOCJHOKCDDM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GPNDNCCLHKE" field.</summary>
+    public const int Unk3300GPNDNCCLHKEFieldNumber = 10;
+    private uint unk3300GPNDNCCLHKE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GPNDNCCLHKE {
+      get { return unk3300GPNDNCCLHKE_; }
+      set {
+        unk3300GPNDNCCLHKE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "building_points" field.</summary>
+    public const int BuildingPointsFieldNumber = 8;
+    private uint buildingPoints_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BuildingPoints {
+      get { return buildingPoints_; }
+      set {
+        buildingPoints_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PPFBGIDKCDJ" field.</summary>
+    public const int Unk3300PPFBGIDKCDJFieldNumber = 12;
+    private uint unk3300PPFBGIDKCDJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PPFBGIDKCDJ {
+      get { return unk3300PPFBGIDKCDJ_; }
+      set {
+        unk3300PPFBGIDKCDJ_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PPFPEAGBHLP" field.</summary>
+    public const int Unk3300PPFPEAGBHLPFieldNumber = 13;
+    private uint unk3300PPFPEAGBHLP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PPFPEAGBHLP {
+      get { return unk3300PPFPEAGBHLP_; }
+      set {
+        unk3300PPFPEAGBHLP_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ChessPlayerInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ChessPlayerInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!candidateCardInfoList_.Equals(other.candidateCardInfoList_)) return false;
+      if (Uid != other.Uid) return false;
+      if (Unk3300AOCJHOKCDDM != other.Unk3300AOCJHOKCDDM) return false;
+      if (Unk3300GPNDNCCLHKE != other.Unk3300GPNDNCCLHKE) return false;
+      if (BuildingPoints != other.BuildingPoints) return false;
+      if (Unk3300PPFBGIDKCDJ != other.Unk3300PPFBGIDKCDJ) return false;
+      if (Unk3300PPFPEAGBHLP != other.Unk3300PPFPEAGBHLP) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= candidateCardInfoList_.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (Unk3300AOCJHOKCDDM != 0) hash ^= Unk3300AOCJHOKCDDM.GetHashCode();
+      if (Unk3300GPNDNCCLHKE != 0) hash ^= Unk3300GPNDNCCLHKE.GetHashCode();
+      if (BuildingPoints != 0) hash ^= BuildingPoints.GetHashCode();
+      if (Unk3300PPFBGIDKCDJ != 0) hash ^= Unk3300PPFBGIDKCDJ.GetHashCode();
+      if (Unk3300PPFPEAGBHLP != 0) hash ^= Unk3300PPFPEAGBHLP.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      candidateCardInfoList_.WriteTo(output, _repeated_candidateCardInfoList_codec);
+      if (Unk3300AOCJHOKCDDM != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300AOCJHOKCDDM);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Uid);
+      }
+      if (BuildingPoints != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(BuildingPoints);
+      }
+      if (Unk3300GPNDNCCLHKE != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300GPNDNCCLHKE);
+      }
+      if (Unk3300PPFBGIDKCDJ != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300PPFBGIDKCDJ);
+      }
+      if (Unk3300PPFPEAGBHLP != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300PPFPEAGBHLP);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      candidateCardInfoList_.WriteTo(ref output, _repeated_candidateCardInfoList_codec);
+      if (Unk3300AOCJHOKCDDM != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300AOCJHOKCDDM);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Uid);
+      }
+      if (BuildingPoints != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(BuildingPoints);
+      }
+      if (Unk3300GPNDNCCLHKE != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300GPNDNCCLHKE);
+      }
+      if (Unk3300PPFBGIDKCDJ != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300PPFBGIDKCDJ);
+      }
+      if (Unk3300PPFPEAGBHLP != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300PPFPEAGBHLP);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += candidateCardInfoList_.CalculateSize(_repeated_candidateCardInfoList_codec);
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (Unk3300AOCJHOKCDDM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AOCJHOKCDDM);
+      }
+      if (Unk3300GPNDNCCLHKE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GPNDNCCLHKE);
+      }
+      if (BuildingPoints != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingPoints);
+      }
+      if (Unk3300PPFBGIDKCDJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PPFBGIDKCDJ);
+      }
+      if (Unk3300PPFPEAGBHLP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PPFPEAGBHLP);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ChessPlayerInfo other) {
+      if (other == null) {
+        return;
+      }
+      candidateCardInfoList_.Add(other.candidateCardInfoList_);
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      if (other.Unk3300AOCJHOKCDDM != 0) {
+        Unk3300AOCJHOKCDDM = other.Unk3300AOCJHOKCDDM;
+      }
+      if (other.Unk3300GPNDNCCLHKE != 0) {
+        Unk3300GPNDNCCLHKE = other.Unk3300GPNDNCCLHKE;
+      }
+      if (other.BuildingPoints != 0) {
+        BuildingPoints = other.BuildingPoints;
+      }
+      if (other.Unk3300PPFBGIDKCDJ != 0) {
+        Unk3300PPFBGIDKCDJ = other.Unk3300PPFBGIDKCDJ;
+      }
+      if (other.Unk3300PPFPEAGBHLP != 0) {
+        Unk3300PPFPEAGBHLP = other.Unk3300PPFPEAGBHLP;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            candidateCardInfoList_.AddEntriesFrom(input, _repeated_candidateCardInfoList_codec);
+            break;
+          }
+          case 16: {
+            Unk3300AOCJHOKCDDM = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            BuildingPoints = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            Unk3300GPNDNCCLHKE = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300PPFBGIDKCDJ = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300PPFPEAGBHLP = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            candidateCardInfoList_.AddEntriesFrom(ref input, _repeated_candidateCardInfoList_codec);
+            break;
+          }
+          case 16: {
+            Unk3300AOCJHOKCDDM = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            BuildingPoints = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            Unk3300GPNDNCCLHKE = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300PPFBGIDKCDJ = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300PPFPEAGBHLP = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ChessPlayerInfo : pb::IMessage<ChessPlayerInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ChessPlayerInfo> _parser = new pb::MessageParser<ChessPlayerInfo>(() => new ChessPlayerInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ChessPlayerInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ChessPlayerInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChessPlayerInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChessPlayerInfo(ChessPlayerInfo other) : this() {
-    candidateCardInfoList_ = other.candidateCardInfoList_.Clone();
-    uid_ = other.uid_;
-    unk3300AOCJHOKCDDM_ = other.unk3300AOCJHOKCDDM_;
-    unk3300GPNDNCCLHKE_ = other.unk3300GPNDNCCLHKE_;
-    buildingPoints_ = other.buildingPoints_;
-    unk3300PPFBGIDKCDJ_ = other.unk3300PPFBGIDKCDJ_;
-    unk3300PPFPEAGBHLP_ = other.unk3300PPFPEAGBHLP_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChessPlayerInfo Clone() {
-    return new ChessPlayerInfo(this);
-  }
-
-  /// <summary>Field number for the "candidate_card_info_list" field.</summary>
-  public const int CandidateCardInfoListFieldNumber = 1;
-  private static readonly pb::FieldCodec<global::ChessNormalCardInfo> _repeated_candidateCardInfoList_codec
-      = pb::FieldCodec.ForMessage(10, global::ChessNormalCardInfo.Parser);
-  private readonly pbc::RepeatedField<global::ChessNormalCardInfo> candidateCardInfoList_ = new pbc::RepeatedField<global::ChessNormalCardInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ChessNormalCardInfo> CandidateCardInfoList {
-    get { return candidateCardInfoList_; }
-  }
-
-  /// <summary>Field number for the "uid" field.</summary>
-  public const int UidFieldNumber = 5;
-  private uint uid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Uid {
-    get { return uid_; }
-    set {
-      uid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_AOCJHOKCDDM" field.</summary>
-  public const int Unk3300AOCJHOKCDDMFieldNumber = 2;
-  private uint unk3300AOCJHOKCDDM_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300AOCJHOKCDDM {
-    get { return unk3300AOCJHOKCDDM_; }
-    set {
-      unk3300AOCJHOKCDDM_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_GPNDNCCLHKE" field.</summary>
-  public const int Unk3300GPNDNCCLHKEFieldNumber = 10;
-  private uint unk3300GPNDNCCLHKE_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300GPNDNCCLHKE {
-    get { return unk3300GPNDNCCLHKE_; }
-    set {
-      unk3300GPNDNCCLHKE_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "building_points" field.</summary>
-  public const int BuildingPointsFieldNumber = 8;
-  private uint buildingPoints_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BuildingPoints {
-    get { return buildingPoints_; }
-    set {
-      buildingPoints_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_PPFBGIDKCDJ" field.</summary>
-  public const int Unk3300PPFBGIDKCDJFieldNumber = 12;
-  private uint unk3300PPFBGIDKCDJ_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300PPFBGIDKCDJ {
-    get { return unk3300PPFBGIDKCDJ_; }
-    set {
-      unk3300PPFBGIDKCDJ_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_PPFPEAGBHLP" field.</summary>
-  public const int Unk3300PPFPEAGBHLPFieldNumber = 13;
-  private uint unk3300PPFPEAGBHLP_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300PPFPEAGBHLP {
-    get { return unk3300PPFPEAGBHLP_; }
-    set {
-      unk3300PPFPEAGBHLP_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ChessPlayerInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ChessPlayerInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!candidateCardInfoList_.Equals(other.candidateCardInfoList_)) return false;
-    if (Uid != other.Uid) return false;
-    if (Unk3300AOCJHOKCDDM != other.Unk3300AOCJHOKCDDM) return false;
-    if (Unk3300GPNDNCCLHKE != other.Unk3300GPNDNCCLHKE) return false;
-    if (BuildingPoints != other.BuildingPoints) return false;
-    if (Unk3300PPFBGIDKCDJ != other.Unk3300PPFBGIDKCDJ) return false;
-    if (Unk3300PPFPEAGBHLP != other.Unk3300PPFPEAGBHLP) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= candidateCardInfoList_.GetHashCode();
-    if (Uid != 0) hash ^= Uid.GetHashCode();
-    if (Unk3300AOCJHOKCDDM != 0) hash ^= Unk3300AOCJHOKCDDM.GetHashCode();
-    if (Unk3300GPNDNCCLHKE != 0) hash ^= Unk3300GPNDNCCLHKE.GetHashCode();
-    if (BuildingPoints != 0) hash ^= BuildingPoints.GetHashCode();
-    if (Unk3300PPFBGIDKCDJ != 0) hash ^= Unk3300PPFBGIDKCDJ.GetHashCode();
-    if (Unk3300PPFPEAGBHLP != 0) hash ^= Unk3300PPFPEAGBHLP.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    candidateCardInfoList_.WriteTo(output, _repeated_candidateCardInfoList_codec);
-    if (Unk3300AOCJHOKCDDM != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(Unk3300AOCJHOKCDDM);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Uid);
-    }
-    if (BuildingPoints != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(BuildingPoints);
-    }
-    if (Unk3300GPNDNCCLHKE != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(Unk3300GPNDNCCLHKE);
-    }
-    if (Unk3300PPFBGIDKCDJ != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300PPFBGIDKCDJ);
-    }
-    if (Unk3300PPFPEAGBHLP != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Unk3300PPFPEAGBHLP);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    candidateCardInfoList_.WriteTo(ref output, _repeated_candidateCardInfoList_codec);
-    if (Unk3300AOCJHOKCDDM != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(Unk3300AOCJHOKCDDM);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Uid);
-    }
-    if (BuildingPoints != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(BuildingPoints);
-    }
-    if (Unk3300GPNDNCCLHKE != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(Unk3300GPNDNCCLHKE);
-    }
-    if (Unk3300PPFBGIDKCDJ != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300PPFBGIDKCDJ);
-    }
-    if (Unk3300PPFPEAGBHLP != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Unk3300PPFPEAGBHLP);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += candidateCardInfoList_.CalculateSize(_repeated_candidateCardInfoList_codec);
-    if (Uid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-    }
-    if (Unk3300AOCJHOKCDDM != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AOCJHOKCDDM);
-    }
-    if (Unk3300GPNDNCCLHKE != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GPNDNCCLHKE);
-    }
-    if (BuildingPoints != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingPoints);
-    }
-    if (Unk3300PPFBGIDKCDJ != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PPFBGIDKCDJ);
-    }
-    if (Unk3300PPFPEAGBHLP != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PPFPEAGBHLP);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ChessPlayerInfo other) {
-    if (other == null) {
-      return;
-    }
-    candidateCardInfoList_.Add(other.candidateCardInfoList_);
-    if (other.Uid != 0) {
-      Uid = other.Uid;
-    }
-    if (other.Unk3300AOCJHOKCDDM != 0) {
-      Unk3300AOCJHOKCDDM = other.Unk3300AOCJHOKCDDM;
-    }
-    if (other.Unk3300GPNDNCCLHKE != 0) {
-      Unk3300GPNDNCCLHKE = other.Unk3300GPNDNCCLHKE;
-    }
-    if (other.BuildingPoints != 0) {
-      BuildingPoints = other.BuildingPoints;
-    }
-    if (other.Unk3300PPFBGIDKCDJ != 0) {
-      Unk3300PPFBGIDKCDJ = other.Unk3300PPFBGIDKCDJ;
-    }
-    if (other.Unk3300PPFPEAGBHLP != 0) {
-      Unk3300PPFPEAGBHLP = other.Unk3300PPFPEAGBHLP;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          candidateCardInfoList_.AddEntriesFrom(input, _repeated_candidateCardInfoList_codec);
-          break;
-        }
-        case 16: {
-          Unk3300AOCJHOKCDDM = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          BuildingPoints = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          Unk3300GPNDNCCLHKE = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Unk3300PPFBGIDKCDJ = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Unk3300PPFPEAGBHLP = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          candidateCardInfoList_.AddEntriesFrom(ref input, _repeated_candidateCardInfoList_codec);
-          break;
-        }
-        case 16: {
-          Unk3300AOCJHOKCDDM = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          BuildingPoints = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          Unk3300GPNDNCCLHKE = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Unk3300PPFBGIDKCDJ = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Unk3300PPFPEAGBHLP = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

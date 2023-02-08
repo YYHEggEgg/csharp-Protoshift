@@ -21,7 +21,7 @@ import "GCGPVEIntention.proto";
 import "GCGWaitingCharacter.proto";
 import "GCGZone.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message GCGPlayerField {
   map<uint32, GCGZone> modify_zone_map = 2;

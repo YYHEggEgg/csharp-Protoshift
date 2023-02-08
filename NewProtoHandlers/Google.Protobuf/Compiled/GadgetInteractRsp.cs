@@ -9,382 +9,385 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GadgetInteractRsp.proto</summary>
-public static partial class GadgetInteractRspReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GadgetInteractRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GadgetInteractRsp.proto</summary>
+  public static partial class GadgetInteractRspReflection {
 
-  static GadgetInteractRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdHYWRnZXRJbnRlcmFjdFJzcC5wcm90bxoRSW50ZXJPcFR5cGUucHJvdG8a",
-          "EkludGVyYWN0VHlwZS5wcm90byKWAQoRR2FkZ2V0SW50ZXJhY3RSc3ASJAoN",
-          "aW50ZXJhY3RfdHlwZRgCIAEoDjINLkludGVyYWN0VHlwZRIRCglnYWRnZXRf",
-          "aWQYCyABKA0SDwoHcmV0Y29kZRgHIAEoBRIYChBnYWRnZXRfZW50aXR5X2lk",
-          "GAEgASgNEh0KB29wX3R5cGUYCCABKA4yDC5JbnRlck9wVHlwZUIWChRvcmcu",
-          "c29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::InterOpTypeReflection.Descriptor, global::InteractTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GadgetInteractRsp), global::GadgetInteractRsp.Parser, new[]{ "InteractType", "GadgetId", "Retcode", "GadgetEntityId", "OpType" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GadgetInteractRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GadgetInteractRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdHYWRnZXRJbnRlcmFjdFJzcC5wcm90bxoRSW50ZXJPcFR5cGUucHJvdG8a",
+            "EkludGVyYWN0VHlwZS5wcm90byKWAQoRR2FkZ2V0SW50ZXJhY3RSc3ASJAoN",
+            "aW50ZXJhY3RfdHlwZRgCIAEoDjINLkludGVyYWN0VHlwZRIRCglnYWRnZXRf",
+            "aWQYCyABKA0SDwoHcmV0Y29kZRgHIAEoBRIYChBnYWRnZXRfZW50aXR5X2lk",
+            "GAEgASgNEh0KB29wX3R5cGUYCCABKA4yDC5JbnRlck9wVHlwZUIMqgIJTmV3",
+            "UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.InterOpTypeReflection.Descriptor, global::NewProtos.InteractTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GadgetInteractRsp), global::NewProtos.GadgetInteractRsp.Parser, new[]{ "InteractType", "GadgetId", "Retcode", "GadgetEntityId", "OpType" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 830;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class GadgetInteractRsp : pb::IMessage<GadgetInteractRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GadgetInteractRsp> _parser = new pb::MessageParser<GadgetInteractRsp>(() => new GadgetInteractRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GadgetInteractRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.GadgetInteractRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GadgetInteractRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GadgetInteractRsp(GadgetInteractRsp other) : this() {
+      interactType_ = other.interactType_;
+      gadgetId_ = other.gadgetId_;
+      retcode_ = other.retcode_;
+      gadgetEntityId_ = other.gadgetEntityId_;
+      opType_ = other.opType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GadgetInteractRsp Clone() {
+      return new GadgetInteractRsp(this);
+    }
+
+    /// <summary>Field number for the "interact_type" field.</summary>
+    public const int InteractTypeFieldNumber = 2;
+    private global::NewProtos.InteractType interactType_ = global::NewProtos.InteractType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.InteractType InteractType {
+      get { return interactType_; }
+      set {
+        interactType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gadget_id" field.</summary>
+    public const int GadgetIdFieldNumber = 11;
+    private uint gadgetId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GadgetId {
+      get { return gadgetId_; }
+      set {
+        gadgetId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 7;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gadget_entity_id" field.</summary>
+    public const int GadgetEntityIdFieldNumber = 1;
+    private uint gadgetEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GadgetEntityId {
+      get { return gadgetEntityId_; }
+      set {
+        gadgetEntityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "op_type" field.</summary>
+    public const int OpTypeFieldNumber = 8;
+    private global::NewProtos.InterOpType opType_ = global::NewProtos.InterOpType.Finish;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.InterOpType OpType {
+      get { return opType_; }
+      set {
+        opType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GadgetInteractRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GadgetInteractRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (InteractType != other.InteractType) return false;
+      if (GadgetId != other.GadgetId) return false;
+      if (Retcode != other.Retcode) return false;
+      if (GadgetEntityId != other.GadgetEntityId) return false;
+      if (OpType != other.OpType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (InteractType != global::NewProtos.InteractType.None) hash ^= InteractType.GetHashCode();
+      if (GadgetId != 0) hash ^= GadgetId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (GadgetEntityId != 0) hash ^= GadgetEntityId.GetHashCode();
+      if (OpType != global::NewProtos.InterOpType.Finish) hash ^= OpType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (GadgetEntityId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(GadgetEntityId);
+      }
+      if (InteractType != global::NewProtos.InteractType.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) InteractType);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Retcode);
+      }
+      if (OpType != global::NewProtos.InterOpType.Finish) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) OpType);
+      }
+      if (GadgetId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GadgetId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (GadgetEntityId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(GadgetEntityId);
+      }
+      if (InteractType != global::NewProtos.InteractType.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) InteractType);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Retcode);
+      }
+      if (OpType != global::NewProtos.InterOpType.Finish) {
+        output.WriteRawTag(64);
+        output.WriteEnum((int) OpType);
+      }
+      if (GadgetId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GadgetId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (InteractType != global::NewProtos.InteractType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) InteractType);
+      }
+      if (GadgetId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetId);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (GadgetEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetEntityId);
+      }
+      if (OpType != global::NewProtos.InterOpType.Finish) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OpType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GadgetInteractRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.InteractType != global::NewProtos.InteractType.None) {
+        InteractType = other.InteractType;
+      }
+      if (other.GadgetId != 0) {
+        GadgetId = other.GadgetId;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.GadgetEntityId != 0) {
+        GadgetEntityId = other.GadgetEntityId;
+      }
+      if (other.OpType != global::NewProtos.InterOpType.Finish) {
+        OpType = other.OpType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            GadgetEntityId = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            InteractType = (global::NewProtos.InteractType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            OpType = (global::NewProtos.InterOpType) input.ReadEnum();
+            break;
+          }
+          case 88: {
+            GadgetId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            GadgetEntityId = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            InteractType = (global::NewProtos.InteractType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            OpType = (global::NewProtos.InterOpType) input.ReadEnum();
+            break;
+          }
+          case 88: {
+            GadgetId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 830;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class GadgetInteractRsp : pb::IMessage<GadgetInteractRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GadgetInteractRsp> _parser = new pb::MessageParser<GadgetInteractRsp>(() => new GadgetInteractRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GadgetInteractRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GadgetInteractRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GadgetInteractRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GadgetInteractRsp(GadgetInteractRsp other) : this() {
-    interactType_ = other.interactType_;
-    gadgetId_ = other.gadgetId_;
-    retcode_ = other.retcode_;
-    gadgetEntityId_ = other.gadgetEntityId_;
-    opType_ = other.opType_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GadgetInteractRsp Clone() {
-    return new GadgetInteractRsp(this);
-  }
-
-  /// <summary>Field number for the "interact_type" field.</summary>
-  public const int InteractTypeFieldNumber = 2;
-  private global::InteractType interactType_ = global::InteractType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::InteractType InteractType {
-    get { return interactType_; }
-    set {
-      interactType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gadget_id" field.</summary>
-  public const int GadgetIdFieldNumber = 11;
-  private uint gadgetId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GadgetId {
-    get { return gadgetId_; }
-    set {
-      gadgetId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 7;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gadget_entity_id" field.</summary>
-  public const int GadgetEntityIdFieldNumber = 1;
-  private uint gadgetEntityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GadgetEntityId {
-    get { return gadgetEntityId_; }
-    set {
-      gadgetEntityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "op_type" field.</summary>
-  public const int OpTypeFieldNumber = 8;
-  private global::InterOpType opType_ = global::InterOpType.Finish;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::InterOpType OpType {
-    get { return opType_; }
-    set {
-      opType_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GadgetInteractRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GadgetInteractRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (InteractType != other.InteractType) return false;
-    if (GadgetId != other.GadgetId) return false;
-    if (Retcode != other.Retcode) return false;
-    if (GadgetEntityId != other.GadgetEntityId) return false;
-    if (OpType != other.OpType) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (InteractType != global::InteractType.None) hash ^= InteractType.GetHashCode();
-    if (GadgetId != 0) hash ^= GadgetId.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (GadgetEntityId != 0) hash ^= GadgetEntityId.GetHashCode();
-    if (OpType != global::InterOpType.Finish) hash ^= OpType.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (GadgetEntityId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(GadgetEntityId);
-    }
-    if (InteractType != global::InteractType.None) {
-      output.WriteRawTag(16);
-      output.WriteEnum((int) InteractType);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(56);
-      output.WriteInt32(Retcode);
-    }
-    if (OpType != global::InterOpType.Finish) {
-      output.WriteRawTag(64);
-      output.WriteEnum((int) OpType);
-    }
-    if (GadgetId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(GadgetId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (GadgetEntityId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(GadgetEntityId);
-    }
-    if (InteractType != global::InteractType.None) {
-      output.WriteRawTag(16);
-      output.WriteEnum((int) InteractType);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(56);
-      output.WriteInt32(Retcode);
-    }
-    if (OpType != global::InterOpType.Finish) {
-      output.WriteRawTag(64);
-      output.WriteEnum((int) OpType);
-    }
-    if (GadgetId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(GadgetId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (InteractType != global::InteractType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) InteractType);
-    }
-    if (GadgetId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetId);
-    }
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (GadgetEntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetEntityId);
-    }
-    if (OpType != global::InterOpType.Finish) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OpType);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GadgetInteractRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.InteractType != global::InteractType.None) {
-      InteractType = other.InteractType;
-    }
-    if (other.GadgetId != 0) {
-      GadgetId = other.GadgetId;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.GadgetEntityId != 0) {
-      GadgetEntityId = other.GadgetEntityId;
-    }
-    if (other.OpType != global::InterOpType.Finish) {
-      OpType = other.OpType;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          GadgetEntityId = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          InteractType = (global::InteractType) input.ReadEnum();
-          break;
-        }
-        case 56: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 64: {
-          OpType = (global::InterOpType) input.ReadEnum();
-          break;
-        }
-        case 88: {
-          GadgetId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          GadgetEntityId = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          InteractType = (global::InteractType) input.ReadEnum();
-          break;
-        }
-        case 56: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 64: {
-          OpType = (global::InterOpType) input.ReadEnum();
-          break;
-        }
-        case 88: {
-          GadgetId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

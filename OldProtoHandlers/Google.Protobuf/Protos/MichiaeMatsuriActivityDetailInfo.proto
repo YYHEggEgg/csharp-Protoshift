@@ -20,7 +20,7 @@ import "MichiaeMatsuriChallengePositionInfo.proto";
 import "MichiaeMatsuriChestPositionInfo.proto";
 import "MichiaeMatsuriStage.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message MichiaeMatsuriActivityDetailInfo {
   repeated MichiaeMatsuriChallengePositionInfo challenge_pos_list = 6;

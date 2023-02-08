@@ -9,41 +9,44 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from RogueCellState.proto</summary>
-public static partial class RogueCellStateReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for RogueCellState.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from RogueCellState.proto</summary>
+  public static partial class RogueCellStateReflection {
 
-  static RogueCellStateReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRSb2d1ZUNlbGxTdGF0ZS5wcm90byqlAQoOUm9ndWVDZWxsU3RhdGUSGQoV",
-          "Uk9HVUVfQ0VMTF9TVEFURV9OT05FEAASGwoXUk9HVUVfQ0VMTF9TVEFURV9C",
-          "QVRUTEUQARIcChhST0dVRV9DRUxMX1NUQVRFX1NVQ0NFU1MQAhIbChdST0dV",
-          "RV9DRUxMX1NUQVRFX0ZJTklTSBADEiAKHFJPR1VFX0NFTExfU1RBVEVfVEFL",
-          "RU5fQ0hFU1QQBEIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::RogueCellState), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for RogueCellState.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static RogueCellStateReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRSb2d1ZUNlbGxTdGF0ZS5wcm90byqlAQoOUm9ndWVDZWxsU3RhdGUSGQoV",
+            "Uk9HVUVfQ0VMTF9TVEFURV9OT05FEAASGwoXUk9HVUVfQ0VMTF9TVEFURV9C",
+            "QVRUTEUQARIcChhST0dVRV9DRUxMX1NUQVRFX1NVQ0NFU1MQAhIbChdST0dV",
+            "RV9DRUxMX1NUQVRFX0ZJTklTSBADEiAKHFJPR1VFX0NFTExfU1RBVEVfVEFL",
+            "RU5fQ0hFU1QQBEIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.RogueCellState), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum RogueCellState {
+    [pbr::OriginalName("ROGUE_CELL_STATE_NONE")] None = 0,
+    [pbr::OriginalName("ROGUE_CELL_STATE_BATTLE")] Battle = 1,
+    [pbr::OriginalName("ROGUE_CELL_STATE_SUCCESS")] Success = 2,
+    [pbr::OriginalName("ROGUE_CELL_STATE_FINISH")] Finish = 3,
+    [pbr::OriginalName("ROGUE_CELL_STATE_TAKEN_CHEST")] TakenChest = 4,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum RogueCellState {
-  [pbr::OriginalName("ROGUE_CELL_STATE_NONE")] None = 0,
-  [pbr::OriginalName("ROGUE_CELL_STATE_BATTLE")] Battle = 1,
-  [pbr::OriginalName("ROGUE_CELL_STATE_SUCCESS")] Success = 2,
-  [pbr::OriginalName("ROGUE_CELL_STATE_FINISH")] Finish = 3,
-  [pbr::OriginalName("ROGUE_CELL_STATE_TAKEN_CHEST")] TakenChest = 4,
-}
-
-#endregion
-
 
 #endregion Designer generated code

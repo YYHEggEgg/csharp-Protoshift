@@ -9,381 +9,384 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FurnitureMakeBeHelpedData.proto</summary>
-public static partial class FurnitureMakeBeHelpedDataReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FurnitureMakeBeHelpedData.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FurnitureMakeBeHelpedData.proto</summary>
+  public static partial class FurnitureMakeBeHelpedDataReflection {
 
-  static FurnitureMakeBeHelpedDataReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch9GdXJuaXR1cmVNYWtlQmVIZWxwZWREYXRhLnByb3RvGhRQcm9maWxlUGlj",
-          "dHVyZS5wcm90byKDAQoZRnVybml0dXJlTWFrZUJlSGVscGVkRGF0YRITCgtw",
-          "bGF5ZXJfbmFtZRgLIAEoCRIMCgRpY29uGAcgASgNEigKD3Byb2ZpbGVfcGlj",
-          "dHVyZRgCIAEoCzIPLlByb2ZpbGVQaWN0dXJlEgwKBHRpbWUYDCABKAcSCwoD",
-          "dWlkGAggASgNQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ProfilePictureReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FurnitureMakeBeHelpedData), global::FurnitureMakeBeHelpedData.Parser, new[]{ "PlayerName", "Icon", "ProfilePicture", "Time", "Uid" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for FurnitureMakeBeHelpedData.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FurnitureMakeBeHelpedDataReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch9GdXJuaXR1cmVNYWtlQmVIZWxwZWREYXRhLnByb3RvGhRQcm9maWxlUGlj",
+            "dHVyZS5wcm90byKDAQoZRnVybml0dXJlTWFrZUJlSGVscGVkRGF0YRITCgtw",
+            "bGF5ZXJfbmFtZRgLIAEoCRIMCgRpY29uGAcgASgNEigKD3Byb2ZpbGVfcGlj",
+            "dHVyZRgCIAEoCzIPLlByb2ZpbGVQaWN0dXJlEgwKBHRpbWUYDCABKAcSCwoD",
+            "dWlkGAggASgNQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.ProfilePictureReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.FurnitureMakeBeHelpedData), global::NewProtos.FurnitureMakeBeHelpedData.Parser, new[]{ "PlayerName", "Icon", "ProfilePicture", "Time", "Uid" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class FurnitureMakeBeHelpedData : pb::IMessage<FurnitureMakeBeHelpedData>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FurnitureMakeBeHelpedData> _parser = new pb::MessageParser<FurnitureMakeBeHelpedData>(() => new FurnitureMakeBeHelpedData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FurnitureMakeBeHelpedData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.FurnitureMakeBeHelpedDataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FurnitureMakeBeHelpedData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FurnitureMakeBeHelpedData(FurnitureMakeBeHelpedData other) : this() {
+      playerName_ = other.playerName_;
+      icon_ = other.icon_;
+      profilePicture_ = other.profilePicture_ != null ? other.profilePicture_.Clone() : null;
+      time_ = other.time_;
+      uid_ = other.uid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FurnitureMakeBeHelpedData Clone() {
+      return new FurnitureMakeBeHelpedData(this);
+    }
+
+    /// <summary>Field number for the "player_name" field.</summary>
+    public const int PlayerNameFieldNumber = 11;
+    private string playerName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PlayerName {
+      get { return playerName_; }
+      set {
+        playerName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "icon" field.</summary>
+    public const int IconFieldNumber = 7;
+    private uint icon_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Icon {
+      get { return icon_; }
+      set {
+        icon_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "profile_picture" field.</summary>
+    public const int ProfilePictureFieldNumber = 2;
+    private global::NewProtos.ProfilePicture profilePicture_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ProfilePicture ProfilePicture {
+      get { return profilePicture_; }
+      set {
+        profilePicture_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "time" field.</summary>
+    public const int TimeFieldNumber = 12;
+    private uint time_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Time {
+      get { return time_; }
+      set {
+        time_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 8;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FurnitureMakeBeHelpedData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FurnitureMakeBeHelpedData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayerName != other.PlayerName) return false;
+      if (Icon != other.Icon) return false;
+      if (!object.Equals(ProfilePicture, other.ProfilePicture)) return false;
+      if (Time != other.Time) return false;
+      if (Uid != other.Uid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayerName.Length != 0) hash ^= PlayerName.GetHashCode();
+      if (Icon != 0) hash ^= Icon.GetHashCode();
+      if (profilePicture_ != null) hash ^= ProfilePicture.GetHashCode();
+      if (Time != 0) hash ^= Time.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (profilePicture_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(ProfilePicture);
+      }
+      if (Icon != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Icon);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Uid);
+      }
+      if (PlayerName.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(PlayerName);
+      }
+      if (Time != 0) {
+        output.WriteRawTag(101);
+        output.WriteFixed32(Time);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (profilePicture_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(ProfilePicture);
+      }
+      if (Icon != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Icon);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Uid);
+      }
+      if (PlayerName.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(PlayerName);
+      }
+      if (Time != 0) {
+        output.WriteRawTag(101);
+        output.WriteFixed32(Time);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayerName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerName);
+      }
+      if (Icon != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Icon);
+      }
+      if (profilePicture_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProfilePicture);
+      }
+      if (Time != 0) {
+        size += 1 + 4;
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FurnitureMakeBeHelpedData other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayerName.Length != 0) {
+        PlayerName = other.PlayerName;
+      }
+      if (other.Icon != 0) {
+        Icon = other.Icon;
+      }
+      if (other.profilePicture_ != null) {
+        if (profilePicture_ == null) {
+          ProfilePicture = new global::NewProtos.ProfilePicture();
+        }
+        ProfilePicture.MergeFrom(other.ProfilePicture);
+      }
+      if (other.Time != 0) {
+        Time = other.Time;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            if (profilePicture_ == null) {
+              ProfilePicture = new global::NewProtos.ProfilePicture();
+            }
+            input.ReadMessage(ProfilePicture);
+            break;
+          }
+          case 56: {
+            Icon = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            PlayerName = input.ReadString();
+            break;
+          }
+          case 101: {
+            Time = input.ReadFixed32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            if (profilePicture_ == null) {
+              ProfilePicture = new global::NewProtos.ProfilePicture();
+            }
+            input.ReadMessage(ProfilePicture);
+            break;
+          }
+          case 56: {
+            Icon = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            PlayerName = input.ReadString();
+            break;
+          }
+          case 101: {
+            Time = input.ReadFixed32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class FurnitureMakeBeHelpedData : pb::IMessage<FurnitureMakeBeHelpedData>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<FurnitureMakeBeHelpedData> _parser = new pb::MessageParser<FurnitureMakeBeHelpedData>(() => new FurnitureMakeBeHelpedData());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<FurnitureMakeBeHelpedData> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::FurnitureMakeBeHelpedDataReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FurnitureMakeBeHelpedData() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FurnitureMakeBeHelpedData(FurnitureMakeBeHelpedData other) : this() {
-    playerName_ = other.playerName_;
-    icon_ = other.icon_;
-    profilePicture_ = other.profilePicture_ != null ? other.profilePicture_.Clone() : null;
-    time_ = other.time_;
-    uid_ = other.uid_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FurnitureMakeBeHelpedData Clone() {
-    return new FurnitureMakeBeHelpedData(this);
-  }
-
-  /// <summary>Field number for the "player_name" field.</summary>
-  public const int PlayerNameFieldNumber = 11;
-  private string playerName_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string PlayerName {
-    get { return playerName_; }
-    set {
-      playerName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "icon" field.</summary>
-  public const int IconFieldNumber = 7;
-  private uint icon_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Icon {
-    get { return icon_; }
-    set {
-      icon_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "profile_picture" field.</summary>
-  public const int ProfilePictureFieldNumber = 2;
-  private global::ProfilePicture profilePicture_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ProfilePicture ProfilePicture {
-    get { return profilePicture_; }
-    set {
-      profilePicture_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "time" field.</summary>
-  public const int TimeFieldNumber = 12;
-  private uint time_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Time {
-    get { return time_; }
-    set {
-      time_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "uid" field.</summary>
-  public const int UidFieldNumber = 8;
-  private uint uid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Uid {
-    get { return uid_; }
-    set {
-      uid_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as FurnitureMakeBeHelpedData);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(FurnitureMakeBeHelpedData other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (PlayerName != other.PlayerName) return false;
-    if (Icon != other.Icon) return false;
-    if (!object.Equals(ProfilePicture, other.ProfilePicture)) return false;
-    if (Time != other.Time) return false;
-    if (Uid != other.Uid) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (PlayerName.Length != 0) hash ^= PlayerName.GetHashCode();
-    if (Icon != 0) hash ^= Icon.GetHashCode();
-    if (profilePicture_ != null) hash ^= ProfilePicture.GetHashCode();
-    if (Time != 0) hash ^= Time.GetHashCode();
-    if (Uid != 0) hash ^= Uid.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (profilePicture_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(ProfilePicture);
-    }
-    if (Icon != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Icon);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Uid);
-    }
-    if (PlayerName.Length != 0) {
-      output.WriteRawTag(90);
-      output.WriteString(PlayerName);
-    }
-    if (Time != 0) {
-      output.WriteRawTag(101);
-      output.WriteFixed32(Time);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (profilePicture_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(ProfilePicture);
-    }
-    if (Icon != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Icon);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Uid);
-    }
-    if (PlayerName.Length != 0) {
-      output.WriteRawTag(90);
-      output.WriteString(PlayerName);
-    }
-    if (Time != 0) {
-      output.WriteRawTag(101);
-      output.WriteFixed32(Time);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (PlayerName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerName);
-    }
-    if (Icon != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Icon);
-    }
-    if (profilePicture_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProfilePicture);
-    }
-    if (Time != 0) {
-      size += 1 + 4;
-    }
-    if (Uid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(FurnitureMakeBeHelpedData other) {
-    if (other == null) {
-      return;
-    }
-    if (other.PlayerName.Length != 0) {
-      PlayerName = other.PlayerName;
-    }
-    if (other.Icon != 0) {
-      Icon = other.Icon;
-    }
-    if (other.profilePicture_ != null) {
-      if (profilePicture_ == null) {
-        ProfilePicture = new global::ProfilePicture();
-      }
-      ProfilePicture.MergeFrom(other.ProfilePicture);
-    }
-    if (other.Time != 0) {
-      Time = other.Time;
-    }
-    if (other.Uid != 0) {
-      Uid = other.Uid;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18: {
-          if (profilePicture_ == null) {
-            ProfilePicture = new global::ProfilePicture();
-          }
-          input.ReadMessage(ProfilePicture);
-          break;
-        }
-        case 56: {
-          Icon = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 90: {
-          PlayerName = input.ReadString();
-          break;
-        }
-        case 101: {
-          Time = input.ReadFixed32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18: {
-          if (profilePicture_ == null) {
-            ProfilePicture = new global::ProfilePicture();
-          }
-          input.ReadMessage(ProfilePicture);
-          break;
-        }
-        case 56: {
-          Icon = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 90: {
-          PlayerName = input.ReadString();
-          break;
-        }
-        case 101: {
-          Time = input.ReadFixed32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

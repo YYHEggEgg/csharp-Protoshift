@@ -50,7 +50,7 @@ import "SceneGalleryTreasureSeelieInfo.proto";
 import "SceneGalleryVintageHuntingInfo.proto";
 import "SceneGalleryWindFieldInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SceneGalleryInfo {
   uint32 pre_start_end_time = 14;

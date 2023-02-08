@@ -9,392 +9,395 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGMsgMoveCard.proto</summary>
-public static partial class GCGMsgMoveCardReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGMsgMoveCard.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGMsgMoveCard.proto</summary>
+  public static partial class GCGMsgMoveCardReflection {
 
-  static GCGMsgMoveCardReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRHQ0dNc2dNb3ZlQ2FyZC5wcm90bxoRR0NHWm9uZVR5cGUucHJvdG8aD0dD",
-          "R1JlYXNvbi5wcm90byKpAQoOR0NHTXNnTW92ZUNhcmQSFQoNY29udHJvbGxl",
-          "cl9pZBgOIAEoDRIYCgJ0bxgFIAEoDjIMLkdDR1pvbmVUeXBlEhoKBGZyb20Y",
-          "DCABKA4yDC5HQ0dab25lVHlwZRIWCg5jYXJkX2d1aWRfbGlzdBgIIAMoDRIa",
-          "CgZyZWFzb24YBiABKA4yCi5HQ0dSZWFzb24SFgoOZmFpbF9ndWlkX2xpc3QY",
-          "CyADKA1CHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GCGZoneTypeReflection.Descriptor, global::GCGReasonReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGMsgMoveCard), global::GCGMsgMoveCard.Parser, new[]{ "ControllerId", "To", "From", "CardGuidList", "Reason", "FailGuidList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGMsgMoveCard.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGMsgMoveCardReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRHQ0dNc2dNb3ZlQ2FyZC5wcm90bxoRR0NHWm9uZVR5cGUucHJvdG8aD0dD",
+            "R1JlYXNvbi5wcm90byKpAQoOR0NHTXNnTW92ZUNhcmQSFQoNY29udHJvbGxl",
+            "cl9pZBgOIAEoDRIYCgJ0bxgFIAEoDjIMLkdDR1pvbmVUeXBlEhoKBGZyb20Y",
+            "DCABKA4yDC5HQ0dab25lVHlwZRIWCg5jYXJkX2d1aWRfbGlzdBgIIAMoDRIa",
+            "CgZyZWFzb24YBiABKA4yCi5HQ0dSZWFzb24SFgoOZmFpbF9ndWlkX2xpc3QY",
+            "CyADKA1CDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GCGZoneTypeReflection.Descriptor, global::OldProtos.GCGReasonReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GCGMsgMoveCard), global::OldProtos.GCGMsgMoveCard.Parser, new[]{ "ControllerId", "To", "From", "CardGuidList", "Reason", "FailGuidList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GCGMsgMoveCard : pb::IMessage<GCGMsgMoveCard>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGMsgMoveCard> _parser = new pb::MessageParser<GCGMsgMoveCard>(() => new GCGMsgMoveCard());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGMsgMoveCard> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GCGMsgMoveCardReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGMsgMoveCard() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGMsgMoveCard(GCGMsgMoveCard other) : this() {
+      controllerId_ = other.controllerId_;
+      to_ = other.to_;
+      from_ = other.from_;
+      cardGuidList_ = other.cardGuidList_.Clone();
+      reason_ = other.reason_;
+      failGuidList_ = other.failGuidList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGMsgMoveCard Clone() {
+      return new GCGMsgMoveCard(this);
+    }
+
+    /// <summary>Field number for the "controller_id" field.</summary>
+    public const int ControllerIdFieldNumber = 14;
+    private uint controllerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ControllerId {
+      get { return controllerId_; }
+      set {
+        controllerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "to" field.</summary>
+    public const int ToFieldNumber = 5;
+    private global::OldProtos.GCGZoneType to_ = global::OldProtos.GCGZoneType.Invalid;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGZoneType To {
+      get { return to_; }
+      set {
+        to_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "from" field.</summary>
+    public const int FromFieldNumber = 12;
+    private global::OldProtos.GCGZoneType from_ = global::OldProtos.GCGZoneType.Invalid;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGZoneType From {
+      get { return from_; }
+      set {
+        from_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "card_guid_list" field.</summary>
+    public const int CardGuidListFieldNumber = 8;
+    private static readonly pb::FieldCodec<uint> _repeated_cardGuidList_codec
+        = pb::FieldCodec.ForUInt32(66);
+    private readonly pbc::RepeatedField<uint> cardGuidList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CardGuidList {
+      get { return cardGuidList_; }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 6;
+    private global::OldProtos.GCGReason reason_ = global::OldProtos.GCGReason.Default;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fail_guid_list" field.</summary>
+    public const int FailGuidListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_failGuidList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> failGuidList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FailGuidList {
+      get { return failGuidList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGMsgMoveCard);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGMsgMoveCard other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ControllerId != other.ControllerId) return false;
+      if (To != other.To) return false;
+      if (From != other.From) return false;
+      if(!cardGuidList_.Equals(other.cardGuidList_)) return false;
+      if (Reason != other.Reason) return false;
+      if(!failGuidList_.Equals(other.failGuidList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
+      if (To != global::OldProtos.GCGZoneType.Invalid) hash ^= To.GetHashCode();
+      if (From != global::OldProtos.GCGZoneType.Invalid) hash ^= From.GetHashCode();
+      hash ^= cardGuidList_.GetHashCode();
+      if (Reason != global::OldProtos.GCGReason.Default) hash ^= Reason.GetHashCode();
+      hash ^= failGuidList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (To != global::OldProtos.GCGZoneType.Invalid) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) To);
+      }
+      if (Reason != global::OldProtos.GCGReason.Default) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Reason);
+      }
+      cardGuidList_.WriteTo(output, _repeated_cardGuidList_codec);
+      failGuidList_.WriteTo(output, _repeated_failGuidList_codec);
+      if (From != global::OldProtos.GCGZoneType.Invalid) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) From);
+      }
+      if (ControllerId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ControllerId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (To != global::OldProtos.GCGZoneType.Invalid) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) To);
+      }
+      if (Reason != global::OldProtos.GCGReason.Default) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) Reason);
+      }
+      cardGuidList_.WriteTo(ref output, _repeated_cardGuidList_codec);
+      failGuidList_.WriteTo(ref output, _repeated_failGuidList_codec);
+      if (From != global::OldProtos.GCGZoneType.Invalid) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) From);
+      }
+      if (ControllerId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ControllerId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ControllerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
+      }
+      if (To != global::OldProtos.GCGZoneType.Invalid) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) To);
+      }
+      if (From != global::OldProtos.GCGZoneType.Invalid) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) From);
+      }
+      size += cardGuidList_.CalculateSize(_repeated_cardGuidList_codec);
+      if (Reason != global::OldProtos.GCGReason.Default) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
+      size += failGuidList_.CalculateSize(_repeated_failGuidList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGMsgMoveCard other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ControllerId != 0) {
+        ControllerId = other.ControllerId;
+      }
+      if (other.To != global::OldProtos.GCGZoneType.Invalid) {
+        To = other.To;
+      }
+      if (other.From != global::OldProtos.GCGZoneType.Invalid) {
+        From = other.From;
+      }
+      cardGuidList_.Add(other.cardGuidList_);
+      if (other.Reason != global::OldProtos.GCGReason.Default) {
+        Reason = other.Reason;
+      }
+      failGuidList_.Add(other.failGuidList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            To = (global::OldProtos.GCGZoneType) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            Reason = (global::OldProtos.GCGReason) input.ReadEnum();
+            break;
+          }
+          case 66:
+          case 64: {
+            cardGuidList_.AddEntriesFrom(input, _repeated_cardGuidList_codec);
+            break;
+          }
+          case 90:
+          case 88: {
+            failGuidList_.AddEntriesFrom(input, _repeated_failGuidList_codec);
+            break;
+          }
+          case 96: {
+            From = (global::OldProtos.GCGZoneType) input.ReadEnum();
+            break;
+          }
+          case 112: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            To = (global::OldProtos.GCGZoneType) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            Reason = (global::OldProtos.GCGReason) input.ReadEnum();
+            break;
+          }
+          case 66:
+          case 64: {
+            cardGuidList_.AddEntriesFrom(ref input, _repeated_cardGuidList_codec);
+            break;
+          }
+          case 90:
+          case 88: {
+            failGuidList_.AddEntriesFrom(ref input, _repeated_failGuidList_codec);
+            break;
+          }
+          case 96: {
+            From = (global::OldProtos.GCGZoneType) input.ReadEnum();
+            break;
+          }
+          case 112: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GCGMsgMoveCard : pb::IMessage<GCGMsgMoveCard>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGMsgMoveCard> _parser = new pb::MessageParser<GCGMsgMoveCard>(() => new GCGMsgMoveCard());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGMsgMoveCard> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGMsgMoveCardReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGMsgMoveCard() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGMsgMoveCard(GCGMsgMoveCard other) : this() {
-    controllerId_ = other.controllerId_;
-    to_ = other.to_;
-    from_ = other.from_;
-    cardGuidList_ = other.cardGuidList_.Clone();
-    reason_ = other.reason_;
-    failGuidList_ = other.failGuidList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGMsgMoveCard Clone() {
-    return new GCGMsgMoveCard(this);
-  }
-
-  /// <summary>Field number for the "controller_id" field.</summary>
-  public const int ControllerIdFieldNumber = 14;
-  private uint controllerId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ControllerId {
-    get { return controllerId_; }
-    set {
-      controllerId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "to" field.</summary>
-  public const int ToFieldNumber = 5;
-  private global::GCGZoneType to_ = global::GCGZoneType.Invalid;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGZoneType To {
-    get { return to_; }
-    set {
-      to_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "from" field.</summary>
-  public const int FromFieldNumber = 12;
-  private global::GCGZoneType from_ = global::GCGZoneType.Invalid;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGZoneType From {
-    get { return from_; }
-    set {
-      from_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "card_guid_list" field.</summary>
-  public const int CardGuidListFieldNumber = 8;
-  private static readonly pb::FieldCodec<uint> _repeated_cardGuidList_codec
-      = pb::FieldCodec.ForUInt32(66);
-  private readonly pbc::RepeatedField<uint> cardGuidList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> CardGuidList {
-    get { return cardGuidList_; }
-  }
-
-  /// <summary>Field number for the "reason" field.</summary>
-  public const int ReasonFieldNumber = 6;
-  private global::GCGReason reason_ = global::GCGReason.Default;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGReason Reason {
-    get { return reason_; }
-    set {
-      reason_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "fail_guid_list" field.</summary>
-  public const int FailGuidListFieldNumber = 11;
-  private static readonly pb::FieldCodec<uint> _repeated_failGuidList_codec
-      = pb::FieldCodec.ForUInt32(90);
-  private readonly pbc::RepeatedField<uint> failGuidList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> FailGuidList {
-    get { return failGuidList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGMsgMoveCard);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGMsgMoveCard other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ControllerId != other.ControllerId) return false;
-    if (To != other.To) return false;
-    if (From != other.From) return false;
-    if(!cardGuidList_.Equals(other.cardGuidList_)) return false;
-    if (Reason != other.Reason) return false;
-    if(!failGuidList_.Equals(other.failGuidList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
-    if (To != global::GCGZoneType.Invalid) hash ^= To.GetHashCode();
-    if (From != global::GCGZoneType.Invalid) hash ^= From.GetHashCode();
-    hash ^= cardGuidList_.GetHashCode();
-    if (Reason != global::GCGReason.Default) hash ^= Reason.GetHashCode();
-    hash ^= failGuidList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (To != global::GCGZoneType.Invalid) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) To);
-    }
-    if (Reason != global::GCGReason.Default) {
-      output.WriteRawTag(48);
-      output.WriteEnum((int) Reason);
-    }
-    cardGuidList_.WriteTo(output, _repeated_cardGuidList_codec);
-    failGuidList_.WriteTo(output, _repeated_failGuidList_codec);
-    if (From != global::GCGZoneType.Invalid) {
-      output.WriteRawTag(96);
-      output.WriteEnum((int) From);
-    }
-    if (ControllerId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(ControllerId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (To != global::GCGZoneType.Invalid) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) To);
-    }
-    if (Reason != global::GCGReason.Default) {
-      output.WriteRawTag(48);
-      output.WriteEnum((int) Reason);
-    }
-    cardGuidList_.WriteTo(ref output, _repeated_cardGuidList_codec);
-    failGuidList_.WriteTo(ref output, _repeated_failGuidList_codec);
-    if (From != global::GCGZoneType.Invalid) {
-      output.WriteRawTag(96);
-      output.WriteEnum((int) From);
-    }
-    if (ControllerId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(ControllerId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ControllerId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
-    }
-    if (To != global::GCGZoneType.Invalid) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) To);
-    }
-    if (From != global::GCGZoneType.Invalid) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) From);
-    }
-    size += cardGuidList_.CalculateSize(_repeated_cardGuidList_codec);
-    if (Reason != global::GCGReason.Default) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-    }
-    size += failGuidList_.CalculateSize(_repeated_failGuidList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGMsgMoveCard other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ControllerId != 0) {
-      ControllerId = other.ControllerId;
-    }
-    if (other.To != global::GCGZoneType.Invalid) {
-      To = other.To;
-    }
-    if (other.From != global::GCGZoneType.Invalid) {
-      From = other.From;
-    }
-    cardGuidList_.Add(other.cardGuidList_);
-    if (other.Reason != global::GCGReason.Default) {
-      Reason = other.Reason;
-    }
-    failGuidList_.Add(other.failGuidList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          To = (global::GCGZoneType) input.ReadEnum();
-          break;
-        }
-        case 48: {
-          Reason = (global::GCGReason) input.ReadEnum();
-          break;
-        }
-        case 66:
-        case 64: {
-          cardGuidList_.AddEntriesFrom(input, _repeated_cardGuidList_codec);
-          break;
-        }
-        case 90:
-        case 88: {
-          failGuidList_.AddEntriesFrom(input, _repeated_failGuidList_codec);
-          break;
-        }
-        case 96: {
-          From = (global::GCGZoneType) input.ReadEnum();
-          break;
-        }
-        case 112: {
-          ControllerId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          To = (global::GCGZoneType) input.ReadEnum();
-          break;
-        }
-        case 48: {
-          Reason = (global::GCGReason) input.ReadEnum();
-          break;
-        }
-        case 66:
-        case 64: {
-          cardGuidList_.AddEntriesFrom(ref input, _repeated_cardGuidList_codec);
-          break;
-        }
-        case 90:
-        case 88: {
-          failGuidList_.AddEntriesFrom(ref input, _repeated_failGuidList_codec);
-          break;
-        }
-        case 96: {
-          From = (global::GCGZoneType) input.ReadEnum();
-          break;
-        }
-        case 112: {
-          ControllerId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

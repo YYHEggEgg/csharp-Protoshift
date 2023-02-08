@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "HomeLimitedShopGoods.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message HomeLimitedShop {
   repeated HomeLimitedShopGoods goods_list = 8;

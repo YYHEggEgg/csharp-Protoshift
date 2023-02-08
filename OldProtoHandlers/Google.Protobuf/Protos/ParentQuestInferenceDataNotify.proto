@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "InferencePageInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 402
 // EnetChannelId: 0

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "SummerTimeDungeonInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message EchoShellDetailInfo {
   repeated SummerTimeDungeonInfo summer_time_dungeon_list = 8;

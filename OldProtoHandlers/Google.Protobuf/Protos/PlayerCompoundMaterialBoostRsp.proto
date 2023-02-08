@@ -20,7 +20,7 @@ import "CompoundBoostTakeStatusType.proto";
 import "CompoundQueueData.proto";
 import "ItemParam.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 125
 // EnetChannelId: 0

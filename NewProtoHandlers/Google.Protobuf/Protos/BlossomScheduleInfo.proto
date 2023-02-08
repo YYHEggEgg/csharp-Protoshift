@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message BlossomScheduleInfo {
   uint32 progress = 1;

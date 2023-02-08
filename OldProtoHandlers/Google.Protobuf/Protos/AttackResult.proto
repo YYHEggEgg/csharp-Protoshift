@@ -21,7 +21,7 @@ import "AttackHitEffectResult.proto";
 import "HitCollision.proto";
 import "Vector.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message AttackResult {
   bool is_resist_text = 1858;

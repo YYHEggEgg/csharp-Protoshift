@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.newproto";
+option csharp_namespace = "OldProtos";
 
 enum GCGActionType {
   GCG_ACTION_TYPE_NONE = 0;

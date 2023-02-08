@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "TowerFightRecordPair.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message TowerMonthlyCombatRecord {
   repeated TowerFightRecordPair most_reveal_avatar_list = 3;

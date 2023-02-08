@@ -9,437 +9,440 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ChessPlayerInfo.proto</summary>
-public static partial class ChessPlayerInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ChessPlayerInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ChessPlayerInfo.proto</summary>
+  public static partial class ChessPlayerInfoReflection {
 
-  static ChessPlayerInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVDaGVzc1BsYXllckluZm8ucHJvdG8aGUNoZXNzTm9ybWFsQ2FyZEluZm8u",
-          "cHJvdG8i1gEKD0NoZXNzUGxheWVySW5mbxILCgN1aWQYBSABKA0SGgoSZnJl",
-          "ZV9yZWZyZXNoX2xpbWl0GAogASgNEjYKGGNhbmRpZGF0ZV9jYXJkX2luZm9f",
-          "bGlzdBgDIAMoCzIULkNoZXNzTm9ybWFsQ2FyZEluZm8SFwoPYnVpbGRpbmdf",
-          "cG9pbnRzGAwgASgNEhcKD2NhbmRpZGF0ZV9pbmRleBgGIAEoDRIaChJmcmVl",
-          "X3JlZnJlc2hfY291bnQYDSABKA0SFAoMcmVmcmVzaF9jb3N0GAcgASgNQh4K",
-          "HGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ChessNormalCardInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ChessPlayerInfo), global::ChessPlayerInfo.Parser, new[]{ "Uid", "FreeRefreshLimit", "CandidateCardInfoList", "BuildingPoints", "CandidateIndex", "FreeRefreshCount", "RefreshCost" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ChessPlayerInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ChessPlayerInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVDaGVzc1BsYXllckluZm8ucHJvdG8aGUNoZXNzTm9ybWFsQ2FyZEluZm8u",
+            "cHJvdG8i1gEKD0NoZXNzUGxheWVySW5mbxILCgN1aWQYBSABKA0SGgoSZnJl",
+            "ZV9yZWZyZXNoX2xpbWl0GAogASgNEjYKGGNhbmRpZGF0ZV9jYXJkX2luZm9f",
+            "bGlzdBgDIAMoCzIULkNoZXNzTm9ybWFsQ2FyZEluZm8SFwoPYnVpbGRpbmdf",
+            "cG9pbnRzGAwgASgNEhcKD2NhbmRpZGF0ZV9pbmRleBgGIAEoDRIaChJmcmVl",
+            "X3JlZnJlc2hfY291bnQYDSABKA0SFAoMcmVmcmVzaF9jb3N0GAcgASgNQgyq",
+            "AglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ChessNormalCardInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ChessPlayerInfo), global::OldProtos.ChessPlayerInfo.Parser, new[]{ "Uid", "FreeRefreshLimit", "CandidateCardInfoList", "BuildingPoints", "CandidateIndex", "FreeRefreshCount", "RefreshCost" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class ChessPlayerInfo : pb::IMessage<ChessPlayerInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ChessPlayerInfo> _parser = new pb::MessageParser<ChessPlayerInfo>(() => new ChessPlayerInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ChessPlayerInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ChessPlayerInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChessPlayerInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChessPlayerInfo(ChessPlayerInfo other) : this() {
+      uid_ = other.uid_;
+      freeRefreshLimit_ = other.freeRefreshLimit_;
+      candidateCardInfoList_ = other.candidateCardInfoList_.Clone();
+      buildingPoints_ = other.buildingPoints_;
+      candidateIndex_ = other.candidateIndex_;
+      freeRefreshCount_ = other.freeRefreshCount_;
+      refreshCost_ = other.refreshCost_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChessPlayerInfo Clone() {
+      return new ChessPlayerInfo(this);
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 5;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "free_refresh_limit" field.</summary>
+    public const int FreeRefreshLimitFieldNumber = 10;
+    private uint freeRefreshLimit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FreeRefreshLimit {
+      get { return freeRefreshLimit_; }
+      set {
+        freeRefreshLimit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "candidate_card_info_list" field.</summary>
+    public const int CandidateCardInfoListFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::OldProtos.ChessNormalCardInfo> _repeated_candidateCardInfoList_codec
+        = pb::FieldCodec.ForMessage(26, global::OldProtos.ChessNormalCardInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.ChessNormalCardInfo> candidateCardInfoList_ = new pbc::RepeatedField<global::OldProtos.ChessNormalCardInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.ChessNormalCardInfo> CandidateCardInfoList {
+      get { return candidateCardInfoList_; }
+    }
+
+    /// <summary>Field number for the "building_points" field.</summary>
+    public const int BuildingPointsFieldNumber = 12;
+    private uint buildingPoints_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BuildingPoints {
+      get { return buildingPoints_; }
+      set {
+        buildingPoints_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "candidate_index" field.</summary>
+    public const int CandidateIndexFieldNumber = 6;
+    private uint candidateIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CandidateIndex {
+      get { return candidateIndex_; }
+      set {
+        candidateIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "free_refresh_count" field.</summary>
+    public const int FreeRefreshCountFieldNumber = 13;
+    private uint freeRefreshCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FreeRefreshCount {
+      get { return freeRefreshCount_; }
+      set {
+        freeRefreshCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "refresh_cost" field.</summary>
+    public const int RefreshCostFieldNumber = 7;
+    private uint refreshCost_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RefreshCost {
+      get { return refreshCost_; }
+      set {
+        refreshCost_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ChessPlayerInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ChessPlayerInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Uid != other.Uid) return false;
+      if (FreeRefreshLimit != other.FreeRefreshLimit) return false;
+      if(!candidateCardInfoList_.Equals(other.candidateCardInfoList_)) return false;
+      if (BuildingPoints != other.BuildingPoints) return false;
+      if (CandidateIndex != other.CandidateIndex) return false;
+      if (FreeRefreshCount != other.FreeRefreshCount) return false;
+      if (RefreshCost != other.RefreshCost) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (FreeRefreshLimit != 0) hash ^= FreeRefreshLimit.GetHashCode();
+      hash ^= candidateCardInfoList_.GetHashCode();
+      if (BuildingPoints != 0) hash ^= BuildingPoints.GetHashCode();
+      if (CandidateIndex != 0) hash ^= CandidateIndex.GetHashCode();
+      if (FreeRefreshCount != 0) hash ^= FreeRefreshCount.GetHashCode();
+      if (RefreshCost != 0) hash ^= RefreshCost.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      candidateCardInfoList_.WriteTo(output, _repeated_candidateCardInfoList_codec);
+      if (Uid != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Uid);
+      }
+      if (CandidateIndex != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(CandidateIndex);
+      }
+      if (RefreshCost != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(RefreshCost);
+      }
+      if (FreeRefreshLimit != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(FreeRefreshLimit);
+      }
+      if (BuildingPoints != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(BuildingPoints);
+      }
+      if (FreeRefreshCount != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(FreeRefreshCount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      candidateCardInfoList_.WriteTo(ref output, _repeated_candidateCardInfoList_codec);
+      if (Uid != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Uid);
+      }
+      if (CandidateIndex != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(CandidateIndex);
+      }
+      if (RefreshCost != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(RefreshCost);
+      }
+      if (FreeRefreshLimit != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(FreeRefreshLimit);
+      }
+      if (BuildingPoints != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(BuildingPoints);
+      }
+      if (FreeRefreshCount != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(FreeRefreshCount);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (FreeRefreshLimit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FreeRefreshLimit);
+      }
+      size += candidateCardInfoList_.CalculateSize(_repeated_candidateCardInfoList_codec);
+      if (BuildingPoints != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingPoints);
+      }
+      if (CandidateIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CandidateIndex);
+      }
+      if (FreeRefreshCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FreeRefreshCount);
+      }
+      if (RefreshCost != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RefreshCost);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ChessPlayerInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      if (other.FreeRefreshLimit != 0) {
+        FreeRefreshLimit = other.FreeRefreshLimit;
+      }
+      candidateCardInfoList_.Add(other.candidateCardInfoList_);
+      if (other.BuildingPoints != 0) {
+        BuildingPoints = other.BuildingPoints;
+      }
+      if (other.CandidateIndex != 0) {
+        CandidateIndex = other.CandidateIndex;
+      }
+      if (other.FreeRefreshCount != 0) {
+        FreeRefreshCount = other.FreeRefreshCount;
+      }
+      if (other.RefreshCost != 0) {
+        RefreshCost = other.RefreshCost;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 26: {
+            candidateCardInfoList_.AddEntriesFrom(input, _repeated_candidateCardInfoList_codec);
+            break;
+          }
+          case 40: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            CandidateIndex = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            RefreshCost = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            FreeRefreshLimit = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            BuildingPoints = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            FreeRefreshCount = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 26: {
+            candidateCardInfoList_.AddEntriesFrom(ref input, _repeated_candidateCardInfoList_codec);
+            break;
+          }
+          case 40: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            CandidateIndex = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            RefreshCost = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            FreeRefreshLimit = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            BuildingPoints = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            FreeRefreshCount = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ChessPlayerInfo : pb::IMessage<ChessPlayerInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ChessPlayerInfo> _parser = new pb::MessageParser<ChessPlayerInfo>(() => new ChessPlayerInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ChessPlayerInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ChessPlayerInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChessPlayerInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChessPlayerInfo(ChessPlayerInfo other) : this() {
-    uid_ = other.uid_;
-    freeRefreshLimit_ = other.freeRefreshLimit_;
-    candidateCardInfoList_ = other.candidateCardInfoList_.Clone();
-    buildingPoints_ = other.buildingPoints_;
-    candidateIndex_ = other.candidateIndex_;
-    freeRefreshCount_ = other.freeRefreshCount_;
-    refreshCost_ = other.refreshCost_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChessPlayerInfo Clone() {
-    return new ChessPlayerInfo(this);
-  }
-
-  /// <summary>Field number for the "uid" field.</summary>
-  public const int UidFieldNumber = 5;
-  private uint uid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Uid {
-    get { return uid_; }
-    set {
-      uid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "free_refresh_limit" field.</summary>
-  public const int FreeRefreshLimitFieldNumber = 10;
-  private uint freeRefreshLimit_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FreeRefreshLimit {
-    get { return freeRefreshLimit_; }
-    set {
-      freeRefreshLimit_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "candidate_card_info_list" field.</summary>
-  public const int CandidateCardInfoListFieldNumber = 3;
-  private static readonly pb::FieldCodec<global::ChessNormalCardInfo> _repeated_candidateCardInfoList_codec
-      = pb::FieldCodec.ForMessage(26, global::ChessNormalCardInfo.Parser);
-  private readonly pbc::RepeatedField<global::ChessNormalCardInfo> candidateCardInfoList_ = new pbc::RepeatedField<global::ChessNormalCardInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ChessNormalCardInfo> CandidateCardInfoList {
-    get { return candidateCardInfoList_; }
-  }
-
-  /// <summary>Field number for the "building_points" field.</summary>
-  public const int BuildingPointsFieldNumber = 12;
-  private uint buildingPoints_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BuildingPoints {
-    get { return buildingPoints_; }
-    set {
-      buildingPoints_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "candidate_index" field.</summary>
-  public const int CandidateIndexFieldNumber = 6;
-  private uint candidateIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CandidateIndex {
-    get { return candidateIndex_; }
-    set {
-      candidateIndex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "free_refresh_count" field.</summary>
-  public const int FreeRefreshCountFieldNumber = 13;
-  private uint freeRefreshCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FreeRefreshCount {
-    get { return freeRefreshCount_; }
-    set {
-      freeRefreshCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "refresh_cost" field.</summary>
-  public const int RefreshCostFieldNumber = 7;
-  private uint refreshCost_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RefreshCost {
-    get { return refreshCost_; }
-    set {
-      refreshCost_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ChessPlayerInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ChessPlayerInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Uid != other.Uid) return false;
-    if (FreeRefreshLimit != other.FreeRefreshLimit) return false;
-    if(!candidateCardInfoList_.Equals(other.candidateCardInfoList_)) return false;
-    if (BuildingPoints != other.BuildingPoints) return false;
-    if (CandidateIndex != other.CandidateIndex) return false;
-    if (FreeRefreshCount != other.FreeRefreshCount) return false;
-    if (RefreshCost != other.RefreshCost) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Uid != 0) hash ^= Uid.GetHashCode();
-    if (FreeRefreshLimit != 0) hash ^= FreeRefreshLimit.GetHashCode();
-    hash ^= candidateCardInfoList_.GetHashCode();
-    if (BuildingPoints != 0) hash ^= BuildingPoints.GetHashCode();
-    if (CandidateIndex != 0) hash ^= CandidateIndex.GetHashCode();
-    if (FreeRefreshCount != 0) hash ^= FreeRefreshCount.GetHashCode();
-    if (RefreshCost != 0) hash ^= RefreshCost.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    candidateCardInfoList_.WriteTo(output, _repeated_candidateCardInfoList_codec);
-    if (Uid != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Uid);
-    }
-    if (CandidateIndex != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(CandidateIndex);
-    }
-    if (RefreshCost != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(RefreshCost);
-    }
-    if (FreeRefreshLimit != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(FreeRefreshLimit);
-    }
-    if (BuildingPoints != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(BuildingPoints);
-    }
-    if (FreeRefreshCount != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(FreeRefreshCount);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    candidateCardInfoList_.WriteTo(ref output, _repeated_candidateCardInfoList_codec);
-    if (Uid != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Uid);
-    }
-    if (CandidateIndex != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(CandidateIndex);
-    }
-    if (RefreshCost != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(RefreshCost);
-    }
-    if (FreeRefreshLimit != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(FreeRefreshLimit);
-    }
-    if (BuildingPoints != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(BuildingPoints);
-    }
-    if (FreeRefreshCount != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(FreeRefreshCount);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Uid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-    }
-    if (FreeRefreshLimit != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FreeRefreshLimit);
-    }
-    size += candidateCardInfoList_.CalculateSize(_repeated_candidateCardInfoList_codec);
-    if (BuildingPoints != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingPoints);
-    }
-    if (CandidateIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CandidateIndex);
-    }
-    if (FreeRefreshCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FreeRefreshCount);
-    }
-    if (RefreshCost != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RefreshCost);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ChessPlayerInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Uid != 0) {
-      Uid = other.Uid;
-    }
-    if (other.FreeRefreshLimit != 0) {
-      FreeRefreshLimit = other.FreeRefreshLimit;
-    }
-    candidateCardInfoList_.Add(other.candidateCardInfoList_);
-    if (other.BuildingPoints != 0) {
-      BuildingPoints = other.BuildingPoints;
-    }
-    if (other.CandidateIndex != 0) {
-      CandidateIndex = other.CandidateIndex;
-    }
-    if (other.FreeRefreshCount != 0) {
-      FreeRefreshCount = other.FreeRefreshCount;
-    }
-    if (other.RefreshCost != 0) {
-      RefreshCost = other.RefreshCost;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 26: {
-          candidateCardInfoList_.AddEntriesFrom(input, _repeated_candidateCardInfoList_codec);
-          break;
-        }
-        case 40: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          CandidateIndex = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          RefreshCost = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          FreeRefreshLimit = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          BuildingPoints = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          FreeRefreshCount = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 26: {
-          candidateCardInfoList_.AddEntriesFrom(ref input, _repeated_candidateCardInfoList_codec);
-          break;
-        }
-        case 40: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          CandidateIndex = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          RefreshCost = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          FreeRefreshLimit = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          BuildingPoints = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          FreeRefreshCount = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

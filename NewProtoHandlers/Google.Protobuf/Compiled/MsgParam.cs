@@ -9,332 +9,335 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MsgParam.proto</summary>
-public static partial class MsgParamReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MsgParam.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MsgParam.proto</summary>
+  public static partial class MsgParamReflection {
 
-  static MsgParamReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Cg5Nc2dQYXJhbS5wcm90byJSCghNc2dQYXJhbRITCglpbnRfcGFyYW0YDSAB",
-          "KA1IABITCglmbHRfcGFyYW0YDiABKAJIABITCglzdHJfcGFyYW0YBCABKAlI",
-          "AEIHCgVwYXJhbUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MsgParam), global::MsgParam.Parser, new[]{ "IntParam", "FltParam", "StrParam" }, new[]{ "Param" }, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for MsgParam.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MsgParamReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Cg5Nc2dQYXJhbS5wcm90byJSCghNc2dQYXJhbRITCglpbnRfcGFyYW0YDSAB",
+            "KA1IABITCglmbHRfcGFyYW0YDiABKAJIABITCglzdHJfcGFyYW0YBCABKAlI",
+            "AEIHCgVwYXJhbUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.MsgParam), global::NewProtos.MsgParam.Parser, new[]{ "IntParam", "FltParam", "StrParam" }, new[]{ "Param" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class MsgParam : pb::IMessage<MsgParam>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MsgParam> _parser = new pb::MessageParser<MsgParam>(() => new MsgParam());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MsgParam> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.MsgParamReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MsgParam() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MsgParam(MsgParam other) : this() {
+      switch (other.ParamCase) {
+        case ParamOneofCase.IntParam:
+          IntParam = other.IntParam;
+          break;
+        case ParamOneofCase.FltParam:
+          FltParam = other.FltParam;
+          break;
+        case ParamOneofCase.StrParam:
+          StrParam = other.StrParam;
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MsgParam Clone() {
+      return new MsgParam(this);
+    }
+
+    /// <summary>Field number for the "int_param" field.</summary>
+    public const int IntParamFieldNumber = 13;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint IntParam {
+      get { return paramCase_ == ParamOneofCase.IntParam ? (uint) param_ : 0; }
+      set {
+        param_ = value;
+        paramCase_ = ParamOneofCase.IntParam;
+      }
+    }
+
+    /// <summary>Field number for the "flt_param" field.</summary>
+    public const int FltParamFieldNumber = 14;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float FltParam {
+      get { return paramCase_ == ParamOneofCase.FltParam ? (float) param_ : 0F; }
+      set {
+        param_ = value;
+        paramCase_ = ParamOneofCase.FltParam;
+      }
+    }
+
+    /// <summary>Field number for the "str_param" field.</summary>
+    public const int StrParamFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string StrParam {
+      get { return paramCase_ == ParamOneofCase.StrParam ? (string) param_ : ""; }
+      set {
+        param_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        paramCase_ = ParamOneofCase.StrParam;
+      }
+    }
+
+    private object param_;
+    /// <summary>Enum of possible cases for the "param" oneof.</summary>
+    public enum ParamOneofCase {
+      None = 0,
+      IntParam = 13,
+      FltParam = 14,
+      StrParam = 4,
+    }
+    private ParamOneofCase paramCase_ = ParamOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ParamOneofCase ParamCase {
+      get { return paramCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearParam() {
+      paramCase_ = ParamOneofCase.None;
+      param_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MsgParam);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MsgParam other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IntParam != other.IntParam) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(FltParam, other.FltParam)) return false;
+      if (StrParam != other.StrParam) return false;
+      if (ParamCase != other.ParamCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (paramCase_ == ParamOneofCase.IntParam) hash ^= IntParam.GetHashCode();
+      if (paramCase_ == ParamOneofCase.FltParam) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FltParam);
+      if (paramCase_ == ParamOneofCase.StrParam) hash ^= StrParam.GetHashCode();
+      hash ^= (int) paramCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (paramCase_ == ParamOneofCase.StrParam) {
+        output.WriteRawTag(34);
+        output.WriteString(StrParam);
+      }
+      if (paramCase_ == ParamOneofCase.IntParam) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(IntParam);
+      }
+      if (paramCase_ == ParamOneofCase.FltParam) {
+        output.WriteRawTag(117);
+        output.WriteFloat(FltParam);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (paramCase_ == ParamOneofCase.StrParam) {
+        output.WriteRawTag(34);
+        output.WriteString(StrParam);
+      }
+      if (paramCase_ == ParamOneofCase.IntParam) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(IntParam);
+      }
+      if (paramCase_ == ParamOneofCase.FltParam) {
+        output.WriteRawTag(117);
+        output.WriteFloat(FltParam);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (paramCase_ == ParamOneofCase.IntParam) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(IntParam);
+      }
+      if (paramCase_ == ParamOneofCase.FltParam) {
+        size += 1 + 4;
+      }
+      if (paramCase_ == ParamOneofCase.StrParam) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StrParam);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MsgParam other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.ParamCase) {
+        case ParamOneofCase.IntParam:
+          IntParam = other.IntParam;
+          break;
+        case ParamOneofCase.FltParam:
+          FltParam = other.FltParam;
+          break;
+        case ParamOneofCase.StrParam:
+          StrParam = other.StrParam;
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 34: {
+            StrParam = input.ReadString();
+            break;
+          }
+          case 104: {
+            IntParam = input.ReadUInt32();
+            break;
+          }
+          case 117: {
+            FltParam = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 34: {
+            StrParam = input.ReadString();
+            break;
+          }
+          case 104: {
+            IntParam = input.ReadUInt32();
+            break;
+          }
+          case 117: {
+            FltParam = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class MsgParam : pb::IMessage<MsgParam>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<MsgParam> _parser = new pb::MessageParser<MsgParam>(() => new MsgParam());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<MsgParam> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::MsgParamReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MsgParam() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MsgParam(MsgParam other) : this() {
-    switch (other.ParamCase) {
-      case ParamOneofCase.IntParam:
-        IntParam = other.IntParam;
-        break;
-      case ParamOneofCase.FltParam:
-        FltParam = other.FltParam;
-        break;
-      case ParamOneofCase.StrParam:
-        StrParam = other.StrParam;
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MsgParam Clone() {
-    return new MsgParam(this);
-  }
-
-  /// <summary>Field number for the "int_param" field.</summary>
-  public const int IntParamFieldNumber = 13;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint IntParam {
-    get { return paramCase_ == ParamOneofCase.IntParam ? (uint) param_ : 0; }
-    set {
-      param_ = value;
-      paramCase_ = ParamOneofCase.IntParam;
-    }
-  }
-
-  /// <summary>Field number for the "flt_param" field.</summary>
-  public const int FltParamFieldNumber = 14;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float FltParam {
-    get { return paramCase_ == ParamOneofCase.FltParam ? (float) param_ : 0F; }
-    set {
-      param_ = value;
-      paramCase_ = ParamOneofCase.FltParam;
-    }
-  }
-
-  /// <summary>Field number for the "str_param" field.</summary>
-  public const int StrParamFieldNumber = 4;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string StrParam {
-    get { return paramCase_ == ParamOneofCase.StrParam ? (string) param_ : ""; }
-    set {
-      param_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      paramCase_ = ParamOneofCase.StrParam;
-    }
-  }
-
-  private object param_;
-  /// <summary>Enum of possible cases for the "param" oneof.</summary>
-  public enum ParamOneofCase {
-    None = 0,
-    IntParam = 13,
-    FltParam = 14,
-    StrParam = 4,
-  }
-  private ParamOneofCase paramCase_ = ParamOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ParamOneofCase ParamCase {
-    get { return paramCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearParam() {
-    paramCase_ = ParamOneofCase.None;
-    param_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as MsgParam);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(MsgParam other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IntParam != other.IntParam) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(FltParam, other.FltParam)) return false;
-    if (StrParam != other.StrParam) return false;
-    if (ParamCase != other.ParamCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (paramCase_ == ParamOneofCase.IntParam) hash ^= IntParam.GetHashCode();
-    if (paramCase_ == ParamOneofCase.FltParam) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FltParam);
-    if (paramCase_ == ParamOneofCase.StrParam) hash ^= StrParam.GetHashCode();
-    hash ^= (int) paramCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (paramCase_ == ParamOneofCase.StrParam) {
-      output.WriteRawTag(34);
-      output.WriteString(StrParam);
-    }
-    if (paramCase_ == ParamOneofCase.IntParam) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(IntParam);
-    }
-    if (paramCase_ == ParamOneofCase.FltParam) {
-      output.WriteRawTag(117);
-      output.WriteFloat(FltParam);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (paramCase_ == ParamOneofCase.StrParam) {
-      output.WriteRawTag(34);
-      output.WriteString(StrParam);
-    }
-    if (paramCase_ == ParamOneofCase.IntParam) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(IntParam);
-    }
-    if (paramCase_ == ParamOneofCase.FltParam) {
-      output.WriteRawTag(117);
-      output.WriteFloat(FltParam);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (paramCase_ == ParamOneofCase.IntParam) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(IntParam);
-    }
-    if (paramCase_ == ParamOneofCase.FltParam) {
-      size += 1 + 4;
-    }
-    if (paramCase_ == ParamOneofCase.StrParam) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(StrParam);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(MsgParam other) {
-    if (other == null) {
-      return;
-    }
-    switch (other.ParamCase) {
-      case ParamOneofCase.IntParam:
-        IntParam = other.IntParam;
-        break;
-      case ParamOneofCase.FltParam:
-        FltParam = other.FltParam;
-        break;
-      case ParamOneofCase.StrParam:
-        StrParam = other.StrParam;
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 34: {
-          StrParam = input.ReadString();
-          break;
-        }
-        case 104: {
-          IntParam = input.ReadUInt32();
-          break;
-        }
-        case 117: {
-          FltParam = input.ReadFloat();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 34: {
-          StrParam = input.ReadString();
-          break;
-        }
-        case 104: {
-          IntParam = input.ReadUInt32();
-          break;
-        }
-        case 117: {
-          FltParam = input.ReadFloat();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

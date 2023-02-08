@@ -9,512 +9,515 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGMsgSkillResult.proto</summary>
-public static partial class GCGMsgSkillResultReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGMsgSkillResult.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGMsgSkillResult.proto</summary>
+  public static partial class GCGMsgSkillResultReflection {
 
-  static GCGMsgSkillResultReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdHQ0dNc2dTa2lsbFJlc3VsdC5wcm90bxoVR0NHRGFtYWdlRGV0YWlsLnBy",
-          "b3RvIocCChFHQ0dNc2dTa2lsbFJlc3VsdBIbChNVbmszMzAwX05JR0RDSUdM",
-          "QUtFGAkgASgNEhgKEHRhcmdldF9jYXJkX2d1aWQYDSABKA0SGwoTVW5rMzMw",
-          "MF9QREJBR0pJTkZQRhgEIAEoDRIlCgtkZXRhaWxfbGlzdBgFIAMoCzIQLkdD",
-          "R0RhbWFnZURldGFpbBIQCghza2lsbF9pZBgOIAEoDRIOCgZkYW1hZ2UYByAB",
-          "KA0SGwoTVW5rMzMwMF9FUE5EQ0lBSk9KUBgMIAEoDRIbChNVbmszMzAwX05O",
-          "SkFPRUhOUFBEGA8gASgNEhsKE1VuazMzMDBfTFBHTE9DRERQQ0wYCiABKA1C",
-          "FgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GCGDamageDetailReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGMsgSkillResult), global::GCGMsgSkillResult.Parser, new[]{ "Unk3300NIGDCIGLAKE", "TargetCardGuid", "Unk3300PDBAGJINFPF", "DetailList", "SkillId", "Damage", "Unk3300EPNDCIAJOJP", "Unk3300NNJAOEHNPPD", "Unk3300LPGLOCDDPCL" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGMsgSkillResult.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGMsgSkillResultReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdHQ0dNc2dTa2lsbFJlc3VsdC5wcm90bxoVR0NHRGFtYWdlRGV0YWlsLnBy",
+            "b3RvIocCChFHQ0dNc2dTa2lsbFJlc3VsdBIbChNVbmszMzAwX05JR0RDSUdM",
+            "QUtFGAkgASgNEhgKEHRhcmdldF9jYXJkX2d1aWQYDSABKA0SGwoTVW5rMzMw",
+            "MF9QREJBR0pJTkZQRhgEIAEoDRIlCgtkZXRhaWxfbGlzdBgFIAMoCzIQLkdD",
+            "R0RhbWFnZURldGFpbBIQCghza2lsbF9pZBgOIAEoDRIOCgZkYW1hZ2UYByAB",
+            "KA0SGwoTVW5rMzMwMF9FUE5EQ0lBSk9KUBgMIAEoDRIbChNVbmszMzAwX05O",
+            "SkFPRUhOUFBEGA8gASgNEhsKE1VuazMzMDBfTFBHTE9DRERQQ0wYCiABKA1C",
+            "DKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.GCGDamageDetailReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GCGMsgSkillResult), global::NewProtos.GCGMsgSkillResult.Parser, new[]{ "Unk3300NIGDCIGLAKE", "TargetCardGuid", "Unk3300PDBAGJINFPF", "DetailList", "SkillId", "Damage", "Unk3300EPNDCIAJOJP", "Unk3300NNJAOEHNPPD", "Unk3300LPGLOCDDPCL" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GCGMsgSkillResult : pb::IMessage<GCGMsgSkillResult>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGMsgSkillResult> _parser = new pb::MessageParser<GCGMsgSkillResult>(() => new GCGMsgSkillResult());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGMsgSkillResult> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.GCGMsgSkillResultReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGMsgSkillResult() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGMsgSkillResult(GCGMsgSkillResult other) : this() {
+      unk3300NIGDCIGLAKE_ = other.unk3300NIGDCIGLAKE_;
+      targetCardGuid_ = other.targetCardGuid_;
+      unk3300PDBAGJINFPF_ = other.unk3300PDBAGJINFPF_;
+      detailList_ = other.detailList_.Clone();
+      skillId_ = other.skillId_;
+      damage_ = other.damage_;
+      unk3300EPNDCIAJOJP_ = other.unk3300EPNDCIAJOJP_;
+      unk3300NNJAOEHNPPD_ = other.unk3300NNJAOEHNPPD_;
+      unk3300LPGLOCDDPCL_ = other.unk3300LPGLOCDDPCL_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGMsgSkillResult Clone() {
+      return new GCGMsgSkillResult(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_NIGDCIGLAKE" field.</summary>
+    public const int Unk3300NIGDCIGLAKEFieldNumber = 9;
+    private uint unk3300NIGDCIGLAKE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NIGDCIGLAKE {
+      get { return unk3300NIGDCIGLAKE_; }
+      set {
+        unk3300NIGDCIGLAKE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_card_guid" field.</summary>
+    public const int TargetCardGuidFieldNumber = 13;
+    private uint targetCardGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TargetCardGuid {
+      get { return targetCardGuid_; }
+      set {
+        targetCardGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PDBAGJINFPF" field.</summary>
+    public const int Unk3300PDBAGJINFPFFieldNumber = 4;
+    private uint unk3300PDBAGJINFPF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PDBAGJINFPF {
+      get { return unk3300PDBAGJINFPF_; }
+      set {
+        unk3300PDBAGJINFPF_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "detail_list" field.</summary>
+    public const int DetailListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::NewProtos.GCGDamageDetail> _repeated_detailList_codec
+        = pb::FieldCodec.ForMessage(42, global::NewProtos.GCGDamageDetail.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.GCGDamageDetail> detailList_ = new pbc::RepeatedField<global::NewProtos.GCGDamageDetail>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.GCGDamageDetail> DetailList {
+      get { return detailList_; }
+    }
+
+    /// <summary>Field number for the "skill_id" field.</summary>
+    public const int SkillIdFieldNumber = 14;
+    private uint skillId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillId {
+      get { return skillId_; }
+      set {
+        skillId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "damage" field.</summary>
+    public const int DamageFieldNumber = 7;
+    private uint damage_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Damage {
+      get { return damage_; }
+      set {
+        damage_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EPNDCIAJOJP" field.</summary>
+    public const int Unk3300EPNDCIAJOJPFieldNumber = 12;
+    private uint unk3300EPNDCIAJOJP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300EPNDCIAJOJP {
+      get { return unk3300EPNDCIAJOJP_; }
+      set {
+        unk3300EPNDCIAJOJP_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NNJAOEHNPPD" field.</summary>
+    public const int Unk3300NNJAOEHNPPDFieldNumber = 15;
+    private uint unk3300NNJAOEHNPPD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NNJAOEHNPPD {
+      get { return unk3300NNJAOEHNPPD_; }
+      set {
+        unk3300NNJAOEHNPPD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LPGLOCDDPCL" field.</summary>
+    public const int Unk3300LPGLOCDDPCLFieldNumber = 10;
+    private uint unk3300LPGLOCDDPCL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LPGLOCDDPCL {
+      get { return unk3300LPGLOCDDPCL_; }
+      set {
+        unk3300LPGLOCDDPCL_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGMsgSkillResult);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGMsgSkillResult other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Unk3300NIGDCIGLAKE != other.Unk3300NIGDCIGLAKE) return false;
+      if (TargetCardGuid != other.TargetCardGuid) return false;
+      if (Unk3300PDBAGJINFPF != other.Unk3300PDBAGJINFPF) return false;
+      if(!detailList_.Equals(other.detailList_)) return false;
+      if (SkillId != other.SkillId) return false;
+      if (Damage != other.Damage) return false;
+      if (Unk3300EPNDCIAJOJP != other.Unk3300EPNDCIAJOJP) return false;
+      if (Unk3300NNJAOEHNPPD != other.Unk3300NNJAOEHNPPD) return false;
+      if (Unk3300LPGLOCDDPCL != other.Unk3300LPGLOCDDPCL) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Unk3300NIGDCIGLAKE != 0) hash ^= Unk3300NIGDCIGLAKE.GetHashCode();
+      if (TargetCardGuid != 0) hash ^= TargetCardGuid.GetHashCode();
+      if (Unk3300PDBAGJINFPF != 0) hash ^= Unk3300PDBAGJINFPF.GetHashCode();
+      hash ^= detailList_.GetHashCode();
+      if (SkillId != 0) hash ^= SkillId.GetHashCode();
+      if (Damage != 0) hash ^= Damage.GetHashCode();
+      if (Unk3300EPNDCIAJOJP != 0) hash ^= Unk3300EPNDCIAJOJP.GetHashCode();
+      if (Unk3300NNJAOEHNPPD != 0) hash ^= Unk3300NNJAOEHNPPD.GetHashCode();
+      if (Unk3300LPGLOCDDPCL != 0) hash ^= Unk3300LPGLOCDDPCL.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Unk3300PDBAGJINFPF != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300PDBAGJINFPF);
+      }
+      detailList_.WriteTo(output, _repeated_detailList_codec);
+      if (Damage != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Damage);
+      }
+      if (Unk3300NIGDCIGLAKE != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300NIGDCIGLAKE);
+      }
+      if (Unk3300LPGLOCDDPCL != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300LPGLOCDDPCL);
+      }
+      if (Unk3300EPNDCIAJOJP != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300EPNDCIAJOJP);
+      }
+      if (TargetCardGuid != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(TargetCardGuid);
+      }
+      if (SkillId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(SkillId);
+      }
+      if (Unk3300NNJAOEHNPPD != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300NNJAOEHNPPD);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300PDBAGJINFPF != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300PDBAGJINFPF);
+      }
+      detailList_.WriteTo(ref output, _repeated_detailList_codec);
+      if (Damage != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Damage);
+      }
+      if (Unk3300NIGDCIGLAKE != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(Unk3300NIGDCIGLAKE);
+      }
+      if (Unk3300LPGLOCDDPCL != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300LPGLOCDDPCL);
+      }
+      if (Unk3300EPNDCIAJOJP != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300EPNDCIAJOJP);
+      }
+      if (TargetCardGuid != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(TargetCardGuid);
+      }
+      if (SkillId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(SkillId);
+      }
+      if (Unk3300NNJAOEHNPPD != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300NNJAOEHNPPD);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Unk3300NIGDCIGLAKE != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NIGDCIGLAKE);
+      }
+      if (TargetCardGuid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetCardGuid);
+      }
+      if (Unk3300PDBAGJINFPF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PDBAGJINFPF);
+      }
+      size += detailList_.CalculateSize(_repeated_detailList_codec);
+      if (SkillId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
+      }
+      if (Damage != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Damage);
+      }
+      if (Unk3300EPNDCIAJOJP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EPNDCIAJOJP);
+      }
+      if (Unk3300NNJAOEHNPPD != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NNJAOEHNPPD);
+      }
+      if (Unk3300LPGLOCDDPCL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPGLOCDDPCL);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGMsgSkillResult other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Unk3300NIGDCIGLAKE != 0) {
+        Unk3300NIGDCIGLAKE = other.Unk3300NIGDCIGLAKE;
+      }
+      if (other.TargetCardGuid != 0) {
+        TargetCardGuid = other.TargetCardGuid;
+      }
+      if (other.Unk3300PDBAGJINFPF != 0) {
+        Unk3300PDBAGJINFPF = other.Unk3300PDBAGJINFPF;
+      }
+      detailList_.Add(other.detailList_);
+      if (other.SkillId != 0) {
+        SkillId = other.SkillId;
+      }
+      if (other.Damage != 0) {
+        Damage = other.Damage;
+      }
+      if (other.Unk3300EPNDCIAJOJP != 0) {
+        Unk3300EPNDCIAJOJP = other.Unk3300EPNDCIAJOJP;
+      }
+      if (other.Unk3300NNJAOEHNPPD != 0) {
+        Unk3300NNJAOEHNPPD = other.Unk3300NNJAOEHNPPD;
+      }
+      if (other.Unk3300LPGLOCDDPCL != 0) {
+        Unk3300LPGLOCDDPCL = other.Unk3300LPGLOCDDPCL;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 32: {
+            Unk3300PDBAGJINFPF = input.ReadUInt32();
+            break;
+          }
+          case 42: {
+            detailList_.AddEntriesFrom(input, _repeated_detailList_codec);
+            break;
+          }
+          case 56: {
+            Damage = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300NIGDCIGLAKE = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            Unk3300LPGLOCDDPCL = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300EPNDCIAJOJP = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            TargetCardGuid = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Unk3300NNJAOEHNPPD = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 32: {
+            Unk3300PDBAGJINFPF = input.ReadUInt32();
+            break;
+          }
+          case 42: {
+            detailList_.AddEntriesFrom(ref input, _repeated_detailList_codec);
+            break;
+          }
+          case 56: {
+            Damage = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Unk3300NIGDCIGLAKE = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            Unk3300LPGLOCDDPCL = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300EPNDCIAJOJP = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            TargetCardGuid = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            SkillId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Unk3300NNJAOEHNPPD = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GCGMsgSkillResult : pb::IMessage<GCGMsgSkillResult>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGMsgSkillResult> _parser = new pb::MessageParser<GCGMsgSkillResult>(() => new GCGMsgSkillResult());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGMsgSkillResult> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGMsgSkillResultReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGMsgSkillResult() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGMsgSkillResult(GCGMsgSkillResult other) : this() {
-    unk3300NIGDCIGLAKE_ = other.unk3300NIGDCIGLAKE_;
-    targetCardGuid_ = other.targetCardGuid_;
-    unk3300PDBAGJINFPF_ = other.unk3300PDBAGJINFPF_;
-    detailList_ = other.detailList_.Clone();
-    skillId_ = other.skillId_;
-    damage_ = other.damage_;
-    unk3300EPNDCIAJOJP_ = other.unk3300EPNDCIAJOJP_;
-    unk3300NNJAOEHNPPD_ = other.unk3300NNJAOEHNPPD_;
-    unk3300LPGLOCDDPCL_ = other.unk3300LPGLOCDDPCL_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGMsgSkillResult Clone() {
-    return new GCGMsgSkillResult(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_NIGDCIGLAKE" field.</summary>
-  public const int Unk3300NIGDCIGLAKEFieldNumber = 9;
-  private uint unk3300NIGDCIGLAKE_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300NIGDCIGLAKE {
-    get { return unk3300NIGDCIGLAKE_; }
-    set {
-      unk3300NIGDCIGLAKE_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "target_card_guid" field.</summary>
-  public const int TargetCardGuidFieldNumber = 13;
-  private uint targetCardGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TargetCardGuid {
-    get { return targetCardGuid_; }
-    set {
-      targetCardGuid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_PDBAGJINFPF" field.</summary>
-  public const int Unk3300PDBAGJINFPFFieldNumber = 4;
-  private uint unk3300PDBAGJINFPF_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300PDBAGJINFPF {
-    get { return unk3300PDBAGJINFPF_; }
-    set {
-      unk3300PDBAGJINFPF_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "detail_list" field.</summary>
-  public const int DetailListFieldNumber = 5;
-  private static readonly pb::FieldCodec<global::GCGDamageDetail> _repeated_detailList_codec
-      = pb::FieldCodec.ForMessage(42, global::GCGDamageDetail.Parser);
-  private readonly pbc::RepeatedField<global::GCGDamageDetail> detailList_ = new pbc::RepeatedField<global::GCGDamageDetail>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGDamageDetail> DetailList {
-    get { return detailList_; }
-  }
-
-  /// <summary>Field number for the "skill_id" field.</summary>
-  public const int SkillIdFieldNumber = 14;
-  private uint skillId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SkillId {
-    get { return skillId_; }
-    set {
-      skillId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "damage" field.</summary>
-  public const int DamageFieldNumber = 7;
-  private uint damage_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Damage {
-    get { return damage_; }
-    set {
-      damage_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_EPNDCIAJOJP" field.</summary>
-  public const int Unk3300EPNDCIAJOJPFieldNumber = 12;
-  private uint unk3300EPNDCIAJOJP_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300EPNDCIAJOJP {
-    get { return unk3300EPNDCIAJOJP_; }
-    set {
-      unk3300EPNDCIAJOJP_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_NNJAOEHNPPD" field.</summary>
-  public const int Unk3300NNJAOEHNPPDFieldNumber = 15;
-  private uint unk3300NNJAOEHNPPD_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300NNJAOEHNPPD {
-    get { return unk3300NNJAOEHNPPD_; }
-    set {
-      unk3300NNJAOEHNPPD_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_LPGLOCDDPCL" field.</summary>
-  public const int Unk3300LPGLOCDDPCLFieldNumber = 10;
-  private uint unk3300LPGLOCDDPCL_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300LPGLOCDDPCL {
-    get { return unk3300LPGLOCDDPCL_; }
-    set {
-      unk3300LPGLOCDDPCL_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGMsgSkillResult);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGMsgSkillResult other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Unk3300NIGDCIGLAKE != other.Unk3300NIGDCIGLAKE) return false;
-    if (TargetCardGuid != other.TargetCardGuid) return false;
-    if (Unk3300PDBAGJINFPF != other.Unk3300PDBAGJINFPF) return false;
-    if(!detailList_.Equals(other.detailList_)) return false;
-    if (SkillId != other.SkillId) return false;
-    if (Damage != other.Damage) return false;
-    if (Unk3300EPNDCIAJOJP != other.Unk3300EPNDCIAJOJP) return false;
-    if (Unk3300NNJAOEHNPPD != other.Unk3300NNJAOEHNPPD) return false;
-    if (Unk3300LPGLOCDDPCL != other.Unk3300LPGLOCDDPCL) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Unk3300NIGDCIGLAKE != 0) hash ^= Unk3300NIGDCIGLAKE.GetHashCode();
-    if (TargetCardGuid != 0) hash ^= TargetCardGuid.GetHashCode();
-    if (Unk3300PDBAGJINFPF != 0) hash ^= Unk3300PDBAGJINFPF.GetHashCode();
-    hash ^= detailList_.GetHashCode();
-    if (SkillId != 0) hash ^= SkillId.GetHashCode();
-    if (Damage != 0) hash ^= Damage.GetHashCode();
-    if (Unk3300EPNDCIAJOJP != 0) hash ^= Unk3300EPNDCIAJOJP.GetHashCode();
-    if (Unk3300NNJAOEHNPPD != 0) hash ^= Unk3300NNJAOEHNPPD.GetHashCode();
-    if (Unk3300LPGLOCDDPCL != 0) hash ^= Unk3300LPGLOCDDPCL.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Unk3300PDBAGJINFPF != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Unk3300PDBAGJINFPF);
-    }
-    detailList_.WriteTo(output, _repeated_detailList_codec);
-    if (Damage != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Damage);
-    }
-    if (Unk3300NIGDCIGLAKE != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(Unk3300NIGDCIGLAKE);
-    }
-    if (Unk3300LPGLOCDDPCL != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(Unk3300LPGLOCDDPCL);
-    }
-    if (Unk3300EPNDCIAJOJP != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300EPNDCIAJOJP);
-    }
-    if (TargetCardGuid != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(TargetCardGuid);
-    }
-    if (SkillId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(SkillId);
-    }
-    if (Unk3300NNJAOEHNPPD != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Unk3300NNJAOEHNPPD);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Unk3300PDBAGJINFPF != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Unk3300PDBAGJINFPF);
-    }
-    detailList_.WriteTo(ref output, _repeated_detailList_codec);
-    if (Damage != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Damage);
-    }
-    if (Unk3300NIGDCIGLAKE != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(Unk3300NIGDCIGLAKE);
-    }
-    if (Unk3300LPGLOCDDPCL != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(Unk3300LPGLOCDDPCL);
-    }
-    if (Unk3300EPNDCIAJOJP != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300EPNDCIAJOJP);
-    }
-    if (TargetCardGuid != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(TargetCardGuid);
-    }
-    if (SkillId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(SkillId);
-    }
-    if (Unk3300NNJAOEHNPPD != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Unk3300NNJAOEHNPPD);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Unk3300NIGDCIGLAKE != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NIGDCIGLAKE);
-    }
-    if (TargetCardGuid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetCardGuid);
-    }
-    if (Unk3300PDBAGJINFPF != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PDBAGJINFPF);
-    }
-    size += detailList_.CalculateSize(_repeated_detailList_codec);
-    if (SkillId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillId);
-    }
-    if (Damage != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Damage);
-    }
-    if (Unk3300EPNDCIAJOJP != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EPNDCIAJOJP);
-    }
-    if (Unk3300NNJAOEHNPPD != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NNJAOEHNPPD);
-    }
-    if (Unk3300LPGLOCDDPCL != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPGLOCDDPCL);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGMsgSkillResult other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Unk3300NIGDCIGLAKE != 0) {
-      Unk3300NIGDCIGLAKE = other.Unk3300NIGDCIGLAKE;
-    }
-    if (other.TargetCardGuid != 0) {
-      TargetCardGuid = other.TargetCardGuid;
-    }
-    if (other.Unk3300PDBAGJINFPF != 0) {
-      Unk3300PDBAGJINFPF = other.Unk3300PDBAGJINFPF;
-    }
-    detailList_.Add(other.detailList_);
-    if (other.SkillId != 0) {
-      SkillId = other.SkillId;
-    }
-    if (other.Damage != 0) {
-      Damage = other.Damage;
-    }
-    if (other.Unk3300EPNDCIAJOJP != 0) {
-      Unk3300EPNDCIAJOJP = other.Unk3300EPNDCIAJOJP;
-    }
-    if (other.Unk3300NNJAOEHNPPD != 0) {
-      Unk3300NNJAOEHNPPD = other.Unk3300NNJAOEHNPPD;
-    }
-    if (other.Unk3300LPGLOCDDPCL != 0) {
-      Unk3300LPGLOCDDPCL = other.Unk3300LPGLOCDDPCL;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 32: {
-          Unk3300PDBAGJINFPF = input.ReadUInt32();
-          break;
-        }
-        case 42: {
-          detailList_.AddEntriesFrom(input, _repeated_detailList_codec);
-          break;
-        }
-        case 56: {
-          Damage = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Unk3300NIGDCIGLAKE = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          Unk3300LPGLOCDDPCL = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Unk3300EPNDCIAJOJP = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          TargetCardGuid = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          SkillId = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          Unk3300NNJAOEHNPPD = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 32: {
-          Unk3300PDBAGJINFPF = input.ReadUInt32();
-          break;
-        }
-        case 42: {
-          detailList_.AddEntriesFrom(ref input, _repeated_detailList_codec);
-          break;
-        }
-        case 56: {
-          Damage = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Unk3300NIGDCIGLAKE = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          Unk3300LPGLOCDDPCL = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Unk3300EPNDCIAJOJP = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          TargetCardGuid = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          SkillId = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          Unk3300NNJAOEHNPPD = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

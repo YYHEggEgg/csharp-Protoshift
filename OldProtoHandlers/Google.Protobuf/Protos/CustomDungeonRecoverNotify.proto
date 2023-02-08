@@ -20,7 +20,7 @@ import "CustomDungeon.proto";
 import "EnterCustomDungeonType.proto";
 import "TryCustomDungeonType.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 6217
 // EnetChannelId: 0

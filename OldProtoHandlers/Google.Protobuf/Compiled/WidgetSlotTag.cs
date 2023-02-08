@@ -9,37 +9,39 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from WidgetSlotTag.proto</summary>
-public static partial class WidgetSlotTagReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for WidgetSlotTag.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from WidgetSlotTag.proto</summary>
+  public static partial class WidgetSlotTagReflection {
 
-  static WidgetSlotTagReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChNXaWRnZXRTbG90VGFnLnByb3RvKlEKDVdpZGdldFNsb3RUYWcSHQoZV0lE",
-          "R0VUX1NMT1RfVEFHX1FVSUNLX1VTRRAAEiEKHVdJREdFVF9TTE9UX1RBR19B",
-          "VFRBQ0hfQVZBVEFSEAFCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90",
-          "b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::WidgetSlotTag), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for WidgetSlotTag.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static WidgetSlotTagReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChNXaWRnZXRTbG90VGFnLnByb3RvKlEKDVdpZGdldFNsb3RUYWcSHQoZV0lE",
+            "R0VUX1NMT1RfVEFHX1FVSUNLX1VTRRAAEiEKHVdJREdFVF9TTE9UX1RBR19B",
+            "VFRBQ0hfQVZBVEFSEAFCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.WidgetSlotTag), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum WidgetSlotTag {
+    [pbr::OriginalName("WIDGET_SLOT_TAG_QUICK_USE")] QuickUse = 0,
+    [pbr::OriginalName("WIDGET_SLOT_TAG_ATTACH_AVATAR")] AttachAvatar = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum WidgetSlotTag {
-  [pbr::OriginalName("WIDGET_SLOT_TAG_QUICK_USE")] QuickUse = 0,
-  [pbr::OriginalName("WIDGET_SLOT_TAG_ATTACH_AVATAR")] AttachAvatar = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

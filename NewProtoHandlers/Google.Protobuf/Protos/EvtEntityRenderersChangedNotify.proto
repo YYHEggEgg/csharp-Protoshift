@@ -19,7 +19,7 @@ syntax = "proto3";
 import "EntityRendererChangedInfo.proto";
 import "ForwardType.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message EvtEntityRenderersChangedNotify {
   // enum CmdId {

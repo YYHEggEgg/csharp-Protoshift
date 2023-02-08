@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ChannelerSlabLoopDungeonInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message ChannelerSlabLoopDungeonStageInfo {
   repeated uint32 taken_reward_index_list = 5;

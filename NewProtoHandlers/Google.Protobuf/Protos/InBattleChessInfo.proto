@@ -20,7 +20,7 @@ import "ChessCardInfo.proto";
 import "ChessMysteryInfo.proto";
 import "ChessPlayerInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message InBattleChessInfo {
   uint32 round = 2;

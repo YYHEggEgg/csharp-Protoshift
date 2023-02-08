@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "MultistageSettleWatcherInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message InBattleMechanicusSettleInfo {
   uint64 scene_time_ms = 15;

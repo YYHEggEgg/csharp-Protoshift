@@ -19,7 +19,7 @@ syntax = "proto3";
 import "PlayerLocationInfo.proto";
 import "PlayerWorldLocationInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message WorldPlayerLocationNotify {
   // enum CmdId {

@@ -9,421 +9,424 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from LanternRiteActivityDetailInfo.proto</summary>
-public static partial class LanternRiteActivityDetailInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for LanternRiteActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from LanternRiteActivityDetailInfo.proto</summary>
+  public static partial class LanternRiteActivityDetailInfoReflection {
 
-  static LanternRiteActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiNMYW50ZXJuUml0ZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxobTGFudGVy",
-          "blByb2plY3Rpb25JbmZvLnByb3RvGh5MYW50ZXJuUml0ZUZpcmV3b3Jrc0lu",
-          "Zm8ucHJvdG8aFlNhbHZhZ2VTdGFnZUluZm8ucHJvdG8ihAIKHUxhbnRlcm5S",
-          "aXRlQWN0aXZpdHlEZXRhaWxJbmZvEioKD3N0YWdlX2luZm9fbGlzdBgFIAMo",
-          "CzIRLlNhbHZhZ2VTdGFnZUluZm8SMQoOZmlyZXdvcmtzX2luZm8YDyABKAsy",
-          "GS5MYW50ZXJuUml0ZUZpcmV3b3Jrc0luZm8SGwoTVW5rMzMwMF9QREZKTkNE",
-          "R0tHSBgLIAEoCBIvCg9wcm9qZWN0aW9uX2luZm8YAyABKAsyFi5MYW50ZXJu",
-          "UHJvamVjdGlvbkluZm8SGwoTVW5rMzMwMF9ES0JKTENJTUJBTBgIIAEoCBIZ",
-          "ChFpc19jb250ZW50X2Nsb3NlZBgOIAEoCEIWChRvcmcuc29yYXBvaW50YS5w",
-          "cm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::LanternProjectionInfoReflection.Descriptor, global::LanternRiteFireworksInfoReflection.Descriptor, global::SalvageStageInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::LanternRiteActivityDetailInfo), global::LanternRiteActivityDetailInfo.Parser, new[]{ "StageInfoList", "FireworksInfo", "Unk3300PDFJNCDGKGH", "ProjectionInfo", "Unk3300DKBJLCIMBAL", "IsContentClosed" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for LanternRiteActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static LanternRiteActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiNMYW50ZXJuUml0ZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxobTGFudGVy",
+            "blByb2plY3Rpb25JbmZvLnByb3RvGh5MYW50ZXJuUml0ZUZpcmV3b3Jrc0lu",
+            "Zm8ucHJvdG8aFlNhbHZhZ2VTdGFnZUluZm8ucHJvdG8ihAIKHUxhbnRlcm5S",
+            "aXRlQWN0aXZpdHlEZXRhaWxJbmZvEioKD3N0YWdlX2luZm9fbGlzdBgFIAMo",
+            "CzIRLlNhbHZhZ2VTdGFnZUluZm8SMQoOZmlyZXdvcmtzX2luZm8YDyABKAsy",
+            "GS5MYW50ZXJuUml0ZUZpcmV3b3Jrc0luZm8SGwoTVW5rMzMwMF9QREZKTkNE",
+            "R0tHSBgLIAEoCBIvCg9wcm9qZWN0aW9uX2luZm8YAyABKAsyFi5MYW50ZXJu",
+            "UHJvamVjdGlvbkluZm8SGwoTVW5rMzMwMF9ES0JKTENJTUJBTBgIIAEoCBIZ",
+            "ChFpc19jb250ZW50X2Nsb3NlZBgOIAEoCEIMqgIJTmV3UHJvdG9zYgZwcm90",
+            "bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.LanternProjectionInfoReflection.Descriptor, global::NewProtos.LanternRiteFireworksInfoReflection.Descriptor, global::NewProtos.SalvageStageInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.LanternRiteActivityDetailInfo), global::NewProtos.LanternRiteActivityDetailInfo.Parser, new[]{ "StageInfoList", "FireworksInfo", "Unk3300PDFJNCDGKGH", "ProjectionInfo", "Unk3300DKBJLCIMBAL", "IsContentClosed" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class LanternRiteActivityDetailInfo : pb::IMessage<LanternRiteActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<LanternRiteActivityDetailInfo> _parser = new pb::MessageParser<LanternRiteActivityDetailInfo>(() => new LanternRiteActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<LanternRiteActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.LanternRiteActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LanternRiteActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LanternRiteActivityDetailInfo(LanternRiteActivityDetailInfo other) : this() {
+      stageInfoList_ = other.stageInfoList_.Clone();
+      fireworksInfo_ = other.fireworksInfo_ != null ? other.fireworksInfo_.Clone() : null;
+      unk3300PDFJNCDGKGH_ = other.unk3300PDFJNCDGKGH_;
+      projectionInfo_ = other.projectionInfo_ != null ? other.projectionInfo_.Clone() : null;
+      unk3300DKBJLCIMBAL_ = other.unk3300DKBJLCIMBAL_;
+      isContentClosed_ = other.isContentClosed_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LanternRiteActivityDetailInfo Clone() {
+      return new LanternRiteActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "stage_info_list" field.</summary>
+    public const int StageInfoListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::NewProtos.SalvageStageInfo> _repeated_stageInfoList_codec
+        = pb::FieldCodec.ForMessage(42, global::NewProtos.SalvageStageInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.SalvageStageInfo> stageInfoList_ = new pbc::RepeatedField<global::NewProtos.SalvageStageInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.SalvageStageInfo> StageInfoList {
+      get { return stageInfoList_; }
+    }
+
+    /// <summary>Field number for the "fireworks_info" field.</summary>
+    public const int FireworksInfoFieldNumber = 15;
+    private global::NewProtos.LanternRiteFireworksInfo fireworksInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.LanternRiteFireworksInfo FireworksInfo {
+      get { return fireworksInfo_; }
+      set {
+        fireworksInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PDFJNCDGKGH" field.</summary>
+    public const int Unk3300PDFJNCDGKGHFieldNumber = 11;
+    private bool unk3300PDFJNCDGKGH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300PDFJNCDGKGH {
+      get { return unk3300PDFJNCDGKGH_; }
+      set {
+        unk3300PDFJNCDGKGH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "projection_info" field.</summary>
+    public const int ProjectionInfoFieldNumber = 3;
+    private global::NewProtos.LanternProjectionInfo projectionInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.LanternProjectionInfo ProjectionInfo {
+      get { return projectionInfo_; }
+      set {
+        projectionInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_DKBJLCIMBAL" field.</summary>
+    public const int Unk3300DKBJLCIMBALFieldNumber = 8;
+    private bool unk3300DKBJLCIMBAL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Unk3300DKBJLCIMBAL {
+      get { return unk3300DKBJLCIMBAL_; }
+      set {
+        unk3300DKBJLCIMBAL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 14;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as LanternRiteActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(LanternRiteActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!stageInfoList_.Equals(other.stageInfoList_)) return false;
+      if (!object.Equals(FireworksInfo, other.FireworksInfo)) return false;
+      if (Unk3300PDFJNCDGKGH != other.Unk3300PDFJNCDGKGH) return false;
+      if (!object.Equals(ProjectionInfo, other.ProjectionInfo)) return false;
+      if (Unk3300DKBJLCIMBAL != other.Unk3300DKBJLCIMBAL) return false;
+      if (IsContentClosed != other.IsContentClosed) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= stageInfoList_.GetHashCode();
+      if (fireworksInfo_ != null) hash ^= FireworksInfo.GetHashCode();
+      if (Unk3300PDFJNCDGKGH != false) hash ^= Unk3300PDFJNCDGKGH.GetHashCode();
+      if (projectionInfo_ != null) hash ^= ProjectionInfo.GetHashCode();
+      if (Unk3300DKBJLCIMBAL != false) hash ^= Unk3300DKBJLCIMBAL.GetHashCode();
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (projectionInfo_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(ProjectionInfo);
+      }
+      stageInfoList_.WriteTo(output, _repeated_stageInfoList_codec);
+      if (Unk3300DKBJLCIMBAL != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300DKBJLCIMBAL);
+      }
+      if (Unk3300PDFJNCDGKGH != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(Unk3300PDFJNCDGKGH);
+      }
+      if (IsContentClosed != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsContentClosed);
+      }
+      if (fireworksInfo_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(FireworksInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (projectionInfo_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(ProjectionInfo);
+      }
+      stageInfoList_.WriteTo(ref output, _repeated_stageInfoList_codec);
+      if (Unk3300DKBJLCIMBAL != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(Unk3300DKBJLCIMBAL);
+      }
+      if (Unk3300PDFJNCDGKGH != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(Unk3300PDFJNCDGKGH);
+      }
+      if (IsContentClosed != false) {
+        output.WriteRawTag(112);
+        output.WriteBool(IsContentClosed);
+      }
+      if (fireworksInfo_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(FireworksInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += stageInfoList_.CalculateSize(_repeated_stageInfoList_codec);
+      if (fireworksInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FireworksInfo);
+      }
+      if (Unk3300PDFJNCDGKGH != false) {
+        size += 1 + 1;
+      }
+      if (projectionInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProjectionInfo);
+      }
+      if (Unk3300DKBJLCIMBAL != false) {
+        size += 1 + 1;
+      }
+      if (IsContentClosed != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(LanternRiteActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      stageInfoList_.Add(other.stageInfoList_);
+      if (other.fireworksInfo_ != null) {
+        if (fireworksInfo_ == null) {
+          FireworksInfo = new global::NewProtos.LanternRiteFireworksInfo();
+        }
+        FireworksInfo.MergeFrom(other.FireworksInfo);
+      }
+      if (other.Unk3300PDFJNCDGKGH != false) {
+        Unk3300PDFJNCDGKGH = other.Unk3300PDFJNCDGKGH;
+      }
+      if (other.projectionInfo_ != null) {
+        if (projectionInfo_ == null) {
+          ProjectionInfo = new global::NewProtos.LanternProjectionInfo();
+        }
+        ProjectionInfo.MergeFrom(other.ProjectionInfo);
+      }
+      if (other.Unk3300DKBJLCIMBAL != false) {
+        Unk3300DKBJLCIMBAL = other.Unk3300DKBJLCIMBAL;
+      }
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 26: {
+            if (projectionInfo_ == null) {
+              ProjectionInfo = new global::NewProtos.LanternProjectionInfo();
+            }
+            input.ReadMessage(ProjectionInfo);
+            break;
+          }
+          case 42: {
+            stageInfoList_.AddEntriesFrom(input, _repeated_stageInfoList_codec);
+            break;
+          }
+          case 64: {
+            Unk3300DKBJLCIMBAL = input.ReadBool();
+            break;
+          }
+          case 88: {
+            Unk3300PDFJNCDGKGH = input.ReadBool();
+            break;
+          }
+          case 112: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 122: {
+            if (fireworksInfo_ == null) {
+              FireworksInfo = new global::NewProtos.LanternRiteFireworksInfo();
+            }
+            input.ReadMessage(FireworksInfo);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 26: {
+            if (projectionInfo_ == null) {
+              ProjectionInfo = new global::NewProtos.LanternProjectionInfo();
+            }
+            input.ReadMessage(ProjectionInfo);
+            break;
+          }
+          case 42: {
+            stageInfoList_.AddEntriesFrom(ref input, _repeated_stageInfoList_codec);
+            break;
+          }
+          case 64: {
+            Unk3300DKBJLCIMBAL = input.ReadBool();
+            break;
+          }
+          case 88: {
+            Unk3300PDFJNCDGKGH = input.ReadBool();
+            break;
+          }
+          case 112: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 122: {
+            if (fireworksInfo_ == null) {
+              FireworksInfo = new global::NewProtos.LanternRiteFireworksInfo();
+            }
+            input.ReadMessage(FireworksInfo);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class LanternRiteActivityDetailInfo : pb::IMessage<LanternRiteActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<LanternRiteActivityDetailInfo> _parser = new pb::MessageParser<LanternRiteActivityDetailInfo>(() => new LanternRiteActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<LanternRiteActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::LanternRiteActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public LanternRiteActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public LanternRiteActivityDetailInfo(LanternRiteActivityDetailInfo other) : this() {
-    stageInfoList_ = other.stageInfoList_.Clone();
-    fireworksInfo_ = other.fireworksInfo_ != null ? other.fireworksInfo_.Clone() : null;
-    unk3300PDFJNCDGKGH_ = other.unk3300PDFJNCDGKGH_;
-    projectionInfo_ = other.projectionInfo_ != null ? other.projectionInfo_.Clone() : null;
-    unk3300DKBJLCIMBAL_ = other.unk3300DKBJLCIMBAL_;
-    isContentClosed_ = other.isContentClosed_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public LanternRiteActivityDetailInfo Clone() {
-    return new LanternRiteActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "stage_info_list" field.</summary>
-  public const int StageInfoListFieldNumber = 5;
-  private static readonly pb::FieldCodec<global::SalvageStageInfo> _repeated_stageInfoList_codec
-      = pb::FieldCodec.ForMessage(42, global::SalvageStageInfo.Parser);
-  private readonly pbc::RepeatedField<global::SalvageStageInfo> stageInfoList_ = new pbc::RepeatedField<global::SalvageStageInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::SalvageStageInfo> StageInfoList {
-    get { return stageInfoList_; }
-  }
-
-  /// <summary>Field number for the "fireworks_info" field.</summary>
-  public const int FireworksInfoFieldNumber = 15;
-  private global::LanternRiteFireworksInfo fireworksInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::LanternRiteFireworksInfo FireworksInfo {
-    get { return fireworksInfo_; }
-    set {
-      fireworksInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_PDFJNCDGKGH" field.</summary>
-  public const int Unk3300PDFJNCDGKGHFieldNumber = 11;
-  private bool unk3300PDFJNCDGKGH_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Unk3300PDFJNCDGKGH {
-    get { return unk3300PDFJNCDGKGH_; }
-    set {
-      unk3300PDFJNCDGKGH_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "projection_info" field.</summary>
-  public const int ProjectionInfoFieldNumber = 3;
-  private global::LanternProjectionInfo projectionInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::LanternProjectionInfo ProjectionInfo {
-    get { return projectionInfo_; }
-    set {
-      projectionInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_DKBJLCIMBAL" field.</summary>
-  public const int Unk3300DKBJLCIMBALFieldNumber = 8;
-  private bool unk3300DKBJLCIMBAL_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Unk3300DKBJLCIMBAL {
-    get { return unk3300DKBJLCIMBAL_; }
-    set {
-      unk3300DKBJLCIMBAL_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_content_closed" field.</summary>
-  public const int IsContentClosedFieldNumber = 14;
-  private bool isContentClosed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsContentClosed {
-    get { return isContentClosed_; }
-    set {
-      isContentClosed_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as LanternRiteActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(LanternRiteActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!stageInfoList_.Equals(other.stageInfoList_)) return false;
-    if (!object.Equals(FireworksInfo, other.FireworksInfo)) return false;
-    if (Unk3300PDFJNCDGKGH != other.Unk3300PDFJNCDGKGH) return false;
-    if (!object.Equals(ProjectionInfo, other.ProjectionInfo)) return false;
-    if (Unk3300DKBJLCIMBAL != other.Unk3300DKBJLCIMBAL) return false;
-    if (IsContentClosed != other.IsContentClosed) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= stageInfoList_.GetHashCode();
-    if (fireworksInfo_ != null) hash ^= FireworksInfo.GetHashCode();
-    if (Unk3300PDFJNCDGKGH != false) hash ^= Unk3300PDFJNCDGKGH.GetHashCode();
-    if (projectionInfo_ != null) hash ^= ProjectionInfo.GetHashCode();
-    if (Unk3300DKBJLCIMBAL != false) hash ^= Unk3300DKBJLCIMBAL.GetHashCode();
-    if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (projectionInfo_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(ProjectionInfo);
-    }
-    stageInfoList_.WriteTo(output, _repeated_stageInfoList_codec);
-    if (Unk3300DKBJLCIMBAL != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(Unk3300DKBJLCIMBAL);
-    }
-    if (Unk3300PDFJNCDGKGH != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(Unk3300PDFJNCDGKGH);
-    }
-    if (IsContentClosed != false) {
-      output.WriteRawTag(112);
-      output.WriteBool(IsContentClosed);
-    }
-    if (fireworksInfo_ != null) {
-      output.WriteRawTag(122);
-      output.WriteMessage(FireworksInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (projectionInfo_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(ProjectionInfo);
-    }
-    stageInfoList_.WriteTo(ref output, _repeated_stageInfoList_codec);
-    if (Unk3300DKBJLCIMBAL != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(Unk3300DKBJLCIMBAL);
-    }
-    if (Unk3300PDFJNCDGKGH != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(Unk3300PDFJNCDGKGH);
-    }
-    if (IsContentClosed != false) {
-      output.WriteRawTag(112);
-      output.WriteBool(IsContentClosed);
-    }
-    if (fireworksInfo_ != null) {
-      output.WriteRawTag(122);
-      output.WriteMessage(FireworksInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += stageInfoList_.CalculateSize(_repeated_stageInfoList_codec);
-    if (fireworksInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(FireworksInfo);
-    }
-    if (Unk3300PDFJNCDGKGH != false) {
-      size += 1 + 1;
-    }
-    if (projectionInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProjectionInfo);
-    }
-    if (Unk3300DKBJLCIMBAL != false) {
-      size += 1 + 1;
-    }
-    if (IsContentClosed != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(LanternRiteActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    stageInfoList_.Add(other.stageInfoList_);
-    if (other.fireworksInfo_ != null) {
-      if (fireworksInfo_ == null) {
-        FireworksInfo = new global::LanternRiteFireworksInfo();
-      }
-      FireworksInfo.MergeFrom(other.FireworksInfo);
-    }
-    if (other.Unk3300PDFJNCDGKGH != false) {
-      Unk3300PDFJNCDGKGH = other.Unk3300PDFJNCDGKGH;
-    }
-    if (other.projectionInfo_ != null) {
-      if (projectionInfo_ == null) {
-        ProjectionInfo = new global::LanternProjectionInfo();
-      }
-      ProjectionInfo.MergeFrom(other.ProjectionInfo);
-    }
-    if (other.Unk3300DKBJLCIMBAL != false) {
-      Unk3300DKBJLCIMBAL = other.Unk3300DKBJLCIMBAL;
-    }
-    if (other.IsContentClosed != false) {
-      IsContentClosed = other.IsContentClosed;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 26: {
-          if (projectionInfo_ == null) {
-            ProjectionInfo = new global::LanternProjectionInfo();
-          }
-          input.ReadMessage(ProjectionInfo);
-          break;
-        }
-        case 42: {
-          stageInfoList_.AddEntriesFrom(input, _repeated_stageInfoList_codec);
-          break;
-        }
-        case 64: {
-          Unk3300DKBJLCIMBAL = input.ReadBool();
-          break;
-        }
-        case 88: {
-          Unk3300PDFJNCDGKGH = input.ReadBool();
-          break;
-        }
-        case 112: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 122: {
-          if (fireworksInfo_ == null) {
-            FireworksInfo = new global::LanternRiteFireworksInfo();
-          }
-          input.ReadMessage(FireworksInfo);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 26: {
-          if (projectionInfo_ == null) {
-            ProjectionInfo = new global::LanternProjectionInfo();
-          }
-          input.ReadMessage(ProjectionInfo);
-          break;
-        }
-        case 42: {
-          stageInfoList_.AddEntriesFrom(ref input, _repeated_stageInfoList_codec);
-          break;
-        }
-        case 64: {
-          Unk3300DKBJLCIMBAL = input.ReadBool();
-          break;
-        }
-        case 88: {
-          Unk3300PDFJNCDGKGH = input.ReadBool();
-          break;
-        }
-        case 112: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 122: {
-          if (fireworksInfo_ == null) {
-            FireworksInfo = new global::LanternRiteFireworksInfo();
-          }
-          input.ReadMessage(FireworksInfo);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

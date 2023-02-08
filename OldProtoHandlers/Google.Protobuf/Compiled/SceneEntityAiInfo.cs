@@ -9,439 +9,442 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SceneEntityAiInfo.proto</summary>
-public static partial class SceneEntityAiInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SceneEntityAiInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SceneEntityAiInfo.proto</summary>
+  public static partial class SceneEntityAiInfoReflection {
 
-  static SceneEntityAiInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdTY2VuZUVudGl0eUFpSW5mby5wcm90bxoRU2VydmFudEluZm8ucHJvdG8a",
-          "DFZlY3Rvci5wcm90byLUAwoRU2NlbmVFbnRpdHlBaUluZm8SEgoKaXNfYWlf",
-          "b3BlbhgBIAEoCBIZCghib3JuX3BvcxgCIAEoCzIHLlZlY3RvchI4Cgxza2ls",
-          "bF9jZF9tYXAYAyADKAsyIi5TY2VuZUVudGl0eUFpSW5mby5Ta2lsbENkTWFw",
-          "RW50cnkSIgoMc2VydmFudF9pbmZvGAQgASgLMgwuU2VydmFudEluZm8SOgoN",
-          "YWlfdGhyZWF0X21hcBgFIAMoCzIjLlNjZW5lRW50aXR5QWlJbmZvLkFpVGhy",
-          "ZWF0TWFwRW50cnkSQwoSc2tpbGxfZ3JvdXBfY2RfbWFwGAYgAygLMicuU2Nl",
-          "bmVFbnRpdHlBaUluZm8uU2tpbGxHcm91cENkTWFwRW50cnkSEgoKY3VyX3Rh",
-          "Y3RpYxgHIAEoDRoxCg9Ta2lsbENkTWFwRW50cnkSCwoDa2V5GAEgASgNEg0K",
-          "BXZhbHVlGAIgASgNOgI4ARoyChBBaVRocmVhdE1hcEVudHJ5EgsKA2tleRgB",
-          "IAEoDRINCgV2YWx1ZRgCIAEoDToCOAEaNgoUU2tpbGxHcm91cENkTWFwRW50",
-          "cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIeChxlbXUuZ3Jh",
-          "c3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ServantInfoReflection.Descriptor, global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SceneEntityAiInfo), global::SceneEntityAiInfo.Parser, new[]{ "IsAiOpen", "BornPos", "SkillCdMap", "ServantInfo", "AiThreatMap", "SkillGroupCdMap", "CurTactic" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SceneEntityAiInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SceneEntityAiInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdTY2VuZUVudGl0eUFpSW5mby5wcm90bxoRU2VydmFudEluZm8ucHJvdG8a",
+            "DFZlY3Rvci5wcm90byLUAwoRU2NlbmVFbnRpdHlBaUluZm8SEgoKaXNfYWlf",
+            "b3BlbhgBIAEoCBIZCghib3JuX3BvcxgCIAEoCzIHLlZlY3RvchI4Cgxza2ls",
+            "bF9jZF9tYXAYAyADKAsyIi5TY2VuZUVudGl0eUFpSW5mby5Ta2lsbENkTWFw",
+            "RW50cnkSIgoMc2VydmFudF9pbmZvGAQgASgLMgwuU2VydmFudEluZm8SOgoN",
+            "YWlfdGhyZWF0X21hcBgFIAMoCzIjLlNjZW5lRW50aXR5QWlJbmZvLkFpVGhy",
+            "ZWF0TWFwRW50cnkSQwoSc2tpbGxfZ3JvdXBfY2RfbWFwGAYgAygLMicuU2Nl",
+            "bmVFbnRpdHlBaUluZm8uU2tpbGxHcm91cENkTWFwRW50cnkSEgoKY3VyX3Rh",
+            "Y3RpYxgHIAEoDRoxCg9Ta2lsbENkTWFwRW50cnkSCwoDa2V5GAEgASgNEg0K",
+            "BXZhbHVlGAIgASgNOgI4ARoyChBBaVRocmVhdE1hcEVudHJ5EgsKA2tleRgB",
+            "IAEoDRINCgV2YWx1ZRgCIAEoDToCOAEaNgoUU2tpbGxHcm91cENkTWFwRW50",
+            "cnkSCwoDa2V5GAEgASgNEg0KBXZhbHVlGAIgASgNOgI4AUIMqgIJT2xkUHJv",
+            "dG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ServantInfoReflection.Descriptor, global::OldProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.SceneEntityAiInfo), global::OldProtos.SceneEntityAiInfo.Parser, new[]{ "IsAiOpen", "BornPos", "SkillCdMap", "ServantInfo", "AiThreatMap", "SkillGroupCdMap", "CurTactic" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class SceneEntityAiInfo : pb::IMessage<SceneEntityAiInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SceneEntityAiInfo> _parser = new pb::MessageParser<SceneEntityAiInfo>(() => new SceneEntityAiInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SceneEntityAiInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.SceneEntityAiInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneEntityAiInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneEntityAiInfo(SceneEntityAiInfo other) : this() {
+      isAiOpen_ = other.isAiOpen_;
+      bornPos_ = other.bornPos_ != null ? other.bornPos_.Clone() : null;
+      skillCdMap_ = other.skillCdMap_.Clone();
+      servantInfo_ = other.servantInfo_ != null ? other.servantInfo_.Clone() : null;
+      aiThreatMap_ = other.aiThreatMap_.Clone();
+      skillGroupCdMap_ = other.skillGroupCdMap_.Clone();
+      curTactic_ = other.curTactic_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneEntityAiInfo Clone() {
+      return new SceneEntityAiInfo(this);
+    }
+
+    /// <summary>Field number for the "is_ai_open" field.</summary>
+    public const int IsAiOpenFieldNumber = 1;
+    private bool isAiOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsAiOpen {
+      get { return isAiOpen_; }
+      set {
+        isAiOpen_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "born_pos" field.</summary>
+    public const int BornPosFieldNumber = 2;
+    private global::OldProtos.Vector bornPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector BornPos {
+      get { return bornPos_; }
+      set {
+        bornPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_cd_map" field.</summary>
+    public const int SkillCdMapFieldNumber = 3;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_skillCdMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
+    private readonly pbc::MapField<uint, uint> skillCdMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> SkillCdMap {
+      get { return skillCdMap_; }
+    }
+
+    /// <summary>Field number for the "servant_info" field.</summary>
+    public const int ServantInfoFieldNumber = 4;
+    private global::OldProtos.ServantInfo servantInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ServantInfo ServantInfo {
+      get { return servantInfo_; }
+      set {
+        servantInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ai_threat_map" field.</summary>
+    public const int AiThreatMapFieldNumber = 5;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_aiThreatMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 42);
+    private readonly pbc::MapField<uint, uint> aiThreatMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> AiThreatMap {
+      get { return aiThreatMap_; }
+    }
+
+    /// <summary>Field number for the "skill_group_cd_map" field.</summary>
+    public const int SkillGroupCdMapFieldNumber = 6;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_skillGroupCdMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 50);
+    private readonly pbc::MapField<uint, uint> skillGroupCdMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> SkillGroupCdMap {
+      get { return skillGroupCdMap_; }
+    }
+
+    /// <summary>Field number for the "cur_tactic" field.</summary>
+    public const int CurTacticFieldNumber = 7;
+    private uint curTactic_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurTactic {
+      get { return curTactic_; }
+      set {
+        curTactic_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SceneEntityAiInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SceneEntityAiInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsAiOpen != other.IsAiOpen) return false;
+      if (!object.Equals(BornPos, other.BornPos)) return false;
+      if (!SkillCdMap.Equals(other.SkillCdMap)) return false;
+      if (!object.Equals(ServantInfo, other.ServantInfo)) return false;
+      if (!AiThreatMap.Equals(other.AiThreatMap)) return false;
+      if (!SkillGroupCdMap.Equals(other.SkillGroupCdMap)) return false;
+      if (CurTactic != other.CurTactic) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsAiOpen != false) hash ^= IsAiOpen.GetHashCode();
+      if (bornPos_ != null) hash ^= BornPos.GetHashCode();
+      hash ^= SkillCdMap.GetHashCode();
+      if (servantInfo_ != null) hash ^= ServantInfo.GetHashCode();
+      hash ^= AiThreatMap.GetHashCode();
+      hash ^= SkillGroupCdMap.GetHashCode();
+      if (CurTactic != 0) hash ^= CurTactic.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsAiOpen != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsAiOpen);
+      }
+      if (bornPos_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(BornPos);
+      }
+      skillCdMap_.WriteTo(output, _map_skillCdMap_codec);
+      if (servantInfo_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ServantInfo);
+      }
+      aiThreatMap_.WriteTo(output, _map_aiThreatMap_codec);
+      skillGroupCdMap_.WriteTo(output, _map_skillGroupCdMap_codec);
+      if (CurTactic != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(CurTactic);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsAiOpen != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsAiOpen);
+      }
+      if (bornPos_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(BornPos);
+      }
+      skillCdMap_.WriteTo(ref output, _map_skillCdMap_codec);
+      if (servantInfo_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(ServantInfo);
+      }
+      aiThreatMap_.WriteTo(ref output, _map_aiThreatMap_codec);
+      skillGroupCdMap_.WriteTo(ref output, _map_skillGroupCdMap_codec);
+      if (CurTactic != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(CurTactic);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsAiOpen != false) {
+        size += 1 + 1;
+      }
+      if (bornPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BornPos);
+      }
+      size += skillCdMap_.CalculateSize(_map_skillCdMap_codec);
+      if (servantInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServantInfo);
+      }
+      size += aiThreatMap_.CalculateSize(_map_aiThreatMap_codec);
+      size += skillGroupCdMap_.CalculateSize(_map_skillGroupCdMap_codec);
+      if (CurTactic != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurTactic);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SceneEntityAiInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsAiOpen != false) {
+        IsAiOpen = other.IsAiOpen;
+      }
+      if (other.bornPos_ != null) {
+        if (bornPos_ == null) {
+          BornPos = new global::OldProtos.Vector();
+        }
+        BornPos.MergeFrom(other.BornPos);
+      }
+      skillCdMap_.Add(other.skillCdMap_);
+      if (other.servantInfo_ != null) {
+        if (servantInfo_ == null) {
+          ServantInfo = new global::OldProtos.ServantInfo();
+        }
+        ServantInfo.MergeFrom(other.ServantInfo);
+      }
+      aiThreatMap_.Add(other.aiThreatMap_);
+      skillGroupCdMap_.Add(other.skillGroupCdMap_);
+      if (other.CurTactic != 0) {
+        CurTactic = other.CurTactic;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            IsAiOpen = input.ReadBool();
+            break;
+          }
+          case 18: {
+            if (bornPos_ == null) {
+              BornPos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(BornPos);
+            break;
+          }
+          case 26: {
+            skillCdMap_.AddEntriesFrom(input, _map_skillCdMap_codec);
+            break;
+          }
+          case 34: {
+            if (servantInfo_ == null) {
+              ServantInfo = new global::OldProtos.ServantInfo();
+            }
+            input.ReadMessage(ServantInfo);
+            break;
+          }
+          case 42: {
+            aiThreatMap_.AddEntriesFrom(input, _map_aiThreatMap_codec);
+            break;
+          }
+          case 50: {
+            skillGroupCdMap_.AddEntriesFrom(input, _map_skillGroupCdMap_codec);
+            break;
+          }
+          case 56: {
+            CurTactic = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            IsAiOpen = input.ReadBool();
+            break;
+          }
+          case 18: {
+            if (bornPos_ == null) {
+              BornPos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(BornPos);
+            break;
+          }
+          case 26: {
+            skillCdMap_.AddEntriesFrom(ref input, _map_skillCdMap_codec);
+            break;
+          }
+          case 34: {
+            if (servantInfo_ == null) {
+              ServantInfo = new global::OldProtos.ServantInfo();
+            }
+            input.ReadMessage(ServantInfo);
+            break;
+          }
+          case 42: {
+            aiThreatMap_.AddEntriesFrom(ref input, _map_aiThreatMap_codec);
+            break;
+          }
+          case 50: {
+            skillGroupCdMap_.AddEntriesFrom(ref input, _map_skillGroupCdMap_codec);
+            break;
+          }
+          case 56: {
+            CurTactic = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class SceneEntityAiInfo : pb::IMessage<SceneEntityAiInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SceneEntityAiInfo> _parser = new pb::MessageParser<SceneEntityAiInfo>(() => new SceneEntityAiInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SceneEntityAiInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SceneEntityAiInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneEntityAiInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneEntityAiInfo(SceneEntityAiInfo other) : this() {
-    isAiOpen_ = other.isAiOpen_;
-    bornPos_ = other.bornPos_ != null ? other.bornPos_.Clone() : null;
-    skillCdMap_ = other.skillCdMap_.Clone();
-    servantInfo_ = other.servantInfo_ != null ? other.servantInfo_.Clone() : null;
-    aiThreatMap_ = other.aiThreatMap_.Clone();
-    skillGroupCdMap_ = other.skillGroupCdMap_.Clone();
-    curTactic_ = other.curTactic_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneEntityAiInfo Clone() {
-    return new SceneEntityAiInfo(this);
-  }
-
-  /// <summary>Field number for the "is_ai_open" field.</summary>
-  public const int IsAiOpenFieldNumber = 1;
-  private bool isAiOpen_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsAiOpen {
-    get { return isAiOpen_; }
-    set {
-      isAiOpen_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "born_pos" field.</summary>
-  public const int BornPosFieldNumber = 2;
-  private global::Vector bornPos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector BornPos {
-    get { return bornPos_; }
-    set {
-      bornPos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "skill_cd_map" field.</summary>
-  public const int SkillCdMapFieldNumber = 3;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_skillCdMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 26);
-  private readonly pbc::MapField<uint, uint> skillCdMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> SkillCdMap {
-    get { return skillCdMap_; }
-  }
-
-  /// <summary>Field number for the "servant_info" field.</summary>
-  public const int ServantInfoFieldNumber = 4;
-  private global::ServantInfo servantInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ServantInfo ServantInfo {
-    get { return servantInfo_; }
-    set {
-      servantInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ai_threat_map" field.</summary>
-  public const int AiThreatMapFieldNumber = 5;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_aiThreatMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 42);
-  private readonly pbc::MapField<uint, uint> aiThreatMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> AiThreatMap {
-    get { return aiThreatMap_; }
-  }
-
-  /// <summary>Field number for the "skill_group_cd_map" field.</summary>
-  public const int SkillGroupCdMapFieldNumber = 6;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_skillGroupCdMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 50);
-  private readonly pbc::MapField<uint, uint> skillGroupCdMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> SkillGroupCdMap {
-    get { return skillGroupCdMap_; }
-  }
-
-  /// <summary>Field number for the "cur_tactic" field.</summary>
-  public const int CurTacticFieldNumber = 7;
-  private uint curTactic_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurTactic {
-    get { return curTactic_; }
-    set {
-      curTactic_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SceneEntityAiInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SceneEntityAiInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsAiOpen != other.IsAiOpen) return false;
-    if (!object.Equals(BornPos, other.BornPos)) return false;
-    if (!SkillCdMap.Equals(other.SkillCdMap)) return false;
-    if (!object.Equals(ServantInfo, other.ServantInfo)) return false;
-    if (!AiThreatMap.Equals(other.AiThreatMap)) return false;
-    if (!SkillGroupCdMap.Equals(other.SkillGroupCdMap)) return false;
-    if (CurTactic != other.CurTactic) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsAiOpen != false) hash ^= IsAiOpen.GetHashCode();
-    if (bornPos_ != null) hash ^= BornPos.GetHashCode();
-    hash ^= SkillCdMap.GetHashCode();
-    if (servantInfo_ != null) hash ^= ServantInfo.GetHashCode();
-    hash ^= AiThreatMap.GetHashCode();
-    hash ^= SkillGroupCdMap.GetHashCode();
-    if (CurTactic != 0) hash ^= CurTactic.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsAiOpen != false) {
-      output.WriteRawTag(8);
-      output.WriteBool(IsAiOpen);
-    }
-    if (bornPos_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(BornPos);
-    }
-    skillCdMap_.WriteTo(output, _map_skillCdMap_codec);
-    if (servantInfo_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(ServantInfo);
-    }
-    aiThreatMap_.WriteTo(output, _map_aiThreatMap_codec);
-    skillGroupCdMap_.WriteTo(output, _map_skillGroupCdMap_codec);
-    if (CurTactic != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(CurTactic);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsAiOpen != false) {
-      output.WriteRawTag(8);
-      output.WriteBool(IsAiOpen);
-    }
-    if (bornPos_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(BornPos);
-    }
-    skillCdMap_.WriteTo(ref output, _map_skillCdMap_codec);
-    if (servantInfo_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(ServantInfo);
-    }
-    aiThreatMap_.WriteTo(ref output, _map_aiThreatMap_codec);
-    skillGroupCdMap_.WriteTo(ref output, _map_skillGroupCdMap_codec);
-    if (CurTactic != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(CurTactic);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsAiOpen != false) {
-      size += 1 + 1;
-    }
-    if (bornPos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(BornPos);
-    }
-    size += skillCdMap_.CalculateSize(_map_skillCdMap_codec);
-    if (servantInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServantInfo);
-    }
-    size += aiThreatMap_.CalculateSize(_map_aiThreatMap_codec);
-    size += skillGroupCdMap_.CalculateSize(_map_skillGroupCdMap_codec);
-    if (CurTactic != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurTactic);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SceneEntityAiInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsAiOpen != false) {
-      IsAiOpen = other.IsAiOpen;
-    }
-    if (other.bornPos_ != null) {
-      if (bornPos_ == null) {
-        BornPos = new global::Vector();
-      }
-      BornPos.MergeFrom(other.BornPos);
-    }
-    skillCdMap_.Add(other.skillCdMap_);
-    if (other.servantInfo_ != null) {
-      if (servantInfo_ == null) {
-        ServantInfo = new global::ServantInfo();
-      }
-      ServantInfo.MergeFrom(other.ServantInfo);
-    }
-    aiThreatMap_.Add(other.aiThreatMap_);
-    skillGroupCdMap_.Add(other.skillGroupCdMap_);
-    if (other.CurTactic != 0) {
-      CurTactic = other.CurTactic;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          IsAiOpen = input.ReadBool();
-          break;
-        }
-        case 18: {
-          if (bornPos_ == null) {
-            BornPos = new global::Vector();
-          }
-          input.ReadMessage(BornPos);
-          break;
-        }
-        case 26: {
-          skillCdMap_.AddEntriesFrom(input, _map_skillCdMap_codec);
-          break;
-        }
-        case 34: {
-          if (servantInfo_ == null) {
-            ServantInfo = new global::ServantInfo();
-          }
-          input.ReadMessage(ServantInfo);
-          break;
-        }
-        case 42: {
-          aiThreatMap_.AddEntriesFrom(input, _map_aiThreatMap_codec);
-          break;
-        }
-        case 50: {
-          skillGroupCdMap_.AddEntriesFrom(input, _map_skillGroupCdMap_codec);
-          break;
-        }
-        case 56: {
-          CurTactic = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          IsAiOpen = input.ReadBool();
-          break;
-        }
-        case 18: {
-          if (bornPos_ == null) {
-            BornPos = new global::Vector();
-          }
-          input.ReadMessage(BornPos);
-          break;
-        }
-        case 26: {
-          skillCdMap_.AddEntriesFrom(ref input, _map_skillCdMap_codec);
-          break;
-        }
-        case 34: {
-          if (servantInfo_ == null) {
-            ServantInfo = new global::ServantInfo();
-          }
-          input.ReadMessage(ServantInfo);
-          break;
-        }
-        case 42: {
-          aiThreatMap_.AddEntriesFrom(ref input, _map_aiThreatMap_codec);
-          break;
-        }
-        case 50: {
-          skillGroupCdMap_.AddEntriesFrom(ref input, _map_skillGroupCdMap_codec);
-          break;
-        }
-        case 56: {
-          CurTactic = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

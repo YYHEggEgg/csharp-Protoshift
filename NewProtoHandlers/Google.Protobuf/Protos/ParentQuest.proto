@@ -20,7 +20,7 @@ import "ChildQuest.proto";
 import "InferencePageInfo.proto";
 import "ParentQuestRandomInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message ParentQuest {
   repeated InferencePageInfo inference_page_list = 5;

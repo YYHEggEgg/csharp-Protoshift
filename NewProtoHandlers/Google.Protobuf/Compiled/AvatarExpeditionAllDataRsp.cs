@@ -9,328 +9,330 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AvatarExpeditionAllDataRsp.proto</summary>
-public static partial class AvatarExpeditionAllDataRspReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AvatarExpeditionAllDataRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AvatarExpeditionAllDataRsp.proto</summary>
+  public static partial class AvatarExpeditionAllDataRspReflection {
 
-  static AvatarExpeditionAllDataRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBBdmF0YXJFeHBlZGl0aW9uQWxsRGF0YVJzcC5wcm90bxoaQXZhdGFyRXhw",
-          "ZWRpdGlvbkluZm8ucHJvdG8ijQIKGkF2YXRhckV4cGVkaXRpb25BbGxEYXRh",
-          "UnNwEg8KB3JldGNvZGUYDyABKAUSHAoUb3Blbl9leHBlZGl0aW9uX2xpc3QY",
-          "BCADKA0STwoTZXhwZWRpdGlvbl9pbmZvX21hcBgBIAMoCzIyLkF2YXRhckV4",
-          "cGVkaXRpb25BbGxEYXRhUnNwLkV4cGVkaXRpb25JbmZvTWFwRW50cnkSHgoW",
-          "ZXhwZWRpdGlvbl9jb3VudF9saW1pdBgNIAEoDRpPChZFeHBlZGl0aW9uSW5m",
-          "b01hcEVudHJ5EgsKA2tleRgBIAEoBBIkCgV2YWx1ZRgCIAEoCzIVLkF2YXRh",
-          "ckV4cGVkaXRpb25JbmZvOgI4AUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IG",
-          "cHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::AvatarExpeditionInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AvatarExpeditionAllDataRsp), global::AvatarExpeditionAllDataRsp.Parser, new[]{ "Retcode", "OpenExpeditionList", "ExpeditionInfoMap", "ExpeditionCountLimit" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AvatarExpeditionAllDataRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AvatarExpeditionAllDataRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBBdmF0YXJFeHBlZGl0aW9uQWxsRGF0YVJzcC5wcm90bxoaQXZhdGFyRXhw",
+            "ZWRpdGlvbkluZm8ucHJvdG8ijQIKGkF2YXRhckV4cGVkaXRpb25BbGxEYXRh",
+            "UnNwEg8KB3JldGNvZGUYDyABKAUSHAoUb3Blbl9leHBlZGl0aW9uX2xpc3QY",
+            "BCADKA0STwoTZXhwZWRpdGlvbl9pbmZvX21hcBgBIAMoCzIyLkF2YXRhckV4",
+            "cGVkaXRpb25BbGxEYXRhUnNwLkV4cGVkaXRpb25JbmZvTWFwRW50cnkSHgoW",
+            "ZXhwZWRpdGlvbl9jb3VudF9saW1pdBgNIAEoDRpPChZFeHBlZGl0aW9uSW5m",
+            "b01hcEVudHJ5EgsKA2tleRgBIAEoBBIkCgV2YWx1ZRgCIAEoCzIVLkF2YXRh",
+            "ckV4cGVkaXRpb25JbmZvOgI4AUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.AvatarExpeditionInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.AvatarExpeditionAllDataRsp), global::NewProtos.AvatarExpeditionAllDataRsp.Parser, new[]{ "Retcode", "OpenExpeditionList", "ExpeditionInfoMap", "ExpeditionCountLimit" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1621;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class AvatarExpeditionAllDataRsp : pb::IMessage<AvatarExpeditionAllDataRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AvatarExpeditionAllDataRsp> _parser = new pb::MessageParser<AvatarExpeditionAllDataRsp>(() => new AvatarExpeditionAllDataRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AvatarExpeditionAllDataRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.AvatarExpeditionAllDataRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarExpeditionAllDataRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarExpeditionAllDataRsp(AvatarExpeditionAllDataRsp other) : this() {
+      retcode_ = other.retcode_;
+      openExpeditionList_ = other.openExpeditionList_.Clone();
+      expeditionInfoMap_ = other.expeditionInfoMap_.Clone();
+      expeditionCountLimit_ = other.expeditionCountLimit_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarExpeditionAllDataRsp Clone() {
+      return new AvatarExpeditionAllDataRsp(this);
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 15;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "open_expedition_list" field.</summary>
+    public const int OpenExpeditionListFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_openExpeditionList_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> openExpeditionList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> OpenExpeditionList {
+      get { return openExpeditionList_; }
+    }
+
+    /// <summary>Field number for the "expedition_info_map" field.</summary>
+    public const int ExpeditionInfoMapFieldNumber = 1;
+    private static readonly pbc::MapField<ulong, global::NewProtos.AvatarExpeditionInfo>.Codec _map_expeditionInfoMap_codec
+        = new pbc::MapField<ulong, global::NewProtos.AvatarExpeditionInfo>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForMessage(18, global::NewProtos.AvatarExpeditionInfo.Parser), 10);
+    private readonly pbc::MapField<ulong, global::NewProtos.AvatarExpeditionInfo> expeditionInfoMap_ = new pbc::MapField<ulong, global::NewProtos.AvatarExpeditionInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<ulong, global::NewProtos.AvatarExpeditionInfo> ExpeditionInfoMap {
+      get { return expeditionInfoMap_; }
+    }
+
+    /// <summary>Field number for the "expedition_count_limit" field.</summary>
+    public const int ExpeditionCountLimitFieldNumber = 13;
+    private uint expeditionCountLimit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ExpeditionCountLimit {
+      get { return expeditionCountLimit_; }
+      set {
+        expeditionCountLimit_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AvatarExpeditionAllDataRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AvatarExpeditionAllDataRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Retcode != other.Retcode) return false;
+      if(!openExpeditionList_.Equals(other.openExpeditionList_)) return false;
+      if (!ExpeditionInfoMap.Equals(other.ExpeditionInfoMap)) return false;
+      if (ExpeditionCountLimit != other.ExpeditionCountLimit) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= openExpeditionList_.GetHashCode();
+      hash ^= ExpeditionInfoMap.GetHashCode();
+      if (ExpeditionCountLimit != 0) hash ^= ExpeditionCountLimit.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      expeditionInfoMap_.WriteTo(output, _map_expeditionInfoMap_codec);
+      openExpeditionList_.WriteTo(output, _repeated_openExpeditionList_codec);
+      if (ExpeditionCountLimit != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ExpeditionCountLimit);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Retcode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      expeditionInfoMap_.WriteTo(ref output, _map_expeditionInfoMap_codec);
+      openExpeditionList_.WriteTo(ref output, _repeated_openExpeditionList_codec);
+      if (ExpeditionCountLimit != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ExpeditionCountLimit);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Retcode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      size += openExpeditionList_.CalculateSize(_repeated_openExpeditionList_codec);
+      size += expeditionInfoMap_.CalculateSize(_map_expeditionInfoMap_codec);
+      if (ExpeditionCountLimit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExpeditionCountLimit);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AvatarExpeditionAllDataRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      openExpeditionList_.Add(other.openExpeditionList_);
+      expeditionInfoMap_.Add(other.expeditionInfoMap_);
+      if (other.ExpeditionCountLimit != 0) {
+        ExpeditionCountLimit = other.ExpeditionCountLimit;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            expeditionInfoMap_.AddEntriesFrom(input, _map_expeditionInfoMap_codec);
+            break;
+          }
+          case 34:
+          case 32: {
+            openExpeditionList_.AddEntriesFrom(input, _repeated_openExpeditionList_codec);
+            break;
+          }
+          case 104: {
+            ExpeditionCountLimit = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            expeditionInfoMap_.AddEntriesFrom(ref input, _map_expeditionInfoMap_codec);
+            break;
+          }
+          case 34:
+          case 32: {
+            openExpeditionList_.AddEntriesFrom(ref input, _repeated_openExpeditionList_codec);
+            break;
+          }
+          case 104: {
+            ExpeditionCountLimit = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 1621;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class AvatarExpeditionAllDataRsp : pb::IMessage<AvatarExpeditionAllDataRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AvatarExpeditionAllDataRsp> _parser = new pb::MessageParser<AvatarExpeditionAllDataRsp>(() => new AvatarExpeditionAllDataRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AvatarExpeditionAllDataRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AvatarExpeditionAllDataRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarExpeditionAllDataRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarExpeditionAllDataRsp(AvatarExpeditionAllDataRsp other) : this() {
-    retcode_ = other.retcode_;
-    openExpeditionList_ = other.openExpeditionList_.Clone();
-    expeditionInfoMap_ = other.expeditionInfoMap_.Clone();
-    expeditionCountLimit_ = other.expeditionCountLimit_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarExpeditionAllDataRsp Clone() {
-    return new AvatarExpeditionAllDataRsp(this);
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 15;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "open_expedition_list" field.</summary>
-  public const int OpenExpeditionListFieldNumber = 4;
-  private static readonly pb::FieldCodec<uint> _repeated_openExpeditionList_codec
-      = pb::FieldCodec.ForUInt32(34);
-  private readonly pbc::RepeatedField<uint> openExpeditionList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> OpenExpeditionList {
-    get { return openExpeditionList_; }
-  }
-
-  /// <summary>Field number for the "expedition_info_map" field.</summary>
-  public const int ExpeditionInfoMapFieldNumber = 1;
-  private static readonly pbc::MapField<ulong, global::AvatarExpeditionInfo>.Codec _map_expeditionInfoMap_codec
-      = new pbc::MapField<ulong, global::AvatarExpeditionInfo>.Codec(pb::FieldCodec.ForUInt64(8, 0UL), pb::FieldCodec.ForMessage(18, global::AvatarExpeditionInfo.Parser), 10);
-  private readonly pbc::MapField<ulong, global::AvatarExpeditionInfo> expeditionInfoMap_ = new pbc::MapField<ulong, global::AvatarExpeditionInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<ulong, global::AvatarExpeditionInfo> ExpeditionInfoMap {
-    get { return expeditionInfoMap_; }
-  }
-
-  /// <summary>Field number for the "expedition_count_limit" field.</summary>
-  public const int ExpeditionCountLimitFieldNumber = 13;
-  private uint expeditionCountLimit_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ExpeditionCountLimit {
-    get { return expeditionCountLimit_; }
-    set {
-      expeditionCountLimit_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AvatarExpeditionAllDataRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AvatarExpeditionAllDataRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Retcode != other.Retcode) return false;
-    if(!openExpeditionList_.Equals(other.openExpeditionList_)) return false;
-    if (!ExpeditionInfoMap.Equals(other.ExpeditionInfoMap)) return false;
-    if (ExpeditionCountLimit != other.ExpeditionCountLimit) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    hash ^= openExpeditionList_.GetHashCode();
-    hash ^= ExpeditionInfoMap.GetHashCode();
-    if (ExpeditionCountLimit != 0) hash ^= ExpeditionCountLimit.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    expeditionInfoMap_.WriteTo(output, _map_expeditionInfoMap_codec);
-    openExpeditionList_.WriteTo(output, _repeated_openExpeditionList_codec);
-    if (ExpeditionCountLimit != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(ExpeditionCountLimit);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(120);
-      output.WriteInt32(Retcode);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    expeditionInfoMap_.WriteTo(ref output, _map_expeditionInfoMap_codec);
-    openExpeditionList_.WriteTo(ref output, _repeated_openExpeditionList_codec);
-    if (ExpeditionCountLimit != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(ExpeditionCountLimit);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(120);
-      output.WriteInt32(Retcode);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    size += openExpeditionList_.CalculateSize(_repeated_openExpeditionList_codec);
-    size += expeditionInfoMap_.CalculateSize(_map_expeditionInfoMap_codec);
-    if (ExpeditionCountLimit != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ExpeditionCountLimit);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AvatarExpeditionAllDataRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    openExpeditionList_.Add(other.openExpeditionList_);
-    expeditionInfoMap_.Add(other.expeditionInfoMap_);
-    if (other.ExpeditionCountLimit != 0) {
-      ExpeditionCountLimit = other.ExpeditionCountLimit;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          expeditionInfoMap_.AddEntriesFrom(input, _map_expeditionInfoMap_codec);
-          break;
-        }
-        case 34:
-        case 32: {
-          openExpeditionList_.AddEntriesFrom(input, _repeated_openExpeditionList_codec);
-          break;
-        }
-        case 104: {
-          ExpeditionCountLimit = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          expeditionInfoMap_.AddEntriesFrom(ref input, _map_expeditionInfoMap_codec);
-          break;
-        }
-        case 34:
-        case 32: {
-          openExpeditionList_.AddEntriesFrom(ref input, _repeated_openExpeditionList_codec);
-          break;
-        }
-        case 104: {
-          ExpeditionCountLimit = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

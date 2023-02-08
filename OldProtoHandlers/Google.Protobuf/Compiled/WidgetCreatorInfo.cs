@@ -9,308 +9,311 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from WidgetCreatorInfo.proto</summary>
-public static partial class WidgetCreatorInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for WidgetCreatorInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from WidgetCreatorInfo.proto</summary>
+  public static partial class WidgetCreatorInfoReflection {
 
-  static WidgetCreatorInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdXaWRnZXRDcmVhdG9ySW5mby5wcm90bxoeV2lkZ2V0Q3JlYXRlTG9jYXRp",
-          "b25JbmZvLnByb3RvGhlXaWRnZXRDcmVhdG9yT3BUeXBlLnByb3RvIn8KEVdp",
-          "ZGdldENyZWF0b3JJbmZvEiUKB29wX3R5cGUYCiABKA4yFC5XaWRnZXRDcmVh",
-          "dG9yT3BUeXBlEhEKCWVudGl0eV9pZBgBIAEoDRIwCg1sb2NhdGlvbl9pbmZv",
-          "GAwgASgLMhkuV2lkZ2V0Q3JlYXRlTG9jYXRpb25JbmZvQh4KHGVtdS5ncmFz",
-          "c2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::WidgetCreateLocationInfoReflection.Descriptor, global::WidgetCreatorOpTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::WidgetCreatorInfo), global::WidgetCreatorInfo.Parser, new[]{ "OpType", "EntityId", "LocationInfo" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for WidgetCreatorInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static WidgetCreatorInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdXaWRnZXRDcmVhdG9ySW5mby5wcm90bxoeV2lkZ2V0Q3JlYXRlTG9jYXRp",
+            "b25JbmZvLnByb3RvGhlXaWRnZXRDcmVhdG9yT3BUeXBlLnByb3RvIn8KEVdp",
+            "ZGdldENyZWF0b3JJbmZvEiUKB29wX3R5cGUYCiABKA4yFC5XaWRnZXRDcmVh",
+            "dG9yT3BUeXBlEhEKCWVudGl0eV9pZBgBIAEoDRIwCg1sb2NhdGlvbl9pbmZv",
+            "GAwgASgLMhkuV2lkZ2V0Q3JlYXRlTG9jYXRpb25JbmZvQgyqAglPbGRQcm90",
+            "b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.WidgetCreateLocationInfoReflection.Descriptor, global::OldProtos.WidgetCreatorOpTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.WidgetCreatorInfo), global::OldProtos.WidgetCreatorInfo.Parser, new[]{ "OpType", "EntityId", "LocationInfo" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class WidgetCreatorInfo : pb::IMessage<WidgetCreatorInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<WidgetCreatorInfo> _parser = new pb::MessageParser<WidgetCreatorInfo>(() => new WidgetCreatorInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<WidgetCreatorInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.WidgetCreatorInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WidgetCreatorInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WidgetCreatorInfo(WidgetCreatorInfo other) : this() {
+      opType_ = other.opType_;
+      entityId_ = other.entityId_;
+      locationInfo_ = other.locationInfo_ != null ? other.locationInfo_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WidgetCreatorInfo Clone() {
+      return new WidgetCreatorInfo(this);
+    }
+
+    /// <summary>Field number for the "op_type" field.</summary>
+    public const int OpTypeFieldNumber = 10;
+    private global::OldProtos.WidgetCreatorOpType opType_ = global::OldProtos.WidgetCreatorOpType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.WidgetCreatorOpType OpType {
+      get { return opType_; }
+      set {
+        opType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 1;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "location_info" field.</summary>
+    public const int LocationInfoFieldNumber = 12;
+    private global::OldProtos.WidgetCreateLocationInfo locationInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.WidgetCreateLocationInfo LocationInfo {
+      get { return locationInfo_; }
+      set {
+        locationInfo_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as WidgetCreatorInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(WidgetCreatorInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (OpType != other.OpType) return false;
+      if (EntityId != other.EntityId) return false;
+      if (!object.Equals(LocationInfo, other.LocationInfo)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (OpType != global::OldProtos.WidgetCreatorOpType.None) hash ^= OpType.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (locationInfo_ != null) hash ^= LocationInfo.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (EntityId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(EntityId);
+      }
+      if (OpType != global::OldProtos.WidgetCreatorOpType.None) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) OpType);
+      }
+      if (locationInfo_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(LocationInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (EntityId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(EntityId);
+      }
+      if (OpType != global::OldProtos.WidgetCreatorOpType.None) {
+        output.WriteRawTag(80);
+        output.WriteEnum((int) OpType);
+      }
+      if (locationInfo_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(LocationInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (OpType != global::OldProtos.WidgetCreatorOpType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OpType);
+      }
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (locationInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LocationInfo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(WidgetCreatorInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.OpType != global::OldProtos.WidgetCreatorOpType.None) {
+        OpType = other.OpType;
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.locationInfo_ != null) {
+        if (locationInfo_ == null) {
+          LocationInfo = new global::OldProtos.WidgetCreateLocationInfo();
+        }
+        LocationInfo.MergeFrom(other.LocationInfo);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            OpType = (global::OldProtos.WidgetCreatorOpType) input.ReadEnum();
+            break;
+          }
+          case 98: {
+            if (locationInfo_ == null) {
+              LocationInfo = new global::OldProtos.WidgetCreateLocationInfo();
+            }
+            input.ReadMessage(LocationInfo);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            OpType = (global::OldProtos.WidgetCreatorOpType) input.ReadEnum();
+            break;
+          }
+          case 98: {
+            if (locationInfo_ == null) {
+              LocationInfo = new global::OldProtos.WidgetCreateLocationInfo();
+            }
+            input.ReadMessage(LocationInfo);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class WidgetCreatorInfo : pb::IMessage<WidgetCreatorInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<WidgetCreatorInfo> _parser = new pb::MessageParser<WidgetCreatorInfo>(() => new WidgetCreatorInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<WidgetCreatorInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::WidgetCreatorInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WidgetCreatorInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WidgetCreatorInfo(WidgetCreatorInfo other) : this() {
-    opType_ = other.opType_;
-    entityId_ = other.entityId_;
-    locationInfo_ = other.locationInfo_ != null ? other.locationInfo_.Clone() : null;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WidgetCreatorInfo Clone() {
-    return new WidgetCreatorInfo(this);
-  }
-
-  /// <summary>Field number for the "op_type" field.</summary>
-  public const int OpTypeFieldNumber = 10;
-  private global::WidgetCreatorOpType opType_ = global::WidgetCreatorOpType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::WidgetCreatorOpType OpType {
-    get { return opType_; }
-    set {
-      opType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity_id" field.</summary>
-  public const int EntityIdFieldNumber = 1;
-  private uint entityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EntityId {
-    get { return entityId_; }
-    set {
-      entityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "location_info" field.</summary>
-  public const int LocationInfoFieldNumber = 12;
-  private global::WidgetCreateLocationInfo locationInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::WidgetCreateLocationInfo LocationInfo {
-    get { return locationInfo_; }
-    set {
-      locationInfo_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as WidgetCreatorInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(WidgetCreatorInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (OpType != other.OpType) return false;
-    if (EntityId != other.EntityId) return false;
-    if (!object.Equals(LocationInfo, other.LocationInfo)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (OpType != global::WidgetCreatorOpType.None) hash ^= OpType.GetHashCode();
-    if (EntityId != 0) hash ^= EntityId.GetHashCode();
-    if (locationInfo_ != null) hash ^= LocationInfo.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (EntityId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(EntityId);
-    }
-    if (OpType != global::WidgetCreatorOpType.None) {
-      output.WriteRawTag(80);
-      output.WriteEnum((int) OpType);
-    }
-    if (locationInfo_ != null) {
-      output.WriteRawTag(98);
-      output.WriteMessage(LocationInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (EntityId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(EntityId);
-    }
-    if (OpType != global::WidgetCreatorOpType.None) {
-      output.WriteRawTag(80);
-      output.WriteEnum((int) OpType);
-    }
-    if (locationInfo_ != null) {
-      output.WriteRawTag(98);
-      output.WriteMessage(LocationInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (OpType != global::WidgetCreatorOpType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OpType);
-    }
-    if (EntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-    }
-    if (locationInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(LocationInfo);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(WidgetCreatorInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.OpType != global::WidgetCreatorOpType.None) {
-      OpType = other.OpType;
-    }
-    if (other.EntityId != 0) {
-      EntityId = other.EntityId;
-    }
-    if (other.locationInfo_ != null) {
-      if (locationInfo_ == null) {
-        LocationInfo = new global::WidgetCreateLocationInfo();
-      }
-      LocationInfo.MergeFrom(other.LocationInfo);
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          OpType = (global::WidgetCreatorOpType) input.ReadEnum();
-          break;
-        }
-        case 98: {
-          if (locationInfo_ == null) {
-            LocationInfo = new global::WidgetCreateLocationInfo();
-          }
-          input.ReadMessage(LocationInfo);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          OpType = (global::WidgetCreatorOpType) input.ReadEnum();
-          break;
-        }
-        case 98: {
-          if (locationInfo_ == null) {
-            LocationInfo = new global::WidgetCreateLocationInfo();
-          }
-          input.ReadMessage(LocationInfo);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -9,523 +9,525 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from LanternRiteDoFireworksReformRsp.proto</summary>
-public static partial class LanternRiteDoFireworksReformRspReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for LanternRiteDoFireworksReformRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from LanternRiteDoFireworksReformRsp.proto</summary>
+  public static partial class LanternRiteDoFireworksReformRspReflection {
 
-  static LanternRiteDoFireworksReformRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiVMYW50ZXJuUml0ZURvRmlyZXdvcmtzUmVmb3JtUnNwLnByb3RvGipMYW50",
-          "ZXJuUml0ZUZpcmV3b3Jrc1JlZm9ybUZhY3RvckluZm8ucHJvdG8ioQIKH0xh",
-          "bnRlcm5SaXRlRG9GaXJld29ya3NSZWZvcm1Sc3ASPwoQZmFjdG9yX2luZm9f",
-          "bGlzdBgGIAMoCzIlLkxhbnRlcm5SaXRlRmlyZXdvcmtzUmVmb3JtRmFjdG9y",
-          "SW5mbxIPCgdyZXRjb2RlGAQgASgFEhsKE1VuazMzMDBfQkpIR0NGQU5NQkkY",
-          "DCABKA0SGwoTVW5rMzMwMF9PTUhQSUdHRENCTxgKIAEoDRIUCgxjaGFsbGVu",
-          "Z2VfaWQYCSABKA0SGwoTVW5rMzMwMF9MS09GQlBES0VHRxgIIAEoDRIQCghp",
-          "c19sdWNreRgBIAEoCBIbChNVbmszMzAwX0xLS0JQQUpPQ01MGA4gASgNEhAK",
-          "CHN0YWdlX2lkGA8gASgNQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90",
-          "bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::LanternRiteFireworksReformFactorInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::LanternRiteDoFireworksReformRsp), global::LanternRiteDoFireworksReformRsp.Parser, new[]{ "FactorInfoList", "Retcode", "Unk3300BJHGCFANMBI", "Unk3300OMHPIGGDCBO", "ChallengeId", "Unk3300LKOFBPDKEGG", "IsLucky", "Unk3300LKKBPAJOCML", "StageId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for LanternRiteDoFireworksReformRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static LanternRiteDoFireworksReformRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiVMYW50ZXJuUml0ZURvRmlyZXdvcmtzUmVmb3JtUnNwLnByb3RvGipMYW50",
+            "ZXJuUml0ZUZpcmV3b3Jrc1JlZm9ybUZhY3RvckluZm8ucHJvdG8ioQIKH0xh",
+            "bnRlcm5SaXRlRG9GaXJld29ya3NSZWZvcm1Sc3ASPwoQZmFjdG9yX2luZm9f",
+            "bGlzdBgGIAMoCzIlLkxhbnRlcm5SaXRlRmlyZXdvcmtzUmVmb3JtRmFjdG9y",
+            "SW5mbxIPCgdyZXRjb2RlGAQgASgFEhsKE1VuazMzMDBfQkpIR0NGQU5NQkkY",
+            "DCABKA0SGwoTVW5rMzMwMF9PTUhQSUdHRENCTxgKIAEoDRIUCgxjaGFsbGVu",
+            "Z2VfaWQYCSABKA0SGwoTVW5rMzMwMF9MS09GQlBES0VHRxgIIAEoDRIQCghp",
+            "c19sdWNreRgBIAEoCBIbChNVbmszMzAwX0xLS0JQQUpPQ01MGA4gASgNEhAK",
+            "CHN0YWdlX2lkGA8gASgNQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.LanternRiteFireworksReformFactorInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.LanternRiteDoFireworksReformRsp), global::NewProtos.LanternRiteDoFireworksReformRsp.Parser, new[]{ "FactorInfoList", "Retcode", "Unk3300BJHGCFANMBI", "Unk3300OMHPIGGDCBO", "ChallengeId", "Unk3300LKOFBPDKEGG", "IsLucky", "Unk3300LKKBPAJOCML", "StageId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8171;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class LanternRiteDoFireworksReformRsp : pb::IMessage<LanternRiteDoFireworksReformRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<LanternRiteDoFireworksReformRsp> _parser = new pb::MessageParser<LanternRiteDoFireworksReformRsp>(() => new LanternRiteDoFireworksReformRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<LanternRiteDoFireworksReformRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.LanternRiteDoFireworksReformRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LanternRiteDoFireworksReformRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LanternRiteDoFireworksReformRsp(LanternRiteDoFireworksReformRsp other) : this() {
+      factorInfoList_ = other.factorInfoList_.Clone();
+      retcode_ = other.retcode_;
+      unk3300BJHGCFANMBI_ = other.unk3300BJHGCFANMBI_;
+      unk3300OMHPIGGDCBO_ = other.unk3300OMHPIGGDCBO_;
+      challengeId_ = other.challengeId_;
+      unk3300LKOFBPDKEGG_ = other.unk3300LKOFBPDKEGG_;
+      isLucky_ = other.isLucky_;
+      unk3300LKKBPAJOCML_ = other.unk3300LKKBPAJOCML_;
+      stageId_ = other.stageId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LanternRiteDoFireworksReformRsp Clone() {
+      return new LanternRiteDoFireworksReformRsp(this);
+    }
+
+    /// <summary>Field number for the "factor_info_list" field.</summary>
+    public const int FactorInfoListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::NewProtos.LanternRiteFireworksReformFactorInfo> _repeated_factorInfoList_codec
+        = pb::FieldCodec.ForMessage(50, global::NewProtos.LanternRiteFireworksReformFactorInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.LanternRiteFireworksReformFactorInfo> factorInfoList_ = new pbc::RepeatedField<global::NewProtos.LanternRiteFireworksReformFactorInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.LanternRiteFireworksReformFactorInfo> FactorInfoList {
+      get { return factorInfoList_; }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 4;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BJHGCFANMBI" field.</summary>
+    public const int Unk3300BJHGCFANMBIFieldNumber = 12;
+    private uint unk3300BJHGCFANMBI_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300BJHGCFANMBI {
+      get { return unk3300BJHGCFANMBI_; }
+      set {
+        unk3300BJHGCFANMBI_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_OMHPIGGDCBO" field.</summary>
+    public const int Unk3300OMHPIGGDCBOFieldNumber = 10;
+    private uint unk3300OMHPIGGDCBO_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300OMHPIGGDCBO {
+      get { return unk3300OMHPIGGDCBO_; }
+      set {
+        unk3300OMHPIGGDCBO_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_id" field.</summary>
+    public const int ChallengeIdFieldNumber = 9;
+    private uint challengeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeId {
+      get { return challengeId_; }
+      set {
+        challengeId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LKOFBPDKEGG" field.</summary>
+    public const int Unk3300LKOFBPDKEGGFieldNumber = 8;
+    private uint unk3300LKOFBPDKEGG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LKOFBPDKEGG {
+      get { return unk3300LKOFBPDKEGG_; }
+      set {
+        unk3300LKOFBPDKEGG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_lucky" field.</summary>
+    public const int IsLuckyFieldNumber = 1;
+    private bool isLucky_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsLucky {
+      get { return isLucky_; }
+      set {
+        isLucky_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LKKBPAJOCML" field.</summary>
+    public const int Unk3300LKKBPAJOCMLFieldNumber = 14;
+    private uint unk3300LKKBPAJOCML_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LKKBPAJOCML {
+      get { return unk3300LKKBPAJOCML_; }
+      set {
+        unk3300LKKBPAJOCML_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 15;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as LanternRiteDoFireworksReformRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(LanternRiteDoFireworksReformRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!factorInfoList_.Equals(other.factorInfoList_)) return false;
+      if (Retcode != other.Retcode) return false;
+      if (Unk3300BJHGCFANMBI != other.Unk3300BJHGCFANMBI) return false;
+      if (Unk3300OMHPIGGDCBO != other.Unk3300OMHPIGGDCBO) return false;
+      if (ChallengeId != other.ChallengeId) return false;
+      if (Unk3300LKOFBPDKEGG != other.Unk3300LKOFBPDKEGG) return false;
+      if (IsLucky != other.IsLucky) return false;
+      if (Unk3300LKKBPAJOCML != other.Unk3300LKKBPAJOCML) return false;
+      if (StageId != other.StageId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= factorInfoList_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (Unk3300BJHGCFANMBI != 0) hash ^= Unk3300BJHGCFANMBI.GetHashCode();
+      if (Unk3300OMHPIGGDCBO != 0) hash ^= Unk3300OMHPIGGDCBO.GetHashCode();
+      if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
+      if (Unk3300LKOFBPDKEGG != 0) hash ^= Unk3300LKOFBPDKEGG.GetHashCode();
+      if (IsLucky != false) hash ^= IsLucky.GetHashCode();
+      if (Unk3300LKKBPAJOCML != 0) hash ^= Unk3300LKKBPAJOCML.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsLucky != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsLucky);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Retcode);
+      }
+      factorInfoList_.WriteTo(output, _repeated_factorInfoList_codec);
+      if (Unk3300LKOFBPDKEGG != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300LKOFBPDKEGG);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(ChallengeId);
+      }
+      if (Unk3300OMHPIGGDCBO != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300OMHPIGGDCBO);
+      }
+      if (Unk3300BJHGCFANMBI != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300BJHGCFANMBI);
+      }
+      if (Unk3300LKKBPAJOCML != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300LKKBPAJOCML);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(StageId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsLucky != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsLucky);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Retcode);
+      }
+      factorInfoList_.WriteTo(ref output, _repeated_factorInfoList_codec);
+      if (Unk3300LKOFBPDKEGG != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Unk3300LKOFBPDKEGG);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(ChallengeId);
+      }
+      if (Unk3300OMHPIGGDCBO != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300OMHPIGGDCBO);
+      }
+      if (Unk3300BJHGCFANMBI != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300BJHGCFANMBI);
+      }
+      if (Unk3300LKKBPAJOCML != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300LKKBPAJOCML);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(StageId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += factorInfoList_.CalculateSize(_repeated_factorInfoList_codec);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (Unk3300BJHGCFANMBI != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BJHGCFANMBI);
+      }
+      if (Unk3300OMHPIGGDCBO != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OMHPIGGDCBO);
+      }
+      if (ChallengeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
+      }
+      if (Unk3300LKOFBPDKEGG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LKOFBPDKEGG);
+      }
+      if (IsLucky != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300LKKBPAJOCML != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LKKBPAJOCML);
+      }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(LanternRiteDoFireworksReformRsp other) {
+      if (other == null) {
+        return;
+      }
+      factorInfoList_.Add(other.factorInfoList_);
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.Unk3300BJHGCFANMBI != 0) {
+        Unk3300BJHGCFANMBI = other.Unk3300BJHGCFANMBI;
+      }
+      if (other.Unk3300OMHPIGGDCBO != 0) {
+        Unk3300OMHPIGGDCBO = other.Unk3300OMHPIGGDCBO;
+      }
+      if (other.ChallengeId != 0) {
+        ChallengeId = other.ChallengeId;
+      }
+      if (other.Unk3300LKOFBPDKEGG != 0) {
+        Unk3300LKOFBPDKEGG = other.Unk3300LKOFBPDKEGG;
+      }
+      if (other.IsLucky != false) {
+        IsLucky = other.IsLucky;
+      }
+      if (other.Unk3300LKKBPAJOCML != 0) {
+        Unk3300LKKBPAJOCML = other.Unk3300LKKBPAJOCML;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            IsLucky = input.ReadBool();
+            break;
+          }
+          case 32: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 50: {
+            factorInfoList_.AddEntriesFrom(input, _repeated_factorInfoList_codec);
+            break;
+          }
+          case 64: {
+            Unk3300LKOFBPDKEGG = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            ChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            Unk3300OMHPIGGDCBO = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300BJHGCFANMBI = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300LKKBPAJOCML = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            IsLucky = input.ReadBool();
+            break;
+          }
+          case 32: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 50: {
+            factorInfoList_.AddEntriesFrom(ref input, _repeated_factorInfoList_codec);
+            break;
+          }
+          case 64: {
+            Unk3300LKOFBPDKEGG = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            ChallengeId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            Unk3300OMHPIGGDCBO = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300BJHGCFANMBI = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300LKKBPAJOCML = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 8171;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class LanternRiteDoFireworksReformRsp : pb::IMessage<LanternRiteDoFireworksReformRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<LanternRiteDoFireworksReformRsp> _parser = new pb::MessageParser<LanternRiteDoFireworksReformRsp>(() => new LanternRiteDoFireworksReformRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<LanternRiteDoFireworksReformRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::LanternRiteDoFireworksReformRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public LanternRiteDoFireworksReformRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public LanternRiteDoFireworksReformRsp(LanternRiteDoFireworksReformRsp other) : this() {
-    factorInfoList_ = other.factorInfoList_.Clone();
-    retcode_ = other.retcode_;
-    unk3300BJHGCFANMBI_ = other.unk3300BJHGCFANMBI_;
-    unk3300OMHPIGGDCBO_ = other.unk3300OMHPIGGDCBO_;
-    challengeId_ = other.challengeId_;
-    unk3300LKOFBPDKEGG_ = other.unk3300LKOFBPDKEGG_;
-    isLucky_ = other.isLucky_;
-    unk3300LKKBPAJOCML_ = other.unk3300LKKBPAJOCML_;
-    stageId_ = other.stageId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public LanternRiteDoFireworksReformRsp Clone() {
-    return new LanternRiteDoFireworksReformRsp(this);
-  }
-
-  /// <summary>Field number for the "factor_info_list" field.</summary>
-  public const int FactorInfoListFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::LanternRiteFireworksReformFactorInfo> _repeated_factorInfoList_codec
-      = pb::FieldCodec.ForMessage(50, global::LanternRiteFireworksReformFactorInfo.Parser);
-  private readonly pbc::RepeatedField<global::LanternRiteFireworksReformFactorInfo> factorInfoList_ = new pbc::RepeatedField<global::LanternRiteFireworksReformFactorInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::LanternRiteFireworksReformFactorInfo> FactorInfoList {
-    get { return factorInfoList_; }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 4;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_BJHGCFANMBI" field.</summary>
-  public const int Unk3300BJHGCFANMBIFieldNumber = 12;
-  private uint unk3300BJHGCFANMBI_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300BJHGCFANMBI {
-    get { return unk3300BJHGCFANMBI_; }
-    set {
-      unk3300BJHGCFANMBI_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_OMHPIGGDCBO" field.</summary>
-  public const int Unk3300OMHPIGGDCBOFieldNumber = 10;
-  private uint unk3300OMHPIGGDCBO_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300OMHPIGGDCBO {
-    get { return unk3300OMHPIGGDCBO_; }
-    set {
-      unk3300OMHPIGGDCBO_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "challenge_id" field.</summary>
-  public const int ChallengeIdFieldNumber = 9;
-  private uint challengeId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChallengeId {
-    get { return challengeId_; }
-    set {
-      challengeId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_LKOFBPDKEGG" field.</summary>
-  public const int Unk3300LKOFBPDKEGGFieldNumber = 8;
-  private uint unk3300LKOFBPDKEGG_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300LKOFBPDKEGG {
-    get { return unk3300LKOFBPDKEGG_; }
-    set {
-      unk3300LKOFBPDKEGG_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_lucky" field.</summary>
-  public const int IsLuckyFieldNumber = 1;
-  private bool isLucky_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsLucky {
-    get { return isLucky_; }
-    set {
-      isLucky_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_LKKBPAJOCML" field.</summary>
-  public const int Unk3300LKKBPAJOCMLFieldNumber = 14;
-  private uint unk3300LKKBPAJOCML_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300LKKBPAJOCML {
-    get { return unk3300LKKBPAJOCML_; }
-    set {
-      unk3300LKKBPAJOCML_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "stage_id" field.</summary>
-  public const int StageIdFieldNumber = 15;
-  private uint stageId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StageId {
-    get { return stageId_; }
-    set {
-      stageId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as LanternRiteDoFireworksReformRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(LanternRiteDoFireworksReformRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!factorInfoList_.Equals(other.factorInfoList_)) return false;
-    if (Retcode != other.Retcode) return false;
-    if (Unk3300BJHGCFANMBI != other.Unk3300BJHGCFANMBI) return false;
-    if (Unk3300OMHPIGGDCBO != other.Unk3300OMHPIGGDCBO) return false;
-    if (ChallengeId != other.ChallengeId) return false;
-    if (Unk3300LKOFBPDKEGG != other.Unk3300LKOFBPDKEGG) return false;
-    if (IsLucky != other.IsLucky) return false;
-    if (Unk3300LKKBPAJOCML != other.Unk3300LKKBPAJOCML) return false;
-    if (StageId != other.StageId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= factorInfoList_.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (Unk3300BJHGCFANMBI != 0) hash ^= Unk3300BJHGCFANMBI.GetHashCode();
-    if (Unk3300OMHPIGGDCBO != 0) hash ^= Unk3300OMHPIGGDCBO.GetHashCode();
-    if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
-    if (Unk3300LKOFBPDKEGG != 0) hash ^= Unk3300LKOFBPDKEGG.GetHashCode();
-    if (IsLucky != false) hash ^= IsLucky.GetHashCode();
-    if (Unk3300LKKBPAJOCML != 0) hash ^= Unk3300LKKBPAJOCML.GetHashCode();
-    if (StageId != 0) hash ^= StageId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsLucky != false) {
-      output.WriteRawTag(8);
-      output.WriteBool(IsLucky);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(32);
-      output.WriteInt32(Retcode);
-    }
-    factorInfoList_.WriteTo(output, _repeated_factorInfoList_codec);
-    if (Unk3300LKOFBPDKEGG != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Unk3300LKOFBPDKEGG);
-    }
-    if (ChallengeId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(ChallengeId);
-    }
-    if (Unk3300OMHPIGGDCBO != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(Unk3300OMHPIGGDCBO);
-    }
-    if (Unk3300BJHGCFANMBI != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300BJHGCFANMBI);
-    }
-    if (Unk3300LKKBPAJOCML != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300LKKBPAJOCML);
-    }
-    if (StageId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(StageId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsLucky != false) {
-      output.WriteRawTag(8);
-      output.WriteBool(IsLucky);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(32);
-      output.WriteInt32(Retcode);
-    }
-    factorInfoList_.WriteTo(ref output, _repeated_factorInfoList_codec);
-    if (Unk3300LKOFBPDKEGG != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Unk3300LKOFBPDKEGG);
-    }
-    if (ChallengeId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(ChallengeId);
-    }
-    if (Unk3300OMHPIGGDCBO != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(Unk3300OMHPIGGDCBO);
-    }
-    if (Unk3300BJHGCFANMBI != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300BJHGCFANMBI);
-    }
-    if (Unk3300LKKBPAJOCML != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300LKKBPAJOCML);
-    }
-    if (StageId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(StageId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += factorInfoList_.CalculateSize(_repeated_factorInfoList_codec);
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (Unk3300BJHGCFANMBI != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BJHGCFANMBI);
-    }
-    if (Unk3300OMHPIGGDCBO != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300OMHPIGGDCBO);
-    }
-    if (ChallengeId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
-    }
-    if (Unk3300LKOFBPDKEGG != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LKOFBPDKEGG);
-    }
-    if (IsLucky != false) {
-      size += 1 + 1;
-    }
-    if (Unk3300LKKBPAJOCML != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LKKBPAJOCML);
-    }
-    if (StageId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(LanternRiteDoFireworksReformRsp other) {
-    if (other == null) {
-      return;
-    }
-    factorInfoList_.Add(other.factorInfoList_);
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.Unk3300BJHGCFANMBI != 0) {
-      Unk3300BJHGCFANMBI = other.Unk3300BJHGCFANMBI;
-    }
-    if (other.Unk3300OMHPIGGDCBO != 0) {
-      Unk3300OMHPIGGDCBO = other.Unk3300OMHPIGGDCBO;
-    }
-    if (other.ChallengeId != 0) {
-      ChallengeId = other.ChallengeId;
-    }
-    if (other.Unk3300LKOFBPDKEGG != 0) {
-      Unk3300LKOFBPDKEGG = other.Unk3300LKOFBPDKEGG;
-    }
-    if (other.IsLucky != false) {
-      IsLucky = other.IsLucky;
-    }
-    if (other.Unk3300LKKBPAJOCML != 0) {
-      Unk3300LKKBPAJOCML = other.Unk3300LKKBPAJOCML;
-    }
-    if (other.StageId != 0) {
-      StageId = other.StageId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          IsLucky = input.ReadBool();
-          break;
-        }
-        case 32: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 50: {
-          factorInfoList_.AddEntriesFrom(input, _repeated_factorInfoList_codec);
-          break;
-        }
-        case 64: {
-          Unk3300LKOFBPDKEGG = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          ChallengeId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          Unk3300OMHPIGGDCBO = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Unk3300BJHGCFANMBI = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300LKKBPAJOCML = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          IsLucky = input.ReadBool();
-          break;
-        }
-        case 32: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 50: {
-          factorInfoList_.AddEntriesFrom(ref input, _repeated_factorInfoList_codec);
-          break;
-        }
-        case 64: {
-          Unk3300LKOFBPDKEGG = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          ChallengeId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          Unk3300OMHPIGGDCBO = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Unk3300BJHGCFANMBI = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300LKKBPAJOCML = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

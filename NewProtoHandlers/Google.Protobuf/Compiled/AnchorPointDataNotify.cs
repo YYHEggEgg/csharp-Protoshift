@@ -9,258 +9,261 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AnchorPointDataNotify.proto</summary>
-public static partial class AnchorPointDataNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AnchorPointDataNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AnchorPointDataNotify.proto</summary>
+  public static partial class AnchorPointDataNotifyReflection {
 
-  static AnchorPointDataNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtBbmNob3JQb2ludERhdGFOb3RpZnkucHJvdG8aFUFuY2hvclBvaW50RGF0",
-          "YS5wcm90byJeChVBbmNob3JQb2ludERhdGFOb3RpZnkSGAoQbmV4dF91c2Fi",
-          "bGVfdGltZRgBIAEoDRIrChFhbmNob3JfcG9pbnRfbGlzdBgLIAMoCzIQLkFu",
-          "Y2hvclBvaW50RGF0YUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::AnchorPointDataReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AnchorPointDataNotify), global::AnchorPointDataNotify.Parser, new[]{ "NextUsableTime", "AnchorPointList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AnchorPointDataNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AnchorPointDataNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtBbmNob3JQb2ludERhdGFOb3RpZnkucHJvdG8aFUFuY2hvclBvaW50RGF0",
+            "YS5wcm90byJeChVBbmNob3JQb2ludERhdGFOb3RpZnkSGAoQbmV4dF91c2Fi",
+            "bGVfdGltZRgBIAEoDRIrChFhbmNob3JfcG9pbnRfbGlzdBgLIAMoCzIQLkFu",
+            "Y2hvclBvaW50RGF0YUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.AnchorPointDataReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.AnchorPointDataNotify), global::NewProtos.AnchorPointDataNotify.Parser, new[]{ "NextUsableTime", "AnchorPointList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4292;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class AnchorPointDataNotify : pb::IMessage<AnchorPointDataNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AnchorPointDataNotify> _parser = new pb::MessageParser<AnchorPointDataNotify>(() => new AnchorPointDataNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AnchorPointDataNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.AnchorPointDataNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AnchorPointDataNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AnchorPointDataNotify(AnchorPointDataNotify other) : this() {
+      nextUsableTime_ = other.nextUsableTime_;
+      anchorPointList_ = other.anchorPointList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AnchorPointDataNotify Clone() {
+      return new AnchorPointDataNotify(this);
+    }
+
+    /// <summary>Field number for the "next_usable_time" field.</summary>
+    public const int NextUsableTimeFieldNumber = 1;
+    private uint nextUsableTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint NextUsableTime {
+      get { return nextUsableTime_; }
+      set {
+        nextUsableTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "anchor_point_list" field.</summary>
+    public const int AnchorPointListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::NewProtos.AnchorPointData> _repeated_anchorPointList_codec
+        = pb::FieldCodec.ForMessage(90, global::NewProtos.AnchorPointData.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.AnchorPointData> anchorPointList_ = new pbc::RepeatedField<global::NewProtos.AnchorPointData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.AnchorPointData> AnchorPointList {
+      get { return anchorPointList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AnchorPointDataNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AnchorPointDataNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (NextUsableTime != other.NextUsableTime) return false;
+      if(!anchorPointList_.Equals(other.anchorPointList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (NextUsableTime != 0) hash ^= NextUsableTime.GetHashCode();
+      hash ^= anchorPointList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (NextUsableTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(NextUsableTime);
+      }
+      anchorPointList_.WriteTo(output, _repeated_anchorPointList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (NextUsableTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(NextUsableTime);
+      }
+      anchorPointList_.WriteTo(ref output, _repeated_anchorPointList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (NextUsableTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextUsableTime);
+      }
+      size += anchorPointList_.CalculateSize(_repeated_anchorPointList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AnchorPointDataNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.NextUsableTime != 0) {
+        NextUsableTime = other.NextUsableTime;
+      }
+      anchorPointList_.Add(other.anchorPointList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            NextUsableTime = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            anchorPointList_.AddEntriesFrom(input, _repeated_anchorPointList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            NextUsableTime = input.ReadUInt32();
+            break;
+          }
+          case 90: {
+            anchorPointList_.AddEntriesFrom(ref input, _repeated_anchorPointList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 4292;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class AnchorPointDataNotify : pb::IMessage<AnchorPointDataNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AnchorPointDataNotify> _parser = new pb::MessageParser<AnchorPointDataNotify>(() => new AnchorPointDataNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AnchorPointDataNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AnchorPointDataNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AnchorPointDataNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AnchorPointDataNotify(AnchorPointDataNotify other) : this() {
-    nextUsableTime_ = other.nextUsableTime_;
-    anchorPointList_ = other.anchorPointList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AnchorPointDataNotify Clone() {
-    return new AnchorPointDataNotify(this);
-  }
-
-  /// <summary>Field number for the "next_usable_time" field.</summary>
-  public const int NextUsableTimeFieldNumber = 1;
-  private uint nextUsableTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint NextUsableTime {
-    get { return nextUsableTime_; }
-    set {
-      nextUsableTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "anchor_point_list" field.</summary>
-  public const int AnchorPointListFieldNumber = 11;
-  private static readonly pb::FieldCodec<global::AnchorPointData> _repeated_anchorPointList_codec
-      = pb::FieldCodec.ForMessage(90, global::AnchorPointData.Parser);
-  private readonly pbc::RepeatedField<global::AnchorPointData> anchorPointList_ = new pbc::RepeatedField<global::AnchorPointData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::AnchorPointData> AnchorPointList {
-    get { return anchorPointList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AnchorPointDataNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AnchorPointDataNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (NextUsableTime != other.NextUsableTime) return false;
-    if(!anchorPointList_.Equals(other.anchorPointList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (NextUsableTime != 0) hash ^= NextUsableTime.GetHashCode();
-    hash ^= anchorPointList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (NextUsableTime != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(NextUsableTime);
-    }
-    anchorPointList_.WriteTo(output, _repeated_anchorPointList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (NextUsableTime != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(NextUsableTime);
-    }
-    anchorPointList_.WriteTo(ref output, _repeated_anchorPointList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (NextUsableTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextUsableTime);
-    }
-    size += anchorPointList_.CalculateSize(_repeated_anchorPointList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AnchorPointDataNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.NextUsableTime != 0) {
-      NextUsableTime = other.NextUsableTime;
-    }
-    anchorPointList_.Add(other.anchorPointList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          NextUsableTime = input.ReadUInt32();
-          break;
-        }
-        case 90: {
-          anchorPointList_.AddEntriesFrom(input, _repeated_anchorPointList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          NextUsableTime = input.ReadUInt32();
-          break;
-        }
-        case 90: {
-          anchorPointList_.AddEntriesFrom(ref input, _repeated_anchorPointList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

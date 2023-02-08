@@ -9,303 +9,305 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MusicGameStartReq.proto</summary>
-public static partial class MusicGameStartReqReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MusicGameStartReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MusicGameStartReq.proto</summary>
+  public static partial class MusicGameStartReqReflection {
 
-  static MusicGameStartReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdNdXNpY0dhbWVTdGFydFJlcS5wcm90byJUChFNdXNpY0dhbWVTdGFydFJl",
-          "cRIWCg5tdXNpY19iYXNpY19pZBgCIAEoDRIVCg1pc19zYXZlX3Njb3JlGAsg",
-          "ASgIEhAKCHVnY19ndWlkGAMgASgEQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQu",
-          "b2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MusicGameStartReq), global::MusicGameStartReq.Parser, new[]{ "MusicBasicId", "IsSaveScore", "UgcGuid" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for MusicGameStartReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MusicGameStartReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdNdXNpY0dhbWVTdGFydFJlcS5wcm90byJUChFNdXNpY0dhbWVTdGFydFJl",
+            "cRIWCg5tdXNpY19iYXNpY19pZBgCIAEoDRIVCg1pc19zYXZlX3Njb3JlGAsg",
+            "ASgIEhAKCHVnY19ndWlkGAMgASgEQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.MusicGameStartReq), global::OldProtos.MusicGameStartReq.Parser, new[]{ "MusicBasicId", "IsSaveScore", "UgcGuid" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 8406
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class MusicGameStartReq : pb::IMessage<MusicGameStartReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MusicGameStartReq> _parser = new pb::MessageParser<MusicGameStartReq>(() => new MusicGameStartReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MusicGameStartReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.MusicGameStartReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MusicGameStartReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MusicGameStartReq(MusicGameStartReq other) : this() {
+      musicBasicId_ = other.musicBasicId_;
+      isSaveScore_ = other.isSaveScore_;
+      ugcGuid_ = other.ugcGuid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MusicGameStartReq Clone() {
+      return new MusicGameStartReq(this);
+    }
+
+    /// <summary>Field number for the "music_basic_id" field.</summary>
+    public const int MusicBasicIdFieldNumber = 2;
+    private uint musicBasicId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MusicBasicId {
+      get { return musicBasicId_; }
+      set {
+        musicBasicId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_save_score" field.</summary>
+    public const int IsSaveScoreFieldNumber = 11;
+    private bool isSaveScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSaveScore {
+      get { return isSaveScore_; }
+      set {
+        isSaveScore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ugc_guid" field.</summary>
+    public const int UgcGuidFieldNumber = 3;
+    private ulong ugcGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong UgcGuid {
+      get { return ugcGuid_; }
+      set {
+        ugcGuid_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MusicGameStartReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MusicGameStartReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MusicBasicId != other.MusicBasicId) return false;
+      if (IsSaveScore != other.IsSaveScore) return false;
+      if (UgcGuid != other.UgcGuid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MusicBasicId != 0) hash ^= MusicBasicId.GetHashCode();
+      if (IsSaveScore != false) hash ^= IsSaveScore.GetHashCode();
+      if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (MusicBasicId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(MusicBasicId);
+      }
+      if (UgcGuid != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(UgcGuid);
+      }
+      if (IsSaveScore != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsSaveScore);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (MusicBasicId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(MusicBasicId);
+      }
+      if (UgcGuid != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(UgcGuid);
+      }
+      if (IsSaveScore != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsSaveScore);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (MusicBasicId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MusicBasicId);
+      }
+      if (IsSaveScore != false) {
+        size += 1 + 1;
+      }
+      if (UgcGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MusicGameStartReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MusicBasicId != 0) {
+        MusicBasicId = other.MusicBasicId;
+      }
+      if (other.IsSaveScore != false) {
+        IsSaveScore = other.IsSaveScore;
+      }
+      if (other.UgcGuid != 0UL) {
+        UgcGuid = other.UgcGuid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            MusicBasicId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            UgcGuid = input.ReadUInt64();
+            break;
+          }
+          case 88: {
+            IsSaveScore = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            MusicBasicId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            UgcGuid = input.ReadUInt64();
+            break;
+          }
+          case 88: {
+            IsSaveScore = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 8406
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class MusicGameStartReq : pb::IMessage<MusicGameStartReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<MusicGameStartReq> _parser = new pb::MessageParser<MusicGameStartReq>(() => new MusicGameStartReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<MusicGameStartReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::MusicGameStartReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MusicGameStartReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MusicGameStartReq(MusicGameStartReq other) : this() {
-    musicBasicId_ = other.musicBasicId_;
-    isSaveScore_ = other.isSaveScore_;
-    ugcGuid_ = other.ugcGuid_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MusicGameStartReq Clone() {
-    return new MusicGameStartReq(this);
-  }
-
-  /// <summary>Field number for the "music_basic_id" field.</summary>
-  public const int MusicBasicIdFieldNumber = 2;
-  private uint musicBasicId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MusicBasicId {
-    get { return musicBasicId_; }
-    set {
-      musicBasicId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_save_score" field.</summary>
-  public const int IsSaveScoreFieldNumber = 11;
-  private bool isSaveScore_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsSaveScore {
-    get { return isSaveScore_; }
-    set {
-      isSaveScore_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ugc_guid" field.</summary>
-  public const int UgcGuidFieldNumber = 3;
-  private ulong ugcGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong UgcGuid {
-    get { return ugcGuid_; }
-    set {
-      ugcGuid_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as MusicGameStartReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(MusicGameStartReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (MusicBasicId != other.MusicBasicId) return false;
-    if (IsSaveScore != other.IsSaveScore) return false;
-    if (UgcGuid != other.UgcGuid) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (MusicBasicId != 0) hash ^= MusicBasicId.GetHashCode();
-    if (IsSaveScore != false) hash ^= IsSaveScore.GetHashCode();
-    if (UgcGuid != 0UL) hash ^= UgcGuid.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (MusicBasicId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(MusicBasicId);
-    }
-    if (UgcGuid != 0UL) {
-      output.WriteRawTag(24);
-      output.WriteUInt64(UgcGuid);
-    }
-    if (IsSaveScore != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(IsSaveScore);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MusicBasicId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(MusicBasicId);
-    }
-    if (UgcGuid != 0UL) {
-      output.WriteRawTag(24);
-      output.WriteUInt64(UgcGuid);
-    }
-    if (IsSaveScore != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(IsSaveScore);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (MusicBasicId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MusicBasicId);
-    }
-    if (IsSaveScore != false) {
-      size += 1 + 1;
-    }
-    if (UgcGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UgcGuid);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(MusicGameStartReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.MusicBasicId != 0) {
-      MusicBasicId = other.MusicBasicId;
-    }
-    if (other.IsSaveScore != false) {
-      IsSaveScore = other.IsSaveScore;
-    }
-    if (other.UgcGuid != 0UL) {
-      UgcGuid = other.UgcGuid;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          MusicBasicId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          UgcGuid = input.ReadUInt64();
-          break;
-        }
-        case 88: {
-          IsSaveScore = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          MusicBasicId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          UgcGuid = input.ReadUInt64();
-          break;
-        }
-        case 88: {
-          IsSaveScore = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

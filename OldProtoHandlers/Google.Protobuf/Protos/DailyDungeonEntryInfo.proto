@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "DungeonEntryInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message DailyDungeonEntryInfo {
   uint32 dungeon_entry_config_id = 12;

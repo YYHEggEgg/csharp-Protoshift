@@ -19,7 +19,7 @@ syntax = "proto3";
 import "EnterCustomDungeonType.proto";
 import "TryCustomDungeonType.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 6221
 // EnetChannelId: 0

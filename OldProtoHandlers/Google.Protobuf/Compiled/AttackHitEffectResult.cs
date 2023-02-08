@@ -9,410 +9,413 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AttackHitEffectResult.proto</summary>
-public static partial class AttackHitEffectResultReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AttackHitEffectResult.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AttackHitEffectResult.proto</summary>
+  public static partial class AttackHitEffectResultReflection {
 
-  static AttackHitEffectResultReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtBdHRhY2tIaXRFZmZlY3RSZXN1bHQucHJvdG8isgEKFUF0dGFja0hpdEVm",
-          "ZmVjdFJlc3VsdBIbChNoaXRfaGFsdF90aW1lX3NjYWxlGAggASgCEh4KFm9y",
-          "aWdpbmFsX2hpdF9lZmZfbGV2ZWwYDCABKA0SFAoMYWlyX3N0cmVuZ3RoGA8g",
-          "ASgCEhUKDWhpdF9lZmZfbGV2ZWwYAiABKA0SFQoNaGl0X2hhbHRfdGltZRgN",
-          "IAEoAhIYChByZXRyZWF0X3N0cmVuZ3RoGAcgASgCQh4KHGVtdS5ncmFzc2N1",
-          "dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AttackHitEffectResult), global::AttackHitEffectResult.Parser, new[]{ "HitHaltTimeScale", "OriginalHitEffLevel", "AirStrength", "HitEffLevel", "HitHaltTime", "RetreatStrength" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AttackHitEffectResult.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AttackHitEffectResultReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtBdHRhY2tIaXRFZmZlY3RSZXN1bHQucHJvdG8isgEKFUF0dGFja0hpdEVm",
+            "ZmVjdFJlc3VsdBIbChNoaXRfaGFsdF90aW1lX3NjYWxlGAggASgCEh4KFm9y",
+            "aWdpbmFsX2hpdF9lZmZfbGV2ZWwYDCABKA0SFAoMYWlyX3N0cmVuZ3RoGA8g",
+            "ASgCEhUKDWhpdF9lZmZfbGV2ZWwYAiABKA0SFQoNaGl0X2hhbHRfdGltZRgN",
+            "IAEoAhIYChByZXRyZWF0X3N0cmVuZ3RoGAcgASgCQgyqAglPbGRQcm90b3Ni",
+            "BnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.AttackHitEffectResult), global::OldProtos.AttackHitEffectResult.Parser, new[]{ "HitHaltTimeScale", "OriginalHitEffLevel", "AirStrength", "HitEffLevel", "HitHaltTime", "RetreatStrength" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class AttackHitEffectResult : pb::IMessage<AttackHitEffectResult>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AttackHitEffectResult> _parser = new pb::MessageParser<AttackHitEffectResult>(() => new AttackHitEffectResult());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AttackHitEffectResult> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.AttackHitEffectResultReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AttackHitEffectResult() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AttackHitEffectResult(AttackHitEffectResult other) : this() {
+      hitHaltTimeScale_ = other.hitHaltTimeScale_;
+      originalHitEffLevel_ = other.originalHitEffLevel_;
+      airStrength_ = other.airStrength_;
+      hitEffLevel_ = other.hitEffLevel_;
+      hitHaltTime_ = other.hitHaltTime_;
+      retreatStrength_ = other.retreatStrength_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AttackHitEffectResult Clone() {
+      return new AttackHitEffectResult(this);
+    }
+
+    /// <summary>Field number for the "hit_halt_time_scale" field.</summary>
+    public const int HitHaltTimeScaleFieldNumber = 8;
+    private float hitHaltTimeScale_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float HitHaltTimeScale {
+      get { return hitHaltTimeScale_; }
+      set {
+        hitHaltTimeScale_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "original_hit_eff_level" field.</summary>
+    public const int OriginalHitEffLevelFieldNumber = 12;
+    private uint originalHitEffLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OriginalHitEffLevel {
+      get { return originalHitEffLevel_; }
+      set {
+        originalHitEffLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "air_strength" field.</summary>
+    public const int AirStrengthFieldNumber = 15;
+    private float airStrength_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AirStrength {
+      get { return airStrength_; }
+      set {
+        airStrength_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_eff_level" field.</summary>
+    public const int HitEffLevelFieldNumber = 2;
+    private uint hitEffLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint HitEffLevel {
+      get { return hitEffLevel_; }
+      set {
+        hitEffLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_halt_time" field.</summary>
+    public const int HitHaltTimeFieldNumber = 13;
+    private float hitHaltTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float HitHaltTime {
+      get { return hitHaltTime_; }
+      set {
+        hitHaltTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retreat_strength" field.</summary>
+    public const int RetreatStrengthFieldNumber = 7;
+    private float retreatStrength_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float RetreatStrength {
+      get { return retreatStrength_; }
+      set {
+        retreatStrength_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AttackHitEffectResult);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AttackHitEffectResult other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(HitHaltTimeScale, other.HitHaltTimeScale)) return false;
+      if (OriginalHitEffLevel != other.OriginalHitEffLevel) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AirStrength, other.AirStrength)) return false;
+      if (HitEffLevel != other.HitEffLevel) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(HitHaltTime, other.HitHaltTime)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(RetreatStrength, other.RetreatStrength)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (HitHaltTimeScale != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(HitHaltTimeScale);
+      if (OriginalHitEffLevel != 0) hash ^= OriginalHitEffLevel.GetHashCode();
+      if (AirStrength != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AirStrength);
+      if (HitEffLevel != 0) hash ^= HitEffLevel.GetHashCode();
+      if (HitHaltTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(HitHaltTime);
+      if (RetreatStrength != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(RetreatStrength);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (HitEffLevel != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(HitEffLevel);
+      }
+      if (RetreatStrength != 0F) {
+        output.WriteRawTag(61);
+        output.WriteFloat(RetreatStrength);
+      }
+      if (HitHaltTimeScale != 0F) {
+        output.WriteRawTag(69);
+        output.WriteFloat(HitHaltTimeScale);
+      }
+      if (OriginalHitEffLevel != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(OriginalHitEffLevel);
+      }
+      if (HitHaltTime != 0F) {
+        output.WriteRawTag(109);
+        output.WriteFloat(HitHaltTime);
+      }
+      if (AirStrength != 0F) {
+        output.WriteRawTag(125);
+        output.WriteFloat(AirStrength);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (HitEffLevel != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(HitEffLevel);
+      }
+      if (RetreatStrength != 0F) {
+        output.WriteRawTag(61);
+        output.WriteFloat(RetreatStrength);
+      }
+      if (HitHaltTimeScale != 0F) {
+        output.WriteRawTag(69);
+        output.WriteFloat(HitHaltTimeScale);
+      }
+      if (OriginalHitEffLevel != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(OriginalHitEffLevel);
+      }
+      if (HitHaltTime != 0F) {
+        output.WriteRawTag(109);
+        output.WriteFloat(HitHaltTime);
+      }
+      if (AirStrength != 0F) {
+        output.WriteRawTag(125);
+        output.WriteFloat(AirStrength);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (HitHaltTimeScale != 0F) {
+        size += 1 + 4;
+      }
+      if (OriginalHitEffLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OriginalHitEffLevel);
+      }
+      if (AirStrength != 0F) {
+        size += 1 + 4;
+      }
+      if (HitEffLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HitEffLevel);
+      }
+      if (HitHaltTime != 0F) {
+        size += 1 + 4;
+      }
+      if (RetreatStrength != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AttackHitEffectResult other) {
+      if (other == null) {
+        return;
+      }
+      if (other.HitHaltTimeScale != 0F) {
+        HitHaltTimeScale = other.HitHaltTimeScale;
+      }
+      if (other.OriginalHitEffLevel != 0) {
+        OriginalHitEffLevel = other.OriginalHitEffLevel;
+      }
+      if (other.AirStrength != 0F) {
+        AirStrength = other.AirStrength;
+      }
+      if (other.HitEffLevel != 0) {
+        HitEffLevel = other.HitEffLevel;
+      }
+      if (other.HitHaltTime != 0F) {
+        HitHaltTime = other.HitHaltTime;
+      }
+      if (other.RetreatStrength != 0F) {
+        RetreatStrength = other.RetreatStrength;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            HitEffLevel = input.ReadUInt32();
+            break;
+          }
+          case 61: {
+            RetreatStrength = input.ReadFloat();
+            break;
+          }
+          case 69: {
+            HitHaltTimeScale = input.ReadFloat();
+            break;
+          }
+          case 96: {
+            OriginalHitEffLevel = input.ReadUInt32();
+            break;
+          }
+          case 109: {
+            HitHaltTime = input.ReadFloat();
+            break;
+          }
+          case 125: {
+            AirStrength = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            HitEffLevel = input.ReadUInt32();
+            break;
+          }
+          case 61: {
+            RetreatStrength = input.ReadFloat();
+            break;
+          }
+          case 69: {
+            HitHaltTimeScale = input.ReadFloat();
+            break;
+          }
+          case 96: {
+            OriginalHitEffLevel = input.ReadUInt32();
+            break;
+          }
+          case 109: {
+            HitHaltTime = input.ReadFloat();
+            break;
+          }
+          case 125: {
+            AirStrength = input.ReadFloat();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class AttackHitEffectResult : pb::IMessage<AttackHitEffectResult>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AttackHitEffectResult> _parser = new pb::MessageParser<AttackHitEffectResult>(() => new AttackHitEffectResult());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AttackHitEffectResult> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AttackHitEffectResultReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AttackHitEffectResult() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AttackHitEffectResult(AttackHitEffectResult other) : this() {
-    hitHaltTimeScale_ = other.hitHaltTimeScale_;
-    originalHitEffLevel_ = other.originalHitEffLevel_;
-    airStrength_ = other.airStrength_;
-    hitEffLevel_ = other.hitEffLevel_;
-    hitHaltTime_ = other.hitHaltTime_;
-    retreatStrength_ = other.retreatStrength_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AttackHitEffectResult Clone() {
-    return new AttackHitEffectResult(this);
-  }
-
-  /// <summary>Field number for the "hit_halt_time_scale" field.</summary>
-  public const int HitHaltTimeScaleFieldNumber = 8;
-  private float hitHaltTimeScale_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float HitHaltTimeScale {
-    get { return hitHaltTimeScale_; }
-    set {
-      hitHaltTimeScale_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "original_hit_eff_level" field.</summary>
-  public const int OriginalHitEffLevelFieldNumber = 12;
-  private uint originalHitEffLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint OriginalHitEffLevel {
-    get { return originalHitEffLevel_; }
-    set {
-      originalHitEffLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "air_strength" field.</summary>
-  public const int AirStrengthFieldNumber = 15;
-  private float airStrength_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float AirStrength {
-    get { return airStrength_; }
-    set {
-      airStrength_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "hit_eff_level" field.</summary>
-  public const int HitEffLevelFieldNumber = 2;
-  private uint hitEffLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint HitEffLevel {
-    get { return hitEffLevel_; }
-    set {
-      hitEffLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "hit_halt_time" field.</summary>
-  public const int HitHaltTimeFieldNumber = 13;
-  private float hitHaltTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float HitHaltTime {
-    get { return hitHaltTime_; }
-    set {
-      hitHaltTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "retreat_strength" field.</summary>
-  public const int RetreatStrengthFieldNumber = 7;
-  private float retreatStrength_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float RetreatStrength {
-    get { return retreatStrength_; }
-    set {
-      retreatStrength_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AttackHitEffectResult);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AttackHitEffectResult other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(HitHaltTimeScale, other.HitHaltTimeScale)) return false;
-    if (OriginalHitEffLevel != other.OriginalHitEffLevel) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AirStrength, other.AirStrength)) return false;
-    if (HitEffLevel != other.HitEffLevel) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(HitHaltTime, other.HitHaltTime)) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(RetreatStrength, other.RetreatStrength)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (HitHaltTimeScale != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(HitHaltTimeScale);
-    if (OriginalHitEffLevel != 0) hash ^= OriginalHitEffLevel.GetHashCode();
-    if (AirStrength != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AirStrength);
-    if (HitEffLevel != 0) hash ^= HitEffLevel.GetHashCode();
-    if (HitHaltTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(HitHaltTime);
-    if (RetreatStrength != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(RetreatStrength);
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (HitEffLevel != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(HitEffLevel);
-    }
-    if (RetreatStrength != 0F) {
-      output.WriteRawTag(61);
-      output.WriteFloat(RetreatStrength);
-    }
-    if (HitHaltTimeScale != 0F) {
-      output.WriteRawTag(69);
-      output.WriteFloat(HitHaltTimeScale);
-    }
-    if (OriginalHitEffLevel != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(OriginalHitEffLevel);
-    }
-    if (HitHaltTime != 0F) {
-      output.WriteRawTag(109);
-      output.WriteFloat(HitHaltTime);
-    }
-    if (AirStrength != 0F) {
-      output.WriteRawTag(125);
-      output.WriteFloat(AirStrength);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (HitEffLevel != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(HitEffLevel);
-    }
-    if (RetreatStrength != 0F) {
-      output.WriteRawTag(61);
-      output.WriteFloat(RetreatStrength);
-    }
-    if (HitHaltTimeScale != 0F) {
-      output.WriteRawTag(69);
-      output.WriteFloat(HitHaltTimeScale);
-    }
-    if (OriginalHitEffLevel != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(OriginalHitEffLevel);
-    }
-    if (HitHaltTime != 0F) {
-      output.WriteRawTag(109);
-      output.WriteFloat(HitHaltTime);
-    }
-    if (AirStrength != 0F) {
-      output.WriteRawTag(125);
-      output.WriteFloat(AirStrength);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (HitHaltTimeScale != 0F) {
-      size += 1 + 4;
-    }
-    if (OriginalHitEffLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OriginalHitEffLevel);
-    }
-    if (AirStrength != 0F) {
-      size += 1 + 4;
-    }
-    if (HitEffLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HitEffLevel);
-    }
-    if (HitHaltTime != 0F) {
-      size += 1 + 4;
-    }
-    if (RetreatStrength != 0F) {
-      size += 1 + 4;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AttackHitEffectResult other) {
-    if (other == null) {
-      return;
-    }
-    if (other.HitHaltTimeScale != 0F) {
-      HitHaltTimeScale = other.HitHaltTimeScale;
-    }
-    if (other.OriginalHitEffLevel != 0) {
-      OriginalHitEffLevel = other.OriginalHitEffLevel;
-    }
-    if (other.AirStrength != 0F) {
-      AirStrength = other.AirStrength;
-    }
-    if (other.HitEffLevel != 0) {
-      HitEffLevel = other.HitEffLevel;
-    }
-    if (other.HitHaltTime != 0F) {
-      HitHaltTime = other.HitHaltTime;
-    }
-    if (other.RetreatStrength != 0F) {
-      RetreatStrength = other.RetreatStrength;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          HitEffLevel = input.ReadUInt32();
-          break;
-        }
-        case 61: {
-          RetreatStrength = input.ReadFloat();
-          break;
-        }
-        case 69: {
-          HitHaltTimeScale = input.ReadFloat();
-          break;
-        }
-        case 96: {
-          OriginalHitEffLevel = input.ReadUInt32();
-          break;
-        }
-        case 109: {
-          HitHaltTime = input.ReadFloat();
-          break;
-        }
-        case 125: {
-          AirStrength = input.ReadFloat();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          HitEffLevel = input.ReadUInt32();
-          break;
-        }
-        case 61: {
-          RetreatStrength = input.ReadFloat();
-          break;
-        }
-        case 69: {
-          HitHaltTimeScale = input.ReadFloat();
-          break;
-        }
-        case 96: {
-          OriginalHitEffLevel = input.ReadUInt32();
-          break;
-        }
-        case 109: {
-          HitHaltTime = input.ReadFloat();
-          break;
-        }
-        case 125: {
-          AirStrength = input.ReadFloat();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

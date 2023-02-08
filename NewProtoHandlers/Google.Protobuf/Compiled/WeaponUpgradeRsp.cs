@@ -9,370 +9,373 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from WeaponUpgradeRsp.proto</summary>
-public static partial class WeaponUpgradeRspReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for WeaponUpgradeRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from WeaponUpgradeRsp.proto</summary>
+  public static partial class WeaponUpgradeRspReflection {
 
-  static WeaponUpgradeRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZXZWFwb25VcGdyYWRlUnNwLnByb3RvGg9JdGVtUGFyYW0ucHJvdG8iigEK",
-          "EFdlYXBvblVwZ3JhZGVSc3ASEQoJb2xkX2xldmVsGA4gASgNEhoKEnRhcmdl",
-          "dF93ZWFwb25fZ3VpZBgDIAEoBBIRCgljdXJfbGV2ZWwYBiABKA0SIwoPaXRl",
-          "bV9wYXJhbV9saXN0GAggAygLMgouSXRlbVBhcmFtEg8KB3JldGNvZGUYCiAB",
-          "KAVCFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ItemParamReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::WeaponUpgradeRsp), global::WeaponUpgradeRsp.Parser, new[]{ "OldLevel", "TargetWeaponGuid", "CurLevel", "ItemParamList", "Retcode" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for WeaponUpgradeRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static WeaponUpgradeRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZXZWFwb25VcGdyYWRlUnNwLnByb3RvGg9JdGVtUGFyYW0ucHJvdG8iigEK",
+            "EFdlYXBvblVwZ3JhZGVSc3ASEQoJb2xkX2xldmVsGA4gASgNEhoKEnRhcmdl",
+            "dF93ZWFwb25fZ3VpZBgDIAEoBBIRCgljdXJfbGV2ZWwYBiABKA0SIwoPaXRl",
+            "bV9wYXJhbV9saXN0GAggAygLMgouSXRlbVBhcmFtEg8KB3JldGNvZGUYCiAB",
+            "KAVCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.ItemParamReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.WeaponUpgradeRsp), global::NewProtos.WeaponUpgradeRsp.Parser, new[]{ "OldLevel", "TargetWeaponGuid", "CurLevel", "ItemParamList", "Retcode" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 673;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class WeaponUpgradeRsp : pb::IMessage<WeaponUpgradeRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<WeaponUpgradeRsp> _parser = new pb::MessageParser<WeaponUpgradeRsp>(() => new WeaponUpgradeRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<WeaponUpgradeRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.WeaponUpgradeRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WeaponUpgradeRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WeaponUpgradeRsp(WeaponUpgradeRsp other) : this() {
+      oldLevel_ = other.oldLevel_;
+      targetWeaponGuid_ = other.targetWeaponGuid_;
+      curLevel_ = other.curLevel_;
+      itemParamList_ = other.itemParamList_.Clone();
+      retcode_ = other.retcode_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public WeaponUpgradeRsp Clone() {
+      return new WeaponUpgradeRsp(this);
+    }
+
+    /// <summary>Field number for the "old_level" field.</summary>
+    public const int OldLevelFieldNumber = 14;
+    private uint oldLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OldLevel {
+      get { return oldLevel_; }
+      set {
+        oldLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_weapon_guid" field.</summary>
+    public const int TargetWeaponGuidFieldNumber = 3;
+    private ulong targetWeaponGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong TargetWeaponGuid {
+      get { return targetWeaponGuid_; }
+      set {
+        targetWeaponGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_level" field.</summary>
+    public const int CurLevelFieldNumber = 6;
+    private uint curLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurLevel {
+      get { return curLevel_; }
+      set {
+        curLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "item_param_list" field.</summary>
+    public const int ItemParamListFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::NewProtos.ItemParam> _repeated_itemParamList_codec
+        = pb::FieldCodec.ForMessage(66, global::NewProtos.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ItemParam> itemParamList_ = new pbc::RepeatedField<global::NewProtos.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ItemParam> ItemParamList {
+      get { return itemParamList_; }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 10;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as WeaponUpgradeRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(WeaponUpgradeRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (OldLevel != other.OldLevel) return false;
+      if (TargetWeaponGuid != other.TargetWeaponGuid) return false;
+      if (CurLevel != other.CurLevel) return false;
+      if(!itemParamList_.Equals(other.itemParamList_)) return false;
+      if (Retcode != other.Retcode) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (OldLevel != 0) hash ^= OldLevel.GetHashCode();
+      if (TargetWeaponGuid != 0UL) hash ^= TargetWeaponGuid.GetHashCode();
+      if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
+      hash ^= itemParamList_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (TargetWeaponGuid != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(TargetWeaponGuid);
+      }
+      if (CurLevel != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(CurLevel);
+      }
+      itemParamList_.WriteTo(output, _repeated_itemParamList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
+      }
+      if (OldLevel != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(OldLevel);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (TargetWeaponGuid != 0UL) {
+        output.WriteRawTag(24);
+        output.WriteUInt64(TargetWeaponGuid);
+      }
+      if (CurLevel != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(CurLevel);
+      }
+      itemParamList_.WriteTo(ref output, _repeated_itemParamList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(Retcode);
+      }
+      if (OldLevel != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(OldLevel);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (OldLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OldLevel);
+      }
+      if (TargetWeaponGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetWeaponGuid);
+      }
+      if (CurLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
+      }
+      size += itemParamList_.CalculateSize(_repeated_itemParamList_codec);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(WeaponUpgradeRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.OldLevel != 0) {
+        OldLevel = other.OldLevel;
+      }
+      if (other.TargetWeaponGuid != 0UL) {
+        TargetWeaponGuid = other.TargetWeaponGuid;
+      }
+      if (other.CurLevel != 0) {
+        CurLevel = other.CurLevel;
+      }
+      itemParamList_.Add(other.itemParamList_);
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            TargetWeaponGuid = input.ReadUInt64();
+            break;
+          }
+          case 48: {
+            CurLevel = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            itemParamList_.AddEntriesFrom(input, _repeated_itemParamList_codec);
+            break;
+          }
+          case 80: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            OldLevel = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            TargetWeaponGuid = input.ReadUInt64();
+            break;
+          }
+          case 48: {
+            CurLevel = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            itemParamList_.AddEntriesFrom(ref input, _repeated_itemParamList_codec);
+            break;
+          }
+          case 80: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 112: {
+            OldLevel = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 673;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class WeaponUpgradeRsp : pb::IMessage<WeaponUpgradeRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<WeaponUpgradeRsp> _parser = new pb::MessageParser<WeaponUpgradeRsp>(() => new WeaponUpgradeRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<WeaponUpgradeRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::WeaponUpgradeRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WeaponUpgradeRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WeaponUpgradeRsp(WeaponUpgradeRsp other) : this() {
-    oldLevel_ = other.oldLevel_;
-    targetWeaponGuid_ = other.targetWeaponGuid_;
-    curLevel_ = other.curLevel_;
-    itemParamList_ = other.itemParamList_.Clone();
-    retcode_ = other.retcode_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public WeaponUpgradeRsp Clone() {
-    return new WeaponUpgradeRsp(this);
-  }
-
-  /// <summary>Field number for the "old_level" field.</summary>
-  public const int OldLevelFieldNumber = 14;
-  private uint oldLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint OldLevel {
-    get { return oldLevel_; }
-    set {
-      oldLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "target_weapon_guid" field.</summary>
-  public const int TargetWeaponGuidFieldNumber = 3;
-  private ulong targetWeaponGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong TargetWeaponGuid {
-    get { return targetWeaponGuid_; }
-    set {
-      targetWeaponGuid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cur_level" field.</summary>
-  public const int CurLevelFieldNumber = 6;
-  private uint curLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurLevel {
-    get { return curLevel_; }
-    set {
-      curLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "item_param_list" field.</summary>
-  public const int ItemParamListFieldNumber = 8;
-  private static readonly pb::FieldCodec<global::ItemParam> _repeated_itemParamList_codec
-      = pb::FieldCodec.ForMessage(66, global::ItemParam.Parser);
-  private readonly pbc::RepeatedField<global::ItemParam> itemParamList_ = new pbc::RepeatedField<global::ItemParam>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ItemParam> ItemParamList {
-    get { return itemParamList_; }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 10;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as WeaponUpgradeRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(WeaponUpgradeRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (OldLevel != other.OldLevel) return false;
-    if (TargetWeaponGuid != other.TargetWeaponGuid) return false;
-    if (CurLevel != other.CurLevel) return false;
-    if(!itemParamList_.Equals(other.itemParamList_)) return false;
-    if (Retcode != other.Retcode) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (OldLevel != 0) hash ^= OldLevel.GetHashCode();
-    if (TargetWeaponGuid != 0UL) hash ^= TargetWeaponGuid.GetHashCode();
-    if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
-    hash ^= itemParamList_.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (TargetWeaponGuid != 0UL) {
-      output.WriteRawTag(24);
-      output.WriteUInt64(TargetWeaponGuid);
-    }
-    if (CurLevel != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(CurLevel);
-    }
-    itemParamList_.WriteTo(output, _repeated_itemParamList_codec);
-    if (Retcode != 0) {
-      output.WriteRawTag(80);
-      output.WriteInt32(Retcode);
-    }
-    if (OldLevel != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(OldLevel);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (TargetWeaponGuid != 0UL) {
-      output.WriteRawTag(24);
-      output.WriteUInt64(TargetWeaponGuid);
-    }
-    if (CurLevel != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(CurLevel);
-    }
-    itemParamList_.WriteTo(ref output, _repeated_itemParamList_codec);
-    if (Retcode != 0) {
-      output.WriteRawTag(80);
-      output.WriteInt32(Retcode);
-    }
-    if (OldLevel != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(OldLevel);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (OldLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OldLevel);
-    }
-    if (TargetWeaponGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetWeaponGuid);
-    }
-    if (CurLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
-    }
-    size += itemParamList_.CalculateSize(_repeated_itemParamList_codec);
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(WeaponUpgradeRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.OldLevel != 0) {
-      OldLevel = other.OldLevel;
-    }
-    if (other.TargetWeaponGuid != 0UL) {
-      TargetWeaponGuid = other.TargetWeaponGuid;
-    }
-    if (other.CurLevel != 0) {
-      CurLevel = other.CurLevel;
-    }
-    itemParamList_.Add(other.itemParamList_);
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          TargetWeaponGuid = input.ReadUInt64();
-          break;
-        }
-        case 48: {
-          CurLevel = input.ReadUInt32();
-          break;
-        }
-        case 66: {
-          itemParamList_.AddEntriesFrom(input, _repeated_itemParamList_codec);
-          break;
-        }
-        case 80: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 112: {
-          OldLevel = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          TargetWeaponGuid = input.ReadUInt64();
-          break;
-        }
-        case 48: {
-          CurLevel = input.ReadUInt32();
-          break;
-        }
-        case 66: {
-          itemParamList_.AddEntriesFrom(ref input, _repeated_itemParamList_codec);
-          break;
-        }
-        case 80: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 112: {
-          OldLevel = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

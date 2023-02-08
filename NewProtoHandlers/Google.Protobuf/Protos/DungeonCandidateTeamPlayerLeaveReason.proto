@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 enum DungeonCandidateTeamPlayerLeaveReason {
   DUNGEON_CANDIDATE_TEAM_PLAYER_LEAVE_REASON_TPLR_NORMAL = 0;

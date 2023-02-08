@@ -20,7 +20,7 @@ import "TowerCurLevelRecord.proto";
 import "TowerFloorRecord.proto";
 import "TowerMonthlyBrief.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message TowerAllDataRsp {
   // enum CmdId {

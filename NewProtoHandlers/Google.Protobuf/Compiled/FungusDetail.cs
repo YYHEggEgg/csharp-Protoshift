@@ -9,372 +9,374 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FungusDetail.proto</summary>
-public static partial class FungusDetailReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FungusDetail.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FungusDetail.proto</summary>
+  public static partial class FungusDetailReflection {
 
-  static FungusDetailReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChJGdW5ndXNEZXRhaWwucHJvdG8iggEKDEZ1bmd1c0RldGFpbBIPCgduYW1l",
-          "X2lkGAggASgNEhsKE1VuazMzMDBfRUhOQkRKUEFOS0wYAiABKA0SEQoJZnVu",
-          "Z3VzX2lkGAMgASgNEhQKDGlzX2N1bHRpdmF0ZRgHIAEoCBIbChNVbmszMzAw",
-          "X0dDTEJQREpERUROGA0gASgNQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZw",
-          "cm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FungusDetail), global::FungusDetail.Parser, new[]{ "NameId", "Unk3300EHNBDJPANKL", "FungusId", "IsCultivate", "Unk3300GCLBPDJDEDN" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for FungusDetail.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FungusDetailReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChJGdW5ndXNEZXRhaWwucHJvdG8iggEKDEZ1bmd1c0RldGFpbBIPCgduYW1l",
+            "X2lkGAggASgNEhsKE1VuazMzMDBfRUhOQkRKUEFOS0wYAiABKA0SEQoJZnVu",
+            "Z3VzX2lkGAMgASgNEhQKDGlzX2N1bHRpdmF0ZRgHIAEoCBIbChNVbmszMzAw",
+            "X0dDTEJQREpERUROGA0gASgNQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.FungusDetail), global::NewProtos.FungusDetail.Parser, new[]{ "NameId", "Unk3300EHNBDJPANKL", "FungusId", "IsCultivate", "Unk3300GCLBPDJDEDN" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class FungusDetail : pb::IMessage<FungusDetail>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FungusDetail> _parser = new pb::MessageParser<FungusDetail>(() => new FungusDetail());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FungusDetail> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.FungusDetailReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusDetail() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusDetail(FungusDetail other) : this() {
+      nameId_ = other.nameId_;
+      unk3300EHNBDJPANKL_ = other.unk3300EHNBDJPANKL_;
+      fungusId_ = other.fungusId_;
+      isCultivate_ = other.isCultivate_;
+      unk3300GCLBPDJDEDN_ = other.unk3300GCLBPDJDEDN_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FungusDetail Clone() {
+      return new FungusDetail(this);
+    }
+
+    /// <summary>Field number for the "name_id" field.</summary>
+    public const int NameIdFieldNumber = 8;
+    private uint nameId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint NameId {
+      get { return nameId_; }
+      set {
+        nameId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EHNBDJPANKL" field.</summary>
+    public const int Unk3300EHNBDJPANKLFieldNumber = 2;
+    private uint unk3300EHNBDJPANKL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300EHNBDJPANKL {
+      get { return unk3300EHNBDJPANKL_; }
+      set {
+        unk3300EHNBDJPANKL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fungus_id" field.</summary>
+    public const int FungusIdFieldNumber = 3;
+    private uint fungusId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FungusId {
+      get { return fungusId_; }
+      set {
+        fungusId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_cultivate" field.</summary>
+    public const int IsCultivateFieldNumber = 7;
+    private bool isCultivate_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsCultivate {
+      get { return isCultivate_; }
+      set {
+        isCultivate_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GCLBPDJDEDN" field.</summary>
+    public const int Unk3300GCLBPDJDEDNFieldNumber = 13;
+    private uint unk3300GCLBPDJDEDN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GCLBPDJDEDN {
+      get { return unk3300GCLBPDJDEDN_; }
+      set {
+        unk3300GCLBPDJDEDN_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FungusDetail);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FungusDetail other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (NameId != other.NameId) return false;
+      if (Unk3300EHNBDJPANKL != other.Unk3300EHNBDJPANKL) return false;
+      if (FungusId != other.FungusId) return false;
+      if (IsCultivate != other.IsCultivate) return false;
+      if (Unk3300GCLBPDJDEDN != other.Unk3300GCLBPDJDEDN) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (NameId != 0) hash ^= NameId.GetHashCode();
+      if (Unk3300EHNBDJPANKL != 0) hash ^= Unk3300EHNBDJPANKL.GetHashCode();
+      if (FungusId != 0) hash ^= FungusId.GetHashCode();
+      if (IsCultivate != false) hash ^= IsCultivate.GetHashCode();
+      if (Unk3300GCLBPDJDEDN != 0) hash ^= Unk3300GCLBPDJDEDN.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Unk3300EHNBDJPANKL != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300EHNBDJPANKL);
+      }
+      if (FungusId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(FungusId);
+      }
+      if (IsCultivate != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsCultivate);
+      }
+      if (NameId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(NameId);
+      }
+      if (Unk3300GCLBPDJDEDN != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300GCLBPDJDEDN);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300EHNBDJPANKL != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300EHNBDJPANKL);
+      }
+      if (FungusId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(FungusId);
+      }
+      if (IsCultivate != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsCultivate);
+      }
+      if (NameId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(NameId);
+      }
+      if (Unk3300GCLBPDJDEDN != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300GCLBPDJDEDN);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (NameId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NameId);
+      }
+      if (Unk3300EHNBDJPANKL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EHNBDJPANKL);
+      }
+      if (FungusId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FungusId);
+      }
+      if (IsCultivate != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300GCLBPDJDEDN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GCLBPDJDEDN);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FungusDetail other) {
+      if (other == null) {
+        return;
+      }
+      if (other.NameId != 0) {
+        NameId = other.NameId;
+      }
+      if (other.Unk3300EHNBDJPANKL != 0) {
+        Unk3300EHNBDJPANKL = other.Unk3300EHNBDJPANKL;
+      }
+      if (other.FungusId != 0) {
+        FungusId = other.FungusId;
+      }
+      if (other.IsCultivate != false) {
+        IsCultivate = other.IsCultivate;
+      }
+      if (other.Unk3300GCLBPDJDEDN != 0) {
+        Unk3300GCLBPDJDEDN = other.Unk3300GCLBPDJDEDN;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            Unk3300EHNBDJPANKL = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            FungusId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            IsCultivate = input.ReadBool();
+            break;
+          }
+          case 64: {
+            NameId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300GCLBPDJDEDN = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            Unk3300EHNBDJPANKL = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            FungusId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            IsCultivate = input.ReadBool();
+            break;
+          }
+          case 64: {
+            NameId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300GCLBPDJDEDN = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class FungusDetail : pb::IMessage<FungusDetail>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<FungusDetail> _parser = new pb::MessageParser<FungusDetail>(() => new FungusDetail());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<FungusDetail> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::FungusDetailReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusDetail() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusDetail(FungusDetail other) : this() {
-    nameId_ = other.nameId_;
-    unk3300EHNBDJPANKL_ = other.unk3300EHNBDJPANKL_;
-    fungusId_ = other.fungusId_;
-    isCultivate_ = other.isCultivate_;
-    unk3300GCLBPDJDEDN_ = other.unk3300GCLBPDJDEDN_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FungusDetail Clone() {
-    return new FungusDetail(this);
-  }
-
-  /// <summary>Field number for the "name_id" field.</summary>
-  public const int NameIdFieldNumber = 8;
-  private uint nameId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint NameId {
-    get { return nameId_; }
-    set {
-      nameId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_EHNBDJPANKL" field.</summary>
-  public const int Unk3300EHNBDJPANKLFieldNumber = 2;
-  private uint unk3300EHNBDJPANKL_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300EHNBDJPANKL {
-    get { return unk3300EHNBDJPANKL_; }
-    set {
-      unk3300EHNBDJPANKL_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "fungus_id" field.</summary>
-  public const int FungusIdFieldNumber = 3;
-  private uint fungusId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FungusId {
-    get { return fungusId_; }
-    set {
-      fungusId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_cultivate" field.</summary>
-  public const int IsCultivateFieldNumber = 7;
-  private bool isCultivate_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsCultivate {
-    get { return isCultivate_; }
-    set {
-      isCultivate_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_GCLBPDJDEDN" field.</summary>
-  public const int Unk3300GCLBPDJDEDNFieldNumber = 13;
-  private uint unk3300GCLBPDJDEDN_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300GCLBPDJDEDN {
-    get { return unk3300GCLBPDJDEDN_; }
-    set {
-      unk3300GCLBPDJDEDN_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as FungusDetail);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(FungusDetail other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (NameId != other.NameId) return false;
-    if (Unk3300EHNBDJPANKL != other.Unk3300EHNBDJPANKL) return false;
-    if (FungusId != other.FungusId) return false;
-    if (IsCultivate != other.IsCultivate) return false;
-    if (Unk3300GCLBPDJDEDN != other.Unk3300GCLBPDJDEDN) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (NameId != 0) hash ^= NameId.GetHashCode();
-    if (Unk3300EHNBDJPANKL != 0) hash ^= Unk3300EHNBDJPANKL.GetHashCode();
-    if (FungusId != 0) hash ^= FungusId.GetHashCode();
-    if (IsCultivate != false) hash ^= IsCultivate.GetHashCode();
-    if (Unk3300GCLBPDJDEDN != 0) hash ^= Unk3300GCLBPDJDEDN.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Unk3300EHNBDJPANKL != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(Unk3300EHNBDJPANKL);
-    }
-    if (FungusId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(FungusId);
-    }
-    if (IsCultivate != false) {
-      output.WriteRawTag(56);
-      output.WriteBool(IsCultivate);
-    }
-    if (NameId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(NameId);
-    }
-    if (Unk3300GCLBPDJDEDN != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Unk3300GCLBPDJDEDN);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Unk3300EHNBDJPANKL != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(Unk3300EHNBDJPANKL);
-    }
-    if (FungusId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(FungusId);
-    }
-    if (IsCultivate != false) {
-      output.WriteRawTag(56);
-      output.WriteBool(IsCultivate);
-    }
-    if (NameId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(NameId);
-    }
-    if (Unk3300GCLBPDJDEDN != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Unk3300GCLBPDJDEDN);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (NameId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NameId);
-    }
-    if (Unk3300EHNBDJPANKL != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300EHNBDJPANKL);
-    }
-    if (FungusId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FungusId);
-    }
-    if (IsCultivate != false) {
-      size += 1 + 1;
-    }
-    if (Unk3300GCLBPDJDEDN != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GCLBPDJDEDN);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(FungusDetail other) {
-    if (other == null) {
-      return;
-    }
-    if (other.NameId != 0) {
-      NameId = other.NameId;
-    }
-    if (other.Unk3300EHNBDJPANKL != 0) {
-      Unk3300EHNBDJPANKL = other.Unk3300EHNBDJPANKL;
-    }
-    if (other.FungusId != 0) {
-      FungusId = other.FungusId;
-    }
-    if (other.IsCultivate != false) {
-      IsCultivate = other.IsCultivate;
-    }
-    if (other.Unk3300GCLBPDJDEDN != 0) {
-      Unk3300GCLBPDJDEDN = other.Unk3300GCLBPDJDEDN;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          Unk3300EHNBDJPANKL = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          FungusId = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          IsCultivate = input.ReadBool();
-          break;
-        }
-        case 64: {
-          NameId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Unk3300GCLBPDJDEDN = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          Unk3300EHNBDJPANKL = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          FungusId = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          IsCultivate = input.ReadBool();
-          break;
-        }
-        case 64: {
-          NameId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Unk3300GCLBPDJDEDN = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

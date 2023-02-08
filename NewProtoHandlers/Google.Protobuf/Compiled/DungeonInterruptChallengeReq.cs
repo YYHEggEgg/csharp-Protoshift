@@ -9,307 +9,310 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from DungeonInterruptChallengeReq.proto</summary>
-public static partial class DungeonInterruptChallengeReqReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for DungeonInterruptChallengeReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from DungeonInterruptChallengeReq.proto</summary>
+  public static partial class DungeonInterruptChallengeReqReflection {
 
-  static DungeonInterruptChallengeReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiJEdW5nZW9uSW50ZXJydXB0Q2hhbGxlbmdlUmVxLnByb3RvIl8KHER1bmdl",
-          "b25JbnRlcnJ1cHRDaGFsbGVuZ2VSZXESFAoMY2hhbGxlbmdlX2lkGAwgASgN",
-          "EhAKCGdyb3VwX2lkGAUgASgNEhcKD2NoYWxsZW5nZV9pbmRleBgKIAEoDUIW",
-          "ChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::DungeonInterruptChallengeReq), global::DungeonInterruptChallengeReq.Parser, new[]{ "ChallengeId", "GroupId", "ChallengeIndex" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for DungeonInterruptChallengeReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static DungeonInterruptChallengeReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiJEdW5nZW9uSW50ZXJydXB0Q2hhbGxlbmdlUmVxLnByb3RvIl8KHER1bmdl",
+            "b25JbnRlcnJ1cHRDaGFsbGVuZ2VSZXESFAoMY2hhbGxlbmdlX2lkGAwgASgN",
+            "EhAKCGdyb3VwX2lkGAUgASgNEhcKD2NoYWxsZW5nZV9pbmRleBgKIAEoDUIM",
+            "qgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.DungeonInterruptChallengeReq), global::NewProtos.DungeonInterruptChallengeReq.Parser, new[]{ "ChallengeId", "GroupId", "ChallengeIndex" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 991;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
+  /// </summary>
+  public sealed partial class DungeonInterruptChallengeReq : pb::IMessage<DungeonInterruptChallengeReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DungeonInterruptChallengeReq> _parser = new pb::MessageParser<DungeonInterruptChallengeReq>(() => new DungeonInterruptChallengeReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DungeonInterruptChallengeReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.DungeonInterruptChallengeReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DungeonInterruptChallengeReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DungeonInterruptChallengeReq(DungeonInterruptChallengeReq other) : this() {
+      challengeId_ = other.challengeId_;
+      groupId_ = other.groupId_;
+      challengeIndex_ = other.challengeIndex_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DungeonInterruptChallengeReq Clone() {
+      return new DungeonInterruptChallengeReq(this);
+    }
+
+    /// <summary>Field number for the "challenge_id" field.</summary>
+    public const int ChallengeIdFieldNumber = 12;
+    private uint challengeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeId {
+      get { return challengeId_; }
+      set {
+        challengeId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "group_id" field.</summary>
+    public const int GroupIdFieldNumber = 5;
+    private uint groupId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GroupId {
+      get { return groupId_; }
+      set {
+        groupId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_index" field.</summary>
+    public const int ChallengeIndexFieldNumber = 10;
+    private uint challengeIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ChallengeIndex {
+      get { return challengeIndex_; }
+      set {
+        challengeIndex_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DungeonInterruptChallengeReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DungeonInterruptChallengeReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ChallengeId != other.ChallengeId) return false;
+      if (GroupId != other.GroupId) return false;
+      if (ChallengeIndex != other.ChallengeIndex) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
+      if (GroupId != 0) hash ^= GroupId.GetHashCode();
+      if (ChallengeIndex != 0) hash ^= ChallengeIndex.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (GroupId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(GroupId);
+      }
+      if (ChallengeIndex != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ChallengeIndex);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ChallengeId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (GroupId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(GroupId);
+      }
+      if (ChallengeIndex != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ChallengeIndex);
+      }
+      if (ChallengeId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ChallengeId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ChallengeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
+      }
+      if (GroupId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
+      }
+      if (ChallengeIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeIndex);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DungeonInterruptChallengeReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ChallengeId != 0) {
+        ChallengeId = other.ChallengeId;
+      }
+      if (other.GroupId != 0) {
+        GroupId = other.GroupId;
+      }
+      if (other.ChallengeIndex != 0) {
+        ChallengeIndex = other.ChallengeIndex;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            GroupId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            ChallengeIndex = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            ChallengeId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            GroupId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            ChallengeIndex = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            ChallengeId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 991;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-///   IS_ALLOW_CLIENT = 1;
-/// }
-/// </summary>
-public sealed partial class DungeonInterruptChallengeReq : pb::IMessage<DungeonInterruptChallengeReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<DungeonInterruptChallengeReq> _parser = new pb::MessageParser<DungeonInterruptChallengeReq>(() => new DungeonInterruptChallengeReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<DungeonInterruptChallengeReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::DungeonInterruptChallengeReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DungeonInterruptChallengeReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DungeonInterruptChallengeReq(DungeonInterruptChallengeReq other) : this() {
-    challengeId_ = other.challengeId_;
-    groupId_ = other.groupId_;
-    challengeIndex_ = other.challengeIndex_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DungeonInterruptChallengeReq Clone() {
-    return new DungeonInterruptChallengeReq(this);
-  }
-
-  /// <summary>Field number for the "challenge_id" field.</summary>
-  public const int ChallengeIdFieldNumber = 12;
-  private uint challengeId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChallengeId {
-    get { return challengeId_; }
-    set {
-      challengeId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "group_id" field.</summary>
-  public const int GroupIdFieldNumber = 5;
-  private uint groupId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GroupId {
-    get { return groupId_; }
-    set {
-      groupId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "challenge_index" field.</summary>
-  public const int ChallengeIndexFieldNumber = 10;
-  private uint challengeIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ChallengeIndex {
-    get { return challengeIndex_; }
-    set {
-      challengeIndex_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as DungeonInterruptChallengeReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(DungeonInterruptChallengeReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ChallengeId != other.ChallengeId) return false;
-    if (GroupId != other.GroupId) return false;
-    if (ChallengeIndex != other.ChallengeIndex) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ChallengeId != 0) hash ^= ChallengeId.GetHashCode();
-    if (GroupId != 0) hash ^= GroupId.GetHashCode();
-    if (ChallengeIndex != 0) hash ^= ChallengeIndex.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (GroupId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(GroupId);
-    }
-    if (ChallengeIndex != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(ChallengeIndex);
-    }
-    if (ChallengeId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(ChallengeId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (GroupId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(GroupId);
-    }
-    if (ChallengeIndex != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(ChallengeIndex);
-    }
-    if (ChallengeId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(ChallengeId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ChallengeId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeId);
-    }
-    if (GroupId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
-    }
-    if (ChallengeIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChallengeIndex);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(DungeonInterruptChallengeReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ChallengeId != 0) {
-      ChallengeId = other.ChallengeId;
-    }
-    if (other.GroupId != 0) {
-      GroupId = other.GroupId;
-    }
-    if (other.ChallengeIndex != 0) {
-      ChallengeIndex = other.ChallengeIndex;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          GroupId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          ChallengeIndex = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          ChallengeId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          GroupId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          ChallengeIndex = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          ChallengeId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

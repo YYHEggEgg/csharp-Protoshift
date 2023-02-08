@@ -20,7 +20,7 @@ import "HomeSceneArrangementMuipData.proto";
 import "HomeVerifySceneData.proto";
 import "LanguageType.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message HomeVerifyData {
   string aid = 7;

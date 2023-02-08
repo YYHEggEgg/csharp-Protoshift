@@ -9,377 +9,380 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from InstableSprayLevelFinishNotify.proto</summary>
-public static partial class InstableSprayLevelFinishNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for InstableSprayLevelFinishNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from InstableSprayLevelFinishNotify.proto</summary>
+  public static partial class InstableSprayLevelFinishNotifyReflection {
 
-  static InstableSprayLevelFinishNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiRJbnN0YWJsZVNwcmF5TGV2ZWxGaW5pc2hOb3RpZnkucHJvdG8ijgEKHklu",
-          "c3RhYmxlU3ByYXlMZXZlbEZpbmlzaE5vdGlmeRIbChNpc19uZWVkX3N3aXRj",
-          "aF90ZWFtGAsgASgIEhwKFGlzX3NraXBfYmxhY2tfc2NyZWVuGAcgASgIEg0K",
-          "BXJvdW5kGA8gASgNEhAKCHN0YWdlX2lkGAggASgNEhAKCGxldmVsX2lkGAog",
-          "ASgNQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::InstableSprayLevelFinishNotify), global::InstableSprayLevelFinishNotify.Parser, new[]{ "IsNeedSwitchTeam", "IsSkipBlackScreen", "Round", "StageId", "LevelId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for InstableSprayLevelFinishNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static InstableSprayLevelFinishNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiRJbnN0YWJsZVNwcmF5TGV2ZWxGaW5pc2hOb3RpZnkucHJvdG8ijgEKHklu",
+            "c3RhYmxlU3ByYXlMZXZlbEZpbmlzaE5vdGlmeRIbChNpc19uZWVkX3N3aXRj",
+            "aF90ZWFtGAsgASgIEhwKFGlzX3NraXBfYmxhY2tfc2NyZWVuGAcgASgIEg0K",
+            "BXJvdW5kGA8gASgNEhAKCHN0YWdlX2lkGAggASgNEhAKCGxldmVsX2lkGAog",
+            "ASgNQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.InstableSprayLevelFinishNotify), global::OldProtos.InstableSprayLevelFinishNotify.Parser, new[]{ "IsNeedSwitchTeam", "IsSkipBlackScreen", "Round", "StageId", "LevelId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 21961
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class InstableSprayLevelFinishNotify : pb::IMessage<InstableSprayLevelFinishNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<InstableSprayLevelFinishNotify> _parser = new pb::MessageParser<InstableSprayLevelFinishNotify>(() => new InstableSprayLevelFinishNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<InstableSprayLevelFinishNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.InstableSprayLevelFinishNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InstableSprayLevelFinishNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InstableSprayLevelFinishNotify(InstableSprayLevelFinishNotify other) : this() {
+      isNeedSwitchTeam_ = other.isNeedSwitchTeam_;
+      isSkipBlackScreen_ = other.isSkipBlackScreen_;
+      round_ = other.round_;
+      stageId_ = other.stageId_;
+      levelId_ = other.levelId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InstableSprayLevelFinishNotify Clone() {
+      return new InstableSprayLevelFinishNotify(this);
+    }
+
+    /// <summary>Field number for the "is_need_switch_team" field.</summary>
+    public const int IsNeedSwitchTeamFieldNumber = 11;
+    private bool isNeedSwitchTeam_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsNeedSwitchTeam {
+      get { return isNeedSwitchTeam_; }
+      set {
+        isNeedSwitchTeam_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_skip_black_screen" field.</summary>
+    public const int IsSkipBlackScreenFieldNumber = 7;
+    private bool isSkipBlackScreen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSkipBlackScreen {
+      get { return isSkipBlackScreen_; }
+      set {
+        isSkipBlackScreen_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "round" field.</summary>
+    public const int RoundFieldNumber = 15;
+    private uint round_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Round {
+      get { return round_; }
+      set {
+        round_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 8;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level_id" field.</summary>
+    public const int LevelIdFieldNumber = 10;
+    private uint levelId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LevelId {
+      get { return levelId_; }
+      set {
+        levelId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as InstableSprayLevelFinishNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(InstableSprayLevelFinishNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsNeedSwitchTeam != other.IsNeedSwitchTeam) return false;
+      if (IsSkipBlackScreen != other.IsSkipBlackScreen) return false;
+      if (Round != other.Round) return false;
+      if (StageId != other.StageId) return false;
+      if (LevelId != other.LevelId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsNeedSwitchTeam != false) hash ^= IsNeedSwitchTeam.GetHashCode();
+      if (IsSkipBlackScreen != false) hash ^= IsSkipBlackScreen.GetHashCode();
+      if (Round != 0) hash ^= Round.GetHashCode();
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (LevelId != 0) hash ^= LevelId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsSkipBlackScreen != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsSkipBlackScreen);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(StageId);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(LevelId);
+      }
+      if (IsNeedSwitchTeam != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsNeedSwitchTeam);
+      }
+      if (Round != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Round);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsSkipBlackScreen != false) {
+        output.WriteRawTag(56);
+        output.WriteBool(IsSkipBlackScreen);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(StageId);
+      }
+      if (LevelId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(LevelId);
+      }
+      if (IsNeedSwitchTeam != false) {
+        output.WriteRawTag(88);
+        output.WriteBool(IsNeedSwitchTeam);
+      }
+      if (Round != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Round);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsNeedSwitchTeam != false) {
+        size += 1 + 1;
+      }
+      if (IsSkipBlackScreen != false) {
+        size += 1 + 1;
+      }
+      if (Round != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Round);
+      }
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      if (LevelId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(InstableSprayLevelFinishNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsNeedSwitchTeam != false) {
+        IsNeedSwitchTeam = other.IsNeedSwitchTeam;
+      }
+      if (other.IsSkipBlackScreen != false) {
+        IsSkipBlackScreen = other.IsSkipBlackScreen;
+      }
+      if (other.Round != 0) {
+        Round = other.Round;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      if (other.LevelId != 0) {
+        LevelId = other.LevelId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 56: {
+            IsSkipBlackScreen = input.ReadBool();
+            break;
+          }
+          case 64: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            LevelId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            IsNeedSwitchTeam = input.ReadBool();
+            break;
+          }
+          case 120: {
+            Round = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 56: {
+            IsSkipBlackScreen = input.ReadBool();
+            break;
+          }
+          case 64: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            LevelId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            IsNeedSwitchTeam = input.ReadBool();
+            break;
+          }
+          case 120: {
+            Round = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 21961
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class InstableSprayLevelFinishNotify : pb::IMessage<InstableSprayLevelFinishNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<InstableSprayLevelFinishNotify> _parser = new pb::MessageParser<InstableSprayLevelFinishNotify>(() => new InstableSprayLevelFinishNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<InstableSprayLevelFinishNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::InstableSprayLevelFinishNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InstableSprayLevelFinishNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InstableSprayLevelFinishNotify(InstableSprayLevelFinishNotify other) : this() {
-    isNeedSwitchTeam_ = other.isNeedSwitchTeam_;
-    isSkipBlackScreen_ = other.isSkipBlackScreen_;
-    round_ = other.round_;
-    stageId_ = other.stageId_;
-    levelId_ = other.levelId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InstableSprayLevelFinishNotify Clone() {
-    return new InstableSprayLevelFinishNotify(this);
-  }
-
-  /// <summary>Field number for the "is_need_switch_team" field.</summary>
-  public const int IsNeedSwitchTeamFieldNumber = 11;
-  private bool isNeedSwitchTeam_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsNeedSwitchTeam {
-    get { return isNeedSwitchTeam_; }
-    set {
-      isNeedSwitchTeam_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_skip_black_screen" field.</summary>
-  public const int IsSkipBlackScreenFieldNumber = 7;
-  private bool isSkipBlackScreen_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsSkipBlackScreen {
-    get { return isSkipBlackScreen_; }
-    set {
-      isSkipBlackScreen_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "round" field.</summary>
-  public const int RoundFieldNumber = 15;
-  private uint round_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Round {
-    get { return round_; }
-    set {
-      round_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "stage_id" field.</summary>
-  public const int StageIdFieldNumber = 8;
-  private uint stageId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StageId {
-    get { return stageId_; }
-    set {
-      stageId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "level_id" field.</summary>
-  public const int LevelIdFieldNumber = 10;
-  private uint levelId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LevelId {
-    get { return levelId_; }
-    set {
-      levelId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as InstableSprayLevelFinishNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(InstableSprayLevelFinishNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsNeedSwitchTeam != other.IsNeedSwitchTeam) return false;
-    if (IsSkipBlackScreen != other.IsSkipBlackScreen) return false;
-    if (Round != other.Round) return false;
-    if (StageId != other.StageId) return false;
-    if (LevelId != other.LevelId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsNeedSwitchTeam != false) hash ^= IsNeedSwitchTeam.GetHashCode();
-    if (IsSkipBlackScreen != false) hash ^= IsSkipBlackScreen.GetHashCode();
-    if (Round != 0) hash ^= Round.GetHashCode();
-    if (StageId != 0) hash ^= StageId.GetHashCode();
-    if (LevelId != 0) hash ^= LevelId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsSkipBlackScreen != false) {
-      output.WriteRawTag(56);
-      output.WriteBool(IsSkipBlackScreen);
-    }
-    if (StageId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(StageId);
-    }
-    if (LevelId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(LevelId);
-    }
-    if (IsNeedSwitchTeam != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(IsNeedSwitchTeam);
-    }
-    if (Round != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Round);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsSkipBlackScreen != false) {
-      output.WriteRawTag(56);
-      output.WriteBool(IsSkipBlackScreen);
-    }
-    if (StageId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(StageId);
-    }
-    if (LevelId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(LevelId);
-    }
-    if (IsNeedSwitchTeam != false) {
-      output.WriteRawTag(88);
-      output.WriteBool(IsNeedSwitchTeam);
-    }
-    if (Round != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Round);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsNeedSwitchTeam != false) {
-      size += 1 + 1;
-    }
-    if (IsSkipBlackScreen != false) {
-      size += 1 + 1;
-    }
-    if (Round != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Round);
-    }
-    if (StageId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-    }
-    if (LevelId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LevelId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(InstableSprayLevelFinishNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsNeedSwitchTeam != false) {
-      IsNeedSwitchTeam = other.IsNeedSwitchTeam;
-    }
-    if (other.IsSkipBlackScreen != false) {
-      IsSkipBlackScreen = other.IsSkipBlackScreen;
-    }
-    if (other.Round != 0) {
-      Round = other.Round;
-    }
-    if (other.StageId != 0) {
-      StageId = other.StageId;
-    }
-    if (other.LevelId != 0) {
-      LevelId = other.LevelId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 56: {
-          IsSkipBlackScreen = input.ReadBool();
-          break;
-        }
-        case 64: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          LevelId = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          IsNeedSwitchTeam = input.ReadBool();
-          break;
-        }
-        case 120: {
-          Round = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 56: {
-          IsSkipBlackScreen = input.ReadBool();
-          break;
-        }
-        case 64: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          LevelId = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          IsNeedSwitchTeam = input.ReadBool();
-          break;
-        }
-        case 120: {
-          Round = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

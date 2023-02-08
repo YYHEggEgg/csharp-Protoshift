@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GCGPhaseType.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message GCGMsgOpTimer {
   fixed64 begin_time = 9;

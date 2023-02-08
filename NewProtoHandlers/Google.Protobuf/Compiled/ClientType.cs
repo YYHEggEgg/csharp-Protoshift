@@ -9,36 +9,39 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ClientType.proto</summary>
-public static partial class ClientTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ClientType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ClientType.proto</summary>
+  public static partial class ClientTypeReflection {
 
-  static ClientTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChBDbGllbnRUeXBlLnByb3RvKjoKCkNsaWVudFR5cGUSFwoTQ0xJRU5UX1RZ",
-          "UEVfUFJPRFVDVBAAEhMKD0NMSUVOVF9UWVBFX0RFVhABQhYKFG9yZy5zb3Jh",
-          "cG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ClientType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for ClientType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ClientTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChBDbGllbnRUeXBlLnByb3RvKjoKCkNsaWVudFR5cGUSFwoTQ0xJRU5UX1RZ",
+            "UEVfUFJPRFVDVBAAEhMKD0NMSUVOVF9UWVBFX0RFVhABQgyqAglOZXdQcm90",
+            "b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.ClientType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum ClientType {
+    [pbr::OriginalName("CLIENT_TYPE_PRODUCT")] Product = 0,
+    [pbr::OriginalName("CLIENT_TYPE_DEV")] Dev = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum ClientType {
-  [pbr::OriginalName("CLIENT_TYPE_PRODUCT")] Product = 0,
-  [pbr::OriginalName("CLIENT_TYPE_DEV")] Dev = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

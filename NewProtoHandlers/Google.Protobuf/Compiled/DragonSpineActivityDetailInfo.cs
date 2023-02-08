@@ -9,438 +9,441 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from DragonSpineActivityDetailInfo.proto</summary>
-public static partial class DragonSpineActivityDetailInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for DragonSpineActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from DragonSpineActivityDetailInfo.proto</summary>
+  public static partial class DragonSpineActivityDetailInfoReflection {
 
-  static DragonSpineActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiNEcmFnb25TcGluZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxocRHJhZ29u",
-          "U3BpbmVDaGFwdGVySW5mby5wcm90byKAAgodRHJhZ29uU3BpbmVBY3Rpdml0",
-          "eURldGFpbEluZm8SGQoRaXNfY29udGVudF9jbG9zZWQYCSABKAgSGwoTVW5r",
-          "MzMwMF9GT0hKREdDQUtFSxgDIAEoDRIbChNVbmszMzAwX1BQQUJPRk1JR05N",
-          "GAogASgNEjIKEWNoYXB0ZXJfaW5mb19saXN0GAcgAygLMhcuRHJhZ29uU3Bp",
-          "bmVDaGFwdGVySW5mbxIbChNVbmszMzAwX05FT0NNR0pDRU9KGAQgASgNEhsK",
-          "E1VuazMzMDBfSU1MS0lKQU9BREYYDCABKA0SHAoUd2VhcG9uX2VuaGFuY2Vf",
-          "bGV2ZWwYCCABKA1CFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::DragonSpineChapterInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::DragonSpineActivityDetailInfo), global::DragonSpineActivityDetailInfo.Parser, new[]{ "IsContentClosed", "Unk3300FOHJDGCAKEK", "Unk3300PPABOFMIGNM", "ChapterInfoList", "Unk3300NEOCMGJCEOJ", "Unk3300IMLKIJAOADF", "WeaponEnhanceLevel" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for DragonSpineActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static DragonSpineActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiNEcmFnb25TcGluZUFjdGl2aXR5RGV0YWlsSW5mby5wcm90bxocRHJhZ29u",
+            "U3BpbmVDaGFwdGVySW5mby5wcm90byKAAgodRHJhZ29uU3BpbmVBY3Rpdml0",
+            "eURldGFpbEluZm8SGQoRaXNfY29udGVudF9jbG9zZWQYCSABKAgSGwoTVW5r",
+            "MzMwMF9GT0hKREdDQUtFSxgDIAEoDRIbChNVbmszMzAwX1BQQUJPRk1JR05N",
+            "GAogASgNEjIKEWNoYXB0ZXJfaW5mb19saXN0GAcgAygLMhcuRHJhZ29uU3Bp",
+            "bmVDaGFwdGVySW5mbxIbChNVbmszMzAwX05FT0NNR0pDRU9KGAQgASgNEhsK",
+            "E1VuazMzMDBfSU1MS0lKQU9BREYYDCABKA0SHAoUd2VhcG9uX2VuaGFuY2Vf",
+            "bGV2ZWwYCCABKA1CDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.DragonSpineChapterInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.DragonSpineActivityDetailInfo), global::NewProtos.DragonSpineActivityDetailInfo.Parser, new[]{ "IsContentClosed", "Unk3300FOHJDGCAKEK", "Unk3300PPABOFMIGNM", "ChapterInfoList", "Unk3300NEOCMGJCEOJ", "Unk3300IMLKIJAOADF", "WeaponEnhanceLevel" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class DragonSpineActivityDetailInfo : pb::IMessage<DragonSpineActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DragonSpineActivityDetailInfo> _parser = new pb::MessageParser<DragonSpineActivityDetailInfo>(() => new DragonSpineActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DragonSpineActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.DragonSpineActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DragonSpineActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DragonSpineActivityDetailInfo(DragonSpineActivityDetailInfo other) : this() {
+      isContentClosed_ = other.isContentClosed_;
+      unk3300FOHJDGCAKEK_ = other.unk3300FOHJDGCAKEK_;
+      unk3300PPABOFMIGNM_ = other.unk3300PPABOFMIGNM_;
+      chapterInfoList_ = other.chapterInfoList_.Clone();
+      unk3300NEOCMGJCEOJ_ = other.unk3300NEOCMGJCEOJ_;
+      unk3300IMLKIJAOADF_ = other.unk3300IMLKIJAOADF_;
+      weaponEnhanceLevel_ = other.weaponEnhanceLevel_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DragonSpineActivityDetailInfo Clone() {
+      return new DragonSpineActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 9;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FOHJDGCAKEK" field.</summary>
+    public const int Unk3300FOHJDGCAKEKFieldNumber = 3;
+    private uint unk3300FOHJDGCAKEK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FOHJDGCAKEK {
+      get { return unk3300FOHJDGCAKEK_; }
+      set {
+        unk3300FOHJDGCAKEK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PPABOFMIGNM" field.</summary>
+    public const int Unk3300PPABOFMIGNMFieldNumber = 10;
+    private uint unk3300PPABOFMIGNM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PPABOFMIGNM {
+      get { return unk3300PPABOFMIGNM_; }
+      set {
+        unk3300PPABOFMIGNM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "chapter_info_list" field.</summary>
+    public const int ChapterInfoListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::NewProtos.DragonSpineChapterInfo> _repeated_chapterInfoList_codec
+        = pb::FieldCodec.ForMessage(58, global::NewProtos.DragonSpineChapterInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.DragonSpineChapterInfo> chapterInfoList_ = new pbc::RepeatedField<global::NewProtos.DragonSpineChapterInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.DragonSpineChapterInfo> ChapterInfoList {
+      get { return chapterInfoList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_NEOCMGJCEOJ" field.</summary>
+    public const int Unk3300NEOCMGJCEOJFieldNumber = 4;
+    private uint unk3300NEOCMGJCEOJ_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NEOCMGJCEOJ {
+      get { return unk3300NEOCMGJCEOJ_; }
+      set {
+        unk3300NEOCMGJCEOJ_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IMLKIJAOADF" field.</summary>
+    public const int Unk3300IMLKIJAOADFFieldNumber = 12;
+    private uint unk3300IMLKIJAOADF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IMLKIJAOADF {
+      get { return unk3300IMLKIJAOADF_; }
+      set {
+        unk3300IMLKIJAOADF_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "weapon_enhance_level" field.</summary>
+    public const int WeaponEnhanceLevelFieldNumber = 8;
+    private uint weaponEnhanceLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WeaponEnhanceLevel {
+      get { return weaponEnhanceLevel_; }
+      set {
+        weaponEnhanceLevel_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DragonSpineActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DragonSpineActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if (Unk3300FOHJDGCAKEK != other.Unk3300FOHJDGCAKEK) return false;
+      if (Unk3300PPABOFMIGNM != other.Unk3300PPABOFMIGNM) return false;
+      if(!chapterInfoList_.Equals(other.chapterInfoList_)) return false;
+      if (Unk3300NEOCMGJCEOJ != other.Unk3300NEOCMGJCEOJ) return false;
+      if (Unk3300IMLKIJAOADF != other.Unk3300IMLKIJAOADF) return false;
+      if (WeaponEnhanceLevel != other.WeaponEnhanceLevel) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      if (Unk3300FOHJDGCAKEK != 0) hash ^= Unk3300FOHJDGCAKEK.GetHashCode();
+      if (Unk3300PPABOFMIGNM != 0) hash ^= Unk3300PPABOFMIGNM.GetHashCode();
+      hash ^= chapterInfoList_.GetHashCode();
+      if (Unk3300NEOCMGJCEOJ != 0) hash ^= Unk3300NEOCMGJCEOJ.GetHashCode();
+      if (Unk3300IMLKIJAOADF != 0) hash ^= Unk3300IMLKIJAOADF.GetHashCode();
+      if (WeaponEnhanceLevel != 0) hash ^= WeaponEnhanceLevel.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Unk3300FOHJDGCAKEK != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FOHJDGCAKEK);
+      }
+      if (Unk3300NEOCMGJCEOJ != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300NEOCMGJCEOJ);
+      }
+      chapterInfoList_.WriteTo(output, _repeated_chapterInfoList_codec);
+      if (WeaponEnhanceLevel != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(WeaponEnhanceLevel);
+      }
+      if (IsContentClosed != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsContentClosed);
+      }
+      if (Unk3300PPABOFMIGNM != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300PPABOFMIGNM);
+      }
+      if (Unk3300IMLKIJAOADF != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300IMLKIJAOADF);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300FOHJDGCAKEK != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300FOHJDGCAKEK);
+      }
+      if (Unk3300NEOCMGJCEOJ != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300NEOCMGJCEOJ);
+      }
+      chapterInfoList_.WriteTo(ref output, _repeated_chapterInfoList_codec);
+      if (WeaponEnhanceLevel != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(WeaponEnhanceLevel);
+      }
+      if (IsContentClosed != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsContentClosed);
+      }
+      if (Unk3300PPABOFMIGNM != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300PPABOFMIGNM);
+      }
+      if (Unk3300IMLKIJAOADF != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300IMLKIJAOADF);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsContentClosed != false) {
+        size += 1 + 1;
+      }
+      if (Unk3300FOHJDGCAKEK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FOHJDGCAKEK);
+      }
+      if (Unk3300PPABOFMIGNM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PPABOFMIGNM);
+      }
+      size += chapterInfoList_.CalculateSize(_repeated_chapterInfoList_codec);
+      if (Unk3300NEOCMGJCEOJ != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NEOCMGJCEOJ);
+      }
+      if (Unk3300IMLKIJAOADF != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IMLKIJAOADF);
+      }
+      if (WeaponEnhanceLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponEnhanceLevel);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DragonSpineActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
+      if (other.Unk3300FOHJDGCAKEK != 0) {
+        Unk3300FOHJDGCAKEK = other.Unk3300FOHJDGCAKEK;
+      }
+      if (other.Unk3300PPABOFMIGNM != 0) {
+        Unk3300PPABOFMIGNM = other.Unk3300PPABOFMIGNM;
+      }
+      chapterInfoList_.Add(other.chapterInfoList_);
+      if (other.Unk3300NEOCMGJCEOJ != 0) {
+        Unk3300NEOCMGJCEOJ = other.Unk3300NEOCMGJCEOJ;
+      }
+      if (other.Unk3300IMLKIJAOADF != 0) {
+        Unk3300IMLKIJAOADF = other.Unk3300IMLKIJAOADF;
+      }
+      if (other.WeaponEnhanceLevel != 0) {
+        WeaponEnhanceLevel = other.WeaponEnhanceLevel;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            Unk3300FOHJDGCAKEK = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Unk3300NEOCMGJCEOJ = input.ReadUInt32();
+            break;
+          }
+          case 58: {
+            chapterInfoList_.AddEntriesFrom(input, _repeated_chapterInfoList_codec);
+            break;
+          }
+          case 64: {
+            WeaponEnhanceLevel = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 80: {
+            Unk3300PPABOFMIGNM = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300IMLKIJAOADF = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            Unk3300FOHJDGCAKEK = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Unk3300NEOCMGJCEOJ = input.ReadUInt32();
+            break;
+          }
+          case 58: {
+            chapterInfoList_.AddEntriesFrom(ref input, _repeated_chapterInfoList_codec);
+            break;
+          }
+          case 64: {
+            WeaponEnhanceLevel = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 80: {
+            Unk3300PPABOFMIGNM = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            Unk3300IMLKIJAOADF = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class DragonSpineActivityDetailInfo : pb::IMessage<DragonSpineActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<DragonSpineActivityDetailInfo> _parser = new pb::MessageParser<DragonSpineActivityDetailInfo>(() => new DragonSpineActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<DragonSpineActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::DragonSpineActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DragonSpineActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DragonSpineActivityDetailInfo(DragonSpineActivityDetailInfo other) : this() {
-    isContentClosed_ = other.isContentClosed_;
-    unk3300FOHJDGCAKEK_ = other.unk3300FOHJDGCAKEK_;
-    unk3300PPABOFMIGNM_ = other.unk3300PPABOFMIGNM_;
-    chapterInfoList_ = other.chapterInfoList_.Clone();
-    unk3300NEOCMGJCEOJ_ = other.unk3300NEOCMGJCEOJ_;
-    unk3300IMLKIJAOADF_ = other.unk3300IMLKIJAOADF_;
-    weaponEnhanceLevel_ = other.weaponEnhanceLevel_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DragonSpineActivityDetailInfo Clone() {
-    return new DragonSpineActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "is_content_closed" field.</summary>
-  public const int IsContentClosedFieldNumber = 9;
-  private bool isContentClosed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsContentClosed {
-    get { return isContentClosed_; }
-    set {
-      isContentClosed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_FOHJDGCAKEK" field.</summary>
-  public const int Unk3300FOHJDGCAKEKFieldNumber = 3;
-  private uint unk3300FOHJDGCAKEK_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300FOHJDGCAKEK {
-    get { return unk3300FOHJDGCAKEK_; }
-    set {
-      unk3300FOHJDGCAKEK_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_PPABOFMIGNM" field.</summary>
-  public const int Unk3300PPABOFMIGNMFieldNumber = 10;
-  private uint unk3300PPABOFMIGNM_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300PPABOFMIGNM {
-    get { return unk3300PPABOFMIGNM_; }
-    set {
-      unk3300PPABOFMIGNM_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "chapter_info_list" field.</summary>
-  public const int ChapterInfoListFieldNumber = 7;
-  private static readonly pb::FieldCodec<global::DragonSpineChapterInfo> _repeated_chapterInfoList_codec
-      = pb::FieldCodec.ForMessage(58, global::DragonSpineChapterInfo.Parser);
-  private readonly pbc::RepeatedField<global::DragonSpineChapterInfo> chapterInfoList_ = new pbc::RepeatedField<global::DragonSpineChapterInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::DragonSpineChapterInfo> ChapterInfoList {
-    get { return chapterInfoList_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_NEOCMGJCEOJ" field.</summary>
-  public const int Unk3300NEOCMGJCEOJFieldNumber = 4;
-  private uint unk3300NEOCMGJCEOJ_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300NEOCMGJCEOJ {
-    get { return unk3300NEOCMGJCEOJ_; }
-    set {
-      unk3300NEOCMGJCEOJ_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_IMLKIJAOADF" field.</summary>
-  public const int Unk3300IMLKIJAOADFFieldNumber = 12;
-  private uint unk3300IMLKIJAOADF_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300IMLKIJAOADF {
-    get { return unk3300IMLKIJAOADF_; }
-    set {
-      unk3300IMLKIJAOADF_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "weapon_enhance_level" field.</summary>
-  public const int WeaponEnhanceLevelFieldNumber = 8;
-  private uint weaponEnhanceLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WeaponEnhanceLevel {
-    get { return weaponEnhanceLevel_; }
-    set {
-      weaponEnhanceLevel_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as DragonSpineActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(DragonSpineActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsContentClosed != other.IsContentClosed) return false;
-    if (Unk3300FOHJDGCAKEK != other.Unk3300FOHJDGCAKEK) return false;
-    if (Unk3300PPABOFMIGNM != other.Unk3300PPABOFMIGNM) return false;
-    if(!chapterInfoList_.Equals(other.chapterInfoList_)) return false;
-    if (Unk3300NEOCMGJCEOJ != other.Unk3300NEOCMGJCEOJ) return false;
-    if (Unk3300IMLKIJAOADF != other.Unk3300IMLKIJAOADF) return false;
-    if (WeaponEnhanceLevel != other.WeaponEnhanceLevel) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-    if (Unk3300FOHJDGCAKEK != 0) hash ^= Unk3300FOHJDGCAKEK.GetHashCode();
-    if (Unk3300PPABOFMIGNM != 0) hash ^= Unk3300PPABOFMIGNM.GetHashCode();
-    hash ^= chapterInfoList_.GetHashCode();
-    if (Unk3300NEOCMGJCEOJ != 0) hash ^= Unk3300NEOCMGJCEOJ.GetHashCode();
-    if (Unk3300IMLKIJAOADF != 0) hash ^= Unk3300IMLKIJAOADF.GetHashCode();
-    if (WeaponEnhanceLevel != 0) hash ^= WeaponEnhanceLevel.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Unk3300FOHJDGCAKEK != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(Unk3300FOHJDGCAKEK);
-    }
-    if (Unk3300NEOCMGJCEOJ != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Unk3300NEOCMGJCEOJ);
-    }
-    chapterInfoList_.WriteTo(output, _repeated_chapterInfoList_codec);
-    if (WeaponEnhanceLevel != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(WeaponEnhanceLevel);
-    }
-    if (IsContentClosed != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(IsContentClosed);
-    }
-    if (Unk3300PPABOFMIGNM != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(Unk3300PPABOFMIGNM);
-    }
-    if (Unk3300IMLKIJAOADF != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300IMLKIJAOADF);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Unk3300FOHJDGCAKEK != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(Unk3300FOHJDGCAKEK);
-    }
-    if (Unk3300NEOCMGJCEOJ != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Unk3300NEOCMGJCEOJ);
-    }
-    chapterInfoList_.WriteTo(ref output, _repeated_chapterInfoList_codec);
-    if (WeaponEnhanceLevel != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(WeaponEnhanceLevel);
-    }
-    if (IsContentClosed != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(IsContentClosed);
-    }
-    if (Unk3300PPABOFMIGNM != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(Unk3300PPABOFMIGNM);
-    }
-    if (Unk3300IMLKIJAOADF != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300IMLKIJAOADF);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsContentClosed != false) {
-      size += 1 + 1;
-    }
-    if (Unk3300FOHJDGCAKEK != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FOHJDGCAKEK);
-    }
-    if (Unk3300PPABOFMIGNM != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PPABOFMIGNM);
-    }
-    size += chapterInfoList_.CalculateSize(_repeated_chapterInfoList_codec);
-    if (Unk3300NEOCMGJCEOJ != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NEOCMGJCEOJ);
-    }
-    if (Unk3300IMLKIJAOADF != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IMLKIJAOADF);
-    }
-    if (WeaponEnhanceLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponEnhanceLevel);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(DragonSpineActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsContentClosed != false) {
-      IsContentClosed = other.IsContentClosed;
-    }
-    if (other.Unk3300FOHJDGCAKEK != 0) {
-      Unk3300FOHJDGCAKEK = other.Unk3300FOHJDGCAKEK;
-    }
-    if (other.Unk3300PPABOFMIGNM != 0) {
-      Unk3300PPABOFMIGNM = other.Unk3300PPABOFMIGNM;
-    }
-    chapterInfoList_.Add(other.chapterInfoList_);
-    if (other.Unk3300NEOCMGJCEOJ != 0) {
-      Unk3300NEOCMGJCEOJ = other.Unk3300NEOCMGJCEOJ;
-    }
-    if (other.Unk3300IMLKIJAOADF != 0) {
-      Unk3300IMLKIJAOADF = other.Unk3300IMLKIJAOADF;
-    }
-    if (other.WeaponEnhanceLevel != 0) {
-      WeaponEnhanceLevel = other.WeaponEnhanceLevel;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          Unk3300FOHJDGCAKEK = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          Unk3300NEOCMGJCEOJ = input.ReadUInt32();
-          break;
-        }
-        case 58: {
-          chapterInfoList_.AddEntriesFrom(input, _repeated_chapterInfoList_codec);
-          break;
-        }
-        case 64: {
-          WeaponEnhanceLevel = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 80: {
-          Unk3300PPABOFMIGNM = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Unk3300IMLKIJAOADF = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          Unk3300FOHJDGCAKEK = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          Unk3300NEOCMGJCEOJ = input.ReadUInt32();
-          break;
-        }
-        case 58: {
-          chapterInfoList_.AddEntriesFrom(ref input, _repeated_chapterInfoList_codec);
-          break;
-        }
-        case 64: {
-          WeaponEnhanceLevel = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 80: {
-          Unk3300PPABOFMIGNM = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          Unk3300IMLKIJAOADF = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

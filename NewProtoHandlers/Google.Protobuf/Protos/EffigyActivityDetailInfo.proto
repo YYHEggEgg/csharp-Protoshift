@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "EffigyDailyInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message EffigyActivityDetailInfo {
   uint32 last_difficulty_id = 8;

@@ -9,833 +9,836 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGPlayerField.proto</summary>
-public static partial class GCGPlayerFieldReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGPlayerField.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGPlayerField.proto</summary>
+  public static partial class GCGPlayerFieldReflection {
 
-  static GCGPlayerFieldReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRHQ0dQbGF5ZXJGaWVsZC5wcm90bxoVR0NHRGljZVNpZGVUeXBlLnByb3Rv",
-          "GhVHQ0dQVkVJbnRlbnRpb24ucHJvdG8aGUdDR1dhaXRpbmdDaGFyYWN0ZXIu",
-          "cHJvdG8aDUdDR1pvbmUucHJvdG8ipAUKDkdDR1BsYXllckZpZWxkEhsKE1Vu",
-          "azMzMDBfSUtKTUdBSENGUE0YBSABKA0SOwoPbW9kaWZ5X3pvbmVfbWFwGAcg",
-          "AygLMiIuR0NHUGxheWVyRmllbGQuTW9kaWZ5Wm9uZU1hcEVudHJ5EhwKE1Vu",
-          "azMzMDBfR0dIS0ZGQURFQUwY2wUgASgNEiUKE1VuazMzMDBfQU9QSklPSE1Q",
-          "T0YYCiABKAsyCC5HQ0dab25lEhsKE1VuazMzMDBfRkRGUEhORE9KTUwYDCAB",
-          "KA0SJQoTVW5rMzMwMF9JUExNSEtDTkRMRRgBIAEoCzIILkdDR1pvbmUSJQoT",
-          "VW5rMzMwMF9FSUhPTURMRU5NSxgJIAEoCzIILkdDR1pvbmUSKgoMd2FpdGlu",
-          "Z19saXN0GAIgAygLMhQuR0NHV2FpdGluZ0NoYXJhY3RlchIbChNVbmszMzAw",
-          "X1BCRUNJTktLSE5EGA8gASgNEhUKDWNvbnRyb2xsZXJfaWQYBiABKA0SJQoT",
-          "VW5rMzMwMF9JTkRKTkpKSk5LTBgLIAEoCzIILkdDR1pvbmUSJQoTVW5rMzMw",
-          "MF9FRk5BRUZCRUNIRBgEIAEoCzIILkdDR1pvbmUSEQoJaXNfcGFzc2VkGAgg",
-          "ASgIEikKDmludGVudGlvbl9saXN0GLACIAMoCzIQLkdDR1BWRUludGVudGlv",
-          "bhIoCg5kaWNlX3NpZGVfbGlzdBgNIAMoDjIQLkdDR0RpY2VTaWRlVHlwZRIV",
-          "Cg1kZWNrX2NhcmRfbnVtGAMgASgNEhsKE1VuazMzMDBfR0xOSUZMT0tCUE0Y",
-          "DiABKA0aPgoSTW9kaWZ5Wm9uZU1hcEVudHJ5EgsKA2tleRgBIAEoDRIXCgV2",
-          "YWx1ZRgCIAEoCzIILkdDR1pvbmU6AjgBQhYKFG9yZy5zb3JhcG9pbnRhLnBy",
-          "b3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GCGDiceSideTypeReflection.Descriptor, global::GCGPVEIntentionReflection.Descriptor, global::GCGWaitingCharacterReflection.Descriptor, global::GCGZoneReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGPlayerField), global::GCGPlayerField.Parser, new[]{ "Unk3300IKJMGAHCFPM", "ModifyZoneMap", "Unk3300GGHKFFADEAL", "Unk3300AOPJIOHMPOF", "Unk3300FDFPHNDOJML", "Unk3300IPLMHKCNDLE", "Unk3300EIHOMDLENMK", "WaitingList", "Unk3300PBECINKKHND", "ControllerId", "Unk3300INDJNJJJNKL", "Unk3300EFNAEFBECHD", "IsPassed", "IntentionList", "DiceSideList", "DeckCardNum", "Unk3300GLNIFLOKBPM" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGPlayerField.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGPlayerFieldReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRHQ0dQbGF5ZXJGaWVsZC5wcm90bxoVR0NHRGljZVNpZGVUeXBlLnByb3Rv",
+            "GhVHQ0dQVkVJbnRlbnRpb24ucHJvdG8aGUdDR1dhaXRpbmdDaGFyYWN0ZXIu",
+            "cHJvdG8aDUdDR1pvbmUucHJvdG8ipAUKDkdDR1BsYXllckZpZWxkEhsKE1Vu",
+            "azMzMDBfSUtKTUdBSENGUE0YBSABKA0SOwoPbW9kaWZ5X3pvbmVfbWFwGAcg",
+            "AygLMiIuR0NHUGxheWVyRmllbGQuTW9kaWZ5Wm9uZU1hcEVudHJ5EhwKE1Vu",
+            "azMzMDBfR0dIS0ZGQURFQUwY2wUgASgNEiUKE1VuazMzMDBfQU9QSklPSE1Q",
+            "T0YYCiABKAsyCC5HQ0dab25lEhsKE1VuazMzMDBfRkRGUEhORE9KTUwYDCAB",
+            "KA0SJQoTVW5rMzMwMF9JUExNSEtDTkRMRRgBIAEoCzIILkdDR1pvbmUSJQoT",
+            "VW5rMzMwMF9FSUhPTURMRU5NSxgJIAEoCzIILkdDR1pvbmUSKgoMd2FpdGlu",
+            "Z19saXN0GAIgAygLMhQuR0NHV2FpdGluZ0NoYXJhY3RlchIbChNVbmszMzAw",
+            "X1BCRUNJTktLSE5EGA8gASgNEhUKDWNvbnRyb2xsZXJfaWQYBiABKA0SJQoT",
+            "VW5rMzMwMF9JTkRKTkpKSk5LTBgLIAEoCzIILkdDR1pvbmUSJQoTVW5rMzMw",
+            "MF9FRk5BRUZCRUNIRBgEIAEoCzIILkdDR1pvbmUSEQoJaXNfcGFzc2VkGAgg",
+            "ASgIEikKDmludGVudGlvbl9saXN0GLACIAMoCzIQLkdDR1BWRUludGVudGlv",
+            "bhIoCg5kaWNlX3NpZGVfbGlzdBgNIAMoDjIQLkdDR0RpY2VTaWRlVHlwZRIV",
+            "Cg1kZWNrX2NhcmRfbnVtGAMgASgNEhsKE1VuazMzMDBfR0xOSUZMT0tCUE0Y",
+            "DiABKA0aPgoSTW9kaWZ5Wm9uZU1hcEVudHJ5EgsKA2tleRgBIAEoDRIXCgV2",
+            "YWx1ZRgCIAEoCzIILkdDR1pvbmU6AjgBQgyqAglOZXdQcm90b3NiBnByb3Rv",
+            "Mw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.GCGDiceSideTypeReflection.Descriptor, global::NewProtos.GCGPVEIntentionReflection.Descriptor, global::NewProtos.GCGWaitingCharacterReflection.Descriptor, global::NewProtos.GCGZoneReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GCGPlayerField), global::NewProtos.GCGPlayerField.Parser, new[]{ "Unk3300IKJMGAHCFPM", "ModifyZoneMap", "Unk3300GGHKFFADEAL", "Unk3300AOPJIOHMPOF", "Unk3300FDFPHNDOJML", "Unk3300IPLMHKCNDLE", "Unk3300EIHOMDLENMK", "WaitingList", "Unk3300PBECINKKHND", "ControllerId", "Unk3300INDJNJJJNKL", "Unk3300EFNAEFBECHD", "IsPassed", "IntentionList", "DiceSideList", "DeckCardNum", "Unk3300GLNIFLOKBPM" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GCGPlayerField : pb::IMessage<GCGPlayerField>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGPlayerField> _parser = new pb::MessageParser<GCGPlayerField>(() => new GCGPlayerField());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGPlayerField> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.GCGPlayerFieldReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGPlayerField() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGPlayerField(GCGPlayerField other) : this() {
+      unk3300IKJMGAHCFPM_ = other.unk3300IKJMGAHCFPM_;
+      modifyZoneMap_ = other.modifyZoneMap_.Clone();
+      unk3300GGHKFFADEAL_ = other.unk3300GGHKFFADEAL_;
+      unk3300AOPJIOHMPOF_ = other.unk3300AOPJIOHMPOF_ != null ? other.unk3300AOPJIOHMPOF_.Clone() : null;
+      unk3300FDFPHNDOJML_ = other.unk3300FDFPHNDOJML_;
+      unk3300IPLMHKCNDLE_ = other.unk3300IPLMHKCNDLE_ != null ? other.unk3300IPLMHKCNDLE_.Clone() : null;
+      unk3300EIHOMDLENMK_ = other.unk3300EIHOMDLENMK_ != null ? other.unk3300EIHOMDLENMK_.Clone() : null;
+      waitingList_ = other.waitingList_.Clone();
+      unk3300PBECINKKHND_ = other.unk3300PBECINKKHND_;
+      controllerId_ = other.controllerId_;
+      unk3300INDJNJJJNKL_ = other.unk3300INDJNJJJNKL_ != null ? other.unk3300INDJNJJJNKL_.Clone() : null;
+      unk3300EFNAEFBECHD_ = other.unk3300EFNAEFBECHD_ != null ? other.unk3300EFNAEFBECHD_.Clone() : null;
+      isPassed_ = other.isPassed_;
+      intentionList_ = other.intentionList_.Clone();
+      diceSideList_ = other.diceSideList_.Clone();
+      deckCardNum_ = other.deckCardNum_;
+      unk3300GLNIFLOKBPM_ = other.unk3300GLNIFLOKBPM_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGPlayerField Clone() {
+      return new GCGPlayerField(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_IKJMGAHCFPM" field.</summary>
+    public const int Unk3300IKJMGAHCFPMFieldNumber = 5;
+    private uint unk3300IKJMGAHCFPM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300IKJMGAHCFPM {
+      get { return unk3300IKJMGAHCFPM_; }
+      set {
+        unk3300IKJMGAHCFPM_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "modify_zone_map" field.</summary>
+    public const int ModifyZoneMapFieldNumber = 7;
+    private static readonly pbc::MapField<uint, global::NewProtos.GCGZone>.Codec _map_modifyZoneMap_codec
+        = new pbc::MapField<uint, global::NewProtos.GCGZone>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::NewProtos.GCGZone.Parser), 58);
+    private readonly pbc::MapField<uint, global::NewProtos.GCGZone> modifyZoneMap_ = new pbc::MapField<uint, global::NewProtos.GCGZone>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::NewProtos.GCGZone> ModifyZoneMap {
+      get { return modifyZoneMap_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_GGHKFFADEAL" field.</summary>
+    public const int Unk3300GGHKFFADEALFieldNumber = 731;
+    private uint unk3300GGHKFFADEAL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GGHKFFADEAL {
+      get { return unk3300GGHKFFADEAL_; }
+      set {
+        unk3300GGHKFFADEAL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_AOPJIOHMPOF" field.</summary>
+    public const int Unk3300AOPJIOHMPOFFieldNumber = 10;
+    private global::NewProtos.GCGZone unk3300AOPJIOHMPOF_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGZone Unk3300AOPJIOHMPOF {
+      get { return unk3300AOPJIOHMPOF_; }
+      set {
+        unk3300AOPJIOHMPOF_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FDFPHNDOJML" field.</summary>
+    public const int Unk3300FDFPHNDOJMLFieldNumber = 12;
+    private uint unk3300FDFPHNDOJML_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FDFPHNDOJML {
+      get { return unk3300FDFPHNDOJML_; }
+      set {
+        unk3300FDFPHNDOJML_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_IPLMHKCNDLE" field.</summary>
+    public const int Unk3300IPLMHKCNDLEFieldNumber = 1;
+    private global::NewProtos.GCGZone unk3300IPLMHKCNDLE_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGZone Unk3300IPLMHKCNDLE {
+      get { return unk3300IPLMHKCNDLE_; }
+      set {
+        unk3300IPLMHKCNDLE_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EIHOMDLENMK" field.</summary>
+    public const int Unk3300EIHOMDLENMKFieldNumber = 9;
+    private global::NewProtos.GCGZone unk3300EIHOMDLENMK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGZone Unk3300EIHOMDLENMK {
+      get { return unk3300EIHOMDLENMK_; }
+      set {
+        unk3300EIHOMDLENMK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "waiting_list" field.</summary>
+    public const int WaitingListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::NewProtos.GCGWaitingCharacter> _repeated_waitingList_codec
+        = pb::FieldCodec.ForMessage(18, global::NewProtos.GCGWaitingCharacter.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.GCGWaitingCharacter> waitingList_ = new pbc::RepeatedField<global::NewProtos.GCGWaitingCharacter>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.GCGWaitingCharacter> WaitingList {
+      get { return waitingList_; }
+    }
+
+    /// <summary>Field number for the "Unk3300_PBECINKKHND" field.</summary>
+    public const int Unk3300PBECINKKHNDFieldNumber = 15;
+    private uint unk3300PBECINKKHND_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300PBECINKKHND {
+      get { return unk3300PBECINKKHND_; }
+      set {
+        unk3300PBECINKKHND_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "controller_id" field.</summary>
+    public const int ControllerIdFieldNumber = 6;
+    private uint controllerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ControllerId {
+      get { return controllerId_; }
+      set {
+        controllerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_INDJNJJJNKL" field.</summary>
+    public const int Unk3300INDJNJJJNKLFieldNumber = 11;
+    private global::NewProtos.GCGZone unk3300INDJNJJJNKL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGZone Unk3300INDJNJJJNKL {
+      get { return unk3300INDJNJJJNKL_; }
+      set {
+        unk3300INDJNJJJNKL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_EFNAEFBECHD" field.</summary>
+    public const int Unk3300EFNAEFBECHDFieldNumber = 4;
+    private global::NewProtos.GCGZone unk3300EFNAEFBECHD_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGZone Unk3300EFNAEFBECHD {
+      get { return unk3300EFNAEFBECHD_; }
+      set {
+        unk3300EFNAEFBECHD_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_passed" field.</summary>
+    public const int IsPassedFieldNumber = 8;
+    private bool isPassed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsPassed {
+      get { return isPassed_; }
+      set {
+        isPassed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "intention_list" field.</summary>
+    public const int IntentionListFieldNumber = 304;
+    private static readonly pb::FieldCodec<global::NewProtos.GCGPVEIntention> _repeated_intentionList_codec
+        = pb::FieldCodec.ForMessage(2434, global::NewProtos.GCGPVEIntention.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.GCGPVEIntention> intentionList_ = new pbc::RepeatedField<global::NewProtos.GCGPVEIntention>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.GCGPVEIntention> IntentionList {
+      get { return intentionList_; }
+    }
+
+    /// <summary>Field number for the "dice_side_list" field.</summary>
+    public const int DiceSideListFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::NewProtos.GCGDiceSideType> _repeated_diceSideList_codec
+        = pb::FieldCodec.ForEnum(106, x => (int) x, x => (global::NewProtos.GCGDiceSideType) x);
+    private readonly pbc::RepeatedField<global::NewProtos.GCGDiceSideType> diceSideList_ = new pbc::RepeatedField<global::NewProtos.GCGDiceSideType>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.GCGDiceSideType> DiceSideList {
+      get { return diceSideList_; }
+    }
+
+    /// <summary>Field number for the "deck_card_num" field.</summary>
+    public const int DeckCardNumFieldNumber = 3;
+    private uint deckCardNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DeckCardNum {
+      get { return deckCardNum_; }
+      set {
+        deckCardNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_GLNIFLOKBPM" field.</summary>
+    public const int Unk3300GLNIFLOKBPMFieldNumber = 14;
+    private uint unk3300GLNIFLOKBPM_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300GLNIFLOKBPM {
+      get { return unk3300GLNIFLOKBPM_; }
+      set {
+        unk3300GLNIFLOKBPM_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGPlayerField);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGPlayerField other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Unk3300IKJMGAHCFPM != other.Unk3300IKJMGAHCFPM) return false;
+      if (!ModifyZoneMap.Equals(other.ModifyZoneMap)) return false;
+      if (Unk3300GGHKFFADEAL != other.Unk3300GGHKFFADEAL) return false;
+      if (!object.Equals(Unk3300AOPJIOHMPOF, other.Unk3300AOPJIOHMPOF)) return false;
+      if (Unk3300FDFPHNDOJML != other.Unk3300FDFPHNDOJML) return false;
+      if (!object.Equals(Unk3300IPLMHKCNDLE, other.Unk3300IPLMHKCNDLE)) return false;
+      if (!object.Equals(Unk3300EIHOMDLENMK, other.Unk3300EIHOMDLENMK)) return false;
+      if(!waitingList_.Equals(other.waitingList_)) return false;
+      if (Unk3300PBECINKKHND != other.Unk3300PBECINKKHND) return false;
+      if (ControllerId != other.ControllerId) return false;
+      if (!object.Equals(Unk3300INDJNJJJNKL, other.Unk3300INDJNJJJNKL)) return false;
+      if (!object.Equals(Unk3300EFNAEFBECHD, other.Unk3300EFNAEFBECHD)) return false;
+      if (IsPassed != other.IsPassed) return false;
+      if(!intentionList_.Equals(other.intentionList_)) return false;
+      if(!diceSideList_.Equals(other.diceSideList_)) return false;
+      if (DeckCardNum != other.DeckCardNum) return false;
+      if (Unk3300GLNIFLOKBPM != other.Unk3300GLNIFLOKBPM) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Unk3300IKJMGAHCFPM != 0) hash ^= Unk3300IKJMGAHCFPM.GetHashCode();
+      hash ^= ModifyZoneMap.GetHashCode();
+      if (Unk3300GGHKFFADEAL != 0) hash ^= Unk3300GGHKFFADEAL.GetHashCode();
+      if (unk3300AOPJIOHMPOF_ != null) hash ^= Unk3300AOPJIOHMPOF.GetHashCode();
+      if (Unk3300FDFPHNDOJML != 0) hash ^= Unk3300FDFPHNDOJML.GetHashCode();
+      if (unk3300IPLMHKCNDLE_ != null) hash ^= Unk3300IPLMHKCNDLE.GetHashCode();
+      if (unk3300EIHOMDLENMK_ != null) hash ^= Unk3300EIHOMDLENMK.GetHashCode();
+      hash ^= waitingList_.GetHashCode();
+      if (Unk3300PBECINKKHND != 0) hash ^= Unk3300PBECINKKHND.GetHashCode();
+      if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
+      if (unk3300INDJNJJJNKL_ != null) hash ^= Unk3300INDJNJJJNKL.GetHashCode();
+      if (unk3300EFNAEFBECHD_ != null) hash ^= Unk3300EFNAEFBECHD.GetHashCode();
+      if (IsPassed != false) hash ^= IsPassed.GetHashCode();
+      hash ^= intentionList_.GetHashCode();
+      hash ^= diceSideList_.GetHashCode();
+      if (DeckCardNum != 0) hash ^= DeckCardNum.GetHashCode();
+      if (Unk3300GLNIFLOKBPM != 0) hash ^= Unk3300GLNIFLOKBPM.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (unk3300IPLMHKCNDLE_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Unk3300IPLMHKCNDLE);
+      }
+      waitingList_.WriteTo(output, _repeated_waitingList_codec);
+      if (DeckCardNum != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(DeckCardNum);
+      }
+      if (unk3300EFNAEFBECHD_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Unk3300EFNAEFBECHD);
+      }
+      if (Unk3300IKJMGAHCFPM != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300IKJMGAHCFPM);
+      }
+      if (ControllerId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ControllerId);
+      }
+      modifyZoneMap_.WriteTo(output, _map_modifyZoneMap_codec);
+      if (IsPassed != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsPassed);
+      }
+      if (unk3300EIHOMDLENMK_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Unk3300EIHOMDLENMK);
+      }
+      if (unk3300AOPJIOHMPOF_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Unk3300AOPJIOHMPOF);
+      }
+      if (unk3300INDJNJJJNKL_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(Unk3300INDJNJJJNKL);
+      }
+      if (Unk3300FDFPHNDOJML != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300FDFPHNDOJML);
+      }
+      diceSideList_.WriteTo(output, _repeated_diceSideList_codec);
+      if (Unk3300GLNIFLOKBPM != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300GLNIFLOKBPM);
+      }
+      if (Unk3300PBECINKKHND != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300PBECINKKHND);
+      }
+      intentionList_.WriteTo(output, _repeated_intentionList_codec);
+      if (Unk3300GGHKFFADEAL != 0) {
+        output.WriteRawTag(216, 45);
+        output.WriteUInt32(Unk3300GGHKFFADEAL);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (unk3300IPLMHKCNDLE_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Unk3300IPLMHKCNDLE);
+      }
+      waitingList_.WriteTo(ref output, _repeated_waitingList_codec);
+      if (DeckCardNum != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(DeckCardNum);
+      }
+      if (unk3300EFNAEFBECHD_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(Unk3300EFNAEFBECHD);
+      }
+      if (Unk3300IKJMGAHCFPM != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300IKJMGAHCFPM);
+      }
+      if (ControllerId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(ControllerId);
+      }
+      modifyZoneMap_.WriteTo(ref output, _map_modifyZoneMap_codec);
+      if (IsPassed != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsPassed);
+      }
+      if (unk3300EIHOMDLENMK_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(Unk3300EIHOMDLENMK);
+      }
+      if (unk3300AOPJIOHMPOF_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Unk3300AOPJIOHMPOF);
+      }
+      if (unk3300INDJNJJJNKL_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(Unk3300INDJNJJJNKL);
+      }
+      if (Unk3300FDFPHNDOJML != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(Unk3300FDFPHNDOJML);
+      }
+      diceSideList_.WriteTo(ref output, _repeated_diceSideList_codec);
+      if (Unk3300GLNIFLOKBPM != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300GLNIFLOKBPM);
+      }
+      if (Unk3300PBECINKKHND != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Unk3300PBECINKKHND);
+      }
+      intentionList_.WriteTo(ref output, _repeated_intentionList_codec);
+      if (Unk3300GGHKFFADEAL != 0) {
+        output.WriteRawTag(216, 45);
+        output.WriteUInt32(Unk3300GGHKFFADEAL);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Unk3300IKJMGAHCFPM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IKJMGAHCFPM);
+      }
+      size += modifyZoneMap_.CalculateSize(_map_modifyZoneMap_codec);
+      if (Unk3300GGHKFFADEAL != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GGHKFFADEAL);
+      }
+      if (unk3300AOPJIOHMPOF_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300AOPJIOHMPOF);
+      }
+      if (Unk3300FDFPHNDOJML != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FDFPHNDOJML);
+      }
+      if (unk3300IPLMHKCNDLE_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300IPLMHKCNDLE);
+      }
+      if (unk3300EIHOMDLENMK_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300EIHOMDLENMK);
+      }
+      size += waitingList_.CalculateSize(_repeated_waitingList_codec);
+      if (Unk3300PBECINKKHND != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PBECINKKHND);
+      }
+      if (ControllerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
+      }
+      if (unk3300INDJNJJJNKL_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300INDJNJJJNKL);
+      }
+      if (unk3300EFNAEFBECHD_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300EFNAEFBECHD);
+      }
+      if (IsPassed != false) {
+        size += 1 + 1;
+      }
+      size += intentionList_.CalculateSize(_repeated_intentionList_codec);
+      size += diceSideList_.CalculateSize(_repeated_diceSideList_codec);
+      if (DeckCardNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DeckCardNum);
+      }
+      if (Unk3300GLNIFLOKBPM != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GLNIFLOKBPM);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGPlayerField other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Unk3300IKJMGAHCFPM != 0) {
+        Unk3300IKJMGAHCFPM = other.Unk3300IKJMGAHCFPM;
+      }
+      modifyZoneMap_.Add(other.modifyZoneMap_);
+      if (other.Unk3300GGHKFFADEAL != 0) {
+        Unk3300GGHKFFADEAL = other.Unk3300GGHKFFADEAL;
+      }
+      if (other.unk3300AOPJIOHMPOF_ != null) {
+        if (unk3300AOPJIOHMPOF_ == null) {
+          Unk3300AOPJIOHMPOF = new global::NewProtos.GCGZone();
+        }
+        Unk3300AOPJIOHMPOF.MergeFrom(other.Unk3300AOPJIOHMPOF);
+      }
+      if (other.Unk3300FDFPHNDOJML != 0) {
+        Unk3300FDFPHNDOJML = other.Unk3300FDFPHNDOJML;
+      }
+      if (other.unk3300IPLMHKCNDLE_ != null) {
+        if (unk3300IPLMHKCNDLE_ == null) {
+          Unk3300IPLMHKCNDLE = new global::NewProtos.GCGZone();
+        }
+        Unk3300IPLMHKCNDLE.MergeFrom(other.Unk3300IPLMHKCNDLE);
+      }
+      if (other.unk3300EIHOMDLENMK_ != null) {
+        if (unk3300EIHOMDLENMK_ == null) {
+          Unk3300EIHOMDLENMK = new global::NewProtos.GCGZone();
+        }
+        Unk3300EIHOMDLENMK.MergeFrom(other.Unk3300EIHOMDLENMK);
+      }
+      waitingList_.Add(other.waitingList_);
+      if (other.Unk3300PBECINKKHND != 0) {
+        Unk3300PBECINKKHND = other.Unk3300PBECINKKHND;
+      }
+      if (other.ControllerId != 0) {
+        ControllerId = other.ControllerId;
+      }
+      if (other.unk3300INDJNJJJNKL_ != null) {
+        if (unk3300INDJNJJJNKL_ == null) {
+          Unk3300INDJNJJJNKL = new global::NewProtos.GCGZone();
+        }
+        Unk3300INDJNJJJNKL.MergeFrom(other.Unk3300INDJNJJJNKL);
+      }
+      if (other.unk3300EFNAEFBECHD_ != null) {
+        if (unk3300EFNAEFBECHD_ == null) {
+          Unk3300EFNAEFBECHD = new global::NewProtos.GCGZone();
+        }
+        Unk3300EFNAEFBECHD.MergeFrom(other.Unk3300EFNAEFBECHD);
+      }
+      if (other.IsPassed != false) {
+        IsPassed = other.IsPassed;
+      }
+      intentionList_.Add(other.intentionList_);
+      diceSideList_.Add(other.diceSideList_);
+      if (other.DeckCardNum != 0) {
+        DeckCardNum = other.DeckCardNum;
+      }
+      if (other.Unk3300GLNIFLOKBPM != 0) {
+        Unk3300GLNIFLOKBPM = other.Unk3300GLNIFLOKBPM;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (unk3300IPLMHKCNDLE_ == null) {
+              Unk3300IPLMHKCNDLE = new global::NewProtos.GCGZone();
+            }
+            input.ReadMessage(Unk3300IPLMHKCNDLE);
+            break;
+          }
+          case 18: {
+            waitingList_.AddEntriesFrom(input, _repeated_waitingList_codec);
+            break;
+          }
+          case 24: {
+            DeckCardNum = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            if (unk3300EFNAEFBECHD_ == null) {
+              Unk3300EFNAEFBECHD = new global::NewProtos.GCGZone();
+            }
+            input.ReadMessage(Unk3300EFNAEFBECHD);
+            break;
+          }
+          case 40: {
+            Unk3300IKJMGAHCFPM = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+          case 58: {
+            modifyZoneMap_.AddEntriesFrom(input, _map_modifyZoneMap_codec);
+            break;
+          }
+          case 64: {
+            IsPassed = input.ReadBool();
+            break;
+          }
+          case 74: {
+            if (unk3300EIHOMDLENMK_ == null) {
+              Unk3300EIHOMDLENMK = new global::NewProtos.GCGZone();
+            }
+            input.ReadMessage(Unk3300EIHOMDLENMK);
+            break;
+          }
+          case 82: {
+            if (unk3300AOPJIOHMPOF_ == null) {
+              Unk3300AOPJIOHMPOF = new global::NewProtos.GCGZone();
+            }
+            input.ReadMessage(Unk3300AOPJIOHMPOF);
+            break;
+          }
+          case 90: {
+            if (unk3300INDJNJJJNKL_ == null) {
+              Unk3300INDJNJJJNKL = new global::NewProtos.GCGZone();
+            }
+            input.ReadMessage(Unk3300INDJNJJJNKL);
+            break;
+          }
+          case 96: {
+            Unk3300FDFPHNDOJML = input.ReadUInt32();
+            break;
+          }
+          case 106:
+          case 104: {
+            diceSideList_.AddEntriesFrom(input, _repeated_diceSideList_codec);
+            break;
+          }
+          case 112: {
+            Unk3300GLNIFLOKBPM = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Unk3300PBECINKKHND = input.ReadUInt32();
+            break;
+          }
+          case 2434: {
+            intentionList_.AddEntriesFrom(input, _repeated_intentionList_codec);
+            break;
+          }
+          case 5848: {
+            Unk3300GGHKFFADEAL = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (unk3300IPLMHKCNDLE_ == null) {
+              Unk3300IPLMHKCNDLE = new global::NewProtos.GCGZone();
+            }
+            input.ReadMessage(Unk3300IPLMHKCNDLE);
+            break;
+          }
+          case 18: {
+            waitingList_.AddEntriesFrom(ref input, _repeated_waitingList_codec);
+            break;
+          }
+          case 24: {
+            DeckCardNum = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            if (unk3300EFNAEFBECHD_ == null) {
+              Unk3300EFNAEFBECHD = new global::NewProtos.GCGZone();
+            }
+            input.ReadMessage(Unk3300EFNAEFBECHD);
+            break;
+          }
+          case 40: {
+            Unk3300IKJMGAHCFPM = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+          case 58: {
+            modifyZoneMap_.AddEntriesFrom(ref input, _map_modifyZoneMap_codec);
+            break;
+          }
+          case 64: {
+            IsPassed = input.ReadBool();
+            break;
+          }
+          case 74: {
+            if (unk3300EIHOMDLENMK_ == null) {
+              Unk3300EIHOMDLENMK = new global::NewProtos.GCGZone();
+            }
+            input.ReadMessage(Unk3300EIHOMDLENMK);
+            break;
+          }
+          case 82: {
+            if (unk3300AOPJIOHMPOF_ == null) {
+              Unk3300AOPJIOHMPOF = new global::NewProtos.GCGZone();
+            }
+            input.ReadMessage(Unk3300AOPJIOHMPOF);
+            break;
+          }
+          case 90: {
+            if (unk3300INDJNJJJNKL_ == null) {
+              Unk3300INDJNJJJNKL = new global::NewProtos.GCGZone();
+            }
+            input.ReadMessage(Unk3300INDJNJJJNKL);
+            break;
+          }
+          case 96: {
+            Unk3300FDFPHNDOJML = input.ReadUInt32();
+            break;
+          }
+          case 106:
+          case 104: {
+            diceSideList_.AddEntriesFrom(ref input, _repeated_diceSideList_codec);
+            break;
+          }
+          case 112: {
+            Unk3300GLNIFLOKBPM = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            Unk3300PBECINKKHND = input.ReadUInt32();
+            break;
+          }
+          case 2434: {
+            intentionList_.AddEntriesFrom(ref input, _repeated_intentionList_codec);
+            break;
+          }
+          case 5848: {
+            Unk3300GGHKFFADEAL = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GCGPlayerField : pb::IMessage<GCGPlayerField>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGPlayerField> _parser = new pb::MessageParser<GCGPlayerField>(() => new GCGPlayerField());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGPlayerField> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGPlayerFieldReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGPlayerField() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGPlayerField(GCGPlayerField other) : this() {
-    unk3300IKJMGAHCFPM_ = other.unk3300IKJMGAHCFPM_;
-    modifyZoneMap_ = other.modifyZoneMap_.Clone();
-    unk3300GGHKFFADEAL_ = other.unk3300GGHKFFADEAL_;
-    unk3300AOPJIOHMPOF_ = other.unk3300AOPJIOHMPOF_ != null ? other.unk3300AOPJIOHMPOF_.Clone() : null;
-    unk3300FDFPHNDOJML_ = other.unk3300FDFPHNDOJML_;
-    unk3300IPLMHKCNDLE_ = other.unk3300IPLMHKCNDLE_ != null ? other.unk3300IPLMHKCNDLE_.Clone() : null;
-    unk3300EIHOMDLENMK_ = other.unk3300EIHOMDLENMK_ != null ? other.unk3300EIHOMDLENMK_.Clone() : null;
-    waitingList_ = other.waitingList_.Clone();
-    unk3300PBECINKKHND_ = other.unk3300PBECINKKHND_;
-    controllerId_ = other.controllerId_;
-    unk3300INDJNJJJNKL_ = other.unk3300INDJNJJJNKL_ != null ? other.unk3300INDJNJJJNKL_.Clone() : null;
-    unk3300EFNAEFBECHD_ = other.unk3300EFNAEFBECHD_ != null ? other.unk3300EFNAEFBECHD_.Clone() : null;
-    isPassed_ = other.isPassed_;
-    intentionList_ = other.intentionList_.Clone();
-    diceSideList_ = other.diceSideList_.Clone();
-    deckCardNum_ = other.deckCardNum_;
-    unk3300GLNIFLOKBPM_ = other.unk3300GLNIFLOKBPM_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGPlayerField Clone() {
-    return new GCGPlayerField(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_IKJMGAHCFPM" field.</summary>
-  public const int Unk3300IKJMGAHCFPMFieldNumber = 5;
-  private uint unk3300IKJMGAHCFPM_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300IKJMGAHCFPM {
-    get { return unk3300IKJMGAHCFPM_; }
-    set {
-      unk3300IKJMGAHCFPM_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "modify_zone_map" field.</summary>
-  public const int ModifyZoneMapFieldNumber = 7;
-  private static readonly pbc::MapField<uint, global::GCGZone>.Codec _map_modifyZoneMap_codec
-      = new pbc::MapField<uint, global::GCGZone>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::GCGZone.Parser), 58);
-  private readonly pbc::MapField<uint, global::GCGZone> modifyZoneMap_ = new pbc::MapField<uint, global::GCGZone>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::GCGZone> ModifyZoneMap {
-    get { return modifyZoneMap_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_GGHKFFADEAL" field.</summary>
-  public const int Unk3300GGHKFFADEALFieldNumber = 731;
-  private uint unk3300GGHKFFADEAL_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300GGHKFFADEAL {
-    get { return unk3300GGHKFFADEAL_; }
-    set {
-      unk3300GGHKFFADEAL_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_AOPJIOHMPOF" field.</summary>
-  public const int Unk3300AOPJIOHMPOFFieldNumber = 10;
-  private global::GCGZone unk3300AOPJIOHMPOF_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGZone Unk3300AOPJIOHMPOF {
-    get { return unk3300AOPJIOHMPOF_; }
-    set {
-      unk3300AOPJIOHMPOF_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_FDFPHNDOJML" field.</summary>
-  public const int Unk3300FDFPHNDOJMLFieldNumber = 12;
-  private uint unk3300FDFPHNDOJML_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300FDFPHNDOJML {
-    get { return unk3300FDFPHNDOJML_; }
-    set {
-      unk3300FDFPHNDOJML_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_IPLMHKCNDLE" field.</summary>
-  public const int Unk3300IPLMHKCNDLEFieldNumber = 1;
-  private global::GCGZone unk3300IPLMHKCNDLE_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGZone Unk3300IPLMHKCNDLE {
-    get { return unk3300IPLMHKCNDLE_; }
-    set {
-      unk3300IPLMHKCNDLE_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_EIHOMDLENMK" field.</summary>
-  public const int Unk3300EIHOMDLENMKFieldNumber = 9;
-  private global::GCGZone unk3300EIHOMDLENMK_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGZone Unk3300EIHOMDLENMK {
-    get { return unk3300EIHOMDLENMK_; }
-    set {
-      unk3300EIHOMDLENMK_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "waiting_list" field.</summary>
-  public const int WaitingListFieldNumber = 2;
-  private static readonly pb::FieldCodec<global::GCGWaitingCharacter> _repeated_waitingList_codec
-      = pb::FieldCodec.ForMessage(18, global::GCGWaitingCharacter.Parser);
-  private readonly pbc::RepeatedField<global::GCGWaitingCharacter> waitingList_ = new pbc::RepeatedField<global::GCGWaitingCharacter>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGWaitingCharacter> WaitingList {
-    get { return waitingList_; }
-  }
-
-  /// <summary>Field number for the "Unk3300_PBECINKKHND" field.</summary>
-  public const int Unk3300PBECINKKHNDFieldNumber = 15;
-  private uint unk3300PBECINKKHND_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300PBECINKKHND {
-    get { return unk3300PBECINKKHND_; }
-    set {
-      unk3300PBECINKKHND_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "controller_id" field.</summary>
-  public const int ControllerIdFieldNumber = 6;
-  private uint controllerId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ControllerId {
-    get { return controllerId_; }
-    set {
-      controllerId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_INDJNJJJNKL" field.</summary>
-  public const int Unk3300INDJNJJJNKLFieldNumber = 11;
-  private global::GCGZone unk3300INDJNJJJNKL_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGZone Unk3300INDJNJJJNKL {
-    get { return unk3300INDJNJJJNKL_; }
-    set {
-      unk3300INDJNJJJNKL_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_EFNAEFBECHD" field.</summary>
-  public const int Unk3300EFNAEFBECHDFieldNumber = 4;
-  private global::GCGZone unk3300EFNAEFBECHD_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGZone Unk3300EFNAEFBECHD {
-    get { return unk3300EFNAEFBECHD_; }
-    set {
-      unk3300EFNAEFBECHD_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_passed" field.</summary>
-  public const int IsPassedFieldNumber = 8;
-  private bool isPassed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsPassed {
-    get { return isPassed_; }
-    set {
-      isPassed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "intention_list" field.</summary>
-  public const int IntentionListFieldNumber = 304;
-  private static readonly pb::FieldCodec<global::GCGPVEIntention> _repeated_intentionList_codec
-      = pb::FieldCodec.ForMessage(2434, global::GCGPVEIntention.Parser);
-  private readonly pbc::RepeatedField<global::GCGPVEIntention> intentionList_ = new pbc::RepeatedField<global::GCGPVEIntention>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGPVEIntention> IntentionList {
-    get { return intentionList_; }
-  }
-
-  /// <summary>Field number for the "dice_side_list" field.</summary>
-  public const int DiceSideListFieldNumber = 13;
-  private static readonly pb::FieldCodec<global::GCGDiceSideType> _repeated_diceSideList_codec
-      = pb::FieldCodec.ForEnum(106, x => (int) x, x => (global::GCGDiceSideType) x);
-  private readonly pbc::RepeatedField<global::GCGDiceSideType> diceSideList_ = new pbc::RepeatedField<global::GCGDiceSideType>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGDiceSideType> DiceSideList {
-    get { return diceSideList_; }
-  }
-
-  /// <summary>Field number for the "deck_card_num" field.</summary>
-  public const int DeckCardNumFieldNumber = 3;
-  private uint deckCardNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DeckCardNum {
-    get { return deckCardNum_; }
-    set {
-      deckCardNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_GLNIFLOKBPM" field.</summary>
-  public const int Unk3300GLNIFLOKBPMFieldNumber = 14;
-  private uint unk3300GLNIFLOKBPM_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300GLNIFLOKBPM {
-    get { return unk3300GLNIFLOKBPM_; }
-    set {
-      unk3300GLNIFLOKBPM_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGPlayerField);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGPlayerField other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Unk3300IKJMGAHCFPM != other.Unk3300IKJMGAHCFPM) return false;
-    if (!ModifyZoneMap.Equals(other.ModifyZoneMap)) return false;
-    if (Unk3300GGHKFFADEAL != other.Unk3300GGHKFFADEAL) return false;
-    if (!object.Equals(Unk3300AOPJIOHMPOF, other.Unk3300AOPJIOHMPOF)) return false;
-    if (Unk3300FDFPHNDOJML != other.Unk3300FDFPHNDOJML) return false;
-    if (!object.Equals(Unk3300IPLMHKCNDLE, other.Unk3300IPLMHKCNDLE)) return false;
-    if (!object.Equals(Unk3300EIHOMDLENMK, other.Unk3300EIHOMDLENMK)) return false;
-    if(!waitingList_.Equals(other.waitingList_)) return false;
-    if (Unk3300PBECINKKHND != other.Unk3300PBECINKKHND) return false;
-    if (ControllerId != other.ControllerId) return false;
-    if (!object.Equals(Unk3300INDJNJJJNKL, other.Unk3300INDJNJJJNKL)) return false;
-    if (!object.Equals(Unk3300EFNAEFBECHD, other.Unk3300EFNAEFBECHD)) return false;
-    if (IsPassed != other.IsPassed) return false;
-    if(!intentionList_.Equals(other.intentionList_)) return false;
-    if(!diceSideList_.Equals(other.diceSideList_)) return false;
-    if (DeckCardNum != other.DeckCardNum) return false;
-    if (Unk3300GLNIFLOKBPM != other.Unk3300GLNIFLOKBPM) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Unk3300IKJMGAHCFPM != 0) hash ^= Unk3300IKJMGAHCFPM.GetHashCode();
-    hash ^= ModifyZoneMap.GetHashCode();
-    if (Unk3300GGHKFFADEAL != 0) hash ^= Unk3300GGHKFFADEAL.GetHashCode();
-    if (unk3300AOPJIOHMPOF_ != null) hash ^= Unk3300AOPJIOHMPOF.GetHashCode();
-    if (Unk3300FDFPHNDOJML != 0) hash ^= Unk3300FDFPHNDOJML.GetHashCode();
-    if (unk3300IPLMHKCNDLE_ != null) hash ^= Unk3300IPLMHKCNDLE.GetHashCode();
-    if (unk3300EIHOMDLENMK_ != null) hash ^= Unk3300EIHOMDLENMK.GetHashCode();
-    hash ^= waitingList_.GetHashCode();
-    if (Unk3300PBECINKKHND != 0) hash ^= Unk3300PBECINKKHND.GetHashCode();
-    if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
-    if (unk3300INDJNJJJNKL_ != null) hash ^= Unk3300INDJNJJJNKL.GetHashCode();
-    if (unk3300EFNAEFBECHD_ != null) hash ^= Unk3300EFNAEFBECHD.GetHashCode();
-    if (IsPassed != false) hash ^= IsPassed.GetHashCode();
-    hash ^= intentionList_.GetHashCode();
-    hash ^= diceSideList_.GetHashCode();
-    if (DeckCardNum != 0) hash ^= DeckCardNum.GetHashCode();
-    if (Unk3300GLNIFLOKBPM != 0) hash ^= Unk3300GLNIFLOKBPM.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (unk3300IPLMHKCNDLE_ != null) {
-      output.WriteRawTag(10);
-      output.WriteMessage(Unk3300IPLMHKCNDLE);
-    }
-    waitingList_.WriteTo(output, _repeated_waitingList_codec);
-    if (DeckCardNum != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(DeckCardNum);
-    }
-    if (unk3300EFNAEFBECHD_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(Unk3300EFNAEFBECHD);
-    }
-    if (Unk3300IKJMGAHCFPM != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Unk3300IKJMGAHCFPM);
-    }
-    if (ControllerId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(ControllerId);
-    }
-    modifyZoneMap_.WriteTo(output, _map_modifyZoneMap_codec);
-    if (IsPassed != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsPassed);
-    }
-    if (unk3300EIHOMDLENMK_ != null) {
-      output.WriteRawTag(74);
-      output.WriteMessage(Unk3300EIHOMDLENMK);
-    }
-    if (unk3300AOPJIOHMPOF_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(Unk3300AOPJIOHMPOF);
-    }
-    if (unk3300INDJNJJJNKL_ != null) {
-      output.WriteRawTag(90);
-      output.WriteMessage(Unk3300INDJNJJJNKL);
-    }
-    if (Unk3300FDFPHNDOJML != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300FDFPHNDOJML);
-    }
-    diceSideList_.WriteTo(output, _repeated_diceSideList_codec);
-    if (Unk3300GLNIFLOKBPM != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300GLNIFLOKBPM);
-    }
-    if (Unk3300PBECINKKHND != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Unk3300PBECINKKHND);
-    }
-    intentionList_.WriteTo(output, _repeated_intentionList_codec);
-    if (Unk3300GGHKFFADEAL != 0) {
-      output.WriteRawTag(216, 45);
-      output.WriteUInt32(Unk3300GGHKFFADEAL);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (unk3300IPLMHKCNDLE_ != null) {
-      output.WriteRawTag(10);
-      output.WriteMessage(Unk3300IPLMHKCNDLE);
-    }
-    waitingList_.WriteTo(ref output, _repeated_waitingList_codec);
-    if (DeckCardNum != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(DeckCardNum);
-    }
-    if (unk3300EFNAEFBECHD_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(Unk3300EFNAEFBECHD);
-    }
-    if (Unk3300IKJMGAHCFPM != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Unk3300IKJMGAHCFPM);
-    }
-    if (ControllerId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(ControllerId);
-    }
-    modifyZoneMap_.WriteTo(ref output, _map_modifyZoneMap_codec);
-    if (IsPassed != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsPassed);
-    }
-    if (unk3300EIHOMDLENMK_ != null) {
-      output.WriteRawTag(74);
-      output.WriteMessage(Unk3300EIHOMDLENMK);
-    }
-    if (unk3300AOPJIOHMPOF_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(Unk3300AOPJIOHMPOF);
-    }
-    if (unk3300INDJNJJJNKL_ != null) {
-      output.WriteRawTag(90);
-      output.WriteMessage(Unk3300INDJNJJJNKL);
-    }
-    if (Unk3300FDFPHNDOJML != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(Unk3300FDFPHNDOJML);
-    }
-    diceSideList_.WriteTo(ref output, _repeated_diceSideList_codec);
-    if (Unk3300GLNIFLOKBPM != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300GLNIFLOKBPM);
-    }
-    if (Unk3300PBECINKKHND != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Unk3300PBECINKKHND);
-    }
-    intentionList_.WriteTo(ref output, _repeated_intentionList_codec);
-    if (Unk3300GGHKFFADEAL != 0) {
-      output.WriteRawTag(216, 45);
-      output.WriteUInt32(Unk3300GGHKFFADEAL);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Unk3300IKJMGAHCFPM != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300IKJMGAHCFPM);
-    }
-    size += modifyZoneMap_.CalculateSize(_map_modifyZoneMap_codec);
-    if (Unk3300GGHKFFADEAL != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GGHKFFADEAL);
-    }
-    if (unk3300AOPJIOHMPOF_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300AOPJIOHMPOF);
-    }
-    if (Unk3300FDFPHNDOJML != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FDFPHNDOJML);
-    }
-    if (unk3300IPLMHKCNDLE_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300IPLMHKCNDLE);
-    }
-    if (unk3300EIHOMDLENMK_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300EIHOMDLENMK);
-    }
-    size += waitingList_.CalculateSize(_repeated_waitingList_codec);
-    if (Unk3300PBECINKKHND != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300PBECINKKHND);
-    }
-    if (ControllerId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
-    }
-    if (unk3300INDJNJJJNKL_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300INDJNJJJNKL);
-    }
-    if (unk3300EFNAEFBECHD_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300EFNAEFBECHD);
-    }
-    if (IsPassed != false) {
-      size += 1 + 1;
-    }
-    size += intentionList_.CalculateSize(_repeated_intentionList_codec);
-    size += diceSideList_.CalculateSize(_repeated_diceSideList_codec);
-    if (DeckCardNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DeckCardNum);
-    }
-    if (Unk3300GLNIFLOKBPM != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300GLNIFLOKBPM);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGPlayerField other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Unk3300IKJMGAHCFPM != 0) {
-      Unk3300IKJMGAHCFPM = other.Unk3300IKJMGAHCFPM;
-    }
-    modifyZoneMap_.Add(other.modifyZoneMap_);
-    if (other.Unk3300GGHKFFADEAL != 0) {
-      Unk3300GGHKFFADEAL = other.Unk3300GGHKFFADEAL;
-    }
-    if (other.unk3300AOPJIOHMPOF_ != null) {
-      if (unk3300AOPJIOHMPOF_ == null) {
-        Unk3300AOPJIOHMPOF = new global::GCGZone();
-      }
-      Unk3300AOPJIOHMPOF.MergeFrom(other.Unk3300AOPJIOHMPOF);
-    }
-    if (other.Unk3300FDFPHNDOJML != 0) {
-      Unk3300FDFPHNDOJML = other.Unk3300FDFPHNDOJML;
-    }
-    if (other.unk3300IPLMHKCNDLE_ != null) {
-      if (unk3300IPLMHKCNDLE_ == null) {
-        Unk3300IPLMHKCNDLE = new global::GCGZone();
-      }
-      Unk3300IPLMHKCNDLE.MergeFrom(other.Unk3300IPLMHKCNDLE);
-    }
-    if (other.unk3300EIHOMDLENMK_ != null) {
-      if (unk3300EIHOMDLENMK_ == null) {
-        Unk3300EIHOMDLENMK = new global::GCGZone();
-      }
-      Unk3300EIHOMDLENMK.MergeFrom(other.Unk3300EIHOMDLENMK);
-    }
-    waitingList_.Add(other.waitingList_);
-    if (other.Unk3300PBECINKKHND != 0) {
-      Unk3300PBECINKKHND = other.Unk3300PBECINKKHND;
-    }
-    if (other.ControllerId != 0) {
-      ControllerId = other.ControllerId;
-    }
-    if (other.unk3300INDJNJJJNKL_ != null) {
-      if (unk3300INDJNJJJNKL_ == null) {
-        Unk3300INDJNJJJNKL = new global::GCGZone();
-      }
-      Unk3300INDJNJJJNKL.MergeFrom(other.Unk3300INDJNJJJNKL);
-    }
-    if (other.unk3300EFNAEFBECHD_ != null) {
-      if (unk3300EFNAEFBECHD_ == null) {
-        Unk3300EFNAEFBECHD = new global::GCGZone();
-      }
-      Unk3300EFNAEFBECHD.MergeFrom(other.Unk3300EFNAEFBECHD);
-    }
-    if (other.IsPassed != false) {
-      IsPassed = other.IsPassed;
-    }
-    intentionList_.Add(other.intentionList_);
-    diceSideList_.Add(other.diceSideList_);
-    if (other.DeckCardNum != 0) {
-      DeckCardNum = other.DeckCardNum;
-    }
-    if (other.Unk3300GLNIFLOKBPM != 0) {
-      Unk3300GLNIFLOKBPM = other.Unk3300GLNIFLOKBPM;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          if (unk3300IPLMHKCNDLE_ == null) {
-            Unk3300IPLMHKCNDLE = new global::GCGZone();
-          }
-          input.ReadMessage(Unk3300IPLMHKCNDLE);
-          break;
-        }
-        case 18: {
-          waitingList_.AddEntriesFrom(input, _repeated_waitingList_codec);
-          break;
-        }
-        case 24: {
-          DeckCardNum = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          if (unk3300EFNAEFBECHD_ == null) {
-            Unk3300EFNAEFBECHD = new global::GCGZone();
-          }
-          input.ReadMessage(Unk3300EFNAEFBECHD);
-          break;
-        }
-        case 40: {
-          Unk3300IKJMGAHCFPM = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          ControllerId = input.ReadUInt32();
-          break;
-        }
-        case 58: {
-          modifyZoneMap_.AddEntriesFrom(input, _map_modifyZoneMap_codec);
-          break;
-        }
-        case 64: {
-          IsPassed = input.ReadBool();
-          break;
-        }
-        case 74: {
-          if (unk3300EIHOMDLENMK_ == null) {
-            Unk3300EIHOMDLENMK = new global::GCGZone();
-          }
-          input.ReadMessage(Unk3300EIHOMDLENMK);
-          break;
-        }
-        case 82: {
-          if (unk3300AOPJIOHMPOF_ == null) {
-            Unk3300AOPJIOHMPOF = new global::GCGZone();
-          }
-          input.ReadMessage(Unk3300AOPJIOHMPOF);
-          break;
-        }
-        case 90: {
-          if (unk3300INDJNJJJNKL_ == null) {
-            Unk3300INDJNJJJNKL = new global::GCGZone();
-          }
-          input.ReadMessage(Unk3300INDJNJJJNKL);
-          break;
-        }
-        case 96: {
-          Unk3300FDFPHNDOJML = input.ReadUInt32();
-          break;
-        }
-        case 106:
-        case 104: {
-          diceSideList_.AddEntriesFrom(input, _repeated_diceSideList_codec);
-          break;
-        }
-        case 112: {
-          Unk3300GLNIFLOKBPM = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          Unk3300PBECINKKHND = input.ReadUInt32();
-          break;
-        }
-        case 2434: {
-          intentionList_.AddEntriesFrom(input, _repeated_intentionList_codec);
-          break;
-        }
-        case 5848: {
-          Unk3300GGHKFFADEAL = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          if (unk3300IPLMHKCNDLE_ == null) {
-            Unk3300IPLMHKCNDLE = new global::GCGZone();
-          }
-          input.ReadMessage(Unk3300IPLMHKCNDLE);
-          break;
-        }
-        case 18: {
-          waitingList_.AddEntriesFrom(ref input, _repeated_waitingList_codec);
-          break;
-        }
-        case 24: {
-          DeckCardNum = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          if (unk3300EFNAEFBECHD_ == null) {
-            Unk3300EFNAEFBECHD = new global::GCGZone();
-          }
-          input.ReadMessage(Unk3300EFNAEFBECHD);
-          break;
-        }
-        case 40: {
-          Unk3300IKJMGAHCFPM = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          ControllerId = input.ReadUInt32();
-          break;
-        }
-        case 58: {
-          modifyZoneMap_.AddEntriesFrom(ref input, _map_modifyZoneMap_codec);
-          break;
-        }
-        case 64: {
-          IsPassed = input.ReadBool();
-          break;
-        }
-        case 74: {
-          if (unk3300EIHOMDLENMK_ == null) {
-            Unk3300EIHOMDLENMK = new global::GCGZone();
-          }
-          input.ReadMessage(Unk3300EIHOMDLENMK);
-          break;
-        }
-        case 82: {
-          if (unk3300AOPJIOHMPOF_ == null) {
-            Unk3300AOPJIOHMPOF = new global::GCGZone();
-          }
-          input.ReadMessage(Unk3300AOPJIOHMPOF);
-          break;
-        }
-        case 90: {
-          if (unk3300INDJNJJJNKL_ == null) {
-            Unk3300INDJNJJJNKL = new global::GCGZone();
-          }
-          input.ReadMessage(Unk3300INDJNJJJNKL);
-          break;
-        }
-        case 96: {
-          Unk3300FDFPHNDOJML = input.ReadUInt32();
-          break;
-        }
-        case 106:
-        case 104: {
-          diceSideList_.AddEntriesFrom(ref input, _repeated_diceSideList_codec);
-          break;
-        }
-        case 112: {
-          Unk3300GLNIFLOKBPM = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          Unk3300PBECINKKHND = input.ReadUInt32();
-          break;
-        }
-        case 2434: {
-          intentionList_.AddEntriesFrom(ref input, _repeated_intentionList_codec);
-          break;
-        }
-        case 5848: {
-          Unk3300GGHKFFADEAL = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

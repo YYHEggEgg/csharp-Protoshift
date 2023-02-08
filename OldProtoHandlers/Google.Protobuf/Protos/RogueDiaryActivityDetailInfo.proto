@@ -19,7 +19,7 @@ syntax = "proto3";
 import "RogueDiaryProgress.proto";
 import "RogueDiaryStageInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message RogueDiaryActivityDetailInfo {
   repeated RogueDiaryStageInfo stage_list = 11;

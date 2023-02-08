@@ -19,7 +19,7 @@ syntax = "proto3";
 import "AbilityScalarType.proto";
 import "AbilityString.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message AbilityScalarValueEntry {
   AbilityString key = 1;

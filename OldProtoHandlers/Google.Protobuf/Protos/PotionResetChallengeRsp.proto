@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "PotionStageData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 8067
 // EnetChannelId: 0

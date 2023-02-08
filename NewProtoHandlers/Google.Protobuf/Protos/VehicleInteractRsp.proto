@@ -19,7 +19,7 @@ syntax = "proto3";
 import "VehicleInteractType.proto";
 import "VehicleMember.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message VehicleInteractRsp {
   // enum CmdId {

@@ -20,7 +20,7 @@ import "ForceUpdateInfo.proto";
 import "RegionInfo.proto";
 import "StopServerInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message QueryCurrRegionHttpRsp {
   int32 retcode = 1;

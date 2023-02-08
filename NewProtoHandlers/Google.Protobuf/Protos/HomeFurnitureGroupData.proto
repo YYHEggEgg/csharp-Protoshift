@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "HomeFurnitureData.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message HomeFurnitureGroupData {
   repeated HomeFurnitureData virtual_furniture_list = 1;

@@ -9,420 +9,422 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from StoreWeightLimitNotify.proto</summary>
-public static partial class StoreWeightLimitNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for StoreWeightLimitNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from StoreWeightLimitNotify.proto</summary>
+  public static partial class StoreWeightLimitNotifyReflection {
 
-  static StoreWeightLimitNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChxTdG9yZVdlaWdodExpbWl0Tm90aWZ5LnByb3RvGg9TdG9yZVR5cGUucHJv",
-          "dG8ixgEKFlN0b3JlV2VpZ2h0TGltaXROb3RpZnkSHQoVcmVsaXF1YXJ5X2Nv",
-          "dW50X2xpbWl0GA4gASgNEh0KFWZ1cm5pdHVyZV9jb3VudF9saW1pdBgKIAEo",
-          "DRIcChRtYXRlcmlhbF9jb3VudF9saW1pdBgFIAEoDRIaChJ3ZWFwb25fY291",
-          "bnRfbGltaXQYASABKA0SFAoMd2VpZ2h0X2xpbWl0GAggASgNEh4KCnN0b3Jl",
-          "X3R5cGUYCSABKA4yCi5TdG9yZVR5cGVCFgoUb3JnLnNvcmFwb2ludGEucHJv",
-          "dG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::StoreTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::StoreWeightLimitNotify), global::StoreWeightLimitNotify.Parser, new[]{ "ReliquaryCountLimit", "FurnitureCountLimit", "MaterialCountLimit", "WeaponCountLimit", "WeightLimit", "StoreType" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for StoreWeightLimitNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static StoreWeightLimitNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChxTdG9yZVdlaWdodExpbWl0Tm90aWZ5LnByb3RvGg9TdG9yZVR5cGUucHJv",
+            "dG8ixgEKFlN0b3JlV2VpZ2h0TGltaXROb3RpZnkSHQoVcmVsaXF1YXJ5X2Nv",
+            "dW50X2xpbWl0GA4gASgNEh0KFWZ1cm5pdHVyZV9jb3VudF9saW1pdBgKIAEo",
+            "DRIcChRtYXRlcmlhbF9jb3VudF9saW1pdBgFIAEoDRIaChJ3ZWFwb25fY291",
+            "bnRfbGltaXQYASABKA0SFAoMd2VpZ2h0X2xpbWl0GAggASgNEh4KCnN0b3Jl",
+            "X3R5cGUYCSABKA4yCi5TdG9yZVR5cGVCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.StoreTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.StoreWeightLimitNotify), global::NewProtos.StoreWeightLimitNotify.Parser, new[]{ "ReliquaryCountLimit", "FurnitureCountLimit", "MaterialCountLimit", "WeaponCountLimit", "WeightLimit", "StoreType" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 630;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class StoreWeightLimitNotify : pb::IMessage<StoreWeightLimitNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<StoreWeightLimitNotify> _parser = new pb::MessageParser<StoreWeightLimitNotify>(() => new StoreWeightLimitNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<StoreWeightLimitNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.StoreWeightLimitNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public StoreWeightLimitNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public StoreWeightLimitNotify(StoreWeightLimitNotify other) : this() {
+      reliquaryCountLimit_ = other.reliquaryCountLimit_;
+      furnitureCountLimit_ = other.furnitureCountLimit_;
+      materialCountLimit_ = other.materialCountLimit_;
+      weaponCountLimit_ = other.weaponCountLimit_;
+      weightLimit_ = other.weightLimit_;
+      storeType_ = other.storeType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public StoreWeightLimitNotify Clone() {
+      return new StoreWeightLimitNotify(this);
+    }
+
+    /// <summary>Field number for the "reliquary_count_limit" field.</summary>
+    public const int ReliquaryCountLimitFieldNumber = 14;
+    private uint reliquaryCountLimit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ReliquaryCountLimit {
+      get { return reliquaryCountLimit_; }
+      set {
+        reliquaryCountLimit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "furniture_count_limit" field.</summary>
+    public const int FurnitureCountLimitFieldNumber = 10;
+    private uint furnitureCountLimit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FurnitureCountLimit {
+      get { return furnitureCountLimit_; }
+      set {
+        furnitureCountLimit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "material_count_limit" field.</summary>
+    public const int MaterialCountLimitFieldNumber = 5;
+    private uint materialCountLimit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MaterialCountLimit {
+      get { return materialCountLimit_; }
+      set {
+        materialCountLimit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "weapon_count_limit" field.</summary>
+    public const int WeaponCountLimitFieldNumber = 1;
+    private uint weaponCountLimit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WeaponCountLimit {
+      get { return weaponCountLimit_; }
+      set {
+        weaponCountLimit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "weight_limit" field.</summary>
+    public const int WeightLimitFieldNumber = 8;
+    private uint weightLimit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WeightLimit {
+      get { return weightLimit_; }
+      set {
+        weightLimit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "store_type" field.</summary>
+    public const int StoreTypeFieldNumber = 9;
+    private global::NewProtos.StoreType storeType_ = global::NewProtos.StoreType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.StoreType StoreType {
+      get { return storeType_; }
+      set {
+        storeType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as StoreWeightLimitNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(StoreWeightLimitNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ReliquaryCountLimit != other.ReliquaryCountLimit) return false;
+      if (FurnitureCountLimit != other.FurnitureCountLimit) return false;
+      if (MaterialCountLimit != other.MaterialCountLimit) return false;
+      if (WeaponCountLimit != other.WeaponCountLimit) return false;
+      if (WeightLimit != other.WeightLimit) return false;
+      if (StoreType != other.StoreType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ReliquaryCountLimit != 0) hash ^= ReliquaryCountLimit.GetHashCode();
+      if (FurnitureCountLimit != 0) hash ^= FurnitureCountLimit.GetHashCode();
+      if (MaterialCountLimit != 0) hash ^= MaterialCountLimit.GetHashCode();
+      if (WeaponCountLimit != 0) hash ^= WeaponCountLimit.GetHashCode();
+      if (WeightLimit != 0) hash ^= WeightLimit.GetHashCode();
+      if (StoreType != global::NewProtos.StoreType.None) hash ^= StoreType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (WeaponCountLimit != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(WeaponCountLimit);
+      }
+      if (MaterialCountLimit != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(MaterialCountLimit);
+      }
+      if (WeightLimit != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(WeightLimit);
+      }
+      if (StoreType != global::NewProtos.StoreType.None) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) StoreType);
+      }
+      if (FurnitureCountLimit != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(FurnitureCountLimit);
+      }
+      if (ReliquaryCountLimit != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ReliquaryCountLimit);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (WeaponCountLimit != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(WeaponCountLimit);
+      }
+      if (MaterialCountLimit != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(MaterialCountLimit);
+      }
+      if (WeightLimit != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(WeightLimit);
+      }
+      if (StoreType != global::NewProtos.StoreType.None) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) StoreType);
+      }
+      if (FurnitureCountLimit != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(FurnitureCountLimit);
+      }
+      if (ReliquaryCountLimit != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ReliquaryCountLimit);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ReliquaryCountLimit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReliquaryCountLimit);
+      }
+      if (FurnitureCountLimit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FurnitureCountLimit);
+      }
+      if (MaterialCountLimit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaterialCountLimit);
+      }
+      if (WeaponCountLimit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponCountLimit);
+      }
+      if (WeightLimit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeightLimit);
+      }
+      if (StoreType != global::NewProtos.StoreType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StoreType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(StoreWeightLimitNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ReliquaryCountLimit != 0) {
+        ReliquaryCountLimit = other.ReliquaryCountLimit;
+      }
+      if (other.FurnitureCountLimit != 0) {
+        FurnitureCountLimit = other.FurnitureCountLimit;
+      }
+      if (other.MaterialCountLimit != 0) {
+        MaterialCountLimit = other.MaterialCountLimit;
+      }
+      if (other.WeaponCountLimit != 0) {
+        WeaponCountLimit = other.WeaponCountLimit;
+      }
+      if (other.WeightLimit != 0) {
+        WeightLimit = other.WeightLimit;
+      }
+      if (other.StoreType != global::NewProtos.StoreType.None) {
+        StoreType = other.StoreType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            WeaponCountLimit = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            MaterialCountLimit = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            WeightLimit = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            StoreType = (global::NewProtos.StoreType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            FurnitureCountLimit = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            ReliquaryCountLimit = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            WeaponCountLimit = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            MaterialCountLimit = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            WeightLimit = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            StoreType = (global::NewProtos.StoreType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            FurnitureCountLimit = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            ReliquaryCountLimit = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 630;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class StoreWeightLimitNotify : pb::IMessage<StoreWeightLimitNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<StoreWeightLimitNotify> _parser = new pb::MessageParser<StoreWeightLimitNotify>(() => new StoreWeightLimitNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<StoreWeightLimitNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::StoreWeightLimitNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public StoreWeightLimitNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public StoreWeightLimitNotify(StoreWeightLimitNotify other) : this() {
-    reliquaryCountLimit_ = other.reliquaryCountLimit_;
-    furnitureCountLimit_ = other.furnitureCountLimit_;
-    materialCountLimit_ = other.materialCountLimit_;
-    weaponCountLimit_ = other.weaponCountLimit_;
-    weightLimit_ = other.weightLimit_;
-    storeType_ = other.storeType_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public StoreWeightLimitNotify Clone() {
-    return new StoreWeightLimitNotify(this);
-  }
-
-  /// <summary>Field number for the "reliquary_count_limit" field.</summary>
-  public const int ReliquaryCountLimitFieldNumber = 14;
-  private uint reliquaryCountLimit_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ReliquaryCountLimit {
-    get { return reliquaryCountLimit_; }
-    set {
-      reliquaryCountLimit_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "furniture_count_limit" field.</summary>
-  public const int FurnitureCountLimitFieldNumber = 10;
-  private uint furnitureCountLimit_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FurnitureCountLimit {
-    get { return furnitureCountLimit_; }
-    set {
-      furnitureCountLimit_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "material_count_limit" field.</summary>
-  public const int MaterialCountLimitFieldNumber = 5;
-  private uint materialCountLimit_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MaterialCountLimit {
-    get { return materialCountLimit_; }
-    set {
-      materialCountLimit_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "weapon_count_limit" field.</summary>
-  public const int WeaponCountLimitFieldNumber = 1;
-  private uint weaponCountLimit_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WeaponCountLimit {
-    get { return weaponCountLimit_; }
-    set {
-      weaponCountLimit_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "weight_limit" field.</summary>
-  public const int WeightLimitFieldNumber = 8;
-  private uint weightLimit_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WeightLimit {
-    get { return weightLimit_; }
-    set {
-      weightLimit_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "store_type" field.</summary>
-  public const int StoreTypeFieldNumber = 9;
-  private global::StoreType storeType_ = global::StoreType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::StoreType StoreType {
-    get { return storeType_; }
-    set {
-      storeType_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as StoreWeightLimitNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(StoreWeightLimitNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ReliquaryCountLimit != other.ReliquaryCountLimit) return false;
-    if (FurnitureCountLimit != other.FurnitureCountLimit) return false;
-    if (MaterialCountLimit != other.MaterialCountLimit) return false;
-    if (WeaponCountLimit != other.WeaponCountLimit) return false;
-    if (WeightLimit != other.WeightLimit) return false;
-    if (StoreType != other.StoreType) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ReliquaryCountLimit != 0) hash ^= ReliquaryCountLimit.GetHashCode();
-    if (FurnitureCountLimit != 0) hash ^= FurnitureCountLimit.GetHashCode();
-    if (MaterialCountLimit != 0) hash ^= MaterialCountLimit.GetHashCode();
-    if (WeaponCountLimit != 0) hash ^= WeaponCountLimit.GetHashCode();
-    if (WeightLimit != 0) hash ^= WeightLimit.GetHashCode();
-    if (StoreType != global::StoreType.None) hash ^= StoreType.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (WeaponCountLimit != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(WeaponCountLimit);
-    }
-    if (MaterialCountLimit != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(MaterialCountLimit);
-    }
-    if (WeightLimit != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(WeightLimit);
-    }
-    if (StoreType != global::StoreType.None) {
-      output.WriteRawTag(72);
-      output.WriteEnum((int) StoreType);
-    }
-    if (FurnitureCountLimit != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(FurnitureCountLimit);
-    }
-    if (ReliquaryCountLimit != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(ReliquaryCountLimit);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (WeaponCountLimit != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(WeaponCountLimit);
-    }
-    if (MaterialCountLimit != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(MaterialCountLimit);
-    }
-    if (WeightLimit != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(WeightLimit);
-    }
-    if (StoreType != global::StoreType.None) {
-      output.WriteRawTag(72);
-      output.WriteEnum((int) StoreType);
-    }
-    if (FurnitureCountLimit != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(FurnitureCountLimit);
-    }
-    if (ReliquaryCountLimit != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(ReliquaryCountLimit);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ReliquaryCountLimit != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ReliquaryCountLimit);
-    }
-    if (FurnitureCountLimit != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FurnitureCountLimit);
-    }
-    if (MaterialCountLimit != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MaterialCountLimit);
-    }
-    if (WeaponCountLimit != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponCountLimit);
-    }
-    if (WeightLimit != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeightLimit);
-    }
-    if (StoreType != global::StoreType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) StoreType);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(StoreWeightLimitNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ReliquaryCountLimit != 0) {
-      ReliquaryCountLimit = other.ReliquaryCountLimit;
-    }
-    if (other.FurnitureCountLimit != 0) {
-      FurnitureCountLimit = other.FurnitureCountLimit;
-    }
-    if (other.MaterialCountLimit != 0) {
-      MaterialCountLimit = other.MaterialCountLimit;
-    }
-    if (other.WeaponCountLimit != 0) {
-      WeaponCountLimit = other.WeaponCountLimit;
-    }
-    if (other.WeightLimit != 0) {
-      WeightLimit = other.WeightLimit;
-    }
-    if (other.StoreType != global::StoreType.None) {
-      StoreType = other.StoreType;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          WeaponCountLimit = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          MaterialCountLimit = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          WeightLimit = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          StoreType = (global::StoreType) input.ReadEnum();
-          break;
-        }
-        case 80: {
-          FurnitureCountLimit = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          ReliquaryCountLimit = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          WeaponCountLimit = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          MaterialCountLimit = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          WeightLimit = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          StoreType = (global::StoreType) input.ReadEnum();
-          break;
-        }
-        case 80: {
-          FurnitureCountLimit = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          ReliquaryCountLimit = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -9,306 +9,309 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CodexDataUpdateNotify.proto</summary>
-public static partial class CodexDataUpdateNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CodexDataUpdateNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CodexDataUpdateNotify.proto</summary>
+  public static partial class CodexDataUpdateNotifyReflection {
 
-  static CodexDataUpdateNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChtDb2RleERhdGFVcGRhdGVOb3RpZnkucHJvdG8aD0NvZGV4VHlwZS5wcm90",
-          "byJfChVDb2RleERhdGFVcGRhdGVOb3RpZnkSIAoYd2VhcG9uX21heF9wcm9t",
-          "b3RlX2xldmVsGAogASgNEhgKBHR5cGUYBSABKA4yCi5Db2RleFR5cGUSCgoC",
-          "aWQYAyABKA1CFgoUb3JnLnNvcmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::CodexTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::CodexDataUpdateNotify), global::CodexDataUpdateNotify.Parser, new[]{ "WeaponMaxPromoteLevel", "Type", "Id" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for CodexDataUpdateNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CodexDataUpdateNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChtDb2RleERhdGFVcGRhdGVOb3RpZnkucHJvdG8aD0NvZGV4VHlwZS5wcm90",
+            "byJfChVDb2RleERhdGFVcGRhdGVOb3RpZnkSIAoYd2VhcG9uX21heF9wcm9t",
+            "b3RlX2xldmVsGAogASgNEhgKBHR5cGUYBSABKA4yCi5Db2RleFR5cGUSCgoC",
+            "aWQYAyABKA1CDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.CodexTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.CodexDataUpdateNotify), global::NewProtos.CodexDataUpdateNotify.Parser, new[]{ "WeaponMaxPromoteLevel", "Type", "Id" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4203;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class CodexDataUpdateNotify : pb::IMessage<CodexDataUpdateNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CodexDataUpdateNotify> _parser = new pb::MessageParser<CodexDataUpdateNotify>(() => new CodexDataUpdateNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CodexDataUpdateNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.CodexDataUpdateNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CodexDataUpdateNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CodexDataUpdateNotify(CodexDataUpdateNotify other) : this() {
+      weaponMaxPromoteLevel_ = other.weaponMaxPromoteLevel_;
+      type_ = other.type_;
+      id_ = other.id_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CodexDataUpdateNotify Clone() {
+      return new CodexDataUpdateNotify(this);
+    }
+
+    /// <summary>Field number for the "weapon_max_promote_level" field.</summary>
+    public const int WeaponMaxPromoteLevelFieldNumber = 10;
+    private uint weaponMaxPromoteLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WeaponMaxPromoteLevel {
+      get { return weaponMaxPromoteLevel_; }
+      set {
+        weaponMaxPromoteLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 5;
+    private global::NewProtos.CodexType type_ = global::NewProtos.CodexType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CodexType Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 3;
+    private uint id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CodexDataUpdateNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CodexDataUpdateNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (WeaponMaxPromoteLevel != other.WeaponMaxPromoteLevel) return false;
+      if (Type != other.Type) return false;
+      if (Id != other.Id) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (WeaponMaxPromoteLevel != 0) hash ^= WeaponMaxPromoteLevel.GetHashCode();
+      if (Type != global::NewProtos.CodexType.None) hash ^= Type.GetHashCode();
+      if (Id != 0) hash ^= Id.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Id != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Id);
+      }
+      if (Type != global::NewProtos.CodexType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Type);
+      }
+      if (WeaponMaxPromoteLevel != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(WeaponMaxPromoteLevel);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Id);
+      }
+      if (Type != global::NewProtos.CodexType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Type);
+      }
+      if (WeaponMaxPromoteLevel != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(WeaponMaxPromoteLevel);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (WeaponMaxPromoteLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponMaxPromoteLevel);
+      }
+      if (Type != global::NewProtos.CodexType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
+      }
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CodexDataUpdateNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.WeaponMaxPromoteLevel != 0) {
+        WeaponMaxPromoteLevel = other.WeaponMaxPromoteLevel;
+      }
+      if (other.Type != global::NewProtos.CodexType.None) {
+        Type = other.Type;
+      }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Type = (global::NewProtos.CodexType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            WeaponMaxPromoteLevel = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            Id = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Type = (global::NewProtos.CodexType) input.ReadEnum();
+            break;
+          }
+          case 80: {
+            WeaponMaxPromoteLevel = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 4203;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class CodexDataUpdateNotify : pb::IMessage<CodexDataUpdateNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<CodexDataUpdateNotify> _parser = new pb::MessageParser<CodexDataUpdateNotify>(() => new CodexDataUpdateNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<CodexDataUpdateNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::CodexDataUpdateNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CodexDataUpdateNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CodexDataUpdateNotify(CodexDataUpdateNotify other) : this() {
-    weaponMaxPromoteLevel_ = other.weaponMaxPromoteLevel_;
-    type_ = other.type_;
-    id_ = other.id_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CodexDataUpdateNotify Clone() {
-    return new CodexDataUpdateNotify(this);
-  }
-
-  /// <summary>Field number for the "weapon_max_promote_level" field.</summary>
-  public const int WeaponMaxPromoteLevelFieldNumber = 10;
-  private uint weaponMaxPromoteLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WeaponMaxPromoteLevel {
-    get { return weaponMaxPromoteLevel_; }
-    set {
-      weaponMaxPromoteLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "type" field.</summary>
-  public const int TypeFieldNumber = 5;
-  private global::CodexType type_ = global::CodexType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CodexType Type {
-    get { return type_; }
-    set {
-      type_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "id" field.</summary>
-  public const int IdFieldNumber = 3;
-  private uint id_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Id {
-    get { return id_; }
-    set {
-      id_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as CodexDataUpdateNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(CodexDataUpdateNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (WeaponMaxPromoteLevel != other.WeaponMaxPromoteLevel) return false;
-    if (Type != other.Type) return false;
-    if (Id != other.Id) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (WeaponMaxPromoteLevel != 0) hash ^= WeaponMaxPromoteLevel.GetHashCode();
-    if (Type != global::CodexType.None) hash ^= Type.GetHashCode();
-    if (Id != 0) hash ^= Id.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Id != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(Id);
-    }
-    if (Type != global::CodexType.None) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) Type);
-    }
-    if (WeaponMaxPromoteLevel != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(WeaponMaxPromoteLevel);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Id != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(Id);
-    }
-    if (Type != global::CodexType.None) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) Type);
-    }
-    if (WeaponMaxPromoteLevel != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(WeaponMaxPromoteLevel);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (WeaponMaxPromoteLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(WeaponMaxPromoteLevel);
-    }
-    if (Type != global::CodexType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
-    }
-    if (Id != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Id);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(CodexDataUpdateNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.WeaponMaxPromoteLevel != 0) {
-      WeaponMaxPromoteLevel = other.WeaponMaxPromoteLevel;
-    }
-    if (other.Type != global::CodexType.None) {
-      Type = other.Type;
-    }
-    if (other.Id != 0) {
-      Id = other.Id;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          Id = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Type = (global::CodexType) input.ReadEnum();
-          break;
-        }
-        case 80: {
-          WeaponMaxPromoteLevel = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          Id = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Type = (global::CodexType) input.ReadEnum();
-          break;
-        }
-        case 80: {
-          WeaponMaxPromoteLevel = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

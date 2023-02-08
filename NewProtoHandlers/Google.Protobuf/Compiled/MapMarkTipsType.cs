@@ -9,35 +9,38 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MapMarkTipsType.proto</summary>
-public static partial class MapMarkTipsTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MapMarkTipsType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MapMarkTipsType.proto</summary>
+  public static partial class MapMarkTipsTypeReflection {
 
-  static MapMarkTipsTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVNYXBNYXJrVGlwc1R5cGUucHJvdG8qPwoPTWFwTWFya1RpcHNUeXBlEiwK",
-          "KE1BUF9NQVJLX1RJUFNfVFlQRV9EVU5HRU9OX0VMRU1FTlRfVFJJQUwQAEIW",
-          "ChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MapMarkTipsType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for MapMarkTipsType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MapMarkTipsTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVNYXBNYXJrVGlwc1R5cGUucHJvdG8qPwoPTWFwTWFya1RpcHNUeXBlEiwK",
+            "KE1BUF9NQVJLX1RJUFNfVFlQRV9EVU5HRU9OX0VMRU1FTlRfVFJJQUwQAEIM",
+            "qgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.MapMarkTipsType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum MapMarkTipsType {
+    [pbr::OriginalName("MAP_MARK_TIPS_TYPE_DUNGEON_ELEMENT_TRIAL")] DungeonElementTrial = 0,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum MapMarkTipsType {
-  [pbr::OriginalName("MAP_MARK_TIPS_TYPE_DUNGEON_ELEMENT_TRIAL")] DungeonElementTrial = 0,
-}
-
-#endregion
-
 
 #endregion Designer generated code

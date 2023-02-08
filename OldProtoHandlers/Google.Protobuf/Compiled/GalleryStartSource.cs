@@ -9,39 +9,41 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GalleryStartSource.proto</summary>
-public static partial class GalleryStartSourceReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GalleryStartSource.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GalleryStartSource.proto</summary>
+  public static partial class GalleryStartSourceReflection {
 
-  static GalleryStartSourceReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhHYWxsZXJ5U3RhcnRTb3VyY2UucHJvdG8qfAoSR2FsbGVyeVN0YXJ0U291",
-          "cmNlEiAKHEdBTExFUllfU1RBUlRfU09VUkNFX0JZX05PTkUQABIhCh1HQUxM",
-          "RVJZX1NUQVJUX1NPVVJDRV9CWV9NQVRDSBABEiEKHUdBTExFUllfU1RBUlRf",
-          "U09VUkNFX0JZX0RSQUZUEAJCHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRw",
-          "cm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GalleryStartSource), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for GalleryStartSource.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GalleryStartSourceReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhHYWxsZXJ5U3RhcnRTb3VyY2UucHJvdG8qfAoSR2FsbGVyeVN0YXJ0U291",
+            "cmNlEiAKHEdBTExFUllfU1RBUlRfU09VUkNFX0JZX05PTkUQABIhCh1HQUxM",
+            "RVJZX1NUQVJUX1NPVVJDRV9CWV9NQVRDSBABEiEKHUdBTExFUllfU1RBUlRf",
+            "U09VUkNFX0JZX0RSQUZUEAJCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.GalleryStartSource), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum GalleryStartSource {
+    [pbr::OriginalName("GALLERY_START_SOURCE_BY_NONE")] ByNone = 0,
+    [pbr::OriginalName("GALLERY_START_SOURCE_BY_MATCH")] ByMatch = 1,
+    [pbr::OriginalName("GALLERY_START_SOURCE_BY_DRAFT")] ByDraft = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum GalleryStartSource {
-  [pbr::OriginalName("GALLERY_START_SOURCE_BY_NONE")] ByNone = 0,
-  [pbr::OriginalName("GALLERY_START_SOURCE_BY_MATCH")] ByMatch = 1,
-  [pbr::OriginalName("GALLERY_START_SOURCE_BY_DRAFT")] ByDraft = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

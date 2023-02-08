@@ -19,7 +19,7 @@ syntax = "proto3";
 import "Item.proto";
 import "TrialAvatarGrantRecord.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message TrialAvatarInfo {
   uint32 trial_avatar_id = 1;

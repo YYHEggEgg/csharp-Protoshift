@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "SumoTeamData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SumoStageData {
   uint32 max_score = 1;

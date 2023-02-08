@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 enum GalleryStartSource {
   GALLERY_START_SOURCE_BY_NONE = 0;

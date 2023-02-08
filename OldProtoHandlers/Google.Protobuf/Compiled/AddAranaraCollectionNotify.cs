@@ -9,342 +9,344 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AddAranaraCollectionNotify.proto</summary>
-public static partial class AddAranaraCollectionNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AddAranaraCollectionNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AddAranaraCollectionNotify.proto</summary>
+  public static partial class AddAranaraCollectionNotifyReflection {
 
-  static AddAranaraCollectionNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBBZGRBcmFuYXJhQ29sbGVjdGlvbk5vdGlmeS5wcm90bxocQXJhbmFyYUNv",
-          "bGxlY3Rpb25TdGF0ZS5wcm90byKoAQoaQWRkQXJhbmFyYUNvbGxlY3Rpb25O",
-          "b3RpZnkSFwoPY29sbGVjdGlvbl90eXBlGAcgASgNEi0KDHRhcmdldF9zdGF0",
-          "ZRgMIAEoDjIXLkFyYW5hcmFDb2xsZWN0aW9uU3RhdGUSKwoKZnJvbV9zdGF0",
-          "ZRgPIAEoDjIXLkFyYW5hcmFDb2xsZWN0aW9uU3RhdGUSFQoNY29sbGVjdGlv",
-          "bl9pZBgIIAEoDUIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZw",
-          "cm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::AranaraCollectionStateReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AddAranaraCollectionNotify), global::AddAranaraCollectionNotify.Parser, new[]{ "CollectionType", "TargetState", "FromState", "CollectionId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AddAranaraCollectionNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AddAranaraCollectionNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBBZGRBcmFuYXJhQ29sbGVjdGlvbk5vdGlmeS5wcm90bxocQXJhbmFyYUNv",
+            "bGxlY3Rpb25TdGF0ZS5wcm90byKoAQoaQWRkQXJhbmFyYUNvbGxlY3Rpb25O",
+            "b3RpZnkSFwoPY29sbGVjdGlvbl90eXBlGAcgASgNEi0KDHRhcmdldF9zdGF0",
+            "ZRgMIAEoDjIXLkFyYW5hcmFDb2xsZWN0aW9uU3RhdGUSKwoKZnJvbV9zdGF0",
+            "ZRgPIAEoDjIXLkFyYW5hcmFDb2xsZWN0aW9uU3RhdGUSFQoNY29sbGVjdGlv",
+            "bl9pZBgIIAEoDUIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.AranaraCollectionStateReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.AddAranaraCollectionNotify), global::OldProtos.AddAranaraCollectionNotify.Parser, new[]{ "CollectionType", "TargetState", "FromState", "CollectionId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 6368
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class AddAranaraCollectionNotify : pb::IMessage<AddAranaraCollectionNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AddAranaraCollectionNotify> _parser = new pb::MessageParser<AddAranaraCollectionNotify>(() => new AddAranaraCollectionNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AddAranaraCollectionNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.AddAranaraCollectionNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddAranaraCollectionNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddAranaraCollectionNotify(AddAranaraCollectionNotify other) : this() {
+      collectionType_ = other.collectionType_;
+      targetState_ = other.targetState_;
+      fromState_ = other.fromState_;
+      collectionId_ = other.collectionId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddAranaraCollectionNotify Clone() {
+      return new AddAranaraCollectionNotify(this);
+    }
+
+    /// <summary>Field number for the "collection_type" field.</summary>
+    public const int CollectionTypeFieldNumber = 7;
+    private uint collectionType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CollectionType {
+      get { return collectionType_; }
+      set {
+        collectionType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_state" field.</summary>
+    public const int TargetStateFieldNumber = 12;
+    private global::OldProtos.AranaraCollectionState targetState_ = global::OldProtos.AranaraCollectionState.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.AranaraCollectionState TargetState {
+      get { return targetState_; }
+      set {
+        targetState_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "from_state" field.</summary>
+    public const int FromStateFieldNumber = 15;
+    private global::OldProtos.AranaraCollectionState fromState_ = global::OldProtos.AranaraCollectionState.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.AranaraCollectionState FromState {
+      get { return fromState_; }
+      set {
+        fromState_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "collection_id" field.</summary>
+    public const int CollectionIdFieldNumber = 8;
+    private uint collectionId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CollectionId {
+      get { return collectionId_; }
+      set {
+        collectionId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AddAranaraCollectionNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AddAranaraCollectionNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CollectionType != other.CollectionType) return false;
+      if (TargetState != other.TargetState) return false;
+      if (FromState != other.FromState) return false;
+      if (CollectionId != other.CollectionId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CollectionType != 0) hash ^= CollectionType.GetHashCode();
+      if (TargetState != global::OldProtos.AranaraCollectionState.None) hash ^= TargetState.GetHashCode();
+      if (FromState != global::OldProtos.AranaraCollectionState.None) hash ^= FromState.GetHashCode();
+      if (CollectionId != 0) hash ^= CollectionId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (CollectionType != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(CollectionType);
+      }
+      if (CollectionId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(CollectionId);
+      }
+      if (TargetState != global::OldProtos.AranaraCollectionState.None) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) TargetState);
+      }
+      if (FromState != global::OldProtos.AranaraCollectionState.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) FromState);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CollectionType != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(CollectionType);
+      }
+      if (CollectionId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(CollectionId);
+      }
+      if (TargetState != global::OldProtos.AranaraCollectionState.None) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) TargetState);
+      }
+      if (FromState != global::OldProtos.AranaraCollectionState.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) FromState);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (CollectionType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CollectionType);
+      }
+      if (TargetState != global::OldProtos.AranaraCollectionState.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TargetState);
+      }
+      if (FromState != global::OldProtos.AranaraCollectionState.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FromState);
+      }
+      if (CollectionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CollectionId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AddAranaraCollectionNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CollectionType != 0) {
+        CollectionType = other.CollectionType;
+      }
+      if (other.TargetState != global::OldProtos.AranaraCollectionState.None) {
+        TargetState = other.TargetState;
+      }
+      if (other.FromState != global::OldProtos.AranaraCollectionState.None) {
+        FromState = other.FromState;
+      }
+      if (other.CollectionId != 0) {
+        CollectionId = other.CollectionId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 56: {
+            CollectionType = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            CollectionId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            TargetState = (global::OldProtos.AranaraCollectionState) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            FromState = (global::OldProtos.AranaraCollectionState) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 56: {
+            CollectionType = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            CollectionId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            TargetState = (global::OldProtos.AranaraCollectionState) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            FromState = (global::OldProtos.AranaraCollectionState) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 6368
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class AddAranaraCollectionNotify : pb::IMessage<AddAranaraCollectionNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AddAranaraCollectionNotify> _parser = new pb::MessageParser<AddAranaraCollectionNotify>(() => new AddAranaraCollectionNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AddAranaraCollectionNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AddAranaraCollectionNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AddAranaraCollectionNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AddAranaraCollectionNotify(AddAranaraCollectionNotify other) : this() {
-    collectionType_ = other.collectionType_;
-    targetState_ = other.targetState_;
-    fromState_ = other.fromState_;
-    collectionId_ = other.collectionId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AddAranaraCollectionNotify Clone() {
-    return new AddAranaraCollectionNotify(this);
-  }
-
-  /// <summary>Field number for the "collection_type" field.</summary>
-  public const int CollectionTypeFieldNumber = 7;
-  private uint collectionType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CollectionType {
-    get { return collectionType_; }
-    set {
-      collectionType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "target_state" field.</summary>
-  public const int TargetStateFieldNumber = 12;
-  private global::AranaraCollectionState targetState_ = global::AranaraCollectionState.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::AranaraCollectionState TargetState {
-    get { return targetState_; }
-    set {
-      targetState_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "from_state" field.</summary>
-  public const int FromStateFieldNumber = 15;
-  private global::AranaraCollectionState fromState_ = global::AranaraCollectionState.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::AranaraCollectionState FromState {
-    get { return fromState_; }
-    set {
-      fromState_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "collection_id" field.</summary>
-  public const int CollectionIdFieldNumber = 8;
-  private uint collectionId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CollectionId {
-    get { return collectionId_; }
-    set {
-      collectionId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AddAranaraCollectionNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AddAranaraCollectionNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (CollectionType != other.CollectionType) return false;
-    if (TargetState != other.TargetState) return false;
-    if (FromState != other.FromState) return false;
-    if (CollectionId != other.CollectionId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (CollectionType != 0) hash ^= CollectionType.GetHashCode();
-    if (TargetState != global::AranaraCollectionState.None) hash ^= TargetState.GetHashCode();
-    if (FromState != global::AranaraCollectionState.None) hash ^= FromState.GetHashCode();
-    if (CollectionId != 0) hash ^= CollectionId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (CollectionType != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(CollectionType);
-    }
-    if (CollectionId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(CollectionId);
-    }
-    if (TargetState != global::AranaraCollectionState.None) {
-      output.WriteRawTag(96);
-      output.WriteEnum((int) TargetState);
-    }
-    if (FromState != global::AranaraCollectionState.None) {
-      output.WriteRawTag(120);
-      output.WriteEnum((int) FromState);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (CollectionType != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(CollectionType);
-    }
-    if (CollectionId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(CollectionId);
-    }
-    if (TargetState != global::AranaraCollectionState.None) {
-      output.WriteRawTag(96);
-      output.WriteEnum((int) TargetState);
-    }
-    if (FromState != global::AranaraCollectionState.None) {
-      output.WriteRawTag(120);
-      output.WriteEnum((int) FromState);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (CollectionType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CollectionType);
-    }
-    if (TargetState != global::AranaraCollectionState.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) TargetState);
-    }
-    if (FromState != global::AranaraCollectionState.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FromState);
-    }
-    if (CollectionId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CollectionId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AddAranaraCollectionNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.CollectionType != 0) {
-      CollectionType = other.CollectionType;
-    }
-    if (other.TargetState != global::AranaraCollectionState.None) {
-      TargetState = other.TargetState;
-    }
-    if (other.FromState != global::AranaraCollectionState.None) {
-      FromState = other.FromState;
-    }
-    if (other.CollectionId != 0) {
-      CollectionId = other.CollectionId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 56: {
-          CollectionType = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          CollectionId = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          TargetState = (global::AranaraCollectionState) input.ReadEnum();
-          break;
-        }
-        case 120: {
-          FromState = (global::AranaraCollectionState) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 56: {
-          CollectionType = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          CollectionId = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          TargetState = (global::AranaraCollectionState) input.ReadEnum();
-          break;
-        }
-        case 120: {
-          FromState = (global::AranaraCollectionState) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

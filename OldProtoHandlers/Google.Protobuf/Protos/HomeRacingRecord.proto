@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "HomeRacingGalleryRecord.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message HomeRacingRecord {
   repeated HomeRacingGalleryRecord record_list = 7;

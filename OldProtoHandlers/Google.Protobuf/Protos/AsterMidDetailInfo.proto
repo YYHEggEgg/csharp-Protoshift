@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "AsterMidCampInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message AsterMidDetailInfo {
   uint32 begin_time = 10;

@@ -9,514 +9,516 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ChessActivityDetailInfo.proto</summary>
-public static partial class ChessActivityDetailInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ChessActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ChessActivityDetailInfo.proto</summary>
+  public static partial class ChessActivityDetailInfoReflection {
 
-  static ChessActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1DaGVzc0FjdGl2aXR5RGV0YWlsSW5mby5wcm90byL0AQoXQ2hlc3NBY3Rp",
-          "dml0eURldGFpbEluZm8SDQoFbGV2ZWwYBCABKA0SIQoZaXNfdGVhY2hfZHVu",
-          "Z2Vvbl9maW5pc2hlZBgJIAEoCBIaChJjb250ZW50X2Nsb3NlX3RpbWUYDiAB",
-          "KA0SFAoMb2J0YWluZWRfZXhwGAggASgNEhkKEWlzX2NvbnRlbnRfY2xvc2Vk",
-          "GAUgASgIEhUKDWF2YWlsYWJsZV9leHAYAiABKA0SCwoDZXhwGA0gASgNEhwK",
-          "FGZpbmlzaGVkX21hcF9pZF9saXN0GAEgAygNEhgKEHB1bmlzaF9vdmVyX3Rp",
-          "bWUYAyABKA1CHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJv",
-          "dG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ChessActivityDetailInfo), global::ChessActivityDetailInfo.Parser, new[]{ "Level", "IsTeachDungeonFinished", "ContentCloseTime", "ObtainedExp", "IsContentClosed", "AvailableExp", "Exp", "FinishedMapIdList", "PunishOverTime" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ChessActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ChessActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1DaGVzc0FjdGl2aXR5RGV0YWlsSW5mby5wcm90byL0AQoXQ2hlc3NBY3Rp",
+            "dml0eURldGFpbEluZm8SDQoFbGV2ZWwYBCABKA0SIQoZaXNfdGVhY2hfZHVu",
+            "Z2Vvbl9maW5pc2hlZBgJIAEoCBIaChJjb250ZW50X2Nsb3NlX3RpbWUYDiAB",
+            "KA0SFAoMb2J0YWluZWRfZXhwGAggASgNEhkKEWlzX2NvbnRlbnRfY2xvc2Vk",
+            "GAUgASgIEhUKDWF2YWlsYWJsZV9leHAYAiABKA0SCwoDZXhwGA0gASgNEhwK",
+            "FGZpbmlzaGVkX21hcF9pZF9saXN0GAEgAygNEhgKEHB1bmlzaF9vdmVyX3Rp",
+            "bWUYAyABKA1CDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ChessActivityDetailInfo), global::OldProtos.ChessActivityDetailInfo.Parser, new[]{ "Level", "IsTeachDungeonFinished", "ContentCloseTime", "ObtainedExp", "IsContentClosed", "AvailableExp", "Exp", "FinishedMapIdList", "PunishOverTime" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class ChessActivityDetailInfo : pb::IMessage<ChessActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ChessActivityDetailInfo> _parser = new pb::MessageParser<ChessActivityDetailInfo>(() => new ChessActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ChessActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ChessActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChessActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChessActivityDetailInfo(ChessActivityDetailInfo other) : this() {
+      level_ = other.level_;
+      isTeachDungeonFinished_ = other.isTeachDungeonFinished_;
+      contentCloseTime_ = other.contentCloseTime_;
+      obtainedExp_ = other.obtainedExp_;
+      isContentClosed_ = other.isContentClosed_;
+      availableExp_ = other.availableExp_;
+      exp_ = other.exp_;
+      finishedMapIdList_ = other.finishedMapIdList_.Clone();
+      punishOverTime_ = other.punishOverTime_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChessActivityDetailInfo Clone() {
+      return new ChessActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 4;
+    private uint level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_teach_dungeon_finished" field.</summary>
+    public const int IsTeachDungeonFinishedFieldNumber = 9;
+    private bool isTeachDungeonFinished_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsTeachDungeonFinished {
+      get { return isTeachDungeonFinished_; }
+      set {
+        isTeachDungeonFinished_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "content_close_time" field.</summary>
+    public const int ContentCloseTimeFieldNumber = 14;
+    private uint contentCloseTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ContentCloseTime {
+      get { return contentCloseTime_; }
+      set {
+        contentCloseTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "obtained_exp" field.</summary>
+    public const int ObtainedExpFieldNumber = 8;
+    private uint obtainedExp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ObtainedExp {
+      get { return obtainedExp_; }
+      set {
+        obtainedExp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 5;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "available_exp" field.</summary>
+    public const int AvailableExpFieldNumber = 2;
+    private uint availableExp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AvailableExp {
+      get { return availableExp_; }
+      set {
+        availableExp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "exp" field.</summary>
+    public const int ExpFieldNumber = 13;
+    private uint exp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Exp {
+      get { return exp_; }
+      set {
+        exp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "finished_map_id_list" field.</summary>
+    public const int FinishedMapIdListFieldNumber = 1;
+    private static readonly pb::FieldCodec<uint> _repeated_finishedMapIdList_codec
+        = pb::FieldCodec.ForUInt32(10);
+    private readonly pbc::RepeatedField<uint> finishedMapIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FinishedMapIdList {
+      get { return finishedMapIdList_; }
+    }
+
+    /// <summary>Field number for the "punish_over_time" field.</summary>
+    public const int PunishOverTimeFieldNumber = 3;
+    private uint punishOverTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PunishOverTime {
+      get { return punishOverTime_; }
+      set {
+        punishOverTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ChessActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ChessActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Level != other.Level) return false;
+      if (IsTeachDungeonFinished != other.IsTeachDungeonFinished) return false;
+      if (ContentCloseTime != other.ContentCloseTime) return false;
+      if (ObtainedExp != other.ObtainedExp) return false;
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if (AvailableExp != other.AvailableExp) return false;
+      if (Exp != other.Exp) return false;
+      if(!finishedMapIdList_.Equals(other.finishedMapIdList_)) return false;
+      if (PunishOverTime != other.PunishOverTime) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (IsTeachDungeonFinished != false) hash ^= IsTeachDungeonFinished.GetHashCode();
+      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
+      if (ObtainedExp != 0) hash ^= ObtainedExp.GetHashCode();
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      if (AvailableExp != 0) hash ^= AvailableExp.GetHashCode();
+      if (Exp != 0) hash ^= Exp.GetHashCode();
+      hash ^= finishedMapIdList_.GetHashCode();
+      if (PunishOverTime != 0) hash ^= PunishOverTime.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      finishedMapIdList_.WriteTo(output, _repeated_finishedMapIdList_codec);
+      if (AvailableExp != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(AvailableExp);
+      }
+      if (PunishOverTime != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(PunishOverTime);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Level);
+      }
+      if (IsContentClosed != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsContentClosed);
+      }
+      if (ObtainedExp != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ObtainedExp);
+      }
+      if (IsTeachDungeonFinished != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsTeachDungeonFinished);
+      }
+      if (Exp != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Exp);
+      }
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ContentCloseTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      finishedMapIdList_.WriteTo(ref output, _repeated_finishedMapIdList_codec);
+      if (AvailableExp != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(AvailableExp);
+      }
+      if (PunishOverTime != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(PunishOverTime);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Level);
+      }
+      if (IsContentClosed != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsContentClosed);
+      }
+      if (ObtainedExp != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ObtainedExp);
+      }
+      if (IsTeachDungeonFinished != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsTeachDungeonFinished);
+      }
+      if (Exp != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Exp);
+      }
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(ContentCloseTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
+      }
+      if (IsTeachDungeonFinished != false) {
+        size += 1 + 1;
+      }
+      if (ContentCloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
+      }
+      if (ObtainedExp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ObtainedExp);
+      }
+      if (IsContentClosed != false) {
+        size += 1 + 1;
+      }
+      if (AvailableExp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvailableExp);
+      }
+      if (Exp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Exp);
+      }
+      size += finishedMapIdList_.CalculateSize(_repeated_finishedMapIdList_codec);
+      if (PunishOverTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PunishOverTime);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ChessActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      if (other.IsTeachDungeonFinished != false) {
+        IsTeachDungeonFinished = other.IsTeachDungeonFinished;
+      }
+      if (other.ContentCloseTime != 0) {
+        ContentCloseTime = other.ContentCloseTime;
+      }
+      if (other.ObtainedExp != 0) {
+        ObtainedExp = other.ObtainedExp;
+      }
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
+      if (other.AvailableExp != 0) {
+        AvailableExp = other.AvailableExp;
+      }
+      if (other.Exp != 0) {
+        Exp = other.Exp;
+      }
+      finishedMapIdList_.Add(other.finishedMapIdList_);
+      if (other.PunishOverTime != 0) {
+        PunishOverTime = other.PunishOverTime;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10:
+          case 8: {
+            finishedMapIdList_.AddEntriesFrom(input, _repeated_finishedMapIdList_codec);
+            break;
+          }
+          case 16: {
+            AvailableExp = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            PunishOverTime = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 64: {
+            ObtainedExp = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            IsTeachDungeonFinished = input.ReadBool();
+            break;
+          }
+          case 104: {
+            Exp = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10:
+          case 8: {
+            finishedMapIdList_.AddEntriesFrom(ref input, _repeated_finishedMapIdList_codec);
+            break;
+          }
+          case 16: {
+            AvailableExp = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            PunishOverTime = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 64: {
+            ObtainedExp = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            IsTeachDungeonFinished = input.ReadBool();
+            break;
+          }
+          case 104: {
+            Exp = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ChessActivityDetailInfo : pb::IMessage<ChessActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ChessActivityDetailInfo> _parser = new pb::MessageParser<ChessActivityDetailInfo>(() => new ChessActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ChessActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ChessActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChessActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChessActivityDetailInfo(ChessActivityDetailInfo other) : this() {
-    level_ = other.level_;
-    isTeachDungeonFinished_ = other.isTeachDungeonFinished_;
-    contentCloseTime_ = other.contentCloseTime_;
-    obtainedExp_ = other.obtainedExp_;
-    isContentClosed_ = other.isContentClosed_;
-    availableExp_ = other.availableExp_;
-    exp_ = other.exp_;
-    finishedMapIdList_ = other.finishedMapIdList_.Clone();
-    punishOverTime_ = other.punishOverTime_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChessActivityDetailInfo Clone() {
-    return new ChessActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "level" field.</summary>
-  public const int LevelFieldNumber = 4;
-  private uint level_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Level {
-    get { return level_; }
-    set {
-      level_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_teach_dungeon_finished" field.</summary>
-  public const int IsTeachDungeonFinishedFieldNumber = 9;
-  private bool isTeachDungeonFinished_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsTeachDungeonFinished {
-    get { return isTeachDungeonFinished_; }
-    set {
-      isTeachDungeonFinished_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "content_close_time" field.</summary>
-  public const int ContentCloseTimeFieldNumber = 14;
-  private uint contentCloseTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ContentCloseTime {
-    get { return contentCloseTime_; }
-    set {
-      contentCloseTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "obtained_exp" field.</summary>
-  public const int ObtainedExpFieldNumber = 8;
-  private uint obtainedExp_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ObtainedExp {
-    get { return obtainedExp_; }
-    set {
-      obtainedExp_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_content_closed" field.</summary>
-  public const int IsContentClosedFieldNumber = 5;
-  private bool isContentClosed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsContentClosed {
-    get { return isContentClosed_; }
-    set {
-      isContentClosed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "available_exp" field.</summary>
-  public const int AvailableExpFieldNumber = 2;
-  private uint availableExp_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint AvailableExp {
-    get { return availableExp_; }
-    set {
-      availableExp_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "exp" field.</summary>
-  public const int ExpFieldNumber = 13;
-  private uint exp_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Exp {
-    get { return exp_; }
-    set {
-      exp_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "finished_map_id_list" field.</summary>
-  public const int FinishedMapIdListFieldNumber = 1;
-  private static readonly pb::FieldCodec<uint> _repeated_finishedMapIdList_codec
-      = pb::FieldCodec.ForUInt32(10);
-  private readonly pbc::RepeatedField<uint> finishedMapIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> FinishedMapIdList {
-    get { return finishedMapIdList_; }
-  }
-
-  /// <summary>Field number for the "punish_over_time" field.</summary>
-  public const int PunishOverTimeFieldNumber = 3;
-  private uint punishOverTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PunishOverTime {
-    get { return punishOverTime_; }
-    set {
-      punishOverTime_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ChessActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ChessActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Level != other.Level) return false;
-    if (IsTeachDungeonFinished != other.IsTeachDungeonFinished) return false;
-    if (ContentCloseTime != other.ContentCloseTime) return false;
-    if (ObtainedExp != other.ObtainedExp) return false;
-    if (IsContentClosed != other.IsContentClosed) return false;
-    if (AvailableExp != other.AvailableExp) return false;
-    if (Exp != other.Exp) return false;
-    if(!finishedMapIdList_.Equals(other.finishedMapIdList_)) return false;
-    if (PunishOverTime != other.PunishOverTime) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Level != 0) hash ^= Level.GetHashCode();
-    if (IsTeachDungeonFinished != false) hash ^= IsTeachDungeonFinished.GetHashCode();
-    if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
-    if (ObtainedExp != 0) hash ^= ObtainedExp.GetHashCode();
-    if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-    if (AvailableExp != 0) hash ^= AvailableExp.GetHashCode();
-    if (Exp != 0) hash ^= Exp.GetHashCode();
-    hash ^= finishedMapIdList_.GetHashCode();
-    if (PunishOverTime != 0) hash ^= PunishOverTime.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    finishedMapIdList_.WriteTo(output, _repeated_finishedMapIdList_codec);
-    if (AvailableExp != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(AvailableExp);
-    }
-    if (PunishOverTime != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(PunishOverTime);
-    }
-    if (Level != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Level);
-    }
-    if (IsContentClosed != false) {
-      output.WriteRawTag(40);
-      output.WriteBool(IsContentClosed);
-    }
-    if (ObtainedExp != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ObtainedExp);
-    }
-    if (IsTeachDungeonFinished != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(IsTeachDungeonFinished);
-    }
-    if (Exp != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Exp);
-    }
-    if (ContentCloseTime != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(ContentCloseTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    finishedMapIdList_.WriteTo(ref output, _repeated_finishedMapIdList_codec);
-    if (AvailableExp != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(AvailableExp);
-    }
-    if (PunishOverTime != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(PunishOverTime);
-    }
-    if (Level != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Level);
-    }
-    if (IsContentClosed != false) {
-      output.WriteRawTag(40);
-      output.WriteBool(IsContentClosed);
-    }
-    if (ObtainedExp != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ObtainedExp);
-    }
-    if (IsTeachDungeonFinished != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(IsTeachDungeonFinished);
-    }
-    if (Exp != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Exp);
-    }
-    if (ContentCloseTime != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(ContentCloseTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Level != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
-    }
-    if (IsTeachDungeonFinished != false) {
-      size += 1 + 1;
-    }
-    if (ContentCloseTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
-    }
-    if (ObtainedExp != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ObtainedExp);
-    }
-    if (IsContentClosed != false) {
-      size += 1 + 1;
-    }
-    if (AvailableExp != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvailableExp);
-    }
-    if (Exp != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Exp);
-    }
-    size += finishedMapIdList_.CalculateSize(_repeated_finishedMapIdList_codec);
-    if (PunishOverTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PunishOverTime);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ChessActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Level != 0) {
-      Level = other.Level;
-    }
-    if (other.IsTeachDungeonFinished != false) {
-      IsTeachDungeonFinished = other.IsTeachDungeonFinished;
-    }
-    if (other.ContentCloseTime != 0) {
-      ContentCloseTime = other.ContentCloseTime;
-    }
-    if (other.ObtainedExp != 0) {
-      ObtainedExp = other.ObtainedExp;
-    }
-    if (other.IsContentClosed != false) {
-      IsContentClosed = other.IsContentClosed;
-    }
-    if (other.AvailableExp != 0) {
-      AvailableExp = other.AvailableExp;
-    }
-    if (other.Exp != 0) {
-      Exp = other.Exp;
-    }
-    finishedMapIdList_.Add(other.finishedMapIdList_);
-    if (other.PunishOverTime != 0) {
-      PunishOverTime = other.PunishOverTime;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10:
-        case 8: {
-          finishedMapIdList_.AddEntriesFrom(input, _repeated_finishedMapIdList_codec);
-          break;
-        }
-        case 16: {
-          AvailableExp = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          PunishOverTime = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          Level = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 64: {
-          ObtainedExp = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          IsTeachDungeonFinished = input.ReadBool();
-          break;
-        }
-        case 104: {
-          Exp = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          ContentCloseTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10:
-        case 8: {
-          finishedMapIdList_.AddEntriesFrom(ref input, _repeated_finishedMapIdList_codec);
-          break;
-        }
-        case 16: {
-          AvailableExp = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          PunishOverTime = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          Level = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 64: {
-          ObtainedExp = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          IsTeachDungeonFinished = input.ReadBool();
-          break;
-        }
-        case 104: {
-          Exp = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          ContentCloseTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

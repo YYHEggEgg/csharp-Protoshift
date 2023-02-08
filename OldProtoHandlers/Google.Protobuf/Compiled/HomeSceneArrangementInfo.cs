@@ -9,641 +9,644 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from HomeSceneArrangementInfo.proto</summary>
-public static partial class HomeSceneArrangementInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for HomeSceneArrangementInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from HomeSceneArrangementInfo.proto</summary>
+  public static partial class HomeSceneArrangementInfoReflection {
 
-  static HomeSceneArrangementInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch5Ib21lU2NlbmVBcnJhbmdlbWVudEluZm8ucHJvdG8aHkhvbWVCbG9ja0Fy",
-          "cmFuZ2VtZW50SW5mby5wcm90bxoXSG9tZUZ1cm5pdHVyZURhdGEucHJvdG8a",
-          "DFZlY3Rvci5wcm90byKKAwoYSG9tZVNjZW5lQXJyYW5nZW1lbnRJbmZvEhkK",
-          "CGJvcm5fcm90GAQgASgLMgcuVmVjdG9yEhkKCGJvcm5fcG9zGAEgASgLMgcu",
-          "VmVjdG9yEiYKCnN0YWlyX2xpc3QYCyADKAsyEi5Ib21lRnVybml0dXJlRGF0",
-          "YRIlCglkb29yX2xpc3QYDSADKAsyEi5Ib21lRnVybml0dXJlRGF0YRIXCg9p",
-          "c19zZXRfYm9ybl9wb3MYCiABKAgSPgobYmxvY2tfYXJyYW5nZW1lbnRfaW5m",
-          "b19saXN0GAggAygLMhkuSG9tZUJsb2NrQXJyYW5nZW1lbnRJbmZvEhAKCHNj",
-          "ZW5lX2lkGAIgASgNEg4KBmJnbV9pZBgMIAEoDRIaCglkamlubl9wb3MYCSAB",
-          "KAsyBy5WZWN0b3ISJgoKbWFpbl9ob3VzZRgOIAEoCzISLkhvbWVGdXJuaXR1",
-          "cmVEYXRhEhUKDWNvbWZvcnRfdmFsdWUYByABKA0SEwoLdG1wX3ZlcnNpb24Y",
-          "BSABKA1CHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::HomeBlockArrangementInfoReflection.Descriptor, global::HomeFurnitureDataReflection.Descriptor, global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::HomeSceneArrangementInfo), global::HomeSceneArrangementInfo.Parser, new[]{ "BornRot", "BornPos", "StairList", "DoorList", "IsSetBornPos", "BlockArrangementInfoList", "SceneId", "BgmId", "DjinnPos", "MainHouse", "ComfortValue", "TmpVersion" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for HomeSceneArrangementInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static HomeSceneArrangementInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch5Ib21lU2NlbmVBcnJhbmdlbWVudEluZm8ucHJvdG8aHkhvbWVCbG9ja0Fy",
+            "cmFuZ2VtZW50SW5mby5wcm90bxoXSG9tZUZ1cm5pdHVyZURhdGEucHJvdG8a",
+            "DFZlY3Rvci5wcm90byKKAwoYSG9tZVNjZW5lQXJyYW5nZW1lbnRJbmZvEhkK",
+            "CGJvcm5fcm90GAQgASgLMgcuVmVjdG9yEhkKCGJvcm5fcG9zGAEgASgLMgcu",
+            "VmVjdG9yEiYKCnN0YWlyX2xpc3QYCyADKAsyEi5Ib21lRnVybml0dXJlRGF0",
+            "YRIlCglkb29yX2xpc3QYDSADKAsyEi5Ib21lRnVybml0dXJlRGF0YRIXCg9p",
+            "c19zZXRfYm9ybl9wb3MYCiABKAgSPgobYmxvY2tfYXJyYW5nZW1lbnRfaW5m",
+            "b19saXN0GAggAygLMhkuSG9tZUJsb2NrQXJyYW5nZW1lbnRJbmZvEhAKCHNj",
+            "ZW5lX2lkGAIgASgNEg4KBmJnbV9pZBgMIAEoDRIaCglkamlubl9wb3MYCSAB",
+            "KAsyBy5WZWN0b3ISJgoKbWFpbl9ob3VzZRgOIAEoCzISLkhvbWVGdXJuaXR1",
+            "cmVEYXRhEhUKDWNvbWZvcnRfdmFsdWUYByABKA0SEwoLdG1wX3ZlcnNpb24Y",
+            "BSABKA1CDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.HomeBlockArrangementInfoReflection.Descriptor, global::OldProtos.HomeFurnitureDataReflection.Descriptor, global::OldProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.HomeSceneArrangementInfo), global::OldProtos.HomeSceneArrangementInfo.Parser, new[]{ "BornRot", "BornPos", "StairList", "DoorList", "IsSetBornPos", "BlockArrangementInfoList", "SceneId", "BgmId", "DjinnPos", "MainHouse", "ComfortValue", "TmpVersion" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class HomeSceneArrangementInfo : pb::IMessage<HomeSceneArrangementInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HomeSceneArrangementInfo> _parser = new pb::MessageParser<HomeSceneArrangementInfo>(() => new HomeSceneArrangementInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HomeSceneArrangementInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.HomeSceneArrangementInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeSceneArrangementInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeSceneArrangementInfo(HomeSceneArrangementInfo other) : this() {
+      bornRot_ = other.bornRot_ != null ? other.bornRot_.Clone() : null;
+      bornPos_ = other.bornPos_ != null ? other.bornPos_.Clone() : null;
+      stairList_ = other.stairList_.Clone();
+      doorList_ = other.doorList_.Clone();
+      isSetBornPos_ = other.isSetBornPos_;
+      blockArrangementInfoList_ = other.blockArrangementInfoList_.Clone();
+      sceneId_ = other.sceneId_;
+      bgmId_ = other.bgmId_;
+      djinnPos_ = other.djinnPos_ != null ? other.djinnPos_.Clone() : null;
+      mainHouse_ = other.mainHouse_ != null ? other.mainHouse_.Clone() : null;
+      comfortValue_ = other.comfortValue_;
+      tmpVersion_ = other.tmpVersion_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeSceneArrangementInfo Clone() {
+      return new HomeSceneArrangementInfo(this);
+    }
+
+    /// <summary>Field number for the "born_rot" field.</summary>
+    public const int BornRotFieldNumber = 4;
+    private global::OldProtos.Vector bornRot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector BornRot {
+      get { return bornRot_; }
+      set {
+        bornRot_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "born_pos" field.</summary>
+    public const int BornPosFieldNumber = 1;
+    private global::OldProtos.Vector bornPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector BornPos {
+      get { return bornPos_; }
+      set {
+        bornPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "stair_list" field.</summary>
+    public const int StairListFieldNumber = 11;
+    private static readonly pb::FieldCodec<global::OldProtos.HomeFurnitureData> _repeated_stairList_codec
+        = pb::FieldCodec.ForMessage(90, global::OldProtos.HomeFurnitureData.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.HomeFurnitureData> stairList_ = new pbc::RepeatedField<global::OldProtos.HomeFurnitureData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.HomeFurnitureData> StairList {
+      get { return stairList_; }
+    }
+
+    /// <summary>Field number for the "door_list" field.</summary>
+    public const int DoorListFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::OldProtos.HomeFurnitureData> _repeated_doorList_codec
+        = pb::FieldCodec.ForMessage(106, global::OldProtos.HomeFurnitureData.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.HomeFurnitureData> doorList_ = new pbc::RepeatedField<global::OldProtos.HomeFurnitureData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.HomeFurnitureData> DoorList {
+      get { return doorList_; }
+    }
+
+    /// <summary>Field number for the "is_set_born_pos" field.</summary>
+    public const int IsSetBornPosFieldNumber = 10;
+    private bool isSetBornPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSetBornPos {
+      get { return isSetBornPos_; }
+      set {
+        isSetBornPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "block_arrangement_info_list" field.</summary>
+    public const int BlockArrangementInfoListFieldNumber = 8;
+    private static readonly pb::FieldCodec<global::OldProtos.HomeBlockArrangementInfo> _repeated_blockArrangementInfoList_codec
+        = pb::FieldCodec.ForMessage(66, global::OldProtos.HomeBlockArrangementInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.HomeBlockArrangementInfo> blockArrangementInfoList_ = new pbc::RepeatedField<global::OldProtos.HomeBlockArrangementInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.HomeBlockArrangementInfo> BlockArrangementInfoList {
+      get { return blockArrangementInfoList_; }
+    }
+
+    /// <summary>Field number for the "scene_id" field.</summary>
+    public const int SceneIdFieldNumber = 2;
+    private uint sceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SceneId {
+      get { return sceneId_; }
+      set {
+        sceneId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "bgm_id" field.</summary>
+    public const int BgmIdFieldNumber = 12;
+    private uint bgmId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BgmId {
+      get { return bgmId_; }
+      set {
+        bgmId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "djinn_pos" field.</summary>
+    public const int DjinnPosFieldNumber = 9;
+    private global::OldProtos.Vector djinnPos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector DjinnPos {
+      get { return djinnPos_; }
+      set {
+        djinnPos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "main_house" field.</summary>
+    public const int MainHouseFieldNumber = 14;
+    private global::OldProtos.HomeFurnitureData mainHouse_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.HomeFurnitureData MainHouse {
+      get { return mainHouse_; }
+      set {
+        mainHouse_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "comfort_value" field.</summary>
+    public const int ComfortValueFieldNumber = 7;
+    private uint comfortValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ComfortValue {
+      get { return comfortValue_; }
+      set {
+        comfortValue_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tmp_version" field.</summary>
+    public const int TmpVersionFieldNumber = 5;
+    private uint tmpVersion_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TmpVersion {
+      get { return tmpVersion_; }
+      set {
+        tmpVersion_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HomeSceneArrangementInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HomeSceneArrangementInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(BornRot, other.BornRot)) return false;
+      if (!object.Equals(BornPos, other.BornPos)) return false;
+      if(!stairList_.Equals(other.stairList_)) return false;
+      if(!doorList_.Equals(other.doorList_)) return false;
+      if (IsSetBornPos != other.IsSetBornPos) return false;
+      if(!blockArrangementInfoList_.Equals(other.blockArrangementInfoList_)) return false;
+      if (SceneId != other.SceneId) return false;
+      if (BgmId != other.BgmId) return false;
+      if (!object.Equals(DjinnPos, other.DjinnPos)) return false;
+      if (!object.Equals(MainHouse, other.MainHouse)) return false;
+      if (ComfortValue != other.ComfortValue) return false;
+      if (TmpVersion != other.TmpVersion) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (bornRot_ != null) hash ^= BornRot.GetHashCode();
+      if (bornPos_ != null) hash ^= BornPos.GetHashCode();
+      hash ^= stairList_.GetHashCode();
+      hash ^= doorList_.GetHashCode();
+      if (IsSetBornPos != false) hash ^= IsSetBornPos.GetHashCode();
+      hash ^= blockArrangementInfoList_.GetHashCode();
+      if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (BgmId != 0) hash ^= BgmId.GetHashCode();
+      if (djinnPos_ != null) hash ^= DjinnPos.GetHashCode();
+      if (mainHouse_ != null) hash ^= MainHouse.GetHashCode();
+      if (ComfortValue != 0) hash ^= ComfortValue.GetHashCode();
+      if (TmpVersion != 0) hash ^= TmpVersion.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (bornPos_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(BornPos);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(SceneId);
+      }
+      if (bornRot_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(BornRot);
+      }
+      if (TmpVersion != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(TmpVersion);
+      }
+      if (ComfortValue != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ComfortValue);
+      }
+      blockArrangementInfoList_.WriteTo(output, _repeated_blockArrangementInfoList_codec);
+      if (djinnPos_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(DjinnPos);
+      }
+      if (IsSetBornPos != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsSetBornPos);
+      }
+      stairList_.WriteTo(output, _repeated_stairList_codec);
+      if (BgmId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(BgmId);
+      }
+      doorList_.WriteTo(output, _repeated_doorList_codec);
+      if (mainHouse_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(MainHouse);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (bornPos_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(BornPos);
+      }
+      if (SceneId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(SceneId);
+      }
+      if (bornRot_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(BornRot);
+      }
+      if (TmpVersion != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(TmpVersion);
+      }
+      if (ComfortValue != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ComfortValue);
+      }
+      blockArrangementInfoList_.WriteTo(ref output, _repeated_blockArrangementInfoList_codec);
+      if (djinnPos_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(DjinnPos);
+      }
+      if (IsSetBornPos != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsSetBornPos);
+      }
+      stairList_.WriteTo(ref output, _repeated_stairList_codec);
+      if (BgmId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(BgmId);
+      }
+      doorList_.WriteTo(ref output, _repeated_doorList_codec);
+      if (mainHouse_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(MainHouse);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (bornRot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BornRot);
+      }
+      if (bornPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BornPos);
+      }
+      size += stairList_.CalculateSize(_repeated_stairList_codec);
+      size += doorList_.CalculateSize(_repeated_doorList_codec);
+      if (IsSetBornPos != false) {
+        size += 1 + 1;
+      }
+      size += blockArrangementInfoList_.CalculateSize(_repeated_blockArrangementInfoList_codec);
+      if (SceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (BgmId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BgmId);
+      }
+      if (djinnPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DjinnPos);
+      }
+      if (mainHouse_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MainHouse);
+      }
+      if (ComfortValue != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ComfortValue);
+      }
+      if (TmpVersion != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TmpVersion);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HomeSceneArrangementInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.bornRot_ != null) {
+        if (bornRot_ == null) {
+          BornRot = new global::OldProtos.Vector();
+        }
+        BornRot.MergeFrom(other.BornRot);
+      }
+      if (other.bornPos_ != null) {
+        if (bornPos_ == null) {
+          BornPos = new global::OldProtos.Vector();
+        }
+        BornPos.MergeFrom(other.BornPos);
+      }
+      stairList_.Add(other.stairList_);
+      doorList_.Add(other.doorList_);
+      if (other.IsSetBornPos != false) {
+        IsSetBornPos = other.IsSetBornPos;
+      }
+      blockArrangementInfoList_.Add(other.blockArrangementInfoList_);
+      if (other.SceneId != 0) {
+        SceneId = other.SceneId;
+      }
+      if (other.BgmId != 0) {
+        BgmId = other.BgmId;
+      }
+      if (other.djinnPos_ != null) {
+        if (djinnPos_ == null) {
+          DjinnPos = new global::OldProtos.Vector();
+        }
+        DjinnPos.MergeFrom(other.DjinnPos);
+      }
+      if (other.mainHouse_ != null) {
+        if (mainHouse_ == null) {
+          MainHouse = new global::OldProtos.HomeFurnitureData();
+        }
+        MainHouse.MergeFrom(other.MainHouse);
+      }
+      if (other.ComfortValue != 0) {
+        ComfortValue = other.ComfortValue;
+      }
+      if (other.TmpVersion != 0) {
+        TmpVersion = other.TmpVersion;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (bornPos_ == null) {
+              BornPos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(BornPos);
+            break;
+          }
+          case 16: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            if (bornRot_ == null) {
+              BornRot = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(BornRot);
+            break;
+          }
+          case 40: {
+            TmpVersion = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            ComfortValue = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            blockArrangementInfoList_.AddEntriesFrom(input, _repeated_blockArrangementInfoList_codec);
+            break;
+          }
+          case 74: {
+            if (djinnPos_ == null) {
+              DjinnPos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(DjinnPos);
+            break;
+          }
+          case 80: {
+            IsSetBornPos = input.ReadBool();
+            break;
+          }
+          case 90: {
+            stairList_.AddEntriesFrom(input, _repeated_stairList_codec);
+            break;
+          }
+          case 96: {
+            BgmId = input.ReadUInt32();
+            break;
+          }
+          case 106: {
+            doorList_.AddEntriesFrom(input, _repeated_doorList_codec);
+            break;
+          }
+          case 114: {
+            if (mainHouse_ == null) {
+              MainHouse = new global::OldProtos.HomeFurnitureData();
+            }
+            input.ReadMessage(MainHouse);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (bornPos_ == null) {
+              BornPos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(BornPos);
+            break;
+          }
+          case 16: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            if (bornRot_ == null) {
+              BornRot = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(BornRot);
+            break;
+          }
+          case 40: {
+            TmpVersion = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            ComfortValue = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            blockArrangementInfoList_.AddEntriesFrom(ref input, _repeated_blockArrangementInfoList_codec);
+            break;
+          }
+          case 74: {
+            if (djinnPos_ == null) {
+              DjinnPos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(DjinnPos);
+            break;
+          }
+          case 80: {
+            IsSetBornPos = input.ReadBool();
+            break;
+          }
+          case 90: {
+            stairList_.AddEntriesFrom(ref input, _repeated_stairList_codec);
+            break;
+          }
+          case 96: {
+            BgmId = input.ReadUInt32();
+            break;
+          }
+          case 106: {
+            doorList_.AddEntriesFrom(ref input, _repeated_doorList_codec);
+            break;
+          }
+          case 114: {
+            if (mainHouse_ == null) {
+              MainHouse = new global::OldProtos.HomeFurnitureData();
+            }
+            input.ReadMessage(MainHouse);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class HomeSceneArrangementInfo : pb::IMessage<HomeSceneArrangementInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<HomeSceneArrangementInfo> _parser = new pb::MessageParser<HomeSceneArrangementInfo>(() => new HomeSceneArrangementInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<HomeSceneArrangementInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::HomeSceneArrangementInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeSceneArrangementInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeSceneArrangementInfo(HomeSceneArrangementInfo other) : this() {
-    bornRot_ = other.bornRot_ != null ? other.bornRot_.Clone() : null;
-    bornPos_ = other.bornPos_ != null ? other.bornPos_.Clone() : null;
-    stairList_ = other.stairList_.Clone();
-    doorList_ = other.doorList_.Clone();
-    isSetBornPos_ = other.isSetBornPos_;
-    blockArrangementInfoList_ = other.blockArrangementInfoList_.Clone();
-    sceneId_ = other.sceneId_;
-    bgmId_ = other.bgmId_;
-    djinnPos_ = other.djinnPos_ != null ? other.djinnPos_.Clone() : null;
-    mainHouse_ = other.mainHouse_ != null ? other.mainHouse_.Clone() : null;
-    comfortValue_ = other.comfortValue_;
-    tmpVersion_ = other.tmpVersion_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeSceneArrangementInfo Clone() {
-    return new HomeSceneArrangementInfo(this);
-  }
-
-  /// <summary>Field number for the "born_rot" field.</summary>
-  public const int BornRotFieldNumber = 4;
-  private global::Vector bornRot_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector BornRot {
-    get { return bornRot_; }
-    set {
-      bornRot_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "born_pos" field.</summary>
-  public const int BornPosFieldNumber = 1;
-  private global::Vector bornPos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector BornPos {
-    get { return bornPos_; }
-    set {
-      bornPos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "stair_list" field.</summary>
-  public const int StairListFieldNumber = 11;
-  private static readonly pb::FieldCodec<global::HomeFurnitureData> _repeated_stairList_codec
-      = pb::FieldCodec.ForMessage(90, global::HomeFurnitureData.Parser);
-  private readonly pbc::RepeatedField<global::HomeFurnitureData> stairList_ = new pbc::RepeatedField<global::HomeFurnitureData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::HomeFurnitureData> StairList {
-    get { return stairList_; }
-  }
-
-  /// <summary>Field number for the "door_list" field.</summary>
-  public const int DoorListFieldNumber = 13;
-  private static readonly pb::FieldCodec<global::HomeFurnitureData> _repeated_doorList_codec
-      = pb::FieldCodec.ForMessage(106, global::HomeFurnitureData.Parser);
-  private readonly pbc::RepeatedField<global::HomeFurnitureData> doorList_ = new pbc::RepeatedField<global::HomeFurnitureData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::HomeFurnitureData> DoorList {
-    get { return doorList_; }
-  }
-
-  /// <summary>Field number for the "is_set_born_pos" field.</summary>
-  public const int IsSetBornPosFieldNumber = 10;
-  private bool isSetBornPos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsSetBornPos {
-    get { return isSetBornPos_; }
-    set {
-      isSetBornPos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "block_arrangement_info_list" field.</summary>
-  public const int BlockArrangementInfoListFieldNumber = 8;
-  private static readonly pb::FieldCodec<global::HomeBlockArrangementInfo> _repeated_blockArrangementInfoList_codec
-      = pb::FieldCodec.ForMessage(66, global::HomeBlockArrangementInfo.Parser);
-  private readonly pbc::RepeatedField<global::HomeBlockArrangementInfo> blockArrangementInfoList_ = new pbc::RepeatedField<global::HomeBlockArrangementInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::HomeBlockArrangementInfo> BlockArrangementInfoList {
-    get { return blockArrangementInfoList_; }
-  }
-
-  /// <summary>Field number for the "scene_id" field.</summary>
-  public const int SceneIdFieldNumber = 2;
-  private uint sceneId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SceneId {
-    get { return sceneId_; }
-    set {
-      sceneId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "bgm_id" field.</summary>
-  public const int BgmIdFieldNumber = 12;
-  private uint bgmId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BgmId {
-    get { return bgmId_; }
-    set {
-      bgmId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "djinn_pos" field.</summary>
-  public const int DjinnPosFieldNumber = 9;
-  private global::Vector djinnPos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector DjinnPos {
-    get { return djinnPos_; }
-    set {
-      djinnPos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "main_house" field.</summary>
-  public const int MainHouseFieldNumber = 14;
-  private global::HomeFurnitureData mainHouse_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::HomeFurnitureData MainHouse {
-    get { return mainHouse_; }
-    set {
-      mainHouse_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "comfort_value" field.</summary>
-  public const int ComfortValueFieldNumber = 7;
-  private uint comfortValue_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ComfortValue {
-    get { return comfortValue_; }
-    set {
-      comfortValue_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "tmp_version" field.</summary>
-  public const int TmpVersionFieldNumber = 5;
-  private uint tmpVersion_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TmpVersion {
-    get { return tmpVersion_; }
-    set {
-      tmpVersion_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as HomeSceneArrangementInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(HomeSceneArrangementInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(BornRot, other.BornRot)) return false;
-    if (!object.Equals(BornPos, other.BornPos)) return false;
-    if(!stairList_.Equals(other.stairList_)) return false;
-    if(!doorList_.Equals(other.doorList_)) return false;
-    if (IsSetBornPos != other.IsSetBornPos) return false;
-    if(!blockArrangementInfoList_.Equals(other.blockArrangementInfoList_)) return false;
-    if (SceneId != other.SceneId) return false;
-    if (BgmId != other.BgmId) return false;
-    if (!object.Equals(DjinnPos, other.DjinnPos)) return false;
-    if (!object.Equals(MainHouse, other.MainHouse)) return false;
-    if (ComfortValue != other.ComfortValue) return false;
-    if (TmpVersion != other.TmpVersion) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (bornRot_ != null) hash ^= BornRot.GetHashCode();
-    if (bornPos_ != null) hash ^= BornPos.GetHashCode();
-    hash ^= stairList_.GetHashCode();
-    hash ^= doorList_.GetHashCode();
-    if (IsSetBornPos != false) hash ^= IsSetBornPos.GetHashCode();
-    hash ^= blockArrangementInfoList_.GetHashCode();
-    if (SceneId != 0) hash ^= SceneId.GetHashCode();
-    if (BgmId != 0) hash ^= BgmId.GetHashCode();
-    if (djinnPos_ != null) hash ^= DjinnPos.GetHashCode();
-    if (mainHouse_ != null) hash ^= MainHouse.GetHashCode();
-    if (ComfortValue != 0) hash ^= ComfortValue.GetHashCode();
-    if (TmpVersion != 0) hash ^= TmpVersion.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (bornPos_ != null) {
-      output.WriteRawTag(10);
-      output.WriteMessage(BornPos);
-    }
-    if (SceneId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(SceneId);
-    }
-    if (bornRot_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(BornRot);
-    }
-    if (TmpVersion != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(TmpVersion);
-    }
-    if (ComfortValue != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(ComfortValue);
-    }
-    blockArrangementInfoList_.WriteTo(output, _repeated_blockArrangementInfoList_codec);
-    if (djinnPos_ != null) {
-      output.WriteRawTag(74);
-      output.WriteMessage(DjinnPos);
-    }
-    if (IsSetBornPos != false) {
-      output.WriteRawTag(80);
-      output.WriteBool(IsSetBornPos);
-    }
-    stairList_.WriteTo(output, _repeated_stairList_codec);
-    if (BgmId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(BgmId);
-    }
-    doorList_.WriteTo(output, _repeated_doorList_codec);
-    if (mainHouse_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(MainHouse);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (bornPos_ != null) {
-      output.WriteRawTag(10);
-      output.WriteMessage(BornPos);
-    }
-    if (SceneId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(SceneId);
-    }
-    if (bornRot_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(BornRot);
-    }
-    if (TmpVersion != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(TmpVersion);
-    }
-    if (ComfortValue != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(ComfortValue);
-    }
-    blockArrangementInfoList_.WriteTo(ref output, _repeated_blockArrangementInfoList_codec);
-    if (djinnPos_ != null) {
-      output.WriteRawTag(74);
-      output.WriteMessage(DjinnPos);
-    }
-    if (IsSetBornPos != false) {
-      output.WriteRawTag(80);
-      output.WriteBool(IsSetBornPos);
-    }
-    stairList_.WriteTo(ref output, _repeated_stairList_codec);
-    if (BgmId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(BgmId);
-    }
-    doorList_.WriteTo(ref output, _repeated_doorList_codec);
-    if (mainHouse_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(MainHouse);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (bornRot_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(BornRot);
-    }
-    if (bornPos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(BornPos);
-    }
-    size += stairList_.CalculateSize(_repeated_stairList_codec);
-    size += doorList_.CalculateSize(_repeated_doorList_codec);
-    if (IsSetBornPos != false) {
-      size += 1 + 1;
-    }
-    size += blockArrangementInfoList_.CalculateSize(_repeated_blockArrangementInfoList_codec);
-    if (SceneId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
-    }
-    if (BgmId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BgmId);
-    }
-    if (djinnPos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(DjinnPos);
-    }
-    if (mainHouse_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(MainHouse);
-    }
-    if (ComfortValue != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ComfortValue);
-    }
-    if (TmpVersion != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TmpVersion);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(HomeSceneArrangementInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.bornRot_ != null) {
-      if (bornRot_ == null) {
-        BornRot = new global::Vector();
-      }
-      BornRot.MergeFrom(other.BornRot);
-    }
-    if (other.bornPos_ != null) {
-      if (bornPos_ == null) {
-        BornPos = new global::Vector();
-      }
-      BornPos.MergeFrom(other.BornPos);
-    }
-    stairList_.Add(other.stairList_);
-    doorList_.Add(other.doorList_);
-    if (other.IsSetBornPos != false) {
-      IsSetBornPos = other.IsSetBornPos;
-    }
-    blockArrangementInfoList_.Add(other.blockArrangementInfoList_);
-    if (other.SceneId != 0) {
-      SceneId = other.SceneId;
-    }
-    if (other.BgmId != 0) {
-      BgmId = other.BgmId;
-    }
-    if (other.djinnPos_ != null) {
-      if (djinnPos_ == null) {
-        DjinnPos = new global::Vector();
-      }
-      DjinnPos.MergeFrom(other.DjinnPos);
-    }
-    if (other.mainHouse_ != null) {
-      if (mainHouse_ == null) {
-        MainHouse = new global::HomeFurnitureData();
-      }
-      MainHouse.MergeFrom(other.MainHouse);
-    }
-    if (other.ComfortValue != 0) {
-      ComfortValue = other.ComfortValue;
-    }
-    if (other.TmpVersion != 0) {
-      TmpVersion = other.TmpVersion;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          if (bornPos_ == null) {
-            BornPos = new global::Vector();
-          }
-          input.ReadMessage(BornPos);
-          break;
-        }
-        case 16: {
-          SceneId = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          if (bornRot_ == null) {
-            BornRot = new global::Vector();
-          }
-          input.ReadMessage(BornRot);
-          break;
-        }
-        case 40: {
-          TmpVersion = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          ComfortValue = input.ReadUInt32();
-          break;
-        }
-        case 66: {
-          blockArrangementInfoList_.AddEntriesFrom(input, _repeated_blockArrangementInfoList_codec);
-          break;
-        }
-        case 74: {
-          if (djinnPos_ == null) {
-            DjinnPos = new global::Vector();
-          }
-          input.ReadMessage(DjinnPos);
-          break;
-        }
-        case 80: {
-          IsSetBornPos = input.ReadBool();
-          break;
-        }
-        case 90: {
-          stairList_.AddEntriesFrom(input, _repeated_stairList_codec);
-          break;
-        }
-        case 96: {
-          BgmId = input.ReadUInt32();
-          break;
-        }
-        case 106: {
-          doorList_.AddEntriesFrom(input, _repeated_doorList_codec);
-          break;
-        }
-        case 114: {
-          if (mainHouse_ == null) {
-            MainHouse = new global::HomeFurnitureData();
-          }
-          input.ReadMessage(MainHouse);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          if (bornPos_ == null) {
-            BornPos = new global::Vector();
-          }
-          input.ReadMessage(BornPos);
-          break;
-        }
-        case 16: {
-          SceneId = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          if (bornRot_ == null) {
-            BornRot = new global::Vector();
-          }
-          input.ReadMessage(BornRot);
-          break;
-        }
-        case 40: {
-          TmpVersion = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          ComfortValue = input.ReadUInt32();
-          break;
-        }
-        case 66: {
-          blockArrangementInfoList_.AddEntriesFrom(ref input, _repeated_blockArrangementInfoList_codec);
-          break;
-        }
-        case 74: {
-          if (djinnPos_ == null) {
-            DjinnPos = new global::Vector();
-          }
-          input.ReadMessage(DjinnPos);
-          break;
-        }
-        case 80: {
-          IsSetBornPos = input.ReadBool();
-          break;
-        }
-        case 90: {
-          stairList_.AddEntriesFrom(ref input, _repeated_stairList_codec);
-          break;
-        }
-        case 96: {
-          BgmId = input.ReadUInt32();
-          break;
-        }
-        case 106: {
-          doorList_.AddEntriesFrom(ref input, _repeated_doorList_codec);
-          break;
-        }
-        case 114: {
-          if (mainHouse_ == null) {
-            MainHouse = new global::HomeFurnitureData();
-          }
-          input.ReadMessage(MainHouse);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

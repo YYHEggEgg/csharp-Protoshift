@@ -20,7 +20,7 @@ import "HomeBlockArrangementInfo.proto";
 import "HomeFurnitureData.proto";
 import "Vector.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message HomeSceneArrangementInfo {
   Vector born_rot = 4;

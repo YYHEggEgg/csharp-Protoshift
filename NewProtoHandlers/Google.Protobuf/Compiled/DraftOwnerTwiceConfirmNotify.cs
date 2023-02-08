@@ -9,269 +9,272 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from DraftOwnerTwiceConfirmNotify.proto</summary>
-public static partial class DraftOwnerTwiceConfirmNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for DraftOwnerTwiceConfirmNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from DraftOwnerTwiceConfirmNotify.proto</summary>
+  public static partial class DraftOwnerTwiceConfirmNotifyReflection {
 
-  static DraftOwnerTwiceConfirmNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiJEcmFmdE93bmVyVHdpY2VDb25maXJtTm90aWZ5LnByb3RvIlUKHERyYWZ0",
-          "T3duZXJUd2ljZUNvbmZpcm1Ob3RpZnkSEAoIZHJhZnRfaWQYBiABKA0SIwob",
-          "dHdpY2VfY29uZmlybV9kZWFkbGluZV90aW1lGAUgASgNQhYKFG9yZy5zb3Jh",
-          "cG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::DraftOwnerTwiceConfirmNotify), global::DraftOwnerTwiceConfirmNotify.Parser, new[]{ "DraftId", "TwiceConfirmDeadlineTime" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for DraftOwnerTwiceConfirmNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static DraftOwnerTwiceConfirmNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiJEcmFmdE93bmVyVHdpY2VDb25maXJtTm90aWZ5LnByb3RvIlUKHERyYWZ0",
+            "T3duZXJUd2ljZUNvbmZpcm1Ob3RpZnkSEAoIZHJhZnRfaWQYBiABKA0SIwob",
+            "dHdpY2VfY29uZmlybV9kZWFkbGluZV90aW1lGAUgASgNQgyqAglOZXdQcm90",
+            "b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.DraftOwnerTwiceConfirmNotify), global::NewProtos.DraftOwnerTwiceConfirmNotify.Parser, new[]{ "DraftId", "TwiceConfirmDeadlineTime" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5457;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class DraftOwnerTwiceConfirmNotify : pb::IMessage<DraftOwnerTwiceConfirmNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DraftOwnerTwiceConfirmNotify> _parser = new pb::MessageParser<DraftOwnerTwiceConfirmNotify>(() => new DraftOwnerTwiceConfirmNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DraftOwnerTwiceConfirmNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.DraftOwnerTwiceConfirmNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DraftOwnerTwiceConfirmNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DraftOwnerTwiceConfirmNotify(DraftOwnerTwiceConfirmNotify other) : this() {
+      draftId_ = other.draftId_;
+      twiceConfirmDeadlineTime_ = other.twiceConfirmDeadlineTime_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DraftOwnerTwiceConfirmNotify Clone() {
+      return new DraftOwnerTwiceConfirmNotify(this);
+    }
+
+    /// <summary>Field number for the "draft_id" field.</summary>
+    public const int DraftIdFieldNumber = 6;
+    private uint draftId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DraftId {
+      get { return draftId_; }
+      set {
+        draftId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "twice_confirm_deadline_time" field.</summary>
+    public const int TwiceConfirmDeadlineTimeFieldNumber = 5;
+    private uint twiceConfirmDeadlineTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TwiceConfirmDeadlineTime {
+      get { return twiceConfirmDeadlineTime_; }
+      set {
+        twiceConfirmDeadlineTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DraftOwnerTwiceConfirmNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DraftOwnerTwiceConfirmNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DraftId != other.DraftId) return false;
+      if (TwiceConfirmDeadlineTime != other.TwiceConfirmDeadlineTime) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DraftId != 0) hash ^= DraftId.GetHashCode();
+      if (TwiceConfirmDeadlineTime != 0) hash ^= TwiceConfirmDeadlineTime.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (TwiceConfirmDeadlineTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(TwiceConfirmDeadlineTime);
+      }
+      if (DraftId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(DraftId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (TwiceConfirmDeadlineTime != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(TwiceConfirmDeadlineTime);
+      }
+      if (DraftId != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(DraftId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (DraftId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DraftId);
+      }
+      if (TwiceConfirmDeadlineTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TwiceConfirmDeadlineTime);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DraftOwnerTwiceConfirmNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DraftId != 0) {
+        DraftId = other.DraftId;
+      }
+      if (other.TwiceConfirmDeadlineTime != 0) {
+        TwiceConfirmDeadlineTime = other.TwiceConfirmDeadlineTime;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            TwiceConfirmDeadlineTime = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            DraftId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            TwiceConfirmDeadlineTime = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            DraftId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 5457;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class DraftOwnerTwiceConfirmNotify : pb::IMessage<DraftOwnerTwiceConfirmNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<DraftOwnerTwiceConfirmNotify> _parser = new pb::MessageParser<DraftOwnerTwiceConfirmNotify>(() => new DraftOwnerTwiceConfirmNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<DraftOwnerTwiceConfirmNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::DraftOwnerTwiceConfirmNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DraftOwnerTwiceConfirmNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DraftOwnerTwiceConfirmNotify(DraftOwnerTwiceConfirmNotify other) : this() {
-    draftId_ = other.draftId_;
-    twiceConfirmDeadlineTime_ = other.twiceConfirmDeadlineTime_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DraftOwnerTwiceConfirmNotify Clone() {
-    return new DraftOwnerTwiceConfirmNotify(this);
-  }
-
-  /// <summary>Field number for the "draft_id" field.</summary>
-  public const int DraftIdFieldNumber = 6;
-  private uint draftId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DraftId {
-    get { return draftId_; }
-    set {
-      draftId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "twice_confirm_deadline_time" field.</summary>
-  public const int TwiceConfirmDeadlineTimeFieldNumber = 5;
-  private uint twiceConfirmDeadlineTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TwiceConfirmDeadlineTime {
-    get { return twiceConfirmDeadlineTime_; }
-    set {
-      twiceConfirmDeadlineTime_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as DraftOwnerTwiceConfirmNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(DraftOwnerTwiceConfirmNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (DraftId != other.DraftId) return false;
-    if (TwiceConfirmDeadlineTime != other.TwiceConfirmDeadlineTime) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (DraftId != 0) hash ^= DraftId.GetHashCode();
-    if (TwiceConfirmDeadlineTime != 0) hash ^= TwiceConfirmDeadlineTime.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (TwiceConfirmDeadlineTime != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(TwiceConfirmDeadlineTime);
-    }
-    if (DraftId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(DraftId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (TwiceConfirmDeadlineTime != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(TwiceConfirmDeadlineTime);
-    }
-    if (DraftId != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(DraftId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (DraftId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DraftId);
-    }
-    if (TwiceConfirmDeadlineTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TwiceConfirmDeadlineTime);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(DraftOwnerTwiceConfirmNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.DraftId != 0) {
-      DraftId = other.DraftId;
-    }
-    if (other.TwiceConfirmDeadlineTime != 0) {
-      TwiceConfirmDeadlineTime = other.TwiceConfirmDeadlineTime;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          TwiceConfirmDeadlineTime = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          DraftId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          TwiceConfirmDeadlineTime = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          DraftId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

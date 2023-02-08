@@ -9,1116 +9,1119 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from DungeonSettleNotify.proto</summary>
-public static partial class DungeonSettleNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for DungeonSettleNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from DungeonSettleNotify.proto</summary>
+  public static partial class DungeonSettleNotifyReflection {
 
-  static DungeonSettleNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChlEdW5nZW9uU2V0dGxlTm90aWZ5LnByb3RvGihDaGFubmVsZXJTbGFiTG9v",
-          "cER1bmdlb25SZXN1bHRJbmZvLnByb3RvGiJDcnlzdGFsTGlua0R1bmdlb25T",
-          "ZXR0bGVJbmZvLnByb3RvGiFEdW5nZW9uU2V0dGxlRXhoaWJpdGlvbkluZm8u",
-          "cHJvdG8aJkVmZmlneUNoYWxsZW5nZUR1bmdlb25SZXN1bHRJbmZvLnByb3Rv",
-          "GiFFZmZpZ3lDaGFsbGVuZ2VWMlNldHRsZUluZm8ucHJvdG8aJEluc3RhYmxl",
-          "U3ByYXlEdW5nZW9uU2V0dGxlSW5mby5wcm90bxoPUGFyYW1MaXN0LnByb3Rv",
-          "GiBSb2d1ZWxpa2VEdW5nZW9uU2V0dGxlSW5mby5wcm90bxoZU3RyZW5ndGhl",
-          "blBvaW50RGF0YS5wcm90bxojU3VtbWVyVGltZVYyRHVuZ2VvblNldHRsZUlu",
-          "Zm8ucHJvdG8aGVRvd2VyTGV2ZWxFbmROb3RpZnkucHJvdG8aJ1RyaWFsQXZh",
-          "dGFyRmlyc3RQYXNzRHVuZ2Vvbk5vdGlmeS5wcm90bxogV2luZEZpZWxkRHVu",
-          "Z2VvblNldHRsZUluZm8ucHJvdG8iggoKE0R1bmdlb25TZXR0bGVOb3RpZnkS",
-          "OQoLc2V0dGxlX3Nob3cYBiADKAsyJC5EdW5nZW9uU2V0dGxlTm90aWZ5LlNl",
-          "dHRsZVNob3dFbnRyeRJTChlzdHJlbmd0aGVuX3BvaW50X2RhdGFfbWFwGAcg",
-          "AygLMjAuRHVuZ2VvblNldHRsZU5vdGlmeS5TdHJlbmd0aGVuUG9pbnREYXRh",
-          "TWFwRW50cnkSOgoUZXhoaWJpdGlvbl9pbmZvX2xpc3QYDCADKAsyHC5EdW5n",
-          "ZW9uU2V0dGxlRXhoaWJpdGlvbkluZm8SEAoIdXNlX3RpbWUYDiABKA0SEgoK",
-          "aXNfc3VjY2VzcxgKIAEoCBISCgpjbG9zZV90aW1lGA8gASgNEhIKCmR1bmdl",
-          "b25faWQYCSABKA0SDgoGcmVzdWx0GAUgASgNEhYKDmZhaWxfY29uZF9saXN0",
-          "GAsgAygNEhkKEWNyZWF0ZV9wbGF5ZXJfdWlkGAIgASgNEjcKFnRvd2VyX2xl",
-          "dmVsX2VuZF9ub3RpZnkYwQggASgLMhQuVG93ZXJMZXZlbEVuZE5vdGlmeUgA",
-          "ElUKJnRyaWFsX2F2YXRhcl9maXJzdF9wYXNzX2R1bmdlb25fbm90aWZ5GN0I",
-          "IAEoCzIiLlRyaWFsQXZhdGFyRmlyc3RQYXNzRHVuZ2Vvbk5vdGlmeUgAElgK",
-          "KGNoYW5uZWxsZXJfc2xhYl9sb29wX2R1bmdlb25fcmVzdWx0X2luZm8Y8gog",
-          "ASgLMiMuQ2hhbm5lbGVyU2xhYkxvb3BEdW5nZW9uUmVzdWx0SW5mb0gAElIK",
-          "JGVmZmlneV9jaGFsbGVuZ2VfZHVuZ2Vvbl9yZXN1bHRfaW5mbxj+ASABKAsy",
-          "IS5FZmZpZ3lDaGFsbGVuZ2VEdW5nZW9uUmVzdWx0SW5mb0gAEkUKHXJvZ3Vl",
-          "bGlrZV9kdW5nZW9uX3NldHRsZV9pbmZvGOAOIAEoCzIbLlJvZ3VlbGlrZUR1",
-          "bmdlb25TZXR0bGVJbmZvSAASQgoYY3J5c3RhbF9saW5rX3NldHRsZV9pbmZv",
-          "GLAOIAEoCzIdLkNyeXN0YWxMaW5rRHVuZ2VvblNldHRsZUluZm9IABJNCiJz",
-          "dW1tZXJfdGltZV92Ml9kdW5nZW9uX3NldHRsZV9pbmZvGJ0CIAEoCzIeLlN1",
-          "bW1lclRpbWVWMkR1bmdlb25TZXR0bGVJbmZvSAASRgoaaW5zdGFibGVfc3By",
-          "YXlfc2V0dGxlX2luZm8Ygg4gASgLMh8uSW5zdGFibGVTcHJheUR1bmdlb25T",
-          "ZXR0bGVJbmZvSAASRgoed2luZF9maWVsZF9kdW5nZW9uX3NldHRsZV9pbmZv",
-          "GPILIAEoCzIbLldpbmRGaWVsZER1bmdlb25TZXR0bGVJbmZvSAASSAofZWZm",
-          "aWd5X2NoYWxsZW5nZV92Ml9zZXR0bGVfaW5mbxj5DiABKAsyHC5FZmZpZ3lD",
-          "aGFsbGVuZ2VWMlNldHRsZUluZm9IABo9Cg9TZXR0bGVTaG93RW50cnkSCwoD",
-          "a2V5GAEgASgNEhkKBXZhbHVlGAIgASgLMgouUGFyYW1MaXN0OgI4ARpTChtT",
-          "dHJlbmd0aGVuUG9pbnREYXRhTWFwRW50cnkSCwoDa2V5GAEgASgNEiMKBXZh",
-          "bHVlGAIgASgLMhQuU3RyZW5ndGhlblBvaW50RGF0YToCOAFCCAoGZGV0YWls",
-          "QhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ChannelerSlabLoopDungeonResultInfoReflection.Descriptor, global::CrystalLinkDungeonSettleInfoReflection.Descriptor, global::DungeonSettleExhibitionInfoReflection.Descriptor, global::EffigyChallengeDungeonResultInfoReflection.Descriptor, global::EffigyChallengeV2SettleInfoReflection.Descriptor, global::InstableSprayDungeonSettleInfoReflection.Descriptor, global::ParamListReflection.Descriptor, global::RoguelikeDungeonSettleInfoReflection.Descriptor, global::StrengthenPointDataReflection.Descriptor, global::SummerTimeV2DungeonSettleInfoReflection.Descriptor, global::TowerLevelEndNotifyReflection.Descriptor, global::TrialAvatarFirstPassDungeonNotifyReflection.Descriptor, global::WindFieldDungeonSettleInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::DungeonSettleNotify), global::DungeonSettleNotify.Parser, new[]{ "SettleShow", "StrengthenPointDataMap", "ExhibitionInfoList", "UseTime", "IsSuccess", "CloseTime", "DungeonId", "Result", "FailCondList", "CreatePlayerUid", "TowerLevelEndNotify", "TrialAvatarFirstPassDungeonNotify", "ChannellerSlabLoopDungeonResultInfo", "EffigyChallengeDungeonResultInfo", "RoguelikeDungeonSettleInfo", "CrystalLinkSettleInfo", "SummerTimeV2DungeonSettleInfo", "InstableSpraySettleInfo", "WindFieldDungeonSettleInfo", "EffigyChallengeV2SettleInfo" }, new[]{ "Detail" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for DungeonSettleNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static DungeonSettleNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChlEdW5nZW9uU2V0dGxlTm90aWZ5LnByb3RvGihDaGFubmVsZXJTbGFiTG9v",
+            "cER1bmdlb25SZXN1bHRJbmZvLnByb3RvGiJDcnlzdGFsTGlua0R1bmdlb25T",
+            "ZXR0bGVJbmZvLnByb3RvGiFEdW5nZW9uU2V0dGxlRXhoaWJpdGlvbkluZm8u",
+            "cHJvdG8aJkVmZmlneUNoYWxsZW5nZUR1bmdlb25SZXN1bHRJbmZvLnByb3Rv",
+            "GiFFZmZpZ3lDaGFsbGVuZ2VWMlNldHRsZUluZm8ucHJvdG8aJEluc3RhYmxl",
+            "U3ByYXlEdW5nZW9uU2V0dGxlSW5mby5wcm90bxoPUGFyYW1MaXN0LnByb3Rv",
+            "GiBSb2d1ZWxpa2VEdW5nZW9uU2V0dGxlSW5mby5wcm90bxoZU3RyZW5ndGhl",
+            "blBvaW50RGF0YS5wcm90bxojU3VtbWVyVGltZVYyRHVuZ2VvblNldHRsZUlu",
+            "Zm8ucHJvdG8aGVRvd2VyTGV2ZWxFbmROb3RpZnkucHJvdG8aJ1RyaWFsQXZh",
+            "dGFyRmlyc3RQYXNzRHVuZ2Vvbk5vdGlmeS5wcm90bxogV2luZEZpZWxkRHVu",
+            "Z2VvblNldHRsZUluZm8ucHJvdG8iggoKE0R1bmdlb25TZXR0bGVOb3RpZnkS",
+            "OQoLc2V0dGxlX3Nob3cYBiADKAsyJC5EdW5nZW9uU2V0dGxlTm90aWZ5LlNl",
+            "dHRsZVNob3dFbnRyeRJTChlzdHJlbmd0aGVuX3BvaW50X2RhdGFfbWFwGAcg",
+            "AygLMjAuRHVuZ2VvblNldHRsZU5vdGlmeS5TdHJlbmd0aGVuUG9pbnREYXRh",
+            "TWFwRW50cnkSOgoUZXhoaWJpdGlvbl9pbmZvX2xpc3QYDCADKAsyHC5EdW5n",
+            "ZW9uU2V0dGxlRXhoaWJpdGlvbkluZm8SEAoIdXNlX3RpbWUYDiABKA0SEgoK",
+            "aXNfc3VjY2VzcxgKIAEoCBISCgpjbG9zZV90aW1lGA8gASgNEhIKCmR1bmdl",
+            "b25faWQYCSABKA0SDgoGcmVzdWx0GAUgASgNEhYKDmZhaWxfY29uZF9saXN0",
+            "GAsgAygNEhkKEWNyZWF0ZV9wbGF5ZXJfdWlkGAIgASgNEjcKFnRvd2VyX2xl",
+            "dmVsX2VuZF9ub3RpZnkYwQggASgLMhQuVG93ZXJMZXZlbEVuZE5vdGlmeUgA",
+            "ElUKJnRyaWFsX2F2YXRhcl9maXJzdF9wYXNzX2R1bmdlb25fbm90aWZ5GN0I",
+            "IAEoCzIiLlRyaWFsQXZhdGFyRmlyc3RQYXNzRHVuZ2Vvbk5vdGlmeUgAElgK",
+            "KGNoYW5uZWxsZXJfc2xhYl9sb29wX2R1bmdlb25fcmVzdWx0X2luZm8Y8gog",
+            "ASgLMiMuQ2hhbm5lbGVyU2xhYkxvb3BEdW5nZW9uUmVzdWx0SW5mb0gAElIK",
+            "JGVmZmlneV9jaGFsbGVuZ2VfZHVuZ2Vvbl9yZXN1bHRfaW5mbxj+ASABKAsy",
+            "IS5FZmZpZ3lDaGFsbGVuZ2VEdW5nZW9uUmVzdWx0SW5mb0gAEkUKHXJvZ3Vl",
+            "bGlrZV9kdW5nZW9uX3NldHRsZV9pbmZvGOAOIAEoCzIbLlJvZ3VlbGlrZUR1",
+            "bmdlb25TZXR0bGVJbmZvSAASQgoYY3J5c3RhbF9saW5rX3NldHRsZV9pbmZv",
+            "GLAOIAEoCzIdLkNyeXN0YWxMaW5rRHVuZ2VvblNldHRsZUluZm9IABJNCiJz",
+            "dW1tZXJfdGltZV92Ml9kdW5nZW9uX3NldHRsZV9pbmZvGJ0CIAEoCzIeLlN1",
+            "bW1lclRpbWVWMkR1bmdlb25TZXR0bGVJbmZvSAASRgoaaW5zdGFibGVfc3By",
+            "YXlfc2V0dGxlX2luZm8Ygg4gASgLMh8uSW5zdGFibGVTcHJheUR1bmdlb25T",
+            "ZXR0bGVJbmZvSAASRgoed2luZF9maWVsZF9kdW5nZW9uX3NldHRsZV9pbmZv",
+            "GPILIAEoCzIbLldpbmRGaWVsZER1bmdlb25TZXR0bGVJbmZvSAASSAofZWZm",
+            "aWd5X2NoYWxsZW5nZV92Ml9zZXR0bGVfaW5mbxj5DiABKAsyHC5FZmZpZ3lD",
+            "aGFsbGVuZ2VWMlNldHRsZUluZm9IABo9Cg9TZXR0bGVTaG93RW50cnkSCwoD",
+            "a2V5GAEgASgNEhkKBXZhbHVlGAIgASgLMgouUGFyYW1MaXN0OgI4ARpTChtT",
+            "dHJlbmd0aGVuUG9pbnREYXRhTWFwRW50cnkSCwoDa2V5GAEgASgNEiMKBXZh",
+            "bHVlGAIgASgLMhQuU3RyZW5ndGhlblBvaW50RGF0YToCOAFCCAoGZGV0YWls",
+            "QgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.ChannelerSlabLoopDungeonResultInfoReflection.Descriptor, global::NewProtos.CrystalLinkDungeonSettleInfoReflection.Descriptor, global::NewProtos.DungeonSettleExhibitionInfoReflection.Descriptor, global::NewProtos.EffigyChallengeDungeonResultInfoReflection.Descriptor, global::NewProtos.EffigyChallengeV2SettleInfoReflection.Descriptor, global::NewProtos.InstableSprayDungeonSettleInfoReflection.Descriptor, global::NewProtos.ParamListReflection.Descriptor, global::NewProtos.RoguelikeDungeonSettleInfoReflection.Descriptor, global::NewProtos.StrengthenPointDataReflection.Descriptor, global::NewProtos.SummerTimeV2DungeonSettleInfoReflection.Descriptor, global::NewProtos.TowerLevelEndNotifyReflection.Descriptor, global::NewProtos.TrialAvatarFirstPassDungeonNotifyReflection.Descriptor, global::NewProtos.WindFieldDungeonSettleInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.DungeonSettleNotify), global::NewProtos.DungeonSettleNotify.Parser, new[]{ "SettleShow", "StrengthenPointDataMap", "ExhibitionInfoList", "UseTime", "IsSuccess", "CloseTime", "DungeonId", "Result", "FailCondList", "CreatePlayerUid", "TowerLevelEndNotify", "TrialAvatarFirstPassDungeonNotify", "ChannellerSlabLoopDungeonResultInfo", "EffigyChallengeDungeonResultInfo", "RoguelikeDungeonSettleInfo", "CrystalLinkSettleInfo", "SummerTimeV2DungeonSettleInfo", "InstableSpraySettleInfo", "WindFieldDungeonSettleInfo", "EffigyChallengeV2SettleInfo" }, new[]{ "Detail" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 957;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class DungeonSettleNotify : pb::IMessage<DungeonSettleNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DungeonSettleNotify> _parser = new pb::MessageParser<DungeonSettleNotify>(() => new DungeonSettleNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DungeonSettleNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.DungeonSettleNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DungeonSettleNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DungeonSettleNotify(DungeonSettleNotify other) : this() {
+      settleShow_ = other.settleShow_.Clone();
+      strengthenPointDataMap_ = other.strengthenPointDataMap_.Clone();
+      exhibitionInfoList_ = other.exhibitionInfoList_.Clone();
+      useTime_ = other.useTime_;
+      isSuccess_ = other.isSuccess_;
+      closeTime_ = other.closeTime_;
+      dungeonId_ = other.dungeonId_;
+      result_ = other.result_;
+      failCondList_ = other.failCondList_.Clone();
+      createPlayerUid_ = other.createPlayerUid_;
+      switch (other.DetailCase) {
+        case DetailOneofCase.TowerLevelEndNotify:
+          TowerLevelEndNotify = other.TowerLevelEndNotify.Clone();
+          break;
+        case DetailOneofCase.TrialAvatarFirstPassDungeonNotify:
+          TrialAvatarFirstPassDungeonNotify = other.TrialAvatarFirstPassDungeonNotify.Clone();
+          break;
+        case DetailOneofCase.ChannellerSlabLoopDungeonResultInfo:
+          ChannellerSlabLoopDungeonResultInfo = other.ChannellerSlabLoopDungeonResultInfo.Clone();
+          break;
+        case DetailOneofCase.EffigyChallengeDungeonResultInfo:
+          EffigyChallengeDungeonResultInfo = other.EffigyChallengeDungeonResultInfo.Clone();
+          break;
+        case DetailOneofCase.RoguelikeDungeonSettleInfo:
+          RoguelikeDungeonSettleInfo = other.RoguelikeDungeonSettleInfo.Clone();
+          break;
+        case DetailOneofCase.CrystalLinkSettleInfo:
+          CrystalLinkSettleInfo = other.CrystalLinkSettleInfo.Clone();
+          break;
+        case DetailOneofCase.SummerTimeV2DungeonSettleInfo:
+          SummerTimeV2DungeonSettleInfo = other.SummerTimeV2DungeonSettleInfo.Clone();
+          break;
+        case DetailOneofCase.InstableSpraySettleInfo:
+          InstableSpraySettleInfo = other.InstableSpraySettleInfo.Clone();
+          break;
+        case DetailOneofCase.WindFieldDungeonSettleInfo:
+          WindFieldDungeonSettleInfo = other.WindFieldDungeonSettleInfo.Clone();
+          break;
+        case DetailOneofCase.EffigyChallengeV2SettleInfo:
+          EffigyChallengeV2SettleInfo = other.EffigyChallengeV2SettleInfo.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DungeonSettleNotify Clone() {
+      return new DungeonSettleNotify(this);
+    }
+
+    /// <summary>Field number for the "settle_show" field.</summary>
+    public const int SettleShowFieldNumber = 6;
+    private static readonly pbc::MapField<uint, global::NewProtos.ParamList>.Codec _map_settleShow_codec
+        = new pbc::MapField<uint, global::NewProtos.ParamList>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::NewProtos.ParamList.Parser), 50);
+    private readonly pbc::MapField<uint, global::NewProtos.ParamList> settleShow_ = new pbc::MapField<uint, global::NewProtos.ParamList>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::NewProtos.ParamList> SettleShow {
+      get { return settleShow_; }
+    }
+
+    /// <summary>Field number for the "strengthen_point_data_map" field.</summary>
+    public const int StrengthenPointDataMapFieldNumber = 7;
+    private static readonly pbc::MapField<uint, global::NewProtos.StrengthenPointData>.Codec _map_strengthenPointDataMap_codec
+        = new pbc::MapField<uint, global::NewProtos.StrengthenPointData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::NewProtos.StrengthenPointData.Parser), 58);
+    private readonly pbc::MapField<uint, global::NewProtos.StrengthenPointData> strengthenPointDataMap_ = new pbc::MapField<uint, global::NewProtos.StrengthenPointData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::NewProtos.StrengthenPointData> StrengthenPointDataMap {
+      get { return strengthenPointDataMap_; }
+    }
+
+    /// <summary>Field number for the "exhibition_info_list" field.</summary>
+    public const int ExhibitionInfoListFieldNumber = 12;
+    private static readonly pb::FieldCodec<global::NewProtos.DungeonSettleExhibitionInfo> _repeated_exhibitionInfoList_codec
+        = pb::FieldCodec.ForMessage(98, global::NewProtos.DungeonSettleExhibitionInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.DungeonSettleExhibitionInfo> exhibitionInfoList_ = new pbc::RepeatedField<global::NewProtos.DungeonSettleExhibitionInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.DungeonSettleExhibitionInfo> ExhibitionInfoList {
+      get { return exhibitionInfoList_; }
+    }
+
+    /// <summary>Field number for the "use_time" field.</summary>
+    public const int UseTimeFieldNumber = 14;
+    private uint useTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint UseTime {
+      get { return useTime_; }
+      set {
+        useTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_success" field.</summary>
+    public const int IsSuccessFieldNumber = 10;
+    private bool isSuccess_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSuccess {
+      get { return isSuccess_; }
+      set {
+        isSuccess_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "close_time" field.</summary>
+    public const int CloseTimeFieldNumber = 15;
+    private uint closeTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CloseTime {
+      get { return closeTime_; }
+      set {
+        closeTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_id" field.</summary>
+    public const int DungeonIdFieldNumber = 9;
+    private uint dungeonId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonId {
+      get { return dungeonId_; }
+      set {
+        dungeonId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "result" field.</summary>
+    public const int ResultFieldNumber = 5;
+    private uint result_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Result {
+      get { return result_; }
+      set {
+        result_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fail_cond_list" field.</summary>
+    public const int FailCondListFieldNumber = 11;
+    private static readonly pb::FieldCodec<uint> _repeated_failCondList_codec
+        = pb::FieldCodec.ForUInt32(90);
+    private readonly pbc::RepeatedField<uint> failCondList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FailCondList {
+      get { return failCondList_; }
+    }
+
+    /// <summary>Field number for the "create_player_uid" field.</summary>
+    public const int CreatePlayerUidFieldNumber = 2;
+    private uint createPlayerUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CreatePlayerUid {
+      get { return createPlayerUid_; }
+      set {
+        createPlayerUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tower_level_end_notify" field.</summary>
+    public const int TowerLevelEndNotifyFieldNumber = 1089;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.TowerLevelEndNotify TowerLevelEndNotify {
+      get { return detailCase_ == DetailOneofCase.TowerLevelEndNotify ? (global::NewProtos.TowerLevelEndNotify) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.TowerLevelEndNotify;
+      }
+    }
+
+    /// <summary>Field number for the "trial_avatar_first_pass_dungeon_notify" field.</summary>
+    public const int TrialAvatarFirstPassDungeonNotifyFieldNumber = 1117;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.TrialAvatarFirstPassDungeonNotify TrialAvatarFirstPassDungeonNotify {
+      get { return detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify ? (global::NewProtos.TrialAvatarFirstPassDungeonNotify) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.TrialAvatarFirstPassDungeonNotify;
+      }
+    }
+
+    /// <summary>Field number for the "channeller_slab_loop_dungeon_result_info" field.</summary>
+    public const int ChannellerSlabLoopDungeonResultInfoFieldNumber = 1394;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ChannelerSlabLoopDungeonResultInfo ChannellerSlabLoopDungeonResultInfo {
+      get { return detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo ? (global::NewProtos.ChannelerSlabLoopDungeonResultInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ChannellerSlabLoopDungeonResultInfo;
+      }
+    }
+
+    /// <summary>Field number for the "effigy_challenge_dungeon_result_info" field.</summary>
+    public const int EffigyChallengeDungeonResultInfoFieldNumber = 254;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.EffigyChallengeDungeonResultInfo EffigyChallengeDungeonResultInfo {
+      get { return detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo ? (global::NewProtos.EffigyChallengeDungeonResultInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.EffigyChallengeDungeonResultInfo;
+      }
+    }
+
+    /// <summary>Field number for the "roguelike_dungeon_settle_info" field.</summary>
+    public const int RoguelikeDungeonSettleInfoFieldNumber = 1888;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.RoguelikeDungeonSettleInfo RoguelikeDungeonSettleInfo {
+      get { return detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo ? (global::NewProtos.RoguelikeDungeonSettleInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.RoguelikeDungeonSettleInfo;
+      }
+    }
+
+    /// <summary>Field number for the "crystal_link_settle_info" field.</summary>
+    public const int CrystalLinkSettleInfoFieldNumber = 1840;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CrystalLinkDungeonSettleInfo CrystalLinkSettleInfo {
+      get { return detailCase_ == DetailOneofCase.CrystalLinkSettleInfo ? (global::NewProtos.CrystalLinkDungeonSettleInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.CrystalLinkSettleInfo;
+      }
+    }
+
+    /// <summary>Field number for the "summer_time_v2_dungeon_settle_info" field.</summary>
+    public const int SummerTimeV2DungeonSettleInfoFieldNumber = 285;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.SummerTimeV2DungeonSettleInfo SummerTimeV2DungeonSettleInfo {
+      get { return detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo ? (global::NewProtos.SummerTimeV2DungeonSettleInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SummerTimeV2DungeonSettleInfo;
+      }
+    }
+
+    /// <summary>Field number for the "instable_spray_settle_info" field.</summary>
+    public const int InstableSpraySettleInfoFieldNumber = 1794;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.InstableSprayDungeonSettleInfo InstableSpraySettleInfo {
+      get { return detailCase_ == DetailOneofCase.InstableSpraySettleInfo ? (global::NewProtos.InstableSprayDungeonSettleInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.InstableSpraySettleInfo;
+      }
+    }
+
+    /// <summary>Field number for the "wind_field_dungeon_settle_info" field.</summary>
+    public const int WindFieldDungeonSettleInfoFieldNumber = 1522;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.WindFieldDungeonSettleInfo WindFieldDungeonSettleInfo {
+      get { return detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo ? (global::NewProtos.WindFieldDungeonSettleInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.WindFieldDungeonSettleInfo;
+      }
+    }
+
+    /// <summary>Field number for the "effigy_challenge_v2_settle_info" field.</summary>
+    public const int EffigyChallengeV2SettleInfoFieldNumber = 1913;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.EffigyChallengeV2SettleInfo EffigyChallengeV2SettleInfo {
+      get { return detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo ? (global::NewProtos.EffigyChallengeV2SettleInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.EffigyChallengeV2SettleInfo;
+      }
+    }
+
+    private object detail_;
+    /// <summary>Enum of possible cases for the "detail" oneof.</summary>
+    public enum DetailOneofCase {
+      None = 0,
+      TowerLevelEndNotify = 1089,
+      TrialAvatarFirstPassDungeonNotify = 1117,
+      ChannellerSlabLoopDungeonResultInfo = 1394,
+      EffigyChallengeDungeonResultInfo = 254,
+      RoguelikeDungeonSettleInfo = 1888,
+      CrystalLinkSettleInfo = 1840,
+      SummerTimeV2DungeonSettleInfo = 285,
+      InstableSpraySettleInfo = 1794,
+      WindFieldDungeonSettleInfo = 1522,
+      EffigyChallengeV2SettleInfo = 1913,
+    }
+    private DetailOneofCase detailCase_ = DetailOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DetailOneofCase DetailCase {
+      get { return detailCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearDetail() {
+      detailCase_ = DetailOneofCase.None;
+      detail_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DungeonSettleNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DungeonSettleNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!SettleShow.Equals(other.SettleShow)) return false;
+      if (!StrengthenPointDataMap.Equals(other.StrengthenPointDataMap)) return false;
+      if(!exhibitionInfoList_.Equals(other.exhibitionInfoList_)) return false;
+      if (UseTime != other.UseTime) return false;
+      if (IsSuccess != other.IsSuccess) return false;
+      if (CloseTime != other.CloseTime) return false;
+      if (DungeonId != other.DungeonId) return false;
+      if (Result != other.Result) return false;
+      if(!failCondList_.Equals(other.failCondList_)) return false;
+      if (CreatePlayerUid != other.CreatePlayerUid) return false;
+      if (!object.Equals(TowerLevelEndNotify, other.TowerLevelEndNotify)) return false;
+      if (!object.Equals(TrialAvatarFirstPassDungeonNotify, other.TrialAvatarFirstPassDungeonNotify)) return false;
+      if (!object.Equals(ChannellerSlabLoopDungeonResultInfo, other.ChannellerSlabLoopDungeonResultInfo)) return false;
+      if (!object.Equals(EffigyChallengeDungeonResultInfo, other.EffigyChallengeDungeonResultInfo)) return false;
+      if (!object.Equals(RoguelikeDungeonSettleInfo, other.RoguelikeDungeonSettleInfo)) return false;
+      if (!object.Equals(CrystalLinkSettleInfo, other.CrystalLinkSettleInfo)) return false;
+      if (!object.Equals(SummerTimeV2DungeonSettleInfo, other.SummerTimeV2DungeonSettleInfo)) return false;
+      if (!object.Equals(InstableSpraySettleInfo, other.InstableSpraySettleInfo)) return false;
+      if (!object.Equals(WindFieldDungeonSettleInfo, other.WindFieldDungeonSettleInfo)) return false;
+      if (!object.Equals(EffigyChallengeV2SettleInfo, other.EffigyChallengeV2SettleInfo)) return false;
+      if (DetailCase != other.DetailCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= SettleShow.GetHashCode();
+      hash ^= StrengthenPointDataMap.GetHashCode();
+      hash ^= exhibitionInfoList_.GetHashCode();
+      if (UseTime != 0) hash ^= UseTime.GetHashCode();
+      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
+      if (CloseTime != 0) hash ^= CloseTime.GetHashCode();
+      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
+      if (Result != 0) hash ^= Result.GetHashCode();
+      hash ^= failCondList_.GetHashCode();
+      if (CreatePlayerUid != 0) hash ^= CreatePlayerUid.GetHashCode();
+      if (detailCase_ == DetailOneofCase.TowerLevelEndNotify) hash ^= TowerLevelEndNotify.GetHashCode();
+      if (detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify) hash ^= TrialAvatarFirstPassDungeonNotify.GetHashCode();
+      if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) hash ^= ChannellerSlabLoopDungeonResultInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) hash ^= EffigyChallengeDungeonResultInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo) hash ^= RoguelikeDungeonSettleInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.CrystalLinkSettleInfo) hash ^= CrystalLinkSettleInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo) hash ^= SummerTimeV2DungeonSettleInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.InstableSpraySettleInfo) hash ^= InstableSpraySettleInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo) hash ^= WindFieldDungeonSettleInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo) hash ^= EffigyChallengeV2SettleInfo.GetHashCode();
+      hash ^= (int) detailCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (CreatePlayerUid != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CreatePlayerUid);
+      }
+      if (Result != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Result);
+      }
+      settleShow_.WriteTo(output, _map_settleShow_codec);
+      strengthenPointDataMap_.WriteTo(output, _map_strengthenPointDataMap_codec);
+      if (DungeonId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(DungeonId);
+      }
+      if (IsSuccess != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsSuccess);
+      }
+      failCondList_.WriteTo(output, _repeated_failCondList_codec);
+      exhibitionInfoList_.WriteTo(output, _repeated_exhibitionInfoList_codec);
+      if (UseTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(UseTime);
+      }
+      if (CloseTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CloseTime);
+      }
+      if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
+        output.WriteRawTag(242, 15);
+        output.WriteMessage(EffigyChallengeDungeonResultInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo) {
+        output.WriteRawTag(234, 17);
+        output.WriteMessage(SummerTimeV2DungeonSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TowerLevelEndNotify) {
+        output.WriteRawTag(138, 68);
+        output.WriteMessage(TowerLevelEndNotify);
+      }
+      if (detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify) {
+        output.WriteRawTag(234, 69);
+        output.WriteMessage(TrialAvatarFirstPassDungeonNotify);
+      }
+      if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
+        output.WriteRawTag(146, 87);
+        output.WriteMessage(ChannellerSlabLoopDungeonResultInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo) {
+        output.WriteRawTag(146, 95);
+        output.WriteMessage(WindFieldDungeonSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.InstableSpraySettleInfo) {
+        output.WriteRawTag(146, 112);
+        output.WriteMessage(InstableSpraySettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CrystalLinkSettleInfo) {
+        output.WriteRawTag(130, 115);
+        output.WriteMessage(CrystalLinkSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo) {
+        output.WriteRawTag(130, 118);
+        output.WriteMessage(RoguelikeDungeonSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo) {
+        output.WriteRawTag(202, 119);
+        output.WriteMessage(EffigyChallengeV2SettleInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CreatePlayerUid != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CreatePlayerUid);
+      }
+      if (Result != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Result);
+      }
+      settleShow_.WriteTo(ref output, _map_settleShow_codec);
+      strengthenPointDataMap_.WriteTo(ref output, _map_strengthenPointDataMap_codec);
+      if (DungeonId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(DungeonId);
+      }
+      if (IsSuccess != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsSuccess);
+      }
+      failCondList_.WriteTo(ref output, _repeated_failCondList_codec);
+      exhibitionInfoList_.WriteTo(ref output, _repeated_exhibitionInfoList_codec);
+      if (UseTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(UseTime);
+      }
+      if (CloseTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(CloseTime);
+      }
+      if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
+        output.WriteRawTag(242, 15);
+        output.WriteMessage(EffigyChallengeDungeonResultInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo) {
+        output.WriteRawTag(234, 17);
+        output.WriteMessage(SummerTimeV2DungeonSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.TowerLevelEndNotify) {
+        output.WriteRawTag(138, 68);
+        output.WriteMessage(TowerLevelEndNotify);
+      }
+      if (detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify) {
+        output.WriteRawTag(234, 69);
+        output.WriteMessage(TrialAvatarFirstPassDungeonNotify);
+      }
+      if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
+        output.WriteRawTag(146, 87);
+        output.WriteMessage(ChannellerSlabLoopDungeonResultInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo) {
+        output.WriteRawTag(146, 95);
+        output.WriteMessage(WindFieldDungeonSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.InstableSpraySettleInfo) {
+        output.WriteRawTag(146, 112);
+        output.WriteMessage(InstableSpraySettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CrystalLinkSettleInfo) {
+        output.WriteRawTag(130, 115);
+        output.WriteMessage(CrystalLinkSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo) {
+        output.WriteRawTag(130, 118);
+        output.WriteMessage(RoguelikeDungeonSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo) {
+        output.WriteRawTag(202, 119);
+        output.WriteMessage(EffigyChallengeV2SettleInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += settleShow_.CalculateSize(_map_settleShow_codec);
+      size += strengthenPointDataMap_.CalculateSize(_map_strengthenPointDataMap_codec);
+      size += exhibitionInfoList_.CalculateSize(_repeated_exhibitionInfoList_codec);
+      if (UseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UseTime);
+      }
+      if (IsSuccess != false) {
+        size += 1 + 1;
+      }
+      if (CloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CloseTime);
+      }
+      if (DungeonId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
+      }
+      if (Result != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Result);
+      }
+      size += failCondList_.CalculateSize(_repeated_failCondList_codec);
+      if (CreatePlayerUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CreatePlayerUid);
+      }
+      if (detailCase_ == DetailOneofCase.TowerLevelEndNotify) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TowerLevelEndNotify);
+      }
+      if (detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TrialAvatarFirstPassDungeonNotify);
+      }
+      if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ChannellerSlabLoopDungeonResultInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(EffigyChallengeDungeonResultInfo);
+      }
+      if (detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(RoguelikeDungeonSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.CrystalLinkSettleInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CrystalLinkSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SummerTimeV2DungeonSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.InstableSpraySettleInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(InstableSpraySettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(WindFieldDungeonSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(EffigyChallengeV2SettleInfo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DungeonSettleNotify other) {
+      if (other == null) {
+        return;
+      }
+      settleShow_.Add(other.settleShow_);
+      strengthenPointDataMap_.Add(other.strengthenPointDataMap_);
+      exhibitionInfoList_.Add(other.exhibitionInfoList_);
+      if (other.UseTime != 0) {
+        UseTime = other.UseTime;
+      }
+      if (other.IsSuccess != false) {
+        IsSuccess = other.IsSuccess;
+      }
+      if (other.CloseTime != 0) {
+        CloseTime = other.CloseTime;
+      }
+      if (other.DungeonId != 0) {
+        DungeonId = other.DungeonId;
+      }
+      if (other.Result != 0) {
+        Result = other.Result;
+      }
+      failCondList_.Add(other.failCondList_);
+      if (other.CreatePlayerUid != 0) {
+        CreatePlayerUid = other.CreatePlayerUid;
+      }
+      switch (other.DetailCase) {
+        case DetailOneofCase.TowerLevelEndNotify:
+          if (TowerLevelEndNotify == null) {
+            TowerLevelEndNotify = new global::NewProtos.TowerLevelEndNotify();
+          }
+          TowerLevelEndNotify.MergeFrom(other.TowerLevelEndNotify);
+          break;
+        case DetailOneofCase.TrialAvatarFirstPassDungeonNotify:
+          if (TrialAvatarFirstPassDungeonNotify == null) {
+            TrialAvatarFirstPassDungeonNotify = new global::NewProtos.TrialAvatarFirstPassDungeonNotify();
+          }
+          TrialAvatarFirstPassDungeonNotify.MergeFrom(other.TrialAvatarFirstPassDungeonNotify);
+          break;
+        case DetailOneofCase.ChannellerSlabLoopDungeonResultInfo:
+          if (ChannellerSlabLoopDungeonResultInfo == null) {
+            ChannellerSlabLoopDungeonResultInfo = new global::NewProtos.ChannelerSlabLoopDungeonResultInfo();
+          }
+          ChannellerSlabLoopDungeonResultInfo.MergeFrom(other.ChannellerSlabLoopDungeonResultInfo);
+          break;
+        case DetailOneofCase.EffigyChallengeDungeonResultInfo:
+          if (EffigyChallengeDungeonResultInfo == null) {
+            EffigyChallengeDungeonResultInfo = new global::NewProtos.EffigyChallengeDungeonResultInfo();
+          }
+          EffigyChallengeDungeonResultInfo.MergeFrom(other.EffigyChallengeDungeonResultInfo);
+          break;
+        case DetailOneofCase.RoguelikeDungeonSettleInfo:
+          if (RoguelikeDungeonSettleInfo == null) {
+            RoguelikeDungeonSettleInfo = new global::NewProtos.RoguelikeDungeonSettleInfo();
+          }
+          RoguelikeDungeonSettleInfo.MergeFrom(other.RoguelikeDungeonSettleInfo);
+          break;
+        case DetailOneofCase.CrystalLinkSettleInfo:
+          if (CrystalLinkSettleInfo == null) {
+            CrystalLinkSettleInfo = new global::NewProtos.CrystalLinkDungeonSettleInfo();
+          }
+          CrystalLinkSettleInfo.MergeFrom(other.CrystalLinkSettleInfo);
+          break;
+        case DetailOneofCase.SummerTimeV2DungeonSettleInfo:
+          if (SummerTimeV2DungeonSettleInfo == null) {
+            SummerTimeV2DungeonSettleInfo = new global::NewProtos.SummerTimeV2DungeonSettleInfo();
+          }
+          SummerTimeV2DungeonSettleInfo.MergeFrom(other.SummerTimeV2DungeonSettleInfo);
+          break;
+        case DetailOneofCase.InstableSpraySettleInfo:
+          if (InstableSpraySettleInfo == null) {
+            InstableSpraySettleInfo = new global::NewProtos.InstableSprayDungeonSettleInfo();
+          }
+          InstableSpraySettleInfo.MergeFrom(other.InstableSpraySettleInfo);
+          break;
+        case DetailOneofCase.WindFieldDungeonSettleInfo:
+          if (WindFieldDungeonSettleInfo == null) {
+            WindFieldDungeonSettleInfo = new global::NewProtos.WindFieldDungeonSettleInfo();
+          }
+          WindFieldDungeonSettleInfo.MergeFrom(other.WindFieldDungeonSettleInfo);
+          break;
+        case DetailOneofCase.EffigyChallengeV2SettleInfo:
+          if (EffigyChallengeV2SettleInfo == null) {
+            EffigyChallengeV2SettleInfo = new global::NewProtos.EffigyChallengeV2SettleInfo();
+          }
+          EffigyChallengeV2SettleInfo.MergeFrom(other.EffigyChallengeV2SettleInfo);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            CreatePlayerUid = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Result = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            settleShow_.AddEntriesFrom(input, _map_settleShow_codec);
+            break;
+          }
+          case 58: {
+            strengthenPointDataMap_.AddEntriesFrom(input, _map_strengthenPointDataMap_codec);
+            break;
+          }
+          case 72: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 90:
+          case 88: {
+            failCondList_.AddEntriesFrom(input, _repeated_failCondList_codec);
+            break;
+          }
+          case 98: {
+            exhibitionInfoList_.AddEntriesFrom(input, _repeated_exhibitionInfoList_codec);
+            break;
+          }
+          case 112: {
+            UseTime = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            CloseTime = input.ReadUInt32();
+            break;
+          }
+          case 2034: {
+            global::NewProtos.EffigyChallengeDungeonResultInfo subBuilder = new global::NewProtos.EffigyChallengeDungeonResultInfo();
+            if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
+              subBuilder.MergeFrom(EffigyChallengeDungeonResultInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EffigyChallengeDungeonResultInfo = subBuilder;
+            break;
+          }
+          case 2282: {
+            global::NewProtos.SummerTimeV2DungeonSettleInfo subBuilder = new global::NewProtos.SummerTimeV2DungeonSettleInfo();
+            if (detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo) {
+              subBuilder.MergeFrom(SummerTimeV2DungeonSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SummerTimeV2DungeonSettleInfo = subBuilder;
+            break;
+          }
+          case 8714: {
+            global::NewProtos.TowerLevelEndNotify subBuilder = new global::NewProtos.TowerLevelEndNotify();
+            if (detailCase_ == DetailOneofCase.TowerLevelEndNotify) {
+              subBuilder.MergeFrom(TowerLevelEndNotify);
+            }
+            input.ReadMessage(subBuilder);
+            TowerLevelEndNotify = subBuilder;
+            break;
+          }
+          case 8938: {
+            global::NewProtos.TrialAvatarFirstPassDungeonNotify subBuilder = new global::NewProtos.TrialAvatarFirstPassDungeonNotify();
+            if (detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify) {
+              subBuilder.MergeFrom(TrialAvatarFirstPassDungeonNotify);
+            }
+            input.ReadMessage(subBuilder);
+            TrialAvatarFirstPassDungeonNotify = subBuilder;
+            break;
+          }
+          case 11154: {
+            global::NewProtos.ChannelerSlabLoopDungeonResultInfo subBuilder = new global::NewProtos.ChannelerSlabLoopDungeonResultInfo();
+            if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
+              subBuilder.MergeFrom(ChannellerSlabLoopDungeonResultInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChannellerSlabLoopDungeonResultInfo = subBuilder;
+            break;
+          }
+          case 12178: {
+            global::NewProtos.WindFieldDungeonSettleInfo subBuilder = new global::NewProtos.WindFieldDungeonSettleInfo();
+            if (detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo) {
+              subBuilder.MergeFrom(WindFieldDungeonSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WindFieldDungeonSettleInfo = subBuilder;
+            break;
+          }
+          case 14354: {
+            global::NewProtos.InstableSprayDungeonSettleInfo subBuilder = new global::NewProtos.InstableSprayDungeonSettleInfo();
+            if (detailCase_ == DetailOneofCase.InstableSpraySettleInfo) {
+              subBuilder.MergeFrom(InstableSpraySettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            InstableSpraySettleInfo = subBuilder;
+            break;
+          }
+          case 14722: {
+            global::NewProtos.CrystalLinkDungeonSettleInfo subBuilder = new global::NewProtos.CrystalLinkDungeonSettleInfo();
+            if (detailCase_ == DetailOneofCase.CrystalLinkSettleInfo) {
+              subBuilder.MergeFrom(CrystalLinkSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CrystalLinkSettleInfo = subBuilder;
+            break;
+          }
+          case 15106: {
+            global::NewProtos.RoguelikeDungeonSettleInfo subBuilder = new global::NewProtos.RoguelikeDungeonSettleInfo();
+            if (detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo) {
+              subBuilder.MergeFrom(RoguelikeDungeonSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RoguelikeDungeonSettleInfo = subBuilder;
+            break;
+          }
+          case 15306: {
+            global::NewProtos.EffigyChallengeV2SettleInfo subBuilder = new global::NewProtos.EffigyChallengeV2SettleInfo();
+            if (detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo) {
+              subBuilder.MergeFrom(EffigyChallengeV2SettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EffigyChallengeV2SettleInfo = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            CreatePlayerUid = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Result = input.ReadUInt32();
+            break;
+          }
+          case 50: {
+            settleShow_.AddEntriesFrom(ref input, _map_settleShow_codec);
+            break;
+          }
+          case 58: {
+            strengthenPointDataMap_.AddEntriesFrom(ref input, _map_strengthenPointDataMap_codec);
+            break;
+          }
+          case 72: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 90:
+          case 88: {
+            failCondList_.AddEntriesFrom(ref input, _repeated_failCondList_codec);
+            break;
+          }
+          case 98: {
+            exhibitionInfoList_.AddEntriesFrom(ref input, _repeated_exhibitionInfoList_codec);
+            break;
+          }
+          case 112: {
+            UseTime = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            CloseTime = input.ReadUInt32();
+            break;
+          }
+          case 2034: {
+            global::NewProtos.EffigyChallengeDungeonResultInfo subBuilder = new global::NewProtos.EffigyChallengeDungeonResultInfo();
+            if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
+              subBuilder.MergeFrom(EffigyChallengeDungeonResultInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EffigyChallengeDungeonResultInfo = subBuilder;
+            break;
+          }
+          case 2282: {
+            global::NewProtos.SummerTimeV2DungeonSettleInfo subBuilder = new global::NewProtos.SummerTimeV2DungeonSettleInfo();
+            if (detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo) {
+              subBuilder.MergeFrom(SummerTimeV2DungeonSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SummerTimeV2DungeonSettleInfo = subBuilder;
+            break;
+          }
+          case 8714: {
+            global::NewProtos.TowerLevelEndNotify subBuilder = new global::NewProtos.TowerLevelEndNotify();
+            if (detailCase_ == DetailOneofCase.TowerLevelEndNotify) {
+              subBuilder.MergeFrom(TowerLevelEndNotify);
+            }
+            input.ReadMessage(subBuilder);
+            TowerLevelEndNotify = subBuilder;
+            break;
+          }
+          case 8938: {
+            global::NewProtos.TrialAvatarFirstPassDungeonNotify subBuilder = new global::NewProtos.TrialAvatarFirstPassDungeonNotify();
+            if (detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify) {
+              subBuilder.MergeFrom(TrialAvatarFirstPassDungeonNotify);
+            }
+            input.ReadMessage(subBuilder);
+            TrialAvatarFirstPassDungeonNotify = subBuilder;
+            break;
+          }
+          case 11154: {
+            global::NewProtos.ChannelerSlabLoopDungeonResultInfo subBuilder = new global::NewProtos.ChannelerSlabLoopDungeonResultInfo();
+            if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
+              subBuilder.MergeFrom(ChannellerSlabLoopDungeonResultInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChannellerSlabLoopDungeonResultInfo = subBuilder;
+            break;
+          }
+          case 12178: {
+            global::NewProtos.WindFieldDungeonSettleInfo subBuilder = new global::NewProtos.WindFieldDungeonSettleInfo();
+            if (detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo) {
+              subBuilder.MergeFrom(WindFieldDungeonSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WindFieldDungeonSettleInfo = subBuilder;
+            break;
+          }
+          case 14354: {
+            global::NewProtos.InstableSprayDungeonSettleInfo subBuilder = new global::NewProtos.InstableSprayDungeonSettleInfo();
+            if (detailCase_ == DetailOneofCase.InstableSpraySettleInfo) {
+              subBuilder.MergeFrom(InstableSpraySettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            InstableSpraySettleInfo = subBuilder;
+            break;
+          }
+          case 14722: {
+            global::NewProtos.CrystalLinkDungeonSettleInfo subBuilder = new global::NewProtos.CrystalLinkDungeonSettleInfo();
+            if (detailCase_ == DetailOneofCase.CrystalLinkSettleInfo) {
+              subBuilder.MergeFrom(CrystalLinkSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CrystalLinkSettleInfo = subBuilder;
+            break;
+          }
+          case 15106: {
+            global::NewProtos.RoguelikeDungeonSettleInfo subBuilder = new global::NewProtos.RoguelikeDungeonSettleInfo();
+            if (detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo) {
+              subBuilder.MergeFrom(RoguelikeDungeonSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            RoguelikeDungeonSettleInfo = subBuilder;
+            break;
+          }
+          case 15306: {
+            global::NewProtos.EffigyChallengeV2SettleInfo subBuilder = new global::NewProtos.EffigyChallengeV2SettleInfo();
+            if (detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo) {
+              subBuilder.MergeFrom(EffigyChallengeV2SettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EffigyChallengeV2SettleInfo = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 957;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class DungeonSettleNotify : pb::IMessage<DungeonSettleNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<DungeonSettleNotify> _parser = new pb::MessageParser<DungeonSettleNotify>(() => new DungeonSettleNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<DungeonSettleNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::DungeonSettleNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DungeonSettleNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DungeonSettleNotify(DungeonSettleNotify other) : this() {
-    settleShow_ = other.settleShow_.Clone();
-    strengthenPointDataMap_ = other.strengthenPointDataMap_.Clone();
-    exhibitionInfoList_ = other.exhibitionInfoList_.Clone();
-    useTime_ = other.useTime_;
-    isSuccess_ = other.isSuccess_;
-    closeTime_ = other.closeTime_;
-    dungeonId_ = other.dungeonId_;
-    result_ = other.result_;
-    failCondList_ = other.failCondList_.Clone();
-    createPlayerUid_ = other.createPlayerUid_;
-    switch (other.DetailCase) {
-      case DetailOneofCase.TowerLevelEndNotify:
-        TowerLevelEndNotify = other.TowerLevelEndNotify.Clone();
-        break;
-      case DetailOneofCase.TrialAvatarFirstPassDungeonNotify:
-        TrialAvatarFirstPassDungeonNotify = other.TrialAvatarFirstPassDungeonNotify.Clone();
-        break;
-      case DetailOneofCase.ChannellerSlabLoopDungeonResultInfo:
-        ChannellerSlabLoopDungeonResultInfo = other.ChannellerSlabLoopDungeonResultInfo.Clone();
-        break;
-      case DetailOneofCase.EffigyChallengeDungeonResultInfo:
-        EffigyChallengeDungeonResultInfo = other.EffigyChallengeDungeonResultInfo.Clone();
-        break;
-      case DetailOneofCase.RoguelikeDungeonSettleInfo:
-        RoguelikeDungeonSettleInfo = other.RoguelikeDungeonSettleInfo.Clone();
-        break;
-      case DetailOneofCase.CrystalLinkSettleInfo:
-        CrystalLinkSettleInfo = other.CrystalLinkSettleInfo.Clone();
-        break;
-      case DetailOneofCase.SummerTimeV2DungeonSettleInfo:
-        SummerTimeV2DungeonSettleInfo = other.SummerTimeV2DungeonSettleInfo.Clone();
-        break;
-      case DetailOneofCase.InstableSpraySettleInfo:
-        InstableSpraySettleInfo = other.InstableSpraySettleInfo.Clone();
-        break;
-      case DetailOneofCase.WindFieldDungeonSettleInfo:
-        WindFieldDungeonSettleInfo = other.WindFieldDungeonSettleInfo.Clone();
-        break;
-      case DetailOneofCase.EffigyChallengeV2SettleInfo:
-        EffigyChallengeV2SettleInfo = other.EffigyChallengeV2SettleInfo.Clone();
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DungeonSettleNotify Clone() {
-    return new DungeonSettleNotify(this);
-  }
-
-  /// <summary>Field number for the "settle_show" field.</summary>
-  public const int SettleShowFieldNumber = 6;
-  private static readonly pbc::MapField<uint, global::ParamList>.Codec _map_settleShow_codec
-      = new pbc::MapField<uint, global::ParamList>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::ParamList.Parser), 50);
-  private readonly pbc::MapField<uint, global::ParamList> settleShow_ = new pbc::MapField<uint, global::ParamList>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::ParamList> SettleShow {
-    get { return settleShow_; }
-  }
-
-  /// <summary>Field number for the "strengthen_point_data_map" field.</summary>
-  public const int StrengthenPointDataMapFieldNumber = 7;
-  private static readonly pbc::MapField<uint, global::StrengthenPointData>.Codec _map_strengthenPointDataMap_codec
-      = new pbc::MapField<uint, global::StrengthenPointData>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::StrengthenPointData.Parser), 58);
-  private readonly pbc::MapField<uint, global::StrengthenPointData> strengthenPointDataMap_ = new pbc::MapField<uint, global::StrengthenPointData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::StrengthenPointData> StrengthenPointDataMap {
-    get { return strengthenPointDataMap_; }
-  }
-
-  /// <summary>Field number for the "exhibition_info_list" field.</summary>
-  public const int ExhibitionInfoListFieldNumber = 12;
-  private static readonly pb::FieldCodec<global::DungeonSettleExhibitionInfo> _repeated_exhibitionInfoList_codec
-      = pb::FieldCodec.ForMessage(98, global::DungeonSettleExhibitionInfo.Parser);
-  private readonly pbc::RepeatedField<global::DungeonSettleExhibitionInfo> exhibitionInfoList_ = new pbc::RepeatedField<global::DungeonSettleExhibitionInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::DungeonSettleExhibitionInfo> ExhibitionInfoList {
-    get { return exhibitionInfoList_; }
-  }
-
-  /// <summary>Field number for the "use_time" field.</summary>
-  public const int UseTimeFieldNumber = 14;
-  private uint useTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint UseTime {
-    get { return useTime_; }
-    set {
-      useTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_success" field.</summary>
-  public const int IsSuccessFieldNumber = 10;
-  private bool isSuccess_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsSuccess {
-    get { return isSuccess_; }
-    set {
-      isSuccess_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "close_time" field.</summary>
-  public const int CloseTimeFieldNumber = 15;
-  private uint closeTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CloseTime {
-    get { return closeTime_; }
-    set {
-      closeTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "dungeon_id" field.</summary>
-  public const int DungeonIdFieldNumber = 9;
-  private uint dungeonId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DungeonId {
-    get { return dungeonId_; }
-    set {
-      dungeonId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "result" field.</summary>
-  public const int ResultFieldNumber = 5;
-  private uint result_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Result {
-    get { return result_; }
-    set {
-      result_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "fail_cond_list" field.</summary>
-  public const int FailCondListFieldNumber = 11;
-  private static readonly pb::FieldCodec<uint> _repeated_failCondList_codec
-      = pb::FieldCodec.ForUInt32(90);
-  private readonly pbc::RepeatedField<uint> failCondList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> FailCondList {
-    get { return failCondList_; }
-  }
-
-  /// <summary>Field number for the "create_player_uid" field.</summary>
-  public const int CreatePlayerUidFieldNumber = 2;
-  private uint createPlayerUid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CreatePlayerUid {
-    get { return createPlayerUid_; }
-    set {
-      createPlayerUid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "tower_level_end_notify" field.</summary>
-  public const int TowerLevelEndNotifyFieldNumber = 1089;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::TowerLevelEndNotify TowerLevelEndNotify {
-    get { return detailCase_ == DetailOneofCase.TowerLevelEndNotify ? (global::TowerLevelEndNotify) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.TowerLevelEndNotify;
-    }
-  }
-
-  /// <summary>Field number for the "trial_avatar_first_pass_dungeon_notify" field.</summary>
-  public const int TrialAvatarFirstPassDungeonNotifyFieldNumber = 1117;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::TrialAvatarFirstPassDungeonNotify TrialAvatarFirstPassDungeonNotify {
-    get { return detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify ? (global::TrialAvatarFirstPassDungeonNotify) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.TrialAvatarFirstPassDungeonNotify;
-    }
-  }
-
-  /// <summary>Field number for the "channeller_slab_loop_dungeon_result_info" field.</summary>
-  public const int ChannellerSlabLoopDungeonResultInfoFieldNumber = 1394;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ChannelerSlabLoopDungeonResultInfo ChannellerSlabLoopDungeonResultInfo {
-    get { return detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo ? (global::ChannelerSlabLoopDungeonResultInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ChannellerSlabLoopDungeonResultInfo;
-    }
-  }
-
-  /// <summary>Field number for the "effigy_challenge_dungeon_result_info" field.</summary>
-  public const int EffigyChallengeDungeonResultInfoFieldNumber = 254;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::EffigyChallengeDungeonResultInfo EffigyChallengeDungeonResultInfo {
-    get { return detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo ? (global::EffigyChallengeDungeonResultInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.EffigyChallengeDungeonResultInfo;
-    }
-  }
-
-  /// <summary>Field number for the "roguelike_dungeon_settle_info" field.</summary>
-  public const int RoguelikeDungeonSettleInfoFieldNumber = 1888;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::RoguelikeDungeonSettleInfo RoguelikeDungeonSettleInfo {
-    get { return detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo ? (global::RoguelikeDungeonSettleInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.RoguelikeDungeonSettleInfo;
-    }
-  }
-
-  /// <summary>Field number for the "crystal_link_settle_info" field.</summary>
-  public const int CrystalLinkSettleInfoFieldNumber = 1840;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CrystalLinkDungeonSettleInfo CrystalLinkSettleInfo {
-    get { return detailCase_ == DetailOneofCase.CrystalLinkSettleInfo ? (global::CrystalLinkDungeonSettleInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.CrystalLinkSettleInfo;
-    }
-  }
-
-  /// <summary>Field number for the "summer_time_v2_dungeon_settle_info" field.</summary>
-  public const int SummerTimeV2DungeonSettleInfoFieldNumber = 285;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SummerTimeV2DungeonSettleInfo SummerTimeV2DungeonSettleInfo {
-    get { return detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo ? (global::SummerTimeV2DungeonSettleInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.SummerTimeV2DungeonSettleInfo;
-    }
-  }
-
-  /// <summary>Field number for the "instable_spray_settle_info" field.</summary>
-  public const int InstableSpraySettleInfoFieldNumber = 1794;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::InstableSprayDungeonSettleInfo InstableSpraySettleInfo {
-    get { return detailCase_ == DetailOneofCase.InstableSpraySettleInfo ? (global::InstableSprayDungeonSettleInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.InstableSpraySettleInfo;
-    }
-  }
-
-  /// <summary>Field number for the "wind_field_dungeon_settle_info" field.</summary>
-  public const int WindFieldDungeonSettleInfoFieldNumber = 1522;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::WindFieldDungeonSettleInfo WindFieldDungeonSettleInfo {
-    get { return detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo ? (global::WindFieldDungeonSettleInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.WindFieldDungeonSettleInfo;
-    }
-  }
-
-  /// <summary>Field number for the "effigy_challenge_v2_settle_info" field.</summary>
-  public const int EffigyChallengeV2SettleInfoFieldNumber = 1913;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::EffigyChallengeV2SettleInfo EffigyChallengeV2SettleInfo {
-    get { return detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo ? (global::EffigyChallengeV2SettleInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.EffigyChallengeV2SettleInfo;
-    }
-  }
-
-  private object detail_;
-  /// <summary>Enum of possible cases for the "detail" oneof.</summary>
-  public enum DetailOneofCase {
-    None = 0,
-    TowerLevelEndNotify = 1089,
-    TrialAvatarFirstPassDungeonNotify = 1117,
-    ChannellerSlabLoopDungeonResultInfo = 1394,
-    EffigyChallengeDungeonResultInfo = 254,
-    RoguelikeDungeonSettleInfo = 1888,
-    CrystalLinkSettleInfo = 1840,
-    SummerTimeV2DungeonSettleInfo = 285,
-    InstableSpraySettleInfo = 1794,
-    WindFieldDungeonSettleInfo = 1522,
-    EffigyChallengeV2SettleInfo = 1913,
-  }
-  private DetailOneofCase detailCase_ = DetailOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DetailOneofCase DetailCase {
-    get { return detailCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearDetail() {
-    detailCase_ = DetailOneofCase.None;
-    detail_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as DungeonSettleNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(DungeonSettleNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!SettleShow.Equals(other.SettleShow)) return false;
-    if (!StrengthenPointDataMap.Equals(other.StrengthenPointDataMap)) return false;
-    if(!exhibitionInfoList_.Equals(other.exhibitionInfoList_)) return false;
-    if (UseTime != other.UseTime) return false;
-    if (IsSuccess != other.IsSuccess) return false;
-    if (CloseTime != other.CloseTime) return false;
-    if (DungeonId != other.DungeonId) return false;
-    if (Result != other.Result) return false;
-    if(!failCondList_.Equals(other.failCondList_)) return false;
-    if (CreatePlayerUid != other.CreatePlayerUid) return false;
-    if (!object.Equals(TowerLevelEndNotify, other.TowerLevelEndNotify)) return false;
-    if (!object.Equals(TrialAvatarFirstPassDungeonNotify, other.TrialAvatarFirstPassDungeonNotify)) return false;
-    if (!object.Equals(ChannellerSlabLoopDungeonResultInfo, other.ChannellerSlabLoopDungeonResultInfo)) return false;
-    if (!object.Equals(EffigyChallengeDungeonResultInfo, other.EffigyChallengeDungeonResultInfo)) return false;
-    if (!object.Equals(RoguelikeDungeonSettleInfo, other.RoguelikeDungeonSettleInfo)) return false;
-    if (!object.Equals(CrystalLinkSettleInfo, other.CrystalLinkSettleInfo)) return false;
-    if (!object.Equals(SummerTimeV2DungeonSettleInfo, other.SummerTimeV2DungeonSettleInfo)) return false;
-    if (!object.Equals(InstableSpraySettleInfo, other.InstableSpraySettleInfo)) return false;
-    if (!object.Equals(WindFieldDungeonSettleInfo, other.WindFieldDungeonSettleInfo)) return false;
-    if (!object.Equals(EffigyChallengeV2SettleInfo, other.EffigyChallengeV2SettleInfo)) return false;
-    if (DetailCase != other.DetailCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= SettleShow.GetHashCode();
-    hash ^= StrengthenPointDataMap.GetHashCode();
-    hash ^= exhibitionInfoList_.GetHashCode();
-    if (UseTime != 0) hash ^= UseTime.GetHashCode();
-    if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-    if (CloseTime != 0) hash ^= CloseTime.GetHashCode();
-    if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
-    if (Result != 0) hash ^= Result.GetHashCode();
-    hash ^= failCondList_.GetHashCode();
-    if (CreatePlayerUid != 0) hash ^= CreatePlayerUid.GetHashCode();
-    if (detailCase_ == DetailOneofCase.TowerLevelEndNotify) hash ^= TowerLevelEndNotify.GetHashCode();
-    if (detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify) hash ^= TrialAvatarFirstPassDungeonNotify.GetHashCode();
-    if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) hash ^= ChannellerSlabLoopDungeonResultInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) hash ^= EffigyChallengeDungeonResultInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo) hash ^= RoguelikeDungeonSettleInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.CrystalLinkSettleInfo) hash ^= CrystalLinkSettleInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo) hash ^= SummerTimeV2DungeonSettleInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.InstableSpraySettleInfo) hash ^= InstableSpraySettleInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo) hash ^= WindFieldDungeonSettleInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo) hash ^= EffigyChallengeV2SettleInfo.GetHashCode();
-    hash ^= (int) detailCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (CreatePlayerUid != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(CreatePlayerUid);
-    }
-    if (Result != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Result);
-    }
-    settleShow_.WriteTo(output, _map_settleShow_codec);
-    strengthenPointDataMap_.WriteTo(output, _map_strengthenPointDataMap_codec);
-    if (DungeonId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(DungeonId);
-    }
-    if (IsSuccess != false) {
-      output.WriteRawTag(80);
-      output.WriteBool(IsSuccess);
-    }
-    failCondList_.WriteTo(output, _repeated_failCondList_codec);
-    exhibitionInfoList_.WriteTo(output, _repeated_exhibitionInfoList_codec);
-    if (UseTime != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(UseTime);
-    }
-    if (CloseTime != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(CloseTime);
-    }
-    if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
-      output.WriteRawTag(242, 15);
-      output.WriteMessage(EffigyChallengeDungeonResultInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo) {
-      output.WriteRawTag(234, 17);
-      output.WriteMessage(SummerTimeV2DungeonSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.TowerLevelEndNotify) {
-      output.WriteRawTag(138, 68);
-      output.WriteMessage(TowerLevelEndNotify);
-    }
-    if (detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify) {
-      output.WriteRawTag(234, 69);
-      output.WriteMessage(TrialAvatarFirstPassDungeonNotify);
-    }
-    if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
-      output.WriteRawTag(146, 87);
-      output.WriteMessage(ChannellerSlabLoopDungeonResultInfo);
-    }
-    if (detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo) {
-      output.WriteRawTag(146, 95);
-      output.WriteMessage(WindFieldDungeonSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.InstableSpraySettleInfo) {
-      output.WriteRawTag(146, 112);
-      output.WriteMessage(InstableSpraySettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CrystalLinkSettleInfo) {
-      output.WriteRawTag(130, 115);
-      output.WriteMessage(CrystalLinkSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo) {
-      output.WriteRawTag(130, 118);
-      output.WriteMessage(RoguelikeDungeonSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo) {
-      output.WriteRawTag(202, 119);
-      output.WriteMessage(EffigyChallengeV2SettleInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (CreatePlayerUid != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(CreatePlayerUid);
-    }
-    if (Result != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Result);
-    }
-    settleShow_.WriteTo(ref output, _map_settleShow_codec);
-    strengthenPointDataMap_.WriteTo(ref output, _map_strengthenPointDataMap_codec);
-    if (DungeonId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(DungeonId);
-    }
-    if (IsSuccess != false) {
-      output.WriteRawTag(80);
-      output.WriteBool(IsSuccess);
-    }
-    failCondList_.WriteTo(ref output, _repeated_failCondList_codec);
-    exhibitionInfoList_.WriteTo(ref output, _repeated_exhibitionInfoList_codec);
-    if (UseTime != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(UseTime);
-    }
-    if (CloseTime != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(CloseTime);
-    }
-    if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
-      output.WriteRawTag(242, 15);
-      output.WriteMessage(EffigyChallengeDungeonResultInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo) {
-      output.WriteRawTag(234, 17);
-      output.WriteMessage(SummerTimeV2DungeonSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.TowerLevelEndNotify) {
-      output.WriteRawTag(138, 68);
-      output.WriteMessage(TowerLevelEndNotify);
-    }
-    if (detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify) {
-      output.WriteRawTag(234, 69);
-      output.WriteMessage(TrialAvatarFirstPassDungeonNotify);
-    }
-    if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
-      output.WriteRawTag(146, 87);
-      output.WriteMessage(ChannellerSlabLoopDungeonResultInfo);
-    }
-    if (detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo) {
-      output.WriteRawTag(146, 95);
-      output.WriteMessage(WindFieldDungeonSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.InstableSpraySettleInfo) {
-      output.WriteRawTag(146, 112);
-      output.WriteMessage(InstableSpraySettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CrystalLinkSettleInfo) {
-      output.WriteRawTag(130, 115);
-      output.WriteMessage(CrystalLinkSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo) {
-      output.WriteRawTag(130, 118);
-      output.WriteMessage(RoguelikeDungeonSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo) {
-      output.WriteRawTag(202, 119);
-      output.WriteMessage(EffigyChallengeV2SettleInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += settleShow_.CalculateSize(_map_settleShow_codec);
-    size += strengthenPointDataMap_.CalculateSize(_map_strengthenPointDataMap_codec);
-    size += exhibitionInfoList_.CalculateSize(_repeated_exhibitionInfoList_codec);
-    if (UseTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UseTime);
-    }
-    if (IsSuccess != false) {
-      size += 1 + 1;
-    }
-    if (CloseTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CloseTime);
-    }
-    if (DungeonId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
-    }
-    if (Result != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Result);
-    }
-    size += failCondList_.CalculateSize(_repeated_failCondList_codec);
-    if (CreatePlayerUid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CreatePlayerUid);
-    }
-    if (detailCase_ == DetailOneofCase.TowerLevelEndNotify) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(TowerLevelEndNotify);
-    }
-    if (detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(TrialAvatarFirstPassDungeonNotify);
-    }
-    if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(ChannellerSlabLoopDungeonResultInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(EffigyChallengeDungeonResultInfo);
-    }
-    if (detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(RoguelikeDungeonSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.CrystalLinkSettleInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(CrystalLinkSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(SummerTimeV2DungeonSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.InstableSpraySettleInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(InstableSpraySettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(WindFieldDungeonSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(EffigyChallengeV2SettleInfo);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(DungeonSettleNotify other) {
-    if (other == null) {
-      return;
-    }
-    settleShow_.Add(other.settleShow_);
-    strengthenPointDataMap_.Add(other.strengthenPointDataMap_);
-    exhibitionInfoList_.Add(other.exhibitionInfoList_);
-    if (other.UseTime != 0) {
-      UseTime = other.UseTime;
-    }
-    if (other.IsSuccess != false) {
-      IsSuccess = other.IsSuccess;
-    }
-    if (other.CloseTime != 0) {
-      CloseTime = other.CloseTime;
-    }
-    if (other.DungeonId != 0) {
-      DungeonId = other.DungeonId;
-    }
-    if (other.Result != 0) {
-      Result = other.Result;
-    }
-    failCondList_.Add(other.failCondList_);
-    if (other.CreatePlayerUid != 0) {
-      CreatePlayerUid = other.CreatePlayerUid;
-    }
-    switch (other.DetailCase) {
-      case DetailOneofCase.TowerLevelEndNotify:
-        if (TowerLevelEndNotify == null) {
-          TowerLevelEndNotify = new global::TowerLevelEndNotify();
-        }
-        TowerLevelEndNotify.MergeFrom(other.TowerLevelEndNotify);
-        break;
-      case DetailOneofCase.TrialAvatarFirstPassDungeonNotify:
-        if (TrialAvatarFirstPassDungeonNotify == null) {
-          TrialAvatarFirstPassDungeonNotify = new global::TrialAvatarFirstPassDungeonNotify();
-        }
-        TrialAvatarFirstPassDungeonNotify.MergeFrom(other.TrialAvatarFirstPassDungeonNotify);
-        break;
-      case DetailOneofCase.ChannellerSlabLoopDungeonResultInfo:
-        if (ChannellerSlabLoopDungeonResultInfo == null) {
-          ChannellerSlabLoopDungeonResultInfo = new global::ChannelerSlabLoopDungeonResultInfo();
-        }
-        ChannellerSlabLoopDungeonResultInfo.MergeFrom(other.ChannellerSlabLoopDungeonResultInfo);
-        break;
-      case DetailOneofCase.EffigyChallengeDungeonResultInfo:
-        if (EffigyChallengeDungeonResultInfo == null) {
-          EffigyChallengeDungeonResultInfo = new global::EffigyChallengeDungeonResultInfo();
-        }
-        EffigyChallengeDungeonResultInfo.MergeFrom(other.EffigyChallengeDungeonResultInfo);
-        break;
-      case DetailOneofCase.RoguelikeDungeonSettleInfo:
-        if (RoguelikeDungeonSettleInfo == null) {
-          RoguelikeDungeonSettleInfo = new global::RoguelikeDungeonSettleInfo();
-        }
-        RoguelikeDungeonSettleInfo.MergeFrom(other.RoguelikeDungeonSettleInfo);
-        break;
-      case DetailOneofCase.CrystalLinkSettleInfo:
-        if (CrystalLinkSettleInfo == null) {
-          CrystalLinkSettleInfo = new global::CrystalLinkDungeonSettleInfo();
-        }
-        CrystalLinkSettleInfo.MergeFrom(other.CrystalLinkSettleInfo);
-        break;
-      case DetailOneofCase.SummerTimeV2DungeonSettleInfo:
-        if (SummerTimeV2DungeonSettleInfo == null) {
-          SummerTimeV2DungeonSettleInfo = new global::SummerTimeV2DungeonSettleInfo();
-        }
-        SummerTimeV2DungeonSettleInfo.MergeFrom(other.SummerTimeV2DungeonSettleInfo);
-        break;
-      case DetailOneofCase.InstableSpraySettleInfo:
-        if (InstableSpraySettleInfo == null) {
-          InstableSpraySettleInfo = new global::InstableSprayDungeonSettleInfo();
-        }
-        InstableSpraySettleInfo.MergeFrom(other.InstableSpraySettleInfo);
-        break;
-      case DetailOneofCase.WindFieldDungeonSettleInfo:
-        if (WindFieldDungeonSettleInfo == null) {
-          WindFieldDungeonSettleInfo = new global::WindFieldDungeonSettleInfo();
-        }
-        WindFieldDungeonSettleInfo.MergeFrom(other.WindFieldDungeonSettleInfo);
-        break;
-      case DetailOneofCase.EffigyChallengeV2SettleInfo:
-        if (EffigyChallengeV2SettleInfo == null) {
-          EffigyChallengeV2SettleInfo = new global::EffigyChallengeV2SettleInfo();
-        }
-        EffigyChallengeV2SettleInfo.MergeFrom(other.EffigyChallengeV2SettleInfo);
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          CreatePlayerUid = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Result = input.ReadUInt32();
-          break;
-        }
-        case 50: {
-          settleShow_.AddEntriesFrom(input, _map_settleShow_codec);
-          break;
-        }
-        case 58: {
-          strengthenPointDataMap_.AddEntriesFrom(input, _map_strengthenPointDataMap_codec);
-          break;
-        }
-        case 72: {
-          DungeonId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          IsSuccess = input.ReadBool();
-          break;
-        }
-        case 90:
-        case 88: {
-          failCondList_.AddEntriesFrom(input, _repeated_failCondList_codec);
-          break;
-        }
-        case 98: {
-          exhibitionInfoList_.AddEntriesFrom(input, _repeated_exhibitionInfoList_codec);
-          break;
-        }
-        case 112: {
-          UseTime = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          CloseTime = input.ReadUInt32();
-          break;
-        }
-        case 2034: {
-          global::EffigyChallengeDungeonResultInfo subBuilder = new global::EffigyChallengeDungeonResultInfo();
-          if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
-            subBuilder.MergeFrom(EffigyChallengeDungeonResultInfo);
-          }
-          input.ReadMessage(subBuilder);
-          EffigyChallengeDungeonResultInfo = subBuilder;
-          break;
-        }
-        case 2282: {
-          global::SummerTimeV2DungeonSettleInfo subBuilder = new global::SummerTimeV2DungeonSettleInfo();
-          if (detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo) {
-            subBuilder.MergeFrom(SummerTimeV2DungeonSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SummerTimeV2DungeonSettleInfo = subBuilder;
-          break;
-        }
-        case 8714: {
-          global::TowerLevelEndNotify subBuilder = new global::TowerLevelEndNotify();
-          if (detailCase_ == DetailOneofCase.TowerLevelEndNotify) {
-            subBuilder.MergeFrom(TowerLevelEndNotify);
-          }
-          input.ReadMessage(subBuilder);
-          TowerLevelEndNotify = subBuilder;
-          break;
-        }
-        case 8938: {
-          global::TrialAvatarFirstPassDungeonNotify subBuilder = new global::TrialAvatarFirstPassDungeonNotify();
-          if (detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify) {
-            subBuilder.MergeFrom(TrialAvatarFirstPassDungeonNotify);
-          }
-          input.ReadMessage(subBuilder);
-          TrialAvatarFirstPassDungeonNotify = subBuilder;
-          break;
-        }
-        case 11154: {
-          global::ChannelerSlabLoopDungeonResultInfo subBuilder = new global::ChannelerSlabLoopDungeonResultInfo();
-          if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
-            subBuilder.MergeFrom(ChannellerSlabLoopDungeonResultInfo);
-          }
-          input.ReadMessage(subBuilder);
-          ChannellerSlabLoopDungeonResultInfo = subBuilder;
-          break;
-        }
-        case 12178: {
-          global::WindFieldDungeonSettleInfo subBuilder = new global::WindFieldDungeonSettleInfo();
-          if (detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo) {
-            subBuilder.MergeFrom(WindFieldDungeonSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          WindFieldDungeonSettleInfo = subBuilder;
-          break;
-        }
-        case 14354: {
-          global::InstableSprayDungeonSettleInfo subBuilder = new global::InstableSprayDungeonSettleInfo();
-          if (detailCase_ == DetailOneofCase.InstableSpraySettleInfo) {
-            subBuilder.MergeFrom(InstableSpraySettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          InstableSpraySettleInfo = subBuilder;
-          break;
-        }
-        case 14722: {
-          global::CrystalLinkDungeonSettleInfo subBuilder = new global::CrystalLinkDungeonSettleInfo();
-          if (detailCase_ == DetailOneofCase.CrystalLinkSettleInfo) {
-            subBuilder.MergeFrom(CrystalLinkSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CrystalLinkSettleInfo = subBuilder;
-          break;
-        }
-        case 15106: {
-          global::RoguelikeDungeonSettleInfo subBuilder = new global::RoguelikeDungeonSettleInfo();
-          if (detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo) {
-            subBuilder.MergeFrom(RoguelikeDungeonSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          RoguelikeDungeonSettleInfo = subBuilder;
-          break;
-        }
-        case 15306: {
-          global::EffigyChallengeV2SettleInfo subBuilder = new global::EffigyChallengeV2SettleInfo();
-          if (detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo) {
-            subBuilder.MergeFrom(EffigyChallengeV2SettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          EffigyChallengeV2SettleInfo = subBuilder;
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          CreatePlayerUid = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Result = input.ReadUInt32();
-          break;
-        }
-        case 50: {
-          settleShow_.AddEntriesFrom(ref input, _map_settleShow_codec);
-          break;
-        }
-        case 58: {
-          strengthenPointDataMap_.AddEntriesFrom(ref input, _map_strengthenPointDataMap_codec);
-          break;
-        }
-        case 72: {
-          DungeonId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          IsSuccess = input.ReadBool();
-          break;
-        }
-        case 90:
-        case 88: {
-          failCondList_.AddEntriesFrom(ref input, _repeated_failCondList_codec);
-          break;
-        }
-        case 98: {
-          exhibitionInfoList_.AddEntriesFrom(ref input, _repeated_exhibitionInfoList_codec);
-          break;
-        }
-        case 112: {
-          UseTime = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          CloseTime = input.ReadUInt32();
-          break;
-        }
-        case 2034: {
-          global::EffigyChallengeDungeonResultInfo subBuilder = new global::EffigyChallengeDungeonResultInfo();
-          if (detailCase_ == DetailOneofCase.EffigyChallengeDungeonResultInfo) {
-            subBuilder.MergeFrom(EffigyChallengeDungeonResultInfo);
-          }
-          input.ReadMessage(subBuilder);
-          EffigyChallengeDungeonResultInfo = subBuilder;
-          break;
-        }
-        case 2282: {
-          global::SummerTimeV2DungeonSettleInfo subBuilder = new global::SummerTimeV2DungeonSettleInfo();
-          if (detailCase_ == DetailOneofCase.SummerTimeV2DungeonSettleInfo) {
-            subBuilder.MergeFrom(SummerTimeV2DungeonSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SummerTimeV2DungeonSettleInfo = subBuilder;
-          break;
-        }
-        case 8714: {
-          global::TowerLevelEndNotify subBuilder = new global::TowerLevelEndNotify();
-          if (detailCase_ == DetailOneofCase.TowerLevelEndNotify) {
-            subBuilder.MergeFrom(TowerLevelEndNotify);
-          }
-          input.ReadMessage(subBuilder);
-          TowerLevelEndNotify = subBuilder;
-          break;
-        }
-        case 8938: {
-          global::TrialAvatarFirstPassDungeonNotify subBuilder = new global::TrialAvatarFirstPassDungeonNotify();
-          if (detailCase_ == DetailOneofCase.TrialAvatarFirstPassDungeonNotify) {
-            subBuilder.MergeFrom(TrialAvatarFirstPassDungeonNotify);
-          }
-          input.ReadMessage(subBuilder);
-          TrialAvatarFirstPassDungeonNotify = subBuilder;
-          break;
-        }
-        case 11154: {
-          global::ChannelerSlabLoopDungeonResultInfo subBuilder = new global::ChannelerSlabLoopDungeonResultInfo();
-          if (detailCase_ == DetailOneofCase.ChannellerSlabLoopDungeonResultInfo) {
-            subBuilder.MergeFrom(ChannellerSlabLoopDungeonResultInfo);
-          }
-          input.ReadMessage(subBuilder);
-          ChannellerSlabLoopDungeonResultInfo = subBuilder;
-          break;
-        }
-        case 12178: {
-          global::WindFieldDungeonSettleInfo subBuilder = new global::WindFieldDungeonSettleInfo();
-          if (detailCase_ == DetailOneofCase.WindFieldDungeonSettleInfo) {
-            subBuilder.MergeFrom(WindFieldDungeonSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          WindFieldDungeonSettleInfo = subBuilder;
-          break;
-        }
-        case 14354: {
-          global::InstableSprayDungeonSettleInfo subBuilder = new global::InstableSprayDungeonSettleInfo();
-          if (detailCase_ == DetailOneofCase.InstableSpraySettleInfo) {
-            subBuilder.MergeFrom(InstableSpraySettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          InstableSpraySettleInfo = subBuilder;
-          break;
-        }
-        case 14722: {
-          global::CrystalLinkDungeonSettleInfo subBuilder = new global::CrystalLinkDungeonSettleInfo();
-          if (detailCase_ == DetailOneofCase.CrystalLinkSettleInfo) {
-            subBuilder.MergeFrom(CrystalLinkSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CrystalLinkSettleInfo = subBuilder;
-          break;
-        }
-        case 15106: {
-          global::RoguelikeDungeonSettleInfo subBuilder = new global::RoguelikeDungeonSettleInfo();
-          if (detailCase_ == DetailOneofCase.RoguelikeDungeonSettleInfo) {
-            subBuilder.MergeFrom(RoguelikeDungeonSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          RoguelikeDungeonSettleInfo = subBuilder;
-          break;
-        }
-        case 15306: {
-          global::EffigyChallengeV2SettleInfo subBuilder = new global::EffigyChallengeV2SettleInfo();
-          if (detailCase_ == DetailOneofCase.EffigyChallengeV2SettleInfo) {
-            subBuilder.MergeFrom(EffigyChallengeV2SettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          EffigyChallengeV2SettleInfo = subBuilder;
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

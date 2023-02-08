@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "CustomDungeonBlock.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message CustomDungeonRoom {
   uint32 room_id = 15;

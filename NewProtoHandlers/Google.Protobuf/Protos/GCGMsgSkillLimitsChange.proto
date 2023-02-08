@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GCGCardSkillLimitsInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGMsgSkillLimitsChange {
   map<uint32, GCGCardSkillLimitsInfo> card_limits_change_map = 3;

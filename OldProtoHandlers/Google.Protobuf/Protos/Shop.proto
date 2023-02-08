@@ -21,7 +21,7 @@ import "ShopConcertProduct.proto";
 import "ShopGoods.proto";
 import "ShopMcoinProduct.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message Shop {
   repeated ShopConcertProduct concert_product_list = 3;

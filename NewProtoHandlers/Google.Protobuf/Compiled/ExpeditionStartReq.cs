@@ -9,335 +9,338 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ExpeditionStartReq.proto</summary>
-public static partial class ExpeditionStartReqReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ExpeditionStartReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ExpeditionStartReq.proto</summary>
+  public static partial class ExpeditionStartReqReflection {
 
-  static ExpeditionStartReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhFeHBlZGl0aW9uU3RhcnRSZXEucHJvdG8idwoSRXhwZWRpdGlvblN0YXJ0",
-          "UmVxEhsKE1VuazMzMDBfQUlFSktBREZMS0cYCiABKA0SDwoHcGF0aF9pZBgD",
-          "IAEoDRIbChNVbmszMzAwX0FGR1BHSUlHQUtBGA4gASgNEhYKDmF2YXRhcl9p",
-          "ZF9saXN0GAcgAygNQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ExpeditionStartReq), global::ExpeditionStartReq.Parser, new[]{ "Unk3300AIEJKADFLKG", "PathId", "Unk3300AFGPGIIGAKA", "AvatarIdList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ExpeditionStartReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ExpeditionStartReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhFeHBlZGl0aW9uU3RhcnRSZXEucHJvdG8idwoSRXhwZWRpdGlvblN0YXJ0",
+            "UmVxEhsKE1VuazMzMDBfQUlFSktBREZMS0cYCiABKA0SDwoHcGF0aF9pZBgD",
+            "IAEoDRIbChNVbmszMzAwX0FGR1BHSUlHQUtBGA4gASgNEhYKDmF2YXRhcl9p",
+            "ZF9saXN0GAcgAygNQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.ExpeditionStartReq), global::NewProtos.ExpeditionStartReq.Parser, new[]{ "Unk3300AIEJKADFLKG", "PathId", "Unk3300AFGPGIIGAKA", "AvatarIdList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2016;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
+  /// </summary>
+  public sealed partial class ExpeditionStartReq : pb::IMessage<ExpeditionStartReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ExpeditionStartReq> _parser = new pb::MessageParser<ExpeditionStartReq>(() => new ExpeditionStartReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ExpeditionStartReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.ExpeditionStartReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ExpeditionStartReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ExpeditionStartReq(ExpeditionStartReq other) : this() {
+      unk3300AIEJKADFLKG_ = other.unk3300AIEJKADFLKG_;
+      pathId_ = other.pathId_;
+      unk3300AFGPGIIGAKA_ = other.unk3300AFGPGIIGAKA_;
+      avatarIdList_ = other.avatarIdList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ExpeditionStartReq Clone() {
+      return new ExpeditionStartReq(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_AIEJKADFLKG" field.</summary>
+    public const int Unk3300AIEJKADFLKGFieldNumber = 10;
+    private uint unk3300AIEJKADFLKG_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300AIEJKADFLKG {
+      get { return unk3300AIEJKADFLKG_; }
+      set {
+        unk3300AIEJKADFLKG_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "path_id" field.</summary>
+    public const int PathIdFieldNumber = 3;
+    private uint pathId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PathId {
+      get { return pathId_; }
+      set {
+        pathId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_AFGPGIIGAKA" field.</summary>
+    public const int Unk3300AFGPGIIGAKAFieldNumber = 14;
+    private uint unk3300AFGPGIIGAKA_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300AFGPGIIGAKA {
+      get { return unk3300AFGPGIIGAKA_; }
+      set {
+        unk3300AFGPGIIGAKA_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "avatar_id_list" field.</summary>
+    public const int AvatarIdListFieldNumber = 7;
+    private static readonly pb::FieldCodec<uint> _repeated_avatarIdList_codec
+        = pb::FieldCodec.ForUInt32(58);
+    private readonly pbc::RepeatedField<uint> avatarIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> AvatarIdList {
+      get { return avatarIdList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ExpeditionStartReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ExpeditionStartReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Unk3300AIEJKADFLKG != other.Unk3300AIEJKADFLKG) return false;
+      if (PathId != other.PathId) return false;
+      if (Unk3300AFGPGIIGAKA != other.Unk3300AFGPGIIGAKA) return false;
+      if(!avatarIdList_.Equals(other.avatarIdList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Unk3300AIEJKADFLKG != 0) hash ^= Unk3300AIEJKADFLKG.GetHashCode();
+      if (PathId != 0) hash ^= PathId.GetHashCode();
+      if (Unk3300AFGPGIIGAKA != 0) hash ^= Unk3300AFGPGIIGAKA.GetHashCode();
+      hash ^= avatarIdList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (PathId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(PathId);
+      }
+      avatarIdList_.WriteTo(output, _repeated_avatarIdList_codec);
+      if (Unk3300AIEJKADFLKG != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300AIEJKADFLKG);
+      }
+      if (Unk3300AFGPGIIGAKA != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300AFGPGIIGAKA);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (PathId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(PathId);
+      }
+      avatarIdList_.WriteTo(ref output, _repeated_avatarIdList_codec);
+      if (Unk3300AIEJKADFLKG != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(Unk3300AIEJKADFLKG);
+      }
+      if (Unk3300AFGPGIIGAKA != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Unk3300AFGPGIIGAKA);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Unk3300AIEJKADFLKG != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AIEJKADFLKG);
+      }
+      if (PathId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PathId);
+      }
+      if (Unk3300AFGPGIIGAKA != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AFGPGIIGAKA);
+      }
+      size += avatarIdList_.CalculateSize(_repeated_avatarIdList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ExpeditionStartReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Unk3300AIEJKADFLKG != 0) {
+        Unk3300AIEJKADFLKG = other.Unk3300AIEJKADFLKG;
+      }
+      if (other.PathId != 0) {
+        PathId = other.PathId;
+      }
+      if (other.Unk3300AFGPGIIGAKA != 0) {
+        Unk3300AFGPGIIGAKA = other.Unk3300AFGPGIIGAKA;
+      }
+      avatarIdList_.Add(other.avatarIdList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            PathId = input.ReadUInt32();
+            break;
+          }
+          case 58:
+          case 56: {
+            avatarIdList_.AddEntriesFrom(input, _repeated_avatarIdList_codec);
+            break;
+          }
+          case 80: {
+            Unk3300AIEJKADFLKG = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300AFGPGIIGAKA = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            PathId = input.ReadUInt32();
+            break;
+          }
+          case 58:
+          case 56: {
+            avatarIdList_.AddEntriesFrom(ref input, _repeated_avatarIdList_codec);
+            break;
+          }
+          case 80: {
+            Unk3300AIEJKADFLKG = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            Unk3300AFGPGIIGAKA = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 2016;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-///   IS_ALLOW_CLIENT = 1;
-/// }
-/// </summary>
-public sealed partial class ExpeditionStartReq : pb::IMessage<ExpeditionStartReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ExpeditionStartReq> _parser = new pb::MessageParser<ExpeditionStartReq>(() => new ExpeditionStartReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ExpeditionStartReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ExpeditionStartReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ExpeditionStartReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ExpeditionStartReq(ExpeditionStartReq other) : this() {
-    unk3300AIEJKADFLKG_ = other.unk3300AIEJKADFLKG_;
-    pathId_ = other.pathId_;
-    unk3300AFGPGIIGAKA_ = other.unk3300AFGPGIIGAKA_;
-    avatarIdList_ = other.avatarIdList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ExpeditionStartReq Clone() {
-    return new ExpeditionStartReq(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_AIEJKADFLKG" field.</summary>
-  public const int Unk3300AIEJKADFLKGFieldNumber = 10;
-  private uint unk3300AIEJKADFLKG_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300AIEJKADFLKG {
-    get { return unk3300AIEJKADFLKG_; }
-    set {
-      unk3300AIEJKADFLKG_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "path_id" field.</summary>
-  public const int PathIdFieldNumber = 3;
-  private uint pathId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PathId {
-    get { return pathId_; }
-    set {
-      pathId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_AFGPGIIGAKA" field.</summary>
-  public const int Unk3300AFGPGIIGAKAFieldNumber = 14;
-  private uint unk3300AFGPGIIGAKA_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300AFGPGIIGAKA {
-    get { return unk3300AFGPGIIGAKA_; }
-    set {
-      unk3300AFGPGIIGAKA_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "avatar_id_list" field.</summary>
-  public const int AvatarIdListFieldNumber = 7;
-  private static readonly pb::FieldCodec<uint> _repeated_avatarIdList_codec
-      = pb::FieldCodec.ForUInt32(58);
-  private readonly pbc::RepeatedField<uint> avatarIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> AvatarIdList {
-    get { return avatarIdList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ExpeditionStartReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ExpeditionStartReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Unk3300AIEJKADFLKG != other.Unk3300AIEJKADFLKG) return false;
-    if (PathId != other.PathId) return false;
-    if (Unk3300AFGPGIIGAKA != other.Unk3300AFGPGIIGAKA) return false;
-    if(!avatarIdList_.Equals(other.avatarIdList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Unk3300AIEJKADFLKG != 0) hash ^= Unk3300AIEJKADFLKG.GetHashCode();
-    if (PathId != 0) hash ^= PathId.GetHashCode();
-    if (Unk3300AFGPGIIGAKA != 0) hash ^= Unk3300AFGPGIIGAKA.GetHashCode();
-    hash ^= avatarIdList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (PathId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(PathId);
-    }
-    avatarIdList_.WriteTo(output, _repeated_avatarIdList_codec);
-    if (Unk3300AIEJKADFLKG != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(Unk3300AIEJKADFLKG);
-    }
-    if (Unk3300AFGPGIIGAKA != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300AFGPGIIGAKA);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (PathId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(PathId);
-    }
-    avatarIdList_.WriteTo(ref output, _repeated_avatarIdList_codec);
-    if (Unk3300AIEJKADFLKG != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(Unk3300AIEJKADFLKG);
-    }
-    if (Unk3300AFGPGIIGAKA != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Unk3300AFGPGIIGAKA);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Unk3300AIEJKADFLKG != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AIEJKADFLKG);
-    }
-    if (PathId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PathId);
-    }
-    if (Unk3300AFGPGIIGAKA != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AFGPGIIGAKA);
-    }
-    size += avatarIdList_.CalculateSize(_repeated_avatarIdList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ExpeditionStartReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Unk3300AIEJKADFLKG != 0) {
-      Unk3300AIEJKADFLKG = other.Unk3300AIEJKADFLKG;
-    }
-    if (other.PathId != 0) {
-      PathId = other.PathId;
-    }
-    if (other.Unk3300AFGPGIIGAKA != 0) {
-      Unk3300AFGPGIIGAKA = other.Unk3300AFGPGIIGAKA;
-    }
-    avatarIdList_.Add(other.avatarIdList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          PathId = input.ReadUInt32();
-          break;
-        }
-        case 58:
-        case 56: {
-          avatarIdList_.AddEntriesFrom(input, _repeated_avatarIdList_codec);
-          break;
-        }
-        case 80: {
-          Unk3300AIEJKADFLKG = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300AFGPGIIGAKA = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          PathId = input.ReadUInt32();
-          break;
-        }
-        case 58:
-        case 56: {
-          avatarIdList_.AddEntriesFrom(ref input, _repeated_avatarIdList_codec);
-          break;
-        }
-        case 80: {
-          Unk3300AIEJKADFLKG = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          Unk3300AFGPGIIGAKA = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -19,7 +19,7 @@ syntax = "proto3";
 import "ClientInputType.proto";
 import "LanternProjectionLevelInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message LanternProjectionInfo {
   repeated ClientInputType Unk3300_FAIAIJGCBJG = 5;

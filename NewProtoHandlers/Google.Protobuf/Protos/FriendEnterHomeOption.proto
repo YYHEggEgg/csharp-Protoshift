@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 enum FriendEnterHomeOption {
   FRIEND_ENTER_HOME_OPTION_NEED_CONFIRM = 0;

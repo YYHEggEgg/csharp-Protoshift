@@ -9,36 +9,39 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from TransmitReason.proto</summary>
-public static partial class TransmitReasonReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for TransmitReason.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from TransmitReason.proto</summary>
+  public static partial class TransmitReasonReflection {
 
-  static TransmitReasonReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRUcmFuc21pdFJlYXNvbi5wcm90bypFCg5UcmFuc21pdFJlYXNvbhIYChRU",
-          "UkFOU01JVF9SRUFTT05fTk9ORRAAEhkKFVRSQU5TTUlUX1JFQVNPTl9RVUVT",
-          "VBABQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TransmitReason), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for TransmitReason.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static TransmitReasonReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRUcmFuc21pdFJlYXNvbi5wcm90bypFCg5UcmFuc21pdFJlYXNvbhIYChRU",
+            "UkFOU01JVF9SRUFTT05fTk9ORRAAEhkKFVRSQU5TTUlUX1JFQVNPTl9RVUVT",
+            "VBABQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.TransmitReason), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum TransmitReason {
+    [pbr::OriginalName("TRANSMIT_REASON_NONE")] None = 0,
+    [pbr::OriginalName("TRANSMIT_REASON_QUEST")] Quest = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum TransmitReason {
-  [pbr::OriginalName("TRANSMIT_REASON_NONE")] None = 0,
-  [pbr::OriginalName("TRANSMIT_REASON_QUEST")] Quest = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

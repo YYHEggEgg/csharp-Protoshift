@@ -9,438 +9,440 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GivingRecord.proto</summary>
-public static partial class GivingRecordReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GivingRecord.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GivingRecord.proto</summary>
+  public static partial class GivingRecordReflection {
 
-  static GivingRecordReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChJHaXZpbmdSZWNvcmQucHJvdG8ihgIKDEdpdmluZ1JlY29yZBIYChBpc19n",
-          "YWRnZXRfZ2l2aW5nGAMgASgIEhAKCGdyb3VwX2lkGAcgASgNEhMKC2lzX2Zp",
-          "bmlzaGVkGAYgASgIEj8KEm1hdGVyaWFsX2NvdW50X21hcBgBIAMoCzIjLkdp",
-          "dmluZ1JlY29yZC5NYXRlcmlhbENvdW50TWFwRW50cnkSEQoJY29uZmlnX2lk",
-          "GAQgASgNEhUKDWxhc3RfZ3JvdXBfaWQYBSABKA0SEQoJZ2l2aW5nX2lkGA4g",
-          "ASgNGjcKFU1hdGVyaWFsQ291bnRNYXBFbnRyeRILCgNrZXkYASABKA0SDQoF",
-          "dmFsdWUYAiABKA06AjgBQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90",
-          "bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GivingRecord), global::GivingRecord.Parser, new[]{ "IsGadgetGiving", "GroupId", "IsFinished", "MaterialCountMap", "ConfigId", "LastGroupId", "GivingId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GivingRecord.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GivingRecordReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChJHaXZpbmdSZWNvcmQucHJvdG8ihgIKDEdpdmluZ1JlY29yZBIYChBpc19n",
+            "YWRnZXRfZ2l2aW5nGAMgASgIEhAKCGdyb3VwX2lkGAcgASgNEhMKC2lzX2Zp",
+            "bmlzaGVkGAYgASgIEj8KEm1hdGVyaWFsX2NvdW50X21hcBgBIAMoCzIjLkdp",
+            "dmluZ1JlY29yZC5NYXRlcmlhbENvdW50TWFwRW50cnkSEQoJY29uZmlnX2lk",
+            "GAQgASgNEhUKDWxhc3RfZ3JvdXBfaWQYBSABKA0SEQoJZ2l2aW5nX2lkGA4g",
+            "ASgNGjcKFU1hdGVyaWFsQ291bnRNYXBFbnRyeRILCgNrZXkYASABKA0SDQoF",
+            "dmFsdWUYAiABKA06AjgBQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GivingRecord), global::NewProtos.GivingRecord.Parser, new[]{ "IsGadgetGiving", "GroupId", "IsFinished", "MaterialCountMap", "ConfigId", "LastGroupId", "GivingId" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GivingRecord : pb::IMessage<GivingRecord>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GivingRecord> _parser = new pb::MessageParser<GivingRecord>(() => new GivingRecord());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GivingRecord> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.GivingRecordReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GivingRecord() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GivingRecord(GivingRecord other) : this() {
+      isGadgetGiving_ = other.isGadgetGiving_;
+      groupId_ = other.groupId_;
+      isFinished_ = other.isFinished_;
+      materialCountMap_ = other.materialCountMap_.Clone();
+      configId_ = other.configId_;
+      lastGroupId_ = other.lastGroupId_;
+      givingId_ = other.givingId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GivingRecord Clone() {
+      return new GivingRecord(this);
+    }
+
+    /// <summary>Field number for the "is_gadget_giving" field.</summary>
+    public const int IsGadgetGivingFieldNumber = 3;
+    private bool isGadgetGiving_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsGadgetGiving {
+      get { return isGadgetGiving_; }
+      set {
+        isGadgetGiving_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "group_id" field.</summary>
+    public const int GroupIdFieldNumber = 7;
+    private uint groupId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GroupId {
+      get { return groupId_; }
+      set {
+        groupId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_finished" field.</summary>
+    public const int IsFinishedFieldNumber = 6;
+    private bool isFinished_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFinished {
+      get { return isFinished_; }
+      set {
+        isFinished_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "material_count_map" field.</summary>
+    public const int MaterialCountMapFieldNumber = 1;
+    private static readonly pbc::MapField<uint, uint>.Codec _map_materialCountMap_codec
+        = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 10);
+    private readonly pbc::MapField<uint, uint> materialCountMap_ = new pbc::MapField<uint, uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, uint> MaterialCountMap {
+      get { return materialCountMap_; }
+    }
+
+    /// <summary>Field number for the "config_id" field.</summary>
+    public const int ConfigIdFieldNumber = 4;
+    private uint configId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ConfigId {
+      get { return configId_; }
+      set {
+        configId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_group_id" field.</summary>
+    public const int LastGroupIdFieldNumber = 5;
+    private uint lastGroupId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LastGroupId {
+      get { return lastGroupId_; }
+      set {
+        lastGroupId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "giving_id" field.</summary>
+    public const int GivingIdFieldNumber = 14;
+    private uint givingId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GivingId {
+      get { return givingId_; }
+      set {
+        givingId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GivingRecord);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GivingRecord other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsGadgetGiving != other.IsGadgetGiving) return false;
+      if (GroupId != other.GroupId) return false;
+      if (IsFinished != other.IsFinished) return false;
+      if (!MaterialCountMap.Equals(other.MaterialCountMap)) return false;
+      if (ConfigId != other.ConfigId) return false;
+      if (LastGroupId != other.LastGroupId) return false;
+      if (GivingId != other.GivingId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsGadgetGiving != false) hash ^= IsGadgetGiving.GetHashCode();
+      if (GroupId != 0) hash ^= GroupId.GetHashCode();
+      if (IsFinished != false) hash ^= IsFinished.GetHashCode();
+      hash ^= MaterialCountMap.GetHashCode();
+      if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
+      if (LastGroupId != 0) hash ^= LastGroupId.GetHashCode();
+      if (GivingId != 0) hash ^= GivingId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      materialCountMap_.WriteTo(output, _map_materialCountMap_codec);
+      if (IsGadgetGiving != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsGadgetGiving);
+      }
+      if (ConfigId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ConfigId);
+      }
+      if (LastGroupId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(LastGroupId);
+      }
+      if (IsFinished != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsFinished);
+      }
+      if (GroupId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(GroupId);
+      }
+      if (GivingId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(GivingId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      materialCountMap_.WriteTo(ref output, _map_materialCountMap_codec);
+      if (IsGadgetGiving != false) {
+        output.WriteRawTag(24);
+        output.WriteBool(IsGadgetGiving);
+      }
+      if (ConfigId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(ConfigId);
+      }
+      if (LastGroupId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(LastGroupId);
+      }
+      if (IsFinished != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsFinished);
+      }
+      if (GroupId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(GroupId);
+      }
+      if (GivingId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(GivingId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsGadgetGiving != false) {
+        size += 1 + 1;
+      }
+      if (GroupId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
+      }
+      if (IsFinished != false) {
+        size += 1 + 1;
+      }
+      size += materialCountMap_.CalculateSize(_map_materialCountMap_codec);
+      if (ConfigId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
+      }
+      if (LastGroupId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastGroupId);
+      }
+      if (GivingId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GivingId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GivingRecord other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsGadgetGiving != false) {
+        IsGadgetGiving = other.IsGadgetGiving;
+      }
+      if (other.GroupId != 0) {
+        GroupId = other.GroupId;
+      }
+      if (other.IsFinished != false) {
+        IsFinished = other.IsFinished;
+      }
+      materialCountMap_.Add(other.materialCountMap_);
+      if (other.ConfigId != 0) {
+        ConfigId = other.ConfigId;
+      }
+      if (other.LastGroupId != 0) {
+        LastGroupId = other.LastGroupId;
+      }
+      if (other.GivingId != 0) {
+        GivingId = other.GivingId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            materialCountMap_.AddEntriesFrom(input, _map_materialCountMap_codec);
+            break;
+          }
+          case 24: {
+            IsGadgetGiving = input.ReadBool();
+            break;
+          }
+          case 32: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            LastGroupId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            IsFinished = input.ReadBool();
+            break;
+          }
+          case 56: {
+            GroupId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            GivingId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            materialCountMap_.AddEntriesFrom(ref input, _map_materialCountMap_codec);
+            break;
+          }
+          case 24: {
+            IsGadgetGiving = input.ReadBool();
+            break;
+          }
+          case 32: {
+            ConfigId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            LastGroupId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            IsFinished = input.ReadBool();
+            break;
+          }
+          case 56: {
+            GroupId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            GivingId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GivingRecord : pb::IMessage<GivingRecord>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GivingRecord> _parser = new pb::MessageParser<GivingRecord>(() => new GivingRecord());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GivingRecord> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GivingRecordReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GivingRecord() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GivingRecord(GivingRecord other) : this() {
-    isGadgetGiving_ = other.isGadgetGiving_;
-    groupId_ = other.groupId_;
-    isFinished_ = other.isFinished_;
-    materialCountMap_ = other.materialCountMap_.Clone();
-    configId_ = other.configId_;
-    lastGroupId_ = other.lastGroupId_;
-    givingId_ = other.givingId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GivingRecord Clone() {
-    return new GivingRecord(this);
-  }
-
-  /// <summary>Field number for the "is_gadget_giving" field.</summary>
-  public const int IsGadgetGivingFieldNumber = 3;
-  private bool isGadgetGiving_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsGadgetGiving {
-    get { return isGadgetGiving_; }
-    set {
-      isGadgetGiving_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "group_id" field.</summary>
-  public const int GroupIdFieldNumber = 7;
-  private uint groupId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GroupId {
-    get { return groupId_; }
-    set {
-      groupId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_finished" field.</summary>
-  public const int IsFinishedFieldNumber = 6;
-  private bool isFinished_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsFinished {
-    get { return isFinished_; }
-    set {
-      isFinished_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "material_count_map" field.</summary>
-  public const int MaterialCountMapFieldNumber = 1;
-  private static readonly pbc::MapField<uint, uint>.Codec _map_materialCountMap_codec
-      = new pbc::MapField<uint, uint>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForUInt32(16, 0), 10);
-  private readonly pbc::MapField<uint, uint> materialCountMap_ = new pbc::MapField<uint, uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, uint> MaterialCountMap {
-    get { return materialCountMap_; }
-  }
-
-  /// <summary>Field number for the "config_id" field.</summary>
-  public const int ConfigIdFieldNumber = 4;
-  private uint configId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ConfigId {
-    get { return configId_; }
-    set {
-      configId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "last_group_id" field.</summary>
-  public const int LastGroupIdFieldNumber = 5;
-  private uint lastGroupId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LastGroupId {
-    get { return lastGroupId_; }
-    set {
-      lastGroupId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "giving_id" field.</summary>
-  public const int GivingIdFieldNumber = 14;
-  private uint givingId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GivingId {
-    get { return givingId_; }
-    set {
-      givingId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GivingRecord);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GivingRecord other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsGadgetGiving != other.IsGadgetGiving) return false;
-    if (GroupId != other.GroupId) return false;
-    if (IsFinished != other.IsFinished) return false;
-    if (!MaterialCountMap.Equals(other.MaterialCountMap)) return false;
-    if (ConfigId != other.ConfigId) return false;
-    if (LastGroupId != other.LastGroupId) return false;
-    if (GivingId != other.GivingId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsGadgetGiving != false) hash ^= IsGadgetGiving.GetHashCode();
-    if (GroupId != 0) hash ^= GroupId.GetHashCode();
-    if (IsFinished != false) hash ^= IsFinished.GetHashCode();
-    hash ^= MaterialCountMap.GetHashCode();
-    if (ConfigId != 0) hash ^= ConfigId.GetHashCode();
-    if (LastGroupId != 0) hash ^= LastGroupId.GetHashCode();
-    if (GivingId != 0) hash ^= GivingId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    materialCountMap_.WriteTo(output, _map_materialCountMap_codec);
-    if (IsGadgetGiving != false) {
-      output.WriteRawTag(24);
-      output.WriteBool(IsGadgetGiving);
-    }
-    if (ConfigId != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(ConfigId);
-    }
-    if (LastGroupId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(LastGroupId);
-    }
-    if (IsFinished != false) {
-      output.WriteRawTag(48);
-      output.WriteBool(IsFinished);
-    }
-    if (GroupId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(GroupId);
-    }
-    if (GivingId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(GivingId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    materialCountMap_.WriteTo(ref output, _map_materialCountMap_codec);
-    if (IsGadgetGiving != false) {
-      output.WriteRawTag(24);
-      output.WriteBool(IsGadgetGiving);
-    }
-    if (ConfigId != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(ConfigId);
-    }
-    if (LastGroupId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(LastGroupId);
-    }
-    if (IsFinished != false) {
-      output.WriteRawTag(48);
-      output.WriteBool(IsFinished);
-    }
-    if (GroupId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(GroupId);
-    }
-    if (GivingId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(GivingId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsGadgetGiving != false) {
-      size += 1 + 1;
-    }
-    if (GroupId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
-    }
-    if (IsFinished != false) {
-      size += 1 + 1;
-    }
-    size += materialCountMap_.CalculateSize(_map_materialCountMap_codec);
-    if (ConfigId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ConfigId);
-    }
-    if (LastGroupId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastGroupId);
-    }
-    if (GivingId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GivingId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GivingRecord other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsGadgetGiving != false) {
-      IsGadgetGiving = other.IsGadgetGiving;
-    }
-    if (other.GroupId != 0) {
-      GroupId = other.GroupId;
-    }
-    if (other.IsFinished != false) {
-      IsFinished = other.IsFinished;
-    }
-    materialCountMap_.Add(other.materialCountMap_);
-    if (other.ConfigId != 0) {
-      ConfigId = other.ConfigId;
-    }
-    if (other.LastGroupId != 0) {
-      LastGroupId = other.LastGroupId;
-    }
-    if (other.GivingId != 0) {
-      GivingId = other.GivingId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          materialCountMap_.AddEntriesFrom(input, _map_materialCountMap_codec);
-          break;
-        }
-        case 24: {
-          IsGadgetGiving = input.ReadBool();
-          break;
-        }
-        case 32: {
-          ConfigId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          LastGroupId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          IsFinished = input.ReadBool();
-          break;
-        }
-        case 56: {
-          GroupId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          GivingId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          materialCountMap_.AddEntriesFrom(ref input, _map_materialCountMap_codec);
-          break;
-        }
-        case 24: {
-          IsGadgetGiving = input.ReadBool();
-          break;
-        }
-        case 32: {
-          ConfigId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          LastGroupId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          IsFinished = input.ReadBool();
-          break;
-        }
-        case 56: {
-          GroupId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          GivingId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

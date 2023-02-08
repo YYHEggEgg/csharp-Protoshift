@@ -9,39 +9,42 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ReliquaryFilterLockState.proto</summary>
-public static partial class ReliquaryFilterLockStateReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ReliquaryFilterLockState.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ReliquaryFilterLockState.proto</summary>
+  public static partial class ReliquaryFilterLockStateReflection {
 
-  static ReliquaryFilterLockStateReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch5SZWxpcXVhcnlGaWx0ZXJMb2NrU3RhdGUucHJvdG8qjgEKGFJlbGlxdWFy",
-          "eUZpbHRlckxvY2tTdGF0ZRIkCiBSRUxJUVVBUllfRklMVEVSX0xPQ0tfU1RB",
-          "VEVfTk9ORRAAEiQKIFJFTElRVUFSWV9GSUxURVJfTE9DS19TVEFURV9MT0NL",
-          "EAESJgoiUkVMSVFVQVJZX0ZJTFRFUl9MT0NLX1NUQVRFX1VOTE9DSxACQhYK",
-          "FG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ReliquaryFilterLockState), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for ReliquaryFilterLockState.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ReliquaryFilterLockStateReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch5SZWxpcXVhcnlGaWx0ZXJMb2NrU3RhdGUucHJvdG8qjgEKGFJlbGlxdWFy",
+            "eUZpbHRlckxvY2tTdGF0ZRIkCiBSRUxJUVVBUllfRklMVEVSX0xPQ0tfU1RB",
+            "VEVfTk9ORRAAEiQKIFJFTElRVUFSWV9GSUxURVJfTE9DS19TVEFURV9MT0NL",
+            "EAESJgoiUkVMSVFVQVJZX0ZJTFRFUl9MT0NLX1NUQVRFX1VOTE9DSxACQgyq",
+            "AglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.ReliquaryFilterLockState), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum ReliquaryFilterLockState {
+    [pbr::OriginalName("RELIQUARY_FILTER_LOCK_STATE_NONE")] None = 0,
+    [pbr::OriginalName("RELIQUARY_FILTER_LOCK_STATE_LOCK")] Lock = 1,
+    [pbr::OriginalName("RELIQUARY_FILTER_LOCK_STATE_UNLOCK")] Unlock = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum ReliquaryFilterLockState {
-  [pbr::OriginalName("RELIQUARY_FILTER_LOCK_STATE_NONE")] None = 0,
-  [pbr::OriginalName("RELIQUARY_FILTER_LOCK_STATE_LOCK")] Lock = 1,
-  [pbr::OriginalName("RELIQUARY_FILTER_LOCK_STATE_UNLOCK")] Unlock = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

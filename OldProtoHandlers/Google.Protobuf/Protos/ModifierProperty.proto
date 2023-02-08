@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "AbilityString.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message ModifierProperty {
   AbilityString key = 15;

@@ -22,7 +22,7 @@ import "SceneReliquaryInfo.proto";
 import "SceneWeaponInfo.proto";
 import "ServerBuff.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SceneAvatarInfo {
   uint32 uid = 1;

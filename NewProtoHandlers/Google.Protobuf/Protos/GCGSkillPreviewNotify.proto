@@ -20,7 +20,7 @@ import "GCGChangeOnstageInfo.proto";
 import "GCGSkillPreviewInfo.proto";
 import "GCGSkillPreviewPlayCardInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGSkillPreviewNotify {
   // enum CmdId {

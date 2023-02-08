@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ItemParam.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message WinterCampAcceptItemResultInfo {
   repeated ItemParam Unk3300_ILELLFNPDFJ = 15;

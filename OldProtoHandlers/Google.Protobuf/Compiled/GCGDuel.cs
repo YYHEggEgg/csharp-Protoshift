@@ -9,828 +9,830 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGDuel.proto</summary>
-public static partial class GCGDuelReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGDuel.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGDuel.proto</summary>
+  public static partial class GCGDuelReflection {
 
-  static GCGDuelReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Cg1HQ0dEdWVsLnByb3RvGg1HQ0dDYXJkLnByb3RvGhtHQ0dDb250cm9sbGVy",
-          "U2hvd0luZm8ucHJvdG8aF0dDR0Nvc3RSZXZpc2VJbmZvLnByb3RvGhZHQ0dE",
-          "dWVsQ2hhbGxlbmdlLnByb3RvGhlHQ0dHYW1lQnVzaW5lc3NUeXBlLnByb3Rv",
-          "GhRHQ0dNZXNzYWdlUGFjay5wcm90bxoVR0NHUFZFSW50ZW50aW9uLnByb3Rv",
-          "Gg5HQ0dQaGFzZS5wcm90bxoUR0NHUGxheWVyRmllbGQucHJvdG8i4wQKB0dD",
-          "R0R1ZWwSJwoLY29zdF9yZXZpc2UYCiABKAsyEi5HQ0dDb3N0UmV2aXNlSW5m",
-          "bxIrCg1idXNpbmVzc190eXBlGA4gASgOMhQuR0NHR2FtZUJ1c2luZXNzVHlw",
-          "ZRIjChFoaXN0b3J5X2NhcmRfbGlzdBh5IAMoCzIILkdDR0NhcmQSFgoNb3Bl",
-          "cmF0aW9uX3NlcRi6CSABKA0SDwoHZ2FtZV9pZBgLIAEoDRIRCglnYW1lX3R5",
-          "cGUYAiABKA0SGwoJY2FyZF9saXN0GAkgAygLMgguR0NHQ2FyZBISCgpzZXJ2",
-          "ZXJfc2VxGAMgASgNEi8KFWhpc3RvcnlfbXNnX3BhY2tfbGlzdBicBiADKAsy",
-          "Dy5HQ0dNZXNzYWdlUGFjaxINCgVyb3VuZBgPIAEoDRIjCgpmaWVsZF9saXN0",
-          "GAcgAygLMg8uR0NHUGxheWVyRmllbGQSFQoNY29udHJvbGxlcl9pZBgNIAEo",
-          "DRIYCgVwaGFzZRgIIAEoCzIJLkdDR1BoYXNlEhQKDGNhcmRfaWRfbGlzdBgE",
-          "IAMoDRInCg1pbnRldGlvbl9saXN0GAEgAygLMhAuR0NHUFZFSW50ZW50aW9u",
-          "EiUKHGZvcmJpZF9maW5pc2hfY2hhbGxlbmdlX2xpc3QYhwUgAygNEikKDmNo",
-          "YWxsZW5nZV9saXN0GAUgAygLMhEuR0NHRHVlbENoYWxsZW5nZRIZChFjdXJf",
-          "Y29udHJvbGxlcl9pZBgMIAEoDRIuCg5zaG93X2luZm9fbGlzdBgGIAMoCzIW",
-          "LkdDR0NvbnRyb2xsZXJTaG93SW5mb0IeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0",
-          "Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GCGCardReflection.Descriptor, global::GCGControllerShowInfoReflection.Descriptor, global::GCGCostReviseInfoReflection.Descriptor, global::GCGDuelChallengeReflection.Descriptor, global::GCGGameBusinessTypeReflection.Descriptor, global::GCGMessagePackReflection.Descriptor, global::GCGPVEIntentionReflection.Descriptor, global::GCGPhaseReflection.Descriptor, global::GCGPlayerFieldReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGDuel), global::GCGDuel.Parser, new[]{ "CostRevise", "BusinessType", "HistoryCardList", "OperationSeq", "GameId", "GameType", "CardList", "ServerSeq", "HistoryMsgPackList", "Round", "FieldList", "ControllerId", "Phase", "CardIdList", "IntetionList", "ForbidFinishChallengeList", "ChallengeList", "CurControllerId", "ShowInfoList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGDuel.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGDuelReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Cg1HQ0dEdWVsLnByb3RvGg1HQ0dDYXJkLnByb3RvGhtHQ0dDb250cm9sbGVy",
+            "U2hvd0luZm8ucHJvdG8aF0dDR0Nvc3RSZXZpc2VJbmZvLnByb3RvGhZHQ0dE",
+            "dWVsQ2hhbGxlbmdlLnByb3RvGhlHQ0dHYW1lQnVzaW5lc3NUeXBlLnByb3Rv",
+            "GhRHQ0dNZXNzYWdlUGFjay5wcm90bxoVR0NHUFZFSW50ZW50aW9uLnByb3Rv",
+            "Gg5HQ0dQaGFzZS5wcm90bxoUR0NHUGxheWVyRmllbGQucHJvdG8i4wQKB0dD",
+            "R0R1ZWwSJwoLY29zdF9yZXZpc2UYCiABKAsyEi5HQ0dDb3N0UmV2aXNlSW5m",
+            "bxIrCg1idXNpbmVzc190eXBlGA4gASgOMhQuR0NHR2FtZUJ1c2luZXNzVHlw",
+            "ZRIjChFoaXN0b3J5X2NhcmRfbGlzdBh5IAMoCzIILkdDR0NhcmQSFgoNb3Bl",
+            "cmF0aW9uX3NlcRi6CSABKA0SDwoHZ2FtZV9pZBgLIAEoDRIRCglnYW1lX3R5",
+            "cGUYAiABKA0SGwoJY2FyZF9saXN0GAkgAygLMgguR0NHQ2FyZBISCgpzZXJ2",
+            "ZXJfc2VxGAMgASgNEi8KFWhpc3RvcnlfbXNnX3BhY2tfbGlzdBicBiADKAsy",
+            "Dy5HQ0dNZXNzYWdlUGFjaxINCgVyb3VuZBgPIAEoDRIjCgpmaWVsZF9saXN0",
+            "GAcgAygLMg8uR0NHUGxheWVyRmllbGQSFQoNY29udHJvbGxlcl9pZBgNIAEo",
+            "DRIYCgVwaGFzZRgIIAEoCzIJLkdDR1BoYXNlEhQKDGNhcmRfaWRfbGlzdBgE",
+            "IAMoDRInCg1pbnRldGlvbl9saXN0GAEgAygLMhAuR0NHUFZFSW50ZW50aW9u",
+            "EiUKHGZvcmJpZF9maW5pc2hfY2hhbGxlbmdlX2xpc3QYhwUgAygNEikKDmNo",
+            "YWxsZW5nZV9saXN0GAUgAygLMhEuR0NHRHVlbENoYWxsZW5nZRIZChFjdXJf",
+            "Y29udHJvbGxlcl9pZBgMIAEoDRIuCg5zaG93X2luZm9fbGlzdBgGIAMoCzIW",
+            "LkdDR0NvbnRyb2xsZXJTaG93SW5mb0IMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GCGCardReflection.Descriptor, global::OldProtos.GCGControllerShowInfoReflection.Descriptor, global::OldProtos.GCGCostReviseInfoReflection.Descriptor, global::OldProtos.GCGDuelChallengeReflection.Descriptor, global::OldProtos.GCGGameBusinessTypeReflection.Descriptor, global::OldProtos.GCGMessagePackReflection.Descriptor, global::OldProtos.GCGPVEIntentionReflection.Descriptor, global::OldProtos.GCGPhaseReflection.Descriptor, global::OldProtos.GCGPlayerFieldReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GCGDuel), global::OldProtos.GCGDuel.Parser, new[]{ "CostRevise", "BusinessType", "HistoryCardList", "OperationSeq", "GameId", "GameType", "CardList", "ServerSeq", "HistoryMsgPackList", "Round", "FieldList", "ControllerId", "Phase", "CardIdList", "IntetionList", "ForbidFinishChallengeList", "ChallengeList", "CurControllerId", "ShowInfoList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GCGDuel : pb::IMessage<GCGDuel>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGDuel> _parser = new pb::MessageParser<GCGDuel>(() => new GCGDuel());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGDuel> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GCGDuelReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGDuel() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGDuel(GCGDuel other) : this() {
+      costRevise_ = other.costRevise_ != null ? other.costRevise_.Clone() : null;
+      businessType_ = other.businessType_;
+      historyCardList_ = other.historyCardList_.Clone();
+      operationSeq_ = other.operationSeq_;
+      gameId_ = other.gameId_;
+      gameType_ = other.gameType_;
+      cardList_ = other.cardList_.Clone();
+      serverSeq_ = other.serverSeq_;
+      historyMsgPackList_ = other.historyMsgPackList_.Clone();
+      round_ = other.round_;
+      fieldList_ = other.fieldList_.Clone();
+      controllerId_ = other.controllerId_;
+      phase_ = other.phase_ != null ? other.phase_.Clone() : null;
+      cardIdList_ = other.cardIdList_.Clone();
+      intetionList_ = other.intetionList_.Clone();
+      forbidFinishChallengeList_ = other.forbidFinishChallengeList_.Clone();
+      challengeList_ = other.challengeList_.Clone();
+      curControllerId_ = other.curControllerId_;
+      showInfoList_ = other.showInfoList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGDuel Clone() {
+      return new GCGDuel(this);
+    }
+
+    /// <summary>Field number for the "cost_revise" field.</summary>
+    public const int CostReviseFieldNumber = 10;
+    private global::OldProtos.GCGCostReviseInfo costRevise_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGCostReviseInfo CostRevise {
+      get { return costRevise_; }
+      set {
+        costRevise_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "business_type" field.</summary>
+    public const int BusinessTypeFieldNumber = 14;
+    private global::OldProtos.GCGGameBusinessType businessType_ = global::OldProtos.GCGGameBusinessType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGGameBusinessType BusinessType {
+      get { return businessType_; }
+      set {
+        businessType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "history_card_list" field.</summary>
+    public const int HistoryCardListFieldNumber = 121;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGCard> _repeated_historyCardList_codec
+        = pb::FieldCodec.ForMessage(970, global::OldProtos.GCGCard.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGCard> historyCardList_ = new pbc::RepeatedField<global::OldProtos.GCGCard>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGCard> HistoryCardList {
+      get { return historyCardList_; }
+    }
+
+    /// <summary>Field number for the "operation_seq" field.</summary>
+    public const int OperationSeqFieldNumber = 1210;
+    private uint operationSeq_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OperationSeq {
+      get { return operationSeq_; }
+      set {
+        operationSeq_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "game_id" field.</summary>
+    public const int GameIdFieldNumber = 11;
+    private uint gameId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GameId {
+      get { return gameId_; }
+      set {
+        gameId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "game_type" field.</summary>
+    public const int GameTypeFieldNumber = 2;
+    private uint gameType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GameType {
+      get { return gameType_; }
+      set {
+        gameType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "card_list" field.</summary>
+    public const int CardListFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGCard> _repeated_cardList_codec
+        = pb::FieldCodec.ForMessage(74, global::OldProtos.GCGCard.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGCard> cardList_ = new pbc::RepeatedField<global::OldProtos.GCGCard>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGCard> CardList {
+      get { return cardList_; }
+    }
+
+    /// <summary>Field number for the "server_seq" field.</summary>
+    public const int ServerSeqFieldNumber = 3;
+    private uint serverSeq_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ServerSeq {
+      get { return serverSeq_; }
+      set {
+        serverSeq_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "history_msg_pack_list" field.</summary>
+    public const int HistoryMsgPackListFieldNumber = 796;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGMessagePack> _repeated_historyMsgPackList_codec
+        = pb::FieldCodec.ForMessage(6370, global::OldProtos.GCGMessagePack.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGMessagePack> historyMsgPackList_ = new pbc::RepeatedField<global::OldProtos.GCGMessagePack>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGMessagePack> HistoryMsgPackList {
+      get { return historyMsgPackList_; }
+    }
+
+    /// <summary>Field number for the "round" field.</summary>
+    public const int RoundFieldNumber = 15;
+    private uint round_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Round {
+      get { return round_; }
+      set {
+        round_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "field_list" field.</summary>
+    public const int FieldListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGPlayerField> _repeated_fieldList_codec
+        = pb::FieldCodec.ForMessage(58, global::OldProtos.GCGPlayerField.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGPlayerField> fieldList_ = new pbc::RepeatedField<global::OldProtos.GCGPlayerField>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGPlayerField> FieldList {
+      get { return fieldList_; }
+    }
+
+    /// <summary>Field number for the "controller_id" field.</summary>
+    public const int ControllerIdFieldNumber = 13;
+    private uint controllerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ControllerId {
+      get { return controllerId_; }
+      set {
+        controllerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "phase" field.</summary>
+    public const int PhaseFieldNumber = 8;
+    private global::OldProtos.GCGPhase phase_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GCGPhase Phase {
+      get { return phase_; }
+      set {
+        phase_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "card_id_list" field.</summary>
+    public const int CardIdListFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_cardIdList_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> cardIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CardIdList {
+      get { return cardIdList_; }
+    }
+
+    /// <summary>Field number for the "intetion_list" field.</summary>
+    public const int IntetionListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGPVEIntention> _repeated_intetionList_codec
+        = pb::FieldCodec.ForMessage(10, global::OldProtos.GCGPVEIntention.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGPVEIntention> intetionList_ = new pbc::RepeatedField<global::OldProtos.GCGPVEIntention>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGPVEIntention> IntetionList {
+      get { return intetionList_; }
+    }
+
+    /// <summary>Field number for the "forbid_finish_challenge_list" field.</summary>
+    public const int ForbidFinishChallengeListFieldNumber = 647;
+    private static readonly pb::FieldCodec<uint> _repeated_forbidFinishChallengeList_codec
+        = pb::FieldCodec.ForUInt32(5178);
+    private readonly pbc::RepeatedField<uint> forbidFinishChallengeList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ForbidFinishChallengeList {
+      get { return forbidFinishChallengeList_; }
+    }
+
+    /// <summary>Field number for the "challenge_list" field.</summary>
+    public const int ChallengeListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGDuelChallenge> _repeated_challengeList_codec
+        = pb::FieldCodec.ForMessage(42, global::OldProtos.GCGDuelChallenge.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGDuelChallenge> challengeList_ = new pbc::RepeatedField<global::OldProtos.GCGDuelChallenge>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGDuelChallenge> ChallengeList {
+      get { return challengeList_; }
+    }
+
+    /// <summary>Field number for the "cur_controller_id" field.</summary>
+    public const int CurControllerIdFieldNumber = 12;
+    private uint curControllerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurControllerId {
+      get { return curControllerId_; }
+      set {
+        curControllerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "show_info_list" field.</summary>
+    public const int ShowInfoListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::OldProtos.GCGControllerShowInfo> _repeated_showInfoList_codec
+        = pb::FieldCodec.ForMessage(50, global::OldProtos.GCGControllerShowInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GCGControllerShowInfo> showInfoList_ = new pbc::RepeatedField<global::OldProtos.GCGControllerShowInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GCGControllerShowInfo> ShowInfoList {
+      get { return showInfoList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGDuel);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGDuel other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(CostRevise, other.CostRevise)) return false;
+      if (BusinessType != other.BusinessType) return false;
+      if(!historyCardList_.Equals(other.historyCardList_)) return false;
+      if (OperationSeq != other.OperationSeq) return false;
+      if (GameId != other.GameId) return false;
+      if (GameType != other.GameType) return false;
+      if(!cardList_.Equals(other.cardList_)) return false;
+      if (ServerSeq != other.ServerSeq) return false;
+      if(!historyMsgPackList_.Equals(other.historyMsgPackList_)) return false;
+      if (Round != other.Round) return false;
+      if(!fieldList_.Equals(other.fieldList_)) return false;
+      if (ControllerId != other.ControllerId) return false;
+      if (!object.Equals(Phase, other.Phase)) return false;
+      if(!cardIdList_.Equals(other.cardIdList_)) return false;
+      if(!intetionList_.Equals(other.intetionList_)) return false;
+      if(!forbidFinishChallengeList_.Equals(other.forbidFinishChallengeList_)) return false;
+      if(!challengeList_.Equals(other.challengeList_)) return false;
+      if (CurControllerId != other.CurControllerId) return false;
+      if(!showInfoList_.Equals(other.showInfoList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (costRevise_ != null) hash ^= CostRevise.GetHashCode();
+      if (BusinessType != global::OldProtos.GCGGameBusinessType.None) hash ^= BusinessType.GetHashCode();
+      hash ^= historyCardList_.GetHashCode();
+      if (OperationSeq != 0) hash ^= OperationSeq.GetHashCode();
+      if (GameId != 0) hash ^= GameId.GetHashCode();
+      if (GameType != 0) hash ^= GameType.GetHashCode();
+      hash ^= cardList_.GetHashCode();
+      if (ServerSeq != 0) hash ^= ServerSeq.GetHashCode();
+      hash ^= historyMsgPackList_.GetHashCode();
+      if (Round != 0) hash ^= Round.GetHashCode();
+      hash ^= fieldList_.GetHashCode();
+      if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
+      if (phase_ != null) hash ^= Phase.GetHashCode();
+      hash ^= cardIdList_.GetHashCode();
+      hash ^= intetionList_.GetHashCode();
+      hash ^= forbidFinishChallengeList_.GetHashCode();
+      hash ^= challengeList_.GetHashCode();
+      if (CurControllerId != 0) hash ^= CurControllerId.GetHashCode();
+      hash ^= showInfoList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      intetionList_.WriteTo(output, _repeated_intetionList_codec);
+      if (GameType != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(GameType);
+      }
+      if (ServerSeq != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ServerSeq);
+      }
+      cardIdList_.WriteTo(output, _repeated_cardIdList_codec);
+      challengeList_.WriteTo(output, _repeated_challengeList_codec);
+      showInfoList_.WriteTo(output, _repeated_showInfoList_codec);
+      fieldList_.WriteTo(output, _repeated_fieldList_codec);
+      if (phase_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Phase);
+      }
+      cardList_.WriteTo(output, _repeated_cardList_codec);
+      if (costRevise_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(CostRevise);
+      }
+      if (GameId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GameId);
+      }
+      if (CurControllerId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CurControllerId);
+      }
+      if (ControllerId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ControllerId);
+      }
+      if (BusinessType != global::OldProtos.GCGGameBusinessType.None) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) BusinessType);
+      }
+      if (Round != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Round);
+      }
+      historyCardList_.WriteTo(output, _repeated_historyCardList_codec);
+      forbidFinishChallengeList_.WriteTo(output, _repeated_forbidFinishChallengeList_codec);
+      historyMsgPackList_.WriteTo(output, _repeated_historyMsgPackList_codec);
+      if (OperationSeq != 0) {
+        output.WriteRawTag(208, 75);
+        output.WriteUInt32(OperationSeq);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      intetionList_.WriteTo(ref output, _repeated_intetionList_codec);
+      if (GameType != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(GameType);
+      }
+      if (ServerSeq != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(ServerSeq);
+      }
+      cardIdList_.WriteTo(ref output, _repeated_cardIdList_codec);
+      challengeList_.WriteTo(ref output, _repeated_challengeList_codec);
+      showInfoList_.WriteTo(ref output, _repeated_showInfoList_codec);
+      fieldList_.WriteTo(ref output, _repeated_fieldList_codec);
+      if (phase_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Phase);
+      }
+      cardList_.WriteTo(ref output, _repeated_cardList_codec);
+      if (costRevise_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(CostRevise);
+      }
+      if (GameId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GameId);
+      }
+      if (CurControllerId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(CurControllerId);
+      }
+      if (ControllerId != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(ControllerId);
+      }
+      if (BusinessType != global::OldProtos.GCGGameBusinessType.None) {
+        output.WriteRawTag(112);
+        output.WriteEnum((int) BusinessType);
+      }
+      if (Round != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(Round);
+      }
+      historyCardList_.WriteTo(ref output, _repeated_historyCardList_codec);
+      forbidFinishChallengeList_.WriteTo(ref output, _repeated_forbidFinishChallengeList_codec);
+      historyMsgPackList_.WriteTo(ref output, _repeated_historyMsgPackList_codec);
+      if (OperationSeq != 0) {
+        output.WriteRawTag(208, 75);
+        output.WriteUInt32(OperationSeq);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (costRevise_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CostRevise);
+      }
+      if (BusinessType != global::OldProtos.GCGGameBusinessType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BusinessType);
+      }
+      size += historyCardList_.CalculateSize(_repeated_historyCardList_codec);
+      if (OperationSeq != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(OperationSeq);
+      }
+      if (GameId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameId);
+      }
+      if (GameType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameType);
+      }
+      size += cardList_.CalculateSize(_repeated_cardList_codec);
+      if (ServerSeq != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ServerSeq);
+      }
+      size += historyMsgPackList_.CalculateSize(_repeated_historyMsgPackList_codec);
+      if (Round != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Round);
+      }
+      size += fieldList_.CalculateSize(_repeated_fieldList_codec);
+      if (ControllerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
+      }
+      if (phase_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Phase);
+      }
+      size += cardIdList_.CalculateSize(_repeated_cardIdList_codec);
+      size += intetionList_.CalculateSize(_repeated_intetionList_codec);
+      size += forbidFinishChallengeList_.CalculateSize(_repeated_forbidFinishChallengeList_codec);
+      size += challengeList_.CalculateSize(_repeated_challengeList_codec);
+      if (CurControllerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurControllerId);
+      }
+      size += showInfoList_.CalculateSize(_repeated_showInfoList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGDuel other) {
+      if (other == null) {
+        return;
+      }
+      if (other.costRevise_ != null) {
+        if (costRevise_ == null) {
+          CostRevise = new global::OldProtos.GCGCostReviseInfo();
+        }
+        CostRevise.MergeFrom(other.CostRevise);
+      }
+      if (other.BusinessType != global::OldProtos.GCGGameBusinessType.None) {
+        BusinessType = other.BusinessType;
+      }
+      historyCardList_.Add(other.historyCardList_);
+      if (other.OperationSeq != 0) {
+        OperationSeq = other.OperationSeq;
+      }
+      if (other.GameId != 0) {
+        GameId = other.GameId;
+      }
+      if (other.GameType != 0) {
+        GameType = other.GameType;
+      }
+      cardList_.Add(other.cardList_);
+      if (other.ServerSeq != 0) {
+        ServerSeq = other.ServerSeq;
+      }
+      historyMsgPackList_.Add(other.historyMsgPackList_);
+      if (other.Round != 0) {
+        Round = other.Round;
+      }
+      fieldList_.Add(other.fieldList_);
+      if (other.ControllerId != 0) {
+        ControllerId = other.ControllerId;
+      }
+      if (other.phase_ != null) {
+        if (phase_ == null) {
+          Phase = new global::OldProtos.GCGPhase();
+        }
+        Phase.MergeFrom(other.Phase);
+      }
+      cardIdList_.Add(other.cardIdList_);
+      intetionList_.Add(other.intetionList_);
+      forbidFinishChallengeList_.Add(other.forbidFinishChallengeList_);
+      challengeList_.Add(other.challengeList_);
+      if (other.CurControllerId != 0) {
+        CurControllerId = other.CurControllerId;
+      }
+      showInfoList_.Add(other.showInfoList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            intetionList_.AddEntriesFrom(input, _repeated_intetionList_codec);
+            break;
+          }
+          case 16: {
+            GameType = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            ServerSeq = input.ReadUInt32();
+            break;
+          }
+          case 34:
+          case 32: {
+            cardIdList_.AddEntriesFrom(input, _repeated_cardIdList_codec);
+            break;
+          }
+          case 42: {
+            challengeList_.AddEntriesFrom(input, _repeated_challengeList_codec);
+            break;
+          }
+          case 50: {
+            showInfoList_.AddEntriesFrom(input, _repeated_showInfoList_codec);
+            break;
+          }
+          case 58: {
+            fieldList_.AddEntriesFrom(input, _repeated_fieldList_codec);
+            break;
+          }
+          case 66: {
+            if (phase_ == null) {
+              Phase = new global::OldProtos.GCGPhase();
+            }
+            input.ReadMessage(Phase);
+            break;
+          }
+          case 74: {
+            cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
+            break;
+          }
+          case 82: {
+            if (costRevise_ == null) {
+              CostRevise = new global::OldProtos.GCGCostReviseInfo();
+            }
+            input.ReadMessage(CostRevise);
+            break;
+          }
+          case 88: {
+            GameId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            CurControllerId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            BusinessType = (global::OldProtos.GCGGameBusinessType) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            Round = input.ReadUInt32();
+            break;
+          }
+          case 970: {
+            historyCardList_.AddEntriesFrom(input, _repeated_historyCardList_codec);
+            break;
+          }
+          case 5178:
+          case 5176: {
+            forbidFinishChallengeList_.AddEntriesFrom(input, _repeated_forbidFinishChallengeList_codec);
+            break;
+          }
+          case 6370: {
+            historyMsgPackList_.AddEntriesFrom(input, _repeated_historyMsgPackList_codec);
+            break;
+          }
+          case 9680: {
+            OperationSeq = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            intetionList_.AddEntriesFrom(ref input, _repeated_intetionList_codec);
+            break;
+          }
+          case 16: {
+            GameType = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            ServerSeq = input.ReadUInt32();
+            break;
+          }
+          case 34:
+          case 32: {
+            cardIdList_.AddEntriesFrom(ref input, _repeated_cardIdList_codec);
+            break;
+          }
+          case 42: {
+            challengeList_.AddEntriesFrom(ref input, _repeated_challengeList_codec);
+            break;
+          }
+          case 50: {
+            showInfoList_.AddEntriesFrom(ref input, _repeated_showInfoList_codec);
+            break;
+          }
+          case 58: {
+            fieldList_.AddEntriesFrom(ref input, _repeated_fieldList_codec);
+            break;
+          }
+          case 66: {
+            if (phase_ == null) {
+              Phase = new global::OldProtos.GCGPhase();
+            }
+            input.ReadMessage(Phase);
+            break;
+          }
+          case 74: {
+            cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
+            break;
+          }
+          case 82: {
+            if (costRevise_ == null) {
+              CostRevise = new global::OldProtos.GCGCostReviseInfo();
+            }
+            input.ReadMessage(CostRevise);
+            break;
+          }
+          case 88: {
+            GameId = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            CurControllerId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            ControllerId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            BusinessType = (global::OldProtos.GCGGameBusinessType) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            Round = input.ReadUInt32();
+            break;
+          }
+          case 970: {
+            historyCardList_.AddEntriesFrom(ref input, _repeated_historyCardList_codec);
+            break;
+          }
+          case 5178:
+          case 5176: {
+            forbidFinishChallengeList_.AddEntriesFrom(ref input, _repeated_forbidFinishChallengeList_codec);
+            break;
+          }
+          case 6370: {
+            historyMsgPackList_.AddEntriesFrom(ref input, _repeated_historyMsgPackList_codec);
+            break;
+          }
+          case 9680: {
+            OperationSeq = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GCGDuel : pb::IMessage<GCGDuel>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGDuel> _parser = new pb::MessageParser<GCGDuel>(() => new GCGDuel());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGDuel> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGDuelReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGDuel() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGDuel(GCGDuel other) : this() {
-    costRevise_ = other.costRevise_ != null ? other.costRevise_.Clone() : null;
-    businessType_ = other.businessType_;
-    historyCardList_ = other.historyCardList_.Clone();
-    operationSeq_ = other.operationSeq_;
-    gameId_ = other.gameId_;
-    gameType_ = other.gameType_;
-    cardList_ = other.cardList_.Clone();
-    serverSeq_ = other.serverSeq_;
-    historyMsgPackList_ = other.historyMsgPackList_.Clone();
-    round_ = other.round_;
-    fieldList_ = other.fieldList_.Clone();
-    controllerId_ = other.controllerId_;
-    phase_ = other.phase_ != null ? other.phase_.Clone() : null;
-    cardIdList_ = other.cardIdList_.Clone();
-    intetionList_ = other.intetionList_.Clone();
-    forbidFinishChallengeList_ = other.forbidFinishChallengeList_.Clone();
-    challengeList_ = other.challengeList_.Clone();
-    curControllerId_ = other.curControllerId_;
-    showInfoList_ = other.showInfoList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGDuel Clone() {
-    return new GCGDuel(this);
-  }
-
-  /// <summary>Field number for the "cost_revise" field.</summary>
-  public const int CostReviseFieldNumber = 10;
-  private global::GCGCostReviseInfo costRevise_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGCostReviseInfo CostRevise {
-    get { return costRevise_; }
-    set {
-      costRevise_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "business_type" field.</summary>
-  public const int BusinessTypeFieldNumber = 14;
-  private global::GCGGameBusinessType businessType_ = global::GCGGameBusinessType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGGameBusinessType BusinessType {
-    get { return businessType_; }
-    set {
-      businessType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "history_card_list" field.</summary>
-  public const int HistoryCardListFieldNumber = 121;
-  private static readonly pb::FieldCodec<global::GCGCard> _repeated_historyCardList_codec
-      = pb::FieldCodec.ForMessage(970, global::GCGCard.Parser);
-  private readonly pbc::RepeatedField<global::GCGCard> historyCardList_ = new pbc::RepeatedField<global::GCGCard>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGCard> HistoryCardList {
-    get { return historyCardList_; }
-  }
-
-  /// <summary>Field number for the "operation_seq" field.</summary>
-  public const int OperationSeqFieldNumber = 1210;
-  private uint operationSeq_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint OperationSeq {
-    get { return operationSeq_; }
-    set {
-      operationSeq_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "game_id" field.</summary>
-  public const int GameIdFieldNumber = 11;
-  private uint gameId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GameId {
-    get { return gameId_; }
-    set {
-      gameId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "game_type" field.</summary>
-  public const int GameTypeFieldNumber = 2;
-  private uint gameType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GameType {
-    get { return gameType_; }
-    set {
-      gameType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "card_list" field.</summary>
-  public const int CardListFieldNumber = 9;
-  private static readonly pb::FieldCodec<global::GCGCard> _repeated_cardList_codec
-      = pb::FieldCodec.ForMessage(74, global::GCGCard.Parser);
-  private readonly pbc::RepeatedField<global::GCGCard> cardList_ = new pbc::RepeatedField<global::GCGCard>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGCard> CardList {
-    get { return cardList_; }
-  }
-
-  /// <summary>Field number for the "server_seq" field.</summary>
-  public const int ServerSeqFieldNumber = 3;
-  private uint serverSeq_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ServerSeq {
-    get { return serverSeq_; }
-    set {
-      serverSeq_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "history_msg_pack_list" field.</summary>
-  public const int HistoryMsgPackListFieldNumber = 796;
-  private static readonly pb::FieldCodec<global::GCGMessagePack> _repeated_historyMsgPackList_codec
-      = pb::FieldCodec.ForMessage(6370, global::GCGMessagePack.Parser);
-  private readonly pbc::RepeatedField<global::GCGMessagePack> historyMsgPackList_ = new pbc::RepeatedField<global::GCGMessagePack>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGMessagePack> HistoryMsgPackList {
-    get { return historyMsgPackList_; }
-  }
-
-  /// <summary>Field number for the "round" field.</summary>
-  public const int RoundFieldNumber = 15;
-  private uint round_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Round {
-    get { return round_; }
-    set {
-      round_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "field_list" field.</summary>
-  public const int FieldListFieldNumber = 7;
-  private static readonly pb::FieldCodec<global::GCGPlayerField> _repeated_fieldList_codec
-      = pb::FieldCodec.ForMessage(58, global::GCGPlayerField.Parser);
-  private readonly pbc::RepeatedField<global::GCGPlayerField> fieldList_ = new pbc::RepeatedField<global::GCGPlayerField>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGPlayerField> FieldList {
-    get { return fieldList_; }
-  }
-
-  /// <summary>Field number for the "controller_id" field.</summary>
-  public const int ControllerIdFieldNumber = 13;
-  private uint controllerId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ControllerId {
-    get { return controllerId_; }
-    set {
-      controllerId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "phase" field.</summary>
-  public const int PhaseFieldNumber = 8;
-  private global::GCGPhase phase_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGPhase Phase {
-    get { return phase_; }
-    set {
-      phase_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "card_id_list" field.</summary>
-  public const int CardIdListFieldNumber = 4;
-  private static readonly pb::FieldCodec<uint> _repeated_cardIdList_codec
-      = pb::FieldCodec.ForUInt32(34);
-  private readonly pbc::RepeatedField<uint> cardIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> CardIdList {
-    get { return cardIdList_; }
-  }
-
-  /// <summary>Field number for the "intetion_list" field.</summary>
-  public const int IntetionListFieldNumber = 1;
-  private static readonly pb::FieldCodec<global::GCGPVEIntention> _repeated_intetionList_codec
-      = pb::FieldCodec.ForMessage(10, global::GCGPVEIntention.Parser);
-  private readonly pbc::RepeatedField<global::GCGPVEIntention> intetionList_ = new pbc::RepeatedField<global::GCGPVEIntention>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGPVEIntention> IntetionList {
-    get { return intetionList_; }
-  }
-
-  /// <summary>Field number for the "forbid_finish_challenge_list" field.</summary>
-  public const int ForbidFinishChallengeListFieldNumber = 647;
-  private static readonly pb::FieldCodec<uint> _repeated_forbidFinishChallengeList_codec
-      = pb::FieldCodec.ForUInt32(5178);
-  private readonly pbc::RepeatedField<uint> forbidFinishChallengeList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> ForbidFinishChallengeList {
-    get { return forbidFinishChallengeList_; }
-  }
-
-  /// <summary>Field number for the "challenge_list" field.</summary>
-  public const int ChallengeListFieldNumber = 5;
-  private static readonly pb::FieldCodec<global::GCGDuelChallenge> _repeated_challengeList_codec
-      = pb::FieldCodec.ForMessage(42, global::GCGDuelChallenge.Parser);
-  private readonly pbc::RepeatedField<global::GCGDuelChallenge> challengeList_ = new pbc::RepeatedField<global::GCGDuelChallenge>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGDuelChallenge> ChallengeList {
-    get { return challengeList_; }
-  }
-
-  /// <summary>Field number for the "cur_controller_id" field.</summary>
-  public const int CurControllerIdFieldNumber = 12;
-  private uint curControllerId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurControllerId {
-    get { return curControllerId_; }
-    set {
-      curControllerId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "show_info_list" field.</summary>
-  public const int ShowInfoListFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::GCGControllerShowInfo> _repeated_showInfoList_codec
-      = pb::FieldCodec.ForMessage(50, global::GCGControllerShowInfo.Parser);
-  private readonly pbc::RepeatedField<global::GCGControllerShowInfo> showInfoList_ = new pbc::RepeatedField<global::GCGControllerShowInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GCGControllerShowInfo> ShowInfoList {
-    get { return showInfoList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGDuel);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGDuel other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(CostRevise, other.CostRevise)) return false;
-    if (BusinessType != other.BusinessType) return false;
-    if(!historyCardList_.Equals(other.historyCardList_)) return false;
-    if (OperationSeq != other.OperationSeq) return false;
-    if (GameId != other.GameId) return false;
-    if (GameType != other.GameType) return false;
-    if(!cardList_.Equals(other.cardList_)) return false;
-    if (ServerSeq != other.ServerSeq) return false;
-    if(!historyMsgPackList_.Equals(other.historyMsgPackList_)) return false;
-    if (Round != other.Round) return false;
-    if(!fieldList_.Equals(other.fieldList_)) return false;
-    if (ControllerId != other.ControllerId) return false;
-    if (!object.Equals(Phase, other.Phase)) return false;
-    if(!cardIdList_.Equals(other.cardIdList_)) return false;
-    if(!intetionList_.Equals(other.intetionList_)) return false;
-    if(!forbidFinishChallengeList_.Equals(other.forbidFinishChallengeList_)) return false;
-    if(!challengeList_.Equals(other.challengeList_)) return false;
-    if (CurControllerId != other.CurControllerId) return false;
-    if(!showInfoList_.Equals(other.showInfoList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (costRevise_ != null) hash ^= CostRevise.GetHashCode();
-    if (BusinessType != global::GCGGameBusinessType.None) hash ^= BusinessType.GetHashCode();
-    hash ^= historyCardList_.GetHashCode();
-    if (OperationSeq != 0) hash ^= OperationSeq.GetHashCode();
-    if (GameId != 0) hash ^= GameId.GetHashCode();
-    if (GameType != 0) hash ^= GameType.GetHashCode();
-    hash ^= cardList_.GetHashCode();
-    if (ServerSeq != 0) hash ^= ServerSeq.GetHashCode();
-    hash ^= historyMsgPackList_.GetHashCode();
-    if (Round != 0) hash ^= Round.GetHashCode();
-    hash ^= fieldList_.GetHashCode();
-    if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
-    if (phase_ != null) hash ^= Phase.GetHashCode();
-    hash ^= cardIdList_.GetHashCode();
-    hash ^= intetionList_.GetHashCode();
-    hash ^= forbidFinishChallengeList_.GetHashCode();
-    hash ^= challengeList_.GetHashCode();
-    if (CurControllerId != 0) hash ^= CurControllerId.GetHashCode();
-    hash ^= showInfoList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    intetionList_.WriteTo(output, _repeated_intetionList_codec);
-    if (GameType != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(GameType);
-    }
-    if (ServerSeq != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ServerSeq);
-    }
-    cardIdList_.WriteTo(output, _repeated_cardIdList_codec);
-    challengeList_.WriteTo(output, _repeated_challengeList_codec);
-    showInfoList_.WriteTo(output, _repeated_showInfoList_codec);
-    fieldList_.WriteTo(output, _repeated_fieldList_codec);
-    if (phase_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(Phase);
-    }
-    cardList_.WriteTo(output, _repeated_cardList_codec);
-    if (costRevise_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(CostRevise);
-    }
-    if (GameId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(GameId);
-    }
-    if (CurControllerId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(CurControllerId);
-    }
-    if (ControllerId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(ControllerId);
-    }
-    if (BusinessType != global::GCGGameBusinessType.None) {
-      output.WriteRawTag(112);
-      output.WriteEnum((int) BusinessType);
-    }
-    if (Round != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Round);
-    }
-    historyCardList_.WriteTo(output, _repeated_historyCardList_codec);
-    forbidFinishChallengeList_.WriteTo(output, _repeated_forbidFinishChallengeList_codec);
-    historyMsgPackList_.WriteTo(output, _repeated_historyMsgPackList_codec);
-    if (OperationSeq != 0) {
-      output.WriteRawTag(208, 75);
-      output.WriteUInt32(OperationSeq);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    intetionList_.WriteTo(ref output, _repeated_intetionList_codec);
-    if (GameType != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(GameType);
-    }
-    if (ServerSeq != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(ServerSeq);
-    }
-    cardIdList_.WriteTo(ref output, _repeated_cardIdList_codec);
-    challengeList_.WriteTo(ref output, _repeated_challengeList_codec);
-    showInfoList_.WriteTo(ref output, _repeated_showInfoList_codec);
-    fieldList_.WriteTo(ref output, _repeated_fieldList_codec);
-    if (phase_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(Phase);
-    }
-    cardList_.WriteTo(ref output, _repeated_cardList_codec);
-    if (costRevise_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(CostRevise);
-    }
-    if (GameId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(GameId);
-    }
-    if (CurControllerId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(CurControllerId);
-    }
-    if (ControllerId != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(ControllerId);
-    }
-    if (BusinessType != global::GCGGameBusinessType.None) {
-      output.WriteRawTag(112);
-      output.WriteEnum((int) BusinessType);
-    }
-    if (Round != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(Round);
-    }
-    historyCardList_.WriteTo(ref output, _repeated_historyCardList_codec);
-    forbidFinishChallengeList_.WriteTo(ref output, _repeated_forbidFinishChallengeList_codec);
-    historyMsgPackList_.WriteTo(ref output, _repeated_historyMsgPackList_codec);
-    if (OperationSeq != 0) {
-      output.WriteRawTag(208, 75);
-      output.WriteUInt32(OperationSeq);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (costRevise_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(CostRevise);
-    }
-    if (BusinessType != global::GCGGameBusinessType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BusinessType);
-    }
-    size += historyCardList_.CalculateSize(_repeated_historyCardList_codec);
-    if (OperationSeq != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(OperationSeq);
-    }
-    if (GameId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameId);
-    }
-    if (GameType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameType);
-    }
-    size += cardList_.CalculateSize(_repeated_cardList_codec);
-    if (ServerSeq != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ServerSeq);
-    }
-    size += historyMsgPackList_.CalculateSize(_repeated_historyMsgPackList_codec);
-    if (Round != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Round);
-    }
-    size += fieldList_.CalculateSize(_repeated_fieldList_codec);
-    if (ControllerId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ControllerId);
-    }
-    if (phase_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Phase);
-    }
-    size += cardIdList_.CalculateSize(_repeated_cardIdList_codec);
-    size += intetionList_.CalculateSize(_repeated_intetionList_codec);
-    size += forbidFinishChallengeList_.CalculateSize(_repeated_forbidFinishChallengeList_codec);
-    size += challengeList_.CalculateSize(_repeated_challengeList_codec);
-    if (CurControllerId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurControllerId);
-    }
-    size += showInfoList_.CalculateSize(_repeated_showInfoList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGDuel other) {
-    if (other == null) {
-      return;
-    }
-    if (other.costRevise_ != null) {
-      if (costRevise_ == null) {
-        CostRevise = new global::GCGCostReviseInfo();
-      }
-      CostRevise.MergeFrom(other.CostRevise);
-    }
-    if (other.BusinessType != global::GCGGameBusinessType.None) {
-      BusinessType = other.BusinessType;
-    }
-    historyCardList_.Add(other.historyCardList_);
-    if (other.OperationSeq != 0) {
-      OperationSeq = other.OperationSeq;
-    }
-    if (other.GameId != 0) {
-      GameId = other.GameId;
-    }
-    if (other.GameType != 0) {
-      GameType = other.GameType;
-    }
-    cardList_.Add(other.cardList_);
-    if (other.ServerSeq != 0) {
-      ServerSeq = other.ServerSeq;
-    }
-    historyMsgPackList_.Add(other.historyMsgPackList_);
-    if (other.Round != 0) {
-      Round = other.Round;
-    }
-    fieldList_.Add(other.fieldList_);
-    if (other.ControllerId != 0) {
-      ControllerId = other.ControllerId;
-    }
-    if (other.phase_ != null) {
-      if (phase_ == null) {
-        Phase = new global::GCGPhase();
-      }
-      Phase.MergeFrom(other.Phase);
-    }
-    cardIdList_.Add(other.cardIdList_);
-    intetionList_.Add(other.intetionList_);
-    forbidFinishChallengeList_.Add(other.forbidFinishChallengeList_);
-    challengeList_.Add(other.challengeList_);
-    if (other.CurControllerId != 0) {
-      CurControllerId = other.CurControllerId;
-    }
-    showInfoList_.Add(other.showInfoList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          intetionList_.AddEntriesFrom(input, _repeated_intetionList_codec);
-          break;
-        }
-        case 16: {
-          GameType = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          ServerSeq = input.ReadUInt32();
-          break;
-        }
-        case 34:
-        case 32: {
-          cardIdList_.AddEntriesFrom(input, _repeated_cardIdList_codec);
-          break;
-        }
-        case 42: {
-          challengeList_.AddEntriesFrom(input, _repeated_challengeList_codec);
-          break;
-        }
-        case 50: {
-          showInfoList_.AddEntriesFrom(input, _repeated_showInfoList_codec);
-          break;
-        }
-        case 58: {
-          fieldList_.AddEntriesFrom(input, _repeated_fieldList_codec);
-          break;
-        }
-        case 66: {
-          if (phase_ == null) {
-            Phase = new global::GCGPhase();
-          }
-          input.ReadMessage(Phase);
-          break;
-        }
-        case 74: {
-          cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
-          break;
-        }
-        case 82: {
-          if (costRevise_ == null) {
-            CostRevise = new global::GCGCostReviseInfo();
-          }
-          input.ReadMessage(CostRevise);
-          break;
-        }
-        case 88: {
-          GameId = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          CurControllerId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          ControllerId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          BusinessType = (global::GCGGameBusinessType) input.ReadEnum();
-          break;
-        }
-        case 120: {
-          Round = input.ReadUInt32();
-          break;
-        }
-        case 970: {
-          historyCardList_.AddEntriesFrom(input, _repeated_historyCardList_codec);
-          break;
-        }
-        case 5178:
-        case 5176: {
-          forbidFinishChallengeList_.AddEntriesFrom(input, _repeated_forbidFinishChallengeList_codec);
-          break;
-        }
-        case 6370: {
-          historyMsgPackList_.AddEntriesFrom(input, _repeated_historyMsgPackList_codec);
-          break;
-        }
-        case 9680: {
-          OperationSeq = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          intetionList_.AddEntriesFrom(ref input, _repeated_intetionList_codec);
-          break;
-        }
-        case 16: {
-          GameType = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          ServerSeq = input.ReadUInt32();
-          break;
-        }
-        case 34:
-        case 32: {
-          cardIdList_.AddEntriesFrom(ref input, _repeated_cardIdList_codec);
-          break;
-        }
-        case 42: {
-          challengeList_.AddEntriesFrom(ref input, _repeated_challengeList_codec);
-          break;
-        }
-        case 50: {
-          showInfoList_.AddEntriesFrom(ref input, _repeated_showInfoList_codec);
-          break;
-        }
-        case 58: {
-          fieldList_.AddEntriesFrom(ref input, _repeated_fieldList_codec);
-          break;
-        }
-        case 66: {
-          if (phase_ == null) {
-            Phase = new global::GCGPhase();
-          }
-          input.ReadMessage(Phase);
-          break;
-        }
-        case 74: {
-          cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
-          break;
-        }
-        case 82: {
-          if (costRevise_ == null) {
-            CostRevise = new global::GCGCostReviseInfo();
-          }
-          input.ReadMessage(CostRevise);
-          break;
-        }
-        case 88: {
-          GameId = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          CurControllerId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          ControllerId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          BusinessType = (global::GCGGameBusinessType) input.ReadEnum();
-          break;
-        }
-        case 120: {
-          Round = input.ReadUInt32();
-          break;
-        }
-        case 970: {
-          historyCardList_.AddEntriesFrom(ref input, _repeated_historyCardList_codec);
-          break;
-        }
-        case 5178:
-        case 5176: {
-          forbidFinishChallengeList_.AddEntriesFrom(ref input, _repeated_forbidFinishChallengeList_codec);
-          break;
-        }
-        case 6370: {
-          historyMsgPackList_.AddEntriesFrom(ref input, _repeated_historyMsgPackList_codec);
-          break;
-        }
-        case 9680: {
-          OperationSeq = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

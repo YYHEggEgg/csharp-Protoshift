@@ -23,7 +23,7 @@ import "GCGSkillPreviewHpInfo.proto";
 import "GCGSkillPreviewOnstageChangeInfo.proto";
 import "GCGSkillPreviewTokenChangeInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGSkillPreviewInfo {
   repeated GCGSkillPreviewOnstageChangeInfo change_onstage_character_list = 6;

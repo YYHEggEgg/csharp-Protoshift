@@ -9,43 +9,45 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from RecordUsage.proto</summary>
-public static partial class RecordUsageReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for RecordUsage.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from RecordUsage.proto</summary>
+  public static partial class RecordUsageReflection {
 
-  static RecordUsageReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChFSZWNvcmRVc2FnZS5wcm90byrbAQoLUmVjb3JkVXNhZ2USJgoiUkVDT1JE",
-          "X1VTQUdFX1VHQ19SRUNPUkRfVVNBR0VfTk9ORRAAEigKJFJFQ09SRF9VU0FH",
-          "RV9VR0NfUkVDT1JEX1VTQUdFX0lNUE9SVBABEiYKIlJFQ09SRF9VU0FHRV9V",
-          "R0NfUkVDT1JEX1VTQUdFX1BMQVkQAhInCiNSRUNPUkRfVVNBR0VfVUdDX1JF",
-          "Q09SRF9VU0FHRV9UUklBTBADEikKJVJFQ09SRF9VU0FHRV9VR0NfUkVDT1JE",
-          "X1VTQUdFX0NPTVBBUkUQBEIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHBy",
-          "b3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::RecordUsage), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for RecordUsage.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static RecordUsageReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChFSZWNvcmRVc2FnZS5wcm90byrbAQoLUmVjb3JkVXNhZ2USJgoiUkVDT1JE",
+            "X1VTQUdFX1VHQ19SRUNPUkRfVVNBR0VfTk9ORRAAEigKJFJFQ09SRF9VU0FH",
+            "RV9VR0NfUkVDT1JEX1VTQUdFX0lNUE9SVBABEiYKIlJFQ09SRF9VU0FHRV9V",
+            "R0NfUkVDT1JEX1VTQUdFX1BMQVkQAhInCiNSRUNPUkRfVVNBR0VfVUdDX1JF",
+            "Q09SRF9VU0FHRV9UUklBTBADEikKJVJFQ09SRF9VU0FHRV9VR0NfUkVDT1JE",
+            "X1VTQUdFX0NPTVBBUkUQBEIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.RecordUsage), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum RecordUsage {
+    [pbr::OriginalName("RECORD_USAGE_UGC_RECORD_USAGE_NONE")] UgcRecordUsageNone = 0,
+    [pbr::OriginalName("RECORD_USAGE_UGC_RECORD_USAGE_IMPORT")] UgcRecordUsageImport = 1,
+    [pbr::OriginalName("RECORD_USAGE_UGC_RECORD_USAGE_PLAY")] UgcRecordUsagePlay = 2,
+    [pbr::OriginalName("RECORD_USAGE_UGC_RECORD_USAGE_TRIAL")] UgcRecordUsageTrial = 3,
+    [pbr::OriginalName("RECORD_USAGE_UGC_RECORD_USAGE_COMPARE")] UgcRecordUsageCompare = 4,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum RecordUsage {
-  [pbr::OriginalName("RECORD_USAGE_UGC_RECORD_USAGE_NONE")] UgcRecordUsageNone = 0,
-  [pbr::OriginalName("RECORD_USAGE_UGC_RECORD_USAGE_IMPORT")] UgcRecordUsageImport = 1,
-  [pbr::OriginalName("RECORD_USAGE_UGC_RECORD_USAGE_PLAY")] UgcRecordUsagePlay = 2,
-  [pbr::OriginalName("RECORD_USAGE_UGC_RECORD_USAGE_TRIAL")] UgcRecordUsageTrial = 3,
-  [pbr::OriginalName("RECORD_USAGE_UGC_RECORD_USAGE_COMPARE")] UgcRecordUsageCompare = 4,
-}
-
-#endregion
-
 
 #endregion Designer generated code

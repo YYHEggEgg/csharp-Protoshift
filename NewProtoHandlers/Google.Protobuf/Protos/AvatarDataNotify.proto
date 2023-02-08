@@ -20,7 +20,7 @@ import "AvatarInfo.proto";
 import "AvatarRenameInfo.proto";
 import "AvatarTeam.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message AvatarDataNotify {
   // enum CmdId {

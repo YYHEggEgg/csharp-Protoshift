@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message CataLogGlobalWatcherFinishedData {
   repeated uint32 finished_global_watcher_list = 8;

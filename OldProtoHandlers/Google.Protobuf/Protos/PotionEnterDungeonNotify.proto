@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "PotionDungeonAvatar.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 8531
 // EnetChannelId: 0

@@ -9,307 +9,310 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from RogueDiaryStageInfo.proto</summary>
-public static partial class RogueDiaryStageInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for RogueDiaryStageInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from RogueDiaryStageInfo.proto</summary>
+  public static partial class RogueDiaryStageInfoReflection {
 
-  static RogueDiaryStageInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChlSb2d1ZURpYXJ5U3RhZ2VJbmZvLnByb3RvGh1Sb2d1ZURpYXJ5RHVuZ2Vv",
-          "blJlY29yZC5wcm90byJrChNSb2d1ZURpYXJ5U3RhZ2VJbmZvEhAKCHN0YWdl",
-          "X2lkGAEgASgNEi0KC2Jlc3RfcmVjb3JkGAwgASgLMhguUm9ndWVEaWFyeUR1",
-          "bmdlb25SZWNvcmQSEwoLaXNfaGF2ZV90cnkYCiABKAhCHgocZW11LmdyYXNz",
-          "Y3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::RogueDiaryDungeonRecordReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::RogueDiaryStageInfo), global::RogueDiaryStageInfo.Parser, new[]{ "StageId", "BestRecord", "IsHaveTry" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for RogueDiaryStageInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static RogueDiaryStageInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChlSb2d1ZURpYXJ5U3RhZ2VJbmZvLnByb3RvGh1Sb2d1ZURpYXJ5RHVuZ2Vv",
+            "blJlY29yZC5wcm90byJrChNSb2d1ZURpYXJ5U3RhZ2VJbmZvEhAKCHN0YWdl",
+            "X2lkGAEgASgNEi0KC2Jlc3RfcmVjb3JkGAwgASgLMhguUm9ndWVEaWFyeUR1",
+            "bmdlb25SZWNvcmQSEwoLaXNfaGF2ZV90cnkYCiABKAhCDKoCCU9sZFByb3Rv",
+            "c2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.RogueDiaryDungeonRecordReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.RogueDiaryStageInfo), global::OldProtos.RogueDiaryStageInfo.Parser, new[]{ "StageId", "BestRecord", "IsHaveTry" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class RogueDiaryStageInfo : pb::IMessage<RogueDiaryStageInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RogueDiaryStageInfo> _parser = new pb::MessageParser<RogueDiaryStageInfo>(() => new RogueDiaryStageInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RogueDiaryStageInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.RogueDiaryStageInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RogueDiaryStageInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RogueDiaryStageInfo(RogueDiaryStageInfo other) : this() {
+      stageId_ = other.stageId_;
+      bestRecord_ = other.bestRecord_ != null ? other.bestRecord_.Clone() : null;
+      isHaveTry_ = other.isHaveTry_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RogueDiaryStageInfo Clone() {
+      return new RogueDiaryStageInfo(this);
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 1;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "best_record" field.</summary>
+    public const int BestRecordFieldNumber = 12;
+    private global::OldProtos.RogueDiaryDungeonRecord bestRecord_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.RogueDiaryDungeonRecord BestRecord {
+      get { return bestRecord_; }
+      set {
+        bestRecord_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_have_try" field.</summary>
+    public const int IsHaveTryFieldNumber = 10;
+    private bool isHaveTry_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsHaveTry {
+      get { return isHaveTry_; }
+      set {
+        isHaveTry_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RogueDiaryStageInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RogueDiaryStageInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (StageId != other.StageId) return false;
+      if (!object.Equals(BestRecord, other.BestRecord)) return false;
+      if (IsHaveTry != other.IsHaveTry) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      if (bestRecord_ != null) hash ^= BestRecord.GetHashCode();
+      if (IsHaveTry != false) hash ^= IsHaveTry.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (StageId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(StageId);
+      }
+      if (IsHaveTry != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsHaveTry);
+      }
+      if (bestRecord_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(BestRecord);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (StageId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(StageId);
+      }
+      if (IsHaveTry != false) {
+        output.WriteRawTag(80);
+        output.WriteBool(IsHaveTry);
+      }
+      if (bestRecord_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(BestRecord);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      if (bestRecord_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BestRecord);
+      }
+      if (IsHaveTry != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RogueDiaryStageInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      if (other.bestRecord_ != null) {
+        if (bestRecord_ == null) {
+          BestRecord = new global::OldProtos.RogueDiaryDungeonRecord();
+        }
+        BestRecord.MergeFrom(other.BestRecord);
+      }
+      if (other.IsHaveTry != false) {
+        IsHaveTry = other.IsHaveTry;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            IsHaveTry = input.ReadBool();
+            break;
+          }
+          case 98: {
+            if (bestRecord_ == null) {
+              BestRecord = new global::OldProtos.RogueDiaryDungeonRecord();
+            }
+            input.ReadMessage(BestRecord);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            IsHaveTry = input.ReadBool();
+            break;
+          }
+          case 98: {
+            if (bestRecord_ == null) {
+              BestRecord = new global::OldProtos.RogueDiaryDungeonRecord();
+            }
+            input.ReadMessage(BestRecord);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class RogueDiaryStageInfo : pb::IMessage<RogueDiaryStageInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<RogueDiaryStageInfo> _parser = new pb::MessageParser<RogueDiaryStageInfo>(() => new RogueDiaryStageInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<RogueDiaryStageInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::RogueDiaryStageInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RogueDiaryStageInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RogueDiaryStageInfo(RogueDiaryStageInfo other) : this() {
-    stageId_ = other.stageId_;
-    bestRecord_ = other.bestRecord_ != null ? other.bestRecord_.Clone() : null;
-    isHaveTry_ = other.isHaveTry_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RogueDiaryStageInfo Clone() {
-    return new RogueDiaryStageInfo(this);
-  }
-
-  /// <summary>Field number for the "stage_id" field.</summary>
-  public const int StageIdFieldNumber = 1;
-  private uint stageId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StageId {
-    get { return stageId_; }
-    set {
-      stageId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "best_record" field.</summary>
-  public const int BestRecordFieldNumber = 12;
-  private global::RogueDiaryDungeonRecord bestRecord_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::RogueDiaryDungeonRecord BestRecord {
-    get { return bestRecord_; }
-    set {
-      bestRecord_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_have_try" field.</summary>
-  public const int IsHaveTryFieldNumber = 10;
-  private bool isHaveTry_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsHaveTry {
-    get { return isHaveTry_; }
-    set {
-      isHaveTry_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as RogueDiaryStageInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(RogueDiaryStageInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (StageId != other.StageId) return false;
-    if (!object.Equals(BestRecord, other.BestRecord)) return false;
-    if (IsHaveTry != other.IsHaveTry) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (StageId != 0) hash ^= StageId.GetHashCode();
-    if (bestRecord_ != null) hash ^= BestRecord.GetHashCode();
-    if (IsHaveTry != false) hash ^= IsHaveTry.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (StageId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(StageId);
-    }
-    if (IsHaveTry != false) {
-      output.WriteRawTag(80);
-      output.WriteBool(IsHaveTry);
-    }
-    if (bestRecord_ != null) {
-      output.WriteRawTag(98);
-      output.WriteMessage(BestRecord);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (StageId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(StageId);
-    }
-    if (IsHaveTry != false) {
-      output.WriteRawTag(80);
-      output.WriteBool(IsHaveTry);
-    }
-    if (bestRecord_ != null) {
-      output.WriteRawTag(98);
-      output.WriteMessage(BestRecord);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (StageId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-    }
-    if (bestRecord_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(BestRecord);
-    }
-    if (IsHaveTry != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(RogueDiaryStageInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.StageId != 0) {
-      StageId = other.StageId;
-    }
-    if (other.bestRecord_ != null) {
-      if (bestRecord_ == null) {
-        BestRecord = new global::RogueDiaryDungeonRecord();
-      }
-      BestRecord.MergeFrom(other.BestRecord);
-    }
-    if (other.IsHaveTry != false) {
-      IsHaveTry = other.IsHaveTry;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          IsHaveTry = input.ReadBool();
-          break;
-        }
-        case 98: {
-          if (bestRecord_ == null) {
-            BestRecord = new global::RogueDiaryDungeonRecord();
-          }
-          input.ReadMessage(BestRecord);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          IsHaveTry = input.ReadBool();
-          break;
-        }
-        case 98: {
-          if (bestRecord_ == null) {
-            BestRecord = new global::RogueDiaryDungeonRecord();
-          }
-          input.ReadMessage(BestRecord);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

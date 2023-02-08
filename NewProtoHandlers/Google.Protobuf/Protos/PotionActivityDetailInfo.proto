@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "PotionStageData.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message PotionActivityDetailInfo {
   repeated PotionStageData stage_list = 4;

@@ -9,1133 +9,1136 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GachaInfo.proto</summary>
-public static partial class GachaInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GachaInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GachaInfo.proto</summary>
+  public static partial class GachaInfoReflection {
 
-  static GachaInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Cg9HYWNoYUluZm8ucHJvdG8aEUdhY2hhVXBJbmZvLnByb3RvIskFCglHYWNo",
-          "YUluZm8SGAoQdGVuX2Nvc3RfaXRlbV9pZBgCIAEoDRIQCghlbmRfdGltZRgO",
-          "IAEoDRIeChVkaXNwbGF5X3VwNF9pdGVtX2xpc3QY0w4gAygNEicKHmN1cl9z",
-          "Y2hlZHVsZV9kYWlseV9nYWNoYV90aW1lcxjVAyABKA0SKQoSZ2FjaGFfdXBf",
-          "aW5mb19saXN0GNEJIAMoCzIMLkdhY2hhVXBJbmZvEhYKDmdhY2hhX3Byb2Jf",
-          "dXJsGAggASgJEhkKEWdhY2hhX3ByZWZhYl9wYXRoGA8gASgJEhUKDHdpc2hf",
-          "aXRlbV9pZBjlDCABKA0SEgoKYmVnaW5fdGltZRgBIAEoDRIaChF3aXNoX21h",
-          "eF9wcm9ncmVzcxjGCSABKA0SEwoLc2NoZWR1bGVfaWQYCiABKA0SHwoWZ2Fj",
-          "aGFfcHJvYl91cmxfb3ZlcnNlYRjJCyABKAkSEgoKZ2FjaGFfdHlwZRgNIAEo",
-          "DRIYChBsZWZ0X2dhY2hhX3RpbWVzGAUgASgNEh4KFWRpc3BsYXlfdXA1X2l0",
-          "ZW1fbGlzdBjWDyADKA0SGQoRZ2FjaGFfdGltZXNfbGltaXQYCyABKA0SFQoN",
-          "Y29zdF9pdGVtX251bRgDIAEoDRIUCgtpc19uZXdfd2lzaBjdBSABKAgSFAoM",
-          "Y29zdF9pdGVtX2lkGAkgASgNEhkKEXRlbl9jb3N0X2l0ZW1fbnVtGAYgASgN",
-          "EiEKGWdhY2hhX3ByZXZpZXdfcHJlZmFiX3BhdGgYBCABKAkSFgoNd2lzaF9w",
-          "cm9ncmVzcxibDiABKA0SFgoNdGl0bGVfdGV4dG1hcBjgBSABKAkSIQoYZ2Fj",
-          "aGFfcmVjb3JkX3VybF9vdmVyc2VhGL4OIAEoCRIVCg1nYWNoYV9zb3J0X2lk",
-          "GAcgASgNEhgKEGdhY2hhX3JlY29yZF91cmwYDCABKAlCHgocZW11LmdyYXNz",
-          "Y3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GachaUpInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GachaInfo), global::GachaInfo.Parser, new[]{ "TenCostItemId", "EndTime", "DisplayUp4ItemList", "CurScheduleDailyGachaTimes", "GachaUpInfoList", "GachaProbUrl", "GachaPrefabPath", "WishItemId", "BeginTime", "WishMaxProgress", "ScheduleId", "GachaProbUrlOversea", "GachaType", "LeftGachaTimes", "DisplayUp5ItemList", "GachaTimesLimit", "CostItemNum", "IsNewWish", "CostItemId", "TenCostItemNum", "GachaPreviewPrefabPath", "WishProgress", "TitleTextmap", "GachaRecordUrlOversea", "GachaSortId", "GachaRecordUrl" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GachaInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GachaInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Cg9HYWNoYUluZm8ucHJvdG8aEUdhY2hhVXBJbmZvLnByb3RvIskFCglHYWNo",
+            "YUluZm8SGAoQdGVuX2Nvc3RfaXRlbV9pZBgCIAEoDRIQCghlbmRfdGltZRgO",
+            "IAEoDRIeChVkaXNwbGF5X3VwNF9pdGVtX2xpc3QY0w4gAygNEicKHmN1cl9z",
+            "Y2hlZHVsZV9kYWlseV9nYWNoYV90aW1lcxjVAyABKA0SKQoSZ2FjaGFfdXBf",
+            "aW5mb19saXN0GNEJIAMoCzIMLkdhY2hhVXBJbmZvEhYKDmdhY2hhX3Byb2Jf",
+            "dXJsGAggASgJEhkKEWdhY2hhX3ByZWZhYl9wYXRoGA8gASgJEhUKDHdpc2hf",
+            "aXRlbV9pZBjlDCABKA0SEgoKYmVnaW5fdGltZRgBIAEoDRIaChF3aXNoX21h",
+            "eF9wcm9ncmVzcxjGCSABKA0SEwoLc2NoZWR1bGVfaWQYCiABKA0SHwoWZ2Fj",
+            "aGFfcHJvYl91cmxfb3ZlcnNlYRjJCyABKAkSEgoKZ2FjaGFfdHlwZRgNIAEo",
+            "DRIYChBsZWZ0X2dhY2hhX3RpbWVzGAUgASgNEh4KFWRpc3BsYXlfdXA1X2l0",
+            "ZW1fbGlzdBjWDyADKA0SGQoRZ2FjaGFfdGltZXNfbGltaXQYCyABKA0SFQoN",
+            "Y29zdF9pdGVtX251bRgDIAEoDRIUCgtpc19uZXdfd2lzaBjdBSABKAgSFAoM",
+            "Y29zdF9pdGVtX2lkGAkgASgNEhkKEXRlbl9jb3N0X2l0ZW1fbnVtGAYgASgN",
+            "EiEKGWdhY2hhX3ByZXZpZXdfcHJlZmFiX3BhdGgYBCABKAkSFgoNd2lzaF9w",
+            "cm9ncmVzcxibDiABKA0SFgoNdGl0bGVfdGV4dG1hcBjgBSABKAkSIQoYZ2Fj",
+            "aGFfcmVjb3JkX3VybF9vdmVyc2VhGL4OIAEoCRIVCg1nYWNoYV9zb3J0X2lk",
+            "GAcgASgNEhgKEGdhY2hhX3JlY29yZF91cmwYDCABKAlCDKoCCU9sZFByb3Rv",
+            "c2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GachaUpInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GachaInfo), global::OldProtos.GachaInfo.Parser, new[]{ "TenCostItemId", "EndTime", "DisplayUp4ItemList", "CurScheduleDailyGachaTimes", "GachaUpInfoList", "GachaProbUrl", "GachaPrefabPath", "WishItemId", "BeginTime", "WishMaxProgress", "ScheduleId", "GachaProbUrlOversea", "GachaType", "LeftGachaTimes", "DisplayUp5ItemList", "GachaTimesLimit", "CostItemNum", "IsNewWish", "CostItemId", "TenCostItemNum", "GachaPreviewPrefabPath", "WishProgress", "TitleTextmap", "GachaRecordUrlOversea", "GachaSortId", "GachaRecordUrl" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GachaInfo : pb::IMessage<GachaInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GachaInfo> _parser = new pb::MessageParser<GachaInfo>(() => new GachaInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GachaInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GachaInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GachaInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GachaInfo(GachaInfo other) : this() {
+      tenCostItemId_ = other.tenCostItemId_;
+      endTime_ = other.endTime_;
+      displayUp4ItemList_ = other.displayUp4ItemList_.Clone();
+      curScheduleDailyGachaTimes_ = other.curScheduleDailyGachaTimes_;
+      gachaUpInfoList_ = other.gachaUpInfoList_.Clone();
+      gachaProbUrl_ = other.gachaProbUrl_;
+      gachaPrefabPath_ = other.gachaPrefabPath_;
+      wishItemId_ = other.wishItemId_;
+      beginTime_ = other.beginTime_;
+      wishMaxProgress_ = other.wishMaxProgress_;
+      scheduleId_ = other.scheduleId_;
+      gachaProbUrlOversea_ = other.gachaProbUrlOversea_;
+      gachaType_ = other.gachaType_;
+      leftGachaTimes_ = other.leftGachaTimes_;
+      displayUp5ItemList_ = other.displayUp5ItemList_.Clone();
+      gachaTimesLimit_ = other.gachaTimesLimit_;
+      costItemNum_ = other.costItemNum_;
+      isNewWish_ = other.isNewWish_;
+      costItemId_ = other.costItemId_;
+      tenCostItemNum_ = other.tenCostItemNum_;
+      gachaPreviewPrefabPath_ = other.gachaPreviewPrefabPath_;
+      wishProgress_ = other.wishProgress_;
+      titleTextmap_ = other.titleTextmap_;
+      gachaRecordUrlOversea_ = other.gachaRecordUrlOversea_;
+      gachaSortId_ = other.gachaSortId_;
+      gachaRecordUrl_ = other.gachaRecordUrl_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GachaInfo Clone() {
+      return new GachaInfo(this);
+    }
+
+    /// <summary>Field number for the "ten_cost_item_id" field.</summary>
+    public const int TenCostItemIdFieldNumber = 2;
+    private uint tenCostItemId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TenCostItemId {
+      get { return tenCostItemId_; }
+      set {
+        tenCostItemId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 14;
+    private uint endTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EndTime {
+      get { return endTime_; }
+      set {
+        endTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "display_up4_item_list" field.</summary>
+    public const int DisplayUp4ItemListFieldNumber = 1875;
+    private static readonly pb::FieldCodec<uint> _repeated_displayUp4ItemList_codec
+        = pb::FieldCodec.ForUInt32(15002);
+    private readonly pbc::RepeatedField<uint> displayUp4ItemList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> DisplayUp4ItemList {
+      get { return displayUp4ItemList_; }
+    }
+
+    /// <summary>Field number for the "cur_schedule_daily_gacha_times" field.</summary>
+    public const int CurScheduleDailyGachaTimesFieldNumber = 469;
+    private uint curScheduleDailyGachaTimes_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurScheduleDailyGachaTimes {
+      get { return curScheduleDailyGachaTimes_; }
+      set {
+        curScheduleDailyGachaTimes_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gacha_up_info_list" field.</summary>
+    public const int GachaUpInfoListFieldNumber = 1233;
+    private static readonly pb::FieldCodec<global::OldProtos.GachaUpInfo> _repeated_gachaUpInfoList_codec
+        = pb::FieldCodec.ForMessage(9866, global::OldProtos.GachaUpInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.GachaUpInfo> gachaUpInfoList_ = new pbc::RepeatedField<global::OldProtos.GachaUpInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.GachaUpInfo> GachaUpInfoList {
+      get { return gachaUpInfoList_; }
+    }
+
+    /// <summary>Field number for the "gacha_prob_url" field.</summary>
+    public const int GachaProbUrlFieldNumber = 8;
+    private string gachaProbUrl_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string GachaProbUrl {
+      get { return gachaProbUrl_; }
+      set {
+        gachaProbUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "gacha_prefab_path" field.</summary>
+    public const int GachaPrefabPathFieldNumber = 15;
+    private string gachaPrefabPath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string GachaPrefabPath {
+      get { return gachaPrefabPath_; }
+      set {
+        gachaPrefabPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "wish_item_id" field.</summary>
+    public const int WishItemIdFieldNumber = 1637;
+    private uint wishItemId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WishItemId {
+      get { return wishItemId_; }
+      set {
+        wishItemId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "begin_time" field.</summary>
+    public const int BeginTimeFieldNumber = 1;
+    private uint beginTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BeginTime {
+      get { return beginTime_; }
+      set {
+        beginTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "wish_max_progress" field.</summary>
+    public const int WishMaxProgressFieldNumber = 1222;
+    private uint wishMaxProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WishMaxProgress {
+      get { return wishMaxProgress_; }
+      set {
+        wishMaxProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "schedule_id" field.</summary>
+    public const int ScheduleIdFieldNumber = 10;
+    private uint scheduleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ScheduleId {
+      get { return scheduleId_; }
+      set {
+        scheduleId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gacha_prob_url_oversea" field.</summary>
+    public const int GachaProbUrlOverseaFieldNumber = 1481;
+    private string gachaProbUrlOversea_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string GachaProbUrlOversea {
+      get { return gachaProbUrlOversea_; }
+      set {
+        gachaProbUrlOversea_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "gacha_type" field.</summary>
+    public const int GachaTypeFieldNumber = 13;
+    private uint gachaType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GachaType {
+      get { return gachaType_; }
+      set {
+        gachaType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "left_gacha_times" field.</summary>
+    public const int LeftGachaTimesFieldNumber = 5;
+    private uint leftGachaTimes_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LeftGachaTimes {
+      get { return leftGachaTimes_; }
+      set {
+        leftGachaTimes_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "display_up5_item_list" field.</summary>
+    public const int DisplayUp5ItemListFieldNumber = 2006;
+    private static readonly pb::FieldCodec<uint> _repeated_displayUp5ItemList_codec
+        = pb::FieldCodec.ForUInt32(16050);
+    private readonly pbc::RepeatedField<uint> displayUp5ItemList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> DisplayUp5ItemList {
+      get { return displayUp5ItemList_; }
+    }
+
+    /// <summary>Field number for the "gacha_times_limit" field.</summary>
+    public const int GachaTimesLimitFieldNumber = 11;
+    private uint gachaTimesLimit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GachaTimesLimit {
+      get { return gachaTimesLimit_; }
+      set {
+        gachaTimesLimit_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cost_item_num" field.</summary>
+    public const int CostItemNumFieldNumber = 3;
+    private uint costItemNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CostItemNum {
+      get { return costItemNum_; }
+      set {
+        costItemNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_new_wish" field.</summary>
+    public const int IsNewWishFieldNumber = 733;
+    private bool isNewWish_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsNewWish {
+      get { return isNewWish_; }
+      set {
+        isNewWish_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cost_item_id" field.</summary>
+    public const int CostItemIdFieldNumber = 9;
+    private uint costItemId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CostItemId {
+      get { return costItemId_; }
+      set {
+        costItemId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ten_cost_item_num" field.</summary>
+    public const int TenCostItemNumFieldNumber = 6;
+    private uint tenCostItemNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TenCostItemNum {
+      get { return tenCostItemNum_; }
+      set {
+        tenCostItemNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gacha_preview_prefab_path" field.</summary>
+    public const int GachaPreviewPrefabPathFieldNumber = 4;
+    private string gachaPreviewPrefabPath_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string GachaPreviewPrefabPath {
+      get { return gachaPreviewPrefabPath_; }
+      set {
+        gachaPreviewPrefabPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "wish_progress" field.</summary>
+    public const int WishProgressFieldNumber = 1819;
+    private uint wishProgress_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint WishProgress {
+      get { return wishProgress_; }
+      set {
+        wishProgress_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "title_textmap" field.</summary>
+    public const int TitleTextmapFieldNumber = 736;
+    private string titleTextmap_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string TitleTextmap {
+      get { return titleTextmap_; }
+      set {
+        titleTextmap_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "gacha_record_url_oversea" field.</summary>
+    public const int GachaRecordUrlOverseaFieldNumber = 1854;
+    private string gachaRecordUrlOversea_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string GachaRecordUrlOversea {
+      get { return gachaRecordUrlOversea_; }
+      set {
+        gachaRecordUrlOversea_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "gacha_sort_id" field.</summary>
+    public const int GachaSortIdFieldNumber = 7;
+    private uint gachaSortId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GachaSortId {
+      get { return gachaSortId_; }
+      set {
+        gachaSortId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gacha_record_url" field.</summary>
+    public const int GachaRecordUrlFieldNumber = 12;
+    private string gachaRecordUrl_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string GachaRecordUrl {
+      get { return gachaRecordUrl_; }
+      set {
+        gachaRecordUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GachaInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GachaInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (TenCostItemId != other.TenCostItemId) return false;
+      if (EndTime != other.EndTime) return false;
+      if(!displayUp4ItemList_.Equals(other.displayUp4ItemList_)) return false;
+      if (CurScheduleDailyGachaTimes != other.CurScheduleDailyGachaTimes) return false;
+      if(!gachaUpInfoList_.Equals(other.gachaUpInfoList_)) return false;
+      if (GachaProbUrl != other.GachaProbUrl) return false;
+      if (GachaPrefabPath != other.GachaPrefabPath) return false;
+      if (WishItemId != other.WishItemId) return false;
+      if (BeginTime != other.BeginTime) return false;
+      if (WishMaxProgress != other.WishMaxProgress) return false;
+      if (ScheduleId != other.ScheduleId) return false;
+      if (GachaProbUrlOversea != other.GachaProbUrlOversea) return false;
+      if (GachaType != other.GachaType) return false;
+      if (LeftGachaTimes != other.LeftGachaTimes) return false;
+      if(!displayUp5ItemList_.Equals(other.displayUp5ItemList_)) return false;
+      if (GachaTimesLimit != other.GachaTimesLimit) return false;
+      if (CostItemNum != other.CostItemNum) return false;
+      if (IsNewWish != other.IsNewWish) return false;
+      if (CostItemId != other.CostItemId) return false;
+      if (TenCostItemNum != other.TenCostItemNum) return false;
+      if (GachaPreviewPrefabPath != other.GachaPreviewPrefabPath) return false;
+      if (WishProgress != other.WishProgress) return false;
+      if (TitleTextmap != other.TitleTextmap) return false;
+      if (GachaRecordUrlOversea != other.GachaRecordUrlOversea) return false;
+      if (GachaSortId != other.GachaSortId) return false;
+      if (GachaRecordUrl != other.GachaRecordUrl) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (TenCostItemId != 0) hash ^= TenCostItemId.GetHashCode();
+      if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      hash ^= displayUp4ItemList_.GetHashCode();
+      if (CurScheduleDailyGachaTimes != 0) hash ^= CurScheduleDailyGachaTimes.GetHashCode();
+      hash ^= gachaUpInfoList_.GetHashCode();
+      if (GachaProbUrl.Length != 0) hash ^= GachaProbUrl.GetHashCode();
+      if (GachaPrefabPath.Length != 0) hash ^= GachaPrefabPath.GetHashCode();
+      if (WishItemId != 0) hash ^= WishItemId.GetHashCode();
+      if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
+      if (WishMaxProgress != 0) hash ^= WishMaxProgress.GetHashCode();
+      if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
+      if (GachaProbUrlOversea.Length != 0) hash ^= GachaProbUrlOversea.GetHashCode();
+      if (GachaType != 0) hash ^= GachaType.GetHashCode();
+      if (LeftGachaTimes != 0) hash ^= LeftGachaTimes.GetHashCode();
+      hash ^= displayUp5ItemList_.GetHashCode();
+      if (GachaTimesLimit != 0) hash ^= GachaTimesLimit.GetHashCode();
+      if (CostItemNum != 0) hash ^= CostItemNum.GetHashCode();
+      if (IsNewWish != false) hash ^= IsNewWish.GetHashCode();
+      if (CostItemId != 0) hash ^= CostItemId.GetHashCode();
+      if (TenCostItemNum != 0) hash ^= TenCostItemNum.GetHashCode();
+      if (GachaPreviewPrefabPath.Length != 0) hash ^= GachaPreviewPrefabPath.GetHashCode();
+      if (WishProgress != 0) hash ^= WishProgress.GetHashCode();
+      if (TitleTextmap.Length != 0) hash ^= TitleTextmap.GetHashCode();
+      if (GachaRecordUrlOversea.Length != 0) hash ^= GachaRecordUrlOversea.GetHashCode();
+      if (GachaSortId != 0) hash ^= GachaSortId.GetHashCode();
+      if (GachaRecordUrl.Length != 0) hash ^= GachaRecordUrl.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (BeginTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(BeginTime);
+      }
+      if (TenCostItemId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(TenCostItemId);
+      }
+      if (CostItemNum != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(CostItemNum);
+      }
+      if (GachaPreviewPrefabPath.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(GachaPreviewPrefabPath);
+      }
+      if (LeftGachaTimes != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(LeftGachaTimes);
+      }
+      if (TenCostItemNum != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(TenCostItemNum);
+      }
+      if (GachaSortId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(GachaSortId);
+      }
+      if (GachaProbUrl.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(GachaProbUrl);
+      }
+      if (CostItemId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(CostItemId);
+      }
+      if (ScheduleId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ScheduleId);
+      }
+      if (GachaTimesLimit != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GachaTimesLimit);
+      }
+      if (GachaRecordUrl.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(GachaRecordUrl);
+      }
+      if (GachaType != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(GachaType);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(EndTime);
+      }
+      if (GachaPrefabPath.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(GachaPrefabPath);
+      }
+      if (CurScheduleDailyGachaTimes != 0) {
+        output.WriteRawTag(168, 29);
+        output.WriteUInt32(CurScheduleDailyGachaTimes);
+      }
+      if (IsNewWish != false) {
+        output.WriteRawTag(232, 45);
+        output.WriteBool(IsNewWish);
+      }
+      if (TitleTextmap.Length != 0) {
+        output.WriteRawTag(130, 46);
+        output.WriteString(TitleTextmap);
+      }
+      if (WishMaxProgress != 0) {
+        output.WriteRawTag(176, 76);
+        output.WriteUInt32(WishMaxProgress);
+      }
+      gachaUpInfoList_.WriteTo(output, _repeated_gachaUpInfoList_codec);
+      if (GachaProbUrlOversea.Length != 0) {
+        output.WriteRawTag(202, 92);
+        output.WriteString(GachaProbUrlOversea);
+      }
+      if (WishItemId != 0) {
+        output.WriteRawTag(168, 102);
+        output.WriteUInt32(WishItemId);
+      }
+      if (WishProgress != 0) {
+        output.WriteRawTag(216, 113);
+        output.WriteUInt32(WishProgress);
+      }
+      if (GachaRecordUrlOversea.Length != 0) {
+        output.WriteRawTag(242, 115);
+        output.WriteString(GachaRecordUrlOversea);
+      }
+      displayUp4ItemList_.WriteTo(output, _repeated_displayUp4ItemList_codec);
+      displayUp5ItemList_.WriteTo(output, _repeated_displayUp5ItemList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (BeginTime != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(BeginTime);
+      }
+      if (TenCostItemId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(TenCostItemId);
+      }
+      if (CostItemNum != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(CostItemNum);
+      }
+      if (GachaPreviewPrefabPath.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(GachaPreviewPrefabPath);
+      }
+      if (LeftGachaTimes != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(LeftGachaTimes);
+      }
+      if (TenCostItemNum != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(TenCostItemNum);
+      }
+      if (GachaSortId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(GachaSortId);
+      }
+      if (GachaProbUrl.Length != 0) {
+        output.WriteRawTag(66);
+        output.WriteString(GachaProbUrl);
+      }
+      if (CostItemId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(CostItemId);
+      }
+      if (ScheduleId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(ScheduleId);
+      }
+      if (GachaTimesLimit != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(GachaTimesLimit);
+      }
+      if (GachaRecordUrl.Length != 0) {
+        output.WriteRawTag(98);
+        output.WriteString(GachaRecordUrl);
+      }
+      if (GachaType != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(GachaType);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(EndTime);
+      }
+      if (GachaPrefabPath.Length != 0) {
+        output.WriteRawTag(122);
+        output.WriteString(GachaPrefabPath);
+      }
+      if (CurScheduleDailyGachaTimes != 0) {
+        output.WriteRawTag(168, 29);
+        output.WriteUInt32(CurScheduleDailyGachaTimes);
+      }
+      if (IsNewWish != false) {
+        output.WriteRawTag(232, 45);
+        output.WriteBool(IsNewWish);
+      }
+      if (TitleTextmap.Length != 0) {
+        output.WriteRawTag(130, 46);
+        output.WriteString(TitleTextmap);
+      }
+      if (WishMaxProgress != 0) {
+        output.WriteRawTag(176, 76);
+        output.WriteUInt32(WishMaxProgress);
+      }
+      gachaUpInfoList_.WriteTo(ref output, _repeated_gachaUpInfoList_codec);
+      if (GachaProbUrlOversea.Length != 0) {
+        output.WriteRawTag(202, 92);
+        output.WriteString(GachaProbUrlOversea);
+      }
+      if (WishItemId != 0) {
+        output.WriteRawTag(168, 102);
+        output.WriteUInt32(WishItemId);
+      }
+      if (WishProgress != 0) {
+        output.WriteRawTag(216, 113);
+        output.WriteUInt32(WishProgress);
+      }
+      if (GachaRecordUrlOversea.Length != 0) {
+        output.WriteRawTag(242, 115);
+        output.WriteString(GachaRecordUrlOversea);
+      }
+      displayUp4ItemList_.WriteTo(ref output, _repeated_displayUp4ItemList_codec);
+      displayUp5ItemList_.WriteTo(ref output, _repeated_displayUp5ItemList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (TenCostItemId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TenCostItemId);
+      }
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      }
+      size += displayUp4ItemList_.CalculateSize(_repeated_displayUp4ItemList_codec);
+      if (CurScheduleDailyGachaTimes != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CurScheduleDailyGachaTimes);
+      }
+      size += gachaUpInfoList_.CalculateSize(_repeated_gachaUpInfoList_codec);
+      if (GachaProbUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GachaProbUrl);
+      }
+      if (GachaPrefabPath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GachaPrefabPath);
+      }
+      if (WishItemId != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(WishItemId);
+      }
+      if (BeginTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
+      }
+      if (WishMaxProgress != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(WishMaxProgress);
+      }
+      if (ScheduleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
+      }
+      if (GachaProbUrlOversea.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(GachaProbUrlOversea);
+      }
+      if (GachaType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaType);
+      }
+      if (LeftGachaTimes != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftGachaTimes);
+      }
+      size += displayUp5ItemList_.CalculateSize(_repeated_displayUp5ItemList_codec);
+      if (GachaTimesLimit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaTimesLimit);
+      }
+      if (CostItemNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostItemNum);
+      }
+      if (IsNewWish != false) {
+        size += 2 + 1;
+      }
+      if (CostItemId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostItemId);
+      }
+      if (TenCostItemNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TenCostItemNum);
+      }
+      if (GachaPreviewPrefabPath.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GachaPreviewPrefabPath);
+      }
+      if (WishProgress != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeUInt32Size(WishProgress);
+      }
+      if (TitleTextmap.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(TitleTextmap);
+      }
+      if (GachaRecordUrlOversea.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(GachaRecordUrlOversea);
+      }
+      if (GachaSortId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaSortId);
+      }
+      if (GachaRecordUrl.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GachaRecordUrl);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GachaInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.TenCostItemId != 0) {
+        TenCostItemId = other.TenCostItemId;
+      }
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
+      }
+      displayUp4ItemList_.Add(other.displayUp4ItemList_);
+      if (other.CurScheduleDailyGachaTimes != 0) {
+        CurScheduleDailyGachaTimes = other.CurScheduleDailyGachaTimes;
+      }
+      gachaUpInfoList_.Add(other.gachaUpInfoList_);
+      if (other.GachaProbUrl.Length != 0) {
+        GachaProbUrl = other.GachaProbUrl;
+      }
+      if (other.GachaPrefabPath.Length != 0) {
+        GachaPrefabPath = other.GachaPrefabPath;
+      }
+      if (other.WishItemId != 0) {
+        WishItemId = other.WishItemId;
+      }
+      if (other.BeginTime != 0) {
+        BeginTime = other.BeginTime;
+      }
+      if (other.WishMaxProgress != 0) {
+        WishMaxProgress = other.WishMaxProgress;
+      }
+      if (other.ScheduleId != 0) {
+        ScheduleId = other.ScheduleId;
+      }
+      if (other.GachaProbUrlOversea.Length != 0) {
+        GachaProbUrlOversea = other.GachaProbUrlOversea;
+      }
+      if (other.GachaType != 0) {
+        GachaType = other.GachaType;
+      }
+      if (other.LeftGachaTimes != 0) {
+        LeftGachaTimes = other.LeftGachaTimes;
+      }
+      displayUp5ItemList_.Add(other.displayUp5ItemList_);
+      if (other.GachaTimesLimit != 0) {
+        GachaTimesLimit = other.GachaTimesLimit;
+      }
+      if (other.CostItemNum != 0) {
+        CostItemNum = other.CostItemNum;
+      }
+      if (other.IsNewWish != false) {
+        IsNewWish = other.IsNewWish;
+      }
+      if (other.CostItemId != 0) {
+        CostItemId = other.CostItemId;
+      }
+      if (other.TenCostItemNum != 0) {
+        TenCostItemNum = other.TenCostItemNum;
+      }
+      if (other.GachaPreviewPrefabPath.Length != 0) {
+        GachaPreviewPrefabPath = other.GachaPreviewPrefabPath;
+      }
+      if (other.WishProgress != 0) {
+        WishProgress = other.WishProgress;
+      }
+      if (other.TitleTextmap.Length != 0) {
+        TitleTextmap = other.TitleTextmap;
+      }
+      if (other.GachaRecordUrlOversea.Length != 0) {
+        GachaRecordUrlOversea = other.GachaRecordUrlOversea;
+      }
+      if (other.GachaSortId != 0) {
+        GachaSortId = other.GachaSortId;
+      }
+      if (other.GachaRecordUrl.Length != 0) {
+        GachaRecordUrl = other.GachaRecordUrl;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            TenCostItemId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            CostItemNum = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            GachaPreviewPrefabPath = input.ReadString();
+            break;
+          }
+          case 40: {
+            LeftGachaTimes = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            TenCostItemNum = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            GachaSortId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            GachaProbUrl = input.ReadString();
+            break;
+          }
+          case 72: {
+            CostItemId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            GachaTimesLimit = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            GachaRecordUrl = input.ReadString();
+            break;
+          }
+          case 104: {
+            GachaType = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            GachaPrefabPath = input.ReadString();
+            break;
+          }
+          case 3752: {
+            CurScheduleDailyGachaTimes = input.ReadUInt32();
+            break;
+          }
+          case 5864: {
+            IsNewWish = input.ReadBool();
+            break;
+          }
+          case 5890: {
+            TitleTextmap = input.ReadString();
+            break;
+          }
+          case 9776: {
+            WishMaxProgress = input.ReadUInt32();
+            break;
+          }
+          case 9866: {
+            gachaUpInfoList_.AddEntriesFrom(input, _repeated_gachaUpInfoList_codec);
+            break;
+          }
+          case 11850: {
+            GachaProbUrlOversea = input.ReadString();
+            break;
+          }
+          case 13096: {
+            WishItemId = input.ReadUInt32();
+            break;
+          }
+          case 14552: {
+            WishProgress = input.ReadUInt32();
+            break;
+          }
+          case 14834: {
+            GachaRecordUrlOversea = input.ReadString();
+            break;
+          }
+          case 15002:
+          case 15000: {
+            displayUp4ItemList_.AddEntriesFrom(input, _repeated_displayUp4ItemList_codec);
+            break;
+          }
+          case 16050:
+          case 16048: {
+            displayUp5ItemList_.AddEntriesFrom(input, _repeated_displayUp5ItemList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            BeginTime = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            TenCostItemId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            CostItemNum = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            GachaPreviewPrefabPath = input.ReadString();
+            break;
+          }
+          case 40: {
+            LeftGachaTimes = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            TenCostItemNum = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            GachaSortId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            GachaProbUrl = input.ReadString();
+            break;
+          }
+          case 72: {
+            CostItemId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            GachaTimesLimit = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            GachaRecordUrl = input.ReadString();
+            break;
+          }
+          case 104: {
+            GachaType = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 122: {
+            GachaPrefabPath = input.ReadString();
+            break;
+          }
+          case 3752: {
+            CurScheduleDailyGachaTimes = input.ReadUInt32();
+            break;
+          }
+          case 5864: {
+            IsNewWish = input.ReadBool();
+            break;
+          }
+          case 5890: {
+            TitleTextmap = input.ReadString();
+            break;
+          }
+          case 9776: {
+            WishMaxProgress = input.ReadUInt32();
+            break;
+          }
+          case 9866: {
+            gachaUpInfoList_.AddEntriesFrom(ref input, _repeated_gachaUpInfoList_codec);
+            break;
+          }
+          case 11850: {
+            GachaProbUrlOversea = input.ReadString();
+            break;
+          }
+          case 13096: {
+            WishItemId = input.ReadUInt32();
+            break;
+          }
+          case 14552: {
+            WishProgress = input.ReadUInt32();
+            break;
+          }
+          case 14834: {
+            GachaRecordUrlOversea = input.ReadString();
+            break;
+          }
+          case 15002:
+          case 15000: {
+            displayUp4ItemList_.AddEntriesFrom(ref input, _repeated_displayUp4ItemList_codec);
+            break;
+          }
+          case 16050:
+          case 16048: {
+            displayUp5ItemList_.AddEntriesFrom(ref input, _repeated_displayUp5ItemList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GachaInfo : pb::IMessage<GachaInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GachaInfo> _parser = new pb::MessageParser<GachaInfo>(() => new GachaInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GachaInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GachaInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GachaInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GachaInfo(GachaInfo other) : this() {
-    tenCostItemId_ = other.tenCostItemId_;
-    endTime_ = other.endTime_;
-    displayUp4ItemList_ = other.displayUp4ItemList_.Clone();
-    curScheduleDailyGachaTimes_ = other.curScheduleDailyGachaTimes_;
-    gachaUpInfoList_ = other.gachaUpInfoList_.Clone();
-    gachaProbUrl_ = other.gachaProbUrl_;
-    gachaPrefabPath_ = other.gachaPrefabPath_;
-    wishItemId_ = other.wishItemId_;
-    beginTime_ = other.beginTime_;
-    wishMaxProgress_ = other.wishMaxProgress_;
-    scheduleId_ = other.scheduleId_;
-    gachaProbUrlOversea_ = other.gachaProbUrlOversea_;
-    gachaType_ = other.gachaType_;
-    leftGachaTimes_ = other.leftGachaTimes_;
-    displayUp5ItemList_ = other.displayUp5ItemList_.Clone();
-    gachaTimesLimit_ = other.gachaTimesLimit_;
-    costItemNum_ = other.costItemNum_;
-    isNewWish_ = other.isNewWish_;
-    costItemId_ = other.costItemId_;
-    tenCostItemNum_ = other.tenCostItemNum_;
-    gachaPreviewPrefabPath_ = other.gachaPreviewPrefabPath_;
-    wishProgress_ = other.wishProgress_;
-    titleTextmap_ = other.titleTextmap_;
-    gachaRecordUrlOversea_ = other.gachaRecordUrlOversea_;
-    gachaSortId_ = other.gachaSortId_;
-    gachaRecordUrl_ = other.gachaRecordUrl_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GachaInfo Clone() {
-    return new GachaInfo(this);
-  }
-
-  /// <summary>Field number for the "ten_cost_item_id" field.</summary>
-  public const int TenCostItemIdFieldNumber = 2;
-  private uint tenCostItemId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TenCostItemId {
-    get { return tenCostItemId_; }
-    set {
-      tenCostItemId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "end_time" field.</summary>
-  public const int EndTimeFieldNumber = 14;
-  private uint endTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EndTime {
-    get { return endTime_; }
-    set {
-      endTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "display_up4_item_list" field.</summary>
-  public const int DisplayUp4ItemListFieldNumber = 1875;
-  private static readonly pb::FieldCodec<uint> _repeated_displayUp4ItemList_codec
-      = pb::FieldCodec.ForUInt32(15002);
-  private readonly pbc::RepeatedField<uint> displayUp4ItemList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> DisplayUp4ItemList {
-    get { return displayUp4ItemList_; }
-  }
-
-  /// <summary>Field number for the "cur_schedule_daily_gacha_times" field.</summary>
-  public const int CurScheduleDailyGachaTimesFieldNumber = 469;
-  private uint curScheduleDailyGachaTimes_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurScheduleDailyGachaTimes {
-    get { return curScheduleDailyGachaTimes_; }
-    set {
-      curScheduleDailyGachaTimes_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gacha_up_info_list" field.</summary>
-  public const int GachaUpInfoListFieldNumber = 1233;
-  private static readonly pb::FieldCodec<global::GachaUpInfo> _repeated_gachaUpInfoList_codec
-      = pb::FieldCodec.ForMessage(9866, global::GachaUpInfo.Parser);
-  private readonly pbc::RepeatedField<global::GachaUpInfo> gachaUpInfoList_ = new pbc::RepeatedField<global::GachaUpInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::GachaUpInfo> GachaUpInfoList {
-    get { return gachaUpInfoList_; }
-  }
-
-  /// <summary>Field number for the "gacha_prob_url" field.</summary>
-  public const int GachaProbUrlFieldNumber = 8;
-  private string gachaProbUrl_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string GachaProbUrl {
-    get { return gachaProbUrl_; }
-    set {
-      gachaProbUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "gacha_prefab_path" field.</summary>
-  public const int GachaPrefabPathFieldNumber = 15;
-  private string gachaPrefabPath_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string GachaPrefabPath {
-    get { return gachaPrefabPath_; }
-    set {
-      gachaPrefabPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "wish_item_id" field.</summary>
-  public const int WishItemIdFieldNumber = 1637;
-  private uint wishItemId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WishItemId {
-    get { return wishItemId_; }
-    set {
-      wishItemId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "begin_time" field.</summary>
-  public const int BeginTimeFieldNumber = 1;
-  private uint beginTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BeginTime {
-    get { return beginTime_; }
-    set {
-      beginTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "wish_max_progress" field.</summary>
-  public const int WishMaxProgressFieldNumber = 1222;
-  private uint wishMaxProgress_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WishMaxProgress {
-    get { return wishMaxProgress_; }
-    set {
-      wishMaxProgress_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "schedule_id" field.</summary>
-  public const int ScheduleIdFieldNumber = 10;
-  private uint scheduleId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ScheduleId {
-    get { return scheduleId_; }
-    set {
-      scheduleId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gacha_prob_url_oversea" field.</summary>
-  public const int GachaProbUrlOverseaFieldNumber = 1481;
-  private string gachaProbUrlOversea_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string GachaProbUrlOversea {
-    get { return gachaProbUrlOversea_; }
-    set {
-      gachaProbUrlOversea_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "gacha_type" field.</summary>
-  public const int GachaTypeFieldNumber = 13;
-  private uint gachaType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GachaType {
-    get { return gachaType_; }
-    set {
-      gachaType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "left_gacha_times" field.</summary>
-  public const int LeftGachaTimesFieldNumber = 5;
-  private uint leftGachaTimes_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LeftGachaTimes {
-    get { return leftGachaTimes_; }
-    set {
-      leftGachaTimes_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "display_up5_item_list" field.</summary>
-  public const int DisplayUp5ItemListFieldNumber = 2006;
-  private static readonly pb::FieldCodec<uint> _repeated_displayUp5ItemList_codec
-      = pb::FieldCodec.ForUInt32(16050);
-  private readonly pbc::RepeatedField<uint> displayUp5ItemList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> DisplayUp5ItemList {
-    get { return displayUp5ItemList_; }
-  }
-
-  /// <summary>Field number for the "gacha_times_limit" field.</summary>
-  public const int GachaTimesLimitFieldNumber = 11;
-  private uint gachaTimesLimit_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GachaTimesLimit {
-    get { return gachaTimesLimit_; }
-    set {
-      gachaTimesLimit_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cost_item_num" field.</summary>
-  public const int CostItemNumFieldNumber = 3;
-  private uint costItemNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CostItemNum {
-    get { return costItemNum_; }
-    set {
-      costItemNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_new_wish" field.</summary>
-  public const int IsNewWishFieldNumber = 733;
-  private bool isNewWish_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsNewWish {
-    get { return isNewWish_; }
-    set {
-      isNewWish_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cost_item_id" field.</summary>
-  public const int CostItemIdFieldNumber = 9;
-  private uint costItemId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CostItemId {
-    get { return costItemId_; }
-    set {
-      costItemId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ten_cost_item_num" field.</summary>
-  public const int TenCostItemNumFieldNumber = 6;
-  private uint tenCostItemNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TenCostItemNum {
-    get { return tenCostItemNum_; }
-    set {
-      tenCostItemNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gacha_preview_prefab_path" field.</summary>
-  public const int GachaPreviewPrefabPathFieldNumber = 4;
-  private string gachaPreviewPrefabPath_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string GachaPreviewPrefabPath {
-    get { return gachaPreviewPrefabPath_; }
-    set {
-      gachaPreviewPrefabPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "wish_progress" field.</summary>
-  public const int WishProgressFieldNumber = 1819;
-  private uint wishProgress_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint WishProgress {
-    get { return wishProgress_; }
-    set {
-      wishProgress_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "title_textmap" field.</summary>
-  public const int TitleTextmapFieldNumber = 736;
-  private string titleTextmap_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string TitleTextmap {
-    get { return titleTextmap_; }
-    set {
-      titleTextmap_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "gacha_record_url_oversea" field.</summary>
-  public const int GachaRecordUrlOverseaFieldNumber = 1854;
-  private string gachaRecordUrlOversea_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string GachaRecordUrlOversea {
-    get { return gachaRecordUrlOversea_; }
-    set {
-      gachaRecordUrlOversea_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "gacha_sort_id" field.</summary>
-  public const int GachaSortIdFieldNumber = 7;
-  private uint gachaSortId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GachaSortId {
-    get { return gachaSortId_; }
-    set {
-      gachaSortId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gacha_record_url" field.</summary>
-  public const int GachaRecordUrlFieldNumber = 12;
-  private string gachaRecordUrl_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string GachaRecordUrl {
-    get { return gachaRecordUrl_; }
-    set {
-      gachaRecordUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GachaInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GachaInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (TenCostItemId != other.TenCostItemId) return false;
-    if (EndTime != other.EndTime) return false;
-    if(!displayUp4ItemList_.Equals(other.displayUp4ItemList_)) return false;
-    if (CurScheduleDailyGachaTimes != other.CurScheduleDailyGachaTimes) return false;
-    if(!gachaUpInfoList_.Equals(other.gachaUpInfoList_)) return false;
-    if (GachaProbUrl != other.GachaProbUrl) return false;
-    if (GachaPrefabPath != other.GachaPrefabPath) return false;
-    if (WishItemId != other.WishItemId) return false;
-    if (BeginTime != other.BeginTime) return false;
-    if (WishMaxProgress != other.WishMaxProgress) return false;
-    if (ScheduleId != other.ScheduleId) return false;
-    if (GachaProbUrlOversea != other.GachaProbUrlOversea) return false;
-    if (GachaType != other.GachaType) return false;
-    if (LeftGachaTimes != other.LeftGachaTimes) return false;
-    if(!displayUp5ItemList_.Equals(other.displayUp5ItemList_)) return false;
-    if (GachaTimesLimit != other.GachaTimesLimit) return false;
-    if (CostItemNum != other.CostItemNum) return false;
-    if (IsNewWish != other.IsNewWish) return false;
-    if (CostItemId != other.CostItemId) return false;
-    if (TenCostItemNum != other.TenCostItemNum) return false;
-    if (GachaPreviewPrefabPath != other.GachaPreviewPrefabPath) return false;
-    if (WishProgress != other.WishProgress) return false;
-    if (TitleTextmap != other.TitleTextmap) return false;
-    if (GachaRecordUrlOversea != other.GachaRecordUrlOversea) return false;
-    if (GachaSortId != other.GachaSortId) return false;
-    if (GachaRecordUrl != other.GachaRecordUrl) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (TenCostItemId != 0) hash ^= TenCostItemId.GetHashCode();
-    if (EndTime != 0) hash ^= EndTime.GetHashCode();
-    hash ^= displayUp4ItemList_.GetHashCode();
-    if (CurScheduleDailyGachaTimes != 0) hash ^= CurScheduleDailyGachaTimes.GetHashCode();
-    hash ^= gachaUpInfoList_.GetHashCode();
-    if (GachaProbUrl.Length != 0) hash ^= GachaProbUrl.GetHashCode();
-    if (GachaPrefabPath.Length != 0) hash ^= GachaPrefabPath.GetHashCode();
-    if (WishItemId != 0) hash ^= WishItemId.GetHashCode();
-    if (BeginTime != 0) hash ^= BeginTime.GetHashCode();
-    if (WishMaxProgress != 0) hash ^= WishMaxProgress.GetHashCode();
-    if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
-    if (GachaProbUrlOversea.Length != 0) hash ^= GachaProbUrlOversea.GetHashCode();
-    if (GachaType != 0) hash ^= GachaType.GetHashCode();
-    if (LeftGachaTimes != 0) hash ^= LeftGachaTimes.GetHashCode();
-    hash ^= displayUp5ItemList_.GetHashCode();
-    if (GachaTimesLimit != 0) hash ^= GachaTimesLimit.GetHashCode();
-    if (CostItemNum != 0) hash ^= CostItemNum.GetHashCode();
-    if (IsNewWish != false) hash ^= IsNewWish.GetHashCode();
-    if (CostItemId != 0) hash ^= CostItemId.GetHashCode();
-    if (TenCostItemNum != 0) hash ^= TenCostItemNum.GetHashCode();
-    if (GachaPreviewPrefabPath.Length != 0) hash ^= GachaPreviewPrefabPath.GetHashCode();
-    if (WishProgress != 0) hash ^= WishProgress.GetHashCode();
-    if (TitleTextmap.Length != 0) hash ^= TitleTextmap.GetHashCode();
-    if (GachaRecordUrlOversea.Length != 0) hash ^= GachaRecordUrlOversea.GetHashCode();
-    if (GachaSortId != 0) hash ^= GachaSortId.GetHashCode();
-    if (GachaRecordUrl.Length != 0) hash ^= GachaRecordUrl.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (BeginTime != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(BeginTime);
-    }
-    if (TenCostItemId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(TenCostItemId);
-    }
-    if (CostItemNum != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(CostItemNum);
-    }
-    if (GachaPreviewPrefabPath.Length != 0) {
-      output.WriteRawTag(34);
-      output.WriteString(GachaPreviewPrefabPath);
-    }
-    if (LeftGachaTimes != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(LeftGachaTimes);
-    }
-    if (TenCostItemNum != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(TenCostItemNum);
-    }
-    if (GachaSortId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(GachaSortId);
-    }
-    if (GachaProbUrl.Length != 0) {
-      output.WriteRawTag(66);
-      output.WriteString(GachaProbUrl);
-    }
-    if (CostItemId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(CostItemId);
-    }
-    if (ScheduleId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(ScheduleId);
-    }
-    if (GachaTimesLimit != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(GachaTimesLimit);
-    }
-    if (GachaRecordUrl.Length != 0) {
-      output.WriteRawTag(98);
-      output.WriteString(GachaRecordUrl);
-    }
-    if (GachaType != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(GachaType);
-    }
-    if (EndTime != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(EndTime);
-    }
-    if (GachaPrefabPath.Length != 0) {
-      output.WriteRawTag(122);
-      output.WriteString(GachaPrefabPath);
-    }
-    if (CurScheduleDailyGachaTimes != 0) {
-      output.WriteRawTag(168, 29);
-      output.WriteUInt32(CurScheduleDailyGachaTimes);
-    }
-    if (IsNewWish != false) {
-      output.WriteRawTag(232, 45);
-      output.WriteBool(IsNewWish);
-    }
-    if (TitleTextmap.Length != 0) {
-      output.WriteRawTag(130, 46);
-      output.WriteString(TitleTextmap);
-    }
-    if (WishMaxProgress != 0) {
-      output.WriteRawTag(176, 76);
-      output.WriteUInt32(WishMaxProgress);
-    }
-    gachaUpInfoList_.WriteTo(output, _repeated_gachaUpInfoList_codec);
-    if (GachaProbUrlOversea.Length != 0) {
-      output.WriteRawTag(202, 92);
-      output.WriteString(GachaProbUrlOversea);
-    }
-    if (WishItemId != 0) {
-      output.WriteRawTag(168, 102);
-      output.WriteUInt32(WishItemId);
-    }
-    if (WishProgress != 0) {
-      output.WriteRawTag(216, 113);
-      output.WriteUInt32(WishProgress);
-    }
-    if (GachaRecordUrlOversea.Length != 0) {
-      output.WriteRawTag(242, 115);
-      output.WriteString(GachaRecordUrlOversea);
-    }
-    displayUp4ItemList_.WriteTo(output, _repeated_displayUp4ItemList_codec);
-    displayUp5ItemList_.WriteTo(output, _repeated_displayUp5ItemList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (BeginTime != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(BeginTime);
-    }
-    if (TenCostItemId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(TenCostItemId);
-    }
-    if (CostItemNum != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(CostItemNum);
-    }
-    if (GachaPreviewPrefabPath.Length != 0) {
-      output.WriteRawTag(34);
-      output.WriteString(GachaPreviewPrefabPath);
-    }
-    if (LeftGachaTimes != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(LeftGachaTimes);
-    }
-    if (TenCostItemNum != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(TenCostItemNum);
-    }
-    if (GachaSortId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(GachaSortId);
-    }
-    if (GachaProbUrl.Length != 0) {
-      output.WriteRawTag(66);
-      output.WriteString(GachaProbUrl);
-    }
-    if (CostItemId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(CostItemId);
-    }
-    if (ScheduleId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(ScheduleId);
-    }
-    if (GachaTimesLimit != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(GachaTimesLimit);
-    }
-    if (GachaRecordUrl.Length != 0) {
-      output.WriteRawTag(98);
-      output.WriteString(GachaRecordUrl);
-    }
-    if (GachaType != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(GachaType);
-    }
-    if (EndTime != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(EndTime);
-    }
-    if (GachaPrefabPath.Length != 0) {
-      output.WriteRawTag(122);
-      output.WriteString(GachaPrefabPath);
-    }
-    if (CurScheduleDailyGachaTimes != 0) {
-      output.WriteRawTag(168, 29);
-      output.WriteUInt32(CurScheduleDailyGachaTimes);
-    }
-    if (IsNewWish != false) {
-      output.WriteRawTag(232, 45);
-      output.WriteBool(IsNewWish);
-    }
-    if (TitleTextmap.Length != 0) {
-      output.WriteRawTag(130, 46);
-      output.WriteString(TitleTextmap);
-    }
-    if (WishMaxProgress != 0) {
-      output.WriteRawTag(176, 76);
-      output.WriteUInt32(WishMaxProgress);
-    }
-    gachaUpInfoList_.WriteTo(ref output, _repeated_gachaUpInfoList_codec);
-    if (GachaProbUrlOversea.Length != 0) {
-      output.WriteRawTag(202, 92);
-      output.WriteString(GachaProbUrlOversea);
-    }
-    if (WishItemId != 0) {
-      output.WriteRawTag(168, 102);
-      output.WriteUInt32(WishItemId);
-    }
-    if (WishProgress != 0) {
-      output.WriteRawTag(216, 113);
-      output.WriteUInt32(WishProgress);
-    }
-    if (GachaRecordUrlOversea.Length != 0) {
-      output.WriteRawTag(242, 115);
-      output.WriteString(GachaRecordUrlOversea);
-    }
-    displayUp4ItemList_.WriteTo(ref output, _repeated_displayUp4ItemList_codec);
-    displayUp5ItemList_.WriteTo(ref output, _repeated_displayUp5ItemList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (TenCostItemId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TenCostItemId);
-    }
-    if (EndTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
-    }
-    size += displayUp4ItemList_.CalculateSize(_repeated_displayUp4ItemList_codec);
-    if (CurScheduleDailyGachaTimes != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(CurScheduleDailyGachaTimes);
-    }
-    size += gachaUpInfoList_.CalculateSize(_repeated_gachaUpInfoList_codec);
-    if (GachaProbUrl.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(GachaProbUrl);
-    }
-    if (GachaPrefabPath.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(GachaPrefabPath);
-    }
-    if (WishItemId != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(WishItemId);
-    }
-    if (BeginTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BeginTime);
-    }
-    if (WishMaxProgress != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(WishMaxProgress);
-    }
-    if (ScheduleId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
-    }
-    if (GachaProbUrlOversea.Length != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeStringSize(GachaProbUrlOversea);
-    }
-    if (GachaType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaType);
-    }
-    if (LeftGachaTimes != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LeftGachaTimes);
-    }
-    size += displayUp5ItemList_.CalculateSize(_repeated_displayUp5ItemList_codec);
-    if (GachaTimesLimit != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaTimesLimit);
-    }
-    if (CostItemNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostItemNum);
-    }
-    if (IsNewWish != false) {
-      size += 2 + 1;
-    }
-    if (CostItemId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostItemId);
-    }
-    if (TenCostItemNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TenCostItemNum);
-    }
-    if (GachaPreviewPrefabPath.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(GachaPreviewPrefabPath);
-    }
-    if (WishProgress != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeUInt32Size(WishProgress);
-    }
-    if (TitleTextmap.Length != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeStringSize(TitleTextmap);
-    }
-    if (GachaRecordUrlOversea.Length != 0) {
-      size += 2 + pb::CodedOutputStream.ComputeStringSize(GachaRecordUrlOversea);
-    }
-    if (GachaSortId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GachaSortId);
-    }
-    if (GachaRecordUrl.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(GachaRecordUrl);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GachaInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.TenCostItemId != 0) {
-      TenCostItemId = other.TenCostItemId;
-    }
-    if (other.EndTime != 0) {
-      EndTime = other.EndTime;
-    }
-    displayUp4ItemList_.Add(other.displayUp4ItemList_);
-    if (other.CurScheduleDailyGachaTimes != 0) {
-      CurScheduleDailyGachaTimes = other.CurScheduleDailyGachaTimes;
-    }
-    gachaUpInfoList_.Add(other.gachaUpInfoList_);
-    if (other.GachaProbUrl.Length != 0) {
-      GachaProbUrl = other.GachaProbUrl;
-    }
-    if (other.GachaPrefabPath.Length != 0) {
-      GachaPrefabPath = other.GachaPrefabPath;
-    }
-    if (other.WishItemId != 0) {
-      WishItemId = other.WishItemId;
-    }
-    if (other.BeginTime != 0) {
-      BeginTime = other.BeginTime;
-    }
-    if (other.WishMaxProgress != 0) {
-      WishMaxProgress = other.WishMaxProgress;
-    }
-    if (other.ScheduleId != 0) {
-      ScheduleId = other.ScheduleId;
-    }
-    if (other.GachaProbUrlOversea.Length != 0) {
-      GachaProbUrlOversea = other.GachaProbUrlOversea;
-    }
-    if (other.GachaType != 0) {
-      GachaType = other.GachaType;
-    }
-    if (other.LeftGachaTimes != 0) {
-      LeftGachaTimes = other.LeftGachaTimes;
-    }
-    displayUp5ItemList_.Add(other.displayUp5ItemList_);
-    if (other.GachaTimesLimit != 0) {
-      GachaTimesLimit = other.GachaTimesLimit;
-    }
-    if (other.CostItemNum != 0) {
-      CostItemNum = other.CostItemNum;
-    }
-    if (other.IsNewWish != false) {
-      IsNewWish = other.IsNewWish;
-    }
-    if (other.CostItemId != 0) {
-      CostItemId = other.CostItemId;
-    }
-    if (other.TenCostItemNum != 0) {
-      TenCostItemNum = other.TenCostItemNum;
-    }
-    if (other.GachaPreviewPrefabPath.Length != 0) {
-      GachaPreviewPrefabPath = other.GachaPreviewPrefabPath;
-    }
-    if (other.WishProgress != 0) {
-      WishProgress = other.WishProgress;
-    }
-    if (other.TitleTextmap.Length != 0) {
-      TitleTextmap = other.TitleTextmap;
-    }
-    if (other.GachaRecordUrlOversea.Length != 0) {
-      GachaRecordUrlOversea = other.GachaRecordUrlOversea;
-    }
-    if (other.GachaSortId != 0) {
-      GachaSortId = other.GachaSortId;
-    }
-    if (other.GachaRecordUrl.Length != 0) {
-      GachaRecordUrl = other.GachaRecordUrl;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          BeginTime = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          TenCostItemId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          CostItemNum = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          GachaPreviewPrefabPath = input.ReadString();
-          break;
-        }
-        case 40: {
-          LeftGachaTimes = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          TenCostItemNum = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          GachaSortId = input.ReadUInt32();
-          break;
-        }
-        case 66: {
-          GachaProbUrl = input.ReadString();
-          break;
-        }
-        case 72: {
-          CostItemId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          ScheduleId = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          GachaTimesLimit = input.ReadUInt32();
-          break;
-        }
-        case 98: {
-          GachaRecordUrl = input.ReadString();
-          break;
-        }
-        case 104: {
-          GachaType = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          EndTime = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          GachaPrefabPath = input.ReadString();
-          break;
-        }
-        case 3752: {
-          CurScheduleDailyGachaTimes = input.ReadUInt32();
-          break;
-        }
-        case 5864: {
-          IsNewWish = input.ReadBool();
-          break;
-        }
-        case 5890: {
-          TitleTextmap = input.ReadString();
-          break;
-        }
-        case 9776: {
-          WishMaxProgress = input.ReadUInt32();
-          break;
-        }
-        case 9866: {
-          gachaUpInfoList_.AddEntriesFrom(input, _repeated_gachaUpInfoList_codec);
-          break;
-        }
-        case 11850: {
-          GachaProbUrlOversea = input.ReadString();
-          break;
-        }
-        case 13096: {
-          WishItemId = input.ReadUInt32();
-          break;
-        }
-        case 14552: {
-          WishProgress = input.ReadUInt32();
-          break;
-        }
-        case 14834: {
-          GachaRecordUrlOversea = input.ReadString();
-          break;
-        }
-        case 15002:
-        case 15000: {
-          displayUp4ItemList_.AddEntriesFrom(input, _repeated_displayUp4ItemList_codec);
-          break;
-        }
-        case 16050:
-        case 16048: {
-          displayUp5ItemList_.AddEntriesFrom(input, _repeated_displayUp5ItemList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          BeginTime = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          TenCostItemId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          CostItemNum = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          GachaPreviewPrefabPath = input.ReadString();
-          break;
-        }
-        case 40: {
-          LeftGachaTimes = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          TenCostItemNum = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          GachaSortId = input.ReadUInt32();
-          break;
-        }
-        case 66: {
-          GachaProbUrl = input.ReadString();
-          break;
-        }
-        case 72: {
-          CostItemId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          ScheduleId = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          GachaTimesLimit = input.ReadUInt32();
-          break;
-        }
-        case 98: {
-          GachaRecordUrl = input.ReadString();
-          break;
-        }
-        case 104: {
-          GachaType = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          EndTime = input.ReadUInt32();
-          break;
-        }
-        case 122: {
-          GachaPrefabPath = input.ReadString();
-          break;
-        }
-        case 3752: {
-          CurScheduleDailyGachaTimes = input.ReadUInt32();
-          break;
-        }
-        case 5864: {
-          IsNewWish = input.ReadBool();
-          break;
-        }
-        case 5890: {
-          TitleTextmap = input.ReadString();
-          break;
-        }
-        case 9776: {
-          WishMaxProgress = input.ReadUInt32();
-          break;
-        }
-        case 9866: {
-          gachaUpInfoList_.AddEntriesFrom(ref input, _repeated_gachaUpInfoList_codec);
-          break;
-        }
-        case 11850: {
-          GachaProbUrlOversea = input.ReadString();
-          break;
-        }
-        case 13096: {
-          WishItemId = input.ReadUInt32();
-          break;
-        }
-        case 14552: {
-          WishProgress = input.ReadUInt32();
-          break;
-        }
-        case 14834: {
-          GachaRecordUrlOversea = input.ReadString();
-          break;
-        }
-        case 15002:
-        case 15000: {
-          displayUp4ItemList_.AddEntriesFrom(ref input, _repeated_displayUp4ItemList_codec);
-          break;
-        }
-        case 16050:
-        case 16048: {
-          displayUp5ItemList_.AddEntriesFrom(ref input, _repeated_displayUp5ItemList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

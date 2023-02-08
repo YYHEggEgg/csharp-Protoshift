@@ -9,293 +9,296 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from QuestUpdateQuestVarNotify.proto</summary>
-public static partial class QuestUpdateQuestVarNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for QuestUpdateQuestVarNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from QuestUpdateQuestVarNotify.proto</summary>
+  public static partial class QuestUpdateQuestVarNotifyReflection {
 
-  static QuestUpdateQuestVarNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch9RdWVzdFVwZGF0ZVF1ZXN0VmFyTm90aWZ5LnByb3RvImUKGVF1ZXN0VXBk",
-          "YXRlUXVlc3RWYXJOb3RpZnkSEQoJcXVlc3RfdmFyGAEgAygFEhcKD3BhcmVu",
-          "dF9xdWVzdF9pZBgMIAEoDRIcChRwYXJlbnRfcXVlc3RfdmFyX3NlcRgIIAEo",
-          "DUIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::QuestUpdateQuestVarNotify), global::QuestUpdateQuestVarNotify.Parser, new[]{ "QuestVar", "ParentQuestId", "ParentQuestVarSeq" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for QuestUpdateQuestVarNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static QuestUpdateQuestVarNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch9RdWVzdFVwZGF0ZVF1ZXN0VmFyTm90aWZ5LnByb3RvImUKGVF1ZXN0VXBk",
+            "YXRlUXVlc3RWYXJOb3RpZnkSEQoJcXVlc3RfdmFyGAEgAygFEhcKD3BhcmVu",
+            "dF9xdWVzdF9pZBgMIAEoDRIcChRwYXJlbnRfcXVlc3RfdmFyX3NlcRgIIAEo",
+            "DUIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.QuestUpdateQuestVarNotify), global::OldProtos.QuestUpdateQuestVarNotify.Parser, new[]{ "QuestVar", "ParentQuestId", "ParentQuestVarSeq" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 453
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class QuestUpdateQuestVarNotify : pb::IMessage<QuestUpdateQuestVarNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<QuestUpdateQuestVarNotify> _parser = new pb::MessageParser<QuestUpdateQuestVarNotify>(() => new QuestUpdateQuestVarNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<QuestUpdateQuestVarNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.QuestUpdateQuestVarNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public QuestUpdateQuestVarNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public QuestUpdateQuestVarNotify(QuestUpdateQuestVarNotify other) : this() {
+      questVar_ = other.questVar_.Clone();
+      parentQuestId_ = other.parentQuestId_;
+      parentQuestVarSeq_ = other.parentQuestVarSeq_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public QuestUpdateQuestVarNotify Clone() {
+      return new QuestUpdateQuestVarNotify(this);
+    }
+
+    /// <summary>Field number for the "quest_var" field.</summary>
+    public const int QuestVarFieldNumber = 1;
+    private static readonly pb::FieldCodec<int> _repeated_questVar_codec
+        = pb::FieldCodec.ForInt32(10);
+    private readonly pbc::RepeatedField<int> questVar_ = new pbc::RepeatedField<int>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> QuestVar {
+      get { return questVar_; }
+    }
+
+    /// <summary>Field number for the "parent_quest_id" field.</summary>
+    public const int ParentQuestIdFieldNumber = 12;
+    private uint parentQuestId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ParentQuestId {
+      get { return parentQuestId_; }
+      set {
+        parentQuestId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "parent_quest_var_seq" field.</summary>
+    public const int ParentQuestVarSeqFieldNumber = 8;
+    private uint parentQuestVarSeq_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ParentQuestVarSeq {
+      get { return parentQuestVarSeq_; }
+      set {
+        parentQuestVarSeq_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as QuestUpdateQuestVarNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(QuestUpdateQuestVarNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!questVar_.Equals(other.questVar_)) return false;
+      if (ParentQuestId != other.ParentQuestId) return false;
+      if (ParentQuestVarSeq != other.ParentQuestVarSeq) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= questVar_.GetHashCode();
+      if (ParentQuestId != 0) hash ^= ParentQuestId.GetHashCode();
+      if (ParentQuestVarSeq != 0) hash ^= ParentQuestVarSeq.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      questVar_.WriteTo(output, _repeated_questVar_codec);
+      if (ParentQuestVarSeq != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ParentQuestVarSeq);
+      }
+      if (ParentQuestId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ParentQuestId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      questVar_.WriteTo(ref output, _repeated_questVar_codec);
+      if (ParentQuestVarSeq != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ParentQuestVarSeq);
+      }
+      if (ParentQuestId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ParentQuestId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += questVar_.CalculateSize(_repeated_questVar_codec);
+      if (ParentQuestId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ParentQuestId);
+      }
+      if (ParentQuestVarSeq != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ParentQuestVarSeq);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(QuestUpdateQuestVarNotify other) {
+      if (other == null) {
+        return;
+      }
+      questVar_.Add(other.questVar_);
+      if (other.ParentQuestId != 0) {
+        ParentQuestId = other.ParentQuestId;
+      }
+      if (other.ParentQuestVarSeq != 0) {
+        ParentQuestVarSeq = other.ParentQuestVarSeq;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10:
+          case 8: {
+            questVar_.AddEntriesFrom(input, _repeated_questVar_codec);
+            break;
+          }
+          case 64: {
+            ParentQuestVarSeq = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            ParentQuestId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10:
+          case 8: {
+            questVar_.AddEntriesFrom(ref input, _repeated_questVar_codec);
+            break;
+          }
+          case 64: {
+            ParentQuestVarSeq = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            ParentQuestId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 453
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class QuestUpdateQuestVarNotify : pb::IMessage<QuestUpdateQuestVarNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<QuestUpdateQuestVarNotify> _parser = new pb::MessageParser<QuestUpdateQuestVarNotify>(() => new QuestUpdateQuestVarNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<QuestUpdateQuestVarNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::QuestUpdateQuestVarNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public QuestUpdateQuestVarNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public QuestUpdateQuestVarNotify(QuestUpdateQuestVarNotify other) : this() {
-    questVar_ = other.questVar_.Clone();
-    parentQuestId_ = other.parentQuestId_;
-    parentQuestVarSeq_ = other.parentQuestVarSeq_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public QuestUpdateQuestVarNotify Clone() {
-    return new QuestUpdateQuestVarNotify(this);
-  }
-
-  /// <summary>Field number for the "quest_var" field.</summary>
-  public const int QuestVarFieldNumber = 1;
-  private static readonly pb::FieldCodec<int> _repeated_questVar_codec
-      = pb::FieldCodec.ForInt32(10);
-  private readonly pbc::RepeatedField<int> questVar_ = new pbc::RepeatedField<int>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<int> QuestVar {
-    get { return questVar_; }
-  }
-
-  /// <summary>Field number for the "parent_quest_id" field.</summary>
-  public const int ParentQuestIdFieldNumber = 12;
-  private uint parentQuestId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ParentQuestId {
-    get { return parentQuestId_; }
-    set {
-      parentQuestId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "parent_quest_var_seq" field.</summary>
-  public const int ParentQuestVarSeqFieldNumber = 8;
-  private uint parentQuestVarSeq_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ParentQuestVarSeq {
-    get { return parentQuestVarSeq_; }
-    set {
-      parentQuestVarSeq_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as QuestUpdateQuestVarNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(QuestUpdateQuestVarNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!questVar_.Equals(other.questVar_)) return false;
-    if (ParentQuestId != other.ParentQuestId) return false;
-    if (ParentQuestVarSeq != other.ParentQuestVarSeq) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= questVar_.GetHashCode();
-    if (ParentQuestId != 0) hash ^= ParentQuestId.GetHashCode();
-    if (ParentQuestVarSeq != 0) hash ^= ParentQuestVarSeq.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    questVar_.WriteTo(output, _repeated_questVar_codec);
-    if (ParentQuestVarSeq != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ParentQuestVarSeq);
-    }
-    if (ParentQuestId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(ParentQuestId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    questVar_.WriteTo(ref output, _repeated_questVar_codec);
-    if (ParentQuestVarSeq != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ParentQuestVarSeq);
-    }
-    if (ParentQuestId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(ParentQuestId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += questVar_.CalculateSize(_repeated_questVar_codec);
-    if (ParentQuestId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ParentQuestId);
-    }
-    if (ParentQuestVarSeq != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ParentQuestVarSeq);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(QuestUpdateQuestVarNotify other) {
-    if (other == null) {
-      return;
-    }
-    questVar_.Add(other.questVar_);
-    if (other.ParentQuestId != 0) {
-      ParentQuestId = other.ParentQuestId;
-    }
-    if (other.ParentQuestVarSeq != 0) {
-      ParentQuestVarSeq = other.ParentQuestVarSeq;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10:
-        case 8: {
-          questVar_.AddEntriesFrom(input, _repeated_questVar_codec);
-          break;
-        }
-        case 64: {
-          ParentQuestVarSeq = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          ParentQuestId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10:
-        case 8: {
-          questVar_.AddEntriesFrom(ref input, _repeated_questVar_codec);
-          break;
-        }
-        case 64: {
-          ParentQuestVarSeq = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          ParentQuestId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

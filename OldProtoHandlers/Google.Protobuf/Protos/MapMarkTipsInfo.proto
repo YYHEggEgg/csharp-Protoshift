@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "MapMarkTipsType.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message MapMarkTipsInfo {
   MapMarkTipsType tips_type = 1;

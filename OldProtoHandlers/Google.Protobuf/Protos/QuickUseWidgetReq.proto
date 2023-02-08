@@ -21,7 +21,7 @@ import "WidgetCreateLocationInfo.proto";
 import "WidgetCreatorInfo.proto";
 import "WidgetThunderBirdFeatherInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 4299
 // EnetChannelId: 0

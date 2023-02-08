@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GachaUpInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GachaInfo {
   uint32 left_gacha_times = 5;

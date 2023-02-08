@@ -9,37 +9,40 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGClientPerformType.proto</summary>
-public static partial class GCGClientPerformTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGClientPerformType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGClientPerformType.proto</summary>
+  public static partial class GCGClientPerformTypeReflection {
 
-  static GCGClientPerformTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpHQ0dDbGllbnRQZXJmb3JtVHlwZS5wcm90bypmChRHQ0dDbGllbnRQZXJm",
-          "b3JtVHlwZRIjCh9HQ0dfQ0xJRU5UX1BFUkZPUk1fVFlQRV9JTlZBTElEEAAS",
-          "KQolR0NHX0NMSUVOVF9QRVJGT1JNX1RZUEVfQ0FSRF9FWENIQU5HRRABQh4K",
-          "HGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GCGClientPerformType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for GCGClientPerformType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGClientPerformTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpHQ0dDbGllbnRQZXJmb3JtVHlwZS5wcm90bypmChRHQ0dDbGllbnRQZXJm",
+            "b3JtVHlwZRIjCh9HQ0dfQ0xJRU5UX1BFUkZPUk1fVFlQRV9JTlZBTElEEAAS",
+            "KQolR0NHX0NMSUVOVF9QRVJGT1JNX1RZUEVfQ0FSRF9FWENIQU5HRRABQgyq",
+            "AglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.GCGClientPerformType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum GCGClientPerformType {
+    [pbr::OriginalName("GCG_CLIENT_PERFORM_TYPE_INVALID")] Invalid = 0,
+    [pbr::OriginalName("GCG_CLIENT_PERFORM_TYPE_CARD_EXCHANGE")] CardExchange = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum GCGClientPerformType {
-  [pbr::OriginalName("GCG_CLIENT_PERFORM_TYPE_INVALID")] Invalid = 0,
-  [pbr::OriginalName("GCG_CLIENT_PERFORM_TYPE_CARD_EXCHANGE")] CardExchange = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -21,7 +21,7 @@ import "ShopCardProduct.proto";
 import "ShopConcertProduct.proto";
 import "ShopMcoinProduct.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 4126
 // EnetChannelId: 0

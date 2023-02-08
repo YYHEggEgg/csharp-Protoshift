@@ -9,267 +9,270 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ForgeQueueManipulateReq.proto</summary>
-public static partial class ForgeQueueManipulateReqReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ForgeQueueManipulateReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ForgeQueueManipulateReq.proto</summary>
+  public static partial class ForgeQueueManipulateReqReflection {
 
-  static ForgeQueueManipulateReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1Gb3JnZVF1ZXVlTWFuaXB1bGF0ZVJlcS5wcm90bxoeRm9yZ2VRdWV1ZU1h",
-          "bmlwdWxhdGVUeXBlLnByb3RvImUKF0ZvcmdlUXVldWVNYW5pcHVsYXRlUmVx",
-          "EhYKDmZvcmdlX3F1ZXVlX2lkGAUgASgNEjIKD21hbmlwdWxhdGVfdHlwZRgN",
-          "IAEoDjIZLkZvcmdlUXVldWVNYW5pcHVsYXRlVHlwZUIeChxlbXUuZ3Jhc3Nj",
-          "dXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ForgeQueueManipulateTypeReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ForgeQueueManipulateReq), global::ForgeQueueManipulateReq.Parser, new[]{ "ForgeQueueId", "ManipulateType" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ForgeQueueManipulateReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ForgeQueueManipulateReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1Gb3JnZVF1ZXVlTWFuaXB1bGF0ZVJlcS5wcm90bxoeRm9yZ2VRdWV1ZU1h",
+            "bmlwdWxhdGVUeXBlLnByb3RvImUKF0ZvcmdlUXVldWVNYW5pcHVsYXRlUmVx",
+            "EhYKDmZvcmdlX3F1ZXVlX2lkGAUgASgNEjIKD21hbmlwdWxhdGVfdHlwZRgN",
+            "IAEoDjIZLkZvcmdlUXVldWVNYW5pcHVsYXRlVHlwZUIMqgIJT2xkUHJvdG9z",
+            "YgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ForgeQueueManipulateTypeReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ForgeQueueManipulateReq), global::OldProtos.ForgeQueueManipulateReq.Parser, new[]{ "ForgeQueueId", "ManipulateType" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 624
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class ForgeQueueManipulateReq : pb::IMessage<ForgeQueueManipulateReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ForgeQueueManipulateReq> _parser = new pb::MessageParser<ForgeQueueManipulateReq>(() => new ForgeQueueManipulateReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ForgeQueueManipulateReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ForgeQueueManipulateReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ForgeQueueManipulateReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ForgeQueueManipulateReq(ForgeQueueManipulateReq other) : this() {
+      forgeQueueId_ = other.forgeQueueId_;
+      manipulateType_ = other.manipulateType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ForgeQueueManipulateReq Clone() {
+      return new ForgeQueueManipulateReq(this);
+    }
+
+    /// <summary>Field number for the "forge_queue_id" field.</summary>
+    public const int ForgeQueueIdFieldNumber = 5;
+    private uint forgeQueueId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ForgeQueueId {
+      get { return forgeQueueId_; }
+      set {
+        forgeQueueId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "manipulate_type" field.</summary>
+    public const int ManipulateTypeFieldNumber = 13;
+    private global::OldProtos.ForgeQueueManipulateType manipulateType_ = global::OldProtos.ForgeQueueManipulateType.ReceiveOutput;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ForgeQueueManipulateType ManipulateType {
+      get { return manipulateType_; }
+      set {
+        manipulateType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ForgeQueueManipulateReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ForgeQueueManipulateReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ForgeQueueId != other.ForgeQueueId) return false;
+      if (ManipulateType != other.ManipulateType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ForgeQueueId != 0) hash ^= ForgeQueueId.GetHashCode();
+      if (ManipulateType != global::OldProtos.ForgeQueueManipulateType.ReceiveOutput) hash ^= ManipulateType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ForgeQueueId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ForgeQueueId);
+      }
+      if (ManipulateType != global::OldProtos.ForgeQueueManipulateType.ReceiveOutput) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) ManipulateType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ForgeQueueId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(ForgeQueueId);
+      }
+      if (ManipulateType != global::OldProtos.ForgeQueueManipulateType.ReceiveOutput) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) ManipulateType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ForgeQueueId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ForgeQueueId);
+      }
+      if (ManipulateType != global::OldProtos.ForgeQueueManipulateType.ReceiveOutput) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ManipulateType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ForgeQueueManipulateReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ForgeQueueId != 0) {
+        ForgeQueueId = other.ForgeQueueId;
+      }
+      if (other.ManipulateType != global::OldProtos.ForgeQueueManipulateType.ReceiveOutput) {
+        ManipulateType = other.ManipulateType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            ForgeQueueId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            ManipulateType = (global::OldProtos.ForgeQueueManipulateType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            ForgeQueueId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            ManipulateType = (global::OldProtos.ForgeQueueManipulateType) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 624
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class ForgeQueueManipulateReq : pb::IMessage<ForgeQueueManipulateReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ForgeQueueManipulateReq> _parser = new pb::MessageParser<ForgeQueueManipulateReq>(() => new ForgeQueueManipulateReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ForgeQueueManipulateReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ForgeQueueManipulateReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ForgeQueueManipulateReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ForgeQueueManipulateReq(ForgeQueueManipulateReq other) : this() {
-    forgeQueueId_ = other.forgeQueueId_;
-    manipulateType_ = other.manipulateType_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ForgeQueueManipulateReq Clone() {
-    return new ForgeQueueManipulateReq(this);
-  }
-
-  /// <summary>Field number for the "forge_queue_id" field.</summary>
-  public const int ForgeQueueIdFieldNumber = 5;
-  private uint forgeQueueId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ForgeQueueId {
-    get { return forgeQueueId_; }
-    set {
-      forgeQueueId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "manipulate_type" field.</summary>
-  public const int ManipulateTypeFieldNumber = 13;
-  private global::ForgeQueueManipulateType manipulateType_ = global::ForgeQueueManipulateType.ReceiveOutput;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ForgeQueueManipulateType ManipulateType {
-    get { return manipulateType_; }
-    set {
-      manipulateType_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ForgeQueueManipulateReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ForgeQueueManipulateReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ForgeQueueId != other.ForgeQueueId) return false;
-    if (ManipulateType != other.ManipulateType) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ForgeQueueId != 0) hash ^= ForgeQueueId.GetHashCode();
-    if (ManipulateType != global::ForgeQueueManipulateType.ReceiveOutput) hash ^= ManipulateType.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ForgeQueueId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(ForgeQueueId);
-    }
-    if (ManipulateType != global::ForgeQueueManipulateType.ReceiveOutput) {
-      output.WriteRawTag(104);
-      output.WriteEnum((int) ManipulateType);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ForgeQueueId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(ForgeQueueId);
-    }
-    if (ManipulateType != global::ForgeQueueManipulateType.ReceiveOutput) {
-      output.WriteRawTag(104);
-      output.WriteEnum((int) ManipulateType);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ForgeQueueId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ForgeQueueId);
-    }
-    if (ManipulateType != global::ForgeQueueManipulateType.ReceiveOutput) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ManipulateType);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ForgeQueueManipulateReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ForgeQueueId != 0) {
-      ForgeQueueId = other.ForgeQueueId;
-    }
-    if (other.ManipulateType != global::ForgeQueueManipulateType.ReceiveOutput) {
-      ManipulateType = other.ManipulateType;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          ForgeQueueId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          ManipulateType = (global::ForgeQueueManipulateType) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          ForgeQueueId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          ManipulateType = (global::ForgeQueueManipulateType) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

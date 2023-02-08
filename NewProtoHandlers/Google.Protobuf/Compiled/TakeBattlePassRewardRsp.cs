@@ -9,286 +9,289 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from TakeBattlePassRewardRsp.proto</summary>
-public static partial class TakeBattlePassRewardRspReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for TakeBattlePassRewardRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from TakeBattlePassRewardRsp.proto</summary>
+  public static partial class TakeBattlePassRewardRspReflection {
 
-  static TakeBattlePassRewardRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1UYWtlQmF0dGxlUGFzc1Jld2FyZFJzcC5wcm90bxogQmF0dGxlUGFzc1Jl",
-          "d2FyZFRha2VPcHRpb24ucHJvdG8aD0l0ZW1QYXJhbS5wcm90byKAAQoXVGFr",
-          "ZUJhdHRsZVBhc3NSZXdhcmRSc3ASDwoHcmV0Y29kZRgGIAEoBRI1ChB0YWtl",
-          "X29wdGlvbl9saXN0GAcgAygLMhsuQmF0dGxlUGFzc1Jld2FyZFRha2VPcHRp",
-          "b24SHQoJaXRlbV9saXN0GAQgAygLMgouSXRlbVBhcmFtQhYKFG9yZy5zb3Jh",
-          "cG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::BattlePassRewardTakeOptionReflection.Descriptor, global::ItemParamReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::TakeBattlePassRewardRsp), global::TakeBattlePassRewardRsp.Parser, new[]{ "Retcode", "TakeOptionList", "ItemList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for TakeBattlePassRewardRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static TakeBattlePassRewardRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1UYWtlQmF0dGxlUGFzc1Jld2FyZFJzcC5wcm90bxogQmF0dGxlUGFzc1Jl",
+            "d2FyZFRha2VPcHRpb24ucHJvdG8aD0l0ZW1QYXJhbS5wcm90byKAAQoXVGFr",
+            "ZUJhdHRsZVBhc3NSZXdhcmRSc3ASDwoHcmV0Y29kZRgGIAEoBRI1ChB0YWtl",
+            "X29wdGlvbl9saXN0GAcgAygLMhsuQmF0dGxlUGFzc1Jld2FyZFRha2VPcHRp",
+            "b24SHQoJaXRlbV9saXN0GAQgAygLMgouSXRlbVBhcmFtQgyqAglOZXdQcm90",
+            "b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.BattlePassRewardTakeOptionReflection.Descriptor, global::NewProtos.ItemParamReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.TakeBattlePassRewardRsp), global::NewProtos.TakeBattlePassRewardRsp.Parser, new[]{ "Retcode", "TakeOptionList", "ItemList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 2631;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class TakeBattlePassRewardRsp : pb::IMessage<TakeBattlePassRewardRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TakeBattlePassRewardRsp> _parser = new pb::MessageParser<TakeBattlePassRewardRsp>(() => new TakeBattlePassRewardRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TakeBattlePassRewardRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.TakeBattlePassRewardRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TakeBattlePassRewardRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TakeBattlePassRewardRsp(TakeBattlePassRewardRsp other) : this() {
+      retcode_ = other.retcode_;
+      takeOptionList_ = other.takeOptionList_.Clone();
+      itemList_ = other.itemList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TakeBattlePassRewardRsp Clone() {
+      return new TakeBattlePassRewardRsp(this);
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 6;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "take_option_list" field.</summary>
+    public const int TakeOptionListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::NewProtos.BattlePassRewardTakeOption> _repeated_takeOptionList_codec
+        = pb::FieldCodec.ForMessage(58, global::NewProtos.BattlePassRewardTakeOption.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.BattlePassRewardTakeOption> takeOptionList_ = new pbc::RepeatedField<global::NewProtos.BattlePassRewardTakeOption>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.BattlePassRewardTakeOption> TakeOptionList {
+      get { return takeOptionList_; }
+    }
+
+    /// <summary>Field number for the "item_list" field.</summary>
+    public const int ItemListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::NewProtos.ItemParam> _repeated_itemList_codec
+        = pb::FieldCodec.ForMessage(34, global::NewProtos.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ItemParam> itemList_ = new pbc::RepeatedField<global::NewProtos.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ItemParam> ItemList {
+      get { return itemList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TakeBattlePassRewardRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TakeBattlePassRewardRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Retcode != other.Retcode) return false;
+      if(!takeOptionList_.Equals(other.takeOptionList_)) return false;
+      if(!itemList_.Equals(other.itemList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= takeOptionList_.GetHashCode();
+      hash ^= itemList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      itemList_.WriteTo(output, _repeated_itemList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Retcode);
+      }
+      takeOptionList_.WriteTo(output, _repeated_takeOptionList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      itemList_.WriteTo(ref output, _repeated_itemList_codec);
+      if (Retcode != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Retcode);
+      }
+      takeOptionList_.WriteTo(ref output, _repeated_takeOptionList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      size += takeOptionList_.CalculateSize(_repeated_takeOptionList_codec);
+      size += itemList_.CalculateSize(_repeated_itemList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TakeBattlePassRewardRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      takeOptionList_.Add(other.takeOptionList_);
+      itemList_.Add(other.itemList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 34: {
+            itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
+            break;
+          }
+          case 48: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 58: {
+            takeOptionList_.AddEntriesFrom(input, _repeated_takeOptionList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 34: {
+            itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
+            break;
+          }
+          case 48: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 58: {
+            takeOptionList_.AddEntriesFrom(ref input, _repeated_takeOptionList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 2631;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class TakeBattlePassRewardRsp : pb::IMessage<TakeBattlePassRewardRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<TakeBattlePassRewardRsp> _parser = new pb::MessageParser<TakeBattlePassRewardRsp>(() => new TakeBattlePassRewardRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<TakeBattlePassRewardRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::TakeBattlePassRewardRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TakeBattlePassRewardRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TakeBattlePassRewardRsp(TakeBattlePassRewardRsp other) : this() {
-    retcode_ = other.retcode_;
-    takeOptionList_ = other.takeOptionList_.Clone();
-    itemList_ = other.itemList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TakeBattlePassRewardRsp Clone() {
-    return new TakeBattlePassRewardRsp(this);
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 6;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "take_option_list" field.</summary>
-  public const int TakeOptionListFieldNumber = 7;
-  private static readonly pb::FieldCodec<global::BattlePassRewardTakeOption> _repeated_takeOptionList_codec
-      = pb::FieldCodec.ForMessage(58, global::BattlePassRewardTakeOption.Parser);
-  private readonly pbc::RepeatedField<global::BattlePassRewardTakeOption> takeOptionList_ = new pbc::RepeatedField<global::BattlePassRewardTakeOption>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::BattlePassRewardTakeOption> TakeOptionList {
-    get { return takeOptionList_; }
-  }
-
-  /// <summary>Field number for the "item_list" field.</summary>
-  public const int ItemListFieldNumber = 4;
-  private static readonly pb::FieldCodec<global::ItemParam> _repeated_itemList_codec
-      = pb::FieldCodec.ForMessage(34, global::ItemParam.Parser);
-  private readonly pbc::RepeatedField<global::ItemParam> itemList_ = new pbc::RepeatedField<global::ItemParam>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ItemParam> ItemList {
-    get { return itemList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as TakeBattlePassRewardRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(TakeBattlePassRewardRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Retcode != other.Retcode) return false;
-    if(!takeOptionList_.Equals(other.takeOptionList_)) return false;
-    if(!itemList_.Equals(other.itemList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    hash ^= takeOptionList_.GetHashCode();
-    hash ^= itemList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    itemList_.WriteTo(output, _repeated_itemList_codec);
-    if (Retcode != 0) {
-      output.WriteRawTag(48);
-      output.WriteInt32(Retcode);
-    }
-    takeOptionList_.WriteTo(output, _repeated_takeOptionList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    itemList_.WriteTo(ref output, _repeated_itemList_codec);
-    if (Retcode != 0) {
-      output.WriteRawTag(48);
-      output.WriteInt32(Retcode);
-    }
-    takeOptionList_.WriteTo(ref output, _repeated_takeOptionList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    size += takeOptionList_.CalculateSize(_repeated_takeOptionList_codec);
-    size += itemList_.CalculateSize(_repeated_itemList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(TakeBattlePassRewardRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    takeOptionList_.Add(other.takeOptionList_);
-    itemList_.Add(other.itemList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 34: {
-          itemList_.AddEntriesFrom(input, _repeated_itemList_codec);
-          break;
-        }
-        case 48: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 58: {
-          takeOptionList_.AddEntriesFrom(input, _repeated_takeOptionList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 34: {
-          itemList_.AddEntriesFrom(ref input, _repeated_itemList_codec);
-          break;
-        }
-        case 48: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 58: {
-          takeOptionList_.AddEntriesFrom(ref input, _repeated_takeOptionList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -9,317 +9,320 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from PlayerApplyEnterMpAfterMatchAgreedNotify.proto</summary>
-public static partial class PlayerApplyEnterMpAfterMatchAgreedNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for PlayerApplyEnterMpAfterMatchAgreedNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from PlayerApplyEnterMpAfterMatchAgreedNotify.proto</summary>
+  public static partial class PlayerApplyEnterMpAfterMatchAgreedNotifyReflection {
 
-  static PlayerApplyEnterMpAfterMatchAgreedNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ci5QbGF5ZXJBcHBseUVudGVyTXBBZnRlck1hdGNoQWdyZWVkTm90aWZ5LnBy",
-          "b3RvGg9NYXRjaFR5cGUucHJvdG8aFk9ubGluZVBsYXllckluZm8ucHJvdG8i",
-          "jgEKKFBsYXllckFwcGx5RW50ZXJNcEFmdGVyTWF0Y2hBZ3JlZWROb3RpZnkS",
-          "FgoObWF0Y2hzZXJ2ZXJfaWQYAyABKA0SKgoPc3JjX3BsYXllcl9pbmZvGAcg",
-          "ASgLMhEuT25saW5lUGxheWVySW5mbxIeCgptYXRjaF90eXBlGAUgASgOMgou",
-          "TWF0Y2hUeXBlQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::MatchTypeReflection.Descriptor, global::OnlinePlayerInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::PlayerApplyEnterMpAfterMatchAgreedNotify), global::PlayerApplyEnterMpAfterMatchAgreedNotify.Parser, new[]{ "MatchserverId", "SrcPlayerInfo", "MatchType" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for PlayerApplyEnterMpAfterMatchAgreedNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static PlayerApplyEnterMpAfterMatchAgreedNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ci5QbGF5ZXJBcHBseUVudGVyTXBBZnRlck1hdGNoQWdyZWVkTm90aWZ5LnBy",
+            "b3RvGg9NYXRjaFR5cGUucHJvdG8aFk9ubGluZVBsYXllckluZm8ucHJvdG8i",
+            "jgEKKFBsYXllckFwcGx5RW50ZXJNcEFmdGVyTWF0Y2hBZ3JlZWROb3RpZnkS",
+            "FgoObWF0Y2hzZXJ2ZXJfaWQYAyABKA0SKgoPc3JjX3BsYXllcl9pbmZvGAcg",
+            "ASgLMhEuT25saW5lUGxheWVySW5mbxIeCgptYXRjaF90eXBlGAUgASgOMgou",
+            "TWF0Y2hUeXBlQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.MatchTypeReflection.Descriptor, global::NewProtos.OnlinePlayerInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.PlayerApplyEnterMpAfterMatchAgreedNotify), global::NewProtos.PlayerApplyEnterMpAfterMatchAgreedNotify.Parser, new[]{ "MatchserverId", "SrcPlayerInfo", "MatchType" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4168;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class PlayerApplyEnterMpAfterMatchAgreedNotify : pb::IMessage<PlayerApplyEnterMpAfterMatchAgreedNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PlayerApplyEnterMpAfterMatchAgreedNotify> _parser = new pb::MessageParser<PlayerApplyEnterMpAfterMatchAgreedNotify>(() => new PlayerApplyEnterMpAfterMatchAgreedNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PlayerApplyEnterMpAfterMatchAgreedNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.PlayerApplyEnterMpAfterMatchAgreedNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerApplyEnterMpAfterMatchAgreedNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerApplyEnterMpAfterMatchAgreedNotify(PlayerApplyEnterMpAfterMatchAgreedNotify other) : this() {
+      matchserverId_ = other.matchserverId_;
+      srcPlayerInfo_ = other.srcPlayerInfo_ != null ? other.srcPlayerInfo_.Clone() : null;
+      matchType_ = other.matchType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlayerApplyEnterMpAfterMatchAgreedNotify Clone() {
+      return new PlayerApplyEnterMpAfterMatchAgreedNotify(this);
+    }
+
+    /// <summary>Field number for the "matchserver_id" field.</summary>
+    public const int MatchserverIdFieldNumber = 3;
+    private uint matchserverId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MatchserverId {
+      get { return matchserverId_; }
+      set {
+        matchserverId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "src_player_info" field.</summary>
+    public const int SrcPlayerInfoFieldNumber = 7;
+    private global::NewProtos.OnlinePlayerInfo srcPlayerInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.OnlinePlayerInfo SrcPlayerInfo {
+      get { return srcPlayerInfo_; }
+      set {
+        srcPlayerInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "match_type" field.</summary>
+    public const int MatchTypeFieldNumber = 5;
+    private global::NewProtos.MatchType matchType_ = global::NewProtos.MatchType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.MatchType MatchType {
+      get { return matchType_; }
+      set {
+        matchType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PlayerApplyEnterMpAfterMatchAgreedNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PlayerApplyEnterMpAfterMatchAgreedNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MatchserverId != other.MatchserverId) return false;
+      if (!object.Equals(SrcPlayerInfo, other.SrcPlayerInfo)) return false;
+      if (MatchType != other.MatchType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MatchserverId != 0) hash ^= MatchserverId.GetHashCode();
+      if (srcPlayerInfo_ != null) hash ^= SrcPlayerInfo.GetHashCode();
+      if (MatchType != global::NewProtos.MatchType.None) hash ^= MatchType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (MatchserverId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MatchserverId);
+      }
+      if (MatchType != global::NewProtos.MatchType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) MatchType);
+      }
+      if (srcPlayerInfo_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(SrcPlayerInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (MatchserverId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MatchserverId);
+      }
+      if (MatchType != global::NewProtos.MatchType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) MatchType);
+      }
+      if (srcPlayerInfo_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(SrcPlayerInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (MatchserverId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MatchserverId);
+      }
+      if (srcPlayerInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SrcPlayerInfo);
+      }
+      if (MatchType != global::NewProtos.MatchType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MatchType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PlayerApplyEnterMpAfterMatchAgreedNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MatchserverId != 0) {
+        MatchserverId = other.MatchserverId;
+      }
+      if (other.srcPlayerInfo_ != null) {
+        if (srcPlayerInfo_ == null) {
+          SrcPlayerInfo = new global::NewProtos.OnlinePlayerInfo();
+        }
+        SrcPlayerInfo.MergeFrom(other.SrcPlayerInfo);
+      }
+      if (other.MatchType != global::NewProtos.MatchType.None) {
+        MatchType = other.MatchType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            MatchserverId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            MatchType = (global::NewProtos.MatchType) input.ReadEnum();
+            break;
+          }
+          case 58: {
+            if (srcPlayerInfo_ == null) {
+              SrcPlayerInfo = new global::NewProtos.OnlinePlayerInfo();
+            }
+            input.ReadMessage(SrcPlayerInfo);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            MatchserverId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            MatchType = (global::NewProtos.MatchType) input.ReadEnum();
+            break;
+          }
+          case 58: {
+            if (srcPlayerInfo_ == null) {
+              SrcPlayerInfo = new global::NewProtos.OnlinePlayerInfo();
+            }
+            input.ReadMessage(SrcPlayerInfo);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 4168;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class PlayerApplyEnterMpAfterMatchAgreedNotify : pb::IMessage<PlayerApplyEnterMpAfterMatchAgreedNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<PlayerApplyEnterMpAfterMatchAgreedNotify> _parser = new pb::MessageParser<PlayerApplyEnterMpAfterMatchAgreedNotify>(() => new PlayerApplyEnterMpAfterMatchAgreedNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<PlayerApplyEnterMpAfterMatchAgreedNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::PlayerApplyEnterMpAfterMatchAgreedNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerApplyEnterMpAfterMatchAgreedNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerApplyEnterMpAfterMatchAgreedNotify(PlayerApplyEnterMpAfterMatchAgreedNotify other) : this() {
-    matchserverId_ = other.matchserverId_;
-    srcPlayerInfo_ = other.srcPlayerInfo_ != null ? other.srcPlayerInfo_.Clone() : null;
-    matchType_ = other.matchType_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlayerApplyEnterMpAfterMatchAgreedNotify Clone() {
-    return new PlayerApplyEnterMpAfterMatchAgreedNotify(this);
-  }
-
-  /// <summary>Field number for the "matchserver_id" field.</summary>
-  public const int MatchserverIdFieldNumber = 3;
-  private uint matchserverId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MatchserverId {
-    get { return matchserverId_; }
-    set {
-      matchserverId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "src_player_info" field.</summary>
-  public const int SrcPlayerInfoFieldNumber = 7;
-  private global::OnlinePlayerInfo srcPlayerInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::OnlinePlayerInfo SrcPlayerInfo {
-    get { return srcPlayerInfo_; }
-    set {
-      srcPlayerInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "match_type" field.</summary>
-  public const int MatchTypeFieldNumber = 5;
-  private global::MatchType matchType_ = global::MatchType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::MatchType MatchType {
-    get { return matchType_; }
-    set {
-      matchType_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as PlayerApplyEnterMpAfterMatchAgreedNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(PlayerApplyEnterMpAfterMatchAgreedNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (MatchserverId != other.MatchserverId) return false;
-    if (!object.Equals(SrcPlayerInfo, other.SrcPlayerInfo)) return false;
-    if (MatchType != other.MatchType) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (MatchserverId != 0) hash ^= MatchserverId.GetHashCode();
-    if (srcPlayerInfo_ != null) hash ^= SrcPlayerInfo.GetHashCode();
-    if (MatchType != global::MatchType.None) hash ^= MatchType.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (MatchserverId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(MatchserverId);
-    }
-    if (MatchType != global::MatchType.None) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) MatchType);
-    }
-    if (srcPlayerInfo_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(SrcPlayerInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MatchserverId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(MatchserverId);
-    }
-    if (MatchType != global::MatchType.None) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) MatchType);
-    }
-    if (srcPlayerInfo_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(SrcPlayerInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (MatchserverId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MatchserverId);
-    }
-    if (srcPlayerInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(SrcPlayerInfo);
-    }
-    if (MatchType != global::MatchType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) MatchType);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(PlayerApplyEnterMpAfterMatchAgreedNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.MatchserverId != 0) {
-      MatchserverId = other.MatchserverId;
-    }
-    if (other.srcPlayerInfo_ != null) {
-      if (srcPlayerInfo_ == null) {
-        SrcPlayerInfo = new global::OnlinePlayerInfo();
-      }
-      SrcPlayerInfo.MergeFrom(other.SrcPlayerInfo);
-    }
-    if (other.MatchType != global::MatchType.None) {
-      MatchType = other.MatchType;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          MatchserverId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          MatchType = (global::MatchType) input.ReadEnum();
-          break;
-        }
-        case 58: {
-          if (srcPlayerInfo_ == null) {
-            SrcPlayerInfo = new global::OnlinePlayerInfo();
-          }
-          input.ReadMessage(SrcPlayerInfo);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          MatchserverId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          MatchType = (global::MatchType) input.ReadEnum();
-          break;
-        }
-        case 58: {
-          if (srcPlayerInfo_ == null) {
-            SrcPlayerInfo = new global::OnlinePlayerInfo();
-          }
-          input.ReadMessage(SrcPlayerInfo);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

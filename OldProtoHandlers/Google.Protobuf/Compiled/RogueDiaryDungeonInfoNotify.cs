@@ -9,537 +9,540 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from RogueDiaryDungeonInfoNotify.proto</summary>
-public static partial class RogueDiaryDungeonInfoNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for RogueDiaryDungeonInfoNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from RogueDiaryDungeonInfoNotify.proto</summary>
+  public static partial class RogueDiaryDungeonInfoNotifyReflection {
 
-  static RogueDiaryDungeonInfoNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiFSb2d1ZURpYXJ5RHVuZ2VvbkluZm9Ob3RpZnkucHJvdG8aGFJvZ3VlRGlh",
-          "cnlSb29tSW5mby5wcm90byL1AQobUm9ndWVEaWFyeUR1bmdlb25JbmZvTm90",
-          "aWZ5EhAKCHN0YWdlX2lkGAwgASgNEhoKEnJvdW5kX21vbnN0ZXJfbGlzdBgP",
-          "IAMoDRIMCgR0aW1lGAQgASgNEhAKCGN1cl9yb29tGAUgASgNEhEKCWN1cl9y",
-          "b3VuZBgGIAEoDRIMCgRjb2luGAsgASgNEhIKCmRpZmZpY3VsdHkYCCABKA0S",
-          "EgoKZHVuZ2Vvbl9pZBgOIAEoDRImCglyb29tX2xpc3QYByADKAsyEy5Sb2d1",
-          "ZURpYXJ5Um9vbUluZm8SFwoPcm91bmRfY2FyZF9saXN0GAogAygNQh4KHGVt",
-          "dS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::RogueDiaryRoomInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::RogueDiaryDungeonInfoNotify), global::RogueDiaryDungeonInfoNotify.Parser, new[]{ "StageId", "RoundMonsterList", "Time", "CurRoom", "CurRound", "Coin", "Difficulty", "DungeonId", "RoomList", "RoundCardList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for RogueDiaryDungeonInfoNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static RogueDiaryDungeonInfoNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiFSb2d1ZURpYXJ5RHVuZ2VvbkluZm9Ob3RpZnkucHJvdG8aGFJvZ3VlRGlh",
+            "cnlSb29tSW5mby5wcm90byL1AQobUm9ndWVEaWFyeUR1bmdlb25JbmZvTm90",
+            "aWZ5EhAKCHN0YWdlX2lkGAwgASgNEhoKEnJvdW5kX21vbnN0ZXJfbGlzdBgP",
+            "IAMoDRIMCgR0aW1lGAQgASgNEhAKCGN1cl9yb29tGAUgASgNEhEKCWN1cl9y",
+            "b3VuZBgGIAEoDRIMCgRjb2luGAsgASgNEhIKCmRpZmZpY3VsdHkYCCABKA0S",
+            "EgoKZHVuZ2Vvbl9pZBgOIAEoDRImCglyb29tX2xpc3QYByADKAsyEy5Sb2d1",
+            "ZURpYXJ5Um9vbUluZm8SFwoPcm91bmRfY2FyZF9saXN0GAogAygNQgyqAglP",
+            "bGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.RogueDiaryRoomInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.RogueDiaryDungeonInfoNotify), global::OldProtos.RogueDiaryDungeonInfoNotify.Parser, new[]{ "StageId", "RoundMonsterList", "Time", "CurRoom", "CurRound", "Coin", "Difficulty", "DungeonId", "RoomList", "RoundCardList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 8597
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class RogueDiaryDungeonInfoNotify : pb::IMessage<RogueDiaryDungeonInfoNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RogueDiaryDungeonInfoNotify> _parser = new pb::MessageParser<RogueDiaryDungeonInfoNotify>(() => new RogueDiaryDungeonInfoNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RogueDiaryDungeonInfoNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.RogueDiaryDungeonInfoNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RogueDiaryDungeonInfoNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RogueDiaryDungeonInfoNotify(RogueDiaryDungeonInfoNotify other) : this() {
+      stageId_ = other.stageId_;
+      roundMonsterList_ = other.roundMonsterList_.Clone();
+      time_ = other.time_;
+      curRoom_ = other.curRoom_;
+      curRound_ = other.curRound_;
+      coin_ = other.coin_;
+      difficulty_ = other.difficulty_;
+      dungeonId_ = other.dungeonId_;
+      roomList_ = other.roomList_.Clone();
+      roundCardList_ = other.roundCardList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RogueDiaryDungeonInfoNotify Clone() {
+      return new RogueDiaryDungeonInfoNotify(this);
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 12;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "round_monster_list" field.</summary>
+    public const int RoundMonsterListFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_roundMonsterList_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> roundMonsterList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> RoundMonsterList {
+      get { return roundMonsterList_; }
+    }
+
+    /// <summary>Field number for the "time" field.</summary>
+    public const int TimeFieldNumber = 4;
+    private uint time_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Time {
+      get { return time_; }
+      set {
+        time_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_room" field.</summary>
+    public const int CurRoomFieldNumber = 5;
+    private uint curRoom_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurRoom {
+      get { return curRoom_; }
+      set {
+        curRoom_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_round" field.</summary>
+    public const int CurRoundFieldNumber = 6;
+    private uint curRound_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurRound {
+      get { return curRound_; }
+      set {
+        curRound_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "coin" field.</summary>
+    public const int CoinFieldNumber = 11;
+    private uint coin_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Coin {
+      get { return coin_; }
+      set {
+        coin_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "difficulty" field.</summary>
+    public const int DifficultyFieldNumber = 8;
+    private uint difficulty_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Difficulty {
+      get { return difficulty_; }
+      set {
+        difficulty_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_id" field.</summary>
+    public const int DungeonIdFieldNumber = 14;
+    private uint dungeonId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonId {
+      get { return dungeonId_; }
+      set {
+        dungeonId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "room_list" field.</summary>
+    public const int RoomListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::OldProtos.RogueDiaryRoomInfo> _repeated_roomList_codec
+        = pb::FieldCodec.ForMessage(58, global::OldProtos.RogueDiaryRoomInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.RogueDiaryRoomInfo> roomList_ = new pbc::RepeatedField<global::OldProtos.RogueDiaryRoomInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.RogueDiaryRoomInfo> RoomList {
+      get { return roomList_; }
+    }
+
+    /// <summary>Field number for the "round_card_list" field.</summary>
+    public const int RoundCardListFieldNumber = 10;
+    private static readonly pb::FieldCodec<uint> _repeated_roundCardList_codec
+        = pb::FieldCodec.ForUInt32(82);
+    private readonly pbc::RepeatedField<uint> roundCardList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> RoundCardList {
+      get { return roundCardList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RogueDiaryDungeonInfoNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RogueDiaryDungeonInfoNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (StageId != other.StageId) return false;
+      if(!roundMonsterList_.Equals(other.roundMonsterList_)) return false;
+      if (Time != other.Time) return false;
+      if (CurRoom != other.CurRoom) return false;
+      if (CurRound != other.CurRound) return false;
+      if (Coin != other.Coin) return false;
+      if (Difficulty != other.Difficulty) return false;
+      if (DungeonId != other.DungeonId) return false;
+      if(!roomList_.Equals(other.roomList_)) return false;
+      if(!roundCardList_.Equals(other.roundCardList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      hash ^= roundMonsterList_.GetHashCode();
+      if (Time != 0) hash ^= Time.GetHashCode();
+      if (CurRoom != 0) hash ^= CurRoom.GetHashCode();
+      if (CurRound != 0) hash ^= CurRound.GetHashCode();
+      if (Coin != 0) hash ^= Coin.GetHashCode();
+      if (Difficulty != 0) hash ^= Difficulty.GetHashCode();
+      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
+      hash ^= roomList_.GetHashCode();
+      hash ^= roundCardList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Time != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Time);
+      }
+      if (CurRoom != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(CurRoom);
+      }
+      if (CurRound != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(CurRound);
+      }
+      roomList_.WriteTo(output, _repeated_roomList_codec);
+      if (Difficulty != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Difficulty);
+      }
+      roundCardList_.WriteTo(output, _repeated_roundCardList_codec);
+      if (Coin != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Coin);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(StageId);
+      }
+      if (DungeonId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(DungeonId);
+      }
+      roundMonsterList_.WriteTo(output, _repeated_roundMonsterList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Time != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Time);
+      }
+      if (CurRoom != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(CurRoom);
+      }
+      if (CurRound != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(CurRound);
+      }
+      roomList_.WriteTo(ref output, _repeated_roomList_codec);
+      if (Difficulty != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Difficulty);
+      }
+      roundCardList_.WriteTo(ref output, _repeated_roundCardList_codec);
+      if (Coin != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Coin);
+      }
+      if (StageId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(StageId);
+      }
+      if (DungeonId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(DungeonId);
+      }
+      roundMonsterList_.WriteTo(ref output, _repeated_roundMonsterList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      size += roundMonsterList_.CalculateSize(_repeated_roundMonsterList_codec);
+      if (Time != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Time);
+      }
+      if (CurRoom != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurRoom);
+      }
+      if (CurRound != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurRound);
+      }
+      if (Coin != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Coin);
+      }
+      if (Difficulty != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Difficulty);
+      }
+      if (DungeonId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
+      }
+      size += roomList_.CalculateSize(_repeated_roomList_codec);
+      size += roundCardList_.CalculateSize(_repeated_roundCardList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RogueDiaryDungeonInfoNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      roundMonsterList_.Add(other.roundMonsterList_);
+      if (other.Time != 0) {
+        Time = other.Time;
+      }
+      if (other.CurRoom != 0) {
+        CurRoom = other.CurRoom;
+      }
+      if (other.CurRound != 0) {
+        CurRound = other.CurRound;
+      }
+      if (other.Coin != 0) {
+        Coin = other.Coin;
+      }
+      if (other.Difficulty != 0) {
+        Difficulty = other.Difficulty;
+      }
+      if (other.DungeonId != 0) {
+        DungeonId = other.DungeonId;
+      }
+      roomList_.Add(other.roomList_);
+      roundCardList_.Add(other.roundCardList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 32: {
+            Time = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            CurRoom = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            CurRound = input.ReadUInt32();
+            break;
+          }
+          case 58: {
+            roomList_.AddEntriesFrom(input, _repeated_roomList_codec);
+            break;
+          }
+          case 64: {
+            Difficulty = input.ReadUInt32();
+            break;
+          }
+          case 82:
+          case 80: {
+            roundCardList_.AddEntriesFrom(input, _repeated_roundCardList_codec);
+            break;
+          }
+          case 88: {
+            Coin = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            roundMonsterList_.AddEntriesFrom(input, _repeated_roundMonsterList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 32: {
+            Time = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            CurRoom = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            CurRound = input.ReadUInt32();
+            break;
+          }
+          case 58: {
+            roomList_.AddEntriesFrom(ref input, _repeated_roomList_codec);
+            break;
+          }
+          case 64: {
+            Difficulty = input.ReadUInt32();
+            break;
+          }
+          case 82:
+          case 80: {
+            roundCardList_.AddEntriesFrom(ref input, _repeated_roundCardList_codec);
+            break;
+          }
+          case 88: {
+            Coin = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            roundMonsterList_.AddEntriesFrom(ref input, _repeated_roundMonsterList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 8597
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class RogueDiaryDungeonInfoNotify : pb::IMessage<RogueDiaryDungeonInfoNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<RogueDiaryDungeonInfoNotify> _parser = new pb::MessageParser<RogueDiaryDungeonInfoNotify>(() => new RogueDiaryDungeonInfoNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<RogueDiaryDungeonInfoNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::RogueDiaryDungeonInfoNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RogueDiaryDungeonInfoNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RogueDiaryDungeonInfoNotify(RogueDiaryDungeonInfoNotify other) : this() {
-    stageId_ = other.stageId_;
-    roundMonsterList_ = other.roundMonsterList_.Clone();
-    time_ = other.time_;
-    curRoom_ = other.curRoom_;
-    curRound_ = other.curRound_;
-    coin_ = other.coin_;
-    difficulty_ = other.difficulty_;
-    dungeonId_ = other.dungeonId_;
-    roomList_ = other.roomList_.Clone();
-    roundCardList_ = other.roundCardList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public RogueDiaryDungeonInfoNotify Clone() {
-    return new RogueDiaryDungeonInfoNotify(this);
-  }
-
-  /// <summary>Field number for the "stage_id" field.</summary>
-  public const int StageIdFieldNumber = 12;
-  private uint stageId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StageId {
-    get { return stageId_; }
-    set {
-      stageId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "round_monster_list" field.</summary>
-  public const int RoundMonsterListFieldNumber = 15;
-  private static readonly pb::FieldCodec<uint> _repeated_roundMonsterList_codec
-      = pb::FieldCodec.ForUInt32(122);
-  private readonly pbc::RepeatedField<uint> roundMonsterList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> RoundMonsterList {
-    get { return roundMonsterList_; }
-  }
-
-  /// <summary>Field number for the "time" field.</summary>
-  public const int TimeFieldNumber = 4;
-  private uint time_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Time {
-    get { return time_; }
-    set {
-      time_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cur_room" field.</summary>
-  public const int CurRoomFieldNumber = 5;
-  private uint curRoom_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurRoom {
-    get { return curRoom_; }
-    set {
-      curRoom_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cur_round" field.</summary>
-  public const int CurRoundFieldNumber = 6;
-  private uint curRound_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurRound {
-    get { return curRound_; }
-    set {
-      curRound_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "coin" field.</summary>
-  public const int CoinFieldNumber = 11;
-  private uint coin_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Coin {
-    get { return coin_; }
-    set {
-      coin_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "difficulty" field.</summary>
-  public const int DifficultyFieldNumber = 8;
-  private uint difficulty_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Difficulty {
-    get { return difficulty_; }
-    set {
-      difficulty_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "dungeon_id" field.</summary>
-  public const int DungeonIdFieldNumber = 14;
-  private uint dungeonId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DungeonId {
-    get { return dungeonId_; }
-    set {
-      dungeonId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "room_list" field.</summary>
-  public const int RoomListFieldNumber = 7;
-  private static readonly pb::FieldCodec<global::RogueDiaryRoomInfo> _repeated_roomList_codec
-      = pb::FieldCodec.ForMessage(58, global::RogueDiaryRoomInfo.Parser);
-  private readonly pbc::RepeatedField<global::RogueDiaryRoomInfo> roomList_ = new pbc::RepeatedField<global::RogueDiaryRoomInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::RogueDiaryRoomInfo> RoomList {
-    get { return roomList_; }
-  }
-
-  /// <summary>Field number for the "round_card_list" field.</summary>
-  public const int RoundCardListFieldNumber = 10;
-  private static readonly pb::FieldCodec<uint> _repeated_roundCardList_codec
-      = pb::FieldCodec.ForUInt32(82);
-  private readonly pbc::RepeatedField<uint> roundCardList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> RoundCardList {
-    get { return roundCardList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as RogueDiaryDungeonInfoNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(RogueDiaryDungeonInfoNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (StageId != other.StageId) return false;
-    if(!roundMonsterList_.Equals(other.roundMonsterList_)) return false;
-    if (Time != other.Time) return false;
-    if (CurRoom != other.CurRoom) return false;
-    if (CurRound != other.CurRound) return false;
-    if (Coin != other.Coin) return false;
-    if (Difficulty != other.Difficulty) return false;
-    if (DungeonId != other.DungeonId) return false;
-    if(!roomList_.Equals(other.roomList_)) return false;
-    if(!roundCardList_.Equals(other.roundCardList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (StageId != 0) hash ^= StageId.GetHashCode();
-    hash ^= roundMonsterList_.GetHashCode();
-    if (Time != 0) hash ^= Time.GetHashCode();
-    if (CurRoom != 0) hash ^= CurRoom.GetHashCode();
-    if (CurRound != 0) hash ^= CurRound.GetHashCode();
-    if (Coin != 0) hash ^= Coin.GetHashCode();
-    if (Difficulty != 0) hash ^= Difficulty.GetHashCode();
-    if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
-    hash ^= roomList_.GetHashCode();
-    hash ^= roundCardList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Time != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Time);
-    }
-    if (CurRoom != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(CurRoom);
-    }
-    if (CurRound != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(CurRound);
-    }
-    roomList_.WriteTo(output, _repeated_roomList_codec);
-    if (Difficulty != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Difficulty);
-    }
-    roundCardList_.WriteTo(output, _repeated_roundCardList_codec);
-    if (Coin != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(Coin);
-    }
-    if (StageId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(StageId);
-    }
-    if (DungeonId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(DungeonId);
-    }
-    roundMonsterList_.WriteTo(output, _repeated_roundMonsterList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Time != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Time);
-    }
-    if (CurRoom != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(CurRoom);
-    }
-    if (CurRound != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(CurRound);
-    }
-    roomList_.WriteTo(ref output, _repeated_roomList_codec);
-    if (Difficulty != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Difficulty);
-    }
-    roundCardList_.WriteTo(ref output, _repeated_roundCardList_codec);
-    if (Coin != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(Coin);
-    }
-    if (StageId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(StageId);
-    }
-    if (DungeonId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(DungeonId);
-    }
-    roundMonsterList_.WriteTo(ref output, _repeated_roundMonsterList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (StageId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-    }
-    size += roundMonsterList_.CalculateSize(_repeated_roundMonsterList_codec);
-    if (Time != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Time);
-    }
-    if (CurRoom != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurRoom);
-    }
-    if (CurRound != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurRound);
-    }
-    if (Coin != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Coin);
-    }
-    if (Difficulty != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Difficulty);
-    }
-    if (DungeonId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
-    }
-    size += roomList_.CalculateSize(_repeated_roomList_codec);
-    size += roundCardList_.CalculateSize(_repeated_roundCardList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(RogueDiaryDungeonInfoNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.StageId != 0) {
-      StageId = other.StageId;
-    }
-    roundMonsterList_.Add(other.roundMonsterList_);
-    if (other.Time != 0) {
-      Time = other.Time;
-    }
-    if (other.CurRoom != 0) {
-      CurRoom = other.CurRoom;
-    }
-    if (other.CurRound != 0) {
-      CurRound = other.CurRound;
-    }
-    if (other.Coin != 0) {
-      Coin = other.Coin;
-    }
-    if (other.Difficulty != 0) {
-      Difficulty = other.Difficulty;
-    }
-    if (other.DungeonId != 0) {
-      DungeonId = other.DungeonId;
-    }
-    roomList_.Add(other.roomList_);
-    roundCardList_.Add(other.roundCardList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 32: {
-          Time = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          CurRoom = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          CurRound = input.ReadUInt32();
-          break;
-        }
-        case 58: {
-          roomList_.AddEntriesFrom(input, _repeated_roomList_codec);
-          break;
-        }
-        case 64: {
-          Difficulty = input.ReadUInt32();
-          break;
-        }
-        case 82:
-        case 80: {
-          roundCardList_.AddEntriesFrom(input, _repeated_roundCardList_codec);
-          break;
-        }
-        case 88: {
-          Coin = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          DungeonId = input.ReadUInt32();
-          break;
-        }
-        case 122:
-        case 120: {
-          roundMonsterList_.AddEntriesFrom(input, _repeated_roundMonsterList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 32: {
-          Time = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          CurRoom = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          CurRound = input.ReadUInt32();
-          break;
-        }
-        case 58: {
-          roomList_.AddEntriesFrom(ref input, _repeated_roomList_codec);
-          break;
-        }
-        case 64: {
-          Difficulty = input.ReadUInt32();
-          break;
-        }
-        case 82:
-        case 80: {
-          roundCardList_.AddEntriesFrom(ref input, _repeated_roundCardList_codec);
-          break;
-        }
-        case 88: {
-          Coin = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          DungeonId = input.ReadUInt32();
-          break;
-        }
-        case 122:
-        case 120: {
-          roundMonsterList_.AddEntriesFrom(ref input, _repeated_roundMonsterList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

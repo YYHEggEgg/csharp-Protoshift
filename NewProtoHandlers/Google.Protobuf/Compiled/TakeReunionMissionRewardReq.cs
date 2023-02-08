@@ -9,307 +9,310 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from TakeReunionMissionRewardReq.proto</summary>
-public static partial class TakeReunionMissionRewardReqReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for TakeReunionMissionRewardReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from TakeReunionMissionRewardReq.proto</summary>
+  public static partial class TakeReunionMissionRewardReqReflection {
 
-  static TakeReunionMissionRewardReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiFUYWtlUmV1bmlvbk1pc3Npb25SZXdhcmRSZXEucHJvdG8iWgobVGFrZVJl",
-          "dW5pb25NaXNzaW9uUmV3YXJkUmVxEhIKCm1pc3Npb25faWQYAyABKA0SEQoJ",
-          "cmV3YXJkX2lkGAUgASgNEhQKDHJld2FyZF9pbmRleBgGIAEoDUIWChRvcmcu",
-          "c29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::TakeReunionMissionRewardReq), global::TakeReunionMissionRewardReq.Parser, new[]{ "MissionId", "RewardId", "RewardIndex" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for TakeReunionMissionRewardReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static TakeReunionMissionRewardReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiFUYWtlUmV1bmlvbk1pc3Npb25SZXdhcmRSZXEucHJvdG8iWgobVGFrZVJl",
+            "dW5pb25NaXNzaW9uUmV3YXJkUmVxEhIKCm1pc3Npb25faWQYAyABKA0SEQoJ",
+            "cmV3YXJkX2lkGAUgASgNEhQKDHJld2FyZF9pbmRleBgGIAEoDUIMqgIJTmV3",
+            "UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.TakeReunionMissionRewardReq), global::NewProtos.TakeReunionMissionRewardReq.Parser, new[]{ "MissionId", "RewardId", "RewardIndex" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 5095;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
+  /// </summary>
+  public sealed partial class TakeReunionMissionRewardReq : pb::IMessage<TakeReunionMissionRewardReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TakeReunionMissionRewardReq> _parser = new pb::MessageParser<TakeReunionMissionRewardReq>(() => new TakeReunionMissionRewardReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TakeReunionMissionRewardReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.TakeReunionMissionRewardReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TakeReunionMissionRewardReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TakeReunionMissionRewardReq(TakeReunionMissionRewardReq other) : this() {
+      missionId_ = other.missionId_;
+      rewardId_ = other.rewardId_;
+      rewardIndex_ = other.rewardIndex_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TakeReunionMissionRewardReq Clone() {
+      return new TakeReunionMissionRewardReq(this);
+    }
+
+    /// <summary>Field number for the "mission_id" field.</summary>
+    public const int MissionIdFieldNumber = 3;
+    private uint missionId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MissionId {
+      get { return missionId_; }
+      set {
+        missionId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reward_id" field.</summary>
+    public const int RewardIdFieldNumber = 5;
+    private uint rewardId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RewardId {
+      get { return rewardId_; }
+      set {
+        rewardId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reward_index" field.</summary>
+    public const int RewardIndexFieldNumber = 6;
+    private uint rewardIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RewardIndex {
+      get { return rewardIndex_; }
+      set {
+        rewardIndex_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TakeReunionMissionRewardReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TakeReunionMissionRewardReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MissionId != other.MissionId) return false;
+      if (RewardId != other.RewardId) return false;
+      if (RewardIndex != other.RewardIndex) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MissionId != 0) hash ^= MissionId.GetHashCode();
+      if (RewardId != 0) hash ^= RewardId.GetHashCode();
+      if (RewardIndex != 0) hash ^= RewardIndex.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (MissionId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MissionId);
+      }
+      if (RewardId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(RewardId);
+      }
+      if (RewardIndex != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(RewardIndex);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (MissionId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MissionId);
+      }
+      if (RewardId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(RewardId);
+      }
+      if (RewardIndex != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(RewardIndex);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (MissionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MissionId);
+      }
+      if (RewardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardId);
+      }
+      if (RewardIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardIndex);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TakeReunionMissionRewardReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MissionId != 0) {
+        MissionId = other.MissionId;
+      }
+      if (other.RewardId != 0) {
+        RewardId = other.RewardId;
+      }
+      if (other.RewardIndex != 0) {
+        RewardIndex = other.RewardIndex;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            MissionId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            RewardId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            RewardIndex = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            MissionId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            RewardId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            RewardIndex = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 5095;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-///   IS_ALLOW_CLIENT = 1;
-/// }
-/// </summary>
-public sealed partial class TakeReunionMissionRewardReq : pb::IMessage<TakeReunionMissionRewardReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<TakeReunionMissionRewardReq> _parser = new pb::MessageParser<TakeReunionMissionRewardReq>(() => new TakeReunionMissionRewardReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<TakeReunionMissionRewardReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::TakeReunionMissionRewardReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TakeReunionMissionRewardReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TakeReunionMissionRewardReq(TakeReunionMissionRewardReq other) : this() {
-    missionId_ = other.missionId_;
-    rewardId_ = other.rewardId_;
-    rewardIndex_ = other.rewardIndex_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TakeReunionMissionRewardReq Clone() {
-    return new TakeReunionMissionRewardReq(this);
-  }
-
-  /// <summary>Field number for the "mission_id" field.</summary>
-  public const int MissionIdFieldNumber = 3;
-  private uint missionId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MissionId {
-    get { return missionId_; }
-    set {
-      missionId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "reward_id" field.</summary>
-  public const int RewardIdFieldNumber = 5;
-  private uint rewardId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RewardId {
-    get { return rewardId_; }
-    set {
-      rewardId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "reward_index" field.</summary>
-  public const int RewardIndexFieldNumber = 6;
-  private uint rewardIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RewardIndex {
-    get { return rewardIndex_; }
-    set {
-      rewardIndex_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as TakeReunionMissionRewardReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(TakeReunionMissionRewardReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (MissionId != other.MissionId) return false;
-    if (RewardId != other.RewardId) return false;
-    if (RewardIndex != other.RewardIndex) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (MissionId != 0) hash ^= MissionId.GetHashCode();
-    if (RewardId != 0) hash ^= RewardId.GetHashCode();
-    if (RewardIndex != 0) hash ^= RewardIndex.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (MissionId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(MissionId);
-    }
-    if (RewardId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(RewardId);
-    }
-    if (RewardIndex != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(RewardIndex);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MissionId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(MissionId);
-    }
-    if (RewardId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(RewardId);
-    }
-    if (RewardIndex != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(RewardIndex);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (MissionId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MissionId);
-    }
-    if (RewardId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardId);
-    }
-    if (RewardIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RewardIndex);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(TakeReunionMissionRewardReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.MissionId != 0) {
-      MissionId = other.MissionId;
-    }
-    if (other.RewardId != 0) {
-      RewardId = other.RewardId;
-    }
-    if (other.RewardIndex != 0) {
-      RewardIndex = other.RewardIndex;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          MissionId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          RewardId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          RewardIndex = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          MissionId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          RewardId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          RewardIndex = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

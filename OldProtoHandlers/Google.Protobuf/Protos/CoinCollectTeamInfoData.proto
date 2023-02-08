@@ -3,7 +3,7 @@
 
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message CoinCollectTeamInfoData {
     repeated uint32 avatar_costume_id_list = 12;

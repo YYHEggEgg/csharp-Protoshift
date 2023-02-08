@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "BalloonPlayerInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SceneGalleryBalloonInfo {
   map<uint32, BalloonPlayerInfo> scene_player_balloon_info_map = 14;

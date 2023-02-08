@@ -19,7 +19,7 @@ syntax = "proto3";
 import "MpSettingType.proto";
 import "ProfilePicture.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message OnlinePlayerInfo {
   uint32 uid = 1;

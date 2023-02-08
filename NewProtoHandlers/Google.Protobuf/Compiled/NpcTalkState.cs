@@ -9,38 +9,40 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from NpcTalkState.proto</summary>
-public static partial class NpcTalkStateReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for NpcTalkState.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from NpcTalkState.proto</summary>
+  public static partial class NpcTalkStateReflection {
 
-  static NpcTalkStateReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChJOcGNUYWxrU3RhdGUucHJvdG8qWwoMTnBjVGFsa1N0YXRlEhcKE05QQ19U",
-          "QUxLX1NUQVRFX05PTkUQABIXChNOUENfVEFMS19TVEFURV9BVVRPEAESGQoV",
-          "TlBDX1RBTEtfU1RBVEVfTUFOVUFMEAJCFgoUb3JnLnNvcmFwb2ludGEucHJv",
-          "dG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NpcTalkState), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for NpcTalkState.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static NpcTalkStateReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChJOcGNUYWxrU3RhdGUucHJvdG8qWwoMTnBjVGFsa1N0YXRlEhcKE05QQ19U",
+            "QUxLX1NUQVRFX05PTkUQABIXChNOUENfVEFMS19TVEFURV9BVVRPEAESGQoV",
+            "TlBDX1RBTEtfU1RBVEVfTUFOVUFMEAJCDKoCCU5ld1Byb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.NpcTalkState), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum NpcTalkState {
+    [pbr::OriginalName("NPC_TALK_STATE_NONE")] None = 0,
+    [pbr::OriginalName("NPC_TALK_STATE_AUTO")] Auto = 1,
+    [pbr::OriginalName("NPC_TALK_STATE_MANUAL")] Manual = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum NpcTalkState {
-  [pbr::OriginalName("NPC_TALK_STATE_NONE")] None = 0,
-  [pbr::OriginalName("NPC_TALK_STATE_AUTO")] Auto = 1,
-  [pbr::OriginalName("NPC_TALK_STATE_MANUAL")] Manual = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

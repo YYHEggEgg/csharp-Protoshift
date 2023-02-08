@@ -20,7 +20,7 @@ import "ForceUpdateInfo.proto";
 import "RegionInfo.proto";
 import "StopServerInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message QueryCurrRegionHttpRsp {
   int32 retcode = 1;

@@ -9,401 +9,404 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AbilityMixinFireworksLauncher.proto</summary>
-public static partial class AbilityMixinFireworksLauncherReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AbilityMixinFireworksLauncher.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AbilityMixinFireworksLauncher.proto</summary>
+  public static partial class AbilityMixinFireworksLauncherReflection {
 
-  static AbilityMixinFireworksLauncherReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiNBYmlsaXR5TWl4aW5GaXJld29ya3NMYXVuY2hlci5wcm90byK8AQodQWJp",
-          "bGl0eU1peGluRmlyZXdvcmtzTGF1bmNoZXISGwoTVW5rMzMwMF9GSEdMRUpO",
-          "SklISxgFIAEoDRIbChNVbmszMzAwX0JGSkJESkxBT0pMGAQgASgNEhsKE1Vu",
-          "azMzMDBfTFBQS09GSEtDUEgYByABKA0SGwoTVW5rMzMwMF9CREdDR0xHTkFJ",
-          "QhgDIAEoDRIYChBmaXJld29ya3NfY29uZmlnGAwgAygNEg0KBXBoYXNlGAEg",
-          "ASgNQhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AbilityMixinFireworksLauncher), global::AbilityMixinFireworksLauncher.Parser, new[]{ "Unk3300FHGLEJNJIHK", "Unk3300BFJBDJLAOJL", "Unk3300LPPKOFHKCPH", "Unk3300BDGCGLGNAIB", "FireworksConfig", "Phase" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AbilityMixinFireworksLauncher.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AbilityMixinFireworksLauncherReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiNBYmlsaXR5TWl4aW5GaXJld29ya3NMYXVuY2hlci5wcm90byK8AQodQWJp",
+            "bGl0eU1peGluRmlyZXdvcmtzTGF1bmNoZXISGwoTVW5rMzMwMF9GSEdMRUpO",
+            "SklISxgFIAEoDRIbChNVbmszMzAwX0JGSkJESkxBT0pMGAQgASgNEhsKE1Vu",
+            "azMzMDBfTFBQS09GSEtDUEgYByABKA0SGwoTVW5rMzMwMF9CREdDR0xHTkFJ",
+            "QhgDIAEoDRIYChBmaXJld29ya3NfY29uZmlnGAwgAygNEg0KBXBoYXNlGAEg",
+            "ASgNQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.AbilityMixinFireworksLauncher), global::NewProtos.AbilityMixinFireworksLauncher.Parser, new[]{ "Unk3300FHGLEJNJIHK", "Unk3300BFJBDJLAOJL", "Unk3300LPPKOFHKCPH", "Unk3300BDGCGLGNAIB", "FireworksConfig", "Phase" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class AbilityMixinFireworksLauncher : pb::IMessage<AbilityMixinFireworksLauncher>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AbilityMixinFireworksLauncher> _parser = new pb::MessageParser<AbilityMixinFireworksLauncher>(() => new AbilityMixinFireworksLauncher());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AbilityMixinFireworksLauncher> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.AbilityMixinFireworksLauncherReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AbilityMixinFireworksLauncher() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AbilityMixinFireworksLauncher(AbilityMixinFireworksLauncher other) : this() {
+      unk3300FHGLEJNJIHK_ = other.unk3300FHGLEJNJIHK_;
+      unk3300BFJBDJLAOJL_ = other.unk3300BFJBDJLAOJL_;
+      unk3300LPPKOFHKCPH_ = other.unk3300LPPKOFHKCPH_;
+      unk3300BDGCGLGNAIB_ = other.unk3300BDGCGLGNAIB_;
+      fireworksConfig_ = other.fireworksConfig_.Clone();
+      phase_ = other.phase_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AbilityMixinFireworksLauncher Clone() {
+      return new AbilityMixinFireworksLauncher(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_FHGLEJNJIHK" field.</summary>
+    public const int Unk3300FHGLEJNJIHKFieldNumber = 5;
+    private uint unk3300FHGLEJNJIHK_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FHGLEJNJIHK {
+      get { return unk3300FHGLEJNJIHK_; }
+      set {
+        unk3300FHGLEJNJIHK_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BFJBDJLAOJL" field.</summary>
+    public const int Unk3300BFJBDJLAOJLFieldNumber = 4;
+    private uint unk3300BFJBDJLAOJL_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300BFJBDJLAOJL {
+      get { return unk3300BFJBDJLAOJL_; }
+      set {
+        unk3300BFJBDJLAOJL_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_LPPKOFHKCPH" field.</summary>
+    public const int Unk3300LPPKOFHKCPHFieldNumber = 7;
+    private uint unk3300LPPKOFHKCPH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300LPPKOFHKCPH {
+      get { return unk3300LPPKOFHKCPH_; }
+      set {
+        unk3300LPPKOFHKCPH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_BDGCGLGNAIB" field.</summary>
+    public const int Unk3300BDGCGLGNAIBFieldNumber = 3;
+    private uint unk3300BDGCGLGNAIB_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300BDGCGLGNAIB {
+      get { return unk3300BDGCGLGNAIB_; }
+      set {
+        unk3300BDGCGLGNAIB_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fireworks_config" field.</summary>
+    public const int FireworksConfigFieldNumber = 12;
+    private static readonly pb::FieldCodec<uint> _repeated_fireworksConfig_codec
+        = pb::FieldCodec.ForUInt32(98);
+    private readonly pbc::RepeatedField<uint> fireworksConfig_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FireworksConfig {
+      get { return fireworksConfig_; }
+    }
+
+    /// <summary>Field number for the "phase" field.</summary>
+    public const int PhaseFieldNumber = 1;
+    private uint phase_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Phase {
+      get { return phase_; }
+      set {
+        phase_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AbilityMixinFireworksLauncher);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AbilityMixinFireworksLauncher other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Unk3300FHGLEJNJIHK != other.Unk3300FHGLEJNJIHK) return false;
+      if (Unk3300BFJBDJLAOJL != other.Unk3300BFJBDJLAOJL) return false;
+      if (Unk3300LPPKOFHKCPH != other.Unk3300LPPKOFHKCPH) return false;
+      if (Unk3300BDGCGLGNAIB != other.Unk3300BDGCGLGNAIB) return false;
+      if(!fireworksConfig_.Equals(other.fireworksConfig_)) return false;
+      if (Phase != other.Phase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Unk3300FHGLEJNJIHK != 0) hash ^= Unk3300FHGLEJNJIHK.GetHashCode();
+      if (Unk3300BFJBDJLAOJL != 0) hash ^= Unk3300BFJBDJLAOJL.GetHashCode();
+      if (Unk3300LPPKOFHKCPH != 0) hash ^= Unk3300LPPKOFHKCPH.GetHashCode();
+      if (Unk3300BDGCGLGNAIB != 0) hash ^= Unk3300BDGCGLGNAIB.GetHashCode();
+      hash ^= fireworksConfig_.GetHashCode();
+      if (Phase != 0) hash ^= Phase.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Phase != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Phase);
+      }
+      if (Unk3300BDGCGLGNAIB != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300BDGCGLGNAIB);
+      }
+      if (Unk3300BFJBDJLAOJL != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300BFJBDJLAOJL);
+      }
+      if (Unk3300FHGLEJNJIHK != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300FHGLEJNJIHK);
+      }
+      if (Unk3300LPPKOFHKCPH != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300LPPKOFHKCPH);
+      }
+      fireworksConfig_.WriteTo(output, _repeated_fireworksConfig_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Phase != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(Phase);
+      }
+      if (Unk3300BDGCGLGNAIB != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(Unk3300BDGCGLGNAIB);
+      }
+      if (Unk3300BFJBDJLAOJL != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(Unk3300BFJBDJLAOJL);
+      }
+      if (Unk3300FHGLEJNJIHK != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(Unk3300FHGLEJNJIHK);
+      }
+      if (Unk3300LPPKOFHKCPH != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300LPPKOFHKCPH);
+      }
+      fireworksConfig_.WriteTo(ref output, _repeated_fireworksConfig_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Unk3300FHGLEJNJIHK != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FHGLEJNJIHK);
+      }
+      if (Unk3300BFJBDJLAOJL != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BFJBDJLAOJL);
+      }
+      if (Unk3300LPPKOFHKCPH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPPKOFHKCPH);
+      }
+      if (Unk3300BDGCGLGNAIB != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BDGCGLGNAIB);
+      }
+      size += fireworksConfig_.CalculateSize(_repeated_fireworksConfig_codec);
+      if (Phase != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Phase);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AbilityMixinFireworksLauncher other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Unk3300FHGLEJNJIHK != 0) {
+        Unk3300FHGLEJNJIHK = other.Unk3300FHGLEJNJIHK;
+      }
+      if (other.Unk3300BFJBDJLAOJL != 0) {
+        Unk3300BFJBDJLAOJL = other.Unk3300BFJBDJLAOJL;
+      }
+      if (other.Unk3300LPPKOFHKCPH != 0) {
+        Unk3300LPPKOFHKCPH = other.Unk3300LPPKOFHKCPH;
+      }
+      if (other.Unk3300BDGCGLGNAIB != 0) {
+        Unk3300BDGCGLGNAIB = other.Unk3300BDGCGLGNAIB;
+      }
+      fireworksConfig_.Add(other.fireworksConfig_);
+      if (other.Phase != 0) {
+        Phase = other.Phase;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Phase = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Unk3300BDGCGLGNAIB = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Unk3300BFJBDJLAOJL = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Unk3300FHGLEJNJIHK = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300LPPKOFHKCPH = input.ReadUInt32();
+            break;
+          }
+          case 98:
+          case 96: {
+            fireworksConfig_.AddEntriesFrom(input, _repeated_fireworksConfig_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Phase = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Unk3300BDGCGLGNAIB = input.ReadUInt32();
+            break;
+          }
+          case 32: {
+            Unk3300BFJBDJLAOJL = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Unk3300FHGLEJNJIHK = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300LPPKOFHKCPH = input.ReadUInt32();
+            break;
+          }
+          case 98:
+          case 96: {
+            fireworksConfig_.AddEntriesFrom(ref input, _repeated_fireworksConfig_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class AbilityMixinFireworksLauncher : pb::IMessage<AbilityMixinFireworksLauncher>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AbilityMixinFireworksLauncher> _parser = new pb::MessageParser<AbilityMixinFireworksLauncher>(() => new AbilityMixinFireworksLauncher());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AbilityMixinFireworksLauncher> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AbilityMixinFireworksLauncherReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AbilityMixinFireworksLauncher() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AbilityMixinFireworksLauncher(AbilityMixinFireworksLauncher other) : this() {
-    unk3300FHGLEJNJIHK_ = other.unk3300FHGLEJNJIHK_;
-    unk3300BFJBDJLAOJL_ = other.unk3300BFJBDJLAOJL_;
-    unk3300LPPKOFHKCPH_ = other.unk3300LPPKOFHKCPH_;
-    unk3300BDGCGLGNAIB_ = other.unk3300BDGCGLGNAIB_;
-    fireworksConfig_ = other.fireworksConfig_.Clone();
-    phase_ = other.phase_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AbilityMixinFireworksLauncher Clone() {
-    return new AbilityMixinFireworksLauncher(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_FHGLEJNJIHK" field.</summary>
-  public const int Unk3300FHGLEJNJIHKFieldNumber = 5;
-  private uint unk3300FHGLEJNJIHK_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300FHGLEJNJIHK {
-    get { return unk3300FHGLEJNJIHK_; }
-    set {
-      unk3300FHGLEJNJIHK_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_BFJBDJLAOJL" field.</summary>
-  public const int Unk3300BFJBDJLAOJLFieldNumber = 4;
-  private uint unk3300BFJBDJLAOJL_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300BFJBDJLAOJL {
-    get { return unk3300BFJBDJLAOJL_; }
-    set {
-      unk3300BFJBDJLAOJL_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_LPPKOFHKCPH" field.</summary>
-  public const int Unk3300LPPKOFHKCPHFieldNumber = 7;
-  private uint unk3300LPPKOFHKCPH_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300LPPKOFHKCPH {
-    get { return unk3300LPPKOFHKCPH_; }
-    set {
-      unk3300LPPKOFHKCPH_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_BDGCGLGNAIB" field.</summary>
-  public const int Unk3300BDGCGLGNAIBFieldNumber = 3;
-  private uint unk3300BDGCGLGNAIB_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300BDGCGLGNAIB {
-    get { return unk3300BDGCGLGNAIB_; }
-    set {
-      unk3300BDGCGLGNAIB_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "fireworks_config" field.</summary>
-  public const int FireworksConfigFieldNumber = 12;
-  private static readonly pb::FieldCodec<uint> _repeated_fireworksConfig_codec
-      = pb::FieldCodec.ForUInt32(98);
-  private readonly pbc::RepeatedField<uint> fireworksConfig_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> FireworksConfig {
-    get { return fireworksConfig_; }
-  }
-
-  /// <summary>Field number for the "phase" field.</summary>
-  public const int PhaseFieldNumber = 1;
-  private uint phase_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Phase {
-    get { return phase_; }
-    set {
-      phase_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AbilityMixinFireworksLauncher);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AbilityMixinFireworksLauncher other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Unk3300FHGLEJNJIHK != other.Unk3300FHGLEJNJIHK) return false;
-    if (Unk3300BFJBDJLAOJL != other.Unk3300BFJBDJLAOJL) return false;
-    if (Unk3300LPPKOFHKCPH != other.Unk3300LPPKOFHKCPH) return false;
-    if (Unk3300BDGCGLGNAIB != other.Unk3300BDGCGLGNAIB) return false;
-    if(!fireworksConfig_.Equals(other.fireworksConfig_)) return false;
-    if (Phase != other.Phase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Unk3300FHGLEJNJIHK != 0) hash ^= Unk3300FHGLEJNJIHK.GetHashCode();
-    if (Unk3300BFJBDJLAOJL != 0) hash ^= Unk3300BFJBDJLAOJL.GetHashCode();
-    if (Unk3300LPPKOFHKCPH != 0) hash ^= Unk3300LPPKOFHKCPH.GetHashCode();
-    if (Unk3300BDGCGLGNAIB != 0) hash ^= Unk3300BDGCGLGNAIB.GetHashCode();
-    hash ^= fireworksConfig_.GetHashCode();
-    if (Phase != 0) hash ^= Phase.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Phase != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Phase);
-    }
-    if (Unk3300BDGCGLGNAIB != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(Unk3300BDGCGLGNAIB);
-    }
-    if (Unk3300BFJBDJLAOJL != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Unk3300BFJBDJLAOJL);
-    }
-    if (Unk3300FHGLEJNJIHK != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Unk3300FHGLEJNJIHK);
-    }
-    if (Unk3300LPPKOFHKCPH != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Unk3300LPPKOFHKCPH);
-    }
-    fireworksConfig_.WriteTo(output, _repeated_fireworksConfig_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Phase != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(Phase);
-    }
-    if (Unk3300BDGCGLGNAIB != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(Unk3300BDGCGLGNAIB);
-    }
-    if (Unk3300BFJBDJLAOJL != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(Unk3300BFJBDJLAOJL);
-    }
-    if (Unk3300FHGLEJNJIHK != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(Unk3300FHGLEJNJIHK);
-    }
-    if (Unk3300LPPKOFHKCPH != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Unk3300LPPKOFHKCPH);
-    }
-    fireworksConfig_.WriteTo(ref output, _repeated_fireworksConfig_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Unk3300FHGLEJNJIHK != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FHGLEJNJIHK);
-    }
-    if (Unk3300BFJBDJLAOJL != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BFJBDJLAOJL);
-    }
-    if (Unk3300LPPKOFHKCPH != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LPPKOFHKCPH);
-    }
-    if (Unk3300BDGCGLGNAIB != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300BDGCGLGNAIB);
-    }
-    size += fireworksConfig_.CalculateSize(_repeated_fireworksConfig_codec);
-    if (Phase != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Phase);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AbilityMixinFireworksLauncher other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Unk3300FHGLEJNJIHK != 0) {
-      Unk3300FHGLEJNJIHK = other.Unk3300FHGLEJNJIHK;
-    }
-    if (other.Unk3300BFJBDJLAOJL != 0) {
-      Unk3300BFJBDJLAOJL = other.Unk3300BFJBDJLAOJL;
-    }
-    if (other.Unk3300LPPKOFHKCPH != 0) {
-      Unk3300LPPKOFHKCPH = other.Unk3300LPPKOFHKCPH;
-    }
-    if (other.Unk3300BDGCGLGNAIB != 0) {
-      Unk3300BDGCGLGNAIB = other.Unk3300BDGCGLGNAIB;
-    }
-    fireworksConfig_.Add(other.fireworksConfig_);
-    if (other.Phase != 0) {
-      Phase = other.Phase;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          Phase = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          Unk3300BDGCGLGNAIB = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          Unk3300BFJBDJLAOJL = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Unk3300FHGLEJNJIHK = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Unk3300LPPKOFHKCPH = input.ReadUInt32();
-          break;
-        }
-        case 98:
-        case 96: {
-          fireworksConfig_.AddEntriesFrom(input, _repeated_fireworksConfig_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          Phase = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          Unk3300BDGCGLGNAIB = input.ReadUInt32();
-          break;
-        }
-        case 32: {
-          Unk3300BFJBDJLAOJL = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Unk3300FHGLEJNJIHK = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Unk3300LPPKOFHKCPH = input.ReadUInt32();
-          break;
-        }
-        case 98:
-        case 96: {
-          fireworksConfig_.AddEntriesFrom(ref input, _repeated_fireworksConfig_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

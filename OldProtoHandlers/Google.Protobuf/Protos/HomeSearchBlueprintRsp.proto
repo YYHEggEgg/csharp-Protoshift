@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "HomeBlueprintSearchInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 4593
 // EnetChannelId: 0

@@ -9,313 +9,315 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from HomePreviewBlueprintRsp.proto</summary>
-public static partial class HomePreviewBlueprintRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for HomePreviewBlueprintRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from HomePreviewBlueprintRsp.proto</summary>
+  public static partial class HomePreviewBlueprintRspReflection {
 
-  static HomePreviewBlueprintRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch1Ib21lUHJldmlld0JsdWVwcmludFJzcC5wcm90bxoeSG9tZVNjZW5lQXJy",
-          "YW5nZW1lbnRJbmZvLnByb3RvInkKF0hvbWVQcmV2aWV3Qmx1ZXByaW50UnNw",
-          "EjkKFnNjZW5lX2FycmFuZ2VtZW50X2luZm8YDCABKAsyGS5Ib21lU2NlbmVB",
-          "cnJhbmdlbWVudEluZm8SDwoHcmV0Y29kZRgLIAEoBRISCgpzaGFyZV9jb2Rl",
-          "GA4gASgJQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3Rv",
-          "Mw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::HomeSceneArrangementInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::HomePreviewBlueprintRsp), global::HomePreviewBlueprintRsp.Parser, new[]{ "SceneArrangementInfo", "Retcode", "ShareCode" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for HomePreviewBlueprintRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static HomePreviewBlueprintRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch1Ib21lUHJldmlld0JsdWVwcmludFJzcC5wcm90bxoeSG9tZVNjZW5lQXJy",
+            "YW5nZW1lbnRJbmZvLnByb3RvInkKF0hvbWVQcmV2aWV3Qmx1ZXByaW50UnNw",
+            "EjkKFnNjZW5lX2FycmFuZ2VtZW50X2luZm8YDCABKAsyGS5Ib21lU2NlbmVB",
+            "cnJhbmdlbWVudEluZm8SDwoHcmV0Y29kZRgLIAEoBRISCgpzaGFyZV9jb2Rl",
+            "GA4gASgJQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.HomeSceneArrangementInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.HomePreviewBlueprintRsp), global::OldProtos.HomePreviewBlueprintRsp.Parser, new[]{ "SceneArrangementInfo", "Retcode", "ShareCode" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 4738
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class HomePreviewBlueprintRsp : pb::IMessage<HomePreviewBlueprintRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HomePreviewBlueprintRsp> _parser = new pb::MessageParser<HomePreviewBlueprintRsp>(() => new HomePreviewBlueprintRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HomePreviewBlueprintRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.HomePreviewBlueprintRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomePreviewBlueprintRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomePreviewBlueprintRsp(HomePreviewBlueprintRsp other) : this() {
+      sceneArrangementInfo_ = other.sceneArrangementInfo_ != null ? other.sceneArrangementInfo_.Clone() : null;
+      retcode_ = other.retcode_;
+      shareCode_ = other.shareCode_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomePreviewBlueprintRsp Clone() {
+      return new HomePreviewBlueprintRsp(this);
+    }
+
+    /// <summary>Field number for the "scene_arrangement_info" field.</summary>
+    public const int SceneArrangementInfoFieldNumber = 12;
+    private global::OldProtos.HomeSceneArrangementInfo sceneArrangementInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.HomeSceneArrangementInfo SceneArrangementInfo {
+      get { return sceneArrangementInfo_; }
+      set {
+        sceneArrangementInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 11;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "share_code" field.</summary>
+    public const int ShareCodeFieldNumber = 14;
+    private string shareCode_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string ShareCode {
+      get { return shareCode_; }
+      set {
+        shareCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HomePreviewBlueprintRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HomePreviewBlueprintRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(SceneArrangementInfo, other.SceneArrangementInfo)) return false;
+      if (Retcode != other.Retcode) return false;
+      if (ShareCode != other.ShareCode) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (sceneArrangementInfo_ != null) hash ^= SceneArrangementInfo.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (ShareCode.Length != 0) hash ^= ShareCode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Retcode != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Retcode);
+      }
+      if (sceneArrangementInfo_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(SceneArrangementInfo);
+      }
+      if (ShareCode.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(ShareCode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Retcode != 0) {
+        output.WriteRawTag(88);
+        output.WriteInt32(Retcode);
+      }
+      if (sceneArrangementInfo_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(SceneArrangementInfo);
+      }
+      if (ShareCode.Length != 0) {
+        output.WriteRawTag(114);
+        output.WriteString(ShareCode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (sceneArrangementInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SceneArrangementInfo);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (ShareCode.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ShareCode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HomePreviewBlueprintRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.sceneArrangementInfo_ != null) {
+        if (sceneArrangementInfo_ == null) {
+          SceneArrangementInfo = new global::OldProtos.HomeSceneArrangementInfo();
+        }
+        SceneArrangementInfo.MergeFrom(other.SceneArrangementInfo);
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.ShareCode.Length != 0) {
+        ShareCode = other.ShareCode;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 88: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 98: {
+            if (sceneArrangementInfo_ == null) {
+              SceneArrangementInfo = new global::OldProtos.HomeSceneArrangementInfo();
+            }
+            input.ReadMessage(SceneArrangementInfo);
+            break;
+          }
+          case 114: {
+            ShareCode = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 88: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 98: {
+            if (sceneArrangementInfo_ == null) {
+              SceneArrangementInfo = new global::OldProtos.HomeSceneArrangementInfo();
+            }
+            input.ReadMessage(SceneArrangementInfo);
+            break;
+          }
+          case 114: {
+            ShareCode = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 4738
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class HomePreviewBlueprintRsp : pb::IMessage<HomePreviewBlueprintRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<HomePreviewBlueprintRsp> _parser = new pb::MessageParser<HomePreviewBlueprintRsp>(() => new HomePreviewBlueprintRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<HomePreviewBlueprintRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::HomePreviewBlueprintRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomePreviewBlueprintRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomePreviewBlueprintRsp(HomePreviewBlueprintRsp other) : this() {
-    sceneArrangementInfo_ = other.sceneArrangementInfo_ != null ? other.sceneArrangementInfo_.Clone() : null;
-    retcode_ = other.retcode_;
-    shareCode_ = other.shareCode_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomePreviewBlueprintRsp Clone() {
-    return new HomePreviewBlueprintRsp(this);
-  }
-
-  /// <summary>Field number for the "scene_arrangement_info" field.</summary>
-  public const int SceneArrangementInfoFieldNumber = 12;
-  private global::HomeSceneArrangementInfo sceneArrangementInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::HomeSceneArrangementInfo SceneArrangementInfo {
-    get { return sceneArrangementInfo_; }
-    set {
-      sceneArrangementInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 11;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "share_code" field.</summary>
-  public const int ShareCodeFieldNumber = 14;
-  private string shareCode_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public string ShareCode {
-    get { return shareCode_; }
-    set {
-      shareCode_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as HomePreviewBlueprintRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(HomePreviewBlueprintRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(SceneArrangementInfo, other.SceneArrangementInfo)) return false;
-    if (Retcode != other.Retcode) return false;
-    if (ShareCode != other.ShareCode) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (sceneArrangementInfo_ != null) hash ^= SceneArrangementInfo.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (ShareCode.Length != 0) hash ^= ShareCode.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Retcode != 0) {
-      output.WriteRawTag(88);
-      output.WriteInt32(Retcode);
-    }
-    if (sceneArrangementInfo_ != null) {
-      output.WriteRawTag(98);
-      output.WriteMessage(SceneArrangementInfo);
-    }
-    if (ShareCode.Length != 0) {
-      output.WriteRawTag(114);
-      output.WriteString(ShareCode);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Retcode != 0) {
-      output.WriteRawTag(88);
-      output.WriteInt32(Retcode);
-    }
-    if (sceneArrangementInfo_ != null) {
-      output.WriteRawTag(98);
-      output.WriteMessage(SceneArrangementInfo);
-    }
-    if (ShareCode.Length != 0) {
-      output.WriteRawTag(114);
-      output.WriteString(ShareCode);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (sceneArrangementInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(SceneArrangementInfo);
-    }
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (ShareCode.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(ShareCode);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(HomePreviewBlueprintRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.sceneArrangementInfo_ != null) {
-      if (sceneArrangementInfo_ == null) {
-        SceneArrangementInfo = new global::HomeSceneArrangementInfo();
-      }
-      SceneArrangementInfo.MergeFrom(other.SceneArrangementInfo);
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.ShareCode.Length != 0) {
-      ShareCode = other.ShareCode;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 88: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 98: {
-          if (sceneArrangementInfo_ == null) {
-            SceneArrangementInfo = new global::HomeSceneArrangementInfo();
-          }
-          input.ReadMessage(SceneArrangementInfo);
-          break;
-        }
-        case 114: {
-          ShareCode = input.ReadString();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 88: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 98: {
-          if (sceneArrangementInfo_ == null) {
-            SceneArrangementInfo = new global::HomeSceneArrangementInfo();
-          }
-          input.ReadMessage(SceneArrangementInfo);
-          break;
-        }
-        case 114: {
-          ShareCode = input.ReadString();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

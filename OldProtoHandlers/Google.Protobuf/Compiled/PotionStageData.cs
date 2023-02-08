@@ -9,344 +9,347 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from PotionStageData.proto</summary>
-public static partial class PotionStageDataReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for PotionStageData.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from PotionStageData.proto</summary>
+  public static partial class PotionStageDataReflection {
 
-  static PotionStageDataReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVQb3Rpb25TdGFnZURhdGEucHJvdG8aFVBvdGlvbkxldmVsRGF0YS5wcm90",
-          "byKcAQoPUG90aW9uU3RhZ2VEYXRhEhAKCHN0YWdlX2lkGAsgASgNEh4KFmNv",
-          "b2xfZG93bl9idWZmX2lkX2xpc3QYAiADKA0SDwoHaXNfb3BlbhgPIAEoCBIk",
-          "CgpsZXZlbF9saXN0GA4gAygLMhAuUG90aW9uTGV2ZWxEYXRhEiAKGGNvb2xf",
-          "ZG93bl9hdmF0YXJfaWRfbGlzdBgNIAMoDUIeChxlbXUuZ3Jhc3NjdXR0ZXIu",
-          "bmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::PotionLevelDataReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::PotionStageData), global::PotionStageData.Parser, new[]{ "StageId", "CoolDownBuffIdList", "IsOpen", "LevelList", "CoolDownAvatarIdList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for PotionStageData.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static PotionStageDataReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVQb3Rpb25TdGFnZURhdGEucHJvdG8aFVBvdGlvbkxldmVsRGF0YS5wcm90",
+            "byKcAQoPUG90aW9uU3RhZ2VEYXRhEhAKCHN0YWdlX2lkGAsgASgNEh4KFmNv",
+            "b2xfZG93bl9idWZmX2lkX2xpc3QYAiADKA0SDwoHaXNfb3BlbhgPIAEoCBIk",
+            "CgpsZXZlbF9saXN0GA4gAygLMhAuUG90aW9uTGV2ZWxEYXRhEiAKGGNvb2xf",
+            "ZG93bl9hdmF0YXJfaWRfbGlzdBgNIAMoDUIMqgIJT2xkUHJvdG9zYgZwcm90",
+            "bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.PotionLevelDataReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.PotionStageData), global::OldProtos.PotionStageData.Parser, new[]{ "StageId", "CoolDownBuffIdList", "IsOpen", "LevelList", "CoolDownAvatarIdList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class PotionStageData : pb::IMessage<PotionStageData>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PotionStageData> _parser = new pb::MessageParser<PotionStageData>(() => new PotionStageData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PotionStageData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.PotionStageDataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PotionStageData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PotionStageData(PotionStageData other) : this() {
+      stageId_ = other.stageId_;
+      coolDownBuffIdList_ = other.coolDownBuffIdList_.Clone();
+      isOpen_ = other.isOpen_;
+      levelList_ = other.levelList_.Clone();
+      coolDownAvatarIdList_ = other.coolDownAvatarIdList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PotionStageData Clone() {
+      return new PotionStageData(this);
+    }
+
+    /// <summary>Field number for the "stage_id" field.</summary>
+    public const int StageIdFieldNumber = 11;
+    private uint stageId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StageId {
+      get { return stageId_; }
+      set {
+        stageId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cool_down_buff_id_list" field.</summary>
+    public const int CoolDownBuffIdListFieldNumber = 2;
+    private static readonly pb::FieldCodec<uint> _repeated_coolDownBuffIdList_codec
+        = pb::FieldCodec.ForUInt32(18);
+    private readonly pbc::RepeatedField<uint> coolDownBuffIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CoolDownBuffIdList {
+      get { return coolDownBuffIdList_; }
+    }
+
+    /// <summary>Field number for the "is_open" field.</summary>
+    public const int IsOpenFieldNumber = 15;
+    private bool isOpen_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsOpen {
+      get { return isOpen_; }
+      set {
+        isOpen_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level_list" field.</summary>
+    public const int LevelListFieldNumber = 14;
+    private static readonly pb::FieldCodec<global::OldProtos.PotionLevelData> _repeated_levelList_codec
+        = pb::FieldCodec.ForMessage(114, global::OldProtos.PotionLevelData.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.PotionLevelData> levelList_ = new pbc::RepeatedField<global::OldProtos.PotionLevelData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.PotionLevelData> LevelList {
+      get { return levelList_; }
+    }
+
+    /// <summary>Field number for the "cool_down_avatar_id_list" field.</summary>
+    public const int CoolDownAvatarIdListFieldNumber = 13;
+    private static readonly pb::FieldCodec<uint> _repeated_coolDownAvatarIdList_codec
+        = pb::FieldCodec.ForUInt32(106);
+    private readonly pbc::RepeatedField<uint> coolDownAvatarIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CoolDownAvatarIdList {
+      get { return coolDownAvatarIdList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PotionStageData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PotionStageData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (StageId != other.StageId) return false;
+      if(!coolDownBuffIdList_.Equals(other.coolDownBuffIdList_)) return false;
+      if (IsOpen != other.IsOpen) return false;
+      if(!levelList_.Equals(other.levelList_)) return false;
+      if(!coolDownAvatarIdList_.Equals(other.coolDownAvatarIdList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (StageId != 0) hash ^= StageId.GetHashCode();
+      hash ^= coolDownBuffIdList_.GetHashCode();
+      if (IsOpen != false) hash ^= IsOpen.GetHashCode();
+      hash ^= levelList_.GetHashCode();
+      hash ^= coolDownAvatarIdList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      coolDownBuffIdList_.WriteTo(output, _repeated_coolDownBuffIdList_codec);
+      if (StageId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(StageId);
+      }
+      coolDownAvatarIdList_.WriteTo(output, _repeated_coolDownAvatarIdList_codec);
+      levelList_.WriteTo(output, _repeated_levelList_codec);
+      if (IsOpen != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsOpen);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      coolDownBuffIdList_.WriteTo(ref output, _repeated_coolDownBuffIdList_codec);
+      if (StageId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(StageId);
+      }
+      coolDownAvatarIdList_.WriteTo(ref output, _repeated_coolDownAvatarIdList_codec);
+      levelList_.WriteTo(ref output, _repeated_levelList_codec);
+      if (IsOpen != false) {
+        output.WriteRawTag(120);
+        output.WriteBool(IsOpen);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (StageId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
+      }
+      size += coolDownBuffIdList_.CalculateSize(_repeated_coolDownBuffIdList_codec);
+      if (IsOpen != false) {
+        size += 1 + 1;
+      }
+      size += levelList_.CalculateSize(_repeated_levelList_codec);
+      size += coolDownAvatarIdList_.CalculateSize(_repeated_coolDownAvatarIdList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PotionStageData other) {
+      if (other == null) {
+        return;
+      }
+      if (other.StageId != 0) {
+        StageId = other.StageId;
+      }
+      coolDownBuffIdList_.Add(other.coolDownBuffIdList_);
+      if (other.IsOpen != false) {
+        IsOpen = other.IsOpen;
+      }
+      levelList_.Add(other.levelList_);
+      coolDownAvatarIdList_.Add(other.coolDownAvatarIdList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18:
+          case 16: {
+            coolDownBuffIdList_.AddEntriesFrom(input, _repeated_coolDownBuffIdList_codec);
+            break;
+          }
+          case 88: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 106:
+          case 104: {
+            coolDownAvatarIdList_.AddEntriesFrom(input, _repeated_coolDownAvatarIdList_codec);
+            break;
+          }
+          case 114: {
+            levelList_.AddEntriesFrom(input, _repeated_levelList_codec);
+            break;
+          }
+          case 120: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18:
+          case 16: {
+            coolDownBuffIdList_.AddEntriesFrom(ref input, _repeated_coolDownBuffIdList_codec);
+            break;
+          }
+          case 88: {
+            StageId = input.ReadUInt32();
+            break;
+          }
+          case 106:
+          case 104: {
+            coolDownAvatarIdList_.AddEntriesFrom(ref input, _repeated_coolDownAvatarIdList_codec);
+            break;
+          }
+          case 114: {
+            levelList_.AddEntriesFrom(ref input, _repeated_levelList_codec);
+            break;
+          }
+          case 120: {
+            IsOpen = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class PotionStageData : pb::IMessage<PotionStageData>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<PotionStageData> _parser = new pb::MessageParser<PotionStageData>(() => new PotionStageData());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<PotionStageData> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::PotionStageDataReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PotionStageData() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PotionStageData(PotionStageData other) : this() {
-    stageId_ = other.stageId_;
-    coolDownBuffIdList_ = other.coolDownBuffIdList_.Clone();
-    isOpen_ = other.isOpen_;
-    levelList_ = other.levelList_.Clone();
-    coolDownAvatarIdList_ = other.coolDownAvatarIdList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PotionStageData Clone() {
-    return new PotionStageData(this);
-  }
-
-  /// <summary>Field number for the "stage_id" field.</summary>
-  public const int StageIdFieldNumber = 11;
-  private uint stageId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StageId {
-    get { return stageId_; }
-    set {
-      stageId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cool_down_buff_id_list" field.</summary>
-  public const int CoolDownBuffIdListFieldNumber = 2;
-  private static readonly pb::FieldCodec<uint> _repeated_coolDownBuffIdList_codec
-      = pb::FieldCodec.ForUInt32(18);
-  private readonly pbc::RepeatedField<uint> coolDownBuffIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> CoolDownBuffIdList {
-    get { return coolDownBuffIdList_; }
-  }
-
-  /// <summary>Field number for the "is_open" field.</summary>
-  public const int IsOpenFieldNumber = 15;
-  private bool isOpen_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsOpen {
-    get { return isOpen_; }
-    set {
-      isOpen_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "level_list" field.</summary>
-  public const int LevelListFieldNumber = 14;
-  private static readonly pb::FieldCodec<global::PotionLevelData> _repeated_levelList_codec
-      = pb::FieldCodec.ForMessage(114, global::PotionLevelData.Parser);
-  private readonly pbc::RepeatedField<global::PotionLevelData> levelList_ = new pbc::RepeatedField<global::PotionLevelData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::PotionLevelData> LevelList {
-    get { return levelList_; }
-  }
-
-  /// <summary>Field number for the "cool_down_avatar_id_list" field.</summary>
-  public const int CoolDownAvatarIdListFieldNumber = 13;
-  private static readonly pb::FieldCodec<uint> _repeated_coolDownAvatarIdList_codec
-      = pb::FieldCodec.ForUInt32(106);
-  private readonly pbc::RepeatedField<uint> coolDownAvatarIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> CoolDownAvatarIdList {
-    get { return coolDownAvatarIdList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as PotionStageData);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(PotionStageData other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (StageId != other.StageId) return false;
-    if(!coolDownBuffIdList_.Equals(other.coolDownBuffIdList_)) return false;
-    if (IsOpen != other.IsOpen) return false;
-    if(!levelList_.Equals(other.levelList_)) return false;
-    if(!coolDownAvatarIdList_.Equals(other.coolDownAvatarIdList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (StageId != 0) hash ^= StageId.GetHashCode();
-    hash ^= coolDownBuffIdList_.GetHashCode();
-    if (IsOpen != false) hash ^= IsOpen.GetHashCode();
-    hash ^= levelList_.GetHashCode();
-    hash ^= coolDownAvatarIdList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    coolDownBuffIdList_.WriteTo(output, _repeated_coolDownBuffIdList_codec);
-    if (StageId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(StageId);
-    }
-    coolDownAvatarIdList_.WriteTo(output, _repeated_coolDownAvatarIdList_codec);
-    levelList_.WriteTo(output, _repeated_levelList_codec);
-    if (IsOpen != false) {
-      output.WriteRawTag(120);
-      output.WriteBool(IsOpen);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    coolDownBuffIdList_.WriteTo(ref output, _repeated_coolDownBuffIdList_codec);
-    if (StageId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(StageId);
-    }
-    coolDownAvatarIdList_.WriteTo(ref output, _repeated_coolDownAvatarIdList_codec);
-    levelList_.WriteTo(ref output, _repeated_levelList_codec);
-    if (IsOpen != false) {
-      output.WriteRawTag(120);
-      output.WriteBool(IsOpen);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (StageId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StageId);
-    }
-    size += coolDownBuffIdList_.CalculateSize(_repeated_coolDownBuffIdList_codec);
-    if (IsOpen != false) {
-      size += 1 + 1;
-    }
-    size += levelList_.CalculateSize(_repeated_levelList_codec);
-    size += coolDownAvatarIdList_.CalculateSize(_repeated_coolDownAvatarIdList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(PotionStageData other) {
-    if (other == null) {
-      return;
-    }
-    if (other.StageId != 0) {
-      StageId = other.StageId;
-    }
-    coolDownBuffIdList_.Add(other.coolDownBuffIdList_);
-    if (other.IsOpen != false) {
-      IsOpen = other.IsOpen;
-    }
-    levelList_.Add(other.levelList_);
-    coolDownAvatarIdList_.Add(other.coolDownAvatarIdList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18:
-        case 16: {
-          coolDownBuffIdList_.AddEntriesFrom(input, _repeated_coolDownBuffIdList_codec);
-          break;
-        }
-        case 88: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 106:
-        case 104: {
-          coolDownAvatarIdList_.AddEntriesFrom(input, _repeated_coolDownAvatarIdList_codec);
-          break;
-        }
-        case 114: {
-          levelList_.AddEntriesFrom(input, _repeated_levelList_codec);
-          break;
-        }
-        case 120: {
-          IsOpen = input.ReadBool();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18:
-        case 16: {
-          coolDownBuffIdList_.AddEntriesFrom(ref input, _repeated_coolDownBuffIdList_codec);
-          break;
-        }
-        case 88: {
-          StageId = input.ReadUInt32();
-          break;
-        }
-        case 106:
-        case 104: {
-          coolDownAvatarIdList_.AddEntriesFrom(ref input, _repeated_coolDownAvatarIdList_codec);
-          break;
-        }
-        case 114: {
-          levelList_.AddEntriesFrom(ref input, _repeated_levelList_codec);
-          break;
-        }
-        case 120: {
-          IsOpen = input.ReadBool();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

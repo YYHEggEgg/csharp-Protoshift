@@ -9,334 +9,337 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from BalloonPlayerInfo.proto</summary>
-public static partial class BalloonPlayerInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for BalloonPlayerInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from BalloonPlayerInfo.proto</summary>
+  public static partial class BalloonPlayerInfoReflection {
 
-  static BalloonPlayerInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdCYWxsb29uUGxheWVySW5mby5wcm90byJeChFCYWxsb29uUGxheWVySW5m",
-          "bxIRCgljdXJfc2NvcmUYCSABKA0SDQoFY29tYm8YCyABKA0SCwoDdWlkGAgg",
-          "ASgNEhoKEmNvbWJvX2Rpc2FibGVfdGltZRgHIAEoDUIWChRvcmcuc29yYXBv",
-          "aW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::BalloonPlayerInfo), global::BalloonPlayerInfo.Parser, new[]{ "CurScore", "Combo", "Uid", "ComboDisableTime" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for BalloonPlayerInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static BalloonPlayerInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdCYWxsb29uUGxheWVySW5mby5wcm90byJeChFCYWxsb29uUGxheWVySW5m",
+            "bxIRCgljdXJfc2NvcmUYCSABKA0SDQoFY29tYm8YCyABKA0SCwoDdWlkGAgg",
+            "ASgNEhoKEmNvbWJvX2Rpc2FibGVfdGltZRgHIAEoDUIMqgIJTmV3UHJvdG9z",
+            "YgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.BalloonPlayerInfo), global::NewProtos.BalloonPlayerInfo.Parser, new[]{ "CurScore", "Combo", "Uid", "ComboDisableTime" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class BalloonPlayerInfo : pb::IMessage<BalloonPlayerInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BalloonPlayerInfo> _parser = new pb::MessageParser<BalloonPlayerInfo>(() => new BalloonPlayerInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<BalloonPlayerInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.BalloonPlayerInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BalloonPlayerInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BalloonPlayerInfo(BalloonPlayerInfo other) : this() {
+      curScore_ = other.curScore_;
+      combo_ = other.combo_;
+      uid_ = other.uid_;
+      comboDisableTime_ = other.comboDisableTime_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BalloonPlayerInfo Clone() {
+      return new BalloonPlayerInfo(this);
+    }
+
+    /// <summary>Field number for the "cur_score" field.</summary>
+    public const int CurScoreFieldNumber = 9;
+    private uint curScore_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurScore {
+      get { return curScore_; }
+      set {
+        curScore_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "combo" field.</summary>
+    public const int ComboFieldNumber = 11;
+    private uint combo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Combo {
+      get { return combo_; }
+      set {
+        combo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 8;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "combo_disable_time" field.</summary>
+    public const int ComboDisableTimeFieldNumber = 7;
+    private uint comboDisableTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ComboDisableTime {
+      get { return comboDisableTime_; }
+      set {
+        comboDisableTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as BalloonPlayerInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(BalloonPlayerInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CurScore != other.CurScore) return false;
+      if (Combo != other.Combo) return false;
+      if (Uid != other.Uid) return false;
+      if (ComboDisableTime != other.ComboDisableTime) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CurScore != 0) hash ^= CurScore.GetHashCode();
+      if (Combo != 0) hash ^= Combo.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      if (ComboDisableTime != 0) hash ^= ComboDisableTime.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ComboDisableTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ComboDisableTime);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Uid);
+      }
+      if (CurScore != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(CurScore);
+      }
+      if (Combo != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Combo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ComboDisableTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ComboDisableTime);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(Uid);
+      }
+      if (CurScore != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(CurScore);
+      }
+      if (Combo != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(Combo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (CurScore != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
+      }
+      if (Combo != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Combo);
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      if (ComboDisableTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ComboDisableTime);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(BalloonPlayerInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CurScore != 0) {
+        CurScore = other.CurScore;
+      }
+      if (other.Combo != 0) {
+        Combo = other.Combo;
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      if (other.ComboDisableTime != 0) {
+        ComboDisableTime = other.ComboDisableTime;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 56: {
+            ComboDisableTime = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            CurScore = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Combo = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 56: {
+            ComboDisableTime = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            CurScore = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            Combo = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class BalloonPlayerInfo : pb::IMessage<BalloonPlayerInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<BalloonPlayerInfo> _parser = new pb::MessageParser<BalloonPlayerInfo>(() => new BalloonPlayerInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<BalloonPlayerInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::BalloonPlayerInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BalloonPlayerInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BalloonPlayerInfo(BalloonPlayerInfo other) : this() {
-    curScore_ = other.curScore_;
-    combo_ = other.combo_;
-    uid_ = other.uid_;
-    comboDisableTime_ = other.comboDisableTime_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BalloonPlayerInfo Clone() {
-    return new BalloonPlayerInfo(this);
-  }
-
-  /// <summary>Field number for the "cur_score" field.</summary>
-  public const int CurScoreFieldNumber = 9;
-  private uint curScore_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurScore {
-    get { return curScore_; }
-    set {
-      curScore_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "combo" field.</summary>
-  public const int ComboFieldNumber = 11;
-  private uint combo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Combo {
-    get { return combo_; }
-    set {
-      combo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "uid" field.</summary>
-  public const int UidFieldNumber = 8;
-  private uint uid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Uid {
-    get { return uid_; }
-    set {
-      uid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "combo_disable_time" field.</summary>
-  public const int ComboDisableTimeFieldNumber = 7;
-  private uint comboDisableTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ComboDisableTime {
-    get { return comboDisableTime_; }
-    set {
-      comboDisableTime_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as BalloonPlayerInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(BalloonPlayerInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (CurScore != other.CurScore) return false;
-    if (Combo != other.Combo) return false;
-    if (Uid != other.Uid) return false;
-    if (ComboDisableTime != other.ComboDisableTime) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (CurScore != 0) hash ^= CurScore.GetHashCode();
-    if (Combo != 0) hash ^= Combo.GetHashCode();
-    if (Uid != 0) hash ^= Uid.GetHashCode();
-    if (ComboDisableTime != 0) hash ^= ComboDisableTime.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ComboDisableTime != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(ComboDisableTime);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Uid);
-    }
-    if (CurScore != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(CurScore);
-    }
-    if (Combo != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(Combo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ComboDisableTime != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(ComboDisableTime);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(Uid);
-    }
-    if (CurScore != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(CurScore);
-    }
-    if (Combo != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(Combo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (CurScore != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurScore);
-    }
-    if (Combo != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Combo);
-    }
-    if (Uid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-    }
-    if (ComboDisableTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ComboDisableTime);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(BalloonPlayerInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.CurScore != 0) {
-      CurScore = other.CurScore;
-    }
-    if (other.Combo != 0) {
-      Combo = other.Combo;
-    }
-    if (other.Uid != 0) {
-      Uid = other.Uid;
-    }
-    if (other.ComboDisableTime != 0) {
-      ComboDisableTime = other.ComboDisableTime;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 56: {
-          ComboDisableTime = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          CurScore = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          Combo = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 56: {
-          ComboDisableTime = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          CurScore = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          Combo = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

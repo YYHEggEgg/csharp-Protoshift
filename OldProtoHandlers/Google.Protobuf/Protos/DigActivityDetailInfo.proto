@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "DigMarkPoint.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message DigActivityDetailInfo {
   repeated uint32 stage_id_list = 15;

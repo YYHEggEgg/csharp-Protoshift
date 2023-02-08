@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "CoinCollectPlayerInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message CoinCollectStageInfo {
   uint32 play_index = 9;

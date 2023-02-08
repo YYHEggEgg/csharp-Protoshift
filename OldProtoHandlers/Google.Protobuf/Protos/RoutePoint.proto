@@ -19,7 +19,7 @@ syntax = "proto3";
 import "MathQuaternion.proto";
 import "Vector.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message RoutePoint {
   Vector position = 1;

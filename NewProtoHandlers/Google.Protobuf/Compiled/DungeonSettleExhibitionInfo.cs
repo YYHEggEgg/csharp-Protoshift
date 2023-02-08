@@ -9,260 +9,262 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from DungeonSettleExhibitionInfo.proto</summary>
-public static partial class DungeonSettleExhibitionInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for DungeonSettleExhibitionInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from DungeonSettleExhibitionInfo.proto</summary>
+  public static partial class DungeonSettleExhibitionInfoReflection {
 
-  static DungeonSettleExhibitionInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiFEdW5nZW9uU2V0dGxlRXhoaWJpdGlvbkluZm8ucHJvdG8aG0V4aGliaXRp",
-          "b25EaXNwbGF5SW5mby5wcm90bxoWT25saW5lUGxheWVySW5mby5wcm90byJw",
-          "ChtEdW5nZW9uU2V0dGxlRXhoaWJpdGlvbkluZm8SJgoLcGxheWVyX2luZm8Y",
-          "DiABKAsyES5PbmxpbmVQbGF5ZXJJbmZvEikKCWNhcmRfbGlzdBgNIAMoCzIW",
-          "LkV4aGliaXRpb25EaXNwbGF5SW5mb0IWChRvcmcuc29yYXBvaW50YS5wcm90",
-          "b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ExhibitionDisplayInfoReflection.Descriptor, global::OnlinePlayerInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::DungeonSettleExhibitionInfo), global::DungeonSettleExhibitionInfo.Parser, new[]{ "PlayerInfo", "CardList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for DungeonSettleExhibitionInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static DungeonSettleExhibitionInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiFEdW5nZW9uU2V0dGxlRXhoaWJpdGlvbkluZm8ucHJvdG8aG0V4aGliaXRp",
+            "b25EaXNwbGF5SW5mby5wcm90bxoWT25saW5lUGxheWVySW5mby5wcm90byJw",
+            "ChtEdW5nZW9uU2V0dGxlRXhoaWJpdGlvbkluZm8SJgoLcGxheWVyX2luZm8Y",
+            "DiABKAsyES5PbmxpbmVQbGF5ZXJJbmZvEikKCWNhcmRfbGlzdBgNIAMoCzIW",
+            "LkV4aGliaXRpb25EaXNwbGF5SW5mb0IMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.ExhibitionDisplayInfoReflection.Descriptor, global::NewProtos.OnlinePlayerInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.DungeonSettleExhibitionInfo), global::NewProtos.DungeonSettleExhibitionInfo.Parser, new[]{ "PlayerInfo", "CardList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class DungeonSettleExhibitionInfo : pb::IMessage<DungeonSettleExhibitionInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<DungeonSettleExhibitionInfo> _parser = new pb::MessageParser<DungeonSettleExhibitionInfo>(() => new DungeonSettleExhibitionInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<DungeonSettleExhibitionInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.DungeonSettleExhibitionInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DungeonSettleExhibitionInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DungeonSettleExhibitionInfo(DungeonSettleExhibitionInfo other) : this() {
+      playerInfo_ = other.playerInfo_ != null ? other.playerInfo_.Clone() : null;
+      cardList_ = other.cardList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DungeonSettleExhibitionInfo Clone() {
+      return new DungeonSettleExhibitionInfo(this);
+    }
+
+    /// <summary>Field number for the "player_info" field.</summary>
+    public const int PlayerInfoFieldNumber = 14;
+    private global::NewProtos.OnlinePlayerInfo playerInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.OnlinePlayerInfo PlayerInfo {
+      get { return playerInfo_; }
+      set {
+        playerInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "card_list" field.</summary>
+    public const int CardListFieldNumber = 13;
+    private static readonly pb::FieldCodec<global::NewProtos.ExhibitionDisplayInfo> _repeated_cardList_codec
+        = pb::FieldCodec.ForMessage(106, global::NewProtos.ExhibitionDisplayInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ExhibitionDisplayInfo> cardList_ = new pbc::RepeatedField<global::NewProtos.ExhibitionDisplayInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ExhibitionDisplayInfo> CardList {
+      get { return cardList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as DungeonSettleExhibitionInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(DungeonSettleExhibitionInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(PlayerInfo, other.PlayerInfo)) return false;
+      if(!cardList_.Equals(other.cardList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (playerInfo_ != null) hash ^= PlayerInfo.GetHashCode();
+      hash ^= cardList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      cardList_.WriteTo(output, _repeated_cardList_codec);
+      if (playerInfo_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(PlayerInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      cardList_.WriteTo(ref output, _repeated_cardList_codec);
+      if (playerInfo_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(PlayerInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (playerInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerInfo);
+      }
+      size += cardList_.CalculateSize(_repeated_cardList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(DungeonSettleExhibitionInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.playerInfo_ != null) {
+        if (playerInfo_ == null) {
+          PlayerInfo = new global::NewProtos.OnlinePlayerInfo();
+        }
+        PlayerInfo.MergeFrom(other.PlayerInfo);
+      }
+      cardList_.Add(other.cardList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 106: {
+            cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
+            break;
+          }
+          case 114: {
+            if (playerInfo_ == null) {
+              PlayerInfo = new global::NewProtos.OnlinePlayerInfo();
+            }
+            input.ReadMessage(PlayerInfo);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 106: {
+            cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
+            break;
+          }
+          case 114: {
+            if (playerInfo_ == null) {
+              PlayerInfo = new global::NewProtos.OnlinePlayerInfo();
+            }
+            input.ReadMessage(PlayerInfo);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class DungeonSettleExhibitionInfo : pb::IMessage<DungeonSettleExhibitionInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<DungeonSettleExhibitionInfo> _parser = new pb::MessageParser<DungeonSettleExhibitionInfo>(() => new DungeonSettleExhibitionInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<DungeonSettleExhibitionInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::DungeonSettleExhibitionInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DungeonSettleExhibitionInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DungeonSettleExhibitionInfo(DungeonSettleExhibitionInfo other) : this() {
-    playerInfo_ = other.playerInfo_ != null ? other.playerInfo_.Clone() : null;
-    cardList_ = other.cardList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DungeonSettleExhibitionInfo Clone() {
-    return new DungeonSettleExhibitionInfo(this);
-  }
-
-  /// <summary>Field number for the "player_info" field.</summary>
-  public const int PlayerInfoFieldNumber = 14;
-  private global::OnlinePlayerInfo playerInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::OnlinePlayerInfo PlayerInfo {
-    get { return playerInfo_; }
-    set {
-      playerInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "card_list" field.</summary>
-  public const int CardListFieldNumber = 13;
-  private static readonly pb::FieldCodec<global::ExhibitionDisplayInfo> _repeated_cardList_codec
-      = pb::FieldCodec.ForMessage(106, global::ExhibitionDisplayInfo.Parser);
-  private readonly pbc::RepeatedField<global::ExhibitionDisplayInfo> cardList_ = new pbc::RepeatedField<global::ExhibitionDisplayInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ExhibitionDisplayInfo> CardList {
-    get { return cardList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as DungeonSettleExhibitionInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(DungeonSettleExhibitionInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(PlayerInfo, other.PlayerInfo)) return false;
-    if(!cardList_.Equals(other.cardList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (playerInfo_ != null) hash ^= PlayerInfo.GetHashCode();
-    hash ^= cardList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    cardList_.WriteTo(output, _repeated_cardList_codec);
-    if (playerInfo_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(PlayerInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    cardList_.WriteTo(ref output, _repeated_cardList_codec);
-    if (playerInfo_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(PlayerInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (playerInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerInfo);
-    }
-    size += cardList_.CalculateSize(_repeated_cardList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(DungeonSettleExhibitionInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.playerInfo_ != null) {
-      if (playerInfo_ == null) {
-        PlayerInfo = new global::OnlinePlayerInfo();
-      }
-      PlayerInfo.MergeFrom(other.PlayerInfo);
-    }
-    cardList_.Add(other.cardList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 106: {
-          cardList_.AddEntriesFrom(input, _repeated_cardList_codec);
-          break;
-        }
-        case 114: {
-          if (playerInfo_ == null) {
-            PlayerInfo = new global::OnlinePlayerInfo();
-          }
-          input.ReadMessage(PlayerInfo);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 106: {
-          cardList_.AddEntriesFrom(ref input, _repeated_cardList_codec);
-          break;
-        }
-        case 114: {
-          if (playerInfo_ == null) {
-            PlayerInfo = new global::OnlinePlayerInfo();
-          }
-          input.ReadMessage(PlayerInfo);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

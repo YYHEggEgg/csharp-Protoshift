@@ -9,40 +9,43 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ReliquaryFilterWearedState.proto</summary>
-public static partial class ReliquaryFilterWearedStateReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ReliquaryFilterWearedState.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ReliquaryFilterWearedState.proto</summary>
+  public static partial class ReliquaryFilterWearedStateReflection {
 
-  static ReliquaryFilterWearedStateReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBSZWxpcXVhcnlGaWx0ZXJXZWFyZWRTdGF0ZS5wcm90byquAQoaUmVsaXF1",
-          "YXJ5RmlsdGVyV2VhcmVkU3RhdGUSJgoiUkVMSVFVQVJZX0ZJTFRFUl9XRUFS",
-          "RURfU1RBVEVfTk9ORRAAEjEKLVJFTElRVUFSWV9GSUxURVJfV0VBUkVEX1NU",
-          "QVRFX0hBU19CRUVOX1dFQVJFRBABEjUKMVJFTElRVUFSWV9GSUxURVJfV0VB",
-          "UkVEX1NUQVRFX0hBU19OT1RfQkVFTl9XRUFSRUQQAkIWChRvcmcuc29yYXBv",
-          "aW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ReliquaryFilterWearedState), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for ReliquaryFilterWearedState.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ReliquaryFilterWearedStateReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBSZWxpcXVhcnlGaWx0ZXJXZWFyZWRTdGF0ZS5wcm90byquAQoaUmVsaXF1",
+            "YXJ5RmlsdGVyV2VhcmVkU3RhdGUSJgoiUkVMSVFVQVJZX0ZJTFRFUl9XRUFS",
+            "RURfU1RBVEVfTk9ORRAAEjEKLVJFTElRVUFSWV9GSUxURVJfV0VBUkVEX1NU",
+            "QVRFX0hBU19CRUVOX1dFQVJFRBABEjUKMVJFTElRVUFSWV9GSUxURVJfV0VB",
+            "UkVEX1NUQVRFX0hBU19OT1RfQkVFTl9XRUFSRUQQAkIMqgIJTmV3UHJvdG9z",
+            "YgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.ReliquaryFilterWearedState), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum ReliquaryFilterWearedState {
+    [pbr::OriginalName("RELIQUARY_FILTER_WEARED_STATE_NONE")] None = 0,
+    [pbr::OriginalName("RELIQUARY_FILTER_WEARED_STATE_HAS_BEEN_WEARED")] HasBeenWeared = 1,
+    [pbr::OriginalName("RELIQUARY_FILTER_WEARED_STATE_HAS_NOT_BEEN_WEARED")] HasNotBeenWeared = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum ReliquaryFilterWearedState {
-  [pbr::OriginalName("RELIQUARY_FILTER_WEARED_STATE_NONE")] None = 0,
-  [pbr::OriginalName("RELIQUARY_FILTER_WEARED_STATE_HAS_BEEN_WEARED")] HasBeenWeared = 1,
-  [pbr::OriginalName("RELIQUARY_FILTER_WEARED_STATE_HAS_NOT_BEEN_WEARED")] HasNotBeenWeared = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

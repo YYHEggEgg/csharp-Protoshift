@@ -21,7 +21,7 @@ import "CustomDungeonSetting.proto";
 import "CustomDungeonSocial.proto";
 import "CustomDungeonState.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message CustomDungeonBrief {
   CustomDungeonSetting setting = 2;

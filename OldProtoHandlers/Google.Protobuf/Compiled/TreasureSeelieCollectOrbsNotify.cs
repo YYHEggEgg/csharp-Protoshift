@@ -9,265 +9,268 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from TreasureSeelieCollectOrbsNotify.proto</summary>
-public static partial class TreasureSeelieCollectOrbsNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for TreasureSeelieCollectOrbsNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from TreasureSeelieCollectOrbsNotify.proto</summary>
+  public static partial class TreasureSeelieCollectOrbsNotifyReflection {
 
-  static TreasureSeelieCollectOrbsNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiVUcmVhc3VyZVNlZWxpZUNvbGxlY3RPcmJzTm90aWZ5LnByb3RvIkkKH1Ry",
-          "ZWFzdXJlU2VlbGllQ29sbGVjdE9yYnNOb3RpZnkSEwoLY3VycmVudF9udW0Y",
-          "CyABKA0SEQoJdG90YWxfbnVtGAUgASgNQh4KHGVtdS5ncmFzc2N1dHRlci5u",
-          "ZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::TreasureSeelieCollectOrbsNotify), global::TreasureSeelieCollectOrbsNotify.Parser, new[]{ "CurrentNum", "TotalNum" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for TreasureSeelieCollectOrbsNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static TreasureSeelieCollectOrbsNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiVUcmVhc3VyZVNlZWxpZUNvbGxlY3RPcmJzTm90aWZ5LnByb3RvIkkKH1Ry",
+            "ZWFzdXJlU2VlbGllQ29sbGVjdE9yYnNOb3RpZnkSEwoLY3VycmVudF9udW0Y",
+            "CyABKA0SEQoJdG90YWxfbnVtGAUgASgNQgyqAglPbGRQcm90b3NiBnByb3Rv",
+            "Mw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.TreasureSeelieCollectOrbsNotify), global::OldProtos.TreasureSeelieCollectOrbsNotify.Parser, new[]{ "CurrentNum", "TotalNum" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 20754
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class TreasureSeelieCollectOrbsNotify : pb::IMessage<TreasureSeelieCollectOrbsNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TreasureSeelieCollectOrbsNotify> _parser = new pb::MessageParser<TreasureSeelieCollectOrbsNotify>(() => new TreasureSeelieCollectOrbsNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TreasureSeelieCollectOrbsNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.TreasureSeelieCollectOrbsNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TreasureSeelieCollectOrbsNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TreasureSeelieCollectOrbsNotify(TreasureSeelieCollectOrbsNotify other) : this() {
+      currentNum_ = other.currentNum_;
+      totalNum_ = other.totalNum_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TreasureSeelieCollectOrbsNotify Clone() {
+      return new TreasureSeelieCollectOrbsNotify(this);
+    }
+
+    /// <summary>Field number for the "current_num" field.</summary>
+    public const int CurrentNumFieldNumber = 11;
+    private uint currentNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurrentNum {
+      get { return currentNum_; }
+      set {
+        currentNum_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_num" field.</summary>
+    public const int TotalNumFieldNumber = 5;
+    private uint totalNum_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TotalNum {
+      get { return totalNum_; }
+      set {
+        totalNum_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TreasureSeelieCollectOrbsNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TreasureSeelieCollectOrbsNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CurrentNum != other.CurrentNum) return false;
+      if (TotalNum != other.TotalNum) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CurrentNum != 0) hash ^= CurrentNum.GetHashCode();
+      if (TotalNum != 0) hash ^= TotalNum.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (TotalNum != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(TotalNum);
+      }
+      if (CurrentNum != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(CurrentNum);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (TotalNum != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(TotalNum);
+      }
+      if (CurrentNum != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(CurrentNum);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (CurrentNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurrentNum);
+      }
+      if (TotalNum != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalNum);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TreasureSeelieCollectOrbsNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CurrentNum != 0) {
+        CurrentNum = other.CurrentNum;
+      }
+      if (other.TotalNum != 0) {
+        TotalNum = other.TotalNum;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            TotalNum = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            CurrentNum = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            TotalNum = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            CurrentNum = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 20754
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class TreasureSeelieCollectOrbsNotify : pb::IMessage<TreasureSeelieCollectOrbsNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<TreasureSeelieCollectOrbsNotify> _parser = new pb::MessageParser<TreasureSeelieCollectOrbsNotify>(() => new TreasureSeelieCollectOrbsNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<TreasureSeelieCollectOrbsNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::TreasureSeelieCollectOrbsNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TreasureSeelieCollectOrbsNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TreasureSeelieCollectOrbsNotify(TreasureSeelieCollectOrbsNotify other) : this() {
-    currentNum_ = other.currentNum_;
-    totalNum_ = other.totalNum_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TreasureSeelieCollectOrbsNotify Clone() {
-    return new TreasureSeelieCollectOrbsNotify(this);
-  }
-
-  /// <summary>Field number for the "current_num" field.</summary>
-  public const int CurrentNumFieldNumber = 11;
-  private uint currentNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurrentNum {
-    get { return currentNum_; }
-    set {
-      currentNum_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "total_num" field.</summary>
-  public const int TotalNumFieldNumber = 5;
-  private uint totalNum_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TotalNum {
-    get { return totalNum_; }
-    set {
-      totalNum_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as TreasureSeelieCollectOrbsNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(TreasureSeelieCollectOrbsNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (CurrentNum != other.CurrentNum) return false;
-    if (TotalNum != other.TotalNum) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (CurrentNum != 0) hash ^= CurrentNum.GetHashCode();
-    if (TotalNum != 0) hash ^= TotalNum.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (TotalNum != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(TotalNum);
-    }
-    if (CurrentNum != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(CurrentNum);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (TotalNum != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(TotalNum);
-    }
-    if (CurrentNum != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(CurrentNum);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (CurrentNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurrentNum);
-    }
-    if (TotalNum != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalNum);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(TreasureSeelieCollectOrbsNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.CurrentNum != 0) {
-      CurrentNum = other.CurrentNum;
-    }
-    if (other.TotalNum != 0) {
-      TotalNum = other.TotalNum;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          TotalNum = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          CurrentNum = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          TotalNum = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          CurrentNum = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

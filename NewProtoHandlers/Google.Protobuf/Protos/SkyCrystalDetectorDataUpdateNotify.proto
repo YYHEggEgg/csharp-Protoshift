@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "SkyCrystalDetectorData.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SkyCrystalDetectorDataUpdateNotify {
   // enum CmdId {

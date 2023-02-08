@@ -9,412 +9,415 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from InBattleMechanicusCardInfo.proto</summary>
-public static partial class InBattleMechanicusCardInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for InBattleMechanicusCardInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from InBattleMechanicusCardInfo.proto</summary>
+  public static partial class InBattleMechanicusCardInfoReflection {
 
-  static InBattleMechanicusCardInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBJbkJhdHRsZU1lY2hhbmljdXNDYXJkSW5mby5wcm90bxoqSW5CYXR0bGVN",
-          "ZWNoYW5pY3VzQ2FyZENoYWxsZW5nZVN0YXRlLnByb3RvItkBChpJbkJhdHRs",
-          "ZU1lY2hhbmljdXNDYXJkSW5mbxIbChNVbmszMzAwX0tDSUVJTk1FUERIGAIg",
-          "ASgNEhsKE1VuazMzMDBfTkRBT09LS0dKUEgYByABKA0SEwoLY29zdF9wb2lu",
-          "dHMYBSABKA0SDwoHY2FyZF9pZBgDIAEoDRIbChNVbmszMzAwX0ZOQUhLSE9E",
-          "QktOGA0gASgNEj4KD2NoYWxsZW5nZV9zdGF0ZRgPIAEoDjIlLkluQmF0dGxl",
-          "TWVjaGFuaWN1c0NhcmRDaGFsbGVuZ2VTdGF0ZUIWChRvcmcuc29yYXBvaW50",
-          "YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::InBattleMechanicusCardChallengeStateReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::InBattleMechanicusCardInfo), global::InBattleMechanicusCardInfo.Parser, new[]{ "Unk3300KCIEINMEPDH", "Unk3300NDAOOKKGJPH", "CostPoints", "CardId", "Unk3300FNAHKHODBKN", "ChallengeState" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for InBattleMechanicusCardInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static InBattleMechanicusCardInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBJbkJhdHRsZU1lY2hhbmljdXNDYXJkSW5mby5wcm90bxoqSW5CYXR0bGVN",
+            "ZWNoYW5pY3VzQ2FyZENoYWxsZW5nZVN0YXRlLnByb3RvItkBChpJbkJhdHRs",
+            "ZU1lY2hhbmljdXNDYXJkSW5mbxIbChNVbmszMzAwX0tDSUVJTk1FUERIGAIg",
+            "ASgNEhsKE1VuazMzMDBfTkRBT09LS0dKUEgYByABKA0SEwoLY29zdF9wb2lu",
+            "dHMYBSABKA0SDwoHY2FyZF9pZBgDIAEoDRIbChNVbmszMzAwX0ZOQUhLSE9E",
+            "QktOGA0gASgNEj4KD2NoYWxsZW5nZV9zdGF0ZRgPIAEoDjIlLkluQmF0dGxl",
+            "TWVjaGFuaWN1c0NhcmRDaGFsbGVuZ2VTdGF0ZUIMqgIJTmV3UHJvdG9zYgZw",
+            "cm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.InBattleMechanicusCardChallengeStateReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.InBattleMechanicusCardInfo), global::NewProtos.InBattleMechanicusCardInfo.Parser, new[]{ "Unk3300KCIEINMEPDH", "Unk3300NDAOOKKGJPH", "CostPoints", "CardId", "Unk3300FNAHKHODBKN", "ChallengeState" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class InBattleMechanicusCardInfo : pb::IMessage<InBattleMechanicusCardInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<InBattleMechanicusCardInfo> _parser = new pb::MessageParser<InBattleMechanicusCardInfo>(() => new InBattleMechanicusCardInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<InBattleMechanicusCardInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.InBattleMechanicusCardInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InBattleMechanicusCardInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InBattleMechanicusCardInfo(InBattleMechanicusCardInfo other) : this() {
+      unk3300KCIEINMEPDH_ = other.unk3300KCIEINMEPDH_;
+      unk3300NDAOOKKGJPH_ = other.unk3300NDAOOKKGJPH_;
+      costPoints_ = other.costPoints_;
+      cardId_ = other.cardId_;
+      unk3300FNAHKHODBKN_ = other.unk3300FNAHKHODBKN_;
+      challengeState_ = other.challengeState_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InBattleMechanicusCardInfo Clone() {
+      return new InBattleMechanicusCardInfo(this);
+    }
+
+    /// <summary>Field number for the "Unk3300_KCIEINMEPDH" field.</summary>
+    public const int Unk3300KCIEINMEPDHFieldNumber = 2;
+    private uint unk3300KCIEINMEPDH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300KCIEINMEPDH {
+      get { return unk3300KCIEINMEPDH_; }
+      set {
+        unk3300KCIEINMEPDH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_NDAOOKKGJPH" field.</summary>
+    public const int Unk3300NDAOOKKGJPHFieldNumber = 7;
+    private uint unk3300NDAOOKKGJPH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300NDAOOKKGJPH {
+      get { return unk3300NDAOOKKGJPH_; }
+      set {
+        unk3300NDAOOKKGJPH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cost_points" field.</summary>
+    public const int CostPointsFieldNumber = 5;
+    private uint costPoints_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CostPoints {
+      get { return costPoints_; }
+      set {
+        costPoints_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "card_id" field.</summary>
+    public const int CardIdFieldNumber = 3;
+    private uint cardId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CardId {
+      get { return cardId_; }
+      set {
+        cardId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_FNAHKHODBKN" field.</summary>
+    public const int Unk3300FNAHKHODBKNFieldNumber = 13;
+    private uint unk3300FNAHKHODBKN_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Unk3300FNAHKHODBKN {
+      get { return unk3300FNAHKHODBKN_; }
+      set {
+        unk3300FNAHKHODBKN_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "challenge_state" field.</summary>
+    public const int ChallengeStateFieldNumber = 15;
+    private global::NewProtos.InBattleMechanicusCardChallengeState challengeState_ = global::NewProtos.InBattleMechanicusCardChallengeState.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.InBattleMechanicusCardChallengeState ChallengeState {
+      get { return challengeState_; }
+      set {
+        challengeState_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as InBattleMechanicusCardInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(InBattleMechanicusCardInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Unk3300KCIEINMEPDH != other.Unk3300KCIEINMEPDH) return false;
+      if (Unk3300NDAOOKKGJPH != other.Unk3300NDAOOKKGJPH) return false;
+      if (CostPoints != other.CostPoints) return false;
+      if (CardId != other.CardId) return false;
+      if (Unk3300FNAHKHODBKN != other.Unk3300FNAHKHODBKN) return false;
+      if (ChallengeState != other.ChallengeState) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Unk3300KCIEINMEPDH != 0) hash ^= Unk3300KCIEINMEPDH.GetHashCode();
+      if (Unk3300NDAOOKKGJPH != 0) hash ^= Unk3300NDAOOKKGJPH.GetHashCode();
+      if (CostPoints != 0) hash ^= CostPoints.GetHashCode();
+      if (CardId != 0) hash ^= CardId.GetHashCode();
+      if (Unk3300FNAHKHODBKN != 0) hash ^= Unk3300FNAHKHODBKN.GetHashCode();
+      if (ChallengeState != global::NewProtos.InBattleMechanicusCardChallengeState.None) hash ^= ChallengeState.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Unk3300KCIEINMEPDH != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300KCIEINMEPDH);
+      }
+      if (CardId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(CardId);
+      }
+      if (CostPoints != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(CostPoints);
+      }
+      if (Unk3300NDAOOKKGJPH != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300NDAOOKKGJPH);
+      }
+      if (Unk3300FNAHKHODBKN != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300FNAHKHODBKN);
+      }
+      if (ChallengeState != global::NewProtos.InBattleMechanicusCardChallengeState.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) ChallengeState);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Unk3300KCIEINMEPDH != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Unk3300KCIEINMEPDH);
+      }
+      if (CardId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(CardId);
+      }
+      if (CostPoints != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(CostPoints);
+      }
+      if (Unk3300NDAOOKKGJPH != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Unk3300NDAOOKKGJPH);
+      }
+      if (Unk3300FNAHKHODBKN != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(Unk3300FNAHKHODBKN);
+      }
+      if (ChallengeState != global::NewProtos.InBattleMechanicusCardChallengeState.None) {
+        output.WriteRawTag(120);
+        output.WriteEnum((int) ChallengeState);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Unk3300KCIEINMEPDH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KCIEINMEPDH);
+      }
+      if (Unk3300NDAOOKKGJPH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NDAOOKKGJPH);
+      }
+      if (CostPoints != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostPoints);
+      }
+      if (CardId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardId);
+      }
+      if (Unk3300FNAHKHODBKN != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FNAHKHODBKN);
+      }
+      if (ChallengeState != global::NewProtos.InBattleMechanicusCardChallengeState.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChallengeState);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(InBattleMechanicusCardInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Unk3300KCIEINMEPDH != 0) {
+        Unk3300KCIEINMEPDH = other.Unk3300KCIEINMEPDH;
+      }
+      if (other.Unk3300NDAOOKKGJPH != 0) {
+        Unk3300NDAOOKKGJPH = other.Unk3300NDAOOKKGJPH;
+      }
+      if (other.CostPoints != 0) {
+        CostPoints = other.CostPoints;
+      }
+      if (other.CardId != 0) {
+        CardId = other.CardId;
+      }
+      if (other.Unk3300FNAHKHODBKN != 0) {
+        Unk3300FNAHKHODBKN = other.Unk3300FNAHKHODBKN;
+      }
+      if (other.ChallengeState != global::NewProtos.InBattleMechanicusCardChallengeState.None) {
+        ChallengeState = other.ChallengeState;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            Unk3300KCIEINMEPDH = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            CardId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            CostPoints = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300NDAOOKKGJPH = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300FNAHKHODBKN = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ChallengeState = (global::NewProtos.InBattleMechanicusCardChallengeState) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            Unk3300KCIEINMEPDH = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            CardId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            CostPoints = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Unk3300NDAOOKKGJPH = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            Unk3300FNAHKHODBKN = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ChallengeState = (global::NewProtos.InBattleMechanicusCardChallengeState) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class InBattleMechanicusCardInfo : pb::IMessage<InBattleMechanicusCardInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<InBattleMechanicusCardInfo> _parser = new pb::MessageParser<InBattleMechanicusCardInfo>(() => new InBattleMechanicusCardInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<InBattleMechanicusCardInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::InBattleMechanicusCardInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InBattleMechanicusCardInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InBattleMechanicusCardInfo(InBattleMechanicusCardInfo other) : this() {
-    unk3300KCIEINMEPDH_ = other.unk3300KCIEINMEPDH_;
-    unk3300NDAOOKKGJPH_ = other.unk3300NDAOOKKGJPH_;
-    costPoints_ = other.costPoints_;
-    cardId_ = other.cardId_;
-    unk3300FNAHKHODBKN_ = other.unk3300FNAHKHODBKN_;
-    challengeState_ = other.challengeState_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InBattleMechanicusCardInfo Clone() {
-    return new InBattleMechanicusCardInfo(this);
-  }
-
-  /// <summary>Field number for the "Unk3300_KCIEINMEPDH" field.</summary>
-  public const int Unk3300KCIEINMEPDHFieldNumber = 2;
-  private uint unk3300KCIEINMEPDH_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300KCIEINMEPDH {
-    get { return unk3300KCIEINMEPDH_; }
-    set {
-      unk3300KCIEINMEPDH_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_NDAOOKKGJPH" field.</summary>
-  public const int Unk3300NDAOOKKGJPHFieldNumber = 7;
-  private uint unk3300NDAOOKKGJPH_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300NDAOOKKGJPH {
-    get { return unk3300NDAOOKKGJPH_; }
-    set {
-      unk3300NDAOOKKGJPH_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cost_points" field.</summary>
-  public const int CostPointsFieldNumber = 5;
-  private uint costPoints_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CostPoints {
-    get { return costPoints_; }
-    set {
-      costPoints_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "card_id" field.</summary>
-  public const int CardIdFieldNumber = 3;
-  private uint cardId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CardId {
-    get { return cardId_; }
-    set {
-      cardId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_FNAHKHODBKN" field.</summary>
-  public const int Unk3300FNAHKHODBKNFieldNumber = 13;
-  private uint unk3300FNAHKHODBKN_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Unk3300FNAHKHODBKN {
-    get { return unk3300FNAHKHODBKN_; }
-    set {
-      unk3300FNAHKHODBKN_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "challenge_state" field.</summary>
-  public const int ChallengeStateFieldNumber = 15;
-  private global::InBattleMechanicusCardChallengeState challengeState_ = global::InBattleMechanicusCardChallengeState.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::InBattleMechanicusCardChallengeState ChallengeState {
-    get { return challengeState_; }
-    set {
-      challengeState_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as InBattleMechanicusCardInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(InBattleMechanicusCardInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Unk3300KCIEINMEPDH != other.Unk3300KCIEINMEPDH) return false;
-    if (Unk3300NDAOOKKGJPH != other.Unk3300NDAOOKKGJPH) return false;
-    if (CostPoints != other.CostPoints) return false;
-    if (CardId != other.CardId) return false;
-    if (Unk3300FNAHKHODBKN != other.Unk3300FNAHKHODBKN) return false;
-    if (ChallengeState != other.ChallengeState) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Unk3300KCIEINMEPDH != 0) hash ^= Unk3300KCIEINMEPDH.GetHashCode();
-    if (Unk3300NDAOOKKGJPH != 0) hash ^= Unk3300NDAOOKKGJPH.GetHashCode();
-    if (CostPoints != 0) hash ^= CostPoints.GetHashCode();
-    if (CardId != 0) hash ^= CardId.GetHashCode();
-    if (Unk3300FNAHKHODBKN != 0) hash ^= Unk3300FNAHKHODBKN.GetHashCode();
-    if (ChallengeState != global::InBattleMechanicusCardChallengeState.None) hash ^= ChallengeState.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Unk3300KCIEINMEPDH != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(Unk3300KCIEINMEPDH);
-    }
-    if (CardId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(CardId);
-    }
-    if (CostPoints != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(CostPoints);
-    }
-    if (Unk3300NDAOOKKGJPH != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Unk3300NDAOOKKGJPH);
-    }
-    if (Unk3300FNAHKHODBKN != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Unk3300FNAHKHODBKN);
-    }
-    if (ChallengeState != global::InBattleMechanicusCardChallengeState.None) {
-      output.WriteRawTag(120);
-      output.WriteEnum((int) ChallengeState);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Unk3300KCIEINMEPDH != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(Unk3300KCIEINMEPDH);
-    }
-    if (CardId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(CardId);
-    }
-    if (CostPoints != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(CostPoints);
-    }
-    if (Unk3300NDAOOKKGJPH != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Unk3300NDAOOKKGJPH);
-    }
-    if (Unk3300FNAHKHODBKN != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(Unk3300FNAHKHODBKN);
-    }
-    if (ChallengeState != global::InBattleMechanicusCardChallengeState.None) {
-      output.WriteRawTag(120);
-      output.WriteEnum((int) ChallengeState);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Unk3300KCIEINMEPDH != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KCIEINMEPDH);
-    }
-    if (Unk3300NDAOOKKGJPH != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NDAOOKKGJPH);
-    }
-    if (CostPoints != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostPoints);
-    }
-    if (CardId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CardId);
-    }
-    if (Unk3300FNAHKHODBKN != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FNAHKHODBKN);
-    }
-    if (ChallengeState != global::InBattleMechanicusCardChallengeState.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChallengeState);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(InBattleMechanicusCardInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Unk3300KCIEINMEPDH != 0) {
-      Unk3300KCIEINMEPDH = other.Unk3300KCIEINMEPDH;
-    }
-    if (other.Unk3300NDAOOKKGJPH != 0) {
-      Unk3300NDAOOKKGJPH = other.Unk3300NDAOOKKGJPH;
-    }
-    if (other.CostPoints != 0) {
-      CostPoints = other.CostPoints;
-    }
-    if (other.CardId != 0) {
-      CardId = other.CardId;
-    }
-    if (other.Unk3300FNAHKHODBKN != 0) {
-      Unk3300FNAHKHODBKN = other.Unk3300FNAHKHODBKN;
-    }
-    if (other.ChallengeState != global::InBattleMechanicusCardChallengeState.None) {
-      ChallengeState = other.ChallengeState;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          Unk3300KCIEINMEPDH = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          CardId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          CostPoints = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Unk3300NDAOOKKGJPH = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Unk3300FNAHKHODBKN = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          ChallengeState = (global::InBattleMechanicusCardChallengeState) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          Unk3300KCIEINMEPDH = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          CardId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          CostPoints = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Unk3300NDAOOKKGJPH = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          Unk3300FNAHKHODBKN = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          ChallengeState = (global::InBattleMechanicusCardChallengeState) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

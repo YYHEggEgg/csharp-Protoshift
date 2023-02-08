@@ -19,7 +19,7 @@ syntax = "proto3";
 import "TowerMonthlyBrief.proto";
 import "TowerMonthlyCombatRecord.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message TowerMonthlyDetail {
   TowerMonthlyCombatRecord monthly_combat_record = 2;

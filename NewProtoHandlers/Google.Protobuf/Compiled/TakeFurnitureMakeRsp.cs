@@ -9,370 +9,373 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from TakeFurnitureMakeRsp.proto</summary>
-public static partial class TakeFurnitureMakeRspReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for TakeFurnitureMakeRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from TakeFurnitureMakeRsp.proto</summary>
+  public static partial class TakeFurnitureMakeRspReflection {
 
-  static TakeFurnitureMakeRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpUYWtlRnVybml0dXJlTWFrZVJzcC5wcm90bxoXRnVybml0dXJlTWFrZVNs",
-          "b3QucHJvdG8aD0l0ZW1QYXJhbS5wcm90byK1AQoUVGFrZUZ1cm5pdHVyZU1h",
-          "a2VSc3ASDwoHcmV0Y29kZRgPIAEoBRIkChByZXR1cm5faXRlbV9saXN0GAUg",
-          "AygLMgouSXRlbVBhcmFtEi8KE2Z1cm5pdHVyZV9tYWtlX3Nsb3QYDiABKAsy",
-          "Ei5GdXJuaXR1cmVNYWtlU2xvdBIkChBvdXRwdXRfaXRlbV9saXN0GAogAygL",
-          "MgouSXRlbVBhcmFtEg8KB21ha2VfaWQYAyABKA1CFgoUb3JnLnNvcmFwb2lu",
-          "dGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::FurnitureMakeSlotReflection.Descriptor, global::ItemParamReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::TakeFurnitureMakeRsp), global::TakeFurnitureMakeRsp.Parser, new[]{ "Retcode", "ReturnItemList", "FurnitureMakeSlot", "OutputItemList", "MakeId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for TakeFurnitureMakeRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static TakeFurnitureMakeRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpUYWtlRnVybml0dXJlTWFrZVJzcC5wcm90bxoXRnVybml0dXJlTWFrZVNs",
+            "b3QucHJvdG8aD0l0ZW1QYXJhbS5wcm90byK1AQoUVGFrZUZ1cm5pdHVyZU1h",
+            "a2VSc3ASDwoHcmV0Y29kZRgPIAEoBRIkChByZXR1cm5faXRlbV9saXN0GAUg",
+            "AygLMgouSXRlbVBhcmFtEi8KE2Z1cm5pdHVyZV9tYWtlX3Nsb3QYDiABKAsy",
+            "Ei5GdXJuaXR1cmVNYWtlU2xvdBIkChBvdXRwdXRfaXRlbV9saXN0GAogAygL",
+            "MgouSXRlbVBhcmFtEg8KB21ha2VfaWQYAyABKA1CDKoCCU5ld1Byb3Rvc2IG",
+            "cHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.FurnitureMakeSlotReflection.Descriptor, global::NewProtos.ItemParamReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.TakeFurnitureMakeRsp), global::NewProtos.TakeFurnitureMakeRsp.Parser, new[]{ "Retcode", "ReturnItemList", "FurnitureMakeSlot", "OutputItemList", "MakeId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 4803;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class TakeFurnitureMakeRsp : pb::IMessage<TakeFurnitureMakeRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TakeFurnitureMakeRsp> _parser = new pb::MessageParser<TakeFurnitureMakeRsp>(() => new TakeFurnitureMakeRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TakeFurnitureMakeRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.TakeFurnitureMakeRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TakeFurnitureMakeRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TakeFurnitureMakeRsp(TakeFurnitureMakeRsp other) : this() {
+      retcode_ = other.retcode_;
+      returnItemList_ = other.returnItemList_.Clone();
+      furnitureMakeSlot_ = other.furnitureMakeSlot_ != null ? other.furnitureMakeSlot_.Clone() : null;
+      outputItemList_ = other.outputItemList_.Clone();
+      makeId_ = other.makeId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TakeFurnitureMakeRsp Clone() {
+      return new TakeFurnitureMakeRsp(this);
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 15;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "return_item_list" field.</summary>
+    public const int ReturnItemListFieldNumber = 5;
+    private static readonly pb::FieldCodec<global::NewProtos.ItemParam> _repeated_returnItemList_codec
+        = pb::FieldCodec.ForMessage(42, global::NewProtos.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ItemParam> returnItemList_ = new pbc::RepeatedField<global::NewProtos.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ItemParam> ReturnItemList {
+      get { return returnItemList_; }
+    }
+
+    /// <summary>Field number for the "furniture_make_slot" field.</summary>
+    public const int FurnitureMakeSlotFieldNumber = 14;
+    private global::NewProtos.FurnitureMakeSlot furnitureMakeSlot_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.FurnitureMakeSlot FurnitureMakeSlot {
+      get { return furnitureMakeSlot_; }
+      set {
+        furnitureMakeSlot_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "output_item_list" field.</summary>
+    public const int OutputItemListFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::NewProtos.ItemParam> _repeated_outputItemList_codec
+        = pb::FieldCodec.ForMessage(82, global::NewProtos.ItemParam.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ItemParam> outputItemList_ = new pbc::RepeatedField<global::NewProtos.ItemParam>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ItemParam> OutputItemList {
+      get { return outputItemList_; }
+    }
+
+    /// <summary>Field number for the "make_id" field.</summary>
+    public const int MakeIdFieldNumber = 3;
+    private uint makeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MakeId {
+      get { return makeId_; }
+      set {
+        makeId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TakeFurnitureMakeRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TakeFurnitureMakeRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Retcode != other.Retcode) return false;
+      if(!returnItemList_.Equals(other.returnItemList_)) return false;
+      if (!object.Equals(FurnitureMakeSlot, other.FurnitureMakeSlot)) return false;
+      if(!outputItemList_.Equals(other.outputItemList_)) return false;
+      if (MakeId != other.MakeId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      hash ^= returnItemList_.GetHashCode();
+      if (furnitureMakeSlot_ != null) hash ^= FurnitureMakeSlot.GetHashCode();
+      hash ^= outputItemList_.GetHashCode();
+      if (MakeId != 0) hash ^= MakeId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (MakeId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MakeId);
+      }
+      returnItemList_.WriteTo(output, _repeated_returnItemList_codec);
+      outputItemList_.WriteTo(output, _repeated_outputItemList_codec);
+      if (furnitureMakeSlot_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(FurnitureMakeSlot);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Retcode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (MakeId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(MakeId);
+      }
+      returnItemList_.WriteTo(ref output, _repeated_returnItemList_codec);
+      outputItemList_.WriteTo(ref output, _repeated_outputItemList_codec);
+      if (furnitureMakeSlot_ != null) {
+        output.WriteRawTag(114);
+        output.WriteMessage(FurnitureMakeSlot);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(Retcode);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      size += returnItemList_.CalculateSize(_repeated_returnItemList_codec);
+      if (furnitureMakeSlot_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FurnitureMakeSlot);
+      }
+      size += outputItemList_.CalculateSize(_repeated_outputItemList_codec);
+      if (MakeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MakeId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TakeFurnitureMakeRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      returnItemList_.Add(other.returnItemList_);
+      if (other.furnitureMakeSlot_ != null) {
+        if (furnitureMakeSlot_ == null) {
+          FurnitureMakeSlot = new global::NewProtos.FurnitureMakeSlot();
+        }
+        FurnitureMakeSlot.MergeFrom(other.FurnitureMakeSlot);
+      }
+      outputItemList_.Add(other.outputItemList_);
+      if (other.MakeId != 0) {
+        MakeId = other.MakeId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            MakeId = input.ReadUInt32();
+            break;
+          }
+          case 42: {
+            returnItemList_.AddEntriesFrom(input, _repeated_returnItemList_codec);
+            break;
+          }
+          case 82: {
+            outputItemList_.AddEntriesFrom(input, _repeated_outputItemList_codec);
+            break;
+          }
+          case 114: {
+            if (furnitureMakeSlot_ == null) {
+              FurnitureMakeSlot = new global::NewProtos.FurnitureMakeSlot();
+            }
+            input.ReadMessage(FurnitureMakeSlot);
+            break;
+          }
+          case 120: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            MakeId = input.ReadUInt32();
+            break;
+          }
+          case 42: {
+            returnItemList_.AddEntriesFrom(ref input, _repeated_returnItemList_codec);
+            break;
+          }
+          case 82: {
+            outputItemList_.AddEntriesFrom(ref input, _repeated_outputItemList_codec);
+            break;
+          }
+          case 114: {
+            if (furnitureMakeSlot_ == null) {
+              FurnitureMakeSlot = new global::NewProtos.FurnitureMakeSlot();
+            }
+            input.ReadMessage(FurnitureMakeSlot);
+            break;
+          }
+          case 120: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 4803;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class TakeFurnitureMakeRsp : pb::IMessage<TakeFurnitureMakeRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<TakeFurnitureMakeRsp> _parser = new pb::MessageParser<TakeFurnitureMakeRsp>(() => new TakeFurnitureMakeRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<TakeFurnitureMakeRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::TakeFurnitureMakeRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TakeFurnitureMakeRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TakeFurnitureMakeRsp(TakeFurnitureMakeRsp other) : this() {
-    retcode_ = other.retcode_;
-    returnItemList_ = other.returnItemList_.Clone();
-    furnitureMakeSlot_ = other.furnitureMakeSlot_ != null ? other.furnitureMakeSlot_.Clone() : null;
-    outputItemList_ = other.outputItemList_.Clone();
-    makeId_ = other.makeId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public TakeFurnitureMakeRsp Clone() {
-    return new TakeFurnitureMakeRsp(this);
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 15;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "return_item_list" field.</summary>
-  public const int ReturnItemListFieldNumber = 5;
-  private static readonly pb::FieldCodec<global::ItemParam> _repeated_returnItemList_codec
-      = pb::FieldCodec.ForMessage(42, global::ItemParam.Parser);
-  private readonly pbc::RepeatedField<global::ItemParam> returnItemList_ = new pbc::RepeatedField<global::ItemParam>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ItemParam> ReturnItemList {
-    get { return returnItemList_; }
-  }
-
-  /// <summary>Field number for the "furniture_make_slot" field.</summary>
-  public const int FurnitureMakeSlotFieldNumber = 14;
-  private global::FurnitureMakeSlot furnitureMakeSlot_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::FurnitureMakeSlot FurnitureMakeSlot {
-    get { return furnitureMakeSlot_; }
-    set {
-      furnitureMakeSlot_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "output_item_list" field.</summary>
-  public const int OutputItemListFieldNumber = 10;
-  private static readonly pb::FieldCodec<global::ItemParam> _repeated_outputItemList_codec
-      = pb::FieldCodec.ForMessage(82, global::ItemParam.Parser);
-  private readonly pbc::RepeatedField<global::ItemParam> outputItemList_ = new pbc::RepeatedField<global::ItemParam>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ItemParam> OutputItemList {
-    get { return outputItemList_; }
-  }
-
-  /// <summary>Field number for the "make_id" field.</summary>
-  public const int MakeIdFieldNumber = 3;
-  private uint makeId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MakeId {
-    get { return makeId_; }
-    set {
-      makeId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as TakeFurnitureMakeRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(TakeFurnitureMakeRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Retcode != other.Retcode) return false;
-    if(!returnItemList_.Equals(other.returnItemList_)) return false;
-    if (!object.Equals(FurnitureMakeSlot, other.FurnitureMakeSlot)) return false;
-    if(!outputItemList_.Equals(other.outputItemList_)) return false;
-    if (MakeId != other.MakeId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    hash ^= returnItemList_.GetHashCode();
-    if (furnitureMakeSlot_ != null) hash ^= FurnitureMakeSlot.GetHashCode();
-    hash ^= outputItemList_.GetHashCode();
-    if (MakeId != 0) hash ^= MakeId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (MakeId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(MakeId);
-    }
-    returnItemList_.WriteTo(output, _repeated_returnItemList_codec);
-    outputItemList_.WriteTo(output, _repeated_outputItemList_codec);
-    if (furnitureMakeSlot_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(FurnitureMakeSlot);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(120);
-      output.WriteInt32(Retcode);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (MakeId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(MakeId);
-    }
-    returnItemList_.WriteTo(ref output, _repeated_returnItemList_codec);
-    outputItemList_.WriteTo(ref output, _repeated_outputItemList_codec);
-    if (furnitureMakeSlot_ != null) {
-      output.WriteRawTag(114);
-      output.WriteMessage(FurnitureMakeSlot);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(120);
-      output.WriteInt32(Retcode);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    size += returnItemList_.CalculateSize(_repeated_returnItemList_codec);
-    if (furnitureMakeSlot_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(FurnitureMakeSlot);
-    }
-    size += outputItemList_.CalculateSize(_repeated_outputItemList_codec);
-    if (MakeId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MakeId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(TakeFurnitureMakeRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    returnItemList_.Add(other.returnItemList_);
-    if (other.furnitureMakeSlot_ != null) {
-      if (furnitureMakeSlot_ == null) {
-        FurnitureMakeSlot = new global::FurnitureMakeSlot();
-      }
-      FurnitureMakeSlot.MergeFrom(other.FurnitureMakeSlot);
-    }
-    outputItemList_.Add(other.outputItemList_);
-    if (other.MakeId != 0) {
-      MakeId = other.MakeId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          MakeId = input.ReadUInt32();
-          break;
-        }
-        case 42: {
-          returnItemList_.AddEntriesFrom(input, _repeated_returnItemList_codec);
-          break;
-        }
-        case 82: {
-          outputItemList_.AddEntriesFrom(input, _repeated_outputItemList_codec);
-          break;
-        }
-        case 114: {
-          if (furnitureMakeSlot_ == null) {
-            FurnitureMakeSlot = new global::FurnitureMakeSlot();
-          }
-          input.ReadMessage(FurnitureMakeSlot);
-          break;
-        }
-        case 120: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          MakeId = input.ReadUInt32();
-          break;
-        }
-        case 42: {
-          returnItemList_.AddEntriesFrom(ref input, _repeated_returnItemList_codec);
-          break;
-        }
-        case 82: {
-          outputItemList_.AddEntriesFrom(ref input, _repeated_outputItemList_codec);
-          break;
-        }
-        case 114: {
-          if (furnitureMakeSlot_ == null) {
-            FurnitureMakeSlot = new global::FurnitureMakeSlot();
-          }
-          input.ReadMessage(FurnitureMakeSlot);
-          break;
-        }
-        case 120: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

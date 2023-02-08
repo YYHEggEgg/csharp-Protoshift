@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "FireworksReformParamType.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message FireworksReformParam {
   int32 value = 1;

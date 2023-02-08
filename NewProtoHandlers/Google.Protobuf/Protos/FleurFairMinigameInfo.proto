@@ -20,7 +20,7 @@ import "FleurFairBalloonInfo.proto";
 import "FleurFairFallInfo.proto";
 import "FleurFairMusicGameInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message FleurFairMinigameInfo {
   uint32 minigame_id = 3;

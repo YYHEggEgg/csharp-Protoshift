@@ -9,581 +9,584 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CustomDungeonBrief.proto</summary>
-public static partial class CustomDungeonBriefReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CustomDungeonBrief.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CustomDungeonBrief.proto</summary>
+  public static partial class CustomDungeonBriefReflection {
 
-  static CustomDungeonBriefReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhDdXN0b21EdW5nZW9uQnJpZWYucHJvdG8aG0N1c3RvbUR1bmdlb25BYnN0",
-          "cmFjdC5wcm90bxoaQ3VzdG9tRHVuZ2VvblNldHRpbmcucHJvdG8aGUN1c3Rv",
-          "bUR1bmdlb25Tb2NpYWwucHJvdG8aGEN1c3RvbUR1bmdlb25TdGF0ZS5wcm90",
-          "byK7AgoSQ3VzdG9tRHVuZ2VvbkJyaWVmEhQKDGR1bmdlb25fZ3VpZBgOIAEo",
-          "BBIoCghhYnN0cmFjdBgIIAEoCzIWLkN1c3RvbUR1bmdlb25BYnN0cmFjdBIQ",
-          "Cgh0YWdfbGlzdBgEIAMoDRIXCg9pc19wc25fcGxhdGZvcm0YCSABKAgSJAoG",
-          "c29jaWFsGAogASgLMhQuQ3VzdG9tRHVuZ2VvblNvY2lhbBIiCgVzdGF0ZRgC",
-          "IAEoDjITLkN1c3RvbUR1bmdlb25TdGF0ZRIcChRiYXR0bGVfbWluX2Nvc3Rf",
-          "dGltZRgPIAEoDRISCgpkdW5nZW9uX2lkGAMgASgNEiYKB3NldHRpbmcYByAB",
-          "KAsyFS5DdXN0b21EdW5nZW9uU2V0dGluZxIWCg5sYXN0X3NhdmVfdGltZRgM",
-          "IAEoDUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::CustomDungeonAbstractReflection.Descriptor, global::CustomDungeonSettingReflection.Descriptor, global::CustomDungeonSocialReflection.Descriptor, global::CustomDungeonStateReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::CustomDungeonBrief), global::CustomDungeonBrief.Parser, new[]{ "DungeonGuid", "Abstract", "TagList", "IsPsnPlatform", "Social", "State", "BattleMinCostTime", "DungeonId", "Setting", "LastSaveTime" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for CustomDungeonBrief.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CustomDungeonBriefReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhDdXN0b21EdW5nZW9uQnJpZWYucHJvdG8aG0N1c3RvbUR1bmdlb25BYnN0",
+            "cmFjdC5wcm90bxoaQ3VzdG9tRHVuZ2VvblNldHRpbmcucHJvdG8aGUN1c3Rv",
+            "bUR1bmdlb25Tb2NpYWwucHJvdG8aGEN1c3RvbUR1bmdlb25TdGF0ZS5wcm90",
+            "byK7AgoSQ3VzdG9tRHVuZ2VvbkJyaWVmEhQKDGR1bmdlb25fZ3VpZBgOIAEo",
+            "BBIoCghhYnN0cmFjdBgIIAEoCzIWLkN1c3RvbUR1bmdlb25BYnN0cmFjdBIQ",
+            "Cgh0YWdfbGlzdBgEIAMoDRIXCg9pc19wc25fcGxhdGZvcm0YCSABKAgSJAoG",
+            "c29jaWFsGAogASgLMhQuQ3VzdG9tRHVuZ2VvblNvY2lhbBIiCgVzdGF0ZRgC",
+            "IAEoDjITLkN1c3RvbUR1bmdlb25TdGF0ZRIcChRiYXR0bGVfbWluX2Nvc3Rf",
+            "dGltZRgPIAEoDRISCgpkdW5nZW9uX2lkGAMgASgNEiYKB3NldHRpbmcYByAB",
+            "KAsyFS5DdXN0b21EdW5nZW9uU2V0dGluZxIWCg5sYXN0X3NhdmVfdGltZRgM",
+            "IAEoDUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.CustomDungeonAbstractReflection.Descriptor, global::NewProtos.CustomDungeonSettingReflection.Descriptor, global::NewProtos.CustomDungeonSocialReflection.Descriptor, global::NewProtos.CustomDungeonStateReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.CustomDungeonBrief), global::NewProtos.CustomDungeonBrief.Parser, new[]{ "DungeonGuid", "Abstract", "TagList", "IsPsnPlatform", "Social", "State", "BattleMinCostTime", "DungeonId", "Setting", "LastSaveTime" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class CustomDungeonBrief : pb::IMessage<CustomDungeonBrief>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CustomDungeonBrief> _parser = new pb::MessageParser<CustomDungeonBrief>(() => new CustomDungeonBrief());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CustomDungeonBrief> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.CustomDungeonBriefReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CustomDungeonBrief() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CustomDungeonBrief(CustomDungeonBrief other) : this() {
+      dungeonGuid_ = other.dungeonGuid_;
+      abstract_ = other.abstract_ != null ? other.abstract_.Clone() : null;
+      tagList_ = other.tagList_.Clone();
+      isPsnPlatform_ = other.isPsnPlatform_;
+      social_ = other.social_ != null ? other.social_.Clone() : null;
+      state_ = other.state_;
+      battleMinCostTime_ = other.battleMinCostTime_;
+      dungeonId_ = other.dungeonId_;
+      setting_ = other.setting_ != null ? other.setting_.Clone() : null;
+      lastSaveTime_ = other.lastSaveTime_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CustomDungeonBrief Clone() {
+      return new CustomDungeonBrief(this);
+    }
+
+    /// <summary>Field number for the "dungeon_guid" field.</summary>
+    public const int DungeonGuidFieldNumber = 14;
+    private ulong dungeonGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong DungeonGuid {
+      get { return dungeonGuid_; }
+      set {
+        dungeonGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "abstract" field.</summary>
+    public const int AbstractFieldNumber = 8;
+    private global::NewProtos.CustomDungeonAbstract abstract_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CustomDungeonAbstract Abstract {
+      get { return abstract_; }
+      set {
+        abstract_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "tag_list" field.</summary>
+    public const int TagListFieldNumber = 4;
+    private static readonly pb::FieldCodec<uint> _repeated_tagList_codec
+        = pb::FieldCodec.ForUInt32(34);
+    private readonly pbc::RepeatedField<uint> tagList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> TagList {
+      get { return tagList_; }
+    }
+
+    /// <summary>Field number for the "is_psn_platform" field.</summary>
+    public const int IsPsnPlatformFieldNumber = 9;
+    private bool isPsnPlatform_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsPsnPlatform {
+      get { return isPsnPlatform_; }
+      set {
+        isPsnPlatform_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "social" field.</summary>
+    public const int SocialFieldNumber = 10;
+    private global::NewProtos.CustomDungeonSocial social_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CustomDungeonSocial Social {
+      get { return social_; }
+      set {
+        social_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "state" field.</summary>
+    public const int StateFieldNumber = 2;
+    private global::NewProtos.CustomDungeonState state_ = global::NewProtos.CustomDungeonState.Edit;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CustomDungeonState State {
+      get { return state_; }
+      set {
+        state_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "battle_min_cost_time" field.</summary>
+    public const int BattleMinCostTimeFieldNumber = 15;
+    private uint battleMinCostTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BattleMinCostTime {
+      get { return battleMinCostTime_; }
+      set {
+        battleMinCostTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_id" field.</summary>
+    public const int DungeonIdFieldNumber = 3;
+    private uint dungeonId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonId {
+      get { return dungeonId_; }
+      set {
+        dungeonId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "setting" field.</summary>
+    public const int SettingFieldNumber = 7;
+    private global::NewProtos.CustomDungeonSetting setting_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CustomDungeonSetting Setting {
+      get { return setting_; }
+      set {
+        setting_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "last_save_time" field.</summary>
+    public const int LastSaveTimeFieldNumber = 12;
+    private uint lastSaveTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint LastSaveTime {
+      get { return lastSaveTime_; }
+      set {
+        lastSaveTime_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CustomDungeonBrief);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CustomDungeonBrief other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (DungeonGuid != other.DungeonGuid) return false;
+      if (!object.Equals(Abstract, other.Abstract)) return false;
+      if(!tagList_.Equals(other.tagList_)) return false;
+      if (IsPsnPlatform != other.IsPsnPlatform) return false;
+      if (!object.Equals(Social, other.Social)) return false;
+      if (State != other.State) return false;
+      if (BattleMinCostTime != other.BattleMinCostTime) return false;
+      if (DungeonId != other.DungeonId) return false;
+      if (!object.Equals(Setting, other.Setting)) return false;
+      if (LastSaveTime != other.LastSaveTime) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
+      if (abstract_ != null) hash ^= Abstract.GetHashCode();
+      hash ^= tagList_.GetHashCode();
+      if (IsPsnPlatform != false) hash ^= IsPsnPlatform.GetHashCode();
+      if (social_ != null) hash ^= Social.GetHashCode();
+      if (State != global::NewProtos.CustomDungeonState.Edit) hash ^= State.GetHashCode();
+      if (BattleMinCostTime != 0) hash ^= BattleMinCostTime.GetHashCode();
+      if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
+      if (setting_ != null) hash ^= Setting.GetHashCode();
+      if (LastSaveTime != 0) hash ^= LastSaveTime.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (State != global::NewProtos.CustomDungeonState.Edit) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) State);
+      }
+      if (DungeonId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(DungeonId);
+      }
+      tagList_.WriteTo(output, _repeated_tagList_codec);
+      if (setting_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Setting);
+      }
+      if (abstract_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Abstract);
+      }
+      if (IsPsnPlatform != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsPsnPlatform);
+      }
+      if (social_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Social);
+      }
+      if (LastSaveTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(LastSaveTime);
+      }
+      if (DungeonGuid != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(DungeonGuid);
+      }
+      if (BattleMinCostTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(BattleMinCostTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (State != global::NewProtos.CustomDungeonState.Edit) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) State);
+      }
+      if (DungeonId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(DungeonId);
+      }
+      tagList_.WriteTo(ref output, _repeated_tagList_codec);
+      if (setting_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Setting);
+      }
+      if (abstract_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Abstract);
+      }
+      if (IsPsnPlatform != false) {
+        output.WriteRawTag(72);
+        output.WriteBool(IsPsnPlatform);
+      }
+      if (social_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(Social);
+      }
+      if (LastSaveTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(LastSaveTime);
+      }
+      if (DungeonGuid != 0UL) {
+        output.WriteRawTag(112);
+        output.WriteUInt64(DungeonGuid);
+      }
+      if (BattleMinCostTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(BattleMinCostTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (DungeonGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
+      }
+      if (abstract_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Abstract);
+      }
+      size += tagList_.CalculateSize(_repeated_tagList_codec);
+      if (IsPsnPlatform != false) {
+        size += 1 + 1;
+      }
+      if (social_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Social);
+      }
+      if (State != global::NewProtos.CustomDungeonState.Edit) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
+      }
+      if (BattleMinCostTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BattleMinCostTime);
+      }
+      if (DungeonId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
+      }
+      if (setting_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Setting);
+      }
+      if (LastSaveTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastSaveTime);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CustomDungeonBrief other) {
+      if (other == null) {
+        return;
+      }
+      if (other.DungeonGuid != 0UL) {
+        DungeonGuid = other.DungeonGuid;
+      }
+      if (other.abstract_ != null) {
+        if (abstract_ == null) {
+          Abstract = new global::NewProtos.CustomDungeonAbstract();
+        }
+        Abstract.MergeFrom(other.Abstract);
+      }
+      tagList_.Add(other.tagList_);
+      if (other.IsPsnPlatform != false) {
+        IsPsnPlatform = other.IsPsnPlatform;
+      }
+      if (other.social_ != null) {
+        if (social_ == null) {
+          Social = new global::NewProtos.CustomDungeonSocial();
+        }
+        Social.MergeFrom(other.Social);
+      }
+      if (other.State != global::NewProtos.CustomDungeonState.Edit) {
+        State = other.State;
+      }
+      if (other.BattleMinCostTime != 0) {
+        BattleMinCostTime = other.BattleMinCostTime;
+      }
+      if (other.DungeonId != 0) {
+        DungeonId = other.DungeonId;
+      }
+      if (other.setting_ != null) {
+        if (setting_ == null) {
+          Setting = new global::NewProtos.CustomDungeonSetting();
+        }
+        Setting.MergeFrom(other.Setting);
+      }
+      if (other.LastSaveTime != 0) {
+        LastSaveTime = other.LastSaveTime;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            State = (global::NewProtos.CustomDungeonState) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 34:
+          case 32: {
+            tagList_.AddEntriesFrom(input, _repeated_tagList_codec);
+            break;
+          }
+          case 58: {
+            if (setting_ == null) {
+              Setting = new global::NewProtos.CustomDungeonSetting();
+            }
+            input.ReadMessage(Setting);
+            break;
+          }
+          case 66: {
+            if (abstract_ == null) {
+              Abstract = new global::NewProtos.CustomDungeonAbstract();
+            }
+            input.ReadMessage(Abstract);
+            break;
+          }
+          case 72: {
+            IsPsnPlatform = input.ReadBool();
+            break;
+          }
+          case 82: {
+            if (social_ == null) {
+              Social = new global::NewProtos.CustomDungeonSocial();
+            }
+            input.ReadMessage(Social);
+            break;
+          }
+          case 96: {
+            LastSaveTime = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            DungeonGuid = input.ReadUInt64();
+            break;
+          }
+          case 120: {
+            BattleMinCostTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            State = (global::NewProtos.CustomDungeonState) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            DungeonId = input.ReadUInt32();
+            break;
+          }
+          case 34:
+          case 32: {
+            tagList_.AddEntriesFrom(ref input, _repeated_tagList_codec);
+            break;
+          }
+          case 58: {
+            if (setting_ == null) {
+              Setting = new global::NewProtos.CustomDungeonSetting();
+            }
+            input.ReadMessage(Setting);
+            break;
+          }
+          case 66: {
+            if (abstract_ == null) {
+              Abstract = new global::NewProtos.CustomDungeonAbstract();
+            }
+            input.ReadMessage(Abstract);
+            break;
+          }
+          case 72: {
+            IsPsnPlatform = input.ReadBool();
+            break;
+          }
+          case 82: {
+            if (social_ == null) {
+              Social = new global::NewProtos.CustomDungeonSocial();
+            }
+            input.ReadMessage(Social);
+            break;
+          }
+          case 96: {
+            LastSaveTime = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            DungeonGuid = input.ReadUInt64();
+            break;
+          }
+          case 120: {
+            BattleMinCostTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class CustomDungeonBrief : pb::IMessage<CustomDungeonBrief>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<CustomDungeonBrief> _parser = new pb::MessageParser<CustomDungeonBrief>(() => new CustomDungeonBrief());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<CustomDungeonBrief> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::CustomDungeonBriefReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CustomDungeonBrief() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CustomDungeonBrief(CustomDungeonBrief other) : this() {
-    dungeonGuid_ = other.dungeonGuid_;
-    abstract_ = other.abstract_ != null ? other.abstract_.Clone() : null;
-    tagList_ = other.tagList_.Clone();
-    isPsnPlatform_ = other.isPsnPlatform_;
-    social_ = other.social_ != null ? other.social_.Clone() : null;
-    state_ = other.state_;
-    battleMinCostTime_ = other.battleMinCostTime_;
-    dungeonId_ = other.dungeonId_;
-    setting_ = other.setting_ != null ? other.setting_.Clone() : null;
-    lastSaveTime_ = other.lastSaveTime_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CustomDungeonBrief Clone() {
-    return new CustomDungeonBrief(this);
-  }
-
-  /// <summary>Field number for the "dungeon_guid" field.</summary>
-  public const int DungeonGuidFieldNumber = 14;
-  private ulong dungeonGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong DungeonGuid {
-    get { return dungeonGuid_; }
-    set {
-      dungeonGuid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "abstract" field.</summary>
-  public const int AbstractFieldNumber = 8;
-  private global::CustomDungeonAbstract abstract_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CustomDungeonAbstract Abstract {
-    get { return abstract_; }
-    set {
-      abstract_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "tag_list" field.</summary>
-  public const int TagListFieldNumber = 4;
-  private static readonly pb::FieldCodec<uint> _repeated_tagList_codec
-      = pb::FieldCodec.ForUInt32(34);
-  private readonly pbc::RepeatedField<uint> tagList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> TagList {
-    get { return tagList_; }
-  }
-
-  /// <summary>Field number for the "is_psn_platform" field.</summary>
-  public const int IsPsnPlatformFieldNumber = 9;
-  private bool isPsnPlatform_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsPsnPlatform {
-    get { return isPsnPlatform_; }
-    set {
-      isPsnPlatform_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "social" field.</summary>
-  public const int SocialFieldNumber = 10;
-  private global::CustomDungeonSocial social_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CustomDungeonSocial Social {
-    get { return social_; }
-    set {
-      social_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "state" field.</summary>
-  public const int StateFieldNumber = 2;
-  private global::CustomDungeonState state_ = global::CustomDungeonState.Edit;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CustomDungeonState State {
-    get { return state_; }
-    set {
-      state_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "battle_min_cost_time" field.</summary>
-  public const int BattleMinCostTimeFieldNumber = 15;
-  private uint battleMinCostTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BattleMinCostTime {
-    get { return battleMinCostTime_; }
-    set {
-      battleMinCostTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "dungeon_id" field.</summary>
-  public const int DungeonIdFieldNumber = 3;
-  private uint dungeonId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DungeonId {
-    get { return dungeonId_; }
-    set {
-      dungeonId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "setting" field.</summary>
-  public const int SettingFieldNumber = 7;
-  private global::CustomDungeonSetting setting_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CustomDungeonSetting Setting {
-    get { return setting_; }
-    set {
-      setting_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "last_save_time" field.</summary>
-  public const int LastSaveTimeFieldNumber = 12;
-  private uint lastSaveTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint LastSaveTime {
-    get { return lastSaveTime_; }
-    set {
-      lastSaveTime_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as CustomDungeonBrief);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(CustomDungeonBrief other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (DungeonGuid != other.DungeonGuid) return false;
-    if (!object.Equals(Abstract, other.Abstract)) return false;
-    if(!tagList_.Equals(other.tagList_)) return false;
-    if (IsPsnPlatform != other.IsPsnPlatform) return false;
-    if (!object.Equals(Social, other.Social)) return false;
-    if (State != other.State) return false;
-    if (BattleMinCostTime != other.BattleMinCostTime) return false;
-    if (DungeonId != other.DungeonId) return false;
-    if (!object.Equals(Setting, other.Setting)) return false;
-    if (LastSaveTime != other.LastSaveTime) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (DungeonGuid != 0UL) hash ^= DungeonGuid.GetHashCode();
-    if (abstract_ != null) hash ^= Abstract.GetHashCode();
-    hash ^= tagList_.GetHashCode();
-    if (IsPsnPlatform != false) hash ^= IsPsnPlatform.GetHashCode();
-    if (social_ != null) hash ^= Social.GetHashCode();
-    if (State != global::CustomDungeonState.Edit) hash ^= State.GetHashCode();
-    if (BattleMinCostTime != 0) hash ^= BattleMinCostTime.GetHashCode();
-    if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
-    if (setting_ != null) hash ^= Setting.GetHashCode();
-    if (LastSaveTime != 0) hash ^= LastSaveTime.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (State != global::CustomDungeonState.Edit) {
-      output.WriteRawTag(16);
-      output.WriteEnum((int) State);
-    }
-    if (DungeonId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(DungeonId);
-    }
-    tagList_.WriteTo(output, _repeated_tagList_codec);
-    if (setting_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(Setting);
-    }
-    if (abstract_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(Abstract);
-    }
-    if (IsPsnPlatform != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(IsPsnPlatform);
-    }
-    if (social_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(Social);
-    }
-    if (LastSaveTime != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(LastSaveTime);
-    }
-    if (DungeonGuid != 0UL) {
-      output.WriteRawTag(112);
-      output.WriteUInt64(DungeonGuid);
-    }
-    if (BattleMinCostTime != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(BattleMinCostTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (State != global::CustomDungeonState.Edit) {
-      output.WriteRawTag(16);
-      output.WriteEnum((int) State);
-    }
-    if (DungeonId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(DungeonId);
-    }
-    tagList_.WriteTo(ref output, _repeated_tagList_codec);
-    if (setting_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(Setting);
-    }
-    if (abstract_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(Abstract);
-    }
-    if (IsPsnPlatform != false) {
-      output.WriteRawTag(72);
-      output.WriteBool(IsPsnPlatform);
-    }
-    if (social_ != null) {
-      output.WriteRawTag(82);
-      output.WriteMessage(Social);
-    }
-    if (LastSaveTime != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(LastSaveTime);
-    }
-    if (DungeonGuid != 0UL) {
-      output.WriteRawTag(112);
-      output.WriteUInt64(DungeonGuid);
-    }
-    if (BattleMinCostTime != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(BattleMinCostTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (DungeonGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(DungeonGuid);
-    }
-    if (abstract_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Abstract);
-    }
-    size += tagList_.CalculateSize(_repeated_tagList_codec);
-    if (IsPsnPlatform != false) {
-      size += 1 + 1;
-    }
-    if (social_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Social);
-    }
-    if (State != global::CustomDungeonState.Edit) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
-    }
-    if (BattleMinCostTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BattleMinCostTime);
-    }
-    if (DungeonId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonId);
-    }
-    if (setting_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Setting);
-    }
-    if (LastSaveTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LastSaveTime);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(CustomDungeonBrief other) {
-    if (other == null) {
-      return;
-    }
-    if (other.DungeonGuid != 0UL) {
-      DungeonGuid = other.DungeonGuid;
-    }
-    if (other.abstract_ != null) {
-      if (abstract_ == null) {
-        Abstract = new global::CustomDungeonAbstract();
-      }
-      Abstract.MergeFrom(other.Abstract);
-    }
-    tagList_.Add(other.tagList_);
-    if (other.IsPsnPlatform != false) {
-      IsPsnPlatform = other.IsPsnPlatform;
-    }
-    if (other.social_ != null) {
-      if (social_ == null) {
-        Social = new global::CustomDungeonSocial();
-      }
-      Social.MergeFrom(other.Social);
-    }
-    if (other.State != global::CustomDungeonState.Edit) {
-      State = other.State;
-    }
-    if (other.BattleMinCostTime != 0) {
-      BattleMinCostTime = other.BattleMinCostTime;
-    }
-    if (other.DungeonId != 0) {
-      DungeonId = other.DungeonId;
-    }
-    if (other.setting_ != null) {
-      if (setting_ == null) {
-        Setting = new global::CustomDungeonSetting();
-      }
-      Setting.MergeFrom(other.Setting);
-    }
-    if (other.LastSaveTime != 0) {
-      LastSaveTime = other.LastSaveTime;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          State = (global::CustomDungeonState) input.ReadEnum();
-          break;
-        }
-        case 24: {
-          DungeonId = input.ReadUInt32();
-          break;
-        }
-        case 34:
-        case 32: {
-          tagList_.AddEntriesFrom(input, _repeated_tagList_codec);
-          break;
-        }
-        case 58: {
-          if (setting_ == null) {
-            Setting = new global::CustomDungeonSetting();
-          }
-          input.ReadMessage(Setting);
-          break;
-        }
-        case 66: {
-          if (abstract_ == null) {
-            Abstract = new global::CustomDungeonAbstract();
-          }
-          input.ReadMessage(Abstract);
-          break;
-        }
-        case 72: {
-          IsPsnPlatform = input.ReadBool();
-          break;
-        }
-        case 82: {
-          if (social_ == null) {
-            Social = new global::CustomDungeonSocial();
-          }
-          input.ReadMessage(Social);
-          break;
-        }
-        case 96: {
-          LastSaveTime = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          DungeonGuid = input.ReadUInt64();
-          break;
-        }
-        case 120: {
-          BattleMinCostTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          State = (global::CustomDungeonState) input.ReadEnum();
-          break;
-        }
-        case 24: {
-          DungeonId = input.ReadUInt32();
-          break;
-        }
-        case 34:
-        case 32: {
-          tagList_.AddEntriesFrom(ref input, _repeated_tagList_codec);
-          break;
-        }
-        case 58: {
-          if (setting_ == null) {
-            Setting = new global::CustomDungeonSetting();
-          }
-          input.ReadMessage(Setting);
-          break;
-        }
-        case 66: {
-          if (abstract_ == null) {
-            Abstract = new global::CustomDungeonAbstract();
-          }
-          input.ReadMessage(Abstract);
-          break;
-        }
-        case 72: {
-          IsPsnPlatform = input.ReadBool();
-          break;
-        }
-        case 82: {
-          if (social_ == null) {
-            Social = new global::CustomDungeonSocial();
-          }
-          input.ReadMessage(Social);
-          break;
-        }
-        case 96: {
-          LastSaveTime = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          DungeonGuid = input.ReadUInt64();
-          break;
-        }
-        case 120: {
-          BattleMinCostTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

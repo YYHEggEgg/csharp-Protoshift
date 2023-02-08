@@ -19,7 +19,7 @@ syntax = "proto3";
 import "BattlePassRewardTakeOption.proto";
 import "ItemParam.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 2631
 // EnetChannelId: 0

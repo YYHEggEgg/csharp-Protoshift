@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GCGZoneType.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message GCGSkillPreviewCardInfo {
   uint32 controller_id = 3;

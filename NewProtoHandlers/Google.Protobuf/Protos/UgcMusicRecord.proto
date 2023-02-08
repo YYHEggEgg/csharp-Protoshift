@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "UgcMusicTrack.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message UgcMusicRecord {
   uint32 music_id = 1;

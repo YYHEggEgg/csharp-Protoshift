@@ -9,250 +9,253 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from HomeFurnitureGroupData.proto</summary>
-public static partial class HomeFurnitureGroupDataReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for HomeFurnitureGroupData.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from HomeFurnitureGroupData.proto</summary>
+  public static partial class HomeFurnitureGroupDataReflection {
 
-  static HomeFurnitureGroupDataReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChxIb21lRnVybml0dXJlR3JvdXBEYXRhLnByb3RvGhdIb21lRnVybml0dXJl",
-          "RGF0YS5wcm90byJrChZIb21lRnVybml0dXJlR3JvdXBEYXRhEjIKFnZpcnR1",
-          "YWxfZnVybml0dXJlX2xpc3QYASADKAsyEi5Ib21lRnVybml0dXJlRGF0YRId",
-          "ChVncm91cF9mdXJuaXR1cmVfaW5kZXgYDyABKA1CFgoUb3JnLnNvcmFwb2lu",
-          "dGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::HomeFurnitureDataReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::HomeFurnitureGroupData), global::HomeFurnitureGroupData.Parser, new[]{ "VirtualFurnitureList", "GroupFurnitureIndex" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for HomeFurnitureGroupData.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static HomeFurnitureGroupDataReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChxIb21lRnVybml0dXJlR3JvdXBEYXRhLnByb3RvGhdIb21lRnVybml0dXJl",
+            "RGF0YS5wcm90byJrChZIb21lRnVybml0dXJlR3JvdXBEYXRhEjIKFnZpcnR1",
+            "YWxfZnVybml0dXJlX2xpc3QYASADKAsyEi5Ib21lRnVybml0dXJlRGF0YRId",
+            "ChVncm91cF9mdXJuaXR1cmVfaW5kZXgYDyABKA1CDKoCCU5ld1Byb3Rvc2IG",
+            "cHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.HomeFurnitureDataReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.HomeFurnitureGroupData), global::NewProtos.HomeFurnitureGroupData.Parser, new[]{ "VirtualFurnitureList", "GroupFurnitureIndex" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class HomeFurnitureGroupData : pb::IMessage<HomeFurnitureGroupData>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HomeFurnitureGroupData> _parser = new pb::MessageParser<HomeFurnitureGroupData>(() => new HomeFurnitureGroupData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HomeFurnitureGroupData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.HomeFurnitureGroupDataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeFurnitureGroupData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeFurnitureGroupData(HomeFurnitureGroupData other) : this() {
+      virtualFurnitureList_ = other.virtualFurnitureList_.Clone();
+      groupFurnitureIndex_ = other.groupFurnitureIndex_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HomeFurnitureGroupData Clone() {
+      return new HomeFurnitureGroupData(this);
+    }
+
+    /// <summary>Field number for the "virtual_furniture_list" field.</summary>
+    public const int VirtualFurnitureListFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::NewProtos.HomeFurnitureData> _repeated_virtualFurnitureList_codec
+        = pb::FieldCodec.ForMessage(10, global::NewProtos.HomeFurnitureData.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.HomeFurnitureData> virtualFurnitureList_ = new pbc::RepeatedField<global::NewProtos.HomeFurnitureData>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.HomeFurnitureData> VirtualFurnitureList {
+      get { return virtualFurnitureList_; }
+    }
+
+    /// <summary>Field number for the "group_furniture_index" field.</summary>
+    public const int GroupFurnitureIndexFieldNumber = 15;
+    private uint groupFurnitureIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GroupFurnitureIndex {
+      get { return groupFurnitureIndex_; }
+      set {
+        groupFurnitureIndex_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HomeFurnitureGroupData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HomeFurnitureGroupData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!virtualFurnitureList_.Equals(other.virtualFurnitureList_)) return false;
+      if (GroupFurnitureIndex != other.GroupFurnitureIndex) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= virtualFurnitureList_.GetHashCode();
+      if (GroupFurnitureIndex != 0) hash ^= GroupFurnitureIndex.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      virtualFurnitureList_.WriteTo(output, _repeated_virtualFurnitureList_codec);
+      if (GroupFurnitureIndex != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(GroupFurnitureIndex);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      virtualFurnitureList_.WriteTo(ref output, _repeated_virtualFurnitureList_codec);
+      if (GroupFurnitureIndex != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(GroupFurnitureIndex);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += virtualFurnitureList_.CalculateSize(_repeated_virtualFurnitureList_codec);
+      if (GroupFurnitureIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupFurnitureIndex);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HomeFurnitureGroupData other) {
+      if (other == null) {
+        return;
+      }
+      virtualFurnitureList_.Add(other.virtualFurnitureList_);
+      if (other.GroupFurnitureIndex != 0) {
+        GroupFurnitureIndex = other.GroupFurnitureIndex;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            virtualFurnitureList_.AddEntriesFrom(input, _repeated_virtualFurnitureList_codec);
+            break;
+          }
+          case 120: {
+            GroupFurnitureIndex = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            virtualFurnitureList_.AddEntriesFrom(ref input, _repeated_virtualFurnitureList_codec);
+            break;
+          }
+          case 120: {
+            GroupFurnitureIndex = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class HomeFurnitureGroupData : pb::IMessage<HomeFurnitureGroupData>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<HomeFurnitureGroupData> _parser = new pb::MessageParser<HomeFurnitureGroupData>(() => new HomeFurnitureGroupData());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<HomeFurnitureGroupData> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::HomeFurnitureGroupDataReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeFurnitureGroupData() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeFurnitureGroupData(HomeFurnitureGroupData other) : this() {
-    virtualFurnitureList_ = other.virtualFurnitureList_.Clone();
-    groupFurnitureIndex_ = other.groupFurnitureIndex_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HomeFurnitureGroupData Clone() {
-    return new HomeFurnitureGroupData(this);
-  }
-
-  /// <summary>Field number for the "virtual_furniture_list" field.</summary>
-  public const int VirtualFurnitureListFieldNumber = 1;
-  private static readonly pb::FieldCodec<global::HomeFurnitureData> _repeated_virtualFurnitureList_codec
-      = pb::FieldCodec.ForMessage(10, global::HomeFurnitureData.Parser);
-  private readonly pbc::RepeatedField<global::HomeFurnitureData> virtualFurnitureList_ = new pbc::RepeatedField<global::HomeFurnitureData>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::HomeFurnitureData> VirtualFurnitureList {
-    get { return virtualFurnitureList_; }
-  }
-
-  /// <summary>Field number for the "group_furniture_index" field.</summary>
-  public const int GroupFurnitureIndexFieldNumber = 15;
-  private uint groupFurnitureIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GroupFurnitureIndex {
-    get { return groupFurnitureIndex_; }
-    set {
-      groupFurnitureIndex_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as HomeFurnitureGroupData);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(HomeFurnitureGroupData other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!virtualFurnitureList_.Equals(other.virtualFurnitureList_)) return false;
-    if (GroupFurnitureIndex != other.GroupFurnitureIndex) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= virtualFurnitureList_.GetHashCode();
-    if (GroupFurnitureIndex != 0) hash ^= GroupFurnitureIndex.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    virtualFurnitureList_.WriteTo(output, _repeated_virtualFurnitureList_codec);
-    if (GroupFurnitureIndex != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(GroupFurnitureIndex);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    virtualFurnitureList_.WriteTo(ref output, _repeated_virtualFurnitureList_codec);
-    if (GroupFurnitureIndex != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(GroupFurnitureIndex);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += virtualFurnitureList_.CalculateSize(_repeated_virtualFurnitureList_codec);
-    if (GroupFurnitureIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupFurnitureIndex);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(HomeFurnitureGroupData other) {
-    if (other == null) {
-      return;
-    }
-    virtualFurnitureList_.Add(other.virtualFurnitureList_);
-    if (other.GroupFurnitureIndex != 0) {
-      GroupFurnitureIndex = other.GroupFurnitureIndex;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          virtualFurnitureList_.AddEntriesFrom(input, _repeated_virtualFurnitureList_codec);
-          break;
-        }
-        case 120: {
-          GroupFurnitureIndex = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 10: {
-          virtualFurnitureList_.AddEntriesFrom(ref input, _repeated_virtualFurnitureList_codec);
-          break;
-        }
-        case 120: {
-          GroupFurnitureIndex = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

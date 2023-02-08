@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GameplayRecommendationReliquaryMainPropData.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GameplayRecommendationElementReliquaryResponse {
   uint32 element_type = 1;

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "ChannelerSlabCamp.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message ChannelerSlabChallenge {
   uint32 active_camp_index = 1;

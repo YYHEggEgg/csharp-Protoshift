@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message EntityClientData {
   uint32 wind_change_scene_time = 1;

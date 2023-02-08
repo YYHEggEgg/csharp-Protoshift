@@ -9,315 +9,318 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from BlitzRushActivityDetailInfo.proto</summary>
-public static partial class BlitzRushActivityDetailInfoReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for BlitzRushActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from BlitzRushActivityDetailInfo.proto</summary>
+  public static partial class BlitzRushActivityDetailInfoReflection {
 
-  static BlitzRushActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiFCbGl0elJ1c2hBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aFEJsaXR6UnVz",
-          "aFN0YWdlLnByb3RvGhZQYXJrb3VyTGV2ZWxJbmZvLnByb3RvIq0BChtCbGl0",
-          "elJ1c2hBY3Rpdml0eURldGFpbEluZm8SGQoRaXNfY29udGVudF9jbG9zZWQY",
-          "ASABKAgSGgoSY29udGVudF9jbG9zZV90aW1lGAggASgNEjIKF3BhcmtvdXJf",
-          "bGV2ZWxfaW5mb19saXN0GAQgAygLMhEuUGFya291ckxldmVsSW5mbxIjCgpz",
-          "dGFnZV9saXN0GAYgAygLMg8uQmxpdHpSdXNoU3RhZ2VCFgoUb3JnLnNvcmFw",
-          "b2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::BlitzRushStageReflection.Descriptor, global::ParkourLevelInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::BlitzRushActivityDetailInfo), global::BlitzRushActivityDetailInfo.Parser, new[]{ "IsContentClosed", "ContentCloseTime", "ParkourLevelInfoList", "StageList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for BlitzRushActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static BlitzRushActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiFCbGl0elJ1c2hBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aFEJsaXR6UnVz",
+            "aFN0YWdlLnByb3RvGhZQYXJrb3VyTGV2ZWxJbmZvLnByb3RvIq0BChtCbGl0",
+            "elJ1c2hBY3Rpdml0eURldGFpbEluZm8SGQoRaXNfY29udGVudF9jbG9zZWQY",
+            "ASABKAgSGgoSY29udGVudF9jbG9zZV90aW1lGAggASgNEjIKF3BhcmtvdXJf",
+            "bGV2ZWxfaW5mb19saXN0GAQgAygLMhEuUGFya291ckxldmVsSW5mbxIjCgpz",
+            "dGFnZV9saXN0GAYgAygLMg8uQmxpdHpSdXNoU3RhZ2VCDKoCCU5ld1Byb3Rv",
+            "c2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.BlitzRushStageReflection.Descriptor, global::NewProtos.ParkourLevelInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.BlitzRushActivityDetailInfo), global::NewProtos.BlitzRushActivityDetailInfo.Parser, new[]{ "IsContentClosed", "ContentCloseTime", "ParkourLevelInfoList", "StageList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class BlitzRushActivityDetailInfo : pb::IMessage<BlitzRushActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<BlitzRushActivityDetailInfo> _parser = new pb::MessageParser<BlitzRushActivityDetailInfo>(() => new BlitzRushActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<BlitzRushActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.BlitzRushActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BlitzRushActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BlitzRushActivityDetailInfo(BlitzRushActivityDetailInfo other) : this() {
+      isContentClosed_ = other.isContentClosed_;
+      contentCloseTime_ = other.contentCloseTime_;
+      parkourLevelInfoList_ = other.parkourLevelInfoList_.Clone();
+      stageList_ = other.stageList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public BlitzRushActivityDetailInfo Clone() {
+      return new BlitzRushActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "is_content_closed" field.</summary>
+    public const int IsContentClosedFieldNumber = 1;
+    private bool isContentClosed_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsContentClosed {
+      get { return isContentClosed_; }
+      set {
+        isContentClosed_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "content_close_time" field.</summary>
+    public const int ContentCloseTimeFieldNumber = 8;
+    private uint contentCloseTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ContentCloseTime {
+      get { return contentCloseTime_; }
+      set {
+        contentCloseTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "parkour_level_info_list" field.</summary>
+    public const int ParkourLevelInfoListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::NewProtos.ParkourLevelInfo> _repeated_parkourLevelInfoList_codec
+        = pb::FieldCodec.ForMessage(34, global::NewProtos.ParkourLevelInfo.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.ParkourLevelInfo> parkourLevelInfoList_ = new pbc::RepeatedField<global::NewProtos.ParkourLevelInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.ParkourLevelInfo> ParkourLevelInfoList {
+      get { return parkourLevelInfoList_; }
+    }
+
+    /// <summary>Field number for the "stage_list" field.</summary>
+    public const int StageListFieldNumber = 6;
+    private static readonly pb::FieldCodec<global::NewProtos.BlitzRushStage> _repeated_stageList_codec
+        = pb::FieldCodec.ForMessage(50, global::NewProtos.BlitzRushStage.Parser);
+    private readonly pbc::RepeatedField<global::NewProtos.BlitzRushStage> stageList_ = new pbc::RepeatedField<global::NewProtos.BlitzRushStage>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::NewProtos.BlitzRushStage> StageList {
+      get { return stageList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as BlitzRushActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(BlitzRushActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsContentClosed != other.IsContentClosed) return false;
+      if (ContentCloseTime != other.ContentCloseTime) return false;
+      if(!parkourLevelInfoList_.Equals(other.parkourLevelInfoList_)) return false;
+      if(!stageList_.Equals(other.stageList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
+      if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
+      hash ^= parkourLevelInfoList_.GetHashCode();
+      hash ^= stageList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsContentClosed != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsContentClosed);
+      }
+      parkourLevelInfoList_.WriteTo(output, _repeated_parkourLevelInfoList_codec);
+      stageList_.WriteTo(output, _repeated_stageList_codec);
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ContentCloseTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsContentClosed != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(IsContentClosed);
+      }
+      parkourLevelInfoList_.WriteTo(ref output, _repeated_parkourLevelInfoList_codec);
+      stageList_.WriteTo(ref output, _repeated_stageList_codec);
+      if (ContentCloseTime != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(ContentCloseTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsContentClosed != false) {
+        size += 1 + 1;
+      }
+      if (ContentCloseTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
+      }
+      size += parkourLevelInfoList_.CalculateSize(_repeated_parkourLevelInfoList_codec);
+      size += stageList_.CalculateSize(_repeated_stageList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(BlitzRushActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsContentClosed != false) {
+        IsContentClosed = other.IsContentClosed;
+      }
+      if (other.ContentCloseTime != 0) {
+        ContentCloseTime = other.ContentCloseTime;
+      }
+      parkourLevelInfoList_.Add(other.parkourLevelInfoList_);
+      stageList_.Add(other.stageList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 34: {
+            parkourLevelInfoList_.AddEntriesFrom(input, _repeated_parkourLevelInfoList_codec);
+            break;
+          }
+          case 50: {
+            stageList_.AddEntriesFrom(input, _repeated_stageList_codec);
+            break;
+          }
+          case 64: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            IsContentClosed = input.ReadBool();
+            break;
+          }
+          case 34: {
+            parkourLevelInfoList_.AddEntriesFrom(ref input, _repeated_parkourLevelInfoList_codec);
+            break;
+          }
+          case 50: {
+            stageList_.AddEntriesFrom(ref input, _repeated_stageList_codec);
+            break;
+          }
+          case 64: {
+            ContentCloseTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class BlitzRushActivityDetailInfo : pb::IMessage<BlitzRushActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<BlitzRushActivityDetailInfo> _parser = new pb::MessageParser<BlitzRushActivityDetailInfo>(() => new BlitzRushActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<BlitzRushActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::BlitzRushActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BlitzRushActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BlitzRushActivityDetailInfo(BlitzRushActivityDetailInfo other) : this() {
-    isContentClosed_ = other.isContentClosed_;
-    contentCloseTime_ = other.contentCloseTime_;
-    parkourLevelInfoList_ = other.parkourLevelInfoList_.Clone();
-    stageList_ = other.stageList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public BlitzRushActivityDetailInfo Clone() {
-    return new BlitzRushActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "is_content_closed" field.</summary>
-  public const int IsContentClosedFieldNumber = 1;
-  private bool isContentClosed_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsContentClosed {
-    get { return isContentClosed_; }
-    set {
-      isContentClosed_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "content_close_time" field.</summary>
-  public const int ContentCloseTimeFieldNumber = 8;
-  private uint contentCloseTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ContentCloseTime {
-    get { return contentCloseTime_; }
-    set {
-      contentCloseTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "parkour_level_info_list" field.</summary>
-  public const int ParkourLevelInfoListFieldNumber = 4;
-  private static readonly pb::FieldCodec<global::ParkourLevelInfo> _repeated_parkourLevelInfoList_codec
-      = pb::FieldCodec.ForMessage(34, global::ParkourLevelInfo.Parser);
-  private readonly pbc::RepeatedField<global::ParkourLevelInfo> parkourLevelInfoList_ = new pbc::RepeatedField<global::ParkourLevelInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::ParkourLevelInfo> ParkourLevelInfoList {
-    get { return parkourLevelInfoList_; }
-  }
-
-  /// <summary>Field number for the "stage_list" field.</summary>
-  public const int StageListFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::BlitzRushStage> _repeated_stageList_codec
-      = pb::FieldCodec.ForMessage(50, global::BlitzRushStage.Parser);
-  private readonly pbc::RepeatedField<global::BlitzRushStage> stageList_ = new pbc::RepeatedField<global::BlitzRushStage>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::BlitzRushStage> StageList {
-    get { return stageList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as BlitzRushActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(BlitzRushActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsContentClosed != other.IsContentClosed) return false;
-    if (ContentCloseTime != other.ContentCloseTime) return false;
-    if(!parkourLevelInfoList_.Equals(other.parkourLevelInfoList_)) return false;
-    if(!stageList_.Equals(other.stageList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsContentClosed != false) hash ^= IsContentClosed.GetHashCode();
-    if (ContentCloseTime != 0) hash ^= ContentCloseTime.GetHashCode();
-    hash ^= parkourLevelInfoList_.GetHashCode();
-    hash ^= stageList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsContentClosed != false) {
-      output.WriteRawTag(8);
-      output.WriteBool(IsContentClosed);
-    }
-    parkourLevelInfoList_.WriteTo(output, _repeated_parkourLevelInfoList_codec);
-    stageList_.WriteTo(output, _repeated_stageList_codec);
-    if (ContentCloseTime != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ContentCloseTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsContentClosed != false) {
-      output.WriteRawTag(8);
-      output.WriteBool(IsContentClosed);
-    }
-    parkourLevelInfoList_.WriteTo(ref output, _repeated_parkourLevelInfoList_codec);
-    stageList_.WriteTo(ref output, _repeated_stageList_codec);
-    if (ContentCloseTime != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(ContentCloseTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsContentClosed != false) {
-      size += 1 + 1;
-    }
-    if (ContentCloseTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ContentCloseTime);
-    }
-    size += parkourLevelInfoList_.CalculateSize(_repeated_parkourLevelInfoList_codec);
-    size += stageList_.CalculateSize(_repeated_stageList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(BlitzRushActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsContentClosed != false) {
-      IsContentClosed = other.IsContentClosed;
-    }
-    if (other.ContentCloseTime != 0) {
-      ContentCloseTime = other.ContentCloseTime;
-    }
-    parkourLevelInfoList_.Add(other.parkourLevelInfoList_);
-    stageList_.Add(other.stageList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 34: {
-          parkourLevelInfoList_.AddEntriesFrom(input, _repeated_parkourLevelInfoList_codec);
-          break;
-        }
-        case 50: {
-          stageList_.AddEntriesFrom(input, _repeated_stageList_codec);
-          break;
-        }
-        case 64: {
-          ContentCloseTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          IsContentClosed = input.ReadBool();
-          break;
-        }
-        case 34: {
-          parkourLevelInfoList_.AddEntriesFrom(ref input, _repeated_parkourLevelInfoList_codec);
-          break;
-        }
-        case 50: {
-          stageList_.AddEntriesFrom(ref input, _repeated_stageList_codec);
-          break;
-        }
-        case 64: {
-          ContentCloseTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

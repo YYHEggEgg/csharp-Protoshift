@@ -21,7 +21,7 @@ import "IrodoriFlowerData.proto";
 import "IrodoriMasterLevelInfo.proto";
 import "IrodoriPoetryData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message IrodoriActivityDetailInfo {
   repeated IrodoriMasterLevelInfo master_level_list = 11;

@@ -9,434 +9,437 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ReliquaryUpgradeRsp.proto</summary>
-public static partial class ReliquaryUpgradeRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ReliquaryUpgradeRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ReliquaryUpgradeRsp.proto</summary>
+  public static partial class ReliquaryUpgradeRspReflection {
 
-  static ReliquaryUpgradeRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChlSZWxpcXVhcnlVcGdyYWRlUnNwLnByb3RvIr4BChNSZWxpcXVhcnlVcGdy",
-          "YWRlUnNwEhEKCW9sZF9sZXZlbBgEIAEoDRIRCgljdXJfbGV2ZWwYDSABKA0S",
-          "HQoVdGFyZ2V0X3JlbGlxdWFyeV9ndWlkGAkgASgEEhwKFGN1cl9hcHBlbmRf",
-          "cHJvcF9saXN0GAIgAygNEhUKDXBvd2VyX3VwX3JhdGUYBiABKA0SHAoUb2xk",
-          "X2FwcGVuZF9wcm9wX2xpc3QYDyADKA0SDwoHcmV0Y29kZRgFIAEoBUIeChxl",
-          "bXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ReliquaryUpgradeRsp), global::ReliquaryUpgradeRsp.Parser, new[]{ "OldLevel", "CurLevel", "TargetReliquaryGuid", "CurAppendPropList", "PowerUpRate", "OldAppendPropList", "Retcode" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ReliquaryUpgradeRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ReliquaryUpgradeRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChlSZWxpcXVhcnlVcGdyYWRlUnNwLnByb3RvIr4BChNSZWxpcXVhcnlVcGdy",
+            "YWRlUnNwEhEKCW9sZF9sZXZlbBgEIAEoDRIRCgljdXJfbGV2ZWwYDSABKA0S",
+            "HQoVdGFyZ2V0X3JlbGlxdWFyeV9ndWlkGAkgASgEEhwKFGN1cl9hcHBlbmRf",
+            "cHJvcF9saXN0GAIgAygNEhUKDXBvd2VyX3VwX3JhdGUYBiABKA0SHAoUb2xk",
+            "X2FwcGVuZF9wcm9wX2xpc3QYDyADKA0SDwoHcmV0Y29kZRgFIAEoBUIMqgIJ",
+            "T2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ReliquaryUpgradeRsp), global::OldProtos.ReliquaryUpgradeRsp.Parser, new[]{ "OldLevel", "CurLevel", "TargetReliquaryGuid", "CurAppendPropList", "PowerUpRate", "OldAppendPropList", "Retcode" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 693
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class ReliquaryUpgradeRsp : pb::IMessage<ReliquaryUpgradeRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ReliquaryUpgradeRsp> _parser = new pb::MessageParser<ReliquaryUpgradeRsp>(() => new ReliquaryUpgradeRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ReliquaryUpgradeRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ReliquaryUpgradeRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ReliquaryUpgradeRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ReliquaryUpgradeRsp(ReliquaryUpgradeRsp other) : this() {
+      oldLevel_ = other.oldLevel_;
+      curLevel_ = other.curLevel_;
+      targetReliquaryGuid_ = other.targetReliquaryGuid_;
+      curAppendPropList_ = other.curAppendPropList_.Clone();
+      powerUpRate_ = other.powerUpRate_;
+      oldAppendPropList_ = other.oldAppendPropList_.Clone();
+      retcode_ = other.retcode_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ReliquaryUpgradeRsp Clone() {
+      return new ReliquaryUpgradeRsp(this);
+    }
+
+    /// <summary>Field number for the "old_level" field.</summary>
+    public const int OldLevelFieldNumber = 4;
+    private uint oldLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OldLevel {
+      get { return oldLevel_; }
+      set {
+        oldLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_level" field.</summary>
+    public const int CurLevelFieldNumber = 13;
+    private uint curLevel_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurLevel {
+      get { return curLevel_; }
+      set {
+        curLevel_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "target_reliquary_guid" field.</summary>
+    public const int TargetReliquaryGuidFieldNumber = 9;
+    private ulong targetReliquaryGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong TargetReliquaryGuid {
+      get { return targetReliquaryGuid_; }
+      set {
+        targetReliquaryGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_append_prop_list" field.</summary>
+    public const int CurAppendPropListFieldNumber = 2;
+    private static readonly pb::FieldCodec<uint> _repeated_curAppendPropList_codec
+        = pb::FieldCodec.ForUInt32(18);
+    private readonly pbc::RepeatedField<uint> curAppendPropList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> CurAppendPropList {
+      get { return curAppendPropList_; }
+    }
+
+    /// <summary>Field number for the "power_up_rate" field.</summary>
+    public const int PowerUpRateFieldNumber = 6;
+    private uint powerUpRate_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PowerUpRate {
+      get { return powerUpRate_; }
+      set {
+        powerUpRate_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "old_append_prop_list" field.</summary>
+    public const int OldAppendPropListFieldNumber = 15;
+    private static readonly pb::FieldCodec<uint> _repeated_oldAppendPropList_codec
+        = pb::FieldCodec.ForUInt32(122);
+    private readonly pbc::RepeatedField<uint> oldAppendPropList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> OldAppendPropList {
+      get { return oldAppendPropList_; }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 5;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ReliquaryUpgradeRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ReliquaryUpgradeRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (OldLevel != other.OldLevel) return false;
+      if (CurLevel != other.CurLevel) return false;
+      if (TargetReliquaryGuid != other.TargetReliquaryGuid) return false;
+      if(!curAppendPropList_.Equals(other.curAppendPropList_)) return false;
+      if (PowerUpRate != other.PowerUpRate) return false;
+      if(!oldAppendPropList_.Equals(other.oldAppendPropList_)) return false;
+      if (Retcode != other.Retcode) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (OldLevel != 0) hash ^= OldLevel.GetHashCode();
+      if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
+      if (TargetReliquaryGuid != 0UL) hash ^= TargetReliquaryGuid.GetHashCode();
+      hash ^= curAppendPropList_.GetHashCode();
+      if (PowerUpRate != 0) hash ^= PowerUpRate.GetHashCode();
+      hash ^= oldAppendPropList_.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      curAppendPropList_.WriteTo(output, _repeated_curAppendPropList_codec);
+      if (OldLevel != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(OldLevel);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Retcode);
+      }
+      if (PowerUpRate != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(PowerUpRate);
+      }
+      if (TargetReliquaryGuid != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(TargetReliquaryGuid);
+      }
+      if (CurLevel != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(CurLevel);
+      }
+      oldAppendPropList_.WriteTo(output, _repeated_oldAppendPropList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      curAppendPropList_.WriteTo(ref output, _repeated_curAppendPropList_codec);
+      if (OldLevel != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(OldLevel);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(40);
+        output.WriteInt32(Retcode);
+      }
+      if (PowerUpRate != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(PowerUpRate);
+      }
+      if (TargetReliquaryGuid != 0UL) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(TargetReliquaryGuid);
+      }
+      if (CurLevel != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(CurLevel);
+      }
+      oldAppendPropList_.WriteTo(ref output, _repeated_oldAppendPropList_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (OldLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OldLevel);
+      }
+      if (CurLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
+      }
+      if (TargetReliquaryGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetReliquaryGuid);
+      }
+      size += curAppendPropList_.CalculateSize(_repeated_curAppendPropList_codec);
+      if (PowerUpRate != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PowerUpRate);
+      }
+      size += oldAppendPropList_.CalculateSize(_repeated_oldAppendPropList_codec);
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ReliquaryUpgradeRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.OldLevel != 0) {
+        OldLevel = other.OldLevel;
+      }
+      if (other.CurLevel != 0) {
+        CurLevel = other.CurLevel;
+      }
+      if (other.TargetReliquaryGuid != 0UL) {
+        TargetReliquaryGuid = other.TargetReliquaryGuid;
+      }
+      curAppendPropList_.Add(other.curAppendPropList_);
+      if (other.PowerUpRate != 0) {
+        PowerUpRate = other.PowerUpRate;
+      }
+      oldAppendPropList_.Add(other.oldAppendPropList_);
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18:
+          case 16: {
+            curAppendPropList_.AddEntriesFrom(input, _repeated_curAppendPropList_codec);
+            break;
+          }
+          case 32: {
+            OldLevel = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            PowerUpRate = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            TargetReliquaryGuid = input.ReadUInt64();
+            break;
+          }
+          case 104: {
+            CurLevel = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            oldAppendPropList_.AddEntriesFrom(input, _repeated_oldAppendPropList_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18:
+          case 16: {
+            curAppendPropList_.AddEntriesFrom(ref input, _repeated_curAppendPropList_codec);
+            break;
+          }
+          case 32: {
+            OldLevel = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            PowerUpRate = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            TargetReliquaryGuid = input.ReadUInt64();
+            break;
+          }
+          case 104: {
+            CurLevel = input.ReadUInt32();
+            break;
+          }
+          case 122:
+          case 120: {
+            oldAppendPropList_.AddEntriesFrom(ref input, _repeated_oldAppendPropList_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 693
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class ReliquaryUpgradeRsp : pb::IMessage<ReliquaryUpgradeRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ReliquaryUpgradeRsp> _parser = new pb::MessageParser<ReliquaryUpgradeRsp>(() => new ReliquaryUpgradeRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ReliquaryUpgradeRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ReliquaryUpgradeRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ReliquaryUpgradeRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ReliquaryUpgradeRsp(ReliquaryUpgradeRsp other) : this() {
-    oldLevel_ = other.oldLevel_;
-    curLevel_ = other.curLevel_;
-    targetReliquaryGuid_ = other.targetReliquaryGuid_;
-    curAppendPropList_ = other.curAppendPropList_.Clone();
-    powerUpRate_ = other.powerUpRate_;
-    oldAppendPropList_ = other.oldAppendPropList_.Clone();
-    retcode_ = other.retcode_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ReliquaryUpgradeRsp Clone() {
-    return new ReliquaryUpgradeRsp(this);
-  }
-
-  /// <summary>Field number for the "old_level" field.</summary>
-  public const int OldLevelFieldNumber = 4;
-  private uint oldLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint OldLevel {
-    get { return oldLevel_; }
-    set {
-      oldLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cur_level" field.</summary>
-  public const int CurLevelFieldNumber = 13;
-  private uint curLevel_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurLevel {
-    get { return curLevel_; }
-    set {
-      curLevel_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "target_reliquary_guid" field.</summary>
-  public const int TargetReliquaryGuidFieldNumber = 9;
-  private ulong targetReliquaryGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong TargetReliquaryGuid {
-    get { return targetReliquaryGuid_; }
-    set {
-      targetReliquaryGuid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cur_append_prop_list" field.</summary>
-  public const int CurAppendPropListFieldNumber = 2;
-  private static readonly pb::FieldCodec<uint> _repeated_curAppendPropList_codec
-      = pb::FieldCodec.ForUInt32(18);
-  private readonly pbc::RepeatedField<uint> curAppendPropList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> CurAppendPropList {
-    get { return curAppendPropList_; }
-  }
-
-  /// <summary>Field number for the "power_up_rate" field.</summary>
-  public const int PowerUpRateFieldNumber = 6;
-  private uint powerUpRate_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PowerUpRate {
-    get { return powerUpRate_; }
-    set {
-      powerUpRate_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "old_append_prop_list" field.</summary>
-  public const int OldAppendPropListFieldNumber = 15;
-  private static readonly pb::FieldCodec<uint> _repeated_oldAppendPropList_codec
-      = pb::FieldCodec.ForUInt32(122);
-  private readonly pbc::RepeatedField<uint> oldAppendPropList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> OldAppendPropList {
-    get { return oldAppendPropList_; }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 5;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ReliquaryUpgradeRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ReliquaryUpgradeRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (OldLevel != other.OldLevel) return false;
-    if (CurLevel != other.CurLevel) return false;
-    if (TargetReliquaryGuid != other.TargetReliquaryGuid) return false;
-    if(!curAppendPropList_.Equals(other.curAppendPropList_)) return false;
-    if (PowerUpRate != other.PowerUpRate) return false;
-    if(!oldAppendPropList_.Equals(other.oldAppendPropList_)) return false;
-    if (Retcode != other.Retcode) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (OldLevel != 0) hash ^= OldLevel.GetHashCode();
-    if (CurLevel != 0) hash ^= CurLevel.GetHashCode();
-    if (TargetReliquaryGuid != 0UL) hash ^= TargetReliquaryGuid.GetHashCode();
-    hash ^= curAppendPropList_.GetHashCode();
-    if (PowerUpRate != 0) hash ^= PowerUpRate.GetHashCode();
-    hash ^= oldAppendPropList_.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    curAppendPropList_.WriteTo(output, _repeated_curAppendPropList_codec);
-    if (OldLevel != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(OldLevel);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(40);
-      output.WriteInt32(Retcode);
-    }
-    if (PowerUpRate != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(PowerUpRate);
-    }
-    if (TargetReliquaryGuid != 0UL) {
-      output.WriteRawTag(72);
-      output.WriteUInt64(TargetReliquaryGuid);
-    }
-    if (CurLevel != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(CurLevel);
-    }
-    oldAppendPropList_.WriteTo(output, _repeated_oldAppendPropList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    curAppendPropList_.WriteTo(ref output, _repeated_curAppendPropList_codec);
-    if (OldLevel != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(OldLevel);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(40);
-      output.WriteInt32(Retcode);
-    }
-    if (PowerUpRate != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(PowerUpRate);
-    }
-    if (TargetReliquaryGuid != 0UL) {
-      output.WriteRawTag(72);
-      output.WriteUInt64(TargetReliquaryGuid);
-    }
-    if (CurLevel != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(CurLevel);
-    }
-    oldAppendPropList_.WriteTo(ref output, _repeated_oldAppendPropList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (OldLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OldLevel);
-    }
-    if (CurLevel != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurLevel);
-    }
-    if (TargetReliquaryGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TargetReliquaryGuid);
-    }
-    size += curAppendPropList_.CalculateSize(_repeated_curAppendPropList_codec);
-    if (PowerUpRate != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PowerUpRate);
-    }
-    size += oldAppendPropList_.CalculateSize(_repeated_oldAppendPropList_codec);
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ReliquaryUpgradeRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.OldLevel != 0) {
-      OldLevel = other.OldLevel;
-    }
-    if (other.CurLevel != 0) {
-      CurLevel = other.CurLevel;
-    }
-    if (other.TargetReliquaryGuid != 0UL) {
-      TargetReliquaryGuid = other.TargetReliquaryGuid;
-    }
-    curAppendPropList_.Add(other.curAppendPropList_);
-    if (other.PowerUpRate != 0) {
-      PowerUpRate = other.PowerUpRate;
-    }
-    oldAppendPropList_.Add(other.oldAppendPropList_);
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18:
-        case 16: {
-          curAppendPropList_.AddEntriesFrom(input, _repeated_curAppendPropList_codec);
-          break;
-        }
-        case 32: {
-          OldLevel = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 48: {
-          PowerUpRate = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          TargetReliquaryGuid = input.ReadUInt64();
-          break;
-        }
-        case 104: {
-          CurLevel = input.ReadUInt32();
-          break;
-        }
-        case 122:
-        case 120: {
-          oldAppendPropList_.AddEntriesFrom(input, _repeated_oldAppendPropList_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18:
-        case 16: {
-          curAppendPropList_.AddEntriesFrom(ref input, _repeated_curAppendPropList_codec);
-          break;
-        }
-        case 32: {
-          OldLevel = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 48: {
-          PowerUpRate = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          TargetReliquaryGuid = input.ReadUInt64();
-          break;
-        }
-        case 104: {
-          CurLevel = input.ReadUInt32();
-          break;
-        }
-        case 122:
-        case 120: {
-          oldAppendPropList_.AddEntriesFrom(ref input, _repeated_oldAppendPropList_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

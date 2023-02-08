@@ -21,7 +21,7 @@ import "GCGPVEIntention.proto";
 import "GCGWaitingCharacter.proto";
 import "GCGZone.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGPlayerField {
   uint32 Unk3300_IKJMGAHCFPM = 5;

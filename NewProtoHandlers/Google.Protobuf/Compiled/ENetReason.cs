@@ -9,70 +9,72 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ENetReason.proto</summary>
-public static partial class ENetReasonReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ENetReason.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ENetReason.proto</summary>
+  public static partial class ENetReasonReflection {
 
-  static ENetReasonReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChBFTmV0UmVhc29uLnByb3RvKvcECgpFTmV0UmVhc29uEhAKDEVORVRfVElN",
-          "RU9VVBAAEhUKEUVORVRfQ0xJRU5UX0NMT1NFEAESGwoXRU5FVF9DTElFTlRf",
-          "UkVCSU5EX0ZBSUwQAhIYChRFTkVUX0NMSUVOVF9TSFVURE9XThADEhcKE0VO",
-          "RVRfU0VSVkVSX1JFTE9HSU4QBBIUChBFTkVUX1NFUlZFUl9LSUNLEAUSGAoU",
-          "RU5FVF9TRVJWRVJfU0hVVERPV04QBhIaChZFTkVUX05PVF9GT1VORF9TRVNT",
-          "SU9OEAcSGQoVRU5FVF9MT0dJTl9VTkZJTklTSEVEEAgSHQoZRU5FVF9QQUNL",
-          "RVRfRlJFUV9UT09fSElHSBAJEhUKEUVORVRfUElOR19USU1FT1VUEAoSFwoT",
-          "RU5FVF9UUkFORkVSX0ZBSUxFRBALEhsKF0VORVRfU0VSVkVSX0tJTExfQ0xJ",
-          "RU5UEAwSGQoVRU5FVF9DSEVDS19NT1ZFX1NQRUVEEA0SIAocRU5FVF9BQ0NP",
-          "VU5UX1BBU1NXT1JEX0NIQU5HRRAOEhYKEkVORVRfU0VDVVJJVFlfS0lDSxAP",
-          "EhoKFkVORVRfTFVBX1NIRUxMX1RJTUVPVVQQEBIVChFFTkVUX1NES0ZBSUxf",
-          "S0lDSxAREhkKFUVORVRfUEFDS0VUX0NPU1RfVElNRRASEhoKFkVORVRfUEFD",
-          "S0VUX1VOSU9OX0ZSRVEQExIVChFFTkVUX1dBSVRfU05EX01BWBAUEh8KF0VO",
-          "RVRfQ0xJRU5UX0NPTk5FQ1RfS0VZENKF2MwEEiYKHkVORVRfQ0xJRU5UX0VE",
-          "SVRPUl9DT05ORUNUX0tFWRCx0fnWA0IWChRvcmcuc29yYXBvaW50YS5wcm90",
-          "b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ENetReason), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for ENetReason.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ENetReasonReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChBFTmV0UmVhc29uLnByb3RvKvcECgpFTmV0UmVhc29uEhAKDEVORVRfVElN",
+            "RU9VVBAAEhUKEUVORVRfQ0xJRU5UX0NMT1NFEAESGwoXRU5FVF9DTElFTlRf",
+            "UkVCSU5EX0ZBSUwQAhIYChRFTkVUX0NMSUVOVF9TSFVURE9XThADEhcKE0VO",
+            "RVRfU0VSVkVSX1JFTE9HSU4QBBIUChBFTkVUX1NFUlZFUl9LSUNLEAUSGAoU",
+            "RU5FVF9TRVJWRVJfU0hVVERPV04QBhIaChZFTkVUX05PVF9GT1VORF9TRVNT",
+            "SU9OEAcSGQoVRU5FVF9MT0dJTl9VTkZJTklTSEVEEAgSHQoZRU5FVF9QQUNL",
+            "RVRfRlJFUV9UT09fSElHSBAJEhUKEUVORVRfUElOR19USU1FT1VUEAoSFwoT",
+            "RU5FVF9UUkFORkVSX0ZBSUxFRBALEhsKF0VORVRfU0VSVkVSX0tJTExfQ0xJ",
+            "RU5UEAwSGQoVRU5FVF9DSEVDS19NT1ZFX1NQRUVEEA0SIAocRU5FVF9BQ0NP",
+            "VU5UX1BBU1NXT1JEX0NIQU5HRRAOEhYKEkVORVRfU0VDVVJJVFlfS0lDSxAP",
+            "EhoKFkVORVRfTFVBX1NIRUxMX1RJTUVPVVQQEBIVChFFTkVUX1NES0ZBSUxf",
+            "S0lDSxAREhkKFUVORVRfUEFDS0VUX0NPU1RfVElNRRASEhoKFkVORVRfUEFD",
+            "S0VUX1VOSU9OX0ZSRVEQExIVChFFTkVUX1dBSVRfU05EX01BWBAUEh8KF0VO",
+            "RVRfQ0xJRU5UX0NPTk5FQ1RfS0VZENKF2MwEEiYKHkVORVRfQ0xJRU5UX0VE",
+            "SVRPUl9DT05ORUNUX0tFWRCx0fnWA0IMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.ENetReason), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum ENetReason {
+    [pbr::OriginalName("ENET_TIMEOUT")] EnetTimeout = 0,
+    [pbr::OriginalName("ENET_CLIENT_CLOSE")] EnetClientClose = 1,
+    [pbr::OriginalName("ENET_CLIENT_REBIND_FAIL")] EnetClientRebindFail = 2,
+    [pbr::OriginalName("ENET_CLIENT_SHUTDOWN")] EnetClientShutdown = 3,
+    [pbr::OriginalName("ENET_SERVER_RELOGIN")] EnetServerRelogin = 4,
+    [pbr::OriginalName("ENET_SERVER_KICK")] EnetServerKick = 5,
+    [pbr::OriginalName("ENET_SERVER_SHUTDOWN")] EnetServerShutdown = 6,
+    [pbr::OriginalName("ENET_NOT_FOUND_SESSION")] EnetNotFoundSession = 7,
+    [pbr::OriginalName("ENET_LOGIN_UNFINISHED")] EnetLoginUnfinished = 8,
+    [pbr::OriginalName("ENET_PACKET_FREQ_TOO_HIGH")] EnetPacketFreqTooHigh = 9,
+    [pbr::OriginalName("ENET_PING_TIMEOUT")] EnetPingTimeout = 10,
+    [pbr::OriginalName("ENET_TRANFER_FAILED")] EnetTranferFailed = 11,
+    [pbr::OriginalName("ENET_SERVER_KILL_CLIENT")] EnetServerKillClient = 12,
+    [pbr::OriginalName("ENET_CHECK_MOVE_SPEED")] EnetCheckMoveSpeed = 13,
+    [pbr::OriginalName("ENET_ACCOUNT_PASSWORD_CHANGE")] EnetAccountPasswordChange = 14,
+    [pbr::OriginalName("ENET_SECURITY_KICK")] EnetSecurityKick = 15,
+    [pbr::OriginalName("ENET_LUA_SHELL_TIMEOUT")] EnetLuaShellTimeout = 16,
+    [pbr::OriginalName("ENET_SDKFAIL_KICK")] EnetSdkfailKick = 17,
+    [pbr::OriginalName("ENET_PACKET_COST_TIME")] EnetPacketCostTime = 18,
+    [pbr::OriginalName("ENET_PACKET_UNION_FREQ")] EnetPacketUnionFreq = 19,
+    [pbr::OriginalName("ENET_WAIT_SND_MAX")] EnetWaitSndMax = 20,
+    [pbr::OriginalName("ENET_CLIENT_CONNECT_KEY")] EnetClientConnectKey = 1234567890,
+    [pbr::OriginalName("ENET_CLIENT_EDITOR_CONNECT_KEY")] EnetClientEditorConnectKey = 987654321,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum ENetReason {
-  [pbr::OriginalName("ENET_TIMEOUT")] EnetTimeout = 0,
-  [pbr::OriginalName("ENET_CLIENT_CLOSE")] EnetClientClose = 1,
-  [pbr::OriginalName("ENET_CLIENT_REBIND_FAIL")] EnetClientRebindFail = 2,
-  [pbr::OriginalName("ENET_CLIENT_SHUTDOWN")] EnetClientShutdown = 3,
-  [pbr::OriginalName("ENET_SERVER_RELOGIN")] EnetServerRelogin = 4,
-  [pbr::OriginalName("ENET_SERVER_KICK")] EnetServerKick = 5,
-  [pbr::OriginalName("ENET_SERVER_SHUTDOWN")] EnetServerShutdown = 6,
-  [pbr::OriginalName("ENET_NOT_FOUND_SESSION")] EnetNotFoundSession = 7,
-  [pbr::OriginalName("ENET_LOGIN_UNFINISHED")] EnetLoginUnfinished = 8,
-  [pbr::OriginalName("ENET_PACKET_FREQ_TOO_HIGH")] EnetPacketFreqTooHigh = 9,
-  [pbr::OriginalName("ENET_PING_TIMEOUT")] EnetPingTimeout = 10,
-  [pbr::OriginalName("ENET_TRANFER_FAILED")] EnetTranferFailed = 11,
-  [pbr::OriginalName("ENET_SERVER_KILL_CLIENT")] EnetServerKillClient = 12,
-  [pbr::OriginalName("ENET_CHECK_MOVE_SPEED")] EnetCheckMoveSpeed = 13,
-  [pbr::OriginalName("ENET_ACCOUNT_PASSWORD_CHANGE")] EnetAccountPasswordChange = 14,
-  [pbr::OriginalName("ENET_SECURITY_KICK")] EnetSecurityKick = 15,
-  [pbr::OriginalName("ENET_LUA_SHELL_TIMEOUT")] EnetLuaShellTimeout = 16,
-  [pbr::OriginalName("ENET_SDKFAIL_KICK")] EnetSdkfailKick = 17,
-  [pbr::OriginalName("ENET_PACKET_COST_TIME")] EnetPacketCostTime = 18,
-  [pbr::OriginalName("ENET_PACKET_UNION_FREQ")] EnetPacketUnionFreq = 19,
-  [pbr::OriginalName("ENET_WAIT_SND_MAX")] EnetWaitSndMax = 20,
-  [pbr::OriginalName("ENET_CLIENT_CONNECT_KEY")] EnetClientConnectKey = 1234567890,
-  [pbr::OriginalName("ENET_CLIENT_EDITOR_CONNECT_KEY")] EnetClientEditorConnectKey = 987654321,
-}
-
-#endregion
-
 
 #endregion Designer generated code

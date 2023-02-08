@@ -9,261 +9,263 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GameplayRecommendationElementReliquaryRequest.proto</summary>
-public static partial class GameplayRecommendationElementReliquaryRequestReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GameplayRecommendationElementReliquaryRequest.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GameplayRecommendationElementReliquaryRequest.proto</summary>
+  public static partial class GameplayRecommendationElementReliquaryRequestReflection {
 
-  static GameplayRecommendationElementReliquaryRequestReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CjNHYW1lcGxheVJlY29tbWVuZGF0aW9uRWxlbWVudFJlbGlxdWFyeVJlcXVl",
-          "c3QucHJvdG8iWQotR2FtZXBsYXlSZWNvbW1lbmRhdGlvbkVsZW1lbnRSZWxp",
-          "cXVhcnlSZXF1ZXN0EhIKCmVxdWlwX3R5cGUYCSABKA0SFAoMZWxlbWVudF90",
-          "eXBlGAwgASgNQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnBy",
-          "b3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GameplayRecommendationElementReliquaryRequest), global::GameplayRecommendationElementReliquaryRequest.Parser, new[]{ "EquipType", "ElementType" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GameplayRecommendationElementReliquaryRequest.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GameplayRecommendationElementReliquaryRequestReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CjNHYW1lcGxheVJlY29tbWVuZGF0aW9uRWxlbWVudFJlbGlxdWFyeVJlcXVl",
+            "c3QucHJvdG8iWQotR2FtZXBsYXlSZWNvbW1lbmRhdGlvbkVsZW1lbnRSZWxp",
+            "cXVhcnlSZXF1ZXN0EhIKCmVxdWlwX3R5cGUYCSABKA0SFAoMZWxlbWVudF90",
+            "eXBlGAwgASgNQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GameplayRecommendationElementReliquaryRequest), global::OldProtos.GameplayRecommendationElementReliquaryRequest.Parser, new[]{ "EquipType", "ElementType" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GameplayRecommendationElementReliquaryRequest : pb::IMessage<GameplayRecommendationElementReliquaryRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GameplayRecommendationElementReliquaryRequest> _parser = new pb::MessageParser<GameplayRecommendationElementReliquaryRequest>(() => new GameplayRecommendationElementReliquaryRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GameplayRecommendationElementReliquaryRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GameplayRecommendationElementReliquaryRequestReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GameplayRecommendationElementReliquaryRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GameplayRecommendationElementReliquaryRequest(GameplayRecommendationElementReliquaryRequest other) : this() {
+      equipType_ = other.equipType_;
+      elementType_ = other.elementType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GameplayRecommendationElementReliquaryRequest Clone() {
+      return new GameplayRecommendationElementReliquaryRequest(this);
+    }
+
+    /// <summary>Field number for the "equip_type" field.</summary>
+    public const int EquipTypeFieldNumber = 9;
+    private uint equipType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EquipType {
+      get { return equipType_; }
+      set {
+        equipType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "element_type" field.</summary>
+    public const int ElementTypeFieldNumber = 12;
+    private uint elementType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ElementType {
+      get { return elementType_; }
+      set {
+        elementType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GameplayRecommendationElementReliquaryRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GameplayRecommendationElementReliquaryRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (EquipType != other.EquipType) return false;
+      if (ElementType != other.ElementType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (EquipType != 0) hash ^= EquipType.GetHashCode();
+      if (ElementType != 0) hash ^= ElementType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (EquipType != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(EquipType);
+      }
+      if (ElementType != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ElementType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (EquipType != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(EquipType);
+      }
+      if (ElementType != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ElementType);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (EquipType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EquipType);
+      }
+      if (ElementType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ElementType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GameplayRecommendationElementReliquaryRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.EquipType != 0) {
+        EquipType = other.EquipType;
+      }
+      if (other.ElementType != 0) {
+        ElementType = other.ElementType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 72: {
+            EquipType = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            ElementType = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 72: {
+            EquipType = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            ElementType = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GameplayRecommendationElementReliquaryRequest : pb::IMessage<GameplayRecommendationElementReliquaryRequest>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GameplayRecommendationElementReliquaryRequest> _parser = new pb::MessageParser<GameplayRecommendationElementReliquaryRequest>(() => new GameplayRecommendationElementReliquaryRequest());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GameplayRecommendationElementReliquaryRequest> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GameplayRecommendationElementReliquaryRequestReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GameplayRecommendationElementReliquaryRequest() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GameplayRecommendationElementReliquaryRequest(GameplayRecommendationElementReliquaryRequest other) : this() {
-    equipType_ = other.equipType_;
-    elementType_ = other.elementType_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GameplayRecommendationElementReliquaryRequest Clone() {
-    return new GameplayRecommendationElementReliquaryRequest(this);
-  }
-
-  /// <summary>Field number for the "equip_type" field.</summary>
-  public const int EquipTypeFieldNumber = 9;
-  private uint equipType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EquipType {
-    get { return equipType_; }
-    set {
-      equipType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "element_type" field.</summary>
-  public const int ElementTypeFieldNumber = 12;
-  private uint elementType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ElementType {
-    get { return elementType_; }
-    set {
-      elementType_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GameplayRecommendationElementReliquaryRequest);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GameplayRecommendationElementReliquaryRequest other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (EquipType != other.EquipType) return false;
-    if (ElementType != other.ElementType) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (EquipType != 0) hash ^= EquipType.GetHashCode();
-    if (ElementType != 0) hash ^= ElementType.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (EquipType != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(EquipType);
-    }
-    if (ElementType != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(ElementType);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (EquipType != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(EquipType);
-    }
-    if (ElementType != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(ElementType);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (EquipType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EquipType);
-    }
-    if (ElementType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ElementType);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GameplayRecommendationElementReliquaryRequest other) {
-    if (other == null) {
-      return;
-    }
-    if (other.EquipType != 0) {
-      EquipType = other.EquipType;
-    }
-    if (other.ElementType != 0) {
-      ElementType = other.ElementType;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 72: {
-          EquipType = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          ElementType = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 72: {
-          EquipType = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          ElementType = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

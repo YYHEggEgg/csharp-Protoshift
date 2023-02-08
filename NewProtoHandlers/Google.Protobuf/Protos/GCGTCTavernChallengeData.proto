@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGTCTavernChallengeData {
   repeated uint32 unlock_level_id_list = 13;

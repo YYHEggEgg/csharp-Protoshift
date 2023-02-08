@@ -9,37 +9,40 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from LuaShellNotifyType.proto</summary>
-public static partial class LuaShellNotifyTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for LuaShellNotifyType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from LuaShellNotifyType.proto</summary>
+  public static partial class LuaShellNotifyTypeReflection {
 
-  static LuaShellNotifyTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhMdWFTaGVsbE5vdGlmeVR5cGUucHJvdG8qaAoSTHVhU2hlbGxOb3RpZnlU",
-          "eXBlEikKJUxVQV9TSEVMTF9OT1RJRllfVFlQRV9MVUFTSEVMTF9OT1RJRlkQ",
-          "ABInCiNMVUFfU0hFTExfTk9USUZZX1RZUEVfTFVBU0hFTExfSElERRABQhYK",
-          "FG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::LuaShellNotifyType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for LuaShellNotifyType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static LuaShellNotifyTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhMdWFTaGVsbE5vdGlmeVR5cGUucHJvdG8qaAoSTHVhU2hlbGxOb3RpZnlU",
+            "eXBlEikKJUxVQV9TSEVMTF9OT1RJRllfVFlQRV9MVUFTSEVMTF9OT1RJRlkQ",
+            "ABInCiNMVUFfU0hFTExfTk9USUZZX1RZUEVfTFVBU0hFTExfSElERRABQgyq",
+            "AglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.LuaShellNotifyType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum LuaShellNotifyType {
+    [pbr::OriginalName("LUA_SHELL_NOTIFY_TYPE_LUASHELL_NOTIFY")] LuashellNotify = 0,
+    [pbr::OriginalName("LUA_SHELL_NOTIFY_TYPE_LUASHELL_HIDE")] LuashellHide = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum LuaShellNotifyType {
-  [pbr::OriginalName("LUA_SHELL_NOTIFY_TYPE_LUASHELL_NOTIFY")] LuashellNotify = 0,
-  [pbr::OriginalName("LUA_SHELL_NOTIFY_TYPE_LUASHELL_HIDE")] LuashellHide = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GCGSkillPreviewReactionInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message GCGSkillPreviewElementReactionInfo {
   repeated uint32 Unk3300_JOBNBDJHAPJ = 12;

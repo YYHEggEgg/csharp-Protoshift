@@ -9,257 +9,260 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FleurFairFallSettleNotify.proto</summary>
-public static partial class FleurFairFallSettleNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FleurFairFallSettleNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FleurFairFallSettleNotify.proto</summary>
+  public static partial class FleurFairFallSettleNotifyReflection {
 
-  static FleurFairFallSettleNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch9GbGV1ckZhaXJGYWxsU2V0dGxlTm90aWZ5LnByb3RvGh1GbGV1ckZhaXJG",
-          "YWxsU2V0dGxlSW5mby5wcm90byLIAQoZRmxldXJGYWlyRmFsbFNldHRsZU5v",
-          "dGlmeRITCgttaW5pZ2FtZV9pZBgPIAEoDRJGCg9zZXR0bGVfaW5mb19tYXAY",
-          "CyADKAsyLS5GbGV1ckZhaXJGYWxsU2V0dGxlTm90aWZ5LlNldHRsZUluZm9N",
-          "YXBFbnRyeRpOChJTZXR0bGVJbmZvTWFwRW50cnkSCwoDa2V5GAEgASgNEicK",
-          "BXZhbHVlGAIgASgLMhguRmxldXJGYWlyRmFsbFNldHRsZUluZm86AjgBQh4K",
-          "HGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::FleurFairFallSettleInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FleurFairFallSettleNotify), global::FleurFairFallSettleNotify.Parser, new[]{ "MinigameId", "SettleInfoMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for FleurFairFallSettleNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FleurFairFallSettleNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch9GbGV1ckZhaXJGYWxsU2V0dGxlTm90aWZ5LnByb3RvGh1GbGV1ckZhaXJG",
+            "YWxsU2V0dGxlSW5mby5wcm90byLIAQoZRmxldXJGYWlyRmFsbFNldHRsZU5v",
+            "dGlmeRITCgttaW5pZ2FtZV9pZBgPIAEoDRJGCg9zZXR0bGVfaW5mb19tYXAY",
+            "CyADKAsyLS5GbGV1ckZhaXJGYWxsU2V0dGxlTm90aWZ5LlNldHRsZUluZm9N",
+            "YXBFbnRyeRpOChJTZXR0bGVJbmZvTWFwRW50cnkSCwoDa2V5GAEgASgNEicK",
+            "BXZhbHVlGAIgASgLMhguRmxldXJGYWlyRmFsbFNldHRsZUluZm86AjgBQgyq",
+            "AglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.FleurFairFallSettleInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.FleurFairFallSettleNotify), global::OldProtos.FleurFairFallSettleNotify.Parser, new[]{ "MinigameId", "SettleInfoMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 2017
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class FleurFairFallSettleNotify : pb::IMessage<FleurFairFallSettleNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FleurFairFallSettleNotify> _parser = new pb::MessageParser<FleurFairFallSettleNotify>(() => new FleurFairFallSettleNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FleurFairFallSettleNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.FleurFairFallSettleNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FleurFairFallSettleNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FleurFairFallSettleNotify(FleurFairFallSettleNotify other) : this() {
+      minigameId_ = other.minigameId_;
+      settleInfoMap_ = other.settleInfoMap_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FleurFairFallSettleNotify Clone() {
+      return new FleurFairFallSettleNotify(this);
+    }
+
+    /// <summary>Field number for the "minigame_id" field.</summary>
+    public const int MinigameIdFieldNumber = 15;
+    private uint minigameId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint MinigameId {
+      get { return minigameId_; }
+      set {
+        minigameId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "settle_info_map" field.</summary>
+    public const int SettleInfoMapFieldNumber = 11;
+    private static readonly pbc::MapField<uint, global::OldProtos.FleurFairFallSettleInfo>.Codec _map_settleInfoMap_codec
+        = new pbc::MapField<uint, global::OldProtos.FleurFairFallSettleInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::OldProtos.FleurFairFallSettleInfo.Parser), 90);
+    private readonly pbc::MapField<uint, global::OldProtos.FleurFairFallSettleInfo> settleInfoMap_ = new pbc::MapField<uint, global::OldProtos.FleurFairFallSettleInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::OldProtos.FleurFairFallSettleInfo> SettleInfoMap {
+      get { return settleInfoMap_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FleurFairFallSettleNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FleurFairFallSettleNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MinigameId != other.MinigameId) return false;
+      if (!SettleInfoMap.Equals(other.SettleInfoMap)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MinigameId != 0) hash ^= MinigameId.GetHashCode();
+      hash ^= SettleInfoMap.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      settleInfoMap_.WriteTo(output, _map_settleInfoMap_codec);
+      if (MinigameId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(MinigameId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      settleInfoMap_.WriteTo(ref output, _map_settleInfoMap_codec);
+      if (MinigameId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(MinigameId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (MinigameId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinigameId);
+      }
+      size += settleInfoMap_.CalculateSize(_map_settleInfoMap_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FleurFairFallSettleNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MinigameId != 0) {
+        MinigameId = other.MinigameId;
+      }
+      settleInfoMap_.Add(other.settleInfoMap_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 90: {
+            settleInfoMap_.AddEntriesFrom(input, _map_settleInfoMap_codec);
+            break;
+          }
+          case 120: {
+            MinigameId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 90: {
+            settleInfoMap_.AddEntriesFrom(ref input, _map_settleInfoMap_codec);
+            break;
+          }
+          case 120: {
+            MinigameId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 2017
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class FleurFairFallSettleNotify : pb::IMessage<FleurFairFallSettleNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<FleurFairFallSettleNotify> _parser = new pb::MessageParser<FleurFairFallSettleNotify>(() => new FleurFairFallSettleNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<FleurFairFallSettleNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::FleurFairFallSettleNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FleurFairFallSettleNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FleurFairFallSettleNotify(FleurFairFallSettleNotify other) : this() {
-    minigameId_ = other.minigameId_;
-    settleInfoMap_ = other.settleInfoMap_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FleurFairFallSettleNotify Clone() {
-    return new FleurFairFallSettleNotify(this);
-  }
-
-  /// <summary>Field number for the "minigame_id" field.</summary>
-  public const int MinigameIdFieldNumber = 15;
-  private uint minigameId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint MinigameId {
-    get { return minigameId_; }
-    set {
-      minigameId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "settle_info_map" field.</summary>
-  public const int SettleInfoMapFieldNumber = 11;
-  private static readonly pbc::MapField<uint, global::FleurFairFallSettleInfo>.Codec _map_settleInfoMap_codec
-      = new pbc::MapField<uint, global::FleurFairFallSettleInfo>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::FleurFairFallSettleInfo.Parser), 90);
-  private readonly pbc::MapField<uint, global::FleurFairFallSettleInfo> settleInfoMap_ = new pbc::MapField<uint, global::FleurFairFallSettleInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::FleurFairFallSettleInfo> SettleInfoMap {
-    get { return settleInfoMap_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as FleurFairFallSettleNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(FleurFairFallSettleNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (MinigameId != other.MinigameId) return false;
-    if (!SettleInfoMap.Equals(other.SettleInfoMap)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (MinigameId != 0) hash ^= MinigameId.GetHashCode();
-    hash ^= SettleInfoMap.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    settleInfoMap_.WriteTo(output, _map_settleInfoMap_codec);
-    if (MinigameId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(MinigameId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    settleInfoMap_.WriteTo(ref output, _map_settleInfoMap_codec);
-    if (MinigameId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(MinigameId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (MinigameId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MinigameId);
-    }
-    size += settleInfoMap_.CalculateSize(_map_settleInfoMap_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(FleurFairFallSettleNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.MinigameId != 0) {
-      MinigameId = other.MinigameId;
-    }
-    settleInfoMap_.Add(other.settleInfoMap_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 90: {
-          settleInfoMap_.AddEntriesFrom(input, _map_settleInfoMap_codec);
-          break;
-        }
-        case 120: {
-          MinigameId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 90: {
-          settleInfoMap_.AddEntriesFrom(ref input, _map_settleInfoMap_codec);
-          break;
-        }
-        case 120: {
-          MinigameId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

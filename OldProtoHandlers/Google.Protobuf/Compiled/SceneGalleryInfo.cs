@@ -9,2270 +9,2272 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SceneGalleryInfo.proto</summary>
-public static partial class SceneGalleryInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SceneGalleryInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SceneGalleryInfo.proto</summary>
+  public static partial class SceneGalleryInfoReflection {
 
-  static SceneGalleryInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZTY2VuZUdhbGxlcnlJbmZvLnByb3RvGhZHYWxsZXJ5U3RhZ2VUeXBlLnBy",
-          "b3RvGh1TY2VuZUdhbGxlcnlCYWxsb29uSW5mby5wcm90bxolU2NlbmVHYWxs",
-          "ZXJ5Qm91bmNlQ29uanVyaW5nSW5mby5wcm90bxohU2NlbmVHYWxsZXJ5QnJv",
-          "a2VuRmxvb3JJbmZvLnByb3RvGhxTY2VuZUdhbGxlcnlCdWxsZXRJbmZvLnBy",
-          "b3RvGiNTY2VuZUdhbGxlcnlCdW95YW50Q29tYmF0SW5mby5wcm90bxojU2Nl",
-          "bmVHYWxsZXJ5Q2hhckFtdXNlbWVudEluZm8ucHJvdG8aIVNjZW5lR2FsbGVy",
-          "eUNvaW5Db2xsZWN0SW5mby5wcm90bxohU2NlbmVHYWxsZXJ5Q3J5c3RhbExp",
-          "bmtJbmZvLnByb3RvGidTY2VuZUdhbGxlcnlFZmZpZ3lDaGFsbGVuZ2VWMklu",
-          "Zm8ucHJvdG8aGlNjZW5lR2FsbGVyeUZhbGxJbmZvLnByb3RvGhxTY2VuZUdh",
-          "bGxlcnlGbG93ZXJJbmZvLnByb3RvGipTY2VuZUdhbGxlcnlGdW5ndXNGaWdo",
-          "dGVyQ2FwdHVyZUluZm8ucHJvdG8aK1NjZW5lR2FsbGVyeUZ1bmd1c0ZpZ2h0",
-          "ZXJUcmFpbmluZ0luZm8ucHJvdG8aHlNjZW5lR2FsbGVyeUhhbmRiYWxsSW5m",
-          "by5wcm90bxohU2NlbmVHYWxsZXJ5SGlkZUFuZFNlZWtJbmZvLnByb3RvGiFT",
-          "Y2VuZUdhbGxlcnlIb21lQmFsbG9vbkluZm8ucHJvdG8aJ1NjZW5lR2FsbGVy",
-          "eUhvbWVTZWVrRnVybml0dXJlSW5mby5wcm90bxoiU2NlbmVHYWxsZXJ5SW5z",
-          "dGFsZVNwcmF5SW5mby5wcm90bxojU2NlbmVHYWxsZXJ5SXJvZG9yaU1hc3Rl",
-          "ckluZm8ucHJvdG8aKVNjZW5lR2FsbGVyeUlzbGFuZFBhcnR5RG93bkhpbGxJ",
-          "bmZvLnByb3RvGiVTY2VuZUdhbGxlcnlJc2xhbmRQYXJ0eVJhZnRJbmZvLnBy",
-          "b3RvGiVTY2VuZUdhbGxlcnlJc2xhbmRQYXJ0eVNhaWxJbmZvLnByb3RvGi1T",
-          "Y2VuZUdhbGxlcnlMdW1pbmFuY2VTdG9uZUNoYWxsZW5nZUluZm8ucHJvdG8a",
-          "I1NjZW5lR2FsbGVyeU11cWFkYXNQb3Rpb25JbmZvLnByb3RvGh5TY2VuZUdh",
-          "bGxlcnlQcm9ncmVzc0luZm8ucHJvdG8aI1NjZW5lR2FsbGVyeVNhbHZhZ2VF",
-          "c2NvcnRJbmZvLnByb3RvGiRTY2VuZUdhbGxlcnlTYWx2YWdlUHJldmVudElu",
-          "Zm8ucHJvdG8aJlNjZW5lR2FsbGVyeVN1bW1lclRpbWVWMkJvYXRJbmZvLnBy",
-          "b3RvGhpTY2VuZUdhbGxlcnlTdW1vSW5mby5wcm90bxokU2NlbmVHYWxsZXJ5",
-          "VHJlYXN1cmVTZWVsaWVJbmZvLnByb3RvGiRTY2VuZUdhbGxlcnlWaW50YWdl",
-          "SHVudGluZ0luZm8ucHJvdG8aH1NjZW5lR2FsbGVyeVdpbmRGaWVsZEluZm8u",
-          "cHJvdG8aIlNjZW5lR2FsbGVyeUJyaWNrQnJlYWtlckluZm8ucHJvdG8i3xEK",
-          "EFNjZW5lR2FsbGVyeUluZm8SIAoFc3RhZ2UYBSABKA4yES5HYWxsZXJ5U3Rh",
-          "Z2VUeXBlEjUKEnByb2dyZXNzX2luZm9fbGlzdBgEIAMoCzIZLlNjZW5lR2Fs",
-          "bGVyeVByb2dyZXNzSW5mbxISCgpnYWxsZXJ5X2lkGAIgASgNEhIKCnN0YXJ0",
-          "X3RpbWUYAyABKA0SEAoIZW5kX3RpbWUYCyABKA0SEQoJb3duZXJfdWlkGAkg",
-          "ASgNEhQKDHBsYXllcl9jb3VudBgBIAEoDRIaChJwcmVfc3RhcnRfZW5kX3Rp",
-          "bWUYDyABKA0SMAoMYmFsbG9vbl9pbmZvGA4gASgLMhguU2NlbmVHYWxsZXJ5",
-          "QmFsbG9vbkluZm9IABIqCglmYWxsX2luZm8YByABKAsyFS5TY2VuZUdhbGxl",
-          "cnlGYWxsSW5mb0gAEi4KC2Zsb3dlcl9pbmZvGAggASgLMhcuU2NlbmVHYWxs",
-          "ZXJ5Rmxvd2VySW5mb0gAEi4KC2J1bGxldF9pbmZvGA0gASgLMhcuU2NlbmVH",
-          "YWxsZXJ5QnVsbGV0SW5mb0gAEjkKEWJyb2tlbl9mbG9vcl9pbmZvGAogASgL",
-          "MhwuU2NlbmVHYWxsZXJ5QnJva2VuRmxvb3JJbmZvSAASOgoSaGlkZV9hbmRf",
-          "c2Vla19pbmZvGAYgASgLMhwuU2NlbmVHYWxsZXJ5SGlkZUFuZFNlZWtJbmZv",
-          "SAASPgoTYnVveWFudF9jb21iYXRfaW5mbxjoCiABKAsyHi5TY2VuZUdhbGxl",
-          "cnlCdW95YW50Q29tYmF0SW5mb0gAEkIKFWJvdW5jZV9jb25qdXJpbmdfaW5m",
-          "bxjEBSABKAsyIC5TY2VuZUdhbGxlcnlCb3VuY2VDb25qdXJpbmdJbmZvSAAS",
-          "MwoNaGFuZGJhbGxfaW5mbxjNDyABKAsyGS5TY2VuZUdhbGxlcnlIYW5kYmFs",
-          "bEluZm9IABIrCglzdW1vX2luZm8YqwYgASgLMhUuU2NlbmVHYWxsZXJ5U3Vt",
-          "b0luZm9IABJAChRzYWx2YWdlX3ByZXZlbnRfaW5mbxikDSABKAsyHy5TY2Vu",
-          "ZUdhbGxlcnlTYWx2YWdlUHJldmVudEluZm9IABI+ChNzYWx2YWdlX2VzY29y",
-          "dF9pbmZvGPcFIAEoCzIeLlNjZW5lR2FsbGVyeVNhbHZhZ2VFc2NvcnRJbmZv",
-          "SAASOgoRaG9tZV9iYWxsb29uX2luZm8YigggASgLMhwuU2NlbmVHYWxsZXJ5",
-          "SG9tZUJhbGxvb25JbmZvSAASOgoRY3J5c3RhbF9saW5rX2luZm8Y1A8gASgL",
-          "MhwuU2NlbmVHYWxsZXJ5Q3J5c3RhbExpbmtJbmZvSAASPgoTaXJvZG9yaV9t",
-          "YXN0ZXJfaW5mbxihDyABKAsyHi5TY2VuZUdhbGxlcnlJcm9kb3JpTWFzdGVy",
-          "SW5mb0gAElIKHmx1bWluYW5jZV9zdG9uZV9jaGFsbGVuZ2VfaW5mbxhqIAEo",
-          "CzIoLlNjZW5lR2FsbGVyeUx1bWluYW5jZVN0b25lQ2hhbGxlbmdlSW5mb0gA",
-          "EkcKGGhvbWVfc2Vla19mdXJuaXR1cmVfaW5mbxiwCyABKAsyIi5TY2VuZUdh",
-          "bGxlcnlIb21lU2Vla0Z1cm5pdHVyZUluZm9IABJMChtpc2xhbmRfcGFydHlf",
-          "ZG93bl9oaWxsX2luZm8YzgMgASgLMiQuU2NlbmVHYWxsZXJ5SXNsYW5kUGFy",
-          "dHlEb3duSGlsbEluZm9IABJGChhzdW1tZXJfdGltZV92Ml9ib2F0X2luZm8Y",
-          "qAIgASgLMiEuU2NlbmVHYWxsZXJ5U3VtbWVyVGltZVYyQm9hdEluZm9IABJD",
-          "ChZpc2xhbmRfcGFydHlfcmFmdF9pbmZvGI0OIAEoCzIgLlNjZW5lR2FsbGVy",
-          "eUlzbGFuZFBhcnR5UmFmdEluZm9IABJDChZpc2xhbmRfcGFydHlfc2FpbF9p",
-          "bmZvGO0IIAEoCzIgLlNjZW5lR2FsbGVyeUlzbGFuZFBhcnR5U2FpbEluZm9I",
-          "ABI9ChNpbnN0YWJsZV9zcHJheV9pbmZvGKwJIAEoCzIdLlNjZW5lR2FsbGVy",
-          "eUluc3RhbGVTcHJheUluZm9IABI+ChNtdXFhZGFzX3BvdGlvbl9pbmZvGOEG",
-          "IAEoCzIeLlNjZW5lR2FsbGVyeU11cWFkYXNQb3Rpb25JbmZvSAASQAoUdHJl",
-          "YXN1cmVfc2VlbGllX2luZm8Y9QsgASgLMh8uU2NlbmVHYWxsZXJ5VHJlYXN1",
-          "cmVTZWVsaWVJbmZvSAASQAoUdmludGFnZV9odW50aW5nX2luZm8Y/gEgASgL",
-          "Mh8uU2NlbmVHYWxsZXJ5VmludGFnZUh1bnRpbmdJbmZvSAASNgoPd2luZF9m",
-          "aWVsZF9pbmZvGLgIIAEoCzIaLlNjZW5lR2FsbGVyeVdpbmRGaWVsZEluZm9I",
-          "ABJPChxmdW5ndXNfZmlnaHRlcl90cmFpbmluZ19pbmZvGLAKIAEoCzImLlNj",
-          "ZW5lR2FsbGVyeUZ1bmd1c0ZpZ2h0ZXJUcmFpbmluZ0luZm9IABJEChVlZmZp",
-          "Z3lfY2hhbGxlbmdlX2luZm8Y8gYgASgLMiIuU2NlbmVHYWxsZXJ5RWZmaWd5",
-          "Q2hhbGxlbmdlVjJJbmZvSAASTQobZnVuZ3VzX2ZpZ2h0ZXJfY2FwdHVyZV9p",
-          "bmZvGKYDIAEoCzIlLlNjZW5lR2FsbGVyeUZ1bmd1c0ZpZ2h0ZXJDYXB0dXJl",
-          "SW5mb0gAEj4KE2NoYXJfYW11c2VtZW50X2luZm8YvgggASgLMh4uU2NlbmVH",
-          "YWxsZXJ5Q2hhckFtdXNlbWVudEluZm9IABI8ChJicmlja19icmVha2VyX2lu",
-          "Zm8YkQsgASgLMh0uU2NlbmVHYWxsZXJ5QnJpY2tCcmVha2VySW5mb0gAEjoK",
-          "EWNvaW5fY29sbGVjdF9pbmZvGKYMIAEoCzIcLlNjZW5lR2FsbGVyeUNvaW5D",
-          "b2xsZWN0SW5mb0gAQgYKBGluZm9CHgocZW11LmdyYXNzY3V0dGVyLm5ldC5v",
-          "bGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GalleryStageTypeReflection.Descriptor, global::SceneGalleryBalloonInfoReflection.Descriptor, global::SceneGalleryBounceConjuringInfoReflection.Descriptor, global::SceneGalleryBrokenFloorInfoReflection.Descriptor, global::SceneGalleryBulletInfoReflection.Descriptor, global::SceneGalleryBuoyantCombatInfoReflection.Descriptor, global::SceneGalleryCharAmusementInfoReflection.Descriptor, global::SceneGalleryCoinCollectInfoReflection.Descriptor, global::SceneGalleryCrystalLinkInfoReflection.Descriptor, global::SceneGalleryEffigyChallengeV2InfoReflection.Descriptor, global::SceneGalleryFallInfoReflection.Descriptor, global::SceneGalleryFlowerInfoReflection.Descriptor, global::SceneGalleryFungusFighterCaptureInfoReflection.Descriptor, global::SceneGalleryFungusFighterTrainingInfoReflection.Descriptor, global::SceneGalleryHandballInfoReflection.Descriptor, global::SceneGalleryHideAndSeekInfoReflection.Descriptor, global::SceneGalleryHomeBalloonInfoReflection.Descriptor, global::SceneGalleryHomeSeekFurnitureInfoReflection.Descriptor, global::SceneGalleryInstaleSprayInfoReflection.Descriptor, global::SceneGalleryIrodoriMasterInfoReflection.Descriptor, global::SceneGalleryIslandPartyDownHillInfoReflection.Descriptor, global::SceneGalleryIslandPartyRaftInfoReflection.Descriptor, global::SceneGalleryIslandPartySailInfoReflection.Descriptor, global::SceneGalleryLuminanceStoneChallengeInfoReflection.Descriptor, global::SceneGalleryMuqadasPotionInfoReflection.Descriptor, global::SceneGalleryProgressInfoReflection.Descriptor, global::SceneGallerySalvageEscortInfoReflection.Descriptor, global::SceneGallerySalvagePreventInfoReflection.Descriptor, global::SceneGallerySummerTimeV2BoatInfoReflection.Descriptor, global::SceneGallerySumoInfoReflection.Descriptor, global::SceneGalleryTreasureSeelieInfoReflection.Descriptor, global::SceneGalleryVintageHuntingInfoReflection.Descriptor, global::SceneGalleryWindFieldInfoReflection.Descriptor, global::SceneGalleryBrickBreakerInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SceneGalleryInfo), global::SceneGalleryInfo.Parser, new[]{ "Stage", "ProgressInfoList", "GalleryId", "StartTime", "EndTime", "OwnerUid", "PlayerCount", "PreStartEndTime", "BalloonInfo", "FallInfo", "FlowerInfo", "BulletInfo", "BrokenFloorInfo", "HideAndSeekInfo", "BuoyantCombatInfo", "BounceConjuringInfo", "HandballInfo", "SumoInfo", "SalvagePreventInfo", "SalvageEscortInfo", "HomeBalloonInfo", "CrystalLinkInfo", "IrodoriMasterInfo", "LuminanceStoneChallengeInfo", "HomeSeekFurnitureInfo", "IslandPartyDownHillInfo", "SummerTimeV2BoatInfo", "IslandPartyRaftInfo", "IslandPartySailInfo", "InstableSprayInfo", "MuqadasPotionInfo", "TreasureSeelieInfo", "VintageHuntingInfo", "WindFieldInfo", "FungusFighterTrainingInfo", "EffigyChallengeInfo", "FungusFighterCaptureInfo", "CharAmusementInfo", "BrickBreakerInfo", "CoinCollectInfo" }, new[]{ "Info" }, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SceneGalleryInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SceneGalleryInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZTY2VuZUdhbGxlcnlJbmZvLnByb3RvGhZHYWxsZXJ5U3RhZ2VUeXBlLnBy",
+            "b3RvGh1TY2VuZUdhbGxlcnlCYWxsb29uSW5mby5wcm90bxolU2NlbmVHYWxs",
+            "ZXJ5Qm91bmNlQ29uanVyaW5nSW5mby5wcm90bxohU2NlbmVHYWxsZXJ5QnJv",
+            "a2VuRmxvb3JJbmZvLnByb3RvGhxTY2VuZUdhbGxlcnlCdWxsZXRJbmZvLnBy",
+            "b3RvGiNTY2VuZUdhbGxlcnlCdW95YW50Q29tYmF0SW5mby5wcm90bxojU2Nl",
+            "bmVHYWxsZXJ5Q2hhckFtdXNlbWVudEluZm8ucHJvdG8aIVNjZW5lR2FsbGVy",
+            "eUNvaW5Db2xsZWN0SW5mby5wcm90bxohU2NlbmVHYWxsZXJ5Q3J5c3RhbExp",
+            "bmtJbmZvLnByb3RvGidTY2VuZUdhbGxlcnlFZmZpZ3lDaGFsbGVuZ2VWMklu",
+            "Zm8ucHJvdG8aGlNjZW5lR2FsbGVyeUZhbGxJbmZvLnByb3RvGhxTY2VuZUdh",
+            "bGxlcnlGbG93ZXJJbmZvLnByb3RvGipTY2VuZUdhbGxlcnlGdW5ndXNGaWdo",
+            "dGVyQ2FwdHVyZUluZm8ucHJvdG8aK1NjZW5lR2FsbGVyeUZ1bmd1c0ZpZ2h0",
+            "ZXJUcmFpbmluZ0luZm8ucHJvdG8aHlNjZW5lR2FsbGVyeUhhbmRiYWxsSW5m",
+            "by5wcm90bxohU2NlbmVHYWxsZXJ5SGlkZUFuZFNlZWtJbmZvLnByb3RvGiFT",
+            "Y2VuZUdhbGxlcnlIb21lQmFsbG9vbkluZm8ucHJvdG8aJ1NjZW5lR2FsbGVy",
+            "eUhvbWVTZWVrRnVybml0dXJlSW5mby5wcm90bxoiU2NlbmVHYWxsZXJ5SW5z",
+            "dGFsZVNwcmF5SW5mby5wcm90bxojU2NlbmVHYWxsZXJ5SXJvZG9yaU1hc3Rl",
+            "ckluZm8ucHJvdG8aKVNjZW5lR2FsbGVyeUlzbGFuZFBhcnR5RG93bkhpbGxJ",
+            "bmZvLnByb3RvGiVTY2VuZUdhbGxlcnlJc2xhbmRQYXJ0eVJhZnRJbmZvLnBy",
+            "b3RvGiVTY2VuZUdhbGxlcnlJc2xhbmRQYXJ0eVNhaWxJbmZvLnByb3RvGi1T",
+            "Y2VuZUdhbGxlcnlMdW1pbmFuY2VTdG9uZUNoYWxsZW5nZUluZm8ucHJvdG8a",
+            "I1NjZW5lR2FsbGVyeU11cWFkYXNQb3Rpb25JbmZvLnByb3RvGh5TY2VuZUdh",
+            "bGxlcnlQcm9ncmVzc0luZm8ucHJvdG8aI1NjZW5lR2FsbGVyeVNhbHZhZ2VF",
+            "c2NvcnRJbmZvLnByb3RvGiRTY2VuZUdhbGxlcnlTYWx2YWdlUHJldmVudElu",
+            "Zm8ucHJvdG8aJlNjZW5lR2FsbGVyeVN1bW1lclRpbWVWMkJvYXRJbmZvLnBy",
+            "b3RvGhpTY2VuZUdhbGxlcnlTdW1vSW5mby5wcm90bxokU2NlbmVHYWxsZXJ5",
+            "VHJlYXN1cmVTZWVsaWVJbmZvLnByb3RvGiRTY2VuZUdhbGxlcnlWaW50YWdl",
+            "SHVudGluZ0luZm8ucHJvdG8aH1NjZW5lR2FsbGVyeVdpbmRGaWVsZEluZm8u",
+            "cHJvdG8aIlNjZW5lR2FsbGVyeUJyaWNrQnJlYWtlckluZm8ucHJvdG8i3xEK",
+            "EFNjZW5lR2FsbGVyeUluZm8SIAoFc3RhZ2UYBSABKA4yES5HYWxsZXJ5U3Rh",
+            "Z2VUeXBlEjUKEnByb2dyZXNzX2luZm9fbGlzdBgEIAMoCzIZLlNjZW5lR2Fs",
+            "bGVyeVByb2dyZXNzSW5mbxISCgpnYWxsZXJ5X2lkGAIgASgNEhIKCnN0YXJ0",
+            "X3RpbWUYAyABKA0SEAoIZW5kX3RpbWUYCyABKA0SEQoJb3duZXJfdWlkGAkg",
+            "ASgNEhQKDHBsYXllcl9jb3VudBgBIAEoDRIaChJwcmVfc3RhcnRfZW5kX3Rp",
+            "bWUYDyABKA0SMAoMYmFsbG9vbl9pbmZvGA4gASgLMhguU2NlbmVHYWxsZXJ5",
+            "QmFsbG9vbkluZm9IABIqCglmYWxsX2luZm8YByABKAsyFS5TY2VuZUdhbGxl",
+            "cnlGYWxsSW5mb0gAEi4KC2Zsb3dlcl9pbmZvGAggASgLMhcuU2NlbmVHYWxs",
+            "ZXJ5Rmxvd2VySW5mb0gAEi4KC2J1bGxldF9pbmZvGA0gASgLMhcuU2NlbmVH",
+            "YWxsZXJ5QnVsbGV0SW5mb0gAEjkKEWJyb2tlbl9mbG9vcl9pbmZvGAogASgL",
+            "MhwuU2NlbmVHYWxsZXJ5QnJva2VuRmxvb3JJbmZvSAASOgoSaGlkZV9hbmRf",
+            "c2Vla19pbmZvGAYgASgLMhwuU2NlbmVHYWxsZXJ5SGlkZUFuZFNlZWtJbmZv",
+            "SAASPgoTYnVveWFudF9jb21iYXRfaW5mbxjoCiABKAsyHi5TY2VuZUdhbGxl",
+            "cnlCdW95YW50Q29tYmF0SW5mb0gAEkIKFWJvdW5jZV9jb25qdXJpbmdfaW5m",
+            "bxjEBSABKAsyIC5TY2VuZUdhbGxlcnlCb3VuY2VDb25qdXJpbmdJbmZvSAAS",
+            "MwoNaGFuZGJhbGxfaW5mbxjNDyABKAsyGS5TY2VuZUdhbGxlcnlIYW5kYmFs",
+            "bEluZm9IABIrCglzdW1vX2luZm8YqwYgASgLMhUuU2NlbmVHYWxsZXJ5U3Vt",
+            "b0luZm9IABJAChRzYWx2YWdlX3ByZXZlbnRfaW5mbxikDSABKAsyHy5TY2Vu",
+            "ZUdhbGxlcnlTYWx2YWdlUHJldmVudEluZm9IABI+ChNzYWx2YWdlX2VzY29y",
+            "dF9pbmZvGPcFIAEoCzIeLlNjZW5lR2FsbGVyeVNhbHZhZ2VFc2NvcnRJbmZv",
+            "SAASOgoRaG9tZV9iYWxsb29uX2luZm8YigggASgLMhwuU2NlbmVHYWxsZXJ5",
+            "SG9tZUJhbGxvb25JbmZvSAASOgoRY3J5c3RhbF9saW5rX2luZm8Y1A8gASgL",
+            "MhwuU2NlbmVHYWxsZXJ5Q3J5c3RhbExpbmtJbmZvSAASPgoTaXJvZG9yaV9t",
+            "YXN0ZXJfaW5mbxihDyABKAsyHi5TY2VuZUdhbGxlcnlJcm9kb3JpTWFzdGVy",
+            "SW5mb0gAElIKHmx1bWluYW5jZV9zdG9uZV9jaGFsbGVuZ2VfaW5mbxhqIAEo",
+            "CzIoLlNjZW5lR2FsbGVyeUx1bWluYW5jZVN0b25lQ2hhbGxlbmdlSW5mb0gA",
+            "EkcKGGhvbWVfc2Vla19mdXJuaXR1cmVfaW5mbxiwCyABKAsyIi5TY2VuZUdh",
+            "bGxlcnlIb21lU2Vla0Z1cm5pdHVyZUluZm9IABJMChtpc2xhbmRfcGFydHlf",
+            "ZG93bl9oaWxsX2luZm8YzgMgASgLMiQuU2NlbmVHYWxsZXJ5SXNsYW5kUGFy",
+            "dHlEb3duSGlsbEluZm9IABJGChhzdW1tZXJfdGltZV92Ml9ib2F0X2luZm8Y",
+            "qAIgASgLMiEuU2NlbmVHYWxsZXJ5U3VtbWVyVGltZVYyQm9hdEluZm9IABJD",
+            "ChZpc2xhbmRfcGFydHlfcmFmdF9pbmZvGI0OIAEoCzIgLlNjZW5lR2FsbGVy",
+            "eUlzbGFuZFBhcnR5UmFmdEluZm9IABJDChZpc2xhbmRfcGFydHlfc2FpbF9p",
+            "bmZvGO0IIAEoCzIgLlNjZW5lR2FsbGVyeUlzbGFuZFBhcnR5U2FpbEluZm9I",
+            "ABI9ChNpbnN0YWJsZV9zcHJheV9pbmZvGKwJIAEoCzIdLlNjZW5lR2FsbGVy",
+            "eUluc3RhbGVTcHJheUluZm9IABI+ChNtdXFhZGFzX3BvdGlvbl9pbmZvGOEG",
+            "IAEoCzIeLlNjZW5lR2FsbGVyeU11cWFkYXNQb3Rpb25JbmZvSAASQAoUdHJl",
+            "YXN1cmVfc2VlbGllX2luZm8Y9QsgASgLMh8uU2NlbmVHYWxsZXJ5VHJlYXN1",
+            "cmVTZWVsaWVJbmZvSAASQAoUdmludGFnZV9odW50aW5nX2luZm8Y/gEgASgL",
+            "Mh8uU2NlbmVHYWxsZXJ5VmludGFnZUh1bnRpbmdJbmZvSAASNgoPd2luZF9m",
+            "aWVsZF9pbmZvGLgIIAEoCzIaLlNjZW5lR2FsbGVyeVdpbmRGaWVsZEluZm9I",
+            "ABJPChxmdW5ndXNfZmlnaHRlcl90cmFpbmluZ19pbmZvGLAKIAEoCzImLlNj",
+            "ZW5lR2FsbGVyeUZ1bmd1c0ZpZ2h0ZXJUcmFpbmluZ0luZm9IABJEChVlZmZp",
+            "Z3lfY2hhbGxlbmdlX2luZm8Y8gYgASgLMiIuU2NlbmVHYWxsZXJ5RWZmaWd5",
+            "Q2hhbGxlbmdlVjJJbmZvSAASTQobZnVuZ3VzX2ZpZ2h0ZXJfY2FwdHVyZV9p",
+            "bmZvGKYDIAEoCzIlLlNjZW5lR2FsbGVyeUZ1bmd1c0ZpZ2h0ZXJDYXB0dXJl",
+            "SW5mb0gAEj4KE2NoYXJfYW11c2VtZW50X2luZm8YvgggASgLMh4uU2NlbmVH",
+            "YWxsZXJ5Q2hhckFtdXNlbWVudEluZm9IABI8ChJicmlja19icmVha2VyX2lu",
+            "Zm8YkQsgASgLMh0uU2NlbmVHYWxsZXJ5QnJpY2tCcmVha2VySW5mb0gAEjoK",
+            "EWNvaW5fY29sbGVjdF9pbmZvGKYMIAEoCzIcLlNjZW5lR2FsbGVyeUNvaW5D",
+            "b2xsZWN0SW5mb0gAQgYKBGluZm9CDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GalleryStageTypeReflection.Descriptor, global::OldProtos.SceneGalleryBalloonInfoReflection.Descriptor, global::OldProtos.SceneGalleryBounceConjuringInfoReflection.Descriptor, global::OldProtos.SceneGalleryBrokenFloorInfoReflection.Descriptor, global::OldProtos.SceneGalleryBulletInfoReflection.Descriptor, global::OldProtos.SceneGalleryBuoyantCombatInfoReflection.Descriptor, global::OldProtos.SceneGalleryCharAmusementInfoReflection.Descriptor, global::OldProtos.SceneGalleryCoinCollectInfoReflection.Descriptor, global::OldProtos.SceneGalleryCrystalLinkInfoReflection.Descriptor, global::OldProtos.SceneGalleryEffigyChallengeV2InfoReflection.Descriptor, global::OldProtos.SceneGalleryFallInfoReflection.Descriptor, global::OldProtos.SceneGalleryFlowerInfoReflection.Descriptor, global::OldProtos.SceneGalleryFungusFighterCaptureInfoReflection.Descriptor, global::OldProtos.SceneGalleryFungusFighterTrainingInfoReflection.Descriptor, global::OldProtos.SceneGalleryHandballInfoReflection.Descriptor, global::OldProtos.SceneGalleryHideAndSeekInfoReflection.Descriptor, global::OldProtos.SceneGalleryHomeBalloonInfoReflection.Descriptor, global::OldProtos.SceneGalleryHomeSeekFurnitureInfoReflection.Descriptor, global::OldProtos.SceneGalleryInstaleSprayInfoReflection.Descriptor, global::OldProtos.SceneGalleryIrodoriMasterInfoReflection.Descriptor, global::OldProtos.SceneGalleryIslandPartyDownHillInfoReflection.Descriptor, global::OldProtos.SceneGalleryIslandPartyRaftInfoReflection.Descriptor, global::OldProtos.SceneGalleryIslandPartySailInfoReflection.Descriptor, global::OldProtos.SceneGalleryLuminanceStoneChallengeInfoReflection.Descriptor, global::OldProtos.SceneGalleryMuqadasPotionInfoReflection.Descriptor, global::OldProtos.SceneGalleryProgressInfoReflection.Descriptor, global::OldProtos.SceneGallerySalvageEscortInfoReflection.Descriptor, global::OldProtos.SceneGallerySalvagePreventInfoReflection.Descriptor, global::OldProtos.SceneGallerySummerTimeV2BoatInfoReflection.Descriptor, global::OldProtos.SceneGallerySumoInfoReflection.Descriptor, global::OldProtos.SceneGalleryTreasureSeelieInfoReflection.Descriptor, global::OldProtos.SceneGalleryVintageHuntingInfoReflection.Descriptor, global::OldProtos.SceneGalleryWindFieldInfoReflection.Descriptor, global::OldProtos.SceneGalleryBrickBreakerInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.SceneGalleryInfo), global::OldProtos.SceneGalleryInfo.Parser, new[]{ "Stage", "ProgressInfoList", "GalleryId", "StartTime", "EndTime", "OwnerUid", "PlayerCount", "PreStartEndTime", "BalloonInfo", "FallInfo", "FlowerInfo", "BulletInfo", "BrokenFloorInfo", "HideAndSeekInfo", "BuoyantCombatInfo", "BounceConjuringInfo", "HandballInfo", "SumoInfo", "SalvagePreventInfo", "SalvageEscortInfo", "HomeBalloonInfo", "CrystalLinkInfo", "IrodoriMasterInfo", "LuminanceStoneChallengeInfo", "HomeSeekFurnitureInfo", "IslandPartyDownHillInfo", "SummerTimeV2BoatInfo", "IslandPartyRaftInfo", "IslandPartySailInfo", "InstableSprayInfo", "MuqadasPotionInfo", "TreasureSeelieInfo", "VintageHuntingInfo", "WindFieldInfo", "FungusFighterTrainingInfo", "EffigyChallengeInfo", "FungusFighterCaptureInfo", "CharAmusementInfo", "BrickBreakerInfo", "CoinCollectInfo" }, new[]{ "Info" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class SceneGalleryInfo : pb::IMessage<SceneGalleryInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SceneGalleryInfo> _parser = new pb::MessageParser<SceneGalleryInfo>(() => new SceneGalleryInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SceneGalleryInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.SceneGalleryInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneGalleryInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneGalleryInfo(SceneGalleryInfo other) : this() {
+      stage_ = other.stage_;
+      progressInfoList_ = other.progressInfoList_.Clone();
+      galleryId_ = other.galleryId_;
+      startTime_ = other.startTime_;
+      endTime_ = other.endTime_;
+      ownerUid_ = other.ownerUid_;
+      playerCount_ = other.playerCount_;
+      preStartEndTime_ = other.preStartEndTime_;
+      switch (other.InfoCase) {
+        case InfoOneofCase.BalloonInfo:
+          BalloonInfo = other.BalloonInfo.Clone();
+          break;
+        case InfoOneofCase.FallInfo:
+          FallInfo = other.FallInfo.Clone();
+          break;
+        case InfoOneofCase.FlowerInfo:
+          FlowerInfo = other.FlowerInfo.Clone();
+          break;
+        case InfoOneofCase.BulletInfo:
+          BulletInfo = other.BulletInfo.Clone();
+          break;
+        case InfoOneofCase.BrokenFloorInfo:
+          BrokenFloorInfo = other.BrokenFloorInfo.Clone();
+          break;
+        case InfoOneofCase.HideAndSeekInfo:
+          HideAndSeekInfo = other.HideAndSeekInfo.Clone();
+          break;
+        case InfoOneofCase.BuoyantCombatInfo:
+          BuoyantCombatInfo = other.BuoyantCombatInfo.Clone();
+          break;
+        case InfoOneofCase.BounceConjuringInfo:
+          BounceConjuringInfo = other.BounceConjuringInfo.Clone();
+          break;
+        case InfoOneofCase.HandballInfo:
+          HandballInfo = other.HandballInfo.Clone();
+          break;
+        case InfoOneofCase.SumoInfo:
+          SumoInfo = other.SumoInfo.Clone();
+          break;
+        case InfoOneofCase.SalvagePreventInfo:
+          SalvagePreventInfo = other.SalvagePreventInfo.Clone();
+          break;
+        case InfoOneofCase.SalvageEscortInfo:
+          SalvageEscortInfo = other.SalvageEscortInfo.Clone();
+          break;
+        case InfoOneofCase.HomeBalloonInfo:
+          HomeBalloonInfo = other.HomeBalloonInfo.Clone();
+          break;
+        case InfoOneofCase.CrystalLinkInfo:
+          CrystalLinkInfo = other.CrystalLinkInfo.Clone();
+          break;
+        case InfoOneofCase.IrodoriMasterInfo:
+          IrodoriMasterInfo = other.IrodoriMasterInfo.Clone();
+          break;
+        case InfoOneofCase.LuminanceStoneChallengeInfo:
+          LuminanceStoneChallengeInfo = other.LuminanceStoneChallengeInfo.Clone();
+          break;
+        case InfoOneofCase.HomeSeekFurnitureInfo:
+          HomeSeekFurnitureInfo = other.HomeSeekFurnitureInfo.Clone();
+          break;
+        case InfoOneofCase.IslandPartyDownHillInfo:
+          IslandPartyDownHillInfo = other.IslandPartyDownHillInfo.Clone();
+          break;
+        case InfoOneofCase.SummerTimeV2BoatInfo:
+          SummerTimeV2BoatInfo = other.SummerTimeV2BoatInfo.Clone();
+          break;
+        case InfoOneofCase.IslandPartyRaftInfo:
+          IslandPartyRaftInfo = other.IslandPartyRaftInfo.Clone();
+          break;
+        case InfoOneofCase.IslandPartySailInfo:
+          IslandPartySailInfo = other.IslandPartySailInfo.Clone();
+          break;
+        case InfoOneofCase.InstableSprayInfo:
+          InstableSprayInfo = other.InstableSprayInfo.Clone();
+          break;
+        case InfoOneofCase.MuqadasPotionInfo:
+          MuqadasPotionInfo = other.MuqadasPotionInfo.Clone();
+          break;
+        case InfoOneofCase.TreasureSeelieInfo:
+          TreasureSeelieInfo = other.TreasureSeelieInfo.Clone();
+          break;
+        case InfoOneofCase.VintageHuntingInfo:
+          VintageHuntingInfo = other.VintageHuntingInfo.Clone();
+          break;
+        case InfoOneofCase.WindFieldInfo:
+          WindFieldInfo = other.WindFieldInfo.Clone();
+          break;
+        case InfoOneofCase.FungusFighterTrainingInfo:
+          FungusFighterTrainingInfo = other.FungusFighterTrainingInfo.Clone();
+          break;
+        case InfoOneofCase.EffigyChallengeInfo:
+          EffigyChallengeInfo = other.EffigyChallengeInfo.Clone();
+          break;
+        case InfoOneofCase.FungusFighterCaptureInfo:
+          FungusFighterCaptureInfo = other.FungusFighterCaptureInfo.Clone();
+          break;
+        case InfoOneofCase.CharAmusementInfo:
+          CharAmusementInfo = other.CharAmusementInfo.Clone();
+          break;
+        case InfoOneofCase.BrickBreakerInfo:
+          BrickBreakerInfo = other.BrickBreakerInfo.Clone();
+          break;
+        case InfoOneofCase.CoinCollectInfo:
+          CoinCollectInfo = other.CoinCollectInfo.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SceneGalleryInfo Clone() {
+      return new SceneGalleryInfo(this);
+    }
+
+    /// <summary>Field number for the "stage" field.</summary>
+    public const int StageFieldNumber = 5;
+    private global::OldProtos.GalleryStageType stage_ = global::OldProtos.GalleryStageType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GalleryStageType Stage {
+      get { return stage_; }
+      set {
+        stage_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "progress_info_list" field.</summary>
+    public const int ProgressInfoListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::OldProtos.SceneGalleryProgressInfo> _repeated_progressInfoList_codec
+        = pb::FieldCodec.ForMessage(34, global::OldProtos.SceneGalleryProgressInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.SceneGalleryProgressInfo> progressInfoList_ = new pbc::RepeatedField<global::OldProtos.SceneGalleryProgressInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.SceneGalleryProgressInfo> ProgressInfoList {
+      get { return progressInfoList_; }
+    }
+
+    /// <summary>Field number for the "gallery_id" field.</summary>
+    public const int GalleryIdFieldNumber = 2;
+    private uint galleryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GalleryId {
+      get { return galleryId_; }
+      set {
+        galleryId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "start_time" field.</summary>
+    public const int StartTimeFieldNumber = 3;
+    private uint startTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint StartTime {
+      get { return startTime_; }
+      set {
+        startTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "end_time" field.</summary>
+    public const int EndTimeFieldNumber = 11;
+    private uint endTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EndTime {
+      get { return endTime_; }
+      set {
+        endTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "owner_uid" field.</summary>
+    public const int OwnerUidFieldNumber = 9;
+    private uint ownerUid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OwnerUid {
+      get { return ownerUid_; }
+      set {
+        ownerUid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "player_count" field.</summary>
+    public const int PlayerCountFieldNumber = 1;
+    private uint playerCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PlayerCount {
+      get { return playerCount_; }
+      set {
+        playerCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pre_start_end_time" field.</summary>
+    public const int PreStartEndTimeFieldNumber = 15;
+    private uint preStartEndTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PreStartEndTime {
+      get { return preStartEndTime_; }
+      set {
+        preStartEndTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "balloon_info" field.</summary>
+    public const int BalloonInfoFieldNumber = 14;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryBalloonInfo BalloonInfo {
+      get { return infoCase_ == InfoOneofCase.BalloonInfo ? (global::OldProtos.SceneGalleryBalloonInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.BalloonInfo;
+      }
+    }
+
+    /// <summary>Field number for the "fall_info" field.</summary>
+    public const int FallInfoFieldNumber = 7;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryFallInfo FallInfo {
+      get { return infoCase_ == InfoOneofCase.FallInfo ? (global::OldProtos.SceneGalleryFallInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.FallInfo;
+      }
+    }
+
+    /// <summary>Field number for the "flower_info" field.</summary>
+    public const int FlowerInfoFieldNumber = 8;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryFlowerInfo FlowerInfo {
+      get { return infoCase_ == InfoOneofCase.FlowerInfo ? (global::OldProtos.SceneGalleryFlowerInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.FlowerInfo;
+      }
+    }
+
+    /// <summary>Field number for the "bullet_info" field.</summary>
+    public const int BulletInfoFieldNumber = 13;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryBulletInfo BulletInfo {
+      get { return infoCase_ == InfoOneofCase.BulletInfo ? (global::OldProtos.SceneGalleryBulletInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.BulletInfo;
+      }
+    }
+
+    /// <summary>Field number for the "broken_floor_info" field.</summary>
+    public const int BrokenFloorInfoFieldNumber = 10;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryBrokenFloorInfo BrokenFloorInfo {
+      get { return infoCase_ == InfoOneofCase.BrokenFloorInfo ? (global::OldProtos.SceneGalleryBrokenFloorInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.BrokenFloorInfo;
+      }
+    }
+
+    /// <summary>Field number for the "hide_and_seek_info" field.</summary>
+    public const int HideAndSeekInfoFieldNumber = 6;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryHideAndSeekInfo HideAndSeekInfo {
+      get { return infoCase_ == InfoOneofCase.HideAndSeekInfo ? (global::OldProtos.SceneGalleryHideAndSeekInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.HideAndSeekInfo;
+      }
+    }
+
+    /// <summary>Field number for the "buoyant_combat_info" field.</summary>
+    public const int BuoyantCombatInfoFieldNumber = 1384;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryBuoyantCombatInfo BuoyantCombatInfo {
+      get { return infoCase_ == InfoOneofCase.BuoyantCombatInfo ? (global::OldProtos.SceneGalleryBuoyantCombatInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.BuoyantCombatInfo;
+      }
+    }
+
+    /// <summary>Field number for the "bounce_conjuring_info" field.</summary>
+    public const int BounceConjuringInfoFieldNumber = 708;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryBounceConjuringInfo BounceConjuringInfo {
+      get { return infoCase_ == InfoOneofCase.BounceConjuringInfo ? (global::OldProtos.SceneGalleryBounceConjuringInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.BounceConjuringInfo;
+      }
+    }
+
+    /// <summary>Field number for the "handball_info" field.</summary>
+    public const int HandballInfoFieldNumber = 1997;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryHandballInfo HandballInfo {
+      get { return infoCase_ == InfoOneofCase.HandballInfo ? (global::OldProtos.SceneGalleryHandballInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.HandballInfo;
+      }
+    }
+
+    /// <summary>Field number for the "sumo_info" field.</summary>
+    public const int SumoInfoFieldNumber = 811;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGallerySumoInfo SumoInfo {
+      get { return infoCase_ == InfoOneofCase.SumoInfo ? (global::OldProtos.SceneGallerySumoInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.SumoInfo;
+      }
+    }
+
+    /// <summary>Field number for the "salvage_prevent_info" field.</summary>
+    public const int SalvagePreventInfoFieldNumber = 1700;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGallerySalvagePreventInfo SalvagePreventInfo {
+      get { return infoCase_ == InfoOneofCase.SalvagePreventInfo ? (global::OldProtos.SceneGallerySalvagePreventInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.SalvagePreventInfo;
+      }
+    }
+
+    /// <summary>Field number for the "salvage_escort_info" field.</summary>
+    public const int SalvageEscortInfoFieldNumber = 759;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGallerySalvageEscortInfo SalvageEscortInfo {
+      get { return infoCase_ == InfoOneofCase.SalvageEscortInfo ? (global::OldProtos.SceneGallerySalvageEscortInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.SalvageEscortInfo;
+      }
+    }
+
+    /// <summary>Field number for the "home_balloon_info" field.</summary>
+    public const int HomeBalloonInfoFieldNumber = 1034;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryHomeBalloonInfo HomeBalloonInfo {
+      get { return infoCase_ == InfoOneofCase.HomeBalloonInfo ? (global::OldProtos.SceneGalleryHomeBalloonInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.HomeBalloonInfo;
+      }
+    }
+
+    /// <summary>Field number for the "crystal_link_info" field.</summary>
+    public const int CrystalLinkInfoFieldNumber = 2004;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryCrystalLinkInfo CrystalLinkInfo {
+      get { return infoCase_ == InfoOneofCase.CrystalLinkInfo ? (global::OldProtos.SceneGalleryCrystalLinkInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.CrystalLinkInfo;
+      }
+    }
+
+    /// <summary>Field number for the "irodori_master_info" field.</summary>
+    public const int IrodoriMasterInfoFieldNumber = 1953;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryIrodoriMasterInfo IrodoriMasterInfo {
+      get { return infoCase_ == InfoOneofCase.IrodoriMasterInfo ? (global::OldProtos.SceneGalleryIrodoriMasterInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.IrodoriMasterInfo;
+      }
+    }
+
+    /// <summary>Field number for the "luminance_stone_challenge_info" field.</summary>
+    public const int LuminanceStoneChallengeInfoFieldNumber = 106;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryLuminanceStoneChallengeInfo LuminanceStoneChallengeInfo {
+      get { return infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo ? (global::OldProtos.SceneGalleryLuminanceStoneChallengeInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.LuminanceStoneChallengeInfo;
+      }
+    }
+
+    /// <summary>Field number for the "home_seek_furniture_info" field.</summary>
+    public const int HomeSeekFurnitureInfoFieldNumber = 1456;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryHomeSeekFurnitureInfo HomeSeekFurnitureInfo {
+      get { return infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo ? (global::OldProtos.SceneGalleryHomeSeekFurnitureInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.HomeSeekFurnitureInfo;
+      }
+    }
+
+    /// <summary>Field number for the "island_party_down_hill_info" field.</summary>
+    public const int IslandPartyDownHillInfoFieldNumber = 462;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryIslandPartyDownHillInfo IslandPartyDownHillInfo {
+      get { return infoCase_ == InfoOneofCase.IslandPartyDownHillInfo ? (global::OldProtos.SceneGalleryIslandPartyDownHillInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.IslandPartyDownHillInfo;
+      }
+    }
+
+    /// <summary>Field number for the "summer_time_v2_boat_info" field.</summary>
+    public const int SummerTimeV2BoatInfoFieldNumber = 296;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGallerySummerTimeV2BoatInfo SummerTimeV2BoatInfo {
+      get { return infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo ? (global::OldProtos.SceneGallerySummerTimeV2BoatInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.SummerTimeV2BoatInfo;
+      }
+    }
+
+    /// <summary>Field number for the "island_party_raft_info" field.</summary>
+    public const int IslandPartyRaftInfoFieldNumber = 1805;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryIslandPartyRaftInfo IslandPartyRaftInfo {
+      get { return infoCase_ == InfoOneofCase.IslandPartyRaftInfo ? (global::OldProtos.SceneGalleryIslandPartyRaftInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.IslandPartyRaftInfo;
+      }
+    }
+
+    /// <summary>Field number for the "island_party_sail_info" field.</summary>
+    public const int IslandPartySailInfoFieldNumber = 1133;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryIslandPartySailInfo IslandPartySailInfo {
+      get { return infoCase_ == InfoOneofCase.IslandPartySailInfo ? (global::OldProtos.SceneGalleryIslandPartySailInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.IslandPartySailInfo;
+      }
+    }
+
+    /// <summary>Field number for the "instable_spray_info" field.</summary>
+    public const int InstableSprayInfoFieldNumber = 1196;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryInstaleSprayInfo InstableSprayInfo {
+      get { return infoCase_ == InfoOneofCase.InstableSprayInfo ? (global::OldProtos.SceneGalleryInstaleSprayInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.InstableSprayInfo;
+      }
+    }
+
+    /// <summary>Field number for the "muqadas_potion_info" field.</summary>
+    public const int MuqadasPotionInfoFieldNumber = 865;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryMuqadasPotionInfo MuqadasPotionInfo {
+      get { return infoCase_ == InfoOneofCase.MuqadasPotionInfo ? (global::OldProtos.SceneGalleryMuqadasPotionInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.MuqadasPotionInfo;
+      }
+    }
+
+    /// <summary>Field number for the "treasure_seelie_info" field.</summary>
+    public const int TreasureSeelieInfoFieldNumber = 1525;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryTreasureSeelieInfo TreasureSeelieInfo {
+      get { return infoCase_ == InfoOneofCase.TreasureSeelieInfo ? (global::OldProtos.SceneGalleryTreasureSeelieInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.TreasureSeelieInfo;
+      }
+    }
+
+    /// <summary>Field number for the "vintage_hunting_info" field.</summary>
+    public const int VintageHuntingInfoFieldNumber = 254;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryVintageHuntingInfo VintageHuntingInfo {
+      get { return infoCase_ == InfoOneofCase.VintageHuntingInfo ? (global::OldProtos.SceneGalleryVintageHuntingInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.VintageHuntingInfo;
+      }
+    }
+
+    /// <summary>Field number for the "wind_field_info" field.</summary>
+    public const int WindFieldInfoFieldNumber = 1080;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryWindFieldInfo WindFieldInfo {
+      get { return infoCase_ == InfoOneofCase.WindFieldInfo ? (global::OldProtos.SceneGalleryWindFieldInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.WindFieldInfo;
+      }
+    }
+
+    /// <summary>Field number for the "fungus_fighter_training_info" field.</summary>
+    public const int FungusFighterTrainingInfoFieldNumber = 1328;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryFungusFighterTrainingInfo FungusFighterTrainingInfo {
+      get { return infoCase_ == InfoOneofCase.FungusFighterTrainingInfo ? (global::OldProtos.SceneGalleryFungusFighterTrainingInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.FungusFighterTrainingInfo;
+      }
+    }
+
+    /// <summary>Field number for the "effigy_challenge_info" field.</summary>
+    public const int EffigyChallengeInfoFieldNumber = 882;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryEffigyChallengeV2Info EffigyChallengeInfo {
+      get { return infoCase_ == InfoOneofCase.EffigyChallengeInfo ? (global::OldProtos.SceneGalleryEffigyChallengeV2Info) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.EffigyChallengeInfo;
+      }
+    }
+
+    /// <summary>Field number for the "fungus_fighter_capture_info" field.</summary>
+    public const int FungusFighterCaptureInfoFieldNumber = 422;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryFungusFighterCaptureInfo FungusFighterCaptureInfo {
+      get { return infoCase_ == InfoOneofCase.FungusFighterCaptureInfo ? (global::OldProtos.SceneGalleryFungusFighterCaptureInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.FungusFighterCaptureInfo;
+      }
+    }
+
+    /// <summary>Field number for the "char_amusement_info" field.</summary>
+    public const int CharAmusementInfoFieldNumber = 1086;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryCharAmusementInfo CharAmusementInfo {
+      get { return infoCase_ == InfoOneofCase.CharAmusementInfo ? (global::OldProtos.SceneGalleryCharAmusementInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.CharAmusementInfo;
+      }
+    }
+
+    /// <summary>Field number for the "brick_breaker_info" field.</summary>
+    public const int BrickBreakerInfoFieldNumber = 1425;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryBrickBreakerInfo BrickBreakerInfo {
+      get { return infoCase_ == InfoOneofCase.BrickBreakerInfo ? (global::OldProtos.SceneGalleryBrickBreakerInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.BrickBreakerInfo;
+      }
+    }
+
+    /// <summary>Field number for the "coin_collect_info" field.</summary>
+    public const int CoinCollectInfoFieldNumber = 1574;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.SceneGalleryCoinCollectInfo CoinCollectInfo {
+      get { return infoCase_ == InfoOneofCase.CoinCollectInfo ? (global::OldProtos.SceneGalleryCoinCollectInfo) info_ : null; }
+      set {
+        info_ = value;
+        infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.CoinCollectInfo;
+      }
+    }
+
+    private object info_;
+    /// <summary>Enum of possible cases for the "info" oneof.</summary>
+    public enum InfoOneofCase {
+      None = 0,
+      BalloonInfo = 14,
+      FallInfo = 7,
+      FlowerInfo = 8,
+      BulletInfo = 13,
+      BrokenFloorInfo = 10,
+      HideAndSeekInfo = 6,
+      BuoyantCombatInfo = 1384,
+      BounceConjuringInfo = 708,
+      HandballInfo = 1997,
+      SumoInfo = 811,
+      SalvagePreventInfo = 1700,
+      SalvageEscortInfo = 759,
+      HomeBalloonInfo = 1034,
+      CrystalLinkInfo = 2004,
+      IrodoriMasterInfo = 1953,
+      LuminanceStoneChallengeInfo = 106,
+      HomeSeekFurnitureInfo = 1456,
+      IslandPartyDownHillInfo = 462,
+      SummerTimeV2BoatInfo = 296,
+      IslandPartyRaftInfo = 1805,
+      IslandPartySailInfo = 1133,
+      InstableSprayInfo = 1196,
+      MuqadasPotionInfo = 865,
+      TreasureSeelieInfo = 1525,
+      VintageHuntingInfo = 254,
+      WindFieldInfo = 1080,
+      FungusFighterTrainingInfo = 1328,
+      EffigyChallengeInfo = 882,
+      FungusFighterCaptureInfo = 422,
+      CharAmusementInfo = 1086,
+      BrickBreakerInfo = 1425,
+      CoinCollectInfo = 1574,
+    }
+    private InfoOneofCase infoCase_ = InfoOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InfoOneofCase InfoCase {
+      get { return infoCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearInfo() {
+      infoCase_ = InfoOneofCase.None;
+      info_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SceneGalleryInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SceneGalleryInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Stage != other.Stage) return false;
+      if(!progressInfoList_.Equals(other.progressInfoList_)) return false;
+      if (GalleryId != other.GalleryId) return false;
+      if (StartTime != other.StartTime) return false;
+      if (EndTime != other.EndTime) return false;
+      if (OwnerUid != other.OwnerUid) return false;
+      if (PlayerCount != other.PlayerCount) return false;
+      if (PreStartEndTime != other.PreStartEndTime) return false;
+      if (!object.Equals(BalloonInfo, other.BalloonInfo)) return false;
+      if (!object.Equals(FallInfo, other.FallInfo)) return false;
+      if (!object.Equals(FlowerInfo, other.FlowerInfo)) return false;
+      if (!object.Equals(BulletInfo, other.BulletInfo)) return false;
+      if (!object.Equals(BrokenFloorInfo, other.BrokenFloorInfo)) return false;
+      if (!object.Equals(HideAndSeekInfo, other.HideAndSeekInfo)) return false;
+      if (!object.Equals(BuoyantCombatInfo, other.BuoyantCombatInfo)) return false;
+      if (!object.Equals(BounceConjuringInfo, other.BounceConjuringInfo)) return false;
+      if (!object.Equals(HandballInfo, other.HandballInfo)) return false;
+      if (!object.Equals(SumoInfo, other.SumoInfo)) return false;
+      if (!object.Equals(SalvagePreventInfo, other.SalvagePreventInfo)) return false;
+      if (!object.Equals(SalvageEscortInfo, other.SalvageEscortInfo)) return false;
+      if (!object.Equals(HomeBalloonInfo, other.HomeBalloonInfo)) return false;
+      if (!object.Equals(CrystalLinkInfo, other.CrystalLinkInfo)) return false;
+      if (!object.Equals(IrodoriMasterInfo, other.IrodoriMasterInfo)) return false;
+      if (!object.Equals(LuminanceStoneChallengeInfo, other.LuminanceStoneChallengeInfo)) return false;
+      if (!object.Equals(HomeSeekFurnitureInfo, other.HomeSeekFurnitureInfo)) return false;
+      if (!object.Equals(IslandPartyDownHillInfo, other.IslandPartyDownHillInfo)) return false;
+      if (!object.Equals(SummerTimeV2BoatInfo, other.SummerTimeV2BoatInfo)) return false;
+      if (!object.Equals(IslandPartyRaftInfo, other.IslandPartyRaftInfo)) return false;
+      if (!object.Equals(IslandPartySailInfo, other.IslandPartySailInfo)) return false;
+      if (!object.Equals(InstableSprayInfo, other.InstableSprayInfo)) return false;
+      if (!object.Equals(MuqadasPotionInfo, other.MuqadasPotionInfo)) return false;
+      if (!object.Equals(TreasureSeelieInfo, other.TreasureSeelieInfo)) return false;
+      if (!object.Equals(VintageHuntingInfo, other.VintageHuntingInfo)) return false;
+      if (!object.Equals(WindFieldInfo, other.WindFieldInfo)) return false;
+      if (!object.Equals(FungusFighterTrainingInfo, other.FungusFighterTrainingInfo)) return false;
+      if (!object.Equals(EffigyChallengeInfo, other.EffigyChallengeInfo)) return false;
+      if (!object.Equals(FungusFighterCaptureInfo, other.FungusFighterCaptureInfo)) return false;
+      if (!object.Equals(CharAmusementInfo, other.CharAmusementInfo)) return false;
+      if (!object.Equals(BrickBreakerInfo, other.BrickBreakerInfo)) return false;
+      if (!object.Equals(CoinCollectInfo, other.CoinCollectInfo)) return false;
+      if (InfoCase != other.InfoCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Stage != global::OldProtos.GalleryStageType.None) hash ^= Stage.GetHashCode();
+      hash ^= progressInfoList_.GetHashCode();
+      if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
+      if (StartTime != 0) hash ^= StartTime.GetHashCode();
+      if (EndTime != 0) hash ^= EndTime.GetHashCode();
+      if (OwnerUid != 0) hash ^= OwnerUid.GetHashCode();
+      if (PlayerCount != 0) hash ^= PlayerCount.GetHashCode();
+      if (PreStartEndTime != 0) hash ^= PreStartEndTime.GetHashCode();
+      if (infoCase_ == InfoOneofCase.BalloonInfo) hash ^= BalloonInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.FallInfo) hash ^= FallInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.FlowerInfo) hash ^= FlowerInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.BulletInfo) hash ^= BulletInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.BrokenFloorInfo) hash ^= BrokenFloorInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.HideAndSeekInfo) hash ^= HideAndSeekInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.BuoyantCombatInfo) hash ^= BuoyantCombatInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.BounceConjuringInfo) hash ^= BounceConjuringInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.HandballInfo) hash ^= HandballInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.SumoInfo) hash ^= SumoInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.SalvagePreventInfo) hash ^= SalvagePreventInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.SalvageEscortInfo) hash ^= SalvageEscortInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.HomeBalloonInfo) hash ^= HomeBalloonInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.CrystalLinkInfo) hash ^= CrystalLinkInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.IrodoriMasterInfo) hash ^= IrodoriMasterInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo) hash ^= LuminanceStoneChallengeInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo) hash ^= HomeSeekFurnitureInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.IslandPartyDownHillInfo) hash ^= IslandPartyDownHillInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo) hash ^= SummerTimeV2BoatInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.IslandPartyRaftInfo) hash ^= IslandPartyRaftInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.IslandPartySailInfo) hash ^= IslandPartySailInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.InstableSprayInfo) hash ^= InstableSprayInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.MuqadasPotionInfo) hash ^= MuqadasPotionInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.TreasureSeelieInfo) hash ^= TreasureSeelieInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.VintageHuntingInfo) hash ^= VintageHuntingInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.WindFieldInfo) hash ^= WindFieldInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.FungusFighterTrainingInfo) hash ^= FungusFighterTrainingInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.EffigyChallengeInfo) hash ^= EffigyChallengeInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.FungusFighterCaptureInfo) hash ^= FungusFighterCaptureInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.CharAmusementInfo) hash ^= CharAmusementInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.BrickBreakerInfo) hash ^= BrickBreakerInfo.GetHashCode();
+      if (infoCase_ == InfoOneofCase.CoinCollectInfo) hash ^= CoinCollectInfo.GetHashCode();
+      hash ^= (int) infoCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (PlayerCount != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(PlayerCount);
+      }
+      if (GalleryId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(GalleryId);
+      }
+      if (StartTime != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(StartTime);
+      }
+      progressInfoList_.WriteTo(output, _repeated_progressInfoList_codec);
+      if (Stage != global::OldProtos.GalleryStageType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Stage);
+      }
+      if (infoCase_ == InfoOneofCase.HideAndSeekInfo) {
+        output.WriteRawTag(50);
+        output.WriteMessage(HideAndSeekInfo);
+      }
+      if (infoCase_ == InfoOneofCase.FallInfo) {
+        output.WriteRawTag(58);
+        output.WriteMessage(FallInfo);
+      }
+      if (infoCase_ == InfoOneofCase.FlowerInfo) {
+        output.WriteRawTag(66);
+        output.WriteMessage(FlowerInfo);
+      }
+      if (OwnerUid != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(OwnerUid);
+      }
+      if (infoCase_ == InfoOneofCase.BrokenFloorInfo) {
+        output.WriteRawTag(82);
+        output.WriteMessage(BrokenFloorInfo);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(EndTime);
+      }
+      if (infoCase_ == InfoOneofCase.BulletInfo) {
+        output.WriteRawTag(106);
+        output.WriteMessage(BulletInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BalloonInfo) {
+        output.WriteRawTag(114);
+        output.WriteMessage(BalloonInfo);
+      }
+      if (PreStartEndTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(PreStartEndTime);
+      }
+      if (infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo) {
+        output.WriteRawTag(210, 6);
+        output.WriteMessage(LuminanceStoneChallengeInfo);
+      }
+      if (infoCase_ == InfoOneofCase.VintageHuntingInfo) {
+        output.WriteRawTag(242, 15);
+        output.WriteMessage(VintageHuntingInfo);
+      }
+      if (infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo) {
+        output.WriteRawTag(194, 18);
+        output.WriteMessage(SummerTimeV2BoatInfo);
+      }
+      if (infoCase_ == InfoOneofCase.FungusFighterCaptureInfo) {
+        output.WriteRawTag(178, 26);
+        output.WriteMessage(FungusFighterCaptureInfo);
+      }
+      if (infoCase_ == InfoOneofCase.IslandPartyDownHillInfo) {
+        output.WriteRawTag(242, 28);
+        output.WriteMessage(IslandPartyDownHillInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BounceConjuringInfo) {
+        output.WriteRawTag(162, 44);
+        output.WriteMessage(BounceConjuringInfo);
+      }
+      if (infoCase_ == InfoOneofCase.SalvageEscortInfo) {
+        output.WriteRawTag(186, 47);
+        output.WriteMessage(SalvageEscortInfo);
+      }
+      if (infoCase_ == InfoOneofCase.SumoInfo) {
+        output.WriteRawTag(218, 50);
+        output.WriteMessage(SumoInfo);
+      }
+      if (infoCase_ == InfoOneofCase.MuqadasPotionInfo) {
+        output.WriteRawTag(138, 54);
+        output.WriteMessage(MuqadasPotionInfo);
+      }
+      if (infoCase_ == InfoOneofCase.EffigyChallengeInfo) {
+        output.WriteRawTag(146, 55);
+        output.WriteMessage(EffigyChallengeInfo);
+      }
+      if (infoCase_ == InfoOneofCase.HomeBalloonInfo) {
+        output.WriteRawTag(210, 64);
+        output.WriteMessage(HomeBalloonInfo);
+      }
+      if (infoCase_ == InfoOneofCase.WindFieldInfo) {
+        output.WriteRawTag(194, 67);
+        output.WriteMessage(WindFieldInfo);
+      }
+      if (infoCase_ == InfoOneofCase.CharAmusementInfo) {
+        output.WriteRawTag(242, 67);
+        output.WriteMessage(CharAmusementInfo);
+      }
+      if (infoCase_ == InfoOneofCase.IslandPartySailInfo) {
+        output.WriteRawTag(234, 70);
+        output.WriteMessage(IslandPartySailInfo);
+      }
+      if (infoCase_ == InfoOneofCase.InstableSprayInfo) {
+        output.WriteRawTag(226, 74);
+        output.WriteMessage(InstableSprayInfo);
+      }
+      if (infoCase_ == InfoOneofCase.FungusFighterTrainingInfo) {
+        output.WriteRawTag(130, 83);
+        output.WriteMessage(FungusFighterTrainingInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BuoyantCombatInfo) {
+        output.WriteRawTag(194, 86);
+        output.WriteMessage(BuoyantCombatInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BrickBreakerInfo) {
+        output.WriteRawTag(138, 89);
+        output.WriteMessage(BrickBreakerInfo);
+      }
+      if (infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo) {
+        output.WriteRawTag(130, 91);
+        output.WriteMessage(HomeSeekFurnitureInfo);
+      }
+      if (infoCase_ == InfoOneofCase.TreasureSeelieInfo) {
+        output.WriteRawTag(170, 95);
+        output.WriteMessage(TreasureSeelieInfo);
+      }
+      if (infoCase_ == InfoOneofCase.CoinCollectInfo) {
+        output.WriteRawTag(178, 98);
+        output.WriteMessage(CoinCollectInfo);
+      }
+      if (infoCase_ == InfoOneofCase.SalvagePreventInfo) {
+        output.WriteRawTag(162, 106);
+        output.WriteMessage(SalvagePreventInfo);
+      }
+      if (infoCase_ == InfoOneofCase.IslandPartyRaftInfo) {
+        output.WriteRawTag(234, 112);
+        output.WriteMessage(IslandPartyRaftInfo);
+      }
+      if (infoCase_ == InfoOneofCase.IrodoriMasterInfo) {
+        output.WriteRawTag(138, 122);
+        output.WriteMessage(IrodoriMasterInfo);
+      }
+      if (infoCase_ == InfoOneofCase.HandballInfo) {
+        output.WriteRawTag(234, 124);
+        output.WriteMessage(HandballInfo);
+      }
+      if (infoCase_ == InfoOneofCase.CrystalLinkInfo) {
+        output.WriteRawTag(162, 125);
+        output.WriteMessage(CrystalLinkInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (PlayerCount != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(PlayerCount);
+      }
+      if (GalleryId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(GalleryId);
+      }
+      if (StartTime != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(StartTime);
+      }
+      progressInfoList_.WriteTo(ref output, _repeated_progressInfoList_codec);
+      if (Stage != global::OldProtos.GalleryStageType.None) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) Stage);
+      }
+      if (infoCase_ == InfoOneofCase.HideAndSeekInfo) {
+        output.WriteRawTag(50);
+        output.WriteMessage(HideAndSeekInfo);
+      }
+      if (infoCase_ == InfoOneofCase.FallInfo) {
+        output.WriteRawTag(58);
+        output.WriteMessage(FallInfo);
+      }
+      if (infoCase_ == InfoOneofCase.FlowerInfo) {
+        output.WriteRawTag(66);
+        output.WriteMessage(FlowerInfo);
+      }
+      if (OwnerUid != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(OwnerUid);
+      }
+      if (infoCase_ == InfoOneofCase.BrokenFloorInfo) {
+        output.WriteRawTag(82);
+        output.WriteMessage(BrokenFloorInfo);
+      }
+      if (EndTime != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(EndTime);
+      }
+      if (infoCase_ == InfoOneofCase.BulletInfo) {
+        output.WriteRawTag(106);
+        output.WriteMessage(BulletInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BalloonInfo) {
+        output.WriteRawTag(114);
+        output.WriteMessage(BalloonInfo);
+      }
+      if (PreStartEndTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(PreStartEndTime);
+      }
+      if (infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo) {
+        output.WriteRawTag(210, 6);
+        output.WriteMessage(LuminanceStoneChallengeInfo);
+      }
+      if (infoCase_ == InfoOneofCase.VintageHuntingInfo) {
+        output.WriteRawTag(242, 15);
+        output.WriteMessage(VintageHuntingInfo);
+      }
+      if (infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo) {
+        output.WriteRawTag(194, 18);
+        output.WriteMessage(SummerTimeV2BoatInfo);
+      }
+      if (infoCase_ == InfoOneofCase.FungusFighterCaptureInfo) {
+        output.WriteRawTag(178, 26);
+        output.WriteMessage(FungusFighterCaptureInfo);
+      }
+      if (infoCase_ == InfoOneofCase.IslandPartyDownHillInfo) {
+        output.WriteRawTag(242, 28);
+        output.WriteMessage(IslandPartyDownHillInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BounceConjuringInfo) {
+        output.WriteRawTag(162, 44);
+        output.WriteMessage(BounceConjuringInfo);
+      }
+      if (infoCase_ == InfoOneofCase.SalvageEscortInfo) {
+        output.WriteRawTag(186, 47);
+        output.WriteMessage(SalvageEscortInfo);
+      }
+      if (infoCase_ == InfoOneofCase.SumoInfo) {
+        output.WriteRawTag(218, 50);
+        output.WriteMessage(SumoInfo);
+      }
+      if (infoCase_ == InfoOneofCase.MuqadasPotionInfo) {
+        output.WriteRawTag(138, 54);
+        output.WriteMessage(MuqadasPotionInfo);
+      }
+      if (infoCase_ == InfoOneofCase.EffigyChallengeInfo) {
+        output.WriteRawTag(146, 55);
+        output.WriteMessage(EffigyChallengeInfo);
+      }
+      if (infoCase_ == InfoOneofCase.HomeBalloonInfo) {
+        output.WriteRawTag(210, 64);
+        output.WriteMessage(HomeBalloonInfo);
+      }
+      if (infoCase_ == InfoOneofCase.WindFieldInfo) {
+        output.WriteRawTag(194, 67);
+        output.WriteMessage(WindFieldInfo);
+      }
+      if (infoCase_ == InfoOneofCase.CharAmusementInfo) {
+        output.WriteRawTag(242, 67);
+        output.WriteMessage(CharAmusementInfo);
+      }
+      if (infoCase_ == InfoOneofCase.IslandPartySailInfo) {
+        output.WriteRawTag(234, 70);
+        output.WriteMessage(IslandPartySailInfo);
+      }
+      if (infoCase_ == InfoOneofCase.InstableSprayInfo) {
+        output.WriteRawTag(226, 74);
+        output.WriteMessage(InstableSprayInfo);
+      }
+      if (infoCase_ == InfoOneofCase.FungusFighterTrainingInfo) {
+        output.WriteRawTag(130, 83);
+        output.WriteMessage(FungusFighterTrainingInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BuoyantCombatInfo) {
+        output.WriteRawTag(194, 86);
+        output.WriteMessage(BuoyantCombatInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BrickBreakerInfo) {
+        output.WriteRawTag(138, 89);
+        output.WriteMessage(BrickBreakerInfo);
+      }
+      if (infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo) {
+        output.WriteRawTag(130, 91);
+        output.WriteMessage(HomeSeekFurnitureInfo);
+      }
+      if (infoCase_ == InfoOneofCase.TreasureSeelieInfo) {
+        output.WriteRawTag(170, 95);
+        output.WriteMessage(TreasureSeelieInfo);
+      }
+      if (infoCase_ == InfoOneofCase.CoinCollectInfo) {
+        output.WriteRawTag(178, 98);
+        output.WriteMessage(CoinCollectInfo);
+      }
+      if (infoCase_ == InfoOneofCase.SalvagePreventInfo) {
+        output.WriteRawTag(162, 106);
+        output.WriteMessage(SalvagePreventInfo);
+      }
+      if (infoCase_ == InfoOneofCase.IslandPartyRaftInfo) {
+        output.WriteRawTag(234, 112);
+        output.WriteMessage(IslandPartyRaftInfo);
+      }
+      if (infoCase_ == InfoOneofCase.IrodoriMasterInfo) {
+        output.WriteRawTag(138, 122);
+        output.WriteMessage(IrodoriMasterInfo);
+      }
+      if (infoCase_ == InfoOneofCase.HandballInfo) {
+        output.WriteRawTag(234, 124);
+        output.WriteMessage(HandballInfo);
+      }
+      if (infoCase_ == InfoOneofCase.CrystalLinkInfo) {
+        output.WriteRawTag(162, 125);
+        output.WriteMessage(CrystalLinkInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Stage != global::OldProtos.GalleryStageType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Stage);
+      }
+      size += progressInfoList_.CalculateSize(_repeated_progressInfoList_codec);
+      if (GalleryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
+      }
+      if (StartTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StartTime);
+      }
+      if (EndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
+      }
+      if (OwnerUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OwnerUid);
+      }
+      if (PlayerCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerCount);
+      }
+      if (PreStartEndTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PreStartEndTime);
+      }
+      if (infoCase_ == InfoOneofCase.BalloonInfo) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BalloonInfo);
+      }
+      if (infoCase_ == InfoOneofCase.FallInfo) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FallInfo);
+      }
+      if (infoCase_ == InfoOneofCase.FlowerInfo) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FlowerInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BulletInfo) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BulletInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BrokenFloorInfo) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BrokenFloorInfo);
+      }
+      if (infoCase_ == InfoOneofCase.HideAndSeekInfo) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HideAndSeekInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BuoyantCombatInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(BuoyantCombatInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BounceConjuringInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(BounceConjuringInfo);
+      }
+      if (infoCase_ == InfoOneofCase.HandballInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(HandballInfo);
+      }
+      if (infoCase_ == InfoOneofCase.SumoInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SumoInfo);
+      }
+      if (infoCase_ == InfoOneofCase.SalvagePreventInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SalvagePreventInfo);
+      }
+      if (infoCase_ == InfoOneofCase.SalvageEscortInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SalvageEscortInfo);
+      }
+      if (infoCase_ == InfoOneofCase.HomeBalloonInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(HomeBalloonInfo);
+      }
+      if (infoCase_ == InfoOneofCase.CrystalLinkInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CrystalLinkInfo);
+      }
+      if (infoCase_ == InfoOneofCase.IrodoriMasterInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(IrodoriMasterInfo);
+      }
+      if (infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(LuminanceStoneChallengeInfo);
+      }
+      if (infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(HomeSeekFurnitureInfo);
+      }
+      if (infoCase_ == InfoOneofCase.IslandPartyDownHillInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(IslandPartyDownHillInfo);
+      }
+      if (infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(SummerTimeV2BoatInfo);
+      }
+      if (infoCase_ == InfoOneofCase.IslandPartyRaftInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(IslandPartyRaftInfo);
+      }
+      if (infoCase_ == InfoOneofCase.IslandPartySailInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(IslandPartySailInfo);
+      }
+      if (infoCase_ == InfoOneofCase.InstableSprayInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(InstableSprayInfo);
+      }
+      if (infoCase_ == InfoOneofCase.MuqadasPotionInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(MuqadasPotionInfo);
+      }
+      if (infoCase_ == InfoOneofCase.TreasureSeelieInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(TreasureSeelieInfo);
+      }
+      if (infoCase_ == InfoOneofCase.VintageHuntingInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(VintageHuntingInfo);
+      }
+      if (infoCase_ == InfoOneofCase.WindFieldInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(WindFieldInfo);
+      }
+      if (infoCase_ == InfoOneofCase.FungusFighterTrainingInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(FungusFighterTrainingInfo);
+      }
+      if (infoCase_ == InfoOneofCase.EffigyChallengeInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(EffigyChallengeInfo);
+      }
+      if (infoCase_ == InfoOneofCase.FungusFighterCaptureInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(FungusFighterCaptureInfo);
+      }
+      if (infoCase_ == InfoOneofCase.CharAmusementInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CharAmusementInfo);
+      }
+      if (infoCase_ == InfoOneofCase.BrickBreakerInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(BrickBreakerInfo);
+      }
+      if (infoCase_ == InfoOneofCase.CoinCollectInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CoinCollectInfo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SceneGalleryInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Stage != global::OldProtos.GalleryStageType.None) {
+        Stage = other.Stage;
+      }
+      progressInfoList_.Add(other.progressInfoList_);
+      if (other.GalleryId != 0) {
+        GalleryId = other.GalleryId;
+      }
+      if (other.StartTime != 0) {
+        StartTime = other.StartTime;
+      }
+      if (other.EndTime != 0) {
+        EndTime = other.EndTime;
+      }
+      if (other.OwnerUid != 0) {
+        OwnerUid = other.OwnerUid;
+      }
+      if (other.PlayerCount != 0) {
+        PlayerCount = other.PlayerCount;
+      }
+      if (other.PreStartEndTime != 0) {
+        PreStartEndTime = other.PreStartEndTime;
+      }
+      switch (other.InfoCase) {
+        case InfoOneofCase.BalloonInfo:
+          if (BalloonInfo == null) {
+            BalloonInfo = new global::OldProtos.SceneGalleryBalloonInfo();
+          }
+          BalloonInfo.MergeFrom(other.BalloonInfo);
+          break;
+        case InfoOneofCase.FallInfo:
+          if (FallInfo == null) {
+            FallInfo = new global::OldProtos.SceneGalleryFallInfo();
+          }
+          FallInfo.MergeFrom(other.FallInfo);
+          break;
+        case InfoOneofCase.FlowerInfo:
+          if (FlowerInfo == null) {
+            FlowerInfo = new global::OldProtos.SceneGalleryFlowerInfo();
+          }
+          FlowerInfo.MergeFrom(other.FlowerInfo);
+          break;
+        case InfoOneofCase.BulletInfo:
+          if (BulletInfo == null) {
+            BulletInfo = new global::OldProtos.SceneGalleryBulletInfo();
+          }
+          BulletInfo.MergeFrom(other.BulletInfo);
+          break;
+        case InfoOneofCase.BrokenFloorInfo:
+          if (BrokenFloorInfo == null) {
+            BrokenFloorInfo = new global::OldProtos.SceneGalleryBrokenFloorInfo();
+          }
+          BrokenFloorInfo.MergeFrom(other.BrokenFloorInfo);
+          break;
+        case InfoOneofCase.HideAndSeekInfo:
+          if (HideAndSeekInfo == null) {
+            HideAndSeekInfo = new global::OldProtos.SceneGalleryHideAndSeekInfo();
+          }
+          HideAndSeekInfo.MergeFrom(other.HideAndSeekInfo);
+          break;
+        case InfoOneofCase.BuoyantCombatInfo:
+          if (BuoyantCombatInfo == null) {
+            BuoyantCombatInfo = new global::OldProtos.SceneGalleryBuoyantCombatInfo();
+          }
+          BuoyantCombatInfo.MergeFrom(other.BuoyantCombatInfo);
+          break;
+        case InfoOneofCase.BounceConjuringInfo:
+          if (BounceConjuringInfo == null) {
+            BounceConjuringInfo = new global::OldProtos.SceneGalleryBounceConjuringInfo();
+          }
+          BounceConjuringInfo.MergeFrom(other.BounceConjuringInfo);
+          break;
+        case InfoOneofCase.HandballInfo:
+          if (HandballInfo == null) {
+            HandballInfo = new global::OldProtos.SceneGalleryHandballInfo();
+          }
+          HandballInfo.MergeFrom(other.HandballInfo);
+          break;
+        case InfoOneofCase.SumoInfo:
+          if (SumoInfo == null) {
+            SumoInfo = new global::OldProtos.SceneGallerySumoInfo();
+          }
+          SumoInfo.MergeFrom(other.SumoInfo);
+          break;
+        case InfoOneofCase.SalvagePreventInfo:
+          if (SalvagePreventInfo == null) {
+            SalvagePreventInfo = new global::OldProtos.SceneGallerySalvagePreventInfo();
+          }
+          SalvagePreventInfo.MergeFrom(other.SalvagePreventInfo);
+          break;
+        case InfoOneofCase.SalvageEscortInfo:
+          if (SalvageEscortInfo == null) {
+            SalvageEscortInfo = new global::OldProtos.SceneGallerySalvageEscortInfo();
+          }
+          SalvageEscortInfo.MergeFrom(other.SalvageEscortInfo);
+          break;
+        case InfoOneofCase.HomeBalloonInfo:
+          if (HomeBalloonInfo == null) {
+            HomeBalloonInfo = new global::OldProtos.SceneGalleryHomeBalloonInfo();
+          }
+          HomeBalloonInfo.MergeFrom(other.HomeBalloonInfo);
+          break;
+        case InfoOneofCase.CrystalLinkInfo:
+          if (CrystalLinkInfo == null) {
+            CrystalLinkInfo = new global::OldProtos.SceneGalleryCrystalLinkInfo();
+          }
+          CrystalLinkInfo.MergeFrom(other.CrystalLinkInfo);
+          break;
+        case InfoOneofCase.IrodoriMasterInfo:
+          if (IrodoriMasterInfo == null) {
+            IrodoriMasterInfo = new global::OldProtos.SceneGalleryIrodoriMasterInfo();
+          }
+          IrodoriMasterInfo.MergeFrom(other.IrodoriMasterInfo);
+          break;
+        case InfoOneofCase.LuminanceStoneChallengeInfo:
+          if (LuminanceStoneChallengeInfo == null) {
+            LuminanceStoneChallengeInfo = new global::OldProtos.SceneGalleryLuminanceStoneChallengeInfo();
+          }
+          LuminanceStoneChallengeInfo.MergeFrom(other.LuminanceStoneChallengeInfo);
+          break;
+        case InfoOneofCase.HomeSeekFurnitureInfo:
+          if (HomeSeekFurnitureInfo == null) {
+            HomeSeekFurnitureInfo = new global::OldProtos.SceneGalleryHomeSeekFurnitureInfo();
+          }
+          HomeSeekFurnitureInfo.MergeFrom(other.HomeSeekFurnitureInfo);
+          break;
+        case InfoOneofCase.IslandPartyDownHillInfo:
+          if (IslandPartyDownHillInfo == null) {
+            IslandPartyDownHillInfo = new global::OldProtos.SceneGalleryIslandPartyDownHillInfo();
+          }
+          IslandPartyDownHillInfo.MergeFrom(other.IslandPartyDownHillInfo);
+          break;
+        case InfoOneofCase.SummerTimeV2BoatInfo:
+          if (SummerTimeV2BoatInfo == null) {
+            SummerTimeV2BoatInfo = new global::OldProtos.SceneGallerySummerTimeV2BoatInfo();
+          }
+          SummerTimeV2BoatInfo.MergeFrom(other.SummerTimeV2BoatInfo);
+          break;
+        case InfoOneofCase.IslandPartyRaftInfo:
+          if (IslandPartyRaftInfo == null) {
+            IslandPartyRaftInfo = new global::OldProtos.SceneGalleryIslandPartyRaftInfo();
+          }
+          IslandPartyRaftInfo.MergeFrom(other.IslandPartyRaftInfo);
+          break;
+        case InfoOneofCase.IslandPartySailInfo:
+          if (IslandPartySailInfo == null) {
+            IslandPartySailInfo = new global::OldProtos.SceneGalleryIslandPartySailInfo();
+          }
+          IslandPartySailInfo.MergeFrom(other.IslandPartySailInfo);
+          break;
+        case InfoOneofCase.InstableSprayInfo:
+          if (InstableSprayInfo == null) {
+            InstableSprayInfo = new global::OldProtos.SceneGalleryInstaleSprayInfo();
+          }
+          InstableSprayInfo.MergeFrom(other.InstableSprayInfo);
+          break;
+        case InfoOneofCase.MuqadasPotionInfo:
+          if (MuqadasPotionInfo == null) {
+            MuqadasPotionInfo = new global::OldProtos.SceneGalleryMuqadasPotionInfo();
+          }
+          MuqadasPotionInfo.MergeFrom(other.MuqadasPotionInfo);
+          break;
+        case InfoOneofCase.TreasureSeelieInfo:
+          if (TreasureSeelieInfo == null) {
+            TreasureSeelieInfo = new global::OldProtos.SceneGalleryTreasureSeelieInfo();
+          }
+          TreasureSeelieInfo.MergeFrom(other.TreasureSeelieInfo);
+          break;
+        case InfoOneofCase.VintageHuntingInfo:
+          if (VintageHuntingInfo == null) {
+            VintageHuntingInfo = new global::OldProtos.SceneGalleryVintageHuntingInfo();
+          }
+          VintageHuntingInfo.MergeFrom(other.VintageHuntingInfo);
+          break;
+        case InfoOneofCase.WindFieldInfo:
+          if (WindFieldInfo == null) {
+            WindFieldInfo = new global::OldProtos.SceneGalleryWindFieldInfo();
+          }
+          WindFieldInfo.MergeFrom(other.WindFieldInfo);
+          break;
+        case InfoOneofCase.FungusFighterTrainingInfo:
+          if (FungusFighterTrainingInfo == null) {
+            FungusFighterTrainingInfo = new global::OldProtos.SceneGalleryFungusFighterTrainingInfo();
+          }
+          FungusFighterTrainingInfo.MergeFrom(other.FungusFighterTrainingInfo);
+          break;
+        case InfoOneofCase.EffigyChallengeInfo:
+          if (EffigyChallengeInfo == null) {
+            EffigyChallengeInfo = new global::OldProtos.SceneGalleryEffigyChallengeV2Info();
+          }
+          EffigyChallengeInfo.MergeFrom(other.EffigyChallengeInfo);
+          break;
+        case InfoOneofCase.FungusFighterCaptureInfo:
+          if (FungusFighterCaptureInfo == null) {
+            FungusFighterCaptureInfo = new global::OldProtos.SceneGalleryFungusFighterCaptureInfo();
+          }
+          FungusFighterCaptureInfo.MergeFrom(other.FungusFighterCaptureInfo);
+          break;
+        case InfoOneofCase.CharAmusementInfo:
+          if (CharAmusementInfo == null) {
+            CharAmusementInfo = new global::OldProtos.SceneGalleryCharAmusementInfo();
+          }
+          CharAmusementInfo.MergeFrom(other.CharAmusementInfo);
+          break;
+        case InfoOneofCase.BrickBreakerInfo:
+          if (BrickBreakerInfo == null) {
+            BrickBreakerInfo = new global::OldProtos.SceneGalleryBrickBreakerInfo();
+          }
+          BrickBreakerInfo.MergeFrom(other.BrickBreakerInfo);
+          break;
+        case InfoOneofCase.CoinCollectInfo:
+          if (CoinCollectInfo == null) {
+            CoinCollectInfo = new global::OldProtos.SceneGalleryCoinCollectInfo();
+          }
+          CoinCollectInfo.MergeFrom(other.CoinCollectInfo);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            PlayerCount = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            GalleryId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            StartTime = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            progressInfoList_.AddEntriesFrom(input, _repeated_progressInfoList_codec);
+            break;
+          }
+          case 40: {
+            Stage = (global::OldProtos.GalleryStageType) input.ReadEnum();
+            break;
+          }
+          case 50: {
+            global::OldProtos.SceneGalleryHideAndSeekInfo subBuilder = new global::OldProtos.SceneGalleryHideAndSeekInfo();
+            if (infoCase_ == InfoOneofCase.HideAndSeekInfo) {
+              subBuilder.MergeFrom(HideAndSeekInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HideAndSeekInfo = subBuilder;
+            break;
+          }
+          case 58: {
+            global::OldProtos.SceneGalleryFallInfo subBuilder = new global::OldProtos.SceneGalleryFallInfo();
+            if (infoCase_ == InfoOneofCase.FallInfo) {
+              subBuilder.MergeFrom(FallInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FallInfo = subBuilder;
+            break;
+          }
+          case 66: {
+            global::OldProtos.SceneGalleryFlowerInfo subBuilder = new global::OldProtos.SceneGalleryFlowerInfo();
+            if (infoCase_ == InfoOneofCase.FlowerInfo) {
+              subBuilder.MergeFrom(FlowerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FlowerInfo = subBuilder;
+            break;
+          }
+          case 72: {
+            OwnerUid = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            global::OldProtos.SceneGalleryBrokenFloorInfo subBuilder = new global::OldProtos.SceneGalleryBrokenFloorInfo();
+            if (infoCase_ == InfoOneofCase.BrokenFloorInfo) {
+              subBuilder.MergeFrom(BrokenFloorInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BrokenFloorInfo = subBuilder;
+            break;
+          }
+          case 88: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 106: {
+            global::OldProtos.SceneGalleryBulletInfo subBuilder = new global::OldProtos.SceneGalleryBulletInfo();
+            if (infoCase_ == InfoOneofCase.BulletInfo) {
+              subBuilder.MergeFrom(BulletInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BulletInfo = subBuilder;
+            break;
+          }
+          case 114: {
+            global::OldProtos.SceneGalleryBalloonInfo subBuilder = new global::OldProtos.SceneGalleryBalloonInfo();
+            if (infoCase_ == InfoOneofCase.BalloonInfo) {
+              subBuilder.MergeFrom(BalloonInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BalloonInfo = subBuilder;
+            break;
+          }
+          case 120: {
+            PreStartEndTime = input.ReadUInt32();
+            break;
+          }
+          case 850: {
+            global::OldProtos.SceneGalleryLuminanceStoneChallengeInfo subBuilder = new global::OldProtos.SceneGalleryLuminanceStoneChallengeInfo();
+            if (infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo) {
+              subBuilder.MergeFrom(LuminanceStoneChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LuminanceStoneChallengeInfo = subBuilder;
+            break;
+          }
+          case 2034: {
+            global::OldProtos.SceneGalleryVintageHuntingInfo subBuilder = new global::OldProtos.SceneGalleryVintageHuntingInfo();
+            if (infoCase_ == InfoOneofCase.VintageHuntingInfo) {
+              subBuilder.MergeFrom(VintageHuntingInfo);
+            }
+            input.ReadMessage(subBuilder);
+            VintageHuntingInfo = subBuilder;
+            break;
+          }
+          case 2370: {
+            global::OldProtos.SceneGallerySummerTimeV2BoatInfo subBuilder = new global::OldProtos.SceneGallerySummerTimeV2BoatInfo();
+            if (infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo) {
+              subBuilder.MergeFrom(SummerTimeV2BoatInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SummerTimeV2BoatInfo = subBuilder;
+            break;
+          }
+          case 3378: {
+            global::OldProtos.SceneGalleryFungusFighterCaptureInfo subBuilder = new global::OldProtos.SceneGalleryFungusFighterCaptureInfo();
+            if (infoCase_ == InfoOneofCase.FungusFighterCaptureInfo) {
+              subBuilder.MergeFrom(FungusFighterCaptureInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FungusFighterCaptureInfo = subBuilder;
+            break;
+          }
+          case 3698: {
+            global::OldProtos.SceneGalleryIslandPartyDownHillInfo subBuilder = new global::OldProtos.SceneGalleryIslandPartyDownHillInfo();
+            if (infoCase_ == InfoOneofCase.IslandPartyDownHillInfo) {
+              subBuilder.MergeFrom(IslandPartyDownHillInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IslandPartyDownHillInfo = subBuilder;
+            break;
+          }
+          case 5666: {
+            global::OldProtos.SceneGalleryBounceConjuringInfo subBuilder = new global::OldProtos.SceneGalleryBounceConjuringInfo();
+            if (infoCase_ == InfoOneofCase.BounceConjuringInfo) {
+              subBuilder.MergeFrom(BounceConjuringInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BounceConjuringInfo = subBuilder;
+            break;
+          }
+          case 6074: {
+            global::OldProtos.SceneGallerySalvageEscortInfo subBuilder = new global::OldProtos.SceneGallerySalvageEscortInfo();
+            if (infoCase_ == InfoOneofCase.SalvageEscortInfo) {
+              subBuilder.MergeFrom(SalvageEscortInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SalvageEscortInfo = subBuilder;
+            break;
+          }
+          case 6490: {
+            global::OldProtos.SceneGallerySumoInfo subBuilder = new global::OldProtos.SceneGallerySumoInfo();
+            if (infoCase_ == InfoOneofCase.SumoInfo) {
+              subBuilder.MergeFrom(SumoInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SumoInfo = subBuilder;
+            break;
+          }
+          case 6922: {
+            global::OldProtos.SceneGalleryMuqadasPotionInfo subBuilder = new global::OldProtos.SceneGalleryMuqadasPotionInfo();
+            if (infoCase_ == InfoOneofCase.MuqadasPotionInfo) {
+              subBuilder.MergeFrom(MuqadasPotionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MuqadasPotionInfo = subBuilder;
+            break;
+          }
+          case 7058: {
+            global::OldProtos.SceneGalleryEffigyChallengeV2Info subBuilder = new global::OldProtos.SceneGalleryEffigyChallengeV2Info();
+            if (infoCase_ == InfoOneofCase.EffigyChallengeInfo) {
+              subBuilder.MergeFrom(EffigyChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EffigyChallengeInfo = subBuilder;
+            break;
+          }
+          case 8274: {
+            global::OldProtos.SceneGalleryHomeBalloonInfo subBuilder = new global::OldProtos.SceneGalleryHomeBalloonInfo();
+            if (infoCase_ == InfoOneofCase.HomeBalloonInfo) {
+              subBuilder.MergeFrom(HomeBalloonInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HomeBalloonInfo = subBuilder;
+            break;
+          }
+          case 8642: {
+            global::OldProtos.SceneGalleryWindFieldInfo subBuilder = new global::OldProtos.SceneGalleryWindFieldInfo();
+            if (infoCase_ == InfoOneofCase.WindFieldInfo) {
+              subBuilder.MergeFrom(WindFieldInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WindFieldInfo = subBuilder;
+            break;
+          }
+          case 8690: {
+            global::OldProtos.SceneGalleryCharAmusementInfo subBuilder = new global::OldProtos.SceneGalleryCharAmusementInfo();
+            if (infoCase_ == InfoOneofCase.CharAmusementInfo) {
+              subBuilder.MergeFrom(CharAmusementInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CharAmusementInfo = subBuilder;
+            break;
+          }
+          case 9066: {
+            global::OldProtos.SceneGalleryIslandPartySailInfo subBuilder = new global::OldProtos.SceneGalleryIslandPartySailInfo();
+            if (infoCase_ == InfoOneofCase.IslandPartySailInfo) {
+              subBuilder.MergeFrom(IslandPartySailInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IslandPartySailInfo = subBuilder;
+            break;
+          }
+          case 9570: {
+            global::OldProtos.SceneGalleryInstaleSprayInfo subBuilder = new global::OldProtos.SceneGalleryInstaleSprayInfo();
+            if (infoCase_ == InfoOneofCase.InstableSprayInfo) {
+              subBuilder.MergeFrom(InstableSprayInfo);
+            }
+            input.ReadMessage(subBuilder);
+            InstableSprayInfo = subBuilder;
+            break;
+          }
+          case 10626: {
+            global::OldProtos.SceneGalleryFungusFighterTrainingInfo subBuilder = new global::OldProtos.SceneGalleryFungusFighterTrainingInfo();
+            if (infoCase_ == InfoOneofCase.FungusFighterTrainingInfo) {
+              subBuilder.MergeFrom(FungusFighterTrainingInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FungusFighterTrainingInfo = subBuilder;
+            break;
+          }
+          case 11074: {
+            global::OldProtos.SceneGalleryBuoyantCombatInfo subBuilder = new global::OldProtos.SceneGalleryBuoyantCombatInfo();
+            if (infoCase_ == InfoOneofCase.BuoyantCombatInfo) {
+              subBuilder.MergeFrom(BuoyantCombatInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BuoyantCombatInfo = subBuilder;
+            break;
+          }
+          case 11402: {
+            global::OldProtos.SceneGalleryBrickBreakerInfo subBuilder = new global::OldProtos.SceneGalleryBrickBreakerInfo();
+            if (infoCase_ == InfoOneofCase.BrickBreakerInfo) {
+              subBuilder.MergeFrom(BrickBreakerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BrickBreakerInfo = subBuilder;
+            break;
+          }
+          case 11650: {
+            global::OldProtos.SceneGalleryHomeSeekFurnitureInfo subBuilder = new global::OldProtos.SceneGalleryHomeSeekFurnitureInfo();
+            if (infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo) {
+              subBuilder.MergeFrom(HomeSeekFurnitureInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HomeSeekFurnitureInfo = subBuilder;
+            break;
+          }
+          case 12202: {
+            global::OldProtos.SceneGalleryTreasureSeelieInfo subBuilder = new global::OldProtos.SceneGalleryTreasureSeelieInfo();
+            if (infoCase_ == InfoOneofCase.TreasureSeelieInfo) {
+              subBuilder.MergeFrom(TreasureSeelieInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TreasureSeelieInfo = subBuilder;
+            break;
+          }
+          case 12594: {
+            global::OldProtos.SceneGalleryCoinCollectInfo subBuilder = new global::OldProtos.SceneGalleryCoinCollectInfo();
+            if (infoCase_ == InfoOneofCase.CoinCollectInfo) {
+              subBuilder.MergeFrom(CoinCollectInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CoinCollectInfo = subBuilder;
+            break;
+          }
+          case 13602: {
+            global::OldProtos.SceneGallerySalvagePreventInfo subBuilder = new global::OldProtos.SceneGallerySalvagePreventInfo();
+            if (infoCase_ == InfoOneofCase.SalvagePreventInfo) {
+              subBuilder.MergeFrom(SalvagePreventInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SalvagePreventInfo = subBuilder;
+            break;
+          }
+          case 14442: {
+            global::OldProtos.SceneGalleryIslandPartyRaftInfo subBuilder = new global::OldProtos.SceneGalleryIslandPartyRaftInfo();
+            if (infoCase_ == InfoOneofCase.IslandPartyRaftInfo) {
+              subBuilder.MergeFrom(IslandPartyRaftInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IslandPartyRaftInfo = subBuilder;
+            break;
+          }
+          case 15626: {
+            global::OldProtos.SceneGalleryIrodoriMasterInfo subBuilder = new global::OldProtos.SceneGalleryIrodoriMasterInfo();
+            if (infoCase_ == InfoOneofCase.IrodoriMasterInfo) {
+              subBuilder.MergeFrom(IrodoriMasterInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IrodoriMasterInfo = subBuilder;
+            break;
+          }
+          case 15978: {
+            global::OldProtos.SceneGalleryHandballInfo subBuilder = new global::OldProtos.SceneGalleryHandballInfo();
+            if (infoCase_ == InfoOneofCase.HandballInfo) {
+              subBuilder.MergeFrom(HandballInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HandballInfo = subBuilder;
+            break;
+          }
+          case 16034: {
+            global::OldProtos.SceneGalleryCrystalLinkInfo subBuilder = new global::OldProtos.SceneGalleryCrystalLinkInfo();
+            if (infoCase_ == InfoOneofCase.CrystalLinkInfo) {
+              subBuilder.MergeFrom(CrystalLinkInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CrystalLinkInfo = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            PlayerCount = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            GalleryId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            StartTime = input.ReadUInt32();
+            break;
+          }
+          case 34: {
+            progressInfoList_.AddEntriesFrom(ref input, _repeated_progressInfoList_codec);
+            break;
+          }
+          case 40: {
+            Stage = (global::OldProtos.GalleryStageType) input.ReadEnum();
+            break;
+          }
+          case 50: {
+            global::OldProtos.SceneGalleryHideAndSeekInfo subBuilder = new global::OldProtos.SceneGalleryHideAndSeekInfo();
+            if (infoCase_ == InfoOneofCase.HideAndSeekInfo) {
+              subBuilder.MergeFrom(HideAndSeekInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HideAndSeekInfo = subBuilder;
+            break;
+          }
+          case 58: {
+            global::OldProtos.SceneGalleryFallInfo subBuilder = new global::OldProtos.SceneGalleryFallInfo();
+            if (infoCase_ == InfoOneofCase.FallInfo) {
+              subBuilder.MergeFrom(FallInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FallInfo = subBuilder;
+            break;
+          }
+          case 66: {
+            global::OldProtos.SceneGalleryFlowerInfo subBuilder = new global::OldProtos.SceneGalleryFlowerInfo();
+            if (infoCase_ == InfoOneofCase.FlowerInfo) {
+              subBuilder.MergeFrom(FlowerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FlowerInfo = subBuilder;
+            break;
+          }
+          case 72: {
+            OwnerUid = input.ReadUInt32();
+            break;
+          }
+          case 82: {
+            global::OldProtos.SceneGalleryBrokenFloorInfo subBuilder = new global::OldProtos.SceneGalleryBrokenFloorInfo();
+            if (infoCase_ == InfoOneofCase.BrokenFloorInfo) {
+              subBuilder.MergeFrom(BrokenFloorInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BrokenFloorInfo = subBuilder;
+            break;
+          }
+          case 88: {
+            EndTime = input.ReadUInt32();
+            break;
+          }
+          case 106: {
+            global::OldProtos.SceneGalleryBulletInfo subBuilder = new global::OldProtos.SceneGalleryBulletInfo();
+            if (infoCase_ == InfoOneofCase.BulletInfo) {
+              subBuilder.MergeFrom(BulletInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BulletInfo = subBuilder;
+            break;
+          }
+          case 114: {
+            global::OldProtos.SceneGalleryBalloonInfo subBuilder = new global::OldProtos.SceneGalleryBalloonInfo();
+            if (infoCase_ == InfoOneofCase.BalloonInfo) {
+              subBuilder.MergeFrom(BalloonInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BalloonInfo = subBuilder;
+            break;
+          }
+          case 120: {
+            PreStartEndTime = input.ReadUInt32();
+            break;
+          }
+          case 850: {
+            global::OldProtos.SceneGalleryLuminanceStoneChallengeInfo subBuilder = new global::OldProtos.SceneGalleryLuminanceStoneChallengeInfo();
+            if (infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo) {
+              subBuilder.MergeFrom(LuminanceStoneChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            LuminanceStoneChallengeInfo = subBuilder;
+            break;
+          }
+          case 2034: {
+            global::OldProtos.SceneGalleryVintageHuntingInfo subBuilder = new global::OldProtos.SceneGalleryVintageHuntingInfo();
+            if (infoCase_ == InfoOneofCase.VintageHuntingInfo) {
+              subBuilder.MergeFrom(VintageHuntingInfo);
+            }
+            input.ReadMessage(subBuilder);
+            VintageHuntingInfo = subBuilder;
+            break;
+          }
+          case 2370: {
+            global::OldProtos.SceneGallerySummerTimeV2BoatInfo subBuilder = new global::OldProtos.SceneGallerySummerTimeV2BoatInfo();
+            if (infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo) {
+              subBuilder.MergeFrom(SummerTimeV2BoatInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SummerTimeV2BoatInfo = subBuilder;
+            break;
+          }
+          case 3378: {
+            global::OldProtos.SceneGalleryFungusFighterCaptureInfo subBuilder = new global::OldProtos.SceneGalleryFungusFighterCaptureInfo();
+            if (infoCase_ == InfoOneofCase.FungusFighterCaptureInfo) {
+              subBuilder.MergeFrom(FungusFighterCaptureInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FungusFighterCaptureInfo = subBuilder;
+            break;
+          }
+          case 3698: {
+            global::OldProtos.SceneGalleryIslandPartyDownHillInfo subBuilder = new global::OldProtos.SceneGalleryIslandPartyDownHillInfo();
+            if (infoCase_ == InfoOneofCase.IslandPartyDownHillInfo) {
+              subBuilder.MergeFrom(IslandPartyDownHillInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IslandPartyDownHillInfo = subBuilder;
+            break;
+          }
+          case 5666: {
+            global::OldProtos.SceneGalleryBounceConjuringInfo subBuilder = new global::OldProtos.SceneGalleryBounceConjuringInfo();
+            if (infoCase_ == InfoOneofCase.BounceConjuringInfo) {
+              subBuilder.MergeFrom(BounceConjuringInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BounceConjuringInfo = subBuilder;
+            break;
+          }
+          case 6074: {
+            global::OldProtos.SceneGallerySalvageEscortInfo subBuilder = new global::OldProtos.SceneGallerySalvageEscortInfo();
+            if (infoCase_ == InfoOneofCase.SalvageEscortInfo) {
+              subBuilder.MergeFrom(SalvageEscortInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SalvageEscortInfo = subBuilder;
+            break;
+          }
+          case 6490: {
+            global::OldProtos.SceneGallerySumoInfo subBuilder = new global::OldProtos.SceneGallerySumoInfo();
+            if (infoCase_ == InfoOneofCase.SumoInfo) {
+              subBuilder.MergeFrom(SumoInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SumoInfo = subBuilder;
+            break;
+          }
+          case 6922: {
+            global::OldProtos.SceneGalleryMuqadasPotionInfo subBuilder = new global::OldProtos.SceneGalleryMuqadasPotionInfo();
+            if (infoCase_ == InfoOneofCase.MuqadasPotionInfo) {
+              subBuilder.MergeFrom(MuqadasPotionInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MuqadasPotionInfo = subBuilder;
+            break;
+          }
+          case 7058: {
+            global::OldProtos.SceneGalleryEffigyChallengeV2Info subBuilder = new global::OldProtos.SceneGalleryEffigyChallengeV2Info();
+            if (infoCase_ == InfoOneofCase.EffigyChallengeInfo) {
+              subBuilder.MergeFrom(EffigyChallengeInfo);
+            }
+            input.ReadMessage(subBuilder);
+            EffigyChallengeInfo = subBuilder;
+            break;
+          }
+          case 8274: {
+            global::OldProtos.SceneGalleryHomeBalloonInfo subBuilder = new global::OldProtos.SceneGalleryHomeBalloonInfo();
+            if (infoCase_ == InfoOneofCase.HomeBalloonInfo) {
+              subBuilder.MergeFrom(HomeBalloonInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HomeBalloonInfo = subBuilder;
+            break;
+          }
+          case 8642: {
+            global::OldProtos.SceneGalleryWindFieldInfo subBuilder = new global::OldProtos.SceneGalleryWindFieldInfo();
+            if (infoCase_ == InfoOneofCase.WindFieldInfo) {
+              subBuilder.MergeFrom(WindFieldInfo);
+            }
+            input.ReadMessage(subBuilder);
+            WindFieldInfo = subBuilder;
+            break;
+          }
+          case 8690: {
+            global::OldProtos.SceneGalleryCharAmusementInfo subBuilder = new global::OldProtos.SceneGalleryCharAmusementInfo();
+            if (infoCase_ == InfoOneofCase.CharAmusementInfo) {
+              subBuilder.MergeFrom(CharAmusementInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CharAmusementInfo = subBuilder;
+            break;
+          }
+          case 9066: {
+            global::OldProtos.SceneGalleryIslandPartySailInfo subBuilder = new global::OldProtos.SceneGalleryIslandPartySailInfo();
+            if (infoCase_ == InfoOneofCase.IslandPartySailInfo) {
+              subBuilder.MergeFrom(IslandPartySailInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IslandPartySailInfo = subBuilder;
+            break;
+          }
+          case 9570: {
+            global::OldProtos.SceneGalleryInstaleSprayInfo subBuilder = new global::OldProtos.SceneGalleryInstaleSprayInfo();
+            if (infoCase_ == InfoOneofCase.InstableSprayInfo) {
+              subBuilder.MergeFrom(InstableSprayInfo);
+            }
+            input.ReadMessage(subBuilder);
+            InstableSprayInfo = subBuilder;
+            break;
+          }
+          case 10626: {
+            global::OldProtos.SceneGalleryFungusFighterTrainingInfo subBuilder = new global::OldProtos.SceneGalleryFungusFighterTrainingInfo();
+            if (infoCase_ == InfoOneofCase.FungusFighterTrainingInfo) {
+              subBuilder.MergeFrom(FungusFighterTrainingInfo);
+            }
+            input.ReadMessage(subBuilder);
+            FungusFighterTrainingInfo = subBuilder;
+            break;
+          }
+          case 11074: {
+            global::OldProtos.SceneGalleryBuoyantCombatInfo subBuilder = new global::OldProtos.SceneGalleryBuoyantCombatInfo();
+            if (infoCase_ == InfoOneofCase.BuoyantCombatInfo) {
+              subBuilder.MergeFrom(BuoyantCombatInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BuoyantCombatInfo = subBuilder;
+            break;
+          }
+          case 11402: {
+            global::OldProtos.SceneGalleryBrickBreakerInfo subBuilder = new global::OldProtos.SceneGalleryBrickBreakerInfo();
+            if (infoCase_ == InfoOneofCase.BrickBreakerInfo) {
+              subBuilder.MergeFrom(BrickBreakerInfo);
+            }
+            input.ReadMessage(subBuilder);
+            BrickBreakerInfo = subBuilder;
+            break;
+          }
+          case 11650: {
+            global::OldProtos.SceneGalleryHomeSeekFurnitureInfo subBuilder = new global::OldProtos.SceneGalleryHomeSeekFurnitureInfo();
+            if (infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo) {
+              subBuilder.MergeFrom(HomeSeekFurnitureInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HomeSeekFurnitureInfo = subBuilder;
+            break;
+          }
+          case 12202: {
+            global::OldProtos.SceneGalleryTreasureSeelieInfo subBuilder = new global::OldProtos.SceneGalleryTreasureSeelieInfo();
+            if (infoCase_ == InfoOneofCase.TreasureSeelieInfo) {
+              subBuilder.MergeFrom(TreasureSeelieInfo);
+            }
+            input.ReadMessage(subBuilder);
+            TreasureSeelieInfo = subBuilder;
+            break;
+          }
+          case 12594: {
+            global::OldProtos.SceneGalleryCoinCollectInfo subBuilder = new global::OldProtos.SceneGalleryCoinCollectInfo();
+            if (infoCase_ == InfoOneofCase.CoinCollectInfo) {
+              subBuilder.MergeFrom(CoinCollectInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CoinCollectInfo = subBuilder;
+            break;
+          }
+          case 13602: {
+            global::OldProtos.SceneGallerySalvagePreventInfo subBuilder = new global::OldProtos.SceneGallerySalvagePreventInfo();
+            if (infoCase_ == InfoOneofCase.SalvagePreventInfo) {
+              subBuilder.MergeFrom(SalvagePreventInfo);
+            }
+            input.ReadMessage(subBuilder);
+            SalvagePreventInfo = subBuilder;
+            break;
+          }
+          case 14442: {
+            global::OldProtos.SceneGalleryIslandPartyRaftInfo subBuilder = new global::OldProtos.SceneGalleryIslandPartyRaftInfo();
+            if (infoCase_ == InfoOneofCase.IslandPartyRaftInfo) {
+              subBuilder.MergeFrom(IslandPartyRaftInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IslandPartyRaftInfo = subBuilder;
+            break;
+          }
+          case 15626: {
+            global::OldProtos.SceneGalleryIrodoriMasterInfo subBuilder = new global::OldProtos.SceneGalleryIrodoriMasterInfo();
+            if (infoCase_ == InfoOneofCase.IrodoriMasterInfo) {
+              subBuilder.MergeFrom(IrodoriMasterInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IrodoriMasterInfo = subBuilder;
+            break;
+          }
+          case 15978: {
+            global::OldProtos.SceneGalleryHandballInfo subBuilder = new global::OldProtos.SceneGalleryHandballInfo();
+            if (infoCase_ == InfoOneofCase.HandballInfo) {
+              subBuilder.MergeFrom(HandballInfo);
+            }
+            input.ReadMessage(subBuilder);
+            HandballInfo = subBuilder;
+            break;
+          }
+          case 16034: {
+            global::OldProtos.SceneGalleryCrystalLinkInfo subBuilder = new global::OldProtos.SceneGalleryCrystalLinkInfo();
+            if (infoCase_ == InfoOneofCase.CrystalLinkInfo) {
+              subBuilder.MergeFrom(CrystalLinkInfo);
+            }
+            input.ReadMessage(subBuilder);
+            CrystalLinkInfo = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class SceneGalleryInfo : pb::IMessage<SceneGalleryInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SceneGalleryInfo> _parser = new pb::MessageParser<SceneGalleryInfo>(() => new SceneGalleryInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SceneGalleryInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SceneGalleryInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneGalleryInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneGalleryInfo(SceneGalleryInfo other) : this() {
-    stage_ = other.stage_;
-    progressInfoList_ = other.progressInfoList_.Clone();
-    galleryId_ = other.galleryId_;
-    startTime_ = other.startTime_;
-    endTime_ = other.endTime_;
-    ownerUid_ = other.ownerUid_;
-    playerCount_ = other.playerCount_;
-    preStartEndTime_ = other.preStartEndTime_;
-    switch (other.InfoCase) {
-      case InfoOneofCase.BalloonInfo:
-        BalloonInfo = other.BalloonInfo.Clone();
-        break;
-      case InfoOneofCase.FallInfo:
-        FallInfo = other.FallInfo.Clone();
-        break;
-      case InfoOneofCase.FlowerInfo:
-        FlowerInfo = other.FlowerInfo.Clone();
-        break;
-      case InfoOneofCase.BulletInfo:
-        BulletInfo = other.BulletInfo.Clone();
-        break;
-      case InfoOneofCase.BrokenFloorInfo:
-        BrokenFloorInfo = other.BrokenFloorInfo.Clone();
-        break;
-      case InfoOneofCase.HideAndSeekInfo:
-        HideAndSeekInfo = other.HideAndSeekInfo.Clone();
-        break;
-      case InfoOneofCase.BuoyantCombatInfo:
-        BuoyantCombatInfo = other.BuoyantCombatInfo.Clone();
-        break;
-      case InfoOneofCase.BounceConjuringInfo:
-        BounceConjuringInfo = other.BounceConjuringInfo.Clone();
-        break;
-      case InfoOneofCase.HandballInfo:
-        HandballInfo = other.HandballInfo.Clone();
-        break;
-      case InfoOneofCase.SumoInfo:
-        SumoInfo = other.SumoInfo.Clone();
-        break;
-      case InfoOneofCase.SalvagePreventInfo:
-        SalvagePreventInfo = other.SalvagePreventInfo.Clone();
-        break;
-      case InfoOneofCase.SalvageEscortInfo:
-        SalvageEscortInfo = other.SalvageEscortInfo.Clone();
-        break;
-      case InfoOneofCase.HomeBalloonInfo:
-        HomeBalloonInfo = other.HomeBalloonInfo.Clone();
-        break;
-      case InfoOneofCase.CrystalLinkInfo:
-        CrystalLinkInfo = other.CrystalLinkInfo.Clone();
-        break;
-      case InfoOneofCase.IrodoriMasterInfo:
-        IrodoriMasterInfo = other.IrodoriMasterInfo.Clone();
-        break;
-      case InfoOneofCase.LuminanceStoneChallengeInfo:
-        LuminanceStoneChallengeInfo = other.LuminanceStoneChallengeInfo.Clone();
-        break;
-      case InfoOneofCase.HomeSeekFurnitureInfo:
-        HomeSeekFurnitureInfo = other.HomeSeekFurnitureInfo.Clone();
-        break;
-      case InfoOneofCase.IslandPartyDownHillInfo:
-        IslandPartyDownHillInfo = other.IslandPartyDownHillInfo.Clone();
-        break;
-      case InfoOneofCase.SummerTimeV2BoatInfo:
-        SummerTimeV2BoatInfo = other.SummerTimeV2BoatInfo.Clone();
-        break;
-      case InfoOneofCase.IslandPartyRaftInfo:
-        IslandPartyRaftInfo = other.IslandPartyRaftInfo.Clone();
-        break;
-      case InfoOneofCase.IslandPartySailInfo:
-        IslandPartySailInfo = other.IslandPartySailInfo.Clone();
-        break;
-      case InfoOneofCase.InstableSprayInfo:
-        InstableSprayInfo = other.InstableSprayInfo.Clone();
-        break;
-      case InfoOneofCase.MuqadasPotionInfo:
-        MuqadasPotionInfo = other.MuqadasPotionInfo.Clone();
-        break;
-      case InfoOneofCase.TreasureSeelieInfo:
-        TreasureSeelieInfo = other.TreasureSeelieInfo.Clone();
-        break;
-      case InfoOneofCase.VintageHuntingInfo:
-        VintageHuntingInfo = other.VintageHuntingInfo.Clone();
-        break;
-      case InfoOneofCase.WindFieldInfo:
-        WindFieldInfo = other.WindFieldInfo.Clone();
-        break;
-      case InfoOneofCase.FungusFighterTrainingInfo:
-        FungusFighterTrainingInfo = other.FungusFighterTrainingInfo.Clone();
-        break;
-      case InfoOneofCase.EffigyChallengeInfo:
-        EffigyChallengeInfo = other.EffigyChallengeInfo.Clone();
-        break;
-      case InfoOneofCase.FungusFighterCaptureInfo:
-        FungusFighterCaptureInfo = other.FungusFighterCaptureInfo.Clone();
-        break;
-      case InfoOneofCase.CharAmusementInfo:
-        CharAmusementInfo = other.CharAmusementInfo.Clone();
-        break;
-      case InfoOneofCase.BrickBreakerInfo:
-        BrickBreakerInfo = other.BrickBreakerInfo.Clone();
-        break;
-      case InfoOneofCase.CoinCollectInfo:
-        CoinCollectInfo = other.CoinCollectInfo.Clone();
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SceneGalleryInfo Clone() {
-    return new SceneGalleryInfo(this);
-  }
-
-  /// <summary>Field number for the "stage" field.</summary>
-  public const int StageFieldNumber = 5;
-  private global::GalleryStageType stage_ = global::GalleryStageType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GalleryStageType Stage {
-    get { return stage_; }
-    set {
-      stage_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "progress_info_list" field.</summary>
-  public const int ProgressInfoListFieldNumber = 4;
-  private static readonly pb::FieldCodec<global::SceneGalleryProgressInfo> _repeated_progressInfoList_codec
-      = pb::FieldCodec.ForMessage(34, global::SceneGalleryProgressInfo.Parser);
-  private readonly pbc::RepeatedField<global::SceneGalleryProgressInfo> progressInfoList_ = new pbc::RepeatedField<global::SceneGalleryProgressInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::SceneGalleryProgressInfo> ProgressInfoList {
-    get { return progressInfoList_; }
-  }
-
-  /// <summary>Field number for the "gallery_id" field.</summary>
-  public const int GalleryIdFieldNumber = 2;
-  private uint galleryId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GalleryId {
-    get { return galleryId_; }
-    set {
-      galleryId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "start_time" field.</summary>
-  public const int StartTimeFieldNumber = 3;
-  private uint startTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint StartTime {
-    get { return startTime_; }
-    set {
-      startTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "end_time" field.</summary>
-  public const int EndTimeFieldNumber = 11;
-  private uint endTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EndTime {
-    get { return endTime_; }
-    set {
-      endTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "owner_uid" field.</summary>
-  public const int OwnerUidFieldNumber = 9;
-  private uint ownerUid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint OwnerUid {
-    get { return ownerUid_; }
-    set {
-      ownerUid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "player_count" field.</summary>
-  public const int PlayerCountFieldNumber = 1;
-  private uint playerCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PlayerCount {
-    get { return playerCount_; }
-    set {
-      playerCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "pre_start_end_time" field.</summary>
-  public const int PreStartEndTimeFieldNumber = 15;
-  private uint preStartEndTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PreStartEndTime {
-    get { return preStartEndTime_; }
-    set {
-      preStartEndTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "balloon_info" field.</summary>
-  public const int BalloonInfoFieldNumber = 14;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryBalloonInfo BalloonInfo {
-    get { return infoCase_ == InfoOneofCase.BalloonInfo ? (global::SceneGalleryBalloonInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.BalloonInfo;
-    }
-  }
-
-  /// <summary>Field number for the "fall_info" field.</summary>
-  public const int FallInfoFieldNumber = 7;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryFallInfo FallInfo {
-    get { return infoCase_ == InfoOneofCase.FallInfo ? (global::SceneGalleryFallInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.FallInfo;
-    }
-  }
-
-  /// <summary>Field number for the "flower_info" field.</summary>
-  public const int FlowerInfoFieldNumber = 8;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryFlowerInfo FlowerInfo {
-    get { return infoCase_ == InfoOneofCase.FlowerInfo ? (global::SceneGalleryFlowerInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.FlowerInfo;
-    }
-  }
-
-  /// <summary>Field number for the "bullet_info" field.</summary>
-  public const int BulletInfoFieldNumber = 13;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryBulletInfo BulletInfo {
-    get { return infoCase_ == InfoOneofCase.BulletInfo ? (global::SceneGalleryBulletInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.BulletInfo;
-    }
-  }
-
-  /// <summary>Field number for the "broken_floor_info" field.</summary>
-  public const int BrokenFloorInfoFieldNumber = 10;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryBrokenFloorInfo BrokenFloorInfo {
-    get { return infoCase_ == InfoOneofCase.BrokenFloorInfo ? (global::SceneGalleryBrokenFloorInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.BrokenFloorInfo;
-    }
-  }
-
-  /// <summary>Field number for the "hide_and_seek_info" field.</summary>
-  public const int HideAndSeekInfoFieldNumber = 6;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryHideAndSeekInfo HideAndSeekInfo {
-    get { return infoCase_ == InfoOneofCase.HideAndSeekInfo ? (global::SceneGalleryHideAndSeekInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.HideAndSeekInfo;
-    }
-  }
-
-  /// <summary>Field number for the "buoyant_combat_info" field.</summary>
-  public const int BuoyantCombatInfoFieldNumber = 1384;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryBuoyantCombatInfo BuoyantCombatInfo {
-    get { return infoCase_ == InfoOneofCase.BuoyantCombatInfo ? (global::SceneGalleryBuoyantCombatInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.BuoyantCombatInfo;
-    }
-  }
-
-  /// <summary>Field number for the "bounce_conjuring_info" field.</summary>
-  public const int BounceConjuringInfoFieldNumber = 708;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryBounceConjuringInfo BounceConjuringInfo {
-    get { return infoCase_ == InfoOneofCase.BounceConjuringInfo ? (global::SceneGalleryBounceConjuringInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.BounceConjuringInfo;
-    }
-  }
-
-  /// <summary>Field number for the "handball_info" field.</summary>
-  public const int HandballInfoFieldNumber = 1997;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryHandballInfo HandballInfo {
-    get { return infoCase_ == InfoOneofCase.HandballInfo ? (global::SceneGalleryHandballInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.HandballInfo;
-    }
-  }
-
-  /// <summary>Field number for the "sumo_info" field.</summary>
-  public const int SumoInfoFieldNumber = 811;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGallerySumoInfo SumoInfo {
-    get { return infoCase_ == InfoOneofCase.SumoInfo ? (global::SceneGallerySumoInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.SumoInfo;
-    }
-  }
-
-  /// <summary>Field number for the "salvage_prevent_info" field.</summary>
-  public const int SalvagePreventInfoFieldNumber = 1700;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGallerySalvagePreventInfo SalvagePreventInfo {
-    get { return infoCase_ == InfoOneofCase.SalvagePreventInfo ? (global::SceneGallerySalvagePreventInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.SalvagePreventInfo;
-    }
-  }
-
-  /// <summary>Field number for the "salvage_escort_info" field.</summary>
-  public const int SalvageEscortInfoFieldNumber = 759;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGallerySalvageEscortInfo SalvageEscortInfo {
-    get { return infoCase_ == InfoOneofCase.SalvageEscortInfo ? (global::SceneGallerySalvageEscortInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.SalvageEscortInfo;
-    }
-  }
-
-  /// <summary>Field number for the "home_balloon_info" field.</summary>
-  public const int HomeBalloonInfoFieldNumber = 1034;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryHomeBalloonInfo HomeBalloonInfo {
-    get { return infoCase_ == InfoOneofCase.HomeBalloonInfo ? (global::SceneGalleryHomeBalloonInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.HomeBalloonInfo;
-    }
-  }
-
-  /// <summary>Field number for the "crystal_link_info" field.</summary>
-  public const int CrystalLinkInfoFieldNumber = 2004;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryCrystalLinkInfo CrystalLinkInfo {
-    get { return infoCase_ == InfoOneofCase.CrystalLinkInfo ? (global::SceneGalleryCrystalLinkInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.CrystalLinkInfo;
-    }
-  }
-
-  /// <summary>Field number for the "irodori_master_info" field.</summary>
-  public const int IrodoriMasterInfoFieldNumber = 1953;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryIrodoriMasterInfo IrodoriMasterInfo {
-    get { return infoCase_ == InfoOneofCase.IrodoriMasterInfo ? (global::SceneGalleryIrodoriMasterInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.IrodoriMasterInfo;
-    }
-  }
-
-  /// <summary>Field number for the "luminance_stone_challenge_info" field.</summary>
-  public const int LuminanceStoneChallengeInfoFieldNumber = 106;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryLuminanceStoneChallengeInfo LuminanceStoneChallengeInfo {
-    get { return infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo ? (global::SceneGalleryLuminanceStoneChallengeInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.LuminanceStoneChallengeInfo;
-    }
-  }
-
-  /// <summary>Field number for the "home_seek_furniture_info" field.</summary>
-  public const int HomeSeekFurnitureInfoFieldNumber = 1456;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryHomeSeekFurnitureInfo HomeSeekFurnitureInfo {
-    get { return infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo ? (global::SceneGalleryHomeSeekFurnitureInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.HomeSeekFurnitureInfo;
-    }
-  }
-
-  /// <summary>Field number for the "island_party_down_hill_info" field.</summary>
-  public const int IslandPartyDownHillInfoFieldNumber = 462;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryIslandPartyDownHillInfo IslandPartyDownHillInfo {
-    get { return infoCase_ == InfoOneofCase.IslandPartyDownHillInfo ? (global::SceneGalleryIslandPartyDownHillInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.IslandPartyDownHillInfo;
-    }
-  }
-
-  /// <summary>Field number for the "summer_time_v2_boat_info" field.</summary>
-  public const int SummerTimeV2BoatInfoFieldNumber = 296;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGallerySummerTimeV2BoatInfo SummerTimeV2BoatInfo {
-    get { return infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo ? (global::SceneGallerySummerTimeV2BoatInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.SummerTimeV2BoatInfo;
-    }
-  }
-
-  /// <summary>Field number for the "island_party_raft_info" field.</summary>
-  public const int IslandPartyRaftInfoFieldNumber = 1805;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryIslandPartyRaftInfo IslandPartyRaftInfo {
-    get { return infoCase_ == InfoOneofCase.IslandPartyRaftInfo ? (global::SceneGalleryIslandPartyRaftInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.IslandPartyRaftInfo;
-    }
-  }
-
-  /// <summary>Field number for the "island_party_sail_info" field.</summary>
-  public const int IslandPartySailInfoFieldNumber = 1133;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryIslandPartySailInfo IslandPartySailInfo {
-    get { return infoCase_ == InfoOneofCase.IslandPartySailInfo ? (global::SceneGalleryIslandPartySailInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.IslandPartySailInfo;
-    }
-  }
-
-  /// <summary>Field number for the "instable_spray_info" field.</summary>
-  public const int InstableSprayInfoFieldNumber = 1196;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryInstaleSprayInfo InstableSprayInfo {
-    get { return infoCase_ == InfoOneofCase.InstableSprayInfo ? (global::SceneGalleryInstaleSprayInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.InstableSprayInfo;
-    }
-  }
-
-  /// <summary>Field number for the "muqadas_potion_info" field.</summary>
-  public const int MuqadasPotionInfoFieldNumber = 865;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryMuqadasPotionInfo MuqadasPotionInfo {
-    get { return infoCase_ == InfoOneofCase.MuqadasPotionInfo ? (global::SceneGalleryMuqadasPotionInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.MuqadasPotionInfo;
-    }
-  }
-
-  /// <summary>Field number for the "treasure_seelie_info" field.</summary>
-  public const int TreasureSeelieInfoFieldNumber = 1525;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryTreasureSeelieInfo TreasureSeelieInfo {
-    get { return infoCase_ == InfoOneofCase.TreasureSeelieInfo ? (global::SceneGalleryTreasureSeelieInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.TreasureSeelieInfo;
-    }
-  }
-
-  /// <summary>Field number for the "vintage_hunting_info" field.</summary>
-  public const int VintageHuntingInfoFieldNumber = 254;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryVintageHuntingInfo VintageHuntingInfo {
-    get { return infoCase_ == InfoOneofCase.VintageHuntingInfo ? (global::SceneGalleryVintageHuntingInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.VintageHuntingInfo;
-    }
-  }
-
-  /// <summary>Field number for the "wind_field_info" field.</summary>
-  public const int WindFieldInfoFieldNumber = 1080;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryWindFieldInfo WindFieldInfo {
-    get { return infoCase_ == InfoOneofCase.WindFieldInfo ? (global::SceneGalleryWindFieldInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.WindFieldInfo;
-    }
-  }
-
-  /// <summary>Field number for the "fungus_fighter_training_info" field.</summary>
-  public const int FungusFighterTrainingInfoFieldNumber = 1328;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryFungusFighterTrainingInfo FungusFighterTrainingInfo {
-    get { return infoCase_ == InfoOneofCase.FungusFighterTrainingInfo ? (global::SceneGalleryFungusFighterTrainingInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.FungusFighterTrainingInfo;
-    }
-  }
-
-  /// <summary>Field number for the "effigy_challenge_info" field.</summary>
-  public const int EffigyChallengeInfoFieldNumber = 882;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryEffigyChallengeV2Info EffigyChallengeInfo {
-    get { return infoCase_ == InfoOneofCase.EffigyChallengeInfo ? (global::SceneGalleryEffigyChallengeV2Info) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.EffigyChallengeInfo;
-    }
-  }
-
-  /// <summary>Field number for the "fungus_fighter_capture_info" field.</summary>
-  public const int FungusFighterCaptureInfoFieldNumber = 422;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryFungusFighterCaptureInfo FungusFighterCaptureInfo {
-    get { return infoCase_ == InfoOneofCase.FungusFighterCaptureInfo ? (global::SceneGalleryFungusFighterCaptureInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.FungusFighterCaptureInfo;
-    }
-  }
-
-  /// <summary>Field number for the "char_amusement_info" field.</summary>
-  public const int CharAmusementInfoFieldNumber = 1086;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryCharAmusementInfo CharAmusementInfo {
-    get { return infoCase_ == InfoOneofCase.CharAmusementInfo ? (global::SceneGalleryCharAmusementInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.CharAmusementInfo;
-    }
-  }
-
-  /// <summary>Field number for the "brick_breaker_info" field.</summary>
-  public const int BrickBreakerInfoFieldNumber = 1425;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryBrickBreakerInfo BrickBreakerInfo {
-    get { return infoCase_ == InfoOneofCase.BrickBreakerInfo ? (global::SceneGalleryBrickBreakerInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.BrickBreakerInfo;
-    }
-  }
-
-  /// <summary>Field number for the "coin_collect_info" field.</summary>
-  public const int CoinCollectInfoFieldNumber = 1574;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::SceneGalleryCoinCollectInfo CoinCollectInfo {
-    get { return infoCase_ == InfoOneofCase.CoinCollectInfo ? (global::SceneGalleryCoinCollectInfo) info_ : null; }
-    set {
-      info_ = value;
-      infoCase_ = value == null ? InfoOneofCase.None : InfoOneofCase.CoinCollectInfo;
-    }
-  }
-
-  private object info_;
-  /// <summary>Enum of possible cases for the "info" oneof.</summary>
-  public enum InfoOneofCase {
-    None = 0,
-    BalloonInfo = 14,
-    FallInfo = 7,
-    FlowerInfo = 8,
-    BulletInfo = 13,
-    BrokenFloorInfo = 10,
-    HideAndSeekInfo = 6,
-    BuoyantCombatInfo = 1384,
-    BounceConjuringInfo = 708,
-    HandballInfo = 1997,
-    SumoInfo = 811,
-    SalvagePreventInfo = 1700,
-    SalvageEscortInfo = 759,
-    HomeBalloonInfo = 1034,
-    CrystalLinkInfo = 2004,
-    IrodoriMasterInfo = 1953,
-    LuminanceStoneChallengeInfo = 106,
-    HomeSeekFurnitureInfo = 1456,
-    IslandPartyDownHillInfo = 462,
-    SummerTimeV2BoatInfo = 296,
-    IslandPartyRaftInfo = 1805,
-    IslandPartySailInfo = 1133,
-    InstableSprayInfo = 1196,
-    MuqadasPotionInfo = 865,
-    TreasureSeelieInfo = 1525,
-    VintageHuntingInfo = 254,
-    WindFieldInfo = 1080,
-    FungusFighterTrainingInfo = 1328,
-    EffigyChallengeInfo = 882,
-    FungusFighterCaptureInfo = 422,
-    CharAmusementInfo = 1086,
-    BrickBreakerInfo = 1425,
-    CoinCollectInfo = 1574,
-  }
-  private InfoOneofCase infoCase_ = InfoOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InfoOneofCase InfoCase {
-    get { return infoCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearInfo() {
-    infoCase_ = InfoOneofCase.None;
-    info_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SceneGalleryInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SceneGalleryInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Stage != other.Stage) return false;
-    if(!progressInfoList_.Equals(other.progressInfoList_)) return false;
-    if (GalleryId != other.GalleryId) return false;
-    if (StartTime != other.StartTime) return false;
-    if (EndTime != other.EndTime) return false;
-    if (OwnerUid != other.OwnerUid) return false;
-    if (PlayerCount != other.PlayerCount) return false;
-    if (PreStartEndTime != other.PreStartEndTime) return false;
-    if (!object.Equals(BalloonInfo, other.BalloonInfo)) return false;
-    if (!object.Equals(FallInfo, other.FallInfo)) return false;
-    if (!object.Equals(FlowerInfo, other.FlowerInfo)) return false;
-    if (!object.Equals(BulletInfo, other.BulletInfo)) return false;
-    if (!object.Equals(BrokenFloorInfo, other.BrokenFloorInfo)) return false;
-    if (!object.Equals(HideAndSeekInfo, other.HideAndSeekInfo)) return false;
-    if (!object.Equals(BuoyantCombatInfo, other.BuoyantCombatInfo)) return false;
-    if (!object.Equals(BounceConjuringInfo, other.BounceConjuringInfo)) return false;
-    if (!object.Equals(HandballInfo, other.HandballInfo)) return false;
-    if (!object.Equals(SumoInfo, other.SumoInfo)) return false;
-    if (!object.Equals(SalvagePreventInfo, other.SalvagePreventInfo)) return false;
-    if (!object.Equals(SalvageEscortInfo, other.SalvageEscortInfo)) return false;
-    if (!object.Equals(HomeBalloonInfo, other.HomeBalloonInfo)) return false;
-    if (!object.Equals(CrystalLinkInfo, other.CrystalLinkInfo)) return false;
-    if (!object.Equals(IrodoriMasterInfo, other.IrodoriMasterInfo)) return false;
-    if (!object.Equals(LuminanceStoneChallengeInfo, other.LuminanceStoneChallengeInfo)) return false;
-    if (!object.Equals(HomeSeekFurnitureInfo, other.HomeSeekFurnitureInfo)) return false;
-    if (!object.Equals(IslandPartyDownHillInfo, other.IslandPartyDownHillInfo)) return false;
-    if (!object.Equals(SummerTimeV2BoatInfo, other.SummerTimeV2BoatInfo)) return false;
-    if (!object.Equals(IslandPartyRaftInfo, other.IslandPartyRaftInfo)) return false;
-    if (!object.Equals(IslandPartySailInfo, other.IslandPartySailInfo)) return false;
-    if (!object.Equals(InstableSprayInfo, other.InstableSprayInfo)) return false;
-    if (!object.Equals(MuqadasPotionInfo, other.MuqadasPotionInfo)) return false;
-    if (!object.Equals(TreasureSeelieInfo, other.TreasureSeelieInfo)) return false;
-    if (!object.Equals(VintageHuntingInfo, other.VintageHuntingInfo)) return false;
-    if (!object.Equals(WindFieldInfo, other.WindFieldInfo)) return false;
-    if (!object.Equals(FungusFighterTrainingInfo, other.FungusFighterTrainingInfo)) return false;
-    if (!object.Equals(EffigyChallengeInfo, other.EffigyChallengeInfo)) return false;
-    if (!object.Equals(FungusFighterCaptureInfo, other.FungusFighterCaptureInfo)) return false;
-    if (!object.Equals(CharAmusementInfo, other.CharAmusementInfo)) return false;
-    if (!object.Equals(BrickBreakerInfo, other.BrickBreakerInfo)) return false;
-    if (!object.Equals(CoinCollectInfo, other.CoinCollectInfo)) return false;
-    if (InfoCase != other.InfoCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Stage != global::GalleryStageType.None) hash ^= Stage.GetHashCode();
-    hash ^= progressInfoList_.GetHashCode();
-    if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
-    if (StartTime != 0) hash ^= StartTime.GetHashCode();
-    if (EndTime != 0) hash ^= EndTime.GetHashCode();
-    if (OwnerUid != 0) hash ^= OwnerUid.GetHashCode();
-    if (PlayerCount != 0) hash ^= PlayerCount.GetHashCode();
-    if (PreStartEndTime != 0) hash ^= PreStartEndTime.GetHashCode();
-    if (infoCase_ == InfoOneofCase.BalloonInfo) hash ^= BalloonInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.FallInfo) hash ^= FallInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.FlowerInfo) hash ^= FlowerInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.BulletInfo) hash ^= BulletInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.BrokenFloorInfo) hash ^= BrokenFloorInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.HideAndSeekInfo) hash ^= HideAndSeekInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.BuoyantCombatInfo) hash ^= BuoyantCombatInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.BounceConjuringInfo) hash ^= BounceConjuringInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.HandballInfo) hash ^= HandballInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.SumoInfo) hash ^= SumoInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.SalvagePreventInfo) hash ^= SalvagePreventInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.SalvageEscortInfo) hash ^= SalvageEscortInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.HomeBalloonInfo) hash ^= HomeBalloonInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.CrystalLinkInfo) hash ^= CrystalLinkInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.IrodoriMasterInfo) hash ^= IrodoriMasterInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo) hash ^= LuminanceStoneChallengeInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo) hash ^= HomeSeekFurnitureInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.IslandPartyDownHillInfo) hash ^= IslandPartyDownHillInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo) hash ^= SummerTimeV2BoatInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.IslandPartyRaftInfo) hash ^= IslandPartyRaftInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.IslandPartySailInfo) hash ^= IslandPartySailInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.InstableSprayInfo) hash ^= InstableSprayInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.MuqadasPotionInfo) hash ^= MuqadasPotionInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.TreasureSeelieInfo) hash ^= TreasureSeelieInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.VintageHuntingInfo) hash ^= VintageHuntingInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.WindFieldInfo) hash ^= WindFieldInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.FungusFighterTrainingInfo) hash ^= FungusFighterTrainingInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.EffigyChallengeInfo) hash ^= EffigyChallengeInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.FungusFighterCaptureInfo) hash ^= FungusFighterCaptureInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.CharAmusementInfo) hash ^= CharAmusementInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.BrickBreakerInfo) hash ^= BrickBreakerInfo.GetHashCode();
-    if (infoCase_ == InfoOneofCase.CoinCollectInfo) hash ^= CoinCollectInfo.GetHashCode();
-    hash ^= (int) infoCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (PlayerCount != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(PlayerCount);
-    }
-    if (GalleryId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(GalleryId);
-    }
-    if (StartTime != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(StartTime);
-    }
-    progressInfoList_.WriteTo(output, _repeated_progressInfoList_codec);
-    if (Stage != global::GalleryStageType.None) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) Stage);
-    }
-    if (infoCase_ == InfoOneofCase.HideAndSeekInfo) {
-      output.WriteRawTag(50);
-      output.WriteMessage(HideAndSeekInfo);
-    }
-    if (infoCase_ == InfoOneofCase.FallInfo) {
-      output.WriteRawTag(58);
-      output.WriteMessage(FallInfo);
-    }
-    if (infoCase_ == InfoOneofCase.FlowerInfo) {
-      output.WriteRawTag(66);
-      output.WriteMessage(FlowerInfo);
-    }
-    if (OwnerUid != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(OwnerUid);
-    }
-    if (infoCase_ == InfoOneofCase.BrokenFloorInfo) {
-      output.WriteRawTag(82);
-      output.WriteMessage(BrokenFloorInfo);
-    }
-    if (EndTime != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(EndTime);
-    }
-    if (infoCase_ == InfoOneofCase.BulletInfo) {
-      output.WriteRawTag(106);
-      output.WriteMessage(BulletInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BalloonInfo) {
-      output.WriteRawTag(114);
-      output.WriteMessage(BalloonInfo);
-    }
-    if (PreStartEndTime != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(PreStartEndTime);
-    }
-    if (infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo) {
-      output.WriteRawTag(210, 6);
-      output.WriteMessage(LuminanceStoneChallengeInfo);
-    }
-    if (infoCase_ == InfoOneofCase.VintageHuntingInfo) {
-      output.WriteRawTag(242, 15);
-      output.WriteMessage(VintageHuntingInfo);
-    }
-    if (infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo) {
-      output.WriteRawTag(194, 18);
-      output.WriteMessage(SummerTimeV2BoatInfo);
-    }
-    if (infoCase_ == InfoOneofCase.FungusFighterCaptureInfo) {
-      output.WriteRawTag(178, 26);
-      output.WriteMessage(FungusFighterCaptureInfo);
-    }
-    if (infoCase_ == InfoOneofCase.IslandPartyDownHillInfo) {
-      output.WriteRawTag(242, 28);
-      output.WriteMessage(IslandPartyDownHillInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BounceConjuringInfo) {
-      output.WriteRawTag(162, 44);
-      output.WriteMessage(BounceConjuringInfo);
-    }
-    if (infoCase_ == InfoOneofCase.SalvageEscortInfo) {
-      output.WriteRawTag(186, 47);
-      output.WriteMessage(SalvageEscortInfo);
-    }
-    if (infoCase_ == InfoOneofCase.SumoInfo) {
-      output.WriteRawTag(218, 50);
-      output.WriteMessage(SumoInfo);
-    }
-    if (infoCase_ == InfoOneofCase.MuqadasPotionInfo) {
-      output.WriteRawTag(138, 54);
-      output.WriteMessage(MuqadasPotionInfo);
-    }
-    if (infoCase_ == InfoOneofCase.EffigyChallengeInfo) {
-      output.WriteRawTag(146, 55);
-      output.WriteMessage(EffigyChallengeInfo);
-    }
-    if (infoCase_ == InfoOneofCase.HomeBalloonInfo) {
-      output.WriteRawTag(210, 64);
-      output.WriteMessage(HomeBalloonInfo);
-    }
-    if (infoCase_ == InfoOneofCase.WindFieldInfo) {
-      output.WriteRawTag(194, 67);
-      output.WriteMessage(WindFieldInfo);
-    }
-    if (infoCase_ == InfoOneofCase.CharAmusementInfo) {
-      output.WriteRawTag(242, 67);
-      output.WriteMessage(CharAmusementInfo);
-    }
-    if (infoCase_ == InfoOneofCase.IslandPartySailInfo) {
-      output.WriteRawTag(234, 70);
-      output.WriteMessage(IslandPartySailInfo);
-    }
-    if (infoCase_ == InfoOneofCase.InstableSprayInfo) {
-      output.WriteRawTag(226, 74);
-      output.WriteMessage(InstableSprayInfo);
-    }
-    if (infoCase_ == InfoOneofCase.FungusFighterTrainingInfo) {
-      output.WriteRawTag(130, 83);
-      output.WriteMessage(FungusFighterTrainingInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BuoyantCombatInfo) {
-      output.WriteRawTag(194, 86);
-      output.WriteMessage(BuoyantCombatInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BrickBreakerInfo) {
-      output.WriteRawTag(138, 89);
-      output.WriteMessage(BrickBreakerInfo);
-    }
-    if (infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo) {
-      output.WriteRawTag(130, 91);
-      output.WriteMessage(HomeSeekFurnitureInfo);
-    }
-    if (infoCase_ == InfoOneofCase.TreasureSeelieInfo) {
-      output.WriteRawTag(170, 95);
-      output.WriteMessage(TreasureSeelieInfo);
-    }
-    if (infoCase_ == InfoOneofCase.CoinCollectInfo) {
-      output.WriteRawTag(178, 98);
-      output.WriteMessage(CoinCollectInfo);
-    }
-    if (infoCase_ == InfoOneofCase.SalvagePreventInfo) {
-      output.WriteRawTag(162, 106);
-      output.WriteMessage(SalvagePreventInfo);
-    }
-    if (infoCase_ == InfoOneofCase.IslandPartyRaftInfo) {
-      output.WriteRawTag(234, 112);
-      output.WriteMessage(IslandPartyRaftInfo);
-    }
-    if (infoCase_ == InfoOneofCase.IrodoriMasterInfo) {
-      output.WriteRawTag(138, 122);
-      output.WriteMessage(IrodoriMasterInfo);
-    }
-    if (infoCase_ == InfoOneofCase.HandballInfo) {
-      output.WriteRawTag(234, 124);
-      output.WriteMessage(HandballInfo);
-    }
-    if (infoCase_ == InfoOneofCase.CrystalLinkInfo) {
-      output.WriteRawTag(162, 125);
-      output.WriteMessage(CrystalLinkInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (PlayerCount != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(PlayerCount);
-    }
-    if (GalleryId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(GalleryId);
-    }
-    if (StartTime != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(StartTime);
-    }
-    progressInfoList_.WriteTo(ref output, _repeated_progressInfoList_codec);
-    if (Stage != global::GalleryStageType.None) {
-      output.WriteRawTag(40);
-      output.WriteEnum((int) Stage);
-    }
-    if (infoCase_ == InfoOneofCase.HideAndSeekInfo) {
-      output.WriteRawTag(50);
-      output.WriteMessage(HideAndSeekInfo);
-    }
-    if (infoCase_ == InfoOneofCase.FallInfo) {
-      output.WriteRawTag(58);
-      output.WriteMessage(FallInfo);
-    }
-    if (infoCase_ == InfoOneofCase.FlowerInfo) {
-      output.WriteRawTag(66);
-      output.WriteMessage(FlowerInfo);
-    }
-    if (OwnerUid != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(OwnerUid);
-    }
-    if (infoCase_ == InfoOneofCase.BrokenFloorInfo) {
-      output.WriteRawTag(82);
-      output.WriteMessage(BrokenFloorInfo);
-    }
-    if (EndTime != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(EndTime);
-    }
-    if (infoCase_ == InfoOneofCase.BulletInfo) {
-      output.WriteRawTag(106);
-      output.WriteMessage(BulletInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BalloonInfo) {
-      output.WriteRawTag(114);
-      output.WriteMessage(BalloonInfo);
-    }
-    if (PreStartEndTime != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(PreStartEndTime);
-    }
-    if (infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo) {
-      output.WriteRawTag(210, 6);
-      output.WriteMessage(LuminanceStoneChallengeInfo);
-    }
-    if (infoCase_ == InfoOneofCase.VintageHuntingInfo) {
-      output.WriteRawTag(242, 15);
-      output.WriteMessage(VintageHuntingInfo);
-    }
-    if (infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo) {
-      output.WriteRawTag(194, 18);
-      output.WriteMessage(SummerTimeV2BoatInfo);
-    }
-    if (infoCase_ == InfoOneofCase.FungusFighterCaptureInfo) {
-      output.WriteRawTag(178, 26);
-      output.WriteMessage(FungusFighterCaptureInfo);
-    }
-    if (infoCase_ == InfoOneofCase.IslandPartyDownHillInfo) {
-      output.WriteRawTag(242, 28);
-      output.WriteMessage(IslandPartyDownHillInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BounceConjuringInfo) {
-      output.WriteRawTag(162, 44);
-      output.WriteMessage(BounceConjuringInfo);
-    }
-    if (infoCase_ == InfoOneofCase.SalvageEscortInfo) {
-      output.WriteRawTag(186, 47);
-      output.WriteMessage(SalvageEscortInfo);
-    }
-    if (infoCase_ == InfoOneofCase.SumoInfo) {
-      output.WriteRawTag(218, 50);
-      output.WriteMessage(SumoInfo);
-    }
-    if (infoCase_ == InfoOneofCase.MuqadasPotionInfo) {
-      output.WriteRawTag(138, 54);
-      output.WriteMessage(MuqadasPotionInfo);
-    }
-    if (infoCase_ == InfoOneofCase.EffigyChallengeInfo) {
-      output.WriteRawTag(146, 55);
-      output.WriteMessage(EffigyChallengeInfo);
-    }
-    if (infoCase_ == InfoOneofCase.HomeBalloonInfo) {
-      output.WriteRawTag(210, 64);
-      output.WriteMessage(HomeBalloonInfo);
-    }
-    if (infoCase_ == InfoOneofCase.WindFieldInfo) {
-      output.WriteRawTag(194, 67);
-      output.WriteMessage(WindFieldInfo);
-    }
-    if (infoCase_ == InfoOneofCase.CharAmusementInfo) {
-      output.WriteRawTag(242, 67);
-      output.WriteMessage(CharAmusementInfo);
-    }
-    if (infoCase_ == InfoOneofCase.IslandPartySailInfo) {
-      output.WriteRawTag(234, 70);
-      output.WriteMessage(IslandPartySailInfo);
-    }
-    if (infoCase_ == InfoOneofCase.InstableSprayInfo) {
-      output.WriteRawTag(226, 74);
-      output.WriteMessage(InstableSprayInfo);
-    }
-    if (infoCase_ == InfoOneofCase.FungusFighterTrainingInfo) {
-      output.WriteRawTag(130, 83);
-      output.WriteMessage(FungusFighterTrainingInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BuoyantCombatInfo) {
-      output.WriteRawTag(194, 86);
-      output.WriteMessage(BuoyantCombatInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BrickBreakerInfo) {
-      output.WriteRawTag(138, 89);
-      output.WriteMessage(BrickBreakerInfo);
-    }
-    if (infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo) {
-      output.WriteRawTag(130, 91);
-      output.WriteMessage(HomeSeekFurnitureInfo);
-    }
-    if (infoCase_ == InfoOneofCase.TreasureSeelieInfo) {
-      output.WriteRawTag(170, 95);
-      output.WriteMessage(TreasureSeelieInfo);
-    }
-    if (infoCase_ == InfoOneofCase.CoinCollectInfo) {
-      output.WriteRawTag(178, 98);
-      output.WriteMessage(CoinCollectInfo);
-    }
-    if (infoCase_ == InfoOneofCase.SalvagePreventInfo) {
-      output.WriteRawTag(162, 106);
-      output.WriteMessage(SalvagePreventInfo);
-    }
-    if (infoCase_ == InfoOneofCase.IslandPartyRaftInfo) {
-      output.WriteRawTag(234, 112);
-      output.WriteMessage(IslandPartyRaftInfo);
-    }
-    if (infoCase_ == InfoOneofCase.IrodoriMasterInfo) {
-      output.WriteRawTag(138, 122);
-      output.WriteMessage(IrodoriMasterInfo);
-    }
-    if (infoCase_ == InfoOneofCase.HandballInfo) {
-      output.WriteRawTag(234, 124);
-      output.WriteMessage(HandballInfo);
-    }
-    if (infoCase_ == InfoOneofCase.CrystalLinkInfo) {
-      output.WriteRawTag(162, 125);
-      output.WriteMessage(CrystalLinkInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Stage != global::GalleryStageType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Stage);
-    }
-    size += progressInfoList_.CalculateSize(_repeated_progressInfoList_codec);
-    if (GalleryId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
-    }
-    if (StartTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(StartTime);
-    }
-    if (EndTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EndTime);
-    }
-    if (OwnerUid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OwnerUid);
-    }
-    if (PlayerCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayerCount);
-    }
-    if (PreStartEndTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PreStartEndTime);
-    }
-    if (infoCase_ == InfoOneofCase.BalloonInfo) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(BalloonInfo);
-    }
-    if (infoCase_ == InfoOneofCase.FallInfo) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(FallInfo);
-    }
-    if (infoCase_ == InfoOneofCase.FlowerInfo) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(FlowerInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BulletInfo) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(BulletInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BrokenFloorInfo) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(BrokenFloorInfo);
-    }
-    if (infoCase_ == InfoOneofCase.HideAndSeekInfo) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(HideAndSeekInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BuoyantCombatInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(BuoyantCombatInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BounceConjuringInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(BounceConjuringInfo);
-    }
-    if (infoCase_ == InfoOneofCase.HandballInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(HandballInfo);
-    }
-    if (infoCase_ == InfoOneofCase.SumoInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(SumoInfo);
-    }
-    if (infoCase_ == InfoOneofCase.SalvagePreventInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(SalvagePreventInfo);
-    }
-    if (infoCase_ == InfoOneofCase.SalvageEscortInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(SalvageEscortInfo);
-    }
-    if (infoCase_ == InfoOneofCase.HomeBalloonInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(HomeBalloonInfo);
-    }
-    if (infoCase_ == InfoOneofCase.CrystalLinkInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(CrystalLinkInfo);
-    }
-    if (infoCase_ == InfoOneofCase.IrodoriMasterInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(IrodoriMasterInfo);
-    }
-    if (infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(LuminanceStoneChallengeInfo);
-    }
-    if (infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(HomeSeekFurnitureInfo);
-    }
-    if (infoCase_ == InfoOneofCase.IslandPartyDownHillInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(IslandPartyDownHillInfo);
-    }
-    if (infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(SummerTimeV2BoatInfo);
-    }
-    if (infoCase_ == InfoOneofCase.IslandPartyRaftInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(IslandPartyRaftInfo);
-    }
-    if (infoCase_ == InfoOneofCase.IslandPartySailInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(IslandPartySailInfo);
-    }
-    if (infoCase_ == InfoOneofCase.InstableSprayInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(InstableSprayInfo);
-    }
-    if (infoCase_ == InfoOneofCase.MuqadasPotionInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(MuqadasPotionInfo);
-    }
-    if (infoCase_ == InfoOneofCase.TreasureSeelieInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(TreasureSeelieInfo);
-    }
-    if (infoCase_ == InfoOneofCase.VintageHuntingInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(VintageHuntingInfo);
-    }
-    if (infoCase_ == InfoOneofCase.WindFieldInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(WindFieldInfo);
-    }
-    if (infoCase_ == InfoOneofCase.FungusFighterTrainingInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(FungusFighterTrainingInfo);
-    }
-    if (infoCase_ == InfoOneofCase.EffigyChallengeInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(EffigyChallengeInfo);
-    }
-    if (infoCase_ == InfoOneofCase.FungusFighterCaptureInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(FungusFighterCaptureInfo);
-    }
-    if (infoCase_ == InfoOneofCase.CharAmusementInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(CharAmusementInfo);
-    }
-    if (infoCase_ == InfoOneofCase.BrickBreakerInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(BrickBreakerInfo);
-    }
-    if (infoCase_ == InfoOneofCase.CoinCollectInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(CoinCollectInfo);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SceneGalleryInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Stage != global::GalleryStageType.None) {
-      Stage = other.Stage;
-    }
-    progressInfoList_.Add(other.progressInfoList_);
-    if (other.GalleryId != 0) {
-      GalleryId = other.GalleryId;
-    }
-    if (other.StartTime != 0) {
-      StartTime = other.StartTime;
-    }
-    if (other.EndTime != 0) {
-      EndTime = other.EndTime;
-    }
-    if (other.OwnerUid != 0) {
-      OwnerUid = other.OwnerUid;
-    }
-    if (other.PlayerCount != 0) {
-      PlayerCount = other.PlayerCount;
-    }
-    if (other.PreStartEndTime != 0) {
-      PreStartEndTime = other.PreStartEndTime;
-    }
-    switch (other.InfoCase) {
-      case InfoOneofCase.BalloonInfo:
-        if (BalloonInfo == null) {
-          BalloonInfo = new global::SceneGalleryBalloonInfo();
-        }
-        BalloonInfo.MergeFrom(other.BalloonInfo);
-        break;
-      case InfoOneofCase.FallInfo:
-        if (FallInfo == null) {
-          FallInfo = new global::SceneGalleryFallInfo();
-        }
-        FallInfo.MergeFrom(other.FallInfo);
-        break;
-      case InfoOneofCase.FlowerInfo:
-        if (FlowerInfo == null) {
-          FlowerInfo = new global::SceneGalleryFlowerInfo();
-        }
-        FlowerInfo.MergeFrom(other.FlowerInfo);
-        break;
-      case InfoOneofCase.BulletInfo:
-        if (BulletInfo == null) {
-          BulletInfo = new global::SceneGalleryBulletInfo();
-        }
-        BulletInfo.MergeFrom(other.BulletInfo);
-        break;
-      case InfoOneofCase.BrokenFloorInfo:
-        if (BrokenFloorInfo == null) {
-          BrokenFloorInfo = new global::SceneGalleryBrokenFloorInfo();
-        }
-        BrokenFloorInfo.MergeFrom(other.BrokenFloorInfo);
-        break;
-      case InfoOneofCase.HideAndSeekInfo:
-        if (HideAndSeekInfo == null) {
-          HideAndSeekInfo = new global::SceneGalleryHideAndSeekInfo();
-        }
-        HideAndSeekInfo.MergeFrom(other.HideAndSeekInfo);
-        break;
-      case InfoOneofCase.BuoyantCombatInfo:
-        if (BuoyantCombatInfo == null) {
-          BuoyantCombatInfo = new global::SceneGalleryBuoyantCombatInfo();
-        }
-        BuoyantCombatInfo.MergeFrom(other.BuoyantCombatInfo);
-        break;
-      case InfoOneofCase.BounceConjuringInfo:
-        if (BounceConjuringInfo == null) {
-          BounceConjuringInfo = new global::SceneGalleryBounceConjuringInfo();
-        }
-        BounceConjuringInfo.MergeFrom(other.BounceConjuringInfo);
-        break;
-      case InfoOneofCase.HandballInfo:
-        if (HandballInfo == null) {
-          HandballInfo = new global::SceneGalleryHandballInfo();
-        }
-        HandballInfo.MergeFrom(other.HandballInfo);
-        break;
-      case InfoOneofCase.SumoInfo:
-        if (SumoInfo == null) {
-          SumoInfo = new global::SceneGallerySumoInfo();
-        }
-        SumoInfo.MergeFrom(other.SumoInfo);
-        break;
-      case InfoOneofCase.SalvagePreventInfo:
-        if (SalvagePreventInfo == null) {
-          SalvagePreventInfo = new global::SceneGallerySalvagePreventInfo();
-        }
-        SalvagePreventInfo.MergeFrom(other.SalvagePreventInfo);
-        break;
-      case InfoOneofCase.SalvageEscortInfo:
-        if (SalvageEscortInfo == null) {
-          SalvageEscortInfo = new global::SceneGallerySalvageEscortInfo();
-        }
-        SalvageEscortInfo.MergeFrom(other.SalvageEscortInfo);
-        break;
-      case InfoOneofCase.HomeBalloonInfo:
-        if (HomeBalloonInfo == null) {
-          HomeBalloonInfo = new global::SceneGalleryHomeBalloonInfo();
-        }
-        HomeBalloonInfo.MergeFrom(other.HomeBalloonInfo);
-        break;
-      case InfoOneofCase.CrystalLinkInfo:
-        if (CrystalLinkInfo == null) {
-          CrystalLinkInfo = new global::SceneGalleryCrystalLinkInfo();
-        }
-        CrystalLinkInfo.MergeFrom(other.CrystalLinkInfo);
-        break;
-      case InfoOneofCase.IrodoriMasterInfo:
-        if (IrodoriMasterInfo == null) {
-          IrodoriMasterInfo = new global::SceneGalleryIrodoriMasterInfo();
-        }
-        IrodoriMasterInfo.MergeFrom(other.IrodoriMasterInfo);
-        break;
-      case InfoOneofCase.LuminanceStoneChallengeInfo:
-        if (LuminanceStoneChallengeInfo == null) {
-          LuminanceStoneChallengeInfo = new global::SceneGalleryLuminanceStoneChallengeInfo();
-        }
-        LuminanceStoneChallengeInfo.MergeFrom(other.LuminanceStoneChallengeInfo);
-        break;
-      case InfoOneofCase.HomeSeekFurnitureInfo:
-        if (HomeSeekFurnitureInfo == null) {
-          HomeSeekFurnitureInfo = new global::SceneGalleryHomeSeekFurnitureInfo();
-        }
-        HomeSeekFurnitureInfo.MergeFrom(other.HomeSeekFurnitureInfo);
-        break;
-      case InfoOneofCase.IslandPartyDownHillInfo:
-        if (IslandPartyDownHillInfo == null) {
-          IslandPartyDownHillInfo = new global::SceneGalleryIslandPartyDownHillInfo();
-        }
-        IslandPartyDownHillInfo.MergeFrom(other.IslandPartyDownHillInfo);
-        break;
-      case InfoOneofCase.SummerTimeV2BoatInfo:
-        if (SummerTimeV2BoatInfo == null) {
-          SummerTimeV2BoatInfo = new global::SceneGallerySummerTimeV2BoatInfo();
-        }
-        SummerTimeV2BoatInfo.MergeFrom(other.SummerTimeV2BoatInfo);
-        break;
-      case InfoOneofCase.IslandPartyRaftInfo:
-        if (IslandPartyRaftInfo == null) {
-          IslandPartyRaftInfo = new global::SceneGalleryIslandPartyRaftInfo();
-        }
-        IslandPartyRaftInfo.MergeFrom(other.IslandPartyRaftInfo);
-        break;
-      case InfoOneofCase.IslandPartySailInfo:
-        if (IslandPartySailInfo == null) {
-          IslandPartySailInfo = new global::SceneGalleryIslandPartySailInfo();
-        }
-        IslandPartySailInfo.MergeFrom(other.IslandPartySailInfo);
-        break;
-      case InfoOneofCase.InstableSprayInfo:
-        if (InstableSprayInfo == null) {
-          InstableSprayInfo = new global::SceneGalleryInstaleSprayInfo();
-        }
-        InstableSprayInfo.MergeFrom(other.InstableSprayInfo);
-        break;
-      case InfoOneofCase.MuqadasPotionInfo:
-        if (MuqadasPotionInfo == null) {
-          MuqadasPotionInfo = new global::SceneGalleryMuqadasPotionInfo();
-        }
-        MuqadasPotionInfo.MergeFrom(other.MuqadasPotionInfo);
-        break;
-      case InfoOneofCase.TreasureSeelieInfo:
-        if (TreasureSeelieInfo == null) {
-          TreasureSeelieInfo = new global::SceneGalleryTreasureSeelieInfo();
-        }
-        TreasureSeelieInfo.MergeFrom(other.TreasureSeelieInfo);
-        break;
-      case InfoOneofCase.VintageHuntingInfo:
-        if (VintageHuntingInfo == null) {
-          VintageHuntingInfo = new global::SceneGalleryVintageHuntingInfo();
-        }
-        VintageHuntingInfo.MergeFrom(other.VintageHuntingInfo);
-        break;
-      case InfoOneofCase.WindFieldInfo:
-        if (WindFieldInfo == null) {
-          WindFieldInfo = new global::SceneGalleryWindFieldInfo();
-        }
-        WindFieldInfo.MergeFrom(other.WindFieldInfo);
-        break;
-      case InfoOneofCase.FungusFighterTrainingInfo:
-        if (FungusFighterTrainingInfo == null) {
-          FungusFighterTrainingInfo = new global::SceneGalleryFungusFighterTrainingInfo();
-        }
-        FungusFighterTrainingInfo.MergeFrom(other.FungusFighterTrainingInfo);
-        break;
-      case InfoOneofCase.EffigyChallengeInfo:
-        if (EffigyChallengeInfo == null) {
-          EffigyChallengeInfo = new global::SceneGalleryEffigyChallengeV2Info();
-        }
-        EffigyChallengeInfo.MergeFrom(other.EffigyChallengeInfo);
-        break;
-      case InfoOneofCase.FungusFighterCaptureInfo:
-        if (FungusFighterCaptureInfo == null) {
-          FungusFighterCaptureInfo = new global::SceneGalleryFungusFighterCaptureInfo();
-        }
-        FungusFighterCaptureInfo.MergeFrom(other.FungusFighterCaptureInfo);
-        break;
-      case InfoOneofCase.CharAmusementInfo:
-        if (CharAmusementInfo == null) {
-          CharAmusementInfo = new global::SceneGalleryCharAmusementInfo();
-        }
-        CharAmusementInfo.MergeFrom(other.CharAmusementInfo);
-        break;
-      case InfoOneofCase.BrickBreakerInfo:
-        if (BrickBreakerInfo == null) {
-          BrickBreakerInfo = new global::SceneGalleryBrickBreakerInfo();
-        }
-        BrickBreakerInfo.MergeFrom(other.BrickBreakerInfo);
-        break;
-      case InfoOneofCase.CoinCollectInfo:
-        if (CoinCollectInfo == null) {
-          CoinCollectInfo = new global::SceneGalleryCoinCollectInfo();
-        }
-        CoinCollectInfo.MergeFrom(other.CoinCollectInfo);
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          PlayerCount = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          GalleryId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          StartTime = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          progressInfoList_.AddEntriesFrom(input, _repeated_progressInfoList_codec);
-          break;
-        }
-        case 40: {
-          Stage = (global::GalleryStageType) input.ReadEnum();
-          break;
-        }
-        case 50: {
-          global::SceneGalleryHideAndSeekInfo subBuilder = new global::SceneGalleryHideAndSeekInfo();
-          if (infoCase_ == InfoOneofCase.HideAndSeekInfo) {
-            subBuilder.MergeFrom(HideAndSeekInfo);
-          }
-          input.ReadMessage(subBuilder);
-          HideAndSeekInfo = subBuilder;
-          break;
-        }
-        case 58: {
-          global::SceneGalleryFallInfo subBuilder = new global::SceneGalleryFallInfo();
-          if (infoCase_ == InfoOneofCase.FallInfo) {
-            subBuilder.MergeFrom(FallInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FallInfo = subBuilder;
-          break;
-        }
-        case 66: {
-          global::SceneGalleryFlowerInfo subBuilder = new global::SceneGalleryFlowerInfo();
-          if (infoCase_ == InfoOneofCase.FlowerInfo) {
-            subBuilder.MergeFrom(FlowerInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FlowerInfo = subBuilder;
-          break;
-        }
-        case 72: {
-          OwnerUid = input.ReadUInt32();
-          break;
-        }
-        case 82: {
-          global::SceneGalleryBrokenFloorInfo subBuilder = new global::SceneGalleryBrokenFloorInfo();
-          if (infoCase_ == InfoOneofCase.BrokenFloorInfo) {
-            subBuilder.MergeFrom(BrokenFloorInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BrokenFloorInfo = subBuilder;
-          break;
-        }
-        case 88: {
-          EndTime = input.ReadUInt32();
-          break;
-        }
-        case 106: {
-          global::SceneGalleryBulletInfo subBuilder = new global::SceneGalleryBulletInfo();
-          if (infoCase_ == InfoOneofCase.BulletInfo) {
-            subBuilder.MergeFrom(BulletInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BulletInfo = subBuilder;
-          break;
-        }
-        case 114: {
-          global::SceneGalleryBalloonInfo subBuilder = new global::SceneGalleryBalloonInfo();
-          if (infoCase_ == InfoOneofCase.BalloonInfo) {
-            subBuilder.MergeFrom(BalloonInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BalloonInfo = subBuilder;
-          break;
-        }
-        case 120: {
-          PreStartEndTime = input.ReadUInt32();
-          break;
-        }
-        case 850: {
-          global::SceneGalleryLuminanceStoneChallengeInfo subBuilder = new global::SceneGalleryLuminanceStoneChallengeInfo();
-          if (infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo) {
-            subBuilder.MergeFrom(LuminanceStoneChallengeInfo);
-          }
-          input.ReadMessage(subBuilder);
-          LuminanceStoneChallengeInfo = subBuilder;
-          break;
-        }
-        case 2034: {
-          global::SceneGalleryVintageHuntingInfo subBuilder = new global::SceneGalleryVintageHuntingInfo();
-          if (infoCase_ == InfoOneofCase.VintageHuntingInfo) {
-            subBuilder.MergeFrom(VintageHuntingInfo);
-          }
-          input.ReadMessage(subBuilder);
-          VintageHuntingInfo = subBuilder;
-          break;
-        }
-        case 2370: {
-          global::SceneGallerySummerTimeV2BoatInfo subBuilder = new global::SceneGallerySummerTimeV2BoatInfo();
-          if (infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo) {
-            subBuilder.MergeFrom(SummerTimeV2BoatInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SummerTimeV2BoatInfo = subBuilder;
-          break;
-        }
-        case 3378: {
-          global::SceneGalleryFungusFighterCaptureInfo subBuilder = new global::SceneGalleryFungusFighterCaptureInfo();
-          if (infoCase_ == InfoOneofCase.FungusFighterCaptureInfo) {
-            subBuilder.MergeFrom(FungusFighterCaptureInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FungusFighterCaptureInfo = subBuilder;
-          break;
-        }
-        case 3698: {
-          global::SceneGalleryIslandPartyDownHillInfo subBuilder = new global::SceneGalleryIslandPartyDownHillInfo();
-          if (infoCase_ == InfoOneofCase.IslandPartyDownHillInfo) {
-            subBuilder.MergeFrom(IslandPartyDownHillInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IslandPartyDownHillInfo = subBuilder;
-          break;
-        }
-        case 5666: {
-          global::SceneGalleryBounceConjuringInfo subBuilder = new global::SceneGalleryBounceConjuringInfo();
-          if (infoCase_ == InfoOneofCase.BounceConjuringInfo) {
-            subBuilder.MergeFrom(BounceConjuringInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BounceConjuringInfo = subBuilder;
-          break;
-        }
-        case 6074: {
-          global::SceneGallerySalvageEscortInfo subBuilder = new global::SceneGallerySalvageEscortInfo();
-          if (infoCase_ == InfoOneofCase.SalvageEscortInfo) {
-            subBuilder.MergeFrom(SalvageEscortInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SalvageEscortInfo = subBuilder;
-          break;
-        }
-        case 6490: {
-          global::SceneGallerySumoInfo subBuilder = new global::SceneGallerySumoInfo();
-          if (infoCase_ == InfoOneofCase.SumoInfo) {
-            subBuilder.MergeFrom(SumoInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SumoInfo = subBuilder;
-          break;
-        }
-        case 6922: {
-          global::SceneGalleryMuqadasPotionInfo subBuilder = new global::SceneGalleryMuqadasPotionInfo();
-          if (infoCase_ == InfoOneofCase.MuqadasPotionInfo) {
-            subBuilder.MergeFrom(MuqadasPotionInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MuqadasPotionInfo = subBuilder;
-          break;
-        }
-        case 7058: {
-          global::SceneGalleryEffigyChallengeV2Info subBuilder = new global::SceneGalleryEffigyChallengeV2Info();
-          if (infoCase_ == InfoOneofCase.EffigyChallengeInfo) {
-            subBuilder.MergeFrom(EffigyChallengeInfo);
-          }
-          input.ReadMessage(subBuilder);
-          EffigyChallengeInfo = subBuilder;
-          break;
-        }
-        case 8274: {
-          global::SceneGalleryHomeBalloonInfo subBuilder = new global::SceneGalleryHomeBalloonInfo();
-          if (infoCase_ == InfoOneofCase.HomeBalloonInfo) {
-            subBuilder.MergeFrom(HomeBalloonInfo);
-          }
-          input.ReadMessage(subBuilder);
-          HomeBalloonInfo = subBuilder;
-          break;
-        }
-        case 8642: {
-          global::SceneGalleryWindFieldInfo subBuilder = new global::SceneGalleryWindFieldInfo();
-          if (infoCase_ == InfoOneofCase.WindFieldInfo) {
-            subBuilder.MergeFrom(WindFieldInfo);
-          }
-          input.ReadMessage(subBuilder);
-          WindFieldInfo = subBuilder;
-          break;
-        }
-        case 8690: {
-          global::SceneGalleryCharAmusementInfo subBuilder = new global::SceneGalleryCharAmusementInfo();
-          if (infoCase_ == InfoOneofCase.CharAmusementInfo) {
-            subBuilder.MergeFrom(CharAmusementInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CharAmusementInfo = subBuilder;
-          break;
-        }
-        case 9066: {
-          global::SceneGalleryIslandPartySailInfo subBuilder = new global::SceneGalleryIslandPartySailInfo();
-          if (infoCase_ == InfoOneofCase.IslandPartySailInfo) {
-            subBuilder.MergeFrom(IslandPartySailInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IslandPartySailInfo = subBuilder;
-          break;
-        }
-        case 9570: {
-          global::SceneGalleryInstaleSprayInfo subBuilder = new global::SceneGalleryInstaleSprayInfo();
-          if (infoCase_ == InfoOneofCase.InstableSprayInfo) {
-            subBuilder.MergeFrom(InstableSprayInfo);
-          }
-          input.ReadMessage(subBuilder);
-          InstableSprayInfo = subBuilder;
-          break;
-        }
-        case 10626: {
-          global::SceneGalleryFungusFighterTrainingInfo subBuilder = new global::SceneGalleryFungusFighterTrainingInfo();
-          if (infoCase_ == InfoOneofCase.FungusFighterTrainingInfo) {
-            subBuilder.MergeFrom(FungusFighterTrainingInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FungusFighterTrainingInfo = subBuilder;
-          break;
-        }
-        case 11074: {
-          global::SceneGalleryBuoyantCombatInfo subBuilder = new global::SceneGalleryBuoyantCombatInfo();
-          if (infoCase_ == InfoOneofCase.BuoyantCombatInfo) {
-            subBuilder.MergeFrom(BuoyantCombatInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BuoyantCombatInfo = subBuilder;
-          break;
-        }
-        case 11402: {
-          global::SceneGalleryBrickBreakerInfo subBuilder = new global::SceneGalleryBrickBreakerInfo();
-          if (infoCase_ == InfoOneofCase.BrickBreakerInfo) {
-            subBuilder.MergeFrom(BrickBreakerInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BrickBreakerInfo = subBuilder;
-          break;
-        }
-        case 11650: {
-          global::SceneGalleryHomeSeekFurnitureInfo subBuilder = new global::SceneGalleryHomeSeekFurnitureInfo();
-          if (infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo) {
-            subBuilder.MergeFrom(HomeSeekFurnitureInfo);
-          }
-          input.ReadMessage(subBuilder);
-          HomeSeekFurnitureInfo = subBuilder;
-          break;
-        }
-        case 12202: {
-          global::SceneGalleryTreasureSeelieInfo subBuilder = new global::SceneGalleryTreasureSeelieInfo();
-          if (infoCase_ == InfoOneofCase.TreasureSeelieInfo) {
-            subBuilder.MergeFrom(TreasureSeelieInfo);
-          }
-          input.ReadMessage(subBuilder);
-          TreasureSeelieInfo = subBuilder;
-          break;
-        }
-        case 12594: {
-          global::SceneGalleryCoinCollectInfo subBuilder = new global::SceneGalleryCoinCollectInfo();
-          if (infoCase_ == InfoOneofCase.CoinCollectInfo) {
-            subBuilder.MergeFrom(CoinCollectInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CoinCollectInfo = subBuilder;
-          break;
-        }
-        case 13602: {
-          global::SceneGallerySalvagePreventInfo subBuilder = new global::SceneGallerySalvagePreventInfo();
-          if (infoCase_ == InfoOneofCase.SalvagePreventInfo) {
-            subBuilder.MergeFrom(SalvagePreventInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SalvagePreventInfo = subBuilder;
-          break;
-        }
-        case 14442: {
-          global::SceneGalleryIslandPartyRaftInfo subBuilder = new global::SceneGalleryIslandPartyRaftInfo();
-          if (infoCase_ == InfoOneofCase.IslandPartyRaftInfo) {
-            subBuilder.MergeFrom(IslandPartyRaftInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IslandPartyRaftInfo = subBuilder;
-          break;
-        }
-        case 15626: {
-          global::SceneGalleryIrodoriMasterInfo subBuilder = new global::SceneGalleryIrodoriMasterInfo();
-          if (infoCase_ == InfoOneofCase.IrodoriMasterInfo) {
-            subBuilder.MergeFrom(IrodoriMasterInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IrodoriMasterInfo = subBuilder;
-          break;
-        }
-        case 15978: {
-          global::SceneGalleryHandballInfo subBuilder = new global::SceneGalleryHandballInfo();
-          if (infoCase_ == InfoOneofCase.HandballInfo) {
-            subBuilder.MergeFrom(HandballInfo);
-          }
-          input.ReadMessage(subBuilder);
-          HandballInfo = subBuilder;
-          break;
-        }
-        case 16034: {
-          global::SceneGalleryCrystalLinkInfo subBuilder = new global::SceneGalleryCrystalLinkInfo();
-          if (infoCase_ == InfoOneofCase.CrystalLinkInfo) {
-            subBuilder.MergeFrom(CrystalLinkInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CrystalLinkInfo = subBuilder;
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          PlayerCount = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          GalleryId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          StartTime = input.ReadUInt32();
-          break;
-        }
-        case 34: {
-          progressInfoList_.AddEntriesFrom(ref input, _repeated_progressInfoList_codec);
-          break;
-        }
-        case 40: {
-          Stage = (global::GalleryStageType) input.ReadEnum();
-          break;
-        }
-        case 50: {
-          global::SceneGalleryHideAndSeekInfo subBuilder = new global::SceneGalleryHideAndSeekInfo();
-          if (infoCase_ == InfoOneofCase.HideAndSeekInfo) {
-            subBuilder.MergeFrom(HideAndSeekInfo);
-          }
-          input.ReadMessage(subBuilder);
-          HideAndSeekInfo = subBuilder;
-          break;
-        }
-        case 58: {
-          global::SceneGalleryFallInfo subBuilder = new global::SceneGalleryFallInfo();
-          if (infoCase_ == InfoOneofCase.FallInfo) {
-            subBuilder.MergeFrom(FallInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FallInfo = subBuilder;
-          break;
-        }
-        case 66: {
-          global::SceneGalleryFlowerInfo subBuilder = new global::SceneGalleryFlowerInfo();
-          if (infoCase_ == InfoOneofCase.FlowerInfo) {
-            subBuilder.MergeFrom(FlowerInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FlowerInfo = subBuilder;
-          break;
-        }
-        case 72: {
-          OwnerUid = input.ReadUInt32();
-          break;
-        }
-        case 82: {
-          global::SceneGalleryBrokenFloorInfo subBuilder = new global::SceneGalleryBrokenFloorInfo();
-          if (infoCase_ == InfoOneofCase.BrokenFloorInfo) {
-            subBuilder.MergeFrom(BrokenFloorInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BrokenFloorInfo = subBuilder;
-          break;
-        }
-        case 88: {
-          EndTime = input.ReadUInt32();
-          break;
-        }
-        case 106: {
-          global::SceneGalleryBulletInfo subBuilder = new global::SceneGalleryBulletInfo();
-          if (infoCase_ == InfoOneofCase.BulletInfo) {
-            subBuilder.MergeFrom(BulletInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BulletInfo = subBuilder;
-          break;
-        }
-        case 114: {
-          global::SceneGalleryBalloonInfo subBuilder = new global::SceneGalleryBalloonInfo();
-          if (infoCase_ == InfoOneofCase.BalloonInfo) {
-            subBuilder.MergeFrom(BalloonInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BalloonInfo = subBuilder;
-          break;
-        }
-        case 120: {
-          PreStartEndTime = input.ReadUInt32();
-          break;
-        }
-        case 850: {
-          global::SceneGalleryLuminanceStoneChallengeInfo subBuilder = new global::SceneGalleryLuminanceStoneChallengeInfo();
-          if (infoCase_ == InfoOneofCase.LuminanceStoneChallengeInfo) {
-            subBuilder.MergeFrom(LuminanceStoneChallengeInfo);
-          }
-          input.ReadMessage(subBuilder);
-          LuminanceStoneChallengeInfo = subBuilder;
-          break;
-        }
-        case 2034: {
-          global::SceneGalleryVintageHuntingInfo subBuilder = new global::SceneGalleryVintageHuntingInfo();
-          if (infoCase_ == InfoOneofCase.VintageHuntingInfo) {
-            subBuilder.MergeFrom(VintageHuntingInfo);
-          }
-          input.ReadMessage(subBuilder);
-          VintageHuntingInfo = subBuilder;
-          break;
-        }
-        case 2370: {
-          global::SceneGallerySummerTimeV2BoatInfo subBuilder = new global::SceneGallerySummerTimeV2BoatInfo();
-          if (infoCase_ == InfoOneofCase.SummerTimeV2BoatInfo) {
-            subBuilder.MergeFrom(SummerTimeV2BoatInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SummerTimeV2BoatInfo = subBuilder;
-          break;
-        }
-        case 3378: {
-          global::SceneGalleryFungusFighterCaptureInfo subBuilder = new global::SceneGalleryFungusFighterCaptureInfo();
-          if (infoCase_ == InfoOneofCase.FungusFighterCaptureInfo) {
-            subBuilder.MergeFrom(FungusFighterCaptureInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FungusFighterCaptureInfo = subBuilder;
-          break;
-        }
-        case 3698: {
-          global::SceneGalleryIslandPartyDownHillInfo subBuilder = new global::SceneGalleryIslandPartyDownHillInfo();
-          if (infoCase_ == InfoOneofCase.IslandPartyDownHillInfo) {
-            subBuilder.MergeFrom(IslandPartyDownHillInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IslandPartyDownHillInfo = subBuilder;
-          break;
-        }
-        case 5666: {
-          global::SceneGalleryBounceConjuringInfo subBuilder = new global::SceneGalleryBounceConjuringInfo();
-          if (infoCase_ == InfoOneofCase.BounceConjuringInfo) {
-            subBuilder.MergeFrom(BounceConjuringInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BounceConjuringInfo = subBuilder;
-          break;
-        }
-        case 6074: {
-          global::SceneGallerySalvageEscortInfo subBuilder = new global::SceneGallerySalvageEscortInfo();
-          if (infoCase_ == InfoOneofCase.SalvageEscortInfo) {
-            subBuilder.MergeFrom(SalvageEscortInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SalvageEscortInfo = subBuilder;
-          break;
-        }
-        case 6490: {
-          global::SceneGallerySumoInfo subBuilder = new global::SceneGallerySumoInfo();
-          if (infoCase_ == InfoOneofCase.SumoInfo) {
-            subBuilder.MergeFrom(SumoInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SumoInfo = subBuilder;
-          break;
-        }
-        case 6922: {
-          global::SceneGalleryMuqadasPotionInfo subBuilder = new global::SceneGalleryMuqadasPotionInfo();
-          if (infoCase_ == InfoOneofCase.MuqadasPotionInfo) {
-            subBuilder.MergeFrom(MuqadasPotionInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MuqadasPotionInfo = subBuilder;
-          break;
-        }
-        case 7058: {
-          global::SceneGalleryEffigyChallengeV2Info subBuilder = new global::SceneGalleryEffigyChallengeV2Info();
-          if (infoCase_ == InfoOneofCase.EffigyChallengeInfo) {
-            subBuilder.MergeFrom(EffigyChallengeInfo);
-          }
-          input.ReadMessage(subBuilder);
-          EffigyChallengeInfo = subBuilder;
-          break;
-        }
-        case 8274: {
-          global::SceneGalleryHomeBalloonInfo subBuilder = new global::SceneGalleryHomeBalloonInfo();
-          if (infoCase_ == InfoOneofCase.HomeBalloonInfo) {
-            subBuilder.MergeFrom(HomeBalloonInfo);
-          }
-          input.ReadMessage(subBuilder);
-          HomeBalloonInfo = subBuilder;
-          break;
-        }
-        case 8642: {
-          global::SceneGalleryWindFieldInfo subBuilder = new global::SceneGalleryWindFieldInfo();
-          if (infoCase_ == InfoOneofCase.WindFieldInfo) {
-            subBuilder.MergeFrom(WindFieldInfo);
-          }
-          input.ReadMessage(subBuilder);
-          WindFieldInfo = subBuilder;
-          break;
-        }
-        case 8690: {
-          global::SceneGalleryCharAmusementInfo subBuilder = new global::SceneGalleryCharAmusementInfo();
-          if (infoCase_ == InfoOneofCase.CharAmusementInfo) {
-            subBuilder.MergeFrom(CharAmusementInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CharAmusementInfo = subBuilder;
-          break;
-        }
-        case 9066: {
-          global::SceneGalleryIslandPartySailInfo subBuilder = new global::SceneGalleryIslandPartySailInfo();
-          if (infoCase_ == InfoOneofCase.IslandPartySailInfo) {
-            subBuilder.MergeFrom(IslandPartySailInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IslandPartySailInfo = subBuilder;
-          break;
-        }
-        case 9570: {
-          global::SceneGalleryInstaleSprayInfo subBuilder = new global::SceneGalleryInstaleSprayInfo();
-          if (infoCase_ == InfoOneofCase.InstableSprayInfo) {
-            subBuilder.MergeFrom(InstableSprayInfo);
-          }
-          input.ReadMessage(subBuilder);
-          InstableSprayInfo = subBuilder;
-          break;
-        }
-        case 10626: {
-          global::SceneGalleryFungusFighterTrainingInfo subBuilder = new global::SceneGalleryFungusFighterTrainingInfo();
-          if (infoCase_ == InfoOneofCase.FungusFighterTrainingInfo) {
-            subBuilder.MergeFrom(FungusFighterTrainingInfo);
-          }
-          input.ReadMessage(subBuilder);
-          FungusFighterTrainingInfo = subBuilder;
-          break;
-        }
-        case 11074: {
-          global::SceneGalleryBuoyantCombatInfo subBuilder = new global::SceneGalleryBuoyantCombatInfo();
-          if (infoCase_ == InfoOneofCase.BuoyantCombatInfo) {
-            subBuilder.MergeFrom(BuoyantCombatInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BuoyantCombatInfo = subBuilder;
-          break;
-        }
-        case 11402: {
-          global::SceneGalleryBrickBreakerInfo subBuilder = new global::SceneGalleryBrickBreakerInfo();
-          if (infoCase_ == InfoOneofCase.BrickBreakerInfo) {
-            subBuilder.MergeFrom(BrickBreakerInfo);
-          }
-          input.ReadMessage(subBuilder);
-          BrickBreakerInfo = subBuilder;
-          break;
-        }
-        case 11650: {
-          global::SceneGalleryHomeSeekFurnitureInfo subBuilder = new global::SceneGalleryHomeSeekFurnitureInfo();
-          if (infoCase_ == InfoOneofCase.HomeSeekFurnitureInfo) {
-            subBuilder.MergeFrom(HomeSeekFurnitureInfo);
-          }
-          input.ReadMessage(subBuilder);
-          HomeSeekFurnitureInfo = subBuilder;
-          break;
-        }
-        case 12202: {
-          global::SceneGalleryTreasureSeelieInfo subBuilder = new global::SceneGalleryTreasureSeelieInfo();
-          if (infoCase_ == InfoOneofCase.TreasureSeelieInfo) {
-            subBuilder.MergeFrom(TreasureSeelieInfo);
-          }
-          input.ReadMessage(subBuilder);
-          TreasureSeelieInfo = subBuilder;
-          break;
-        }
-        case 12594: {
-          global::SceneGalleryCoinCollectInfo subBuilder = new global::SceneGalleryCoinCollectInfo();
-          if (infoCase_ == InfoOneofCase.CoinCollectInfo) {
-            subBuilder.MergeFrom(CoinCollectInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CoinCollectInfo = subBuilder;
-          break;
-        }
-        case 13602: {
-          global::SceneGallerySalvagePreventInfo subBuilder = new global::SceneGallerySalvagePreventInfo();
-          if (infoCase_ == InfoOneofCase.SalvagePreventInfo) {
-            subBuilder.MergeFrom(SalvagePreventInfo);
-          }
-          input.ReadMessage(subBuilder);
-          SalvagePreventInfo = subBuilder;
-          break;
-        }
-        case 14442: {
-          global::SceneGalleryIslandPartyRaftInfo subBuilder = new global::SceneGalleryIslandPartyRaftInfo();
-          if (infoCase_ == InfoOneofCase.IslandPartyRaftInfo) {
-            subBuilder.MergeFrom(IslandPartyRaftInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IslandPartyRaftInfo = subBuilder;
-          break;
-        }
-        case 15626: {
-          global::SceneGalleryIrodoriMasterInfo subBuilder = new global::SceneGalleryIrodoriMasterInfo();
-          if (infoCase_ == InfoOneofCase.IrodoriMasterInfo) {
-            subBuilder.MergeFrom(IrodoriMasterInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IrodoriMasterInfo = subBuilder;
-          break;
-        }
-        case 15978: {
-          global::SceneGalleryHandballInfo subBuilder = new global::SceneGalleryHandballInfo();
-          if (infoCase_ == InfoOneofCase.HandballInfo) {
-            subBuilder.MergeFrom(HandballInfo);
-          }
-          input.ReadMessage(subBuilder);
-          HandballInfo = subBuilder;
-          break;
-        }
-        case 16034: {
-          global::SceneGalleryCrystalLinkInfo subBuilder = new global::SceneGalleryCrystalLinkInfo();
-          if (infoCase_ == InfoOneofCase.CrystalLinkInfo) {
-            subBuilder.MergeFrom(CrystalLinkInfo);
-          }
-          input.ReadMessage(subBuilder);
-          CrystalLinkInfo = subBuilder;
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

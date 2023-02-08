@@ -19,7 +19,7 @@ syntax = "proto3";
 import "DungeonCandidateTeamAvatar.proto";
 import "DungeonCandidateTeamPlayerState.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 927
 // EnetChannelId: 0

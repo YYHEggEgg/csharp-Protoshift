@@ -9,340 +9,342 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AvatarUnlockTalentNotify.proto</summary>
-public static partial class AvatarUnlockTalentNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AvatarUnlockTalentNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AvatarUnlockTalentNotify.proto</summary>
+  public static partial class AvatarUnlockTalentNotifyReflection {
 
-  static AvatarUnlockTalentNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch5BdmF0YXJVbmxvY2tUYWxlbnROb3RpZnkucHJvdG8ibQoYQXZhdGFyVW5s",
-          "b2NrVGFsZW50Tm90aWZ5EhEKCWVudGl0eV9pZBgOIAEoDRITCgthdmF0YXJf",
-          "Z3VpZBgNIAEoBBIRCgl0YWxlbnRfaWQYCiABKA0SFgoOc2tpbGxfZGVwb3Rf",
-          "aWQYASABKA1CHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJv",
-          "dG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AvatarUnlockTalentNotify), global::AvatarUnlockTalentNotify.Parser, new[]{ "EntityId", "AvatarGuid", "TalentId", "SkillDepotId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AvatarUnlockTalentNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AvatarUnlockTalentNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch5BdmF0YXJVbmxvY2tUYWxlbnROb3RpZnkucHJvdG8ibQoYQXZhdGFyVW5s",
+            "b2NrVGFsZW50Tm90aWZ5EhEKCWVudGl0eV9pZBgOIAEoDRITCgthdmF0YXJf",
+            "Z3VpZBgNIAEoBBIRCgl0YWxlbnRfaWQYCiABKA0SFgoOc2tpbGxfZGVwb3Rf",
+            "aWQYASABKA1CDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.AvatarUnlockTalentNotify), global::OldProtos.AvatarUnlockTalentNotify.Parser, new[]{ "EntityId", "AvatarGuid", "TalentId", "SkillDepotId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 1012
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class AvatarUnlockTalentNotify : pb::IMessage<AvatarUnlockTalentNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AvatarUnlockTalentNotify> _parser = new pb::MessageParser<AvatarUnlockTalentNotify>(() => new AvatarUnlockTalentNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AvatarUnlockTalentNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.AvatarUnlockTalentNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarUnlockTalentNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarUnlockTalentNotify(AvatarUnlockTalentNotify other) : this() {
+      entityId_ = other.entityId_;
+      avatarGuid_ = other.avatarGuid_;
+      talentId_ = other.talentId_;
+      skillDepotId_ = other.skillDepotId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AvatarUnlockTalentNotify Clone() {
+      return new AvatarUnlockTalentNotify(this);
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 14;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "avatar_guid" field.</summary>
+    public const int AvatarGuidFieldNumber = 13;
+    private ulong avatarGuid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong AvatarGuid {
+      get { return avatarGuid_; }
+      set {
+        avatarGuid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "talent_id" field.</summary>
+    public const int TalentIdFieldNumber = 10;
+    private uint talentId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TalentId {
+      get { return talentId_; }
+      set {
+        talentId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "skill_depot_id" field.</summary>
+    public const int SkillDepotIdFieldNumber = 1;
+    private uint skillDepotId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SkillDepotId {
+      get { return skillDepotId_; }
+      set {
+        skillDepotId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AvatarUnlockTalentNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AvatarUnlockTalentNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (EntityId != other.EntityId) return false;
+      if (AvatarGuid != other.AvatarGuid) return false;
+      if (TalentId != other.TalentId) return false;
+      if (SkillDepotId != other.SkillDepotId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
+      if (TalentId != 0) hash ^= TalentId.GetHashCode();
+      if (SkillDepotId != 0) hash ^= SkillDepotId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (SkillDepotId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(SkillDepotId);
+      }
+      if (TalentId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(TalentId);
+      }
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(104);
+        output.WriteUInt64(AvatarGuid);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(EntityId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (SkillDepotId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(SkillDepotId);
+      }
+      if (TalentId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(TalentId);
+      }
+      if (AvatarGuid != 0UL) {
+        output.WriteRawTag(104);
+        output.WriteUInt64(AvatarGuid);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(EntityId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (AvatarGuid != 0UL) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
+      }
+      if (TalentId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TalentId);
+      }
+      if (SkillDepotId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillDepotId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AvatarUnlockTalentNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.AvatarGuid != 0UL) {
+        AvatarGuid = other.AvatarGuid;
+      }
+      if (other.TalentId != 0) {
+        TalentId = other.TalentId;
+      }
+      if (other.SkillDepotId != 0) {
+        SkillDepotId = other.SkillDepotId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            SkillDepotId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            TalentId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            AvatarGuid = input.ReadUInt64();
+            break;
+          }
+          case 112: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            SkillDepotId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            TalentId = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            AvatarGuid = input.ReadUInt64();
+            break;
+          }
+          case 112: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 1012
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class AvatarUnlockTalentNotify : pb::IMessage<AvatarUnlockTalentNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AvatarUnlockTalentNotify> _parser = new pb::MessageParser<AvatarUnlockTalentNotify>(() => new AvatarUnlockTalentNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AvatarUnlockTalentNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AvatarUnlockTalentNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarUnlockTalentNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarUnlockTalentNotify(AvatarUnlockTalentNotify other) : this() {
-    entityId_ = other.entityId_;
-    avatarGuid_ = other.avatarGuid_;
-    talentId_ = other.talentId_;
-    skillDepotId_ = other.skillDepotId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AvatarUnlockTalentNotify Clone() {
-    return new AvatarUnlockTalentNotify(this);
-  }
-
-  /// <summary>Field number for the "entity_id" field.</summary>
-  public const int EntityIdFieldNumber = 14;
-  private uint entityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EntityId {
-    get { return entityId_; }
-    set {
-      entityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "avatar_guid" field.</summary>
-  public const int AvatarGuidFieldNumber = 13;
-  private ulong avatarGuid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ulong AvatarGuid {
-    get { return avatarGuid_; }
-    set {
-      avatarGuid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "talent_id" field.</summary>
-  public const int TalentIdFieldNumber = 10;
-  private uint talentId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TalentId {
-    get { return talentId_; }
-    set {
-      talentId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "skill_depot_id" field.</summary>
-  public const int SkillDepotIdFieldNumber = 1;
-  private uint skillDepotId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SkillDepotId {
-    get { return skillDepotId_; }
-    set {
-      skillDepotId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AvatarUnlockTalentNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AvatarUnlockTalentNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (EntityId != other.EntityId) return false;
-    if (AvatarGuid != other.AvatarGuid) return false;
-    if (TalentId != other.TalentId) return false;
-    if (SkillDepotId != other.SkillDepotId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (EntityId != 0) hash ^= EntityId.GetHashCode();
-    if (AvatarGuid != 0UL) hash ^= AvatarGuid.GetHashCode();
-    if (TalentId != 0) hash ^= TalentId.GetHashCode();
-    if (SkillDepotId != 0) hash ^= SkillDepotId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (SkillDepotId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(SkillDepotId);
-    }
-    if (TalentId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(TalentId);
-    }
-    if (AvatarGuid != 0UL) {
-      output.WriteRawTag(104);
-      output.WriteUInt64(AvatarGuid);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(EntityId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (SkillDepotId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(SkillDepotId);
-    }
-    if (TalentId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(TalentId);
-    }
-    if (AvatarGuid != 0UL) {
-      output.WriteRawTag(104);
-      output.WriteUInt64(AvatarGuid);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(EntityId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (EntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-    }
-    if (AvatarGuid != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(AvatarGuid);
-    }
-    if (TalentId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TalentId);
-    }
-    if (SkillDepotId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SkillDepotId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AvatarUnlockTalentNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.EntityId != 0) {
-      EntityId = other.EntityId;
-    }
-    if (other.AvatarGuid != 0UL) {
-      AvatarGuid = other.AvatarGuid;
-    }
-    if (other.TalentId != 0) {
-      TalentId = other.TalentId;
-    }
-    if (other.SkillDepotId != 0) {
-      SkillDepotId = other.SkillDepotId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          SkillDepotId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          TalentId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          AvatarGuid = input.ReadUInt64();
-          break;
-        }
-        case 112: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          SkillDepotId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          TalentId = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          AvatarGuid = input.ReadUInt64();
-          break;
-        }
-        case 112: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

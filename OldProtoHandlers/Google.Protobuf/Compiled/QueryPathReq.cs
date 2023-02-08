@@ -9,534 +9,537 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from QueryPathReq.proto</summary>
-public static partial class QueryPathReqReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for QueryPathReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from QueryPathReq.proto</summary>
+  public static partial class QueryPathReqReflection {
 
-  static QueryPathReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChJRdWVyeVBhdGhSZXEucHJvdG8aEVF1ZXJ5RmlsdGVyLnByb3RvGgxWZWN0",
-          "b3IucHJvdG8aEFZlY3RvcjNJbnQucHJvdG8i5AIKDFF1ZXJ5UGF0aFJlcRIs",
-          "CgpxdWVyeV90eXBlGA0gASgOMhguUXVlcnlQYXRoUmVxLk9wdGlvblR5cGUS",
-          "IgoNc291cmNlX2V4dGVuZBgGIAEoCzILLlZlY3RvcjNJbnQSGwoKc291cmNl",
-          "X3BvcxgCIAEoCzIHLlZlY3RvchIcCgZmaWx0ZXIYDCABKAsyDC5RdWVyeUZp",
-          "bHRlchIQCghxdWVyeV9pZBgPIAEoBRInChJkZXN0aW5hdGlvbl9leHRlbmQY",
-          "BCABKAsyCy5WZWN0b3IzSW50EiAKD2Rlc3RpbmF0aW9uX3BvcxgKIAMoCzIH",
-          "LlZlY3RvchIQCghzY2VuZV9pZBgLIAEoDSJYCgpPcHRpb25UeXBlEhQKEE9Q",
-          "VElPTl9UWVBFX05PTkUQABIWChJPUFRJT05fVFlQRV9OT1JNQUwQARIcChhP",
-          "UFRJT05fVFlQRV9GSVJTVF9DQU5fR08QAkIeChxlbXUuZ3Jhc3NjdXR0ZXIu",
-          "bmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::QueryFilterReflection.Descriptor, global::VectorReflection.Descriptor, global::Vector3IntReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::QueryPathReq), global::QueryPathReq.Parser, new[]{ "QueryType", "SourceExtend", "SourcePos", "Filter", "QueryId", "DestinationExtend", "DestinationPos", "SceneId" }, null, new[]{ typeof(global::QueryPathReq.Types.OptionType) }, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for QueryPathReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static QueryPathReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChJRdWVyeVBhdGhSZXEucHJvdG8aEVF1ZXJ5RmlsdGVyLnByb3RvGgxWZWN0",
+            "b3IucHJvdG8aEFZlY3RvcjNJbnQucHJvdG8i5AIKDFF1ZXJ5UGF0aFJlcRIs",
+            "CgpxdWVyeV90eXBlGA0gASgOMhguUXVlcnlQYXRoUmVxLk9wdGlvblR5cGUS",
+            "IgoNc291cmNlX2V4dGVuZBgGIAEoCzILLlZlY3RvcjNJbnQSGwoKc291cmNl",
+            "X3BvcxgCIAEoCzIHLlZlY3RvchIcCgZmaWx0ZXIYDCABKAsyDC5RdWVyeUZp",
+            "bHRlchIQCghxdWVyeV9pZBgPIAEoBRInChJkZXN0aW5hdGlvbl9leHRlbmQY",
+            "BCABKAsyCy5WZWN0b3IzSW50EiAKD2Rlc3RpbmF0aW9uX3BvcxgKIAMoCzIH",
+            "LlZlY3RvchIQCghzY2VuZV9pZBgLIAEoDSJYCgpPcHRpb25UeXBlEhQKEE9Q",
+            "VElPTl9UWVBFX05PTkUQABIWChJPUFRJT05fVFlQRV9OT1JNQUwQARIcChhP",
+            "UFRJT05fVFlQRV9GSVJTVF9DQU5fR08QAkIMqgIJT2xkUHJvdG9zYgZwcm90",
+            "bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.QueryFilterReflection.Descriptor, global::OldProtos.VectorReflection.Descriptor, global::OldProtos.Vector3IntReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.QueryPathReq), global::OldProtos.QueryPathReq.Parser, new[]{ "QueryType", "SourceExtend", "SourcePos", "Filter", "QueryId", "DestinationExtend", "DestinationPos", "SceneId" }, null, new[]{ typeof(global::OldProtos.QueryPathReq.Types.OptionType) }, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 2372
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class QueryPathReq : pb::IMessage<QueryPathReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<QueryPathReq> _parser = new pb::MessageParser<QueryPathReq>(() => new QueryPathReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<QueryPathReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.QueryPathReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public QueryPathReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public QueryPathReq(QueryPathReq other) : this() {
+      queryType_ = other.queryType_;
+      sourceExtend_ = other.sourceExtend_ != null ? other.sourceExtend_.Clone() : null;
+      sourcePos_ = other.sourcePos_ != null ? other.sourcePos_.Clone() : null;
+      filter_ = other.filter_ != null ? other.filter_.Clone() : null;
+      queryId_ = other.queryId_;
+      destinationExtend_ = other.destinationExtend_ != null ? other.destinationExtend_.Clone() : null;
+      destinationPos_ = other.destinationPos_.Clone();
+      sceneId_ = other.sceneId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public QueryPathReq Clone() {
+      return new QueryPathReq(this);
+    }
+
+    /// <summary>Field number for the "query_type" field.</summary>
+    public const int QueryTypeFieldNumber = 13;
+    private global::OldProtos.QueryPathReq.Types.OptionType queryType_ = global::OldProtos.QueryPathReq.Types.OptionType.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.QueryPathReq.Types.OptionType QueryType {
+      get { return queryType_; }
+      set {
+        queryType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "source_extend" field.</summary>
+    public const int SourceExtendFieldNumber = 6;
+    private global::OldProtos.Vector3Int sourceExtend_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector3Int SourceExtend {
+      get { return sourceExtend_; }
+      set {
+        sourceExtend_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "source_pos" field.</summary>
+    public const int SourcePosFieldNumber = 2;
+    private global::OldProtos.Vector sourcePos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector SourcePos {
+      get { return sourcePos_; }
+      set {
+        sourcePos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "filter" field.</summary>
+    public const int FilterFieldNumber = 12;
+    private global::OldProtos.QueryFilter filter_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.QueryFilter Filter {
+      get { return filter_; }
+      set {
+        filter_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "query_id" field.</summary>
+    public const int QueryIdFieldNumber = 15;
+    private int queryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int QueryId {
+      get { return queryId_; }
+      set {
+        queryId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "destination_extend" field.</summary>
+    public const int DestinationExtendFieldNumber = 4;
+    private global::OldProtos.Vector3Int destinationExtend_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector3Int DestinationExtend {
+      get { return destinationExtend_; }
+      set {
+        destinationExtend_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "destination_pos" field.</summary>
+    public const int DestinationPosFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::OldProtos.Vector> _repeated_destinationPos_codec
+        = pb::FieldCodec.ForMessage(82, global::OldProtos.Vector.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.Vector> destinationPos_ = new pbc::RepeatedField<global::OldProtos.Vector>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.Vector> DestinationPos {
+      get { return destinationPos_; }
+    }
+
+    /// <summary>Field number for the "scene_id" field.</summary>
+    public const int SceneIdFieldNumber = 11;
+    private uint sceneId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SceneId {
+      get { return sceneId_; }
+      set {
+        sceneId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as QueryPathReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(QueryPathReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (QueryType != other.QueryType) return false;
+      if (!object.Equals(SourceExtend, other.SourceExtend)) return false;
+      if (!object.Equals(SourcePos, other.SourcePos)) return false;
+      if (!object.Equals(Filter, other.Filter)) return false;
+      if (QueryId != other.QueryId) return false;
+      if (!object.Equals(DestinationExtend, other.DestinationExtend)) return false;
+      if(!destinationPos_.Equals(other.destinationPos_)) return false;
+      if (SceneId != other.SceneId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (QueryType != global::OldProtos.QueryPathReq.Types.OptionType.None) hash ^= QueryType.GetHashCode();
+      if (sourceExtend_ != null) hash ^= SourceExtend.GetHashCode();
+      if (sourcePos_ != null) hash ^= SourcePos.GetHashCode();
+      if (filter_ != null) hash ^= Filter.GetHashCode();
+      if (QueryId != 0) hash ^= QueryId.GetHashCode();
+      if (destinationExtend_ != null) hash ^= DestinationExtend.GetHashCode();
+      hash ^= destinationPos_.GetHashCode();
+      if (SceneId != 0) hash ^= SceneId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (sourcePos_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SourcePos);
+      }
+      if (destinationExtend_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(DestinationExtend);
+      }
+      if (sourceExtend_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(SourceExtend);
+      }
+      destinationPos_.WriteTo(output, _repeated_destinationPos_codec);
+      if (SceneId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(SceneId);
+      }
+      if (filter_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Filter);
+      }
+      if (QueryType != global::OldProtos.QueryPathReq.Types.OptionType.None) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) QueryType);
+      }
+      if (QueryId != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(QueryId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (sourcePos_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SourcePos);
+      }
+      if (destinationExtend_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(DestinationExtend);
+      }
+      if (sourceExtend_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(SourceExtend);
+      }
+      destinationPos_.WriteTo(ref output, _repeated_destinationPos_codec);
+      if (SceneId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(SceneId);
+      }
+      if (filter_ != null) {
+        output.WriteRawTag(98);
+        output.WriteMessage(Filter);
+      }
+      if (QueryType != global::OldProtos.QueryPathReq.Types.OptionType.None) {
+        output.WriteRawTag(104);
+        output.WriteEnum((int) QueryType);
+      }
+      if (QueryId != 0) {
+        output.WriteRawTag(120);
+        output.WriteInt32(QueryId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (QueryType != global::OldProtos.QueryPathReq.Types.OptionType.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) QueryType);
+      }
+      if (sourceExtend_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SourceExtend);
+      }
+      if (sourcePos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SourcePos);
+      }
+      if (filter_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Filter);
+      }
+      if (QueryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
+      }
+      if (destinationExtend_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(DestinationExtend);
+      }
+      size += destinationPos_.CalculateSize(_repeated_destinationPos_codec);
+      if (SceneId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(QueryPathReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.QueryType != global::OldProtos.QueryPathReq.Types.OptionType.None) {
+        QueryType = other.QueryType;
+      }
+      if (other.sourceExtend_ != null) {
+        if (sourceExtend_ == null) {
+          SourceExtend = new global::OldProtos.Vector3Int();
+        }
+        SourceExtend.MergeFrom(other.SourceExtend);
+      }
+      if (other.sourcePos_ != null) {
+        if (sourcePos_ == null) {
+          SourcePos = new global::OldProtos.Vector();
+        }
+        SourcePos.MergeFrom(other.SourcePos);
+      }
+      if (other.filter_ != null) {
+        if (filter_ == null) {
+          Filter = new global::OldProtos.QueryFilter();
+        }
+        Filter.MergeFrom(other.Filter);
+      }
+      if (other.QueryId != 0) {
+        QueryId = other.QueryId;
+      }
+      if (other.destinationExtend_ != null) {
+        if (destinationExtend_ == null) {
+          DestinationExtend = new global::OldProtos.Vector3Int();
+        }
+        DestinationExtend.MergeFrom(other.DestinationExtend);
+      }
+      destinationPos_.Add(other.destinationPos_);
+      if (other.SceneId != 0) {
+        SceneId = other.SceneId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            if (sourcePos_ == null) {
+              SourcePos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(SourcePos);
+            break;
+          }
+          case 34: {
+            if (destinationExtend_ == null) {
+              DestinationExtend = new global::OldProtos.Vector3Int();
+            }
+            input.ReadMessage(DestinationExtend);
+            break;
+          }
+          case 50: {
+            if (sourceExtend_ == null) {
+              SourceExtend = new global::OldProtos.Vector3Int();
+            }
+            input.ReadMessage(SourceExtend);
+            break;
+          }
+          case 82: {
+            destinationPos_.AddEntriesFrom(input, _repeated_destinationPos_codec);
+            break;
+          }
+          case 88: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            if (filter_ == null) {
+              Filter = new global::OldProtos.QueryFilter();
+            }
+            input.ReadMessage(Filter);
+            break;
+          }
+          case 104: {
+            QueryType = (global::OldProtos.QueryPathReq.Types.OptionType) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            QueryId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 18: {
+            if (sourcePos_ == null) {
+              SourcePos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(SourcePos);
+            break;
+          }
+          case 34: {
+            if (destinationExtend_ == null) {
+              DestinationExtend = new global::OldProtos.Vector3Int();
+            }
+            input.ReadMessage(DestinationExtend);
+            break;
+          }
+          case 50: {
+            if (sourceExtend_ == null) {
+              SourceExtend = new global::OldProtos.Vector3Int();
+            }
+            input.ReadMessage(SourceExtend);
+            break;
+          }
+          case 82: {
+            destinationPos_.AddEntriesFrom(ref input, _repeated_destinationPos_codec);
+            break;
+          }
+          case 88: {
+            SceneId = input.ReadUInt32();
+            break;
+          }
+          case 98: {
+            if (filter_ == null) {
+              Filter = new global::OldProtos.QueryFilter();
+            }
+            input.ReadMessage(Filter);
+            break;
+          }
+          case 104: {
+            QueryType = (global::OldProtos.QueryPathReq.Types.OptionType) input.ReadEnum();
+            break;
+          }
+          case 120: {
+            QueryId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the QueryPathReq message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      public enum OptionType {
+        [pbr::OriginalName("OPTION_TYPE_NONE")] None = 0,
+        [pbr::OriginalName("OPTION_TYPE_NORMAL")] Normal = 1,
+        [pbr::OriginalName("OPTION_TYPE_FIRST_CAN_GO")] FirstCanGo = 2,
+      }
+
+    }
+    #endregion
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 2372
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class QueryPathReq : pb::IMessage<QueryPathReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<QueryPathReq> _parser = new pb::MessageParser<QueryPathReq>(() => new QueryPathReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<QueryPathReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::QueryPathReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public QueryPathReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public QueryPathReq(QueryPathReq other) : this() {
-    queryType_ = other.queryType_;
-    sourceExtend_ = other.sourceExtend_ != null ? other.sourceExtend_.Clone() : null;
-    sourcePos_ = other.sourcePos_ != null ? other.sourcePos_.Clone() : null;
-    filter_ = other.filter_ != null ? other.filter_.Clone() : null;
-    queryId_ = other.queryId_;
-    destinationExtend_ = other.destinationExtend_ != null ? other.destinationExtend_.Clone() : null;
-    destinationPos_ = other.destinationPos_.Clone();
-    sceneId_ = other.sceneId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public QueryPathReq Clone() {
-    return new QueryPathReq(this);
-  }
-
-  /// <summary>Field number for the "query_type" field.</summary>
-  public const int QueryTypeFieldNumber = 13;
-  private global::QueryPathReq.Types.OptionType queryType_ = global::QueryPathReq.Types.OptionType.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::QueryPathReq.Types.OptionType QueryType {
-    get { return queryType_; }
-    set {
-      queryType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "source_extend" field.</summary>
-  public const int SourceExtendFieldNumber = 6;
-  private global::Vector3Int sourceExtend_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector3Int SourceExtend {
-    get { return sourceExtend_; }
-    set {
-      sourceExtend_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "source_pos" field.</summary>
-  public const int SourcePosFieldNumber = 2;
-  private global::Vector sourcePos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector SourcePos {
-    get { return sourcePos_; }
-    set {
-      sourcePos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "filter" field.</summary>
-  public const int FilterFieldNumber = 12;
-  private global::QueryFilter filter_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::QueryFilter Filter {
-    get { return filter_; }
-    set {
-      filter_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "query_id" field.</summary>
-  public const int QueryIdFieldNumber = 15;
-  private int queryId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int QueryId {
-    get { return queryId_; }
-    set {
-      queryId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "destination_extend" field.</summary>
-  public const int DestinationExtendFieldNumber = 4;
-  private global::Vector3Int destinationExtend_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector3Int DestinationExtend {
-    get { return destinationExtend_; }
-    set {
-      destinationExtend_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "destination_pos" field.</summary>
-  public const int DestinationPosFieldNumber = 10;
-  private static readonly pb::FieldCodec<global::Vector> _repeated_destinationPos_codec
-      = pb::FieldCodec.ForMessage(82, global::Vector.Parser);
-  private readonly pbc::RepeatedField<global::Vector> destinationPos_ = new pbc::RepeatedField<global::Vector>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::Vector> DestinationPos {
-    get { return destinationPos_; }
-  }
-
-  /// <summary>Field number for the "scene_id" field.</summary>
-  public const int SceneIdFieldNumber = 11;
-  private uint sceneId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SceneId {
-    get { return sceneId_; }
-    set {
-      sceneId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as QueryPathReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(QueryPathReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (QueryType != other.QueryType) return false;
-    if (!object.Equals(SourceExtend, other.SourceExtend)) return false;
-    if (!object.Equals(SourcePos, other.SourcePos)) return false;
-    if (!object.Equals(Filter, other.Filter)) return false;
-    if (QueryId != other.QueryId) return false;
-    if (!object.Equals(DestinationExtend, other.DestinationExtend)) return false;
-    if(!destinationPos_.Equals(other.destinationPos_)) return false;
-    if (SceneId != other.SceneId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (QueryType != global::QueryPathReq.Types.OptionType.None) hash ^= QueryType.GetHashCode();
-    if (sourceExtend_ != null) hash ^= SourceExtend.GetHashCode();
-    if (sourcePos_ != null) hash ^= SourcePos.GetHashCode();
-    if (filter_ != null) hash ^= Filter.GetHashCode();
-    if (QueryId != 0) hash ^= QueryId.GetHashCode();
-    if (destinationExtend_ != null) hash ^= DestinationExtend.GetHashCode();
-    hash ^= destinationPos_.GetHashCode();
-    if (SceneId != 0) hash ^= SceneId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (sourcePos_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(SourcePos);
-    }
-    if (destinationExtend_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(DestinationExtend);
-    }
-    if (sourceExtend_ != null) {
-      output.WriteRawTag(50);
-      output.WriteMessage(SourceExtend);
-    }
-    destinationPos_.WriteTo(output, _repeated_destinationPos_codec);
-    if (SceneId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(SceneId);
-    }
-    if (filter_ != null) {
-      output.WriteRawTag(98);
-      output.WriteMessage(Filter);
-    }
-    if (QueryType != global::QueryPathReq.Types.OptionType.None) {
-      output.WriteRawTag(104);
-      output.WriteEnum((int) QueryType);
-    }
-    if (QueryId != 0) {
-      output.WriteRawTag(120);
-      output.WriteInt32(QueryId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (sourcePos_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(SourcePos);
-    }
-    if (destinationExtend_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(DestinationExtend);
-    }
-    if (sourceExtend_ != null) {
-      output.WriteRawTag(50);
-      output.WriteMessage(SourceExtend);
-    }
-    destinationPos_.WriteTo(ref output, _repeated_destinationPos_codec);
-    if (SceneId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(SceneId);
-    }
-    if (filter_ != null) {
-      output.WriteRawTag(98);
-      output.WriteMessage(Filter);
-    }
-    if (QueryType != global::QueryPathReq.Types.OptionType.None) {
-      output.WriteRawTag(104);
-      output.WriteEnum((int) QueryType);
-    }
-    if (QueryId != 0) {
-      output.WriteRawTag(120);
-      output.WriteInt32(QueryId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (QueryType != global::QueryPathReq.Types.OptionType.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) QueryType);
-    }
-    if (sourceExtend_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(SourceExtend);
-    }
-    if (sourcePos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(SourcePos);
-    }
-    if (filter_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Filter);
-    }
-    if (QueryId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(QueryId);
-    }
-    if (destinationExtend_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(DestinationExtend);
-    }
-    size += destinationPos_.CalculateSize(_repeated_destinationPos_codec);
-    if (SceneId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SceneId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(QueryPathReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.QueryType != global::QueryPathReq.Types.OptionType.None) {
-      QueryType = other.QueryType;
-    }
-    if (other.sourceExtend_ != null) {
-      if (sourceExtend_ == null) {
-        SourceExtend = new global::Vector3Int();
-      }
-      SourceExtend.MergeFrom(other.SourceExtend);
-    }
-    if (other.sourcePos_ != null) {
-      if (sourcePos_ == null) {
-        SourcePos = new global::Vector();
-      }
-      SourcePos.MergeFrom(other.SourcePos);
-    }
-    if (other.filter_ != null) {
-      if (filter_ == null) {
-        Filter = new global::QueryFilter();
-      }
-      Filter.MergeFrom(other.Filter);
-    }
-    if (other.QueryId != 0) {
-      QueryId = other.QueryId;
-    }
-    if (other.destinationExtend_ != null) {
-      if (destinationExtend_ == null) {
-        DestinationExtend = new global::Vector3Int();
-      }
-      DestinationExtend.MergeFrom(other.DestinationExtend);
-    }
-    destinationPos_.Add(other.destinationPos_);
-    if (other.SceneId != 0) {
-      SceneId = other.SceneId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 18: {
-          if (sourcePos_ == null) {
-            SourcePos = new global::Vector();
-          }
-          input.ReadMessage(SourcePos);
-          break;
-        }
-        case 34: {
-          if (destinationExtend_ == null) {
-            DestinationExtend = new global::Vector3Int();
-          }
-          input.ReadMessage(DestinationExtend);
-          break;
-        }
-        case 50: {
-          if (sourceExtend_ == null) {
-            SourceExtend = new global::Vector3Int();
-          }
-          input.ReadMessage(SourceExtend);
-          break;
-        }
-        case 82: {
-          destinationPos_.AddEntriesFrom(input, _repeated_destinationPos_codec);
-          break;
-        }
-        case 88: {
-          SceneId = input.ReadUInt32();
-          break;
-        }
-        case 98: {
-          if (filter_ == null) {
-            Filter = new global::QueryFilter();
-          }
-          input.ReadMessage(Filter);
-          break;
-        }
-        case 104: {
-          QueryType = (global::QueryPathReq.Types.OptionType) input.ReadEnum();
-          break;
-        }
-        case 120: {
-          QueryId = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 18: {
-          if (sourcePos_ == null) {
-            SourcePos = new global::Vector();
-          }
-          input.ReadMessage(SourcePos);
-          break;
-        }
-        case 34: {
-          if (destinationExtend_ == null) {
-            DestinationExtend = new global::Vector3Int();
-          }
-          input.ReadMessage(DestinationExtend);
-          break;
-        }
-        case 50: {
-          if (sourceExtend_ == null) {
-            SourceExtend = new global::Vector3Int();
-          }
-          input.ReadMessage(SourceExtend);
-          break;
-        }
-        case 82: {
-          destinationPos_.AddEntriesFrom(ref input, _repeated_destinationPos_codec);
-          break;
-        }
-        case 88: {
-          SceneId = input.ReadUInt32();
-          break;
-        }
-        case 98: {
-          if (filter_ == null) {
-            Filter = new global::QueryFilter();
-          }
-          input.ReadMessage(Filter);
-          break;
-        }
-        case 104: {
-          QueryType = (global::QueryPathReq.Types.OptionType) input.ReadEnum();
-          break;
-        }
-        case 120: {
-          QueryId = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-  #region Nested types
-  /// <summary>Container for nested types declared in the QueryPathReq message type.</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static partial class Types {
-    public enum OptionType {
-      [pbr::OriginalName("OPTION_TYPE_NONE")] None = 0,
-      [pbr::OriginalName("OPTION_TYPE_NORMAL")] Normal = 1,
-      [pbr::OriginalName("OPTION_TYPE_FIRST_CAN_GO")] FirstCanGo = 2,
-    }
-
-  }
-  #endregion
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

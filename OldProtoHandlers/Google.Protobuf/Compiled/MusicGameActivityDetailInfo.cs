@@ -9,270 +9,272 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MusicGameActivityDetailInfo.proto</summary>
-public static partial class MusicGameActivityDetailInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MusicGameActivityDetailInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MusicGameActivityDetailInfo.proto</summary>
+  public static partial class MusicGameActivityDetailInfoReflection {
 
-  static MusicGameActivityDetailInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiFNdXNpY0dhbWVBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aFU11c2ljR2Ft",
-          "ZVJlY29yZC5wcm90bxoXVWdjTXVzaWNCcmllZkluZm8ucHJvdG8imQIKG011",
-          "c2ljR2FtZUFjdGl2aXR5RGV0YWlsSW5mbxIrCg91Z2NfcmVjb3JkX2xpc3QY",
-          "BCADKAsyEi5VZ2NNdXNpY0JyaWVmSW5mbxIrCg91Z2Nfc2VhcmNoX2xpc3QY",
-          "ByADKAsyEi5VZ2NNdXNpY0JyaWVmSW5mbxJTChVtdXNpY19nYW1lX3JlY29y",
-          "ZF9tYXAYCCADKAsyNC5NdXNpY0dhbWVBY3Rpdml0eURldGFpbEluZm8uTXVz",
-          "aWNHYW1lUmVjb3JkTWFwRW50cnkaSwoXTXVzaWNHYW1lUmVjb3JkTWFwRW50",
-          "cnkSCwoDa2V5GAEgASgNEh8KBXZhbHVlGAIgASgLMhAuTXVzaWNHYW1lUmVj",
-          "b3JkOgI4AUIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90",
-          "bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::MusicGameRecordReflection.Descriptor, global::UgcMusicBriefInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MusicGameActivityDetailInfo), global::MusicGameActivityDetailInfo.Parser, new[]{ "UgcRecordList", "UgcSearchList", "MusicGameRecordMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for MusicGameActivityDetailInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MusicGameActivityDetailInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiFNdXNpY0dhbWVBY3Rpdml0eURldGFpbEluZm8ucHJvdG8aFU11c2ljR2Ft",
+            "ZVJlY29yZC5wcm90bxoXVWdjTXVzaWNCcmllZkluZm8ucHJvdG8imQIKG011",
+            "c2ljR2FtZUFjdGl2aXR5RGV0YWlsSW5mbxIrCg91Z2NfcmVjb3JkX2xpc3QY",
+            "BCADKAsyEi5VZ2NNdXNpY0JyaWVmSW5mbxIrCg91Z2Nfc2VhcmNoX2xpc3QY",
+            "ByADKAsyEi5VZ2NNdXNpY0JyaWVmSW5mbxJTChVtdXNpY19nYW1lX3JlY29y",
+            "ZF9tYXAYCCADKAsyNC5NdXNpY0dhbWVBY3Rpdml0eURldGFpbEluZm8uTXVz",
+            "aWNHYW1lUmVjb3JkTWFwRW50cnkaSwoXTXVzaWNHYW1lUmVjb3JkTWFwRW50",
+            "cnkSCwoDa2V5GAEgASgNEh8KBXZhbHVlGAIgASgLMhAuTXVzaWNHYW1lUmVj",
+            "b3JkOgI4AUIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.MusicGameRecordReflection.Descriptor, global::OldProtos.UgcMusicBriefInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.MusicGameActivityDetailInfo), global::OldProtos.MusicGameActivityDetailInfo.Parser, new[]{ "UgcRecordList", "UgcSearchList", "MusicGameRecordMap" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class MusicGameActivityDetailInfo : pb::IMessage<MusicGameActivityDetailInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MusicGameActivityDetailInfo> _parser = new pb::MessageParser<MusicGameActivityDetailInfo>(() => new MusicGameActivityDetailInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MusicGameActivityDetailInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.MusicGameActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MusicGameActivityDetailInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MusicGameActivityDetailInfo(MusicGameActivityDetailInfo other) : this() {
+      ugcRecordList_ = other.ugcRecordList_.Clone();
+      ugcSearchList_ = other.ugcSearchList_.Clone();
+      musicGameRecordMap_ = other.musicGameRecordMap_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MusicGameActivityDetailInfo Clone() {
+      return new MusicGameActivityDetailInfo(this);
+    }
+
+    /// <summary>Field number for the "ugc_record_list" field.</summary>
+    public const int UgcRecordListFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::OldProtos.UgcMusicBriefInfo> _repeated_ugcRecordList_codec
+        = pb::FieldCodec.ForMessage(34, global::OldProtos.UgcMusicBriefInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.UgcMusicBriefInfo> ugcRecordList_ = new pbc::RepeatedField<global::OldProtos.UgcMusicBriefInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.UgcMusicBriefInfo> UgcRecordList {
+      get { return ugcRecordList_; }
+    }
+
+    /// <summary>Field number for the "ugc_search_list" field.</summary>
+    public const int UgcSearchListFieldNumber = 7;
+    private static readonly pb::FieldCodec<global::OldProtos.UgcMusicBriefInfo> _repeated_ugcSearchList_codec
+        = pb::FieldCodec.ForMessage(58, global::OldProtos.UgcMusicBriefInfo.Parser);
+    private readonly pbc::RepeatedField<global::OldProtos.UgcMusicBriefInfo> ugcSearchList_ = new pbc::RepeatedField<global::OldProtos.UgcMusicBriefInfo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::OldProtos.UgcMusicBriefInfo> UgcSearchList {
+      get { return ugcSearchList_; }
+    }
+
+    /// <summary>Field number for the "music_game_record_map" field.</summary>
+    public const int MusicGameRecordMapFieldNumber = 8;
+    private static readonly pbc::MapField<uint, global::OldProtos.MusicGameRecord>.Codec _map_musicGameRecordMap_codec
+        = new pbc::MapField<uint, global::OldProtos.MusicGameRecord>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::OldProtos.MusicGameRecord.Parser), 66);
+    private readonly pbc::MapField<uint, global::OldProtos.MusicGameRecord> musicGameRecordMap_ = new pbc::MapField<uint, global::OldProtos.MusicGameRecord>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::MapField<uint, global::OldProtos.MusicGameRecord> MusicGameRecordMap {
+      get { return musicGameRecordMap_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MusicGameActivityDetailInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MusicGameActivityDetailInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!ugcRecordList_.Equals(other.ugcRecordList_)) return false;
+      if(!ugcSearchList_.Equals(other.ugcSearchList_)) return false;
+      if (!MusicGameRecordMap.Equals(other.MusicGameRecordMap)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= ugcRecordList_.GetHashCode();
+      hash ^= ugcSearchList_.GetHashCode();
+      hash ^= MusicGameRecordMap.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      ugcRecordList_.WriteTo(output, _repeated_ugcRecordList_codec);
+      ugcSearchList_.WriteTo(output, _repeated_ugcSearchList_codec);
+      musicGameRecordMap_.WriteTo(output, _map_musicGameRecordMap_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      ugcRecordList_.WriteTo(ref output, _repeated_ugcRecordList_codec);
+      ugcSearchList_.WriteTo(ref output, _repeated_ugcSearchList_codec);
+      musicGameRecordMap_.WriteTo(ref output, _map_musicGameRecordMap_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += ugcRecordList_.CalculateSize(_repeated_ugcRecordList_codec);
+      size += ugcSearchList_.CalculateSize(_repeated_ugcSearchList_codec);
+      size += musicGameRecordMap_.CalculateSize(_map_musicGameRecordMap_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MusicGameActivityDetailInfo other) {
+      if (other == null) {
+        return;
+      }
+      ugcRecordList_.Add(other.ugcRecordList_);
+      ugcSearchList_.Add(other.ugcSearchList_);
+      musicGameRecordMap_.Add(other.musicGameRecordMap_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 34: {
+            ugcRecordList_.AddEntriesFrom(input, _repeated_ugcRecordList_codec);
+            break;
+          }
+          case 58: {
+            ugcSearchList_.AddEntriesFrom(input, _repeated_ugcSearchList_codec);
+            break;
+          }
+          case 66: {
+            musicGameRecordMap_.AddEntriesFrom(input, _map_musicGameRecordMap_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 34: {
+            ugcRecordList_.AddEntriesFrom(ref input, _repeated_ugcRecordList_codec);
+            break;
+          }
+          case 58: {
+            ugcSearchList_.AddEntriesFrom(ref input, _repeated_ugcSearchList_codec);
+            break;
+          }
+          case 66: {
+            musicGameRecordMap_.AddEntriesFrom(ref input, _map_musicGameRecordMap_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class MusicGameActivityDetailInfo : pb::IMessage<MusicGameActivityDetailInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<MusicGameActivityDetailInfo> _parser = new pb::MessageParser<MusicGameActivityDetailInfo>(() => new MusicGameActivityDetailInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<MusicGameActivityDetailInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::MusicGameActivityDetailInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MusicGameActivityDetailInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MusicGameActivityDetailInfo(MusicGameActivityDetailInfo other) : this() {
-    ugcRecordList_ = other.ugcRecordList_.Clone();
-    ugcSearchList_ = other.ugcSearchList_.Clone();
-    musicGameRecordMap_ = other.musicGameRecordMap_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MusicGameActivityDetailInfo Clone() {
-    return new MusicGameActivityDetailInfo(this);
-  }
-
-  /// <summary>Field number for the "ugc_record_list" field.</summary>
-  public const int UgcRecordListFieldNumber = 4;
-  private static readonly pb::FieldCodec<global::UgcMusicBriefInfo> _repeated_ugcRecordList_codec
-      = pb::FieldCodec.ForMessage(34, global::UgcMusicBriefInfo.Parser);
-  private readonly pbc::RepeatedField<global::UgcMusicBriefInfo> ugcRecordList_ = new pbc::RepeatedField<global::UgcMusicBriefInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::UgcMusicBriefInfo> UgcRecordList {
-    get { return ugcRecordList_; }
-  }
-
-  /// <summary>Field number for the "ugc_search_list" field.</summary>
-  public const int UgcSearchListFieldNumber = 7;
-  private static readonly pb::FieldCodec<global::UgcMusicBriefInfo> _repeated_ugcSearchList_codec
-      = pb::FieldCodec.ForMessage(58, global::UgcMusicBriefInfo.Parser);
-  private readonly pbc::RepeatedField<global::UgcMusicBriefInfo> ugcSearchList_ = new pbc::RepeatedField<global::UgcMusicBriefInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<global::UgcMusicBriefInfo> UgcSearchList {
-    get { return ugcSearchList_; }
-  }
-
-  /// <summary>Field number for the "music_game_record_map" field.</summary>
-  public const int MusicGameRecordMapFieldNumber = 8;
-  private static readonly pbc::MapField<uint, global::MusicGameRecord>.Codec _map_musicGameRecordMap_codec
-      = new pbc::MapField<uint, global::MusicGameRecord>.Codec(pb::FieldCodec.ForUInt32(8, 0), pb::FieldCodec.ForMessage(18, global::MusicGameRecord.Parser), 66);
-  private readonly pbc::MapField<uint, global::MusicGameRecord> musicGameRecordMap_ = new pbc::MapField<uint, global::MusicGameRecord>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::MapField<uint, global::MusicGameRecord> MusicGameRecordMap {
-    get { return musicGameRecordMap_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as MusicGameActivityDetailInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(MusicGameActivityDetailInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!ugcRecordList_.Equals(other.ugcRecordList_)) return false;
-    if(!ugcSearchList_.Equals(other.ugcSearchList_)) return false;
-    if (!MusicGameRecordMap.Equals(other.MusicGameRecordMap)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= ugcRecordList_.GetHashCode();
-    hash ^= ugcSearchList_.GetHashCode();
-    hash ^= MusicGameRecordMap.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    ugcRecordList_.WriteTo(output, _repeated_ugcRecordList_codec);
-    ugcSearchList_.WriteTo(output, _repeated_ugcSearchList_codec);
-    musicGameRecordMap_.WriteTo(output, _map_musicGameRecordMap_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    ugcRecordList_.WriteTo(ref output, _repeated_ugcRecordList_codec);
-    ugcSearchList_.WriteTo(ref output, _repeated_ugcSearchList_codec);
-    musicGameRecordMap_.WriteTo(ref output, _map_musicGameRecordMap_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    size += ugcRecordList_.CalculateSize(_repeated_ugcRecordList_codec);
-    size += ugcSearchList_.CalculateSize(_repeated_ugcSearchList_codec);
-    size += musicGameRecordMap_.CalculateSize(_map_musicGameRecordMap_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(MusicGameActivityDetailInfo other) {
-    if (other == null) {
-      return;
-    }
-    ugcRecordList_.Add(other.ugcRecordList_);
-    ugcSearchList_.Add(other.ugcSearchList_);
-    musicGameRecordMap_.Add(other.musicGameRecordMap_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 34: {
-          ugcRecordList_.AddEntriesFrom(input, _repeated_ugcRecordList_codec);
-          break;
-        }
-        case 58: {
-          ugcSearchList_.AddEntriesFrom(input, _repeated_ugcSearchList_codec);
-          break;
-        }
-        case 66: {
-          musicGameRecordMap_.AddEntriesFrom(input, _map_musicGameRecordMap_codec);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 34: {
-          ugcRecordList_.AddEntriesFrom(ref input, _repeated_ugcRecordList_codec);
-          break;
-        }
-        case 58: {
-          ugcSearchList_.AddEntriesFrom(ref input, _repeated_ugcSearchList_codec);
-          break;
-        }
-        case 66: {
-          musicGameRecordMap_.AddEntriesFrom(ref input, _map_musicGameRecordMap_codec);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

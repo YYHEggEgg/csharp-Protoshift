@@ -9,48 +9,51 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGDiceSideType.proto</summary>
-public static partial class GCGDiceSideTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGDiceSideType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGDiceSideType.proto</summary>
+  public static partial class GCGDiceSideTypeReflection {
 
-  static GCGDiceSideTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVHQ0dEaWNlU2lkZVR5cGUucHJvdG8qoQIKD0dDR0RpY2VTaWRlVHlwZRIe",
-          "ChpHQ0dfRElDRV9TSURFX1RZUEVfSU5WQUxJRBAAEhsKF0dDR19ESUNFX1NJ",
-          "REVfVFlQRV9DUllPEAESHAoYR0NHX0RJQ0VfU0lERV9UWVBFX0hZRFJPEAIS",
-          "GwoXR0NHX0RJQ0VfU0lERV9UWVBFX1BZUk8QAxIeChpHQ0dfRElDRV9TSURF",
-          "X1RZUEVfRUxFQ1RSTxAEEhoKFkdDR19ESUNFX1NJREVfVFlQRV9HRU8QBRId",
-          "ChlHQ0dfRElDRV9TSURFX1RZUEVfREVORFJPEAYSHAoYR0NHX0RJQ0VfU0lE",
-          "RV9UWVBFX0FORU1PEAcSHQoZR0NHX0RJQ0VfU0lERV9UWVBFX1BBSU1PThAI",
-          "QhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::GCGDiceSideType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for GCGDiceSideType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGDiceSideTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVHQ0dEaWNlU2lkZVR5cGUucHJvdG8qoQIKD0dDR0RpY2VTaWRlVHlwZRIe",
+            "ChpHQ0dfRElDRV9TSURFX1RZUEVfSU5WQUxJRBAAEhsKF0dDR19ESUNFX1NJ",
+            "REVfVFlQRV9DUllPEAESHAoYR0NHX0RJQ0VfU0lERV9UWVBFX0hZRFJPEAIS",
+            "GwoXR0NHX0RJQ0VfU0lERV9UWVBFX1BZUk8QAxIeChpHQ0dfRElDRV9TSURF",
+            "X1RZUEVfRUxFQ1RSTxAEEhoKFkdDR19ESUNFX1NJREVfVFlQRV9HRU8QBRId",
+            "ChlHQ0dfRElDRV9TSURFX1RZUEVfREVORFJPEAYSHAoYR0NHX0RJQ0VfU0lE",
+            "RV9UWVBFX0FORU1PEAcSHQoZR0NHX0RJQ0VfU0lERV9UWVBFX1BBSU1PThAI",
+            "QgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.GCGDiceSideType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum GCGDiceSideType {
+    [pbr::OriginalName("GCG_DICE_SIDE_TYPE_INVALID")] Invalid = 0,
+    [pbr::OriginalName("GCG_DICE_SIDE_TYPE_CRYO")] Cryo = 1,
+    [pbr::OriginalName("GCG_DICE_SIDE_TYPE_HYDRO")] Hydro = 2,
+    [pbr::OriginalName("GCG_DICE_SIDE_TYPE_PYRO")] Pyro = 3,
+    [pbr::OriginalName("GCG_DICE_SIDE_TYPE_ELECTRO")] Electro = 4,
+    [pbr::OriginalName("GCG_DICE_SIDE_TYPE_GEO")] Geo = 5,
+    [pbr::OriginalName("GCG_DICE_SIDE_TYPE_DENDRO")] Dendro = 6,
+    [pbr::OriginalName("GCG_DICE_SIDE_TYPE_ANEMO")] Anemo = 7,
+    [pbr::OriginalName("GCG_DICE_SIDE_TYPE_PAIMON")] Paimon = 8,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum GCGDiceSideType {
-  [pbr::OriginalName("GCG_DICE_SIDE_TYPE_INVALID")] Invalid = 0,
-  [pbr::OriginalName("GCG_DICE_SIDE_TYPE_CRYO")] Cryo = 1,
-  [pbr::OriginalName("GCG_DICE_SIDE_TYPE_HYDRO")] Hydro = 2,
-  [pbr::OriginalName("GCG_DICE_SIDE_TYPE_PYRO")] Pyro = 3,
-  [pbr::OriginalName("GCG_DICE_SIDE_TYPE_ELECTRO")] Electro = 4,
-  [pbr::OriginalName("GCG_DICE_SIDE_TYPE_GEO")] Geo = 5,
-  [pbr::OriginalName("GCG_DICE_SIDE_TYPE_DENDRO")] Dendro = 6,
-  [pbr::OriginalName("GCG_DICE_SIDE_TYPE_ANEMO")] Anemo = 7,
-  [pbr::OriginalName("GCG_DICE_SIDE_TYPE_PAIMON")] Paimon = 8,
-}
-
-#endregion
-
 
 #endregion Designer generated code

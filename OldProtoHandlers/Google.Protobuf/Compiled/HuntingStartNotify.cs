@@ -9,359 +9,361 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from HuntingStartNotify.proto</summary>
-public static partial class HuntingStartNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for HuntingStartNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from HuntingStartNotify.proto</summary>
+  public static partial class HuntingStartNotifyReflection {
 
-  static HuntingStartNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhIdW50aW5nU3RhcnROb3RpZnkucHJvdG8aEUh1bnRpbmdQYWlyLnByb3Rv",
-          "GgxWZWN0b3IucHJvdG8ifQoSSHVudGluZ1N0YXJ0Tm90aWZ5Eh4KDWNsdWVf",
-          "cG9zaXRpb24YBCABKAsyBy5WZWN0b3ISEQoJZmFpbF90aW1lGA8gASgNEiIK",
-          "DGh1bnRpbmdfcGFpchgDIAEoCzIMLkh1bnRpbmdQYWlyEhAKCGlzX2ZpbmFs",
-          "GAggASgIQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3Rv",
-          "Mw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::HuntingPairReflection.Descriptor, global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::HuntingStartNotify), global::HuntingStartNotify.Parser, new[]{ "CluePosition", "FailTime", "HuntingPair", "IsFinal" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for HuntingStartNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static HuntingStartNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhIdW50aW5nU3RhcnROb3RpZnkucHJvdG8aEUh1bnRpbmdQYWlyLnByb3Rv",
+            "GgxWZWN0b3IucHJvdG8ifQoSSHVudGluZ1N0YXJ0Tm90aWZ5Eh4KDWNsdWVf",
+            "cG9zaXRpb24YBCABKAsyBy5WZWN0b3ISEQoJZmFpbF90aW1lGA8gASgNEiIK",
+            "DGh1bnRpbmdfcGFpchgDIAEoCzIMLkh1bnRpbmdQYWlyEhAKCGlzX2ZpbmFs",
+            "GAggASgIQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.HuntingPairReflection.Descriptor, global::OldProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.HuntingStartNotify), global::OldProtos.HuntingStartNotify.Parser, new[]{ "CluePosition", "FailTime", "HuntingPair", "IsFinal" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 4329
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class HuntingStartNotify : pb::IMessage<HuntingStartNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HuntingStartNotify> _parser = new pb::MessageParser<HuntingStartNotify>(() => new HuntingStartNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HuntingStartNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.HuntingStartNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HuntingStartNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HuntingStartNotify(HuntingStartNotify other) : this() {
+      cluePosition_ = other.cluePosition_ != null ? other.cluePosition_.Clone() : null;
+      failTime_ = other.failTime_;
+      huntingPair_ = other.huntingPair_ != null ? other.huntingPair_.Clone() : null;
+      isFinal_ = other.isFinal_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HuntingStartNotify Clone() {
+      return new HuntingStartNotify(this);
+    }
+
+    /// <summary>Field number for the "clue_position" field.</summary>
+    public const int CluePositionFieldNumber = 4;
+    private global::OldProtos.Vector cluePosition_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector CluePosition {
+      get { return cluePosition_; }
+      set {
+        cluePosition_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fail_time" field.</summary>
+    public const int FailTimeFieldNumber = 15;
+    private uint failTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FailTime {
+      get { return failTime_; }
+      set {
+        failTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hunting_pair" field.</summary>
+    public const int HuntingPairFieldNumber = 3;
+    private global::OldProtos.HuntingPair huntingPair_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.HuntingPair HuntingPair {
+      get { return huntingPair_; }
+      set {
+        huntingPair_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_final" field.</summary>
+    public const int IsFinalFieldNumber = 8;
+    private bool isFinal_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsFinal {
+      get { return isFinal_; }
+      set {
+        isFinal_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HuntingStartNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HuntingStartNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(CluePosition, other.CluePosition)) return false;
+      if (FailTime != other.FailTime) return false;
+      if (!object.Equals(HuntingPair, other.HuntingPair)) return false;
+      if (IsFinal != other.IsFinal) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (cluePosition_ != null) hash ^= CluePosition.GetHashCode();
+      if (FailTime != 0) hash ^= FailTime.GetHashCode();
+      if (huntingPair_ != null) hash ^= HuntingPair.GetHashCode();
+      if (IsFinal != false) hash ^= IsFinal.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (huntingPair_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(HuntingPair);
+      }
+      if (cluePosition_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(CluePosition);
+      }
+      if (IsFinal != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsFinal);
+      }
+      if (FailTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(FailTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (huntingPair_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(HuntingPair);
+      }
+      if (cluePosition_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(CluePosition);
+      }
+      if (IsFinal != false) {
+        output.WriteRawTag(64);
+        output.WriteBool(IsFinal);
+      }
+      if (FailTime != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(FailTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (cluePosition_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CluePosition);
+      }
+      if (FailTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FailTime);
+      }
+      if (huntingPair_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HuntingPair);
+      }
+      if (IsFinal != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HuntingStartNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.cluePosition_ != null) {
+        if (cluePosition_ == null) {
+          CluePosition = new global::OldProtos.Vector();
+        }
+        CluePosition.MergeFrom(other.CluePosition);
+      }
+      if (other.FailTime != 0) {
+        FailTime = other.FailTime;
+      }
+      if (other.huntingPair_ != null) {
+        if (huntingPair_ == null) {
+          HuntingPair = new global::OldProtos.HuntingPair();
+        }
+        HuntingPair.MergeFrom(other.HuntingPair);
+      }
+      if (other.IsFinal != false) {
+        IsFinal = other.IsFinal;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 26: {
+            if (huntingPair_ == null) {
+              HuntingPair = new global::OldProtos.HuntingPair();
+            }
+            input.ReadMessage(HuntingPair);
+            break;
+          }
+          case 34: {
+            if (cluePosition_ == null) {
+              CluePosition = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(CluePosition);
+            break;
+          }
+          case 64: {
+            IsFinal = input.ReadBool();
+            break;
+          }
+          case 120: {
+            FailTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 26: {
+            if (huntingPair_ == null) {
+              HuntingPair = new global::OldProtos.HuntingPair();
+            }
+            input.ReadMessage(HuntingPair);
+            break;
+          }
+          case 34: {
+            if (cluePosition_ == null) {
+              CluePosition = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(CluePosition);
+            break;
+          }
+          case 64: {
+            IsFinal = input.ReadBool();
+            break;
+          }
+          case 120: {
+            FailTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 4329
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class HuntingStartNotify : pb::IMessage<HuntingStartNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<HuntingStartNotify> _parser = new pb::MessageParser<HuntingStartNotify>(() => new HuntingStartNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<HuntingStartNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::HuntingStartNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HuntingStartNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HuntingStartNotify(HuntingStartNotify other) : this() {
-    cluePosition_ = other.cluePosition_ != null ? other.cluePosition_.Clone() : null;
-    failTime_ = other.failTime_;
-    huntingPair_ = other.huntingPair_ != null ? other.huntingPair_.Clone() : null;
-    isFinal_ = other.isFinal_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public HuntingStartNotify Clone() {
-    return new HuntingStartNotify(this);
-  }
-
-  /// <summary>Field number for the "clue_position" field.</summary>
-  public const int CluePositionFieldNumber = 4;
-  private global::Vector cluePosition_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector CluePosition {
-    get { return cluePosition_; }
-    set {
-      cluePosition_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "fail_time" field.</summary>
-  public const int FailTimeFieldNumber = 15;
-  private uint failTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FailTime {
-    get { return failTime_; }
-    set {
-      failTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "hunting_pair" field.</summary>
-  public const int HuntingPairFieldNumber = 3;
-  private global::HuntingPair huntingPair_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::HuntingPair HuntingPair {
-    get { return huntingPair_; }
-    set {
-      huntingPair_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_final" field.</summary>
-  public const int IsFinalFieldNumber = 8;
-  private bool isFinal_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsFinal {
-    get { return isFinal_; }
-    set {
-      isFinal_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as HuntingStartNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(HuntingStartNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(CluePosition, other.CluePosition)) return false;
-    if (FailTime != other.FailTime) return false;
-    if (!object.Equals(HuntingPair, other.HuntingPair)) return false;
-    if (IsFinal != other.IsFinal) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (cluePosition_ != null) hash ^= CluePosition.GetHashCode();
-    if (FailTime != 0) hash ^= FailTime.GetHashCode();
-    if (huntingPair_ != null) hash ^= HuntingPair.GetHashCode();
-    if (IsFinal != false) hash ^= IsFinal.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (huntingPair_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(HuntingPair);
-    }
-    if (cluePosition_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(CluePosition);
-    }
-    if (IsFinal != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsFinal);
-    }
-    if (FailTime != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(FailTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (huntingPair_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(HuntingPair);
-    }
-    if (cluePosition_ != null) {
-      output.WriteRawTag(34);
-      output.WriteMessage(CluePosition);
-    }
-    if (IsFinal != false) {
-      output.WriteRawTag(64);
-      output.WriteBool(IsFinal);
-    }
-    if (FailTime != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(FailTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (cluePosition_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(CluePosition);
-    }
-    if (FailTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FailTime);
-    }
-    if (huntingPair_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(HuntingPair);
-    }
-    if (IsFinal != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(HuntingStartNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.cluePosition_ != null) {
-      if (cluePosition_ == null) {
-        CluePosition = new global::Vector();
-      }
-      CluePosition.MergeFrom(other.CluePosition);
-    }
-    if (other.FailTime != 0) {
-      FailTime = other.FailTime;
-    }
-    if (other.huntingPair_ != null) {
-      if (huntingPair_ == null) {
-        HuntingPair = new global::HuntingPair();
-      }
-      HuntingPair.MergeFrom(other.HuntingPair);
-    }
-    if (other.IsFinal != false) {
-      IsFinal = other.IsFinal;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 26: {
-          if (huntingPair_ == null) {
-            HuntingPair = new global::HuntingPair();
-          }
-          input.ReadMessage(HuntingPair);
-          break;
-        }
-        case 34: {
-          if (cluePosition_ == null) {
-            CluePosition = new global::Vector();
-          }
-          input.ReadMessage(CluePosition);
-          break;
-        }
-        case 64: {
-          IsFinal = input.ReadBool();
-          break;
-        }
-        case 120: {
-          FailTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 26: {
-          if (huntingPair_ == null) {
-            HuntingPair = new global::HuntingPair();
-          }
-          input.ReadMessage(HuntingPair);
-          break;
-        }
-        case 34: {
-          if (cluePosition_ == null) {
-            CluePosition = new global::Vector();
-          }
-          input.ReadMessage(CluePosition);
-          break;
-        }
-        case 64: {
-          IsFinal = input.ReadBool();
-          break;
-        }
-        case 120: {
-          FailTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "GravenInnocenceRaceLevelInfo.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message GravenInnocenceRaceInfo {
   repeated GravenInnocenceRaceLevelInfo level_info_list = 11;

@@ -9,648 +9,651 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGOperation.proto</summary>
-public static partial class GCGOperationReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGOperation.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGOperation.proto</summary>
+  public static partial class GCGOperationReflection {
 
-  static GCGOperationReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChJHQ0dPcGVyYXRpb24ucHJvdG8aGEdDR09wZXJhdGlvbkF0dGFjay5wcm90",
-          "bxofR0NHT3BlcmF0aW9uT25TdGFnZVNlbGVjdC5wcm90bxoWR0NHT3BlcmF0",
-          "aW9uUGFzcy5wcm90bxoaR0NHT3BlcmF0aW9uUGxheUNhcmQucHJvdG8aGEdD",
-          "R09wZXJhdGlvblJlYm9vdC5wcm90bxoYR0NHT3BlcmF0aW9uUmVkcmF3LnBy",
-          "b3RvGhhHQ0dPcGVyYXRpb25SZXJvbGwucHJvdG8aG0dDR09wZXJhdGlvblN1",
-          "cnJlbmRlci5wcm90byL7AgoMR0NHT3BlcmF0aW9uEigKCW9wX3JlZHJhdxgD",
-          "IAEoCzITLkdDR09wZXJhdGlvblJlZHJhd0gAEjgKEm9wX3NlbGVjdF9vbl9z",
-          "dGFnZRgJIAEoCzIaLkdDR09wZXJhdGlvbk9uU3RhZ2VTZWxlY3RIABIoCglv",
-          "cF9yZXJvbGwYBCABKAsyEy5HQ0dPcGVyYXRpb25SZXJvbGxIABIoCglvcF9h",
-          "dHRhY2sYByABKAsyEy5HQ0dPcGVyYXRpb25BdHRhY2tIABIkCgdvcF9wYXNz",
-          "GAYgASgLMhEuR0NHT3BlcmF0aW9uUGFzc0gAEi0KDG9wX3BsYXlfY2FyZBgP",
-          "IAEoCzIVLkdDR09wZXJhdGlvblBsYXlDYXJkSAASKAoJb3BfcmVib290GAUg",
-          "ASgLMhMuR0NHT3BlcmF0aW9uUmVib290SAASLgoMb3Bfc3VycmVuZGVyGAog",
-          "ASgLMhYuR0NHT3BlcmF0aW9uU3VycmVuZGVySABCBAoCb3BCFgoUb3JnLnNv",
-          "cmFwb2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GCGOperationAttackReflection.Descriptor, global::GCGOperationOnStageSelectReflection.Descriptor, global::GCGOperationPassReflection.Descriptor, global::GCGOperationPlayCardReflection.Descriptor, global::GCGOperationRebootReflection.Descriptor, global::GCGOperationRedrawReflection.Descriptor, global::GCGOperationRerollReflection.Descriptor, global::GCGOperationSurrenderReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGOperation), global::GCGOperation.Parser, new[]{ "OpRedraw", "OpSelectOnStage", "OpReroll", "OpAttack", "OpPass", "OpPlayCard", "OpReboot", "OpSurrender" }, new[]{ "Op" }, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGOperation.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGOperationReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChJHQ0dPcGVyYXRpb24ucHJvdG8aGEdDR09wZXJhdGlvbkF0dGFjay5wcm90",
+            "bxofR0NHT3BlcmF0aW9uT25TdGFnZVNlbGVjdC5wcm90bxoWR0NHT3BlcmF0",
+            "aW9uUGFzcy5wcm90bxoaR0NHT3BlcmF0aW9uUGxheUNhcmQucHJvdG8aGEdD",
+            "R09wZXJhdGlvblJlYm9vdC5wcm90bxoYR0NHT3BlcmF0aW9uUmVkcmF3LnBy",
+            "b3RvGhhHQ0dPcGVyYXRpb25SZXJvbGwucHJvdG8aG0dDR09wZXJhdGlvblN1",
+            "cnJlbmRlci5wcm90byL7AgoMR0NHT3BlcmF0aW9uEigKCW9wX3JlZHJhdxgD",
+            "IAEoCzITLkdDR09wZXJhdGlvblJlZHJhd0gAEjgKEm9wX3NlbGVjdF9vbl9z",
+            "dGFnZRgJIAEoCzIaLkdDR09wZXJhdGlvbk9uU3RhZ2VTZWxlY3RIABIoCglv",
+            "cF9yZXJvbGwYBCABKAsyEy5HQ0dPcGVyYXRpb25SZXJvbGxIABIoCglvcF9h",
+            "dHRhY2sYByABKAsyEy5HQ0dPcGVyYXRpb25BdHRhY2tIABIkCgdvcF9wYXNz",
+            "GAYgASgLMhEuR0NHT3BlcmF0aW9uUGFzc0gAEi0KDG9wX3BsYXlfY2FyZBgP",
+            "IAEoCzIVLkdDR09wZXJhdGlvblBsYXlDYXJkSAASKAoJb3BfcmVib290GAUg",
+            "ASgLMhMuR0NHT3BlcmF0aW9uUmVib290SAASLgoMb3Bfc3VycmVuZGVyGAog",
+            "ASgLMhYuR0NHT3BlcmF0aW9uU3VycmVuZGVySABCBAoCb3BCDKoCCU5ld1By",
+            "b3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.GCGOperationAttackReflection.Descriptor, global::NewProtos.GCGOperationOnStageSelectReflection.Descriptor, global::NewProtos.GCGOperationPassReflection.Descriptor, global::NewProtos.GCGOperationPlayCardReflection.Descriptor, global::NewProtos.GCGOperationRebootReflection.Descriptor, global::NewProtos.GCGOperationRedrawReflection.Descriptor, global::NewProtos.GCGOperationRerollReflection.Descriptor, global::NewProtos.GCGOperationSurrenderReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GCGOperation), global::NewProtos.GCGOperation.Parser, new[]{ "OpRedraw", "OpSelectOnStage", "OpReroll", "OpAttack", "OpPass", "OpPlayCard", "OpReboot", "OpSurrender" }, new[]{ "Op" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class GCGOperation : pb::IMessage<GCGOperation>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGOperation> _parser = new pb::MessageParser<GCGOperation>(() => new GCGOperation());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGOperation> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.GCGOperationReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGOperation() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGOperation(GCGOperation other) : this() {
+      switch (other.OpCase) {
+        case OpOneofCase.OpRedraw:
+          OpRedraw = other.OpRedraw.Clone();
+          break;
+        case OpOneofCase.OpSelectOnStage:
+          OpSelectOnStage = other.OpSelectOnStage.Clone();
+          break;
+        case OpOneofCase.OpReroll:
+          OpReroll = other.OpReroll.Clone();
+          break;
+        case OpOneofCase.OpAttack:
+          OpAttack = other.OpAttack.Clone();
+          break;
+        case OpOneofCase.OpPass:
+          OpPass = other.OpPass.Clone();
+          break;
+        case OpOneofCase.OpPlayCard:
+          OpPlayCard = other.OpPlayCard.Clone();
+          break;
+        case OpOneofCase.OpReboot:
+          OpReboot = other.OpReboot.Clone();
+          break;
+        case OpOneofCase.OpSurrender:
+          OpSurrender = other.OpSurrender.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGOperation Clone() {
+      return new GCGOperation(this);
+    }
+
+    /// <summary>Field number for the "op_redraw" field.</summary>
+    public const int OpRedrawFieldNumber = 3;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGOperationRedraw OpRedraw {
+      get { return opCase_ == OpOneofCase.OpRedraw ? (global::NewProtos.GCGOperationRedraw) op_ : null; }
+      set {
+        op_ = value;
+        opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpRedraw;
+      }
+    }
+
+    /// <summary>Field number for the "op_select_on_stage" field.</summary>
+    public const int OpSelectOnStageFieldNumber = 9;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGOperationOnStageSelect OpSelectOnStage {
+      get { return opCase_ == OpOneofCase.OpSelectOnStage ? (global::NewProtos.GCGOperationOnStageSelect) op_ : null; }
+      set {
+        op_ = value;
+        opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpSelectOnStage;
+      }
+    }
+
+    /// <summary>Field number for the "op_reroll" field.</summary>
+    public const int OpRerollFieldNumber = 4;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGOperationReroll OpReroll {
+      get { return opCase_ == OpOneofCase.OpReroll ? (global::NewProtos.GCGOperationReroll) op_ : null; }
+      set {
+        op_ = value;
+        opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpReroll;
+      }
+    }
+
+    /// <summary>Field number for the "op_attack" field.</summary>
+    public const int OpAttackFieldNumber = 7;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGOperationAttack OpAttack {
+      get { return opCase_ == OpOneofCase.OpAttack ? (global::NewProtos.GCGOperationAttack) op_ : null; }
+      set {
+        op_ = value;
+        opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpAttack;
+      }
+    }
+
+    /// <summary>Field number for the "op_pass" field.</summary>
+    public const int OpPassFieldNumber = 6;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGOperationPass OpPass {
+      get { return opCase_ == OpOneofCase.OpPass ? (global::NewProtos.GCGOperationPass) op_ : null; }
+      set {
+        op_ = value;
+        opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpPass;
+      }
+    }
+
+    /// <summary>Field number for the "op_play_card" field.</summary>
+    public const int OpPlayCardFieldNumber = 15;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGOperationPlayCard OpPlayCard {
+      get { return opCase_ == OpOneofCase.OpPlayCard ? (global::NewProtos.GCGOperationPlayCard) op_ : null; }
+      set {
+        op_ = value;
+        opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpPlayCard;
+      }
+    }
+
+    /// <summary>Field number for the "op_reboot" field.</summary>
+    public const int OpRebootFieldNumber = 5;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGOperationReboot OpReboot {
+      get { return opCase_ == OpOneofCase.OpReboot ? (global::NewProtos.GCGOperationReboot) op_ : null; }
+      set {
+        op_ = value;
+        opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpReboot;
+      }
+    }
+
+    /// <summary>Field number for the "op_surrender" field.</summary>
+    public const int OpSurrenderFieldNumber = 10;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.GCGOperationSurrender OpSurrender {
+      get { return opCase_ == OpOneofCase.OpSurrender ? (global::NewProtos.GCGOperationSurrender) op_ : null; }
+      set {
+        op_ = value;
+        opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpSurrender;
+      }
+    }
+
+    private object op_;
+    /// <summary>Enum of possible cases for the "op" oneof.</summary>
+    public enum OpOneofCase {
+      None = 0,
+      OpRedraw = 3,
+      OpSelectOnStage = 9,
+      OpReroll = 4,
+      OpAttack = 7,
+      OpPass = 6,
+      OpPlayCard = 15,
+      OpReboot = 5,
+      OpSurrender = 10,
+    }
+    private OpOneofCase opCase_ = OpOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OpOneofCase OpCase {
+      get { return opCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearOp() {
+      opCase_ = OpOneofCase.None;
+      op_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGOperation);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGOperation other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(OpRedraw, other.OpRedraw)) return false;
+      if (!object.Equals(OpSelectOnStage, other.OpSelectOnStage)) return false;
+      if (!object.Equals(OpReroll, other.OpReroll)) return false;
+      if (!object.Equals(OpAttack, other.OpAttack)) return false;
+      if (!object.Equals(OpPass, other.OpPass)) return false;
+      if (!object.Equals(OpPlayCard, other.OpPlayCard)) return false;
+      if (!object.Equals(OpReboot, other.OpReboot)) return false;
+      if (!object.Equals(OpSurrender, other.OpSurrender)) return false;
+      if (OpCase != other.OpCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (opCase_ == OpOneofCase.OpRedraw) hash ^= OpRedraw.GetHashCode();
+      if (opCase_ == OpOneofCase.OpSelectOnStage) hash ^= OpSelectOnStage.GetHashCode();
+      if (opCase_ == OpOneofCase.OpReroll) hash ^= OpReroll.GetHashCode();
+      if (opCase_ == OpOneofCase.OpAttack) hash ^= OpAttack.GetHashCode();
+      if (opCase_ == OpOneofCase.OpPass) hash ^= OpPass.GetHashCode();
+      if (opCase_ == OpOneofCase.OpPlayCard) hash ^= OpPlayCard.GetHashCode();
+      if (opCase_ == OpOneofCase.OpReboot) hash ^= OpReboot.GetHashCode();
+      if (opCase_ == OpOneofCase.OpSurrender) hash ^= OpSurrender.GetHashCode();
+      hash ^= (int) opCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (opCase_ == OpOneofCase.OpRedraw) {
+        output.WriteRawTag(26);
+        output.WriteMessage(OpRedraw);
+      }
+      if (opCase_ == OpOneofCase.OpReroll) {
+        output.WriteRawTag(34);
+        output.WriteMessage(OpReroll);
+      }
+      if (opCase_ == OpOneofCase.OpReboot) {
+        output.WriteRawTag(42);
+        output.WriteMessage(OpReboot);
+      }
+      if (opCase_ == OpOneofCase.OpPass) {
+        output.WriteRawTag(50);
+        output.WriteMessage(OpPass);
+      }
+      if (opCase_ == OpOneofCase.OpAttack) {
+        output.WriteRawTag(58);
+        output.WriteMessage(OpAttack);
+      }
+      if (opCase_ == OpOneofCase.OpSelectOnStage) {
+        output.WriteRawTag(74);
+        output.WriteMessage(OpSelectOnStage);
+      }
+      if (opCase_ == OpOneofCase.OpSurrender) {
+        output.WriteRawTag(82);
+        output.WriteMessage(OpSurrender);
+      }
+      if (opCase_ == OpOneofCase.OpPlayCard) {
+        output.WriteRawTag(122);
+        output.WriteMessage(OpPlayCard);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (opCase_ == OpOneofCase.OpRedraw) {
+        output.WriteRawTag(26);
+        output.WriteMessage(OpRedraw);
+      }
+      if (opCase_ == OpOneofCase.OpReroll) {
+        output.WriteRawTag(34);
+        output.WriteMessage(OpReroll);
+      }
+      if (opCase_ == OpOneofCase.OpReboot) {
+        output.WriteRawTag(42);
+        output.WriteMessage(OpReboot);
+      }
+      if (opCase_ == OpOneofCase.OpPass) {
+        output.WriteRawTag(50);
+        output.WriteMessage(OpPass);
+      }
+      if (opCase_ == OpOneofCase.OpAttack) {
+        output.WriteRawTag(58);
+        output.WriteMessage(OpAttack);
+      }
+      if (opCase_ == OpOneofCase.OpSelectOnStage) {
+        output.WriteRawTag(74);
+        output.WriteMessage(OpSelectOnStage);
+      }
+      if (opCase_ == OpOneofCase.OpSurrender) {
+        output.WriteRawTag(82);
+        output.WriteMessage(OpSurrender);
+      }
+      if (opCase_ == OpOneofCase.OpPlayCard) {
+        output.WriteRawTag(122);
+        output.WriteMessage(OpPlayCard);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (opCase_ == OpOneofCase.OpRedraw) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpRedraw);
+      }
+      if (opCase_ == OpOneofCase.OpSelectOnStage) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpSelectOnStage);
+      }
+      if (opCase_ == OpOneofCase.OpReroll) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpReroll);
+      }
+      if (opCase_ == OpOneofCase.OpAttack) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpAttack);
+      }
+      if (opCase_ == OpOneofCase.OpPass) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpPass);
+      }
+      if (opCase_ == OpOneofCase.OpPlayCard) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpPlayCard);
+      }
+      if (opCase_ == OpOneofCase.OpReboot) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpReboot);
+      }
+      if (opCase_ == OpOneofCase.OpSurrender) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpSurrender);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGOperation other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.OpCase) {
+        case OpOneofCase.OpRedraw:
+          if (OpRedraw == null) {
+            OpRedraw = new global::NewProtos.GCGOperationRedraw();
+          }
+          OpRedraw.MergeFrom(other.OpRedraw);
+          break;
+        case OpOneofCase.OpSelectOnStage:
+          if (OpSelectOnStage == null) {
+            OpSelectOnStage = new global::NewProtos.GCGOperationOnStageSelect();
+          }
+          OpSelectOnStage.MergeFrom(other.OpSelectOnStage);
+          break;
+        case OpOneofCase.OpReroll:
+          if (OpReroll == null) {
+            OpReroll = new global::NewProtos.GCGOperationReroll();
+          }
+          OpReroll.MergeFrom(other.OpReroll);
+          break;
+        case OpOneofCase.OpAttack:
+          if (OpAttack == null) {
+            OpAttack = new global::NewProtos.GCGOperationAttack();
+          }
+          OpAttack.MergeFrom(other.OpAttack);
+          break;
+        case OpOneofCase.OpPass:
+          if (OpPass == null) {
+            OpPass = new global::NewProtos.GCGOperationPass();
+          }
+          OpPass.MergeFrom(other.OpPass);
+          break;
+        case OpOneofCase.OpPlayCard:
+          if (OpPlayCard == null) {
+            OpPlayCard = new global::NewProtos.GCGOperationPlayCard();
+          }
+          OpPlayCard.MergeFrom(other.OpPlayCard);
+          break;
+        case OpOneofCase.OpReboot:
+          if (OpReboot == null) {
+            OpReboot = new global::NewProtos.GCGOperationReboot();
+          }
+          OpReboot.MergeFrom(other.OpReboot);
+          break;
+        case OpOneofCase.OpSurrender:
+          if (OpSurrender == null) {
+            OpSurrender = new global::NewProtos.GCGOperationSurrender();
+          }
+          OpSurrender.MergeFrom(other.OpSurrender);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 26: {
+            global::NewProtos.GCGOperationRedraw subBuilder = new global::NewProtos.GCGOperationRedraw();
+            if (opCase_ == OpOneofCase.OpRedraw) {
+              subBuilder.MergeFrom(OpRedraw);
+            }
+            input.ReadMessage(subBuilder);
+            OpRedraw = subBuilder;
+            break;
+          }
+          case 34: {
+            global::NewProtos.GCGOperationReroll subBuilder = new global::NewProtos.GCGOperationReroll();
+            if (opCase_ == OpOneofCase.OpReroll) {
+              subBuilder.MergeFrom(OpReroll);
+            }
+            input.ReadMessage(subBuilder);
+            OpReroll = subBuilder;
+            break;
+          }
+          case 42: {
+            global::NewProtos.GCGOperationReboot subBuilder = new global::NewProtos.GCGOperationReboot();
+            if (opCase_ == OpOneofCase.OpReboot) {
+              subBuilder.MergeFrom(OpReboot);
+            }
+            input.ReadMessage(subBuilder);
+            OpReboot = subBuilder;
+            break;
+          }
+          case 50: {
+            global::NewProtos.GCGOperationPass subBuilder = new global::NewProtos.GCGOperationPass();
+            if (opCase_ == OpOneofCase.OpPass) {
+              subBuilder.MergeFrom(OpPass);
+            }
+            input.ReadMessage(subBuilder);
+            OpPass = subBuilder;
+            break;
+          }
+          case 58: {
+            global::NewProtos.GCGOperationAttack subBuilder = new global::NewProtos.GCGOperationAttack();
+            if (opCase_ == OpOneofCase.OpAttack) {
+              subBuilder.MergeFrom(OpAttack);
+            }
+            input.ReadMessage(subBuilder);
+            OpAttack = subBuilder;
+            break;
+          }
+          case 74: {
+            global::NewProtos.GCGOperationOnStageSelect subBuilder = new global::NewProtos.GCGOperationOnStageSelect();
+            if (opCase_ == OpOneofCase.OpSelectOnStage) {
+              subBuilder.MergeFrom(OpSelectOnStage);
+            }
+            input.ReadMessage(subBuilder);
+            OpSelectOnStage = subBuilder;
+            break;
+          }
+          case 82: {
+            global::NewProtos.GCGOperationSurrender subBuilder = new global::NewProtos.GCGOperationSurrender();
+            if (opCase_ == OpOneofCase.OpSurrender) {
+              subBuilder.MergeFrom(OpSurrender);
+            }
+            input.ReadMessage(subBuilder);
+            OpSurrender = subBuilder;
+            break;
+          }
+          case 122: {
+            global::NewProtos.GCGOperationPlayCard subBuilder = new global::NewProtos.GCGOperationPlayCard();
+            if (opCase_ == OpOneofCase.OpPlayCard) {
+              subBuilder.MergeFrom(OpPlayCard);
+            }
+            input.ReadMessage(subBuilder);
+            OpPlayCard = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 26: {
+            global::NewProtos.GCGOperationRedraw subBuilder = new global::NewProtos.GCGOperationRedraw();
+            if (opCase_ == OpOneofCase.OpRedraw) {
+              subBuilder.MergeFrom(OpRedraw);
+            }
+            input.ReadMessage(subBuilder);
+            OpRedraw = subBuilder;
+            break;
+          }
+          case 34: {
+            global::NewProtos.GCGOperationReroll subBuilder = new global::NewProtos.GCGOperationReroll();
+            if (opCase_ == OpOneofCase.OpReroll) {
+              subBuilder.MergeFrom(OpReroll);
+            }
+            input.ReadMessage(subBuilder);
+            OpReroll = subBuilder;
+            break;
+          }
+          case 42: {
+            global::NewProtos.GCGOperationReboot subBuilder = new global::NewProtos.GCGOperationReboot();
+            if (opCase_ == OpOneofCase.OpReboot) {
+              subBuilder.MergeFrom(OpReboot);
+            }
+            input.ReadMessage(subBuilder);
+            OpReboot = subBuilder;
+            break;
+          }
+          case 50: {
+            global::NewProtos.GCGOperationPass subBuilder = new global::NewProtos.GCGOperationPass();
+            if (opCase_ == OpOneofCase.OpPass) {
+              subBuilder.MergeFrom(OpPass);
+            }
+            input.ReadMessage(subBuilder);
+            OpPass = subBuilder;
+            break;
+          }
+          case 58: {
+            global::NewProtos.GCGOperationAttack subBuilder = new global::NewProtos.GCGOperationAttack();
+            if (opCase_ == OpOneofCase.OpAttack) {
+              subBuilder.MergeFrom(OpAttack);
+            }
+            input.ReadMessage(subBuilder);
+            OpAttack = subBuilder;
+            break;
+          }
+          case 74: {
+            global::NewProtos.GCGOperationOnStageSelect subBuilder = new global::NewProtos.GCGOperationOnStageSelect();
+            if (opCase_ == OpOneofCase.OpSelectOnStage) {
+              subBuilder.MergeFrom(OpSelectOnStage);
+            }
+            input.ReadMessage(subBuilder);
+            OpSelectOnStage = subBuilder;
+            break;
+          }
+          case 82: {
+            global::NewProtos.GCGOperationSurrender subBuilder = new global::NewProtos.GCGOperationSurrender();
+            if (opCase_ == OpOneofCase.OpSurrender) {
+              subBuilder.MergeFrom(OpSurrender);
+            }
+            input.ReadMessage(subBuilder);
+            OpSurrender = subBuilder;
+            break;
+          }
+          case 122: {
+            global::NewProtos.GCGOperationPlayCard subBuilder = new global::NewProtos.GCGOperationPlayCard();
+            if (opCase_ == OpOneofCase.OpPlayCard) {
+              subBuilder.MergeFrom(OpPlayCard);
+            }
+            input.ReadMessage(subBuilder);
+            OpPlayCard = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class GCGOperation : pb::IMessage<GCGOperation>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGOperation> _parser = new pb::MessageParser<GCGOperation>(() => new GCGOperation());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGOperation> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGOperationReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGOperation() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGOperation(GCGOperation other) : this() {
-    switch (other.OpCase) {
-      case OpOneofCase.OpRedraw:
-        OpRedraw = other.OpRedraw.Clone();
-        break;
-      case OpOneofCase.OpSelectOnStage:
-        OpSelectOnStage = other.OpSelectOnStage.Clone();
-        break;
-      case OpOneofCase.OpReroll:
-        OpReroll = other.OpReroll.Clone();
-        break;
-      case OpOneofCase.OpAttack:
-        OpAttack = other.OpAttack.Clone();
-        break;
-      case OpOneofCase.OpPass:
-        OpPass = other.OpPass.Clone();
-        break;
-      case OpOneofCase.OpPlayCard:
-        OpPlayCard = other.OpPlayCard.Clone();
-        break;
-      case OpOneofCase.OpReboot:
-        OpReboot = other.OpReboot.Clone();
-        break;
-      case OpOneofCase.OpSurrender:
-        OpSurrender = other.OpSurrender.Clone();
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGOperation Clone() {
-    return new GCGOperation(this);
-  }
-
-  /// <summary>Field number for the "op_redraw" field.</summary>
-  public const int OpRedrawFieldNumber = 3;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGOperationRedraw OpRedraw {
-    get { return opCase_ == OpOneofCase.OpRedraw ? (global::GCGOperationRedraw) op_ : null; }
-    set {
-      op_ = value;
-      opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpRedraw;
-    }
-  }
-
-  /// <summary>Field number for the "op_select_on_stage" field.</summary>
-  public const int OpSelectOnStageFieldNumber = 9;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGOperationOnStageSelect OpSelectOnStage {
-    get { return opCase_ == OpOneofCase.OpSelectOnStage ? (global::GCGOperationOnStageSelect) op_ : null; }
-    set {
-      op_ = value;
-      opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpSelectOnStage;
-    }
-  }
-
-  /// <summary>Field number for the "op_reroll" field.</summary>
-  public const int OpRerollFieldNumber = 4;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGOperationReroll OpReroll {
-    get { return opCase_ == OpOneofCase.OpReroll ? (global::GCGOperationReroll) op_ : null; }
-    set {
-      op_ = value;
-      opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpReroll;
-    }
-  }
-
-  /// <summary>Field number for the "op_attack" field.</summary>
-  public const int OpAttackFieldNumber = 7;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGOperationAttack OpAttack {
-    get { return opCase_ == OpOneofCase.OpAttack ? (global::GCGOperationAttack) op_ : null; }
-    set {
-      op_ = value;
-      opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpAttack;
-    }
-  }
-
-  /// <summary>Field number for the "op_pass" field.</summary>
-  public const int OpPassFieldNumber = 6;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGOperationPass OpPass {
-    get { return opCase_ == OpOneofCase.OpPass ? (global::GCGOperationPass) op_ : null; }
-    set {
-      op_ = value;
-      opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpPass;
-    }
-  }
-
-  /// <summary>Field number for the "op_play_card" field.</summary>
-  public const int OpPlayCardFieldNumber = 15;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGOperationPlayCard OpPlayCard {
-    get { return opCase_ == OpOneofCase.OpPlayCard ? (global::GCGOperationPlayCard) op_ : null; }
-    set {
-      op_ = value;
-      opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpPlayCard;
-    }
-  }
-
-  /// <summary>Field number for the "op_reboot" field.</summary>
-  public const int OpRebootFieldNumber = 5;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGOperationReboot OpReboot {
-    get { return opCase_ == OpOneofCase.OpReboot ? (global::GCGOperationReboot) op_ : null; }
-    set {
-      op_ = value;
-      opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpReboot;
-    }
-  }
-
-  /// <summary>Field number for the "op_surrender" field.</summary>
-  public const int OpSurrenderFieldNumber = 10;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GCGOperationSurrender OpSurrender {
-    get { return opCase_ == OpOneofCase.OpSurrender ? (global::GCGOperationSurrender) op_ : null; }
-    set {
-      op_ = value;
-      opCase_ = value == null ? OpOneofCase.None : OpOneofCase.OpSurrender;
-    }
-  }
-
-  private object op_;
-  /// <summary>Enum of possible cases for the "op" oneof.</summary>
-  public enum OpOneofCase {
-    None = 0,
-    OpRedraw = 3,
-    OpSelectOnStage = 9,
-    OpReroll = 4,
-    OpAttack = 7,
-    OpPass = 6,
-    OpPlayCard = 15,
-    OpReboot = 5,
-    OpSurrender = 10,
-  }
-  private OpOneofCase opCase_ = OpOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public OpOneofCase OpCase {
-    get { return opCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearOp() {
-    opCase_ = OpOneofCase.None;
-    op_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGOperation);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGOperation other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(OpRedraw, other.OpRedraw)) return false;
-    if (!object.Equals(OpSelectOnStage, other.OpSelectOnStage)) return false;
-    if (!object.Equals(OpReroll, other.OpReroll)) return false;
-    if (!object.Equals(OpAttack, other.OpAttack)) return false;
-    if (!object.Equals(OpPass, other.OpPass)) return false;
-    if (!object.Equals(OpPlayCard, other.OpPlayCard)) return false;
-    if (!object.Equals(OpReboot, other.OpReboot)) return false;
-    if (!object.Equals(OpSurrender, other.OpSurrender)) return false;
-    if (OpCase != other.OpCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (opCase_ == OpOneofCase.OpRedraw) hash ^= OpRedraw.GetHashCode();
-    if (opCase_ == OpOneofCase.OpSelectOnStage) hash ^= OpSelectOnStage.GetHashCode();
-    if (opCase_ == OpOneofCase.OpReroll) hash ^= OpReroll.GetHashCode();
-    if (opCase_ == OpOneofCase.OpAttack) hash ^= OpAttack.GetHashCode();
-    if (opCase_ == OpOneofCase.OpPass) hash ^= OpPass.GetHashCode();
-    if (opCase_ == OpOneofCase.OpPlayCard) hash ^= OpPlayCard.GetHashCode();
-    if (opCase_ == OpOneofCase.OpReboot) hash ^= OpReboot.GetHashCode();
-    if (opCase_ == OpOneofCase.OpSurrender) hash ^= OpSurrender.GetHashCode();
-    hash ^= (int) opCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (opCase_ == OpOneofCase.OpRedraw) {
-      output.WriteRawTag(26);
-      output.WriteMessage(OpRedraw);
-    }
-    if (opCase_ == OpOneofCase.OpReroll) {
-      output.WriteRawTag(34);
-      output.WriteMessage(OpReroll);
-    }
-    if (opCase_ == OpOneofCase.OpReboot) {
-      output.WriteRawTag(42);
-      output.WriteMessage(OpReboot);
-    }
-    if (opCase_ == OpOneofCase.OpPass) {
-      output.WriteRawTag(50);
-      output.WriteMessage(OpPass);
-    }
-    if (opCase_ == OpOneofCase.OpAttack) {
-      output.WriteRawTag(58);
-      output.WriteMessage(OpAttack);
-    }
-    if (opCase_ == OpOneofCase.OpSelectOnStage) {
-      output.WriteRawTag(74);
-      output.WriteMessage(OpSelectOnStage);
-    }
-    if (opCase_ == OpOneofCase.OpSurrender) {
-      output.WriteRawTag(82);
-      output.WriteMessage(OpSurrender);
-    }
-    if (opCase_ == OpOneofCase.OpPlayCard) {
-      output.WriteRawTag(122);
-      output.WriteMessage(OpPlayCard);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (opCase_ == OpOneofCase.OpRedraw) {
-      output.WriteRawTag(26);
-      output.WriteMessage(OpRedraw);
-    }
-    if (opCase_ == OpOneofCase.OpReroll) {
-      output.WriteRawTag(34);
-      output.WriteMessage(OpReroll);
-    }
-    if (opCase_ == OpOneofCase.OpReboot) {
-      output.WriteRawTag(42);
-      output.WriteMessage(OpReboot);
-    }
-    if (opCase_ == OpOneofCase.OpPass) {
-      output.WriteRawTag(50);
-      output.WriteMessage(OpPass);
-    }
-    if (opCase_ == OpOneofCase.OpAttack) {
-      output.WriteRawTag(58);
-      output.WriteMessage(OpAttack);
-    }
-    if (opCase_ == OpOneofCase.OpSelectOnStage) {
-      output.WriteRawTag(74);
-      output.WriteMessage(OpSelectOnStage);
-    }
-    if (opCase_ == OpOneofCase.OpSurrender) {
-      output.WriteRawTag(82);
-      output.WriteMessage(OpSurrender);
-    }
-    if (opCase_ == OpOneofCase.OpPlayCard) {
-      output.WriteRawTag(122);
-      output.WriteMessage(OpPlayCard);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (opCase_ == OpOneofCase.OpRedraw) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpRedraw);
-    }
-    if (opCase_ == OpOneofCase.OpSelectOnStage) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpSelectOnStage);
-    }
-    if (opCase_ == OpOneofCase.OpReroll) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpReroll);
-    }
-    if (opCase_ == OpOneofCase.OpAttack) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpAttack);
-    }
-    if (opCase_ == OpOneofCase.OpPass) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpPass);
-    }
-    if (opCase_ == OpOneofCase.OpPlayCard) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpPlayCard);
-    }
-    if (opCase_ == OpOneofCase.OpReboot) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpReboot);
-    }
-    if (opCase_ == OpOneofCase.OpSurrender) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(OpSurrender);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGOperation other) {
-    if (other == null) {
-      return;
-    }
-    switch (other.OpCase) {
-      case OpOneofCase.OpRedraw:
-        if (OpRedraw == null) {
-          OpRedraw = new global::GCGOperationRedraw();
-        }
-        OpRedraw.MergeFrom(other.OpRedraw);
-        break;
-      case OpOneofCase.OpSelectOnStage:
-        if (OpSelectOnStage == null) {
-          OpSelectOnStage = new global::GCGOperationOnStageSelect();
-        }
-        OpSelectOnStage.MergeFrom(other.OpSelectOnStage);
-        break;
-      case OpOneofCase.OpReroll:
-        if (OpReroll == null) {
-          OpReroll = new global::GCGOperationReroll();
-        }
-        OpReroll.MergeFrom(other.OpReroll);
-        break;
-      case OpOneofCase.OpAttack:
-        if (OpAttack == null) {
-          OpAttack = new global::GCGOperationAttack();
-        }
-        OpAttack.MergeFrom(other.OpAttack);
-        break;
-      case OpOneofCase.OpPass:
-        if (OpPass == null) {
-          OpPass = new global::GCGOperationPass();
-        }
-        OpPass.MergeFrom(other.OpPass);
-        break;
-      case OpOneofCase.OpPlayCard:
-        if (OpPlayCard == null) {
-          OpPlayCard = new global::GCGOperationPlayCard();
-        }
-        OpPlayCard.MergeFrom(other.OpPlayCard);
-        break;
-      case OpOneofCase.OpReboot:
-        if (OpReboot == null) {
-          OpReboot = new global::GCGOperationReboot();
-        }
-        OpReboot.MergeFrom(other.OpReboot);
-        break;
-      case OpOneofCase.OpSurrender:
-        if (OpSurrender == null) {
-          OpSurrender = new global::GCGOperationSurrender();
-        }
-        OpSurrender.MergeFrom(other.OpSurrender);
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 26: {
-          global::GCGOperationRedraw subBuilder = new global::GCGOperationRedraw();
-          if (opCase_ == OpOneofCase.OpRedraw) {
-            subBuilder.MergeFrom(OpRedraw);
-          }
-          input.ReadMessage(subBuilder);
-          OpRedraw = subBuilder;
-          break;
-        }
-        case 34: {
-          global::GCGOperationReroll subBuilder = new global::GCGOperationReroll();
-          if (opCase_ == OpOneofCase.OpReroll) {
-            subBuilder.MergeFrom(OpReroll);
-          }
-          input.ReadMessage(subBuilder);
-          OpReroll = subBuilder;
-          break;
-        }
-        case 42: {
-          global::GCGOperationReboot subBuilder = new global::GCGOperationReboot();
-          if (opCase_ == OpOneofCase.OpReboot) {
-            subBuilder.MergeFrom(OpReboot);
-          }
-          input.ReadMessage(subBuilder);
-          OpReboot = subBuilder;
-          break;
-        }
-        case 50: {
-          global::GCGOperationPass subBuilder = new global::GCGOperationPass();
-          if (opCase_ == OpOneofCase.OpPass) {
-            subBuilder.MergeFrom(OpPass);
-          }
-          input.ReadMessage(subBuilder);
-          OpPass = subBuilder;
-          break;
-        }
-        case 58: {
-          global::GCGOperationAttack subBuilder = new global::GCGOperationAttack();
-          if (opCase_ == OpOneofCase.OpAttack) {
-            subBuilder.MergeFrom(OpAttack);
-          }
-          input.ReadMessage(subBuilder);
-          OpAttack = subBuilder;
-          break;
-        }
-        case 74: {
-          global::GCGOperationOnStageSelect subBuilder = new global::GCGOperationOnStageSelect();
-          if (opCase_ == OpOneofCase.OpSelectOnStage) {
-            subBuilder.MergeFrom(OpSelectOnStage);
-          }
-          input.ReadMessage(subBuilder);
-          OpSelectOnStage = subBuilder;
-          break;
-        }
-        case 82: {
-          global::GCGOperationSurrender subBuilder = new global::GCGOperationSurrender();
-          if (opCase_ == OpOneofCase.OpSurrender) {
-            subBuilder.MergeFrom(OpSurrender);
-          }
-          input.ReadMessage(subBuilder);
-          OpSurrender = subBuilder;
-          break;
-        }
-        case 122: {
-          global::GCGOperationPlayCard subBuilder = new global::GCGOperationPlayCard();
-          if (opCase_ == OpOneofCase.OpPlayCard) {
-            subBuilder.MergeFrom(OpPlayCard);
-          }
-          input.ReadMessage(subBuilder);
-          OpPlayCard = subBuilder;
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 26: {
-          global::GCGOperationRedraw subBuilder = new global::GCGOperationRedraw();
-          if (opCase_ == OpOneofCase.OpRedraw) {
-            subBuilder.MergeFrom(OpRedraw);
-          }
-          input.ReadMessage(subBuilder);
-          OpRedraw = subBuilder;
-          break;
-        }
-        case 34: {
-          global::GCGOperationReroll subBuilder = new global::GCGOperationReroll();
-          if (opCase_ == OpOneofCase.OpReroll) {
-            subBuilder.MergeFrom(OpReroll);
-          }
-          input.ReadMessage(subBuilder);
-          OpReroll = subBuilder;
-          break;
-        }
-        case 42: {
-          global::GCGOperationReboot subBuilder = new global::GCGOperationReboot();
-          if (opCase_ == OpOneofCase.OpReboot) {
-            subBuilder.MergeFrom(OpReboot);
-          }
-          input.ReadMessage(subBuilder);
-          OpReboot = subBuilder;
-          break;
-        }
-        case 50: {
-          global::GCGOperationPass subBuilder = new global::GCGOperationPass();
-          if (opCase_ == OpOneofCase.OpPass) {
-            subBuilder.MergeFrom(OpPass);
-          }
-          input.ReadMessage(subBuilder);
-          OpPass = subBuilder;
-          break;
-        }
-        case 58: {
-          global::GCGOperationAttack subBuilder = new global::GCGOperationAttack();
-          if (opCase_ == OpOneofCase.OpAttack) {
-            subBuilder.MergeFrom(OpAttack);
-          }
-          input.ReadMessage(subBuilder);
-          OpAttack = subBuilder;
-          break;
-        }
-        case 74: {
-          global::GCGOperationOnStageSelect subBuilder = new global::GCGOperationOnStageSelect();
-          if (opCase_ == OpOneofCase.OpSelectOnStage) {
-            subBuilder.MergeFrom(OpSelectOnStage);
-          }
-          input.ReadMessage(subBuilder);
-          OpSelectOnStage = subBuilder;
-          break;
-        }
-        case 82: {
-          global::GCGOperationSurrender subBuilder = new global::GCGOperationSurrender();
-          if (opCase_ == OpOneofCase.OpSurrender) {
-            subBuilder.MergeFrom(OpSurrender);
-          }
-          input.ReadMessage(subBuilder);
-          OpSurrender = subBuilder;
-          break;
-        }
-        case 122: {
-          global::GCGOperationPlayCard subBuilder = new global::GCGOperationPlayCard();
-          if (opCase_ == OpOneofCase.OpPlayCard) {
-            subBuilder.MergeFrom(OpPlayCard);
-          }
-          input.ReadMessage(subBuilder);
-          OpPlayCard = subBuilder;
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

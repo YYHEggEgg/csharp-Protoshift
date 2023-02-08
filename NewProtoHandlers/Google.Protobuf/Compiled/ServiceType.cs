@@ -9,65 +9,68 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ServiceType.proto</summary>
-public static partial class ServiceTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ServiceType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ServiceType.proto</summary>
+  public static partial class ServiceTypeReflection {
 
-  static ServiceTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChFTZXJ2aWNlVHlwZS5wcm90byqTBAoLU2VydmljZVR5cGUSFQoRU0VSVklD",
-          "RV9UWVBFX05PTkUQABIXChNTRVJWSUNFX1RZUEVfQ0xJRU5UEAESFQoRU0VS",
-          "VklDRV9UWVBFX0dBVEUQAhIVChFTRVJWSUNFX1RZUEVfR0FNRRADEhUKEVNF",
-          "UlZJQ0VfVFlQRV9OT0RFEAQSEwoPU0VSVklDRV9UWVBFX0RCEAUSFAoQU0VS",
-          "VklDRV9UWVBFX1NOUxAGEhkKFVNFUlZJQ0VfVFlQRV9ESVNQQVRDSBAHEhUK",
-          "EVNFUlZJQ0VfVFlQRV9NVUlQEAgSHAoYU0VSVklDRV9UWVBFX09GRkxJTkVf",
-          "TVNHEAkSFQoRU0VSVklDRV9UWVBFX01BSUwQChITCg9TRVJWSUNFX1RZUEVf",
-          "TVAQCxIaChZTRVJWSUNFX1RZUEVfSFRUUFBST1hZEAwSGQoVU0VSVklDRV9U",
-          "WVBFX0FDVElWSVRZEA0SHAoYU0VSVklDRV9UWVBFX1BBVEhGSU5ESU5HEA4S",
-          "FwoTU0VSVklDRV9UWVBFX1NPQ0lBTBAPEhMKD1NFUlZJQ0VfVFlQRV9PQRAQ",
-          "EhYKElNFUlZJQ0VfVFlQRV9NQVRDSBAREhsKF1NFUlZJQ0VfVFlQRV9PRkZM",
-          "SU5FX09QEBISGgoWU0VSVklDRV9UWVBFX1RPVEhFTU9PThATEhQKEFNFUlZJ",
-          "Q0VfVFlQRV9HQ0cQFEIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ServiceType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for ServiceType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ServiceTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChFTZXJ2aWNlVHlwZS5wcm90byqTBAoLU2VydmljZVR5cGUSFQoRU0VSVklD",
+            "RV9UWVBFX05PTkUQABIXChNTRVJWSUNFX1RZUEVfQ0xJRU5UEAESFQoRU0VS",
+            "VklDRV9UWVBFX0dBVEUQAhIVChFTRVJWSUNFX1RZUEVfR0FNRRADEhUKEVNF",
+            "UlZJQ0VfVFlQRV9OT0RFEAQSEwoPU0VSVklDRV9UWVBFX0RCEAUSFAoQU0VS",
+            "VklDRV9UWVBFX1NOUxAGEhkKFVNFUlZJQ0VfVFlQRV9ESVNQQVRDSBAHEhUK",
+            "EVNFUlZJQ0VfVFlQRV9NVUlQEAgSHAoYU0VSVklDRV9UWVBFX09GRkxJTkVf",
+            "TVNHEAkSFQoRU0VSVklDRV9UWVBFX01BSUwQChITCg9TRVJWSUNFX1RZUEVf",
+            "TVAQCxIaChZTRVJWSUNFX1RZUEVfSFRUUFBST1hZEAwSGQoVU0VSVklDRV9U",
+            "WVBFX0FDVElWSVRZEA0SHAoYU0VSVklDRV9UWVBFX1BBVEhGSU5ESU5HEA4S",
+            "FwoTU0VSVklDRV9UWVBFX1NPQ0lBTBAPEhMKD1NFUlZJQ0VfVFlQRV9PQRAQ",
+            "EhYKElNFUlZJQ0VfVFlQRV9NQVRDSBAREhsKF1NFUlZJQ0VfVFlQRV9PRkZM",
+            "SU5FX09QEBISGgoWU0VSVklDRV9UWVBFX1RPVEhFTU9PThATEhQKEFNFUlZJ",
+            "Q0VfVFlQRV9HQ0cQFEIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.ServiceType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum ServiceType {
+    [pbr::OriginalName("SERVICE_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("SERVICE_TYPE_CLIENT")] Client = 1,
+    [pbr::OriginalName("SERVICE_TYPE_GATE")] Gate = 2,
+    [pbr::OriginalName("SERVICE_TYPE_GAME")] Game = 3,
+    [pbr::OriginalName("SERVICE_TYPE_NODE")] Node = 4,
+    [pbr::OriginalName("SERVICE_TYPE_DB")] Db = 5,
+    [pbr::OriginalName("SERVICE_TYPE_SNS")] Sns = 6,
+    [pbr::OriginalName("SERVICE_TYPE_DISPATCH")] Dispatch = 7,
+    [pbr::OriginalName("SERVICE_TYPE_MUIP")] Muip = 8,
+    [pbr::OriginalName("SERVICE_TYPE_OFFLINE_MSG")] OfflineMsg = 9,
+    [pbr::OriginalName("SERVICE_TYPE_MAIL")] Mail = 10,
+    [pbr::OriginalName("SERVICE_TYPE_MP")] Mp = 11,
+    [pbr::OriginalName("SERVICE_TYPE_HTTPPROXY")] Httpproxy = 12,
+    [pbr::OriginalName("SERVICE_TYPE_ACTIVITY")] Activity = 13,
+    [pbr::OriginalName("SERVICE_TYPE_PATHFINDING")] Pathfinding = 14,
+    [pbr::OriginalName("SERVICE_TYPE_SOCIAL")] Social = 15,
+    [pbr::OriginalName("SERVICE_TYPE_OA")] Oa = 16,
+    [pbr::OriginalName("SERVICE_TYPE_MATCH")] Match = 17,
+    [pbr::OriginalName("SERVICE_TYPE_OFFLINE_OP")] OfflineOp = 18,
+    [pbr::OriginalName("SERVICE_TYPE_TOTHEMOON")] Tothemoon = 19,
+    [pbr::OriginalName("SERVICE_TYPE_GCG")] Gcg = 20,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum ServiceType {
-  [pbr::OriginalName("SERVICE_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("SERVICE_TYPE_CLIENT")] Client = 1,
-  [pbr::OriginalName("SERVICE_TYPE_GATE")] Gate = 2,
-  [pbr::OriginalName("SERVICE_TYPE_GAME")] Game = 3,
-  [pbr::OriginalName("SERVICE_TYPE_NODE")] Node = 4,
-  [pbr::OriginalName("SERVICE_TYPE_DB")] Db = 5,
-  [pbr::OriginalName("SERVICE_TYPE_SNS")] Sns = 6,
-  [pbr::OriginalName("SERVICE_TYPE_DISPATCH")] Dispatch = 7,
-  [pbr::OriginalName("SERVICE_TYPE_MUIP")] Muip = 8,
-  [pbr::OriginalName("SERVICE_TYPE_OFFLINE_MSG")] OfflineMsg = 9,
-  [pbr::OriginalName("SERVICE_TYPE_MAIL")] Mail = 10,
-  [pbr::OriginalName("SERVICE_TYPE_MP")] Mp = 11,
-  [pbr::OriginalName("SERVICE_TYPE_HTTPPROXY")] Httpproxy = 12,
-  [pbr::OriginalName("SERVICE_TYPE_ACTIVITY")] Activity = 13,
-  [pbr::OriginalName("SERVICE_TYPE_PATHFINDING")] Pathfinding = 14,
-  [pbr::OriginalName("SERVICE_TYPE_SOCIAL")] Social = 15,
-  [pbr::OriginalName("SERVICE_TYPE_OA")] Oa = 16,
-  [pbr::OriginalName("SERVICE_TYPE_MATCH")] Match = 17,
-  [pbr::OriginalName("SERVICE_TYPE_OFFLINE_OP")] OfflineOp = 18,
-  [pbr::OriginalName("SERVICE_TYPE_TOTHEMOON")] Tothemoon = 19,
-  [pbr::OriginalName("SERVICE_TYPE_GCG")] Gcg = 20,
-}
-
-#endregion
-
 
 #endregion Designer generated code

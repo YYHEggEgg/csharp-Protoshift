@@ -19,7 +19,7 @@ syntax = "proto3";
 import "ForgeQueueManipulateType.proto";
 import "ItemParam.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 // CmdId: 656
 // EnetChannelId: 0

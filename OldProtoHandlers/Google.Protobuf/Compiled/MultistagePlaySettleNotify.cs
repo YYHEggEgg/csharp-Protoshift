@@ -9,458 +9,460 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MultistagePlaySettleNotify.proto</summary>
-public static partial class MultistagePlaySettleNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MultistagePlaySettleNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MultistagePlaySettleNotify.proto</summary>
+  public static partial class MultistagePlaySettleNotifyReflection {
 
-  static MultistagePlaySettleNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiBNdWx0aXN0YWdlUGxheVNldHRsZU5vdGlmeS5wcm90bxodSW5CYXR0bGVD",
-          "aGVzc1NldHRsZUluZm8ucHJvdG8aJEluQmF0dGxlSXJvZG9yaUNoZXNzU2V0",
-          "dGxlSW5mby5wcm90bxoiSW5CYXR0bGVNZWNoYW5pY3VzU2V0dGxlSW5mby5w",
-          "cm90byKNAgoaTXVsdGlzdGFnZVBsYXlTZXR0bGVOb3RpZnkSEgoKcGxheV9p",
-          "bmRleBgOIAEoDRIQCghncm91cF9pZBgEIAEoDRJAChZtZWNoYW5pY3VzX3Nl",
-          "dHRsZV9pbmZvGPoKIAEoCzIdLkluQmF0dGxlTWVjaGFuaWN1c1NldHRsZUlu",
-          "Zm9IABI2ChFjaGVzc19zZXR0bGVfaW5mbxiDCiABKAsyGC5JbkJhdHRsZUNo",
-          "ZXNzU2V0dGxlSW5mb0gAEkUKGWlyb2RvcmlfY2hlc3Nfc2V0dGxlX2luZm8Y",
-          "5AQgASgLMh8uSW5CYXR0bGVJcm9kb3JpQ2hlc3NTZXR0bGVJbmZvSABCCAoG",
-          "ZGV0YWlsQh4KHGVtdS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3Rv",
-          "Mw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::InBattleChessSettleInfoReflection.Descriptor, global::InBattleIrodoriChessSettleInfoReflection.Descriptor, global::InBattleMechanicusSettleInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MultistagePlaySettleNotify), global::MultistagePlaySettleNotify.Parser, new[]{ "PlayIndex", "GroupId", "MechanicusSettleInfo", "ChessSettleInfo", "IrodoriChessSettleInfo" }, new[]{ "Detail" }, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for MultistagePlaySettleNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MultistagePlaySettleNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiBNdWx0aXN0YWdlUGxheVNldHRsZU5vdGlmeS5wcm90bxodSW5CYXR0bGVD",
+            "aGVzc1NldHRsZUluZm8ucHJvdG8aJEluQmF0dGxlSXJvZG9yaUNoZXNzU2V0",
+            "dGxlSW5mby5wcm90bxoiSW5CYXR0bGVNZWNoYW5pY3VzU2V0dGxlSW5mby5w",
+            "cm90byKNAgoaTXVsdGlzdGFnZVBsYXlTZXR0bGVOb3RpZnkSEgoKcGxheV9p",
+            "bmRleBgOIAEoDRIQCghncm91cF9pZBgEIAEoDRJAChZtZWNoYW5pY3VzX3Nl",
+            "dHRsZV9pbmZvGPoKIAEoCzIdLkluQmF0dGxlTWVjaGFuaWN1c1NldHRsZUlu",
+            "Zm9IABI2ChFjaGVzc19zZXR0bGVfaW5mbxiDCiABKAsyGC5JbkJhdHRsZUNo",
+            "ZXNzU2V0dGxlSW5mb0gAEkUKGWlyb2RvcmlfY2hlc3Nfc2V0dGxlX2luZm8Y",
+            "5AQgASgLMh8uSW5CYXR0bGVJcm9kb3JpQ2hlc3NTZXR0bGVJbmZvSABCCAoG",
+            "ZGV0YWlsQgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.InBattleChessSettleInfoReflection.Descriptor, global::OldProtos.InBattleIrodoriChessSettleInfoReflection.Descriptor, global::OldProtos.InBattleMechanicusSettleInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.MultistagePlaySettleNotify), global::OldProtos.MultistagePlaySettleNotify.Parser, new[]{ "PlayIndex", "GroupId", "MechanicusSettleInfo", "ChessSettleInfo", "IrodoriChessSettleInfo" }, new[]{ "Detail" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 5313
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class MultistagePlaySettleNotify : pb::IMessage<MultistagePlaySettleNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MultistagePlaySettleNotify> _parser = new pb::MessageParser<MultistagePlaySettleNotify>(() => new MultistagePlaySettleNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MultistagePlaySettleNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.MultistagePlaySettleNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MultistagePlaySettleNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MultistagePlaySettleNotify(MultistagePlaySettleNotify other) : this() {
+      playIndex_ = other.playIndex_;
+      groupId_ = other.groupId_;
+      switch (other.DetailCase) {
+        case DetailOneofCase.MechanicusSettleInfo:
+          MechanicusSettleInfo = other.MechanicusSettleInfo.Clone();
+          break;
+        case DetailOneofCase.ChessSettleInfo:
+          ChessSettleInfo = other.ChessSettleInfo.Clone();
+          break;
+        case DetailOneofCase.IrodoriChessSettleInfo:
+          IrodoriChessSettleInfo = other.IrodoriChessSettleInfo.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MultistagePlaySettleNotify Clone() {
+      return new MultistagePlaySettleNotify(this);
+    }
+
+    /// <summary>Field number for the "play_index" field.</summary>
+    public const int PlayIndexFieldNumber = 14;
+    private uint playIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PlayIndex {
+      get { return playIndex_; }
+      set {
+        playIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "group_id" field.</summary>
+    public const int GroupIdFieldNumber = 4;
+    private uint groupId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GroupId {
+      get { return groupId_; }
+      set {
+        groupId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "mechanicus_settle_info" field.</summary>
+    public const int MechanicusSettleInfoFieldNumber = 1402;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.InBattleMechanicusSettleInfo MechanicusSettleInfo {
+      get { return detailCase_ == DetailOneofCase.MechanicusSettleInfo ? (global::OldProtos.InBattleMechanicusSettleInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.MechanicusSettleInfo;
+      }
+    }
+
+    /// <summary>Field number for the "chess_settle_info" field.</summary>
+    public const int ChessSettleInfoFieldNumber = 1283;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.InBattleChessSettleInfo ChessSettleInfo {
+      get { return detailCase_ == DetailOneofCase.ChessSettleInfo ? (global::OldProtos.InBattleChessSettleInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ChessSettleInfo;
+      }
+    }
+
+    /// <summary>Field number for the "irodori_chess_settle_info" field.</summary>
+    public const int IrodoriChessSettleInfoFieldNumber = 612;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.InBattleIrodoriChessSettleInfo IrodoriChessSettleInfo {
+      get { return detailCase_ == DetailOneofCase.IrodoriChessSettleInfo ? (global::OldProtos.InBattleIrodoriChessSettleInfo) detail_ : null; }
+      set {
+        detail_ = value;
+        detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.IrodoriChessSettleInfo;
+      }
+    }
+
+    private object detail_;
+    /// <summary>Enum of possible cases for the "detail" oneof.</summary>
+    public enum DetailOneofCase {
+      None = 0,
+      MechanicusSettleInfo = 1402,
+      ChessSettleInfo = 1283,
+      IrodoriChessSettleInfo = 612,
+    }
+    private DetailOneofCase detailCase_ = DetailOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public DetailOneofCase DetailCase {
+      get { return detailCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearDetail() {
+      detailCase_ = DetailOneofCase.None;
+      detail_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MultistagePlaySettleNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MultistagePlaySettleNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PlayIndex != other.PlayIndex) return false;
+      if (GroupId != other.GroupId) return false;
+      if (!object.Equals(MechanicusSettleInfo, other.MechanicusSettleInfo)) return false;
+      if (!object.Equals(ChessSettleInfo, other.ChessSettleInfo)) return false;
+      if (!object.Equals(IrodoriChessSettleInfo, other.IrodoriChessSettleInfo)) return false;
+      if (DetailCase != other.DetailCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PlayIndex != 0) hash ^= PlayIndex.GetHashCode();
+      if (GroupId != 0) hash ^= GroupId.GetHashCode();
+      if (detailCase_ == DetailOneofCase.MechanicusSettleInfo) hash ^= MechanicusSettleInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.ChessSettleInfo) hash ^= ChessSettleInfo.GetHashCode();
+      if (detailCase_ == DetailOneofCase.IrodoriChessSettleInfo) hash ^= IrodoriChessSettleInfo.GetHashCode();
+      hash ^= (int) detailCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (GroupId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(GroupId);
+      }
+      if (PlayIndex != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(PlayIndex);
+      }
+      if (detailCase_ == DetailOneofCase.IrodoriChessSettleInfo) {
+        output.WriteRawTag(162, 38);
+        output.WriteMessage(IrodoriChessSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChessSettleInfo) {
+        output.WriteRawTag(154, 80);
+        output.WriteMessage(ChessSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MechanicusSettleInfo) {
+        output.WriteRawTag(210, 87);
+        output.WriteMessage(MechanicusSettleInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (GroupId != 0) {
+        output.WriteRawTag(32);
+        output.WriteUInt32(GroupId);
+      }
+      if (PlayIndex != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(PlayIndex);
+      }
+      if (detailCase_ == DetailOneofCase.IrodoriChessSettleInfo) {
+        output.WriteRawTag(162, 38);
+        output.WriteMessage(IrodoriChessSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChessSettleInfo) {
+        output.WriteRawTag(154, 80);
+        output.WriteMessage(ChessSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.MechanicusSettleInfo) {
+        output.WriteRawTag(210, 87);
+        output.WriteMessage(MechanicusSettleInfo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (PlayIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayIndex);
+      }
+      if (GroupId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
+      }
+      if (detailCase_ == DetailOneofCase.MechanicusSettleInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(MechanicusSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.ChessSettleInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(ChessSettleInfo);
+      }
+      if (detailCase_ == DetailOneofCase.IrodoriChessSettleInfo) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(IrodoriChessSettleInfo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MultistagePlaySettleNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PlayIndex != 0) {
+        PlayIndex = other.PlayIndex;
+      }
+      if (other.GroupId != 0) {
+        GroupId = other.GroupId;
+      }
+      switch (other.DetailCase) {
+        case DetailOneofCase.MechanicusSettleInfo:
+          if (MechanicusSettleInfo == null) {
+            MechanicusSettleInfo = new global::OldProtos.InBattleMechanicusSettleInfo();
+          }
+          MechanicusSettleInfo.MergeFrom(other.MechanicusSettleInfo);
+          break;
+        case DetailOneofCase.ChessSettleInfo:
+          if (ChessSettleInfo == null) {
+            ChessSettleInfo = new global::OldProtos.InBattleChessSettleInfo();
+          }
+          ChessSettleInfo.MergeFrom(other.ChessSettleInfo);
+          break;
+        case DetailOneofCase.IrodoriChessSettleInfo:
+          if (IrodoriChessSettleInfo == null) {
+            IrodoriChessSettleInfo = new global::OldProtos.InBattleIrodoriChessSettleInfo();
+          }
+          IrodoriChessSettleInfo.MergeFrom(other.IrodoriChessSettleInfo);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 32: {
+            GroupId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            PlayIndex = input.ReadUInt32();
+            break;
+          }
+          case 4898: {
+            global::OldProtos.InBattleIrodoriChessSettleInfo subBuilder = new global::OldProtos.InBattleIrodoriChessSettleInfo();
+            if (detailCase_ == DetailOneofCase.IrodoriChessSettleInfo) {
+              subBuilder.MergeFrom(IrodoriChessSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IrodoriChessSettleInfo = subBuilder;
+            break;
+          }
+          case 10266: {
+            global::OldProtos.InBattleChessSettleInfo subBuilder = new global::OldProtos.InBattleChessSettleInfo();
+            if (detailCase_ == DetailOneofCase.ChessSettleInfo) {
+              subBuilder.MergeFrom(ChessSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChessSettleInfo = subBuilder;
+            break;
+          }
+          case 11218: {
+            global::OldProtos.InBattleMechanicusSettleInfo subBuilder = new global::OldProtos.InBattleMechanicusSettleInfo();
+            if (detailCase_ == DetailOneofCase.MechanicusSettleInfo) {
+              subBuilder.MergeFrom(MechanicusSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MechanicusSettleInfo = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 32: {
+            GroupId = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            PlayIndex = input.ReadUInt32();
+            break;
+          }
+          case 4898: {
+            global::OldProtos.InBattleIrodoriChessSettleInfo subBuilder = new global::OldProtos.InBattleIrodoriChessSettleInfo();
+            if (detailCase_ == DetailOneofCase.IrodoriChessSettleInfo) {
+              subBuilder.MergeFrom(IrodoriChessSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            IrodoriChessSettleInfo = subBuilder;
+            break;
+          }
+          case 10266: {
+            global::OldProtos.InBattleChessSettleInfo subBuilder = new global::OldProtos.InBattleChessSettleInfo();
+            if (detailCase_ == DetailOneofCase.ChessSettleInfo) {
+              subBuilder.MergeFrom(ChessSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            ChessSettleInfo = subBuilder;
+            break;
+          }
+          case 11218: {
+            global::OldProtos.InBattleMechanicusSettleInfo subBuilder = new global::OldProtos.InBattleMechanicusSettleInfo();
+            if (detailCase_ == DetailOneofCase.MechanicusSettleInfo) {
+              subBuilder.MergeFrom(MechanicusSettleInfo);
+            }
+            input.ReadMessage(subBuilder);
+            MechanicusSettleInfo = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 5313
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class MultistagePlaySettleNotify : pb::IMessage<MultistagePlaySettleNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<MultistagePlaySettleNotify> _parser = new pb::MessageParser<MultistagePlaySettleNotify>(() => new MultistagePlaySettleNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<MultistagePlaySettleNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::MultistagePlaySettleNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MultistagePlaySettleNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MultistagePlaySettleNotify(MultistagePlaySettleNotify other) : this() {
-    playIndex_ = other.playIndex_;
-    groupId_ = other.groupId_;
-    switch (other.DetailCase) {
-      case DetailOneofCase.MechanicusSettleInfo:
-        MechanicusSettleInfo = other.MechanicusSettleInfo.Clone();
-        break;
-      case DetailOneofCase.ChessSettleInfo:
-        ChessSettleInfo = other.ChessSettleInfo.Clone();
-        break;
-      case DetailOneofCase.IrodoriChessSettleInfo:
-        IrodoriChessSettleInfo = other.IrodoriChessSettleInfo.Clone();
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MultistagePlaySettleNotify Clone() {
-    return new MultistagePlaySettleNotify(this);
-  }
-
-  /// <summary>Field number for the "play_index" field.</summary>
-  public const int PlayIndexFieldNumber = 14;
-  private uint playIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PlayIndex {
-    get { return playIndex_; }
-    set {
-      playIndex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "group_id" field.</summary>
-  public const int GroupIdFieldNumber = 4;
-  private uint groupId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GroupId {
-    get { return groupId_; }
-    set {
-      groupId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "mechanicus_settle_info" field.</summary>
-  public const int MechanicusSettleInfoFieldNumber = 1402;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::InBattleMechanicusSettleInfo MechanicusSettleInfo {
-    get { return detailCase_ == DetailOneofCase.MechanicusSettleInfo ? (global::InBattleMechanicusSettleInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.MechanicusSettleInfo;
-    }
-  }
-
-  /// <summary>Field number for the "chess_settle_info" field.</summary>
-  public const int ChessSettleInfoFieldNumber = 1283;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::InBattleChessSettleInfo ChessSettleInfo {
-    get { return detailCase_ == DetailOneofCase.ChessSettleInfo ? (global::InBattleChessSettleInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.ChessSettleInfo;
-    }
-  }
-
-  /// <summary>Field number for the "irodori_chess_settle_info" field.</summary>
-  public const int IrodoriChessSettleInfoFieldNumber = 612;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::InBattleIrodoriChessSettleInfo IrodoriChessSettleInfo {
-    get { return detailCase_ == DetailOneofCase.IrodoriChessSettleInfo ? (global::InBattleIrodoriChessSettleInfo) detail_ : null; }
-    set {
-      detail_ = value;
-      detailCase_ = value == null ? DetailOneofCase.None : DetailOneofCase.IrodoriChessSettleInfo;
-    }
-  }
-
-  private object detail_;
-  /// <summary>Enum of possible cases for the "detail" oneof.</summary>
-  public enum DetailOneofCase {
-    None = 0,
-    MechanicusSettleInfo = 1402,
-    ChessSettleInfo = 1283,
-    IrodoriChessSettleInfo = 612,
-  }
-  private DetailOneofCase detailCase_ = DetailOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public DetailOneofCase DetailCase {
-    get { return detailCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearDetail() {
-    detailCase_ = DetailOneofCase.None;
-    detail_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as MultistagePlaySettleNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(MultistagePlaySettleNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (PlayIndex != other.PlayIndex) return false;
-    if (GroupId != other.GroupId) return false;
-    if (!object.Equals(MechanicusSettleInfo, other.MechanicusSettleInfo)) return false;
-    if (!object.Equals(ChessSettleInfo, other.ChessSettleInfo)) return false;
-    if (!object.Equals(IrodoriChessSettleInfo, other.IrodoriChessSettleInfo)) return false;
-    if (DetailCase != other.DetailCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (PlayIndex != 0) hash ^= PlayIndex.GetHashCode();
-    if (GroupId != 0) hash ^= GroupId.GetHashCode();
-    if (detailCase_ == DetailOneofCase.MechanicusSettleInfo) hash ^= MechanicusSettleInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.ChessSettleInfo) hash ^= ChessSettleInfo.GetHashCode();
-    if (detailCase_ == DetailOneofCase.IrodoriChessSettleInfo) hash ^= IrodoriChessSettleInfo.GetHashCode();
-    hash ^= (int) detailCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (GroupId != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(GroupId);
-    }
-    if (PlayIndex != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(PlayIndex);
-    }
-    if (detailCase_ == DetailOneofCase.IrodoriChessSettleInfo) {
-      output.WriteRawTag(162, 38);
-      output.WriteMessage(IrodoriChessSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ChessSettleInfo) {
-      output.WriteRawTag(154, 80);
-      output.WriteMessage(ChessSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MechanicusSettleInfo) {
-      output.WriteRawTag(210, 87);
-      output.WriteMessage(MechanicusSettleInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (GroupId != 0) {
-      output.WriteRawTag(32);
-      output.WriteUInt32(GroupId);
-    }
-    if (PlayIndex != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(PlayIndex);
-    }
-    if (detailCase_ == DetailOneofCase.IrodoriChessSettleInfo) {
-      output.WriteRawTag(162, 38);
-      output.WriteMessage(IrodoriChessSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ChessSettleInfo) {
-      output.WriteRawTag(154, 80);
-      output.WriteMessage(ChessSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.MechanicusSettleInfo) {
-      output.WriteRawTag(210, 87);
-      output.WriteMessage(MechanicusSettleInfo);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (PlayIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlayIndex);
-    }
-    if (GroupId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GroupId);
-    }
-    if (detailCase_ == DetailOneofCase.MechanicusSettleInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(MechanicusSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.ChessSettleInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(ChessSettleInfo);
-    }
-    if (detailCase_ == DetailOneofCase.IrodoriChessSettleInfo) {
-      size += 2 + pb::CodedOutputStream.ComputeMessageSize(IrodoriChessSettleInfo);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(MultistagePlaySettleNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.PlayIndex != 0) {
-      PlayIndex = other.PlayIndex;
-    }
-    if (other.GroupId != 0) {
-      GroupId = other.GroupId;
-    }
-    switch (other.DetailCase) {
-      case DetailOneofCase.MechanicusSettleInfo:
-        if (MechanicusSettleInfo == null) {
-          MechanicusSettleInfo = new global::InBattleMechanicusSettleInfo();
-        }
-        MechanicusSettleInfo.MergeFrom(other.MechanicusSettleInfo);
-        break;
-      case DetailOneofCase.ChessSettleInfo:
-        if (ChessSettleInfo == null) {
-          ChessSettleInfo = new global::InBattleChessSettleInfo();
-        }
-        ChessSettleInfo.MergeFrom(other.ChessSettleInfo);
-        break;
-      case DetailOneofCase.IrodoriChessSettleInfo:
-        if (IrodoriChessSettleInfo == null) {
-          IrodoriChessSettleInfo = new global::InBattleIrodoriChessSettleInfo();
-        }
-        IrodoriChessSettleInfo.MergeFrom(other.IrodoriChessSettleInfo);
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 32: {
-          GroupId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          PlayIndex = input.ReadUInt32();
-          break;
-        }
-        case 4898: {
-          global::InBattleIrodoriChessSettleInfo subBuilder = new global::InBattleIrodoriChessSettleInfo();
-          if (detailCase_ == DetailOneofCase.IrodoriChessSettleInfo) {
-            subBuilder.MergeFrom(IrodoriChessSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IrodoriChessSettleInfo = subBuilder;
-          break;
-        }
-        case 10266: {
-          global::InBattleChessSettleInfo subBuilder = new global::InBattleChessSettleInfo();
-          if (detailCase_ == DetailOneofCase.ChessSettleInfo) {
-            subBuilder.MergeFrom(ChessSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          ChessSettleInfo = subBuilder;
-          break;
-        }
-        case 11218: {
-          global::InBattleMechanicusSettleInfo subBuilder = new global::InBattleMechanicusSettleInfo();
-          if (detailCase_ == DetailOneofCase.MechanicusSettleInfo) {
-            subBuilder.MergeFrom(MechanicusSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MechanicusSettleInfo = subBuilder;
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 32: {
-          GroupId = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          PlayIndex = input.ReadUInt32();
-          break;
-        }
-        case 4898: {
-          global::InBattleIrodoriChessSettleInfo subBuilder = new global::InBattleIrodoriChessSettleInfo();
-          if (detailCase_ == DetailOneofCase.IrodoriChessSettleInfo) {
-            subBuilder.MergeFrom(IrodoriChessSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          IrodoriChessSettleInfo = subBuilder;
-          break;
-        }
-        case 10266: {
-          global::InBattleChessSettleInfo subBuilder = new global::InBattleChessSettleInfo();
-          if (detailCase_ == DetailOneofCase.ChessSettleInfo) {
-            subBuilder.MergeFrom(ChessSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          ChessSettleInfo = subBuilder;
-          break;
-        }
-        case 11218: {
-          global::InBattleMechanicusSettleInfo subBuilder = new global::InBattleMechanicusSettleInfo();
-          if (detailCase_ == DetailOneofCase.MechanicusSettleInfo) {
-            subBuilder.MergeFrom(MechanicusSettleInfo);
-          }
-          input.ReadMessage(subBuilder);
-          MechanicusSettleInfo = subBuilder;
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

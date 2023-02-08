@@ -9,37 +9,40 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CustomDungeonBanType.proto</summary>
-public static partial class CustomDungeonBanTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CustomDungeonBanType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CustomDungeonBanType.proto</summary>
+  public static partial class CustomDungeonBanTypeReflection {
 
-  static CustomDungeonBanTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChpDdXN0b21EdW5nZW9uQmFuVHlwZS5wcm90bypcChRDdXN0b21EdW5nZW9u",
-          "QmFuVHlwZRIgChxDVVNUT01fRFVOR0VPTl9CQU5fVFlQRV9OT05FEAASIgoe",
-          "Q1VTVE9NX0RVTkdFT05fQkFOX1RZUEVfTEFZT1VUEAFCFgoUb3JnLnNvcmFw",
-          "b2ludGEucHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::CustomDungeonBanType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for CustomDungeonBanType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CustomDungeonBanTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChpDdXN0b21EdW5nZW9uQmFuVHlwZS5wcm90bypcChRDdXN0b21EdW5nZW9u",
+            "QmFuVHlwZRIgChxDVVNUT01fRFVOR0VPTl9CQU5fVFlQRV9OT05FEAASIgoe",
+            "Q1VTVE9NX0RVTkdFT05fQkFOX1RZUEVfTEFZT1VUEAFCDKoCCU5ld1Byb3Rv",
+            "c2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.CustomDungeonBanType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum CustomDungeonBanType {
+    [pbr::OriginalName("CUSTOM_DUNGEON_BAN_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("CUSTOM_DUNGEON_BAN_TYPE_LAYOUT")] Layout = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum CustomDungeonBanType {
-  [pbr::OriginalName("CUSTOM_DUNGEON_BAN_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("CUSTOM_DUNGEON_BAN_TYPE_LAYOUT")] Layout = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

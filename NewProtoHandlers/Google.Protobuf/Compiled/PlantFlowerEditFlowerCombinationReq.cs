@@ -9,318 +9,321 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from PlantFlowerEditFlowerCombinationReq.proto</summary>
-public static partial class PlantFlowerEditFlowerCombinationReqReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for PlantFlowerEditFlowerCombinationReq.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from PlantFlowerEditFlowerCombinationReq.proto</summary>
+  public static partial class PlantFlowerEditFlowerCombinationReqReflection {
 
-  static PlantFlowerEditFlowerCombinationReqReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CilQbGFudEZsb3dlckVkaXRGbG93ZXJDb21iaW5hdGlvblJlcS5wcm90bxoa",
-          "Q3VzdG9tR2FkZ2V0VHJlZUluZm8ucHJvdG8ihQEKI1BsYW50Rmxvd2VyRWRp",
-          "dEZsb3dlckNvbWJpbmF0aW9uUmVxEhEKCWVudGl0eV9pZBgDIAEoDRI2Chdm",
-          "bG93ZXJfY29tYmluYXRpb25faW5mbxgIIAEoCzIVLkN1c3RvbUdhZGdldFRy",
-          "ZWVJbmZvEhMKC3NjaGVkdWxlX2lkGAwgASgNQhYKFG9yZy5zb3JhcG9pbnRh",
-          "LnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::CustomGadgetTreeInfoReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::PlantFlowerEditFlowerCombinationReq), global::PlantFlowerEditFlowerCombinationReq.Parser, new[]{ "EntityId", "FlowerCombinationInfo", "ScheduleId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for PlantFlowerEditFlowerCombinationReq.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static PlantFlowerEditFlowerCombinationReqReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CilQbGFudEZsb3dlckVkaXRGbG93ZXJDb21iaW5hdGlvblJlcS5wcm90bxoa",
+            "Q3VzdG9tR2FkZ2V0VHJlZUluZm8ucHJvdG8ihQEKI1BsYW50Rmxvd2VyRWRp",
+            "dEZsb3dlckNvbWJpbmF0aW9uUmVxEhEKCWVudGl0eV9pZBgDIAEoDRI2Chdm",
+            "bG93ZXJfY29tYmluYXRpb25faW5mbxgIIAEoCzIVLkN1c3RvbUdhZGdldFRy",
+            "ZWVJbmZvEhMKC3NjaGVkdWxlX2lkGAwgASgNQgyqAglOZXdQcm90b3NiBnBy",
+            "b3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.CustomGadgetTreeInfoReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.PlantFlowerEditFlowerCombinationReq), global::NewProtos.PlantFlowerEditFlowerCombinationReq.Parser, new[]{ "EntityId", "FlowerCombinationInfo", "ScheduleId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 8396;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
+  /// </summary>
+  public sealed partial class PlantFlowerEditFlowerCombinationReq : pb::IMessage<PlantFlowerEditFlowerCombinationReq>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PlantFlowerEditFlowerCombinationReq> _parser = new pb::MessageParser<PlantFlowerEditFlowerCombinationReq>(() => new PlantFlowerEditFlowerCombinationReq());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PlantFlowerEditFlowerCombinationReq> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.PlantFlowerEditFlowerCombinationReqReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlantFlowerEditFlowerCombinationReq() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlantFlowerEditFlowerCombinationReq(PlantFlowerEditFlowerCombinationReq other) : this() {
+      entityId_ = other.entityId_;
+      flowerCombinationInfo_ = other.flowerCombinationInfo_ != null ? other.flowerCombinationInfo_.Clone() : null;
+      scheduleId_ = other.scheduleId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PlantFlowerEditFlowerCombinationReq Clone() {
+      return new PlantFlowerEditFlowerCombinationReq(this);
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 3;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "flower_combination_info" field.</summary>
+    public const int FlowerCombinationInfoFieldNumber = 8;
+    private global::NewProtos.CustomGadgetTreeInfo flowerCombinationInfo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.CustomGadgetTreeInfo FlowerCombinationInfo {
+      get { return flowerCombinationInfo_; }
+      set {
+        flowerCombinationInfo_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "schedule_id" field.</summary>
+    public const int ScheduleIdFieldNumber = 12;
+    private uint scheduleId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ScheduleId {
+      get { return scheduleId_; }
+      set {
+        scheduleId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PlantFlowerEditFlowerCombinationReq);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PlantFlowerEditFlowerCombinationReq other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (EntityId != other.EntityId) return false;
+      if (!object.Equals(FlowerCombinationInfo, other.FlowerCombinationInfo)) return false;
+      if (ScheduleId != other.ScheduleId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (flowerCombinationInfo_ != null) hash ^= FlowerCombinationInfo.GetHashCode();
+      if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (EntityId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(EntityId);
+      }
+      if (flowerCombinationInfo_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(FlowerCombinationInfo);
+      }
+      if (ScheduleId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ScheduleId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (EntityId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(EntityId);
+      }
+      if (flowerCombinationInfo_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(FlowerCombinationInfo);
+      }
+      if (ScheduleId != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(ScheduleId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (flowerCombinationInfo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FlowerCombinationInfo);
+      }
+      if (ScheduleId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PlantFlowerEditFlowerCombinationReq other) {
+      if (other == null) {
+        return;
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.flowerCombinationInfo_ != null) {
+        if (flowerCombinationInfo_ == null) {
+          FlowerCombinationInfo = new global::NewProtos.CustomGadgetTreeInfo();
+        }
+        FlowerCombinationInfo.MergeFrom(other.FlowerCombinationInfo);
+      }
+      if (other.ScheduleId != 0) {
+        ScheduleId = other.ScheduleId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 24: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            if (flowerCombinationInfo_ == null) {
+              FlowerCombinationInfo = new global::NewProtos.CustomGadgetTreeInfo();
+            }
+            input.ReadMessage(FlowerCombinationInfo);
+            break;
+          }
+          case 96: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 24: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 66: {
+            if (flowerCombinationInfo_ == null) {
+              FlowerCombinationInfo = new global::NewProtos.CustomGadgetTreeInfo();
+            }
+            input.ReadMessage(FlowerCombinationInfo);
+            break;
+          }
+          case 96: {
+            ScheduleId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 8396;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-///   IS_ALLOW_CLIENT = 1;
-/// }
-/// </summary>
-public sealed partial class PlantFlowerEditFlowerCombinationReq : pb::IMessage<PlantFlowerEditFlowerCombinationReq>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<PlantFlowerEditFlowerCombinationReq> _parser = new pb::MessageParser<PlantFlowerEditFlowerCombinationReq>(() => new PlantFlowerEditFlowerCombinationReq());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<PlantFlowerEditFlowerCombinationReq> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::PlantFlowerEditFlowerCombinationReqReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlantFlowerEditFlowerCombinationReq() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlantFlowerEditFlowerCombinationReq(PlantFlowerEditFlowerCombinationReq other) : this() {
-    entityId_ = other.entityId_;
-    flowerCombinationInfo_ = other.flowerCombinationInfo_ != null ? other.flowerCombinationInfo_.Clone() : null;
-    scheduleId_ = other.scheduleId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public PlantFlowerEditFlowerCombinationReq Clone() {
-    return new PlantFlowerEditFlowerCombinationReq(this);
-  }
-
-  /// <summary>Field number for the "entity_id" field.</summary>
-  public const int EntityIdFieldNumber = 3;
-  private uint entityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EntityId {
-    get { return entityId_; }
-    set {
-      entityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "flower_combination_info" field.</summary>
-  public const int FlowerCombinationInfoFieldNumber = 8;
-  private global::CustomGadgetTreeInfo flowerCombinationInfo_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::CustomGadgetTreeInfo FlowerCombinationInfo {
-    get { return flowerCombinationInfo_; }
-    set {
-      flowerCombinationInfo_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "schedule_id" field.</summary>
-  public const int ScheduleIdFieldNumber = 12;
-  private uint scheduleId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ScheduleId {
-    get { return scheduleId_; }
-    set {
-      scheduleId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as PlantFlowerEditFlowerCombinationReq);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(PlantFlowerEditFlowerCombinationReq other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (EntityId != other.EntityId) return false;
-    if (!object.Equals(FlowerCombinationInfo, other.FlowerCombinationInfo)) return false;
-    if (ScheduleId != other.ScheduleId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (EntityId != 0) hash ^= EntityId.GetHashCode();
-    if (flowerCombinationInfo_ != null) hash ^= FlowerCombinationInfo.GetHashCode();
-    if (ScheduleId != 0) hash ^= ScheduleId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (EntityId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(EntityId);
-    }
-    if (flowerCombinationInfo_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(FlowerCombinationInfo);
-    }
-    if (ScheduleId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(ScheduleId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (EntityId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(EntityId);
-    }
-    if (flowerCombinationInfo_ != null) {
-      output.WriteRawTag(66);
-      output.WriteMessage(FlowerCombinationInfo);
-    }
-    if (ScheduleId != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(ScheduleId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (EntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-    }
-    if (flowerCombinationInfo_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(FlowerCombinationInfo);
-    }
-    if (ScheduleId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ScheduleId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(PlantFlowerEditFlowerCombinationReq other) {
-    if (other == null) {
-      return;
-    }
-    if (other.EntityId != 0) {
-      EntityId = other.EntityId;
-    }
-    if (other.flowerCombinationInfo_ != null) {
-      if (flowerCombinationInfo_ == null) {
-        FlowerCombinationInfo = new global::CustomGadgetTreeInfo();
-      }
-      FlowerCombinationInfo.MergeFrom(other.FlowerCombinationInfo);
-    }
-    if (other.ScheduleId != 0) {
-      ScheduleId = other.ScheduleId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 24: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 66: {
-          if (flowerCombinationInfo_ == null) {
-            FlowerCombinationInfo = new global::CustomGadgetTreeInfo();
-          }
-          input.ReadMessage(FlowerCombinationInfo);
-          break;
-        }
-        case 96: {
-          ScheduleId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 24: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 66: {
-          if (flowerCombinationInfo_ == null) {
-            FlowerCombinationInfo = new global::CustomGadgetTreeInfo();
-          }
-          input.ReadMessage(FlowerCombinationInfo);
-          break;
-        }
-        case 96: {
-          ScheduleId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

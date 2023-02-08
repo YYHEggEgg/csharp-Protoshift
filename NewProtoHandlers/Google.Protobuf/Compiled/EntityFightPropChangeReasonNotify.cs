@@ -9,450 +9,453 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from EntityFightPropChangeReasonNotify.proto</summary>
-public static partial class EntityFightPropChangeReasonNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for EntityFightPropChangeReasonNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from EntityFightPropChangeReasonNotify.proto</summary>
+  public static partial class EntityFightPropChangeReasonNotifyReflection {
 
-  static EntityFightPropChangeReasonNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CidFbnRpdHlGaWdodFByb3BDaGFuZ2VSZWFzb25Ob3RpZnkucHJvdG8aGENo",
-          "YW5nZUVuZXJneVJlYXNvbi5wcm90bxoUQ2hhbmdlSHBSZWFzb24ucHJvdG8a",
-          "FlByb3BDaGFuZ2VSZWFzb24ucHJvdG8i8gEKIUVudGl0eUZpZ2h0UHJvcENo",
-          "YW5nZVJlYXNvbk5vdGlmeRIRCglwcm9wX3R5cGUYBSABKA0SEgoKcGFyYW1f",
-          "bGlzdBgHIAMoDRIRCgllbnRpdHlfaWQYCCABKA0SIQoGcmVhc29uGAIgASgO",
-          "MhEuUHJvcENoYW5nZVJlYXNvbhIpChBjaGFuZ2VfaHBfcmVhc29uGAkgASgO",
-          "Mg8uQ2hhbmdlSHBSZWFzb24SMQoUY2hhbmdlX2VuZXJneV9yZWFzb24YDCAB",
-          "KA4yEy5DaGFuZ2VFbmVyZ3lSZWFzb24SEgoKcHJvcF9kZWx0YRgKIAEoAkIW",
-          "ChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ChangeEnergyReasonReflection.Descriptor, global::ChangeHpReasonReflection.Descriptor, global::PropChangeReasonReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::EntityFightPropChangeReasonNotify), global::EntityFightPropChangeReasonNotify.Parser, new[]{ "PropType", "ParamList", "EntityId", "Reason", "ChangeHpReason", "ChangeEnergyReason", "PropDelta" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for EntityFightPropChangeReasonNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static EntityFightPropChangeReasonNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CidFbnRpdHlGaWdodFByb3BDaGFuZ2VSZWFzb25Ob3RpZnkucHJvdG8aGENo",
+            "YW5nZUVuZXJneVJlYXNvbi5wcm90bxoUQ2hhbmdlSHBSZWFzb24ucHJvdG8a",
+            "FlByb3BDaGFuZ2VSZWFzb24ucHJvdG8i8gEKIUVudGl0eUZpZ2h0UHJvcENo",
+            "YW5nZVJlYXNvbk5vdGlmeRIRCglwcm9wX3R5cGUYBSABKA0SEgoKcGFyYW1f",
+            "bGlzdBgHIAMoDRIRCgllbnRpdHlfaWQYCCABKA0SIQoGcmVhc29uGAIgASgO",
+            "MhEuUHJvcENoYW5nZVJlYXNvbhIpChBjaGFuZ2VfaHBfcmVhc29uGAkgASgO",
+            "Mg8uQ2hhbmdlSHBSZWFzb24SMQoUY2hhbmdlX2VuZXJneV9yZWFzb24YDCAB",
+            "KA4yEy5DaGFuZ2VFbmVyZ3lSZWFzb24SEgoKcHJvcF9kZWx0YRgKIAEoAkIM",
+            "qgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.ChangeEnergyReasonReflection.Descriptor, global::NewProtos.ChangeHpReasonReflection.Descriptor, global::NewProtos.PropChangeReasonReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.EntityFightPropChangeReasonNotify), global::NewProtos.EntityFightPropChangeReasonNotify.Parser, new[]{ "PropType", "ParamList", "EntityId", "Reason", "ChangeHpReason", "ChangeEnergyReason", "PropDelta" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 1261;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  /// }
+  /// </summary>
+  public sealed partial class EntityFightPropChangeReasonNotify : pb::IMessage<EntityFightPropChangeReasonNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<EntityFightPropChangeReasonNotify> _parser = new pb::MessageParser<EntityFightPropChangeReasonNotify>(() => new EntityFightPropChangeReasonNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<EntityFightPropChangeReasonNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.EntityFightPropChangeReasonNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EntityFightPropChangeReasonNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EntityFightPropChangeReasonNotify(EntityFightPropChangeReasonNotify other) : this() {
+      propType_ = other.propType_;
+      paramList_ = other.paramList_.Clone();
+      entityId_ = other.entityId_;
+      reason_ = other.reason_;
+      changeHpReason_ = other.changeHpReason_;
+      changeEnergyReason_ = other.changeEnergyReason_;
+      propDelta_ = other.propDelta_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EntityFightPropChangeReasonNotify Clone() {
+      return new EntityFightPropChangeReasonNotify(this);
+    }
+
+    /// <summary>Field number for the "prop_type" field.</summary>
+    public const int PropTypeFieldNumber = 5;
+    private uint propType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint PropType {
+      get { return propType_; }
+      set {
+        propType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "param_list" field.</summary>
+    public const int ParamListFieldNumber = 7;
+    private static readonly pb::FieldCodec<uint> _repeated_paramList_codec
+        = pb::FieldCodec.ForUInt32(58);
+    private readonly pbc::RepeatedField<uint> paramList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ParamList {
+      get { return paramList_; }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 8;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 2;
+    private global::NewProtos.PropChangeReason reason_ = global::NewProtos.PropChangeReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.PropChangeReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "change_hp_reason" field.</summary>
+    public const int ChangeHpReasonFieldNumber = 9;
+    private global::NewProtos.ChangeHpReason changeHpReason_ = global::NewProtos.ChangeHpReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ChangeHpReason ChangeHpReason {
+      get { return changeHpReason_; }
+      set {
+        changeHpReason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "change_energy_reason" field.</summary>
+    public const int ChangeEnergyReasonFieldNumber = 12;
+    private global::NewProtos.ChangeEnergyReason changeEnergyReason_ = global::NewProtos.ChangeEnergyReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ChangeEnergyReason ChangeEnergyReason {
+      get { return changeEnergyReason_; }
+      set {
+        changeEnergyReason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "prop_delta" field.</summary>
+    public const int PropDeltaFieldNumber = 10;
+    private float propDelta_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float PropDelta {
+      get { return propDelta_; }
+      set {
+        propDelta_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as EntityFightPropChangeReasonNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(EntityFightPropChangeReasonNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PropType != other.PropType) return false;
+      if(!paramList_.Equals(other.paramList_)) return false;
+      if (EntityId != other.EntityId) return false;
+      if (Reason != other.Reason) return false;
+      if (ChangeHpReason != other.ChangeHpReason) return false;
+      if (ChangeEnergyReason != other.ChangeEnergyReason) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PropDelta, other.PropDelta)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PropType != 0) hash ^= PropType.GetHashCode();
+      hash ^= paramList_.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (Reason != global::NewProtos.PropChangeReason.None) hash ^= Reason.GetHashCode();
+      if (ChangeHpReason != global::NewProtos.ChangeHpReason.None) hash ^= ChangeHpReason.GetHashCode();
+      if (ChangeEnergyReason != global::NewProtos.ChangeEnergyReason.None) hash ^= ChangeEnergyReason.GetHashCode();
+      if (PropDelta != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PropDelta);
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Reason != global::NewProtos.PropChangeReason.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Reason);
+      }
+      if (PropType != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(PropType);
+      }
+      paramList_.WriteTo(output, _repeated_paramList_codec);
+      if (EntityId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(EntityId);
+      }
+      if (ChangeHpReason != global::NewProtos.ChangeHpReason.None) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) ChangeHpReason);
+      }
+      if (PropDelta != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(PropDelta);
+      }
+      if (ChangeEnergyReason != global::NewProtos.ChangeEnergyReason.None) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) ChangeEnergyReason);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Reason != global::NewProtos.PropChangeReason.None) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Reason);
+      }
+      if (PropType != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(PropType);
+      }
+      paramList_.WriteTo(ref output, _repeated_paramList_codec);
+      if (EntityId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(EntityId);
+      }
+      if (ChangeHpReason != global::NewProtos.ChangeHpReason.None) {
+        output.WriteRawTag(72);
+        output.WriteEnum((int) ChangeHpReason);
+      }
+      if (PropDelta != 0F) {
+        output.WriteRawTag(85);
+        output.WriteFloat(PropDelta);
+      }
+      if (ChangeEnergyReason != global::NewProtos.ChangeEnergyReason.None) {
+        output.WriteRawTag(96);
+        output.WriteEnum((int) ChangeEnergyReason);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (PropType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PropType);
+      }
+      size += paramList_.CalculateSize(_repeated_paramList_codec);
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (Reason != global::NewProtos.PropChangeReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
+      if (ChangeHpReason != global::NewProtos.ChangeHpReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChangeHpReason);
+      }
+      if (ChangeEnergyReason != global::NewProtos.ChangeEnergyReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChangeEnergyReason);
+      }
+      if (PropDelta != 0F) {
+        size += 1 + 4;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(EntityFightPropChangeReasonNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PropType != 0) {
+        PropType = other.PropType;
+      }
+      paramList_.Add(other.paramList_);
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.Reason != global::NewProtos.PropChangeReason.None) {
+        Reason = other.Reason;
+      }
+      if (other.ChangeHpReason != global::NewProtos.ChangeHpReason.None) {
+        ChangeHpReason = other.ChangeHpReason;
+      }
+      if (other.ChangeEnergyReason != global::NewProtos.ChangeEnergyReason.None) {
+        ChangeEnergyReason = other.ChangeEnergyReason;
+      }
+      if (other.PropDelta != 0F) {
+        PropDelta = other.PropDelta;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            Reason = (global::NewProtos.PropChangeReason) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            PropType = input.ReadUInt32();
+            break;
+          }
+          case 58:
+          case 56: {
+            paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
+            break;
+          }
+          case 64: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            ChangeHpReason = (global::NewProtos.ChangeHpReason) input.ReadEnum();
+            break;
+          }
+          case 85: {
+            PropDelta = input.ReadFloat();
+            break;
+          }
+          case 96: {
+            ChangeEnergyReason = (global::NewProtos.ChangeEnergyReason) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            Reason = (global::NewProtos.PropChangeReason) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            PropType = input.ReadUInt32();
+            break;
+          }
+          case 58:
+          case 56: {
+            paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
+            break;
+          }
+          case 64: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            ChangeHpReason = (global::NewProtos.ChangeHpReason) input.ReadEnum();
+            break;
+          }
+          case 85: {
+            PropDelta = input.ReadFloat();
+            break;
+          }
+          case 96: {
+            ChangeEnergyReason = (global::NewProtos.ChangeEnergyReason) input.ReadEnum();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 1261;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-/// }
-/// </summary>
-public sealed partial class EntityFightPropChangeReasonNotify : pb::IMessage<EntityFightPropChangeReasonNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<EntityFightPropChangeReasonNotify> _parser = new pb::MessageParser<EntityFightPropChangeReasonNotify>(() => new EntityFightPropChangeReasonNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<EntityFightPropChangeReasonNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::EntityFightPropChangeReasonNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EntityFightPropChangeReasonNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EntityFightPropChangeReasonNotify(EntityFightPropChangeReasonNotify other) : this() {
-    propType_ = other.propType_;
-    paramList_ = other.paramList_.Clone();
-    entityId_ = other.entityId_;
-    reason_ = other.reason_;
-    changeHpReason_ = other.changeHpReason_;
-    changeEnergyReason_ = other.changeEnergyReason_;
-    propDelta_ = other.propDelta_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EntityFightPropChangeReasonNotify Clone() {
-    return new EntityFightPropChangeReasonNotify(this);
-  }
-
-  /// <summary>Field number for the "prop_type" field.</summary>
-  public const int PropTypeFieldNumber = 5;
-  private uint propType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint PropType {
-    get { return propType_; }
-    set {
-      propType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "param_list" field.</summary>
-  public const int ParamListFieldNumber = 7;
-  private static readonly pb::FieldCodec<uint> _repeated_paramList_codec
-      = pb::FieldCodec.ForUInt32(58);
-  private readonly pbc::RepeatedField<uint> paramList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> ParamList {
-    get { return paramList_; }
-  }
-
-  /// <summary>Field number for the "entity_id" field.</summary>
-  public const int EntityIdFieldNumber = 8;
-  private uint entityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EntityId {
-    get { return entityId_; }
-    set {
-      entityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "reason" field.</summary>
-  public const int ReasonFieldNumber = 2;
-  private global::PropChangeReason reason_ = global::PropChangeReason.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::PropChangeReason Reason {
-    get { return reason_; }
-    set {
-      reason_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "change_hp_reason" field.</summary>
-  public const int ChangeHpReasonFieldNumber = 9;
-  private global::ChangeHpReason changeHpReason_ = global::ChangeHpReason.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ChangeHpReason ChangeHpReason {
-    get { return changeHpReason_; }
-    set {
-      changeHpReason_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "change_energy_reason" field.</summary>
-  public const int ChangeEnergyReasonFieldNumber = 12;
-  private global::ChangeEnergyReason changeEnergyReason_ = global::ChangeEnergyReason.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ChangeEnergyReason ChangeEnergyReason {
-    get { return changeEnergyReason_; }
-    set {
-      changeEnergyReason_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "prop_delta" field.</summary>
-  public const int PropDeltaFieldNumber = 10;
-  private float propDelta_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float PropDelta {
-    get { return propDelta_; }
-    set {
-      propDelta_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as EntityFightPropChangeReasonNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(EntityFightPropChangeReasonNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (PropType != other.PropType) return false;
-    if(!paramList_.Equals(other.paramList_)) return false;
-    if (EntityId != other.EntityId) return false;
-    if (Reason != other.Reason) return false;
-    if (ChangeHpReason != other.ChangeHpReason) return false;
-    if (ChangeEnergyReason != other.ChangeEnergyReason) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(PropDelta, other.PropDelta)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (PropType != 0) hash ^= PropType.GetHashCode();
-    hash ^= paramList_.GetHashCode();
-    if (EntityId != 0) hash ^= EntityId.GetHashCode();
-    if (Reason != global::PropChangeReason.None) hash ^= Reason.GetHashCode();
-    if (ChangeHpReason != global::ChangeHpReason.None) hash ^= ChangeHpReason.GetHashCode();
-    if (ChangeEnergyReason != global::ChangeEnergyReason.None) hash ^= ChangeEnergyReason.GetHashCode();
-    if (PropDelta != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(PropDelta);
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Reason != global::PropChangeReason.None) {
-      output.WriteRawTag(16);
-      output.WriteEnum((int) Reason);
-    }
-    if (PropType != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(PropType);
-    }
-    paramList_.WriteTo(output, _repeated_paramList_codec);
-    if (EntityId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(EntityId);
-    }
-    if (ChangeHpReason != global::ChangeHpReason.None) {
-      output.WriteRawTag(72);
-      output.WriteEnum((int) ChangeHpReason);
-    }
-    if (PropDelta != 0F) {
-      output.WriteRawTag(85);
-      output.WriteFloat(PropDelta);
-    }
-    if (ChangeEnergyReason != global::ChangeEnergyReason.None) {
-      output.WriteRawTag(96);
-      output.WriteEnum((int) ChangeEnergyReason);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Reason != global::PropChangeReason.None) {
-      output.WriteRawTag(16);
-      output.WriteEnum((int) Reason);
-    }
-    if (PropType != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(PropType);
-    }
-    paramList_.WriteTo(ref output, _repeated_paramList_codec);
-    if (EntityId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(EntityId);
-    }
-    if (ChangeHpReason != global::ChangeHpReason.None) {
-      output.WriteRawTag(72);
-      output.WriteEnum((int) ChangeHpReason);
-    }
-    if (PropDelta != 0F) {
-      output.WriteRawTag(85);
-      output.WriteFloat(PropDelta);
-    }
-    if (ChangeEnergyReason != global::ChangeEnergyReason.None) {
-      output.WriteRawTag(96);
-      output.WriteEnum((int) ChangeEnergyReason);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (PropType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PropType);
-    }
-    size += paramList_.CalculateSize(_repeated_paramList_codec);
-    if (EntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-    }
-    if (Reason != global::PropChangeReason.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-    }
-    if (ChangeHpReason != global::ChangeHpReason.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChangeHpReason);
-    }
-    if (ChangeEnergyReason != global::ChangeEnergyReason.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ChangeEnergyReason);
-    }
-    if (PropDelta != 0F) {
-      size += 1 + 4;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(EntityFightPropChangeReasonNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.PropType != 0) {
-      PropType = other.PropType;
-    }
-    paramList_.Add(other.paramList_);
-    if (other.EntityId != 0) {
-      EntityId = other.EntityId;
-    }
-    if (other.Reason != global::PropChangeReason.None) {
-      Reason = other.Reason;
-    }
-    if (other.ChangeHpReason != global::ChangeHpReason.None) {
-      ChangeHpReason = other.ChangeHpReason;
-    }
-    if (other.ChangeEnergyReason != global::ChangeEnergyReason.None) {
-      ChangeEnergyReason = other.ChangeEnergyReason;
-    }
-    if (other.PropDelta != 0F) {
-      PropDelta = other.PropDelta;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          Reason = (global::PropChangeReason) input.ReadEnum();
-          break;
-        }
-        case 40: {
-          PropType = input.ReadUInt32();
-          break;
-        }
-        case 58:
-        case 56: {
-          paramList_.AddEntriesFrom(input, _repeated_paramList_codec);
-          break;
-        }
-        case 64: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          ChangeHpReason = (global::ChangeHpReason) input.ReadEnum();
-          break;
-        }
-        case 85: {
-          PropDelta = input.ReadFloat();
-          break;
-        }
-        case 96: {
-          ChangeEnergyReason = (global::ChangeEnergyReason) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          Reason = (global::PropChangeReason) input.ReadEnum();
-          break;
-        }
-        case 40: {
-          PropType = input.ReadUInt32();
-          break;
-        }
-        case 58:
-        case 56: {
-          paramList_.AddEntriesFrom(ref input, _repeated_paramList_codec);
-          break;
-        }
-        case 64: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          ChangeHpReason = (global::ChangeHpReason) input.ReadEnum();
-          break;
-        }
-        case 85: {
-          PropDelta = input.ReadFloat();
-          break;
-        }
-        case 96: {
-          ChangeEnergyReason = (global::ChangeEnergyReason) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

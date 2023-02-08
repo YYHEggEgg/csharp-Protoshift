@@ -5,3 +5,7 @@
 /csharp-Protoshift/obj
 /.vs
 /YSFreedomServer-v2
+/NewProtoHandlers/bin
+/NewProtoHandlers/obj
+/OldProtoHandlers/bin
+/OldProtoHandlers/obj

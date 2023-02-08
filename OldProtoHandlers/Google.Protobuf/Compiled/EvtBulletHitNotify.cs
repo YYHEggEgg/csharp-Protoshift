@@ -9,548 +9,551 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from EvtBulletHitNotify.proto</summary>
-public static partial class EvtBulletHitNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for EvtBulletHitNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from EvtBulletHitNotify.proto</summary>
+  public static partial class EvtBulletHitNotifyReflection {
 
-  static EvtBulletHitNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChhFdnRCdWxsZXRIaXROb3RpZnkucHJvdG8aEUZvcndhcmRUeXBlLnByb3Rv",
-          "GhVIaXRDb2xsaWRlclR5cGUucHJvdG8aDFZlY3Rvci5wcm90byKPAgoSRXZ0",
-          "QnVsbGV0SGl0Tm90aWZ5EhgKEHNpbmdsZV9idWxsZXRfaWQYCCABKA0SGgoJ",
-          "aGl0X3BvaW50GA8gASgLMgcuVmVjdG9yEhsKCmhpdF9ub3JtYWwYCyABKAsy",
-          "By5WZWN0b3ISFQoNaGl0X2JveF9pbmRleBgJIAEoBRIVCg1oaXRfZW50aXR5",
-          "X2lkGAMgASgNEhEKCWVudGl0eV9pZBgFIAEoDRIUCgxmb3J3YXJkX3BlZXIY",
-          "ByABKA0SIgoMZm9yd2FyZF90eXBlGAIgASgOMgwuRm9yd2FyZFR5cGUSKwoR",
-          "aGl0X2NvbGxpZGVyX3R5cGUYBiABKA4yEC5IaXRDb2xsaWRlclR5cGVCHgoc",
-          "ZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ForwardTypeReflection.Descriptor, global::HitColliderTypeReflection.Descriptor, global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::EvtBulletHitNotify), global::EvtBulletHitNotify.Parser, new[]{ "SingleBulletId", "HitPoint", "HitNormal", "HitBoxIndex", "HitEntityId", "EntityId", "ForwardPeer", "ForwardType", "HitColliderType" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for EvtBulletHitNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static EvtBulletHitNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChhFdnRCdWxsZXRIaXROb3RpZnkucHJvdG8aEUZvcndhcmRUeXBlLnByb3Rv",
+            "GhVIaXRDb2xsaWRlclR5cGUucHJvdG8aDFZlY3Rvci5wcm90byKPAgoSRXZ0",
+            "QnVsbGV0SGl0Tm90aWZ5EhgKEHNpbmdsZV9idWxsZXRfaWQYCCABKA0SGgoJ",
+            "aGl0X3BvaW50GA8gASgLMgcuVmVjdG9yEhsKCmhpdF9ub3JtYWwYCyABKAsy",
+            "By5WZWN0b3ISFQoNaGl0X2JveF9pbmRleBgJIAEoBRIVCg1oaXRfZW50aXR5",
+            "X2lkGAMgASgNEhEKCWVudGl0eV9pZBgFIAEoDRIUCgxmb3J3YXJkX3BlZXIY",
+            "ByABKA0SIgoMZm9yd2FyZF90eXBlGAIgASgOMgwuRm9yd2FyZFR5cGUSKwoR",
+            "aGl0X2NvbGxpZGVyX3R5cGUYBiABKA4yEC5IaXRDb2xsaWRlclR5cGVCDKoC",
+            "CU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.ForwardTypeReflection.Descriptor, global::OldProtos.HitColliderTypeReflection.Descriptor, global::OldProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.EvtBulletHitNotify), global::OldProtos.EvtBulletHitNotify.Parser, new[]{ "SingleBulletId", "HitPoint", "HitNormal", "HitBoxIndex", "HitEntityId", "EntityId", "ForwardPeer", "ForwardType", "HitColliderType" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 348
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// IsAllowClient: true
+  /// </summary>
+  public sealed partial class EvtBulletHitNotify : pb::IMessage<EvtBulletHitNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<EvtBulletHitNotify> _parser = new pb::MessageParser<EvtBulletHitNotify>(() => new EvtBulletHitNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<EvtBulletHitNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.EvtBulletHitNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtBulletHitNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtBulletHitNotify(EvtBulletHitNotify other) : this() {
+      singleBulletId_ = other.singleBulletId_;
+      hitPoint_ = other.hitPoint_ != null ? other.hitPoint_.Clone() : null;
+      hitNormal_ = other.hitNormal_ != null ? other.hitNormal_.Clone() : null;
+      hitBoxIndex_ = other.hitBoxIndex_;
+      hitEntityId_ = other.hitEntityId_;
+      entityId_ = other.entityId_;
+      forwardPeer_ = other.forwardPeer_;
+      forwardType_ = other.forwardType_;
+      hitColliderType_ = other.hitColliderType_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EvtBulletHitNotify Clone() {
+      return new EvtBulletHitNotify(this);
+    }
+
+    /// <summary>Field number for the "single_bullet_id" field.</summary>
+    public const int SingleBulletIdFieldNumber = 8;
+    private uint singleBulletId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint SingleBulletId {
+      get { return singleBulletId_; }
+      set {
+        singleBulletId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_point" field.</summary>
+    public const int HitPointFieldNumber = 15;
+    private global::OldProtos.Vector hitPoint_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector HitPoint {
+      get { return hitPoint_; }
+      set {
+        hitPoint_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_normal" field.</summary>
+    public const int HitNormalFieldNumber = 11;
+    private global::OldProtos.Vector hitNormal_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector HitNormal {
+      get { return hitNormal_; }
+      set {
+        hitNormal_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_box_index" field.</summary>
+    public const int HitBoxIndexFieldNumber = 9;
+    private int hitBoxIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int HitBoxIndex {
+      get { return hitBoxIndex_; }
+      set {
+        hitBoxIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_entity_id" field.</summary>
+    public const int HitEntityIdFieldNumber = 3;
+    private uint hitEntityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint HitEntityId {
+      get { return hitEntityId_; }
+      set {
+        hitEntityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_id" field.</summary>
+    public const int EntityIdFieldNumber = 5;
+    private uint entityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint EntityId {
+      get { return entityId_; }
+      set {
+        entityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forward_peer" field.</summary>
+    public const int ForwardPeerFieldNumber = 7;
+    private uint forwardPeer_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ForwardPeer {
+      get { return forwardPeer_; }
+      set {
+        forwardPeer_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forward_type" field.</summary>
+    public const int ForwardTypeFieldNumber = 2;
+    private global::OldProtos.ForwardType forwardType_ = global::OldProtos.ForwardType.Local;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ForwardType ForwardType {
+      get { return forwardType_; }
+      set {
+        forwardType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "hit_collider_type" field.</summary>
+    public const int HitColliderTypeFieldNumber = 6;
+    private global::OldProtos.HitColliderType hitColliderType_ = global::OldProtos.HitColliderType.Invalid;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.HitColliderType HitColliderType {
+      get { return hitColliderType_; }
+      set {
+        hitColliderType_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as EvtBulletHitNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(EvtBulletHitNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (SingleBulletId != other.SingleBulletId) return false;
+      if (!object.Equals(HitPoint, other.HitPoint)) return false;
+      if (!object.Equals(HitNormal, other.HitNormal)) return false;
+      if (HitBoxIndex != other.HitBoxIndex) return false;
+      if (HitEntityId != other.HitEntityId) return false;
+      if (EntityId != other.EntityId) return false;
+      if (ForwardPeer != other.ForwardPeer) return false;
+      if (ForwardType != other.ForwardType) return false;
+      if (HitColliderType != other.HitColliderType) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (SingleBulletId != 0) hash ^= SingleBulletId.GetHashCode();
+      if (hitPoint_ != null) hash ^= HitPoint.GetHashCode();
+      if (hitNormal_ != null) hash ^= HitNormal.GetHashCode();
+      if (HitBoxIndex != 0) hash ^= HitBoxIndex.GetHashCode();
+      if (HitEntityId != 0) hash ^= HitEntityId.GetHashCode();
+      if (EntityId != 0) hash ^= EntityId.GetHashCode();
+      if (ForwardPeer != 0) hash ^= ForwardPeer.GetHashCode();
+      if (ForwardType != global::OldProtos.ForwardType.Local) hash ^= ForwardType.GetHashCode();
+      if (HitColliderType != global::OldProtos.HitColliderType.Invalid) hash ^= HitColliderType.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ForwardType != global::OldProtos.ForwardType.Local) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) ForwardType);
+      }
+      if (HitEntityId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(HitEntityId);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(EntityId);
+      }
+      if (HitColliderType != global::OldProtos.HitColliderType.Invalid) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) HitColliderType);
+      }
+      if (ForwardPeer != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ForwardPeer);
+      }
+      if (SingleBulletId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(SingleBulletId);
+      }
+      if (HitBoxIndex != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(HitBoxIndex);
+      }
+      if (hitNormal_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(HitNormal);
+      }
+      if (hitPoint_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(HitPoint);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ForwardType != global::OldProtos.ForwardType.Local) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) ForwardType);
+      }
+      if (HitEntityId != 0) {
+        output.WriteRawTag(24);
+        output.WriteUInt32(HitEntityId);
+      }
+      if (EntityId != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(EntityId);
+      }
+      if (HitColliderType != global::OldProtos.HitColliderType.Invalid) {
+        output.WriteRawTag(48);
+        output.WriteEnum((int) HitColliderType);
+      }
+      if (ForwardPeer != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(ForwardPeer);
+      }
+      if (SingleBulletId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(SingleBulletId);
+      }
+      if (HitBoxIndex != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(HitBoxIndex);
+      }
+      if (hitNormal_ != null) {
+        output.WriteRawTag(90);
+        output.WriteMessage(HitNormal);
+      }
+      if (hitPoint_ != null) {
+        output.WriteRawTag(122);
+        output.WriteMessage(HitPoint);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (SingleBulletId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SingleBulletId);
+      }
+      if (hitPoint_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HitPoint);
+      }
+      if (hitNormal_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HitNormal);
+      }
+      if (HitBoxIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(HitBoxIndex);
+      }
+      if (HitEntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HitEntityId);
+      }
+      if (EntityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
+      }
+      if (ForwardPeer != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ForwardPeer);
+      }
+      if (ForwardType != global::OldProtos.ForwardType.Local) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
+      }
+      if (HitColliderType != global::OldProtos.HitColliderType.Invalid) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) HitColliderType);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(EvtBulletHitNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.SingleBulletId != 0) {
+        SingleBulletId = other.SingleBulletId;
+      }
+      if (other.hitPoint_ != null) {
+        if (hitPoint_ == null) {
+          HitPoint = new global::OldProtos.Vector();
+        }
+        HitPoint.MergeFrom(other.HitPoint);
+      }
+      if (other.hitNormal_ != null) {
+        if (hitNormal_ == null) {
+          HitNormal = new global::OldProtos.Vector();
+        }
+        HitNormal.MergeFrom(other.HitNormal);
+      }
+      if (other.HitBoxIndex != 0) {
+        HitBoxIndex = other.HitBoxIndex;
+      }
+      if (other.HitEntityId != 0) {
+        HitEntityId = other.HitEntityId;
+      }
+      if (other.EntityId != 0) {
+        EntityId = other.EntityId;
+      }
+      if (other.ForwardPeer != 0) {
+        ForwardPeer = other.ForwardPeer;
+      }
+      if (other.ForwardType != global::OldProtos.ForwardType.Local) {
+        ForwardType = other.ForwardType;
+      }
+      if (other.HitColliderType != global::OldProtos.HitColliderType.Invalid) {
+        HitColliderType = other.HitColliderType;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            ForwardType = (global::OldProtos.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            HitEntityId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            HitColliderType = (global::OldProtos.HitColliderType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            ForwardPeer = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            SingleBulletId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            HitBoxIndex = input.ReadInt32();
+            break;
+          }
+          case 90: {
+            if (hitNormal_ == null) {
+              HitNormal = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(HitNormal);
+            break;
+          }
+          case 122: {
+            if (hitPoint_ == null) {
+              HitPoint = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(HitPoint);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            ForwardType = (global::OldProtos.ForwardType) input.ReadEnum();
+            break;
+          }
+          case 24: {
+            HitEntityId = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            EntityId = input.ReadUInt32();
+            break;
+          }
+          case 48: {
+            HitColliderType = (global::OldProtos.HitColliderType) input.ReadEnum();
+            break;
+          }
+          case 56: {
+            ForwardPeer = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            SingleBulletId = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            HitBoxIndex = input.ReadInt32();
+            break;
+          }
+          case 90: {
+            if (hitNormal_ == null) {
+              HitNormal = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(HitNormal);
+            break;
+          }
+          case 122: {
+            if (hitPoint_ == null) {
+              HitPoint = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(HitPoint);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 348
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// IsAllowClient: true
-/// </summary>
-public sealed partial class EvtBulletHitNotify : pb::IMessage<EvtBulletHitNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<EvtBulletHitNotify> _parser = new pb::MessageParser<EvtBulletHitNotify>(() => new EvtBulletHitNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<EvtBulletHitNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::EvtBulletHitNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtBulletHitNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtBulletHitNotify(EvtBulletHitNotify other) : this() {
-    singleBulletId_ = other.singleBulletId_;
-    hitPoint_ = other.hitPoint_ != null ? other.hitPoint_.Clone() : null;
-    hitNormal_ = other.hitNormal_ != null ? other.hitNormal_.Clone() : null;
-    hitBoxIndex_ = other.hitBoxIndex_;
-    hitEntityId_ = other.hitEntityId_;
-    entityId_ = other.entityId_;
-    forwardPeer_ = other.forwardPeer_;
-    forwardType_ = other.forwardType_;
-    hitColliderType_ = other.hitColliderType_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public EvtBulletHitNotify Clone() {
-    return new EvtBulletHitNotify(this);
-  }
-
-  /// <summary>Field number for the "single_bullet_id" field.</summary>
-  public const int SingleBulletIdFieldNumber = 8;
-  private uint singleBulletId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint SingleBulletId {
-    get { return singleBulletId_; }
-    set {
-      singleBulletId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "hit_point" field.</summary>
-  public const int HitPointFieldNumber = 15;
-  private global::Vector hitPoint_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector HitPoint {
-    get { return hitPoint_; }
-    set {
-      hitPoint_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "hit_normal" field.</summary>
-  public const int HitNormalFieldNumber = 11;
-  private global::Vector hitNormal_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector HitNormal {
-    get { return hitNormal_; }
-    set {
-      hitNormal_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "hit_box_index" field.</summary>
-  public const int HitBoxIndexFieldNumber = 9;
-  private int hitBoxIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int HitBoxIndex {
-    get { return hitBoxIndex_; }
-    set {
-      hitBoxIndex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "hit_entity_id" field.</summary>
-  public const int HitEntityIdFieldNumber = 3;
-  private uint hitEntityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint HitEntityId {
-    get { return hitEntityId_; }
-    set {
-      hitEntityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity_id" field.</summary>
-  public const int EntityIdFieldNumber = 5;
-  private uint entityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint EntityId {
-    get { return entityId_; }
-    set {
-      entityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "forward_peer" field.</summary>
-  public const int ForwardPeerFieldNumber = 7;
-  private uint forwardPeer_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ForwardPeer {
-    get { return forwardPeer_; }
-    set {
-      forwardPeer_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "forward_type" field.</summary>
-  public const int ForwardTypeFieldNumber = 2;
-  private global::ForwardType forwardType_ = global::ForwardType.Local;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ForwardType ForwardType {
-    get { return forwardType_; }
-    set {
-      forwardType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "hit_collider_type" field.</summary>
-  public const int HitColliderTypeFieldNumber = 6;
-  private global::HitColliderType hitColliderType_ = global::HitColliderType.Invalid;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::HitColliderType HitColliderType {
-    get { return hitColliderType_; }
-    set {
-      hitColliderType_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as EvtBulletHitNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(EvtBulletHitNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (SingleBulletId != other.SingleBulletId) return false;
-    if (!object.Equals(HitPoint, other.HitPoint)) return false;
-    if (!object.Equals(HitNormal, other.HitNormal)) return false;
-    if (HitBoxIndex != other.HitBoxIndex) return false;
-    if (HitEntityId != other.HitEntityId) return false;
-    if (EntityId != other.EntityId) return false;
-    if (ForwardPeer != other.ForwardPeer) return false;
-    if (ForwardType != other.ForwardType) return false;
-    if (HitColliderType != other.HitColliderType) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (SingleBulletId != 0) hash ^= SingleBulletId.GetHashCode();
-    if (hitPoint_ != null) hash ^= HitPoint.GetHashCode();
-    if (hitNormal_ != null) hash ^= HitNormal.GetHashCode();
-    if (HitBoxIndex != 0) hash ^= HitBoxIndex.GetHashCode();
-    if (HitEntityId != 0) hash ^= HitEntityId.GetHashCode();
-    if (EntityId != 0) hash ^= EntityId.GetHashCode();
-    if (ForwardPeer != 0) hash ^= ForwardPeer.GetHashCode();
-    if (ForwardType != global::ForwardType.Local) hash ^= ForwardType.GetHashCode();
-    if (HitColliderType != global::HitColliderType.Invalid) hash ^= HitColliderType.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ForwardType != global::ForwardType.Local) {
-      output.WriteRawTag(16);
-      output.WriteEnum((int) ForwardType);
-    }
-    if (HitEntityId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(HitEntityId);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(EntityId);
-    }
-    if (HitColliderType != global::HitColliderType.Invalid) {
-      output.WriteRawTag(48);
-      output.WriteEnum((int) HitColliderType);
-    }
-    if (ForwardPeer != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(ForwardPeer);
-    }
-    if (SingleBulletId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(SingleBulletId);
-    }
-    if (HitBoxIndex != 0) {
-      output.WriteRawTag(72);
-      output.WriteInt32(HitBoxIndex);
-    }
-    if (hitNormal_ != null) {
-      output.WriteRawTag(90);
-      output.WriteMessage(HitNormal);
-    }
-    if (hitPoint_ != null) {
-      output.WriteRawTag(122);
-      output.WriteMessage(HitPoint);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ForwardType != global::ForwardType.Local) {
-      output.WriteRawTag(16);
-      output.WriteEnum((int) ForwardType);
-    }
-    if (HitEntityId != 0) {
-      output.WriteRawTag(24);
-      output.WriteUInt32(HitEntityId);
-    }
-    if (EntityId != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(EntityId);
-    }
-    if (HitColliderType != global::HitColliderType.Invalid) {
-      output.WriteRawTag(48);
-      output.WriteEnum((int) HitColliderType);
-    }
-    if (ForwardPeer != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(ForwardPeer);
-    }
-    if (SingleBulletId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(SingleBulletId);
-    }
-    if (HitBoxIndex != 0) {
-      output.WriteRawTag(72);
-      output.WriteInt32(HitBoxIndex);
-    }
-    if (hitNormal_ != null) {
-      output.WriteRawTag(90);
-      output.WriteMessage(HitNormal);
-    }
-    if (hitPoint_ != null) {
-      output.WriteRawTag(122);
-      output.WriteMessage(HitPoint);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (SingleBulletId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(SingleBulletId);
-    }
-    if (hitPoint_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(HitPoint);
-    }
-    if (hitNormal_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(HitNormal);
-    }
-    if (HitBoxIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(HitBoxIndex);
-    }
-    if (HitEntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HitEntityId);
-    }
-    if (EntityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(EntityId);
-    }
-    if (ForwardPeer != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ForwardPeer);
-    }
-    if (ForwardType != global::ForwardType.Local) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ForwardType);
-    }
-    if (HitColliderType != global::HitColliderType.Invalid) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) HitColliderType);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(EvtBulletHitNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.SingleBulletId != 0) {
-      SingleBulletId = other.SingleBulletId;
-    }
-    if (other.hitPoint_ != null) {
-      if (hitPoint_ == null) {
-        HitPoint = new global::Vector();
-      }
-      HitPoint.MergeFrom(other.HitPoint);
-    }
-    if (other.hitNormal_ != null) {
-      if (hitNormal_ == null) {
-        HitNormal = new global::Vector();
-      }
-      HitNormal.MergeFrom(other.HitNormal);
-    }
-    if (other.HitBoxIndex != 0) {
-      HitBoxIndex = other.HitBoxIndex;
-    }
-    if (other.HitEntityId != 0) {
-      HitEntityId = other.HitEntityId;
-    }
-    if (other.EntityId != 0) {
-      EntityId = other.EntityId;
-    }
-    if (other.ForwardPeer != 0) {
-      ForwardPeer = other.ForwardPeer;
-    }
-    if (other.ForwardType != global::ForwardType.Local) {
-      ForwardType = other.ForwardType;
-    }
-    if (other.HitColliderType != global::HitColliderType.Invalid) {
-      HitColliderType = other.HitColliderType;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          ForwardType = (global::ForwardType) input.ReadEnum();
-          break;
-        }
-        case 24: {
-          HitEntityId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          HitColliderType = (global::HitColliderType) input.ReadEnum();
-          break;
-        }
-        case 56: {
-          ForwardPeer = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          SingleBulletId = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          HitBoxIndex = input.ReadInt32();
-          break;
-        }
-        case 90: {
-          if (hitNormal_ == null) {
-            HitNormal = new global::Vector();
-          }
-          input.ReadMessage(HitNormal);
-          break;
-        }
-        case 122: {
-          if (hitPoint_ == null) {
-            HitPoint = new global::Vector();
-          }
-          input.ReadMessage(HitPoint);
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          ForwardType = (global::ForwardType) input.ReadEnum();
-          break;
-        }
-        case 24: {
-          HitEntityId = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          EntityId = input.ReadUInt32();
-          break;
-        }
-        case 48: {
-          HitColliderType = (global::HitColliderType) input.ReadEnum();
-          break;
-        }
-        case 56: {
-          ForwardPeer = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          SingleBulletId = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          HitBoxIndex = input.ReadInt32();
-          break;
-        }
-        case 90: {
-          if (hitNormal_ == null) {
-            HitNormal = new global::Vector();
-          }
-          input.ReadMessage(HitNormal);
-          break;
-        }
-        case 122: {
-          if (hitPoint_ == null) {
-            HitPoint = new global::Vector();
-          }
-          input.ReadMessage(HitPoint);
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -9,298 +9,300 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SummerTimeV2DungeonSettleInfo.proto</summary>
-public static partial class SummerTimeV2DungeonSettleInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SummerTimeV2DungeonSettleInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SummerTimeV2DungeonSettleInfo.proto</summary>
+  public static partial class SummerTimeV2DungeonSettleInfoReflection {
 
-  static SummerTimeV2DungeonSettleInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiNTdW1tZXJUaW1lVjJEdW5nZW9uU2V0dGxlSW5mby5wcm90byJxCh1TdW1t",
-          "ZXJUaW1lVjJEdW5nZW9uU2V0dGxlSW5mbxISCgppc19zdWNjZXNzGAUgASgI",
-          "EhoKEnRha2VuX3Jld2FyZF9jb3VudBgCIAEoDRIgChhjdXJfZHVuZ2Vvbl9y",
-          "ZXdhcmRfbGltaXQYCyABKA1CHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRw",
-          "cm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SummerTimeV2DungeonSettleInfo), global::SummerTimeV2DungeonSettleInfo.Parser, new[]{ "IsSuccess", "TakenRewardCount", "CurDungeonRewardLimit" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SummerTimeV2DungeonSettleInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SummerTimeV2DungeonSettleInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiNTdW1tZXJUaW1lVjJEdW5nZW9uU2V0dGxlSW5mby5wcm90byJxCh1TdW1t",
+            "ZXJUaW1lVjJEdW5nZW9uU2V0dGxlSW5mbxISCgppc19zdWNjZXNzGAUgASgI",
+            "EhoKEnRha2VuX3Jld2FyZF9jb3VudBgCIAEoDRIgChhjdXJfZHVuZ2Vvbl9y",
+            "ZXdhcmRfbGltaXQYCyABKA1CDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.SummerTimeV2DungeonSettleInfo), global::OldProtos.SummerTimeV2DungeonSettleInfo.Parser, new[]{ "IsSuccess", "TakenRewardCount", "CurDungeonRewardLimit" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class SummerTimeV2DungeonSettleInfo : pb::IMessage<SummerTimeV2DungeonSettleInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SummerTimeV2DungeonSettleInfo> _parser = new pb::MessageParser<SummerTimeV2DungeonSettleInfo>(() => new SummerTimeV2DungeonSettleInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SummerTimeV2DungeonSettleInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.SummerTimeV2DungeonSettleInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SummerTimeV2DungeonSettleInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SummerTimeV2DungeonSettleInfo(SummerTimeV2DungeonSettleInfo other) : this() {
+      isSuccess_ = other.isSuccess_;
+      takenRewardCount_ = other.takenRewardCount_;
+      curDungeonRewardLimit_ = other.curDungeonRewardLimit_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SummerTimeV2DungeonSettleInfo Clone() {
+      return new SummerTimeV2DungeonSettleInfo(this);
+    }
+
+    /// <summary>Field number for the "is_success" field.</summary>
+    public const int IsSuccessFieldNumber = 5;
+    private bool isSuccess_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsSuccess {
+      get { return isSuccess_; }
+      set {
+        isSuccess_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "taken_reward_count" field.</summary>
+    public const int TakenRewardCountFieldNumber = 2;
+    private uint takenRewardCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TakenRewardCount {
+      get { return takenRewardCount_; }
+      set {
+        takenRewardCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cur_dungeon_reward_limit" field.</summary>
+    public const int CurDungeonRewardLimitFieldNumber = 11;
+    private uint curDungeonRewardLimit_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CurDungeonRewardLimit {
+      get { return curDungeonRewardLimit_; }
+      set {
+        curDungeonRewardLimit_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SummerTimeV2DungeonSettleInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SummerTimeV2DungeonSettleInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (IsSuccess != other.IsSuccess) return false;
+      if (TakenRewardCount != other.TakenRewardCount) return false;
+      if (CurDungeonRewardLimit != other.CurDungeonRewardLimit) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
+      if (TakenRewardCount != 0) hash ^= TakenRewardCount.GetHashCode();
+      if (CurDungeonRewardLimit != 0) hash ^= CurDungeonRewardLimit.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (TakenRewardCount != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(TakenRewardCount);
+      }
+      if (IsSuccess != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsSuccess);
+      }
+      if (CurDungeonRewardLimit != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(CurDungeonRewardLimit);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (TakenRewardCount != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(TakenRewardCount);
+      }
+      if (IsSuccess != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsSuccess);
+      }
+      if (CurDungeonRewardLimit != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(CurDungeonRewardLimit);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (IsSuccess != false) {
+        size += 1 + 1;
+      }
+      if (TakenRewardCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TakenRewardCount);
+      }
+      if (CurDungeonRewardLimit != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurDungeonRewardLimit);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SummerTimeV2DungeonSettleInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.IsSuccess != false) {
+        IsSuccess = other.IsSuccess;
+      }
+      if (other.TakenRewardCount != 0) {
+        TakenRewardCount = other.TakenRewardCount;
+      }
+      if (other.CurDungeonRewardLimit != 0) {
+        CurDungeonRewardLimit = other.CurDungeonRewardLimit;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            TakenRewardCount = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 88: {
+            CurDungeonRewardLimit = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            TakenRewardCount = input.ReadUInt32();
+            break;
+          }
+          case 40: {
+            IsSuccess = input.ReadBool();
+            break;
+          }
+          case 88: {
+            CurDungeonRewardLimit = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class SummerTimeV2DungeonSettleInfo : pb::IMessage<SummerTimeV2DungeonSettleInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SummerTimeV2DungeonSettleInfo> _parser = new pb::MessageParser<SummerTimeV2DungeonSettleInfo>(() => new SummerTimeV2DungeonSettleInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SummerTimeV2DungeonSettleInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SummerTimeV2DungeonSettleInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SummerTimeV2DungeonSettleInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SummerTimeV2DungeonSettleInfo(SummerTimeV2DungeonSettleInfo other) : this() {
-    isSuccess_ = other.isSuccess_;
-    takenRewardCount_ = other.takenRewardCount_;
-    curDungeonRewardLimit_ = other.curDungeonRewardLimit_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SummerTimeV2DungeonSettleInfo Clone() {
-    return new SummerTimeV2DungeonSettleInfo(this);
-  }
-
-  /// <summary>Field number for the "is_success" field.</summary>
-  public const int IsSuccessFieldNumber = 5;
-  private bool isSuccess_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsSuccess {
-    get { return isSuccess_; }
-    set {
-      isSuccess_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "taken_reward_count" field.</summary>
-  public const int TakenRewardCountFieldNumber = 2;
-  private uint takenRewardCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TakenRewardCount {
-    get { return takenRewardCount_; }
-    set {
-      takenRewardCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cur_dungeon_reward_limit" field.</summary>
-  public const int CurDungeonRewardLimitFieldNumber = 11;
-  private uint curDungeonRewardLimit_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CurDungeonRewardLimit {
-    get { return curDungeonRewardLimit_; }
-    set {
-      curDungeonRewardLimit_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SummerTimeV2DungeonSettleInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SummerTimeV2DungeonSettleInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (IsSuccess != other.IsSuccess) return false;
-    if (TakenRewardCount != other.TakenRewardCount) return false;
-    if (CurDungeonRewardLimit != other.CurDungeonRewardLimit) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (IsSuccess != false) hash ^= IsSuccess.GetHashCode();
-    if (TakenRewardCount != 0) hash ^= TakenRewardCount.GetHashCode();
-    if (CurDungeonRewardLimit != 0) hash ^= CurDungeonRewardLimit.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (TakenRewardCount != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(TakenRewardCount);
-    }
-    if (IsSuccess != false) {
-      output.WriteRawTag(40);
-      output.WriteBool(IsSuccess);
-    }
-    if (CurDungeonRewardLimit != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(CurDungeonRewardLimit);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (TakenRewardCount != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(TakenRewardCount);
-    }
-    if (IsSuccess != false) {
-      output.WriteRawTag(40);
-      output.WriteBool(IsSuccess);
-    }
-    if (CurDungeonRewardLimit != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(CurDungeonRewardLimit);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (IsSuccess != false) {
-      size += 1 + 1;
-    }
-    if (TakenRewardCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TakenRewardCount);
-    }
-    if (CurDungeonRewardLimit != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CurDungeonRewardLimit);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SummerTimeV2DungeonSettleInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.IsSuccess != false) {
-      IsSuccess = other.IsSuccess;
-    }
-    if (other.TakenRewardCount != 0) {
-      TakenRewardCount = other.TakenRewardCount;
-    }
-    if (other.CurDungeonRewardLimit != 0) {
-      CurDungeonRewardLimit = other.CurDungeonRewardLimit;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          TakenRewardCount = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          IsSuccess = input.ReadBool();
-          break;
-        }
-        case 88: {
-          CurDungeonRewardLimit = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          TakenRewardCount = input.ReadUInt32();
-          break;
-        }
-        case 40: {
-          IsSuccess = input.ReadBool();
-          break;
-        }
-        case 88: {
-          CurDungeonRewardLimit = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

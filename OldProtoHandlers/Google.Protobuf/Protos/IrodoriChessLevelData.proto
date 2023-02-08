@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "IrodoriChessMapData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message IrodoriChessLevelData {
   uint32 open_time = 8;

@@ -9,45 +9,48 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AbilityScalarType.proto</summary>
-public static partial class AbilityScalarTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AbilityScalarType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AbilityScalarType.proto</summary>
+  public static partial class AbilityScalarTypeReflection {
 
-  static AbilityScalarTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdBYmlsaXR5U2NhbGFyVHlwZS5wcm90byrtAQoRQWJpbGl0eVNjYWxhclR5",
-          "cGUSHwobQUJJTElUWV9TQ0FMQVJfVFlQRV9VTktOT1dOEAASHQoZQUJJTElU",
-          "WV9TQ0FMQVJfVFlQRV9GTE9BVBABEhsKF0FCSUxJVFlfU0NBTEFSX1RZUEVf",
-          "SU5UEAISHAoYQUJJTElUWV9TQ0FMQVJfVFlQRV9CT09MEAMSHwobQUJJTElU",
-          "WV9TQ0FMQVJfVFlQRV9UUklHR0VSEAQSHgoaQUJJTElUWV9TQ0FMQVJfVFlQ",
-          "RV9TVFJJTkcQBRIcChhBQklMSVRZX1NDQUxBUl9UWVBFX1VJTlQQBkIeChxl",
-          "bXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::AbilityScalarType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for AbilityScalarType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AbilityScalarTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdBYmlsaXR5U2NhbGFyVHlwZS5wcm90byrtAQoRQWJpbGl0eVNjYWxhclR5",
+            "cGUSHwobQUJJTElUWV9TQ0FMQVJfVFlQRV9VTktOT1dOEAASHQoZQUJJTElU",
+            "WV9TQ0FMQVJfVFlQRV9GTE9BVBABEhsKF0FCSUxJVFlfU0NBTEFSX1RZUEVf",
+            "SU5UEAISHAoYQUJJTElUWV9TQ0FMQVJfVFlQRV9CT09MEAMSHwobQUJJTElU",
+            "WV9TQ0FMQVJfVFlQRV9UUklHR0VSEAQSHgoaQUJJTElUWV9TQ0FMQVJfVFlQ",
+            "RV9TVFJJTkcQBRIcChhBQklMSVRZX1NDQUxBUl9UWVBFX1VJTlQQBkIMqgIJ",
+            "T2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.AbilityScalarType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum AbilityScalarType {
+    [pbr::OriginalName("ABILITY_SCALAR_TYPE_UNKNOWN")] Unknown = 0,
+    [pbr::OriginalName("ABILITY_SCALAR_TYPE_FLOAT")] Float = 1,
+    [pbr::OriginalName("ABILITY_SCALAR_TYPE_INT")] Int = 2,
+    [pbr::OriginalName("ABILITY_SCALAR_TYPE_BOOL")] Bool = 3,
+    [pbr::OriginalName("ABILITY_SCALAR_TYPE_TRIGGER")] Trigger = 4,
+    [pbr::OriginalName("ABILITY_SCALAR_TYPE_STRING")] String = 5,
+    [pbr::OriginalName("ABILITY_SCALAR_TYPE_UINT")] Uint = 6,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum AbilityScalarType {
-  [pbr::OriginalName("ABILITY_SCALAR_TYPE_UNKNOWN")] Unknown = 0,
-  [pbr::OriginalName("ABILITY_SCALAR_TYPE_FLOAT")] Float = 1,
-  [pbr::OriginalName("ABILITY_SCALAR_TYPE_INT")] Int = 2,
-  [pbr::OriginalName("ABILITY_SCALAR_TYPE_BOOL")] Bool = 3,
-  [pbr::OriginalName("ABILITY_SCALAR_TYPE_TRIGGER")] Trigger = 4,
-  [pbr::OriginalName("ABILITY_SCALAR_TYPE_STRING")] String = 5,
-  [pbr::OriginalName("ABILITY_SCALAR_TYPE_UINT")] Uint = 6,
-}
-
-#endregion
-
 
 #endregion Designer generated code

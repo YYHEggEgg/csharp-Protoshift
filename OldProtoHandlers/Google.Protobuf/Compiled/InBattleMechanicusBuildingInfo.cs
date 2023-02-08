@@ -9,335 +9,337 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from InBattleMechanicusBuildingInfo.proto</summary>
-public static partial class InBattleMechanicusBuildingInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for InBattleMechanicusBuildingInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from InBattleMechanicusBuildingInfo.proto</summary>
+  public static partial class InBattleMechanicusBuildingInfoReflection {
 
-  static InBattleMechanicusBuildingInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CiRJbkJhdHRsZU1lY2hhbmljdXNCdWlsZGluZ0luZm8ucHJvdG8icAoeSW5C",
-          "YXR0bGVNZWNoYW5pY3VzQnVpbGRpbmdJbmZvEhMKC2J1aWxkaW5nX2lkGAgg",
-          "ASgNEg0KBWxldmVsGAcgASgNEhMKC2Nvc3RfcG9pbnRzGAIgASgNEhUKDXJl",
-          "ZnVuZF9wb2ludHMYCyABKA1CHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRw",
-          "cm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::InBattleMechanicusBuildingInfo), global::InBattleMechanicusBuildingInfo.Parser, new[]{ "BuildingId", "Level", "CostPoints", "RefundPoints" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for InBattleMechanicusBuildingInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static InBattleMechanicusBuildingInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CiRJbkJhdHRsZU1lY2hhbmljdXNCdWlsZGluZ0luZm8ucHJvdG8icAoeSW5C",
+            "YXR0bGVNZWNoYW5pY3VzQnVpbGRpbmdJbmZvEhMKC2J1aWxkaW5nX2lkGAgg",
+            "ASgNEg0KBWxldmVsGAcgASgNEhMKC2Nvc3RfcG9pbnRzGAIgASgNEhUKDXJl",
+            "ZnVuZF9wb2ludHMYCyABKA1CDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.InBattleMechanicusBuildingInfo), global::OldProtos.InBattleMechanicusBuildingInfo.Parser, new[]{ "BuildingId", "Level", "CostPoints", "RefundPoints" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class InBattleMechanicusBuildingInfo : pb::IMessage<InBattleMechanicusBuildingInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<InBattleMechanicusBuildingInfo> _parser = new pb::MessageParser<InBattleMechanicusBuildingInfo>(() => new InBattleMechanicusBuildingInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<InBattleMechanicusBuildingInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.InBattleMechanicusBuildingInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InBattleMechanicusBuildingInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InBattleMechanicusBuildingInfo(InBattleMechanicusBuildingInfo other) : this() {
+      buildingId_ = other.buildingId_;
+      level_ = other.level_;
+      costPoints_ = other.costPoints_;
+      refundPoints_ = other.refundPoints_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public InBattleMechanicusBuildingInfo Clone() {
+      return new InBattleMechanicusBuildingInfo(this);
+    }
+
+    /// <summary>Field number for the "building_id" field.</summary>
+    public const int BuildingIdFieldNumber = 8;
+    private uint buildingId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint BuildingId {
+      get { return buildingId_; }
+      set {
+        buildingId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "level" field.</summary>
+    public const int LevelFieldNumber = 7;
+    private uint level_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Level {
+      get { return level_; }
+      set {
+        level_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "cost_points" field.</summary>
+    public const int CostPointsFieldNumber = 2;
+    private uint costPoints_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CostPoints {
+      get { return costPoints_; }
+      set {
+        costPoints_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "refund_points" field.</summary>
+    public const int RefundPointsFieldNumber = 11;
+    private uint refundPoints_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint RefundPoints {
+      get { return refundPoints_; }
+      set {
+        refundPoints_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as InBattleMechanicusBuildingInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(InBattleMechanicusBuildingInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (BuildingId != other.BuildingId) return false;
+      if (Level != other.Level) return false;
+      if (CostPoints != other.CostPoints) return false;
+      if (RefundPoints != other.RefundPoints) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (BuildingId != 0) hash ^= BuildingId.GetHashCode();
+      if (Level != 0) hash ^= Level.GetHashCode();
+      if (CostPoints != 0) hash ^= CostPoints.GetHashCode();
+      if (RefundPoints != 0) hash ^= RefundPoints.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (CostPoints != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CostPoints);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Level);
+      }
+      if (BuildingId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(BuildingId);
+      }
+      if (RefundPoints != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(RefundPoints);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (CostPoints != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(CostPoints);
+      }
+      if (Level != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Level);
+      }
+      if (BuildingId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(BuildingId);
+      }
+      if (RefundPoints != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(RefundPoints);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (BuildingId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingId);
+      }
+      if (Level != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
+      }
+      if (CostPoints != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostPoints);
+      }
+      if (RefundPoints != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RefundPoints);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(InBattleMechanicusBuildingInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.BuildingId != 0) {
+        BuildingId = other.BuildingId;
+      }
+      if (other.Level != 0) {
+        Level = other.Level;
+      }
+      if (other.CostPoints != 0) {
+        CostPoints = other.CostPoints;
+      }
+      if (other.RefundPoints != 0) {
+        RefundPoints = other.RefundPoints;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            CostPoints = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            BuildingId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            RefundPoints = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            CostPoints = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Level = input.ReadUInt32();
+            break;
+          }
+          case 64: {
+            BuildingId = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            RefundPoints = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class InBattleMechanicusBuildingInfo : pb::IMessage<InBattleMechanicusBuildingInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<InBattleMechanicusBuildingInfo> _parser = new pb::MessageParser<InBattleMechanicusBuildingInfo>(() => new InBattleMechanicusBuildingInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<InBattleMechanicusBuildingInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::InBattleMechanicusBuildingInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InBattleMechanicusBuildingInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InBattleMechanicusBuildingInfo(InBattleMechanicusBuildingInfo other) : this() {
-    buildingId_ = other.buildingId_;
-    level_ = other.level_;
-    costPoints_ = other.costPoints_;
-    refundPoints_ = other.refundPoints_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public InBattleMechanicusBuildingInfo Clone() {
-    return new InBattleMechanicusBuildingInfo(this);
-  }
-
-  /// <summary>Field number for the "building_id" field.</summary>
-  public const int BuildingIdFieldNumber = 8;
-  private uint buildingId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint BuildingId {
-    get { return buildingId_; }
-    set {
-      buildingId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "level" field.</summary>
-  public const int LevelFieldNumber = 7;
-  private uint level_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Level {
-    get { return level_; }
-    set {
-      level_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "cost_points" field.</summary>
-  public const int CostPointsFieldNumber = 2;
-  private uint costPoints_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CostPoints {
-    get { return costPoints_; }
-    set {
-      costPoints_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "refund_points" field.</summary>
-  public const int RefundPointsFieldNumber = 11;
-  private uint refundPoints_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint RefundPoints {
-    get { return refundPoints_; }
-    set {
-      refundPoints_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as InBattleMechanicusBuildingInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(InBattleMechanicusBuildingInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (BuildingId != other.BuildingId) return false;
-    if (Level != other.Level) return false;
-    if (CostPoints != other.CostPoints) return false;
-    if (RefundPoints != other.RefundPoints) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (BuildingId != 0) hash ^= BuildingId.GetHashCode();
-    if (Level != 0) hash ^= Level.GetHashCode();
-    if (CostPoints != 0) hash ^= CostPoints.GetHashCode();
-    if (RefundPoints != 0) hash ^= RefundPoints.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (CostPoints != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(CostPoints);
-    }
-    if (Level != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Level);
-    }
-    if (BuildingId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(BuildingId);
-    }
-    if (RefundPoints != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(RefundPoints);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (CostPoints != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(CostPoints);
-    }
-    if (Level != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Level);
-    }
-    if (BuildingId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(BuildingId);
-    }
-    if (RefundPoints != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(RefundPoints);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (BuildingId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BuildingId);
-    }
-    if (Level != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
-    }
-    if (CostPoints != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(CostPoints);
-    }
-    if (RefundPoints != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RefundPoints);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(InBattleMechanicusBuildingInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.BuildingId != 0) {
-      BuildingId = other.BuildingId;
-    }
-    if (other.Level != 0) {
-      Level = other.Level;
-    }
-    if (other.CostPoints != 0) {
-      CostPoints = other.CostPoints;
-    }
-    if (other.RefundPoints != 0) {
-      RefundPoints = other.RefundPoints;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          CostPoints = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Level = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          BuildingId = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          RefundPoints = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          CostPoints = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Level = input.ReadUInt32();
-          break;
-        }
-        case 64: {
-          BuildingId = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          RefundPoints = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

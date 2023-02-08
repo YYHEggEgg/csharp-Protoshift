@@ -9,447 +9,450 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ForgeQueueData.proto</summary>
-public static partial class ForgeQueueDataReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ForgeQueueData.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ForgeQueueData.proto</summary>
+  public static partial class ForgeQueueDataReflection {
 
-  static ForgeQueueDataReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChRGb3JnZVF1ZXVlRGF0YS5wcm90byK0AQoORm9yZ2VRdWV1ZURhdGESFAoM",
-          "ZmluaXNoX2NvdW50GA0gASgNEh4KFnRvdGFsX2ZpbmlzaF90aW1lc3RhbXAY",
-          "DiABKA0SEQoJYXZhdGFyX2lkGAcgASgNEhAKCHF1ZXVlX2lkGAEgASgNEhYK",
-          "DnVuZmluaXNoX2NvdW50GAogASgNEh0KFW5leHRfZmluaXNoX3RpbWVzdGFt",
-          "cBgLIAEoDRIQCghmb3JnZV9pZBgPIAEoDUIeChxlbXUuZ3Jhc3NjdXR0ZXIu",
-          "bmV0Lm9sZHByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ForgeQueueData), global::ForgeQueueData.Parser, new[]{ "FinishCount", "TotalFinishTimestamp", "AvatarId", "QueueId", "UnfinishCount", "NextFinishTimestamp", "ForgeId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ForgeQueueData.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ForgeQueueDataReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChRGb3JnZVF1ZXVlRGF0YS5wcm90byK0AQoORm9yZ2VRdWV1ZURhdGESFAoM",
+            "ZmluaXNoX2NvdW50GA0gASgNEh4KFnRvdGFsX2ZpbmlzaF90aW1lc3RhbXAY",
+            "DiABKA0SEQoJYXZhdGFyX2lkGAcgASgNEhAKCHF1ZXVlX2lkGAEgASgNEhYK",
+            "DnVuZmluaXNoX2NvdW50GAogASgNEh0KFW5leHRfZmluaXNoX3RpbWVzdGFt",
+            "cBgLIAEoDRIQCghmb3JnZV9pZBgPIAEoDUIMqgIJT2xkUHJvdG9zYgZwcm90",
+            "bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ForgeQueueData), global::OldProtos.ForgeQueueData.Parser, new[]{ "FinishCount", "TotalFinishTimestamp", "AvatarId", "QueueId", "UnfinishCount", "NextFinishTimestamp", "ForgeId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class ForgeQueueData : pb::IMessage<ForgeQueueData>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ForgeQueueData> _parser = new pb::MessageParser<ForgeQueueData>(() => new ForgeQueueData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ForgeQueueData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ForgeQueueDataReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ForgeQueueData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ForgeQueueData(ForgeQueueData other) : this() {
+      finishCount_ = other.finishCount_;
+      totalFinishTimestamp_ = other.totalFinishTimestamp_;
+      avatarId_ = other.avatarId_;
+      queueId_ = other.queueId_;
+      unfinishCount_ = other.unfinishCount_;
+      nextFinishTimestamp_ = other.nextFinishTimestamp_;
+      forgeId_ = other.forgeId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ForgeQueueData Clone() {
+      return new ForgeQueueData(this);
+    }
+
+    /// <summary>Field number for the "finish_count" field.</summary>
+    public const int FinishCountFieldNumber = 13;
+    private uint finishCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint FinishCount {
+      get { return finishCount_; }
+      set {
+        finishCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "total_finish_timestamp" field.</summary>
+    public const int TotalFinishTimestampFieldNumber = 14;
+    private uint totalFinishTimestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint TotalFinishTimestamp {
+      get { return totalFinishTimestamp_; }
+      set {
+        totalFinishTimestamp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "avatar_id" field.</summary>
+    public const int AvatarIdFieldNumber = 7;
+    private uint avatarId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AvatarId {
+      get { return avatarId_; }
+      set {
+        avatarId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "queue_id" field.</summary>
+    public const int QueueIdFieldNumber = 1;
+    private uint queueId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint QueueId {
+      get { return queueId_; }
+      set {
+        queueId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "unfinish_count" field.</summary>
+    public const int UnfinishCountFieldNumber = 10;
+    private uint unfinishCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint UnfinishCount {
+      get { return unfinishCount_; }
+      set {
+        unfinishCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "next_finish_timestamp" field.</summary>
+    public const int NextFinishTimestampFieldNumber = 11;
+    private uint nextFinishTimestamp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint NextFinishTimestamp {
+      get { return nextFinishTimestamp_; }
+      set {
+        nextFinishTimestamp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "forge_id" field.</summary>
+    public const int ForgeIdFieldNumber = 15;
+    private uint forgeId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ForgeId {
+      get { return forgeId_; }
+      set {
+        forgeId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ForgeQueueData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ForgeQueueData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (FinishCount != other.FinishCount) return false;
+      if (TotalFinishTimestamp != other.TotalFinishTimestamp) return false;
+      if (AvatarId != other.AvatarId) return false;
+      if (QueueId != other.QueueId) return false;
+      if (UnfinishCount != other.UnfinishCount) return false;
+      if (NextFinishTimestamp != other.NextFinishTimestamp) return false;
+      if (ForgeId != other.ForgeId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (FinishCount != 0) hash ^= FinishCount.GetHashCode();
+      if (TotalFinishTimestamp != 0) hash ^= TotalFinishTimestamp.GetHashCode();
+      if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
+      if (QueueId != 0) hash ^= QueueId.GetHashCode();
+      if (UnfinishCount != 0) hash ^= UnfinishCount.GetHashCode();
+      if (NextFinishTimestamp != 0) hash ^= NextFinishTimestamp.GetHashCode();
+      if (ForgeId != 0) hash ^= ForgeId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (QueueId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(QueueId);
+      }
+      if (AvatarId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(AvatarId);
+      }
+      if (UnfinishCount != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(UnfinishCount);
+      }
+      if (NextFinishTimestamp != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(NextFinishTimestamp);
+      }
+      if (FinishCount != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(FinishCount);
+      }
+      if (TotalFinishTimestamp != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(TotalFinishTimestamp);
+      }
+      if (ForgeId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ForgeId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (QueueId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(QueueId);
+      }
+      if (AvatarId != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(AvatarId);
+      }
+      if (UnfinishCount != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(UnfinishCount);
+      }
+      if (NextFinishTimestamp != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(NextFinishTimestamp);
+      }
+      if (FinishCount != 0) {
+        output.WriteRawTag(104);
+        output.WriteUInt32(FinishCount);
+      }
+      if (TotalFinishTimestamp != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(TotalFinishTimestamp);
+      }
+      if (ForgeId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(ForgeId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (FinishCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishCount);
+      }
+      if (TotalFinishTimestamp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalFinishTimestamp);
+      }
+      if (AvatarId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
+      }
+      if (QueueId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QueueId);
+      }
+      if (UnfinishCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UnfinishCount);
+      }
+      if (NextFinishTimestamp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextFinishTimestamp);
+      }
+      if (ForgeId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ForgeId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ForgeQueueData other) {
+      if (other == null) {
+        return;
+      }
+      if (other.FinishCount != 0) {
+        FinishCount = other.FinishCount;
+      }
+      if (other.TotalFinishTimestamp != 0) {
+        TotalFinishTimestamp = other.TotalFinishTimestamp;
+      }
+      if (other.AvatarId != 0) {
+        AvatarId = other.AvatarId;
+      }
+      if (other.QueueId != 0) {
+        QueueId = other.QueueId;
+      }
+      if (other.UnfinishCount != 0) {
+        UnfinishCount = other.UnfinishCount;
+      }
+      if (other.NextFinishTimestamp != 0) {
+        NextFinishTimestamp = other.NextFinishTimestamp;
+      }
+      if (other.ForgeId != 0) {
+        ForgeId = other.ForgeId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            QueueId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            AvatarId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            UnfinishCount = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            NextFinishTimestamp = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            FinishCount = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            TotalFinishTimestamp = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ForgeId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            QueueId = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            AvatarId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            UnfinishCount = input.ReadUInt32();
+            break;
+          }
+          case 88: {
+            NextFinishTimestamp = input.ReadUInt32();
+            break;
+          }
+          case 104: {
+            FinishCount = input.ReadUInt32();
+            break;
+          }
+          case 112: {
+            TotalFinishTimestamp = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            ForgeId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class ForgeQueueData : pb::IMessage<ForgeQueueData>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ForgeQueueData> _parser = new pb::MessageParser<ForgeQueueData>(() => new ForgeQueueData());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ForgeQueueData> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ForgeQueueDataReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ForgeQueueData() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ForgeQueueData(ForgeQueueData other) : this() {
-    finishCount_ = other.finishCount_;
-    totalFinishTimestamp_ = other.totalFinishTimestamp_;
-    avatarId_ = other.avatarId_;
-    queueId_ = other.queueId_;
-    unfinishCount_ = other.unfinishCount_;
-    nextFinishTimestamp_ = other.nextFinishTimestamp_;
-    forgeId_ = other.forgeId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ForgeQueueData Clone() {
-    return new ForgeQueueData(this);
-  }
-
-  /// <summary>Field number for the "finish_count" field.</summary>
-  public const int FinishCountFieldNumber = 13;
-  private uint finishCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint FinishCount {
-    get { return finishCount_; }
-    set {
-      finishCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "total_finish_timestamp" field.</summary>
-  public const int TotalFinishTimestampFieldNumber = 14;
-  private uint totalFinishTimestamp_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint TotalFinishTimestamp {
-    get { return totalFinishTimestamp_; }
-    set {
-      totalFinishTimestamp_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "avatar_id" field.</summary>
-  public const int AvatarIdFieldNumber = 7;
-  private uint avatarId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint AvatarId {
-    get { return avatarId_; }
-    set {
-      avatarId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "queue_id" field.</summary>
-  public const int QueueIdFieldNumber = 1;
-  private uint queueId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint QueueId {
-    get { return queueId_; }
-    set {
-      queueId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "unfinish_count" field.</summary>
-  public const int UnfinishCountFieldNumber = 10;
-  private uint unfinishCount_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint UnfinishCount {
-    get { return unfinishCount_; }
-    set {
-      unfinishCount_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "next_finish_timestamp" field.</summary>
-  public const int NextFinishTimestampFieldNumber = 11;
-  private uint nextFinishTimestamp_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint NextFinishTimestamp {
-    get { return nextFinishTimestamp_; }
-    set {
-      nextFinishTimestamp_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "forge_id" field.</summary>
-  public const int ForgeIdFieldNumber = 15;
-  private uint forgeId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ForgeId {
-    get { return forgeId_; }
-    set {
-      forgeId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ForgeQueueData);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ForgeQueueData other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (FinishCount != other.FinishCount) return false;
-    if (TotalFinishTimestamp != other.TotalFinishTimestamp) return false;
-    if (AvatarId != other.AvatarId) return false;
-    if (QueueId != other.QueueId) return false;
-    if (UnfinishCount != other.UnfinishCount) return false;
-    if (NextFinishTimestamp != other.NextFinishTimestamp) return false;
-    if (ForgeId != other.ForgeId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (FinishCount != 0) hash ^= FinishCount.GetHashCode();
-    if (TotalFinishTimestamp != 0) hash ^= TotalFinishTimestamp.GetHashCode();
-    if (AvatarId != 0) hash ^= AvatarId.GetHashCode();
-    if (QueueId != 0) hash ^= QueueId.GetHashCode();
-    if (UnfinishCount != 0) hash ^= UnfinishCount.GetHashCode();
-    if (NextFinishTimestamp != 0) hash ^= NextFinishTimestamp.GetHashCode();
-    if (ForgeId != 0) hash ^= ForgeId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (QueueId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(QueueId);
-    }
-    if (AvatarId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(AvatarId);
-    }
-    if (UnfinishCount != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(UnfinishCount);
-    }
-    if (NextFinishTimestamp != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(NextFinishTimestamp);
-    }
-    if (FinishCount != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(FinishCount);
-    }
-    if (TotalFinishTimestamp != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(TotalFinishTimestamp);
-    }
-    if (ForgeId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(ForgeId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (QueueId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(QueueId);
-    }
-    if (AvatarId != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(AvatarId);
-    }
-    if (UnfinishCount != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(UnfinishCount);
-    }
-    if (NextFinishTimestamp != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(NextFinishTimestamp);
-    }
-    if (FinishCount != 0) {
-      output.WriteRawTag(104);
-      output.WriteUInt32(FinishCount);
-    }
-    if (TotalFinishTimestamp != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(TotalFinishTimestamp);
-    }
-    if (ForgeId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(ForgeId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (FinishCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(FinishCount);
-    }
-    if (TotalFinishTimestamp != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TotalFinishTimestamp);
-    }
-    if (AvatarId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AvatarId);
-    }
-    if (QueueId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(QueueId);
-    }
-    if (UnfinishCount != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UnfinishCount);
-    }
-    if (NextFinishTimestamp != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(NextFinishTimestamp);
-    }
-    if (ForgeId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ForgeId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ForgeQueueData other) {
-    if (other == null) {
-      return;
-    }
-    if (other.FinishCount != 0) {
-      FinishCount = other.FinishCount;
-    }
-    if (other.TotalFinishTimestamp != 0) {
-      TotalFinishTimestamp = other.TotalFinishTimestamp;
-    }
-    if (other.AvatarId != 0) {
-      AvatarId = other.AvatarId;
-    }
-    if (other.QueueId != 0) {
-      QueueId = other.QueueId;
-    }
-    if (other.UnfinishCount != 0) {
-      UnfinishCount = other.UnfinishCount;
-    }
-    if (other.NextFinishTimestamp != 0) {
-      NextFinishTimestamp = other.NextFinishTimestamp;
-    }
-    if (other.ForgeId != 0) {
-      ForgeId = other.ForgeId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          QueueId = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          AvatarId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          UnfinishCount = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          NextFinishTimestamp = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          FinishCount = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          TotalFinishTimestamp = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          ForgeId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          QueueId = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          AvatarId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          UnfinishCount = input.ReadUInt32();
-          break;
-        }
-        case 88: {
-          NextFinishTimestamp = input.ReadUInt32();
-          break;
-        }
-        case 104: {
-          FinishCount = input.ReadUInt32();
-          break;
-        }
-        case 112: {
-          TotalFinishTimestamp = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          ForgeId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

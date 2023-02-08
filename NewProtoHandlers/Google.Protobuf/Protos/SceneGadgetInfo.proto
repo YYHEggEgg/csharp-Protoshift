@@ -42,7 +42,7 @@ import "VehicleInfo.proto";
 import "WeatherInfo.proto";
 import "WorktopInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SceneGadgetInfo {
   uint32 gadget_id = 1;

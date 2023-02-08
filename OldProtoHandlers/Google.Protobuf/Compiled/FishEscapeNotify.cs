@@ -9,340 +9,343 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from FishEscapeNotify.proto</summary>
-public static partial class FishEscapeNotifyReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for FishEscapeNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from FishEscapeNotify.proto</summary>
+  public static partial class FishEscapeNotifyReflection {
 
-  static FishEscapeNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZGaXNoRXNjYXBlTm90aWZ5LnByb3RvGhZGaXNoRXNjYXBlUmVhc29uLnBy",
-          "b3RvGgxWZWN0b3IucHJvdG8ibgoQRmlzaEVzY2FwZU5vdGlmeRIhCgZyZWFz",
-          "b24YBCABKA4yES5GaXNoRXNjYXBlUmVhc29uEhQKA3BvcxgHIAEoCzIHLlZl",
-          "Y3RvchILCgN1aWQYDiABKA0SFAoMZmlzaF9pZF9saXN0GAYgAygNQh4KHGVt",
-          "dS5ncmFzc2N1dHRlci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::FishEscapeReasonReflection.Descriptor, global::VectorReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::FishEscapeNotify), global::FishEscapeNotify.Parser, new[]{ "Reason", "Pos", "Uid", "FishIdList" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for FishEscapeNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static FishEscapeNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZGaXNoRXNjYXBlTm90aWZ5LnByb3RvGhZGaXNoRXNjYXBlUmVhc29uLnBy",
+            "b3RvGgxWZWN0b3IucHJvdG8ibgoQRmlzaEVzY2FwZU5vdGlmeRIhCgZyZWFz",
+            "b24YBCABKA4yES5GaXNoRXNjYXBlUmVhc29uEhQKA3BvcxgHIAEoCzIHLlZl",
+            "Y3RvchILCgN1aWQYDiABKA0SFAoMZmlzaF9pZF9saXN0GAYgAygNQgyqAglP",
+            "bGRQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.FishEscapeReasonReflection.Descriptor, global::OldProtos.VectorReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.FishEscapeNotify), global::OldProtos.FishEscapeNotify.Parser, new[]{ "Reason", "Pos", "Uid", "FishIdList" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 5822
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class FishEscapeNotify : pb::IMessage<FishEscapeNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FishEscapeNotify> _parser = new pb::MessageParser<FishEscapeNotify>(() => new FishEscapeNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FishEscapeNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.FishEscapeNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FishEscapeNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FishEscapeNotify(FishEscapeNotify other) : this() {
+      reason_ = other.reason_;
+      pos_ = other.pos_ != null ? other.pos_.Clone() : null;
+      uid_ = other.uid_;
+      fishIdList_ = other.fishIdList_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FishEscapeNotify Clone() {
+      return new FishEscapeNotify(this);
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 4;
+    private global::OldProtos.FishEscapeReason reason_ = global::OldProtos.FishEscapeReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.FishEscapeReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pos" field.</summary>
+    public const int PosFieldNumber = 7;
+    private global::OldProtos.Vector pos_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.Vector Pos {
+      get { return pos_; }
+      set {
+        pos_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "uid" field.</summary>
+    public const int UidFieldNumber = 14;
+    private uint uid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Uid {
+      get { return uid_; }
+      set {
+        uid_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "fish_id_list" field.</summary>
+    public const int FishIdListFieldNumber = 6;
+    private static readonly pb::FieldCodec<uint> _repeated_fishIdList_codec
+        = pb::FieldCodec.ForUInt32(50);
+    private readonly pbc::RepeatedField<uint> fishIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> FishIdList {
+      get { return fishIdList_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FishEscapeNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FishEscapeNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Reason != other.Reason) return false;
+      if (!object.Equals(Pos, other.Pos)) return false;
+      if (Uid != other.Uid) return false;
+      if(!fishIdList_.Equals(other.fishIdList_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Reason != global::OldProtos.FishEscapeReason.None) hash ^= Reason.GetHashCode();
+      if (pos_ != null) hash ^= Pos.GetHashCode();
+      if (Uid != 0) hash ^= Uid.GetHashCode();
+      hash ^= fishIdList_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Reason != global::OldProtos.FishEscapeReason.None) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Reason);
+      }
+      fishIdList_.WriteTo(output, _repeated_fishIdList_codec);
+      if (pos_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Pos);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Uid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Reason != global::OldProtos.FishEscapeReason.None) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) Reason);
+      }
+      fishIdList_.WriteTo(ref output, _repeated_fishIdList_codec);
+      if (pos_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(Pos);
+      }
+      if (Uid != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(Uid);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Reason != global::OldProtos.FishEscapeReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
+      if (pos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
+      }
+      if (Uid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
+      }
+      size += fishIdList_.CalculateSize(_repeated_fishIdList_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FishEscapeNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Reason != global::OldProtos.FishEscapeReason.None) {
+        Reason = other.Reason;
+      }
+      if (other.pos_ != null) {
+        if (pos_ == null) {
+          Pos = new global::OldProtos.Vector();
+        }
+        Pos.MergeFrom(other.Pos);
+      }
+      if (other.Uid != 0) {
+        Uid = other.Uid;
+      }
+      fishIdList_.Add(other.fishIdList_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 32: {
+            Reason = (global::OldProtos.FishEscapeReason) input.ReadEnum();
+            break;
+          }
+          case 50:
+          case 48: {
+            fishIdList_.AddEntriesFrom(input, _repeated_fishIdList_codec);
+            break;
+          }
+          case 58: {
+            if (pos_ == null) {
+              Pos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(Pos);
+            break;
+          }
+          case 112: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 32: {
+            Reason = (global::OldProtos.FishEscapeReason) input.ReadEnum();
+            break;
+          }
+          case 50:
+          case 48: {
+            fishIdList_.AddEntriesFrom(ref input, _repeated_fishIdList_codec);
+            break;
+          }
+          case 58: {
+            if (pos_ == null) {
+              Pos = new global::OldProtos.Vector();
+            }
+            input.ReadMessage(Pos);
+            break;
+          }
+          case 112: {
+            Uid = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 5822
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class FishEscapeNotify : pb::IMessage<FishEscapeNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<FishEscapeNotify> _parser = new pb::MessageParser<FishEscapeNotify>(() => new FishEscapeNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<FishEscapeNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::FishEscapeNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FishEscapeNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FishEscapeNotify(FishEscapeNotify other) : this() {
-    reason_ = other.reason_;
-    pos_ = other.pos_ != null ? other.pos_.Clone() : null;
-    uid_ = other.uid_;
-    fishIdList_ = other.fishIdList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public FishEscapeNotify Clone() {
-    return new FishEscapeNotify(this);
-  }
-
-  /// <summary>Field number for the "reason" field.</summary>
-  public const int ReasonFieldNumber = 4;
-  private global::FishEscapeReason reason_ = global::FishEscapeReason.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::FishEscapeReason Reason {
-    get { return reason_; }
-    set {
-      reason_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "pos" field.</summary>
-  public const int PosFieldNumber = 7;
-  private global::Vector pos_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::Vector Pos {
-    get { return pos_; }
-    set {
-      pos_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "uid" field.</summary>
-  public const int UidFieldNumber = 14;
-  private uint uid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Uid {
-    get { return uid_; }
-    set {
-      uid_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "fish_id_list" field.</summary>
-  public const int FishIdListFieldNumber = 6;
-  private static readonly pb::FieldCodec<uint> _repeated_fishIdList_codec
-      = pb::FieldCodec.ForUInt32(50);
-  private readonly pbc::RepeatedField<uint> fishIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> FishIdList {
-    get { return fishIdList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as FishEscapeNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(FishEscapeNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Reason != other.Reason) return false;
-    if (!object.Equals(Pos, other.Pos)) return false;
-    if (Uid != other.Uid) return false;
-    if(!fishIdList_.Equals(other.fishIdList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Reason != global::FishEscapeReason.None) hash ^= Reason.GetHashCode();
-    if (pos_ != null) hash ^= Pos.GetHashCode();
-    if (Uid != 0) hash ^= Uid.GetHashCode();
-    hash ^= fishIdList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (Reason != global::FishEscapeReason.None) {
-      output.WriteRawTag(32);
-      output.WriteEnum((int) Reason);
-    }
-    fishIdList_.WriteTo(output, _repeated_fishIdList_codec);
-    if (pos_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(Pos);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Uid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (Reason != global::FishEscapeReason.None) {
-      output.WriteRawTag(32);
-      output.WriteEnum((int) Reason);
-    }
-    fishIdList_.WriteTo(ref output, _repeated_fishIdList_codec);
-    if (pos_ != null) {
-      output.WriteRawTag(58);
-      output.WriteMessage(Pos);
-    }
-    if (Uid != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(Uid);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Reason != global::FishEscapeReason.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-    }
-    if (pos_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Pos);
-    }
-    if (Uid != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Uid);
-    }
-    size += fishIdList_.CalculateSize(_repeated_fishIdList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(FishEscapeNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Reason != global::FishEscapeReason.None) {
-      Reason = other.Reason;
-    }
-    if (other.pos_ != null) {
-      if (pos_ == null) {
-        Pos = new global::Vector();
-      }
-      Pos.MergeFrom(other.Pos);
-    }
-    if (other.Uid != 0) {
-      Uid = other.Uid;
-    }
-    fishIdList_.Add(other.fishIdList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 32: {
-          Reason = (global::FishEscapeReason) input.ReadEnum();
-          break;
-        }
-        case 50:
-        case 48: {
-          fishIdList_.AddEntriesFrom(input, _repeated_fishIdList_codec);
-          break;
-        }
-        case 58: {
-          if (pos_ == null) {
-            Pos = new global::Vector();
-          }
-          input.ReadMessage(Pos);
-          break;
-        }
-        case 112: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 32: {
-          Reason = (global::FishEscapeReason) input.ReadEnum();
-          break;
-        }
-        case 50:
-        case 48: {
-          fishIdList_.AddEntriesFrom(ref input, _repeated_fishIdList_codec);
-          break;
-        }
-        case 58: {
-          if (pos_ == null) {
-            Pos = new global::Vector();
-          }
-          input.ReadMessage(Pos);
-          break;
-        }
-        case 112: {
-          Uid = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

@@ -9,332 +9,334 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from ChannelerSlabLoopDungeonSelectConditionRsp.proto</summary>
-public static partial class ChannelerSlabLoopDungeonSelectConditionRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for ChannelerSlabLoopDungeonSelectConditionRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from ChannelerSlabLoopDungeonSelectConditionRsp.proto</summary>
+  public static partial class ChannelerSlabLoopDungeonSelectConditionRspReflection {
 
-  static ChannelerSlabLoopDungeonSelectConditionRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CjBDaGFubmVsZXJTbGFiTG9vcER1bmdlb25TZWxlY3RDb25kaXRpb25Sc3Au",
-          "cHJvdG8ihgEKKkNoYW5uZWxlclNsYWJMb29wRHVuZ2VvblNlbGVjdENvbmRp",
-          "dGlvblJzcBIPCgdyZXRjb2RlGAkgASgFEhUKDWR1bmdlb25faW5kZXgYBSAB",
-          "KA0SGQoRY29uZGl0aW9uX2lkX2xpc3QYDSADKA0SFQoNZGlmZmljdWx0eV9p",
-          "ZBgOIAEoDUIeChxlbXUuZ3Jhc3NjdXR0ZXIubmV0Lm9sZHByb3RvYgZwcm90",
-          "bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ChannelerSlabLoopDungeonSelectConditionRsp), global::ChannelerSlabLoopDungeonSelectConditionRsp.Parser, new[]{ "Retcode", "DungeonIndex", "ConditionIdList", "DifficultyId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for ChannelerSlabLoopDungeonSelectConditionRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static ChannelerSlabLoopDungeonSelectConditionRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CjBDaGFubmVsZXJTbGFiTG9vcER1bmdlb25TZWxlY3RDb25kaXRpb25Sc3Au",
+            "cHJvdG8ihgEKKkNoYW5uZWxlclNsYWJMb29wRHVuZ2VvblNlbGVjdENvbmRp",
+            "dGlvblJzcBIPCgdyZXRjb2RlGAkgASgFEhUKDWR1bmdlb25faW5kZXgYBSAB",
+            "KA0SGQoRY29uZGl0aW9uX2lkX2xpc3QYDSADKA0SFQoNZGlmZmljdWx0eV9p",
+            "ZBgOIAEoDUIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ChannelerSlabLoopDungeonSelectConditionRsp), global::OldProtos.ChannelerSlabLoopDungeonSelectConditionRsp.Parser, new[]{ "Retcode", "DungeonIndex", "ConditionIdList", "DifficultyId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 8509
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class ChannelerSlabLoopDungeonSelectConditionRsp : pb::IMessage<ChannelerSlabLoopDungeonSelectConditionRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ChannelerSlabLoopDungeonSelectConditionRsp> _parser = new pb::MessageParser<ChannelerSlabLoopDungeonSelectConditionRsp>(() => new ChannelerSlabLoopDungeonSelectConditionRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ChannelerSlabLoopDungeonSelectConditionRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.ChannelerSlabLoopDungeonSelectConditionRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChannelerSlabLoopDungeonSelectConditionRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChannelerSlabLoopDungeonSelectConditionRsp(ChannelerSlabLoopDungeonSelectConditionRsp other) : this() {
+      retcode_ = other.retcode_;
+      dungeonIndex_ = other.dungeonIndex_;
+      conditionIdList_ = other.conditionIdList_.Clone();
+      difficultyId_ = other.difficultyId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ChannelerSlabLoopDungeonSelectConditionRsp Clone() {
+      return new ChannelerSlabLoopDungeonSelectConditionRsp(this);
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 9;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "dungeon_index" field.</summary>
+    public const int DungeonIndexFieldNumber = 5;
+    private uint dungeonIndex_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DungeonIndex {
+      get { return dungeonIndex_; }
+      set {
+        dungeonIndex_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "condition_id_list" field.</summary>
+    public const int ConditionIdListFieldNumber = 13;
+    private static readonly pb::FieldCodec<uint> _repeated_conditionIdList_codec
+        = pb::FieldCodec.ForUInt32(106);
+    private readonly pbc::RepeatedField<uint> conditionIdList_ = new pbc::RepeatedField<uint>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> ConditionIdList {
+      get { return conditionIdList_; }
+    }
+
+    /// <summary>Field number for the "difficulty_id" field.</summary>
+    public const int DifficultyIdFieldNumber = 14;
+    private uint difficultyId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DifficultyId {
+      get { return difficultyId_; }
+      set {
+        difficultyId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ChannelerSlabLoopDungeonSelectConditionRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ChannelerSlabLoopDungeonSelectConditionRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Retcode != other.Retcode) return false;
+      if (DungeonIndex != other.DungeonIndex) return false;
+      if(!conditionIdList_.Equals(other.conditionIdList_)) return false;
+      if (DifficultyId != other.DifficultyId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (DungeonIndex != 0) hash ^= DungeonIndex.GetHashCode();
+      hash ^= conditionIdList_.GetHashCode();
+      if (DifficultyId != 0) hash ^= DifficultyId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (DungeonIndex != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(DungeonIndex);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Retcode);
+      }
+      conditionIdList_.WriteTo(output, _repeated_conditionIdList_codec);
+      if (DifficultyId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(DifficultyId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (DungeonIndex != 0) {
+        output.WriteRawTag(40);
+        output.WriteUInt32(DungeonIndex);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(72);
+        output.WriteInt32(Retcode);
+      }
+      conditionIdList_.WriteTo(ref output, _repeated_conditionIdList_codec);
+      if (DifficultyId != 0) {
+        output.WriteRawTag(112);
+        output.WriteUInt32(DifficultyId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (DungeonIndex != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonIndex);
+      }
+      size += conditionIdList_.CalculateSize(_repeated_conditionIdList_codec);
+      if (DifficultyId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultyId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ChannelerSlabLoopDungeonSelectConditionRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.DungeonIndex != 0) {
+        DungeonIndex = other.DungeonIndex;
+      }
+      conditionIdList_.Add(other.conditionIdList_);
+      if (other.DifficultyId != 0) {
+        DifficultyId = other.DifficultyId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 40: {
+            DungeonIndex = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 106:
+          case 104: {
+            conditionIdList_.AddEntriesFrom(input, _repeated_conditionIdList_codec);
+            break;
+          }
+          case 112: {
+            DifficultyId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 40: {
+            DungeonIndex = input.ReadUInt32();
+            break;
+          }
+          case 72: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 106:
+          case 104: {
+            conditionIdList_.AddEntriesFrom(ref input, _repeated_conditionIdList_codec);
+            break;
+          }
+          case 112: {
+            DifficultyId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 8509
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class ChannelerSlabLoopDungeonSelectConditionRsp : pb::IMessage<ChannelerSlabLoopDungeonSelectConditionRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<ChannelerSlabLoopDungeonSelectConditionRsp> _parser = new pb::MessageParser<ChannelerSlabLoopDungeonSelectConditionRsp>(() => new ChannelerSlabLoopDungeonSelectConditionRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<ChannelerSlabLoopDungeonSelectConditionRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ChannelerSlabLoopDungeonSelectConditionRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChannelerSlabLoopDungeonSelectConditionRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChannelerSlabLoopDungeonSelectConditionRsp(ChannelerSlabLoopDungeonSelectConditionRsp other) : this() {
-    retcode_ = other.retcode_;
-    dungeonIndex_ = other.dungeonIndex_;
-    conditionIdList_ = other.conditionIdList_.Clone();
-    difficultyId_ = other.difficultyId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public ChannelerSlabLoopDungeonSelectConditionRsp Clone() {
-    return new ChannelerSlabLoopDungeonSelectConditionRsp(this);
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 9;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "dungeon_index" field.</summary>
-  public const int DungeonIndexFieldNumber = 5;
-  private uint dungeonIndex_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DungeonIndex {
-    get { return dungeonIndex_; }
-    set {
-      dungeonIndex_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "condition_id_list" field.</summary>
-  public const int ConditionIdListFieldNumber = 13;
-  private static readonly pb::FieldCodec<uint> _repeated_conditionIdList_codec
-      = pb::FieldCodec.ForUInt32(106);
-  private readonly pbc::RepeatedField<uint> conditionIdList_ = new pbc::RepeatedField<uint>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public pbc::RepeatedField<uint> ConditionIdList {
-    get { return conditionIdList_; }
-  }
-
-  /// <summary>Field number for the "difficulty_id" field.</summary>
-  public const int DifficultyIdFieldNumber = 14;
-  private uint difficultyId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DifficultyId {
-    get { return difficultyId_; }
-    set {
-      difficultyId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as ChannelerSlabLoopDungeonSelectConditionRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(ChannelerSlabLoopDungeonSelectConditionRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Retcode != other.Retcode) return false;
-    if (DungeonIndex != other.DungeonIndex) return false;
-    if(!conditionIdList_.Equals(other.conditionIdList_)) return false;
-    if (DifficultyId != other.DifficultyId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (DungeonIndex != 0) hash ^= DungeonIndex.GetHashCode();
-    hash ^= conditionIdList_.GetHashCode();
-    if (DifficultyId != 0) hash ^= DifficultyId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (DungeonIndex != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(DungeonIndex);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(72);
-      output.WriteInt32(Retcode);
-    }
-    conditionIdList_.WriteTo(output, _repeated_conditionIdList_codec);
-    if (DifficultyId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(DifficultyId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (DungeonIndex != 0) {
-      output.WriteRawTag(40);
-      output.WriteUInt32(DungeonIndex);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(72);
-      output.WriteInt32(Retcode);
-    }
-    conditionIdList_.WriteTo(ref output, _repeated_conditionIdList_codec);
-    if (DifficultyId != 0) {
-      output.WriteRawTag(112);
-      output.WriteUInt32(DifficultyId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (DungeonIndex != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DungeonIndex);
-    }
-    size += conditionIdList_.CalculateSize(_repeated_conditionIdList_codec);
-    if (DifficultyId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DifficultyId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(ChannelerSlabLoopDungeonSelectConditionRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.DungeonIndex != 0) {
-      DungeonIndex = other.DungeonIndex;
-    }
-    conditionIdList_.Add(other.conditionIdList_);
-    if (other.DifficultyId != 0) {
-      DifficultyId = other.DifficultyId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 40: {
-          DungeonIndex = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 106:
-        case 104: {
-          conditionIdList_.AddEntriesFrom(input, _repeated_conditionIdList_codec);
-          break;
-        }
-        case 112: {
-          DifficultyId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 40: {
-          DungeonIndex = input.ReadUInt32();
-          break;
-        }
-        case 72: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 106:
-        case 104: {
-          conditionIdList_.AddEntriesFrom(ref input, _repeated_conditionIdList_codec);
-          break;
-        }
-        case 112: {
-          DifficultyId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

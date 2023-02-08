@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "PotionLevelData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message PotionStageData {
   uint32 stage_id = 11;

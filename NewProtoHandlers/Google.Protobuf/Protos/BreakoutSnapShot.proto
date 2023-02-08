@@ -22,7 +22,7 @@ import "BreakoutPhysicalObject.proto";
 import "BreakoutSpawnPoint.proto";
 import "BreakoutSyncConnectUidInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message BreakoutSnapShot {
   uint64 client_game_time = 1;

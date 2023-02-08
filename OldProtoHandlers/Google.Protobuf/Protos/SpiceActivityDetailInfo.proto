@@ -18,7 +18,7 @@ syntax = "proto3";
 
 import "SpiceStageData.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message SpiceActivityDetailInfo {
   uint32 current_increase_avatar_fetter_times = 15;

@@ -9,410 +9,413 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from SummerTimeV2BoatGallerySettleInfo.proto</summary>
-public static partial class SummerTimeV2BoatGallerySettleInfoReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for SummerTimeV2BoatGallerySettleInfo.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from SummerTimeV2BoatGallerySettleInfo.proto</summary>
+  public static partial class SummerTimeV2BoatGallerySettleInfoReflection {
 
-  static SummerTimeV2BoatGallerySettleInfoReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CidTdW1tZXJUaW1lVjJCb2F0R2FsbGVyeVNldHRsZUluZm8ucHJvdG8aF0dh",
-          "bGxlcnlTdG9wUmVhc29uLnByb3RvIp4BCiFTdW1tZXJUaW1lVjJCb2F0R2Fs",
-          "bGVyeVNldHRsZUluZm8SDgoGcGFyYW0xGAcgASgNEg4KBnBhcmFtMhgCIAEo",
-          "DRIiCgZyZWFzb24YAyABKA4yEi5HYWxsZXJ5U3RvcFJlYXNvbhIOCgZwYXJh",
-          "bTMYBiABKA0SEQoJdXNlZF90aW1lGAwgASgNEhIKCmdhbGxlcnlfaWQYASAB",
-          "KA1CHgocZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::GalleryStopReasonReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::SummerTimeV2BoatGallerySettleInfo), global::SummerTimeV2BoatGallerySettleInfo.Parser, new[]{ "Param1", "Param2", "Reason", "Param3", "UsedTime", "GalleryId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for SummerTimeV2BoatGallerySettleInfo.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static SummerTimeV2BoatGallerySettleInfoReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CidTdW1tZXJUaW1lVjJCb2F0R2FsbGVyeVNldHRsZUluZm8ucHJvdG8aF0dh",
+            "bGxlcnlTdG9wUmVhc29uLnByb3RvIp4BCiFTdW1tZXJUaW1lVjJCb2F0R2Fs",
+            "bGVyeVNldHRsZUluZm8SDgoGcGFyYW0xGAcgASgNEg4KBnBhcmFtMhgCIAEo",
+            "DRIiCgZyZWFzb24YAyABKA4yEi5HYWxsZXJ5U3RvcFJlYXNvbhIOCgZwYXJh",
+            "bTMYBiABKA0SEQoJdXNlZF90aW1lGAwgASgNEhIKCmdhbGxlcnlfaWQYASAB",
+            "KA1CDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::OldProtos.GalleryStopReasonReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.SummerTimeV2BoatGallerySettleInfo), global::OldProtos.SummerTimeV2BoatGallerySettleInfo.Parser, new[]{ "Param1", "Param2", "Reason", "Param3", "UsedTime", "GalleryId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class SummerTimeV2BoatGallerySettleInfo : pb::IMessage<SummerTimeV2BoatGallerySettleInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SummerTimeV2BoatGallerySettleInfo> _parser = new pb::MessageParser<SummerTimeV2BoatGallerySettleInfo>(() => new SummerTimeV2BoatGallerySettleInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<SummerTimeV2BoatGallerySettleInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.SummerTimeV2BoatGallerySettleInfoReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SummerTimeV2BoatGallerySettleInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SummerTimeV2BoatGallerySettleInfo(SummerTimeV2BoatGallerySettleInfo other) : this() {
+      param1_ = other.param1_;
+      param2_ = other.param2_;
+      reason_ = other.reason_;
+      param3_ = other.param3_;
+      usedTime_ = other.usedTime_;
+      galleryId_ = other.galleryId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SummerTimeV2BoatGallerySettleInfo Clone() {
+      return new SummerTimeV2BoatGallerySettleInfo(this);
+    }
+
+    /// <summary>Field number for the "param1" field.</summary>
+    public const int Param1FieldNumber = 7;
+    private uint param1_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Param1 {
+      get { return param1_; }
+      set {
+        param1_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "param2" field.</summary>
+    public const int Param2FieldNumber = 2;
+    private uint param2_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Param2 {
+      get { return param2_; }
+      set {
+        param2_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "reason" field.</summary>
+    public const int ReasonFieldNumber = 3;
+    private global::OldProtos.GalleryStopReason reason_ = global::OldProtos.GalleryStopReason.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.GalleryStopReason Reason {
+      get { return reason_; }
+      set {
+        reason_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "param3" field.</summary>
+    public const int Param3FieldNumber = 6;
+    private uint param3_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint Param3 {
+      get { return param3_; }
+      set {
+        param3_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "used_time" field.</summary>
+    public const int UsedTimeFieldNumber = 12;
+    private uint usedTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint UsedTime {
+      get { return usedTime_; }
+      set {
+        usedTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gallery_id" field.</summary>
+    public const int GalleryIdFieldNumber = 1;
+    private uint galleryId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint GalleryId {
+      get { return galleryId_; }
+      set {
+        galleryId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as SummerTimeV2BoatGallerySettleInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(SummerTimeV2BoatGallerySettleInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Param1 != other.Param1) return false;
+      if (Param2 != other.Param2) return false;
+      if (Reason != other.Reason) return false;
+      if (Param3 != other.Param3) return false;
+      if (UsedTime != other.UsedTime) return false;
+      if (GalleryId != other.GalleryId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Param1 != 0) hash ^= Param1.GetHashCode();
+      if (Param2 != 0) hash ^= Param2.GetHashCode();
+      if (Reason != global::OldProtos.GalleryStopReason.None) hash ^= Reason.GetHashCode();
+      if (Param3 != 0) hash ^= Param3.GetHashCode();
+      if (UsedTime != 0) hash ^= UsedTime.GetHashCode();
+      if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (GalleryId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(GalleryId);
+      }
+      if (Param2 != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Param2);
+      }
+      if (Reason != global::OldProtos.GalleryStopReason.None) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Reason);
+      }
+      if (Param3 != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Param3);
+      }
+      if (Param1 != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Param1);
+      }
+      if (UsedTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(UsedTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (GalleryId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(GalleryId);
+      }
+      if (Param2 != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(Param2);
+      }
+      if (Reason != global::OldProtos.GalleryStopReason.None) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Reason);
+      }
+      if (Param3 != 0) {
+        output.WriteRawTag(48);
+        output.WriteUInt32(Param3);
+      }
+      if (Param1 != 0) {
+        output.WriteRawTag(56);
+        output.WriteUInt32(Param1);
+      }
+      if (UsedTime != 0) {
+        output.WriteRawTag(96);
+        output.WriteUInt32(UsedTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Param1 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param1);
+      }
+      if (Param2 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param2);
+      }
+      if (Reason != global::OldProtos.GalleryStopReason.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
+      }
+      if (Param3 != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param3);
+      }
+      if (UsedTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UsedTime);
+      }
+      if (GalleryId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(SummerTimeV2BoatGallerySettleInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Param1 != 0) {
+        Param1 = other.Param1;
+      }
+      if (other.Param2 != 0) {
+        Param2 = other.Param2;
+      }
+      if (other.Reason != global::OldProtos.GalleryStopReason.None) {
+        Reason = other.Reason;
+      }
+      if (other.Param3 != 0) {
+        Param3 = other.Param3;
+      }
+      if (other.UsedTime != 0) {
+        UsedTime = other.UsedTime;
+      }
+      if (other.GalleryId != 0) {
+        GalleryId = other.GalleryId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            GalleryId = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Param2 = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Reason = (global::OldProtos.GalleryStopReason) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            Param3 = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Param1 = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            UsedTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            GalleryId = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Param2 = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            Reason = (global::OldProtos.GalleryStopReason) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            Param3 = input.ReadUInt32();
+            break;
+          }
+          case 56: {
+            Param1 = input.ReadUInt32();
+            break;
+          }
+          case 96: {
+            UsedTime = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class SummerTimeV2BoatGallerySettleInfo : pb::IMessage<SummerTimeV2BoatGallerySettleInfo>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<SummerTimeV2BoatGallerySettleInfo> _parser = new pb::MessageParser<SummerTimeV2BoatGallerySettleInfo>(() => new SummerTimeV2BoatGallerySettleInfo());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<SummerTimeV2BoatGallerySettleInfo> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::SummerTimeV2BoatGallerySettleInfoReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SummerTimeV2BoatGallerySettleInfo() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SummerTimeV2BoatGallerySettleInfo(SummerTimeV2BoatGallerySettleInfo other) : this() {
-    param1_ = other.param1_;
-    param2_ = other.param2_;
-    reason_ = other.reason_;
-    param3_ = other.param3_;
-    usedTime_ = other.usedTime_;
-    galleryId_ = other.galleryId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public SummerTimeV2BoatGallerySettleInfo Clone() {
-    return new SummerTimeV2BoatGallerySettleInfo(this);
-  }
-
-  /// <summary>Field number for the "param1" field.</summary>
-  public const int Param1FieldNumber = 7;
-  private uint param1_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Param1 {
-    get { return param1_; }
-    set {
-      param1_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "param2" field.</summary>
-  public const int Param2FieldNumber = 2;
-  private uint param2_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Param2 {
-    get { return param2_; }
-    set {
-      param2_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "reason" field.</summary>
-  public const int ReasonFieldNumber = 3;
-  private global::GalleryStopReason reason_ = global::GalleryStopReason.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::GalleryStopReason Reason {
-    get { return reason_; }
-    set {
-      reason_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "param3" field.</summary>
-  public const int Param3FieldNumber = 6;
-  private uint param3_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint Param3 {
-    get { return param3_; }
-    set {
-      param3_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "used_time" field.</summary>
-  public const int UsedTimeFieldNumber = 12;
-  private uint usedTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint UsedTime {
-    get { return usedTime_; }
-    set {
-      usedTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "gallery_id" field.</summary>
-  public const int GalleryIdFieldNumber = 1;
-  private uint galleryId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint GalleryId {
-    get { return galleryId_; }
-    set {
-      galleryId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as SummerTimeV2BoatGallerySettleInfo);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(SummerTimeV2BoatGallerySettleInfo other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Param1 != other.Param1) return false;
-    if (Param2 != other.Param2) return false;
-    if (Reason != other.Reason) return false;
-    if (Param3 != other.Param3) return false;
-    if (UsedTime != other.UsedTime) return false;
-    if (GalleryId != other.GalleryId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Param1 != 0) hash ^= Param1.GetHashCode();
-    if (Param2 != 0) hash ^= Param2.GetHashCode();
-    if (Reason != global::GalleryStopReason.None) hash ^= Reason.GetHashCode();
-    if (Param3 != 0) hash ^= Param3.GetHashCode();
-    if (UsedTime != 0) hash ^= UsedTime.GetHashCode();
-    if (GalleryId != 0) hash ^= GalleryId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (GalleryId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(GalleryId);
-    }
-    if (Param2 != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(Param2);
-    }
-    if (Reason != global::GalleryStopReason.None) {
-      output.WriteRawTag(24);
-      output.WriteEnum((int) Reason);
-    }
-    if (Param3 != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Param3);
-    }
-    if (Param1 != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Param1);
-    }
-    if (UsedTime != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(UsedTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (GalleryId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(GalleryId);
-    }
-    if (Param2 != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(Param2);
-    }
-    if (Reason != global::GalleryStopReason.None) {
-      output.WriteRawTag(24);
-      output.WriteEnum((int) Reason);
-    }
-    if (Param3 != 0) {
-      output.WriteRawTag(48);
-      output.WriteUInt32(Param3);
-    }
-    if (Param1 != 0) {
-      output.WriteRawTag(56);
-      output.WriteUInt32(Param1);
-    }
-    if (UsedTime != 0) {
-      output.WriteRawTag(96);
-      output.WriteUInt32(UsedTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (Param1 != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param1);
-    }
-    if (Param2 != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param2);
-    }
-    if (Reason != global::GalleryStopReason.None) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
-    }
-    if (Param3 != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Param3);
-    }
-    if (UsedTime != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UsedTime);
-    }
-    if (GalleryId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GalleryId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(SummerTimeV2BoatGallerySettleInfo other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Param1 != 0) {
-      Param1 = other.Param1;
-    }
-    if (other.Param2 != 0) {
-      Param2 = other.Param2;
-    }
-    if (other.Reason != global::GalleryStopReason.None) {
-      Reason = other.Reason;
-    }
-    if (other.Param3 != 0) {
-      Param3 = other.Param3;
-    }
-    if (other.UsedTime != 0) {
-      UsedTime = other.UsedTime;
-    }
-    if (other.GalleryId != 0) {
-      GalleryId = other.GalleryId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          GalleryId = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          Param2 = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          Reason = (global::GalleryStopReason) input.ReadEnum();
-          break;
-        }
-        case 48: {
-          Param3 = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Param1 = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          UsedTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          GalleryId = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          Param2 = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          Reason = (global::GalleryStopReason) input.ReadEnum();
-          break;
-        }
-        case 48: {
-          Param3 = input.ReadUInt32();
-          break;
-        }
-        case 56: {
-          Param1 = input.ReadUInt32();
-          break;
-        }
-        case 96: {
-          UsedTime = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

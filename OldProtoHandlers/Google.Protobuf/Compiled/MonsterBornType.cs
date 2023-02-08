@@ -9,38 +9,41 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MonsterBornType.proto</summary>
-public static partial class MonsterBornTypeReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MonsterBornType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MonsterBornType.proto</summary>
+  public static partial class MonsterBornTypeReflection {
 
-  static MonsterBornTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChVNb25zdGVyQm9yblR5cGUucHJvdG8qagoPTW9uc3RlckJvcm5UeXBlEhoK",
-          "Fk1PTlNURVJfQk9STl9UWVBFX05PTkUQABIdChlNT05TVEVSX0JPUk5fVFlQ",
-          "RV9ERUZBVUxUEAESHAoYTU9OU1RFUl9CT1JOX1RZUEVfUkFORE9NEAJCHgoc",
-          "ZW11LmdyYXNzY3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MonsterBornType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for MonsterBornType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MonsterBornTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChVNb25zdGVyQm9yblR5cGUucHJvdG8qagoPTW9uc3RlckJvcm5UeXBlEhoK",
+            "Fk1PTlNURVJfQk9STl9UWVBFX05PTkUQABIdChlNT05TVEVSX0JPUk5fVFlQ",
+            "RV9ERUZBVUxUEAESHAoYTU9OU1RFUl9CT1JOX1RZUEVfUkFORE9NEAJCDKoC",
+            "CU9sZFByb3Rvc2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.MonsterBornType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum MonsterBornType {
+    [pbr::OriginalName("MONSTER_BORN_TYPE_NONE")] None = 0,
+    [pbr::OriginalName("MONSTER_BORN_TYPE_DEFAULT")] Default = 1,
+    [pbr::OriginalName("MONSTER_BORN_TYPE_RANDOM")] Random = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum MonsterBornType {
-  [pbr::OriginalName("MONSTER_BORN_TYPE_NONE")] None = 0,
-  [pbr::OriginalName("MONSTER_BORN_TYPE_DEFAULT")] Default = 1,
-  [pbr::OriginalName("MONSTER_BORN_TYPE_RANDOM")] Random = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

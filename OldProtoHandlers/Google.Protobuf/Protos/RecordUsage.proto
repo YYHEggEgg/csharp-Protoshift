@@ -16,7 +16,7 @@
 
 syntax = "proto3";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 enum RecordUsage {
   RECORD_USAGE_UGC_RECORD_USAGE_NONE = 0;

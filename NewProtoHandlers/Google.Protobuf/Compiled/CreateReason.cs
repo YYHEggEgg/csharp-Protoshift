@@ -9,38 +9,40 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from CreateReason.proto</summary>
-public static partial class CreateReasonReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for CreateReason.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from CreateReason.proto</summary>
+  public static partial class CreateReasonReflection {
 
-  static CreateReasonReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChJDcmVhdGVSZWFzb24ucHJvdG8qWQoMQ3JlYXRlUmVhc29uEhYKEkNSRUFU",
-          "RV9SRUFTT05fTk9ORRAAEhcKE0NSRUFURV9SRUFTT05fUVVFU1QQARIYChRD",
-          "UkVBVEVfUkVBU09OX0VORVJHWRACQhYKFG9yZy5zb3JhcG9pbnRhLnByb3Rv",
-          "YgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::CreateReason), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for CreateReason.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static CreateReasonReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChJDcmVhdGVSZWFzb24ucHJvdG8qWQoMQ3JlYXRlUmVhc29uEhYKEkNSRUFU",
+            "RV9SRUFTT05fTk9ORRAAEhcKE0NSRUFURV9SRUFTT05fUVVFU1QQARIYChRD",
+            "UkVBVEVfUkVBU09OX0VORVJHWRACQgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.CreateReason), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum CreateReason {
+    [pbr::OriginalName("CREATE_REASON_NONE")] None = 0,
+    [pbr::OriginalName("CREATE_REASON_QUEST")] Quest = 1,
+    [pbr::OriginalName("CREATE_REASON_ENERGY")] Energy = 2,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum CreateReason {
-  [pbr::OriginalName("CREATE_REASON_NONE")] None = 0,
-  [pbr::OriginalName("CREATE_REASON_QUEST")] Quest = 1,
-  [pbr::OriginalName("CREATE_REASON_ENERGY")] Energy = 2,
-}
-
-#endregion
-
 
 #endregion Designer generated code

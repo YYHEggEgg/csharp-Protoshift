@@ -19,7 +19,7 @@ syntax = "proto3";
 import "RogueDiaryProgress.proto";
 import "RogueDiaryStageInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message RogueDiaryActivityDetailInfo {
   bool is_content_closed = 3;

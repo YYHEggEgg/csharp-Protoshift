@@ -21,7 +21,7 @@ import "ShopConcertProduct.proto";
 import "ShopGoods.proto";
 import "ShopMcoinProduct.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message Shop {
   uint32 shop_type = 1;

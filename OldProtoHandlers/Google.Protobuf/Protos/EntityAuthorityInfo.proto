@@ -23,7 +23,7 @@ import "EntityRendererChangedInfo.proto";
 import "SceneEntityAiInfo.proto";
 import "Vector.proto";
 
-option java_package = "emu.grasscutter.net.oldproto";
+option csharp_namespace = "OldProtos";
 
 message EntityAuthorityInfo {
   AbilitySyncStateInfo ability_info = 1;

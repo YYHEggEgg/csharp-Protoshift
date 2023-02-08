@@ -9,410 +9,413 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from AbilityIdentifier.proto</summary>
-public static partial class AbilityIdentifierReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for AbilityIdentifier.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from AbilityIdentifier.proto</summary>
+  public static partial class AbilityIdentifierReflection {
 
-  static AbilityIdentifierReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChdBYmlsaXR5SWRlbnRpZmllci5wcm90byK4AQoRQWJpbGl0eUlkZW50aWZp",
-          "ZXISGQoRbW9kaWZpZXJfb3duZXJfaWQYAiABKA0SHQoVaW5zdGFuY2VkX21v",
-          "ZGlmaWVyX2lkGAkgASgNEhwKFGluc3RhbmNlZF9hYmlsaXR5X2lkGAogASgN",
-          "Eh4KFmlzX3NlcnZlcmJ1ZmZfbW9kaWZpZXIYBiABKAgSGQoRYWJpbGl0eV9j",
-          "YXN0ZXJfaWQYDyABKA0SEAoIbG9jYWxfaWQYAyABKAVCHgocZW11LmdyYXNz",
-          "Y3V0dGVyLm5ldC5vbGRwcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::AbilityIdentifier), global::AbilityIdentifier.Parser, new[]{ "ModifierOwnerId", "InstancedModifierId", "InstancedAbilityId", "IsServerbuffModifier", "AbilityCasterId", "LocalId" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for AbilityIdentifier.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static AbilityIdentifierReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChdBYmlsaXR5SWRlbnRpZmllci5wcm90byK4AQoRQWJpbGl0eUlkZW50aWZp",
+            "ZXISGQoRbW9kaWZpZXJfb3duZXJfaWQYAiABKA0SHQoVaW5zdGFuY2VkX21v",
+            "ZGlmaWVyX2lkGAkgASgNEhwKFGluc3RhbmNlZF9hYmlsaXR5X2lkGAogASgN",
+            "Eh4KFmlzX3NlcnZlcmJ1ZmZfbW9kaWZpZXIYBiABKAgSGQoRYWJpbGl0eV9j",
+            "YXN0ZXJfaWQYDyABKA0SEAoIbG9jYWxfaWQYAyABKAVCDKoCCU9sZFByb3Rv",
+            "c2IGcHJvdG8z"));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.AbilityIdentifier), global::OldProtos.AbilityIdentifier.Parser, new[]{ "ModifierOwnerId", "InstancedModifierId", "InstancedAbilityId", "IsServerbuffModifier", "AbilityCasterId", "LocalId" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  public sealed partial class AbilityIdentifier : pb::IMessage<AbilityIdentifier>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AbilityIdentifier> _parser = new pb::MessageParser<AbilityIdentifier>(() => new AbilityIdentifier());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AbilityIdentifier> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.AbilityIdentifierReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AbilityIdentifier() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AbilityIdentifier(AbilityIdentifier other) : this() {
+      modifierOwnerId_ = other.modifierOwnerId_;
+      instancedModifierId_ = other.instancedModifierId_;
+      instancedAbilityId_ = other.instancedAbilityId_;
+      isServerbuffModifier_ = other.isServerbuffModifier_;
+      abilityCasterId_ = other.abilityCasterId_;
+      localId_ = other.localId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AbilityIdentifier Clone() {
+      return new AbilityIdentifier(this);
+    }
+
+    /// <summary>Field number for the "modifier_owner_id" field.</summary>
+    public const int ModifierOwnerIdFieldNumber = 2;
+    private uint modifierOwnerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint ModifierOwnerId {
+      get { return modifierOwnerId_; }
+      set {
+        modifierOwnerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "instanced_modifier_id" field.</summary>
+    public const int InstancedModifierIdFieldNumber = 9;
+    private uint instancedModifierId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint InstancedModifierId {
+      get { return instancedModifierId_; }
+      set {
+        instancedModifierId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "instanced_ability_id" field.</summary>
+    public const int InstancedAbilityIdFieldNumber = 10;
+    private uint instancedAbilityId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint InstancedAbilityId {
+      get { return instancedAbilityId_; }
+      set {
+        instancedAbilityId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_serverbuff_modifier" field.</summary>
+    public const int IsServerbuffModifierFieldNumber = 6;
+    private bool isServerbuffModifier_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsServerbuffModifier {
+      get { return isServerbuffModifier_; }
+      set {
+        isServerbuffModifier_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "ability_caster_id" field.</summary>
+    public const int AbilityCasterIdFieldNumber = 15;
+    private uint abilityCasterId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AbilityCasterId {
+      get { return abilityCasterId_; }
+      set {
+        abilityCasterId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "local_id" field.</summary>
+    public const int LocalIdFieldNumber = 3;
+    private int localId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int LocalId {
+      get { return localId_; }
+      set {
+        localId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AbilityIdentifier);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AbilityIdentifier other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (ModifierOwnerId != other.ModifierOwnerId) return false;
+      if (InstancedModifierId != other.InstancedModifierId) return false;
+      if (InstancedAbilityId != other.InstancedAbilityId) return false;
+      if (IsServerbuffModifier != other.IsServerbuffModifier) return false;
+      if (AbilityCasterId != other.AbilityCasterId) return false;
+      if (LocalId != other.LocalId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (ModifierOwnerId != 0) hash ^= ModifierOwnerId.GetHashCode();
+      if (InstancedModifierId != 0) hash ^= InstancedModifierId.GetHashCode();
+      if (InstancedAbilityId != 0) hash ^= InstancedAbilityId.GetHashCode();
+      if (IsServerbuffModifier != false) hash ^= IsServerbuffModifier.GetHashCode();
+      if (AbilityCasterId != 0) hash ^= AbilityCasterId.GetHashCode();
+      if (LocalId != 0) hash ^= LocalId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (ModifierOwnerId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ModifierOwnerId);
+      }
+      if (LocalId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(LocalId);
+      }
+      if (IsServerbuffModifier != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsServerbuffModifier);
+      }
+      if (InstancedModifierId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(InstancedModifierId);
+      }
+      if (InstancedAbilityId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(InstancedAbilityId);
+      }
+      if (AbilityCasterId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(AbilityCasterId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (ModifierOwnerId != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(ModifierOwnerId);
+      }
+      if (LocalId != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(LocalId);
+      }
+      if (IsServerbuffModifier != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsServerbuffModifier);
+      }
+      if (InstancedModifierId != 0) {
+        output.WriteRawTag(72);
+        output.WriteUInt32(InstancedModifierId);
+      }
+      if (InstancedAbilityId != 0) {
+        output.WriteRawTag(80);
+        output.WriteUInt32(InstancedAbilityId);
+      }
+      if (AbilityCasterId != 0) {
+        output.WriteRawTag(120);
+        output.WriteUInt32(AbilityCasterId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (ModifierOwnerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ModifierOwnerId);
+      }
+      if (InstancedModifierId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InstancedModifierId);
+      }
+      if (InstancedAbilityId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InstancedAbilityId);
+      }
+      if (IsServerbuffModifier != false) {
+        size += 1 + 1;
+      }
+      if (AbilityCasterId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AbilityCasterId);
+      }
+      if (LocalId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(LocalId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AbilityIdentifier other) {
+      if (other == null) {
+        return;
+      }
+      if (other.ModifierOwnerId != 0) {
+        ModifierOwnerId = other.ModifierOwnerId;
+      }
+      if (other.InstancedModifierId != 0) {
+        InstancedModifierId = other.InstancedModifierId;
+      }
+      if (other.InstancedAbilityId != 0) {
+        InstancedAbilityId = other.InstancedAbilityId;
+      }
+      if (other.IsServerbuffModifier != false) {
+        IsServerbuffModifier = other.IsServerbuffModifier;
+      }
+      if (other.AbilityCasterId != 0) {
+        AbilityCasterId = other.AbilityCasterId;
+      }
+      if (other.LocalId != 0) {
+        LocalId = other.LocalId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 16: {
+            ModifierOwnerId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            LocalId = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            IsServerbuffModifier = input.ReadBool();
+            break;
+          }
+          case 72: {
+            InstancedModifierId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            InstancedAbilityId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            AbilityCasterId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 16: {
+            ModifierOwnerId = input.ReadUInt32();
+            break;
+          }
+          case 24: {
+            LocalId = input.ReadInt32();
+            break;
+          }
+          case 48: {
+            IsServerbuffModifier = input.ReadBool();
+            break;
+          }
+          case 72: {
+            InstancedModifierId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            InstancedAbilityId = input.ReadUInt32();
+            break;
+          }
+          case 120: {
+            AbilityCasterId = input.ReadUInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-public sealed partial class AbilityIdentifier : pb::IMessage<AbilityIdentifier>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<AbilityIdentifier> _parser = new pb::MessageParser<AbilityIdentifier>(() => new AbilityIdentifier());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<AbilityIdentifier> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::AbilityIdentifierReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AbilityIdentifier() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AbilityIdentifier(AbilityIdentifier other) : this() {
-    modifierOwnerId_ = other.modifierOwnerId_;
-    instancedModifierId_ = other.instancedModifierId_;
-    instancedAbilityId_ = other.instancedAbilityId_;
-    isServerbuffModifier_ = other.isServerbuffModifier_;
-    abilityCasterId_ = other.abilityCasterId_;
-    localId_ = other.localId_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public AbilityIdentifier Clone() {
-    return new AbilityIdentifier(this);
-  }
-
-  /// <summary>Field number for the "modifier_owner_id" field.</summary>
-  public const int ModifierOwnerIdFieldNumber = 2;
-  private uint modifierOwnerId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint ModifierOwnerId {
-    get { return modifierOwnerId_; }
-    set {
-      modifierOwnerId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "instanced_modifier_id" field.</summary>
-  public const int InstancedModifierIdFieldNumber = 9;
-  private uint instancedModifierId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint InstancedModifierId {
-    get { return instancedModifierId_; }
-    set {
-      instancedModifierId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "instanced_ability_id" field.</summary>
-  public const int InstancedAbilityIdFieldNumber = 10;
-  private uint instancedAbilityId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint InstancedAbilityId {
-    get { return instancedAbilityId_; }
-    set {
-      instancedAbilityId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_serverbuff_modifier" field.</summary>
-  public const int IsServerbuffModifierFieldNumber = 6;
-  private bool isServerbuffModifier_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsServerbuffModifier {
-    get { return isServerbuffModifier_; }
-    set {
-      isServerbuffModifier_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ability_caster_id" field.</summary>
-  public const int AbilityCasterIdFieldNumber = 15;
-  private uint abilityCasterId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint AbilityCasterId {
-    get { return abilityCasterId_; }
-    set {
-      abilityCasterId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "local_id" field.</summary>
-  public const int LocalIdFieldNumber = 3;
-  private int localId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int LocalId {
-    get { return localId_; }
-    set {
-      localId_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as AbilityIdentifier);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(AbilityIdentifier other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ModifierOwnerId != other.ModifierOwnerId) return false;
-    if (InstancedModifierId != other.InstancedModifierId) return false;
-    if (InstancedAbilityId != other.InstancedAbilityId) return false;
-    if (IsServerbuffModifier != other.IsServerbuffModifier) return false;
-    if (AbilityCasterId != other.AbilityCasterId) return false;
-    if (LocalId != other.LocalId) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ModifierOwnerId != 0) hash ^= ModifierOwnerId.GetHashCode();
-    if (InstancedModifierId != 0) hash ^= InstancedModifierId.GetHashCode();
-    if (InstancedAbilityId != 0) hash ^= InstancedAbilityId.GetHashCode();
-    if (IsServerbuffModifier != false) hash ^= IsServerbuffModifier.GetHashCode();
-    if (AbilityCasterId != 0) hash ^= AbilityCasterId.GetHashCode();
-    if (LocalId != 0) hash ^= LocalId.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (ModifierOwnerId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(ModifierOwnerId);
-    }
-    if (LocalId != 0) {
-      output.WriteRawTag(24);
-      output.WriteInt32(LocalId);
-    }
-    if (IsServerbuffModifier != false) {
-      output.WriteRawTag(48);
-      output.WriteBool(IsServerbuffModifier);
-    }
-    if (InstancedModifierId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(InstancedModifierId);
-    }
-    if (InstancedAbilityId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(InstancedAbilityId);
-    }
-    if (AbilityCasterId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(AbilityCasterId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (ModifierOwnerId != 0) {
-      output.WriteRawTag(16);
-      output.WriteUInt32(ModifierOwnerId);
-    }
-    if (LocalId != 0) {
-      output.WriteRawTag(24);
-      output.WriteInt32(LocalId);
-    }
-    if (IsServerbuffModifier != false) {
-      output.WriteRawTag(48);
-      output.WriteBool(IsServerbuffModifier);
-    }
-    if (InstancedModifierId != 0) {
-      output.WriteRawTag(72);
-      output.WriteUInt32(InstancedModifierId);
-    }
-    if (InstancedAbilityId != 0) {
-      output.WriteRawTag(80);
-      output.WriteUInt32(InstancedAbilityId);
-    }
-    if (AbilityCasterId != 0) {
-      output.WriteRawTag(120);
-      output.WriteUInt32(AbilityCasterId);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (ModifierOwnerId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ModifierOwnerId);
-    }
-    if (InstancedModifierId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InstancedModifierId);
-    }
-    if (InstancedAbilityId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InstancedAbilityId);
-    }
-    if (IsServerbuffModifier != false) {
-      size += 1 + 1;
-    }
-    if (AbilityCasterId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AbilityCasterId);
-    }
-    if (LocalId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(LocalId);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(AbilityIdentifier other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ModifierOwnerId != 0) {
-      ModifierOwnerId = other.ModifierOwnerId;
-    }
-    if (other.InstancedModifierId != 0) {
-      InstancedModifierId = other.InstancedModifierId;
-    }
-    if (other.InstancedAbilityId != 0) {
-      InstancedAbilityId = other.InstancedAbilityId;
-    }
-    if (other.IsServerbuffModifier != false) {
-      IsServerbuffModifier = other.IsServerbuffModifier;
-    }
-    if (other.AbilityCasterId != 0) {
-      AbilityCasterId = other.AbilityCasterId;
-    }
-    if (other.LocalId != 0) {
-      LocalId = other.LocalId;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 16: {
-          ModifierOwnerId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          LocalId = input.ReadInt32();
-          break;
-        }
-        case 48: {
-          IsServerbuffModifier = input.ReadBool();
-          break;
-        }
-        case 72: {
-          InstancedModifierId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          InstancedAbilityId = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          AbilityCasterId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 16: {
-          ModifierOwnerId = input.ReadUInt32();
-          break;
-        }
-        case 24: {
-          LocalId = input.ReadInt32();
-          break;
-        }
-        case 48: {
-          IsServerbuffModifier = input.ReadBool();
-          break;
-        }
-        case 72: {
-          InstancedModifierId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          InstancedAbilityId = input.ReadUInt32();
-          break;
-        }
-        case 120: {
-          AbilityCasterId = input.ReadUInt32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

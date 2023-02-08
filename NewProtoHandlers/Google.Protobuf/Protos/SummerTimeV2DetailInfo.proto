@@ -19,7 +19,7 @@ syntax = "proto3";
 import "SummerTimeV2BoatStageInfo.proto";
 import "SummerTimeV2DungeonStageInfo.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SummerTimeV2DetailInfo {
   bool is_content_closed = 14;

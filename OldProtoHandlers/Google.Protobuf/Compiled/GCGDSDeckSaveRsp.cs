@@ -9,339 +9,342 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from GCGDSDeckSaveRsp.proto</summary>
-public static partial class GCGDSDeckSaveRspReflection {
+namespace OldProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for GCGDSDeckSaveRsp.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from GCGDSDeckSaveRsp.proto</summary>
+  public static partial class GCGDSDeckSaveRspReflection {
 
-  static GCGDSDeckSaveRspReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZHQ0dEU0RlY2tTYXZlUnNwLnByb3RvIlsKEEdDR0RTRGVja1NhdmVSc3AS",
-          "EwoLY3JlYXRlX3RpbWUYDiABKAcSDwoHZGVja19pZBgLIAEoDRIPCgdyZXRj",
-          "b2RlGAggASgFEhAKCGlzX3ZhbGlkGAQgASgIQh4KHGVtdS5ncmFzc2N1dHRl",
-          "ci5uZXQub2xkcHJvdG9iBnByb3RvMw=="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GCGDSDeckSaveRsp), global::GCGDSDeckSaveRsp.Parser, new[]{ "CreateTime", "DeckId", "Retcode", "IsValid" }, null, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for GCGDSDeckSaveRsp.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static GCGDSDeckSaveRspReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZHQ0dEU0RlY2tTYXZlUnNwLnByb3RvIlsKEEdDR0RTRGVja1NhdmVSc3AS",
+            "EwoLY3JlYXRlX3RpbWUYDiABKAcSDwoHZGVja19pZBgLIAEoDRIPCgdyZXRj",
+            "b2RlGAggASgFEhAKCGlzX3ZhbGlkGAQgASgIQgyqAglPbGRQcm90b3NiBnBy",
+            "b3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.GCGDSDeckSaveRsp), global::OldProtos.GCGDSDeckSaveRsp.Parser, new[]{ "CreateTime", "DeckId", "Retcode", "IsValid" }, null, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// CmdId: 7269
+  /// EnetChannelId: 0
+  /// EnetIsReliable: true
+  /// </summary>
+  public sealed partial class GCGDSDeckSaveRsp : pb::IMessage<GCGDSDeckSaveRsp>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GCGDSDeckSaveRsp> _parser = new pb::MessageParser<GCGDSDeckSaveRsp>(() => new GCGDSDeckSaveRsp());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<GCGDSDeckSaveRsp> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::OldProtos.GCGDSDeckSaveRspReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGDSDeckSaveRsp() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGDSDeckSaveRsp(GCGDSDeckSaveRsp other) : this() {
+      createTime_ = other.createTime_;
+      deckId_ = other.deckId_;
+      retcode_ = other.retcode_;
+      isValid_ = other.isValid_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GCGDSDeckSaveRsp Clone() {
+      return new GCGDSDeckSaveRsp(this);
+    }
+
+    /// <summary>Field number for the "create_time" field.</summary>
+    public const int CreateTimeFieldNumber = 14;
+    private uint createTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint CreateTime {
+      get { return createTime_; }
+      set {
+        createTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "deck_id" field.</summary>
+    public const int DeckIdFieldNumber = 11;
+    private uint deckId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint DeckId {
+      get { return deckId_; }
+      set {
+        deckId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "retcode" field.</summary>
+    public const int RetcodeFieldNumber = 8;
+    private int retcode_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Retcode {
+      get { return retcode_; }
+      set {
+        retcode_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "is_valid" field.</summary>
+    public const int IsValidFieldNumber = 4;
+    private bool isValid_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsValid {
+      get { return isValid_; }
+      set {
+        isValid_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as GCGDSDeckSaveRsp);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(GCGDSDeckSaveRsp other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (CreateTime != other.CreateTime) return false;
+      if (DeckId != other.DeckId) return false;
+      if (Retcode != other.Retcode) return false;
+      if (IsValid != other.IsValid) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (CreateTime != 0) hash ^= CreateTime.GetHashCode();
+      if (DeckId != 0) hash ^= DeckId.GetHashCode();
+      if (Retcode != 0) hash ^= Retcode.GetHashCode();
+      if (IsValid != false) hash ^= IsValid.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (IsValid != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsValid);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Retcode);
+      }
+      if (DeckId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(DeckId);
+      }
+      if (CreateTime != 0) {
+        output.WriteRawTag(117);
+        output.WriteFixed32(CreateTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (IsValid != false) {
+        output.WriteRawTag(32);
+        output.WriteBool(IsValid);
+      }
+      if (Retcode != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(Retcode);
+      }
+      if (DeckId != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(DeckId);
+      }
+      if (CreateTime != 0) {
+        output.WriteRawTag(117);
+        output.WriteFixed32(CreateTime);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (CreateTime != 0) {
+        size += 1 + 4;
+      }
+      if (DeckId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DeckId);
+      }
+      if (Retcode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
+      }
+      if (IsValid != false) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(GCGDSDeckSaveRsp other) {
+      if (other == null) {
+        return;
+      }
+      if (other.CreateTime != 0) {
+        CreateTime = other.CreateTime;
+      }
+      if (other.DeckId != 0) {
+        DeckId = other.DeckId;
+      }
+      if (other.Retcode != 0) {
+        Retcode = other.Retcode;
+      }
+      if (other.IsValid != false) {
+        IsValid = other.IsValid;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 32: {
+            IsValid = input.ReadBool();
+            break;
+          }
+          case 64: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            DeckId = input.ReadUInt32();
+            break;
+          }
+          case 117: {
+            CreateTime = input.ReadFixed32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 32: {
+            IsValid = input.ReadBool();
+            break;
+          }
+          case 64: {
+            Retcode = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            DeckId = input.ReadUInt32();
+            break;
+          }
+          case 117: {
+            CreateTime = input.ReadFixed32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// CmdId: 7269
-/// EnetChannelId: 0
-/// EnetIsReliable: true
-/// </summary>
-public sealed partial class GCGDSDeckSaveRsp : pb::IMessage<GCGDSDeckSaveRsp>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<GCGDSDeckSaveRsp> _parser = new pb::MessageParser<GCGDSDeckSaveRsp>(() => new GCGDSDeckSaveRsp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<GCGDSDeckSaveRsp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GCGDSDeckSaveRspReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGDSDeckSaveRsp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGDSDeckSaveRsp(GCGDSDeckSaveRsp other) : this() {
-    createTime_ = other.createTime_;
-    deckId_ = other.deckId_;
-    retcode_ = other.retcode_;
-    isValid_ = other.isValid_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public GCGDSDeckSaveRsp Clone() {
-    return new GCGDSDeckSaveRsp(this);
-  }
-
-  /// <summary>Field number for the "create_time" field.</summary>
-  public const int CreateTimeFieldNumber = 14;
-  private uint createTime_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint CreateTime {
-    get { return createTime_; }
-    set {
-      createTime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "deck_id" field.</summary>
-  public const int DeckIdFieldNumber = 11;
-  private uint deckId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint DeckId {
-    get { return deckId_; }
-    set {
-      deckId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "retcode" field.</summary>
-  public const int RetcodeFieldNumber = 8;
-  private int retcode_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Retcode {
-    get { return retcode_; }
-    set {
-      retcode_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "is_valid" field.</summary>
-  public const int IsValidFieldNumber = 4;
-  private bool isValid_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool IsValid {
-    get { return isValid_; }
-    set {
-      isValid_ = value;
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as GCGDSDeckSaveRsp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(GCGDSDeckSaveRsp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (CreateTime != other.CreateTime) return false;
-    if (DeckId != other.DeckId) return false;
-    if (Retcode != other.Retcode) return false;
-    if (IsValid != other.IsValid) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (CreateTime != 0) hash ^= CreateTime.GetHashCode();
-    if (DeckId != 0) hash ^= DeckId.GetHashCode();
-    if (Retcode != 0) hash ^= Retcode.GetHashCode();
-    if (IsValid != false) hash ^= IsValid.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (IsValid != false) {
-      output.WriteRawTag(32);
-      output.WriteBool(IsValid);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(64);
-      output.WriteInt32(Retcode);
-    }
-    if (DeckId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(DeckId);
-    }
-    if (CreateTime != 0) {
-      output.WriteRawTag(117);
-      output.WriteFixed32(CreateTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (IsValid != false) {
-      output.WriteRawTag(32);
-      output.WriteBool(IsValid);
-    }
-    if (Retcode != 0) {
-      output.WriteRawTag(64);
-      output.WriteInt32(Retcode);
-    }
-    if (DeckId != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(DeckId);
-    }
-    if (CreateTime != 0) {
-      output.WriteRawTag(117);
-      output.WriteFixed32(CreateTime);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (CreateTime != 0) {
-      size += 1 + 4;
-    }
-    if (DeckId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(DeckId);
-    }
-    if (Retcode != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Retcode);
-    }
-    if (IsValid != false) {
-      size += 1 + 1;
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(GCGDSDeckSaveRsp other) {
-    if (other == null) {
-      return;
-    }
-    if (other.CreateTime != 0) {
-      CreateTime = other.CreateTime;
-    }
-    if (other.DeckId != 0) {
-      DeckId = other.DeckId;
-    }
-    if (other.Retcode != 0) {
-      Retcode = other.Retcode;
-    }
-    if (other.IsValid != false) {
-      IsValid = other.IsValid;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 32: {
-          IsValid = input.ReadBool();
-          break;
-        }
-        case 64: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 88: {
-          DeckId = input.ReadUInt32();
-          break;
-        }
-        case 117: {
-          CreateTime = input.ReadFixed32();
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 32: {
-          IsValid = input.ReadBool();
-          break;
-        }
-        case 64: {
-          Retcode = input.ReadInt32();
-          break;
-        }
-        case 88: {
-          DeckId = input.ReadUInt32();
-          break;
-        }
-        case 117: {
-          CreateTime = input.ReadFixed32();
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

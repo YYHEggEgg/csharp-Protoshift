@@ -9,37 +9,40 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MaterialDeleteReturnType.proto</summary>
-public static partial class MaterialDeleteReturnTypeReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MaterialDeleteReturnType.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MaterialDeleteReturnType.proto</summary>
+  public static partial class MaterialDeleteReturnTypeReflection {
 
-  static MaterialDeleteReturnTypeReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "Ch5NYXRlcmlhbERlbGV0ZVJldHVyblR5cGUucHJvdG8qZQoYTWF0ZXJpYWxE",
-          "ZWxldGVSZXR1cm5UeXBlEiMKH01BVEVSSUFMX0RFTEVURV9SRVRVUk5fVFlQ",
-          "RV9CQUcQABIkCiBNQVRFUklBTF9ERUxFVEVfUkVUVVJOX1RZUEVfU0VFRBAB",
-          "QhYKFG9yZy5zb3JhcG9pbnRhLnByb3RvYgZwcm90bzM="));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MaterialDeleteReturnType), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for MaterialDeleteReturnType.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MaterialDeleteReturnTypeReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "Ch5NYXRlcmlhbERlbGV0ZVJldHVyblR5cGUucHJvdG8qZQoYTWF0ZXJpYWxE",
+            "ZWxldGVSZXR1cm5UeXBlEiMKH01BVEVSSUFMX0RFTEVURV9SRVRVUk5fVFlQ",
+            "RV9CQUcQABIkCiBNQVRFUklBTF9ERUxFVEVfUkVUVVJOX1RZUEVfU0VFRBAB",
+            "QgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.MaterialDeleteReturnType), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum MaterialDeleteReturnType {
+    [pbr::OriginalName("MATERIAL_DELETE_RETURN_TYPE_BAG")] Bag = 0,
+    [pbr::OriginalName("MATERIAL_DELETE_RETURN_TYPE_SEED")] Seed = 1,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum MaterialDeleteReturnType {
-  [pbr::OriginalName("MATERIAL_DELETE_RETURN_TYPE_BAG")] Bag = 0,
-  [pbr::OriginalName("MATERIAL_DELETE_RETURN_TYPE_SEED")] Seed = 1,
-}
-
-#endregion
-
 
 #endregion Designer generated code

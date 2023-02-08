@@ -9,593 +9,596 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MassiveEntityElementOpBatchNotify.proto</summary>
-public static partial class MassiveEntityElementOpBatchNotifyReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MassiveEntityElementOpBatchNotify.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MassiveEntityElementOpBatchNotify.proto</summary>
+  public static partial class MassiveEntityElementOpBatchNotifyReflection {
 
-  static MassiveEntityElementOpBatchNotifyReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "CidNYXNzaXZlRW50aXR5RWxlbWVudE9wQmF0Y2hOb3RpZnkucHJvdG8aDlNo",
-          "YXBlQm94LnByb3RvGhFTaGFwZVNwaGVyZS5wcm90byKgAgohTWFzc2l2ZUVu",
-          "dGl0eUVsZW1lbnRPcEJhdGNoTm90aWZ5EhMKC2F0dGFja2VyX2lkGAggASgN",
-          "EiEKGWF0dGFja19lbGVtZW50X2R1cmFiaWxpdHkYBCABKAISGwoTVW5rMzMw",
-          "MF9QTkFOR0ROTkZDSBgCIAEoBRITCgtlbnRpdHlfdHlwZRgKIAEoBRIbChNV",
-          "bmszMzAwX0tOTERKUEVNQ0tQGAcgASgFEg4KBm9wX2lkeBgLIAEoDRIPCgd1",
-          "c2VyX2lkGAEgASgNEiQKDHNoYXBlX3NwaGVyZRgOIAEoCzIMLlNoYXBlU3Bo",
-          "ZXJlSAASHgoJc2hhcGVfYm94GA0gASgLMgkuU2hhcGVCb3hIAEINCgtjaGVj",
-          "a19zaGFwZUIWChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ShapeBoxReflection.Descriptor, global::ShapeSphereReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MassiveEntityElementOpBatchNotify), global::MassiveEntityElementOpBatchNotify.Parser, new[]{ "AttackerId", "AttackElementDurability", "Unk3300PNANGDNNFCH", "EntityType", "Unk3300KNLDJPEMCKP", "OpIdx", "UserId", "ShapeSphere", "ShapeBox" }, new[]{ "CheckShape" }, null, null, null)
-        }));
+    #region Descriptor
+    /// <summary>File descriptor for MassiveEntityElementOpBatchNotify.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MassiveEntityElementOpBatchNotifyReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "CidNYXNzaXZlRW50aXR5RWxlbWVudE9wQmF0Y2hOb3RpZnkucHJvdG8aDlNo",
+            "YXBlQm94LnByb3RvGhFTaGFwZVNwaGVyZS5wcm90byKgAgohTWFzc2l2ZUVu",
+            "dGl0eUVsZW1lbnRPcEJhdGNoTm90aWZ5EhMKC2F0dGFja2VyX2lkGAggASgN",
+            "EiEKGWF0dGFja19lbGVtZW50X2R1cmFiaWxpdHkYBCABKAISGwoTVW5rMzMw",
+            "MF9QTkFOR0ROTkZDSBgCIAEoBRITCgtlbnRpdHlfdHlwZRgKIAEoBRIbChNV",
+            "bmszMzAwX0tOTERKUEVNQ0tQGAcgASgFEg4KBm9wX2lkeBgLIAEoDRIPCgd1",
+            "c2VyX2lkGAEgASgNEiQKDHNoYXBlX3NwaGVyZRgOIAEoCzIMLlNoYXBlU3Bo",
+            "ZXJlSAASHgoJc2hhcGVfYm94GA0gASgLMgkuU2hhcGVCb3hIAEINCgtjaGVj",
+            "a19zaGFwZUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { global::NewProtos.ShapeBoxReflection.Descriptor, global::NewProtos.ShapeSphereReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.MassiveEntityElementOpBatchNotify), global::NewProtos.MassiveEntityElementOpBatchNotify.Parser, new[]{ "AttackerId", "AttackElementDurability", "Unk3300PNANGDNNFCH", "EntityType", "Unk3300KNLDJPEMCKP", "OpIdx", "UserId", "ShapeSphere", "ShapeBox" }, new[]{ "CheckShape" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
+  #region Messages
+  /// <summary>
+  /// enum CmdId {
+  ///   option allow_alias = true;
+  ///   NONE = 0;
+  ///   CMD_ID = 363;
+  ///   ENET_CHANNEL_ID = 0;
+  ///   ENET_IS_RELIABLE = 1;
+  ///   IS_ALLOW_CLIENT = 1;
+  /// }
+  /// </summary>
+  public sealed partial class MassiveEntityElementOpBatchNotify : pb::IMessage<MassiveEntityElementOpBatchNotify>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MassiveEntityElementOpBatchNotify> _parser = new pb::MessageParser<MassiveEntityElementOpBatchNotify>(() => new MassiveEntityElementOpBatchNotify());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MassiveEntityElementOpBatchNotify> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::NewProtos.MassiveEntityElementOpBatchNotifyReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MassiveEntityElementOpBatchNotify() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MassiveEntityElementOpBatchNotify(MassiveEntityElementOpBatchNotify other) : this() {
+      attackerId_ = other.attackerId_;
+      attackElementDurability_ = other.attackElementDurability_;
+      unk3300PNANGDNNFCH_ = other.unk3300PNANGDNNFCH_;
+      entityType_ = other.entityType_;
+      unk3300KNLDJPEMCKP_ = other.unk3300KNLDJPEMCKP_;
+      opIdx_ = other.opIdx_;
+      userId_ = other.userId_;
+      switch (other.CheckShapeCase) {
+        case CheckShapeOneofCase.ShapeSphere:
+          ShapeSphere = other.ShapeSphere.Clone();
+          break;
+        case CheckShapeOneofCase.ShapeBox:
+          ShapeBox = other.ShapeBox.Clone();
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MassiveEntityElementOpBatchNotify Clone() {
+      return new MassiveEntityElementOpBatchNotify(this);
+    }
+
+    /// <summary>Field number for the "attacker_id" field.</summary>
+    public const int AttackerIdFieldNumber = 8;
+    private uint attackerId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint AttackerId {
+      get { return attackerId_; }
+      set {
+        attackerId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "attack_element_durability" field.</summary>
+    public const int AttackElementDurabilityFieldNumber = 4;
+    private float attackElementDurability_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public float AttackElementDurability {
+      get { return attackElementDurability_; }
+      set {
+        attackElementDurability_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_PNANGDNNFCH" field.</summary>
+    public const int Unk3300PNANGDNNFCHFieldNumber = 2;
+    private int unk3300PNANGDNNFCH_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Unk3300PNANGDNNFCH {
+      get { return unk3300PNANGDNNFCH_; }
+      set {
+        unk3300PNANGDNNFCH_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "entity_type" field.</summary>
+    public const int EntityTypeFieldNumber = 10;
+    private int entityType_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int EntityType {
+      get { return entityType_; }
+      set {
+        entityType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Unk3300_KNLDJPEMCKP" field.</summary>
+    public const int Unk3300KNLDJPEMCKPFieldNumber = 7;
+    private int unk3300KNLDJPEMCKP_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Unk3300KNLDJPEMCKP {
+      get { return unk3300KNLDJPEMCKP_; }
+      set {
+        unk3300KNLDJPEMCKP_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "op_idx" field.</summary>
+    public const int OpIdxFieldNumber = 11;
+    private uint opIdx_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint OpIdx {
+      get { return opIdx_; }
+      set {
+        opIdx_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "user_id" field.</summary>
+    public const int UserIdFieldNumber = 1;
+    private uint userId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public uint UserId {
+      get { return userId_; }
+      set {
+        userId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "shape_sphere" field.</summary>
+    public const int ShapeSphereFieldNumber = 14;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ShapeSphere ShapeSphere {
+      get { return checkShapeCase_ == CheckShapeOneofCase.ShapeSphere ? (global::NewProtos.ShapeSphere) checkShape_ : null; }
+      set {
+        checkShape_ = value;
+        checkShapeCase_ = value == null ? CheckShapeOneofCase.None : CheckShapeOneofCase.ShapeSphere;
+      }
+    }
+
+    /// <summary>Field number for the "shape_box" field.</summary>
+    public const int ShapeBoxFieldNumber = 13;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::NewProtos.ShapeBox ShapeBox {
+      get { return checkShapeCase_ == CheckShapeOneofCase.ShapeBox ? (global::NewProtos.ShapeBox) checkShape_ : null; }
+      set {
+        checkShape_ = value;
+        checkShapeCase_ = value == null ? CheckShapeOneofCase.None : CheckShapeOneofCase.ShapeBox;
+      }
+    }
+
+    private object checkShape_;
+    /// <summary>Enum of possible cases for the "check_shape" oneof.</summary>
+    public enum CheckShapeOneofCase {
+      None = 0,
+      ShapeSphere = 14,
+      ShapeBox = 13,
+    }
+    private CheckShapeOneofCase checkShapeCase_ = CheckShapeOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CheckShapeOneofCase CheckShapeCase {
+      get { return checkShapeCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearCheckShape() {
+      checkShapeCase_ = CheckShapeOneofCase.None;
+      checkShape_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MassiveEntityElementOpBatchNotify);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MassiveEntityElementOpBatchNotify other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (AttackerId != other.AttackerId) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AttackElementDurability, other.AttackElementDurability)) return false;
+      if (Unk3300PNANGDNNFCH != other.Unk3300PNANGDNNFCH) return false;
+      if (EntityType != other.EntityType) return false;
+      if (Unk3300KNLDJPEMCKP != other.Unk3300KNLDJPEMCKP) return false;
+      if (OpIdx != other.OpIdx) return false;
+      if (UserId != other.UserId) return false;
+      if (!object.Equals(ShapeSphere, other.ShapeSphere)) return false;
+      if (!object.Equals(ShapeBox, other.ShapeBox)) return false;
+      if (CheckShapeCase != other.CheckShapeCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (AttackerId != 0) hash ^= AttackerId.GetHashCode();
+      if (AttackElementDurability != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AttackElementDurability);
+      if (Unk3300PNANGDNNFCH != 0) hash ^= Unk3300PNANGDNNFCH.GetHashCode();
+      if (EntityType != 0) hash ^= EntityType.GetHashCode();
+      if (Unk3300KNLDJPEMCKP != 0) hash ^= Unk3300KNLDJPEMCKP.GetHashCode();
+      if (OpIdx != 0) hash ^= OpIdx.GetHashCode();
+      if (UserId != 0) hash ^= UserId.GetHashCode();
+      if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) hash ^= ShapeSphere.GetHashCode();
+      if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) hash ^= ShapeBox.GetHashCode();
+      hash ^= (int) checkShapeCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (UserId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(UserId);
+      }
+      if (Unk3300PNANGDNNFCH != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Unk3300PNANGDNNFCH);
+      }
+      if (AttackElementDurability != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(AttackElementDurability);
+      }
+      if (Unk3300KNLDJPEMCKP != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Unk3300KNLDJPEMCKP);
+      }
+      if (AttackerId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(AttackerId);
+      }
+      if (EntityType != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(EntityType);
+      }
+      if (OpIdx != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(OpIdx);
+      }
+      if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
+        output.WriteRawTag(106);
+        output.WriteMessage(ShapeBox);
+      }
+      if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
+        output.WriteRawTag(114);
+        output.WriteMessage(ShapeSphere);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (UserId != 0) {
+        output.WriteRawTag(8);
+        output.WriteUInt32(UserId);
+      }
+      if (Unk3300PNANGDNNFCH != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Unk3300PNANGDNNFCH);
+      }
+      if (AttackElementDurability != 0F) {
+        output.WriteRawTag(37);
+        output.WriteFloat(AttackElementDurability);
+      }
+      if (Unk3300KNLDJPEMCKP != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(Unk3300KNLDJPEMCKP);
+      }
+      if (AttackerId != 0) {
+        output.WriteRawTag(64);
+        output.WriteUInt32(AttackerId);
+      }
+      if (EntityType != 0) {
+        output.WriteRawTag(80);
+        output.WriteInt32(EntityType);
+      }
+      if (OpIdx != 0) {
+        output.WriteRawTag(88);
+        output.WriteUInt32(OpIdx);
+      }
+      if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
+        output.WriteRawTag(106);
+        output.WriteMessage(ShapeBox);
+      }
+      if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
+        output.WriteRawTag(114);
+        output.WriteMessage(ShapeSphere);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (AttackerId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AttackerId);
+      }
+      if (AttackElementDurability != 0F) {
+        size += 1 + 4;
+      }
+      if (Unk3300PNANGDNNFCH != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300PNANGDNNFCH);
+      }
+      if (EntityType != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(EntityType);
+      }
+      if (Unk3300KNLDJPEMCKP != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300KNLDJPEMCKP);
+      }
+      if (OpIdx != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpIdx);
+      }
+      if (UserId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UserId);
+      }
+      if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ShapeSphere);
+      }
+      if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ShapeBox);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MassiveEntityElementOpBatchNotify other) {
+      if (other == null) {
+        return;
+      }
+      if (other.AttackerId != 0) {
+        AttackerId = other.AttackerId;
+      }
+      if (other.AttackElementDurability != 0F) {
+        AttackElementDurability = other.AttackElementDurability;
+      }
+      if (other.Unk3300PNANGDNNFCH != 0) {
+        Unk3300PNANGDNNFCH = other.Unk3300PNANGDNNFCH;
+      }
+      if (other.EntityType != 0) {
+        EntityType = other.EntityType;
+      }
+      if (other.Unk3300KNLDJPEMCKP != 0) {
+        Unk3300KNLDJPEMCKP = other.Unk3300KNLDJPEMCKP;
+      }
+      if (other.OpIdx != 0) {
+        OpIdx = other.OpIdx;
+      }
+      if (other.UserId != 0) {
+        UserId = other.UserId;
+      }
+      switch (other.CheckShapeCase) {
+        case CheckShapeOneofCase.ShapeSphere:
+          if (ShapeSphere == null) {
+            ShapeSphere = new global::NewProtos.ShapeSphere();
+          }
+          ShapeSphere.MergeFrom(other.ShapeSphere);
+          break;
+        case CheckShapeOneofCase.ShapeBox:
+          if (ShapeBox == null) {
+            ShapeBox = new global::NewProtos.ShapeBox();
+          }
+          ShapeBox.MergeFrom(other.ShapeBox);
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            UserId = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Unk3300PNANGDNNFCH = input.ReadInt32();
+            break;
+          }
+          case 37: {
+            AttackElementDurability = input.ReadFloat();
+            break;
+          }
+          case 56: {
+            Unk3300KNLDJPEMCKP = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            AttackerId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            EntityType = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            OpIdx = input.ReadUInt32();
+            break;
+          }
+          case 106: {
+            global::NewProtos.ShapeBox subBuilder = new global::NewProtos.ShapeBox();
+            if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
+              subBuilder.MergeFrom(ShapeBox);
+            }
+            input.ReadMessage(subBuilder);
+            ShapeBox = subBuilder;
+            break;
+          }
+          case 114: {
+            global::NewProtos.ShapeSphere subBuilder = new global::NewProtos.ShapeSphere();
+            if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
+              subBuilder.MergeFrom(ShapeSphere);
+            }
+            input.ReadMessage(subBuilder);
+            ShapeSphere = subBuilder;
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            UserId = input.ReadUInt32();
+            break;
+          }
+          case 16: {
+            Unk3300PNANGDNNFCH = input.ReadInt32();
+            break;
+          }
+          case 37: {
+            AttackElementDurability = input.ReadFloat();
+            break;
+          }
+          case 56: {
+            Unk3300KNLDJPEMCKP = input.ReadInt32();
+            break;
+          }
+          case 64: {
+            AttackerId = input.ReadUInt32();
+            break;
+          }
+          case 80: {
+            EntityType = input.ReadInt32();
+            break;
+          }
+          case 88: {
+            OpIdx = input.ReadUInt32();
+            break;
+          }
+          case 106: {
+            global::NewProtos.ShapeBox subBuilder = new global::NewProtos.ShapeBox();
+            if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
+              subBuilder.MergeFrom(ShapeBox);
+            }
+            input.ReadMessage(subBuilder);
+            ShapeBox = subBuilder;
+            break;
+          }
+          case 114: {
+            global::NewProtos.ShapeSphere subBuilder = new global::NewProtos.ShapeSphere();
+            if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
+              subBuilder.MergeFrom(ShapeSphere);
+            }
+            input.ReadMessage(subBuilder);
+            ShapeSphere = subBuilder;
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
   #endregion
 
 }
-#region Messages
-/// <summary>
-/// enum CmdId {
-///   option allow_alias = true;
-///   NONE = 0;
-///   CMD_ID = 363;
-///   ENET_CHANNEL_ID = 0;
-///   ENET_IS_RELIABLE = 1;
-///   IS_ALLOW_CLIENT = 1;
-/// }
-/// </summary>
-public sealed partial class MassiveEntityElementOpBatchNotify : pb::IMessage<MassiveEntityElementOpBatchNotify>
-#if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    , pb::IBufferMessage
-#endif
-{
-  private static readonly pb::MessageParser<MassiveEntityElementOpBatchNotify> _parser = new pb::MessageParser<MassiveEntityElementOpBatchNotify>(() => new MassiveEntityElementOpBatchNotify());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pb::MessageParser<MassiveEntityElementOpBatchNotify> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::MassiveEntityElementOpBatchNotifyReflection.Descriptor.MessageTypes[0]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MassiveEntityElementOpBatchNotify() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MassiveEntityElementOpBatchNotify(MassiveEntityElementOpBatchNotify other) : this() {
-    attackerId_ = other.attackerId_;
-    attackElementDurability_ = other.attackElementDurability_;
-    unk3300PNANGDNNFCH_ = other.unk3300PNANGDNNFCH_;
-    entityType_ = other.entityType_;
-    unk3300KNLDJPEMCKP_ = other.unk3300KNLDJPEMCKP_;
-    opIdx_ = other.opIdx_;
-    userId_ = other.userId_;
-    switch (other.CheckShapeCase) {
-      case CheckShapeOneofCase.ShapeSphere:
-        ShapeSphere = other.ShapeSphere.Clone();
-        break;
-      case CheckShapeOneofCase.ShapeBox:
-        ShapeBox = other.ShapeBox.Clone();
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public MassiveEntityElementOpBatchNotify Clone() {
-    return new MassiveEntityElementOpBatchNotify(this);
-  }
-
-  /// <summary>Field number for the "attacker_id" field.</summary>
-  public const int AttackerIdFieldNumber = 8;
-  private uint attackerId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint AttackerId {
-    get { return attackerId_; }
-    set {
-      attackerId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "attack_element_durability" field.</summary>
-  public const int AttackElementDurabilityFieldNumber = 4;
-  private float attackElementDurability_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public float AttackElementDurability {
-    get { return attackElementDurability_; }
-    set {
-      attackElementDurability_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_PNANGDNNFCH" field.</summary>
-  public const int Unk3300PNANGDNNFCHFieldNumber = 2;
-  private int unk3300PNANGDNNFCH_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Unk3300PNANGDNNFCH {
-    get { return unk3300PNANGDNNFCH_; }
-    set {
-      unk3300PNANGDNNFCH_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "entity_type" field.</summary>
-  public const int EntityTypeFieldNumber = 10;
-  private int entityType_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int EntityType {
-    get { return entityType_; }
-    set {
-      entityType_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Unk3300_KNLDJPEMCKP" field.</summary>
-  public const int Unk3300KNLDJPEMCKPFieldNumber = 7;
-  private int unk3300KNLDJPEMCKP_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int Unk3300KNLDJPEMCKP {
-    get { return unk3300KNLDJPEMCKP_; }
-    set {
-      unk3300KNLDJPEMCKP_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "op_idx" field.</summary>
-  public const int OpIdxFieldNumber = 11;
-  private uint opIdx_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint OpIdx {
-    get { return opIdx_; }
-    set {
-      opIdx_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "user_id" field.</summary>
-  public const int UserIdFieldNumber = 1;
-  private uint userId_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public uint UserId {
-    get { return userId_; }
-    set {
-      userId_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "shape_sphere" field.</summary>
-  public const int ShapeSphereFieldNumber = 14;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ShapeSphere ShapeSphere {
-    get { return checkShapeCase_ == CheckShapeOneofCase.ShapeSphere ? (global::ShapeSphere) checkShape_ : null; }
-    set {
-      checkShape_ = value;
-      checkShapeCase_ = value == null ? CheckShapeOneofCase.None : CheckShapeOneofCase.ShapeSphere;
-    }
-  }
-
-  /// <summary>Field number for the "shape_box" field.</summary>
-  public const int ShapeBoxFieldNumber = 13;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public global::ShapeBox ShapeBox {
-    get { return checkShapeCase_ == CheckShapeOneofCase.ShapeBox ? (global::ShapeBox) checkShape_ : null; }
-    set {
-      checkShape_ = value;
-      checkShapeCase_ = value == null ? CheckShapeOneofCase.None : CheckShapeOneofCase.ShapeBox;
-    }
-  }
-
-  private object checkShape_;
-  /// <summary>Enum of possible cases for the "check_shape" oneof.</summary>
-  public enum CheckShapeOneofCase {
-    None = 0,
-    ShapeSphere = 14,
-    ShapeBox = 13,
-  }
-  private CheckShapeOneofCase checkShapeCase_ = CheckShapeOneofCase.None;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public CheckShapeOneofCase CheckShapeCase {
-    get { return checkShapeCase_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void ClearCheckShape() {
-    checkShapeCase_ = CheckShapeOneofCase.None;
-    checkShape_ = null;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override bool Equals(object other) {
-    return Equals(other as MassiveEntityElementOpBatchNotify);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public bool Equals(MassiveEntityElementOpBatchNotify other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (AttackerId != other.AttackerId) return false;
-    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AttackElementDurability, other.AttackElementDurability)) return false;
-    if (Unk3300PNANGDNNFCH != other.Unk3300PNANGDNNFCH) return false;
-    if (EntityType != other.EntityType) return false;
-    if (Unk3300KNLDJPEMCKP != other.Unk3300KNLDJPEMCKP) return false;
-    if (OpIdx != other.OpIdx) return false;
-    if (UserId != other.UserId) return false;
-    if (!object.Equals(ShapeSphere, other.ShapeSphere)) return false;
-    if (!object.Equals(ShapeBox, other.ShapeBox)) return false;
-    if (CheckShapeCase != other.CheckShapeCase) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (AttackerId != 0) hash ^= AttackerId.GetHashCode();
-    if (AttackElementDurability != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AttackElementDurability);
-    if (Unk3300PNANGDNNFCH != 0) hash ^= Unk3300PNANGDNNFCH.GetHashCode();
-    if (EntityType != 0) hash ^= EntityType.GetHashCode();
-    if (Unk3300KNLDJPEMCKP != 0) hash ^= Unk3300KNLDJPEMCKP.GetHashCode();
-    if (OpIdx != 0) hash ^= OpIdx.GetHashCode();
-    if (UserId != 0) hash ^= UserId.GetHashCode();
-    if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) hash ^= ShapeSphere.GetHashCode();
-    if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) hash ^= ShapeBox.GetHashCode();
-    hash ^= (int) checkShapeCase_;
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void WriteTo(pb::CodedOutputStream output) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    output.WriteRawMessage(this);
-  #else
-    if (UserId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(UserId);
-    }
-    if (Unk3300PNANGDNNFCH != 0) {
-      output.WriteRawTag(16);
-      output.WriteInt32(Unk3300PNANGDNNFCH);
-    }
-    if (AttackElementDurability != 0F) {
-      output.WriteRawTag(37);
-      output.WriteFloat(AttackElementDurability);
-    }
-    if (Unk3300KNLDJPEMCKP != 0) {
-      output.WriteRawTag(56);
-      output.WriteInt32(Unk3300KNLDJPEMCKP);
-    }
-    if (AttackerId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(AttackerId);
-    }
-    if (EntityType != 0) {
-      output.WriteRawTag(80);
-      output.WriteInt32(EntityType);
-    }
-    if (OpIdx != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(OpIdx);
-    }
-    if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
-      output.WriteRawTag(106);
-      output.WriteMessage(ShapeBox);
-    }
-    if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
-      output.WriteRawTag(114);
-      output.WriteMessage(ShapeSphere);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-    if (UserId != 0) {
-      output.WriteRawTag(8);
-      output.WriteUInt32(UserId);
-    }
-    if (Unk3300PNANGDNNFCH != 0) {
-      output.WriteRawTag(16);
-      output.WriteInt32(Unk3300PNANGDNNFCH);
-    }
-    if (AttackElementDurability != 0F) {
-      output.WriteRawTag(37);
-      output.WriteFloat(AttackElementDurability);
-    }
-    if (Unk3300KNLDJPEMCKP != 0) {
-      output.WriteRawTag(56);
-      output.WriteInt32(Unk3300KNLDJPEMCKP);
-    }
-    if (AttackerId != 0) {
-      output.WriteRawTag(64);
-      output.WriteUInt32(AttackerId);
-    }
-    if (EntityType != 0) {
-      output.WriteRawTag(80);
-      output.WriteInt32(EntityType);
-    }
-    if (OpIdx != 0) {
-      output.WriteRawTag(88);
-      output.WriteUInt32(OpIdx);
-    }
-    if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
-      output.WriteRawTag(106);
-      output.WriteMessage(ShapeBox);
-    }
-    if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
-      output.WriteRawTag(114);
-      output.WriteMessage(ShapeSphere);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(ref output);
-    }
-  }
-  #endif
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public int CalculateSize() {
-    int size = 0;
-    if (AttackerId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(AttackerId);
-    }
-    if (AttackElementDurability != 0F) {
-      size += 1 + 4;
-    }
-    if (Unk3300PNANGDNNFCH != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300PNANGDNNFCH);
-    }
-    if (EntityType != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(EntityType);
-    }
-    if (Unk3300KNLDJPEMCKP != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Unk3300KNLDJPEMCKP);
-    }
-    if (OpIdx != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpIdx);
-    }
-    if (UserId != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UserId);
-    }
-    if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(ShapeSphere);
-    }
-    if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(ShapeBox);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(MassiveEntityElementOpBatchNotify other) {
-    if (other == null) {
-      return;
-    }
-    if (other.AttackerId != 0) {
-      AttackerId = other.AttackerId;
-    }
-    if (other.AttackElementDurability != 0F) {
-      AttackElementDurability = other.AttackElementDurability;
-    }
-    if (other.Unk3300PNANGDNNFCH != 0) {
-      Unk3300PNANGDNNFCH = other.Unk3300PNANGDNNFCH;
-    }
-    if (other.EntityType != 0) {
-      EntityType = other.EntityType;
-    }
-    if (other.Unk3300KNLDJPEMCKP != 0) {
-      Unk3300KNLDJPEMCKP = other.Unk3300KNLDJPEMCKP;
-    }
-    if (other.OpIdx != 0) {
-      OpIdx = other.OpIdx;
-    }
-    if (other.UserId != 0) {
-      UserId = other.UserId;
-    }
-    switch (other.CheckShapeCase) {
-      case CheckShapeOneofCase.ShapeSphere:
-        if (ShapeSphere == null) {
-          ShapeSphere = new global::ShapeSphere();
-        }
-        ShapeSphere.MergeFrom(other.ShapeSphere);
-        break;
-      case CheckShapeOneofCase.ShapeBox:
-        if (ShapeBox == null) {
-          ShapeBox = new global::ShapeBox();
-        }
-        ShapeBox.MergeFrom(other.ShapeBox);
-        break;
-    }
-
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  public void MergeFrom(pb::CodedInputStream input) {
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    input.ReadRawMessage(this);
-  #else
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          UserId = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          Unk3300PNANGDNNFCH = input.ReadInt32();
-          break;
-        }
-        case 37: {
-          AttackElementDurability = input.ReadFloat();
-          break;
-        }
-        case 56: {
-          Unk3300KNLDJPEMCKP = input.ReadInt32();
-          break;
-        }
-        case 64: {
-          AttackerId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          EntityType = input.ReadInt32();
-          break;
-        }
-        case 88: {
-          OpIdx = input.ReadUInt32();
-          break;
-        }
-        case 106: {
-          global::ShapeBox subBuilder = new global::ShapeBox();
-          if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
-            subBuilder.MergeFrom(ShapeBox);
-          }
-          input.ReadMessage(subBuilder);
-          ShapeBox = subBuilder;
-          break;
-        }
-        case 114: {
-          global::ShapeSphere subBuilder = new global::ShapeSphere();
-          if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
-            subBuilder.MergeFrom(ShapeSphere);
-          }
-          input.ReadMessage(subBuilder);
-          ShapeSphere = subBuilder;
-          break;
-        }
-      }
-    }
-  #endif
-  }
-
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-  void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-          break;
-        case 8: {
-          UserId = input.ReadUInt32();
-          break;
-        }
-        case 16: {
-          Unk3300PNANGDNNFCH = input.ReadInt32();
-          break;
-        }
-        case 37: {
-          AttackElementDurability = input.ReadFloat();
-          break;
-        }
-        case 56: {
-          Unk3300KNLDJPEMCKP = input.ReadInt32();
-          break;
-        }
-        case 64: {
-          AttackerId = input.ReadUInt32();
-          break;
-        }
-        case 80: {
-          EntityType = input.ReadInt32();
-          break;
-        }
-        case 88: {
-          OpIdx = input.ReadUInt32();
-          break;
-        }
-        case 106: {
-          global::ShapeBox subBuilder = new global::ShapeBox();
-          if (checkShapeCase_ == CheckShapeOneofCase.ShapeBox) {
-            subBuilder.MergeFrom(ShapeBox);
-          }
-          input.ReadMessage(subBuilder);
-          ShapeBox = subBuilder;
-          break;
-        }
-        case 114: {
-          global::ShapeSphere subBuilder = new global::ShapeSphere();
-          if (checkShapeCase_ == CheckShapeOneofCase.ShapeSphere) {
-            subBuilder.MergeFrom(ShapeSphere);
-          }
-          input.ReadMessage(subBuilder);
-          ShapeSphere = subBuilder;
-          break;
-        }
-      }
-    }
-  }
-  #endif
-
-}
-
-#endregion
-
 
 #endregion Designer generated code

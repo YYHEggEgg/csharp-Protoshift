@@ -9,41 +9,44 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-/// <summary>Holder for reflection information generated from MailCollectState.proto</summary>
-public static partial class MailCollectStateReflection {
+namespace NewProtos {
 
-  #region Descriptor
-  /// <summary>File descriptor for MailCollectState.proto</summary>
-  public static pbr::FileDescriptor Descriptor {
-    get { return descriptor; }
-  }
-  private static pbr::FileDescriptor descriptor;
+  /// <summary>Holder for reflection information generated from MailCollectState.proto</summary>
+  public static partial class MailCollectStateReflection {
 
-  static MailCollectStateReflection() {
-    byte[] descriptorData = global::System.Convert.FromBase64String(
-        string.Concat(
-          "ChZNYWlsQ29sbGVjdFN0YXRlLnByb3RvKsQBChBNYWlsQ29sbGVjdFN0YXRl",
-          "EioKJk1BSUxfQ09MTEVDVF9TVEFURV9DT0xMRUNUSUJMRV9VTktOT1dOEAAS",
-          "JgoiTUFJTF9DT0xMRUNUX1NUQVRFX05PVF9DT0xMRUNUSUJMRRABEi4KKk1B",
-          "SUxfQ09MTEVDVF9TVEFURV9DT0xMRUNUSUJMRV9VTkNPTExFQ1RFRBACEiwK",
-          "KE1BSUxfQ09MTEVDVF9TVEFURV9DT0xMRUNUSUJMRV9DT0xMRUNURUQQA0IW",
-          "ChRvcmcuc29yYXBvaW50YS5wcm90b2IGcHJvdG8z"));
-    descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MailCollectState), }, null, null));
+    #region Descriptor
+    /// <summary>File descriptor for MailCollectState.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
+    }
+    private static pbr::FileDescriptor descriptor;
+
+    static MailCollectStateReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZNYWlsQ29sbGVjdFN0YXRlLnByb3RvKsQBChBNYWlsQ29sbGVjdFN0YXRl",
+            "EioKJk1BSUxfQ09MTEVDVF9TVEFURV9DT0xMRUNUSUJMRV9VTktOT1dOEAAS",
+            "JgoiTUFJTF9DT0xMRUNUX1NUQVRFX05PVF9DT0xMRUNUSUJMRRABEi4KKk1B",
+            "SUxfQ09MTEVDVF9TVEFURV9DT0xMRUNUSUJMRV9VTkNPTExFQ1RFRBACEiwK",
+            "KE1BSUxfQ09MTEVDVF9TVEFURV9DT0xMRUNUSUJMRV9DT0xMRUNURUQQA0IM",
+            "qgIJTmV3UHJvdG9zYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NewProtos.MailCollectState), }, null, null));
+    }
+    #endregion
+
   }
+  #region Enums
+  public enum MailCollectState {
+    [pbr::OriginalName("MAIL_COLLECT_STATE_COLLECTIBLE_UNKNOWN")] CollectibleUnknown = 0,
+    [pbr::OriginalName("MAIL_COLLECT_STATE_NOT_COLLECTIBLE")] NotCollectible = 1,
+    [pbr::OriginalName("MAIL_COLLECT_STATE_COLLECTIBLE_UNCOLLECTED")] CollectibleUncollected = 2,
+    [pbr::OriginalName("MAIL_COLLECT_STATE_COLLECTIBLE_COLLECTED")] CollectibleCollected = 3,
+  }
+
   #endregion
 
 }
-#region Enums
-public enum MailCollectState {
-  [pbr::OriginalName("MAIL_COLLECT_STATE_COLLECTIBLE_UNKNOWN")] CollectibleUnknown = 0,
-  [pbr::OriginalName("MAIL_COLLECT_STATE_NOT_COLLECTIBLE")] NotCollectible = 1,
-  [pbr::OriginalName("MAIL_COLLECT_STATE_COLLECTIBLE_UNCOLLECTED")] CollectibleUncollected = 2,
-  [pbr::OriginalName("MAIL_COLLECT_STATE_COLLECTIBLE_COLLECTED")] CollectibleCollected = 3,
-}
-
-#endregion
-
 
 #endregion Designer generated code

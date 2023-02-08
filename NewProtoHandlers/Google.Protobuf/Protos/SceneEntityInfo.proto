@@ -30,7 +30,7 @@ import "SceneMonsterInfo.proto";
 import "SceneNpcInfo.proto";
 import "ServerBuff.proto";
 
-option java_package = "org.sorapointa.proto";
+option csharp_namespace = "NewProtos";
 
 message SceneEntityInfo {
   ProtEntityType entity_type = 1;
