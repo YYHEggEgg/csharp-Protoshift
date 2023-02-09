@@ -15,7 +15,7 @@ namespace NewProtos
 #pragma warning disable CS8601 // 引用类型赋值可能为 null。
 #pragma warning disable CS8602 // 解引用可能出现空引用。
 #pragma warning disable CS8604 // 引用类型参数可能为 null。W
-        public ProtoSerialize(string protoname) : this(Type.GetType(protoname)) { }
+        public ProtoSerialize(string protoname) : this(Type.GetType($"NewProtos.{protoname}")) { }
 
         public ProtoSerialize(Type prototype)
         {
