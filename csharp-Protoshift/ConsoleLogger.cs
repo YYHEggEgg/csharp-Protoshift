@@ -97,32 +97,35 @@ namespace csharp_Protoshift
         static object loggerlock = false;
 
         #region Logger
-        public static void Dbug(string content, string? sender = null)
+        public static async void Dbug(string content, string? sender = null)
         {
 #if DEBUG
-            WriteLog(content, LogLevel.Debug, sender);
+            await WriteLog(content, LogLevel.Debug, sender);
 #endif
         }
 
-        public static void Info(string content, string? sender = null)
-            => WriteLog(content, LogLevel.Information, sender);
+        public static async void Info(string content, string? sender = null)
+            => await WriteLog(content, LogLevel.Information, sender);
 
-        public static void Warn(string content, string? sender = null)
-            => WriteLog(content, LogLevel.Warning, sender);
+        public static async void Warn(string content, string? sender = null)
+            => await WriteLog(content, LogLevel.Warning, sender);
 
-        public static void Erro(string content, string? sender = null)
-            => WriteLog(content, LogLevel.Error, sender);
+        public static async void Erro(string content, string? sender = null)
+            => await WriteLog(content, LogLevel.Error, sender);
 
-        private static void WriteLog(string content, LogLevel level, string? sender = null)
+        private static async Task WriteLog(string content, LogLevel level, string? sender = null)
         {
             string nowtime = DateTime.Now.ToString("HH:mm:ss");
-            lock (loggerlock)
+            await Task.Run(() =>
             {
-                Console.Write(nowtime);
-                string header = WriteAndGetLogInfo(level, sender);
-                Console.WriteLine(content);
-                logwriter.WriteLine($"{nowtime}{header}{content}");
-            }
+                lock (loggerlock)
+                {
+                    Console.Write(nowtime);
+                    string header = WriteAndGetLogInfo(level, sender);
+                    Console.WriteLine(content);
+                    logwriter.WriteLine($"{nowtime}{header}{content}");
+                }
+            });
         }
 
         /// <summary>
