@@ -11,6 +11,7 @@ namespace OldProtos
     {
         public static string ThisPath => AppDomain.CurrentDomain.BaseDirectory;
         private static Dictionary<int, ProtoSerialize> serializers = new();
+        private static Dictionary<string, ProtoSerialize> serializers_queryByName = new();
         private static Dictionary<string, int> protonameToCmdids = new();
 
         static QueryCmdId()
@@ -27,7 +28,9 @@ namespace OldProtos
                     Console.WriteLine($"Oldprotos: {cmdid} multiples, dropped proto {name}");
                     continue;
                 }
-                serializers.Add(cmdid, new ProtoSerialize(name));
+                ProtoSerialize serializer = new(name);
+                serializers.Add(cmdid, serializer);
+                serializers_queryByName.Add(name, serializer);
                 protonameToCmdids.Add(name, cmdid);
             }
         }
@@ -51,20 +54,39 @@ namespace OldProtos
 
         public static bool TryGetSerializer(string protoname, out ProtoSerialize serializer)
         {
-            if (protonameToCmdids.ContainsKey(protoname))
+            if (serializers_queryByName.ContainsKey(protoname))
             {
-                serializer = serializers[protonameToCmdids[protoname]];
+                serializer = serializers_queryByName[protoname];
                 return true;
             }
             else
             {
-                serializer = ProtoSerialize.Empty;
-                return false;
+                Type? prototype = Type.GetType($"OldProtos.{protoname}");
+                if (prototype == null)
+                {
+                    serializer = ProtoSerialize.Empty;
+                    return false;
+                }
+                else
+                {
+                    serializer = new ProtoSerialize(prototype);
+                    serializers_queryByName.Add(protoname, serializer);
+                    return true;
+                }
             }
         }
 
         public static bool ProtoExists(string protoname)
-            => protonameToCmdids.ContainsKey(protoname);
+        {
+            if (protonameToCmdids.ContainsKey(protoname)) return true;
+            else
+            {
+                Type? prototype = Type.GetType($"OldProtos.{protoname}");
+                if (prototype != null)
+                    serializers_queryByName.Add(protoname, new(prototype));
+                return prototype != null;
+            }
+        }
 
         public static string Initialize()
         {
