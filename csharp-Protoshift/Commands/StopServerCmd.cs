@@ -19,22 +19,25 @@ namespace csharp_Protoshift.Commands
 
         public async Task HandleAsync(string[] args)
         {
-            ConcurrentDictionary<uint, StringBuilder> logs = new();
-            Parallel.ForEach(GameSessionDispatch.sessions, pair =>
+            StringBuilder output = new("This is a packet log created by csharp-Protoshift.\n" +
+                "You're recommended to use Ctrl+F to search for certain key words:\n" +
+                "<protoname>, e.g. 'GetPlayerTokenRsp';\n" +
+                "'SKILL ISSUE' for packets with skill issue.\n");
+            foreach (var pair in GameSessionDispatch.sessions)
             {
                 uint conv = pair.Key;
                 HandlerSession session = pair.Value;
-                StringBuilder output = new($"Record of Session ID:{conv}\n");
+                output.Append($"\n\n\n\n\n----------\n\n\n\n\nRecord of Session ID:{conv}\n");
 
                 #region XorKey
                 output.Append("This session was using XOR Key:\n-----BEGIN 4096 HEX Xor key-----\n" +
-                    $"{session.XorKey}\n-----END 4096 HEX Xor key-----\n\n");
+                    $"{Convert.ToHexString(session.XorKey)}\n-----END 4096 HEX Xor key-----\n\n");
                 #endregion
                 #region Records Analyze
                 Dictionary<string, List<PacketRecord>> record_group = new();
                 foreach (var record in session.records)
                 {
-                    if (record_group.ContainsKey(record.PacketName))
+                    if (!record_group.ContainsKey(record.PacketName))
                         record_group.Add(record.PacketName, new());
                     record_group[record.PacketName].Add(record);
                 }
@@ -74,10 +77,12 @@ namespace csharp_Protoshift.Commands
 
                     Dictionary<string, List<string>> innerpackets = new();
                     #region Packet Group
+                    NewProtos.QueryCmdId.TryGetSerializer("UnionCmdNotify", out var unionparser);
                     innerpackets.Add("_Unknown", new());
                     foreach (var packet in unionPackets)
                     {
-                        var unioncmds = NewProtos.UnionCmdNotify.Parser.ParseFrom(packet.data);
+                        var unioncmds = NewProtos.UnionCmdNotify.Parser.ParseFrom(
+                            unionparser.SerializeFromJson(packet.newjsonContent));
                         foreach (var unioncmd in unioncmds.CmdList)
                         {
                             ushort cmdid = (ushort)unioncmd.MessageId;
@@ -105,17 +110,10 @@ namespace csharp_Protoshift.Commands
                     }
                 }
                 #endregion
+            }
 
-                logs.TryAdd(conv, output);
-            });
-            string output = "This is a packet log created by csharp-Protoshift.\n" +
-                "You're recommended to use Ctrl+F to search for certain key words:\n" +
-                "<protoname>, e.g. 'GetPlayerTokenRsp';\n" +
-                "'SKILL ISSUE' for packets with skill issue;\n";
-            foreach (var res in logs)
-                output += $"\n\n\n\n\n----------\n\n\n\n\n{res.Value}";
-
-            File.WriteAllText($"{Tools.ProgramPath}\\logs\\{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.packet.log", output);
+            File.WriteAllText($"{Tools.ProgramPath}\\logs\\" +
+                $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.packet.log", output.ToString());
 
             Environment.Exit(0);
         }
