@@ -37,7 +37,7 @@ namespace NewProtos
             var settings = JsonParser.Settings.Default.WithIgnoreUnknownFields(true);
             defaultReflectParser = new JsonParser(settings);
         }
-        public static JsonParser defaultReflectParser;
+        private readonly static JsonParser defaultReflectParser;
 
         public MessageParser Parser;
         public readonly string Protoname;
