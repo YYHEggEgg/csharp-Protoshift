@@ -50,7 +50,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
             utils = new();
             foreach (var pair in messages)
             {
-                utils.Add(pair.Key, new(pair.Value.FullName));
+                utils.Add(pair.Key, new(pair.Value.Name));
             }
         }
 

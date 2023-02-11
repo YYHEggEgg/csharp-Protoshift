@@ -28,7 +28,7 @@ namespace csharp_Protoshift.GameSession
         /// Whether output packets in the console.
         /// </summary>
         public bool Verbose { get; set; }
-        public int packetCounts { get; protected set;}
+        public int packetCounts { get; protected set; }
         public int PacketRecordLimits { get; }
 
         /// <summary>
@@ -43,8 +43,8 @@ namespace csharp_Protoshift.GameSession
             SessionId = sessionId;
             PacketRecordLimits = packetLimits;
             client_seed = server_seed = Array.Empty<byte>();
-            // Verbose = true;
-            Verbose = false;
+            Verbose = true;
+            // Verbose = false;
         }
 
         public byte[] HandlePacket(byte[] packet, bool isNewCmdid)
