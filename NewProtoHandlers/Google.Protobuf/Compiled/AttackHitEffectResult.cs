@@ -24,16 +24,16 @@ namespace NewProtos {
     static AttackHitEffectResultReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtBdHRhY2tIaXRFZmZlY3RSZXN1bHQucHJvdG8itQEKFUF0dGFja0hpdEVm",
+            "ChtBdHRhY2tIaXRFZmZlY3RSZXN1bHQucHJvdG8isgEKFUF0dGFja0hpdEVm",
             "ZmVjdFJlc3VsdBIUCgxhaXJfc3RyZW5ndGgYDSABKAISGwoTaGl0X2hhbHRf",
-            "dGltZV9zY2FsZRgKIAEoAhIVCg1oaXRfaGFsdF90aW1lGAkgASgCEhsKE1Vu",
-            "azMzMDBfTENLRUNKQ0tLSksYCCABKA0SGwoTVW5rMzMwMF9LTE5HREFNTUZJ",
-            "RhgBIAEoDRIYChByZXRyZWF0X3N0cmVuZ3RoGAMgASgCQgyqAglOZXdQcm90",
-            "b3NiBnByb3RvMw=="));
+            "dGltZV9zY2FsZRgKIAEoAhIVCg1oaXRfaGFsdF90aW1lGAkgASgCEh4KFm9y",
+            "aWdpbmFsX2hpdF9lZmZfbGV2ZWwYCCABKA0SFQoNaGl0X2VmZl9sZXZlbBgB",
+            "IAEoDRIYChByZXRyZWF0X3N0cmVuZ3RoGAMgASgCQgyqAglOZXdQcm90b3Ni",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.AttackHitEffectResult), global::NewProtos.AttackHitEffectResult.Parser, new[]{ "AirStrength", "HitHaltTimeScale", "HitHaltTime", "Unk3300LCKECJCKKJK", "Unk3300KLNGDAMMFIF", "RetreatStrength" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.AttackHitEffectResult), global::NewProtos.AttackHitEffectResult.Parser, new[]{ "AirStrength", "HitHaltTimeScale", "HitHaltTime", "OriginalHitEffLevel", "HitEffLevel", "RetreatStrength" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,8 +77,8 @@ namespace NewProtos {
       airStrength_ = other.airStrength_;
       hitHaltTimeScale_ = other.hitHaltTimeScale_;
       hitHaltTime_ = other.hitHaltTime_;
-      unk3300LCKECJCKKJK_ = other.unk3300LCKECJCKKJK_;
-      unk3300KLNGDAMMFIF_ = other.unk3300KLNGDAMMFIF_;
+      originalHitEffLevel_ = other.originalHitEffLevel_;
+      hitEffLevel_ = other.hitEffLevel_;
       retreatStrength_ = other.retreatStrength_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -125,27 +125,34 @@ namespace NewProtos {
       }
     }
 
-    /// <summary>Field number for the "Unk3300_LCKECJCKKJK" field.</summary>
-    public const int Unk3300LCKECJCKKJKFieldNumber = 8;
-    private uint unk3300LCKECJCKKJK_;
+    /// <summary>Field number for the "original_hit_eff_level" field.</summary>
+    public const int OriginalHitEffLevelFieldNumber = 8;
+    private uint originalHitEffLevel_;
+    /// <summary>
+    /// 虽然不太可靠，但是756条记录中这两个字段总是相同，随便改了，都一样
+    /// uint32 Unk3300_LCKECJCKKJK = 8;
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Unk3300LCKECJCKKJK {
-      get { return unk3300LCKECJCKKJK_; }
+    public uint OriginalHitEffLevel {
+      get { return originalHitEffLevel_; }
       set {
-        unk3300LCKECJCKKJK_ = value;
+        originalHitEffLevel_ = value;
       }
     }
 
-    /// <summary>Field number for the "Unk3300_KLNGDAMMFIF" field.</summary>
-    public const int Unk3300KLNGDAMMFIFFieldNumber = 1;
-    private uint unk3300KLNGDAMMFIF_;
+    /// <summary>Field number for the "hit_eff_level" field.</summary>
+    public const int HitEffLevelFieldNumber = 1;
+    private uint hitEffLevel_;
+    /// <summary>
+    /// uint32 Unk3300_KLNGDAMMFIF = 1;
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Unk3300KLNGDAMMFIF {
-      get { return unk3300KLNGDAMMFIF_; }
+    public uint HitEffLevel {
+      get { return hitEffLevel_; }
       set {
-        unk3300KLNGDAMMFIF_ = value;
+        hitEffLevel_ = value;
       }
     }
 
@@ -179,8 +186,8 @@ namespace NewProtos {
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AirStrength, other.AirStrength)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(HitHaltTimeScale, other.HitHaltTimeScale)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(HitHaltTime, other.HitHaltTime)) return false;
-      if (Unk3300LCKECJCKKJK != other.Unk3300LCKECJCKKJK) return false;
-      if (Unk3300KLNGDAMMFIF != other.Unk3300KLNGDAMMFIF) return false;
+      if (OriginalHitEffLevel != other.OriginalHitEffLevel) return false;
+      if (HitEffLevel != other.HitEffLevel) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(RetreatStrength, other.RetreatStrength)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -192,8 +199,8 @@ namespace NewProtos {
       if (AirStrength != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AirStrength);
       if (HitHaltTimeScale != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(HitHaltTimeScale);
       if (HitHaltTime != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(HitHaltTime);
-      if (Unk3300LCKECJCKKJK != 0) hash ^= Unk3300LCKECJCKKJK.GetHashCode();
-      if (Unk3300KLNGDAMMFIF != 0) hash ^= Unk3300KLNGDAMMFIF.GetHashCode();
+      if (OriginalHitEffLevel != 0) hash ^= OriginalHitEffLevel.GetHashCode();
+      if (HitEffLevel != 0) hash ^= HitEffLevel.GetHashCode();
       if (RetreatStrength != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(RetreatStrength);
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -213,17 +220,17 @@ namespace NewProtos {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Unk3300KLNGDAMMFIF != 0) {
+      if (HitEffLevel != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(Unk3300KLNGDAMMFIF);
+        output.WriteUInt32(HitEffLevel);
       }
       if (RetreatStrength != 0F) {
         output.WriteRawTag(29);
         output.WriteFloat(RetreatStrength);
       }
-      if (Unk3300LCKECJCKKJK != 0) {
+      if (OriginalHitEffLevel != 0) {
         output.WriteRawTag(64);
-        output.WriteUInt32(Unk3300LCKECJCKKJK);
+        output.WriteUInt32(OriginalHitEffLevel);
       }
       if (HitHaltTime != 0F) {
         output.WriteRawTag(77);
@@ -247,17 +254,17 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Unk3300KLNGDAMMFIF != 0) {
+      if (HitEffLevel != 0) {
         output.WriteRawTag(8);
-        output.WriteUInt32(Unk3300KLNGDAMMFIF);
+        output.WriteUInt32(HitEffLevel);
       }
       if (RetreatStrength != 0F) {
         output.WriteRawTag(29);
         output.WriteFloat(RetreatStrength);
       }
-      if (Unk3300LCKECJCKKJK != 0) {
+      if (OriginalHitEffLevel != 0) {
         output.WriteRawTag(64);
-        output.WriteUInt32(Unk3300LCKECJCKKJK);
+        output.WriteUInt32(OriginalHitEffLevel);
       }
       if (HitHaltTime != 0F) {
         output.WriteRawTag(77);
@@ -290,11 +297,11 @@ namespace NewProtos {
       if (HitHaltTime != 0F) {
         size += 1 + 4;
       }
-      if (Unk3300LCKECJCKKJK != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300LCKECJCKKJK);
+      if (OriginalHitEffLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OriginalHitEffLevel);
       }
-      if (Unk3300KLNGDAMMFIF != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300KLNGDAMMFIF);
+      if (HitEffLevel != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(HitEffLevel);
       }
       if (RetreatStrength != 0F) {
         size += 1 + 4;
@@ -320,11 +327,11 @@ namespace NewProtos {
       if (other.HitHaltTime != 0F) {
         HitHaltTime = other.HitHaltTime;
       }
-      if (other.Unk3300LCKECJCKKJK != 0) {
-        Unk3300LCKECJCKKJK = other.Unk3300LCKECJCKKJK;
+      if (other.OriginalHitEffLevel != 0) {
+        OriginalHitEffLevel = other.OriginalHitEffLevel;
       }
-      if (other.Unk3300KLNGDAMMFIF != 0) {
-        Unk3300KLNGDAMMFIF = other.Unk3300KLNGDAMMFIF;
+      if (other.HitEffLevel != 0) {
+        HitEffLevel = other.HitEffLevel;
       }
       if (other.RetreatStrength != 0F) {
         RetreatStrength = other.RetreatStrength;
@@ -345,7 +352,7 @@ namespace NewProtos {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Unk3300KLNGDAMMFIF = input.ReadUInt32();
+            HitEffLevel = input.ReadUInt32();
             break;
           }
           case 29: {
@@ -353,7 +360,7 @@ namespace NewProtos {
             break;
           }
           case 64: {
-            Unk3300LCKECJCKKJK = input.ReadUInt32();
+            OriginalHitEffLevel = input.ReadUInt32();
             break;
           }
           case 77: {
@@ -384,7 +391,7 @@ namespace NewProtos {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Unk3300KLNGDAMMFIF = input.ReadUInt32();
+            HitEffLevel = input.ReadUInt32();
             break;
           }
           case 29: {
@@ -392,7 +399,7 @@ namespace NewProtos {
             break;
           }
           case 64: {
-            Unk3300LCKECJCKKJK = input.ReadUInt32();
+            OriginalHitEffLevel = input.ReadUInt32();
             break;
           }
           case 77: {

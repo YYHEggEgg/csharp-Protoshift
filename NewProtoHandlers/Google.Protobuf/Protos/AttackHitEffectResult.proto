@@ -22,7 +22,10 @@ message AttackHitEffectResult {
   float air_strength = 13;
   float hit_halt_time_scale = 10;
   float hit_halt_time = 9;
-  uint32 Unk3300_LCKECJCKKJK = 8;
-  uint32 Unk3300_KLNGDAMMFIF = 1;
+  // 虽然不太可靠，但是756条记录中这两个字段总是相同，随便改了，都一样
+  // uint32 Unk3300_LCKECJCKKJK = 8;
+  uint32 original_hit_eff_level = 8;
+  // uint32 Unk3300_KLNGDAMMFIF = 1;
+  uint32 hit_eff_level = 1;
   float retreat_strength = 3;
 }
