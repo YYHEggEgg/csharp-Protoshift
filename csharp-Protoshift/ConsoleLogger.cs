@@ -122,7 +122,11 @@ namespace csharp_Protoshift
                 {
                     Console.Write(nowtime);
                     string header = WriteAndGetLogInfo(level, sender);
-                    Console.WriteLine(content);
+                    // content should < 16 KB, or not output to console
+                    if (content.Length < 16 * 1024)
+                        Console.WriteLine(content);
+                    else
+                        Console.WriteLine("[content too long (>16 KB), so not output to console]");
                     logwriter.WriteLine($"{nowtime}{header}{content}");
                 }
             });
