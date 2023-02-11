@@ -68,7 +68,7 @@ namespace NewProtos
 
         public static string Initialize()
         {
-            return "OK";
+            return $"NewProtos initialized, {serializers.Count} serializers.";
         }
     }
 }
