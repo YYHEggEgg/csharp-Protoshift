@@ -1,4 +1,5 @@
-﻿using Google.Protobuf;
+﻿using csharp_Protoshift.GameSession.SpecialFixs;
+using Google.Protobuf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace csharp_Protoshift.GameSession
         /// <summary>
         /// Serializer cache for fast CmdId queries. Notice that the ushort key refers to newcmdid.
         /// </summary>
-        private static Dictionary<ushort, UnionCmdShiftUtils> serializers = new();
+        private static Dictionary<ushort, ProtoShiftUtils> serializers = new();
         private static MessageParser<NewProtos.UnionCmdNotify> newunionParser = 
             NewProtos.UnionCmdNotify.Parser;
 
@@ -32,18 +33,20 @@ namespace csharp_Protoshift.GameSession
                 ushort newmsg_cmdid = (ushort)newmsg.MessageId;
                 byte[] newmsg_body = newmsg.Body.ToByteArray();
 
-                UnionCmdShiftUtils utils;
+                ProtoShiftUtils utils;
                 #region Utils Chekc
                 if (!serializers.ContainsKey(newmsg_cmdid))
                 {
-                    utils = new(newmsg_cmdid);
+                    utils = new(newmsg_cmdid, true);
                     serializers.Add(newmsg_cmdid, utils);
                 }
                 else utils = serializers[newmsg_cmdid];
                 #endregion
 
+                newmsg_body = ExtraFix.SpecialHandle(newmsg_cmdid, true, newmsg_body);
+
                 ushort oldmsg_cmdid = utils.oldcmdid;
-                byte[] oldmsg_body = utils.Protoshift(newmsg_body);
+                byte[] oldmsg_body = utils.NewShiftToOld(newmsg_body);
                 oldunionCmds.CmdList.Add(new OldProtos.UnionCmd
                 {
                     MessageId = oldmsg_cmdid,
@@ -55,7 +58,7 @@ namespace csharp_Protoshift.GameSession
         }
     }
 
-    internal struct UnionCmdShiftUtils
+    internal struct ProtoShiftUtils
     {
         public ushort newcmdid;
         public ushort oldcmdid;
@@ -67,32 +70,100 @@ namespace csharp_Protoshift.GameSession
         /// </summary>
         public bool skip;
 
-        public UnionCmdShiftUtils(ushort newcmdid)
+        public ProtoShiftUtils(ushort cmdid, bool isNewProtocol)
         {
-            this.newcmdid = newcmdid;
+            if (isNewProtocol)
+            {
+                newcmdid = cmdid;
+                try
+                {
+                    NewProtos.QueryCmdId.TryGetSerializer(newcmdid, out newserializer);
+                    protoname = newserializer.Protoname;
+                    oldcmdid = (ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname);
+                    OldProtos.QueryCmdId.TryGetSerializer(oldcmdid, out oldserializer);
+                    skip = false;
+                }
+                catch (Exception ex)
+                {
+                    Log.Erro($"Exception happened when initializing Proto newCmdId:{newcmdid}, " +
+                        $"so it will be ignored!", "ProtoShiftUtils");
+                    Log.Erro($"{ex};\nInnerException:{ex.InnerException}", "ProtoShiftUtils");
+                    skip = true;
+                    oldserializer = new("GetPlayerTokenReq");
+                    newserializer = new("PlayerLoginRsp");
+                    protoname = "WR1tten by YYHEYggegg";
+                    oldcmdid = 6167;
+                }
+            }
+            else
+            {
+                oldcmdid = cmdid;
+                try
+                {
+                    OldProtos.QueryCmdId.TryGetSerializer(oldcmdid, out oldserializer);
+                    protoname = oldserializer.Protoname;
+                    newcmdid = (ushort)NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname);
+                    NewProtos.QueryCmdId.TryGetSerializer(newcmdid, out newserializer);
+                    skip = false;
+                }
+                catch (Exception ex)
+                {
+                    Log.Erro($"Exception happened when initializing Proto oldCmdId:{oldcmdid}, " +
+                        $"so it will be ignored!", "ProtoShiftUtils");
+                    Log.Erro($"{ex};\nInnerException:{ex.InnerException}", "ProtoShiftUtils");
+                    skip = true;
+                    oldserializer = new("GetPlayerTokenReq");
+                    newserializer = new("PlayerLoginRsp");
+                    protoname = "WR1tten by YYHEYggegg";
+                    newcmdid = 6167;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Warning: using this initializer means that you accept CmdId to be invalid when not exist.
+        /// </summary>
+        /// <param name="protoname"></param>
+        public ProtoShiftUtils(string? protoname)
+        {
             try
             {
-                NewProtos.QueryCmdId.TryGetSerializer(newcmdid, out newserializer);
-                protoname = newserializer.Protoname;
-                oldcmdid = (ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname);
-                OldProtos.QueryCmdId.TryGetSerializer(oldcmdid, out oldserializer);
+                if (protoname == null)
+                {
+                    throw new ArgumentNullException(nameof(protoname));
+                }
+                this.protoname = protoname;
+                OldProtos.QueryCmdId.TryGetSerializer(protoname, out oldserializer);
+                NewProtos.QueryCmdId.TryGetSerializer(protoname, out newserializer);
+                try
+                {
+                    oldcmdid = (ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname);
+                    newcmdid = (ushort)NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname);
+                }
+                catch 
+                {
+                    newcmdid = oldcmdid = 11451;
+                }
                 skip = false;
             }
             catch (Exception ex)
             {
-                Log.Erro($"Exception happened when initializing Proto newCmdId:{newcmdid}, " +
-                    $"so it will be ignored in UnionCmdNotify!", "UnionCmdShiftUtils");
-                Log.Erro($"{ex};\nInnerException:{ex.InnerException}", "UnionCmdShiftUtils");
+                Log.Erro($"Exception happened when initializing Proto Name:{protoname}, " +
+                    $"so it will be ignored!", "ProtoShiftUtils");
+                Log.Erro($"{ex};\nInnerException:{ex.InnerException}", "ProtoShiftUtils");
+                this.protoname = "WR1tten by YYHEYggegg";
                 skip = true;
                 oldserializer = new("GetPlayerTokenReq");
                 newserializer = new("PlayerLoginRsp");
-                protoname = "WR1tten by YYHEYggegg";
-                oldcmdid = 6167;
+                newcmdid = 6167;
+                oldcmdid = 8431;
             }
         }
 
-        public byte[] Protoshift(byte[] newbody)
+        public byte[] NewShiftToOld(byte[] newbody)
         {
+            if (skip) return newbody;
+
             string newjson = newserializer.DeserializeToJson(newbody);
             byte[] oldbody = oldserializer.SerializeFromJson(newjson);
 #if DEBUG
@@ -107,6 +178,32 @@ namespace csharp_Protoshift.GameSession
             }
 #endif
             return oldbody;
+        }
+
+        public byte[] OldShiftToNew(byte[] oldbody)
+        {
+            if (skip) return oldbody;
+
+            string oldjson = oldserializer.DeserializeToJson(oldbody);
+            byte[] newbody = newserializer.SerializeFromJson(oldjson);
+#if DEBUG
+            string newjson = newserializer.DeserializeToJson(newbody);
+            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
+            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
+
+            if (newlines.Length != oldlines.Length)
+            {
+                Log.Warn($"Packet {protoname}(Unioned) has an information lost in Protoshift:\n" +
+                    $"new: {newjson}\nold: {oldjson}", $"UnionCmdHandler");
+            }
+#endif
+            return newbody;
+        }
+
+        public string GetJson(byte[] data, bool isNewProto)
+        {
+            if (skip) return "{  }";
+            return isNewProto ? newserializer.DeserializeToJson(data) : oldserializer.DeserializeToJson(data);
         }
     }
 }
