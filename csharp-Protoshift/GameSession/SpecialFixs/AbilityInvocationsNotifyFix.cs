@@ -35,10 +35,10 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                 { NewProtos.AbilityInvokeArgument.MetaModifierChange, typeof(NewProtos.AbilityMetaModifierChange) },
                 // { NewProtos.AbilityInvokeArgument.MetaCommandModifierChangeRequest, typeof(NewProtos.AbilityMetaCommandModifierChangeRequest) },
                 { NewProtos.AbilityInvokeArgument.MetaSpecialFloatArgument, typeof(NewProtos.AbilityMetaSpecialFloatArgument) },
-                // { NewProtos.AbilityInvokeArgument.MetaOverrideParam, typeof(NewProtos.AbilityMetaOverrideParam) },
+                { NewProtos.AbilityInvokeArgument.MetaOverrideParam, typeof(NewProtos.AbilityScalarValueEntry) }, // Name don't equal
                 // { NewProtos.AbilityInvokeArgument.MetaClearOverrideParam, typeof(NewProtos.AbilityMetaClearOverrideParam) },
                 { NewProtos.AbilityInvokeArgument.MetaReinitOverridemap, typeof(NewProtos.AbilityMetaReInitOverrideMap) }, // Name don't equal
-                // { NewProtos.AbilityInvokeArgument.MetaGlobalFloatValue, typeof(NewProtos.AbilityMetaGlobalFloatValue) },
+                { NewProtos.AbilityInvokeArgument.MetaGlobalFloatValue, typeof(NewProtos.AbilityScalarValueEntry) }, // Name don't equal
                 // { NewProtos.AbilityInvokeArgument.MetaClearGlobalFloatValue, typeof(NewProtos.AbilityMetaClearGlobalFloatValue) },
                 // { NewProtos.AbilityInvokeArgument.MetaAbilityElementStrength, typeof(NewProtos.AbilityMetaAbilityElementStrength) },
                 { NewProtos.AbilityInvokeArgument.MetaAddOrGetAbilityAndTrigger, typeof(NewProtos.AbilityMetaAddOrGetAbilityAndTrigger) },
