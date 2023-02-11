@@ -22,6 +22,7 @@ namespace csharp_Protoshift.Commands
             handlers.Add(new SetVerboseCmd());
             handlers.Add(new SelectRecordCmd());
             handlers.Add(new ShowRecordCmd());
+            handlers.Add(new StopServerCmd());
         }
 
         public static List<ICommandHandler> handlers = new();
