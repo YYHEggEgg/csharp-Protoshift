@@ -2,6 +2,7 @@
 using csharp_Protoshift.Commands;
 using csharp_Protoshift.Commands.SkillIssueFix;
 using csharp_Protoshift.GameSession;
+using csharp_Protoshift.GameSession.SpecialFixs;
 using csharp_Protoshift.KcpProxy;
 using csharp_Protoshift.resLoader;
 using System.Net;
@@ -22,12 +23,6 @@ namespace csharp_Protoshift
             ResourcesLoader.CheckForRequiredResources();
             await ResourcesLoader.Load();
 
-            var kcpProxy = new KcpProxyServer(new IPEndPoint(IPAddress.Loopback, 22102),
-                new IPEndPoint(IPAddress.Parse("192.168.127.130"), 20041));
-
-            kcpProxy.StartProxy(GameSessionDispatch.HandleServerPacket,
-                GameSessionDispatch.HandleClientPacket);
-
             #region SkillIssueFixCmd
             SkillIssueFixCmd? sicmd = null;
             if (File.Exists("skillissue_fix_config.json"))
@@ -46,11 +41,18 @@ namespace csharp_Protoshift
             }, null, 0, 60000);
             #endregion
 
-            Log.Info("Protoshift server started on 127.0.0.1:22102");
             Log.Info("Start loading all protos, it will take some time...");
-            NewProtos.QueryCmdId.Initialize();
-            Log.Info("Client protos loaded, start loading server protos...");
-            OldProtos.QueryCmdId.Initialize();
+            Log.Info(NewProtos.QueryCmdId.Initialize());
+            Log.Info(OldProtos.QueryCmdId.Initialize());
+
+            Log.Info(ExtraFix.Initialize());
+
+            var kcpProxy = new KcpProxyServer(new IPEndPoint(IPAddress.Loopback, 22102),
+                new IPEndPoint(IPAddress.Parse("192.168.127.130"), 20041));
+
+            kcpProxy.StartProxy(GameSessionDispatch.HandleServerPacket,
+                GameSessionDispatch.HandleClientPacket);
+            Log.Info("Protoshift server started on 127.0.0.1:22102");
             Log.Info("Ready! Type 'help' to get command help.");
 
             await CommandLine.Start();
