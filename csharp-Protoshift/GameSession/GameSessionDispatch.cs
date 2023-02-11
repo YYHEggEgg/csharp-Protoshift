@@ -25,10 +25,10 @@ namespace csharp_Protoshift.GameSession
             catch (Exception ex) 
             {
                 Log.Erro($"Exception when handling packets: {ex}; Inner: {ex.InnerException}", "GameSessionDispatch:Server");
-                return new byte[0]; 
+                return Array.Empty<byte>(); 
             }
 #else
-            catch { return new byte[0]; }
+            catch { return Array.Empty<byte>(); }
 #endif
         }
 
@@ -44,10 +44,10 @@ namespace csharp_Protoshift.GameSession
             catch (Exception ex)
             {
                 Log.Erro($"Exception when handling packets: {ex}; Inner: {ex.InnerException}", "GameSessionDispatch:Server");
-                return new byte[0];
+                return Array.Empty<byte>();
             }
 #else
-            catch { return new byte[0]; }
+            catch { return Array.Empty<byte>(); }
 #endif
         }
     }

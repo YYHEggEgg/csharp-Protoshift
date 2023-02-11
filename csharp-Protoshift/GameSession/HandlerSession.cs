@@ -17,7 +17,7 @@ namespace csharp_Protoshift.GameSession
         /// XOR key used to decrypt packet. Usually have a length of 4096.
         /// </summary>
         public byte[] XorKey { get; protected set; }
-        protected PacketRecord[] records;
+        public PacketRecord[] records;
         public uint SessionId { get; private set; }
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace csharp_Protoshift.GameSession
         /// Whether output packets in the console.
         /// </summary>
         public bool Verbose { get; set; }
-        protected int packetCounts = 0;
+        public int packetCounts { get; protected set;}
         public int PacketRecordLimits { get; }
 
         /// <summary>
@@ -42,13 +42,14 @@ namespace csharp_Protoshift.GameSession
             records = new PacketRecord[packetLimits];
             SessionId = sessionId;
             PacketRecordLimits = packetLimits;
-            client_seed = server_seed = new byte[0];
-            Verbose = true;
+            client_seed = server_seed = Array.Empty<byte>();
+            // Verbose = true;
+            Verbose = false;
         }
 
         public byte[] HandlePacket(byte[] packet, bool isNewCmdid)
         {
-            if (packet == null) throw new ArgumentNullException("Received Null packet!");
+            if (packet == null) throw new ArgumentNullException(nameof(packet));
             bool fallback = false; // Whether use dispatchKey
             XorDecrypt(ref packet, 0, 2);
             // Reference: https://sdl.moe/post/magic-sniffer/#%E5%B7%B2%E7%9F%A5%E6%98%8E%E6%96%87%E6%94%BB%E5%87%BB
@@ -129,7 +130,7 @@ namespace csharp_Protoshift.GameSession
                     Log.Erro($"Packet with CmdId:{cmdid} from Client" +
                         $" has no record in newcmdid.csv and dropped:---{Convert.ToHexString(packet)}", 
                         $"PacketHandler({SessionId})");
-                    return new byte[0];
+                    return Array.Empty<byte>();
                 }
                 string protoname = newserializer.Protoname;
                 string newjson = newserializer.DeserializeToJson(bodyfrom);
@@ -152,7 +153,7 @@ namespace csharp_Protoshift.GameSession
                         Log.Erro($"Packet {protoname} from Client" +
                             $" has no record in oldcmdid.csv and dropped:---{Convert.ToHexString(packet)}",
                             $"PacketHandler({SessionId})");
-                        return new byte[0];
+                        return Array.Empty<byte>();
                     }
 
                     // KillSkillIssue fix
@@ -180,14 +181,15 @@ namespace csharp_Protoshift.GameSession
                         dataLostSign = true;
                     }
                 }
+                else oldjson = "UnionCmdNotify - not enabled";
 #endif
-                #endregion
+                    #endregion
                 #endregion
 
                 #region Notify
                 if (protoname == "GetPlayerTokenReq")
                 {
-                    Task.WaitAll(GetPlayerTokenReqNotify(newjson));
+                    GetPlayerTokenReqNotify(newjson).Wait();
                 }
                 #endregion
 
@@ -243,7 +245,7 @@ namespace csharp_Protoshift.GameSession
                     Log.Erro($"Packet with CmdId:{cmdid} from Server" +
                         $" has no record in oldcmdid.csv and dropped:---{Convert.ToHexString(packet)}",
                         $"PacketHandler({SessionId})");
-                    return new byte[0];
+                    return Array.Empty<byte>();
                 }
                 string protoname = oldserializer.Protoname;
                 string oldjson = oldserializer.DeserializeToJson(bodyfrom);
@@ -261,7 +263,7 @@ namespace csharp_Protoshift.GameSession
                     Log.Erro($"Packet {protoname} from Server" +
                         $" has no record in newcmdid.csv and dropped:---{Convert.ToHexString(packet)}",
                         $"PacketHandler({SessionId})");
-                    return new byte[0];
+                    return Array.Empty<byte>();
                 }
 
                 // KillSkillIssue fix
@@ -290,7 +292,7 @@ namespace csharp_Protoshift.GameSession
                 #region Notify
                 if (protoname == "GetPlayerTokenRsp")
                 {
-                    Task.WaitAll(GetPlayerTokenRspNotify(oldjson));
+                    GetPlayerTokenRspNotify(oldjson).Wait();
                 }
                 #endregion
 
@@ -384,18 +386,18 @@ namespace csharp_Protoshift.GameSession
             }
         }
 
-        static JsonSerializer serializer = new();
+        static readonly JsonSerializer serializer = new();
 
         public static string ConvertJsonString(string str)
         {
             //格式化json字符串
             TextReader tr = new StringReader(str);
-            JsonTextReader jtr = new JsonTextReader(tr);
+            JsonTextReader jtr = new(tr);
             object? obj = serializer.Deserialize(jtr);
             if (obj != null)
             {
-                StringWriter textWriter = new StringWriter();
-                JsonTextWriter jsonWriter = new JsonTextWriter(textWriter)
+                StringWriter textWriter = new();
+                JsonTextWriter jsonWriter = new(textWriter)
                 {
                     Formatting = Formatting.Indented,
                     Indentation = 4,
@@ -431,6 +433,7 @@ namespace csharp_Protoshift.GameSession
         {
             var query = from record in records
                         where record.PacketName == protoname
+                        orderby record.Id
                         select record;
             return query.ToList();
         }
@@ -439,6 +442,7 @@ namespace csharp_Protoshift.GameSession
         {
             var query = from record in records
                         where record.PacketName == protoname
+                        orderby record.Id
                         select record.Id;
             return query.ToList();
         }
