@@ -1,4 +1,5 @@
-﻿using csharp_Protoshift.resLoader;
+﻿using csharp_Protoshift.GameSession.SpecialFixs;
+using csharp_Protoshift.resLoader;
 using csharp_Protoshift.RSA;
 using Funny.Crypto;
 using Newtonsoft.Json;
@@ -43,8 +44,8 @@ namespace csharp_Protoshift.GameSession
             SessionId = sessionId;
             PacketRecordLimits = packetLimits;
             client_seed = server_seed = Array.Empty<byte>();
-            Verbose = true;
-            // Verbose = false;
+            // Verbose = true;
+            Verbose = false;
         }
 
         public byte[] HandlePacket(byte[] packet, bool isNewCmdid)
@@ -121,6 +122,8 @@ namespace csharp_Protoshift.GameSession
         {
             var bodyfrom = new byte[body_length];
             Array.Copy(packet, body_offset, bodyfrom, 0, body_length);
+            // Special Fix
+            bodyfrom = ExtraFix.SpecialHandle(cmdid, isNewCmdid, bodyfrom);
             #region Client packet
             if (isNewCmdid)
             {
@@ -183,7 +186,7 @@ namespace csharp_Protoshift.GameSession
                 }
                 else oldjson = "UnionCmdNotify - not enabled";
 #endif
-                    #endregion
+                #endregion
                 #endregion
 
                 #region Notify
