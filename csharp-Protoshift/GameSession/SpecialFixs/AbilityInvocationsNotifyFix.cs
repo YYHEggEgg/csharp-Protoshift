@@ -8,7 +8,7 @@ using System.Threading.Tasks.Dataflow;
 
 namespace csharp_Protoshift.GameSession.SpecialFixs
 {
-    internal class AbilityInvocationsNotifyFix : ISpecialBytesSkillIssueFixer<NewProtos.AbilityInvokeArgument>
+    internal class AbilityInvocationsNotifyFix : ISpecialBytesSkillIssueFixer<NewProtos.AbilityInvokeArgument, OldProtos.AbilityInvokeArgument>
     {
         public string Protoname => "AbilityInvocationsNotify";
 
@@ -18,11 +18,14 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
         /// Only used for new proto -> old proto now.
         /// </summary>
         public OldProtos.ProtoSerialize Mainutil_old => throw new NotImplementedException();
-
-        public Dictionary<NewProtos.AbilityInvokeArgument, ProtoShiftUtils> utils { get; }
+        
         private readonly Dictionary<NewProtos.AbilityInvokeArgument, Type> messages;
 
         public string ApplyToVersion => "3.3.0";
+
+        public Dictionary<NewProtos.AbilityInvokeArgument, ProtoShiftUtils> newutils { get; }
+
+        public Dictionary<OldProtos.AbilityInvokeArgument, ProtoShiftUtils> oldutils { get; }
 
         public AbilityInvocationsNotifyFix()
         {
@@ -100,62 +103,107 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
 
             };
             #endregion
-            utils = new();  
+            newutils = new();
+            oldutils = new();
             foreach (var pair in messages)
             {
-                utils.Add(pair.Key, new(pair.Value.Name));
+                newutils.Add(pair.Key, new(pair.Value.Name));
+                oldutils.Add(Enum.Parse<OldProtos.AbilityInvokeArgument>(pair.Key.ToString()), new(pair.Value.Name));
             }
-        }
+        }      
 
         public byte[] Handle(byte[] data, bool isNewCmdid)
         {
-            if (!isNewCmdid)
+            if (isNewCmdid)
             {
-                Log.Erro($"Old shift to new is not implemented in AbilityInvocationsNotifyFix", "AbilityInvocationsNotifyFix");
-                return data;
-            }
-            NewProtos.AbilityInvocationsNotify notify;
-            try
-            {
-                notify = NewProtos.AbilityInvocationsNotify.Parser.ParseFrom(data);
-            }
-            catch (Exception ex)
-            {
-                Log.Erro("Error occurred when serializing NewProtos.AbilityInvocationsNotify so not shifted: " +
-                    $"{ex};\nInnerException:{ex.InnerException};\n" +
-                    $"data: {Convert.ToHexString(data)}", "AbilityInvocationsNotifyFix");
-                return data;
-            }
-            foreach (var invoke in notify.Invokes)
-            {
-                if (utils.ContainsKey(invoke.ArgumentType))
+                NewProtos.AbilityInvocationsNotify notify;
+                try
                 {
-                    try
-                    {
-                        var newdata = invoke.AbilityData.ToByteArray();
-                        var olddata = utils[invoke.ArgumentType].NewShiftToOld(newdata);
-                        invoke.AbilityData = ByteString.FromBase64(Convert.ToBase64String(olddata));
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
-                            $"{ex};\nInnerException:{ex.InnerException};\n" +
-                            $"data: {Mainutil_new.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix");
-                        continue;
-                    }
+                    notify = NewProtos.AbilityInvocationsNotify.Parser.ParseFrom(data);
                 }
-                else
+                catch (Exception ex)
                 {
-                    if (invoke.AbilityData.Length > 0)
+                    Log.Erro("Error occurred when serializing NewProtos.AbilityInvocationsNotify so not shifted: " +
+                        $"{ex};\nInnerException:{ex.InnerException};\n" +
+                        $"data: {Convert.ToHexString(data)}", "AbilityInvocationsNotifyFix");
+                    return data;
+                }
+                foreach (var invoke in notify.Invokes)
+                {
+                    if (newutils.ContainsKey(invoke.ArgumentType))
                     {
-                        Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
+                        try
+                        {
+                            var newdata = invoke.AbilityData.ToByteArray();
+                            var olddata = newutils[invoke.ArgumentType].NewShiftToOld(newdata);
+                            invoke.AbilityData = ByteString.FromBase64(Convert.ToBase64String(olddata));
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
+                                $"{ex};\nInnerException:{ex.InnerException};\n" +
                                 $"data: {Mainutil_new.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix");
-                        continue;
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        if (invoke.AbilityData.Length > 0)
+                        {
+                            Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
+                                    $"data: {Mainutil_new.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix");
+                            continue;
+                        }
                     }
                 }
-            }
 
-            return notify.ToByteArray();
+                return notify.ToByteArray();
+            }
+            else
+            {
+                OldProtos.AbilityInvocationsNotify notify;
+                try
+                {
+                    notify = OldProtos.AbilityInvocationsNotify.Parser.ParseFrom(data);
+                }
+                catch (Exception ex)
+                {
+                    Log.Erro("Error occurred when serializing OldProtos.AbilityInvocationsNotify so not shifted: " +
+                        $"{ex};\nInnerException:{ex.InnerException};\n" +
+                        $"data: {Convert.ToHexString(data)}", "AbilityInvocationsNotifyFix");
+                    return data;
+                }
+                foreach (var invoke in notify.Invokes)
+                {
+                    if (oldutils.ContainsKey(invoke.ArgumentType))
+                    {
+                        try
+                        {
+                            var olddata = invoke.AbilityData.ToByteArray();
+                            var newdata = oldutils[invoke.ArgumentType].OldShiftToNew(olddata);
+                            invoke.AbilityData = ByteString.FromBase64(Convert.ToBase64String(newdata));
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
+                                $"{ex};\nInnerException:{ex.InnerException};\n" +
+                                $"data: {Mainutil_old.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix");
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        if (invoke.AbilityData.Length > 0)
+                        {
+                            Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
+                                    $"data: {Mainutil_old.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix");
+                            continue;
+                        }
+                    }
+                }
+
+                return notify.ToByteArray();
+            }
         }
     }
 }

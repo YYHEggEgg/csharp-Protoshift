@@ -7,23 +7,28 @@ using System.Threading.Tasks;
 
 namespace csharp_Protoshift.GameSession.SpecialFixs
 {
-    internal class CombatInvocationsNotifyFix : ISpecialBytesSkillIssueFixer<NewProtos.CombatTypeArgument>
+    internal class CombatInvocationsNotifyFix : ISpecialBytesSkillIssueFixer<NewProtos.CombatTypeArgument, OldProtos.CombatTypeArgument>
     {
-        public Dictionary<NewProtos.CombatTypeArgument, ProtoShiftUtils> utils { get; }
         private readonly Dictionary<NewProtos.CombatTypeArgument, Type> messages;
 
         public string Protoname => "CombatInvocationsNotify";
 
         public NewProtos.ProtoSerialize Mainutil_new { get; }
 
-        public OldProtos.ProtoSerialize Mainutil_old => throw new NotImplementedException();
+        public OldProtos.ProtoSerialize Mainutil_old { get; }
 
         public string ApplyToVersion => "3.3.0";
+
+        public Dictionary<NewProtos.CombatTypeArgument, ProtoShiftUtils> newutils { get; }
+
+        public Dictionary<OldProtos.CombatTypeArgument, ProtoShiftUtils> oldutils { get; }
 
         public CombatInvocationsNotifyFix()
         {
             NewProtos.QueryCmdId.TryGetSerializer("CombatInvocationsNotify", out var newserializer);
             Mainutil_new = newserializer;
+            OldProtos.QueryCmdId.TryGetSerializer("CombatInvocationsNotify", out var oldserializer);
+            Mainutil_old = oldserializer;
             #region Hardcoded
             messages = new Dictionary<NewProtos.CombatTypeArgument, Type>
             {
@@ -42,67 +47,112 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                 { NewProtos.CombatTypeArgument.FixedRushMove, typeof(NewProtos.EvtFixedRushMove) }, // Name don't equal
                 { NewProtos.CombatTypeArgument.SyncTransform, typeof(NewProtos.EvtSyncTransform) }, // Name don't equal
                 { NewProtos.CombatTypeArgument.LightCoreMove, typeof(NewProtos.EvtLightCoreMove) }, // Name don't equal
-                // { NewProtos.CombatTypeArgument.BeingHealedNtf, typeof(NewProtos.EvtBeingHealedNtf) },
+                { NewProtos.CombatTypeArgument.BeingHealedNtf, typeof(NewProtos.EvtBeingHealedNotify) }, // Name don't equal
                 { NewProtos.CombatTypeArgument.SkillAnchorPositionNtf, typeof(NewProtos.EvtSyncSkillAnchorPosition) }, // Name don't equal
                 { NewProtos.CombatTypeArgument.GrapplingHookMove, typeof(NewProtos.EvtGrapplingHookMove) }, // Name don't equal
             };
             #endregion
-            utils = new();
+            newutils = new();
+            oldutils = new();
             foreach (var pair in messages)
             {
-                utils.Add(pair.Key, new(pair.Value.Name));
+                newutils.Add(pair.Key, new(pair.Value.Name));
+                oldutils.Add(Enum.Parse<OldProtos.CombatTypeArgument>(pair.Key.ToString()), new(pair.Value.Name));
             }
         }
 
         public byte[] Handle(byte[] data, bool isNewCmdid)
         {
-            if (!isNewCmdid)
+            if (isNewCmdid)
             {
-                Log.Erro($"Old shift to new is not implemented in CombatInvocationsNotifyFix", "CombatInvocationsNotifyFix");
-                return data;
-            }
-            NewProtos.CombatInvocationsNotify notify;
-            try
-            {
-                notify = NewProtos.CombatInvocationsNotify.Parser.ParseFrom(data);
-            }
-            catch (Exception ex)
-            {
-                Log.Erro("Error occurred when serializing NewProtos.CombatInvocationsNotify so not shifted: " +
-                    $"{ex};\nInnerException:{ex.InnerException};\n" +
-                    $"data: {Convert.ToHexString(data)}", "CombatInvocationsNotifyFix");
-                return data;
-            }
-            foreach (var invoke in notify.InvokeList)
-            {
-                if (utils.ContainsKey(invoke.ArgumentType))
+                NewProtos.CombatInvocationsNotify notify;
+                try
                 {
-                    try
-                    {
-                        var newdata = invoke.CombatData.ToByteArray();
-                        var olddata = utils[invoke.ArgumentType].NewShiftToOld(newdata);
-                        invoke.CombatData = ByteString.FromBase64(Convert.ToBase64String(olddata));
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
-                            $"{ex};\nInnerException:{ex.InnerException};\n" +
-                            $"data: {Mainutil_new.DeserializeToJson(data)}", "CombatInvocationsNotifyFix");
-                        continue;
-                    }
+                    notify = NewProtos.CombatInvocationsNotify.Parser.ParseFrom(data);
                 }
-                else
+                catch (Exception ex)
                 {
-                    if (invoke.CombatData.Length > 0)
+                    Log.Erro("Error occurred when serializing NewProtos.CombatInvocationsNotify so not shifted: " +
+                        $"{ex};\nInnerException:{ex.InnerException};\n" +
+                        $"data: {Convert.ToHexString(data)}", "CombatInvocationsNotifyFix");
+                    return data;
+                }
+                foreach (var invoke in notify.InvokeList)
+                {
+                    if (newutils.ContainsKey(invoke.ArgumentType))
                     {
-                        Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
+                        try
+                        {
+                            var newdata = invoke.CombatData.ToByteArray();
+                            var olddata = newutils[invoke.ArgumentType].NewShiftToOld(newdata);
+                            invoke.CombatData = ByteString.FromBase64(Convert.ToBase64String(olddata));
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
+                                $"{ex};\nInnerException:{ex.InnerException};\n" +
                                 $"data: {Mainutil_new.DeserializeToJson(data)}", "CombatInvocationsNotifyFix");
-                        continue;
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        if (invoke.CombatData.Length > 0)
+                        {
+                            Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
+                                    $"data: {Mainutil_new.DeserializeToJson(data)}", "CombatInvocationsNotifyFix");
+                            continue;
+                        }
                     }
                 }
-            }
 
-            return notify.ToByteArray();
+                return notify.ToByteArray();
+            }
+            else
+            {
+                OldProtos.CombatInvocationsNotify notify;
+                try
+                {
+                    notify = OldProtos.CombatInvocationsNotify.Parser.ParseFrom(data);
+                }
+                catch (Exception ex)
+                {
+                    Log.Erro("Error occurred when serializing OldProtos.CombatInvocationsNotify so not shifted: " +
+                        $"{ex};\nInnerException:{ex.InnerException};\n" +
+                        $"data: {Convert.ToHexString(data)}", "CombatInvocationsNotifyFix");
+                    return data;
+                }
+                foreach (var invoke in notify.InvokeList)
+                {
+                    if (oldutils.ContainsKey(invoke.ArgumentType))
+                    {
+                        try
+                        {
+                            var olddata = invoke.CombatData.ToByteArray();
+                            var newdata = oldutils[invoke.ArgumentType].OldShiftToNew(olddata);
+                            invoke.CombatData = ByteString.FromBase64(Convert.ToBase64String(newdata));
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
+                                $"{ex};\nInnerException:{ex.InnerException};\n" +
+                                $"data: {Mainutil_old.DeserializeToJson(data)}", "CombatInvocationsNotifyFix");
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        if (invoke.CombatData.Length > 0)
+                        {
+                            Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
+                                    $"data: {Mainutil_old.DeserializeToJson(data)}", "CombatInvocationsNotifyFix");
+                            continue;
+                        }
+                    }
+                }
+
+                return notify.ToByteArray();
+            }
         }
     }
 }
