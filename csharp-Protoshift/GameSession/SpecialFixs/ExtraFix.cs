@@ -48,11 +48,15 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
     /// <para>Though never could we know why they don't use oneof, we can do no more than adjust to it.</para>
     /// <para>The generic type param T is used for what information it requires for identifying proto type of 'bytes', e.g. ushort for cmdid, specified enum type, etc; thus, for successors, they shouldn't make it a generic implement.</para>
     /// </summary>
-    interface ISpecialBytesSkillIssueFixer<T> : ISpecialBytesSkillIssueFixer where T : notnull
+    interface ISpecialBytesSkillIssueFixer<TNew, TOld> : ISpecialBytesSkillIssueFixer where TNew : notnull where TOld : notnull
     {
         /// <summary>
         /// Utils for inner <c>bytes</c>
         /// </summary>
-        public Dictionary<T, ProtoShiftUtils> utils { get; }
+        public Dictionary<TNew, ProtoShiftUtils> newutils { get; }
+        /// <summary>
+        /// Utils for inner <c>bytes</c>
+        /// </summary>
+        public Dictionary<TOld, ProtoShiftUtils> oldutils { get; }
     }
 }
