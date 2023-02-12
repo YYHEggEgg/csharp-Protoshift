@@ -42,7 +42,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                 // { NewProtos.AbilityInvokeArgument.MetaClearOverrideParam, typeof(NewProtos.AbilityMetaClearOverrideParam) },
                 { NewProtos.AbilityInvokeArgument.MetaReinitOverridemap, typeof(NewProtos.AbilityMetaReInitOverrideMap) }, // Name don't equal
                 { NewProtos.AbilityInvokeArgument.MetaGlobalFloatValue, typeof(NewProtos.AbilityScalarValueEntry) }, // Name don't equal
-                // { NewProtos.AbilityInvokeArgument.MetaClearGlobalFloatValue, typeof(NewProtos.AbilityMetaClearGlobalFloatValue) },
+                { NewProtos.AbilityInvokeArgument.MetaClearGlobalFloatValue, typeof(NewProtos.AbilityString) }, // Name don't equal
                 // { NewProtos.AbilityInvokeArgument.MetaAbilityElementStrength, typeof(NewProtos.AbilityMetaAbilityElementStrength) },
                 { NewProtos.AbilityInvokeArgument.MetaAddOrGetAbilityAndTrigger, typeof(NewProtos.AbilityMetaAddOrGetAbilityAndTrigger) },
                 { NewProtos.AbilityInvokeArgument.MetaSetKilledState, typeof(NewProtos.AbilityMetaSetKilledState) },
@@ -125,7 +125,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                 {
                     Log.Erro("Error occurred when serializing NewProtos.AbilityInvocationsNotify so not shifted: " +
                         $"{ex};\nInnerException:{ex.InnerException};\n" +
-                        $"data: {Convert.ToHexString(data)}", "AbilityInvocationsNotifyFix");
+                        $"data: {Convert.ToHexString(data)}", "AbilityInvocationsNotifyFix(Client)");
                     return data;
                 }
                 foreach (var invoke in notify.Invokes)
@@ -134,15 +134,28 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                     {
                         try
                         {
+                            var util = newutils[invoke.ArgumentType];
                             var newdata = invoke.AbilityData.ToByteArray();
-                            var olddata = newutils[invoke.ArgumentType].NewShiftToOld(newdata);
+                            var olddata = util.NewShiftToOld(newdata);
                             invoke.AbilityData = ByteString.FromBase64(Convert.ToBase64String(olddata));
+#if DEBUG
+                            var newjson = util.GetJson(newdata, true);
+                            var oldjson = util.GetJson(olddata, false);
+                            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
+                            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
+
+                            if (newlines.Length != oldlines.Length)
+                            {
+                                Log.Warn($"AbilityInvocationNotify({invoke.ArgumentType}) has an information lost in Special Fix Protoshift:\n" +
+                                    $"new: {newjson}\nold: {oldjson}", "AbilityInvocationNotifyFix(Client)");
+                            }
+#endif
                         }
                         catch (Exception ex)
                         {
                             Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
                                 $"{ex};\nInnerException:{ex.InnerException};\n" +
-                                $"data: {Mainutil_new.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix");
+                                $"data: {Mainutil_new.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix(Client)");
                             continue;
                         }
                     }
@@ -151,7 +164,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                         if (invoke.AbilityData.Length > 0)
                         {
                             Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
-                                    $"data: {Mainutil_new.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix");
+                                    $"data: {Mainutil_new.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix(Client)");
                             continue;
                         }
                     }
@@ -170,7 +183,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                 {
                     Log.Erro("Error occurred when serializing OldProtos.AbilityInvocationsNotify so not shifted: " +
                         $"{ex};\nInnerException:{ex.InnerException};\n" +
-                        $"data: {Convert.ToHexString(data)}", "AbilityInvocationsNotifyFix");
+                        $"data: {Convert.ToHexString(data)}", "AbilityInvocationsNotifyFix(Server)");
                     return data;
                 }
                 foreach (var invoke in notify.Invokes)
@@ -179,15 +192,28 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                     {
                         try
                         {
+                            var util = oldutils[invoke.ArgumentType];
                             var olddata = invoke.AbilityData.ToByteArray();
-                            var newdata = oldutils[invoke.ArgumentType].OldShiftToNew(olddata);
+                            var newdata = util.OldShiftToNew(olddata);
                             invoke.AbilityData = ByteString.FromBase64(Convert.ToBase64String(newdata));
+#if DEBUG
+                            var newjson = util.GetJson(newdata, true);
+                            var oldjson = util.GetJson(olddata, false);
+                            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
+                            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
+
+                            if (newlines.Length != oldlines.Length)
+                            {
+                                Log.Warn($"AbilityInvocationNotify({invoke.ArgumentType}) has an information lost in Special Fix Protoshift:\n" +
+                                    $"new: {newjson}\nold: {oldjson}", "AbilityInvocationNotifyFix(Server)");
+                            }
+#endif
                         }
                         catch (Exception ex)
                         {
                             Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
                                 $"{ex};\nInnerException:{ex.InnerException};\n" +
-                                $"data: {Mainutil_old.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix");
+                                $"data: {Mainutil_old.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix(Server)");
                             continue;
                         }
                     }
@@ -196,7 +222,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                         if (invoke.AbilityData.Length > 0)
                         {
                             Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
-                                    $"data: {Mainutil_old.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix");
+                                    $"data: {Mainutil_old.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix(Server)");
                             continue;
                         }
                     }
