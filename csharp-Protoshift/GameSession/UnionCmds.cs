@@ -58,7 +58,7 @@ namespace csharp_Protoshift.GameSession
         }
     }
 
-    internal struct ProtoShiftUtils
+    internal class ProtoShiftUtils
     {
         public ushort newcmdid;
         public ushort oldcmdid;

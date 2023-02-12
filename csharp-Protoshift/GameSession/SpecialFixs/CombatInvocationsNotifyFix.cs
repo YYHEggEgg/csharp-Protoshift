@@ -74,7 +74,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                 {
                     Log.Erro("Error occurred when serializing NewProtos.CombatInvocationsNotify so not shifted: " +
                         $"{ex};\nInnerException:{ex.InnerException};\n" +
-                        $"data: {Convert.ToHexString(data)}", "CombatInvocationsNotifyFix");
+                        $"data: {Convert.ToHexString(data)}", "CombatInvocationsNotifyFix(Client)");
                     return data;
                 }
                 foreach (var invoke in notify.InvokeList)
@@ -83,15 +83,28 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                     {
                         try
                         {
+                            var util = newutils[invoke.ArgumentType];
                             var newdata = invoke.CombatData.ToByteArray();
-                            var olddata = newutils[invoke.ArgumentType].NewShiftToOld(newdata);
+                            var olddata = util.NewShiftToOld(newdata);
                             invoke.CombatData = ByteString.FromBase64(Convert.ToBase64String(olddata));
+#if DEBUG
+                            var newjson = util.GetJson(newdata, true);
+                            var oldjson = util.GetJson(olddata, false);
+                            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
+                            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
+
+                            if (newlines.Length != oldlines.Length)
+                            {
+                                Log.Warn($"CombatInvocationNotify({invoke.ArgumentType}) has an information lost in Special Fix Protoshift:\n" +
+                                    $"new: {newjson}\nold: {oldjson}", "CombatInvocationNotifyFix(Client)");
+                            }
+#endif
                         }
                         catch (Exception ex)
                         {
                             Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
                                 $"{ex};\nInnerException:{ex.InnerException};\n" +
-                                $"data: {Mainutil_new.DeserializeToJson(data)}", "CombatInvocationsNotifyFix");
+                                $"data: {Mainutil_new.DeserializeToJson(data)}", "CombatInvocationsNotifyFix(Client");
                             continue;
                         }
                     }
@@ -100,7 +113,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                         if (invoke.CombatData.Length > 0)
                         {
                             Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
-                                    $"data: {Mainutil_new.DeserializeToJson(data)}", "CombatInvocationsNotifyFix");
+                                    $"data: {Mainutil_new.DeserializeToJson(data)}", "CombatInvocationsNotifyFix(Client)");
                             continue;
                         }
                     }
@@ -119,7 +132,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                 {
                     Log.Erro("Error occurred when serializing OldProtos.CombatInvocationsNotify so not shifted: " +
                         $"{ex};\nInnerException:{ex.InnerException};\n" +
-                        $"data: {Convert.ToHexString(data)}", "CombatInvocationsNotifyFix");
+                        $"data: {Convert.ToHexString(data)}", "CombatInvocationsNotifyFix(Server)");
                     return data;
                 }
                 foreach (var invoke in notify.InvokeList)
@@ -128,15 +141,28 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                     {
                         try
                         {
+                            var util = oldutils[invoke.ArgumentType];
                             var olddata = invoke.CombatData.ToByteArray();
                             var newdata = oldutils[invoke.ArgumentType].OldShiftToNew(olddata);
                             invoke.CombatData = ByteString.FromBase64(Convert.ToBase64String(newdata));
+#if DEBUG
+                            var newjson = util.GetJson(newdata, true);
+                            var oldjson = util.GetJson(olddata, false);
+                            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
+                            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
+
+                            if (newlines.Length != oldlines.Length)
+                            {
+                                Log.Warn($"CombatInvocationNotify({invoke.ArgumentType}) has an information lost in Special Fix Protoshift:\n" +
+                                    $"new: {newjson}\nold: {oldjson}", "CombatInvocationNotifyFix(Server)");
+                            }
+#endif
                         }
                         catch (Exception ex)
                         {
                             Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
                                 $"{ex};\nInnerException:{ex.InnerException};\n" +
-                                $"data: {Mainutil_old.DeserializeToJson(data)}", "CombatInvocationsNotifyFix");
+                                $"data: {Mainutil_old.DeserializeToJson(data)}", "CombatInvocationsNotifyFix(Server)");
                             continue;
                         }
                     }
