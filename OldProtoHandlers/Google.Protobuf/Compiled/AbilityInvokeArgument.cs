@@ -24,7 +24,7 @@ namespace OldProtos {
     static AbilityInvokeArgumentReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtBYmlsaXR5SW52b2tlQXJndW1lbnQucHJvdG8q5hkKFUFiaWxpdHlJbnZv",
+            "ChtBYmlsaXR5SW52b2tlQXJndW1lbnQucHJvdG8qkhoKFUFiaWxpdHlJbnZv",
             "a2VBcmd1bWVudBIgChxBQklMSVRZX0lOVk9LRV9BUkdVTUVOVF9OT05FEAAS",
             "MAosQUJJTElUWV9JTlZPS0VfQVJHVU1FTlRfTUVUQV9NT0RJRklFUl9DSEFO",
             "R0UQARJACjxBQklMSVRZX0lOVk9LRV9BUkdVTUVOVF9NRVRBX0NPTU1BTkRf",
@@ -98,7 +98,8 @@ namespace OldProtos {
             "RV9BUkdVTUVOVF9NSVhJTl9VSV9JTlRFUkFDVBB3EjMKL0FCSUxJVFlfSU5W",
             "T0tFX0FSR1VNRU5UX01JWElOX1NIT09UX0ZST01fQ0FNRVJBEHgSNgoyQUJJ",
             "TElUWV9JTlZPS0VfQVJHVU1FTlRfTUlYSU5fRVJBU0VfQlJJQ0tfQUNUSVZJ",
-            "VFkQeUIMqgIJT2xkUHJvdG9zYgZwcm90bzM="));
+            "VFkQeRIqCiZBQklMSVRZX0lOVk9LRV9BUkdVTUVOVF9NSVhJTl9CUkVBS09V",
+            "VBB6QgyqAglPbGRQcm90b3NiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.AbilityInvokeArgument), }, null, null));
@@ -169,6 +170,7 @@ namespace OldProtos {
     [pbr::OriginalName("ABILITY_INVOKE_ARGUMENT_MIXIN_UI_INTERACT")] MixinUiInteract = 119,
     [pbr::OriginalName("ABILITY_INVOKE_ARGUMENT_MIXIN_SHOOT_FROM_CAMERA")] MixinShootFromCamera = 120,
     [pbr::OriginalName("ABILITY_INVOKE_ARGUMENT_MIXIN_ERASE_BRICK_ACTIVITY")] MixinEraseBrickActivity = 121,
+    [pbr::OriginalName("ABILITY_INVOKE_ARGUMENT_MIXIN_BREAKOUT")] MixinBreakout = 122,
   }
 
   #endregion
