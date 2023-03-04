@@ -43,18 +43,30 @@ namespace csharp_Protoshift.KcpProxy
                         if (buffer.Length == 20) // Possibly a "disconnect" packet
                         {
                             var disconn = new Handshake();
+                            var possiblemagic = buffer.GetUInt32(0);
                             try
                             {
-                                disconn.Decode(buffer, Handshake.MAGIC_DISCONNECT);
-                                _State = ConnectionState.CLOSED;
-                                Log.Info($"Client requested disconnect, so send disconnect to server", "KcpProxy");
+                                if (possiblemagic == Handshake.MAGIC_DISCONNECT[0])
+                                {
+                                    disconn.Decode(buffer, Handshake.MAGIC_DISCONNECT);
+                                    _State = ConnectionState.CLOSED;
+                                    Log.Info("Client requested disconnect, so send disconnect to server", "KcpProxy");
 
-                                sendClient?.Disconnect();
-                                return 0;
+                                    sendClient?.Disconnect(disconn.Conv, disconn.Token, disconn.Data);
+                                    return 0;
+                                }
+                                else if (possiblemagic == Handshake.MAGIC_CONNECT[0])
+                                {
+                                    // Reconnect
+                                    disconn.Decode(buffer, Handshake.MAGIC_DISCONNECT);
+                                    Log.Info("Client requested reconnect, set to WAIT", "KcpProxy");
+
+                                    goto case ConnectionState.HANDSHAKE_WAIT;
+                                }
                             }
                             catch (ArgumentException)
                             {
-                                // Do nothing
+                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer)}", "KcpProxy");
                             }
                         }
 
@@ -80,10 +92,10 @@ namespace csharp_Protoshift.KcpProxy
                             Debug.Assert(sendClient == null);
                             sendClient = new(sendToAddress, handshake.Conv, handshake.Token, handshake.Data);
                             Task.WaitAll(sendClient.ConnectAsync());
-                            sendClient.StartDisconnected += () =>
+                            sendClient.StartDisconnected += (conv, token) =>
                             {
                                 Log.Warn("Server requested to disconnect, so send disconnect to client", "KcpProxy");
-                                Disconnect();
+                                Disconnect(conv, token);
                             };
 
                             var sendBackConv = sendClient.GetSendbackHandshake();
@@ -96,12 +108,13 @@ namespace csharp_Protoshift.KcpProxy
                         }
                         catch (ArgumentException)
                         {
+                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer)}", "KcpProxy");
                             throw new SocketException(10053);
                         }
                     }
                 case ConnectionState.HANDSHAKE_CONNECT:
                     {
-                        Log.Erro("KcpProxy is not a client but received HANDSHAKE_CONNECT", "KcpProxy");
+                        Log.Erro("KcpProxy is not a client but reached HANDSHAKE_CONNECT", "KcpProxy");
                         break;
                         /*var handshake = new Handshake();
                         try

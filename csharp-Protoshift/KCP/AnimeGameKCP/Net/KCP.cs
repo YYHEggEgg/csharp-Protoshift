@@ -124,12 +124,13 @@ namespace YSFreedom.Common.Net
                             {
                                 disconn.Decode(buffer, Handshake.MAGIC_DISCONNECT);
                                 _State = ConnectionState.CLOSED;
-                                // Log.Dbug($"DisconnectedNotify");
+                                Log.Dbug($"DisconnectedNotify, Conv={disconn.Conv}, Token={disconn.Token}, Data={disconn.Data}", "KCP");
                                 return 0;
                             }
                             catch (ArgumentException)
                             {
                                 // Do nothing
+                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer)}", "KCP");
                             }
                         }
 
@@ -160,6 +161,7 @@ namespace YSFreedom.Common.Net
                         }
                         catch (ArgumentException)
                         {
+                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer)}", "KCP");
                             throw new SocketException(10053);
                         }
                     }
@@ -179,6 +181,7 @@ namespace YSFreedom.Common.Net
                         }
                         catch (ArgumentException)
                         {
+                            Log.Dbug($"HandShakeConnectNotify: handshake fail, content={Convert.ToHexString(buffer)}", "KCP");
                             throw new SocketException(10053);
                         }
                     }
@@ -296,7 +299,7 @@ namespace YSFreedom.Common.Net
             _Disposed = true;
         }
 
-        public void Disconnect(uint conv = 0, uint token = 0, uint data = 1234567890)
+        public void Disconnect(uint conv = 0, uint token = 0, uint data = 1)
         {
             conv = conv == 0 ? _Conv : conv;
             token = token == 0 ? _Token : token;
