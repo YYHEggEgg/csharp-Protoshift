@@ -35,7 +35,7 @@ namespace csharp_Protoshift.Commands.SkillIssueFix
                 Log.Erro("Too few arguments!", "SkillIssueFixCmd");
                 return;
             }
-            if (args[2] != "enable" || args[2] != "disable" || args[2] != "delete")
+            if (args[2] != "enable" && args[2] != "disable" && args[2] != "delete")
             {
                 Log.Erro("isEnabled should be one of enable/disable/delete!", "SkillIssueFixCmd");
                 return;
