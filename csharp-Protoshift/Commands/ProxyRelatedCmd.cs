@@ -70,7 +70,9 @@ namespace csharp_Protoshift.Commands
             uint conv = uint.Parse(args[0]);
             int packetId = int.Parse(args[1]);
             var packet = GameSessionDispatch.sessions[conv].QueryPacketRecordById(packetId);
-            Log.Info($"Packet {packetId}: {packet.PacketName}, CmdId:{packet.CmdId} from {(packet.sentByClient ? "Client" : "Server")}", "ShowRecordCmd");
+            Log.Info($"Packet {packetId}, {packet.packetTime:yyyy-MM-dd HH:mm:ss}: " +
+                $"{packet.PacketName}, CmdId:{packet.CmdId} from " +
+                $"{(packet.sentByClient ? "Client" : "Server")}", "ShowRecordCmd");
             Log.Info($"Original body bin data: {Convert.ToHexString(packet.data)}", "ShowRecordCmd");
             Log.Info($"Shifted body bin data: {Convert.ToHexString(packet.shiftedData)}", "ShowRecordCmd");
             Log.Info($"Packet with old protocol: {packet.oldjsonContent}", "ShowRecordCmd");
