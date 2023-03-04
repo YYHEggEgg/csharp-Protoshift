@@ -1,5 +1,4 @@
-﻿using csharp_Protoshift.RSA;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -112,7 +111,7 @@ namespace csharp_Protoshift.resLoader
                 if (info.Extension != ".pem") continue;
                 uint id = UInt32.Parse(info.Name[0].ToString());
                 string pemKey = await File.ReadAllTextAsync(file);
-                Resources.CPri.Add(id, new Openssl(pemKey, false));
+                Resources.CPri.Add(id, Tools.LoadRSAKey(pemKey));
             }
             if (Directory.Exists("resources/rsakeys/ServerPri"))
             {
@@ -122,7 +121,7 @@ namespace csharp_Protoshift.resLoader
                     if (info.Extension != ".pem") continue;
                     uint id = UInt32.Parse(info.Name[0].ToString());
                     string pemKey = await File.ReadAllTextAsync(file);
-                    Resources.SPri.Add(id, new Openssl(pemKey, false));
+                    Resources.SPri.Add(id, Tools.LoadRSAKey(pemKey));
                 }
             }
             #endregion

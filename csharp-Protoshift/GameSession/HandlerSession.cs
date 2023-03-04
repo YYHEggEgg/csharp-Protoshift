@@ -1,11 +1,11 @@
 ﻿using csharp_Protoshift.GameSession.SpecialFixs;
 using csharp_Protoshift.resLoader;
-using csharp_Protoshift.RSA;
 using Funny.Crypto;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using YSFreedom.Common.Util;
@@ -192,7 +192,7 @@ namespace csharp_Protoshift.GameSession
                 #region Notify
                 if (protoname == "GetPlayerTokenReq")
                 {
-                    GetPlayerTokenReqNotify(newjson).Wait();
+                    GetPlayerTokenReqNotify(newjson);
                 }
                 #endregion
 
@@ -295,7 +295,7 @@ namespace csharp_Protoshift.GameSession
                 #region Notify
                 if (protoname == "GetPlayerTokenRsp")
                 {
-                    GetPlayerTokenRspNotify(oldjson).Wait();
+                    GetPlayerTokenRspNotify(oldjson);
                 }
                 #endregion
 
@@ -347,19 +347,21 @@ namespace csharp_Protoshift.GameSession
         protected byte[] server_seed;
 
 #pragma warning disable CS8604 // 引用类型参数可能为 null。
-        private async Task GetPlayerTokenReqNotify(string messageJson)
+        private void GetPlayerTokenReqNotify(string messageJson)
         {
             uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
-            client_seed = (await Resources.SPri[key_id].DecryptByPrivateKey(
-                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "clientRandKey").GetString())))
+            client_seed = Resources.SPri[key_id].RsaDecrypt(
+                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "clientRandKey").GetString()), 
+                RSAEncryptionPadding.Pkcs1)
                 .Fill0(8);
         }
 
-        private async Task GetPlayerTokenRspNotify(string messageJson)
+        private void GetPlayerTokenRspNotify(string messageJson)
         {
             uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
-            server_seed = (await Resources.CPri[key_id].DecryptByPrivateKey(
-                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "serverRandKey").GetString())))
+            server_seed = Resources.CPri[key_id].RsaDecrypt(
+                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "serverRandKey").GetString()),
+                RSAEncryptionPadding.Pkcs1)
                 .Fill0(8);
             ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
             XorKey = Generate4096KeyByMT19937(encrypt_seed);

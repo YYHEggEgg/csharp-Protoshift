@@ -9,3 +9,8 @@
 /NewProtoHandlers/obj
 /OldProtoHandlers/bin
 /OldProtoHandlers/obj
+/csharp-Protoshift/bin/Release/net6.0/logs
+/csharp-Protoshift/bin/Debug/net6.0/logs
+/csharp-Protoshift/bin/Debug/net6.0/Temp
+/XC.RSAUtil/bin/Debug/net6.0
+/XC.RSAUtil/obj
