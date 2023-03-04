@@ -25,7 +25,7 @@ namespace NewProtos {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiBCZWdpbkNhbWVyYVNjZW5lTG9va05vdGlmeS5wcm90bxoMVmVjdG9yLnBy",
-            "b3RvIrgFChpCZWdpbkNhbWVyYVNjZW5lTG9va05vdGlmeRIcChNVbmszMzAw",
+            "b3RvIqQFChpCZWdpbkNhbWVyYVNjZW5lTG9va05vdGlmeRIcChNVbmszMzAw",
             "X0hLS0NIQ0VNSklFGLQNIAEoAhIbChNVbmszMzAwX0RGUENNT0ZPTk5LGA8g",
             "ASgIEhsKE1VuazMzMDBfRUVMTk9BSUNIT0oYBCABKAgSGwoTVW5rMzMwMF9P",
             "REFETUJCRlBBUBgHIAEoCBIQCghkdXJhdGlvbhgCIAEoAhIcChNVbmszMzAw",
@@ -33,19 +33,18 @@ namespace NewProtos {
             "ASgCEhQKDG90aGVyX3BhcmFtcxgJIAMoCRIbChNVbmszMzAwX05KTEJJTUpE",
             "RkhKGAMgASgIEhwKE1VuazMzMDBfQUFPR0JDQ05KQUYYyAkgASgIEhIKCWVu",
             "dGl0eV9pZBj7CiABKA0SPgoNa2VlcF9yb3RfdHlwZRgLIAEoDjInLkJlZ2lu",
-            "Q2FtZXJhU2NlbmVMb29rTm90aWZ5LktlZXBSb3RUeXBlEiQKE1VuazMzMDBf",
-            "UFBDSURJQ01JRU4YCCABKAsyBy5WZWN0b3ISHAoTVW5rMzMwMF9BSkVFTkVP",
-            "Q0ZPThjFByABKA0SGwoTVW5rMzMwMF9PTkJETUNIRlBETBgFIAEoCBIbChNV",
-            "bmszMzAwX1BJRUZMQUVHR0JJGAYgASgIEiQKE1VuazMzMDBfRkpERkdMTkxN",
-            "Qk4YDSABKAsyBy5WZWN0b3ISGwoTVW5rMzMwMF9JTE1IRExITEtHShgBIAEo",
-            "CBIbChNVbmszMzAwX0hDTFBHR0FPSUFDGAwgASgCEhsKE1VuazMzMDBfSEZQ",
-            "Q0hGTkZKS1AYDiABKAIiOAoLS2VlcFJvdFR5cGUSEwoPS0VFUF9ST1RfVFlQ",
-            "RV9YEAASFAoQS0VFUF9ST1RfVFlQRV9YWRABQgyqAglOZXdQcm90b3NiBnBy",
-            "b3RvMw=="));
+            "Q2FtZXJhU2NlbmVMb29rTm90aWZ5LktlZXBSb3RUeXBlEhsKCmZvbGxvd19w",
+            "b3MYCCABKAsyBy5WZWN0b3ISHAoTVW5rMzMwMF9BSkVFTkVPQ0ZPThjFByAB",
+            "KA0SGwoTVW5rMzMwMF9PTkJETUNIRlBETBgFIAEoCBIbChNVbmszMzAwX1BJ",
+            "RUZMQUVHR0JJGAYgASgIEhkKCGxvb2tfcG9zGA0gASgLMgcuVmVjdG9yEhsK",
+            "E1VuazMzMDBfSUxNSERMSExLR0oYASABKAgSGwoTVW5rMzMwMF9IQ0xQR0dB",
+            "T0lBQxgMIAEoAhIbChNVbmszMzAwX0hGUENIRk5GSktQGA4gASgCIjgKC0tl",
+            "ZXBSb3RUeXBlEhMKD0tFRVBfUk9UX1RZUEVfWBAAEhQKEEtFRVBfUk9UX1RZ",
+            "UEVfWFkQAUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NewProtos.VectorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.BeginCameraSceneLookNotify), global::NewProtos.BeginCameraSceneLookNotify.Parser, new[]{ "Unk3300HKKCHCEMJIE", "Unk3300DFPCMOFONNK", "Unk3300EELNOAICHOJ", "Unk3300ODADMBBFPAP", "Duration", "Unk3300KCHKKBODNCJ", "Unk3300FIOLGCIKFLH", "OtherParams", "Unk3300NJLBIMJDFHJ", "Unk3300AAOGBCCNJAF", "EntityId", "KeepRotType", "Unk3300PPCIDICMIEN", "Unk3300AJEENEOCFON", "Unk3300ONBDMCHFPDL", "Unk3300PIEFLAEGGBI", "Unk3300FJDFGLNLMBN", "Unk3300ILMHDLHLKGJ", "Unk3300HCLPGGAOIAC", "Unk3300HFPCHFNFJKP" }, null, new[]{ typeof(global::NewProtos.BeginCameraSceneLookNotify.Types.KeepRotType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.BeginCameraSceneLookNotify), global::NewProtos.BeginCameraSceneLookNotify.Parser, new[]{ "Unk3300HKKCHCEMJIE", "Unk3300DFPCMOFONNK", "Unk3300EELNOAICHOJ", "Unk3300ODADMBBFPAP", "Duration", "Unk3300KCHKKBODNCJ", "Unk3300FIOLGCIKFLH", "OtherParams", "Unk3300NJLBIMJDFHJ", "Unk3300AAOGBCCNJAF", "EntityId", "KeepRotType", "FollowPos", "Unk3300AJEENEOCFON", "Unk3300ONBDMCHFPDL", "Unk3300PIEFLAEGGBI", "LookPos", "Unk3300ILMHDLHLKGJ", "Unk3300HCLPGGAOIAC", "Unk3300HFPCHFNFJKP" }, null, new[]{ typeof(global::NewProtos.BeginCameraSceneLookNotify.Types.KeepRotType) }, null, null)
           }));
     }
     #endregion
@@ -107,11 +106,11 @@ namespace NewProtos {
       unk3300AAOGBCCNJAF_ = other.unk3300AAOGBCCNJAF_;
       entityId_ = other.entityId_;
       keepRotType_ = other.keepRotType_;
-      unk3300PPCIDICMIEN_ = other.unk3300PPCIDICMIEN_ != null ? other.unk3300PPCIDICMIEN_.Clone() : null;
+      followPos_ = other.followPos_ != null ? other.followPos_.Clone() : null;
       unk3300AJEENEOCFON_ = other.unk3300AJEENEOCFON_;
       unk3300ONBDMCHFPDL_ = other.unk3300ONBDMCHFPDL_;
       unk3300PIEFLAEGGBI_ = other.unk3300PIEFLAEGGBI_;
-      unk3300FJDFGLNLMBN_ = other.unk3300FJDFGLNLMBN_ != null ? other.unk3300FJDFGLNLMBN_.Clone() : null;
+      lookPos_ = other.lookPos_ != null ? other.lookPos_.Clone() : null;
       unk3300ILMHDLHLKGJ_ = other.unk3300ILMHDLHLKGJ_;
       unk3300HCLPGGAOIAC_ = other.unk3300HCLPGGAOIAC_;
       unk3300HFPCHFNFJKP_ = other.unk3300HFPCHFNFJKP_;
@@ -267,15 +266,19 @@ namespace NewProtos {
       }
     }
 
-    /// <summary>Field number for the "Unk3300_PPCIDICMIEN" field.</summary>
-    public const int Unk3300PPCIDICMIENFieldNumber = 8;
-    private global::NewProtos.Vector unk3300PPCIDICMIEN_;
+    /// <summary>Field number for the "follow_pos" field.</summary>
+    public const int FollowPosFieldNumber = 8;
+    private global::NewProtos.Vector followPos_;
+    /// <summary>
+    /// According to tests, replace both the two Vector fields worked. 
+    /// If we assume that all fields have been shuffled, then I choose to use this for follow_pos for this equal to the old value of look_pos.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::NewProtos.Vector Unk3300PPCIDICMIEN {
-      get { return unk3300PPCIDICMIEN_; }
+    public global::NewProtos.Vector FollowPos {
+      get { return followPos_; }
       set {
-        unk3300PPCIDICMIEN_ = value;
+        followPos_ = value;
       }
     }
 
@@ -315,15 +318,19 @@ namespace NewProtos {
       }
     }
 
-    /// <summary>Field number for the "Unk3300_FJDFGLNLMBN" field.</summary>
-    public const int Unk3300FJDFGLNLMBNFieldNumber = 13;
-    private global::NewProtos.Vector unk3300FJDFGLNLMBN_;
+    /// <summary>Field number for the "look_pos" field.</summary>
+    public const int LookPosFieldNumber = 13;
+    private global::NewProtos.Vector lookPos_;
+    /// <summary>
+    /// According to tests, replace both the two Vector fields worked. 
+    /// If we assume that all fields have been shuffled, then I choose to use this for look_pos for another equal to the old value of look_pos.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::NewProtos.Vector Unk3300FJDFGLNLMBN {
-      get { return unk3300FJDFGLNLMBN_; }
+    public global::NewProtos.Vector LookPos {
+      get { return lookPos_; }
       set {
-        unk3300FJDFGLNLMBN_ = value;
+        lookPos_ = value;
       }
     }
 
@@ -390,11 +397,11 @@ namespace NewProtos {
       if (Unk3300AAOGBCCNJAF != other.Unk3300AAOGBCCNJAF) return false;
       if (EntityId != other.EntityId) return false;
       if (KeepRotType != other.KeepRotType) return false;
-      if (!object.Equals(Unk3300PPCIDICMIEN, other.Unk3300PPCIDICMIEN)) return false;
+      if (!object.Equals(FollowPos, other.FollowPos)) return false;
       if (Unk3300AJEENEOCFON != other.Unk3300AJEENEOCFON) return false;
       if (Unk3300ONBDMCHFPDL != other.Unk3300ONBDMCHFPDL) return false;
       if (Unk3300PIEFLAEGGBI != other.Unk3300PIEFLAEGGBI) return false;
-      if (!object.Equals(Unk3300FJDFGLNLMBN, other.Unk3300FJDFGLNLMBN)) return false;
+      if (!object.Equals(LookPos, other.LookPos)) return false;
       if (Unk3300ILMHDLHLKGJ != other.Unk3300ILMHDLHLKGJ) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300HCLPGGAOIAC, other.Unk3300HCLPGGAOIAC)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Unk3300HFPCHFNFJKP, other.Unk3300HFPCHFNFJKP)) return false;
@@ -417,11 +424,11 @@ namespace NewProtos {
       if (Unk3300AAOGBCCNJAF != false) hash ^= Unk3300AAOGBCCNJAF.GetHashCode();
       if (EntityId != 0) hash ^= EntityId.GetHashCode();
       if (KeepRotType != global::NewProtos.BeginCameraSceneLookNotify.Types.KeepRotType.X) hash ^= KeepRotType.GetHashCode();
-      if (unk3300PPCIDICMIEN_ != null) hash ^= Unk3300PPCIDICMIEN.GetHashCode();
+      if (followPos_ != null) hash ^= FollowPos.GetHashCode();
       if (Unk3300AJEENEOCFON != 0) hash ^= Unk3300AJEENEOCFON.GetHashCode();
       if (Unk3300ONBDMCHFPDL != false) hash ^= Unk3300ONBDMCHFPDL.GetHashCode();
       if (Unk3300PIEFLAEGGBI != false) hash ^= Unk3300PIEFLAEGGBI.GetHashCode();
-      if (unk3300FJDFGLNLMBN_ != null) hash ^= Unk3300FJDFGLNLMBN.GetHashCode();
+      if (lookPos_ != null) hash ^= LookPos.GetHashCode();
       if (Unk3300ILMHDLHLKGJ != false) hash ^= Unk3300ILMHDLHLKGJ.GetHashCode();
       if (Unk3300HCLPGGAOIAC != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300HCLPGGAOIAC);
       if (Unk3300HFPCHFNFJKP != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Unk3300HFPCHFNFJKP);
@@ -471,9 +478,9 @@ namespace NewProtos {
         output.WriteRawTag(56);
         output.WriteBool(Unk3300ODADMBBFPAP);
       }
-      if (unk3300PPCIDICMIEN_ != null) {
+      if (followPos_ != null) {
         output.WriteRawTag(66);
-        output.WriteMessage(Unk3300PPCIDICMIEN);
+        output.WriteMessage(FollowPos);
       }
       otherParams_.WriteTo(output, _repeated_otherParams_codec);
       if (Unk3300FIOLGCIKFLH != 0F) {
@@ -488,9 +495,9 @@ namespace NewProtos {
         output.WriteRawTag(101);
         output.WriteFloat(Unk3300HCLPGGAOIAC);
       }
-      if (unk3300FJDFGLNLMBN_ != null) {
+      if (lookPos_ != null) {
         output.WriteRawTag(106);
-        output.WriteMessage(Unk3300FJDFGLNLMBN);
+        output.WriteMessage(LookPos);
       }
       if (Unk3300HFPCHFNFJKP != 0F) {
         output.WriteRawTag(117);
@@ -558,9 +565,9 @@ namespace NewProtos {
         output.WriteRawTag(56);
         output.WriteBool(Unk3300ODADMBBFPAP);
       }
-      if (unk3300PPCIDICMIEN_ != null) {
+      if (followPos_ != null) {
         output.WriteRawTag(66);
-        output.WriteMessage(Unk3300PPCIDICMIEN);
+        output.WriteMessage(FollowPos);
       }
       otherParams_.WriteTo(ref output, _repeated_otherParams_codec);
       if (Unk3300FIOLGCIKFLH != 0F) {
@@ -575,9 +582,9 @@ namespace NewProtos {
         output.WriteRawTag(101);
         output.WriteFloat(Unk3300HCLPGGAOIAC);
       }
-      if (unk3300FJDFGLNLMBN_ != null) {
+      if (lookPos_ != null) {
         output.WriteRawTag(106);
-        output.WriteMessage(Unk3300FJDFGLNLMBN);
+        output.WriteMessage(LookPos);
       }
       if (Unk3300HFPCHFNFJKP != 0F) {
         output.WriteRawTag(117);
@@ -651,8 +658,8 @@ namespace NewProtos {
       if (KeepRotType != global::NewProtos.BeginCameraSceneLookNotify.Types.KeepRotType.X) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) KeepRotType);
       }
-      if (unk3300PPCIDICMIEN_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300PPCIDICMIEN);
+      if (followPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FollowPos);
       }
       if (Unk3300AJEENEOCFON != 0) {
         size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300AJEENEOCFON);
@@ -663,8 +670,8 @@ namespace NewProtos {
       if (Unk3300PIEFLAEGGBI != false) {
         size += 1 + 1;
       }
-      if (unk3300FJDFGLNLMBN_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Unk3300FJDFGLNLMBN);
+      if (lookPos_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(LookPos);
       }
       if (Unk3300ILMHDLHLKGJ != false) {
         size += 1 + 1;
@@ -721,11 +728,11 @@ namespace NewProtos {
       if (other.KeepRotType != global::NewProtos.BeginCameraSceneLookNotify.Types.KeepRotType.X) {
         KeepRotType = other.KeepRotType;
       }
-      if (other.unk3300PPCIDICMIEN_ != null) {
-        if (unk3300PPCIDICMIEN_ == null) {
-          Unk3300PPCIDICMIEN = new global::NewProtos.Vector();
+      if (other.followPos_ != null) {
+        if (followPos_ == null) {
+          FollowPos = new global::NewProtos.Vector();
         }
-        Unk3300PPCIDICMIEN.MergeFrom(other.Unk3300PPCIDICMIEN);
+        FollowPos.MergeFrom(other.FollowPos);
       }
       if (other.Unk3300AJEENEOCFON != 0) {
         Unk3300AJEENEOCFON = other.Unk3300AJEENEOCFON;
@@ -736,11 +743,11 @@ namespace NewProtos {
       if (other.Unk3300PIEFLAEGGBI != false) {
         Unk3300PIEFLAEGGBI = other.Unk3300PIEFLAEGGBI;
       }
-      if (other.unk3300FJDFGLNLMBN_ != null) {
-        if (unk3300FJDFGLNLMBN_ == null) {
-          Unk3300FJDFGLNLMBN = new global::NewProtos.Vector();
+      if (other.lookPos_ != null) {
+        if (lookPos_ == null) {
+          LookPos = new global::NewProtos.Vector();
         }
-        Unk3300FJDFGLNLMBN.MergeFrom(other.Unk3300FJDFGLNLMBN);
+        LookPos.MergeFrom(other.LookPos);
       }
       if (other.Unk3300ILMHDLHLKGJ != false) {
         Unk3300ILMHDLHLKGJ = other.Unk3300ILMHDLHLKGJ;
@@ -795,10 +802,10 @@ namespace NewProtos {
             break;
           }
           case 66: {
-            if (unk3300PPCIDICMIEN_ == null) {
-              Unk3300PPCIDICMIEN = new global::NewProtos.Vector();
+            if (followPos_ == null) {
+              FollowPos = new global::NewProtos.Vector();
             }
-            input.ReadMessage(Unk3300PPCIDICMIEN);
+            input.ReadMessage(FollowPos);
             break;
           }
           case 74: {
@@ -818,10 +825,10 @@ namespace NewProtos {
             break;
           }
           case 106: {
-            if (unk3300FJDFGLNLMBN_ == null) {
-              Unk3300FJDFGLNLMBN = new global::NewProtos.Vector();
+            if (lookPos_ == null) {
+              LookPos = new global::NewProtos.Vector();
             }
-            input.ReadMessage(Unk3300FJDFGLNLMBN);
+            input.ReadMessage(LookPos);
             break;
           }
           case 117: {
@@ -896,10 +903,10 @@ namespace NewProtos {
             break;
           }
           case 66: {
-            if (unk3300PPCIDICMIEN_ == null) {
-              Unk3300PPCIDICMIEN = new global::NewProtos.Vector();
+            if (followPos_ == null) {
+              FollowPos = new global::NewProtos.Vector();
             }
-            input.ReadMessage(Unk3300PPCIDICMIEN);
+            input.ReadMessage(FollowPos);
             break;
           }
           case 74: {
@@ -919,10 +926,10 @@ namespace NewProtos {
             break;
           }
           case 106: {
-            if (unk3300FJDFGLNLMBN_ == null) {
-              Unk3300FJDFGLNLMBN = new global::NewProtos.Vector();
+            if (lookPos_ == null) {
+              LookPos = new global::NewProtos.Vector();
             }
-            input.ReadMessage(Unk3300FJDFGLNLMBN);
+            input.ReadMessage(LookPos);
             break;
           }
           case 117: {
