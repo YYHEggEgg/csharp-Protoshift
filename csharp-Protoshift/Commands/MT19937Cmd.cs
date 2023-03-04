@@ -3,6 +3,7 @@ using csharp_Protoshift.resLoader;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using YSFreedom.Common.Util;
@@ -21,10 +22,10 @@ namespace csharp_Protoshift.Commands
         public async Task HandleAsync(string[] args)
         {
             uint key_id = Convert.ToUInt32(args[2]);
-            var server_rand_key = await Resources.CPri[key_id].DecryptByPrivateKey(
-                Convert.FromBase64String(args[1]));
-            var client_rand_key = await Resources.SPri[key_id].DecryptByPrivateKey(
-                Convert.FromBase64String(args[0]));
+            var server_rand_key = Resources.CPri[key_id].RsaDecrypt(
+                Convert.FromBase64String(args[1]), RSAEncryptionPadding.Pkcs1);
+            var client_rand_key = Resources.SPri[key_id].RsaDecrypt(
+                Convert.FromBase64String(args[0]), RSAEncryptionPadding.Pkcs1);
             client_rand_key = client_rand_key.Fill0(8);
             server_rand_key = server_rand_key.Fill0(8);
             ulong seed = client_rand_key.GetUInt64(0) ^ server_rand_key.GetUInt64(0);
