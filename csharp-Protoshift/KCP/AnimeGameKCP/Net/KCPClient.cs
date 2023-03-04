@@ -33,9 +33,9 @@ namespace csharp_Protoshift.AnimeGameKCP
         }
 
         /// <summary>
-        /// Invoke when server requested disconnect. 
+        /// Invoke when server requested disconnect. uints are Conv/Token.
         /// </summary>
-        public event Action? StartDisconnected;
+        public event Action<uint, uint>? StartDisconnected;
 
         public KCP.ConnectionState State { get => server.State; }
 
@@ -56,14 +56,14 @@ namespace csharp_Protoshift.AnimeGameKCP
                 }
                 if (server.State != KCP.ConnectionState.CONNECTED)
                 {
-                    StartDisconnected?.Invoke();
+                    StartDisconnected?.Invoke(server.Conv, server.Token);
                     _Closed = true;
                     server.Dispose();
                 }
             }
             catch (Exception ex)
             {
-                Log.Erro($"Update fail: {ex}");
+                Log.Erro($"Update fail: {ex}", "KCPClient");
                 _Closed = true;
                 server.Dispose();
             }
@@ -111,16 +111,16 @@ namespace csharp_Protoshift.AnimeGameKCP
             {
                 if (server.State != KCP.ConnectionState.CONNECTED)
                 {
-                    StartDisconnected?.Invoke();
+                    StartDisconnected?.Invoke(server.Conv, server.Token);
                     return null;
                 }
                 else throw;
             }
         }
 
-        public void Disconnect(uint data = 1234567890)
+        public void Disconnect(uint conv = 0, uint token = 0, uint data = 1)
         {
-            server.Disconnect(data);
+            server.Disconnect(conv, token, data);
         }
     }
 }

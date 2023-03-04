@@ -25,15 +25,26 @@ namespace csharp_Protoshift.KcpProxy
 
         protected new async Task BackgroundUpdate()
         {
-            var packet = await udpSock.ReceiveAsync();
+            UdpReceiveResult packet;
+            try
+            {
+                packet = await udpSock.ReceiveAsync();
+            }
+            catch (Exception ex)
+            {
+                Log.Dbug($"BackgroundUpdate receiving packet meets error and restart: {ex}", "KcpProxyServer");
+                await Task.Run(BackgroundUpdate);
+                return;
+            }
             if (clients.ContainsKey(packet.RemoteEndPoint))
             {
                 try
                 {
                     ((KcpProxy)clients[packet.RemoteEndPoint]).Input(packet.Buffer);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    Log.Dbug($"BackgroundUpdate:Connected reached exception {ex}", "KcpProxyServer");
                     clients.Remove(packet.RemoteEndPoint);
                 }
             }
@@ -42,17 +53,18 @@ namespace csharp_Protoshift.KcpProxy
                 // Oh boy! A new connection!
                 var conn = new KcpProxy(sendToAddress: SendToEndpoint);
                 conn.Output = (data) => { return udpSock.Send(data, data.Length, packet.RemoteEndPoint); };
-
-                conn.AcceptNonblock();
                 try
                 {
+                    Log.Dbug($"New connection established, remote endpoint={packet.RemoteEndPoint}");
+                    conn.AcceptNonblock();
                     conn.Input(packet.Buffer);
 
                     clients[packet.RemoteEndPoint] = conn;
                     newConnections.Enqueue(packet.RemoteEndPoint);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    Log.Dbug($"BackgroundUpdate:NewConnection reached exception {ex}", "KcpProxyServer");
                     conn.Dispose();
                 }
             }
@@ -88,12 +100,10 @@ namespace csharp_Protoshift.KcpProxy
             }
         }
 
-#pragma warning disable CS8602 // 解引用可能出现空引用。
         protected async void HandleClient(IPEndPoint remotePoint, 
             Func<byte[], uint, byte[]> PacketHandler)
         {
             var conn = (KcpProxy)clients[remotePoint];
-            Debug.Assert(conn.State == KCP.ConnectionState.CONNECTED);
             while (conn.State == KCP.ConnectionState.CONNECTED)
             {
                 try
@@ -106,7 +116,7 @@ namespace csharp_Protoshift.KcpProxy
                 }
                 catch (Exception e)
                 {
-                    Log.Erro(e.ToString(), "KcpProxyServer:ServerHandler");
+                    Log.Dbug(e.ToString(), "KcpProxyServer:ServerHandler");
                     conn.Close();
                     break;
                 }
@@ -117,7 +127,7 @@ namespace csharp_Protoshift.KcpProxy
             Func<byte[], uint, byte[]> PacketHandler)
         {
             var conn = (KcpProxy)clients[remotePoint];
-            Debug.Assert(conn.sendClient.State == KCP.ConnectionState.CONNECTED);
+            Debug.Assert(conn.sendClient?.State == KCP.ConnectionState.CONNECTED);
             while (conn.sendClient.State == KCP.ConnectionState.CONNECTED)
             {
                 try
@@ -130,12 +140,11 @@ namespace csharp_Protoshift.KcpProxy
                 }
                 catch (Exception e)
                 {
-                    Log.Erro(e.ToString(), "KcpProxyServer:ClientHandler");
+                    Log.Dbug(e.ToString(), "KcpProxyServer:ClientHandler");
                     conn.sendClient.Close();
                     break;
                 }
             }
         }
-#pragma warning restore CS8602 // 解引用可能出现空引用。
     }
 }
