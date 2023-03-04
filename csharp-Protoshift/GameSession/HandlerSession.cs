@@ -211,7 +211,8 @@ namespace csharp_Protoshift.GameSession
                             data = packet,
                             shiftedData = oldbody,
                             newjsonContent = newjson,
-                            oldjsonContent = oldjson
+                            oldjsonContent = oldjson,
+                            packetTime = DateTime.Now
                         };
                         packetCounts++;
                     }
@@ -314,7 +315,8 @@ namespace csharp_Protoshift.GameSession
                             data = packet,
                             shiftedData = newbody,
                             newjsonContent = newjson,
-                            oldjsonContent = oldjson
+                            oldjsonContent = oldjson,
+                            packetTime = DateTime.Now
                         };
                         packetCounts++;
                     }
