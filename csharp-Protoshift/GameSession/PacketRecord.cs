@@ -38,5 +38,9 @@ namespace csharp_Protoshift.GameSession
         /// Json format data with old protocol
         /// </summary>
         public string oldjsonContent;
+        /// <summary>
+        /// The time of packet creation. Uses <c>DateTime.Now</c>.
+        /// </summary>
+        public DateTime packetTime;
     }
 }
