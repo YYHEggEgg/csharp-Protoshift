@@ -37,9 +37,11 @@ namespace csharp_Protoshift.Commands
                 Dictionary<string, List<PacketRecord>> record_group = new();
                 foreach (var record in session.records)
                 {
-                    if (!record_group.ContainsKey(record.PacketName))
-                        record_group.Add(record.PacketName, new());
-                    record_group[record.PacketName].Add(record);
+                    var pktname = record.PacketName;
+                    if (pktname == null) continue;
+                    if (!record_group.ContainsKey(pktname))
+                        record_group.Add(pktname, new());
+                    record_group[pktname].Add(record);
                 }
                 #endregion
 
@@ -53,7 +55,7 @@ namespace csharp_Protoshift.Commands
                     group.Value.Sort((p1, p2) => p1.Id - p2.Id);
                     foreach (var packet in group.Value)
                     {
-                        output.Append($"Packet {packet.Id}{(packet.dataLostSign ? "*" : "")}: " +
+                        output.Append($"{packet.packetTime:yyyy-MM-dd HH:mm:ss} Packet {packet.Id}{(packet.dataLostSign ? "*" : "")}: " +
                             $"{packet.PacketName} from {(packet.sentByClient ? "Client" : "Server")} " +
                             $"with CmdId:{packet.CmdId}\n");
                         if (packet.dataLostSign) 
@@ -75,11 +77,11 @@ namespace csharp_Protoshift.Commands
                         "UnionCmdNotify is a way that anime game send several packets in a single KCP packet, which should also be Protoshifted.\n\n");
                     var unionPackets = record_group["UnionCmdNotify"];
 
-                    Dictionary<string, List<string>> innerpackets = new();
+                    ConcurrentDictionary<string, List<string>> innerpackets = new();
                     #region Packet Group
                     NewProtos.QueryCmdId.TryGetSerializer("UnionCmdNotify", out var unionparser);
-                    innerpackets.Add("_Unknown", new());
-                    foreach (var packet in unionPackets)
+                    innerpackets.TryAdd("_Unknown", new());
+                    Parallel.ForEach(unionPackets, packet =>
                     {
                         var unioncmds = NewProtos.UnionCmdNotify.Parser.ParseFrom(
                             unionparser.SerializeFromJson(packet.newjsonContent));
@@ -89,7 +91,7 @@ namespace csharp_Protoshift.Commands
                             if (NewProtos.QueryCmdId.TryGetSerializer(cmdid, out var serializer))
                             {
                                 if (!innerpackets.ContainsKey(serializer.Protoname))
-                                    innerpackets.Add(serializer.Protoname, new List<string>());
+                                    innerpackets.TryAdd(serializer.Protoname, new List<string>());
                                 innerpackets[serializer.Protoname].Add(
                                     serializer.DeserializeToJson(unioncmd.Body.ToByteArray()));
                             }
@@ -98,7 +100,7 @@ namespace csharp_Protoshift.Commands
                                 innerpackets["_Unknown"].Add($"Unknown packet CmdId:{cmdid}\n{unioncmd.Body.ToByteArray()}");
                             }
                         }
-                    }
+                    });
                     #endregion
 
                     foreach (var innerpair in innerpackets)
