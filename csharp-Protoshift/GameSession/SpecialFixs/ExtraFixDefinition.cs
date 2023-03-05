@@ -24,6 +24,8 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
             var fixers = new Dictionary<string, ISpecialOuterSkillIssueFixer>
             {
                 { "AbilityInvocationsNotify", new AbilityInvocationsNotifyOuterFix 
+                    { fixer_bytes = fixer_ability_invoke_entry } },
+                { "ClientAbilityChangeNotify", new ClientAbilityChangeNotifyOuterFix
                     { fixer_bytes = fixer_ability_invoke_entry } }
             };
             fixers_client = new();
