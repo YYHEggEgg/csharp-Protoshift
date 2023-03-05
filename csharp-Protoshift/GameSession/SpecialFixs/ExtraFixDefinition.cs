@@ -26,7 +26,11 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                 { "AbilityInvocationsNotify", new AbilityInvocationsNotifyOuterFix 
                     { fixer_bytes = fixer_ability_invoke_entry } },
                 { "ClientAbilityChangeNotify", new ClientAbilityChangeNotifyOuterFix
-                    { fixer_bytes = fixer_ability_invoke_entry } }
+                    { fixer_bytes = fixer_ability_invoke_entry } },
+                { "ClientAbilityInitFinishNotify", new ClientAbilityInitFinishNotifyOuterFix
+                    { fixer_bytes = fixer_ability_invoke_entry } },
+                { "AbilityInvocationFailNotify", new AbilityInvocationFailNotifyOuterFix
+                    { fixer_bytes = fixer_ability_invoke_entry } },
             };
             fixers_client = new();
             fixers_server = new();
