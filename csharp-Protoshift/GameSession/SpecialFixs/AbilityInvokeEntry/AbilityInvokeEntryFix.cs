@@ -3,7 +3,9 @@ using Newtonsoft.Json.Linq;
 
 namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
 {
-    internal class AbilityInvokeEntryFix : ISpecialBytesSkillIssueFixer<NewProtos.AbilityInvokeArgument, OldProtos.AbilityInvokeArgument>
+    internal class AbilityInvokeEntryFix : ISpecialBytesSkillIssueFixer
+        <NewProtos.AbilityInvokeArgument, OldProtos.AbilityInvokeArgument, 
+        NewProtos.AbilityInvokeEntry, OldProtos.AbilityInvokeEntry>
     {
         public string Protoname => "AbilityInvokeEntry";
 
@@ -228,6 +230,20 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
                     return data;
                 }
             }
+        }
+
+        public OldProtos.AbilityInvokeEntry NewShiftToOld(NewProtos.AbilityInvokeEntry message)
+        {
+            return OldProtos.ProtoSerialize.Discard_Unknown_fields_Parser
+                .Parse<OldProtos.AbilityInvokeEntry>(
+                Handle(JsonFormatter.Default.Format(message), true));
+        }
+
+        public NewProtos.AbilityInvokeEntry OldShiftToNew(OldProtos.AbilityInvokeEntry message)
+        {
+            return NewProtos.ProtoSerialize.Discard_Unknown_fields_Parser
+                .Parse<NewProtos.AbilityInvokeEntry>(
+                Handle(JsonFormatter.Default.Format(message), false));
         }
     }
 }
