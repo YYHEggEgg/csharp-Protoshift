@@ -13,7 +13,8 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
         public string Protoname => "AbilityInvocationFailNotify";
 
         public ISpecialBytesSkillIssueFixer
-            <NewProtos.AbilityInvokeEntry, OldProtos.AbilityInvokeEntry>? { get; set; }
+            <NewProtos.AbilityInvokeEntry, OldProtos.AbilityInvokeEntry>? 
+            fixer_bytes { get; set; }
         
         public NewProtos.ProtoSerialize Mainutil_new { get; }
         public OldProtos.ProtoSerialize Mainutil_old { get; }
