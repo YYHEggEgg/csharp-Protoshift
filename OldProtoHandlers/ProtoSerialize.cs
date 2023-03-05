@@ -36,9 +36,9 @@ namespace OldProtos
         static ProtoSerialize()
         {
             var settings = JsonParser.Settings.Default.WithIgnoreUnknownFields(true);
-            defaultReflectParser = new JsonParser(settings);
+            Discard_Unknown_fields_Parser = new JsonParser(settings);
         }
-        private readonly static JsonParser defaultReflectParser;
+        public readonly static JsonParser Discard_Unknown_fields_Parser;
 
         public MessageParser Parser;
         public readonly string Protoname;
@@ -95,7 +95,7 @@ namespace OldProtos
                     new Type[] { typeof(string) });
                 var parse_method_T = parse_method.MakeGenericMethod(Prototype);
                 return MessageExtensions.ToByteArray(parse_method_T.Invoke(
-                    defaultReflectParser, new object[] { protojson }) as IMessage);
+                    Discard_Unknown_fields_Parser, new object[] { protojson }) as IMessage);
             }
         }
     }
