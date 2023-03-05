@@ -8,8 +8,8 @@ Bold lines refers to work done.
   - AbilityInvocationFailNotify
   - AbilityInvocationFixedNotify
   - **AbilityInvocationsNotify**
-  - ClientAbilityChangeNotify
-  - ClientAbilityInitFinishNotify
+  - **ClientAbilityChangeNotify**
+  - **ClientAbilityInitFinishNotify**
   - EntityAbilityInvokeEntry
     - ClientAbilitiesInitFinishCombineNotify
 - CombatInvokeEntry
