@@ -32,7 +32,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                 { "AbilityInvocationFailNotify", new AbilityInvocationFailNotifyOuterFix
                     { fixer_bytes = fixer_ability_invoke_entry } },
                 { "ClientAbilitiesInitFinishCombineNotify", new ClientAbilitiesInitFinishCombineNotifyOuterFix
-                    { fixer_bytes = fixer_ability_invoke_entry } },
+                    { fixer_bytes = fixer_ability_invoke_entry } }
             };
             fixers_client = new();
             fixers_server = new();
