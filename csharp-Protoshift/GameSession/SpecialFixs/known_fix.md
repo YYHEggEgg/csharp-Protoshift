@@ -5,7 +5,7 @@ Only uses the root node as fixer_bytes.
 Bold lines refers to work done.
 
 - **AbilityInvokeEntry**
-  - AbilityInvocationFailNotify
+  - **AbilityInvocationFailNotify**
   - AbilityInvocationFixedNotify
   - **AbilityInvocationsNotify**
   - **ClientAbilityChangeNotify**
