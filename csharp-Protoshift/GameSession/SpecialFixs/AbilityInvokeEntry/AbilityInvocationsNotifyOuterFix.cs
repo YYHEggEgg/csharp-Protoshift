@@ -23,9 +23,9 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
 
         public AbilityInvocationsNotifyOuterFix()
         {
-            NewProtos.QueryCmdId.TryGetSerializer("AbilityInvocationsNotify", out var newserializer);
+            NewProtos.QueryCmdId.TryGetSerializer(Protoname, out var newserializer);
             Mainutil_new = newserializer;
-            OldProtos.QueryCmdId.TryGetSerializer("AbilityInvocationsNotify", out var oldserializer);
+            OldProtos.QueryCmdId.TryGetSerializer(Protoname, out var oldserializer);
             Mainutil_old = oldserializer;
         }
 
