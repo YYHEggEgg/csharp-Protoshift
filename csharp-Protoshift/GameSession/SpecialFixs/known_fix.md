@@ -11,6 +11,6 @@ Bold lines refers to work done.
   - **ClientAbilityChangeNotify**
   - **ClientAbilityInitFinishNotify**
   - EntityAbilityInvokeEntry
-    - ClientAbilitiesInitFinishCombineNotify
+    - **ClientAbilitiesInitFinishCombineNotify**
 - CombatInvokeEntry
   - CombatInvocationsNotify
