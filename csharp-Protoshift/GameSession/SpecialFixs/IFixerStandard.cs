@@ -92,9 +92,9 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
 
     /// <summary>
     /// It is also used to solve the 'bytes' problem, but what's different is that it's used to handle packets that contains fields with protocols mentioned in <see cref="ISpecialBytesSkillIssueFixer"/>, e.g. <see cref="NewProtos.AbilityInvocationsNotify"/> contains <see cref="NewProtos.AbilityInvokeEntry"/>.
-    /// <para>The generic type param <typeparamref name="TNewProtocol"/>, <typeparamref name="TOldProtocol"/> is used for Protoshift, and both of these name should equal to <see cref="ISpecialBytesSkillIssueFixer.Protoname"/>.</para>
+    /// <para>The generic type param <typeparamref name="TNewProtocol"/>, <typeparamref name="TOldProtocol"/> is used for fixer, and both of these name should equal to <see cref="ISpecialBytesSkillIssueFixer.Protoname"/>.</para>
     /// </summary>
-    interface ISpecialOuterSkillIssueFixer<TNewProtocol, TOldProtocol>
+    interface ISpecialOuterSkillIssueFixer<TNewProtocol, TOldProtocol> : ISpecialOuterSkillIssueFixer
         where TNewProtocol : IMessage<TNewProtocol>
         where TOldProtocol : IMessage<TOldProtocol>
     {

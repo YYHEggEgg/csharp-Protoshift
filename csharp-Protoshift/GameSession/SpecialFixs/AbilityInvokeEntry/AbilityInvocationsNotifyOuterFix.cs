@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
 {
-    internal class AbilityInvocationsNotifyOuterFix : ISpecialOuterSkillIssueFixer
+    internal class AbilityInvocationsNotifyOuterFix 
+        : ISpecialOuterSkillIssueFixer<NewProtos.AbilityInvokeEntry, OldProtos.AbilityInvokeEntry>
     {
         public string Protoname => "AbilityInvocationsNotify";
 
