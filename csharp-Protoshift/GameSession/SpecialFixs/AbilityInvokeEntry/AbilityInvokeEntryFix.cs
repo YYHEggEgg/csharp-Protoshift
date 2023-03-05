@@ -123,8 +123,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
                 NewProtos.AbilityInvokeEntry invoke;
                 try
                 {
-                    invoke = NewProtos.AbilityInvokeEntry.Parser.ParseFrom(
-                        Convert.FromBase64String(data));
+                    invoke = NewProtos.AbilityInvokeEntry.Parser.ParseJson(data);
                 }
                 catch (Exception ex)
                 {
@@ -140,7 +139,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
                         var util = newutils[invoke.ArgumentType];
                         var newdata = invoke.AbilityData.ToByteArray();
                         var olddata = util.NewShiftToOld(newdata);
-                        var oldabilityjson = Convert.ToBase64String(olddata);
+                        var oldabilitydata = Convert.ToBase64String(olddata);
 #if DEBUG
                         var newjson = util.GetJson(newdata, true);
                         var oldjson = util.GetJson(olddata, false);
@@ -153,7 +152,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
                                 $"new: {newjson}\nold: {oldjson}", "AbilityInvokeEntry(Client)");
                         }
 #endif
-                        jobj["abilityData"] = oldabilityjson;
+                        jobj["abilityData"] = oldabilitydata;
                         return jobj.ToString();
                     }
                     catch (Exception ex)
@@ -179,8 +178,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
                 OldProtos.AbilityInvokeEntry invoke;
                 try
                 {
-                    invoke = OldProtos.AbilityInvokeEntry.Parser.ParseFrom(
-                        Convert.FromBase64String(data));
+                    invoke = OldProtos.AbilityInvokeEntry.Parser.ParseJson(data);
                 }
                 catch (Exception ex)
                 {
@@ -196,7 +194,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
                         var util = oldutils[invoke.ArgumentType];
                         var olddata = invoke.AbilityData.ToByteArray();
                         var newdata = util.OldShiftToNew(olddata);
-                        var newabilityjson = Convert.ToBase64String(newdata);
+                        var newabilitydata = Convert.ToBase64String(newdata);
 #if DEBUG
                         var newjson = util.GetJson(newdata, true);
                         var oldjson = util.GetJson(olddata, false);
@@ -209,7 +207,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
                                 $"new: {newjson}\nold: {oldjson}", "AbilityInvokeEntry(Server)");
                         }
 #endif
-                        jobj["abilityData"] = newabilityjson;
+                        jobj["abilityData"] = newabilitydata;
                         return jobj.ToString();
                     }
                     catch (Exception ex)
