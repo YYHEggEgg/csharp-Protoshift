@@ -11,9 +11,12 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
     /// Why it call this? From its name, we know that it mainly solve the 'bytes' problem.
     /// <para>In some packets, for unknown purposes, the anime game send original protobuf bin data as 'bytes', and along with any fields describe its protocol information.</para>
     /// <para>Though never could we know why they don't use oneof, we can do no more than adjust to it.</para>
+    /// <para>The generic type param <typeparamref name="TNewProtocol"/>, <typeparamref name="TOldProtocol"/> is used for Protoshift, and both of these name should equal to <see cref="ISpecialBytesSkillIssueFixer.Protoname"/>.</para>
     /// <para>This is only used for protocols <b>DIRECTLY</b> have bytes fields, e.g. <see cref="NewProtos.AbilityInvokeEntry"/>, <see cref="NewProtos.CombatInvokeEntry"/>.</para>
     /// </summary>
-    interface ISpecialBytesSkillIssueFixer
+    interface ISpecialBytesSkillIssueFixer<TNewProtocol, TOldProtocol>
+        where TNewProtocol : IMessage<TNewProtocol>
+        where TOldProtocol : IMessage<TOldProtocol>
     {
         public string Protoname { get; }
         /// <summary>
@@ -32,27 +35,34 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
         /// <param name="json">The original data. Whether it's new or old protocol is defined by <paramref name="isNewCmdid"/>.</param>
         /// <returns>The data with shifted bytes-field(s), also in json. Whether it's new or old protocol is on the contrary of <paramref name="isNewCmdid"/>.</returns>
         public string Handle(string json, bool isNewCmdid);
+
+        public TOldProtocol NewShiftToOld(TNewProtocol message);
+        public TNewProtocol OldShiftToNew(TOldProtocol message);
     }
 
     /// <summary>
     /// Why it call this? From its name, we know that it mainly solve the 'bytes' problem.
     /// <para>In some packets, for unknown purposes, the anime game send original protobuf bin data as 'bytes', and along with any fields describe its protocol information.</para>
     /// <para>Though never could we know why they don't use oneof, we can do no more than adjust to it.</para>
-    /// <para>The generic type param TNew, TOld is used for what information it requires for identifying proto type of 'bytes', e.g. ushort for cmdid, specified enum type, etc; thus, for successors, they shouldn't make it a generic implement.</para>
+    /// <para>The generic type param <typeparamref name="TNewParam"/>, <typeparamref name="TOldParam"/> is used for what information it requires for identifying proto type of 'bytes', e.g. ushort for cmdid, specified enum type, etc; thus, for successors, they shouldn't make it a generic implement.</para>
+    /// <para>The generic type param <typeparamref name="TNewProtocol"/>, <typeparamref name="TOldProtocol"/> is used for Protoshift, and both of these name should equal to <see cref="ISpecialBytesSkillIssueFixer.Protoname"/>.</para>
     /// <para>This is only used for protocols <b>DIRECTLY</b> have bytes fields, e.g. <see cref="NewProtos.AbilityInvokeEntry"/>, <see cref="NewProtos.CombatInvokeEntry"/>.</para>
     /// </summary>
-    interface ISpecialBytesSkillIssueFixer<TNew, TOld> : ISpecialBytesSkillIssueFixer
-        where TNew : notnull 
-        where TOld : notnull
+    interface ISpecialBytesSkillIssueFixer<TNewParam, TOldParam, TNewProtocol, TOldProtocol>
+        : ISpecialBytesSkillIssueFixer<TNewProtocol, TOldProtocol>
+        where TNewParam : notnull 
+        where TOldParam : notnull
+        where TNewProtocol : IMessage<TNewProtocol>
+        where TOldProtocol : IMessage<TOldProtocol>
     {
         /// <summary>
         /// Utils for inner <c>bytes</c>
         /// </summary>
-        public Dictionary<TNew, ProtoShiftUtils> newutils { get; }
+        public Dictionary<TNewParam, ProtoShiftUtils> newutils { get; }
         /// <summary>
         /// Utils for inner <c>bytes</c>
         /// </summary>
-        public Dictionary<TOld, ProtoShiftUtils> oldutils { get; }
+        public Dictionary<TOldParam, ProtoShiftUtils> oldutils { get; }
     }
 
     /// <summary>
@@ -62,7 +72,6 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
     {
         public string Protoname { get; }
         public string ApplyToVersion { get; }
-        public ISpecialBytesSkillIssueFixer fixer_bytes { get; set; }
         /// <summary>
         /// Util for main proto, or <c>Protoname</c>, used for serializing <c>data</c>.
         /// </summary>
@@ -79,5 +88,19 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
         /// <param name="isNewCmdid"></param>
         /// <returns>The final shifted data.</returns>
         public byte[] Handle(byte[] data, bool isNewCmdid);
+    }
+
+    /// <summary>
+    /// It is also used to solve the 'bytes' problem, but what's different is that it's used to handle packets that contains fields with protocols mentioned in <see cref="ISpecialBytesSkillIssueFixer"/>, e.g. <see cref="NewProtos.AbilityInvocationsNotify"/> contains <see cref="NewProtos.AbilityInvokeEntry"/>.
+    /// <para>The generic type param <typeparamref name="TNewProtocol"/>, <typeparamref name="TOldProtocol"/> is used for Protoshift, and both of these name should equal to <see cref="ISpecialBytesSkillIssueFixer.Protoname"/>.</para>
+    /// </summary>
+    interface ISpecialOuterSkillIssueFixer<TNewProtocol, TOldProtocol>
+        where TNewProtocol : IMessage<TNewProtocol>
+        where TOldProtocol : IMessage<TOldProtocol>
+    {
+        /// <summary>
+        /// The inner fixer. Usually set by outer code for using the same reference object.
+        /// </summary>
+        public ISpecialBytesSkillIssueFixer<TNewProtocol, TOldProtocol>? fixer_bytes { get; set; }
     }
 }
