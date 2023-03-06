@@ -17,8 +17,8 @@ Only uses the root node as fixer_bytes.
   - **ClientAbilityInitFinishNotify**
   - EntityAbilityInvokeEntry
     - **ClientAbilitiesInitFinishCombineNotify**
-- CombatInvokeEntry
-  - CombatInvocationsNotify
+- **CombatInvokeEntry**
+  - **CombatInvocationsNotify**
 - BlockInfo?
   - FeatureBlockInfo
     - PlayerLoginRsp
