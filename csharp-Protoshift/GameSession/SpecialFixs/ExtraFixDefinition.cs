@@ -21,6 +21,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
         static ExtraFix()
         {
             var fixer_ability_invoke_entry = new AbilityInvokeEntryFix();
+            var fixer_combat_invoke_entry = new CombatInvokeEntryFix();
             var fixers = new Dictionary<string, ISpecialOuterSkillIssueFixer>
             {
                 { "AbilityInvocationsNotify", new AbilityInvocationsNotifyOuterFix 
@@ -32,7 +33,10 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                 { "AbilityInvocationFailNotify", new AbilityInvocationFailNotifyOuterFix
                     { fixer_bytes = fixer_ability_invoke_entry } },
                 { "ClientAbilitiesInitFinishCombineNotify", new ClientAbilitiesInitFinishCombineNotifyOuterFix
-                    { fixer_bytes = fixer_ability_invoke_entry } }
+                    { fixer_bytes = fixer_ability_invoke_entry } },
+
+                { "CombatInvocationsNotify", new CombatInvocationsNotifyOuterFix 
+                    { fixer_bytes = fixer_combat_invoke_entry } }
             };
             fixers_client = new();
             fixers_server = new();
