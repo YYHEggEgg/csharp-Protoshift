@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace csharp_Protoshift
+namespace YYHEggEgg.Logger
 {
     internal enum LogLevel
     {
