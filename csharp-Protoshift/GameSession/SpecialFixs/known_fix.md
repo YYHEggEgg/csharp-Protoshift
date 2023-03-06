@@ -11,7 +11,7 @@ Only uses the root node as fixer_bytes.
 
 - **AbilityInvokeEntry**
   - **AbilityInvocationFailNotify**
-  - ~~AbilityInvocationFixedNotify~~
+  - AbilityInvocationFixedNotify
   - **AbilityInvocationsNotify**
   - **ClientAbilityChangeNotify**
   - **ClientAbilityInitFinishNotify**
