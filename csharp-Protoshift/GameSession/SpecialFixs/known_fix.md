@@ -30,5 +30,4 @@ Only uses the root node as fixer_bytes.
       - HomeGetArrangementInfoRsp
       - HomePreviewBlueprintRsp
       - HomeUpdateArrangementInfoReq
-- PingReq?
 - PlayerInjectFixNotify?
