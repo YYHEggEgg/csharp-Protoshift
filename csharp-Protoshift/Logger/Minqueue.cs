@@ -13,6 +13,7 @@ namespace YYHEggEgg.Logger
         public Minqueue<T>(int maxCount)
         {
             MaxCount = maxCount;
+            deque = new(maxCount);
         }
 
         public void Add(T item)
@@ -37,6 +38,11 @@ namespace YYHEggEgg.Logger
                 deque.CopyTo(res, 0);
                 return res;
             }
+        }
+
+        public T GetLast()
+        {
+            lock (deque) return deque.Last.Value;
         }
     }
 }
