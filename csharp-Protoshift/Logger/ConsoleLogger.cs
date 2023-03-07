@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace YYHEggEgg.Logger
 {
-    internal enum LogLevel
+    public enum LogLevel
     {
         Debug = 0,
         Information = 1,
@@ -15,13 +15,14 @@ namespace YYHEggEgg.Logger
         Error = 3
     }
 
-    internal static class Log
+    public static class Log
     {
         #region Save
         public static string logPath;
         private static StreamWriter logwriter;
         static Log()
         {
+            RefershLogTicks = 100;
             string dir = Environment.CurrentDirectory;
             Directory.CreateDirectory("logs");
 
@@ -94,24 +95,22 @@ namespace YYHEggEgg.Logger
         }
         #endregion
 
-        static object loggerlock = false;
-
         #region Logger
-        public static async void Dbug(string content, string? sender = null)
+        public static void Dbug(string content, string? sender = null)
         {
 #if DEBUG
-            await WriteLog(content, LogLevel.Debug, sender);
+            qlog.Enqueue(new LogDetail(content, LogLevel.Debug, sender));
 #endif
         }
 
-        public static async void Info(string content, string? sender = null)
-            => await WriteLog(content, LogLevel.Information, sender);
+        public static void Info(string content, string? sender = null)
+            => qlog.Enqueue(new LogDetail(content, LogLevel.Information, sender));
 
-        public static async void Warn(string content, string? sender = null)
-            => await WriteLog(content, LogLevel.Warning, sender);
+        public static void Warn(string content, string? sender = null)
+            => qlog.Enqueue(new LogDetail(content, LogLevel.Warning, sender));
 
-        public static async void Erro(string content, string? sender = null)
-            => await WriteLog(content, LogLevel.Error, sender);
+        public static void Erro(string content, string? sender = null)
+            => qlog.Enqueue(new LogDetail(content, LogLevel.Error, sender));
 
         private static async Task WriteLog(string content, LogLevel level, string? sender = null)
         {
@@ -131,6 +130,32 @@ namespace YYHEggEgg.Logger
                 }
             });
         }
+
+        #region Background Refresh
+        public struct LogDetail 
+        {
+            public LogLevel level;
+            public string content;
+            public string? sender;
+            public DateTime create_time;
+
+            public LogDetail(LogLevel lvl, string con, string? snd)
+            {
+                level = lvl;
+                content = con;
+                sender = snd;
+                create_time = DateTime.Now;
+            }
+        }
+
+        private ConcurrentQueue<LogDetail> qlog;
+        public int RefreshLogTicks { get; set; }
+        
+        private async Task BackgroundUpdate()
+        {
+            while (qlog.TryDequeue(out LogDetail logrecord))
+        }
+        #endregion
 
         /// <summary>
         /// Write info <[level]:[sender]> like <Info:KCP>. Notice: has side effect.
