@@ -23,6 +23,7 @@ namespace YYHEggEgg.Logger
         static Log()
         {
             RefershLogTicks = 100;
+            InputPrefix = "";
             string dir = Environment.CurrentDirectory;
             Directory.CreateDirectory("logs");
 
@@ -95,6 +96,43 @@ namespace YYHEggEgg.Logger
         }
         #endregion
 
+        #region Refresh Prefix
+        // Reference:
+        // [ Can Console.Clear be used to only clear a line instead of whole console? ]
+        // https://stackoverflow.com/questions/8946808/can-console-clear-be-used-to-only-clear-a-line-instead-of-whole-console
+        private static void ClearSingleLine()
+        {
+            Console.SetCursorPosition(0, Console.CursorTop - 1);
+            int currentLineCursor = Console.CursorTop;
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(0, currentLineCursor);
+        }
+        
+        public static string InputPrefix { get; set; }
+        private static bool AddPrefix;
+        private static object PrefixLock = "YYHEggEgg.Logger";
+
+        public static void BeginRegisterPrefix()
+        {
+            AddPrefix = true;
+            lock (PrefixLock)
+            {
+                ClearSingleLine();
+                Console.WriteLine(InputPrefix);
+            }
+        }
+
+        public static void EndRegisterPrefix()
+        {
+            AddPrefix = false;
+            lock (PrefixLock)
+            {
+                ClearSingleLine();
+            }
+        }
+        #endregion
+
         #region Logger
         public static void Dbug(string content, string? sender = null)
         {
@@ -111,25 +149,6 @@ namespace YYHEggEgg.Logger
 
         public static void Erro(string content, string? sender = null)
             => qlog.Enqueue(new LogDetail(content, LogLevel.Error, sender));
-
-        private static async Task WriteLog(string content, LogLevel level, string? sender = null)
-        {
-            string nowtime = DateTime.Now.ToString("HH:mm:ss");
-            await Task.Run(() =>
-            {
-                lock (loggerlock)
-                {
-                    Console.Write(nowtime);
-                    string header = WriteAndGetLogInfo(level, sender);
-                    // content should < 16 KB, or not output to console
-                    if (content.Length < 16 * 1024)
-                        Console.WriteLine(content);
-                    else
-                        Console.WriteLine("[content too long (>16 KB), so not output to console]");
-                    logwriter.WriteLine($"{nowtime}{header}{content}");
-                }
-            });
-        }
 
         #region Background Refresh
         public struct LogDetail 
@@ -153,7 +172,31 @@ namespace YYHEggEgg.Logger
         
         private async Task BackgroundUpdate()
         {
-            while (qlog.TryDequeue(out LogDetail logrecord))
+            ClearSingleLine();
+            while (qlog.TryDequeue(out LogDetail log))
+            {
+                WriteLog(log);
+            }
+            lock (PrefixLock)
+            {
+                Console.WriteLine(AddPrefix ? InputPrefix : string.Empty);
+            }
+
+            await Task.Wait(RefreshLogTicks);
+            await Task.Run(BackgroundUpdate);
+        }
+
+        private static void WriteLog(LogDetail log)
+        {
+            string nowtime = log.create_time.ToString("HH:mm:ss");
+            Console.Write(nowtime);
+            string header = WriteAndGetLogInfo(level, sender);
+            // content should < 16 KB, or not output to console
+            if (content.Length < 16 * 1024)
+                Console.WriteLine(content);
+            else
+                Console.WriteLine("[content too long (>16 KB), so not output to console]");
+            logwriter.WriteLine($"{nowtime}{header}{content}");
         }
         #endregion
 
