@@ -20,6 +20,10 @@ namespace YYHEggEgg.Logger
         #region Save
         public static string logPath;
         private static StreamWriter logwriter;
+#if DEBUG
+        public static string logPath_debug;
+        private static StreamWriter logwriter_debug;
+#endif
         static Log()
         {
             RefershLogTicks = 100;
@@ -32,6 +36,11 @@ namespace YYHEggEgg.Logger
             {
                 FileInfo info = new("logs/latest.log");
                 File.Move("logs/latest.log", $"logs/{info.LastWriteTime:yyyy-MM-dd_HH-mm-ss}.log");
+            }
+            if (File.Exists("logs/latest.debug.log"))
+            {
+                FileInfo info = new("logs/latest.debug.log");
+                File.Move("logs/latest.debug.log", $"logs/{info.LastWriteTime:yyyy-MM-dd_HH-mm-ss}.debug.log");
             }
             #endregion
 
@@ -93,6 +102,10 @@ namespace YYHEggEgg.Logger
             logPath = "logs/latest.log";
             logwriter = new(logPath, true);
             logwriter.AutoFlush = true;
+#if DEBUG
+            logPath_debug = "logs/latest.log";
+            logwriter_debug = new(logPath_debug, true);
+#endif
         }
         #endregion
 
@@ -196,7 +209,13 @@ namespace YYHEggEgg.Logger
                 Console.WriteLine(content);
             else
                 Console.WriteLine("[content too long (>16 KB), so not output to console]");
-            logwriter.WriteLine($"{nowtime}{header}{content}");
+#if DEBUG
+            if (log.level != LogLevel.Debug)
+#endif
+                logwriter.WriteLine($"{nowtime}{header}{content}");
+#if DEBUG
+            logwriter_debug.WriteLine($"{nowtime}{header}{content}");
+#endif
         }
         #endregion
 
