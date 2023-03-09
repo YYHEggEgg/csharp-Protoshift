@@ -122,8 +122,7 @@ namespace csharp_Protoshift.GameSession
         {
             var bodyfrom = new byte[body_length];
             Array.Copy(packet, body_offset, bodyfrom, 0, body_length);
-            // Special Fix
-            bodyfrom = ExtraFix.SpecialHandle(cmdid, isNewCmdid, bodyfrom);
+
             #region Client packet
             if (isNewCmdid)
             {
@@ -142,6 +141,54 @@ namespace csharp_Protoshift.GameSession
                     Log.Info($"Recv packet with CmdId:{cmdid} from " +
                         $"Client:---{Convert.ToHexString(packet)}",
                         $"PacketHandler({SessionId})");
+                }
+                #endregion
+
+                #region Special Fix
+                if (ExtraFix.NeedSpecialHandle(cmdid, isNewCmdid))
+                {
+                    var genbody = ExtraFix.SpecialHandle(cmdid, isNewCmdid, bodyfrom);
+                    #region Record Packet
+                    if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
+                    {
+                        lock (records)
+                        {
+                            records[packetCounts % PacketRecordLimits] = new PacketRecord
+                            {
+                                PacketName = protoname,
+                                Id = packetCounts,
+                                CmdId = cmdid,
+                                sentByClient = true,
+                                dataLostSign = false,
+                                data = packet,
+                                shiftedData = genbody,
+                                newjsonContent = newjson,
+                                oldjsonContent = "ExtraFix Applied - Not Enabled",
+                                    packetTime = DateTime.Now
+                            };
+                            packetCounts++;
+                        }
+                    }
+                    #endregion
+                    #region Build New Packet
+                    int rtnpacketLength = body_offset + genbody.Length + 2;
+                    byte[] rtn = new byte[rtnpacketLength];
+                    Array.Copy(packet, 0, rtn, 0, body_offset);
+                    rtn.SetUInt16(2, (ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
+                    rtn.SetUInt32(2 + 2 + 2, (uint)genbody.Length);
+                    Array.Copy(genbody, 0, rtn, body_offset, genbody.Length);
+                    rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
+
+                    if (Verbose)
+                    {
+                        Log.Info($"Send packet {protoname} with " +
+                            $"CmdId:{OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
+                            $"to Server:---{Convert.ToHexString(rtn)}",
+                            $"PacketHandler({SessionId})");
+                    }
+
+                    return rtn;
+                    #endregion
                 }
                 #endregion
 
@@ -258,6 +305,54 @@ namespace csharp_Protoshift.GameSession
                     Log.Info($"Recv packet with CmdId:{cmdid} from " +
                         $"Server:---{Convert.ToHexString(packet)}",
                         $"PacketHandler({SessionId})");
+                }
+                #endregion
+
+                #region Special Fix
+                if (ExtraFix.NeedSpecialHandle(cmdid, isNewCmdid))
+                {
+                    var genbody = ExtraFix.SpecialHandle(cmdid, isNewCmdid, bodyfrom);
+                    #region Record Packet
+                    if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
+                    {
+                        lock (records)
+                        {
+                            records[packetCounts % PacketRecordLimits] = new PacketRecord
+                            {
+                                PacketName = protoname,
+                                Id = packetCounts,
+                                CmdId = cmdid,
+                                sentByClient = false,
+                                dataLostSign = false,
+                                data = packet,
+                                shiftedData = genbody,
+                                newjsonContent = "ExtraFix Applied - Not Enabled",
+                                oldjsonContent = oldjson,
+                                packetTime = DateTime.Now
+                            };
+                            packetCounts++;
+                        }
+                    }
+                    #endregion
+                    #region Build New Packet
+                    int rtnpacketLength = body_offset + genbody.Length + 2;
+                    byte[] rtn = new byte[rtnpacketLength];
+                    Array.Copy(packet, 0, rtn, 0, body_offset);
+                    rtn.SetUInt16(2, (ushort)NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
+                    rtn.SetUInt32(2 + 2 + 2, (uint)genbody.Length);
+                    Array.Copy(genbody, 0, rtn, body_offset, genbody.Length);
+                    rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
+
+                    if (Verbose)
+                    {
+                        Log.Info($"Send packet {protoname} with " +
+                            $"CmdId:{NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
+                            $"to Client:---{Convert.ToHexString(rtn)}",
+                            $"PacketHandler({SessionId})");
+                    }
+
+                    return rtn;
+                    #endregion
                 }
                 #endregion
 
