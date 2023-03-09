@@ -62,22 +62,9 @@ namespace YYHEggEgg.Logger
                 {
                     if (belongDate != "")
                     {
-                        string cmd = $"a \"logs/log.{belongDate}.zip\"";
-                        foreach (var log in logs)
-                            cmd += $" \"{log}\"";
-                        if (!OperatingSystem.IsWindows())
-                        {
-                            Console.WriteLine("Sorry but auto compress logs are only supported in Windows now.");
-                        }
-                        else
-                        {
-                            ProcessStartInfo startinfo = new();
-                            startinfo.FileName = "7z";
-                            startinfo.Arguments = cmd;
-                            startinfo.RedirectStandardOutput = true;
-                            startinfo.RedirectStandardError = true;
-                            Process.Start(startinfo)?.WaitForExit();
-                        }
+                        string newzipfile = Tools.AddNumberedSuffixToPath(
+                            $"logs/log.{belongDate}.zip");
+                        Tools.CompressFiles(newzipfile, logs);
                         // Delete original files
                         try
                         {
@@ -89,7 +76,9 @@ namespace YYHEggEgg.Logger
                         }
                         catch (Exception ex)
                         {
+#if DEBUG
                             Console.WriteLine(ex);
+#endif
                         }
                     }
                     belongDate = thisdate;
