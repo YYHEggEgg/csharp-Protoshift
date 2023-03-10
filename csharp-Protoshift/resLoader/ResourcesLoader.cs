@@ -78,17 +78,6 @@ namespace csharp_Protoshift.resLoader
                     passcheck = false;
                 }
             }
-            // Openssl
-            try
-            {
-                Task.WaitAll(Tools.ExecuteProcess("openssl", "version"));
-            }
-            catch
-            {
-                Log.Erro("Openssl is probably not installed. You may install it and add it to the system PATH.", "ResourcesCheck");
-                Log.Info("Custom openssl path will supported in the future. Maybe... But if you want it please create an issue.");
-                passcheck = false;
-            }
             if (!passcheck)
             {
                 Log.Erro("Resources check didn't pass. Press Enter to exit.", "ResourcesCheck");
