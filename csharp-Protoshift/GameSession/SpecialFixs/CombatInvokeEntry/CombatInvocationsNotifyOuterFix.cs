@@ -87,7 +87,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.CombatInvokeEntry
                 var oldjson = Mainutil_old.DeserializeToJson(data);
                 var newdata = Mainutil_new.SerializeFromJson(oldjson);
 #if DEBUG
-                var newjson = Mainutil_old.DeserializeToJson(newdata);
+                var newjson = Mainutil_new.DeserializeToJson(newdata);
                 var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
                 var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
 
