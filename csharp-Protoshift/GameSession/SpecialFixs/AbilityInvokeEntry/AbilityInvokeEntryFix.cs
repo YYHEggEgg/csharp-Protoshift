@@ -1,36 +1,28 @@
 ﻿using Google.Protobuf;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading.Tasks.Dataflow;
+using Newtonsoft.Json.Linq;
 
-namespace csharp_Protoshift.GameSession.SpecialFixs
+namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
 {
-    internal class AbilityInvocationsNotifyFix : ISpecialBytesSkillIssueFixer<NewProtos.AbilityInvokeArgument, OldProtos.AbilityInvokeArgument>
+    internal class AbilityInvokeEntryFix : ISpecialBytesSkillIssueFixer
+        <NewProtos.AbilityInvokeArgument, OldProtos.AbilityInvokeArgument, 
+        NewProtos.AbilityInvokeEntry, OldProtos.AbilityInvokeEntry>
     {
-        public string Protoname => "AbilityInvocationsNotify";
+        public string Protoname => "AbilityInvokeEntry";
 
-        public NewProtos.ProtoSerialize Mainutil_new { get; }
-
-        /// <summary>
-        /// Only used for new proto -> old proto now.
-        /// </summary>
-        public OldProtos.ProtoSerialize Mainutil_old => throw new NotImplementedException();
-        
         private readonly Dictionary<NewProtos.AbilityInvokeArgument, Type> messages;
-
-        public string ApplyToVersion => "3.3.0";
 
         public Dictionary<NewProtos.AbilityInvokeArgument, ProtoShiftUtils> newutils { get; }
 
         public Dictionary<OldProtos.AbilityInvokeArgument, ProtoShiftUtils> oldutils { get; }
 
-        public AbilityInvocationsNotifyFix()
+        public NewProtos.ProtoSerialize Mainutil_new { get; }
+
+        public OldProtos.ProtoSerialize Mainutil_old { get; }
+
+        public AbilityInvokeEntryFix()
         {
-            NewProtos.QueryCmdId.TryGetSerializer("AbilityInvocationsNotify", out var newserializer);
-            Mainutil_new = newserializer;
+            Mainutil_new = new(Protoname);
+            Mainutil_old = new(Protoname);
             #region Hardcoded
             messages = new Dictionary<NewProtos.AbilityInvokeArgument, Type>
             {
@@ -110,126 +102,144 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
                 newutils.Add(pair.Key, new(pair.Value.Name));
                 oldutils.Add(Enum.Parse<OldProtos.AbilityInvokeArgument>(pair.Key.ToString()), new(pair.Value.Name));
             }
-        }      
+        }
 
-        public byte[] Handle(byte[] data, bool isNewCmdid)
+        public string Handle(string data, bool isNewCmdid)
         {
+            var jobj = JObject.Parse(data);
+            if (jobj == null) throw new ArgumentException("Invalid json data!", nameof(data));
+
+            var abilityjson = (string?)jobj["abilityData"];
+            if (abilityjson == null)
+            {
+                Log.Dbug($"Ability Data not found in: {data}", "AbilityInvokeEntryFix");
+                return data;
+            }
+
             if (isNewCmdid)
             {
-                NewProtos.AbilityInvocationsNotify notify;
+                NewProtos.AbilityInvokeEntry invoke;
                 try
                 {
-                    notify = NewProtos.AbilityInvocationsNotify.Parser.ParseFrom(data);
+                    invoke = NewProtos.AbilityInvokeEntry.Parser.ParseJson(data);
                 }
                 catch (Exception ex)
                 {
-                    Log.Erro("Error occurred when serializing NewProtos.AbilityInvocationsNotify so not shifted: " +
+                    Log.Erro("Error occurred when serializing NewProtos.AbilityInvokeEntry so not shifted: " +
                         $"{ex};\nInnerException:{ex.InnerException};\n" +
-                        $"data: {Convert.ToHexString(data)}", "AbilityInvocationsNotifyFix(Client)");
+                        $"jsondata: {data}", "AbilityInvokeEntry(Client)");
                     return data;
                 }
-                foreach (var invoke in notify.Invokes)
+                if (newutils.ContainsKey(invoke.ArgumentType))
                 {
-                    if (newutils.ContainsKey(invoke.ArgumentType))
+                    try
                     {
-                        try
-                        {
-                            var util = newutils[invoke.ArgumentType];
-                            var newdata = invoke.AbilityData.ToByteArray();
-                            var olddata = util.NewShiftToOld(newdata);
-                            invoke.AbilityData = ByteString.FromBase64(Convert.ToBase64String(olddata));
+                        var util = newutils[invoke.ArgumentType];
+                        var newdata = invoke.AbilityData.ToByteArray();
+                        var olddata = util.NewShiftToOld(newdata);
+                        var oldabilitydata = Convert.ToBase64String(olddata);
 #if DEBUG
-                            var newjson = util.GetJson(newdata, true);
-                            var oldjson = util.GetJson(olddata, false);
-                            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-                            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
+                        var newjson = util.GetJson(newdata, true);
+                        var oldjson = util.GetJson(olddata, false);
+                        var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
+                        var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
 
-                            if (newlines.Length != oldlines.Length)
-                            {
-                                Log.Warn($"AbilityInvocationNotify({invoke.ArgumentType}) has an information lost in Special Fix Protoshift:\n" +
-                                    $"new: {newjson}\nold: {oldjson}", "AbilityInvocationNotifyFix(Client)");
-                            }
+                        if (newlines.Length != oldlines.Length)
+                        {
+                            Log.Warn($"AbilityInvokeEntry({invoke.ArgumentType}) has an information lost in Special Fix Protoshift:\n" +
+                                $"new: {newjson}\nold: {oldjson}", "AbilityInvokeEntry(Client)");
+                        }
 #endif
-                        }
-                        catch (Exception ex)
-                        {
-                            Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
-                                $"{ex};\nInnerException:{ex.InnerException};\n" +
-                                $"data: {Mainutil_new.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix(Client)");
-                            continue;
-                        }
+                        jobj["abilityData"] = oldabilitydata;
+                        return jobj.ToString();
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        if (invoke.AbilityData.Length > 0)
-                        {
-                            Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
-                                    $"data: {Mainutil_new.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix(Client)");
-                            continue;
-                        }
+                        Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
+                            $"{ex};\nInnerException:{ex.InnerException};\n" +
+                            $"data: {abilityjson}", "AbilityInvokeEntryFix(Client)");
+                        return data;
                     }
                 }
-
-                return notify.ToByteArray();
+                else
+                {
+                    if (invoke.AbilityData.Length > 0)
+                    {
+                        Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
+                           $"data: {abilityjson}", "AbilityInvokeEntryFix(Client)");
+                    }
+                    return data;
+                }
             }
             else
             {
-                OldProtos.AbilityInvocationsNotify notify;
+                OldProtos.AbilityInvokeEntry invoke;
                 try
                 {
-                    notify = OldProtos.AbilityInvocationsNotify.Parser.ParseFrom(data);
+                    invoke = OldProtos.AbilityInvokeEntry.Parser.ParseJson(data);
                 }
                 catch (Exception ex)
                 {
-                    Log.Erro("Error occurred when serializing OldProtos.AbilityInvocationsNotify so not shifted: " +
+                    Log.Erro("Error occurred when serializing OldProtos.AbilityInvokeEntry so not shifted: " +
                         $"{ex};\nInnerException:{ex.InnerException};\n" +
-                        $"data: {Convert.ToHexString(data)}", "AbilityInvocationsNotifyFix(Server)");
+                        $"jsondata: {data}", "AbilityInvokeEntry(Server)");
                     return data;
                 }
-                foreach (var invoke in notify.Invokes)
+                if (oldutils.ContainsKey(invoke.ArgumentType))
                 {
-                    if (oldutils.ContainsKey(invoke.ArgumentType))
+                    try
                     {
-                        try
-                        {
-                            var util = oldutils[invoke.ArgumentType];
-                            var olddata = invoke.AbilityData.ToByteArray();
-                            var newdata = util.OldShiftToNew(olddata);
-                            invoke.AbilityData = ByteString.FromBase64(Convert.ToBase64String(newdata));
+                        var util = oldutils[invoke.ArgumentType];
+                        var olddata = invoke.AbilityData.ToByteArray();
+                        var newdata = util.OldShiftToNew(olddata);
+                        var newabilitydata = Convert.ToBase64String(newdata);
 #if DEBUG
-                            var newjson = util.GetJson(newdata, true);
-                            var oldjson = util.GetJson(olddata, false);
-                            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-                            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
+                        var newjson = util.GetJson(newdata, true);
+                        var oldjson = util.GetJson(olddata, false);
+                        var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
+                        var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
 
-                            if (newlines.Length != oldlines.Length)
-                            {
-                                Log.Warn($"AbilityInvocationNotify({invoke.ArgumentType}) has an information lost in Special Fix Protoshift:\n" +
-                                    $"new: {newjson}\nold: {oldjson}", "AbilityInvocationNotifyFix(Server)");
-                            }
+                        if (newlines.Length != oldlines.Length)
+                        {
+                            Log.Warn($"AbilityInvokeEntry({invoke.ArgumentType}) has an information lost in Special Fix Protoshift:\n" +
+                                $"new: {newjson}\nold: {oldjson}", "AbilityInvokeEntry(Server)");
+                        }
 #endif
-                        }
-                        catch (Exception ex)
-                        {
-                            Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
-                                $"{ex};\nInnerException:{ex.InnerException};\n" +
-                                $"data: {Mainutil_old.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix(Server)");
-                            continue;
-                        }
+                        jobj["abilityData"] = newabilitydata;
+                        return jobj.ToString();
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        if (invoke.AbilityData.Length > 0)
-                        {
-                            Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
-                                    $"data: {Mainutil_old.DeserializeToJson(data)}", "AbilityInvocationsNotifyFix(Server)");
-                            continue;
-                        }
+                        Log.Erro($"Error occurred when serializing bytes data of {invoke.ArgumentType} so not shifted (probably wrong prototype): " +
+                            $"{ex};\nInnerException:{ex.InnerException};\n" +
+                            $"data: {abilityjson}", "AbilityInvokeEntryFix(Server)");
+                        return data;
                     }
                 }
-
-                return notify.ToByteArray();
+                else
+                {
+                    if (invoke.AbilityData.Length > 0)
+                    {
+                        Log.Erro($"Not found map config for {invoke.ArgumentType} so not shifted, bytes data not empty: " +
+                           $"data: {abilityjson}", "AbilityInvokeEntryFix(Server)");
+                    }
+                    return data;
+                }
             }
+        }
+
+        public OldProtos.AbilityInvokeEntry NewShiftToOld(NewProtos.AbilityInvokeEntry message)
+        {
+            return OldProtos.ProtoSerialize.Discard_Unknown_fields_Parser
+                .Parse<OldProtos.AbilityInvokeEntry>(
+                Handle(JsonFormatter.Default.Format(message), true));
+        }
+
+        public NewProtos.AbilityInvokeEntry OldShiftToNew(OldProtos.AbilityInvokeEntry message)
+        {
+            return NewProtos.ProtoSerialize.Discard_Unknown_fields_Parser
+                .Parse<NewProtos.AbilityInvokeEntry>(
+                Handle(JsonFormatter.Default.Format(message), false));
         }
     }
 }
