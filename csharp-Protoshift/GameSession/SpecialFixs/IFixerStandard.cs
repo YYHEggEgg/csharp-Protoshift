@@ -27,7 +27,6 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
         /// Util for main proto, or <c>Protoname</c>, used for serializing <c>data</c>.
         /// </summary>
         public OldProtos.ProtoSerialize Mainutil_old { get; }
-        public string ApplyToVersion { get; }
 
         /// <summary>
         /// We stipulate that Handle() only shift the <c>bytes</c> field in protocol, but don't shift data from one protocol to another.
@@ -71,7 +70,6 @@ namespace csharp_Protoshift.GameSession.SpecialFixs
     interface ISpecialOuterSkillIssueFixer
     {
         public string Protoname { get; }
-        public string ApplyToVersion { get; }
         /// <summary>
         /// Util for main proto, or <c>Protoname</c>, used for serializing <c>data</c>.
         /// </summary>

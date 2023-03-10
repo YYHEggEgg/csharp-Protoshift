@@ -11,8 +11,6 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
 
         private readonly Dictionary<NewProtos.AbilityInvokeArgument, Type> messages;
 
-        public string ApplyToVersion => "3.3.0";
-
         public Dictionary<NewProtos.AbilityInvokeArgument, ProtoShiftUtils> newutils { get; }
 
         public Dictionary<OldProtos.AbilityInvokeArgument, ProtoShiftUtils> oldutils { get; }

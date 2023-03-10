@@ -12,8 +12,6 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.CombatInvokeEntry
     {
         public string Protoname => "CombatInvocationsNotify";
 
-        public string ApplyToVersion => "3.3.0";
-
         public ISpecialBytesSkillIssueFixer
             <NewProtos.CombatInvokeEntry, OldProtos.CombatInvokeEntry>? fixer_bytes { get; set; }
 
@@ -74,12 +72,12 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.CombatInvokeEntry
                     return data;
                 }
 
-                var newinvokes = newnotify.Invokes;
+                var newinvokes = newnotify.InvokeList;
                 #endregion
-                oldnotify.Invokes.Clear();
+                oldnotify.InvokeList.Clear();
                 foreach (var invoke in newinvokes)
                 {
-                    oldnotify.Invokes.Add(fixer_bytes?.NewShiftToOld(invoke));
+                    oldnotify.InvokeList.Add(fixer_bytes?.NewShiftToOld(invoke));
                 }
                 return oldnotify.ToByteArray();
             }
@@ -126,12 +124,12 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.CombatInvokeEntry
                     return data;
                 }
 
-                var oldinvokes = oldnotify.Invokes;
+                var oldinvokes = oldnotify.InvokeList;
                 #endregion
-                newnotify.Invokes.Clear();
+                newnotify.InvokeList.Clear();
                 foreach (var invoke in oldinvokes)
                 {
-                    newnotify.Invokes.Add(fixer_bytes?.OldShiftToNew(invoke));
+                    newnotify.InvokeList.Add(fixer_bytes?.OldShiftToNew(invoke));
                 }
                 return newnotify.ToByteArray();
             }
