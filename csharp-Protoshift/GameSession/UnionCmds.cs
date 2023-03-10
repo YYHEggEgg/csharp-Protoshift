@@ -43,8 +43,6 @@ namespace csharp_Protoshift.GameSession
                 else utils = serializers[newmsg_cmdid];
                 #endregion
 
-                newmsg_body = 
-
                 ushort oldmsg_cmdid = utils.oldcmdid;
                 byte[] oldmsg_body; 
 

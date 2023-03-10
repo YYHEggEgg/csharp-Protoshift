@@ -130,7 +130,7 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
                     return data;
                 }
 
-                var oldinvokes = oldnotify.Invokes;
+                var oldinvokes = oldnotify.EntityInvokeList;
                 #endregion
                 #region Enumerate invoke list
                 newnotify.EntityInvokeList.Clear();

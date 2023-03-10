@@ -12,8 +12,6 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
     {
         public string Protoname => "AbilityInvocationsNotify";
 
-        public string ApplyToVersion => "3.3.0";
-
         public ISpecialBytesSkillIssueFixer
             <NewProtos.AbilityInvokeEntry, OldProtos.AbilityInvokeEntry>? fixer_bytes { get; set; }
 
