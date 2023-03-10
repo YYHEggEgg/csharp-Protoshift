@@ -15,13 +15,11 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.CombatInvokeEntry
 
         public OldProtos.ProtoSerialize Mainutil_old { get; }
 
-        public string ApplyToVersion => "3.3.0";
-
         public Dictionary<NewProtos.CombatTypeArgument, ProtoShiftUtils> newutils { get; }
 
         public Dictionary<OldProtos.CombatTypeArgument, ProtoShiftUtils> oldutils { get; }
 
-        public CombatInvocationsNotifyFix()
+        public CombatInvokeEntryFix()
         {
             NewProtos.QueryCmdId.TryGetSerializer("CombatInvocationsNotify", out var newserializer);
             Mainutil_new = newserializer;

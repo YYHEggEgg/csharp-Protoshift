@@ -1,4 +1,5 @@
 ﻿using csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry;
+using csharp_Protoshift.GameSession.SpecialFixs.CombatInvokeEntry;
 using System;
 using System.Collections.Generic;
 using System.Linq;

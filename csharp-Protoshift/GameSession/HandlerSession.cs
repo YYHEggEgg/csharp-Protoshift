@@ -171,23 +171,23 @@ namespace csharp_Protoshift.GameSession
                     }
                     #endregion
                     #region Build New Packet
-                    int rtnpacketLength = body_offset + genbody.Length + 2;
-                    byte[] rtn = new byte[rtnpacketLength];
-                    Array.Copy(packet, 0, rtn, 0, body_offset);
-                    rtn.SetUInt16(2, (ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
-                    rtn.SetUInt32(2 + 2 + 2, (uint)genbody.Length);
-                    Array.Copy(genbody, 0, rtn, body_offset, genbody.Length);
-                    rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
+                    int rtn_packetLength = body_offset + genbody.Length + 2;
+                    byte[] rtn_packet = new byte[rtn_packetLength];
+                    Array.Copy(packet, 0, rtn_packet, 0, body_offset);
+                    rtn_packet.SetUInt16(2, (ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
+                    rtn_packet.SetUInt32(2 + 2 + 2, (uint)genbody.Length);
+                    Array.Copy(genbody, 0, rtn_packet, body_offset, genbody.Length);
+                    rtn_packet.SetUInt16(rtn_packetLength - 2, 0x89AB);
 
                     if (Verbose)
                     {
                         Log.Info($"Send packet {protoname} with " +
                             $"CmdId:{OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
-                            $"to Server:---{Convert.ToHexString(rtn)}",
+                            $"to Server:---{Convert.ToHexString(rtn_packet)}",
                             $"PacketHandler({SessionId})");
                     }
 
-                    return rtn;
+                    return rtn_packet;
                     #endregion
                 }
                 #endregion
@@ -335,23 +335,23 @@ namespace csharp_Protoshift.GameSession
                     }
                     #endregion
                     #region Build New Packet
-                    int rtnpacketLength = body_offset + genbody.Length + 2;
-                    byte[] rtn = new byte[rtnpacketLength];
-                    Array.Copy(packet, 0, rtn, 0, body_offset);
-                    rtn.SetUInt16(2, (ushort)NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
-                    rtn.SetUInt32(2 + 2 + 2, (uint)genbody.Length);
-                    Array.Copy(genbody, 0, rtn, body_offset, genbody.Length);
-                    rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
+                    int rtn_packetLength = body_offset + genbody.Length + 2;
+                    byte[] rtn_packet = new byte[rtn_packetLength];
+                    Array.Copy(packet, 0, rtn_packet, 0, body_offset);
+                    rtn_packet.SetUInt16(2, (ushort)NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
+                    rtn_packet.SetUInt32(2 + 2 + 2, (uint)genbody.Length);
+                    Array.Copy(genbody, 0, rtn_packet, body_offset, genbody.Length);
+                    rtn_packet.SetUInt16(rtn_packetLength - 2, 0x89AB);
 
                     if (Verbose)
                     {
                         Log.Info($"Send packet {protoname} with " +
                             $"CmdId:{NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
-                            $"to Client:---{Convert.ToHexString(rtn)}",
+                            $"to Client:---{Convert.ToHexString(rtn_packet)}",
                             $"PacketHandler({SessionId})");
                     }
 
-                    return rtn;
+                    return rtn_packet;
                     #endregion
                 }
                 #endregion
