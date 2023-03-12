@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -77,7 +78,7 @@ namespace csharp_Protoshift
         /// <summary>
         /// Compress <paramref name="files"/> into <paramref name="zipFilePath"/>. 
         /// </summary>
-        public static void CompressFiles(string zipFilePath, IEmulerable<string> files)
+        public static void CompressFiles(string zipFilePath, IEnumerable<string> files)
         {
             if (File.Exists(zipFilePath))
             {
@@ -145,6 +146,64 @@ namespace csharp_Protoshift
             else
             {
                 return filePath;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="output"></param>
+        /// <returns></returns>
+        public static bool TryRemoveColorInfo(string input, out string output)
+        {
+            try
+            {
+                int startIndex = 0;
+                output = string.Empty;
+
+                while (true)
+                {
+                    int colorStart = input.IndexOf("<color=", startIndex); //查找下一个彩色文字的起始位置
+                    if (colorStart == -1) //若未找到，输出剩余部分并退出循环
+                    {
+                        output = input.Substring(startIndex, input.Length - startIndex);
+                        return true;
+                    }
+
+                    int colorEnd = input.IndexOf(">", colorStart); //查找彩色文字的结束位置
+                    if (colorEnd == -1) //若未找到，输出剩余部分并退出循环
+                    {
+                        output = input.Substring(startIndex, input.Length - startIndex);
+                        return true;
+                    }
+
+                    string colorCode = input.Substring(colorStart + 7, colorEnd - colorStart - 7); //提取颜色代码
+                    ConsoleColor color;
+
+                    if (Enum.TryParse(colorCode, out color)) //尝试将字符串颜色代码解析为ConsoleColor枚举类型
+                    {
+                        output += input.Substring(startIndex, colorStart - startIndex)); //输出彩色文字前的部分
+                        int textStart = colorEnd + 1;
+                        int textEnd = input.IndexOf("</color>", textStart); //查找彩色文字结束标记
+                        if (textEnd == -1) //若未找到，输出剩余部分并退出循环
+                        {
+                            output += input.Substring(textStart, input.Length - textStart);
+                            return true;
+                        }
+                        output += input.Substring(textStart, textEnd - textStart); //输出彩色文字
+                        startIndex = textEnd + 8; //继续查找下一个彩色文字的起始位置
+                    }
+                    else //解析失败，跳过此次查找
+                    {
+                        startIndex = colorEnd + 1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                output = ex.ToString();
+                return false;
             }
         }
         #endregion

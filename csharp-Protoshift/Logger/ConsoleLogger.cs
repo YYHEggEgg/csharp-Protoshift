@@ -146,77 +146,78 @@ namespace YYHEggEgg.Logger
                 return;
             }
 
-            ConsoleWrapper.BeginWrite();
-            WriteLog(_log);
+            List<string> logs = new(qlog.Count + 1);
+            logs.Add(WriteLog(_log));
             while (qlog.TryDequeue(out LogDetail log))
             {
-                WriteLog(log);
+                logs.Add(WriteLog(log));
             }
-            ConsoleWrapper.EndWrite();  
+            ConsoleWrapper.WriteLine(logs);  
 
             await Task.Delay(RefreshLogTicks);
             await Task.Run(BackgroundUpdate);
         }
 
-        private static void WriteLog(LogDetail log)
+        private static string WriteLog(LogDetail log)
         {
             string nowtime = log.create_time.ToString("HH:mm:ss");
-            Console.Write(nowtime);
-            string header = WriteAndGetLogInfo(log.level, log.sender);
+            string header = GetLogInfo(log.level, log.sender);
+            string res = $"{nowtime}{header}{log.content}";
+            if (Tools.TryRemoveColorInfo(res, out string fileres))
+            {
+#if DEBUG
+                if (log.level != LogLevel.Debug)
+#endif
+                    logwriter.WriteLine(fileres);
+#if DEBUG
+                logwriter_debug.WriteLine(fileres);
+#endif
+            }
+            else
+            {
+                logwriter.WriteLine($"{nowtime}{GetLogInfo(LogLevel.Error, "Logger")}" +
+                    $"Content has caused exception when resolving color, ex={fileres}; content={res};");
+            }
+
             // content should < 16 KB, or not output to console
             if (log.content.Length < 16 * 1024)
-                Console.WriteLine(log.content);
+                return res;
             else
-                Console.WriteLine("[content too long (>16 KB), so not output to console]");
-#if DEBUG
-            if (log.level != LogLevel.Debug)
-#endif
-                logwriter.WriteLine($"{nowtime}{header}{log.content}");
-#if DEBUG
-            logwriter_debug.WriteLine($"{nowtime}{header}{log.content}");
-#endif
+                return "[content too long (>16 KB), so not output to console]";
         }
         #endregion
 
         /// <summary>
-        /// Write info <[level]:[sender]> like <Info:KCP>. Notice: has side effect.
+        /// Write info <[level]:[sender]> like <Info:KCP>. 
         /// </summary>
-        private static string WriteAndGetLogInfo(LogLevel level, string? sender)
+        private static string GetLogInfo(LogLevel level, string? sender)
         {
             string rtn = " <";
-            Console.Write(" <");
             switch (level)
             {
                 case LogLevel.Debug:
-                    Console.ForegroundColor = ConsoleColor.Cyan;
                     Console.Write("Dbug");
-                    rtn += "Dbug";
+                    rtn += "<color=Cyan>Dbug</color>";
                     break;
                 case LogLevel.Information:
-                    Console.ForegroundColor = ConsoleColor.Blue;
                     Console.Write("Info");
-                    rtn += "Info";
+                    rtn += "<color=Blue>Info</color>";
                     break;
                 case LogLevel.Warning:
-                    Console.ForegroundColor = ConsoleColor.Yellow;
                     Console.Write("Warn");
-                    rtn += "Warn";
+                    rtn += "<color=Yellow>Warn</color>";
                     break;
                 case LogLevel.Error:
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("Erro");
+                    Console.Write("<color=Red>Erro</color>");
                     rtn += "Erro";
                     break;
             }
-            Console.ForegroundColor = ConsoleColor.White;
             if (sender != null)
             {
-                Console.Write($":{sender}> ");
                 rtn += $":{sender}> ";
             }
             else
             {
-                Console.Write($"> ");
                 rtn += $"> ";
             }
             return rtn;
