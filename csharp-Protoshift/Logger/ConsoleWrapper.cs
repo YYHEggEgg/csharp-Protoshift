@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Windows;
 
 namespace YYHEggEgg.Logger
@@ -8,23 +9,78 @@ namespace YYHEggEgg.Logger
     public class ConsoleWrapper
     {
         private List<string> lines; // 记录每行输入的列表
-        private int cursor; // 当前所在行的标记
-        public event EventHandler<InputArrivalEventArgs> InputArrival; // 输入完成事件
-        public event EventHandler<InputChangeEventArgs> InputChange; // 输入内容改变事件
-        public event EventHandler ShutDown; // 退出事件
+        private int currentLine; // 当前所在行的标记
+        public event EventHandler<InputArrivalEventArgs>? InputArrival; // 输入完成事件
+        public event EventHandler<InputChangeEventArgs>? InputChange; // 输入内容改变事件
+        public event EventHandler? ShutDown; // 退出事件
+
+        private bool isReading;
 
         public ConsoleWrapper()
         {
             lines = new List<string>();
-            cursor = 0;
+            currentLine = 0;
             Console.CancelKeyPress += Console_CancelKeyPress;
+            InputPrefix = "";
         }
 
-        private void Console_CancelKeyPress(object sender, ConsoleCancelEventArgs e)
+        private void Console_CancelKeyPress(object? sender, ConsoleCancelEventArgs e)
         {
             e.Cancel = true;
             ShutDown?.Invoke(this, EventArgs.Empty);
         }
+
+        #region Refresh Prefix
+        // Reference:
+        // [ Can Console.Clear be used to only clear a line instead of whole console? ]
+        // https://stackoverflow.com/questions/8946808/can-console-clear-be-used-to-only-clear-a-line-instead-of-whole-console
+        // Applied some modifications to support only clear current line.
+        private static void ClearThisLine()
+        {
+            // if (Console.CursorTop > 0) Console.SetCursorPosition(0, Console.CursorTop - 1);
+            int currentLineCursor = Console.CursorTop;
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Console.Write(new string(' ', Console.WindowWidth));
+            Console.SetCursorPosition(0, currentLineCursor);
+        }
+
+        public static string InputPrefix { get; set; }
+        private static bool AddPrefix;
+        private static object PrefixLock = "YYHEggEgg.Logger";
+
+        public static void BeginRegisterPrefix()
+        {
+            AddPrefix = true;
+            lock (PrefixLock)
+            {
+                ClearThisLine();
+                Console.Write(InputPrefix);
+            }
+        }
+
+        public static void EndRegisterPrefix()
+        {
+            AddPrefix = false;
+            lock (PrefixLock)
+            {
+                ClearThisLine();
+            }
+        }
+
+        private static void ClearWrittingArea(int writtenLength)
+        {
+            int occupiedLength = InputPrefix.Length + writtenLength;
+            while (occupiedLength > 0)
+            {
+                ClearThisLine();
+                occupiedLength -= Console.WindowWidth;
+                if (occupiedLength > 0)
+                {
+                    Console.SetCursorPosition(0, Console.CursorTop - 1);
+                }
+            }
+        }
+        #endregion
 
         public void Start()
         {
@@ -32,40 +88,50 @@ namespace YYHEggEgg.Logger
             ConsoleKeyInfo keyInfo;
             bool isCtrlV = false;
             string pasteText = "";
-            string input = "";
+            StringBuilder input = new();
+            int cursor = 0;
             while (true)
             {
-                keyInfo = Console.ReadKey(true);
+                keyInfo = Console.ReadKey(isReading);
+                #region 清除整行的操作
                 if (keyInfo.Key == ConsoleKey.Enter) // 整合输入的所有字符
                 {
-                    lines.Add(input);
+                    lines.Add(input.ToString());
                     InputArrival?.Invoke(this, new InputArrivalEventArgs(lines));
-                    cursor = lines.Count - 1;
-                    input = "";
+                    currentLine = lines.Count;
+
+                    Console.WriteLine();
+                    input = new();
+                    cursor = 0;
+                    Console.Write(InputPrefix);
                 }
                 else if (keyInfo.Key == ConsoleKey.UpArrow) // 切换cursor至上一行
                 {
-                    if (cursor > 0)
+                    if (currentLine > 0)
                     {
-                        cursor--;
-                        InputChange?.Invoke(this, new InputChangeEventArgs(lines[cursor]));
+                        currentLine--;
+                        input = new(lines[currentLine]);
+                        cursor = input.Length;
+                        InputChange?.Invoke(this, new InputChangeEventArgs(lines[currentLine]));
+                        ClearWrittingArea(input.Length);
+                        Console.Write(InputPrefix);
+                        Console.Write(input);
                     }
                 }
                 else if (keyInfo.Key == ConsoleKey.DownArrow) // 切换cursor至下一行
                 {
-                    if (cursor < lines.Count - 1)
+                    if (currentLine < lines.Count - 1)
                     {
-                        cursor++;
-                        InputChange?.Invoke(this, new InputChangeEventArgs(lines[cursor]));
+                        currentLine++;
+                        input = new(lines[currentLine]);
+                        cursor = input.Length;
+                        InputChange?.Invoke(this, new InputChangeEventArgs(lines[currentLine]));
+                        ClearWrittingArea(input.Length);
+                        Console.Write(InputPrefix);
+                        Console.Write(input);
                     }
                 }
-                else if (
-                    keyInfo.Key == ConsoleKey.V && keyInfo.Modifiers == ConsoleModifiers.Control
-                ) // 粘贴剪贴板内容
-                {
-                    pasteText = Clipboard.GetText();
-                    isCtrlV = true;
-                }
+                #endregion
                 else if (
                     keyInfo.Key == ConsoleKey.C && keyInfo.Modifiers == ConsoleModifiers.Control
                 ) // 触发ShutDown事件
@@ -73,16 +139,73 @@ namespace YYHEggEgg.Logger
                     ShutDown?.Invoke(this, EventArgs.Empty);
                     return;
                 }
+                #region 主要处理光标的操作
+                else if (
+                    keyInfo.Key == ConsoleKey.V && keyInfo.Modifiers == ConsoleModifiers.Control
+                ) // 粘贴剪贴板内容
+                {
+                    // Automatically handled by .NET Console
+                    //pasteText = Clipboard.GetText();
+                    //isCtrlV = true;
+                }
                 else if (keyInfo.Key == ConsoleKey.Backspace) // 处理退格
                 {
                     if (input.Length > 0)
                     {
-                        input = input.Remove(input.Length - 1);
+                        input.Remove(input.Length - 1, 1);
+                        cursor = input.Length;
+                        // 按下 backspace 后，控制台会自动使光标后退一格，但不删除字符
+                        int currentCursorLeft = Console.CursorLeft;
+                        int currentCursorTop = Console.CursorTop;
+                        Console.Write(' ');
+                        Console.SetCursorPosition(currentCursorLeft, currentCursorTop);
                     }
                 }
+                else if (keyInfo.Key == ConsoleKey.Home)
+                {
+                    cursor = 0;
+                }
+                else if (keyInfo.Key == ConsoleKey.End)
+                {
+                    cursor = input.Length;
+                }
+                else if (keyInfo.Key == ConsoleKey.LeftArrow)
+                {
+                    if (cursor > 0)
+                    {
+                        cursor--;
+                        #region 控制台光标操作
+                        // 按下上下左右键后，控制台光标不移动
+                        int currentCursorLeft = Console.CursorLeft;
+                        int currentCursorTop = Console.CursorTop;
+                        if (currentCursorLeft == 0)
+                            Console.SetCursorPosition(Console.WindowWidth, currentCursorTop - 1);
+                        else 
+                            Console.SetCursorPosition(currentCursorLeft - 1, currentCursorTop);
+                        #endregion
+                    }
+                }
+                else if (keyInfo.Key == ConsoleKey.RightArrow)
+                {
+                    if (cursor < input.Length)
+                    {
+                        cursor++;
+                        #region 控制台光标操作
+                        // 按下上下左右键后，控制台光标不移动
+                        int currentCursorLeft = Console.CursorLeft;
+                        int currentCursorTop = Console.CursorTop;
+                        if (currentCursorLeft == Console.WindowWidth)
+                            Console.SetCursorPosition(0, currentCursorTop + 1);
+                        else
+                            Console.SetCursorPosition(currentCursorLeft + 1, currentCursorTop);
+                        #endregion
+                    }
+                }
+                #endregion
                 else
                 {
-                    input += keyInfo.KeyChar;
+                    input.Insert(cursor, keyInfo.KeyChar);
+                    cursor++;
                 }
 
                 if (isCtrlV) // 粘贴剪贴板内容
@@ -91,7 +214,6 @@ namespace YYHEggEgg.Logger
                     isCtrlV = false;
                 }
 
-                Console.Clear();
                 Console.WriteLine(string.Join(Environment.NewLine, lines));
                 Console.Write("> " + input);
             }
