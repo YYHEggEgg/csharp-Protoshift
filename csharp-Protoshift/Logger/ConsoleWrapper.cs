@@ -68,11 +68,15 @@ namespace YYHEggEgg.Logger
             }
         }
 
-        public static 
-
-        private static void ClearWrittingArea(int writtenLength)
+        public static async Task ReadLine()
         {
-            int occupiedLength = InputPrefix.Length + writtenLength;
+            AddPrefix = true;
+            
+        }
+
+        private static void ClearWrittingArea()
+        {
+            int occupiedLength = InputPrefix.Length + input.Length;
             while (occupiedLength > 0)
             {
                 ClearThisLine();
@@ -116,7 +120,7 @@ namespace YYHEggEgg.Logger
                         input = new(lines[currentLine]);
                         cursor = input.Length;
                         InputChange?.Invoke(this, new InputChangeEventArgs(lines[currentLine]));
-                        ClearWrittingArea(input.Length);
+                        ClearWrittingArea();
                         Console.Write(InputPrefix);
                         Console.Write(input);
                     }
@@ -129,7 +133,7 @@ namespace YYHEggEgg.Logger
                         input = new(lines[currentLine]);
                         cursor = input.Length;
                         InputChange?.Invoke(this, new InputChangeEventArgs(lines[currentLine]));
-                        ClearWrittingArea(input.Length);
+                        ClearWrittingArea();
                         Console.Write(InputPrefix);
                         Console.Write(input);
                     }
