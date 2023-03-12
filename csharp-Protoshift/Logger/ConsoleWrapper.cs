@@ -371,6 +371,25 @@ namespace YYHEggEgg.Logger
                     }
                 }
             }
+            else if (keyInfo.Key == ConsoleKey.Delete)
+            {
+                if (input.Length > 0)
+                {
+                    input.Remove(cursor, 1);
+                    lock (PrefixLock)
+                    {
+                        if (isReading)
+                        {
+                            int currentCursorLeft = Console.CursorLeft;
+                            int currentCursorTop = Console.CursorTop;
+                            Console.Write(' ');
+                            if (Console.CursorLeft == 0) 
+                                Console.SetCursorPosition(Console.WindowWidth, currentCursorTop - 1);
+                            else Console.SetCursorPosition(currentCursorLeft - 1, currentCursorTop);
+                        }
+                    }
+                }
+            }
             else if (keyInfo.Key == ConsoleKey.Home)
             {
                 lock (PrefixLock)
