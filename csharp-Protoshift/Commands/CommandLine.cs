@@ -46,13 +46,11 @@ namespace csharp_Protoshift.Commands
 
         public static async Task Start()
         {
-            Log.InputPrefix = "> ";
+            ConsoleWrapper.InputPrefix = "> ";
             while (true)
             {
-                Log.BeginRegisterPrefix();
-                string? cmd = Console.ReadLine();
-                Log.EndRegisterPrefix();
-                if (cmd == null) continue;
+                string cmd = await ConsoleWrapper.ReadLineAsync();
+                if (cmd == string.Empty) continue;
                 int sepindex = cmd.IndexOf(' ');
                 if (sepindex == -1) sepindex = cmd.Length;
                 string commandName = cmd.Substring(0, sepindex);
