@@ -31,6 +31,12 @@ public class ConcurrentUdpClient
         Task.Run(BackgroundUpdate);
     }
 
+    public ConcurrentUdpClient(IPEndPoint bindAddress)
+    {
+        baseClient = new UdpClient(bindAddress);
+        Task.Run(BackgroundUpdate);
+    }
+
     // 发送队列
     private ConcurrentQueue<UdpSendPacket> qSend = new ConcurrentQueue<UdpSendPacket>();
     // 接收队列
@@ -62,47 +68,46 @@ public class ConcurrentUdpClient
                 // 否则返回接收到的数据
                 return result.Item1;
             }
-            // 接收队列为空，等待0.1s
-            await Task.Delay(100);
+            // 接收队列为空，等待10ms
+            await Task.Delay(10);
         }
     }
 
     // 后台更新任务
     private async Task BackgroundUpdate()
     {
-        while (true)
+        if (qSend.TryDequeue(out var packet))
         {
-            if (qSend.TryDequeue(out var packet))
+            try
             {
-                try
-                {
-                    // 发送数据
-                    await baseClient.SendAsync(packet.data, packet.endpoint);
-                }
-                catch (Exception ex)
-                {
-                    // 发生异常，将数据重新加入发送队列
-                    qSend.Enqueue(packet);
-                }
+                // 发送数据
+                await baseClient.SendAsync(packet.data, packet.endpoint);
             }
-            else if (baseClient.Available > 0)
+            catch (Exception ex)
             {
-                try
-                {
-                    // 接收数据
-                    UdpReceiveResult result = await baseClient.ReceiveAsync();
-                    qRecv.Enqueue((result, null));
-                }
-                catch (Exception ex)
-                {
-                    qRecv.Enqueue((default(UdpReceiveResult), ex));
-                }
-            }
-            else
-            {
-                // 等待一段时间，降低CPU占用
-                await Task.Delay(10);
+                Log.Dbug($"BackgroundUpdate Send packet meets error and restart: {ex}", "ConcurrentUdpClient");
+                // 发生异常，将数据重新加入发送队列
+                qSend.Enqueue(packet);
             }
         }
+        else if (baseClient.Available > 0)
+        {
+            try
+            {
+                // 接收数据
+                UdpReceiveResult result = await baseClient.ReceiveAsync();
+                qRecv.Enqueue((result, null));
+            }
+            catch (Exception ex)
+            {
+                qRecv.Enqueue((default(UdpReceiveResult), ex));
+            }
+        }
+        else
+        {
+            // 等待一段时间，降低CPU占用
+            await Task.Delay(10);
+        }
+        await Task.Run(BackgroundUpdate);
     }
 }
