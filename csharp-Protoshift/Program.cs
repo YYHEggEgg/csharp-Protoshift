@@ -50,8 +50,14 @@ namespace csharp_Protoshift
             var kcpProxy = new KcpProxyServer(new IPEndPoint(IPAddress.Loopback, 22102),
                 new IPEndPoint(IPAddress.Parse("192.168.127.130"), 20041));
 
-            kcpProxy.StartProxy(GameSessionDispatch.HandleServerPacket,
-                GameSessionDispatch.HandleClientPacket);
+            ProxyHandlers handlers = new ProxyHandlers
+            {
+                OnServerPacketArrival = GameSessionDispatch.HandleServerPacket,
+                OnClientPacketArrival = GameSessionDispatch.HandleClientPacket,
+                IsUrgentServerPacket = GameSessionDispatch.IsUrgentServerPacket,
+                IsUrgentClientPacket = GameSessionDispatch.IsUrgentClientPacket
+            };
+            kcpProxy.StartProxy(handlers);
             Log.Info("Protoshift server started on 127.0.0.1:22102");
             Log.Info("Ready! Type 'help' to get command help.");
 
