@@ -13,7 +13,7 @@ namespace csharp_Protoshift.GameSession
         /// </summary>
         public static Dictionary<uint, HandlerSession> sessions = new();
 
-        public static byte[] HandleServerPacket(byte[] data, uint conv)
+        public static byte[]? HandleServerPacket(byte[] data, uint conv)
         {
             if (!sessions.ContainsKey(conv))
                 sessions.Add(conv, new(conv));
@@ -25,14 +25,14 @@ namespace csharp_Protoshift.GameSession
             catch (Exception ex) 
             {
                 Log.Erro($"Exception when handling packets: {ex}; Inner: {ex.InnerException}", "GameSessionDispatch:Server");
-                return Array.Empty<byte>(); 
+                return null; 
             }
 #else
-            catch { return Array.Empty<byte>(); }
+            catch { return null; }
 #endif
         }
 
-        public static byte[] HandleClientPacket(byte[] data, uint conv)
+        public static byte[]? HandleClientPacket(byte[] data, uint conv)
         {
             if (!sessions.ContainsKey(conv))
                 sessions.Add(conv, new(conv));
@@ -44,10 +44,10 @@ namespace csharp_Protoshift.GameSession
             catch (Exception ex)
             {
                 Log.Erro($"Exception when handling packets: {ex}; Inner: {ex.InnerException}", "GameSessionDispatch:Server");
-                return Array.Empty<byte>();
+                return null;
             }
 #else
-            catch { return Array.Empty<byte>(); }
+            catch { return null; }
 #endif
         }
 

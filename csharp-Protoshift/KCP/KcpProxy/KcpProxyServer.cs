@@ -116,7 +116,8 @@ namespace csharp_Protoshift.KcpProxy
                     if (IsUrgentPacket(beforepacket, conn.Conv))
                     {
                         var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                        await conn.sendClient.SendAsync(afterpacket);
+                        if (afterpacket != null)
+                            await conn.sendClient.SendAsync(afterpacket);
                         // Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerHandler");
                     }
                     else Task.Run(() =>
@@ -124,7 +125,8 @@ namespace csharp_Protoshift.KcpProxy
                         try
                         {
                             var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                            await conn.sendClient.SendAsync(afterpacket);
+                            if (afterpacket != null)
+                                await conn.sendClient.SendAsync(afterpacket);
                             // Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerHandler");
                         }
                         catch (Exception e)
@@ -159,7 +161,8 @@ namespace csharp_Protoshift.KcpProxy
                     if (IsUrgentPacket(beforepacket, conn.Conv))
                     {
                         var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                        await conn.SendAsync(afterpacket);
+                        if (afterpacket != null)
+                            await conn.SendAsync(afterpacket);
                         // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
                     }
                     else Task.Run(() =>
@@ -167,7 +170,8 @@ namespace csharp_Protoshift.KcpProxy
                         try
                         {
                             var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                            await conn.SendAsync(afterpacket);
+                            if (afterpacket != null)
+                                await conn.SendAsync(afterpacket);
                             // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
                         }
                         catch (Exception e)
