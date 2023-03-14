@@ -78,11 +78,12 @@ namespace csharp_Protoshift.KcpProxy
         /// </summary>
         /// <param name="ServerPacketHandler">Handle packet from server to client as a middleware. byte[] is packet, uint is session id.</param>
         /// <param name="ClientPacketHandler">Handle packet from client to server as a middleware. byte[] is packet, uint is session id.</param>
-        public async void StartProxy(Func<byte[], uint, byte[]>? ServerPacketHandler = null,
-            Func<byte[], uint, byte[]>? ClientPacketHandler = null)
+        public async void StartProxy(ProxyHandlers handlers)
         {
-            ServerPacketHandler ??= ((data, conv) => data);
-            ClientPacketHandler ??= ((data, conv) => data);
+            handlers.OnServerPacketArrival ??= ((data, conv) => data);
+            handlers.OnClientPacketArrival ??= ((data, conv) => data);
+            handlers.IsUrgentServerPacket ??= ((data, conv) => false);
+            handlers.IsUrgentClientPacket ??= ((data, conv) => false);
 
             while (true)
             {
@@ -91,8 +92,8 @@ namespace csharp_Protoshift.KcpProxy
                     var ret = await AcceptAsync();
                     Log.Info($"New connection from {ret.RemoteEndpoint}.", "KcpProxyServer");
 
-                    HandleServer(ret.RemoteEndpoint, ServerPacketHandler);
-                    HandleClient(ret.RemoteEndpoint, ClientPacketHandler);
+                    HandleServer(ret.RemoteEndpoint, handlers);
+                    HandleClient(ret.RemoteEndpoint, handlers);
                 }
                 catch (Exception ex)
                 {
@@ -101,19 +102,38 @@ namespace csharp_Protoshift.KcpProxy
             }
         }
 
-        protected async void HandleClient(IPEndPoint remotePoint, 
-            Func<byte[], uint, byte[]> PacketHandler)
+        protected async void HandleClient(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
             var conn = (KcpProxy)clients[remotePoint];
+            var PacketHandler = handlers.OnClientPacketArrival;
+            var IsUrgentPacket = handlers.IsUrgentClientPacket;
             while (conn.State == KCP.ConnectionState.CONNECTED)
             {
                 try
                 {
                     var beforepacket = await conn.ReceiveAsync();
                     // Log.Dbug($"Server Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ServerHandler");
-                    var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                    await conn.sendClient.SendAsync(afterpacket);
-                    // Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerHandler");
+                    if (IsUrgentPacket(beforepacket, conn.Conv))
+                    {
+                        var afterpacket = PacketHandler(beforepacket, conn.Conv);
+                        await conn.sendClient.SendAsync(afterpacket);
+                        // Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerHandler");
+                    }
+                    else Task.Run(() =>
+                    {
+                        try
+                        {
+                            var afterpacket = PacketHandler(beforepacket, conn.Conv);
+                            await conn.sendClient.SendAsync(afterpacket);
+                            // Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerHandler");
+                        }
+                        catch (Exception e)
+                        {
+                            Log.Dbug(e.ToString(), "KcpProxyServer:ServerHandler");
+                            //conn.Close();
+                            break;
+                        }
+                    });
                 }
                 catch (Exception e)
                 {
@@ -128,16 +148,35 @@ namespace csharp_Protoshift.KcpProxy
             Func<byte[], uint, byte[]> PacketHandler)
         {
             var conn = (KcpProxy)clients[remotePoint];
-            Debug.Assert(conn.sendClient?.State == KCP.ConnectionState.CONNECTED);
+            var PacketHandler = handlers.OnServerPacketArrival;
+            var IsUrgentPacket = handlers.IsUrgentServerPacket;
             while (conn.sendClient.State == KCP.ConnectionState.CONNECTED)
             {
                 try
                 {
                     var beforepacket = await conn.sendClient.ReceiveAsync();
                     // Log.Dbug($"Client Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ClientHandler");
-                    var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                    await conn.SendAsync(afterpacket);
-                    // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
+                    if (IsUrgentPacket(beforepacket, conn.Conv))
+                    {
+                        var afterpacket = PacketHandler(beforepacket, conn.Conv);
+                        await conn.SendAsync(afterpacket);
+                        // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
+                    }
+                    else Task.Run(() =>
+                    {
+                        try
+                        {
+                            var afterpacket = PacketHandler(beforepacket, conn.Conv);
+                            await conn.SendAsync(afterpacket);
+                            // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
+                        }
+                        catch (Exception e)
+                        {
+                            Log.Dbug(e.ToString(), "KcpProxyClient:ClientHandler");
+                            //conn.sendClient.Close();
+                            break;
+                        }
+                    });
                 }
                 catch (Exception e)
                 {
