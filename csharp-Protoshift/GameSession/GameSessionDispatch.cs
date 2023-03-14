@@ -51,7 +51,7 @@ namespace csharp_Protoshift.GameSession
 #endif
         }
 
-        public static bool IsUrgentServerPacket(byte[] data, int conv)
+        public static bool IsUrgentServerPacket(byte[] data, uint conv)
         {
             if (!sessions.ContainsKey(conv))
                 sessions.Add(conv, new(conv));
@@ -59,7 +59,7 @@ namespace csharp_Protoshift.GameSession
             return sessions[conv].IsUrgentPacket(data, true);
         }
 
-        public static bool IsUrgentClientPacket(byte[] data, int conv)
+        public static bool IsUrgentClientPacket(byte[] data, uint conv)
         {
             if (!sessions.ContainsKey(conv))
                 sessions.Add(conv, new(conv));
