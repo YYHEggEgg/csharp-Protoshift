@@ -40,9 +40,9 @@ namespace csharp_Protoshift.KCP.SpecialUdp
         }
 
         // 发送队列
-        private ConcurrentQueue<UdpSendPacket> qSend = new ConcurrentQueue<UdpSendPacket>();
+        private ConcurrentQueue<UdpSendPacket> qSend = new();
         // 接收队列
-        private ConcurrentQueue<(UdpReceiveResult, Exception?)> qRecv = new ConcurrentQueue<(UdpReceiveResult, Exception?)>();
+        private ConcurrentQueue<(UdpReceiveResult, Exception?)> qRecv = new();
         // 内部使用的UdpClient实例
         private UdpClient baseClient;
 
