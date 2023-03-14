@@ -7,121 +7,124 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
 
-public class ConcurrentUdpClient
+namespace csharp_Protoshift.KCP.SpecialUdp
 {
-    // 内部结构体
-    private struct UdpSendPacket
+    public class ConcurrentUdpClient
     {
-        public byte[] data;
-        public IPEndPoint endpoint;
-
-        public UdpSendPacket(byte[] data, IPEndPoint endpoint)
+        // 内部结构体
+        private struct UdpSendPacket
         {
-            this.data = data;
-            this.endpoint = endpoint;
-        }
-    }
+            public byte[] data;
+            public IPEndPoint endpoint;
 
-    // 构造函数
-    public ConcurrentUdpClient()
-    {
-        // 初始化UdpClient实例
-        baseClient = new UdpClient();
-        // 启动后台更新任务
-        Task.Run(BackgroundUpdate);
-    }
-
-    public ConcurrentUdpClient(IPEndPoint bindAddress)
-    {
-        baseClient = new UdpClient(bindAddress);
-        Task.Run(BackgroundUpdate);
-    }
-
-    // 发送队列
-    private ConcurrentQueue<UdpSendPacket> qSend = new ConcurrentQueue<UdpSendPacket>();
-    // 接收队列
-    private ConcurrentQueue<(UdpReceiveResult, Exception?)> qRecv = new ConcurrentQueue<(UdpReceiveResult, Exception?)>();
-    // 内部使用的UdpClient实例
-    private UdpClient baseClient;
-
-    // 发送方法
-    public void Send(byte[] data, IPEndPoint endpoint)
-    {
-        // 将待发送数据加入发送队列
-        UdpSendPacket packet = new UdpSendPacket(data, endpoint);
-        qSend.Enqueue(packet);
-    }
-
-    // 接收方法
-    public async Task<UdpReceiveResult> ReceiveAsync()
-    {
-        while (true)
-        {
-            // 尝试从接收队列取出数据
-            if (qRecv.TryDequeue(out var result))
+            public UdpSendPacket(byte[] data, IPEndPoint endpoint)
             {
-                if (result.Item2 != null)
+                this.data = data;
+                this.endpoint = endpoint;
+            }
+        }
+
+        // 构造函数
+        public ConcurrentUdpClient()
+        {
+            // 初始化UdpClient实例
+            baseClient = new UdpClient();
+            // 启动后台更新任务
+            Task.Run(BackgroundUpdate);
+        }
+
+        public ConcurrentUdpClient(IPEndPoint bindAddress)
+        {
+            baseClient = new UdpClient(bindAddress);
+            Task.Run(BackgroundUpdate);
+        }
+
+        // 发送队列
+        private ConcurrentQueue<UdpSendPacket> qSend = new ConcurrentQueue<UdpSendPacket>();
+        // 接收队列
+        private ConcurrentQueue<(UdpReceiveResult, Exception?)> qRecv = new ConcurrentQueue<(UdpReceiveResult, Exception?)>();
+        // 内部使用的UdpClient实例
+        private UdpClient baseClient;
+
+        // 发送方法
+        public void Send(byte[] data, IPEndPoint endpoint)
+        {
+            // 将待发送数据加入发送队列
+            UdpSendPacket packet = new UdpSendPacket(data, endpoint);
+            qSend.Enqueue(packet);
+        }
+
+        // 接收方法
+        public async Task<UdpReceiveResult> ReceiveAsync()
+        {
+            while (true)
+            {
+                // 尝试从接收队列取出数据
+                if (qRecv.TryDequeue(out var result))
                 {
-                    // 如果有异常则抛出
-                    throw result.Item2;
+                    if (result.Item2 != null)
+                    {
+                        // 如果有异常则抛出
+                        throw result.Item2;
+                    }
+                    // 否则返回接收到的数据
+                    return result.Item1;
                 }
-                // 否则返回接收到的数据
-                return result.Item1;
-            }
-            // 接收队列为空，等待10ms
-            await Task.Delay(10);
-        }
-    }
-
-    // 后台更新任务
-    private async Task BackgroundUpdate()
-    {
-        if (qSend.TryDequeue(out var packet))
-        {
-            try
-            {
-                // 发送数据
-                await baseClient.SendAsync(packet.data, packet.endpoint);
-            }
-            catch (Exception ex)
-            {
-                Log.Dbug($"BackgroundUpdate Send packet meets error and restart: {ex}", "ConcurrentUdpClient");
-                // 发生异常，将数据重新加入发送队列
-                qSend.Enqueue(packet);
+                // 接收队列为空，等待10ms
+                await Task.Delay(10);
             }
         }
-        else if (baseClient.Available > 0)
+
+        // 后台更新任务
+        private async Task BackgroundUpdate()
         {
-            try
+            if (qSend.TryDequeue(out var packet))
             {
-                // 接收数据
-                UdpReceiveResult result = await baseClient.ReceiveAsync();
-
-                // AI 似乎并未实现该部分，单独拿出了一个问题提问
-                var cancellationTokenSource = new CancellationTokenSource();
-                var receiveTask = udpClient.ReceiveAsync(cancellationTokenSource.Token);
-
-                if (await Task.WhenAny(receiveTask, Task.Delay(50)) == receiveTask)
+                try
                 {
-                    cancellationTokenSource.Cancel();
-                    result = await receiveTask;
-                    qRecv.Enqueue((result, null));
+                    // 发送数据
+                    await baseClient.SendAsync(packet.data, packet.endpoint);
                 }
-                else
+                catch (Exception ex)
                 {
-                    cancellationTokenSource.Cancel();
+                    Log.Dbug($"BackgroundUpdate Send packet meets error and restart: {ex}", "ConcurrentUdpClient");
+                    // 发生异常，将数据重新加入发送队列
+                    qSend.Enqueue(packet);
                 }
             }
-            catch (Exception ex)
+            else if (baseClient.Available > 0)
             {
-                qRecv.Enqueue((default(UdpReceiveResult), ex));
+                try
+                {
+                    // 接收数据
+                    UdpReceiveResult result = await baseClient.ReceiveAsync();
+
+                    // AI 似乎并未实现该部分，单独拿出了一个问题提问
+                    var cancellationTokenSource = new CancellationTokenSource();
+                    var receiveTask = udpClient.ReceiveAsync(cancellationTokenSource.Token);
+
+                    if (await Task.WhenAny(receiveTask, Task.Delay(50)) == receiveTask)
+                    {
+                        cancellationTokenSource.Cancel();
+                        result = await receiveTask;
+                        qRecv.Enqueue((result, null));
+                    }
+                    else
+                    {
+                        cancellationTokenSource.Cancel();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    qRecv.Enqueue((default(UdpReceiveResult), ex));
+                }
             }
+            else
+            {
+                // 等待一段时间，降低CPU占用
+                await Task.Delay(5);
+            }
+            await Task.Run(BackgroundUpdate);
         }
-        else
-        {
-            // 等待一段时间，降低CPU占用
-            await Task.Delay(5);
-        }
-        await Task.Run(BackgroundUpdate);
     }
 }
