@@ -50,5 +50,21 @@ namespace csharp_Protoshift.GameSession
             catch { return Array.Empty<byte>(); }
 #endif
         }
+
+        public static bool IsUrgentServerPacket(byte[] data, int conv)
+        {
+            if (!sessions.ContainsKey(conv))
+                sessions.Add(conv, new(conv));
+
+            return sessions[conv].IsUrgentPacket(data, true);
+        }
+
+        public static bool IsUrgentClientPacket(byte[] data, int conv)
+        {
+            if (!sessions.ContainsKey(conv))
+                sessions.Add(conv, new(conv));
+
+            return sessions[conv].IsUrgentPacket(data, false);
+        }
     }
 }

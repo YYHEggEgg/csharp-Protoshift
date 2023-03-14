@@ -111,6 +111,47 @@ namespace csharp_Protoshift.GameSession
             return rtn;
         }
 
+        public bool IsUrgentPacket(byte[] packet, bool isNewCmdid)
+        {
+            if (packet == null) throw new ArgumentNullException(nameof(packet));
+            bool fallback = false; // Whether use dispatchKey
+            XorDecrypt(ref packet, 0, 2);
+            // Reference: https://sdl.moe/post/magic-sniffer/#%E5%B7%B2%E7%9F%A5%E6%98%8E%E6%96%87%E6%94%BB%E5%87%BB
+            var magic_start = packet.GetUInt16(0);
+            if (magic_start != 0x4567)
+            {
+                XorDecrypt(ref packet, 0, 2); // recover original encrypted
+                fallback = true;
+                XorDecrypt(ref packet, 0, 2, fallback); // fallback to dispatchKey
+                magic_start = packet.GetUInt16(0);
+                if (magic_start != 0x4567)
+                {
+                    XorDecrypt(ref packet, 0, 2, fallback); // recover original encrypted
+                    return false;
+                }
+            }
+
+            XorDecrypt(ref packet, 2, 2, fallback);
+            var cmdid = packet.GetUInt16(2);
+            XorDecrypt(ref packet, 0, 4, fallback); // recover original packet
+            if (isNewCmdid)
+            {
+                if (cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenReq") ||
+                    cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginReq") ||
+                    cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("PingReq"))
+                    return true;
+                else return false;
+            }
+            else
+            {
+                if (cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp") ||
+                    cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginRsp") ||
+                    cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PingRsp"))
+                    return true;
+                else return false;
+            }
+        }
+
         #region Packet Handle
 #if DEBUG
         public byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
