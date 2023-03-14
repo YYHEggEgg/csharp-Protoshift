@@ -96,7 +96,21 @@ public class ConcurrentUdpClient
             {
                 // 接收数据
                 UdpReceiveResult result = await baseClient.ReceiveAsync();
-                qRecv.Enqueue((result, null));
+
+                // AI 似乎并未实现该部分，单独拿出了一个问题提问
+                var cancellationTokenSource = new CancellationTokenSource();
+                var receiveTask = udpClient.ReceiveAsync(cancellationTokenSource.Token);
+
+                if (await Task.WhenAny(receiveTask, Task.Delay(50)) == receiveTask)
+                {
+                    cancellationTokenSource.Cancel();
+                    result = await receiveTask;
+                    qRecv.Enqueue((result, null));
+                }
+                else
+                {
+                    cancellationTokenSource.Cancel();
+                }
             }
             catch (Exception ex)
             {
@@ -106,7 +120,7 @@ public class ConcurrentUdpClient
         else
         {
             // 等待一段时间，降低CPU占用
-            await Task.Delay(10);
+            await Task.Delay(5);
         }
         await Task.Run(BackgroundUpdate);
     }
