@@ -38,7 +38,6 @@ namespace csharp_Protoshift.SpecialUdp
 
         public ConcurrentUdpClient(IPEndPoint bindAddress)
         {
-            BindedAddress = bindAddress;
             baseClient = new UdpClient(bindAddress);
             Task.Run(BackgroundUpdate);
         }
@@ -49,7 +48,7 @@ namespace csharp_Protoshift.SpecialUdp
         private ConcurrentQueue<(UdpReceiveResult, Exception?)> qRecv = new();
         // 内部使用的UdpClient实例
         private UdpClient baseClient;
-        public IPEndPoint BindedAddress { get; set; }
+        public IPEndPoint ConnectedAddress { get; set; }
 
         #region Send Packet
         // 发送方法
@@ -104,7 +103,7 @@ namespace csharp_Protoshift.SpecialUdp
 
         public void Connect(IPEndPoint ipEp)
         {
-            BindedAddress = ipEp;
+            ConnectedAddress = ipEp;
             baseClient.Connect(ipEp);
         }
 
