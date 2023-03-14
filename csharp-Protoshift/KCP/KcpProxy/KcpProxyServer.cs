@@ -17,7 +17,7 @@ namespace csharp_Protoshift.KcpProxy
 
         public KcpProxyServer(IPEndPoint bindToAddress, IPEndPoint sendToAddress)
         {
-            udpSock = new UdpClient(bindToAddress);
+            udpSock = new ConcurrentUdpClient(bindToAddress);
             SendToEndpoint = sendToAddress;
 
             Task.Run(BackgroundUpdate);
@@ -52,7 +52,8 @@ namespace csharp_Protoshift.KcpProxy
             {
                 // Oh boy! A new connection!
                 var conn = new KcpProxy(sendToAddress: SendToEndpoint);
-                conn.Output = (data) => { return udpSock.Send(data, data.Length, packet.RemoteEndPoint); };
+                conn.Output = async (data) 
+                    => return await udpSock.SendAsync(data, data.Length, packet.RemoteEndPoint);
                 try
                 {
                     Log.Dbug($"New connection established, remote endpoint={packet.RemoteEndPoint}");
