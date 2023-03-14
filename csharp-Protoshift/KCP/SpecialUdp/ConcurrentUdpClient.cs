@@ -11,16 +11,19 @@ namespace csharp_Protoshift.KCP.SpecialUdp
 {
     public class ConcurrentUdpClient : IDisposeable
     {
-        // 内部结构体
-        private struct UdpSendPacket
+        private class UdpSendPacket
         {
             public byte[] data;
-            public IPEndPoint endpoint;
+            public IPEndPoint? endpoint;
+            public Exception? ex;
+            public int? rtn;
+            public bool dropResult;
 
-            public UdpSendPacket(byte[] data, IPEndPoint endpoint)
+            public UdpSendPacket(byte[] data, IPEndPoint endpoint, bool dropResult)
             {
                 this.data = data;
                 this.endpoint = endpoint;
+                this.dropResult = dropResult;
             }
         }
 
@@ -35,6 +38,7 @@ namespace csharp_Protoshift.KCP.SpecialUdp
 
         public ConcurrentUdpClient(IPEndPoint bindAddress)
         {
+            BindedAddress = bindAddress;
             baseClient = new UdpClient(bindAddress);
             Task.Run(BackgroundUpdate);
         }
@@ -45,14 +49,37 @@ namespace csharp_Protoshift.KCP.SpecialUdp
         private ConcurrentQueue<(UdpReceiveResult, Exception?)> qRecv = new();
         // 内部使用的UdpClient实例
         private UdpClient baseClient;
+        public IPEndPoint BindedAddress { get; set; }
 
+        #region Send Packet
         // 发送方法
-        public void Send(byte[] data, IPEndPoint endpoint)
+        public async Task<int> SendAsync(byte[] data, IPEndPoint? endpoint == null)
         {
             // 将待发送数据加入发送队列
-            UdpSendPacket packet = new UdpSendPacket(data, endpoint);
+            UdpSendPacket packet = new UdpSendPacket(data, endpoint, false);
+            qSend.Enqueue(packet);
+            while (true)
+            {
+                if (packet.rtn != null)
+                {
+                    if (packet.ex != null)
+                    {
+                        // 如果有异常则抛出
+                        throw packet.ex;
+                    }
+                    return rtn;
+                }
+                await Task.Delay(10);
+            }
+        }
+
+        public void SendAsync(byte[] data, IPEndPoint? endpoint == null)
+        {
+            // 将待发送数据加入发送队列
+            UdpSendPacket packet = new UdpSendPacket(data, endpoint, true);
             qSend.Enqueue(packet);
         }
+        #endregion
 
         // 接收方法
         public async Task<UdpReceiveResult> ReceiveAsync()
@@ -75,6 +102,12 @@ namespace csharp_Protoshift.KCP.SpecialUdp
             }
         }
 
+        public void Connect(IPEndPoint ipEp)
+        {
+            BindedAddress = ipEp;
+            baseClient.Connect(ipEp);
+        }
+
         // 后台更新任务
         private async Task BackgroundUpdate()
         {
@@ -83,13 +116,23 @@ namespace csharp_Protoshift.KCP.SpecialUdp
                 try
                 {
                     // 发送数据
-                    await baseClient.SendAsync(packet.data, packet.endpoint);
+                    if (packet.endpoint != null)
+                        packet.rtn = await baseClient.SendAsync(packet.data, packet.endpoint);
+                    else packet.rtn = await baseClient.SendAsync(packet.data);
                 }
                 catch (Exception ex)
                 {
-                    Log.Dbug($"BackgroundUpdate Send packet meets error and restart: {ex}", "ConcurrentUdpClient");
-                    // 发生异常，将数据重新加入发送队列
-                    qSend.Enqueue(packet);
+                    if (packet.dropResult)
+                    {
+                        Log.Dbug($"BackgroundUpdate Send packet meets error and restart: {ex}", "ConcurrentUdpClient");
+                        // 发生异常，将数据重新加入发送队列
+                        qSend.Enqueue(packet);
+                    }
+                    else
+                    {
+                        packet.ex = ex;
+                        packet.rtn = -1;
+                    }
                 }
             }
             else if (baseClient.Available > 0)
