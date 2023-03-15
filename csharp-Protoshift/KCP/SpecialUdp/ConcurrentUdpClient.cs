@@ -145,15 +145,9 @@ namespace csharp_Protoshift.SpecialUdp
                     var cancellationTokenSource = new CancellationTokenSource();
                     var receiveTask = udpClient.ReceiveAsync(cancellationTokenSource.Token);
 
-                    if (await Task.WhenAny(receiveTask, Task.Delay(50)) == receiveTask)
+                    if (receiveTask.Wait(50))
                     {
-                        cancellationTokenSource.Cancel();
-                        result = await receiveTask;
-                        qRecv.Enqueue((result, null));
-                    }
-                    else
-                    {
-                        cancellationTokenSource.Cancel();
+                        result = receiveTask.Result;
                     }
                 }
                 catch (Exception ex)
