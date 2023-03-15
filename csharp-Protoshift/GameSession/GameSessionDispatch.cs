@@ -11,13 +11,14 @@ namespace csharp_Protoshift.GameSession
         /// <summary>
         /// Session dictionary. UInt is Conv id.
         /// </summary>
-        public static Dictionary<uint, HandlerSession> sessions = new();
+        public static ConcurrentDictionary<uint, HandlerSession> sessions = new();
+        public static ConcurrentBag<uint> cancelledSessions = new();
+        public static bool Closed { get; private set; }
 
         #region Packet Handlers
         public static byte[]? HandleServerPacket(byte[] data, uint conv)
         {
-            if (!sessions.ContainsKey(conv))
-                sessions.Add(conv, new(conv));
+            AssertSessionExists(conv);
             try
             {
                 return sessions[conv].HandlePacket(data, false);
@@ -35,8 +36,7 @@ namespace csharp_Protoshift.GameSession
 
         public static byte[]? HandleClientPacket(byte[] data, uint conv)
         {
-            if (!sessions.ContainsKey(conv))
-                sessions.Add(conv, new(conv));
+            AssertSessionExists(conv);
             try
             {
                 return sessions[conv].HandlePacket(data, true);
@@ -54,17 +54,13 @@ namespace csharp_Protoshift.GameSession
 
         public static bool IsUrgentServerPacket(byte[] data, uint conv)
         {
-            if (!sessions.ContainsKey(conv))
-                sessions.Add(conv, new(conv));
-
+            AssertSessionExists(conv);
             return sessions[conv].IsUrgentPacket(data, true);
         }
 
         public static bool IsUrgentClientPacket(byte[] data, uint conv)
         {
-            if (!sessions.ContainsKey(conv))
-                sessions.Add(conv, new(conv));
-
+            AssertSessionExists(conv);
             return sessions[conv].IsUrgentPacket(data, false);
         }
         #endregion
@@ -82,10 +78,12 @@ namespace csharp_Protoshift.GameSession
                 "'SKILL ISSUE' for packets with skill issue.\n");
         }
 
-        public static async void DestroySession(uint conv)
+        public static async Task DestroySession(uint conv)
         {
+            if (!session.ContainsKey(conv)) return;
             HandlerSession session = sessions[conv];
-            session.Remove(conv);
+            sessions.TryRemove(conv);
+            cancelledSessions.Add(conv);
 
             StringBuilder output = new();
 
@@ -180,6 +178,30 @@ namespace csharp_Protoshift.GameSession
                 await packet_logwriter.AppendAsync(output.ToString());
             }
         }
+
+        public static void CloseServer()
+        {
+            Closed = true;
+            List<Task> tasks = new();
+            foreach (var conv in sessions.Keys)
+            {
+                tasks.Add(DestroySession(conv));
+            }
+            Task.WaitAll(tasks);
+            packet_logwriter.Flush();
+            packet_logwriter.Dispose();
+        }
         #endregion
+    
+        private void AssertSessionExists(uint conv)
+        {
+            if (Closed) throw new OperationCanceledException("The server is closing.");
+            if (!sessions.ContainsKey(conv))
+            {
+                if (!cancelledSessions.Contains(conv))
+                    sessions.AddOrUpdate(conv, new(conv));
+                else throw new OperationCanceledException($"Session {conv} has been destroyed and no longer avaliable.");
+            }
+        }
     }
 }
