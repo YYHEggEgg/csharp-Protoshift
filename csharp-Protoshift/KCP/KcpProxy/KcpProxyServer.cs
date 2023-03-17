@@ -1,5 +1,4 @@
-﻿using csharp_Protoshift.SpecialUdp;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,7 +18,7 @@ namespace csharp_Protoshift.KcpProxy
 
         public KcpProxyServer(IPEndPoint bindToAddress, IPEndPoint sendToAddress)
         {
-            udpSock = new ConcurrentUdpClient(bindToAddress);
+            udpSock = new UdpClient(bindToAddress);
             SendToEndpoint = sendToAddress;
 
             Task.Run(BackgroundUpdate);
