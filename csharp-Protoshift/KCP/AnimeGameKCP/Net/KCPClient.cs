@@ -3,23 +3,20 @@ using System.Net.Sockets;
 using YSFreedom.Common.Net;
 using YYHEggEgg.Logger;
 
-
-using csharp_Protoshift.SpecialUdp;
-
 namespace csharp_Protoshift.AnimeGameKCP
 {
     public class KCPClient : IDisposable
     {
         public bool Closed { get { return _Closed; } }
 
-        protected ConcurrentUdpClient udpSock;
+        protected UdpClient udpSock;
         private bool _Closed = false;
         protected KCP server;
         protected IPEndPoint remoteAddress;
 
         public KCPClient(IPEndPoint ipEp)
         {
-            udpSock = new ConcurrentUdpClient();
+            udpSock = new UdpClient();
             //udpSock = new();
             udpSock.Connect(ipEp);
             server = new KCP();
