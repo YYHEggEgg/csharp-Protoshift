@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Net.Sockets;
 using YSFreedom.Common.Native;
 using YSFreedom.Common.Util;
+using YYHEggEgg.Logger;
 
 namespace YSFreedom.Common.Net
 {
