@@ -1,4 +1,5 @@
-﻿using System;
+﻿using csharp_Protoshift.SpecialUdp;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -53,8 +54,7 @@ namespace csharp_Protoshift.KcpProxy
             {
                 // Oh boy! A new connection!
                 var conn = new KcpProxy(sendToAddress: SendToEndpoint);
-                conn.Output = async (data) 
-                    => return await udpSock.SendAsync(data, data.Length, packet.RemoteEndPoint);
+                conn.Output = data => udpSock.SendAsync(data, packet.RemoteEndPoint).Result;
                 try
                 {
                     Log.Dbug($"New connection established, remote endpoint={packet.RemoteEndPoint}");
@@ -121,7 +121,7 @@ namespace csharp_Protoshift.KcpProxy
                             await conn.sendClient.SendAsync(afterpacket);
                         // Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerHandler");
                     }
-                    else Task.Run(() =>
+                    else _ = Task.Run(async () =>
                     {
                         try
                         {
@@ -134,7 +134,6 @@ namespace csharp_Protoshift.KcpProxy
                         {
                             Log.Dbug(e.ToString(), "KcpProxyServer:ServerHandler");
                             //conn.Close();
-                            break;
                         }
                     });
                 }
@@ -147,8 +146,7 @@ namespace csharp_Protoshift.KcpProxy
             }
         }
 
-        protected async void HandleServer(IPEndPoint remotePoint,
-            Func<byte[], uint, byte[]> PacketHandler)
+        protected async void HandleServer(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
             var conn = (KcpProxy)clients[remotePoint];
             var PacketHandler = handlers.OnServerPacketArrival;
@@ -166,7 +164,7 @@ namespace csharp_Protoshift.KcpProxy
                             await conn.SendAsync(afterpacket);
                         // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
                     }
-                    else Task.Run(() =>
+                    else _ = Task.Run(async () =>
                     {
                         try
                         {
@@ -179,7 +177,6 @@ namespace csharp_Protoshift.KcpProxy
                         {
                             Log.Dbug(e.ToString(), "KcpProxyClient:ClientHandler");
                             //conn.sendClient.Close();
-                            break;
                         }
                     });
                 }
