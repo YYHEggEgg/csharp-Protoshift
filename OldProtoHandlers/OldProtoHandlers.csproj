@@ -10,4 +10,8 @@
     <PackageReference Include="Google.Protobuf" Version="3.21.12" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CSharp-Logger\CSharp-Logger.csproj" />
+  </ItemGroup>
+
 </Project>
