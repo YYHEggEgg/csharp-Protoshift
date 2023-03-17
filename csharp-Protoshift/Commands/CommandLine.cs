@@ -10,6 +10,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using YSFreedom.Common.Net;
 using YSFreedom.Common.Util;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
@@ -45,11 +46,11 @@ namespace csharp_Protoshift.Commands
 
         public static async Task Start()
         {
+            ConsoleWrapper.InputPrefix = "> ";
             while (true)
             {
-                Console.Write("> ");
-                string? cmd = Console.ReadLine();
-                if (cmd == null) continue;
+                string cmd = await ConsoleWrapper.ReadLineAsync();
+                if (cmd == string.Empty) continue;
                 int sepindex = cmd.IndexOf(' ');
                 if (sepindex == -1) sepindex = cmd.Length;
                 string commandName = cmd.Substring(0, sepindex);
