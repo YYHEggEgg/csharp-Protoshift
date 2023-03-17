@@ -1,5 +1,6 @@
 using Google.Protobuf;
 using Newtonsoft.Json.Linq;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.GameSession.SpecialFixs.CombatInvokeEntry
 {

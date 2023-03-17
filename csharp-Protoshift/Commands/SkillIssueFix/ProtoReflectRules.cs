@@ -4,6 +4,7 @@ using System.Linq;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands.SkillIssueFix
 {
