@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using YSFreedom.Common.Util;
-using csharp_Protoshift.SpecialUdp;
 
 namespace YSFreedom.Common.Net
 {
@@ -13,7 +12,7 @@ namespace YSFreedom.Common.Net
     {
         public bool Closed { get { return _Closed; } }
 
-        protected ConcurrentUdpClient udpSock;
+        protected UdpClient udpSock;
         protected bool _Closed = false;
         protected Dictionary<IPEndPoint, KCP> clients;
         protected ConcurrentQueue<IPEndPoint> newConnections;
@@ -34,7 +33,7 @@ namespace YSFreedom.Common.Net
 
         public KCPServer(IPEndPoint ipEp)
         {
-            udpSock = new ConcurrentUdpClient(ipEp);
+            udpSock = new UdpClient(ipEp);
             clients = new Dictionary<IPEndPoint, KCP>();
             newConnections = new ConcurrentQueue<IPEndPoint>();
 
