@@ -6,10 +6,11 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.SpecialUdp
 {
-    public class ConcurrentUdpClient : IDisposeable
+    public class ConcurrentUdpClient : IDisposable
     {
         private class UdpSendPacket
         {
@@ -48,12 +49,15 @@ namespace csharp_Protoshift.SpecialUdp
         private ConcurrentQueue<(UdpReceiveResult, Exception?)> qRecv = new();
         // 内部使用的UdpClient实例
         private UdpClient baseClient;
-        public IPEndPoint ConnectedAddress { get; set; }
+        public IPEndPoint? ConnectedAddress { get; set; }
 
         #region Send Packet
         // 发送方法
-        public async Task<int> SendAsync(byte[] data, IPEndPoint? endpoint == null)
+        public async Task<int> SendAsync(byte[] data, IPEndPoint? endpoint = null)
         {
+            endpoint ??= ConnectedAddress;
+            if (endpoint == null)
+                throw new ArgumentNullException(nameof(endpoint), "endpoint should be defined before connected.");
             // 将待发送数据加入发送队列
             UdpSendPacket packet = new UdpSendPacket(data, endpoint, false);
             qSend.Enqueue(packet);
@@ -66,14 +70,17 @@ namespace csharp_Protoshift.SpecialUdp
                         // 如果有异常则抛出
                         throw packet.ex;
                     }
-                    return rtn;
+                    return (int)packet.rtn;
                 }
                 await Task.Delay(10);
             }
         }
 
-        public void SendAsync(byte[] data, IPEndPoint? endpoint == null)
+        public void SendBackground(byte[] data, IPEndPoint? endpoint = null)
         {
+            endpoint ??= ConnectedAddress;
+            if (endpoint == null)
+                throw new ArgumentNullException(nameof(endpoint), "endpoint should be defined before connected.");
             // 将待发送数据加入发送队列
             UdpSendPacket packet = new UdpSendPacket(data, endpoint, true);
             qSend.Enqueue(packet);
@@ -143,7 +150,7 @@ namespace csharp_Protoshift.SpecialUdp
 
                     // AI 似乎并未实现该部分，单独拿出了一个问题提问
                     var cancellationTokenSource = new CancellationTokenSource();
-                    var receiveTask = udpClient.ReceiveAsync(cancellationTokenSource.Token);
+                    var receiveTask = baseClient.ReceiveAsync(cancellationTokenSource.Token).AsTask();
 
                     if (receiveTask.Wait(50))
                     {

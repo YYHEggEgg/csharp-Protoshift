@@ -19,7 +19,7 @@ namespace csharp_Protoshift.AnimeGameKCP
 
         public KCPClient(IPEndPoint ipEp)
         {
-            udpSock = new UdpClient();
+            udpSock = new ConcurrentUdpClient();
             //udpSock = new();
             udpSock.Connect(ipEp);
             server = new KCP();
@@ -27,11 +27,7 @@ namespace csharp_Protoshift.AnimeGameKCP
             remoteAddress = ipEp;
 
             server.Timeout = 10000;
-            server.Output = 
-                data => async
-                { 
-                    return await udpSock.SendAsync(data); 
-                };
+            server.Output = data => udpSock.SendAsync(data).Result;
 
             Task.Run(BackgroundUpdate);
         }
@@ -61,7 +57,7 @@ namespace csharp_Protoshift.AnimeGameKCP
                 if (packet.RemoteEndPoint == remoteAddress)
                 {
                     // Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", "KCPClient");
-                    server.Input(packet);
+                    server.Input(packet.Buffer);
                 }
                 else
                 {

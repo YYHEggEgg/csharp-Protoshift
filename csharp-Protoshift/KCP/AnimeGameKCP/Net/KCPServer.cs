@@ -34,7 +34,7 @@ namespace YSFreedom.Common.Net
 
         public KCPServer(IPEndPoint ipEp)
         {
-            udpSock = new UdpClient(ipEp);
+            udpSock = new ConcurrentUdpClient(ipEp);
             clients = new Dictionary<IPEndPoint, KCP>();
             newConnections = new ConcurrentQueue<IPEndPoint>();
 
@@ -59,8 +59,7 @@ namespace YSFreedom.Common.Net
             {
                 // Oh boy! A new connection!
                 var conn = new KCP();
-                conn.Output = async (data) 
-                    => return await udpSock.SendAsync(data, packet.RemoteEndPoint);
+                conn.Output = data => udpSock.SendAsync(data, packet.RemoteEndPoint).Result;
 
                 conn.AcceptNonblock();
                 try
