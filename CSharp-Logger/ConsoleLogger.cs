@@ -1,10 +1,10 @@
-﻿using csharp_Protoshift;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YYHEggEgg.Logger.Utils;
 
 namespace YYHEggEgg.Logger
 {
@@ -163,7 +163,7 @@ namespace YYHEggEgg.Logger
             string nowtime = log.create_time.ToString("HH:mm:ss");
             string header = GetLogInfo(log.level, log.sender);
             string res = $"{nowtime}{header}{log.content}";
-            if (Tools.TryRemoveColorInfo(res, out string fileres))
+            if (ConsoleWrapper.TryRemoveColorInfo(res, out string fileres))
             {
 #if DEBUG
                 if (log.level != LogLevel.Debug)
@@ -205,7 +205,7 @@ namespace YYHEggEgg.Logger
                     rtn += "<color=Yellow>Warn</color>";
                     break;
                 case LogLevel.Error:
-                    rtn += "Erro";
+                    rtn += "<color=Red>Erro</color>";
                     break;
             }
             if (sender != null)

@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CSharp-Logger\CSharp-Logger.csproj" />
     <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
     <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />
     <ProjectReference Include="..\XC.RSAUtil\XC.RSAUtil.csproj" />
