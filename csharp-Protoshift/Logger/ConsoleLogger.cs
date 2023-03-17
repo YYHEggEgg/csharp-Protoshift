@@ -196,19 +196,15 @@ namespace YYHEggEgg.Logger
             switch (level)
             {
                 case LogLevel.Debug:
-                    Console.Write("Dbug");
                     rtn += "<color=Cyan>Dbug</color>";
                     break;
                 case LogLevel.Information:
-                    Console.Write("Info");
                     rtn += "<color=Blue>Info</color>";
                     break;
                 case LogLevel.Warning:
-                    Console.Write("Warn");
                     rtn += "<color=Yellow>Warn</color>";
                     break;
                 case LogLevel.Error:
-                    Console.Write("<color=Red>Erro</color>");
                     rtn += "Erro";
                     break;
             }

@@ -172,6 +172,7 @@ namespace YYHEggEgg.Logger
                         startIndex = colorEnd + 1;
                     }
                 }
+                Console.WriteLine();
             }
             catch
             {
@@ -384,7 +385,7 @@ namespace YYHEggEgg.Logger
                             int currentCursorTop = Console.CursorTop;
                             Console.Write(' ');
                             if (Console.CursorLeft == 0) 
-                                Console.SetCursorPosition(Console.WindowWidth, currentCursorTop - 1);
+                                Console.SetCursorPosition(Console.WindowWidth - 1, currentCursorTop - 1);
                             else Console.SetCursorPosition(currentCursorLeft - 1, currentCursorTop);
                         }
                     }
@@ -426,7 +427,7 @@ namespace YYHEggEgg.Logger
                             int currentCursorLeft = Console.CursorLeft;
                             int currentCursorTop = Console.CursorTop;
                             if (currentCursorLeft == 0)
-                                Console.SetCursorPosition(Console.WindowWidth, currentCursorTop - 1);
+                                Console.SetCursorPosition(Console.WindowWidth - 1, currentCursorTop - 1);
                             else
                                 Console.SetCursorPosition(currentCursorLeft - 1, currentCursorTop);
                         }
@@ -447,7 +448,7 @@ namespace YYHEggEgg.Logger
                             // 按下上下左右键后，控制台光标不移动
                             int currentCursorLeft = Console.CursorLeft;
                             int currentCursorTop = Console.CursorTop;
-                            if (currentCursorLeft == Console.WindowWidth)
+                            if (currentCursorLeft == Console.WindowWidth - 1)
                                 Console.SetCursorPosition(0, currentCursorTop + 1);
                             else
                                 Console.SetCursorPosition(currentCursorLeft + 1, currentCursorTop);
@@ -460,6 +461,11 @@ namespace YYHEggEgg.Logger
             else
             {
                 input.Insert(cursor, keyInfo.KeyChar);
+                if (cursor < input.Length)
+                {
+                    ClearWrittingArea();
+
+                }
                 cursor++;
             }
 

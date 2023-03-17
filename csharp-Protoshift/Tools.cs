@@ -183,7 +183,7 @@ namespace csharp_Protoshift
 
                     if (Enum.TryParse(colorCode, out color)) //尝试将字符串颜色代码解析为ConsoleColor枚举类型
                     {
-                        output += input.Substring(startIndex, colorStart - startIndex)); //输出彩色文字前的部分
+                        output += input.Substring(startIndex, colorStart - startIndex); //输出彩色文字前的部分
                         int textStart = colorEnd + 1;
                         int textEnd = input.IndexOf("</color>", textStart); //查找彩色文字结束标记
                         if (textEnd == -1) //若未找到，输出剩余部分并退出循环
