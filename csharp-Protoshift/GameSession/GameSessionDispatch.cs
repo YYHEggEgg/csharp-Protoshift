@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -81,9 +82,8 @@ namespace csharp_Protoshift.GameSession
 
         public static async Task DestroySession(uint conv)
         {
-            if (!session.ContainsKey(conv)) return;
-            HandlerSession session = sessions[conv];
-            sessions.TryRemove(conv);
+            if (!sessions.ContainsKey(conv)) return;
+            sessions.TryRemove(conv, out HandlerSession? session);
             cancelledSessions.Add(conv);
 
             StringBuilder output = new();
@@ -176,7 +176,7 @@ namespace csharp_Protoshift.GameSession
         
             lock (packet_log_lock)
             {
-                await packet_logwriter.AppendAsync(output.ToString());
+                packet_logwriter.Write(output.ToString());
             }
         }
 
@@ -188,19 +188,19 @@ namespace csharp_Protoshift.GameSession
             {
                 tasks.Add(DestroySession(conv));
             }
-            Task.WaitAll(tasks);
+            Task.WaitAll(tasks.ToArray());
             packet_logwriter.Flush();
             packet_logwriter.Dispose();
         }
         #endregion
     
-        private void AssertSessionExists(uint conv)
+        private static void AssertSessionExists(uint conv)
         {
             if (Closed) throw new OperationCanceledException("The server is closing.");
             if (!sessions.ContainsKey(conv))
             {
                 if (!cancelledSessions.Contains(conv))
-                    sessions.AddOrUpdate(conv, new(conv));
+                    sessions.TryAdd(conv, new(conv));
                 else throw new OperationCanceledException($"Session {conv} has been destroyed and no longer avaliable.");
             }
         }
