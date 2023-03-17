@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.resLoader
 {
