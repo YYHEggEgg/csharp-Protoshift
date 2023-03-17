@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using YSFreedom.Common.Util;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.GameSession
 {

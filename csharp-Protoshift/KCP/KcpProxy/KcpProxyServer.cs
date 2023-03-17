@@ -8,6 +8,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using YSFreedom.Common.Net;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.KcpProxy
 {

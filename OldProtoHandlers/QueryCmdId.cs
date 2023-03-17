@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YYHEggEgg.Logger;
 
 namespace OldProtos
 {
@@ -25,7 +26,7 @@ namespace OldProtos
                 int cmdid = int.Parse(csvline[1].Trim());
                 if (serializers.ContainsKey(cmdid))
                 {
-                    Console.WriteLine($"Oldprotos: {cmdid} multiples, dropped proto {name}");
+                    Log.Warn($"{cmdid} multiples, dropped proto {name}", "OldProtos");
                     continue;
                 }
                 ProtoSerialize serializer = new(name);
