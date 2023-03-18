@@ -30,7 +30,7 @@ namespace csharp_Protoshift.SkillIssue
                 if (newlines.Length != oldlines.Length)
                 {
                     Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
-                        $"new: {newjson}\nold: {oldjson}", "SkillIssueDetect"
+                        $"new: {newjson}\nold: {oldjson}", "SkillIssue-AsyncDetect"
                         + sessionId == null ? "" : $"({sessionId})");
                     packetRecord.dataLostSign = true;
                 }
@@ -38,7 +38,7 @@ namespace csharp_Protoshift.SkillIssue
             }
             catch (Exception ex)
             {
-                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssueDetect");
+                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssue-AsyncDetect");
             }
 
             await Task.CompletedTask;
@@ -69,7 +69,7 @@ namespace csharp_Protoshift.SkillIssue
                 if (newlines.Length != oldlines.Length)
                 {
                     Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
-                        $"new: {newjson}\nold: {oldjson}", "SkillIssueDetect"
+                        $"new: {newjson}\nold: {oldjson}", "SkillIssue-AsyncDetect"
                         + sessionId == null ? "" : $"({sessionId})");
                     packetRecord.dataLostSign = true;
                 }
@@ -77,7 +77,7 @@ namespace csharp_Protoshift.SkillIssue
             }
             catch (Exception ex)
             {
-                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssueDetect");
+                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssue-AsyncDetect");
             }
 
             await Task.CompletedTask;
@@ -106,12 +106,12 @@ namespace csharp_Protoshift.SkillIssue
                 if (newlines.Length != oldlines.Length)
                 {
                     Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
-                        $"new: {newjson}\nold: {oldjson}", $"SkillIssueDetect({sender})");
+                        $"new: {newjson}\nold: {oldjson}", $"SkillIssue-AsyncDetect({sender})");
                 }
             }
             catch (Exception ex)
             {
-                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssueDetect");
+                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssue-AsyncDetect");
             }
 
             await Task.CompletedTask;
@@ -141,12 +141,12 @@ namespace csharp_Protoshift.SkillIssue
                 if (newlines.Length != oldlines.Length)
                 {
                     Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
-                        $"new: {newjson}\nold: {oldjson}", $"SkillIssueDetect({sender})");
+                        $"new: {newjson}\nold: {oldjson}", $"SkillIssue-AsyncDetect({sender})");
                 }
             }
             catch (Exception ex)
             {
-                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssueDetect");
+                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssue-AsyncDetect");
             }
 
             await Task.CompletedTask;
