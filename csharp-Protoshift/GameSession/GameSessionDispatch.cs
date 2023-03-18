@@ -178,6 +178,8 @@ namespace csharp_Protoshift.GameSession
             {
                 packet_logwriter.Write(output.ToString());
             }
+
+            await Task.CompletedTask;
         }
 
         public static void CloseServer()

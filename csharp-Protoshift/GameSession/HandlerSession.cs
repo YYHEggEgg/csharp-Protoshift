@@ -1,13 +1,10 @@
 ﻿using csharp_Protoshift.GameSession.SpecialFixs;
 using csharp_Protoshift.resLoader;
+using csharp_Protoshift.SkillIssue;
 using Funny.Crypto;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
 
@@ -60,7 +57,7 @@ namespace csharp_Protoshift.GameSession
             {
                 XorDecrypt(ref packet, 2, packet.Length - 2);
                 Log.Erro("Invalid Magic Start: Bad packet received from " +
-                    $"{(isNewCmdid ? "Client" : "Server")}:---{Convert.ToHexString(packet)}", 
+                    $"{(isNewCmdid ? "Client" : "Server")}:---{Convert.ToHexString(packet)}",
                     $"PacketHandler({SessionId})");
                 XorDecrypt(ref packet, 0, packet.Length);
                 Log.Info("Fall back to dispatchKey", $"PacketHandler({SessionId})");
@@ -82,7 +79,7 @@ namespace csharp_Protoshift.GameSession
             var head_length = packet.GetUInt16(4);
             var body_length = packet.GetUInt32(6);
             int head_offset = 2 + 2 + 2 + 4;
-            if (body_length > int.MaxValue) 
+            if (body_length > int.MaxValue)
                 throw new InvalidOperationException("Are you downloading anime game through KCP? How in teyvat can you get a 2GB packet?");
             XorDecrypt(ref packet, head_offset, head_length + (int)body_length + 2 + 2, fallback); // read magic start of the next if possible
             int body_offset = head_offset + head_length;
@@ -91,7 +88,7 @@ namespace csharp_Protoshift.GameSession
             if (magic_end != 0x89AB)
             {
                 Log.Erro("Invalid Magic End: Bad packet received from " +
-                    $"{(isNewCmdid ? "Client" : "Server")}:---{Convert.ToHexString(packet)}", 
+                    $"{(isNewCmdid ? "Client" : "Server")}:---{Convert.ToHexString(packet)}",
                     $"PacketHandler({SessionId})");
                 throw new InvalidOperationException();
             }
@@ -100,7 +97,7 @@ namespace csharp_Protoshift.GameSession
             {
                 int next_magic_start = packet.GetUInt16(body_offset + (int)body_length + 2);
                 if (next_magic_start == 0x4567)
-                    Log.Warn("Multiple packets detected in one request. Program need optimize.", 
+                    Log.Warn("Multiple packets detected in one request. Program need optimize.",
                         $"PacketHandler({SessionId})");
             }
 
@@ -172,7 +169,7 @@ namespace csharp_Protoshift.GameSession
                 if (!NewProtos.QueryCmdId.TryGetSerializer(cmdid, out var newserializer))
                 {
                     Log.Erro($"Packet with CmdId:{cmdid} from Client" +
-                        $" has no record in newcmdid.csv and dropped:---{Convert.ToHexString(packet)}", 
+                        $" has no record in newcmdid.csv and dropped:---{Convert.ToHexString(packet)}",
                         $"PacketHandler({SessionId})");
                     return Array.Empty<byte>();
                 }
@@ -196,18 +193,12 @@ namespace csharp_Protoshift.GameSession
                         lock (records)
                         {
                             records[packetCounts % PacketRecordLimits] = new PacketRecord
-                            {
-                                PacketName = protoname,
-                                Id = packetCounts,
-                                CmdId = cmdid,
-                                sentByClient = true,
-                                dataLostSign = false,
-                                data = packet,
-                                shiftedData = genbody,
-                                newjsonContent = newjson,
-                                oldjsonContent = "ExtraFix Applied - Not Enabled",
-                                    packetTime = DateTime.Now
-                            };
+                                (protoname, packetCounts, cmdid, true, packet, genbody)
+                                {
+                                    dataLostSign = false,
+                                    newjsonContent = newjson,
+                                    oldjsonContent = "ExtraFix Applied - Not Enabled"
+                                };
                             packetCounts++;
                         }
                     }
@@ -254,28 +245,6 @@ namespace csharp_Protoshift.GameSession
                     oldbody = oldserializer.SerializeFromJson(newjson);
                 }
                 else oldbody = UnionCmds.Shift(newjson);
-
-                string oldjson = "Release - not enabled";
-
-                bool dataLostSign = false;
-                #region DEBUG - Detect information lost in Protoshift
-#if DEBUG
-                if (protoname != "UnionCmdNotify")
-                {
-                    oldjson = oldserializer.DeserializeToJson(oldbody);
-                    var newlines = ConvertJsonString(newjson).Split('\n');
-                    var oldlines = ConvertJsonString(oldjson).Split('\n');
-
-                    if (newlines.Length != oldlines.Length)
-                    {
-                        Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
-                            $"new: {newjson}\nold: {oldjson}", $"PacketHandler({SessionId})");
-                        dataLostSign = true;
-                    }
-                }
-                else oldjson = "UnionCmdNotify - not enabled";
-#endif
-                #endregion
                 #endregion
 
                 #region Notify
@@ -288,21 +257,15 @@ namespace csharp_Protoshift.GameSession
                 #region Record Packet
                 if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
                 {
+                    PacketRecord record = new PacketRecord(protoname, packetCounts, cmdid, true, 
+                        packet, oldbody) { newjsonContent = newjson };
+                    if (oldserializer != null)
+                        // Protoshift not handled here but in other Fixs
+                        SkillIssueDetect.HandleNewPacket(record, newbody: bodyfrom, oldbody: oldbody,
+                            newjson, newserializer, oldserializer, SessionId);
                     lock (records)
                     {
-                        records[packetCounts % PacketRecordLimits] = new PacketRecord
-                        {
-                            PacketName = protoname,
-                            Id = packetCounts,
-                            CmdId = cmdid,
-                            sentByClient = true,
-                            dataLostSign = dataLostSign,
-                            data = packet,
-                            shiftedData = oldbody,
-                            newjsonContent = newjson,
-                            oldjsonContent = oldjson,
-                            packetTime = DateTime.Now
-                        };
+                        records[packetCounts % PacketRecordLimits] = record;
                         packetCounts++;
                     }
                 }
@@ -360,17 +323,11 @@ namespace csharp_Protoshift.GameSession
                         lock (records)
                         {
                             records[packetCounts % PacketRecordLimits] = new PacketRecord
+                                (protoname, packetCounts, cmdid, false, packet, genbody)
                             {
-                                PacketName = protoname,
-                                Id = packetCounts,
-                                CmdId = cmdid,
-                                sentByClient = false,
                                 dataLostSign = false,
-                                data = packet,
-                                shiftedData = genbody,
-                                newjsonContent = "ExtraFix Applied - Not Enabled",
                                 oldjsonContent = oldjson,
-                                packetTime = DateTime.Now
+                                newjsonContent = "ExtraFix Applied - Not Enabled"
                             };
                             packetCounts++;
                         }
@@ -414,7 +371,7 @@ namespace csharp_Protoshift.GameSession
 
                 string newjson = newserializer.DeserializeToJson(newbody);
                 bool dataLostSign = false;
-                
+
                 #region DEBUG - Detect information lost in Protoshift
 #if DEBUG
                 var newlines = ConvertJsonString(newjson).Split('\n');
@@ -440,21 +397,16 @@ namespace csharp_Protoshift.GameSession
                 #region Record Packet
                 if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
                 {
+                    PacketRecord record = new PacketRecord(protoname, packetCounts, cmdid, true,
+                        packet, newbody)
+                    { newjsonContent = newjson };
+                    if (oldserializer != null)
+                        // Protoshift not handled here but in other Fixs
+                        SkillIssueDetect.HandleOldPacket(record, oldbody: bodyfrom, newbody: newbody, 
+                            oldjson, oldserializer, newserializer, SessionId);
                     lock (records)
                     {
-                        records[packetCounts % PacketRecordLimits] = new PacketRecord
-                        {
-                            PacketName = protoname,
-                            Id = packetCounts,
-                            CmdId = cmdid,
-                            sentByClient = false,
-                            dataLostSign = dataLostSign,
-                            data = packet,
-                            shiftedData = newbody,
-                            newjsonContent = newjson,
-                            oldjsonContent = oldjson,
-                            packetTime = DateTime.Now
-                        };
+                        records[packetCounts % PacketRecordLimits] = record;
                         packetCounts++;
                     }
                 }
@@ -490,7 +442,7 @@ namespace csharp_Protoshift.GameSession
         {
             uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
             client_seed = Resources.SPri[key_id].RsaDecrypt(
-                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "clientRandKey").GetString()), 
+                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "clientRandKey").GetString()),
                 RSAEncryptionPadding.Pkcs1)
                 .Fill0(8);
         }
@@ -556,7 +508,7 @@ namespace csharp_Protoshift.GameSession
             }
         }
 
-        public static byte[] Generate4096KeyByMT19937(ulong seed) 
+        public static byte[] Generate4096KeyByMT19937(ulong seed)
         {
             MT19937 mt1 = new(), mt2 = new();
             mt1.Seed(seed);

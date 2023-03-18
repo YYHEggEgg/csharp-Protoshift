@@ -6,8 +6,20 @@ using System.Threading.Tasks;
 
 namespace csharp_Protoshift.GameSession
 {
-    internal struct PacketRecord
+    internal class PacketRecord
     {
+        public PacketRecord(string protoname, int packet_id, int cmd_id, bool isNewCmdid, 
+            byte[] received_data, byte[] shifted_data)
+        {
+            PacketName = protoname;
+            Id = packet_id;
+            CmdId = cmd_id;
+            sentByClient = isNewCmdid;
+            data = received_data;
+            shiftedData = shifted_data;
+            packetTime = DateTime.Now;
+        }
+
         /// <summary>
         /// Packet Name (Proto name)
         /// </summary>
@@ -33,11 +45,11 @@ namespace csharp_Protoshift.GameSession
         /// <summary>
         /// Json format data with new protocol
         /// </summary>
-        public string newjsonContent;
+        public string? newjsonContent;
         /// <summary>
         /// Json format data with old protocol
         /// </summary>
-        public string oldjsonContent;
+        public string? oldjsonContent;
         /// <summary>
         /// The time of packet creation. Uses <c>DateTime.Now</c>.
         /// </summary>
