@@ -98,6 +98,7 @@ namespace csharp_Protoshift.GameSession
             Dictionary<string, List<PacketRecord>> record_group = new();
             foreach (var record in session.records)
             {
+                if (record == null) continue;
                 var pktname = record.PacketName;
                 if (pktname == null) continue;
                 if (!record_group.ContainsKey(pktname))
