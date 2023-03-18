@@ -24,7 +24,11 @@ namespace csharp_Protoshift.AnimeGameKCP
             remoteAddress = ipEp;
 
             server.Timeout = 10000;
-            server.Output = data => udpSock.SendAsync(data).Result;
+            server.Output =
+                data =>
+                {
+                    return udpSock.Send(data, data.Length);
+                };
 
             Task.Run(BackgroundUpdate);
         }
@@ -38,23 +42,14 @@ namespace csharp_Protoshift.AnimeGameKCP
 
         protected async Task BackgroundUpdate()
         {
-            UdpReceiveResult packet;
+            IPEndPoint fromip = new(IPAddress.Loopback, 0);
+            var packet = udpSock.Receive(ref fromip);
             try
             {
-                packet = await udpSock.ReceiveAsync();
-            }
-            catch (Exception ex)
-            {
-                Log.Dbug($"BackgroundUpdate receiving packet meets error and restart: {ex}", "KCPClient");
-                await Task.Run(BackgroundUpdate);
-                return;
-            }
-            try
-            {
-                if (packet.RemoteEndPoint == remoteAddress)
+                if (fromip.ToString() == remoteAddress.ToString())
                 {
                     // Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", "KCPClient");
-                    server.Input(packet.Buffer);
+                    server.Input(packet);
                 }
                 else
                 {

@@ -58,7 +58,7 @@ namespace YSFreedom.Common.Net
             {
                 // Oh boy! A new connection!
                 var conn = new KCP();
-                conn.Output = data => udpSock.SendAsync(data, packet.RemoteEndPoint).Result;
+                conn.Output = (data) => { return udpSock.Send(data, data.Length, packet.RemoteEndPoint); };
 
                 conn.AcceptNonblock();
                 try

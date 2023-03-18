@@ -18,7 +18,10 @@ namespace csharp_Protoshift.KcpProxy
         {
             server = new(conv, token, connectData);
             server.Timeout = 10000;
-            server.Output = data => udpSock.SendAsync(data).Result; 
+            server.Output = data =>
+            {
+                return udpSock.Send(data, data.Length);
+            };
         }
 
         public KCP.Handshake GetSendbackHandshake()

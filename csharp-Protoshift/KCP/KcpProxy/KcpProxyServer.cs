@@ -53,7 +53,7 @@ namespace csharp_Protoshift.KcpProxy
             {
                 // Oh boy! A new connection!
                 var conn = new KcpProxy(sendToAddress: SendToEndpoint);
-                conn.Output = data => udpSock.SendAsync(data, packet.RemoteEndPoint).Result;
+                conn.Output = (data) => { return udpSock.Send(data, data.Length, packet.RemoteEndPoint); };
                 try
                 {
                     Log.Dbug($"New connection established, remote endpoint={packet.RemoteEndPoint}");
