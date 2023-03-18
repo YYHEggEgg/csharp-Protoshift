@@ -165,24 +165,36 @@ namespace csharp_Protoshift.GameSession
             }
         }
 
-        public byte[] NewShiftToOld(byte[] newbody)
+        /// <summary>
+        /// Shift the data from new protocol to old.
+        /// </summary>
+        /// <param name="newbody">The bin data with new protocol</param>
+        /// <param name="sender">The sender for <see cref="SkillIssueDetect"/> logs</param>
+        /// <returns>The bin data with old protocol</returns>
+        public byte[] NewShiftToOld(byte[] newbody, string sender = "UnionCmdHandler")
         {
             if (skip) return newbody;
 
             string newjson = newserializer.DeserializeToJson(newbody);
             byte[] oldbody = oldserializer.SerializeFromJson(newjson);
-            SkillIssueDetect.StartHandleNewPacketWithoutRecord(protoname, "UnionCmdHandler",
+            SkillIssueDetect.StartHandleNewPacketWithoutRecord(protoname, sender,
                 newbody, oldbody, newjson, newserializer, oldserializer);
             return oldbody;
         }
 
-        public byte[] OldShiftToNew(byte[] oldbody)
+        /// <summary>
+        /// Shift the data from old protocol to new.
+        /// </summary>
+        /// <param name="oldbody">The bin data with old protocol</param>
+        /// <param name="sender">The sender for <see cref="SkillIssueDetect"/> logs</param>
+        /// <returns>The bin data with new protocol</returns>
+        public byte[] OldShiftToNew(byte[] oldbody, string sender = "UnionCmdHandler")
         {
             if (skip) return oldbody;
 
             string oldjson = oldserializer.DeserializeToJson(oldbody);
             byte[] newbody = newserializer.SerializeFromJson(oldjson);
-            SkillIssueDetect.StartHandleOldPacketWithoutRecord(protoname, "UnionCmdHandler",
+            SkillIssueDetect.StartHandleOldPacketWithoutRecord(protoname, sender,
                 oldbody, newbody, oldjson, oldserializer, newserializer);
             return newbody;
         }
