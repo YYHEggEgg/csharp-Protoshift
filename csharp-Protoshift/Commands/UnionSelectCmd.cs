@@ -58,6 +58,8 @@ namespace csharp_Protoshift.Commands
             Log.Info($"Packet {protoname}: found {innerpackets.Count} records:", "UnionSelectCmd");
             foreach (var rec in innerpackets)
                 Log.Info(rec, "UnionSelectCmd");
+
+            await Task.CompletedTask;
         }
     }
 }
