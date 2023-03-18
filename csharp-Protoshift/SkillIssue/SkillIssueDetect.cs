@@ -31,7 +31,7 @@ namespace csharp_Protoshift.SkillIssue
                 {
                     Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
                         $"new: {newjson}\nold: {oldjson}", "SkillIssue-AsyncDetect"
-                        + sessionId == null ? "" : $"({sessionId})");
+                        + (sessionId == null ? "" : $"({sessionId})"));
                     packetRecord.dataLostSign = true;
                 }
                 packetRecord.oldjsonContent = oldjson;
@@ -70,7 +70,7 @@ namespace csharp_Protoshift.SkillIssue
                 {
                     Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
                         $"new: {newjson}\nold: {oldjson}", "SkillIssue-AsyncDetect"
-                        + sessionId == null ? "" : $"({sessionId})");
+                        + (sessionId == null ? "" : $"({sessionId})"));
                     packetRecord.dataLostSign = true;
                 }
                 packetRecord.newjsonContent = newjson;
