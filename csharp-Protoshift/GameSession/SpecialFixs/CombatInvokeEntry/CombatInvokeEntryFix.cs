@@ -90,20 +90,10 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.CombatInvokeEntry
                     {
                         var util = newutils[invoke.ArgumentType];
                         var newdata = invoke.CombatData.ToByteArray();
-                        var olddata = util.NewShiftToOld(newdata);
+                        // Protoshift utils have skill issue detect inside
+                        var olddata = util.NewShiftToOld(newdata, $"CombatInvokeEntry({invoke.ArgumentType})");
                         var oldcombatdata = Convert.ToBase64String(olddata);
-#if DEBUG
-                        var newjson = util.GetJson(newdata, true);
-                        var oldjson = util.GetJson(olddata, false);
-                        var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-                        var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
 
-                        if (newlines.Length != oldlines.Length)
-                        {
-                            Log.Warn($"CombatInvokeEntry({invoke.ArgumentType}) has an information lost in Special Fix Protoshift:\n" +
-                                $"new: {newjson}\nold: {oldjson}", "CombatInvokeEntry(Client)");
-                        }
-#endif
                         jobj["combatData"] = oldcombatdata;
                         return jobj.ToString();
                     }
@@ -145,20 +135,10 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.CombatInvokeEntry
                     {
                         var util = oldutils[invoke.ArgumentType];
                         var olddata = invoke.CombatData.ToByteArray();
-                        var newdata = util.OldShiftToNew(olddata);
+                        // Protoshift utils have skill issue detect inside
+                        var newdata = util.OldShiftToNew(olddata, $"CombatInvokeEntry({invoke.ArgumentType})");
                         var newcombatdata = Convert.ToBase64String(newdata);
-#if DEBUG
-                        var newjson = util.GetJson(newdata, true);
-                        var oldjson = util.GetJson(olddata, false);
-                        var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-                        var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
 
-                        if (newlines.Length != oldlines.Length)
-                        {
-                            Log.Warn($"CombatInvokeEntry({invoke.ArgumentType}) has an information lost in Special Fix Protoshift:\n" +
-                                $"new: {newjson}\nold: {oldjson}", "CombatInvokeEntry(Server)");
-                        }
-#endif
                         jobj["combatData"] = newcombatdata;
                         return jobj.ToString();
                     }

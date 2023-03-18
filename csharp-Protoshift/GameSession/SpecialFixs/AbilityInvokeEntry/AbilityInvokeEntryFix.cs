@@ -137,20 +137,9 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
                     {
                         var util = newutils[invoke.ArgumentType];
                         var newdata = invoke.AbilityData.ToByteArray();
-                        var olddata = util.NewShiftToOld(newdata);
+                        var olddata = util.NewShiftToOld(newdata, $"AbilityInvokeEntry({invoke.ArgumentType})");
                         var oldabilitydata = Convert.ToBase64String(olddata);
-#if DEBUG
-                        var newjson = util.GetJson(newdata, true);
-                        var oldjson = util.GetJson(olddata, false);
-                        var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-                        var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
 
-                        if (newlines.Length != oldlines.Length)
-                        {
-                            Log.Warn($"AbilityInvokeEntry({invoke.ArgumentType}) has an information lost in Special Fix Protoshift:\n" +
-                                $"new: {newjson}\nold: {oldjson}", "AbilityInvokeEntry(Client)");
-                        }
-#endif
                         jobj["abilityData"] = oldabilitydata;
                         return jobj.ToString();
                     }
@@ -192,20 +181,9 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
                     {
                         var util = oldutils[invoke.ArgumentType];
                         var olddata = invoke.AbilityData.ToByteArray();
-                        var newdata = util.OldShiftToNew(olddata);
+                        var newdata = util.OldShiftToNew(olddata, $"AbilityInvokeEntry({invoke.ArgumentType})");
                         var newabilitydata = Convert.ToBase64String(newdata);
-#if DEBUG
-                        var newjson = util.GetJson(newdata, true);
-                        var oldjson = util.GetJson(olddata, false);
-                        var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-                        var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
 
-                        if (newlines.Length != oldlines.Length)
-                        {
-                            Log.Warn($"AbilityInvokeEntry({invoke.ArgumentType}) has an information lost in Special Fix Protoshift:\n" +
-                                $"new: {newjson}\nold: {oldjson}", "AbilityInvokeEntry(Server)");
-                        }
-#endif
                         jobj["abilityData"] = newabilitydata;
                         return jobj.ToString();
                     }
