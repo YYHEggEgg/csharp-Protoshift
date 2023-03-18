@@ -1,4 +1,5 @@
-﻿using Google.Protobuf;
+﻿using csharp_Protoshift.SkillIssue;
+using Google.Protobuf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,17 +36,9 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
                 #region Outer Protoshift
                 var newjson = Mainutil_new.DeserializeToJson(data);
                 var olddata = Mainutil_old.SerializeFromJson(newjson);
-#if DEBUG
-                var oldjson = Mainutil_old.DeserializeToJson(olddata);
-                var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-                var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
-
-                if (newlines.Length != oldlines.Length)
-                {
-                    Log.Warn($"AbilityInvocationNotify has an information lost in Special Fix Protoshift:\n" +
-                        $"new: {newjson}\nold: {oldjson}", "AbilityInvocationNotifyOuterFix(Client)");
-                }
-#endif
+                SkillIssueDetect.StartHandleNewPacketWithoutRecord("AbilityInvocationsNotify",
+                    "AbilityInvocationsNotifyOuterFix(Client)",
+                    newbody: data, oldbody: olddata, newjson, Mainutil_new, Mainutil_old);
                 #endregion
                 #region Get New Invokes and Old notify
                 NewProtos.AbilityInvocationsNotify newnotify;
@@ -87,17 +80,9 @@ namespace csharp_Protoshift.GameSession.SpecialFixs.AbilityInvokeEntry
                 #region Outer Protoshift
                 var oldjson = Mainutil_old.DeserializeToJson(data);
                 var newdata = Mainutil_new.SerializeFromJson(oldjson);
-#if DEBUG
-                var newjson = Mainutil_old.DeserializeToJson(newdata);
-                var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-                var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
-
-                if (newlines.Length != oldlines.Length)
-                {
-                    Log.Warn($"AbilityInvocationNotify has an information lost in Special Fix Protoshift:\n" +
-                        $"new: {newjson}\nold: {oldjson}", "AbilityInvocationNotifyOuterFix(Client)");
-                }
-#endif
+                SkillIssueDetect.StartHandleOldPacketWithoutRecord("AbilityInvocationsNotify",
+                    "AbilityInvocationsNotifyOuterFix(Server)",
+                    oldbody: data, newbody: newdata, oldjson, Mainutil_old, Mainutil_new);
                 #endregion
                 #region Get New Invokes and Old notify
                 NewProtos.AbilityInvocationsNotify newnotify;
