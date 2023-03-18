@@ -459,7 +459,7 @@ namespace csharp_Protoshift.GameSession
             Log.Info($"IMPORTANT: New XOR Key built{Environment.NewLine}" +
                 $"-----BEGIN HEX New 4096 XOR Key-----{Environment.NewLine}" +
                 Convert.ToHexString(XorKey) +
-                $"{Environment.NewLine}-----END HEX New 4096 XOR Key-----", "HandlerSession");
+                $"{Environment.NewLine}-----END HEX New 4096 XOR Key-----", $"HandlerSession({SessionId})");
         }
 #pragma warning restore CS8604 // 引用类型参数可能为 null。
 

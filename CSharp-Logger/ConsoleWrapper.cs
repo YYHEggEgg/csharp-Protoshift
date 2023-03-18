@@ -436,7 +436,7 @@ namespace YYHEggEgg.Logger
                     int colorStart = input.IndexOf("<color=", startIndex); //查找下一个彩色文字的起始位置
                     if (colorStart == -1) //若未找到，输出剩余部分并退出循环
                     {
-                        output = input.Substring(startIndex, input.Length - startIndex);
+                        output += input.Substring(startIndex, input.Length - startIndex);
                         return true;
                     }
 

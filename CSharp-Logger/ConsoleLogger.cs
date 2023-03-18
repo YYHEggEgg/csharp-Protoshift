@@ -175,7 +175,7 @@ namespace YYHEggEgg.Logger
             }
             else
             {
-                logwriter.WriteLine($"{nowtime}{GetLogInfo(LogLevel.Error, "Logger")}" +
+                logwriter.WriteLine($"{nowtime}{header}{GetLogInfo(LogLevel.Error, "Logger")}" +
                     $"Content has caused exception when resolving color, ex={fileres}; content={res};");
             }
 
@@ -183,7 +183,7 @@ namespace YYHEggEgg.Logger
             if (log.content.Length < 16 * 1024)
                 return res;
             else
-                return "[content too long (>16 KB), so not output to console]";
+                return $"{nowtime}{header}[content too long (>16 KB), so not output to console]";
         }
         #endregion
 
