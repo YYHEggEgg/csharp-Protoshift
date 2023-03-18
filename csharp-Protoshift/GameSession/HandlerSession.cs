@@ -261,7 +261,7 @@ namespace csharp_Protoshift.GameSession
                         packet, oldbody) { newjsonContent = newjson };
                     if (oldserializer != null)
                         // Protoshift not handled here but in other Fixs
-                        SkillIssueDetect.HandleNewPacket(record, newbody: bodyfrom, oldbody: oldbody,
+                        SkillIssueDetect.StartHandleNewPacket(record, newbody: bodyfrom, oldbody: oldbody,
                             newjson, newserializer, oldserializer, SessionId);
                     lock (records)
                     {
@@ -402,7 +402,7 @@ namespace csharp_Protoshift.GameSession
                     { newjsonContent = newjson };
                     if (oldserializer != null)
                         // Protoshift not handled here but in other Fixs
-                        SkillIssueDetect.HandleOldPacket(record, oldbody: bodyfrom, newbody: newbody, 
+                        SkillIssueDetect.StartHandleOldPacket(record, oldbody: bodyfrom, newbody: newbody, 
                             oldjson, oldserializer, newserializer, SessionId);
                     lock (records)
                     {
