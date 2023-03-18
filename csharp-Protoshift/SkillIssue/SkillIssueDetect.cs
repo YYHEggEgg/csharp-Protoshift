@@ -19,20 +19,27 @@ namespace csharp_Protoshift.SkillIssue
             NewProtos.ProtoSerialize newserializer, OldProtos.ProtoSerialize oldserializer,
             uint? sessionId = null)
         {
-            string oldjson;
-            string protoname = packetRecord.PacketName;
-            oldjson = oldserializer.DeserializeToJson(oldbody);
-            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
-
-            if (newlines.Length != oldlines.Length)
+            try
             {
-                Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
-                    $"new: {newjson}\nold: {oldjson}", "SkillIssueDetect"
-                    + sessionId == null ? "" : $"({sessionId})");
-                packetRecord.dataLostSign = true;
+                string oldjson;
+                string protoname = packetRecord.PacketName;
+                oldjson = oldserializer.DeserializeToJson(oldbody);
+                var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
+                var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
+
+                if (newlines.Length != oldlines.Length)
+                {
+                    Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
+                        $"new: {newjson}\nold: {oldjson}", "SkillIssueDetect"
+                        + sessionId == null ? "" : $"({sessionId})");
+                    packetRecord.dataLostSign = true;
+                }
+                packetRecord.oldjsonContent = oldjson;
             }
-            packetRecord.oldjsonContent = oldjson;
+            catch (Exception ex)
+            {
+                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssueDetect");
+            }
 
             await Task.CompletedTask;
         }
@@ -48,23 +55,30 @@ namespace csharp_Protoshift.SkillIssue
         /// <param name="oldserializer">The protobuf serializer for Older Protocol from Server.</param>
         public static async void StartHandleOldPacket(PacketRecord packetRecord,
             byte[] oldbody, byte[] newbody, string oldjson,
-            OldProtos.ProtoSerialize oldserializer, NewProtos.ProtoSerialize newserializer, 
+            OldProtos.ProtoSerialize oldserializer, NewProtos.ProtoSerialize newserializer,
             uint? sessionId = null)
         {
-            string newjson;
-            string protoname = packetRecord.PacketName;
-            newjson = newserializer.DeserializeToJson(newbody);
-            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
-
-            if (newlines.Length != oldlines.Length)
+            try
             {
-                Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
-                    $"new: {newjson}\nold: {oldjson}", "SkillIssueDetect"
-                    + sessionId == null ? "" : $"({sessionId})");
-                packetRecord.dataLostSign = true;
+                string newjson;
+                string protoname = packetRecord.PacketName;
+                newjson = newserializer.DeserializeToJson(newbody);
+                var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
+                var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
+
+                if (newlines.Length != oldlines.Length)
+                {
+                    Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
+                        $"new: {newjson}\nold: {oldjson}", "SkillIssueDetect"
+                        + sessionId == null ? "" : $"({sessionId})");
+                    packetRecord.dataLostSign = true;
+                }
+                packetRecord.newjsonContent = newjson;
             }
-            packetRecord.newjsonContent = newjson;
+            catch (Exception ex)
+            {
+                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssueDetect");
+            }
 
             await Task.CompletedTask;
         }
@@ -79,18 +93,25 @@ namespace csharp_Protoshift.SkillIssue
         /// <param name="newjson">The protobuf json content serialized from <paramref name="newbody"/> with <paramref name="newserializer"/>.</param>
         /// <param name="newserializer">The protobuf serializer for Newer Protocol from Client.</param>
         /// <param name="oldserializer">The protobuf serializer for Older Protocol from Server.</param>
-        public static async void StartHandleNewPacketWithoutRecord(string protoname, string sender, 
+        public static async void StartHandleNewPacketWithoutRecord(string protoname, string sender,
             byte[] newbody, byte[] oldbody, string newjson,
             NewProtos.ProtoSerialize newserializer, OldProtos.ProtoSerialize oldserializer)
         {
-            string oldjson = oldserializer.DeserializeToJson(oldbody);
-            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
-
-            if (newlines.Length != oldlines.Length)
+            try
             {
-                Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
-                    $"new: {newjson}\nold: {oldjson}", $"SkillIssueDetect({sender})");
+                string oldjson = oldserializer.DeserializeToJson(oldbody);
+                var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
+                var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
+
+                if (newlines.Length != oldlines.Length)
+                {
+                    Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
+                        $"new: {newjson}\nold: {oldjson}", $"SkillIssueDetect({sender})");
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssueDetect");
             }
 
             await Task.CompletedTask;
@@ -111,14 +132,21 @@ namespace csharp_Protoshift.SkillIssue
             OldProtos.ProtoSerialize oldserializer, NewProtos.ProtoSerialize newserializer,
             uint? sessionId = null)
         {
-            string newjson = newserializer.DeserializeToJson(newbody);
-            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
-
-            if (newlines.Length != oldlines.Length)
+            try
             {
-                Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
-                    $"new: {newjson}\nold: {oldjson}", $"SkillIssueDetect({sender})");
+                string newjson = newserializer.DeserializeToJson(newbody);
+                var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
+                var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
+
+                if (newlines.Length != oldlines.Length)
+                {
+                    Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
+                        $"new: {newjson}\nold: {oldjson}", $"SkillIssueDetect({sender})");
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssueDetect");
             }
 
             await Task.CompletedTask;
