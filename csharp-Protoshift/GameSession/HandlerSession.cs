@@ -368,7 +368,6 @@ namespace csharp_Protoshift.GameSession
                 oldjson = Program.skillcmd.ProcessWithRule(cmdid, true, oldjson);
 
                 byte[] newbody = newserializer.SerializeFromJson(oldjson);
-
                 string newjson = newserializer.DeserializeToJson(newbody);
                 #endregion
 
@@ -384,7 +383,7 @@ namespace csharp_Protoshift.GameSession
                 {
                     PacketRecord record = new PacketRecord(protoname, packetCounts, cmdid, true,
                         packet, newbody)
-                    { newjsonContent = newjson };
+                    { oldjsonContent = oldjson };
                     if (oldserializer != null)
                         // Protoshift not handled here but in other Fixs
                         SkillIssueDetect.StartHandleOldPacket(record, oldbody: bodyfrom, newbody: newbody, 
