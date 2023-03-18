@@ -1,4 +1,5 @@
 ﻿using csharp_Protoshift.GameSession.SpecialFixs;
+using csharp_Protoshift.SkillIssue;
 using Google.Protobuf;
 using System;
 using System.Collections.Generic;
@@ -170,17 +171,8 @@ namespace csharp_Protoshift.GameSession
 
             string newjson = newserializer.DeserializeToJson(newbody);
             byte[] oldbody = oldserializer.SerializeFromJson(newjson);
-#if DEBUG
-            string oldjson = oldserializer.DeserializeToJson(oldbody);
-            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
-
-            if (newlines.Length != oldlines.Length)
-            {
-                Log.Warn($"Packet {protoname}(Unioned) has an information lost in Protoshift:\n" +
-                    $"new: {newjson}\nold: {oldjson}", $"UnionCmdHandler");
-            }
-#endif
+            SkillIssueDetect.StartHandleNewPacketWithoutRecord(protoname, "UnionCmdHandler",
+                newbody, oldbody, newjson, newserializer, oldserializer);
             return oldbody;
         }
 
@@ -190,17 +182,8 @@ namespace csharp_Protoshift.GameSession
 
             string oldjson = oldserializer.DeserializeToJson(oldbody);
             byte[] newbody = newserializer.SerializeFromJson(oldjson);
-#if DEBUG
-            string newjson = newserializer.DeserializeToJson(newbody);
-            var newlines = HandlerSession.ConvertJsonString(newjson).Split('\n');
-            var oldlines = HandlerSession.ConvertJsonString(oldjson).Split('\n');
-
-            if (newlines.Length != oldlines.Length)
-            {
-                Log.Warn($"Packet {protoname}(Unioned) has an information lost in Protoshift:\n" +
-                    $"new: {newjson}\nold: {oldjson}", $"UnionCmdHandler");
-            }
-#endif
+            SkillIssueDetect.StartHandleOldPacketWithoutRecord(protoname, "UnionCmdHandler",
+                oldbody, newbody, oldjson, oldserializer, newserializer);
             return newbody;
         }
 
