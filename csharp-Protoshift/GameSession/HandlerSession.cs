@@ -370,21 +370,6 @@ namespace csharp_Protoshift.GameSession
                 byte[] newbody = newserializer.SerializeFromJson(oldjson);
 
                 string newjson = newserializer.DeserializeToJson(newbody);
-                bool dataLostSign = false;
-
-                #region DEBUG - Detect information lost in Protoshift
-#if DEBUG
-                var newlines = ConvertJsonString(newjson).Split('\n');
-                var oldlines = ConvertJsonString(oldjson).Split('\n');
-
-                if (newlines.Length != oldlines.Length)
-                {
-                    Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
-                        $"new: {newjson}\nold: {oldjson}", $"PacketHandler({SessionId})");
-                    dataLostSign = true;
-                }
-#endif
-                #endregion
                 #endregion
 
                 #region Notify
