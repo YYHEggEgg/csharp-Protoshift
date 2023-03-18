@@ -33,6 +33,8 @@ namespace csharp_Protoshift.Commands
             Log.Info($"{Environment.NewLine}-----BEGIN HEX 4096 Xor Key-----{Environment.NewLine}" +
                 Convert.ToHexString(HandlerSession.Generate4096KeyByMT19937(seed)) +
                 $"{Environment.NewLine}-----END HEX 4096 Xor Key-----", "MT19937Cmd");
+
+            await Task.CompletedTask;
         }
     }
 }
