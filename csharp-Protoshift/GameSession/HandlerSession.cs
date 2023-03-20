@@ -111,6 +111,36 @@ namespace csharp_Protoshift.GameSession
 
         public bool IsUrgentPacket(byte[] packet, bool isNewCmdid)
         {
+            /* Due to current researches, after the urgent packet split was added, 
+             * nothing about network but the Ping value shown in the game has improved, 
+             * and the worst thing is that Protoshift became no longer stable, 
+             * including the same bug as YuFanXing/Protoshift randomly appear at 60% of time. 
+             * That's unbearable but exchanged not much efficiency increase, 
+             * as the base KCP implement is synchronous -- by bussy locks. 
+             * It makes UrgentPacket implement nearly unnecessary at all 
+             *   -- as nearly most of packets are sent syncronous actually. 
+             * But the disadvantages are preserved. Some important packets are sent asyncronously, 
+             * but because UdpClient isn't thread-safe, they are possibly dropped or cracked. 
+             * So, considered all the factors, I decided to give up the UrgentPacket implement.
+             * 
+             * For actual performance improve solutions, some of following ways should be considered: 
+             * - KcpProxy sub clients. 
+             *   Though the KcpProxy and KCPServer are designed for multiple clients, 
+             *   the KCP base and UdpClient base aren't. Therefore, the most ideal conditions are that 
+             *   there's one KcpServer instance for each client.
+             * - Approach the Java Protoshift implement.
+             *   The most important Protoshift means in this project is deserialize the message
+             *   from one protocol to a general inner json content, and serialize it to another protocol. 
+             *   Compared to this, YuFanXing/Protoshift directly transfers variables from protocols
+             *   by generated codes, so it was surely more efficient. 
+             *   According to tests, handling a 224KB PlayerLoginRsp packet costs (in HandlerSession only)
+             *   about 68ms in total.
+             * - Change the base UDP and KCP implements. 
+             *   The reason has been mentioned repeatedly above, but notice that
+             *   it works only when UDP and KCP implements are both thread-safe. 
+             */
+            return true;
+            /*
             if (packet == null) throw new ArgumentNullException(nameof(packet));
             bool fallback = false; // Whether use dispatchKey
             XorDecrypt(ref packet, 0, 2);
@@ -148,6 +178,7 @@ namespace csharp_Protoshift.GameSession
                     return true;
                 else return false;
             }
+            */
         }
 
         #region Packet Handle
