@@ -30,6 +30,24 @@ namespace csharp_Protoshift.GameSession
         public int packetCounts { get; protected set; }
         public int PacketRecordLimits { get; }
 
+        #region Record Packet Protoshift time cost
+        public ConcurrentDictionary<string, TimeRecord> TimeRecords { get; }
+
+        public struct TimeRecord
+        {
+            // string protoname; // Given to the dictionary to reduce RAM pressure
+            public bool fromClient;
+            public int handleMiliseconds;
+            public int packetSize;
+        }
+
+        private void SubmitTimeRecord(string protoname, bool isNewCmdid, int handleMiliseconds, int packetSize)
+        {
+            TimeRecords.TryAdd(protoname, new TimeRecord { fromClient = isNewCmdid, 
+                handleMiliseconds = handleMiliseconds, packetSize = packetSize });
+        }
+        #endregion 
+
         /// <summary>
         /// Initializer
         /// </summary>
@@ -190,6 +208,9 @@ namespace csharp_Protoshift.GameSession
             int body_offset, uint body_length)
 #endif
         {
+            Stopwatch ProtoshiftWatch = new();
+            ProtoshiftWatch.Start();
+
             var bodyfrom = new byte[body_length];
             Array.Copy(packet, body_offset, bodyfrom, 0, body_length);
 
@@ -319,6 +340,8 @@ namespace csharp_Protoshift.GameSession
                         $"PacketHandler({SessionId})");
                 }
 
+                ProtoshiftWatch.Stop();
+                SubmitTimeRecord(protoname, true, ProtoshiftWatch.ElapsedMiliseconds, packet.Length);
                 return rtn;
                 #endregion
             }
@@ -443,6 +466,8 @@ namespace csharp_Protoshift.GameSession
                         $"PacketHandler({SessionId})");
                 }
 
+                ProtoshiftWatch.Stop();
+                SubmitTimeRecord(protoname, false, ProtoshiftWatch.ElapsedMiliseconds, packet.Length);
                 return rtn;
                 #endregion
             }
