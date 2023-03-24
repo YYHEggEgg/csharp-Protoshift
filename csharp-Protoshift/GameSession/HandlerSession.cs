@@ -308,7 +308,7 @@ namespace csharp_Protoshift.GameSession
 
                     oldbody = oldserializer.SerializeFromJson(newjson);
                 }
-                else    oldbody = UnionCmds.Shift(newjson);
+                else oldbody = UnionCmds.Shift(newjson);
                 #endregion
 
                 #region Notify
