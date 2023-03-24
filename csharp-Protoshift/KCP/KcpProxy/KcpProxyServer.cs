@@ -1,4 +1,6 @@
-﻿using System;
+﻿using csharp_Protoshift.GameSession;
+using OfficeOpenXml;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -80,11 +82,6 @@ namespace csharp_Protoshift.KcpProxy
         /// <param name="ClientPacketHandler">Handle packet from client to server as a middleware. byte[] is packet, uint is session id.</param>
         public async void StartProxy(ProxyHandlers handlers)
         {
-            handlers.OnServerPacketArrival ??= ((data, conv) => data);
-            handlers.OnClientPacketArrival ??= ((data, conv) => data);
-            handlers.IsUrgentServerPacket ??= ((data, conv) => false);
-            handlers.IsUrgentClientPacket ??= ((data, conv) => false);
-
             while (true)
             {
                 try
@@ -102,36 +99,32 @@ namespace csharp_Protoshift.KcpProxy
             }
         }
 
+        #region Handle as a client (send to server)
         protected async void HandleClient(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
             var conn = (KcpProxy)clients[remotePoint];
             var PacketHandler = handlers.OnClientPacketArrival;
             var IsUrgentPacket = handlers.IsUrgentClientPacket;
+            _ = ClientPacketSender(conn);
             while (conn.State == KCP.ConnectionState.CONNECTED)
             {
                 try
                 {
                     var beforepacket = await conn.ReceiveAsync();
                     // Log.Dbug($"Server Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ServerHandler");
-                    if (IsUrgentPacket(beforepacket, conn.Conv))
-                    {
-                        var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                        if (afterpacket != null)
-                            await conn.sendClient.SendAsync(afterpacket);
-                        // Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerHandler");
-                    }
-                    else _ = Task.Run(async () =>
+                    _ = Task.Run(() =>
                     {
                         try
                         {
+                            // This part is probably running on bug and don't delete isUrgent variable!
+                            var isUrgent = IsUrgentPacket(beforepacket, conn.Conv);
                             var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                            if (afterpacket != null)
-                                await conn.sendClient.SendAsync(afterpacket);
-                            // Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerHandler");
+                            (isUrgent ? client_urgentPackets : client_normalPackets)
+                                .Enqueue(afterpacket);
                         }
                         catch (Exception e)
                         {
-                            Log.Dbug(e.ToString(), "KcpProxyServer:ServerHandler");
+                            Log.Dbug(e.ToString(), "KcpProxyClient:ServerHandler");
                             //conn.Close();
                         }
                     });
@@ -140,37 +133,75 @@ namespace csharp_Protoshift.KcpProxy
                 {
                     Log.Dbug(e.ToString(), "KcpProxyServer:ServerHandler");
                     conn.Close();
+                    await GameSessionDispatch.DestroySession(conn.Conv);
                     break;
                 }
             }
         }
 
+        #region Send Packet
+        private ConcurrentQueue<byte[]?> client_urgentPackets = new();
+        private ConcurrentQueue<byte[]?> client_normalPackets = new();
+        private async Task ClientPacketSender(KcpProxy sendConn)
+        {
+            while (true)
+            {
+                if (client_urgentPackets.TryDequeue(out byte[]? urgentPacket))
+                {
+                    try
+                    {
+                        if (urgentPacket != null)
+                            await sendConn.SendAsync(urgentPacket);
+                        // Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerSender");
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Dbug(e.ToString(), "KcpProxyClient:ServerSender");
+                        //conn.Close();
+                    }
+                }
+                else if (client_normalPackets.TryDequeue(out byte[]? normalPacket))
+                {
+                    try
+                    {
+                        if (normalPacket != null)
+                            await sendConn.SendAsync(normalPacket);
+                        // Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerSender");
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Dbug(e.ToString(), "KcpProxyClient:ServerSender");
+                        //conn.Close();
+                    }
+                }
+                else await Task.Delay(5);
+            }
+        }
+        #endregion
+        #endregion
+
+        #region Handle as a server (send to client)
         protected async void HandleServer(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
             var conn = (KcpProxy)clients[remotePoint];
             var PacketHandler = handlers.OnServerPacketArrival;
             var IsUrgentPacket = handlers.IsUrgentServerPacket;
+            _ = ServerPacketSender(conn);
             while (conn.sendClient.State == KCP.ConnectionState.CONNECTED)
             {
                 try
                 {
                     var beforepacket = await conn.sendClient.ReceiveAsync();
                     // Log.Dbug($"Client Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ClientHandler");
-                    if (IsUrgentPacket(beforepacket, conn.Conv))
-                    {
-                        var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                        if (afterpacket != null)
-                            await conn.SendAsync(afterpacket);
-                        // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
-                    }
-                    else _ = Task.Run(async () =>
+                    _ = Task.Run(() =>
                     {
                         try
                         {
+                            // This part is probably running on bug and don't delete isUrgent variable!
+                            var isUrgent = IsUrgentPacket(beforepacket, conn.Conv);
                             var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                            if (afterpacket != null)
-                                await conn.SendAsync(afterpacket);
-                            // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
+                            (isUrgent ? server_urgentPackets : server_normalPackets)
+                                .Enqueue(afterpacket);
                         }
                         catch (Exception e)
                         {
@@ -183,9 +214,52 @@ namespace csharp_Protoshift.KcpProxy
                 {
                     Log.Dbug(e.ToString(), "KcpProxyServer:ClientHandler");
                     conn.sendClient.Close();
+                    await GameSessionDispatch.DestroySession(conn.Conv);
                     break;
                 }
             }
         }
+
+        #region Send Packet
+        private ConcurrentQueue<byte[]?> server_urgentPackets = new();
+        private ConcurrentQueue<byte[]?> server_normalPackets = new();
+        private async Task ServerPacketSender(KcpProxy sendConn)
+        {
+            while (true)
+            {
+                if (server_urgentPackets.TryDequeue(out byte[]? urgentPacket))
+                {
+                    try
+                    {
+                        if (urgentPacket != null)
+                        await sendConn.SendAsync(urgentPacket);
+                        // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientSender");
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Dbug(e.ToString(), "KcpProxyClient:ClientSender");
+                        //conn.sendClient.Close();
+                    }
+                    continue;
+                }
+                else if (server_normalPackets.TryDequeue(out byte[]? normalPacket))
+                {
+                    try
+                    {
+                        if (normalPacket != null)
+                        await sendConn.SendAsync(normalPacket);
+                        // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientSender");
+                    }
+                    catch (Exception e)
+                    {
+                        Log.Dbug(e.ToString(), "KcpProxyClient:ClientSender");
+                        //conn.sendClient.Close();
+                    }
+                }
+                else await Task.Delay(5);
+            }
+        }
+        #endregion
+        #endregion
     }
 }

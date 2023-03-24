@@ -1,4 +1,5 @@
 ﻿using csharp_Protoshift.AnimeGameKCP;
+using csharp_Protoshift.GameSession;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -96,6 +97,7 @@ namespace csharp_Protoshift.KcpProxy
                             sendClient.StartDisconnected += (conv, token) =>
                             {
                                 Log.Warn("Server requested to disconnect, so send disconnect to client", "KcpProxy");
+                                GameSessionDispatch.DestroySession(conv).Wait();
                                 Disconnect(conv, token);
                             };
 
