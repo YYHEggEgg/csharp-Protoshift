@@ -46,12 +46,12 @@ namespace csharp_Protoshift.GameSession
                 #endregion
 
                 ushort oldmsg_cmdid = utils.oldcmdid;
-                byte[] oldmsg_body; 
+                byte[] oldmsg_body;
 
                 if (ExtraFix.NeedSpecialHandle(newmsg_cmdid, true))
                     oldmsg_body = ExtraFix.SpecialHandle(newmsg_cmdid, true, newmsg_body);
                 else oldmsg_body = utils.NewShiftToOld(newmsg_body);
-                
+
                 oldunionCmds.CmdList.Add(new OldProtos.UnionCmd
                 {
                     MessageId = oldmsg_cmdid,
