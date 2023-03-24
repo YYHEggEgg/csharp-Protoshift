@@ -6,6 +6,7 @@ using csharp_Protoshift.GameSession.SpecialFixs;
 using csharp_Protoshift.KcpProxy;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
+using OfficeOpenXml;
 using System.Net;
 using System.Numerics;
 using System.Text;
@@ -24,6 +25,8 @@ namespace csharp_Protoshift
             Log.Info("Written by YYHEggEgg#6167, https://github.com/YYHEggEgg.", "Entry");
             ResourcesLoader.CheckForRequiredResources();
             await ResourcesLoader.Load();
+
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             #region SkillIssueFixCmd
             SkillIssueFixCmd? sicmd = null;
