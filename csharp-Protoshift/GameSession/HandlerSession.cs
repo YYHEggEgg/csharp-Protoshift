@@ -195,16 +195,16 @@ namespace csharp_Protoshift.GameSession
             if (isNewCmdid)
             {
                 if (cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenReq") ||
-                    cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginReq") ||
-                    cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("PingReq"))
+                    cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginReq") )//|| 
+                    // (cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("PingReq") && packet.Length < 1024))
                     return true;
                 else return false;
             }
             else
             {
                 if (cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp") ||
-                    cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginRsp") ||
-                    cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PingRsp"))
+                    cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginRsp")  )//|| 
+                    // (cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PingRsp") && packet.Length < 1024))
                     return true;
                 else return false;
             }
@@ -308,7 +308,7 @@ namespace csharp_Protoshift.GameSession
 
                     oldbody = oldserializer.SerializeFromJson(newjson);
                 }
-                else oldbody = UnionCmds.Shift(newjson);
+                else    oldbody = UnionCmds.Shift(newjson);
                 #endregion
 
                 #region Notify
@@ -323,9 +323,10 @@ namespace csharp_Protoshift.GameSession
                 {
                     PacketRecord record = new PacketRecord(protoname, packetCounts, cmdid, true, 
                         packet, oldbody) { newjsonContent = newjson };
-                    if (oldserializer != null)
+                    if (oldserializer == null)
+                        OldProtos.QueryCmdId.TryGetSerializer(protoname, out oldserializer);
                         // Protoshift not handled here but in other Fixs
-                        SkillIssueDetect.StartHandleNewPacket(record, newbody: bodyfrom, oldbody: oldbody,
+                    SkillIssueDetect.StartHandleNewPacket(record, newbody: bodyfrom, oldbody: oldbody,
                             newjson, newserializer, oldserializer, SessionId);
                     lock (records)
                     {
@@ -434,7 +435,6 @@ namespace csharp_Protoshift.GameSession
                 oldjson = Program.skillcmd.ProcessWithRule(cmdid, true, oldjson);
 
                 byte[] newbody = newserializer.SerializeFromJson(oldjson);
-                string newjson = newserializer.DeserializeToJson(newbody);
                 #endregion
 
                 #region Notify

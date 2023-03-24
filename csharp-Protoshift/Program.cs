@@ -5,6 +5,7 @@ using csharp_Protoshift.GameSession;
 using csharp_Protoshift.GameSession.SpecialFixs;
 using csharp_Protoshift.KcpProxy;
 using csharp_Protoshift.resLoader;
+using csharp_Protoshift.SkillIssue;
 using System.Net;
 using System.Numerics;
 using System.Text;
@@ -19,8 +20,8 @@ namespace csharp_Protoshift
     {
         static async Task Main(string[] args)
         {
-            Log.Info("csharp-Protoshift v1.0.0");
-            Log.Info("Written by YYHEggEgg#6167, https://github.com/YYHEggEgg.");
+            Log.Info("csharp-Protoshift v1.0.0", "Entry");
+            Log.Info("Written by YYHEggEgg#6167, https://github.com/YYHEggEgg.", "Entry");
             ResourcesLoader.CheckForRequiredResources();
             await ResourcesLoader.Load();
 
@@ -42,9 +43,12 @@ namespace csharp_Protoshift
             }, null, 0, 60000);
             #endregion
 
-            Log.Info("Start loading all protos, it will take some time...");
-            Log.Info(NewProtos.QueryCmdId.Initialize());
-            Log.Info(OldProtos.QueryCmdId.Initialize());
+            Log.Info("Start loading all protos, it will take some time...", "Entry");
+            Log.Info(NewProtos.QueryCmdId.Initialize(), "Entry");
+            Log.Info(OldProtos.QueryCmdId.Initialize(), "Entry");
+
+            Log.Info(ExtraFix.Initialize(), "Entry");
+            Log.Info(SkillIssueDetect.Initialize(), "Entry");
 
             Log.Info(ExtraFix.Initialize());
 
@@ -59,8 +63,8 @@ namespace csharp_Protoshift
                 IsUrgentClientPacket = GameSessionDispatch.IsUrgentClientPacket
             };
             kcpProxy.StartProxy(handlers);
-            Log.Info("Protoshift server started on 127.0.0.1:22102");
-            Log.Info("Ready! Type 'help' to get command help.");
+            Log.Info("Protoshift server started on 127.0.0.1:22102", "Entry");
+            Log.Info("Ready! Type 'help' to get command help.", "Entry");
 
             await CommandLine.Start();
             Close();
