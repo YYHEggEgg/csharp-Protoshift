@@ -171,8 +171,7 @@ namespace csharp_Protoshift.GameSession
              *   The reason has been mentioned repeatedly above, but notice that
              *   it works only when UDP and KCP implements are both thread-safe. 
              */
-            return true;
-            /*
+            // return true;
             if (packet == null) throw new ArgumentNullException(nameof(packet));
             bool fallback = false; // Whether use dispatchKey
             XorDecrypt(ref packet, 0, 2);
@@ -197,20 +196,19 @@ namespace csharp_Protoshift.GameSession
             if (isNewCmdid)
             {
                 if (cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenReq") ||
-                    cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginReq") )//|| 
-                    // (cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("PingReq") && packet.Length < 1024))
+                    cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginReq") || 
+                    cmdid == NewProtos.QueryCmdId.GetCmdIdFromProtoname("PingReq"))
                     return true;
                 else return false;
             }
             else
             {
                 if (cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp") ||
-                    cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginRsp")  )//|| 
-                    // (cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PingRsp") && packet.Length < 1024))
+                    cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginRsp") || 
+                    cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PingRsp"))
                     return true;
                 else return false;
             }
-            */
         }
 
         #region Packet Handle
@@ -582,7 +580,7 @@ namespace csharp_Protoshift.GameSession
         public List<PacketRecord> QueryPacketRecords(string protoname)
         {
             var query = from record in records
-                        where record.PacketName == protoname
+                        where record?.PacketName == protoname
                         orderby record.Id
                         select record;
             return query.ToList();
