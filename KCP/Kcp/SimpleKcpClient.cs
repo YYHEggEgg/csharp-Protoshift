@@ -15,15 +15,16 @@ namespace System.Net.Sockets.Kcp.Simple
     {
         UdpClient client;
 
-        public SimpleKcpClient(int port)
-            : this(port, null)
+        public SimpleKcpClient()
+            : this(null)
         {
 
         }
 
-        public SimpleKcpClient(int port, IPEndPoint endPoint)
+        public SimpleKcpClient(IPEndPoint endPoint)
         {
-            client = new UdpClient(port);
+            client = new UdpClient();
+            client.Connect(endPoint);
             kcp = new SimpleSegManager.Kcp(2001, this);
             this.EndPoint = endPoint;
             BeginRecv();
@@ -35,7 +36,7 @@ namespace System.Net.Sockets.Kcp.Simple
         public void Output(IMemoryOwner<byte> buffer, int avalidLength)
         {
             var s = buffer.Memory.Span.Slice(0, avalidLength).ToArray();
-            client.SendAsync(s, s.Length, EndPoint);
+            client.SendAsync(s, s.Length);
             buffer.Dispose();
         }
 
