@@ -102,7 +102,8 @@ namespace csharp_Protoshift.KcpProxy
                             };
 
                             var sendBackConv = sendClient.GetSendbackHandshake();
-                            Output(sendBackConv.AsBytes());
+                            lock (outputLock)
+                                Output(sendBackConv.AsBytes());
                             _Conv = sendBackConv.Conv;
                             _Token = sendBackConv.Token;
                             Initialize();
