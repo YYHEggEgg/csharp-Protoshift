@@ -29,7 +29,6 @@ namespace YSFreedom.Common.Net
         protected ConnectionState _State = ConnectionState.DISCONNECTED;
         protected UIntPtr ikcpHandle;
         protected object ikcpLock = new object();
-        protected object outputLock = "R.I.P YSFreedom";
         protected long startTime;
         protected IKCP.OutputCallback outputCbThunk;
 
@@ -68,7 +67,7 @@ namespace YSFreedom.Common.Net
             _State = ConnectionState.HANDSHAKE_CONNECT;
 
             Handshake h = new Handshake(Handshake.MAGIC_CONNECT, _Conv, _Token, ConnectData);
-            lock (outputLock) Output(h.AsBytes());
+            Output(h.AsBytes());
         }
 
         public async Task ConnectAsync()
@@ -106,7 +105,7 @@ namespace YSFreedom.Common.Net
         {
             if (Output == null) return 0;
             // Log.Dbug($"Output buffer = {Convert.ToHexString(buffer)}", "KCP");
-            lock (outputLock) return Output(buffer);
+            return Output(buffer);
         }
 
         public int Input(byte[] buffer)
@@ -156,8 +155,7 @@ namespace YSFreedom.Common.Net
                             _Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
 
                             var sendBackConv = new Handshake(Handshake.MAGIC_SEND_BACK_CONV, _Conv, _Token);
-                            lock (outputLock)
-                                Output(sendBackConv.AsBytes());
+                            Output(sendBackConv.AsBytes());
                             Initialize();
 
                             return 0;
@@ -257,7 +255,7 @@ namespace YSFreedom.Common.Net
 
         public void Update()
         {
-            IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
+            lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
         }
 
         public async Task BackgroundUpdate()
@@ -284,8 +282,7 @@ namespace YSFreedom.Common.Net
                 _State = ConnectionState.CLOSED;
 
                 var disconn = new Handshake(Handshake.MAGIC_DISCONNECT, _Conv, _Token);
-                lock (outputLock)
-                    Output(disconn.AsBytes());
+                Output(disconn.AsBytes());
 
                 return;
             }
@@ -309,8 +306,7 @@ namespace YSFreedom.Common.Net
             token = token == 0 ? _Token : token;
 
             Handshake disconnect = new(Handshake.MAGIC_DISCONNECT, conv, token, data);
-            lock (outputLock)
-                Output(disconnect.AsBytes());
+            Output(disconnect.AsBytes());
             _State = ConnectionState.DISCONNECTED;
         }
 
