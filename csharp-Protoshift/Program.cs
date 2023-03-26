@@ -10,7 +10,6 @@ using OfficeOpenXml;
 using System;
 using System.Diagnostics;
 using System.Net;
-using System.Net.Sockets.Kcp.Simple;
 using System.Numerics;
 using System.Text;
 using System.Text.Json;
@@ -84,7 +83,7 @@ namespace csharp_Protoshift
                 42, true, 22, 155);
             Log.Info("Finish");*/
 
-            var kcpProxy = new KcpProxyServer(new IPEndPoint(IPAddress.Loopback, 22102),
+            var kcpProxy = new KcpProxyServer(new IPEndPoint(IPAddress.Parse("0.0.0.0"), 22102),
                 new IPEndPoint(IPAddress.Parse("192.168.127.130"), 20041));
 
             ProxyHandlers handlers = new ProxyHandlers
