@@ -86,7 +86,12 @@ namespace csharp_Protoshift.GameSession
             sessions.TryRemove(conv, out HandlerSession? session);
             cancelledSessions.Add(conv);
 
-            session?.ExportXlsxRecord($"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.debug.packetspeed_{conv}.xlsx");
+            if (session == null)
+            {
+                Log.Erro($"Session {conv} destroyed but null, probably not recorded!", "GameSessionDispatch");
+                return;
+            }
+            session.ExportXlsxRecord($"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.debug.packetspeed_{conv}.xlsx");
 
             StringBuilder output = new();
 
