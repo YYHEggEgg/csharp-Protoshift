@@ -1,5 +1,4 @@
 ﻿using csharp_Protoshift.GameSession;
-using OfficeOpenXml;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -11,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YSFreedom.Common.Net;
 using YYHEggEgg.Logger;
+using csharp_Protoshift.KCP.SpecialUdp;
 
 namespace csharp_Protoshift.KcpProxy
 {
@@ -20,7 +20,7 @@ namespace csharp_Protoshift.KcpProxy
 
         public KcpProxyServer(IPEndPoint bindToAddress, IPEndPoint sendToAddress)
         {
-            udpSock = new UdpClient(bindToAddress);
+            udpSock = new ConcurrentUdpClient(bindToAddress);
             SendToEndpoint = sendToAddress;
 
             Task.Run(BackgroundUpdate);

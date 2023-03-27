@@ -2,6 +2,7 @@ using System.Net;
 using System.Net.Sockets;
 using YSFreedom.Common.Net;
 using YYHEggEgg.Logger;
+using csharp_Protoshift.KCP.SpecialUdp;
 
 namespace csharp_Protoshift.AnimeGameKCP
 {
@@ -9,14 +10,14 @@ namespace csharp_Protoshift.AnimeGameKCP
     {
         public bool Closed { get { return _Closed; } }
 
-        protected UdpClient udpSock;
+        protected ConcurrentUdpClient udpSock;
         private bool _Closed = false;
         protected KCP server;
         protected IPEndPoint remoteAddress;
 
         public KCPClient(IPEndPoint ipEp)
         {
-            udpSock = new UdpClient();
+            udpSock = new ConcurrentUdpClient();
             //udpSock = new();
             udpSock.Connect(ipEp);
             server = new KCP();
