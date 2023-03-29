@@ -11,7 +11,8 @@ import (
 )
 
 const (
-	PROTO_DIR  = "..\\..\\NewProtoHandlers\\Google.Protobuf\\Protos"
+	NEWPROTO_DIR  = "..\\..\\NewProtoHandlers\\Google.Protobuf\\Protos"
+	OLDPROTO_DIR  = "..\\..\\NewProtoHandlers\\Google.Protobuf\\Protos"
 	OUTPUT_DIR = "..\\Proto2json_Output"
 )
 
@@ -33,7 +34,7 @@ func main() {
 	{
 		var files []string
 
-		err := filepath.Walk(PROTO_DIR+"new\\", func(path string, info os.FileInfo, err error) error {
+		err := filepath.Walk(NEWPROTO_DIR, func(path string, info os.FileInfo, err error) error {
 			if info.IsDir() {
 				return nil
 			}
@@ -69,7 +70,7 @@ func main() {
 	{
 		var files []string
 
-		err := filepath.Walk(PROTO_DIR+"old\\", func(path string, info os.FileInfo, err error) error {
+		err := filepath.Walk(OLDPROTO_DIR, func(path string, info os.FileInfo, err error) error {
 			if info.IsDir() {
 				return nil
 			}
