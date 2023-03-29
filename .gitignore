@@ -20,3 +20,4 @@
 /.config
 /HandlerGenerator/bin
 /HandlerGenerator/obj
+/HandlerGenerator/proto2json/proto2json_output
