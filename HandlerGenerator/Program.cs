@@ -19,12 +19,12 @@ else if (workingdir.StartsWith("net"))
 }
 else
 {
-    Log.Warn("Can't find source code path! Make sure you have cloned full code or placed proto2json in current path!");
+    Log.Warn("Can't find source code path! Make sure you have cloned full code or placed proto2json in current path!", "ResourcesCheck");
 }
 string proto2jsondir = $"{workingdir}\\proto2json";
 if (!File.Exists($"{proto2jsondir}\\proto2json.exe"))
 {
-    Log.Erro("Proto2json not found! Please make sure you're running program with dotnet run and have comiled Executable!");
+    Log.Erro("Proto2json not found! Please make sure you're running program with dotnet run and have comiled Executable!", "ResourcesCheck");
     passcheck = false;
 }
 #endregion
@@ -44,6 +44,27 @@ if (!Directory.Exists(oldprotodir))
 #endregion
 if (!passcheck)
 {
-    Log.Erro("Process terminated for resources lost. Exit code is 272574.");
+    Log.Erro("Process terminated for resources lost. Exit code is 272574.", "ResourcesCheck");
     Environment.Exit(272574);
 }
+#region Invoke proto2json
+Log.Info("Start invoking proto2json.exe. Please wait patiently...", "OuterInvoke");
+StopWatch pinvokewatch = StopWatch.StartNew();
+Process p = Process.Start($"{proto2jsondir}\\proto2json.exe");
+p.WaitForExit();
+pinvokewatch.Stop();
+Log.Info($"proto2json exited. Total execute time is {pinvokewatch.Elapsed}.", "OuterInvoke");
+if (p.ExitCode != 0)
+{
+    Log.Erro($"proto2json exited with error code {p.ExitCode}. ", "OuterInvoke");
+    Log.Erro("Process terminated for proto2json not working properly. Exit code is 3300.", "OuterInvoke")
+    Environment.Exit(3300);
+}
+string newoutputdir = $"{workingdir}\\Proto2json_Output\\new";
+string oldoutputdir = $"{workingdir}\\Proto2json_Output\\old";
+if (!Directory.Exists(newoutputdir) || !Directory.Exists(oldoutputdir))
+{
+    Log.Erro("Process terminated for proto2json output directories not found. Exit code is 245.", "OuterInvoke");
+    Environment.Exit(245);
+}
+#endregion
