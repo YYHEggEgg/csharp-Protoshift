@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
     <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />
+    <ProjectReference Include="..\CSharp-Logger\CSharp-Logger.csproj" />
   </ItemGroup>
 
 </Project>
