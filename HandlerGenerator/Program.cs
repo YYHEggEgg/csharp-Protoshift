@@ -1,2 +1,49 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using YYHEggEgg.Logger;
+
+// See https://aka.ms/new-console-template for more information
+Log.Info("Protoshift Ex v1", "HandlerGenerator");
+Log.Info("It is recommended to invoke this program with dotnet run.");
+Log.Warn("Build is currently only supported on Windows!");
+Log.Warn("PLEASE USE THIS PROGRAM ALONG WITH FULL SOURCE CODE!");
+string workingdir = Environment.CurrentDirectory;
+bool passcheck = true;
+#region Find proto2json
+if (workingdir == "csharp-Protoshift" 
+    && Directory.Exists($"{workingdir}\\HandlerGenerator\\proto2json"))
+{
+    workingdir = $"{workingdir}\\HandlerGenerator";
+}
+else if (workingdir.StartsWith("net"))
+{
+    workingdir = Directory.GetParent(Directory.GetParent(workingdir));
+}
+else
+{
+    Log.Warn("Can't find source code path! Make sure you have cloned full code or placed proto2json in current path!");
+}
+string proto2jsondir = $"{workingdir}\\proto2json";
+if (!File.Exists($"{proto2jsondir}\\proto2json.exe"))
+{
+    Log.Erro("Proto2json not found! Please make sure you're running program with dotnet run and have comiled Executable!");
+    passcheck = false;
+}
+#endregion
+#region Check Protos
+string newprotodir = $"{Directory.GetParent(workingdir)}\\NewProtoHandlers\\Google.Protobuf\\Protos";
+string oldprotodir = $"{Directory.GetParent(workingdir)}\\OldProtoHandlers\\Google.Protobuf\\Protos";
+if (!Directory.Exists(newprotodir))
+{
+    Log.Erro("Can't find NewProtos dir! Make sure to use this programs along with full source code!");
+    passcheck = false;
+}
+if (!Directory.Exists(oldprotodir))
+{
+    Log.Erro("Can't find OldProtos dir! Make sure to use this programs along with full source code!");
+    passcheck = false;
+}
+#endregion
+if (!passcheck)
+{
+    Log.Erro("Process terminated for resources lost. Exit code is 272574.");
+    Environment.Exit(272574);
+}
