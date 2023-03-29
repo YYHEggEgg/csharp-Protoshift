@@ -18,3 +18,5 @@
 /CSharp-Logger/bin
 /CSharp-Logger/obj
 /.config
+/HandlerGenerator/bin
+/HandlerGenerator/obj
