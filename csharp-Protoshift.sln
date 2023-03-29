@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XC.RSAUtil", "XC.RSAUtil\XC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp-Logger", "CSharp-Logger\CSharp-Logger.csproj", "{95CF58E2-1DDB-4053-9B7B-6F21049A9851}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HandlerGenerator", "HandlerGenerator\HandlerGenerator.csproj", "{8A26A749-A2FE-45DD-BF47-27F1588CA891}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{95CF58E2-1DDB-4053-9B7B-6F21049A9851}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95CF58E2-1DDB-4053-9B7B-6F21049A9851}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95CF58E2-1DDB-4053-9B7B-6F21049A9851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A26A749-A2FE-45DD-BF47-27F1588CA891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A26A749-A2FE-45DD-BF47-27F1588CA891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A26A749-A2FE-45DD-BF47-27F1588CA891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A26A749-A2FE-45DD-BF47-27F1588CA891}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
