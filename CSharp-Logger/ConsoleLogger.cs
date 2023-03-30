@@ -19,6 +19,8 @@ namespace YYHEggEgg.Logger
     public static class Log
     {
         #region Save
+        public static readonly string logdirPath = AppDomain.CurrentDomain.BaseDirectory;
+
         public static string logPath;
         private static StreamWriter logwriter;
 #if DEBUG
@@ -29,25 +31,27 @@ namespace YYHEggEgg.Logger
         {
             RefreshLogTicks = 100;
             string dir = Environment.CurrentDirectory;
-            Directory.CreateDirectory("logs");
+            Directory.CreateDirectory($"{logdirPath}/logs");
 
             #region Handle Past Log
-            if (File.Exists("logs/latest.log"))
+            if (File.Exists($"{logdirPath}/logs/latest.log"))
             {
-                FileInfo info = new("logs/latest.log");
-                File.Move("logs/latest.log", $"logs/{info.LastWriteTime:yyyy-MM-dd_HH-mm-ss}.log");
+                FileInfo info = new($"{logdirPath}/logs/latest.log");
+                File.Move($"{logdirPath}/logs/latest.log", 
+                    $"{logdirPath}/logs/{info.LastWriteTime:yyyy-MM-dd_HH-mm-ss}.log");
             }
-            if (File.Exists("logs/latest.debug.log"))
+            if (File.Exists($"{logdirPath}/logs/latest.debug.log"))
             {
-                FileInfo info = new("logs/latest.debug.log");
-                File.Move("logs/latest.debug.log", $"logs/{info.LastWriteTime:yyyy-MM-dd_HH-mm-ss}.debug.log");
+                FileInfo info = new($"{logdirPath}/logs/latest.debug.log");
+                File.Move($"{logdirPath}/logs/latest.debug.log", 
+                    $"{logdirPath}/logs/{info.LastWriteTime:yyyy-MM-dd_HH-mm-ss}.debug.log");
             }
             #endregion
 
             #region Compress Past Logs
             List<string> logs = new();
             string belongDate = "";
-            foreach (var logfile in Directory.EnumerateFiles("logs"))
+            foreach (var logfile in Directory.EnumerateFiles($"{logdirPath}/logs"))
             {
                 // Get Date
                 FileInfo loginfo = new(logfile);
@@ -63,7 +67,7 @@ namespace YYHEggEgg.Logger
                     if (belongDate != "")
                     {
                         string newzipfile = Tools.AddNumberedSuffixToPath(
-                            $"logs/log.{belongDate}.zip");
+                            $"{logdirPath}/logs/log.{belongDate}.zip");
                         Tools.CompressFiles(newzipfile, logs);
                         // Delete original files
                         try
@@ -88,11 +92,11 @@ namespace YYHEggEgg.Logger
             }
             #endregion
 
-            logPath = "logs/latest.log";
+            logPath = $"{logdirPath}/logs/latest.log";
             logwriter = new(logPath, true);
             logwriter.AutoFlush = true;
 #if DEBUG
-            logPath_debug = "logs/latest.debug.log";
+            logPath_debug = $"{logdirPath}/logs/latest.debug.log";
             logwriter_debug = new(logPath_debug, true);
 #endif
 
