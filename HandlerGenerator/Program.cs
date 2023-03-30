@@ -2,9 +2,9 @@
 
 // See https://aka.ms/new-console-template for more information
 Log.Info("Protoshift Ex v1", "HandlerGenerator");
-Log.Info("It is recommended to invoke this program with dotnet run.");
-Log.Warn("Build is currently only supported on Windows!");
-Log.Warn("PLEASE USE THIS PROGRAM ALONG WITH FULL SOURCE CODE!");
+Log.Info("It is recommended to invoke this program with dotnet run.", "HandlerGenerator");
+Log.Warn("Build is currently only supported on Windows!", "HandlerGenerator");
+Log.Warn("PLEASE USE THIS PROGRAM ALONG WITH FULL SOURCE CODE!", "HandlerGenerator");
 string workingdir = Environment.CurrentDirectory;
 bool passcheck = true;
 #region Find proto2json
