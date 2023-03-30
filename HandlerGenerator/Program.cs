@@ -1,4 +1,5 @@
 ﻿using YYHEggEgg.Logger;
+using System.Diagnostics;
 
 // See https://aka.ms/new-console-template for more information
 Log.Info("Protoshift Ex v1", "HandlerGenerator");
@@ -15,7 +16,15 @@ if (workingdir == "csharp-Protoshift"
 }
 else if (workingdir.StartsWith("net"))
 {
-    workingdir = Directory.GetParent(Directory.GetParent(workingdir));
+    string? dbug = Directory.GetParent(workingdir)?.FullName;
+    if (dbug == null)
+    {
+        Log.Warn("Can't find source code path! Make sure you have cloned full code or placed proto2json in current path!", "ResourcesCheck");
+    }
+    else
+    {
+        workingdir = Directory.GetParent(dbug).FullName ?? "";
+    }
 }
 else
 {
@@ -49,7 +58,7 @@ if (!passcheck)
 }
 #region Invoke proto2json
 Log.Info("Start invoking proto2json.exe. Please wait patiently...", "OuterInvoke");
-StopWatch pinvokewatch = StopWatch.StartNew();
+Stopwatch pinvokewatch = Stopwatch.StartNew();
 Process p = Process.Start($"{proto2jsondir}\\proto2json.exe");
 p.WaitForExit();
 pinvokewatch.Stop();
@@ -57,7 +66,7 @@ Log.Info($"proto2json exited. Total execute time is {pinvokewatch.Elapsed}.", "O
 if (p.ExitCode != 0)
 {
     Log.Erro($"proto2json exited with error code {p.ExitCode}. ", "OuterInvoke");
-    Log.Erro("Process terminated for proto2json not working properly. Exit code is 3300.", "OuterInvoke")
+    Log.Erro("Process terminated for proto2json not working properly. Exit code is 3300.", "OuterInvoke");
     Environment.Exit(3300);
 }
 string newoutputdir = $"{workingdir}\\Proto2json_Output\\new";
