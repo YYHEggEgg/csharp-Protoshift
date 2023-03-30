@@ -11,9 +11,9 @@ import (
 )
 
 const (
-	NEWPROTO_DIR  = "..\\..\\NewProtoHandlers\\Google.Protobuf\\Protos"
-	OLDPROTO_DIR  = "..\\..\\NewProtoHandlers\\Google.Protobuf\\Protos"
-	OUTPUT_DIR = "..\\Proto2json_Output\\"
+	NEWPROTO_DIR  = "..\\NewProtoHandlers\\Google.Protobuf\\Protos"
+	OLDPROTO_DIR  = "..\\NewProtoHandlers\\Google.Protobuf\\Protos"
+	OUTPUT_DIR = "Proto2json_Output"
 )
 
 func main() {
@@ -28,8 +28,8 @@ func main() {
 	}
 
 	os.Mkdir(OUTPUT_DIR, 0777)
-	os.Mkdir(OUTPUT_DIR+"new\\", 0777)
-	os.Mkdir(OUTPUT_DIR+"old\\", 0777)
+	os.Mkdir(OUTPUT_DIR+"\\new\\", 0777)
+	os.Mkdir(OUTPUT_DIR+"\\old\\", 0777)
 
 	{
 		var files []string
@@ -63,7 +63,7 @@ func main() {
 				fmt.Fprintf(os.Stderr, "failed to marshal, err %v\n", err)
 			}
 			var filenameWithSuffix = filepath.Base(file)
-			os.WriteFile(OUTPUT_DIR+"new\\"+strings.TrimSuffix(filenameWithSuffix, filepath.Ext(filenameWithSuffix))+".json", gotJSON, 0644)
+			os.WriteFile(OUTPUT_DIR+"\\new\\"+strings.TrimSuffix(filenameWithSuffix, filepath.Ext(filenameWithSuffix))+".json", gotJSON, 0644)
 		}
 	}
 
@@ -99,7 +99,7 @@ func main() {
 				fmt.Fprintf(os.Stderr, "failed to marshal, err %v\n", err)
 			}
 			var filenameWithSuffix = filepath.Base(file)
-			os.WriteFile(OUTPUT_DIR+"old\\"+strings.TrimSuffix(filenameWithSuffix, filepath.Ext(filenameWithSuffix))+".json", gotJSON, 0644)
+			os.WriteFile(OUTPUT_DIR+"\\old\\"+strings.TrimSuffix(filenameWithSuffix, filepath.Ext(filenameWithSuffix))+".json", gotJSON, 0644)
 		}
 	}
 }
