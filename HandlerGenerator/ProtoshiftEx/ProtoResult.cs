@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace csharp_Protoshift.Protoshift.Ex.Handlers.Generator
+namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
     public class CommonResult
 {

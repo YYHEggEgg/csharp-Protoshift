@@ -1,6 +1,6 @@
 using Google.Protobuf;
 
-namespace csharp_Protoshift.Protoshift.Ex.Handlers
+namespace csharp_Protoshift.Enhanced.Handlers
 {
     public abstract class HandlerBase<TNewProtocol, TOldProtocol>
         where TNewProtocol : IMessage<TNewProtocol>
