@@ -14,9 +14,9 @@ namespace csharp_Protoshift.MhyKCP
     public class UdpKcpCallback : IKcpCallback
     {
         private readonly UdpClient udpSock;
-        private readonly IPEndPoint ipEp;
+        private readonly IPEndPoint? ipEp;
 
-        public UdpKcpCallback(UdpClient udpSock, IPEndPoint ipEp)
+        public UdpKcpCallback(UdpClient udpSock, IPEndPoint? ipEp)
         {
             this.udpSock = udpSock;
             this.ipEp = ipEp;
@@ -24,16 +24,17 @@ namespace csharp_Protoshift.MhyKCP
 
         public void Output(IMemoryOwner<byte> buffer, int avalidLength)
         {
-            udpSock.Send(buffer.Memory.Span, ipEp);
+            if (ipEp != null) udpSock.Send(buffer.Memory.Span, ipEp);
+            else udpSock.Send(buffer.Memory.Span);
         }
     }
 
     public class ConcurrentUdpKcpCallback : IKcpCallback
     {
         private readonly ConcurrentUdpClient udpSock;
-        private readonly IPEndPoint ipEp;
+        private readonly IPEndPoint? ipEp;
 
-        public ConcurrentUdpKcpCallback(ConcurrentUdpClient udpSock, IPEndPoint ipEp)
+        public ConcurrentUdpKcpCallback(ConcurrentUdpClient udpSock, IPEndPoint? ipEp = null)
         {
             this.udpSock = udpSock;
             this.ipEp = ipEp;
