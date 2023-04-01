@@ -1,4 +1,6 @@
-﻿using csharp_Protoshift.AnimeGameKCP;
+﻿#define KCP_PROXY_VERBOSE
+
+using csharp_Protoshift.AnimeGameKCP;
 using csharp_Protoshift.GameSession;
 using System;
 using System.Collections.Generic;
@@ -86,14 +88,16 @@ namespace csharp_Protoshift.KcpProxy
                         var handshake = new Handshake();
                         try
                         {
-                            // Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", "KcpProxy");
+#if KCP_PROXY_VERBOSE
+                            Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", "KcpProxy");
+#endif
                             handshake.Decode(buffer, Handshake.MAGIC_CONNECT);
                             //_Conv = (uint)(MonotonicTime.Now & 0xFFFFFFFF);
                             //_Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
 
                             Debug.Assert(sendClient == null);
                             sendClient = new(sendToAddress, handshake.Conv, handshake.Token, handshake.Data);
-                            Task.WaitAll(sendClient.ConnectAsync());
+                            sendClient.ConnectAsync().Wait();
                             sendClient.StartDisconnected += (conv, token) =>
                             {
                                 Log.Warn("Server requested to disconnect, so send disconnect to client", "KcpProxy");
