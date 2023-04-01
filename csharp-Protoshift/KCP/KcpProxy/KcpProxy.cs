@@ -1,4 +1,4 @@
-﻿#define KCP_PROXY_VERBOSE
+﻿// #define KCP_PROXY_VERBOSE
 
 using csharp_Protoshift.AnimeGameKCP;
 using csharp_Protoshift.GameSession;

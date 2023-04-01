@@ -104,6 +104,7 @@ namespace csharp_Protoshift.KcpProxy
         #region Handle as a client (send to server)
         protected async void HandleClient(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
+            if (!clients.ContainsKey(remotePoint)) return;
             var conn = (KcpProxy)clients[remotePoint];
             var PacketHandler = handlers.OnClientPacketArrival;
             var IsUrgentPacket = handlers.IsUrgentClientPacket;
@@ -204,6 +205,7 @@ namespace csharp_Protoshift.KcpProxy
         #region Handle as a server (send to client)
         protected async void HandleServer(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
+            if (!clients.ContainsKey(remotePoint)) return;
             var conn = (KcpProxy)clients[remotePoint];
             var PacketHandler = handlers.OnServerPacketArrival;
             var IsUrgentPacket = handlers.IsUrgentServerPacket;
