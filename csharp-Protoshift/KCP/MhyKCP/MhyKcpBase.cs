@@ -6,7 +6,7 @@ using YSFreedom.Common.Native;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
 
-namespace csharp_Protoshift.KCP.MhyKCP
+namespace csharp_Protoshift.MhyKCP
 {
     public class MhyKcpBase : IDisposable
     {
@@ -35,41 +35,6 @@ namespace csharp_Protoshift.KCP.MhyKCP
         protected long startTime;
 
         public uint ConnectData { get; protected set; }
-
-        #region BufferOwner
-        internal protected class KcpInnerBuffer : IMemoryOwner<byte>
-        {
-            private readonly Memory<byte> _memory;
-
-            public Memory<byte> Memory
-            {
-                get
-                {
-                    if (alreadyDisposed)
-                    {
-                        throw new ObjectDisposedException(nameof(KcpInnerBuffer));
-                    }
-                    return _memory;
-                }
-            }
-
-            public KcpInnerBuffer(int size)
-            {
-                _memory = new Memory<byte>(new byte[size]);
-            }
-
-            public KcpInnerBuffer(byte[]? data)
-            {
-                _memory = new Memory<byte>(data);
-            }
-
-            bool alreadyDisposed = false;
-            public void Dispose()
-            {
-                alreadyDisposed = true;
-            }
-        }
-        #endregion
 
         public MhyKcpBase(uint conv = 0, uint token = 0, uint connectData = 0x499602D2)
         {
