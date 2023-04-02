@@ -1,6 +1,5 @@
 ﻿// #define KCP_PROXY_VERBOSE
 
-using csharp_Protoshift.AnimeGameKCP;
 using csharp_Protoshift.GameSession;
 using System;
 using System.Collections.Generic;
@@ -110,7 +109,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 
                             var sendBackConv = sendClient.GetSendbackHandshake();
                             var sendBackData = sendBackConv.AsBytes();
-                            OutputCallback.Output(new KcpInnerBuffer(sendBackData), sendBackData.Length);
+                            OutputCallback?.Output(new KcpInnerBuffer(sendBackData), sendBackData.Length);
                             _Conv = sendBackConv.Conv;
                             _Token = sendBackConv.Token;
                             Initialize();
