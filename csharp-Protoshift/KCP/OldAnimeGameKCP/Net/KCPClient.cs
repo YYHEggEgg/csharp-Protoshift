@@ -1,10 +1,10 @@
 using System.Net;
 using System.Net.Sockets;
-using YSFreedom.Common.Net;
+using YSFreedom.Common.Net.Obsoleted;
 using YYHEggEgg.Logger;
 using csharp_Protoshift.SpecialUdp;
 
-namespace csharp_Protoshift.AnimeGameKCP
+namespace csharp_Protoshift.Obsoleted.AnimeGameKCP
 {
     public class KCPClient : IDisposable
     {

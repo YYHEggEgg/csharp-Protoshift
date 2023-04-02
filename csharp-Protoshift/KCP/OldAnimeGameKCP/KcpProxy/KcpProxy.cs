@@ -1,6 +1,6 @@
 ﻿// #define KCP_PROXY_VERBOSE
 
-using csharp_Protoshift.AnimeGameKCP;
+using csharp_Protoshift.Obsoleted.AnimeGameKCP;
 using csharp_Protoshift.GameSession;
 using System;
 using System.Collections.Generic;
@@ -12,11 +12,11 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using YSFreedom.Common.Native;
-using YSFreedom.Common.Net;
+using YSFreedom.Common.Net.Obsoleted;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
 
-namespace csharp_Protoshift.KcpProxy
+namespace csharp_Protoshift.Obsoleted.KcpProxy
 {
     /// <summary>
     /// KcpProxy is not a client

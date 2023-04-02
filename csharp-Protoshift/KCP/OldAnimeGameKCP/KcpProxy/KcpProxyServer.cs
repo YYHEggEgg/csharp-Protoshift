@@ -10,11 +10,11 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using YSFreedom.Common.Net;
+using YSFreedom.Common.Net.Obsoleted;
 using YYHEggEgg.Logger;
 using csharp_Protoshift.SpecialUdp;
 
-namespace csharp_Protoshift.KcpProxy
+namespace csharp_Protoshift.Obsoleted.KcpProxy
 {
     public class KcpProxyServer : KCPServer
     {
