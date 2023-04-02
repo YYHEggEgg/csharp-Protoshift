@@ -14,9 +14,8 @@ namespace csharp_Protoshift.MhyKCP
         {
             CLOSED, DISCONNECTED, HANDSHAKE_CONNECT, HANDSHAKE_WAIT, CONNECTED
         }
-        public delegate int OutputDelegate(byte[] buffer);
 
-        public IKcpCallback OutputCallback;
+        public IKcpCallback? OutputCallback;
         public bool Disposed { get { return _Disposed; } }
         public ConnectionState State { get { return _State; } }
         public uint Conv { get { return _Conv; } }
@@ -59,6 +58,8 @@ namespace csharp_Protoshift.MhyKCP
             // IKCP.ikcp_wndsize(ikcpHandle, 256, 256);
             cskcpHandle.WndSize(256, 256);
 
+            cskcpHandle.TraceListener = new LogTraceListener("CsKcpBase");
+
             Task.Run(BackgroundUpdate);
         }
 
@@ -68,7 +69,7 @@ namespace csharp_Protoshift.MhyKCP
 
             byte[] h = new Handshake(Handshake.MAGIC_CONNECT, _Conv, _Token, ConnectData).AsBytes();
             var buf = new KcpInnerBuffer(h);
-            OutputCallback.Output(buf, h.Length);
+            OutputCallback?.Output(buf, h.Length);
         }
 
         public async Task ConnectAsync()
@@ -111,7 +112,7 @@ namespace csharp_Protoshift.MhyKCP
                     throw new SocketException(10057); // Not connected
                 case ConnectionState.CONNECTED:
                     {
-                        // Log.Dbug($"ConnectedNotify, handle = {ikcpHandle}, buf = {Convert.ToHexString(buffer)}", "KCP");
+                        // Log.Dbug($"ConnectedNotify, handle = {ikcpHandle}, buf = {Convert.ToHexString(buffer)}", "MhyKcpBase");
                         if (buffer.Length == 20) // Possibly a "disconnect" packet
                         {
                             var disconn = new Handshake();
@@ -119,13 +120,13 @@ namespace csharp_Protoshift.MhyKCP
                             {
                                 disconn.Decode(buffer, Handshake.MAGIC_DISCONNECT);
                                 _State = ConnectionState.CLOSED;
-                                Log.Dbug($"DisconnectedNotify, Conv={disconn.Conv}, Token={disconn.Token}, Data={disconn.Data}", "KCP");
+                                Log.Dbug($"DisconnectedNotify, Conv={disconn.Conv}, Token={disconn.Token}, Data={disconn.Data}", "MhyKcpBase");
                                 return 0;
                             }
                             catch (ArgumentException)
                             {
                                 // Do nothing
-                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer)}", "KCP");
+                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer)}", "MhyKcpBase");
                             }
                         }
 
@@ -146,20 +147,20 @@ namespace csharp_Protoshift.MhyKCP
                         var handshake = new Handshake();
                         try
                         {
-                            // Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", "KCP");
+                            // Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", "MhyKcpBase");
                             handshake.Decode(buffer, Handshake.MAGIC_CONNECT);
                             _Conv = (uint)(MonotonicTime.Now & 0xFFFFFFFF);
                             _Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
 
                             var sendBackConv = new Handshake(Handshake.MAGIC_SEND_BACK_CONV, _Conv, _Token).AsBytes();
-                            OutputCallback.Output(new KcpInnerBuffer(sendBackConv), sendBackConv.Length);
+                            OutputCallback?.Output(new KcpInnerBuffer(sendBackConv), sendBackConv.Length);
                             Initialize();
 
                             return 0;
                         }
                         catch (ArgumentException)
                         {
-                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer)}", "KCP");
+                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer)}", "MhyKcpBase");
                             throw new SocketException(10053);
                         }
                     }
@@ -168,7 +169,7 @@ namespace csharp_Protoshift.MhyKCP
                         var handshake = new Handshake();
                         try
                         {
-                            // Log.Dbug($"HandShakeConnectNotify, buf = {Convert.ToHexString(buffer)}", "KCP");
+                            // Log.Dbug($"HandShakeConnectNotify, buf = {Convert.ToHexString(buffer)}", "MhyKcpBase");
                             handshake.Decode(buffer, Handshake.MAGIC_SEND_BACK_CONV);
                             _Conv = handshake.Conv;
                             _Token = handshake.Token;
@@ -179,7 +180,7 @@ namespace csharp_Protoshift.MhyKCP
                         }
                         catch (ArgumentException)
                         {
-                            Log.Dbug($"HandShakeConnectNotify: handshake fail, content={Convert.ToHexString(buffer)}", "KCP");
+                            Log.Dbug($"HandShakeConnectNotify: handshake fail, content={Convert.ToHexString(buffer)}", "MhyKcpBase");
                             throw new SocketException(10053);
                         }
                     }
@@ -275,11 +276,11 @@ namespace csharp_Protoshift.MhyKCP
             await Task.Run(BackgroundUpdate);
         }
 
-        public void Flush()
-        {
+        // public void Flush()
+        // {
             // lock (ikcpLock) IKCP.ikcp_flush(ikcpHandle);
             // Flush in Kcp<Segment> not found. We suppose that it automatically did it.
-        }
+        // }
 
         public void Close()
         {
@@ -288,7 +289,7 @@ namespace csharp_Protoshift.MhyKCP
                 _State = ConnectionState.CLOSED;
 
                 var disconn = new Handshake(Handshake.MAGIC_DISCONNECT, _Conv, _Token).AsBytes();
-                OutputCallback.Output(new KcpInnerBuffer(disconn), disconn.Length);
+                OutputCallback?.Output(new KcpInnerBuffer(disconn), disconn.Length);
 
                 return;
             }
@@ -312,7 +313,7 @@ namespace csharp_Protoshift.MhyKCP
             token = token == 0 ? _Token : token;
 
             byte[] disconnect = new Handshake(Handshake.MAGIC_DISCONNECT, conv, token, data).AsBytes();
-            OutputCallback.Output(new KcpInnerBuffer(disconnect), disconnect.Length);
+            OutputCallback?.Output(new KcpInnerBuffer(disconnect), disconnect.Length);
             _State = ConnectionState.DISCONNECTED;
         }
 
@@ -357,7 +358,7 @@ namespace csharp_Protoshift.MhyKCP
             public void Decode(byte[] buffer, uint[]? verifyMagic = null)
             {
                 if (buffer.Length < LEN)
-                    throw new ArgumentException("Handshake packet too small", "buffer");
+                    throw new ArgumentException("Handshake packet too small", nameof(buffer));
 
                 Magic1 = buffer.GetUInt32(0);
                 Conv = buffer.GetUInt32(4);
@@ -368,7 +369,7 @@ namespace csharp_Protoshift.MhyKCP
                 if (verifyMagic != null)
                 {
                     if (Magic1 != verifyMagic[0] || Magic2 != verifyMagic[1])
-                        throw new ArgumentException("Invalid handshake packet", "buffer");
+                        throw new ArgumentException("Invalid handshake packet", nameof(buffer));
                 }
             }
 
