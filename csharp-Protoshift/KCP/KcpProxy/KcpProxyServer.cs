@@ -14,7 +14,7 @@ using YSFreedom.Common.Net;
 using YYHEggEgg.Logger;
 using csharp_Protoshift.SpecialUdp;
 
-namespace csharp_Protoshift.KcpProxy
+namespace csharp_Protoshift.MhyKCP.Proxy
 {
     public class KcpProxyServer : KCPServer
     {
@@ -57,7 +57,7 @@ namespace csharp_Protoshift.KcpProxy
             {
                 // Oh boy! A new connection!
                 var conn = new KcpProxy(sendToAddress: SendToEndpoint);
-                conn.Output = (data) => { return udpSock.Send(data, data.Length, packet.RemoteEndPoint); };
+                conn.OutputCallback = new ConcurrentUdpKcpCallback(udpSock, packet.RemoteEndPoint);
                 try
                 {
                     Log.Dbug($"New connection established, remote endpoint={packet.RemoteEndPoint}");
@@ -109,7 +109,7 @@ namespace csharp_Protoshift.KcpProxy
             var PacketHandler = handlers.OnClientPacketArrival;
             var IsUrgentPacket = handlers.IsUrgentClientPacket;
             _ = ClientPacketSender(conn);
-            while (conn.State == KCP.ConnectionState.CONNECTED)
+            while (conn.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
                 try
                 {
@@ -153,7 +153,7 @@ namespace csharp_Protoshift.KcpProxy
             {
                 if (sendConn.sendClient == null)
                 {
-                    if (sendConn.State != KCP.ConnectionState.CONNECTED) return;
+                    if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
                     await Task.Delay(5);
                 }
                 else if (client_urgentPackets.TryDequeue(out byte[]? urgentPacket))
@@ -162,7 +162,7 @@ namespace csharp_Protoshift.KcpProxy
                     {
                         if (urgentPacket != null)
                         {
-                            await sendConn.sendClient.SendAsync(urgentPacket);
+                            /*await */_ = sendConn.sendClient.SendAsync(urgentPacket);
 #if KCP_PROXY_VERBOSE
                             Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", "KcpProxyServer:ServerSender");
 #endif
@@ -179,8 +179,9 @@ namespace csharp_Protoshift.KcpProxy
                     try
                     {
                         if (normalPacket != null)
-                        { 
-                            await sendConn.sendClient.SendAsync(normalPacket);
+                        {
+                            /*await */
+                            _ = sendConn.sendClient.SendAsync(normalPacket);
 #if KCP_PROXY_VERBOSE
                             Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(normalPacket)}", "KcpProxyServer:ServerSender");
 #endif
@@ -194,7 +195,7 @@ namespace csharp_Protoshift.KcpProxy
                 }
                 else
                 {
-                    if (sendConn.State != KCP.ConnectionState.CONNECTED) return;
+                    if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
                     await Task.Delay(5);
                 }
             }
@@ -210,7 +211,7 @@ namespace csharp_Protoshift.KcpProxy
             var PacketHandler = handlers.OnServerPacketArrival;
             var IsUrgentPacket = handlers.IsUrgentServerPacket;
             _ = ServerPacketSender(conn);
-            while (conn.sendClient?.State == KCP.ConnectionState.CONNECTED)
+            while (conn.sendClient?.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
                 try
                 {
@@ -263,7 +264,8 @@ namespace csharp_Protoshift.KcpProxy
                     {
                         if (urgentPacket != null)
                         {
-                            await sendConn.SendAsync(urgentPacket);
+                            /*await */
+                            _ = sendConn.SendAsync(urgentPacket);
 #if KCP_PROXY_VERBOSE
                             Log.Dbug($"Server Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", "KcpProxyServer:ClientSender");
 #endif
@@ -282,7 +284,8 @@ namespace csharp_Protoshift.KcpProxy
                     {
                         if (normalPacket != null)
                         {
-                            await sendConn.SendAsync(normalPacket);
+                            /*await */
+                            _ = sendConn.SendAsync(normalPacket);
 #if KCP_PROXY_VERBOSE
                             Log.Dbug($"Server Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(normalPacket)}", "KcpProxyServer:ClientSender");
 #endif
@@ -296,7 +299,7 @@ namespace csharp_Protoshift.KcpProxy
                 }
                 else
                 {
-                    if (sendConn.State != KCP.ConnectionState.CONNECTED) return;
+                    if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
                     await Task.Delay(5);
                 }
             }
