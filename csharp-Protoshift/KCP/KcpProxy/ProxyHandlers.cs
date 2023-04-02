@@ -1,4 +1,4 @@
-namespace csharp_Protoshift.KcpProxy
+namespace csharp_Protoshift.MhyKCP.Proxy
 {
     public class ProxyHandlers
     {
