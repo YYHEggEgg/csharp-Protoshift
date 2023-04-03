@@ -10,11 +10,11 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using YSFreedom.Common.Net;
+using YSFreedom.Common.Net.Obsoleted;
 using YYHEggEgg.Logger;
 using csharp_Protoshift.SpecialUdp;
 
-namespace csharp_Protoshift.MhyKCP.Proxy
+namespace csharp_Protoshift.Obsoleted.KcpProxy
 {
     public class KcpProxyServer : KCPServer
     {
@@ -57,7 +57,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             {
                 // Oh boy! A new connection!
                 var conn = new KcpProxy(sendToAddress: SendToEndpoint);
-                conn.OutputCallback = new ConcurrentUdpKcpCallback(udpSock, packet.RemoteEndPoint);
+                conn.Output = (data) => { return udpSock.Send(data, data.Length, packet.RemoteEndPoint); };
                 try
                 {
                     Log.Dbug($"New connection established, remote endpoint={packet.RemoteEndPoint}");
@@ -109,7 +109,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             var PacketHandler = handlers.OnClientPacketArrival;
             var IsUrgentPacket = handlers.IsUrgentClientPacket;
             _ = ClientPacketSender(conn);
-            while (conn.State == MhyKcpBase.ConnectionState.CONNECTED)
+            while (conn.State == KCP.ConnectionState.CONNECTED)
             {
                 try
                 {
@@ -153,7 +153,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             {
                 if (sendConn.sendClient == null)
                 {
-                    if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
+                    if (sendConn.State != KCP.ConnectionState.CONNECTED) return;
                     await Task.Delay(5);
                 }
                 else if (client_urgentPackets.TryDequeue(out byte[]? urgentPacket))
@@ -195,7 +195,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 }
                 else
                 {
-                    if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
+                    if (sendConn.State != KCP.ConnectionState.CONNECTED) return;
                     await Task.Delay(5);
                 }
             }
@@ -211,7 +211,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             var PacketHandler = handlers.OnServerPacketArrival;
             var IsUrgentPacket = handlers.IsUrgentServerPacket;
             _ = ServerPacketSender(conn);
-            while (conn.sendClient?.State == MhyKcpBase.ConnectionState.CONNECTED)
+            while (conn.sendClient?.State == KCP.ConnectionState.CONNECTED)
             {
                 try
                 {
@@ -299,7 +299,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 }
                 else
                 {
-                    if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
+                    if (sendConn.State != KCP.ConnectionState.CONNECTED) return;
                     await Task.Delay(5);
                 }
             }

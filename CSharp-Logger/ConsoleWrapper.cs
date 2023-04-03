@@ -380,7 +380,8 @@ namespace YYHEggEgg.Logger
                         }
                     }
                     #endregion
-                    else
+                    else if (keyInfo.Key != ConsoleKey.LeftWindows 
+                        && keyInfo.Key != ConsoleKey.RightWindows)
                     {
                         input.Insert(cursor, keyInfo.KeyChar);
                         cursor++;

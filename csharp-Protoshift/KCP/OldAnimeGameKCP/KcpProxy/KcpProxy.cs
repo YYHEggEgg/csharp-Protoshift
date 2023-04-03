@@ -1,5 +1,6 @@
 ﻿// #define KCP_PROXY_VERBOSE
 
+using csharp_Protoshift.Obsoleted.AnimeGameKCP;
 using csharp_Protoshift.GameSession;
 using System;
 using System.Collections.Generic;
@@ -11,16 +12,16 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using YSFreedom.Common.Native;
-using YSFreedom.Common.Net;
+using YSFreedom.Common.Net.Obsoleted;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
 
-namespace csharp_Protoshift.MhyKCP.Proxy
+namespace csharp_Protoshift.Obsoleted.KcpProxy
 {
     /// <summary>
     /// KcpProxy is not a client
     /// </summary>
-    public class KcpProxy : MhyKcpBase
+    public class KcpProxy : KCP
     {
         public KcpProxyClient? sendClient;
         public IPEndPoint sendToAddress;
@@ -73,11 +74,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             }
                         }
 
-                        // int status = 0;
-                        // lock (ikcpLock) status = IKCP.ikcp_input(ikcpHandle, buffer, buffer.Length);
-#pragma warning disable CS8602 // 解引用可能出现空引用。
-                        int status = cskcpHandle.Input(buffer);
-#pragma warning restore CS8602 // 解引用可能出现空引用。
+                        int status = 0;
+                        lock (ikcpLock) status = IKCP.ikcp_input(ikcpHandle, buffer, buffer.Length);
                         if (status == -1)
                         {
                             _State = ConnectionState.CLOSED;
@@ -108,8 +106,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             };
 
                             var sendBackConv = sendClient.GetSendbackHandshake();
-                            var sendBackData = sendBackConv.AsBytes();
-                            OutputCallback?.Output(new KcpInnerBuffer(sendBackData), sendBackData.Length);
+                            Output(sendBackConv.AsBytes());
                             _Conv = sendBackConv.Conv;
                             _Token = sendBackConv.Token;
                             Initialize();
