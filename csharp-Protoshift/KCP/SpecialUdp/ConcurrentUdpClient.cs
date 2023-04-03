@@ -2,8 +2,14 @@
 #define SPECIAL_UDP_VERBOSE
 #define SPECIAL_UDP_WARNING
 
+#pragma warning disable CS8604 // 引用类型参数可能为 null。
+#pragma warning disable CS8629 // 可为 null 的值类型可为 null。
+#pragma warning disable CS8625 // 无法将 null 字面量转换为非 null 的引用类型。
+
+using Org.BouncyCastle.Utilities;
 using System;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
@@ -34,6 +40,14 @@ namespace csharp_Protoshift.SpecialUdp
             /// </summary>
             SendAsyncAnyEndpoint = 12,
             /// <summary>
+            /// Equal to <see cref="UdpClient.SendAsync(ReadOnlyMemory{byte})"/>.
+            /// </summary>
+            SendAsyncMemoryConnected = 13,
+            /// <summary>
+            /// Equal to <see cref="UdpClient.SendAsync(ReadOnlyMemory{byte}, IPEndPoint)"/>.
+            /// </summary>
+            SendAsyncMemoryAnyEndpoint = 14,
+            /// <summary>
             /// Equal to <see cref="UdpClient.Receive(IPEndPoint)"/>.
             /// </summary>
             Receive = 101,
@@ -45,8 +59,9 @@ namespace csharp_Protoshift.SpecialUdp
 
         private class UdpSendPacket
         {
-            public byte[] data;
-            public int bytes;
+            public byte[]? data;
+            public ReadOnlyMemory<byte>? memoryData;
+            public int? bytes;
             public IPEndPoint? endpoint;
             public Exception? ex;
             public int? rtn;
@@ -59,6 +74,13 @@ namespace csharp_Protoshift.SpecialUdp
                 this.endpoint = endpoint;
                 this.invoke = invoke;
             }
+
+            public UdpSendPacket(ReadOnlyMemory<byte> memoryData, IPEndPoint? endpoint, UdpInvoke invoke)
+            {
+                this.memoryData = memoryData;
+                this.endpoint = endpoint;
+                this.invoke = invoke;
+            }
         }
 
         private class UdpReceivePacket
@@ -67,7 +89,7 @@ namespace csharp_Protoshift.SpecialUdp
             public Exception? ex;
             public UdpInvoke invoke;
 
-            public UdpReceiveResult(UdpInvoke invoke)
+            public UdpReceivePacket(UdpInvoke invoke)
             {
                 this.invoke = invoke;
             }
@@ -80,6 +102,9 @@ namespace csharp_Protoshift.SpecialUdp
         {
             // 初始化UdpClient实例
             baseClient = new UdpClient();
+#if SPECIAL_UDP_VERBOSE
+            Log.Info("baseClient initialized with normal paramters.", "ConcurrentUdpClient");
+#endif
             // 启动后台更新任务
             Task.Run(BackgroundUpdate);
         }
@@ -87,12 +112,18 @@ namespace csharp_Protoshift.SpecialUdp
         public ConcurrentUdpClient(IPEndPoint bindAddress)
         {
             baseClient = new UdpClient(bindAddress);
+#if SPECIAL_UDP_VERBOSE
+            Log.Info($"baseClient initialized with ipEp:{bindAddress}.", "ConcurrentUdpClient");
+#endif
             Task.Run(BackgroundUpdate);
         }
 
         public void Connect(IPEndPoint ipEp)
         {
             ConnectedAddress = ipEp;
+#if SPECIAL_UDP_VERBOSE
+            Log.Info($"baseClient Connected to ipEp:{ipEp}.", "ConcurrentUdpClient");
+#endif
             baseClient.Connect(ipEp);
         }
         #endregion
@@ -110,14 +141,20 @@ namespace csharp_Protoshift.SpecialUdp
         #region Receive Packet
         public byte[] Receive(ref IPEndPoint fromip)
         {
+#if SPECIAL_UDP_VERBOSE
+            Log.Info($"User tried to invoke Receive().", "ConcurrentUdpClient");
+#endif
             var handle = new UdpReceivePacket(UdpInvoke.Receive);
             qRecv.Enqueue(handle);
             while (true)
             {
                 if (handle.receiveData != null)
                 {
-                    fromip = handle.receiveData.RemoteEndPoing;
-                    return handle.receiveData.Buffer;
+#if SPECIAL_UDP_VERBOSE
+                    Log.Info($"Successfully received {((UdpReceiveResult)handle.receiveData).Buffer.Length} bytes in Receive().", "ConcurrentUdpClient");
+#endif
+                    fromip = ((UdpReceiveResult)handle.receiveData).RemoteEndPoint;
+                    return ((UdpReceiveResult)handle.receiveData).Buffer;
                 }
                 if (handle.ex != null) throw handle.ex;
                 Task.Delay(RefreshMilliseconds).Wait();
@@ -126,11 +163,20 @@ namespace csharp_Protoshift.SpecialUdp
 
         public async Task<UdpReceiveResult> ReceiveAsync()
         {
+#if SPECIAL_UDP_VERBOSE
+            Log.Info($"User tried to invoke ReceiveAsync().", "ConcurrentUdpClient");
+#endif
             var handle = new UdpReceivePacket(UdpInvoke.Receive);
             qRecv.Enqueue(handle);
             while (true)
             {
-                if (handle.receiveData != null) return handle.receiveData;
+                if (handle.receiveData != null)
+                {
+#if SPECIAL_UDP_VERBOSE
+                    Log.Info($"Successfully received {((UdpReceiveResult)handle.receiveData).Buffer.Length} bytes in ReceiveAsync().", "ConcurrentUdpClient");
+#endif
+                    return (UdpReceiveResult)handle.receiveData;
+                }
                 if (handle.ex != null) throw handle.ex;
                 await Task.Delay(RefreshMilliseconds);
             }
@@ -140,11 +186,14 @@ namespace csharp_Protoshift.SpecialUdp
         #region Send Packet
         public int Send(byte[] data, int? bytes = null, IPEndPoint? endpoint = null)
         {
+#if SPECIAL_UDP_VERBOSE
+            Log.Info($"User tried to invoke Send() with {data.Length} bytes to {endpoint}.", "ConcurrentUdpClient");
+#endif
             if (endpoint == null && ConnectedAddress == null)
                 // WSAENOTCONN, socket not connected
-                throw new SocketException(10057); 
+                throw new SocketException(10057);
             bytes ??= data.Length;
-            var handle = new UdpSendPacket(data, bytes, endpoint, 
+            var handle = new UdpSendPacket(data, (int)bytes, endpoint, 
                 endpoint == null ? UdpInvoke.SendConnected : UdpInvoke.SendAnyEndpoint);
             qSend.Enqueue(handle);
             while (true)
@@ -153,9 +202,15 @@ namespace csharp_Protoshift.SpecialUdp
                 {
                     if (handle.ex != null)
                     {
+#if SPECIAL_UDP_VERBOSE
+                        Log.Dbug("Invoke Send() throwed an exception.", "ConcurrentUdpClient");
+#endif
                         // 如果有异常则抛出
                         throw handle.ex;
                     }
+#if SPECIAL_UDP_VERBOSE
+                    Log.Dbug($"Invoke Send() returned {handle.rtn}.", "ConcurrentUdpClient");
+#endif
                     return (int)handle.rtn;
                 }
                 Task.Delay(RefreshMilliseconds).Wait();
@@ -164,12 +219,47 @@ namespace csharp_Protoshift.SpecialUdp
 
         public async Task<int> SendAsync(byte[] data, int? bytes = null, IPEndPoint? endpoint = null)
         {
+#if SPECIAL_UDP_VERBOSE
+            Log.Info($"User tried to invoke SendAsync() with {data.Length} bytes to {endpoint}.", "ConcurrentUdpClient");
+#endif
             if (endpoint == null && ConnectedAddress == null)
                 // WSAENOTCONN, socket not connected
                 throw new SocketException(10057); 
             bytes ??= data.Length;
-            var handle = new UdpSendPacket(data, bytes, endpoint, 
-                endpoint == null ? UdpInvoke.SendConnected : UdpInvoke.SendAnyEndpoint);
+            var handle = new UdpSendPacket(data, (int)bytes, endpoint, 
+                endpoint == null ? UdpInvoke.SendAsyncConnected : UdpInvoke.SendAsyncAnyEndpoint);
+            qSend.Enqueue(handle);
+            while (true)
+            {
+                if (handle.rtn != null)
+                { 
+                   if (handle.ex != null)
+                    {
+#if SPECIAL_UDP_VERBOSE
+                        Log.Dbug("Invoke SendAsync() throwed an exception.", "ConcurrentUdpClient");
+#endif
+                        // 如果有异常则抛出
+                        throw handle.ex;
+                    }
+#if SPECIAL_UDP_VERBOSE
+                    Log.Dbug($"Invoke SendAsync() returned {handle.rtn}.", "ConcurrentUdpClient");
+#endif
+                    return (int)handle.rtn;
+                }
+                await Task.Delay(10);
+            }
+        }
+        
+        public async Task<int> SendAsync(ReadOnlyMemory<byte> data, IPEndPoint? endpoint = null)
+        {
+#if SPECIAL_UDP_VERBOSE
+            Log.Info($"User tried to invoke SendAsync() with {data.Length} bytes to {endpoint}.", "ConcurrentUdpClient");
+#endif
+            if (endpoint == null && ConnectedAddress == null)
+                // WSAENOTCONN, socket not connected
+                throw new SocketException(10057);
+            var handle = new UdpSendPacket(data, endpoint,
+                endpoint == null ? UdpInvoke.SendAsyncMemoryConnected : UdpInvoke.SendAsyncMemoryAnyEndpoint);
             qSend.Enqueue(handle);
             while (true)
             {
@@ -177,9 +267,15 @@ namespace csharp_Protoshift.SpecialUdp
                 {
                     if (handle.ex != null)
                     {
+#if SPECIAL_UDP_VERBOSE
+                        Log.Dbug("Invoke SendAsync() throwed an exception.", "ConcurrentUdpClient");
+#endif
                         // 如果有异常则抛出
                         throw handle.ex;
                     }
+#if SPECIAL_UDP_VERBOSE
+                    Log.Dbug($"Invoke SendAsync() returned {handle.rtn}.", "ConcurrentUdpClient");
+#endif
                     return (int)handle.rtn;
                 }
                 await Task.Delay(10);
@@ -191,10 +287,10 @@ namespace csharp_Protoshift.SpecialUdp
         // 后台更新任务
         private async Task BackgroundUpdate()
         {
-            if (qSend.TryDequeue(out UdpSendPacket sendpacket))
+            if (qSend.TryDequeue(out UdpSendPacket? sendpacket))
             {
 #if SPECIAL_UDP_VERBOSE
-                StopWatch watch = new();
+                Stopwatch watch = new();
                 bool exHappened = false;
                 watch.Start();
 #endif
@@ -205,19 +301,27 @@ namespace csharp_Protoshift.SpecialUdp
                     {
                         case UdpInvoke.SendConnected:
                             sendpacket.rtn = baseClient.Send(
-                                sendpacket.data, sendpacket.bytes);
+                                sendpacket.data, (int)sendpacket.bytes);
                             break;
                         case UdpInvoke.SendAnyEndpoint:
                             sendpacket.rtn = baseClient.Send(
-                                sendpacket.data, sendpacket.bytes, sendpacket.endpoint);
+                                sendpacket.data, (int)sendpacket.bytes, sendpacket.endpoint);
                             break;
                         case UdpInvoke.SendAsyncConnected:
                             sendpacket.rtn = await baseClient.SendAsync(
-                                sendpacket.data, sendpacket.bytes);
+                                sendpacket.data, (int)sendpacket.bytes);
                             break;
                         case UdpInvoke.SendAsyncAnyEndpoint:
                             sendpacket.rtn = await baseClient.SendAsync(
-                                sendpacket.data, sendpacket.bytes, sendpacket.endpoint);
+                                sendpacket.data, (int)sendpacket.bytes, sendpacket.endpoint);
+                            break;
+                        case UdpInvoke.SendAsyncMemoryConnected:
+                            sendpacket.rtn = await baseClient.SendAsync(
+                                (ReadOnlyMemory<byte>)sendpacket.memoryData);
+                            break;
+                        case UdpInvoke.SendAsyncMemoryAnyEndpoint:
+                            sendpacket.rtn = await baseClient.SendAsync(
+                                (ReadOnlyMemory<byte>)sendpacket.memoryData, sendpacket.endpoint);
                             break;
                         default:
                             Log.Erro($"Receive packet accidently ran into send queue," + 
@@ -235,51 +339,54 @@ namespace csharp_Protoshift.SpecialUdp
 #endif
                 }
 #if SPECIAL_UDP_VERBOSE
-                watch.End();
+                watch.Stop();
                 Log.Dbug($"Handle qSend {(exHappened ? "(Exception)" : string.Empty)} " +
                     $"costed {watch.ElapsedMilliseconds}ms.", "ConcurrentUdpClient");
 #endif
             }
             else if (baseClient.Available > 0
-                && qRecv.TryPeek(out UdpReceivePacket receivepacket))
+                && qRecv.TryPeek(out UdpReceivePacket? receivepacket))
             {
 #if SPECIAL_UDP_VERBOSE
-                StopWatch watch = new();
+                Stopwatch watch = new();
                 bool exHappened = false;
                 bool timeout = false;
                 watch.Start();
 #endif
-                // 接收数据
-                UdpReceiveResult result;
                 switch (receivepacket.invoke)
                 {
                     case UdpInvoke.Receive:
                         try
                         {
-                            IPEndPoint ipEp;
-#if SPECIAL_UDP_WARNING | SPECIAL_UDP_VERBOSE
-                            StopWatch cancelwatch = new();
+                            IPEndPoint ipEp = new(IPAddress.Loopback, 0);
+#if SPECIAL_UDP_WARNING || SPECIAL_UDP_VERBOSE
+                            Stopwatch cancelwatch = new();
                             cancelwatch.Start();
 #endif
-                            byte[] buf = result.Receive(ref ipEp);
-#if SPECIAL_UDP_WARNING | SPECIAL_UDP_VERBOSE
-                            cancelwatch.End();
+                            byte[] buf = baseClient.Receive(ref ipEp);
+#if SPECIAL_UDP_WARNING || SPECIAL_UDP_VERBOSE
+                            cancelwatch.Stop();
                             if (cancelwatch.ElapsedMilliseconds > 40)
                             {
                                 Log.Warn("Syncronous Receive() stuck for " +
-                                    $"{watch.ElapsedMilliseconds}ms!", "ConcurrentUdpClient");
+                                    $"{cancelwatch.ElapsedMilliseconds}ms!", "ConcurrentUdpClient");
 #endif
 #if SPECIAL_UDP_VERBOSE
                                 timeout = true;
 #endif
-#if SPECIAL_UDP_WARNING | SPECIAL_UDP_VERBOSE
+#if SPECIAL_UDP_WARNING || SPECIAL_UDP_VERBOSE
                             }
 #endif
                             receivepacket.receiveData = new(buf, ipEp);
+                            qRecv.TryDequeue(out _);
+#if SPECIAL_UDP_VERBOSE
+                            Log.Dbug($"Background qRecv handle received {buf.Length} bytes.", "ConcurrentUdpClient");
+#endif
                         }
                         catch (Exception ex)
                         {
                             receivepacket.ex = ex;
+                            qRecv.TryDequeue(out _);
 #if SPECIAL_UDP_VERBOSE
                             exHappened = true;
 #endif
@@ -290,19 +397,27 @@ namespace csharp_Protoshift.SpecialUdp
                         var captureToken = cancellationTokenSource.Token;
                         try
                         { 
-                            cancellationTokenSource.CancelAfter(50);                                UdpReceiveResult res = await baseClient.ReceiveAsync(captureToken);
+                            cancellationTokenSource.CancelAfter(50);                                
+                            UdpReceiveResult res = await baseClient.ReceiveAsync(captureToken);
                             receivepacket.receiveData = res;
+                            qRecv.TryDequeue(out _);
+#if SPECIAL_UDP_VERBOSE
+                            Log.Dbug($"Background qRecv handle(async) received {res.Buffer.Length} bytes.", "ConcurrentUdpClient");
+#endif
                         }
                         catch (OperationCanceledException)
                         { 
-#if SPECIAL_UDP_WARNING | SPECIAL_UDP_VERBOSE
+#if SPECIAL_UDP_WARNING || SPECIAL_UDP_VERBOSE
                             Log.Warn("Asyncronous ReceiveAsync() timeout of 50ms and canceled!", "ConcurrentUdpClient");
+#endif
+#if SPECIAL_UDP_VERBOSE
                             timeout = true;
 #endif
                         }
                         catch (Exception ex)
                         {
                             receivepacket.ex = ex;
+                            qRecv.TryDequeue(out _);
 #if SPECIAL_UDP_VERBOSE
                             exHappened = true;
 #endif
@@ -311,10 +426,11 @@ namespace csharp_Protoshift.SpecialUdp
                     default:
                         Log.Erro("Send packet accidently ran into receive queue," + 
                             $"Invoke:{receivepacket.invoke}", "ConcurrentUdpClient");
+                        qRecv.TryDequeue(out _);
                         break;
                 }
 #if SPECIAL_UDP_VERBOSE
-                watch.End();
+                watch.Stop();
                 Log.Dbug($"Handle qRecv {(exHappened ? "(Exception)" : string.Empty)} " +
                     $"costed {watch.ElapsedMilliseconds}ms." +
                     (timeout ? " (timed out) " : string.Empty), "ConcurrentUdpClient");
@@ -357,7 +473,7 @@ namespace csharp_Protoshift.SpecialUdp
             GC.SuppressFinalize(this);
         }
 
-        protected virtual void Dispose(bool disposing)
+        private void Dispose(bool disposing)
         {
             if (disposing)
             {
@@ -376,3 +492,7 @@ namespace csharp_Protoshift.SpecialUdp
         #endregion
     }
 }
+
+#pragma warning restore CS8604 // 引用类型参数可能为 null。
+#pragma warning restore CS8629 // 可为 null 的值类型可为 null。
+#pragma warning restore CS8625 // 无法将 null 字面量转换为非 null 的引用类型。

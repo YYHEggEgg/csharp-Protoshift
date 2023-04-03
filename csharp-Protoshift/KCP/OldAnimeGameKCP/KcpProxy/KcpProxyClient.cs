@@ -1,4 +1,5 @@
-﻿using System;
+﻿using csharp_Protoshift.Obsoleted.AnimeGameKCP;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -6,8 +7,9 @@ using System.Linq.Expressions;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using YSFreedom.Common.Net.Obsoleted;
 
-namespace csharp_Protoshift.MhyKCP.Proxy
+namespace csharp_Protoshift.Obsoleted.KcpProxy
 {
     public class KcpProxyClient : KCPClient
     {
@@ -16,13 +18,16 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         {
             server = new(conv, token, connectData);
             server.Timeout = 10000;
-            // server.OutputCallback = new ConcurrentUdpKcpCallback(udpSock);
+            server.Output = data =>
+            {
+                return udpSock.Send(data, data.Length);
+            };
         }
 
-        public MhyKcpBase.Handshake GetSendbackHandshake()
+        public KCP.Handshake GetSendbackHandshake()
         {
-            Debug.Assert(server.State == MhyKcpBase.ConnectionState.CONNECTED);
-            return new MhyKcpBase.Handshake(MhyKcpBase.Handshake.MAGIC_SEND_BACK_CONV, 
+            Debug.Assert(server.State == KCP.ConnectionState.CONNECTED);
+            return new KCP.Handshake(KCP.Handshake.MAGIC_SEND_BACK_CONV, 
                 server.Conv, server.Token, server.ConnectData);
         }
     }
