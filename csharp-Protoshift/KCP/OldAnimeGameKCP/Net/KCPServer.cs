@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using YSFreedom.Common.Util;
-using csharp_Protoshift.KCP.SpecialUdp;
+using csharp_Protoshift.SpecialUdp;
 
-namespace YSFreedom.Common.Net
+namespace YSFreedom.Common.Net.Obsoleted
 {
     public class KCPServer : IDisposable
     {

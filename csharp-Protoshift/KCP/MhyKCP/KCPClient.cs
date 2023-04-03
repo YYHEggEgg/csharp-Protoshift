@@ -1,10 +1,9 @@
 using System.Net;
 using System.Net.Sockets;
-using YSFreedom.Common.Net;
 using YYHEggEgg.Logger;
-using csharp_Protoshift.KCP.SpecialUdp;
+using csharp_Protoshift.SpecialUdp;
 
-namespace csharp_Protoshift.AnimeGameKCP
+namespace csharp_Protoshift.MhyKCP
 {
     public class KCPClient : IDisposable
     {
@@ -12,7 +11,7 @@ namespace csharp_Protoshift.AnimeGameKCP
 
         protected ConcurrentUdpClient udpSock;
         private bool _Closed = false;
-        protected KCP server;
+        protected MhyKcpBase server;
         protected IPEndPoint remoteAddress;
 
         public KCPClient(IPEndPoint ipEp)
@@ -20,16 +19,12 @@ namespace csharp_Protoshift.AnimeGameKCP
             udpSock = new ConcurrentUdpClient();
             //udpSock = new();
             udpSock.Connect(ipEp);
-            server = new KCP();
+            server = new MhyKcpBase();
 
             remoteAddress = ipEp;
 
             server.Timeout = 10000;
-            server.Output =
-                data =>
-                {
-                    return udpSock.Send(data, data.Length);
-                };
+            server.OutputCallback = new ConcurrentUdpKcpCallback(udpSock);
 
             Task.Run(BackgroundUpdate);
         }
@@ -39,9 +34,9 @@ namespace csharp_Protoshift.AnimeGameKCP
         /// </summary>
         public event Action<uint, uint>? StartDisconnected;
 
-        public KCP.ConnectionState State { get => server.State; }
+        public MhyKcpBase.ConnectionState State { get => server.State; }
 
-        protected async Task BackgroundUpdate()
+        protected virtual async Task BackgroundUpdate()
         {
             IPEndPoint fromip = new(IPAddress.Loopback, 0);
             var packet = udpSock.Receive(ref fromip);
@@ -56,7 +51,7 @@ namespace csharp_Protoshift.AnimeGameKCP
                 {
                     // Log.Warn($"Bad packet sent to client: {fromip}, buf = {Convert.ToHexString(packet)}");
                 }
-                if (server.State != KCP.ConnectionState.CONNECTED)
+                if (server.State != MhyKcpBase.ConnectionState.CONNECTED)
                 {
                     StartDisconnected?.Invoke(server.Conv, server.Token);
                     _Closed = true;
@@ -111,7 +106,7 @@ namespace csharp_Protoshift.AnimeGameKCP
             }
             catch
             {
-                if (server.State != KCP.ConnectionState.CONNECTED)
+                if (server.State != MhyKcpBase.ConnectionState.CONNECTED)
                 {
                     StartDisconnected?.Invoke(server.Conv, server.Token);
                     return null;
