@@ -16,7 +16,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using YYHEggEgg.Logger;
 
-namespace csharp_Protoshift.SpecialUdp
+// Obsoleted for bad performance
+namespace csharp_Protoshift.Obsoleted.SpecialUdp
 {
     public sealed class ConcurrentUdpClient : IDisposable
     {
