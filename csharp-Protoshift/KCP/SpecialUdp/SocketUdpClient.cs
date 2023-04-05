@@ -54,12 +54,12 @@ namespace csharp_Protoshift.SpecialUdp
                     receiveResult.RemoteEndPoint);
 
 #if SOCKET_UDP_VERBOSE
-                Log.Info($"Received {result} bytes from {result.RemoteEndPoint} in {stopwatch.ElapsedMilliseconds}ms", "SocketUdpClient");
+                Log.Info($"Received {result} bytes from {result.RemoteEndPoint} in {stopwatch.ElapsedMilliseconds}ms", nameof(SocketUdpClient));
 #endif
 
                 if (_defaultEndpoint != null && receiveResult.RemoteEndPoint != _defaultEndpoint)
                 {
-                    Log.Warn($"Received data from unexpected endpoint {result.RemoteEndPoint}, dropped", "SocketUdpClient");
+                    Log.Warn($"Received data from unexpected endpoint {result.RemoteEndPoint}, dropped", nameof(SocketUdpClient));
                     return await ReceiveFromAsync();
                     // throw new SocketException((int)SocketError.HostUnreachable);
                 }
@@ -73,13 +73,13 @@ namespace csharp_Protoshift.SpecialUdp
                 }
                 else
                 {
-                    Log.Warn($"Received data from non-ip endpoint {result.RemoteEndPoint}, dropped", "SocketUdpClient");
+                    Log.Warn($"Received data from non-ip endpoint {result.RemoteEndPoint}, dropped", nameof(SocketUdpClient));
                     return await ReceiveFromAsync();
                 }
             }
             catch (Exception ex)
             {
-                Log.Warn($"Failed to receive packet: {ex}", "SocketUdpClient");
+                Log.Warn($"Failed to receive packet: {ex}", nameof(SocketUdpClient));
                 throw;
             }
         }
@@ -109,14 +109,14 @@ namespace csharp_Protoshift.SpecialUdp
 #pragma warning restore CS8604 // 引用类型参数不可能为 null！
 
 #if SOCKET_UDP_VERBOSE
-                Log.Info($"Sent {result} bytes to {ipEndPoint} in {stopwatch.ElapsedMilliseconds}ms", "SocketUdpClient");
+                Log.Info($"Sent {result} bytes to {ipEndPoint} in {stopwatch.ElapsedMilliseconds}ms", nameof(SocketUdpClient));
 #endif
 
                 return result;
             }
             catch (Exception ex)
             {
-                Log.Erro($"Failed to send packet: {ex.Message}", "SocketUdpClient");
+                Log.Erro($"Failed to send packet: {ex.Message}", nameof(SocketUdpClient));
                 throw;
             }
         }

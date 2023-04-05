@@ -1,4 +1,4 @@
-﻿// #define KCP_PROXY_VERBOSE
+﻿#define KCP_PROXY_VERBOSE
 
 using csharp_Protoshift.GameSession;
 using System;
@@ -28,7 +28,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             Task.Run(BackgroundUpdate);
         }
 
-        protected new async Task BackgroundUpdate()
+        protected override async Task BackgroundUpdate()
         {
             UdpReceiveResult packet;
             try
@@ -37,7 +37,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             }
             catch (Exception ex)
             {
-                Log.Dbug($"BackgroundUpdate receiving packet meets error and restart: {ex}", "KcpProxyServer");
+                Log.Dbug($"BackgroundUpdate receiving packet meets error and restart: {ex}", nameof(KcpProxyServer));
                 await Task.Run(BackgroundUpdate);
                 return;
             }
@@ -49,7 +49,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 }
                 catch (Exception ex)
                 {
-                    Log.Dbug($"BackgroundUpdate:Connected reached exception {ex}", "KcpProxyServer");
+                    Log.Dbug($"BackgroundUpdate:Connected reached exception {ex}", nameof(KcpProxyServer));
                     clients.Remove(packet.RemoteEndPoint);
                 }
             }
@@ -69,7 +69,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 }
                 catch (Exception ex)
                 {
-                    Log.Dbug($"BackgroundUpdate:NewConnection reached exception {ex}", "KcpProxyServer");
+                    Log.Dbug($"BackgroundUpdate:NewConnection reached exception {ex}", nameof(KcpProxyServer));
                     conn.Dispose();
                 }
             }
@@ -89,7 +89,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 try
                 {
                     var ret = await AcceptAsync();
-                    Log.Info($"New connection from {ret.RemoteEndpoint}.", "KcpProxyServer");
+                    Log.Info($"New connection from {ret.RemoteEndpoint}.", nameof(KcpProxyServer));
 
                     HandleServer(ret.RemoteEndpoint, handlers);
                     HandleClient(ret.RemoteEndpoint, handlers);
@@ -115,7 +115,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 {
                     var beforepacket = await conn.ReceiveAsync();
 #if KCP_PROXY_VERBOSE
-                    Log.Dbug($"Server Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ServerHandler");
+                    Log.Dbug($"Server Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", $"{nameof(KcpProxyServer)}:ServerHandler");
 #endif
                     _ = Task.Run(() =>
                     {
@@ -129,14 +129,14 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         }
                         catch (Exception e)
                         {
-                            Log.Dbug(e.ToString(), "KcpProxyServer:ServerHandler");
+                            Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ServerHandler");
                             //conn.Close();
                         }
                     });
                 }
                 catch (Exception e)
                 {
-                    Log.Dbug(e.ToString(), "KcpProxyServer:ServerHandler");
+                    Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ServerHandler");
                     conn.Close();
                     await GameSessionDispatch.DestroySession(conn.Conv);
                     break;
@@ -164,13 +164,13 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         {
                             /*await */_ = sendConn.sendClient.SendAsync(urgentPacket);
 #if KCP_PROXY_VERBOSE
-                            Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", "KcpProxyServer:ServerSender");
+                            Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", $"{nameof(KcpProxyServer)}:ServerSender");
 #endif
                         }
                     }
                     catch (Exception e)
                     {
-                        Log.Dbug(e.ToString(), "KcpProxyServer:ServerSender");
+                        Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ServerSender");
                         //conn.Close();
                     }
                 }
@@ -183,13 +183,13 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             /*await */
                             _ = sendConn.sendClient.SendAsync(normalPacket);
 #if KCP_PROXY_VERBOSE
-                            Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(normalPacket)}", "KcpProxyServer:ServerSender");
+                            Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(normalPacket)}", $"{nameof(KcpProxyServer)}:ServerSender");
 #endif
                         }
                     }
                     catch (Exception e)
                     {
-                        Log.Dbug(e.ToString(), "KcpProxyServer:ServerSender");
+                        Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ServerSender");
                         //conn.Close();
                     }
                 }
@@ -218,11 +218,11 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     var beforepacket = await conn.sendClient.ReceiveAsync();
                     if (beforepacket == null) 
                     { 
-                        Log.Dbug($"Skipped null? packet (session {conn.Conv})", "KcpProxyServer:ClientHandler");
+                        Log.Dbug($"Skipped null? packet (session {conn.Conv})", $"{nameof(KcpProxyServer)}:ClientHandler");
                         continue;
                     }
 #if KCP_PROXY_VERBOSE
-                    Log.Dbug($"Client Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ClientHandler");
+                    Log.Dbug($"Client Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", $"{nameof(KcpProxyServer)}:ClientHandler");
 #endif
                     _ = Task.Run(() =>
                     {
@@ -236,14 +236,14 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         }
                         catch (Exception e)
                         {
-                            Log.Dbug(e.ToString(), "KcpProxyServer:ClientHandler");
+                            Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ClientHandler");
                             //conn.sendClient.Close();
                         }
                     });
                 }
                 catch (Exception e)
                 {
-                    Log.Dbug(e.ToString(), "KcpProxyServer:ClientHandler");
+                    Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ClientHandler");
                     conn.sendClient.Close();
                     await GameSessionDispatch.DestroySession(conn.Conv);
                     break;
@@ -267,13 +267,13 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             /*await */
                             _ = sendConn.SendAsync(urgentPacket);
 #if KCP_PROXY_VERBOSE
-                            Log.Dbug($"Server Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", "KcpProxyServer:ClientSender");
+                            Log.Dbug($"Server Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", $"{nameof(KcpProxyServer)}:ClientSender");
 #endif
                         }
                     }
                     catch (Exception e)
                     {
-                        Log.Dbug(e.ToString(), "KcpProxyServer:ClientSender");
+                        Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ClientSender");
                         //conn.sendClient.Close();
                     }
                     continue;
@@ -287,13 +287,13 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             /*await */
                             _ = sendConn.SendAsync(normalPacket);
 #if KCP_PROXY_VERBOSE
-                            Log.Dbug($"Server Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(normalPacket)}", "KcpProxyServer:ClientSender");
+                            Log.Dbug($"Server Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(normalPacket)}", $"{nameof(KcpProxyServer)}:ClientSender");
 #endif
                         }
                     }
                     catch (Exception e)
                     {
-                        Log.Dbug(e.ToString(), "KcpProxyServer:ClientSender");
+                        Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ClientSender");
                         //conn.sendClient.Close();
                     }
                 }

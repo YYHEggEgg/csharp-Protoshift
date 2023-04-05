@@ -58,7 +58,7 @@ namespace csharp_Protoshift.MhyKCP
             // IKCP.ikcp_wndsize(ikcpHandle, 256, 256);
             cskcpHandle.WndSize(256, 256);
 
-            cskcpHandle.TraceListener = new LogTraceListener("CsKcpBase");
+            cskcpHandle.TraceListener = new LogTraceListener(nameof(MhyKcpBase));
 
             Task.Run(BackgroundUpdate);
         }
@@ -112,7 +112,7 @@ namespace csharp_Protoshift.MhyKCP
                     throw new SocketException(10057); // Not connected
                 case ConnectionState.CONNECTED:
                     {
-                        // Log.Dbug($"ConnectedNotify, handle = {ikcpHandle}, buf = {Convert.ToHexString(buffer)}", "MhyKcpBase");
+                        // Log.Dbug($"ConnectedNotify, handle = {ikcpHandle}, buf = {Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
                         if (buffer.Length == 20) // Possibly a "disconnect" packet
                         {
                             var disconn = new Handshake();
@@ -120,13 +120,13 @@ namespace csharp_Protoshift.MhyKCP
                             {
                                 disconn.Decode(buffer, Handshake.MAGIC_DISCONNECT);
                                 _State = ConnectionState.CLOSED;
-                                Log.Dbug($"DisconnectedNotify, Conv={disconn.Conv}, Token={disconn.Token}, Data={disconn.Data}", "MhyKcpBase");
+                                Log.Dbug($"DisconnectedNotify, Conv={disconn.Conv}, Token={disconn.Token}, Data={disconn.Data}", nameof(MhyKcpBase));
                                 return 0;
                             }
                             catch (ArgumentException)
                             {
                                 // Do nothing
-                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer)}", "MhyKcpBase");
+                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
                             }
                         }
 
@@ -147,7 +147,7 @@ namespace csharp_Protoshift.MhyKCP
                         var handshake = new Handshake();
                         try
                         {
-                            // Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", "MhyKcpBase");
+                            // Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
                             handshake.Decode(buffer, Handshake.MAGIC_CONNECT);
                             _Conv = (uint)(MonotonicTime.Now & 0xFFFFFFFF);
                             _Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
@@ -160,7 +160,7 @@ namespace csharp_Protoshift.MhyKCP
                         }
                         catch (ArgumentException)
                         {
-                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer)}", "MhyKcpBase");
+                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
                             throw new SocketException(10053);
                         }
                     }
@@ -169,7 +169,7 @@ namespace csharp_Protoshift.MhyKCP
                         var handshake = new Handshake();
                         try
                         {
-                            // Log.Dbug($"HandShakeConnectNotify, buf = {Convert.ToHexString(buffer)}", "MhyKcpBase");
+                            // Log.Dbug($"HandShakeConnectNotify, buf = {Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
                             handshake.Decode(buffer, Handshake.MAGIC_SEND_BACK_CONV);
                             _Conv = handshake.Conv;
                             _Token = handshake.Token;
@@ -180,7 +180,7 @@ namespace csharp_Protoshift.MhyKCP
                         }
                         catch (ArgumentException)
                         {
-                            Log.Dbug($"HandShakeConnectNotify: handshake fail, content={Convert.ToHexString(buffer)}", "MhyKcpBase");
+                            Log.Dbug($"HandShakeConnectNotify: handshake fail, content={Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
                             throw new SocketException(10053);
                         }
                     }
