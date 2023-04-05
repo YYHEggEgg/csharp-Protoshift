@@ -45,7 +45,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             {
                 try
                 {
-                    ((KcpProxy)clients[packet.RemoteEndPoint]).Input(packet.Buffer);
+                    ((KcpProxyBase)clients[packet.RemoteEndPoint]).Input(packet.Buffer);
                 }
                 catch (Exception ex)
                 {
@@ -56,7 +56,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             else
             {
                 // Oh boy! A new connection!
-                var conn = new KcpProxy(sendToAddress: SendToEndpoint);
+                var conn = new KcpProxyBase(sendToAddress: SendToEndpoint);
                 conn.OutputCallback = new ConcurrentUdpKcpCallback(udpSock, packet.RemoteEndPoint);
                 try
                 {
@@ -105,7 +105,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         protected async void HandleClient(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
             if (!clients.ContainsKey(remotePoint)) return;
-            var conn = (KcpProxy)clients[remotePoint];
+            var conn = (KcpProxyBase)clients[remotePoint];
             var PacketHandler = handlers.OnClientPacketArrival;
             var IsUrgentPacket = handlers.IsUrgentClientPacket;
             _ = ClientPacketSender(conn);
@@ -147,7 +147,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         #region Send Packet
         private ConcurrentQueue<byte[]?> client_urgentPackets = new();
         private ConcurrentQueue<byte[]?> client_normalPackets = new();
-        private async Task ClientPacketSender(KcpProxy sendConn)
+        private async Task ClientPacketSender(KcpProxyBase sendConn)
         {
             while (true)
             {
@@ -207,7 +207,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         protected async void HandleServer(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
             if (!clients.ContainsKey(remotePoint)) return;
-            var conn = (KcpProxy)clients[remotePoint];
+            var conn = (KcpProxyBase)clients[remotePoint];
             var PacketHandler = handlers.OnServerPacketArrival;
             var IsUrgentPacket = handlers.IsUrgentServerPacket;
             _ = ServerPacketSender(conn);
@@ -254,7 +254,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         #region Send Packet
         private ConcurrentQueue<byte[]?> server_urgentPackets = new();
         private ConcurrentQueue<byte[]?> server_normalPackets = new();
-        private async Task ServerPacketSender(KcpProxy sendConn)
+        private async Task ServerPacketSender(KcpProxyBase sendConn)
         {
             while (true)
             {

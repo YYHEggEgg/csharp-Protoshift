@@ -20,12 +20,12 @@ namespace csharp_Protoshift.MhyKCP.Proxy
     /// <summary>
     /// KcpProxy is not a client
     /// </summary>
-    public class KcpProxy : MhyKcpBase
+    public class KcpProxyBase : MhyKcpBase
     {
         public KcpProxyClient? sendClient;
         public IPEndPoint sendToAddress;
 
-        public KcpProxy(IPEndPoint sendToAddress, uint conv = 0, uint token = 0,
+        public KcpProxyBase(IPEndPoint sendToAddress, uint conv = 0, uint token = 0,
             Func<byte[], byte[]>? PacketHandler = null)
             : base(conv, token)
         {
@@ -53,7 +53,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                                 {
                                     disconn.Decode(buffer, Handshake.MAGIC_DISCONNECT);
                                     _State = ConnectionState.CLOSED;
-                                    Log.Info("Client requested disconnect, so send disconnect to server", nameof(KcpProxy));
+                                    Log.Info("Client requested disconnect, so send disconnect to server", nameof(KcpProxyBase));
 
                                     sendClient?.Disconnect(disconn.Conv, disconn.Token, disconn.Data);
                                     return 0;
@@ -62,14 +62,14 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                                 {
                                     // Reconnect
                                     disconn.Decode(buffer, Handshake.MAGIC_CONNECT);
-                                    Log.Info("Client requested reconnect, set to WAIT", nameof(KcpProxy));
+                                    Log.Info("Client requested reconnect, set to WAIT", nameof(KcpProxyBase));
 
                                     goto case ConnectionState.HANDSHAKE_WAIT;
                                 }
                             }
                             catch (ArgumentException)
                             {
-                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer)}", nameof(KcpProxy));
+                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer)}", nameof(KcpProxyBase));
                             }
                         }
 
@@ -91,7 +91,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         try
                         {
 #if KCP_PROXY_VERBOSE
-                            Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", nameof(KcpProxy));
+                            Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", nameof(KcpProxyBase));
 #endif
                             handshake.Decode(buffer, Handshake.MAGIC_CONNECT);
                             //_Conv = (uint)(MonotonicTime.Now & 0xFFFFFFFF);
@@ -102,7 +102,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             sendClient.ConnectAsync().Wait();
                             sendClient.StartDisconnected += (conv, token) =>
                             {
-                                Log.Warn("Server requested to disconnect, so send disconnect to client", nameof(KcpProxy));
+                                Log.Warn("Server requested to disconnect, so send disconnect to client", nameof(KcpProxyBase));
                                 GameSessionDispatch.DestroySession(conv).Wait();
                                 Disconnect(conv, token);
                             };
@@ -118,13 +118,13 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         }
                         catch (ArgumentException)
                         {
-                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer)}", nameof(KcpProxy));
+                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer)}", nameof(KcpProxyBase));
                             throw new SocketException(10053);
                         }
                     }
                 case ConnectionState.HANDSHAKE_CONNECT:
                     {
-                        Log.Erro("KcpProxy is not a client but reached HANDSHAKE_CONNECT", nameof(KcpProxy));
+                        Log.Erro("KcpProxy is not a client but reached HANDSHAKE_CONNECT", nameof(KcpProxyBase));
                         break;
                         /*var handshake = new Handshake();
                         try
