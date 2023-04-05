@@ -44,7 +44,7 @@ namespace csharp_Protoshift.MhyKCP
             {
                 if (fromip.ToString() == remoteAddress.ToString())
                 {
-                    // Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", "KCPClient");
+                    // Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", nameof(KCPClient));
                     server.Input(packet);
                 }
                 else
@@ -60,7 +60,7 @@ namespace csharp_Protoshift.MhyKCP
             }
             catch (Exception ex)
             {
-                Log.Erro($"Update fail: {ex}", "KCPClient");
+                Log.Erro($"Update fail: {ex}", nameof(KCPClient));
                 _Closed = true;
                 server.Dispose();
             }
