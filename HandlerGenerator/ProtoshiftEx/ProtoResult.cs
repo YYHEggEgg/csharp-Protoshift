@@ -8,89 +8,89 @@ using System.Text;
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
     public class CommonResult
-{
-    public string fieldType { get; set; } = "";
-    public string fieldName { get; set; } = "";
-    public bool IsRepeatedField { get; set; } = false;
-    public bool isImportType { get; set; } = false;
-}
-
-public class MapResult
-{
-    public string keyType { get; set; } = "";
-    public bool keyIsImportType { get; set; } = false;
-    public string valueType { get; set; } = "";
-    public bool valueIsImportType { get; set; } = false;
-    public string fieldName { get; set; } = "";
-}
-
-public class OneofResult
-{
-    public string oneofEntryName { get; set; } = "";
-    public List<CommonResult> oneofInnerFields { get; set; } = new();
-}
-
-public class EnumResult
-{
-    public string enumName { get; set; } = "";
-    public List<string> enumNodes { get; set; } = new();
-}
-
-public class MessageResult
-{
-    public string messageName { get; set; } = "";
-    public List<CommonResult> commonFields { get; set; } = new();
-    public List<MapResult> mapFields { get; set; } = new();
-    public List<OneofResult> oneofFields { get; set; } = new();
-    public List<EnumResult> enumFields { get; set; } = new();
-}
-
-public class ProtoJsonResult
-{
-    public List<MessageResult> messageBodys { get; set; } = new();
-    public List<EnumResult> enumBodys { get; set; } = new();
-
-    public override string ToString()
     {
-        string result = "";
-        foreach (MessageResult message in messageBodys)
+        public string fieldType { get; set; } = "";
+        public string fieldName { get; set; } = "";
+        public bool IsRepeatedField { get; set; } = false;
+        public bool isImportType { get; set; } = false;
+    }
+
+    public class MapResult
+    {
+        public string keyType { get; set; } = "";
+        public bool keyIsImportType { get; set; } = false;
+        public string valueType { get; set; } = "";
+        public bool valueIsImportType { get; set; } = false;
+        public string fieldName { get; set; } = "";
+    }
+
+    public class OneofResult
+    {
+        public string oneofEntryName { get; set; } = "";
+        public List<CommonResult> oneofInnerFields { get; set; } = new();
+    }
+
+    public class EnumResult
+    {
+        public string enumName { get; set; } = "";
+        public List<string> enumNodes { get; set; } = new();
+    }
+
+    public class MessageResult
+    {
+        public string messageName { get; set; } = "";
+        public List<CommonResult> commonFields { get; set; } = new();
+        public List<MapResult> mapFields { get; set; } = new();
+        public List<OneofResult> oneofFields { get; set; } = new();
+        public List<EnumResult> enumFields { get; set; } = new();
+    }
+
+    public class ProtoJsonResult
+    {
+        public List<MessageResult> messageBodys { get; set; } = new();
+        public List<EnumResult> enumBodys { get; set; } = new();
+
+        public override string ToString()
         {
-            result += $"Message: {message.messageName}\n";
-            foreach (CommonResult common in message.commonFields)
+            string result = "";
+            foreach (MessageResult message in messageBodys)
             {
-                result += $"Field Type: {common.fieldType}, Field Name: {common.fieldName}, Is Repeated: {common.IsRepeatedField}, Is Import Type: {common.isImportType}\n";
-            }
-            foreach (MapResult map in message.mapFields)
-            {
-                result += $"Map Field Name: {map.fieldName}, Key Type: {map.keyType}, Is Import Type: {map.keyIsImportType}, Value Type: {map.valueType}, Is Import Type: {map.valueIsImportType}\n";
-            }
-            foreach (OneofResult oneof in message.oneofFields)
-            {
-                result += $"Oneof Field Name: {oneof.oneofEntryName}\nStart Oneof Fields:-----------\n";
-                foreach (CommonResult common in oneof.oneofInnerFields)
+                result += $"Message: {message.messageName}\n";
+                foreach (CommonResult common in message.commonFields)
                 {
-                    result += $"Field Type: {common.fieldType}, Field Name: {common.fieldName}, Is Import Type: {common.isImportType}\n";
+                    result += $"Field Type: {common.fieldType}, Field Name: {common.fieldName}, Is Repeated: {common.IsRepeatedField}, Is Import Type: {common.isImportType}\n";
                 }
-                result += "End Oneof FIelds-------------------\n";
+                foreach (MapResult map in message.mapFields)
+                {
+                    result += $"Map Field Name: {map.fieldName}, Key Type: {map.keyType}, Is Import Type: {map.keyIsImportType}, Value Type: {map.valueType}, Is Import Type: {map.valueIsImportType}\n";
+                }
+                foreach (OneofResult oneof in message.oneofFields)
+                {
+                    result += $"Oneof Field Name: {oneof.oneofEntryName}\nStart Oneof Fields:-----------\n";
+                    foreach (CommonResult common in oneof.oneofInnerFields)
+                    {
+                        result += $"Field Type: {common.fieldType}, Field Name: {common.fieldName}, Is Import Type: {common.isImportType}\n";
+                    }
+                    result += "End Oneof FIelds-------------------\n";
+                }
+                foreach (EnumResult _enum in message.enumFields)
+                {
+                    result += $"InMessage Enum: {_enum.enumName}\n";
+                    foreach (string node in _enum.enumNodes)
+                    {
+                        result += $"Field Name: {node}\n";
+                    }
+                }
             }
-            foreach (EnumResult _enum in message.enumFields)
+            foreach (EnumResult _enum in enumBodys)
             {
-                result += $"InMessage Enum: {_enum.enumName}\n";
+                result += $"Enum: {_enum.enumName}\n";
                 foreach (string node in _enum.enumNodes)
                 {
                     result += $"Field Name: {node}\n";
                 }
             }
+            return result;
         }
-        foreach (EnumResult _enum in enumBodys)
-        {
-            result += $"Enum: {_enum.enumName}\n";
-            foreach (string node in _enum.enumNodes)
-            {
-                result += $"Field Name: {node}\n";
-            }
-        }
-        return result;
     }
-}
 }
