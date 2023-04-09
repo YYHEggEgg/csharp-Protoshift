@@ -1,5 +1,7 @@
 ﻿using System.Buffers;
+using System.Buffers.Binary;
 using System.Diagnostics;
+using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Net.Sockets.Kcp;
 using YSFreedom.Common.Native;
@@ -103,7 +105,7 @@ namespace csharp_Protoshift.MhyKCP
             }
         }
 
-        public virtual int Input(byte[] buffer)
+        public virtual int Input(Memory<byte> buffer)
         {
             switch (_State)
             {
@@ -126,14 +128,14 @@ namespace csharp_Protoshift.MhyKCP
                             catch (ArgumentException)
                             {
                                 // Do nothing
-                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
+                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer.Span)}", nameof(MhyKcpBase));
                             }
                         }
 
                         // int status = 0
                         // lock (ikcpLock) status = IKCP.ikcp_input(ikcpHandle, buffer, buffer.Length);
 #pragma warning disable CS8602 // 解引用可能出现空引用。
-                        int status = cskcpHandle.Input(new ReadOnlySpan<byte>(buffer));
+                        int status = cskcpHandle.Input(buffer.Span);
 #pragma warning restore CS8602 // 解引用可能出现空引用。
                         if (status == -1)
                         {
@@ -160,7 +162,7 @@ namespace csharp_Protoshift.MhyKCP
                         }
                         catch (ArgumentException)
                         {
-                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
+                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer.Span)}", nameof(MhyKcpBase));
                             throw new SocketException(10053);
                         }
                     }
@@ -180,7 +182,7 @@ namespace csharp_Protoshift.MhyKCP
                         }
                         catch (ArgumentException)
                         {
-                            Log.Dbug($"HandShakeConnectNotify: handshake fail, content={Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
+                            Log.Dbug($"HandShakeConnectNotify: handshake fail, content={Convert.ToHexString(buffer.Span)}", nameof(MhyKcpBase));
                             throw new SocketException(10053);
                         }
                     }
@@ -365,6 +367,23 @@ namespace csharp_Protoshift.MhyKCP
                 Token = buffer.GetUInt32(8);
                 Data = buffer.GetUInt32(12);
                 Magic2 = buffer.GetUInt32(16);
+
+                if (verifyMagic != null)
+                {
+                    if (Magic1 != verifyMagic[0] || Magic2 != verifyMagic[1])
+                        throw new ArgumentException("Invalid handshake packet", nameof(buffer));
+                }
+            }
+            public void Decode(Memory<byte> buffer, uint[]? verifyMagic = null)
+            {
+                if (buffer.Length < LEN)
+                    throw new ArgumentException("Handshake packet too small", nameof(buffer));
+
+                Magic1 = BinaryPrimitives.ReadUInt32BigEndian(buffer.Slice(0, 4).Span);
+                Conv = BinaryPrimitives.ReadUInt32BigEndian(buffer.Slice(4, 4).Span);
+                Token = BinaryPrimitives.ReadUInt32BigEndian(buffer.Slice(8, 4).Span);
+                Data = BinaryPrimitives.ReadUInt32BigEndian(buffer.Slice(12, 4).Span);
+                Magic2 = BinaryPrimitives.ReadUInt32BigEndian(buffer.Slice(16, 4).Span);
 
                 if (verifyMagic != null)
                 {

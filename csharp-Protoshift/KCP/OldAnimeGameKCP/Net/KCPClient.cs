@@ -2,7 +2,7 @@ using System.Net;
 using System.Net.Sockets;
 using YSFreedom.Common.Net.Obsoleted;
 using YYHEggEgg.Logger;
-using csharp_Protoshift.SpecialUdp;
+using csharp_Protoshift.Obsoleted.SpecialUdp;
 
 namespace csharp_Protoshift.Obsoleted.AnimeGameKCP
 {

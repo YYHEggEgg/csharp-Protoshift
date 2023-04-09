@@ -13,7 +13,7 @@ namespace csharp_Protoshift.MhyKCP
     {
         public bool Closed { get { return _Closed; } }
 
-        protected ConcurrentUdpClient udpSock;
+        protected SocketUdpClient udpSock;
         protected bool _Closed = false;
         protected Dictionary<IPEndPoint, MhyKcpBase> clients;
         protected ConcurrentQueue<IPEndPoint> newConnections;
@@ -34,7 +34,7 @@ namespace csharp_Protoshift.MhyKCP
 
         public KCPServer(IPEndPoint ipEp)
         {
-            udpSock = new ConcurrentUdpClient(ipEp);
+            udpSock = new SocketUdpClient(ipEp);
             clients = new Dictionary<IPEndPoint, MhyKcpBase>();
             newConnections = new ConcurrentQueue<IPEndPoint>();
 
@@ -43,7 +43,7 @@ namespace csharp_Protoshift.MhyKCP
 
         protected virtual async Task BackgroundUpdate()
         {
-            var packet = await udpSock.ReceiveAsync();
+            var packet = await udpSock.ReceiveFromAsync();
             if (clients.ContainsKey(packet.RemoteEndPoint))
             {
                 try
@@ -59,7 +59,7 @@ namespace csharp_Protoshift.MhyKCP
             {
                 // Oh boy! A new connection!
                 var conn = new MhyKcpBase();
-                conn.OutputCallback = new ConcurrentUdpKcpCallback(udpSock, packet.RemoteEndPoint);
+                conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
 
                 conn.AcceptNonblock();
                 try
