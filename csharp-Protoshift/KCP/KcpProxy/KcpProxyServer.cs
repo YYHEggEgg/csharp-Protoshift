@@ -22,7 +22,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 
         public KcpProxyServer(IPEndPoint bindToAddress, IPEndPoint sendToAddress)
         {
-            udpSock = new ConcurrentUdpClient(bindToAddress);
+            udpSock = new SocketUdpClient(bindToAddress);
             SendToEndpoint = sendToAddress;
 
             Task.Run(BackgroundUpdate);
@@ -30,10 +30,10 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 
         protected override async Task BackgroundUpdate()
         {
-            UdpReceiveResult packet;
+            SocketUdpReceiveResult packet;
             try
             {
-                packet = await udpSock.ReceiveAsync();
+                packet = await udpSock.ReceiveFromAsync();
             }
             catch (Exception ex)
             {
@@ -57,7 +57,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             {
                 // Oh boy! A new connection!
                 var conn = new KcpProxyBase(sendToAddress: SendToEndpoint);
-                conn.OutputCallback = new ConcurrentUdpKcpCallback(udpSock, packet.RemoteEndPoint);
+                conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
                 try
                 {
                     Log.Dbug($"New connection established, remote endpoint={packet.RemoteEndPoint}");

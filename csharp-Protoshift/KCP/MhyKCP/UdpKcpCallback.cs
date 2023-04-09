@@ -1,4 +1,5 @@
-﻿using csharp_Protoshift.SpecialUdp;
+﻿using csharp_Protoshift.Obsoleted.SpecialUdp;
+using csharp_Protoshift.SpecialUdp;
 using System;
 using System.Buffers;
 using System.Collections.Generic;
@@ -43,6 +44,23 @@ namespace csharp_Protoshift.MhyKCP
         public async void Output(IMemoryOwner<byte> buffer, int avalidLength)
         {
             await udpSock.SendAsync(buffer.Memory, ipEp);
+        }
+    }
+
+    public class SocketUdpKcpCallback : IKcpCallback
+    {
+        private readonly SocketUdpClient udpSock;
+        private readonly IPEndPoint? ipEp;
+
+        public SocketUdpKcpCallback(SocketUdpClient udpSock, IPEndPoint? ipEp = null)
+        {
+            this.udpSock = udpSock;
+            this.ipEp = ipEp;
+        }
+
+        public async void Output(IMemoryOwner<byte> buffer, int avalidLength)
+        {
+            await udpSock.SendToAsync(buffer.Memory, ipEp);
         }
     }
 }
