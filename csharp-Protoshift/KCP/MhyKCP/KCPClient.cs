@@ -9,14 +9,14 @@ namespace csharp_Protoshift.MhyKCP
     {
         public bool Closed { get { return _Closed; } }
 
-        protected ConcurrentUdpClient udpSock;
+        protected SocketUdpClient udpSock;
         private bool _Closed = false;
         protected MhyKcpBase server;
         protected IPEndPoint remoteAddress;
 
         public KCPClient(IPEndPoint ipEp)
         {
-            udpSock = new ConcurrentUdpClient();
+            udpSock = new SocketUdpClient();
             //udpSock = new();
             udpSock.Connect(ipEp);
             server = new MhyKcpBase();
@@ -24,7 +24,7 @@ namespace csharp_Protoshift.MhyKCP
             remoteAddress = ipEp;
 
             server.Timeout = 10000;
-            server.OutputCallback = new ConcurrentUdpKcpCallback(udpSock);
+            server.OutputCallback = new SocketUdpKcpCallback(udpSock);
 
             Task.Run(BackgroundUpdate);
         }
@@ -39,13 +39,13 @@ namespace csharp_Protoshift.MhyKCP
         protected virtual async Task BackgroundUpdate()
         {
             IPEndPoint fromip = new(IPAddress.Loopback, 0);
-            var packet = udpSock.Receive(ref fromip);
+            var packet = await udpSock.ReceiveFromAsync();
             try
             {
                 if (fromip.ToString() == remoteAddress.ToString())
                 {
                     // Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", nameof(KCPClient));
-                    server.Input(packet);
+                    server.Input(packet.Buffer);
                 }
                 else
                 {
