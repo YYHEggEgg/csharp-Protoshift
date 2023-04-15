@@ -38,11 +38,10 @@ namespace csharp_Protoshift.MhyKCP
 
         protected virtual async Task BackgroundUpdate()
         {
-            IPEndPoint fromip = new(IPAddress.Loopback, 0);
             var packet = await udpSock.ReceiveFromAsync();
             try
             {
-                if (fromip.ToString() == remoteAddress.ToString())
+                if (packet.RemoteEndPoint.ToString() == remoteAddress.ToString())
                 {
                     // Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", nameof(KCPClient));
                     server.Input(packet.Buffer);

@@ -55,11 +55,12 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             }
             else
             {
-                // Oh boy! A new connection!
-                var conn = new KcpProxyBase(sendToAddress: SendToEndpoint);
-                conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
+                KcpProxyBase? conn = null;
                 try
                 {
+                    // Oh boy! A new connection!
+                    conn = new KcpProxyBase(sendToAddress: SendToEndpoint);
+                    conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
                     Log.Dbug($"New connection established, remote endpoint={packet.RemoteEndPoint}");
                     conn.AcceptNonblock();
                     conn.Input(packet.Buffer);
@@ -70,7 +71,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 catch (Exception ex)
                 {
                     Log.Dbug($"BackgroundUpdate:NewConnection reached exception {ex}", nameof(KcpProxyServer));
-                    conn.Dispose();
+                    conn?.Dispose();
                 }
             }
 
