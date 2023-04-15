@@ -25,7 +25,13 @@ namespace csharp_Protoshift
             Log.Initialize(new LoggerConfig(
                 max_Output_Char_Count: 16 * 1024, 
                 use_Console_Wrapper: true,
-                use_Working_Directory: false));
+                use_Working_Directory: false,
+#if DEBUG
+                is_Debug_LogLevel: true
+#else
+                is_Debug_LogLevel: false
+#endif
+                ));
             Log.Info("csharp-Protoshift v1.0.0", "Entry");
             Log.Info("Written by YYHEggEgg#6167, https://github.com/YYHEggEgg.", "Entry");
             ResourcesLoader.CheckForRequiredResources();
