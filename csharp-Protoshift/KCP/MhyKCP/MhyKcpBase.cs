@@ -51,7 +51,7 @@ namespace csharp_Protoshift.MhyKCP
                 throw new Exception("Bug! Initialize called twice!");
 
             // ikcpHandle = IKCP.ikcp_create(_Conv, _Token, UIntPtr.Zero);
-            cskcpHandle = new(_Conv, OutputCallback);
+            cskcpHandle = new(_Conv, _Token, OutputCallback);
             _State = ConnectionState.CONNECTED;
 
             // Added
