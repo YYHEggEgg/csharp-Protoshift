@@ -11,6 +11,11 @@
         /// </summary>
         uint conv { get; set; }
         /// <summary>
+        /// miHoMo KCP modify: IUINT32 token
+        /// <para/>Change line(s) in file compare: ikcp.h, +271
+        /// </summary>
+        uint token { get; set; }
+        /// <summary>
         /// 指令类型
         /// </summary>
         /// <remarks>
