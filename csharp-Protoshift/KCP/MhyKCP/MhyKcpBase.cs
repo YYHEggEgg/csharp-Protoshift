@@ -14,6 +14,8 @@ namespace csharp_Protoshift.MhyKCP
 {
     public class MhyKcpBase : IDisposable
     {
+        public const int KCP_RefreshMilliseconds = 5;
+
         public enum ConnectionState
         {
             CLOSED, DISCONNECTED, HANDSHAKE_CONNECT, HANDSHAKE_WAIT, CONNECTED
@@ -58,7 +60,7 @@ namespace csharp_Protoshift.MhyKCP
 
             // Added
             // IKCP.ikcp_nodelay(ikcpHandle, 1, 10, 2, 1);
-            cskcpHandle.NoDelay(1, 10, 2, 1);
+            cskcpHandle.NoDelay(1, KCP_RefreshMilliseconds, 2, 1);
             // IKCP.ikcp_wndsize(ikcpHandle, 256, 256);
             cskcpHandle.WndSize(256, 256);
 
@@ -88,7 +90,7 @@ namespace csharp_Protoshift.MhyKCP
             var begin = MonotonicTime.Now;
             while (_State != ConnectionState.CONNECTED)
             {
-                await Task.Delay(10);
+                await Task.Delay(KCP_RefreshMilliseconds);
                 if (MonotonicTime.Now - begin >= Timeout)
                     throw new SocketException(10060); // WSAETIMEDOUT
             }
@@ -106,8 +108,8 @@ namespace csharp_Protoshift.MhyKCP
             var begin = MonotonicTime.Now;
             while (_State != ConnectionState.CONNECTED)
             {
-                await Task.Delay(10);
-                if (MonotonicTime.Now - begin == Timeout)
+                await Task.Delay(KCP_RefreshMilliseconds);
+                if (MonotonicTime.Now - begin >= Timeout)
                     throw new SocketException(10060); // WSAETIMEDOUT
             }
         }
@@ -257,7 +259,7 @@ namespace csharp_Protoshift.MhyKCP
             while (ret == null)
             {
                 ret = ReceiveNonblock();
-                if (ret == null) await Task.Delay(10); //(int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF));
+                if (ret == null) await Task.Delay(KCP_RefreshMilliseconds); //(int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF));
             }
             return ret;
         }
@@ -279,7 +281,7 @@ namespace csharp_Protoshift.MhyKCP
             // DateTimeOffset dur = cskcpHandle.Check(DateTime.UtcNow);
             // From author:
             // 如果你不需要管理1000个以上的 kcp对象的话，还是不要用check比较好，这部分代码写起来比较烦。
-            await Task.Delay(10);
+            await Task.Delay(KCP_RefreshMilliseconds);
             Update();
 
             await Task.Run(BackgroundUpdate);
