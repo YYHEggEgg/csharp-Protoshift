@@ -1,4 +1,6 @@
-﻿using System.Buffers;
+﻿// #define KCP_INNER_LOG
+
+using System.Buffers;
 using System.Buffers.Binary;
 using System.Diagnostics;
 using System.Linq.Expressions;
@@ -60,8 +62,10 @@ namespace csharp_Protoshift.MhyKCP
             // IKCP.ikcp_wndsize(ikcpHandle, 256, 256);
             cskcpHandle.WndSize(256, 256);
 
+#if KCP_INNER_LOG
             cskcpHandle.TraceListener = new LogTraceListener(nameof(MhyKcpBase));
             // cskcpHandle.TraceListener = new ConsoleTraceListener();
+#endif
 
             cskcpHandle.SegmentManager = new SimpleSegManager();
 
