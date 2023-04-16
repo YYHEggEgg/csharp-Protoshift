@@ -1,4 +1,4 @@
-﻿using System.Buffers;
+using System.Buffers;
 using BufferOwner = System.Buffers.IMemoryOwner<byte>;
 
 namespace System.Net.Sockets.Kcp
@@ -11,10 +11,14 @@ namespace System.Net.Sockets.Kcp
         /// from the same connection.
         /// </summary>
         /// <param name="conv_"></param>
+        /// <param name="token_">
+        /// miHoMo KCP modify: +IUINT32 token, +
+        /// <para/>Change line(s) in file compare: ikcp.h, -346 +347; ikcp.c, -234 +234
+        /// </param>
         /// <param name="callback"></param>
         /// <param name="rentable">可租用内存的回调</param>
-        public Kcp(uint conv_, IKcpCallback callback, IRentable rentable = null)
-            : base(conv_)
+        public Kcp(uint conv_, uint token_, IKcpCallback callback, IRentable rentable = null)
+            : base(conv_, token_)
         {
             callbackHandle = callback;
             this.rentable = rentable;
