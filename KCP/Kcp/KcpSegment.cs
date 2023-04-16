@@ -163,7 +163,37 @@ namespace System.Net.Sockets.Kcp
         }
 
         /// <summary>
+        /// miHoMo KCP modify: IUINT32 token
+        /// <para/>Change line(s) in file compare: ikcp.h, +271
+        /// <para/>offset = <see cref="LocalOffset"/> + 4
+        /// </summary>
+        public uint token
+        {
+            get
+            {
+                unsafe
+                {
+                    return *(uint*)(LocalOffset + 4 + ptr);
+                }
+            }
+            set
+            {
+                unsafe
+                {
+                    *(uint*)(LocalOffset + 4 + ptr) = value;
+                }
+            }
+        }
+
+        // miHoMo KCP modify: IUINT32 token
+        // Change line(s) in file compare: ikcp.h, +271
+        /*
+        /// <summary>
         /// offset = <see cref="LocalOffset"/> + 4
+        /// </summary>
+        */
+        /// <summary>
+        /// offset = <see cref="LocalOffset"/> + 8
         /// </summary>
         public byte cmd
         {
@@ -171,20 +201,33 @@ namespace System.Net.Sockets.Kcp
             {
                 unsafe
                 {
-                    return *(LocalOffset + 4 + ptr);
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // return *(LocalOffset + 4 + ptr);
+                    return *(LocalOffset + 8 + ptr);
                 }
             }
             set
             {
                 unsafe
                 {
-                    *(LocalOffset + 4 + ptr) = value;
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // *(LocalOffset + 4 + ptr) = value;
+                    *(LocalOffset + 8 + ptr) = value;
                 }
             }
         }
 
+        // miHoMo KCP modify: IUINT32 token
+        // Change line(s) in file compare: ikcp.h, +271
+        /*
         /// <summary>
         /// offset = <see cref="LocalOffset"/> + 5
+        /// </summary>
+        */
+        /// <summary>
+        /// offset = <see cref="LocalOffset"/> + 9
         /// </summary>
         public byte frg
         {
@@ -192,20 +235,33 @@ namespace System.Net.Sockets.Kcp
             {
                 unsafe
                 {
-                    return *(LocalOffset + 5 + ptr);
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // return *(LocalOffset + 5 + ptr);
+                    return *(LocalOffset + 9 + ptr);
                 }
             }
             set
             {
                 unsafe
                 {
-                    *(LocalOffset + 5 + ptr) = value;
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // *(LocalOffset + 5 + ptr) = value;
+                    *(LocalOffset + 9 + ptr) = value;
                 }
             }
         }
 
+        // miHoMo KCP modify: IUINT32 token
+        // Change line(s) in file compare: ikcp.h, +271
+        /*
         /// <summary>
         /// offset = <see cref="LocalOffset"/> + 6
+        /// </summary>
+        */
+        /// <summary>
+        /// offset = <see cref="LocalOffset"/> + 10
         /// </summary>
         public ushort wnd
         {
@@ -213,20 +269,33 @@ namespace System.Net.Sockets.Kcp
             {
                 unsafe
                 {
-                    return *(ushort*)(LocalOffset + 6 + ptr);
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // return *(ushort*)(LocalOffset + 6 + ptr);
+                    return *(ushort*)(LocalOffset + 10 + ptr);
                 }
             }
             set
             {
                 unsafe
                 {
-                    *(ushort*)(LocalOffset + 6 + ptr) = value;
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // *(ushort*)(LocalOffset + 6 + ptr) = value;
+                    *(ushort*)(LocalOffset + 10 + ptr) = value;
                 }
             }
         }
 
+        // miHoMo KCP modify: IUINT32 token
+        // Change line(s) in file compare: ikcp.h, +271
+        /*
         /// <summary>
         /// offset = <see cref="LocalOffset"/> + 8
+        /// </summary>
+        */
+        /// <summary>
+        /// offset = <see cref="LocalOffset"/> + 12
         /// </summary>
         public uint ts
         {
@@ -234,28 +303,9 @@ namespace System.Net.Sockets.Kcp
             {
                 unsafe
                 {
-                    return *(uint*)(LocalOffset + 8 + ptr);
-                }
-            }
-            set
-            {
-                unsafe
-                {
-                    *(uint*)(LocalOffset + 8 + ptr) = value;
-                }
-            }
-        }
-
-        /// <summary>
-        /// <para> SendNumber? </para>
-        /// offset = <see cref="LocalOffset"/> + 12
-        /// </summary>
-        public uint sn
-        {
-            get
-            {
-                unsafe
-                {
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // return *(uint*)(LocalOffset + 8 + ptr);
                     return *(uint*)(LocalOffset + 12 + ptr);
                 }
             }
@@ -263,20 +313,34 @@ namespace System.Net.Sockets.Kcp
             {
                 unsafe
                 {
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // *(uint*)(LocalOffset + 8 + ptr) = value;
                     *(uint*)(LocalOffset + 12 + ptr) = value;
                 }
             }
         }
 
+        // miHoMo KCP modify: IUINT32 token
+        // Change line(s) in file compare: ikcp.h, +271
+        /*
+        /// <summary>
+        /// <para> SendNumber? </para>
+        /// offset = <see cref="LocalOffset"/> + 12
+        /// </summary>
+        */
         /// <summary>
         /// offset = <see cref="LocalOffset"/> + 16
         /// </summary>
-        public uint una
+        public uint sn
         {
             get
             {
                 unsafe
                 {
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // return *(uint*)(LocalOffset + 12 + ptr);
                     return *(uint*)(LocalOffset + 16 + ptr);
                 }
             }
@@ -284,14 +348,58 @@ namespace System.Net.Sockets.Kcp
             {
                 unsafe
                 {
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // *(uint*)(LocalOffset + 12 + ptr) = value;
                     *(uint*)(LocalOffset + 16 + ptr) = value;
                 }
             }
         }
 
+        // miHoMo KCP modify: IUINT32 token
+        // Change line(s) in file compare: ikcp.h, +271
+        /*
+        /// <summary>
+        /// offset = <see cref="LocalOffset"/> + 16
+        /// </summary>
+        */
+        /// <summary>
+        /// offset = <see cref="LocalOffset"/> + 20
+        /// </summary>
+        public uint una
+        {
+            get
+            {
+                unsafe
+                {
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // return *(uint*)(LocalOffset + 16 + ptr);
+                    return *(uint*)(LocalOffset + 20 + ptr);
+                }
+            }
+            set
+            {
+                unsafe
+                {
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // *(uint*)(LocalOffset + 16 + ptr) = value;
+                    *(uint*)(LocalOffset + 20 + ptr) = value;
+                }
+            }
+        }
+
+        // miHoMo KCP modify: IUINT32 token
+        // Change line(s) in file compare: ikcp.h, +271
+        /*
         /// <summary>
         /// <para> AppendDateSize </para>
         /// offset = <see cref="LocalOffset"/> + 20
+        /// </summary>
+        */
+        /// <summary>
+        /// offset = <see cref="LocalOffset"/> + 24
         /// </summary>
         public uint len
         {
@@ -299,14 +407,20 @@ namespace System.Net.Sockets.Kcp
             {
                 unsafe
                 {
-                    return *(uint*)(LocalOffset + 20 + ptr);
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // return *(uint*)(LocalOffset + 20 + ptr);
+                    return *(uint*)(LocalOffset + 24 + ptr);
                 }
             }
             private set
             {
                 unsafe
                 {
-                    *(uint*)(LocalOffset + 20 + ptr) = value;
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+                    // *(uint*)(LocalOffset + 20 + ptr) = value;
+                    *(uint*)(LocalOffset + 24 + ptr) = value;
                 }
             }
         }
@@ -355,6 +469,9 @@ namespace System.Net.Sockets.Kcp
                 }
                 else
                 {
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.c, +914
+                    /*
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset), conv);
                     buffer[offset + 4] = cmd;
                     buffer[offset + 5] = frg;
@@ -364,6 +481,17 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 12), sn);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 16), una);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 20), len);
+                    */
+                    BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset), conv);
+                    BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset), token);
+                    buffer[offset + 8] = cmd;
+                    buffer[offset + 9] = frg;
+                    BinaryPrimitives.WriteUInt16LittleEndian(buffer.Slice(offset + 10), wnd);
+
+                    BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 12), ts);
+                    BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 16), sn);
+                    BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 20), una);
+                    BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 24), len);
 
                     data.CopyTo(buffer.Slice(HeadOffset));
                 }
@@ -372,6 +500,9 @@ namespace System.Net.Sockets.Kcp
             {
                 if (BitConverter.IsLittleEndian)
                 {
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.c, +914
+                    /*
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset), conv);
                     buffer[offset + 4] = cmd;
                     buffer[offset + 5] = frg;
@@ -381,6 +512,17 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 12), sn);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 16), una);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 20), len);
+                    */
+                    BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset), conv);
+                    BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset), token);
+                    buffer[offset + 8] = cmd;
+                    buffer[offset + 9] = frg;
+                    BinaryPrimitives.WriteUInt16BigEndian(buffer.Slice(offset + 10), wnd);
+
+                    BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 12), ts);
+                    BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 16), sn);
+                    BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 20), una);
+                    BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 24), len);
 
                     data.CopyTo(buffer.Slice(HeadOffset));
                 }
