@@ -1,4 +1,4 @@
-﻿#define KCP_PROXY_VERBOSE
+﻿// #define KCP_PROXY_VERBOSE
 
 using csharp_Protoshift.GameSession;
 using System;
@@ -26,6 +26,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         public KcpProxyClient? sendClient;
         public IPEndPoint sendToAddress;
 
+        private object handshake_lock = "Tighnari beloved";
+
         public KcpProxyBase(IPEndPoint sendToAddress, uint conv = 0, uint token = 0,
             Func<byte[], byte[]>? PacketHandler = null)
             : base(conv, token)
@@ -36,6 +38,18 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 
         public override int Input(Memory<byte> buffer)
         {
+            if (_State != ConnectionState.CONNECTED)
+            {
+                lock (handshake_lock) return InnerInput(buffer);
+            }
+            else
+            {
+                return InnerInput(buffer);
+            }
+        }
+
+        private int InnerInput(Memory<byte> buffer)
+        {
             switch (_State)
             {
                 case ConnectionState.DISCONNECTED:
@@ -43,7 +57,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     throw new SocketException(10057); // Not connected
                 case ConnectionState.CONNECTED:
                     {
-                        // Log.Dbug($"ConnectedNotify, buf = {Convert.ToHexString(buffer)}", nameof(KcpProxy));
+#if KCP_PROXY_VERBOSE
+                        Log.Dbug($"ConnectedNotify, buf = {Convert.ToHexString(buffer.Span)}", nameof(KcpProxyBase));
+#endif
                         if (buffer.Length == 20) // Possibly a "disconnect" packet
                         {
                             var disconn = new Handshake();
@@ -91,10 +107,10 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         var handshake = new Handshake();
                         try
                         {
+                            handshake.Decode(buffer, Handshake.MAGIC_CONNECT);
 #if KCP_PROXY_VERBOSE
                             Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer.Span)}", nameof(KcpProxyBase));
 #endif
-                            handshake.Decode(buffer, Handshake.MAGIC_CONNECT);
                             //_Conv = (uint)(MonotonicTime.Now & 0xFFFFFFFF);
                             //_Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
 

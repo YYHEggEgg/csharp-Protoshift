@@ -25,7 +25,7 @@ namespace System.Net.Sockets.Kcp.Simple
         {
             client = new UdpClient();
             client.Connect(endPoint);
-            kcp = new SimpleSegManager.Kcp(2001, this);
+            kcp = new SimpleSegManager.Kcp(2001, 10000, this);
             this.EndPoint = endPoint;
             BeginRecv();
         }
