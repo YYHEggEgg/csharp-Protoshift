@@ -197,7 +197,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 else
                 {
                     if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
-                    await Task.Delay(5);
+                    await Task.Delay(1);
                 }
             }
         }
@@ -301,7 +301,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 else
                 {
                     if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
-                    await Task.Delay(5);
+                    await Task.Delay(1);
                 }
             }
         }
