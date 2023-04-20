@@ -8,6 +8,8 @@ using System.Net.Sockets;
 using System.Threading.Tasks;
 using OfficeOpenXml.FormulaParsing.Logging;
 using YYHEggEgg.Logger;
+using Microsoft.IO;
+using System.Buffers;
 
 namespace csharp_Protoshift.SpecialUdp
 {
@@ -17,10 +19,13 @@ namespace csharp_Protoshift.SpecialUdp
         private IPEndPoint? _defaultEndpoint;
         private string? _defaultEndpointString;
 
+        private readonly ArrayPool<byte> _memoryPool;
+
         public SocketUdpClient()
         {
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
             _socket.Bind(new IPEndPoint(IPAddress.Any, 0));
+            _memoryPool = ArrayPool<byte>.Shared;
         }
 
         public SocketUdpClient(IPEndPoint ipEndPoint)
@@ -43,7 +48,7 @@ namespace csharp_Protoshift.SpecialUdp
 
         public async Task<SocketUdpReceiveResult> ReceiveFromAsync()
         {
-            Memory<byte> buffer = new byte[65507];
+            var buffer = _memoryPool.Rent(65507);
             SocketUdpReceiveResult receiveResult = new();
 
             try
@@ -68,7 +73,10 @@ namespace csharp_Protoshift.SpecialUdp
                     // throw new SocketException((int)SocketError.HostUnreachable);
                 }
 
-                receiveResult.Buffer = buffer.Slice(0, result.ReceivedBytes);
+                byte[] rtn = new byte[result.ReceivedBytes];
+                Buffer.BlockCopy(buffer, 0, rtn, 0, result.ReceivedBytes);
+                _memoryPool.Return(buffer);
+                receiveResult.Buffer = rtn;
                 receiveResult.ReceivedBytes = result.ReceivedBytes;
                 if (result.RemoteEndPoint is IPEndPoint)
                 {
