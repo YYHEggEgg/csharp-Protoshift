@@ -162,7 +162,7 @@ namespace csharp_Protoshift.SpecialUdp
     {
         private static IPEndPoint defaultIpEp = new IPEndPoint(IPAddress.Any, 0);
 
-        public Memory<byte> Buffer { get; set; }
+        public byte[] Buffer { get; set; }
         public int ReceivedBytes { get; set; }
         public IPEndPoint RemoteEndPoint { get; set; } = defaultIpEp;
     }
