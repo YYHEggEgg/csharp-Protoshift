@@ -114,7 +114,7 @@ namespace csharp_Protoshift.MhyKCP
             }
         }
 
-        public virtual int Input(Memory<byte> buffer)
+        public virtual int Input(byte[] buffer)
         {
             switch (_State)
             {
@@ -137,14 +137,14 @@ namespace csharp_Protoshift.MhyKCP
                             catch (ArgumentException)
                             {
                                 // Do nothing
-                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer.Span)}", nameof(MhyKcpBase));
+                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
                             }
                         }
 
                         // int status = 0
                         // lock (ikcpLock) status = IKCP.ikcp_input(ikcpHandle, buffer, buffer.Length);
 #pragma warning disable CS8602 // 解引用可能出现空引用。
-                        int status = cskcpHandle.Input(buffer.Span);
+                        int status = cskcpHandle.Input(buffer);
 #pragma warning restore CS8602 // 解引用可能出现空引用。
                         if (status == -1)
                         {
@@ -171,7 +171,7 @@ namespace csharp_Protoshift.MhyKCP
                         }
                         catch (ArgumentException)
                         {
-                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer.Span)}", nameof(MhyKcpBase));
+                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
                             throw new SocketException(10053);
                         }
                     }
@@ -191,7 +191,7 @@ namespace csharp_Protoshift.MhyKCP
                         }
                         catch (ArgumentException)
                         {
-                            Log.Dbug($"HandShakeConnectNotify: handshake fail, content={Convert.ToHexString(buffer.Span)}", nameof(MhyKcpBase));
+                            Log.Dbug($"HandShakeConnectNotify: handshake fail, content={Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
                             throw new SocketException(10053);
                         }
                     }
