@@ -36,7 +36,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             this.PacketHandler = PacketHandler ?? (data => data);
         }
 
-        public override int Input(Memory<byte> buffer)
+        public override int Input(byte[] buffer)
         {
             if (_State != ConnectionState.CONNECTED)
             {
@@ -48,7 +48,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             }
         }
 
-        private int InnerInput(Memory<byte> buffer)
+        private int InnerInput(byte[] buffer)
         {
             switch (_State)
             {
@@ -58,12 +58,12 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 case ConnectionState.CONNECTED:
                     {
 #if KCP_PROXY_VERBOSE
-                        Log.Dbug($"ConnectedNotify, buf = {Convert.ToHexString(buffer.Span)}", nameof(KcpProxyBase));
+                        Log.Dbug($"ConnectedNotify, buf = {Convert.ToHexString(buffer)}", nameof(KcpProxyBase));
 #endif
                         if (buffer.Length == 20) // Possibly a "disconnect" packet
                         {
                             var disconn = new Handshake();
-                            var possiblemagic = BinaryPrimitives.ReadUInt32BigEndian(buffer.Slice(0, 4).Span);
+                            var possiblemagic = buffer.GetUInt32(0);
                             try
                             {
                                 if (possiblemagic == Handshake.MAGIC_DISCONNECT[0])
@@ -86,14 +86,14 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             }
                             catch (ArgumentException)
                             {
-                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer.Span)}", nameof(KcpProxyBase));
+                                Log.Dbug($"ConnectedNotify: Packet length=20, content={Convert.ToHexString(buffer)}", nameof(KcpProxyBase));
                             }
                         }
 
                         // int status = 0;
                         // lock (ikcpLock) status = IKCP.ikcp_input(ikcpHandle, buffer, buffer.Length);
 #pragma warning disable CS8602 // 解引用可能出现空引用。
-                        int status = cskcpHandle.Input(buffer.Span);
+                        int status = cskcpHandle.Input(buffer);
 #pragma warning restore CS8602 // 解引用可能出现空引用。
                         if (status == -1)
                         {
@@ -135,7 +135,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         }
                         catch (ArgumentException)
                         {
-                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer.Span)}", nameof(KcpProxyBase));
+                            Log.Dbug($"HandShakeWaitNotify: handshake fail, content={Convert.ToHexString(buffer)}", nameof(KcpProxyBase));
                             throw new SocketException(10053);
                         }
                     }
