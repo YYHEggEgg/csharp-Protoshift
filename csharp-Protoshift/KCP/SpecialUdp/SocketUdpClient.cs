@@ -38,6 +38,7 @@ namespace csharp_Protoshift.SpecialUdp
                 "IPEndPoint is probably not a valid IP address or used, please check the input", 
                 nameof(ipEndPoint));
             _socket.Bind(ipEndPoint);
+            _memoryPool = ArrayPool<byte>.Shared;
         }
 
         public void Connect(IPEndPoint ipEndPoint)
