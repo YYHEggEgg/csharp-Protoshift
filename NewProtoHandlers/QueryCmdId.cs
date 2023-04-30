@@ -1,22 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
+using System.Collections.ObjectModel;
 using YYHEggEgg.Logger;
+using System.Diagnostics;
 
 namespace NewProtos
 {
-    public static class QueryCmdId
+    public class QueryCmdId
     {
+        public const string ProtoNamespace = "NewProtos";
+
         public static string ThisPath => AppDomain.CurrentDomain.BaseDirectory;
-        private static Dictionary<int, ProtoSerialize> serializers = new();
-        private static Dictionary<string, ProtoSerialize> serializers_queryByName = new();
-        private static Dictionary<string, int> protonameToCmdids = new();
+        private static ReadOnlyDictionary<int, string> cmdidToName;
+        private static ReadOnlyDictionary<string, int> nameToCmdid;
+        private static ReadOnlyDictionary<int, ProtoSerialize> serializers;
+        private static ReadOnlyDictionary<string, ProtoSerialize> serializers_queryByName;
 
         static QueryCmdId()
         {
+            #region CmdId
+            var _cmdidToName = new Dictionary<int, string>();
+            var _nameToCmdid = new Dictionary<string, int>();
+
             var cmdids = File.ReadAllLines("resources/protobuf/newcmdid.csv");
             foreach (var line in cmdids)
             {
@@ -24,20 +31,76 @@ namespace NewProtos
                 Debug.Assert(csvline.Length == 2);
                 string name = csvline[0].Trim();
                 int cmdid = int.Parse(csvline[1].Trim());
-                if (serializers.ContainsKey(cmdid))
+                if (_cmdidToName.ContainsKey(cmdid))
                 {
-                    Log.Warn($"{cmdid} multiples, dropped proto {name}", "Newprotos");
+                    Log.Warn($"{cmdid} multiples, dropped proto {name}", "OldProtos");
                     continue;
                 }
-                ProtoSerialize serializer = new(name);
-                serializers.Add(cmdid, serializer);
-                serializers_queryByName.Add(name, serializer);
-                protonameToCmdids.Add(name, cmdid);
+                _cmdidToName.Add(cmdid, name);
+                _nameToCmdid.Add(name, cmdid);
             }
+            #endregion
+
+            #region Serializers
+            Dictionary<int, ProtoSerialize> _serializers = new();
+            Dictionary<string, ProtoSerialize> _serializers_queryByName = new();
+
+#pragma warning disable CS8602 // 解引用可能出现空引用。
+            var messageTypes = from type in Assembly.GetAssembly(
+                Type.GetType($"{ProtoNamespace}.{nameof(GetPlayerTokenReq)}")).GetTypes()
+                               where type.Namespace == ProtoNamespace
+                               where type.GetInterface("IMessage") != null
+                               select type;
+#pragma warning restore CS8602 // 解引用可能出现空引用。
+
+            foreach (var type in messageTypes)
+            {
+                try
+                {
+                    var name = type.FullName?.Substring(ProtoNamespace.Length + 1);
+                    Log.Dbug($"Initializing Message: {name}", ProtoNamespace);
+                    ProtoSerialize serializer = new(name); // NewProtos.*
+                    if (_nameToCmdid.ContainsKey(name))
+                        _serializers.Add(_nameToCmdid[name], serializer);
+                    _serializers_queryByName.Add(name, serializer);
+                }
+                catch (Exception ex)
+                {
+                    Log.Warn($"Initialize ProtoSerialize: {type.Name} failed. Possibly that proto does not exist.", ProtoNamespace);
+                    Log.Dbug(ex.ToString(), ProtoNamespace);
+                    continue;
+                }
+            }
+            #endregion
+
+            cmdidToName = new(_cmdidToName);
+            nameToCmdid = new(_nameToCmdid);
+            serializers = new(_serializers);
+            serializers_queryByName = new(_serializers_queryByName);
+        }
+
+        public static bool TryGetProtonameFromCmdId(int cmdid, out string? protoname)
+        {
+            return cmdidToName.TryGetValue(cmdid, out protoname);
+        }
+
+        public static bool TryGetCmdIdFromProtoname(string protoname, out int cmdid)
+        {
+            return nameToCmdid.TryGetValue(protoname, out cmdid);
+        }
+
+        public static string GetProtonameFromCmdId(int cmdid)
+        {
+            return cmdidToName[cmdid];
         }
 
         public static int GetCmdIdFromProtoname(string protoname)
-            => protonameToCmdids[protoname];
+        {
+            return nameToCmdid[protoname];
+        }
+
+        public static bool ProtoExists(string protoname) =>
+            serializers_queryByName.ContainsKey(protoname);
 
         public static bool TryGetSerializer(int cmdid, out ProtoSerialize serializer)
         {
@@ -62,36 +125,26 @@ namespace NewProtos
             }
             else
             {
-                Type? prototype = Type.GetType($"NewProtos.{protoname}");
-                if (prototype == null)
-                {
-                    serializer = ProtoSerialize.Empty;
-                    return false;
-                }
-                else
-                {
-                    serializer = new ProtoSerialize(prototype);
-                    serializers_queryByName.Add(protoname, serializer);
-                    return true;
-                }
-            }
-        }
-
-        public static bool ProtoExists(string protoname)
-        {
-            if (protonameToCmdids.ContainsKey(protoname)) return true;
-            else
-            {
-                Type? prototype = Type.GetType($"NewProtos.{protoname}");
-                if (prototype != null)
-                    serializers_queryByName.Add(protoname, new(prototype));
-                return prototype != null;
+                serializer = ProtoSerialize.Empty;
+                return false;
             }
         }
 
         public static string Initialize()
         {
-            return $"NewProtos initialized, {serializers.Count} serializers.";
+            return $"OldProtos QueryCmdId initialized, CmdId x{nameToCmdid.Count}, {serializers_queryByName.Count} serializers.";
         }
+
+        /// <summary>
+        /// Get all loaded protobuf names.
+        /// </summary>
+        public static string[] GetAllLoadedProtoNames()
+            => serializers_queryByName.Keys.ToArray();
+
+        /// <summary>
+        /// Get all loaded protobuf names. Only returns protobufs which have CmdId. 
+        /// </summary>
+        public static string[] GetAllLoadedCmdNames()
+            => nameToCmdid.Keys.ToArray();
     }
 }
