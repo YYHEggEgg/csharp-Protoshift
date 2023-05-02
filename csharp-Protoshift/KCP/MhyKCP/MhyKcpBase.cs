@@ -14,7 +14,7 @@ namespace csharp_Protoshift.MhyKCP
 {
     public class MhyKcpBase : IDisposable
     {
-        public const int KCP_RefreshMilliseconds = 5;
+        public const int KCP_RefreshMilliseconds = 2;
 
         public enum ConnectionState
         {
@@ -26,8 +26,8 @@ namespace csharp_Protoshift.MhyKCP
         public ConnectionState State { get { return _State; } }
         public uint Conv { get { return _Conv; } }
         public uint Token { get { return _Token; } }
-        // Default connection timeout is 30 seconds
-        public int Timeout = 30000;
+        // Default connection timeout is turned to 15 seconds
+        public int Timeout = 15000;
 
         protected bool _Disposed = false;
         protected uint _Conv;
@@ -60,7 +60,8 @@ namespace csharp_Protoshift.MhyKCP
 
             // Added
             // IKCP.ikcp_nodelay(ikcpHandle, 1, 10, 2, 1);
-            cskcpHandle.NoDelay(1, KCP_RefreshMilliseconds, 2, 1);
+            // modified because mhy is using far more aggressive code, or 力大砖飞 mode
+            cskcpHandle.NoDelay(1, KCP_RefreshMilliseconds, 1, 1);
             // IKCP.ikcp_wndsize(ikcpHandle, 256, 256);
             cskcpHandle.WndSize(256, 256);
 
