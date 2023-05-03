@@ -27,9 +27,11 @@ namespace csharp_Protoshift
                 use_Console_Wrapper: true,
                 use_Working_Directory: false,
 #if DEBUG
-                is_Debug_LogLevel: true
+                global_Minimum_LogLevel: LogLevel.Verbose,
+                console_Minimum_LogLevel: LogLevel.Information
 #else
-                is_Debug_LogLevel: false
+                global_Minimum_LogLevel: LogLevel.Information,
+                console_Minimum_LogLevel: LogLevel.Warning
 #endif
                 ));
             Log.Info("csharp-Protoshift v1.0.0", "Entry");
