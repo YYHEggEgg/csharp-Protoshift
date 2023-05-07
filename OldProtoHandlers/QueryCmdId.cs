@@ -33,7 +33,7 @@ namespace OldProtos
                 int cmdid = int.Parse(csvline[1].Trim());
                 if (_cmdidToName.ContainsKey(cmdid))
                 {
-                    Log.Warn($"{cmdid} multiples, dropped proto {name}", "OldProtos");
+                    Log.Warn($"{cmdid} multiples, dropped proto {name}", ProtoNamespace);
                     continue;
                 }
                 _cmdidToName.Add(cmdid, name);
