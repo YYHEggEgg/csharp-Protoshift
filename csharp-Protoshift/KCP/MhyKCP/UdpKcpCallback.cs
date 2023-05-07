@@ -25,8 +25,9 @@ namespace csharp_Protoshift.MhyKCP
 
         public void Output(IMemoryOwner<byte> buffer, int avalidLength)
         {
-            if (ipEp != null) udpSock.Send(buffer.Memory.Span, ipEp);
-            else udpSock.Send(buffer.Memory.Span);
+            if (ipEp != null) udpSock.Send(buffer.Memory.Slice(0, avalidLength).Span, ipEp);
+            else udpSock.Send(buffer.Memory.Slice(0, avalidLength).Span);
+            buffer.Dispose();
         }
     }
 
@@ -43,7 +44,8 @@ namespace csharp_Protoshift.MhyKCP
 
         public async void Output(IMemoryOwner<byte> buffer, int avalidLength)
         {
-            await udpSock.SendAsync(buffer.Memory, ipEp);
+            await udpSock.SendAsync(buffer.Memory.Slice(0, avalidLength), ipEp);
+            buffer.Dispose();
         }
     }
 
@@ -60,7 +62,8 @@ namespace csharp_Protoshift.MhyKCP
 
         public async void Output(IMemoryOwner<byte> buffer, int avalidLength)
         {
-            await udpSock.SendToAsync(buffer.Memory, ipEp);
+            await udpSock.SendToAsync(buffer.Memory.Slice(0, avalidLength), ipEp);
+            buffer.Dispose();
         }
     }
 }
