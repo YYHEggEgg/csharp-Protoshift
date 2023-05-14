@@ -1,4 +1,7 @@
-﻿using csharp_Protoshift.Obsoleted.SpecialUdp;
+﻿#define KCP_PACKET_AUDIT
+
+using csharp_Protoshift.MhyKCP;
+using csharp_Protoshift.Obsoleted.SpecialUdp;
 using csharp_Protoshift.SpecialUdp;
 using System;
 using System.Buffers;
@@ -12,6 +15,7 @@ using System.Threading.Tasks;
 
 namespace csharp_Protoshift.MhyKCP
 {
+    [Obsolete]
     public class UdpKcpCallback : IKcpCallback
     {
         private readonly UdpClient udpSock;
@@ -23,7 +27,7 @@ namespace csharp_Protoshift.MhyKCP
             this.ipEp = ipEp;
         }
 
-        public void Output(IMemoryOwner<byte> buffer, int avalidLength)
+        public void Output(IMemoryOwner<byte> buffer, int avalidLength, bool isKcpPacket = true)
         {
             if (ipEp != null) udpSock.Send(buffer.Memory.Slice(0, avalidLength).Span, ipEp);
             else udpSock.Send(buffer.Memory.Slice(0, avalidLength).Span);
@@ -31,6 +35,7 @@ namespace csharp_Protoshift.MhyKCP
         }
     }
 
+    [Obsolete]
     public class ConcurrentUdpKcpCallback : IKcpCallback
     {
         private readonly ConcurrentUdpClient udpSock;
@@ -42,7 +47,7 @@ namespace csharp_Protoshift.MhyKCP
             this.ipEp = ipEp;
         }
 
-        public async void Output(IMemoryOwner<byte> buffer, int avalidLength)
+        public async void Output(IMemoryOwner<byte> buffer, int avalidLength, bool isKcpPacket = true)
         {
             await udpSock.SendAsync(buffer.Memory.Slice(0, avalidLength), ipEp);
             buffer.Dispose();
@@ -60,10 +65,13 @@ namespace csharp_Protoshift.MhyKCP
             this.ipEp = ipEp;
         }
 
-        public async void Output(IMemoryOwner<byte> buffer, int avalidLength)
+        public void Output(IMemoryOwner<byte> buffer, int avalidLength, bool isKcpPacket = true)
         {
-            await udpSock.SendToAsync(buffer.Memory.Slice(0, avalidLength), ipEp);
-            buffer.Dispose();
+            DateTime req_SendTime = DateTime.Now;
+            udpSock.SendToAsync(buffer.Memory.Slice(0, avalidLength), ipEp).Wait();
+            if (isKcpPacket) 
+                KcpPacketAudit.PushPacket(req_SendTime, buffer.Memory, avalidLength);
+            // buffer.Dispose();
         }
     }
 }
