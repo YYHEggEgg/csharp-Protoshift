@@ -25,7 +25,11 @@ namespace System.Net.Sockets.Kcp.Simple
         {
             client = new UdpClient();
             client.Connect(endPoint);
+#if !MIHOMO_KCP
+            kcp = new SimpleSegManager.Kcp(2001, this);
+#else
             kcp = new SimpleSegManager.Kcp(2001, 10000, this);
+#endif
             this.EndPoint = endPoint;
             BeginRecv();
         }
