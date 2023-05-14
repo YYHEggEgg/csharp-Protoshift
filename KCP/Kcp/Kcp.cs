@@ -11,14 +11,21 @@ namespace System.Net.Sockets.Kcp
         /// from the same connection.
         /// </summary>
         /// <param name="conv_"></param>
+#if MIHOMO_KCP
         /// <param name="token_">
         /// miHoMo KCP modify: +IUINT32 token, +
         /// <para/>Change line(s) in file compare: ikcp.h, -346 +347; ikcp.c, -234 +234
         /// </param>
+#endif
         /// <param name="callback"></param>
         /// <param name="rentable">可租用内存的回调</param>
+#if !MIHOMO_KCP
+        public Kcp(uint conv_, IKcpCallback callback, IRentable rentable = null)
+            : base(conv_)
+#else
         public Kcp(uint conv_, uint token_, IKcpCallback callback, IRentable rentable = null)
             : base(conv_, token_)
+#endif
         {
             callbackHandle = callback;
             this.rentable = rentable;
