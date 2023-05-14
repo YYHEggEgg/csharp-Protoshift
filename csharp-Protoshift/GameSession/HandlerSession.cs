@@ -139,6 +139,7 @@ namespace csharp_Protoshift.GameSession
             }
 
             var rtn = GetPacketResult(packet, cmdid, isNewCmdid, body_offset, body_length);
+            Debug.Assert(rtn.GetUInt16(rtn.Length - 2) == 0x89AB);
 
             if (!isNewCmdid && cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
                 XorDecrypt(ref rtn, fallbackToDispatchKey: true);

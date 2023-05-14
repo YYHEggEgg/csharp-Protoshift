@@ -252,7 +252,7 @@ namespace System.Net.Sockets.Kcp
         internal class OutputQ : QueuePipe<(BufferOwner Owner, int Count)>,
             IKcpCallback
         {
-            public void Output(BufferOwner buffer, int avalidLength)
+            public void Output(BufferOwner buffer, int avalidLength, bool isKcpPacket = true)
             {
                 Write((buffer, avalidLength));
             }
