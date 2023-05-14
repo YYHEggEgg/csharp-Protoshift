@@ -33,7 +33,7 @@ namespace System.Net.Sockets.Kcp.Simple
         public SimpleSegManager.Kcp kcp { get; }
         public IPEndPoint EndPoint { get; set; }
 
-        public void Output(IMemoryOwner<byte> buffer, int avalidLength)
+        public void Output(IMemoryOwner<byte> buffer, int avalidLength, bool isKcpPacket = true)
         {
             var s = buffer.Memory.Span.Slice(0, avalidLength).ToArray();
             client.SendAsync(s, s.Length);

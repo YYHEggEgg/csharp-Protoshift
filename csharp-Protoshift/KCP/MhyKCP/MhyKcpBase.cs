@@ -72,6 +72,7 @@ namespace csharp_Protoshift.MhyKCP
 
             cskcpHandle.SegmentManager = new SimpleSegManager();
 
+            checkTime_refresh = true;
             Task.Run(BackgroundUpdate);
         }
 
@@ -81,7 +82,7 @@ namespace csharp_Protoshift.MhyKCP
 
             byte[] h = new Handshake(Handshake.MAGIC_CONNECT, _Conv, _Token, ConnectData).AsBytes();
             var buf = new KcpInnerBuffer(h);
-            OutputCallback.Output(buf, h.Length);
+            OutputCallback.Output(buf, h.Length, false);
         }
 
         public async Task ConnectAsync()
@@ -165,7 +166,7 @@ namespace csharp_Protoshift.MhyKCP
                             _Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
 
                             var sendBackConv = new Handshake(Handshake.MAGIC_SEND_BACK_CONV, _Conv, _Token).AsBytes();
-                            OutputCallback.Output(new KcpInnerBuffer(sendBackConv), sendBackConv.Length);
+                            OutputCallback.Output(new KcpInnerBuffer(sendBackConv), sendBackConv.Length, false);
                             Initialize();
 
                             return 0;
@@ -301,7 +302,7 @@ namespace csharp_Protoshift.MhyKCP
                 _State = ConnectionState.CLOSED;
 
                 var disconn = new Handshake(Handshake.MAGIC_DISCONNECT, _Conv, _Token).AsBytes();
-                OutputCallback.Output(new KcpInnerBuffer(disconn), disconn.Length);
+                OutputCallback.Output(new KcpInnerBuffer(disconn), disconn.Length, false);
 
                 return;
             }
@@ -325,7 +326,7 @@ namespace csharp_Protoshift.MhyKCP
             token = token == 0 ? _Token : token;
 
             byte[] disconnect = new Handshake(Handshake.MAGIC_DISCONNECT, conv, token, data).AsBytes();
-            OutputCallback.Output(new KcpInnerBuffer(disconnect), disconnect.Length);
+            OutputCallback.Output(new KcpInnerBuffer(disconnect), disconnect.Length, false);
             _State = ConnectionState.DISCONNECTED;
         }
 
