@@ -94,8 +94,11 @@ namespace System.Net.Sockets.Kcp
         /// miHoMo KCP modify: +IUINT32 token, +
         /// <para/>Change line(s) in file compare: ikcp.h, -346 +347; ikcp.c, -234 +234
         /// </summary>
-        // public KcpIO(uint conv_) : base(conv_)
+#if !MIHOMO_KCP
+        public KcpIO(uint conv_) : base(conv_)
+#else
         public KcpIO(uint conv_, uint token_) : base(conv_, token_)
+#endif
         {
             outq = new OutputQ();
             callbackHandle = outq;
