@@ -116,6 +116,8 @@ namespace csharp_Protoshift.MhyKCP
             }
         }
 
+        // The time offset from ikcp_check has been not longer valid for ikcp_send or ikcp_input called
+        protected bool checkTime_refresh = false;
         public virtual int Input(byte[] buffer)
         {
             switch (_State)
@@ -147,6 +149,7 @@ namespace csharp_Protoshift.MhyKCP
                         // lock (ikcpLock) status = IKCP.ikcp_input(ikcpHandle, buffer, buffer.Length);
 #pragma warning disable CS8602 // 解引用可能出现空引用。
                         int status = cskcpHandle.Input(buffer);
+                        checkTime_refresh = true;
 #pragma warning restore CS8602 // 解引用可能出现空引用。
                         if (status == -1)
                         {
@@ -211,6 +214,7 @@ namespace csharp_Protoshift.MhyKCP
             // int ret = IKCP.ikcp_send(ikcpHandle, buffer, buffer.Length);
 #pragma warning disable CS8602 // 解引用可能出现空引用。
             int ret = cskcpHandle.Send(buffer);
+            checkTime_refresh = true;
 #pragma warning restore CS8602 // 解引用可能出现空引用。
             // Flush();
             return ret;
@@ -266,25 +270,34 @@ namespace csharp_Protoshift.MhyKCP
             return ret;
         }
 
-        public void Update()
-        {
-            // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
-#pragma warning disable CS8602 // 解引用可能出现空引用。
-            cskcpHandle.Update(DateTime.UtcNow);
-#pragma warning restore CS8602 // 解引用可能出现空引用。
-        }
-
+        // The time ikcp_update should be called get from ikcp_check
+        protected DateTimeOffset update_next_time = DateTimeOffset.MinValue;
         public async Task BackgroundUpdate()
         {
-            if (_Disposed || _State != ConnectionState.CONNECTED) return;
+            if (_Disposed || _State != ConnectionState.CONNECTED || cskcpHandle == null) return;
 
             // int dur;
             // lock (ikcpLock) dur = (int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF);
             // DateTimeOffset dur = cskcpHandle.Check(DateTime.UtcNow);
+            
             // From author:
             // 如果你不需要管理1000个以上的 kcp对象的话，还是不要用check比较好，这部分代码写起来比较烦。
-            await Task.Delay(KCP_RefreshMilliseconds);
-            Update();
+            // await Task.Delay(KCP_RefreshMilliseconds);
+            // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
+            // cskcpHandle.Update(DateTimeOffset.UtcNow);
+
+            // Below is new code with ikcp_check
+            if (checkTime_refresh || DateTimeOffset.UtcNow >= update_next_time)
+            {
+                checkTime_refresh = false;
+                var nowtime = DateTimeOffset.UtcNow;
+                // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
+                cskcpHandle.Update(nowtime);
+                update_next_time = cskcpHandle.Check(nowtime);
+            }
+
+            if (!checkTime_refresh) await Task.Delay(KCP_RefreshMilliseconds);
+            else if (KCP_RefreshMilliseconds >= 15) await Task.Delay(KCP_RefreshMilliseconds);
 
             await Task.Run(BackgroundUpdate);
         }
