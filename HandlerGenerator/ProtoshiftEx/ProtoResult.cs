@@ -76,6 +76,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         public List<MapResult> mapFields { get; set; } = new();
         public List<OneofResult> oneofFields { get; set; } = new();
         public List<EnumResult> enumFields { get; set; } = new();
+        public List<MessageResult> messageFields { get; set; } = new();
 
         public override string ToString()
         {
@@ -96,6 +97,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             foreach (EnumResult _enum in enumFields)
             {
                 result += $"\nInMessage {_enum}";
+            }
+            foreach (MessageResult innermsg in messageFields)
+            {
+                result += $"\nInMessage {innermsg}\n---Inner message end---";
             }
             return result;
         }
