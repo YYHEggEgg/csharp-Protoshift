@@ -2,6 +2,7 @@ using YYHEggEgg.Logger;
 using System.Diagnostics;
 using csharp_Protoshift.Enhanced.Handlers.Generator;
 using System.Collections.Concurrent;
+using System.IO;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Protoshift Ex v1");
@@ -18,10 +19,10 @@ Log.Warn("Build is currently only supported on Windows!", "HandlerGenerator");
 Log.Warn("PLEASE USE THIS PROGRAM ALONG WITH FULL SOURCE CODE!", "HandlerGenerator");
 string workingdir = Environment.CurrentDirectory;
 DirectoryInfo _workingdirinfo = new(workingdir);
-Log.Info($"Current directory is: {workingdir}.");
+Log.Dbug($"Current directory is: {workingdir}.");
 bool passcheck = true;
 #region Find proto2json
-if (_workingdirinfo.Name == "csharp-Protoshift" 
+if (_workingdirinfo.Name == "csharp-Protoshift"
     && Directory.Exists($"{workingdir}\\HandlerGenerator\\proto2json"))
 {
     workingdir = $"{workingdir}\\HandlerGenerator";
@@ -86,18 +87,21 @@ string arch = Environment.Is64BitOperatingSystem ? "64" : "32";
 #region Windows
 if (os.StartsWith("Win"))
 {
+    Log.Dbug($"Found OS Type: Windows x{arch}.", "OuterInvoke");
     proto2json_invokestr = $"{proto2jsondir}\\go-proto2json_win{arch}.exe";
 }
 #endregion
 #region macOS
 else if (os.StartsWith("Darwin"))
 {
+    Log.Dbug($"Found OS Type: macOS x{arch}.", "OuterInvoke");
     proto2json_invokestr = $"{proto2jsondir}\\go-proto2json_mac{arch}";
 }
 #endregion
 #region Linux
 else if (os.StartsWith("Linux"))
 {
+    Log.Dbug($"Found OS Type: Linux x{arch}.", "OuterInvoke");
     proto2json_invokestr = $"{proto2jsondir}\\go-proto2json_linux{arch}";
 }
 #endregion
@@ -113,6 +117,7 @@ Process p = Process.Start(proto2json_invokestr);
 p.WaitForExit();
 pinvokewatch.Stop();
 Log.Info($"proto2json exited. Total execute time is {pinvokewatch.Elapsed}.", "OuterInvoke");
+#region Fatal exit handle
 if (p.ExitCode != 0)
 {
     Log.Erro($"proto2json exited with error code {p.ExitCode}. ", "OuterInvoke");
@@ -120,6 +125,7 @@ if (p.ExitCode != 0)
     Console.ReadLine();
     Environment.Exit(3300);
 }
+#endregion
 string newoutputdir = $"{workingdir}\\Proto2json_Output\\new";
 string oldoutputdir = $"{workingdir}\\Proto2json_Output\\old";
 if (!Directory.Exists(newoutputdir) || !Directory.Exists(oldoutputdir))
@@ -129,11 +135,54 @@ if (!Directory.Exists(newoutputdir) || !Directory.Exists(oldoutputdir))
     Environment.Exit(245);
 }
 #endregion
-ConcurrentDictionary<string, 
-    (MessageResult newresult, MessageResult oldresult)> messageResults;
-ConcurrentDictionary<string, 
-    (EnumResult newresult, EnumResult oldresult)> enumResults;
+ConcurrentDictionary<string,
+    (MessageResult? newresult, MessageResult? oldresult)> messageResults = new();
+ConcurrentDictionary<string,
+    (EnumResult? newresult, EnumResult? oldresult)> enumResults = new();
 #region Analyze Output
+#region Enumerate Files
+var newprotojsons = Directory.EnumerateFiles(newoutputdir);
+var oldprotojsons = Directory.EnumerateFiles(newoutputdir);
+Parallel.ForEach(newprotojsons, path =>
+{
+    ProtoJsonResult analyzeResult = JsonAnalyzer.AnalyzeProtoJson(File.ReadAllText(path));
+    foreach (var message in analyzeResult.messageBodys)
+    {
+        // We suppose that there aren't messages/enums with the same name.
+        try
+        {
+            messageResults[message.messageName] = (newresult: message, oldresult: null);
+        }
+        catch (Exception ex)
+        {
+            Log.Warn($"Proto {message.messageName} in {path} is skipped for error: {ex}. ", "ProtoJson_Enumerate(NewProtos)");
+            return;
+        }
+    }
+});
+Parallel.ForEach(oldprotojsons, path =>
+{
+    ProtoJsonResult analyzeResult = JsonAnalyzer.AnalyzeProtoJson(File.ReadAllText(path));
+    foreach (var message in analyzeResult.messageBodys)
+    {
+        try
+        {
+            if (messageResults.TryGetValue(message.messageName, out var value))
+            {
+                Debug.Assert(value.oldresult == null);
+                messageResults[message.messageName] = (newresult: value.newresult, oldresult: message);
+            }
+        }
+        catch (Exception ex)
+        {
+            Log.Warn($"Proto {message.messageName} in {path} is skipped for error: {ex}. ", "ProtoJson_Enumerate(OldProtos)");
+            return;
+        }
+    }
+});
+#endregion
+#region Generate String Pool
 
 #endregion
-Console.ReadLine();
+#endregion
+Console.ReadLine();             
