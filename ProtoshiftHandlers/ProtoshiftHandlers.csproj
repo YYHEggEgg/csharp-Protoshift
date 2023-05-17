@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.1" />
     <PackageReference Include="Google.Protobuf" Version="3.22.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
     <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />
-    <ProjectReference Include="..\CSharp-Logger\CSharp-Logger.csproj" />
   </ItemGroup>
 
 </Project>
