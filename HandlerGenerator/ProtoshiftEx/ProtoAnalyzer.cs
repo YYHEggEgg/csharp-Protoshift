@@ -212,7 +212,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
 
                 foreach (var ob in oneofFields)
                 {
-                    var innerCommonResult = Analyze_CommonFieldWorker(mb);
+                    var innerCommonResult = Analyze_InOneof_CommonFieldWorker(ob);
                     if (innerCommonResult != null)
                         oneofResult.oneofInnerFields.Add(innerCommonResult);
                 }
@@ -220,6 +220,46 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             else return null;
         }
+        #region Common Field in Oneof
+        // Input example:
+        /*
+        {
+          "Type": "uint32",
+          "FieldName": "mist_trial_avatar_id",
+          "FieldNumber": "8",
+          "FieldOptions": null,
+          "Comments": null,
+          "InlineComment": null,
+          "Meta": {
+            "Pos": {
+              "Filename": "",
+              "Offset": 401,
+              "Line": 16,
+              "Column": 13
+            },
+            "LastPos": {
+              "Filename": "",
+              "Offset": 0,
+              "Line": 0,
+              "Column": 0
+            }
+          }
+        }
+         */
+        private static CommonResult? Analyze_InOneof_CommonFieldWorker(JToken? mb)
+        {
+            if (mb["FieldName"] != null)
+            {
+                var commonResult = new CommonResult();
+                commonResult.fieldType = (string)mb["Type"];
+                commonResult.fieldName = (string)mb["FieldName"];
+
+                commonResult.isImportType = !nativeTypes.Contains(commonResult.fieldType);
+                return commonResult;
+            }
+            else return null;
+        }
+        #endregion
         #endregion
         #region MapField
         // Input example:
@@ -291,6 +331,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     if (oneofResult != null) messageResult.oneofFields.Add(oneofResult);
                     var mapResult = Analyze_MapWorker(mb);
                     if (mapResult != null) messageResult.mapFields.Add(mapResult);
+                    var innerMessageResult = Analyze_Message_DispatchWorker(mb);
+                    if (innerMessageResult != null) messageResult.messageFields.Add(innerMessageResult);
                 }
                 return messageResult;
             }
