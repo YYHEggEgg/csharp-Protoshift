@@ -5,6 +5,14 @@ using System.Collections.Concurrent;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Protoshift Ex v1");
+Log.Initialize(new LoggerConfig(
+    max_Output_Char_Count: -1,
+    use_Console_Wrapper: false,
+    use_Working_Directory: true,
+    console_Minimum_LogLevel: LogLevel.Debug,
+    global_Minimum_LogLevel: LogLevel.Verbose
+));
+
 Log.Info("It is recommended to invoke this program with dotnet run.", "HandlerGenerator");
 Log.Warn("Build is currently only supported on Windows!", "HandlerGenerator");
 Log.Warn("PLEASE USE THIS PROGRAM ALONG WITH FULL SOURCE CODE!", "HandlerGenerator");
