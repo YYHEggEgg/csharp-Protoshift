@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
 ################################################################################
 
@@ -23,4 +23,6 @@
 /HandlerGenerator/proto2json/proto2json_output
 /ProtoshiftHandlers/bin
 /ProtoshiftHandlers/obj
+/.vscode
 /HandlerGenerator/Proto2json_Output
+/HandlerGenerator/.vscode
