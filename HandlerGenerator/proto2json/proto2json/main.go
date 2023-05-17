@@ -11,8 +11,8 @@ import (
 )
 
 const (
-	NEWPROTO_DIR  = "..\\..\\NewProtoHandlers\\Google.Protobuf\\Protos"
-	OLDPROTO_DIR  = "..\\..\\NewProtoHandlers\\Google.Protobuf\\Protos"
+	NEWPROTO_DIR  = "..\\..\\NewProtoHandlers\\Google.Protobuf\\Protos\\"
+	OLDPROTO_DIR  = "..\\..\\OldProtoHandlers\\Google.Protobuf\\Protos\\"
 	OUTPUT_DIR = "..\\Proto2json_Output\\"
 )
 
