@@ -13,6 +13,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         public string fieldName { get; set; } = "";
         public bool IsRepeatedField { get; set; } = false;
         public bool isImportType { get; set; } = false;
+
+        public override string ToString()
+        {
+            return $"Field Type: {fieldType}, Field Name: {fieldName}, Is Repeated: {IsRepeatedField}, Is Import Type: {isImportType}";
+        }
     }
 
     public class MapResult
@@ -22,18 +27,46 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         public string valueType { get; set; } = "";
         public bool valueIsImportType { get; set; } = false;
         public string fieldName { get; set; } = "";
+
+        public override string ToString()
+        {
+            return $"Map Field Name: {fieldName}, Key Type: {keyType}, Is Import Type: {keyIsImportType}, Value Type: {valueType}, Is Import Type: {valueIsImportType}";
+        }
     }
 
     public class OneofResult
     {
         public string oneofEntryName { get; set; } = "";
         public List<CommonResult> oneofInnerFields { get; set; } = new();
+
+        public override string ToString()
+        {
+            string result = "";
+            result += $"Oneof Field Name: {oneofEntryName}\nStart Oneof Fields:-----------\n";
+            foreach (CommonResult common in oneofInnerFields)
+            {
+                result += $"{common}\n";
+            }
+            result += "End Oneof FIelds-------------------";
+            return result;
+        }
     }
 
     public class EnumResult
     {
         public string enumName { get; set; } = "";
         public List<string> enumNodes { get; set; } = new();
+
+        public override string ToString()
+        {
+            string result = "";
+            result += $"Enum: {enumName}";
+            foreach (string node in enumNodes)
+            {
+                result += $"\nField Name: {node}";
+            }
+            return result;
+        }
     }
 
     public class MessageResult
@@ -43,6 +76,29 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         public List<MapResult> mapFields { get; set; } = new();
         public List<OneofResult> oneofFields { get; set; } = new();
         public List<EnumResult> enumFields { get; set; } = new();
+
+        public override string ToString()
+        {
+            string result = "";
+            result += $"Message: {messageName}";
+            foreach (CommonResult common in commonFields)
+            {
+                result += $"\n{common}";
+            }
+            foreach (MapResult map in mapFields)
+            {
+                result += $"\n{map}";
+            }
+            foreach (OneofResult oneof in oneofFields)
+            {
+                result += $"\n{oneof}";
+            }
+            foreach (EnumResult _enum in enumFields)
+            {
+                result += $"\nInMessage {_enum}";
+            }
+            return result;
+        }
     }
 
     public class ProtoJsonResult
@@ -55,40 +111,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             string result = "";
             foreach (MessageResult message in messageBodys)
             {
-                result += $"Message: {message.messageName}\n";
-                foreach (CommonResult common in message.commonFields)
-                {
-                    result += $"Field Type: {common.fieldType}, Field Name: {common.fieldName}, Is Repeated: {common.IsRepeatedField}, Is Import Type: {common.isImportType}\n";
-                }
-                foreach (MapResult map in message.mapFields)
-                {
-                    result += $"Map Field Name: {map.fieldName}, Key Type: {map.keyType}, Is Import Type: {map.keyIsImportType}, Value Type: {map.valueType}, Is Import Type: {map.valueIsImportType}\n";
-                }
-                foreach (OneofResult oneof in message.oneofFields)
-                {
-                    result += $"Oneof Field Name: {oneof.oneofEntryName}\nStart Oneof Fields:-----------\n";
-                    foreach (CommonResult common in oneof.oneofInnerFields)
-                    {
-                        result += $"Field Type: {common.fieldType}, Field Name: {common.fieldName}, Is Import Type: {common.isImportType}\n";
-                    }
-                    result += "End Oneof FIelds-------------------\n";
-                }
-                foreach (EnumResult _enum in message.enumFields)
-                {
-                    result += $"InMessage Enum: {_enum.enumName}\n";
-                    foreach (string node in _enum.enumNodes)
-                    {
-                        result += $"Field Name: {node}\n";
-                    }
-                }
+                result += $"{message}\n";
             }
             foreach (EnumResult _enum in enumBodys)
             {
-                result += $"Enum: {_enum.enumName}\n";
-                foreach (string node in _enum.enumNodes)
-                {
-                    result += $"Field Name: {node}\n";
-                }
+                result += $"{_enum}\n";
             }
             return result;
         }
