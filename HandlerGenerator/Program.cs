@@ -112,7 +112,11 @@ else
     Environment.Exit(100);
 }
 #endregion
-
+ProcessStartInfo startInfo = new ProcessStartInfo(proto2json_invokestr)
+{
+    // Not setting this will cause runtime error: invalid memory address or nil pointer dereference
+    WorkingDirectory = $"{Environment.CurrentDirectory}/proto2json"
+};
 Process p = Process.Start(proto2json_invokestr);
 p.WaitForExit();
 pinvokewatch.Stop();
