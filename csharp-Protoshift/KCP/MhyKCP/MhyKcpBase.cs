@@ -231,19 +231,22 @@ namespace csharp_Protoshift.MhyKCP
             if (_State != ConnectionState.CONNECTED)
                 throw new SocketException(10057);
 
-            // int size = IKCP.ikcp_peeksize(ikcpHandle);
+            lock (cskcp_recvLock)
+            {
+                // int size = IKCP.ikcp_peeksize(ikcpHandle);
 #pragma warning disable CS8602 // 解引用可能出现空引用。
-            int size = cskcpHandle.PeekSize();
+                int size = cskcpHandle.PeekSize();
 #pragma warning restore CS8602 // 解引用可能出现空引用。
-            if (size < 0) return null;
+                if (size < 0) return null;
 
-            var buffer = new byte[size];
-            // int trueSize = IKCP.ikcp_recv(ikcpHandle, buffer, buffer.Length);
-            int trueSize;
-            lock (cskcp_recvLock) trueSize = cskcpHandle.Recv(buffer);
-            if (trueSize != size) throw new Exception("Unexpected state");
+                var buffer = new byte[size];
+                // int trueSize = IKCP.ikcp_recv(ikcpHandle, buffer, buffer.Length);
+                int trueSize;
+                trueSize = cskcpHandle.Recv(buffer);
+                if (trueSize != size) throw new Exception("Unexpected state");
 
-            return buffer;
+                return buffer;
+            }
         }
 
         public byte[]? Receive(bool nonblock = false)
