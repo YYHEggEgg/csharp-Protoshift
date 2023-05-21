@@ -79,7 +79,8 @@ namespace csharp_Protoshift.SpecialUdp
                 byte[] rtn = new byte[result.ReceivedBytes];
                 Buffer.BlockCopy(buffer, 0, rtn, 0, result.ReceivedBytes);
 #if SOCKET_UDP_PACKET_CONTENT_VERBOSE
-                Log.Verb($"Received packet content from {result.RemoteEndPoint}: ---{Convert.ToHexString(rtn)}", nameof(SocketUdpClient));
+                _ = Task.Run(() => 
+                    Log.Verb($"Received packet content ({result.ReceivedBytes} bytes) from {result.RemoteEndPoint}: ---{Convert.ToHexString(rtn)}", nameof(SocketUdpClient)));
 #endif
                 _memoryPool.Return(buffer);
                 receiveResult.Buffer = rtn;
@@ -130,7 +131,8 @@ namespace csharp_Protoshift.SpecialUdp
                 Log.Verb($"Sent {result} bytes to {ipEndPoint} in {stopwatch.ElapsedMilliseconds}ms", nameof(SocketUdpClient));
 #endif
 #if SOCKET_UDP_PACKET_CONTENT_VERBOSE
-                Log.Verb($"Sent packet content to {ipEndPoint}: ---{Convert.ToHexString(buffer.Span)}", nameof(SocketUdpClient));
+                _ = Task.Run(() =>
+                    Log.Verb($"Sent packet content ({buffer.Length} bytes) to {ipEndPoint}: ---{Convert.ToHexString(buffer.Span)}", nameof(SocketUdpClient)));
 #endif
 
                 return result;
@@ -170,7 +172,8 @@ namespace csharp_Protoshift.SpecialUdp
                 Log.Verb($"Sent {result} bytes to {ipEndPoint} in {stopwatch.ElapsedMilliseconds}ms", nameof(SocketUdpClient));
 #endif
 #if SOCKET_UDP_PACKET_CONTENT_VERBOSE
-                Log.Verb($"Sent packet content to {ipEndPoint}: ---{Convert.ToHexString(buffer)}", nameof(SocketUdpClient));
+                _ = Task.Run(() =>
+                    Log.Verb($"Sent packet content ({buffer.Length} bytes) to {ipEndPoint}: ---{Convert.ToHexString(buffer)}", nameof(SocketUdpClient)));
 #endif
 
                 return result;

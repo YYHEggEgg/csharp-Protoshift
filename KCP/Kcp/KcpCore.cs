@@ -95,8 +95,11 @@ namespace System.Net.Sockets.Kcp
         public const int IKCP_INTERVAL = 100;
         // miHoMo KCP modify: IKCP_OVERHEAD = 28
         // Change line(s) in file compare: ikcp.c, -40 +40
-        // public const int IKCP_OVERHEAD = 24;
+#if !MIHOMO_KCP
+        public const int IKCP_OVERHEAD = 24;
+#else
         public const int IKCP_OVERHEAD = 28;
+#endif
         public const int IKCP_DEADLINK = 20;
         public const int IKCP_THRESH_INIT = 2;
         public const int IKCP_THRESH_MIN = 2;
@@ -129,11 +132,13 @@ namespace System.Net.Sockets.Kcp
         /// 频道号
         /// </summary>
         public uint conv { get; protected set; }
+#if MIHOMO_KCP
         /// <summary>
         /// miHoMo KCP modify: IUINT32 +token, +
         /// <para/>Change line(s) in file compare: ikcp.h, -291 +292
         /// </summary>
         public uint token { get; protected set; }
+#endif
         /// <summary>
         /// 最大传输单元（Maximum Transmission Unit，MTU）
         /// </summary>
@@ -309,16 +314,22 @@ namespace System.Net.Sockets.Kcp
 
         public ISegmentManager<Segment> SegmentManager { get; set; }
 
+#if MIHOMO_KCP
         /// <summary>
         /// miHoMo KCP modify: +IUINT32 token, +
         /// <para/>Change line(s) in file compare: ikcp.h, -346 +347; ikcp.c, -234 +234
         /// </summary>
         public KcpCore(uint conv_, uint token_)
+#else
+        public KcpCore(uint conv_)
+#endif
         {
             conv = conv_;
+#if MIHOMO_KCP
             // miHoMo KCP modify: +IUINT32 token, +
             // Change line(s) in file compare: ikcp.c, +239
             token = token_;
+#endif
 
             snd_wnd = IKCP_WND_SND;
             rcv_wnd = IKCP_WND_RCV;
@@ -857,9 +868,11 @@ namespace System.Net.Sockets.Kcp
                 //seg = KcpSegment.AllocHGlobal(0);
 
                 seg.conv = conv;
+#if MIHOMO_KCP
                 // miHoMo KCP modify: IUINT32 token
                 // Change line(s) in file compare: ikcp.c, +954
                 seg.token = token;
+#endif
 
                 seg.cmd = IKCP_CMD_ACK;
                 //seg.frg = 0;
@@ -980,9 +993,11 @@ namespace System.Net.Sockets.Kcp
                 if (snd_queue.TryDequeue(out var newseg))
                 {
                     newseg.conv = conv;
+#if MIHOMO_KCP
                     // miHoMo KCP modify: IUINT32 token
                     // Change line(s) in file compare: ikcp.c, +1040
                     newseg.token = token;
+#endif
 
                     newseg.cmd = IKCP_CMD_PUSH;
                     newseg.wnd = wnd_;
@@ -1775,9 +1790,11 @@ namespace System.Net.Sockets.Kcp
                 uint length = 0;
                 uint una = 0;
                 uint conv_ = 0;
+#if MIHOMO_KCP
                 // miHoMo KCP modify: IUINT32 +, token+;
                 // Change line(s) in file compare: ikcp.c, -762 +763
                 uint token_ = 0;
+#endif
                 ushort wnd = 0;
                 byte cmd = 0;
                 byte frg = 0;
@@ -1789,15 +1806,20 @@ namespace System.Net.Sockets.Kcp
 
                 // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
                 // Change line(s) in file compare: ikcp.c, +773
-                // Span<byte> header = stackalloc byte[24];
-                // span.Slice(offset, 24).CopyTo(header);
+#if !MIHOMO_KCP
+                Span<byte> header = stackalloc byte[24];
+                span.Slice(offset, 24).CopyTo(header);
+#else
                 Span<byte> header = stackalloc byte[28];
                 span.Slice(offset, 28).CopyTo(header);
+#endif
                 offset += ReadHeader(header,
                                      ref conv_,
                 // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
                 // Change line(s) in file compare: ikcp.c, +773
+#if MIHOMO_KCP
                                      ref token_,
+#endif
                                      ref cmd,
                                      ref frg,
                                      ref wnd,
@@ -1813,10 +1835,12 @@ namespace System.Net.Sockets.Kcp
 
                 // miHoMo KCP modify: if (token != kcp->token) return -1;
                 // Change line(s) in file compare: ikcp.c, +774-775
+#if MIHOMO_KCP
                 if (token != token_)
                 {
                     return -1;
                 }
+#endif
 
                 if (span.Length - offset < length || (int)length < 0)
                 {
@@ -1890,7 +1914,9 @@ namespace System.Net.Sockets.Kcp
                             seg.conv = conv_;
                             // miHoMo KCP modify: seg->token = token
                             // Change line(s) in file compare: ikcp.c, +836
+#if MIHOMO_KCP
                             seg.token = token_;
+#endif
                             seg.cmd = cmd;
                             seg.frg = frg;
                             seg.wnd = wnd;
@@ -2013,7 +2039,9 @@ namespace System.Net.Sockets.Kcp
                 uint conv_ = 0;
                 // miHoMo KCP modify: IUINT32 +, token+;
                 // Change line(s) in file compare: ikcp.c, -762 +763
+#if MIHOMO_KCP
                 uint token_ = 0;
+#endif
                 ushort wnd = 0;
                 byte cmd = 0;
                 byte frg = 0;
@@ -2025,15 +2053,20 @@ namespace System.Net.Sockets.Kcp
 
                 // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
                 // Change line(s) in file compare: ikcp.c, +773
-                // Span<byte> header = stackalloc byte[24];
-                // span.Slice(offset, 24).CopyTo(header);
+#if !MIHOMO_KCP
+                Span<byte> header = stackalloc byte[24];
+                span.Slice(offset, 24).CopyTo(header);
+#else
                 Span<byte> header = stackalloc byte[28];
                 span.Slice(offset, 28).CopyTo(header);
+#endif
                 offset += ReadHeader(header,
                                      ref conv_,
                 // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
                 // Change line(s) in file compare: ikcp.c, +773
+#if MIHOMO_KCP
                                      ref token_,
+#endif
                                      ref cmd,
                                      ref frg,
                                      ref wnd,
@@ -2049,10 +2082,12 @@ namespace System.Net.Sockets.Kcp
 
                 // miHoMo KCP modify: if (token != kcp->token) return -1;
                 // Change line(s) in file compare: ikcp.c, +774-775
+#if MIHOMO_KCP
                 if (token != token_)
                 {
                     return -1;
                 }
+#endif
 
                 if (span.Length - offset < length || (int)length < 0)
                 {
@@ -2127,7 +2162,9 @@ namespace System.Net.Sockets.Kcp
                             seg.conv = conv_;
                             // miHoMo KCP modify: seg->token = token
                             // Change line(s) in file compare: ikcp.c, +836
+#if MIHOMO_KCP
                             seg.token = token_;
+#endif
                             seg.cmd = cmd;
                             seg.frg = frg;
                             seg.wnd = wnd;
@@ -2217,7 +2254,9 @@ namespace System.Net.Sockets.Kcp
                               ref uint conv_,
                               // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
                               // Change line(s) in file compare: ikcp.c, +773
+#if MIHOMO_KCP
                               ref uint token_,
+#endif
                               ref byte cmd,
                               ref byte frg,
                               ref ushort wnd,
@@ -2233,8 +2272,10 @@ namespace System.Net.Sockets.Kcp
                 offset += 4;
                 // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
                 // Change line(s) in file compare: ikcp.c, +773
+#if MIHOMO_KCP
                 token_ = BinaryPrimitives.ReadUInt32LittleEndian(header.Slice(offset));
                 offset += 4;
+#endif
 
                 cmd = header[offset];
                 offset += 1;
@@ -2258,8 +2299,10 @@ namespace System.Net.Sockets.Kcp
                 offset += 4;
                 // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
                 // Change line(s) in file compare: ikcp.c, +773
+#if MIHOMO_KCP
                 token_ = BinaryPrimitives.ReadUInt32BigEndian(header.Slice(offset));
                 offset += 4;
+#endif
 
                 cmd = header[offset];
                 offset += 1;

@@ -72,6 +72,7 @@ namespace csharp_Protoshift.MhyKCP
 
             cskcpHandle.SegmentManager = new SimpleSegManager();
 
+            checkTime_refresh = true;
             Task.Run(BackgroundUpdate);
         }
 
@@ -81,7 +82,7 @@ namespace csharp_Protoshift.MhyKCP
 
             byte[] h = new Handshake(Handshake.MAGIC_CONNECT, _Conv, _Token, ConnectData).AsBytes();
             var buf = new KcpInnerBuffer(h);
-            OutputCallback.Output(buf, h.Length);
+            OutputCallback.Output(buf, h.Length, false);
         }
 
         public async Task ConnectAsync()
@@ -115,6 +116,8 @@ namespace csharp_Protoshift.MhyKCP
             }
         }
 
+        // The time offset from ikcp_check has been not longer valid for ikcp_send or ikcp_input called
+        protected bool checkTime_refresh = false;
         public virtual int Input(byte[] buffer)
         {
             switch (_State)
@@ -146,6 +149,7 @@ namespace csharp_Protoshift.MhyKCP
                         // lock (ikcpLock) status = IKCP.ikcp_input(ikcpHandle, buffer, buffer.Length);
 #pragma warning disable CS8602 // 解引用可能出现空引用。
                         int status = cskcpHandle.Input(buffer);
+                        checkTime_refresh = true;
 #pragma warning restore CS8602 // 解引用可能出现空引用。
                         if (status == -1)
                         {
@@ -165,7 +169,7 @@ namespace csharp_Protoshift.MhyKCP
                             _Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
 
                             var sendBackConv = new Handshake(Handshake.MAGIC_SEND_BACK_CONV, _Conv, _Token).AsBytes();
-                            OutputCallback.Output(new KcpInnerBuffer(sendBackConv), sendBackConv.Length);
+                            OutputCallback.Output(new KcpInnerBuffer(sendBackConv), sendBackConv.Length, false);
                             Initialize();
 
                             return 0;
@@ -210,6 +214,7 @@ namespace csharp_Protoshift.MhyKCP
             // int ret = IKCP.ikcp_send(ikcpHandle, buffer, buffer.Length);
 #pragma warning disable CS8602 // 解引用可能出现空引用。
             int ret = cskcpHandle.Send(buffer);
+            checkTime_refresh = true;
 #pragma warning restore CS8602 // 解引用可能出现空引用。
             // Flush();
             return ret;
@@ -226,19 +231,22 @@ namespace csharp_Protoshift.MhyKCP
             if (_State != ConnectionState.CONNECTED)
                 throw new SocketException(10057);
 
-            // int size = IKCP.ikcp_peeksize(ikcpHandle);
+            lock (cskcp_recvLock)
+            {
+                // int size = IKCP.ikcp_peeksize(ikcpHandle);
 #pragma warning disable CS8602 // 解引用可能出现空引用。
-            int size = cskcpHandle.PeekSize();
+                int size = cskcpHandle.PeekSize();
 #pragma warning restore CS8602 // 解引用可能出现空引用。
-            if (size < 0) return null;
+                if (size < 0) return null;
 
-            var buffer = new byte[size];
-            // int trueSize = IKCP.ikcp_recv(ikcpHandle, buffer, buffer.Length);
-            int trueSize;
-            lock (cskcp_recvLock) trueSize = cskcpHandle.Recv(buffer);
-            if (trueSize != size) throw new Exception("Unexpected state");
+                var buffer = new byte[size];
+                // int trueSize = IKCP.ikcp_recv(ikcpHandle, buffer, buffer.Length);
+                int trueSize;
+                trueSize = cskcpHandle.Recv(buffer);
+                if (trueSize != size) throw new Exception("Unexpected state");
 
-            return buffer;
+                return buffer;
+            }
         }
 
         public byte[]? Receive(bool nonblock = false)
@@ -265,25 +273,34 @@ namespace csharp_Protoshift.MhyKCP
             return ret;
         }
 
-        public void Update()
-        {
-            // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
-#pragma warning disable CS8602 // 解引用可能出现空引用。
-            cskcpHandle.Update(DateTime.UtcNow);
-#pragma warning restore CS8602 // 解引用可能出现空引用。
-        }
-
+        // The time ikcp_update should be called get from ikcp_check
+        protected DateTimeOffset update_next_time = DateTimeOffset.MinValue;
         public async Task BackgroundUpdate()
         {
-            if (_Disposed || _State != ConnectionState.CONNECTED) return;
+            if (_Disposed || _State != ConnectionState.CONNECTED || cskcpHandle == null) return;
 
             // int dur;
             // lock (ikcpLock) dur = (int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF);
             // DateTimeOffset dur = cskcpHandle.Check(DateTime.UtcNow);
+            
             // From author:
             // 如果你不需要管理1000个以上的 kcp对象的话，还是不要用check比较好，这部分代码写起来比较烦。
-            await Task.Delay(KCP_RefreshMilliseconds);
-            Update();
+            // await Task.Delay(KCP_RefreshMilliseconds);
+            // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
+            // cskcpHandle.Update(DateTimeOffset.UtcNow);
+
+            // Below is new code with ikcp_check
+            if (checkTime_refresh || DateTimeOffset.UtcNow >= update_next_time)
+            {
+                checkTime_refresh = false;
+                var nowtime = DateTimeOffset.UtcNow;
+                // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
+                cskcpHandle.Update(nowtime);
+                update_next_time = cskcpHandle.Check(nowtime);
+            }
+
+            if (!checkTime_refresh) await Task.Delay(KCP_RefreshMilliseconds);
+            else if (KCP_RefreshMilliseconds >= 15) await Task.Delay(KCP_RefreshMilliseconds);
 
             await Task.Run(BackgroundUpdate);
         }
@@ -301,7 +318,7 @@ namespace csharp_Protoshift.MhyKCP
                 _State = ConnectionState.CLOSED;
 
                 var disconn = new Handshake(Handshake.MAGIC_DISCONNECT, _Conv, _Token).AsBytes();
-                OutputCallback.Output(new KcpInnerBuffer(disconn), disconn.Length);
+                OutputCallback.Output(new KcpInnerBuffer(disconn), disconn.Length, false);
 
                 return;
             }
@@ -325,7 +342,7 @@ namespace csharp_Protoshift.MhyKCP
             token = token == 0 ? _Token : token;
 
             byte[] disconnect = new Handshake(Handshake.MAGIC_DISCONNECT, conv, token, data).AsBytes();
-            OutputCallback.Output(new KcpInnerBuffer(disconnect), disconnect.Length);
+            OutputCallback.Output(new KcpInnerBuffer(disconnect), disconnect.Length, false);
             _State = ConnectionState.DISCONNECTED;
         }
 

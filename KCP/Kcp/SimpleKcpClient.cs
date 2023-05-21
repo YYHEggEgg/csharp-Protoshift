@@ -25,7 +25,11 @@ namespace System.Net.Sockets.Kcp.Simple
         {
             client = new UdpClient();
             client.Connect(endPoint);
+#if !MIHOMO_KCP
+            kcp = new SimpleSegManager.Kcp(2001, this);
+#else
             kcp = new SimpleSegManager.Kcp(2001, 10000, this);
+#endif
             this.EndPoint = endPoint;
             BeginRecv();
         }
@@ -33,7 +37,7 @@ namespace System.Net.Sockets.Kcp.Simple
         public SimpleSegManager.Kcp kcp { get; }
         public IPEndPoint EndPoint { get; set; }
 
-        public void Output(IMemoryOwner<byte> buffer, int avalidLength)
+        public void Output(IMemoryOwner<byte> buffer, int avalidLength, bool isKcpPacket = true)
         {
             var s = buffer.Memory.Span.Slice(0, avalidLength).ToArray();
             client.SendAsync(s, s.Length);
