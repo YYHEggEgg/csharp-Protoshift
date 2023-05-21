@@ -21,16 +21,21 @@ namespace System.Net.Sockets.Kcp
             KcpSegment.FreeHGlobal(seg);
         }
 
+#if MIHOMO_KCP
         /// <summary>
         /// miHoMo KCP modify: +IUINT32 token, +
         /// <para/>Change line(s) in file compare: ikcp.h, -346 +347; ikcp.c, -234 +234
         /// </summary>
+#endif
         public class Kcp : Kcp<KcpSegment>
         {
-            //public Kcp(uint conv_, IKcpCallback callback, IRentable rentable = null)
-            //    : base(conv_, callback, rentable)
+#if !MIHOMO_KCP
+            public Kcp(uint conv_, IKcpCallback callback, IRentable rentable = null)
+                : base(conv_, callback, rentable)
+#else
             public Kcp(uint conv_, uint token_, IKcpCallback callback, IRentable rentable = null)
                 : base(conv_, token_, callback, rentable)
+#endif
             {
                 SegmentManager = Default;
             }
@@ -38,14 +43,17 @@ namespace System.Net.Sockets.Kcp
 
         public class KcpIO : KcpIO<KcpSegment>
         {
+#if MIHOMO_KCP
             /// <summary>
             /// miHoMo KCP modify: +IUINT32 token, +
             /// <para/>Change line(s) in file compare: ikcp.h, -346 +347; ikcp.c, -234 +234
             /// </summary>
-            // public KcpIO(uint conv_)
-            //     : base(conv_)
             public KcpIO(uint conv_, uint token_)
                 : base(conv_, token_)
+#else
+            public KcpIO(uint conv_)
+                : base(conv_)
+#endif
             {
                 SegmentManager = Default;
             }
@@ -122,16 +130,21 @@ namespace System.Net.Sockets.Kcp
             blocks.Push(ptr);
         }
 
+#if MIHOMO_KCP
         /// <summary>
         /// miHoMo KCP modify: +IUINT32 token, +
         /// <para/>Change line(s) in file compare: ikcp.h, -346 +347; ikcp.c, -234 +234
         /// </summary>
+#endif
         public class Kcp : Kcp<KcpSegment>
         {
-            //public Kcp(uint conv_, IKcpCallback callback, IRentable rentable = null)
-            //    : base(conv_, callback, rentable)
+#if !MIHOMO_KCP
+            public Kcp(uint conv_, IKcpCallback callback, IRentable rentable = null)
+                : base(conv_, callback, rentable)
+#else
             public Kcp(uint conv_, uint token_, IKcpCallback callback, IRentable rentable = null)
                 : base(conv_, token_, callback, rentable)
+#endif
             {
                 SegmentManager = Default;
             }
@@ -139,14 +152,17 @@ namespace System.Net.Sockets.Kcp
 
         public class KcpIO : KcpIO<KcpSegment>
         {
+#if MIHOMO_KCP
             /// <summary>
             /// miHoMo KCP modify: +IUINT32 token, +
             /// <para/>Change line(s) in file compare: ikcp.h, -346 +347; ikcp.c, -234 +234
             /// </summary>
-            // public KcpIO(uint conv_)
-            //     : base(conv_)
             public KcpIO(uint conv_, uint token_)
                 : base(conv_, token_)
+#else
+            public KcpIO(uint conv_)
+                : base(conv_)
+#endif
             {
                 SegmentManager = Default;
             }
@@ -179,11 +195,13 @@ namespace System.Net.Sockets.Kcp
 
             public byte cmd { get; set; }
             public uint conv { get; set; }
+#if MIHOMO_KCP
             /// <summary>
             /// miHoMo KCP modify: IUINT32 token
             /// <para/>Change line(s) in file compare: ikcp.h, +271
             /// </summary>
             public uint token { get; set; }
+#endif
             public Span<byte> data => cache.AsSpan().Slice(0, (int)len);
             public uint fastack { get; set; }
             public byte frg { get; set; }
@@ -207,7 +225,7 @@ namespace System.Net.Sockets.Kcp
                 {
                     // miHoMo KCP modify: IUINT32 token
                     // Change line(s) in file compare: ikcp.c, +914
-                    /*
+#if !MIHOMO_KCP
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset), conv);
                     buffer[offset + 4] = cmd;
                     buffer[offset + 5] = frg;
@@ -217,7 +235,7 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 12), sn);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 16), una);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 20), len);
-                    */
+#else
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset), conv);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset), token);
                     buffer[offset + 8] = cmd;
@@ -228,14 +246,14 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 16), sn);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 20), una);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 24), len);
-
+#endif
                     data.CopyTo(buffer.Slice(HeadOffset));
                 }
                 else
                 {
                     // miHoMo KCP modify: IUINT32 token
                     // Change line(s) in file compare: ikcp.c, +914
-                    /*
+#if !MIHOMO_KCP
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset), conv);
                     buffer[offset + 4] = cmd;
                     buffer[offset + 5] = frg;
@@ -245,7 +263,7 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 12), sn);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 16), una);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 20), len);
-                    */
+#else
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset), conv);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset), token);
                     buffer[offset + 8] = cmd;
@@ -256,6 +274,7 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 16), sn);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 20), una);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 24), len);
+#endif
 
                     data.CopyTo(buffer.Slice(HeadOffset));
                 }
@@ -298,16 +317,21 @@ namespace System.Net.Sockets.Kcp
             Pool.Push(seg);
         }
 
+#if MIHOMO_KCP
         /// <summary>
         /// miHoMo KCP modify: +IUINT32 token, +
         /// <para/>Change line(s) in file compare: ikcp.h, -346 +347; ikcp.c, -234 +234
         /// </summary>
+#endif
         public class Kcp : Kcp<Seg>
         {
-            //public Kcp(uint conv_, IKcpCallback callback, IRentable rentable = null)
-            //    : base(conv_, callback, rentable)
+#if !MIHOMO_KCP
+            public Kcp(uint conv_, IKcpCallback callback, IRentable rentable = null)
+                : base(conv_, callback, rentable)
+#else
             public Kcp(uint conv_, uint token_, IKcpCallback callback, IRentable rentable = null)
                 : base(conv_, token_, callback, rentable)
+#endif
             {
                 SegmentManager = Default;
             }
@@ -315,14 +339,17 @@ namespace System.Net.Sockets.Kcp
 
         public class KcpIO : KcpIO<Seg>
         {
+#if MIHOMO_KCP
             /// <summary>
             /// miHoMo KCP modify: +IUINT32 token, +
             /// <para/>Change line(s) in file compare: ikcp.h, -346 +347; ikcp.c, -234 +234
             /// </summary>
-            // public KcpIO(uint conv_)
-            //     : base(conv_)
             public KcpIO(uint conv_, uint token_)
                 : base(conv_, token_)
+#else
+            public KcpIO(uint conv_)
+                : base(conv_)
+#endif
             {
                 SegmentManager = Default;
             }
