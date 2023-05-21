@@ -126,7 +126,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 
                             var sendBackConv = sendClient.GetSendbackHandshake();
                             var sendBackData = sendBackConv.AsBytes();
-                            OutputCallback?.Output(new KcpInnerBuffer(sendBackData), sendBackData.Length);
+                            OutputCallback?.Output(new KcpInnerBuffer(sendBackData), sendBackData.Length, false);
                             _Conv = sendBackConv.Conv;
                             _Token = sendBackConv.Token;
                             Initialize();

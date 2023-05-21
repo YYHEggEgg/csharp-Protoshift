@@ -2,6 +2,7 @@
 using csharp_Protoshift.Commands.SkillIssueFix;
 using csharp_Protoshift.GameSession;
 using csharp_Protoshift.GameSession.SpecialFixs;
+using csharp_Protoshift.MhyKCP;
 using csharp_Protoshift.MhyKCP.Proxy;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
@@ -87,6 +88,7 @@ namespace csharp_Protoshift
 
             Log.Info(ExtraFix.Initialize(), "Entry");
             Log.Info(SkillIssueDetect.Initialize(), "Entry");
+            Log.Info(KcpPacketAudit.Initialize(), "Entry");
 
             /*var dbgsession = new HandlerSession(1001);
             var rtn = dbgsession.GetPacketResult(

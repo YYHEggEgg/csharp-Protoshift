@@ -9,3 +9,5 @@ There're references in directory `miHoMoKCP_Compare`.
 
 For more information, search for code `miHoMo KCP modify` in this project.   
 To see the changes more clearly, compare files in `miHoMoKCP_Compare` with tools (e.g. VSCode).
+
+**If you want to switch to original KCP, delete define constant `MIHOMO_KCP`.**
