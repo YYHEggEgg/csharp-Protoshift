@@ -28,3 +28,9 @@
 /KcpCsharpTest/logs
 /.config
 /.vscode
+/KcpTestClient/logs
+/KcpTestClient/bin/Debug/net6.0
+/KcpTestClient/obj
+/KcpTestServer/bin/Debug/net6.0
+/KcpTestServer/logs
+/KcpTestServer/obj
