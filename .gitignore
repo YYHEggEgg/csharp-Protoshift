@@ -24,3 +24,6 @@
 /KCP/KcpDemo
 /.config
 /.vscode
+/KcpCsharpTest
+/KcpTestClient
+/KcpTestServer
