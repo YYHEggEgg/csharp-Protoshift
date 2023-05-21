@@ -71,9 +71,6 @@ namespace csharp_Protoshift.MhyKCP
         {
             server.AcceptNonblock();
             await server.ConnectAsync();
-#pragma warning disable CS4014 // 由于此调用不会等待，因此在调用完成前将继续执行当前方法
-            Task.Run(server.BackgroundUpdate);
-#pragma warning restore CS4014 // 由于此调用不会等待，因此在调用完成前将继续执行当前方法
         }
 
         public async Task SendAsync(byte[] data)
