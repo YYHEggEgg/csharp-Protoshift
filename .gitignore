@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 # 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
 ################################################################################
 
@@ -22,5 +22,9 @@
 /KCP/TestServer
 /KCP/TestClient
 /KCP/KcpDemo
+/KcpCsharpTest/.vscode
+/KcpCsharpTest/bin
+/KcpCsharpTest/obj
+/KcpCsharpTest/logs
 /.config
 /.vscode

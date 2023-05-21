@@ -10,11 +10,13 @@
         /// 会话编号，两方一致才会通信
         /// </summary>
         uint conv { get; set; }
+#if MIHOMO_KCP
         /// <summary>
         /// miHoMo KCP modify: IUINT32 token
         /// <para/>Change line(s) in file compare: ikcp.h, +271
         /// </summary>
         uint token { get; set; }
+#endif
         /// <summary>
         /// 指令类型
         /// </summary>
