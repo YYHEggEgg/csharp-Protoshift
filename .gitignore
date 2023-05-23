@@ -31,3 +31,9 @@
 /KcpCsharpTest
 /KcpTestClient
 /KcpTestServer
+/KcpTests/KcpPerformanceTest/bin
+/KcpTests/KcpPerformanceTest/obj
+/KcpTests/KcpPerformanceTest/logs
+/KcpTests/SharedLib/bin
+/KcpTests/SharedLib/obj
+/KcpTests/SharedLib/logs
