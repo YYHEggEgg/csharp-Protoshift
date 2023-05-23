@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KcpPerformanceTest", "KcpPerformanceTest\KcpPerformanceTest.csproj", "{4E88050C-F306-489C-A9B0-E5FF7DB91BEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLib", "SharedLib\SharedLib.csproj", "{DC06B44E-C725-42E4-8C23-CFF1A38E0605}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E88050C-F306-489C-A9B0-E5FF7DB91BEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E88050C-F306-489C-A9B0-E5FF7DB91BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E88050C-F306-489C-A9B0-E5FF7DB91BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E88050C-F306-489C-A9B0-E5FF7DB91BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC06B44E-C725-42E4-8C23-CFF1A38E0605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC06B44E-C725-42E4-8C23-CFF1A38E0605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC06B44E-C725-42E4-8C23-CFF1A38E0605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC06B44E-C725-42E4-8C23-CFF1A38E0605}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
