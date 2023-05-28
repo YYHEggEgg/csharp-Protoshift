@@ -15,8 +15,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
     /// </summary>
     internal static class ServerDataChannel
     {
-        public static ConcurrentBag<ReadOnlyBasePacketRecord> sent_pkts = new(Constants.packet_repeat_time);
-        public static ConcurrentBag<ReadOnlyBasePacketRecord> recved_pkts = new(Constants.packet_repeat_time);
+        public static ConcurrentBag<ReadOnlyBasePacketRecord> sent_pkts = new();
+        public static ConcurrentBag<ReadOnlyBasePacketRecord> recved_pkts = new();
 
         /// <summary>
         /// 服务器收到客户端请求包的回调
