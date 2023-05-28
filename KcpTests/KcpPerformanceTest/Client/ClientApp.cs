@@ -1,3 +1,4 @@
+using csharp_Protoshift.MhyKCP.Test.Analysis;
 using csharp_Protoshift.MhyKCP.Test.Protocol;
 using System.Net;
 using YYHEggEgg.Logger;
@@ -31,7 +32,8 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                     {
                         BasePacket pkt = BasePacket.Generate(ack, Constants.each_packet_size);
                         kcpClient.Send(pkt.GetBytes());
-                        // TODO: Push state to analysis
+                        ClientDataChannel.PushSentPacket(pkt);
+                        pkt.Dispose();
                         sum_wait_ms += Constants.packet_interval_ms;
                         if (sum_wait_ms >= 15)
                         {
@@ -39,6 +41,15 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                             sum_wait_ms = 0;
                         }
                     }
+                }
+            });
+
+            _ = Task.Run(async () =>
+            {
+                while (true)
+                {
+                    var data = await kcpClient.ReceiveAsync();
+                    ClientDataChannel.PushReceivedPacket(new BasePacket(data));
                 }
             });
         }
