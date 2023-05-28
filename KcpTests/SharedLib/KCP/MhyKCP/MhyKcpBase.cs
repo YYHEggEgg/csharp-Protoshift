@@ -205,7 +205,9 @@ namespace csharp_Protoshift.MhyKCP
             throw new Exception("Reached unreachable code.");
         }
 
-        public int SendNonblock(Span<byte> buffer)
+        // Changed name as it's not nonblock.
+        // public int SendNonblock(ReadOnlySpan<byte> buffer)
+        public int Send(ReadOnlySpan<byte> buffer)
         {
             if (_State != ConnectionState.CONNECTED)
                 throw new SocketException(10057);
@@ -222,7 +224,7 @@ namespace csharp_Protoshift.MhyKCP
         public async Task<int> SendAsync(byte[] buffer)
         {
             await Task.Yield();
-            return SendNonblock(buffer);
+            return Send(buffer);
         }
 
         private byte[]? ReceiveNonblock()

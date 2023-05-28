@@ -20,7 +20,28 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
 
         private readonly byte[] _baseBuffer;
         private readonly bool bufferFromPool;
-        public uint ack;
+
+        private uint _ack;
+        public uint ack 
+        {
+            get => _ack;
+            set
+            {
+                if (!isStructureValid)
+                    throw new InvalidOperationException("Trying to operate on an invalid BasePacket instance.");
+
+                _ack = value;
+
+                int offset = 0;
+                offset += sizeof(ushort); // Magic Start
+                offset += sizeof(ushort); // CmdId
+                offset += sizeof(ushort); // HeadLen
+                offset += sizeof(uint); // BodyLen
+
+                _baseBuffer.SetUInt32(offset, _ack);
+            }
+        }
+
         // 包结构是否完整 包括头是否完整、是否虚报长度等
         public bool isStructureValid;
         // 结构体是否完整 是否遵循上传时的生成规则
@@ -153,6 +174,13 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
             // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
+        }
+
+        public ReadOnlySpan<byte> GetBytes()
+        {
+            if (disposedValue)
+                throw new ObjectDisposedException(nameof(BasePacket));
+            return new ReadOnlySpan<byte>(_baseBuffer);
         }
         #endregion
     }

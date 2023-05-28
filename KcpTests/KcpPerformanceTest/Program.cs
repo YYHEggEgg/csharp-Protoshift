@@ -1,4 +1,5 @@
-﻿using csharp_Protoshift.resLoader;
+﻿using csharp_Protoshift.MhyKCP.Test.App;
+using csharp_Protoshift.resLoader;
 using YYHEggEgg.Logger;
 
 // See https://aka.ms/new-console-template for more information
@@ -17,3 +18,11 @@ Log.Initialize(new LoggerConfig(
 
 Log.Info("Kcp-Csharp Performance TESTER");
 Log.Info(await ResourcesLoader.Load());
+
+await ServerApp.Start();
+#if !CONNECT_SERVERONLY
+ProxyApp.Start();
+#endif
+await ClientApp.Start();
+
+Console.ReadLine();
