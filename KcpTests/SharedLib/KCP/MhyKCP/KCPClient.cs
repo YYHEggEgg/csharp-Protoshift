@@ -78,6 +78,11 @@ namespace csharp_Protoshift.MhyKCP
             await server.SendAsync(data);
         }
 
+        public void Send(ReadOnlySpan<byte> data)
+        {
+            server.Send(data);
+        }
+
         public void Close()
         {
             _Closed = true;
