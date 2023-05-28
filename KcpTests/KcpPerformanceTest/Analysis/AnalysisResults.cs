@@ -27,20 +27,20 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
         }
     }
 
-    internal struct PacketIntervalResult
+    internal struct PacketDelayResult
     {
         public readonly PacketRecordCollection baseSend, baseRecv;
-        public readonly TimeSpan average_packetInterval;
+        public readonly TimeSpan average_packetDelay;
         /// <summary>
         /// 使用的包 ack 列表，为 send 与 recv 的交集，以 send 为标准。<see cref="TimeSpan"/> 为包的处理延迟
         /// </summary>
         public readonly (uint, TimeSpan)[] ack_list;
 
-        public PacketIntervalResult(PacketRecordCollection baseSend, PacketRecordCollection baseRecv, TimeSpan average_packetInterval, (uint, TimeSpan)[] ack_list)
+        public PacketDelayResult(PacketRecordCollection baseSend, PacketRecordCollection baseRecv, TimeSpan average_packetDelay, (uint, TimeSpan)[] ack_list)
         {
             this.baseSend = baseSend;
             this.baseRecv = baseRecv;
-            this.average_packetInterval = average_packetInterval;
+            this.average_packetDelay = average_packetDelay;
             this.ack_list = ack_list;
         }
     }
