@@ -11,6 +11,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
 {
     /// <summary>
     /// 由于代理不保证顺序调用handler，因此本实例线程安全
+    /// <para/>由于实例线程安全因此不必锁定Channel来获取数据只读副本
     /// </summary>
     internal static class ProxyDataChannel
     {
