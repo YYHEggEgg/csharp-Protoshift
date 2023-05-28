@@ -1,3 +1,4 @@
+using csharp_Protoshift.MhyKCP.Test.Analysis;
 using csharp_Protoshift.MhyKCP.Test.Protocol;
 using System.Net;
 using YYHEggEgg.Logger;
@@ -26,16 +27,17 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                                 return;
                             var data = await conn.ReceiveAsync();
                             BasePacket pkt = new(data);
+                            ServerDataChannel.PushReceivedPacket(pkt);
                             if (pkt.isStructureValid)
                             {
                                 pkt.ack = pkt.ack + 1;
-                                // TODO: Push state to analysis
                                 conn.Send(pkt.GetBytes());
+                                ServerDataChannel.PushSentPacket(pkt);
                             }
                         }
                     });
                 }
-            }
+            });
         }
     }
 }
