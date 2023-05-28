@@ -19,6 +19,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             ClientDataChannel.Closed = true;
             Log.Info("客户端完成全部发包，已锁定 ClientDataChannel. 等待 10s...", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
             await Task.Delay(10000);
+            #region 获取记录
             client_sent = ClientDataChannel.sent_pkts.AsReadOnly();
             Log.Info($"已从Channel获取记录，Client共发出了 {client_sent.Count} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
 #if !CONNECT_SERVERONLY
@@ -39,7 +40,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
 #endif
             client_recved = ClientDataChannel.recved_pkts.AsReadOnly();
             Log.Info($"已从Channel获取记录，Client共收到了 {client_recved.Count} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
-
+            #endregion
 
         }
 
