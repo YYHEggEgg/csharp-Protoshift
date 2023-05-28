@@ -16,13 +16,13 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
     internal static class ProxyDataChannel
     {
         // 代理收到的客户端->服务器的包，即客户端->代理
-        public static ConcurrentBag<ReadOnlyBasePacketRecord> proxy_recved_client_pkts = new(Constants.packet_repeat_time);
+        public static ConcurrentBag<ReadOnlyBasePacketRecord> proxy_recved_client_pkts = new();
         // 代理发出的客户端->服务器的包，即代理->服务器
-        public static ConcurrentBag<ReadOnlyBasePacketRecord> proxy_sent_client_pkts = new(Constants.packet_repeat_time);
+        public static ConcurrentBag<ReadOnlyBasePacketRecord> proxy_sent_client_pkts = new();
         // 代理收到的服务器->客户端的包，即服务器->代理
-        public static ConcurrentBag<ReadOnlyBasePacketRecord> proxy_recved_server_pkts = new(Constants.packet_repeat_time);
+        public static ConcurrentBag<ReadOnlyBasePacketRecord> proxy_recved_server_pkts = new();
         // 代理发出的服务器->客户端的包，即代理->客户端
-        public static ConcurrentBag<ReadOnlyBasePacketRecord> proxy_sent_server_pkts = new(Constants.packet_repeat_time);
+        public static ConcurrentBag<ReadOnlyBasePacketRecord> proxy_sent_server_pkts = new();
 
         /// <summary>
         /// 代理收到客户端->服务器包的回调
