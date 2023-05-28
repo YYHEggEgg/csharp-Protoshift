@@ -10,6 +10,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
     CmdId = 55
     PacketHead 为 uint 的 ack
     Body 为 00-ff 的循环数组
+    不保证线程安全
      */
     internal class BasePacket : IDisposable
     {
@@ -46,6 +47,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
         public bool isStructureValid;
         // 结构体是否完整 是否遵循上传时的生成规则
         public bool isBodyValid;
+        public uint bodyLen;
         private bool disposedValue;
 
         #region 发送端 造包相关代码
@@ -65,6 +67,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
             rtn.ack = ack;
             rtn.isBodyValid = true;
             rtn.isStructureValid = true;
+            rtn.bodyLen = bodyLen;
             #region 填充数组
             var buf = rtn._baseBuffer;
             int offset = 0;
@@ -95,8 +98,13 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
         #endregion
 
         #region 接收端 收包相关代码
-        public BasePacket(byte[] packet)
+        public BasePacket(byte[]? packet)
         {
+            if (packet == null)
+            {
+                isStructureValid = false;
+                return;
+            }
             _baseBuffer = packet;
             XorDecrypt(ref _baseBuffer);
             bufferFromPool = false;
@@ -110,7 +118,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
             offset += sizeof(ushort);
             var headLen = packet.GetUInt16(offset); // HeadLen
             offset += sizeof(ushort);
-            var bodyLen = packet.GetUInt32(offset); // bodyLen
+            bodyLen = packet.GetUInt32(offset); // bodyLen
             offset += sizeof(uint);
             ack = packet.GetUInt32(offset); // Head
             offset += sizeof(uint);
@@ -183,5 +191,53 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
             return new ReadOnlySpan<byte>(_baseBuffer);
         }
         #endregion
+
+        /// <summary>
+        /// 将实例转为记录，不保留原始byte[]
+        /// </summary>
+        /// <returns></returns>
+        public ReadOnlyBasePacketRecord AsReadOnly()
+        {
+            int offset = 0;
+            offset += sizeof(ushort); // Magic Start
+            offset += sizeof(ushort); // CmdId
+            offset += sizeof(ushort); // HeadLen
+            offset += sizeof(uint); // BodyLen
+            offset += sizeof(uint); // Head (ack)
+
+            if (isStructureValid)
+            {
+                return new(isStructureValid, ack, bodyLen, isBodyValid,
+                    isBodyValid ? null : Util.CutPacket(new ReadOnlySpan<byte>(
+                        _baseBuffer, offset, _baseBuffer.Length - sizeof(ushort));
+            }
+            else
+            {
+                return new(isStructureValid, ack, bodyLen, isBodyValid, null);
+            }
+        }
+    }
+
+    internal struct ReadOnlyBasePacketRecord
+    {
+        // 结构是否完整 不完整则其他数据均无效
+        public readonly bool isStructureValid;
+        public readonly uint ack;
+        public readonly uint bodyLen;
+        // body是否符合规范 不符合则下面分析结果List非null
+        public readonly bool isBodyValid;
+        // Util.CutPacket分析的结果
+        public readonly List<(int startindex, int startbyte, int len)>? bodyResult;
+        public readonly DateTime create_time;
+
+        public ReadOnlyBasePacketRecord(bool isStructureValid, uint ack, uint bodyLen, bool isBodyValid, List<(int startindex, int startbyte, int len)>? bodyResult)
+        {
+            this.isStructureValid = isStructureValid;
+            this.ack = ack;
+            this.bodyLen = bodyLen;
+            this.isBodyValid = isBodyValid;
+            this.bodyResult = bodyResult;
+            create_time = DateTime.Now;
+        }
     }
 }
