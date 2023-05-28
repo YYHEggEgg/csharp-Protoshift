@@ -26,15 +26,18 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                             if (conn.State != MhyKcpBase.ConnectionState.CONNECTED)
                                 return;
                             var data = await conn.ReceiveAsync();
-                            BasePacket pkt = new(data);
-                            ServerDataChannel.PushReceivedPacket(pkt);
-                            if (pkt.isStructureValid)
+                            _ = Task.Run(() =>
                             {
-                                pkt.ack = pkt.ack + 1;
-                                conn.Send(pkt.GetBytes());
-                                ServerDataChannel.PushSentPacket(pkt);
-                                pkt.Dispose();
-                            }
+                                BasePacket pkt = new(data);
+                                ServerDataChannel.PushReceivedPacket(pkt);
+                                if (pkt.isStructureValid)
+                                {
+                                    pkt.ack = pkt.ack + 1;
+                                    conn.Send(pkt.GetBytes());
+                                    ServerDataChannel.PushSentPacket(pkt);
+                                    pkt.Dispose();
+                                }
+                            });
                         }
                     });
                 }
