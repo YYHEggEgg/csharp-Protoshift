@@ -1,4 +1,6 @@
-﻿using System;
+﻿using csharp_Protoshift.MhyKCP.Test.Analysis;
+using csharp_Protoshift.MhyKCP.Test.Protocol;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +23,14 @@ namespace csharp_Protoshift.GameSession
         public static byte[]? HandleServerPacket(byte[] data, uint conv)
         {
             AssertSessionExists(conv);
+            BasePacket basePacket = new(data);
+            ProxyDataChannel.PushReceivedServerPacket(basePacket);
             try
             {
-                return sessions[conv].HandlePacket(data, false);
+                var res = sessions[conv].HandlePacket(data, false);
+                ProxyDataChannel.PushSentServerPacket(basePacket);
+                basePacket.Dispose();
+                return res;
             }
 #if DEBUG
             catch (Exception ex) 
@@ -39,9 +46,14 @@ namespace csharp_Protoshift.GameSession
         public static byte[]? HandleClientPacket(byte[] data, uint conv)
         {
             AssertSessionExists(conv);
+            BasePacket basePacket = new(data);
+            ProxyDataChannel.PushReceivedClientPacket(basePacket);
             try
             {
-                return sessions[conv].HandlePacket(data, true);
+                var res = sessions[conv].HandlePacket(data, true);
+                ProxyDataChannel.PushSentClientPacket(basePacket);
+                basePacket.Dispose();
+                return res;
             }
 #if DEBUG
             catch (Exception ex)
