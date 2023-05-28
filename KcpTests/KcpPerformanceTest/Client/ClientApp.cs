@@ -49,6 +49,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                 while (true)
                 {
                     var data = await kcpClient.ReceiveAsync();
+                    // 由于BasePacket的buffer不来自ArrayPool分配，此处不释放不会影响程序逻辑
                     ClientDataChannel.PushReceivedPacket(new BasePacket(data));
                 }
             });
