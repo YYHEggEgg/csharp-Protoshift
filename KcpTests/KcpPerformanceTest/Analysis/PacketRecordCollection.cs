@@ -72,6 +72,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
 
         public static PacketLossResult PacketLoss(PacketRecordCollection send, PacketRecordCollection recv)
         {
+            Debug.Assert(!ReferenceEquals(send, recv));
             int sendPacketCount = 0, recvPacketCount = 0;
             List<uint> lost_ack = new(), extra_ack = new();
             #region 数据分析
@@ -100,8 +101,9 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 lost_ack.ToArray(), extra_ack.ToArray(), send.isClientAck, recv.isClientAck);
         }
 
-        public static PacketIntervalResult PacketInterval(PacketRecordCollection send, PacketRecordCollection recv)
+        public static PacketDelayResult PacketDelay(PacketRecordCollection send, PacketRecordCollection recv)
         {
+            Debug.Assert(!ReferenceEquals(send, recv));
             List<(uint, TimeSpan)> ack_list = new();
             int packetCount = 0;
             TimeSpan totalSpan = TimeSpan.Zero;
@@ -122,7 +124,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             }
             #endregion
             ack_list.Sort();
-            return new PacketIntervalResult(send, recv, totalSpan / packetCount, ack_list.ToArray());
+            return new PacketDelayResult(send, recv, totalSpan / packetCount, ack_list.ToArray());
         }
         #endregion
 
