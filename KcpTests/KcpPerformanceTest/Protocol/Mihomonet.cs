@@ -209,7 +209,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
             {
                 return new(isStructureValid, ack, bodyLen, isBodyValid,
                     isBodyValid ? null : Util.CutPacket(new ReadOnlySpan<byte>(
-                        _baseBuffer, offset, _baseBuffer.Length - sizeof(ushort));
+                        _baseBuffer, offset, _baseBuffer.Length - sizeof(ushort))));
             }
             else
             {
