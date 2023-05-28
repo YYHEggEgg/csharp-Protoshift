@@ -41,6 +41,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                             sum_wait_ms = 0;
                         }
                     }
+                    ack += 2;
                 }
             });
 
