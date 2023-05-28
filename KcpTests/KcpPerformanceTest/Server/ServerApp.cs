@@ -33,6 +33,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                                 pkt.ack = pkt.ack + 1;
                                 conn.Send(pkt.GetBytes());
                                 ServerDataChannel.PushSentPacket(pkt);
+                                pkt.Dispose();
                             }
                         }
                     });
