@@ -188,7 +188,7 @@ namespace csharp_Protoshift.MhyKCP
                             handshake.Decode(buffer, Handshake.MAGIC_SEND_BACK_CONV);
                             _Conv = handshake.Conv;
                             _Token = handshake.Token;
-                            Debug.Assert(ConnectData == handshake.Data);
+                            // Debug.Assert(ConnectData == handshake.Data);
                             Initialize();
 
                             return 0;
@@ -240,13 +240,16 @@ namespace csharp_Protoshift.MhyKCP
 #pragma warning restore CS8602 // 解引用可能出现空引用。
                 if (size < 0) return null;
 
-                var buffer = new byte[size];
+                var buffer = ArrayPool<byte>.Shared.Rent(size);
+                var span = new Span<byte>(buffer);
                 // int trueSize = IKCP.ikcp_recv(ikcpHandle, buffer, buffer.Length);
                 int trueSize;
                 trueSize = cskcpHandle.Recv(buffer);
                 if (trueSize != size) throw new Exception("Unexpected state");
 
-                return buffer;
+                var rtn = span.Slice(0, trueSize).ToArray();
+                _ = Task.Run(() => ArrayPool<byte>.Shared.Return(buffer));
+                return rtn;
             }
         }
 

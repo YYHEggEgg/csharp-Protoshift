@@ -1,6 +1,7 @@
 using System.Buffers;
 using csharp_Protoshift.resLoader;
 using YSFreedom.Common.Util;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.MhyKCP.Test.Protocol
 {
@@ -19,7 +20,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
 
         public const ushort ExpectedCmdId = 55;
 
-        private readonly byte[] _baseBuffer;
+        private byte[] _baseBuffer;
         private readonly bool bufferFromPool;
 
         private uint _ack;
@@ -54,17 +55,18 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
         private BasePacket(int length)
         {
             _baseBuffer = ArrayPool<byte>.Shared.Rent(length);
+            Log.Dbug($"Assigned {length} bytes from the Shared ArrayPool.", nameof(BasePacket));
             bufferFromPool = true;
         }
 
         public static long CalculateLength(uint bodyLen)
             => sizeof(ushort) + sizeof(ushort) + sizeof(ushort) + sizeof(uint)
-            + sizeof(uint) /*uint ack*/ + bodyLen;
+            + sizeof(uint) /*uint ack*/ + bodyLen + sizeof(ushort);
     
-        public static BasePacket Generate(uint ack, uint bodyLen)
+        public static BasePacket Generate(uint from_ack, uint bodyLen)
         {
             var rtn = new BasePacket((int)CalculateLength(bodyLen));
-            rtn.ack = ack;
+            rtn._ack = from_ack;
             rtn.isBodyValid = true;
             rtn.isStructureValid = true;
             rtn.bodyLen = bodyLen;
@@ -79,14 +81,13 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
             offset += sizeof(ushort);
             buf.SetUInt32(offset, bodyLen); // BodyLen
             offset += sizeof(uint);
-            buf.SetUInt32(offset, ack); // Head
+            buf.SetUInt32(offset, from_ack); // Head
             offset += sizeof(uint);
             GenerateBody(ref buf, offset, bodyLen); // Body
             offset = (int)(offset + bodyLen);
             buf.SetUInt16(offset, MagicEnd); // Magic Start
             // offset += sizeof(ushort);
             #endregion
-            XorDecrypt(ref buf);
             return rtn;
         }
 
@@ -107,24 +108,39 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
             }
             _baseBuffer = packet;
             XorDecrypt(ref _baseBuffer);
+            Log.Verb($"Created BasePacket from array (decrypted): {Convert.ToHexString(_baseBuffer)}", nameof(BasePacket));
             bufferFromPool = false;
             #region 读取数组
+            isStructureValid = true;
             int offset = 0;
             var _magicStart = packet.GetUInt16(offset); // Magic Start
-            isStructureValid = isStructureValid && (_magicStart == MagicStart);
+            if (_magicStart != MagicStart)
+            {
+                Log.Verb($"Validate: Magic Start failed: read {_magicStart}, expected {MagicStart}", nameof(BasePacket));
+                isStructureValid = false;
+            }
             offset += sizeof(ushort);
             var _cmd = packet.GetUInt16(offset); // CmdId
-            isStructureValid = isStructureValid && (_magicStart == ExpectedCmdId);
+            if (_cmd != ExpectedCmdId)
+            {
+                Log.Verb($"Validate: CmdId failed: read {_cmd}, expected {ExpectedCmdId}", nameof(BasePacket));
+                isStructureValid = false;
+            }
             offset += sizeof(ushort);
             var headLen = packet.GetUInt16(offset); // HeadLen
+            if (headLen != sizeof(uint))
+            {
+                Log.Verb($"Validate: HeadLen failed: read {headLen}, expected {sizeof(uint)}", nameof(BasePacket));
+                isStructureValid = false;
+            }
             offset += sizeof(ushort);
             bodyLen = packet.GetUInt32(offset); // bodyLen
             offset += sizeof(uint);
-            ack = packet.GetUInt32(offset); // Head
+            _ack = packet.GetUInt32(offset); // Head
             offset += sizeof(uint);
             isBodyValid = ValidateBody(ref packet, offset, bodyLen); // Body
             offset = (int)(offset + bodyLen);
-            var _magicEnd = packet.GetUInt16(offset); // Magic Start
+            var _magicEnd = packet.GetUInt16(offset); // Magic End
             isStructureValid = isStructureValid && (_magicEnd == MagicEnd);
             // offset += sizeof(ushort);
             #endregion
@@ -183,14 +199,15 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
+        #endregion
 
         public ReadOnlySpan<byte> GetBytes()
         {
             if (disposedValue)
                 throw new ObjectDisposedException(nameof(BasePacket));
-            return new ReadOnlySpan<byte>(_baseBuffer);
+            XorDecrypt(ref _baseBuffer);
+            return new ReadOnlySpan<byte>(_baseBuffer).Slice(0, (int)CalculateLength(bodyLen));
         }
-        #endregion
 
         /// <summary>
         /// 将实例转为记录，不保留原始byte[]
