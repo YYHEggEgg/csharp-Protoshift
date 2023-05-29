@@ -13,13 +13,14 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
     internal static class MainAnalysis
     {
         /// <summary>
-        /// 客户端发出全部包后调用，立即锁定<see cref="ClientDataChannel"/>，在10s后停止Proxy与Server的数据收集并创建副本
+        /// 客户端发出全部包后调用，在10s后锁定<see cref="ClientDataChannel"/>，并停止Proxy与Server的数据收集并创建副本
         /// </summary>
         public static async Task ClientFinished()
         {
-            ClientDataChannel.Closed = true;
-            Log.Info("客户端完成全部发包，已锁定 ClientDataChannel. 等待 10s...", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
+            Log.Info("客户端完成全部发包. 等待 10s...", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
             await Task.Delay(10000);
+            ClientDataChannel.Closed = true;
+            Log.Info("等待完毕。已锁定ClientDataChannel.", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
             #region 获取记录
             client_sent = ClientDataChannel.sent_pkts.AsReadOnly();
             Log.Info($"已从Channel获取记录，Client共发出了 {client_sent.Count} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
@@ -122,6 +123,26 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             result.AppendLine($"- 最大发包大小：{Constants.each_packet_size} bytes");
             result.AppendLine($"- 是否随机包大小：{Constants.random_packet_size}");
             result.AppendLine();
+            result.AppendLine($"网络汇总分析：");
+            result.AppendLine($"Client -> Server: 平均延迟:{CsDelay.average_packetDelay}, 总丢包:{CsLoss.packetLoss}");
+            result.AppendLine($"Server -> Client: 平均延迟:{ScDelay.average_packetDelay}, 总丢包:{ScLoss.packetLoss}");
+#if !CONNECT_SERVERONLY
+            result.AppendLine();
+            result.AppendLine($"Client -> Proxy: 平均延迟:{CpDelay.average_packetDelay}, 总丢包:{CpLoss.packetLoss}");
+            result.AppendLine($"Proxy -> Server: 平均延迟:{PsDelay.average_packetDelay}, 总丢包:{PsLoss.packetLoss}");
+            result.AppendLine($"Server -> Proxy: 平均延迟:{SpDelay.average_packetDelay}, 总丢包:{SpLoss.packetLoss}");
+            result.AppendLine($"Proxy -> Client: 平均延迟:{PcDelay.average_packetDelay}, 总丢包:{PcLoss.packetLoss}");
+            result.AppendLine();
+            result.AppendLine($"Proxy_OnClientPacket: 平均处理时间:{Cs_proxy_delay.average_packetDelay}, 异常率:{Cs_proxy_failed.packetLoss}");
+            result.AppendLine($"Proxy_OnServerPacket: 平均处理时间:{Sc_proxy_delay.average_packetDelay}, 异常率:{Sc_proxy_failed.packetLoss}");
+#endif
+            result.AppendLine();
+            result.AppendLine();
+            result.AppendLine($"TODO: 输出异常的 ack list");
+
+            string logPath = $"{Environment.CurrentDirectory}/logs/{DateTime.Now:yyyy-MM-dd_HH:mm:ss}.packet.log";
+            await File.WriteAllTextAsync(logPath, result.ToString());
+            Log.Info($"日志已输出到路径 {logPath}.", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
             #endregion
         }
     }

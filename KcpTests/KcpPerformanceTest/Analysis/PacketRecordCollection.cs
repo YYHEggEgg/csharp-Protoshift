@@ -97,7 +97,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             }
             #endregion
             if (sendPacketCount == 0) sendPacketCount = -1;
-            return new PacketLossResult(send, recv, (double)recvPacketCount / sendPacketCount,
+            return new PacketLossResult(send, recv, (double)(sendPacketCount - recvPacketCount) / sendPacketCount,
                 lost_ack.ToArray(), extra_ack.ToArray(), send.isClientAck, recv.isClientAck);
         }
 

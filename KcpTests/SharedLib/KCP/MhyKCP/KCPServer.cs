@@ -18,7 +18,7 @@ namespace csharp_Protoshift.MhyKCP
         protected Dictionary<IPEndPoint, MhyKcpBase> clients;
         protected ConcurrentQueue<IPEndPoint> newConnections;
 
-#pragma warning disable CS8618 // ���˳����캯��ʱ������Ϊ null ���ֶα�������� null ֵ���뿼������Ϊ����Ϊ null��
+#pragma warning disable CS8618 // ??????????????????? null ????��???????? null ????????????????? null??
         public class AcceptAsyncReturn
         {
             public MhyKcpBase Connection;
@@ -30,7 +30,7 @@ namespace csharp_Protoshift.MhyKCP
             clients = new Dictionary<IPEndPoint, MhyKcpBase>();
             newConnections = new ConcurrentQueue<IPEndPoint>();
         }
-#pragma warning restore CS8618 // ���˳����캯��ʱ������Ϊ null ���ֶα�������� null ֵ���뿼������Ϊ����Ϊ null��
+#pragma warning restore CS8618 // ??????????????????? null ????��???????? null ????????????????? null??
 
         public KCPServer(IPEndPoint ipEp)
         {
