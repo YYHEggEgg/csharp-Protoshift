@@ -10,10 +10,12 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);CONNECT_SERVERONLY</DefineConstants>
+    <!-- <DefineConstants>$(DefineConstants)</DefineConstants> -->
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>$(DefineConstants);CONNECT_SERVERONLY</DefineConstants>
+    <!-- <DefineConstants>$(DefineConstants)</DefineConstants> -->
   </PropertyGroup>
 
   <ItemGroup>
