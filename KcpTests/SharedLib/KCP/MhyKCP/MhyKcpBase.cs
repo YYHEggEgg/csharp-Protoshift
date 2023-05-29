@@ -240,16 +240,13 @@ namespace csharp_Protoshift.MhyKCP
 #pragma warning restore CS8602 // 解引用可能出现空引用。
                 if (size < 0) return null;
 
-                var buffer = ArrayPool<byte>.Shared.Rent(size);
-                var span = new Span<byte>(buffer);
+                var buffer = new byte[size];
                 // int trueSize = IKCP.ikcp_recv(ikcpHandle, buffer, buffer.Length);
                 int trueSize;
                 trueSize = cskcpHandle.Recv(buffer);
                 if (trueSize != size) throw new Exception("Unexpected state");
 
-                var rtn = span.Slice(0, trueSize).ToArray();
-                _ = Task.Run(() => ArrayPool<byte>.Shared.Return(buffer));
-                return rtn;
+                return buffer;
             }
         }
 
@@ -272,7 +269,7 @@ namespace csharp_Protoshift.MhyKCP
             while (ret == null)
             {
                 ret = ReceiveNonblock();
-                if (ret == null) await Task.Delay(KCP_RefreshMilliseconds); //(int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF));
+                if (ret == null) await Task.Yield(); //(int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF));
             }
             return ret;
         }
