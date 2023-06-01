@@ -116,6 +116,27 @@ namespace csharp_Protoshift.MhyKCP
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>null if disconnected</returns>
+        public byte[]? Receive()
+        {
+            try
+            {
+                return server.Receive();
+            }
+            catch
+            {
+                if (server.State != MhyKcpBase.ConnectionState.CONNECTED)
+                {
+                    StartDisconnected?.Invoke(server.Conv, server.Token);
+                    return null;
+                }
+                else throw;
+            }
+        }
+
         public void Disconnect(uint conv = 0, uint token = 0, uint data = 1)
         {
             server.Disconnect(conv, token, data);

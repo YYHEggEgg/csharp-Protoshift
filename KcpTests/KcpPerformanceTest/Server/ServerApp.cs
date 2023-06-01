@@ -20,7 +20,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                     Log.Info($"New connection from {accepted.RemoteEndpoint}.", "ServerListening_AsyncTask");
                     var conn = accepted.Connection;
                     // TODO: Push state to analysis
-                    _ = Task.Run(async () =>
+                    _ = Task.Run(() =>
                     {
                         while (true)
                         {
@@ -29,43 +29,40 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                             byte[]? data = null;
                             try
                             {
-                                data = await conn.ReceiveAsync();
+                                data = conn.Receive();
                             }
                             catch (Exception ex)
                             {
-                                Log.Warn($"服务端收包出现异常：{ex}", "ServerReceiver_AsyncTask");
+                                Log.Warn($"服务端收包出现异常：{ex}", "ServerReceiver");
                                 continue;
                             }
-                            _ = Task.Run(() =>
+                            BasePacket? pkt = null;
+                            try
                             {
-                                BasePacket? pkt = null;
+                                pkt = new(data);
+                            }
+                            catch (Exception ex)
+                            {
+                                Log.Warn($"服务端分析包出现异常：{ex}", "BasePacket");
+                                return;
+                            }
+                            ServerDataChannel.PushReceivedPacket(pkt);
+                            Log.Verb($"Server received packet: length:{data?.Length}, isStructureValid:{pkt.isStructureValid}, isBodyValid:{pkt.isBodyValid}, ack:{pkt.ack}, bodyLen:{pkt.bodyLen}", "ServerReceiver");
+                            if (pkt.isStructureValid)
+                            {
                                 try
                                 {
-                                    pkt = new(data);
+                                    pkt.ack = pkt.ack + 1;
+                                    conn.Send(pkt.GetBytes());
+                                    ServerDataChannel.PushSentPacket(pkt);
+                                    pkt.Dispose();
                                 }
                                 catch (Exception ex)
                                 {
-                                    Log.Warn($"服务端分析包出现异常：{ex}", "BasePacket_AsyncTask");
+                                    Log.Warn($"服务端回传包出现异常：{ex}", "ServerSending");
                                     return;
                                 }
-                                ServerDataChannel.PushReceivedPacket(pkt);
-                                Log.Verb($"Server received packet: length:{data.Length}, isStructureValid:{pkt.isStructureValid}, isBodyValid:{pkt.isBodyValid}, ack:{pkt.ack}, bodyLen:{pkt.bodyLen}", "ServerReceiver_AsyncTask");
-                                if (pkt.isStructureValid)
-                                {
-                                    try
-                                    {
-                                        pkt.ack = pkt.ack + 1;
-                                        conn.Send(pkt.GetBytes());
-                                        ServerDataChannel.PushSentPacket(pkt);
-                                        pkt.Dispose();
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        Log.Warn($"服务端回传包出现异常：{ex}", "ServerSending_AsyncTask");
-                                        return;
-                                    }
-                                }
-                            });
+                            }
                         }
                     });
                 }

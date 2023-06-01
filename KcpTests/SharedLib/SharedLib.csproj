@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.1" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.2" />
     <PackageReference Include="Google.Protobuf" Version="3.23.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>

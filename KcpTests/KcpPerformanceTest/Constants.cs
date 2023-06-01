@@ -5,12 +5,12 @@ namespace csharp_Protoshift.MhyKCP.Test.App
         public const ushort UDP_SERVER_PORT = 30351;
         public const ushort UDP_PROXY_PORT = 30341;
 
-        public const int each_packet_size = 2500;
-        // ÊÇ·ñËæ»ú°ü´óĞ¡ ×îĞ¡Îª0 ×î´óÎªeach_packet_size
+        public const int each_packet_size = 500;
+        // æ˜¯å¦éšæœºåŒ…å¤§å° æœ€å°ä¸º0 æœ€å¤§ä¸ºeach_packet_size
         public const bool random_packet_size = false;
-        // ·¢°ü×ÜÊıÁ¿
-        public const int packet_repeat_time = 5000;
-        // ·¢°ü¼ä¸ô ·ÇÑÏ¸ñ¼ä¸ô£¬¼´·¢Íê°üºóµÈ´ıºÁÃëÊı
-        public const int packet_interval_ms = 50;
+        // å‘åŒ…æ€»æ•°é‡
+        public const int packet_repeat_time = 10;
+        // å‘åŒ…é—´éš” éä¸¥æ ¼é—´éš”ï¼Œå³å‘å®ŒåŒ…åç­‰å¾…æ¯«ç§’æ•°
+        public const int packet_interval_ms = 500;
     }
 }
