@@ -150,11 +150,11 @@ namespace csharp_Protoshift.MhyKCP
                         int status = cskcpHandle.Input(buffer);
                         checkTime_refresh = true;
 #pragma warning restore CS8602 // 解引用可能出现空引用。
-                        if (status == -1)
-                        {
-                            _State = ConnectionState.CLOSED;
-                            throw new SocketException(10053); // Connection aborted
-                        }
+                        // if (status == -1)
+                        // {
+                        //     _State = ConnectionState.CLOSED;
+                        //     throw new SocketException(10053); // Connection aborted
+                        // }
                         return status;
                     }
                 case ConnectionState.HANDSHAKE_WAIT:

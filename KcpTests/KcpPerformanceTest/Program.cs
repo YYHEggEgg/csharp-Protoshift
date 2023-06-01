@@ -9,11 +9,12 @@ Log.Initialize(new LoggerConfig(
     use_Working_Directory: true,
 #if DEBUG
     global_Minimum_LogLevel: LogLevel.Verbose,
-    console_Minimum_LogLevel: LogLevel.Information
+    console_Minimum_LogLevel: LogLevel.Information,
 #else
     global_Minimum_LogLevel: LogLevel.Information,
-    console_Minimum_LogLevel: LogLevel.Information
+    console_Minimum_LogLevel: LogLevel.Information,
 #endif
+    debug_LogWriter_AutoFlush: true
 ));
 
 Log.Info("Kcp-Csharp Performance TESTER");

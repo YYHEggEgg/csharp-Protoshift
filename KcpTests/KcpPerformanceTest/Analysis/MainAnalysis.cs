@@ -183,8 +183,20 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             Output(stringRes);
             Output(stringRes, $"TODO: 输出异常的 ack list");
 
-            string logPath = Path.Combine(Environment.CurrentDirectory, 
-                "logs", $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.packet.log");
+            string logPath = "logs/latest.packet.log";
+            var packetLog = new FileInfo("logs/latest.packet.log");
+            if (packetLog.Exists)
+            {
+                try
+                {
+                    packetLog.MoveTo($"logs/{packetLog.LastWriteTime:yyyy-MM-dd_HH-mm-ss}.packet.log");
+                }
+                catch (Exception ex)
+                {
+                    Log.Erro($"日志重命名操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+                    return;
+                }
+            }
             try
             {
                 await File.Create(logPath).DisposeAsync();
