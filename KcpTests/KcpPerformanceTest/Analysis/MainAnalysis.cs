@@ -54,7 +54,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             }
             #endregion
             await HandleData();
-            TestFinished = true;
+            TestsFinished = true;
         }
 
         static ReadOnlyCollection<ReadOnlyBasePacketRecord>?
