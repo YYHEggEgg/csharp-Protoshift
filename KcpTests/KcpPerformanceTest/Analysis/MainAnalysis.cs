@@ -12,6 +12,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
 {
     internal static class MainAnalysis
     {
+        public bool TestsFinished { get; private set; } = false;
+
         /// <summary>
         /// 客户端发出全部包后调用，在10s后锁定<see cref="ClientDataChannel"/>，并停止Proxy与Server的数据收集并创建副本
         /// </summary>
@@ -52,6 +54,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             }
             #endregion
             await HandleData();
+            TestFinished = true;
         }
 
         static ReadOnlyCollection<ReadOnlyBasePacketRecord>?
@@ -195,7 +198,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 Log.Erro($"对 {logPath} 的文件操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
                 return;
             }
-            Log.Info($"日志已输出到路径 {logPath}.", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+            Log.Info($"日志已输出到路径 {logPath}。 程序会在约 10s 后退出...", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
             #endregion
         }
 

@@ -25,4 +25,8 @@ ProxyApp.Start();
 #endif
 await ClientApp.Start();
 
-Console.ReadLine();
+while (true)
+{
+    if (!MainAnalysis.TestsFinished) await Task.Delay(10000);
+    else Environment.Exit(0);
+}
