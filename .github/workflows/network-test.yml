@@ -27,7 +27,7 @@ jobs:
       run: dotnet build KcpTests/KcpPerformanceTest/KcpPerformanceTest.csproj --configuration Release
 
     - name: Run tests
-      run: dotnet test KcpTests/KcpPerformanceTest/KcpPerformanceTest.csproj --configuration Release
+      run: dotnet run -p KcpTests/KcpPerformanceTest/KcpPerformanceTest.csproj --configuration Release
 
     - name: Archive logs
       uses: actions/upload-artifact@v2
