@@ -1,6 +1,7 @@
 ﻿using csharp_Protoshift.MhyKCP.Test.App;
 using csharp_Protoshift.resLoader;
 using YYHEggEgg.Logger;
+using csharp_Protoshift.MhyKCP.Test.Analysis;
 
 // See https://aka.ms/new-console-template for more information
 Log.Initialize(new LoggerConfig(
