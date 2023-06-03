@@ -12,7 +12,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
 {
     internal static class MainAnalysis
     {
-        public bool TestsFinished { get; private set; } = false;
+        public static bool TestsFinished { get; private set; } = false;
 
         /// <summary>
         /// 客户端发出全部包后调用，在10s后锁定<see cref="ClientDataChannel"/>，并停止Proxy与Server的数据收集并创建副本
