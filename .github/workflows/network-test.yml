@@ -12,7 +12,31 @@ on:
       - network-performance-test-actions
 
 jobs:
-  build-and-test:
+  network-benchmark-debug:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Restore NuGet packages
+      run: dotnet restore KcpTests/KcpPerformanceTest/KcpPerformanceTest.csproj
+
+    - name: Run tests
+      run: cd KcpTests/KcpPerformanceTest ; dotnet run --configuration Debug
+
+    - name: Archive logs
+      uses: actions/upload-artifact@v2
+      with:
+        name: Report & logs - ${{ github.sha }}
+        path: KcpTests/KcpPerformanceTest/logs
+
+  network-benchmark-release:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,5 +57,5 @@ jobs:
     - name: Archive logs
       uses: actions/upload-artifact@v2
       with:
-        name: Report & logs_${{ github.sha }}
+        name: Report & logs - ${{ github.sha }}
         path: KcpTests/KcpPerformanceTest/logs
