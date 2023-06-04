@@ -29,5 +29,5 @@ jobs:
     - name: Archive logs
       uses: actions/upload-artifact@v2
       with:
-        name: Report & logs - ${{ github.sha }}:7
+        name: Report & logs_${{ github.sha }}
         path: KcpTests/KcpPerformanceTest/logs
