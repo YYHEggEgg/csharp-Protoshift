@@ -21,52 +21,54 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 
         protected override async Task BackgroundUpdate()
         {
-            SocketUdpReceiveResult packet;
-            try
+            while (!_Closed)
             {
-                packet = await udpSock.ReceiveFromAsync();
-            }
-            catch (Exception ex)
-            {
-                Log.Dbug($"BackgroundUpdate receiving packet meets error and restart: {ex}", nameof(KcpProxyServer));
-                await Task.Run(BackgroundUpdate);
-                return;
-            }
-            if (clients.ContainsKey(packet.RemoteEndPoint))
-            {
+                SocketUdpReceiveResult packet;
+                string remoteIpString;
                 try
                 {
-                    ((KcpProxyBase)clients[packet.RemoteEndPoint]).Input(packet.Buffer);
+                    packet = await udpSock.ReceiveFromAsync();
+                    remoteIpString = packet.RemoteEndPoint.ToString();
                 }
                 catch (Exception ex)
                 {
-                    Log.Dbug($"BackgroundUpdate:Connected reached exception {ex}", nameof(KcpProxyServer));
-                    clients.Remove(packet.RemoteEndPoint);
+                    Log.Dbug($"BackgroundUpdate receiving packet meets error and restart: {ex}", nameof(KcpProxyServer));
+                    continue;
+                }
+                if (clients.ContainsKey(remoteIpString))
+                {
+                    try
+                    {
+                        ((KcpProxyBase)clients[remoteIpString]).Input(packet.Buffer);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Dbug($"BackgroundUpdate:Connected reached exception {ex}", nameof(KcpProxyServer));
+                        clients.Remove(remoteIpString);
+                    }
+                }
+                else
+                {
+                    KcpProxyBase? conn = null;
+                    try
+                    {
+                        // Oh boy! A new connection!
+                        conn = new KcpProxyBase(sendToAddress: SendToEndpoint);
+                        conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
+                        Log.Dbug($"New connection established, remote endpoint={remoteIpString}");
+                        conn.AcceptNonblock();
+                        conn.Input(packet.Buffer);
+
+                        clients[remoteIpString] = conn;
+                        newConnections.Enqueue(packet.RemoteEndPoint);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Dbug($"BackgroundUpdate:NewConnection reached exception {ex}", nameof(KcpProxyServer));
+                        conn?.Dispose();
+                    }
                 }
             }
-            else
-            {
-                KcpProxyBase? conn = null;
-                try
-                {
-                    // Oh boy! A new connection!
-                    conn = new KcpProxyBase(sendToAddress: SendToEndpoint);
-                    conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
-                    Log.Dbug($"New connection established, remote endpoint={packet.RemoteEndPoint}");
-                    conn.AcceptNonblock();
-                    conn.Input(packet.Buffer);
-
-                    clients[packet.RemoteEndPoint] = conn;
-                    newConnections.Enqueue(packet.RemoteEndPoint);
-                }
-                catch (Exception ex)
-                {
-                    Log.Dbug($"BackgroundUpdate:NewConnection reached exception {ex}", nameof(KcpProxyServer));
-                    conn?.Dispose();
-                }
-            }
-
-            if (!_Closed) await Task.Run(BackgroundUpdate);
         }
 
         /// <summary>
@@ -76,7 +78,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         /// <param name="ClientPacketHandler">Handle packet from client to server as a middleware. byte[] is packet, uint is session id.</param>
         public async void StartProxy(ProxyHandlers handlers)
         {
-            while (true)
+            while (!_Closed)
             {
                 try
                 {
@@ -96,8 +98,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         #region Handle as a client (send to server)
         protected async void HandleClient(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
-            if (!clients.ContainsKey(remotePoint)) return;
-            var conn = (KcpProxyBase)clients[remotePoint];
+            string remoteIpString = remotePoint.ToString();
+            if (!clients.ContainsKey(remoteIpString)) return;
+            var conn = (KcpProxyBase)clients[remoteIpString];
             var PacketHandler = handlers.OnClientPacketArrival;
             while (conn.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
@@ -137,16 +140,17 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         #region Handle as a server (send to client)
         protected async void HandleServer(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
-            if (!clients.ContainsKey(remotePoint)) return;
-            var conn = (KcpProxyBase)clients[remotePoint];
+            string remoteIpString = remotePoint.ToString();
+            if (!clients.ContainsKey(remoteIpString)) return;
+            var conn = (KcpProxyBase)clients[remoteIpString];
             var PacketHandler = handlers.OnServerPacketArrival;
             while (conn.sendClient?.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
                 try
                 {
                     var beforepacket = await conn.sendClient.ReceiveAsync();
-                    if (beforepacket == null) 
-                    { 
+                    if (beforepacket == null)
+                    {
                         Log.Dbug($"Skipped null? packet (session {conn.Conv})", $"{nameof(KcpProxyServer)}:ClientHandler");
                         continue;
                     }
