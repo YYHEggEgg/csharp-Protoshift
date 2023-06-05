@@ -69,7 +69,7 @@ namespace csharp_Protoshift.MhyKCP
             // cskcpHandle.TraceListener = new ConsoleTraceListener();
 #endif
 
-            cskcpHandle.SegmentManager = new SimpleSegManager();
+            cskcpHandle.SegmentManager = new UnSafeSegManager();
 
             checkTime_refresh = true;
             Task.Run(BackgroundUpdate);
