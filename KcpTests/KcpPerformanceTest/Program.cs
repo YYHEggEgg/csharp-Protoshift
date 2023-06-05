@@ -1,6 +1,7 @@
 ﻿using csharp_Protoshift.MhyKCP.Test.App;
 using csharp_Protoshift.resLoader;
 using YYHEggEgg.Logger;
+using csharp_Protoshift.MhyKCP.Test.Analysis;
 
 // See https://aka.ms/new-console-template for more information
 Log.Initialize(new LoggerConfig(
@@ -26,4 +27,8 @@ ProxyApp.Start();
 #endif
 await ClientApp.Start();
 
-Console.ReadLine();
+while (true)
+{
+    if (!MainAnalysis.TestsFinished) await Task.Delay(10000);
+    else Environment.Exit(0);
+}

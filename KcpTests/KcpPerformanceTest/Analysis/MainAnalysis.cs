@@ -12,6 +12,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
 {
     internal static class MainAnalysis
     {
+        public static bool TestsFinished { get; private set; } = false;
+
         /// <summary>
         /// 客户端发出全部包后调用，在10s后锁定<see cref="ClientDataChannel"/>，并停止Proxy与Server的数据收集并创建副本
         /// </summary>
@@ -52,6 +54,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             }
             #endregion
             await HandleData();
+            TestsFinished = true;
         }
 
         static ReadOnlyCollection<ReadOnlyBasePacketRecord>?
@@ -167,14 +170,14 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             Output(stringRes, $"- 是否随机包大小：{Constants.random_packet_size}");
             Output(stringRes);
             Output(stringRes, $"网络汇总分析：");
-            Output(stringRes, $"Client -> Server: 平均延迟:{CsDelay.average_packetDelay.Milliseconds}ms ({CsDelay.average_packetDelay}), 总丢包:{CsLoss.packetLoss}");
-            Output(stringRes, $"Server -> Client: 平均延迟:{ScDelay.average_packetDelay.Milliseconds}ms ({ScDelay.average_packetDelay}), 总丢包:{ScLoss.packetLoss}");
+            OutputCompare(stringRes, CsDelay, CsLoss, "Client", "Server");
+            OutputCompare(stringRes, ScDelay, ScLoss, "Server", "Client");
 #if !CONNECT_SERVERONLY
             Output(stringRes);
-            Output(stringRes, $"Client -> Proxy: 平均延迟:{CpDelay.average_packetDelay.Milliseconds}ms ({CpDelay.average_packetDelay}), 总丢包:{CpLoss.packetLoss}");
-            Output(stringRes, $"Proxy -> Server: 平均延迟:{PsDelay.average_packetDelay.Milliseconds}ms ({PsDelay.average_packetDelay}), 总丢包:{PsLoss.packetLoss}");
-            Output(stringRes, $"Server -> Proxy: 平均延迟:{SpDelay.average_packetDelay.Milliseconds}ms ({SpDelay.average_packetDelay}), 总丢包:{SpLoss.packetLoss}");
-            Output(stringRes, $"Proxy -> Client: 平均延迟:{PcDelay.average_packetDelay.Milliseconds}ms ({PcDelay.average_packetDelay}), 总丢包:{PcLoss.packetLoss}");
+            OutputCompare(stringRes, CpDelay, CpLoss, "Client", "Proxy");
+            OutputCompare(stringRes, PsDelay, PsLoss, "Proxy", "Server");
+            OutputCompare(stringRes, SpDelay, SpLoss, "Server", "Proxy");
+            OutputCompare(stringRes, PcDelay, PcLoss, "Proxy", "Client");
             Output(stringRes);
             Output(stringRes, $"Proxy_OnClientPacket: 平均处理时间:{Cs_proxy_delay.average_packetDelay.Milliseconds}ms ({Cs_proxy_delay.average_packetDelay}), 异常率:{Cs_proxy_failed.packetLoss}");
             Output(stringRes, $"Proxy_OnServerPacket: 平均处理时间:{Sc_proxy_delay.average_packetDelay.Milliseconds}ms ({Sc_proxy_delay.average_packetDelay}), 异常率:{Sc_proxy_failed.packetLoss}");
@@ -207,10 +210,25 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 Log.Erro($"对 {logPath} 的文件操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
                 return;
             }
-            Log.Info($"日志已输出到路径 {logPath}.", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+            Log.Info($"日志已输出到路径 {logPath}。 程序会在约 10s 后退出...", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
             #endregion
         }
 
+        #region Generate & Output
+        private static void OutputCompare(StringBuilder target, PacketDelayResult delay, PacketLossResult loss, string from_friendlyName, string to_friendlyName)
+        {
+            // Output(stringRes, $"Client        -> Proxy            : 平均延迟:{CpDelay.average_packetDelay.Milliseconds}ms ({CpDelay.average_packetDelay}), 总丢包:{CpLoss.packetLoss}");
+            Output(target, $"{from_friendlyName} -> {to_friendlyName}: 平均延迟:{delay.average_packetDelay.Milliseconds}ms ({delay.average_packetDelay}), 总丢包:{loss.packetLoss}");
+        }
+
+        private static void OutputLossAck(StringBuilder target, PacketLossResult lossResult, string from_friendlyName, string to_friendlyName)
+        {
+            Output(target, $"{from_friendlyName} -> {to_friendlyName} 出现了 {lossResult.lost_ack.Length} 个包丢失：");
+            // TODO
+        }
+        #endregion
+
+        #region Inner Output
         private static void Output(StringBuilder target)
         {
             // Log.Info("", $"{nameof(MainAnalysis)}_GenerateReport");
@@ -222,5 +240,6 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             // Log.Info(content, $"{nameof(MainAnalysis)}_GenerateReport");
             target.AppendLine(content);
         }
+        #endregion
     }
 }
