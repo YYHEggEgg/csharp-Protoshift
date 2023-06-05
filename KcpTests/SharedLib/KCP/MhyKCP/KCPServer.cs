@@ -15,10 +15,11 @@ namespace csharp_Protoshift.MhyKCP
 
         protected SocketUdpClient udpSock;
         protected bool _Closed = false;
-        protected Dictionary<IPEndPoint, MhyKcpBase> clients;
+        // string is the ToString() form of IPEndPoint
+        protected Dictionary<string, MhyKcpBase> clients;
         protected ConcurrentQueue<IPEndPoint> newConnections;
 
-#pragma warning disable CS8618 // ??????????????????? null ????¦Á???????? null ????????????????? null??
+#pragma warning disable CS8618 // ??????????????????? null ????ï¿½ï¿½???????? null ????????????????? null??
         public class AcceptAsyncReturn
         {
             public MhyKcpBase Connection;
@@ -27,15 +28,15 @@ namespace csharp_Protoshift.MhyKCP
 
         protected KCPServer()
         {
-            clients = new Dictionary<IPEndPoint, MhyKcpBase>();
+            clients = new Dictionary<string, MhyKcpBase>();
             newConnections = new ConcurrentQueue<IPEndPoint>();
         }
-#pragma warning restore CS8618 // ??????????????????? null ????¦Á???????? null ????????????????? null??
+#pragma warning restore CS8618 // ??????????????????? null ????ï¿½ï¿½???????? null ????????????????? null??
 
         public KCPServer(IPEndPoint ipEp)
         {
             udpSock = new SocketUdpClient(ipEp);
-            clients = new Dictionary<IPEndPoint, MhyKcpBase>();
+            clients = new Dictionary<string, MhyKcpBase>();
             newConnections = new ConcurrentQueue<IPEndPoint>();
 
             Task.Run(BackgroundUpdate);
@@ -44,15 +45,16 @@ namespace csharp_Protoshift.MhyKCP
         protected virtual async Task BackgroundUpdate()
         {
             var packet = await udpSock.ReceiveFromAsync();
-            if (clients.ContainsKey(packet.RemoteEndPoint))
+            string remoteIpString = packet.RemoteEndPoint.ToString();
+            if (clients.ContainsKey(remoteIpString))
             {
                 try
                 {
-                    clients[packet.RemoteEndPoint].Input(packet.Buffer);
+                    clients[remoteIpString].Input(packet.Buffer);
                 }
                 catch (Exception)
                 {
-                    clients.Remove(packet.RemoteEndPoint);
+                    clients.Remove(remoteIpString);
                 }
             }
             else
@@ -66,7 +68,7 @@ namespace csharp_Protoshift.MhyKCP
                 {
                     conn.Input(packet.Buffer);
 
-                    clients[packet.RemoteEndPoint] = conn;
+                    clients[remoteIpString] = conn;
                     newConnections.Enqueue(packet.RemoteEndPoint);
                 } catch (Exception)
                 {
@@ -87,7 +89,7 @@ namespace csharp_Protoshift.MhyKCP
                 
                 if (newConnections.TryDequeue(out ipEp))
                 {
-                    conn = clients[ipEp];
+                    conn = clients[ipEp.ToString()];
                 }
                 if (conn == null) await Task.Delay(10);
             }
