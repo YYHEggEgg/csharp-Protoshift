@@ -169,6 +169,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             Output(stringRes, $"- 最大发包大小：{Constants.each_packet_size} bytes");
             Output(stringRes, $"- 是否随机包大小：{Constants.random_packet_size}");
             Output(stringRes);
+            #region 网络汇总分析
             Output(stringRes, $"网络汇总分析：");
             OutputCompare(stringRes, CsDelay, CsLoss, "Client", "Server");
             OutputCompare(stringRes, ScDelay, ScLoss, "Server", "Client");
@@ -182,10 +183,54 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             Output(stringRes, $"Proxy_OnClientPacket: 平均处理时间:{Cs_proxy_delay.average_packetDelay.Milliseconds}ms ({Cs_proxy_delay.average_packetDelay}), 异常率:{Cs_proxy_failed.packetLoss}");
             Output(stringRes, $"Proxy_OnServerPacket: 平均处理时间:{Sc_proxy_delay.average_packetDelay.Milliseconds}ms ({Sc_proxy_delay.average_packetDelay}), 异常率:{Sc_proxy_failed.packetLoss}");
 #endif
+            #endregion
             Output(stringRes);
             Output(stringRes);
-            Output(stringRes, $"TODO: 输出异常的 ack list");
+            #region 丢包情况
+            OutputLossAck(stringRes, CsLoss, "Client", "Server");
+            Output(stringRes);
+            OutputLossAck(stringRes, ScLoss, "Server", "Client");
+            Output(stringRes);
+#if !CONNECT_SERVERONLY
+            OutputLossAck(stringRes, CpLoss, "Client", "Proxy");
+            Output(stringRes);
+            OutputLossAck(stringRes, PsLoss, "Proxy", "Server");
+            Output(stringRes);
+            OutputLossAck(stringRes, SpLoss, "Server", "Proxy");
+            Output(stringRes);
+            OutputLossAck(stringRes, PcLoss, "Proxy", "Client");
+            Output(stringRes);
+            #region Proxy Handlers
+            Output(stringRes, $"Proxy_OnClientHandler 异常情况：");
+            Output(stringRes, $"  在处理 {Cs_proxy_failed.lost_ack.Length} 个包时可能发生了异常导致丢包。ack 列表：");
+            #region Lost packet
+            string acklist = "  [ ";
+            foreach (var loss in Cs_proxy_failed.lost_ack)
+            {
+                acklist += $"{loss}; ";
+            }
+            acklist += "]";
+            Output(stringRes, acklist);
+            #endregion
+            Output(stringRes);
+            Output(stringRes, $"Proxy_OnServerHandler 异常情况：");
+            Output(stringRes, $"  在处理 {Sc_proxy_failed.lost_ack.Length} 个包时可能发生了异常导致丢包。ack 列表：");
+            #region Lost packet
+            acklist = "  [ ";
+            foreach (var loss in Sc_proxy_failed.lost_ack)
+            {
+                acklist += $"{loss}; ";
+            }
+            acklist += "]";
+            Output(stringRes, acklist);
+            #endregion
+            Output(stringRes);
+            #endregion
+#endif
+            #endregion
+            Output(stringRes, $"TODO: 输出所有的 ack list");
 
+            #region 外部文件操作
             string logPath = "logs/latest.packet.log";
             var packetLog = new FileInfo("logs/latest.packet.log");
             if (packetLog.Exists)
@@ -212,6 +257,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             }
             Log.Info($"日志已输出到路径 {logPath}。 程序会在约 10s 后退出...", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
             #endregion
+            #endregion
         }
 
         #region Generate & Output
@@ -223,8 +269,27 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
 
         private static void OutputLossAck(StringBuilder target, PacketLossResult lossResult, string from_friendlyName, string to_friendlyName)
         {
-            Output(target, $"{from_friendlyName} -> {to_friendlyName} 出现了 {lossResult.lost_ack.Length} 个包丢失：");
-            // TODO
+            Output(target, $"{from_friendlyName} -> {to_friendlyName} 丢包情况：");
+            Output(target, $"  出现了 {lossResult.lost_ack.Length} 个包丢失。ack 列表：");
+            #region Lost packet
+            string acklist = "  [ ";
+            foreach (var loss in lossResult.lost_ack)
+            {
+                acklist += $"{loss}; ";
+            }
+            acklist += "]";
+            Output(target, acklist);
+            #endregion
+            Output(target);
+            Output(target, $"  有 {lossResult.extra_ack.Length} 个包收到了响应但没有找到发出过的请求。ack 列表：");
+            #region Extra Packet
+            acklist = "  [ ";
+            foreach (var ext in lossResult.extra_ack)
+            {
+                acklist += $"{ext}; ";
+            }
+            acklist += "]";
+            #endregion
         }
         #endregion
 
