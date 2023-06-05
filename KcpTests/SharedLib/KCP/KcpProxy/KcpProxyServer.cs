@@ -99,8 +99,6 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             if (!clients.ContainsKey(remotePoint)) return;
             var conn = (KcpProxyBase)clients[remotePoint];
             var PacketHandler = handlers.OnClientPacketArrival;
-            var IsUrgentPacket = handlers.IsUrgentClientPacket;
-            _ = ClientPacketSender(conn);
             while (conn.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
                 try
@@ -113,11 +111,11 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     {
                         try
                         {
-                            // This part is probably running on bug and don't delete isUrgent variable!
-                            var isUrgent = IsUrgentPacket(beforepacket, conn.Conv);
                             var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                            (isUrgent ? client_urgentPackets : client_normalPackets)
-                                .Enqueue(afterpacket);
+                            conn.sendClient.Send(afterpacket);
+#if KCP_PROXY_VERBOSE
+                            Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", $"{nameof(KcpProxyServer)}:ServerSender");
+#endif
                         }
                         catch (Exception e)
                         {
@@ -134,64 +132,6 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 }
             }
         }
-
-        #region Send Packet
-        private ConcurrentQueue<byte[]?> client_urgentPackets = new();
-        private ConcurrentQueue<byte[]?> client_normalPackets = new();
-        private async Task ClientPacketSender(KcpProxyBase sendConn)
-        {
-            while (true)
-            {
-                if (sendConn.sendClient == null)
-                {
-                    if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
-                    await Task.Delay(5);
-                }
-                else if (client_urgentPackets.TryDequeue(out byte[]? urgentPacket))
-                {
-                    try
-                    {
-                        if (urgentPacket != null)
-                        {
-                            /*await */_ = sendConn.sendClient.SendAsync(urgentPacket);
-#if KCP_PROXY_VERBOSE
-                            Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", $"{nameof(KcpProxyServer)}:ServerSender");
-#endif
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ServerSender");
-                        //conn.Close();
-                    }
-                }
-                else if (client_normalPackets.TryDequeue(out byte[]? normalPacket))
-                {
-                    try
-                    {
-                        if (normalPacket != null)
-                        {
-                            /*await */
-                            _ = sendConn.sendClient.SendAsync(normalPacket);
-#if KCP_PROXY_VERBOSE
-                            Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(normalPacket)}", $"{nameof(KcpProxyServer)}:ServerSender");
-#endif
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ServerSender");
-                        //conn.Close();
-                    }
-                }
-                else
-                {
-                    if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
-                    await Task.Delay(1);
-                }
-            }
-        }
-        #endregion
         #endregion
 
         #region Handle as a server (send to client)
@@ -200,8 +140,6 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             if (!clients.ContainsKey(remotePoint)) return;
             var conn = (KcpProxyBase)clients[remotePoint];
             var PacketHandler = handlers.OnServerPacketArrival;
-            var IsUrgentPacket = handlers.IsUrgentServerPacket;
-            _ = ServerPacketSender(conn);
             while (conn.sendClient?.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
                 try
@@ -219,11 +157,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     {
                         try
                         {
-                            // This part is probably running on bug and don't delete isUrgent variable!
-                            var isUrgent = IsUrgentPacket(beforepacket, conn.Conv);
                             var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                            (isUrgent ? server_urgentPackets : server_normalPackets)
-                                .Enqueue(afterpacket);
+                            conn.Send(afterpacket);
                         }
                         catch (Exception e)
                         {
@@ -240,61 +175,6 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 }
             }
         }
-
-        #region Send Packet
-        private ConcurrentQueue<byte[]?> server_urgentPackets = new();
-        private ConcurrentQueue<byte[]?> server_normalPackets = new();
-        private async Task ServerPacketSender(KcpProxyBase sendConn)
-        {
-            while (true)
-            {
-                if (server_urgentPackets.TryDequeue(out byte[]? urgentPacket))
-                {
-                    try
-                    {
-                        if (urgentPacket != null)
-                        {
-                            /*await */
-                            _ = sendConn.SendAsync(urgentPacket);
-#if KCP_PROXY_VERBOSE
-                            Log.Dbug($"Server Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", $"{nameof(KcpProxyServer)}:ClientSender");
-#endif
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ClientSender");
-                        //conn.sendClient.Close();
-                    }
-                    continue;
-                }
-                else if (server_normalPackets.TryDequeue(out byte[]? normalPacket))
-                {
-                    try
-                    {
-                        if (normalPacket != null)
-                        {
-                            /*await */
-                            _ = sendConn.SendAsync(normalPacket);
-#if KCP_PROXY_VERBOSE
-                            Log.Dbug($"Server Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(normalPacket)}", $"{nameof(KcpProxyServer)}:ClientSender");
-#endif
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ClientSender");
-                        //conn.sendClient.Close();
-                    }
-                }
-                else
-                {
-                    if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
-                    await Task.Delay(1);
-                }
-            }
-        }
-        #endregion
         #endregion
     }
 }
