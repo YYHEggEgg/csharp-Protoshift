@@ -107,6 +107,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             List<(uint, TimeSpan)> ack_list = new();
             int packetCount = 0;
             TimeSpan totalSpan = TimeSpan.Zero;
+            TimeSpan min_span = TimeSpan.MaxValue;
+            TimeSpan max_span = TimeSpan.MinValue;
             #region 数据分析
             foreach (var send_record in send.records.Values)
             {
@@ -121,10 +123,17 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
 
                 packetCount++;
                 totalSpan += interval;
+                if (interval < min_span) min_span = interval;
+                if (interval > max_span) max_span = interval;
+            }
+            if (send.records.Count == 0)
+            {
+                min_span = TimeSpan.Zero;
+                max_span = TimeSpan.Zero;
             }
             #endregion
             ack_list.Sort();
-            return new PacketDelayResult(send, recv, totalSpan / packetCount, ack_list.ToArray());
+            return new PacketDelayResult(send, recv, totalSpan / packetCount, min_span, max_span, ack_list.ToArray());
         }
         #endregion
 
