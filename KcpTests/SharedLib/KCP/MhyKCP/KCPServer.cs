@@ -44,39 +44,41 @@ namespace csharp_Protoshift.MhyKCP
 
         protected virtual async Task BackgroundUpdate()
         {
-            var packet = await udpSock.ReceiveFromAsync();
-            string remoteIpString = packet.RemoteEndPoint.ToString();
-            if (clients.ContainsKey(remoteIpString))
+            while (!_Closed)
             {
-                try
+                var packet = await udpSock.ReceiveFromAsync();
+                string remoteIpString = packet.RemoteEndPoint.ToString();
+                if (clients.ContainsKey(remoteIpString))
                 {
-                    clients[remoteIpString].Input(packet.Buffer);
+                    try
+                    {
+                        clients[remoteIpString].Input(packet.Buffer);
+                    }
+                    catch (Exception)
+                    {
+                        clients.Remove(remoteIpString);
+                    }
                 }
-                catch (Exception)
+                else
                 {
-                    clients.Remove(remoteIpString);
+                    // Oh boy! A new connection!
+                    var conn = new MhyKcpBase();
+                    conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
+
+                    conn.AcceptNonblock();
+                    try
+                    {
+                        conn.Input(packet.Buffer);
+
+                        clients[remoteIpString] = conn;
+                        newConnections.Enqueue(packet.RemoteEndPoint);
+                    }
+                    catch (Exception)
+                    {
+                        conn.Dispose();
+                    }
                 }
             }
-            else
-            {
-                // Oh boy! A new connection!
-                var conn = new MhyKcpBase();
-                conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
-
-                conn.AcceptNonblock();
-                try
-                {
-                    conn.Input(packet.Buffer);
-
-                    clients[remoteIpString] = conn;
-                    newConnections.Enqueue(packet.RemoteEndPoint);
-                } catch (Exception)
-                {
-                    conn.Dispose();
-                }              
-            }
-
-            if (!_Closed) await Task.Run(BackgroundUpdate);
         }
 
         public async Task<AcceptAsyncReturn> AcceptAsync()

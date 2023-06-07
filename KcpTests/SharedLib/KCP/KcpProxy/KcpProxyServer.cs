@@ -85,8 +85,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     var ret = await AcceptAsync();
                     Log.Info($"New connection from {ret.RemoteEndpoint}.", nameof(KcpProxyServer));
 
-                    HandleServer(ret.RemoteEndpoint, handlers);
-                    HandleClient(ret.RemoteEndpoint, handlers);
+                    _ = Task.Run(() => HandleServer(ret.RemoteEndpoint, handlers));
+                    _ = Task.Run(() => HandleClient(ret.RemoteEndpoint, handlers));
                 }
                 catch (Exception ex)
                 {
@@ -96,7 +96,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         }
 
         #region Handle as a client (send to server)
-        protected async void HandleClient(IPEndPoint remotePoint, ProxyHandlers handlers)
+        protected void HandleClient(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
             string remoteIpString = remotePoint.ToString();
             if (!clients.ContainsKey(remoteIpString)) return;
@@ -106,7 +106,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             {
                 try
                 {
-                    var beforepacket = await conn.ReceiveAsync();
+                    var beforepacket = conn.Receive();
 #if KCP_PROXY_VERBOSE
                     Log.Dbug($"Server Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", $"{nameof(KcpProxyServer)}:ServerHandler");
 #endif
@@ -138,7 +138,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         #endregion
 
         #region Handle as a server (send to client)
-        protected async void HandleServer(IPEndPoint remotePoint, ProxyHandlers handlers)
+        protected void HandleServer(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
             string remoteIpString = remotePoint.ToString();
             if (!clients.ContainsKey(remoteIpString)) return;
@@ -148,7 +148,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             {
                 try
                 {
-                    var beforepacket = await conn.sendClient.ReceiveAsync();
+                    var beforepacket = conn.sendClient.Receive();
                     if (beforepacket == null)
                     {
                         Log.Dbug($"Skipped null? packet (session {conn.Conv})", $"{nameof(KcpProxyServer)}:ClientHandler");
