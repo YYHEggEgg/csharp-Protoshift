@@ -264,7 +264,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
         private static void OutputCompare(StringBuilder target, PacketDelayResult delay, PacketLossResult loss, string from_friendlyName, string to_friendlyName)
         {
             // Output(stringRes, $"Client        -> Proxy            : 平均延迟:{CpDelay.average_packetDelay.Milliseconds}ms ({CpDelay.average_packetDelay}), 总丢包:{CpLoss.packetLoss}");
-            Output(target, $"{from_friendlyName} -> {to_friendlyName}: 平均延迟:{delay.average_packetDelay.Milliseconds}ms ({delay.average_packetDelay}), 总丢包:{loss.packetLoss}, 网络抖动:{(delay.maximum_packetDelay - delay.minimum_packetDelay).Milliseconds}ms ({delay.minimum_packetDelay} - {delay.maximum_packetDelay})");
+            Output(target, $"{from_friendlyName} -> {to_friendlyName}: 平均延迟:{delay.average_packetDelay.TotalMilliseconds}ms ({delay.average_packetDelay}), 总丢包:{loss.packetLoss}, 网络抖动:{(delay.maximum_packetDelay - delay.minimum_packetDelay).TotalMilliseconds}ms ({delay.minimum_packetDelay} - {delay.maximum_packetDelay})");
         }
 
         private static void OutputLossAck(StringBuilder target, PacketLossResult lossResult, string from_friendlyName, string to_friendlyName)
