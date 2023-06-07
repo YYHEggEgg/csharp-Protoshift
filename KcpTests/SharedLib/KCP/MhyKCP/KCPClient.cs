@@ -38,33 +38,34 @@ namespace csharp_Protoshift.MhyKCP
 
         protected virtual async Task BackgroundUpdate()
         {
-            var packet = await udpSock.ReceiveFromAsync();
-            try
+            while (!_Closed)
             {
-                if (packet.RemoteEndPoint.ToString() == remoteAddress.ToString())
+                var packet = await udpSock.ReceiveFromAsync();
+                try
                 {
-                    // Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", nameof(KCPClient));
-                    server.Input(packet.Buffer);
+                    if (packet.RemoteEndPoint.ToString() == remoteAddress.ToString())
+                    {
+                        // Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", nameof(KCPClient));
+                        server.Input(packet.Buffer);
+                    }
+                    else
+                    {
+                        // Log.Warn($"Bad packet sent to client: {fromip}, buf = {Convert.ToHexString(packet)}");
+                    }
+                    if (server.State != MhyKcpBase.ConnectionState.CONNECTED)
+                    {
+                        StartDisconnected?.Invoke(server.Conv, server.Token);
+                        _Closed = true;
+                        server.Dispose();
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    // Log.Warn($"Bad packet sent to client: {fromip}, buf = {Convert.ToHexString(packet)}");
-                }
-                if (server.State != MhyKcpBase.ConnectionState.CONNECTED)
-                {
-                    StartDisconnected?.Invoke(server.Conv, server.Token);
+                    Log.Erro($"Update fail: {ex}", nameof(KCPClient));
                     _Closed = true;
                     server.Dispose();
                 }
             }
-            catch (Exception ex)
-            {
-                Log.Erro($"Update fail: {ex}", nameof(KCPClient));
-                _Closed = true;
-                server.Dispose();
-            }
-
-            if (!_Closed) await Task.Run(BackgroundUpdate);
         }
 
         public async Task ConnectAsync()

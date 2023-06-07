@@ -227,27 +227,45 @@ namespace csharp_Protoshift.MhyKCP
             return Send(buffer);
         }
 
+#if DEBUG
+        private bool recvnonblock_lock = false;
+#endif
         private byte[]? ReceiveNonblock()
         {
             if (_State != ConnectionState.CONNECTED)
                 throw new SocketException(10057);
 
-            lock (cskcp_recvLock)
+#if DEBUG
+            if (!recvnonblock_lock) recvnonblock_lock = true;
+            else
             {
-                // int size = IKCP.ikcp_peeksize(ikcpHandle);
-#pragma warning disable CS8602 // 解引用可能出现空引用。
-                int size = cskcpHandle.PeekSize();
-#pragma warning restore CS8602 // 解引用可能出现空引用。
-                if (size < 0) return null;
-
-                var buffer = new byte[size];
-                // int trueSize = IKCP.ikcp_recv(ikcpHandle, buffer, buffer.Length);
-                int trueSize;
-                trueSize = cskcpHandle.Recv(buffer);
-                if (trueSize != size) throw new Exception("Unexpected state");
-
-                return buffer;
+                // TODO: 补全invoker信息
+                var invoker = Environment.StackTrace;
+                Log.Erro($"ReceiveNonBlock should be invoked STA! invoker: {invoker}", nameof(MhyKcpBase));
             }
+#endif
+            // int size = IKCP.ikcp_peeksize(ikcpHandle);
+#pragma warning disable CS8602 // 解引用可能出现空引用。
+            int size = cskcpHandle.PeekSize();
+#pragma warning restore CS8602 // 解引用可能出现空引用。
+            if (size < 0)
+            {
+#if DEBUG
+                recvnonblock_lock = false;
+#endif
+                return null;
+            }
+
+            var buffer = new byte[size];
+            // int trueSize = IKCP.ikcp_recv(ikcpHandle, buffer, buffer.Length);
+            int trueSize;
+            trueSize = cskcpHandle.Recv(buffer);
+#if DEBUG
+            recvnonblock_lock = false;
+#endif
+            if (trueSize != size) throw new Exception("Unexpected state");
+
+            return buffer;
         }
 
         public byte[]? Receive(bool nonblock = false)
@@ -258,7 +276,7 @@ namespace csharp_Protoshift.MhyKCP
             while (ret == null)
             {
                 ret = ReceiveNonblock();
-                if (ret == null) Thread.Yield();
+                if (ret == null) Thread.Sleep(KCP_RefreshMilliseconds);
             }
             return ret;
         }
@@ -269,7 +287,11 @@ namespace csharp_Protoshift.MhyKCP
             while (ret == null)
             {
                 ret = ReceiveNonblock();
-                if (ret == null) await Task.Yield(); //(int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF));
+                if (ret == null)
+                {
+                    // await Task.Yield(); //(int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF));
+                    await Task.Delay(KCP_RefreshMilliseconds);
+                }
             }
             return ret;
         }
@@ -278,38 +300,40 @@ namespace csharp_Protoshift.MhyKCP
         protected DateTimeOffset update_next_time = DateTimeOffset.MinValue;
         public async Task BackgroundUpdate()
         {
-            if (_Disposed || _State != ConnectionState.CONNECTED || cskcpHandle == null) return;
-
-            // int dur;
-            // lock (ikcpLock) dur = (int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF);
-            // DateTimeOffset dur = cskcpHandle.Check(DateTime.UtcNow);
-            
-            // From author:
-            // 如果你不需要管理1000个以上的 kcp对象的话，还是不要用check比较好，这部分代码写起来比较烦。
-            // await Task.Delay(KCP_RefreshMilliseconds);
-            // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
-            // cskcpHandle.Update(DateTimeOffset.UtcNow);
-
-            // Below is new code with ikcp_check
-            if (checkTime_refresh || DateTimeOffset.UtcNow >= update_next_time)
+            while (true)
             {
-                checkTime_refresh = false;
-                var nowtime = DateTimeOffset.UtcNow;
+                if (_Disposed || _State != ConnectionState.CONNECTED || cskcpHandle == null) return;
+
+                // int dur;
+                // lock (ikcpLock) dur = (int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF);
+                // DateTimeOffset dur = cskcpHandle.Check(DateTime.UtcNow);
+
+                // From author:
+                // 如果你不需要管理1000个以上的 kcp对象的话，还是不要用check比较好，这部分代码写起来比较烦。
+                // await Task.Delay(KCP_RefreshMilliseconds);
                 // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
-                cskcpHandle.Update(nowtime);
-                update_next_time = cskcpHandle.Check(nowtime);
+                // cskcpHandle.Update(DateTimeOffset.UtcNow);
+
+                // Below is new code with ikcp_check
+                if (checkTime_refresh || DateTimeOffset.UtcNow >= update_next_time)
+                {
+                    checkTime_refresh = false;
+                    var nowtime = DateTimeOffset.UtcNow;
+                    // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
+                    cskcpHandle.Update(nowtime);
+                    update_next_time = cskcpHandle.Check(nowtime);
+                }
+
+                if (!checkTime_refresh) await Task.Delay(KCP_RefreshMilliseconds);
+                else if (KCP_RefreshMilliseconds >= 15) await Task.Delay(KCP_RefreshMilliseconds);
+
             }
-
-            if (!checkTime_refresh) await Task.Delay(KCP_RefreshMilliseconds);
-            else if (KCP_RefreshMilliseconds >= 15) await Task.Delay(KCP_RefreshMilliseconds);
-
-            await Task.Run(BackgroundUpdate);
         }
 
         // public void Flush()
         // {
-            // lock (ikcpLock) IKCP.ikcp_flush(ikcpHandle);
-            // Flush in Kcp<Segment> not found. We suppose that it automatically did it.
+        // lock (ikcpLock) IKCP.ikcp_flush(ikcpHandle);
+        // Flush in Kcp<Segment> not found. We suppose that it automatically did it.
         // }
 
         public void Close()
