@@ -31,16 +31,20 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
     {
         public readonly PacketRecordCollection baseSend, baseRecv;
         public readonly TimeSpan average_packetDelay;
+        public readonly TimeSpan minimum_packetDelay;
+        public readonly TimeSpan maximum_packetDelay;
         /// <summary>
         /// 使用的包 ack 列表，为 send 与 recv 的交集，以 send 为标准。<see cref="TimeSpan"/> 为包的处理延迟
         /// </summary>
         public readonly (uint, TimeSpan)[] ack_list;
 
-        public PacketDelayResult(PacketRecordCollection baseSend, PacketRecordCollection baseRecv, TimeSpan average_packetDelay, (uint, TimeSpan)[] ack_list)
+        public PacketDelayResult(PacketRecordCollection baseSend, PacketRecordCollection baseRecv, TimeSpan average_packetDelay, TimeSpan minimum_packetDelay, TimeSpan maximum_packetDelay, (uint, TimeSpan)[] ack_list)
         {
             this.baseSend = baseSend;
             this.baseRecv = baseRecv;
             this.average_packetDelay = average_packetDelay;
+            this.minimum_packetDelay = minimum_packetDelay;
+            this.maximum_packetDelay = maximum_packetDelay;
             this.ack_list = ack_list;
         }
     }
