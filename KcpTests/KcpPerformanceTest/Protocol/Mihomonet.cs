@@ -113,7 +113,9 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
             Log.Verb($"Assigned {packet.Length} bytes from the Shared ArrayPool.", $"{nameof(BasePacket)}_Ctor(arr)");
             Buffer.BlockCopy(packet, 0, _baseBuffer, 0, packet.Length);
             XorDecrypt(ref _baseBuffer);
-            // Log.Verb($"Created BasePacket from array (decrypted): {Convert.ToHexString(_baseBuffer)}", $"{nameof(BasePacket)}_Ctor(arr)");
+#if DEBUG
+            _ = Task.Run(() => Log.Verb($"Created BasePacket from array (decrypted): {Convert.ToHexString(_baseBuffer)}", $"{nameof(BasePacket)}_Ctor(arr)"));
+#endif
             #region 读取数组
             isStructureValid = true;
             int offset = 0;
