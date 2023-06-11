@@ -44,7 +44,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                             catch (Exception ex)
                             {
                                 Log.Warn($"服务端分析包出现异常：{ex}", "BasePacket");
-                                return;
+                                continue;
                             }
                             ServerDataChannel.PushReceivedPacket(pkt);
                             Log.Verb($"Server received packet: length:{data?.Length}, isStructureValid:{pkt.isStructureValid}, isBodyValid:{pkt.isBodyValid}, ack:{pkt.ack}, bodyLen:{pkt.bodyLen}", "ServerReceiver");
@@ -60,7 +60,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                                 catch (Exception ex)
                                 {
                                     Log.Warn($"服务端回传包出现异常：{ex}", "ServerSending");
-                                    return;
+                                    continue;
                                 }
                             }
                         }

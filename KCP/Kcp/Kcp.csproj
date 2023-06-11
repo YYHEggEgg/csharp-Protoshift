@@ -73,10 +73,13 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.3" />
+  </ItemGroup>
 
   <!--调试符号配置-->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;DEBUG;MIHOMO_KCP</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;MIHOMO_KCP;ASSERT_STAINVOKE_DISABLE;KCP_PERFORMANCE_TEST;BUGFIX_TRIAL_20230609_001_DISABLE;BUGFIX_TRIAL_20230610_001_DISABLE;BUGFIX_TRIAL_20230610_002_DISABLE;BUGFIX_TRIAL_20230611_001_DISABLE</DefineConstants>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>false</Optimize>
   </PropertyGroup>

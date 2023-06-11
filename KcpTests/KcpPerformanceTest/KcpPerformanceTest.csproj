@@ -10,17 +10,18 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <!-- <DefineConstants>$(DefineConstants);CONNECT_SERVERONLY</DefineConstants> -->
-    <DefineConstants>$(DefineConstants)</DefineConstants>
+    <DefineConstants>$(DefineConstants);CONNECT_SERVERONLY</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <!-- <DefineConstants>$(DefineConstants);CONNECT_SERVERONLY</DefineConstants> -->
-    <DefineConstants>$(DefineConstants)</DefineConstants>
+    <DefineConstants>$(DefineConstants);CONNECT_SERVERONLY</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.2" />
-    <PackageReference Include="Google.Protobuf" Version="3.23.1" />
+    <PackageReference Include="Crc32.NET" Version="1.2.0" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.3" />
+    <PackageReference Include="Google.Protobuf" Version="3.23.2" />
   </ItemGroup>
 
   <ItemGroup>

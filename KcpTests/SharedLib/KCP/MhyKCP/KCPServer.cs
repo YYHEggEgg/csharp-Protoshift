@@ -19,6 +19,8 @@ namespace csharp_Protoshift.MhyKCP
         protected Dictionary<string, MhyKcpBase> clients;
         protected ConcurrentQueue<IPEndPoint> newConnections;
 
+        protected SingleThreadAssert _updatelock = new(nameof(KCPServer));
+
 #pragma warning disable CS8618 // ??????????????????? null ????��???????? null ????????????????? null??
         public class AcceptAsyncReturn
         {
@@ -44,6 +46,7 @@ namespace csharp_Protoshift.MhyKCP
 
         protected virtual async Task BackgroundUpdate()
         {
+            _updatelock.Enter();
             while (!_Closed)
             {
                 var packet = await udpSock.ReceiveFromAsync();
@@ -79,6 +82,7 @@ namespace csharp_Protoshift.MhyKCP
                     }
                 }
             }
+            _updatelock.Exit();
         }
 
         public async Task<AcceptAsyncReturn> AcceptAsync()

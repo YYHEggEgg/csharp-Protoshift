@@ -1,5 +1,6 @@
 ﻿using csharp_Protoshift.MhyKCP.Test.Analysis;
 using csharp_Protoshift.MhyKCP.Test.Protocol;
+using Force.Crc32;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -23,11 +24,21 @@ namespace csharp_Protoshift.GameSession
         public static byte[]? HandleServerPacket(byte[] data, uint conv)
         {
             AssertSessionExists(conv);
+#if DEBUG
+            uint checksum_before = Crc32Algorithm.Compute(data);
+#endif
             BasePacket basePacket = new(data);
             ProxyDataChannel.PushReceivedServerPacket(basePacket);
             try
             {
                 var res = sessions[conv].HandlePacket(data, false);
+#if DEBUG
+                uint checksum_after = Crc32Algorithm.Compute(res);
+                if (checksum_before != checksum_after)
+                {
+                    _ = Task.Run(() => Log.Warn($"Checksum test failed for readonly proxy! \nbefore: (CRC32: {checksum_before}) {Convert.ToHexString(data)}\nafter: (CRC32: {checksum_after}) {Convert.ToHexString(res)}", nameof(HandleServerPacket)));
+                }
+#endif
                 ProxyDataChannel.PushSentServerPacket(basePacket);
                 basePacket.Dispose();
                 return res;
@@ -46,11 +57,21 @@ namespace csharp_Protoshift.GameSession
         public static byte[]? HandleClientPacket(byte[] data, uint conv)
         {
             AssertSessionExists(conv);
+#if DEBUG
+            uint checksum_before = Crc32Algorithm.Compute(data);
+#endif
             BasePacket basePacket = new(data);
             ProxyDataChannel.PushReceivedClientPacket(basePacket);
             try
             {
                 var res = sessions[conv].HandlePacket(data, true);
+#if DEBUG
+                uint checksum_after = Crc32Algorithm.Compute(res);
+                if (checksum_before != checksum_after)
+                {
+                    _ = Task.Run(() => Log.Warn($"Checksum test failed for readonly proxy! \nbefore: (CRC32: {checksum_before}) {Convert.ToHexString(data)}\nafter: (CRC32: {checksum_after}) {Convert.ToHexString(res)}", nameof(HandleServerPacket)));
+                }
+#endif
                 ProxyDataChannel.PushSentClientPacket(basePacket);
                 basePacket.Dispose();
                 return res;

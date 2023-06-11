@@ -6,9 +6,17 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;KCP_PERFORMANCE_TEST;STA_ASSERT_DISABLE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;KCP_PERFORMANCE_TEST;STA_ASSERT_DISABLE</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.2" />
-    <PackageReference Include="Google.Protobuf" Version="3.23.1" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.3" />
+    <PackageReference Include="Google.Protobuf" Version="3.23.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 

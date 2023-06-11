@@ -104,7 +104,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
         public static PacketDelayResult PacketDelay(PacketRecordCollection send, PacketRecordCollection recv)
         {
             Debug.Assert(!ReferenceEquals(send, recv));
-            List<(uint, TimeSpan)> ack_list = new();
+            List<(uint sent_ack, TimeSpan interval, DateTime recv_time)> pkt_list = new();
             int packetCount = 0;
             TimeSpan totalSpan = TimeSpan.Zero;
             TimeSpan min_span = TimeSpan.MaxValue;
@@ -119,7 +119,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 }
                 var recv_record = recv.records[recv_ack];
                 var interval = recv_record.create_time - send_record.create_time;
-                ack_list.Add((send_record.ack, interval));
+                pkt_list.Add((send_record.ack, interval, recv_record.create_time));
 
                 packetCount++;
                 totalSpan += interval;
@@ -131,9 +131,26 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 min_span = TimeSpan.Zero;
                 max_span = TimeSpan.Zero;
             }
+            (uint, TimeSpan)[] ack_list = (from tuple in pkt_list
+                                           orderby tuple.sent_ack
+                                           select (tuple.sent_ack, tuple.interval)).ToArray();
             #endregion
-            ack_list.Sort();
-            return new PacketDelayResult(send, recv, totalSpan / packetCount, min_span, max_span, ack_list.ToArray());
+            #region 失序包分析
+            // 失序包算法
+            // 将包按照时间排序，当前包 ack 小于上一个包即视为失序
+            (uint, DateTime)[] time_ack_list = (from tuple in pkt_list
+                                                orderby tuple.recv_time
+                                                select (tuple.sent_ack, tuple.recv_time)).ToArray();
+            List<(uint, DateTime)> inverted_ack_list = new();
+            for (int i = 1; i < time_ack_list.Length; i++)
+            {
+                if (time_ack_list[i].Item1 < time_ack_list[i - 1].Item1)
+                {
+                    inverted_ack_list.Add(time_ack_list[i]);
+                }
+            }
+            #endregion
+            return new PacketDelayResult(send, recv, totalSpan / packetCount, min_span, max_span, ack_list, inverted_ack_list.ToArray());
         }
         #endregion
 
