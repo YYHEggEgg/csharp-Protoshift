@@ -73,7 +73,7 @@ namespace csharp_Protoshift.MhyKCP
             cskcpHandle.LogMask = (KcpLogMask)((1 << Enum.GetNames<KcpLogMask>().Length) - 1); // Accept all logs
 #endif
 
-            cskcpHandle.SegmentManager = new UnSafeSegManager();
+            cskcpHandle.SegmentManager = new SimpleSegManager();
 
             checkTime_refresh = true;
             Task.Run(BackgroundUpdate);
