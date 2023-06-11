@@ -40,7 +40,7 @@ jobs:
     #     retention-days: 42
 
   network-benchmark-ubuntu-rel:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
