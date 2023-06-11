@@ -12,10 +12,11 @@ on:
       - network-performance-test
       - network-performance-test-actions
       - network-performance-test-fix-patch-1
+      - delete/network-performance-test-constant
 
 jobs:
   network-benchmark-debug:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -40,7 +41,7 @@ jobs:
     #     retention-days: 42
 
   network-benchmark-release:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
