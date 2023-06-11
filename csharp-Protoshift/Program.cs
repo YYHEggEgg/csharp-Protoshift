@@ -24,16 +24,17 @@ namespace csharp_Protoshift
         static async Task Main(string[] args)
         {
             Log.Initialize(new LoggerConfig(
-                max_Output_Char_Count: 16 * 1024, 
+                max_Output_Char_Count: 16 * 1024,
                 use_Console_Wrapper: true,
                 use_Working_Directory: false,
 #if DEBUG
                 global_Minimum_LogLevel: LogLevel.Verbose,
-                console_Minimum_LogLevel: LogLevel.Information
+                console_Minimum_LogLevel: LogLevel.Information,
 #else
                 global_Minimum_LogLevel: LogLevel.Information,
-                console_Minimum_LogLevel: LogLevel.Warning
+                console_Minimum_LogLevel: LogLevel.Warning,
 #endif
+                debug_LogWriter_AutoFlush: false
                 ));
             Log.Info("csharp-Protoshift v1.0.0", "Entry");
             Log.Info("Written by YYHEggEgg#6167, https://github.com/YYHEggEgg.", "Entry");

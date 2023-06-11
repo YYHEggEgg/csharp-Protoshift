@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YYHEggEgg.Logger;
+using Force.Crc32;
 
 namespace csharp_Protoshift.GameSession
 {
@@ -23,7 +24,18 @@ namespace csharp_Protoshift.GameSession
             AssertSessionExists(conv);
             try
             {
-                return sessions[conv].HandlePacket(data, false);
+#if DEBUG
+                uint checksum_before = Crc32Algorithm.Compute(data);
+#endif
+                var rtn = sessions[conv].HandlePacket(data, false);
+#if DEBUG
+                uint checksum_after = Crc32Algorithm.Compute(rtn);
+                if (checksum_before != checksum_after)
+                {
+                    _ = Task.Run(() => Log.Warn($"Checksum test failed for readonly proxy! \nbefore: (CRC32: {checksum_before}) {Convert.ToHexString(data)}\nafter: (CRC32: {checksum_after}) {Convert.ToHexString(rtn)}", nameof(HandleServerPacket)));
+                }
+#endif
+                return rtn;
             }
 #if DEBUG
             catch (Exception ex) 
@@ -41,7 +53,18 @@ namespace csharp_Protoshift.GameSession
             AssertSessionExists(conv);
             try
             {
-                return sessions[conv].HandlePacket(data, true);
+#if DEBUG
+                uint checksum_before = Crc32Algorithm.Compute(data);
+#endif
+                var rtn = sessions[conv].HandlePacket(data, true);
+#if DEBUG
+                uint checksum_after = Crc32Algorithm.Compute(rtn);
+                if (checksum_before != checksum_after)
+                {
+                    _ = Task.Run(() => Log.Warn($"Checksum test failed for readonly proxy! \nbefore: (CRC32: {checksum_before}) {Convert.ToHexString(data)}\nafter: (CRC32: {checksum_after}) {Convert.ToHexString(rtn)}", nameof(HandleServerPacket)));
+                }
+#endif
+                return rtn;
             }
 #if DEBUG
             catch (Exception ex)
