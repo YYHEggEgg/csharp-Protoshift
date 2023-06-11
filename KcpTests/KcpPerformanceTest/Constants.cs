@@ -13,7 +13,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
         public const int packet_repeat_time = 5000;
         // 发包间隔 非严格间隔，即发完包后等待毫秒数
         public const int packet_interval_ms = 10;
-        // 是否发包完成后 10s 自动退出 一般在Actions上跑要分配true
-        public const bool auto_exit = true;
+        // 在Actions上跑要分配true 决定是否发包结束后10s退出 是否输出packet.log到控制台
+        public const bool running_on_github_actions = true;
     }
 }
