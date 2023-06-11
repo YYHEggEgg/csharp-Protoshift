@@ -6,14 +6,16 @@ on:
     branches:
       - network-performance-test
       - network-performance-test-actions
+      - network-performance-test-fix-patch-1
   push:
     branches:
       - network-performance-test
       - network-performance-test-actions
+      - network-performance-test-fix-patch-1
 
 jobs:
   network-benchmark-debug:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code
@@ -30,15 +32,15 @@ jobs:
     - name: Run tests
       run: cd KcpTests/KcpPerformanceTest ; dotnet run --configuration Debug
 
-    - name: Archive logs
-      uses: actions/upload-artifact@v2
-      with:
-        name: Report & logs (debug) - ${{ github.sha }}
-        path: KcpTests/KcpPerformanceTest/logs
-        retention-days: 42
+    # - name: Archive logs
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: Report & logs (debug) - ${{ github.sha }}
+    #     path: KcpTests/KcpPerformanceTest/logs
+    #     retention-days: 42
 
   network-benchmark-release:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code
@@ -55,8 +57,8 @@ jobs:
     - name: Run tests
       run: cd KcpTests/KcpPerformanceTest ; dotnet run --configuration Release
 
-    - name: Archive logs
-      uses: actions/upload-artifact@v2
-      with:
-        name: Report & logs (rel) - ${{ github.sha }}
-        path: KcpTests/KcpPerformanceTest/logs
+    # - name: Archive logs
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: Report & logs (rel) - ${{ github.sha }}
+    #     path: KcpTests/KcpPerformanceTest/logs

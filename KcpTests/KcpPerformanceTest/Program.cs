@@ -27,8 +27,15 @@ ProxyApp.Start();
 #endif
 await ClientApp.Start();
 
-while (true)
+if (Constants.running_on_github_actions)
 {
-    if (!MainAnalysis.TestsFinished) await Task.Delay(10000);
-    else Environment.Exit(0);
+    while (true)
+    {
+        if (!MainAnalysis.TestsFinished) await Task.Delay(10000);
+        else Environment.Exit(0);
+    }
+}
+else
+{
+    Console.ReadLine();
 }

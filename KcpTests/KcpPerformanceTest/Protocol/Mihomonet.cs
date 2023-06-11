@@ -1,4 +1,6 @@
 using System.Buffers;
+using System.Net.Sockets;
+using csharp_Protoshift.MhyKCP.Test.App;
 using csharp_Protoshift.resLoader;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
@@ -21,7 +23,14 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
         public const ushort ExpectedCmdId = 55;
 
         private byte[] _baseBuffer;
-        private readonly bool bufferFromPool;
+        private int avalidlength;
+        private bool bufferFromPool;
+        private SingleThreadAssert _stalock = new(nameof(BasePacket));
+
+        public readonly UInt64 Unique_ID;
+
+        private static object increasing_id_lock = "wtf am I debugging";
+        private static UInt64 increasing_id = 0;
 
         private uint _ack;
         public uint ack 
@@ -32,6 +41,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
                 if (!isStructureValid)
                     throw new InvalidOperationException("Trying to operate on an invalid BasePacket instance.");
 
+                _stalock.Enter();
                 _ack = value;
 
                 int offset = 0;
@@ -41,6 +51,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
                 offset += sizeof(uint); // BodyLen
 
                 _baseBuffer.SetUInt32(offset, _ack);
+                _stalock.Exit();
             }
         }
 
@@ -51,12 +62,21 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
         public uint bodyLen;
         private bool disposedValue;
 
+        private void InitBuffer(int length, string? invoker_log = null)
+        {
+            _baseBuffer = ArrayPool<byte>.Shared.Rent(length);
+            avalidlength = length;
+            Log.Verb($"Assigned {length} bytes from the Shared ArrayPool.", invoker_log);
+            bufferFromPool = true;
+            // _baseBuffer = new byte[length];
+            // bufferFromPool = false;
+        }
+
         #region 发送端 造包相关代码
         private BasePacket(int length)
         {
-            _baseBuffer = ArrayPool<byte>.Shared.Rent(length);
-            Log.Dbug($"Assigned {length} bytes from the Shared ArrayPool.", $"{nameof(BasePacket)}_Ctor(len)");
-            bufferFromPool = true;
+            lock (increasing_id_lock) Unique_ID = increasing_id++;
+            InitBuffer(length, $"{nameof(BasePacket)}({Unique_ID})_Ctor(len)");
         }
 
         public static long CalculateLength(uint bodyLen)
@@ -66,6 +86,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
         public static BasePacket Generate(uint from_ack, uint bodyLen)
         {
             var rtn = new BasePacket((int)CalculateLength(bodyLen));
+            rtn._stalock.Enter();
             rtn._ack = from_ack;
             rtn.isBodyValid = true;
             rtn.isStructureValid = true;
@@ -88,6 +109,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
             buf.SetUInt16(offset, MagicEnd); // Magic Start
             // offset += sizeof(ushort);
             #endregion
+            rtn._stalock.Exit();
             return rtn;
         }
 
@@ -103,53 +125,60 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
         public BasePacket(byte[]? packet)
 #pragma warning restore CS8618
         {
-            if (packet == null)
+            _stalock.Enter();
+            lock (increasing_id_lock) Unique_ID = increasing_id++;
+            try
             {
-                isStructureValid = false;
-                return;
-            }
-            bufferFromPool = true;
-            _baseBuffer = ArrayPool<byte>.Shared.Rent(packet.Length);
-            Log.Verb($"Assigned {packet.Length} bytes from the Shared ArrayPool.", $"{nameof(BasePacket)}_Ctor(arr)");
-            Buffer.BlockCopy(packet, 0, _baseBuffer, 0, packet.Length);
-            XorDecrypt(ref _baseBuffer);
+                if (packet == null)
+                {
+                    isStructureValid = false;
+                    return;
+                }
+                InitBuffer(packet.Length, $"{nameof(BasePacket)}({Unique_ID})_Ctor(arr)");
+                Buffer.BlockCopy(packet, 0, _baseBuffer, 0, packet.Length);
+                XorDecrypt(ref _baseBuffer);
 #if DEBUG
-            _ = Task.Run(() => Log.Verb($"Created BasePacket from array (decrypted): {Convert.ToHexString(_baseBuffer)}", $"{nameof(BasePacket)}_Ctor(arr)"));
+                Log.Verb($"Created BasePacket from array (decrypted): {Convert.ToHexString(_baseBuffer, 0, Math.Min(_baseBuffer.Length, (int)CalculateLength(Constants.each_packet_size)))}", $"{nameof(BasePacket)}({Unique_ID})_Ctor(arr)");
 #endif
-            #region 读取数组
-            isStructureValid = true;
-            int offset = 0;
-            var _magicStart = _baseBuffer.GetUInt16(offset); // Magic Start
-            if (_magicStart != MagicStart)
-            {
-                Log.Verb($"Validate: Magic Start failed: read {_magicStart}, expected {MagicStart}", $"{nameof(BasePacket)}_Ctor(arr)");
-                isStructureValid = false;
+                #region 读取数组
+                isStructureValid = true;
+                int offset = 0;
+                var _magicStart = _baseBuffer.GetUInt16(offset); // Magic Start
+                if (_magicStart != MagicStart)
+                {
+                    Log.Verb($"Validate: Magic Start failed: read {_magicStart}, expected {MagicStart}", $"{nameof(BasePacket)}({Unique_ID})_Ctor(arr)");
+                    isStructureValid = false;
+                }
+                offset += sizeof(ushort);
+                var _cmd = _baseBuffer.GetUInt16(offset); // CmdId
+                if (_cmd != ExpectedCmdId)
+                {
+                    Log.Verb($"Validate: CmdId failed: read {_cmd}, expected {ExpectedCmdId}", $"{nameof(BasePacket)}({Unique_ID})_Ctor(arr)");
+                    isStructureValid = false;
+                }
+                offset += sizeof(ushort);
+                var headLen = _baseBuffer.GetUInt16(offset); // HeadLen
+                if (headLen != sizeof(uint))
+                {
+                    Log.Verb($"Validate: HeadLen failed: read {headLen}, expected {sizeof(uint)}", $"{nameof(BasePacket)}({Unique_ID})_Ctor(arr)");
+                    isStructureValid = false;
+                }
+                offset += sizeof(ushort);
+                bodyLen = _baseBuffer.GetUInt32(offset); // bodyLen
+                offset += sizeof(uint);
+                _ack = _baseBuffer.GetUInt32(offset); // Head
+                offset += sizeof(uint);
+                isBodyValid = ValidateBody(ref _baseBuffer, offset, bodyLen); // Body
+                offset = (int)(offset + bodyLen);
+                var _magicEnd = _baseBuffer.GetUInt16(offset); // Magic End
+                isStructureValid = isStructureValid && (_magicEnd == MagicEnd);
+                // offset += sizeof(ushort);
+                #endregion
             }
-            offset += sizeof(ushort);
-            var _cmd = _baseBuffer.GetUInt16(offset); // CmdId
-            if (_cmd != ExpectedCmdId)
+            finally
             {
-                Log.Verb($"Validate: CmdId failed: read {_cmd}, expected {ExpectedCmdId}", $"{nameof(BasePacket)}_Ctor(arr)");
-                isStructureValid = false;
+                _stalock.Exit();
             }
-            offset += sizeof(ushort);
-            var headLen = _baseBuffer.GetUInt16(offset); // HeadLen
-            if (headLen != sizeof(uint))
-            {
-                Log.Verb($"Validate: HeadLen failed: read {headLen}, expected {sizeof(uint)}", $"{nameof(BasePacket)}_Ctor(arr)");
-                isStructureValid = false;
-            }
-            offset += sizeof(ushort);
-            bodyLen = _baseBuffer.GetUInt32(offset); // bodyLen
-            offset += sizeof(uint);
-            _ack = _baseBuffer.GetUInt32(offset); // Head
-            offset += sizeof(uint);
-            isBodyValid = ValidateBody(ref _baseBuffer, offset, bodyLen); // Body
-            offset = (int)(offset + bodyLen);
-            var _magicEnd = _baseBuffer.GetUInt16(offset); // Magic End
-            isStructureValid = isStructureValid && (_magicEnd == MagicEnd);
-            // offset += sizeof(ushort);
-            #endregion
         }
 
         private static bool ValidateBody(ref byte[] packet, int offset, uint length)
@@ -209,10 +238,13 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
 
         public ReadOnlySpan<byte> GetBytes()
         {
+            _stalock.Enter();
             if (disposedValue)
                 throw new ObjectDisposedException(nameof(BasePacket));
             XorDecrypt(ref _baseBuffer);
-            return new ReadOnlySpan<byte>(_baseBuffer).Slice(0, (int)CalculateLength(bodyLen));
+            var rtn = new ReadOnlySpan<byte>(_baseBuffer).Slice(0, (int)CalculateLength(bodyLen));
+            _stalock.Exit();
+            return rtn;
         }
 
         /// <summary>
@@ -221,6 +253,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
         /// <returns></returns>
         public ReadOnlyBasePacketRecord AsReadOnly()
         {
+            _stalock.Enter();
             int offset = 0;
             offset += sizeof(ushort); // Magic Start
             offset += sizeof(ushort); // CmdId
@@ -228,16 +261,19 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
             offset += sizeof(uint); // BodyLen
             offset += sizeof(uint); // Head (ack)
 
+            ReadOnlyBasePacketRecord rtn;
             if (isStructureValid)
             {
-                return new(isStructureValid, ack, bodyLen, isBodyValid,
+                rtn = new(isStructureValid, ack, bodyLen, isBodyValid,
                     isBodyValid ? null : Util.CutPacket(new ReadOnlySpan<byte>(
-                        _baseBuffer, offset, _baseBuffer.Length - sizeof(ushort))));
+                        _baseBuffer, offset, avalidlength - sizeof(ushort))));
             }
             else
             {
-                return new(isStructureValid, ack, bodyLen, isBodyValid, null);
+                rtn = new(isStructureValid, ack, bodyLen, isBodyValid, null);
             }
+            _stalock.Exit();
+            return rtn;
         }
     }
 

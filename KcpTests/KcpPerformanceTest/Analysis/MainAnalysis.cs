@@ -167,7 +167,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
 #endif
             Output(stringRes, $"- 发包数：{Constants.packet_repeat_time}");
             Output(stringRes, $"- 最大发包大小：{Constants.each_packet_size} bytes");
-            Output(stringRes, $"- 是否随机包大小：{Constants.random_packet_size}");
+            // Output(stringRes, $"- 是否随机包大小：{Constants.random_packet_size}");
             Output(stringRes);
             #region 网络汇总分析
             Output(stringRes, $"网络汇总分析：");
@@ -228,7 +228,22 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             #endregion
 #endif
             #endregion
-            Output(stringRes, $"TODO: 输出所有的 ack list");
+            #region 失序包情况
+            OutputInvertedPacket(stringRes, CsDelay, "Client", "Server");
+            Output(stringRes);
+            OutputInvertedPacket(stringRes, ScDelay, "Server", "Client");
+            Output(stringRes);
+#if !CONNECT_SERVERONLY
+            OutputInvertedPacket(stringRes, CpDelay, "Client", "Proxy");
+            Output(stringRes);
+            OutputInvertedPacket(stringRes, PsDelay, "Proxy", "Server");
+            Output(stringRes);
+            OutputInvertedPacket(stringRes, SpDelay, "Server", "Proxy");
+            Output(stringRes);
+            OutputInvertedPacket(stringRes, PcDelay, "Proxy", "Client");
+            Output(stringRes);
+#endif
+            #endregion
 
             #region 外部文件操作
             string logPath = "logs/latest.packet.log";
@@ -255,9 +270,13 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 Log.Erro($"对 {logPath} 的文件操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
                 return;
             }
-            Log.Info($"日志已输出到路径 {logPath}。 程序会在约 10s 后退出...", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
             #endregion
             #endregion
+            Log.Info($"日志已输出到路径 {logPath}。", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+            if (Constants.running_on_github_actions)
+            {
+                Log.Info("程序约会在 10s 后退出...", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+            }
         }
 
         #region Generate & Output
@@ -269,27 +288,50 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
 
         private static void OutputLossAck(StringBuilder target, PacketLossResult lossResult, string from_friendlyName, string to_friendlyName)
         {
-            Output(target, $"{from_friendlyName} -> {to_friendlyName} 丢包情况：");
-            Output(target, $"  出现了 {lossResult.lost_ack.Length} 个包丢失。ack 列表：");
-            #region Lost packet
-            string acklist = "  [ ";
-            foreach (var loss in lossResult.lost_ack)
+            if (lossResult.lost_ack.Length == 0)
             {
-                acklist += $"{loss}; ";
+                Output(target, $"{from_friendlyName} -> {to_friendlyName} 无丢包。");
             }
-            acklist += "]";
-            Output(target, acklist);
-            #endregion
-            Output(target);
-            Output(target, $"  有 {lossResult.extra_ack.Length} 个包收到了响应但没有找到发出过的请求。ack 列表：");
-            #region Extra Packet
-            acklist = "  [ ";
-            foreach (var ext in lossResult.extra_ack)
+            else
             {
-                acklist += $"{ext}; ";
+                Output(target, $"{from_friendlyName} -> {to_friendlyName} 丢包情况：");
+                Output(target, $"  出现了 {lossResult.lost_ack.Length} 个包丢失。ack 列表：");
+                #region Lost packet
+                string acklist = "  [ ";
+                foreach (var loss in lossResult.lost_ack)
+                {
+                    acklist += $"{loss}; ";
+                }
+                acklist += "]";
+                Output(target, acklist);
+                #endregion
             }
-            acklist += "]";
-            #endregion
+            if (lossResult.extra_ack.Length != 0)
+            {
+                Output(target);
+                Output(target, $"  有 {lossResult.extra_ack.Length} 个包收到了响应但没有找到发出过的请求。ack 列表：");
+                #region Extra Packet
+                string acklist = "  [ ";
+                foreach (var ext in lossResult.extra_ack)
+                {
+                    acklist += $"{ext}; ";
+                }
+                acklist += "]";
+                Output(target, acklist);
+                #endregion
+            }
+        }
+
+        private static void OutputInvertedPacket(StringBuilder target, PacketDelayResult delay, string from_friendlyName, string to_friendlyName)
+        {
+            if (delay.inverted_ack_list.Length != 0)
+            {
+                Output(target, $"{from_friendlyName} -> {to_friendlyName}: 出现了 {delay.inverted_ack_list.Length} 次乱序现象。");
+                foreach (var inverted_pkt in delay.inverted_ack_list)
+                {
+                    Output(target, $"  [ 失序 ack: {inverted_pkt.Item1}, 收到时间: {inverted_pkt.Item2:HH:mm:ss.fff.ffff} ]");
+                }
+            }
         }
         #endregion
 
@@ -302,7 +344,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
 
         private static void Output(StringBuilder target, string content)
         {
-            // Log.Info(content, $"{nameof(MainAnalysis)}_GenerateReport");
+            if (Constants.running_on_github_actions) Log.Info(content, $"{nameof(MainAnalysis)}_GenerateReport");
             target.AppendLine(content);
         }
         #endregion

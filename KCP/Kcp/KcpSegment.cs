@@ -1,6 +1,8 @@
 ﻿using System.Buffers;
 using System.Buffers.Binary;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
+using YYHEggEgg.Logger;
 
 namespace System.Net.Sockets.Kcp
 {
@@ -13,6 +15,18 @@ namespace System.Net.Sockets.Kcp
     /// </summary>
     public struct KcpSegment : IKcpSegment
     {
+#if KCP_PERFORMANCE_TEST
+        private string Invoker()
+        {
+            StackTrace stackTrace = new StackTrace();
+            StackFrame frame = stackTrace.GetFrame(2);
+            return frame.ToString() ?? "-----Invoker Not found-----";
+        }
+#endif
+
+#if BUGFIX_TRIAL_20230611_001
+        private static object marshal_lck = new object();
+#endif
         internal readonly unsafe byte* ptr;
         public unsafe KcpSegment(byte* intPtr, uint appendDateSize)
         {
@@ -28,7 +42,18 @@ namespace System.Net.Sockets.Kcp
         public static KcpSegment AllocHGlobal(int appendDateSize)
         {
             var total = LocalOffset + HeadOffset + appendDateSize;
+#if BUGFIX_TRIAL_20230611_001
+            IntPtr intPtr;
+            lock (marshal_lck)
+            {
+                intPtr = Marshal.AllocHGlobal(total);
+            }
+#else
             IntPtr intPtr = Marshal.AllocHGlobal(total);
+#endif
+#if KCP_PERFORMANCE_TEST
+            Log.Verb($"KcpSegment memory alloc: 0x{intPtr:x}", nameof(KcpSegment));
+#endif
             unsafe
             {
                 ///清零    不知道是不是有更快的清0方法？
@@ -47,7 +72,17 @@ namespace System.Net.Sockets.Kcp
         {
             unsafe
             {
-                Marshal.FreeHGlobal((IntPtr)seg.ptr);
+#if BUGFIX_TRIAL_20230611_001
+                lock (marshal_lck)
+                {
+#endif
+                    Marshal.FreeHGlobal((IntPtr)seg.ptr);
+#if BUGFIX_TRIAL_20230611_001
+                }
+#endif
+#if KCP_PERFORMANCE_TEST
+                Log.Verb($"KcpSegment memory free: 0x{(IntPtr)seg.ptr:x}", nameof(KcpSegment));
+#endif
             }
         }
 
@@ -256,6 +291,9 @@ namespace System.Net.Sockets.Kcp
             }
             set
             {
+#if KCP_PERFORMANCE_TEST
+                Log.Verb($"Invoker: [{Invoker()}] assigned frg:{value} for KcpSegment: {this.ToLogString(false)}", nameof(KcpSegment));
+#endif
                 unsafe
                 {
                     // miHoMo KCP modify: IUINT32 token
@@ -380,6 +418,9 @@ namespace System.Net.Sockets.Kcp
             }
             set
             {
+#if KCP_PERFORMANCE_TEST
+                Log.Verb($"Invoker: [{Invoker()}] assigned sn:{value} for KcpSegment: {this.ToLogString(false)}", nameof(KcpSegment));
+#endif
                 unsafe
                 {
                     // miHoMo KCP modify: IUINT32 token
