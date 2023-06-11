@@ -14,6 +14,9 @@ namespace csharp_Protoshift.MhyKCP
         protected MhyKcpBase server;
         protected IPEndPoint remoteAddress;
 
+        protected SingleThreadAssert _recvlock = new($"{nameof(KCPClient)}_{nameof(Receive)}"), 
+            _updatelock = new($"{nameof(KCPClient)}_{nameof(BackgroundUpdate)}");
+
         public KCPClient(IPEndPoint ipEp)
         {
             udpSock = new SocketUdpClient();
@@ -38,6 +41,7 @@ namespace csharp_Protoshift.MhyKCP
 
         protected virtual async Task BackgroundUpdate()
         {
+            _updatelock.Enter();
             while (!_Closed)
             {
                 var packet = await udpSock.ReceiveFromAsync();
@@ -66,6 +70,7 @@ namespace csharp_Protoshift.MhyKCP
                     server.Dispose();
                 }
             }
+            _updatelock.Exit();
         }
 
         public async Task ConnectAsync()
@@ -102,6 +107,7 @@ namespace csharp_Protoshift.MhyKCP
         /// <returns>null if disconnected</returns>
         public async Task<byte[]?> ReceiveAsync()
         {
+            _recvlock.Enter();
             try
             {
                 return await server.ReceiveAsync();
@@ -115,6 +121,10 @@ namespace csharp_Protoshift.MhyKCP
                 }
                 else throw;
             }
+            finally
+            {
+                _recvlock.Exit();
+            }
         }
 
         /// <summary>
@@ -123,6 +133,7 @@ namespace csharp_Protoshift.MhyKCP
         /// <returns>null if disconnected</returns>
         public byte[]? Receive()
         {
+            _recvlock.Enter();
             try
             {
                 return server.Receive();
@@ -135,6 +146,10 @@ namespace csharp_Protoshift.MhyKCP
                     return null;
                 }
                 else throw;
+            }
+            finally
+            {
+                _recvlock.Exit();
             }
         }
 

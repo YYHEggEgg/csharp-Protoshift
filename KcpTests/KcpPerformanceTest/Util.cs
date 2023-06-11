@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -39,6 +41,13 @@ namespace csharp_Protoshift.MhyKCP.Test
             curseg.len = pkt.Length - curseg.startindex;
             rtn.Add(curseg);
             return rtn;
+        }
+
+        public static string GetInvoker()
+        {
+            StackTrace stackTrace = new StackTrace();
+            StackFrame? frame = stackTrace.GetFrame(2);
+            return frame.ToString();
         }
     }
 }

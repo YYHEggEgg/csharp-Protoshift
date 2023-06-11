@@ -6,10 +6,12 @@ on:
     branches:
       - network-performance-test
       - network-performance-test-actions
+      - network-performance-test-fix-patch-1
   push:
     branches:
       - network-performance-test
       - network-performance-test-actions
+      - network-performance-test-fix-patch-1
 
 jobs:
   network-benchmark-debug:

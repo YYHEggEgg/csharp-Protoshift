@@ -16,11 +16,13 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             udpSock = new SocketUdpClient(bindToAddress);
             SendToEndpoint = sendToAddress;
 
+            _updatelock = new(nameof(KcpProxyServer));
             Task.Run(BackgroundUpdate);
         }
 
         protected override async Task BackgroundUpdate()
         {
+            _updatelock.Enter();
             while (!_Closed)
             {
                 SocketUdpReceiveResult packet;
@@ -69,6 +71,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     }
                 }
             }
+            _updatelock.Exit();
         }
 
         /// <summary>

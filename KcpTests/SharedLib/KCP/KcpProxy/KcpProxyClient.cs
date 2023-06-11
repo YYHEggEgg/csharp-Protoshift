@@ -17,6 +17,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             server = new(conv, token, connectData);
             server.Timeout = 10000;
             server.OutputCallback = new SocketUdpKcpCallback(udpSock);
+            _updatelock = new($"{nameof(KcpProxyClient)}_{nameof(BackgroundUpdate)}");
+            _recvlock = new($"{nameof(KcpProxyClient)}_{nameof(Receive)}");
         }
 
         public Handshake GetSendbackHandshake()

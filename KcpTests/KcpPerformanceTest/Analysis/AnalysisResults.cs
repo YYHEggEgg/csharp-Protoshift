@@ -37,8 +37,12 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
         /// 使用的包 ack 列表，为 send 与 recv 的交集，以 send 为标准。<see cref="TimeSpan"/> 为包的处理延迟
         /// </summary>
         public readonly (uint, TimeSpan)[] ack_list;
+        /// <summary>
+        /// 乱序的包 ack 列表，ack 是奇是偶以 send 为标准。<see cref="TimeSpan"/> 为包的处理延迟
+        /// </summary>
+        public readonly (uint, DateTime)[] inverted_ack_list;
 
-        public PacketDelayResult(PacketRecordCollection baseSend, PacketRecordCollection baseRecv, TimeSpan average_packetDelay, TimeSpan minimum_packetDelay, TimeSpan maximum_packetDelay, (uint, TimeSpan)[] ack_list)
+        public PacketDelayResult(PacketRecordCollection baseSend, PacketRecordCollection baseRecv, TimeSpan average_packetDelay, TimeSpan minimum_packetDelay, TimeSpan maximum_packetDelay, (uint, TimeSpan)[] ack_list, (uint, DateTime)[] inverted_ack_list)
         {
             this.baseSend = baseSend;
             this.baseRecv = baseRecv;
@@ -46,6 +50,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             this.minimum_packetDelay = minimum_packetDelay;
             this.maximum_packetDelay = maximum_packetDelay;
             this.ack_list = ack_list;
+            this.inverted_ack_list = inverted_ack_list;
         }
     }
 }
