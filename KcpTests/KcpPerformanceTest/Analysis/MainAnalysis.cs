@@ -273,7 +273,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             #endregion
             #endregion
             Log.Info($"日志已输出到路径 {logPath}。", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
-            if (Constants.auto_exit)
+            if (Constants.running_on_github_actions)
             {
                 Log.Info("程序约会在 10s 后退出...", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
             }
@@ -321,7 +321,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 #endregion
             }
         }
-        
+
         private static void OutputInvertedPacket(StringBuilder target, PacketDelayResult delay, string from_friendlyName, string to_friendlyName)
         {
             if (delay.inverted_ack_list.Length != 0)
@@ -344,7 +344,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
 
         private static void Output(StringBuilder target, string content)
         {
-            // Log.Info(content, $"{nameof(MainAnalysis)}_GenerateReport");
+            if (Constants.running_on_github_actions) Log.Info(content, $"{nameof(MainAnalysis)}_GenerateReport");
             target.AppendLine(content);
         }
         #endregion

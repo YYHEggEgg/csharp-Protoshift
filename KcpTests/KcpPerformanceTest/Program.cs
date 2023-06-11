@@ -27,7 +27,7 @@ ProxyApp.Start();
 #endif
 await ClientApp.Start();
 
-if (Constants.auto_exit)
+if (Constants.running_on_github_actions)
 {
     while (true)
     {
