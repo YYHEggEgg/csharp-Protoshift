@@ -26,6 +26,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                 uint ack = 1;
                 for (int i = 0; i < Constants.packet_repeat_time; i++)
                 {
+                    /*
                     if (Constants.random_packet_size)
                     {
 #pragma warning disable CS0162
@@ -35,6 +36,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                     }
                     else
                     {
+                        */
                         try
                         {
                             BasePacket pkt = BasePacket.Generate(ack, Constants.each_packet_size);
@@ -53,7 +55,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                         {
                             Log.Erro($"Client sending packet ack:{ack} meets exception: {ex}", "ClientSender");
                         }
-                    }
+                    // }
                     ack += 2;
                 }
                 await MainAnalysis.ClientFinished();

@@ -2,6 +2,7 @@
 using System.Buffers;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 
 //[assembly: InternalsVisibleTo("UnitTestProject1")]
@@ -49,6 +50,7 @@ namespace System.Net.Sockets.Kcp
         public static string ToLogString<T>(this T segment, bool local = false)
             where T : IKcpSegment
         {
+#if !KCP_PERFORMANCE_TEST
             if (local)
             {
                 return $"sn:{segment.sn,2} una:{segment.una,2} frg:{segment.frg,2} cmd:{segment.cmd,2} len:{segment.len,2} wnd:{segment.wnd}    [ LocalValue: xmit:{segment.xmit} fastack:{segment.fastack}  rto:{segment.rto} ]";
@@ -57,6 +59,43 @@ namespace System.Net.Sockets.Kcp
             {
                 return $"sn:{segment.sn,2} una:{segment.una,2} frg:{segment.frg,2} cmd:{segment.cmd,2} len:{segment.len,2} wnd:{segment.wnd}";
             }
+#else
+            if (segment is KcpSegment kcpSegment)
+            {
+                string ptr_str = "/ptr get failure\\";
+                try
+                {
+                    unsafe
+                    {
+                        IntPtr ptr = new IntPtr(kcpSegment.ptr);
+                        ptr_str = ptr.ToString("x");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.Assert(false);
+                }
+                if (local)
+                {
+                    return $"ptr:0x{ptr_str} sn:{segment.sn,2} una:{segment.una,2} frg:{segment.frg,2} cmd:{segment.cmd,2} len:{segment.len,2} wnd:{segment.wnd}    [ LocalValue: xmit:{segment.xmit} fastack:{segment.fastack}  rto:{segment.rto} ]";
+                }
+                else
+                {
+                    return $"ptr:0x{ptr_str} sn:{segment.sn,2} una:{segment.una,2} frg:{segment.frg,2} cmd:{segment.cmd,2} len:{segment.len,2} wnd:{segment.wnd}";
+                }
+            }
+            else
+            {
+                if (local)
+                {
+                    return $"sn:{segment.sn,2} una:{segment.una,2} frg:{segment.frg,2} cmd:{segment.cmd,2} len:{segment.len,2} wnd:{segment.wnd}    [ LocalValue: xmit:{segment.xmit} fastack:{segment.fastack}  rto:{segment.rto} ]";
+                }
+                else
+                {
+                    return $"sn:{segment.sn,2} una:{segment.una,2} frg:{segment.frg,2} cmd:{segment.cmd,2} len:{segment.len,2} wnd:{segment.wnd}";
+                }
+            }
+#endif
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
