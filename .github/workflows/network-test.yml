@@ -12,6 +12,7 @@ on:
       - network-performance-test
       - network-performance-test-actions
       - network-performance-test-fix-patch-1
+      - delete/network-performance-test-constant
 
 jobs:
   network-benchmark-debug:
