@@ -15,10 +15,13 @@ namespace csharp_Protoshift.MhyKCP
 
         protected SocketUdpClient udpSock;
         protected bool _Closed = false;
-        protected Dictionary<IPEndPoint, MhyKcpBase> clients;
+        // string is the ToString() form of IPEndPoint
+        protected Dictionary<string, MhyKcpBase> clients;
         protected ConcurrentQueue<IPEndPoint> newConnections;
 
-#pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
+        protected SingleThreadAssert _updatelock = new(nameof(KCPServer));
+
+#pragma warning disable CS8618 // ??????????????????? null ????锟斤拷???????? null ????????????????? null??
         public class AcceptAsyncReturn
         {
             public MhyKcpBase Connection;
@@ -27,15 +30,15 @@ namespace csharp_Protoshift.MhyKCP
 
         protected KCPServer()
         {
-            clients = new Dictionary<IPEndPoint, MhyKcpBase>();
+            clients = new Dictionary<string, MhyKcpBase>();
             newConnections = new ConcurrentQueue<IPEndPoint>();
         }
-#pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
+#pragma warning restore CS8618 // ??????????????????? null ????锟斤拷???????? null ????????????????? null??
 
         public KCPServer(IPEndPoint ipEp)
         {
             udpSock = new SocketUdpClient(ipEp);
-            clients = new Dictionary<IPEndPoint, MhyKcpBase>();
+            clients = new Dictionary<string, MhyKcpBase>();
             newConnections = new ConcurrentQueue<IPEndPoint>();
 
             Task.Run(BackgroundUpdate);
@@ -43,38 +46,43 @@ namespace csharp_Protoshift.MhyKCP
 
         protected virtual async Task BackgroundUpdate()
         {
-            var packet = await udpSock.ReceiveFromAsync();
-            if (clients.ContainsKey(packet.RemoteEndPoint))
+            _updatelock.Enter();
+            while (!_Closed)
             {
-                try
+                var packet = await udpSock.ReceiveFromAsync();
+                string remoteIpString = packet.RemoteEndPoint.ToString();
+                if (clients.ContainsKey(remoteIpString))
                 {
-                    clients[packet.RemoteEndPoint].Input(packet.Buffer);
+                    try
+                    {
+                        clients[remoteIpString].Input(packet.Buffer);
+                    }
+                    catch (Exception)
+                    {
+                        clients.Remove(remoteIpString);
+                    }
                 }
-                catch (Exception)
+                else
                 {
-                    clients.Remove(packet.RemoteEndPoint);
+                    // Oh boy! A new connection!
+                    var conn = new MhyKcpBase();
+                    conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
+
+                    conn.AcceptNonblock();
+                    try
+                    {
+                        conn.Input(packet.Buffer);
+
+                        clients[remoteIpString] = conn;
+                        newConnections.Enqueue(packet.RemoteEndPoint);
+                    }
+                    catch (Exception)
+                    {
+                        conn.Dispose();
+                    }
                 }
             }
-            else
-            {
-                // Oh boy! A new connection!
-                var conn = new MhyKcpBase();
-                conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
-
-                conn.AcceptNonblock();
-                try
-                {
-                    conn.Input(packet.Buffer);
-
-                    clients[packet.RemoteEndPoint] = conn;
-                    newConnections.Enqueue(packet.RemoteEndPoint);
-                } catch (Exception)
-                {
-                    conn.Dispose();
-                }              
-            }
-
-            if (!_Closed) await Task.Run(BackgroundUpdate);
+            _updatelock.Exit();
         }
 
         public async Task<AcceptAsyncReturn> AcceptAsync()
@@ -87,7 +95,7 @@ namespace csharp_Protoshift.MhyKCP
                 
                 if (newConnections.TryDequeue(out ipEp))
                 {
-                    conn = clients[ipEp];
+                    conn = clients[ipEp.ToString()];
                 }
                 if (conn == null) await Task.Delay(10);
             }

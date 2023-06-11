@@ -14,6 +14,9 @@ namespace csharp_Protoshift.MhyKCP
         protected MhyKcpBase server;
         protected IPEndPoint remoteAddress;
 
+        protected SingleThreadAssert _recvlock = new($"{nameof(KCPClient)}_{nameof(Receive)}"), 
+            _updatelock = new($"{nameof(KCPClient)}_{nameof(BackgroundUpdate)}");
+
         public KCPClient(IPEndPoint ipEp)
         {
             udpSock = new SocketUdpClient();
@@ -38,33 +41,36 @@ namespace csharp_Protoshift.MhyKCP
 
         protected virtual async Task BackgroundUpdate()
         {
-            var packet = await udpSock.ReceiveFromAsync();
-            try
+            _updatelock.Enter();
+            while (!_Closed)
             {
-                if (packet.RemoteEndPoint.ToString() == remoteAddress.ToString())
+                var packet = await udpSock.ReceiveFromAsync();
+                try
                 {
-                    // Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", nameof(KCPClient));
-                    server.Input(packet.Buffer);
+                    if (packet.RemoteEndPoint.ToString() == remoteAddress.ToString())
+                    {
+                        // Log.Dbug($"Client packet (ip {remoteAddress}), buf = {Convert.ToHexString(packet)}", nameof(KCPClient));
+                        server.Input(packet.Buffer);
+                    }
+                    else
+                    {
+                        // Log.Warn($"Bad packet sent to client: {fromip}, buf = {Convert.ToHexString(packet)}");
+                    }
+                    if (server.State != MhyKcpBase.ConnectionState.CONNECTED)
+                    {
+                        StartDisconnected?.Invoke(server.Conv, server.Token);
+                        _Closed = true;
+                        server.Dispose();
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    // Log.Warn($"Bad packet sent to client: {fromip}, buf = {Convert.ToHexString(packet)}");
-                }
-                if (server.State != MhyKcpBase.ConnectionState.CONNECTED)
-                {
-                    StartDisconnected?.Invoke(server.Conv, server.Token);
+                    Log.Erro($"Update fail: {ex}", nameof(KCPClient));
                     _Closed = true;
                     server.Dispose();
                 }
             }
-            catch (Exception ex)
-            {
-                Log.Erro($"Update fail: {ex}", nameof(KCPClient));
-                _Closed = true;
-                server.Dispose();
-            }
-
-            if (!_Closed) await Task.Run(BackgroundUpdate);
+            _updatelock.Exit();
         }
 
         public async Task ConnectAsync()
@@ -76,6 +82,11 @@ namespace csharp_Protoshift.MhyKCP
         public async Task SendAsync(byte[] data)
         {
             await server.SendAsync(data);
+        }
+
+        public void Send(ReadOnlySpan<byte> data)
+        {
+            server.Send(data);
         }
 
         public void Close()
@@ -96,6 +107,7 @@ namespace csharp_Protoshift.MhyKCP
         /// <returns>null if disconnected</returns>
         public async Task<byte[]?> ReceiveAsync()
         {
+            _recvlock.Enter();
             try
             {
                 return await server.ReceiveAsync();
@@ -108,6 +120,36 @@ namespace csharp_Protoshift.MhyKCP
                     return null;
                 }
                 else throw;
+            }
+            finally
+            {
+                _recvlock.Exit();
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>null if disconnected</returns>
+        public byte[]? Receive()
+        {
+            _recvlock.Enter();
+            try
+            {
+                return server.Receive();
+            }
+            catch
+            {
+                if (server.State != MhyKcpBase.ConnectionState.CONNECTED)
+                {
+                    StartDisconnected?.Invoke(server.Conv, server.Token);
+                    return null;
+                }
+                else throw;
+            }
+            finally
+            {
+                _recvlock.Exit();
             }
         }
 
