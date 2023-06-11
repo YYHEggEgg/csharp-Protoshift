@@ -39,3 +39,5 @@
 /KcpTests/SharedLib/logs
 /KcpTests/.vscode
 /KcpTests/.vs
+/csharp-Protoshift/logs
+/csharp-Protoshift/skillissue_fix_config.json

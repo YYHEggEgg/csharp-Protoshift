@@ -31,12 +31,6 @@ namespace csharp_Protoshift.resLoader
         public static void CheckForRequiredResources()
         {
             bool passcheck = true;
-            // KCP
-            if (!File.Exists("ikcp.dll"))
-            {
-                Log.Erro("ikcp.dll missing! Please copy it from \"/KCP/AnimeGameKCP/Native/KCP\"!", "ResourcesCheck");
-                passcheck = false;
-            }
             // Resources
             if (!Directory.Exists("resources"))
             {

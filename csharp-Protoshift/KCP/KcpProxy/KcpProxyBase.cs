@@ -1,6 +1,5 @@
 ﻿// #define KCP_PROXY_VERBOSE
 
-using csharp_Protoshift.GameSession;
 using System;
 using System.Buffers.Binary;
 using System.Collections.Generic;
@@ -11,15 +10,13 @@ using System.Net.Sockets;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
-using YSFreedom.Common.Native;
-using YSFreedom.Common.Net;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.MhyKCP.Proxy
 {
     /// <summary>
-    /// KcpProxy is not a client
+    /// <see cref="KcpProxyBase"/> is not a client
     /// </summary>
     public class KcpProxyBase : MhyKcpBase
     {
@@ -34,6 +31,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         {
             this.sendToAddress = sendToAddress;
             this.PacketHandler = PacketHandler ?? (data => data);
+            _recvlock = new($"{nameof(KcpProxyBase)}_{nameof(Receive)}");
+            _updatelock = new($"{nameof(KcpProxyBase)}_{nameof(BackgroundUpdate)}");
         }
 
         public override int Input(byte[] buffer)
@@ -95,11 +94,13 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 #pragma warning disable CS8602 // 解引用可能出现空引用。
                         int status = cskcpHandle.Input(buffer);
 #pragma warning restore CS8602 // 解引用可能出现空引用。
-                        if (status == -1)
-                        {
-                            _State = ConnectionState.CLOSED;
-                            throw new SocketException(10053); // Connection aborted
-                        }
+                        if (status != 0)
+                            Log.Dbug($"ikcp_input failed, return {status}, received {buffer.Length} bytes", nameof(KcpProxyBase));
+                        // if (status == -1)
+                        // {
+                        //     _State = ConnectionState.CLOSED;
+                        //     throw new SocketException(10053); // Connection aborted
+                        // }
                         return status;
                     }
                 case ConnectionState.HANDSHAKE_WAIT:
@@ -120,7 +121,6 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             sendClient.StartDisconnected += (conv, token) =>
                             {
                                 Log.Warn("Server requested to disconnect, so send disconnect to client", nameof(KcpProxyBase));
-                                GameSessionDispatch.DestroySession(conv).Wait();
                                 Disconnect(conv, token);
                             };
 

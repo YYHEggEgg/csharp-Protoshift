@@ -1,4 +1,5 @@
 ﻿// #define KCP_INNER_LOG
+// #define KCP_EXPORT_PACKET_RECORD
 
 using System.Buffers;
 using System.Buffers.Binary;
@@ -6,7 +7,6 @@ using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Net.Sockets.Kcp;
-using YSFreedom.Common.Native;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
 
@@ -37,9 +37,11 @@ namespace csharp_Protoshift.MhyKCP
         protected Kcp<KcpSegment>? cskcpHandle;
         // protected object ikcpLock = new object();
         protected object cskcp_recvLock = "R.I.P YSFreedom";
+        protected object cskcp_sndLock = "Yolmiya";
         protected long startTime;
 
         public uint ConnectData { get; protected set; }
+        public OuterCode.UniqueIDManager _uniqueID = new(nameof(MhyKcpBase));
 
         public MhyKcpBase(uint conv = 0, uint token = 0, uint connectData = 0x499602D2)
         {
@@ -66,8 +68,9 @@ namespace csharp_Protoshift.MhyKCP
             cskcpHandle.WndSize(256, 256);
 
 #if KCP_INNER_LOG
-            cskcpHandle.TraceListener = new LogTraceListener(nameof(MhyKcpBase));
+            cskcpHandle.TraceListener = new LogTraceListener($"{nameof(MhyKcpBase)}_{_uniqueID.ID}", LogLevel.Debug, LogLevel.Warning);
             // cskcpHandle.TraceListener = new ConsoleTraceListener();
+            cskcpHandle.LogMask = (KcpLogMask)((1 << Enum.GetNames<KcpLogMask>().Length) - 1); // Accept all logs
 #endif
 
             cskcpHandle.SegmentManager = new SimpleSegManager();
@@ -151,11 +154,13 @@ namespace csharp_Protoshift.MhyKCP
                         int status = cskcpHandle.Input(buffer);
                         checkTime_refresh = true;
 #pragma warning restore CS8602 // 解引用可能出现空引用。
-                        if (status == -1)
-                        {
-                            _State = ConnectionState.CLOSED;
-                            throw new SocketException(10053); // Connection aborted
-                        }
+                        if (status != 0)
+                            Log.Dbug($"ikcp_input failed, return {status}, received {buffer.Length} bytes", nameof(MhyKcpBase));
+                        // if (status == -1)
+                        // {
+                        //     _State = ConnectionState.CLOSED;
+                        //     throw new SocketException(10053); // Connection aborted
+                        // }
                         return status;
                     }
                 case ConnectionState.HANDSHAKE_WAIT:
@@ -189,7 +194,7 @@ namespace csharp_Protoshift.MhyKCP
                             handshake.Decode(buffer, Handshake.MAGIC_SEND_BACK_CONV);
                             _Conv = handshake.Conv;
                             _Token = handshake.Token;
-                            Debug.Assert(ConnectData == handshake.Data);
+                            // Debug.Assert(ConnectData == handshake.Data);
                             Initialize();
 
                             return 0;
@@ -206,109 +211,167 @@ namespace csharp_Protoshift.MhyKCP
             throw new Exception("Reached unreachable code.");
         }
 
-        public int SendNonblock(Span<byte> buffer)
+        // Changed name as it's not nonblock.
+        // public int SendNonblock(ReadOnlySpan<byte> buffer)
+        public int Send(ReadOnlySpan<byte> buffer)
         {
             if (_State != ConnectionState.CONNECTED)
                 throw new SocketException(10057);
 
+#if KCP_EXPORT_PACKET_RECORD
+            Log.Verb($"MhyKcpBase try to send {buffer.Length} bytes (conv:{_Conv}, token:{_Token})", nameof(Send));
+#endif
             // int ret = IKCP.ikcp_send(ikcpHandle, buffer, buffer.Length);
 #pragma warning disable CS8602 // 解引用可能出现空引用。
             int ret = cskcpHandle.Send(buffer);
             checkTime_refresh = true;
 #pragma warning restore CS8602 // 解引用可能出现空引用。
             // Flush();
+            if (ret < 0)
+            {
+                Log.Warn($"MhyKcpBase send attempt failure, ret: {ret}", nameof(MhyKcpBase));
+            }
             return ret;
         }
 
         public async Task<int> SendAsync(byte[] buffer)
         {
             await Task.Yield();
-            return SendNonblock(buffer);
+            return Send(buffer);
         }
 
+#if DEBUG
+        private bool recvnonblock_lock = false;
+#endif
         private byte[]? ReceiveNonblock()
         {
             if (_State != ConnectionState.CONNECTED)
                 throw new SocketException(10057);
 
-            lock (cskcp_recvLock)
+#if DEBUG
+            if (!recvnonblock_lock) recvnonblock_lock = true;
+            else
             {
-                // int size = IKCP.ikcp_peeksize(ikcpHandle);
-#pragma warning disable CS8602 // 解引用可能出现空引用。
-                int size = cskcpHandle.PeekSize();
-#pragma warning restore CS8602 // 解引用可能出现空引用。
-                if (size < 0) return null;
-
-                var buffer = new byte[size];
-                // int trueSize = IKCP.ikcp_recv(ikcpHandle, buffer, buffer.Length);
-                int trueSize;
-                trueSize = cskcpHandle.Recv(buffer);
-                if (trueSize != size) throw new Exception("Unexpected state");
-
-                return buffer;
+                // TODO: 补全invoker信息
+                var invoker = Environment.StackTrace;
+                Log.Erro($"ReceiveNonBlock should be invoked STA! invoker: {invoker}", nameof(MhyKcpBase));
             }
+#endif
+            // int size = IKCP.ikcp_peeksize(ikcpHandle);
+#pragma warning disable CS8602 // 解引用可能出现空引用。
+            int size = cskcpHandle.PeekSize();
+#pragma warning restore CS8602 // 解引用可能出现空引用。
+            if (size < 0)
+            {
+#if DEBUG
+                recvnonblock_lock = false;
+#endif
+                return null;
+            }
+
+            var buffer = new byte[size];
+            // int trueSize = IKCP.ikcp_recv(ikcpHandle, buffer, buffer.Length);
+            int trueSize;
+            trueSize = cskcpHandle.Recv(buffer);
+#if DEBUG
+            recvnonblock_lock = false;
+#endif
+#if KCP_EXPORT_PACKET_RECORD
+            Log.Verb($"MhyKcpBase received {trueSize} bytes (conv:{_Conv}, token:{_Token})", nameof(ReceiveNonblock));
+#endif
+            if (trueSize != size) Log.Erro($"Unexpected state: reported peek {size} bytes, ikcp_recv returns {trueSize} bytes", nameof(MhyKcpBase));
+
+            return buffer;
         }
 
+        protected SingleThreadAssert _recvlock = new($"{nameof(MhyKcpBase)}_{nameof(Receive)}");
         public byte[]? Receive(bool nonblock = false)
         {
+            _recvlock.Enter();
             if (nonblock) return ReceiveNonblock();
 
             byte[]? ret = null;
             while (ret == null)
             {
                 ret = ReceiveNonblock();
-                if (ret == null) Thread.Yield();
+                if (ret == null) Thread.Sleep(KCP_RefreshMilliseconds);
             }
+            _recvlock.Exit();
             return ret;
         }
 
         public async Task<byte[]> ReceiveAsync()
         {
+            _recvlock.Enter();
             byte[]? ret = null;
             while (ret == null)
             {
                 ret = ReceiveNonblock();
-                if (ret == null) await Task.Delay(KCP_RefreshMilliseconds); //(int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF));
+                if (ret == null)
+                {
+                    // await Task.Yield(); //(int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF));
+                    await Task.Delay(KCP_RefreshMilliseconds);
+                }
             }
+            _recvlock.Exit();
             return ret;
         }
 
         // The time ikcp_update should be called get from ikcp_check
         protected DateTimeOffset update_next_time = DateTimeOffset.MinValue;
+        protected SingleThreadAssert _updatelock = new($"{nameof(MhyKcpBase)}_{nameof(BackgroundUpdate)}");
         public async Task BackgroundUpdate()
         {
-            if (_Disposed || _State != ConnectionState.CONNECTED || cskcpHandle == null) return;
-
-            // int dur;
-            // lock (ikcpLock) dur = (int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF);
-            // DateTimeOffset dur = cskcpHandle.Check(DateTime.UtcNow);
-            
-            // From author:
-            // 如果你不需要管理1000个以上的 kcp对象的话，还是不要用check比较好，这部分代码写起来比较烦。
-            // await Task.Delay(KCP_RefreshMilliseconds);
-            // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
-            // cskcpHandle.Update(DateTimeOffset.UtcNow);
-
-            // Below is new code with ikcp_check
-            if (checkTime_refresh || DateTimeOffset.UtcNow >= update_next_time)
+            _updatelock.Enter();
+            try
             {
-                checkTime_refresh = false;
-                var nowtime = DateTimeOffset.UtcNow;
-                // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
-                cskcpHandle.Update(nowtime);
-                update_next_time = cskcpHandle.Check(nowtime);
+                while (true)
+                {
+                    if (_Disposed || _State != ConnectionState.CONNECTED || cskcpHandle == null)
+                    {
+                        _updatelock.Exit();
+                        return;
+                    }
+
+                    // int dur;
+                    // lock (ikcpLock) dur = (int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF);
+                    // DateTimeOffset dur = cskcpHandle.Check(DateTime.UtcNow);
+
+                    // From author:
+                    // 如果你不需要管理1000个以上的 kcp对象的话，还是不要用check比较好，这部分代码写起来比较烦。
+                    // await Task.Delay(KCP_RefreshMilliseconds);
+                    // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
+                    // cskcpHandle.Update(DateTimeOffset.UtcNow);
+
+                    // Below is new code with ikcp_check
+                    if (checkTime_refresh || DateTimeOffset.UtcNow >= update_next_time)
+                    {
+                        checkTime_refresh = false;
+                        var nowtime = DateTimeOffset.UtcNow;
+                        // lock (ikcpLock) IKCP.ikcp_update(ikcpHandle, (uint)(startTime - MonotonicTime.Now));
+                        cskcpHandle.Update(nowtime);
+                        // Log.Verb($"ikcp handle WaitSnd: {cskcpHandle.WaitSnd}", nameof(MhyKcpBase));
+                        update_next_time = cskcpHandle.Check(nowtime);
+                    }
+
+                    if (!checkTime_refresh) await Task.Delay(KCP_RefreshMilliseconds);
+                    else if (KCP_RefreshMilliseconds >= 15) await Task.Delay(KCP_RefreshMilliseconds);
+
+                }
+                _updatelock.Exit();
             }
-
-            if (!checkTime_refresh) await Task.Delay(KCP_RefreshMilliseconds);
-            else if (KCP_RefreshMilliseconds >= 15) await Task.Delay(KCP_RefreshMilliseconds);
-
-            await Task.Run(BackgroundUpdate);
+            catch (Exception ex)
+            {
+                _updatelock.Exit();
+                Log.Erro($"MhyKcpBase Background Check/Update exception and restart: {ex}", nameof(MhyKcpBase));
+                _ = Task.Run(BackgroundUpdate);
+            }
         }
 
         // public void Flush()
         // {
-            // lock (ikcpLock) IKCP.ikcp_flush(ikcpHandle);
-            // Flush in Kcp<Segment> not found. We suppose that it automatically did it.
+        // lock (ikcpLock) IKCP.ikcp_flush(ikcpHandle);
+        // Flush in Kcp<Segment> not found. We suppose that it automatically did it.
         // }
 
         public void Close()
@@ -350,81 +413,6 @@ namespace csharp_Protoshift.MhyKCP
         {
             if (!_Disposed)
                 Dispose();
-        }
-
-        public class Handshake
-        {
-            public static readonly uint[] MAGIC_CONNECT = { 0xFF, 0xFFFFFFFF };
-            public static readonly uint[] MAGIC_SEND_BACK_CONV = { 0x145, 0x14514545 };
-            public static readonly uint[] MAGIC_DISCONNECT = { 0x194, 0x19419494 };
-            public const int LEN = 20;
-
-            public uint Magic1;
-            public uint Conv;
-            public uint Token;
-            public uint Data;
-            public uint Magic2;
-
-            public Handshake() { }
-            public Handshake(uint[] magic, uint conv = 0, uint token = 0, uint data = 0)
-            {
-                Magic1 = magic[0];
-                Conv = conv;
-                Token = token;
-                Data = data;
-                Magic2 = magic[1];
-            }
-
-            public void Encode(byte[] buffer)
-            {
-                buffer.SetUInt32(0, Magic1);
-                buffer.SetUInt32(4, Conv);
-                buffer.SetUInt32(8, Token);
-                buffer.SetUInt32(12, Data);
-                buffer.SetUInt32(16, Magic2);
-            }
-
-            public void Decode(byte[] buffer, uint[]? verifyMagic = null)
-            {
-                if (buffer.Length < LEN)
-                    throw new ArgumentException("Handshake packet too small", nameof(buffer));
-
-                Magic1 = buffer.GetUInt32(0);
-                Conv = buffer.GetUInt32(4);
-                Token = buffer.GetUInt32(8);
-                Data = buffer.GetUInt32(12);
-                Magic2 = buffer.GetUInt32(16);
-
-                if (verifyMagic != null)
-                {
-                    if (Magic1 != verifyMagic[0] || Magic2 != verifyMagic[1])
-                        throw new ArgumentException("Invalid handshake packet", nameof(buffer));
-                }
-            }
-            public void Decode(Memory<byte> buffer, uint[]? verifyMagic = null)
-            {
-                if (buffer.Length < LEN)
-                    throw new ArgumentException("Handshake packet too small", nameof(buffer));
-
-                Magic1 = BinaryPrimitives.ReadUInt32BigEndian(buffer.Slice(0, 4).Span);
-                Conv = BinaryPrimitives.ReadUInt32BigEndian(buffer.Slice(4, 4).Span);
-                Token = BinaryPrimitives.ReadUInt32BigEndian(buffer.Slice(8, 4).Span);
-                Data = BinaryPrimitives.ReadUInt32BigEndian(buffer.Slice(12, 4).Span);
-                Magic2 = BinaryPrimitives.ReadUInt32BigEndian(buffer.Slice(16, 4).Span);
-
-                if (verifyMagic != null)
-                {
-                    if (Magic1 != verifyMagic[0] || Magic2 != verifyMagic[1])
-                        throw new ArgumentException("Invalid handshake packet", nameof(buffer));
-                }
-            }
-
-            public byte[] AsBytes()
-            {
-                var ret = new byte[20];
-                Encode(ret);
-                return ret;
-            }
         }
     }
 }

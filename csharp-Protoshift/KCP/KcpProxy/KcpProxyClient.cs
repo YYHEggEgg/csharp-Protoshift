@@ -17,12 +17,14 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             server = new(conv, token, connectData);
             server.Timeout = 10000;
             server.OutputCallback = new SocketUdpKcpCallback(udpSock);
+            _updatelock = new($"{nameof(KcpProxyClient)}_{nameof(BackgroundUpdate)}");
+            _recvlock = new($"{nameof(KcpProxyClient)}_{nameof(Receive)}");
         }
 
-        public MhyKcpBase.Handshake GetSendbackHandshake()
+        public Handshake GetSendbackHandshake()
         {
             Debug.Assert(server.State == MhyKcpBase.ConnectionState.CONNECTED);
-            return new MhyKcpBase.Handshake(MhyKcpBase.Handshake.MAGIC_SEND_BACK_CONV, 
+            return new Handshake(Handshake.MAGIC_SEND_BACK_CONV, 
                 server.Conv, server.Token, server.ConnectData);
         }
     }
