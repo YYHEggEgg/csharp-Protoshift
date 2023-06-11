@@ -14,6 +14,6 @@ namespace csharp_Protoshift.MhyKCP.Test.App
         // 发包间隔 非严格间隔，即发完包后等待毫秒数
         public const int packet_interval_ms = 10;
         // 是否发包完成后 10s 自动退出 一般在Actions上跑要分配true
-        public const bool auto_exit = false;
+        public const bool auto_exit = true;
     }
 }
