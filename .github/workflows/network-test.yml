@@ -16,7 +16,7 @@ on:
 
 jobs:
   network-benchmark-debug:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -41,7 +41,7 @@ jobs:
     #     retention-days: 42
 
   network-benchmark-release:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
