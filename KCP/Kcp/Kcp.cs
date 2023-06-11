@@ -1,4 +1,6 @@
 using System.Buffers;
+using System.Diagnostics;
+using static System.Net.Sockets.Kcp.PoolSegManager;
 using BufferOwner = System.Buffers.IMemoryOwner<byte>;
 
 namespace System.Net.Sockets.Kcp
@@ -29,8 +31,18 @@ namespace System.Net.Sockets.Kcp
         {
             callbackHandle = callback;
             this.rentable = rentable;
+#if ASSERT_STAINVOKE
+#if !MIHOMO_KCP
+            _recvassert = new($"{nameof(Kcp)}_{nameof(UncheckRecv)}(conv:{conv})");
+#else
+            _recvassert = new($"{nameof(Kcp)}_{nameof(UncheckRecv)}(conv:{conv}, token:{token})");
+#endif
+#endif
         }
 
+#if ASSERT_STAINVOKE
+        OuterCode.SingleThreadAssert _recvassert;
+#endif
 
         //extension 重构和新增加的部分============================================
 
@@ -231,18 +243,28 @@ namespace System.Net.Sockets.Kcp
         /// <returns></returns>
         int UncheckRecv(Span<byte> buffer)
         {
-            var recover = false;
-            if (rcv_queue.Count >= rcv_wnd)
-            {
-                recover = true;
-            }
-
-            #region merge fragment.
-            /// merge fragment.
-
+#if ASSERT_STAINVOKE
+            _recvassert.Enter();
+#endif
+#if TRIAL_BUGFIX
             var recvLength = 0;
             lock (rcv_queueLock)
             {
+#endif
+                var recover = false;
+                if (rcv_queue.Count >= rcv_wnd)
+                {
+                    recover = true;
+                }
+
+                #region merge fragment.
+                /// merge fragment.
+
+#if !TRIAL_BUGFIX
+                var recvLength = 0;
+            lock (rcv_queueLock)
+            {
+#endif
                 var count = 0;
                 foreach (var seg in rcv_queue)
                 {
@@ -252,6 +274,7 @@ namespace System.Net.Sockets.Kcp
                     count++;
                     int frg = seg.frg;
 
+                    LogWriteLine($"Kcp.UncheckRecv dequeued segment: {seg.ToLogString(false)}", KcpLogMask.IKCP_LOG_RECV.ToString());
                     SegmentManager.Free(seg);
                     if (frg == 0)
                     {
@@ -261,13 +284,31 @@ namespace System.Net.Sockets.Kcp
 
                 if (count > 0)
                 {
+#if KCP_PERFORMANCE_TEST
+                    for (int i = 0; i < count; i++)
+                    {
+                        Debug.Assert(rcv_queue.Count != 0);
+                        LogWriteLine($"Kcp.UncheckRecv removed segment: {rcv_queue[0].ToLogString(false)}", KcpLogMask.IKCP_LOG_RECV.ToString());
+                        rcv_queue.RemoveAt(0);
+                    }
+#else
                     rcv_queue.RemoveRange(0, count);
+#endif
                 }
+#if !TRIAL_BUGFIX
             }
+#endif
 
             #endregion
 
-            Move_Rcv_buf_2_Rcv_queue();
+#if BUGFIX_TRIAL_20230610_001
+            lock (rcv_bufLock)
+            { 
+#endif
+                Move_Rcv_buf_2_Rcv_queue();
+#if BUGFIX_TRIAL_20230610_001
+            }
+#endif
 
             #region fast recover
             /// fast recover
@@ -277,7 +318,13 @@ namespace System.Net.Sockets.Kcp
                 // tell remote my window size
                 probe |= IKCP_ASK_TELL;
             }
+#if TRIAL_BUGFIX
+            }
+#endif
             #endregion
+#if ASSERT_STAINVOKE
+            _recvassert.Exit();
+#endif
             return recvLength;
         }
 
@@ -288,6 +335,9 @@ namespace System.Net.Sockets.Kcp
         /// <returns></returns>
         int UncheckRecv(IBufferWriter<byte> writer)
         {
+#if ASSERT_STAINVOKE
+            _recvassert.Enter();
+#endif
             var recover = false;
             if (rcv_queue.Count >= rcv_wnd)
             {
@@ -329,7 +379,14 @@ namespace System.Net.Sockets.Kcp
 
             #endregion
 
-            Move_Rcv_buf_2_Rcv_queue();
+#if BUGFIX_TRIAL_20230610_001
+            lock (rcv_bufLock)
+            {
+#endif
+                Move_Rcv_buf_2_Rcv_queue();
+#if BUGFIX_TRIAL_20230610_001
+            }
+#endif
 
             #region fast recover
             /// fast recover
@@ -340,6 +397,9 @@ namespace System.Net.Sockets.Kcp
                 probe |= IKCP_ASK_TELL;
             }
             #endregion
+#if ASSERT_STAINVOKE
+            _recvassert.Exit();
+#endif
             return recvLength;
         }
 
@@ -361,6 +421,9 @@ namespace System.Net.Sockets.Kcp
 
                 if (seq.frg == 0)
                 {
+#if KCP_PERFORMANCE_TEST
+                    Debug.Assert((int)seq.len == 3500 + 16);
+#endif
                     return (int)seq.len;
                 }
 
@@ -381,6 +444,9 @@ namespace System.Net.Sockets.Kcp
                     }
                 }
 
+#if KCP_PERFORMANCE_TEST
+                Debug.Assert((int)length == 3500 + 16);
+#endif
                 return (int)length;
             }
         }
