@@ -234,6 +234,10 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             OutputInvertedPacket(stringRes, ScDelay, "Server", "Client");
             Output(stringRes);
 #if !CONNECT_SERVERONLY
+            OutputInvertedPacket(stringRes, Cs_proxy_delay, "Proxy_ClientHandler", "Proxy_ToServer");
+            Output(stringRes);
+            OutputInvertedPacket(stringRes, Sc_proxy_delay, "Proxy_ServerHandler", "Proxy_ToClient");
+            Output(stringRes);
             OutputInvertedPacket(stringRes, CpDelay, "Client", "Proxy");
             Output(stringRes);
             OutputInvertedPacket(stringRes, PsDelay, "Proxy", "Server");

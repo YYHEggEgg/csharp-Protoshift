@@ -136,5 +136,19 @@ namespace csharp_Protoshift.GameSession
                 else throw new OperationCanceledException($"Session {conv} has been destroyed and no longer avaliable.");
             }
         }
+
+        internal static bool ClientPacketOrdered(byte[] packet, uint conv)
+        {
+            // TODO
+            return true;
+        }
+
+        internal static bool ServerPacketOrdered(byte[] packet, uint conv)
+        {
+            // TODO
+            return true;
+        }
+
+        
     }
 }

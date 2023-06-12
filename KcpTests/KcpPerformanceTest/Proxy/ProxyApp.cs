@@ -23,8 +23,8 @@ namespace csharp_Protoshift.MhyKCP.Test.App
             {
                 OnServerPacketArrival = GameSessionDispatch.HandleServerPacket,
                 OnClientPacketArrival = GameSessionDispatch.HandleClientPacket,
-                IsUrgentServerPacket = GameSessionDispatch.IsUrgentServerPacket,
-                IsUrgentClientPacket = GameSessionDispatch.IsUrgentClientPacket
+                ServerPacketOrdered = GameSessionDispatch.ServerPacketOrdered,
+                ClientPacketOrdered = GameSessionDispatch.ClientPacketOrdered
             };
             proxy.StartProxy(handlers);
             Log.Info($"KcpProxyServer started on 127.0.0.1:{Constants.UDP_PROXY_PORT}", nameof(ProxyApp));
