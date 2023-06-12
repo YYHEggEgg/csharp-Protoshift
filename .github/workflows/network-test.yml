@@ -6,12 +6,12 @@ on:
     branches:
       - network-performance-test
       - network-performance-test-actions
-      - network-performance-test-fix-patch-1
+      - kcp-proxy-packet-disorder-fix
   push:
     branches:
       - network-performance-test
       - network-performance-test-actions
-      - network-performance-test-fix-patch-1
+      - kcp-proxy-packet-disorder-fix
 
 jobs:
   network-benchmark-windows-rel:
