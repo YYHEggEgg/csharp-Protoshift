@@ -203,9 +203,13 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
                     await Task.Delay(15);
                 }
-                else if (client_normalPackets.TryPeek(out ProxyPacket? normalPacket)
-                    && normalPacket != null)
+                else if (client_normalPackets.TryPeek(out ProxyPacket? normalPacket))
                 {
+                    if (normalPacket == null)
+                    {                        
+                        client_normalPackets.TryDequeue(out _);
+                        continue;
+                    }
                     normalPacket.positive_time_start ??= DateTime.Now;
                     if (normalPacket.handled)
                     {
@@ -376,9 +380,13 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         {
             while (true)
             {
-                if (server_normalPackets.TryPeek(out ProxyPacket? normalPacket)
-                    && normalPacket != null)
+                if (server_normalPackets.TryPeek(out ProxyPacket? normalPacket))
                 {
+                    if (normalPacket == null)
+                    {
+                        server_normalPackets.TryDequeue(out _);
+                        continue;
+                    }
                     normalPacket.positive_time_start ??= DateTime.Now;
                     if (normalPacket.handled)
                     {
