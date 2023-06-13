@@ -5,5 +5,6 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         public DateTime create_time;
         public bool handled;
         public byte[]? send_res;
+        public DateTime? positive_time_start;
     }
 }

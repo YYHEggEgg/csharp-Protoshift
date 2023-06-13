@@ -20,9 +20,11 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 #endif
         // If PacketHandler is given more time than this, it will be dropped. 
         public const int permanently_drop_time_ms = 5000;
+        public const int high_frequent_monitor_packet_finished_duration_ms = 5;
 
         public readonly TimeSpan handle_wait_time = TimeSpan.FromMilliseconds(handle_wait_time_ms);
-        public readonly TimeSpan permanently_drop_time = TimeSpan.FromMilliseconds(permanently_drop_time_ms);
+        public readonly TimeSpan permanently_drop_time = TimeSpan.FromMilliseconds(permanently_drop_time_ms);        
+        public readonly TimeSpan high_frequent_monitor_packet_finished_duration = TimeSpan.FromMilliseconds(high_frequent_monitor_packet_finished_duration_ms);
 
         public KcpProxyServer(IPEndPoint bindToAddress, IPEndPoint sendToAddress)
         {
@@ -204,6 +206,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 else if (client_normalPackets.TryPeek(out ProxyPacket? normalPacket)
                     && normalPacket != null)
                 {
+                    normalPacket.positive_time_start ??= DateTime.Now;
                     if (normalPacket.handled)
                     {
                         try
@@ -229,6 +232,12 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         client_timeoutPackets.Enqueue(normalPacket);
                         client_normalPackets.TryDequeue(out ProxyPacket? _deqpkt);
                         Debug.Assert(Object.ReferenceEquals(normalPacket, _deqpkt));
+                    }
+                    else if (DateTime.Now - normalPacket.positive_time_start 
+                        > high_frequent_monitor_packet_finished_duration)
+                    {
+                        if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
+                        await Task.Delay(15);
                     }
                     else
                     {
@@ -370,6 +379,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 if (server_normalPackets.TryPeek(out ProxyPacket? normalPacket)
                     && normalPacket != null)
                 {
+                    normalPacket.positive_time_start ??= DateTime.Now;
                     if (normalPacket.handled)
                     {
                         try
@@ -396,6 +406,13 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         server_normalPackets.TryDequeue(out ProxyPacket? _deqpkt);
                         Debug.Assert(Object.ReferenceEquals(normalPacket, _deqpkt));
                     }
+                    else if (DateTime.Now - normalPacket.positive_time_start 
+                        > high_frequent_monitor_packet_finished_duration)
+                    {
+                        if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
+                        await Task.Delay(15);
+                    }
+                    
                     else
                     {
                         if (sendConn.State != MhyKcpBase.ConnectionState.CONNECTED) return;
