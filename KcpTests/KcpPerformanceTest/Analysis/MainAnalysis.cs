@@ -180,8 +180,12 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             OutputCompare(stringRes, SpDelay, SpLoss, "Server", "Proxy");
             OutputCompare(stringRes, PcDelay, PcLoss, "Proxy", "Client");
             Output(stringRes);
+#if PROXY_FIX_DISORDER_SPECIAL_TEST
+            Output(stringRes, $"Proxy Handlers 由于开启了开关 PROXY_FIX_DISORDER_SPECIAL_TEST 而不显示。");
+#else
             Output(stringRes, $"Proxy_OnClientPacket: 平均处理时间:{Cs_proxy_delay.average_packetDelay.Milliseconds}ms ({Cs_proxy_delay.average_packetDelay}), 异常率:{Cs_proxy_failed.packetLoss}");
             Output(stringRes, $"Proxy_OnServerPacket: 平均处理时间:{Sc_proxy_delay.average_packetDelay.Milliseconds}ms ({Sc_proxy_delay.average_packetDelay}), 异常率:{Sc_proxy_failed.packetLoss}");
+#endif
 #endif
             #endregion
             Output(stringRes);

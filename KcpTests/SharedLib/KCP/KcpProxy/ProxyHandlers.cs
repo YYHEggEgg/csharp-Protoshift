@@ -7,8 +7,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         public Func<byte[], uint, byte[]?> OnClientPacketArrival
             = (data, conv) => data;
         public Func<byte[], uint, bool> ServerPacketOrdered
-            = (_, _) => false;
+            = (_, _) => true;
         public Func<byte[], uint, bool> ClientPacketOrdered
-            = (_, _) => false;
+            = (_, _) => true;
     }
 }

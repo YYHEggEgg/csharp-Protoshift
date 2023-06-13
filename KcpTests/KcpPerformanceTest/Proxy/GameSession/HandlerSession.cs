@@ -1,4 +1,5 @@
-﻿using csharp_Protoshift.resLoader;
+﻿using csharp_Protoshift.MhyKCP.Test.App;
+using csharp_Protoshift.resLoader;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using YSFreedom.Common.Util;
@@ -18,6 +19,11 @@ namespace csharp_Protoshift.GameSession
         {
             SessionId = sessionId;
         }
+
+#if PROXY_FIX_DISORDER_SPECIAL_TEST
+        Random sleep_rnd = new();
+            
+#endif
 
         public byte[] HandlePacket(byte[] packet, bool isNewCmdid)
         {
@@ -65,6 +71,12 @@ namespace csharp_Protoshift.GameSession
             Debug.Assert(rtn.GetUInt16(rtn.Length - 2) == 0x89AB);
 
             XorDecrypt(ref rtn);
+
+#if PROXY_FIX_DISORDER_SPECIAL_TEST
+            int sleep_max = 2 * Constants.packet_interval_ms;
+            lock (sleep_rnd) Thread.Sleep(sleep_rnd.Next(sleep_max));
+#endif
+
             return rtn;
         }
 
@@ -128,7 +140,7 @@ namespace csharp_Protoshift.GameSession
             //     cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PingRsp"))
             //     return true;
             // else 
-                return false;
+                return true;
             //}
         }
 

@@ -7,13 +7,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <!-- <DefineConstants>$(DefineConstants)TRACE;KCP_PERFORMANCE_TEST;STA_ASSERT_DISABLE</DefineConstants> -->
-    <DefineConstants>$(DefineConstants)TRACE;KCP_PERFORMANCE_TEST;STA_ASSERT_DISABLE;PROXY_FIX_DISORDER</DefineConstants>
+    <DefineConstants>$(DefineConstants)TRACE;KCP_PERFORMANCE_TEST;STA_ASSERT_DISABLE;PROXY_FIX_DISORDER_SPECIAL_TEST</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <!-- <DefineConstants>$(DefineConstants)TRACE;KCP_PERFORMANCE_TEST;STA_ASSERT_DISABLE</DefineConstants> -->
-    <DefineConstants>$(DefineConstants)TRACE;KCP_PERFORMANCE_TEST;STA_ASSERT_DISABLE;PROXY_FIX_DISORDER</DefineConstants>
+    <DefineConstants>$(DefineConstants)TRACE;KCP_PERFORMANCE_TEST;STA_ASSERT_DISABLE;PROXY_FIX_DISORDER_SPECIAL_TEST</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

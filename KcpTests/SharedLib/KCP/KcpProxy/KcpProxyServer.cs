@@ -13,7 +13,11 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         public IPEndPoint SendToEndpoint { get; }
         // The timeout of PacketHandler, move to delay-send list if exceeded
         // This timeout is used forcontrol packet order
+#if PROXY_FIX_DISORDER_SPECIAL_TEST
+        public const int handle_wait_time_ms = 150;
+#else
         public const int handle_wait_time_ms = 50;
+#endif
         // If PacketHandler is given more time than this, it will be dropped. 
         public const int permanently_drop_time_ms = 5000;
 
