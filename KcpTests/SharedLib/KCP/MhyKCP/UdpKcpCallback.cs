@@ -68,7 +68,8 @@ namespace csharp_Protoshift.MhyKCP
         public void Output(IMemoryOwner<byte> buffer, int avalidLength, bool isKcpPacket = true)
         {
             // DateTime req_SendTime = DateTime.Now;
-            udpSock.SendToAsync(buffer.Memory.Slice(0, avalidLength), ipEp).Wait();
+            // udpSock.SendToAsync(buffer.Memory.Slice(0, avalidLength), ipEp).Wait();
+            udpSock.SendTo(buffer.Memory.Span.Slice(0, avalidLength), ipEp);
             // if (isKcpPacket) 
                 // KcpPacketAudit.PushPacket(req_SendTime, buffer.Memory, avalidLength);
             // buffer.Dispose();
