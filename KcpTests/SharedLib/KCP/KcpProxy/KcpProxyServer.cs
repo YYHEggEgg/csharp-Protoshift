@@ -29,7 +29,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 string remoteIpString;
                 try
                 {
-                    packet = await udpSock.ReceiveFromAsync();
+                    packet = udpSock.ReceiveFrom();
                     remoteIpString = packet.RemoteEndPoint.ToString();
                 }
                 catch (Exception ex)
