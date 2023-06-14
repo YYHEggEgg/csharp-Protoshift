@@ -19,7 +19,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         public const int handle_wait_time_ms = 50;
 #endif
         // If PacketHandler is given more time than this, it will be dropped. 
-        public const int permanently_drop_time_ms = 5000;
+        public const int permanently_drop_time_ms = int.MaxValue;
         public const int high_frequent_monitor_packet_finished_duration_ms = 5;
 
         public readonly TimeSpan handle_wait_time = TimeSpan.FromMilliseconds(handle_wait_time_ms);
