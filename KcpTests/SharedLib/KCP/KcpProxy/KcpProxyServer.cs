@@ -123,11 +123,11 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             var IsOrderedPacket = handlers.ClientPacketOrdered;
             _ = ClientPacketSender(conn);
             _ = ClientTimeoutPacketSender(conn);
-            while (conn.sendClient?.State == MhyKcpBase.ConnectionState.CONNECTED)
+            while (conn?.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
                 try
                 {
-                    var beforepacket = conn.sendClient.Receive();
+                    var beforepacket = conn.Receive();
                     if (beforepacket == null)
                     {
                         Log.Dbug($"Skipped null? packet (session {conn.Conv})", $"{nameof(KcpProxyServer)}:ServerHandler");
@@ -306,11 +306,11 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             var IsOrderedPacket = handlers.ServerPacketOrdered;
             _ = ServerPacketSender(conn);
             _ = ServerTimeoutPacketSender(conn);
-            while (conn.State == MhyKcpBase.ConnectionState.CONNECTED)
+            while (conn.sendClient?.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
                 try
                 {
-                    var beforepacket = conn.Receive();
+                    var beforepacket = conn.sendClient.Receive();
                     if (beforepacket == null)
                     {
                         Log.Dbug($"Skipped null? packet (session {conn.Conv})", $"{nameof(KcpProxyServer)}:ClientHandler");

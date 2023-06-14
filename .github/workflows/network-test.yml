@@ -5,13 +5,12 @@ on:
   pull_request:
     branches:
       - network-performance-test
-      - network-performance-test-actions
       - kcp-proxy-packet-disorder-fix
+      - kcp-proxy-packet-disorder-fix-1-bug-testing
   push:
     branches:
       - network-performance-test
-      - network-performance-test-actions
-      - kcp-proxy-packet-disorder-fix
+      - kcp-proxy-packet-disorder-fix-1-bug-testing
 
 jobs:
   network-benchmark-windows-rel:
