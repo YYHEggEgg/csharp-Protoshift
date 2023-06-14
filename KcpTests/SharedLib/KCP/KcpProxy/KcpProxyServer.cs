@@ -14,7 +14,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         // The timeout of PacketHandler, move to delay-send list if exceeded
         // This timeout is used forcontrol packet order
 #if PROXY_FIX_DISORDER_SPECIAL_TEST
-        public const int handle_wait_time_ms = 150;
+        public const int handle_wait_time_ms = 200;
 #else
         public const int handle_wait_time_ms = 50;
 #endif
