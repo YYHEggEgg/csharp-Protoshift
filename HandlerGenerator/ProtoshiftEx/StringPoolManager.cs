@@ -4,7 +4,7 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
-    public class ProtocStringPoolManager
+    public partial class ProtocStringPoolManager
     {
         #region String Pool file related
         private StreamWriter[] files;
@@ -268,6 +268,84 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             return (originalName, compiledName);
         }
 
+        /// <summary>
+        /// Get Compiled name from original protobuf field name. return null if not found. 
+        /// </summary>
+        public string? GetCompiledName(string fieldName)
+        {
+            if (originalToCompiledDict.TryGetValue(fieldName, out string? rtn))
+                return rtn;
+            else return null;
+        }
+    }
+
+    public class CompiledEnumStringPoolManager
+    {
+        private ReadOnlyDictionary<string, string> originalToCompiledDict;
+        
+        private const string Compiled_AttributePrefix = "[pbr::OriginalName(\"";
+        private const string Compiled_AttributeSuffix = "\")] ";
+        private const string Compiled_EnumValuePrefix = " = ";
+
+        public CompiledEnumStringPoolManager(string compiled_enumproto_path, List<string> original_enum_name_list_unordered)
+        {
+            List<string> compiled_name_list_unordered = new();
+            #region Analyze compiled file
+            using (StreamReader reader = new(compiled_enumproto_path))
+            {
+                bool reachedPoolDataRegion = false;
+                long currentLine = 0;
+                while (!reader.EndOfStream)
+                {
+                    #region Data Region Manage
+                    currentLine++;
+                    string? line = (reader.ReadLine())?.Trim();
+                    if (line == null) continue;
+                    if (!reachedPoolDataRegion)
+                    {
+                        if (!line.StartsWith(Compiled_AttributePrefix)) continue;
+                        else
+                        {
+                            Log.Verb($"Reached Data Region at line {currentLine}.", nameof(CompiledEnumStringPoolManager));
+                            reachedPoolDataRegion = true;
+                        }
+                    }
+                    if (!line.StartsWith(Compiled_AttributePrefix))
+                    {
+                        Log.Verb($"End of Data Region at line {currentLine}.", nameof(CompiledEnumStringPoolManager));
+                        break;
+                    }
+                    #endregion
+                    var res = ReadValueFromCompiledFileLine(line);
+                    compiled_name_list_unordered.Add(res);
+                }
+            }
+            #endregion
+            
+            if (compiled_name_list_unordered.Count != original_enum_name_list_unordered.Count)
+            {
+                throw new ArgumentException($"Compiled file don't have the same enum record count as given.", nameof(original_enum_name_list_unordered));
+            }
+            Dictionary<string, string> _compiledNameDict = new();
+            for (int i = 0; i < compiled_name_list_unordered.Count; i++)
+            {
+                _compiledNameDict.Add(original_enum_name_list_unordered[i], compiled_name_list_unordered[i]);
+            }
+
+            originalToCompiledDict = new(_compiledNameDict);
+        }
+
+
+        private string ReadValueFromCompiledFileLine(string line)
+        {
+            #region Read original name
+            int indexEndOriginalName = line.IndexOf('"', Compiled_AttributePrefix.Length);
+            string originalName = line.Substring(
+                Compiled_AttributePrefix.Length, indexEndOriginalName - Compiled_AttributePrefix.Length);
+            #endregion
+            return originalName;
+        }
+    
         /// <summary>
         /// Get Compiled name from original protobuf field name. return null if not found. 
         /// </summary>
