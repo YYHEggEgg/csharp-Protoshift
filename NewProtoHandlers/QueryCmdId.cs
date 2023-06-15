@@ -42,8 +42,8 @@ namespace NewProtos
             #endregion
 
             #region Serializers
-            Dictionary<int, ProtoSerialize> _serializers = new();
-            Dictionary<string, ProtoSerialize> _serializers_queryByName = new();
+            ConcurrentDictionary<int, ProtoSerialize> _serializers = new();
+            ConvurrentDictionary<string, ProtoSerialize> _serializers_queryByName = new();
 
 #pragma warning disable CS8602 // 解引用可能出现空引用。
             var messageTypes = from type in Assembly.GetAssembly(
@@ -52,8 +52,10 @@ namespace NewProtos
                                where type.GetInterface("IMessage") != null
                                select type;
 #pragma warning restore CS8602 // 解引用可能出现空引用。
+            var messagesCount = messageTypes.Count();
 
-            foreach (var type in messageTypes)
+            int failure = 0;
+            Parallel.Foreach(messageTypes, type =>
             {
                 try
                 {
@@ -68,10 +70,17 @@ namespace NewProtos
                 {
                     Log.Warn($"Initialize ProtoSerialize: {type.Name} failed. Possibly that proto does not exist.", ProtoNamespace);
                     Log.Dbug(ex.ToString(), ProtoNamespace);
-                    continue;
+                    lock (failure) failure++;
                 }
-            }
+            });
             #endregion
+
+            if (_serializers_queryByName.Count - failure != messagesCount)
+            {
+                Log.Warn($"Design issue: Parallel.ForEach probably hasn't ended. Waiting...", ProtoNamespace);
+                while (_serializers_queryByName.Count - failure != messagesCount) Thread.Sleep(50);
+                Log.Info($"Parallel.ForEach waiting finished. ");
+            }
 
             cmdidToName = new(_cmdidToName);
             nameToCmdid = new(_nameToCmdid);
