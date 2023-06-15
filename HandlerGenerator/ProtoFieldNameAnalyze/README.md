@@ -35,6 +35,7 @@ public enum StringPool {
   [pbr::OriginalName("server_secret_key")] ServerSecretKey = 2,
   [pbr::OriginalName("client_secret_key")] ClientSecretKey = 3,
   [pbr::OriginalName("region_info")] RegionInfo = 4,
+  [pbr::OriginalName("Unk3300_HBFVIJDNJ")] Unk3300Hbfvijdnj = 5,
 }
 
 #endregion
