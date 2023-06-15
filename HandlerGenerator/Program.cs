@@ -10,8 +10,14 @@ Log.Initialize(new LoggerConfig(
     max_Output_Char_Count: -1,
     use_Console_Wrapper: false,
     use_Working_Directory: true,
+#if DEBUG
     console_Minimum_LogLevel: LogLevel.Debug,
-    global_Minimum_LogLevel: LogLevel.Verbose
+    global_Minimum_LogLevel: LogLevel.Verbose,
+#else
+    console_Minimum_LogLevel: LogLevel.Information,
+    global_Minimum_LogLevel: LogLevel.Information,
+#endif
+    debug_LogWriter_AutoFlush: true
 ));
 
 Log.Info("It is recommended to invoke this program with dotnet run.", "HandlerGenerator");
@@ -107,17 +113,18 @@ else if (os.StartsWith("Linux"))
 #endregion
 else
 {
-    Log.Erro("Unsupported OS detected! Please use Windows, macOS or Linux.", "OuterInvoke");
+    Log.Erro("Unsupported OS detected! Please report this to Issues of this project.", "OuterInvoke");
     Log.Erro("Process terminated for unsupported OS. Exit code is 100.", "OuterInvoke");
     Environment.Exit(100);
 }
 #endregion
+Log.Dbug($"Using proto2json at path {proto2jsondir}.");
 ProcessStartInfo startInfo = new ProcessStartInfo(proto2json_invokestr)
 {
     // Not setting this will cause runtime error: invalid memory address or nil pointer dereference
-    WorkingDirectory = $"{Environment.CurrentDirectory}/proto2json"
+    WorkingDirectory = proto2jsondir
 };
-Process p = Process.Start(proto2json_invokestr);
+Process p = Process.Start(startInfo);
 p.WaitForExit();
 pinvokewatch.Stop();
 Log.Info($"proto2json exited. Total execute time is {pinvokewatch.Elapsed}.", "OuterInvoke");
@@ -159,6 +166,7 @@ Parallel.ForEach(newprotojsons, path =>
         newenums.Add(enumResult);
     }
 });
+Log.Info($"NewProtos: read {newmessages.Count} messages, {newenums.Count} enums.");
 Parallel.ForEach(oldprotojsons, path =>
 {
     ProtoJsonResult analyzeResult = JsonAnalyzer.AnalyzeProtoJson(File.ReadAllText(path));
@@ -183,6 +191,20 @@ await newProto_compiledStringPool.Compile();
 ProtocStringPoolManager oldProto_compiledStringPool = new();
 foreach (var oldProtoMessage in oldmessages) oldProto_compiledStringPool.PushMessageResult(oldProtoMessage);
 await oldProto_compiledStringPool.Compile();
+#endregion
+#region Debug Output (no prod!!!)
+var newProtosOutputNames = newProto_compiledStringPool.GetAllNames();
+Log.Verb($"NewProtos names(verb): {newProtosOutputNames.Count} records.");
+foreach (var record in newProtosOutputNames)
+{
+    Log.Verb($"    [ {record.Key} -> {record.Value} ]; ");
+}
+var oldProtosOutputNames = oldProto_compiledStringPool.GetAllNames();
+Log.Verb($"OldProtos names(verb): {oldProtosOutputNames.Count} records.");
+foreach (var record in oldProtosOutputNames)
+{
+    Log.Verb($"    [ {record.Key} -> {record.Value} ]; ");
+}
 #endregion
 #endregion
 Console.ReadLine();             
