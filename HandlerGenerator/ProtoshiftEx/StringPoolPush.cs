@@ -7,7 +7,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             foreach (var commonField in message.commonFields) PushCommonResult(commonField);
             foreach (var mapField in message.mapFields) PushMapResult(mapField);
             foreach (var oneofField in message.oneofFields) PushOneofResult(oneofField);
-            foreach (var messageBody in message.messageFields) PushMessageResult(message);
+            foreach (var messageBody in message.messageFields) PushMessageResult(messageBody);
         }
 
         public void PushCommonResult(CommonResult commonResult)

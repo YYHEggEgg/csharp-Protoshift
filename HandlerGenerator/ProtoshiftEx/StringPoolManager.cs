@@ -16,12 +16,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 new($"{Environment.CurrentDirectory}/ProtoFieldNameAnalyze/GeneratedProtos/StringPool2.proto"),
                 new($"{Environment.CurrentDirectory}/ProtoFieldNameAnalyze/GeneratedProtos/StringPool3.proto")
             };
-            WriteLine("syntax = \"proto3\"");
+            WriteLine("syntax = \"proto3\";");
             files[0].WriteLine("enum StringPool1 { ");
             files[1].WriteLine("enum StringPool2 { ");
             files[2].WriteLine("enum StringPool3 { ");
             WriteLine("    Identifier = 0;");
-            names.Add("Identifier");
         }
         private void WriteLine()
         {
@@ -58,6 +57,14 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         private const string Compiled_AttributeSuffix = "\")] ";
         private const string Compiled_EnumValuePrefix = " = ";
 
+        #region Forbidden names
+        ReadOnlyDictionary<string, string> forbiddenNames = new(new Dictionary<string, string>
+        {
+            { "option", "Option" },
+            { "identifier", "Identifier" }
+        });
+        #endregion
+
         /// <summary>
         /// Push a field name to string pool. Invoke before <see cref="Compile()"/>.
         /// </summary>
@@ -65,9 +72,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         {
             if (compiled)
                 throw new InvalidOperationException("StringPool has compiled and don't accept any new field names.");
-            lock (pushLock)
+            if (!forbiddenNames.ContainsKey(originalName.ToLower()))
             {
-                names.Add(originalName);
+                lock (pushLock)
+                {
+                    names.Add(originalName.ToLower());
+                }
             }
         }
 
@@ -91,6 +101,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 WriteLine($"    {namelist[i]} = {i};");
             }
+            WriteLine("}");
             Log.Info($"StringPool started compiling, {namelist.Length} fields detected.", nameof(ProtocStringPoolManager));
             #endregion
             SaveFiles();
@@ -180,7 +191,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                             _possibleCompiledNameDict[res.originalName] = res.compiledName;
                         }
                     }
-                    else 
+                    else
                     {
                         Log.Dbug($"Field detected in StringPool2 but not in StringPool1, " +
                             $"originalName: {res.originalName}, compiledName: {res.compiledName}", nameof(ProtocStringPoolManager));
@@ -220,11 +231,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                         // res.compiledName is not null, possibleName == res.compiledName, so possibleName not null
                         if (_possibleCompiledNameDict[res.originalName] == res.compiledName)
                         {
-                            _compiledNameDict[res.originalName] = 
+                            _compiledNameDict[res.originalName] =
                                 (string)_possibleCompiledNameDict[res.originalName];
                         }
                     }
-                    else 
+                    else
                     {
                         Log.Dbug($"Field detected in StringPool3 but not in StringPool1&2, " +
                             $"originalName: {res.originalName}, compiledName: {res.compiledName}", nameof(ProtocStringPoolManager));
@@ -234,7 +245,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 }
             }
             #endregion
-
+            #region Add forbidden names in protoc
+            foreach (var pair in forbiddenNames)
+            {
+                _compiledNameDict.Add(pair.Key, pair.Value);
+            }
+            #endregion
             originalToCompiledDict = new(_compiledNameDict);
         }
 
@@ -273,16 +289,25 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// </summary>
         public string? GetCompiledName(string fieldName)
         {
-            if (originalToCompiledDict.TryGetValue(fieldName, out string? rtn))
+            if (!compiled)
+                throw new InvalidOperationException("StringPool hasn't compiled and don't know the compiled name.");
+            if (originalToCompiledDict.TryGetValue(fieldName.ToLower(), out string? rtn))
                 return rtn;
             else return null;
+        }
+
+        public ReadOnlyDictionary<string, string> GetAllNames()
+        {
+            if (!compiled)
+                throw new InvalidOperationException("StringPool hasn't compiled and don't know the compiled name.");
+            return originalToCompiledDict;
         }
     }
 
     public class CompiledEnumStringPoolManager
     {
         private ReadOnlyDictionary<string, string> originalToCompiledDict;
-        
+
         private const string Compiled_AttributePrefix = "[pbr::OriginalName(\"";
         private const string Compiled_AttributeSuffix = "\")] ";
         private const string Compiled_EnumValuePrefix = " = ";
@@ -321,7 +346,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 }
             }
             #endregion
-            
+
             if (compiled_name_list_unordered.Count != original_enum_name_list_unordered.Count)
             {
                 throw new ArgumentException($"Compiled file don't have the same enum record count as given.", nameof(original_enum_name_list_unordered));
@@ -345,7 +370,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #endregion
             return originalName;
         }
-    
+
         /// <summary>
         /// Get Compiled name from original protobuf field name. return null if not found. 
         /// </summary>
