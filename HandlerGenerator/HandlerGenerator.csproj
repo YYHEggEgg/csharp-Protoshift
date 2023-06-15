@@ -14,6 +14,9 @@
 
   <ItemGroup>
     <Compile Remove="_protoc_test/**" />
+    <Compile Remove="ProtoFieldNameAnalyze/**" />
+    <Compile Remove="Proto2json_Output/**" />
+    <Compile Remove="proto2json/**" />
   </ItemGroup>
 
 </Project>

@@ -107,23 +107,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             SaveFiles();
 
             #region Invoke protoc
-            string commandLine = string.Concat(
-                "--proto_path=\"", Environment.CurrentDirectory, "/ProtoFieldNameAnalyze/GeneratedProtos\" ",
-                "\"", Environment.CurrentDirectory, "/ProtoFieldNameAnalyze/GeneratedProtos/*.proto\" ",
-                "--csharp_out=\"", Environment.CurrentDirectory, "/ProtoFieldNameAnalyze/Compiled\""
-            );
-            Stopwatch watch = Stopwatch.StartNew();
-            Process p = Process.Start("protoc", commandLine);
-            Log.Verb($"Started invoking protoc: protoc {commandLine}", nameof(ProtocStringPoolManager));
-            await p.WaitForExitAsync();
-            watch.Stop();
-            Log.Info($"protoc invoke exited, costed {watch.Elapsed}.", nameof(ProtocStringPoolManager));
-            if (p.ExitCode != 0)
-            {
-                Log.Erro($"protoc compiling exited with code {p.ExitCode}. Compiling Failed. ", nameof(ProtocStringPoolManager));
-                compilingFailed = true;
-                throw new ApplicationException($"protoc compiling exited with code {p.ExitCode}. Compiling Failed. ");
-            }
+            await InvokeProtocAsync("StringPool1");
+            await InvokeProtocAsync("StringPool2");
+            await InvokeProtocAsync("StringPool3");
             #endregion
             Dictionary<string, string> _compiledNameDict = new();
             Dictionary<string, string?> _possibleCompiledNameDict = new();
@@ -252,6 +238,29 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             #endregion
             originalToCompiledDict = new(_compiledNameDict);
+
+            #region Invoke protoc command
+            async Task InvokeProtocAsync(string protoname)
+            {
+                string commandLine = string.Concat(
+                    "--proto_path=\"", Environment.CurrentDirectory, "/ProtoFieldNameAnalyze/GeneratedProtos\" ",
+                    "\"", Environment.CurrentDirectory, "/ProtoFieldNameAnalyze/GeneratedProtos/", protoname, ".proto\" ",
+                    "--csharp_out=\"", Environment.CurrentDirectory, "/ProtoFieldNameAnalyze/Compiled\""
+                );
+                Stopwatch watch = Stopwatch.StartNew();
+                Process p = Process.Start("protoc", commandLine);
+                Log.Verb($"Started invoking protoc: protoc {commandLine}", nameof(ProtocStringPoolManager));
+                await p.WaitForExitAsync();
+                watch.Stop();
+                Log.Info($"protoc invoke exited, costed {watch.Elapsed}.", nameof(ProtocStringPoolManager));
+                if (p.ExitCode != 0)
+                {
+                    Log.Erro($"protoc compiling exited with code {p.ExitCode}. Compiling Failed. ", nameof(ProtocStringPoolManager));
+                    compilingFailed = true;
+                    throw new ApplicationException($"protoc compiling exited with code {p.ExitCode}. Compiling Failed. ");
+                }
+            }
+            #endregion
         }
 
         private (string originalName, string compiledName)
