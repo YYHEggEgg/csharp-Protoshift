@@ -19,7 +19,7 @@ go build -o %WINDOWS_64% ./proto2json
 # build macOS 32-bit
 echo "Building macOS 32-bit executable: $MACOS_32"
 go env -w GOOS=darwin GOARCH=386 
-\go build -o %MACOS_32% ./proto2json
+go build -o %MACOS_32% ./proto2json
 
 # build macOS 64-bit
 echo "Building macOS 64-bit executable: $MACOS_64"
