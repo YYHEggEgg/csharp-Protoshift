@@ -241,13 +241,22 @@ namespace csharp_Protoshift.GameSession
                 return Array.Empty<byte>();
             }
             string protoname = oldserializer.Protoname;
-            // string oldjson = oldserializer.DeserializeToJson(bodyfrom);
-            /*if (Verbose)
+            string oldjson;
+            try
+            {
+                oldjson = oldserializer.DeserializeToJson(bodyfrom);
+            }
+            catch (Exception ex)
+            {
+                Log.Warn($"Invalid protocol packet: cmd={cmdid}, len={body_length}, pkt={Convert.ToHexString(packet)}");
+                throw;
+            }
+            if (Verbose)
             {
                 Log.Info($"Recv packet with CmdId:{cmdid} from " +
                     $"Server:---{Convert.ToHexString(packet)}",
                     $"PacketHandler({SessionId})");
-            }*/
+            }
             #endregion
 
             #region Notify
