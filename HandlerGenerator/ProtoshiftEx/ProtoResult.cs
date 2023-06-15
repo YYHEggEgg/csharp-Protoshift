@@ -2,6 +2,7 @@
 
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 
@@ -18,6 +19,56 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         {
             return $"Field Type: {fieldType}, Field Name: {fieldName}, Is Repeated: {IsRepeatedField}, Is Import Type: {isImportType}";
         }
+    
+        // override object.Equals
+        /// <summary>
+        /// Compare whether the name of <paramref name="obj"/> equals to <see cref="fieldName"/>. <para/>
+        /// Only used by Enumerable methods. Don't use it in any code or a typeparam of <see cref="HashSet<T>"/>!
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            //
+            // See the full list of guidelines at
+            //   http://go.microsoft.com/fwlink/?LinkID=85237
+            // and also the guidance for operator== at
+            //   http://go.microsoft.com/fwlink/?LinkId=85238
+            //
+            
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            
+            return fieldName.Equals(((CommonResult)obj).fieldName);
+        }
+        
+        // override object.GetHashCode
+        /// <summary>
+        /// Get the HashCode of <see cref="fieldName"/>. <para/>
+        /// Only used by Enumerable methods. Don't use it in any code or a typeparam of <see cref="HashSet"/>!
+        /// </summary>
+        public override int GetHashCode()
+        {
+            // TODO: write your implementation of GetHashCode() here
+            return fieldName.GetHashCode();
+        }
+    
+        public static readonly IEqualityComparer<CommonResult> NameComparer = new CommonResultEqualityComparer();
+
+        #region Comparer
+        public class CommonResultEqualityComparer : EqualityComparer<CommonResult>
+        {
+            public override bool Equals(CommonResult? x, CommonResult? y)
+            {
+                return x?.fieldName?.Equals(y?.fieldName) ?? false;
+            }
+
+            public override int GetHashCode([DisallowNull] CommonResult obj)
+            {
+                return obj.fieldName.GetHashCode();
+            }
+        }
+        #endregion
     }
 
     public class MapResult
@@ -32,6 +83,56 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         {
             return $"Map Field Name: {fieldName}, Key Type: {keyType}, Is Import Type: {keyIsImportType}, Value Type: {valueType}, Is Import Type: {valueIsImportType}";
         }
+    
+        // override object.Equals
+        /// <summary>
+        /// Compare whether the name of <paramref name="obj"/> equals to <see cref="fieldName"/>. <para/>
+        /// Only used by Enumerable methods. Don't use it in any code or a typeparam of <see cref="HashSet<T>"/>!
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            //
+            // See the full list of guidelines at
+            //   http://go.microsoft.com/fwlink/?LinkID=85237
+            // and also the guidance for operator== at
+            //   http://go.microsoft.com/fwlink/?LinkId=85238
+            //
+            
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            
+            return fieldName.Equals(((MapResult)obj).fieldName);
+        }
+        
+        // override object.GetHashCode
+        /// <summary>
+        /// Get the HashCode of <see cref="fieldName"/>. <para/>
+        /// Only used by Enumerable methods. Don't use it in any code or a typeparam of <see cref="HashSet"/>!
+        /// </summary>
+        public override int GetHashCode()
+        {
+            // TODO: write your implementation of GetHashCode() here
+            return fieldName.GetHashCode();
+        }
+    
+        public static readonly IEqualityComparer<MapResult> NameComparer = new MapResultEqualityComparer();
+
+        #region Comparer
+        public class MapResultEqualityComparer : EqualityComparer<MapResult>
+        {
+            public override bool Equals(MapResult? x, MapResult? y)
+            {
+                return x?.fieldName?.Equals(y?.fieldName) ?? false;
+            }
+
+            public override int GetHashCode([DisallowNull] MapResult obj)
+            {
+                return obj.fieldName.GetHashCode();
+            }
+        }
+        #endregion
     }
 
     public class OneofResult
@@ -50,6 +151,56 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             result += "End Oneof FIelds-------------------";
             return result;
         }
+    
+        // override object.Equals
+        /// <summary>
+        /// Compare whether the name of <paramref name="obj"/> equals to <see cref="messageName"/>. <para/>
+        /// Only used by Enumerable methods. Don't use it in any code or a typeparam of <see cref="HashSet<T>"/>!
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            //
+            // See the full list of guidelines at
+            //   http://go.microsoft.com/fwlink/?LinkID=85237
+            // and also the guidance for operator== at
+            //   http://go.microsoft.com/fwlink/?LinkId=85238
+            //
+            
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            
+            return oneofEntryName.Equals(((OneofResult)obj).oneofEntryName);
+        }
+        
+        // override object.GetHashCode
+        /// <summary>
+        /// Get the HashCode of <see cref="oneofEntryName"/>. <para/>
+        /// Only used by Enumerable methods. Don't use it in any code or a typeparam of <see cref="HashSet"/>!
+        /// </summary>
+        public override int GetHashCode()
+        {
+            // TODO: write your implementation of GetHashCode() here
+            return oneofEntryName.GetHashCode();
+        }
+    
+        public static readonly IEqualityComparer<OneofResult> NameComparer = new OneofResultEqualityComparer();
+
+        #region Comparer
+        public class OneofResultEqualityComparer : EqualityComparer<OneofResult>
+        {
+            public override bool Equals(OneofResult? x, OneofResult? y)
+            {
+                return x?.oneofEntryName?.Equals(y?.oneofEntryName) ?? false;
+            }
+
+            public override int GetHashCode([DisallowNull] OneofResult obj)
+            {
+                return obj.oneofEntryName.GetHashCode();
+            }
+        }
+        #endregion
     }
 
     public class EnumResult
@@ -67,6 +218,56 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             return result;
         }
+    
+        // override object.Equals
+        /// <summary>
+        /// Compare whether the name of <paramref name="obj"/> equals to <see cref="enumName"/>. <para/>
+        /// Only used by Enumerable methods. Don't use it in any code or a typeparam of <see cref="HashSet<T>"/>!
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            //
+            // See the full list of guidelines at
+            //   http://go.microsoft.com/fwlink/?LinkID=85237
+            // and also the guidance for operator== at
+            //   http://go.microsoft.com/fwlink/?LinkId=85238
+            //
+            
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            
+            return enumName.Equals(((EnumResult)obj).enumName);
+        }
+        
+        // override object.GetHashCode
+        /// <summary>
+        /// Get the HashCode of <see cref="enumName"/>. <para/>
+        /// Only used by Enumerable methods. Don't use it in any code or a typeparam of <see cref="HashSet"/>!
+        /// </summary>
+        public override int GetHashCode()
+        {
+            // TODO: write your implementation of GetHashCode() here
+            return enumName.GetHashCode();
+        }
+    
+        public static readonly IEqualityComparer<EnumResult> NameComparer = new EnumResultEqualityComparer();
+
+        #region Comparer
+        public class EnumResultEqualityComparer : EqualityComparer<EnumResult>
+        {
+            public override bool Equals(EnumResult? x, EnumResult? y)
+            {
+                return x?.enumName?.Equals(y?.enumName) ?? false;
+            }
+
+            public override int GetHashCode([DisallowNull] EnumResult obj)
+            {
+                return obj.enumName.GetHashCode();
+            }
+        }
+        #endregion
     }
 
     public class MessageResult
@@ -104,6 +305,56 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             return result;
         }
+    
+        // override object.Equals
+        /// <summary>
+        /// Compare whether the name of <paramref name="obj"/> equals to <see cref="messageName"/>. <para/>
+        /// Only used by Enumerable methods. Don't use it in any code or a typeparam of <see cref="HashSet<T>"/>!
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            //
+            // See the full list of guidelines at
+            //   http://go.microsoft.com/fwlink/?LinkID=85237
+            // and also the guidance for operator== at
+            //   http://go.microsoft.com/fwlink/?LinkId=85238
+            //
+            
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            
+            return messageName.Equals(((MessageResult)obj).messageName);
+        }
+        
+        // override object.GetHashCode
+        /// <summary>
+        /// Get the HashCode of <see cref="messageName"/>. <para/>
+        /// Only used by Enumerable methods. Don't use it in any code or a typeparam of <see cref="HashSet"/>!
+        /// </summary>
+        public override int GetHashCode()
+        {
+            // TODO: write your implementation of GetHashCode() here
+            return messageName.GetHashCode();
+        }
+
+        public static readonly IEqualityComparer<MessageResult> NameComparer = new MessageResultEqualityComparer();
+
+        #region Comparer
+        public class MessageResultEqualityComparer : EqualityComparer<MessageResult>
+        {
+            public override bool Equals(MessageResult? x, MessageResult? y)
+            {
+                return x?.messageName?.Equals(y?.messageName) ?? false;
+            }
+
+            public override int GetHashCode([DisallowNull] MessageResult obj)
+            {
+                return obj.messageName.GetHashCode();
+            }
+        }
+        #endregion
     }
 
     public class ProtoJsonResult

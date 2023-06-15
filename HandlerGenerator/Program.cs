@@ -139,10 +139,10 @@ if (!Directory.Exists(newoutputdir) || !Directory.Exists(oldoutputdir))
     Environment.Exit(245);
 }
 #endregion
-ConcurrentDictionary<string,
-    (MessageResult? newresult, MessageResult? oldresult)> messageResults = new();
-ConcurrentDictionary<string,
-    (EnumResult? newresult, EnumResult? oldresult)> enumResults = new();
+ConcurrentBag<MessageResult> newmessages = new();
+ConcurrentBag<MessageResult> oldmessages = new();
+ConcurrentBag<EnumResult> newenums = new();
+ConcurrentBag<EnumResult> oldenums = new();
 #region Analyze Output
 #region Enumerate Files
 var newprotojsons = Directory.EnumerateFiles(newoutputdir);
@@ -152,16 +152,11 @@ Parallel.ForEach(newprotojsons, path =>
     ProtoJsonResult analyzeResult = JsonAnalyzer.AnalyzeProtoJson(File.ReadAllText(path));
     foreach (var message in analyzeResult.messageBodys)
     {
-        // We suppose that there aren't messages/enums with the same name.
-        try
-        {
-            messageResults[message.messageName] = (newresult: message, oldresult: null);
-        }
-        catch (Exception ex)
-        {
-            Log.Warn($"Proto {message.messageName} in {path} is skipped for error: {ex}. ", "ProtoJson_Enumerate(NewProtos)");
-            return;
-        }
+        newmessages.Add(message);
+    }
+    foreach (var enumResult in analyzeResult.enumBodys)
+    {
+        newenums.Add(enumResult);
     }
 });
 Parallel.ForEach(oldprotojsons, path =>
@@ -169,24 +164,25 @@ Parallel.ForEach(oldprotojsons, path =>
     ProtoJsonResult analyzeResult = JsonAnalyzer.AnalyzeProtoJson(File.ReadAllText(path));
     foreach (var message in analyzeResult.messageBodys)
     {
-        try
-        {
-            if (messageResults.TryGetValue(message.messageName, out var value))
-            {
-                Debug.Assert(value.oldresult == null);
-                messageResults[message.messageName] = (newresult: value.newresult, oldresult: message);
-            }
-        }
-        catch (Exception ex)
-        {
-            Log.Warn($"Proto {message.messageName} in {path} is skipped for error: {ex}. ", "ProtoJson_Enumerate(OldProtos)");
-            return;
-        }
+        oldmessages.Add(message);
+    }
+    foreach (var enumResult in analyzeResult.enumBodys)
+    {
+        oldenums.Add(enumResult);
     }
 });
 #endregion
+CollectionResult<MessageResult> messageResults = 
+    CollectionHelper.GetCompareResult<MessageResult>(newmessages, oldmessages, MessageResult.NameComparer);
+CollectionResult<EnumResult> enumResults = 
+    CollectionHelper.GetCompareResult<EnumResult>(newenums, oldenums, EnumResult.NameComparer);
 #region Generate String Pool
-
+ProtocStringPoolManager newProto_compiledStringPool = new();
+foreach (var newProtoMessage in newmessages) newProto_compiledStringPool.PushMessageResult(newProtoMessage);
+await newProto_compiledStringPool.Compile();
+ProtocStringPoolManager oldProto_compiledStringPool = new();
+foreach (var oldProtoMessage in oldmessages) oldProto_compiledStringPool.PushMessageResult(oldProtoMessage);
+await oldProto_compiledStringPool.Compile();
 #endregion
 #endregion
 Console.ReadLine();             
