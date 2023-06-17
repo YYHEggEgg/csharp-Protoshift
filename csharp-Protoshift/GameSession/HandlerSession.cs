@@ -5,6 +5,7 @@ using Funny.Crypto;
 using Newtonsoft.Json;
 using OfficeOpenXml;
 using System.Collections.Concurrent;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using YSFreedom.Common.Util;
@@ -147,7 +148,28 @@ namespace csharp_Protoshift.GameSession
             return rtn;
         }
 
-        public bool IsUrgentPacket(byte[] packet, bool isNewCmdid)
+        // use whitelist now
+        #region Ordered Packet List
+        // this is disabled now
+        ReadOnlyCollection<string> ordered_cmds = new(new List<string>
+        {
+            "WorldPlayerRTTNotify", "SceneTransToPointReq", "PlayerEnterSceneNotify",
+            "EnterSceneReadyReq", "SceneInitFinishReq", "EnterSceneDoneReq",
+            "EnterScenePeerNotify", "SceneEntityDisappearNotify", "SceneTransToPointRsp", 
+            "EnterSceneReadyRsp", "SceneInitFinishRsp", "EnterSceneDoneRsp", 
+            "GetPlayerTokenReq", "GetPlayerTokenRsp", "PlayerLoginReq", "PlayerLoginRsp",
+            "ScenePlayerLocationNotify"
+        });
+
+        // this is in use
+        ReadOnlyCollection<string> unordered_cmds = new(new List<string>
+        {
+            "PingReq", "PingRsp", "UnionCmdNotify", "GetActivityInfoRsp",
+            "AchievementUpdateNotify", "BattlePassMissionUpdateNotify"
+        });
+        #endregion
+
+        public bool OrderedPacket(byte[] packet, bool isNewCmdid)
         {
             /* Due to current researches, after the urgent packet split was added, 
              * nothing about network but the Ping value shown in the game has improved, 
@@ -210,11 +232,8 @@ namespace csharp_Protoshift.GameSession
             }
             else
             {*/
-            if (cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp") ||
-                cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginRsp") ||
-                cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PingRsp"))
-                return true;
-            else return false;
+                var protoname = OldProtos.QueryCmdId.GetProtonameFromCmdId(cmdid);
+                return !unordered_cmds.Contains(protoname);
             //}
         }
 
