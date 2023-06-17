@@ -44,7 +44,7 @@ namespace csharp_Protoshift.MhyKCP
             _updatelock.Enter();
             while (!_Closed)
             {
-                var packet = udpSock.ReceiveFrom();
+                var packet = await udpSock.ReceiveFromAsync();
                 try
                 {
                     if (packet.RemoteEndPoint.ToString() == remoteAddress.ToString())
