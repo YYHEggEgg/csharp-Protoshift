@@ -246,7 +246,7 @@ namespace csharp_Protoshift.GameSession
             {
                 oldjson = oldserializer.DeserializeToJson(bodyfrom);
             }
-            catch (Exception ex)
+            catch
             {
                 Log.Warn($"Invalid protocol packet: cmd={cmdid}, len={body_length}, pkt={Convert.ToHexString(packet)}");
                 throw;
@@ -262,12 +262,12 @@ namespace csharp_Protoshift.GameSession
             #region Notify
             if (protoname == "GetPlayerTokenReq")
             {
-                string oldjson = oldserializer.DeserializeToJson(bodyfrom);
+                // string oldjson = oldserializer.DeserializeToJson(bodyfrom);
                 GetPlayerTokenReqNotify(oldjson);
             }
             if (protoname == "GetPlayerTokenRsp")
             {
-                string oldjson = oldserializer.DeserializeToJson(bodyfrom);
+                // string oldjson = oldserializer.DeserializeToJson(bodyfrom);
                 GetPlayerTokenRspNotify(oldjson);
             }
             #endregion
