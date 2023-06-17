@@ -60,6 +60,12 @@ namespace NewProtos
             return JsonFormatter.Default.Format(Parser.ParseFrom(protobin));
         }
 
+        public string DeserializeToJson(byte[] protobin, int offset, int length)
+        {
+            if (isNull) throw new InvalidOperationException("Trying to use an invalid instance.");
+            return JsonFormatter.Default.Format(Parser.ParseFrom(protobin, offset, length));
+        }
+
         public string DeserializeFromProto<T>(T protocol) where T : IMessage<T>
         {
             return JsonFormatter.Default.Format(protocol);
