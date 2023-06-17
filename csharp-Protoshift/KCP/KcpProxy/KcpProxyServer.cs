@@ -117,8 +117,10 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             var conn = (KcpProxyBase)clients[remoteIpString];
             var PacketHandler = handlers.OnClientPacketArrival;
             var IsOrderedPacket = handlers.ClientPacketOrdered;
-            _ = ClientPacketSender(conn);
-            _ = ClientTimeoutPacketSender(conn);
+            ConcurrentQueue<ProxyPacket> client_normalPackets = new();
+            ConcurrentQueue<ProxyPacket> client_timeoutPackets = new();
+            _ = ClientPacketSender(conn, client_normalPackets, client_timeoutPackets);
+            _ = ClientTimeoutPacketSender(conn, client_timeoutPackets);
             while (conn?.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
                 try
@@ -187,10 +189,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         }
 
         #region Send Packet
-        private ConcurrentQueue<ProxyPacket> client_normalPackets = new();
-        // packets timeout of handle time
-        private ConcurrentQueue<ProxyPacket> client_timeoutPackets = new();
-        private async Task ClientPacketSender(KcpProxyBase sendConn)
+        private async Task ClientPacketSender(KcpProxyBase sendConn, 
+            ConcurrentQueue<ProxyPacket> client_normalPackets, 
+            ConcurrentQueue<ProxyPacket> client_timeoutPackets)
         {
             while (true)
             {
@@ -253,7 +254,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             }
         }
 
-        private async Task ClientTimeoutPacketSender(KcpProxyBase sendConn)
+        private async Task ClientTimeoutPacketSender(KcpProxyBase sendConn,
+            ConcurrentQueue<ProxyPacket> client_timeoutPackets)
         {
             Queue<ProxyPacket> tmp_pktqueue = new();
             while (true)
@@ -301,8 +303,10 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             var conn = (KcpProxyBase)clients[remoteIpString];
             var PacketHandler = handlers.OnServerPacketArrival;
             var IsOrderedPacket = handlers.ServerPacketOrdered;
-            _ = ServerPacketSender(conn);
-            _ = ServerTimeoutPacketSender(conn);
+            ConcurrentQueue<ProxyPacket> server_normalPackets = new();
+            ConcurrentQueue<ProxyPacket> server_timeoutPackets = new();
+            _ = ServerPacketSender(conn, server_normalPackets, server_timeoutPackets);
+            _ = ServerTimeoutPacketSender(conn, server_timeoutPackets);
             while (conn.sendClient?.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
                 try
@@ -371,9 +375,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         }
 
         #region Send Packet
-        private ConcurrentQueue<ProxyPacket> server_normalPackets = new();
-        private ConcurrentQueue<ProxyPacket> server_timeoutPackets = new();
-        private async Task ServerPacketSender(KcpProxyBase sendConn)
+        private async Task ServerPacketSender(KcpProxyBase sendConn,
+            ConcurrentQueue<ProxyPacket> server_normalPackets,
+            ConcurrentQueue<ProxyPacket> server_timeoutPackets)
         {
             while (true)
             {
@@ -431,7 +435,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             }
         }
 
-        private async Task ServerTimeoutPacketSender(KcpProxyBase sendConn)
+        private async Task ServerTimeoutPacketSender(KcpProxyBase sendConn,
+            ConcurrentQueue<ProxyPacket> server_timeoutPackets)
         {
             Queue<ProxyPacket> tmp_pktqueue = new();
             while (true)
