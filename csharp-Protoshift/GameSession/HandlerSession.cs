@@ -2,8 +2,11 @@
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
 using Funny.Crypto;
+using Google.Protobuf;
 using Newtonsoft.Json;
 using OfficeOpenXml;
+using OfficeOpenXml.ExternalReferences;
+using Org.BouncyCastle.Crypto.Prng;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Security.Cryptography;
@@ -229,8 +232,14 @@ namespace csharp_Protoshift.GameSession
         {
             Stopwatch ProtoshiftWatch = new();
             ProtoshiftWatch.Start();
-            var bodyfrom = new byte[body_length];
-            Array.Copy(packet, body_offset, bodyfrom, 0, body_length);
+            var head_offset = sizeof(ushort) * 3 + sizeof(uint);
+            OldProtos.PacketHead packetHead = OldProtos.PacketHead.Parser.ParseFrom(packet, head_offset, packet.GetUInt16(sizeof(ushort) * 2));
+            if (Verbose)
+                Log.Dbug($"Received packet head from {(isNewCmdid ? "Client" : "Server")} ({packet.GetUInt16(sizeof(ushort) * 2)} bytes) --- {packetHead}");
+            
+            packetHead.SentMs = 0;
+            packetHead.ClientSequenceId = 0;
+            var newhead = packetHead.ToByteArray();
 
             #region Receive and read
             if (!OldProtos.QueryCmdId.TryGetSerializer(cmdid, out var oldserializer))
@@ -244,11 +253,11 @@ namespace csharp_Protoshift.GameSession
             string oldjson;
             try
             {
-                oldjson = oldserializer.DeserializeToJson(bodyfrom);
+                oldjson = oldserializer.DeserializeToJson(packet, body_offset, (int)body_length);
             }
             catch
             {
-                Log.Warn($"Invalid protocol packet: cmd={cmdid}, len={body_length}, pkt={Convert.ToHexString(packet)}");
+                Log.Warn($"Invalid protocol packet: cmd={cmdid}, len={(int)body_length}, pkt={Convert.ToHexString(packet)}");
                 throw;
             }
             if (Verbose)
@@ -272,9 +281,28 @@ namespace csharp_Protoshift.GameSession
             }
             #endregion
 
+            #region Reconstruct packet
+            var new_packetLen = sizeof(ushort) * 3 + sizeof(uint) + newhead.Length + body_length + sizeof(ushort);
+            int offset = 0;
+            var rtn = new byte[new_packetLen];
+            rtn.SetUInt16(offset, 0x4567);
+            offset += sizeof(ushort);
+            rtn.SetUInt16(offset, cmdid); // cmdid
+            offset += sizeof(ushort);
+            rtn.SetUInt16(offset, (ushort)newhead.Length); // headLen
+            offset += sizeof(ushort);
+            rtn.SetUInt32(offset, packet.GetUInt32(offset)); // bodyLen
+            offset += sizeof(uint);
+            Buffer.BlockCopy(newhead, 0, rtn, offset, newhead.Length); // packetHead
+            offset += newhead.Length;
+            Buffer.BlockCopy(packet, body_offset, rtn, offset, (int)body_length);
+            offset += (int)body_length;
+            rtn.SetUInt16(offset, 0x89AB);
+            #endregion
+
             ProtoshiftWatch.Stop();
             SubmitTimeRecord(protoname, false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
-            return packet;
+            return rtn;
         }
 
         protected byte[] client_seed;
