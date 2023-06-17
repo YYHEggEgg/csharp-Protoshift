@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Collections.ObjectModel;
 using YYHEggEgg.Logger;
 using System.Diagnostics;
+using System.Collections.Concurrent;
 
 namespace NewProtos
 {
@@ -42,8 +43,8 @@ namespace NewProtos
             #endregion
 
             #region Serializers
-            Dictionary<int, ProtoSerialize> _serializers = new();
-            Dictionary<string, ProtoSerialize> _serializers_queryByName = new();
+            ConcurrentDictionary<int, ProtoSerialize> _serializers = new();
+            ConcurrentDictionary<string, ProtoSerialize> _serializers_queryByName = new();
 
 #pragma warning disable CS8602 // 解引用可能出现空引用。
             var messageTypes = from type in Assembly.GetAssembly(
@@ -52,8 +53,11 @@ namespace NewProtos
                                where type.GetInterface("IMessage") != null
                                select type;
 #pragma warning restore CS8602 // 解引用可能出现空引用。
+            var messagesCount = messageTypes.Count();
 
-            foreach (var type in messageTypes)
+            int failure = 0;
+            object failure_lck = new();
+            Parallel.ForEach(messageTypes, type =>
             {
                 try
                 {
@@ -61,17 +65,24 @@ namespace NewProtos
                     Log.Dbug($"Initializing Message: {name}", ProtoNamespace);
                     ProtoSerialize serializer = new(name); // NewProtos.*
                     if (_nameToCmdid.ContainsKey(name))
-                        _serializers.Add(_nameToCmdid[name], serializer);
-                    _serializers_queryByName.Add(name, serializer);
+                        _serializers.TryAdd(_nameToCmdid[name], serializer);
+                    _serializers_queryByName.TryAdd(name, serializer);
                 }
                 catch (Exception ex)
                 {
                     Log.Warn($"Initialize ProtoSerialize: {type.Name} failed. Possibly that proto does not exist.", ProtoNamespace);
                     Log.Dbug(ex.ToString(), ProtoNamespace);
-                    continue;
+                    lock (failure_lck) failure++;
                 }
-            }
+            });
             #endregion
+
+            if (_serializers_queryByName.Count - failure != messagesCount)
+            {
+                Log.Warn($"Design issue: Parallel.ForEach probably hasn't ended. Waiting...", ProtoNamespace);
+                while (_serializers_queryByName.Count - failure != messagesCount) Thread.Sleep(50);
+                Log.Info($"Parallel.ForEach waiting finished. ");
+            }
 
             cmdidToName = new(_cmdidToName);
             nameToCmdid = new(_nameToCmdid);
@@ -132,7 +143,7 @@ namespace NewProtos
 
         public static string Initialize()
         {
-            return $"OldProtos QueryCmdId initialized, CmdId x{nameToCmdid.Count}, {serializers_queryByName.Count} serializers.";
+            return $"{ProtoNamespace} QueryCmdId initialized, CmdId x{nameToCmdid.Count}, {serializers_queryByName.Count} serializers.";
         }
 
         /// <summary>
