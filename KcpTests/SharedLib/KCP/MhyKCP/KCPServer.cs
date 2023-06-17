@@ -49,7 +49,7 @@ namespace csharp_Protoshift.MhyKCP
             _updatelock.Enter();
             while (!_Closed)
             {
-                var packet = udpSock.ReceiveFrom();
+                var packet = await udpSock.ReceiveFromAsync();
                 string remoteIpString = packet.RemoteEndPoint.ToString();
                 if (clients.ContainsKey(remoteIpString))
                 {
