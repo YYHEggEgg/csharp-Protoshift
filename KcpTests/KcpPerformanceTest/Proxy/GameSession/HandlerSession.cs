@@ -73,7 +73,7 @@ namespace csharp_Protoshift.GameSession
             XorDecrypt(ref rtn);
 
 #if PROXY_FIX_DISORDER_SPECIAL_TEST
-            int sleep_max = 2 * Constants.packet_interval_ms;
+            int sleep_max = (int)(0.8 * Constants.packet_interval_ms);
             lock (sleep_rnd) Thread.Sleep(sleep_rnd.Next(sleep_max));
 #endif
 

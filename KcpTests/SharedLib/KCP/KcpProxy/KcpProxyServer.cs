@@ -13,13 +13,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
         public IPEndPoint SendToEndpoint { get; }
         // The timeout of PacketHandler, move to delay-send list if exceeded
         // This timeout is used forcontrol packet order
-#if PROXY_FIX_DISORDER_SPECIAL_TEST
-        public const int handle_wait_time_ms = 200;
-#else
         public const int handle_wait_time_ms = 50;
-#endif
         // If PacketHandler is given more time than this, it will be dropped. 
-        public const int permanently_drop_time_ms = int.MaxValue;
+        public const int permanently_drop_time_ms = 5000;
         public const int high_frequent_monitor_packet_finished_duration_ms = 5;
 
         public readonly TimeSpan handle_wait_time = TimeSpan.FromMilliseconds(handle_wait_time_ms);
@@ -283,6 +279,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         {
                             tmp_pktqueue.Enqueue(pkt);
                         }
+                        else Log.Warn($"Permanent drop packet for timeout. ", $"{nameof(KcpProxyServer)}_{nameof(ClientTimeoutPacketSender)}");
                     }
                     while (tmp_pktqueue.TryDequeue(out ProxyPacket? in_pkt))
                     {
@@ -453,6 +450,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     {
                         tmp_pktqueue.Enqueue(pkt);
                     }
+                    else Log.Warn($"Permanent drop packet for timeout. ", $"{nameof(KcpProxyServer)}_{nameof(ClientTimeoutPacketSender)}");
                 }
                 while (tmp_pktqueue.TryDequeue(out ProxyPacket? in_pkt))
                 {
