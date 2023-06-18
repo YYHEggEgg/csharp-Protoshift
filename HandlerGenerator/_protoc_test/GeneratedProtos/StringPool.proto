@@ -1,9 +1,20 @@
 syntax = "proto3";
 enum StringPool {
+    option allow_alias = true;
     identifier = 0;
     client_config_encrypted = 1;
     server_secret_key = 2;
     client_secret_key = 3;
+    rEgion_info = 4;
     region_info = 4;
+    region_inFo = 4;
     Unk3300_HBFVIJDNJ = 5;
 }
+
+// message AAA {
+//     string rEgion_info = 1;
+// }
+
+// message BBB {
+//     string region_info = 2;
+// }
