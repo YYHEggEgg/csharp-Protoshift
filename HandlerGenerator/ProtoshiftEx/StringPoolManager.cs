@@ -10,6 +10,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         private StreamWriter[] files;
         public ProtocStringPoolManager()
         {
+            Directory.CreateDirectory($"{Environment.CurrentDirectory}/ProtoFieldNameAnalyze/GeneratedProtos");
+            Directory.CreateDirectory($"{Environment.CurrentDirectory}/ProtoFieldNameAnalyze/Compiled");
             files = new StreamWriter[3]
             {
                 new($"{Environment.CurrentDirectory}/ProtoFieldNameAnalyze/GeneratedProtos/StringPool1.proto"),
@@ -52,7 +54,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         private SortedSet<string> names = new();
         private ReadOnlyDictionary<string, string> originalToCompiledDict;
 
-        private const string Compiled_IdentifierLine = "[pbr::OriginalName(\"identifier\")] Identifier = 0,";
+        private const string Compiled_IdentifierLine = "[pbr::OriginalName(\"Identifier\")] Identifier = 0,";
         private const string Compiled_AttributePrefix = "[pbr::OriginalName(\"";
         private const string Compiled_AttributeSuffix = "\")] ";
         private const string Compiled_EnumValuePrefix = " = ";
@@ -125,12 +127,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     string? line = (await reader1.ReadLineAsync())?.Trim();
                     if (!reachedPoolDataRegion)
                     {
-                        if (line != Compiled_IdentifierLine) continue;
-                        else
+                        if (line == Compiled_IdentifierLine)
                         {
                             Log.Verb($"Reached identifier at line {currentLine}.", nameof(ProtocStringPoolManager));
                             reachedPoolDataRegion = true;
                         }
+                        continue;
                     }
                     if (line == null) continue;
                     if (!line.StartsWith(Compiled_AttributePrefix))
@@ -144,6 +146,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     _possibleCompiledNameDict.Add(res.originalName, null);
                 }
             }
+            Log.Info($"StringPool1.cs analyze finished.", nameof(ProtocStringPoolManager));
             using (StreamReader reader2 = new($"{Environment.CurrentDirectory}/ProtoFieldNameAnalyze/Compiled/StringPool2.cs"))
             {
                 bool reachedPoolDataRegion = false;
@@ -155,12 +158,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     string? line = (await reader2.ReadLineAsync())?.Trim();
                     if (!reachedPoolDataRegion)
                     {
-                        if (line != Compiled_IdentifierLine) continue;
-                        else
+                        if (line == Compiled_IdentifierLine)
                         {
                             Log.Verb($"Reached identifier at line {currentLine}.", nameof(ProtocStringPoolManager));
                             reachedPoolDataRegion = true;
                         }
+                        continue;
                     }
                     if (line == null) continue;
                     if (!line.StartsWith(Compiled_AttributePrefix))
@@ -186,6 +189,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     }
                 }
             }
+            Log.Info($"StringPool2.cs analyze finished.", nameof(ProtocStringPoolManager));
             using (StreamReader reader3 = new($"{Environment.CurrentDirectory}/ProtoFieldNameAnalyze/Compiled/StringPool3.cs"))
             {
                 bool reachedPoolDataRegion = false;
@@ -197,12 +201,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     string? line = (await reader3.ReadLineAsync())?.Trim();
                     if (!reachedPoolDataRegion)
                     {
-                        if (line != Compiled_IdentifierLine) continue;
-                        else
+                        if (line == Compiled_IdentifierLine)
                         {
                             Log.Verb($"Reached identifier at line {currentLine}.", nameof(ProtocStringPoolManager));
                             reachedPoolDataRegion = true;
                         }
+                        continue;
                     }
                     if (line == null) continue;
                     if (!line.StartsWith(Compiled_AttributePrefix))
@@ -230,6 +234,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     }
                 }
             }
+            Log.Info($"StringPool3.cs analyze finished.", nameof(ProtocStringPoolManager));
             #endregion
             #region Add forbidden names in protoc
             foreach (var pair in forbiddenNames)
@@ -280,8 +285,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #endregion
             #region Read value & verify
             int indexStartEnumValue = indexEndCompiledName + Compiled_EnumValuePrefix.Length;
-            int enumValue = int.Parse(line.Substring(indexStartCompiledName,
-                line.IndexOf(',', indexStartCompiledName) - indexStartCompiledName));
+            int enumValue = int.Parse(line.Substring(indexStartEnumValue,
+                line.IndexOf(',', indexStartCompiledName) - indexStartEnumValue));
             if (namelist[enumValue] != originalName)
             {
                 Log.Dbug($"Read enum value verify failed, " +

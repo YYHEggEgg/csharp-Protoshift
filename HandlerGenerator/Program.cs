@@ -25,7 +25,7 @@ Log.Warn("Build is currently only supported on Windows!", "HandlerGenerator");
 Log.Warn("PLEASE USE THIS PROGRAM ALONG WITH FULL SOURCE CODE!", "HandlerGenerator");
 string workingdir = Environment.CurrentDirectory;
 DirectoryInfo _workingdirinfo = new(workingdir);
-Log.Dbug($"Current directory is: {workingdir}.");
+Log.Dbug($"Startup Current directory is: {workingdir}.");
 bool passcheck = true;
 #region Find proto2json
 if (_workingdirinfo.Name == "csharp-Protoshift"
@@ -35,20 +35,26 @@ if (_workingdirinfo.Name == "csharp-Protoshift"
 }
 else if (_workingdirinfo.Name.StartsWith("net"))
 {
-    string? dbug = Directory.GetParent(workingdir)?.FullName;
-    if (dbug != null)
+    try
     {
-        workingdir = Directory.GetParent(dbug).FullName ?? "";
+        string? dbug = Directory.GetParent(workingdir)?.FullName;
+        if (dbug != null)
+        {
+            workingdir = Directory.GetParent(Directory.GetParent(dbug).FullName).FullName ?? "";
+        }
     }
+    catch { }
 }
 #region Change working directory
 if (!File.Exists($"{workingdir}\\HandlerGenerator.csproj"))
 {
     Log.Erro("Can't find source code path! Make sure you have cloned full code!", "ResourcesCheck");
     Log.Erro("Process terminated for false launch. Exit code is 4206.", "ResourcesCheck");
+    Console.ReadLine();
     Environment.Exit(4206);
 }
 Environment.CurrentDirectory = workingdir;
+Log.Dbug($"Changed Current directory to: {workingdir}.");
 #endregion
 string proto2jsondir = $"{workingdir}\\proto2json";
 if (!File.Exists($"{proto2jsondir}\\go-proto2json_win32.exe"))

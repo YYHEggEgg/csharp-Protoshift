@@ -34,3 +34,5 @@
 /csharp-Protoshift/skillissue_fix_config.json
 /KcpTestClient
 /KcpTestServer
+/HandlerGenerator/ProtoFieldNameAnalyze/Compiled
+/HandlerGenerator/ProtoFieldNameAnalyze/GeneratedProtos
