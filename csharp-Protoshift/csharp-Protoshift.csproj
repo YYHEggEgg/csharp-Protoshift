@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="GameSession\HandlerSession %28ProxyOnly%29.cs" />
     <Compile Remove="KCP\KCPHandle.cs" />
     <Compile Remove="KCP\KCPManager.cs" />
   </ItemGroup>

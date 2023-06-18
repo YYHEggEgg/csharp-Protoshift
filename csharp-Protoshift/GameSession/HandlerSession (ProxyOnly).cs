@@ -8,6 +8,7 @@ using OfficeOpenXml;
 using OfficeOpenXml.ExternalReferences;
 using Org.BouncyCastle.Crypto.Prng;
 using System.Collections.Concurrent;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Security.Cryptography;
 using YSFreedom.Common.Util;
@@ -150,7 +151,34 @@ namespace csharp_Protoshift.GameSession
             return rtn;
         }
 
-        public bool IsUrgentPacket(byte[] packet, bool isNewCmdid)
+        // use whitelist now
+        #region Ordered Packet List
+        // this is disabled now
+        ReadOnlyCollection<string> ordered_cmds = new(new List<string>
+        {
+            "WorldPlayerRTTNotify", "SceneTransToPointReq", "PlayerEnterSceneNotify",
+            "EnterSceneReadyReq", "SceneInitFinishReq", "EnterSceneDoneReq",
+            "EnterScenePeerNotify", "SceneEntityDisappearNotify", "SceneTransToPointRsp",
+            "EnterSceneReadyRsp", "SceneInitFinishRsp", "EnterSceneDoneRsp",
+            "GetPlayerTokenReq", "GetPlayerTokenRsp", "PlayerLoginReq", "PlayerLoginRsp",
+            "ScenePlayerLocationNotify"
+        });
+
+        // this is in use
+        ReadOnlyCollection<string> unordered_cmds = new(new List<string>
+        {
+            "GetPlayerTokenReq", "GetPlayerTokenRsp", "PlayerLoginRsp", "PingReq", "PingRsp", 
+            "UnionCmdNotify", "GetActivityInfoRsp", "AchievementUpdateNotify", 
+            "BattlePassMissionUpdateNotify", "CombatInvocationsNotify", "ActivityInfoNotify", 
+            "BattlePassMissionUpdateNotify", "PlayerStoreNotify", "AvatarDataNotify", 
+            "BattlePassAllDataNotify", "AvatarExpeditionDataNotify", "CombatInvocationsNotify", 
+            "AbilityInvocationFailNotify", "AbilityInvocationsNotify",
+            "ClientAbilityInitFinishCombineNotify", "ClientAbilityChangeNotify",
+            "ClientAbilityInitFinishNotify"
+        });
+        #endregion
+
+        public bool OrderedPacket(byte[] packet, bool isNewCmdid)
         {
             /* Due to current researches, after the urgent packet split was added, 
              * nothing about network but the Ping value shown in the game has improved, 
@@ -213,11 +241,8 @@ namespace csharp_Protoshift.GameSession
             }
             else
             {*/
-            if (cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp") ||
-                cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginRsp") ||
-                cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PingRsp"))
-                return true;
-            else return false;
+            var protoname = OldProtos.QueryCmdId.GetProtonameFromCmdId(cmdid);
+            return !unordered_cmds.Contains(protoname);
             //}
         }
 
@@ -232,14 +257,14 @@ namespace csharp_Protoshift.GameSession
         {
             Stopwatch ProtoshiftWatch = new();
             ProtoshiftWatch.Start();
-            var head_offset = sizeof(ushort) * 3 + sizeof(uint);
-            OldProtos.PacketHead packetHead = OldProtos.PacketHead.Parser.ParseFrom(packet, head_offset, packet.GetUInt16(sizeof(ushort) * 2));
-            if (Verbose)
-                Log.Dbug($"Received packet head from {(isNewCmdid ? "Client" : "Server")} ({packet.GetUInt16(sizeof(ushort) * 2)} bytes) --- {packetHead}");
-            
-            packetHead.SentMs = 0;
-            packetHead.ClientSequenceId = 0;
-            var newhead = packetHead.ToByteArray();
+            // var head_offset = sizeof(ushort) * 3 + sizeof(uint);
+            // OldProtos.PacketHead packetHead = OldProtos.PacketHead.Parser.ParseFrom(packet, head_offset, packet.GetUInt16(sizeof(ushort) * 2));
+            // if (Verbose)
+            //     Log.Dbug($"Received packet head from {(isNewCmdid ? "Client" : "Server")} ({packet.GetUInt16(sizeof(ushort) * 2)} bytes) --- {packetHead}");
+
+            // packetHead.SentMs = 0;
+            // packetHead.ClientSequenceId = 0;
+            // var newhead = packetHead.ToByteArray();
 
             #region Receive and read
             if (!OldProtos.QueryCmdId.TryGetSerializer(cmdid, out var oldserializer))
@@ -257,7 +282,7 @@ namespace csharp_Protoshift.GameSession
             }
             catch
             {
-                Log.Warn($"Invalid protocol packet: cmd={cmdid}, len={(int)body_length}, pkt={Convert.ToHexString(packet)}");
+                Log.Warn($"Invalid protocol packet: proto={protoname}, cmd={cmdid}, len={(int)body_length}, pkt={Convert.ToHexString(packet)}");
                 throw;
             }
             if (Verbose)
@@ -282,6 +307,7 @@ namespace csharp_Protoshift.GameSession
             #endregion
 
             #region Reconstruct packet
+            /*
             var new_packetLen = sizeof(ushort) * 3 + sizeof(uint) + newhead.Length + body_length + sizeof(ushort);
             int offset = 0;
             var rtn = new byte[new_packetLen];
@@ -298,11 +324,18 @@ namespace csharp_Protoshift.GameSession
             Buffer.BlockCopy(packet, body_offset, rtn, offset, (int)body_length);
             offset += (int)body_length;
             rtn.SetUInt16(offset, 0x89AB);
+            */
             #endregion
 
             ProtoshiftWatch.Stop();
             SubmitTimeRecord(protoname, false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
-            return rtn;
+#if DEBUG
+            if (ProtoshiftWatch.ElapsedMilliseconds > 15 && !unordered_cmds.Contains(protoname))
+            {
+                Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > 15ms)", $"PacketHandler({SessionId})");
+            }
+#endif
+            return packet;
         }
 
         protected byte[] client_seed;

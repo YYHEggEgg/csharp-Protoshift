@@ -34,10 +34,10 @@ namespace csharp_Protoshift.GameSession
                 return rtn;
             }
 #if DEBUG
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Log.Erro($"Exception when handling packets: {ex}; Inner: {ex.InnerException}", "GameSessionDispatch:Server");
-                return null; 
+                return null;
             }
 #else
             catch { return null; }
@@ -69,19 +69,19 @@ namespace csharp_Protoshift.GameSession
 #endif
         }
 
-        public static bool IsUrgentServerPacket(byte[] data, uint conv)
+        public static bool OrderedServerPacket(byte[] data, uint conv)
         {
             AssertSessionExists(conv);
-            return sessions[conv].IsUrgentPacket(data, true);
+            return sessions[conv].OrderedPacket(data, true);
         }
 
-        public static bool IsUrgentClientPacket(byte[] data, uint conv)
+        public static bool OrderedClientPacket(byte[] data, uint conv)
         {
             AssertSessionExists(conv);
-            return sessions[conv].IsUrgentPacket(data, false);
+            return sessions[conv].OrderedPacket(data, false);
         }
         #endregion
-    
+
         #region Packet Record Saver
         private static StreamWriter packet_logwriter;
         private static object packet_log_lock = "miHomo Save The World";
@@ -142,7 +142,7 @@ namespace csharp_Protoshift.GameSession
                     output.Append($"{packet.packetTime:yyyy-MM-dd HH:mm:ss} Packet {packet.Id}{(packet.dataLostSign ? "*" : "")}: " +
                         $"{packet.PacketName} from {(packet.sentByClient ? "Client" : "Server")} " +
                         $"with CmdId:{packet.CmdId}\n");
-                    if (packet.dataLostSign) 
+                    if (packet.dataLostSign)
                         output.Append("!Notice that this packet was marked as SKILL ISSUE DETECTED.");
                     output.Append($"Original body bin data: {Convert.ToHexString(packet.data)}\n");
                     output.Append($"Shifted body bin data: {Convert.ToHexString(packet.shiftedData)}\n");
@@ -196,7 +196,7 @@ namespace csharp_Protoshift.GameSession
                 }
             }
             #endregion
-        
+
             lock (packet_log_lock)
             {
                 packet_logwriter.Write(output.ToString());
@@ -218,7 +218,7 @@ namespace csharp_Protoshift.GameSession
             packet_logwriter.Dispose();
         }
         #endregion
-    
+
         private static void AssertSessionExists(uint conv)
         {
             if (Closed) throw new OperationCanceledException("The server is closing.");
