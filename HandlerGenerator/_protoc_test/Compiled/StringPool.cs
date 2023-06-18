@@ -22,10 +22,11 @@ public static partial class StringPoolReflection {
   static StringPoolReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChBTdHJpbmdQb29sLnByb3RvKngKClN0cmluZ1Bvb2wSDgoKaWRlbnRpZmll",
-          "chAAEhsKF2NsaWVudF9jb25maWdfZW5jcnlwdGVkEAESFQoRc2VydmVyX3Nl",
-          "Y3JldF9rZXkQAhIVChFjbGllbnRfc2VjcmV0X2tleRADEg8KC3JlZ2lvbl9p",
-          "bmZvEARiBnByb3RvMw=="));
+          "ChBTdHJpbmdQb29sLnByb3RvKrUBCgpTdHJpbmdQb29sEg4KCmlkZW50aWZp",
+          "ZXIQABIbChdjbGllbnRfY29uZmlnX2VuY3J5cHRlZBABEhUKEXNlcnZlcl9z",
+          "ZWNyZXRfa2V5EAISFQoRY2xpZW50X3NlY3JldF9rZXkQAxIPCgtyRWdpb25f",
+          "aW5mbxAEEg8KC3JlZ2lvbl9pbmZvEAQSDwoLcmVnaW9uX2luRm8QBBIVChFV",
+          "bmszMzAwX0hCRlZJSkROShAFGgIQAWIGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::StringPool), }, null, null));
@@ -39,7 +40,10 @@ public enum StringPool {
   [pbr::OriginalName("client_config_encrypted")] ClientConfigEncrypted = 1,
   [pbr::OriginalName("server_secret_key")] ServerSecretKey = 2,
   [pbr::OriginalName("client_secret_key")] ClientSecretKey = 3,
-  [pbr::OriginalName("region_info")] RegionInfo = 4,
+  [pbr::OriginalName("rEgion_info")] REgionInfo = 4,
+  [pbr::OriginalName("region_info", PreferredAlias = false)] RegionInfo = 4,
+  [pbr::OriginalName("region_inFo", PreferredAlias = false)] RegionInFo = 4,
+  [pbr::OriginalName("Unk3300_HBFVIJDNJ")] Unk3300Hbfvijdnj = 5,
 }
 
 #endregion
