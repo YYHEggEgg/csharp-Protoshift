@@ -87,16 +87,16 @@ namespace csharp_Protoshift.GameSession
 #endif
         }
 
-        public static bool IsUrgentServerPacket(byte[] data, uint conv)
+        public static bool ServerPacketOrdered(byte[] data, uint conv)
         {
             AssertSessionExists(conv);
-            return sessions[conv].IsUrgentPacket(data, true);
+            return sessions[conv].PacketOrdered(data, true);
         }
 
-        public static bool IsUrgentClientPacket(byte[] data, uint conv)
+        public static bool ClientPacketOrdered(byte[] data, uint conv)
         {
             AssertSessionExists(conv);
-            return sessions[conv].IsUrgentPacket(data, false);
+            return sessions[conv].PacketOrdered(data, false);
         }
         #endregion
     

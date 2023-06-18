@@ -68,7 +68,7 @@ namespace csharp_Protoshift.GameSession
             return rtn;
         }
 
-        public bool IsUrgentPacket(byte[] packet, bool isNewCmdid)
+        public bool PacketOrdered(byte[] packet, bool isNewCmdid)
         {
             /* Due to current researches, after the urgent packet split was added, 
              * nothing about network but the Ping value shown in the game has improved, 
@@ -126,9 +126,9 @@ namespace csharp_Protoshift.GameSession
             // if (cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp") ||
             //     cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PlayerLoginRsp") ||
             //     cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("PingRsp"))
-            //     return true;
+                return true;
             // else 
-                return false;
+            //     return false;
             //}
         }
 

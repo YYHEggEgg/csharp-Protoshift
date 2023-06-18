@@ -1,4 +1,4 @@
-﻿// #define KCP_PROXY_VERBOSE
+﻿// #define KCP_PROXY_VERBOSE // not avaliable currently
 
 using System.Collections.Concurrent;
 using System.Net;
@@ -104,6 +104,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             string remoteIpString = remotePoint.ToString();
             if (!clients.ContainsKey(remoteIpString)) return;
             var conn = (KcpProxyBase)clients[remoteIpString];
+            var IsOrderedPacket = handlers.ClientPacketOrdered;
             var PacketHandler = handlers.OnClientPacketArrival;
             while (conn.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
@@ -113,22 +114,19 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 #if KCP_PROXY_VERBOSE
                     Log.Dbug($"Server Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", $"{nameof(KcpProxyServer)}:ServerHandler");
 #endif
-                    _ = Task.Run(() =>
+                    if (beforepacket == null)
                     {
-                        try
-                        {
-                            var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                            conn.sendClient.Send(afterpacket);
-#if KCP_PROXY_VERBOSE
-                            Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", $"{nameof(KcpProxyServer)}:ServerSender");
-#endif
-                        }
-                        catch (Exception e)
-                        {
-                            Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ServerHandler");
-                            //conn.Close();
-                        }
-                    });
+                        Log.Dbug($"Skipped null? packet (session {conn.Conv})", $"{nameof(KcpProxyServer)}:ServerHandler");
+                        continue;
+                    }
+                    if (IsOrderedPacket(beforepacket, conn.Conv))
+                    {
+                        SendClientPacket(conn, beforepacket, PacketHandler);
+                    }
+                    else
+                    {
+                        _ = Task.Run(() => SendClientPacket(conn, beforepacket, PacketHandler));
+                    }
                 }
                 catch (Exception e)
                 {
@@ -136,6 +134,24 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     conn.Close();
                     break;
                 }
+            }
+        }
+
+        private void SendClientPacket(KcpProxyBase conn, byte[] beforepacket, 
+            Func<byte[], uint, byte[]?> PacketHandler)
+        {
+            try
+            {
+                var afterpacket = PacketHandler(beforepacket, conn.Conv);
+                conn.sendClient.Send(afterpacket);
+#if KCP_PROXY_VERBOSE
+                Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", $"{nameof(KcpProxyServer)}:ServerSender");
+#endif
+            }
+            catch (Exception e)
+            {
+                Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ServerHandler");
+                //conn.Close();
             }
         }
         #endregion
@@ -146,6 +162,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             string remoteIpString = remotePoint.ToString();
             if (!clients.ContainsKey(remoteIpString)) return;
             var conn = (KcpProxyBase)clients[remoteIpString];
+            var IsOrderedPacket = handlers.ServerPacketOrdered;
             var PacketHandler = handlers.OnServerPacketArrival;
             while (conn.sendClient?.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
@@ -160,19 +177,14 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 #if KCP_PROXY_VERBOSE
                     Log.Dbug($"Client Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", $"{nameof(KcpProxyServer)}:ClientHandler");
 #endif
-                    _ = Task.Run(() =>
+                    if (IsOrderedPacket(beforepacket, conn.Conv))
                     {
-                        try
-                        {
-                            var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                            conn.Send(afterpacket);
-                        }
-                        catch (Exception e)
-                        {
-                            Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ClientHandler");
-                            //conn.sendClient.Close();
-                        }
-                    });
+                        SendServerPacket(conn, beforepacket, PacketHandler);
+                    }
+                    else
+                    {
+                        _ = Task.Run(() => SendServerPacket(conn, beforepacket, PacketHandler));
+                    }
                 }
                 catch (Exception e)
                 {
@@ -180,6 +192,21 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     conn.sendClient.Close();
                     break;
                 }
+            }
+        }
+
+        private void SendServerPacket(KcpProxyBase conn, byte[] beforepacket,
+            Func<byte[], uint, byte[]?> PacketHandler)
+        {
+            try
+            {
+                var afterpacket = PacketHandler(beforepacket, conn.Conv);
+                conn.Send(afterpacket);
+            }
+            catch (Exception e)
+            {
+                Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ClientHandler");
+                //conn.sendClient.Close();
             }
         }
         #endregion
