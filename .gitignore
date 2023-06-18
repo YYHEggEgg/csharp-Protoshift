@@ -30,3 +30,7 @@
 /KCP
 /KcpCsharpTest
 /KcpTests
+/csharp-Protoshift/logs
+/csharp-Protoshift/skillissue_fix_config.json
+/KcpTestClient
+/KcpTestServer
