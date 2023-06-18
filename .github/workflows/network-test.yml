@@ -5,10 +5,12 @@ on:
   pull_request:
     branches:
       - network-performance-test
+      - packet-protocol-audit
       - network-pressure-test
   push:
     branches:
       - network-performance-test
+      - packet-protocol-audit
       - network-pressure-test
 
 jobs:
