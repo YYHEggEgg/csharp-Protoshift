@@ -3,7 +3,6 @@ using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
 using Funny.Crypto;
 using Google.Protobuf;
-using NewProtos;
 using Newtonsoft.Json;
 using OfficeOpenXml;
 using OfficeOpenXml.ExternalReferences;
@@ -87,15 +86,22 @@ namespace csharp_Protoshift.GameSession
             // Verbose = true;
             Verbose = false;
             #region Unordered cmds
-            List<ushort> _unordered_cmds_new = new();
-            List<ushort> _unordered_cmds_old = new();
-            foreach (var protoname in unordered_messages)
+            try
             {
-                _unordered_cmds_new.Add((ushort)NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
-                _unordered_cmds_old.Add((ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
+                List<ushort> _unordered_cmds_new = new();
+                List<ushort> _unordered_cmds_old = new();
+                foreach (var protoname in unordered_messages)
+                {
+                    _unordered_cmds_new.Add((ushort)NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
+                    _unordered_cmds_old.Add((ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
+                }
+                unordered_cmds_new = new(_unordered_cmds_new);
+                unordered_cmds_old = new(_unordered_cmds_old);
             }
-            unordered_cmds_new = new(_unordered_cmds_new);
-            unordered_cmds_old = new(_unordered_cmds_old);
+            catch (Exception ex)
+            {
+                Log.Erro($"HandlerSession({SessionId}) init failed: {ex}", nameof(HandlerSession));
+            }
             #endregion
         }
 
@@ -185,7 +191,7 @@ namespace csharp_Protoshift.GameSession
             "BattlePassMissionUpdateNotify", "PlayerStoreNotify", "AvatarDataNotify", 
             "BattlePassAllDataNotify", "AvatarExpeditionDataNotify", "CombatInvocationsNotify", 
             "AbilityInvocationFailNotify", "AbilityInvocationsNotify",
-            "ClientAbilityInitFinishCombineNotify", "ClientAbilityChangeNotify",
+            "ClientAbilitiesInitFinishCombineNotify", "ClientAbilityChangeNotify",
             "ClientAbilityInitFinishNotify"
         };
 
@@ -363,7 +369,7 @@ namespace csharp_Protoshift.GameSession
                 }
 
                 ProtoshiftWatch.Stop();
-                if (ProtoshiftWatch.ElapsedMilliseconds > 15 && unordered_cmds_new.Contains(cmdid))
+                if (ProtoshiftWatch.ElapsedMilliseconds > 15 && !unordered_cmds_new.Contains(cmdid))
                 {
                     Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > 15ms)", $"PacketHandler({SessionId})");
                 }
@@ -492,7 +498,7 @@ namespace csharp_Protoshift.GameSession
                 }
 
                 ProtoshiftWatch.Stop();
-                if (ProtoshiftWatch.ElapsedMilliseconds > 15 && unordered_cmds_old.Contains(cmdid))
+                if (ProtoshiftWatch.ElapsedMilliseconds > 15 && !unordered_cmds_old.Contains(cmdid))
                 {
                     Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > 15ms)", $"PacketHandler({SessionId})");
                 }
