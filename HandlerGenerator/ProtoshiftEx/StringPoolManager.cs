@@ -22,7 +22,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             files[0].WriteLine("enum StringPool1 { ");
             files[1].WriteLine("enum StringPool2 { ");
             files[2].WriteLine("enum StringPool3 { ");
+            WriteLine("    option allow_alias = true;");
             WriteLine("    Identifier = 0;");
+            WriteLine("    iDentifier = 0;");
         }
         private void WriteLine()
         {
@@ -54,16 +56,19 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         private SortedSet<string> names = new();
         private ReadOnlyDictionary<string, string> originalToCompiledDict;
 
-        private const string Compiled_IdentifierLine = "[pbr::OriginalName(\"Identifier\")] Identifier = 0,";
+        // private const string Compiled_IdentifierLine = "[pbr::OriginalName(\"Identifier\")] Identifier = 0,";
+        private const string Compiled_IdentifierLine = "[pbr::OriginalName(\"iDentifier\", PreferredAlias = false)] IDentifier = 0,";
         private const string Compiled_AttributePrefix = "[pbr::OriginalName(\"";
         private const string Compiled_AttributeSuffix = "\")] ";
+        private const string Compiled_AttributeSuffix_IsAlias = "\", PreferredAlias = false)] ";
         private const string Compiled_EnumValuePrefix = " = ";
 
         #region Forbidden names
         ReadOnlyDictionary<string, string> forbiddenNames = new(new Dictionary<string, string>
         {
             { "option", "Option" },
-            { "identifier", "Identifier" }
+            { "Identifier", "Identifier" },
+            { "iDentifier", "IDentifier" }
         });
         #endregion
 
@@ -74,11 +79,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         {
             if (compiled)
                 throw new InvalidOperationException("StringPool has compiled and don't accept any new field names.");
-            if (!forbiddenNames.ContainsKey(originalName.ToLower()))
+            if (!forbiddenNames.ContainsKey(originalName) || originalName == "iDentifier")
             {
                 lock (pushLock)
                 {
-                    names.Add(originalName.ToLower());
+                    names.Add(originalName);
                 }
             }
         }
@@ -277,7 +282,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 Compiled_AttributePrefix.Length, indexEndOriginalName - Compiled_AttributePrefix.Length);
             #endregion
             #region Read Compiled name
-            int indexStartCompiledName = indexEndOriginalName + Compiled_AttributeSuffix.Length;
+            #region Judge IsAlias
+            bool isAlias = line.IndexOf(Compiled_AttributeSuffix_IsAlias, indexEndOriginalName) != -1;
+            #endregion
+            int indexStartCompiledName = indexEndOriginalName + 
+                (isAlias ? Compiled_AttributeSuffix_IsAlias : Compiled_AttributeSuffix).Length;
             int indexEndCompiledName = line.IndexOf(
                 Compiled_EnumValuePrefix, indexStartCompiledName);
             string compiledName = line.Substring(
@@ -305,7 +314,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         {
             if (!compiled)
                 throw new InvalidOperationException("StringPool hasn't compiled and don't know the compiled name.");
-            if (originalToCompiledDict.TryGetValue(fieldName.ToLower(), out string? rtn))
+            if (originalToCompiledDict.TryGetValue(fieldName, out string? rtn))
                 return rtn;
             else return null;
         }
