@@ -199,17 +199,23 @@ foreach (var oldProtoMessage in oldmessages) oldProto_compiledStringPool.PushMes
 await oldProto_compiledStringPool.Compile();
 #endregion
 #region Debug Output (no prod!!!)
-var newProtosOutputNames = newProto_compiledStringPool.GetAllNames();
-Log.Verb($"NewProtos names(verb): {newProtosOutputNames.Count} records.");
-foreach (var record in newProtosOutputNames)
+// var newProtosOutputNames = newProto_compiledStringPool.GetAllNames();
+// Log.Verb($"NewProtos names(verb): {newProtosOutputNames.Count} records.");
+// foreach (var record in newProtosOutputNames)
+// {
+//     Log.Verb($"    [ {record.Key} -> {record.Value} ]; ");
+// }
+// var oldProtosOutputNames = oldProto_compiledStringPool.GetAllNames();
+// Log.Verb($"OldProtos names(verb): {oldProtosOutputNames.Count} records.");
+// foreach (var record in oldProtosOutputNames)
+// {
+//     Log.Verb($"    [ {record.Key} -> {record.Value} ]; ");
+// }
+#endregion
+#region Generate Message Handlers
+foreach (var shiftpair in messageResults.IntersectItems)
 {
-    Log.Verb($"    [ {record.Key} -> {record.Value} ]; ");
-}
-var oldProtosOutputNames = oldProto_compiledStringPool.GetAllNames();
-Log.Verb($"OldProtos names(verb): {oldProtosOutputNames.Count} records.");
-foreach (var record in oldProtosOutputNames)
-{
-    Log.Verb($"    [ {record.Key} -> {record.Value} ]; ");
+    
 }
 #endregion
 #endregion
