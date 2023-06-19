@@ -11,30 +11,29 @@ using Google.Protobuf;
 
 namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
 {
-    public class HandlerInMessage 
-        : HandlerBase<NewProtos.InMessage, OldProtos.InMessage>
+    public class HandlerExampleProto2 
+        : HandlerBase<NewProtos.ExampleProto2, OldProtos.ExampleProto2>
     {
         #region Base Type
-        MessageParser<NewProtos.InMessage> newproto_parser_base = NewProtos.InMessage.Parser;
-        MessageParser<OldProtos.InMessage> oldproto_parser_base = OldProtos.InMessage.Parser;
+        MessageParser<NewProtos.ExampleProto2> newproto_parser_base = NewProtos.ExampleProto2.Parser;
+        MessageParser<OldProtos.ExampleProto2> oldproto_parser_base = OldProtos.ExampleProto2.Parser;
         #endregion
         #region Import Types
+        HandlerExampleEnum handler_ExampleEnum = new();
+        HandlerExampleProto2 handler_ExampleProto2 = new();
+        HandlerInMessage handler_InMessage = new();
         #endregion
 
         #region Protocol shift
-        public override OldProtos.InMessage NewShiftToOld(NewProtos.InMessage newprotocol)
+        public override OldProtos.ExampleProto2 NewShiftToOld(NewProtos.ExampleProto2 newprotocol)
         {
-            OldProtos.InMessage oldprotocol = new();
-            oldprotocol.InStr = newprotocol.InStr;
-            oldprotocol.Code = newprotocol.Code;
+            OldProtos.ExampleProto2 oldprotocol = new();
             return oldprotocol;
         }
 
-        public override NewProtos.InMessage OldShiftToNew(OldProtos.InMessage oldprotocol)
+        public override NewProtos.ExampleProto2 OldShiftToNew(OldProtos.ExampleProto2 oldprotocol)
         {
-            NewProtos.InMessage newprotocol = new();
-            newprotocol.InStr = oldprotocol.InStr;
-            newprotocol.Code = oldprotocol.Code;
+            NewProtos.ExampleProto2 newprotocol = new();
             return newprotocol;
         }
         #endregion

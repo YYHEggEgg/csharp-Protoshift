@@ -15,12 +15,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         : HandlerBase<NewProtos.ExampleProto, OldProtos.ExampleProto>
     {
         #region Base Type
-        MessageParser 
-            newproto_parser_base = NewProtos.ExampleProto.Parser,
-            oleproto_parser_base = OldProtos.ExampleProto.Parser;
+        MessageParser<NewProtos.ExampleProto> newproto_parser_base = NewProtos.ExampleProto.Parser;
+        MessageParser<OldProtos.ExampleProto> oldproto_parser_base = OldProtos.ExampleProto.Parser;
         #endregion
         #region Import Types
         HandlerExampleEnum handler_ExampleEnum = new();
+        HandlerExampleProto2 handler_ExampleProto2 = new();
         HandlerInMessage handler_InMessage = new();
         #endregion
 
@@ -34,13 +34,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             {
                 oldprotocol.EgProto2.Add(eachmap_newprotocol_eg_proto2.Key, handler_ExampleProto2.NewShiftToOld(eachmap_newprotocol_eg_proto2.Value));
             }
-            oldprotocol.EgOneofFieldOneofCase = newprotocol.EgOneofFieldOneofCase;
-            switch (oldprotocol.EgOneofFieldCase)
+            switch (newprotocol.EgOnefieldCase)
             {
-                case OldProtos.EgOneofFieldOneofCase.AEnum:
+                case NewProtos.ExampleProto.EgOnefieldOneofCase.AEnum:
                     oldprotocol.AEnum = handler_ExampleEnum.NewShiftToOld(newprotocol.AEnum);
                     break;
-                case OldProtos.EgOneofFieldOneofCase.NotAEnum:
+                case NewProtos.ExampleProto.EgOnefieldOneofCase.NotAEnum:
                     oldprotocol.NotAEnum = newprotocol.NotAEnum;
                     break;
                 default:
@@ -54,19 +53,18 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         public override NewProtos.ExampleProto OldShiftToNew(OldProtos.ExampleProto oldprotocol)
         {
             NewProtos.ExampleProto newprotocol = new();
-            newprotocol.EgEnum = handler_ExampleEnum.NewShiftToOld(oldprotocol.EgEnum);
+            newprotocol.EgEnum = handler_ExampleEnum.OldShiftToNew(oldprotocol.EgEnum);
             newprotocol.EgStr = newprotocol.EgStr;
             foreach (KeyValuePair<string, OldProtos.ExampleProto2> eachmap_oldprotocol_eg_proto2 in oldprotocol.EgProto2)
             {
                 newprotocol.EgProto2.Add(eachmap_oldprotocol_eg_proto2.Key, handler_ExampleProto2.OldShiftToNew(eachmap_oldprotocol_eg_proto2.Value));
             }
-            newprotocol.EgOneofFieldOneofCase = oldprotocol.EgOneofFieldOneofCase;
-            switch (oldprotocol.EgOneofFieldCase)
+            switch (oldprotocol.EgOnefieldCase)
             {
-                case OldProtos.EgOneofFieldOneofCase.AEnum:
+                case OldProtos.ExampleProto.EgOnefieldOneofCase.AEnum:
                     newprotocol.AEnum = handler_ExampleEnum.OldShiftToNew(oldprotocol.AEnum);
                     break;
-                case OldProtos.EgOneofFieldOneofCase.NotAEnum:
+                case OldProtos.ExampleProto.EgOnefieldOneofCase.NotAEnum:
                     newprotocol.NotAEnum = oldprotocol.NotAEnum;
                     break;
                 default:
