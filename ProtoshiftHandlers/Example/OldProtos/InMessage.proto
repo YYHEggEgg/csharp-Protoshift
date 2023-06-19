@@ -1,0 +1,7 @@
+syntax "proto3";
+option csharp_namespace = "NewProtos";
+
+message InMessage {
+    string in_str = 67;
+    uint32 code = 8;
+}

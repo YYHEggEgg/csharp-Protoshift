@@ -1,0 +1,22 @@
+syntax "proto3";
+option csharp_namespace = "OldProtos";
+
+import "InMessage.proto";
+import "ExampleEnum.proto";
+
+message ExampleProto {
+    ExampleEnum eg_enum = 2;
+    string eg_str = 5;
+    map<string, ExampleProto2> eg_proto2 = 3;
+    oneof eg_onefield {
+        ExampleEnum a_enum = 7;
+        uint32 not_a_enum = 12;
+    }
+    uint32 retcode = 53;
+    repeated InMessage inner_messages = 18;
+}
+
+message ExampleProto2 {
+    bytes ex_bytes = 2;
+    repeated string list_str = 6;
+}
