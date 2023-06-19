@@ -14,37 +14,37 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
     public class HandlerExampleEnum 
         : HandlerEnumBase<NewProtos.ExampleEnum, OldProtos.ExampleEnum>
     {
-        public override OldProtos.InMessage NewShiftToOld(NewProtos.InMessage newprotocol)
+        public override OldProtos.ExampleEnum NewShiftToOld(NewProtos.ExampleEnum newprotocol)
         {
             switch (newprotocol)
             {
-                case NewProtos.InMessage.None:
-                    return OldProtos.InMessage.None;
-                case NewProtos.InMessage.ObjFirst:
-                    return OldProtos.InMessage.ObjFirst;
-                case NewProtos.InMessage.ObjSecond:
-                    return OldProtos.InMessage.ObjSecond;
-                case NewProtos.InMessage.ObjThird:
-                    return OldProtos.InMessage.ObjThird;
+                case NewProtos.ExampleEnum.None:
+                    return OldProtos.ExampleEnum.None;
+                case NewProtos.ExampleEnum.ObjFirst:
+                    return OldProtos.ExampleEnum.ObjFirst;
+                case NewProtos.ExampleEnum.ObjSecond:
+                    return OldProtos.ExampleEnum.ObjSecond;
+                case NewProtos.ExampleEnum.ObjThird:
+                    return OldProtos.ExampleEnum.ObjThird;
                 default: // fallback
-                    return OldProtos.InMessage.None;
+                    return OldProtos.ExampleEnum.None;
             }
         }
 
-        public override NewProtos.InMessage OldShiftToNew(OldProtos.InMessage oldprotocol)
+        public override NewProtos.ExampleEnum OldShiftToNew(OldProtos.ExampleEnum oldprotocol)
         {
             switch (oldprotocol)
             {
-                case OldProtos.InMessage.None:
-                    return NewProtos.InMessage.None;
-                case OldProtos.InMessage.ObjFirst:
-                    return NewProtos.InMessage.ObjFirst;
-                case OldProtos.InMessage.ObjSecond:
-                    return NewProtos.InMessage.ObjSecond;
-                case OldProtos.InMessage.ObjThird:
-                    return NewProtos.InMessage.ObjThird;
+                case OldProtos.ExampleEnum.None:
+                    return NewProtos.ExampleEnum.None;
+                case OldProtos.ExampleEnum.ObjFirst:
+                    return NewProtos.ExampleEnum.ObjFirst;
+                case OldProtos.ExampleEnum.ObjSecond:
+                    return NewProtos.ExampleEnum.ObjSecond;
+                case OldProtos.ExampleEnum.ObjThird:
+                    return NewProtos.ExampleEnum.ObjThird;
                 default: // fallback
-                    return NewProtos.InMessage.None;
+                    return NewProtos.ExampleEnum.None;
             }
         }
     }
