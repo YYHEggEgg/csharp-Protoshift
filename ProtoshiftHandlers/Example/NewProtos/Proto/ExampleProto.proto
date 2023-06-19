@@ -20,8 +20,15 @@ message ExampleProto2 {
     bytes ex_bytes = 8;
     repeated string list_str = 3;
     ExampleInnerProto inner_msg = 6;
+    ExampleInnerEnum inner_enum = 7;
 
     message ExampleInnerProto {
         uint32 inner_code = 2;
+    }
+
+    enum ExampleInnerEnum {
+        EXAMPLE_INNER_ENUM_NONE = 0;
+        EXAMPLE_INNER_ENUM_SOMEOBJ = 1;
+        EXAMPLE_INNER_ENUM_OTHEROBJ = 2;
     }
 }
