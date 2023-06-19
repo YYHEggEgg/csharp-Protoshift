@@ -1,5 +1,5 @@
-syntax "proto3";
-option csharp_namespace = "NewProtos";
+syntax = "proto3";
+option csharp_namespace = "OldProtos";
 
 message InMessage {
     string in_str = 67;
