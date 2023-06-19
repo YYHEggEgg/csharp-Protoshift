@@ -31,15 +31,20 @@ namespace OldProtos {
             "IAEoDjIMLkV4YW1wbGVFbnVtSAASFAoKbm90X2FfZW51bRgMIAEoDUgAEg8K",
             "B3JldGNvZGUYNSABKA0SIgoOaW5uZXJfbWVzc2FnZXMYEiADKAsyCi5Jbk1l",
             "c3NhZ2UaPwoNRWdQcm90bzJFbnRyeRILCgNrZXkYASABKAkSHQoFdmFsdWUY",
-            "AiABKAsyDi5FeGFtcGxlUHJvdG8yOgI4AUINCgtlZ19vbmVmaWVsZCJcCg1F",
-            "eGFtcGxlUHJvdG8yEhAKCGV4X2J5dGVzGAIgASgMEhAKCGxpc3Rfc3RyGAYg",
-            "AygJGicKEUV4YW1wbGVJbm5lclByb3RvEhIKCmlubmVyX2NvZGUYAiABKA1C",
-            "DKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+            "AiABKAsyDi5FeGFtcGxlUHJvdG8yOgI4AUINCgtlZ19vbmVmaWVsZCK4AgoN",
+            "RXhhbXBsZVByb3RvMhIQCghleF9ieXRlcxgIIAEoDBIQCghsaXN0X3N0chgD",
+            "IAMoCRIzCglpbm5lcl9tc2cYBiABKAsyIC5FeGFtcGxlUHJvdG8yLkV4YW1w",
+            "bGVJbm5lclByb3RvEjMKCmlubmVyX2VudW0YByABKA4yHy5FeGFtcGxlUHJv",
+            "dG8yLkV4YW1wbGVJbm5lckVudW0aJwoRRXhhbXBsZUlubmVyUHJvdG8SEgoK",
+            "aW5uZXJfY29kZRgCIAEoDSJwChBFeGFtcGxlSW5uZXJFbnVtEhsKF0VYQU1Q",
+            "TEVfSU5ORVJfRU5VTV9OT05FEAASHgoaRVhBTVBMRV9JTk5FUl9FTlVNX1NP",
+            "TUVPQkoQARIfChtFWEFNUExFX0lOTkVSX0VOVU1fT1RIRVJPQkoQAkIMqgIJ",
+            "T2xkUHJvdG9zYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::OldProtos.InMessageReflection.Descriptor, global::OldProtos.ExampleEnumReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ExampleProto), global::OldProtos.ExampleProto.Parser, new[]{ "EgEnum", "EgStr", "EgProto2", "AEnum", "NotAEnum", "Retcode", "InnerMessages" }, new[]{ "EgOnefield" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ExampleProto2), global::OldProtos.ExampleProto2.Parser, new[]{ "ExBytes", "ListStr" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ExampleProto2.Types.ExampleInnerProto), global::OldProtos.ExampleProto2.Types.ExampleInnerProto.Parser, new[]{ "InnerCode" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ExampleProto2), global::OldProtos.ExampleProto2.Parser, new[]{ "ExBytes", "ListStr", "InnerMsg", "InnerEnum" }, null, new[]{ typeof(global::OldProtos.ExampleProto2.Types.ExampleInnerEnum) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::OldProtos.ExampleProto2.Types.ExampleInnerProto), global::OldProtos.ExampleProto2.Types.ExampleInnerProto.Parser, new[]{ "InnerCode" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -534,6 +539,8 @@ namespace OldProtos {
     public ExampleProto2(ExampleProto2 other) : this() {
       exBytes_ = other.exBytes_;
       listStr_ = other.listStr_.Clone();
+      innerMsg_ = other.innerMsg_ != null ? other.innerMsg_.Clone() : null;
+      innerEnum_ = other.innerEnum_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -544,7 +551,7 @@ namespace OldProtos {
     }
 
     /// <summary>Field number for the "ex_bytes" field.</summary>
-    public const int ExBytesFieldNumber = 2;
+    public const int ExBytesFieldNumber = 8;
     private pb::ByteString exBytes_ = pb::ByteString.Empty;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -556,14 +563,38 @@ namespace OldProtos {
     }
 
     /// <summary>Field number for the "list_str" field.</summary>
-    public const int ListStrFieldNumber = 6;
+    public const int ListStrFieldNumber = 3;
     private static readonly pb::FieldCodec<string> _repeated_listStr_codec
-        = pb::FieldCodec.ForString(50);
+        = pb::FieldCodec.ForString(26);
     private readonly pbc::RepeatedField<string> listStr_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<string> ListStr {
       get { return listStr_; }
+    }
+
+    /// <summary>Field number for the "inner_msg" field.</summary>
+    public const int InnerMsgFieldNumber = 6;
+    private global::OldProtos.ExampleProto2.Types.ExampleInnerProto innerMsg_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ExampleProto2.Types.ExampleInnerProto InnerMsg {
+      get { return innerMsg_; }
+      set {
+        innerMsg_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "inner_enum" field.</summary>
+    public const int InnerEnumFieldNumber = 7;
+    private global::OldProtos.ExampleProto2.Types.ExampleInnerEnum innerEnum_ = global::OldProtos.ExampleProto2.Types.ExampleInnerEnum.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::OldProtos.ExampleProto2.Types.ExampleInnerEnum InnerEnum {
+      get { return innerEnum_; }
+      set {
+        innerEnum_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -583,6 +614,8 @@ namespace OldProtos {
       }
       if (ExBytes != other.ExBytes) return false;
       if(!listStr_.Equals(other.listStr_)) return false;
+      if (!object.Equals(InnerMsg, other.InnerMsg)) return false;
+      if (InnerEnum != other.InnerEnum) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -592,6 +625,8 @@ namespace OldProtos {
       int hash = 1;
       if (ExBytes.Length != 0) hash ^= ExBytes.GetHashCode();
       hash ^= listStr_.GetHashCode();
+      if (innerMsg_ != null) hash ^= InnerMsg.GetHashCode();
+      if (InnerEnum != global::OldProtos.ExampleProto2.Types.ExampleInnerEnum.None) hash ^= InnerEnum.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -610,11 +645,19 @@ namespace OldProtos {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      listStr_.WriteTo(output, _repeated_listStr_codec);
+      if (innerMsg_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(InnerMsg);
+      }
+      if (InnerEnum != global::OldProtos.ExampleProto2.Types.ExampleInnerEnum.None) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) InnerEnum);
+      }
       if (ExBytes.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(66);
         output.WriteBytes(ExBytes);
       }
-      listStr_.WriteTo(output, _repeated_listStr_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -625,11 +668,19 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      listStr_.WriteTo(ref output, _repeated_listStr_codec);
+      if (innerMsg_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(InnerMsg);
+      }
+      if (InnerEnum != global::OldProtos.ExampleProto2.Types.ExampleInnerEnum.None) {
+        output.WriteRawTag(56);
+        output.WriteEnum((int) InnerEnum);
+      }
       if (ExBytes.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(66);
         output.WriteBytes(ExBytes);
       }
-      listStr_.WriteTo(ref output, _repeated_listStr_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -644,6 +695,12 @@ namespace OldProtos {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(ExBytes);
       }
       size += listStr_.CalculateSize(_repeated_listStr_codec);
+      if (innerMsg_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InnerMsg);
+      }
+      if (InnerEnum != global::OldProtos.ExampleProto2.Types.ExampleInnerEnum.None) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) InnerEnum);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -660,6 +717,15 @@ namespace OldProtos {
         ExBytes = other.ExBytes;
       }
       listStr_.Add(other.listStr_);
+      if (other.innerMsg_ != null) {
+        if (innerMsg_ == null) {
+          InnerMsg = new global::OldProtos.ExampleProto2.Types.ExampleInnerProto();
+        }
+        InnerMsg.MergeFrom(other.InnerMsg);
+      }
+      if (other.InnerEnum != global::OldProtos.ExampleProto2.Types.ExampleInnerEnum.None) {
+        InnerEnum = other.InnerEnum;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -675,12 +741,23 @@ namespace OldProtos {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
-            ExBytes = input.ReadBytes();
+          case 26: {
+            listStr_.AddEntriesFrom(input, _repeated_listStr_codec);
             break;
           }
           case 50: {
-            listStr_.AddEntriesFrom(input, _repeated_listStr_codec);
+            if (innerMsg_ == null) {
+              InnerMsg = new global::OldProtos.ExampleProto2.Types.ExampleInnerProto();
+            }
+            input.ReadMessage(InnerMsg);
+            break;
+          }
+          case 56: {
+            InnerEnum = (global::OldProtos.ExampleProto2.Types.ExampleInnerEnum) input.ReadEnum();
+            break;
+          }
+          case 66: {
+            ExBytes = input.ReadBytes();
             break;
           }
         }
@@ -698,12 +775,23 @@ namespace OldProtos {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 18: {
-            ExBytes = input.ReadBytes();
+          case 26: {
+            listStr_.AddEntriesFrom(ref input, _repeated_listStr_codec);
             break;
           }
           case 50: {
-            listStr_.AddEntriesFrom(ref input, _repeated_listStr_codec);
+            if (innerMsg_ == null) {
+              InnerMsg = new global::OldProtos.ExampleProto2.Types.ExampleInnerProto();
+            }
+            input.ReadMessage(InnerMsg);
+            break;
+          }
+          case 56: {
+            InnerEnum = (global::OldProtos.ExampleProto2.Types.ExampleInnerEnum) input.ReadEnum();
+            break;
+          }
+          case 66: {
+            ExBytes = input.ReadBytes();
             break;
           }
         }
@@ -716,6 +804,12 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
+      public enum ExampleInnerEnum {
+        [pbr::OriginalName("EXAMPLE_INNER_ENUM_NONE")] None = 0,
+        [pbr::OriginalName("EXAMPLE_INNER_ENUM_SOMEOBJ")] Someobj = 1,
+        [pbr::OriginalName("EXAMPLE_INNER_ENUM_OTHEROBJ")] Otherobj = 2,
+      }
+
       public sealed partial class ExampleInnerProto : pb::IMessage<ExampleInnerProto>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
