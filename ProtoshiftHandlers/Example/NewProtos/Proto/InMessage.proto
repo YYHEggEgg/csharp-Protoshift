@@ -1,4 +1,4 @@
-syntax "proto3";
+syntax = "proto3";
 option csharp_namespace = "NewProtos";
 
 message InMessage {

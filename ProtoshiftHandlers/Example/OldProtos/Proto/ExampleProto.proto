@@ -1,4 +1,4 @@
-syntax "proto3";
+syntax = "proto3";
 option csharp_namespace = "OldProtos";
 
 import "InMessage.proto";
@@ -19,4 +19,8 @@ message ExampleProto {
 message ExampleProto2 {
     bytes ex_bytes = 2;
     repeated string list_str = 6;
+
+    message ExampleInnerProto {
+        uint32 inner_code = 2;
+    }
 }
