@@ -1,0 +1,9 @@
+syntax "proto3";
+option csharp_namespace = "NewProtos";
+
+enum ExampleEnum {
+    EXAMPLE_ENUM_NONE = 0,
+    EXAMPLE_ENUM_OBJ_FIRST = 1,
+    EXAMPLE_ENUM_OBJ_SECOND = 2,
+    EXAMPLE_ENUM_OBJ_THIRD = 3
+}
