@@ -40,6 +40,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.EnterCodeRegion();
             fi.WriteLine($"OldProtos.{messageName} oldprotocol = new();");
             GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, true, ref bothimports, ref stringPool);
+            GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, true, ref bothimports, ref stringPool);
             fi.ExitCodeRegion();
             #endregion
             fi.WriteLine("#endregion");
