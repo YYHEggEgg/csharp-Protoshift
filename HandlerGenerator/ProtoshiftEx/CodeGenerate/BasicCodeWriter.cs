@@ -1,8 +1,8 @@
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
-    public class CodeWriter
+    public class BasicCodeWriter
     {
-        public CodeWriter(string filePath, string codeIndent = "    ")
+        public BasicCodeWriter(string filePath, string codeIndent = "    ")
         {
             codefile_writer = new(filePath);
             codefile_writer.AutoFlush = true;
