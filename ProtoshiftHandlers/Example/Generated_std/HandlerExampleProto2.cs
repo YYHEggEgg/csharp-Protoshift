@@ -19,21 +19,32 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         MessageParser<OldProtos.ExampleProto2> oldproto_parser_base = OldProtos.ExampleProto2.Parser;
         #endregion
         #region Import Types
-        HandlerExampleEnum handler_ExampleEnum = new();
-        HandlerExampleProto2 handler_ExampleProto2 = new();
-        HandlerInMessage handler_InMessage = new();
+        HandlerExampleInnerEnum handler_ExampleInnerEnum = new();
+        HandlerExampleInnerProto handler_ExampleInnerProto = new();
         #endregion
 
         #region Protocol shift
         public override OldProtos.ExampleProto2 NewShiftToOld(NewProtos.ExampleProto2 newprotocol)
         {
             OldProtos.ExampleProto2 oldprotocol = new();
+            oldprotocol.ExBytes = newprotocol.ExBytes;
+            // foreach (var element_list_str in newprotocol.ListStr)
+            // {
+            //     oldprotocol.ListStr.Add(element_list_str);
+            // }
+            oldprotocol.ListStr.AddRange(newprotocol.ListStr);
             return oldprotocol;
         }
 
         public override NewProtos.ExampleProto2 OldShiftToNew(OldProtos.ExampleProto2 oldprotocol)
         {
             NewProtos.ExampleProto2 newprotocol = new();
+            newprotocol.ExBytes = oldprotocol.ExBytes;
+            // foreach (var element_list_str in oldprotocol.ListStr)
+            // {
+            //     newprotocol.ListStr.Add(element_list_str);
+            // }
+            newprotocol.ListStr.AddRange(oldprotocol.ListStr);
             return newprotocol;
         }
         #endregion

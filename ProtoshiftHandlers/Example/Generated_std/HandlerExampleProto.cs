@@ -30,7 +30,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             OldProtos.ExampleProto oldprotocol = new();
             oldprotocol.EgEnum = handler_ExampleEnum.NewShiftToOld(newprotocol.EgEnum);
             oldprotocol.EgStr = newprotocol.EgStr;
-            foreach (KeyValuePair<string, NewProtos.ExampleProto2> eachmap_newprotocol_eg_proto2 in newprotocol.EgProto2)
+            foreach (var eachmap_newprotocol_eg_proto2 in newprotocol.EgProto2)
             {
                 oldprotocol.EgProto2.Add(eachmap_newprotocol_eg_proto2.Key, handler_ExampleProto2.NewShiftToOld(eachmap_newprotocol_eg_proto2.Value));
             }
@@ -46,7 +46,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                     break;
             }
             // Not found match CommonResult in old: [ Field Type: uint32, Field Name: UnkExample_FNSDOAGFD, Is Repeated: false, Is Import Type: false ]
-            // Not found match CommonResult in old: [ Field Type: ExampleEnum, Field Name: UnkExample_NSKLDVKVC, Is Repeated: true, Is Import Type: false ]
+            // Not found match CommonResult in old: [ Field Type: InMessage, Field Name: UnkExample_NSKLDVKVC, Is Repeated: true, Is Import Type: false ]
             return oldprotocol;
         }
 
@@ -55,7 +55,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             NewProtos.ExampleProto newprotocol = new();
             newprotocol.EgEnum = handler_ExampleEnum.OldShiftToNew(oldprotocol.EgEnum);
             newprotocol.EgStr = newprotocol.EgStr;
-            foreach (KeyValuePair<string, OldProtos.ExampleProto2> eachmap_oldprotocol_eg_proto2 in oldprotocol.EgProto2)
+            foreach (var eachmap_oldprotocol_eg_proto2 in oldprotocol.EgProto2)
             {
                 newprotocol.EgProto2.Add(eachmap_oldprotocol_eg_proto2.Key, handler_ExampleProto2.OldShiftToNew(eachmap_oldprotocol_eg_proto2.Value));
             }
@@ -71,7 +71,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                     break;
             }
             // Not found match CommonResult in new: [ Field Type: uint32, Field Name: retcode, Is Repeated: false, Is Import Type: false ]
-            // Not found match CommonResult in new: [ Field Type: ExampleEnum, Field Name: inner_messages, Is Repeated: true, Is Import Type: false ]
+            // Not found match CommonResult in new: [ Field Type: InMessage, Field Name: inner_messages, Is Repeated: true, Is Import Type: false ]
             return newprotocol;
         }
         #endregion
