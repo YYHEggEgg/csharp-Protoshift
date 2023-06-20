@@ -1,6 +1,6 @@
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
-    public class BasicCodeWriter
+    public class BasicCodeWriter : IDisposable
     {
         public BasicCodeWriter(string filePath, string codeIndent = "    ")
         {
@@ -12,6 +12,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         StreamWriter codefile_writer;
         int indent_cnt = 0;
         string cur_prefix = string.Empty;
+        private bool disposedValue;
         public readonly string CodeIndent;
 
         /// <summary>
@@ -169,6 +170,36 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 throw new InvalidOperationException("The instance currently don't have any indent when writing code.");
             indent_cnt--;
             cur_prefix = cur_prefix.Substring(0, cur_prefix.Length - CodeIndent.Length);
+        }
+        #endregion
+
+        #region IDisposable support
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    // TODO: dispose managed state (managed objects)
+                }
+
+                codefile_writer.Dispose();
+                disposedValue = true;
+            }
+        }
+
+        // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
+        // ~BasicCodeWriter()
+        // {
+        //     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+        //     Dispose(disposing: false);
+        // }
+
+        public void Dispose()
+        {
+            // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
         #endregion
     }
