@@ -12,9 +12,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="oldcommonField">The analyzed old commonField.</param>
         /// <param name="newcommonField">The analyzed new commonField.</param>
         /// <param name="generateForNewShiftToOld">Whether generate code for NewShiftToOld or OldShiftToNew.</param>
-        private static void GenerateCommonFieldHandler(BasicCodeWriter fi, string commonFieldName, 
+        private static void GenerateCommonFieldHandler(ref BasicCodeWriter fi, string commonFieldName, 
             CommonResult oldcommonField, CommonResult newcommonField, bool generateForNewShiftToOld, 
-            ImportTypesCollection importInfo, ProtocStringPoolManager stringPool)
+            ref ImportTypesCollection importInfo, ref ProtocStringPoolManager stringPool)
         {
             if (oldcommonField.fieldType != newcommonField.fieldType
                 || oldcommonField.IsRepeatedField != newcommonField.IsRepeatedField)
@@ -24,7 +24,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (oldcommonField.IsRepeatedField)
             {
-                GenerateRepeatedCommonFieldHandler(fi, commonFieldName, oldcommonField, newcommonField, generateForNewShiftToOld, importInfo, stringPool);
+                GenerateRepeatedCommonFieldHandler(ref fi, commonFieldName, oldcommonField, newcommonField, generateForNewShiftToOld, ref importInfo, ref stringPool);
                 return;
             }
             string oldcaller = $"oldprotocol.{stringPool.GetCompiledName(commonFieldName)}";
@@ -40,9 +40,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
         }
 
-        private static void GenerateRepeatedCommonFieldHandler(BasicCodeWriter fi, string commonFieldName, 
+        private static void GenerateRepeatedCommonFieldHandler(ref BasicCodeWriter fi, string commonFieldName, 
             CommonResult oldcommonField, CommonResult newcommonField, bool generateForNewShiftToOld, 
-            ImportTypesCollection importInfo, ProtocStringPoolManager stringPool)
+            ref ImportTypesCollection importInfo, ref ProtocStringPoolManager stringPool)
         {
             Debug.Assert(oldcommonField.IsRepeatedField);
             Debug.Assert(newcommonField.IsRepeatedField);
