@@ -137,8 +137,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         public void EnterCodeRegion()
         {
             WriteLine("{");
-            indent_cnt++;
-            cur_prefix += CodeIndent;
+            AddIndent();
         }
         
         /// <summary>
@@ -147,11 +146,29 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <exception cref="InvalidOperationException">The instance currently don't have any indent when writing code.</exception>
         public void ExitCodeRegion()
         {
+            RemoveIndent();
+            WriteLine("}");
+        }
+        
+        /// <summary>
+        /// Only increase the indent of the following codes by 1.
+        /// </summary>
+        public void AddIndent()
+        {
+            indent_cnt++;
+            cur_prefix += CodeIndent;
+        }
+
+        /// <summary>
+        /// Only decrease the indent of the following codes by 1.
+        /// </summary>
+        /// <exception cref="InvalidOperationException">The instance currently don't have any indent when writing code.</exception>
+        public void RemoveIndent()
+        {
             if (indent_cnt <= 0)
                 throw new InvalidOperationException("The instance currently don't have any indent when writing code.");
             indent_cnt--;
             cur_prefix = cur_prefix.Substring(0, cur_prefix.Length - CodeIndent.Length);
-            WriteLine("}");
         }
         #endregion
     }
