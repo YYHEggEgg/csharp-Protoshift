@@ -16,6 +16,32 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 $": HandlerBase<NewProtos.{messageName}, OldProtos.{messageName}>");
             fi.EnterCodeRegion();
 
+            #region Base Type
+            fi.WriteLine("#region Base Type");
+            fi.WriteLine($"MessageParser<NewProtos.{messageName}> newproto_parser_base = NewProtos.{messageName}.Parser;");
+            fi.WriteLine($"MessageParser<OldProtos.{messageName}> oldproto_parser_base = OldProtos.{messageName}.Parser;");
+            fi.WriteLine("#endregion");
+            #endregion
+            #region Import Types
+            var bothimports = new ImportTypesCollection(oldmessage, newmessage);
+            fi.WriteLine("#region Import Types");
+            foreach (var importLine in bothimports.searchByFriendlyName.Keys)
+            {
+                fi.WriteLine($"Handler{importLine} handler_{importLine} = new();");
+            }
+            fi.WriteLine("#endregion");
+            #endregion
+            fi.WriteLine();
+            #region Protocol Shift
+            fi.WriteLine("#region Protocol Shift");
+            #region NewShiftToOld
+            fi.WriteLine($"public override OldProtos.{messageName} NewShiftToOld(NewProtos.{messageName} newprotocol)");
+            fi.EnterCodeRegion();
+            fi.WriteLine($"OldProtos.{messageName} oldprotocol = new();");
+            fi.ExitCodeRegion();
+            #endregion
+            fi.WriteLine("#endregion");
+            #endregion
             fi.ExitCodeRegion();
         }
     }
