@@ -151,6 +151,18 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             result += "End Oneof FIelds-------------------";
             return result;
         }
+
+        public string ToString(bool single_line_output)
+        {
+            if (!single_line_output) return ToString();
+            string result = "";
+            result += $"Oneof Field Name: {oneofEntryName}; Oneof Fields: ";
+            foreach (CommonResult common in oneofInnerFields)
+            {
+                result += $"[ {common}]; ";
+            }
+            return result;
+        }
     
         // override object.Equals
         /// <summary>
@@ -218,6 +230,18 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             return result;
         }
+
+        public string ToString(bool single_line_output)
+        {
+            if (!single_line_output) return ToString();
+            string result = "";
+            result += $"Enum: {enumName}; Field Names: ";
+            foreach (string node in enumNodes)
+            {
+                result += $"{node}; ";
+            }
+            return result;
+        }
     
         // override object.Equals
         /// <summary>
@@ -279,6 +303,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         public List<EnumResult> enumFields { get; set; } = new();
         public List<MessageResult> messageFields { get; set; } = new();
 
+        /// <summary>
+        /// Convert the instance into a readable string. Don't support single line output.
+        /// </summary>
         public override string ToString()
         {
             string result = "";
