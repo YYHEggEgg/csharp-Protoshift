@@ -44,6 +44,16 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, true, ref bothimports, ref stringPool);
             fi.ExitCodeRegion();
             #endregion
+            fi.WriteLine();
+            #region OldShiftToNew
+            fi.WriteLine($"public override NewProtos.{messageName} OldShiftToNew(OldProtos.{messageName} oldprotocol)");
+            fi.EnterCodeRegion();
+            fi.WriteLine($"NewProtos.{messageName} newprotocol = new();");
+            GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, false, ref bothimports, ref stringPool);
+            GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, false, ref bothimports, ref stringPool);
+            GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, false, ref bothimports, ref stringPool);
+            fi.ExitCodeRegion();
+            #endregion
             fi.WriteLine("#endregion");
             #endregion
             fi.ExitCodeRegion();
