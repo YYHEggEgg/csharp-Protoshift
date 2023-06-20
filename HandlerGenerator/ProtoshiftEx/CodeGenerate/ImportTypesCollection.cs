@@ -67,7 +67,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                         compileMessageName.Substring(compileMessageName.LastIndexOf('.'))))
                     {
                         Log.Erro($"Protocol invalid: {oldmessage.messageName}'s sub protos have the same name with the other.", nameof(ImportTypesCollection));
-                        Debug.Assert(false);
+                        Debug.Assert(false, $"Protocol invalid: {oldmessage.messageName}'s sub protos have the same name with the other.");
                     }
                     friendlyToCompileNameList.Add(compileMessageName.Substring(compileMessageName.LastIndexOf('.')), (compileMessageName, true));
                 }
