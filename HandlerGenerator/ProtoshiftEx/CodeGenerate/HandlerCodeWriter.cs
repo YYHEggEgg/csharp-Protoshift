@@ -9,7 +9,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="messageName">The message name, can be identified by the c# compiler but without NewProtos/OldProtos prefix.</param>
         /// <param name="oldmessage">The analyzed old message.</param>
         /// <param name="newmessage">The analyzed new message.</param>
-        public static void GenerateMessageHandler(BasicCodeWriter fi, string messageName,
+        public static void GenerateMessageHandler(ref BasicCodeWriter fi, string messageName,
             MessageResult oldmessage, MessageResult newmessage)
         {
             fi.WriteLine($"public class Handler{messageName} ",
