@@ -10,7 +10,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="oldmessage">The analyzed old message.</param>
         /// <param name="newmessage">The analyzed new message.</param>
         public static void GenerateMessageHandler(ref BasicCodeWriter fi, string messageName,
-            MessageResult oldmessage, MessageResult newmessage)
+            MessageResult oldmessage, MessageResult newmessage,
+            ref ProtocStringPoolManager stringPool)
         {
             fi.WriteLine($"public class Handler{messageName} ",
                 $": HandlerBase<NewProtos.{messageName}, OldProtos.{messageName}>");
@@ -38,6 +39,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine($"public override OldProtos.{messageName} NewShiftToOld(NewProtos.{messageName} newprotocol)");
             fi.EnterCodeRegion();
             fi.WriteLine($"OldProtos.{messageName} oldprotocol = new();");
+            GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, true, ref bothimports, ref stringPool);
             fi.ExitCodeRegion();
             #endregion
             fi.WriteLine("#endregion");
