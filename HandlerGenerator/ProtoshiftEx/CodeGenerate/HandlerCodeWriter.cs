@@ -58,5 +58,44 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #endregion
             fi.ExitCodeRegion();
         }
+
+        /// <summary>
+        /// Generate a Enum Handler class. Only handle the class body part, starting with <c>public class</c>.
+        /// </summary>
+        /// <param name="fi">The BasicCodeWriter (Generated outside).</param>
+        /// <param name="enumName">The enum name, can be identified by the c# compiler but without NewProtos/OldProtos prefix.</param>
+        /// <param name="oldenum">The analyzed old enum.</param>
+        /// <param name="newenum">The analyzed new enum.</param>
+        public static void GenerateEnumHandler(ref BasicCodeWriter fi, string enumName,
+            EnumResult oldenum, EnumResult newenum, ref CompiledEnumStringPoolManager stringPool)
+        {
+            fi.WriteLine($"public class Handler{enumName} ",
+                $": HandlerEnumBase<NewProtos.{enumName}, OldProtos.{enumName}>");
+            fi.EnterCodeRegion();
+            #region Prepare 
+            var enumNodes_both = oldenum.enumNodes.Intersect(newenum.enumNodes);
+            var enumNodes_oldOnly = oldenum.enumNodes.Except(newenum.enumNodes);
+            var enumNodes_newOnly = newenum.enumNodes.Except(oldenum.enumNodes);
+            #endregion
+            #region NewShiftToOld
+            fi.WriteLine($"public override OldProtos.{enumName} NewShiftToOld(NewProtos.{enumName} newprotocol)");
+            fi.EnterCodeRegion();
+            fi.WriteLine("switch (newprotocol)");
+            fi.EnterCodeRegion();
+            foreach (var newOnly in enumNodes_newOnly)
+            {
+                fi.WriteLine($"// Not found match enum node in old: [ {newOnly} ]");
+            }
+            foreach (var name in enumNodes_both)
+            {
+                fi.WriteLine($"case NewProtos.{enumName}.{stringPool.GetCompiledName(name)}:",
+                    $"return OldProtos.{enumName}.{stringPool.GetCompiledName(name)};",
+                    "break;");
+            }
+            fi.ExitCodeRegion();
+            fi.ExitCodeRegion();
+            #endregion
+            fi.ExitCodeRegion();
+        }
     }
 }
