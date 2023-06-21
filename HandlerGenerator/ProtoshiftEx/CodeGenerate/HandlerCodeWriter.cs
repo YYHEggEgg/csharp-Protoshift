@@ -95,6 +95,25 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.ExitCodeRegion();
             fi.ExitCodeRegion();
             #endregion
+            fi.WriteLine();
+            #region OldShiftToNew
+            fi.WriteLine($"public override NewProtos.{enumName} OldShiftToNew(OldProtos.{enumName} oldprotocol)");
+            fi.EnterCodeRegion();
+            fi.WriteLine("switch (oldprotocol)");
+            fi.EnterCodeRegion();
+            foreach (var newOnly in enumNodes_newOnly)
+            {
+                fi.WriteLine($"// Not found match enum node in new: [ {newOnly} ]");
+            }
+            foreach (var name in enumNodes_both)
+            {
+                fi.WriteLine($"case OldProtos.{enumName}.{stringPool.GetCompiledName(name)}:",
+                    $"return NewProtos.{enumName}.{stringPool.GetCompiledName(name)};",
+                    "break;");
+            }
+            fi.ExitCodeRegion();
+            fi.ExitCodeRegion();
+            #endregion
             fi.ExitCodeRegion();
         }
     }
