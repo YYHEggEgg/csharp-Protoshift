@@ -42,6 +42,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, true, ref bothimports, ref stringPool);
             GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, true, ref bothimports, ref stringPool);
             GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, true, ref bothimports, ref stringPool);
+            fi.WriteLine($"return oldprotocol;");
             fi.ExitCodeRegion();
             #endregion
             fi.WriteLine();
@@ -52,9 +53,21 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, false, ref bothimports, ref stringPool);
             GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, false, ref bothimports, ref stringPool);
             GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, false, ref bothimports, ref stringPool);
+            fi.WriteLine($"return newprotocol;");
             fi.ExitCodeRegion();
             #endregion
             fi.WriteLine("#endregion");
+            #endregion
+            fi.WriteLine();
+            #region Outer bytes invoke
+            fi.WriteLine("public override byte[] NewShiftToOld(byte[] arr, int offset, int length)",
+                "=> NewShiftToOld(newproto_parser_base.ParseFrom(arr, offset, length)).ToByteArray();");
+            fi.WriteLine("public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)",
+                "=> NewShiftToOld(newproto_parser_base.ParseFrom(span)).ToByteArray();");
+            fi.WriteLine("public override byte[] OldShiftToNew(byte[] arr, int offset, int length)",
+                "=> OldShiftToNew(oldproto_parser_base.ParseFrom(arr, offset, length)).ToByteArray();");
+            fi.WriteLine("public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)",
+                "=> OldShiftToNew(oldproto_parser_base.ParseFrom(span)).ToByteArray();");
             #endregion
             fi.ExitCodeRegion();
         }
