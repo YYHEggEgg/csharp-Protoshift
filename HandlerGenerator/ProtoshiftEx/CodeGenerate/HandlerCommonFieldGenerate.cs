@@ -32,11 +32,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             string importPrefix = $"handler_{oldcommonField.fieldType}";
             if (generateForNewShiftToOld)
             {
-                fi.WriteLine($"{oldcaller} = {(oldcommonField.isImportType ? $"{importPrefix}.NewShiftToOld({newcaller})" : newcaller)}");
+                fi.WriteLine($"{oldcaller} = {(oldcommonField.isImportType ? $"{importPrefix}.NewShiftToOld({newcaller})" : newcaller)};");
             }
             else
             {
-                fi.WriteLine($"{newcaller} = {(oldcommonField.isImportType ? $"{importPrefix}.OldShiftToNew({newcaller})" : oldcaller)}");
+                fi.WriteLine($"{newcaller} = {(oldcommonField.isImportType ? $"{importPrefix}.OldShiftToNew({oldcaller})" : oldcaller)};");
             }
         }
 
@@ -62,8 +62,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.EnterCodeRegion();
                 string importPrefix = $"handler_{oldcommonField.fieldType}";
                 if (generateForNewShiftToOld)
-                    fi.WriteLine($"{oldcaller}.Add({importPrefix}.NewShiftToOld({newcaller}));");
-                else fi.WriteLine($"{newcaller}.Add({importPrefix}.OldShiftToNew({oldcaller}));");
+                    fi.WriteLine($"{oldcaller}.Add({importPrefix}.NewShiftToOld(element_{commonFieldName}));");
+                else fi.WriteLine($"{newcaller}.Add({importPrefix}.OldShiftToNew(element_{commonFieldName}));");
                 fi.ExitCodeRegion();
             }
         }
