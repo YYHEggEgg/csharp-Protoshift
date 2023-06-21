@@ -258,7 +258,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     "--csharp_out=\"", Environment.CurrentDirectory, "/ProtoFieldNameAnalyze/Compiled\""
                 );
                 Stopwatch watch = Stopwatch.StartNew();
-                Process p = Process.Start("protoc", commandLine);
+                Process p = Process.Start(OuterInvokeConfig.protoc_path, commandLine);
                 Log.Verb($"Started invoking protoc: protoc {commandLine}", nameof(ProtocStringPoolManager));
                 await p.WaitForExitAsync();
                 watch.Stop();
