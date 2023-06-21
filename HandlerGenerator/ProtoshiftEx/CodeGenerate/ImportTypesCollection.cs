@@ -36,7 +36,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             /// <summary>
             /// Indicate the import type is Message/Enum.
             /// </summary>
-            public bool importIsMessage;
+            // public bool importIsMessage;
             /// <summary>
             /// The name can be identified by the compilier in the global context <para/>
             /// (but without NewProtos/OldProtos prefix), <para/>
@@ -88,18 +88,25 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 var bothimports = oldimports;
                 foreach (var importName in bothimports)
                 {
-                    if (!friendlyToCompileNameList.ContainsKey(importName))
+                    if (friendlyToCompileNameList.ContainsKey(importName))
                     {
-                        Log.Dbug($"Proto {oldmessage.messageName}: Skipping analyzing import type {importName} for not found any match actual compiled types (in both Protos).", nameof(ImportTypesCollection));
+                        var query = friendlyToCompileNameList[importName];
+                        var rtn_element = new ImportTypeElement
+                        {
+                            friendlyTypeName = importName,
+                            compileTypeName = query.compileName
+                        };
+                        res.Add(importName, rtn_element);
                     }
-                    var query = friendlyToCompileNameList[importName];
-                    var rtn_element = new ImportTypeElement
+                    else
                     {
-                        friendlyTypeName = importName,
-                        importIsMessage = query.isMessage,
-                        compileTypeName = query.compileName
-                    };
-                    res.Add(importName, rtn_element);
+                        var rtn_element = new ImportTypeElement
+                        {
+                            friendlyTypeName = importName,
+                            compileTypeName = importName
+                        };
+                        res.Add(importName, rtn_element);
+                    }
                 }
                 searchByFriendlyName = new(res);
             }
