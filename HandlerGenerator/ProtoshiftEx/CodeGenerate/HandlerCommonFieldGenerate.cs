@@ -12,9 +12,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="oldcommonField">The analyzed old commonField.</param>
         /// <param name="newcommonField">The analyzed new commonField.</param>
         /// <param name="generateForNewShiftToOld">Whether generate code for NewShiftToOld or OldShiftToNew.</param>
+        /// <param name="baseMessage_friendlyName">Give the param can let the code cope with the case that the message name == field name (compiled field name will add _)</param>
         private static void GenerateCommonFieldHandler(ref BasicCodeWriter fi, string commonFieldName,
             CommonResult oldcommonField, CommonResult newcommonField, bool generateForNewShiftToOld,
-            ref ImportTypesCollection importInfo, ref ProtocStringPoolManager stringPool)
+            ref ImportTypesCollection importInfo, ref ProtocStringPoolManager stringPool,
+            string? baseMessage_friendlyName = null)
         {
             if (oldcommonField.fieldType != newcommonField.fieldType
                 || oldcommonField.IsRepeatedField != newcommonField.IsRepeatedField)
@@ -27,8 +29,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 GenerateRepeatedCommonFieldHandler(ref fi, commonFieldName, oldcommonField, newcommonField, generateForNewShiftToOld, ref importInfo, ref stringPool);
                 return;
             }
-            string oldcaller = $"oldprotocol.{stringPool.GetCompiledName(commonFieldName)}";
-            string newcaller = $"newprotocol.{stringPool.GetCompiledName(commonFieldName)}";
+            string fieldName = stringPool.GetCompiledName(commonFieldName) ?? "";
+            if (fieldName == baseMessage_friendlyName) fieldName += '_';
+            string oldcaller = $"oldprotocol.{fieldName}";
+            string newcaller = $"newprotocol.{fieldName}";
             string importPrefix = $"handler_{oldcommonField.fieldType}";
             if (generateForNewShiftToOld)
             {
@@ -45,12 +49,15 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// </summary>
         private static void GenerateRepeatedCommonFieldHandler(ref BasicCodeWriter fi, string commonFieldName,
             CommonResult oldcommonField, CommonResult newcommonField, bool generateForNewShiftToOld,
-            ref ImportTypesCollection importInfo, ref ProtocStringPoolManager stringPool)
+            ref ImportTypesCollection importInfo, ref ProtocStringPoolManager stringPool,
+            string? baseMessage_friendlyName = null)
         {
             Debug.Assert(oldcommonField.IsRepeatedField);
             Debug.Assert(newcommonField.IsRepeatedField);
-            string oldcaller = $"oldprotocol.{stringPool.GetCompiledName(commonFieldName)}";
-            string newcaller = $"newprotocol.{stringPool.GetCompiledName(commonFieldName)}";
+            string fieldName = stringPool.GetCompiledName(commonFieldName) ?? "";
+            if (fieldName == baseMessage_friendlyName) fieldName += '_';
+            string oldcaller = $"oldprotocol.{fieldName}";
+            string newcaller = $"newprotocol.{fieldName}";
             if (!oldcommonField.isImportType)
             {
                 if (generateForNewShiftToOld) fi.WriteLine($"{oldcaller}.AddRange({newcaller});");

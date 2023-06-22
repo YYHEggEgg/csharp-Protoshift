@@ -13,12 +13,16 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="oldoneofField">The analyzed old oneofField.</param>
         /// <param name="newoneofField">The analyzed new oneofField.</param>
         /// <param name="generateForNewShiftToOld">Whether generate code for NewShiftToOld or OldShiftToNew.</param>
+        /// <param name="baseMessage_friendlyName">Give the param can let the code cope with the case that the message name == field name (compiled field name will add _)</param>
         private static void GenerateOneofFieldHandler(ref BasicCodeWriter fi, string oneofFieldName, string belongToMessageCompileName,
             OneofResult oldoneofField, OneofResult newoneofField, bool generateForNewShiftToOld,
-            ref ImportTypesCollection importInfo, ref ProtocStringPoolManager stringPool)
+            ref ImportTypesCollection importInfo, ref ProtocStringPoolManager stringPool,
+            string? baseMessage_friendlyName = null)
         {
-            string oldcaller = $"oldprotocol.{stringPool.GetCompiledName(oneofFieldName)}";
-            string newcaller = $"newprotocol.{stringPool.GetCompiledName(oneofFieldName)}";
+            string fieldName = stringPool.GetCompiledName(oneofFieldName) ?? "";
+            if (fieldName == baseMessage_friendlyName) fieldName += '_';
+            string oldcaller = $"oldprotocol.{fieldName}";
+            string newcaller = $"newprotocol.{fieldName}";
             var oneofInnerFieldsCollection = CollectionHelper.GetCompareResult(
                 oldoneofField.oneofInnerFields, newoneofField.oneofInnerFields, CommonResult.NameComparer);
             if (generateForNewShiftToOld)
