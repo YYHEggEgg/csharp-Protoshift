@@ -1,3 +1,5 @@
+using System.Xml.Linq;
+
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
     public partial class HandlerCodeWriter
@@ -10,10 +12,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="oldmessage">The analyzed old message.</param>
         /// <param name="newmessage">The analyzed new message.</param>
         public static void GenerateMessageHandler(ref BasicCodeWriter fi, string messageName,
-            MessageResult oldmessage, MessageResult newmessage,
-            ref ProtocStringPoolManager stringPool)
+            MessageResult oldmessage, MessageResult newmessage, ref ProtocStringPoolManager stringPool, 
+            ref CompiledEnumsStringPoolCollection oldenumPool, ref CompiledEnumsStringPoolCollection newenumPool)
         {
-            fi.WriteLine($"public class Handler{messageName} ",
+            string friendly_messageName = messageName.Substring(
+                messageName.Contains('.') ? messageName.LastIndexOf('.') + 1 : 0);
+            fi.WriteLine($"public class Handler{friendly_messageName} ",
                 $": HandlerBase<NewProtos.{messageName}, OldProtos.{messageName}>");
             fi.EnterCodeRegion();
 
@@ -69,6 +73,34 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine("public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)",
                 "=> OldShiftToNew(oldproto_parser_base.ParseFrom(span)).ToByteArray();");
             #endregion
+            #region Inner Messages
+            fi.WriteLine();
+            fi.WriteLine("#region Inner Messages");
+            var innermessage_collection = CollectionHelper.GetCompareResult(
+                oldmessage.messageFields, newmessage.messageFields, MessageResult.NameComparer);
+            foreach (var inner_message in innermessage_collection.IntersectItems)
+            {
+                string inner_message_name = inner_message.LeftItem.messageName;
+                GenerateMessageHandler(ref fi, $"{messageName}.Types.{inner_message_name}",
+                    inner_message.LeftItem, inner_message.RightItem, ref stringPool, ref oldenumPool, ref newenumPool);
+            }
+            fi.WriteLine("#endregion");
+            #endregion
+            #region Inner Enums
+            fi.WriteLine();
+            fi.WriteLine("#region Inner Enums");
+            var innerenum_collection = CollectionHelper.GetCompareResult(
+                oldmessage.enumFields, newmessage.enumFields, EnumResult.NameComparer);
+            foreach (var inner_enum in innerenum_collection.IntersectItems)
+            {
+                string inner_enum_name = inner_enum.LeftItem.enumName;
+                string inner_enum_compiled_name = $"{messageName}.Types.{inner_enum_name}";
+                GenerateEnumHandler(ref fi, inner_enum_compiled_name, 
+                    inner_enum.LeftItem, inner_enum.RightItem, 
+                    oldenumPool.Query(inner_enum_compiled_name), newenumPool.Query(inner_enum_compiled_name));
+            }
+            fi.WriteLine("#endregion");
+            #endregion
             fi.ExitCodeRegion();
         }
 
@@ -80,9 +112,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="oldenum">The analyzed old enum.</param>
         /// <param name="newenum">The analyzed new enum.</param>
         public static void GenerateEnumHandler(ref BasicCodeWriter fi, string enumName,
-            EnumResult oldenum, EnumResult newenum, ref CompiledEnumStringPoolManager stringPool)
+            EnumResult oldenum, EnumResult newenum, 
+            CompiledEnumStringPoolManager oldstringPool, CompiledEnumStringPoolManager newstringPool)
         {
-            fi.WriteLine($"public class Handler{enumName} ",
+            string friendly_enumName = enumName.Substring(
+                enumName.Contains('.') ? enumName.LastIndexOf('.') + 1 : 0);
+            fi.WriteLine($"public class Handler{friendly_enumName} ",
                 $": HandlerEnumBase<NewProtos.{enumName}, OldProtos.{enumName}>");
             fi.EnterCodeRegion();
             #region Prepare 
@@ -101,10 +136,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             foreach (var name in enumNodes_both)
             {
-                fi.WriteLine($"case NewProtos.{enumName}.{stringPool.GetCompiledName(name)}:",
-                    $"return OldProtos.{enumName}.{stringPool.GetCompiledName(name)};",
-                    "break;");
+                fi.WriteLine($"case NewProtos.{enumName}.{newstringPool.GetCompiledName(name)}:",
+                    $"return OldProtos.{enumName}.{oldstringPool.GetCompiledName(name)};");
             }
+            var name_first = oldenum.enumNodes.First();
+            fi.WriteLine("default:",
+                $"return OldProtos.{enumName}.{oldstringPool.GetCompiledName(name_first)};");
             fi.ExitCodeRegion();
             fi.ExitCodeRegion();
             #endregion
@@ -120,10 +157,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             foreach (var name in enumNodes_both)
             {
-                fi.WriteLine($"case OldProtos.{enumName}.{stringPool.GetCompiledName(name)}:",
-                    $"return NewProtos.{enumName}.{stringPool.GetCompiledName(name)};",
-                    "break;");
+                fi.WriteLine($"case OldProtos.{enumName}.{oldstringPool.GetCompiledName(name)}:",
+                    $"return NewProtos.{enumName}.{newstringPool.GetCompiledName(name)};");
             }
+            name_first = newenum.enumNodes.First();
+            fi.WriteLine("default:",
+                $"return NewProtos.{enumName}.{newstringPool.GetCompiledName(name_first)};");
             fi.ExitCodeRegion();
             fi.ExitCodeRegion();
             #endregion

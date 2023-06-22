@@ -102,19 +102,55 @@ rebuildWatcher_watch.Stop();
 Log.Info($"Rebuild judge completed (need rebuild: {rebuildWatcher.NeedRebuild}), costed {rebuildWatcher_watch.Elapsed}.", nameof(RebuildWatcher));
 if (rebuildWatcher.NeedRebuild)
 {
-    #region Compile Protos
-    ProcessStartInfo oldprotos_compile = new ProcessStartInfo(OuterInvokeConfig.dotnet_path, "build")
+    #region Compile Protos (protoc)
+    ProcessStartInfo oldprotos_compile_protoc = new ProcessStartInfo(OuterInvokeConfig.protoc_path,
+        "--proto_path=\"OldProtoHandlers\\Google.Protobuf\\Protos\" " +
+        "\"OldProtoHandlers\\Google.Protobuf\\Protos\\*.proto\" " +
+        "--csharp_out=\"OldProtoHandlers\\Google.Protobuf\\Compiled\"")
+    {
+        WorkingDirectory = "./.."
+    };
+    ProcessStartInfo newprotos_compile_protoc = new ProcessStartInfo(OuterInvokeConfig.protoc_path,
+        "--proto_path=\"NewProtoHandlers\\Google.Protobuf\\Protos\" " +
+        "\"NewProtoHandlers\\Google.Protobuf\\Protos\\*.proto\" " +
+        "--csharp_out=\"NewProtoHandlers\\Google.Protobuf\\Compiled\"")
+    {
+        WorkingDirectory = "./.."
+    };
+    Process? protoc_oldprotos = Process.Start(oldprotos_compile_protoc);
+    Log.Info($"Compiling OldProtos, please wait...", "OuterInvoke");
+    await (protoc_oldprotos?.WaitForExitAsync() ?? Task.CompletedTask);
+    Process? protoc_newprotos = Process.Start(newprotos_compile_protoc);
+    Log.Info($"Compiling NewProtos, please wait...", "OuterInvoke");
+    await (protoc_newprotos?.WaitForExitAsync() ?? Task.CompletedTask);
+    if (protoc_newprotos?.ExitCode != 0 || protoc_oldprotos?.ExitCode != 0)
+    {
+        Log.Erro("Protos compiling (invoke protoc) failed. Exit code is 20041. ", "OuterInvoke");
+        Console.ReadLine();
+        Environment.Exit(20041);
+    }
+    #endregion
+    #region Compile Protos (C#)
+    ProcessStartInfo oldprotos_compile_dotnet = new ProcessStartInfo(OuterInvokeConfig.dotnet_path, "build")
     {
         WorkingDirectory = "./../OldProtoHandlers"
     };
-    ProcessStartInfo newprotos_compile = new ProcessStartInfo(OuterInvokeConfig.dotnet_path, "build")
+    ProcessStartInfo newprotos_compile_dotnet = new ProcessStartInfo(OuterInvokeConfig.dotnet_path, "build")
     {
         WorkingDirectory = "./../NewProtoHandlers"
     };
+    Process? dotnet_oldprotos = Process.Start(oldprotos_compile_dotnet);
     Log.Info($"Compiling OldProtos, please wait...", "OuterInvoke");
-    await (Process.Start(oldprotos_compile)?.WaitForExitAsync() ?? Task.CompletedTask);
+    await (dotnet_oldprotos?.WaitForExitAsync() ?? Task.CompletedTask);
+    Process? dotnet_newprotos = Process.Start(newprotos_compile_dotnet);
     Log.Info($"Compiling NewProtos, please wait...", "OuterInvoke");
-    await (Process.Start(newprotos_compile)?.WaitForExitAsync() ?? Task.CompletedTask);
+    await (dotnet_newprotos?.WaitForExitAsync() ?? Task.CompletedTask);
+    if (dotnet_newprotos?.ExitCode != 0 || dotnet_oldprotos?.ExitCode != 0)
+    {
+        Log.Erro("Protos compiling (invoke dotnet) failed. Exit code is 60. ", "OuterInvoke");
+        Console.ReadLine();
+        Environment.Exit(60);
+    }
     #endregion
     #region Invoke proto2json
     if (Directory.Exists($"{workingdir}\\Proto2json_Output"))
@@ -188,29 +224,20 @@ if (!Directory.Exists(newoutputdir) || !Directory.Exists(oldoutputdir))
     Environment.Exit(245);
 }
 #endregion
-ConcurrentBag<MessageResult> newmessages = new();
 ConcurrentBag<MessageResult> oldmessages = new();
-ConcurrentBag<EnumResult> newenums = new();
+ConcurrentBag<MessageResult> newmessages = new();
 ConcurrentBag<EnumResult> oldenums = new();
+ConcurrentBag<EnumResult> newenums = new();
 #region Analyze Output
 #region Enumerate Files
+var oldprotojsons = Directory.EnumerateFiles(oldoutputdir);
 var newprotojsons = Directory.EnumerateFiles(newoutputdir);
-var oldprotojsons = Directory.EnumerateFiles(newoutputdir);
-Parallel.ForEach(newprotojsons, path =>
-{
-    ProtoJsonResult analyzeResult = JsonAnalyzer.AnalyzeProtoJson(File.ReadAllText(path));
-    foreach (var message in analyzeResult.messageBodys)
-    {
-        newmessages.Add(message);
-    }
-    foreach (var enumResult in analyzeResult.enumBodys)
-    {
-        newenums.Add(enumResult);
-    }
-});
-Log.Info($"NewProtos: read {newmessages.Count} messages, {newenums.Count} enums.");
+var oldenumCollections = new CompiledEnumsStringPoolCollection();
+var newenumCollections = new CompiledEnumsStringPoolCollection();
 Parallel.ForEach(oldprotojsons, path =>
 {
+    oldenumCollections.AddCodeFile($"./../OldProtoHandlers/Google.Protobuf/Compiled/" +
+        $"{Path.GetFileNameWithoutExtension(path).Replace("_", "")}.cs");
     ProtoJsonResult analyzeResult = JsonAnalyzer.AnalyzeProtoJson(File.ReadAllText(path));
     foreach (var message in analyzeResult.messageBodys)
     {
@@ -222,15 +249,30 @@ Parallel.ForEach(oldprotojsons, path =>
     }
 });
 Log.Info($"OldProtos: read {oldmessages.Count} messages, {oldenums.Count} enums.");
+Parallel.ForEach(newprotojsons, path =>
+{
+    newenumCollections.AddCodeFile($"./../NewProtoHandlers/Google.Protobuf/Compiled/" +
+        $"{Path.GetFileNameWithoutExtension(path).Replace("_", "")}.cs");
+    ProtoJsonResult analyzeResult = JsonAnalyzer.AnalyzeProtoJson(File.ReadAllText(path));
+    foreach (var message in analyzeResult.messageBodys)
+    {
+        newmessages.Add(message);
+    }
+    foreach (var enumResult in analyzeResult.enumBodys)
+    {
+        newenums.Add(enumResult);
+    }
+});
+Log.Info($"NewProtos: read {newmessages.Count} messages, {newenums.Count} enums.");
 #endregion
 CollectionResult<MessageResult> messageResults = 
-    CollectionHelper.GetCompareResult(newmessages, oldmessages, MessageResult.NameComparer);
+    CollectionHelper.GetCompareResult(oldmessages, newmessages, MessageResult.NameComparer);
 CollectionResult<EnumResult> enumResults = 
-    CollectionHelper.GetCompareResult(newenums, oldenums, EnumResult.NameComparer);
+    CollectionHelper.GetCompareResult(oldenums, newenums, EnumResult.NameComparer);
 #region Generate String Pool
 ProtocStringPoolManager compiledStringPool = new();
-foreach (var newProtoMessage in newmessages) compiledStringPool.PushMessageResult(newProtoMessage);
 foreach (var oldProtoMessage in oldmessages) compiledStringPool.PushMessageResult(oldProtoMessage);
+foreach (var newProtoMessage in newmessages) compiledStringPool.PushMessageResult(newProtoMessage);
 await compiledStringPool.Compile();
 #endregion
 #region Debug Output (no prod!!!)
@@ -269,11 +311,32 @@ foreach (var shiftpair in messageResults.IntersectItems)
     fi.WriteLine("namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode");
     fi.EnterCodeRegion();
     HandlerCodeWriter.GenerateMessageHandler(ref fi, msgName, shiftpair.LeftItem, shiftpair.RightItem,
-        ref compiledStringPool);
+        ref compiledStringPool, ref oldenumCollections, ref newenumCollections);
+    fi.ExitCodeRegion();
+    fi.WriteLine("#endregion Designer generated code");
+    fi.Dispose();
+}
+foreach (var shiftpair in enumResults.IntersectItems)
+{
+    string enumName = shiftpair.LeftItem.enumName;
+    string filePath = $"./../ProtoshiftHandlers/Generated/Handler{enumName}.cs";
+    BasicCodeWriter fi = new(filePath);
+    fi.WriteLine("// <auto-generated>");
+    fi.WriteLine("//     Generated by csharp-Protoshift.HandlerGenerator. ");
+    fi.WriteLine("// </auto-generated>");
+    fi.WriteLine();
+    fi.WriteLine("#region Designer Generated Code");
+    fi.WriteLine("using Google.Protobuf;");
+    fi.WriteLine();
+    fi.WriteLine("namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode");
+    fi.EnterCodeRegion();
+    HandlerCodeWriter.GenerateEnumHandler(ref fi, enumName, shiftpair.LeftItem, shiftpair.RightItem,
+        oldenumCollections.Query(enumName), newenumCollections.Query(enumName));
     fi.ExitCodeRegion();
     fi.WriteLine("#endregion Designer generated code");
     fi.Dispose();
 }
 #endregion
 #endregion
-Console.ReadLine();             
+Log.Info("Conguratulations! Protoshift handlers generated successfully.");
+Console.ReadLine();
