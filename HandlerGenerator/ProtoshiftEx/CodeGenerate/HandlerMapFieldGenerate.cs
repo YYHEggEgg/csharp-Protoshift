@@ -12,9 +12,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="oldmapField">The analyzed old mapField.</param>
         /// <param name="newmapField">The analyzed new mapField.</param>
         /// <param name="generateForNewShiftToOld">Whether generate code for NewShiftToOld or OldShiftToNew.</param>
+        /// <param name="baseMessage_friendlyName">Give the param can let the code cope with the case that the message name == field name (compiled field name will add _)</param>
         private static void GenerateMapFieldHandler(ref BasicCodeWriter fi, string mapFieldName,
             MapResult oldmapField, MapResult newmapField, bool generateForNewShiftToOld,
-            ref ImportTypesCollection importInfo, ref ProtocStringPoolManager stringPool)
+            ref ImportTypesCollection importInfo, ref ProtocStringPoolManager stringPool, 
+            string? baseMessage_friendlyName = null)
         {
             if (oldmapField.keyType != newmapField.keyType 
                 || oldmapField.valueType != newmapField.valueType)
@@ -22,8 +24,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.WriteLine($"// Two field with name equal but don't actual match: old: [ {oldmapField} ], new: [ {newmapField} ]");
                 return;
             }
-            string oldcaller = $"oldprotocol.{stringPool.GetCompiledName(mapFieldName)}";
-            string newcaller = $"newprotocol.{stringPool.GetCompiledName(mapFieldName)}";
+            string fieldName = stringPool.GetCompiledName(mapFieldName) ?? "";
+            if (fieldName == baseMessage_friendlyName) fieldName += '_';
+            string oldcaller = $"oldprotocol.{fieldName}";
+            string newcaller = $"newprotocol.{fieldName}";
             string keyImportPrefix = $"handler_{oldmapField.keyType}";
             string valueImportPrefix = $"handler_{oldmapField.valueType}";
             if (generateForNewShiftToOld)
@@ -84,7 +88,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 GenerateMapFieldHandler(ref fi, map_pair.LeftItem.fieldName,
                     map_pair.LeftItem, map_pair.RightItem, generateForNewShiftToOld,
-                    ref importInfo, ref stringPool);
+                    ref importInfo, ref stringPool, oldmessage.messageName);
             }
         }
     }
