@@ -26,7 +26,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (oldcommonField.IsRepeatedField)
             {
-                GenerateRepeatedCommonFieldHandler(ref fi, commonFieldName, oldcommonField, newcommonField, generateForNewShiftToOld, ref importInfo, ref stringPool);
+                GenerateRepeatedCommonFieldHandler(ref fi, commonFieldName, 
+                    oldcommonField, newcommonField, generateForNewShiftToOld, 
+                    ref importInfo, ref stringPool, baseMessage_friendlyName);
                 return;
             }
             string fieldName = stringPool.GetCompiledName(commonFieldName) ?? "";
@@ -106,7 +108,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 GenerateCommonFieldHandler(ref fi, common_pair.LeftItem.fieldName,
                     common_pair.LeftItem, common_pair.RightItem, generateForNewShiftToOld,
-                    ref importInfo, ref stringPool);
+                    ref importInfo, ref stringPool, oldmessage.messageName);
             }
         }
     }
