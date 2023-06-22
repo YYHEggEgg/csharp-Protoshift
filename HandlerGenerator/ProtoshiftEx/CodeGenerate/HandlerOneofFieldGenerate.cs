@@ -23,7 +23,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 oldoneofField.oneofInnerFields, newoneofField.oneofInnerFields, CommonResult.NameComparer);
             if (generateForNewShiftToOld)
             {
-                fi.WriteLine($"switch ({oldcaller}Case)");
+                fi.WriteLine($"switch ({newcaller}Case)");
                 fi.EnterCodeRegion();
                 var oneofCaseType = $"NewProtos.{belongToMessageCompileName}.{stringPool.GetCompiledName(oneofFieldName)}OneofCase";
                 foreach (var oneof_newOnly in oneofInnerFieldsCollection.RightOnlys)
@@ -40,20 +40,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     fi.WriteLine("break;");
                     fi.RemoveIndent();
                 }
-                fi.WriteLine("default:");
-                var oneof_pair_first = oneofInnerFieldsCollection.IntersectItems.First();
-                var commonFieldName_first = oneof_pair_first.LeftItem.fieldName;
-                fi.AddIndent();
-                GenerateCommonFieldHandler(ref fi, commonFieldName_first,
-                    oneof_pair_first.LeftItem, oneof_pair_first.RightItem,
-                    generateForNewShiftToOld, ref importInfo, ref stringPool);
-                fi.WriteLine("break;");
-                fi.RemoveIndent();
+                fi.WriteLine("default:", "break;");
                 fi.ExitCodeRegion();
             }
             else
             {
-                fi.WriteLine($"switch ({newcaller}Case)");
+                fi.WriteLine($"switch ({oldcaller}Case)");
                 fi.EnterCodeRegion();
                 var oneofCaseType = $"OldProtos.{belongToMessageCompileName}.{stringPool.GetCompiledName(oneofFieldName)}OneofCase";
                 foreach (var oneof_oldOnly in oneofInnerFieldsCollection.LeftOnlys)
@@ -70,15 +62,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     fi.WriteLine("break;");
                     fi.RemoveIndent();
                 }
-                fi.WriteLine("default:");
-                var oneof_pair_first = oneofInnerFieldsCollection.IntersectItems.First();
-                var commonFieldName_first = oneof_pair_first.LeftItem.fieldName;
-                fi.AddIndent();
-                GenerateCommonFieldHandler(ref fi, commonFieldName_first,
-                    oneof_pair_first.LeftItem, oneof_pair_first.RightItem,
-                    generateForNewShiftToOld, ref importInfo, ref stringPool);
-                fi.WriteLine("break;");
-                fi.RemoveIndent();
+                fi.WriteLine("default:", "break;");
                 fi.ExitCodeRegion();
             }
         }
