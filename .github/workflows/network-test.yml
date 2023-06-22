@@ -7,11 +7,13 @@ on:
       - network-performance-test
       - packet-protocol-audit
       - network-pressure-test
+      - other/kcp-csharp-contribute
   push:
     branches:
       - network-performance-test
       - packet-protocol-audit
       - network-pressure-test
+      - other/kcp-csharp-contribute
 
 jobs:
   network-benchmark-windows-rel:
