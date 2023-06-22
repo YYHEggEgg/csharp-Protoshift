@@ -102,7 +102,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 GenerateOneofFieldHandler(ref fi, oneof_pair.LeftItem.oneofEntryName, oldmessage.messageName,
                     oneof_pair.LeftItem, oneof_pair.RightItem, generateForNewShiftToOld,
-                    ref importInfo, ref stringPool);
+                    ref importInfo, ref stringPool, oldmessage.messageName);
             }
         }
     }
