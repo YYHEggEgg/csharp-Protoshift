@@ -64,20 +64,20 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 foreach (var compileMessageName in oldCompileNameList.messages)
                 {
                     if (friendlyToCompileNameList.ContainsKey(
-                        compileMessageName.Substring(compileMessageName.LastIndexOf('.'))))
+                        compileMessageName.Substring(compileMessageName.LastIndexOf('.') + 1)))
                     {
                         Log.Erro($"Protocol invalid: {oldmessage.messageName}'s sub protos have the same name with the other.", nameof(ImportTypesCollection));
                         Debug.Assert(false, $"Protocol invalid: {oldmessage.messageName}'s sub protos have the same name with the other.");
                     }
                     friendlyToCompileNameList.Add(compileMessageName.Substring(compileMessageName.LastIndexOf('.')), (compileMessageName, true));
                 }
-                foreach (var compileEnumName in oldCompileNameList.messages)
+                foreach (var compileEnumName in oldCompileNameList.enums)
                 {
                     if (friendlyToCompileNameList.ContainsKey(
-                        compileEnumName.Substring(compileEnumName.LastIndexOf('.'))))
+                        compileEnumName.Substring(compileEnumName.LastIndexOf('.') + 1)))
                     {
                         Log.Erro($"Protocol invalid: {oldmessage.messageName}'s sub protos (enum) have the same name with the other.", nameof(ImportTypesCollection));
-                        Debug.Assert(false);
+                        Debug.Assert(false, $"Protocol invalid: {oldmessage.messageName}'s sub protos (enum) have the same name with the other.");
                     }
                     friendlyToCompileNameList.Add(compileEnumName.Substring(compileEnumName.LastIndexOf('.')), (compileEnumName, false));
                 }
@@ -151,20 +151,21 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 SortedSet<string> enums = new();
                 foreach (var messageField in messageResult.messageFields)
                 {
-                    messages.Add(messageField.messageName);
+                    var inner_message_field_name = $"{messageResult.messageName}.Types.{messageField.messageName}";
+                    messages.Add(inner_message_field_name);
                     var innerTypePair = GetInnerMessageTypesAsCompileName(messageField);
                     foreach (var innerMessageFieldName in innerTypePair.messages)
                     {
-                        messages.Add($"{messageResult.messageName}.Types.{innerMessageFieldName}");
+                        messages.Add($"{inner_message_field_name}.Types.{innerMessageFieldName}");
                     }
                     foreach (var innerEnumFieldName in innerTypePair.enums)
                     {
-                        enums.Add($"{messageResult.messageName}.Types.{innerEnumFieldName}");
+                        enums.Add($"{inner_message_field_name}.Types.{innerEnumFieldName}");
                     }
                 }
                 foreach (var enumField in messageResult.enumFields)
                 {
-                    enums.Add(enumField.enumName);
+                    enums.Add($"{messageResult.messageName}.Types.{enumField.enumName}");
                 }
                 return (messages, enums);
             }

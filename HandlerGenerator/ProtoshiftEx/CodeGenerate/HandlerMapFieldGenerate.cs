@@ -29,17 +29,26 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             if (generateForNewShiftToOld)
             {
                 var enumerate_caller = $"eachmap_newprotocol_{mapFieldName}";
-                fi.WriteLine($"foreach (var {enumerate_caller} in {newcaller}");
+                fi.WriteLine($"foreach (var {enumerate_caller} in {newcaller})");
                 fi.EnterCodeRegion();
-                fi.WriteLine($"{oldcaller}.Add({enumerate_caller}.Key, {enumerate_caller}.Value);");
+                if (newmapField.keyIsImportType)
+                fi.WriteLine($"{oldcaller}.Add(" +
+                    (newmapField.keyIsImportType ? $"{keyImportPrefix}.NewShiftToOld(" : "") +
+                    $"{enumerate_caller}.Key{(newmapField.keyIsImportType ? ")" : "")}, " +
+                    (newmapField.valueIsImportType ? $"{valueImportPrefix}.NewShiftToOld(" : "") +
+                    $"{enumerate_caller}.Value{(newmapField.valueIsImportType ? ")" : "")});");
                 fi.ExitCodeRegion();
             }
             else
             {
                 var enumerate_caller = $"eachmap_oldprotocol_{mapFieldName}";
-                fi.WriteLine($"foreach (var {enumerate_caller} in {oldcaller}");
+                fi.WriteLine($"foreach (var {enumerate_caller} in {oldcaller})");
                 fi.EnterCodeRegion();
-                fi.WriteLine($"{newcaller}.Add({enumerate_caller}.Key, {enumerate_caller}.Value);");
+                fi.WriteLine($"{newcaller}.Add(" +
+                    (oldmapField.keyIsImportType ? $"{keyImportPrefix}.OldShiftToNew(" : "") +
+                    $"{enumerate_caller}.Key{(oldmapField.keyIsImportType ? ")" : "")}, " +
+                    (oldmapField.valueIsImportType ? $"{valueImportPrefix}.OldShiftToNew(" : "") +
+                    $"{enumerate_caller}.Value{(oldmapField.valueIsImportType ? ")" : "")});");
                 fi.ExitCodeRegion();
             }
         }
