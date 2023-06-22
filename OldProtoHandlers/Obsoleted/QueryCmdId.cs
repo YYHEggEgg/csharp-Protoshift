@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YYHEggEgg.Logger;
 
-namespace OldProtos
+namespace OldProtoHandlers.Obsoleted
 {
     public static class QueryCmdId
     {
