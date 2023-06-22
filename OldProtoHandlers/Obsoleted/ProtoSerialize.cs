@@ -1,4 +1,5 @@
 ﻿using Google.Protobuf;
+using OldProtos;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace OldProtos
+namespace OldProtoHandlers.Obsoleted
 {
     public class ProtoSerialize
     {
@@ -83,7 +84,7 @@ namespace OldProtos
             if (isNull) throw new InvalidOperationException("Trying to use an invalid instance.");
             try
             {
-                return MessageExtensions.ToByteArray(SerializeToIMessage(protojson));
+                return SerializeToIMessage(protojson).ToByteArray();
             }
             catch (InvalidProtocolBufferException)
             {
@@ -94,8 +95,8 @@ namespace OldProtos
                 var parse_method = parse_type.GetMethod("Parse", BindingFlags.Instance | BindingFlags.Public,
                     new Type[] { typeof(string) });
                 var parse_method_T = parse_method.MakeGenericMethod(Prototype);
-                return MessageExtensions.ToByteArray(parse_method_T.Invoke(
-                    Discard_Unknown_fields_Parser, new object[] { protojson }) as IMessage);
+                return (parse_method_T.Invoke(
+                    Discard_Unknown_fields_Parser, new object[] { protojson }) as IMessage).ToByteArray();
             }
         }
     }
