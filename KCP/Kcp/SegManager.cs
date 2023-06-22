@@ -126,11 +126,11 @@ namespace System.Net.Sockets.Kcp
 
         public void Free(KcpSegment seg)
         {
-            lock (locker)
-            {
+            // lock (locker)
+            // {
                 IntPtr ptr = (IntPtr)seg.ptr;
                 blocks.Push(ptr);
-            }
+            // }
         }
 
 #if MIHOMO_KCP
