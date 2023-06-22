@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewProtos
+namespace NewProtos.Obsoleted
 {
     public class ProtoSerialize
     {
