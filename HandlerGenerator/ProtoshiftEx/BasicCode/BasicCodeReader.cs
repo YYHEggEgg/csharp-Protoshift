@@ -3,7 +3,9 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
@@ -301,43 +303,51 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
 
     public partial class CodeTree
     {
-        public string Name { get; set; } // 节点名称
-        public string Type { get; set; } // 节点类型，例如 class、enum 等
-        public string FullPath { get; set; } // 节点完整路径
-        public int StartLine { get; set; } // 节点开始行号
-        public int EndLine { get; set; } // 节点结束行号
-        public List<CodeTree> Children { get; set; } // 子节点列表
+        public CodeTree(string name, string type, string fullPath, int startLine, int endLine, List<CodeTree> children)
+        {
+            Name = name;
+            Type = type;
+            FullPath = fullPath;
+            StartLine = startLine;
+            EndLine = endLine;
+            Children = new(children);
+        }
+
+        public readonly string Name; // 节点名称
+        public readonly string Type; // 节点类型，例如 class、enum 等
+        public readonly string FullPath; // 节点完整路径
+        public readonly int StartLine; // 节点开始行号
+        public readonly int EndLine; // 节点结束行号
+        public ReadOnlyCollection<CodeTree> Children { get; set; } // 子节点列表
     }
 
-    public class CodeTreeBuilder
+    public static class CodeTreeBuilder
     {
-        public CodeTree Build(string code)
+        public static CodeTree Build(string code)
         {
             SyntaxTree tree = CSharpSyntaxTree.ParseText(code);
             CompilationUnitSyntax root = tree.GetCompilationUnitRoot();
             return BuildTree(root);
         }
 
-        private CodeTree BuildTree(SyntaxNode node, string parentPath = "")
+        private static CodeTree BuildTree(SyntaxNode node, string parentPath = "")
         {
-            CodeTree tree = new CodeTree();
-            tree.Name = GetName(node);
-            tree.Type = GetType(node);
-            tree.FullPath = GetFullPath(node, parentPath);
-            tree.StartLine = node.GetLocation().GetLineSpan().StartLinePosition.Line + 1;
-            tree.EndLine = node.GetLocation().GetLineSpan().EndLinePosition.Line + 1;
-            tree.Children = new List<CodeTree>();
-
+            string name = GetName(node);
+            string type = GetType(node);
+            string fullPath = GetFullPath(node, parentPath);
+            int startLine = node.GetLocation().GetLineSpan().StartLinePosition.Line + 1;
+            int endLine = node.GetLocation().GetLineSpan().EndLinePosition.Line + 1;
+            List<CodeTree> children = new();
             foreach (SyntaxNode child in node.ChildNodes())
             {
-                CodeTree childTree = BuildTree(child, tree.FullPath);
-                tree.Children.Add(childTree);
+                CodeTree childTree = BuildTree(child, fullPath);
+                children.Add(childTree);
             }
 
-            return tree;
+            return new CodeTree(name, type, fullPath, startLine, endLine, children);
         }
 
-        private string GetName(SyntaxNode node)
+        private static string GetName(SyntaxNode node)
         {
             if (node is BaseTypeDeclarationSyntax)
             {
@@ -353,7 +363,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
         }
 
-        private string GetType(SyntaxNode node)
+        private static string GetType(SyntaxNode node)
         {
             if (node is BaseTypeDeclarationSyntax)
             {
@@ -369,7 +379,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
         }
 
-        private string GetFullPath(SyntaxNode node, string parentPath)
+        private static string GetFullPath(SyntaxNode node, string parentPath)
         {
             string name = GetName(node);
             string type = GetType(node);
@@ -398,12 +408,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// </summary>
         /// <param name="type">The type, like class, enum, struct, etc.</param>
         /// <returns></returns>
-        private List<string> GetPathsByType(string type)
+        private List<CodeTree> GetPathsByType(string type)
         {
-            List<string> paths = new List<string>();
+            List<CodeTree> paths = new List<CodeTree>();
             if (this.Type == type)
             {
-                paths.Add(this.FullPath);
+                paths.Add(this);
             }
             foreach (CodeTree child in this.Children)
             {
@@ -424,8 +434,114 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
 
     public partial class CodeTree
     {
-        public List<string> GetPathsByType(CodeTreeQueryType query) 
+        public List<CodeTree> GetPathsByType(CodeTreeQueryType query)
             => GetPathsByType($"{query}Declaration");
     }
+
+    public partial class CodeTree : IEnumerable<CodeTree>
+    {
+        public IEnumerator<CodeTree> GetEnumerator()
+        {
+            return new CodeTreeEnumerator(this);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+
+#pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
+#pragma warning disable CS8625 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
+    public class CodeTreeEnumerator : IEnumerator<CodeTree>
+    {
+        public readonly CodeTree Root;
+        private int index = -1;
+        private CodeTreeEnumerator? sub_enumerator;
+        public CodeTree Current { get; private set; }
+
+        object IEnumerator.Current => Current;
+
+        public CodeTreeEnumerator(CodeTree root)
+        {
+            Root = root;
+            Current = null;
+        }
+
+        public bool MoveNext()
+        {
+            if (index <= -1)
+            {
+                index = 0;
+                Current = Root;
+                if (Root.Children.Count > 0) sub_enumerator = new(Root.Children[index]);
+                else sub_enumerator = null;
+                return true;
+            }
+            else
+            {
+                if (sub_enumerator == null) return false;
+                bool res = sub_enumerator.MoveNext();
+                if (res)
+                {
+                    Current = sub_enumerator.Current;
+                    return true;
+                }
+                else
+                {
+                    index++;
+                    if (index >= Root.Children.Count) return false;
+                    else
+                    {
+                        sub_enumerator = new(Root.Children[index]);
+                        return MoveNext();
+                    }
+                }
+            }
+        }
+
+        public void Reset()
+        {
+            // index = -1;
+            // Current = null;
+            // sub_enumerator = null;
+            throw new NotSupportedException();
+        }
+
+        #region IDisposeable
+        private bool disposedValue;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    // TODO: 释放托管状态(托管对象)
+                }
+
+                // TODO: 释放未托管的资源(未托管的对象)并重写终结器
+                // TODO: 将大型字段设置为 null
+                disposedValue = true;
+            }
+        }
+
+        // // TODO: 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
+        // ~CodeTreeEnumerator()
+        // {
+        //     // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
+        //     Dispose(disposing: false);
+        // }
+
+        public void Dispose()
+        {
+            // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
+        #endregion
+    }
+#pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
+#pragma warning restore CS8625 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
     #endregion
 }
