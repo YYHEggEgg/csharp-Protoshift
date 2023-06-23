@@ -16,10 +16,12 @@ namespace csharp_Protoshift.Enhanced.Handlers
             => NewShiftToOld(arr, 0, arr.Length);
         public abstract byte[] NewShiftToOld(byte[] arr, int offset, int length);
         public abstract byte[] NewShiftToOld(ReadOnlySpan<byte> span);
+        public abstract ByteString NewShiftToOld(ByteString bytes);
         public virtual byte[] OldShiftToNew(byte[] arr)
             => OldShiftToNew(arr, 0, arr.Length);
         public abstract byte[] OldShiftToNew(byte[] arr, int offset, int length);
         public abstract byte[] OldShiftToNew(ReadOnlySpan<byte> span);
+        public abstract ByteString OldShiftToNew(ByteString bytes);
     }
 
     public abstract class HandlerEnumBase<TNewProtocol, TOldProtocol>
