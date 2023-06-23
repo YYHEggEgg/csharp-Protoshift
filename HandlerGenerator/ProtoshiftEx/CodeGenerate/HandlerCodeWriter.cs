@@ -68,10 +68,14 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 "=> NewShiftToOld(newproto_parser_base.ParseFrom(arr, offset, length)).ToByteArray();");
             fi.WriteLine("public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)",
                 "=> NewShiftToOld(newproto_parser_base.ParseFrom(span)).ToByteArray();");
+            fi.WriteLine("public override ByteString NewShiftToOld(ByteString bytes)",
+                "=> NewShiftToOld(newproto_parser_base.ParseFrom(bytes).ToByteString());");
             fi.WriteLine("public override byte[] OldShiftToNew(byte[] arr, int offset, int length)",
                 "=> OldShiftToNew(oldproto_parser_base.ParseFrom(arr, offset, length)).ToByteArray();");
             fi.WriteLine("public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)",
                 "=> OldShiftToNew(oldproto_parser_base.ParseFrom(span)).ToByteArray();");
+            fi.WriteLine("public override ByteString OldShiftToNew(ByteString bytes)",
+                "=> OldShiftToNew(oldproto_parser_base.ParseFrom(bytes).ToByteString());");
             #endregion
             #region Inner Messages
             fi.WriteLine();

@@ -376,9 +376,9 @@ fi_askCmdId.WriteLine("#region Designer Generated Code");
 fi_askCmdId.WriteLine();
 fi_askCmdId.WriteLine("namespace OldProtos");
 fi_askCmdId.EnterCodeRegion();
-fi_askCmdId.WriteLine("class AskCmdId");
+fi_askCmdId.WriteLine("public static class AskCmdId");
 fi_askCmdId.EnterCodeRegion();
-fi_askCmdId.WriteLine("public static int GetCmdIdFromProtoname(string protoname)");
+fi_askCmdId.WriteLine("public static uint GetCmdIdFromProtoname(string protoname)");
 fi_askCmdId.EnterCodeRegion();
 fi_askCmdId.WriteLine("switch (protoname)");
 fi_askCmdId.EnterCodeRegion();
@@ -389,7 +389,7 @@ foreach (var cmdPair in oldcmdids)
 }
 fi_askCmdId.ExitCodeRegion();
 fi_askCmdId.ExitCodeRegion();
-fi_askCmdId.WriteLine("public static string GetProtonameFromCmdId(int cmdid)");
+fi_askCmdId.WriteLine("public static string GetProtonameFromCmdId(uint cmdid)");
 fi_askCmdId.EnterCodeRegion();
 fi_askCmdId.WriteLine("switch (cmdid)");
 fi_askCmdId.EnterCodeRegion();
@@ -435,9 +435,9 @@ fi_askCmdId.WriteLine("#region Designer Generated Code");
 fi_askCmdId.WriteLine();
 fi_askCmdId.WriteLine("namespace NewProtos");
 fi_askCmdId.EnterCodeRegion();
-fi_askCmdId.WriteLine("class AskCmdId");
+fi_askCmdId.WriteLine("public static class AskCmdId");
 fi_askCmdId.EnterCodeRegion();
-fi_askCmdId.WriteLine("public static int GetCmdIdFromProtoname(string protoname)");
+fi_askCmdId.WriteLine("public static uint GetCmdIdFromProtoname(string protoname)");
 fi_askCmdId.EnterCodeRegion();
 fi_askCmdId.WriteLine("switch (protoname)");
 fi_askCmdId.EnterCodeRegion();
@@ -448,7 +448,7 @@ foreach (var cmdPair in newcmdids)
 }
 fi_askCmdId.ExitCodeRegion();
 fi_askCmdId.ExitCodeRegion();
-fi_askCmdId.WriteLine("public static string GetProtonameFromCmdId(int cmdid)");
+fi_askCmdId.WriteLine("public static string GetProtonameFromCmdId(uint cmdid)");
 fi_askCmdId.EnterCodeRegion();
 fi_askCmdId.WriteLine("switch (cmdid)");
 fi_askCmdId.EnterCodeRegion();
