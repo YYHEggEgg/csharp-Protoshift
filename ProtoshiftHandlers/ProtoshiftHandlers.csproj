@@ -7,6 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ProtoDispatch\Backup\**" />
+    <EmbeddedResource Remove="ProtoDispatch\Backup\**" />
+    <None Remove="ProtoDispatch\Backup\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Example\ShiftCmdId.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.1" />
     <PackageReference Include="Google.Protobuf" Version="3.22.1" />
   </ItemGroup>
