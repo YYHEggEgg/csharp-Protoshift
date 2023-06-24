@@ -1,0 +1,12 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option csharp_namespace = "OldProtos";
+
+message BreakoutSyncFinishGame {
+    bool is_win = 13;
+    bool is_stop_gallery = 15;
+    uint64 server_game_time = 9;
+}
