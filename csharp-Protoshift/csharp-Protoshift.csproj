@@ -9,17 +9,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="GameSession\HandlerSession %28ProxyOnly%29.cs" />
     <Compile Remove="KCP\KCPHandle.cs" />
     <Compile Remove="KCP\KCPManager.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.1" />
+    <PackageReference Include="Crc32.NET" Version="1.2.0" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.3" />
+    <PackageReference Include="EPPlus" Version="6.2.4" />
     <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.3.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\KCP\Kcp\Kcp.csproj" />
     <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
     <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />
     <ProjectReference Include="..\XC.RSAUtil\XC.RSAUtil.csproj" />

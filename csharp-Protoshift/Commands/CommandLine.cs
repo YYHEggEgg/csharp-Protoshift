@@ -32,10 +32,10 @@ namespace csharp_Protoshift.Commands
         { 
             foreach (var handler in handlers)
             {
-                Log.Info($"Command '{handler.CommandName}': {handler.Description}", "CommandLine");
+                Log.Info($"Command '{handler.CommandName}': {handler.Description}", nameof(CommandLine));
                 string[] help = handler.Usage.Split(Environment.NewLine);
-                foreach (var line in help) Log.Info(line, "CommandLine");
-                Log.Info("", "CommandLine");
+                foreach (var line in help) Log.Info(line, nameof(CommandLine));
+                Log.Info("", nameof(CommandLine));
             }
         }
 
@@ -74,8 +74,8 @@ namespace csharp_Protoshift.Commands
                             }
                             catch (Exception ex)
                             {
-                                Log.Erro(ex.ToString(), "CommandLine");
-                                Log.Info($"Encountered error when handling command {commandName}. Please check your input.", "CommandLine");
+                                Log.Erro(ex.ToString(), nameof(CommandLine));
+                                Log.Info($"Encountered error when handling command {commandName}. Please check your input.", nameof(CommandLine));
                             }
                             break;
                         }
