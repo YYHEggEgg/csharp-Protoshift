@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Example\ProtoshiftDispatch.cs" />
     <Compile Remove="Example\ShiftCmdId.cs" />
   </ItemGroup>
 

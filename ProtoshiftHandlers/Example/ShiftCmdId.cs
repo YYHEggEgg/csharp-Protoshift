@@ -72,6 +72,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                 default: throw new NotSupportedException("The input old CmdId is unknown.");
             }
         }
+
+        public static uint NewShiftToOld(uint newCmdId)
+            => NewShiftToOld(newCmdId, ReadOnlySpan<byte>.Empty);
+
+        public static uint OldShiftToNew(uint oldCmdId)
+            => OldShiftToNew(oldCmdId, ReadOnlySpan<byte>.Empty);
     }
 }
 #endregion Designer Generated Code
