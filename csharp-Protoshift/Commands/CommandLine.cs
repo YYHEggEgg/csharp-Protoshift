@@ -1,5 +1,4 @@
-﻿using csharp_Protoshift.Commands.SkillIssueFix;
-using csharp_Protoshift.GameSession;
+﻿using csharp_Protoshift.GameSession;
 using csharp_Protoshift.resLoader;
 using System;
 using System.Collections.Generic;
