@@ -1,4 +1,5 @@
-﻿using csharp_Protoshift.resLoader;
+﻿using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
+using csharp_Protoshift.resLoader;
 using Funny.Crypto;
 using Newtonsoft.Json;
 using OfficeOpenXml;
@@ -88,8 +89,8 @@ namespace csharp_Protoshift.GameSession
                 List<ushort> _unordered_cmds_old = new();
                 foreach (var protoname in unordered_messages)
                 {
-                    _unordered_cmds_new.Add((ushort)NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
-                    _unordered_cmds_old.Add((ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
+                    _unordered_cmds_new.Add((ushort)NewProtos.AskCmdId.GetCmdIdFromProtoname(protoname));
+                    _unordered_cmds_old.Add((ushort)OldProtos.AskCmdId.GetCmdIdFromProtoname(protoname));
                 }
                 unordered_cmds_new = new(_unordered_cmds_new);
                 unordered_cmds_old = new(_unordered_cmds_old);
@@ -159,7 +160,7 @@ namespace csharp_Protoshift.GameSession
             var rtn = GetPacketResult(packet, cmdid, isNewCmdid, body_offset, body_length);
             Debug.Assert(rtn.GetUInt16(rtn.Length - 2) == 0x89AB);
 
-            if (!isNewCmdid && cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
+            if (!isNewCmdid && cmdid == OldProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
                 XorDecrypt(ref rtn, fallbackToDispatchKey: true);
             else XorDecrypt(ref rtn, fallbackToDispatchKey: fallback);
             return rtn;
@@ -233,12 +234,19 @@ namespace csharp_Protoshift.GameSession
             Stopwatch ProtoshiftWatch = new();
             ProtoshiftWatch.Start();
 
-            // TODO
+            byte[] rtn;
+            if (isNewCmdid) 
+                rtn = ProtoshiftDispatch.NewShiftToOld(cmdid, null, null, null, packet, body_offset, (int)body_length);
+            else rtn = ProtoshiftDispatch.OldShiftToNew(cmdid, null, null, null, packet, body_offset, (int)body_length);
 
             ProtoshiftWatch.Stop();
             if (ProtoshiftWatch.ElapsedMilliseconds > 15 && !unordered_cmds_old.Contains(cmdid))
             {
-                Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > 15ms)", $"PacketHandler({SessionId})");
+                Log.Warn($"Handling packet: " +
+                    (isNewCmdid 
+                    ? NewProtos.AskCmdId.GetProtonameFromCmdId(cmdid) 
+                    : OldProtos.AskCmdId.GetProtonameFromCmdId(cmdid)).ToString() +
+                    $" ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > 15ms)", $"PacketHandler({SessionId})");
             }
             // SubmitTimeRecord(protoname, false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
             return rtn;
