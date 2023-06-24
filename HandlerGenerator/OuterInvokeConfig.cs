@@ -17,7 +17,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// If protoc isn't in the PATH, you can change it to a definitive path.
         /// Not recommend a relative path because the working directory will be changed by the program at the startup. 
         /// </summary>
-        public const string protoc_path = "protoc";
+        public const string protoc_path = "./../protoc/bin/protoc";
         /// <summary>
         /// The dotnet runtime CLI from Microsoft. 
         /// If dotnet isn't in the PATH, you can change it to a definitive path.
