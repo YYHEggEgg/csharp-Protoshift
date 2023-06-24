@@ -1,20 +1,9 @@
 ﻿using csharp_Protoshift.Commands;
-using csharp_Protoshift.Commands.SkillIssueFix;
 using csharp_Protoshift.GameSession;
-using csharp_Protoshift.GameSession.SpecialFixs;
-using csharp_Protoshift.MhyKCP;
 using csharp_Protoshift.MhyKCP.Proxy;
 using csharp_Protoshift.resLoader;
-using csharp_Protoshift.SkillIssue;
 using OfficeOpenXml;
-using System;
-using System.Diagnostics;
 using System.Net;
-using System.Numerics;
-using System.Text;
-using System.Text.Json;
-using YSFreedom.Common.Net;
-using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift
@@ -65,31 +54,12 @@ namespace csharp_Protoshift
 
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-            #region SkillIssueFixCmd
-            SkillIssueFixCmd? sicmd = null;
-            if (File.Exists("skillissue_fix_config.json"))
-            {
-                sicmd = JsonSerializer.Deserialize<SkillIssueFixCmd>(
-                    File.ReadAllText("skillissue_fix_config.json"));
-            }
-            sicmd ??= new();
-            CommandLine.handlers.Add(sicmd);
-            skillcmd = sicmd;
-
-            // Add instances need to be saved here. Repeat time is 60s.
-            savetimer = new((_) =>
-            {
-                File.WriteAllText("skillissue_fix_config.json", JsonSerializer.Serialize(sicmd));
-            }, null, 0, 60000);
-            #endregion
-
             Log.Info("Start loading all protos, it will take some time...", "Entry");
-            Log.Info(NewProtos.QueryCmdId.Initialize(), "Entry");
-            Log.Info(OldProtos.QueryCmdId.Initialize(), "Entry");
+            // Log.Info(NewProtos.QueryCmdId.Initialize(), "Entry");
+            // Log.Info(OldProtos.QueryCmdId.Initialize(), "Entry");
 
-            Log.Info(ExtraFix.Initialize(), "Entry");
-            Log.Info(SkillIssueDetect.Initialize(), "Entry");
-            Log.Info(KcpPacketAudit.Initialize(), "Entry");
+            // Log.Info(SkillIssueDetect.Initialize(), "Entry");
+            // Log.Info(KcpPacketAudit.Initialize(), "Entry");
 
             /*var dbgsession = new HandlerSession(1001);
             var rtn = dbgsession.GetPacketResult(
@@ -115,13 +85,9 @@ namespace csharp_Protoshift
             Close();
         }
 
-        public static SkillIssueFixCmd skillcmd = new();
-        private static Timer? savetimer;
-
         public static void Close()
         {
             Log.Erro("Unreachable Close method invoked.");
-            savetimer?.Dispose();
         }
     }
 }
