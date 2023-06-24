@@ -1,0 +1,6 @@
+./protoc --proto_path="NewProtos/Proto" --csharp_out="NewProtos/Compiled" "NewProtos/Proto/ExampleEnum.proto"
+./protoc --proto_path="NewProtos/Proto" --csharp_out="NewProtos/Compiled" "NewProtos/Proto/InMessage.proto"
+./protoc --proto_path="NewProtos/Proto" --csharp_out="NewProtos/Compiled" "NewProtos/Proto/ExampleProto.proto"
+./protoc --proto_path="OldProtos/Proto" --csharp_out="OldProtos/Compiled" "OldProtos/Proto/ExampleEnum.proto"
+./protoc --proto_path="OldProtos/Proto" --csharp_out="OldProtos/Compiled" "OldProtos/Proto/ExampleProto.proto"
+./protoc --proto_path="OldProtos/Proto" --csharp_out="OldProtos/Compiled" "OldProtos/Proto/InMessage.proto"
