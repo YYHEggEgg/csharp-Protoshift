@@ -98,6 +98,8 @@ namespace csharp_Protoshift.GameSession
             catch (Exception ex)
             {
                 Log.Erro($"HandlerSession({SessionId}) init failed: {ex}", nameof(HandlerSession));
+                unordered_cmds_new = new(new List<ushort>());
+                unordered_cmds_old = new(new List<ushort>());
             }
             #endregion
         }
@@ -234,42 +236,56 @@ namespace csharp_Protoshift.GameSession
             Stopwatch ProtoshiftWatch = new();
             ProtoshiftWatch.Start();
 
-            byte[] rtn;
+            byte[] shifted_body;
+            string protoname = isNewCmdid
+                    ? NewProtos.AskCmdId.GetProtonameFromCmdId(cmdid)
+                    : OldProtos.AskCmdId.GetProtonameFromCmdId(cmdid);
+            ushort shifted_cmdid = (ushort)(isNewCmdid ? ShiftCmdId.NewShiftToOld(cmdid) : ShiftCmdId.OldShiftToNew(cmdid));
+
             if (isNewCmdid) 
-                rtn = ProtoshiftDispatch.NewShiftToOld(cmdid, null, null, null, packet, body_offset, (int)body_length);
-            else rtn = ProtoshiftDispatch.OldShiftToNew(cmdid, null, null, null, packet, body_offset, (int)body_length);
+                shifted_body = ProtoshiftDispatch.NewShiftToOld(cmdid, null, null, null, packet, body_offset, (int)body_length);
+            else shifted_body = ProtoshiftDispatch.OldShiftToNew(cmdid, null, null, null, packet, body_offset, (int)body_length);
+            if (isNewCmdid && cmdid == NewProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenReq"))
+                GetPlayerTokenReqNotify(shifted_body);
+
+            #region Build New Packet
+            int rtnpacketLength = body_offset + shifted_body.Length + 2;
+            byte[] rtn = new byte[rtnpacketLength];
+            Array.Copy(packet, 0, rtn, 0, body_offset);
+            rtn.SetUInt16(2, shifted_cmdid);
+            rtn.SetUInt32(2 + 2 + 2, (uint)shifted_body.Length);
+            Array.Copy(shifted_body, 0, rtn, body_offset, shifted_body.Length);
+            rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
+            #endregion
 
             ProtoshiftWatch.Stop();
             if (ProtoshiftWatch.ElapsedMilliseconds > 15 && !unordered_cmds_old.Contains(cmdid))
             {
-                Log.Warn($"Handling packet: " +
-                    (isNewCmdid 
-                    ? NewProtos.AskCmdId.GetProtonameFromCmdId(cmdid) 
-                    : OldProtos.AskCmdId.GetProtonameFromCmdId(cmdid)).ToString() +
-                    $" ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > 15ms)", $"PacketHandler({SessionId})");
+                Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > 15ms)", $"PacketHandler({SessionId})");
             }
             // SubmitTimeRecord(protoname, false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
-            return rtn;
+            return shifted_body;
         }
 
         protected byte[] client_seed;
         protected byte[] server_seed;
 
-#pragma warning disable CS8604 // 引用类型参数可能为 null。
-        private void GetPlayerTokenReqNotify(string messageJson)
+        private void GetPlayerTokenReqNotify(byte[] message_oldprotocol)
         {
-            uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
+            var message = OldProtos.GetPlayerTokenReq.Parser.ParseFrom(message_oldprotocol);
+            uint key_id = message.KeyId;
             client_seed = Resources.SPri[key_id].RsaDecrypt(
-                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "clientRandKey").GetString()),
+                Convert.FromBase64String(message.ClientRandKey),
                 RSAEncryptionPadding.Pkcs1)
                 .Fill0(8);
         }
 
-        private void GetPlayerTokenRspNotify(string messageJson)
+        private void GetPlayerTokenRspNotify(byte[] message_newprotocol)
         {
-            uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
+            var message = NewProtos.GetPlayerTokenRsp.Parser.ParseFrom(message_newprotocol);
+            uint key_id = message.KeyId;
             server_seed = Resources.CPri[key_id].RsaDecrypt(
-                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "serverRandKey").GetString()),
+                Convert.FromBase64String(message.ServerRandKey),
                 RSAEncryptionPadding.Pkcs1)
                 .Fill0(8);
             ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
@@ -279,7 +295,6 @@ namespace csharp_Protoshift.GameSession
                 Convert.ToHexString(XorKey) +
                 $"{Environment.NewLine}-----END HEX New 4096 XOR Key-----", $"HandlerSession({SessionId})");
         }
-#pragma warning restore CS8604 // 引用类型参数可能为 null。
 
         /// <summary>
         /// Used for special UnionCmdNotify shifting.
