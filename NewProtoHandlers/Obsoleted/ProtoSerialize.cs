@@ -6,9 +6,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace OldProtos
+namespace NewProtos.Obsoleted
 {
     public class ProtoSerialize
     {
@@ -16,7 +15,7 @@ namespace OldProtos
 #pragma warning disable CS8601 // 引用类型赋值可能为 null。
 #pragma warning disable CS8602 // 解引用可能出现空引用。
 #pragma warning disable CS8604 // 引用类型参数可能为 null。W
-        public ProtoSerialize(string protoname) : this(Type.GetType($"OldProtos.{protoname}")) { }
+        public ProtoSerialize(string protoname) : this(Type.GetType($"NewProtos.{protoname}")) { }
 
         public ProtoSerialize(Type prototype)
         {
@@ -45,7 +44,7 @@ namespace OldProtos
         public readonly string Protoname;
         public readonly Type Prototype;
 
-        private ProtoSerialize()
+        private ProtoSerialize() 
         {
             Parser = WindSeedClientNotify.Parser; // Fuck
             Protoname = "YYHEggEggg#6167";
@@ -76,7 +75,7 @@ namespace OldProtos
         {
             return Parser.ParseJson(protojson);
         }
-
+        
         /// <summary>
         /// No any checks. Use it at your own risk.
         /// </summary>

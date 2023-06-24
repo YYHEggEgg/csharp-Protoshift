@@ -1,4 +1,5 @@
 ﻿using Google.Protobuf;
+using OldProtos;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -6,8 +7,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
-namespace NewProtos
+namespace OldProtoHandlers.Obsoleted
 {
     public class ProtoSerialize
     {
@@ -15,7 +17,7 @@ namespace NewProtos
 #pragma warning disable CS8601 // 引用类型赋值可能为 null。
 #pragma warning disable CS8602 // 解引用可能出现空引用。
 #pragma warning disable CS8604 // 引用类型参数可能为 null。W
-        public ProtoSerialize(string protoname) : this(Type.GetType($"NewProtos.{protoname}")) { }
+        public ProtoSerialize(string protoname) : this(Type.GetType($"OldProtos.{protoname}")) { }
 
         public ProtoSerialize(Type prototype)
         {
@@ -44,7 +46,7 @@ namespace NewProtos
         public readonly string Protoname;
         public readonly Type Prototype;
 
-        private ProtoSerialize() 
+        private ProtoSerialize()
         {
             Parser = WindSeedClientNotify.Parser; // Fuck
             Protoname = "YYHEggEggg#6167";
@@ -75,7 +77,7 @@ namespace NewProtos
         {
             return Parser.ParseJson(protojson);
         }
-        
+
         /// <summary>
         /// No any checks. Use it at your own risk.
         /// </summary>
@@ -89,7 +91,7 @@ namespace NewProtos
             if (isNull) throw new InvalidOperationException("Trying to use an invalid instance.");
             try
             {
-                return MessageExtensions.ToByteArray(SerializeToIMessage(protojson));
+                return SerializeToIMessage(protojson).ToByteArray();
             }
             catch (InvalidProtocolBufferException)
             {
@@ -100,8 +102,8 @@ namespace NewProtos
                 var parse_method = parse_type.GetMethod("Parse", BindingFlags.Instance | BindingFlags.Public,
                     new Type[] { typeof(string) });
                 var parse_method_T = parse_method.MakeGenericMethod(Prototype);
-                return MessageExtensions.ToByteArray(parse_method_T.Invoke(
-                    Discard_Unknown_fields_Parser, new object[] { protojson }) as IMessage);
+                return (parse_method_T.Invoke(
+                    Discard_Unknown_fields_Parser, new object[] { protojson }) as IMessage).ToByteArray();
             }
         }
     }

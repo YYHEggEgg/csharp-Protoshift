@@ -7,11 +7,11 @@ using YYHEggEgg.Logger;
 using System.Diagnostics;
 using System.Collections.Concurrent;
 
-namespace OldProtos
+namespace NewProtos.Obsoleted
 {
     public class QueryCmdId
     {
-        public const string ProtoNamespace = "OldProtos";
+        public const string ProtoNamespace = "NewProtos";
 
         public static string ThisPath => AppDomain.CurrentDomain.BaseDirectory;
         private static ReadOnlyDictionary<int, string> cmdidToName;
@@ -25,7 +25,7 @@ namespace OldProtos
             var _cmdidToName = new Dictionary<int, string>();
             var _nameToCmdid = new Dictionary<string, int>();
 
-            var cmdids = File.ReadAllLines("resources/protobuf/oldcmdid.csv");
+            var cmdids = File.ReadAllLines("resources/protobuf/newcmdid.csv");
             foreach (var line in cmdids)
             {
                 var csvline = line.Split(',');
@@ -49,9 +49,9 @@ namespace OldProtos
 #pragma warning disable CS8602 // 解引用可能出现空引用。
             var messageTypes = from type in Assembly.GetAssembly(
                 Type.GetType($"{ProtoNamespace}.{nameof(GetPlayerTokenReq)}")).GetTypes()
-                where type.Namespace == ProtoNamespace 
-                where type.GetInterface("IMessage") != null
-                select type;
+                               where type.Namespace == ProtoNamespace
+                               where type.GetInterface("IMessage") != null
+                               select type;
 #pragma warning restore CS8602 // 解引用可能出现空引用。
             var messagesCount = messageTypes.Count();
 
@@ -63,7 +63,7 @@ namespace OldProtos
                 {
                     var name = type.FullName?.Substring(ProtoNamespace.Length + 1);
                     Log.Dbug($"Initializing Message: {name}", ProtoNamespace);
-                    ProtoSerialize serializer = new(name); // OldProtos.*
+                    ProtoSerialize serializer = new(name); // NewProtos.*
                     if (_nameToCmdid.ContainsKey(name))
                         _serializers.TryAdd(_nameToCmdid[name], serializer);
                     _serializers_queryByName.TryAdd(name, serializer);

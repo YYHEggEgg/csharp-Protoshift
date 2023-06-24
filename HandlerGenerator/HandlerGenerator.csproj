@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>csharp_Protoshift.Enhanced.Handlers.Generator</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.3" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.6.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="_protoc_test/**" />
+    <Compile Remove="ProtoFieldNameAnalyze/**" />
+    <Compile Remove="Proto2json_Output/**" />
+    <Compile Remove="proto2json/**" />
+  </ItemGroup>
+
+</Project>

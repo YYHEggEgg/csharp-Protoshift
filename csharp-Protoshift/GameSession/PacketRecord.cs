@@ -54,5 +54,9 @@ namespace csharp_Protoshift.GameSession
         /// The time of packet creation. Uses <c>DateTime.Now</c>.
         /// </summary>
         public DateTime packetTime;
+        /// <summary>
+        /// The packet head content, decoded from PacketHead protobuf. 
+        /// </summary>
+        public string? packetHeadContent;
     }
 }
