@@ -1,0 +1,12 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option csharp_namespace = "OldProtos";
+
+message AvatarRenameAuditContent {
+    string type = 1;
+    string content = 2;
+    uint32 auto_fail_time = 3;
+}

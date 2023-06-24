@@ -1,0 +1,13 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option csharp_namespace = "OldProtos";
+
+import "AvatarRenameAuditContent.proto";
+
+message AvatarRenameContentAuditField {
+    repeated AvatarRenameAuditContent segment_list = 1;
+    string name = 2;
+}
