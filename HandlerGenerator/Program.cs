@@ -30,9 +30,9 @@ Log.Dbug($"Startup Current directory is: {workingdir}.");
 bool passcheck = true;
 #region Find proto2json
 if (_workingdirinfo.Name == "csharp-Protoshift"
-    && Directory.Exists($"{workingdir}\\HandlerGenerator\\proto2json"))
+    && Directory.Exists($"{workingdir}/HandlerGenerator/proto2json"))
 {
-    workingdir = $"{workingdir}\\HandlerGenerator";
+    workingdir = $"{workingdir}/HandlerGenerator";
 }
 else if (_workingdirinfo.Name.StartsWith("net"))
 {
@@ -47,7 +47,7 @@ else if (_workingdirinfo.Name.StartsWith("net"))
     catch { }
 }
 #region Change working directory
-if (!File.Exists($"{workingdir}\\HandlerGenerator.csproj"))
+if (!File.Exists($"{workingdir}/HandlerGenerator.csproj"))
 {
     Log.Erro("Can't find source code path! Make sure you have cloned full code!", "ResourcesCheck");
     Log.Erro("Process terminated for false launch. Exit code is 4206.", "ResourcesCheck");
@@ -57,16 +57,16 @@ if (!File.Exists($"{workingdir}\\HandlerGenerator.csproj"))
 Environment.CurrentDirectory = workingdir;
 Log.Dbug($"Changed Current directory to: {workingdir}.");
 #endregion
-string proto2jsondir = $"{workingdir}\\proto2json";
-if (!File.Exists($"{proto2jsondir}\\go-proto2json_win32.exe"))
+string proto2jsondir = $"{workingdir}/proto2json";
+if (!File.Exists($"{proto2jsondir}/go-proto2json_win32.exe"))
 {
     Log.Erro("Proto2json not found! Please make sure you're running program with dotnet run and have comiled Executable!", "ResourcesCheck");
     passcheck = false;
 }
 #endregion
 #region Check Protos
-string newprotodir = $"{Directory.GetParent(workingdir)}\\NewProtoHandlers\\Google.Protobuf\\Protos";
-string oldprotodir = $"{Directory.GetParent(workingdir)}\\OldProtoHandlers\\Google.Protobuf\\Protos";
+string newprotodir = $"{Directory.GetParent(workingdir)}/NewProtoHandlers/Google.Protobuf/Protos";
+string oldprotodir = $"{Directory.GetParent(workingdir)}/OldProtoHandlers/Google.Protobuf/Protos";
 if (!Directory.Exists(newprotodir))
 {
     Log.Erro("Can't find NewProtos dir! Make sure to use this programs along with full source code!");
@@ -274,16 +274,16 @@ if (rebuildWatcher.NeedRebuild)
 {
     #region Compile Protos (protoc)
     ProcessStartInfo oldprotos_compile_protoc = new ProcessStartInfo(OuterInvokeConfig.protoc_path,
-        "--proto_path=\"OldProtoHandlers\\Google.Protobuf\\Protos\" " +
-        "\"OldProtoHandlers\\Google.Protobuf\\Protos\\*.proto\" " +
-        "--csharp_out=\"OldProtoHandlers\\Google.Protobuf\\Compiled\"")
+        "--proto_path=\"OldProtoHandlers/Google.Protobuf/Protos\" " +
+        "\"OldProtoHandlers/Google.Protobuf/Protos/*.proto\" " +
+        "--csharp_out=\"OldProtoHandlers/Google.Protobuf/Compiled\"")
     {
         WorkingDirectory = "./.."
     };
     ProcessStartInfo newprotos_compile_protoc = new ProcessStartInfo(OuterInvokeConfig.protoc_path,
-        "--proto_path=\"NewProtoHandlers\\Google.Protobuf\\Protos\" " +
-        "\"NewProtoHandlers\\Google.Protobuf\\Protos\\*.proto\" " +
-        "--csharp_out=\"NewProtoHandlers\\Google.Protobuf\\Compiled\"")
+        "--proto_path=\"NewProtoHandlers/Google.Protobuf/Protos\" " +
+        "\"NewProtoHandlers/Google.Protobuf/Protos/*.proto\" " +
+        "--csharp_out=\"NewProtoHandlers/Google.Protobuf/Compiled\"")
     {
         WorkingDirectory = "./.."
     };
@@ -301,32 +301,27 @@ if (rebuildWatcher.NeedRebuild)
     }
     #endregion
     #region Compile Protos (C#)
-    ProcessStartInfo oldprotos_compile_dotnet = new ProcessStartInfo(OuterInvokeConfig.dotnet_path, "build")
+    await OuterInvoke.RunMultiple(new OuterInvokeInfo
     {
-        WorkingDirectory = "./../OldProtoHandlers"
-    };
-    ProcessStartInfo newprotos_compile_dotnet = new ProcessStartInfo(OuterInvokeConfig.dotnet_path, "build")
+        ProcessPath = OuterInvokeConfig.dotnet_path,
+        CmdLine = "build",
+        StartingNotice = "Compiling OldProtos (dotnet), please wait...",
+        AutoTerminateReason = "OldProtos compiling (invoke dotnet) failed.",
+        WorkingDir = "./../OldProtoHandlers"
+    }, new OuterInvokeInfo
     {
-        WorkingDirectory = "./../NewProtoHandlers"
-    };
-    Process? dotnet_oldprotos = Process.Start(oldprotos_compile_dotnet);
-    Log.Info($"Compiling OldProtos (dotnet), please wait...", "OuterInvoke");
-    await (dotnet_oldprotos?.WaitForExitAsync() ?? Task.CompletedTask);
-    Process? dotnet_newprotos = Process.Start(newprotos_compile_dotnet);
-    Log.Info($"Compiling NewProtos (dotnet), please wait...", "OuterInvoke");
-    await (dotnet_newprotos?.WaitForExitAsync() ?? Task.CompletedTask);
-    if (dotnet_newprotos?.ExitCode != 0 || dotnet_oldprotos?.ExitCode != 0)
-    {
-        Log.Erro("Protos compiling (invoke dotnet) failed. Exit code is 60. ", "OuterInvoke");
-        Console.ReadLine();
-        Environment.Exit(60);
-    }
+        ProcessPath = OuterInvokeConfig.dotnet_path,
+        CmdLine = "build",
+        StartingNotice = "Compiling NewProtos (dotnet), please wait...",
+        AutoTerminateReason = "NewProtos compiling (invoke dotnet) failed.",
+        WorkingDir = "./../NewProtoHandlers"
+    }, 60);
     #endregion
     #region Invoke proto2json
-    if (Directory.Exists($"{workingdir}\\Proto2json_Output"))
+    if (Directory.Exists($"{workingdir}/Proto2json_Output"))
     {
         Log.Info("Detected old output directory, deleting...");
-        Directory.Delete($"{workingdir}\\Proto2json_Output", true);
+        Directory.Delete($"{workingdir}/Proto2json_Output", true);
     }
     Log.Info("Start invoking proto2json.exe. Please wait patiently...", "OuterInvoke");
     Stopwatch pinvokewatch = Stopwatch.StartNew();
@@ -339,21 +334,21 @@ if (rebuildWatcher.NeedRebuild)
     if (os.StartsWith("Win"))
     {
         Log.Dbug($"Found OS Type: Windows x{arch}.", "OuterInvoke");
-        proto2json_invokestr = $"{proto2jsondir}\\go-proto2json_win{arch}.exe";
+        proto2json_invokestr = $"{proto2jsondir}/go-proto2json_win{arch}.exe";
     }
     #endregion
     #region macOS
     else if (os.StartsWith("Darwin"))
     {
         Log.Dbug($"Found OS Type: macOS x{arch}.", "OuterInvoke");
-        proto2json_invokestr = $"{proto2jsondir}\\go-proto2json_mac{arch}";
+        proto2json_invokestr = $"{proto2jsondir}/go-proto2json_mac{arch}";
     }
     #endregion
     #region Linux
     else if (os.StartsWith("Linux"))
     {
         Log.Dbug($"Found OS Type: Linux x{arch}.", "OuterInvoke");
-        proto2json_invokestr = $"{proto2jsondir}\\go-proto2json_linux{arch}";
+        proto2json_invokestr = $"{proto2jsondir}/go-proto2json_linux{arch}";
     }
     #endregion
     else
@@ -364,29 +359,18 @@ if (rebuildWatcher.NeedRebuild)
     }
     #endregion
     Log.Dbug($"Using proto2json at path {proto2jsondir}.");
-    ProcessStartInfo startInfo = new ProcessStartInfo(proto2json_invokestr)
+    await OuterInvoke.Run(new OuterInvokeInfo
     {
-        // Not setting this will cause runtime error: invalid memory address or nil pointer dereference
-        WorkingDirectory = proto2jsondir
-    };
-    Process p = Process.Start(startInfo);
-    p.WaitForExit();
+        ProcessPath = proto2json_invokestr,
+        AutoTerminateReason = "Process terminated for proto2json not working properly."
+    }, 3300);
     pinvokewatch.Stop();
     Log.Info($"proto2json exited. Total execute time is {pinvokewatch.Elapsed}.", "OuterInvoke");
-    #region Fatal exit handle
-    if (p.ExitCode != 0)
-    {
-        Log.Erro($"proto2json exited with error code {p.ExitCode}. ", "OuterInvoke");
-        Log.Erro("Process terminated for proto2json not working properly. Exit code is 3300.", "OuterInvoke");
-        Console.ReadLine();
-        Environment.Exit(3300);
-    }
-    #endregion
     #endregion
 }
 await File.WriteAllTextAsync("last_build_record.json", rebuildWatcher.SerializeToJson());
-string newoutputdir = $"{workingdir}\\Proto2json_Output\\new";
-string oldoutputdir = $"{workingdir}\\Proto2json_Output\\old";
+string newoutputdir = $"{workingdir}/Proto2json_Output/new";
+string oldoutputdir = $"{workingdir}/Proto2json_Output/old";
 if (!Directory.Exists(newoutputdir) || !Directory.Exists(oldoutputdir))
 {
     Log.Erro("Process terminated for proto2json output directories not found. Exit code is 245.", "OuterInvoke");
