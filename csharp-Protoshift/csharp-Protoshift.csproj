@@ -17,7 +17,7 @@
   <ItemGroup>
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
     <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.3" />
-    <PackageReference Include="EPPlus" Version="6.2.4" />
+    <PackageReference Include="EPPlus" Version="6.2.6" />
     <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.3.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
