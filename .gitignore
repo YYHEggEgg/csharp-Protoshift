@@ -41,3 +41,5 @@
 /ProtoshiftHandlers/ProtoDispatch
 /NewProtoHandlers/AskCmdId.cs
 /OldProtoHandlers/AskCmdId.cs
+/NewProtoHandlers/Backup
+/OldProtoHandlers/Backup
