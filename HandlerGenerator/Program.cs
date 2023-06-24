@@ -1,10 +1,9 @@
-using YYHEggEgg.Logger;
-using System.Diagnostics;
 using csharp_Protoshift.Enhanced.Handlers.Generator;
-using System.Collections.Concurrent;
-using System.IO;
 using csharp_Protoshift.resLoader;
+using System.Collections.Concurrent;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using YYHEggEgg.Logger;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Protoshift Ex v1");
@@ -86,6 +85,174 @@ if (!passcheck)
     Environment.Exit(272574);
 }
 ResourcesLoader.CheckForRequiredResources();
+Directory.CreateDirectory("./../OldProtoHandlers/Backup");
+Directory.CreateDirectory("./../NewProtoHandlers/Backup");
+Directory.CreateDirectory("./../ProtoshiftHandlers/ProtoDispatch/Backup");
+#region Analyze Past file
+#region OldProtos.AskCmdId
+string askoldcmdid_filePath = "./../OldProtoHandlers/AskCmdId.cs";
+Dictionary<int, List<string>> cmd_askoldcmdid_specialHandles = new();
+if (File.Exists(askoldcmdid_filePath))
+{
+    var lines = File.ReadAllLines(askoldcmdid_filePath);
+    int? cur_cmd = null;
+    bool isInQueryName = false;
+    for (int i = 0; i < lines.Length; i++)
+    {
+        var line = lines[i].Trim();
+        if (!isInQueryName)
+        {
+            if (line.StartsWith("public static string GetProtonameFromCmdId")) isInQueryName = true;
+            continue;
+        }
+        if (cur_cmd == null)
+        {
+            if (line.StartsWith("case ")
+                && line.EndsWith("DON'T MODIFY THIS LINE - request special handle"))
+            {
+                int startIndex = "case ".Length;
+                int endIndex = line.IndexOf(':');
+                if (int.TryParse(line.Substring(startIndex, endIndex - startIndex), out int cmd_id))
+                {
+                    cur_cmd = cmd_id;
+                    cmd_askoldcmdid_specialHandles.Add((int)cur_cmd, new());
+                }
+                else
+                {
+                    Log.Warn("Read past file failure: OldProtoHandlers/AskCmdId.cs. This file will be overwritten.");
+                    cmd_askoldcmdid_specialHandles.Clear();
+                    break;
+                }
+            }
+        }
+        else
+        {
+            cmd_askoldcmdid_specialHandles[(int)cur_cmd].Add(line);
+            if (line.StartsWith("// DON'T MODIFY THIS LINE - end special handle"))
+            {
+                cur_cmd = null;
+                continue;
+            }
+        }
+    }
+    string backup_askoldcmdid_path = $"./../OldProtoHandlers/Backup/AskCmdId.cs-{DateTime.Now:yyyy_MM_dd-HH_mm_ss}.cs";
+    File.Move(askoldcmdid_filePath, backup_askoldcmdid_path);
+    Log.Info($"OldProtos.AskCmdId backup successfully created at {backup_askoldcmdid_path}", "AskCmdId_Generate");
+}
+#endregion
+#region NewProtos.AskCmdId
+string asknewcmdid_filePath = "./../NewProtoHandlers/AskCmdId.cs";
+Dictionary<int, List<string>> cmd_asknewcmdid_specialHandles = new();
+if (File.Exists(asknewcmdid_filePath))
+{
+    var lines = File.ReadAllLines(asknewcmdid_filePath);
+    int? cur_cmd = null;
+    bool isInQueryName = false;
+    for (int i = 0; i < lines.Length; i++)
+    {
+        var line = lines[i].Trim();
+        if (!isInQueryName)
+        {
+            if (line.StartsWith("public static string GetProtonameFromCmdId")) isInQueryName = true;
+            continue;
+        }
+        if (cur_cmd == null)
+        {
+            if (line.StartsWith("case ")
+                && line.EndsWith("DON'T MODIFY THIS LINE - request special handle"))
+            {
+                int startIndex = "case ".Length;
+                int endIndex = line.IndexOf(':');
+                if (int.TryParse(line.Substring(startIndex, endIndex - startIndex), out int cmd_id))
+                {
+                    cur_cmd = cmd_id;
+                    cmd_asknewcmdid_specialHandles.Add((int)cur_cmd, new());
+                }
+                else
+                {
+                    Log.Warn("Read past file failure: NewProtoHandlers/AskCmdId.cs. This file will be overwritten.");
+                    cmd_asknewcmdid_specialHandles.Clear();
+                    break;
+                }
+            }
+        }
+        else
+        {
+            cmd_asknewcmdid_specialHandles[(int)cur_cmd].Add(line);
+            if (line.StartsWith("// DON'T MODIFY THIS LINE - end special handle"))
+            {
+                cur_cmd = null;
+                continue;
+            }
+        }
+    }
+    string backup_asknewcmdid_path = $"./../NewProtoHandlers/Backup/AskCmdId.cs-{DateTime.Now:yyyy_MM_dd-HH_mm_ss}.cs";
+    File.Move(asknewcmdid_filePath, backup_asknewcmdid_path);
+    Log.Info($"NewProtos.AskCmdId backup successfully created at {backup_asknewcmdid_path}", "AskCmdId_Generate");
+}
+#endregion
+#region ShiftCmdId
+string shiftCmdId_filePath = "./../ProtoshiftHandlers/ProtoDispatch/ShiftCmdId.cs";
+Dictionary<int, List<string>> cmd_newshiftold_specialHandles = new();
+Dictionary<int, List<string>> cmd_oldshiftnew_specialHandles = new();
+if (File.Exists(shiftCmdId_filePath))
+{
+    var lines = File.ReadAllLines(shiftCmdId_filePath);
+    int? cur_cmd = null;
+    bool? isInNewShiftToOld = null;
+    for (int i = 0; i < lines.Length; i++)
+    {
+        var line = lines[i].Trim();
+        if (isInNewShiftToOld == null)
+        {
+            if (line.StartsWith("public static uint NewShiftToOld")) isInNewShiftToOld = true;
+            continue;
+        }
+        else if (line.StartsWith("public static uint OldShiftToNew")) isInNewShiftToOld = false;
+        if (cur_cmd == null)
+        {
+            if (line.StartsWith("case ")
+                && line.EndsWith("DON'T MODIFY THIS LINE - request special handle"))
+            {
+                int startIndex = "case ".Length;
+                int endIndex = line.IndexOf(':');
+                if (int.TryParse(line.Substring(startIndex, endIndex - startIndex), out int cmd_id))
+                {
+                    cur_cmd = cmd_id;
+                    ((bool)isInNewShiftToOld
+                        ? cmd_newshiftold_specialHandles
+                        : cmd_oldshiftnew_specialHandles).Add((int)cur_cmd, new());
+                }
+                else
+                {
+                    Log.Warn("Read past file failure: ShiftCmdId.cs. This file will be overwritten.");
+                    cmd_newshiftold_specialHandles.Clear();
+                    cmd_oldshiftnew_specialHandles.Clear();
+                    break;
+                }
+            }
+        }
+        else
+        {
+            if (line.StartsWith("// DON'T MODIFY THIS LINE - end special handle"))
+            {
+                ((bool)isInNewShiftToOld
+                ? cmd_newshiftold_specialHandles
+                : cmd_oldshiftnew_specialHandles)[(int)cur_cmd].Add(line);
+                cur_cmd = null;
+                continue;
+            }
+            else ((bool)isInNewShiftToOld
+                ? cmd_newshiftold_specialHandles
+                : cmd_oldshiftnew_specialHandles)[(int)cur_cmd].Add(line);
+        }
+    }
+    string backup_shiftCmdId_path = $"./../ProtoshiftHandlers/ProtoDispatch/Backup/ShiftCmdId-{DateTime.Now:yyyy_MM_dd-HH_mm_ss}.cs";
+    File.Move("./../ProtoshiftHandlers/ProtoDispatch/ShiftCmdId.cs", backup_shiftCmdId_path);
+    Log.Info($"ShiftCmdId backup successfully created at {backup_shiftCmdId_path}", "ShiftCmdId_Generate");
+}
+#endregion
+#endregion
 #region Smart Compiling
 Stopwatch rebuildWatcher_watch = Stopwatch.StartNew();
 RebuildWatcher rebuildWatcher;
@@ -121,10 +288,10 @@ if (rebuildWatcher.NeedRebuild)
         WorkingDirectory = "./.."
     };
     Process? protoc_oldprotos = Process.Start(oldprotos_compile_protoc);
-    Log.Info($"Compiling OldProtos, please wait...", "OuterInvoke");
+    Log.Info($"Compiling OldProtos (protoc), please wait...", "OuterInvoke");
     await (protoc_oldprotos?.WaitForExitAsync() ?? Task.CompletedTask);
     Process? protoc_newprotos = Process.Start(newprotos_compile_protoc);
-    Log.Info($"Compiling NewProtos, please wait...", "OuterInvoke");
+    Log.Info($"Compiling NewProtos (protoc), please wait...", "OuterInvoke");
     await (protoc_newprotos?.WaitForExitAsync() ?? Task.CompletedTask);
     if (protoc_newprotos?.ExitCode != 0 || protoc_oldprotos?.ExitCode != 0)
     {
@@ -143,10 +310,10 @@ if (rebuildWatcher.NeedRebuild)
         WorkingDirectory = "./../NewProtoHandlers"
     };
     Process? dotnet_oldprotos = Process.Start(oldprotos_compile_dotnet);
-    Log.Info($"Compiling OldProtos, please wait...", "OuterInvoke");
+    Log.Info($"Compiling OldProtos (dotnet), please wait...", "OuterInvoke");
     await (dotnet_oldprotos?.WaitForExitAsync() ?? Task.CompletedTask);
     Process? dotnet_newprotos = Process.Start(newprotos_compile_dotnet);
-    Log.Info($"Compiling NewProtos, please wait...", "OuterInvoke");
+    Log.Info($"Compiling NewProtos (dotnet), please wait...", "OuterInvoke");
     await (dotnet_newprotos?.WaitForExitAsync() ?? Task.CompletedTask);
     if (dotnet_newprotos?.ExitCode != 0 || dotnet_oldprotos?.ExitCode != 0)
     {
@@ -268,9 +435,9 @@ Parallel.ForEach(newprotojsons, path =>
 });
 Log.Info($"NewProtos: read {newmessages.Count} messages, {newenums.Count} enums.");
 #endregion
-CollectionResult<MessageResult> messageResults = 
+CollectionResult<MessageResult> messageResults =
     CollectionHelper.GetCompareResult(oldmessages, newmessages, MessageResult.NameComparer);
-CollectionResult<EnumResult> enumResults = 
+CollectionResult<EnumResult> enumResults =
     CollectionHelper.GetCompareResult(oldenums, newenums, EnumResult.NameComparer);
 #region Generate String Pool
 ProtocStringPoolManager compiledStringPool = new();
@@ -343,13 +510,27 @@ foreach (var shiftpair in enumResults.IntersectItems)
 }
 #endregion
 #endregion
+#region Special Handlers
+var handlerignores = TxtReader.ReadFrom("./Gencode_Configuration/handlerignore.txt");
+Directory.CreateDirectory("./../ProtoshiftHandlers/SpecialHandlers");
+foreach (var ignore in handlerignores)
+{
+    string fromFilePath = $"./../ProtoshiftHandlers/Generated/Handler{ignore}.cs";
+    string dstFilePath = $"./../ProtoshiftHandlers/SpecialHandlers/Handler{ignore}.cs";
+    if (!File.Exists(fromFilePath))
+    {
+        Log.Warn($"{ignore} is not a valid proto and will be skipped. Please check ./Gencode_Configuration/handlerignore.txt.", "HandlerIgnore_conf");
+        continue;
+    }
+    if (File.Exists(dstFilePath)) File.Delete(fromFilePath);
+    else File.Move(fromFilePath, dstFilePath);
+}
+#endregion
 Log.Info("Conguratulations! Protoshift handlers generated successfully.");
 Log.Info("Now generating CmdId related and ProtoshiftDispatch...");
 List<(string messageName, int cmdId)> oldcmdids = new();
 List<(string messageName, int cmdId)> newcmdids = new();
 SortedSet<string> messages_havecmdid = new();
-#region Generate AskCmdId
-#region OldProtos
 #region Read oldcmdid.csv
 try
 {
@@ -372,46 +553,6 @@ catch (IOException e)
     Log.Erro($"The file could not be read: {e}", "AskCmdIdGenerate");
 }
 #endregion
-using (BasicCodeWriter fi_askCmdId = new("./../OldProtoHandlers/AskCmdId.cs"))
-{
-    fi_askCmdId.WriteLine("// <auto-generated>");
-    fi_askCmdId.WriteLine("//     Generated by csharp-Protoshift.HandlerGenerator. DO NOT EDIT!");
-    fi_askCmdId.WriteLine("// </auto-generated>");
-    fi_askCmdId.WriteLine();
-    fi_askCmdId.WriteLine("#region Designer Generated Code");
-    fi_askCmdId.WriteLine();
-    fi_askCmdId.WriteLine("namespace OldProtos");
-    fi_askCmdId.EnterCodeRegion();
-    fi_askCmdId.WriteLine("public static class AskCmdId");
-    fi_askCmdId.EnterCodeRegion();
-    fi_askCmdId.WriteLine("public static uint GetCmdIdFromProtoname(string protoname)");
-    fi_askCmdId.EnterCodeRegion();
-    fi_askCmdId.WriteLine("switch (protoname)");
-    fi_askCmdId.EnterCodeRegion();
-    oldcmdids.Sort((l, r) => l.messageName.CompareTo(r.messageName));
-    foreach (var cmdPair in oldcmdids)
-    {
-        fi_askCmdId.WriteLine($"case \"{cmdPair.messageName}\": return {cmdPair.cmdId};");
-    }
-    fi_askCmdId.ExitCodeRegion();
-    fi_askCmdId.ExitCodeRegion();
-    fi_askCmdId.WriteLine("public static string GetProtonameFromCmdId(uint cmdid)");
-    fi_askCmdId.EnterCodeRegion();
-    fi_askCmdId.WriteLine("switch (cmdid)");
-    fi_askCmdId.EnterCodeRegion();
-    oldcmdids.Sort((l, r) => l.cmdId.CompareTo(r.cmdId));
-    foreach (var cmdPair in oldcmdids)
-    {
-        fi_askCmdId.WriteLine($"case {cmdPair.cmdId}: return \"{cmdPair.messageName}\";");
-    }
-    fi_askCmdId.ExitCodeRegion();
-    fi_askCmdId.ExitCodeRegion();
-    fi_askCmdId.ExitCodeRegion();
-    fi_askCmdId.ExitCodeRegion();
-    fi_askCmdId.WriteLine("#endregion Designer generated code");
-}
-#endregion
-#region NewProtos
 #region Read newcmdid.csv
 try
 {
@@ -434,46 +575,6 @@ catch (IOException e)
     Log.Erro($"The file could not be read: {e}", "AskCmdIdGenerate");
 }
 #endregion
-using (BasicCodeWriter fi_askCmdId = new("./../NewProtoHandlers/AskCmdId.cs"))
-{
-    fi_askCmdId.WriteLine("// <auto-generated>");
-    fi_askCmdId.WriteLine("//     Generated by csharp-Protoshift.HandlerGenerator. DO NOT EDIT!");
-    fi_askCmdId.WriteLine("// </auto-generated>");
-    fi_askCmdId.WriteLine();
-    fi_askCmdId.WriteLine("#region Designer Generated Code");
-    fi_askCmdId.WriteLine();
-    fi_askCmdId.WriteLine("namespace NewProtos");
-    fi_askCmdId.EnterCodeRegion();
-    fi_askCmdId.WriteLine("public static class AskCmdId");
-    fi_askCmdId.EnterCodeRegion();
-    fi_askCmdId.WriteLine("public static uint GetCmdIdFromProtoname(string protoname)");
-    fi_askCmdId.EnterCodeRegion();
-    fi_askCmdId.WriteLine("switch (protoname)");
-    fi_askCmdId.EnterCodeRegion();
-    newcmdids.Sort((l, r) => l.messageName.CompareTo(r.messageName));
-    foreach (var cmdPair in newcmdids)
-    {
-        fi_askCmdId.WriteLine($"case \"{cmdPair.messageName}\": return {cmdPair.cmdId};");
-    }
-    fi_askCmdId.ExitCodeRegion();
-    fi_askCmdId.ExitCodeRegion();
-    fi_askCmdId.WriteLine("public static string GetProtonameFromCmdId(uint cmdid)");
-    fi_askCmdId.EnterCodeRegion();
-    fi_askCmdId.WriteLine("switch (cmdid)");
-    fi_askCmdId.EnterCodeRegion();
-    newcmdids.Sort((l, r) => l.cmdId.CompareTo(r.cmdId));
-    foreach (var cmdPair in newcmdids)
-    {
-        fi_askCmdId.WriteLine($"case {cmdPair.cmdId}: return \"{cmdPair.messageName}\";");
-    }
-    fi_askCmdId.ExitCodeRegion();
-    fi_askCmdId.ExitCodeRegion();
-    fi_askCmdId.ExitCodeRegion();
-    fi_askCmdId.ExitCodeRegion();
-    fi_askCmdId.WriteLine("#endregion Designer generated code");
-}
-#endregion
-#endregion
 ReadOnlyCollection<string> supportedMessages = new(new List<string>(
     from pair in messageResults.IntersectItems
     select pair.LeftItem.messageName));
@@ -482,69 +583,7 @@ IEnumerable<(string messageName, int oldcmdid, int newcmdid)> supportedCmdIds =
     join @new in newcmdids
     on old.messageName equals @new.messageName
     select (old.messageName, old.cmdId, @new.cmdId);
-#region Generate ShiftCmdId
-string shiftCmdId_filePath = "./../ProtoshiftHandlers/ProtoDispatch/ShiftCmdId.cs";
-#region Analyze Past file
-Dictionary<int, List<string>> cmd_newshiftold_specialHandles = new();
-Dictionary<int, List<string>> cmd_oldshiftnew_specialHandles = new();
-if (File.Exists(shiftCmdId_filePath))
-{
-    var lines = File.ReadAllLines(shiftCmdId_filePath);
-    int? cur_cmd = null;
-    bool? isInNewShiftToOld = null;
-    for (int i = 0; i < lines.Length; i++)
-    {
-        var line = lines[i].Trim();
-        if (isInNewShiftToOld == null)
-        {
-            if (line.StartsWith("public static uint NewShiftToOld")) isInNewShiftToOld = true;
-            continue;
-        }
-        else if (line.StartsWith("public static uint OldShiftToNew")) isInNewShiftToOld = false;
-        if (cur_cmd == null)
-        {
-            if (line.StartsWith("case ") 
-                && line.EndsWith("DON'T MODIFY THIS LINE - request special handle"))
-            {
-                int startIndex = "case ".Length;
-                int endIndex = line.IndexOf(':');
-                if (int.TryParse(line.Substring(startIndex, endIndex - startIndex), out int cmd_id))
-                {
-                    cur_cmd = cmd_id;
-                    ((bool)isInNewShiftToOld 
-                        ? cmd_newshiftold_specialHandles 
-                        : cmd_oldshiftnew_specialHandles).Add((int)cur_cmd, new());
-                }
-                else
-                {
-                    Log.Warn("Read past file failure: ShiftCmdId.cs. This file will be overwritten.");
-                    cmd_newshiftold_specialHandles.Clear();
-                    cmd_oldshiftnew_specialHandles.Clear();
-                    break;
-                }
-            }
-        }
-        else
-        {
-            if (line.StartsWith("// DON'T MODIFY THIS LINE - end special handle"))
-            {
-                ((bool)isInNewShiftToOld
-                ? cmd_newshiftold_specialHandles
-                : cmd_oldshiftnew_specialHandles)[(int)cur_cmd].Add(line);
-                cur_cmd = null;
-                continue;
-            }
-            else ((bool)isInNewShiftToOld
-                ? cmd_newshiftold_specialHandles
-                : cmd_oldshiftnew_specialHandles)[(int)cur_cmd].Add(line);
-        }
-    }
-    string backup_shiftCmdId_path = $"./../ProtoshiftHandlers/ProtoDispatch/Backup/ShiftCmdId-{DateTime.Now:yyyy_MM_dd-HH_mm_ss}.cs";
-    File.Move("./../ProtoshiftHandlers/ProtoDispatch/ShiftCmdId.cs", backup_shiftCmdId_path);
-    Log.Info($"ShiftCmdId backup successfully created at {backup_shiftCmdId_path}", "ShiftCmdId_Generate");
-}
-#endregion
-Directory.CreateDirectory("./../ProtoshiftHandlers/ProtoDispatch/Backup");
+#region Generate CmdId related
 var cmdlist_order_new = from tuple in supportedCmdIds
                         group tuple by tuple.newcmdid into gr
                         orderby gr.Key
@@ -553,6 +592,199 @@ var cmdlist_order_old = from tuple in supportedCmdIds
                         group tuple by tuple.oldcmdid into gr
                         orderby gr.Key
                         select gr;
+#region Generate AskCmdId
+#region OldProtos
+using (BasicCodeWriter fi = new(askoldcmdid_filePath))
+{
+    fi.WriteLine("// <auto-generated>");
+    fi.WriteLine("//     Generated by csharp-Protoshift.HandlerGenerator.");
+    fi.WriteLine("// </auto-generated>");
+    fi.WriteLine();
+    fi.WriteLine("#region Designer Generated Code");
+    fi.WriteLine();
+    fi.WriteLine("namespace OldProtos");
+    fi.EnterCodeRegion();
+    fi.WriteLine("public static class AskCmdId");
+    fi.EnterCodeRegion();
+    fi.WriteLine("public static uint GetCmdIdFromProtoname(string protoname)");
+    fi.EnterCodeRegion();
+    fi.WriteLine("switch (protoname)");
+    fi.EnterCodeRegion();
+    oldcmdids.Sort((l, r) => l.messageName.CompareTo(r.messageName));
+    foreach (var cmdPair in oldcmdids)
+    {
+        fi.WriteLine($"case \"{cmdPair.messageName}\": return {cmdPair.cmdId};");
+    }
+    fi.WriteLine($"default: throw new NotSupportedException(\"Unknown message name or it doesn't have cmd_id.\")");
+    fi.ExitCodeRegion();
+    fi.ExitCodeRegion();
+    fi.WriteLine("// DON'T INSERT ANY CODE HERE");
+    fi.WriteLine("public static string GetProtonameFromCmdId(uint cmdid)");
+    fi.EnterCodeRegion();
+    fi.WriteLine("switch (cmdid)");
+    fi.EnterCodeRegion();
+    foreach (var grp in cmdlist_order_old)
+    {
+        if (grp.Count() == 1)
+        {
+            #region 1. No conflict
+            var tuple = grp.First();
+            fi.WriteLine($"case {tuple.oldcmdid}: return \"{tuple.messageName}\";");
+            #endregion
+        }
+        else if (grp.Count() == 0)
+        {
+            Log.Erro("2. FUCK (this line never shows)", "AskCmdId_Generate");
+        }
+        else
+        {
+            #region 3. Have conflict, but solved before
+            if (cmd_askoldcmdid_specialHandles.ContainsKey(grp.Key))
+            {
+                fi.WriteLine($"case {grp.Key}: // DON'T MODIFY THIS LINE - request special handle",
+                    cmd_askoldcmdid_specialHandles[grp.Key]);
+                Log.Dbug($"Successfully merged past special handle of Cmd: {grp.Key} to OldProtos.GetProtonameFromCmdId.", "AskCmdId_Generate");
+            }
+            #endregion
+            #region 4. Have conflict, never solved
+            else
+            {
+                var writing_list = new List<string>
+                {
+                    "// Q: Why I'm seeing this? ",
+                    "// A: There's a cmdid conflict in the provided cmdid.csv file.",
+                    "//    More simply, there're two proto sharing the same cmdid.",
+                    "//    That may be a mistake, but if you think the file is correct,",
+                    "//    that's because the two message have a difference in Channel id.",
+                    "// ",
+                    "//    e.g. all protos use ENET_CHANNEL_ID = 0, ",
+                    "//         but DebugNotify use ENET_CHANNEL_ID = 2. ",
+                    "//    In this case, you should write a code handling the packet head, ",
+                    "//    or just uncomment the line not specifing 'DebugNotify'. ",
+                    "// ",
+                    "//    Please REMEMBER COMMENT/DELETE the line throwing exception! ",
+                    "//    And don't delete 'request special handle' line, ",
+                    "//    or your changes will be overwritten during the next build!"
+                };
+                foreach (var tuple in grp)
+                {
+                    writing_list.Add($"// return \"{tuple.messageName}\";");
+                }
+                writing_list.Add("throw new NotSupportedException(\"The cmdid conflict haven't been solved. Search for 'request special handle' in OldProtoHandlers/AskCmdId.cs for more information.\");");
+                writing_list.Add("// DON'T MODIFY THIS LINE - end special handle");
+                fi.WriteLine($"case {grp.Key}: // DON'T MODIFY THIS LINE - request special handle",
+                    writing_list);
+                Log.Warn($"(OldProtos) AskCmdId.GetProtonameFromCmdId has cmd_id conflict to be solved (affected oldCmd: {grp.Key}). Search for 'request special handle' in OldProtoHandlers/AskCmdId.cs for more information.", "AskCmdId_Generate");
+            }
+            #endregion
+        }
+    }
+    fi.WriteLine("default: throw new NotSupportedException(\"The input old CmdId is unknown.\");");
+    fi.ExitCodeRegion();
+    fi.ExitCodeRegion();
+
+    fi.ExitCodeRegion();
+    fi.ExitCodeRegion();
+    fi.WriteLine("#endregion Designer generated code");
+}
+#endregion
+#region NewProtos
+using (BasicCodeWriter fi = new(asknewcmdid_filePath))
+{
+    fi.WriteLine("// <auto-generated>");
+    fi.WriteLine("//     Generated by csharp-Protoshift.HandlerGenerator.");
+    fi.WriteLine("// </auto-generated>");
+    fi.WriteLine();
+    fi.WriteLine("#region Designer Generated Code");
+    fi.WriteLine();
+    fi.WriteLine("namespace NewProtos");
+    fi.EnterCodeRegion();
+    fi.WriteLine("public static class AskCmdId");
+    fi.EnterCodeRegion();
+    fi.WriteLine("public static uint GetCmdIdFromProtoname(string protoname)");
+    fi.EnterCodeRegion();
+    fi.WriteLine("switch (protoname)");
+    fi.EnterCodeRegion();
+    newcmdids.Sort((l, r) => l.messageName.CompareTo(r.messageName));
+    foreach (var cmdPair in newcmdids)
+    {
+        fi.WriteLine($"case \"{cmdPair.messageName}\": return {cmdPair.cmdId};");
+    }
+    fi.WriteLine($"default: throw new NotSupportedException(\"Unknown message name or it doesn't have cmd_id.\")");
+    fi.ExitCodeRegion();
+    fi.ExitCodeRegion();
+    fi.WriteLine("// DON'T INSERT ANY CODE HERE");
+    fi.WriteLine("public static string GetProtonameFromCmdId(uint cmdid)");
+    fi.EnterCodeRegion();
+    fi.WriteLine("switch (cmdid)");
+    fi.EnterCodeRegion();
+    foreach (var grp in cmdlist_order_new)
+    {
+        if (grp.Count() == 1)
+        {
+            #region 1. No conflict
+            var tuple = grp.First();
+            fi.WriteLine($"case {tuple.newcmdid}: return \"{tuple.messageName}\";");
+            #endregion
+        }
+        else if (grp.Count() == 0)
+        {
+            Log.Erro("2. FUCK (this line never shows)", "AskCmdId_Generate");
+        }
+        else
+        {
+            #region 3. Have conflict, but solved before
+            if (cmd_asknewcmdid_specialHandles.ContainsKey(grp.Key))
+            {
+                fi.WriteLine($"case {grp.Key}: // DON'T MODIFY THIS LINE - request special handle",
+                    cmd_asknewcmdid_specialHandles[grp.Key]);
+                Log.Dbug($"Successfully merged past special handle of Cmd: {grp.Key} to NewProtos.GetProtonameFromCmdId.", "AskCmdId_Generate");
+            }
+            #endregion
+            #region 4. Have conflict, never solved
+            else
+            {
+                var writing_list = new List<string>
+                {
+                    "// Q: Why I'm seeing this? ",
+                    "// A: There's a cmdid conflict in the provided cmdid.csv file.",
+                    "//    More simply, there're two proto sharing the same cmdid.",
+                    "//    That may be a mistake, but if you think the file is correct,",
+                    "//    that's because the two message have a difference in Channel id.",
+                    "// ",
+                    "//    e.g. all protos use ENET_CHANNEL_ID = 0, ",
+                    "//         but DebugNotify use ENET_CHANNEL_ID = 2. ",
+                    "//    In this case, you should write a code handling the packet head, ",
+                    "//    or just uncomment the line not specifing 'DebugNotify'. ",
+                    "// ",
+                    "//    Please REMEMBER COMMENT/DELETE the line throwing exception! ",
+                    "//    And don't delete 'request special handle' line, ",
+                    "//    or your changes will be overwritten during the next build!"
+                };
+                foreach (var tuple in grp)
+                {
+                    writing_list.Add($"// return \"{tuple.messageName}\";");
+                }
+                writing_list.Add("throw new NotSupportedException(\"The cmdid conflict haven't been solved. Search for 'request special handle' in NewProtoHandlers/AskCmdId.cs for more information.\");");
+                writing_list.Add("// DON'T MODIFY THIS LINE - end special handle");
+                fi.WriteLine($"case {grp.Key}: // DON'T MODIFY THIS LINE - request special handle",
+                    writing_list);
+                Log.Warn($"(NewProtos) AskCmdId.GetProtonameFromCmdId has cmd_id conflict to be solved (affected oldCmd: {grp.Key}). Search for 'request special handle' in NewProtoHandlers/AskCmdId.cs for more information.", "AskCmdId_Generate");
+            }
+            #endregion
+        }
+    }
+    fi.WriteLine("default: throw new NotSupportedException(\"The input old CmdId is unknown.\");");
+    fi.ExitCodeRegion();
+    fi.ExitCodeRegion();
+
+    fi.ExitCodeRegion();
+    fi.ExitCodeRegion();
+    fi.WriteLine("#endregion Designer generated code");
+}
+#endregion
+#endregion
+#region Generate ShiftCmdId
 using (BasicCodeWriter fi = new(shiftCmdId_filePath))
 {
     fi.WriteLine("// <auto-generated>");
@@ -701,6 +933,7 @@ using (BasicCodeWriter fi = new(shiftCmdId_filePath))
     fi.ExitCodeRegion();
     fi.WriteLine("#endregion Designer generated code");
 }
+#endregion
 #endregion
 #region Generate Protoshift Dispatch
 #region Analyze Past file
@@ -892,7 +1125,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
                     "ProtoshiftHandlers/ProtoDispatch/ShiftCmdId.cs to get info about " +
                     "the exception, look at the beginning of NewShiftToOld method in " +
                     "ProtoshiftHandlers/ProtoDispatch/ProtoshiftDispatch.cs " +
-                    "to get modification grammar, and search for 'solve the proto conflict here'.", 
+                    "to get modification grammar, and search for 'solve the proto conflict here'.",
                     "ProtoshiftDispatch_Generate");
             }
             #endregion
@@ -1005,7 +1238,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
                     "ProtoshiftHandlers/ProtoDispatch/ShiftCmdId.cs to get info about " +
                     "the exception, look at the beginning of NewShiftToOld method in " +
                     "ProtoshiftHandlers/ProtoDispatch/ProtoshiftDispatch.cs " +
-                    "to get modification grammar, and search for 'solve the proto conflict here'.", 
+                    "to get modification grammar, and search for 'solve the proto conflict here'.",
                     "ProtoshiftDispatch_Generate");
             }
             #endregion
@@ -1118,7 +1351,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
                     "ProtoshiftHandlers/ProtoDispatch/ShiftCmdId.cs to get info about " +
                     "the exception, look at the beginning of NewShiftToOld method in " +
                     "ProtoshiftHandlers/ProtoDispatch/ProtoshiftDispatch.cs " +
-                    "to get modification grammar, and search for 'solve the proto conflict here'.", 
+                    "to get modification grammar, and search for 'solve the proto conflict here'.",
                     "ProtoshiftDispatch_Generate");
             }
             #endregion
@@ -1237,7 +1470,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
                     "ProtoshiftHandlers/ProtoDispatch/ShiftCmdId.cs to get info about " +
                     "the exception, look at the beginning of OldShiftToNew method in " +
                     "ProtoshiftHandlers/ProtoDispatch/ProtoshiftDispatch.cs " +
-                    "to get modification grammar, and search for 'solve the proto conflict here'.", 
+                    "to get modification grammar, and search for 'solve the proto conflict here'.",
                     "ProtoshiftDispatch_Generate");
             }
             #endregion
@@ -1350,7 +1583,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
                     "ProtoshiftHandlers/ProtoDispatch/ShiftCmdId.cs to get info about " +
                     "the exception, look at the beginning of OldShiftToNew method in " +
                     "ProtoshiftHandlers/ProtoDispatch/ProtoshiftDispatch.cs " +
-                    "to get modification grammar, and search for 'solve the proto conflict here'.", 
+                    "to get modification grammar, and search for 'solve the proto conflict here'.",
                     "ProtoshiftDispatch_Generate");
             }
             #endregion
@@ -1463,7 +1696,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
                     "ProtoshiftHandlers/ProtoDispatch/ShiftCmdId.cs to get info about " +
                     "the exception, look at the beginning of OldShiftToNew method in " +
                     "ProtoshiftHandlers/ProtoDispatch/ProtoshiftDispatch.cs " +
-                    "to get modification grammar, and search for 'solve the proto conflict here'.", 
+                    "to get modification grammar, and search for 'solve the proto conflict here'.",
                     "ProtoshiftDispatch_Generate");
             }
             #endregion
