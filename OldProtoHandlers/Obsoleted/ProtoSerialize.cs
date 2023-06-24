@@ -28,6 +28,7 @@ namespace OldProtoHandlers.Obsoleted
             Parser = Parser.WithDiscardUnknownFields(true);
             Protoname = prototype.Name;
             isNull = false;
+            DeserializeToJson(SerializeFromJson("{}")); // Initialize protobuf class
         }
 #pragma warning restore CS8600 // 将 null 字面量或可能为 null 的值转换为非 null 类型。
 #pragma warning restore CS8601 // 引用类型赋值可能为 null。
@@ -59,6 +60,12 @@ namespace OldProtoHandlers.Obsoleted
         {
             if (isNull) throw new InvalidOperationException("Trying to use an invalid instance.");
             return JsonFormatter.Default.Format(Parser.ParseFrom(protobin));
+        }
+
+        public string DeserializeToJson(byte[] protobin, int offset, int length)
+        {
+            if (isNull) throw new InvalidOperationException("Trying to use an invalid instance.");
+            return JsonFormatter.Default.Format(Parser.ParseFrom(protobin, offset, length));
         }
 
         public string DeserializeFromProto<T>(T protocol) where T : IMessage<T>

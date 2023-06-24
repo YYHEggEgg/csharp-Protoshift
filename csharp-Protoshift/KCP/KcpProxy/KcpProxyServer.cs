@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
-using YSFreedom.Common.Net;
-using YYHEggEgg.Logger;
+﻿// #define KCP_PROXY_VERBOSE // not avaliable currently
 
-namespace csharp_Protoshift.KcpProxy
+using System.Collections.Concurrent;
+using System.Net;
+using YYHEggEgg.Logger;
+using csharp_Protoshift.SpecialUdp;
+
+namespace csharp_Protoshift.MhyKCP.Proxy
 {
     public class KcpProxyServer : KCPServer
     {
@@ -18,59 +13,65 @@ namespace csharp_Protoshift.KcpProxy
 
         public KcpProxyServer(IPEndPoint bindToAddress, IPEndPoint sendToAddress)
         {
-            udpSock = new UdpClient(bindToAddress);
+            udpSock = new SocketUdpClient(bindToAddress);
             SendToEndpoint = sendToAddress;
 
+            _updatelock = new(nameof(KcpProxyServer));
             Task.Run(BackgroundUpdate);
         }
 
-        protected new async Task BackgroundUpdate()
+        protected override async Task BackgroundUpdate()
         {
-            UdpReceiveResult packet;
-            try
+            _updatelock.Enter();
+            while (!_Closed)
             {
-                packet = await udpSock.ReceiveAsync();
-            }
-            catch (Exception ex)
-            {
-                Log.Dbug($"BackgroundUpdate receiving packet meets error and restart: {ex}", "KcpProxyServer");
-                await Task.Run(BackgroundUpdate);
-                return;
-            }
-            if (clients.ContainsKey(packet.RemoteEndPoint))
-            {
+                SocketUdpReceiveResult packet;
+                string remoteIpString;
                 try
                 {
-                    ((KcpProxy)clients[packet.RemoteEndPoint]).Input(packet.Buffer);
+                    packet = await udpSock.ReceiveFromAsync();
+                    remoteIpString = packet.RemoteEndPoint.ToString();
                 }
                 catch (Exception ex)
                 {
-                    Log.Dbug($"BackgroundUpdate:Connected reached exception {ex}", "KcpProxyServer");
-                    clients.Remove(packet.RemoteEndPoint);
+                    Log.Dbug($"BackgroundUpdate receiving packet meets error and restart: {ex}", nameof(KcpProxyServer));
+                    continue;
+                }
+                if (clients.ContainsKey(remoteIpString))
+                {
+                    try
+                    {
+                        ((KcpProxyBase)clients[remoteIpString]).Input(packet.Buffer);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Dbug($"BackgroundUpdate:Connected reached exception {ex}", nameof(KcpProxyServer));
+                        clients.Remove(remoteIpString);
+                    }
+                }
+                else
+                {
+                    KcpProxyBase? conn = null;
+                    try
+                    {
+                        // Oh boy! A new connection!
+                        conn = new KcpProxyBase(sendToAddress: SendToEndpoint);
+                        conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
+                        Log.Dbug($"New connection established, remote endpoint={remoteIpString}");
+                        conn.AcceptNonblock();
+                        conn.Input(packet.Buffer);
+
+                        clients[remoteIpString] = conn;
+                        newConnections.Enqueue(packet.RemoteEndPoint);
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Dbug($"BackgroundUpdate:NewConnection reached exception {ex}", nameof(KcpProxyServer));
+                        conn?.Dispose();
+                    }
                 }
             }
-            else
-            {
-                // Oh boy! A new connection!
-                var conn = new KcpProxy(sendToAddress: SendToEndpoint);
-                conn.Output = (data) => { return udpSock.Send(data, data.Length, packet.RemoteEndPoint); };
-                try
-                {
-                    Log.Dbug($"New connection established, remote endpoint={packet.RemoteEndPoint}");
-                    conn.AcceptNonblock();
-                    conn.Input(packet.Buffer);
-
-                    clients[packet.RemoteEndPoint] = conn;
-                    newConnections.Enqueue(packet.RemoteEndPoint);
-                }
-                catch (Exception ex)
-                {
-                    Log.Dbug($"BackgroundUpdate:NewConnection reached exception {ex}", "KcpProxyServer");
-                    conn.Dispose();
-                }
-            }
-
-            if (!_Closed) await Task.Run(BackgroundUpdate);
+            _updatelock.Exit();
         }
 
         /// <summary>
@@ -80,20 +81,15 @@ namespace csharp_Protoshift.KcpProxy
         /// <param name="ClientPacketHandler">Handle packet from client to server as a middleware. byte[] is packet, uint is session id.</param>
         public async void StartProxy(ProxyHandlers handlers)
         {
-            handlers.OnServerPacketArrival ??= ((data, conv) => data);
-            handlers.OnClientPacketArrival ??= ((data, conv) => data);
-            handlers.IsUrgentServerPacket ??= ((data, conv) => false);
-            handlers.IsUrgentClientPacket ??= ((data, conv) => false);
-
-            while (true)
+            while (!_Closed)
             {
                 try
                 {
                     var ret = await AcceptAsync();
-                    Log.Info($"New connection from {ret.RemoteEndpoint}.", "KcpProxyServer");
+                    Log.Info($"New connection from {ret.RemoteEndpoint}.", nameof(KcpProxyServer));
 
-                    HandleServer(ret.RemoteEndpoint, handlers);
-                    HandleClient(ret.RemoteEndpoint, handlers);
+                    _ = Task.Run(() => HandleServer(ret.RemoteEndpoint, handlers));
+                    _ = Task.Run(() => HandleClient(ret.RemoteEndpoint, handlers));
                 }
                 catch (Exception ex)
                 {
@@ -102,90 +98,117 @@ namespace csharp_Protoshift.KcpProxy
             }
         }
 
-        protected async void HandleClient(IPEndPoint remotePoint, ProxyHandlers handlers)
+        #region Handle as a client (send to server)
+        protected void HandleClient(IPEndPoint remotePoint, ProxyHandlers handlers)
         {
-            var conn = (KcpProxy)clients[remotePoint];
+            string remoteIpString = remotePoint.ToString();
+            if (!clients.ContainsKey(remoteIpString)) return;
+            var conn = (KcpProxyBase)clients[remoteIpString];
+            var IsOrderedPacket = handlers.ClientPacketOrdered;
             var PacketHandler = handlers.OnClientPacketArrival;
-            var IsUrgentPacket = handlers.IsUrgentClientPacket;
-            while (conn.State == KCP.ConnectionState.CONNECTED)
+            while (conn.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
                 try
                 {
-                    var beforepacket = await conn.ReceiveAsync();
-                    // Log.Dbug($"Server Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ServerHandler");
-                    if (IsUrgentPacket(beforepacket, conn.Conv))
+                    var beforepacket = conn.Receive();
+#if KCP_PROXY_VERBOSE
+                    Log.Dbug($"Server Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", $"{nameof(KcpProxyServer)}:ServerHandler");
+#endif
+                    if (beforepacket == null)
                     {
-                        var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                        if (afterpacket != null)
-                            await conn.sendClient.SendAsync(afterpacket);
-                        // Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerHandler");
+                        Log.Dbug($"Skipped null? packet (session {conn.Conv})", $"{nameof(KcpProxyServer)}:ServerHandler");
+                        continue;
                     }
-                    else _ = Task.Run(async () =>
+                    if (IsOrderedPacket(beforepacket, conn.Conv))
                     {
-                        try
-                        {
-                            var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                            if (afterpacket != null)
-                                await conn.sendClient.SendAsync(afterpacket);
-                            // Log.Dbug($"Client Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ServerHandler");
-                        }
-                        catch (Exception e)
-                        {
-                            Log.Dbug(e.ToString(), "KcpProxyServer:ServerHandler");
-                            //conn.Close();
-                        }
-                    });
+                        SendClientPacket(conn, beforepacket, PacketHandler);
+                    }
+                    else
+                    {
+                        _ = Task.Run(() => SendClientPacket(conn, beforepacket, PacketHandler));
+                    }
                 }
                 catch (Exception e)
                 {
-                    Log.Dbug(e.ToString(), "KcpProxyServer:ServerHandler");
-                    conn.Close();
+                    Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ServerHandler");
+                    //conn.Close();
                     break;
                 }
             }
         }
 
-        protected async void HandleServer(IPEndPoint remotePoint, ProxyHandlers handlers)
+        private void SendClientPacket(KcpProxyBase conn, byte[] beforepacket, 
+            Func<byte[], uint, byte[]?> PacketHandler)
         {
-            var conn = (KcpProxy)clients[remotePoint];
+            try
+            {
+                var afterpacket = PacketHandler(beforepacket, conn.Conv);
+                conn.sendClient.Send(afterpacket);
+#if KCP_PROXY_VERBOSE
+                Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", $"{nameof(KcpProxyServer)}:ServerSender");
+#endif
+            }
+            catch (Exception e)
+            {
+                Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ServerHandler");
+                //conn.Close();
+            }
+        }
+        #endregion
+
+        #region Handle as a server (send to client)
+        protected void HandleServer(IPEndPoint remotePoint, ProxyHandlers handlers)
+        {
+            string remoteIpString = remotePoint.ToString();
+            if (!clients.ContainsKey(remoteIpString)) return;
+            var conn = (KcpProxyBase)clients[remoteIpString];
+            var IsOrderedPacket = handlers.ServerPacketOrdered;
             var PacketHandler = handlers.OnServerPacketArrival;
-            var IsUrgentPacket = handlers.IsUrgentServerPacket;
-            while (conn.sendClient.State == KCP.ConnectionState.CONNECTED)
+            while (conn.sendClient?.State == MhyKcpBase.ConnectionState.CONNECTED)
             {
                 try
                 {
-                    var beforepacket = await conn.sendClient.ReceiveAsync();
-                    // Log.Dbug($"Client Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", "KcpProxyServer:ClientHandler");
-                    if (IsUrgentPacket(beforepacket, conn.Conv))
+                    var beforepacket = conn.sendClient.Receive();
+                    if (beforepacket == null)
                     {
-                        var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                        if (afterpacket != null)
-                            await conn.SendAsync(afterpacket);
-                        // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
+                        Log.Dbug($"Skipped null? packet (session {conn.Conv})", $"{nameof(KcpProxyServer)}:ClientHandler");
+                        continue;
                     }
-                    else _ = Task.Run(async () =>
+#if KCP_PROXY_VERBOSE
+                    Log.Dbug($"Client Received Packet (session {conn.Conv})---{Convert.ToHexString(beforepacket)}", $"{nameof(KcpProxyServer)}:ClientHandler");
+#endif
+                    if (IsOrderedPacket(beforepacket, conn.Conv))
                     {
-                        try
-                        {
-                            var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                            if (afterpacket != null)
-                                await conn.SendAsync(afterpacket);
-                            // Log.Dbug($"Server Sent Packet (session {conn.Conv})---{Convert.ToHexString(afterpacket)}", "KcpProxyServer:ClientHandler");
-                        }
-                        catch (Exception e)
-                        {
-                            Log.Dbug(e.ToString(), "KcpProxyClient:ClientHandler");
-                            //conn.sendClient.Close();
-                        }
-                    });
+                        SendServerPacket(conn, beforepacket, PacketHandler);
+                    }
+                    else
+                    {
+                        _ = Task.Run(() => SendServerPacket(conn, beforepacket, PacketHandler));
+                    }
                 }
                 catch (Exception e)
                 {
-                    Log.Dbug(e.ToString(), "KcpProxyServer:ClientHandler");
-                    conn.sendClient.Close();
+                    Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ClientHandler");
+                    //conn.sendClient.Close();
                     break;
                 }
             }
         }
+
+        private void SendServerPacket(KcpProxyBase conn, byte[] beforepacket,
+            Func<byte[], uint, byte[]?> PacketHandler)
+        {
+            try
+            {
+                var afterpacket = PacketHandler(beforepacket, conn.Conv);
+                conn.Send(afterpacket);
+            }
+            catch (Exception e)
+            {
+                Log.Dbug(e.ToString(), $"{nameof(KcpProxyServer)}:ClientHandler");
+                //conn.sendClient.Close();
+            }
+        }
+        #endregion
     }
 }
