@@ -26,6 +26,7 @@
     <ProjectReference Include="..\KCP\Kcp\Kcp.csproj" />
     <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
     <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />
+    <ProjectReference Include="..\ProtoshiftHandlers\ProtoshiftHandlers.csproj" />
     <ProjectReference Include="..\XC.RSAUtil\XC.RSAUtil.csproj" />
   </ItemGroup>
 
