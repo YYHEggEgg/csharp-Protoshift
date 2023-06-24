@@ -173,6 +173,40 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             return rtn;
         }
     
+        
+        /// <summary>
+        /// Syncronously run multiple processes with certain args and wait for exit.
+        /// </summary>
+        /// <param name="invokeInfos">The details of the invokes.</param>
+        /// <param name="autoTerminateCode">The exut code for the program's auto terminate.</param>
+        /// <returns>The exit code of the program.</returns>
+        public static async Task<int[]> RunMultiple(List<OuterInvokeInfo> invokeInfos,
+            int autoTerminateCode = -1)
+        {
+            int[] rtn = new int[invokeInfos.Count];
+            for (int i = 0; i < invokeInfos.Count; i++)
+            {
+                rtn[i] = await InnerRun(invokeInfos[i]);
+            }
+
+            bool exiting = false;
+            for (int i = 0; i < invokeInfos.Count; i++)
+            {
+                if (rtn[i] != 0 && invokeInfos[i].AutoTerminateReason != null)
+                {
+                    exiting = true;
+                    Log.Erro($"{invokeInfos[i].AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
+                }
+            }
+            if (exiting)
+            {
+                Log.Info("Press any key to exit...");
+                Console.ReadLine();
+                Environment.Exit(autoTerminateCode);
+            }
+            return rtn;
+        }
+    
         /// <summary>
         /// Run multiple processes parallel with certain args and wait for exit. Notice: may cause unexpected behaviour.
         /// </summary>
@@ -190,6 +224,39 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
 
             bool exiting = false;
             for (int i = 0; i < invokeInfos.Length; i++)
+            {
+                if (rtn[i] != 0 && invokeInfos[i].AutoTerminateReason != null)
+                {
+                    exiting = true;
+                    Log.Erro($"{invokeInfos[i].AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
+                }
+            }
+            if (exiting)
+            {
+                Log.Info("Press any key to exit...");
+                Console.ReadLine();
+                Environment.Exit(autoTerminateCode);
+            }
+            return rtn;
+        }
+    
+        /// <summary>
+        /// Run multiple processes parallel with certain args and wait for exit. Notice: may cause unexpected behaviour.
+        /// </summary>
+        /// <param name="invokeInfos">The details of the invokes.</param>
+        /// <param name="autoTerminateCode">The exut code for the program's auto terminate.</param>
+        /// <returns>The exit code of the program.</returns>
+        public static int[] RunParallel(List<OuterInvokeInfo> invokeInfos,
+            int autoTerminateCode = -1)
+        {
+            int[] rtn = new int[invokeInfos.Count];
+            Parallel.For(0, invokeInfos.Count, async (i) =>
+            {
+                rtn[i] = await InnerRun(invokeInfos[i]);
+            });
+
+            bool exiting = false;
+            for (int i = 0; i < invokeInfos.Count; i++)
             {
                 if (rtn[i] != 0 && invokeInfos[i].AutoTerminateReason != null)
                 {
