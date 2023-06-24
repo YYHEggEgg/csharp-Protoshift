@@ -273,32 +273,42 @@ Log.Info($"Rebuild judge completed (need rebuild: {rebuildWatcher.NeedRebuild}),
 if (rebuildWatcher.NeedRebuild)
 {
     #region Compile Protos (protoc)
-    ProcessStartInfo oldprotos_compile_protoc = new ProcessStartInfo(OuterInvokeConfig.protoc_path,
-        "--proto_path=\"OldProtoHandlers/Google.Protobuf/Protos\" " +
-        "\"OldProtoHandlers/Google.Protobuf/Protos/*.proto\" " +
-        "--csharp_out=\"OldProtoHandlers/Google.Protobuf/Compiled\"")
+    List<OuterInvokeInfo> protoc_invokes = new();
+    #region OldProtos
+    var oldproto_files = Directory.EnumerateFiles(
+        "./../OldProtoHandlers/Google.Protobuf/Protos", 
+        "*.proto", SearchOption.AllDirectories);
+    foreach (var proto_file in oldproto_files)
     {
-        WorkingDirectory = "./.."
-    };
-    ProcessStartInfo newprotos_compile_protoc = new ProcessStartInfo(OuterInvokeConfig.protoc_path,
-        "--proto_path=\"NewProtoHandlers/Google.Protobuf/Protos\" " +
-        "\"NewProtoHandlers/Google.Protobuf/Protos/*.proto\" " +
-        "--csharp_out=\"NewProtoHandlers/Google.Protobuf/Compiled\"")
-    {
-        WorkingDirectory = "./.."
-    };
-    Process? protoc_oldprotos = Process.Start(oldprotos_compile_protoc);
-    Log.Info($"Compiling OldProtos (protoc), please wait...", "OuterInvoke");
-    await (protoc_oldprotos?.WaitForExitAsync() ?? Task.CompletedTask);
-    Process? protoc_newprotos = Process.Start(newprotos_compile_protoc);
-    Log.Info($"Compiling NewProtos (protoc), please wait...", "OuterInvoke");
-    await (protoc_newprotos?.WaitForExitAsync() ?? Task.CompletedTask);
-    if (protoc_newprotos?.ExitCode != 0 || protoc_oldprotos?.ExitCode != 0)
-    {
-        Log.Erro("Protos compiling (invoke protoc) failed. Exit code is 20041. ", "OuterInvoke");
-        Console.ReadLine();
-        Environment.Exit(20041);
+        protoc_invokes.Add(new OuterInvokeInfo
+        {
+            ProcessPath = OuterInvokeConfig.protoc_path,
+            WorkingDir = "./..",
+            AutoTerminateReason = $"Proto: {Path.GetFileNameWithoutExtension(proto_file)} compiling (protoc) failed.",
+            CmdLine = ("--proto_path=\"OldProtoHandlers/Google.Protobuf/Protos\" \"" +
+                Path.GetRelativePath("./../OldProtoHandlers/Google.Protobuf/Protos", proto_file)  +
+                "\" --csharp_out=\"OldProtoHandlers/Google.Protobuf/Compiled\"")
+        });
     }
+    #endregion
+    #region NewProtos
+    var newproto_files = Directory.EnumerateFiles(
+        "./../NewProtoHandlers/Google.Protobuf/Protos", 
+        "*.proto", SearchOption.AllDirectories);
+    foreach (var proto_file in newproto_files)
+    {
+        protoc_invokes.Add(new OuterInvokeInfo
+        {
+            ProcessPath = OuterInvokeConfig.protoc_path,
+            WorkingDir = "./..",
+            AutoTerminateReason = $"Proto: {Path.GetFileNameWithoutExtension(proto_file)} compiling (protoc) failed.",
+            CmdLine = ("--proto_path=\"NewProtoHandlers/Google.Protobuf/Protos\" \"" +
+                Path.GetRelativePath("./../NewProtoHandlers/Google.Protobuf/Protos", proto_file)  +
+                "\" --csharp_out=\"NewProtoHandlers/Google.Protobuf/Compiled\"")
+        });
+    }
+    #endregion
+    await OuterInvoke.RunMultiple(protoc_invokes, 20041);
     #endregion
     #region Compile Protos (C#)
     await OuterInvoke.RunMultiple(new OuterInvokeInfo
