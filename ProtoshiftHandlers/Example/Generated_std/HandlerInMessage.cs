@@ -53,6 +53,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         public override ByteString OldShiftToNew(ByteString bytes)
             => OldShiftToNew(oldproto_parser_base.ParseFrom(bytes).ToByteString());
         #endregion
+
+        private static HandlerInMessage _globalOnlyInstance = new HandlerInMessage();
+        public static HandlerInMessage GlobalInstance => _globalOnlyInstance;
     }
 }
 #endregion Designer generated code

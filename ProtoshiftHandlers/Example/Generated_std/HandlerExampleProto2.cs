@@ -19,8 +19,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         MessageParser<OldProtos.ExampleProto2> oldproto_parser_base = OldProtos.ExampleProto2.Parser;
         #endregion
         #region Import Types
-        HandlerExampleInnerEnum handler_ExampleInnerEnum = new();
-        HandlerExampleInnerProto handler_ExampleInnerProto = new();
+        HandlerExampleInnerEnum handler_ExampleInnerEnum = HandlerExampleInnerEnum.GlobalInstance;
+        HandlerExampleInnerProto handler_ExampleInnerProto = HandlerExampleInnerProto.GlobalInstance;
         #endregion
 
         #region Protocol shift
@@ -64,6 +64,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             => OldShiftToNew(oldproto_parser_base.ParseFrom(bytes).ToByteString());
         #endregion
 
+        private static HandlerExampleProto2 _globalOnlyInstance = new HandlerExampleProto2();
+        public static HandlerExampleProto2 GlobalInstance => _globalOnlyInstance;
+
         #region Inner Message
         public class HandlerExampleInnerProto
             : HandlerBase<NewProtos.ExampleProto2.Types.ExampleInnerProto, OldProtos.ExampleProto2.Types.ExampleInnerProto>
@@ -105,6 +108,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             public override ByteString OldShiftToNew(ByteString bytes)
                 => OldShiftToNew(oldproto_parser_base.ParseFrom(bytes).ToByteString());
             #endregion
+
+            private static HandlerExampleInnerProto _globalOnlyInstance = new HandlerExampleInnerProto();
+            public static HandlerExampleInnerProto GlobalInstance => _globalOnlyInstance;
         }
         #endregion
 
@@ -141,6 +147,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                         return NewProtos.ExampleProto2.Types.ExampleInnerEnum.None;
                 }
             }
+
+            private static HandlerExampleInnerEnum _globalOnlyInstance = new HandlerExampleInnerEnum();
+            public static HandlerExampleInnerEnum GlobalInstance => _globalOnlyInstance;
         }
         #endregion
     }
