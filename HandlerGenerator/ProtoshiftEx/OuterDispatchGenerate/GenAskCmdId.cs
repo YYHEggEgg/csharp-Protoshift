@@ -111,6 +111,26 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
 
+                fi.WriteLine("public static bool TryGetCmdIdFromProtoname(string protoname, out uint? cmdid)");
+                fi.EnterCodeRegion();
+                fi.WriteLine("try");
+                fi.EnterCodeRegion();
+                fi.WriteLine("cmdId = GetCmdIdFromProtoname(protoname);");
+                fi.WriteLine("return true;");
+                fi.ExitCodeRegion();
+                fi.WriteLine("catch { cmdid = null; return false; }");
+                fi.ExitCodeRegion();
+
+                fi.WriteLine("public static bool TryGetProtonameFromCmdId(uint cmdid, out string? protoname)");
+                fi.EnterCodeRegion();
+                fi.WriteLine("try");
+                fi.EnterCodeRegion();
+                fi.WriteLine("protoname = GetProtonameFromCmdId(cmdid);");
+                fi.WriteLine("return true;");
+                fi.ExitCodeRegion();
+                fi.WriteLine("catch { protoname = null; return false; }");
+                fi.ExitCodeRegion();
+
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
                 fi.WriteLine("#endregion Designer generated code");
