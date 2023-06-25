@@ -11,7 +11,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         {
             InnerGen(oldAskCmdIdPath, false, cmdData.oldcmdids, 
                 cmd_askoldcmdid_specialHandles, cmdData.cmdlist_order_old);
-            InnerGen(newAskCmdIdPath, false, cmdData.newcmdids, 
+            InnerGen(newAskCmdIdPath, true, cmdData.newcmdids, 
                 cmd_asknewcmdid_specialHandles, cmdData.cmdlist_order_new);
         }
 
