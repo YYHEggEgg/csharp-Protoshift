@@ -47,6 +47,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                     return NewProtos.ExampleEnum.None;
             }
         }
+
+        private static HandlerExampleEnum _globalOnlyInstance = new HandlerExampleEnum();
+        public static HandlerExampleEnum GlobalInstance => _globalOnlyInstance;
     }
 }
 #endregion Designer generated code
