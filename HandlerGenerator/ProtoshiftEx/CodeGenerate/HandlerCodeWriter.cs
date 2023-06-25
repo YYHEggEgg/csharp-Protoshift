@@ -32,7 +32,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine("#region Import Types");
             foreach (var importLine in bothimports.searchByFriendlyName.Keys)
             {
-                fi.WriteLine($"Handler{importLine} handler_{importLine} = new();");
+                fi.WriteLine($"Handler{importLine} handler_{importLine} = Handler{importLine}.GlobalInstance;");
             }
             fi.WriteLine("#endregion");
             #endregion
@@ -77,6 +77,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine("public override ByteString OldShiftToNew(ByteString bytes)",
                 "=> OldShiftToNew(oldproto_parser_base.ParseFrom(bytes).ToByteString());");
             #endregion
+            fi.WriteLine();
+            fi.WriteLine($"private static Handler{friendly_messageName} _globalOnlyInstance = new Handler{friendly_messageName}();");
+            fi.WriteLine($"public static Handler{friendly_messageName} GlobalInstance => _globalOnlyInstance;");
             #region Inner Messages
             fi.WriteLine();
             fi.WriteLine("#region Inner Messages");
@@ -170,6 +173,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.ExitCodeRegion();
             fi.ExitCodeRegion();
             #endregion
+            fi.WriteLine();
+            fi.WriteLine($"private static Handler{friendly_enumName} _globalOnlyInstance = new Handler{friendly_enumName}();");
+            fi.WriteLine($"public static Handler{friendly_enumName} GlobalInstance => _globalOnlyInstance;");
             fi.ExitCodeRegion();
         }
     }
