@@ -365,6 +365,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                     throw new NotSupportedException("The input cmdid is not supported to be Protoshifted.");
             }
         }
+
+        #region Handlers
+        HandlerAbilityChangeNotify handler_AbilityChangeNotify = HandlerAbilityChangeNotify.GlobalInstance;
+        HandlerAbilityInvocationFailNotify handler_AbilityInvocationFailNotify = HandlerAbilityInvocationFailNotify.GlobalInstance;
+        HandlerUnionCmdNotify handler_UnionCmdNotify = HandlerUnionCmdNotify.GlobalInstance;
+        #endregion
     }
 }
 #nullable disable
