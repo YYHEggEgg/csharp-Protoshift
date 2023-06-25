@@ -16,77 +16,77 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         MessageParser<OldProtos.AbilityInvokeEntry> oldproto_parser_base = OldProtos.AbilityInvokeEntry.Parser;
         #endregion
         #region Import Types
-        HandlerAbilityInvokeArgument handler_AbilityInvokeArgument = new();
-        HandlerAbilityInvokeEntryHead handler_AbilityInvokeEntryHead = new();
-        HandlerForwardType handler_ForwardType = new();
+        HandlerAbilityInvokeArgument handler_AbilityInvokeArgument = HandlerAbilityInvokeArgument.GlobalInstance;
+        HandlerAbilityInvokeEntryHead handler_AbilityInvokeEntryHead = HandlerAbilityInvokeEntryHead.GlobalInstance;
+        HandlerForwardType handler_ForwardType = HandlerForwardType.GlobalInstance;
         #endregion
         #region Ability Data Import
         // Meta region, expected 15 protos, 22 records - 7 not found, OK
-        HandlerAbilityMetaModifierChange handler_AbilityMetaModifierChange = new();
-        // HandlerAbilityMetaCommandModifierChangeRequest handler_AbilityMetaCommandModifierChangeRequest = new(); // not found
-        HandlerAbilityMetaSpecialFloatArgument handler_AbilityMetaSpecialFloatArgument = new();
-        HandlerAbilityScalarValueEntry handler_AbilityScalarValueEntry = new(); // Name don't equal
-        HandlerAbilityString handler_AbilityString = new(); // Name don't equal
-        HandlerAbilityMetaReInitOverrideMap handler_AbilityMetaReInitOverrideMap = new(); // Name don't equal
-        // HandlerAbilityScalarValueEntry handler_AbilityScalarValueEntry = new(); // Name don't equal
-        // HandlerAbilityString handler_AbilityString = new(); // Name don't equal
-        // HandlerAbilityMetaAbilityElementStrength handler_AbilityMetaAbilityElementStrength = new(); // not found
-        HandlerAbilityMetaAddOrGetAbilityAndTrigger handler_AbilityMetaAddOrGetAbilityAndTrigger = new();
-        HandlerAbilityMetaSetKilledState handler_AbilityMetaSetKilledState = new();
-        HandlerAbilityMetaSetAbilityTrigger handler_AbilityMetaSetAbilityTrigger = new();
-        HandlerAbilityMetaAddAbility handler_AbilityMetaAddAbility = new(); // Name don't equal
-        // HandlerAbilityMetaRemoveAbility handler_AbilityMetaRemoveAbility = new(); // not found
-        HandlerAbilityMetaSetModifierApplyEntityId handler_AbilityMetaSetModifierApplyEntityId = new(); // Name don't equal
-        HandlerAbilityMetaModifierDurabilityChange handler_AbilityMetaModifierDurabilityChange = new();
-        HandlerAbilityMetaElementReactionVisual handler_AbilityMetaElementReactionVisual = new();
-        HandlerAbilityMetaSetPoseParameter handler_AbilityMetaSetPoseParameter = new();
-        HandlerAbilityMetaUpdateBaseReactionDamage handler_AbilityMetaUpdateBaseReactionDamage = new();
-        HandlerAbilityMetaTriggerElementReaction handler_AbilityMetaTriggerElementReaction = new();
-        HandlerAbilityMetaLoseHp handler_AbilityMetaLoseHp = new();
-        HandlerAbilityMetaDurabilityIsZero handler_AbilityMetaDurabilityIsZero = new();
+        HandlerAbilityMetaModifierChange handler_AbilityMetaModifierChange = HandlerAbilityMetaModifierChange.GlobalInstance;
+        // HandlerAbilityMetaCommandModifierChangeRequest handler_AbilityMetaCommandModifierChangeRequest = // HandlerAbilityMetaCommandModifierChangeRequest.GlobalInstance; // not found
+        HandlerAbilityMetaSpecialFloatArgument handler_AbilityMetaSpecialFloatArgument = HandlerAbilityMetaSpecialFloatArgument.GlobalInstance;
+        HandlerAbilityScalarValueEntry handler_AbilityScalarValueEntry = HandlerAbilityScalarValueEntry.GlobalInstance; // Name don't equal
+        HandlerAbilityString handler_AbilityString = HandlerAbilityString.GlobalInstance; // Name don't equal
+        HandlerAbilityMetaReInitOverrideMap handler_AbilityMetaReInitOverrideMap = HandlerAbilityMetaReInitOverrideMap.GlobalInstance; // Name don't equal
+        // HandlerAbilityScalarValueEntry handler_AbilityScalarValueEntry = // HandlerAbilityScalarValueEntry.GlobalInstance; // Name don't equal
+        // HandlerAbilityString handler_AbilityString = // HandlerAbilityString.GlobalInstance; // Name don't equal
+        // HandlerAbilityMetaAbilityElementStrength handler_AbilityMetaAbilityElementStrength = // HandlerAbilityMetaAbilityElementStrength.GlobalInstance; // not found
+        HandlerAbilityMetaAddOrGetAbilityAndTrigger handler_AbilityMetaAddOrGetAbilityAndTrigger = HandlerAbilityMetaAddOrGetAbilityAndTrigger.GlobalInstance;
+        HandlerAbilityMetaSetKilledState handler_AbilityMetaSetKilledState = HandlerAbilityMetaSetKilledState.GlobalInstance;
+        HandlerAbilityMetaSetAbilityTrigger handler_AbilityMetaSetAbilityTrigger = HandlerAbilityMetaSetAbilityTrigger.GlobalInstance;
+        HandlerAbilityMetaAddAbility handler_AbilityMetaAddAbility = HandlerAbilityMetaAddAbility.GlobalInstance; // Name don't equal
+        // HandlerAbilityMetaRemoveAbility handler_AbilityMetaRemoveAbility = // HandlerAbilityMetaRemoveAbility.GlobalInstance; // not found
+        HandlerAbilityMetaSetModifierApplyEntityId handler_AbilityMetaSetModifierApplyEntityId = HandlerAbilityMetaSetModifierApplyEntityId.GlobalInstance; // Name don't equal
+        HandlerAbilityMetaModifierDurabilityChange handler_AbilityMetaModifierDurabilityChange = HandlerAbilityMetaModifierDurabilityChange.GlobalInstance;
+        HandlerAbilityMetaElementReactionVisual handler_AbilityMetaElementReactionVisual = HandlerAbilityMetaElementReactionVisual.GlobalInstance;
+        HandlerAbilityMetaSetPoseParameter handler_AbilityMetaSetPoseParameter = HandlerAbilityMetaSetPoseParameter.GlobalInstance;
+        HandlerAbilityMetaUpdateBaseReactionDamage handler_AbilityMetaUpdateBaseReactionDamage = HandlerAbilityMetaUpdateBaseReactionDamage.GlobalInstance;
+        HandlerAbilityMetaTriggerElementReaction handler_AbilityMetaTriggerElementReaction = HandlerAbilityMetaTriggerElementReaction.GlobalInstance;
+        HandlerAbilityMetaLoseHp handler_AbilityMetaLoseHp = HandlerAbilityMetaLoseHp.GlobalInstance;
+        HandlerAbilityMetaDurabilityIsZero handler_AbilityMetaDurabilityIsZero = HandlerAbilityMetaDurabilityIsZero.GlobalInstance;
 
         // Action region, expected 14 protos, 16 records - 2 not found, OK
-        HandlerAbilityActionTriggerAbility handler_AbilityActionTriggerAbility = new();
-        HandlerAbilityActionSetCrashDamage handler_AbilityActionSetCrashDamage = new();
-        // HandlerAbilityActionEffect handler_AbilityActionEffect = new(); // not found
-        HandlerAbilityActionSummon handler_AbilityActionSummon = new();
-        HandlerAbilityActionBlink handler_AbilityActionBlink = new();
-        HandlerAbilityActionCreateGadget handler_AbilityActionCreateGadget = new();
-        // HandlerAbilityActionApplyLevelModifier handler_AbilityActionApplyLevelModifier = new(); // not found
-        HandlerAbilityActionGenerateElemBall handler_AbilityActionGenerateElemBall = new();
-        HandlerAbilityActionSetRandomOverrideMapValue handler_AbilityActionSetRandomOverrideMapValue = new();
-        HandlerAbilityActionServerMonsterLog handler_AbilityActionServerMonsterLog = new();
-        HandlerAbilityActionCreateTile handler_AbilityActionCreateTile = new();
-        HandlerAbilityActionDestroyTile handler_AbilityActionDestroyTile = new();
-        HandlerAbilityActionFireAfterImage handler_AbilityActionFireAfterImage = new();
-        HandlerAbilityActionDeductStamina handler_AbilityActionDeductStamina = new();
-        HandlerAbilityActionHitEffect handler_AbilityActionHitEffect = new();
-        HandlerAbilityActionSetBulletTrackTarget handler_AbilityActionSetBulletTrackTarget = new();
+        HandlerAbilityActionTriggerAbility handler_AbilityActionTriggerAbility = HandlerAbilityActionTriggerAbility.GlobalInstance;
+        HandlerAbilityActionSetCrashDamage handler_AbilityActionSetCrashDamage = HandlerAbilityActionSetCrashDamage.GlobalInstance;
+        // HandlerAbilityActionEffect handler_AbilityActionEffect = // HandlerAbilityActionEffect.GlobalInstance; // not found
+        HandlerAbilityActionSummon handler_AbilityActionSummon = HandlerAbilityActionSummon.GlobalInstance;
+        HandlerAbilityActionBlink handler_AbilityActionBlink = HandlerAbilityActionBlink.GlobalInstance;
+        HandlerAbilityActionCreateGadget handler_AbilityActionCreateGadget = HandlerAbilityActionCreateGadget.GlobalInstance;
+        // HandlerAbilityActionApplyLevelModifier handler_AbilityActionApplyLevelModifier = // HandlerAbilityActionApplyLevelModifier.GlobalInstance; // not found
+        HandlerAbilityActionGenerateElemBall handler_AbilityActionGenerateElemBall = HandlerAbilityActionGenerateElemBall.GlobalInstance;
+        HandlerAbilityActionSetRandomOverrideMapValue handler_AbilityActionSetRandomOverrideMapValue = HandlerAbilityActionSetRandomOverrideMapValue.GlobalInstance;
+        HandlerAbilityActionServerMonsterLog handler_AbilityActionServerMonsterLog = HandlerAbilityActionServerMonsterLog.GlobalInstance;
+        HandlerAbilityActionCreateTile handler_AbilityActionCreateTile = HandlerAbilityActionCreateTile.GlobalInstance;
+        HandlerAbilityActionDestroyTile handler_AbilityActionDestroyTile = HandlerAbilityActionDestroyTile.GlobalInstance;
+        HandlerAbilityActionFireAfterImage handler_AbilityActionFireAfterImage = HandlerAbilityActionFireAfterImage.GlobalInstance;
+        HandlerAbilityActionDeductStamina handler_AbilityActionDeductStamina = HandlerAbilityActionDeductStamina.GlobalInstance;
+        HandlerAbilityActionHitEffect handler_AbilityActionHitEffect = HandlerAbilityActionHitEffect.GlobalInstance;
+        HandlerAbilityActionSetBulletTrackTarget handler_AbilityActionSetBulletTrackTarget = HandlerAbilityActionSetBulletTrackTarget.GlobalInstance;
 
         // Mixin region, expected 22 protos, 23 records - 3 not found, missing
-        HandlerAbilityMixinAvatarSteerByCamera handler_AbilityMixinAvatarSteerByCamera = new();
-        // HandlerAbilityMixinMonsterDefend handler_AbilityMixinMonsterDefend = new(); // not found
-        HandlerAbilityMixinWindZone handler_AbilityMixinWindZone = new();
-        HandlerAbilityMixinCostStamina handler_AbilityMixinCostStamina = new();
-        HandlerAbilityMixinEliteShield handler_AbilityMixinEliteShield = new();
-        HandlerAbilityMixinElementShield handler_AbilityMixinElementShield = new();
-        HandlerAbilityMixinGlobalShield handler_AbilityMixinGlobalShield = new();
-        HandlerAbilityMixinShieldBar handler_AbilityMixinShieldBar = new();
-        HandlerAbilityMixinWindSeedSpawner handler_AbilityMixinWindSeedSpawner = new();
-        HandlerAbilityMixinDoActionByElementReaction handler_AbilityMixinDoActionByElementReaction = new();
-        HandlerAbilityMixinFieldEntityCountChange handler_AbilityMixinFieldEntityCountChange = new();
-        HandlerAbilityMixinScenePropSync handler_AbilityMixinScenePropSync = new();
-        HandlerAbilityMixinWidgetMpSupport handler_AbilityMixinWidgetMpSupport = new();
-        HandlerAbilityMixinDoActionBySelfModifierElementDurabilityRatio handler_AbilityMixinDoActionBySelfModifierElementDurabilityRatio = new();
-        HandlerAbilityMixinFireworksLauncher handler_AbilityMixinFireworksLauncher = new();
-        // HandlerAbilityMixinAttackResultCreateCount handler_AbilityMixinAttackResultCreateCount = new(); // not found
-        HandlerAbilityMixinUGCTimeControl handler_AbilityMixinUGCTimeControl = new(); // Name don't equal
-        HandlerAbilityMixinAvatarCombat handler_AbilityMixinAvatarCombat = new();
-        // HandlerAbilityMixinDeathZoneRegionalPlayMixin handler_AbilityMixinDeathZoneRegionalPlayMixin = new(); // not found
-        HandlerAbilityMixinUIInteract handler_AbilityMixinUIInteract = new(); // Name don't equal
-        HandlerAbilityMixinShootFromCamera handler_AbilityMixinShootFromCamera = new();
-        HandlerAbilityMixinEraseBrickActivity handler_AbilityMixinEraseBrickActivity = new(); // not found
-        HandlerAbilityMixinBreakout handler_AbilityMixinBreakout = new(); // not found
+        HandlerAbilityMixinAvatarSteerByCamera handler_AbilityMixinAvatarSteerByCamera = HandlerAbilityMixinAvatarSteerByCamera.GlobalInstance;
+        // HandlerAbilityMixinMonsterDefend handler_AbilityMixinMonsterDefend = // HandlerAbilityMixinMonsterDefend.GlobalInstance; // not found
+        HandlerAbilityMixinWindZone handler_AbilityMixinWindZone = HandlerAbilityMixinWindZone.GlobalInstance;
+        HandlerAbilityMixinCostStamina handler_AbilityMixinCostStamina = HandlerAbilityMixinCostStamina.GlobalInstance;
+        HandlerAbilityMixinEliteShield handler_AbilityMixinEliteShield = HandlerAbilityMixinEliteShield.GlobalInstance;
+        HandlerAbilityMixinElementShield handler_AbilityMixinElementShield = HandlerAbilityMixinElementShield.GlobalInstance;
+        HandlerAbilityMixinGlobalShield handler_AbilityMixinGlobalShield = HandlerAbilityMixinGlobalShield.GlobalInstance;
+        HandlerAbilityMixinShieldBar handler_AbilityMixinShieldBar = HandlerAbilityMixinShieldBar.GlobalInstance;
+        HandlerAbilityMixinWindSeedSpawner handler_AbilityMixinWindSeedSpawner = HandlerAbilityMixinWindSeedSpawner.GlobalInstance;
+        HandlerAbilityMixinDoActionByElementReaction handler_AbilityMixinDoActionByElementReaction = HandlerAbilityMixinDoActionByElementReaction.GlobalInstance;
+        HandlerAbilityMixinFieldEntityCountChange handler_AbilityMixinFieldEntityCountChange = HandlerAbilityMixinFieldEntityCountChange.GlobalInstance;
+        HandlerAbilityMixinScenePropSync handler_AbilityMixinScenePropSync = HandlerAbilityMixinScenePropSync.GlobalInstance;
+        HandlerAbilityMixinWidgetMpSupport handler_AbilityMixinWidgetMpSupport = HandlerAbilityMixinWidgetMpSupport.GlobalInstance;
+        HandlerAbilityMixinDoActionBySelfModifierElementDurabilityRatio handler_AbilityMixinDoActionBySelfModifierElementDurabilityRatio = HandlerAbilityMixinDoActionBySelfModifierElementDurabilityRatio.GlobalInstance;
+        HandlerAbilityMixinFireworksLauncher handler_AbilityMixinFireworksLauncher = HandlerAbilityMixinFireworksLauncher.GlobalInstance;
+        // HandlerAbilityMixinAttackResultCreateCount handler_AbilityMixinAttackResultCreateCount = // HandlerAbilityMixinAttackResultCreateCount.GlobalInstance; // not found
+        HandlerAbilityMixinUGCTimeControl handler_AbilityMixinUGCTimeControl = HandlerAbilityMixinUGCTimeControl.GlobalInstance; // Name don't equal
+        HandlerAbilityMixinAvatarCombat handler_AbilityMixinAvatarCombat = HandlerAbilityMixinAvatarCombat.GlobalInstance;
+        // HandlerAbilityMixinDeathZoneRegionalPlayMixin handler_AbilityMixinDeathZoneRegionalPlayMixin = // HandlerAbilityMixinDeathZoneRegionalPlayMixin.GlobalInstance; // not found
+        HandlerAbilityMixinUIInteract handler_AbilityMixinUIInteract = HandlerAbilityMixinUIInteract.GlobalInstance; // Name don't equal
+        HandlerAbilityMixinShootFromCamera handler_AbilityMixinShootFromCamera = HandlerAbilityMixinShootFromCamera.GlobalInstance;
+        HandlerAbilityMixinEraseBrickActivity handler_AbilityMixinEraseBrickActivity = HandlerAbilityMixinEraseBrickActivity.GlobalInstance; // not found
+        HandlerAbilityMixinBreakout handler_AbilityMixinBreakout = HandlerAbilityMixinBreakout.GlobalInstance; // not found
         #endregion
 
         #region Protocol Shift
@@ -497,6 +497,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             => OldShiftToNew(oldproto_parser_base.ParseFrom(span)).ToByteArray();
         public override ByteString OldShiftToNew(ByteString bytes)
             => OldShiftToNew(oldproto_parser_base.ParseFrom(bytes).ToByteString());
+
+        private static HandlerAbilityInvokeEntry _globalOnlyInstance = new HandlerAbilityInvokeEntry();
+        public static HandlerAbilityInvokeEntry GlobalInstance => _globalOnlyInstance;
 
         #region Inner Messages
         #endregion
