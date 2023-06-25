@@ -50,6 +50,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         public override ByteString OldShiftToNew(ByteString bytes)
             => OldShiftToNew(oldproto_parser_base.ParseFrom(bytes).ToByteString());
 
+        private static HandlerUnionCmd _globalOnlyInstance = new HandlerUnionCmd();
+        public static HandlerUnionCmd GlobalInstance => _globalOnlyInstance;
+
         #region Inner Messages
         #endregion
 

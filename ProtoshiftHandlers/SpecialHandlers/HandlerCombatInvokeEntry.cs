@@ -15,8 +15,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         MessageParser<OldProtos.CombatInvokeEntry> oldproto_parser_base = OldProtos.CombatInvokeEntry.Parser;
         #endregion
         #region Import Types
-        HandlerCombatTypeArgument handler_CombatTypeArgument = new();
-        HandlerForwardType handler_ForwardType = new();
+        HandlerCombatTypeArgument handler_CombatTypeArgument = HandlerCombatTypeArgument.GlobalInstance;
+        HandlerForwardType handler_ForwardType = HandlerForwardType.GlobalInstance;
         #endregion
 
         #region Protocol Shift
@@ -51,6 +51,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             => OldShiftToNew(oldproto_parser_base.ParseFrom(span)).ToByteArray();
         public override ByteString OldShiftToNew(ByteString bytes)
             => OldShiftToNew(oldproto_parser_base.ParseFrom(bytes).ToByteString());
+
+        private static HandlerCombatInvokeEntry _globalOnlyInstance = new HandlerCombatInvokeEntry();
+        public static HandlerCombatInvokeEntry GlobalInstance => _globalOnlyInstance;
 
         #region Inner Messages
         #endregion
