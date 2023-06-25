@@ -7,8 +7,10 @@
 /YSFreedomServer-v2
 /NewProtoHandlers/bin
 /NewProtoHandlers/obj
+/NewProtoHandlers/Google.Protobuf/Compiled
 /OldProtoHandlers/bin
 /OldProtoHandlers/obj
+/OldProtoHandlers/Google.Protobuf/Compiled
 /csharp-Protoshift/bin/Release/net6.0/logs
 /csharp-Protoshift/bin/Debug/net6.0/logs
 /csharp-Protoshift/bin/Debug/net6.0/Temp
