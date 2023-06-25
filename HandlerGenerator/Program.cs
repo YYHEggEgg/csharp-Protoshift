@@ -541,70 +541,9 @@ foreach (var ignore in handlerignores)
 #endregion
 Log.Info("Conguratulations! Protoshift handlers generated successfully.");
 Log.Info("Now generating CmdId related and ProtoshiftDispatch...");
-List<(string messageName, int cmdId)> oldcmdids = new();
-List<(string messageName, int cmdId)> newcmdids = new();
-SortedSet<string> messages_havecmdid = new();
-#region Read oldcmdid.csv
-try
-{
-    using (StreamReader sr = new StreamReader("./resources/protobuf/oldcmdid.csv"))
-    {
-        string? line;
-        while ((line = sr.ReadLine()) != null)
-        {
-            string[] values = line.Split(',');
-            if (values.Length == 2 && int.TryParse(values[1], out int cmdId))
-            {
-                oldcmdids.Add((values[0], cmdId));
-                messages_havecmdid.Add(values[0]);
-            }
-        }
-    }
-}
-catch (IOException e)
-{
-    Log.Erro($"The file could not be read: {e}", "AskCmdIdGenerate");
-}
-#endregion
-#region Read newcmdid.csv
-try
-{
-    using (StreamReader sr = new StreamReader("./resources/protobuf/newcmdid.csv"))
-    {
-        string? line;
-        while ((line = sr.ReadLine()) != null)
-        {
-            string[] values = line.Split(',');
-            if (values.Length == 2 && int.TryParse(values[1], out int cmdId))
-            {
-                newcmdids.Add((values[0], cmdId));
-                messages_havecmdid.Add(values[0]);
-            }
-        }
-    }
-}
-catch (IOException e)
-{
-    Log.Erro($"The file could not be read: {e}", "AskCmdIdGenerate");
-}
-#endregion
-ReadOnlyCollection<string> supportedMessages = new(new List<string>(
-    from pair in messageResults.IntersectItems
-    select pair.LeftItem.messageName));
-IEnumerable<(string messageName, int oldcmdid, int newcmdid)> supportedCmdIds =
-    from old in oldcmdids
-    join @new in newcmdids
-    on old.messageName equals @new.messageName
-    select (old.messageName, old.cmdId, @new.cmdId);
+CmdIdDataStructure cmdData = new("./resources/protobuf/oldcmdid.csv",
+    "./resources/protobuf/newcmdid.csv", messageResults);
 #region Generate CmdId related
-var cmdlist_order_new = from tuple in supportedCmdIds
-                        group tuple by tuple.newcmdid into gr
-                        orderby gr.Key
-                        select gr;
-var cmdlist_order_old = from tuple in supportedCmdIds
-                        group tuple by tuple.oldcmdid into gr
-                        orderby gr.Key
-                        select gr;
 #region Generate AskCmdId
 #region OldProtos
 using (BasicCodeWriter fi = new(askoldcmdid_filePath))
@@ -623,8 +562,8 @@ using (BasicCodeWriter fi = new(askoldcmdid_filePath))
     fi.EnterCodeRegion();
     fi.WriteLine("switch (protoname)");
     fi.EnterCodeRegion();
-    oldcmdids.Sort((l, r) => l.messageName.CompareTo(r.messageName));
-    foreach (var cmdPair in oldcmdids)
+    cmdData.oldcmdids.Sort((l, r) => l.messageName.CompareTo(r.messageName));
+    foreach (var cmdPair in cmdData.oldcmdids)
     {
         fi.WriteLine($"case \"{cmdPair.messageName}\": return {cmdPair.cmdId};");
     }
@@ -636,7 +575,7 @@ using (BasicCodeWriter fi = new(askoldcmdid_filePath))
     fi.EnterCodeRegion();
     fi.WriteLine("switch (cmdid)");
     fi.EnterCodeRegion();
-    foreach (var grp in cmdlist_order_old)
+    foreach (var grp in cmdData.cmdlist_order_old)
     {
         if (grp.Count() == 1)
         {
@@ -718,8 +657,8 @@ using (BasicCodeWriter fi = new(asknewcmdid_filePath))
     fi.EnterCodeRegion();
     fi.WriteLine("switch (protoname)");
     fi.EnterCodeRegion();
-    newcmdids.Sort((l, r) => l.messageName.CompareTo(r.messageName));
-    foreach (var cmdPair in newcmdids)
+    cmdData.newcmdids.Sort((l, r) => l.messageName.CompareTo(r.messageName));
+    foreach (var cmdPair in cmdData.newcmdids)
     {
         fi.WriteLine($"case \"{cmdPair.messageName}\": return {cmdPair.cmdId};");
     }
@@ -731,7 +670,7 @@ using (BasicCodeWriter fi = new(asknewcmdid_filePath))
     fi.EnterCodeRegion();
     fi.WriteLine("switch (cmdid)");
     fi.EnterCodeRegion();
-    foreach (var grp in cmdlist_order_new)
+    foreach (var grp in cmdData.cmdlist_order_new)
     {
         if (grp.Count() == 1)
         {
@@ -813,7 +752,7 @@ using (BasicCodeWriter fi = new(shiftCmdId_filePath))
     fi.EnterCodeRegion();
     fi.WriteLine("switch (newcmdid)");
     fi.EnterCodeRegion();
-    foreach (var grp in cmdlist_order_new)
+    foreach (var grp in cmdData.cmdlist_order_new)
     {
         if (grp.Count() == 1)
         {
@@ -877,7 +816,7 @@ using (BasicCodeWriter fi = new(shiftCmdId_filePath))
     fi.EnterCodeRegion();
     fi.WriteLine("switch (oldcmdid)");
     fi.EnterCodeRegion();
-    foreach (var grp in cmdlist_order_old)
+    foreach (var grp in cmdData.cmdlist_order_old)
     {
         if (grp.Count() == 1)
         {
@@ -979,7 +918,7 @@ if (File.Exists(protoshiftDispatch_filePath))
                 int startIndex = line.IndexOf("// ") + 3;
                 int endIndex = line.IndexOf(" - merge - ignore case");
                 curproto = line.Substring(startIndex, endIndex - startIndex);
-                if (!messages_havecmdid.Contains(curproto))
+                if (!cmdData.messages_havecmdid.Contains(curproto))
                 {
                     Log.Warn($"Human modification of Proto: {curproto} can't be applied because it isn't assigned cmd_id and isn't a sendable message. ");
                     pullUp_for_unrecogized_proto = true;
@@ -1071,7 +1010,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
     fi.WriteLine("// Below is mergable region");
     #endregion
     fi.WriteLine("/**********Start mergable region --- DO NOT EDIT THIS LINE**********/");
-    foreach (var grp in cmdlist_order_new)
+    foreach (var grp in cmdData.cmdlist_order_new)
     {
         if (grp.Count() == 1)
         {
@@ -1184,7 +1123,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
     fi.WriteLine("// Below is mergable region");
     #endregion
     fi.WriteLine("/**********Start mergable region --- DO NOT EDIT THIS LINE**********/");
-    foreach (var grp in cmdlist_order_new)
+    foreach (var grp in cmdData.cmdlist_order_new)
     {
         if (grp.Count() == 1)
         {
@@ -1297,7 +1236,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
     fi.WriteLine("// Below is mergable region");
     #endregion
     fi.WriteLine("/**********Start mergable region --- DO NOT EDIT THIS LINE**********/");
-    foreach (var grp in cmdlist_order_new)
+    foreach (var grp in cmdData.cmdlist_order_new)
     {
         if (grp.Count() == 1)
         {
@@ -1416,7 +1355,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
     fi.WriteLine("// Below is mergable region");
     #endregion
     fi.WriteLine("/**********Start mergable region --- DO NOT EDIT THIS LINE**********/");
-    foreach (var grp in cmdlist_order_old)
+    foreach (var grp in cmdData.cmdlist_order_old)
     {
         if (grp.Count() == 1)
         {
@@ -1529,7 +1468,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
     fi.WriteLine("// Below is mergable region");
     #endregion
     fi.WriteLine("/**********Start mergable region --- DO NOT EDIT THIS LINE**********/");
-    foreach (var grp in cmdlist_order_old)
+    foreach (var grp in cmdData.cmdlist_order_old)
     {
         if (grp.Count() == 1)
         {
@@ -1642,7 +1581,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
     fi.WriteLine("// Below is mergable region");
     #endregion
     fi.WriteLine("/**********Start mergable region --- DO NOT EDIT THIS LINE**********/");
-    foreach (var grp in cmdlist_order_old)
+    foreach (var grp in cmdData.cmdlist_order_old)
     {
         if (grp.Count() == 1)
         {
@@ -1725,7 +1664,7 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
     #region Other Code (Handlers)
     fi.WriteLine();
     fi.WriteLine("#region Handlers");
-    foreach (var importhandler in supportedMessages)
+    foreach (var importhandler in cmdData.supportedMessages)
     {
         fi.WriteLine($"private static Handler{importhandler} handler_{importhandler} = Handler{importhandler}.GlobalInstance;");
     }
@@ -1736,12 +1675,12 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
     fi.WriteLine("#region Initialize");
     fi.WriteLine($"static ProtoshiftDispatch()");
     fi.EnterCodeRegion();
-    foreach (var importhandler in supportedMessages)
+    foreach (var importhandler in cmdData.supportedMessages)
     {
         fi.WriteLine($"handler_{importhandler}.NewShiftToOld(ReadOnlySpan<byte>.Empty);");
     }
     fi.ExitCodeRegion();
-    fi.WriteLine($"public static string Initialize => \"ProtoshiftDispatch initialized, {supportedMessages.Count} handlers (cmds).\";");
+    fi.WriteLine($"public static string Initialize => \"ProtoshiftDispatch initialized, {cmdData.supportedMessages.Count} handlers (cmds).\";");
     fi.WriteLine("#endregion");
     #endregion
     fi.ExitCodeRegion();
