@@ -274,6 +274,8 @@ if (rebuildWatcher.NeedRebuild)
     #region Compile Protos (protoc)
     Stopwatch protocWatch = Stopwatch.StartNew();
     Log.Info("Start compiling protos (protoc), it will take some time...");
+    Directory.CreateDirectory("./../OldProtoHandlers/Google.Protobuf/Compiled");
+    Directory.CreateDirectory("./../NewProtoHandlers/Google.Protobuf/Compiled");
     List<OuterInvokeInfo> protoc_invokes = new();
     #region OldProtos
     var oldproto_files = Directory.EnumerateFiles(
