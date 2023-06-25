@@ -371,6 +371,17 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         HandlerAbilityInvocationFailNotify handler_AbilityInvocationFailNotify = HandlerAbilityInvocationFailNotify.GlobalInstance;
         HandlerUnionCmdNotify handler_UnionCmdNotify = HandlerUnionCmdNotify.GlobalInstance;
         #endregion
+
+        #region Initialize
+        static ProtoshiftDispatch()
+        {
+            handler_AbilityChangeNotify.NewShiftToOld(ReadOnlySpan<byte>.Empty);
+            handler_AbilityInvocationFailNotify.NewShiftToOld(ReadOnlySpan<byte>.Empty);
+            handler_UnionCmdNotify.NewShiftToOld(ReadOnlySpan<byte>.Empty);
+        }
+
+        public static string Initialize => "ProtoshiftDispatch initialized, 3 handlers (cmds).";
+        #endregion
     }
 }
 #nullable disable

@@ -1723,11 +1723,25 @@ using (BasicCodeWriter fi = new("./../ProtoshiftHandlers/ProtoDispatch/Protoshif
     fi.ExitCodeRegion();
     #endregion
     #region Other Code (Handlers)
+    fi.WriteLine();
     fi.WriteLine("#region Handlers");
     foreach (var importhandler in supportedMessages)
     {
         fi.WriteLine($"private static Handler{importhandler} handler_{importhandler} = Handler{importhandler}.GlobalInstance;");
     }
+    fi.WriteLine("#endregion");
+    #endregion
+    #region Other Code (Initialize)
+    fi.WriteLine();
+    fi.WriteLine("#region Initialize");
+    fi.WriteLine($"static ProtoshiftDispatch()");
+    fi.EnterCodeRegion();
+    foreach (var importhandler in supportedMessages)
+    {
+        fi.WriteLine($"handler_{importhandler}.NewShiftToOld(ReadOnlySpan<byte>.Empty);");
+    }
+    fi.ExitCodeRegion();
+    fi.WriteLine($"public static string Initialize => \"ProtoshiftDispatch initialized, {supportedMessages.Count} handlers (cmds).\";");
     fi.WriteLine("#endregion");
     #endregion
     fi.ExitCodeRegion();
