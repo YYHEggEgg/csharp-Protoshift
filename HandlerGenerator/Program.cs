@@ -623,7 +623,7 @@ using (BasicCodeWriter fi = new(askoldcmdid_filePath))
     {
         fi.WriteLine($"case \"{cmdPair.messageName}\": return {cmdPair.cmdId};");
     }
-    fi.WriteLine($"default: throw new NotSupportedException(\"Unknown message name or it doesn't have cmd_id.\")");
+    fi.WriteLine($"default: throw new NotSupportedException(\"Unknown message name or it doesn't have cmd_id.\");");
     fi.ExitCodeRegion();
     fi.ExitCodeRegion();
     fi.WriteLine("// DON'T INSERT ANY CODE HERE");
@@ -718,7 +718,7 @@ using (BasicCodeWriter fi = new(asknewcmdid_filePath))
     {
         fi.WriteLine($"case \"{cmdPair.messageName}\": return {cmdPair.cmdId};");
     }
-    fi.WriteLine($"default: throw new NotSupportedException(\"Unknown message name or it doesn't have cmd_id.\")");
+    fi.WriteLine($"default: throw new NotSupportedException(\"Unknown message name or it doesn't have cmd_id.\");");
     fi.ExitCodeRegion();
     fi.ExitCodeRegion();
     fi.WriteLine("// DON'T INSERT ANY CODE HERE");
