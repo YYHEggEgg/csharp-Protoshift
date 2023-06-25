@@ -19,9 +19,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         MessageParser<OldProtos.ExampleProto> oldproto_parser_base = OldProtos.ExampleProto.Parser;
         #endregion
         #region Import Types
-        HandlerExampleEnum handler_ExampleEnum = new();
-        HandlerExampleProto2 handler_ExampleProto2 = new();
-        HandlerInMessage handler_InMessage = new();
+        HandlerExampleEnum handler_ExampleEnum = HandlerExampleEnum.GlobalInstance;
+        HandlerExampleProto2 handler_ExampleProto2 = HandlerExampleProto2.GlobalInstance;
+        HandlerInMessage handler_InMessage = HandlerInMessage.GlobalInstance;
         #endregion
 
         #region Protocol shift
@@ -90,6 +90,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         public override ByteString OldShiftToNew(ByteString bytes)
             => OldShiftToNew(oldproto_parser_base.ParseFrom(bytes).ToByteString());
         #endregion
+
+        private static HandlerExampleProto _globalOnlyInstance = new HandlerExampleProto();
+        public static HandlerExampleProto GlobalInstance => _globalOnlyInstance;
     }
 }
 #endregion Designer generated code
