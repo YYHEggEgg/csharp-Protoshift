@@ -113,7 +113,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     fi.WriteLine($"handler_{importhandler}.NewShiftToOld(ReadOnlySpan<byte>.Empty);");
                 }
                 fi.ExitCodeRegion();
-                fi.WriteLine($"public static string Initialize => \"ProtoshiftDispatch initialized, {cmdData.supportedMessages.Count} handlers (cmds).\";");
+                fi.WriteLine($"public static string Initialize() => \"ProtoshiftDispatch initialized, {cmdData.supportedMessages.Count} handlers (cmds).\";");
                 fi.WriteLine("#endregion");
                 #endregion
                 #region Code file End
