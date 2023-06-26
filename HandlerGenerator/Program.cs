@@ -254,22 +254,16 @@ if (File.Exists(shiftCmdId_filePath))
 #endregion
 #region Smart Compiling
 Stopwatch rebuildWatcher_watch = Stopwatch.StartNew();
-RebuildWatcher rebuildWatcher;
+bool needRebuild = true;
 if (File.Exists("last_build_record.json"))
 {
     Log.Info($"Reading last build record from jsonfile, it'll take some time...", nameof(RebuildWatcher));
-    rebuildWatcher = RebuildWatcher.DeserializeFromJson(await File.ReadAllTextAsync("last_build_record.json"));
-}
-else
-{
-    Log.Info($"Capturing build status from directories, it'll take some time...", nameof(RebuildWatcher));
-    rebuildWatcher = new();
-    rebuildWatcher.CaptureDirectory($"./../OldProtoHandlers/Google.Protobuf");
-    rebuildWatcher.CaptureDirectory($"./../NewProtoHandlers/Google.Protobuf");
+    RebuildWatcher rebuildWatcher = RebuildWatcher.DeserializeFromJson(await File.ReadAllTextAsync("last_build_record.json"));
+    needRebuild = rebuildWatcher.NeedRebuild;
 }
 rebuildWatcher_watch.Stop();
-Log.Info($"Rebuild judge completed (need rebuild: {rebuildWatcher.NeedRebuild}), costed {rebuildWatcher_watch.Elapsed}.", nameof(RebuildWatcher));
-if (rebuildWatcher.NeedRebuild)
+Log.Info($"Rebuild judge completed (need rebuild: {needRebuild}), costed {rebuildWatcher_watch.Elapsed}.", nameof(RebuildWatcher));
+if (needRebuild)
 {
     #region Compile Protos (protoc)
     Stopwatch protocWatch = Stopwatch.StartNew();
@@ -397,7 +391,14 @@ if (rebuildWatcher.NeedRebuild)
     Log.Info($"proto2json exited. Total execute time is {pinvokewatch.Elapsed}.", "OuterInvoke");
     #endregion
 }
-await File.WriteAllTextAsync("last_build_record.json", rebuildWatcher.SerializeToJson());
+if (needRebuild)
+{
+    Log.Info($"Capturing build status from directories, it'll take some time...", nameof(RebuildWatcher));
+    RebuildWatcher rebuildWatcher = new();
+    rebuildWatcher.CaptureDirectory($"./../OldProtoHandlers/Google.Protobuf");
+    rebuildWatcher.CaptureDirectory($"./../NewProtoHandlers/Google.Protobuf");
+    await File.WriteAllTextAsync("last_build_record.json", rebuildWatcher.SerializeToJson());
+}
 string newoutputdir = $"{workingdir}/Proto2json_Output/new";
 string oldoutputdir = $"{workingdir}/Proto2json_Output/old";
 if (!Directory.Exists(newoutputdir) || !Directory.Exists(oldoutputdir))
@@ -446,7 +447,7 @@ Parallel.ForEach(newprotojsons, path =>
         newenums.Add(enumResult);
     }
 });
-Log.Info($"NewProtos: read {newmessages.Count} messages, {newenums.Count} enums.");
+Log.Info($"NewProtos: read {newmessages.Cou nt} messages, {newenums.Count} enums.");
 #endregion
 CollectionResult<MessageResult> messageResults =
     CollectionHelper.GetCompareResult(oldmessages, newmessages, MessageResult.NameComparer);
