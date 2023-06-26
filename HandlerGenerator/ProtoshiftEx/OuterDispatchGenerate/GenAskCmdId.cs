@@ -110,17 +110,17 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.WriteLine($"default: throw new NotSupportedException(\"The input {identifier} CmdId is unknown.\");");
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
-
+                fi.WriteLine();
                 fi.WriteLine("public static bool TryGetCmdIdFromProtoname(string protoname, out uint? cmdid)");
                 fi.EnterCodeRegion();
                 fi.WriteLine("try");
                 fi.EnterCodeRegion();
-                fi.WriteLine("cmdId = GetCmdIdFromProtoname(protoname);");
+                fi.WriteLine("cmdid = GetCmdIdFromProtoname(protoname);");
                 fi.WriteLine("return true;");
                 fi.ExitCodeRegion();
                 fi.WriteLine("catch { cmdid = null; return false; }");
                 fi.ExitCodeRegion();
-
+                fi.WriteLine();
                 fi.WriteLine("public static bool TryGetProtonameFromCmdId(uint cmdid, out string? protoname)");
                 fi.EnterCodeRegion();
                 fi.WriteLine("try");
