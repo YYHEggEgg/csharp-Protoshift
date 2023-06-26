@@ -20,8 +20,8 @@ namespace csharp_Protoshift.Commands
             // Add commands here.
             handlers.Add(new MT19937Cmd());
             handlers.Add(new SetVerboseCmd());
-            handlers.Add(new SelectRecordCmd());
-            handlers.Add(new ShowRecordCmd());
+            // handlers.Add(new SelectRecordCmd());
+            // handlers.Add(new ShowRecordCmd());
             handlers.Add(new StopServerCmd());
         }
 

@@ -19,7 +19,6 @@ namespace csharp_Protoshift.GameSession
         /// XOR key used to decrypt packet. Usually have a length of 4096.
         /// </summary>
         public byte[] XorKey { get; protected set; }
-        public PacketRecord[] records;
         public uint SessionId { get; private set; }
 
         /// <summary>
@@ -40,17 +39,20 @@ namespace csharp_Protoshift.GameSession
         {
             public string protoname { get; set; }
             public bool fromClient { get; set; }
-            public long handleMilliseconds { get; set; }
+            public long handle_Milliseconds { get; set; }
+            public long handle_interval_nanoseconds { get; set; }
             public int packetSize { get; set; }
         }
 
-        private void SubmitTimeRecord(string protoname, bool isNewCmdid, long handleMilliseconds, int packetSize)
+        private static readonly Int64 nanosecPerTick = (1000L*1000L*1000L) / Stopwatch.Frequency;
+        private void SubmitTimeRecord(string protoname, bool isNewCmdid, Int64 handleMilliseconds, Int64 handleTicks, int packetSize)
         {
             TimeRecords.Add(new TimeRecord
             {
                 protoname = protoname,
                 fromClient = isNewCmdid,
-                handleMilliseconds = handleMilliseconds,
+                handle_interval_nanoseconds = handleTicks * nanosecPerTick,
+                handle_Milliseconds = handleMilliseconds,
                 packetSize = packetSize
             });
         }
@@ -76,7 +78,7 @@ namespace csharp_Protoshift.GameSession
         {
             XorKey = Resources.dispatchKey;
             Debug.Assert(XorKey.Length == 4096);
-            records = new PacketRecord[packetLimits];
+            // records = new PacketRecord[packetLimits];
             SessionId = sessionId;
             PacketRecordLimits = packetLimits;
             client_seed = server_seed = Array.Empty<byte>();
@@ -185,13 +187,14 @@ namespace csharp_Protoshift.GameSession
         List<string> unordered_messages = new List<string>
         {
             "GetPlayerTokenReq", "GetPlayerTokenRsp", "PlayerLoginRsp", "PingReq", "PingRsp", 
-            "UnionCmdNotify", "GetActivityInfoRsp", "AchievementUpdateNotify", 
+            "GetActivityInfoRsp", "AchievementUpdateNotify", 
             "BattlePassMissionUpdateNotify", "CombatInvocationsNotify", "ActivityInfoNotify", 
             "BattlePassMissionUpdateNotify", "PlayerStoreNotify", "AvatarDataNotify", 
-            "BattlePassAllDataNotify", "AvatarExpeditionDataNotify", "CombatInvocationsNotify", 
-            "AbilityInvocationFailNotify", "AbilityInvocationsNotify",
-            "ClientAbilitiesInitFinishCombineNotify", "ClientAbilityChangeNotify",
-            "ClientAbilityInitFinishNotify"
+            "BattlePassAllDataNotify", "AvatarExpeditionDataNotify", 
+            // "UnionCmdNotify", "CombatInvocationsNotify", 
+            // "AbilityInvocationFailNotify", "AbilityInvocationsNotify",
+            // "ClientAbilitiesInitFinishCombineNotify", "ClientAbilityChangeNotify",
+            // "ClientAbilityInitFinishNotify"
         };
 
         ReadOnlyCollection<ushort> unordered_cmds_new, unordered_cmds_old;
@@ -263,7 +266,7 @@ namespace csharp_Protoshift.GameSession
             {
                 Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > 15ms)", $"PacketHandler({SessionId})");
             }
-            // SubmitTimeRecord(protoname, false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
+            SubmitTimeRecord(protoname, isNewCmdid, ProtoshiftWatch.ElapsedMilliseconds, ProtoshiftWatch.ElapsedTicks, packet.Length);
             return shifted_body;
         }
 
@@ -357,25 +360,5 @@ namespace csharp_Protoshift.GameSession
             return key;
         }
         #endregion
-
-        public List<PacketRecord> QueryPacketRecords(string protoname)
-        {
-            var query = from record in records
-                        where record?.PacketName == protoname
-                        orderby record.Id
-                        select record;
-            return query.ToList();
-        }
-
-        public List<int> QueryPacketRecordIds(string protoname)
-        {
-            var query = from record in records
-                        where record.PacketName == protoname
-                        orderby record.Id
-                        select record.Id;
-            return query.ToList();
-        }
-
-        public PacketRecord QueryPacketRecordById(int id) => records[id % PacketRecordLimits];
     }
 }
