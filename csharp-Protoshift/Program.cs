@@ -1,4 +1,5 @@
 ﻿using csharp_Protoshift.Commands;
+using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
 using csharp_Protoshift.GameSession;
 using csharp_Protoshift.MhyKCP.Proxy;
 using csharp_Protoshift.resLoader;
@@ -55,8 +56,7 @@ namespace csharp_Protoshift
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             Log.Info("Start loading all protos, it will take some time...", "Entry");
-            // Log.Info(NewProtos.QueryCmdId.Initialize(), "Entry");
-            // Log.Info(OldProtos.QueryCmdId.Initialize(), "Entry");
+            Log.Info(ProtoshiftDispatch.Initialize(), "Entry");
 
             // Log.Info(SkillIssueDetect.Initialize(), "Entry");
             // Log.Info(KcpPacketAudit.Initialize(), "Entry");
