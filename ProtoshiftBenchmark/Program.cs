@@ -1,6 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Running;
 using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
+using csharp_Protoshift.Enhanced.Benchmark.Experimental;
 
 namespace csharp_Protoshift.Enhanced.Benchmark
 {
@@ -10,6 +11,9 @@ namespace csharp_Protoshift.Enhanced.Benchmark
         static NewProtos.GadgetPlayStartNotify normal_3Fields = GetNormalFields.Get3Fields();
 
         static NewProtos.ChannelerSlabBuffSchemeInfo map_uint32_uint32_50 = GetMapFields.GetUInt32AndUInt32(50);
+        static NewProtos.ChannelerSlabBuffSchemeInfo map_uint32_uint32_100 = GetMapFields.GetUInt32AndUInt32(100);
+        static NewProtos.ChannelerSlabBuffSchemeInfo map_uint32_uint32_200 = GetMapFields.GetUInt32AndUInt32(200);
+        static NewProtos.ChannelerSlabBuffSchemeInfo map_uint32_uint32_500 = GetMapFields.GetUInt32AndUInt32(500);
         static NewProtos.ChannelerSlabBuffSchemeInfo map_uint32_uint32_1000 = GetMapFields.GetUInt32AndUInt32(1000);
 
         static NewProtos.AbilityArgument oneof_normal_none = GetOneofFields.GetNormalNone();
@@ -28,7 +32,7 @@ namespace csharp_Protoshift.Enhanced.Benchmark
         static HandlerAbilityArgument handler_AbilityArgument = HandlerAbilityArgument.GlobalInstance;
         
         static HandlerAbilityActionServerMonsterLog handler_AbilityActionServerMonsterLog = HandlerAbilityActionServerMonsterLog.GlobalInstance;
-
+        static HandlerChannelerSlabBuffSchemeInfo_Special handler_new_ChannelerSlabBuffSchemeInfo = HandlerChannelerSlabBuffSchemeInfo_Special.GlobalInstance;
         #endregion
 
         private static void Main(string[] args)
@@ -71,32 +75,58 @@ namespace csharp_Protoshift.Enhanced.Benchmark
             BenchmarkRunner.Run<Program>();
         }
 
-        [Benchmark]
+        // [Benchmark]
         public void TestShift_normal_2Fields()
             => handler_GravenInnocencePhotoReminderNotify.NewShiftToOld(normal_2Fields);
-        [Benchmark]
+        // [Benchmark]
         public void TestShift_normal_3Fields()
             => handler_GadgetPlayStartNotify.NewShiftToOld(normal_3Fields);
         [Benchmark]
         public void TestShift_map_uint32_uint32_50()
             => handler_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_50);
         [Benchmark]
+        public void TestShift_map_uint32_uint32_100()
+            => handler_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_100);
+        [Benchmark]
+        public void TestShift_map_uint32_uint32_200()
+            => handler_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_200);
+        [Benchmark]
+        public void TestShift_map_uint32_uint32_500()
+            => handler_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_500);
+        [Benchmark]
         public void TestShift_map_uint32_uint32_1000()
             => handler_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_1000);
-        [Benchmark]
+        // [Benchmark]
         public void TestShift_oneof_normal_none()
             => handler_AbilityArgument.NewShiftToOld(oneof_normal_none);
-        [Benchmark]
+        // [Benchmark]
         public void TestShift_oneof_normal_float()
             => handler_AbilityArgument.NewShiftToOld(oneof_normal_float);
-        [Benchmark]
+        // [Benchmark]
         public void TestShift_oneof_normal_string()
             => handler_AbilityArgument.NewShiftToOld(oneof_normal_string);
-        [Benchmark]
+        // [Benchmark]
         public void TestShift_repeated_normal_100()
             => handler_AbilityActionServerMonsterLog.NewShiftToOld(repeated_normal_100);
-        [Benchmark]
+        // [Benchmark]
         public void TestShift_repeated_normal_20000()
             => handler_AbilityActionServerMonsterLog.NewShiftToOld(repeated_normal_20000);
+
+        
+        [Benchmark]
+        public void TestShift_new_map_uint32_uint32_50()
+            => handler_new_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_50);
+        [Benchmark]
+        public void TestShift_new_map_uint32_uint32_100()
+            => handler_new_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_100);
+        [Benchmark]
+        public void TestShift_new_map_uint32_uint32_200()
+            => handler_new_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_200);
+        [Benchmark]
+        public void TestShift_new_map_uint32_uint32_500()
+            => handler_new_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_500);
+        [Benchmark]
+        public void TestShift_new_map_uint32_uint32_1000()
+            => handler_new_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_1000);
     }
 }

@@ -11,6 +11,11 @@ namespace csharp_Protoshift.Enhanced.Benchmark
             }
             return rtn;
         }
+
+        public static NewProtos.FleurFairMusicGameInfo GetUInt32AndImported(int repeat)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     internal static class GetMapFieldsVerity
