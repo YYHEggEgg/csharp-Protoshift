@@ -1,4 +1,4 @@
- using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -42,7 +42,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 dirData[relativePath] = GetFileHash(file.FullName);
             }
             _fileHashes[dir.FullName] = dirData;
-         }
+        }
 
         /// <summary>
         /// 返回一个 Json 字符串，记录当前的状态。它必须可以被反序列化。
@@ -98,6 +98,38 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
 
             watcher._needRebuild = false;
             return watcher;
+        }
+
+        private static bool DataEqual(Dictionary<string, Dictionary<string, string>> left, Dictionary<string, Dictionary<string, string>> right)
+        {
+            //判断两个字典中的键值对是否相等
+            if (!CollectionEqual(left.Keys, right.Keys))
+            {
+                return false;
+            }
+            foreach (var item in left)
+            {
+                if (!right.TryGetValue(item.Key, out var rightValue))
+                {
+                    return false;
+                }
+                if (!CollectionEqual(item.Value.Keys, rightValue.Keys))
+                {
+                    return false;
+                }
+                if (!CollectionEqual(item.Value.Values, rightValue.Values))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private static bool CollectionEqual(ICollection<string> left, ICollection<string> right)
+        {
+            if (left.Count != right.Count) return false;
+            SortedSet<string> lset = new(left);
+            return lset.SetEquals(right);
         }
 
         /// <summary>
