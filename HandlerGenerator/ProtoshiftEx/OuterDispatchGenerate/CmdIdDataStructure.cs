@@ -79,7 +79,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                         string[] values = line.Split(',');
                         if (values.Length == 2 && int.TryParse(values[1], out int cmdId))
                         {
-                            oldcmdids.Add((values[0], cmdId));
+                            cmdid_list.Add((values[0], cmdId));
                             messages_havecmdid.Add(values[0]);
                         }
                     }
