@@ -678,7 +678,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      bargainInfoMap_.Add(other.bargainInfoMap_);
+      bargainInfoMap_.MergeFrom(other.bargainInfoMap_);
       if (other.Unk3300FJDIMCJEAOB != false) {
         Unk3300FJDIMCJEAOB = other.Unk3300FJDIMCJEAOB;
       }

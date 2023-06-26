@@ -845,7 +845,7 @@ namespace NewProtos {
       if (other.SummonedTag != 0) {
         SummonedTag = other.SummonedTag;
       }
-      summonTagMap_.Add(other.summonTagMap_);
+      summonTagMap_.MergeFrom(other.summonTagMap_);
       if (other.PoseId != 0) {
         PoseId = other.PoseId;
       }

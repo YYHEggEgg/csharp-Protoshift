@@ -242,7 +242,7 @@ namespace OldProtos {
       }
       extraItemList_.Add(other.extraItemList_);
       itemList_.Add(other.itemList_);
-      expeditionInfoMap_.Add(other.expeditionInfoMap_);
+      expeditionInfoMap_.MergeFrom(other.expeditionInfoMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }

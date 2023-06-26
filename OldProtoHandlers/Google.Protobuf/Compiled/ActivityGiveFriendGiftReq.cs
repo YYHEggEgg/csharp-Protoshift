@@ -236,7 +236,7 @@ namespace OldProtos {
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
       }
-      giftNumMap_.Add(other.giftNumMap_);
+      giftNumMap_.MergeFrom(other.giftNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

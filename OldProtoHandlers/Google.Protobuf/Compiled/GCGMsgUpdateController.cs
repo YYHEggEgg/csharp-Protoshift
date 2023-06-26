@@ -171,7 +171,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      allowControllerMap_.Add(other.allowControllerMap_);
+      allowControllerMap_.MergeFrom(other.allowControllerMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -210,7 +210,7 @@ namespace NewProtos {
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
-      fightPropMap_.Add(other.fightPropMap_);
+      fightPropMap_.MergeFrom(other.fightPropMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

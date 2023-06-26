@@ -190,7 +190,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      fishMap_.Add(other.fishMap_);
+      fishMap_.MergeFrom(other.fishMap_);
       fishingScoreList_.Add(other.fishingScoreList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }

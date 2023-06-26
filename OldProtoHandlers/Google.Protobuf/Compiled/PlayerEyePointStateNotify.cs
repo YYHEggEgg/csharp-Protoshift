@@ -218,10 +218,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float SphereRadius {
-      get { return regionSizeCase_ == RegionSizeOneofCase.SphereRadius ? (float) regionSize_ : 0F; }
+      get { return HasSphereRadius ? (float) regionSize_ : 0F; }
       set {
         regionSize_ = value;
         regionSizeCase_ = RegionSizeOneofCase.SphereRadius;
+      }
+    }
+    /// <summary>Gets whether the "sphere_radius" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasSphereRadius {
+      get { return regionSizeCase_ == RegionSizeOneofCase.SphereRadius; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "sphere_radius" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearSphereRadius() {
+      if (HasSphereRadius) {
+        ClearRegionSize();
       }
     }
 
@@ -327,7 +341,7 @@ namespace OldProtos {
       if (IsFilterStreamPos != false) hash ^= IsFilterStreamPos.GetHashCode();
       if (FixLodLevel != 0) hash ^= FixLodLevel.GetHashCode();
       if (RegionGroupId != 0) hash ^= RegionGroupId.GetHashCode();
-      if (regionSizeCase_ == RegionSizeOneofCase.SphereRadius) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(SphereRadius);
+      if (HasSphereRadius) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(SphereRadius);
       if (regionSizeCase_ == RegionSizeOneofCase.CubicSize) hash ^= CubicSize.GetHashCode();
       if (regionSizeCase_ == RegionSizeOneofCase.CylinderSize) hash ^= CylinderSize.GetHashCode();
       if (regionSizeCase_ == RegionSizeOneofCase.PolygonSize) hash ^= PolygonSize.GetHashCode();
@@ -382,7 +396,7 @@ namespace OldProtos {
         output.WriteRawTag(120);
         output.WriteUInt32(RegionEntityId);
       }
-      if (regionSizeCase_ == RegionSizeOneofCase.SphereRadius) {
+      if (HasSphereRadius) {
         output.WriteRawTag(253, 15);
         output.WriteFloat(SphereRadius);
       }
@@ -440,7 +454,7 @@ namespace OldProtos {
         output.WriteRawTag(120);
         output.WriteUInt32(RegionEntityId);
       }
-      if (regionSizeCase_ == RegionSizeOneofCase.SphereRadius) {
+      if (HasSphereRadius) {
         output.WriteRawTag(253, 15);
         output.WriteFloat(SphereRadius);
       }
@@ -490,7 +504,7 @@ namespace OldProtos {
       if (RegionGroupId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(RegionGroupId);
       }
-      if (regionSizeCase_ == RegionSizeOneofCase.SphereRadius) {
+      if (HasSphereRadius) {
         size += 2 + 4;
       }
       if (regionSizeCase_ == RegionSizeOneofCase.CubicSize) {

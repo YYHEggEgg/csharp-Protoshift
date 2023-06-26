@@ -126,10 +126,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Level {
-      get { return paramCase_ == ParamOneofCase.Level ? (uint) param_ : 0; }
+      get { return HasLevel ? (uint) param_ : 0; }
       set {
         param_ = value;
         paramCase_ = ParamOneofCase.Level;
+      }
+    }
+    /// <summary>Gets whether the "level" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasLevel {
+      get { return paramCase_ == ParamOneofCase.Level; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "level" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLevel() {
+      if (HasLevel) {
+        ClearParam();
       }
     }
 
@@ -138,10 +152,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint ChapterId {
-      get { return paramCase_ == ParamOneofCase.ChapterId ? (uint) param_ : 0; }
+      get { return HasChapterId ? (uint) param_ : 0; }
       set {
         param_ = value;
         paramCase_ = ParamOneofCase.ChapterId;
+      }
+    }
+    /// <summary>Gets whether the "chapter_id" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasChapterId {
+      get { return paramCase_ == ParamOneofCase.ChapterId; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "chapter_id" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearChapterId() {
+      if (HasChapterId) {
+        ClearParam();
       }
     }
 
@@ -195,8 +223,8 @@ namespace OldProtos {
       int hash = 1;
       if (Retcode != 0) hash ^= Retcode.GetHashCode();
       if (PersonalLineId != 0) hash ^= PersonalLineId.GetHashCode();
-      if (paramCase_ == ParamOneofCase.Level) hash ^= Level.GetHashCode();
-      if (paramCase_ == ParamOneofCase.ChapterId) hash ^= ChapterId.GetHashCode();
+      if (HasLevel) hash ^= Level.GetHashCode();
+      if (HasChapterId) hash ^= ChapterId.GetHashCode();
       hash ^= (int) paramCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -220,7 +248,7 @@ namespace OldProtos {
         output.WriteRawTag(32);
         output.WriteInt32(Retcode);
       }
-      if (paramCase_ == ParamOneofCase.ChapterId) {
+      if (HasChapterId) {
         output.WriteRawTag(48);
         output.WriteUInt32(ChapterId);
       }
@@ -228,7 +256,7 @@ namespace OldProtos {
         output.WriteRawTag(80);
         output.WriteUInt32(PersonalLineId);
       }
-      if (paramCase_ == ParamOneofCase.Level) {
+      if (HasLevel) {
         output.WriteRawTag(88);
         output.WriteUInt32(Level);
       }
@@ -246,7 +274,7 @@ namespace OldProtos {
         output.WriteRawTag(32);
         output.WriteInt32(Retcode);
       }
-      if (paramCase_ == ParamOneofCase.ChapterId) {
+      if (HasChapterId) {
         output.WriteRawTag(48);
         output.WriteUInt32(ChapterId);
       }
@@ -254,7 +282,7 @@ namespace OldProtos {
         output.WriteRawTag(80);
         output.WriteUInt32(PersonalLineId);
       }
-      if (paramCase_ == ParamOneofCase.Level) {
+      if (HasLevel) {
         output.WriteRawTag(88);
         output.WriteUInt32(Level);
       }
@@ -274,10 +302,10 @@ namespace OldProtos {
       if (PersonalLineId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PersonalLineId);
       }
-      if (paramCase_ == ParamOneofCase.Level) {
+      if (HasLevel) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Level);
       }
-      if (paramCase_ == ParamOneofCase.ChapterId) {
+      if (HasChapterId) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ChapterId);
       }
       if (_unknownFields != null) {

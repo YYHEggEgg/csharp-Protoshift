@@ -199,7 +199,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      collectionIdStateMap_.Add(other.collectionIdStateMap_);
+      collectionIdStateMap_.MergeFrom(other.collectionIdStateMap_);
       if (other.CollectionType != 0) {
         CollectionType = other.CollectionType;
       }

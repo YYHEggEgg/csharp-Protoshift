@@ -180,7 +180,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      propMap_.Add(other.propMap_);
+      propMap_.MergeFrom(other.propMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

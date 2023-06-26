@@ -288,8 +288,8 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      lackedPlaceMap_.Add(other.lackedPlaceMap_);
-      lackedNpcMap_.Add(other.lackedNpcMap_);
+      lackedPlaceMap_.MergeFrom(other.lackedPlaceMap_);
+      lackedNpcMap_.MergeFrom(other.lackedNpcMap_);
       lackedPlaceList_.Add(other.lackedPlaceList_);
       if (other.QuestId != 0) {
         QuestId = other.QuestId;

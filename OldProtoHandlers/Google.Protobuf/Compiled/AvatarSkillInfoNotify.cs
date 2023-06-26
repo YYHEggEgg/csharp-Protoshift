@@ -203,7 +203,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      skillMap_.Add(other.skillMap_);
+      skillMap_.MergeFrom(other.skillMap_);
       if (other.Guid != 0UL) {
         Guid = other.Guid;
       }

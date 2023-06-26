@@ -224,7 +224,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      slotMap_.Add(other.slotMap_);
+      slotMap_.MergeFrom(other.slotMap_);
       if (other.TotalEnergy != 0) {
         TotalEnergy = other.TotalEnergy;
       }

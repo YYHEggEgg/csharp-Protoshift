@@ -234,7 +234,7 @@ namespace OldProtos {
         return;
       }
       codexIdList_.Add(other.codexIdList_);
-      weaponMaxPromoteLevelMap_.Add(other.weaponMaxPromoteLevelMap_);
+      weaponMaxPromoteLevelMap_.MergeFrom(other.weaponMaxPromoteLevelMap_);
       if (other.Type != global::OldProtos.CodexType.None) {
         Type = other.Type;
       }

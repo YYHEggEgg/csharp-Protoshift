@@ -218,8 +218,8 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      unk3300JFHLEBLOFMA_.Add(other.unk3300JFHLEBLOFMA_);
-      unk3300COCFNBJCFGP_.Add(other.unk3300COCFNBJCFGP_);
+      unk3300JFHLEBLOFMA_.MergeFrom(other.unk3300JFHLEBLOFMA_);
+      unk3300COCFNBJCFGP_.MergeFrom(other.unk3300COCFNBJCFGP_);
       if (other.Uid != 0) {
         Uid = other.Uid;
       }

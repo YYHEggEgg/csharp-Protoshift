@@ -197,7 +197,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      costMap_.Add(other.costMap_);
+      costMap_.MergeFrom(other.costMap_);
       if (other.CardId != 0) {
         CardId = other.CardId;
       }

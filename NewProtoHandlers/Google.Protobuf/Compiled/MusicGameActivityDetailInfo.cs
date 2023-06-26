@@ -211,7 +211,7 @@ namespace NewProtos {
       }
       unk3300AAGCDCOIPJM_.Add(other.unk3300AAGCDCOIPJM_);
       unk3300OKHAACGHMAP_.Add(other.unk3300OKHAACGHMAP_);
-      musicGameRecordMap_.Add(other.musicGameRecordMap_);
+      musicGameRecordMap_.MergeFrom(other.musicGameRecordMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

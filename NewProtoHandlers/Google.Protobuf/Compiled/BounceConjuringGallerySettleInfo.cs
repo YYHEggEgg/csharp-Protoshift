@@ -383,7 +383,7 @@ namespace NewProtos {
       if (other.Score != 0) {
         Score = other.Score;
       }
-      gadgetCountMap_.Add(other.gadgetCountMap_);
+      gadgetCountMap_.MergeFrom(other.gadgetCountMap_);
       if (other.Unk3300CNGOBOFDEOE != 0) {
         Unk3300CNGOBOFDEOE = other.Unk3300CNGOBOFDEOE;
       }

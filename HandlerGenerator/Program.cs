@@ -447,7 +447,7 @@ Parallel.ForEach(newprotojsons, path =>
         newenums.Add(enumResult);
     }
 });
-Log.Info($"NewProtos: read {newmessages.Cou nt} messages, {newenums.Count} enums.");
+Log.Info($"NewProtos: read {newmessages.Count} messages, {newenums.Count} enums.");
 #endregion
 CollectionResult<MessageResult> messageResults =
     CollectionHelper.GetCompareResult(oldmessages, newmessages, MessageResult.NameComparer);

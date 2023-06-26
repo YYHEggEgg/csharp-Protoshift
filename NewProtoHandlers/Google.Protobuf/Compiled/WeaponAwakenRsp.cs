@@ -306,7 +306,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      curAffixLevelMap_.Add(other.curAffixLevelMap_);
+      curAffixLevelMap_.MergeFrom(other.curAffixLevelMap_);
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }
@@ -316,7 +316,7 @@ namespace NewProtos {
       if (other.TargetWeaponGuid != 0UL) {
         TargetWeaponGuid = other.TargetWeaponGuid;
       }
-      oldAffixLevelMap_.Add(other.oldAffixLevelMap_);
+      oldAffixLevelMap_.MergeFrom(other.oldAffixLevelMap_);
       if (other.TargetWeaponAwakenLevel != 0) {
         TargetWeaponAwakenLevel = other.TargetWeaponAwakenLevel;
       }

@@ -215,7 +215,7 @@ namespace OldProtos {
         return;
       }
       deleteCustomFurnitureList_.Add(other.deleteCustomFurnitureList_);
-      usedSubFurnitureCountMap_.Add(other.usedSubFurnitureCountMap_);
+      usedSubFurnitureCountMap_.MergeFrom(other.usedSubFurnitureCountMap_);
       customFurnitureInfoList_.Add(other.customFurnitureInfoList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }

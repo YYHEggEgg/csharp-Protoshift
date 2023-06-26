@@ -1142,7 +1142,7 @@ namespace NewProtos {
       if (other.Unk3300IADLIIMGDMC != false) {
         Unk3300IADLIIMGDMC = other.Unk3300IADLIIMGDMC;
       }
-      blockInfoMap_.Add(other.blockInfoMap_);
+      blockInfoMap_.MergeFrom(other.blockInfoMap_);
       if (other.IsTransfer != false) {
         IsTransfer = other.IsTransfer;
       }
@@ -1152,7 +1152,7 @@ namespace NewProtos {
       if (other.GameBiz.Length != 0) {
         GameBiz = other.GameBiz;
       }
-      abilityHashMap_.Add(other.abilityHashMap_);
+      abilityHashMap_.MergeFrom(other.abilityHashMap_);
       if (other.AbilityHashCode != 0) {
         AbilityHashCode = other.AbilityHashCode;
       }

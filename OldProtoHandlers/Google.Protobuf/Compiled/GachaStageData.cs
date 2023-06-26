@@ -226,7 +226,7 @@ namespace OldProtos {
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
-      targetNumMap_.Add(other.targetNumMap_);
+      targetNumMap_.MergeFrom(other.targetNumMap_);
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
       }

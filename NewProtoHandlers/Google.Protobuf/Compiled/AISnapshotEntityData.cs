@@ -484,7 +484,7 @@ namespace NewProtos {
       if (other.Unk3300GNBOAJHMNJO != 0) {
         Unk3300GNBOAJHMNJO = other.Unk3300GNBOAJHMNJO;
       }
-      hittingAvatars_.Add(other.hittingAvatars_);
+      hittingAvatars_.MergeFrom(other.hittingAvatars_);
       if (other.Unk3300FIKEAEPLOHJ != 0) {
         Unk3300FIKEAEPLOHJ = other.Unk3300FIKEAEPLOHJ;
       }

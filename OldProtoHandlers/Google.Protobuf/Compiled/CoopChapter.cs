@@ -385,7 +385,7 @@ namespace OldProtos {
       if (other.State != global::OldProtos.CoopChapter.Types.State.Close) {
         State = other.State;
       }
-      seenEndingMap_.Add(other.seenEndingMap_);
+      seenEndingMap_.MergeFrom(other.seenEndingMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -202,7 +202,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      picNumMap_.Add(other.picNumMap_);
+      picNumMap_.MergeFrom(other.picNumMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }

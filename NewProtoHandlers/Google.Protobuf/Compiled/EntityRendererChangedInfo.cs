@@ -224,7 +224,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      changedRenderers_.Add(other.changedRenderers_);
+      changedRenderers_.MergeFrom(other.changedRenderers_);
       if (other.VisibilityCount != 0) {
         VisibilityCount = other.VisibilityCount;
       }

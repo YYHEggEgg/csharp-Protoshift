@@ -206,7 +206,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      uidScoreMap_.Add(other.uidScoreMap_);
+      uidScoreMap_.MergeFrom(other.uidScoreMap_);
       if (other.GalleryId != 0) {
         GalleryId = other.GalleryId;
       }

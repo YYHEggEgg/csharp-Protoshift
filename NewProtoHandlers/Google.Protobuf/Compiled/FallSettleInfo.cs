@@ -313,7 +313,7 @@ namespace NewProtos {
         }
         PlayerInfo.MergeFrom(other.PlayerInfo);
       }
-      flowerRingCatchCountMap_.Add(other.flowerRingCatchCountMap_);
+      flowerRingCatchCountMap_.MergeFrom(other.flowerRingCatchCountMap_);
       if (other.Uid != 0) {
         Uid = other.Uid;
       }

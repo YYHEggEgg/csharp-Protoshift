@@ -240,7 +240,7 @@ namespace NewProtos {
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
-      flowerNumMap_.Add(other.flowerNumMap_);
+      flowerNumMap_.MergeFrom(other.flowerNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

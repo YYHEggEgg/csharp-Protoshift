@@ -230,7 +230,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      forgeQueueMap_.Add(other.forgeQueueMap_);
+      forgeQueueMap_.MergeFrom(other.forgeQueueMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }

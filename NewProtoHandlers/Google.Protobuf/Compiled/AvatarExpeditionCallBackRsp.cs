@@ -211,7 +211,7 @@ namespace NewProtos {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      expeditionInfoMap_.Add(other.expeditionInfoMap_);
+      expeditionInfoMap_.MergeFrom(other.expeditionInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

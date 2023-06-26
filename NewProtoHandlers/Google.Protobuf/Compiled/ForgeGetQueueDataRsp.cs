@@ -237,7 +237,7 @@ namespace NewProtos {
       if (other.MaxQueueNum != 0) {
         MaxQueueNum = other.MaxQueueNum;
       }
-      forgeQueueMap_.Add(other.forgeQueueMap_);
+      forgeQueueMap_.MergeFrom(other.forgeQueueMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
