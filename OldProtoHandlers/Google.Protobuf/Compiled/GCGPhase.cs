@@ -201,7 +201,7 @@ namespace OldProtos {
       if (other.PhaseType != global::OldProtos.GCGPhaseType.Invalid) {
         PhaseType = other.PhaseType;
       }
-      allowControllerMap_.Add(other.allowControllerMap_);
+      allowControllerMap_.MergeFrom(other.allowControllerMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

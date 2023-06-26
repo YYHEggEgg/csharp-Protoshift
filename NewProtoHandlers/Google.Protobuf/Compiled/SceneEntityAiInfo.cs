@@ -326,15 +326,15 @@ namespace NewProtos {
         }
         BornPos.MergeFrom(other.BornPos);
       }
-      skillCdMap_.Add(other.skillCdMap_);
+      skillCdMap_.MergeFrom(other.skillCdMap_);
       if (other.servantInfo_ != null) {
         if (servantInfo_ == null) {
           ServantInfo = new global::NewProtos.ServantInfo();
         }
         ServantInfo.MergeFrom(other.ServantInfo);
       }
-      aiThreatMap_.Add(other.aiThreatMap_);
-      skillGroupCdMap_.Add(other.skillGroupCdMap_);
+      aiThreatMap_.MergeFrom(other.aiThreatMap_);
+      skillGroupCdMap_.MergeFrom(other.skillGroupCdMap_);
       if (other.CurTactic != 0) {
         CurTactic = other.CurTactic;
       }

@@ -203,7 +203,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      giftNumMap_.Add(other.giftNumMap_);
+      giftNumMap_.MergeFrom(other.giftNumMap_);
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
       }

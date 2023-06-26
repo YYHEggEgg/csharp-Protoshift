@@ -172,7 +172,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      stageMap_.Add(other.stageMap_);
+      stageMap_.MergeFrom(other.stageMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -644,11 +644,11 @@ namespace NewProtos {
       if (other.Unk3300LEKODCFPINJ != 0) {
         Unk3300LEKODCFPINJ = other.Unk3300LEKODCFPINJ;
       }
-      skipFloorGrantedRewardItemMap_.Add(other.skipFloorGrantedRewardItemMap_);
+      skipFloorGrantedRewardItemMap_.MergeFrom(other.skipFloorGrantedRewardItemMap_);
       if (other.IsFinishedEntranceFloor != false) {
         IsFinishedEntranceFloor = other.IsFinishedEntranceFloor;
       }
-      floorOpenTimeMap_.Add(other.floorOpenTimeMap_);
+      floorOpenTimeMap_.MergeFrom(other.floorOpenTimeMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -312,7 +312,7 @@ namespace OldProtos {
       if (other.WaitBeginTimeUs != 0UL) {
         WaitBeginTimeUs = other.WaitBeginTimeUs;
       }
-      playerConfirmedCardMap_.Add(other.playerConfirmedCardMap_);
+      playerConfirmedCardMap_.MergeFrom(other.playerConfirmedCardMap_);
       if (other.PlayIndex != 0) {
         PlayIndex = other.PlayIndex;
       }

@@ -260,7 +260,7 @@ namespace OldProtos {
       if (other.IsNewRecord != false) {
         IsNewRecord = other.IsNewRecord;
       }
-      settleInfoMap_.Add(other.settleInfoMap_);
+      settleInfoMap_.MergeFrom(other.settleInfoMap_);
       if (other.TotalScore != 0) {
         TotalScore = other.TotalScore;
       }

@@ -314,8 +314,8 @@ namespace NewProtos {
       if (other.CurLevel != 0) {
         CurLevel = other.CurLevel;
       }
-      curFightPropMap_.Add(other.curFightPropMap_);
-      oldFightPropMap_.Add(other.oldFightPropMap_);
+      curFightPropMap_.MergeFrom(other.curFightPropMap_);
+      oldFightPropMap_.MergeFrom(other.oldFightPropMap_);
       if (other.OldLevel != 0) {
         OldLevel = other.OldLevel;
       }

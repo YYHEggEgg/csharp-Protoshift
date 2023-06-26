@@ -224,11 +224,11 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      returnItemMap_.Add(other.returnItemMap_);
+      returnItemMap_.MergeFrom(other.returnItemMap_);
       if (other.Type != global::OldProtos.MaterialDeleteReturnType.Bag) {
         Type = other.Type;
       }
-      deleteMaterialMap_.Add(other.deleteMaterialMap_);
+      deleteMaterialMap_.MergeFrom(other.deleteMaterialMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

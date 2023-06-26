@@ -1067,7 +1067,7 @@ namespace OldProtos {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      blockInfoMap_.Add(other.blockInfoMap_);
+      blockInfoMap_.MergeFrom(other.blockInfoMap_);
       if (other.IsAudit != false) {
         IsAudit = other.IsAudit;
       }
@@ -1125,7 +1125,7 @@ namespace OldProtos {
       if (other.IsUseAbilityHash != false) {
         IsUseAbilityHash = other.IsUseAbilityHash;
       }
-      abilityHashMap_.Add(other.abilityHashMap_);
+      abilityHashMap_.MergeFrom(other.abilityHashMap_);
       shortAbilityHashMap_.Add(other.shortAbilityHashMap_);
       if (other.ClientMd5.Length != 0) {
         ClientMd5 = other.ClientMd5;

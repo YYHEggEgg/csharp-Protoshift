@@ -300,7 +300,7 @@ namespace NewProtos {
       if (other.HunterUid != 0) {
         HunterUid = other.HunterUid;
       }
-      battleInfoMap_.Add(other.battleInfoMap_);
+      battleInfoMap_.MergeFrom(other.battleInfoMap_);
       if (other.IsRecordScore != false) {
         IsRecordScore = other.IsRecordScore;
       }

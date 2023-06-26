@@ -353,11 +353,11 @@ namespace NewProtos {
       if (other.IsDungeonUnlocked != false) {
         IsDungeonUnlocked = other.IsDungeonUnlocked;
       }
-      dungeonSectionInfoMap_.Add(other.dungeonSectionInfoMap_);
+      dungeonSectionInfoMap_.MergeFrom(other.dungeonSectionInfoMap_);
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
-      minigameInfoMap_.Add(other.minigameInfoMap_);
+      minigameInfoMap_.MergeFrom(other.minigameInfoMap_);
       if (other.Unk3300LOFLGOOIMNH != 0) {
         Unk3300LOFLGOOIMNH = other.Unk3300LOFLGOOIMNH;
       }

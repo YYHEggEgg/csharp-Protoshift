@@ -301,7 +301,7 @@ namespace OldProtos {
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
-      wishFlowerNumMap_.Add(other.wishFlowerNumMap_);
+      wishFlowerNumMap_.MergeFrom(other.wishFlowerNumMap_);
       if (other.TodaySeedRewardId != 0) {
         TodaySeedRewardId = other.TodaySeedRewardId;
       }
@@ -311,7 +311,7 @@ namespace OldProtos {
       if (other.IsTodayHasAwarded != false) {
         IsTodayHasAwarded = other.IsTodayHasAwarded;
       }
-      usedFlowerNumMap_.Add(other.usedFlowerNumMap_);
+      usedFlowerNumMap_.MergeFrom(other.usedFlowerNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

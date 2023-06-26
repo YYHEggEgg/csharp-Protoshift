@@ -308,14 +308,14 @@ namespace OldProtos {
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }
-      oldAffixLevelMap_.Add(other.oldAffixLevelMap_);
+      oldAffixLevelMap_.MergeFrom(other.oldAffixLevelMap_);
       if (other.TargetWeaponAwakenLevel != 0) {
         TargetWeaponAwakenLevel = other.TargetWeaponAwakenLevel;
       }
       if (other.TargetWeaponGuid != 0UL) {
         TargetWeaponGuid = other.TargetWeaponGuid;
       }
-      curAffixLevelMap_.Add(other.curAffixLevelMap_);
+      curAffixLevelMap_.MergeFrom(other.curAffixLevelMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

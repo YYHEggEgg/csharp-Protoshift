@@ -597,7 +597,7 @@ namespace OldProtos {
       if (other.DailyLevelIndex != 0) {
         DailyLevelIndex = other.DailyLevelIndex;
       }
-      skipFloorGrantedRewardItemMap_.Add(other.skipFloorGrantedRewardItemMap_);
+      skipFloorGrantedRewardItemMap_.MergeFrom(other.skipFloorGrantedRewardItemMap_);
       if (other.IsFirstInteract != false) {
         IsFirstInteract = other.IsFirstInteract;
       }
@@ -626,7 +626,7 @@ namespace OldProtos {
       if (other.SkipToFloorIndex != 0) {
         SkipToFloorIndex = other.SkipToFloorIndex;
       }
-      floorOpenTimeMap_.Add(other.floorOpenTimeMap_);
+      floorOpenTimeMap_.MergeFrom(other.floorOpenTimeMap_);
       if (other.curLevelRecord_ != null) {
         if (curLevelRecord_ == null) {
           CurLevelRecord = new global::OldProtos.TowerCurLevelRecord();

@@ -292,7 +292,7 @@ namespace OldProtos {
         }
         ProfilePicture.MergeFrom(other.ProfilePicture);
       }
-      giftNumMap_.Add(other.giftNumMap_);
+      giftNumMap_.MergeFrom(other.giftNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

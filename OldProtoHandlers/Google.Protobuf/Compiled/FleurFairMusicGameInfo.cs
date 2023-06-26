@@ -172,7 +172,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      musicRecordMap_.Add(other.musicRecordMap_);
+      musicRecordMap_.MergeFrom(other.musicRecordMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

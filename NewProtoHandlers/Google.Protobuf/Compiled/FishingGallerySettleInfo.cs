@@ -191,7 +191,7 @@ namespace NewProtos {
         return;
       }
       fishingScoreList_.Add(other.fishingScoreList_);
-      fishMap_.Add(other.fishMap_);
+      fishMap_.MergeFrom(other.fishMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

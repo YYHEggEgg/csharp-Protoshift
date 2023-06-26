@@ -198,7 +198,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      fallCountMap_.Add(other.fallCountMap_);
+      fallCountMap_.MergeFrom(other.fallCountMap_);
       if (other.EndTime != 0) {
         EndTime = other.EndTime;
       }

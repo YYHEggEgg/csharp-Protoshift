@@ -218,7 +218,7 @@ namespace NewProtos {
       }
       tempAvatarGuidList_.Add(other.tempAvatarGuidList_);
       backupAvatarTeamOrderList_.Add(other.backupAvatarTeamOrderList_);
-      avatarTeamMap_.Add(other.avatarTeamMap_);
+      avatarTeamMap_.MergeFrom(other.avatarTeamMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

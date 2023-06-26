@@ -245,7 +245,7 @@ namespace NewProtos {
         return;
       }
       levelList_.Add(other.levelList_);
-      levelOpenTimeMap_.Add(other.levelOpenTimeMap_);
+      levelOpenTimeMap_.MergeFrom(other.levelOpenTimeMap_);
       if (other.IsFinishAnyLevel != false) {
         IsFinishAnyLevel = other.IsFinishAnyLevel;
       }

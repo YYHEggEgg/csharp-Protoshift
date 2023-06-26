@@ -235,7 +235,7 @@ namespace NewProtos {
       }
       haveViewedList_.Add(other.haveViewedList_);
       codexIdList_.Add(other.codexIdList_);
-      weaponMaxPromoteLevelMap_.Add(other.weaponMaxPromoteLevelMap_);
+      weaponMaxPromoteLevelMap_.MergeFrom(other.weaponMaxPromoteLevelMap_);
       if (other.Type != global::NewProtos.CodexType.None) {
         Type = other.Type;
       }

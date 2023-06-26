@@ -292,7 +292,7 @@ namespace OldProtos {
       if (other.CardBackId != 0) {
         CardBackId = other.CardBackId;
       }
-      cardFaceMap_.Add(other.cardFaceMap_);
+      cardFaceMap_.MergeFrom(other.cardFaceMap_);
       challengeList_.Add(other.challengeList_);
       if (other.Score != 0) {
         Score = other.Score;

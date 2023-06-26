@@ -292,8 +292,8 @@ namespace OldProtos {
       }
       lackedNpcList_.Add(other.lackedNpcList_);
       lackedPlaceList_.Add(other.lackedPlaceList_);
-      lackedNpcMap_.Add(other.lackedNpcMap_);
-      lackedPlaceMap_.Add(other.lackedPlaceMap_);
+      lackedNpcMap_.MergeFrom(other.lackedNpcMap_);
+      lackedPlaceMap_.MergeFrom(other.lackedPlaceMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

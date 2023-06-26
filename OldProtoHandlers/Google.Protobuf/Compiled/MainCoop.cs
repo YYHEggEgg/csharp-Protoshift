@@ -307,8 +307,8 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      seenEndingMap_.Add(other.seenEndingMap_);
-      normalVarMap_.Add(other.normalVarMap_);
+      seenEndingMap_.MergeFrom(other.seenEndingMap_);
+      normalVarMap_.MergeFrom(other.normalVarMap_);
       if (other.SelfConfidence != 0) {
         SelfConfidence = other.SelfConfidence;
       }
@@ -316,7 +316,7 @@ namespace OldProtos {
       if (other.Status != global::OldProtos.MainCoop.Types.Status.Invalid) {
         Status = other.Status;
       }
-      tempVarMap_.Add(other.tempVarMap_);
+      tempVarMap_.MergeFrom(other.tempVarMap_);
       if (other.Id != 0) {
         Id = other.Id;
       }

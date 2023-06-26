@@ -179,7 +179,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      worldPropMap_.Add(other.worldPropMap_);
+      worldPropMap_.MergeFrom(other.worldPropMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -365,7 +365,7 @@ namespace NewProtos {
       if (other.NickName.Length != 0) {
         NickName = other.NickName;
       }
-      cardFaceMap_.Add(other.cardFaceMap_);
+      cardFaceMap_.MergeFrom(other.cardFaceMap_);
       cardIdList_.Add(other.cardIdList_);
       if (other.PsnId.Length != 0) {
         PsnId = other.PsnId;

@@ -284,7 +284,7 @@ namespace NewProtos {
       if (other.IsFinish != false) {
         IsFinish = other.IsFinish;
       }
-      presentLevelMap_.Add(other.presentLevelMap_);
+      presentLevelMap_.MergeFrom(other.presentLevelMap_);
       if (other.OpenTime != 0) {
         OpenTime = other.OpenTime;
       }

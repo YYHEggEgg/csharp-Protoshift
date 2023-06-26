@@ -182,7 +182,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      expeditionInfoMap_.Add(other.expeditionInfoMap_);
+      expeditionInfoMap_.MergeFrom(other.expeditionInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

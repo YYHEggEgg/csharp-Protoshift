@@ -378,7 +378,7 @@ namespace NewProtos {
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
-      picNumMap_.Add(other.picNumMap_);
+      picNumMap_.MergeFrom(other.picNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -152,10 +152,24 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint BossChallengeId {
-      get { return challengeDetailCase_ == ChallengeDetailOneofCase.BossChallengeId ? (uint) challengeDetail_ : 0; }
+      get { return HasBossChallengeId ? (uint) challengeDetail_ : 0; }
       set {
         challengeDetail_ = value;
         challengeDetailCase_ = ChallengeDetailOneofCase.BossChallengeId;
+      }
+    }
+    /// <summary>Gets whether the "boss_challenge_id" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasBossChallengeId {
+      get { return challengeDetailCase_ == ChallengeDetailOneofCase.BossChallengeId; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "boss_challenge_id" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearBossChallengeId() {
+      if (HasBossChallengeId) {
+        ClearChallengeDetail();
       }
     }
 
@@ -213,7 +227,7 @@ namespace NewProtos {
       if (IsUnlock != false) hash ^= IsUnlock.GetHashCode();
       if (challengeDetailCase_ == ChallengeDetailOneofCase.BundleInfo) hash ^= BundleInfo.GetHashCode();
       if (challengeDetailCase_ == ChallengeDetailOneofCase.ScoreChallengeInfo) hash ^= ScoreChallengeInfo.GetHashCode();
-      if (challengeDetailCase_ == ChallengeDetailOneofCase.BossChallengeId) hash ^= BossChallengeId.GetHashCode();
+      if (HasBossChallengeId) hash ^= BossChallengeId.GetHashCode();
       hash ^= (int) challengeDetailCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -245,7 +259,7 @@ namespace NewProtos {
         output.WriteRawTag(88);
         output.WriteUInt32(ChallengeType);
       }
-      if (challengeDetailCase_ == ChallengeDetailOneofCase.BossChallengeId) {
+      if (HasBossChallengeId) {
         output.WriteRawTag(96);
         output.WriteUInt32(BossChallengeId);
       }
@@ -275,7 +289,7 @@ namespace NewProtos {
         output.WriteRawTag(88);
         output.WriteUInt32(ChallengeType);
       }
-      if (challengeDetailCase_ == ChallengeDetailOneofCase.BossChallengeId) {
+      if (HasBossChallengeId) {
         output.WriteRawTag(96);
         output.WriteUInt32(BossChallengeId);
       }
@@ -305,7 +319,7 @@ namespace NewProtos {
       if (challengeDetailCase_ == ChallengeDetailOneofCase.ScoreChallengeInfo) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ScoreChallengeInfo);
       }
-      if (challengeDetailCase_ == ChallengeDetailOneofCase.BossChallengeId) {
+      if (HasBossChallengeId) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(BossChallengeId);
       }
       if (_unknownFields != null) {

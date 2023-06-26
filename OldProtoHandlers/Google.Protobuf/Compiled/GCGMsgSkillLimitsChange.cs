@@ -173,7 +173,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      cardLimitsChangeMap_.Add(other.cardLimitsChangeMap_);
+      cardLimitsChangeMap_.MergeFrom(other.cardLimitsChangeMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

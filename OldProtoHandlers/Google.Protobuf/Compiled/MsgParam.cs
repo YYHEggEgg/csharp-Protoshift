@@ -97,10 +97,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint IntParam {
-      get { return paramCase_ == ParamOneofCase.IntParam ? (uint) param_ : 0; }
+      get { return HasIntParam ? (uint) param_ : 0; }
       set {
         param_ = value;
         paramCase_ = ParamOneofCase.IntParam;
+      }
+    }
+    /// <summary>Gets whether the "int_param" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIntParam {
+      get { return paramCase_ == ParamOneofCase.IntParam; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "int_param" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIntParam() {
+      if (HasIntParam) {
+        ClearParam();
       }
     }
 
@@ -109,10 +123,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float FltParam {
-      get { return paramCase_ == ParamOneofCase.FltParam ? (float) param_ : 0F; }
+      get { return HasFltParam ? (float) param_ : 0F; }
       set {
         param_ = value;
         paramCase_ = ParamOneofCase.FltParam;
+      }
+    }
+    /// <summary>Gets whether the "flt_param" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasFltParam {
+      get { return paramCase_ == ParamOneofCase.FltParam; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "flt_param" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearFltParam() {
+      if (HasFltParam) {
+        ClearParam();
       }
     }
 
@@ -121,10 +149,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string StrParam {
-      get { return paramCase_ == ParamOneofCase.StrParam ? (string) param_ : ""; }
+      get { return HasStrParam ? (string) param_ : ""; }
       set {
         param_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         paramCase_ = ParamOneofCase.StrParam;
+      }
+    }
+    /// <summary>Gets whether the "str_param" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasStrParam {
+      get { return paramCase_ == ParamOneofCase.StrParam; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "str_param" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearStrParam() {
+      if (HasStrParam) {
+        ClearParam();
       }
     }
 
@@ -176,9 +218,9 @@ namespace OldProtos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (paramCase_ == ParamOneofCase.IntParam) hash ^= IntParam.GetHashCode();
-      if (paramCase_ == ParamOneofCase.FltParam) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FltParam);
-      if (paramCase_ == ParamOneofCase.StrParam) hash ^= StrParam.GetHashCode();
+      if (HasIntParam) hash ^= IntParam.GetHashCode();
+      if (HasFltParam) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FltParam);
+      if (HasStrParam) hash ^= StrParam.GetHashCode();
       hash ^= (int) paramCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -198,15 +240,15 @@ namespace OldProtos {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (paramCase_ == ParamOneofCase.StrParam) {
+      if (HasStrParam) {
         output.WriteRawTag(34);
         output.WriteString(StrParam);
       }
-      if (paramCase_ == ParamOneofCase.FltParam) {
+      if (HasFltParam) {
         output.WriteRawTag(61);
         output.WriteFloat(FltParam);
       }
-      if (paramCase_ == ParamOneofCase.IntParam) {
+      if (HasIntParam) {
         output.WriteRawTag(72);
         output.WriteUInt32(IntParam);
       }
@@ -220,15 +262,15 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (paramCase_ == ParamOneofCase.StrParam) {
+      if (HasStrParam) {
         output.WriteRawTag(34);
         output.WriteString(StrParam);
       }
-      if (paramCase_ == ParamOneofCase.FltParam) {
+      if (HasFltParam) {
         output.WriteRawTag(61);
         output.WriteFloat(FltParam);
       }
-      if (paramCase_ == ParamOneofCase.IntParam) {
+      if (HasIntParam) {
         output.WriteRawTag(72);
         output.WriteUInt32(IntParam);
       }
@@ -242,13 +284,13 @@ namespace OldProtos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (paramCase_ == ParamOneofCase.IntParam) {
+      if (HasIntParam) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(IntParam);
       }
-      if (paramCase_ == ParamOneofCase.FltParam) {
+      if (HasFltParam) {
         size += 1 + 4;
       }
-      if (paramCase_ == ParamOneofCase.StrParam) {
+      if (HasStrParam) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(StrParam);
       }
       if (_unknownFields != null) {

@@ -225,7 +225,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      allowControllerMap_.Add(other.allowControllerMap_);
+      allowControllerMap_.MergeFrom(other.allowControllerMap_);
       if (other.BeforePhase != global::OldProtos.GCGPhaseType.Invalid) {
         BeforePhase = other.BeforePhase;
       }

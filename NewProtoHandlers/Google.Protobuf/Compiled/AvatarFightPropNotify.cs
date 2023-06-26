@@ -209,7 +209,7 @@ namespace NewProtos {
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }
-      fightPropMap_.Add(other.fightPropMap_);
+      fightPropMap_.MergeFrom(other.fightPropMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

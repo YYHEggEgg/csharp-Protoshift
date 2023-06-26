@@ -295,7 +295,7 @@ namespace NewProtos {
       if (other.ServerTime != 0UL) {
         ServerTime = other.ServerTime;
       }
-      propMap_.Add(other.propMap_);
+      propMap_.MergeFrom(other.propMap_);
       if (other.RegionId != 0) {
         RegionId = other.RegionId;
       }
