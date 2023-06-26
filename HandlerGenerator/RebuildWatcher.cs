@@ -36,7 +36,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             _directories.Add(dir);
 
             var dirData = new Dictionary<string, string>();
-            foreach (var file in dir.GetFiles("*", SearchOption.AllDirectories))
+            foreach (var file in dir.EnumerateFiles("*", SearchOption.AllDirectories))
             {
                 var relativePath = GetRelativePath(file.FullName, dir.FullName);
                 dirData[relativePath] = GetFileHash(file.FullName);
