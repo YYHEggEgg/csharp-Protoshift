@@ -1,3 +1,5 @@
+using YYHEggEgg.Logger;
+
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
     internal static class GenProtoshiftDispatch
@@ -32,6 +34,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
                 curMethodNum++;
+                fi.WriteLine();
                 #endregion
                 #region (New -> Old, reload: Span)
                 GenMethodEntry(fi, true, ShiftDataType.ReadOnlySpan);
@@ -43,6 +46,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
                 curMethodNum++;
+                fi.WriteLine();
                 #endregion
                 #region (New -> Old, reload: ByteString)
                 GenMethodEntry(fi, true, ShiftDataType.ByteString);
@@ -54,6 +58,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
                 curMethodNum++;
+                fi.WriteLine();
                 #endregion
                 #region (Old -> New, reload: byte[])
                 GenMethodEntry(fi, false, ShiftDataType.ByteArray);
@@ -65,6 +70,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
                 curMethodNum++;
+                fi.WriteLine();
                 #endregion
                 #region (Old -> New, reload: Span)
                 GenMethodEntry(fi, false, ShiftDataType.ReadOnlySpan);
@@ -76,6 +82,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
                 curMethodNum++;
+                fi.WriteLine();
                 #endregion
                 #region (Old -> New, reload: ByteString)
                 GenMethodEntry(fi, false, ShiftDataType.ByteString);
@@ -86,6 +93,28 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 GenMethodBody(fi, false, ShiftDataType.ByteString, mergeChanges[curMethodNum], cmdData.cmdlist_order_new);
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
+                fi.WriteLine();
+                #endregion
+                #region Other Code (Handlers)
+                fi.WriteLine("#region Handlers");
+                foreach (var importhandler in cmdData.supportedMessages)
+                {
+                    fi.WriteLine($"private static Handler{importhandler} handler_{importhandler} = Handler{importhandler}.GlobalInstance;");
+                }
+                fi.WriteLine("#endregion");
+                #endregion
+                #region Other Code (Initialize)
+                fi.WriteLine();
+                fi.WriteLine("#region Initialize");
+                fi.WriteLine($"static ProtoshiftDispatch()");
+                fi.EnterCodeRegion();
+                foreach (var importhandler in cmdData.supportedMessages)
+                {
+                    fi.WriteLine($"handler_{importhandler}.NewShiftToOld(ReadOnlySpan<byte>.Empty);");
+                }
+                fi.ExitCodeRegion();
+                fi.WriteLine($"public static string Initialize => \"ProtoshiftDispatch initialized, {cmdData.supportedMessages.Count} handlers (cmds).\";");
+                fi.WriteLine("#endregion");
                 #endregion
                 #region Code file End
                 fi.ExitCodeRegion();
@@ -101,7 +130,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         {
             ByteArray = 0,
             ReadOnlySpan = 1,
-            ByteString = 2;
+            ByteString = 2
         }
 
         private static void GenMethodEntry(BasicCodeWriter fi, bool isGenNewShiftToOld, ShiftDataType paramType)
@@ -109,7 +138,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             string packetFrom = isGenNewShiftToOld ? "client" : "server";
             string packetTo = isGenNewShiftToOld ? "server" : "client";
             string protocol = isGenNewShiftToOld ? "Old" : "New";
-            string method_identifier = isGenNewShiftToOld ? "NewShiftToOld" : "OldShiftToNew"
+            string method_identifier = isGenNewShiftToOld ? "NewShiftToOld" : "OldShiftToNew";
             fi.WriteLine("/// <summary>");
             fi.WriteLine($"/// Protoshift a base packet from {packetFrom}.");
             fi.WriteLine("/// </summary>");
@@ -132,17 +161,17 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine("/// <exception cref=\"NotSupportedException\">The input <paramref name=\"cmdid\"/> is not supported to be Protoshifted.</exception>");
             switch (paramType)
             {
-                case ShiftDataType.ByteArray: 
+                case ShiftDataType.ByteArray:
                     fi.WriteLine($"public static byte[] {method_identifier}(uint cmdid, ",
                         "byte[]? head, int? head_offset, int? head_length, ",
                         "byte[] body, int body_offset, int body_length)");
-                break;
-            case ShiftDataType.ReadOnlySpan: 
-                fi.WriteLine($"public static byte[] {method_identifier}(uint cmdid, ReadOnlySpan<byte> head, ReadOnlySpan<byte> body)");
-                break;
-            case ShiftDataType.ByteString: 
-                fi.WriteLine($"public static byte[] {method_identifier}(uint cmdid, ByteString? head, ByteString body)");
-                break;
+                    break;
+                case ShiftDataType.ReadOnlySpan:
+                    fi.WriteLine($"public static byte[] {method_identifier}(uint cmdid, ReadOnlySpan<byte> head, ReadOnlySpan<byte> body)");
+                    break;
+                case ShiftDataType.ByteString:
+                    fi.WriteLine($"public static byte[] {method_identifier}(uint cmdid, ByteString? head, ByteString body)");
+                    break;
             }
         }
 
@@ -164,8 +193,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine("// Below is mergable region");
         }
         #endregion
-    
-        private static void GenMethodBody(BasicCodeWriter fi, 
+
+        private static void GenMethodBody(BasicCodeWriter fi,
             bool isGenNewShiftToOld, ShiftDataType paramType, Dictionary<string, MergeChange> mergeChanges,
             IOrderedEnumerable<IGrouping<int, (string messageName, int oldcmdid, int newcmdid)>> cmdlist_order)
         {
