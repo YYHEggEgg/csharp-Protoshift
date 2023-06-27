@@ -66,7 +66,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.WriteLine("switch (cmdid)");
                 fi.EnterCodeRegion();
                 GenMergeNotice(fi);
-                GenMethodBody(fi, false, ShiftDataType.ByteArray, mergeChanges[curMethodNum], cmdData.cmdlist_order_new);
+                GenMethodBody(fi, false, ShiftDataType.ByteArray, mergeChanges[curMethodNum], cmdData.cmdlist_order_old);
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
                 curMethodNum++;
@@ -78,7 +78,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.WriteLine("switch (cmdid)");
                 fi.EnterCodeRegion();
                 GenMergeNotice(fi);
-                GenMethodBody(fi, false, ShiftDataType.ReadOnlySpan, mergeChanges[curMethodNum], cmdData.cmdlist_order_new);
+                GenMethodBody(fi, false, ShiftDataType.ReadOnlySpan, mergeChanges[curMethodNum], cmdData.cmdlist_order_old);
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
                 curMethodNum++;
@@ -90,7 +90,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.WriteLine("switch (cmdid)");
                 fi.EnterCodeRegion();
                 GenMergeNotice(fi);
-                GenMethodBody(fi, false, ShiftDataType.ByteString, mergeChanges[curMethodNum], cmdData.cmdlist_order_new);
+                GenMethodBody(fi, false, ShiftDataType.ByteString, mergeChanges[curMethodNum], cmdData.cmdlist_order_old);
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
                 fi.WriteLine();
