@@ -1,0 +1,6 @@
+cd ./HandlerGenerator
+dotnet build --configuration=Release
+dotnet run --configuration=Release --no-build
+cd ..
+mkdir "./Executable"
+dotnet publish --project="./csharp-Protoshift" --configuration=Release -o="./Executable"

@@ -22,6 +22,9 @@ max_Output_Char_Count: -1,
 
 Log.Info("It is recommended to invoke this program with dotnet run.", "HandlerGenerator");
 Log.Warn("PLEASE USE THIS PROGRAM ALONG WITH FULL SOURCE CODE!", "HandlerGenerator");
+#if DEBUG
+Log.Warn("The server publish won't execute as the Generator is running on DEBUG. If that's not expected, rerun it with -c=Release.");
+#endif
 string workingdir = Environment.CurrentDirectory;
 DirectoryInfo _workingdirinfo = new(workingdir);
 bool passcheck = true;
@@ -283,14 +286,22 @@ if (needRebuild)
     await OuterInvoke.RunMultiple(new OuterInvokeInfo
     {
         ProcessPath = OuterInvokeConfig.dotnet_path,
+#if DEBUG
         CmdLine = "build",
+#else
+        CmdLine = "build --configuration=Release",
+#endif
         StartingNotice = "Compiling OldProtos (dotnet), please wait...",
         AutoTerminateReason = "OldProtos compiling (invoke dotnet) failed.",
         WorkingDir = "./../OldProtoHandlers"
     }, new OuterInvokeInfo
     {
         ProcessPath = OuterInvokeConfig.dotnet_path,
+#if DEBUG
         CmdLine = "build",
+#else
+        CmdLine = "build --configuration=Release",
+#endif
         StartingNotice = "Compiling NewProtos (dotnet), please wait...",
         AutoTerminateReason = "NewProtos compiling (invoke dotnet) failed.",
         WorkingDir = "./../NewProtoHandlers"
@@ -595,6 +606,7 @@ else
 #endregion
 GenProtoshiftDispatch.Run(cmdData, "./../ProtoshiftHandlers/ProtoDispatch/ProtoshiftDispatch.cs", mergeChanges);
 #endregion
+Log.Info("Protoshift enhanced handlers generated! Press any key to exit.");
 Console.ReadLine();
 
 internal class MergeChange
