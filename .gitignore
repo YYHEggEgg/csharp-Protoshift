@@ -38,8 +38,11 @@
 /HandlerGenerator/ProtoFieldNameAnalyze/GeneratedProtos
 /HandlerGenerator/last_build_record.json
 /ProtoshiftHandlers/Generated
-/ProtoshiftHandlers/ProtoDispatch
+/ProtoshiftHandlers/ProtoDispatch/Backup
 /NewProtoHandlers/AskCmdId.cs
 /OldProtoHandlers/AskCmdId.cs
 /NewProtoHandlers/Backup
 /OldProtoHandlers/Backup
+/ProtoshiftBenchmark/bin
+/ProtoshiftBenchmark/obj
+/ProtoshiftBenchmark/BenchmarkDotNet.Artifacts
