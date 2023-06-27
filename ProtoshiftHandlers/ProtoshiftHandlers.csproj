@@ -31,4 +31,12 @@
     <Folder Include="ProtoDispatch\" />
   </ItemGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);PACKET_HEAD_PROTO_DEFINED</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);PACKET_HEAD_PROTO_DEFINED</DefineConstants>
+  </PropertyGroup>
+
 </Project>
