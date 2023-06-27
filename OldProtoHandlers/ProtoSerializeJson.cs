@@ -1,5 +1,4 @@
 ﻿using Google.Protobuf;
-using OldProtos;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -7,19 +6,18 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
-namespace OldProtoHandlers.Obsoleted
+namespace OldProtos
 {
-    public class ProtoSerialize
+    public class ProtoSerializeJson
     {
 #pragma warning disable CS8600 // 将 null 字面量或可能为 null 的值转换为非 null 类型。
 #pragma warning disable CS8601 // 引用类型赋值可能为 null。
 #pragma warning disable CS8602 // 解引用可能出现空引用。
 #pragma warning disable CS8604 // 引用类型参数可能为 null。W
-        public ProtoSerialize(string protoname) : this(Type.GetType($"OldProtos.{protoname}")) { }
+        public ProtoSerializeJson(string protoname) : this(Type.GetType($"OldProtos.{protoname}")) { }
 
-        public ProtoSerialize(Type prototype)
+        public ProtoSerializeJson(Type prototype)
         {
             var parser_pro = prototype.GetProperty("Parser", BindingFlags.Static | BindingFlags.Public);
             var parse_get = parser_pro.GetGetMethod();
@@ -35,7 +33,7 @@ namespace OldProtoHandlers.Obsoleted
 #pragma warning restore CS8602 // 解引用可能出现空引用。
 #pragma warning restore CS8604 // 引用类型参数可能为 null。
 
-        static ProtoSerialize()
+        static ProtoSerializeJson()
         {
             var settings = JsonParser.Settings.Default.WithIgnoreUnknownFields(true);
             Discard_Unknown_fields_Parser = new JsonParser(settings);
@@ -46,7 +44,7 @@ namespace OldProtoHandlers.Obsoleted
         public readonly string Protoname;
         public readonly Type Prototype;
 
-        private ProtoSerialize()
+        private ProtoSerializeJson() 
         {
             Parser = WindSeedClientNotify.Parser; // Fuck
             Protoname = "YYHEggEggg#6167";
@@ -54,7 +52,7 @@ namespace OldProtoHandlers.Obsoleted
             Prototype = typeof(StackOverflowException);
         }
         public readonly bool isNull;
-        public static ProtoSerialize Empty { get => new(); }
+        public static ProtoSerializeJson Empty { get => new(); }
 
         public string DeserializeToJson(byte[] protobin)
         {
@@ -77,7 +75,7 @@ namespace OldProtoHandlers.Obsoleted
         {
             return Parser.ParseJson(protojson);
         }
-
+        
         /// <summary>
         /// No any checks. Use it at your own risk.
         /// </summary>
@@ -91,7 +89,7 @@ namespace OldProtoHandlers.Obsoleted
             if (isNull) throw new InvalidOperationException("Trying to use an invalid instance.");
             try
             {
-                return SerializeToIMessage(protojson).ToByteArray();
+                return MessageExtensions.ToByteArray(SerializeToIMessage(protojson));
             }
             catch (InvalidProtocolBufferException)
             {
@@ -101,9 +99,11 @@ namespace OldProtoHandlers.Obsoleted
                 var parse_type = typeof(JsonParser);
                 var parse_method = parse_type.GetMethod("Parse", BindingFlags.Instance | BindingFlags.Public,
                     new Type[] { typeof(string) });
+#pragma warning disable CS8602
                 var parse_method_T = parse_method.MakeGenericMethod(Prototype);
-                return (parse_method_T.Invoke(
-                    Discard_Unknown_fields_Parser, new object[] { protojson }) as IMessage).ToByteArray();
+#pragma warning restore CS8602
+                return MessageExtensions.ToByteArray(parse_method_T.Invoke(
+                    Discard_Unknown_fields_Parser, new object[] { protojson }) as IMessage);
             }
         }
     }
