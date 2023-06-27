@@ -492,6 +492,7 @@ foreach (var shiftpair in messageResults.IntersectItems)
     fi.WriteLine("// </auto-generated>");
     fi.WriteLine();
     fi.WriteLine("#region Designer Generated Code");
+    fi.WriteLine("#nullable enable");
     fi.WriteLine("using Google.Protobuf;");
     fi.WriteLine();
     fi.WriteLine("namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode");
@@ -499,6 +500,7 @@ foreach (var shiftpair in messageResults.IntersectItems)
     HandlerCodeWriter.GenerateMessageHandler(ref fi, msgName, shiftpair.LeftItem, shiftpair.RightItem,
         ref compiledStringPool, ref oldenumCollections, ref newenumCollections);
     fi.ExitCodeRegion();
+    fi.WriteLine("#nullable disable");
     fi.WriteLine("#endregion Designer generated code");
     fi.Dispose();
 }
