@@ -41,9 +41,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         #endregion
 
         #region Protocol Shift
-        public override OldProtos.CombatInvokeEntry NewShiftToOld(NewProtos.CombatInvokeEntry newprotocol)
+        public override OldProtos.CombatInvokeEntry NewShiftToOld(NewProtos.CombatInvokeEntry? newprotocol)
         {
             OldProtos.CombatInvokeEntry oldprotocol = new();
+            if (newprotocol == null) return oldprotocol;
             // oldprotocol.CombatData = newprotocol.CombatData;
             oldprotocol.ForwardType = handler_ForwardType.NewShiftToOld(newprotocol.ForwardType);
             oldprotocol.ArgumentType = handler_CombatTypeArgument.NewShiftToOld(newprotocol.ArgumentType);
@@ -115,9 +116,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             return oldprotocol;
         }
 
-        public override NewProtos.CombatInvokeEntry OldShiftToNew(OldProtos.CombatInvokeEntry oldprotocol)
+        public override NewProtos.CombatInvokeEntry OldShiftToNew(OldProtos.CombatInvokeEntry? oldprotocol)
         {
             NewProtos.CombatInvokeEntry newprotocol = new();
+            if (oldprotocol == null) return newprotocol;
             // newprotocol.CombatData = oldprotocol.CombatData;
             newprotocol.ForwardType = handler_ForwardType.OldShiftToNew(oldprotocol.ForwardType);
             newprotocol.ArgumentType = handler_CombatTypeArgument.OldShiftToNew(oldprotocol.ArgumentType);
