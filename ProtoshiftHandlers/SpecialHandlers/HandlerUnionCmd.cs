@@ -18,21 +18,29 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         #endregion
 
         #region Protocol Shift
-        public override OldProtos.UnionCmd NewShiftToOld(NewProtos.UnionCmd newprotocol)
+        public override OldProtos.UnionCmd NewShiftToOld(NewProtos.UnionCmd? newprotocol)
         {
             OldProtos.UnionCmd oldprotocol = new();
-            oldprotocol.MessageId = ShiftCmdId.NewShiftToOld(newprotocol.MessageId);
-            oldprotocol.Body = ProtoshiftDispatch.NewShiftToOld(
-                newprotocol.MessageId, null, newprotocol.Body);
+            if (newprotocol == null) return oldprotocol;
+            if (oldprotocol.MessageId != 0 && !oldprotocol.Body.IsEmpty)
+            {
+                oldprotocol.MessageId = ShiftCmdId.NewShiftToOld(newprotocol.MessageId);
+                oldprotocol.Body = ProtoshiftDispatch.NewShiftToOld(
+                    newprotocol.MessageId, null, newprotocol.Body);
+            }
             return oldprotocol;
         }
 
-        public override NewProtos.UnionCmd OldShiftToNew(OldProtos.UnionCmd oldprotocol)
+        public override NewProtos.UnionCmd OldShiftToNew(OldProtos.UnionCmd? oldprotocol)
         {
             NewProtos.UnionCmd newprotocol = new();
-            newprotocol.MessageId = ShiftCmdId.OldShiftToNew(oldprotocol.MessageId);
-            newprotocol.Body = ProtoshiftDispatch.OldShiftToNew(
-                oldprotocol.MessageId, null, oldprotocol.Body);
+            if (oldprotocol == null) return newprotocol;
+            if (oldprotocol.MessageId != 0 && !oldprotocol.Body.IsEmpty)
+            {
+                newprotocol.MessageId = ShiftCmdId.OldShiftToNew(oldprotocol.MessageId);
+                newprotocol.Body = ProtoshiftDispatch.OldShiftToNew(
+                    oldprotocol.MessageId, null, oldprotocol.Body);
+            }
             return newprotocol;
         }
         #endregion

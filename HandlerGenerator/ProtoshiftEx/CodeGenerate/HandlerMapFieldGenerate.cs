@@ -35,7 +35,6 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 var enumerate_caller = $"eachmap_newprotocol_{mapFieldName}";
                 fi.WriteLine($"foreach (var {enumerate_caller} in {newcaller})");
                 fi.EnterCodeRegion();
-                if (newmapField.keyIsImportType)
                 fi.WriteLine($"{oldcaller}.Add(" +
                     (newmapField.keyIsImportType ? $"{keyImportPrefix}.NewShiftToOld(" : "") +
                     $"{enumerate_caller}.Key{(newmapField.keyIsImportType ? ")" : "")}, " +
