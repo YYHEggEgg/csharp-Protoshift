@@ -23,6 +23,8 @@ namespace csharp_Protoshift.Enhanced.Benchmark
         static NewProtos.AbilityActionServerMonsterLog repeated_normal_100 = GetRepeatedFields.Produce(100);
         static NewProtos.AbilityActionServerMonsterLog repeated_normal_20000 = GetRepeatedFields.Produce(20000);
 
+        static NewProtos.UnionCmdNotify union_AbilityInvocationsNotify_30_100 = GetUnionCmdNotify.GetSameRepeated(30, 100);
+
         #region Handlers
         static HandlerGravenInnocencePhotoReminderNotify handler_GravenInnocencePhotoReminderNotify = HandlerGravenInnocencePhotoReminderNotify.GlobalInstance;
         static HandlerGadgetPlayStartNotify handler_GadgetPlayStartNotify = HandlerGadgetPlayStartNotify.GlobalInstance;
@@ -33,6 +35,8 @@ namespace csharp_Protoshift.Enhanced.Benchmark
         
         static HandlerAbilityActionServerMonsterLog handler_AbilityActionServerMonsterLog = HandlerAbilityActionServerMonsterLog.GlobalInstance;
         static HandlerChannelerSlabBuffSchemeInfo_Special handler_new_ChannelerSlabBuffSchemeInfo = HandlerChannelerSlabBuffSchemeInfo_Special.GlobalInstance;
+
+        static HandlerUnionCmdNotify handler_UnionCmdNotify = HandlerUnionCmdNotify.GlobalInstance;
         #endregion
 
         private static void Main(string[] args)
@@ -65,6 +69,11 @@ namespace csharp_Protoshift.Enhanced.Benchmark
                 Console.WriteLine("Repeated Protoshift verity failed!");
                 properlyWork = false;
             }
+            /*if (!handler_UnionCmdNotify.NewShiftToOld(union_AbilityInvocationsNotify_30_100).Equals(GetUnionCmdNotifyVerity.GetSameRepeated(30, 100)))
+            {
+                Console.WriteLine("UnionCmd Protoshift verity failed!");
+                properlyWork = false;
+            }*/
             if (!properlyWork)
             {
                 Console.WriteLine("Protoshift not working properly. Exit with 114514. ");
@@ -111,6 +120,9 @@ namespace csharp_Protoshift.Enhanced.Benchmark
         // [Benchmark]
         public void TestShift_repeated_normal_20000()
             => handler_AbilityActionServerMonsterLog.NewShiftToOld(repeated_normal_20000);
+        [Benchmark]
+        public void TestShift_union_AbilityInvocationsNotify_30_100()
+            => handler_UnionCmdNotify.NewShiftToOld(union_AbilityInvocationsNotify_30_100);
 
         
         [Benchmark]
