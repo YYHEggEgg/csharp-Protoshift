@@ -82,7 +82,7 @@ namespace OldProtos
 
         public static string Initialize()
         {
-            return $"{ProtoNamespace} QueryCmdId initialized, {serializers_queryByName.Count} serializers.";
+            return $"{ProtoNamespace} QueryJsonSerializer initialized, {serializers_queryByName.Count} serializers.";
         }
 
         /// <summary>
