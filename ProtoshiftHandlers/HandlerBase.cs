@@ -6,8 +6,8 @@ namespace csharp_Protoshift.Enhanced.Handlers
         where TNewProtocol : IMessage<TNewProtocol>
         where TOldProtocol : IMessage<TOldProtocol>
     {
-        public abstract TOldProtocol NewShiftToOld(TNewProtocol newprotocol);
-        public abstract TNewProtocol OldShiftToNew(TOldProtocol oldprotocol);
+        public abstract TOldProtocol NewShiftToOld(TNewProtocol? newprotocol);
+        public abstract TNewProtocol OldShiftToNew(TOldProtocol? oldprotocol);
     }
 
     public abstract class HandlerBase

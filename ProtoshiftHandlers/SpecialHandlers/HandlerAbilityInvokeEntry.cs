@@ -90,9 +90,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         #endregion
 
         #region Protocol Shift
-        public override OldProtos.AbilityInvokeEntry NewShiftToOld(NewProtos.AbilityInvokeEntry newprotocol)
+        public override OldProtos.AbilityInvokeEntry NewShiftToOld(NewProtos.AbilityInvokeEntry? newprotocol)
         {
             OldProtos.AbilityInvokeEntry oldprotocol = new();
+            if (newprotocol == null) return oldprotocol;
             // oldprotocol.AbilityData = newprotocol.AbilityData;
             oldprotocol.Head = handler_AbilityInvokeEntryHead.NewShiftToOld(newprotocol.Head);
             oldprotocol.EventId = newprotocol.EventId;
@@ -287,9 +288,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             return oldprotocol;
         }
 
-        public override NewProtos.AbilityInvokeEntry OldShiftToNew(OldProtos.AbilityInvokeEntry oldprotocol)
+        public override NewProtos.AbilityInvokeEntry OldShiftToNew(OldProtos.AbilityInvokeEntry? oldprotocol)
         {
             NewProtos.AbilityInvokeEntry newprotocol = new();
+            if (oldprotocol == null) return newprotocol;
             // newprotocol.AbilityData = oldprotocol.AbilityData;
             newprotocol.Head = handler_AbilityInvokeEntryHead.OldShiftToNew(oldprotocol.Head);
             newprotocol.EventId = oldprotocol.EventId;
