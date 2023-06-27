@@ -27,7 +27,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                         newprotocol.MessageId, null, newprotocol.Body);
                 }
             }
-            catch (UnSupportedException ex)
+            catch (NotSupportedException ex)
             {
                 Log.Warn($"HandlerUnionCmd meets error so dropped a packet: Cmd {newprotocol.MessageId} (new) not supported.", nameof(HandlerUnionCmd));
                 return new OldProtos.UnionCmd();
@@ -53,7 +53,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                         oldprotocol.MessageId, null, oldprotocol.Body);
                 }
             }
-            catch (UnSupportedException ex)
+            catch (NotSupportedException ex)
             {
                 Log.Warn($"HandlerUnionCmd meets error so dropped a packet: Cmd {oldprotocol.MessageId} (old) not supported.", nameof(HandlerUnionCmd));
                 return new NewProtos.UnionCmd();
