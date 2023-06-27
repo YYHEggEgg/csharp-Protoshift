@@ -6,8 +6,8 @@ using YYHEggEgg.Logger;
 
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Protoshift Ex v1");
-Log.Initialize(new LoggerConfig(
-    max_Output_Char_Count: -1,
+StartupWorkingDirChanger.ChangeToDotNetRunPath(new LoggerConfig(
+max_Output_Char_Count: -1,
     use_Console_Wrapper: false,
     use_Working_Directory: true,
 #if DEBUG
@@ -21,41 +21,11 @@ Log.Initialize(new LoggerConfig(
 ));
 
 Log.Info("It is recommended to invoke this program with dotnet run.", "HandlerGenerator");
-Log.Warn("Build is currently only supported on Windows!", "HandlerGenerator");
 Log.Warn("PLEASE USE THIS PROGRAM ALONG WITH FULL SOURCE CODE!", "HandlerGenerator");
 string workingdir = Environment.CurrentDirectory;
 DirectoryInfo _workingdirinfo = new(workingdir);
-Log.Dbug($"Startup Current directory is: {workingdir}.");
 bool passcheck = true;
 #region Find proto2json
-if (_workingdirinfo.Name == "csharp-Protoshift"
-    && Directory.Exists($"{workingdir}/HandlerGenerator/proto2json"))
-{
-    workingdir = $"{workingdir}/HandlerGenerator";
-}
-else if (_workingdirinfo.Name.StartsWith("net"))
-{
-    try
-    {
-        string? dbug = Directory.GetParent(workingdir)?.FullName;
-        if (dbug != null)
-        {
-            workingdir = Directory.GetParent(Directory.GetParent(dbug).FullName).FullName ?? "";
-        }
-    }
-    catch { }
-}
-#region Change working directory
-if (!File.Exists($"{workingdir}/HandlerGenerator.csproj"))
-{
-    Log.Erro("Can't find source code path! Make sure you have cloned full code!", "ResourcesCheck");
-    Log.Erro("Process terminated for false launch. Exit code is 4206.", "ResourcesCheck");
-    Console.ReadLine();
-    Environment.Exit(4206);
-}
-Environment.CurrentDirectory = workingdir;
-Log.Dbug($"Changed Current directory to: {workingdir}.");
-#endregion
 string proto2jsondir = $"{workingdir}/proto2json";
 if (!File.Exists($"{proto2jsondir}/go-proto2json_win32.exe"))
 {
@@ -273,7 +243,7 @@ if (needRebuild)
     List<OuterInvokeInfo> protoc_invokes = new();
     #region OldProtos
     var oldproto_files = Directory.EnumerateFiles(
-        "./../OldProtoHandlers/Google.Protobuf/Protos", 
+        "./../OldProtoHandlers/Google.Protobuf/Protos",
         "*.proto", SearchOption.AllDirectories);
     foreach (var proto_file in oldproto_files)
     {
@@ -283,14 +253,14 @@ if (needRebuild)
             WorkingDir = "./..",
             AutoTerminateReason = $"Proto: {Path.GetFileNameWithoutExtension(proto_file)} compiling (protoc) failed.",
             CmdLine = ("--proto_path=\"OldProtoHandlers/Google.Protobuf/Protos\" \"" +
-                Path.GetRelativePath("./../OldProtoHandlers/Google.Protobuf/Protos", proto_file)  +
+                Path.GetRelativePath("./../OldProtoHandlers/Google.Protobuf/Protos", proto_file) +
                 "\" --csharp_out=\"OldProtoHandlers/Google.Protobuf/Compiled\"")
         });
     }
     #endregion
     #region NewProtos
     var newproto_files = Directory.EnumerateFiles(
-        "./../NewProtoHandlers/Google.Protobuf/Protos", 
+        "./../NewProtoHandlers/Google.Protobuf/Protos",
         "*.proto", SearchOption.AllDirectories);
     foreach (var proto_file in newproto_files)
     {
@@ -300,7 +270,7 @@ if (needRebuild)
             WorkingDir = "./..",
             AutoTerminateReason = $"Proto: {Path.GetFileNameWithoutExtension(proto_file)} compiling (protoc) failed.",
             CmdLine = ("--proto_path=\"NewProtoHandlers/Google.Protobuf/Protos\" \"" +
-                Path.GetRelativePath("./../NewProtoHandlers/Google.Protobuf/Protos", proto_file)  +
+                Path.GetRelativePath("./../NewProtoHandlers/Google.Protobuf/Protos", proto_file) +
                 "\" --csharp_out=\"NewProtoHandlers/Google.Protobuf/Compiled\"")
         });
     }
@@ -549,7 +519,7 @@ CmdIdDataStructure cmdData = new("./resources/protobuf/oldcmdid.csv",
 #region Generate CmdId related
 GenAskCmdId.Run(cmdData, askoldcmdid_filePath, asknewcmdid_filePath,
     cmd_askoldcmdid_specialHandles, cmd_asknewcmdid_specialHandles);
-GenShiftCmdId.Run(cmdData, shiftCmdId_filePath, 
+GenShiftCmdId.Run(cmdData, shiftCmdId_filePath,
     cmd_oldshiftnew_specialHandles, cmd_newshiftold_specialHandles);
 #endregion
 #region Generate Protoshift Dispatch
