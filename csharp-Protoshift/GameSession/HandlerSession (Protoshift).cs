@@ -1,5 +1,6 @@
 ﻿using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
 using csharp_Protoshift.resLoader;
+using csharp_Protoshift.SkillIssue;
 using Funny.Crypto;
 using Newtonsoft.Json;
 using OfficeOpenXml;
@@ -255,6 +256,17 @@ namespace csharp_Protoshift.GameSession
             if (!isNewCmdid && cmdid == OldProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
                 GetPlayerTokenRspNotify(shifted_body);
 
+            #region Push to Skill issue detect
+            if (isNewCmdid)
+                SkillIssueDetect.StartHandlePacket(protoname, 
+                    shifted_body, 0, shifted_body.Length,
+                    packet, body_offset, (int)body_length);
+            else
+                SkillIssueDetect.StartHandlePacket(protoname,
+                    packet, body_offset, (int)body_length,
+                    shifted_body, 0, shifted_body.Length);
+            #endregion
+
             #region Build New Packet
             int rtnpacketLength = body_offset + shifted_body.Length + 2;
             byte[] rtn = new byte[rtnpacketLength];
@@ -302,12 +314,6 @@ namespace csharp_Protoshift.GameSession
                 Convert.ToHexString(XorKey) +
                 $"{Environment.NewLine}-----END HEX New 4096 XOR Key-----", $"HandlerSession({SessionId})");
         }
-
-        /// <summary>
-        /// Used for special UnionCmdNotify shifting.
-        /// </summary>
-        /// <param name="newjson"></param>
-        /// <returns></returns>
         #endregion
 
         #region Crypto
@@ -319,32 +325,6 @@ namespace csharp_Protoshift.GameSession
             {
                 if (!fallbackToDispatchKey) encrypted[i] = (byte)(encrypted[i] ^ XorKey[i % XorKey.Length]);
                 else encrypted[i] = (byte)(encrypted[i] ^ Resources.dispatchKey[i % Resources.dispatchKey.Length]);
-            }
-        }
-
-        static readonly JsonSerializer serializer = new();
-
-        public static string ConvertJsonString(string str)
-        {
-            //格式化json字符串
-            TextReader tr = new StringReader(str);
-            JsonTextReader jtr = new(tr);
-            object? obj = serializer.Deserialize(jtr);
-            if (obj != null)
-            {
-                StringWriter textWriter = new();
-                JsonTextWriter jsonWriter = new(textWriter)
-                {
-                    Formatting = Formatting.Indented,
-                    Indentation = 4,
-                    IndentChar = ' '
-                };
-                serializer.Serialize(jsonWriter, obj);
-                return textWriter.ToString();
-            }
-            else
-            {
-                return str;
             }
         }
 

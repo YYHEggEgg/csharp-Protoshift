@@ -3,6 +3,7 @@ using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
 using csharp_Protoshift.GameSession;
 using csharp_Protoshift.MhyKCP.Proxy;
 using csharp_Protoshift.resLoader;
+using csharp_Protoshift.SkillIssue;
 using OfficeOpenXml;
 using System.Net;
 using YYHEggEgg.Logger;
@@ -34,9 +35,11 @@ namespace csharp_Protoshift
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             Log.Info("Start loading all protos, it will take some time...", "Entry");
+            Log.Info(OldProtos.QueryJsonSerializer.Initialize(), "OldProtos");
+            Log.Info(NewProtos.QueryJsonSerializer.Initialize(), "NewProtos");
             Log.Info(ProtoshiftDispatch.Initialize(), "Entry");
 
-            // Log.Info(SkillIssueDetect.Initialize(), "Entry");
+            Log.Info(SkillIssueDetect.Initialize(), "Entry");
             // Log.Info(KcpPacketAudit.Initialize(), "Entry");
 
             /*var dbgsession = new HandlerSession(1001);
