@@ -1,15 +1,15 @@
 using YYHEggEgg.Logger;
 
-namespace csharp_Protoshift.Enhanced.Handlers.Generator
+namespace csharp_Protoshift
 {
     internal static class StartupWorkingDirChanger
     {
-        public const string? Required_file = "./HandlerGenerator.csproj";
+        public const string? Required_file = null;
         public const string? Required_directory = "./resources";
 
-        public const string Terminating_Note = "Can't find source code path. Please run this program with dotnet run. \n" +
+        public const string Terminating_Note = "Can't find resources path. Please check if the resources are present in the dotnet path. \n" +
             "***********WARNING**********\n" +
-            "DO NOT USE --project PARAM! USE cd COMMAND INSTEAD!\n" +
+            "If you're using dotnet run, DO NOT USE --project PARAM! USE cd COMMAND INSTEAD!\n" +
             "***********WARNING**********";
 
         public static void ChangeToDotNetRunPath(LoggerConfig log_init_config)
