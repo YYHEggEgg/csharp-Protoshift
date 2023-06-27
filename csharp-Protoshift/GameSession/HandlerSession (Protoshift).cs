@@ -21,6 +21,8 @@ namespace csharp_Protoshift.GameSession
         public byte[] XorKey { get; protected set; }
         public uint SessionId { get; private set; }
 
+        public const int Recommended_Protoshift_maximum_time_ms = 5;
+
         /// <summary>
         /// Whether records contain PingReq/PingRsp packets. Only apply to packets received after modified.
         /// </summary>
@@ -186,7 +188,7 @@ namespace csharp_Protoshift.GameSession
         // this is in use
         List<string> unordered_messages = new List<string>
         {
-            "GetPlayerTokenReq", "GetPlayerTokenRsp", "PlayerLoginRsp", "PingReq", "PingRsp", 
+            // "GetPlayerTokenReq", "GetPlayerTokenRsp", "PlayerLoginRsp", "PingReq", "PingRsp", 
             "GetActivityInfoRsp", "AchievementUpdateNotify", 
             "BattlePassMissionUpdateNotify", "CombatInvocationsNotify", "ActivityInfoNotify", 
             "BattlePassMissionUpdateNotify", "PlayerStoreNotify", "AvatarDataNotify", 
@@ -250,6 +252,8 @@ namespace csharp_Protoshift.GameSession
             else shifted_body = ProtoshiftDispatch.OldShiftToNew(cmdid, null, null, null, packet, body_offset, (int)body_length);
             if (isNewCmdid && cmdid == NewProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenReq"))
                 GetPlayerTokenReqNotify(shifted_body);
+            if (!isNewCmdid && cmdid == OldProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
+                GetPlayerTokenRspNotify(shifted_body);
 
             #region Build New Packet
             int rtnpacketLength = body_offset + shifted_body.Length + 2;
@@ -262,9 +266,9 @@ namespace csharp_Protoshift.GameSession
             #endregion
 
             ProtoshiftWatch.Stop();
-            if (ProtoshiftWatch.ElapsedMilliseconds > 15 && !unordered_cmds_old.Contains(cmdid))
+            if (ProtoshiftWatch.ElapsedMilliseconds >= Recommended_Protoshift_maximum_time_ms && !unordered_cmds_old.Contains(cmdid))
             {
-                Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > 15ms)", $"PacketHandler({SessionId})");
+                Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > {Recommended_Protoshift_maximum_time_ms}ms)", $"PacketHandler({SessionId})");
             }
             SubmitTimeRecord(protoname, isNewCmdid, ProtoshiftWatch.ElapsedMilliseconds, ProtoshiftWatch.ElapsedTicks, packet.Length);
             return shifted_body;
