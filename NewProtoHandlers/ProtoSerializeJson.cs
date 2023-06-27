@@ -7,17 +7,17 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewProtos.Obsoleted
+namespace NewProtos
 {
-    public class ProtoSerialize
+    public class ProtoSerializeJson
     {
 #pragma warning disable CS8600 // 将 null 字面量或可能为 null 的值转换为非 null 类型。
 #pragma warning disable CS8601 // 引用类型赋值可能为 null。
 #pragma warning disable CS8602 // 解引用可能出现空引用。
 #pragma warning disable CS8604 // 引用类型参数可能为 null。W
-        public ProtoSerialize(string protoname) : this(Type.GetType($"NewProtos.{protoname}")) { }
+        public ProtoSerializeJson(string protoname) : this(Type.GetType($"NewProtos.{protoname}")) { }
 
-        public ProtoSerialize(Type prototype)
+        public ProtoSerializeJson(Type prototype)
         {
             var parser_pro = prototype.GetProperty("Parser", BindingFlags.Static | BindingFlags.Public);
             var parse_get = parser_pro.GetGetMethod();
@@ -33,7 +33,7 @@ namespace NewProtos.Obsoleted
 #pragma warning restore CS8602 // 解引用可能出现空引用。
 #pragma warning restore CS8604 // 引用类型参数可能为 null。
 
-        static ProtoSerialize()
+        static ProtoSerializeJson()
         {
             var settings = JsonParser.Settings.Default.WithIgnoreUnknownFields(true);
             Discard_Unknown_fields_Parser = new JsonParser(settings);
@@ -44,7 +44,7 @@ namespace NewProtos.Obsoleted
         public readonly string Protoname;
         public readonly Type Prototype;
 
-        private ProtoSerialize() 
+        private ProtoSerializeJson() 
         {
             Parser = WindSeedClientNotify.Parser; // Fuck
             Protoname = "YYHEggEggg#6167";
@@ -52,7 +52,7 @@ namespace NewProtos.Obsoleted
             Prototype = typeof(StackOverflowException);
         }
         public readonly bool isNull;
-        public static ProtoSerialize Empty { get => new(); }
+        public static ProtoSerializeJson Empty { get => new(); }
 
         public string DeserializeToJson(byte[] protobin)
         {
@@ -99,7 +99,9 @@ namespace NewProtos.Obsoleted
                 var parse_type = typeof(JsonParser);
                 var parse_method = parse_type.GetMethod("Parse", BindingFlags.Instance | BindingFlags.Public,
                     new Type[] { typeof(string) });
+#pragma warning disable CS8602
                 var parse_method_T = parse_method.MakeGenericMethod(Prototype);
+#pragma warning restore CS8602
                 return MessageExtensions.ToByteArray(parse_method_T.Invoke(
                     Discard_Unknown_fields_Parser, new object[] { protojson }) as IMessage);
             }
