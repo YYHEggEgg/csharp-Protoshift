@@ -163,6 +163,7 @@ if (File.Exists(asknewcmdid_filePath))
     Log.Info($"NewProtos.AskCmdId backup successfully created at {backup_asknewcmdid_path}", "AskCmdId_Generate");
 }
 #endregion
+GenTemporaryAskCmdId.Run(askoldcmdid_filePath, asknewcmdid_filePath);
 #region ShiftCmdId
 string shiftCmdId_filePath = "./../ProtoshiftHandlers/ProtoDispatch/ShiftCmdId.cs";
 Dictionary<int, List<string>> cmd_newshiftold_specialHandles = new();
@@ -278,7 +279,7 @@ if (needRebuild)
         });
     }
     #endregion
-    await OuterInvoke.RunMultiple(protoc_invokes, 20041);
+    OuterInvoke.RunParallel(protoc_invokes, 20041);
     protocWatch.Stop();
     Log.Info($"Protoc compiling finished, elapsed {protocWatch.Elapsed}.");
     #endregion
@@ -528,6 +529,7 @@ Log.Info("Now generating CmdId related and ProtoshiftDispatch...");
 CmdIdDataStructure cmdData = new("./resources/protobuf/oldcmdid.csv",
     "./resources/protobuf/newcmdid.csv", messageResults);
 #region Generate CmdId related
+GenTemporaryAskCmdId.Clear(askoldcmdid_filePath, asknewcmdid_filePath);
 GenAskCmdId.Run(cmdData, askoldcmdid_filePath, asknewcmdid_filePath,
     cmd_askoldcmdid_specialHandles, cmd_asknewcmdid_specialHandles);
 GenShiftCmdId.Run(cmdData, shiftCmdId_filePath,
