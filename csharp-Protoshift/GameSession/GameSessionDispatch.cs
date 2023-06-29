@@ -124,8 +124,8 @@ namespace csharp_Protoshift.GameSession
                 tasks.Add(DestroySession(conv));
             }
             Task.WaitAll(tasks.ToArray());
-            packet_logwriter.Flush();
-            packet_logwriter.Dispose();
+            // packet_logwriter.Flush();
+            // packet_logwriter.Dispose();
         }
         #endregion
 
