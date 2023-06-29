@@ -96,8 +96,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.WriteLine();
                 #endregion
                 #region Other Code (Handlers)
+                var importhandlers = from importhandler in cmdData.supportedMessages
+                                     orderby importhandler
+                                     select importhandler;
                 fi.WriteLine("#region Handlers");
-                foreach (var importhandler in cmdData.supportedMessages)
+                foreach (var importhandler in importhandlers)
                 {
                     fi.WriteLine($"private static Handler{importhandler} handler_{importhandler} = Handler{importhandler}.GlobalInstance;");
                 }
@@ -108,7 +111,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.WriteLine("#region Initialize");
                 fi.WriteLine($"static ProtoshiftDispatch()");
                 fi.EnterCodeRegion();
-                foreach (var importhandler in cmdData.supportedMessages)
+                foreach (var importhandler in importhandlers)
                 {
                     fi.WriteLine($"handler_{importhandler}.NewShiftToOld(ReadOnlySpan<byte>.Empty);");
                 }
