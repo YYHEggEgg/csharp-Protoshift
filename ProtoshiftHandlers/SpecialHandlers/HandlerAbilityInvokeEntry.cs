@@ -487,13 +487,13 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)
             => NewShiftToOld(newproto_parser_base.ParseFrom(span)).ToByteArray();
         public override ByteString NewShiftToOld(ByteString bytes)
-            => NewShiftToOld(newproto_parser_base.ParseFrom(bytes).ToByteString());
+            => NewShiftToOld(newproto_parser_base.ParseFrom(bytes)).ToByteString();
         public override byte[] OldShiftToNew(byte[] arr, int offset, int length)
             => OldShiftToNew(oldproto_parser_base.ParseFrom(arr, offset, length)).ToByteArray();
         public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)
             => OldShiftToNew(oldproto_parser_base.ParseFrom(span)).ToByteArray();
         public override ByteString OldShiftToNew(ByteString bytes)
-            => OldShiftToNew(oldproto_parser_base.ParseFrom(bytes).ToByteString());
+            => OldShiftToNew(oldproto_parser_base.ParseFrom(bytes)).ToByteString();
 
         private static HandlerAbilityInvokeEntry _globalOnlyInstance = new HandlerAbilityInvokeEntry();
         public static HandlerAbilityInvokeEntry GlobalInstance => _globalOnlyInstance;

@@ -73,7 +73,7 @@ namespace csharp_Protoshift.SkillIssue
                 {
                     return;
                 }
-                string oldjson = newserializer.DeserializeToJson(handle.oldbody, handle.oldbody_offset, handle.oldbody_length);
+                string oldjson = oldserializer.DeserializeToJson(handle.oldbody, handle.oldbody_offset, handle.oldbody_length);
                 string newjson = newserializer.DeserializeToJson(handle.newbody, handle.newbody_offset, handle.newbody_length);
                 var oldlines = ConvertJsonString(oldjson).Split('\n');
                 var newlines = ConvertJsonString(newjson).Split('\n');

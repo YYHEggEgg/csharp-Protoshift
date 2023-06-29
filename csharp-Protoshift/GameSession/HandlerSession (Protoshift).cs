@@ -283,7 +283,7 @@ namespace csharp_Protoshift.GameSession
                 Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > {Recommended_Protoshift_maximum_time_ms}ms)", $"PacketHandler({SessionId})");
             }
             SubmitTimeRecord(protoname, isNewCmdid, ProtoshiftWatch.ElapsedMilliseconds, ProtoshiftWatch.ElapsedTicks, packet.Length);
-            return shifted_body;
+            return rtn;
         }
 
         protected byte[] client_seed;
