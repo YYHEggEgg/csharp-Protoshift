@@ -20,7 +20,6 @@ namespace csharp_Protoshift.Commands
         public async Task HandleAsync(string[] args)
         {
             GameSessionDispatch.CloseServer();
-            // File.Move("logs/latest.packet.log", $"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.packet.log");
             Environment.Exit(0);
 
             await Task.CompletedTask;
