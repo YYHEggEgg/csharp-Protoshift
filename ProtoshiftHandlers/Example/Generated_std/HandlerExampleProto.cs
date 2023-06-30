@@ -26,10 +26,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         #endregion
 
         #region Protocol shift
-        public override OldProtos.ExampleProto NewShiftToOld(NewProtos.ExampleProto? newprotocol)
+        public override OldProtos.ExampleProto? NewShiftToOld(NewProtos.ExampleProto? newprotocol)
         {
+            if (newprotocol == null) return null;
             OldProtos.ExampleProto oldprotocol = new();
-            if (newprotocol == null) return oldprotocol;
             oldprotocol.EgEnum = handler_ExampleEnum.NewShiftToOld(newprotocol.EgEnum);
             oldprotocol.EgStr = newprotocol.EgStr;
             foreach (var eachmap_newprotocol_eg_proto2 in newprotocol.EgProto2)
@@ -52,10 +52,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             return oldprotocol;
         }
 
-        public override NewProtos.ExampleProto OldShiftToNew(OldProtos.ExampleProto? oldprotocol)
+        public override NewProtos.ExampleProto? OldShiftToNew(OldProtos.ExampleProto? oldprotocol)
         {
+            if (oldprotocol == null) return null;
             NewProtos.ExampleProto newprotocol = new();
-            if (oldprotocol == null) return newprotocol;
             newprotocol.EgEnum = handler_ExampleEnum.OldShiftToNew(oldprotocol.EgEnum);
             newprotocol.EgStr = newprotocol.EgStr;
             foreach (var eachmap_oldprotocol_eg_proto2 in oldprotocol.EgProto2)
@@ -81,17 +81,35 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
 
         #region Outer bytes invoke
         public override byte[] NewShiftToOld(byte[] arr, int offset, int length)
-            => NewShiftToOld(newproto_parser_base.ParseFrom(arr, offset, length)).ToByteArray();
+        {
+            var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(arr, offset, length));
+            return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+        }
         public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)
-            => NewShiftToOld(newproto_parser_base.ParseFrom(span)).ToByteArray();
+        {
+            var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(span));
+            return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+        }
         public override ByteString NewShiftToOld(ByteString bytes)
-            => NewShiftToOld(newproto_parser_base.ParseFrom(bytes).ToByteString());
+        {
+            var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(bytes));
+            return rtn == null ? ByteString.Empty : rtn.ToByteString();
+        }
         public override byte[] OldShiftToNew(byte[] arr, int offset, int length)
-            => OldShiftToNew(oldproto_parser_base.ParseFrom(arr, offset, length)).ToByteArray();
+        {
+            var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(arr, offset, length));
+            return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+        }
         public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)
-            => OldShiftToNew(oldproto_parser_base.ParseFrom(span)).ToByteArray();
+        {
+            var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(span));
+            return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+        }
         public override ByteString OldShiftToNew(ByteString bytes)
-            => OldShiftToNew(oldproto_parser_base.ParseFrom(bytes).ToByteString());
+        {
+            var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(bytes));
+            return rtn == null ? ByteString.Empty : rtn.ToByteString();
+        }
         #endregion
 
         private static HandlerExampleProto _globalOnlyInstance = new HandlerExampleProto();
