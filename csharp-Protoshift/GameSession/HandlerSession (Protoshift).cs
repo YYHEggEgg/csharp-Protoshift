@@ -14,7 +14,7 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.GameSession
 {
-    internal class HandlerSession
+    public class HandlerSession
     {
         /// <summary>
         /// XOR key used to decrypt packet. Usually have a length of 4096.
@@ -32,8 +32,10 @@ namespace csharp_Protoshift.GameSession
         /// Whether output packets in the console.
         /// </summary>
         public bool Verbose { get; set; }
-        public int packetCounts { get; protected set; }
-        public int PacketRecordLimits { get; }
+
+#if RECORD_ALL_PKTS_FOR_REPLAY
+        public ConcurrentBag<PacketRecord> PacketRecords { get; private set; } = new();
+#endif
 
         #region Record Packet Protoshift time cost
         public ConcurrentBag<TimeRecord> TimeRecords { get; } = new();
@@ -83,7 +85,6 @@ namespace csharp_Protoshift.GameSession
             Debug.Assert(XorKey.Length == 4096);
             // records = new PacketRecord[packetLimits];
             SessionId = sessionId;
-            PacketRecordLimits = packetLimits;
             client_seed = server_seed = Array.Empty<byte>();
             // Verbose = true;
             Verbose = false;
@@ -283,6 +284,9 @@ namespace csharp_Protoshift.GameSession
                 Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > {Recommended_Protoshift_maximum_time_ms}ms)", $"PacketHandler({SessionId})");
             }
             SubmitTimeRecord(protoname, isNewCmdid, ProtoshiftWatch.ElapsedMilliseconds, ProtoshiftWatch.ElapsedTicks, packet.Length);
+#if RECORD_ALL_PKTS_FOR_REPLAY
+            PacketRecords.Add(new(protoname, cmdid, isNewCmdid, packet, body_offset, (int)body_length, shifted_body, DateTime.Now));
+#endif
             return rtn;
         }
 

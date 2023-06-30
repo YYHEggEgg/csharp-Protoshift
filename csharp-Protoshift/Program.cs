@@ -17,7 +17,7 @@ namespace csharp_Protoshift
             StartupWorkingDirChanger.ChangeToDotNetRunPath(new LoggerConfig(
                 max_Output_Char_Count: 16 * 1024,
                 use_Console_Wrapper: true,
-                use_Working_Directory: false,
+                use_Working_Directory: true,
 #if DEBUG
                 global_Minimum_LogLevel: LogLevel.Verbose,
                 console_Minimum_LogLevel: LogLevel.Information,

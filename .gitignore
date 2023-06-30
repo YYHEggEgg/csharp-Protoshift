@@ -46,3 +46,6 @@
 /ProtoshiftBenchmark/bin
 /ProtoshiftBenchmark/obj
 /ProtoshiftBenchmark/BenchmarkDotNet.Artifacts
+/csharp-Protoshift-Replay/bin
+/csharp-Protoshift-Replay/obj
+/csharp-Protoshift-Replay/logs

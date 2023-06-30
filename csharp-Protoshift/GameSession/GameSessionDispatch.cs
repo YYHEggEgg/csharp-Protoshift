@@ -87,14 +87,13 @@ namespace csharp_Protoshift.GameSession
         private static object packet_log_lock = "miHomo Save The World";
         static GameSessionDispatch()
         {
-            /*
+            FileInfo pastPacketLog = new("logs/latest.packet.log");
+            if (pastPacketLog.Exists)
+            {
+                pastPacketLog.MoveTo($"logs/{pastPacketLog.CreationTime:yyyy-MM-dd_HH-mm-ss}.packet.log");
+            }
             packet_logwriter = new("logs/latest.packet.log", true);
-            packet_logwriter.Write(
-                "This is a packet log created by csharp-Protoshift.\n" +
-                "You're recommended to use Ctrl+F to search for certain key words:\n" +
-                "<protoname>, e.g. 'GetPlayerTokenRsp';\n" +
-                "'SKILL ISSUE' for packets with skill issue.\n");
-            */
+            packet_logwriter.AutoFlush = false;
         }
 
         public static async Task DestroySession(uint conv)
@@ -110,7 +109,13 @@ namespace csharp_Protoshift.GameSession
             }
             session.ExportXlsxRecord($"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.debug.packetspeed_{conv}.xlsx");
 
-            // TODO
+            lock (packet_log_lock)
+            {
+                foreach (var pkt in session.PacketRecords)
+                {
+                    packet_logwriter.WriteLine($"{pkt.packetTime:yyyy/MM/dd HH:mm:ss.fffffff}|{pkt.PacketName}|{pkt.CmdId}|{pkt.sentByClient}|{Convert.ToBase64String(pkt.data, pkt.data_offset, pkt.data_length)}|{Convert.ToBase64String(pkt.shiftedData)}");
+                }
+            }
 
             await Task.CompletedTask;
         }
@@ -124,8 +129,8 @@ namespace csharp_Protoshift.GameSession
                 tasks.Add(DestroySession(conv));
             }
             Task.WaitAll(tasks.ToArray());
-            // packet_logwriter.Flush();
-            // packet_logwriter.Dispose();
+            packet_logwriter.Flush();
+            packet_logwriter.Dispose();
         }
         #endregion
 
