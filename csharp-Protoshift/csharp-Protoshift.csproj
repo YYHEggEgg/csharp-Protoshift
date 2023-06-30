@@ -8,6 +8,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;RECORD_ALL_PKTS_FOR_REPLAY</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;RECORD_ALL_PKTS_FOR_REPLAY</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="GameSession\HandlerSession %28ProxyOnly%29.cs" />
     <Compile Remove="KCP\KCPHandle.cs" />
