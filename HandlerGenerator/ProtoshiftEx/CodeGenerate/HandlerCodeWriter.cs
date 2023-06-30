@@ -40,10 +40,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #region Protocol Shift
             fi.WriteLine("#region Protocol Shift");
             #region NewShiftToOld
-            fi.WriteLine($"public override OldProtos.{messageName} NewShiftToOld(NewProtos.{messageName}? newprotocol)");
+            fi.WriteLine($"public override OldProtos.{messageName}? NewShiftToOld(NewProtos.{messageName}? newprotocol)");
             fi.EnterCodeRegion();
+            fi.WriteLine($"if (newprotocol == null) return null;");
             fi.WriteLine($"OldProtos.{messageName} oldprotocol = new();");
-            fi.WriteLine($"if (newprotocol == null) return oldprotocol;");
             GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, true, ref bothimports, ref stringPool);
             GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, true, ref bothimports, ref stringPool);
             GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, true, ref bothimports, ref stringPool);
@@ -52,10 +52,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #endregion
             fi.WriteLine();
             #region OldShiftToNew
-            fi.WriteLine($"public override NewProtos.{messageName} OldShiftToNew(OldProtos.{messageName}? oldprotocol)");
+            fi.WriteLine($"public override NewProtos.{messageName}? OldShiftToNew(OldProtos.{messageName}? oldprotocol)");
             fi.EnterCodeRegion();
+            fi.WriteLine("if (oldprotocol == null) return null;");
             fi.WriteLine($"NewProtos.{messageName} newprotocol = new();");
-            fi.WriteLine("if (oldprotocol == null) return newprotocol;");
             GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, false, ref bothimports, ref stringPool);
             GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, false, ref bothimports, ref stringPool);
             GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, false, ref bothimports, ref stringPool);
@@ -66,18 +66,36 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #endregion
             fi.WriteLine();
             #region Outer bytes invoke
-            fi.WriteLine("public override byte[] NewShiftToOld(byte[] arr, int offset, int length)",
-                "=> NewShiftToOld(newproto_parser_base.ParseFrom(arr, offset, length)).ToByteArray();");
-            fi.WriteLine("public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)",
-                "=> NewShiftToOld(newproto_parser_base.ParseFrom(span)).ToByteArray();");
-            fi.WriteLine("public override ByteString NewShiftToOld(ByteString bytes)",
-                "=> NewShiftToOld(newproto_parser_base.ParseFrom(bytes)).ToByteString();");
-            fi.WriteLine("public override byte[] OldShiftToNew(byte[] arr, int offset, int length)",
-                "=> OldShiftToNew(oldproto_parser_base.ParseFrom(arr, offset, length)).ToByteArray();");
-            fi.WriteLine("public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)",
-                "=> OldShiftToNew(oldproto_parser_base.ParseFrom(span)).ToByteArray();");
-            fi.WriteLine("public override ByteString OldShiftToNew(ByteString bytes)",
-                "=> OldShiftToNew(oldproto_parser_base.ParseFrom(bytes)).ToByteString();");
+            fi.WriteLine("public override byte[] NewShiftToOld(byte[] arr, int offset, int length)");
+            fi.EnterCodeRegion();
+            fi.WriteLine("var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(arr, offset, length));");
+            fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();");
+            fi.ExitCodeRegion();
+            fi.WriteLine("public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)");
+            fi.EnterCodeRegion();
+            fi.WriteLine("var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(span));");
+            fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();");
+            fi.ExitCodeRegion();
+            fi.WriteLine("public override ByteString NewShiftToOld(ByteString bytes)");
+            fi.EnterCodeRegion();
+            fi.WriteLine("var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(bytes));");
+            fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteString();");
+            fi.ExitCodeRegion();
+            fi.WriteLine("public override byte[] OldShiftToNew(byte[] arr, int offset, int length)");
+            fi.EnterCodeRegion();
+            fi.WriteLine("var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(arr, offset, length));");
+            fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();");
+            fi.ExitCodeRegion();
+            fi.WriteLine("public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)");
+            fi.EnterCodeRegion();
+            fi.WriteLine("var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(span));");
+            fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();");
+            fi.ExitCodeRegion();
+            fi.WriteLine("public override ByteString OldShiftToNew(ByteString bytes)");
+            fi.EnterCodeRegion();
+            fi.WriteLine("var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(bytes));");
+            fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteString();");
+            fi.ExitCodeRegion();
             #endregion
             fi.WriteLine();
             fi.WriteLine($"private static Handler{friendly_messageName} _globalOnlyInstance = new Handler{friendly_messageName}();");
