@@ -172,7 +172,6 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             return rtn;
         }
-    
         
         /// <summary>
         /// Syncronously run multiple processes with certain args and wait for exit.
