@@ -79,7 +79,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine("public override ByteString NewShiftToOld(ByteString bytes)");
             fi.EnterCodeRegion();
             fi.WriteLine("var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(bytes));");
-            fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteString();");
+            fi.WriteLine("return rtn == null ? ByteString.Empty : rtn.ToByteString();");
             fi.ExitCodeRegion();
             fi.WriteLine("public override byte[] OldShiftToNew(byte[] arr, int offset, int length)");
             fi.EnterCodeRegion();
@@ -94,7 +94,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine("public override ByteString OldShiftToNew(ByteString bytes)");
             fi.EnterCodeRegion();
             fi.WriteLine("var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(bytes));");
-            fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteString();");
+            fi.WriteLine("return rtn == null ? ByteString.Empty : rtn.ToByteString();");
             fi.ExitCodeRegion();
             #endregion
             fi.WriteLine();
