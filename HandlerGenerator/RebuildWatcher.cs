@@ -15,6 +15,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         private bool _needRebuild = true;
 
         /// <summary>
+        /// The key of dictionary is not relative, but the value in list is relative.
+        /// </summary>
+        public readonly Dictionary<string, List<string>> rebuild_files_relative_list = new();
+
+        /// <summary>
         /// 无参构造器
         /// </summary>
         public RebuildWatcher()
@@ -74,8 +79,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 watcher.CaptureDirectory(dirPath);
             }
 
+            watcher._needRebuild = false;
+
             foreach (var dir in watcher._directories)
             {
+                watcher.rebuild_files_relative_list.Add(dir.FullName, new());
                 foreach (var file in dir.GetFiles("*", SearchOption.AllDirectories))
                 {
                     var relativePath = GetRelativePath(file.FullName, dir.FullName);
@@ -85,18 +93,17 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                         if (hash != data[dir.FullName][relativePath])
                         {
                             watcher._needRebuild = true;
-                            return watcher;
+                            watcher.rebuild_files_relative_list[dir.FullName].Add(relativePath);
                         }
                     }
                     else
                     {
                         watcher._needRebuild = true;
-                        return watcher;
+                        watcher.rebuild_files_relative_list[dir.FullName].Add(relativePath);
                     }
                 }
             }
 
-            watcher._needRebuild = false;
             return watcher;
         }
 
@@ -148,14 +155,16 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
 
         private static string GetFileHash(string filePath)
         {
-            using (var md5 = MD5.Create())
+            /*using (var md5 = MD5.Create())
             {
                 using (var stream = File.OpenRead(filePath))
                 {
                     var hash = md5.ComputeHash(stream);
                     return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
                 }
-            }
+            }*/
+            var info = new FileInfo(filePath);
+            return $"{filePath};len:{info.Length}b;crt_time:{info.CreationTimeUtc:yyyyMMdd-HHmmss.fffffff};mod_time:{info.LastWriteTimeUtc:yyyyMMdd-HHmmss.fffffff};";
         }
     }
 }

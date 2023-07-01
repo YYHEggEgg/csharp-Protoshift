@@ -229,11 +229,12 @@ if (File.Exists(shiftCmdId_filePath))
 #region Smart Compiling
 Stopwatch rebuildWatcher_watch = Stopwatch.StartNew();
 bool needRebuild = true;
+RebuildWatcher? rebuildWatcher_past = null;
 if (File.Exists("last_build_record.json"))
 {
     Log.Info($"Reading last build record from jsonfile, it'll take some time...", nameof(RebuildWatcher));
-    RebuildWatcher rebuildWatcher = RebuildWatcher.DeserializeFromJson(await File.ReadAllTextAsync("last_build_record.json"));
-    needRebuild = rebuildWatcher.NeedRebuild;
+    rebuildWatcher_past = RebuildWatcher.DeserializeFromJson(await File.ReadAllTextAsync("last_build_record.json"));
+    needRebuild = rebuildWatcher_past.NeedRebuild;
 }
 rebuildWatcher_watch.Stop();
 Log.Info($"Rebuild judge completed (need rebuild: {needRebuild}), costed {rebuildWatcher_watch.Elapsed}.", nameof(RebuildWatcher));
@@ -241,45 +242,88 @@ if (needRebuild)
 {
     #region Compile Protos (protoc)
     Stopwatch protocWatch = Stopwatch.StartNew();
-    Log.Info("Start compiling protos (protoc), it will take some time...");
-    Directory.CreateDirectory("./../OldProtoHandlers/Google.Protobuf/Compiled");
-    Directory.CreateDirectory("./../NewProtoHandlers/Google.Protobuf/Compiled");
-    List<OuterInvokeInfo> protoc_invokes = new();
-    #region OldProtos
-    var oldproto_files = Directory.EnumerateFiles(
-        "./../OldProtoHandlers/Google.Protobuf/Protos",
-        "*.proto", SearchOption.AllDirectories);
-    foreach (var proto_file in oldproto_files)
+    if (rebuildWatcher_past != null)
     {
-        protoc_invokes.Add(new OuterInvokeInfo
+        Log.Info($"Start compiling protos (protoc), it will take some time...");
+        Directory.CreateDirectory("./../OldProtoHandlers/Google.Protobuf/Compiled");
+        Directory.CreateDirectory("./../NewProtoHandlers/Google.Protobuf/Compiled");
+        List<OuterInvokeInfo> protoc_invokes = new();
+        #region OldProtos
+        foreach (var proto_file in rebuildWatcher_past.rebuild_files_relative_list[Path.GetFullPath("./../OldProtoHandlers/Google.Protobuf")])
         {
-            ProcessPath = OuterInvokeConfig.protoc_path,
-            WorkingDir = "./..",
-            AutoTerminateReason = $"Proto: {Path.GetFileNameWithoutExtension(proto_file)} compiling (protoc) failed.",
-            CmdLine = ("--proto_path=\"OldProtoHandlers/Google.Protobuf/Protos\" \"" +
-                Path.GetRelativePath("./../OldProtoHandlers/Google.Protobuf/Protos", proto_file) +
-                "\" --csharp_out=\"OldProtoHandlers/Google.Protobuf/Compiled\"")
-        });
+            if (proto_file.StartsWith("Protos") && Path.GetExtension(proto_file) == ".proto")
+            {
+                protoc_invokes.Add(new OuterInvokeInfo
+                {
+                    ProcessPath = OuterInvokeConfig.protoc_path,
+                    WorkingDir = "./..",
+                    AutoTerminateReason = $"Proto: {Path.GetFileNameWithoutExtension(proto_file)} compiling (protoc) failed.",
+                    CmdLine = ($"--proto_path=\"OldProtoHandlers/Google.Protobuf/Protos\" \"OldProtoHandlers/Google.Protobuf/{proto_file}\" " +
+                        "--csharp_out=\"OldProtoHandlers/Google.Protobuf/Compiled\"")
+                });
+            }
+        }
+        #endregion
+        #region NewProtos
+        foreach (var proto_file in rebuildWatcher_past.rebuild_files_relative_list[Path.GetFullPath("./../NewProtoHandlers/Google.Protobuf")])
+        {
+            if (proto_file.StartsWith("Protos") && Path.GetExtension(proto_file) == ".proto")
+            {
+                protoc_invokes.Add(new OuterInvokeInfo
+                {
+                    ProcessPath = OuterInvokeConfig.protoc_path,
+                    WorkingDir = "./..",
+                    AutoTerminateReason = $"Proto: {Path.GetFileNameWithoutExtension(proto_file)} compiling (protoc) failed.",
+                    CmdLine = ($"--proto_path=\"NewProtoHandlers/Google.Protobuf/Protos\" \"NewProtoHandlers/Google.Protobuf/{proto_file}\" " +
+                        "--csharp_out=\"NewProtoHandlers/Google.Protobuf/Compiled\"")
+                });
+            }
+        }
+        #endregion
+        OuterInvoke.RunParallel(protoc_invokes, 20041);
     }
-    #endregion
-    #region NewProtos
-    var newproto_files = Directory.EnumerateFiles(
-        "./../NewProtoHandlers/Google.Protobuf/Protos",
-        "*.proto", SearchOption.AllDirectories);
-    foreach (var proto_file in newproto_files)
+    else
     {
-        protoc_invokes.Add(new OuterInvokeInfo
+        Log.Info("Start compiling protos (protoc), it will take some time...");
+        Directory.CreateDirectory("./../OldProtoHandlers/Google.Protobuf/Compiled");
+        Directory.CreateDirectory("./../NewProtoHandlers/Google.Protobuf/Compiled");
+        List<OuterInvokeInfo> protoc_invokes = new();
+        #region OldProtos
+        var oldproto_files = Directory.EnumerateFiles(
+            "./../OldProtoHandlers/Google.Protobuf/Protos",
+            "*.proto", SearchOption.AllDirectories);
+        foreach (var proto_file in oldproto_files)
         {
-            ProcessPath = OuterInvokeConfig.protoc_path,
-            WorkingDir = "./..",
-            AutoTerminateReason = $"Proto: {Path.GetFileNameWithoutExtension(proto_file)} compiling (protoc) failed.",
-            CmdLine = ("--proto_path=\"NewProtoHandlers/Google.Protobuf/Protos\" \"" +
-                Path.GetRelativePath("./../NewProtoHandlers/Google.Protobuf/Protos", proto_file) +
-                "\" --csharp_out=\"NewProtoHandlers/Google.Protobuf/Compiled\"")
-        });
+            protoc_invokes.Add(new OuterInvokeInfo
+            {
+                ProcessPath = OuterInvokeConfig.protoc_path,
+                WorkingDir = "./..",
+                AutoTerminateReason = $"Proto: {Path.GetFileNameWithoutExtension(proto_file)} compiling (protoc) failed.",
+                CmdLine = ("--proto_path=\"OldProtoHandlers/Google.Protobuf/Protos\" \"" +
+                    Path.GetRelativePath("./../OldProtoHandlers/Google.Protobuf/Protos", proto_file) +
+                    "\" --csharp_out=\"OldProtoHandlers/Google.Protobuf/Compiled\"")
+            });
+        }
+        #endregion
+        #region NewProtos
+        var newproto_files = Directory.EnumerateFiles(
+            "./../NewProtoHandlers/Google.Protobuf/Protos",
+            "*.proto", SearchOption.AllDirectories);
+        foreach (var proto_file in newproto_files)
+        {
+            protoc_invokes.Add(new OuterInvokeInfo
+            {
+                ProcessPath = OuterInvokeConfig.protoc_path,
+                WorkingDir = "./..",
+                AutoTerminateReason = $"Proto: {Path.GetFileNameWithoutExtension(proto_file)} compiling (protoc) failed.",
+                CmdLine = ("--proto_path=\"NewProtoHandlers/Google.Protobuf/Protos\" \"" +
+                    Path.GetRelativePath("./../NewProtoHandlers/Google.Protobuf/Protos", proto_file) +
+                    "\" --csharp_out=\"NewProtoHandlers/Google.Protobuf/Compiled\"")
+            });
+        }
+        #endregion
+        OuterInvoke.RunParallel(protoc_invokes, 20041);
     }
-    #endregion
-    OuterInvoke.RunParallel(protoc_invokes, 20041);
     protocWatch.Stop();
     Log.Info($"Protoc compiling finished, elapsed {protocWatch.Elapsed}.");
     #endregion
