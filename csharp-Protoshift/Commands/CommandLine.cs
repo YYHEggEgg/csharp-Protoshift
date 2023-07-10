@@ -14,21 +14,34 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
-    internal static class CommandLine
+    internal static partial class CommandLine
     {
         static CommandLine()
         {
-            // Add commands here.
-            handlers.Add(new MT19937Cmd());
-#if !PROXY_ONLY_SERVER
-            handlers.Add(new SetVerboseCmd());
-            handlers.Add(new SelectRecordCmd());
-            handlers.Add(new ShowRecordCmd());
-            handlers.Add(new UnionSelectCmd());
-#endif
-            handlers.Add(new StopServerCmd());
+            // StopServer is now built-in command
+            stopServer = new StopServerCmd();
+            handlers.Add(stopServer);
+            var cmdlist = ConfigureCommands();
+            stopServer.ServerClosing += () =>
+            {
+                foreach (var cmd in cmdlist)
+                {
+                    try
+                    {
+                        cmd.CleanUp();
+                    }
+                    catch (NotImplementedException) { }
+                    catch (Exception ex)
+                    {
+                        Log.Erro($"Cleanup of command {cmd.GetType()} failed: ex", nameof(CommandLine));
+                    }
+                }
+                stopServer.CleanUpCompleted = true;
+            };
+            handlers.AddRange(cmdlist);
         }
 
+        private static StopServerCmd stopServer;
         public static List<ICommandHandler> handlers = new();
         public static void ShowHelps()
         { 
