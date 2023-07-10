@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using YYHEggEgg.Logger;
@@ -19,6 +20,18 @@ namespace csharp_Protoshift.Commands.SkillIssueFix
             $"This command is used to fix data lost when Protoshifting, but it's not substitute for fixing protos.{Environment.NewLine}" +
             $"e.g. \"kskillissue PlayerLoginRsp server enable isEnableClientHashDebug->Unk3300AJBBIPFMBEL\"{Environment.NewLine}" +
             "Notice that don't contain spaces or quotes, CommandLine cannot identify your input.";
+
+        public void CleanUp() 
+        { 
+            SaveChanges();
+        }
+
+        private object save_lck = new object();
+        public void SaveChanges()
+        {
+            lock (save_lck)
+                File.WriteAllText("skillissue_fix_config.json", JsonSerializer.Serialize(this));
+        }
 
         // ushort is CmdId
         [JsonIgnore] public Dictionary<ushort, ProtoReflectRules> clientRules = new();
