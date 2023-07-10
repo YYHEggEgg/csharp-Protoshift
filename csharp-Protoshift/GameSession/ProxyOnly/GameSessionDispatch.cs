@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YYHEggEgg.Logger;
 using Force.Crc32;
+using System.Net;
 
 namespace csharp_Protoshift.GameSession
 {
@@ -21,6 +22,16 @@ namespace csharp_Protoshift.GameSession
         public static bool Closed { get; private set; }
 
         #region Packet Handlers
+        public static void SessionCreated(uint conv, IPEndPoint ipEp)
+        {
+            if (!cancelledSessions.Contains(conv))
+            {
+                HandlerSession session = new(conv);
+                session.remoteIp = ipEp;
+                sessions.TryAdd(conv, session);
+            }
+        }
+
         public static byte[]? HandleServerPacket(byte[] data, uint conv)
         {
             AssertSessionExists(conv);
