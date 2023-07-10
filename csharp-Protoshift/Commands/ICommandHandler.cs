@@ -22,5 +22,6 @@ namespace csharp_Protoshift.Commands
         /// </summary>
         /// <param name="args"></param>
         public Task HandleAsync(string[] args);
+        public void CleanUp();
     }
 }

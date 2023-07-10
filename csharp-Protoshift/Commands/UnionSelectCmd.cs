@@ -20,6 +20,8 @@ namespace csharp_Protoshift.Commands
             $"This can select all packets of a certain proto wrapped in UnionCmdNotify.{Environment.NewLine}" +
             "You may define [number] to limit how many packets to show. Default is 10.";
 
+        public void CleanUp() { }
+
         public async Task HandleAsync(string[] args)
         {
             #region Parse Input

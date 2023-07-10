@@ -20,6 +20,8 @@ namespace csharp_Protoshift.Commands
             $"If false, then packets working fine will not produce any output in the commandline.{Environment.NewLine}" +
             "You may use this when you have entered the game successfully and want to use some commands.";
 
+        public void CleanUp() { }
+
 #pragma warning disable CS1998 // 异步方法缺少 "await" 运算符，将以同步方式运行
         public async Task HandleAsync(string[] args)
 #pragma warning restore CS1998 // 异步方法缺少 "await" 运算符，将以同步方式运行
@@ -38,6 +40,8 @@ namespace csharp_Protoshift.Commands
         public string Description => "Select specified packet records with a given proto name.";
 
         public string Usage => "select <conv_id> <protoname>";
+
+        public void CleanUp() { }
 
 #pragma warning disable CS1998 // 异步方法缺少 "await" 运算符，将以同步方式运行
         public async Task HandleAsync(string[] args)
@@ -65,6 +69,8 @@ namespace csharp_Protoshift.Commands
 
         public string Usage => $"show <conv_id> <packet_id>{Environment.NewLine}" +
             "packet_id can be gained from 'select' command.";
+
+        public void CleanUp() { }
 
 #pragma warning disable CS1998 // 异步方法缺少 "await" 运算符，将以同步方式运行
         public async Task HandleAsync(string[] args)
