@@ -1,4 +1,6 @@
-﻿using csharp_Protoshift.GameSession.SpecialFixs;
+﻿#if !PROXY_ONLY_SERVER
+
+using csharp_Protoshift.GameSession.SpecialFixs;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
 using Funny.Crypto;
@@ -36,7 +38,7 @@ namespace csharp_Protoshift.GameSession
         public int packetCounts { get; protected set; }
         public int PacketRecordLimits { get; }
 
-        #region Record Packet Protoshift time cost
+#region Record Packet Protoshift time cost
         public ConcurrentBag<TimeRecord> TimeRecords { get; } = new();
 
         public struct TimeRecord
@@ -69,7 +71,7 @@ namespace csharp_Protoshift.GameSession
                 package.SaveAs(new FileInfo(filePath));
             }
         }
-        #endregion 
+#endregion
 
         /// <summary>
         /// Initializer
@@ -85,7 +87,7 @@ namespace csharp_Protoshift.GameSession
             client_seed = server_seed = Array.Empty<byte>();
             // Verbose = true;
             Verbose = false;
-            #region Unordered cmds
+#region Unordered cmds
             try
             {
                 List<ushort> _unordered_cmds_new = new();
@@ -102,7 +104,7 @@ namespace csharp_Protoshift.GameSession
             {
                 Log.Erro($"HandlerSession({SessionId}) init failed: {ex}", nameof(HandlerSession));
             }
-            #endregion
+#endregion
         }
 
         public byte[] HandlePacket(byte[] packet, bool isNewCmdid)
@@ -170,7 +172,7 @@ namespace csharp_Protoshift.GameSession
         }
 
         // use whitelist now
-        #region Ordered Packet List
+#region Ordered Packet List
         // this is disabled now
         /*ReadOnlyCollection<string> ordered_cmds = new(new List<string>
         {
@@ -196,7 +198,7 @@ namespace csharp_Protoshift.GameSession
         };
 
         ReadOnlyCollection<ushort> unordered_cmds_new, unordered_cmds_old;
-        #endregion
+#endregion
 
         public bool OrderedPacket(byte[] packet, bool isNewCmdid)
         {
@@ -225,7 +227,7 @@ namespace csharp_Protoshift.GameSession
             return !(isNewCmdid ? unordered_cmds_new : unordered_cmds_old).Contains(cmdid);
         }
 
-        #region Packet Handle
+#region Packet Handle
 #if DEBUG
         public byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
             int body_offset, uint body_length)
@@ -240,10 +242,10 @@ namespace csharp_Protoshift.GameSession
             var bodyfrom = new byte[body_length];
             Array.Copy(packet, body_offset, bodyfrom, 0, body_length);
 
-            #region Client packet
+#region Client packet
             if (isNewCmdid)
             {
-                #region Receive and read
+#region Receive and read
                 if (!NewProtos.QueryCmdId.TryGetSerializer(cmdid, out var newserializer))
                 {
                     Log.Erro($"Packet with CmdId:{cmdid} from Client" +
@@ -259,13 +261,13 @@ namespace csharp_Protoshift.GameSession
                         $"Client:---{Convert.ToHexString(packet)}",
                         $"PacketHandler({SessionId})");
                 }
-                #endregion
+#endregion
 
-                #region Special Fix
+#region Special Fix
                 if (ExtraFix.NeedSpecialHandle(cmdid, isNewCmdid))
                 {
                     var genbody = ExtraFix.SpecialHandle(cmdid, isNewCmdid, bodyfrom);
-                    #region Record Packet
+#region Record Packet
                     if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
                     {
                         lock (records)
@@ -280,8 +282,8 @@ namespace csharp_Protoshift.GameSession
                             packetCounts++;
                         }
                     }
-                    #endregion
-                    #region Build New Packet
+#endregion
+#region Build New Packet
                     int rtn_packetLength = body_offset + genbody.Length + 2;
                     byte[] rtn_packet = new byte[rtn_packetLength];
                     Array.Copy(packet, 0, rtn_packet, 0, body_offset);
@@ -299,11 +301,11 @@ namespace csharp_Protoshift.GameSession
                     }
 
                     return rtn_packet;
-                    #endregion
+#endregion
                 }
-                #endregion
+#endregion
 
-                #region Protoshift
+#region Protoshift
                 byte[] oldbody;
                 OldProtos.ProtoSerialize? oldserializer = null;
 
@@ -323,16 +325,16 @@ namespace csharp_Protoshift.GameSession
                     oldbody = oldserializer.SerializeFromJson(newjson);
                 }
                 else oldbody = UnionCmds.Shift(newjson);
-                #endregion
+#endregion
 
-                #region Notify
+#region Notify
                 if (protoname == "GetPlayerTokenReq")
                 {
                     GetPlayerTokenReqNotify(newjson);
                 }
-                #endregion
+#endregion
 
-                #region Record Packet
+#region Record Packet
                 if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
                 {
                     PacketRecord record = new PacketRecord(protoname, packetCounts, cmdid, true,
@@ -349,9 +351,9 @@ namespace csharp_Protoshift.GameSession
                         packetCounts++;
                     }
                 }
-                #endregion
+#endregion
 
-                #region Build New Packet
+#region Build New Packet
                 int rtnpacketLength = body_offset + oldbody.Length + 2;
                 byte[] rtn = new byte[rtnpacketLength];
                 Array.Copy(packet, 0, rtn, 0, body_offset);
@@ -375,13 +377,13 @@ namespace csharp_Protoshift.GameSession
                 }
                 SubmitTimeRecord(protoname, true, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
                 return rtn;
-                #endregion
+#endregion
             }
-            #endregion
-            #region Server packet
+#endregion
+#region Server packet
             else
             {
-                #region Receive and read
+#region Receive and read
                 if (!OldProtos.QueryCmdId.TryGetSerializer(cmdid, out var oldserializer))
                 {
                     Log.Erro($"Packet with CmdId:{cmdid} from Server" +
@@ -397,13 +399,13 @@ namespace csharp_Protoshift.GameSession
                         $"Server:---{Convert.ToHexString(packet)}",
                         $"PacketHandler({SessionId})");
                 }
-                #endregion
+#endregion
 
-                #region Special Fix
+#region Special Fix
                 if (ExtraFix.NeedSpecialHandle(cmdid, isNewCmdid))
                 {
                     var genbody = ExtraFix.SpecialHandle(cmdid, isNewCmdid, bodyfrom);
-                    #region Record Packet
+#region Record Packet
                     if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
                     {
                         lock (records)
@@ -418,8 +420,8 @@ namespace csharp_Protoshift.GameSession
                             packetCounts++;
                         }
                     }
-                    #endregion
-                    #region Build New Packet
+#endregion
+#region Build New Packet
                     int rtn_packetLength = body_offset + genbody.Length + 2;
                     byte[] rtn_packet = new byte[rtn_packetLength];
                     Array.Copy(packet, 0, rtn_packet, 0, body_offset);
@@ -437,11 +439,11 @@ namespace csharp_Protoshift.GameSession
                     }
 
                     return rtn_packet;
-                    #endregion
+#endregion
                 }
-                #endregion
+#endregion
 
-                #region Protoshift
+#region Protoshift
                 if (!NewProtos.QueryCmdId.TryGetSerializer(protoname, out var newserializer))
                 {
                     Log.Erro($"Packet {protoname} from Server" +
@@ -454,16 +456,16 @@ namespace csharp_Protoshift.GameSession
                 oldjson = Program.skillcmd.ProcessWithRule(cmdid, true, oldjson);
 
                 byte[] newbody = newserializer.SerializeFromJson(oldjson);
-                #endregion
+#endregion
 
-                #region Notify
+#region Notify
                 if (protoname == "GetPlayerTokenRsp")
                 {
                     GetPlayerTokenRspNotify(oldjson);
                 }
-                #endregion
+#endregion
 
-                #region Record Packet
+#region Record Packet
                 if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
                 {
                     PacketRecord record = new PacketRecord(protoname, packetCounts, cmdid, true,
@@ -479,9 +481,9 @@ namespace csharp_Protoshift.GameSession
                         packetCounts++;
                     }
                 }
-                #endregion
+#endregion
 
-                #region Build New Packet
+#region Build New Packet
                 int rtnpacketLength = body_offset + newbody.Length + 2;
                 byte[] rtn = new byte[rtnpacketLength];
                 Array.Copy(packet, 0, rtn, 0, body_offset);
@@ -504,9 +506,9 @@ namespace csharp_Protoshift.GameSession
                 }
                 SubmitTimeRecord(protoname, false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
                 return rtn;
-                #endregion
+#endregion
             }
-            #endregion
+#endregion
         }
 
         protected byte[] client_seed;
@@ -543,9 +545,9 @@ namespace csharp_Protoshift.GameSession
         /// </summary>
         /// <param name="newjson"></param>
         /// <returns></returns>
-        #endregion
+#endregion
 
-        #region Crypto
+#region Crypto
         private void XorDecrypt(ref byte[] encrypted, int offset = 0, int length = -1, bool fallbackToDispatchKey = false)
         {
             if (length == -1) length = encrypted.Length;
@@ -598,7 +600,7 @@ namespace csharp_Protoshift.GameSession
             }
             return key;
         }
-        #endregion
+#endregion
 
         public List<PacketRecord> QueryPacketRecords(string protoname)
         {
@@ -621,3 +623,4 @@ namespace csharp_Protoshift.GameSession
         public PacketRecord QueryPacketRecordById(int id) => records[id % PacketRecordLimits];
     }
 }
+#endif

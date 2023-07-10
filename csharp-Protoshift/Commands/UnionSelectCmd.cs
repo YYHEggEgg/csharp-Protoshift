@@ -1,4 +1,6 @@
-﻿using csharp_Protoshift.GameSession;
+﻿#if !PROXY_ONLY_SERVER
+
+using csharp_Protoshift.GameSession;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -63,3 +65,4 @@ namespace csharp_Protoshift.Commands
         }
     }
 }
+#endif
