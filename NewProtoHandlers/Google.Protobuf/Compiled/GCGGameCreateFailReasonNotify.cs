@@ -24,16 +24,14 @@ namespace NewProtos {
     static GCGGameCreateFailReasonNotifyReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "CiNHQ0dHYW1lQ3JlYXRlRmFpbFJlYXNvbk5vdGlmeS5wcm90byL9AgodR0NH",
+            "CiNHQ0dHYW1lQ3JlYXRlRmFpbFJlYXNvbk5vdGlmeS5wcm90byKdAgodR0NH",
             "R2FtZUNyZWF0ZUZhaWxSZWFzb25Ob3RpZnkSQgoGcmVhc29uGAcgASgOMjIu",
             "R0NHR2FtZUNyZWF0ZUZhaWxSZWFzb25Ob3RpZnkuR0NHR2FtZUNyZWF0ZVJl",
-            "YXNvbiKXAgoTR0NHR2FtZUNyZWF0ZVJlYXNvbhIfChtHQ0dfR0FNRV9DUkVB",
-            "VEVfUkVBU09OX05PTkUQABIjCh9HQ0dfR0FNRV9DUkVBVEVfUkVBU09OX0dB",
-            "TUVfTUFYEAESNAowR0NHX0dBTUVfQ1JFQVRFX1JFQVNPTl9DTElFTlRfVkVS",
-            "U0lPTl9OT1RfTEFURVNUEAISMAosR0NHX0dBTUVfQ1JFQVRFX1JFQVNPTl9S",
-            "RVNPVVJDRV9OT1RfQ09NUExFVEUQAxIiCh5HQ0dfR0FNRV9DUkVBVEVfUkVB",
-            "U09OX1RJTUVPVVQQBBIuCipHQ0dfR0FNRV9DUkVBVEVfUkVBU09OX1VuazMz",
-            "MDBfRU1DREZHR0ZGQUgQBUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+            "YXNvbiK3AQoTR0NHR2FtZUNyZWF0ZVJlYXNvbhIPCgtSRUFTT05fTk9ORRAA",
+            "EhMKD1JFQVNPTl9HQU1FX01BWBABEiQKIFJFQVNPTl9DTElFTlRfVkVSU0lP",
+            "Tl9OT1RfTEFURVNUEAISIAocUkVBU09OX1JFU09VUkNFX05PVF9DT01QTEVU",
+            "RRADEhIKDlJFQVNPTl9USU1FT1VUEAQSHgoaUkVBU09OX1VuazMzMDBfRU1D",
+            "REZHR0ZGQUgQBUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -99,7 +97,7 @@ namespace NewProtos {
 
     /// <summary>Field number for the "reason" field.</summary>
     public const int ReasonFieldNumber = 7;
-    private global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason reason_ = global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None;
+    private global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason reason_ = global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.ReasonNone;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason Reason {
@@ -132,7 +130,7 @@ namespace NewProtos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) hash ^= Reason.GetHashCode();
+      if (Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.ReasonNone) hash ^= Reason.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -151,7 +149,7 @@ namespace NewProtos {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) {
+      if (Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.ReasonNone) {
         output.WriteRawTag(56);
         output.WriteEnum((int) Reason);
       }
@@ -165,7 +163,7 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) {
+      if (Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.ReasonNone) {
         output.WriteRawTag(56);
         output.WriteEnum((int) Reason);
       }
@@ -179,7 +177,7 @@ namespace NewProtos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) {
+      if (Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.ReasonNone) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Reason);
       }
       if (_unknownFields != null) {
@@ -194,7 +192,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      if (other.Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.None) {
+      if (other.Reason != global::NewProtos.GCGGameCreateFailReasonNotify.Types.GCGGameCreateReason.ReasonNone) {
         Reason = other.Reason;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -246,12 +244,12 @@ namespace NewProtos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       public enum GCGGameCreateReason {
-        [pbr::OriginalName("GCG_GAME_CREATE_REASON_NONE")] None = 0,
-        [pbr::OriginalName("GCG_GAME_CREATE_REASON_GAME_MAX")] GameMax = 1,
-        [pbr::OriginalName("GCG_GAME_CREATE_REASON_CLIENT_VERSION_NOT_LATEST")] ClientVersionNotLatest = 2,
-        [pbr::OriginalName("GCG_GAME_CREATE_REASON_RESOURCE_NOT_COMPLETE")] ResourceNotComplete = 3,
-        [pbr::OriginalName("GCG_GAME_CREATE_REASON_TIMEOUT")] Timeout = 4,
-        [pbr::OriginalName("GCG_GAME_CREATE_REASON_Unk3300_EMCDFGGFFAH")] Unk3300Emcdfggffah = 5,
+        [pbr::OriginalName("REASON_NONE")] ReasonNone = 0,
+        [pbr::OriginalName("REASON_GAME_MAX")] ReasonGameMax = 1,
+        [pbr::OriginalName("REASON_CLIENT_VERSION_NOT_LATEST")] ReasonClientVersionNotLatest = 2,
+        [pbr::OriginalName("REASON_RESOURCE_NOT_COMPLETE")] ReasonResourceNotComplete = 3,
+        [pbr::OriginalName("REASON_TIMEOUT")] ReasonTimeout = 4,
+        [pbr::OriginalName("REASON_Unk3300_EMCDFGGFFAH")] ReasonUnk3300Emcdfggffah = 5,
       }
 
     }
