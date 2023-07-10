@@ -12,6 +12,7 @@ using Org.BouncyCastle.Crypto.Prng;
 using System.Collections.Concurrent;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Net;
 using System.Security.Cryptography;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
@@ -26,6 +27,7 @@ namespace csharp_Protoshift.GameSession
         public byte[] XorKey { get; protected set; }
         public PacketRecord[] records;
         public uint SessionId { get; private set; }
+        public IPEndPoint remoteIp { get; set; }
 
         /// <summary>
         /// Whether records contain PingReq/PingRsp packets. Only apply to packets received after modified.
@@ -38,7 +40,7 @@ namespace csharp_Protoshift.GameSession
         public int packetCounts { get; protected set; }
         public int PacketRecordLimits { get; }
 
-#region Record Packet Protoshift time cost
+        #region Record Packet Protoshift time cost
         public ConcurrentBag<TimeRecord> TimeRecords { get; } = new();
 
         public struct TimeRecord
@@ -71,7 +73,7 @@ namespace csharp_Protoshift.GameSession
                 package.SaveAs(new FileInfo(filePath));
             }
         }
-#endregion
+        #endregion
 
         /// <summary>
         /// Initializer

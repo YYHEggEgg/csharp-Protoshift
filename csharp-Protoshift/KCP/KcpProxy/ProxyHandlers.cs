@@ -1,7 +1,10 @@
+using System.Net;
+
 namespace csharp_Protoshift.MhyKCP.Proxy
 {
     public class ProxyHandlers
     {
+        public Action<uint, IPEndPoint>? SessionCreated;
         public Func<byte[], uint, byte[]?> OnServerPacketArrival
             = (data, conv) => data;
         public Func<byte[], uint, byte[]?> OnClientPacketArrival

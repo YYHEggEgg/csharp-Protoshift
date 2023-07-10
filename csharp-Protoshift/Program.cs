@@ -79,7 +79,7 @@ namespace csharp_Protoshift
             // Add instances need to be saved here. Repeat time is 60s.
             savetimer = new((_) =>
             {
-                File.WriteAllText("skillissue_fix_config.json", JsonSerializer.Serialize(sicmd));
+                sicmd.SaveChanges();
             }, null, 0, 60000);
             #endregion
 
@@ -104,6 +104,7 @@ namespace csharp_Protoshift
 
             ProxyHandlers handlers = new ProxyHandlers
             {
+                SessionCreated = GameSessionDispatch.SessionCreated,
                 OnServerPacketArrival = GameSessionDispatch.HandleServerPacket,
                 OnClientPacketArrival = GameSessionDispatch.HandleClientPacket,
                 ServerPacketOrdered = GameSessionDispatch.OrderedServerPacket,

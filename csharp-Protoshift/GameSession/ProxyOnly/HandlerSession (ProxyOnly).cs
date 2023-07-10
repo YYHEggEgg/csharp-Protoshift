@@ -12,6 +12,7 @@ using Org.BouncyCastle.Crypto.Prng;
 using System.Collections.Concurrent;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Net;
 using System.Security.Cryptography;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
@@ -26,6 +27,7 @@ namespace csharp_Protoshift.GameSession
         public byte[] XorKey { get; protected set; }
         public ConcurrentBag<PacketRecord> PacketRecords { get; private set; } = new();
         public uint SessionId { get; private set; }
+        public IPEndPoint remoteIp { get; set; }
 
         /// <summary>
         /// Whether records contain PingReq/PingRsp packets. Only apply to packets received after modified.
