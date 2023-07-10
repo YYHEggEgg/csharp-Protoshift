@@ -29,7 +29,7 @@ namespace NewProtos {
             "dWVsQ2hhbGxlbmdlLnByb3RvGhlHQ0dHYW1lQnVzaW5lc3NUeXBlLnByb3Rv",
             "GhRHQ0dNZXNzYWdlUGFjay5wcm90bxoVR0NHUFZFSW50ZW50aW9uLnByb3Rv",
             "Gg5HQ0dQaGFzZS5wcm90bxoUR0NHUGxheWVyRmllbGQucHJvdG8aGVVuazMz",
-            "MDBfQURIRU5DSUZLTkkucHJvdG8iqwUKB0dDR0R1ZWwSEgoKc2VydmVyX3Nl",
+            "MDBfQURIRU5DSUZLTkkucHJvdG8iqgUKB0dDR0R1ZWwSEgoKc2VydmVyX3Nl",
             "cRgDIAEoDRIuCg5zaG93X2luZm9fbGlzdBgHIAMoCzIWLkdDR0NvbnRyb2xs",
             "ZXJTaG93SW5mbxIlChxmb3JiaWRfZmluaXNoX2NoYWxsZW5nZV9saXN0GMAB",
             "IAMoDRIbCgljYXJkX2xpc3QYASADKAsyCC5HQ0dDYXJkEhsKE1VuazMzMDBf",
@@ -37,19 +37,19 @@ namespace NewProtos {
             "b3N0UmV2aXNlSW5mbxIPCgdnYW1lX2lkGAQgASgNEiMKCmZpZWxkX2xpc3QY",
             "BSADKAsyDy5HQ0dQbGF5ZXJGaWVsZBIyChNVbmszMzAwX0NEQ01CT0tCTEFL",
             "GMMPIAMoCzIULlVuazMzMDBfQURIRU5DSUZLTkkSKwoNYnVzaW5lc3NfdHlw",
-            "ZRgNIAEoDjIULkdDR0dhbWVCdXNpbmVzc1R5cGUSKAoOaW50ZW50aW9uX2xp",
-            "c3QYAiADKAsyEC5HQ0dQVkVJbnRlbnRpb24SKgoOY2hhbGxlbmdlX2xpc3QY",
-            "0QwgAygLMhEuR0NHRHVlbENoYWxsZW5nZRIkChFoaXN0b3J5X2NhcmRfbGlz",
-            "dBjQDiADKAsyCC5HQ0dDYXJkEg0KBXJvdW5kGAsgASgNEhUKDWNvbnRyb2xs",
-            "ZXJfaWQYDCABKA0SLwoVaGlzdG9yeV9tc2dfcGFja19saXN0GJ0GIAMoCzIP",
-            "LkdDR01lc3NhZ2VQYWNrEhsKE1VuazMzMDBfSkhERE5LRlBJTkEYCiABKA0S",
-            "FAoMY2FyZF9pZF9saXN0GAYgAygNEhsKE1VuazMzMDBfSkJCTUJLR09PTk8Y",
-            "DyABKA0SGAoFcGhhc2UYDiABKAsyCS5HQ0dQaGFzZUIMqgIJTmV3UHJvdG9z",
-            "YgZwcm90bzM="));
+            "ZRgNIAEoDjIULkdDR0dhbWVCdXNpbmVzc1R5cGUSJwoNaW50ZXRpb25fbGlz",
+            "dBgCIAMoCzIQLkdDR1BWRUludGVudGlvbhIqCg5jaGFsbGVuZ2VfbGlzdBjR",
+            "DCADKAsyES5HQ0dEdWVsQ2hhbGxlbmdlEiQKEWhpc3RvcnlfY2FyZF9saXN0",
+            "GNAOIAMoCzIILkdDR0NhcmQSDQoFcm91bmQYCyABKA0SFQoNY29udHJvbGxl",
+            "cl9pZBgMIAEoDRIvChVoaXN0b3J5X21zZ19wYWNrX2xpc3QYnQYgAygLMg8u",
+            "R0NHTWVzc2FnZVBhY2sSGwoTVW5rMzMwMF9KSERETktGUElOQRgKIAEoDRIU",
+            "CgxjYXJkX2lkX2xpc3QYBiADKA0SGwoTVW5rMzMwMF9KQkJNQktHT09OTxgP",
+            "IAEoDRIYCgVwaGFzZRgOIAEoCzIJLkdDR1BoYXNlQgyqAglOZXdQcm90b3Ni",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NewProtos.GCGCardReflection.Descriptor, global::NewProtos.GCGControllerShowInfoReflection.Descriptor, global::NewProtos.GCGCostReviseInfoReflection.Descriptor, global::NewProtos.GCGDuelChallengeReflection.Descriptor, global::NewProtos.GCGGameBusinessTypeReflection.Descriptor, global::NewProtos.GCGMessagePackReflection.Descriptor, global::NewProtos.GCGPVEIntentionReflection.Descriptor, global::NewProtos.GCGPhaseReflection.Descriptor, global::NewProtos.GCGPlayerFieldReflection.Descriptor, global::NewProtos.Unk3300ADHENCIFKNIReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GCGDuel), global::NewProtos.GCGDuel.Parser, new[]{ "ServerSeq", "ShowInfoList", "ForbidFinishChallengeList", "CardList", "Unk3300BIANMOPDEHO", "CostRevise", "GameId", "FieldList", "Unk3300CDCMBOKBLAK", "BusinessType", "IntentionList", "ChallengeList", "HistoryCardList", "Round", "ControllerId", "HistoryMsgPackList", "Unk3300JHDDNKFPINA", "CardIdList", "Unk3300JBBMBKGOONO", "Phase" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GCGDuel), global::NewProtos.GCGDuel.Parser, new[]{ "ServerSeq", "ShowInfoList", "ForbidFinishChallengeList", "CardList", "Unk3300BIANMOPDEHO", "CostRevise", "GameId", "FieldList", "Unk3300CDCMBOKBLAK", "BusinessType", "IntetionList", "ChallengeList", "HistoryCardList", "Round", "ControllerId", "HistoryMsgPackList", "Unk3300JHDDNKFPINA", "CardIdList", "Unk3300JBBMBKGOONO", "Phase" }, null, null, null, null)
           }));
     }
     #endregion
@@ -100,7 +100,7 @@ namespace NewProtos {
       fieldList_ = other.fieldList_.Clone();
       unk3300CDCMBOKBLAK_ = other.unk3300CDCMBOKBLAK_.Clone();
       businessType_ = other.businessType_;
-      intentionList_ = other.intentionList_.Clone();
+      intetionList_ = other.intetionList_.Clone();
       challengeList_ = other.challengeList_.Clone();
       historyCardList_ = other.historyCardList_.Clone();
       round_ = other.round_;
@@ -234,15 +234,15 @@ namespace NewProtos {
       }
     }
 
-    /// <summary>Field number for the "intention_list" field.</summary>
-    public const int IntentionListFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::NewProtos.GCGPVEIntention> _repeated_intentionList_codec
+    /// <summary>Field number for the "intetion_list" field.</summary>
+    public const int IntetionListFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::NewProtos.GCGPVEIntention> _repeated_intetionList_codec
         = pb::FieldCodec.ForMessage(18, global::NewProtos.GCGPVEIntention.Parser);
-    private readonly pbc::RepeatedField<global::NewProtos.GCGPVEIntention> intentionList_ = new pbc::RepeatedField<global::NewProtos.GCGPVEIntention>();
+    private readonly pbc::RepeatedField<global::NewProtos.GCGPVEIntention> intetionList_ = new pbc::RepeatedField<global::NewProtos.GCGPVEIntention>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::NewProtos.GCGPVEIntention> IntentionList {
-      get { return intentionList_; }
+    public pbc::RepeatedField<global::NewProtos.GCGPVEIntention> IntetionList {
+      get { return intetionList_; }
     }
 
     /// <summary>Field number for the "challenge_list" field.</summary>
@@ -374,7 +374,7 @@ namespace NewProtos {
       if(!fieldList_.Equals(other.fieldList_)) return false;
       if(!unk3300CDCMBOKBLAK_.Equals(other.unk3300CDCMBOKBLAK_)) return false;
       if (BusinessType != other.BusinessType) return false;
-      if(!intentionList_.Equals(other.intentionList_)) return false;
+      if(!intetionList_.Equals(other.intetionList_)) return false;
       if(!challengeList_.Equals(other.challengeList_)) return false;
       if(!historyCardList_.Equals(other.historyCardList_)) return false;
       if (Round != other.Round) return false;
@@ -401,7 +401,7 @@ namespace NewProtos {
       hash ^= fieldList_.GetHashCode();
       hash ^= unk3300CDCMBOKBLAK_.GetHashCode();
       if (BusinessType != global::NewProtos.GCGGameBusinessType.None) hash ^= BusinessType.GetHashCode();
-      hash ^= intentionList_.GetHashCode();
+      hash ^= intetionList_.GetHashCode();
       hash ^= challengeList_.GetHashCode();
       hash ^= historyCardList_.GetHashCode();
       if (Round != 0) hash ^= Round.GetHashCode();
@@ -430,7 +430,7 @@ namespace NewProtos {
       output.WriteRawMessage(this);
     #else
       cardList_.WriteTo(output, _repeated_cardList_codec);
-      intentionList_.WriteTo(output, _repeated_intentionList_codec);
+      intetionList_.WriteTo(output, _repeated_intetionList_codec);
       if (ServerSeq != 0) {
         output.WriteRawTag(24);
         output.WriteUInt32(ServerSeq);
@@ -490,7 +490,7 @@ namespace NewProtos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       cardList_.WriteTo(ref output, _repeated_cardList_codec);
-      intentionList_.WriteTo(ref output, _repeated_intentionList_codec);
+      intetionList_.WriteTo(ref output, _repeated_intetionList_codec);
       if (ServerSeq != 0) {
         output.WriteRawTag(24);
         output.WriteUInt32(ServerSeq);
@@ -569,7 +569,7 @@ namespace NewProtos {
       if (BusinessType != global::NewProtos.GCGGameBusinessType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BusinessType);
       }
-      size += intentionList_.CalculateSize(_repeated_intentionList_codec);
+      size += intetionList_.CalculateSize(_repeated_intetionList_codec);
       size += challengeList_.CalculateSize(_repeated_challengeList_codec);
       size += historyCardList_.CalculateSize(_repeated_historyCardList_codec);
       if (Round != 0) {
@@ -624,7 +624,7 @@ namespace NewProtos {
       if (other.BusinessType != global::NewProtos.GCGGameBusinessType.None) {
         BusinessType = other.BusinessType;
       }
-      intentionList_.Add(other.intentionList_);
+      intetionList_.Add(other.intetionList_);
       challengeList_.Add(other.challengeList_);
       historyCardList_.Add(other.historyCardList_);
       if (other.Round != 0) {
@@ -667,7 +667,7 @@ namespace NewProtos {
             break;
           }
           case 18: {
-            intentionList_.AddEntriesFrom(input, _repeated_intentionList_codec);
+            intetionList_.AddEntriesFrom(input, _repeated_intetionList_codec);
             break;
           }
           case 24: {
@@ -770,7 +770,7 @@ namespace NewProtos {
             break;
           }
           case 18: {
-            intentionList_.AddEntriesFrom(ref input, _repeated_intentionList_codec);
+            intetionList_.AddEntriesFrom(ref input, _repeated_intetionList_codec);
             break;
           }
           case 24: {
