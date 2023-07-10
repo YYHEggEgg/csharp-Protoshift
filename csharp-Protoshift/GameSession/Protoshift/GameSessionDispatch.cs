@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !PROXY_ONLY_SERVER
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,6 +88,11 @@ namespace csharp_Protoshift.GameSession
         private static object packet_log_lock = "miHomo Save The World";
         static GameSessionDispatch()
         {
+            FileInfo pastPacketLog = new("logs/latest.packet.log");
+            if (pastPacketLog.Exists)
+            {
+                pastPacketLog.MoveTo($"logs/{pastPacketLog.CreationTime:yyyy-MM-dd_HH-mm-ss}.packet.log");
+            }
             packet_logwriter = new("logs/latest.packet.log", true);
             packet_logwriter.Write(
                 "This is a packet log created by csharp-Protoshift.\n" +
@@ -231,3 +237,4 @@ namespace csharp_Protoshift.GameSession
         }
     }
 }
+#endif

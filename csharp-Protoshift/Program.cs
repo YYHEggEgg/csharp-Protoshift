@@ -26,7 +26,7 @@ namespace csharp_Protoshift
             Log.Initialize(new LoggerConfig(
                 max_Output_Char_Count: 16 * 1024,
                 use_Console_Wrapper: true,
-                use_Working_Directory: false,
+                use_Working_Directory: true,
 #if DEBUG
                 global_Minimum_LogLevel: LogLevel.Verbose,
                 console_Minimum_LogLevel: LogLevel.Information,
@@ -88,7 +88,9 @@ namespace csharp_Protoshift
             Log.Info(OldProtos.QueryCmdId.Initialize(), "Entry");
 
             Log.Info(ExtraFix.Initialize(), "Entry");
+#if !PROXY_ONLY_SERVER
             Log.Info(SkillIssueDetect.Initialize(), "Entry");
+#endif
             Log.Info(KcpPacketAudit.Initialize(), "Entry");
 
             /*var dbgsession = new HandlerSession(1001);

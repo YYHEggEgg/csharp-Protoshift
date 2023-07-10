@@ -20,11 +20,13 @@ namespace csharp_Protoshift.Commands
         {
             // Add commands here.
             handlers.Add(new MT19937Cmd());
+#if !PROXY_ONLY_SERVER
             handlers.Add(new SetVerboseCmd());
             handlers.Add(new SelectRecordCmd());
             handlers.Add(new ShowRecordCmd());
-            handlers.Add(new StopServerCmd());
             handlers.Add(new UnionSelectCmd());
+#endif
+            handlers.Add(new StopServerCmd());
         }
 
         public static List<ICommandHandler> handlers = new();

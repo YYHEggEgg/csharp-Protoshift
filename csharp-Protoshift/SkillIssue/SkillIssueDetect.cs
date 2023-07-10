@@ -191,6 +191,7 @@ namespace csharp_Protoshift.SkillIssue
             NewProtos.ProtoSerialize newserializer, OldProtos.ProtoSerialize oldserializer,
             uint? sessionId = null)
         {
+#if !PROXY_ONLY_SERVER
             try
             {
                 string oldjson;
@@ -212,6 +213,9 @@ namespace csharp_Protoshift.SkillIssue
             {
                 Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssue-AsyncDetect");
             }
+#else
+            throw new NotImplementedException();
+#endif
         }
 
         /// <summary>
@@ -228,6 +232,7 @@ namespace csharp_Protoshift.SkillIssue
             OldProtos.ProtoSerialize oldserializer, NewProtos.ProtoSerialize newserializer,
             uint? sessionId = null)
         {
+#if !PROXY_ONLY_SERVER
             try
             {
                 string newjson;
@@ -249,6 +254,9 @@ namespace csharp_Protoshift.SkillIssue
             {
                 Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssue-AsyncDetect");
             }
+#else
+            throw new NotImplementedException();
+#endif
         }
 
         /// <summary>

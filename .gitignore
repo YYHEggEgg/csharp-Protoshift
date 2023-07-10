@@ -7,8 +7,12 @@
 /YSFreedomServer-v2
 /NewProtoHandlers/bin
 /NewProtoHandlers/obj
+/NewProtoHandlers/Backup
+/NewProtoHandlers/AskCmdId.cs
 /OldProtoHandlers/bin
 /OldProtoHandlers/obj
+/OldProtoHandlers/Backup
+/OldProtoHandlers/AskCmdId.cs
 /csharp-Protoshift/bin/Release/net6.0/logs
 /csharp-Protoshift/bin/Debug/net6.0/logs
 /csharp-Protoshift/bin/Debug/net6.0/Temp
@@ -41,3 +45,8 @@
 /KcpTests/.vs
 /csharp-Protoshift/logs
 /csharp-Protoshift/skillissue_fix_config.json
+/HandlerGenerator
+/ProtoshiftHandlers
+/ProtoshiftBenchmark
+/csharp-Protoshift-Replay
+/OldProtoHandlers/Google.Protobuf.3.4
