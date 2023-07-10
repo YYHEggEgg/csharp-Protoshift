@@ -14,6 +14,7 @@ namespace csharp_Protoshift.Commands
             handlers.Add(new ShowRecordCmd());
             handlers.Add(new UnionSelectCmd());
 #endif
+            handlers.Add(new QueryClientCmd());
             return handlers;
         }
     }
