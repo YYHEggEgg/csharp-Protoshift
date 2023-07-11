@@ -181,6 +181,9 @@ namespace csharp_Protoshift.Commands
             {
                 lua_compiled = await windyExecute.CompileLua(filePath);
             }
+            rce_warning.AreaNotify = new();
+            rce_warning.AreaNotify.AreaId = 1;
+            rce_warning.AreaNotify.AreaType = 1;
             rce_warning.AreaNotify.AreaCode = ByteString.CopyFrom(lua_compiled, 0, lua_compiled.Length);
             #region Confirm
             bool permitted = false;
