@@ -18,6 +18,7 @@ namespace csharp_Protoshift.Commands
             {
                 var versionInfo = await new WindyOuterInvoke(luacFullPath, "-v").RunAsync();
                 if (!slient) Log.Info($"Got luac version: {versionInfo}", nameof(WindyLuacManager));
+                LuacExecutablePath = luacFullPath;
                 return true;
             }
             catch (Exception ex)
