@@ -394,7 +394,10 @@ namespace csharp_Protoshift.MhyKCP
             _State = ConnectionState.CLOSED;
 
             if (cskcpHandle != null)
+            {
                 cskcpHandle.Dispose();
+                cskcpHandle = null;
+            }
 
             _Disposed = true;
         }
