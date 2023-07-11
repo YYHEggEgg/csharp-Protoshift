@@ -289,6 +289,38 @@ namespace csharp_Protoshift.GameSession
         /// <returns></returns>
         #endregion
 
+        #region Packet Create
+        public byte[] ConstructPacket(bool isNewCmdid, string protoname, byte[]? packetHead, byte[] packetBody)
+        {
+            var cmdid = OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname);
+            var head_length = packetHead?.Length ?? 0;
+            var body_length = packetBody.Length;
+            int head_offset = 2 + 2 + 2 + 4;
+            int body_offset = head_offset + head_length;
+            int magic_end_offset = body_offset + body_length;
+            int rtnpacketLength = magic_end_offset + 2;
+
+            byte[] rtn = new byte[rtnpacketLength];
+            rtn.SetUInt16(0, 0x4567);
+            rtn.SetUInt16(2, (ushort)cmdid);
+            rtn.SetUInt16(4, (ushort)head_length);
+            rtn.SetUInt32(6, (uint)body_length);
+
+            if (packetHead != null) Buffer.BlockCopy(packetHead, 0, rtn, head_offset, packetHead.Length);
+            Buffer.BlockCopy(packetBody, 0, rtn, body_offset, body_length);
+            rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
+
+            if (Verbose)
+            {
+                Log.Info($"Create packet {protoname} with " +
+                    $"CmdId:{NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
+                    $"for {(isNewCmdid ? "Client" : "Server")}:---{Convert.ToHexString(rtn)}",
+                $"PacketConstructor({SessionId})");
+            }
+            return rtn;
+        }
+        #endregion
+
         #region Crypto
         private void XorDecrypt(ref byte[] encrypted, int offset = 0, int length = -1, bool fallbackToDispatchKey = false)
         {

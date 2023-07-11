@@ -93,6 +93,18 @@ namespace csharp_Protoshift.GameSession
             AssertSessionExists(conv);
             return sessions[conv].OrderedPacket(data, false);
         }
+
+        public static byte[] ConstructPacketSendToServer(uint conv, string protoname, byte[]? packetHead, byte[] packetBody)
+        {
+            AssertSessionExists(conv);
+            return sessions[conv].ConstructPacket(false, protoname, packetHead, packetBody);
+        }
+
+        public static byte[] ConstructPacketSendToClient(uint conv, string protoname, byte[]? packetHead, byte[] packetBody)
+        {
+            AssertSessionExists(conv);
+            return sessions[conv].ConstructPacket(true, protoname, packetHead, packetBody);
+        }
         #endregion
 
         #region Packet Record Saver

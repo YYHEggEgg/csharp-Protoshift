@@ -7,7 +7,9 @@ namespace csharp_Protoshift.Commands
         private static List<ICommandHandler> ConfigureCommands()
         {
             var handlers = new List<ICommandHandler>();
+#if DEBUG
             handlers.Add(new MT19937Cmd());
+#endif
 #if !PROXY_ONLY_SERVER
             handlers.Add(new SetVerboseCmd());
             handlers.Add(new SelectRecordCmd());
@@ -15,6 +17,7 @@ namespace csharp_Protoshift.Commands
             handlers.Add(new UnionSelectCmd());
 #endif
             handlers.Add(new QueryClientCmd());
+            handlers.Add(new WindyCommand());
             return handlers;
         }
     }

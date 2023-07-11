@@ -1,6 +1,8 @@
 using csharp_Protoshift.SpecialUdp;
+using System.Buffers.Binary;
 using System.Collections.Concurrent;
 using System.Net;
+using System.Net.Sockets.Kcp;
 using System.Reflection.Metadata.Ecma335;
 using YSFreedom.Common.Util;
 
@@ -104,9 +106,9 @@ namespace csharp_Protoshift.MhyKCP
                     }
                     catch (Exception) { }
                 }
-                else // conv dispatch
+                else if (packet.Buffer.Length >= KcpConst.IKCP_OVERHEAD) // conv dispatch
                 {
-                    var conv = packet.Buffer.GetUInt32(0);
+                    var conv = BinaryPrimitives.ReadUInt32LittleEndian(packet.Buffer);
                     if (connected_clients.TryGetValue(conv, out var conn))
                     {
                         try
