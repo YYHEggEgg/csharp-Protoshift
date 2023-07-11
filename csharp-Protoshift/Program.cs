@@ -110,7 +110,7 @@ namespace csharp_Protoshift
                 ServerPacketOrdered = GameSessionDispatch.OrderedServerPacket,
                 ClientPacketOrdered = GameSessionDispatch.OrderedClientPacket
             };
-            kcpProxy.StartProxy(handlers);
+            _ = Task.Run(() => kcpProxy.StartProxy(handlers));
             Log.Info("Protoshift server started on 127.0.0.1:22102", "Entry");
             Log.Info("Ready! Type 'help' to get command help.", "Entry");
 
