@@ -21,6 +21,10 @@ namespace csharp_Protoshift
 {
     internal class Program
     {
+#pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
+        public static KcpProxyServer ProxyServer { get; private set; }
+#pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
+
         static async Task Main(string[] args)
         {
             StartupWorkingDirChanger.ChangeToDotNetRunPath(new LoggerConfig(
@@ -99,7 +103,7 @@ namespace csharp_Protoshift
                 42, true, 22, 155);
             Log.Info("Finish");*/
 
-            var kcpProxy = new KcpProxyServer(new IPEndPoint(IPAddress.Parse("0.0.0.0"), 22102),
+            ProxyServer = new KcpProxyServer(new IPEndPoint(IPAddress.Parse("0.0.0.0"), 22102),
                 new IPEndPoint(IPAddress.Parse("192.168.127.130"), 20041));
 
             ProxyHandlers handlers = new ProxyHandlers
@@ -110,7 +114,7 @@ namespace csharp_Protoshift
                 ServerPacketOrdered = GameSessionDispatch.OrderedServerPacket,
                 ClientPacketOrdered = GameSessionDispatch.OrderedClientPacket
             };
-            _ = Task.Run(() => kcpProxy.StartProxy(handlers));
+            _ = Task.Run(() => ProxyServer.StartProxy(handlers));
             Log.Info("Protoshift server started on 127.0.0.1:22102", "Entry");
             Log.Info("Ready! Type 'help' to get command help.", "Entry");
 
