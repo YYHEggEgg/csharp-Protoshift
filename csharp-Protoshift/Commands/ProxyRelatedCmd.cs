@@ -140,5 +140,82 @@ namespace csharp_Protoshift.Commands
             return Task.CompletedTask;
         }
     }
+
+    internal class ForceInjectPacketCmd : ICommandHandler
+    {
+        public string CommandName => "injectpkt";
+
+        public string Description => "Send a packet to the specified connection's client/server.";
+
+        public string Usage => $"injectpkt <conv> <\"client\"|\"server\"> {Environment.NewLine}" +
+            $"   --cmd <protoname> {Environment.NewLine}" +
+            $"   [--head <packet_head_hex>] {Environment.NewLine}" +
+            $"   [--body <protobuf_body_hex>]";
+
+        public void CleanUp()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task HandleAsync(string[] args)
+        {
+            #region REad param
+            bool isNewCmdid;
+            if (args.Length < 4)
+            {
+                Log.Erro($"Please give correct params!", nameof(ForceInjectPacketCmd));
+                return Task.CompletedTask;
+            }
+            if (!uint.TryParse(args[0], out uint conv) || !GameSessionDispatch.sessions.ContainsKey(conv))
+            {
+                Log.Erro($"Please give a correct conv number by \"queryclient\" command!", nameof(ForceInjectPacketCmd));
+            }
+            if (args[1].Replace("\"", "") == "client") isNewCmdid = true;
+            else if (args[1].Replace("\"", "") == "server") isNewCmdid = false;
+            else
+            {
+                Log.Erro($"Please specify send to whether client or server!", nameof(ForceInjectPacketCmd));
+
+                return Task.CompletedTask;
+            }
+            int offset = 2;
+            string? protoname = null;
+            byte[]? head = null;
+            byte[]? body = null;
+            for (; offset < args.Length; offset++)
+            {
+                if (args[offset] == "--cmd") protoname = args[++offset];
+                else if (args[offset] == "--head") head = Convert.FromHexString(args[++offset]);
+                else if (args[offset] == "--body") body = Convert.FromHexString(args[++offset]);
+                else
+                {
+                    Log.Erro($"Please give correct params!", nameof(ForceInjectPacketCmd));
+
+                    return Task.CompletedTask;
+                }
+            }
+            if (protoname == null)
+            {
+                Log.Erro($"Please give at least protoname (--cmd)!", nameof(ForceInjectPacketCmd));
+
+                return Task.CompletedTask;
+            }
+            body ??= Array.Empty<byte>();
+            #endregion
+            if (isNewCmdid)
+            {
+                var content = GameSessionDispatch.ConstructPacketSendToClient(
+                    conv, protoname, head, body);
+                Program.ProxyServer.SendPacketToClient(conv, content);
+            }
+            else
+            {
+                var content = GameSessionDispatch.ConstructPacketSendToServer(
+                    conv, protoname, head, body);
+                Program.ProxyServer.SendPacketToServer(conv, content);
+            }
+            return Task.CompletedTask;
+        }
+    }
 }
 #endif
