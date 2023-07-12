@@ -182,7 +182,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             try
             {
                 var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                conn.sendClient.Send(afterpacket);
+                if (afterpacket != null) conn.sendClient.Send(afterpacket);
 #if KCP_PROXY_VERBOSE
                 Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", $"{nameof(KcpProxyServer)}:ServerSender");
 #endif
@@ -237,7 +237,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             try
             {
                 var afterpacket = PacketHandler(beforepacket, conn.Conv);
-                conn.Send(afterpacket);
+                if (afterpacket != null) conn.Send(afterpacket);
             }
             catch (Exception e)
             {
