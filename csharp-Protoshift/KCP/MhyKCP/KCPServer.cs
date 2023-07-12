@@ -136,6 +136,7 @@ namespace csharp_Protoshift.MhyKCP
                     connected_clients.TryAdd(conn.Conv, conn);
                     return res;
                 }
+                Thread.Sleep(50);
             }
         }
 

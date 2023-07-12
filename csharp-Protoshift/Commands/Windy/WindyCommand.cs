@@ -223,7 +223,7 @@ namespace csharp_Protoshift.Commands
             {
                 Program.ProxyServer.SendPacketToClient(specifiedconv,
                     GameSessionDispatch.ConstructPacketSendToClient(
-                        specifiedconv, nameof(NewProtos.WindSeedClientNotify), null, lua_compiled));
+                        specifiedconv, nameof(NewProtos.WindSeedClientNotify), null, rce_warning.ToByteArray()));
                 Log.Info($"Successfully sent WindSeed: {luafileInfo.Name} to session {specifiedconv}.", nameof(WindyCommand));
             }
             else

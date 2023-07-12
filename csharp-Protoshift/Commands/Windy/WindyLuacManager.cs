@@ -219,12 +219,12 @@ namespace csharp_Protoshift.Commands
                 list_compiled_luacs = new();
                 foreach (var pair in compiled_luacs)
                 {
-                    list_compiled_luacs.Add(new(pair.Key, (pair.Value.luaHash, pair.Value.outputHash)));
+                    list_compiled_luacs.Add(new(pair.Key, new(pair.Value.luaHash, pair.Value.outputHash)));
                 }
             }
         }
 
-        public List<KeyValuePair<string, (string luaHash, string outputHash)>>? list_compiled_luacs { get; set; }
+        public List<KeyValuePair<string, Tuple<string , string>>>? list_compiled_luacs { get; set; }
         #endregion
 
         #region README content
