@@ -19,6 +19,7 @@ namespace csharp_Protoshift.Commands
 #endif
             handlers.Add(new QueryClientCmd());
             handlers.Add(new WindyCommand());
+            handlers.Add(new ForceInjectPacketCmd());
             return handlers;
         }
     }
