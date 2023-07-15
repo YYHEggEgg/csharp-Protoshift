@@ -13,21 +13,37 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
-    internal static class CommandLine
+    internal static partial class CommandLine
     {
         static CommandLine()
         {
-            // Add commands here.
-            handlers.Add(new MT19937Cmd());
-            handlers.Add(new SetVerboseCmd());
-            // handlers.Add(new SelectRecordCmd());
-            // handlers.Add(new ShowRecordCmd());
-            handlers.Add(new StopServerCmd());
+            // StopServer is now built-in command
+            stopServer = new StopServerCmd();
+            handlers.Add(stopServer);
+            var cmdlist = ConfigureCommands();
+            stopServer.ServerClosing += () =>
+            {
+                foreach (var cmd in cmdlist)
+                {
+                    try
+                    {
+                        cmd.CleanUp();
+                    }
+                    catch (NotImplementedException) { }
+                    catch (Exception ex)
+                    {
+                        Log.Erro($"Cleanup of command {cmd.GetType()} failed: ex", nameof(CommandLine));
+                    }
+                }
+                stopServer.CleanUpCompleted = true;
+            };
+            handlers.AddRange(cmdlist);
         }
 
+        private static StopServerCmd stopServer;
         public static List<ICommandHandler> handlers = new();
         public static void ShowHelps()
-        { 
+        {
             foreach (var handler in handlers)
             {
                 Log.Info($"Command '{handler.CommandName}': {handler.Description}", nameof(CommandLine));
@@ -44,9 +60,9 @@ namespace csharp_Protoshift.Commands
 
         public static async Task Start()
         {
-            ConsoleWrapper.InputPrefix = "> ";
             while (true)
             {
+                ConsoleWrapper.InputPrefix = "> ";
                 string cmd = await ConsoleWrapper.ReadLineAsync();
                 if (cmd == string.Empty) continue;
                 int sepindex = cmd.IndexOf(' ');
