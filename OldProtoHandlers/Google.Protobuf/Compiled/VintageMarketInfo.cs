@@ -712,7 +712,7 @@ namespace OldProtos {
       if (other.PrevCoinCNum != 0) {
         PrevCoinCNum = other.PrevCoinCNum;
       }
-      bargainInfoMap_.Add(other.bargainInfoMap_);
+      bargainInfoMap_.MergeFrom(other.bargainInfoMap_);
       if (other.DividendRewardCount != 0) {
         DividendRewardCount = other.DividendRewardCount;
       }

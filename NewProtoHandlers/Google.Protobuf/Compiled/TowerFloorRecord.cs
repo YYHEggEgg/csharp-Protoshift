@@ -243,7 +243,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      passedLevelMap_.Add(other.passedLevelMap_);
+      passedLevelMap_.MergeFrom(other.passedLevelMap_);
       passedLevelRecordList_.Add(other.passedLevelRecordList_);
       if (other.FloorId != 0) {
         FloorId = other.FloorId;

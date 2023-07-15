@@ -528,7 +528,7 @@ namespace NewProtos {
       if (other.FinishType != global::NewProtos.ChallengeFinishType.None) {
         FinishType = other.FinishType;
       }
-      strengthenPointDataMap_.Add(other.strengthenPointDataMap_);
+      strengthenPointDataMap_.MergeFrom(other.strengthenPointDataMap_);
       if (other.ChallengeRecordType != 0) {
         ChallengeRecordType = other.ChallengeRecordType;
       }

@@ -94,10 +94,24 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Str {
-      get { return typeCase_ == TypeOneofCase.Str ? (string) type_ : ""; }
+      get { return HasStr ? (string) type_ : ""; }
       set {
         type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         typeCase_ = TypeOneofCase.Str;
+      }
+    }
+    /// <summary>Gets whether the "str" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasStr {
+      get { return typeCase_ == TypeOneofCase.Str; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "str" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearStr() {
+      if (HasStr) {
+        ClearType();
       }
     }
 
@@ -106,10 +120,24 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Hash {
-      get { return typeCase_ == TypeOneofCase.Hash ? (uint) type_ : 0; }
+      get { return HasHash ? (uint) type_ : 0; }
       set {
         type_ = value;
         typeCase_ = TypeOneofCase.Hash;
+      }
+    }
+    /// <summary>Gets whether the "hash" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasHash {
+      get { return typeCase_ == TypeOneofCase.Hash; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "hash" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearHash() {
+      if (HasHash) {
+        ClearType();
       }
     }
 
@@ -159,8 +187,8 @@ namespace NewProtos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (typeCase_ == TypeOneofCase.Str) hash ^= Str.GetHashCode();
-      if (typeCase_ == TypeOneofCase.Hash) hash ^= Hash.GetHashCode();
+      if (HasStr) hash ^= Str.GetHashCode();
+      if (HasHash) hash ^= Hash.GetHashCode();
       hash ^= (int) typeCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -180,11 +208,11 @@ namespace NewProtos {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (typeCase_ == TypeOneofCase.Str) {
+      if (HasStr) {
         output.WriteRawTag(10);
         output.WriteString(Str);
       }
-      if (typeCase_ == TypeOneofCase.Hash) {
+      if (HasHash) {
         output.WriteRawTag(16);
         output.WriteUInt32(Hash);
       }
@@ -198,11 +226,11 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (typeCase_ == TypeOneofCase.Str) {
+      if (HasStr) {
         output.WriteRawTag(10);
         output.WriteString(Str);
       }
-      if (typeCase_ == TypeOneofCase.Hash) {
+      if (HasHash) {
         output.WriteRawTag(16);
         output.WriteUInt32(Hash);
       }
@@ -216,10 +244,10 @@ namespace NewProtos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (typeCase_ == TypeOneofCase.Str) {
+      if (HasStr) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Str);
       }
-      if (typeCase_ == TypeOneofCase.Hash) {
+      if (HasHash) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Hash);
       }
       if (_unknownFields != null) {

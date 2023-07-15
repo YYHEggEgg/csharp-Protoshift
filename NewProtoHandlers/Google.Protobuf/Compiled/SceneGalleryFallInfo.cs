@@ -202,7 +202,7 @@ namespace NewProtos {
       if (other.EndTime != 0) {
         EndTime = other.EndTime;
       }
-      scenePlayerFallInfoMap_.Add(other.scenePlayerFallInfoMap_);
+      scenePlayerFallInfoMap_.MergeFrom(other.scenePlayerFallInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

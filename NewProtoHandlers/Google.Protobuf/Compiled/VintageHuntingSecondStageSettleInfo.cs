@@ -228,7 +228,7 @@ namespace NewProtos {
       if (other.CaptureAnimalNum != 0) {
         CaptureAnimalNum = other.CaptureAnimalNum;
       }
-      animalCountMap_.Add(other.animalCountMap_);
+      animalCountMap_.MergeFrom(other.animalCountMap_);
       if (other.TotalNum != 0) {
         TotalNum = other.TotalNum;
       }

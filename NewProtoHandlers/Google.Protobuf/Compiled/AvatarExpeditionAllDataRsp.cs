@@ -256,7 +256,7 @@ namespace NewProtos {
         Retcode = other.Retcode;
       }
       openExpeditionList_.Add(other.openExpeditionList_);
-      expeditionInfoMap_.Add(other.expeditionInfoMap_);
+      expeditionInfoMap_.MergeFrom(other.expeditionInfoMap_);
       if (other.ExpeditionCountLimit != 0) {
         ExpeditionCountLimit = other.ExpeditionCountLimit;
       }

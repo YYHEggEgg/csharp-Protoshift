@@ -246,7 +246,7 @@ namespace OldProtos {
       if (other.FloorStarRewardProgress != 0) {
         FloorStarRewardProgress = other.FloorStarRewardProgress;
       }
-      passedLevelMap_.Add(other.passedLevelMap_);
+      passedLevelMap_.MergeFrom(other.passedLevelMap_);
       if (other.FloorId != 0) {
         FloorId = other.FloorId;
       }

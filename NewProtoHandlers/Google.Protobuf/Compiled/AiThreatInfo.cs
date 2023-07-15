@@ -170,7 +170,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      aiThreatMap_.Add(other.aiThreatMap_);
+      aiThreatMap_.MergeFrom(other.aiThreatMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

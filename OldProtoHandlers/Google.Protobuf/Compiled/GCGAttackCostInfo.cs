@@ -200,7 +200,7 @@ namespace OldProtos {
       if (other.SkillId != 0) {
         SkillId = other.SkillId;
       }
-      costMap_.Add(other.costMap_);
+      costMap_.MergeFrom(other.costMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

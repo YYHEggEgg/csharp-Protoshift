@@ -401,7 +401,7 @@ namespace OldProtos {
       if (other.RoundDeltaCoinC != 0) {
         RoundDeltaCoinC = other.RoundDeltaCoinC;
       }
-      storeIncomeMap_.Add(other.storeIncomeMap_);
+      storeIncomeMap_.MergeFrom(other.storeIncomeMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }

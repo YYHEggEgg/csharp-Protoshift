@@ -234,7 +234,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      flowerNumMap_.Add(other.flowerNumMap_);
+      flowerNumMap_.MergeFrom(other.flowerNumMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }

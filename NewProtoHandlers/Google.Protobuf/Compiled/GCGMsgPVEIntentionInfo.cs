@@ -172,7 +172,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      intentionMap_.Add(other.intentionMap_);
+      intentionMap_.MergeFrom(other.intentionMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

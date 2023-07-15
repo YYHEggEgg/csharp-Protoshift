@@ -268,7 +268,7 @@ namespace NewProtos {
       }
       remainUidList_.Add(other.remainUidList_);
       qualifyUidList_.Add(other.qualifyUidList_);
-      uidDiscountMap_.Add(other.uidDiscountMap_);
+      uidDiscountMap_.MergeFrom(other.uidDiscountMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -203,7 +203,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      fightPropMap_.Add(other.fightPropMap_);
+      fightPropMap_.MergeFrom(other.fightPropMap_);
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }

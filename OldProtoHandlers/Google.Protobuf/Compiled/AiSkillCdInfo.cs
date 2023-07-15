@@ -190,8 +190,8 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      skillCdMap_.Add(other.skillCdMap_);
-      skillGroupCdMap_.Add(other.skillGroupCdMap_);
+      skillCdMap_.MergeFrom(other.skillCdMap_);
+      skillGroupCdMap_.MergeFrom(other.skillGroupCdMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

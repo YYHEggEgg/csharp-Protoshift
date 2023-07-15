@@ -130,10 +130,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float FloatValue {
-      get { return valueCase_ == ValueOneofCase.FloatValue ? (float) value_ : 0F; }
+      get { return HasFloatValue ? (float) value_ : 0F; }
       set {
         value_ = value;
         valueCase_ = ValueOneofCase.FloatValue;
+      }
+    }
+    /// <summary>Gets whether the "float_value" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasFloatValue {
+      get { return valueCase_ == ValueOneofCase.FloatValue; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "float_value" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearFloatValue() {
+      if (HasFloatValue) {
+        ClearValue();
       }
     }
 
@@ -142,10 +156,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string StringValue {
-      get { return valueCase_ == ValueOneofCase.StringValue ? (string) value_ : ""; }
+      get { return HasStringValue ? (string) value_ : ""; }
       set {
         value_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         valueCase_ = ValueOneofCase.StringValue;
+      }
+    }
+    /// <summary>Gets whether the "string_value" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasStringValue {
+      get { return valueCase_ == ValueOneofCase.StringValue; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "string_value" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearStringValue() {
+      if (HasStringValue) {
+        ClearValue();
       }
     }
 
@@ -154,10 +182,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int IntValue {
-      get { return valueCase_ == ValueOneofCase.IntValue ? (int) value_ : 0; }
+      get { return HasIntValue ? (int) value_ : 0; }
       set {
         value_ = value;
         valueCase_ = ValueOneofCase.IntValue;
+      }
+    }
+    /// <summary>Gets whether the "int_value" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIntValue {
+      get { return valueCase_ == ValueOneofCase.IntValue; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "int_value" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIntValue() {
+      if (HasIntValue) {
+        ClearValue();
       }
     }
 
@@ -166,10 +208,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint UintValue {
-      get { return valueCase_ == ValueOneofCase.UintValue ? (uint) value_ : 0; }
+      get { return HasUintValue ? (uint) value_ : 0; }
       set {
         value_ = value;
         valueCase_ = ValueOneofCase.UintValue;
+      }
+    }
+    /// <summary>Gets whether the "uint_value" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasUintValue {
+      get { return valueCase_ == ValueOneofCase.UintValue; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "uint_value" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearUintValue() {
+      if (HasUintValue) {
+        ClearValue();
       }
     }
 
@@ -227,10 +283,10 @@ namespace OldProtos {
       int hash = 1;
       if (key_ != null) hash ^= Key.GetHashCode();
       if (ValueType != global::OldProtos.AbilityScalarType.Unknown) hash ^= ValueType.GetHashCode();
-      if (valueCase_ == ValueOneofCase.FloatValue) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FloatValue);
-      if (valueCase_ == ValueOneofCase.StringValue) hash ^= StringValue.GetHashCode();
-      if (valueCase_ == ValueOneofCase.IntValue) hash ^= IntValue.GetHashCode();
-      if (valueCase_ == ValueOneofCase.UintValue) hash ^= UintValue.GetHashCode();
+      if (HasFloatValue) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FloatValue);
+      if (HasStringValue) hash ^= StringValue.GetHashCode();
+      if (HasIntValue) hash ^= IntValue.GetHashCode();
+      if (HasUintValue) hash ^= UintValue.GetHashCode();
       hash ^= (int) valueCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -258,19 +314,19 @@ namespace OldProtos {
         output.WriteRawTag(16);
         output.WriteEnum((int) ValueType);
       }
-      if (valueCase_ == ValueOneofCase.FloatValue) {
+      if (HasFloatValue) {
         output.WriteRawTag(29);
         output.WriteFloat(FloatValue);
       }
-      if (valueCase_ == ValueOneofCase.StringValue) {
+      if (HasStringValue) {
         output.WriteRawTag(34);
         output.WriteString(StringValue);
       }
-      if (valueCase_ == ValueOneofCase.IntValue) {
+      if (HasIntValue) {
         output.WriteRawTag(40);
         output.WriteInt32(IntValue);
       }
-      if (valueCase_ == ValueOneofCase.UintValue) {
+      if (HasUintValue) {
         output.WriteRawTag(48);
         output.WriteUInt32(UintValue);
       }
@@ -292,19 +348,19 @@ namespace OldProtos {
         output.WriteRawTag(16);
         output.WriteEnum((int) ValueType);
       }
-      if (valueCase_ == ValueOneofCase.FloatValue) {
+      if (HasFloatValue) {
         output.WriteRawTag(29);
         output.WriteFloat(FloatValue);
       }
-      if (valueCase_ == ValueOneofCase.StringValue) {
+      if (HasStringValue) {
         output.WriteRawTag(34);
         output.WriteString(StringValue);
       }
-      if (valueCase_ == ValueOneofCase.IntValue) {
+      if (HasIntValue) {
         output.WriteRawTag(40);
         output.WriteInt32(IntValue);
       }
-      if (valueCase_ == ValueOneofCase.UintValue) {
+      if (HasUintValue) {
         output.WriteRawTag(48);
         output.WriteUInt32(UintValue);
       }
@@ -324,16 +380,16 @@ namespace OldProtos {
       if (ValueType != global::OldProtos.AbilityScalarType.Unknown) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ValueType);
       }
-      if (valueCase_ == ValueOneofCase.FloatValue) {
+      if (HasFloatValue) {
         size += 1 + 4;
       }
-      if (valueCase_ == ValueOneofCase.StringValue) {
+      if (HasStringValue) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(StringValue);
       }
-      if (valueCase_ == ValueOneofCase.IntValue) {
+      if (HasIntValue) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntValue);
       }
-      if (valueCase_ == ValueOneofCase.UintValue) {
+      if (HasUintValue) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UintValue);
       }
       if (_unknownFields != null) {

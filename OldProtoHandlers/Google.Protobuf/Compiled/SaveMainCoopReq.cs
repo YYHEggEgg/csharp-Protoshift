@@ -275,14 +275,14 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      normalVarMap_.Add(other.normalVarMap_);
+      normalVarMap_.MergeFrom(other.normalVarMap_);
       if (other.SelfConfidence != 0) {
         SelfConfidence = other.SelfConfidence;
       }
       if (other.SavePointId != 0) {
         SavePointId = other.SavePointId;
       }
-      tempVarMap_.Add(other.tempVarMap_);
+      tempVarMap_.MergeFrom(other.tempVarMap_);
       if (other.Id != 0) {
         Id = other.Id;
       }

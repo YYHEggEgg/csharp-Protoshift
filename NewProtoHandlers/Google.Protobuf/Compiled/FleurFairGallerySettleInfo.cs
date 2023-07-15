@@ -280,7 +280,7 @@ namespace NewProtos {
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
       }
-      energyStatMap_.Add(other.energyStatMap_);
+      energyStatMap_.MergeFrom(other.energyStatMap_);
       if (other.Energy != 0) {
         Energy = other.Energy;
       }

@@ -268,7 +268,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      playerStateMap_.Add(other.playerStateMap_);
+      playerStateMap_.MergeFrom(other.playerStateMap_);
       if (other.DungeonId != 0) {
         DungeonId = other.DungeonId;
       }

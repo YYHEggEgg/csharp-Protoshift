@@ -1,0 +1,14 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option csharp_namespace = "OldProtos";
+
+import "BreakoutPhysicalObject.proto";
+
+message BreakoutSpawnPoint {
+    uint32 id = 1;
+    uint32 brick_suite_id = 2;
+    repeated BreakoutPhysicalObject spawned_brick_list = 3;
+}

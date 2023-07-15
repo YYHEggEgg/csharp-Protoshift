@@ -338,7 +338,7 @@ namespace NewProtos {
       if (other.IsFinished != false) {
         IsFinished = other.IsFinished;
       }
-      materialCountMap_.Add(other.materialCountMap_);
+      materialCountMap_.MergeFrom(other.materialCountMap_);
       if (other.ConfigId != 0) {
         ConfigId = other.ConfigId;
       }

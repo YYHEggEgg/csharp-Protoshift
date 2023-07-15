@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>csharp_Protoshift.Enhanced.Benchmark</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.5" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.3" />
+    <PackageReference Include="Google.Protobuf" Version="3.23.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProtoshiftHandlers\ProtoshiftHandlers.csproj" />
+    <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
+    <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />
+  </ItemGroup>
+
+</Project>

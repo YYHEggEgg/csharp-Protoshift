@@ -320,7 +320,7 @@ namespace OldProtos {
       if (other.StageId != 0) {
         StageId = other.StageId;
       }
-      campLevelMap_.Add(other.campLevelMap_);
+      campLevelMap_.MergeFrom(other.campLevelMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

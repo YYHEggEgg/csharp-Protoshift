@@ -210,7 +210,7 @@ namespace NewProtos {
       if (other.MonsterEntityId != 0) {
         MonsterEntityId = other.MonsterEntityId;
       }
-      summonTagMap_.Add(other.summonTagMap_);
+      summonTagMap_.MergeFrom(other.summonTagMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

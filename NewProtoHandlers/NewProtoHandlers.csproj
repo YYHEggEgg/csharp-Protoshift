@@ -7,8 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="AskCmdId.cs" />
-    <Compile Remove="Backup/**" />
+    <Compile Remove="Backup\**" />
+    <Compile Remove="Obsoleted\**" />
+    <EmbeddedResource Remove="Backup\**" />
+    <EmbeddedResource Remove="Obsoleted\**" />
+    <None Remove="Backup\**" />
+    <None Remove="Obsoleted\**" />
   </ItemGroup>
 
   <ItemGroup>

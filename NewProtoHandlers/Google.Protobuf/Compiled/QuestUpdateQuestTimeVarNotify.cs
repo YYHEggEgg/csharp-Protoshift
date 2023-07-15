@@ -207,7 +207,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      timeVarMap_.Add(other.timeVarMap_);
+      timeVarMap_.MergeFrom(other.timeVarMap_);
       if (other.ParentQuestId != 0) {
         ParentQuestId = other.ParentQuestId;
       }

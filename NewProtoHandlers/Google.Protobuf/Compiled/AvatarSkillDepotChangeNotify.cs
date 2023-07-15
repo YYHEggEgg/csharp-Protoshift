@@ -342,7 +342,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      proudSkillExtraLevelMap_.Add(other.proudSkillExtraLevelMap_);
+      proudSkillExtraLevelMap_.MergeFrom(other.proudSkillExtraLevelMap_);
       proudSkillList_.Add(other.proudSkillList_);
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
@@ -350,7 +350,7 @@ namespace NewProtos {
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }
-      skillLevelMap_.Add(other.skillLevelMap_);
+      skillLevelMap_.MergeFrom(other.skillLevelMap_);
       if (other.SkillDepotId != 0) {
         SkillDepotId = other.SkillDepotId;
       }

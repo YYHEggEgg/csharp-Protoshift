@@ -306,7 +306,7 @@ namespace OldProtos {
       if (other.StageType != global::OldProtos.HideAndSeekStageType.Prepare) {
         StageType = other.StageType;
       }
-      battleInfoMap_.Add(other.battleInfoMap_);
+      battleInfoMap_.MergeFrom(other.battleInfoMap_);
       hiderUidList_.Add(other.hiderUidList_);
       if (other.HunterUid != 0) {
         HunterUid = other.HunterUid;

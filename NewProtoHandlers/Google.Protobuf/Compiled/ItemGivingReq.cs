@@ -261,7 +261,7 @@ namespace NewProtos {
         ItemGivingType = other.ItemGivingType;
       }
       itemParamList_.Add(other.itemParamList_);
-      itemGuidCountMap_.Add(other.itemGuidCountMap_);
+      itemGuidCountMap_.MergeFrom(other.itemGuidCountMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

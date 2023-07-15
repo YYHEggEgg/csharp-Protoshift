@@ -271,11 +271,11 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      beforeDiceMap_.Add(other.beforeDiceMap_);
+      beforeDiceMap_.MergeFrom(other.beforeDiceMap_);
       if (other.ChangeCount != 0) {
         ChangeCount = other.ChangeCount;
       }
-      diceMap_.Add(other.diceMap_);
+      diceMap_.MergeFrom(other.diceMap_);
       if (other.Reason != global::OldProtos.GCGReason.Default) {
         Reason = other.Reason;
       }

@@ -233,7 +233,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      giftNumMap_.Add(other.giftNumMap_);
+      giftNumMap_.MergeFrom(other.giftNumMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }

@@ -255,7 +255,7 @@ namespace OldProtos {
       if (other.CurTideLeftNum != 0) {
         CurTideLeftNum = other.CurTideLeftNum;
       }
-      playerScoreMap_.Add(other.playerScoreMap_);
+      playerScoreMap_.MergeFrom(other.playerScoreMap_);
       if (other.CurTideDurationTime != 0) {
         CurTideDurationTime = other.CurTideDurationTime;
       }

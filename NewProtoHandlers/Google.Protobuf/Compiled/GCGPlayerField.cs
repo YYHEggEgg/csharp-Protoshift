@@ -577,7 +577,7 @@ namespace NewProtos {
       if (other.Unk3300IKJMGAHCFPM != 0) {
         Unk3300IKJMGAHCFPM = other.Unk3300IKJMGAHCFPM;
       }
-      modifyZoneMap_.Add(other.modifyZoneMap_);
+      modifyZoneMap_.MergeFrom(other.modifyZoneMap_);
       if (other.Unk3300GGHKFFADEAL != 0) {
         Unk3300GGHKFFADEAL = other.Unk3300GGHKFFADEAL;
       }
