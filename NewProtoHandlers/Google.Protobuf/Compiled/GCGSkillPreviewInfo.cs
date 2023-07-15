@@ -331,7 +331,7 @@ namespace NewProtos {
       if (other.SkillId != 0) {
         SkillId = other.SkillId;
       }
-      hpInfoMap_.MergeFrom(other.hpInfoMap_);
+      hpInfoMap_.Add(other.hpInfoMap_);
       unk3300AGNONGELFGC_.Add(other.unk3300AGNONGELFGC_);
       if (other.extraInfo_ != null) {
         if (extraInfo_ == null) {
@@ -339,8 +339,8 @@ namespace NewProtos {
         }
         ExtraInfo.MergeFrom(other.ExtraInfo);
       }
-      reactionInfoMap_.MergeFrom(other.reactionInfoMap_);
-      cardTokenChangeMap_.MergeFrom(other.cardTokenChangeMap_);
+      reactionInfoMap_.Add(other.reactionInfoMap_);
+      cardTokenChangeMap_.Add(other.cardTokenChangeMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

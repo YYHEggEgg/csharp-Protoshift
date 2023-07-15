@@ -646,7 +646,7 @@ namespace NewProtos {
       if (other.RpcBeginTimeMs != 0) {
         RpcBeginTimeMs = other.RpcBeginTimeMs;
       }
-      extMap_.MergeFrom(other.extMap_);
+      extMap_.Add(other.extMap_);
       if (other.SenderAppId != 0) {
         SenderAppId = other.SenderAppId;
       }
@@ -656,7 +656,7 @@ namespace NewProtos {
       if (other.TargetService != 0) {
         TargetService = other.TargetService;
       }
-      serviceAppIdMap_.MergeFrom(other.serviceAppIdMap_);
+      serviceAppIdMap_.Add(other.serviceAppIdMap_);
       if (other.IsSetGameThread != false) {
         IsSetGameThread = other.IsSetGameThread;
       }

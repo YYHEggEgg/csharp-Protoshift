@@ -282,7 +282,7 @@ namespace OldProtos {
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
-      ballCatchCountMap_.MergeFrom(other.ballCatchCountMap_);
+      ballCatchCountMap_.Add(other.ballCatchCountMap_);
       if (other.CurScore != 0) {
         CurScore = other.CurScore;
       }

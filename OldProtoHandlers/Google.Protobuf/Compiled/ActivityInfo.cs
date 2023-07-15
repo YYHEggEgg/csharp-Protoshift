@@ -2702,7 +2702,7 @@ namespace OldProtos {
         IsQuickOpen = other.IsQuickOpen;
       }
       meetCondList_.Add(other.meetCondList_);
-      activityCoinMap_.MergeFrom(other.activityCoinMap_);
+      activityCoinMap_.Add(other.activityCoinMap_);
       if (other.IsBannerCleared != false) {
         IsBannerCleared = other.IsBannerCleared;
       }
@@ -2724,7 +2724,7 @@ namespace OldProtos {
       if (other.ScoreLimit != 0) {
         ScoreLimit = other.ScoreLimit;
       }
-      wishGiftNumMap_.MergeFrom(other.wishGiftNumMap_);
+      wishGiftNumMap_.Add(other.wishGiftNumMap_);
       if (other.SelectedAvatarRewardId != 0) {
         SelectedAvatarRewardId = other.SelectedAvatarRewardId;
       }

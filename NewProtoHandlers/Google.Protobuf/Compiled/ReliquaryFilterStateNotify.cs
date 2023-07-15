@@ -181,7 +181,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      reliquaryFilterStateMap_.MergeFrom(other.reliquaryFilterStateMap_);
+      reliquaryFilterStateMap_.Add(other.reliquaryFilterStateMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

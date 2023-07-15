@@ -177,7 +177,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      aiCdMap_.MergeFrom(other.aiCdMap_);
+      aiCdMap_.Add(other.aiCdMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

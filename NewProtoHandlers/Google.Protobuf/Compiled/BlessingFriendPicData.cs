@@ -339,7 +339,7 @@ namespace NewProtos {
       if (other.Signature.Length != 0) {
         Signature = other.Signature;
       }
-      picNumMap_.MergeFrom(other.picNumMap_);
+      picNumMap_.Add(other.picNumMap_);
       if (other.Uid != 0) {
         Uid = other.Uid;
       }

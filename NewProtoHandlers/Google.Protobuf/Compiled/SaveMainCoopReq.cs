@@ -279,7 +279,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      normalVarMap_.MergeFrom(other.normalVarMap_);
+      normalVarMap_.Add(other.normalVarMap_);
       if (other.SelfConfidence != 0) {
         SelfConfidence = other.SelfConfidence;
       }
@@ -289,7 +289,7 @@ namespace NewProtos {
       if (other.SavePointId != 0) {
         SavePointId = other.SavePointId;
       }
-      tempVarMap_.MergeFrom(other.tempVarMap_);
+      tempVarMap_.Add(other.tempVarMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

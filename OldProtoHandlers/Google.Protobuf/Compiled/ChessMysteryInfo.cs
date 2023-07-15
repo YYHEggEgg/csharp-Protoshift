@@ -209,9 +209,9 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      entrancePointMap_.MergeFrom(other.entrancePointMap_);
+      entrancePointMap_.Add(other.entrancePointMap_);
       exitPointIdList_.Add(other.exitPointIdList_);
-      detailInfoMap_.MergeFrom(other.detailInfoMap_);
+      detailInfoMap_.Add(other.detailInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

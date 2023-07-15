@@ -515,7 +515,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      strengthenPointDataMap_.MergeFrom(other.strengthenPointDataMap_);
+      strengthenPointDataMap_.Add(other.strengthenPointDataMap_);
       if (other.FinishType != global::OldProtos.ChallengeFinishType.None) {
         FinishType = other.FinishType;
       }

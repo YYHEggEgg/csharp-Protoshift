@@ -225,7 +225,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      animalCountMap_.MergeFrom(other.animalCountMap_);
+      animalCountMap_.Add(other.animalCountMap_);
       if (other.CaptureAnimalNum != 0) {
         CaptureAnimalNum = other.CaptureAnimalNum;
       }

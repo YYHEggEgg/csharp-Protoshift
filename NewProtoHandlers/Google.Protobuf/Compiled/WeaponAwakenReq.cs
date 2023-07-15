@@ -234,7 +234,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      affixLevelMap_.MergeFrom(other.affixLevelMap_);
+      affixLevelMap_.Add(other.affixLevelMap_);
       if (other.TargetWeaponGuid != 0UL) {
         TargetWeaponGuid = other.TargetWeaponGuid;
       }

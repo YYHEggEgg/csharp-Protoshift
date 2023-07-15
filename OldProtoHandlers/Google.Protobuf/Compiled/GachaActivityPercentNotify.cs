@@ -259,7 +259,7 @@ namespace OldProtos {
       if (other.ItemStage != 0) {
         ItemStage = other.ItemStage;
       }
-      targetNumMap_.MergeFrom(other.targetNumMap_);
+      targetNumMap_.Add(other.targetNumMap_);
       if (other.SubItemStage != 0) {
         SubItemStage = other.SubItemStage;
       }

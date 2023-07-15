@@ -295,7 +295,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      cardFaceMap_.MergeFrom(other.cardFaceMap_);
+      cardFaceMap_.Add(other.cardFaceMap_);
       if (other.NickName.Length != 0) {
         NickName = other.NickName;
       }

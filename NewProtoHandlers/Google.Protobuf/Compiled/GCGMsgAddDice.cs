@@ -272,14 +272,14 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      unk3300KFKOGOKPIFN_.MergeFrom(other.unk3300KFKOGOKPIFN_);
+      unk3300KFKOGOKPIFN_.Add(other.unk3300KFKOGOKPIFN_);
       if (other.Reason != global::NewProtos.GCGReason.Default) {
         Reason = other.Reason;
       }
       if (other.ChangeCount != 0) {
         ChangeCount = other.ChangeCount;
       }
-      unk3300PCMPCCLFEIM_.MergeFrom(other.unk3300PCMPCCLFEIM_);
+      unk3300PCMPCCLFEIM_.Add(other.unk3300PCMPCCLFEIM_);
       if (other.ControllerId != 0) {
         ControllerId = other.ControllerId;
       }
