@@ -247,7 +247,7 @@ namespace OldProtos {
       if (other.IsFinishAnyLevel != false) {
         IsFinishAnyLevel = other.IsFinishAnyLevel;
       }
-      levelOpenTimeMap_.Add(other.levelOpenTimeMap_);
+      levelOpenTimeMap_.MergeFrom(other.levelOpenTimeMap_);
       if (other.WorldLevel != 0) {
         WorldLevel = other.WorldLevel;
       }

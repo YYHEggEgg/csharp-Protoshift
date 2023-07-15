@@ -341,7 +341,7 @@ namespace OldProtos {
       avatarRenameList_.Add(other.avatarRenameList_);
       ownedFlycloakList_.Add(other.ownedFlycloakList_);
       ownedCostumeList_.Add(other.ownedCostumeList_);
-      avatarTeamMap_.Add(other.avatarTeamMap_);
+      avatarTeamMap_.MergeFrom(other.avatarTeamMap_);
       if (other.ChooseAvatarGuid != 0UL) {
         ChooseAvatarGuid = other.ChooseAvatarGuid;
       }

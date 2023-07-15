@@ -111,10 +111,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int IntVal {
-      get { return paraValCase_ == ParaValOneofCase.IntVal ? (int) paraVal_ : 0; }
+      get { return HasIntVal ? (int) paraVal_ : 0; }
       set {
         paraVal_ = value;
         paraValCase_ = ParaValOneofCase.IntVal;
+      }
+    }
+    /// <summary>Gets whether the "int_val" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIntVal {
+      get { return paraValCase_ == ParaValOneofCase.IntVal; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "int_val" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIntVal() {
+      if (HasIntVal) {
+        ClearParaVal();
       }
     }
 
@@ -123,10 +137,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float FloatVal {
-      get { return paraValCase_ == ParaValOneofCase.FloatVal ? (float) paraVal_ : 0F; }
+      get { return HasFloatVal ? (float) paraVal_ : 0F; }
       set {
         paraVal_ = value;
         paraValCase_ = ParaValOneofCase.FloatVal;
+      }
+    }
+    /// <summary>Gets whether the "float_val" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasFloatVal {
+      get { return paraValCase_ == ParaValOneofCase.FloatVal; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "float_val" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearFloatVal() {
+      if (HasFloatVal) {
+        ClearParaVal();
       }
     }
 
@@ -135,10 +163,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool BoolVal {
-      get { return paraValCase_ == ParaValOneofCase.BoolVal ? (bool) paraVal_ : false; }
+      get { return HasBoolVal ? (bool) paraVal_ : false; }
       set {
         paraVal_ = value;
         paraValCase_ = ParaValOneofCase.BoolVal;
+      }
+    }
+    /// <summary>Gets whether the "bool_val" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasBoolVal {
+      get { return paraValCase_ == ParaValOneofCase.BoolVal; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "bool_val" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearBoolVal() {
+      if (HasBoolVal) {
+        ClearParaVal();
       }
     }
 
@@ -192,9 +234,9 @@ namespace OldProtos {
     public override int GetHashCode() {
       int hash = 1;
       if (ParaType != 0) hash ^= ParaType.GetHashCode();
-      if (paraValCase_ == ParaValOneofCase.IntVal) hash ^= IntVal.GetHashCode();
-      if (paraValCase_ == ParaValOneofCase.FloatVal) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FloatVal);
-      if (paraValCase_ == ParaValOneofCase.BoolVal) hash ^= BoolVal.GetHashCode();
+      if (HasIntVal) hash ^= IntVal.GetHashCode();
+      if (HasFloatVal) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FloatVal);
+      if (HasBoolVal) hash ^= BoolVal.GetHashCode();
       hash ^= (int) paraValCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -218,15 +260,15 @@ namespace OldProtos {
         output.WriteRawTag(8);
         output.WriteUInt32(ParaType);
       }
-      if (paraValCase_ == ParaValOneofCase.IntVal) {
+      if (HasIntVal) {
         output.WriteRawTag(16);
         output.WriteInt32(IntVal);
       }
-      if (paraValCase_ == ParaValOneofCase.FloatVal) {
+      if (HasFloatVal) {
         output.WriteRawTag(29);
         output.WriteFloat(FloatVal);
       }
-      if (paraValCase_ == ParaValOneofCase.BoolVal) {
+      if (HasBoolVal) {
         output.WriteRawTag(32);
         output.WriteBool(BoolVal);
       }
@@ -244,15 +286,15 @@ namespace OldProtos {
         output.WriteRawTag(8);
         output.WriteUInt32(ParaType);
       }
-      if (paraValCase_ == ParaValOneofCase.IntVal) {
+      if (HasIntVal) {
         output.WriteRawTag(16);
         output.WriteInt32(IntVal);
       }
-      if (paraValCase_ == ParaValOneofCase.FloatVal) {
+      if (HasFloatVal) {
         output.WriteRawTag(29);
         output.WriteFloat(FloatVal);
       }
-      if (paraValCase_ == ParaValOneofCase.BoolVal) {
+      if (HasBoolVal) {
         output.WriteRawTag(32);
         output.WriteBool(BoolVal);
       }
@@ -269,13 +311,13 @@ namespace OldProtos {
       if (ParaType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ParaType);
       }
-      if (paraValCase_ == ParaValOneofCase.IntVal) {
+      if (HasIntVal) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(IntVal);
       }
-      if (paraValCase_ == ParaValOneofCase.FloatVal) {
+      if (HasFloatVal) {
         size += 1 + 4;
       }
-      if (paraValCase_ == ParaValOneofCase.BoolVal) {
+      if (HasBoolVal) {
         size += 1 + 1;
       }
       if (_unknownFields != null) {

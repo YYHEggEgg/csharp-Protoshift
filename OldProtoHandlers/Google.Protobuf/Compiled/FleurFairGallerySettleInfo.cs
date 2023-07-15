@@ -283,7 +283,7 @@ namespace OldProtos {
       if (other.GalleryStageIndex != 0) {
         GalleryStageIndex = other.GalleryStageIndex;
       }
-      energyStatMap_.Add(other.energyStatMap_);
+      energyStatMap_.MergeFrom(other.energyStatMap_);
       if (other.GalleryStageCount != 0) {
         GalleryStageCount = other.GalleryStageCount;
       }

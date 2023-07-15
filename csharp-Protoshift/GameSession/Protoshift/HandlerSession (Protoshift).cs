@@ -1,14 +1,13 @@
-﻿#if !PROXY_ONLY_SERVER
+#if !PROXY_ONLY_SERVER
 
 using csharp_Protoshift.GameSession.SpecialFixs;
+using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
 using Funny.Crypto;
-using Google.Protobuf;
 using Newtonsoft.Json;
 using OfficeOpenXml;
-using OfficeOpenXml.ExternalReferences;
-using Org.BouncyCastle.Crypto.Prng;
+using Org.BouncyCastle.Asn1.X500;
 using System.Collections.Concurrent;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -19,15 +18,16 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.GameSession
 {
-    internal class HandlerSession
+    public class HandlerSession
     {
         /// <summary>
         /// XOR key used to decrypt packet. Usually have a length of 4096.
         /// </summary>
         public byte[] XorKey { get; protected set; }
-        public PacketRecord[] records;
         public uint SessionId { get; private set; }
         public IPEndPoint remoteIp { get; set; }
+
+        public const int Recommended_Protoshift_maximum_time_ms = 5;
 
         /// <summary>
         /// Whether records contain PingReq/PingRsp packets. Only apply to packets received after modified.
@@ -37,8 +37,10 @@ namespace csharp_Protoshift.GameSession
         /// Whether output packets in the console.
         /// </summary>
         public bool Verbose { get; set; }
-        public int packetCounts { get; protected set; }
-        public int PacketRecordLimits { get; }
+
+#if RECORD_ALL_PKTS_FOR_REPLAY
+        public ConcurrentBag<PacketRecord> PacketRecords { get; private set; } = new();
+#endif
 
         #region Record Packet Protoshift time cost
         public ConcurrentBag<TimeRecord> TimeRecords { get; } = new();
@@ -47,17 +49,20 @@ namespace csharp_Protoshift.GameSession
         {
             public string protoname { get; set; }
             public bool fromClient { get; set; }
-            public long handleMilliseconds { get; set; }
+            public long handle_Milliseconds { get; set; }
+            public long handle_interval_nanoseconds { get; set; }
             public int packetSize { get; set; }
         }
 
-        private void SubmitTimeRecord(string protoname, bool isNewCmdid, long handleMilliseconds, int packetSize)
+        private static readonly Int64 nanosecPerTick = (1000L*1000L*1000L) / Stopwatch.Frequency;
+        private void SubmitTimeRecord(string protoname, bool isNewCmdid, Int64 handleMilliseconds, Int64 handleTicks, int packetSize)
         {
             TimeRecords.Add(new TimeRecord
             {
                 protoname = protoname,
                 fromClient = isNewCmdid,
-                handleMilliseconds = handleMilliseconds,
+                handle_interval_nanoseconds = handleTicks * nanosecPerTick,
+                handle_Milliseconds = handleMilliseconds,
                 packetSize = packetSize
             });
         }
@@ -83,9 +88,8 @@ namespace csharp_Protoshift.GameSession
         {
             XorKey = Resources.dispatchKey;
             Debug.Assert(XorKey.Length == 4096);
-            records = new PacketRecord[packetLimits];
+            // records = new PacketRecord[packetLimits];
             SessionId = sessionId;
-            PacketRecordLimits = packetLimits;
             client_seed = server_seed = Array.Empty<byte>();
             // Verbose = true;
             Verbose = false;
@@ -96,8 +100,8 @@ namespace csharp_Protoshift.GameSession
                 List<ushort> _unordered_cmds_old = new();
                 foreach (var protoname in unordered_messages)
                 {
-                    _unordered_cmds_new.Add((ushort)NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
-                    _unordered_cmds_old.Add((ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
+                    _unordered_cmds_new.Add((ushort)NewProtos.AskCmdId.GetCmdIdFromProtoname(protoname));
+                    _unordered_cmds_old.Add((ushort)OldProtos.AskCmdId.GetCmdIdFromProtoname(protoname));
                 }
                 unordered_cmds_new = new(_unordered_cmds_new);
                 unordered_cmds_old = new(_unordered_cmds_old);
@@ -105,6 +109,8 @@ namespace csharp_Protoshift.GameSession
             catch (Exception ex)
             {
                 Log.Erro($"HandlerSession({SessionId}) init failed: {ex}", nameof(HandlerSession));
+                unordered_cmds_new = new(new List<ushort>());
+                unordered_cmds_old = new(new List<ushort>());
             }
             #endregion
         }
@@ -167,7 +173,7 @@ namespace csharp_Protoshift.GameSession
             var rtn = GetPacketResult(packet, cmdid, isNewCmdid, body_offset, body_length);
             Debug.Assert(rtn.GetUInt16(rtn.Length - 2) == 0x89AB);
 
-            if (!isNewCmdid && cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
+            if (!isNewCmdid && cmdid == OldProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
                 XorDecrypt(ref rtn, fallbackToDispatchKey: true);
             else XorDecrypt(ref rtn, fallbackToDispatchKey: fallback);
             return rtn;
@@ -189,14 +195,15 @@ namespace csharp_Protoshift.GameSession
         // this is in use
         List<string> unordered_messages = new List<string>
         {
-            "GetPlayerTokenReq", "GetPlayerTokenRsp", "PlayerLoginRsp", "PingReq", "PingRsp", 
-            "UnionCmdNotify", "GetActivityInfoRsp", "AchievementUpdateNotify", 
+            // "GetPlayerTokenReq", "GetPlayerTokenRsp", "PlayerLoginRsp", "PingReq", "PingRsp", 
+            "GetActivityInfoRsp", "AchievementUpdateNotify", 
             "BattlePassMissionUpdateNotify", "CombatInvocationsNotify", "ActivityInfoNotify", 
             "BattlePassMissionUpdateNotify", "PlayerStoreNotify", "AvatarDataNotify", 
-            "BattlePassAllDataNotify", "AvatarExpeditionDataNotify", "CombatInvocationsNotify", 
-            "AbilityInvocationFailNotify", "AbilityInvocationsNotify",
-            "ClientAbilitiesInitFinishCombineNotify", "ClientAbilityChangeNotify",
-            "ClientAbilityInitFinishNotify"
+            "BattlePassAllDataNotify", "AvatarExpeditionDataNotify", 
+            // "UnionCmdNotify", "CombatInvocationsNotify", 
+            // "AbilityInvocationFailNotify", "AbilityInvocationsNotify",
+            // "ClientAbilitiesInitFinishCombineNotify", "ClientAbilityChangeNotify",
+            // "ClientAbilityInitFinishNotify"
         };
 
         ReadOnlyCollection<ushort> unordered_cmds_new, unordered_cmds_old;
@@ -241,296 +248,72 @@ namespace csharp_Protoshift.GameSession
             Stopwatch ProtoshiftWatch = new();
             ProtoshiftWatch.Start();
 
-            var bodyfrom = new byte[body_length];
-            Array.Copy(packet, body_offset, bodyfrom, 0, body_length);
+            byte[] shifted_body;
+            string protoname = isNewCmdid
+                    ? NewProtos.AskCmdId.GetProtonameFromCmdId(cmdid)
+                    : OldProtos.AskCmdId.GetProtonameFromCmdId(cmdid);
+            ushort shifted_cmdid = (ushort)(isNewCmdid ? ShiftCmdId.NewShiftToOld(cmdid) : ShiftCmdId.OldShiftToNew(cmdid));
 
-            #region Client packet
+            if (isNewCmdid) 
+                shifted_body = ProtoshiftDispatch.NewShiftToOld(cmdid, null, null, null, packet, body_offset, (int)body_length);
+            else shifted_body = ProtoshiftDispatch.OldShiftToNew(cmdid, null, null, null, packet, body_offset, (int)body_length);
+            if (isNewCmdid && cmdid == NewProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenReq"))
+                GetPlayerTokenReqNotify(shifted_body);
+            if (!isNewCmdid && cmdid == OldProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
+                GetPlayerTokenRspNotify(shifted_body);
+
+            #region Push to Skill issue detect
             if (isNewCmdid)
-            {
-                #region Receive and read
-                if (!NewProtos.QueryCmdId.TryGetSerializer(cmdid, out var newserializer))
-                {
-                    Log.Erro($"Packet with CmdId:{cmdid} from Client" +
-                        $" has no record in newcmdid.csv and dropped:---{Convert.ToHexString(packet)}",
-                        $"PacketHandler({SessionId})");
-                    return Array.Empty<byte>();
-                }
-                string protoname = newserializer.Protoname;
-                string newjson = newserializer.DeserializeToJson(bodyfrom);
-                if (Verbose)
-                {
-                    Log.Info($"Recv packet with CmdId:{cmdid} from " +
-                        $"Client:---{Convert.ToHexString(packet)}",
-                        $"PacketHandler({SessionId})");
-                }
-                #endregion
-
-                #region Special Fix
-                if (ExtraFix.NeedSpecialHandle(cmdid, isNewCmdid))
-                {
-                    var genbody = ExtraFix.SpecialHandle(cmdid, isNewCmdid, bodyfrom);
-                    #region Record Packet
-                    if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
-                    {
-                        lock (records)
-                        {
-                            records[packetCounts % PacketRecordLimits] = new PacketRecord
-                                (protoname, packetCounts, cmdid, true, packet, genbody)
-                            {
-                                dataLostSign = false,
-                                newjsonContent = newjson,
-                                oldjsonContent = "ExtraFix Applied - Not Enabled"
-                            };
-                            packetCounts++;
-                        }
-                    }
-                    #endregion
-                    #region Build New Packet
-                    int rtn_packetLength = body_offset + genbody.Length + 2;
-                    byte[] rtn_packet = new byte[rtn_packetLength];
-                    Array.Copy(packet, 0, rtn_packet, 0, body_offset);
-                    rtn_packet.SetUInt16(2, (ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
-                    rtn_packet.SetUInt32(2 + 2 + 2, (uint)genbody.Length);
-                    Array.Copy(genbody, 0, rtn_packet, body_offset, genbody.Length);
-                    rtn_packet.SetUInt16(rtn_packetLength - 2, 0x89AB);
-
-                    if (Verbose)
-                    {
-                        Log.Info($"Send packet {protoname} with " +
-                            $"CmdId:{OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
-                            $"to Server:---{Convert.ToHexString(rtn_packet)}",
-                            $"PacketHandler({SessionId})");
-                    }
-
-                    return rtn_packet;
-                    #endregion
-                }
-                #endregion
-
-                #region Protoshift
-                byte[] oldbody;
-                OldProtos.ProtoSerialize? oldserializer = null;
-
-                if (protoname != "UnionCmdNotify")
-                {
-                    if (!OldProtos.QueryCmdId.TryGetSerializer(protoname, out oldserializer))
-                    {
-                        Log.Erro($"Packet {protoname} from Client" +
-                            $" has no record in oldcmdid.csv and dropped:---{Convert.ToHexString(packet)}",
-                            $"PacketHandler({SessionId})");
-                        return Array.Empty<byte>();
-                    }
-
-                    // KillSkillIssue fix
-                    newjson = Program.skillcmd.ProcessWithRule(cmdid, false, newjson);
-
-                    oldbody = oldserializer.SerializeFromJson(newjson);
-                }
-                else oldbody = UnionCmds.Shift(newjson);
-                #endregion
-
-                #region Notify
-                if (protoname == "GetPlayerTokenReq")
-                {
-                    GetPlayerTokenReqNotify(newjson);
-                }
-                #endregion
-
-                #region Record Packet
-                if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
-                {
-                    PacketRecord record = new PacketRecord(protoname, packetCounts, cmdid, true,
-                        packet, oldbody)
-                    { newjsonContent = newjson };
-                    if (oldserializer == null)
-                        OldProtos.QueryCmdId.TryGetSerializer(protoname, out oldserializer);
-                    // Protoshift not handled here but in other Fixs
-                    SkillIssueDetect.StartHandleNewPacket(record, newbody: bodyfrom, oldbody: oldbody,
-                            newjson, newserializer, oldserializer, SessionId);
-                    lock (records)
-                    {
-                        records[packetCounts % PacketRecordLimits] = record;
-                        packetCounts++;
-                    }
-                }
-                #endregion
-
-                #region Build New Packet
-                int rtnpacketLength = body_offset + oldbody.Length + 2;
-                byte[] rtn = new byte[rtnpacketLength];
-                Array.Copy(packet, 0, rtn, 0, body_offset);
-                rtn.SetUInt16(2, (ushort)OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
-                rtn.SetUInt32(2 + 2 + 2, (uint)oldbody.Length);
-                Array.Copy(oldbody, 0, rtn, body_offset, oldbody.Length);
-                rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
-
-                if (Verbose)
-                {
-                    Log.Info($"Send packet {protoname} with " +
-                        $"CmdId:{OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
-                        $"to Server:---{Convert.ToHexString(rtn)}",
-                        $"PacketHandler({SessionId})");
-                }
-
-                ProtoshiftWatch.Stop();
-                if (ProtoshiftWatch.ElapsedMilliseconds > 15 && !unordered_cmds_new.Contains(cmdid))
-                {
-                    Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > 15ms)", $"PacketHandler({SessionId})");
-                }
-                SubmitTimeRecord(protoname, true, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
-                return rtn;
-                #endregion
-            }
-            #endregion
-            #region Server packet
+                SkillIssueDetect.StartHandlePacket(protoname, 
+                    shifted_body, 0, shifted_body.Length,
+                    packet, body_offset, (int)body_length);
             else
-            {
-                #region Receive and read
-                if (!OldProtos.QueryCmdId.TryGetSerializer(cmdid, out var oldserializer))
-                {
-                    Log.Erro($"Packet with CmdId:{cmdid} from Server" +
-                        $" has no record in oldcmdid.csv and dropped:---{Convert.ToHexString(packet)}",
-                        $"PacketHandler({SessionId})");
-                    return Array.Empty<byte>();
-                }
-                string protoname = oldserializer.Protoname;
-                string oldjson = oldserializer.DeserializeToJson(bodyfrom);
-                if (Verbose)
-                {
-                    Log.Info($"Recv packet with CmdId:{cmdid} from " +
-                        $"Server:---{Convert.ToHexString(packet)}",
-                        $"PacketHandler({SessionId})");
-                }
-                #endregion
-
-                #region Special Fix
-                if (ExtraFix.NeedSpecialHandle(cmdid, isNewCmdid))
-                {
-                    var genbody = ExtraFix.SpecialHandle(cmdid, isNewCmdid, bodyfrom);
-                    #region Record Packet
-                    if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
-                    {
-                        lock (records)
-                        {
-                            records[packetCounts % PacketRecordLimits] = new PacketRecord
-                                (protoname, packetCounts, cmdid, false, packet, genbody)
-                            {
-                                dataLostSign = false,
-                                oldjsonContent = oldjson,
-                                newjsonContent = "ExtraFix Applied - Not Enabled"
-                            };
-                            packetCounts++;
-                        }
-                    }
-                    #endregion
-                    #region Build New Packet
-                    int rtn_packetLength = body_offset + genbody.Length + 2;
-                    byte[] rtn_packet = new byte[rtn_packetLength];
-                    Array.Copy(packet, 0, rtn_packet, 0, body_offset);
-                    rtn_packet.SetUInt16(2, (ushort)NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
-                    rtn_packet.SetUInt32(2 + 2 + 2, (uint)genbody.Length);
-                    Array.Copy(genbody, 0, rtn_packet, body_offset, genbody.Length);
-                    rtn_packet.SetUInt16(rtn_packetLength - 2, 0x89AB);
-
-                    if (Verbose)
-                    {
-                        Log.Info($"Send packet {protoname} with " +
-                            $"CmdId:{NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
-                            $"to Client:---{Convert.ToHexString(rtn_packet)}",
-                            $"PacketHandler({SessionId})");
-                    }
-
-                    return rtn_packet;
-                    #endregion
-                }
-                #endregion
-
-                #region Protoshift
-                if (!NewProtos.QueryCmdId.TryGetSerializer(protoname, out var newserializer))
-                {
-                    Log.Erro($"Packet {protoname} from Server" +
-                        $" has no record in newcmdid.csv and dropped:---{Convert.ToHexString(packet)}",
-                        $"PacketHandler({SessionId})");
-                    return Array.Empty<byte>();
-                }
-
-                // KillSkillIssue fix
-                oldjson = Program.skillcmd.ProcessWithRule(cmdid, true, oldjson);
-
-                byte[] newbody = newserializer.SerializeFromJson(oldjson);
-                #endregion
-
-                #region Notify
-                if (protoname == "GetPlayerTokenRsp")
-                {
-                    GetPlayerTokenRspNotify(oldjson);
-                }
-                #endregion
-
-                #region Record Packet
-                if ((protoname != "PingReq" && protoname != "PingRsp") || RecordPingPackets)
-                {
-                    PacketRecord record = new PacketRecord(protoname, packetCounts, cmdid, true,
-                        packet, newbody)
-                    { oldjsonContent = oldjson };
-                    if (oldserializer != null)
-                        // Protoshift not handled here but in other Fixs
-                        SkillIssueDetect.StartHandleOldPacket(record, oldbody: bodyfrom, newbody: newbody,
-                            oldjson, oldserializer, newserializer, SessionId);
-                    lock (records)
-                    {
-                        records[packetCounts % PacketRecordLimits] = record;
-                        packetCounts++;
-                    }
-                }
-                #endregion
-
-                #region Build New Packet
-                int rtnpacketLength = body_offset + newbody.Length + 2;
-                byte[] rtn = new byte[rtnpacketLength];
-                Array.Copy(packet, 0, rtn, 0, body_offset);
-                rtn.SetUInt16(2, (ushort)NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname));
-                rtn.SetUInt32(2 + 2 + 2, (uint)newbody.Length);
-                Array.Copy(newbody, 0, rtn, body_offset, newbody.Length);
-                rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
-                if (Verbose)
-                {
-                    Log.Info($"Send packet {protoname} with " +
-                        $"CmdId:{NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
-                        $"to Client:---{Convert.ToHexString(rtn)}",
-                        $"PacketHandler({SessionId})");
-                }
-
-                ProtoshiftWatch.Stop();
-                if (ProtoshiftWatch.ElapsedMilliseconds > 15 && !unordered_cmds_old.Contains(cmdid))
-                {
-                    Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > 15ms)", $"PacketHandler({SessionId})");
-                }
-                SubmitTimeRecord(protoname, false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
-                return rtn;
-                #endregion
-            }
+                SkillIssueDetect.StartHandlePacket(protoname,
+                    packet, body_offset, (int)body_length,
+                    shifted_body, 0, shifted_body.Length);
             #endregion
+
+            #region Build New Packet
+            int rtnpacketLength = body_offset + shifted_body.Length + 2;
+            byte[] rtn = new byte[rtnpacketLength];
+            Array.Copy(packet, 0, rtn, 0, body_offset);
+            rtn.SetUInt16(2, shifted_cmdid);
+            rtn.SetUInt32(2 + 2 + 2, (uint)shifted_body.Length);
+            Array.Copy(shifted_body, 0, rtn, body_offset, shifted_body.Length);
+            rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
+            #endregion
+
+            ProtoshiftWatch.Stop();
+            if (ProtoshiftWatch.ElapsedMilliseconds >= Recommended_Protoshift_maximum_time_ms && !unordered_cmds_old.Contains(cmdid))
+            {
+                Log.Warn($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > {Recommended_Protoshift_maximum_time_ms}ms)", $"PacketHandler({SessionId})");
+            }
+            SubmitTimeRecord(protoname, isNewCmdid, ProtoshiftWatch.ElapsedMilliseconds, ProtoshiftWatch.ElapsedTicks, packet.Length);
+#if RECORD_ALL_PKTS_FOR_REPLAY
+            PacketRecords.Add(new(protoname, cmdid, isNewCmdid, packet, body_offset, (int)body_length, shifted_body, DateTime.Now));
+#endif
+            return rtn;
         }
 
         protected byte[] client_seed;
         protected byte[] server_seed;
 
-#pragma warning disable CS8604 // 引用类型参数可能为 null。
-        private void GetPlayerTokenReqNotify(string messageJson)
+        private void GetPlayerTokenReqNotify(byte[] message_oldprotocol)
         {
-            uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
+            var message = OldProtos.GetPlayerTokenReq.Parser.ParseFrom(message_oldprotocol);
+            uint key_id = message.KeyId;
             client_seed = Resources.SPri[key_id].RsaDecrypt(
-                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "clientRandKey").GetString()),
+                Convert.FromBase64String(message.ClientRandKey),
                 RSAEncryptionPadding.Pkcs1)
                 .Fill0(8);
         }
 
-        private void GetPlayerTokenRspNotify(string messageJson)
+        private void GetPlayerTokenRspNotify(byte[] message_newprotocol)
         {
-            uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
+            var message = NewProtos.GetPlayerTokenRsp.Parser.ParseFrom(message_newprotocol);
+            uint key_id = message.KeyId;
             server_seed = Resources.CPri[key_id].RsaDecrypt(
-                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "serverRandKey").GetString()),
+                Convert.FromBase64String(message.ServerRandKey),
                 RSAEncryptionPadding.Pkcs1)
                 .Fill0(8);
             ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
@@ -540,13 +323,6 @@ namespace csharp_Protoshift.GameSession
                 Convert.ToHexString(XorKey) +
                 $"{Environment.NewLine}-----END HEX New 4096 XOR Key-----", $"HandlerSession({SessionId})");
         }
-#pragma warning restore CS8604 // 引用类型参数可能为 null。
-
-        /// <summary>
-        /// Used for special UnionCmdNotify shifting.
-        /// </summary>
-        /// <param name="newjson"></param>
-        /// <returns></returns>
         #endregion
 
         #region Packet Create
@@ -597,32 +373,6 @@ namespace csharp_Protoshift.GameSession
             }
         }
 
-        static readonly JsonSerializer serializer = new();
-
-        public static string ConvertJsonString(string str)
-        {
-            //格式化json字符串
-            TextReader tr = new StringReader(str);
-            JsonTextReader jtr = new(tr);
-            object? obj = serializer.Deserialize(jtr);
-            if (obj != null)
-            {
-                StringWriter textWriter = new();
-                JsonTextWriter jsonWriter = new(textWriter)
-                {
-                    Formatting = Formatting.Indented,
-                    Indentation = 4,
-                    IndentChar = ' '
-                };
-                serializer.Serialize(jsonWriter, obj);
-                return textWriter.ToString();
-            }
-            else
-            {
-                return str;
-            }
-        }
-
         public static byte[] Generate4096KeyByMT19937(ulong seed)
         {
             MT19937 mt1 = new(), mt2 = new();
@@ -639,26 +389,6 @@ namespace csharp_Protoshift.GameSession
             return key;
         }
         #endregion
-
-        public List<PacketRecord> QueryPacketRecords(string protoname)
-        {
-            var query = from record in records
-                        where record?.PacketName == protoname
-                        orderby record.Id
-                        select record;
-            return query.ToList();
-        }
-
-        public List<int> QueryPacketRecordIds(string protoname)
-        {
-            var query = from record in records
-                        where record.PacketName == protoname
-                        orderby record.Id
-                        select record.Id;
-            return query.ToList();
-        }
-
-        public PacketRecord QueryPacketRecordById(int id) => records[id % PacketRecordLimits];
     }
 }
 #endif

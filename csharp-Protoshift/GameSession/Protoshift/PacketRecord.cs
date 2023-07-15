@@ -8,54 +8,40 @@ using System.Threading.Tasks;
 
 namespace csharp_Protoshift.GameSession
 {
-    internal class PacketRecord
+    public class PacketRecord
     {
-        public PacketRecord(string protoname, int packet_id, int cmd_id, bool isNewCmdid, 
-            byte[] received_data, byte[] shifted_data)
-        {
-            PacketName = protoname;
-            Id = packet_id;
-            CmdId = cmd_id;
-            sentByClient = isNewCmdid;
-            data = received_data;
-            shiftedData = shifted_data;
-            packetTime = DateTime.Now;
-        }
-
         /// <summary>
         /// Packet Name (Proto name)
         /// </summary>
         public string PacketName;
-        /// <summary>
-        /// Packet Id (In HandlerSession)
-        /// </summary>
-        public int Id;
         public int CmdId;
         public bool sentByClient;
         /// <summary>
         /// Original body bin data
         /// </summary>
         public byte[] data;
+        public int data_offset;
+        public int data_length;
         /// <summary>
         /// Another version of body bin data (Proto shifted)
         /// </summary>
         public byte[] shiftedData;
         /// <summary>
-        /// Whether this packet is detected having data lost when Protoshifting (only valid in DEBUG)
-        /// </summary>
-        public bool dataLostSign;
-        /// <summary>
-        /// Json format data with new protocol
-        /// </summary>
-        public string? newjsonContent;
-        /// <summary>
-        /// Json format data with old protocol
-        /// </summary>
-        public string? oldjsonContent;
-        /// <summary>
         /// The time of packet creation. Uses <c>DateTime.Now</c>.
         /// </summary>
         public DateTime packetTime;
+
+        public PacketRecord(string packetName, int cmdId, bool sentByClient, byte[] data, int data_offset, int data_length, byte[] shiftedData, DateTime packetTime)
+        {
+            PacketName = packetName ?? throw new ArgumentNullException(nameof(packetName));
+            CmdId = cmdId;
+            this.sentByClient = sentByClient;
+            this.data = data ?? throw new ArgumentNullException(nameof(data));
+            this.data_offset = data_offset;
+            this.data_length = data_length;
+            this.shiftedData = shiftedData ?? throw new ArgumentNullException(nameof(shiftedData));
+            this.packetTime = packetTime;
+        }
     }
 }
 #endif

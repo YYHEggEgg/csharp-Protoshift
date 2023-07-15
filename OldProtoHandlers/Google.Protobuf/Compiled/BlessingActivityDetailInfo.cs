@@ -363,7 +363,7 @@ namespace OldProtos {
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
-      picNumMap_.Add(other.picNumMap_);
+      picNumMap_.MergeFrom(other.picNumMap_);
       if (other.ContentCloseTime != 0) {
         ContentCloseTime = other.ContentCloseTime;
       }

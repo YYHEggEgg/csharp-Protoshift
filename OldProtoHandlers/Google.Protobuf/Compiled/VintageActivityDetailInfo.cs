@@ -303,15 +303,15 @@ namespace OldProtos {
         }
         MarketInfo.MergeFrom(other.MarketInfo);
       }
-      huntingStageMap_.Add(other.huntingStageMap_);
+      huntingStageMap_.MergeFrom(other.huntingStageMap_);
       if (other.boothData_ != null) {
         if (boothData_ == null) {
           BoothData = new global::OldProtos.VintageBoothUsedItemData();
         }
         BoothData.MergeFrom(other.BoothData);
       }
-      campStageMap_.Add(other.campStageMap_);
-      presentStageMap_.Add(other.presentStageMap_);
+      campStageMap_.MergeFrom(other.campStageMap_);
+      presentStageMap_.MergeFrom(other.presentStageMap_);
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }

@@ -7,9 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="AskCmdId.cs" />
-    <Compile Remove="Backup/**" />
-	  <Compile Remove="Google.Protobuf.3.4/**" />
+    <Compile Remove="Backup\**" />
+    <Compile Remove="Obsoleted\**" />
+    <EmbeddedResource Remove="Backup\**" />
+    <EmbeddedResource Remove="Obsoleted\**" />
+    <None Remove="Backup\**" />
+    <None Remove="Obsoleted\**" />
   </ItemGroup>
 
   <ItemGroup>

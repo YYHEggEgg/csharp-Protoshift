@@ -228,7 +228,7 @@ namespace OldProtos {
       if (other.DifficultyId != 0) {
         DifficultyId = other.DifficultyId;
       }
-      sumoStageMap_.Add(other.sumoStageMap_);
+      sumoStageMap_.MergeFrom(other.sumoStageMap_);
       if (other.LastStageId != 0) {
         LastStageId = other.LastStageId;
       }

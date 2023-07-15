@@ -283,11 +283,11 @@ namespace OldProtos {
       }
       haveGetRobotList_.Add(other.haveGetRobotList_);
       gachaStageDataList_.Add(other.gachaStageDataList_);
-      haveRewardRobotNumMap_.Add(other.haveRewardRobotNumMap_);
+      haveRewardRobotNumMap_.MergeFrom(other.haveRewardRobotNumMap_);
       if (other.TechCreateRobotId != 0) {
         TechCreateRobotId = other.TechCreateRobotId;
       }
-      robotNumMap_.Add(other.robotNumMap_);
+      robotNumMap_.MergeFrom(other.robotNumMap_);
       if (other.RobotFinishNum != 0) {
         RobotFinishNum = other.RobotFinishNum;
       }

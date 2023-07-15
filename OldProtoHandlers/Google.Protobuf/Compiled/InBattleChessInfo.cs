@@ -379,7 +379,7 @@ namespace OldProtos {
         }
         MysteryInfo.MergeFrom(other.MysteryInfo);
       }
-      playerInfoMap_.Add(other.playerInfoMap_);
+      playerInfoMap_.MergeFrom(other.playerInfoMap_);
       if (other.MaxEscapableMonsters != 0) {
         MaxEscapableMonsters = other.MaxEscapableMonsters;
       }

@@ -294,7 +294,7 @@ namespace OldProtos {
       if (other.TransDuration != 0F) {
         TransDuration = other.TransDuration;
       }
-      weatherValueMap_.Add(other.weatherValueMap_);
+      weatherValueMap_.MergeFrom(other.weatherValueMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

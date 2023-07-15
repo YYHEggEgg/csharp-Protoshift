@@ -267,7 +267,7 @@ namespace NewProtos {
       if (other.TotalScore != 0) {
         TotalScore = other.TotalScore;
       }
-      settleInfoMap_.Add(other.settleInfoMap_);
+      settleInfoMap_.MergeFrom(other.settleInfoMap_);
       if (other.ChapterId != 0) {
         ChapterId = other.ChapterId;
       }

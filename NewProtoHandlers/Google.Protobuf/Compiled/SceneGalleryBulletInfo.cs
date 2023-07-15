@@ -197,7 +197,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      hitCountMap_.Add(other.hitCountMap_);
+      hitCountMap_.MergeFrom(other.hitCountMap_);
       if (other.EndTime != 0) {
         EndTime = other.EndTime;
       }

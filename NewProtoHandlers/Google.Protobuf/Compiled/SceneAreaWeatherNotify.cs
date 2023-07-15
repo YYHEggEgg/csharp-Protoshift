@@ -289,7 +289,7 @@ namespace NewProtos {
       if (other.WeatherGadgetId != 0) {
         WeatherGadgetId = other.WeatherGadgetId;
       }
-      weatherValueMap_.Add(other.weatherValueMap_);
+      weatherValueMap_.MergeFrom(other.weatherValueMap_);
       if (other.ClimateType != 0) {
         ClimateType = other.ClimateType;
       }

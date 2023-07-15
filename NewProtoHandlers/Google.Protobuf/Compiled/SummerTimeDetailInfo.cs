@@ -253,7 +253,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      stageMap_.Add(other.stageMap_);
+      stageMap_.MergeFrom(other.stageMap_);
       if (other.sprintBoatInfo_ != null) {
         if (sprintBoatInfo_ == null) {
           SprintBoatInfo = new global::NewProtos.SummerTimeSprintBoatInfo();

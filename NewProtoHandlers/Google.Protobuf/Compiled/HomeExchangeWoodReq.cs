@@ -210,7 +210,7 @@ namespace NewProtos {
       if (other.WoodId != 0) {
         WoodId = other.WoodId;
       }
-      materialCountMap_.Add(other.materialCountMap_);
+      materialCountMap_.MergeFrom(other.materialCountMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

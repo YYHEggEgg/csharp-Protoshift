@@ -202,7 +202,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      propMap_.Add(other.propMap_);
+      propMap_.MergeFrom(other.propMap_);
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }

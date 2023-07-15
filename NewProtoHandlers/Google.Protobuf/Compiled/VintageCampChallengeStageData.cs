@@ -311,7 +311,7 @@ namespace NewProtos {
       if (other.IsFinish != false) {
         IsFinish = other.IsFinish;
       }
-      campLevelMap_.Add(other.campLevelMap_);
+      campLevelMap_.MergeFrom(other.campLevelMap_);
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
       }

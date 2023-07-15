@@ -300,8 +300,8 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      unk3300KFKHAACDJDJ_.Add(other.unk3300KFKHAACDJDJ_);
-      unk3300GMPEELLANLI_.Add(other.unk3300GMPEELLANLI_);
+      unk3300KFKHAACDJDJ_.MergeFrom(other.unk3300KFKHAACDJDJ_);
+      unk3300GMPEELLANLI_.MergeFrom(other.unk3300GMPEELLANLI_);
       if (other.DungeonSceneId != 0) {
         DungeonSceneId = other.DungeonSceneId;
       }

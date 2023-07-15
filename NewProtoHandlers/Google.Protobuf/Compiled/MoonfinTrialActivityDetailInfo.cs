@@ -202,7 +202,7 @@ namespace NewProtos {
       if (other.SpecialFishCount != 0) {
         SpecialFishCount = other.SpecialFishCount;
       }
-      levelInfoMap_.Add(other.levelInfoMap_);
+      levelInfoMap_.MergeFrom(other.levelInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

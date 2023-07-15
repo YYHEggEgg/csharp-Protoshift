@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>$(DefineConstants)TRACE;PROXY_ONLY_SERVER_DISABLED</DefineConstants>
+    <DefineConstants>$(DefineConstants)TRACE;PROXY_ONLY_SERVER_DISABLED;RECORD_ALL_PKTS_FOR_REPLAY</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>$(DefineConstants)TRACE;PROXY_ONLY_SERVER_DISABLED</DefineConstants>
+    <DefineConstants>$(DefineConstants)TRACE;PROXY_ONLY_SERVER_DISABLED;RECORD_ALL_PKTS_FOR_REPLAY</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,11 +35,13 @@
     <ProjectReference Include="..\KCP\Kcp\Kcp.csproj" />
     <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
     <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />
+    <ProjectReference Include="..\ProtoshiftHandlers\ProtoshiftHandlers.csproj" />
     <ProjectReference Include="..\XC.RSAUtil\XC.RSAUtil.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Crypto\" />
+    <Folder Include="SkillIssue\" />
   </ItemGroup>
 
 </Project>

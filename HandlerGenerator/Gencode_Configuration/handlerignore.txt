@@ -1,0 +1,17 @@
+﻿# This is the Protoshift Handlers ignore file.
+# 
+# If some proto need special work, please add
+# them to the file, one name per line.
+# Add '#' to make a comment. 
+# 
+# e.g. Write like this:
+# UnionCmd
+# 
+# After running the program, you may write your
+# code in ProtoshiftHandlers/SpecialHandlers.
+# There'll be the generated code, but they won't
+# change since the next build process.
+
+UnionCmd
+AbilityInvokeEntry
+CombatInvokeEntry

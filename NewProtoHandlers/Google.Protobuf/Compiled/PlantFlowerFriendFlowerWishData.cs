@@ -255,7 +255,7 @@ namespace NewProtos {
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
-      flowerNumMap_.Add(other.flowerNumMap_);
+      flowerNumMap_.MergeFrom(other.flowerNumMap_);
       if (other.profilePicture_ != null) {
         if (profilePicture_ == null) {
           ProfilePicture = new global::NewProtos.ProfilePicture();

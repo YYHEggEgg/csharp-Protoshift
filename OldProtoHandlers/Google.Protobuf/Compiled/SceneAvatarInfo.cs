@@ -673,8 +673,8 @@ namespace OldProtos {
         CoreProudSkillLevel = other.CoreProudSkillLevel;
       }
       inherentProudSkillList_.Add(other.inherentProudSkillList_);
-      skillLevelMap_.Add(other.skillLevelMap_);
-      proudSkillExtraLevelMap_.Add(other.proudSkillExtraLevelMap_);
+      skillLevelMap_.MergeFrom(other.skillLevelMap_);
+      proudSkillExtraLevelMap_.MergeFrom(other.proudSkillExtraLevelMap_);
       serverBuffList_.Add(other.serverBuffList_);
       teamResonanceList_.Add(other.teamResonanceList_);
       if (other.WearingFlycloakId != 0) {

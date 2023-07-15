@@ -264,7 +264,7 @@ namespace OldProtos {
       if (other.Nickname.Length != 0) {
         Nickname = other.Nickname;
       }
-      flowerNumMap_.Add(other.flowerNumMap_);
+      flowerNumMap_.MergeFrom(other.flowerNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

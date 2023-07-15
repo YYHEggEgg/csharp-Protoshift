@@ -227,7 +227,7 @@ namespace NewProtos {
       if (other.Unk3300NCMDDAFNENO != 0) {
         Unk3300NCMDDAFNENO = other.Unk3300NCMDDAFNENO;
       }
-      slotMap_.Add(other.slotMap_);
+      slotMap_.MergeFrom(other.slotMap_);
       if (other.Unk3300CKMNFOCNMGL != 0) {
         Unk3300CKMNFOCNMGL = other.Unk3300CKMNFOCNMGL;
       }

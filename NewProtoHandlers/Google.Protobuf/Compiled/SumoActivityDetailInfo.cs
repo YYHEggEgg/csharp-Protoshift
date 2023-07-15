@@ -231,7 +231,7 @@ namespace NewProtos {
       if (other.LastStageId != 0) {
         LastStageId = other.LastStageId;
       }
-      sumoStageMap_.Add(other.sumoStageMap_);
+      sumoStageMap_.MergeFrom(other.sumoStageMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

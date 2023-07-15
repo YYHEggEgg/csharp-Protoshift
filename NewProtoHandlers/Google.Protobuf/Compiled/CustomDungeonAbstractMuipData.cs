@@ -231,7 +231,7 @@ namespace NewProtos {
       if (other.LastPublishTime != 0) {
         LastPublishTime = other.LastPublishTime;
       }
-      brickStatisticsMap_.Add(other.brickStatisticsMap_);
+      brickStatisticsMap_.MergeFrom(other.brickStatisticsMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -250,7 +250,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      itemGuidCountMap_.Add(other.itemGuidCountMap_);
+      itemGuidCountMap_.MergeFrom(other.itemGuidCountMap_);
       if (other.GivingId != 0) {
         GivingId = other.GivingId;
       }

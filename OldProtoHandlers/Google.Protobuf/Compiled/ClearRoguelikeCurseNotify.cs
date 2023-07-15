@@ -256,7 +256,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      clearCurseMap_.Add(other.clearCurseMap_);
+      clearCurseMap_.MergeFrom(other.clearCurseMap_);
       if (other.IsClearAll != false) {
         IsClearAll = other.IsClearAll;
       }

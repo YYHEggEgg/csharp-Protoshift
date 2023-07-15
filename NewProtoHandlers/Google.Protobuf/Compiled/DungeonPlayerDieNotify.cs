@@ -188,10 +188,24 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint MonsterId {
-      get { return entityCase_ == EntityOneofCase.MonsterId ? (uint) entity_ : 0; }
+      get { return HasMonsterId ? (uint) entity_ : 0; }
       set {
         entity_ = value;
         entityCase_ = EntityOneofCase.MonsterId;
+      }
+    }
+    /// <summary>Gets whether the "monster_id" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasMonsterId {
+      get { return entityCase_ == EntityOneofCase.MonsterId; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "monster_id" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearMonsterId() {
+      if (HasMonsterId) {
+        ClearEntity();
       }
     }
 
@@ -200,10 +214,24 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint GadgetId {
-      get { return entityCase_ == EntityOneofCase.GadgetId ? (uint) entity_ : 0; }
+      get { return HasGadgetId ? (uint) entity_ : 0; }
       set {
         entity_ = value;
         entityCase_ = EntityOneofCase.GadgetId;
+      }
+    }
+    /// <summary>Gets whether the "gadget_id" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasGadgetId {
+      get { return entityCase_ == EntityOneofCase.GadgetId; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "gadget_id" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGadgetId() {
+      if (HasGadgetId) {
+        ClearEntity();
       }
     }
 
@@ -265,8 +293,8 @@ namespace NewProtos {
       if (WaitTime != 0) hash ^= WaitTime.GetHashCode();
       if (DungeonId != 0) hash ^= DungeonId.GetHashCode();
       if (MurdererEntityId != 0) hash ^= MurdererEntityId.GetHashCode();
-      if (entityCase_ == EntityOneofCase.MonsterId) hash ^= MonsterId.GetHashCode();
-      if (entityCase_ == EntityOneofCase.GadgetId) hash ^= GadgetId.GetHashCode();
+      if (HasMonsterId) hash ^= MonsterId.GetHashCode();
+      if (HasGadgetId) hash ^= GadgetId.GetHashCode();
       hash ^= (int) entityCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -303,7 +331,7 @@ namespace NewProtos {
         output.WriteRawTag(64);
         output.WriteEnum((int) DieType);
       }
-      if (entityCase_ == EntityOneofCase.MonsterId) {
+      if (HasMonsterId) {
         output.WriteRawTag(80);
         output.WriteUInt32(MonsterId);
       }
@@ -311,7 +339,7 @@ namespace NewProtos {
         output.WriteRawTag(88);
         output.WriteUInt32(MurdererEntityId);
       }
-      if (entityCase_ == EntityOneofCase.GadgetId) {
+      if (HasGadgetId) {
         output.WriteRawTag(112);
         output.WriteUInt32(GadgetId);
       }
@@ -342,7 +370,7 @@ namespace NewProtos {
         output.WriteRawTag(64);
         output.WriteEnum((int) DieType);
       }
-      if (entityCase_ == EntityOneofCase.MonsterId) {
+      if (HasMonsterId) {
         output.WriteRawTag(80);
         output.WriteUInt32(MonsterId);
       }
@@ -350,7 +378,7 @@ namespace NewProtos {
         output.WriteRawTag(88);
         output.WriteUInt32(MurdererEntityId);
       }
-      if (entityCase_ == EntityOneofCase.GadgetId) {
+      if (HasGadgetId) {
         output.WriteRawTag(112);
         output.WriteUInt32(GadgetId);
       }
@@ -380,10 +408,10 @@ namespace NewProtos {
       if (MurdererEntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MurdererEntityId);
       }
-      if (entityCase_ == EntityOneofCase.MonsterId) {
+      if (HasMonsterId) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MonsterId);
       }
-      if (entityCase_ == EntityOneofCase.GadgetId) {
+      if (HasGadgetId) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetId);
       }
       if (_unknownFields != null) {
@@ -398,7 +426,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      strengthenPointDataMap_.Add(other.strengthenPointDataMap_);
+      strengthenPointDataMap_.MergeFrom(other.strengthenPointDataMap_);
       if (other.DieType != global::NewProtos.PlayerDieType.None) {
         DieType = other.DieType;
       }

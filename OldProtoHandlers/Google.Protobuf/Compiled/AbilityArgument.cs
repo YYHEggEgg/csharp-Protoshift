@@ -97,10 +97,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint IntArg {
-      get { return argCase_ == ArgOneofCase.IntArg ? (uint) arg_ : 0; }
+      get { return HasIntArg ? (uint) arg_ : 0; }
       set {
         arg_ = value;
         argCase_ = ArgOneofCase.IntArg;
+      }
+    }
+    /// <summary>Gets whether the "int_arg" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIntArg {
+      get { return argCase_ == ArgOneofCase.IntArg; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "int_arg" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIntArg() {
+      if (HasIntArg) {
+        ClearArg();
       }
     }
 
@@ -109,10 +123,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float FloatArg {
-      get { return argCase_ == ArgOneofCase.FloatArg ? (float) arg_ : 0F; }
+      get { return HasFloatArg ? (float) arg_ : 0F; }
       set {
         arg_ = value;
         argCase_ = ArgOneofCase.FloatArg;
+      }
+    }
+    /// <summary>Gets whether the "float_arg" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasFloatArg {
+      get { return argCase_ == ArgOneofCase.FloatArg; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "float_arg" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearFloatArg() {
+      if (HasFloatArg) {
+        ClearArg();
       }
     }
 
@@ -121,10 +149,24 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string StrArg {
-      get { return argCase_ == ArgOneofCase.StrArg ? (string) arg_ : ""; }
+      get { return HasStrArg ? (string) arg_ : ""; }
       set {
         arg_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         argCase_ = ArgOneofCase.StrArg;
+      }
+    }
+    /// <summary>Gets whether the "str_arg" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasStrArg {
+      get { return argCase_ == ArgOneofCase.StrArg; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "str_arg" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearStrArg() {
+      if (HasStrArg) {
+        ClearArg();
       }
     }
 
@@ -176,9 +218,9 @@ namespace OldProtos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (argCase_ == ArgOneofCase.IntArg) hash ^= IntArg.GetHashCode();
-      if (argCase_ == ArgOneofCase.FloatArg) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FloatArg);
-      if (argCase_ == ArgOneofCase.StrArg) hash ^= StrArg.GetHashCode();
+      if (HasIntArg) hash ^= IntArg.GetHashCode();
+      if (HasFloatArg) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(FloatArg);
+      if (HasStrArg) hash ^= StrArg.GetHashCode();
       hash ^= (int) argCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -198,15 +240,15 @@ namespace OldProtos {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (argCase_ == ArgOneofCase.IntArg) {
+      if (HasIntArg) {
         output.WriteRawTag(40);
         output.WriteUInt32(IntArg);
       }
-      if (argCase_ == ArgOneofCase.StrArg) {
+      if (HasStrArg) {
         output.WriteRawTag(90);
         output.WriteString(StrArg);
       }
-      if (argCase_ == ArgOneofCase.FloatArg) {
+      if (HasFloatArg) {
         output.WriteRawTag(125);
         output.WriteFloat(FloatArg);
       }
@@ -220,15 +262,15 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (argCase_ == ArgOneofCase.IntArg) {
+      if (HasIntArg) {
         output.WriteRawTag(40);
         output.WriteUInt32(IntArg);
       }
-      if (argCase_ == ArgOneofCase.StrArg) {
+      if (HasStrArg) {
         output.WriteRawTag(90);
         output.WriteString(StrArg);
       }
-      if (argCase_ == ArgOneofCase.FloatArg) {
+      if (HasFloatArg) {
         output.WriteRawTag(125);
         output.WriteFloat(FloatArg);
       }
@@ -242,13 +284,13 @@ namespace OldProtos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (argCase_ == ArgOneofCase.IntArg) {
+      if (HasIntArg) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(IntArg);
       }
-      if (argCase_ == ArgOneofCase.FloatArg) {
+      if (HasFloatArg) {
         size += 1 + 4;
       }
-      if (argCase_ == ArgOneofCase.StrArg) {
+      if (HasStrArg) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(StrArg);
       }
       if (_unknownFields != null) {

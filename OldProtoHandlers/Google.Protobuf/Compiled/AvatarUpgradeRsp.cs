@@ -307,11 +307,11 @@ namespace OldProtos {
       if (other.OldLevel != 0) {
         OldLevel = other.OldLevel;
       }
-      oldFightPropMap_.Add(other.oldFightPropMap_);
+      oldFightPropMap_.MergeFrom(other.oldFightPropMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      curFightPropMap_.Add(other.curFightPropMap_);
+      curFightPropMap_.MergeFrom(other.curFightPropMap_);
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }

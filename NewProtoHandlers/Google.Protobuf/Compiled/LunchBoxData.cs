@@ -170,7 +170,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      slotMaterialMap_.Add(other.slotMaterialMap_);
+      slotMaterialMap_.MergeFrom(other.slotMaterialMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
