@@ -213,7 +213,7 @@ namespace OldProtos {
         return;
       }
       tempAvatarGuidList_.Add(other.tempAvatarGuidList_);
-      avatarTeamMap_.MergeFrom(other.avatarTeamMap_);
+      avatarTeamMap_.Add(other.avatarTeamMap_);
       backupAvatarTeamOrderList_.Add(other.backupAvatarTeamOrderList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }

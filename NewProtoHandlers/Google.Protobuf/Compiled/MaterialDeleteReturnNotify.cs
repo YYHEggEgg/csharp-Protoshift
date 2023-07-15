@@ -231,8 +231,8 @@ namespace NewProtos {
       if (other.Type != global::NewProtos.MaterialDeleteReturnType.Bag) {
         Type = other.Type;
       }
-      unk3300OFOKFKBALJD_.MergeFrom(other.unk3300OFOKFKBALJD_);
-      unk3300LAIHDKJAHAF_.MergeFrom(other.unk3300LAIHDKJAHAF_);
+      unk3300OFOKFKBALJD_.Add(other.unk3300OFOKFKBALJD_);
+      unk3300LAIHDKJAHAF_.Add(other.unk3300LAIHDKJAHAF_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

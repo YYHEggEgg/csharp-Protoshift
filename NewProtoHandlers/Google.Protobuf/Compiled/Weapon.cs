@@ -258,7 +258,7 @@ namespace NewProtos {
       if (other.PromoteLevel != 0) {
         PromoteLevel = other.PromoteLevel;
       }
-      affixMap_.MergeFrom(other.affixMap_);
+      affixMap_.Add(other.affixMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

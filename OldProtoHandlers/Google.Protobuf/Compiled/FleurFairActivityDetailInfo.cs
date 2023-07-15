@@ -359,8 +359,8 @@ namespace OldProtos {
         ObtainedToken = other.ObtainedToken;
       }
       chapterInfoList_.Add(other.chapterInfoList_);
-      minigameInfoMap_.MergeFrom(other.minigameInfoMap_);
-      dungeonSectionInfoMap_.MergeFrom(other.dungeonSectionInfoMap_);
+      minigameInfoMap_.Add(other.minigameInfoMap_);
+      dungeonSectionInfoMap_.Add(other.dungeonSectionInfoMap_);
       if (other.IsDungeonUnlocked != false) {
         IsDungeonUnlocked = other.IsDungeonUnlocked;
       }

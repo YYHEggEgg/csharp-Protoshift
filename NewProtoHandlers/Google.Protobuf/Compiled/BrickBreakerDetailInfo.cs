@@ -230,7 +230,7 @@ namespace NewProtos {
       stageInfoList_.Add(other.stageInfoList_);
       dungeonLevelInfoList_.Add(other.dungeonLevelInfoList_);
       worldLevelInfoList_.Add(other.worldLevelInfoList_);
-      skillInfoMap_.MergeFrom(other.skillInfoMap_);
+      skillInfoMap_.Add(other.skillInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -764,20 +764,20 @@ namespace NewProtos {
       if (other.Guid != 0UL) {
         Guid = other.Guid;
       }
-      propMap_.MergeFrom(other.propMap_);
+      propMap_.Add(other.propMap_);
       if (other.LifeState != 0) {
         LifeState = other.LifeState;
       }
       equipGuidList_.Add(other.equipGuidList_);
       talentIdList_.Add(other.talentIdList_);
-      fightPropMap_.MergeFrom(other.fightPropMap_);
+      fightPropMap_.Add(other.fightPropMap_);
       if (other.trialAvatarInfo_ != null) {
         if (trialAvatarInfo_ == null) {
           TrialAvatarInfo = new global::NewProtos.TrialAvatarInfo();
         }
         TrialAvatarInfo.MergeFrom(other.TrialAvatarInfo);
       }
-      skillMap_.MergeFrom(other.skillMap_);
+      skillMap_.Add(other.skillMap_);
       if (other.SkillDepotId != 0) {
         SkillDepotId = other.SkillDepotId;
       }
@@ -791,11 +791,11 @@ namespace NewProtos {
         CoreProudSkillLevel = other.CoreProudSkillLevel;
       }
       inherentProudSkillList_.Add(other.inherentProudSkillList_);
-      skillLevelMap_.MergeFrom(other.skillLevelMap_);
+      skillLevelMap_.Add(other.skillLevelMap_);
       if (other.ExpeditionState != global::NewProtos.AvatarExpeditionState.None) {
         ExpeditionState = other.ExpeditionState;
       }
-      proudSkillExtraLevelMap_.MergeFrom(other.proudSkillExtraLevelMap_);
+      proudSkillExtraLevelMap_.Add(other.proudSkillExtraLevelMap_);
       if (other.IsFocus != false) {
         IsFocus = other.IsFocus;
       }

@@ -1,9 +1,6 @@
-﻿using csharp_Protoshift.GameSession;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#if !PROXY_ONLY_SERVER
+
+using csharp_Protoshift.GameSession;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
@@ -66,27 +63,27 @@ namespace csharp_Protoshift.Commands
     //         public string Usage => $"show <conv_id> <packet_id>{Environment.NewLine}" +
     //             "packet_id can be gained from 'select' command.";
 
-    // #pragma warning disable CS1998 // 异步方法缺少 "await" 运算符，将以同步方式运行
-    //         public async Task HandleAsync(string[] args)
-    // #pragma warning restore CS1998 // 异步方法缺少 "await" 运算符，将以同步方式运行
-    //         {
-    //             uint conv = uint.Parse(args[0]);
-    //             int packetId = int.Parse(args[1]);
-    //             var packet = GameSessionDispatch.sessions[conv].QueryPacketRecordById(packetId);
-    //             Log.Info($"Packet {packetId}, {packet.packetTime:yyyy-MM-dd HH:mm:ss}: " +
-    //                 $"{packet.PacketName}, CmdId:{packet.CmdId} from " +
-    //                 $"{(packet.sentByClient ? "Client" : "Server")}", "ShowRecordCmd");
-    //             Log.Info($"Original body bin data: {Convert.ToHexString(packet.data)}", "ShowRecordCmd");
-    //             Log.Info($"Shifted body bin data: {Convert.ToHexString(packet.shiftedData)}", "ShowRecordCmd");
-    //             Log.Info($"Packet with old protocol: {packet.oldjsonContent}", "ShowRecordCmd");
-    //             Log.Info($"Packet with new protocol: {packet.newjsonContent}", "ShowRecordCmd");
-    //             if (packet.dataLostSign)
-    //             {
-    //                 Log.Warn("IMPORTANT: This packet is marked as having data lost and may caused SKILL ISSUEs.", "ShowRecordCmd");
-    //             }
-    //         }
-    //     }
-
+// #pragma warning disable CS1998 // 异步方法缺少 "await" 运算符，将以同步方式运行
+//         public async Task HandleAsync(string[] args)
+// #pragma warning restore CS1998 // 异步方法缺少 "await" 运算符，将以同步方式运行
+//         {
+//             uint conv = uint.Parse(args[0]);
+//             int packetId = int.Parse(args[1]);
+//             var packet = GameSessionDispatch.sessions[conv].QueryPacketRecordById(packetId);
+//             Log.Info($"Packet {packetId}, {packet.packetTime:yyyy-MM-dd HH:mm:ss}: " +
+//                 $"{packet.PacketName}, CmdId:{packet.CmdId} from " +
+//                 $"{(packet.sentByClient ? "Client" : "Server")}", "ShowRecordCmd");
+//             Log.Info($"Original body bin data: {Convert.ToHexString(packet.data)}", "ShowRecordCmd");
+//             Log.Info($"Shifted body bin data: {Convert.ToHexString(packet.shiftedData)}", "ShowRecordCmd");
+//             Log.Info($"Packet with old protocol: {packet.oldjsonContent}", "ShowRecordCmd");
+//             Log.Info($"Packet with new protocol: {packet.newjsonContent}", "ShowRecordCmd");
+//             if (packet.dataLostSign)
+//             {
+//                 Log.Warn("IMPORTANT: This packet is marked as having data lost and may caused SKILL ISSUEs.", "ShowRecordCmd");
+//             }
+//         }
+//     }
+        
     internal class QueryClientCmd : ICommandHandler
     {
         public string CommandName => "queryclient";
@@ -217,3 +214,4 @@ namespace csharp_Protoshift.Commands
         }
     }
 }
+#endif

@@ -263,7 +263,7 @@ namespace NewProtos {
       if (other.IsClearAll != false) {
         IsClearAll = other.IsClearAll;
       }
-      clearCurseMap_.MergeFrom(other.clearCurseMap_);
+      clearCurseMap_.Add(other.clearCurseMap_);
       if (other.CardId != 0) {
         CardId = other.CardId;
       }

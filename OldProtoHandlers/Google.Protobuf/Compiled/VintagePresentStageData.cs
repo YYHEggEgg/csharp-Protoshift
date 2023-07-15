@@ -290,7 +290,7 @@ namespace OldProtos {
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
       }
-      presentLevelMap_.MergeFrom(other.presentLevelMap_);
+      presentLevelMap_.Add(other.presentLevelMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

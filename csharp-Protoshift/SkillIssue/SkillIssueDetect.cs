@@ -65,6 +65,7 @@ namespace csharp_Protoshift.SkillIssue
         /// </summary>
         private static void HandlePacket(DelayHandleInfo handle)
         {
+#if !PROXY_ONLY_SERVER
             try
             {
                 string protoname = handle.protoname;
@@ -88,6 +89,9 @@ namespace csharp_Protoshift.SkillIssue
             {
                 Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssue-AsyncDetect");
             }
+#else
+            throw new NotImplementedException();
+#endif
         }
         #endregion
         

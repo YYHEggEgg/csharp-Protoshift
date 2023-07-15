@@ -395,7 +395,7 @@ namespace OldProtos {
       if (other.Damage != 0F) {
         Damage = other.Damage;
       }
-      gadgetCountMap_.MergeFrom(other.gadgetCountMap_);
+      gadgetCountMap_.Add(other.gadgetCountMap_);
       if (other.Score != 0) {
         Score = other.Score;
       }

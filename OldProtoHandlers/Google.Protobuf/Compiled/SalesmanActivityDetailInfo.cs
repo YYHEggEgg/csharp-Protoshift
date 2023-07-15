@@ -421,7 +421,7 @@ namespace OldProtos {
       if (other.LastDeliverTime != 0) {
         LastDeliverTime = other.LastDeliverTime;
       }
-      selectedRewardIdMap_.MergeFrom(other.selectedRewardIdMap_);
+      selectedRewardIdMap_.Add(other.selectedRewardIdMap_);
       if (other.DeliverCount != 0) {
         DeliverCount = other.DeliverCount;
       }

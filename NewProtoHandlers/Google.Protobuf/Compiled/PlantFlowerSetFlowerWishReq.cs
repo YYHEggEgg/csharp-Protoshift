@@ -211,7 +211,7 @@ namespace NewProtos {
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
       }
-      flowerNumMap_.MergeFrom(other.flowerNumMap_);
+      flowerNumMap_.Add(other.flowerNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

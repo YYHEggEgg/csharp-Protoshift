@@ -10,6 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="3.0.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.23.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\csharp-Protoshift\csharp-Protoshift.csproj" />
     <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
     <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />

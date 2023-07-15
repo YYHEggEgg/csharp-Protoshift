@@ -206,7 +206,7 @@ namespace OldProtos {
       if (other.ClientRedDotTimestamp != 0) {
         ClientRedDotTimestamp = other.ClientRedDotTimestamp;
       }
-      h5ActivityMap_.MergeFrom(other.h5ActivityMap_);
+      h5ActivityMap_.Add(other.h5ActivityMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -205,7 +205,7 @@ namespace OldProtos {
       if (other.GalleryId != 0) {
         GalleryId = other.GalleryId;
       }
-      uidScoreMap_.MergeFrom(other.uidScoreMap_);
+      uidScoreMap_.Add(other.uidScoreMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

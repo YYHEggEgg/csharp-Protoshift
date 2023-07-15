@@ -40,7 +40,7 @@ message GCGDuel {
   repeated GCGPlayerField field_list = 5;
   repeated Unk3300_ADHENCIFKNI Unk3300_CDCMBOKBLAK = 1987;
   GCGGameBusinessType business_type = 13;
-  repeated GCGPVEIntention intention_list = 2;
+  repeated GCGPVEIntention intetion_list = 2;
   repeated GCGDuelChallenge challenge_list = 1617;
   repeated GCGCard history_card_list = 1872;
   uint32 round = 11;

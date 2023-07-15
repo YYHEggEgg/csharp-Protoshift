@@ -447,9 +447,9 @@ namespace NewProtos {
       if (other.AvatarId != 0) {
         AvatarId = other.AvatarId;
       }
-      propMap_.MergeFrom(other.propMap_);
+      propMap_.Add(other.propMap_);
       talentIdList_.Add(other.talentIdList_);
-      fightPropMap_.MergeFrom(other.fightPropMap_);
+      fightPropMap_.Add(other.fightPropMap_);
       if (other.SkillDepotId != 0) {
         SkillDepotId = other.SkillDepotId;
       }
@@ -457,8 +457,8 @@ namespace NewProtos {
         CoreProudSkillLevel = other.CoreProudSkillLevel;
       }
       inherentProudSkillList_.Add(other.inherentProudSkillList_);
-      skillLevelMap_.MergeFrom(other.skillLevelMap_);
-      proudSkillExtraLevelMap_.MergeFrom(other.proudSkillExtraLevelMap_);
+      skillLevelMap_.Add(other.skillLevelMap_);
+      proudSkillExtraLevelMap_.Add(other.proudSkillExtraLevelMap_);
       equipList_.Add(other.equipList_);
       if (other.fetterInfo_ != null) {
         if (fetterInfo_ == null) {

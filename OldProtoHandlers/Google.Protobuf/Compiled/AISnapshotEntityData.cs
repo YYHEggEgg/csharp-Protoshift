@@ -477,7 +477,7 @@ namespace OldProtos {
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }
-      hittingAvatars_.MergeFrom(other.hittingAvatars_);
+      hittingAvatars_.Add(other.hittingAvatars_);
       if (other.DistanceToPlayer != 0F) {
         DistanceToPlayer = other.DistanceToPlayer;
       }
