@@ -49,3 +49,5 @@
 /csharp-Protoshift-Replay/bin
 /csharp-Protoshift-Replay/obj
 /csharp-Protoshift-Replay/logs
+/OldProtoHandlers/Google.Protobuf.3.4
+/csharp-Protoshift/windy_config.json

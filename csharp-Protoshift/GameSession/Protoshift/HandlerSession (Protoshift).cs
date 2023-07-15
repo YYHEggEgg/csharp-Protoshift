@@ -1,4 +1,6 @@
-﻿using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
+﻿#if !PROXY_ONLY_SERVER
+
+using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
 using Funny.Crypto;
@@ -8,6 +10,7 @@ using Org.BouncyCastle.Asn1.X500;
 using System.Collections.Concurrent;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Net;
 using System.Security.Cryptography;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
@@ -20,8 +23,10 @@ namespace csharp_Protoshift.GameSession
         /// XOR key used to decrypt packet. Usually have a length of 4096.
         /// </summary>
         public byte[] XorKey { get; protected set; }
+        public PacketRecord[] records;
         public uint SessionId { get; private set; }
-
+        public IPEndPoint remoteIp { get; set; }
+        
         public const int Recommended_Protoshift_maximum_time_ms = 5;
 
         /// <summary>
@@ -32,6 +37,8 @@ namespace csharp_Protoshift.GameSession
         /// Whether output packets in the console.
         /// </summary>
         public bool Verbose { get; set; }
+        public int packetCounts { get; protected set; }
+        public int PacketRecordLimits { get; }
 
 #if RECORD_ALL_PKTS_FOR_REPLAY
         public ConcurrentBag<PacketRecord> PacketRecords { get; private set; } = new();
@@ -49,7 +56,7 @@ namespace csharp_Protoshift.GameSession
             public int packetSize { get; set; }
         }
 
-        private static readonly Int64 nanosecPerTick = (1000L*1000L*1000L) / Stopwatch.Frequency;
+        private static readonly Int64 nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
         private void SubmitTimeRecord(string protoname, bool isNewCmdid, Int64 handleMilliseconds, Int64 handleTicks, int packetSize)
         {
             TimeRecords.Add(new TimeRecord
@@ -73,7 +80,7 @@ namespace csharp_Protoshift.GameSession
                 package.SaveAs(new FileInfo(filePath));
             }
         }
-        #endregion 
+        #endregion
 
         /// <summary>
         /// Initializer
@@ -191,9 +198,9 @@ namespace csharp_Protoshift.GameSession
         List<string> unordered_messages = new List<string>
         {
             // "GetPlayerTokenReq", "GetPlayerTokenRsp", "PlayerLoginRsp", "PingReq", "PingRsp", 
-            "GetActivityInfoRsp", "AchievementUpdateNotify", 
-            "BattlePassMissionUpdateNotify", "CombatInvocationsNotify", "ActivityInfoNotify", 
-            "BattlePassMissionUpdateNotify", "PlayerStoreNotify", "AvatarDataNotify", 
+            "GetActivityInfoRsp", "AchievementUpdateNotify",
+            "BattlePassMissionUpdateNotify", "CombatInvocationsNotify", "ActivityInfoNotify",
+            "BattlePassMissionUpdateNotify", "PlayerStoreNotify", "AvatarDataNotify",
             "BattlePassAllDataNotify", "AvatarExpeditionDataNotify", 
             // "UnionCmdNotify", "CombatInvocationsNotify", 
             // "AbilityInvocationFailNotify", "AbilityInvocationsNotify",
@@ -249,7 +256,7 @@ namespace csharp_Protoshift.GameSession
                     : OldProtos.AskCmdId.GetProtonameFromCmdId(cmdid);
             ushort shifted_cmdid = (ushort)(isNewCmdid ? ShiftCmdId.NewShiftToOld(cmdid) : ShiftCmdId.OldShiftToNew(cmdid));
 
-            if (isNewCmdid) 
+            if (isNewCmdid)
                 shifted_body = ProtoshiftDispatch.NewShiftToOld(cmdid, null, null, null, packet, body_offset, (int)body_length);
             else shifted_body = ProtoshiftDispatch.OldShiftToNew(cmdid, null, null, null, packet, body_offset, (int)body_length);
             if (isNewCmdid && cmdid == NewProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenReq"))
@@ -259,7 +266,7 @@ namespace csharp_Protoshift.GameSession
 
             #region Push to Skill issue detect
             if (isNewCmdid)
-                SkillIssueDetect.StartHandlePacket(protoname, 
+                SkillIssueDetect.StartHandlePacket(protoname,
                     shifted_body, 0, shifted_body.Length,
                     packet, body_offset, (int)body_length);
             else
@@ -320,6 +327,42 @@ namespace csharp_Protoshift.GameSession
         }
         #endregion
 
+        #region Packet Create
+        public byte[] ConstructPacket(bool isNewCmdid, string protoname, byte[]? packetHead, byte[] packetBody)
+        {
+            var cmdid = isNewCmdid 
+                ? NewProtos.AskCmdId.GetCmdIdFromProtoname(protoname)
+                : OldProtos.AskCmdId.GetCmdIdFromProtoname(protoname);
+            var head_length = packetHead?.Length ?? 0;
+            var body_length = packetBody.Length;
+            int head_offset = 2 + 2 + 2 + 4;
+            int body_offset = head_offset + head_length;
+            int magic_end_offset = body_offset + body_length;
+            int rtnpacketLength = magic_end_offset + 2;
+
+            byte[] rtn = new byte[rtnpacketLength];
+            rtn.SetUInt16(0, 0x4567);
+            rtn.SetUInt16(2, (ushort)cmdid);
+            rtn.SetUInt16(4, (ushort)head_length);
+            rtn.SetUInt32(6, (uint)body_length);
+
+            if (packetHead != null) Buffer.BlockCopy(packetHead, 0, rtn, head_offset, packetHead.Length);
+            Buffer.BlockCopy(packetBody, 0, rtn, body_offset, body_length);
+            rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
+
+            if (Verbose)
+            {
+                Log.Info($"Create packet {protoname} with " +
+                    $"CmdId:{NewProtos.AskCmdId.GetCmdIdFromProtoname(protoname)} " +
+                    $"for {(isNewCmdid ? "Client" : "Server")}:---{Convert.ToHexString(rtn)}",
+                $"PacketConstructor({SessionId})");
+            }
+
+            XorDecrypt(ref rtn);
+            return rtn;
+        }
+        #endregion
+
         #region Crypto
         private void XorDecrypt(ref byte[] encrypted, int offset = 0, int length = -1, bool fallbackToDispatchKey = false)
         {
@@ -329,6 +372,32 @@ namespace csharp_Protoshift.GameSession
             {
                 if (!fallbackToDispatchKey) encrypted[i] = (byte)(encrypted[i] ^ XorKey[i % XorKey.Length]);
                 else encrypted[i] = (byte)(encrypted[i] ^ Resources.dispatchKey[i % Resources.dispatchKey.Length]);
+            }
+        }
+
+        static readonly JsonSerializer serializer = new();
+
+        public static string ConvertJsonString(string str)
+        {
+            //格式化json字符串
+            TextReader tr = new StringReader(str);
+            JsonTextReader jtr = new(tr);
+            object? obj = serializer.Deserialize(jtr);
+            if (obj != null)
+            {
+                StringWriter textWriter = new();
+                JsonTextWriter jsonWriter = new(textWriter)
+                {
+                    Formatting = Formatting.Indented,
+                    Indentation = 4,
+                    IndentChar = ' '
+                };
+                serializer.Serialize(jsonWriter, obj);
+                return textWriter.ToString();
+            }
+            else
+            {
+                return str;
             }
         }
 
@@ -350,3 +419,4 @@ namespace csharp_Protoshift.GameSession
         #endregion
     }
 }
+#endif
