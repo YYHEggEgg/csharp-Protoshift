@@ -1,4 +1,4 @@
-﻿#if !PROXY_ONLY_SERVER
+﻿#if PROXY_ONLY_SERVER
 
 using System;
 using System.Collections.Generic;
@@ -23,15 +23,11 @@ namespace csharp_Protoshift.GameSession
         public int data_offset;
         public int data_length;
         /// <summary>
-        /// Another version of body bin data (Proto shifted)
-        /// </summary>
-        public byte[] shiftedData;
-        /// <summary>
         /// The time of packet creation. Uses <c>DateTime.Now</c>.
         /// </summary>
         public DateTime packetTime;
 
-        public PacketRecord(string packetName, int cmdId, bool sentByClient, byte[] data, int data_offset, int data_length, byte[] shiftedData, DateTime packetTime)
+        public PacketRecord(string? packetName, int cmdId, bool sentByClient, byte[]? data, int data_offset, int data_length)
         {
             PacketName = packetName ?? throw new ArgumentNullException(nameof(packetName));
             CmdId = cmdId;
@@ -39,8 +35,7 @@ namespace csharp_Protoshift.GameSession
             this.data = data ?? throw new ArgumentNullException(nameof(data));
             this.data_offset = data_offset;
             this.data_length = data_length;
-            this.shiftedData = shiftedData ?? throw new ArgumentNullException(nameof(shiftedData));
-            this.packetTime = packetTime;
+            this.packetTime = DateTime.Now;
         }
     }
 }
