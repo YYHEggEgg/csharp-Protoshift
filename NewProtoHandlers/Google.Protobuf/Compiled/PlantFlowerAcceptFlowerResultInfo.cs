@@ -222,8 +222,8 @@ namespace NewProtos {
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
-      unk3300PALEJEDIAJP_.MergeFrom(other.unk3300PALEJEDIAJP_);
-      unk3300ILAADDCOPKE_.MergeFrom(other.unk3300ILAADDCOPKE_);
+      unk3300PALEJEDIAJP_.Add(other.unk3300PALEJEDIAJP_);
+      unk3300ILAADDCOPKE_.Add(other.unk3300ILAADDCOPKE_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

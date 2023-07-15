@@ -150,24 +150,10 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Velocity {
-      get { return HasVelocity ? (float) moveParams_ : 0F; }
+      get { return moveParamsCase_ == MoveParamsOneofCase.Velocity ? (float) moveParams_ : 0F; }
       set {
         moveParams_ = value;
         moveParamsCase_ = MoveParamsOneofCase.Velocity;
-      }
-    }
-    /// <summary>Gets whether the "velocity" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasVelocity {
-      get { return moveParamsCase_ == MoveParamsOneofCase.Velocity; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "velocity" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearVelocity() {
-      if (HasVelocity) {
-        ClearMoveParams();
       }
     }
 
@@ -176,24 +162,10 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Time {
-      get { return HasTime ? (float) moveParams_ : 0F; }
+      get { return moveParamsCase_ == MoveParamsOneofCase.Time ? (float) moveParams_ : 0F; }
       set {
         moveParams_ = value;
         moveParamsCase_ = MoveParamsOneofCase.Time;
-      }
-    }
-    /// <summary>Gets whether the "time" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasTime {
-      get { return moveParamsCase_ == MoveParamsOneofCase.Time; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "time" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearTime() {
-      if (HasTime) {
-        ClearMoveParams();
       }
     }
 
@@ -311,8 +283,8 @@ namespace NewProtos {
       if (position_ != null) hash ^= Position.GetHashCode();
       if (ArriveRange != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(ArriveRange);
       if (HasReachEvent != false) hash ^= HasReachEvent.GetHashCode();
-      if (HasVelocity) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Velocity);
-      if (HasTime) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Time);
+      if (moveParamsCase_ == MoveParamsOneofCase.Velocity) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Velocity);
+      if (moveParamsCase_ == MoveParamsOneofCase.Time) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Time);
       if (rotateParamsCase_ == RotateParamsOneofCase.Rotation) hash ^= Rotation.GetHashCode();
       if (rotateParamsCase_ == RotateParamsOneofCase.RotationSpeed) hash ^= RotationSpeed.GetHashCode();
       if (rotateParamsCase_ == RotateParamsOneofCase.AxisSpeed) hash ^= AxisSpeed.GetHashCode();
@@ -348,11 +320,11 @@ namespace NewProtos {
         output.WriteRawTag(24);
         output.WriteBool(HasReachEvent);
       }
-      if (HasVelocity) {
+      if (moveParamsCase_ == MoveParamsOneofCase.Velocity) {
         output.WriteRawTag(93);
         output.WriteFloat(Velocity);
       }
-      if (HasTime) {
+      if (moveParamsCase_ == MoveParamsOneofCase.Time) {
         output.WriteRawTag(101);
         output.WriteFloat(Time);
       }
@@ -390,11 +362,11 @@ namespace NewProtos {
         output.WriteRawTag(24);
         output.WriteBool(HasReachEvent);
       }
-      if (HasVelocity) {
+      if (moveParamsCase_ == MoveParamsOneofCase.Velocity) {
         output.WriteRawTag(93);
         output.WriteFloat(Velocity);
       }
-      if (HasTime) {
+      if (moveParamsCase_ == MoveParamsOneofCase.Time) {
         output.WriteRawTag(101);
         output.WriteFloat(Time);
       }
@@ -429,10 +401,10 @@ namespace NewProtos {
       if (HasReachEvent != false) {
         size += 1 + 1;
       }
-      if (HasVelocity) {
+      if (moveParamsCase_ == MoveParamsOneofCase.Velocity) {
         size += 1 + 4;
       }
-      if (HasTime) {
+      if (moveParamsCase_ == MoveParamsOneofCase.Time) {
         size += 1 + 4;
       }
       if (rotateParamsCase_ == RotateParamsOneofCase.Rotation) {

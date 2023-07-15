@@ -183,7 +183,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      worldPropMap_.MergeFrom(other.worldPropMap_);
+      worldPropMap_.Add(other.worldPropMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

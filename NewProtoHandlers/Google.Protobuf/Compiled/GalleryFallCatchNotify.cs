@@ -327,7 +327,7 @@ namespace NewProtos {
       if (other.IsGround != false) {
         IsGround = other.IsGround;
       }
-      ballCatchCountMap_.MergeFrom(other.ballCatchCountMap_);
+      ballCatchCountMap_.Add(other.ballCatchCountMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

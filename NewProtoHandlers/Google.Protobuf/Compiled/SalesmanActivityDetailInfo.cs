@@ -415,7 +415,7 @@ namespace NewProtos {
       if (other.Status != global::NewProtos.SalesmanStatusType.None) {
         Status = other.Status;
       }
-      selectedRewardIdMap_.MergeFrom(other.selectedRewardIdMap_);
+      selectedRewardIdMap_.Add(other.selectedRewardIdMap_);
       if (other.Unk3300DIJFOCBGIAM != 0) {
         Unk3300DIJFOCBGIAM = other.Unk3300DIJFOCBGIAM;
       }

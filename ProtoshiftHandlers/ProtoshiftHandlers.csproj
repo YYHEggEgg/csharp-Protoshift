@@ -18,17 +18,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.3" />
-    <PackageReference Include="Google.Protobuf" Version="3.23.3" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
     <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="ProtoDispatch\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="3.0.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.23.4" />
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

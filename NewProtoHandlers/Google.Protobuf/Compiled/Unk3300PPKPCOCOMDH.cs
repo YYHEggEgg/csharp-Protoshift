@@ -121,24 +121,10 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string GmMsg {
-      get { return HasGmMsg ? (string) detail_ : ""; }
+      get { return detailCase_ == DetailOneofCase.GmMsg ? (string) detail_ : ""; }
       set {
         detail_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         detailCase_ = DetailOneofCase.GmMsg;
-      }
-    }
-    /// <summary>Gets whether the "gm_msg" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasGmMsg {
-      get { return detailCase_ == DetailOneofCase.GmMsg; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "gm_msg" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearGmMsg() {
-      if (HasGmMsg) {
-        ClearDetail();
       }
     }
 
@@ -204,7 +190,7 @@ namespace NewProtos {
       int hash = 1;
       if (ControllerId != 0) hash ^= ControllerId.GetHashCode();
       if (OpSeq != 0) hash ^= OpSeq.GetHashCode();
-      if (HasGmMsg) hash ^= GmMsg.GetHashCode();
+      if (detailCase_ == DetailOneofCase.GmMsg) hash ^= GmMsg.GetHashCode();
       if (detailCase_ == DetailOneofCase.Duel) hash ^= Duel.GetHashCode();
       hash ^= (int) detailCase_;
       if (_unknownFields != null) {
@@ -225,7 +211,7 @@ namespace NewProtos {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HasGmMsg) {
+      if (detailCase_ == DetailOneofCase.GmMsg) {
         output.WriteRawTag(18);
         output.WriteString(GmMsg);
       }
@@ -251,7 +237,7 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HasGmMsg) {
+      if (detailCase_ == DetailOneofCase.GmMsg) {
         output.WriteRawTag(18);
         output.WriteString(GmMsg);
       }
@@ -283,7 +269,7 @@ namespace NewProtos {
       if (OpSeq != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(OpSeq);
       }
-      if (HasGmMsg) {
+      if (detailCase_ == DetailOneofCase.GmMsg) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(GmMsg);
       }
       if (detailCase_ == DetailOneofCase.Duel) {

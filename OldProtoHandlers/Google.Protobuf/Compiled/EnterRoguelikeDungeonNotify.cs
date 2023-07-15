@@ -553,7 +553,7 @@ namespace OldProtos {
         IsFirstEnter = other.IsFirstEnter;
       }
       exploredCellList_.Add(other.exploredCellList_);
-      cellInfoMap_.MergeFrom(other.cellInfoMap_);
+      cellInfoMap_.Add(other.cellInfoMap_);
       if (other.DungeonId != 0) {
         DungeonId = other.DungeonId;
       }

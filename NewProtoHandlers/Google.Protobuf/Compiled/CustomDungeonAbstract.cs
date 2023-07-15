@@ -284,7 +284,7 @@ namespace NewProtos {
       if (other.LastPublishTime != 0) {
         LastPublishTime = other.LastPublishTime;
       }
-      brickStatisticsMap_.MergeFrom(other.brickStatisticsMap_);
+      brickStatisticsMap_.Add(other.brickStatisticsMap_);
       if (other.FirstPublishTime != 0) {
         FirstPublishTime = other.FirstPublishTime;
       }

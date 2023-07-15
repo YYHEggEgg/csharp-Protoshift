@@ -203,7 +203,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      hpFullTimeMap_.MergeFrom(other.hpFullTimeMap_);
+      hpFullTimeMap_.Add(other.hpFullTimeMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }

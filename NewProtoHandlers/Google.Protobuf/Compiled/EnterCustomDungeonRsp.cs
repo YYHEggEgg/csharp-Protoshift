@@ -261,7 +261,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      roomCostMap_.MergeFrom(other.roomCostMap_);
+      roomCostMap_.Add(other.roomCostMap_);
       if (other.EnterType != global::NewProtos.EnterCustomDungeonType.None) {
         EnterType = other.EnterType;
       }

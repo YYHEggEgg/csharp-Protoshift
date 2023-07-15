@@ -207,7 +207,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      uidBriefMap_.MergeFrom(other.uidBriefMap_);
+      uidBriefMap_.Add(other.uidBriefMap_);
       if (other.GalleryId != 0) {
         GalleryId = other.GalleryId;
       }

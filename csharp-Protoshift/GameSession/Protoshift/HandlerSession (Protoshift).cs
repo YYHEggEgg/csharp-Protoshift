@@ -1,4 +1,4 @@
-Ôªø#if !PROXY_ONLY_SERVER
+#if !PROXY_ONLY_SERVER
 
 using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
 using csharp_Protoshift.resLoader;
@@ -379,7 +379,7 @@ namespace csharp_Protoshift.GameSession
 
         public static string ConvertJsonString(string str)
         {
-            //Ê†ºÂºèÂåñjsonÂ≠óÁ¨¶‰∏≤
+            //∏Ò ΩªØjson◊÷∑˚¥Æ
             TextReader tr = new StringReader(str);
             JsonTextReader jtr = new(tr);
             object? obj = serializer.Deserialize(jtr);

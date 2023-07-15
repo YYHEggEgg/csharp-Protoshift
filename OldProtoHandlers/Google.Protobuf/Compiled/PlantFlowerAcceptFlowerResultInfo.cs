@@ -219,11 +219,11 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      unacceptFlowerNumMap_.MergeFrom(other.unacceptFlowerNumMap_);
+      unacceptFlowerNumMap_.Add(other.unacceptFlowerNumMap_);
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
-      acceptFlowerNumMap_.MergeFrom(other.acceptFlowerNumMap_);
+      acceptFlowerNumMap_.Add(other.acceptFlowerNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

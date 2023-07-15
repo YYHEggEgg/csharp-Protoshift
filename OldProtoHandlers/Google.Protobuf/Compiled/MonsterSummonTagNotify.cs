@@ -203,7 +203,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      summonTagMap_.MergeFrom(other.summonTagMap_);
+      summonTagMap_.Add(other.summonTagMap_);
       if (other.MonsterEntityId != 0) {
         MonsterEntityId = other.MonsterEntityId;
       }

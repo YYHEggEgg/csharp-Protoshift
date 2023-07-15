@@ -286,7 +286,7 @@ namespace NewProtos {
       if (other.Nickname.Length != 0) {
         Nickname = other.Nickname;
       }
-      giftNumMap_.MergeFrom(other.giftNumMap_);
+      giftNumMap_.Add(other.giftNumMap_);
       if (other.RemarkName.Length != 0) {
         RemarkName = other.RemarkName;
       }

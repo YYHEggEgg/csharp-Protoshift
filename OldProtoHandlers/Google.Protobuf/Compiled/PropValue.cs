@@ -120,24 +120,10 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Ival {
-      get { return HasIval ? (long) value_ : 0L; }
+      get { return valueCase_ == ValueOneofCase.Ival ? (long) value_ : 0L; }
       set {
         value_ = value;
         valueCase_ = ValueOneofCase.Ival;
-      }
-    }
-    /// <summary>Gets whether the "ival" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasIval {
-      get { return valueCase_ == ValueOneofCase.Ival; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "ival" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearIval() {
-      if (HasIval) {
-        ClearValue();
       }
     }
 
@@ -146,24 +132,10 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Fval {
-      get { return HasFval ? (float) value_ : 0F; }
+      get { return valueCase_ == ValueOneofCase.Fval ? (float) value_ : 0F; }
       set {
         value_ = value;
         valueCase_ = ValueOneofCase.Fval;
-      }
-    }
-    /// <summary>Gets whether the "fval" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasFval {
-      get { return valueCase_ == ValueOneofCase.Fval; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "fval" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearFval() {
-      if (HasFval) {
-        ClearValue();
       }
     }
 
@@ -217,8 +189,8 @@ namespace OldProtos {
       int hash = 1;
       if (Type != 0) hash ^= Type.GetHashCode();
       if (Val != 0L) hash ^= Val.GetHashCode();
-      if (HasIval) hash ^= Ival.GetHashCode();
-      if (HasFval) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Fval);
+      if (valueCase_ == ValueOneofCase.Ival) hash ^= Ival.GetHashCode();
+      if (valueCase_ == ValueOneofCase.Fval) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Fval);
       hash ^= (int) valueCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -242,11 +214,11 @@ namespace OldProtos {
         output.WriteRawTag(8);
         output.WriteUInt32(Type);
       }
-      if (HasIval) {
+      if (valueCase_ == ValueOneofCase.Ival) {
         output.WriteRawTag(16);
         output.WriteInt64(Ival);
       }
-      if (HasFval) {
+      if (valueCase_ == ValueOneofCase.Fval) {
         output.WriteRawTag(29);
         output.WriteFloat(Fval);
       }
@@ -268,11 +240,11 @@ namespace OldProtos {
         output.WriteRawTag(8);
         output.WriteUInt32(Type);
       }
-      if (HasIval) {
+      if (valueCase_ == ValueOneofCase.Ival) {
         output.WriteRawTag(16);
         output.WriteInt64(Ival);
       }
-      if (HasFval) {
+      if (valueCase_ == ValueOneofCase.Fval) {
         output.WriteRawTag(29);
         output.WriteFloat(Fval);
       }
@@ -296,10 +268,10 @@ namespace OldProtos {
       if (Val != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Val);
       }
-      if (HasIval) {
+      if (valueCase_ == ValueOneofCase.Ival) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(Ival);
       }
-      if (HasFval) {
+      if (valueCase_ == ValueOneofCase.Fval) {
         size += 1 + 4;
       }
       if (_unknownFields != null) {

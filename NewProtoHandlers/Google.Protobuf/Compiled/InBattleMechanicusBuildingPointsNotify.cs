@@ -182,7 +182,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      playerBuildingPointsMap_.MergeFrom(other.playerBuildingPointsMap_);
+      playerBuildingPointsMap_.Add(other.playerBuildingPointsMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

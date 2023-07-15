@@ -284,8 +284,8 @@ namespace NewProtos {
       if (other.Unk3300JJDHKJGDEKJ != 0) {
         Unk3300JJDHKJGDEKJ = other.Unk3300JJDHKJGDEKJ;
       }
-      robotNumMap_.MergeFrom(other.robotNumMap_);
-      haveRewardRobotNumMap_.MergeFrom(other.haveRewardRobotNumMap_);
+      robotNumMap_.Add(other.robotNumMap_);
+      haveRewardRobotNumMap_.Add(other.haveRewardRobotNumMap_);
       haveGetRobotList_.Add(other.haveGetRobotList_);
       gachaStageDataList_.Add(other.gachaStageDataList_);
       if (other.Unk3300IGGPBEOCNGI != 0) {

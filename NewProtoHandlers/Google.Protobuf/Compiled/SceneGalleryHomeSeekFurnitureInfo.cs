@@ -258,7 +258,7 @@ namespace NewProtos {
       if (other.Unk3300ENKOGPIEHFD != 0) {
         Unk3300ENKOGPIEHFD = other.Unk3300ENKOGPIEHFD;
       }
-      playerScoreMap_.MergeFrom(other.playerScoreMap_);
+      playerScoreMap_.Add(other.playerScoreMap_);
       if (other.Unk3300LGEAPLJCJFH != 0) {
         Unk3300LGEAPLJCJFH = other.Unk3300LGEAPLJCJFH;
       }

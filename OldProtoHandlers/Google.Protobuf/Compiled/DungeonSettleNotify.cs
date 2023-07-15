@@ -738,7 +738,7 @@ namespace OldProtos {
       if (other.DungeonId != 0) {
         DungeonId = other.DungeonId;
       }
-      strengthenPointDataMap_.MergeFrom(other.strengthenPointDataMap_);
+      strengthenPointDataMap_.Add(other.strengthenPointDataMap_);
       exhibitionInfoList_.Add(other.exhibitionInfoList_);
       if (other.CreatePlayerUid != 0) {
         CreatePlayerUid = other.CreatePlayerUid;
@@ -753,7 +753,7 @@ namespace OldProtos {
       if (other.IsSuccess != false) {
         IsSuccess = other.IsSuccess;
       }
-      settleShow_.MergeFrom(other.settleShow_);
+      settleShow_.Add(other.settleShow_);
       switch (other.DetailCase) {
         case DetailOneofCase.TowerLevelEndNotify:
           if (TowerLevelEndNotify == null) {

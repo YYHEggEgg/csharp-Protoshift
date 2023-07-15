@@ -117,24 +117,10 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint TargetUid {
-      get { return HasTargetUid ? (uint) playerId_ : 0; }
+      get { return playerIdCase_ == PlayerIdOneofCase.TargetUid ? (uint) playerId_ : 0; }
       set {
         playerId_ = value;
         playerIdCase_ = PlayerIdOneofCase.TargetUid;
-      }
-    }
-    /// <summary>Gets whether the "target_uid" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasTargetUid {
-      get { return playerIdCase_ == PlayerIdOneofCase.TargetUid; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "target_uid" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearTargetUid() {
-      if (HasTargetUid) {
-        ClearPlayerId();
       }
     }
 
@@ -143,24 +129,10 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string OnlineId {
-      get { return HasOnlineId ? (string) playerId_ : ""; }
+      get { return playerIdCase_ == PlayerIdOneofCase.OnlineId ? (string) playerId_ : ""; }
       set {
         playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         playerIdCase_ = PlayerIdOneofCase.OnlineId;
-      }
-    }
-    /// <summary>Gets whether the "online_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasOnlineId {
-      get { return playerIdCase_ == PlayerIdOneofCase.OnlineId; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "online_id" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearOnlineId() {
-      if (HasOnlineId) {
-        ClearPlayerId();
       }
     }
 
@@ -169,24 +141,10 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string PsnId {
-      get { return HasPsnId ? (string) playerId_ : ""; }
+      get { return playerIdCase_ == PlayerIdOneofCase.PsnId ? (string) playerId_ : ""; }
       set {
         playerId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         playerIdCase_ = PlayerIdOneofCase.PsnId;
-      }
-    }
-    /// <summary>Gets whether the "psn_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasPsnId {
-      get { return playerIdCase_ == PlayerIdOneofCase.PsnId; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "psn_id" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearPsnId() {
-      if (HasPsnId) {
-        ClearPlayerId();
       }
     }
 
@@ -240,9 +198,9 @@ namespace OldProtos {
     public override int GetHashCode() {
       int hash = 1;
       if (IsOnlineId != false) hash ^= IsOnlineId.GetHashCode();
-      if (HasTargetUid) hash ^= TargetUid.GetHashCode();
-      if (HasOnlineId) hash ^= OnlineId.GetHashCode();
-      if (HasPsnId) hash ^= PsnId.GetHashCode();
+      if (playerIdCase_ == PlayerIdOneofCase.TargetUid) hash ^= TargetUid.GetHashCode();
+      if (playerIdCase_ == PlayerIdOneofCase.OnlineId) hash ^= OnlineId.GetHashCode();
+      if (playerIdCase_ == PlayerIdOneofCase.PsnId) hash ^= PsnId.GetHashCode();
       hash ^= (int) playerIdCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -262,15 +220,15 @@ namespace OldProtos {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HasPsnId) {
+      if (playerIdCase_ == PlayerIdOneofCase.PsnId) {
         output.WriteRawTag(18);
         output.WriteString(PsnId);
       }
-      if (HasOnlineId) {
+      if (playerIdCase_ == PlayerIdOneofCase.OnlineId) {
         output.WriteRawTag(58);
         output.WriteString(OnlineId);
       }
-      if (HasTargetUid) {
+      if (playerIdCase_ == PlayerIdOneofCase.TargetUid) {
         output.WriteRawTag(72);
         output.WriteUInt32(TargetUid);
       }
@@ -288,15 +246,15 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HasPsnId) {
+      if (playerIdCase_ == PlayerIdOneofCase.PsnId) {
         output.WriteRawTag(18);
         output.WriteString(PsnId);
       }
-      if (HasOnlineId) {
+      if (playerIdCase_ == PlayerIdOneofCase.OnlineId) {
         output.WriteRawTag(58);
         output.WriteString(OnlineId);
       }
-      if (HasTargetUid) {
+      if (playerIdCase_ == PlayerIdOneofCase.TargetUid) {
         output.WriteRawTag(72);
         output.WriteUInt32(TargetUid);
       }
@@ -317,13 +275,13 @@ namespace OldProtos {
       if (IsOnlineId != false) {
         size += 1 + 1;
       }
-      if (HasTargetUid) {
+      if (playerIdCase_ == PlayerIdOneofCase.TargetUid) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
       }
-      if (HasOnlineId) {
+      if (playerIdCase_ == PlayerIdOneofCase.OnlineId) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(OnlineId);
       }
-      if (HasPsnId) {
+      if (playerIdCase_ == PlayerIdOneofCase.PsnId) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(PsnId);
       }
       if (_unknownFields != null) {

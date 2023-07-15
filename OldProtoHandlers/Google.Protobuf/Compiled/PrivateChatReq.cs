@@ -113,24 +113,10 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Text {
-      get { return HasText ? (string) content_ : ""; }
+      get { return contentCase_ == ContentOneofCase.Text ? (string) content_ : ""; }
       set {
         content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         contentCase_ = ContentOneofCase.Text;
-      }
-    }
-    /// <summary>Gets whether the "text" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasText {
-      get { return contentCase_ == ContentOneofCase.Text; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "text" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearText() {
-      if (HasText) {
-        ClearContent();
       }
     }
 
@@ -139,24 +125,10 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Icon {
-      get { return HasIcon ? (uint) content_ : 0; }
+      get { return contentCase_ == ContentOneofCase.Icon ? (uint) content_ : 0; }
       set {
         content_ = value;
         contentCase_ = ContentOneofCase.Icon;
-      }
-    }
-    /// <summary>Gets whether the "icon" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasIcon {
-      get { return contentCase_ == ContentOneofCase.Icon; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "icon" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearIcon() {
-      if (HasIcon) {
-        ClearContent();
       }
     }
 
@@ -208,8 +180,8 @@ namespace OldProtos {
     public override int GetHashCode() {
       int hash = 1;
       if (TargetUid != 0) hash ^= TargetUid.GetHashCode();
-      if (HasText) hash ^= Text.GetHashCode();
-      if (HasIcon) hash ^= Icon.GetHashCode();
+      if (contentCase_ == ContentOneofCase.Text) hash ^= Text.GetHashCode();
+      if (contentCase_ == ContentOneofCase.Icon) hash ^= Icon.GetHashCode();
       hash ^= (int) contentCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -229,11 +201,11 @@ namespace OldProtos {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HasText) {
+      if (contentCase_ == ContentOneofCase.Text) {
         output.WriteRawTag(26);
         output.WriteString(Text);
       }
-      if (HasIcon) {
+      if (contentCase_ == ContentOneofCase.Icon) {
         output.WriteRawTag(32);
         output.WriteUInt32(Icon);
       }
@@ -251,11 +223,11 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HasText) {
+      if (contentCase_ == ContentOneofCase.Text) {
         output.WriteRawTag(26);
         output.WriteString(Text);
       }
-      if (HasIcon) {
+      if (contentCase_ == ContentOneofCase.Icon) {
         output.WriteRawTag(32);
         output.WriteUInt32(Icon);
       }
@@ -276,10 +248,10 @@ namespace OldProtos {
       if (TargetUid != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TargetUid);
       }
-      if (HasText) {
+      if (contentCase_ == ContentOneofCase.Text) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Text);
       }
-      if (HasIcon) {
+      if (contentCase_ == ContentOneofCase.Icon) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Icon);
       }
       if (_unknownFields != null) {

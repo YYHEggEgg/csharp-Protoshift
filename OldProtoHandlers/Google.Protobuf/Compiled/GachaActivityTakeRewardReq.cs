@@ -177,7 +177,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      robotNumMap_.MergeFrom(other.robotNumMap_);
+      robotNumMap_.Add(other.robotNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
