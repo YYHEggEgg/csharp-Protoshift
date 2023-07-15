@@ -200,7 +200,7 @@ namespace OldProtos {
       if (other.EndTime != 0) {
         EndTime = other.EndTime;
       }
-      hitCountMap_.MergeFrom(other.hitCountMap_);
+      hitCountMap_.Add(other.hitCountMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -220,7 +220,7 @@ namespace NewProtos {
       }
       deleteCustomFurnitureList_.Add(other.deleteCustomFurnitureList_);
       customFurnitureInfoList_.Add(other.customFurnitureInfoList_);
-      usedSubFurnitureCountMap_.MergeFrom(other.usedSubFurnitureCountMap_);
+      usedSubFurnitureCountMap_.Add(other.usedSubFurnitureCountMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

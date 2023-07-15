@@ -310,8 +310,8 @@ namespace NewProtos {
       if (other.Status != global::NewProtos.MainCoop.Types.Status.Invalid) {
         Status = other.Status;
       }
-      normalVarMap_.MergeFrom(other.normalVarMap_);
-      tempVarMap_.MergeFrom(other.tempVarMap_);
+      normalVarMap_.Add(other.normalVarMap_);
+      tempVarMap_.Add(other.tempVarMap_);
       if (other.SelfConfidence != 0) {
         SelfConfidence = other.SelfConfidence;
       }
@@ -319,7 +319,7 @@ namespace NewProtos {
         Id = other.Id;
       }
       savePointIdList_.Add(other.savePointIdList_);
-      seenEndingMap_.MergeFrom(other.seenEndingMap_);
+      seenEndingMap_.Add(other.seenEndingMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

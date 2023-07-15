@@ -172,7 +172,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      traderItemInfoMap_.MergeFrom(other.traderItemInfoMap_);
+      traderItemInfoMap_.Add(other.traderItemInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

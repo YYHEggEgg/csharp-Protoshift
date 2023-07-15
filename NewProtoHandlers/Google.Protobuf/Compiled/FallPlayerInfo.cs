@@ -282,7 +282,7 @@ namespace NewProtos {
       if (other.IsGround != false) {
         IsGround = other.IsGround;
       }
-      ballCatchCountMap_.MergeFrom(other.ballCatchCountMap_);
+      ballCatchCountMap_.Add(other.ballCatchCountMap_);
       if (other.Uid != 0) {
         Uid = other.Uid;
       }

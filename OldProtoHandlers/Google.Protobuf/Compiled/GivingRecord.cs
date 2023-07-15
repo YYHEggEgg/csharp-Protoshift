@@ -347,7 +347,7 @@ namespace OldProtos {
       if (other.ConfigId != 0) {
         ConfigId = other.ConfigId;
       }
-      materialCountMap_.MergeFrom(other.materialCountMap_);
+      materialCountMap_.Add(other.materialCountMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

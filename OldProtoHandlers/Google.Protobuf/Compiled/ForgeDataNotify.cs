@@ -221,7 +221,7 @@ namespace OldProtos {
         return;
       }
       forgeIdList_.Add(other.forgeIdList_);
-      forgeQueueMap_.MergeFrom(other.forgeQueueMap_);
+      forgeQueueMap_.Add(other.forgeQueueMap_);
       if (other.MaxQueueNum != 0) {
         MaxQueueNum = other.MaxQueueNum;
       }

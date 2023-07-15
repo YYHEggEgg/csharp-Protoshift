@@ -316,7 +316,7 @@ namespace OldProtos {
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
-      flowerRingCatchCountMap_.MergeFrom(other.flowerRingCatchCountMap_);
+      flowerRingCatchCountMap_.Add(other.flowerRingCatchCountMap_);
       if (other.RemainTime != 0) {
         RemainTime = other.RemainTime;
       }

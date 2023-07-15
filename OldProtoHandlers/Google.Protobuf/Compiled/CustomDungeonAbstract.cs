@@ -278,7 +278,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      brickStatisticsMap_.MergeFrom(other.brickStatisticsMap_);
+      brickStatisticsMap_.Add(other.brickStatisticsMap_);
       if (other.FirstPublishTime != 0) {
         FirstPublishTime = other.FirstPublishTime;
       }

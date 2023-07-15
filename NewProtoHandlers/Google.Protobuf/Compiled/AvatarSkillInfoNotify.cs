@@ -207,7 +207,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      skillMap_.MergeFrom(other.skillMap_);
+      skillMap_.Add(other.skillMap_);
       if (other.Guid != 0UL) {
         Guid = other.Guid;
       }

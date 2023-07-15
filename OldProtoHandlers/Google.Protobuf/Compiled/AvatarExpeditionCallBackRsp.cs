@@ -204,7 +204,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      expeditionInfoMap_.MergeFrom(other.expeditionInfoMap_);
+      expeditionInfoMap_.Add(other.expeditionInfoMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }

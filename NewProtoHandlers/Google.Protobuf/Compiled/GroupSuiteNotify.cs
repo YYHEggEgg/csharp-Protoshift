@@ -179,7 +179,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      groupMap_.MergeFrom(other.groupMap_);
+      groupMap_.Add(other.groupMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -176,7 +176,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      propMap_.MergeFrom(other.propMap_);
+      propMap_.Add(other.propMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

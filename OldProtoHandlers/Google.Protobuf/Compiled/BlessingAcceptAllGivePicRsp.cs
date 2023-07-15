@@ -223,7 +223,7 @@ namespace OldProtos {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      acceptPicNumMap_.MergeFrom(other.acceptPicNumMap_);
+      acceptPicNumMap_.Add(other.acceptPicNumMap_);
       acceptIndexList_.Add(other.acceptIndexList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }

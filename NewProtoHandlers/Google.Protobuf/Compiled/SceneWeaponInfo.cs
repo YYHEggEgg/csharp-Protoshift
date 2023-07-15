@@ -408,7 +408,7 @@ namespace NewProtos {
         }
         AbilityInfo.MergeFrom(other.AbilityInfo);
       }
-      affixMap_.MergeFrom(other.affixMap_);
+      affixMap_.Add(other.affixMap_);
       if (other.rendererChangedInfo_ != null) {
         if (rendererChangedInfo_ == null) {
           RendererChangedInfo = new global::NewProtos.EntityRendererChangedInfo();
