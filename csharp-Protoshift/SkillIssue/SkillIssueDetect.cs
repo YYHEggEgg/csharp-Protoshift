@@ -65,6 +65,7 @@ namespace csharp_Protoshift.SkillIssue
         /// </summary>
         private static void HandlePacket(DelayHandleInfo handle)
         {
+#if !PROXY_ONLY_SERVER
             try
             {
                 string protoname = handle.protoname;
