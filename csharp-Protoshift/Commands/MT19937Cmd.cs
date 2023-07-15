@@ -20,6 +20,8 @@ namespace csharp_Protoshift.Commands
         public string Usage =>
             "MT19937 <RSA_Encrypted_clientRandKey_base64> <RSA_Encrypted_serverRandKey_base64> <key_id>";
 
+        public void CleanUp() { }
+
         public async Task HandleAsync(string[] args)
         {
             uint key_id = Convert.ToUInt32(args[2]);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !PROXY_ONLY_SERVER
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YYHEggEgg.Logger;
 using Force.Crc32;
+using System.Net;
 
 namespace csharp_Protoshift.GameSession
 {
@@ -19,6 +21,16 @@ namespace csharp_Protoshift.GameSession
         public static bool Closed { get; private set; }
 
         #region Packet Handlers
+        public static void SessionCreated(uint conv, IPEndPoint ipEp)
+        {
+            if (!cancelledSessions.Contains(conv))
+            {
+                HandlerSession session = new(conv);
+                session.remoteIp = ipEp;
+                sessions.TryAdd(conv, session);
+            }
+        }
+
         public static byte[]? HandleServerPacket(byte[] data, uint conv)
         {
             AssertSessionExists(conv);
@@ -79,6 +91,18 @@ namespace csharp_Protoshift.GameSession
         {
             AssertSessionExists(conv);
             return sessions[conv].OrderedPacket(data, false);
+        }
+
+        public static byte[] ConstructPacketSendToServer(uint conv, string protoname, byte[]? packetHead, byte[] packetBody)
+        {
+            AssertSessionExists(conv);
+            return sessions[conv].ConstructPacket(false, protoname, packetHead, packetBody);
+        }
+
+        public static byte[] ConstructPacketSendToClient(uint conv, string protoname, byte[]? packetHead, byte[] packetBody)
+        {
+            AssertSessionExists(conv);
+            return sessions[conv].ConstructPacket(true, protoname, packetHead, packetBody);
         }
         #endregion
 
@@ -146,3 +170,4 @@ namespace csharp_Protoshift.GameSession
         }
     }
 }
+#endif
