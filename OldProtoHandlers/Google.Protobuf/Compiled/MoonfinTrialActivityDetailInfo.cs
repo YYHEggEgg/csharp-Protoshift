@@ -199,7 +199,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      levelInfoMap_.MergeFrom(other.levelInfoMap_);
+      levelInfoMap_.Add(other.levelInfoMap_);
       if (other.SpecialFishCount != 0) {
         SpecialFishCount = other.SpecialFishCount;
       }

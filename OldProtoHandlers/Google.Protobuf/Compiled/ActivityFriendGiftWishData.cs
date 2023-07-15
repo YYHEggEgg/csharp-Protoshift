@@ -290,7 +290,7 @@ namespace OldProtos {
         }
         ProfilePicture.MergeFrom(other.ProfilePicture);
       }
-      giftNumMap_.MergeFrom(other.giftNumMap_);
+      giftNumMap_.Add(other.giftNumMap_);
       if (other.Uid != 0) {
         Uid = other.Uid;
       }

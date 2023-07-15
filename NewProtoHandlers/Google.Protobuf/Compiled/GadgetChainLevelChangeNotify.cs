@@ -181,7 +181,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      gadgetChainLevelMap_.MergeFrom(other.gadgetChainLevelMap_);
+      gadgetChainLevelMap_.Add(other.gadgetChainLevelMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

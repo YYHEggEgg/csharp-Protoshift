@@ -195,7 +195,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      forgeQueueMap_.MergeFrom(other.forgeQueueMap_);
+      forgeQueueMap_.Add(other.forgeQueueMap_);
       removedForgeQueueList_.Add(other.removedForgeQueueList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }

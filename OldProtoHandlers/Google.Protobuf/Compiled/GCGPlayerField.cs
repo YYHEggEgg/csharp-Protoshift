@@ -572,7 +572,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      modifyZoneMap_.MergeFrom(other.modifyZoneMap_);
+      modifyZoneMap_.Add(other.modifyZoneMap_);
       if (other.CurWaitingIndex != 0) {
         CurWaitingIndex = other.CurWaitingIndex;
       }

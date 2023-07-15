@@ -382,7 +382,7 @@ namespace NewProtos {
       coopRewardList_.Add(other.coopRewardList_);
       lockReasonList_.Add(other.lockReasonList_);
       coopCgList_.Add(other.coopCgList_);
-      seenEndingMap_.MergeFrom(other.seenEndingMap_);
+      seenEndingMap_.Add(other.seenEndingMap_);
       if (other.FinishedEndCount != 0) {
         FinishedEndCount = other.FinishedEndCount;
       }

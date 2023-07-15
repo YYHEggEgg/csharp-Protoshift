@@ -177,7 +177,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      fetterInfoMap_.MergeFrom(other.fetterInfoMap_);
+      fetterInfoMap_.Add(other.fetterInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

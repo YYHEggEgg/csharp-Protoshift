@@ -218,11 +218,11 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      unacceptGiftNumMap_.MergeFrom(other.unacceptGiftNumMap_);
+      unacceptGiftNumMap_.Add(other.unacceptGiftNumMap_);
       if (other.Uid != 0) {
         Uid = other.Uid;
       }
-      acceptGiftNumMap_.MergeFrom(other.acceptGiftNumMap_);
+      acceptGiftNumMap_.Add(other.acceptGiftNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

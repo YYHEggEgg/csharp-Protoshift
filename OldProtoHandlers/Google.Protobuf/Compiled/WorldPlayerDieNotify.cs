@@ -127,24 +127,10 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint MonsterId {
-      get { return HasMonsterId ? (uint) entity_ : 0; }
+      get { return entityCase_ == EntityOneofCase.MonsterId ? (uint) entity_ : 0; }
       set {
         entity_ = value;
         entityCase_ = EntityOneofCase.MonsterId;
-      }
-    }
-    /// <summary>Gets whether the "monster_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasMonsterId {
-      get { return entityCase_ == EntityOneofCase.MonsterId; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "monster_id" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearMonsterId() {
-      if (HasMonsterId) {
-        ClearEntity();
       }
     }
 
@@ -153,24 +139,10 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint GadgetId {
-      get { return HasGadgetId ? (uint) entity_ : 0; }
+      get { return entityCase_ == EntityOneofCase.GadgetId ? (uint) entity_ : 0; }
       set {
         entity_ = value;
         entityCase_ = EntityOneofCase.GadgetId;
-      }
-    }
-    /// <summary>Gets whether the "gadget_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasGadgetId {
-      get { return entityCase_ == EntityOneofCase.GadgetId; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "gadget_id" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearGadgetId() {
-      if (HasGadgetId) {
-        ClearEntity();
       }
     }
 
@@ -224,8 +196,8 @@ namespace OldProtos {
       int hash = 1;
       if (DieType != global::OldProtos.PlayerDieType.None) hash ^= DieType.GetHashCode();
       if (MurdererEntityId != 0) hash ^= MurdererEntityId.GetHashCode();
-      if (HasMonsterId) hash ^= MonsterId.GetHashCode();
-      if (HasGadgetId) hash ^= GadgetId.GetHashCode();
+      if (entityCase_ == EntityOneofCase.MonsterId) hash ^= MonsterId.GetHashCode();
+      if (entityCase_ == EntityOneofCase.GadgetId) hash ^= GadgetId.GetHashCode();
       hash ^= (int) entityCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -245,11 +217,11 @@ namespace OldProtos {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HasGadgetId) {
+      if (entityCase_ == EntityOneofCase.GadgetId) {
         output.WriteRawTag(32);
         output.WriteUInt32(GadgetId);
       }
-      if (HasMonsterId) {
+      if (entityCase_ == EntityOneofCase.MonsterId) {
         output.WriteRawTag(64);
         output.WriteUInt32(MonsterId);
       }
@@ -271,11 +243,11 @@ namespace OldProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HasGadgetId) {
+      if (entityCase_ == EntityOneofCase.GadgetId) {
         output.WriteRawTag(32);
         output.WriteUInt32(GadgetId);
       }
-      if (HasMonsterId) {
+      if (entityCase_ == EntityOneofCase.MonsterId) {
         output.WriteRawTag(64);
         output.WriteUInt32(MonsterId);
       }
@@ -303,10 +275,10 @@ namespace OldProtos {
       if (MurdererEntityId != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MurdererEntityId);
       }
-      if (HasMonsterId) {
+      if (entityCase_ == EntityOneofCase.MonsterId) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MonsterId);
       }
-      if (HasGadgetId) {
+      if (entityCase_ == EntityOneofCase.GadgetId) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GadgetId);
       }
       if (_unknownFields != null) {

@@ -206,7 +206,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      picNumMap_.MergeFrom(other.picNumMap_);
+      picNumMap_.Add(other.picNumMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }

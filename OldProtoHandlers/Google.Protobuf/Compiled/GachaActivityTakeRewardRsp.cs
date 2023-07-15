@@ -202,7 +202,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      robotNumMap_.MergeFrom(other.robotNumMap_);
+      robotNumMap_.Add(other.robotNumMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }

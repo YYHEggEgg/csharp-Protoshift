@@ -208,7 +208,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      weatherValueMap_.MergeFrom(other.weatherValueMap_);
+      weatherValueMap_.Add(other.weatherValueMap_);
       if (other.WeatherGadgetId != 0) {
         WeatherGadgetId = other.WeatherGadgetId;
       }

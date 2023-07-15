@@ -211,7 +211,7 @@ namespace OldProtos {
       }
       ugcRecordList_.Add(other.ugcRecordList_);
       ugcSearchList_.Add(other.ugcSearchList_);
-      musicGameRecordMap_.MergeFrom(other.musicGameRecordMap_);
+      musicGameRecordMap_.Add(other.musicGameRecordMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

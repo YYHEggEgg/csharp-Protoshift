@@ -1,4 +1,7 @@
-﻿using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
+#if !PROXY_ONLY_SERVER
+
+using csharp_Protoshift.GameSession.SpecialFixs;
+using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
 using Funny.Crypto;
@@ -8,6 +11,7 @@ using Org.BouncyCastle.Asn1.X500;
 using System.Collections.Concurrent;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Net;
 using System.Security.Cryptography;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
@@ -21,6 +25,7 @@ namespace csharp_Protoshift.GameSession
         /// </summary>
         public byte[] XorKey { get; protected set; }
         public uint SessionId { get; private set; }
+        public IPEndPoint remoteIp { get; set; }
 
         public const int Recommended_Protoshift_maximum_time_ms = 5;
 
@@ -73,7 +78,7 @@ namespace csharp_Protoshift.GameSession
                 package.SaveAs(new FileInfo(filePath));
             }
         }
-        #endregion 
+        #endregion
 
         /// <summary>
         /// Initializer
@@ -320,6 +325,42 @@ namespace csharp_Protoshift.GameSession
         }
         #endregion
 
+        #region Packet Create
+        public byte[] ConstructPacket(bool isNewCmdid, string protoname, byte[]? packetHead, byte[] packetBody)
+        {
+            var cmdid = isNewCmdid 
+                ? NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)
+                : OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname);
+            var head_length = packetHead?.Length ?? 0;
+            var body_length = packetBody.Length;
+            int head_offset = 2 + 2 + 2 + 4;
+            int body_offset = head_offset + head_length;
+            int magic_end_offset = body_offset + body_length;
+            int rtnpacketLength = magic_end_offset + 2;
+
+            byte[] rtn = new byte[rtnpacketLength];
+            rtn.SetUInt16(0, 0x4567);
+            rtn.SetUInt16(2, (ushort)cmdid);
+            rtn.SetUInt16(4, (ushort)head_length);
+            rtn.SetUInt32(6, (uint)body_length);
+
+            if (packetHead != null) Buffer.BlockCopy(packetHead, 0, rtn, head_offset, packetHead.Length);
+            Buffer.BlockCopy(packetBody, 0, rtn, body_offset, body_length);
+            rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
+
+            if (Verbose)
+            {
+                Log.Info($"Create packet {protoname} with " +
+                    $"CmdId:{NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
+                    $"for {(isNewCmdid ? "Client" : "Server")}:---{Convert.ToHexString(rtn)}",
+                $"PacketConstructor({SessionId})");
+            }
+
+            XorDecrypt(ref rtn);
+            return rtn;
+        }
+        #endregion
+
         #region Crypto
         private void XorDecrypt(ref byte[] encrypted, int offset = 0, int length = -1, bool fallbackToDispatchKey = false)
         {
@@ -350,3 +391,4 @@ namespace csharp_Protoshift.GameSession
         #endregion
     }
 }
+#endif

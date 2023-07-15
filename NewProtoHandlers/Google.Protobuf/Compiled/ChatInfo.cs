@@ -168,24 +168,10 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string Text {
-      get { return HasText ? (string) content_ : ""; }
+      get { return contentCase_ == ContentOneofCase.Text ? (string) content_ : ""; }
       set {
         content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
         contentCase_ = ContentOneofCase.Text;
-      }
-    }
-    /// <summary>Gets whether the "text" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasText {
-      get { return contentCase_ == ContentOneofCase.Text; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "text" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearText() {
-      if (HasText) {
-        ClearContent();
       }
     }
 
@@ -194,24 +180,10 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Icon {
-      get { return HasIcon ? (uint) content_ : 0; }
+      get { return contentCase_ == ContentOneofCase.Icon ? (uint) content_ : 0; }
       set {
         content_ = value;
         contentCase_ = ContentOneofCase.Icon;
-      }
-    }
-    /// <summary>Gets whether the "icon" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasIcon {
-      get { return contentCase_ == ContentOneofCase.Icon; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "icon" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearIcon() {
-      if (HasIcon) {
-        ClearContent();
       }
     }
 
@@ -285,8 +257,8 @@ namespace NewProtos {
       if (ToUid != 0) hash ^= ToUid.GetHashCode();
       if (Uid != 0) hash ^= Uid.GetHashCode();
       if (Sequence != 0) hash ^= Sequence.GetHashCode();
-      if (HasText) hash ^= Text.GetHashCode();
-      if (HasIcon) hash ^= Icon.GetHashCode();
+      if (contentCase_ == ContentOneofCase.Text) hash ^= Text.GetHashCode();
+      if (contentCase_ == ContentOneofCase.Icon) hash ^= Icon.GetHashCode();
       if (contentCase_ == ContentOneofCase.SystemHint) hash ^= SystemHint.GetHashCode();
       hash ^= (int) contentCase_;
       if (_unknownFields != null) {
@@ -331,11 +303,11 @@ namespace NewProtos {
         output.WriteRawTag(250, 49);
         output.WriteMessage(SystemHint);
       }
-      if (HasText) {
+      if (contentCase_ == ContentOneofCase.Text) {
         output.WriteRawTag(234, 56);
         output.WriteString(Text);
       }
-      if (HasIcon) {
+      if (contentCase_ == ContentOneofCase.Icon) {
         output.WriteRawTag(240, 61);
         output.WriteUInt32(Icon);
       }
@@ -373,11 +345,11 @@ namespace NewProtos {
         output.WriteRawTag(250, 49);
         output.WriteMessage(SystemHint);
       }
-      if (HasText) {
+      if (contentCase_ == ContentOneofCase.Text) {
         output.WriteRawTag(234, 56);
         output.WriteString(Text);
       }
-      if (HasIcon) {
+      if (contentCase_ == ContentOneofCase.Icon) {
         output.WriteRawTag(240, 61);
         output.WriteUInt32(Icon);
       }
@@ -406,10 +378,10 @@ namespace NewProtos {
       if (Sequence != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Sequence);
       }
-      if (HasText) {
+      if (contentCase_ == ContentOneofCase.Text) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(Text);
       }
-      if (HasIcon) {
+      if (contentCase_ == ContentOneofCase.Icon) {
         size += 2 + pb::CodedOutputStream.ComputeUInt32Size(Icon);
       }
       if (contentCase_ == ContentOneofCase.SystemHint) {

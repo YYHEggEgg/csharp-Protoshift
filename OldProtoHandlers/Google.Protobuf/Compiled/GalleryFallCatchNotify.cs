@@ -314,7 +314,7 @@ namespace OldProtos {
       if (other.TimeCost != 0) {
         TimeCost = other.TimeCost;
       }
-      ballCatchCountMap_.MergeFrom(other.ballCatchCountMap_);
+      ballCatchCountMap_.Add(other.ballCatchCountMap_);
       if (other.AddScore != 0) {
         AddScore = other.AddScore;
       }

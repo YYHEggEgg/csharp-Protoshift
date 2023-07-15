@@ -590,7 +590,7 @@ namespace NewProtos {
           if (other == null) {
             return;
           }
-          deleteTimeNumMap_.MergeFrom(other.deleteTimeNumMap_);
+          deleteTimeNumMap_.Add(other.deleteTimeNumMap_);
           if (other.ConfigCountDownTime != 0) {
             ConfigCountDownTime = other.ConfigCountDownTime;
           }
@@ -1020,7 +1020,7 @@ namespace NewProtos {
           if (other == null) {
             return;
           }
-          deleteTimeNumMap_.MergeFrom(other.deleteTimeNumMap_);
+          deleteTimeNumMap_.Add(other.deleteTimeNumMap_);
           if (other.ConfigDelayWeek != 0) {
             ConfigDelayWeek = other.ConfigDelayWeek;
           }

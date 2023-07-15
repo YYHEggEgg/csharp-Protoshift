@@ -412,7 +412,7 @@ namespace OldProtos {
         return;
       }
       questVar_.Add(other.questVar_);
-      timeVarMap_.MergeFrom(other.timeVarMap_);
+      timeVarMap_.Add(other.timeVarMap_);
       if (other.ParentQuestState != 0) {
         ParentQuestState = other.ParentQuestState;
       }

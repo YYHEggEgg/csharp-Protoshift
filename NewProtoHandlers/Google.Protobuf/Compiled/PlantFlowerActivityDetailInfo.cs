@@ -307,8 +307,8 @@ namespace NewProtos {
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
-      unk3300EPMKDFOBLFK_.MergeFrom(other.unk3300EPMKDFOBLFK_);
-      unk3300ELAIBMDIBFJ_.MergeFrom(other.unk3300ELAIBMDIBFJ_);
+      unk3300EPMKDFOBLFK_.Add(other.unk3300EPMKDFOBLFK_);
+      unk3300ELAIBMDIBFJ_.Add(other.unk3300ELAIBMDIBFJ_);
       if (other.IsTodayHasAwarded != false) {
         IsTodayHasAwarded = other.IsTodayHasAwarded;
       }

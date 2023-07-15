@@ -253,7 +253,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      stageMap_.MergeFrom(other.stageMap_);
+      stageMap_.Add(other.stageMap_);
       if (other.ContentCloseTime != 0) {
         ContentCloseTime = other.ContentCloseTime;
       }

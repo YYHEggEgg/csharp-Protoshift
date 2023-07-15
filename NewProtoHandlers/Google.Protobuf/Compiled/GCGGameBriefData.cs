@@ -25,16 +25,16 @@ namespace NewProtos {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChZHQ0dHYW1lQnJpZWZEYXRhLnByb3RvGhlHQ0dHYW1lQnVzaW5lc3NUeXBl",
-            "LnByb3RvGhhHQ0dQbGF5ZXJCcmllZkRhdGEucHJvdG8i0QEKEEdDR0dhbWVC",
-            "cmllZkRhdGESGwoTVW5rMzMwMF9OQ0xET0dOQ0hHRhgNIAEoDRIrCg1idXNp",
-            "bmVzc190eXBlGAggASgOMhQuR0NHR2FtZUJ1c2luZXNzVHlwZRIbChNVbmsz",
-            "MzAwX0ZKSkRNSUJJQkpOGA4gASgNEhUKDXBsYXRmb3JtX3R5cGUYBiABKA0S",
-            "DwoHZ2FtZV9pZBgMIAEoDRIuChFwbGF5ZXJfYnJpZWZfbGlzdBgFIAMoCzIT",
-            "LkdDR1BsYXllckJyaWVmRGF0YUIMqgIJTmV3UHJvdG9zYgZwcm90bzM="));
+            "LnByb3RvGhhHQ0dQbGF5ZXJCcmllZkRhdGEucHJvdG8ivgEKEEdDR0dhbWVC",
+            "cmllZkRhdGESEwoLdmVyaWZ5X2NvZGUYDSABKA0SKwoNYnVzaW5lc3NfdHlw",
+            "ZRgIIAEoDjIULkdDR0dhbWVCdXNpbmVzc1R5cGUSEAoIZ2FtZV91aWQYDiAB",
+            "KA0SFQoNcGxhdGZvcm1fdHlwZRgGIAEoDRIPCgdnYW1lX2lkGAwgASgNEi4K",
+            "EXBsYXllcl9icmllZl9saXN0GAUgAygLMhMuR0NHUGxheWVyQnJpZWZEYXRh",
+            "QgyqAglOZXdQcm90b3NiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::NewProtos.GCGGameBusinessTypeReflection.Descriptor, global::NewProtos.GCGPlayerBriefDataReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GCGGameBriefData), global::NewProtos.GCGGameBriefData.Parser, new[]{ "Unk3300NCLDOGNCHGF", "BusinessType", "Unk3300FJJDMIBIBJN", "PlatformType", "GameId", "PlayerBriefList" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::NewProtos.GCGGameBriefData), global::NewProtos.GCGGameBriefData.Parser, new[]{ "VerifyCode", "BusinessType", "GameUid", "PlatformType", "GameId", "PlayerBriefList" }, null, null, null, null)
           }));
     }
     #endregion
@@ -75,9 +75,9 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GCGGameBriefData(GCGGameBriefData other) : this() {
-      unk3300NCLDOGNCHGF_ = other.unk3300NCLDOGNCHGF_;
+      verifyCode_ = other.verifyCode_;
       businessType_ = other.businessType_;
-      unk3300FJJDMIBIBJN_ = other.unk3300FJJDMIBIBJN_;
+      gameUid_ = other.gameUid_;
       platformType_ = other.platformType_;
       gameId_ = other.gameId_;
       playerBriefList_ = other.playerBriefList_.Clone();
@@ -90,15 +90,15 @@ namespace NewProtos {
       return new GCGGameBriefData(this);
     }
 
-    /// <summary>Field number for the "Unk3300_NCLDOGNCHGF" field.</summary>
-    public const int Unk3300NCLDOGNCHGFFieldNumber = 13;
-    private uint unk3300NCLDOGNCHGF_;
+    /// <summary>Field number for the "verify_code" field.</summary>
+    public const int VerifyCodeFieldNumber = 13;
+    private uint verifyCode_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Unk3300NCLDOGNCHGF {
-      get { return unk3300NCLDOGNCHGF_; }
+    public uint VerifyCode {
+      get { return verifyCode_; }
       set {
-        unk3300NCLDOGNCHGF_ = value;
+        verifyCode_ = value;
       }
     }
 
@@ -114,15 +114,15 @@ namespace NewProtos {
       }
     }
 
-    /// <summary>Field number for the "Unk3300_FJJDMIBIBJN" field.</summary>
-    public const int Unk3300FJJDMIBIBJNFieldNumber = 14;
-    private uint unk3300FJJDMIBIBJN_;
+    /// <summary>Field number for the "game_uid" field.</summary>
+    public const int GameUidFieldNumber = 14;
+    private uint gameUid_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public uint Unk3300FJJDMIBIBJN {
-      get { return unk3300FJJDMIBIBJN_; }
+    public uint GameUid {
+      get { return gameUid_; }
       set {
-        unk3300FJJDMIBIBJN_ = value;
+        gameUid_ = value;
       }
     }
 
@@ -176,9 +176,9 @@ namespace NewProtos {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Unk3300NCLDOGNCHGF != other.Unk3300NCLDOGNCHGF) return false;
+      if (VerifyCode != other.VerifyCode) return false;
       if (BusinessType != other.BusinessType) return false;
-      if (Unk3300FJJDMIBIBJN != other.Unk3300FJJDMIBIBJN) return false;
+      if (GameUid != other.GameUid) return false;
       if (PlatformType != other.PlatformType) return false;
       if (GameId != other.GameId) return false;
       if(!playerBriefList_.Equals(other.playerBriefList_)) return false;
@@ -189,9 +189,9 @@ namespace NewProtos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Unk3300NCLDOGNCHGF != 0) hash ^= Unk3300NCLDOGNCHGF.GetHashCode();
+      if (VerifyCode != 0) hash ^= VerifyCode.GetHashCode();
       if (BusinessType != global::NewProtos.GCGGameBusinessType.None) hash ^= BusinessType.GetHashCode();
-      if (Unk3300FJJDMIBIBJN != 0) hash ^= Unk3300FJJDMIBIBJN.GetHashCode();
+      if (GameUid != 0) hash ^= GameUid.GetHashCode();
       if (PlatformType != 0) hash ^= PlatformType.GetHashCode();
       if (GameId != 0) hash ^= GameId.GetHashCode();
       hash ^= playerBriefList_.GetHashCode();
@@ -226,13 +226,13 @@ namespace NewProtos {
         output.WriteRawTag(96);
         output.WriteUInt32(GameId);
       }
-      if (Unk3300NCLDOGNCHGF != 0) {
+      if (VerifyCode != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(Unk3300NCLDOGNCHGF);
+        output.WriteUInt32(VerifyCode);
       }
-      if (Unk3300FJJDMIBIBJN != 0) {
+      if (GameUid != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(Unk3300FJJDMIBIBJN);
+        output.WriteUInt32(GameUid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -257,13 +257,13 @@ namespace NewProtos {
         output.WriteRawTag(96);
         output.WriteUInt32(GameId);
       }
-      if (Unk3300NCLDOGNCHGF != 0) {
+      if (VerifyCode != 0) {
         output.WriteRawTag(104);
-        output.WriteUInt32(Unk3300NCLDOGNCHGF);
+        output.WriteUInt32(VerifyCode);
       }
-      if (Unk3300FJJDMIBIBJN != 0) {
+      if (GameUid != 0) {
         output.WriteRawTag(112);
-        output.WriteUInt32(Unk3300FJJDMIBIBJN);
+        output.WriteUInt32(GameUid);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -275,14 +275,14 @@ namespace NewProtos {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Unk3300NCLDOGNCHGF != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300NCLDOGNCHGF);
+      if (VerifyCode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(VerifyCode);
       }
       if (BusinessType != global::NewProtos.GCGGameBusinessType.None) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) BusinessType);
       }
-      if (Unk3300FJJDMIBIBJN != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(Unk3300FJJDMIBIBJN);
+      if (GameUid != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(GameUid);
       }
       if (PlatformType != 0) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(PlatformType);
@@ -303,14 +303,14 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      if (other.Unk3300NCLDOGNCHGF != 0) {
-        Unk3300NCLDOGNCHGF = other.Unk3300NCLDOGNCHGF;
+      if (other.VerifyCode != 0) {
+        VerifyCode = other.VerifyCode;
       }
       if (other.BusinessType != global::NewProtos.GCGGameBusinessType.None) {
         BusinessType = other.BusinessType;
       }
-      if (other.Unk3300FJJDMIBIBJN != 0) {
-        Unk3300FJJDMIBIBJN = other.Unk3300FJJDMIBIBJN;
+      if (other.GameUid != 0) {
+        GameUid = other.GameUid;
       }
       if (other.PlatformType != 0) {
         PlatformType = other.PlatformType;
@@ -351,11 +351,11 @@ namespace NewProtos {
             break;
           }
           case 104: {
-            Unk3300NCLDOGNCHGF = input.ReadUInt32();
+            VerifyCode = input.ReadUInt32();
             break;
           }
           case 112: {
-            Unk3300FJJDMIBIBJN = input.ReadUInt32();
+            GameUid = input.ReadUInt32();
             break;
           }
         }
@@ -390,11 +390,11 @@ namespace NewProtos {
             break;
           }
           case 104: {
-            Unk3300NCLDOGNCHGF = input.ReadUInt32();
+            VerifyCode = input.ReadUInt32();
             break;
           }
           case 112: {
-            Unk3300FJJDMIBIBJN = input.ReadUInt32();
+            GameUid = input.ReadUInt32();
             break;
           }
         }

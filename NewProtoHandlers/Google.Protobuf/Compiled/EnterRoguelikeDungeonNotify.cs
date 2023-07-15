@@ -582,7 +582,7 @@ namespace NewProtos {
       if (other.Unk3300PKDLOJADIPA != 0) {
         Unk3300PKDLOJADIPA = other.Unk3300PKDLOJADIPA;
       }
-      cellInfoMap_.MergeFrom(other.cellInfoMap_);
+      cellInfoMap_.Add(other.cellInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -280,7 +280,7 @@ namespace NewProtos {
         DungeonId = other.DungeonId;
       }
       avatarList_.Add(other.avatarList_);
-      playerStateMap_.MergeFrom(other.playerStateMap_);
+      playerStateMap_.Add(other.playerStateMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

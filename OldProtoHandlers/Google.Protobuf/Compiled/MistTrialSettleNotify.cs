@@ -292,7 +292,7 @@ namespace OldProtos {
         return;
       }
       bestAvatarList_.Add(other.bestAvatarList_);
-      exhibitionListDataResultMap_.MergeFrom(other.exhibitionListDataResultMap_);
+      exhibitionListDataResultMap_.Add(other.exhibitionListDataResultMap_);
       if (other.bestHitAvatar_ != null) {
         if (bestHitAvatar_ == null) {
           BestHitAvatar = new global::OldProtos.MistTrialBestAvatar();
@@ -302,7 +302,7 @@ namespace OldProtos {
       if (other.FirstPassTime != 0) {
         FirstPassTime = other.FirstPassTime;
       }
-      exhibitionListDataRecordMap_.MergeFrom(other.exhibitionListDataRecordMap_);
+      exhibitionListDataRecordMap_.Add(other.exhibitionListDataRecordMap_);
       if (other.DungeonSceneId != 0) {
         DungeonSceneId = other.DungeonSceneId;
       }
