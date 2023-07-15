@@ -339,7 +339,7 @@ namespace OldProtos {
       if (other.IsFinalLevel != false) {
         IsFinalLevel = other.IsFinalLevel;
       }
-      finishedChallengeCellNumMap_.MergeFrom(other.finishedChallengeCellNumMap_);
+      finishedChallengeCellNumMap_.Add(other.finishedChallengeCellNumMap_);
       if (other.IsCoinCReachLimit != false) {
         IsCoinCReachLimit = other.IsCoinCReachLimit;
       }

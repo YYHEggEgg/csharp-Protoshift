@@ -177,7 +177,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      shareCdInfoMap_.MergeFrom(other.shareCdInfoMap_);
+      shareCdInfoMap_.Add(other.shareCdInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

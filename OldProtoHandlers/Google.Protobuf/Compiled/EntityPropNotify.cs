@@ -202,7 +202,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      propMap_.MergeFrom(other.propMap_);
+      propMap_.Add(other.propMap_);
       if (other.EntityId != 0) {
         EntityId = other.EntityId;
       }

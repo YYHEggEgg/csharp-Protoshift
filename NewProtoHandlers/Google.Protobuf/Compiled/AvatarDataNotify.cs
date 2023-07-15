@@ -351,7 +351,7 @@ namespace NewProtos {
       if (other.ChooseAvatarGuid != 0UL) {
         ChooseAvatarGuid = other.ChooseAvatarGuid;
       }
-      avatarTeamMap_.MergeFrom(other.avatarTeamMap_);
+      avatarTeamMap_.Add(other.avatarTeamMap_);
       ownedCostumeList_.Add(other.ownedCostumeList_);
       backupAvatarTeamOrderList_.Add(other.backupAvatarTeamOrderList_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);

@@ -236,7 +236,7 @@ namespace NewProtos {
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
       }
-      activityCoinMap_.MergeFrom(other.activityCoinMap_);
+      activityCoinMap_.Add(other.activityCoinMap_);
       if (other.ActivityId != 0) {
         ActivityId = other.ActivityId;
       }

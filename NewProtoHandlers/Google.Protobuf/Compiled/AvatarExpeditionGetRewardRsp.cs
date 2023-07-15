@@ -246,7 +246,7 @@ namespace NewProtos {
       }
       itemList_.Add(other.itemList_);
       extraItemList_.Add(other.extraItemList_);
-      expeditionInfoMap_.MergeFrom(other.expeditionInfoMap_);
+      expeditionInfoMap_.Add(other.expeditionInfoMap_);
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }

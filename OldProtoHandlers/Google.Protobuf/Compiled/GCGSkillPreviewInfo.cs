@@ -325,9 +325,9 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      cardTokenChangeMap_.MergeFrom(other.cardTokenChangeMap_);
-      reactionInfoMap_.MergeFrom(other.reactionInfoMap_);
-      hpInfoMap_.MergeFrom(other.hpInfoMap_);
+      cardTokenChangeMap_.Add(other.cardTokenChangeMap_);
+      reactionInfoMap_.Add(other.reactionInfoMap_);
+      hpInfoMap_.Add(other.hpInfoMap_);
       addCardList_.Add(other.addCardList_);
       if (other.extraInfo_ != null) {
         if (extraInfo_ == null) {

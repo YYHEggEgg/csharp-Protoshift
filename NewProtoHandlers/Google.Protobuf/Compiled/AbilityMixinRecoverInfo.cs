@@ -163,24 +163,10 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint InstancedAbilityId {
-      get { return HasInstancedAbilityId ? (uint) source_ : 0; }
+      get { return sourceCase_ == SourceOneofCase.InstancedAbilityId ? (uint) source_ : 0; }
       set {
         source_ = value;
         sourceCase_ = SourceOneofCase.InstancedAbilityId;
-      }
-    }
-    /// <summary>Gets whether the "instanced_ability_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasInstancedAbilityId {
-      get { return sourceCase_ == SourceOneofCase.InstancedAbilityId; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "instanced_ability_id" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearInstancedAbilityId() {
-      if (HasInstancedAbilityId) {
-        ClearSource();
       }
     }
 
@@ -189,24 +175,10 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint InstancedModifierId {
-      get { return HasInstancedModifierId ? (uint) source_ : 0; }
+      get { return sourceCase_ == SourceOneofCase.InstancedModifierId ? (uint) source_ : 0; }
       set {
         source_ = value;
         sourceCase_ = SourceOneofCase.InstancedModifierId;
-      }
-    }
-    /// <summary>Gets whether the "instanced_modifier_id" field is set</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasInstancedModifierId {
-      get { return sourceCase_ == SourceOneofCase.InstancedModifierId; }
-    }
-    /// <summary> Clears the value of the oneof if it's currently set to "instanced_modifier_id" </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearInstancedModifierId() {
-      if (HasInstancedModifierId) {
-        ClearSource();
       }
     }
 
@@ -266,8 +238,8 @@ namespace NewProtos {
       if (IsServerbuffModifier != false) hash ^= IsServerbuffModifier.GetHashCode();
       hash ^= massivePropList_.GetHashCode();
       if (breakoutSnapShot_ != null) hash ^= BreakoutSnapShot.GetHashCode();
-      if (HasInstancedAbilityId) hash ^= InstancedAbilityId.GetHashCode();
-      if (HasInstancedModifierId) hash ^= InstancedModifierId.GetHashCode();
+      if (sourceCase_ == SourceOneofCase.InstancedAbilityId) hash ^= InstancedAbilityId.GetHashCode();
+      if (sourceCase_ == SourceOneofCase.InstancedModifierId) hash ^= InstancedModifierId.GetHashCode();
       hash ^= (int) sourceCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -287,11 +259,11 @@ namespace NewProtos {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HasInstancedAbilityId) {
+      if (sourceCase_ == SourceOneofCase.InstancedAbilityId) {
         output.WriteRawTag(8);
         output.WriteUInt32(InstancedAbilityId);
       }
-      if (HasInstancedModifierId) {
+      if (sourceCase_ == SourceOneofCase.InstancedModifierId) {
         output.WriteRawTag(16);
         output.WriteUInt32(InstancedModifierId);
       }
@@ -319,11 +291,11 @@ namespace NewProtos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HasInstancedAbilityId) {
+      if (sourceCase_ == SourceOneofCase.InstancedAbilityId) {
         output.WriteRawTag(8);
         output.WriteUInt32(InstancedAbilityId);
       }
-      if (HasInstancedModifierId) {
+      if (sourceCase_ == SourceOneofCase.InstancedModifierId) {
         output.WriteRawTag(16);
         output.WriteUInt32(InstancedModifierId);
       }
@@ -362,10 +334,10 @@ namespace NewProtos {
       if (breakoutSnapShot_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(BreakoutSnapShot);
       }
-      if (HasInstancedAbilityId) {
+      if (sourceCase_ == SourceOneofCase.InstancedAbilityId) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InstancedAbilityId);
       }
-      if (HasInstancedModifierId) {
+      if (sourceCase_ == SourceOneofCase.InstancedModifierId) {
         size += 1 + pb::CodedOutputStream.ComputeUInt32Size(InstancedModifierId);
       }
       if (_unknownFields != null) {

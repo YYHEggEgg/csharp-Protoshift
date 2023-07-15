@@ -298,18 +298,18 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      unk3300PCIIGPJJHGF_.MergeFrom(other.unk3300PCIIGPJJHGF_);
+      unk3300PCIIGPJJHGF_.Add(other.unk3300PCIIGPJJHGF_);
       if (other.IsContentClosed != false) {
         IsContentClosed = other.IsContentClosed;
       }
-      unk3300EHHPFKIOKOO_.MergeFrom(other.unk3300EHHPFKIOKOO_);
+      unk3300EHHPFKIOKOO_.Add(other.unk3300EHHPFKIOKOO_);
       if (other.boothData_ != null) {
         if (boothData_ == null) {
           BoothData = new global::NewProtos.VintageBoothUsedItemData();
         }
         BoothData.MergeFrom(other.BoothData);
       }
-      unk3300NPKMDFCLGBJ_.MergeFrom(other.unk3300NPKMDFCLGBJ_);
+      unk3300NPKMDFCLGBJ_.Add(other.unk3300NPKMDFCLGBJ_);
       if (other.marketInfo_ != null) {
         if (marketInfo_ == null) {
           MarketInfo = new global::NewProtos.VintageMarketInfo();

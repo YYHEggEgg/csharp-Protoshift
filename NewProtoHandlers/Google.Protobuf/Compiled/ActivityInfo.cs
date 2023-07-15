@@ -2716,7 +2716,7 @@ namespace NewProtos {
       if (other.SelectedAvatarRewardId != 0) {
         SelectedAvatarRewardId = other.SelectedAvatarRewardId;
       }
-      activityCoinMap_.MergeFrom(other.activityCoinMap_);
+      activityCoinMap_.Add(other.activityCoinMap_);
       if (other.FirstDayStartTime != 0) {
         FirstDayStartTime = other.FirstDayStartTime;
       }
@@ -2735,7 +2735,7 @@ namespace NewProtos {
       if (other.Unk3300MDBDPIBEGGH != false) {
         Unk3300MDBDPIBEGGH = other.Unk3300MDBDPIBEGGH;
       }
-      wishGiftNumMap_.MergeFrom(other.wishGiftNumMap_);
+      wishGiftNumMap_.Add(other.wishGiftNumMap_);
       if (other.EndTime != 0) {
         EndTime = other.EndTime;
       }

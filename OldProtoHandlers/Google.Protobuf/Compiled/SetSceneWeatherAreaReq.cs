@@ -207,7 +207,7 @@ namespace OldProtos {
       if (other.WeatherGadgetId != 0) {
         WeatherGadgetId = other.WeatherGadgetId;
       }
-      weatherValueMap_.MergeFrom(other.weatherValueMap_);
+      weatherValueMap_.Add(other.weatherValueMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -180,7 +180,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      dungeonDataMap_.MergeFrom(other.dungeonDataMap_);
+      dungeonDataMap_.Add(other.dungeonDataMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

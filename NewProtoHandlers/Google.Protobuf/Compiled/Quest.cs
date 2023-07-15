@@ -498,9 +498,9 @@ namespace NewProtos {
       lackedNpcList_.Add(other.lackedNpcList_);
       finishProgressList_.Add(other.finishProgressList_);
       failProgressList_.Add(other.failProgressList_);
-      lackedNpcMap_.MergeFrom(other.lackedNpcMap_);
+      lackedNpcMap_.Add(other.lackedNpcMap_);
       lackedPlaceList_.Add(other.lackedPlaceList_);
-      lackedPlaceMap_.MergeFrom(other.lackedPlaceMap_);
+      lackedPlaceMap_.Add(other.lackedPlaceMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

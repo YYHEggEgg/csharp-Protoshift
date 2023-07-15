@@ -286,7 +286,7 @@ namespace OldProtos {
       if (other.IsActive != false) {
         IsActive = other.IsActive;
       }
-      fragmentMap_.MergeFrom(other.fragmentMap_);
+      fragmentMap_.Add(other.fragmentMap_);
       if (other.SolutionId != 0) {
         SolutionId = other.SolutionId;
       }

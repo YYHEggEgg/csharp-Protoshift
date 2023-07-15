@@ -183,7 +183,7 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      combatThreatInfoMap_.MergeFrom(other.combatThreatInfoMap_);
+      combatThreatInfoMap_.Add(other.combatThreatInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -435,7 +435,7 @@ namespace NewProtos {
       if (other.IsFinished != false) {
         IsFinished = other.IsFinished;
       }
-      timeVarMap_.MergeFrom(other.timeVarMap_);
+      timeVarMap_.Add(other.timeVarMap_);
       if (other.QuestVarSeq != 0) {
         QuestVarSeq = other.QuestVarSeq;
       }

@@ -210,8 +210,8 @@ namespace NewProtos {
         return;
       }
       exitPointIdList_.Add(other.exitPointIdList_);
-      entrancePointMap_.MergeFrom(other.entrancePointMap_);
-      detailInfoMap_.MergeFrom(other.detailInfoMap_);
+      entrancePointMap_.Add(other.entrancePointMap_);
+      detailInfoMap_.Add(other.detailInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

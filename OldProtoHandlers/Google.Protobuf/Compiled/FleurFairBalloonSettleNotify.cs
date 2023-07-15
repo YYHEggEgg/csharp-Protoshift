@@ -207,7 +207,7 @@ namespace OldProtos {
       if (other.MinigameId != 0) {
         MinigameId = other.MinigameId;
       }
-      settleInfoMap_.MergeFrom(other.settleInfoMap_);
+      settleInfoMap_.Add(other.settleInfoMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

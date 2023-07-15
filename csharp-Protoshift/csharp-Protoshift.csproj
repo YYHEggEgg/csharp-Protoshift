@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>$(DefineConstants)TRACE;RECORD_ALL_PKTS_FOR_REPLAY</DefineConstants>
+    <DefineConstants>$(DefineConstants)TRACE;PROXY_ONLY_SERVER_DISABLED;RECORD_ALL_PKTS_FOR_REPLAY</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>$(DefineConstants)TRACE;RECORD_ALL_PKTS_FOR_REPLAY</DefineConstants>
+    <DefineConstants>$(DefineConstants)TRACE;PROXY_ONLY_SERVER_DISABLED;RECORD_ALL_PKTS_FOR_REPLAY</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,10 +24,11 @@
 
   <ItemGroup>
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="2.2.3" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="3.0.0" />
     <PackageReference Include="EPPlus" Version="6.2.6" />
     <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.3.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="TextCopy" Version="6.2.1" />
   </ItemGroup>
 
   <ItemGroup>

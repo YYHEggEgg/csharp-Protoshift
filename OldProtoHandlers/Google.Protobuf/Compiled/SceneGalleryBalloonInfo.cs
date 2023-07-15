@@ -199,7 +199,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      scenePlayerBalloonInfoMap_.MergeFrom(other.scenePlayerBalloonInfoMap_);
+      scenePlayerBalloonInfoMap_.Add(other.scenePlayerBalloonInfoMap_);
       if (other.EndTime != 0) {
         EndTime = other.EndTime;
       }

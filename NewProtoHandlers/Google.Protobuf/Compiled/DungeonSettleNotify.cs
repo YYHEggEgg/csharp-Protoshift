@@ -736,8 +736,8 @@ namespace NewProtos {
       if (other == null) {
         return;
       }
-      settleShow_.MergeFrom(other.settleShow_);
-      strengthenPointDataMap_.MergeFrom(other.strengthenPointDataMap_);
+      settleShow_.Add(other.settleShow_);
+      strengthenPointDataMap_.Add(other.strengthenPointDataMap_);
       exhibitionInfoList_.Add(other.exhibitionInfoList_);
       if (other.UseTime != 0) {
         UseTime = other.UseTime;

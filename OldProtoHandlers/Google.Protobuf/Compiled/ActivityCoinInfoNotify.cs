@@ -235,7 +235,7 @@ namespace OldProtos {
       if (other.ActivityId != 0) {
         ActivityId = other.ActivityId;
       }
-      activityCoinMap_.MergeFrom(other.activityCoinMap_);
+      activityCoinMap_.Add(other.activityCoinMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

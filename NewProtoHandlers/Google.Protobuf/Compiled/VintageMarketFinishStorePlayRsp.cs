@@ -400,7 +400,7 @@ namespace NewProtos {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      storeIncomeMap_.MergeFrom(other.storeIncomeMap_);
+      storeIncomeMap_.Add(other.storeIncomeMap_);
       if (other.Unk3300DJILELFHFHJ != 0) {
         Unk3300DJILELFHFHJ = other.Unk3300DJILELFHFHJ;
       }

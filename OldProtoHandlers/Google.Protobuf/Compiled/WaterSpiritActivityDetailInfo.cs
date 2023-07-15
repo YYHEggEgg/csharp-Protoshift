@@ -224,7 +224,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      searchTimeMap_.MergeFrom(other.searchTimeMap_);
+      searchTimeMap_.Add(other.searchTimeMap_);
       if (other.RegionSearchId != 0) {
         RegionSearchId = other.RegionSearchId;
       }

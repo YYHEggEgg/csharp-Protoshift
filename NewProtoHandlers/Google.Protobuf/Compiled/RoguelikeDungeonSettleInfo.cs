@@ -351,7 +351,7 @@ namespace NewProtos {
       if (other.Unk3300BPLKJMIOKHM != false) {
         Unk3300BPLKJMIOKHM = other.Unk3300BPLKJMIOKHM;
       }
-      finishedChallengeCellNumMap_.MergeFrom(other.finishedChallengeCellNumMap_);
+      finishedChallengeCellNumMap_.Add(other.finishedChallengeCellNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

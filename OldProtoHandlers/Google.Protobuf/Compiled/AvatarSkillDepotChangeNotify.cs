@@ -341,7 +341,7 @@ namespace OldProtos {
       if (other.SkillDepotId != 0) {
         SkillDepotId = other.SkillDepotId;
       }
-      proudSkillExtraLevelMap_.MergeFrom(other.proudSkillExtraLevelMap_);
+      proudSkillExtraLevelMap_.Add(other.proudSkillExtraLevelMap_);
       talentIdList_.Add(other.talentIdList_);
       proudSkillList_.Add(other.proudSkillList_);
       if (other.CoreProudSkillLevel != 0) {
@@ -353,7 +353,7 @@ namespace OldProtos {
       if (other.AvatarGuid != 0UL) {
         AvatarGuid = other.AvatarGuid;
       }
-      skillLevelMap_.MergeFrom(other.skillLevelMap_);
+      skillLevelMap_.Add(other.skillLevelMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

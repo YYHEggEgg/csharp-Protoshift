@@ -229,7 +229,7 @@ namespace NewProtos {
       if (other.IsOpen != false) {
         IsOpen = other.IsOpen;
       }
-      targetNumMap_.MergeFrom(other.targetNumMap_);
+      targetNumMap_.Add(other.targetNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -269,7 +269,7 @@ namespace NewProtos {
       if (other.Unk3300IOLPAJKDEEA != 0) {
         Unk3300IOLPAJKDEEA = other.Unk3300IOLPAJKDEEA;
       }
-      targetNumMap_.MergeFrom(other.targetNumMap_);
+      targetNumMap_.Add(other.targetNumMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

@@ -269,7 +269,7 @@ namespace OldProtos {
       if (other.Retcode != 0) {
         Retcode = other.Retcode;
       }
-      roomCostMap_.MergeFrom(other.roomCostMap_);
+      roomCostMap_.Add(other.roomCostMap_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 

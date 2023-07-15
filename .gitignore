@@ -7,8 +7,12 @@
 /YSFreedomServer-v2
 /NewProtoHandlers/bin
 /NewProtoHandlers/obj
+/NewProtoHandlers/Backup
+/NewProtoHandlers/AskCmdId.cs
 /OldProtoHandlers/bin
 /OldProtoHandlers/obj
+/OldProtoHandlers/Backup
+/OldProtoHandlers/AskCmdId.cs
 /csharp-Protoshift/bin/Release/net6.0/logs
 /csharp-Protoshift/bin/Debug/net6.0/logs
 /csharp-Protoshift/bin/Debug/net6.0/Temp
@@ -49,3 +53,5 @@
 /csharp-Protoshift-Replay/bin
 /csharp-Protoshift-Replay/obj
 /csharp-Protoshift-Replay/logs
+/OldProtoHandlers/Google.Protobuf.3.4
+/csharp-Protoshift/windy_config.json

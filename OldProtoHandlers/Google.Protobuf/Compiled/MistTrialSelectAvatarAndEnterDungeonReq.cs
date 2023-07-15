@@ -383,24 +383,10 @@ namespace OldProtos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public uint MistTrialAvatarId {
-          get { return HasMistTrialAvatarId ? (uint) detail_ : 0; }
+          get { return detailCase_ == DetailOneofCase.MistTrialAvatarId ? (uint) detail_ : 0; }
           set {
             detail_ = value;
             detailCase_ = DetailOneofCase.MistTrialAvatarId;
-          }
-        }
-        /// <summary>Gets whether the "mist_trial_avatar_id" field is set</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool HasMistTrialAvatarId {
-          get { return detailCase_ == DetailOneofCase.MistTrialAvatarId; }
-        }
-        /// <summary> Clears the value of the oneof if it's currently set to "mist_trial_avatar_id" </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void ClearMistTrialAvatarId() {
-          if (HasMistTrialAvatarId) {
-            ClearDetail();
           }
         }
 
@@ -409,24 +395,10 @@ namespace OldProtos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ulong FormalAvatarGuid {
-          get { return HasFormalAvatarGuid ? (ulong) detail_ : 0UL; }
+          get { return detailCase_ == DetailOneofCase.FormalAvatarGuid ? (ulong) detail_ : 0UL; }
           set {
             detail_ = value;
             detailCase_ = DetailOneofCase.FormalAvatarGuid;
-          }
-        }
-        /// <summary>Gets whether the "formal_avatar_guid" field is set</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool HasFormalAvatarGuid {
-          get { return detailCase_ == DetailOneofCase.FormalAvatarGuid; }
-        }
-        /// <summary> Clears the value of the oneof if it's currently set to "formal_avatar_guid" </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void ClearFormalAvatarGuid() {
-          if (HasFormalAvatarGuid) {
-            ClearDetail();
           }
         }
 
@@ -476,8 +448,8 @@ namespace OldProtos {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (HasMistTrialAvatarId) hash ^= MistTrialAvatarId.GetHashCode();
-          if (HasFormalAvatarGuid) hash ^= FormalAvatarGuid.GetHashCode();
+          if (detailCase_ == DetailOneofCase.MistTrialAvatarId) hash ^= MistTrialAvatarId.GetHashCode();
+          if (detailCase_ == DetailOneofCase.FormalAvatarGuid) hash ^= FormalAvatarGuid.GetHashCode();
           hash ^= (int) detailCase_;
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
@@ -497,11 +469,11 @@ namespace OldProtos {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (HasFormalAvatarGuid) {
+          if (detailCase_ == DetailOneofCase.FormalAvatarGuid) {
             output.WriteRawTag(48);
             output.WriteUInt64(FormalAvatarGuid);
           }
-          if (HasMistTrialAvatarId) {
+          if (detailCase_ == DetailOneofCase.MistTrialAvatarId) {
             output.WriteRawTag(64);
             output.WriteUInt32(MistTrialAvatarId);
           }
@@ -515,11 +487,11 @@ namespace OldProtos {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (HasFormalAvatarGuid) {
+          if (detailCase_ == DetailOneofCase.FormalAvatarGuid) {
             output.WriteRawTag(48);
             output.WriteUInt64(FormalAvatarGuid);
           }
-          if (HasMistTrialAvatarId) {
+          if (detailCase_ == DetailOneofCase.MistTrialAvatarId) {
             output.WriteRawTag(64);
             output.WriteUInt32(MistTrialAvatarId);
           }
@@ -533,10 +505,10 @@ namespace OldProtos {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (HasMistTrialAvatarId) {
+          if (detailCase_ == DetailOneofCase.MistTrialAvatarId) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(MistTrialAvatarId);
           }
-          if (HasFormalAvatarGuid) {
+          if (detailCase_ == DetailOneofCase.FormalAvatarGuid) {
             size += 1 + pb::CodedOutputStream.ComputeUInt64Size(FormalAvatarGuid);
           }
           if (_unknownFields != null) {

@@ -24,11 +24,13 @@ namespace OldProtos {
     static GCGLevelTypeReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJHQ0dMZXZlbFR5cGUucHJvdG8qqwEKDEdDR0xldmVsVHlwZRIXChNHQ0df",
+            "ChJHQ0dMZXZlbFR5cGUucHJvdG8q/wEKDEdDR0xldmVsVHlwZRIXChNHQ0df",
             "TEVWRUxfVFlQRV9OT05FEAASGAoUR0NHX0xFVkVMX1RZUEVfQ09OU1QQARIX",
             "ChNHQ0dfTEVWRUxfVFlQRV9XRUVLEAISGAoUR0NHX0xFVkVMX1RZUEVfV09S",
             "TEQQAxIXChNHQ0dfTEVWRUxfVFlQRV9CT1NTEAQSHAoYR0NHX0xFVkVMX1RZ",
-            "UEVfQ0hBUkFDVEVSEAVCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
+            "UEVfQ0hBUkFDVEVSEAUSGAoUR0NHX0xFVkVMX1RZUEVfQlJFQUsQBhIYChRH",
+            "Q0dfTEVWRUxfVFlQRV9RVUVTVBAHEh4KGkdDR19MRVZFTF9UWVBFX0dVSURF",
+            "X0dST1VQEAhCDKoCCU9sZFByb3Rvc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::OldProtos.GCGLevelType), }, null, null));
@@ -44,6 +46,9 @@ namespace OldProtos {
     [pbr::OriginalName("GCG_LEVEL_TYPE_WORLD")] World = 3,
     [pbr::OriginalName("GCG_LEVEL_TYPE_BOSS")] Boss = 4,
     [pbr::OriginalName("GCG_LEVEL_TYPE_CHARACTER")] Character = 5,
+    [pbr::OriginalName("GCG_LEVEL_TYPE_BREAK")] Break = 6,
+    [pbr::OriginalName("GCG_LEVEL_TYPE_QUEST")] Quest = 7,
+    [pbr::OriginalName("GCG_LEVEL_TYPE_GUIDE_GROUP")] GuideGroup = 8,
   }
 
   #endregion

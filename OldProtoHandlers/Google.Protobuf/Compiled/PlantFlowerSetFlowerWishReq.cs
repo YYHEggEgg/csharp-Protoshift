@@ -204,7 +204,7 @@ namespace OldProtos {
       if (other == null) {
         return;
       }
-      flowerNumMap_.MergeFrom(other.flowerNumMap_);
+      flowerNumMap_.Add(other.flowerNumMap_);
       if (other.ScheduleId != 0) {
         ScheduleId = other.ScheduleId;
       }
