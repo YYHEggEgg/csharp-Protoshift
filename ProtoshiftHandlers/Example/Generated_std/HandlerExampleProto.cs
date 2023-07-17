@@ -8,11 +8,15 @@
 
 #nullable enable
 #region Designer Generated Code
+using csharp_Protoshift.ProtoHotPatch;
 using Google.Protobuf;
+using Google.Protobuf.Collections;
+using Google.Protobuf.Reflection;
+using System.Collections.Generic;
 
 namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
 {
-    public class HandlerExampleProto 
+    public class HandlerExampleProto
         : HandlerBase<NewProtos.ExampleProto, OldProtos.ExampleProto>
     {
         #region Base Type
@@ -49,6 +53,14 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             }
             // Not found match CommonResult in old: [ Field Type: uint32, Field Name: UnkExample_FNSDOAGFD, Is Repeated: false, Is Import Type: false ]
             // Not found match CommonResult in old: [ Field Type: InMessage, Field Name: UnkExample_NSKLDVKVC, Is Repeated: true, Is Import Type: false ]
+            #region Skill issue Middleware
+            var __worker = HotPatchMiddleware.Worker;
+            if (__worker.HasNewShiftToOldMiddleare(typeof(NewProtos.ExampleProto).Name))
+            {
+                oldprotocol = (OldProtos.ExampleProto)__worker.ExecuteNewShiftToOldMiddleware(
+                    typeof(NewProtos.ExampleProto).Name, newprotocol, oldprotocol);
+            }
+            #endregion
             return oldprotocol;
         }
 
@@ -75,9 +87,58 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             }
             // Not found match CommonResult in new: [ Field Type: uint32, Field Name: retcode, Is Repeated: false, Is Import Type: false ]
             // Not found match CommonResult in new: [ Field Type: InMessage, Field Name: inner_messages, Is Repeated: true, Is Import Type: false ]
+            #region Skill issue Middleware
+            var __worker = HotPatchMiddleware.Worker;
+            if (__worker.HasOldShiftToNewMiddleare(typeof(OldProtos.ExampleProto).Name))
+            {
+                newprotocol = (NewProtos.ExampleProto)__worker.ExecuteOldShiftToNewMiddleware(
+                    typeof(OldProtos.ExampleProto).Name, oldprotocol, newprotocol);
+            }
+            #endregion
             return newprotocol;
         }
         #endregion
+
+        public bool HasSkillIssue = true;
+#pragma warning disable CS8604
+        #region Skill issue APIs
+        public List<(string type_protobuf, string name_protobuf, string name_compiled)> 
+            oldSkillIssueList = new List<(string, string, string)>
+            {
+                ("uint32", "retcode", "Retcode"),
+                ("InMessage", "inner_messages", "InnerMessage")
+            };
+        public object GetNewRetcode(OldProtos.ExampleProto oldprotocol)
+            => oldprotocol.Retcode;
+        public object GetNewInnerMessage(OldProtos.ExampleProto oldprotocol)
+        {
+            RepeatedField<NewProtos.InMessage> res = new();
+            foreach (var element_inner_messages in oldprotocol.InnerMessages)
+            {
+                res.Add(handler_InMessage.OldShiftToNew(element_inner_messages));
+            }
+            return res;
+        }
+
+        public List<(string type_protobuf, string name_protobuf, string name_compiled)>
+            newSkillIssueList = new List<(string, string, string)>
+            {
+                ("uint32", "UnkExample_FNSDOAGFD", "UnkExampleFNSDOAGFD"),
+                ("InMessage", "UnkExample_NSKLDVKVC", "UnkExampleNSKLDVKVC")
+            };
+        public object GetOldUnkExampleFNSDOAGFD(NewProtos.ExampleProto newprotocol)
+            => newprotocol.UnkExampleFNSDOAGFD;
+        public object GetOldUnkExampleNSKLDVKVC(NewProtos.ExampleProto newprotocol)
+        {
+            RepeatedField<OldProtos.InMessage> res = new();
+            foreach (var element_UnkExample_NSKLDVKVC in newprotocol.UnkExampleNSKLDVKVC)
+            {
+                res.Add(handler_InMessage.NewShiftToOld(element_UnkExample_NSKLDVKVC));
+            }
+            return res;
+        }
+        #endregion
+#pragma warning restore CS8604
 
         #region Outer bytes invoke
         public override byte[] NewShiftToOld(byte[] arr, int offset, int length)
