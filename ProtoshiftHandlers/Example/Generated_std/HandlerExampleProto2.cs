@@ -8,7 +8,11 @@
 
 #nullable enable
 #region Designer Generated Code
+using csharp_Protoshift.ProtoHotPatch;
 using Google.Protobuf;
+using Google.Protobuf.Collections;
+using Google.Protobuf.Reflection;
+using System.Collections.Generic;
 
 namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
 {
@@ -51,6 +55,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             return newprotocol;
         }
         #endregion
+
+        public bool HasSkillIssue = true;
 
         #region Outer bytes invoke
         public override byte[] NewShiftToOld(byte[] arr, int offset, int length)
@@ -116,6 +122,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                 return newprotocol;
             }
             #endregion
+
+            public bool HasSkillIssue = true;
 
             #region Outer bytes invoke
             public override byte[] NewShiftToOld(byte[] arr, int offset, int length)

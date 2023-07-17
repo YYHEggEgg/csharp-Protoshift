@@ -8,8 +8,11 @@
 
 #nullable enable
 #region Designer Generated Code
+using csharp_Protoshift.ProtoHotPatch;
 using Google.Protobuf;
-using System;
+using Google.Protobuf.Collections;
+using Google.Protobuf.Reflection;
+using System.Collections.Generic;
 
 namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
 {
@@ -22,6 +25,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         #endregion
         #region Import Types
         #endregion
+
+        public bool HasSkillIssue = true;
 
         #region Protocol shift
         public override OldProtos.InMessage? NewShiftToOld(NewProtos.InMessage? newprotocol)
