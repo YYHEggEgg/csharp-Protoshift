@@ -17,6 +17,7 @@
 //     }
 // }
 
+using Google.Protobuf;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -174,6 +175,25 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             public ImportTypeElement this[string friendlyName] => searchByFriendlyName[friendlyName];
             public bool TryGetValue(string friendlyName, [MaybeNullWhen(false)] out ImportTypeElement value)
                 => searchByFriendlyName.TryGetValue(friendlyName, out value);
+
+            public static readonly ReadOnlyDictionary<string, string> QueryProtobufNativeTypes = new(new Dictionary<string, string>
+            {
+                { "double", nameof(Double) },
+                { "float", nameof(Single) },
+                { "int32", nameof(Int32) },
+                { "int64", nameof(Int64) },
+                { "uint32", nameof(UInt32) },
+                { "uint64", nameof(UInt64) },
+                { "sint32", nameof(Int32) },
+                { "sint64", nameof(Int64) },
+                { "fixed32", nameof(Int32) },
+                { "fixed64", nameof(Int64) },
+                { "sfixed32", nameof(Int32) },
+                { "sfixed64", nameof(Int64) },
+                { "bool", nameof(Boolean) },
+                { "string", nameof(String) },
+                { "bytes", nameof(ByteString) },
+            });
         }
     }
 }
