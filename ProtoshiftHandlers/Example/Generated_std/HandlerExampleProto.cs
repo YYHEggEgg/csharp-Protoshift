@@ -107,37 +107,37 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         #pragma warning disable CS8603
         #pragma warning disable CS8604
         #region Skill issue APIs
-        public List<(string type_protobuf, string name_protobuf, string name_compiled, bool supported_type)> 
+        public static List<(string type_protobuf, string name_protobuf, string name_compiled, bool supported_type)> 
             oldSkillIssueList = new List<(string, string, string, bool)>
             {
                 ("uint32", "retcode", "Retcode", true),
                 ("InMessage", "inner_messages", "InnerMessage", true),
             };
-        public object GetNewRetcode(OldProtos.ExampleProto oldprotocol)
+        public static object GetNewRetcode(OldProtos.ExampleProto oldprotocol)
             => oldprotocol.Retcode;
-        public object GetNewInnerMessage(OldProtos.ExampleProto oldprotocol)
+        public static object GetNewInnerMessage(OldProtos.ExampleProto oldprotocol)
         {
             List<NewProtos.InMessage> res = new();
             foreach (var element_inner_messages in oldprotocol.InnerMessages)
             {
-                res.Add(handler_InMessage.OldShiftToNew(element_inner_messages));
+                res.Add(HandlerInMessage.GlobalInstance.OldShiftToNew(element_inner_messages));
             }
             return res;
         }
-        public List<(string type_protobuf, string name_protobuf, string name_compiled, bool supported_type)>
+        public static List<(string type_protobuf, string name_protobuf, string name_compiled, bool supported_type)>
             newSkillIssueList = new List<(string, string, string, bool)>
             {
                 ("uint32", "UnkExample_FNSDOAGFD", "UnkExampleFNSDOAGFD", true),
                 ("InMessage", "UnkExample_NSKLDVKVC", "UnkExampleNSKLDVKVC", true),
             };
-        public object GetOldUnkExampleFNSDOAGFD(NewProtos.ExampleProto newprotocol)
+        public static object GetOldUnkExampleFNSDOAGFD(NewProtos.ExampleProto newprotocol)
             => newprotocol.UnkExampleFNSDOAGFD;
-        public object GetOldUnkExampleNSKLDVKVC(NewProtos.ExampleProto newprotocol)
+        public static object GetOldUnkExampleNSKLDVKVC(NewProtos.ExampleProto newprotocol)
         {
             List<OldProtos.InMessage> res = new();
             foreach (var element_UnkExample_NSKLDVKVC in newprotocol.UnkExampleNSKLDVKVC)
             {
-                res.Add(handler_InMessage.NewShiftToOld(element_UnkExample_NSKLDVKVC));
+                res.Add(HandlerInMessage.GlobalInstance.NewShiftToOld(element_UnkExample_NSKLDVKVC));
             }
             return res;
         }

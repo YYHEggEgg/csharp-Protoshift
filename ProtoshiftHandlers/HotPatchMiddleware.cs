@@ -91,11 +91,11 @@ namespace csharp_Protoshift.ProtoHotPatch
         public bool HasOldShiftToNewMiddleare(string proto)
             => Empty ? false : enabled_config_protos_applyold.Contains(proto);
         public object ExecuteOldShiftToNewMiddleware(string proto, object oldprotocol, object newprotocol_return)
-            => config_applyold[proto]((oldprotocol, newprotocol_return));
+            => config_applyold[proto].Invoke((oldprotocol, newprotocol_return));
         public bool HasNewShiftToOldMiddleare(string proto)
             => Empty ? false : enabled_config_protos_applynew.Contains(proto);
         public object ExecuteNewShiftToOldMiddleware(string proto, object newprotocol, object oldprotocol_return)
-            => config_applynew[proto]((newprotocol, oldprotocol_return));
+            => config_applynew[proto].Invoke((newprotocol, oldprotocol_return));
 
 #pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
         public HotPatchReadOnlyWorker()

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharp_Protoshift.ProtoHotPatch
 {
-    internal class ProtoshiftHotPatchRule
+    internal class ProtoshiftHotPatchConfig
     {
         public string Proto { get; set; }
         public string ApplyTo { get; set; }
