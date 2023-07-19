@@ -74,6 +74,19 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, false, allimports, stringPool, ref oldskillIssues);
             GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, false, allimports, stringPool, ref oldskillIssues);
             GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, false, allimports, stringPool, ref oldskillIssues);
+            if (oldskillIssues.HasSkillIssue)
+            {
+                #region Skill issue Middleware
+                fi.WriteLine("#if DEBUG");
+                fi.WriteLine("var __worker = HotPatchMiddleware.Worker;");
+                fi.WriteLine($"if (__worker.HasOldShiftToNewMiddleare(typeof(OldProtos.{messageName}).Name))");
+                fi.EnterCodeRegion();
+                fi.WriteLine($"newprotocol = (NewProtos.{messageName})__worker.ExecuteOldShiftToNewMiddleware(",
+                    $"typeof(OldProtos.{messageName}).Name, oldprotocol, newprotocol);");
+                fi.ExitCodeRegion();
+                fi.WriteLine("#endif");
+                #endregion
+            }
             fi.WriteLine($"return newprotocol;");
             fi.ExitCodeRegion();
             #endregion
@@ -241,7 +254,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             ProtocStringPoolManager stringPool, string messageName,
             string? baseMessage_friendlyName = null)
         {
-            fi.WriteLine("public List<(string type_protobuf, string name_protobuf, string name_compiled, bool supported_type)>");
+            fi.WriteLine("public static List<(string type_protobuf, string name_protobuf, string name_compiled, bool supported_type)>");
             fi.AddIndent();
             fi.WriteLine($"{(generateForNew ? "new" : "old")}SkillIssueList = new List<(string, string, string, bool)>");
             fi.WriteLine("{");
