@@ -12,13 +12,13 @@
 
 但是，如果一些属性名称在程序中是唯一的呢？如果通过类型推断（比如所属 proto 已知，没有其他同类型的可能匹配）还可解，否则就是完全不可解了。在这种情况下，要是真的想解出来只有放弃幻想，在游戏内一个一个试。
 
-本程序基于 json 的 Protoshift 曾实现过类似的功能，但缺陷颇多，而且完全不可迁移至新版的 protoshift。基于这种原因，在本分支删除了原有的实现并完全重新实现。
+本程序基于 json 的 Protoshift 版本曾实现过类似的功能，但缺陷颇多，而且完全不可迁移至新版的 protoshift。基于这种原因，在本分支删除了原有的实现并完全重新实现。
 
 ## 中间件设计
 
 以一个例子解释中间件生效的时间：
 
-1. 服务端向 Protoshift 服务器发送 `PlayerLoginRsp`。
+1. 服务端向 Protoshift 代理服务器发送 `PlayerLoginRsp`。
 2. 对应的 `HandlerSession` 收到包，解密后交给 `ProtoshiftDispatch`。
 3. `ProtoshiftDispatch` 通过 CmdId 判断将其交给 `HandlerPlayerLoginRsp`。
 4. `HandlerPlayerLoginRsp.OldShiftToNew` 将包 `oldprotocol` 转换为 `newprotocol`。
@@ -84,22 +84,23 @@ Config 支持最基础的检查。例如：
 
 ## Config 编译错误总览
 
-- PSHP001: 尝试在 Release 环境下配置 HotPatch。
-- PSHP002: json 格式解析失败，已卸载当前的 HotPatch 配置。
-- PSHP003: 未找到对应的 Proto。
-- PSHP004: 定义的 Proto 不是两套 protocol 共有的。
-- PSHP005: ApplyTo 字段不为 "client" 或 "server" 中的任何一个。
-- PSHP006: Config 已启用，但是 Rules 为空。
-- PSHP007: rule 不包含标识符 `->`。
-- PSHP008: rule 有一方的字段名为空。
-- PSHP009: rule 至少有一方的字段名未定义。
-- PSHP010: 定义的 Proto 不存在无法正常 Protoshift 的字段。
-- PSHP011: 可能应翻转 rule 左右字段名。
-- PSHP012: rule 至少有一方可能应改为驼峰式命名。
-- PSHP013: rule 两方类型不匹配。
-- PSHP014: rule 中至少有一个字段不可以进行 Protoshift（因为其类型并不在两套 protocol 中共有）。
-- PSHP015: rule 涉及到暂不支持的消息内定义的类型。
-- PSHP016: 程序无法或无权读取文件，或文件被删除。
-- PSHP017: 定义的 Proto 是一个枚举类型。
-- PSHP018: 字段名与消息名称相同，因此您可能需要在字段名后尾随下划线。请参考相应 Proto 编译后生成的代码。
-- PSHP019: 所选的字段为一个 oneof 类型的入口点。应为 oneof 内的每个字段分别创建映射 rule。
+- Error PSHP001: 尝试在 Release 环境下配置 HotPatch。
+- Error PSHP002: json 格式解析失败，已卸载当前的 HotPatch 配置。
+- Error PSHP003: 未找到对应的 Proto。_[弃用，与 PSHP004 合并]_
+- Error PSHP004: Proto 未定义，或其不是两套 protocol 共有的。
+- Error PSHP005: ApplyTo 字段不为 "client" 或 "server" 中的任何一个。
+- Warning PSHP006: Config 已启用，但是 Rules 为空。
+- Error PSHP007: rule 不包含标识符 `->`。
+- Error PSHP008: rule 有一方的字段名为空。
+- Error PSHP009: rule 至少有一方的字段名未定义，或其为一个可以正常被 Protoshift 的字段。
+- Error PSHP010: 定义的 Proto 不存在无法正常 Protoshift 的字段。
+- Warning PSHP011: 可能应翻转 rule 左右字段名。
+- Warning PSHP012: rule 至少有一方可能应改为驼峰式命名。
+- Error PSHP013: rule 两方类型不匹配。
+- Error PSHP014: rule 中至少有一个字段不可以进行 Protoshift（因为其类型并不在两套 protocol 中共有）。
+- Error PSHP015: rule 涉及到暂不支持的消息内定义的类型。_[暂时弃用]_
+- Error PSHP016: 程序无法或无权读取文件，或文件被删除。
+- Error PSHP017: 定义的 Proto 是一个枚举类型。
+- Warning PSHP018: 字段名与消息名称相同，因此您可能需要在字段名后尾随下划线。请参考相应 Proto 编译后生成的代码。
+- Error PSHP019: 所选的字段为一个 oneof 类型的入口点。应为 oneof 内的每个字段分别创建映射 rule。
+- Error PSHP020: rule 包含多个标识符 `->`。

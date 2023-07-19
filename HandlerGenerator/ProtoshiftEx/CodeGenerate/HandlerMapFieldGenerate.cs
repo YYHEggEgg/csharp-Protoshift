@@ -113,8 +113,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             string fieldName = stringPool.GetCompiledName(mapFieldName) ?? "";
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string caller = $"{(generateForNewShiftToOld ? "new" : "old")}protocol.{fieldName}";
-            string keyImportPrefix = $"handler_{mapField.keyType}";
-            string valueImportPrefix = $"handler_{mapField.valueType}";
+            string keyImportPrefix = $"Handler{mapField.keyType}.GlobalInstance";
+            string valueImportPrefix = $"Handler{mapField.valueType}.GlobalInstance";
             if ((mapField.keyIsImportType && !importInfo.ContainsKey(mapField.keyType))
                 || (mapField.valueIsImportType && !importInfo.ContainsKey(mapField.valueType)))
             {
@@ -122,7 +122,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (generateForNewShiftToOld)
             {
-                fi.WriteLine($"public object GetOld{fieldName}(NewProtos.{messageName} newprotocol)");
+                fi.WriteLine($"public static object GetOld{fieldName}(NewProtos.{messageName} newprotocol)");
                 fi.EnterCodeRegion();
                 var keyCompiledType = mapField.keyIsImportType 
                     ? $"OldProtos.{importInfo[mapField.keyType].compileTypeName}"
@@ -145,7 +145,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             else
             {
-                fi.WriteLine($"public object GetNew{fieldName}(OldProtos.{messageName} oldprotocol)");
+                fi.WriteLine($"public static object GetNew{fieldName}(OldProtos.{messageName} oldprotocol)");
                 fi.EnterCodeRegion();
                 var keyCompiledType = mapField.keyIsImportType 
                     ? $"NewProtos.{importInfo[mapField.keyType].compileTypeName}"

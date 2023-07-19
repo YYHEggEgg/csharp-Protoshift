@@ -141,19 +141,19 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             string fieldName = stringPool.GetCompiledName(commonFieldName) ?? "";
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string caller = $"{(generateForNewShiftToOld ? "new" : "old")}protocol.{fieldName}";
-            string importPrefix = $"handler_{commonField.fieldType}";
+            string importPrefix = $"Handler{commonField.fieldType}.GlobalInstance";
             if (commonField.isImportType && !importInfo.ContainsKey(commonField.fieldType))
             {
                 return;
             }
             if (generateForNewShiftToOld)
             {
-                fi.WriteLine($"public object GetOld{fieldName}(NewProtos.{messageName} newprotocol)",
+                fi.WriteLine($"public static object GetOld{fieldName}(NewProtos.{messageName} newprotocol)",
                     $"=> {(commonField.isImportType ? $"{importPrefix}.NewShiftToOld({caller})" : caller)};");
             }
             else
             {
-                fi.WriteLine($"public object GetNew{fieldName}(OldProtos.{messageName} oldprotocol)",
+                fi.WriteLine($"public static object GetNew{fieldName}(OldProtos.{messageName} oldprotocol)",
                     $"=> {(commonField.isImportType ? $"{importPrefix}.OldShiftToNew({caller})" : caller)};");
             }
         }
@@ -176,21 +176,21 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (!commonField.isImportType)
             {
-                fi.WriteLine($"public object Get{(generateForNewShiftToOld ? "Old" : "New")}{fieldName}" +
+                fi.WriteLine($"public static object Get{(generateForNewShiftToOld ? "Old" : "New")}{fieldName}" +
                     $"({(generateForNewShiftToOld ? "New" : "Old")}Protos.{messageName} " +
                     $"{(generateForNewShiftToOld ? "new" : "old")}protocol)",
                     $"=> {caller};");
             }
             else
             {
-                fi.WriteLine($"public object Get{(generateForNewShiftToOld ? "Old" : "New")}{fieldName}" +
+                fi.WriteLine($"public static object Get{(generateForNewShiftToOld ? "Old" : "New")}{fieldName}" +
                     $"({(generateForNewShiftToOld ? "New" : "Old")}Protos.{messageName} " +
                     $"{(generateForNewShiftToOld ? "new" : "old")}protocol)");
                 fi.EnterCodeRegion();
                 fi.WriteLine($"List<{(generateForNewShiftToOld ? "Old" : "New")}Protos.{importInfo[commonField.fieldType].compileTypeName}> res = new();");
                 fi.WriteLine($"foreach (var element_{commonFieldName} in {caller})");
                 fi.EnterCodeRegion();
-                string importPrefix = $"handler_{commonField.fieldType}";
+                string importPrefix = $"Handler{commonField.fieldType}.GlobalInstance";
                 fi.WriteLine($"res.Add({importPrefix}." +
                     (generateForNewShiftToOld ? "NewShiftToOld" : "OldShiftToNew") +
                     $"(element_{commonFieldName}));");
