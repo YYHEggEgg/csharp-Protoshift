@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
@@ -22,8 +23,18 @@ namespace csharp_Protoshift.Commands
 
         public Task HandleAsync(string[] args)
         {
-            ProtoHotPatchCompiler.CompileFromFile(
-                File.ReadAllText("protoshift_hotpatch_config.json"));
+            string content;
+            try
+            {
+                content = File.ReadAllText("protoshift_hotpatch_config.json");
+            }
+            catch (Exception ex)
+            {
+                Log.Erro(ProtoHotPatchCompiler.PSHP016, nameof(ProtoHotPatchCmd));
+                Log.Info($"Reading file: {Path.GetFullPath("protoshift_hotpatch_config.json")} meets {ex}", nameof(ProtoHotPatchCmd));
+                return Task.CompletedTask;
+            }
+            ProtoHotPatchCompiler.CompileFromFile(content);
             return Task.CompletedTask;
         }
     }
