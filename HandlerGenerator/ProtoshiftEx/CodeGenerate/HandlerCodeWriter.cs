@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Xml.Linq;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
@@ -34,6 +35,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 fi.WriteLine($"Handler{importLine} handler_{importLine} = Handler{importLine}.GlobalInstance;");
             }
+            WriteGeneratedCodeAttribute(ref fi);
             fi.WriteLine($"public static string[] ImportedHandlers = new string[] {{");
             fi.AddIndent();
             foreach (var importLine in allimports.searchByFriendlyName.Keys)
@@ -49,6 +51,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine("#region Protocol Shift");
             #region NewShiftToOld
             SkillIssueCollection newskillIssues = new();
+            WriteNonUserCodeSign(ref fi);
             fi.WriteLine($"public override OldProtos.{messageName}? NewShiftToOld(NewProtos.{messageName}? newprotocol)");
             fi.EnterCodeRegion();
             fi.WriteLine($"if (newprotocol == null) return null;");
@@ -75,6 +78,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine();
             #region OldShiftToNew
             SkillIssueCollection oldskillIssues = new();
+            WriteNonUserCodeSign(ref fi);
             fi.WriteLine($"public override NewProtos.{messageName}? OldShiftToNew(OldProtos.{messageName}? oldprotocol)");
             fi.EnterCodeRegion();
             fi.WriteLine("if (oldprotocol == null) return null;");
@@ -124,31 +128,37 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             #endregion
             #region Outer bytes invoke
+            WriteNonUserCodeSign(ref fi);
             fi.WriteLine("public override byte[] NewShiftToOld(byte[] arr, int offset, int length)");
             fi.EnterCodeRegion();
             fi.WriteLine("var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(arr, offset, length));");
             fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();");
             fi.ExitCodeRegion();
+            WriteNonUserCodeSign(ref fi);
             fi.WriteLine("public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)");
             fi.EnterCodeRegion();
             fi.WriteLine("var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(span));");
             fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();");
             fi.ExitCodeRegion();
+            WriteNonUserCodeSign(ref fi);
             fi.WriteLine("public override ByteString NewShiftToOld(ByteString bytes)");
             fi.EnterCodeRegion();
             fi.WriteLine("var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(bytes));");
             fi.WriteLine("return rtn == null ? ByteString.Empty : rtn.ToByteString();");
             fi.ExitCodeRegion();
+            WriteNonUserCodeSign(ref fi);
             fi.WriteLine("public override byte[] OldShiftToNew(byte[] arr, int offset, int length)");
             fi.EnterCodeRegion();
             fi.WriteLine("var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(arr, offset, length));");
             fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();");
             fi.ExitCodeRegion();
+            WriteNonUserCodeSign(ref fi);
             fi.WriteLine("public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)");
             fi.EnterCodeRegion();
             fi.WriteLine("var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(span));");
             fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();");
             fi.ExitCodeRegion();
+            WriteNonUserCodeSign(ref fi);
             fi.WriteLine("public override ByteString OldShiftToNew(ByteString bytes)");
             fi.EnterCodeRegion();
             fi.WriteLine("var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(bytes));");
@@ -157,6 +167,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #endregion
             fi.WriteLine();
             fi.WriteLine($"private static Handler{friendly_messageName} _globalOnlyInstance = new Handler{friendly_messageName}();");
+            WriteNonUserCodeSign(ref fi);
             fi.WriteLine($"public static Handler{friendly_messageName} GlobalInstance => _globalOnlyInstance;");
             #region Inner Messages
             fi.WriteLine();
@@ -211,6 +222,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             var enumNodes_newOnly = newenum.enumNodes.Except(oldenum.enumNodes);
             #endregion
             #region NewShiftToOld
+            WriteNonUserCodeSign(ref fi);
             fi.WriteLine($"public override OldProtos.{enumName} NewShiftToOld(NewProtos.{enumName} newprotocol)");
             fi.EnterCodeRegion();
             fi.WriteLine("switch (newprotocol)");
@@ -232,6 +244,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #endregion
             fi.WriteLine();
             #region OldShiftToNew
+            WriteNonUserCodeSign(ref fi);
             fi.WriteLine($"public override NewProtos.{enumName} OldShiftToNew(OldProtos.{enumName} oldprotocol)");
             fi.EnterCodeRegion();
             fi.WriteLine("switch (oldprotocol)");
@@ -253,6 +266,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #endregion
             fi.WriteLine();
             fi.WriteLine($"private static Handler{friendly_enumName} _globalOnlyInstance = new Handler{friendly_enumName}();");
+            WriteNonUserCodeSign(ref fi);
             fi.WriteLine($"public static Handler{friendly_enumName} GlobalInstance => _globalOnlyInstance;");
             fi.ExitCodeRegion();
         }
@@ -262,6 +276,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             ProtocStringPoolManager stringPool, string messageName,
             string? baseMessage_friendlyName = null)
         {
+            WriteGeneratedCodeAttribute(ref fi);
             fi.WriteLine("public static List<(string type_protobuf, string name_protobuf, string name_compiled, bool supported_type)>");
             fi.AddIndent();
             fi.WriteLine($"{(generateForNew ? "new" : "old")}SkillIssueList = new List<(string, string, string, bool)>");
@@ -311,6 +326,19 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 GenerateOneofFieldOnewayAPI(ref fi, messageName, oneofField,
                     generateForNew, importInfo, stringPool, baseMessage_friendlyName);
             }
+        }
+
+        public static readonly string ProgramVersion = 
+            Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "null";
+
+        private static void WriteGeneratedCodeAttribute(ref BasicCodeWriter fi)
+            => fi.WriteLine($"[System.CodeDom.Compiler.GeneratedCode(" +
+                $"\"YYHEggEgg/csharp_Protoshift.HandlerGenerator\", \"{ProgramVersion}\")]");
+
+        private static void WriteNonUserCodeSign(ref BasicCodeWriter fi)
+        {
+            fi.WriteLine("[System.Diagnostics.DebuggerNonUserCode]");
+            WriteGeneratedCodeAttribute(ref fi);
         }
     }
 }

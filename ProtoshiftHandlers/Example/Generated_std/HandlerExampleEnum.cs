@@ -14,6 +14,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
     public class HandlerExampleEnum 
         : HandlerEnumBase<NewProtos.ExampleEnum, OldProtos.ExampleEnum>
     {
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
         public override OldProtos.ExampleEnum NewShiftToOld(NewProtos.ExampleEnum newprotocol)
         {
             switch (newprotocol)
@@ -31,6 +33,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             }
         }
 
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
         public override NewProtos.ExampleEnum OldShiftToNew(OldProtos.ExampleEnum oldprotocol)
         {
             switch (oldprotocol)
@@ -49,6 +53,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         }
 
         private static HandlerExampleEnum _globalOnlyInstance = new HandlerExampleEnum();
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
         public static HandlerExampleEnum GlobalInstance => _globalOnlyInstance;
     }
 }
