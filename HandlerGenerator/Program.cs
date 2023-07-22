@@ -503,7 +503,30 @@ await compiledStringPool.Compile();
 if (Directory.Exists($"./../ProtoshiftHandlers/Generated"))
 {
     Log.Info($"Detected old Protoshift handlers, deleting...");
-    Directory.Delete($"./../ProtoshiftHandlers/Generated", true);
+    try
+    {
+        Directory.Delete($"./../ProtoshiftHandlers/Generated", true);
+    }
+    catch (Exception ex)
+    {
+        if (Directory.Exists($"./../ProtoshiftHandlers/Generated")
+            && Directory.EnumerateFiles($"./../ProtoshiftHandlers/Generated").Any())
+        {
+            Log.Erro($"Deleting past handlers failed: {ex}");
+            while (true)
+            {
+                Log.Warn($"Please manually delete the directory {Path.GetFullPath("./../ProtoshiftHandlers/Generated")} " +
+                    $"(or all files in it) and press enter to continue.");
+                Console.ReadLine();
+                if (Directory.Exists($"./../ProtoshiftHandlers/Generated")
+                    && Directory.EnumerateFiles($"./../ProtoshiftHandlers/Generated").Any())
+                {
+                    Log.Erro($"Generator won't continue as the directory persists and it's not empty.");
+                }
+                else break;
+            }
+        }
+    }
 }
 Directory.CreateDirectory($"./../ProtoshiftHandlers/Generated");
 Directory.CreateDirectory($"./../ProtoshiftHandlers/ProtoDispatch");

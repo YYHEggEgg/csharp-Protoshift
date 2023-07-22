@@ -24,6 +24,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         MessageParser<OldProtos.InMessage> oldproto_parser_base = OldProtos.InMessage.Parser;
         #endregion
         #region Import Types
+        public static string[] ImportedHandlers = new string[] {
+            };
         #endregion
 
         public bool HasSkillIssue = true;
