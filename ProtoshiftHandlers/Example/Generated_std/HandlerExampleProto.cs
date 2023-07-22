@@ -27,6 +27,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         HandlerExampleEnum handler_ExampleEnum = HandlerExampleEnum.GlobalInstance;
         HandlerExampleProto2 handler_ExampleProto2 = HandlerExampleProto2.GlobalInstance;
         HandlerInMessage handler_InMessage = HandlerInMessage.GlobalInstance;
+        public static string[] ImportedHandlers = new string[] {
+            "ExampleEnum", 
+            "ExampleProto2", 
+            "InMessage",
+        };
         #endregion
 
         #region Protocol shift

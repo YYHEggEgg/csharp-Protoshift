@@ -26,6 +26,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         #region Import Types
         HandlerExampleInnerEnum handler_ExampleInnerEnum = HandlerExampleInnerEnum.GlobalInstance;
         HandlerExampleInnerProto handler_ExampleInnerProto = HandlerExampleInnerProto.GlobalInstance;
+        public static string[] ImportedHandlers = new string[] {
+            "ExampleInnerEnum",
+            "ExampleInnerProto",
+        };
         #endregion
 
         #region Protocol shift
@@ -103,6 +107,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             MessageParser<OldProtos.ExampleProto2.Types.ExampleInnerProto> oldproto_parser_base = OldProtos.ExampleProto2.Types.ExampleInnerProto.Parser;
             #endregion
             #region Import Types
+            public static string[] ImportedHandlers = new string[] {
+            };
             #endregion
 
             #region Protocol shift
