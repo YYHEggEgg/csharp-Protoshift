@@ -122,6 +122,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (generateForNewShiftToOld)
             {
+                WriteNonUserCodeSign(ref fi);
                 fi.WriteLine($"public static object GetOld{fieldName}(NewProtos.{messageName} newprotocol)");
                 fi.EnterCodeRegion();
                 var keyCompiledType = mapField.keyIsImportType 
@@ -145,6 +146,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             else
             {
+                WriteNonUserCodeSign(ref fi);
                 fi.WriteLine($"public static object GetNew{fieldName}(OldProtos.{messageName} oldprotocol)");
                 fi.EnterCodeRegion();
                 var keyCompiledType = mapField.keyIsImportType 

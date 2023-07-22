@@ -148,11 +148,13 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (generateForNewShiftToOld)
             {
+                WriteNonUserCodeSign(ref fi);
                 fi.WriteLine($"public static object GetOld{fieldName}(NewProtos.{messageName} newprotocol)",
                     $"=> {(commonField.isImportType ? $"{importPrefix}.NewShiftToOld({caller})" : caller)};");
             }
             else
             {
+                WriteNonUserCodeSign(ref fi);
                 fi.WriteLine($"public static object GetNew{fieldName}(OldProtos.{messageName} oldprotocol)",
                     $"=> {(commonField.isImportType ? $"{importPrefix}.OldShiftToNew({caller})" : caller)};");
             }
@@ -176,6 +178,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (!commonField.isImportType)
             {
+                WriteNonUserCodeSign(ref fi);
                 fi.WriteLine($"public static object Get{(generateForNewShiftToOld ? "Old" : "New")}{fieldName}" +
                     $"({(generateForNewShiftToOld ? "New" : "Old")}Protos.{messageName} " +
                     $"{(generateForNewShiftToOld ? "new" : "old")}protocol)",
@@ -183,6 +186,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             else
             {
+                WriteNonUserCodeSign(ref fi);
                 fi.WriteLine($"public static object Get{(generateForNewShiftToOld ? "Old" : "New")}{fieldName}" +
                     $"({(generateForNewShiftToOld ? "New" : "Old")}Protos.{messageName} " +
                     $"{(generateForNewShiftToOld ? "new" : "old")}protocol)");
