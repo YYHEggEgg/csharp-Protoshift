@@ -329,6 +329,10 @@ if (needRebuild)
     protocWatch.Stop();
     Log.Info($"Protoc compiling finished, elapsed {protocWatch.Elapsed}.");
     #endregion
+    // The protos compiled here is just for checking,
+    // so though there's a switch from Debug to Release,
+    // they won't need to be compiled again by the Generator.
+    // Just leave the task to dotnet publish.
     #region Compile Protos (C#)
     await OuterInvoke.RunMultiple(new OuterInvokeInfo
     {
@@ -681,8 +685,124 @@ else
 #endregion
 GenProtoshiftDispatch.Run(cmdData, "./../ProtoshiftHandlers/ProtoDispatch/ProtoshiftDispatch.cs", mergeChanges);
 #endregion
-Log.Info("Protoshift enhanced handlers generated! Press any key to exit.");
+Log.Info("Protoshift enhanced handlers generated! ");
+#if DEBUG
+Log.Info("Press any key to exit.");
 Console.ReadLine();
+#else
+Log.Info($"Now publishing...", "Release-Publish");
+string output_path = "./../Builds/";
+string? shavalue = null;
+if (Directory.Exists("./../.git"))
+{
+    ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
+    {
+        WorkingDirectory = "./..",
+        Arguments = "rev-parse HEAD",
+        RedirectStandardOutput = true
+    };
+    try
+    {
+        var p = Process.Start(startInfo);
+        if (p == null)
+        {
+            Log.Warn($"Start git failed, using time to identify build.", "Release-Publish");
+            output_path += $"output_{DateTime.Now:yyyyMMdd_HH-mm-ss}";
+        }
+        else
+        {
+            p.WaitForExit();
+            if (p.ExitCode != 0 || string.IsNullOrEmpty(shavalue = p.StandardOutput.ReadToEnd()))
+            {
+                Log.Warn($"git rev-parse HEAD exited with code {p.ExitCode}, using time to identify build.", "Release-Publish");
+                output_path += $"output_{DateTime.Now:yyyyMMdd_HH-mm-ss}";
+            }
+            else
+            {
+                output_path += $"output_{DateTime.Today:yyyyMMdd}_{shavalue.Substring(0, 7)}";
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        Log.Erro(ex.ToString(), "Release-Publish");
+        Log.Warn($"git rev-parse HEAD invoke failed, using time to identify build.", "Release-Publish");
+        output_path += $"output_{DateTime.Now:yyyyMMdd_HH-mm-ss}";
+    }
+}
+else
+{
+    Log.Warn($"Not a git repository. Using time to identify build.", "Release-Publish");
+    output_path += $"output_{DateTime.Now:yyyyMMdd_HH-mm-ss}";
+}
+Directory.CreateDirectory(output_path);
+Log.Info($"Build will be generated at {Path.GetFullPath(output_path)}.", "Release-Publish");
+#region Build info
+Log.Info($"Writing build info...", "Release-Publish");
+using (StreamWriter buildinfofile = new($"{output_path}/Build_Info.txt"))
+{
+    buildinfofile.WriteLine($"YYHEggEgg/csharp-Protoshift build v{HandlerCodeWriter.ProgramVersion}");
+    buildinfofile.WriteLine();
+    buildinfofile.WriteLine($"Built by YYHEggEgg/csharp-Protoshift.HandlerGenerator.");
+    buildinfofile.WriteLine($"Build time: {DateTime.Now}");
+    #region Get Infos
+    string? author = GetContentFromExecute(OuterInvokeConfig.git_path, "./..", "config --get user.name");
+    string? email = GetContentFromExecute(OuterInvokeConfig.git_path, "./..", "config --get user.email");
+    string? curbranch = GetContentFromExecute(OuterInvokeConfig.git_path, "./..", "rev-parse --abbrev-ref HEAD");
+    string? last_commit_author = GetContentFromExecute(OuterInvokeConfig.git_path, "./..", "log --pretty=format:\"%an\" HEAD -1");
+    string? last_commit_email = GetContentFromExecute(OuterInvokeConfig.git_path, "./..", "log --pretty=format:\"%ae\" HEAD -1");
+    string? last_commit_time = GetContentFromExecute(OuterInvokeConfig.git_path, "./..", "log --pretty=format:\"%cd\" HEAD -1");
+    #endregion
+    if (author != null)
+    {
+        buildinfofile.WriteLine($"Builder: {author ?? "<unknown>"} ({email ?? "<email unknown>"})");
+    }
+    if (curbranch != null)
+    {
+        buildinfofile.WriteLine($"Built on branch: {curbranch}");
+    }
+    buildinfofile.WriteLine();
+    if (shavalue != null)
+    {
+        buildinfofile.WriteLine($"Last commit: {shavalue}");
+        buildinfofile.WriteLine($"Created by {last_commit_author ?? "<unknown>"} " +
+            $"({last_commit_email ?? "<email unknown>"}) on: {last_commit_time ?? "<unknown>"}");
+    }
+}
+#endregion
+string dotnet_cmd = $"publish --configuration=Release -o {output_path}";
+await OuterInvoke.Run(new OuterInvokeInfo
+{
+    ProcessPath = OuterInvokeConfig.dotnet_path,
+    StartingNotice = $"Start publishing: dotnet {dotnet_cmd}",
+    CmdLine = dotnet_cmd,
+    AutoTerminateReason = $"dotnet publish failed.",
+    WorkingDir = "./../csharp-Protoshift"
+}, 2910);
+Log.Info($"Publish completed! Process will terminate in 3s.");
+await Task.Delay(3000);
+#endif
+
+string? GetContentFromExecute(string processPath, string workingDir, string commandLine)
+{
+    ProcessStartInfo startInfo = new(processPath)
+    {
+        WorkingDirectory = workingDir,
+        Arguments = commandLine,
+        RedirectStandardOutput = true
+    };
+    try
+    {
+        var p = Process.Start(startInfo);
+        string? rtnvalue = null;
+        p.WaitForExit();
+        if (p.ExitCode != 0) return null;
+        rtnvalue = p.StandardOutput.ReadToEnd();
+        if (rtnvalue == string.Empty) return null;
+        return rtnvalue?.Trim();
+    }
+    catch { return null;  }
+}
 
 internal class MergeChange
 {
