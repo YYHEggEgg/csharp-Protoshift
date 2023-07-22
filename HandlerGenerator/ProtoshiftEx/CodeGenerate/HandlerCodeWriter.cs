@@ -34,6 +34,14 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 fi.WriteLine($"Handler{importLine} handler_{importLine} = Handler{importLine}.GlobalInstance;");
             }
+            fi.WriteLine($"public static string[] ImportedHandlers = new string[] {{");
+            fi.AddIndent();
+            foreach (var importLine in allimports.searchByFriendlyName.Keys)
+            {
+                fi.WriteLine($"\"{importLine}\",");
+            }
+            fi.RemoveIndent();
+            fi.WriteLine($"}};");
             fi.WriteLine("#endregion");
             #endregion
             fi.WriteLine();
@@ -112,9 +120,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.WriteLine("#endregion");
                 fi.WriteLine("#pragma warning restore CS8603");
                 fi.WriteLine("#pragma warning restore CS8604");
+                fi.WriteLine();
             }
             #endregion
-            fi.WriteLine();
             #region Outer bytes invoke
             fi.WriteLine("public override byte[] NewShiftToOld(byte[] arr, int offset, int length)");
             fi.EnterCodeRegion();
