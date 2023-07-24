@@ -52,5 +52,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Handlers_protoshift-ex_output
-        path: ProtoshiftHandlers/Generated
+        path: ProtoshiftHandlers
         retention-days: 1
