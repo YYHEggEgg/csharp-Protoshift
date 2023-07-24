@@ -1,6 +1,9 @@
 name: Normal Build
 
 on:
+  push:
+    branches:
+      - protoshift-ex-hotpatch-support
   pull_request:
     branches:
       - main
@@ -8,7 +11,7 @@ on:
       - protoshift-ex-hotpatch-support
 
 jobs:
-  network-benchmark-ubuntu-rel:
+  protoshift-ex-rel:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,8 +23,28 @@ jobs:
       with:
         dotnet-version: '6.0.x'
 
-    - name: Restore NuGet packages
-      run: dotnet restore KcpTests/KcpPerformanceTest/KcpPerformanceTest.csproj
+    - name: Restore Generator NuGet packages
+      run: dotnet restore HandlerGenerator/HandlerGenerator.csproj
+
+    - name: Restore Project NuGet packages
+      run: dotnet restore csharp-Protoshift/csharp-Protoshift.csproj
 
     - name: Run tests
       run: cd HandlerGenerator ; dotnet run --configuration Release
+
+    - name: Archive build
+      uses: actions/upload-artifact@v2
+      with:
+        name: csharp-Protoshift_executable_output
+        path: Builds
+        retention-days: 1
+
+    - name: Delete ProtoshiftHandlers bins
+      run: rm -rf ProtoshiftHandlers/bin ; rm -rf ProtoshiftHandlers/obj ; rm -rf ProtoshiftHandlers/ProtoDispatch/Backup
+
+    - name: Archive custom handlers
+      uses: actions/upload-artifact@v2
+      with:
+        name: Handlers_protoshift-ex_output
+        path: ProtoshiftHandlers/Generated
+        retention-days: 1
