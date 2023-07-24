@@ -128,10 +128,10 @@ namespace csharp_Protoshift.Commands
                     if (i >= limit)
                     {
                         Log.Warn($"Session counts exceeded limit {limit} (total: {search_res.Count}).", nameof(QueryClientCmd));
-                        Log.Warn("You may use --range <conv_id_min> <conv_id_max> or change the limit, and run the command again.");
+                        Log.Warn("You may use --range <conv_id_min> <conv_id_max> or change the limit, and run the command again.", nameof(QueryClientCmd));
                         break;
                     }
-                    Log.Info($"Found conv: {search_res[i].Key}, IP address: {search_res[i].Value.remoteIp}");
+                    Log.Info($"Found conv: {search_res[i].Key}, IP address: {search_res[i].Value.remoteIp}", nameof(QueryClientCmd));
                 }
             return Task.CompletedTask;
         }

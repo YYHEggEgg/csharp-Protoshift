@@ -27,9 +27,18 @@ namespace csharp_Protoshift.GameSession
             if (!cancelledSessions.Contains(conv))
             {
                 HandlerSession session = new(conv);
-                session.remoteIp = ipEp;
-                sessions.TryAdd(conv, session);
+                if (sessions.TryAdd(conv, session))
+                {
+                    session.remoteIp = ipEp;
+                }
+                else sessions[conv].remoteIp = ipEp;
             }
+        }
+
+        public static void SessionDestroyed(uint conv)
+        {
+            cancelledSessions.Add(conv);
+            sessions.Remove(conv, out _);
         }
 
         public static byte[]? HandleServerPacket(byte[] data, uint conv)
