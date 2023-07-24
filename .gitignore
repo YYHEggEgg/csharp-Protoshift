@@ -16,7 +16,7 @@
 /csharp-Protoshift/bin/Release/net6.0/logs
 /csharp-Protoshift/bin/Debug/net6.0/logs
 /csharp-Protoshift/bin/Debug/net6.0/Temp
-/XC.RSAUtil/bin/Debug/net6.0
+/XC.RSAUtil/bin
 /XC.RSAUtil/obj
 /csharp-Protoshift/bin
 /CSharp-Logger/bin
@@ -55,3 +55,4 @@
 /csharp-Protoshift-Replay/logs
 /OldProtoHandlers/Google.Protobuf.3.4
 /csharp-Protoshift/windy_config.json
+/Builds

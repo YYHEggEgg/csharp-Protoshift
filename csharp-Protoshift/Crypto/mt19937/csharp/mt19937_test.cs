@@ -1,6 +1,3 @@
-using System;
-using Funny.Crypto;
-
 class MainClass
 {
 	/*public static void Main(string[] args) {

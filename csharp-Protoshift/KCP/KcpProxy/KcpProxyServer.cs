@@ -1,10 +1,8 @@
 ﻿// #define KCP_PROXY_VERBOSE // not avaliable currently
 
-using System.Collections.Concurrent;
 using System.Net;
 using YYHEggEgg.Logger;
 using csharp_Protoshift.SpecialUdp;
-using YSFreedom.Common.Util;
 using System.Buffers.Binary;
 using System.Net.Sockets.Kcp;
 
@@ -55,9 +53,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         catch (Exception ex)
                         {
                             Log.Dbug($"BackgroundUpdate:Connected reached exception {ex}", nameof(KcpProxyServer));
-                            if (connected_conn.State != MhyKcpBase.ConnectionState.CONNECTED)
-                                connected_clients.TryRemove(connected_conn.Conv, out _);
                         }
+                        if (connected_conn.State != MhyKcpBase.ConnectionState.CONNECTED)
+                            connected_clients.TryRemove(connected_conn.Conv, out _);
                         continue;
                     }
                     // ip dispatch

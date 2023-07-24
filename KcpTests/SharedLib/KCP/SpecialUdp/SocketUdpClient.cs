@@ -7,9 +7,8 @@ using System.Net;
 using System.Net.Sockets;
 using YYHEggEgg.Logger;
 using System.Buffers;
-using System.Diagnostics;
 
-namespace csharp_Protoshift.SpecialUdp  
+namespace csharp_Protoshift.SpecialUdp
 {
     public class SocketUdpClient : IDisposable
     {
@@ -82,7 +81,7 @@ namespace csharp_Protoshift.SpecialUdp
                 Log.Verb($"Received packet content ({avalidlength} bytes) from {result.RemoteEndPoint}: ---{Convert.ToHexString(rtn)}", nameof(SocketUdpClient));
 #else
                 _ = Task.Run(() => 
-                    Log.Verb($"Received packet content ({avalidlength} bytes) from {result.RemoteEndPoint}: ---{Convert.ToHexString(rtn)}", nameof(SocketUdpClient)));
+                    Log.Verb($"Received packet content ({avalidlength} bytes) from {_tmpendp}: ---{Convert.ToHexString(rtn)}", nameof(SocketUdpClient)));
 #endif
 #endif
                 _arrayPool.Return(buffer);
@@ -239,13 +238,8 @@ namespace csharp_Protoshift.SpecialUdp
 #if SOCKET_UDP_VERBOSE
                 Log.Verb($"Sent {result} bytes to {ipEndPoint} in {stopwatch.ElapsedMilliseconds}ms", nameof(SocketUdpClient));
 #endif
-#if SOCKET_UDP_PACKET_CONTENT_VERBOSE
-#if SOCKET_UDP_PACKET_CONTENT_VERBOSE_SYNCRONOUS
-                Log.Verb($"Sent packet content ({buffer.Length} bytes) to {ipEndPoint}: ---{Convert.ToHexString(buffer.Span)}", nameof(SocketUdpClient));
-#else
-                _ = Task.Run(() =>
-                    Log.Verb($"Sent packet content ({buffer.Length} bytes) to {ipEndPoint}: ---{Convert.ToHexString(buffer.Span)}", nameof(SocketUdpClient)));
-#endif
+#if SOCKET_UDP_PACKET_CONTENT_VERBOSE || SOCKET_UDP_PACKET_CONTENT_VERBOSE_SYNCRONOUS
+                Log.Verb($"Sent packet content ({buffer.Length} bytes) to {ipEndPoint}: ---{Convert.ToHexString(buffer)}", nameof(SocketUdpClient));
 #endif
 
                 return result;
