@@ -786,13 +786,21 @@ using (StreamWriter buildinfofile = new($"{output_path}/Build_Info.txt"))
     }
 }
 #endregion
-string dotnet_cmd = $"publish --configuration=Release -o {output_path}";
-await OuterInvoke.Run(new OuterInvokeInfo
+string dotnet_build_cmd = $"build --configuration=Release";
+string dotnet_publish_cmd = $"publish --no-build --configuration=Release -o {output_path}";
+await OuterInvoke.RunMultiple(new OuterInvokeInfo
 {
     ProcessPath = OuterInvokeConfig.dotnet_path,
-    StartingNotice = $"Start publishing: dotnet {dotnet_cmd}",
-    CmdLine = dotnet_cmd,
-    AutoTerminateReason = $"dotnet publish failed.",
+    StartingNotice = $"Start building: dotnet {dotnet_build_cmd}",
+    CmdLine = dotnet_build_cmd,
+    AutoTerminateReason = $"dotnet pre-publish build failed. ",
+    WorkingDir = "./../csharp-Protoshift"
+}, new OuterInvokeInfo
+{
+    ProcessPath = OuterInvokeConfig.dotnet_path,
+    StartingNotice = $"Start publishing: dotnet {dotnet_publish_cmd}",
+    CmdLine = dotnet_publish_cmd,
+    AutoTerminateReason = $"dotnet after-build publish failed. ",
     WorkingDir = "./../csharp-Protoshift"
 }, 2910);
 Log.Info($"Publish completed! Process will terminate in 3s.");
