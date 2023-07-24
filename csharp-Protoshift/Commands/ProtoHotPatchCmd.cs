@@ -14,7 +14,7 @@ namespace csharp_Protoshift.Commands
 
         public string Description => "Skill issue fix HotPatch";
 
-        public string Usage => "kskillissue reload - reload the config.";
+        public string Usage => "kskillissue load/reload - load and compile the config.";
 
         public void CleanUp()
         {
@@ -23,18 +23,26 @@ namespace csharp_Protoshift.Commands
 
         public Task HandleAsync(string[] args)
         {
-            string content;
-            try
+            if (args.Length == 0)
             {
-                content = File.ReadAllText("protoshift_hotpatch_config.json");
-            }
-            catch (Exception ex)
-            {
-                Log.Erro(ProtoHotPatchCompiler.PSHP016, nameof(ProtoHotPatchCmd));
-                Log.Info($"Reading file: {Path.GetFullPath("protoshift_hotpatch_config.json")} meets {ex}", nameof(ProtoHotPatchCmd));
+                Log.Erro(Usage, nameof(ProtoHotPatchCmd));
                 return Task.CompletedTask;
             }
-            ProtoHotPatchCompiler.CompileFromFile(content);
+            if (args[0] == "load" || args[0] == "reload")
+            {
+                string content;
+                try
+                {
+                    content = File.ReadAllText("protoshift_hotpatch_config.json");
+                }
+                catch (Exception ex)
+                {
+                    Log.Info($"Reading file: {Path.GetFullPath("protoshift_hotpatch_config.json")} meets {ex}", nameof(ProtoHotPatchCmd));
+                    Log.Erro(ProtoHotPatchCompiler.PSHP016, nameof(ProtoHotPatchCmd));
+                    return Task.CompletedTask;
+                }
+                ProtoHotPatchCompiler.CompileFromFile(content);
+            }
             return Task.CompletedTask;
         }
     }
