@@ -1,0 +1,56 @@
+name: Normal Build
+
+on:
+  push:
+    branches:
+      - protoshift-ex-hotpatch-support
+  pull_request:
+    branches:
+      - main
+      - protoshift-ex
+      - protoshift-ex-hotpatch-support
+
+jobs:
+  protoshift-ex-rel:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+    
+    - name: Fetch protoc (21.12)
+      run: wget https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip ; unzip protoc-21.12-linux-x86_64.zip
+
+    - name: Setup protoc
+      run: cp bin/protoc HandlerGenerator/protoc ; chmod +x HandlerGenerator/protoc
+
+    - name: Restore Generator NuGet packages
+      run: dotnet restore HandlerGenerator/HandlerGenerator.csproj
+
+    - name: Restore Project NuGet packages
+      run: dotnet restore csharp-Protoshift/csharp-Protoshift.csproj
+
+    - name: Run Generator
+      run: cd HandlerGenerator ; dotnet run --configuration Release
+
+    - name: Archive build
+      uses: actions/upload-artifact@v2
+      with:
+        name: csharp-Protoshift_executable_output
+        path: Builds
+        retention-days: 1
+
+    - name: Delete ProtoshiftHandlers bins
+      run: rm -rf ProtoshiftHandlers/bin ; rm -rf ProtoshiftHandlers/obj ; rm -rf ProtoshiftHandlers/ProtoDispatch/Backup
+
+    - name: Archive custom handlers
+      uses: actions/upload-artifact@v2
+      with:
+        name: Handlers_protoshift-ex_output
+        path: ProtoshiftHandlers
+        retention-days: 1

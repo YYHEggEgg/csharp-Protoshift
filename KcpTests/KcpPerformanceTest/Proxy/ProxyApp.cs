@@ -1,11 +1,6 @@
 ﻿using csharp_Protoshift.GameSession;
 using csharp_Protoshift.MhyKCP.Proxy;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.MhyKCP.Test.App
@@ -26,7 +21,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                 ServerPacketOrdered = GameSessionDispatch.ServerPacketOrdered,
                 ClientPacketOrdered = GameSessionDispatch.ClientPacketOrdered
             };
-            proxy.StartProxy(handlers);
+            _ = Task.Run(() => proxy.StartProxy(handlers));
             Log.Info($"KcpProxyServer started on 127.0.0.1:{Constants.UDP_PROXY_PORT}", nameof(ProxyApp));
 #endif
         }

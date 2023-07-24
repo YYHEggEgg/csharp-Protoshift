@@ -1,11 +1,8 @@
-using System;
-using System.Net;
-using System.Net.Sockets;
-using System.Threading.Tasks;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using YSFreedom.Common.Util;
 using csharp_Protoshift.SpecialUdp;
+using System.Buffers.Binary;
+using System.Collections.Concurrent;
+using System.Net;
+using System.Net.Sockets.Kcp;
 
 namespace csharp_Protoshift.MhyKCP
 {
@@ -16,12 +13,13 @@ namespace csharp_Protoshift.MhyKCP
         protected SocketUdpClient udpSock;
         protected bool _Closed = false;
         // string is the ToString() form of IPEndPoint
-        protected Dictionary<string, MhyKcpBase> clients;
-        protected ConcurrentQueue<IPEndPoint> newConnections;
+        protected ConcurrentDictionary<string, MhyKcpBase> connecting_clients;
+        protected ConcurrentDictionary<uint, MhyKcpBase> connected_clients;
+        protected ConcurrentQueue<AcceptAsyncReturn> newConnections;
 
         protected SingleThreadAssert _updatelock = new(nameof(KCPServer));
 
-#pragma warning disable CS8618 // ??????????????????? null ????��???????? null ????????????????? null??
+#pragma warning disable CS8618
         public class AcceptAsyncReturn
         {
             public MhyKcpBase Connection;
@@ -30,16 +28,18 @@ namespace csharp_Protoshift.MhyKCP
 
         protected KCPServer()
         {
-            clients = new Dictionary<string, MhyKcpBase>();
-            newConnections = new ConcurrentQueue<IPEndPoint>();
+            connecting_clients = new();
+            connected_clients = new();
+            newConnections = new();
         }
-#pragma warning restore CS8618 // ??????????????????? null ????��???????? null ????????????????? null??
+#pragma warning restore CS8618
 
         public KCPServer(IPEndPoint ipEp)
         {
             udpSock = new SocketUdpClient(ipEp);
-            clients = new Dictionary<string, MhyKcpBase>();
-            newConnections = new ConcurrentQueue<IPEndPoint>();
+            connecting_clients = new();
+            connected_clients = new();
+            newConnections = new();
 
             Task.Run(BackgroundUpdate);
         }
@@ -50,58 +50,92 @@ namespace csharp_Protoshift.MhyKCP
             while (!_Closed)
             {
                 var packet = await udpSock.ReceiveFromAsync();
-                string remoteIpString = packet.RemoteEndPoint.ToString();
-                if (clients.ContainsKey(remoteIpString))
+                if (packet.Buffer.Length == Handshake.LEN)
                 {
+                    Handshake handshake = new();
                     try
                     {
-                        clients[remoteIpString].Input(packet.Buffer);
+                        handshake.Decode(packet.Buffer);
                     }
-                    catch (Exception)
+                    catch (Exception) { continue; }
+                    if (connected_clients.TryGetValue(handshake.Conv, out var connected_conn)) // conv dispatch
                     {
-                        clients.Remove(remoteIpString);
+                        try
+                        {
+                            connected_conn.Input(packet.Buffer);
+                        }
+                        catch
+                        {
+                            if (connected_conn.State != MhyKcpBase.ConnectionState.CONNECTED)
+                                connected_clients.TryRemove(connected_conn.Conv, out _);
+                        }
+                        continue;
                     }
-                }
-                else
-                {
-                    // Oh boy! A new connection!
-                    var conn = new MhyKcpBase();
-                    conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
-
-                    conn.AcceptNonblock();
+                    // ip dispatch
+                    string remoteIpString = packet.RemoteEndPoint.ToString();
+                    MhyKcpBase conn;
+                    if (!connecting_clients.TryGetValue(remoteIpString, out var _outconn))
+                    {
+                        // Oh boy! A new connection!
+                        conn = new MhyKcpBase();
+                        conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
+                        conn.AcceptNonblock();
+                        connecting_clients[remoteIpString] = conn;
+                        _ = Task.Run(async () =>
+                        {
+                            try
+                            {
+                                await conn.AcceptAsync();
+                            }
+                            catch
+                            {
+                                connecting_clients.TryRemove(remoteIpString, out _);
+                            }
+                        });
+                    }
+                    else conn = _outconn;
                     try
                     {
                         conn.Input(packet.Buffer);
-
-                        clients[remoteIpString] = conn;
-                        newConnections.Enqueue(packet.RemoteEndPoint);
+                        if (conn.State == MhyKcpBase.ConnectionState.CONNECTED)
+                        {
+                            newConnections.Enqueue(new AcceptAsyncReturn { Connection = conn, RemoteEndpoint = packet.RemoteEndPoint });
+                        }
                     }
-                    catch (Exception)
+                    catch (Exception) { }
+                }
+                else if (packet.Buffer.Length >= KcpConst.IKCP_OVERHEAD) // conv dispatch
+                {
+                    var conv = BinaryPrimitives.ReadUInt32LittleEndian(packet.Buffer);
+                    if (connected_clients.TryGetValue(conv, out var conn))
                     {
-                        conn.Dispose();
+                        try
+                        {
+                            conn.Input(packet.Buffer);
+                        }
+                        catch (Exception)
+                        {
+                            if (conn.State != MhyKcpBase.ConnectionState.CONNECTED)
+                                connected_clients.TryRemove(conv, out _);
+                        }
                     }
                 }
             }
             _updatelock.Exit();
         }
 
-        public async Task<AcceptAsyncReturn> AcceptAsync()
+        public AcceptAsyncReturn Accept()
         {
-            MhyKcpBase? conn = null;
-            IPEndPoint? ipEp = null;
-
-            while (conn == null)
+            while (true)
             {
-                
-                if (newConnections.TryDequeue(out ipEp))
+                if (newConnections.TryDequeue(out var res))
                 {
-                    conn = clients[ipEp.ToString()];
+                    MhyKcpBase conn = res.Connection;
+                    connected_clients.TryAdd(conn.Conv, conn);
+                    return res;
                 }
-                if (conn == null) await Task.Delay(10);
+                Thread.Sleep(50);
             }
-
-            await conn.AcceptAsync();
-            return new AcceptAsyncReturn { Connection = conn, RemoteEndpoint = ipEp };
         }
 
         public void Close()
