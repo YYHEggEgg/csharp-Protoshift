@@ -1,10 +1,6 @@
 ﻿// #define KCP_INNER_LOG
 // #define KCP_EXPORT_PACKET_RECORD
 
-using System.Buffers;
-using System.Buffers.Binary;
-using System.Diagnostics;
-using System.Linq.Expressions;
 using System.Net.Sockets;
 using System.Net.Sockets.Kcp;
 using YSFreedom.Common.Util;
@@ -394,7 +390,10 @@ namespace csharp_Protoshift.MhyKCP
             _State = ConnectionState.CLOSED;
 
             if (cskcpHandle != null)
+            {
                 cskcpHandle.Dispose();
+                cskcpHandle = null;
+            }
 
             _Disposed = true;
         }
