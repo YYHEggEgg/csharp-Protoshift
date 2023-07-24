@@ -1,7 +1,6 @@
 using csharp_Protoshift.Enhanced.Handlers.Generator;
 using csharp_Protoshift.resLoader;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using YYHEggEgg.Logger;

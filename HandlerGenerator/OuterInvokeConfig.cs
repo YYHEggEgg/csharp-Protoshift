@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace csharp_Protoshift.Enhanced.Handlers.Generator
+﻿namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
     /// <summary>
     /// This class is used for configuring the invoke path of some apps. 

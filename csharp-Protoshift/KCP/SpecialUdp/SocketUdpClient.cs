@@ -7,9 +7,8 @@ using System.Net;
 using System.Net.Sockets;
 using YYHEggEgg.Logger;
 using System.Buffers;
-using System.Diagnostics;
 
-namespace csharp_Protoshift.SpecialUdp  
+namespace csharp_Protoshift.SpecialUdp
 {
     public class SocketUdpClient : IDisposable
     {
