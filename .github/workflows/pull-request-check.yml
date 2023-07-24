@@ -22,6 +22,12 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '6.0.x'
+    
+    - name: Fetch protoc (21.12)
+      run: wget https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip ; unzip protoc-21.12-linux-x86_64.zip
+
+    - name: Setup protoc
+      run: cp bin/protoc HandlerGenerator/protoc ; chmod +x HandlerGenerator/protoc
 
     - name: Restore Generator NuGet packages
       run: dotnet restore HandlerGenerator/HandlerGenerator.csproj
@@ -29,7 +35,7 @@ jobs:
     - name: Restore Project NuGet packages
       run: dotnet restore csharp-Protoshift/csharp-Protoshift.csproj
 
-    - name: Run tests
+    - name: Run Generator
       run: cd HandlerGenerator ; dotnet run --configuration Release
 
     - name: Archive build
