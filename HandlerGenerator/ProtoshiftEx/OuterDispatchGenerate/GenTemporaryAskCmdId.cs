@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using YYHEggEgg.Logger;
-
-namespace csharp_Protoshift.Enhanced.Handlers.Generator
+﻿namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
     internal static class GenTemporaryAskCmdId
     {

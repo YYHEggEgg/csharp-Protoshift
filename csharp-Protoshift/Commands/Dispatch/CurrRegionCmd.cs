@@ -1,11 +1,6 @@
 ﻿using csharp_Protoshift.Commands.Dispatch;
 using csharp_Protoshift.resLoader;
 using Google.Protobuf;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TextCopy;
 using YYHEggEgg.Logger;
 

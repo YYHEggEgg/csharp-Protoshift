@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
     public partial class HandlerCodeWriter
