@@ -1,6 +1,7 @@
 using csharp_Protoshift.Enhanced.Handlers.Generator;
 using csharp_Protoshift.resLoader;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using YYHEggEgg.Logger;
@@ -22,7 +23,8 @@ max_Output_Char_Count: -1,
 ));
 
 Log.Info("It is recommended to invoke this program with dotnet run.", "HandlerGenerator");
-Log.Warn("PLEASE USE THIS PROGRAM ALONG WITH FULL SOURCE CODE!", "HandlerGenerator");
+Log.PushLog("PLEASE USE THIS PROGRAM ALONG WITH FULL SOURCE CODE!", 
+    Directory.Exists($"./../.git") ? LogLevel.Information : LogLevel.Warning, "HandlerGenerator");
 #if DEBUG
 Log.Warn("The server publish won't execute as the Generator is running on DEBUG. If that's not expected, rerun it with -c=Release.");
 #endif
@@ -62,6 +64,8 @@ Directory.CreateDirectory("./../OldProtoHandlers/Backup");
 Directory.CreateDirectory("./../NewProtoHandlers/Backup");
 Directory.CreateDirectory("./../ProtoshiftHandlers/ProtoDispatch/Backup");
 #region Analyze Past file
+// key is source file (will be compiled), value is backup file
+Dictionary<string, string> recoverbackups = new();
 #region OldProtos.AskCmdId
 string askoldcmdid_filePath = "./../OldProtoHandlers/AskCmdId.cs";
 Dictionary<int, List<string>> cmd_askoldcmdid_specialHandles = new();
@@ -110,6 +114,7 @@ if (File.Exists(askoldcmdid_filePath))
     }
     string backup_askoldcmdid_path = $"./../OldProtoHandlers/Backup/AskCmdId.cs-{DateTime.Now:yyyy_MM_dd-HH_mm_ss}.cs";
     File.Move(askoldcmdid_filePath, backup_askoldcmdid_path);
+    recoverbackups.Add(askoldcmdid_filePath, backup_askoldcmdid_path);
     Log.Info($"OldProtos.AskCmdId backup successfully created at {backup_askoldcmdid_path}", "AskCmdId_Generate");
 }
 #endregion
@@ -161,6 +166,7 @@ if (File.Exists(asknewcmdid_filePath))
     }
     string backup_asknewcmdid_path = $"./../NewProtoHandlers/Backup/AskCmdId.cs-{DateTime.Now:yyyy_MM_dd-HH_mm_ss}.cs";
     File.Move(asknewcmdid_filePath, backup_asknewcmdid_path);
+    recoverbackups.Add(asknewcmdid_filePath, backup_asknewcmdid_path);
     Log.Info($"NewProtos.AskCmdId backup successfully created at {backup_asknewcmdid_path}", "AskCmdId_Generate");
 }
 #endregion
@@ -222,7 +228,8 @@ if (File.Exists(shiftCmdId_filePath))
         }
     }
     string backup_shiftCmdId_path = $"./../ProtoshiftHandlers/ProtoDispatch/Backup/ShiftCmdId-{DateTime.Now:yyyy_MM_dd-HH_mm_ss}.cs";
-    File.Move("./../ProtoshiftHandlers/ProtoDispatch/ShiftCmdId.cs", backup_shiftCmdId_path);
+    File.Move(shiftCmdId_filePath, backup_shiftCmdId_path);
+    recoverbackups.Add(shiftCmdId_filePath, backup_shiftCmdId_path);
     Log.Info($"ShiftCmdId backup successfully created at {backup_shiftCmdId_path}", "ShiftCmdId_Generate");
 }
 #endregion
@@ -605,12 +612,17 @@ Log.Info("Conguratulations! Protoshift handlers generated successfully.");
 Log.Info("Now generating CmdId related and ProtoshiftDispatch...");
 CmdIdDataStructure cmdData = new("./resources/protobuf/oldcmdid.csv",
     "./resources/protobuf/newcmdid.csv", messageResults);
+
+AppDomain.CurrentDomain.ProcessExit += RecoverBackup;
 #region Generate CmdId related
 GenTemporaryAskCmdId.Clear(askoldcmdid_filePath, asknewcmdid_filePath);
 GenAskCmdId.Run(cmdData, askoldcmdid_filePath, asknewcmdid_filePath,
     cmd_askoldcmdid_specialHandles, cmd_asknewcmdid_specialHandles);
+recoverbackups.Remove(askoldcmdid_filePath);
+recoverbackups.Remove(asknewcmdid_filePath);
 GenShiftCmdId.Run(cmdData, shiftCmdId_filePath,
     cmd_oldshiftnew_specialHandles, cmd_newshiftold_specialHandles);
+recoverbackups.Remove(shiftCmdId_filePath);
 #endregion
 #region Generate Protoshift Dispatch
 #region Analyze Past file
@@ -676,6 +688,7 @@ if (File.Exists(protoshiftDispatch_filePath))
     }
     string backup_protoshift_dispatch_path = $"./../ProtoshiftHandlers/ProtoDispatch/Backup/ProtoshiftDispatch-{DateTime.Now:yyyy_MM_dd-HH_mm_ss}.cs";
     File.Move(protoshiftDispatch_filePath, backup_protoshift_dispatch_path);
+    recoverbackups.Add(protoshiftDispatch_filePath, backup_protoshift_dispatch_path);
     Log.Info($"ProtoshiftDispatch backup successfully created at {backup_protoshift_dispatch_path}", "ProtoshiftDispatch_Generate");
 }
 else
@@ -683,8 +696,11 @@ else
     for (int i = 0; i < 6; i++) mergeChanges.Add(new());
 }
 #endregion
-GenProtoshiftDispatch.Run(cmdData, "./../ProtoshiftHandlers/ProtoDispatch/ProtoshiftDispatch.cs", mergeChanges);
+GenProtoshiftDispatch.Run(cmdData, protoshiftDispatch_filePath, mergeChanges);
+recoverbackups.Remove(protoshiftDispatch_filePath);
 #endregion
+AppDomain.CurrentDomain.ProcessExit -= RecoverBackup;
+
 Log.Info("Protoshift enhanced handlers generated! ");
 #if DEBUG
 Log.Info("Press any key to exit.");
@@ -712,7 +728,7 @@ if (Directory.Exists("./../.git"))
         else
         {
             p.WaitForExit();
-            if (p.ExitCode != 0 || string.IsNullOrEmpty(shavalue = p.StandardOutput.ReadToEnd()))
+            if (p.ExitCode != 0 || string.IsNullOrEmpty(shavalue = p.StandardOutput.ReadToEnd().Trim()))
             {
                 Log.Warn($"git rev-parse HEAD exited with code {p.ExitCode}, using time to identify build.", "Release-Publish");
                 output_path += $"output_{DateTime.Now:yyyyMMdd_HH-mm-ss}";
@@ -802,6 +818,21 @@ string? GetContentFromExecute(string processPath, string workingDir, string comm
         return rtnvalue?.Trim();
     }
     catch { return null;  }
+}
+
+/// <summary>
+/// A recovery method used by <see cref="AppDomain.ProcessExit"/>.
+/// </summary>
+void RecoverBackup(object? sender, EventArgs? args)
+{
+    foreach (var recovery in recoverbackups)
+    {
+        try
+        {
+            File.Move(recovery.Value, recovery.Key, true);
+        }
+        catch { }
+    }
 }
 
 internal class MergeChange

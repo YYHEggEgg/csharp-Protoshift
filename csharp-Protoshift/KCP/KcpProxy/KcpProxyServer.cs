@@ -55,9 +55,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         catch (Exception ex)
                         {
                             Log.Dbug($"BackgroundUpdate:Connected reached exception {ex}", nameof(KcpProxyServer));
-                            if (connected_conn.State != MhyKcpBase.ConnectionState.CONNECTED)
-                                connected_clients.TryRemove(connected_conn.Conv, out _);
                         }
+                        if (connected_conn.State != MhyKcpBase.ConnectionState.CONNECTED)
+                            connected_clients.TryRemove(connected_conn.Conv, out _);
                         continue;
                     }
                     // ip dispatch
