@@ -11,6 +11,7 @@ namespace csharp_Protoshift.Commands
             handlers.Add(new DecryptCurrRegionCmd());
             handlers.Add(new GenerateCurrRegionCmd());
             handlers.Add(new Ec2bCmd());
+            handlers.Add(new ConvertCmd());
         }
 
         public string CommandName => "util";
@@ -34,14 +35,14 @@ namespace csharp_Protoshift.Commands
                 {
                     "help", "?", "--help", "-h", "-?"
                 };
-                if (helpstrings.Contains(args[0])) ShowUsage();
+                if (helpstrings.Contains(args[0].ToLower())) ShowUsage();
                 else
                 {
                     ICommandHandler? cmd = (from utilcmd in handlers
                                             where utilcmd.CommandName == args[0]
                                             select utilcmd).FirstOrDefault();
                     if (cmd == null) ShowUsage();
-                    else if (helpstrings.Contains(args[1])) 
+                    else if (helpstrings.Contains(args[1].ToLower())) 
                     {
                         Log.Info($"Command 'util {cmd.CommandName}': {cmd.Description}", nameof(UtilCmd));
                         string[] help = cmd.Usage.Split(Environment.NewLine);
