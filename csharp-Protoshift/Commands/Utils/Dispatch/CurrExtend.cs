@@ -6,9 +6,10 @@ namespace csharp_Protoshift.Commands.Dispatch
 {
     public class CurrExtend
     {
-        public static OldProtos.QueryCurrRegionHttpRsp GetCurrFromJson(
-            string json, RSAUtilBase op)
+        public static (OldProtos.QueryCurrRegionHttpRsp res, bool? verificationOK) 
+            GetCurrFromJson(string? json, RSAUtilBase CPri, RSAUtilBase SPub)
         {
+            if (json == null) return (new OldProtos.QueryCurrRegionHttpRsp(), null);
             var doc = JsonDocument.Parse(json).RootElement;
             /* Curr Schema:
              * {
@@ -17,9 +18,14 @@ namespace csharp_Protoshift.Commands.Dispatch
              * }
              */
             string? content = doc.GetProperty("content").GetString();
-            if (content == null) return new OldProtos.QueryCurrRegionHttpRsp();
-            return OldProtos.QueryCurrRegionHttpRsp.Parser.ParseFrom(
-                op.RsaDecrypt(Convert.FromBase64String(content), RSAEncryptionPadding.Pkcs1));
+            string? sign = doc.GetProperty("sign").GetString();
+            if (content == null || sign == null) 
+                return (new OldProtos.QueryCurrRegionHttpRsp(), null);
+            byte[] data = Convert.FromBase64String(content);
+            return (OldProtos.QueryCurrRegionHttpRsp.Parser.ParseFrom(
+                        CPri.RsaDecrypt(data, RSAEncryptionPadding.Pkcs1)),
+                    SPub.VerifyData(data, Convert.FromBase64String(sign),
+                        HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1));
         }
     }
 }
