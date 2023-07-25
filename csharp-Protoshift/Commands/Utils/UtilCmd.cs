@@ -1,9 +1,4 @@
 ﻿using csharp_Protoshift.Commands.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
@@ -13,7 +8,8 @@ namespace csharp_Protoshift.Commands
         public List<ICommandHandler> handlers = new();
         public UtilCmd()
         {
-            handlers.Add(new CurrRegionCmd());
+            handlers.Add(new DecryptCurrRegionCmd());
+            handlers.Add(new Ec2bCmd());
         }
 
         public string CommandName => "util";
