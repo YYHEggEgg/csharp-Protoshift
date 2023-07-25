@@ -38,32 +38,41 @@ namespace csharp_Protoshift
 
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
-            Log.Info("Start loading all protos, it will take some time...", "Entry");
-            Log.Info(OldProtos.QueryJsonSerializer.Initialize(), "OldProtos");
-            Log.Info(NewProtos.QueryJsonSerializer.Initialize(), "NewProtos");
-            Log.Info(ProtoshiftDispatch.Initialize(), "Entry");
+            if (args.Length == 1 && args[0] == "--utils-only")
+            {
+                Log.Info($"umm... It's OK...", "UtilsOnly");
+                Log.Warn($"Please use util cmd only, or it will cause unknown problems!", "UtilsOnly");
+                Log.Info($"Type 'util help' to get command help.", "UtilsOnly");
+            }
+            else
+            {
+                Log.Info("Start loading all protos, it will take some time...", "Entry");
+                Log.Info(OldProtos.QueryJsonSerializer.Initialize(), "OldProtos");
+                Log.Info(NewProtos.QueryJsonSerializer.Initialize(), "NewProtos");
+                Log.Info(ProtoshiftDispatch.Initialize(), "Entry");
 
 #if !PROXY_ONLY_SERVER
-            Log.Info(SkillIssueDetect.Initialize(), "Entry");
+                Log.Info(SkillIssueDetect.Initialize(), "Entry");
 #endif
-            // Log.Info(KcpPacketAudit.Initialize(), "Entry");
+                // Log.Info(KcpPacketAudit.Initialize(), "Entry");
 
 
-            ProxyServer = new KcpProxyServer(new IPEndPoint(IPAddress.Parse("0.0.0.0"), 22102),
-                new IPEndPoint(IPAddress.Parse("192.168.127.130"), 20041));
+                ProxyServer = new KcpProxyServer(new IPEndPoint(IPAddress.Parse("0.0.0.0"), 22102),
+                    new IPEndPoint(IPAddress.Parse("192.168.127.130"), 20041));
 
-            ProxyHandlers handlers = new ProxyHandlers
-            {
-                SessionCreated = GameSessionDispatch.SessionCreated,
-                SessionDestroyed = GameSessionDispatch.SessionDestroyed,
-                OnServerPacketArrival = GameSessionDispatch.HandleServerPacket,
-                OnClientPacketArrival = GameSessionDispatch.HandleClientPacket,
-                ServerPacketOrdered = GameSessionDispatch.OrderedServerPacket,
-                ClientPacketOrdered = GameSessionDispatch.OrderedClientPacket
-            };
-            _ = Task.Run(() => ProxyServer.StartProxy(handlers));
-            Log.Info("Protoshift server started on 127.0.0.1:22102", "Entry");
-            Log.Info("Ready! Type 'help' to get command help.", "Entry");
+                ProxyHandlers handlers = new ProxyHandlers
+                {
+                    SessionCreated = GameSessionDispatch.SessionCreated,
+                    SessionDestroyed = GameSessionDispatch.SessionDestroyed,
+                    OnServerPacketArrival = GameSessionDispatch.HandleServerPacket,
+                    OnClientPacketArrival = GameSessionDispatch.HandleClientPacket,
+                    ServerPacketOrdered = GameSessionDispatch.OrderedServerPacket,
+                    ClientPacketOrdered = GameSessionDispatch.OrderedClientPacket
+                };
+                _ = Task.Run(() => ProxyServer.StartProxy(handlers));
+                Log.Info("Protoshift server started on 127.0.0.1:22102", "Entry");
+                Log.Info("Ready! Type 'help' to get command help.", "Entry");
+            }
 
             await CommandLine.Start();
             Close();
