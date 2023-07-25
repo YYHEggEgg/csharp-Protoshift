@@ -12,7 +12,7 @@ namespace csharp_Protoshift.Commands.Utils
     {
         public string CommandName => "dcurr";
 
-        public string Description => "Decrypt curr regions with Client Private keys.";
+        public string Description => "Decrypt query_cur_region content and verify it (to ensure it avaliable in anime game).";
 
         public string Usage => $"dcurr <key_id> <curr_json>{Environment.NewLine}" +
             $"Decrypt and verify query_cur_region content, by the key from resources.";
@@ -69,6 +69,58 @@ namespace csharp_Protoshift.Commands.Utils
             }
             await ClipboardService.SetTextAsync(res);
             Log.Info("Result copied to clipboard!", nameof(DecryptCurrRegionCmd));
+        }
+    }
+
+    internal class GenerateCurrRegionCmd : ICommandHandler
+    {
+        public string CommandName => "gencur";
+
+        public string Description => "Generate query_cur_region content and signature.";
+
+        public string Usage => $"gencur <key_id> <protobuf_content>{Environment.NewLine}" +
+            $"Encrypt and sign query_cur_region content, by the key from resources.";
+
+        public void CleanUp()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task HandleAsync(string[] args)
+        {
+            uint key_id = uint.Parse(args[0]);
+            var read = EasyInput.TryPreProcess(args, 1);
+            if (read.InputType != EasyInputType.Json)
+            {
+                Log.Erro($"Input param 2 should be a valid json!", nameof(GenerateCurrRegionCmd));
+            }
+            OldProtos.QueryCurrRegionHttpRsp curr = new();
+            try
+            {
+                curr = OldProtos.QueryCurrRegionHttpRsp.Parser.ParseJson(read.ProcessedString);
+            }
+            catch (Exception ex)
+            {
+                Log.Erro($"Protobuf serialization failed: {ex}", nameof(GenerateCurrRegionCmd));
+                Log.Warn($"It may because the json isn't valid." +
+                    $"It's recommended to modify based on the result" +
+                    $"from json protobuf from 'util dcurr' command.", nameof(GenerateCurrRegionCmd));
+                return;
+            }
+            try
+            {
+                var res = curr.GetCurrJson(Resources.CPri[key_id], Resources.SPri[key_id]);
+                Log.Info($"Result: \n{res}", nameof(GenerateCurrRegionCmd));
+                await ClipboardService.SetTextAsync(res);
+                Log.Info("Result copied to clipboard!", nameof(GenerateCurrRegionCmd));
+            }
+            catch (Exception ex)
+            {
+                Log.Erro($"RSA encryption failed: {ex}", nameof(GenerateCurrRegionCmd));
+                Log.Warn($"It may because you don't provide match key" +
+                    $"in resources/ClientPri and resources/ServerPri.", nameof(GenerateCurrRegionCmd));
+                return;
+            }
         }
     }
 }

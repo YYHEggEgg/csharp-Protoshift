@@ -54,7 +54,7 @@ namespace csharp_Protoshift
                 return new RsaPkcs8Util(privateKey: rsaKey, keySize: keySize);
             // PKCS1 Padding
             else if (rsaKey.StartsWith("-----BEGIN RSA PUBLIC KEY-----"))
-                return new RsaPkcs1Util(publicKey: rsaKey
+                return new RsaPkcs1Util(publicKey: rsaKey, keySize: keySize);
             else if (rsaKey.StartsWith("-----BEGIN RSA PRIVATE KEY-----"))
                 return new RsaPkcs1Util(privateKey: rsaKey, keySize: keySize);
             // .NET XML Format
