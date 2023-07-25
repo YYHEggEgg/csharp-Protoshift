@@ -100,6 +100,7 @@ namespace csharp_Protoshift.resLoader
                     uint id = UInt32.Parse(info.Name[0].ToString());
                     string pemKey = await File.ReadAllTextAsync(file);
                     Resources.SPri.Add(id, Tools.LoadRSAKey(pemKey));
+                    Resources.SPub.Add(id, Tools.LoadRSAKey(pemKey));
                 }
             }
             #endregion

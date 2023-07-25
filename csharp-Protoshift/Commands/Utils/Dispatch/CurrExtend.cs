@@ -22,9 +22,9 @@ namespace csharp_Protoshift.Commands.Dispatch
             if (content == null || sign == null) 
                 return (new OldProtos.QueryCurrRegionHttpRsp(), null);
             byte[] data = Convert.FromBase64String(content);
-            return (OldProtos.QueryCurrRegionHttpRsp.Parser.ParseFrom(
-                        CPri.RsaDecrypt(data, RSAEncryptionPadding.Pkcs1)),
-                    SPub.VerifyData(data, Convert.FromBase64String(sign),
+            byte[] res = CPri.RsaDecrypt(data, RSAEncryptionPadding.Pkcs1);
+            return (OldProtos.QueryCurrRegionHttpRsp.Parser.ParseFrom(res),
+                    SPub.VerifyData(res, Convert.FromBase64String(sign),
                         HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1));
         }
     }
