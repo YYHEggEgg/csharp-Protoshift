@@ -4,7 +4,7 @@ using Google.Protobuf;
 using TextCopy;
 using YYHEggEgg.Logger;
 
-namespace csharp_Protoshift.Commands
+namespace csharp_Protoshift.Commands.Utils
 {
     internal class CurrRegionCmd : ICommandHandler
     {
