@@ -1,9 +1,9 @@
 ﻿#if PROXY_ONLY_SERVER
 
+using AssetLib.Utils;
 using csharp_Protoshift.GameSession.SpecialFixs;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
-using Funny.Crypto;
 using Google.Protobuf;
 using Newtonsoft.Json;
 using OfficeOpenXml;
