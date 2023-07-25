@@ -9,6 +9,7 @@ namespace csharp_Protoshift.Commands
         public UtilCmd()
         {
             handlers.Add(new DecryptCurrRegionCmd());
+            handlers.Add(new GenerateCurrRegionCmd());
             handlers.Add(new Ec2bCmd());
         }
 
