@@ -1,9 +1,9 @@
 #if !PROXY_ONLY_SERVER
 
+using AssetLib.Utils;
 using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
-using Funny.Crypto;
 using Newtonsoft.Json;
 using OfficeOpenXml;
 using System.Collections.Concurrent;
@@ -402,15 +402,14 @@ namespace csharp_Protoshift.GameSession
 
         public static byte[] Generate4096KeyByMT19937(ulong seed)
         {
-            MT19937 mt1 = new(), mt2 = new();
-            mt1.Seed(seed);
-            ulong mt2seed = mt1.UInt64();
-            mt2.Seed(mt2seed);
-            mt2.UInt64();
+            MT19937_64 mt1 = new(seed);
+            ulong mt2seed = mt1.Int64();
+            MT19937_64 mt2 = new(mt2seed);
+            mt2.Int64();
             byte[] key = new byte[4096];
             for (int i = 0; i < key.Length; i += 8)
             {
-                ulong newui64 = mt2.UInt64();
+                ulong newui64 = mt2.Int64();
                 key.SetUInt64(i, newui64);
             }
             return key;
