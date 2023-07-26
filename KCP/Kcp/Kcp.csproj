@@ -5,9 +5,9 @@
     <Authors>云却</Authors>
 
     <!--版本配置-->
-    <AssemblyVersion>2.6.1.0</AssemblyVersion>
-    <FileVersion>2.6.1.0</FileVersion>
-    <Version>2.6.1.0</Version>
+	<AssemblyVersion>2.6.3.0</AssemblyVersion>
+	<FileVersion>2.6.3.0</FileVersion>
+	<Version>2.6.3.0</Version>
 
     <!--包配置-->
     <Product>Kcp</Product>
@@ -53,6 +53,7 @@
     </NoWarn>
 
     <!--打包配置-->
+	<PackageReadmeFile>README.md</PackageReadmeFile>
     <SignAssembly>False</SignAssembly>
     <AssemblyOriginatorKeyFile>..\OpenSource.snk</AssemblyOriginatorKeyFile>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
@@ -66,12 +67,16 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
-  <!--许可证文件配置-->
+  <!--嵌入的文件配置-->
   <ItemGroup>
     <None Include="..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+	<None Include="..\README.md">
+	  <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+	</None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EggEgg.CSharp-Logger" Version="3.0.0" />
