@@ -14,7 +14,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 
         public KcpProxyServer(IPEndPoint bindToAddress, IPEndPoint sendToAddress)
         {
-            udpSock = new SocketUdpClient(bindToAddress);
+            udpSock = new SocketUdpClient(bindToAddress, true);
             SendToEndpoint = sendToAddress;
 
             _updatelock = new(nameof(KcpProxyServer));
@@ -180,7 +180,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             try
             {
                 var afterpacket = PacketHandler(beforepacket, conn.Conv);
+#pragma warning disable CS8602 // 解引用可能出现空引用。
                 if (afterpacket != null) conn.sendClient.Send(afterpacket);
+#pragma warning restore CS8602 // 解引用可能出现空引用。
 #if KCP_PROXY_VERBOSE
                 Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", $"{nameof(KcpProxyServer)}:ServerSender");
 #endif
@@ -275,7 +277,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 throw new KeyNotFoundException($"The specified session (conv: {conv}) does not exist.");
             }
             var conn = (KcpProxyBase)connected_clients[conv];
+#pragma warning disable CS8602 // 解引用可能出现空引用。
             conn.sendClient.Send(content);
+#pragma warning restore CS8602 // 解引用可能出现空引用。
         }
         #endregion
     }
