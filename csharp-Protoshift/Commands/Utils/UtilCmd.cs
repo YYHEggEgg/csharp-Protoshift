@@ -12,6 +12,7 @@ namespace csharp_Protoshift.Commands
             handlers.Add(new GenerateCurrRegionCmd());
             handlers.Add(new Ec2bCmd());
             handlers.Add(new ConvertCmd());
+            handlers.Add(new MT19937Cmd());
         }
 
         public string CommandName => "util";

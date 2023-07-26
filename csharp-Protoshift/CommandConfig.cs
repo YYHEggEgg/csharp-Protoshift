@@ -8,10 +8,6 @@ namespace csharp_Protoshift.Commands
         {
             var handlers = new List<ICommandHandler>();
             handlers.Add(new UtilCmd());
-#if DEBUG
-            handlers.Add(new MT19937Cmd());
-            // handlers.Add(new CurrRegionCmd());
-#endif
 #if !PROXY_ONLY_SERVER
             handlers.Add(new SetVerboseCmd());
             // handlers.Add(new SelectRecordCmd());
