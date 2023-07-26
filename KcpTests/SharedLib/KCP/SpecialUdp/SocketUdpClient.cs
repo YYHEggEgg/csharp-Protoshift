@@ -19,15 +19,28 @@ namespace csharp_Protoshift.SpecialUdp
         public const int UDP_MAX_PACKET_SIZE = 65507;
 
         private readonly ArrayPool<byte> _arrayPool;
+        private readonly bool _isSTABuffer;
+        private byte[]? STABuffer;
+        private SingleThreadAssert? _rcvSTAAssert;
 
-        public SocketUdpClient()
+        /// <summary>
+        /// Initializer.
+        /// </summary>
+        /// <param name="singlethread_receiving"><see cref="true"/> means you confirm that you're invoking the <see cref="ReceiveFrom"/> in only one thread. If you give it true but not ensure that, terrible thing will happen.</param>
+        public SocketUdpClient(bool singlethread_receiving = false)
         {
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
             _socket.Bind(new IPEndPoint(IPAddress.Any, 0));
             _arrayPool = ArrayPool<byte>.Shared;
+            _isSTABuffer = singlethread_receiving;
+            if (_isSTABuffer)
+            {
+                STABuffer = new byte[UDP_MAX_PACKET_SIZE];
+                _rcvSTAAssert = new($"{nameof(SocketUdpClient)}_{ReceiveFrom}");
+            }
         }
 
-        public SocketUdpClient(IPEndPoint ipEndPoint)
+        public SocketUdpClient(IPEndPoint ipEndPoint, bool singlethread_receiving = false)
         {
             if (ipEndPoint.AddressFamily == AddressFamily.InterNetwork)
                 _socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
@@ -38,6 +51,12 @@ namespace csharp_Protoshift.SpecialUdp
                 nameof(ipEndPoint));
             _socket.Bind(ipEndPoint);
             _arrayPool = ArrayPool<byte>.Shared;
+            _isSTABuffer = singlethread_receiving;
+            if (_isSTABuffer)
+            {
+                STABuffer = new byte[UDP_MAX_PACKET_SIZE];
+                _rcvSTAAssert = new($"{nameof(SocketUdpClient)}_{ReceiveFrom}");
+            }
         }
 
         public void Connect(IPEndPoint ipEndPoint)
@@ -49,7 +68,15 @@ namespace csharp_Protoshift.SpecialUdp
         #region ReceiveFrom(Async)
         public SocketUdpReceiveResult ReceiveFrom()
         {
-            var buffer = _arrayPool.Rent(UDP_MAX_PACKET_SIZE);
+            byte[] buffer;
+            if (_isSTABuffer)
+            {
+#pragma warning disable CS8600, CS8602 // Initialized when _isSTABuffer.
+                _rcvSTAAssert.Enter();
+                buffer = STABuffer ?? throw new InvalidOperationException("Won't appear, unless a bug.");
+#pragma warning restore CS8600, CS8602
+            }
+            else buffer = _arrayPool.Rent(UDP_MAX_PACKET_SIZE);
             SocketUdpReceiveResult receiveResult = new();
 
             try
@@ -70,6 +97,9 @@ namespace csharp_Protoshift.SpecialUdp
                     _tmpendp.ToString() != _defaultEndpointString)
                 {
                     Log.Warn($"Received data from unexpected endpoint {_tmpendp}, dropped", nameof(SocketUdpClient));
+#pragma warning disable CS8600, CS8602 // Initialized when _isSTABuffer.
+                    if (_isSTABuffer) _rcvSTAAssert.Exit();
+#pragma warning restore CS8600, CS8602
                     return ReceiveFrom();
                     // throw new SocketException((int)SocketError.HostUnreachable);
                 }
@@ -84,7 +114,6 @@ namespace csharp_Protoshift.SpecialUdp
                     Log.Verb($"Received packet content ({avalidlength} bytes) from {_tmpendp}: ---{Convert.ToHexString(rtn)}", nameof(SocketUdpClient)));
 #endif
 #endif
-                _arrayPool.Return(buffer);
                 receiveResult.Buffer = rtn;
                 receiveResult.ReceivedBytes = avalidlength;
                 if (_tmpendp is IPEndPoint)
@@ -95,6 +124,9 @@ namespace csharp_Protoshift.SpecialUdp
                 else
                 {
                     Log.Warn($"Received data from non-ip endpoint {_tmpendp}, dropped", nameof(SocketUdpClient));
+#pragma warning disable CS8600, CS8602 // Initialized when _isSTABuffer.
+                    if (_isSTABuffer) _rcvSTAAssert.Exit();
+#pragma warning restore CS8600, CS8602
                     return ReceiveFrom();
                 }
             }
@@ -103,12 +135,26 @@ namespace csharp_Protoshift.SpecialUdp
                 Log.Warn($"Failed to receive packet: {ex}", nameof(SocketUdpClient));
                 throw;
             }
+            finally
+            {
+#pragma warning disable CS8600, CS8602 // Initialized when _isSTABuffer.
+                if (_isSTABuffer) _rcvSTAAssert.Exit();
+#pragma warning restore CS8600, CS8602
+                else _arrayPool.Return(buffer);
+            }
         }
         
-
         public async Task<SocketUdpReceiveResult> ReceiveFromAsync()
         {
-            var buffer = _arrayPool.Rent(UDP_MAX_PACKET_SIZE);
+            byte[] buffer;
+            if (_isSTABuffer)
+            {
+#pragma warning disable CS8600, CS8602 // Initialized when _isSTABuffer.
+                _rcvSTAAssert.Enter();
+                buffer = STABuffer ?? throw new InvalidOperationException("Won't appear, unless a bug.");
+#pragma warning restore CS8600, CS8602
+            }
+            else buffer = _arrayPool.Rent(UDP_MAX_PACKET_SIZE);
             SocketUdpReceiveResult receiveResult = new();
 
             try
@@ -129,6 +175,9 @@ namespace csharp_Protoshift.SpecialUdp
                     result.RemoteEndPoint.ToString() != _defaultEndpointString)
                 {
                     Log.Warn($"Received data from unexpected endpoint {result.RemoteEndPoint}, dropped", nameof(SocketUdpClient));
+#pragma warning disable CS8600, CS8602 // Initialized when _isSTABuffer.
+                    if (_isSTABuffer) _rcvSTAAssert.Exit();
+#pragma warning restore CS8600, CS8602
                     return await ReceiveFromAsync();
                     // throw new SocketException((int)SocketError.HostUnreachable);
                 }
@@ -143,7 +192,6 @@ namespace csharp_Protoshift.SpecialUdp
                     Log.Verb($"Received packet content ({result.ReceivedBytes} bytes) from {result.RemoteEndPoint}: ---{Convert.ToHexString(rtn)}", nameof(SocketUdpClient)));
 #endif
 #endif
-                _arrayPool.Return(buffer);
                 receiveResult.Buffer = rtn;
                 receiveResult.ReceivedBytes = result.ReceivedBytes;
                 if (result.RemoteEndPoint is IPEndPoint)
@@ -154,6 +202,9 @@ namespace csharp_Protoshift.SpecialUdp
                 else
                 {
                     Log.Warn($"Received data from non-ip endpoint {result.RemoteEndPoint}, dropped", nameof(SocketUdpClient));
+#pragma warning disable CS8600, CS8602 // Initialized when _isSTABuffer.
+                    if (_isSTABuffer) _rcvSTAAssert.Exit();
+#pragma warning restore CS8600, CS8602
                     return await ReceiveFromAsync();
                 }
             }
@@ -161,6 +212,13 @@ namespace csharp_Protoshift.SpecialUdp
             {
                 Log.Warn($"Failed to receive packet: {ex}", nameof(SocketUdpClient));
                 throw;
+            }
+            finally
+            {
+#pragma warning disable CS8600, CS8602 // Initialized when _isSTABuffer.
+                if (_isSTABuffer) _rcvSTAAssert.Exit();
+#pragma warning restore CS8600, CS8602
+                else _arrayPool.Return(buffer);
             }
         }
         #endregion

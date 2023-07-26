@@ -10,11 +10,13 @@ on:
       - main
       - protoshift-ex
       - protoshift-ex-hotpatch-support
+      - protoshift-ex-network-improve
   push:
     branches:
       - network-performance-test
       - packet-protocol-audit
       - network-pressure-test
+      - protoshift-ex-network-improve
 
 jobs:
   network-benchmark-windows-rel:
