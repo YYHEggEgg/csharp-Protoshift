@@ -21,7 +21,7 @@ namespace csharp_Protoshift.Commands
                     catch (NotImplementedException) { }
                     catch (Exception ex)
                     {
-                        Log.Erro($"Cleanup of command {cmd.GetType()} failed: ex", nameof(CommandLine));
+                        Log.Erro($"Cleanup of command {cmd.GetType()} failed: {ex}", nameof(CommandLine));
                     }
                 }
                 stopServer.CleanUpCompleted = true;

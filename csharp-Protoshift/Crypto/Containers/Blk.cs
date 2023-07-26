@@ -1,5 +1,6 @@
 ﻿using AssetLib.Utils;
 
+#pragma warning disable CS8618, CS8625
 namespace AssetLib.Containers
 {
     public class Blk
@@ -227,3 +228,4 @@ namespace AssetLib.Containers
         }
     }
 }
+#pragma warning restore CS8618, CS8625

@@ -100,7 +100,9 @@ namespace csharp_Protoshift.MhyKCP
 
             byte[] h = new Handshake(Handshake.MAGIC_CONNECT, _Conv, _Token, ConnectData).AsBytes();
             var buf = new KcpInnerBuffer(h);
+#pragma warning disable CS8602 // 解引用可能出现空引用。
             OutputCallback.Output(buf, h.Length, false);
+#pragma warning restore CS8602 // 解引用可能出现空引用。
         }
 
         public async Task ConnectAsync()
@@ -189,7 +191,9 @@ namespace csharp_Protoshift.MhyKCP
                             _Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
 
                             var sendBackConv = new Handshake(Handshake.MAGIC_SEND_BACK_CONV, _Conv, _Token).AsBytes();
+#pragma warning disable CS8602 // 解引用可能出现空引用。
                             OutputCallback.Output(new KcpInnerBuffer(sendBackConv), sendBackConv.Length, false);
+#pragma warning restore CS8602 // 解引用可能出现空引用。
                             Initialize();
 
                             return 0;
@@ -369,11 +373,12 @@ namespace csharp_Protoshift.MhyKCP
                         update_next_time = cskcpHandle.Check(nowtime);
                     }
 
+#pragma warning disable CS0162 // 检测到无法访问的代码
                     if (!checkTime_refresh) await Task.Delay(KCP_RefreshMilliseconds);
                     else if (KCP_RefreshMilliseconds >= 15) await Task.Delay(KCP_RefreshMilliseconds);
+#pragma warning restore CS0162 // 检测到无法访问的代码
 
                 }
-                _updatelock.Exit();
             }
             catch (Exception ex)
             {
@@ -396,7 +401,9 @@ namespace csharp_Protoshift.MhyKCP
                 _State = ConnectionState.CLOSED;
 
                 var disconn = new Handshake(Handshake.MAGIC_DISCONNECT, _Conv, _Token).AsBytes();
+#pragma warning disable CS8602 // 解引用可能出现空引用。
                 OutputCallback.Output(new KcpInnerBuffer(disconn), disconn.Length, false);
+#pragma warning restore CS8602 // 解引用可能出现空引用。
 
                 return;
             }
@@ -423,7 +430,9 @@ namespace csharp_Protoshift.MhyKCP
             token = token == 0 ? _Token : token;
 
             byte[] disconnect = new Handshake(Handshake.MAGIC_DISCONNECT, conv, token, data).AsBytes();
+#pragma warning disable CS8602 // 解引用可能出现空引用。
             OutputCallback.Output(new KcpInnerBuffer(disconnect), disconnect.Length, false);
+#pragma warning restore CS8602 // 解引用可能出现空引用。
             _State = ConnectionState.CLOSED;
         }
 

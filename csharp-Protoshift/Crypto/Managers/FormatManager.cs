@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 
+#pragma warning disable CS8600, CS8602, CS8618
 namespace AssetLib.Managers
 {
     public static class FormatManager
@@ -24,7 +25,7 @@ namespace AssetLib.Managers
 
             return format;
         }
-        public static string ToString() => string.Join("\n", Formats.Values);
+        public static new string ToString() => string.Join("\n", Formats.Values);
         public static Format[] GetFormats() => Formats.Values.ToArray();
         public static string[] GetSupportedFormats() => Formats.Values.Select(x => x.Name).ToArray();
     }
@@ -87,3 +88,4 @@ namespace AssetLib.Managers
         private bool IsSupported(bool isEncrypt) => !string.IsNullOrEmpty(isEncrypt ? Pattern.Item2 : Pattern.Item1) || !string.IsNullOrEmpty(isEncrypt ? Extension.Item2 : Extension.Item1);
     }
 }
+#pragma warning restore CS8600, CS8602, CS8618
