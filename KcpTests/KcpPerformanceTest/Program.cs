@@ -2,6 +2,7 @@
 using csharp_Protoshift.resLoader;
 using YYHEggEgg.Logger;
 using csharp_Protoshift.MhyKCP.Test.Analysis;
+using OfficeOpenXml;
 
 // See https://aka.ms/new-console-template for more information
 Log.Initialize(new LoggerConfig(
@@ -17,6 +18,7 @@ Log.Initialize(new LoggerConfig(
 #endif
     debug_LogWriter_AutoFlush: true
 ));
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
 Log.Info("Kcp-Csharp Performance TESTER");
 Log.Info(await ResourcesLoader.Load());
