@@ -27,7 +27,11 @@ await ServerApp.Start();
 #if !CONNECT_SERVERONLY
 ProxyApp.Start();
 #endif
-await new ClientApp(0).Start();
+for (uint i = 0; i < Constants.running_clients_count; i++)
+{
+    await new ClientApp(i).Start();
+}
+_ = Task.Run(ClientApp.WaitForAllClients);
 
 if (Constants.running_on_github_actions)
 {
