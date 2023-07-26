@@ -1,5 +1,6 @@
 using csharp_Protoshift.MhyKCP.Test.Analysis;
 using csharp_Protoshift.MhyKCP.Test.Protocol;
+using System.Collections.Concurrent;
 using System.Net;
 using YYHEggEgg.Logger;
 
@@ -8,10 +9,13 @@ namespace csharp_Protoshift.MhyKCP.Test.App
     public class ClientApp
     {
         public readonly uint clientId;
+        private bool _finished = false;
+        private static ConcurrentBag<ClientApp> _clients = new();
 
         public ClientApp(uint clientId)
         {
             this.clientId = clientId;
+            _clients.Add(this);
         }
 
         public async Task Start()
@@ -65,7 +69,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                     // }
                     ack += 2;
                 }
-                await MainAnalysis.ClientFinished();
+                _finished = true;
             });
 
             _ = Task.Run(() =>
@@ -86,6 +90,21 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                     }
                 }
             });
+        }
+
+        internal static async Task WaitForAllClients()
+        {
+            while (true)
+            {
+                await Task.Delay(500);
+                bool allfinished = true;
+                foreach (var client in _clients)
+                {
+                    if (!client._finished) allfinished = false;
+                }
+                if (allfinished) break;
+            }
+            await MainAnalysis.ClientFinished();
         }
     }
 }

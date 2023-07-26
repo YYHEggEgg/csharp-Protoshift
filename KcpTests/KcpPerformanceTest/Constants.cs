@@ -15,5 +15,8 @@ namespace csharp_Protoshift.MhyKCP.Test.App
         public const int packet_interval_ms = 40;
         // 在Actions上跑要分配true 决定是否发包结束后10s退出 是否输出packet.log到控制台
         public const bool running_on_github_actions = true;
+
+        // 同时向服务器并发请求的客户端数量 actions上跑尽量不超过3 一般1
+        public const int running_clients_count = 4;
     }
 }
