@@ -22,9 +22,8 @@ namespace csharp_Protoshift.GameSession
         /// XOR key used to decrypt packet. Usually have a length of 4096.
         /// </summary>
         public byte[] XorKey { get; protected set; }
-        public PacketRecord[] records;
         public uint SessionId { get; private set; }
-        public IPEndPoint remoteIp { get; set; }
+        public IPEndPoint? remoteIp { get; set; }
         
         public const int Recommended_Protoshift_maximum_time_ms = 5;
 
@@ -253,6 +252,11 @@ namespace csharp_Protoshift.GameSession
             string protoname = isNewCmdid
                     ? NewProtos.AskCmdId.GetProtonameFromCmdId(cmdid)
                     : OldProtos.AskCmdId.GetProtonameFromCmdId(cmdid);
+            if (Verbose)
+            {
+                Log.Info($"Received packet {protoname} ({packet.Length} bytes) with CmdId: {cmdid} from" +
+                    (isNewCmdid ? "Client." : "Server."), $"PacketHandler({SessionId})");
+            }
             ushort shifted_cmdid = (ushort)(isNewCmdid ? ShiftCmdId.NewShiftToOld(cmdid) : ShiftCmdId.OldShiftToNew(cmdid));
 
             if (isNewCmdid)
