@@ -18,13 +18,11 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
         {
             Log.Info("客户端完成全部发包. 等待 10s...", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
             await Task.Delay(10000);
-            ClientDataChannel.Closed = true;
-            Log.Info("等待完毕。已锁定ClientDataChannel.", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
             #region 获取记录 
             try
             {
-                client_sent = ClientDataChannel.sent_pkts.AsReadOnly();
-                Log.Info($"已从Channel获取记录，Client共发出了 {client_sent.Count} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
+                client_sent = ClientDataChannel.sent_pkts.ToArray();
+                Log.Info($"已从Channel获取记录，Client共发出了 {client_sent.Length} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
 #if !CONNECT_SERVERONLY
                 proxy_client_recved = ProxyDataChannel.proxy_recved_client_pkts.ToArray();
                 Log.Info($"已从Channel获取记录，Proxy共收到了来自Client的 {proxy_client_recved.Length} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
@@ -41,8 +39,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 proxy_server_sent = ProxyDataChannel.proxy_sent_server_pkts.ToArray();
                 Log.Info($"已从Channel获取记录，Proxy共转发了来自Server的 {proxy_server_sent.Length} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
 #endif
-                client_recved = ClientDataChannel.recved_pkts.AsReadOnly();
-                Log.Info($"已从Channel获取记录，Client共收到了 {client_recved.Count} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
+                client_recved = ClientDataChannel.recved_pkts.ToArray();
+                Log.Info($"已从Channel获取记录，Client共收到了 {client_recved.Length} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
             }
             catch (Exception ex)
             {
@@ -54,9 +52,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             TestsFinished = true;
         }
 
-        static ReadOnlyCollection<ReadOnlyBasePacketRecord>?
-            client_sent, client_recved;
         static ReadOnlyBasePacketRecord[]?
+            client_sent, client_recved,
 #if CONNECT_SERVERONLY
             server_recved, server_sent;
 #else
