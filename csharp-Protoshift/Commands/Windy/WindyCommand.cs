@@ -100,6 +100,21 @@ namespace csharp_Protoshift.Commands
 
         public async Task HandleAsync(string[] args)
         {
+            if (!_initFinished)
+            {
+                Log.Info($"Windy luac manager initializing, please wait...", nameof(WindyCommand));
+                int elapsed_ms = 0;
+                while (!_initFinished && elapsed_ms < 10000)
+                {
+                    await Task.Delay(500);
+                    elapsed_ms += 500;
+                }
+                if (elapsed_ms >= 10000)
+                {
+                    Log.Erro($"Waiting initializaing timeout of 10s, please try again later or restart.", nameof(WindyCommand));
+                    return;
+                }
+            }
             if (args.Length == 0)
             {
                 Log.Erro($"windy require a command!", nameof(WindyCommand));
