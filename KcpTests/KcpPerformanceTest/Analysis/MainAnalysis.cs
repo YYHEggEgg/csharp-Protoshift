@@ -317,9 +317,9 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             // Output(stringRes, $"Client        -> Proxy            : 平均延迟:{CpDelay.average_packetDelay.Milliseconds}ms ({CpDelay.average_packetDelay}), 总丢包:{CpLoss.packetLoss}");
             Output(target, $"{from_friendlyName} -> {to_friendlyName}: " +
                 $"平均延迟:{delay.average_packetDelay.TotalMilliseconds}ms " +
-                $"({delay.average_packetDelay.ToStdString()}), 总丢包:{loss.packetLoss}, " +
+                $"({delay.average_packetDelay}), 总丢包:{loss.packetLoss}, " +
                 $"网络抖动:{(delay.maximum_packetDelay - delay.minimum_packetDelay).TotalMilliseconds}ms " +
-                $"({delay.minimum_packetDelay.ToStdString()} - {delay.maximum_packetDelay.ToStdString()})");
+                $"({delay.minimum_packetDelay} - {delay.maximum_packetDelay})");
         }
 
         private static void OutputLossAck(StringBuilder target, PacketLossResult lossResult, string from_friendlyName, string to_friendlyName)
@@ -407,7 +407,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                     ack = odd_ack,
                     packet_from = packet_from,
                     packet_to = packet_to,
-                    packet_delay = tuple.Item2.ToStdString(),
+                    packet_delay = tuple.Item2.ToString(),
                     packet_delay_milliseconds = tuple.Item2.TotalMilliseconds
                 };
             if (result_collection_all_in_one == null)
@@ -427,8 +427,5 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             }
         }
         #endregion
-
-        public static string ToStdString(this TimeSpan span)
-            => span.ToString("hh\\:mm\\:ss\\.fff\\.ffff");
     }
 }
