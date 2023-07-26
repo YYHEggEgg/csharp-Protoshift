@@ -107,14 +107,14 @@ namespace csharp_Protoshift.Commands
             }
             if (args[0] == "--set-env")
             {
-                if (windyExecute.SetEnvPath(args[1]))
+                if (windyExecute.SetEnvPath(string.Concat(args).Substring(args[0].Length)))
                     Log.Info($"Successfully set windy env path to {args[1]}.", nameof(WindyCommand));
                 else Log.Erro($"Failed to set windy env path to {args[1]}.", nameof(WindyCommand));
                 return;
             }
             else if (args[0] == "--set-luac")
             {
-                if (await windyExecute.TryModifyLuacExecutablePath(args[1]))
+                if (await windyExecute.TryModifyLuacExecutablePath(string.Concat(args).Substring(args[0].Length)))
                     Log.Info($"Successfully set luac path to {args[1]}.", nameof(WindyCommand));
                 else Log.Erro($"Failed to set luac path to {args[1]}.", nameof(WindyCommand));
                 return;
