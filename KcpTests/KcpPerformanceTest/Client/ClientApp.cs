@@ -5,9 +5,16 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.MhyKCP.Test.App
 {
-    public static class ClientApp
+    public class ClientApp
     {
-        public static async Task Start()
+        public readonly uint clientId;
+
+        public ClientApp(uint clientId)
+        {
+            this.clientId = clientId;
+        }
+
+        public async Task Start()
         {
 #if CONNECT_SERVERONLY
             KCPClient kcpClient = new(new(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
@@ -23,7 +30,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
             _ = Task.Run(async () =>
             {
                 int sum_wait_ms = 0;
-                uint ack = 1;
+                uint ack = Constants.packet_repeat_time * 2 * clientId + 1;
                 for (int i = 0; i < Constants.packet_repeat_time; i++)
                 {
                     /*

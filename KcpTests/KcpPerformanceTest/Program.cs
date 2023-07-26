@@ -27,7 +27,7 @@ await ServerApp.Start();
 #if !CONNECT_SERVERONLY
 ProxyApp.Start();
 #endif
-await ClientApp.Start();
+await new ClientApp(0).Start();
 
 if (Constants.running_on_github_actions)
 {
