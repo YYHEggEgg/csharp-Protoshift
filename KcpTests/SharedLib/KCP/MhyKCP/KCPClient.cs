@@ -18,7 +18,7 @@ namespace csharp_Protoshift.MhyKCP
 
         public KCPClient(IPEndPoint ipEp)
         {
-            udpSock = new SocketUdpClient();
+            udpSock = new SocketUdpClient(true);
             //udpSock = new();
             udpSock.Connect(ipEp);
             server = new MhyKcpBase();
@@ -98,32 +98,6 @@ namespace csharp_Protoshift.MhyKCP
         {
             _Closed = true;
             udpSock.Dispose();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns>null if disconnected</returns>
-        public async Task<byte[]?> ReceiveAsync()
-        {
-            _recvlock.Enter();
-            try
-            {
-                return await server.ReceiveAsync();
-            }
-            catch
-            {
-                if (server.State != MhyKcpBase.ConnectionState.CONNECTED)
-                {
-                    StartDisconnected?.Invoke(server.Conv, server.Token);
-                    return null;
-                }
-                else throw;
-            }
-            finally
-            {
-                _recvlock.Exit();
-            }
         }
 
         /// <summary>
