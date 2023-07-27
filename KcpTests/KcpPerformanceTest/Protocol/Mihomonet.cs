@@ -137,7 +137,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
                 Buffer.BlockCopy(packet, 0, _baseBuffer, 0, packet.Length);
                 XorDecrypt(ref _baseBuffer);
 #if DEBUG
-                Log.Verb($"Created BasePacket from array (decrypted): {Convert.ToHexString(_baseBuffer, 0, Math.Min(_baseBuffer.Length, (int)CalculateLength(Constants.each_packet_size)))}", $"{nameof(BasePacket)}({Unique_ID})_Ctor(arr)");
+                Log.Verb($"Created BasePacket from array (decrypted): {Convert.ToHexString(_baseBuffer, 0, Math.Min(_baseBuffer.Length, (int)CalculateLength((uint)Constants.each_packet_size)))}", $"{nameof(BasePacket)}({Unique_ID})_Ctor(arr)");
 #endif
                 #region 读取数组
                 isStructureValid = true;
