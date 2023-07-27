@@ -426,9 +426,5 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             }
         }
         #endregion
-
-        public static bool IsHeatingPacket(BasePacket pkt)
-            //=> ((pkt.ack - 1) % (Constants.packet_repeat_time)) < (Constants.packet_repeat_time * 2 / 100);
-            => false;
     }
 }
