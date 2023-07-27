@@ -1,17 +1,79 @@
 # KcpPerformanceTest
 
-±¾ÏîÄ¿ÓÃÓÚ³£¹æµÄÍøÂçĞ­Òé£¨»ùÓÚ KCP µÄ mihoyonet£©²âÊÔ¡£
+æœ¬é¡¹ç›®ç”¨äºå¸¸è§„çš„ç½‘ç»œåè®®ï¼ˆåŸºäº KCP çš„ mihoyonetï¼‰æµ‹è¯•ã€‚
 
-¿ªÆô·ûºÅ `CONNECT_SERVERONLY` ÒÔÌø¹ıÖĞ¼ä´úÀí£¬·ñÔò½«»áÍ¨¹ı´úÀí½øĞĞ¡£
+å¼€å¯ç¬¦å· `CONNECT_SERVERONLY` ä»¥è·³è¿‡ä¸­é—´ä»£ç†ï¼Œå¦åˆ™å°†ä¼šé€šè¿‡ä»£ç†è¿›è¡Œã€‚
 
-¸÷ÏîÉèÖÃ£¨°üÀ¨ UDP ¶Ë¿ÚºÅ£©ÔÚ `Constants.cs` ÖĞÉèÖÃ¡£
+å„é¡¹è®¾ç½®ï¼ˆåŒ…æ‹¬ UDP ç«¯å£å·ï¼‰åœ¨ `Constants.cs` ä¸­è®¾ç½®ã€‚
 
-## ²âÊÔ·½·¨¸ÅÊö
+## æµ‹è¯•æ–¹æ³•æ¦‚è¿°
 
-²âÊÔÓÉ¿Í»§¶ËÉú³ÉÒ»¸öÆæÊı ack£¬¼´ 1,3,5,...£»  
-·şÎñ¶ËÊÕµ½¶ÔÓ¦ ack ºó£¬½« ack +1 ²¢½« body Ô­·â²»¶¯ÖØ´«£»  
-ÔÚ´ËÆÚ¼ä£¬Èı·½½«Êı¾İÌá½»ÖÁÍ³Ò»µÄ Analysis ´¦Àí£¬·ÖÎöËÙ¶È¡¢ÑÓ³Ù¡¢¶ª°üµÈÊı¾İ¡£
+æµ‹è¯•ç”±å®¢æˆ·ç«¯ç”Ÿæˆä¸€ä¸ªå¥‡æ•° ackï¼Œå³ 1,3,5,...ï¼›  
+æœåŠ¡ç«¯æ”¶åˆ°å¯¹åº” ack åï¼Œå°† ack +1 å¹¶å°† body åŸå°ä¸åŠ¨é‡ä¼ ï¼›  
+åœ¨æ­¤æœŸé—´ï¼Œä¸‰æ–¹å°†æ•°æ®æäº¤è‡³ç»Ÿä¸€çš„ Analysis å¤„ç†ï¼Œåˆ†æé€Ÿåº¦ã€å»¶è¿Ÿã€ä¸¢åŒ…ç­‰æ•°æ®ã€‚
 
-ÓÉÓÚÕâÌ×Ğ­ÒéÖ÷ÒªÓÃÓÚ Protobuf ´«Êä£¬°üÊı¾İÖ»ÒªÓĞ²¿·Ö´íÎó¼´ÊÓÎªÈ«²¿¶ª°ü¡£
+ç”±äºè¿™å¥—åè®®ä¸»è¦ç”¨äº Protobuf ä¼ è¾“ï¼ŒåŒ…æ•°æ®åªè¦æœ‰éƒ¨åˆ†é”™è¯¯å³è§†ä¸ºå…¨éƒ¨ä¸¢åŒ…ã€‚
 
-ÎªÁËÉè¼Æ·½±ã£¬´ËÌ×²âÊÔ³ÌĞòÈÔÊ¹ÓÃ XOR ¼ÓÃÜ£¬µ«ÉáÈ¥ÁË·Ç¶Ô³ÆÃÜÔ¿½»»»¶øÖ»Ê¹ÓÃ dispatchKey.
+ä¸ºäº†è®¾è®¡æ–¹ä¾¿ï¼Œæ­¤å¥—æµ‹è¯•ç¨‹åºä»ä½¿ç”¨ XOR åŠ å¯†ï¼Œä½†èˆå»äº†éå¯¹ç§°å¯†é’¥äº¤æ¢è€Œåªä½¿ç”¨ dispatchKey.
+
+## å‘½ä»¤è¡Œæ“ä½œ
+
+ç¨‹åºæ”¯æŒä½¿ç”¨å‘½ä»¤è¡Œæ“ä½œã€‚
+
+English Usage:
+
+```txt
+   Usage: KcpPerformanceTest [options]
+
+   Options:
+     -s, --packet-size <size>         The size of each packet.
+     -t, --packet-repeat-time <time>  The total number of packets to send.
+     -i, --packet-interval <interval> The interval between packets in milliseconds.
+     -g, --github-actions             Whether the program is running on GitHub Actions.
+     -c, --clients-count <count>      The number of concurrent clients.
+     -d, --packet-delay-log           Whether to generate a packet delay log.
+```
+
+ä¸­æ–‡ä½¿ç”¨è¯´æ˜:
+
+```txt
+   ç”¨æ³•: KcpPerformanceTest [é€‰é¡¹]
+
+   é€‰é¡¹:
+     -s, --packet-size <size>         æ¯ä¸ªæ•°æ®åŒ…çš„å¤§å°ã€‚
+     -t, --packet-repeat-time <time>  å‘é€çš„æ€»æ•°æ®åŒ…æ•°é‡ã€‚
+     -i, --packet-interval <interval> æ•°æ®åŒ…ä¹‹é—´çš„é—´éš”æ—¶é—´ï¼ˆæ¯«ç§’ï¼‰ã€‚
+     -g, --github-actions             ç¨‹åºæ˜¯å¦åœ¨ GitHub Actions ä¸Šè¿è¡Œã€‚
+     -c, --clients-count <count>      å¹¶å‘å®¢æˆ·ç«¯çš„æ•°é‡ã€‚
+     -d, --packet-delay-log           æ˜¯å¦ç”Ÿæˆæ•°æ®åŒ…å»¶è¿Ÿæ—¥å¿—ã€‚
+```
+
+æ›´å…·ä½“çš„ï¼Œå¯å‚è€ƒ `Constants.cs`ï¼š
+
+```cs
+namespace csharp_Protoshift.MhyKCP.Test.App
+{
+    public static class Constants
+    {
+        public const ushort UDP_SERVER_PORT = 30351;
+        public const ushort UDP_PROXY_PORT = 30341;
+
+        public static int each_packet_size = 3500;
+        // æ˜¯å¦éšæœºåŒ…å¤§å° æœ€å°ä¸º0 æœ€å¤§ä¸ºeach_packet_size
+        // ç›®å‰åŒ…å¤§å°å›ºå®š ä¸ä½œæ›´æ”¹
+        // public const bool random_packet_size = false;
+
+        // å‘åŒ…æ€»æ•°é‡
+        public static int packet_repeat_time = 5000;
+        // å‘åŒ…é—´éš” éä¸¥æ ¼é—´éš”ï¼Œå³å‘å®ŒåŒ…åç­‰å¾…æ¯«ç§’æ•°
+        public static int packet_interval_ms = 40;
+        // åœ¨Actionsä¸Šè·‘è¦åˆ†é…true å†³å®šæ˜¯å¦å‘åŒ…ç»“æŸå10sé€€å‡º æ˜¯å¦è¾“å‡ºpacket.logåˆ°æ§åˆ¶å°
+        public static bool running_on_github_actions = true;
+
+        // åŒæ—¶å‘æœåŠ¡å™¨å¹¶å‘è¯·æ±‚çš„å®¢æˆ·ç«¯æ•°é‡
+        public static int running_clients_count = 5;
+        // æ˜¯å¦ç”ŸæˆåŒ…å»¶è¿Ÿç»Ÿè®¡è¡¨ ä¸€èˆ¬å®¢æˆ·ç«¯æ•°é‡>5æ—¶åˆ†é…false æ§åˆ¶è¾“å‡ºé‡
+        public static bool output_packet_delaylog = true;
+    }
+}
+```
