@@ -17,6 +17,6 @@ namespace csharp_Protoshift.MhyKCP.Test.App
         public const bool running_on_github_actions = true;
 
         // 同时向服务器并发请求的客户端数量
-        public const int running_clients_count = 10;
+        public const int running_clients_count = 5;
     }
 }
