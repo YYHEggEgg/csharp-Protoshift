@@ -272,10 +272,12 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             IEnumerable<PacketDelayOutputLine>? excel_outputs = null;
             GenerateExportLines(ref excel_outputs, CsDelay, "Client", "Server");
             GenerateExportLines(ref excel_outputs, ScDelay, "Server", "Client");
+#if !CONNECT_SERVERONLY
             GenerateExportLines(ref excel_outputs, CpDelay, "Client", "Proxy.HandleClient");
             GenerateExportLines(ref excel_outputs, PsDelay, "Proxy.HandleClient", "Server");
             GenerateExportLines(ref excel_outputs, SpDelay, "Server", "Proxy.HandleServer");
             GenerateExportLines(ref excel_outputs, PcDelay, "Proxy.HandleServer", "Client");
+#endif
 
             string delayPath = "logs/latest.packet.delaylog.xlsx";
             var packetDelay = new FileInfo("logs/latest.packet.delaylog.xlsx");
@@ -287,8 +289,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 }
                 catch (Exception ex)
                 {
-                    Log.Erro($"包延迟统计表格重命名操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
-                    return;
+                    Log.Warn($"包延迟统计表格重命名操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+                    delayPath = Util.AddNumberedSuffixToPath(delayPath);
                 }
             }
             try
@@ -297,8 +299,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             }
             catch (Exception ex)
             {
-                Log.Warn($"对包延迟统计表格 {logPath} 的文件操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
-                delayPath = Util.AddNumberedSuffixToPath(delayPath);
+                Log.Erro($"对包延迟统计表格 {logPath} 的文件操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+                return;
             }
             #endregion
             Log.Info($"统计信息已输出到 {delayPath}。", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
@@ -424,5 +426,9 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             }
         }
         #endregion
+
+        public static bool IsHeatingPacket(BasePacket pkt)
+            //=> ((pkt.ack - 1) % (Constants.packet_repeat_time)) < (Constants.packet_repeat_time * 2 / 100);
+            => false;
     }
 }
