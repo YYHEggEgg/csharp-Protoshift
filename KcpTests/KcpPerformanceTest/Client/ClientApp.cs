@@ -34,7 +34,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
             _ = Task.Run(async () =>
             {
                 int sum_wait_ms = 0;
-                uint ack = Constants.packet_repeat_time * 2 * clientId + 1;
+                uint ack = (uint)(Constants.packet_repeat_time * 2 * clientId + 1);
                 for (int i = 0; i < Constants.packet_repeat_time; i++)
                 {
                     /*
@@ -50,7 +50,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                         */
                         try
                         {
-                            BasePacket pkt = BasePacket.Generate(ack, Constants.each_packet_size);
+                            BasePacket pkt = BasePacket.Generate(ack, (uint)Constants.each_packet_size);
                             kcpClient.Send(pkt.GetBytes());
                             Log.Verb($"Client sent ack: {ack}", "ClientSender");
                             ClientDataChannel.PushSentPacket(pkt);

@@ -267,43 +267,47 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             #endregion
             #endregion
             Log.Info($"日志已输出到路径 {logPath}。", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
-            #region 生成包延迟统计表格
-            Log.Info("正在生成发包延迟统计表格...", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
-            IEnumerable<PacketDelayOutputLine>? excel_outputs = null;
-            GenerateExportLines(ref excel_outputs, CsDelay, "Client", "Server");
-            GenerateExportLines(ref excel_outputs, ScDelay, "Server", "Client");
+            if (Constants.output_packet_delaylog)
+            {
+                #region 生成包延迟统计表格
+                Log.Info("正在生成发包延迟统计表格...", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+                IEnumerable<PacketDelayOutputLine>? excel_outputs = null;
+                GenerateExportLines(ref excel_outputs, CsDelay, "Client", "Server");
+                GenerateExportLines(ref excel_outputs, ScDelay, "Server", "Client");
 #if !CONNECT_SERVERONLY
-            GenerateExportLines(ref excel_outputs, CpDelay, "Client", "Proxy.HandleClient");
-            GenerateExportLines(ref excel_outputs, PsDelay, "Proxy.HandleClient", "Server");
-            GenerateExportLines(ref excel_outputs, SpDelay, "Server", "Proxy.HandleServer");
-            GenerateExportLines(ref excel_outputs, PcDelay, "Proxy.HandleServer", "Client");
+                GenerateExportLines(ref excel_outputs, CpDelay, "Client", "Proxy.HandleClient");
+                GenerateExportLines(ref excel_outputs, PsDelay, "Proxy.HandleClient", "Server");
+                GenerateExportLines(ref excel_outputs, SpDelay, "Server", "Proxy.HandleServer");
+                GenerateExportLines(ref excel_outputs, PcDelay, "Proxy.HandleServer", "Client");
 #endif
 
-            string delayPath = "logs/latest.packet.delaylog.xlsx";
-            var packetDelay = new FileInfo("logs/latest.packet.delaylog.xlsx");
-            if (packetDelay.Exists)
-            {
+                string delayPath = "logs/latest.packet.delaylog.xlsx";
+                var packetDelay = new FileInfo("logs/latest.packet.delaylog.xlsx");
+                if (packetDelay.Exists)
+                {
+                    try
+                    {
+                        packetDelay.MoveTo($"logs/{packetDelay.LastWriteTime:yyyy-MM-dd_HH-mm-ss}.packet.delaylog.xlsx");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Warn($"包延迟统计表格重命名操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+                        delayPath = Util.AddNumberedSuffixToPath(delayPath);
+                    }
+                }
                 try
                 {
-                    packetDelay.MoveTo($"logs/{packetDelay.LastWriteTime:yyyy-MM-dd_HH-mm-ss}.packet.delaylog.xlsx");
+                    excel_outputs?.ExportXlsxRecord(delayPath);
                 }
                 catch (Exception ex)
                 {
-                    Log.Warn($"包延迟统计表格重命名操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
-                    delayPath = Util.AddNumberedSuffixToPath(delayPath);
+                    Log.Erro($"对包延迟统计表格 {logPath} 的文件操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+                    return;
                 }
+                #endregion
+                Log.Info($"统计信息已输出到 {delayPath}。", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
             }
-            try
-            {
-                excel_outputs?.ExportXlsxRecord(delayPath);
-            }
-            catch (Exception ex)
-            {
-                Log.Erro($"对包延迟统计表格 {logPath} 的文件操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
-                return;
-            }
-            #endregion
-            Log.Info($"统计信息已输出到 {delayPath}。", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+            else Log.Info($"由于配置，包延迟统计信息并未输出。", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
             if (Constants.running_on_github_actions)
             {
                 Log.Info("程序约会在 10s 后退出...", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
