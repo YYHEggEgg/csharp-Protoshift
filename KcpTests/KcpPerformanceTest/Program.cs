@@ -44,4 +44,5 @@ if (Constants.running_on_github_actions)
 else
 {
     Console.ReadLine();
+    Environment.Exit(0);
 }
