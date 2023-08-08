@@ -708,6 +708,7 @@ Console.ReadLine();
 Log.Info($"Now publishing...", "Release-Publish");
 string output_path = "./../Builds/";
 string? shavalue = null;
+#region Get output Path
 if (Directory.Exists("./../.git"))
 {
     ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
@@ -750,7 +751,10 @@ else
     Log.Warn($"Not a git repository. Using time to identify build.", "Release-Publish");
     output_path += $"output_{DateTime.Now:yyyyMMdd_HH-mm-ss}";
 }
-Directory.CreateDirectory(output_path);
+#endregion
+
+string output_bin_path = $"{output_path}/bin";
+Directory.CreateDirectory(output_bin_path);
 Log.Info($"Build will be generated at {Path.GetFullPath(output_path)}.", "Release-Publish");
 #region Build info
 Log.Info($"Writing build info...", "Release-Publish");
@@ -786,7 +790,7 @@ using (StreamWriter buildinfofile = new($"{output_path}/Build_Info.txt"))
 }
 #endregion
 string dotnet_build_cmd = $"build --configuration=Release";
-string dotnet_publish_cmd = $"publish --no-build --configuration=Release -o {output_path}";
+string dotnet_publish_cmd = $"publish --no-build --configuration=Release -o {output_bin_path}";
 await OuterInvoke.RunMultiple(new OuterInvokeInfo
 {
     ProcessPath = OuterInvokeConfig.dotnet_path,
@@ -802,6 +806,23 @@ await OuterInvoke.RunMultiple(new OuterInvokeInfo
     AutoTerminateReason = $"dotnet after-build publish failed. ",
     WorkingDir = "./../csharp-Protoshift"
 }, 2910);
+#region Generate After-builds
+Log.Info($"dotnet build & publish succeeded. Now copying resources...");
+string output_res_dir = $"{output_path}/resources";
+CopyDir("./../csharp-Protoshift/resources", output_res_dir);
+
+Log.Info($"Create launch file...");
+await File.WriteAllTextAsync($"{output_path}/run.sh", "dotnet ./bin/csharp-Protoshift.dll");
+await File.WriteAllTextAsync($"{output_path}/run-win.bat", "dotnet ./bin/csharp-Protoshift.dll");
+if (OperatingSystem.IsLinux())
+{
+    await OuterInvoke.Run(new OuterInvokeInfo
+    {
+        ProcessPath = "chmod",
+        CmdLine = "+x ./run.sh",
+    });
+}
+#endregion
 Log.Info($"Publish completed! Process will terminate in 3s.");
 await Task.Delay(3000);
 #endif
@@ -839,6 +860,26 @@ void RecoverBackup(object? sender, EventArgs? args)
             File.Move(recovery.Value, recovery.Key, true);
         }
         catch { }
+    }
+}
+
+void CopyDir(string source, string target)
+    => CopyFilesRecursively(Path.GetFullPath(source), Path.GetFullPath(target));
+
+// .net - Copy the entire contents of a directory in C#
+// https://stackoverflow.com/questions/58744/copy-the-entire-contents-of-a-directory-in-c-sharp
+void CopyFilesRecursively(string sourcePath, string targetPath)
+{
+    //Now Create all of the directories
+    foreach (string dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
+    {
+        Directory.CreateDirectory(dirPath.Replace(sourcePath, targetPath));
+    }
+
+    //Copy all the files & Replaces any files with the same name
+    foreach (string newPath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
+    {
+        File.Copy(newPath, newPath.Replace(sourcePath, targetPath), true);
     }
 }
 
