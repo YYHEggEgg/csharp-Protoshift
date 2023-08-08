@@ -88,8 +88,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                                 "// ",
                                 "//    e.g. all protos use ENET_CHANNEL_ID = 0, ",
                                 "//         but DebugNotify use ENET_CHANNEL_ID = 2. ",
-                                "//    In this case, you should write a code handling the packet head, ",
-                                "//    or just uncomment the line not specifing 'DebugNotify'. ",
+                                "//    In this case, you may just uncomment the line not specifing 'DebugNotify'. ",
                                 "// ",
                                 "//    Please REMEMBER COMMENT/DELETE the line throwing exception! ",
                                 "//    And don't delete 'request special handle' line, ",
@@ -99,7 +98,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                             {
                                 writing_list.Add($"// return \"{tuple.messageName}\";");
                             }
-                            writing_list.Add($"throw new NotSupportedException(\"The cmdid conflict haven't been solved. Search for 'request special handle' in {identifier}ProtoHandlers/AskCmdId.cs for more information.\");");
+                            writing_list.Add($"return \"<unknown cmdid conflicted proto, cmdid: {grp.Key}>\";");
                             writing_list.Add("// DON'T MODIFY THIS LINE - end special handle");
                             fi.WriteLine($"case {grp.Key}: // DON'T MODIFY THIS LINE - request special handle",
                                 writing_list);
