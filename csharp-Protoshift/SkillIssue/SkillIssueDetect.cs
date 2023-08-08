@@ -21,20 +21,22 @@ namespace csharp_Protoshift.SkillIssue
             byte[] oldbody, int oldbody_offset, int oldbody_length, 
             byte[] newbody, int newbody_offset, int newbody_length)
         {
+            if (!_initialized) return;
             reqs.Enqueue(new(protoname, oldbody, oldbody_offset, oldbody_length, newbody, newbody_offset, newbody_length));
         }
         #endregion
 
         #region Background Handle
         private static ConcurrentQueue<DelayHandleInfo> reqs;
+        private static bool _initialized = false;
 
-        static SkillIssueDetect()
+        public static string Initialize()
         {
+            _initialized = true;
             reqs = new ConcurrentQueue<DelayHandleInfo>();
             _ = Task.Run(BackgroundHandle);
+            return "Skill isuue detector thread started.";
         }
-
-        public static string Initialize() => "Skill isuue detector thread started.";
 
         private static async Task BackgroundHandle()
         {
