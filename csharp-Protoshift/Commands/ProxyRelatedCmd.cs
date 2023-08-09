@@ -1,10 +1,10 @@
-﻿#if !PROXY_ONLY_SERVER
-
-using csharp_Protoshift.GameSession;
+﻿using csharp_Protoshift.GameSession;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
+#if !PROXY_ONLY_SERVER
+
     internal class SetVerboseCmd : ICommandHandler
     {
         public string CommandName => "setverbose";
@@ -83,6 +83,7 @@ namespace csharp_Protoshift.Commands
 //             }
 //         }
 //     }
+#endif
         
     internal class QueryClientCmd : ICommandHandler
     {
@@ -214,4 +215,3 @@ namespace csharp_Protoshift.Commands
         }
     }
 }
-#endif

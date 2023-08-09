@@ -147,7 +147,7 @@ namespace csharp_Protoshift.GameSession
             {
                 foreach (var pkt in session.PacketRecords)
                 {
-                    packet_logwriter.WriteLine($"{pkt.packetTime:yyyy/MM/dd HH:mm:ss.fffffff}|{pkt.PacketName}|{pkt.CmdId}|{pkt.sentByClient}|{Convert.ToBase64String(pkt.data, pkt.data_offset, pkt.data_length)}");
+                    packet_logwriter.WriteLine(pkt.ToString());
                 }
             }
 
