@@ -188,6 +188,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     break;
                 }
             }
+            handlers.SessionDestroyed?.Invoke(conn.Conv);
         }
 
         private void HandlerSendClientPacket(KcpProxyBase conn, byte[] beforepacket, 
@@ -245,7 +246,6 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     break;
                 }
             }
-            handlers.SessionDestroyed?.Invoke(conn.Conv);
         }
 
         private void HandlerSendServerPacket(KcpProxyBase conn, byte[] beforepacket,
