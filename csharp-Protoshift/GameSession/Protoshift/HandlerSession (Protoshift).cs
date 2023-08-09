@@ -172,7 +172,8 @@ namespace csharp_Protoshift.GameSession
                         $"PacketHandler({SessionId})");
             }
 
-            var rtn = GetPacketResult(packet, cmdid, isNewCmdid, body_offset, body_length);
+            var rtn = GetPacketResult(packet, cmdid, isNewCmdid, 
+                head_offset, head_length, body_offset, body_length);
             Debug.Assert(rtn.GetUInt16(rtn.Length - 2) == 0x89AB);
 
             if (!isNewCmdid && cmdid == OldProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
@@ -241,10 +242,10 @@ namespace csharp_Protoshift.GameSession
         #region Packet Handle
 #if DEBUG || PROTOSHIFT_BENCHMARK
         public byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
-            int body_offset, uint body_length)
+            int head_offset, int head_length, int body_offset, uint body_length)
 #else
         private byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
-            int body_offset, uint body_length)
+            int head_offset, int head_length, int body_offset, uint body_length)
 #endif
         {
 #if !PROTOSHIFT_BENCHMARK
@@ -263,9 +264,10 @@ namespace csharp_Protoshift.GameSession
             }
             ushort shifted_cmdid = (ushort)(isNewCmdid ? ShiftCmdId.NewShiftToOld(cmdid) : ShiftCmdId.OldShiftToNew(cmdid));
 
-            if (isNewCmdid)
-                shifted_body = ProtoshiftDispatch.NewShiftToOld(cmdid, null, null, null, packet, body_offset, (int)body_length);
-            else shifted_body = ProtoshiftDispatch.OldShiftToNew(cmdid, null, null, null, packet, body_offset, (int)body_length);
+            if (isNewCmdid) shifted_body = ProtoshiftDispatch.NewShiftToOld(cmdid, 
+                packet, head_offset, head_length, packet, body_offset, (int)body_length);
+            else shifted_body = ProtoshiftDispatch.OldShiftToNew(cmdid, 
+                packet, head_offset, head_length, packet, body_offset, (int)body_length);
             if (isNewCmdid && cmdid == NewProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenReq"))
                 GetPlayerTokenReqNotify(shifted_body);
             if (!isNewCmdid && cmdid == OldProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
@@ -302,7 +304,8 @@ namespace csharp_Protoshift.GameSession
             }
             SubmitTimeRecord(protoname, isNewCmdid, ProtoshiftWatch.ElapsedMilliseconds, ProtoshiftWatch.ElapsedTicks, packet.Length);
 #if RECORD_ALL_PKTS_FOR_REPLAY
-            PacketRecords.Add(new(protoname, cmdid, isNewCmdid, packet, body_offset, (int)body_length, shifted_body, DateTime.Now));
+            PacketRecords.Add(new(protoname, cmdid, isNewCmdid, packet, 
+                head_offset, head_length, body_offset, (int)body_length, shifted_body, DateTime.Now));
 #endif
 #endif
             return rtn;

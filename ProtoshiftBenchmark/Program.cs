@@ -62,9 +62,8 @@ namespace csharp_Protoshift.Enhanced.Benchmark
             }
         }
 
-        public const char separateChar = '|';
-        public const int PACKET_OVERHEAD =
-            sizeof(ushort) + sizeof(ushort) + sizeof(ushort) + sizeof(uint);
+        public const char separateChar = PacketRecord.separateChar;
+        public const int PACKET_OVERHEAD = PacketRecord.PACKET_OVERHEAD;
 
         public static void SetUpBenchmarkSource(string sourcefile)
         {
@@ -103,40 +102,29 @@ namespace csharp_Protoshift.Enhanced.Benchmark
 
         public IEnumerable<ProtoshiftBenchmarkParamters> GetBenchmarkArguments()
         {
-            List<(string protoname, ushort cmdid, bool sentByClient, byte[] body, int line_id)> readres = new();
+            List<(PacketRecord record, int line)> readres = new();
 
             var source_lines = File.ReadAllLines($"{curdir}/{benchmark_source_file_shared}");
             for (int i = 0; i < source_lines.Length; i++)
             {
                 var line = source_lines[i];
-                var values = line.Split(separateChar);
-                string protoname = values[1];
-                ushort cmdid = ushort.Parse(values[2]);
-                bool sentByClient = bool.Parse(values[3]);
-                byte[] data = Convert.FromBase64String(values[4]);
-                readres.Add((protoname, cmdid, sentByClient, data, i));
+                readres.Add((PacketRecord.Parse(line), i));
             }
 
-            var select_res = from record in readres
-                             orderby record.body.Length descending
-                             group record by record.protoname into gr
+            var select_res = from tuple in readres
+                             let record = tuple.record
+                             orderby record.body_length descending
+                             group tuple by record.PacketName into gr
                              select gr;
             foreach (var proto_gr in select_res)
             {
-                foreach (var record in proto_gr)
+                foreach ((var record, int line) in proto_gr)
                 {
-                    if (record.body.Length == 0) break;
-                    byte[] packet = new byte[PACKET_OVERHEAD + record.body.Length];
-                    Buffer.BlockCopy(record.body, 0, packet, PACKET_OVERHEAD, record.body.Length);
+                    if (record.body_length == 0) break;
                     yield return new()
                     {
-                        protoname = record.protoname,
-                        cmdid = record.cmdid,
-                        isNewCmdid = record.sentByClient,
-                        Packet = packet,
-                        body_offset = PACKET_OVERHEAD,
-                        body_length = (uint)record.body.Length,
-                        line_packet_log = record.line_id
+                        record = record,
+                        line_packet_log = line
                     };
                 }
             }
@@ -145,26 +133,13 @@ namespace csharp_Protoshift.Enhanced.Benchmark
 
         public class ProtoshiftBenchmarkParamters
         {
-            /// <summary>
-            /// the protoname, read from the record file.
-            /// </summary>
-            public string protoname;
-            public ushort cmdid;
-            public bool isNewCmdid;
-            /// <summary>
-            /// the packet, mixed packet head and packet body.
-            /// </summary>
-            public byte[] Packet;
-            public int head_offset;
-            public int head_length;
-            public int body_offset;
-            public uint body_length;
+            public PacketRecord record;
 
             public int line_packet_log;
 
             public override string ToString()
             {
-                return $"{protoname} ({body_length} bytes, line: {line_packet_log})";
+                return $"{record.PacketName} ({record.body_length} bytes, line: {line_packet_log})";
             }
         }
 
@@ -174,8 +149,9 @@ namespace csharp_Protoshift.Enhanced.Benchmark
         [ArgumentsSource(nameof(GetBenchmarkArguments))]
         public void ProtoshiftBenchmark(ProtoshiftBenchmarkParamters paramters)
         {
-            worker.GetPacketResult(paramters.Packet, paramters.cmdid,
-                paramters.isNewCmdid, paramters.body_offset, paramters.body_length);
+            var record = paramters.record;
+            worker.GetPacketResult(record.data, (ushort)record.CmdId, record.sentByClient, 
+                record.head_offset, record.head_length, record.body_offset, (uint)record.body_length);
         }
     }
 }
