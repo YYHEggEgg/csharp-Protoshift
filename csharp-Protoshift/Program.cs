@@ -63,7 +63,7 @@ namespace csharp_Protoshift
                 ProxyHandlers handlers = new ProxyHandlers
                 {
                     SessionCreated = GameSessionDispatch.SessionCreated,
-                    SessionDestroyed = GameSessionDispatch.SessionDestroyed,
+                    SessionDestroyed = GameSessionDispatch.DestroySession,
                     OnServerPacketArrival = GameSessionDispatch.HandleServerPacket,
                     OnClientPacketArrival = GameSessionDispatch.HandleClientPacket,
                     ServerPacketOrdered = GameSessionDispatch.OrderedServerPacket,
