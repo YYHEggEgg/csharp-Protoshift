@@ -14,7 +14,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 
         public KcpProxyServer(IPEndPoint bindToAddress, IPEndPoint sendToAddress)
         {
-            udpSock = new SocketUdpClient(bindToAddress);
+            udpSock = new SocketUdpClient(bindToAddress, true);
             SendToEndpoint = sendToAddress;
 
             _updatelock = new(nameof(KcpProxyServer));
@@ -188,6 +188,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     break;
                 }
             }
+            handlers.SessionDestroyed?.Invoke(conn.Conv);
         }
 
         private void HandlerSendClientPacket(KcpProxyBase conn, byte[] beforepacket, 
@@ -245,7 +246,6 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     break;
                 }
             }
-            handlers.SessionDestroyed?.Invoke(conn.Conv);
         }
 
         private void HandlerSendServerPacket(KcpProxyBase conn, byte[] beforepacket,

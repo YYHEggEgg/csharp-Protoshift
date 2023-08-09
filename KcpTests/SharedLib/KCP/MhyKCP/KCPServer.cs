@@ -16,6 +16,7 @@ namespace csharp_Protoshift.MhyKCP
         protected ConcurrentDictionary<string, MhyKcpBase> connecting_clients;
         protected ConcurrentDictionary<uint, MhyKcpBase> connected_clients;
         protected ConcurrentQueue<AcceptAsyncReturn> newConnections;
+        protected ConcurrentBag<uint> removed_sessions;
 
         protected SingleThreadAssert _updatelock = new(nameof(KCPServer));
 
@@ -31,15 +32,17 @@ namespace csharp_Protoshift.MhyKCP
             connecting_clients = new();
             connected_clients = new();
             newConnections = new();
+            removed_sessions = new();
         }
 #pragma warning restore CS8618
 
         public KCPServer(IPEndPoint ipEp)
         {
-            udpSock = new SocketUdpClient(ipEp);
+            udpSock = new SocketUdpClient(ipEp, true);
             connecting_clients = new();
             connected_clients = new();
             newConnections = new();
+            removed_sessions = new();
 
             Task.Run(BackgroundUpdate);
         }
@@ -64,10 +67,18 @@ namespace csharp_Protoshift.MhyKCP
                         {
                             connected_conn.Input(packet.Buffer);
                         }
-                        catch
-                        {
+                        catch 
+                        {  
                             if (connected_conn.State != MhyKcpBase.ConnectionState.CONNECTED)
+                            {
                                 connected_clients.TryRemove(connected_conn.Conv, out _);
+                                continue;
+                            }
+                        }
+                        if (connected_conn.State == MhyKcpBase.ConnectionState.CLOSED)
+                        {
+                            removed_sessions.Add(connected_conn.Conv);
+                            connected_clients.TryRemove(connected_conn.Conv, out _);
                         }
                         continue;
                     }
@@ -76,6 +87,8 @@ namespace csharp_Protoshift.MhyKCP
                     MhyKcpBase conn;
                     if (!connecting_clients.TryGetValue(remoteIpString, out var _outconn))
                     {
+                        // Don't allow a disconnected session
+                        if (removed_sessions.Contains(handshake.Conv)) continue;
                         // Oh boy! A new connection!
                         conn = new MhyKcpBase();
                         conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);

@@ -1,163 +1,157 @@
 ﻿using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Configs;
+using BenchmarkDotNet.Order;
+using BenchmarkDotNet.Reports;
 using BenchmarkDotNet.Running;
-using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
-using csharp_Protoshift.Enhanced.Benchmark.Experimental;
+using csharp_Protoshift.GameSession;
+using System.Text;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Enhanced.Benchmark
 {
+    [Orderer(SummaryOrderPolicy.SlowestToFastest)]
     public class Program
     {
-        static NewProtos.GravenInnocencePhotoReminderNotify normal_2Fields = GetNormalFields.Get2Fields();
-        static NewProtos.GadgetPlayStartNotify normal_3Fields = GetNormalFields.Get3Fields();
-
-        static NewProtos.ChannelerSlabBuffSchemeInfo map_uint32_uint32_50 = GetMapFields.GetUInt32AndUInt32(50);
-        static NewProtos.ChannelerSlabBuffSchemeInfo map_uint32_uint32_100 = GetMapFields.GetUInt32AndUInt32(100);
-        static NewProtos.ChannelerSlabBuffSchemeInfo map_uint32_uint32_200 = GetMapFields.GetUInt32AndUInt32(200);
-        static NewProtos.ChannelerSlabBuffSchemeInfo map_uint32_uint32_500 = GetMapFields.GetUInt32AndUInt32(500);
-        static NewProtos.ChannelerSlabBuffSchemeInfo map_uint32_uint32_1000 = GetMapFields.GetUInt32AndUInt32(1000);
-
-        static NewProtos.AbilityArgument oneof_normal_none = GetOneofFields.GetNormalNone();
-        static NewProtos.AbilityArgument oneof_normal_float = GetOneofFields.GetNormalFloatContent();
-        static NewProtos.AbilityArgument oneof_normal_string = GetOneofFields.GetNormalStringContent();
-
-        static NewProtos.AbilityActionServerMonsterLog repeated_normal_100 = GetRepeatedFields.Produce(100);
-        static NewProtos.AbilityActionServerMonsterLog repeated_normal_20000 = GetRepeatedFields.Produce(20000);
-
-        static NewProtos.UnionCmdNotify union_AbilityInvocationsNotify_30_100 = GetUnionCmdNotify.GetSameRepeated(30, 100);
-        
-        static NewProtos.PingReq normal_longbytes_10 = GetPingReq.GetLongBytes(10);
-        static NewProtos.PingReq normal_longbytes_100 = GetPingReq.GetLongBytes(100);
-        static NewProtos.PingReq normal_longbytes_1000 = GetPingReq.GetLongBytes(1000);
-        static NewProtos.PingReq normal_longbytes_10000 = GetPingReq.GetLongBytes(10000);
-
-        #region Handlers
-        static HandlerGravenInnocencePhotoReminderNotify handler_GravenInnocencePhotoReminderNotify = HandlerGravenInnocencePhotoReminderNotify.GlobalInstance;
-        static HandlerGadgetPlayStartNotify handler_GadgetPlayStartNotify = HandlerGadgetPlayStartNotify.GlobalInstance;
-
-        static HandlerChannelerSlabBuffSchemeInfo handler_ChannelerSlabBuffSchemeInfo = HandlerChannelerSlabBuffSchemeInfo.GlobalInstance;
-        
-        static HandlerAbilityArgument handler_AbilityArgument = HandlerAbilityArgument.GlobalInstance;
-        
-        static HandlerAbilityActionServerMonsterLog handler_AbilityActionServerMonsterLog = HandlerAbilityActionServerMonsterLog.GlobalInstance;
-        static HandlerChannelerSlabBuffSchemeInfo_Special handler_new_ChannelerSlabBuffSchemeInfo = HandlerChannelerSlabBuffSchemeInfo_Special.GlobalInstance;
-
-        static HandlerUnionCmdNotify handler_UnionCmdNotify = HandlerUnionCmdNotify.GlobalInstance;
-
-        static HandlerPingReq handler_PingReq = HandlerPingReq.GlobalInstance;
-        #endregion
+        public const string benchmark_source_file_suffix = "benchmark-source.packet.log";
+        public const string benchmark_source_file_shared = $"logs/latest.{benchmark_source_file_suffix}";
 
         private static void Main(string[] args)
         {
-            Console.WriteLine("Protoshift Benchmark v0.01");
-            Console.WriteLine("Verifying protoshift accuracy...");
-            bool properlyWork = true;
-            if (!handler_GravenInnocencePhotoReminderNotify.NewShiftToOld(normal_2Fields).Equals(GetNormalFieldsVerity.Get2Fields())
-                || !handler_GadgetPlayStartNotify.NewShiftToOld(normal_3Fields).Equals(GetNormalFieldsVerity.Get3Fields()))
+            StartupWorkingDirChanger.ChangeToDotNetRunPath(new LoggerConfig(
+                max_Output_Char_Count: 16 * 1024,
+                use_Console_Wrapper: false,
+                use_Working_Directory: true,
+                global_Minimum_LogLevel: LogLevel.Verbose,
+                console_Minimum_LogLevel: LogLevel.Information,
+                debug_LogWriter_AutoFlush: true
+            ));
+            if (File.Exists(benchmark_source_file_shared))
             {
-                Console.WriteLine("Normal Protoshift verity failed!");
-                properlyWork = false;
+                File.Move(benchmark_source_file_shared,
+                    $"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.{benchmark_source_file_suffix}");
             }
-            if (!handler_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_50).Equals(GetMapFieldsVerity.GetUInt32AndUInt32(50))
-                || !handler_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_1000).Equals(GetMapFieldsVerity.GetUInt32AndUInt32(1000)))
-            {
-                Console.WriteLine("Map Protoshift verity failed!");
-                properlyWork = false;
-            }
-            if (!handler_AbilityArgument.NewShiftToOld(oneof_normal_none).Equals(GetOneofFieldsVerity.GetNormalNone())
-                || !handler_AbilityArgument.NewShiftToOld(oneof_normal_float).Equals(GetOneofFieldsVerity.GetNormalFloatContent())
-                || !handler_AbilityArgument.NewShiftToOld(oneof_normal_string).Equals(GetOneofFieldsVerity.GetNormalStringContent()))
-            {
-                Console.WriteLine("Oneof Protoshift verity failed!");
-                properlyWork = false;
-            }
-            if (!handler_AbilityActionServerMonsterLog.NewShiftToOld(repeated_normal_100).Equals(GetRepeatedFieldsVerity.Produce(100))
-                || !handler_AbilityActionServerMonsterLog.NewShiftToOld(repeated_normal_20000).Equals(GetRepeatedFieldsVerity.Produce(20000)))
-            {
-                Console.WriteLine("Repeated Protoshift verity failed!");
-                properlyWork = false;
-            }
-            /*if (!handler_UnionCmdNotify.NewShiftToOld(union_AbilityInvocationsNotify_30_100).Equals(GetUnionCmdNotifyVerity.GetSameRepeated(30, 100)))
-            {
-                Console.WriteLine("UnionCmd Protoshift verity failed!");
-                properlyWork = false;
-            }*/
-            if (!properlyWork)
-            {
-                Console.WriteLine("Protoshift not working properly. Exit with 114514. ");
-                Environment.Exit(114514);
-            }
-            else Console.WriteLine("Protoshift verity check passed!");
-            
-            BenchmarkRunner.Run<Program>();
+
+            Log.Info("Please drag in the latest.packet.log file:");
+            var sourcefile = Console.ReadLine();
+            SetUpBenchmarkSource(sourcefile);
+
+            BenchmarkRunner.Run<Program>(
+                ManualConfig
+                .Create(DefaultConfig.Instance)
+                .WithSummaryStyle(SummaryStyle.Default
+                    .WithMaxParameterColumnWidth(100))
+                .WithOption(ConfigOptions.DisableLogFile, true)
+                .WithOption(ConfigOptions.JoinSummary, true)
+                .WithOption(ConfigOptions.StopOnFirstError, false)
+                .WithOption(ConfigOptions.KeepBenchmarkFiles, false)
+                .WithArtifactsPath(Path.Combine(Directory.GetCurrentDirectory(), "output_benchmark")));
+            Console.ReadLine();
         }
 
-        // [Benchmark]
-        public void TestShift_normal_2Fields()
-            => handler_GravenInnocencePhotoReminderNotify.NewShiftToOld(normal_2Fields);
-        // [Benchmark]
-        public void TestShift_normal_3Fields()
-            => handler_GadgetPlayStartNotify.NewShiftToOld(normal_3Fields);
-        // [Benchmark]
-        public void TestShift_map_uint32_uint32_50()
-            => handler_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_50);
-        // [Benchmark]
-        public void TestShift_map_uint32_uint32_100()
-            => handler_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_100);
-        // [Benchmark]
-        public void TestShift_map_uint32_uint32_200()
-            => handler_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_200);
-        // [Benchmark]
-        public void TestShift_map_uint32_uint32_500()
-            => handler_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_500);
-        // [Benchmark]
-        public void TestShift_map_uint32_uint32_1000()
-            => handler_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_1000);
-        // [Benchmark]
-        public void TestShift_oneof_normal_none()
-            => handler_AbilityArgument.NewShiftToOld(oneof_normal_none);
-        // [Benchmark]
-        public void TestShift_oneof_normal_float()
-            => handler_AbilityArgument.NewShiftToOld(oneof_normal_float);
-        // [Benchmark]
-        public void TestShift_oneof_normal_string()
-            => handler_AbilityArgument.NewShiftToOld(oneof_normal_string);
-        // [Benchmark]
-        public void TestShift_repeated_normal_100()
-            => handler_AbilityActionServerMonsterLog.NewShiftToOld(repeated_normal_100);
-        // [Benchmark]
-        public void TestShift_repeated_normal_20000()
-            => handler_AbilityActionServerMonsterLog.NewShiftToOld(repeated_normal_20000);
-        // [Benchmark]
-        public void TestShift_union_AbilityInvocationsNotify_30_100()
-            => handler_UnionCmdNotify.NewShiftToOld(union_AbilityInvocationsNotify_30_100);
-        [Benchmark]
-        public void TestShift_normal_longbytes_10()
-            => handler_PingReq.NewShiftToOld(normal_longbytes_10);
-        [Benchmark]
-        public void TestShift_normal_longbytes_100()
-            => handler_PingReq.NewShiftToOld(normal_longbytes_100);
-        [Benchmark]
-        public void TestShift_normal_longbytes_1000()
-            => handler_PingReq.NewShiftToOld(normal_longbytes_1000);
-        [Benchmark]
-        public void TestShift_normal_longbytes_10000()
-            => handler_PingReq.NewShiftToOld(normal_longbytes_10000);
+        public static readonly string curdir;
+        static Program()
+        {
+            curdir = Environment.CurrentDirectory;
+            while (true)
+            {
+                if (File.Exists($"{curdir}/ProtoshiftBenchmark.csproj"))
+                {
+                    break;
+                }
+                curdir = Directory.GetParent(curdir)?.FullName ?? throw new FileNotFoundException("csproj file not found!");
+            }
+        }
 
-        
-        // [Benchmark]
-        public void TestShift_new_map_uint32_uint32_50()
-            => handler_new_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_50);
-        // [Benchmark]
-        public void TestShift_new_map_uint32_uint32_100()
-            => handler_new_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_100);
-        // [Benchmark]
-        public void TestShift_new_map_uint32_uint32_200()
-            => handler_new_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_200);
-        // [Benchmark]
-        public void TestShift_new_map_uint32_uint32_500()
-            => handler_new_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_500);
-        // [Benchmark]
-        public void TestShift_new_map_uint32_uint32_1000()
-            => handler_new_ChannelerSlabBuffSchemeInfo.NewShiftToOld(map_uint32_uint32_1000);
+        public const char separateChar = PacketRecord.separateChar;
+        public const int PACKET_OVERHEAD = PacketRecord.PACKET_OVERHEAD;
+
+        public static void SetUpBenchmarkSource(string sourcefile)
+        {
+            List<(string protoname, ushort cmdid, bool sentByClient, byte[] body, int line_id)> readres = new();
+
+            var source_lines = File.ReadAllLines(sourcefile);
+            for (int i = 0; i < source_lines.Length; i++)
+            {
+                var line = source_lines[i];
+                var values = line.Split(separateChar);
+                string protoname = values[1];
+                ushort cmdid = ushort.Parse(values[2]);
+                bool sentByClient = bool.Parse(values[3]);
+                byte[] data = Convert.FromBase64String(values[4]);
+                readres.Add((protoname, cmdid, sentByClient, data, i));
+            }
+
+            var select_res = from record in readres
+                             orderby record.body.Length descending
+                             group record by record.protoname into gr
+                             select gr;
+            StringBuilder sb = new();
+            foreach (var proto_gr in select_res)
+            {
+                int count = 1;
+                foreach (var record in proto_gr)
+                {
+                    if (record.body.Length == 0) break;
+                    if (count-- <= 0) break;
+                    sb.AppendLine(source_lines[record.line_id]);
+                }
+            }
+
+            File.WriteAllText($"{curdir}/{benchmark_source_file_shared}", sb.ToString());
+        }
+
+        public IEnumerable<ProtoshiftBenchmarkParamters> GetBenchmarkArguments()
+        {
+            List<(PacketRecord record, int line)> readres = new();
+
+            var source_lines = File.ReadAllLines($"{curdir}/{benchmark_source_file_shared}");
+            for (int i = 0; i < source_lines.Length; i++)
+            {
+                var line = source_lines[i];
+                readres.Add((PacketRecord.Parse(line), i));
+            }
+
+            var select_res = from tuple in readres
+                             let record = tuple.record
+                             orderby record.body_length descending
+                             group tuple by record.PacketName into gr
+                             select gr;
+            foreach (var proto_gr in select_res)
+            {
+                foreach ((var record, int line) in proto_gr)
+                {
+                    if (record.body_length == 0) break;
+                    yield return new()
+                    {
+                        record = record,
+                        line_packet_log = line
+                    };
+                }
+            }
+            yield break;
+        }
+
+        public class ProtoshiftBenchmarkParamters
+        {
+            public PacketRecord record;
+
+            public int line_packet_log;
+
+            public override string ToString()
+            {
+                return $"{record.PacketName} ({record.body_length} bytes, line: {line_packet_log})";
+            }
+        }
+
+        public static HandlerSession worker = new(1001);
+
+        [Benchmark]
+        [ArgumentsSource(nameof(GetBenchmarkArguments))]
+        public void ProtoshiftBenchmark(ProtoshiftBenchmarkParamters paramters)
+        {
+            var record = paramters.record;
+            worker.GetPacketResult(record.data, (ushort)record.CmdId, record.sentByClient, 
+                record.head_offset, record.head_length, record.body_offset, (uint)record.body_length);
+        }
     }
 }
