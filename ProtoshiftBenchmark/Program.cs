@@ -63,6 +63,8 @@ namespace csharp_Protoshift.Enhanced.Benchmark
         }
 
         public const char separateChar = '|';
+        public const int PACKET_OVERHEAD =
+            sizeof(ushort) + sizeof(ushort) + sizeof(ushort) + sizeof(uint);
 
         public static void SetUpBenchmarkSource(string sourcefile)
         {
@@ -121,18 +123,18 @@ namespace csharp_Protoshift.Enhanced.Benchmark
                              select gr;
             foreach (var proto_gr in select_res)
             {
-                int count = 1;
                 foreach (var record in proto_gr)
                 {
                     if (record.body.Length == 0) break;
-                    if (count-- <= 0) break;
+                    byte[] packet = new byte[PACKET_OVERHEAD + record.body.Length];
+                    Buffer.BlockCopy(record.body, 0, packet, PACKET_OVERHEAD, record.body.Length);
                     yield return new()
                     {
                         protoname = record.protoname,
                         cmdid = record.cmdid,
                         isNewCmdid = record.sentByClient,
-                        Packet = record.body,
-                        body_offset = 0,
+                        Packet = packet,
+                        body_offset = PACKET_OVERHEAD,
                         body_length = (uint)record.body.Length,
                         line_packet_log = record.line_id
                     };
