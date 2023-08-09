@@ -1,16 +1,10 @@
 ﻿#if PROXY_ONLY_SERVER
 
 using AssetLib.Utils;
-using csharp_Protoshift.GameSession.SpecialFixs;
 using csharp_Protoshift.resLoader;
-using csharp_Protoshift.SkillIssue;
-using Google.Protobuf;
 using Newtonsoft.Json;
 using OfficeOpenXml;
-using OfficeOpenXml.ExternalReferences;
-using Org.BouncyCastle.Crypto.Prng;
 using System.Collections.Concurrent;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Net;
 using System.Security.Cryptography;
@@ -143,10 +137,11 @@ namespace csharp_Protoshift.GameSession
                         $"PacketHandler({SessionId})");
             }
 
-            var rtn = GetPacketResult(packet, cmdid, isNewCmdid, body_offset, body_length);
+            var rtn = GetPacketResult(packet, cmdid, isNewCmdid, 
+                head_offset, head_length, body_offset, body_length);
             Debug.Assert(rtn.GetUInt16(rtn.Length - 2) == 0x89AB);
 
-            if (!isNewCmdid && cmdid == OldProtos.QueryCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
+            if (!isNewCmdid && cmdid == OldProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
                 XorDecrypt(ref rtn, fallbackToDispatchKey: true);
             else XorDecrypt(ref rtn, fallbackToDispatchKey: fallback);
             return rtn;
@@ -158,12 +153,12 @@ namespace csharp_Protoshift.GameSession
         }
 
         #region Packet Handle
-#if DEBUG
+#if DEBUG || PROTOSHIFT_BENCHMARK
         public byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
-            int body_offset, uint body_length)
+            int head_offset, int head_length, int body_offset, uint body_length)
 #else
         private byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
-            int body_offset, uint body_length)
+            int head_offset, int head_length, int body_offset, uint body_length)
 #endif
         {
             Stopwatch ProtoshiftWatch = new();
@@ -178,13 +173,14 @@ namespace csharp_Protoshift.GameSession
             // var newhead = packetHead.ToByteArray();
 
             #region Receive and read
-            if (!OldProtos.QueryCmdId.TryGetSerializer(cmdid, out var oldserializer))
+            if (!OldProtos.QueryJsonSerializer.TryGetJsonSerializer(cmdid, out var oldserializer))
             {
                 Log.Erro($"Packet with CmdId:{cmdid} from Server" +
                     $" has no record in oldcmdid.csv and skipped.",
                     $"PacketHandler({SessionId})");
                 ProtoshiftWatch.Stop();
-                PacketRecords.Add(new($"UnkCMD_{cmdid}", cmdid, isNewCmdid, packet, body_offset, (int)body_length));
+                PacketRecords.Add(new($"UnkCMD_{cmdid}", cmdid, isNewCmdid, packet, 
+                    head_offset, head_length, body_offset, (int)body_length, DateTime.Now));
                 SubmitTimeRecord($"UnkCMD_{cmdid}", false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
                 // return Array.Empty<byte>();
                 return packet;
@@ -242,7 +238,8 @@ namespace csharp_Protoshift.GameSession
 
             var body_arr = new byte[body_length];
             Buffer.BlockCopy(packet, body_offset, body_arr, 0, (int)body_length);
-            PacketRecords.Add(new(protoname, cmdid, isNewCmdid, body_arr, 0, (int)body_length));
+            PacketRecords.Add(new(protoname, cmdid, isNewCmdid, packet,
+                head_offset, head_length, body_offset, (int)body_length, DateTime.Now));
             SubmitTimeRecord(protoname, false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
 #if DEBUG
             if (ProtoshiftWatch.ElapsedMilliseconds > 15)
@@ -292,7 +289,7 @@ namespace csharp_Protoshift.GameSession
         #region Packet Create
         public byte[] ConstructPacket(bool isNewCmdid, string protoname, byte[]? packetHead, byte[] packetBody)
         {
-            var cmdid = OldProtos.QueryCmdId.GetCmdIdFromProtoname(protoname);
+            var cmdid = OldProtos.AskCmdId.GetCmdIdFromProtoname(protoname);
             var head_length = packetHead?.Length ?? 0;
             var body_length = packetBody.Length;
             int head_offset = 2 + 2 + 2 + 4;
@@ -313,7 +310,7 @@ namespace csharp_Protoshift.GameSession
             if (Verbose)
             {
                 Log.Info($"Create packet {protoname} with " +
-                    $"CmdId:{NewProtos.QueryCmdId.GetCmdIdFromProtoname(protoname)} " +
+                    $"CmdId:{NewProtos.AskCmdId.GetCmdIdFromProtoname(protoname)} " +
                     $"for {(isNewCmdid ? "Client" : "Server")}:---{Convert.ToHexString(rtn)}",
                 $"PacketConstructor({SessionId})");
             }
@@ -361,15 +358,14 @@ namespace csharp_Protoshift.GameSession
 
         public static byte[] Generate4096KeyByMT19937(ulong seed)
         {
-            MT19937 mt1 = new(), mt2 = new();
-            mt1.Seed(seed);
-            ulong mt2seed = mt1.UInt64();
-            mt2.Seed(mt2seed);
-            mt2.UInt64();
+            MT19937_64 mt1 = new(seed);
+            ulong mt2seed = mt1.Int64();
+            MT19937_64 mt2 = new(mt2seed);
+            mt2.Int64();
             byte[] key = new byte[4096];
             for (int i = 0; i < key.Length; i += 8)
             {
-                ulong newui64 = mt2.UInt64();
+                ulong newui64 = mt2.Int64();
                 key.SetUInt64(i, newui64);
             }
             return key;

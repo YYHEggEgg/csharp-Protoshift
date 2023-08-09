@@ -88,7 +88,7 @@ namespace csharp_Protoshift.MhyKCP
             cskcpHandle.LogMask = (KcpLogMask)((1 << Enum.GetNames<KcpLogMask>().Length) - 1); // Accept all logs
 #endif
 
-            cskcpHandle.SegmentManager = new SimpleSegManager();
+            cskcpHandle.SegmentManager = new UnSafeSegManager();
 
             checkTime_refresh = true;
             Task.Run(BackgroundUpdate);
@@ -310,30 +310,13 @@ namespace csharp_Protoshift.MhyKCP
             if (nonblock) return ReceiveNonblock();
 
             byte[]? ret = null;
-            while (ret == null)
+            SpinWait.SpinUntil(() =>
             {
                 ret = ReceiveNonblock();
-                if (ret == null) Thread.Sleep(KCP_RefreshMilliseconds);
-            }
+                return ret != null;
+            });
             _recvlock.Exit();
-            return ret;
-        }
-
-        public async Task<byte[]> ReceiveAsync()
-        {
-            _recvlock.Enter();
-            byte[]? ret = null;
-            while (ret == null)
-            {
-                ret = ReceiveNonblock();
-                if (ret == null)
-                {
-                    // await Task.Yield(); //(int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF));
-                    await Task.Delay(KCP_RefreshMilliseconds);
-                }
-            }
-            _recvlock.Exit();
-            return ret;
+            return ret ?? Array.Empty<byte>();
         }
 
         // The time ikcp_update should be called get from ikcp_check

@@ -1,14 +1,17 @@
 ﻿using csharp_Protoshift.MhyKCP.Test.App;
 using csharp_Protoshift.MhyKCP.Test.Protocol;
+using System.Collections.Concurrent;
 
 namespace csharp_Protoshift.MhyKCP.Test.Analysis
 {
+    /// <summary>
+    /// 由于Client变为多个因此添加了线程安全
+    /// <para/>由于实例线程安全因此不必锁定Channel来获取数据只读副本
+    /// </summary>
     internal static class ClientDataChannel
     {
-        public static List<ReadOnlyBasePacketRecord> sent_pkts = new(Constants.packet_repeat_time);
-        public static List<ReadOnlyBasePacketRecord> recved_pkts = new(Constants.packet_repeat_time);
-        // Channel是否已关闭 在Analysis要获取数据的时候要先关闭数据采集
-        public static bool Closed;
+        public static ConcurrentBag<ReadOnlyBasePacketRecord> sent_pkts = new();
+        public static ConcurrentBag<ReadOnlyBasePacketRecord> recved_pkts = new();
 
         /// <summary>
         /// KCP.Send后回调
@@ -16,7 +19,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
         /// <param name="sentPkt"></param>
         public static void PushSentPacket(BasePacket sentPkt)
         {
-            if (!Closed) sent_pkts.Add(sentPkt.AsReadOnly());
+            sent_pkts.Add(sentPkt.AsReadOnly());
         }
 
         /// <summary>
@@ -25,7 +28,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
         /// <param name="recvedPkt"></param>
         public static void PushReceivedPacket(BasePacket recvedPkt)
         {
-            if (!Closed) recved_pkts.Add(recvedPkt.AsReadOnly());
+            recved_pkts.Add(recvedPkt.AsReadOnly());
         }
     }
 }

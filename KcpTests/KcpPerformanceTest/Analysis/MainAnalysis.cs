@@ -1,5 +1,6 @@
 ﻿using csharp_Protoshift.MhyKCP.Test.App;
 using csharp_Protoshift.MhyKCP.Test.Protocol;
+using OfficeOpenXml;
 using System.Collections.ObjectModel;
 using System.Text;
 using YYHEggEgg.Logger;
@@ -17,13 +18,11 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
         {
             Log.Info("客户端完成全部发包. 等待 10s...", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
             await Task.Delay(10000);
-            ClientDataChannel.Closed = true;
-            Log.Info("等待完毕。已锁定ClientDataChannel.", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
             #region 获取记录 
             try
             {
-                client_sent = ClientDataChannel.sent_pkts.AsReadOnly();
-                Log.Info($"已从Channel获取记录，Client共发出了 {client_sent.Count} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
+                client_sent = ClientDataChannel.sent_pkts.ToArray();
+                Log.Info($"已从Channel获取记录，Client共发出了 {client_sent.Length} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
 #if !CONNECT_SERVERONLY
                 proxy_client_recved = ProxyDataChannel.proxy_recved_client_pkts.ToArray();
                 Log.Info($"已从Channel获取记录，Proxy共收到了来自Client的 {proxy_client_recved.Length} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
@@ -40,8 +39,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 proxy_server_sent = ProxyDataChannel.proxy_sent_server_pkts.ToArray();
                 Log.Info($"已从Channel获取记录，Proxy共转发了来自Server的 {proxy_server_sent.Length} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
 #endif
-                client_recved = ClientDataChannel.recved_pkts.AsReadOnly();
-                Log.Info($"已从Channel获取记录，Client共收到了 {client_recved.Count} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
+                client_recved = ClientDataChannel.recved_pkts.ToArray();
+                Log.Info($"已从Channel获取记录，Client共收到了 {client_recved.Length} 个包", $"{nameof(MainAnalysis)}_{nameof(ClientFinished)}");
             }
             catch (Exception ex)
             {
@@ -53,9 +52,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             TestsFinished = true;
         }
 
-        static ReadOnlyCollection<ReadOnlyBasePacketRecord>?
-            client_sent, client_recved;
         static ReadOnlyBasePacketRecord[]?
+            client_sent, client_recved,
 #if CONNECT_SERVERONLY
             server_recved, server_sent;
 #else
@@ -252,8 +250,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 }
                 catch (Exception ex)
                 {
-                    Log.Erro($"日志重命名操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
-                    return;
+                    Log.Warn($"日志重命名操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+                    logPath = Util.AddNumberedSuffixToPath(logPath);
                 }
             }
             try
@@ -263,12 +261,53 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             }
             catch (Exception ex)
             {
-                Log.Erro($"对 {logPath} 的文件操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+                Log.Erro($"对测试日志 {logPath} 的文件操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
                 return;
             }
             #endregion
             #endregion
             Log.Info($"日志已输出到路径 {logPath}。", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+            if (Constants.output_packet_delaylog)
+            {
+                #region 生成包延迟统计表格
+                Log.Info("正在生成发包延迟统计表格...", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+                IEnumerable<PacketDelayOutputLine>? excel_outputs = null;
+                GenerateExportLines(ref excel_outputs, CsDelay, "Client", "Server");
+                GenerateExportLines(ref excel_outputs, ScDelay, "Server", "Client");
+#if !CONNECT_SERVERONLY
+                GenerateExportLines(ref excel_outputs, CpDelay, "Client", "Proxy.HandleClient");
+                GenerateExportLines(ref excel_outputs, PsDelay, "Proxy.HandleClient", "Server");
+                GenerateExportLines(ref excel_outputs, SpDelay, "Server", "Proxy.HandleServer");
+                GenerateExportLines(ref excel_outputs, PcDelay, "Proxy.HandleServer", "Client");
+#endif
+
+                string delayPath = "logs/latest.packet.delaylog.xlsx";
+                var packetDelay = new FileInfo("logs/latest.packet.delaylog.xlsx");
+                if (packetDelay.Exists)
+                {
+                    try
+                    {
+                        packetDelay.MoveTo($"logs/{packetDelay.LastWriteTime:yyyy-MM-dd_HH-mm-ss}.packet.delaylog.xlsx");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Warn($"包延迟统计表格重命名操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+                        delayPath = Util.AddNumberedSuffixToPath(delayPath);
+                    }
+                }
+                try
+                {
+                    excel_outputs?.ExportXlsxRecord(delayPath);
+                }
+                catch (Exception ex)
+                {
+                    Log.Erro($"对包延迟统计表格 {logPath} 的文件操作出现异常：{ex}", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+                    return;
+                }
+                #endregion
+                Log.Info($"统计信息已输出到 {delayPath}。", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
+            }
+            else Log.Info($"由于配置，包延迟统计信息并未输出。", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
             if (Constants.running_on_github_actions)
             {
                 Log.Info("程序约会在 10s 后退出...", $"{nameof(MainAnalysis)}_{nameof(HandleData)}");
@@ -279,7 +318,11 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
         private static void OutputCompare(StringBuilder target, PacketDelayResult delay, PacketLossResult loss, string from_friendlyName, string to_friendlyName)
         {
             // Output(stringRes, $"Client        -> Proxy            : 平均延迟:{CpDelay.average_packetDelay.Milliseconds}ms ({CpDelay.average_packetDelay}), 总丢包:{CpLoss.packetLoss}");
-            Output(target, $"{from_friendlyName} -> {to_friendlyName}: 平均延迟:{delay.average_packetDelay.TotalMilliseconds}ms ({delay.average_packetDelay}), 总丢包:{loss.packetLoss}, 网络抖动:{(delay.maximum_packetDelay - delay.minimum_packetDelay).TotalMilliseconds}ms ({delay.minimum_packetDelay} - {delay.maximum_packetDelay})");
+            Output(target, $"{from_friendlyName} -> {to_friendlyName}: " +
+                $"平均延迟:{delay.average_packetDelay.TotalMilliseconds}ms " +
+                $"({delay.average_packetDelay}), 总丢包:{loss.packetLoss}, " +
+                $"网络抖动:{(delay.maximum_packetDelay - delay.minimum_packetDelay).TotalMilliseconds}ms " +
+                $"({delay.minimum_packetDelay} - {delay.maximum_packetDelay})");
         }
 
         private static void OutputLossAck(StringBuilder target, PacketLossResult lossResult, string from_friendlyName, string to_friendlyName)
@@ -342,6 +385,49 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
         {
             if (Constants.running_on_github_actions) Log.Info(content, $"{nameof(MainAnalysis)}_GenerateReport");
             target.AppendLine(content);
+        }
+        #endregion
+
+        #region Generate Excel Packet Loss Details
+        private class PacketDelayOutputLine
+        {
+            public uint ack { get; set; }
+            public string? packet_from { get; set; }
+            public string? packet_to { get; set; }
+            public string? packet_delay { get; set; }
+            public double packet_delay_milliseconds { get; set; }
+        }
+
+        private static void GenerateExportLines(
+            ref IEnumerable<PacketDelayOutputLine>? result_collection_all_in_one,
+            PacketDelayResult delayResult, string packet_from, string packet_to)
+        {
+            var current_analyzed = 
+                from tuple in delayResult.ack_list
+                let odd_ack = tuple.Item1 - ((tuple.Item1 & 1) ^ 1)
+                select new PacketDelayOutputLine
+                {
+                    ack = odd_ack,
+                    packet_from = packet_from,
+                    packet_to = packet_to,
+                    packet_delay = tuple.Item2.ToString(),
+                    packet_delay_milliseconds = tuple.Item2.TotalMilliseconds
+                };
+            if (result_collection_all_in_one == null)
+                result_collection_all_in_one = current_analyzed;
+            else result_collection_all_in_one = result_collection_all_in_one.Concat(current_analyzed);
+        }
+
+        // Generated by ChatGPT, not tested
+        // Need EPPlus nuget reference
+        public static void ExportXlsxRecord<T>(this IEnumerable<T> collection, string filePath)
+        {
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Records");
+                worksheet.Cells.LoadFromCollection(collection, true);
+                package.SaveAs(new FileInfo(filePath));
+            }
         }
         #endregion
     }

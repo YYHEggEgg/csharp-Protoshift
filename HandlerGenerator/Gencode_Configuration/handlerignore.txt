@@ -8,9 +8,12 @@
 # UnionCmd
 # 
 # After running the program, you may write your
-# code in ProtoshiftHandlers/SpecialHandlers.
+# code based on files with the same name
+# in ProtoshiftHandlers/SpecialHandlers.
+# (e.g. HandlerUnionCmd.cs)
+# 
 # There'll be the generated code, but they won't
-# change since the next build process.
+# change since the next time running build.
 
 UnionCmd
 AbilityInvokeEntry

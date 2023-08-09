@@ -61,7 +61,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                                 {
                                     disconn.Decode(buffer, Handshake.MAGIC_DISCONNECT);
                                     _State = ConnectionState.CLOSED;
-                                    Log.Info("Client requested disconnect, so send disconnect to server", nameof(KcpProxyBase));
+                                    Log.Info($"Client (conv: {_Conv}) requested disconnect (reason: {disconn.Data}), so send disconnect to server", nameof(KcpProxyBase));
 
                                     sendClient?.Disconnect(disconn.Conv, disconn.Token, disconn.Data);
                                     return 0;
@@ -110,10 +110,10 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             // Debug.Assert(sendClient == null);
                             sendClient = new(sendToAddress, handshake.Conv, handshake.Token, handshake.Data);
                             sendClient.ConnectAsync().Wait();
-                            sendClient.StartDisconnected += (conv, token) =>
+                            sendClient.StartDisconnected += (conv, token, data) =>
                             {
-                                Log.Warn("Server requested to disconnect, so send disconnect to client", nameof(KcpProxyBase));
-                                Disconnect(conv, token);
+                                Log.Warn($"Server (conv: {_Conv}) requested to disconnect (reason: {data}), so send disconnect to client", nameof(KcpProxyBase));
+                                Disconnect(conv, token, data);
                             };
 
                             var sendBackConv = sendClient.GetSendbackHandshake();

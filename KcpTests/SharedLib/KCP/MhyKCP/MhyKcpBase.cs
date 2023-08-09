@@ -14,7 +14,26 @@ namespace csharp_Protoshift.MhyKCP
 
         public enum ConnectionState
         {
-            CLOSED, DISCONNECTED, HANDSHAKE_CONNECT, HANDSHAKE_WAIT, CONNECTED
+            /// <summary>
+            /// The instance has disconnected or been disconnected.
+            /// </summary>
+            CLOSED, 
+            /// <summary>
+            /// The instance has not been used and not attempted to connect/accept yet. 
+            /// </summary>
+            DISCONNECTED, 
+            /// <summary>
+            /// The instance has sent its CONNECT request as a client, and is waiting for the response from server.
+            /// </summary>
+            HANDSHAKE_CONNECT, 
+            /// <summary>
+            /// The instance is accepting a connection.
+            /// </summary>
+            HANDSHAKE_WAIT, 
+            /// <summary>
+            /// The instance is connected and transfering data normally.
+            /// </summary>
+            CONNECTED
         }
 
         public IKcpCallback? OutputCallback;
@@ -69,7 +88,7 @@ namespace csharp_Protoshift.MhyKCP
             cskcpHandle.LogMask = (KcpLogMask)((1 << Enum.GetNames<KcpLogMask>().Length) - 1); // Accept all logs
 #endif
 
-            cskcpHandle.SegmentManager = new SimpleSegManager();
+            cskcpHandle.SegmentManager = new UnSafeSegManager();
 
             checkTime_refresh = true;
             Task.Run(BackgroundUpdate);
@@ -81,7 +100,9 @@ namespace csharp_Protoshift.MhyKCP
 
             byte[] h = new Handshake(Handshake.MAGIC_CONNECT, _Conv, _Token, ConnectData).AsBytes();
             var buf = new KcpInnerBuffer(h);
+#pragma warning disable CS8602 // 解引用可能出现空引用。
             OutputCallback.Output(buf, h.Length, false);
+#pragma warning restore CS8602 // 解引用可能出现空引用。
         }
 
         public async Task ConnectAsync()
@@ -170,7 +191,9 @@ namespace csharp_Protoshift.MhyKCP
                             _Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
 
                             var sendBackConv = new Handshake(Handshake.MAGIC_SEND_BACK_CONV, _Conv, _Token).AsBytes();
+#pragma warning disable CS8602 // 解引用可能出现空引用。
                             OutputCallback.Output(new KcpInnerBuffer(sendBackConv), sendBackConv.Length, false);
+#pragma warning restore CS8602 // 解引用可能出现空引用。
                             Initialize();
 
                             return 0;
@@ -287,30 +310,13 @@ namespace csharp_Protoshift.MhyKCP
             if (nonblock) return ReceiveNonblock();
 
             byte[]? ret = null;
-            while (ret == null)
+            SpinWait.SpinUntil(() =>
             {
                 ret = ReceiveNonblock();
-                if (ret == null) Thread.Sleep(KCP_RefreshMilliseconds);
-            }
+                return ret != null;
+            });
             _recvlock.Exit();
-            return ret;
-        }
-
-        public async Task<byte[]> ReceiveAsync()
-        {
-            _recvlock.Enter();
-            byte[]? ret = null;
-            while (ret == null)
-            {
-                ret = ReceiveNonblock();
-                if (ret == null)
-                {
-                    // await Task.Yield(); //(int)(IKCP.ikcp_check(ikcpHandle, (uint)(MonotonicTime.Now - startTime)) & 0xFFFF));
-                    await Task.Delay(KCP_RefreshMilliseconds);
-                }
-            }
-            _recvlock.Exit();
-            return ret;
+            return ret ?? Array.Empty<byte>();
         }
 
         // The time ikcp_update should be called get from ikcp_check
@@ -350,11 +356,12 @@ namespace csharp_Protoshift.MhyKCP
                         update_next_time = cskcpHandle.Check(nowtime);
                     }
 
+#pragma warning disable CS0162 // 检测到无法访问的代码
                     if (!checkTime_refresh) await Task.Delay(KCP_RefreshMilliseconds);
                     else if (KCP_RefreshMilliseconds >= 15) await Task.Delay(KCP_RefreshMilliseconds);
+#pragma warning restore CS0162 // 检测到无法访问的代码
 
                 }
-                _updatelock.Exit();
             }
             catch (Exception ex)
             {
@@ -377,7 +384,9 @@ namespace csharp_Protoshift.MhyKCP
                 _State = ConnectionState.CLOSED;
 
                 var disconn = new Handshake(Handshake.MAGIC_DISCONNECT, _Conv, _Token).AsBytes();
+#pragma warning disable CS8602 // 解引用可能出现空引用。
                 OutputCallback.Output(new KcpInnerBuffer(disconn), disconn.Length, false);
+#pragma warning restore CS8602 // 解引用可能出现空引用。
 
                 return;
             }
@@ -404,8 +413,10 @@ namespace csharp_Protoshift.MhyKCP
             token = token == 0 ? _Token : token;
 
             byte[] disconnect = new Handshake(Handshake.MAGIC_DISCONNECT, conv, token, data).AsBytes();
+#pragma warning disable CS8602 // 解引用可能出现空引用。
             OutputCallback.Output(new KcpInnerBuffer(disconnect), disconnect.Length, false);
-            _State = ConnectionState.DISCONNECTED;
+#pragma warning restore CS8602 // 解引用可能出现空引用。
+            _State = ConnectionState.CLOSED;
         }
 
         ~MhyKcpBase()

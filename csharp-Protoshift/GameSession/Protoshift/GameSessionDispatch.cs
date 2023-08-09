@@ -1,7 +1,7 @@
 ﻿#if !PROXY_ONLY_SERVER
 using System.Collections.Concurrent;
-using YYHEggEgg.Logger;
 using System.Net;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.GameSession
 {
@@ -26,12 +26,6 @@ namespace csharp_Protoshift.GameSession
                 }
                 else sessions[conv].remoteIp = ipEp;
             }
-        }
-
-        public static void SessionDestroyed(uint conv)
-        {
-            cancelledSessions.Add(conv);
-            sessions.Remove(conv, out _);
         }
 
         public static byte[]? HandleServerPacket(byte[] data, uint conv)
@@ -110,8 +104,8 @@ namespace csharp_Protoshift.GameSession
         #endregion
 
         #region Packet Record Saver
+#if RECORD_ALL_PKTS_FOR_REPLAY
         private static StreamWriter packet_logwriter;
-        private static object packet_log_lock = "miHomo Save The World";
         static GameSessionDispatch()
         {
             FileInfo pastPacketLog = new("logs/latest.packet.log");
@@ -122,42 +116,44 @@ namespace csharp_Protoshift.GameSession
             packet_logwriter = new("logs/latest.packet.log", true);
             packet_logwriter.AutoFlush = false;
         }
+#endif
 
-        public static async Task DestroySession(uint conv)
+        private static object clearup_running_lck = "miHomo Save The World";
+        public static void DestroySession(uint conv)
         {
-            if (!sessions.ContainsKey(conv)) return;
-            sessions.TryRemove(conv, out HandlerSession? session);
-            cancelledSessions.Add(conv);
-
-            if (session == null)
+            lock (clearup_running_lck)
             {
-                Log.Erro($"Session {conv} destroyed but null, probably not recorded!", "GameSessionDispatch");
-                return;
-            }
-            session.ExportXlsxRecord($"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.debug.packetspeed_{conv}.xlsx");
+                if (!sessions.ContainsKey(conv)) return;
+                sessions.TryRemove(conv, out HandlerSession? session);
+                cancelledSessions.Add(conv);
 
-            lock (packet_log_lock)
-            {
+                if (session == null)
+                {
+                    Log.Erro($"Session {conv} destroyed but null, probably not recorded!", "GameSessionDispatch");
+                    return;
+                }
+                session.ExportXlsxRecord($"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.debug.packetspeed_{conv}.xlsx");
+
+#if RECORD_ALL_PKTS_FOR_REPLAY
                 foreach (var pkt in session.PacketRecords)
                 {
-                    packet_logwriter.WriteLine($"{pkt.packetTime:yyyy/MM/dd HH:mm:ss.fffffff}|{pkt.PacketName}|{pkt.CmdId}|{pkt.sentByClient}|{Convert.ToBase64String(pkt.data, pkt.data_offset, pkt.data_length)}|{Convert.ToBase64String(pkt.shiftedData)}");
+                    packet_logwriter.WriteLine(pkt.ToString());
                 }
+#endif
             }
-
-            await Task.CompletedTask;
         }
 
         public static void CloseServer()
         {
             Closed = true;
-            List<Task> tasks = new();
             foreach (var conv in sessions.Keys)
             {
-                tasks.Add(DestroySession(conv));
+                DestroySession(conv);
             }
-            Task.WaitAll(tasks.ToArray());
+#if RECORD_ALL_PKTS_FOR_REPLAY
             packet_logwriter.Flush();
             packet_logwriter.Dispose();
+#endif
         }
         #endregion
 

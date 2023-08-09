@@ -1,13 +1,24 @@
 using csharp_Protoshift.MhyKCP.Test.Analysis;
 using csharp_Protoshift.MhyKCP.Test.Protocol;
+using System.Collections.Concurrent;
 using System.Net;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.MhyKCP.Test.App
 {
-    public static class ClientApp
+    public class ClientApp
     {
-        public static async Task Start()
+        public readonly uint clientId;
+        private bool _finished = false;
+        private static ConcurrentBag<ClientApp> _clients = new();
+
+        public ClientApp(uint clientId)
+        {
+            this.clientId = clientId;
+            _clients.Add(this);
+        }
+
+        public async Task Start()
         {
 #if CONNECT_SERVERONLY
             KCPClient kcpClient = new(new(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
@@ -23,7 +34,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
             _ = Task.Run(async () =>
             {
                 int sum_wait_ms = 0;
-                uint ack = 1;
+                uint ack = (uint)(Constants.packet_repeat_time * 2 * clientId + 1);
                 for (int i = 0; i < Constants.packet_repeat_time; i++)
                 {
                     /*
@@ -39,7 +50,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                         */
                         try
                         {
-                            BasePacket pkt = BasePacket.Generate(ack, Constants.each_packet_size);
+                            BasePacket pkt = BasePacket.Generate(ack, (uint)Constants.each_packet_size);
                             kcpClient.Send(pkt.GetBytes());
                             Log.Verb($"Client sent ack: {ack}", "ClientSender");
                             ClientDataChannel.PushSentPacket(pkt);
@@ -58,7 +69,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                     // }
                     ack += 2;
                 }
-                await MainAnalysis.ClientFinished();
+                _finished = true;
             });
 
             _ = Task.Run(() =>
@@ -79,6 +90,21 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                     }
                 }
             });
+        }
+
+        internal static async Task WaitForAllClients()
+        {
+            while (true)
+            {
+                await Task.Delay(500);
+                bool allfinished = true;
+                foreach (var client in _clients)
+                {
+                    if (!client._finished) allfinished = false;
+                }
+                if (allfinished) break;
+            }
+            await MainAnalysis.ClientFinished();
         }
     }
 }

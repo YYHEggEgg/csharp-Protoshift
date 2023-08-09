@@ -1,4 +1,5 @@
-﻿using YYHEggEgg.Logger;
+﻿using csharp_Protoshift.GameSession;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Debug.Replay
 {
@@ -22,16 +23,16 @@ namespace csharp_Protoshift.Debug.Replay
 
             var recordList = ReadFromCsv(filePath);
             // 1. Sort by time
-            recordList.Sort((l, r) => l.sentTime.CompareTo(r.sentTime));
+            recordList.Sort((l, r) => l.packetTime.CompareTo(r.packetTime));
             // 2. Set comparison standard
             readonly_replays.Enqueue(new ReplayAttack { record = recordList[0], offset = TimeSpan.Zero });
-            DateTime lastTime = recordList[0].sentTime;
+            DateTime lastTime = recordList[0].packetTime;
             // 3. Set send packet offset
             for (int i = 1; i < recordList.Count; i++)
             {
-                TimeSpan waitSpan = recordList[i].sentTime - lastTime;
+                TimeSpan waitSpan = recordList[i].packetTime - lastTime;
                 readonly_replays.Enqueue(new ReplayAttack { record = recordList[i], offset = waitSpan });
-                lastTime = recordList[i].sentTime;
+                lastTime = recordList[i].packetTime;
             }
         }
 
@@ -43,15 +44,7 @@ namespace csharp_Protoshift.Debug.Replay
             {
                 try
                 {
-                    var values = line.Split(separateChar);
-                    DateTime packetTime = DateTime.Parse(values[0]);
-                    string protoname = values[1];
-                    uint cmdid = uint.Parse(values[2]);
-                    bool sentByClient = bool.Parse(values[3]);
-                    byte[] data = Convert.FromBase64String(values[4]);
-                    byte[] shifted_data = Convert.FromBase64String(values[5]);
-
-                    PacketRecord record = new(protoname, cmdid, sentByClient, data, shifted_data, packetTime); ;
+                    PacketRecord record = PacketRecord.Parse(line);
                     rtn.Add(record);
                 }
                 catch { skip++; continue; }
@@ -66,7 +59,7 @@ namespace csharp_Protoshift.Debug.Replay
         public async Task Replay(CancellationToken? cancellationToken = null)
         {
             Queue<ReplayAttack> replays = new(readonly_replays);
-            GameSession.HandlerSession session = new(1000);
+            HandlerSession session = new(1000);
             Log.Info($"Started replay, {replays.Count} requests.", nameof(PacketRecordCollection));
             while (replays.TryDequeue(out ReplayAttack? replay))
             {
@@ -81,8 +74,9 @@ namespace csharp_Protoshift.Debug.Replay
                 try
                 {
                     var record = replay.record;
-                    session.GetPacketResult(record.data, (ushort)record.CmdId, record.sentByClient, 0, (uint)record.data.Length);
-                    Log.Info($"Successfully output packet CmdId: {replay.record.CmdId} with  body: {record.data.Length} bytes.", nameof(PacketRecordCollection));
+                    session.GetPacketResult(record.data, (ushort)record.CmdId, record.sentByClient, 
+                        record.head_offset, record.head_length, record.body_offset, (uint)record.body_length);
+                    Log.Info($"Successfully output packet CmdId: {replay.record.CmdId} with body: {record.body_length} bytes.", nameof(PacketRecordCollection));
                 }
                 catch (Exception ex)
                 {
