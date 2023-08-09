@@ -14,7 +14,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 
         public KcpProxyServer(IPEndPoint bindToAddress, IPEndPoint sendToAddress)
         {
-            udpSock = new SocketUdpClient(bindToAddress);
+            udpSock = new SocketUdpClient(bindToAddress, true);
             SendToEndpoint = sendToAddress;
 
             _updatelock = new(nameof(KcpProxyServer));
@@ -53,9 +53,18 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         catch (Exception ex)
                         {
                             Log.Dbug($"BackgroundUpdate:Connected reached exception {ex}", nameof(KcpProxyServer));
+                            if (connected_conn.State != MhyKcpBase.ConnectionState.CONNECTED)
+                            {
+                                connected_clients.TryRemove(connected_conn.Conv, out _);
+                                continue;
+                            }
                         }
-                        if (connected_conn.State != MhyKcpBase.ConnectionState.CONNECTED)
+                        if (connected_conn.State == MhyKcpBase.ConnectionState.CLOSED)
+                        {
+                            removed_sessions.Add(connected_conn.Conv);
+                            Log.Dbug($"Permanently remove disconnecting session conv: {connected_conn.Conv}", nameof(KcpProxyServer));
                             connected_clients.TryRemove(connected_conn.Conv, out _);
+                        }
                         continue;
                     }
                     // ip dispatch
@@ -63,6 +72,12 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     KcpProxyBase conn;
                     if (!connecting_clients.TryGetValue(remoteIpString, out var _outconn))
                     {
+                        // Don't allow a disconnected session
+                        if (removed_sessions.Contains(handshake.Conv)) 
+                        {
+                            Log.Dbug($"Ignore Handshake from conv: {handshake.Conv} for removed past", nameof(KcpProxyServer));
+                            continue;
+                        }
                         // Oh boy! A new connection!
                         conn = new KcpProxyBase(sendToAddress: SendToEndpoint);
                         conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
@@ -128,6 +143,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     var ret = Accept();
                     Log.Info($"New connection (conv={ret.Connection.Conv}, token={ret.Connection.Token}) from {ret.RemoteEndpoint}.", nameof(KcpProxyServer));
 
+                    handlers.SessionCreated?.Invoke(ret.Connection.Conv, ret.RemoteEndpoint);
                     _ = Task.Run(() => HandleServer((KcpProxyBase)ret.Connection, handlers));
                     _ = Task.Run(() => HandleClient((KcpProxyBase)ret.Connection, handlers));
                 }
@@ -172,6 +188,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     break;
                 }
             }
+            handlers.SessionDestroyed?.Invoke(conn.Conv);
         }
 
         private void HandlerSendClientPacket(KcpProxyBase conn, byte[] beforepacket, 
@@ -180,7 +197,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             try
             {
                 var afterpacket = PacketHandler(beforepacket, conn.Conv);
+#pragma warning disable CS8602 // 解引用可能出现空引用。
                 if (afterpacket != null) conn.sendClient.Send(afterpacket);
+#pragma warning restore CS8602 // 解引用可能出现空引用。
 #if KCP_PROXY_VERBOSE
                 Log.Dbug($"Client Sent Packet (session {sendConn.Conv})---{Convert.ToHexString(urgentPacket)}", $"{nameof(KcpProxyServer)}:ServerSender");
 #endif
@@ -275,7 +294,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 throw new KeyNotFoundException($"The specified session (conv: {conv}) does not exist.");
             }
             var conn = (KcpProxyBase)connected_clients[conv];
+#pragma warning disable CS8602 // 解引用可能出现空引用。
             conn.sendClient.Send(content);
+#pragma warning restore CS8602 // 解引用可能出现空引用。
         }
         #endregion
     }

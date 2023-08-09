@@ -1,4 +1,5 @@
-﻿using csharp_Protoshift.MhyKCP.Test.Protocol;
+﻿using csharp_Protoshift.MhyKCP.Test.App;
+using csharp_Protoshift.MhyKCP.Test.Protocol;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
@@ -133,15 +134,24 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             #region 失序包分析
             // 失序包算法
             // 将包按照时间排序，当前包 ack 小于上一个包即视为失序
-            (uint, DateTime)[] time_ack_list = (from tuple in pkt_list
-                                                orderby tuple.recv_time
-                                                select (tuple.sent_ack, tuple.recv_time)).ToArray();
+            var clients_ack_list = 
+                from tuple in pkt_list
+                orderby tuple.recv_time
+                group (tuple.sent_ack, tuple.recv_time) 
+                    by (tuple.sent_ack - 1) / (Constants.packet_repeat_time * 2)
+                    into gr
+                orderby gr.Key
+                select gr;
             List<(uint, DateTime)> inverted_ack_list = new();
-            for (int i = 1; i < time_ack_list.Length; i++)
+            foreach (var client_group in clients_ack_list)
             {
-                if (time_ack_list[i].Item1 < time_ack_list[i - 1].Item1)
+                var time_ack_list = client_group.ToArray();
+                for (int i = 1; i < time_ack_list.Length; i++)
                 {
-                    inverted_ack_list.Add(time_ack_list[i]);
+                    if (time_ack_list[i].Item1 < time_ack_list[i - 1].Item1)
+                    {
+                        inverted_ack_list.Add(time_ack_list[i]);
+                    }
                 }
             }
             #endregion

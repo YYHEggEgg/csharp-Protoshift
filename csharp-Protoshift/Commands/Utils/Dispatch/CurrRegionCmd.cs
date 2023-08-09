@@ -34,7 +34,7 @@ namespace csharp_Protoshift.Commands.Utils
             try
             {
                 (currres, verificationOK) = CurrExtend.GetCurrFromJson(read.ProcessedString,
-                    Resources.CPri[key_id], Resources.SPri[key_id]);
+                    Resources.CPri[key_id], Resources.SPub[key_id]);
             }
             catch (JsonReaderException jex)
             {

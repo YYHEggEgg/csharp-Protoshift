@@ -3,9 +3,11 @@
 using csharp_Protoshift.Obsoleted.SpecialUdp;
 using csharp_Protoshift.SpecialUdp;
 using System.Buffers;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Net.Sockets.Kcp;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.MhyKCP
 {
@@ -61,12 +63,15 @@ namespace csharp_Protoshift.MhyKCP
 
         public void Output(IMemoryOwner<byte> buffer, int avalidLength, bool isKcpPacket = true)
         {
+            // Stopwatch udpwatch = Stopwatch.StartNew();
             // DateTime req_SendTime = DateTime.Now;
             // udpSock.SendToAsync(buffer.Memory.Slice(0, avalidLength), ipEp).Wait();
             udpSock.SendTo(buffer.Memory.Span.Slice(0, avalidLength), ipEp);
             // if (isKcpPacket) 
                 // KcpPacketAudit.PushPacket(req_SendTime, buffer.Memory, avalidLength);
-            // buffer.Dispose();
+            buffer.Dispose();
+            // udpwatch.Stop();
+            // Log.Dbug($"SocketUdpKcpCallback output elapsed {udpwatch.Elapsed.TotalMilliseconds}ms.");
         }
     }
 }

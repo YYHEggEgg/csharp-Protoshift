@@ -1,4 +1,6 @@
-﻿namespace csharp_Protoshift
+﻿using YYHEggEgg.Logger;
+
+namespace csharp_Protoshift
 {
     /// <summary>
     /// Assert 是否存在线程安全问题

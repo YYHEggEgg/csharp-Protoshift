@@ -38,7 +38,7 @@ namespace csharp_Protoshift.MhyKCP
 
         public KCPServer(IPEndPoint ipEp)
         {
-            udpSock = new SocketUdpClient(ipEp);
+            udpSock = new SocketUdpClient(ipEp, true);
             connecting_clients = new();
             connected_clients = new();
             newConnections = new();
