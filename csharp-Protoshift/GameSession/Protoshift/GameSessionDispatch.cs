@@ -110,6 +110,7 @@ namespace csharp_Protoshift.GameSession
         #endregion
 
         #region Packet Record Saver
+#if RECORD_ALL_PKTS_FOR_REPLAY
         private static StreamWriter packet_logwriter;
         private static object packet_log_lock = "miHomo Save The World";
         static GameSessionDispatch()
@@ -122,6 +123,7 @@ namespace csharp_Protoshift.GameSession
             packet_logwriter = new("logs/latest.packet.log", true);
             packet_logwriter.AutoFlush = false;
         }
+#endif
 
         public static async Task DestroySession(uint conv)
         {
@@ -136,13 +138,15 @@ namespace csharp_Protoshift.GameSession
             }
             session.ExportXlsxRecord($"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.debug.packetspeed_{conv}.xlsx");
 
+#if RECORD_ALL_PKTS_FOR_REPLAY
             lock (packet_log_lock)
             {
                 foreach (var pkt in session.PacketRecords)
                 {
-                    packet_logwriter.WriteLine($"{pkt.packetTime:yyyy/MM/dd HH:mm:ss.fffffff}|{pkt.PacketName}|{pkt.CmdId}|{pkt.sentByClient}|{Convert.ToBase64String(pkt.data, pkt.data_offset, pkt.data_length)}|{Convert.ToBase64String(pkt.shiftedData)}");
+                    packet_logwriter.WriteLine(pkt.ToString());
                 }
             }
+#endif
 
             await Task.CompletedTask;
         }
@@ -156,8 +160,10 @@ namespace csharp_Protoshift.GameSession
                 tasks.Add(DestroySession(conv));
             }
             Task.WaitAll(tasks.ToArray());
+#if RECORD_ALL_PKTS_FOR_REPLAY
             packet_logwriter.Flush();
             packet_logwriter.Dispose();
+#endif
         }
         #endregion
 

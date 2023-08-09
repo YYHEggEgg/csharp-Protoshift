@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>$(DefineConstants)TRACE;PROXY_ONLY_SERVER_DISABLED;RECORD_ALL_PKTS_FOR_REPLAY;PROTOSHIFT_BENCHMARK</DefineConstants>
+    <DefineConstants>$(DefineConstants);PROXY_ONLY_SERVER_DISABLED;RECORD_ALL_PKTS_FOR_REPLAY</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>$(DefineConstants)TRACE;PROXY_ONLY_SERVER_DISABLED;RECORD_ALL_PKTS_FOR_REPLAY;PROTOSHIFT_BENCHMARK</DefineConstants>
+    <DefineConstants>$(DefineConstants);PROXY_ONLY_SERVER_DISABLED;RECORD_ALL_PKTS_FOR_REPLAY</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
