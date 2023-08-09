@@ -431,7 +431,9 @@ namespace csharp_Protoshift.SpecialUdp
     {
         private static IPEndPoint defaultIpEp = new IPEndPoint(IPAddress.Any, 0);
 
+#pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
         public byte[] Buffer;
+#pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
         public int ReceivedBytes;
         public IPEndPoint RemoteEndPoint = defaultIpEp;
     }

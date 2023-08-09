@@ -14,7 +14,26 @@ namespace csharp_Protoshift.MhyKCP
 
         public enum ConnectionState
         {
-            CLOSED, DISCONNECTED, HANDSHAKE_CONNECT, HANDSHAKE_WAIT, CONNECTED
+            /// <summary>
+            /// The instance has disconnected or been disconnected.
+            /// </summary>
+            CLOSED, 
+            /// <summary>
+            /// The instance has not been used and not attempted to connect/accept yet. 
+            /// </summary>
+            DISCONNECTED, 
+            /// <summary>
+            /// The instance has sent its CONNECT request as a client, and is waiting for the response from server.
+            /// </summary>
+            HANDSHAKE_CONNECT, 
+            /// <summary>
+            /// The instance is accepting a connection.
+            /// </summary>
+            HANDSHAKE_WAIT, 
+            /// <summary>
+            /// The instance is connected and transfering data normally.
+            /// </summary>
+            CONNECTED
         }
 
         public IKcpCallback? OutputCallback;
@@ -397,7 +416,7 @@ namespace csharp_Protoshift.MhyKCP
 #pragma warning disable CS8602 // 解引用可能出现空引用。
             OutputCallback.Output(new KcpInnerBuffer(disconnect), disconnect.Length, false);
 #pragma warning restore CS8602 // 解引用可能出现空引用。
-            _State = ConnectionState.DISCONNECTED;
+            _State = ConnectionState.CLOSED;
         }
 
         ~MhyKcpBase()

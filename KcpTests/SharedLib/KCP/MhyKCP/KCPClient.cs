@@ -34,7 +34,7 @@ namespace csharp_Protoshift.MhyKCP
         /// <summary>
         /// Invoke when server requested disconnect. uints are Conv/Token.
         /// </summary>
-        public event Action<uint, uint>? StartDisconnected;
+        public event Action<uint, uint, uint>? StartDisconnected;
 
         public MhyKcpBase.ConnectionState State { get => server.State; }
 
@@ -55,9 +55,21 @@ namespace csharp_Protoshift.MhyKCP
                     {
                         // Log.Warn($"Bad packet sent to client: {fromip}, buf = {Convert.ToHexString(packet)}");
                     }
+                    if (server.State == MhyKcpBase.ConnectionState.CLOSED)
+                    {
+                        if (packet.Buffer.Length == 20)
+                        {
+                            try
+                            {
+                                Handshake disconnpkt = new();
+                                disconnpkt.Decode(packet.Buffer);
+                                StartDisconnected?.Invoke(disconnpkt.Conv, disconnpkt.Token, disconnpkt.Data);
+                            }
+                            catch {  }
+                        }
+                    }
                     if (server.State != MhyKcpBase.ConnectionState.CONNECTED)
                     {
-                        StartDisconnected?.Invoke(server.Conv, server.Token);
                         _Closed = true;
                         server.Dispose();
                     }
@@ -113,12 +125,8 @@ namespace csharp_Protoshift.MhyKCP
             }
             catch
             {
-                if (server.State != MhyKcpBase.ConnectionState.CONNECTED)
-                {
-                    StartDisconnected?.Invoke(server.Conv, server.Token);
-                    return null;
-                }
-                else throw;
+                if (server.State == MhyKcpBase.ConnectionState.CONNECTED) throw;
+                else return null;
             }
             finally
             {

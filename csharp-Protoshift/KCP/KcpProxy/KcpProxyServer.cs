@@ -14,7 +14,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 
         public KcpProxyServer(IPEndPoint bindToAddress, IPEndPoint sendToAddress)
         {
-            udpSock = new SocketUdpClient(bindToAddress);
+            udpSock = new SocketUdpClient(bindToAddress, true);
             SendToEndpoint = sendToAddress;
 
             _updatelock = new(nameof(KcpProxyServer));
