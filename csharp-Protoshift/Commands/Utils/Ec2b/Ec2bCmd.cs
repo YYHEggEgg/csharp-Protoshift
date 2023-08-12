@@ -4,23 +4,24 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands.Utils
 {
-    internal class Ec2bCmd : ICommandHandler
+    internal class Ec2bCmd : CommandHandlerBase
     {
-        public string CommandName => "ec2b";
+        public override string CommandName => "ec2b";
 
-        public string Description => "Make operations on dispatch secret_key/secret_seed.";
+        public override string Description => "Make operations on dispatch secret_key/secret_seed.";
 
-        public string Usage => $"ec2b get_key <content_bindata(base64/hex)>{Environment.NewLine}" +
+        public override string Usage => $"ec2b get_key <content_bindata(base64/hex)>{Environment.NewLine}" +
             EasyInput.MultipleInputNotice;
 
-        public void CleanUp()
+        public override void CleanUp()
         {
             throw new NotImplementedException();
         }
 
-        public async Task HandleAsync(string[] args)
+        public override async Task HandleAsync(string argList)
         {
-            if (args.Length <= 1)
+            var args = ParseAsArgs(argList);
+            if (args.Count <= 1)
             {
                 Log.Erro($"Too few params! Usage: {Usage}", nameof(Ec2bCmd));
                 return;

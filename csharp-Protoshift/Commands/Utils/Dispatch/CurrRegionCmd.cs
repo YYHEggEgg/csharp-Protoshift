@@ -8,22 +8,18 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands.Utils
 {
-    internal class DecryptCurrRegionCmd : ICommandHandler
+    internal class DecryptCurrRegionCmd : CommandHandlerBase
     {
-        public string CommandName => "dcurr";
+        public override string CommandName => "dcurr";
 
-        public string Description => "Decrypt query_cur_region content and verify it (to ensure it avaliable in anime game).";
+        public override string Description => "Decrypt query_cur_region content and verify it (to ensure it avaliable in anime game).";
 
-        public string Usage => $"dcurr <key_id> <curr_json>{Environment.NewLine}" +
+        public override string Usage => $"dcurr <key_id> <curr_json>{Environment.NewLine}" +
             $"Decrypt and verify query_cur_region content, by the key from resources.";
 
-        public void CleanUp()
+        public override async Task HandleAsync(string argList)
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task HandleAsync(string[] args)
-        {
+            var args = argList.Split(' ');
             uint key_id = uint.Parse(args[0]);
             var read = EasyInput.TryPreProcess(args, 1);
             if (read.InputType != EasyInputType.Json)
@@ -72,22 +68,18 @@ namespace csharp_Protoshift.Commands.Utils
         }
     }
 
-    internal class GenerateCurrRegionCmd : ICommandHandler
+    internal class GenerateCurrRegionCmd : CommandHandlerBase
     {
-        public string CommandName => "gencur";
+        public override string CommandName => "gencur";
 
-        public string Description => "Generate query_cur_region content and signature.";
+        public override string Description => "Generate query_cur_region content and signature.";
 
-        public string Usage => $"gencur <key_id> <protobuf_content>{Environment.NewLine}" +
+        public override string Usage => $"gencur <key_id> <protobuf_content>{Environment.NewLine}" +
             $"Encrypt and sign query_cur_region content, by the key from resources.";
 
-        public void CleanUp()
+        public override async Task HandleAsync(string argList)
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task HandleAsync(string[] args)
-        {
+            var args = argList.Split(' ');
             uint key_id = uint.Parse(args[0]);
             var read = EasyInput.TryPreProcess(args, 1);
             if (read.InputType != EasyInputType.Json)

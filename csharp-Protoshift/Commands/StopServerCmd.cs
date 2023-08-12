@@ -3,18 +3,18 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
-    internal class StopServerCmd : ICommandHandler
+    internal class StopServerCmd : CommandHandlerBase
     {
-        public string CommandName => "stop";
+        public override string CommandName => "stop";
 
-        public string Description => $"Invoke to stop the server and SAVE ENTIRE PACKET RECORDS. {Environment.NewLine}" +
+        public override string Description => $"Invoke to stop the server and SAVE ENTIRE PACKET RECORDS. {Environment.NewLine}" +
             $"DON'T USE Ctrl+C! Not supported now.";
 
-        public string Usage => "stop";
+        public override string Usage => "stop";
 
-        public void CleanUp() { }
+        public override void CleanUp() { }
 
-        public async Task HandleAsync(string[] args)
+        public override async Task HandleAsync(string argList)
         {
             lock (closing_lck)
             {
