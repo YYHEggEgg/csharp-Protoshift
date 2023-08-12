@@ -2,9 +2,9 @@
 
 namespace csharp_Protoshift.Commands
 {
-    internal static partial class CommandLine
+    internal static partial class ServerCommandLine
     {
-        static CommandLine()
+        static ServerCommandLine()
         {
             // StopServer is now built-in command
             stopServer = new StopServerCmd();
@@ -21,7 +21,7 @@ namespace csharp_Protoshift.Commands
                     catch (NotImplementedException) { }
                     catch (Exception ex)
                     {
-                        Log.Erro($"Cleanup of command {cmd.GetType()} failed: {ex}", nameof(CommandLine));
+                        Log.Erro($"Cleanup of command {cmd.GetType()} failed: {ex}", nameof(ServerCommandLine));
                     }
                 }
                 stopServer.CleanUpCompleted = true;
@@ -30,21 +30,19 @@ namespace csharp_Protoshift.Commands
         }
 
         private static StopServerCmd stopServer;
-        public static List<ICommandHandler> handlers = new();
+        public static List<CommandHandlerBase> handlers = new();
         public static void ShowHelps()
         {
             foreach (var handler in handlers)
             {
-                Log.Info($"Command '{handler.CommandName}': {handler.Description}", nameof(CommandLine));
-                string[] help = handler.Usage.Split(Environment.NewLine);
-                foreach (var line in help) Log.Info(line, nameof(CommandLine));
-                Log.Info("", nameof(CommandLine));
+                handler.ShowUsage();
+                Log.Info("", nameof(ServerCommandLine));
             }
         }
 
         private static void RefuseCommand(string commandName)
         {
-            Log.Info($"Invalid command: {commandName}.");
+            Log.Info($"Invalid command: {commandName}.", nameof(ServerCommandLine));
         }
 
         public static async Task Start()
@@ -64,7 +62,7 @@ namespace csharp_Protoshift.Commands
                 }
                 else
                 {
-                    string[] args = cmd.Substring(Math.Min(cmd.Length, sepindex + 1)).Split(' ');
+                    string argList = cmd.Substring(Math.Min(cmd.Length, sepindex + 1));
                     bool handled = false;
                     foreach (var cmdhandle in handlers)
                     {
@@ -73,12 +71,12 @@ namespace csharp_Protoshift.Commands
                             handled = true;
                             try
                             {
-                                await cmdhandle.HandleAsync(args);
+                                await cmdhandle.HandleAsync(argList);
                             }
                             catch (Exception ex)
                             {
-                                Log.Erro(ex.ToString(), nameof(CommandLine));
-                                Log.Info($"Encountered error when handling command {commandName}. Please check your input.", nameof(CommandLine));
+                                Log.Erro(ex.ToString(), nameof(ServerCommandLine));
+                                Log.Info($"Encountered error when handling command {commandName}. Please check your input.", nameof(ServerCommandLine));
                             }
                             break;
                         }

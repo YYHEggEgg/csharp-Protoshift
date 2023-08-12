@@ -3,9 +3,9 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
-    internal class UtilCmd : ICommandHandler
+    internal class UtilCmd : CommandHandlerBase
     {
-        public List<ICommandHandler> handlers = new();
+        public List<CommandHandlerBase> handlers = new();
         public UtilCmd()
         {
             handlers.Add(new DecryptCurrRegionCmd());
@@ -15,20 +15,17 @@ namespace csharp_Protoshift.Commands
             handlers.Add(new MT19937Cmd());
         }
 
-        public string CommandName => "util";
+        public override string CommandName => "util";
 
-        public string Description => "Some easy utils for PS workers.";
+        public override string Description => "Some easy utils for PS workers.";
 
-        public string Usage => $"util [command]{Environment.NewLine}" +
+        public override string Usage => $"util [command]{Environment.NewLine}" +
             $"Type 'util help' to get more info.";
 
-        public void CleanUp()
+        public override async Task HandleAsync(string argList)
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task HandleAsync(string[] args)
-        {
+            argList = argList.Trim();
+            var args = argList.Split(' ');
             if (args.Length == 0) ShowUsage();
             else
             {
@@ -39,7 +36,9 @@ namespace csharp_Protoshift.Commands
                 if (helpstrings.Contains(args[0].ToLower())) ShowUsage();
                 else
                 {
-                    ICommandHandler? cmd = (from utilcmd in handlers
+                    var subargList = args.Length == 1 ? string.Empty 
+                        : argList.Substring(args[0].Length + 1);
+                    CommandHandlerBase? cmd = (from utilcmd in handlers
                                             where utilcmd.CommandName == args[0]
                                             select utilcmd).FirstOrDefault();
                     if (cmd == null) ShowUsage();
@@ -50,20 +49,12 @@ namespace csharp_Protoshift.Commands
                         foreach (var line in help) Log.Info(line, nameof(UtilCmd));
                         Log.Info("", nameof(UtilCmd));
                     }
-                    else
-                    {
-                        string[] innerargs = new string[args.Length - 1];
-                        if (args.Length > 1)
-                        {
-                            Array.Copy(args, 1, innerargs, 0, args.Length - 1);
-                        }
-                        await cmd.HandleAsync(innerargs);
-                    }
+                    else await cmd.HandleAsync(subargList); 
                 }
             }
         }
 
-        private void ShowUsage()
+        private new void ShowUsage()
         {
             Log.Info($"Util commands: use by util [command] [args]. ", nameof(UtilCmd));
             Log.Info($"Run util [command] [help] for more detailed info.", nameof(UtilCmd));

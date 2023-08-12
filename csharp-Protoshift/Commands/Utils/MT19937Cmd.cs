@@ -7,24 +7,23 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
-    internal class MT19937Cmd : ICommandHandler
+    internal class MT19937Cmd : CommandHandlerBase
     {
-        public string CommandName => "mt19937";
+        public override string CommandName => "mt19937";
 
-        public string Description => "Generate 4096-byte XOR key with a certain UInt64 seed, " +
+        public override string Description => "Generate 4096-byte XOR key with a certain UInt64 seed, " +
             "or with RSA param clientRandkey and serverRandKey.";
-        
-        public string Usage => $"mt19937 [options] [params]{Environment.NewLine}" +
+
+        public override string Usage => $"mt19937 [options] [params]{Environment.NewLine}" +
             $"mt19937 <ulong_seed>{Environment.NewLine}" +
             $"mt19937 --hex <ulong_seed_hex>{Environment.NewLine}" +
             $"mt19937 --rsa <RSA_Encrypted_clientRandKey_base64/hex> <RSA_Encrypted_serverRandKey_base64/hex> <key_id>";
 
-        public void CleanUp() { }
-
-        public async Task HandleAsync(string[] args)
+        public override async Task HandleAsync(string argList)
         {
             ulong seed;
-            if (args.Length == 0)
+            var args = ParseAsArgs(argList);
+            if (args.Count == 0)
             {
                 Log.Erro($"Too few arguments! Usage: {Usage}", nameof(MT19937Cmd));
                 return;

@@ -86,13 +86,31 @@ namespace csharp_Protoshift
         }
 
         /// <summary>
+        /// Process a string and return the judge result.
+        /// </summary>
+        /// <param name="args">The command line args, which will be <see cref="string.Concat(IEnumerable{string?})"/>ed together before processing.</param>
+        /// <param name="offset">The array offset.</param>
+        public static EasyInputResult TryPreProcess(List<string> args, int offset = 0)
+        {
+            string[] innerargs = new string[args.Count - offset];
+            if (args.Count > offset)
+            {
+                for (int i = 0; i < args.Count - offset; i++)
+                {
+                    innerargs[i] = args[offset + i];
+                }
+            }
+            return TryPreProcess(string.Concat(innerargs));
+        }
+
+        /// <summary>
         /// Return the decrypt result for <see cref="EasyInputType.Base64"/> and 
         /// <see cref="EasyInputType.Hex"/>; return <see cref="Encoding.GetByteCount(string)"/>
         /// for <see cref="EasyInputType.Json"/>.
         /// </summary>
         /// <param name="preprocessed"></param>
         /// <returns></returns>
-        public static byte[] ToByteArray(EasyInputResult preprocessed)
+        public static byte[] ToByteArray(this EasyInputResult preprocessed)
         {
             if (preprocessed.ProcessedString == null)
                 throw new ArgumentException("Using an instance that failed to process.", nameof(preprocessed));
