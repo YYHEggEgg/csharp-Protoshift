@@ -74,7 +74,7 @@ namespace csharp_Protoshift
                 Log.Info("Ready! Type 'help' to get command help.", "Entry");
             }
 
-            await CommandLine.Start();
+            await ServerCommandLine.Start();
             Close();
         }
 

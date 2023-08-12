@@ -1,30 +1,34 @@
-﻿using csharp_Protoshift.GameSession;
+﻿using CommandLine;
+using csharp_Protoshift.GameSession;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
 #if !PROXY_ONLY_SERVER
-
-    internal class SetVerboseCmd : ICommandHandler
+    internal class SetVerboseOption
     {
-        public string CommandName => "setverbose";
+        [Option('c', "conv", Required = true, HelpText = "The target conv id.")]
+        public uint Conv { get; set; }
+        [Option('v', "verbose", Required = true, HelpText = "Whether to show packet info of this session.")]
+        public bool Verbose { get; set; }
+    }
 
-        public string Description => "Set a specified connection verbose mode.";
+    internal class SetVerboseCmd : StandardCommandHandler<SetVerboseOption>
+    {
+        public override string CommandName => "setverbose";
 
-        public string Usage => $"setverbose <conv_id> <true/false>{Environment.NewLine}" +
+        public override string Description => "Set a specified connection verbose mode.";
+
+        public override string Usage => $"setverbose -c <conv_id> -v <true/false>{Environment.NewLine}" +
             $"If false, then packets working fine will not produce any output in the commandline.{Environment.NewLine}" +
             "You may use this when you have entered the game successfully and want to use some commands.";
 
-        public void CleanUp() { }
-
 #pragma warning disable CS1998 // 异步方法缺少 "await" 运算符，将以同步方式运行
-        public async Task HandleAsync(string[] args)
+        public override async Task HandleAsync(SetVerboseOption opt)
 #pragma warning restore CS1998 // 异步方法缺少 "await" 运算符，将以同步方式运行
         {
-            uint conv = uint.Parse(args[0]);
-            bool toMode = bool.Parse(args[1]);
-            GameSessionDispatch.sessions[conv].Verbose = toMode;
-            Log.Info($"Succeed set Conv:{conv} Verbose Mode to {toMode}.", "SetVerboseCmd");
+            GameSessionDispatch.sessions[opt.Conv].Verbose = opt.Verbose;
+            Log.Info($"Succeed set Conv:{opt.Conv} Verbose Mode to {opt.Verbose}.", nameof(SetVerboseCmd));
         }
     }
 
@@ -84,37 +88,32 @@ namespace csharp_Protoshift.Commands
 //         }
 //     }
 #endif
-        
-    internal class QueryClientCmd : ICommandHandler
+
+    internal class QueryClientOption
     {
-        public string CommandName => "queryclient";
+        [Option('l', "limit", Required = false, Default = 50, HelpText = "The output limit of query result.")]
+        public int Limit { get; set; }
+        [Option("range-from", Required = false, Default = uint.MinValue, HelpText = "The minimum value of query range.")]
+        public uint MinConv { get; set; }
+        [Option("range-to", Required = false, Default = uint.MaxValue, HelpText = "The maximum value of query range.")]
+        public uint MaxConv { get; set; }
+    }
+        
+    internal class QueryClientCmd : StandardCommandHandler<QueryClientOption>
+    {
+        public override string CommandName => "queryclient";
 
-        public string Description => "Query the online convs of the instance. ";
+        public override string Description => "Query the online convs of the instance. ";
 
-        public string Usage => $"queryclient [limit=20] [--range <conv_id_min> <conv_id_max>]{Environment.NewLine}" +
-            "  Query the online conv ids. Default output limit is 50, so use --range when query exceeded limit. ";
+        public override string Usage => $"queryclient [--limit=50] {Environment.NewLine}" +
+            $"  [--range-from <conv_id_min> --range-to <conv_id_max>]{Environment.NewLine}" +
+            $"  Query the online conv ids. Default output limit is 50, so use --range when query exceeded limit. ";
 
-        public void CleanUp() { }
-
-        public Task HandleAsync(string[] args)
+        public override Task HandleAsync(QueryClientOption opt)
         {
-            int limit = 50;
-            uint conv_min = uint.MinValue;
+            int limit = opt.Limit;
+            uint conv_min = opt.MinConv;
             uint conv_max = uint.MaxValue;
-            if (args.Length > 0)
-            {
-                int offset = 0;
-                if (int.TryParse(args[offset++], out int _readlimit))
-                    limit = _readlimit;
-                if (args.Length > offset)
-                {
-                    if (args[offset++] == "--range")
-                    {
-                        conv_min = uint.Parse(args[offset++]);
-                        conv_max = uint.Parse(args[offset++]);
-                    }
-                }
-            }
             List<KeyValuePair<uint, HandlerSession>> search_res = new(
                 from pair in GameSessionDispatch.sessions
                 let conv_id = pair.Key
@@ -138,59 +137,55 @@ namespace csharp_Protoshift.Commands
         }
     }
 
-    internal class ForceInjectPacketCmd : ICommandHandler
+    internal class ForceInjectPacketOption
     {
-        public string CommandName => "injectpkt";
+        [Option('c', "conv", Required = true, HelpText = "The target client session id.")]
+        public uint Conv { get; set; }
+        [Option("client", Required = false, Default = false, HelpText = "Whether to sent the packet to client.")]
+        public bool IsClient { get; set; }
+        [Option("server", Required = false, Default = false, HelpText = "Whether to sent the packet to server.")]
+        public bool IsServer { get; set; }
+        [Option('p', "proto", Required = true, Default = null, HelpText = "The protocol the packet body using. ")]
+        public string Protoname { get; set; }
+        [Option("head", Required = false, Default = null, HelpText = "The packet head protobuf content, using PacketHead.proto. ")]
+        public string? Head { get; set; }
+        [Option("body", Required = false, Default = null, HelpText = "The packet body protobuf content, using protocol specified in --proto. ")]
+        public string? Body { get; set; }
+    }
 
-        public string Description => "Send a packet to the specified connection's client/server.";
+    internal class ForceInjectPacketCmd : StandardCommandHandler<ForceInjectPacketOption>
+    {
+        public override string CommandName => "injectpkt";
 
-        public string Usage => $"injectpkt <conv> <\"client\"|\"server\"> {Environment.NewLine}" +
-            $"   --cmd <protoname> {Environment.NewLine}" +
-            $"   [--head <packet_head_hex>] {Environment.NewLine}" +
-            $"   [--body <protobuf_body_hex>]";
+        public override string Description => "Send a packet to the specified connection's client/server.";
 
-        public void CleanUp()
-        {
-            throw new NotImplementedException();
-        }
+        public override string Usage => $"injectpkt [options] {Environment.NewLine}" +
+            $"   -c, --conv <conv_id>         The target client session id. {Environment.NewLine}" +
+            $"   [--client]                   Whether to sent the packet to client. {Environment.NewLine}" +
+            $"   [--server]                   Whether to sent the packet to server. {Environment.NewLine}" +
+            $"   -p, --proto <protoname>    The protocol the packet body using. {Environment.NewLine}" +
+            $"   [--head <packet_head_hex>]   The packet head protobuf content, using PacketHead.proto. {Environment.NewLine}" +
+            $"   [--body <protobuf_body_hex>] The packet body protobuf content, using protocol specified in --proto. ";
 
-        public Task HandleAsync(string[] args)
+        public override Task HandleAsync(ForceInjectPacketOption opt)
         {
             #region REad param
-            bool isNewCmdid;
-            if (args.Length < 4)
-            {
-                Log.Erro($"Please give correct params!", nameof(ForceInjectPacketCmd));
-                return Task.CompletedTask;
-            }
-            if (!uint.TryParse(args[0], out uint conv) || !GameSessionDispatch.sessions.ContainsKey(conv))
+            uint conv = opt.Conv;
+            if (!GameSessionDispatch.sessions.ContainsKey(conv))
             {
                 Log.Erro($"Please give a correct conv number by \"queryclient\" command!", nameof(ForceInjectPacketCmd));
-            }
-            if (args[1].Replace("\"", "") == "client") isNewCmdid = true;
-            else if (args[1].Replace("\"", "") == "server") isNewCmdid = false;
-            else
-            {
-                Log.Erro($"Please specify send to whether client or server!", nameof(ForceInjectPacketCmd));
-
                 return Task.CompletedTask;
             }
-            int offset = 2;
-            string? protoname = null;
+            if (!opt.IsClient && !opt.IsServer)
+            {
+                Log.Erro("Please specify whether to send the packet to client or server!", nameof(ForceInjectPacketCmd));
+                return Task.CompletedTask;
+            }
+            string protoname = opt.Protoname;
             byte[]? head = null;
             byte[]? body = null;
-            for (; offset < args.Length; offset++)
-            {
-                if (args[offset] == "--cmd") protoname = args[++offset];
-                else if (args[offset] == "--head") head = Convert.FromHexString(args[++offset]);
-                else if (args[offset] == "--body") body = Convert.FromHexString(args[++offset]);
-                else
-                {
-                    Log.Erro($"Please give correct params!", nameof(ForceInjectPacketCmd));
-
-                    return Task.CompletedTask;
-                }
-            }
+            if (opt.Head != null) head = EasyInput.TryPreProcess(opt.Head).ToByteArray();
+            if (opt.Head != null) body = EasyInput.TryPreProcess(opt.Body).ToByteArray();
             if (protoname == null)
             {
                 Log.Erro($"Please give at least protoname (--cmd)!", nameof(ForceInjectPacketCmd));
@@ -199,13 +194,13 @@ namespace csharp_Protoshift.Commands
             }
             body ??= Array.Empty<byte>();
             #endregion
-            if (isNewCmdid)
+            if (opt.IsClient)
             {
                 var content = GameSessionDispatch.ConstructPacketSendToClient(
                     conv, protoname, head, body);
                 Program.ProxyServer.SendPacketToClient(conv, content);
             }
-            else
+            if (opt.IsServer)
             {
                 var content = GameSessionDispatch.ConstructPacketSendToServer(
                     conv, protoname, head, body);

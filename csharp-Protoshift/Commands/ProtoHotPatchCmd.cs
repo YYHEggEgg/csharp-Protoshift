@@ -1,43 +1,50 @@
-﻿using csharp_Protoshift.ProtoHotPatch;
+﻿using CommandLine;
+using csharp_Protoshift.ProtoHotPatch;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
-    internal class ProtoHotPatchCmd : ICommandHandler
+    [Verb("reload", false, new string[] { "load" }, HelpText = "load and compile the config.")]
+    internal class ProtoHotPatchLoadConfig
     {
-        public string CommandName => "kskillissue";
+    }
 
-        public string Description => "Skill issue fix HotPatch";
+    internal class ProtoHotPatchCmd : CommandHandlerBase
+    {
+        public override string CommandName => "kskillissue";
 
-        public string Usage => "kskillissue load/reload - load and compile the config.";
+        public override string Description => "Skill issue fix HotPatch";
 
-        public void CleanUp()
+        public override string Usage => "kskillissue load/reload - load and compile the config.";
+
+        public override async Task HandleAsync(string argList)
         {
-            throw new NotImplementedException();
+            var args = ParseAsArgs(argList);
+            await Parser.Default.ParseArguments<ProtoHotPatchLoadConfig>(args)
+                .MapResult(
+                    async (ProtoHotPatchLoadConfig o) => await HandleReloadAsync(o),
+                    error =>
+                    {
+                        Log.Erro("Unrecognized args detected. Please check your input.", nameof(ProtoHotPatchCmd));
+                        ShowUsage();
+                        return Task.CompletedTask;
+                    });
         }
 
-        public Task HandleAsync(string[] args)
+        private Task HandleReloadAsync(ProtoHotPatchLoadConfig _)
         {
-            if (args.Length == 0)
+            string content;
+            try
             {
-                Log.Erro(Usage, nameof(ProtoHotPatchCmd));
+                content = File.ReadAllText("protoshift_hotpatch_config.json");
+            }
+            catch (Exception ex)
+            {
+                Log.Info($"Reading file: {Path.GetFullPath("protoshift_hotpatch_config.json")} meets {ex}", nameof(ProtoHotPatchCmd));
+                Log.Erro(ProtoHotPatchCompiler.PSHP016, nameof(ProtoHotPatchCmd));
                 return Task.CompletedTask;
             }
-            if (args[0] == "load" || args[0] == "reload")
-            {
-                string content;
-                try
-                {
-                    content = File.ReadAllText("protoshift_hotpatch_config.json");
-                }
-                catch (Exception ex)
-                {
-                    Log.Info($"Reading file: {Path.GetFullPath("protoshift_hotpatch_config.json")} meets {ex}", nameof(ProtoHotPatchCmd));
-                    Log.Erro(ProtoHotPatchCompiler.PSHP016, nameof(ProtoHotPatchCmd));
-                    return Task.CompletedTask;
-                }
-                ProtoHotPatchCompiler.CompileFromFile(content);
-            }
+            ProtoHotPatchCompiler.CompileFromFile(content);
             return Task.CompletedTask;
         }
     }

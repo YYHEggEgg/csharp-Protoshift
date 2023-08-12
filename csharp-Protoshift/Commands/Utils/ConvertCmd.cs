@@ -8,22 +8,18 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands.Utils
 {
-    internal class ConvertCmd : ICommandHandler
+    internal class ConvertCmd : CommandHandlerBase
     {
-        public string CommandName => "convert";
+        public override string CommandName => "convert";
 
-        public string Description => "Automatically convert data between base64 and HEX format.";
+        public override string Description => "Automatically convert data between base64 and HEX format.";
 
-        public string Usage => $"convert <base64_data/hex_data>{Environment.NewLine}" +
+        public override string Usage => $"convert <base64_data/hex_data>{Environment.NewLine}" +
             EasyInput.MultipleInputNotice;
 
-        public void CleanUp()
+        public override async Task HandleAsync(string argList)
         {
-            throw new NotImplementedException();
-        }
-
-        public async Task HandleAsync(string[] args)
-        {
+            var args = ParseAsArgs(argList);
             EasyInputResult res = EasyInput.TryPreProcess(args);
             byte[] bytes;
             switch (res.InputType)

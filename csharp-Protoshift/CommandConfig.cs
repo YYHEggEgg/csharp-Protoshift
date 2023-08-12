@@ -2,11 +2,11 @@
 
 namespace csharp_Protoshift.Commands
 {
-    internal static partial class CommandLine
+    internal static partial class ServerCommandLine
     {
-        private static List<ICommandHandler> ConfigureCommands()
+        private static List<CommandHandlerBase> ConfigureCommands()
         {
-            var handlers = new List<ICommandHandler>();
+            var handlers = new List<CommandHandlerBase>();
             handlers.Add(new UtilCmd());
 #if !PROXY_ONLY_SERVER
             handlers.Add(new SetVerboseCmd());
