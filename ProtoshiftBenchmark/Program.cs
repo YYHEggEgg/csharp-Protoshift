@@ -74,10 +74,10 @@ namespace csharp_Protoshift.Enhanced.Benchmark
             {
                 var line = source_lines[i];
                 var values = line.Split(separateChar);
-                string protoname = values[1];
-                ushort cmdid = ushort.Parse(values[2]);
-                bool sentByClient = bool.Parse(values[3]);
-                byte[] data = Convert.FromBase64String(values[4]);
+                string protoname = values[3];
+                ushort cmdid = ushort.Parse(values[4]);
+                bool sentByClient = bool.Parse(values[5]);
+                byte[] data = Convert.FromBase64String(values[7]);
                 readres.Add((protoname, cmdid, sentByClient, data, i));
             }
 
