@@ -1,13 +1,7 @@
 ﻿#if PROXY_ONLY_SERVER
 
-using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using YYHEggEgg.Logger;
-using Force.Crc32;
 using System.Net;
 
 namespace csharp_Protoshift.GameSession
@@ -33,12 +27,6 @@ namespace csharp_Protoshift.GameSession
                 }
                 else sessions[conv].remoteIp = ipEp;
             }
-        }
-
-        public static void SessionDestroyed(uint conv)
-        {
-            cancelledSessions.Add(conv);
-            sessions.Remove(conv, out _);
         }
 
         public static byte[]? HandleServerPacket(byte[] data, uint conv)
@@ -117,54 +105,63 @@ namespace csharp_Protoshift.GameSession
         #endregion
 
         #region Packet Record Saver
-        private static StreamWriter packet_logwriter;
-        private static object packet_log_lock = "miHomo Save The World";
+#if RECORD_ALL_PKTS_FOR_REPLAY && !PROTOSHIFT_BENCHMARK
+        internal static BaseLogger PacketLogger;
         static GameSessionDispatch()
         {
-            FileInfo pastPacketLog = new($"logs/latest.packet.log");
-            if (pastPacketLog.Exists)
-            {
-                pastPacketLog.MoveTo($"logs/{pastPacketLog.CreationTime:yyyy-MM-dd_HH-mm-ss}.packet.log");
-            }
-            packet_logwriter = new($"logs/latest.packet.log", true);
-            packet_logwriter.AutoFlush = false;
-        }
-
-        public static async Task DestroySession(uint conv)
-        {
-            if (!sessions.ContainsKey(conv)) return;
-            sessions.TryRemove(conv, out HandlerSession? session);
-            cancelledSessions.Add(conv);
-
-            if (session == null)
-            {
-                Log.Erro($"Session {conv} destroyed but null, probably not recorded!", "GameSessionDispatch");
-                return;
-            }
-            session.ExportXlsxRecord($"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.debug.packetspeed_{conv}.xlsx");
-
-            lock (packet_log_lock)
-            {
-                foreach (var pkt in session.PacketRecords)
+            PacketLogger = new BaseLogger(new LoggerConfig(
+                max_Output_Char_Count: 16 * 1024,
+                use_Console_Wrapper: true,
+                use_Working_Directory: true,
+                global_Minimum_LogLevel: LogLevel.Information,
+                console_Minimum_LogLevel: LogLevel.None,
+                debug_LogWriter_AutoFlush: false,
+                enable_Detailed_Time: true), new LogFileConfig
                 {
-                    packet_logwriter.WriteLine(pkt.ToString());
-                }
-            }
+                    AutoFlushWriter = true,
+                    IsPipeSeparatedFile = true,
+                    MaximumLogLevel = LogLevel.Information,
+                    MinimumLogLevel = LogLevel.Information,
+                    FileIdentifier = "packet"
+                });
+        }
+#endif
 
-            await Task.CompletedTask;
+        private static object clearup_running_lck = "miHomo Save The World";
+        public static void DestroySession(uint conv)
+        {
+            lock (clearup_running_lck)
+            {
+                if (!sessions.ContainsKey(conv)) return;
+                sessions.TryRemove(conv, out HandlerSession? session);
+                cancelledSessions.Add(conv);
+
+                if (session == null)
+                {
+                    Log.Erro($"Session {conv} destroyed but null, probably not recorded!", "GameSessionDispatch");
+                    return;
+                }
+                session.ExportXlsxRecord($"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.debug.packetspeed_{conv}.xlsx");
+            }
         }
 
         public static void CloseServer()
         {
             Closed = true;
-            List<Task> tasks = new();
-            foreach (var conv in sessions.Keys)
+            var _logger = Log.GetChannel(nameof(GameSessionDispatch));
+            _logger.LogInfo($"Closing server...");
+            foreach (var session in sessions)
             {
-                tasks.Add(DestroySession(conv));
+                var conv = session.Key;
+                var remote_ip = session.Value.remoteIp;
+                DestroySession(conv);
+                try
+                {
+                    Program.ProxyServer.KickSession(conv, 6);
+                    _logger.LogInfo($"Gracefully kicked online session {conv} on {remote_ip}.");
+                }
+                catch (Exception) { }
             }
-            Task.WaitAll(tasks.ToArray());
-            packet_logwriter.Flush();
-            packet_logwriter.Dispose();
         }
         #endregion
 

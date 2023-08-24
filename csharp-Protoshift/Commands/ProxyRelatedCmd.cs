@@ -94,9 +94,9 @@ namespace csharp_Protoshift.Commands
         [Option('l', "limit", Required = false, Default = 50, HelpText = "The output limit of query result.")]
         public int Limit { get; set; }
         [Option("range-from", Required = false, Default = uint.MinValue, HelpText = "The minimum value of query range.")]
-        public uint MinConv { get; set; }
+        public uint MinUid { get; set; }
         [Option("range-to", Required = false, Default = uint.MaxValue, HelpText = "The maximum value of query range.")]
-        public uint MaxConv { get; set; }
+        public uint MaxUid { get; set; }
     }
         
     internal class QueryClientCmd : StandardCommandHandler<QueryClientOption>
@@ -106,19 +106,23 @@ namespace csharp_Protoshift.Commands
         public override string Description => "Query the online convs of the instance. ";
 
         public override string Usage => $"queryclient [--limit=50] {Environment.NewLine}" +
-            $"  [--range-from <conv_id_min> --range-to <conv_id_max>]{Environment.NewLine}" +
+            $"  [--range-from <uid_min> --range-to <uid_max>]{Environment.NewLine}" +
             $"  Query the online conv ids. Default output limit is 50, so use --range when query exceeded limit. ";
 
         public override Task HandleAsync(QueryClientOption opt)
         {
             int limit = opt.Limit;
-            uint conv_min = opt.MinConv;
-            uint conv_max = uint.MaxValue;
-            List<KeyValuePair<uint, HandlerSession>> search_res = new(
+            uint uid_min = Math.Max(1, opt.MinUid);
+            uint uid_max = opt.MaxUid;
+            List<KeyValuePair<uint, HandlerSession>> search_res = new((
                 from pair in GameSessionDispatch.sessions
-                let conv_id = pair.Key
-                where conv_id >= conv_min && conv_id <= conv_max
-                select pair);
+                let uid = pair.Value.Uid
+                where uid >= uid_min && uid <= uid_max
+                select pair).Concat(
+                    from pair in GameSessionDispatch.sessions
+                    let uid = pair.Value.Uid
+                    where uid == 0 && opt.MinUid == 0
+                    select pair));
             if (search_res.Count == 0)
             {
                 Log.Info($"No match sessions found.", nameof(QueryClientCmd));
@@ -128,10 +132,10 @@ namespace csharp_Protoshift.Commands
                     if (i >= limit)
                     {
                         Log.Warn($"Session counts exceeded limit {limit} (total: {search_res.Count}).", nameof(QueryClientCmd));
-                        Log.Warn("You may use --range <conv_id_min> <conv_id_max> or change the limit, and run the command again.", nameof(QueryClientCmd));
+                        Log.Warn("You may use --range <uid_min> <uid_max> or change the limit, and run the command again.", nameof(QueryClientCmd));
                         break;
                     }
-                    Log.Info($"Found conv: {search_res[i].Key}, IP address: {search_res[i].Value.remoteIp}", nameof(QueryClientCmd));
+                    Log.Info($"Found uid: {search_res[i].Value.Uid}, conv: {search_res[i].Key}, IP address: {search_res[i].Value.remoteIp}", nameof(QueryClientCmd));
                 }
             return Task.CompletedTask;
         }
@@ -145,7 +149,7 @@ namespace csharp_Protoshift.Commands
         public bool IsClient { get; set; }
         [Option("server", Required = false, Default = false, HelpText = "Whether to sent the packet to server.")]
         public bool IsServer { get; set; }
-        [Option('p', "proto", Required = true, Default = null, HelpText = "The protocol the packet body using. ")]
+        [Option('p', "proto", Required = true, HelpText = "The protocol the packet body using. ")]
         public string Protoname { get; set; }
         [Option("head", Required = false, Default = null, HelpText = "The packet head protobuf content, using PacketHead.proto. ")]
         public string? Head { get; set; }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TextCopy;
+﻿using TextCopy;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands.Utils
