@@ -298,6 +298,26 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             conn.sendClient.Send(content);
 #pragma warning restore CS8602 // 解引用可能出现空引用。
         }
+
+        /// <summary>
+        /// Kick a specified session and send disconnect packet to client & server.
+        /// </summary>
+        /// <param name="conv"></param>
+        /// <param name="client_reason">The disconnect reason that will be sent to client. Default is ENET_SERVER_KICK (The connection to the server has been lost).</param>
+        /// <param name="server_reason">The disconnect reason that will be sent to server. Default is ENET_CLIENT_CLOSE.</param>
+        /// <exception cref="KeyNotFoundException"></exception>
+        public void KickSession(uint conv, uint client_reason = 5, uint server_reason = 1)
+        {
+            if (!connected_clients.ContainsKey(conv))
+            {
+                throw new KeyNotFoundException($"The specified session (conv: {conv}) does not exist.");
+            }
+            var conn_client = (KcpProxyBase)connected_clients[conv];
+            var conn_server = conn_client.sendClient;
+
+            conn_client.Disconnect(data: client_reason);
+            conn_server?.Disconnect(data: server_reason);
+        }
         #endregion
     }
 }
