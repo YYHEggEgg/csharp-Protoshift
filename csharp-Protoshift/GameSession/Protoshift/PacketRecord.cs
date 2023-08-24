@@ -1,6 +1,7 @@
 ﻿#if !PROXY_ONLY_SERVER
 
 
+using System.Diagnostics;
 using YSFreedom.Common.Util;
 
 namespace csharp_Protoshift.GameSession
@@ -53,7 +54,7 @@ namespace csharp_Protoshift.GameSession
         public override string ToString()
         {
             return string.Join(separateChar,
-                packetTime.ToString("yyyy/MM/dd HH:mm:ss.fffffff"),
+                // packetTime.ToString("yyyy/MM/dd HH:mm:ss.fffffff"),
                 PacketName, 
                 CmdId,
                 sentByClient,
@@ -62,16 +63,27 @@ namespace csharp_Protoshift.GameSession
                 Convert.ToBase64String(shiftedData));
         }
 
+        // read format:
+        // [time]|Info|Packet|[PacketName]|[CmdId]|[sentByClient]|[head]|[body]|[shiftedData]
         public static PacketRecord Parse(string line)
         {
             var values = line.Split(separateChar);
-            DateTime packetTime = DateTime.Parse(values[0]);
-            string protoname = values[1];
-            int cmdid = int.Parse(values[2]);
-            bool sentByClient = bool.Parse(values[3]);
-            byte[] head = Convert.FromBase64String(values[4]);
-            byte[] body = Convert.FromBase64String(values[5]);
-            byte[] shifted_data = Convert.FromBase64String(values[6]);
+
+            // Parse yyyy-MM-dd HH:mm:ss fff ffff
+            var specialTime = values[0];
+            var minuteTime = specialTime.Substring(0, "yyyy-MM-dd HH:mm:ss".Length);
+            DateTime packetTime = DateTime.Parse(minuteTime);
+            var millisec = int.Parse(specialTime.Substring(minuteTime.Length + 1, 3));
+            var nanosec100 = int.Parse(specialTime.Substring(minuteTime.Length + 5));
+            packetTime = packetTime.AddTicks(millisec * 10000 + nanosec100);
+
+            Debug.Assert(values[1] == "Info" && values[2] == "Packet");
+            string protoname = values[3];
+            int cmdid = int.Parse(values[4]);
+            bool sentByClient = bool.Parse(values[5]);
+            byte[] head = Convert.FromBase64String(values[6]);
+            byte[] body = Convert.FromBase64String(values[7]);
+            byte[] shifted_data = Convert.FromBase64String(values[8]);
 
             int finallen = PACKET_OVERHEAD + head.Length + body.Length + sizeof(ushort);
             byte[] packet = new byte[finallen];

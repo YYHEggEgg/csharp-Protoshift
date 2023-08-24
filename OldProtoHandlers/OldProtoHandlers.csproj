@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="3.0.0" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="3.8.53-beta" />
     <PackageReference Include="Google.Protobuf" Version="3.24.0" />
   </ItemGroup>
 
