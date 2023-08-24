@@ -105,11 +105,10 @@ namespace csharp_Protoshift.GameSession
 
         #region Packet Record Saver
 #if RECORD_ALL_PKTS_FOR_REPLAY && !PROTOSHIFT_BENCHMARK
-        private static BaseLogger _packetLogger;
-        internal static LoggerChannel PacketLogChannel;
+        internal static BaseLogger PacketLogger;
         static GameSessionDispatch()
         {
-            _packetLogger = new BaseLogger(new LoggerConfig(
+            PacketLogger = new BaseLogger(new LoggerConfig(
                 max_Output_Char_Count: 16 * 1024,
                 use_Console_Wrapper: true,
                 use_Working_Directory: true,
@@ -124,7 +123,6 @@ namespace csharp_Protoshift.GameSession
                     MinimumLogLevel = LogLevel.Information,
                     FileIdentifier = "packet"
                 });
-            PacketLogChannel = _packetLogger.GetChannel("Packet");
         }
 #endif
 
