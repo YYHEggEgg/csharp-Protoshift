@@ -79,7 +79,7 @@
 	</None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="3.8.53-beta" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="3.8.54-beta" />
   </ItemGroup>
 
   <!--调试符号配置-->
