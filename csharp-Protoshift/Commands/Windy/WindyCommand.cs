@@ -144,7 +144,7 @@ namespace csharp_Protoshift.Commands
                 }
             }
             var args = ParseAsArgs(argList);
-            await Parser.Default.ParseArguments<WindySendConfig, WindySetEnvConfig, WindySetLuacConfig>(args)
+            await DefaultCommandsParser.ParseArguments<WindySendConfig, WindySetEnvConfig, WindySetLuacConfig>(args)
                 .MapResult(
                     async (WindySendConfig o) => await HandleSendAsync(o),
                     async (WindySetEnvConfig o) => await HandleSetEnvAsync(o),

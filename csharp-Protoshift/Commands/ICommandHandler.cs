@@ -1,4 +1,5 @@
 ﻿using CommandLine;
+using NewProtos;
 using System.Text;
 using YYHEggEgg.Logger;
 
@@ -92,23 +93,12 @@ namespace csharp_Protoshift.Commands
             string[] help = Usage.Split(Environment.NewLine);
             foreach (var line in help) Log.Info(line, CommandName);
         }
-    }
 
-    internal class LogTextWriter : TextWriter
-    {
-        public override Encoding Encoding => Encoding.UTF8;
-
-        private StringBuilder writebuf = new();
-
-        public override void Write(char value)
+        public readonly static Parser DefaultCommandsParser = new Parser(config =>
         {
-            if (value == '\n')
-            {
-                Log.Info(writebuf.ToString(), nameof(LogTextWriter));
-                writebuf.Clear();
-            }
-            else writebuf.Append(value);
-        }
+            // 在构建时设置自定义 ConsoleWriter
+            config.HelpWriter = TextWriter.Synchronized(new LogTextWriter("CmdHandler"));
+        });
     }
 
     /// <summary>
@@ -138,11 +128,7 @@ namespace csharp_Protoshift.Commands
         public override async Task HandleAsync(string argList)
         {
             var args = ParseAsArgs(argList);
-            var cmd_parser = new Parser(config =>
-            {
-                // 在构建时设置自定义 ConsoleWriter
-                config.HelpWriter = new LogTextWriter();
-            });
+            var cmd_parser = DefaultCommandsParser;
             try
             {
                 await cmd_parser.ParseArguments<TCmdOption>(args)
