@@ -20,7 +20,7 @@ namespace csharp_Protoshift.Commands
         public override async Task HandleAsync(string argList)
         {
             var args = ParseAsArgs(argList);
-            await Parser.Default.ParseArguments<ProtoHotPatchLoadConfig>(args)
+            await DefaultCommandsParser.ParseArguments<ProtoHotPatchLoadConfig>(args)
                 .MapResult(
                     async (ProtoHotPatchLoadConfig o) => await HandleReloadAsync(o),
                     error =>
