@@ -12,11 +12,12 @@ namespace csharp_Protoshift.Commands
             handlers.Add(new SetVerboseCmd());
             // handlers.Add(new SelectRecordCmd());
             // handlers.Add(new ShowRecordCmd());
+            handlers.Add(new ProtoHotPatchCmd());
 #endif
             handlers.Add(new QueryClientCmd());
             handlers.Add(new WindyCommand());
             handlers.Add(new ForceInjectPacketCmd());
-            handlers.Add(new ProtoHotPatchCmd());
+            handlers.Add(new KickPlayerCmd());
             return handlers;
         }
     }

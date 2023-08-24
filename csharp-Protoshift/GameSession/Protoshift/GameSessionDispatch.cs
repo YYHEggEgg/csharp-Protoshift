@@ -149,9 +149,19 @@ namespace csharp_Protoshift.GameSession
         public static void CloseServer()
         {
             Closed = true;
-            foreach (var conv in sessions.Keys)
+            var _logger = Log.GetChannel(nameof(GameSessionDispatch));
+            _logger.LogInfo($"Closing server...");
+            foreach (var session in sessions)
             {
+                var conv = session.Key;
+                var remote_ip = session.Value.remoteIp;
                 DestroySession(conv);
+                try
+                {
+                    Program.ProxyServer.KickSession(conv, 6);
+                    _logger.LogInfo($"Gracefully kicked online session {conv} on {remote_ip}.");
+                }
+                catch (Exception) { }
             }
         }
         #endregion
