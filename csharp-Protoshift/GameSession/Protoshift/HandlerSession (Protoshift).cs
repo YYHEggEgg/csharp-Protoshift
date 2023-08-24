@@ -299,7 +299,7 @@ namespace csharp_Protoshift.GameSession
             }
             SubmitTimeRecord(protoname, isNewCmdid, ProtoshiftWatch.ElapsedMilliseconds, ProtoshiftWatch.ElapsedTicks, packet.Length);
 #if RECORD_ALL_PKTS_FOR_REPLAY
-            GameSessionDispatch.PacketLogChannel.Info(() => 
+            GameSessionDispatch.PacketLogChannel.LogInfo(() => 
                 new PacketRecord(protoname, cmdid, isNewCmdid, packet, head_offset, head_length, 
                 body_offset, (int)body_length, shifted_body, DateTime.MinValue).ToString());
 #endif

@@ -13,6 +13,8 @@ namespace csharp_Protoshift.Commands
         public uint Target { get; set; }
         [Option("everyone", Default = false, Required = false, HelpText = "Whether to send the windy to everyone online.")]
         public bool IsEveryone { get; set; }
+        [Value(0, Required = false, Default = null, HelpText = "The .lua file name/path.")]
+        public string? LuaFile { get; set; }
         [Option('c', "compiled", Default = null, Required = false, HelpText = "The compiled .luac file path.")]
         public string? ForceCompiled { get; set; }
     }
@@ -40,7 +42,7 @@ namespace csharp_Protoshift.Commands
         public override string Usage => $"windy [command] <args>{Environment.NewLine}" +
             $"  command send (default): execute a lua/luac file. {Environment.NewLine}" +
             $"    windy [-t, --target <conv>] | [--everyone] {Environment.NewLine}" +
-            $"          [-c, --compiled <compiled_lua_path>]{Environment.NewLine}" +
+            $"          <lua_file_path> | -c, --compiled <compiled_luac_path>{Environment.NewLine}" +
             $"      In most cases, you just need to give the path of .lua and windy command will compile it for you. {Environment.NewLine}" +
             $"      If use --compiled, the program will treat it as compiled lua, {Environment.NewLine}" +
             $"      or the behaviour depends on the extension is either .lua or .luac.{Environment.NewLine}" +
@@ -160,28 +162,41 @@ namespace csharp_Protoshift.Commands
         #region Commands
         private async Task HandleSendAsync(WindySendConfig opt)
         {
+            var _logger = Log.GetChannel(nameof(WindyCommand));
             #region Read param
             uint specifiedconv = opt.Target;
             bool everyonewindy = opt.IsEveryone;
             if (specifiedconv == 0 && !everyonewindy)
             {
-                Log.Erro($"Please use a correct windy command!", nameof(WindyCommand));
+                _logger.LogErro($"Please use a correct windy command!");
                 return;
             }
             if (!everyonewindy)
             {
                 if (!GameSessionDispatch.sessions.ContainsKey(specifiedconv))
                 {
-                    Log.Erro($"The specified conv: {specifiedconv} is not online!", nameof(WindyCommand));
+                    _logger.LogErro($"The specified conv: {specifiedconv} is not online!");
                     return;
                 }
             }
             else if (GameSessionDispatch.sessions.Count <= 0)
             {
-                Log.Erro($"There are no sessions online.", nameof(WindyCommand));
+                _logger.LogErro($"There are no sessions online.");
                 return;
             }
-            string filePath = opt.ForceCompiled ?? string.Empty;
+            if (opt.LuaFile == null && opt.ForceCompiled == null)
+            {
+                _logger.LogErro($"Please provide a .lua or .luac file to send windy!");
+                return;
+            }
+            if (opt.LuaFile != null && opt.ForceCompiled != null)
+            {
+                _logger.LogErro($"Please provide either .lua or .luac file to send windy! Providing both is not supported.");
+                return;
+            }
+#pragma warning disable CS8600 // 将 null 字面量或可能为 null 的值转换为非 null 类型。
+            string filePath = opt.LuaFile ?? opt.ForceCompiled;
+#pragma warning restore CS8600 // 将 null 字面量或可能为 null 的值转换为非 null 类型。
             bool compiled = opt.ForceCompiled != null;
             if (File.Exists($"{windyExecute.EnvPath}/{filePath}"))
             {
@@ -194,7 +209,7 @@ namespace csharp_Protoshift.Commands
             else if (!File.Exists(filePath) && File.Exists($"{filePath}.lua")) filePath += ".lua";
             else
             {
-                Log.Erro($"File: {filePath} found in neither windy env path nor working directory!", nameof(WindyCommand));
+                _logger.LogErro($"File: {filePath} found in neither windy env path nor working directory!");
                 return;
             }
             #endregion
@@ -223,22 +238,22 @@ namespace csharp_Protoshift.Commands
             else if (GameSessionDispatch.sessions.Count <= 1) permitted = true;
             else if (GameSessionDispatch.sessions.Count <= 5)
             {
-                Log.Warn($"You are sending WindSeed to every online session " +
-                    $"({GameSessionDispatch.sessions.Count} sessions) connected to this server.", nameof(WindyCommand));
-                Log.Info($"Running lua info: {WindyLuacManager.GetFileHash(luafileInfo)}", nameof(WindyCommand));
-                Log.Warn($"Please carefully check the lua info. " +
-                    $"To confirm the execution, type 'y' and press Enter.", nameof(WindyCommand));
+                _logger.LogWarn($"You are sending WindSeed to every online session " +
+                    $"({GameSessionDispatch.sessions.Count} sessions) connected to this server.");
+                _logger.LogInfo($"Running lua info: {WindyLuacManager.GetFileHash(luafileInfo)}");
+                _logger.LogWarn($"Please carefully check the lua info. " +
+                    $"To confirm the execution, type 'y' and press Enter.");
                 ConsoleWrapper.InputPrefix = "Confirm or cancel> ";
                 var res = await ConsoleWrapper.ReadLineAsync();
                 permitted = res.Trim().ToLower() == "y";
             }
             else
             {
-                Log.Warn($"You are sending WindSeed to every online session " +
-                    $"({GameSessionDispatch.sessions.Count} sessions) connected to this server.", nameof(WindyCommand));
-                Log.Info($"Running lua info: {WindyLuacManager.GetFileHash(luafileInfo)}", nameof(WindyCommand));
-                Log.Warn($"Please carefully check the lua info. To confirm the execution, " +
-                    $"type the file name \"{luafileInfo.Name}\" and press Enter.", nameof(WindyCommand));
+                _logger.LogWarn($"You are sending WindSeed to every online session " +
+                    $"({GameSessionDispatch.sessions.Count} sessions) connected to this server.");
+                _logger.LogInfo($"Running lua info: {WindyLuacManager.GetFileHash(luafileInfo)}");
+                _logger.LogWarn($"Please carefully check the lua info. To confirm the execution, " +
+                    $"type the file name \"{luafileInfo.Name}\" and press Enter.");
                 ConsoleWrapper.InputPrefix = "Confirm or cancel> ";
                 var res = await ConsoleWrapper.ReadLineAsync();
                 permitted = res.Trim() == luafileInfo.Name;
@@ -246,7 +261,7 @@ namespace csharp_Protoshift.Commands
 
             if (!permitted)
             {
-                Log.Erro($"User cancelled the windy execute.", nameof(WindyCommand));
+                _logger.LogErro($"User cancelled the windy execute.");
                 return;
             }
             #endregion
@@ -255,7 +270,7 @@ namespace csharp_Protoshift.Commands
                 Program.ProxyServer.SendPacketToClient(specifiedconv,
                     GameSessionDispatch.ConstructPacketSendToClient(
                         specifiedconv, nameof(NewProtos.WindSeedClientNotify), null, rce_warning.ToByteArray()));
-                Log.Info($"Successfully sent WindSeed: {luafileInfo.Name} to session {specifiedconv}.", nameof(WindyCommand));
+                _logger.LogInfo($"Successfully sent WindSeed: {luafileInfo.Name} to session {specifiedconv}.");
             }
             else
             {
@@ -267,12 +282,12 @@ namespace csharp_Protoshift.Commands
                     {
                         Program.ProxyServer.SendPacketToClient(conv,
                             GameSessionDispatch.ConstructPacketSendToClient(
-                                conv, nameof(NewProtos.WindSeedClientNotify), null, lua_compiled));
+                                conv, nameof(NewProtos.WindSeedClientNotify), null, rce_warning.ToByteArray()));
                         success++;
                     }
                     catch { }
                 }
-                Log.Info($"Successfully sent WindSeed: {luafileInfo.Name} to {success}/{total} online session(s).", nameof(WindyCommand));
+                _logger.LogInfo($"Successfully sent WindSeed: {luafileInfo.Name} to {success}/{total} online session(s).");
             }
         }
 
