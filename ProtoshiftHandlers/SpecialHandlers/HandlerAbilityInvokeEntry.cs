@@ -1,4 +1,6 @@
 using Google.Protobuf;
+using Google.Protobuf.WellKnownTypes;
+using System;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
@@ -251,7 +253,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                 case NewProtos.AbilityInvokeArgument.MixinFireworksLauncher:
                     oldprotocol.AbilityData = handler_AbilityMixinFireworksLauncher.NewShiftToOld(newprotocol.AbilityData);
                     break;
-                // case NewProtos.AbilityInvokeArgument.MixinAttackResultCreateCount:
+                case NewProtos.AbilityInvokeArgument.MixinAttackResultCreateCount:
+                    // fuck who cares what's this
+                    newprotocol.AbilityData = oldprotocol.AbilityData;
+                    break;
                 case NewProtos.AbilityInvokeArgument.MixinUgcTimeControl:
                     // oldprotocol.AbilityData = handler_AbilityMixinUgcTimeControl.NewShiftToOld(newprotocol.AbilityData);
                     oldprotocol.AbilityData = handler_AbilityMixinUGCTimeControl.NewShiftToOld(newprotocol.AbilityData);
@@ -449,7 +454,17 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                 case OldProtos.AbilityInvokeArgument.MixinFireworksLauncher:
                     newprotocol.AbilityData = handler_AbilityMixinFireworksLauncher.OldShiftToNew(oldprotocol.AbilityData);
                     break;
-                // case OldProtos.AbilityInvokeArgument.MixinAttackResultCreateCount:
+                case OldProtos.AbilityInvokeArgument.MixinAttackResultCreateCount:
+                    // fuck who cares what's this
+                    // give you 6 pieces of data, you'll find out why i abandon it
+                    // 15:36:12 <Warn:HandlerAbilityInvokeEntry> Not found map config for MixinAttackResultCreateCount so not shifted, bytes data not empty, new AbilityData: QgTLR8xH
+                    // 15:36:12 <Warn:HandlerAbilityInvokeEntry> Not found map config for MixinAttackResultCreateCount so not shifted, bytes data not empty, new AbilityData: QgTNR85H
+                    // 15:36:13 <Warn:HandlerAbilityInvokeEntry> Not found map config for MixinAttackResultCreateCount so not shifted, bytes data not empty, new AbilityData: QgTPR9BH
+                    // 15:45:58 <Warn:HandlerAbilityInvokeEntry> Not found map config for MixinAttackResultCreateCount so not shifted, bytes data not empty, new AbilityData: QgK3ZQ==
+                    // 15:45:58 <Warn:HandlerAbilityInvokeEntry> Not found map config for MixinAttackResultCreateCount so not shifted, bytes data not empty, new AbilityData: QgK6ZQ==
+                    // 15:45:58 <Warn:HandlerAbilityInvokeEntry> Not found map config for MixinAttackResultCreateCount so not shifted, bytes data not empty, new AbilityData: QgK9ZQ==
+                    newprotocol.AbilityData = oldprotocol.AbilityData;
+                    break;
                 case OldProtos.AbilityInvokeArgument.MixinUgcTimeControl:
                     // newprotocol.AbilityData = handler_AbilityMixinUgcTimeControl.OldShiftToNew(oldprotocol.AbilityData);
                     newprotocol.AbilityData = handler_AbilityMixinUGCTimeControl.OldShiftToNew(oldprotocol.AbilityData);
