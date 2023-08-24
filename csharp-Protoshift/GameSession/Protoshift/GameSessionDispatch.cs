@@ -104,17 +104,27 @@ namespace csharp_Protoshift.GameSession
         #endregion
 
         #region Packet Record Saver
-#if RECORD_ALL_PKTS_FOR_REPLAY
-        private static StreamWriter packet_logwriter;
+#if RECORD_ALL_PKTS_FOR_REPLAY && !PROTOSHIFT_BENCHMARK
+        private static BaseLogger _packetLogger;
+        internal static LoggerChannel PacketLogChannel;
         static GameSessionDispatch()
         {
-            FileInfo pastPacketLog = new("logs/latest.packet.log");
-            if (pastPacketLog.Exists)
-            {
-                pastPacketLog.MoveTo($"logs/{pastPacketLog.CreationTime:yyyy-MM-dd_HH-mm-ss}.packet.log");
-            }
-            packet_logwriter = new("logs/latest.packet.log", true);
-            packet_logwriter.AutoFlush = false;
+            _packetLogger = new BaseLogger(new LoggerConfig(
+                max_Output_Char_Count: 16 * 1024,
+                use_Console_Wrapper: true,
+                use_Working_Directory: true,
+                global_Minimum_LogLevel: LogLevel.Information,
+                console_Minimum_LogLevel: LogLevel.None,
+                debug_LogWriter_AutoFlush: false,
+                enable_Detailed_Time: true), new LogFileConfig
+                {
+                    AutoFlushWriter = true,
+                    IsPipeSeparatedFile = true,
+                    MaximumLogLevel = LogLevel.Information,
+                    MinimumLogLevel = LogLevel.Information,
+                    FileIdentifier = "packet"
+                });
+            PacketLogChannel = _packetLogger.GetChannel("Packet");
         }
 #endif
 
@@ -133,13 +143,6 @@ namespace csharp_Protoshift.GameSession
                     return;
                 }
                 session.ExportXlsxRecord($"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.debug.packetspeed_{conv}.xlsx");
-
-#if RECORD_ALL_PKTS_FOR_REPLAY
-                foreach (var pkt in session.PacketRecords)
-                {
-                    packet_logwriter.WriteLine(pkt.ToString());
-                }
-#endif
             }
         }
 
@@ -150,10 +153,6 @@ namespace csharp_Protoshift.GameSession
             {
                 DestroySession(conv);
             }
-#if RECORD_ALL_PKTS_FOR_REPLAY
-            packet_logwriter.Flush();
-            packet_logwriter.Dispose();
-#endif
         }
         #endregion
 

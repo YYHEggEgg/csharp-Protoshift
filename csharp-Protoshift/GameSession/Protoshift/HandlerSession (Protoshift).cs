@@ -36,11 +36,6 @@ namespace csharp_Protoshift.GameSession
         /// </summary>
         public bool Verbose { get; set; }
         public int packetCounts { get; protected set; }
-        public int PacketRecordLimits { get; }
-
-#if RECORD_ALL_PKTS_FOR_REPLAY
-        public ConcurrentBag<PacketRecord> PacketRecords { get; private set; } = new();
-#endif
 
         #region Record Packet Protoshift time cost
         public ConcurrentBag<TimeRecord> TimeRecords { get; } = new();
@@ -304,8 +299,9 @@ namespace csharp_Protoshift.GameSession
             }
             SubmitTimeRecord(protoname, isNewCmdid, ProtoshiftWatch.ElapsedMilliseconds, ProtoshiftWatch.ElapsedTicks, packet.Length);
 #if RECORD_ALL_PKTS_FOR_REPLAY
-            PacketRecords.Add(new(protoname, cmdid, isNewCmdid, packet, 
-                head_offset, head_length, body_offset, (int)body_length, shifted_body, DateTime.Now));
+            GameSessionDispatch.PacketLogChannel.Info(() => 
+                new PacketRecord(protoname, cmdid, isNewCmdid, packet, head_offset, head_length, 
+                body_offset, (int)body_length, shifted_body, DateTime.MinValue).ToString());
 #endif
 #endif
             return rtn;

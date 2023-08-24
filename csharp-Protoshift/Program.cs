@@ -27,9 +27,11 @@ namespace csharp_Protoshift
                 console_Minimum_LogLevel: LogLevel.Information,
 #else
                 global_Minimum_LogLevel: LogLevel.Information,
-                console_Minimum_LogLevel: LogLevel.Warning,
+                console_Minimum_LogLevel: LogLevel.Information,
 #endif
-                debug_LogWriter_AutoFlush: false
+                debug_LogWriter_AutoFlush: false,
+                is_PipeSeparated_Format: false,
+                enable_Detailed_Time: true
                 ));
             Log.Info("csharp-Protoshift v1.0.0", "Entry");
             Log.Info("Written by YYHEggEgg#6167, https://github.com/YYHEggEgg.", "Entry");
