@@ -2,7 +2,6 @@
 using csharp_Protoshift.resLoader;
 using Google.Protobuf;
 using Newtonsoft.Json;
-using Org.BouncyCastle.Utilities.Encoders;
 using TextCopy;
 using YYHEggEgg.Logger;
 
