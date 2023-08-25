@@ -13,11 +13,11 @@ namespace csharp_Protoshift.MhyKCP.Proxy
     public class KcpProxyBase : MhyKcpBase
     {
         public KcpProxyClient? sendClient;
-        public IPEndPoint sendToAddress;
+        public EndPoint sendToAddress;
 
         private object handshake_lock = "Tighnari beloved";
 
-        public KcpProxyBase(IPEndPoint sendToAddress, uint conv = 0, uint token = 0,
+        public KcpProxyBase(EndPoint sendToAddress, uint conv = 0, uint token = 0,
             Func<byte[], byte[]>? PacketHandler = null)
             : base(conv, token)
         {
@@ -70,7 +70,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                                 {
                                     // Reconnect
                                     disconn.Decode(buffer, Handshake.MAGIC_CONNECT);
-                                    Log.Info("Client requested reconnect, set to WAIT", nameof(KcpProxyBase));
+                                    Log.Dbug("Client requested reconnect, set to WAIT", nameof(KcpProxyBase));
 
                                     goto case ConnectionState.HANDSHAKE_WAIT;
                                 }
@@ -112,7 +112,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             sendClient.ConnectAsync().Wait();
                             sendClient.StartDisconnected += (conv, token, data) =>
                             {
-                                Log.Warn($"Server (conv: {_Conv}) requested to disconnect (reason: {data}), so send disconnect to client", nameof(KcpProxyBase));
+                                Log.Info($"Server (conv: {_Conv}) requested to disconnect (reason: {data}), so send disconnect to client", nameof(KcpProxyBase));
                                 Disconnect(conv, token, data);
                             };
 
