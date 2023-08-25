@@ -11,12 +11,12 @@ namespace csharp_Protoshift.MhyKCP
         protected SocketUdpClient udpSock;
         private bool _Closed = false;
         protected MhyKcpBase server;
-        protected IPEndPoint remoteAddress;
+        protected EndPoint remoteAddress;
 
         protected SingleThreadAssert _recvlock = new($"{nameof(KCPClient)}_{nameof(Receive)}"), 
             _updatelock = new($"{nameof(KCPClient)}_{nameof(BackgroundUpdate)}");
 
-        public KCPClient(IPEndPoint ipEp)
+        public KCPClient(EndPoint ipEp)
         {
             udpSock = new SocketUdpClient(true);
             //udpSock = new();
