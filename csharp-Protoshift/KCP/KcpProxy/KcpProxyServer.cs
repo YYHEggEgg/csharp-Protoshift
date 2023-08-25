@@ -10,9 +10,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 {
     public class KcpProxyServer : KCPServer
     {
-        public IPEndPoint SendToEndpoint { get; }
+        public EndPoint SendToEndpoint { get; }
 
-        public KcpProxyServer(IPEndPoint bindToAddress, IPEndPoint sendToAddress)
+        public KcpProxyServer(IPEndPoint bindToAddress, EndPoint sendToAddress)
         {
             udpSock = new SocketUdpClient(bindToAddress, true);
             SendToEndpoint = sendToAddress;

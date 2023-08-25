@@ -6,6 +6,7 @@ using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
 using OfficeOpenXml;
 using System.Net;
+using System.Net.Sockets;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift
@@ -58,9 +59,10 @@ namespace csharp_Protoshift
 #endif
                 // Log.Info(KcpPacketAudit.Initialize(), "Entry");
 
-
+                var addrs = Dns.GetHostAddresses("example.com");
+                Log.Info($"Dns resolving got {addrs.Length} addresses in all. Using {addrs[0]} now.");
                 ProxyServer = new KcpProxyServer(new IPEndPoint(IPAddress.Parse("0.0.0.0"), 22102),
-                    new IPEndPoint(IPAddress.Parse("192.168.127.130"), 20041));
+                    new IPEndPoint(addrs[0], 20041));
 
                 ProxyHandlers handlers = new ProxyHandlers
                 {
