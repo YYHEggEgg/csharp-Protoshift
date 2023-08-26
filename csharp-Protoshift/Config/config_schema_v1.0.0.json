@@ -1,5 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://github.com/YYHEggEgg/csharp-Protoshift/releases/download/v1.0.0/config_schema.json",
     "type": "object",
     "properties": {
         "ConfigVersion": {
