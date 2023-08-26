@@ -1,0 +1,20 @@
+{
+    "$schema": "Config/config_schema.json",
+    "ConfigVersion": "1.0.0",
+    "EnableFullPacketLog": true,
+    "NetConfig": {
+        "BindAddress": "0.0.0.0",
+        "BindPort": 22102,
+        "RemoteAddress": {
+            "IpAddress": "127.0.0.1",
+            "AddressPort": 20041
+        }
+    },
+    "WindyConfig": {
+        "WindyLuacPath": "resources/luac.exe",
+        "WindyEnvironmentPath": "resources/windy_scripts",
+        "WindyCompiledTempPath": "windy_temp",
+        "OnlineExecWindyMode": "OnGetPlayerTokenFinish",
+        "OnlineExecWindyLua": "uid"
+    }
+}
