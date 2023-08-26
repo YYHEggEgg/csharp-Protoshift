@@ -4,6 +4,7 @@ using AssetLib.Utils;
 using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
+using Google.Protobuf;
 using Newtonsoft.Json;
 using OfficeOpenXml;
 using System.Collections.Concurrent;
@@ -325,10 +326,23 @@ namespace csharp_Protoshift.GameSession
         {
             var message = OldProtos.GetPlayerTokenReq.Parser.ParseFrom(message_oldprotocol);
             uint key_id = message.KeyId;
-            client_seed = Resources.SPri[key_id].RsaDecrypt(
-                Convert.FromBase64String(message.ClientRandKey),
-                RSAEncryptionPadding.Pkcs1)
-                .Fill0(8);
+            try
+            {
+                client_seed = Resources.SPri[key_id].RsaDecrypt(
+                    Convert.FromBase64String(message.ClientRandKey),
+                    RSAEncryptionPadding.Pkcs1)
+                    .Fill0(8);
+            }
+            catch
+            {
+                NewProtos.GetPlayerTokenRsp rsaFatalRsp = new();
+                rsaFatalRsp.Retcode = 42;
+                rsaFatalRsp.Msg = "Crypto failure. Please confirm that your program is the right version.";
+                Program.ProxyServer.SendPacketToClient(_sessionId, ConstructPacket(
+                    true, "GetPlayerTokenRsp", null, rsaFatalRsp.ToByteArray()));
+                Program.ProxyServer.KickSession(_sessionId, client_reason: 5);
+                return;
+            }
         }
 
         private void GetPlayerTokenRspNotify(byte[] message_newprotocol)
