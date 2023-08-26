@@ -480,3 +480,4 @@ public static class Config
 ## 4. 应用代码更改
 
 代码就在这个文件夹下，自己看吧。
+另外：可以使用 NJsonSchema 验证结构。它允许尾随逗号的存在，尽管这不受 JSON Schema 支持。

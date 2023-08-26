@@ -1,5 +1,5 @@
 {
-    "$schema": "Config/config_schema.json",
+    "$schema": "Config/config_schema_v1.0.0.json",
     "ConfigVersion": "1.0.0",
     "EnableFullPacketLog": true,
     "NetConfig": {

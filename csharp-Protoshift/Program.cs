@@ -1,4 +1,5 @@
 ﻿using csharp_Protoshift.Commands;
+using csharp_Protoshift.Configuration;
 using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
 using csharp_Protoshift.GameSession;
 using csharp_Protoshift.MhyKCP.Proxy;
@@ -38,7 +39,7 @@ namespace csharp_Protoshift
             Log.Info("Written by YYHEggEgg#6167, https://github.com/YYHEggEgg.", "Entry");
             ResourcesLoader.CheckForRequiredResources();
             await ResourcesLoader.Load();
-
+            await Config.Initialize("config.json");
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             if (args.Length == 1 && args[0] == "--utils-only")
