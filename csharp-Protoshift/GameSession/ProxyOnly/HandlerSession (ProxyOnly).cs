@@ -194,12 +194,14 @@ namespace csharp_Protoshift.GameSession
                     $"PacketHandler({_sessionId})");
 #if !PROTOSHIFT_BENCHMARK                
                 ProtoshiftWatch.Stop();
-#if RECORD_ALL_PKTS_FOR_REPLAY
-                GameSessionDispatch.PacketLogger.Info(() => new PacketRecord(_uid,
-                    $"UnkCMD_{cmdid}", cmdid, isNewCmdid, packet, head_offset, head_length, 
-                    body_offset, (int)body_length, DateTime.Now).ToString(), _uid.ToString());
+                if (Config.Global.EnableFullPacketLog)
+                {
+                    Debug.Assert(GameSessionDispatch.PacketLogger != null);
+                    GameSessionDispatch.PacketLogger.Info(() => new PacketRecord(_uid,
+                        $"UnkCMD_{cmdid}", cmdid, isNewCmdid, packet, head_offset, head_length, 
+                        body_offset, (int)body_length, DateTime.Now).ToString(), _uid.ToString());
+                }
                 SubmitTimeRecord($"UnkCMD_{cmdid}", false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
-#endif
 #endif
                 // return Array.Empty<byte>();
                 return packet;
@@ -260,11 +262,13 @@ namespace csharp_Protoshift.GameSession
                 Log.Info($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > {Recommended_Protoshift_maximum_time_ms}ms)", $"PacketHandler({_sessionId})");
             }
             SubmitTimeRecord(protoname, false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
-#if RECORD_ALL_PKTS_FOR_REPLAY
-            GameSessionDispatch.PacketLogger.Info(() => new PacketRecord(_uid, protoname, 
-                cmdid, isNewCmdid, packet,head_offset, head_length, 
-                body_offset, (int)body_length, DateTime.Now).ToString(), _uid.ToString());
-#endif
+            if (Config.Global.EnableFullPacketLog)
+            {
+                Debug.Assert(GameSessionDispatch.PacketLogger != null);
+                GameSessionDispatch.PacketLogger.Info(() => new PacketRecord(_uid, protoname, 
+                    cmdid, isNewCmdid, packet,head_offset, head_length, 
+                    body_offset, (int)body_length, DateTime.Now).ToString(), _uid.ToString());
+            }
 #endif
             return packet;
         }

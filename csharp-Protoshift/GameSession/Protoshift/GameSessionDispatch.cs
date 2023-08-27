@@ -1,4 +1,5 @@
 ﻿#if !PROXY_ONLY_SERVER
+using csharp_Protoshift.Configuration;
 using System.Collections.Concurrent;
 using System.Net;
 using YYHEggEgg.Logger;
@@ -104,25 +105,28 @@ namespace csharp_Protoshift.GameSession
         #endregion
 
         #region Packet Record Saver
-#if RECORD_ALL_PKTS_FOR_REPLAY && !PROTOSHIFT_BENCHMARK
-        internal static BaseLogger PacketLogger;
+#if !PROTOSHIFT_BENCHMARK
+        internal static BaseLogger? PacketLogger;
         static GameSessionDispatch()
         {
-            PacketLogger = new BaseLogger(new LoggerConfig(
-                max_Output_Char_Count: 16 * 1024,
-                use_Console_Wrapper: true,
-                use_Working_Directory: true,
-                global_Minimum_LogLevel: LogLevel.Information,
-                console_Minimum_LogLevel: LogLevel.None,
-                debug_LogWriter_AutoFlush: false,
-                enable_Detailed_Time: true), new LogFileConfig
-                {
-                    AutoFlushWriter = true,
-                    IsPipeSeparatedFile = true,
-                    MaximumLogLevel = LogLevel.Information,
-                    MinimumLogLevel = LogLevel.Information,
-                    FileIdentifier = "packet"
-                });
+            if (Config.Global.EnableFullPacketLog)
+            {
+                PacketLogger = new BaseLogger(new LoggerConfig(
+                    max_Output_Char_Count: 16 * 1024,
+                    use_Console_Wrapper: true,
+                    use_Working_Directory: true,
+                    global_Minimum_LogLevel: LogLevel.Information,
+                    console_Minimum_LogLevel: LogLevel.None,
+                    debug_LogWriter_AutoFlush: false,
+                    enable_Detailed_Time: true), new LogFileConfig
+                    {
+                        AutoFlushWriter = true,
+                        IsPipeSeparatedFile = true,
+                        MaximumLogLevel = LogLevel.Information,
+                        MinimumLogLevel = LogLevel.Information,
+                        FileIdentifier = "packet"
+                    });
+            }
         }
 #endif
 
