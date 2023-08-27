@@ -232,7 +232,7 @@ namespace csharp_Protoshift.Commands
 
         public override string Usage => 
             $"kick <conv_id>                         The target conv to be kicked. {Environment.NewLine}" +
-            $"     [--client-reason <ENetReason_id>] The disconnect reason that will be sent to client. Default is ENET_SERVER_KICK (The connection to the server has been lost)." +
+            $"     [--client-reason <ENetReason_id>] The disconnect reason that will be sent to client. Default is ENET_SERVER_KICK (The connection to the server has been lost). {Environment.NewLine}" +
             $"     [--server-reason <ENetReason_id>] The disconnect reason that will be sent to server. Default is ENET_CLIENT_CLOSE.";
 
         private LoggerChannel _logger = Log.GetChannel(nameof(KickPlayerCmd));
