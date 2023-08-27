@@ -1,6 +1,7 @@
 #if !PROXY_ONLY_SERVER
 
 using AssetLib.Utils;
+using csharp_Protoshift.Configuration;
 using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
@@ -308,13 +309,15 @@ namespace csharp_Protoshift.GameSession
                 Log.Info($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > {Recommended_Protoshift_maximum_time_ms}ms)", $"PacketHandler({_sessionId})");
             }
             SubmitTimeRecord(protoname, isNewCmdid, ProtoshiftWatch.ElapsedMilliseconds, ProtoshiftWatch.ElapsedTicks, packet.Length);
-#if RECORD_ALL_PKTS_FOR_REPLAY
-            GameSessionDispatch.PacketLogger.Info(() => 
-                new PacketRecord(Uid, protoname, cmdid, isNewCmdid, 
-                packet, head_offset, head_length, body_offset, (int)body_length, 
-                CalcNanosecFromStopwatchTicks(ProtoshiftWatch.ElapsedTicks), 
-                shifted_body, DateTime.MinValue).ToString(), Uid.ToString());
-#endif
+            if (Config.Global.EnableFullPacketLog)
+            {
+                Debug.Assert(GameSessionDispatch.PacketLogger != null);
+                GameSessionDispatch.PacketLogger.Info(() =>
+                    new PacketRecord(Uid, protoname, cmdid, isNewCmdid,
+                    packet, head_offset, head_length, body_offset, (int)body_length,
+                    CalcNanosecFromStopwatchTicks(ProtoshiftWatch.ElapsedTicks),
+                    shifted_body, DateTime.MinValue).ToString(), Uid.ToString());
+            }
 #endif
             return rtn;
         }

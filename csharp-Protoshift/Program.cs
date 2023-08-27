@@ -93,10 +93,27 @@ namespace csharp_Protoshift
 #endif
                 // Log.Info(KcpPacketAudit.Initialize(), "Entry");
 
-                var addrs = Dns.GetHostAddresses("bj-1.lcf.icu");
-                Log.Info($"Dns resolving got {addrs.Length} addresses in all. Using {addrs[0]} now.");
-                ProxyServer = new KcpProxyServer(new IPEndPoint(IPAddress.Parse("0.0.0.0"), 22102),
-                    new IPEndPoint(IPAddress.Parse("192.168.127.130"), 20041));
+                #region Parse config remote addr
+                IPAddress remoteaddr;
+                if (Config.Global.NetConfig.RemoteAddress.IpAddress != null)
+                {
+                    remoteaddr = IPAddress.Parse(Config.Global.NetConfig.RemoteAddress.IpAddress);
+                }
+                else if (Config.Global.NetConfig.RemoteAddress.DomainAddress != null)
+                {
+                    var addrs = Dns.GetHostAddresses(Config.Global.NetConfig.RemoteAddress.DomainAddress);
+                    Log.Info($"Dns resolving remote address (domain) " +
+                        $"got {addrs.Length} addresses in all. Using {addrs[0]} now.");
+                    remoteaddr = addrs[0];
+                }
+                else throw new NotSupportedException("JSON Schema invalid. Please report the bug.");
+                #endregion
+
+                var bindIp = new IPEndPoint(IPAddress.Parse(Config.Global.NetConfig.BindAddress),
+                    Config.Global.NetConfig.BindPort);
+                var remoteIp = new IPEndPoint(remoteaddr, Config.Global.NetConfig.RemoteAddress.AddressPort);
+
+                ProxyServer = new KcpProxyServer(bindIp, remoteIp);
 
                 ProxyHandlers handlers = new ProxyHandlers
                 {
@@ -108,7 +125,7 @@ namespace csharp_Protoshift
                     ClientPacketOrdered = GameSessionDispatch.OrderedClientPacket
                 };
                 _ = Task.Run(() => ProxyServer.StartProxy(handlers));
-                Log.Info("Protoshift server started on 127.0.0.1:22102", "Entry");
+                Log.Info($"Protoshift server started on {bindIp}, real server at {remoteIp}.", "Entry");
                 Log.Info("Ready! Type 'help' to get command help.", "Entry");
             }
 
