@@ -5,6 +5,7 @@ using csharp_Protoshift.GameSession;
 using csharp_Protoshift.MhyKCP.Proxy;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
+using NJsonSchema.Validation;
 using OfficeOpenXml;
 using System.Net;
 using System.Net.Sockets;
@@ -39,7 +40,39 @@ namespace csharp_Protoshift
             Log.Info("Written by YYHEggEgg#6167, https://github.com/YYHEggEgg.", "Entry");
             ResourcesLoader.CheckForRequiredResources();
             await ResourcesLoader.Load();
-            await Config.Initialize("config.json");
+
+            #region Config
+            bool configLoadSucc = true;
+            var _conflog = Log.GetChannel("Configuration");
+            try
+            {
+                _conflog.LogInfo($"Loading config...");
+                await Config.InitializeAsync("config.json");
+            }
+            catch (Exception ex)
+            {
+                _conflog.LogWarn($"config.json initialize failed: {ex}");
+                configLoadSucc = false;
+            }
+
+            var conf_validate_errs = await Config.ValidateAsync();
+            if (conf_validate_errs != null && conf_validate_errs.Count > 0) 
+            {
+                configLoadSucc = false;
+                _conflog.LogWarn($"ValidateAsync config.json by schema failed. Detected errors below:");
+                foreach (var err in conf_validate_errs)
+                {
+                    _conflog.LogWarn(err.ToString());
+                }
+            }
+
+            if (!configLoadSucc)
+            {
+                _conflog.LogErro("Config load failed. Please check the errors and fix them.");
+                Environment.Exit(50);
+            }
+            #endregion
+
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             if (args.Length == 1 && args[0] == "--utils-only")

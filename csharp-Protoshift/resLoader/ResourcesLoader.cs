@@ -1,4 +1,5 @@
 ﻿using AssetLib.Formats;
+using csharp_Protoshift.Configuration;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.resLoader
@@ -17,48 +18,37 @@ namespace csharp_Protoshift.resLoader
             "        /ServerPri -- Server Private Keys, SPri\n" +
             "            /2-pri.pem, ..., 5-pri.pem -- PEM format RSA keys with key_id\n" +
             "    /protobuf\n" +
-            "        /newcmdid.csv -- New Protos CmdIds" +
-            "        /oldcmdid.csv -- Old Protos CmdIds";
+            "        /newcmdid.csv -- New Protos CmdIds\n" +
+            "        /oldcmdid.csv -- Old Protos CmdIds\n" +
+            "    /config-schemas\n" +
+            "        /config_schema_{version}.json -- schema json, do not delete";
+
+        private static LoggerChannel? _checklogger = null;
 
         /// <summary>
         /// Check for resources, if not complete then exit with code 114514.
         /// </summary>
         public static void CheckForRequiredResources()
         {
+            _checklogger = Log.GetChannel("ResourcesCheck");
             bool passcheck = true;
             // Resources
             if (!Directory.Exists("resources"))
             {
-                Log.Erro("resources dir missing! Please copy it from \"/resources\"!", "ResourcesCheck");
-                Log.Info(StructureDescription, "ResourcesCheck");
+                _checklogger.LogErro("resources dir missing! Please copy it from \"/resources\"!");
+                _checklogger.LogInfo(StructureDescription);
                 passcheck = false;
             }
             else
             {
                 bool resourcesComplete = true;
-                if (!File.Exists("resources/protobuf/newcmdid.csv"))
+                CheckFileResource("resources/protobuf/newcmdid.csv", ref resourcesComplete);
+                CheckFileResource("resources/protobuf/oldcmdid.csv", ref resourcesComplete);
+                CheckFileResource("resources/xor/dispatchKey.bin", ref resourcesComplete);
+                CheckDirectoryResource("resources/rsakeys/ClientPri", ref resourcesComplete);
+                CheckDirectoryResource("resources/rsakeys/ServerPri", ref resourcesComplete, 
+                    continueOnFailure: () =>
                 {
-                    Log.Erro("/resources/protobuf/newcmdid.csv not found!", "ResourcesCheck");
-                    resourcesComplete = false;
-                }
-                if (!File.Exists("resources/protobuf/oldcmdid.csv"))
-                {
-                    Log.Erro("/resources/protobuf/oldcmdid.csv not found!", "ResourcesCheck");
-                    resourcesComplete = false;
-                }
-                if (!File.Exists("resources/xor/dispatchKey.bin"))
-                {
-                    Log.Erro("/resources/xor/dispatchKey.bin not found!", "ResourcesCheck");
-                    resourcesComplete = false;
-                }
-                if (!Directory.Exists("resources/rsakeys/ClientPri"))
-                {
-                    Log.Erro("/resources/rsakeys/ClientPri not found!", "ResourcesCheck");
-                    resourcesComplete = false;
-                }
-                if (!Directory.Exists("resources/rsakeys/ServerPri"))
-                {
-                    Log.Erro("/resources/rsakeys/ServerPri not found!", "ResourcesCheck");
                     DirectoryInfo serverpubdir = new("resources/rsakeys/ServerPub");
                     if (serverpubdir.Exists && serverpubdir.EnumerateFiles().Any())
                     {
@@ -67,19 +57,49 @@ namespace csharp_Protoshift.resLoader
                             $"are REQUIRED for you to run an actual Protoshift server.", "ResourcesCheck");
                     }
                     resourcesComplete = false;
-                }
+                });
+                CheckDirectoryResource("resources/config-schemas", ref resourcesComplete,
+                    continueOnSuccess: () =>
+                    {
+                        foreach (var supportedVer in Config.SupportedVersions)
+                        {
+                            CheckFileResource($"resources/config-schemas/config_schema_" +
+                                $"v{supportedVer}.json", ref resourcesComplete);
+                        }
+                    });
                 if (!resourcesComplete)
                 {
-                    Log.Info(StructureDescription, "ResourcesCheck");
+                    _checklogger.LogInfo(StructureDescription);
                     passcheck = false;
                 }
             }
             if (!passcheck)
             {
-                Log.Erro("Resources check didn't pass. Press Enter to exit.", "ResourcesCheck");
+                _checklogger.LogErro("Resources check didn't pass. Press Enter to exit.");
                 Console.ReadLine();
                 Environment.Exit(114514);
             }
+        }
+
+        private static void CheckFileResource(string path, ref bool isResComplete)
+        {
+            if (!File.Exists(path))
+            {
+                _checklogger?.LogErro($"{path} not found!");
+                isResComplete = false;
+            }
+        }
+
+        private static void CheckDirectoryResource(string path, ref bool isResComplete,
+            Action? continueOnSuccess = null, Action? continueOnFailure = null)
+        {
+            if (!Directory.Exists(path))
+            {
+                _checklogger?.LogErro($"{path} not found!");
+                isResComplete = false;
+                continueOnFailure?.Invoke();
+            }
+            else continueOnSuccess?.Invoke();
         }
 
         /// <summary>
