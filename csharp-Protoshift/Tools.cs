@@ -2,6 +2,8 @@
 using System.Security.Cryptography;
 using System.Text.Json;
 using XC.RSAUtil;
+using TextCopy;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift
 {
@@ -65,6 +67,36 @@ namespace csharp_Protoshift
                 else return new RsaXmlUtil(publicKey: rsaKey, keySize: keySize);
             }
             else throw new ArgumentException("Invalid RSA Key!", nameof(rsaKey));
+        }
+
+        public static void SetClipBoard(string text)
+        {
+            try
+            {
+                ClipboardService.SetText(text);
+                Log.Info("Result copied to clipboard.", nameof(SetClipBoard));
+            }
+            catch (Exception ex)
+            {
+                Log.Dbug(ex.ToString(), nameof(SetClipBoard));
+                Log.Warn($"Copy to clipboard failed, error: {ex.Message}. " +
+                    $"Full error message output to debug.log.", nameof(SetClipBoard));
+            }
+        }
+
+        public static async Task SetClipBoardAsync(string text)
+        {
+            try
+            {
+                await ClipboardService.SetTextAsync(text);
+                Log.Info("Result copied to clipboard.", nameof(SetClipBoard));
+            }
+            catch (Exception ex)
+            {
+                Log.Dbug(ex.ToString(), nameof(SetClipBoard));
+                Log.Warn($"Copy to clipboard failed, error: {ex.Message}. " +
+                    $"Full error message output to debug.log.", nameof(SetClipBoard));
+            }
         }
 
         #region ChatGPT Show Time
