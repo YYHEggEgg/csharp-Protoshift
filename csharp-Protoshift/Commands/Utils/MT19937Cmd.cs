@@ -34,9 +34,9 @@ namespace csharp_Protoshift.Commands
                 {
                     uint key_id = Convert.ToUInt32(args[3]);
                     var server_rand_key = Resources.CPri[key_id].RsaDecrypt(
-                        EasyInput.ToByteArray(EasyInput.TryPreProcess(args[2])), RSAEncryptionPadding.Pkcs1);
+                        EasyInput.TryPreProcess(args[2]).ToByteArray(), RSAEncryptionPadding.Pkcs1);
                     var client_rand_key = Resources.SPri[key_id].RsaDecrypt(
-                        EasyInput.ToByteArray(EasyInput.TryPreProcess(args[1])), RSAEncryptionPadding.Pkcs1);
+                        EasyInput.TryPreProcess(args[1]).ToByteArray(), RSAEncryptionPadding.Pkcs1);
                     client_rand_key = client_rand_key.Fill0(8);
                     server_rand_key = server_rand_key.Fill0(8);
                     seed = client_rand_key.GetUInt64(0) ^ server_rand_key.GetUInt64(0);
