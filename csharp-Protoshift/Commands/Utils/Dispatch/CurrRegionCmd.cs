@@ -62,8 +62,7 @@ namespace csharp_Protoshift.Commands.Utils
                 Log.Warn($"RSA Verification failed. " +
                     $"You may check whether a correct RSA key is configured.", nameof(DecryptCurrRegionCmd));
             }
-            await ClipboardService.SetTextAsync(res);
-            Log.Info("Result copied to clipboard!", nameof(DecryptCurrRegionCmd));
+            await Tools.SetClipBoardAsync(res);
         }
     }
 
@@ -102,8 +101,7 @@ namespace csharp_Protoshift.Commands.Utils
             {
                 var res = curr.GetCurrJson(Resources.CPri[key_id], Resources.SPri[key_id]);
                 Log.Info($"Result: \n{res}", nameof(GenerateCurrRegionCmd));
-                await ClipboardService.SetTextAsync(res);
-                Log.Info("Result copied to clipboard!", nameof(GenerateCurrRegionCmd));
+                await Tools.SetClipBoardAsync(res);
             }
             catch (Exception ex)
             {
