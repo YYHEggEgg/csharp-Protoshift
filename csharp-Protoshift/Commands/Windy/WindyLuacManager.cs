@@ -1,123 +1,169 @@
-﻿using System.Diagnostics;
+﻿using csharp_Protoshift.Configuration;
+using Google.Protobuf;
+using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using YYHEggEgg.Logger;
 
-namespace csharp_Protoshift.Commands
+namespace csharp_Protoshift.Commands.Windy
 {
     internal class WindyLuacManager : IJsonOnDeserialized, IJsonOnSerializing
     {
         /// <summary>
-        /// Get the luac executable path. Notice that don't use the setter because it's used for <see cref="JsonSerializer"/>.
+        /// This constructor is used for <see cref="JsonSerializer"/>. Use <see cref="Instance"/> instead.
         /// </summary>
-        public string? LuacExecutablePath { get; set; }
-        public async Task<bool> TryModifyLuacExecutablePath(string luacFullPath, bool slient = false)
+        public WindyLuacManager()
         {
-            if (!slient) Log.Info($"Verifying luac at: {luacFullPath}", nameof(WindyLuacManager));
-            try
-            {
-                var versionInfo = await new WindyOuterInvoke(luacFullPath, "-v").RunAsync();
-                if (!slient) Log.Info($"Got luac version: {versionInfo}", nameof(WindyLuacManager));
-                LuacExecutablePath = luacFullPath;
-                return true;
-            }
-            catch (Exception ex)
-            {
-                if (!slient) Log.Erro($"verify luac failed: {ex}", nameof(WindyLuacManager));
-                return false;
-            }
+            Debug.Assert(SetCompiledTempPath("windy_temp"));
         }
+        public readonly static WindyLuacManager Instance = new();
 
         [JsonIgnore]
         private Dictionary<string, (string luaHash, byte[] luacContent, string outputHash)> compiled_luacs = new();
 
-        public async Task<byte[]> CompileLua(string luaPath)
+        public async Task<byte[]> CompileLua(string luaPathInput)
         {
-            if (LuacExecutablePath == null)
-            {
-                throw new InvalidOperationException("The luac path has not been set.");
-            }
-            FileInfo luaFile = new(luaPath);
-            if (!luaFile.Exists)
-            {
-                throw new FileNotFoundException("The specified file does not exist.", luaFile.FullName);
-            }
+            if (!Tools.TryGetFullFilePath(luaPathInput, EnvFullPath, "lua", "luac", out var luaFullPath))
+                throw new FileNotFoundException("The specified file does not exist.", 
+                    Path.GetFullPath($"./{luaPathInput}", EnvFullPath));
+            if (luaFullPath.EndsWith(".luac"))
+                return await File.ReadAllBytesAsync(luaFullPath);
+            else return await CompileLuaCore(luaFullPath);
+        }
+
+        private async Task<byte[]> CompileLuaCore(string luaFullPath)
+        {
+            FileInfo luaFile = new(luaFullPath);
             var luaFileHash = GetFileHash(luaFile);
             lock (lua_dict_lck)
             {
-                if (compiled_luacs.TryGetValue(luaFile.FullName, out var tuple) && tuple.luaHash == luaFileHash)
+                if (compiled_luacs.TryGetValue(luaFullPath, out var tuple) && tuple.luaHash == luaFileHash)
                 {
                     return tuple.luacContent;
                 }
             }
-            Log.Info($"Start compiling lua file: {luaFile.FullName} (size: {luaFile.Length})", nameof(WindyLuacManager));
+            Log.Info($"Start compiling lua file: {luaFullPath} (size: {luaFile.Length})", nameof(WindyLuacManager));
             Stopwatch compileWatch = Stopwatch.StartNew();
             string outputPath = $"{CompiledPath}/{Path.GetFileNameWithoutExtension(luaFile.Name)}.luac";
-            await WindyOuterInvoke.CompileAsync(LuacExecutablePath, luaFile, outputPath, EnvPath);
+            await WindyOuterInvoke.CompileAsync(WindyCompilerManager.GetExecutable(), luaFile, outputPath);
             var res = await File.ReadAllBytesAsync(outputPath);
-            lock (lua_dict_lck) compiled_luacs[luaFile.FullName] = (luaFileHash, res, GetFileHash(new(outputPath)));
+            lock (lua_dict_lck) compiled_luacs[luaFullPath] = (luaFileHash, res, GetFileHash(new(outputPath)));
             return res;
         }
 
-        /// <summary>
-        /// Get the windy env path. Notice that don't use the setter because it's used for <see cref="JsonSerializer"/>.
-        /// </summary>
-        public string EnvPath { get; set; } = Environment.CurrentDirectory;
-        [JsonIgnore]
-        public string CompiledPath => $"{EnvPath}/windy_compiled"; // also Hardcoded at SetEnvPath method
-        public bool SetEnvPath(string newenvPath)
+        private byte[] ConstructSendableWindyProtobufFrom(
+            byte[] lua_compiled)
         {
-            if (!Directory.Exists(newenvPath))
+#if !PROXY_ONLY_SERVER
+            NewProtos.WindSeedClientNotify rce_warning = new();
+#else
+            OldProtos.WindSeedClientNotify rce_warning = new();
+#endif
+            rce_warning.AreaNotify = new();
+            rce_warning.AreaNotify.AreaId = 1;
+            rce_warning.AreaNotify.AreaType = 1;
+            rce_warning.AreaNotify.AreaCode = ByteString.CopyFrom(lua_compiled, 0, lua_compiled.Length);
+            return rce_warning.ToByteArray();
+        }
+
+        public async Task<byte[]> CompileSendableWindyProtobuf(string luaPath)
+        {
+            return ConstructSendableWindyProtobufFrom(await CompileLua(luaPath));
+        }
+
+        public async Task<byte[]> GetSendableWindyProtobufFromFile(string filePath)
+        {
+            return ConstructSendableWindyProtobufFrom(
+                await File.ReadAllBytesAsync(filePath));
+        }
+
+        #region EnvPath
+        private string _envPath = "resources/windy_scripts";
+        /// <summary>
+        /// Get the windy env path. 
+        /// </summary>
+        [JsonIgnore]
+        public string EnvPath
+        {
+            get { return _envPath; }
+            set
             {
-                Log.Erro($"Path not exist: {newenvPath}. SetEnvPath failed. ", nameof(WindyLuacManager));
-                return false;
+                _envPath = value;
+                _envPathChanged = true;
             }
-            List<string> deprecated_files = new();
-            lock (lua_dict_lck)
+        }
+
+        private string? _envFullPath;
+        private bool _envPathChanged = true;
+        public string EnvFullPath
+        {
+            get
             {
-                foreach (var pair in compiled_luacs)
+                _envFullPath ??= Path.GetFullPath(_envPath);
+                if (_envPathChanged) _envFullPath = Path.GetFullPath(_envPath);
+                return _envFullPath;
+            }
+        }
+        #endregion
+
+        /// <summary>
+        /// Get the compiled .luac temp path. Notice that don't use the setter, it's only used for <see cref="JsonSerializer"/>.
+        /// </summary>
+        [JsonIgnore]
+        public string? CompiledPath { get; set; } = null;
+        public bool SetCompiledTempPath(string? newTempPath)
+        {
+            if (newTempPath == null) return false;
+            Directory.CreateDirectory(newTempPath);
+            List<string> deprecated_files = new();
+            if (CompiledPath != null)
+            {
+                lock (lua_dict_lck)
                 {
-                    var (luaHash, luacContent, outputHash) = pair.Value;
-                    string fileName = outputHash.Substring(0, outputHash.IndexOf('|'));
-                    if (!File.Exists($"{CompiledPath}/{fileName}"))
+                    foreach (var pair in compiled_luacs)
                     {
-                        Log.Warn($"Compiled luac: {fileName} not found in windy env path. " +
-                            $"It'll be compiled again next time.", nameof(WindyLuacManager));
-                        deprecated_files.Add(pair.Key);
-                    }
-                    else if (GetFileHash(new($"{CompiledPath}/{fileName}")) != outputHash)
-                    {
-                        Log.Warn($"Compiled luac: {fileName} has changed since the last compile. " +
-                            $"It'll be compiled again next time.", nameof(WindyLuacManager));
-                        deprecated_files.Add(pair.Key);
-                    }
-                    else try
+                        var (luaHash, luacContent, outputHash) = pair.Value;
+                        string fileName = outputHash.Substring(0, outputHash.IndexOf('|'));
+                        if (!File.Exists($"{CompiledPath}/{fileName}"))
                         {
-                            var frmFile = $"{CompiledPath}/{fileName}";
-                            var dstFile = $"{newenvPath}/windy_compiled/{fileName}";
-                            if (new FileInfo(frmFile).FullName != new FileInfo(dstFile).FullName)
-                            {
-                                File.Move(frmFile, dstFile);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            Log.Warn($"Moving luac: {fileName} to new env folder failed. " +
+                            Log.Warn($"Compiled luac: {fileName} not found in windy env path. " +
                                 $"It'll be compiled again next time.", nameof(WindyLuacManager));
-                            Log.Warn(ex.ToString(), nameof(WindyLuacManager));
                             deprecated_files.Add(pair.Key);
                         }
+                        else if (GetFileHash(new($"{CompiledPath}/{fileName}")) != outputHash)
+                        {
+                            Log.Warn($"Compiled luac: {fileName} has changed since the last compile. " +
+                                $"It'll be compiled again next time.", nameof(WindyLuacManager));
+                            deprecated_files.Add(pair.Key);
+                        }
+                        else try
+                            {
+                                var frmFile = $"{CompiledPath}/{fileName}";
+                                var dstFile = $"{newTempPath}/{fileName}";
+                                if (new FileInfo(frmFile).FullName != new FileInfo(dstFile).FullName)
+                                {
+                                    File.Move(frmFile, dstFile);
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Log.Warn($"Moving luac: {fileName} to new env folder failed. " +
+                                    $"It'll be compiled again next time.", nameof(WindyLuacManager));
+                                Log.Warn(ex.ToString(), nameof(WindyLuacManager));
+                                deprecated_files.Add(pair.Key);
+                            }
+                    }
+                    foreach (var luaFile in deprecated_files)
+                        compiled_luacs.Remove(luaFile);
                 }
-                foreach (var luaFile in deprecated_files)
-                    compiled_luacs.Remove(luaFile);
+                try
+                {
+                    File.Delete($"{CompiledPath}/README.txt");
+                    Directory.Delete(CompiledPath, false);
+                }
+                catch { }
             }
-            try
-            {
-                File.Delete($"{CompiledPath}/README.txt");
-                Directory.Delete(CompiledPath, false);
-            }
-            catch { }
-            EnvPath = newenvPath;
+            CompiledPath = newTempPath;
             Directory.CreateDirectory(CompiledPath);
             File.WriteAllText($"{CompiledPath}/README.txt", WINDY_COMPILED_README);
             return true;
@@ -135,67 +181,20 @@ namespace csharp_Protoshift.Commands
             }
         }
 
-        private class WindyOuterInvoke
-        {
-            public readonly string ProgramPath;
-            public readonly string CommandLine;
-            public readonly string WorkingDirectory;
-
-            public WindyOuterInvoke(string programPath, string commandLine, string? workingDirectory = null)
-            {
-                ProgramPath = programPath ?? throw new ArgumentNullException(nameof(programPath));
-                CommandLine = commandLine ?? throw new ArgumentNullException(nameof(commandLine));
-                WorkingDirectory = workingDirectory ?? Environment.CurrentDirectory;
-            }
-
-            /// <summary>
-            /// Run the program with given params.
-            /// </summary>
-            /// <returns>The standard output content of running process.</returns>
-            /// <exception cref="IOException">Running failed.</exception>
-            internal async Task<string?> RunAsync()
-            {
-                ProcessStartInfo startInfo = new ProcessStartInfo(ProgramPath)
-                {
-                    Arguments = CommandLine,
-                    WorkingDirectory = WorkingDirectory,
-                    UseShellExecute = false,
-                    RedirectStandardOutput = true
-                };
-                Process? p = Process.Start(startInfo);
-                if (p == null) throw new IOException("The process is not started properly.");
-
-                await p.WaitForExitAsync();
-                if (p.ExitCode != 0) throw new IOException($"The process exited with code {p.ExitCode}.");
-
-                return await p.StandardOutput.ReadToEndAsync();
-            }
-
-            public static async Task<byte[]> CompileAsync(string luacPath, FileInfo luaFile,
-                string outputPath, string? workingDir = null)
-            {
-                workingDir ??= Environment.CurrentDirectory;
-                if (!luaFile.Exists)
-                {
-                    throw new FileNotFoundException("The specified file does not exist.", luaFile.FullName);
-                }
-                await new WindyOuterInvoke(luacPath, $"-o {outputPath} {luaFile.FullName}", workingDir).RunAsync();
-                return await File.ReadAllBytesAsync(outputPath);
-            }
-        }
-
         #region Json serialization
         public void OnDeserialized()
         {
-            if (LuacExecutablePath != null &&
-                !TryModifyLuacExecutablePath(LuacExecutablePath, true).Result)
+            if (Config.Global.WindyConfig?.WindyCompiledTempPath != null && 
+                !SetCompiledTempPath(Config.Global.WindyConfig?.WindyCompiledTempPath))
             {
-                LuacExecutablePath = null;
+                Log.Warn($"The past temp path is deprecated. Use default (./windy_temp) instead now.", nameof(WindyLuacManager));
             }
-            if (!SetEnvPath(EnvPath))
+#pragma warning disable CS8601 // 引用类型赋值可能为 null。
+            if (Config.Global.WindyConfig?.WindyEnvironmentPath != null)
             {
-                Log.Warn($"The past env path is deprecated. Use working directory instead now.", nameof(WindyLuacManager));
+                EnvPath = Config.Global.WindyConfig?.WindyEnvironmentPath;
             }
+#pragma warning restore CS8601 // 引用类型赋值可能为 null。
             else if (list_compiled_luacs != null)
             {
                 foreach (var pair in list_compiled_luacs)
@@ -222,6 +221,12 @@ namespace csharp_Protoshift.Commands
                     list_compiled_luacs.Add(new(pair.Key, new(pair.Value.luaHash, pair.Value.outputHash)));
                 }
             }
+            Config.Global.WindyConfig ??= new();
+            Config.Global.WindyConfig.WindyEnvironmentPath = EnvPath;
+#pragma warning disable CS8601 // 引用类型赋值可能为 null。
+            Config.Global.WindyConfig.WindyCompiledTempPath = CompiledPath;
+#pragma warning restore CS8601 // 引用类型赋值可能为 null。
+                              // TODO: Config.Global.WindyConfig.WindyLuacPath
         }
 
         public List<KeyValuePair<string, Tuple<string , string>>>? list_compiled_luacs { get; set; }
@@ -243,5 +248,65 @@ and don't place your files here as they will probably be lost.";
         private object env_path_lck = "windy"; // Unused
         private object lua_dict_lck = "today";
         #endregion
+    }
+
+    internal class WindyOuterInvoke
+    {
+        public readonly string ProgramPath;
+        public readonly string CommandLine;
+        public readonly string WorkingDirectory;
+
+        public WindyOuterInvoke(string programPath, string commandLine, string? workingDirectory = null)
+        {
+            ProgramPath = programPath ?? throw new ArgumentNullException(nameof(programPath));
+            CommandLine = commandLine ?? throw new ArgumentNullException(nameof(commandLine));
+            WorkingDirectory = workingDirectory ?? Environment.CurrentDirectory;
+        }
+
+        /// <summary>
+        /// Run the program with given params.
+        /// </summary>
+        /// <returns>The standard output content of running process.</returns>
+        /// <exception cref="IOException">Running failed.</exception>
+        internal async Task<string?> RunAsync()
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo(ProgramPath)
+            {
+                Arguments = CommandLine,
+                WorkingDirectory = WorkingDirectory,
+                UseShellExecute = false,
+                RedirectStandardOutput = true
+            };
+            Process? p = Process.Start(startInfo)
+                ?? throw new IOException("The process is not started properly.");
+
+            await p.WaitForExitAsync();
+            if (p.ExitCode != 0) 
+                throw new IOException($"The process exited with code {p.ExitCode}.");
+
+            return await p.StandardOutput.ReadToEndAsync();
+        }
+
+        public static async Task<byte[]> CompileAsync(string luacPath, FileInfo luaFile,
+            string outputPath, string? workingDir = null)
+        {
+            workingDir ??= Environment.CurrentDirectory;
+            if (!luaFile.Exists)
+            {
+                throw new FileNotFoundException("The specified file does not exist.", luaFile.FullName);
+            }
+            await new WindyOuterInvoke(luacPath, GetCompileInvokeArgs(luaFile, outputPath), workingDir).RunAsync();
+            return await File.ReadAllBytesAsync(outputPath);
+        }
+
+        private static string GetCompileInvokeArgs(FileInfo fileSource, string outputPath)
+        {
+            string res = string.Empty;
+            if (Config.Global.WindyConfig.StripDebugInformation == true)
+                res += "-s ";
+            res += $"-o {outputPath} ";
+            res += fileSource.FullName;
+            return res;
+        }
     }
 }

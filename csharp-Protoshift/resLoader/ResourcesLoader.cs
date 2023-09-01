@@ -21,7 +21,8 @@ namespace csharp_Protoshift.resLoader
             "        /newcmdid.csv -- New Protos CmdIds\n" +
             "        /oldcmdid.csv -- Old Protos CmdIds\n" +
             "    /config-schemas\n" +
-            "        /config_schema_{version}.json -- schema json, do not delete";
+            "        /config_schema_{version}.json -- schema json, DO NOT delete\n" +
+            "    /luac_bins -- windy compilers, DO NOT delete";
 
         private static LoggerChannel? _checklogger = null;
 
@@ -67,6 +68,11 @@ namespace csharp_Protoshift.resLoader
                                 $"v{supportedVer}.json", ref resourcesComplete);
                         }
                     });
+                CheckFileResource("resources/luac_bins/luac_win32.exe", ref resourcesComplete);
+                CheckFileResource("resources/luac_bins/luac_win64.exe", ref resourcesComplete);
+                CheckFileResource("resources/luac_bins/luac_mac64", ref resourcesComplete);
+                CheckFileResource("resources/luac_bins/luac_linux32", ref resourcesComplete);
+                CheckFileResource("resources/luac_bins/luac_linux64", ref resourcesComplete);
                 if (!resourcesComplete)
                 {
                     _checklogger.LogInfo(StructureDescription);
