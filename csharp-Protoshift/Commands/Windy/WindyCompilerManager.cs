@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using YYHEggEgg.Logger;
 using csharp_Protoshift.Configuration;
+using System.Diagnostics;
+using System.Text.Json.Serialization;
 
 namespace csharp_Protoshift.Commands.Windy
 {
@@ -15,8 +17,10 @@ namespace csharp_Protoshift.Commands.Windy
         linux64,
     }
 
-    internal static class WindyCompilerManager
+    internal partial class WindyLuacManager
     {
+        private static LoggerChannel _logger = Log.GetChannel("WindyCompilers");
+
         /// <summary>
         /// Get OS Suffix in combination of "win", "mac", "linux" and "32", "64".
         /// </summary>
@@ -40,11 +44,39 @@ namespace csharp_Protoshift.Commands.Windy
             { OSType.linux64, "resources/luac_bins/luac_linux64" },
         });
 
-        private static Dictionary<OSType, string> _lua_compilers_path = new(LuaCompilersDefault);
+        private static bool CanRuntimeValidate(OSType targetOS)
+        {
+            return GetOSSuffix() switch
+            {
+                OSType.Unsupported => false,
+                OSType.win32 => targetOS == OSType.win32,
+                OSType.win64 => targetOS == OSType.win64 || targetOS == OSType.win32,
+                OSType.mac32 => targetOS == OSType.mac32,
+                // You're right, but "macOS 10.15" is a macOS release version
+                // independently developed by Apple. The kernel is running in
+                // a mystrial world called 'Darwin'. You will act as a mysterious
+                // character named as 'macOS Catalina', experience failing to run
+                // any x86 apps with various usage and unique abilities, install
+                // Parallel Desktop and find the lost Windows features -- and
+                // gradually discover the truth about 'M1 Mac'.
+                OSType.mac64 => targetOS == OSType.mac64,
+                OSType.linux32 => targetOS == OSType.linux32,
+                OSType.linux64 => targetOS == OSType.linux64 || targetOS == OSType.linux32,
+                _ => false,
+            };
+        }
 
-        static WindyCompilerManager()
+        #region OS Compilers manage
+        private void InitCompilerFromConfig()
         {
             var paths = Config.Global.WindyConfig.WindyLuacOverridePaths;
+            if ((paths?.Path_win32 != null && GetOSSuffix() == OSType.win32 && paths.Path_win32 != _lua_compilers_path[OSType.win32]) ||
+                (paths?.Path_win64 != null && GetOSSuffix() == OSType.win64 && paths.Path_win64 != _lua_compilers_path[OSType.win64]) ||
+                (paths?.Path_mac64 != null && GetOSSuffix() == OSType.mac64 && paths.Path_mac64 != _lua_compilers_path[OSType.mac64]) ||
+                (paths?.Path_linux32 != null && GetOSSuffix() == OSType.linux32 && paths.Path_linux32 != _lua_compilers_path[OSType.linux32]) ||
+                (paths?.Path_linux64 != null && GetOSSuffix() == OSType.linux64 && paths.Path_linux64 != _lua_compilers_path[OSType.linux64]))
+                ClearCompiled();
+
             if (paths?.Path_win32 != null) _lua_compilers_path[OSType.win32] = paths.Path_win32;
             if (paths?.Path_win64 != null) _lua_compilers_path[OSType.win64] = paths.Path_win64;
             if (paths?.Path_mac64 != null) _lua_compilers_path[OSType.mac64] = paths.Path_mac64;
@@ -52,12 +84,12 @@ namespace csharp_Protoshift.Commands.Windy
             if (paths?.Path_linux64 != null) _lua_compilers_path[OSType.linux64] = paths.Path_linux64;
         }
 
-        private static LoggerChannel _logger = Log.GetChannel(nameof(WindyCompilerManager));
+        [JsonIgnore] private Dictionary<OSType, string> _lua_compilers_path = new(LuaCompilersDefault);
 
-        public static async Task<bool> TryModifyLuacExecutablePath(
+        public async Task<bool> TryModifyLuacExecutablePath(
             string luacFullPath, OSType targetOS, bool slient = false)
         {
-            if (targetOS == OSType.Unsupported)
+            if (targetOS == OSType.Unsupported || targetOS == OSType.mac32)
             {
                 if (!slient)
                 {
@@ -73,6 +105,7 @@ namespace csharp_Protoshift.Commands.Windy
                     var versionInfo = await new WindyOuterInvoke(luacFullPath, "-v").RunAsync();
                     if (!slient) _logger.LogInfo($"Got luac version: {versionInfo}");
                     _lua_compilers_path[targetOS] = luacFullPath;
+                    ClearCompiled();
                     return true;
                 }
                 catch (Exception ex)
@@ -91,30 +124,38 @@ namespace csharp_Protoshift.Commands.Windy
                 return true;
             }
         }
+        #endregion
 
-        private static bool CanRuntimeValidate(OSType targetOS)
+        public void ClearCompiled()
         {
-            switch (GetOSSuffix()) 
+            if (CompiledPath != null)
             {
-                case OSType.Unsupported: return false;
-                case OSType.win32: return targetOS == OSType.win32;
-                case OSType.win64: return targetOS == OSType.win64 || targetOS == OSType.win32;
-                case OSType.mac32: return targetOS == OSType.mac32;
-                // You're right, but "macOS 10.15" is a macOS release version
-                // independently developed by Apple. The kernel is running in
-                // a mystrial world called 'Darwin'. You will act as a mysterious
-                // character named as 'macOS Catalina', experience failing to run
-                // any x86 apps with various usage and unique abilities, install
-                // Parallel Desktop and find the lost Windows features -- and
-                // gradually discover the truth about 'M1 Mac'.
-                case OSType.mac64: return targetOS == OSType.mac64;
-                case OSType.linux32: return targetOS == OSType.linux32;
-                case OSType.linux64: return targetOS == OSType.linux64 || targetOS == OSType.linux32;
-                default: return false;
+                lock (lua_dict_lck)
+                {
+                    foreach (var pair in compiled_luacs)
+                    {
+                        var (luaHash, luacContent, outputHash) = pair.Value;
+                        string fileName = outputHash.Substring(0, outputHash.IndexOf('|'));
+                        if (File.Exists($"{CompiledPath}/{fileName}") &&
+                            GetFileHash(new($"{CompiledPath}/{fileName}")) == outputHash)
+                        {
+                            try
+                            {
+                                File.Delete($"{CompiledPath}/{fileName}");
+                            }
+                            catch { }
+                        }
+                    }
+                    compiled_luacs.Clear();
+                }
             }
-         }
+            _logger.LogInfo($"All lua scripts will be recompiled next time sent " +
+                $"for the working Luac executable changed.");
+        }
 
-        public static string GetExecutable() => GetExecutable(GetOSSuffix());
-        public static string GetExecutable(OSType targetOS) => _lua_compilers_path[targetOS];
+        public string GetExecutable() => GetExecutable(GetOSSuffix());
+        public string GetExecutable(OSType targetOS) => _lua_compilers_path[targetOS];
+        public static string GetExecutableGlobal() => Instance.GetExecutable();
+        public static string GetExecutableGlobal(OSType targetOS) => Instance.GetExecutable(targetOS);
     }
 }

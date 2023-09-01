@@ -7,20 +7,22 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands.Windy
 {
-    internal class WindyLuacManager : IJsonOnDeserialized, IJsonOnSerializing
+    internal partial class WindyLuacManager : IJsonOnDeserialized, IJsonOnSerializing
     {
         /// <summary>
         /// This constructor is used for <see cref="JsonSerializer"/>. Use <see cref="Instance"/> instead.
         /// </summary>
         public WindyLuacManager()
         {
-            Debug.Assert(SetCompiledTempPath("windy_temp"));
+            var settmpPathRes = SetCompiledTempPath("windy_temp");
+            Debug.Assert(settmpPathRes);
         }
         public readonly static WindyLuacManager Instance = new();
 
         [JsonIgnore]
         private Dictionary<string, (string luaHash, byte[] luacContent, string outputHash)> compiled_luacs = new();
 
+        #region Compile lua
         public async Task<byte[]> CompileLua(string luaPathInput)
         {
             if (!Tools.TryGetFullFilePath(luaPathInput, EnvFullPath, "lua", "luac", out var luaFullPath))
@@ -44,13 +46,15 @@ namespace csharp_Protoshift.Commands.Windy
             }
             Log.Info($"Start compiling lua file: {luaFullPath} (size: {luaFile.Length})", nameof(WindyLuacManager));
             Stopwatch compileWatch = Stopwatch.StartNew();
-            string outputPath = $"{CompiledPath}/{Path.GetFileNameWithoutExtension(luaFile.Name)}.luac";
-            await WindyOuterInvoke.CompileAsync(WindyCompilerManager.GetExecutable(), luaFile, outputPath);
+            string outputPath = $"{CompiledPath}/{Path.GetFileNameWithoutExtension(luaFile.Name)}-{Guid.NewGuid()}.luac";
+            await WindyOuterInvoke.CompileAsync(GetExecutable(), luaFile, outputPath);
             var res = await File.ReadAllBytesAsync(outputPath);
             lock (lua_dict_lck) compiled_luacs[luaFullPath] = (luaFileHash, res, GetFileHash(new(outputPath)));
             return res;
         }
+        #endregion
 
+        #region Windseed Construct
         private byte[] ConstructSendableWindyProtobufFrom(
             byte[] lua_compiled)
         {
@@ -76,6 +80,7 @@ namespace csharp_Protoshift.Commands.Windy
             return ConstructSendableWindyProtobufFrom(
                 await File.ReadAllBytesAsync(filePath));
         }
+        #endregion
 
         #region EnvPath
         private string _envPath = "resources/windy_scripts";
@@ -95,6 +100,7 @@ namespace csharp_Protoshift.Commands.Windy
 
         private string? _envFullPath;
         private bool _envPathChanged = true;
+        [JsonIgnore]
         public string EnvFullPath
         {
             get
@@ -209,6 +215,12 @@ namespace csharp_Protoshift.Commands.Windy
                     }
                 }
             }
+
+            if (list_lua_compilers_path != null)
+            {
+                _lua_compilers_path = new(list_lua_compilers_path);
+                InitCompilerFromConfig();
+            }
         }
 
         public void OnSerializing()
@@ -221,15 +233,16 @@ namespace csharp_Protoshift.Commands.Windy
                     list_compiled_luacs.Add(new(pair.Key, new(pair.Value.luaHash, pair.Value.outputHash)));
                 }
             }
+            list_lua_compilers_path = new(_lua_compilers_path);
             Config.Global.WindyConfig ??= new();
             Config.Global.WindyConfig.WindyEnvironmentPath = EnvPath;
 #pragma warning disable CS8601 // 引用类型赋值可能为 null。
             Config.Global.WindyConfig.WindyCompiledTempPath = CompiledPath;
 #pragma warning restore CS8601 // 引用类型赋值可能为 null。
-                              // TODO: Config.Global.WindyConfig.WindyLuacPath
         }
 
-        public List<KeyValuePair<string, Tuple<string , string>>>? list_compiled_luacs { get; set; }
+        public List<KeyValuePair<string, Tuple<string, string>>>? list_compiled_luacs { get; set; }
+        public List<KeyValuePair<OSType, string>>? list_lua_compilers_path { get; set; }
         #endregion
 
         #region README content
@@ -256,6 +269,8 @@ and don't place your files here as they will probably be lost.";
         public readonly string CommandLine;
         public readonly string WorkingDirectory;
 
+        private static readonly LogTextWriter errwriter = new(nameof(WindyOuterInvoke), LogLevel.Warning);
+
         public WindyOuterInvoke(string programPath, string commandLine, string? workingDirectory = null)
         {
             ProgramPath = programPath ?? throw new ArgumentNullException(nameof(programPath));
@@ -281,10 +296,14 @@ and don't place your files here as they will probably be lost.";
                 ?? throw new IOException("The process is not started properly.");
 
             await p.WaitForExitAsync();
-            if (p.ExitCode != 0) 
+            var prod = await p.StandardOutput.ReadToEndAsync();
+            if (p.ExitCode != 0)
+            {
+                errwriter.WriteLine(prod);
                 throw new IOException($"The process exited with code {p.ExitCode}.");
+            }
 
-            return await p.StandardOutput.ReadToEndAsync();
+            return prod;
         }
 
         public static async Task<byte[]> CompileAsync(string luacPath, FileInfo luaFile,
