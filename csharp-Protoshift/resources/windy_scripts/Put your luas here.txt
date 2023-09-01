@@ -1,0 +1,3 @@
+Just put your .lua scripts here.
+
+The program can automatically compile the .lua file and send it as standard windy.

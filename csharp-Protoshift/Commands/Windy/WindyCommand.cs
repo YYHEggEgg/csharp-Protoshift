@@ -1,11 +1,13 @@
 ﻿using CommandLine;
+using csharp_Protoshift.Commands.Windy;
+using csharp_Protoshift.Configuration;
 using csharp_Protoshift.GameSession;
-using Google.Protobuf;
 using System.Text.Json;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
+#pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
     [Verb("send", true, HelpText = "execute a lua/luac file.")]
     internal class WindySendConfig
     {
@@ -19,7 +21,7 @@ namespace csharp_Protoshift.Commands
         public string? ForceCompiled { get; set; }
     }
 
-    [Verb("set-env", false, HelpText = "Set a directory as a default location that stores .lua files.")]
+    [Verb("set-env", false, HelpText = "Set a directory as a default location that stores .lua files and a source for relative paths.")]
     internal class WindySetEnvConfig
     {
         [Value(0, Required = true, HelpText = "The directory path.")]
@@ -31,7 +33,17 @@ namespace csharp_Protoshift.Commands
     {
         [Value(0, Required = true, HelpText = "The file path.")]
         public string FilePath { get; set; }
+        [Option('t', "targetOS", Required = true, HelpText = "The luac (lua compiler) path for a specified OS.")]
+        public OSType TargetOS { get; set; }
     }
+
+    [Verb("set-temp-path", false, HelpText = "Set the temp folder where compiled .luac files are stored.")]
+    internal class WindySetTempPathConfig
+    {
+        [Value(0, Required = true, HelpText = "The temp folder path.")]
+        public string TempPath { get; set; }
+    }
+#pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
 
     internal class WindyCommand : CommandHandlerBase
     {
@@ -47,13 +59,20 @@ namespace csharp_Protoshift.Commands
             $"      If use --compiled, the program will treat it as compiled lua, {Environment.NewLine}" +
             $"      or the behaviour depends on the extension is either .lua or .luac.{Environment.NewLine}" +
             $"{Environment.NewLine}" +
-            $"  command set-env: Set a directory as a default location that stores .lua files. {Environment.NewLine}" +
+            $"  command set-env: Set a directory as a default location that stores .lua files and a source for relative paths. {Environment.NewLine}" +
             $"    windy set-env <dir-full-path>{Environment.NewLine}" +
             $"      After this you may invoke windy without path and extension, e.g. windy HideUI{Environment.NewLine}" +
             $"{Environment.NewLine}" +
-            $"  command set-luac: Set the luac (lua compiler) executable path.{Environment.NewLine}" +
-            $"    windy set-luac <luac-full-path>";
+            $"  command set-luac: Set the luac (lua compiler) executable path. {Environment.NewLine}" +
+            $"    windy set-luac {Environment.NewLine}" +
+            $"      [-t, --targetOS <OSType>] The luac (lua compiler) path for a specified OS. {Environment.NewLine}" +
+            $"                                Supported: win32, win64, mac32, mac64, linux32, linux64{Environment.NewLine}" +
+            $"      <luac-path>               The path of the executable. {Environment.NewLine}" +
+            $"{Environment.NewLine}" +
+            $"  command set-temp-path: Set the temp folder where compiled .luac files are stored.{Environment.NewLine}" +
+            $"    windy set-temp-path <temp-path>";
 
+        private LoggerChannel _logger = Log.GetChannel(nameof(WindyCommand));
         private WindyLuacManager windyExecute;
         private bool _initFinished = false;
         public const string WindyManagerPath = "windy_config.json";
@@ -69,21 +88,21 @@ namespace csharp_Protoshift.Commands
                         File.ReadAllText(WindyManagerPath));
                     if (windy == null)
                     {
-                        Log.Erro($"Read windy config from file: {WindyManagerPath} failed. Using a new instance.", nameof(WindyCommand));
+                        _logger.LogErro($"Read windy config from file: {WindyManagerPath} failed. Using a new instance.");
                         InitNewWindyManager();
                         AutoSave = false;
                     }
                     else
                     {
                         windyExecute = windy;
-                        Log.Info($"Successfully loaded windy config.", nameof(WindyCommand));
+                        _logger.LogInfo($"Successfully loaded windy config.");
                         AutoSave = true;
                     }
                 }
                 catch (Exception ex)
                 {
-                    Log.Erro($"Read windy config from file: {WindyManagerPath} failed. Using a new instance.", nameof(WindyCommand));
-                    Log.Erro($"Read exception: {ex}", nameof(WindyCommand));
+                    _logger.LogErro($"Read windy config from file: {WindyManagerPath} failed. Using a new instance.");
+                    _logger.LogErro($"Read exception: {ex}");
                     InitNewWindyManager();
                     AutoSave = false;
                 }
@@ -105,8 +124,7 @@ namespace csharp_Protoshift.Commands
 
         private void InitNewWindyManager()
         {
-            windyExecute = new();
-            Task.Run(async () => await windyExecute.TryModifyLuacExecutablePath("luac"));
+            windyExecute = WindyLuacManager.Instance;
             _initFinished = true;
         }
 
@@ -115,6 +133,7 @@ namespace csharp_Protoshift.Commands
         {
             savetimer.Dispose();
             SaveChanges();
+            Config.FlushTo("config.json");
         }
 
         private Timer savetimer;
@@ -132,7 +151,7 @@ namespace csharp_Protoshift.Commands
         {
             if (!_initFinished)
             {
-                Log.Info($"Windy luac manager initializing, please wait...", nameof(WindyCommand));
+                _logger.LogInfo($"Windy luac manager initializing, please wait...");
                 int elapsed_ms = 0;
                 while (!_initFinished && elapsed_ms < 10000)
                 {
@@ -141,7 +160,7 @@ namespace csharp_Protoshift.Commands
                 }
                 if (elapsed_ms >= 10000)
                 {
-                    Log.Erro($"Waiting initializaing timeout of 10s, please try again later or restart.", nameof(WindyCommand));
+                    _logger.LogErro($"Waiting initializaing timeout of 10s, please try again later or restart.");
                     return;
                 }
             }
@@ -151,9 +170,10 @@ namespace csharp_Protoshift.Commands
                     async (WindySendConfig o) => await HandleSendAsync(o),
                     async (WindySetEnvConfig o) => await HandleSetEnvAsync(o),
                     async (WindySetLuacConfig o) => await HandleSetLuacAsync(o),
+                    async (WindySetTempPathConfig o) => await HandleSetTempPathAsync(o),
                     error =>
                     {
-                        Log.Erro("Unrecognized command or args detected. Please check your input.", nameof(WindyCommand));
+                        _logger.LogErro("Unrecognized command or args detected. Please check your input.");
                         ShowUsage();
                         return Task.CompletedTask;
                     });
@@ -194,43 +214,17 @@ namespace csharp_Protoshift.Commands
                 _logger.LogErro($"Please provide either .lua or .luac file to send windy! Providing both is not supported.");
                 return;
             }
-#pragma warning disable CS8600 // 将 null 字面量或可能为 null 的值转换为非 null 类型。
-            string filePath = opt.LuaFile ?? opt.ForceCompiled;
-#pragma warning restore CS8600 // 将 null 字面量或可能为 null 的值转换为非 null 类型。
+            string? filePath = opt.LuaFile ?? opt.ForceCompiled;
             bool compiled = opt.ForceCompiled != null;
-            if (File.Exists($"{windyExecute.EnvPath}/{filePath}"))
-            {
-                filePath = $"{windyExecute.EnvPath}/{filePath}";
-            }
-            else if (File.Exists($"{windyExecute.EnvPath}/{filePath}.lua"))
-            {
-                filePath = $"{windyExecute.EnvPath}/{filePath}.lua";
-            }
-            else if (!File.Exists(filePath) && File.Exists($"{filePath}.lua")) filePath += ".lua";
-            else
+            if (!Tools.TryGetFullFilePath(filePath, windyExecute.EnvFullPath, "lua", "luac", out filePath))
             {
                 _logger.LogErro($"File: {filePath} found in neither windy env path nor working directory!");
                 return;
             }
             #endregion
-            byte[] lua_compiled;
-#if !PROXY_ONLY_SERVER
-            NewProtos.WindSeedClientNotify rce_warning = new();
-#else
-            OldProtos.WindSeedClientNotify rce_warning = new();
-#endif
-            if (compiled)
-            {
-                lua_compiled = await File.ReadAllBytesAsync(filePath);
-            }
-            else
-            {
-                lua_compiled = await windyExecute.CompileLua(filePath);
-            }
-            rce_warning.AreaNotify = new();
-            rce_warning.AreaNotify.AreaId = 1;
-            rce_warning.AreaNotify.AreaType = 1;
-            rce_warning.AreaNotify.AreaCode = ByteString.CopyFrom(lua_compiled, 0, lua_compiled.Length);
+            byte[] sendres = compiled
+                ? await windyExecute.GetSendableWindyProtobufFromFile(filePath)
+                : await windyExecute.CompileSendableWindyProtobuf(filePath);
             #region Confirm
             bool permitted = false;
             FileInfo luafileInfo = new(filePath);
@@ -269,7 +263,7 @@ namespace csharp_Protoshift.Commands
             {
                 Program.ProxyServer.SendPacketToClient(specifiedconv,
                     GameSessionDispatch.ConstructPacketSendToClient(
-                        specifiedconv, nameof(NewProtos.WindSeedClientNotify), null, rce_warning.ToByteArray()));
+                        specifiedconv, nameof(NewProtos.WindSeedClientNotify), null, sendres));
                 _logger.LogInfo($"Successfully sent WindSeed: {luafileInfo.Name} to session {specifiedconv}.");
             }
             else
@@ -282,7 +276,7 @@ namespace csharp_Protoshift.Commands
                     {
                         Program.ProxyServer.SendPacketToClient(conv,
                             GameSessionDispatch.ConstructPacketSendToClient(
-                                conv, nameof(NewProtos.WindSeedClientNotify), null, rce_warning.ToByteArray()));
+                                conv, nameof(NewProtos.WindSeedClientNotify), null, sendres));
                         success++;
                     }
                     catch { }
@@ -293,18 +287,38 @@ namespace csharp_Protoshift.Commands
 
         private Task HandleSetEnvAsync(WindySetEnvConfig opt)
         {
-            if (windyExecute.SetEnvPath(opt.DirectoryPath))
-                Log.Info($"Successfully set windy env path to {opt.DirectoryPath}.", nameof(WindyCommand));
-            else Log.Erro($"Failed to set windy env path to {opt.DirectoryPath}.", nameof(WindyCommand));
+            windyExecute.EnvPath = opt.DirectoryPath;
+            _logger.LogInfo($"OK, " +
+                Directory.EnumerateFiles(opt.DirectoryPath, "*.lua", 
+                SearchOption.TopDirectoryOnly).Count() +
+                " lua files detected in the directory. This will be sync to config.json on exit.");
             return Task.CompletedTask;
         }
 
         private async Task HandleSetLuacAsync(WindySetLuacConfig opt)
         {
-            if (await windyExecute.TryModifyLuacExecutablePath(opt.FilePath))
-                Log.Info($"Successfully set luac path to {opt.FilePath}.", nameof(WindyCommand));
-            else Log.Erro($"Failed to set luac path to {opt.FilePath}.", nameof(WindyCommand));
-            return;
+            if (await WindyCompilerManager.TryModifyLuacExecutablePath(
+                opt.FilePath, opt.TargetOS))
+            {
+                _logger.LogInfo($"Successfully modified lua compiler path for {opt.TargetOS}. This will be sync to config.json on exit.");
+            }
+            else
+            {
+                _logger.LogWarn($"lua compiler change failed. Please check the errors and try again.");
+            }
+        }
+
+        private Task HandleSetTempPathAsync(WindySetTempPathConfig opt)
+        {
+            if (windyExecute.SetCompiledTempPath(opt.TempPath))
+            {
+                _logger.LogInfo($"Successfully modified luac temp path, temp files are moved successfully. This will be sync to config.json on exit.");
+            }
+            else
+            {
+                _logger.LogWarn($"lua temp path modification failed. Please check the errors and try again.");
+            }
+            return Task.CompletedTask;
         }
         #endregion
     }

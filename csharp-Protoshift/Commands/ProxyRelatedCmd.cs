@@ -169,7 +169,9 @@ namespace csharp_Protoshift.Commands
             $"   [--server]                   Whether to sent the packet to server. {Environment.NewLine}" +
             $"   -p, --proto <protoname>    The protocol the packet body using. {Environment.NewLine}" +
             $"   [--head <packet_head_hex>]   The packet head protobuf content, using PacketHead.proto. {Environment.NewLine}" +
-            $"   [--body <protobuf_body_hex>] The packet body protobuf content, using protocol specified in --proto. ";
+            $"   [--body <protobuf_body_hex>] The packet body protobuf content, using protocol specified in --proto. {Environment.NewLine}" +
+            $"{Environment.NewLine}" +
+            $"Notice: <color=Yellow>If you're using Windows Terminal, press Ctrl+Alt+V to paste data with multiple lines.</color>";
 
         public override Task HandleAsync(ForceInjectPacketOption opt)
         {
@@ -200,15 +202,11 @@ namespace csharp_Protoshift.Commands
             #endregion
             if (opt.IsClient)
             {
-                var content = GameSessionDispatch.ConstructPacketSendToClient(
-                    conv, protoname, head, body);
-                Program.ProxyServer.SendPacketToClient(conv, content);
+                GameSessionDispatch.InjectPacketToClient(conv, protoname, head, body);
             }
             if (opt.IsServer)
             {
-                var content = GameSessionDispatch.ConstructPacketSendToServer(
-                    conv, protoname, head, body);
-                Program.ProxyServer.SendPacketToServer(conv, content);
+                GameSessionDispatch.InjectPacketToServer(conv, protoname, head, body);
             }
             return Task.CompletedTask;
         }
