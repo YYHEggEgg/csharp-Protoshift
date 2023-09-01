@@ -1,3 +1,5 @@
+using csharp_Protoshift.Commands.Windy;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NJsonSchema;
 using NJsonSchema.Validation;
@@ -8,11 +10,11 @@ namespace csharp_Protoshift.Configuration
     public static class Config
     {
         public static readonly HashSet<string> SupportedVersions = new(new string[]
-            { "1.0.0" });
-        public const string LATEST_CONFIG_VERSION = "1.0.0";
+            { "1.0.0", "1.0.1" });
+        public const string LATEST_CONFIG_VERSION = "1.0.1";
 
-        private static Config_v1_0_0? _globalConfig;
-        public static Config_v1_0_0 Global =>
+        private static Config_v1_0_1? _globalConfig;
+        public static Config_v1_0_1 Global =>
             _globalConfig ?? throw new InvalidOperationException("config.json not loaded.");
         private static JObject? _baseConfigJson;
         public static JObject BaseConfigJson =>
@@ -31,11 +33,11 @@ namespace csharp_Protoshift.Configuration
 
             if (configVersion == LATEST_CONFIG_VERSION)
             {
-                _globalConfig = Config_v1_0_0.Deserialize(json, configVersion);
+                _globalConfig = Config_v1_0_1.Deserialize(json, configVersion);
             }
             else
             {
-                _globalConfig = Config_v1_0_0.ParseOldVersion(json, configVersion);
+                _globalConfig = Config_v1_0_1.ParseOldVersion(json, configVersion);
             }
         }
 
@@ -55,6 +57,78 @@ namespace csharp_Protoshift.Configuration
             schema_cur_version.AllowAdditionalProperties = true;
             var validate_res = schema_cur_version.Validate(_baseConfigJson);
             return validate_res;
+        }
+
+        public static void FlushTo(string configFilePath)
+        {
+            var json = File.ReadAllText(configFilePath);
+            var nowconfjson = JObject.Parse(json);
+            if (_baseConfigJson == null && nowconfjson == null) return;
+            nowconfjson ??= _baseConfigJson;
+#pragma warning disable CS8602 // 解引用可能出现空引用。
+            string? configVersion = (string?)nowconfjson["ConfigVersion"];
+#pragma warning restore CS8602 // 解引用可能出现空引用。
+            var merge_windy_jtoken = nowconfjson["WindyConfig"];
+
+            if (configVersion == null || merge_windy_jtoken == null
+                || !SupportedVersions.Contains(configVersion))
+            {
+                return;
+            }
+
+            var runtime_windy_conf = _globalConfig?.WindyConfig;
+            if (runtime_windy_conf != null)
+            {
+                merge_windy_jtoken[nameof(WindyConfig_v1_0_1.WindyEnvironmentPath)] = runtime_windy_conf.WindyEnvironmentPath;
+                merge_windy_jtoken[nameof(WindyConfig_v1_0_1.WindyCompiledTempPath)] = runtime_windy_conf.WindyCompiledTempPath;
+            }
+
+            #region Merge #/WindyConfig/WindyLuacOverridePaths
+            var override_luacs = merge_windy_jtoken[nameof(WindyConfig_v1_0_1.WindyLuacOverridePaths)];
+            bool luac_hasvalue_any = false;
+            if (override_luacs == null)
+            {
+                override_luacs = new JObject();
+            }
+            if (WindyCompilerManager.GetExecutable(OSType.win32) != WindyCompilerManager.LuaCompilersDefault[OSType.win32]
+                && WindyCompilerManager.GetExecutable(OSType.win32) != null)
+            {
+                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_win32)] = WindyCompilerManager.GetExecutable(OSType.win32);
+                luac_hasvalue_any = true;
+            }
+            if (WindyCompilerManager.GetExecutable(OSType.win64) != WindyCompilerManager.LuaCompilersDefault[OSType.win64]
+                && WindyCompilerManager.GetExecutable(OSType.win64) != null)
+            {
+                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_win64)] = WindyCompilerManager.GetExecutable(OSType.win64);
+                luac_hasvalue_any = true;
+            }
+            if (WindyCompilerManager.GetExecutable(OSType.mac64) != WindyCompilerManager.LuaCompilersDefault[OSType.mac64]
+                && WindyCompilerManager.GetExecutable(OSType.mac64) != null)
+            {
+                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_mac64)] = WindyCompilerManager.GetExecutable(OSType.mac64);
+                luac_hasvalue_any = true;
+            }
+            if (WindyCompilerManager.GetExecutable(OSType.linux32) != WindyCompilerManager.LuaCompilersDefault[OSType.linux32]
+                && WindyCompilerManager.GetExecutable(OSType.linux32) != null)
+            {
+                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_linux32)] = WindyCompilerManager.GetExecutable(OSType.linux32);
+                luac_hasvalue_any = true;
+            }
+            if (WindyCompilerManager.GetExecutable(OSType.linux64) != WindyCompilerManager.LuaCompilersDefault[OSType.linux64]
+                && WindyCompilerManager.GetExecutable(OSType.linux64) != null)
+            {
+                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_linux64)] = WindyCompilerManager.GetExecutable(OSType.linux64);
+                luac_hasvalue_any = true;
+            }
+
+            if (luac_hasvalue_any)
+            {
+                merge_windy_jtoken[nameof(WindyConfig_v1_0_1.WindyLuacOverridePaths)] = override_luacs;
+            }
+            #endregion // Merge #/WindyConfig/WindyLuacOverridePaths
+
+            string outputJson = nowconfjson.ToString(Formatting.Indented);
+            File.WriteAllText(configFilePath, outputJson);
         }
     }
 }

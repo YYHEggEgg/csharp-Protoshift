@@ -5,10 +5,8 @@ using csharp_Protoshift.GameSession;
 using csharp_Protoshift.MhyKCP.Proxy;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
-using NJsonSchema.Validation;
 using OfficeOpenXml;
 using System.Net;
-using System.Net.Sockets;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift
@@ -126,6 +124,7 @@ namespace csharp_Protoshift
                 };
                 _ = Task.Run(() => ProxyServer.StartProxy(handlers));
                 Log.Info($"Protoshift server started on {bindIp}, real server at {remoteIp}.", "Entry");
+                await GameSessionDispatch.ValidateWindyAutoExecute();
                 Log.Info("Ready! Type 'help' to get command help.", "Entry");
             }
 

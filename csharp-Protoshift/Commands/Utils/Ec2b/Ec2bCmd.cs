@@ -11,7 +11,10 @@ namespace csharp_Protoshift.Commands.Utils
         public override string Description => "Make operations on dispatch secret_key/secret_seed.";
 
         public override string Usage => $"ec2b get_key <content_bindata(base64/hex)>{Environment.NewLine}" +
-            EasyInput.MultipleInputNotice;
+            EasyInput.MultipleInputNotice +
+            $"{Environment.NewLine}" +
+            $"{Environment.NewLine}" +
+            $"Notice: <color=Yellow>If you're using Windows Terminal, press Ctrl+Alt+V to paste data with multiple lines.</color>";
 
         public override void CleanUp()
         {
