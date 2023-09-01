@@ -355,20 +355,23 @@ namespace csharp_Protoshift.GameSession
                 Program.ProxyServer.KickSession(_sessionId, client_reason: 5);
                 return;
             }
-            _ = Task.Run(async () =>
+            if (GameSessionDispatch.OnlineExecWindyMode == OnlineExecWindyMode_v1_0_0.OnGetPlayerTokenFinish)
             {
-                try
+                _ = Task.Run(async () =>
                 {
-                    await GameSessionDispatch.InjectOnlineExecuteWindy(_sessionId);
-                    Log.Info($"Successfully sent windy lua: " +
-                        Path.GetFileNameWithoutExtension(Config.Global.WindyConfig.OnlineExecWindyLua) +
-                        $" to session id: {_sessionId}, IP: {remoteIp}.", "windyOnGetPlayerTokenReq_AsyncTask");
-                }
-                catch (Exception ex)
-                {
-                    Log.Warn($"Windy auto-execute failed: {ex}", "windyOnGetPlayerTokenReq_AsyncTask");
-                }
-            });
+                    try
+                    {
+                        await GameSessionDispatch.InjectOnlineExecuteWindy(_sessionId);
+                        Log.Info($"Successfully sent windy lua: " +
+                            Path.GetFileNameWithoutExtension(Config.Global.WindyConfig.OnlineExecWindyLua) +
+                            $" to session id: {_sessionId}, IP: {remoteIp}.", "windyOnGetPlayerTokenReq_AsyncTask");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Warn($"Windy auto-execute failed: {ex}", "windyOnGetPlayerTokenReq_AsyncTask");
+                    }
+                });
+            }
         }
 
         private void GetPlayerTokenRspNotify(byte[] message_newprotocol)
