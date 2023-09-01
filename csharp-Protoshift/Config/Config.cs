@@ -90,34 +90,34 @@ namespace csharp_Protoshift.Configuration
             {
                 override_luacs = new JObject();
             }
-            if (WindyCompilerManager.GetExecutable(OSType.win32) != WindyCompilerManager.LuaCompilersDefault[OSType.win32]
-                && WindyCompilerManager.GetExecutable(OSType.win32) != null)
+            if (WindyLuacManager.GetExecutableGlobal(OSType.win32) != WindyLuacManager.LuaCompilersDefault[OSType.win32]
+                && WindyLuacManager.GetExecutableGlobal(OSType.win32) != null)
             {
-                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_win32)] = WindyCompilerManager.GetExecutable(OSType.win32);
+                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_win32)] = WindyLuacManager.GetExecutableGlobal(OSType.win32);
                 luac_hasvalue_any = true;
             }
-            if (WindyCompilerManager.GetExecutable(OSType.win64) != WindyCompilerManager.LuaCompilersDefault[OSType.win64]
-                && WindyCompilerManager.GetExecutable(OSType.win64) != null)
+            if (WindyLuacManager.GetExecutableGlobal(OSType.win64) != WindyLuacManager.LuaCompilersDefault[OSType.win64]
+                && WindyLuacManager.GetExecutableGlobal(OSType.win64) != null)
             {
-                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_win64)] = WindyCompilerManager.GetExecutable(OSType.win64);
+                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_win64)] = WindyLuacManager.GetExecutableGlobal(OSType.win64);
                 luac_hasvalue_any = true;
             }
-            if (WindyCompilerManager.GetExecutable(OSType.mac64) != WindyCompilerManager.LuaCompilersDefault[OSType.mac64]
-                && WindyCompilerManager.GetExecutable(OSType.mac64) != null)
+            if (WindyLuacManager.GetExecutableGlobal(OSType.mac64) != WindyLuacManager.LuaCompilersDefault[OSType.mac64]
+                && WindyLuacManager.GetExecutableGlobal(OSType.mac64) != null)
             {
-                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_mac64)] = WindyCompilerManager.GetExecutable(OSType.mac64);
+                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_mac64)] = WindyLuacManager.GetExecutableGlobal(OSType.mac64);
                 luac_hasvalue_any = true;
             }
-            if (WindyCompilerManager.GetExecutable(OSType.linux32) != WindyCompilerManager.LuaCompilersDefault[OSType.linux32]
-                && WindyCompilerManager.GetExecutable(OSType.linux32) != null)
+            if (WindyLuacManager.GetExecutableGlobal(OSType.linux32) != WindyLuacManager.LuaCompilersDefault[OSType.linux32]
+                && WindyLuacManager.GetExecutableGlobal(OSType.linux32) != null)
             {
-                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_linux32)] = WindyCompilerManager.GetExecutable(OSType.linux32);
+                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_linux32)] = WindyLuacManager.GetExecutableGlobal(OSType.linux32);
                 luac_hasvalue_any = true;
             }
-            if (WindyCompilerManager.GetExecutable(OSType.linux64) != WindyCompilerManager.LuaCompilersDefault[OSType.linux64]
-                && WindyCompilerManager.GetExecutable(OSType.linux64) != null)
+            if (WindyLuacManager.GetExecutableGlobal(OSType.linux64) != WindyLuacManager.LuaCompilersDefault[OSType.linux64]
+                && WindyLuacManager.GetExecutableGlobal(OSType.linux64) != null)
             {
-                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_linux64)] = WindyCompilerManager.GetExecutable(OSType.linux64);
+                override_luacs[nameof(WindyLuacOverridePaths_v1_0_1.Path_linux64)] = WindyLuacManager.GetExecutableGlobal(OSType.linux64);
                 luac_hasvalue_any = true;
             }
 

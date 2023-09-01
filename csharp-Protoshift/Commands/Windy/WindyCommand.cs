@@ -297,8 +297,7 @@ namespace csharp_Protoshift.Commands
 
         private async Task HandleSetLuacAsync(WindySetLuacConfig opt)
         {
-            if (await WindyCompilerManager.TryModifyLuacExecutablePath(
-                opt.FilePath, opt.TargetOS))
+            if (await windyExecute.TryModifyLuacExecutablePath(opt.FilePath, opt.TargetOS))
             {
                 _logger.LogInfo($"Successfully modified lua compiler path for {opt.TargetOS}. This will be sync to config.json on exit.");
             }
