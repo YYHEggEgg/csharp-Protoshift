@@ -94,7 +94,7 @@ namespace csharp_Protoshift.Commands.Protobuf
             log.LogInfo("\nIf you're using Windows Terminal, press <color=Yellow>Ctrl+Alt+V</color> " +
                 $"to paste any text (especially formatted json data).");
 
-            var raw_text = await ConsoleWrapper.ReadLineAsync();
+            var raw_text = await ConsoleWrapper.ReadLineAsync(false);
             var res = EasyInput.TryPreProcess(raw_text);
             if (res.InputType == EasyInputType.IdentifyFailure)
             {
