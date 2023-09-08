@@ -45,8 +45,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         public CmdIdDataStructure(string oldcmdid_path, string newcmdid_path,
             CollectionResult<MessageResult> messageResults)
         {
-            oldcmdids = ReadCmdIdFromCsv("./resources/protobuf/oldcmdid.csv", ref messages_havecmdid);
-            newcmdids = ReadCmdIdFromCsv("./resources/protobuf/newcmdid.csv", ref messages_havecmdid);
+            oldcmdids = ReadCmdIdFromCsv(oldcmdid_path, ref messages_havecmdid);
+            newcmdids = ReadCmdIdFromCsv(newcmdid_path, ref messages_havecmdid);
             supportedMessages = new(new List<string>(
                 from pair in messageResults.IntersectItems
                 select pair.LeftItem.messageName));
