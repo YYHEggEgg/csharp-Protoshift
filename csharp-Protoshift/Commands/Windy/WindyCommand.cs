@@ -133,7 +133,6 @@ namespace csharp_Protoshift.Commands
         {
             savetimer.Dispose();
             SaveChanges();
-            Config.FlushTo("config.json");
         }
 
         private Timer savetimer;

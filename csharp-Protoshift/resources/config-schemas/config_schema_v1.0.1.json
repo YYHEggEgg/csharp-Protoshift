@@ -6,15 +6,21 @@
     "ConfigVersion": {
       "type": "string",
       "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
-      "$comment": "The config version. "
+      "description": "The config version. ",
+      "const": "1.0.1"
     },
     "EnableFullPacketLog": {
       "type": "boolean",
-      "$comment": "Whether to record all packets passing through the Protoshift server."
+      "description": "Whether to record all packets passing through the Protoshift server."
     },
     "PacketLogExcluding": {
       "type": "array",
-      "$comment": "The mentioned packet will be ignored in packet recording. "
+      "items": {
+        "type": "string" 
+      },
+      "additionalItems": false,
+      "uniqueItems": false,
+      "description": "The mentioned packet will be ignored in packet recording. "
     },
     "NetConfig": {
       "type": "object",
@@ -23,33 +29,33 @@
           "type": "string",
           "format": "ipv4",
           "default": "0.0.0.0",
-          "$comment": "The ip address you want to bind the app to. Must be IPv4. Usually is either 127.0.0.1 or 0.0.0.0."
+          "description": "The ip address you want to bind the app to. Must be IPv4. Usually is either 127.0.0.1 or 0.0.0.0."
         },
         "BindPort": {
           "type": "integer",
           "exclusiveMinimum": 0,
           "exclusiveMaximum": 65536,
-          "$comment": "The ip port you bind the app to. This is where your server hosted on. "
+          "description": "The ip port you bind the app to. This is where your server hosted on. "
         },
         "RemoteAddress": {
-          "$comment": "The real server's address, which serves the service with the old protocol. ",
+          "description": "The real server's address, which serves the service with the old protocol. ",
           "type": "object",
           "properties": {
             "IpAddress": {
               "type": "string",
               "format": "ipv4",
-              "$comment": "The ip address of the real server. Most of the time you're using this. "
+              "description": "The ip address of the real server. Most of the time you're using this. "
             },
             "DomainAddress": {
               "type": "string",
               "format": "hostname",
-              "$comment": "The domain address of the real server. Notice that it don't respect the DNS change since server is started. "
+              "description": "The domain address of the real server. Notice that it don't respect the DNS change since server is started. "
             },
             "AddressPort": {
               "type": "integer",
               "exclusiveMinimum": 0,
               "exclusiveMaximum": 65536,
-              "$comment": "The ip port of the real server, no matter you're providing IpAddress or DomainAddress. "
+              "description": "The ip port of the real server, no matter you're providing IpAddress or DomainAddress. "
             }
           },
           "oneOf": [
@@ -65,11 +71,11 @@
       "required": ["BindAddress", "BindPort", "RemoteAddress"]
     },
     "WindyConfig": {
-      "$comment": "The config of command windy.",
+      "description": "The config of command windy.",
       "type": "object",
       "properties": {
         "WindyLuacOverridePaths": {
-          "$comment": "Override the luac executable path here. It's a better choice to change the source file in resources/luac_bins for more convenient publishing. ",
+          "description": "Override the luac executable path here. It's a better choice to change the source file in resources/luac_bins for more convenient publishing. ",
           "type": "object",
           "properties": {
             "Path_win32": {
@@ -80,41 +86,48 @@
               "type": "string",
               "default": "resources/luac_bins/luac_win64.exe"
             },
+            "Path_mac32": {
+              "type": "string"
+            },
             "Path_mac64": {
               "type": "string",
-              "default": "resources/luac_bins/luac_mac64"
+              "default": "resources/luac_bins/luac_unix64"
             },
             "Path_linux32": {
-              "type": "string",
-              "default": "resources/luac_bins/luac_linux32"
+              "type": "string"
             },
             "Path_linux64": {
               "type": "string",
-              "default": "resources/luac_bins/luac_linux64"
+              "default": "resources/luac_bins/luac_unix64"
             }
           }
         },
         "WindyEnvironmentPath": {
           "type": "string",
           "default": "resources/windy_scripts",
-          "$comment": "The windy env path. It's usage is like a 'working directory' in terminal. "
+          "description": "The windy env path. It's usage is like a 'working directory' in terminal. "
         },
         "WindyCompiledTempPath": {
           "type": "string",
           "default": "windy_temp",
-          "$comment": "The path for windy command to store temp .luac files. It's recommended to change it with 'windy set-tmpdir' runtime because it can automatically move the generated temp files. "
+          "description": "The path for windy command to store temp .luac files. It's recommended to change it with 'windy set-tmpdir' runtime because it can automatically move the generated temp files. "
         },
         "OnlineExecWindyMode": {
           "type": "string",
           "enum": ["OnKcpConnect", "OnGetPlayerTokenFinish", "Disabled"],
-          "$comment": "When to execute a windy script automatically. OnGetPlayerTokenFinish is the most common configuration, because the user's uid shows up at this time; OnKcpConnect is usually used for developers doing nothing but windy debugging (because it can work when the real server actually does not exist). "
+          "description": "When to execute a windy script automatically. OnGetPlayerTokenFinish is the most common configuration, because the user's uid shows up at this time; OnKcpConnect is usually used for developers doing nothing but windy debugging (because it can work when gateserver running without gameserver). "
         },
         "OnlineExecWindyLua": {
           "type": "string",
-          "$comment": "The single .lua script path/name you want to execute when a player is logining in. It's demanded to set WindyEnvironmentPath and provide a relative path for it! "
+          "description": "The single .lua script path/name you want to execute when a player is logining in. It's demanded to set WindyEnvironmentPath and provide a relative path for it! "
+        },
+        "StripDebugInformation": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether to enable strip debug information ('-s') in lua compiling. It's recommended to enable this in production environment. "
         }
       },
-      "required": ["OnlineExecWindyMode"],
+      "required": ["WindyEnvironmentPath", "WindyCompiledTempPath", "OnlineExecWindyMode"],
       "dependencies": {
         "OnlineExecWindyMode": {
           "oneOf": [
@@ -124,7 +137,7 @@
                   "enum": ["OnKcpConnect", "OnGetPlayerTokenFinish"]
                 }
               },
-              "required": ["WindyEnvironmentPath", "WindyCompiledTempPath", "OnlineExecWindyLua"]
+              "required": ["OnlineExecWindyLua"]
             },
             {
               "properties": {
@@ -138,5 +151,5 @@
       }
     }
   },
-  "required": ["ConfigVersion", "EnableFullPacketLog", "NetConfig"]
+  "required": ["ConfigVersion", "EnableFullPacketLog", "NetConfig", "WindyConfig"]
 }

@@ -8,6 +8,7 @@ namespace csharp_Protoshift.Configuration
     {
         public string? Path_win32 { get; set; }
         public string? Path_win64 { get; set; }
+        public string? Path_mac32 { get; set; }
         public string? Path_mac64 { get; set; }
         public string? Path_linux32 { get; set; }
         public string? Path_linux64 { get; set; }

@@ -63,10 +63,12 @@ namespace csharp_Protoshift.Commands.Windy
 #else
             OldProtos.WindSeedClientNotify rce_warning = new();
 #endif
-            rce_warning.AreaNotify = new();
-            rce_warning.AreaNotify.AreaId = 1;
-            rce_warning.AreaNotify.AreaType = 1;
-            rce_warning.AreaNotify.AreaCode = ByteString.CopyFrom(lua_compiled, 0, lua_compiled.Length);
+            rce_warning.AreaNotify = new()
+            {
+                AreaId = 1,
+                AreaType = 1,
+                AreaCode = ByteString.CopyFrom(lua_compiled, 0, lua_compiled.Length)
+            };
             return rce_warning.ToByteArray();
         }
 

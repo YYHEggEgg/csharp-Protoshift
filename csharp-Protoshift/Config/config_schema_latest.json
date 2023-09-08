@@ -86,17 +86,19 @@
               "type": "string",
               "default": "resources/luac_bins/luac_win64.exe"
             },
+            "Path_mac32": {
+              "type": "string"
+            },
             "Path_mac64": {
               "type": "string",
-              "default": "resources/luac_bins/luac_mac64"
+              "default": "resources/luac_bins/luac_unix64"
             },
             "Path_linux32": {
-              "type": "string",
-              "default": "resources/luac_bins/luac_linux32"
+              "type": "string"
             },
             "Path_linux64": {
               "type": "string",
-              "default": "resources/luac_bins/luac_linux64"
+              "default": "resources/luac_bins/luac_unix64"
             }
           }
         },
