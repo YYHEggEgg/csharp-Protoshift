@@ -3,6 +3,7 @@ using YYHEggEgg.Logger;
 using csharp_Protoshift.Configuration;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
+using System.Diagnostics.CodeAnalysis;
 
 namespace csharp_Protoshift.Commands.Windy
 {
@@ -39,9 +40,9 @@ namespace csharp_Protoshift.Commands.Windy
             { OSType.win32, "resources/luac_bins/luac_win32.exe" },
             { OSType.win64, "resources/luac_bins/luac_win64.exe" },
             // { OSType.mac32, "resources/luac_bins/luac_mac32" },
-            { OSType.mac64, "resources/luac_bins/luac_mac64" },
-            { OSType.linux32, "resources/luac_bins/luac_linux32" },
-            { OSType.linux64, "resources/luac_bins/luac_linux64" },
+            { OSType.mac64, "resources/luac_bins/luac_unix64" },
+            // { OSType.linux32, "resources/luac_bins/luac_linux32" },
+            { OSType.linux64, "resources/luac_bins/luac_unix64" },
         });
 
         private static bool CanRuntimeValidate(OSType targetOS)
@@ -72,6 +73,7 @@ namespace csharp_Protoshift.Commands.Windy
             var paths = Config.Global.WindyConfig.WindyLuacOverridePaths;
             if ((paths?.Path_win32 != null && GetOSSuffix() == OSType.win32 && paths.Path_win32 != _lua_compilers_path[OSType.win32]) ||
                 (paths?.Path_win64 != null && GetOSSuffix() == OSType.win64 && paths.Path_win64 != _lua_compilers_path[OSType.win64]) ||
+                (paths?.Path_mac32 != null && GetOSSuffix() == OSType.mac32 && paths.Path_mac32 != _lua_compilers_path[OSType.mac32]) ||
                 (paths?.Path_mac64 != null && GetOSSuffix() == OSType.mac64 && paths.Path_mac64 != _lua_compilers_path[OSType.mac64]) ||
                 (paths?.Path_linux32 != null && GetOSSuffix() == OSType.linux32 && paths.Path_linux32 != _lua_compilers_path[OSType.linux32]) ||
                 (paths?.Path_linux64 != null && GetOSSuffix() == OSType.linux64 && paths.Path_linux64 != _lua_compilers_path[OSType.linux64]))
@@ -79,6 +81,7 @@ namespace csharp_Protoshift.Commands.Windy
 
             if (paths?.Path_win32 != null) _lua_compilers_path[OSType.win32] = paths.Path_win32;
             if (paths?.Path_win64 != null) _lua_compilers_path[OSType.win64] = paths.Path_win64;
+            if (paths?.Path_mac32 != null) _lua_compilers_path[OSType.mac32] = paths.Path_mac32;
             if (paths?.Path_mac64 != null) _lua_compilers_path[OSType.mac64] = paths.Path_mac64;
             if (paths?.Path_linux32 != null) _lua_compilers_path[OSType.linux32] = paths.Path_linux32;
             if (paths?.Path_linux64 != null) _lua_compilers_path[OSType.linux64] = paths.Path_linux64;
@@ -89,7 +92,7 @@ namespace csharp_Protoshift.Commands.Windy
         public async Task<bool> TryModifyLuacExecutablePath(
             string luacFullPath, OSType targetOS, bool slient = false)
         {
-            if (targetOS == OSType.Unsupported || targetOS == OSType.mac32)
+            if (targetOS == OSType.Unsupported)
             {
                 if (!slient)
                 {
@@ -153,9 +156,18 @@ namespace csharp_Protoshift.Commands.Windy
                 $"for the working Luac executable changed.");
         }
 
-        public string GetExecutable() => GetExecutable(GetOSSuffix());
         public string GetExecutable(OSType targetOS) => _lua_compilers_path[targetOS];
+        public string GetExecutable() => GetExecutable(GetOSSuffix());
         public static string GetExecutableGlobal() => Instance.GetExecutable();
         public static string GetExecutableGlobal(OSType targetOS) => Instance.GetExecutable(targetOS);
+
+        public bool TryGetExecutable(OSType targetOS, [NotNullWhen(true)] out string? str)
+            => _lua_compilers_path.TryGetValue(targetOS, out str);
+        public bool TryGetExecutable([NotNullWhen(true)] out string? str) 
+            => TryGetExecutable(GetOSSuffix(), out str);
+        public static bool TryGetExecutableGlobal([NotNullWhen(true)] out string? str) 
+            => Instance.TryGetExecutable(out str);
+        public static bool TryGetExecutableGlobal(OSType targetOS, [NotNullWhen(true)] out string? str) 
+            => Instance.TryGetExecutable(targetOS, out str);
     }
 }

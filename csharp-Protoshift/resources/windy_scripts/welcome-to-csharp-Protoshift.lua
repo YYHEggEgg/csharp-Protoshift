@@ -1,8 +1,8 @@
 local success = true
 
-local LOG_FOLDER = "/data/data/com.miHoYo.GenshinImpact/files" -- Better change yourself
-local LOG_LOG_FILE = LOG_FOLDER .. "/windy_welcome-to-csharp-Protoshift.log"
-local log = io.open(LOG_LOG_FILE, "w")
+-- local LOG_FOLDER = "/data/data/com.miHoYo.GenshinImpact/files" -- Better change yourself
+-- local LOG_LOG_FILE = LOG_FOLDER .. "/windy_welcome-to-csharp-Protoshift.log"
+-- local log = io.open(LOG_LOG_FILE, "w")
 
 local function main()
     local curuid = CS.UnityEngine.GameObject.Find("/BetaWatermarkCanvas(Clone)/Panel/TxtUID"):GetComponent("Text").text
@@ -17,13 +17,14 @@ local function main()
 end
 
 local function on_error(error)
-    log:write("windy failed, error: " .. error .. "\n")
+    -- log:write("windy failed, error: " .. error .. "\n")
+    CS.UnityEngine.GameObject.Find("/BetaWatermarkCanvas(Clone)/Panel/TxtUID"):GetComponent("Text").text = "<color=#ff4500>Oh no error! - windy</color>"
     success = false
 end
 
 xpcall(main, on_error)
 if success then
-    log:write("windy success")
+    -- log:write("windy success")
 end
 
-log:close()
+-- log:close()
