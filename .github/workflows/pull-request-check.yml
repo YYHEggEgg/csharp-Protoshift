@@ -3,11 +3,13 @@ name: Normal Build
 on:
   push:
     branches:
+      - protoshift-ex-config-json-read
       - protoshift-ex-hotpatch-support
   pull_request:
     branches:
       - main
       - protoshift-ex
+      - protoshift-ex-config-json-read
       - protoshift-ex-hotpatch-support
 
 jobs:
@@ -28,6 +30,9 @@ jobs:
 
     - name: Setup protoc
       run: cp bin/protoc HandlerGenerator/protoc ; chmod +x HandlerGenerator/protoc
+
+    - name: Setup nuget Integration Source
+      run: dotnet nuget add source https://apiint.nugettest.org/v3/index.json -n "nuget.org (Integration)"
 
     - name: Restore Generator NuGet packages
       run: dotnet restore HandlerGenerator/HandlerGenerator.csproj
