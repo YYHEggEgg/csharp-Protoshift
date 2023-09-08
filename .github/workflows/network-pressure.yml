@@ -27,12 +27,7 @@ jobs:
       run: |
         dotnet nuget add source https://apiint.nugettest.org/v3/index.json -n "nuget.org (Integration)"
         dotnet restore KcpTests/KcpPerformanceTest/KcpPerformanceTest.csproj
-      
-    - name: Restore NuGet packages
-      run: |
-        dotnet nuget add source https://apiint.nugettest.org/v3/index.json -n "nuget.org (Integration)"
-        dotnet restore KcpTests/KcpPerformanceTest/KcpPerformanceTest.csproj
-
+     
     - name: Run tests
       run: cd KcpTests/KcpPerformanceTest ; dotnet run --configuration Release -- --packet-size 3500 --packet-repeat-time 5000 --packet-interval 50 --github-actions --clients-count 10
 
