@@ -1,4 +1,5 @@
 ﻿using csharp_Protoshift.Commands.Utils;
+using csharp_Protoshift.Commands.Protobuf;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
@@ -13,6 +14,7 @@ namespace csharp_Protoshift.Commands
             handlers.Add(new Ec2bCmd());
             handlers.Add(new ConvertCmd());
             handlers.Add(new MT19937Cmd());
+            handlers.Add(new ProtobufCmd());
         }
 
         public override string CommandName => "util";

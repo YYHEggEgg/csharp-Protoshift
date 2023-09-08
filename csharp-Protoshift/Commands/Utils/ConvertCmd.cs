@@ -23,16 +23,14 @@ namespace csharp_Protoshift.Commands.Utils
             switch (res.InputType)
             {
                 case EasyInputType.Base64:
-                    bytes = EasyInput.ToByteArray(res);
+                    bytes = res.ToByteArray();
                     Log.Info($"Converted to HEX format, handled {bytes.Length} bytes.", nameof(ConvertCmd));
-                    await ClipboardService.SetTextAsync(Convert.ToHexString(bytes));
-                    Log.Info("Result copied to clipboard!", nameof(ConvertCmd));
+                    await Tools.SetClipBoardAsync(Convert.ToHexString(bytes));
                     break;
                 case EasyInputType.Hex:
-                    bytes = EasyInput.ToByteArray(res);
+                    bytes = res.ToByteArray();
                     Log.Info($"Converted to Base64 format, handled {bytes.Length} bytes.", nameof(ConvertCmd));
-                    await ClipboardService.SetTextAsync(Convert.ToBase64String(bytes));
-                    Log.Info("Result copied to clipboard!", nameof(ConvertCmd));
+                    await Tools.SetClipBoardAsync(Convert.ToBase64String(bytes));
                     break;
                 default:
                     Log.Erro($"Input type is not supported!", nameof(ConvertCmd));
