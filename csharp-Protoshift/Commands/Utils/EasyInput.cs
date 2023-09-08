@@ -116,12 +116,12 @@ namespace csharp_Protoshift
                 throw new ArgumentException("Using an instance that failed to process.", nameof(preprocessed));
             switch (preprocessed.InputType)
             {
-                case EasyInputType.Json:
-                    return Encoding.UTF8.GetBytes(preprocessed.ProcessedString);
                 case EasyInputType.Base64:
                     return Convert.FromBase64String(preprocessed.ProcessedString);
                 case EasyInputType.Hex:
                     return Convert.FromHexString(preprocessed.ProcessedString);
+                case EasyInputType.Json:
+                    throw new InvalidOperationException("Input requires bytes and JSON is not supposed to appear here.");
                 case EasyInputType.IdentifyFailure:
                     throw new ArgumentException("Can't identify the input type.", nameof(preprocessed));
                 default:

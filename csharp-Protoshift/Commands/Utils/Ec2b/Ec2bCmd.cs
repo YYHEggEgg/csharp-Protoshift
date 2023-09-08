@@ -39,10 +39,9 @@ namespace csharp_Protoshift.Commands.Utils
                         Log.Erro($"The input type isn't supported!", nameof(Ec2bCmd));
                         return;
                     }
-                    var hexkey = Convert.ToHexString(Ec2b.Decrypt(EasyInput.ToByteArray(read)));
+                    var hexkey = Convert.ToHexString(Ec2b.Decrypt(read.ToByteArray()));
                     Log.Info(hexkey, nameof(Ec2bCmd));
-                    await ClipboardService.SetTextAsync(hexkey);
-                    Log.Info("Result copied to clipboard!", nameof(Ec2bCmd));
+                    await Tools.SetClipBoardAsync(hexkey);
                     break;
                 default:
                     Log.Erro($"Usage: {Usage}", nameof(Ec2bCmd));
