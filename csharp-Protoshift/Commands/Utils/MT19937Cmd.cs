@@ -17,7 +17,9 @@ namespace csharp_Protoshift.Commands
         public override string Usage => $"mt19937 [options] [params]{Environment.NewLine}" +
             $"mt19937 <ulong_seed>{Environment.NewLine}" +
             $"mt19937 --hex <ulong_seed_hex>{Environment.NewLine}" +
-            $"mt19937 --rsa <RSA_Encrypted_clientRandKey_base64/hex> <RSA_Encrypted_serverRandKey_base64/hex> <key_id>";
+            $"mt19937 --rsa <RSA_Encrypted_clientRandKey_base64/hex> <RSA_Encrypted_serverRandKey_base64/hex> <key_id> {Environment.NewLine}" +
+            $"{Environment.NewLine}" +
+            $"Notice: <color=Yellow>If you're using Windows Terminal, press Ctrl+Alt+V to paste data with multiple lines.</color>";
 
         public override async Task HandleAsync(string argList)
         {

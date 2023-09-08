@@ -1,6 +1,6 @@
 从 [KumoKyaku/KCP](https://github.com/KumoKyaku/KCP) fork 而来。
 
-Commit: [2023 Jan 12, 3a2d660](https://github.com/KumoKyaku/KCP/commit/3a2d660be8c737e23fe19cea078a6b694bf6ef50)
+Commit: [b478eed on master (Jul 12, 2023, 8:59 AM GMT+8)](https://github.com/KumoKyaku/KCP/commit/b478eed599b09481f5030dd3ba1c6c5fa3058a7a)
 
 该存储库使用 MIT 许可证。
 

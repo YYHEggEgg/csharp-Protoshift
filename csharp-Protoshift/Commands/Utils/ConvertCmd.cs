@@ -10,7 +10,10 @@ namespace csharp_Protoshift.Commands.Utils
         public override string Description => "Automatically convert data between base64 and HEX format.";
 
         public override string Usage => $"convert <base64_data/hex_data>{Environment.NewLine}" +
-            EasyInput.MultipleInputNotice;
+            EasyInput.MultipleInputNotice +
+            $"{Environment.NewLine}" +
+            $"{Environment.NewLine}" +
+            $"Notice: <color=Yellow>If you're using Windows Terminal, press Ctrl+Alt+V to paste data with multiple lines.</color>";
 
         public override async Task HandleAsync(string argList)
         {
