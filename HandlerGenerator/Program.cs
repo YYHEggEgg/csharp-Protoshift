@@ -5,6 +5,9 @@ using System.Diagnostics;
 using System.Text;
 using YYHEggEgg.Logger;
 
+string res_dir = StartupWorkingDirChanger.Required_directory
+    ?? throw new InvalidOperationException("Please give a correct res dir in code.");
+
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Protoshift Ex v1");
 StartupWorkingDirChanger.ChangeToDotNetRunPath(new LoggerConfig(
@@ -58,7 +61,7 @@ if (!passcheck)
     Console.ReadLine();
     Environment.Exit(272574);
 }
-ResourcesLoader.CheckForRequiredResources();
+ResourcesLoader.CheckForRequiredResources(res_dir);
 Directory.CreateDirectory("./../OldProtoHandlers/Backup");
 Directory.CreateDirectory("./../NewProtoHandlers/Backup");
 Directory.CreateDirectory("./../ProtoshiftHandlers/ProtoDispatch/Backup");
@@ -609,8 +612,8 @@ foreach (var ignore in handlerignores)
 #endregion
 Log.Info("Conguratulations! Protoshift handlers generated successfully.");
 Log.Info("Now generating CmdId related and ProtoshiftDispatch...");
-CmdIdDataStructure cmdData = new("./resources/protobuf/oldcmdid.csv",
-    "./resources/protobuf/newcmdid.csv", messageResults);
+CmdIdDataStructure cmdData = new($"{res_dir}/protobuf/oldcmdid.csv",
+    $"{res_dir}/protobuf/newcmdid.csv", messageResults);
 
 AppDomain.CurrentDomain.ProcessExit += RecoverBackup;
 #region Generate CmdId related

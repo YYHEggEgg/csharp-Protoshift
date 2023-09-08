@@ -5,7 +5,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
     internal static class StartupWorkingDirChanger
     {
         public const string? Required_file = "./HandlerGenerator.csproj";
-        public const string? Required_directory = "./resources";
+        public const string? Required_directory = "./../csharp-Protoshift/resources";
 
         public const string Terminating_Note = "Can't find source code path. Please run this program with dotnet run. \n" +
             "***********WARNING**********\n" +

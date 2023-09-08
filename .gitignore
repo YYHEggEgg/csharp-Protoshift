@@ -2,9 +2,23 @@
 # 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
 ################################################################################
 
+# Main Protoshift
+/csharp-Protoshift/bin
 /csharp-Protoshift/obj
-/.vs
-/YSFreedomServer-v2
+/csharp-Protoshift/logs
+/csharp-Protoshift/Properties
+/csharp-Protoshift/windy_temp
+/csharp-Protoshift/config.json
+/csharp-Protoshift/protoshift_hotpatch_config.json
+/csharp-Protoshift/skillissue_fix_config.json
+/csharp-Protoshift/windy_config.json
+
+# Replay Debugger
+/csharp-Protoshift-Replay/bin
+/csharp-Protoshift-Replay/obj
+/csharp-Protoshift-Replay/logs
+
+# Protos
 /NewProtoHandlers/bin
 /NewProtoHandlers/obj
 /NewProtoHandlers/Backup
@@ -13,50 +27,57 @@
 /OldProtoHandlers/obj
 /OldProtoHandlers/Backup
 /OldProtoHandlers/AskCmdId.cs
-/csharp-Protoshift/bin/Release/net6.0/logs
-/csharp-Protoshift/bin/Debug/net6.0/logs
-/csharp-Protoshift/bin/Debug/net6.0/Temp
-/XC.RSAUtil/bin
-/XC.RSAUtil/obj
-/csharp-Protoshift/bin
-/CSharp-Logger/bin
-/CSharp-Logger/obj
-/.config
+/OldProtoHandlers/Google.Protobuf.3.4
+
+# protoshift-ex Handlers & Generator
+/ProtoshiftHandlers/bin
+/ProtoshiftHandlers/obj
+/ProtoshiftHandlers/Generated
+/ProtoshiftHandlers/ProtoDispatch/Backup
+/HandlerGenerator/.vscode
 /HandlerGenerator/bin
 /HandlerGenerator/obj
 /HandlerGenerator/logs
 /HandlerGenerator/proto2json/proto2json_output
-/ProtoshiftHandlers/bin
-/ProtoshiftHandlers/obj
-/.vscode
 /HandlerGenerator/Proto2json_Output
-/HandlerGenerator/.vscode
-/KCP
-/KcpCsharpTest
-/KcpTests
-/csharp-Protoshift/logs
-/csharp-Protoshift/skillissue_fix_config.json
-/KcpTestClient
-/KcpTestServer
 /HandlerGenerator/ProtoFieldNameAnalyze/Compiled
 /HandlerGenerator/ProtoFieldNameAnalyze/GeneratedProtos
 /HandlerGenerator/last_build_record.json
-/ProtoshiftHandlers/Generated
-/ProtoshiftHandlers/ProtoDispatch/Backup
-/NewProtoHandlers/AskCmdId.cs
-/OldProtoHandlers/AskCmdId.cs
-/NewProtoHandlers/Backup
-/OldProtoHandlers/Backup
+
+# Benchmark
 /ProtoshiftBenchmark/bin
-/ProtoshiftBenchmark/obj
 /ProtoshiftBenchmark/BenchmarkDotNet.Artifacts
-/ProtoshiftBenchmark/logs
+/ProtoshiftBenchmark/obj
 /ProtoshiftBenchmark/output_benchmark
-/csharp-Protoshift-Replay/bin
-/csharp-Protoshift-Replay/obj
-/csharp-Protoshift-Replay/logs
-/OldProtoHandlers/Google.Protobuf.3.4
-/csharp-Protoshift/windy_config.json
+/ProtoshiftBenchmark/logs
+/ProtoshiftBenchmark/Properties
+
+# Other Projects
+/XC.RSAUtil/bin
+/CSharp-Logger/bin
+/CSharp-Logger/obj
+/XC.RSAUtil/obj
+
+# Kcp Implement
+/KCP/Image
+/KCP/KcpDemo
+/KCP/TestClient
+/KCP/TestServer
+/KCP/UnitTestProject1
+/KCP/UnityIL2CPPTest
+/KCP/ChangeLog.md
+/KCP/KCP.sln
+/KCP/OpenSource.snk
+
+# Kcp Tests Projects
+/KcpCsharpTest
+/KcpTests
+/KcpTestClient
+/KcpTestServer
+
+# etc
+/.config
+/.vs
+/.vscode
 /Builds
-/csharp-Protoshift/config.json
-/csharp-Protoshift/windy_temp
+/YSFreedomServer-v2
