@@ -18,9 +18,8 @@
     "WindyLuacOverridePaths": {
       "Path_win32": "resources/luac_bins/luac_win32.exe",
       "Path_win64": "resources/luac_bins/luac_win64.exe",
-      "Path_mac64": "resources/luac_bins/luac_mac64",
-      "Path_linux32": "resources/luac_bins/luac_linux32",
-      "Path_linux64": "resources/luac_bins/luac_linux64"
+      "Path_mac64": "resources/luac_bins/luac_unix64",
+      "Path_linux64": "resources/luac_bins/luac_unix64"
     },
     "WindyEnvironmentPath": "resources/windy_scripts",
     "WindyCompiledTempPath": "windy_temp",
