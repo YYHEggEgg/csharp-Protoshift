@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/YYHEggEgg/csharp-Protoshift/releases/download/v1.0.0/config_schema_latest.json",
+  "type": "object",
+  "properties": {
+    "ConfigVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "EnableFullPacketLog": {
+      "type": "boolean"
+    },
+    "NetConfig": {
+      "type": "object",
+      "properties": {
+        "BindAddress": {
+          "type": "string",
+          "format": "ipv4"
+        },
+        "BindPort": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 65536
+        },
+        "RemoteAddress": {
+          "type": "object",
+          "properties": {
+            "IpAddress": {
+              "type": "string",
+              "format": "ipv4"
+            },
+            "DomainAddress": {
+              "type": "string",
+              "format": "hostname"
+            },
+            "AddressPort": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "exclusiveMaximum": 65536
+            }
+          },
+          "oneOf": [
+            {
+              "required": ["IpAddress", "AddressPort"]
+            },
+            {
+              "required": ["DomainAddress", "AddressPort"]
+            }
+          ]
+        }
+      },
+      "required": ["BindAddress", "BindPort", "RemoteAddress"]
+    },
+    "WindyConfig": {
+      "type": "object",
+      "properties": {
+        "WindyLuacPath": {
+          "type": "string"
+        },
+        "WindyEnvironmentPath": {
+          "type": "string"
+        },
+        "WindyCompiledTempPath": {
+          "type": "string"
+        },
+        "OnlineExecWindyMode": {
+          "type": "string",
+          "enum": ["OnKcpConnect", "OnGetPlayerTokenFinish", "Disabled"]
+        },
+        "OnlineExecWindyLua": {
+          "type": "string"
+        }
+      },
+      "required": ["OnlineExecWindyMode"],
+      "dependencies": {
+        "OnlineExecWindyMode": {
+          "oneOf": [
+            {
+              "properties": {
+                "OnlineExecWindyMode": {
+                  "enum": ["OnKcpConnect", "OnGetPlayerTokenFinish"]
+                }
+              },
+              "required": ["WindyLuacPath", "WindyEnvironmentPath", "WindyCompiledTempPath", "OnlineExecWindyLua"]
+            },
+            {
+              "properties": {
+                "OnlineExecWindyMode": {
+                  "const": "Disabled"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "required": ["ConfigVersion", "EnableFullPacketLog", "NetConfig"]
+}

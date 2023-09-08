@@ -14,7 +14,9 @@ namespace csharp_Protoshift.Commands.Utils
         public override string Description => "Decrypt query_cur_region content and verify it (to ensure it avaliable in anime game).";
 
         public override string Usage => $"dcurr <key_id> <curr_json>{Environment.NewLine}" +
-            $"Decrypt and verify query_cur_region content, by the key from resources.";
+            $"Decrypt and verify query_cur_region content, by the key from resources. {Environment.NewLine}" +
+            $"{Environment.NewLine}" +
+            $"Notice: <color=Yellow>If you're using Windows Terminal, press Ctrl+Alt+V to paste data with multiple lines (especially json data).</color>";
 
         public override async Task HandleAsync(string argList)
         {

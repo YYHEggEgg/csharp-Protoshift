@@ -1,8 +1,9 @@
 ﻿#if PROXY_ONLY_SERVER
-
+using csharp_Protoshift.Commands.Windy;
+using csharp_Protoshift.Configuration;
 using System.Collections.Concurrent;
-using YYHEggEgg.Logger;
 using System.Net;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.GameSession
 {
@@ -15,6 +16,9 @@ namespace csharp_Protoshift.GameSession
         public static ConcurrentBag<uint> cancelledSessions = new();
         public static bool Closed { get; private set; }
 
+        internal static OnlineExecWindyMode_v1_0_0 OnlineExecWindyMode = Config.Global.WindyConfig.OnlineExecWindyMode;
+        private static string? onlineExecWindyLua = Config.Global.WindyConfig.OnlineExecWindyLua;
+
         #region Packet Handlers
         public static void SessionCreated(uint conv, IPEndPoint ipEp)
         {
@@ -26,6 +30,23 @@ namespace csharp_Protoshift.GameSession
                     session.remoteIp = ipEp;
                 }
                 else sessions[conv].remoteIp = ipEp;
+            }
+            if (OnlineExecWindyMode == OnlineExecWindyMode_v1_0_0.OnKcpConnect
+                && onlineExecWindyLua != null)
+            {
+                _ = Task.Run(async () =>
+                {
+                    try
+                    {
+                        await InjectOnlineExecuteWindy(conv);
+                        Log.Info($"Successfully sent windy lua: {Path.GetFileNameWithoutExtension(onlineExecWindyLua)}" +
+                            $"to session id: {conv}, IP: {ipEp}.", "windyOnKcpConnect_AsyncTask");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Warn($"Windy auto-execute failed: {ex}", "windyOnKcpConnect_AsyncTask");
+                    }
+                });
             }
         }
 
@@ -90,7 +111,9 @@ namespace csharp_Protoshift.GameSession
             AssertSessionExists(conv);
             return sessions[conv].OrderedPacket(data, false);
         }
+        #endregion
 
+        #region Inject Packet utils
         public static byte[] ConstructPacketSendToServer(uint conv, string protoname, byte[]? packetHead, byte[] packetBody)
         {
             AssertSessionExists(conv);
@@ -102,28 +125,50 @@ namespace csharp_Protoshift.GameSession
             AssertSessionExists(conv);
             return sessions[conv].ConstructPacket(true, protoname, packetHead, packetBody);
         }
+
+        public static void InjectPacketToClient(uint conv, string protoname, byte[]? packetHead, byte[] packetBody)
+        {
+            var content = ConstructPacketSendToClient(conv, protoname, packetHead, packetBody);
+            Program.ProxyServer.SendPacketToClient(conv, content);
+        }
+
+        public static void InjectPacketToServer(uint conv, string protoname, byte[]? packetHead, byte[] packetBody)
+        {
+            var content = ConstructPacketSendToServer(conv, protoname, packetHead, packetBody);
+            Program.ProxyServer.SendPacketToServer(conv, content);
+        }
+
+        public static async Task InjectOnlineExecuteWindy(uint conv)
+        {
+            if (onlineExecWindyLua == null) return;
+            InjectPacketToClient(conv, nameof(OldProtos.WindSeedClientNotify), null,
+                await WindyLuacManager.Instance.CompileSendableWindyProtobuf(onlineExecWindyLua));
+        }
         #endregion
 
         #region Packet Record Saver
-#if RECORD_ALL_PKTS_FOR_REPLAY && !PROTOSHIFT_BENCHMARK
-        internal static BaseLogger PacketLogger;
+#if !PROTOSHIFT_BENCHMARK
+        internal static BaseLogger? PacketLogger;
         static GameSessionDispatch()
         {
-            PacketLogger = new BaseLogger(new LoggerConfig(
-                max_Output_Char_Count: 16 * 1024,
-                use_Console_Wrapper: true,
-                use_Working_Directory: true,
-                global_Minimum_LogLevel: LogLevel.Information,
-                console_Minimum_LogLevel: LogLevel.None,
-                debug_LogWriter_AutoFlush: false,
-                enable_Detailed_Time: true), new LogFileConfig
-                {
-                    AutoFlushWriter = true,
-                    IsPipeSeparatedFile = true,
-                    MaximumLogLevel = LogLevel.Information,
-                    MinimumLogLevel = LogLevel.Information,
-                    FileIdentifier = "packet"
-                });
+            if (Config.Global.EnableFullPacketLog)
+            {
+                PacketLogger = new BaseLogger(new LoggerConfig(
+                    max_Output_Char_Count: 16 * 1024,
+                    use_Console_Wrapper: true,
+                    use_Working_Directory: true,
+                    global_Minimum_LogLevel: LogLevel.Information,
+                    console_Minimum_LogLevel: LogLevel.None,
+                    debug_LogWriter_AutoFlush: false,
+                    enable_Detailed_Time: true), new LogFileConfig
+                    {
+                        AutoFlushWriter = true,
+                        IsPipeSeparatedFile = true,
+                        MaximumLogLevel = LogLevel.Information,
+                        MinimumLogLevel = LogLevel.Information,
+                        FileIdentifier = "packet"
+                    });
+            }
         }
 #endif
 
@@ -173,6 +218,23 @@ namespace csharp_Protoshift.GameSession
                 if (!cancelledSessions.Contains(conv))
                     sessions.TryAdd(conv, new(conv));
                 else throw new OperationCanceledException($"Session {conv} has been destroyed and no longer avaliable.");
+            }
+        }
+
+        public static async Task ValidateWindyAutoExecute()
+        {
+            if (OnlineExecWindyMode == OnlineExecWindyMode_v1_0_0.None || onlineExecWindyLua == null
+                || OnlineExecWindyMode == OnlineExecWindyMode_v1_0_0.Disabled)
+                return;
+            try
+            {
+                await WindyLuacManager.Instance.CompileSendableWindyProtobuf(onlineExecWindyLua);
+            }
+            catch (Exception ex)
+            {
+                Log.Warn($"Windy auto-execute pre-validation failed: {ex}", nameof(ValidateWindyAutoExecute));
+                Log.Warn($"Please check whether your configuration of WindyConfig is valid " +
+                    $"and your windy script obeys BASIC lua grammar.", nameof(ValidateWindyAutoExecute));
             }
         }
     }

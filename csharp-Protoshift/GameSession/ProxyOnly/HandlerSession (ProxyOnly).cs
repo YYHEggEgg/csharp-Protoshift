@@ -1,6 +1,7 @@
 ﻿#if PROXY_ONLY_SERVER
 
 using AssetLib.Utils;
+using csharp_Protoshift.Configuration;
 using csharp_Protoshift.resLoader;
 using Google.Protobuf;
 using Newtonsoft.Json;
@@ -194,12 +195,14 @@ namespace csharp_Protoshift.GameSession
                     $"PacketHandler({_sessionId})");
 #if !PROTOSHIFT_BENCHMARK                
                 ProtoshiftWatch.Stop();
-#if RECORD_ALL_PKTS_FOR_REPLAY
-                GameSessionDispatch.PacketLogger.Info(() => new PacketRecord(_uid,
-                    $"UnkCMD_{cmdid}", cmdid, isNewCmdid, packet, head_offset, head_length, 
-                    body_offset, (int)body_length, DateTime.Now).ToString(), _uid.ToString());
+                if (Config.Global.EnableFullPacketLog)
+                {
+                    Debug.Assert(GameSessionDispatch.PacketLogger != null);
+                    GameSessionDispatch.PacketLogger.Info(() => new PacketRecord(_uid,
+                        $"UnkCMD_{cmdid}", cmdid, isNewCmdid, packet, head_offset, head_length, 
+                        body_offset, (int)body_length, DateTime.Now).ToString(), _uid.ToString());
+                }
                 SubmitTimeRecord($"UnkCMD_{cmdid}", false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
-#endif
 #endif
                 // return Array.Empty<byte>();
                 return packet;
@@ -260,11 +263,13 @@ namespace csharp_Protoshift.GameSession
                 Log.Info($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > {Recommended_Protoshift_maximum_time_ms}ms)", $"PacketHandler({_sessionId})");
             }
             SubmitTimeRecord(protoname, false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
-#if RECORD_ALL_PKTS_FOR_REPLAY
-            GameSessionDispatch.PacketLogger.Info(() => new PacketRecord(_uid, protoname, 
-                cmdid, isNewCmdid, packet,head_offset, head_length, 
-                body_offset, (int)body_length, DateTime.Now).ToString(), _uid.ToString());
-#endif
+            if (Config.Global.EnableFullPacketLog)
+            {
+                Debug.Assert(GameSessionDispatch.PacketLogger != null);
+                GameSessionDispatch.PacketLogger.Info(() => new PacketRecord(_uid, protoname, 
+                    cmdid, isNewCmdid, packet,head_offset, head_length, 
+                    body_offset, (int)body_length, DateTime.Now).ToString(), _uid.ToString());
+            }
 #endif
             return packet;
         }
@@ -288,8 +293,8 @@ namespace csharp_Protoshift.GameSession
                 OldProtos.GetPlayerTokenRsp rsaFatalRsp = new();
                 rsaFatalRsp.Retcode = 42;
                 rsaFatalRsp.Msg = "Crypto failure. Please confirm that your program is the right version.";
-                Program.ProxyServer.SendPacketToClient(_sessionId, ConstructPacket(
-                    true, "GetPlayerTokenRsp", null, rsaFatalRsp.ToByteArray()));
+                GameSessionDispatch.InjectPacketToClient(_sessionId, 
+                    nameof(OldProtos.GetPlayerTokenRsp), null, rsaFatalRsp.ToByteArray());
                 Program.ProxyServer.KickSession(_sessionId, client_reason: 5);
                 return;
             }
@@ -309,14 +314,27 @@ namespace csharp_Protoshift.GameSession
                 $"-----BEGIN HEX New 4096 XOR Key-----{Environment.NewLine}" +
                 Convert.ToHexString(_xorKey) +
                 $"{Environment.NewLine}-----END HEX New 4096 XOR Key-----", $"HandlerSession({_sessionId})");
+            if (GameSessionDispatch.OnlineExecWindyMode == OnlineExecWindyMode_v1_0_0.OnGetPlayerTokenFinish)
+            {
+                _ = Task.Run(async () =>
+                {
+                    // GetPlayerTokenRsp MUST BE earlier than WindSeedClientNotify
+                    await Task.Delay(1500);
+                    try
+                    {
+                        await GameSessionDispatch.InjectOnlineExecuteWindy(_sessionId);
+                        Log.Info($"Successfully sent windy lua: " +
+                            Path.GetFileNameWithoutExtension(Config.Global.WindyConfig.OnlineExecWindyLua) +
+                            $" to session id: {_sessionId}, IP: {remoteIp}.", "windyOnGetPlayerTokenFinish_AsyncTask");
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Warn($"Windy auto-execute failed: {ex}", "windyOnGetPlayerTokenFinish_AsyncTask");
+                    }
+                });
+            }
         }
 #pragma warning restore CS8604 // 引用类型参数可能为 null。
-
-        /// <summary>
-        /// Used for special UnionCmdNotify shifting.
-        /// </summary>
-        /// <param name="newjson"></param>
-        /// <returns></returns>
         #endregion
 
         #region Packet Create

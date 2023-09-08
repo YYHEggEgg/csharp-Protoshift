@@ -1,4 +1,5 @@
 ﻿using AssetLib.Formats;
+using csharp_Protoshift.Configuration;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.resLoader
@@ -17,49 +18,40 @@ namespace csharp_Protoshift.resLoader
             "        /ServerPri -- Server Private Keys, SPri\n" +
             "            /2-pri.pem, ..., 5-pri.pem -- PEM format RSA keys with key_id\n" +
             "    /protobuf\n" +
-            "        /newcmdid.csv -- New Protos CmdIds" +
-            "        /oldcmdid.csv -- Old Protos CmdIds";
+            "        /newcmdid.csv -- New Protos CmdIds\n" +
+            "        /oldcmdid.csv -- Old Protos CmdIds\n" +
+            "    /config-schemas\n" +
+            "        /config_schema_{version}.json -- schema json, DO NOT delete\n" +
+            "    /luac_bins -- windy compilers, DO NOT delete";
 
+        private static LoggerChannel? _checklogger = null;
+
+        #region Check
         /// <summary>
         /// Check for resources, if not complete then exit with code 114514.
         /// </summary>
-        public static void CheckForRequiredResources()
+        public static void CheckForRequiredResources(string resPath = "./resources")
         {
+            _checklogger = Log.GetChannel("ResourcesCheck");
             bool passcheck = true;
             // Resources
-            if (!Directory.Exists("resources"))
+            if (!Directory.Exists(resPath))
             {
-                Log.Erro("resources dir missing! Please copy it from \"/resources\"!", "ResourcesCheck");
-                Log.Info(StructureDescription, "ResourcesCheck");
+                _checklogger.LogErro("resources dir missing! Please copy it from \"/resources\"!");
+                _checklogger.LogInfo(StructureDescription);
                 passcheck = false;
             }
             else
             {
                 bool resourcesComplete = true;
-                if (!File.Exists("resources/protobuf/newcmdid.csv"))
+                CheckFileResource("protobuf/newcmdid.csv", resPath, ref resourcesComplete);
+                CheckFileResource("protobuf/oldcmdid.csv", resPath, ref resourcesComplete);
+                CheckFileResource("xor/dispatchKey.bin", resPath, ref resourcesComplete);
+                CheckDirectoryResource("rsakeys/ClientPri", resPath, ref resourcesComplete);
+                CheckDirectoryResource("rsakeys/ServerPri", resPath, ref resourcesComplete, 
+                    continueOnFailure: () =>
                 {
-                    Log.Erro("/resources/protobuf/newcmdid.csv not found!", "ResourcesCheck");
-                    resourcesComplete = false;
-                }
-                if (!File.Exists("resources/protobuf/oldcmdid.csv"))
-                {
-                    Log.Erro("/resources/protobuf/oldcmdid.csv not found!", "ResourcesCheck");
-                    resourcesComplete = false;
-                }
-                if (!File.Exists("resources/xor/dispatchKey.bin"))
-                {
-                    Log.Erro("/resources/xor/dispatchKey.bin not found!", "ResourcesCheck");
-                    resourcesComplete = false;
-                }
-                if (!Directory.Exists("resources/rsakeys/ClientPri"))
-                {
-                    Log.Erro("/resources/rsakeys/ClientPri not found!", "ResourcesCheck");
-                    resourcesComplete = false;
-                }
-                if (!Directory.Exists("resources/rsakeys/ServerPri"))
-                {
-                    Log.Erro("/resources/rsakeys/ServerPri not found!", "ResourcesCheck");
-                    DirectoryInfo serverpubdir = new("resources/rsakeys/ServerPub");
+                    DirectoryInfo serverpubdir = new("rsakeys/ServerPub");
                     if (serverpubdir.Exists && serverpubdir.EnumerateFiles().Any())
                     {
                         Log.Warn("Detected /resources/rsakeys/ServerPub keys given. ServerPub keys " +
@@ -67,32 +59,70 @@ namespace csharp_Protoshift.resLoader
                             $"are REQUIRED for you to run an actual Protoshift server.", "ResourcesCheck");
                     }
                     resourcesComplete = false;
-                }
+                });
+                CheckDirectoryResource("config-schemas", resPath, ref resourcesComplete,
+                    continueOnSuccess: () =>
+                    {
+                        foreach (var supportedVer in Config.SupportedVersions)
+                        {
+                            CheckFileResource($"config-schemas/config_schema_" +
+                                $"v{supportedVer}.json", resPath, ref resourcesComplete);
+                        }
+                    });
+                CheckFileResource("luac_bins/luac_win32.exe", resPath, ref resourcesComplete);
+                CheckFileResource("luac_bins/luac_win64.exe", resPath, ref resourcesComplete);
+                CheckFileResource("luac_bins/luac_unix64", resPath, ref resourcesComplete);
                 if (!resourcesComplete)
                 {
-                    Log.Info(StructureDescription, "ResourcesCheck");
+                    _checklogger.LogInfo(StructureDescription);
                     passcheck = false;
                 }
             }
             if (!passcheck)
             {
-                Log.Erro("Resources check didn't pass. Press Enter to exit.", "ResourcesCheck");
-                Console.ReadLine();
+                _checklogger.LogErro("Resources check didn't pass. Press Enter to exit.");
+                if (Log.GlobalConfig.Use_Console_Wrapper) ConsoleWrapper.ReadLine();
+                else Console.ReadLine();
                 Environment.Exit(114514);
             }
         }
 
+        private static void CheckFileResource(string path, string resBasePath, ref bool isResComplete)
+        {
+            var filePath = Path.Combine(resBasePath, path);
+            if (!File.Exists(filePath))
+            {
+                _checklogger?.LogErro($"{filePath} not found!");
+                isResComplete = false;
+            }
+        }
+
+        private static void CheckDirectoryResource(string path, string resBasePath, 
+            ref bool isResComplete, Action? continueOnSuccess = null, Action? continueOnFailure = null)
+        {
+            var dirPath = Path.Combine(resBasePath, path);
+            if (!Directory.Exists(dirPath))
+            {
+                _checklogger?.LogErro($"{dirPath} not found!");
+                isResComplete = false;
+                continueOnFailure?.Invoke();
+            }
+            else continueOnSuccess?.Invoke();
+        }
+        #endregion
+
+        #region Load
         /// <summary>
         /// Load resources to Resources Class.
         /// </summary>
-        public static async Task Load()
+        public static async Task Load(string resPath = "./resources")
         {
             #region Ec2b key & seed
-            Resources.dispatchKey = await File.ReadAllBytesAsync("resources/xor/dispatchKey.bin");
+            Resources.dispatchKey = await File.ReadAllBytesAsync($"{resPath}/xor/dispatchKey.bin");
 
-            if (File.Exists("resources/xor/dispatchSeed.bin"))
+            if (File.Exists($"{resPath}/xor/dispatchSeed.bin"))
             {
-                Resources.dispatchSeed = await File.ReadAllBytesAsync("resources/xor/dispatchSeed.bin");
+                Resources.dispatchSeed = await File.ReadAllBytesAsync($"{resPath}/xor/dispatchSeed.bin");
 
                 try
                 {
@@ -115,9 +145,9 @@ namespace csharp_Protoshift.resLoader
             #endregion
 
             #region RSAKeys
-            if (Directory.Exists("resources/rsakeys/ClientPri"))
+            if (Directory.Exists($"{resPath}/rsakeys/ClientPri"))
             {
-                foreach (var file in Directory.GetFiles("resources/rsakeys/ClientPri"))
+                foreach (var file in Directory.GetFiles($"{resPath}/rsakeys/ClientPri"))
                 {
                     FileInfo info = new(file);
                     if (info.Extension != ".pem") continue;
@@ -133,9 +163,9 @@ namespace csharp_Protoshift.resLoader
                     }
                 }
             }
-            if (Directory.Exists("resources/rsakeys/ServerPub"))
+            if (Directory.Exists($"{resPath}/rsakeys/ServerPub"))
             {
-                foreach (var file in Directory.GetFiles("resources/rsakeys/ServerPub"))
+                foreach (var file in Directory.GetFiles($"{resPath}/rsakeys/ServerPub"))
                 {
                     FileInfo info = new(file);
                     if (info.Extension != ".pem") continue;
@@ -155,9 +185,9 @@ namespace csharp_Protoshift.resLoader
                     }
                 }
             }
-            if (Directory.Exists("resources/rsakeys/ServerPri"))
+            if (Directory.Exists($"{resPath}/rsakeys/ServerPri"))
             {
-                foreach (var file in Directory.GetFiles("resources/rsakeys/ServerPri"))
+                foreach (var file in Directory.GetFiles($"{resPath}/rsakeys/ServerPri"))
                 {
                     FileInfo info = new(file);
                     if (info.Extension != ".pem") continue;
@@ -176,6 +206,9 @@ namespace csharp_Protoshift.resLoader
             }
             #endregion
         }
+        
+        
+        #endregion
 
         private static bool IsBytesEqual(byte[]? l, byte[]? r)
         {
