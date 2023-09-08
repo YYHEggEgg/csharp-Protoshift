@@ -1,4 +1,5 @@
 ﻿using csharp_Protoshift.GameSession;
+using csharp_Protoshift.Configuration;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
@@ -32,6 +33,7 @@ namespace csharp_Protoshift.Commands
                 Log.Info($"Waiting for cmds cleanup...", nameof(StopServerCmd));
                 while (!CleanUpCompleted) await Task.Delay(1000);
             }
+            Config.FlushTo("config.json");
             Environment.Exit(0);
         }
 
