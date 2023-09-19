@@ -33,7 +33,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 }
                 catch (Exception ex)
                 {
-                    Log.Dbug($"BackgroundUpdate receiving packet meets error and restart: {ex}", nameof(KcpProxyServer));
+                    LogTrace.DbugTrace(ex, nameof(KcpProxyServer), $"BackgroundUpdate receiving packet meets error and restart. ");
                     continue;
                 }
                 if (packet.Buffer.Length == Handshake.LEN)
@@ -52,7 +52,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         }
                         catch (Exception ex)
                         {
-                            Log.Dbug($"BackgroundUpdate:Connected reached exception {ex}", nameof(KcpProxyServer));
+                            LogTrace.DbugTrace(ex, nameof(KcpProxyServer), 
+                                $"BackgroundUpdate:Connected reached exception. ");
                             if (connected_conn.State != MhyKcpBase.ConnectionState.CONNECTED)
                             {
                                 connected_clients.TryRemove(connected_conn.Conv, out _);
@@ -107,7 +108,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     }
                     catch (Exception ex)
                     {
-                        Log.Dbug($"BackgroundUpdate:NewConnection reached exception {ex}", nameof(KcpProxyServer));
+                        LogTrace.DbugTrace(ex, nameof(KcpProxyServer), 
+                            $"BackgroundUpdate:NewConnection reached exception. ");
                     }
                 }
                 else if (packet.Buffer.Length >= KcpConst.IKCP_OVERHEAD) // conv dispatch
@@ -149,7 +151,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 }
                 catch (Exception ex)
                 {
-                    Log.Erro($"Internal error: {ex}", nameof(StartProxy));
+                    LogTrace.ErroTrace(ex, nameof(StartProxy), $"Internal error. ");
                 }
             }
         }

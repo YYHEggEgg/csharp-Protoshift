@@ -73,6 +73,7 @@ Directory.CreateDirectory("./../ProtoshiftHandlers/ProtoDispatch/Backup");
 #region Analyze Past file
 // key is source file (will be compiled), value is backup file
 Dictionary<string, string> recoverbackups = new();
+ConsoleWrapper.ShutDownRequest += RecoverBackupAndExit;
 #region OldProtos.AskCmdId
 string askoldcmdid_filePath = "./../OldProtoHandlers/AskCmdId.cs";
 Dictionary<int, List<string>> cmd_askoldcmdid_specialHandles = new();
@@ -620,7 +621,6 @@ Log.Info("Now generating CmdId related and ProtoshiftDispatch...");
 CmdIdDataStructure cmdData = new($"{res_dir}/protobuf/oldcmdid.csv",
     $"{res_dir}/protobuf/newcmdid.csv", messageResults);
 
-AppDomain.CurrentDomain.ProcessExit += RecoverBackup;
 #region Generate CmdId related
 GenTemporaryAskCmdId.Clear(askoldcmdid_filePath, asknewcmdid_filePath);
 GenAskCmdId.Run(cmdData, askoldcmdid_filePath, asknewcmdid_filePath,
@@ -706,7 +706,6 @@ else
 GenProtoshiftDispatch.Run(cmdData, protoshiftDispatch_filePath, mergeChanges);
 recoverbackups.Remove(protoshiftDispatch_filePath);
 #endregion
-AppDomain.CurrentDomain.ProcessExit -= RecoverBackup;
 
 Log.Info("Protoshift enhanced handlers generated! ");
 #if DEBUG
@@ -860,7 +859,7 @@ string? GetContentFromExecute(string processPath, string workingDir, string comm
 /// <summary>
 /// A recovery method used by <see cref="AppDomain.ProcessExit"/>.
 /// </summary>
-void RecoverBackup(object? sender, EventArgs? args)
+void RecoverBackupAndExit(object? sender, EventArgs? args)
 {
     foreach (var recovery in recoverbackups)
     {
@@ -870,6 +869,7 @@ void RecoverBackup(object? sender, EventArgs? args)
         }
         catch { }
     }
+    Environment.Exit(0);
 }
 
 void CopyDir(string source, string target)

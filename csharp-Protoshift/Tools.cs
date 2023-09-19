@@ -207,9 +207,7 @@ namespace csharp_Protoshift
             }
             catch (Exception ex)
             {
-                Log.Dbug(ex.ToString(), nameof(SetClipBoard));
-                Log.Warn($"Copy to clipboard failed, error: {ex.Message}. " +
-                    $"Full error message output to debug.log.", nameof(SetClipBoard));
+                LogTrace.WarnTrace(ex, nameof(SetClipBoard), $"Copy to clipboard failed. ");
             }
         }
 
@@ -222,9 +220,7 @@ namespace csharp_Protoshift
             }
             catch (Exception ex)
             {
-                Log.Dbug(ex.ToString(), nameof(SetClipBoard));
-                Log.Warn($"Copy to clipboard failed, error: {ex.Message}. " +
-                    $"Full error message output to debug.log.", nameof(SetClipBoard));
+                LogTrace.WarnTrace(ex, nameof(SetClipBoard), $"Copy to clipboard failed. ");
             }
         }
 

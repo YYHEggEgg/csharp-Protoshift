@@ -101,8 +101,8 @@ namespace csharp_Protoshift.Commands
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogErro($"Read windy config from file: {WindyManagerPath} failed. Using a new instance.");
-                    _logger.LogErro($"Read exception: {ex}");
+                    _logger.LogErroTrace(ex, $"Read windy config from file: " +
+                        $"{WindyManagerPath} failed. Using a new instance.");
                     InitNewWindyManager();
                     AutoSave = false;
                 }

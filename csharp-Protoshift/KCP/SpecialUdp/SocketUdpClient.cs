@@ -144,7 +144,7 @@ namespace csharp_Protoshift.SpecialUdp
             }
             catch (Exception ex)
             {
-                Log.Warn($"Failed to receive packet: {ex}", nameof(SocketUdpClient));
+                LogTrace.WarnTrace(ex, nameof(SocketUdpClient), $"Failed to receive packet. ");
                 throw;
             }
             finally
@@ -222,7 +222,7 @@ namespace csharp_Protoshift.SpecialUdp
             }
             catch (Exception ex)
             {
-                Log.Warn($"Failed to receive packet: {ex}", nameof(SocketUdpClient));
+                LogTrace.WarnTrace(ex, nameof(SocketUdpClient), $"Failed to receive packet. ");
                 throw;
             }
             finally
@@ -276,7 +276,7 @@ namespace csharp_Protoshift.SpecialUdp
             }
             catch (Exception ex)
             {
-                Log.Erro($"Failed to send packet: {ex}", nameof(SocketUdpClient));
+                LogTrace.InfoTrace(ex, nameof(SocketUdpClient), $"Failed to send packet. ");
                 throw;
             }
         }
@@ -316,7 +316,7 @@ namespace csharp_Protoshift.SpecialUdp
             }
             catch (Exception ex)
             {
-                Log.Erro($"Failed to send packet: {ex}", nameof(SocketUdpClient));
+                LogTrace.InfoTrace(ex, nameof(SocketUdpClient), $"Failed to send packet. ");
                 throw;
             }
         }
@@ -363,7 +363,7 @@ namespace csharp_Protoshift.SpecialUdp
             }
             catch (Exception ex)
             {
-                Log.Erro($"Failed to send packet: {ex}", nameof(SocketUdpClient));
+                LogTrace.InfoTrace(ex, nameof(SocketUdpClient), $"Failed to send packet. ");
                 throw;
             }
         }
@@ -408,7 +408,7 @@ namespace csharp_Protoshift.SpecialUdp
             }
             catch (Exception ex)
             {
-                Log.Erro($"Failed to send packet: {ex}", nameof(SocketUdpClient));
+                LogTrace.InfoTrace(ex, nameof(SocketUdpClient), $"Failed to send packet. ");
                 throw;
             }
         }

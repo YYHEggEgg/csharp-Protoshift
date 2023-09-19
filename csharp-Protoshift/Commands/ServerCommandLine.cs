@@ -21,7 +21,8 @@ namespace csharp_Protoshift.Commands
                     catch (NotImplementedException) { }
                     catch (Exception ex)
                     {
-                        Log.Erro($"Cleanup of command {cmd.GetType()} failed: {ex}", nameof(ServerCommandLine));
+                        LogTrace.ErroTrace(ex, nameof(ServerCommandLine), 
+                            $"Cleanup of command {cmd.GetType()} failed: {ex}");
                     }
                 }
                 stopServer.CleanUpCompleted = true;
@@ -76,8 +77,8 @@ namespace csharp_Protoshift.Commands
                             }
                             catch (Exception ex)
                             {
-                                Log.Erro(ex.ToString(), nameof(ServerCommandLine));
-                                Log.Info($"Encountered error when handling command {commandName}. Please check your input.", nameof(ServerCommandLine));
+                                LogTrace.ErroTrace(ex, nameof(ServerCommandLine), 
+                                    $"Encountered error when handling command {commandName}. Please check your input. ");
                             }
                             break;
                         }

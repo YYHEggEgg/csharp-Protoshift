@@ -329,7 +329,7 @@ namespace csharp_Protoshift.GameSession
                     }
                     catch (Exception ex)
                     {
-                        Log.Warn($"Windy auto-execute failed: {ex}", "windyOnGetPlayerTokenFinish_AsyncTask");
+                        LogTrace.WarnTrace(ex, "windyOnGetPlayerTokenFinish_AsyncTask", $"Windy auto-execute failed. ");
                     }
                 });
             }

@@ -76,7 +76,7 @@ namespace csharp_Protoshift.MhyKCP
                 }
                 catch (Exception ex)
                 {
-                    Log.Erro($"Update fail: {ex}", nameof(KCPClient));
+                    LogTrace.ErroTrace(ex, nameof(KCPClient), $"Update fail. ");
                     _Closed = true;
                     server.Dispose();
                 }

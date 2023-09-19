@@ -181,7 +181,8 @@ namespace csharp_Protoshift.MhyKCP
                 }
                 catch (Exception ex)
                 {
-                    Log.Erro($"Error occured when handling audit kcp packet: {ex}", nameof(KcpPacketAudit));
+                    LogTrace.ErroTrace(ex, nameof(KcpPacketAudit),
+                        $"Error occured when handling audit kcp packet. ");
                 }
             }
         }
