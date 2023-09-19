@@ -47,7 +47,7 @@ namespace csharp_Protoshift.Commands.Utils
             }
             catch (Exception ex)
             {
-                Log.Erro($"Decryption failed: {ex}", nameof(DecryptCurrRegionCmd));
+                LogTrace.ErroTrace(ex, nameof(DecryptCurrRegionCmd), $"Decryption failed. ");
                 Log.Warn($"It may because the RSA key doesn't match " +
                     $"or you provided false query_cur_region json.", nameof(DecryptCurrRegionCmd));
                 return;
@@ -93,7 +93,8 @@ namespace csharp_Protoshift.Commands.Utils
             }
             catch (Exception ex)
             {
-                Log.Erro($"Protobuf serialization failed: {ex}", nameof(GenerateCurrRegionCmd));
+                LogTrace.ErroTrace(ex, nameof(GenerateCurrRegionCmd), 
+                    $"Protobuf serialization failed. ");
                 Log.Warn($"It may because the json isn't valid." +
                     $"It's recommended to modify based on the result" +
                     $"from json protobuf from 'util dcurr' command.", nameof(GenerateCurrRegionCmd));
@@ -107,7 +108,8 @@ namespace csharp_Protoshift.Commands.Utils
             }
             catch (Exception ex)
             {
-                Log.Erro($"RSA encryption failed: {ex}", nameof(GenerateCurrRegionCmd));
+                LogTrace.ErroTrace(ex, nameof(GenerateCurrRegionCmd), 
+                    $"RSA encryption failed. ");
                 Log.Warn($"It may because you don't provide match key" +
                     $"in resources/ClientPri and resources/ServerPri.", nameof(GenerateCurrRegionCmd));
                 return;

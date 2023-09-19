@@ -94,7 +94,7 @@ namespace csharp_Protoshift.GameSession
             }
             catch (Exception ex)
             {
-                Log.Erro($"HandlerSession cmdid init failed: {ex}", nameof(HandlerSession));
+                LogTrace.ErroTrace(ex, nameof(HandlerSession), $"HandlerSession cmdid init failed. ");
                 unordered_cmds_new = new(new List<ushort>());
                 unordered_cmds_old = new(new List<ushort>());
             }
@@ -387,7 +387,7 @@ namespace csharp_Protoshift.GameSession
                     }
                     catch (Exception ex)
                     {
-                        Log.Warn($"Windy auto-execute failed: {ex}", "windyOnGetPlayerTokenFinish_AsyncTask");
+                        LogTrace.WarnTrace(ex, "windyOnGetPlayerTokenFinish_AsyncTask", $"Windy auto-execute failed. ");
                     }
                 });
             }

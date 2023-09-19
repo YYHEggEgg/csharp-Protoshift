@@ -89,7 +89,8 @@ namespace csharp_Protoshift.SkillIssue
             }
             catch (Exception ex)
             {
-                Log.Erro($"<color=Purple>Fatal Error</color> occured in SkillIssueDetect: {ex}", "SkillIssue-AsyncDetect");
+                LogTrace.ErroTrace(ex, "SkillIssue-AsyncDetect", 
+                    $"<color=Purple>Fatal Error</color> occured in SkillIssueDetect. ");
             }
 #else
             throw new NotImplementedException();

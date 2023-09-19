@@ -113,7 +113,7 @@ namespace csharp_Protoshift.Commands.Windy
                 }
                 catch (Exception ex)
                 {
-                    if (!slient) _logger.LogErro($"verify luac_{targetOS} failed: {ex}");
+                    if (!slient) _logger.LogErroTrace(ex, $"verify luac_{targetOS} failed. ");
                     return false;
                 }
             }

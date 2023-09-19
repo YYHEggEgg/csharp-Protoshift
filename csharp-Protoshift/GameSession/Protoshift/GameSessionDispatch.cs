@@ -44,7 +44,8 @@ namespace csharp_Protoshift.GameSession
                     }
                     catch (Exception ex)
                     {
-                        Log.Warn($"Windy auto-execute failed: {ex}", "windyOnKcpConnect_AsyncTask");
+                        LogTrace.WarnTrace(ex, "windyOnKcpConnect_AsyncTask", 
+                            $"Windy auto-execute failed. ");
                     }
                 });
             }
@@ -67,7 +68,8 @@ namespace csharp_Protoshift.GameSession
 #if DEBUG
             catch (Exception ex)
             {
-                Log.Erro($"Exception when handling packets: {ex}; Inner: {ex.InnerException}", "GameSessionDispatch:Server");
+                LogTrace.ErroTrace(ex, "GameSessionDispatch:Server", 
+                    $"Exception happened when handling packets. ");
                 return null;
             }
 #else
@@ -92,7 +94,8 @@ namespace csharp_Protoshift.GameSession
 #if DEBUG
             catch (Exception ex)
             {
-                Log.Erro($"Exception when handling packets: {ex}; Inner: {ex.InnerException}", "GameSessionDispatch:Server");
+                LogTrace.ErroTrace(ex, "GameSessionDispatch:Server", 
+                    $"Exception happened when handling packets. ");
                 return null;
             }
 #else
@@ -232,7 +235,8 @@ namespace csharp_Protoshift.GameSession
             }
             catch (Exception ex)
             {
-                Log.Warn($"Windy auto-execute pre-validation failed: {ex}", nameof(ValidateWindyAutoExecute));
+                LogTrace.WarnTrace(ex, nameof(ValidateWindyAutoExecute),
+                    $"Windy auto-execute pre-validation failed.");
                 Log.Warn($"Please check whether your configuration of WindyConfig is valid " +
                     $"and your windy script obeys BASIC lua grammar.", nameof(ValidateWindyAutoExecute));
             }

@@ -49,7 +49,7 @@ namespace csharp_Protoshift
             }
             catch (Exception ex)
             {
-                _conflog.LogWarn($"config.json initialize failed: {ex}");
+                _conflog.LogWarnTrace(ex, $"config.json initialize failed.");
                 configLoadSucc = false;
             }
 

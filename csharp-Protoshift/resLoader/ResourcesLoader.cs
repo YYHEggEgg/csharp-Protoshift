@@ -137,7 +137,8 @@ namespace csharp_Protoshift.resLoader
                 }
                 catch (Exception ex)
                 {
-                    Log.Warn($"Ec2b calculate of dispatchSeed.bin failed. {ex}", nameof(ResourcesLoader));
+                    LogTrace.WarnTrace(ex, nameof(ResourcesLoader), 
+                        $"Ec2b calculate of dispatchSeed.bin failed. ");
                     Log.Warn($"The server will continue using the content of " +
                         $"dispatchKey.bin.", nameof(ResourcesLoader));
                 }
@@ -159,7 +160,7 @@ namespace csharp_Protoshift.resLoader
                     }
                     catch (Exception ex)
                     {
-                        Log.Warn($"Load ClientPri key id: {id} failed, skipped file: {file}. {ex}", nameof(ResourcesLoader));
+                        LogTrace.WarnTrace(ex, nameof(ResourcesLoader), $"Load ClientPri key id: {id} failed, skipped file: {file}. ");
                     }
                 }
             }
@@ -181,7 +182,8 @@ namespace csharp_Protoshift.resLoader
                     }
                     catch (Exception ex)
                     {
-                        Log.Warn($"Load ServerPub key id: {id} failed, skipped file: {file}. {ex}", nameof(ResourcesLoader));
+                        LogTrace.WarnTrace(ex, nameof(ResourcesLoader), 
+                            $"Load ServerPub key id: {id} failed, skipped file: {file}. ");
                     }
                 }
             }
@@ -200,7 +202,8 @@ namespace csharp_Protoshift.resLoader
                     }
                     catch (Exception ex)
                     {
-                        Log.Warn($"Load ServerPri key id: {id} failed, skipped file: {file}. {ex}", nameof(ResourcesLoader));
+                        LogTrace.WarnTrace(ex, nameof(ResourcesLoader), 
+                            $"Load ServerPri key id: {id} failed, skipped file: {file}. ");
                     }
                 }
             }

@@ -155,9 +155,9 @@ namespace csharp_Protoshift.Commands.Windy
                             }
                             catch (Exception ex)
                             {
-                                Log.Warn($"Moving luac: {fileName} to new env folder failed. " +
-                                    $"It'll be compiled again next time.", nameof(WindyLuacManager));
-                                Log.Warn(ex.ToString(), nameof(WindyLuacManager));
+                                LogTrace.WarnTrace(ex, nameof(WindyLuacManager), 
+                                    $"Moving luac: {fileName} to new env folder failed. " +
+                                    $"It'll be compiled again next time.");
                                 deprecated_files.Add(pair.Key);
                             }
                     }

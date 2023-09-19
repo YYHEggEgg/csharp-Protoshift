@@ -30,7 +30,7 @@ namespace csharp_Protoshift.ProtoHotPatch
             catch (Exception ex)
             {
                 Log.Erro(PSHP002, nameof(ProtoHotPatchCompiler));
-                Log.Info($"Detail: deserializing meets {ex}", nameof(ProtoHotPatchCompiler));
+                LogTrace.InfoTrace(ex, nameof(ProtoHotPatchCompiler), $"Deserializing meets exception. ");
                 return;
             }
             if (!Check(res) || res == null)
@@ -93,7 +93,7 @@ namespace csharp_Protoshift.ProtoHotPatch
                                 }
                                 catch (Exception ex)
                                 {
-                                    Log.Warn($"ProtoHotPatch worker meets exception: {ex}", nameof(HotPatchMiddleware));
+                                    LogTrace.WarnTrace(ex, nameof(HotPatchMiddleware), $"ProtoHotPatch worker meets exception. ");
                                 }
                             }
                             return pair.oldprotocol_return;
@@ -143,7 +143,7 @@ namespace csharp_Protoshift.ProtoHotPatch
                                 }
                                 catch (Exception ex)
                                 {
-                                    Log.Warn($"ProtoHotPatch worker meets exception: {ex}", nameof(HotPatchMiddleware));
+                                    LogTrace.WarnTrace(ex, nameof(HotPatchMiddleware), $"ProtoHotPatch worker meets exception. ");
                                 }
                             }
                             return res;
