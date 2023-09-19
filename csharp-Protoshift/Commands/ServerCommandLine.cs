@@ -47,6 +47,7 @@ namespace csharp_Protoshift.Commands
 
         public static async Task Start()
         {
+            ConsoleWrapper.ShutDownRequest += (_, _) => Environment.Exit(0);
             while (true)
             {
                 ConsoleWrapper.InputPrefix = "> ";
