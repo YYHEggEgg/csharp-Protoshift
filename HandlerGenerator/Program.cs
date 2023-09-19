@@ -62,6 +62,11 @@ if (!passcheck)
     Environment.Exit(272574);
 }
 ResourcesLoader.CheckForRequiredResources(res_dir);
+if (!File.Exists("./../csharp-Protoshift/config.json"))
+{
+    File.Copy("./../csharp-Protoshift/config_example.json", "./../csharp-Protoshift/config.json");
+    Log.Warn($"config.json not found in csharp-Protoshift project path. Created default with config_example.json.");
+}
 Directory.CreateDirectory("./../OldProtoHandlers/Backup");
 Directory.CreateDirectory("./../NewProtoHandlers/Backup");
 Directory.CreateDirectory("./../ProtoshiftHandlers/ProtoDispatch/Backup");
@@ -811,6 +816,7 @@ await OuterInvoke.RunMultiple(new OuterInvokeInfo
 }, 2910);
 #region Generate After-builds
 Log.Info($"dotnet build & publish succeeded. Now copying resources...");
+File.Copy($"./../csharp-Protoshift/config.json", $"{output_path}/config.json");
 string output_res_dir = $"{output_path}/resources";
 CopyDir("./../csharp-Protoshift/resources", output_res_dir);
 
@@ -822,7 +828,7 @@ if (OperatingSystem.IsLinux())
     await OuterInvoke.Run(new OuterInvokeInfo
     {
         ProcessPath = "chmod",
-        CmdLine = "+x ./run.sh",
+        CmdLine = $"+x {output_path}/run.sh",
     });
 }
 #endregion

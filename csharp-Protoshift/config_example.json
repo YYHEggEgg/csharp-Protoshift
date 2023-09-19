@@ -1,5 +1,5 @@
 {
-  "$schema": "Config/config_schema_latest.json",
+  "$schema": "resources/config-schemas/config_schema_latest.json",
   "ConfigVersion": "1.0.1",
   "EnableFullPacketLog": true,
   "PacketLogExcluding": [
@@ -9,10 +9,11 @@
   "NetConfig": {
     "BindAddress": "0.0.0.0",
     "BindPort": 22102,
-    "RemoteAddress": {
-      "IpAddress": "127.0.0.1",
-      "AddressPort": 20041
-    }
+    // Set your real server ip here
+    // "RemoteAddress": {
+    //   "IpAddress": "127.0.0.1",
+    //   "AddressPort": 20041
+    // }
   },
   "WindyConfig": {
     "WindyLuacOverridePaths": {
