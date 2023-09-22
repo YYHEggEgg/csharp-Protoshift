@@ -237,7 +237,7 @@ namespace csharp_Protoshift.Commands
                 _logger.LogWarn($"Please carefully check the lua info. " +
                     $"To confirm the execution, type 'y' and press Enter.");
                 ConsoleWrapper.InputPrefix = "Confirm or cancel> ";
-                var res = await ConsoleWrapper.ReadLineAsync();
+                var res = await ConsoleWrapper.ReadLineAsync(false);
                 permitted = res.Trim().ToLower() == "y";
             }
             else
@@ -248,7 +248,7 @@ namespace csharp_Protoshift.Commands
                 _logger.LogWarn($"Please carefully check the lua info. To confirm the execution, " +
                     $"type the file name \"{luafileInfo.Name}\" and press Enter.");
                 ConsoleWrapper.InputPrefix = "Confirm or cancel> ";
-                var res = await ConsoleWrapper.ReadLineAsync();
+                var res = await ConsoleWrapper.ReadLineAsync(false);
                 permitted = res.Trim() == luafileInfo.Name;
             }
 
