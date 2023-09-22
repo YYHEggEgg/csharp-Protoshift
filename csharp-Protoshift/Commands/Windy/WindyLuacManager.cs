@@ -39,9 +39,11 @@ namespace csharp_Protoshift.Commands.Windy
             var luaFileHash = GetFileHash(luaFile);
             lock (lua_dict_lck)
             {
-                if (compiled_luacs.TryGetValue(luaFullPath, out var tuple) && tuple.luaHash == luaFileHash)
+                if (compiled_luacs.TryGetValue(luaFullPath, out var tuple))
                 {
-                    return tuple.luacContent;
+                    if (tuple.luaHash == luaFileHash) return tuple.luacContent;
+                    else File.Delete($"{CompiledPath}/" +
+                        tuple.outputHash.Substring(0, tuple.outputHash.IndexOf('|')));
                 }
             }
             Log.Info($"Start compiling lua file: {luaFullPath} (size: {luaFile.Length})", nameof(WindyLuacManager));
