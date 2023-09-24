@@ -1,0 +1,11 @@
+// Extracted from 3.3 GIO
+// By YYHEggEgg#6167
+
+syntax = "proto3";
+
+option csharp_namespace = "OldProtos";
+
+message BreakoutSyncPing {
+    uint64 client_game_time = 2;
+    uint64 server_game_time = 11;
+}

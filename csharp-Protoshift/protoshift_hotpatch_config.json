@@ -1,0 +1,39 @@
+﻿// This file is used as middleware config to apply proto HotPatch.
+// Because the proto handlers rebuild is very slow, it's suggested to 
+// use HotPatch to fix skill issue, and watch the result instantly.
+//
+// Notice that HotPatch should only be applied in test environment! 
+// Once the outcome is expected, you should cancel the HotPatch, apply 
+// the changes to protos and run HandlerGenerator. 
+//
+// The file and related feature is ignored in RELEASE configuration.
+// Use the json format below:
+// [
+//   {
+//     "Proto": "<protoname>",
+//     "ApplyTo": "client/server",
+//     "Enabled": true,
+//     "Rules": [
+//       "(name_from_protocol)->(name_to_protocol)",
+//       "..."
+//     ]
+//   }
+// ]
+// 
+// Example:
+// [
+//  {
+//     "Proto": "PlayerLoginRsp", // proto name
+//     "ApplyTo": "server", // apply to packet from client/server
+//     "Enabled": false,
+//     "Rules": [
+//       // from protocol: old (server)
+//       // to protocol: new (client)
+//       "IsEnableClientHashDebug->Unk3300AJBBIPFMBEL" // only example, it's not true!
+//     ]
+//   }
+// ]
+
+[
+  
+]

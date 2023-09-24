@@ -1,1 +1,0 @@
-﻿Greetings to YSFreedom Project!

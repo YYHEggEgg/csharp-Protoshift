@@ -17,7 +17,7 @@ namespace XC.RSAUtil
     /// RSA Key Convert Class
     /// Author:Zhiqiang Li
     /// </summary>
-    public class RsaKeyConvert
+    public partial class RsaKeyConvert
     {
         /// <summary>
         /// Public Key Convert pem->xml

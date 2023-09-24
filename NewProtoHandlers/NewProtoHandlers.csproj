@@ -7,11 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.22.1" />
+    <Compile Remove="Backup\**" />
+    <Compile Remove="Obsoleted\**" />
+    <EmbeddedResource Remove="Backup\**" />
+    <EmbeddedResource Remove="Obsoleted\**" />
+    <None Remove="Backup\**" />
+    <None Remove="Obsoleted\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CSharp-Logger\CSharp-Logger.csproj" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.24.0" />
   </ItemGroup>
 
 </Project>

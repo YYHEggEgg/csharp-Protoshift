@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,25 +8,33 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="KCP\KCPHandle.cs" />
-    <Compile Remove="KCP\KCPManager.cs" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);PROXY_ONLY_SERVER_DISABLED</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);PROXY_ONLY_SERVER_DISABLED</DefineConstants>
+  </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="Crc32.NET" Version="1.2.0" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.0" />
+    <PackageReference Include="EPPlus" Version="6.2.7" />
+    <PackageReference Include="Google.Protobuf" Version="3.24.0" />
+    <PackageReference Include="K4os.Compression.LZ4" Version="1.3.5" />
     <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.3.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="NJsonSchema" Version="10.9.0" />
+    <PackageReference Include="TextCopy" Version="6.2.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CSharp-Logger\CSharp-Logger.csproj" />
+    <ProjectReference Include="..\KCP\Kcp\Kcp.csproj" />
     <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
     <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />
+    <ProjectReference Include="..\ProtoshiftHandlers\ProtoshiftHandlers.csproj" />
     <ProjectReference Include="..\XC.RSAUtil\XC.RSAUtil.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Crypto\" />
   </ItemGroup>
 
 </Project>
