@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO.Compression;
-using System.Linq;
-using System.Text;
+﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Security.Cryptography;
 using System.Text.Json;
-using System.Threading.Tasks;
 using XC.RSAUtil;
+using TextCopy;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift
 {
@@ -72,6 +70,160 @@ namespace csharp_Protoshift
             else throw new ArgumentException("Invalid RSA Key!", nameof(rsaKey));
         }
 
+        #region GetFullFilePath
+        public static bool TryGetFullFilePath(string? filePath, string? basePath, 
+            string allowed_extension, [NotNullWhen(true)] out string? result)
+        {
+            if (filePath == null || basePath == null)
+            {
+                result = null;
+                return false;
+            }
+            var normal_relative = Path.GetFullPath($"./{filePath}", basePath);
+            if (File.Exists(normal_relative)) 
+            {
+                result = normal_relative;
+                return true;
+            }
+            var normal_relative_addext = Path.GetFullPath($"./{filePath}.{allowed_extension}", basePath);
+            if (File.Exists(normal_relative_addext)) 
+            {
+                result = normal_relative_addext;
+                return true;
+            }
+            var normal_full = filePath;
+            if (File.Exists(normal_full)) 
+            {
+                result = Path.GetFullPath(normal_full);
+                return true;
+            }
+            var normal_full_addext = $"{filePath}.{allowed_extension}";
+            if (File.Exists(normal_full_addext)) 
+            {
+                result = Path.GetFullPath(normal_full_addext);
+                return true;
+            }
+            result = null;
+            return false;
+        }
+        
+        public static bool TryGetFullFilePath(string? filePath, string? basePath, 
+            string allowed_extension, string allowed_extension2, [NotNullWhen(true)] out string? result)
+        {
+            if (filePath == null || basePath == null)
+            {
+                result = null;
+                return false;
+            }
+            var normal_relative = Path.GetFullPath($"./{filePath}", basePath);
+            if (File.Exists(normal_relative)) 
+            {
+                result = normal_relative;
+                return true;
+            }
+            var normal_relative_addext = Path.GetFullPath($"./{filePath}.{allowed_extension}", basePath);
+            if (File.Exists(normal_relative_addext)) 
+            {
+                result = normal_relative_addext;
+                return true;
+            }
+            var normal_relative_addext2 = Path.GetFullPath($"./{filePath}.{allowed_extension2}", basePath);
+            if (File.Exists(normal_relative_addext2)) 
+            {
+                result = normal_relative_addext2;
+                return true;
+            }
+            var normal_full = filePath;
+            if (File.Exists(normal_full)) 
+            {
+                result = Path.GetFullPath(normal_full);
+                return true;
+            }
+            var normal_full_addext = $"{filePath}.{allowed_extension}";
+            if (File.Exists(normal_full_addext)) 
+            {
+                result = Path.GetFullPath(normal_full_addext);
+                return true;
+            }
+            var normal_full_addext2 = $"{filePath}.{allowed_extension2}";
+            if (File.Exists(normal_full_addext2)) 
+            {
+                result = Path.GetFullPath(normal_full_addext2);
+                return true;
+            }
+            result = null;
+            return false;
+        }
+        
+        public static bool TryGetFullFilePath(string? filePath, string? basePath, 
+            [NotNullWhen(true)] out string? result, params string[] allowed_extensions)
+        {
+            if (filePath == null || basePath == null)
+            {
+                result = null;
+                return false;
+            }
+            var normal_relative = Path.GetFullPath($"./{filePath}", basePath);
+            if (File.Exists(normal_relative)) 
+            {
+                result = normal_relative;
+                return true;
+            }
+            foreach (var allowed_extension in allowed_extensions)
+            {
+                var normal_relative_addext = Path.GetFullPath($"./{filePath}.{allowed_extension}", basePath);
+                if (File.Exists(normal_relative_addext)) 
+                {
+                    result = normal_relative_addext;
+                    return true;
+                }
+            }
+            var normal_full = filePath;
+            if (File.Exists(normal_full)) 
+            {
+                result = Path.GetFullPath(normal_full);
+                return true;
+            }
+            foreach (var allowed_extension in allowed_extensions)
+            {
+                var normal_full_addext = $"{filePath}.{allowed_extension}";
+                if (File.Exists(normal_full_addext)) 
+                {
+                    result = Path.GetFullPath(normal_full_addext);
+                    return true;
+                }
+            }
+            result = null;
+            return false;
+        }
+        #endregion // GetFullFilePath
+
+        public static void SetClipBoard(string text)
+        {
+            try
+            {
+                ClipboardService.SetText(text);
+                Log.Info("Result copied to clipboard.", nameof(SetClipBoard));
+            }
+            catch (Exception ex)
+            {
+                LogTrace.WarnTrace(ex, nameof(SetClipBoard), $"Copy to clipboard failed. ");
+            }
+        }
+
+        public static async Task SetClipBoardAsync(string text)
+        {
+            try
+            {
+                await ClipboardService.SetTextAsync(text);
+                Log.Info("Result copied to clipboard.", nameof(SetClipBoard));
+            }
+            catch (Exception ex)
+            {
+                LogTrace.WarnTrace(ex, nameof(SetClipBoard), $"Copy to clipboard failed. ");
+            }
+        }
+
         #region ChatGPT Show Time
         // Code in this region are all Generated by ChatGPT.
 
@@ -124,6 +276,18 @@ namespace csharp_Protoshift
             else
             {
                 return filePath;
+            }
+        }
+
+        public static string GetFileHash(string filePath)
+        {
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(filePath))
+                {
+                    var hash = md5.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
             }
         }
         #endregion
