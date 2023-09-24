@@ -188,7 +188,6 @@ namespace csharp_Protoshift.GameSession
                     Log.Erro($"Session {conv} destroyed but null, probably not recorded!", "GameSessionDispatch");
                     return;
                 }
-                session.ExportXlsxRecord($"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.debug.packetspeed_{conv}.xlsx");
             }
         }
 

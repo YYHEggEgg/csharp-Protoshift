@@ -5,7 +5,6 @@ using csharp_Protoshift.GameSession;
 using csharp_Protoshift.MhyKCP.Proxy;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
-using OfficeOpenXml;
 using System.Net;
 using YYHEggEgg.Logger;
 
@@ -70,8 +69,6 @@ namespace csharp_Protoshift
                 Environment.Exit(50);
             }
             #endregion
-
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             if (args.Length == 1 && args[0] == "--utils-only")
             {
