@@ -12,6 +12,8 @@
 #endregion
 
 
+using YYHEggEgg.Logger;
+
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
     public static class TxtReader
@@ -26,5 +28,45 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
 
             return lines.ToList();
         }
+
+        /// <summary>
+        /// Read a TXT file with certain count of lines.
+        /// Throw <see cref="InvalidOperationException"/>
+        /// if there's too few lines, or raise a warning
+        /// when there's too many lines.
+        /// </summary>
+        /// <returns>A string? array that have a length of <paramref name="maxLinesCount"/>.</returns>
+        public static string?[] ReadSpecifiedCount(string filePath, 
+            int minLinesCount, int maxLinesCount, string? logWarnSender = null)
+        {
+            var list = ReadFrom(filePath);
+            if (list.Count < minLinesCount)
+            {
+                throw new InvalidOperationException(
+                    $"{filePath} has too few lines (< {minLinesCount}). Please set it back to default.");
+            }
+            else if (list.Count > maxLinesCount)
+            {
+                Log.Warn($"{filePath} has more than {maxLinesCount} lines. " +
+                    $"Notice that only the first two lines take effect.", logWarnSender);
+            }
+
+            var rtn = new string[maxLinesCount];
+            for (int i = 0; i < list.Count; i++) rtn[i] = list[i];
+            return rtn;
+        }
+        
+        /// <summary>
+        /// Read a TXT file with certain count of lines.
+        /// Throw <see cref="InvalidOperationException"/>
+        /// if there's too few lines, or raise a warning
+        /// when there's too many lines.
+        /// </summary>
+        /// <returns></returns>
+#pragma warning disable CS8619
+        public static string[] ReadSpecifiedCount(string filePath, 
+            int linesCount, string? logWarnSender = null) =>
+            ReadSpecifiedCount(filePath, linesCount, linesCount, logWarnSender);
+#pragma warning restore CS8619
     }
 }

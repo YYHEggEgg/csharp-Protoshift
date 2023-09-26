@@ -103,17 +103,18 @@ internal class GitProtosManager
                 ReadCommentHandling = JsonCommentHandling.Skip
             });
 
-    public async Task CheckAndInitAsync(string target_dir, 
-        string branch, string? remote_repo = null)
+    public async Task CheckAndInitAsync(
+        string defaultbranch, string? remote_repo = null)
     {
+        string target_dir = _gitInvoke.BaseGitDirectory;
         if (!Directory.Exists(target_dir))
         {
             await OuterInvoke.Run(new OuterInvokeInfo
             {
-                CmdLine = $"clone --single-branch --branch {branch} {remote_repo} {target_dir}",
+                CmdLine = $"clone --single-branch --branch {defaultbranch} {remote_repo} {target_dir}",
                 AutoTerminateReason = "git clone failed. ",
                 ProcessPath = OuterInvokeConfig.git_path,
-                StartingNotice = $"Start cloning protobuf (Branch: {branch})",
+                StartingNotice = $"Start cloning protobuf (Branch: {defaultbranch})",
             }, 15260);
         }
     }
