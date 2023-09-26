@@ -327,12 +327,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
         }
 
-        public static readonly string ProgramVersion = 
-            Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "null";
-
         private static void WriteGeneratedCodeAttribute(ref BasicCodeWriter fi)
             => fi.WriteLine($"[System.CodeDom.Compiler.GeneratedCode(" +
-                $"\"YYHEggEgg/csharp_Protoshift.HandlerGenerator\", \"{ProgramVersion}\")]");
+                $"\"YYHEggEgg/csharp_Protoshift.HandlerGenerator\", \"{Tools.ProgramVersion}\")]");
 
         private static void WriteNonUserCodeSign(ref BasicCodeWriter fi)
         {

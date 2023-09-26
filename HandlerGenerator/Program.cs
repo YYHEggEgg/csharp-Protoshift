@@ -1,4 +1,5 @@
 using csharp_Protoshift.Enhanced.Handlers.Generator;
+using csharp_Protoshift.Enhanced.Handlers.Generator.ProtobufManage;
 using csharp_Protoshift.resLoader;
 using System.Collections.Concurrent;
 using System.Diagnostics;
@@ -767,17 +768,18 @@ Log.Info($"Build will be generated at {Path.GetFullPath(output_path)}.", "Releas
 Log.Info($"Writing build info...", "Release-Publish");
 using (StreamWriter buildinfofile = new($"{output_path}/Build_Info.txt"))
 {
-    buildinfofile.WriteLine($"YYHEggEgg/csharp-Protoshift build v{HandlerCodeWriter.ProgramVersion}");
+    buildinfofile.WriteLine($"YYHEggEgg/csharp-Protoshift build v{Tools.ProgramVersion}");
     buildinfofile.WriteLine();
     buildinfofile.WriteLine($"Built by YYHEggEgg/csharp-Protoshift.HandlerGenerator.");
     buildinfofile.WriteLine($"Build time: {DateTime.Now}");
     #region Get Infos
-    string? author = GetContentFromExecute(OuterInvokeConfig.git_path, "./..", "config --get user.name");
-    string? email = GetContentFromExecute(OuterInvokeConfig.git_path, "./..", "config --get user.email");
-    string? curbranch = GetContentFromExecute(OuterInvokeConfig.git_path, "./..", "rev-parse --abbrev-ref HEAD");
-    string? last_commit_author = GetContentFromExecute(OuterInvokeConfig.git_path, "./..", "log --pretty=format:\"%an\" HEAD -1");
-    string? last_commit_email = GetContentFromExecute(OuterInvokeConfig.git_path, "./..", "log --pretty=format:\"%ae\" HEAD -1");
-    string? last_commit_time = GetContentFromExecute(OuterInvokeConfig.git_path, "./..", "log --pretty=format:\"%cd\" HEAD -1");
+    var gitinfos = new GitInvoke("./..");
+    string? author = gitinfos.GetGlobalAuthor();
+    string? email = gitinfos.GetGlobalEmail();
+    string? curbranch = gitinfos.GetCurrentBranch();
+    string? last_commit_author = gitinfos.GetLastCommitAuthor();
+    string? last_commit_email = gitinfos.GetLastCommitEmail();
+    string? last_commit_time = gitinfos.GetLastCommitTime();
     #endregion
     if (author != null)
     {
@@ -817,7 +819,7 @@ await OuterInvoke.RunMultiple(new OuterInvokeInfo
 Log.Info($"dotnet build & publish succeeded. Now copying resources...");
 File.Copy($"./../csharp-Protoshift/config.json", $"{output_path}/config.json");
 string output_res_dir = $"{output_path}/resources";
-CopyDir("./../csharp-Protoshift/resources", output_res_dir);
+Tools.CopyDir("./../csharp-Protoshift/resources", output_res_dir);
 
 Log.Info($"Create launch file...");
 await File.WriteAllTextAsync($"{output_path}/run.sh", "dotnet ./bin/csharp-Protoshift.dll");
@@ -835,27 +837,6 @@ Log.Info($"Publish completed! Process will terminate in 3s.");
 await Task.Delay(3000);
 #endif
 
-string? GetContentFromExecute(string processPath, string workingDir, string commandLine)
-{
-    ProcessStartInfo startInfo = new(processPath)
-    {
-        WorkingDirectory = workingDir,
-        Arguments = commandLine,
-        RedirectStandardOutput = true
-    };
-    try
-    {
-        var p = Process.Start(startInfo);
-        string? rtnvalue = null;
-        p.WaitForExit();
-        if (p.ExitCode != 0) return null;
-        rtnvalue = p.StandardOutput.ReadToEnd();
-        if (rtnvalue == string.Empty) return null;
-        return rtnvalue?.Trim();
-    }
-    catch { return null;  }
-}
-
 /// <summary>
 /// A recovery method used by <see cref="AppDomain.ProcessExit"/>.
 /// </summary>
@@ -870,26 +851,6 @@ void RecoverBackupAndExit(object? sender, EventArgs? args)
         catch { }
     }
     Environment.Exit(0);
-}
-
-void CopyDir(string source, string target)
-    => CopyFilesRecursively(Path.GetFullPath(source), Path.GetFullPath(target));
-
-// .net - Copy the entire contents of a directory in C#
-// https://stackoverflow.com/questions/58744/copy-the-entire-contents-of-a-directory-in-c-sharp
-void CopyFilesRecursively(string sourcePath, string targetPath)
-{
-    //Now Create all of the directories
-    foreach (string dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
-    {
-        Directory.CreateDirectory(dirPath.Replace(sourcePath, targetPath));
-    }
-
-    //Copy all the files & Replaces any files with the same name
-    foreach (string newPath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
-    {
-        File.Copy(newPath, newPath.Replace(sourcePath, targetPath), true);
-    }
 }
 
 internal class MergeChange
