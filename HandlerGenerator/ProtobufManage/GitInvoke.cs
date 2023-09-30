@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Net;
+using System.Text.RegularExpressions;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator.ProtobufManage;
@@ -13,11 +14,29 @@ internal class GitInvoke
         set => _baseGitDir = Path.GetFullPath(value);
     }
 
+#pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
     public GitInvoke(string path)
+#pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
     {
         BaseGitDirectory = path;
     }
 
+    public static bool CheckGitInstallation()
+    {
+        var versionInfo = Tools.GetContentFromExecute(OuterInvokeConfig.git_path,
+            Environment.CurrentDirectory, "--version");
+        if (versionInfo == null) return false;
+        else
+        {
+            Log.Info($"Got installed Git version: {versionInfo}", nameof(GitInvoke));
+            return true;
+        }
+    }
+
+    public static bool IsGitHubRemote(string gitPath) =>
+        Regex.IsMatch(gitPath, "^https:\\/\\/github\\.com\\/[0-9A-Za-z]+\\/[0-9A-Za-z-_\\.]+\\.git$");
+
+    public bool IsValidGitRepository => !Tools.DirNonExistsOrEmpty($"{_baseGitDir}/.git");
     /// <summary>
     /// The <c>user.name</c> git config on the current computer.
     /// </summary>
@@ -73,7 +92,6 @@ internal class GitInvoke
 
     public List<string> GetLocalBranches()
     {
-        Fetch();
         var content = Tools.GetContentFromExecute(OuterInvokeConfig.git_path, 
             _baseGitDir, "branch --list --format \"%(refname)\"");
         if (content == null) return new();
@@ -84,7 +102,6 @@ internal class GitInvoke
     
     public List<string> GetRemoteBranches()
     {
-        Fetch();
         var content = Tools.GetContentFromExecute(OuterInvokeConfig.git_path, 
             _baseGitDir, "branch --list --remote --format \"%(refname)\"");
         if (content == null) return new();
@@ -130,4 +147,27 @@ internal class GitInvoke
             throw new ApplicationException("git rev-list parse got empty message.");
         return int.Parse(content);
     }
+
+    #region Changes
+    /// <summary>
+    /// Check if the local repository has any changes
+    /// when compared with remote.
+    /// </summary>
+    /// <returns></returns>
+    public bool DifferentFromRemote()
+    {
+        if (GetAheadCommits() > 0) return true;
+        else if (!string.IsNullOrEmpty(Tools.GetContentFromExecute(
+            OuterInvokeConfig.git_path, _baseGitDir, "diff --staged --shortstat")?.Trim()))
+            return true;
+        else if (!string.IsNullOrEmpty(Tools.GetContentFromExecute(
+            OuterInvokeConfig.git_path, _baseGitDir,
+            "ls-files --deleted --modified --others --unmerged --exclude-standard")?.Trim()))
+            return true;
+        else if (!string.IsNullOrEmpty(Tools.GetContentFromExecute(
+            OuterInvokeConfig.git_path, _baseGitDir, "stash list")?.Trim()))
+            return true;
+        else return false;
+    }
+    #endregion
 }
