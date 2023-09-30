@@ -16,6 +16,8 @@ internal class GitProtosManager
     public bool IsValidGitRepository => _gitInvoke.IsValidGitRepository;
     public bool DifferentFromRemote() => _gitInvoke.DifferentFromRemote();
 
+    public bool IsDMCAProofBranch => !Tools.DirNonExistsOrEmpty(Path.Combine(BaseGitDirectory, "Proto2json_Output"));
+
     public GitProtosManager(string path, string protocol_friendlyname)
     {
         _gitInvoke = new(path);
@@ -24,6 +26,7 @@ internal class GitProtosManager
 
     public bool HasUpdateAvaliable()
     {
+        if (!IsValidGitRepository) return false;
         try
         {
             _gitInvoke.Fetch();
@@ -39,6 +42,7 @@ internal class GitProtosManager
 
     public bool TryGitPullUpdate()
     {
+        if (!IsValidGitRepository) return false;
         ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
         {
             WorkingDirectory = BaseGitDirectory,
@@ -66,7 +70,7 @@ internal class GitProtosManager
     public bool TryCloneHere(string remoteUrl_git, string? branch)
     {
         var cloneargs = "clone ";
-        if (branch != null) cloneargs += $"--single-branch --branch {branch} ";
+        if (branch != null) cloneargs += $"--branch {branch} ";
         cloneargs += $"{remoteUrl_git} {Path.GetFullPath(BaseGitDirectory)}";
 
         ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
@@ -92,8 +96,10 @@ internal class GitProtosManager
         }
     }
 
-    public bool TryGitCheckoutTo(string branchname)
+    private bool TryGitCheckoutTo(string branchname)
     {
+        if (!IsValidGitRepository) return false;
+        _gitInvoke.Fetch();
         ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
         {
             WorkingDirectory = BaseGitDirectory,
@@ -158,9 +164,14 @@ internal class GitProtosManager
     /// <param name="relative_path">
     /// The relative path where the file is in this repository.
     /// </param>
+    /// <param name="localUpdateCallback">
+    /// The func should be called to update the local git repository.
+    /// Usually do business like <c>git pull</c>. Should return true
+    /// when succeeded.
+    /// </param>
     /// <returns></returns>
     public async Task<ProtoStatInfo?> GetProtoStatInfo(string repoUrl_git, 
-        string branch, string relative_path)
+        string branch, string relative_path, Func<bool> localUpdateCallback)
     {
         // Confirm the remote repo status.
         if (GitInvoke.IsGitHubRemote(repoUrl_git))
@@ -179,26 +190,10 @@ internal class GitProtosManager
         }
         else
         {
-            if (!TryGitPullUpdate() || !File.Exists(
+            if (!localUpdateCallback() || !File.Exists(
                 Path.Combine(BaseGitDirectory, relative_path))) return null;
             return JsonSerializer.Deserialize<ProtoStatInfo>(await File.ReadAllTextAsync(
                 Path.Combine(BaseGitDirectory, relative_path)));
-        }
-    }
-
-    public async Task CheckAndInitAsync(
-        string defaultbranch, string? remote_repo = null)
-    {
-        string target_dir = BaseGitDirectory;
-        if (Tools.DirNonExistsOrEmpty(target_dir))
-        {
-            await OuterInvoke.Run(new OuterInvokeInfo
-            {
-                CmdLine = $"clone --single-branch --branch {defaultbranch} {remote_repo} {target_dir}",
-                AutoTerminateReason = "git clone failed. ",
-                ProcessPath = OuterInvokeConfig.git_path,
-                StartingNotice = $"Start cloning protobuf (Branch: {defaultbranch})",
-            }, 15260);
         }
     }
 
@@ -214,15 +209,15 @@ internal class GitProtosManager
     /// </summary>
     /// <param name="branch"></param>
     /// <returns>
-    /// Return true if the repo is currently in the
-    /// branch (no matter whether it's really switched);
-    /// return false on git failure.
+    /// Return true if the switch is actually performed,
+    /// and return false when branch switch is
+    /// unnecessary or there's a git failure.
     /// </returns>
     public bool TryAutoSwitchToBranch(string? branch)
     {
         if (branch == null) return false;
         if (!_gitInvoke.IsValidGitRepository) return false;
-        if (_gitInvoke.GetCurrentBranch() == branch) return true;
+        if (_gitInvoke.GetCurrentBranch() == branch) return false;
         return TryGitCheckoutTo(branch);
     }
 }
