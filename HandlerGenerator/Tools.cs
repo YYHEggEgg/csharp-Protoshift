@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using System.Reflection;
 using System.Text.Json;
+using System.Text.Json.Serialization;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator;
 
@@ -30,7 +32,7 @@ internal static class Tools
         catch { return null; }
     }
 
-    public static void CopyDir(string source, string target) => 
+    public static void CopyDir(string source, string target) =>
         CopyFilesRecursively(Path.GetFullPath(source), Path.GetFullPath(target));
 
     // .net - Copy the entire contents of a directory in C#
@@ -106,7 +108,11 @@ internal static class Tools
         JsonSerializer.Deserialize<T>(await File.ReadAllTextAsync(filePath), new JsonSerializerOptions
         {
             AllowTrailingCommas = true,
-            ReadCommentHandling = JsonCommentHandling.Skip
+            ReadCommentHandling = JsonCommentHandling.Skip,
+            Converters =
+            {
+                new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)
+            }
         });
 
     public static bool DirNonExistsOrEmpty(string dirPath)
@@ -115,5 +121,21 @@ internal static class Tools
         if (!Directory.EnumerateFiles(dirPath).Any() &&
             !Directory.EnumerateDirectories(dirPath).Any()) return true;
         return false;
+    }
+
+    /// <summary>
+    /// Rewrite the protos' C# namespace from <c>MiHomo.Protos</c> to specified new namespace.
+    /// </summary>
+    /// <param name="fullPaths"></param>
+    /// <returns></returns>
+    public static async Task RewriteProtoNamespaceAsync(string newNamespace, List<string> fullPaths)
+    {
+        Log.Info($"Starting rewriting updated protos' ({fullPaths.Count} files) namespace, please wait...", newNamespace);
+        foreach (var file in fullPaths) 
+        {
+            var content = (await File.ReadAllTextAsync(file)).Replace("MiHomo.Protos", newNamespace);
+            await File.WriteAllTextAsync(file, content);
+        }
+        Log.Info($"Rewrite of updated files finished.", newNamespace);
     }
 }

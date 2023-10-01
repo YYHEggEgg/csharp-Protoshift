@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Net.Http.Json;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator.ProtobufManage;
@@ -143,7 +144,11 @@ internal class GitProtosManager
                 new JsonSerializerOptions
                 {
                     AllowTrailingCommas = true,
-                    ReadCommentHandling = JsonCommentHandling.Skip
+                    ReadCommentHandling = JsonCommentHandling.Skip,
+                    Converters =
+                    {
+                        new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)
+                    }
                 });
         }
         catch (Exception ex)

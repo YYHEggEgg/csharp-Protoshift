@@ -23,10 +23,12 @@
 /NewProtoHandlers/bin
 /NewProtoHandlers/obj
 /NewProtoHandlers/Backup
+/NewProtoHandlers/Google.Protobuf
 /NewProtoHandlers/AskCmdId.cs
 /OldProtoHandlers/bin
 /OldProtoHandlers/obj
 /OldProtoHandlers/Backup
+/OldProtoHandlers/Google.Protobuf
 /OldProtoHandlers/AskCmdId.cs
 /OldProtoHandlers/Google.Protobuf.3.4
 

@@ -37,6 +37,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             var dirData = new Dictionary<string, string>();
             foreach (var file in dir.EnumerateFiles("*", SearchOption.AllDirectories))
             {
+                if (file.FullName.Contains($".git{Path.DirectorySeparatorChar}")) continue;
                 var relativePath = GetRelativePath(file.FullName, dir.FullName);
                 dirData[relativePath] = GetFileHash(file.FullName);
             }
@@ -80,6 +81,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 watcher.rebuild_files_relative_list.Add(dir.FullName, new());
                 foreach (var file in dir.GetFiles("*", SearchOption.AllDirectories))
                 {
+                    if (file.FullName.Contains($".git{Path.DirectorySeparatorChar}")) continue;
                     var relativePath = GetRelativePath(file.FullName, dir.FullName);
                     if (data[dir.FullName].ContainsKey(relativePath))
                     {

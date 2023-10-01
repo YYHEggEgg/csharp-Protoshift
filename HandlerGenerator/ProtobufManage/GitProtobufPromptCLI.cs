@@ -1,3 +1,5 @@
+using csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput;
+using System.Collections.Concurrent;
 using System.Linq.Expressions;
 using YYHEggEgg.Logger;
 
@@ -11,6 +13,10 @@ internal class GitProtobufPromptCLI
     public readonly string DefaultBranchNew;
     public readonly string SourceRepo;
     private readonly LoggerChannel _mainlogger = Log.GetChannel(nameof(GitProtobufPromptCLI));
+    /// <summary>
+    /// The license for generated protos (from proto2json outputs, only valid in DMCA situations).
+    /// </summary>
+    public readonly string PreLicense;
 
     public GitProtobufPromptCLI()
     {
@@ -20,6 +26,7 @@ internal class GitProtobufPromptCLI
 
         SourceRepo = TxtReader.ReadSpecifiedCount($"./Gencode_Configuration/protobuf_source_git.txt", 0, 1)[0]
             ?? GitProtosManager.DefaultSource;
+        PreLicense = File.ReadAllText($"./Gencode_Configuration/protobuf_general_license.txt");
     }
 
     public async Task MainAsync(RunUpdateProtobufConfig o)
@@ -65,7 +72,7 @@ internal class GitProtobufPromptCLI
         {
             if (current_branch == null)
             {
-                _logger.LogInfo($"Not specified fetch branch. Using default: {branch}");
+                _logger.LogInfo($"Not specified fetch branch. Using default: {default_fallback_branch}");
                 branch = default_fallback_branch;
             }
             else branch = current_branch;
@@ -177,7 +184,9 @@ internal class GitProtobufPromptCLI
         {
             if (manager.TryGitPullUpdate())
             {
-                // TODO: generate protos
+                GenerateProtosFromBroken(_logger,
+                    Path.Combine(manager.BaseGitDirectory, "Proto2json_Output"),
+                    Path.Combine(manager.BaseGitDirectory, "Protos"));
                 return true;
             }
             else
@@ -248,10 +257,14 @@ internal class GitProtobufPromptCLI
             }
             else
             {
-                if (manager.TryAutoSwitchToBranch(current_branch)) ;// TODO: generate protos
+                if (manager.TryAutoSwitchToBranch(current_branch))
+                {
+                    GenerateProtosFromBroken(_logger,
+                        Path.Combine(manager.BaseGitDirectory, "Proto2json_Output"),
+                        Path.Combine(manager.BaseGitDirectory, "Protos"));
+                }
                 _logger.LogErro($"Protobuf branch: {branch} has deprecated. " +
                     $"You won't receive any newer updates until you switch to a valid branch.");
-                // TODO: generate protos
                 return true;
             }
         }
@@ -260,17 +273,26 @@ internal class GitProtobufPromptCLI
             if (Tools.DirNonExistsOrEmpty(manager.BaseGitDirectory))
             {
                 if (!manager.TryCloneHere(remoteUrl_git, branch)) return false;
-                // TODO: generate protos
+                GenerateProtosFromBroken(_logger,
+                    Path.Combine(manager.BaseGitDirectory, "Proto2json_Output"),
+                    Path.Combine(manager.BaseGitDirectory, "Protos"));
             }
             else if (!manager.IsValidGitRepository)
             {
                 _logger.LogWarn($"Is not a valid Git repository. Consider as finished so not updated, but building won't interrupt.");
                 _logger.LogWarn($"You may delete the directory and use HandlerGenerator's auto cloning to use the update feature.");
-                // TODO: generate protos
+                GenerateProtosFromBroken(_logger,
+                    Path.Combine(manager.BaseGitDirectory, "Proto2json_Output"),
+                    Path.Combine(manager.BaseGitDirectory, "Protos"));
                 return true;
             }
 
-            if (manager.TryAutoSwitchToBranch(branch)) ;// TODO: generate protos
+            if (manager.TryAutoSwitchToBranch(branch))
+            {
+                GenerateProtosFromBroken(_logger,
+                    Path.Combine(manager.BaseGitDirectory, "Proto2json_Output"),
+                    Path.Combine(manager.BaseGitDirectory, "Protos"));
+            }
 
             if (manager.HasUpdateAvaliable())
             {
@@ -278,7 +300,9 @@ internal class GitProtobufPromptCLI
                     _logger.LogWarn($"Update of this Protobuf branch probably failed.");
                 else
                 {
-                    // TODO: generate protos
+                    GenerateProtosFromBroken(_logger,
+                        Path.Combine(manager.BaseGitDirectory, "Proto2json_Output"),
+                        Path.Combine(manager.BaseGitDirectory, "Protos"));
                 }
             }
             else _logger.LogInfo($"This protobuf is already the latest version!");
@@ -310,6 +334,65 @@ internal class GitProtobufPromptCLI
         var confirm = Console.ReadLine();
         if (confirm?.Trim().ToLower() == "y") return true;
         else return false;
+    }
+
+    private void GenerateProtosFromBroken(LoggerChannel logger,
+        string jsonPath, string outputPath)
+    {
+        var protojsons = Directory.EnumerateFiles(jsonPath);
+        Directory.CreateDirectory(outputPath);
+        ConcurrentDictionary<string, int> cmdidlist = new();
+        Parallel.ForEach(protojsons, path =>
+        {
+            ProtoJsonResult analyzeResult = JsonAnalyzer.AnalyzeProtoJson(File.ReadAllText(path));
+            foreach (var message in analyzeResult.messageBodys)
+            {
+                BasicCodeWriter fi = PreGenerate(outputPath, $"{message.messageName}.proto");
+                SortedSet<string> imports = new();
+                RegenOutputMessage.OutputMessage(ref fi, ref imports, message);
+                var external_imports = from importorigin in imports
+                                       let nestedIdentifier = importorigin.IndexOf('.')
+                                       let importfile = (nestedIdentifier < 0)
+                                           ? importorigin
+                                           : importorigin.Substring(0, nestedIdentifier)
+                                       where importfile != message.messageName
+                                       where !message.messageFields.Any(field => field.messageName == importfile)
+                                       where !message.enumFields.Any(field => field.enumName == importfile)
+                                       orderby importfile
+                                       select importfile;
+                if (external_imports.Any()) fi.WriteLine();
+                foreach (var importfile in external_imports)
+                {
+                    fi.WriteLine($"import \"{importfile}.proto\";");
+                }
+                fi.Dispose();
+                var cmdidenum = message.enumFields.Find(enumResult => enumResult.enumName == "CmdId");
+                if (cmdidenum != null)
+                {
+                    var cmdid_tuple = cmdidenum.enumNodes.Find(enumNodeTuple => enumNodeTuple.name == "CMD_ID");
+                    if (cmdid_tuple.name == "CMD_ID") cmdidlist.TryAdd(message.messageName, cmdid_tuple.number);
+                }
+            }
+            foreach (var enumResult in analyzeResult.enumBodys)
+            {
+                BasicCodeWriter fi = PreGenerate(outputPath, $"{enumResult.enumName}.proto");
+                RegenOutputEnum.OutputEnum(ref fi, enumResult);
+                fi.Dispose();
+            }
+        });
+        logger.LogInfo($"Build from broken jsons succeeded!");
+
+        BasicCodeWriter PreGenerate(string basedir, string fileName)
+        {
+            BasicCodeWriter fi = new(Path.Combine(basedir, fileName));
+            fi.WriteLine(PreLicense);
+            fi.WriteLine();
+            fi.WriteLine("syntax = \"proto3\";");
+            fi.WriteLine();
+            fi.WriteLine("package miHomo.Protos;");
+            fi.WriteLine();
+            return fi;
+        }
     }
     #endregion
 }

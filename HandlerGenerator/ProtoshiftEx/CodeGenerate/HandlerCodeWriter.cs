@@ -230,12 +230,13 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 fi.WriteLine($"// Not found match enum node in old: [ {newOnly} ]");
             }
-            foreach (var name in enumNodes_both)
+            foreach (var tuple in enumNodes_both)
             {
+                var name = tuple.name;
                 fi.WriteLine($"case NewProtos.{enumName}.{newstringPool.GetCompiledName(name)}:",
                     $"return OldProtos.{enumName}.{oldstringPool.GetCompiledName(name)};");
             }
-            var name_first = oldenum.enumNodes.First();
+            var name_first = oldenum.enumNodes.First().name;
             fi.WriteLine("default:",
                 $"return OldProtos.{enumName}.{oldstringPool.GetCompiledName(name_first)};");
             fi.ExitCodeRegion();
@@ -252,12 +253,13 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 fi.WriteLine($"// Not found match enum node in new: [ {newOnly} ]");
             }
-            foreach (var name in enumNodes_both)
+            foreach (var tuple in enumNodes_both)
             {
+                var name = tuple.name;
                 fi.WriteLine($"case OldProtos.{enumName}.{oldstringPool.GetCompiledName(name)}:",
                     $"return NewProtos.{enumName}.{newstringPool.GetCompiledName(name)};");
             }
-            name_first = newenum.enumNodes.First();
+            name_first = newenum.enumNodes.First().name;
             fi.WriteLine("default:",
                 $"return NewProtos.{enumName}.{newstringPool.GetCompiledName(name_first)};");
             fi.ExitCodeRegion();
