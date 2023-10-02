@@ -76,6 +76,7 @@ internal class Program
             Log.Erro("Can't find valid OldProtos dir. Please try to rerun with update script.");
             passcheck = false;
         }
+        Directory.CreateDirectory($"{Directory.GetParent(workingdir)}/csharp-Protoshift/resources/protobuf");
         if (File.Exists($"{Directory.GetParent(workingdir)}/OldProtoHandlers/Google.Protobuf/cmdid.csv"))
             File.Copy($"{Directory.GetParent(workingdir)}/OldProtoHandlers/Google.Protobuf/cmdid.csv",
                 $"{Directory.GetParent(workingdir)}/csharp-Protoshift/resources/protobuf/oldcmdid.csv", true);
