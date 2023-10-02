@@ -34,7 +34,7 @@ internal class GitInvoke
     }
 
     public static bool IsGitHubRemote(string gitPath) =>
-        Regex.IsMatch(gitPath, "^https:\\/\\/github\\.com\\/[0-9A-Za-z]+\\/[0-9A-Za-z-_\\.]+\\.git$");
+        Regex.IsMatch(gitPath, "^https:\\/\\/github\\.com\\/[0-9A-Za-z]+\\/[0-9A-Za-z-_\\.]{1,100}\\.git$");
 
     public bool IsValidGitRepository => !Tools.DirNonExistsOrEmpty($"{_baseGitDir}/.git");
     /// <summary>

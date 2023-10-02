@@ -68,9 +68,7 @@ namespace csharp_Protoshift.resLoader
             }
             if (!passcheck)
             {
-                _checklogger.LogErro("Resources check didn't pass. Press Enter to exit.");
-                if (Log.GlobalConfig.Use_Console_Wrapper) ConsoleWrapper.ReadLine();
-                else Console.ReadLine();
+                _checklogger.LogErro("Resources check didn't pass. Check them and run again. Exit code is 114514.");
                 Environment.Exit(114514);
             }
         }

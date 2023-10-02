@@ -88,8 +88,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             catch (IOException e)
             {
                 Log.Erro($"The file could not be read: {e}", $"{nameof(CmdIdDataStructure)}_{nameof(ReadCmdIdFromCsv)}");
-                Log.Erro("Process will terminate with code 6. Press any key to exit...");
-                Console.ReadLine();
+                Log.Erro("Process will terminate with code 6. ");
                 Environment.Exit(6);
             }
             return cmdid_list;

@@ -1,15 +1,17 @@
+using CommandLine;
 using csharp_Protoshift.Enhanced.Handlers.Generator.ProtobufManage;
 using csharp_Protoshift.resLoader;
 using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Text;
 using YYHEggEgg.Logger;
-using CommandLine;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator;
 
 internal class Program
 {
+    public static bool AlwaysPassChoices;
+
     private static async Task Main(string[] args)
     {
         Console.WriteLine($"Protoshift Ex v{Tools.ProgramVersion}");
@@ -326,7 +328,7 @@ internal class Program
                         if (compiled_csfilenames_old.Contains(name_withoutext)) continue;
                         compiled_csfilenames_old.Add(name_withoutext);
                         var appendcmd = $" \"OldProtoHandlers/Google.Protobuf/{proto_file}\"";
-                        if (compile_oldprotos.Length + appendcmd.Length 
+                        if (compile_oldprotos.Length + appendcmd.Length
                             >= OuterInvokeConfig.maximum_createproc_length)
                         {
                             compile_oldproto_cmds.Add(compile_oldprotos.ToString());
@@ -346,7 +348,7 @@ internal class Program
                         if (compiled_csfilenames_new.Contains(name_withoutext)) continue;
                         compiled_csfilenames_new.Add(name_withoutext);
                         var appendcmd = $" \"NewProtoHandlers/Google.Protobuf/{proto_file}\"";
-                        if (compile_newprotos.Length + appendcmd.Length 
+                        if (compile_newprotos.Length + appendcmd.Length
                             >= OuterInvokeConfig.maximum_createproc_length)
                         {
                             compile_newproto_cmds.Add(compile_newprotos.ToString());
@@ -371,7 +373,7 @@ internal class Program
                         var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
                         compiled_csfilenames_old.Add(name_withoutext);
                         var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
-                        if (compile_oldprotos.Length + appendcmd.Length 
+                        if (compile_oldprotos.Length + appendcmd.Length
                             >= OuterInvokeConfig.maximum_createproc_length)
                         {
                             compile_oldproto_cmds.Add(compile_oldprotos.ToString());
@@ -393,7 +395,7 @@ internal class Program
                         var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
                         compiled_csfilenames_new.Add(name_withoutext);
                         var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
-                        if (compile_newprotos.Length + appendcmd.Length 
+                        if (compile_newprotos.Length + appendcmd.Length
                             >= OuterInvokeConfig.maximum_createproc_length)
                         {
                             compile_newproto_cmds.Add(compile_newprotos.ToString());
@@ -427,13 +429,13 @@ internal class Program
                 }).ToList(), 20041);
             protocWatch.Stop();
             Log.Info($"Protoc compiling finished, elapsed {protocWatch.Elapsed}.");
-            await Tools.RewriteProtoNamespaceAsync("OldProtos", 
+            await Tools.RewriteProtoNamespaceAsync("OldProtos",
                 (from compiledfile in compiled_csfilenames_old
-                 select Path.Combine("./../OldProtoHandlers/Google.Protobuf/Compiled", 
+                 select Path.Combine("./../OldProtoHandlers/Google.Protobuf/Compiled",
                     $"{compiledfile.Replace("_", "")}.cs")).ToList());
             await Tools.RewriteProtoNamespaceAsync("NewProtos",
                 (from compiledfile in compiled_csfilenames_new
-                 select Path.Combine("./../NewProtoHandlers/Google.Protobuf/Compiled", 
+                 select Path.Combine("./../NewProtoHandlers/Google.Protobuf/Compiled",
                     $"{compiledfile.Replace("_", "")}.cs")).ToList());
             #endregion
             // The protos compiled here is just for checking,
@@ -604,6 +606,11 @@ internal class Program
                     && Directory.EnumerateFiles($"./../ProtoshiftHandlers/Generated").Any())
                 {
                     Log.Erro($"Deleting past handlers failed: {ex}");
+                    if (AlwaysPassChoices)
+                    {
+                        Log.Info($"Because -y is enabled, building can't continue. Exit code is 1.");
+                        Environment.Exit(1);
+                    }
                     while (true)
                     {
                         Log.Warn($"Please manually delete the directory {Path.GetFullPath("./../ProtoshiftHandlers/Generated")} " +
@@ -641,7 +648,7 @@ internal class Program
             fi.WriteLine();
             fi.WriteLine("namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode");
             fi.EnterCodeRegion();
-            HandlerCodeWriter.GenerateMessageHandler(ref fi, msgName, 
+            HandlerCodeWriter.GenerateMessageHandler(ref fi, msgName,
                 shiftpair.LeftItem, shiftpair.RightItem,
                 oldenumCollections, newenumCollections);
             fi.ExitCodeRegion();
@@ -753,15 +760,22 @@ internal class Program
             }
             if (pullUp_for_unrecogized_proto)
             {
-                Log.Warn("Detected unmergable changes. If you think it's unexpected, please change ProtoshiftDispatch.cs and restart.", "ProtoshiftDispatch_Generate");
-                Log.Info("If you want to discard these changes, type 'y' to continue.", "ProtoshiftDispatch_Generate");
-                string? confirm = Console.ReadLine();
-                if (confirm?.Trim().ToLower() != "y")
+                if (Program.AlwaysPassChoices)
                 {
-                    Log.Erro("Process terminated for user request review. Exit Code is 76.", "ProtoshiftDispatch_Generate");
-                    Log.Info("Press any key to exit...", "ProtoshiftDispatch_Generate");
-                    Console.ReadLine();
-                    Environment.Exit(76);
+                    Log.Warn($"Detected unmergable changes. Continue because -y option is enabled.");
+                }
+                else
+                {
+                    Log.Warn("Detected unmergable changes. If you think it's unexpected, please change ProtoshiftDispatch.cs and restart.", "ProtoshiftDispatch_Generate");
+                    Log.Info("If you want to discard these changes, type 'y' to continue.", "ProtoshiftDispatch_Generate");
+                    string? confirm = Console.ReadLine();
+                    if (confirm?.Trim().ToLower() != "y")
+                    {
+                        Log.Erro("Process terminated for user request review. Exit Code is 76.", "ProtoshiftDispatch_Generate");
+                        Log.Info("Press any key to exit...", "ProtoshiftDispatch_Generate");
+                        Console.ReadLine();
+                        Environment.Exit(76);
+                    }
                 }
             }
             string backup_protoshift_dispatch_path = $"./../ProtoshiftHandlers/ProtoDispatch/Backup/ProtoshiftDispatch-{DateTime.Now:yyyy_MM_dd-HH_mm_ss}.cs";
@@ -780,8 +794,11 @@ internal class Program
 
         Log.Info("Protoshift enhanced handlers generated! ");
 #if DEBUG
-        Log.Info("Press any key to exit.");
-        Console.ReadLine();
+        if (!Program.AlwaysPassChoices)
+        {
+            Log.Info("Press any key to exit.");
+            Console.ReadLine();
+        }
 #else
         Log.Info($"Now publishing...", "Release-Publish");
         string output_path = "./../Builds/";

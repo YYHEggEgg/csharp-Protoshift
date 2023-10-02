@@ -40,9 +40,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 Log.Warn($"Found Current directory is: {after_workingdir}.");
                 Log.Erro(Terminating_Note, nameof(StartupWorkingDirChanger));
                 Log.Erro("Process terminated for false launch. Exit code is 4206.", nameof(StartupWorkingDirChanger));
-                if (log_init_config.Use_Console_Wrapper)
-                    ConsoleWrapper.ReadLine();
-                else Console.ReadLine();
+                // if (log_init_config.Use_Console_Wrapper)
+                //     ConsoleWrapper.ReadLine();
+                // else Console.ReadLine();
                 Environment.Exit(4206);
             }
         }

@@ -18,6 +18,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator.ProtobufManage
         public string? OldProtosBranch { get; set; }
         [Option("branch-newprotos", Required = false, Default = null, HelpText = "The branch you would like to choose.")]
         public string? NewProtosBranch { get; set; }
+        [Option('y', Required = false, Default = false, HelpText = "Automatically passes every queries in building. Not recommend to enable this because some nasty situations needs human help.")]
+        public bool AlwaysPassChoices { get; set; }
 
         [Usage(ApplicationAlias = "csharp-Protoshift.HandlerGenerator")]
         public static IEnumerable<Example> Examples

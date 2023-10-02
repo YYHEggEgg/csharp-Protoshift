@@ -30,6 +30,7 @@ internal class GitProtobufPromptCLI
 
     public async Task MainAsync(RunUpdateProtobufConfig o)
     {
+        Program.AlwaysPassChoices = o.AlwaysPassChoices;
         if (o.ClearWorkspace) File.Delete("last_build_record.json");
 
         if (!o.RequestUpdate)
@@ -78,7 +79,24 @@ internal class GitProtobufPromptCLI
             }
             else branch = current_branch;
         }
-        var protostat = await manager.GetProtoStatInfo(remoteUrl_git, branch, "protostat.json", manager.TryGitPullUpdate);
+        ProtoStatInfo? protostat;
+        try
+        {
+            protostat = await manager.GetProtoStatInfo(remoteUrl_git, branch, "protostat.json", manager.TryGitPullUpdate);
+        }
+        catch (DMCATakenDownException)
+        {
+            return await TryRestoreProtos(manager,
+                $"{remoteUrl_git.Substring(0, remoteUrl_git.Length - ".git".Length)}_backup.git",
+                branch, default_fallback_branch);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogErro($"Deserialize local protostat.json failed: {ex}");
+            _logger.LogErro($"The local protobuf version is invalid, delete and retry. Exit code is 6726.");
+            Environment.Exit(6726);
+            throw new NotImplementedException();
+        }
         bool cloned_recently = false;
         if (protostat == null)
         {
@@ -182,20 +200,37 @@ internal class GitProtobufPromptCLI
             }
             else branch = current_branch;
         }
-        var protostat = await manager.GetProtoStatInfo(remoteUrl_git, branch, "protostat.json", () =>
+        ProtoStatInfo? protostat;
+        try
         {
-            if (manager.TryGitPullUpdate())
+            protostat = await manager.GetProtoStatInfo(remoteUrl_git, branch, "protostat.json", () =>
             {
-                GenerateProtosFromBroken(_logger,
-                    Path.Combine(manager.BaseGitDirectory, "Proto2json_Output"),
-                    Path.Combine(manager.BaseGitDirectory, "Protos"));
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        });
+                if (manager.TryGitPullUpdate())
+                {
+                    GenerateProtosFromBroken(_logger,
+                        Path.Combine(manager.BaseGitDirectory, "Proto2json_Output"),
+                        Path.Combine(manager.BaseGitDirectory, "Protos"));
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            });
+        }
+        catch (DMCATakenDownException)
+        {
+            return await TryRestoreDMCAProofProtos(manager,
+                $"{remoteUrl_git.Substring(0, remoteUrl_git.Length - ".git".Length)}_backup.git",
+                branch, default_fallback_branch, release_time);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogErro($"Deserialize local protostat.json failed: {ex}");
+            _logger.LogErro($"The local protobuf version is invalid, delete and retry. Exit code is 6726.");
+            Environment.Exit(6726);
+            throw new NotImplementedException();
+        }
         bool cloned_recently = false;
         if (protostat != null)
         {
@@ -340,11 +375,20 @@ internal class GitProtobufPromptCLI
     private static bool QueryIfAllowSwitch(LoggerChannel logger)
     {
         logger.LogWarn($"The target protobuf version is taken down by a DMCA request.");
-        logger.LogWarn($"You can stop receiving any further updates or continue keeping " +
-            $"your protos up-to-date by switching to another update channel.");
-        logger.LogWarn($"Do you want to switch to another update channel? Type 'y' to accept.");
+        if (Program.AlwaysPassChoices)
+        {
+            logger.LogInfo($"Because your choice in command line arguments, " +
+                $"the switch will perform automatically.");
+        }
+        else
+        {
+            logger.LogWarn($"You can stop receiving any further updates or continue keeping " +
+                $"your protos up-to-date by switching to another update channel.");
+            logger.LogWarn($"Do you want to switch to another update channel? Type 'y' to accept.");
+        }
         logger.LogInfo($"Your repository data of this version of protobuf will be reserved if " +
             $"you have ever made any changes.");
+        if (Program.AlwaysPassChoices) return true;
         var confirm = Console.ReadLine();
         if (confirm?.Trim().ToLower() == "y") return true;
         else return false;

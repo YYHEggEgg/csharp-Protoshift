@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HandlerGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "--update \r\n--branch-oldprotos 3.4_gio-cmdid \r\n--branch-newprotos 3.4_live"
+    }
+  }
+}
