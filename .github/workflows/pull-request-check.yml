@@ -44,7 +44,7 @@ jobs:
     # Temporary -- end
 
     - name: Run Generator
-      run: cd HandlerGenerator ; dotnet run --configuration Release
+      run: cd HandlerGenerator ; dotnet run --configuration Release -- --update
 
     - name: Archive build
       uses: actions/upload-artifact@v2
