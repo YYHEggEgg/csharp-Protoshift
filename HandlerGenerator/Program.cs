@@ -12,7 +12,7 @@ internal class Program
 {
     private static async Task Main(string[] args)
     {
-        Console.WriteLine("Protoshift Ex v1");
+        Console.WriteLine($"Protoshift Ex v{Tools.ProgramVersion}");
         StartupWorkingDirChanger.ChangeToDotNetRunPath(new LoggerConfig(
             max_Output_Char_Count: -1,
             use_Console_Wrapper: false,
@@ -76,11 +76,16 @@ internal class Program
             Log.Erro("Can't find valid OldProtos dir. Please try to rerun with update script.");
             passcheck = false;
         }
+        if (File.Exists($"{Directory.GetParent(workingdir)}/OldProtoHandlers/Google.Protobuf/cmdid.csv"))
+            File.Copy($"{Directory.GetParent(workingdir)}/OldProtoHandlers/Google.Protobuf/cmdid.csv",
+                $"{Directory.GetParent(workingdir)}/csharp-Protoshift/resources/protobuf/oldcmdid.csv", true);
+        if (File.Exists($"{Directory.GetParent(workingdir)}/NewProtoHandlers/Google.Protobuf/cmdid.csv"))
+            File.Copy($"{Directory.GetParent(workingdir)}/NewProtoHandlers/Google.Protobuf/cmdid.csv",
+                $"{Directory.GetParent(workingdir)}/csharp-Protoshift/resources/protobuf/newcmdid.csv", true);
         #endregion
         if (!passcheck)
         {
             Log.Erro("Process terminated for protos/proto2json executable lost. Exit code is 272574.", "ResourcesCheck");
-            Console.ReadLine();
             Environment.Exit(272574);
         }
         ResourcesLoader.CheckForRequiredResources(res_dir);
@@ -286,20 +291,39 @@ internal class Program
             // The arguments for compiling protos. Used for a buffer. 
             StringBuilder compile_oldprotos = new();
             StringBuilder compile_newprotos = new();
-            // This is the actually used argument list (each correspond to a 'protoc' worker process)
+            // This is the actually used argument list (each
+            // correspond to a 'protoc' worker process)
             List<string> compile_oldproto_cmds = new List<string>();
             List<string> compile_newproto_cmds = new List<string>();
             // .cs files used for rewrite compiled proto namespace.
             List<string> compiled_csfilenames_old = new();
             List<string> compiled_csfilenames_new = new();
+            #region Desync detect
+            // when the compiled .cs files desync with the original
+            // protos, all protos should be recompiled.
+            var targetpath_old = Path.GetFullPath("./../OldProtoHandlers/Google.Protobuf");
+            var targetpath_new = Path.GetFullPath("./../NewProtoHandlers/Google.Protobuf");
+            if ((Directory.EnumerateFiles($"{targetpath_old}/Compiled").Count() !=
+                 Directory.EnumerateFiles($"{targetpath_old}/Protos").Count()) ||
+                (Directory.EnumerateFiles($"{targetpath_new}/Compiled").Count() !=
+                 Directory.EnumerateFiles($"{targetpath_new}/Protos").Count()))
+            {
+                Log.Info($"Detect desync for protos and compiled .cs files. " +
+                    $"All protos will be recompiled and may take more time than expected.");
+                rebuildWatcher_past = null;
+            }
+            #endregion
+
             if (rebuildWatcher_past != null)
             {
                 #region OldProtos
-                foreach (var proto_file in rebuildWatcher_past.rebuild_files_relative_list[Path.GetFullPath("./../OldProtoHandlers/Google.Protobuf")])
+                foreach (var proto_file in rebuildWatcher_past.rebuild_files_relative_list[targetpath_old])
                 {
                     if (proto_file.StartsWith("Protos") && Path.GetExtension(proto_file) == ".proto")
                     {
-                        compiled_csfilenames_old.Add(Path.GetFileNameWithoutExtension(proto_file));
+                        var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
+                        if (compiled_csfilenames_old.Contains(name_withoutext)) continue;
+                        compiled_csfilenames_old.Add(name_withoutext);
                         var appendcmd = $" \"OldProtoHandlers/Google.Protobuf/{proto_file}\"";
                         if (compile_oldprotos.Length + appendcmd.Length 
                             >= OuterInvokeConfig.maximum_createproc_length)
@@ -313,13 +337,15 @@ internal class Program
                 if (compile_oldprotos.Length > 0) compile_oldproto_cmds.Add(compile_oldprotos.ToString());
                 #endregion
                 #region NewProtos
-                foreach (var proto_file in rebuildWatcher_past.rebuild_files_relative_list[Path.GetFullPath("./../NewProtoHandlers/Google.Protobuf")])
+                foreach (var proto_file in rebuildWatcher_past.rebuild_files_relative_list[targetpath_new])
                 {
                     if (proto_file.StartsWith("Protos") && Path.GetExtension(proto_file) == ".proto")
                     {
-                        compiled_csfilenames_new.Add(Path.GetFileNameWithoutExtension(proto_file));
+                        var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
+                        if (compiled_csfilenames_new.Contains(name_withoutext)) continue;
+                        compiled_csfilenames_new.Add(name_withoutext);
                         var appendcmd = $" \"NewProtoHandlers/Google.Protobuf/{proto_file}\"";
-                        if (compile_newprotos.Length + appendcmd.Length
+                        if (compile_newprotos.Length + appendcmd.Length 
                             >= OuterInvokeConfig.maximum_createproc_length)
                         {
                             compile_newproto_cmds.Add(compile_newprotos.ToString());
@@ -341,10 +367,19 @@ internal class Program
                 {
                     if (Path.GetExtension(proto_file) == ".proto")
                     {
-                        compile_oldprotos.Append($" \"{Path.GetRelativePath("./..", proto_file)}\"");
-                        compiled_csfilenames_old.Add(Path.GetFileNameWithoutExtension(proto_file));
+                        var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
+                        compiled_csfilenames_old.Add(name_withoutext);
+                        var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
+                        if (compile_oldprotos.Length + appendcmd.Length 
+                            >= OuterInvokeConfig.maximum_createproc_length)
+                        {
+                            compile_oldproto_cmds.Add(compile_oldprotos.ToString());
+                            compile_oldprotos = new();
+                        }
+                        compile_oldprotos.Append(appendcmd);
                     }
                 }
+                if (compile_oldprotos.Length > 0) compile_oldproto_cmds.Add(compile_oldprotos.ToString());
                 #endregion
                 #region NewProtos
                 var newproto_files = Directory.EnumerateFiles(
@@ -354,10 +389,19 @@ internal class Program
                 {
                     if (Path.GetExtension(proto_file) == ".proto")
                     {
-                        compile_newprotos.Append($" \"{Path.GetRelativePath("./..", proto_file)}\"");
-                        compiled_csfilenames_new.Add(Path.GetFileNameWithoutExtension(proto_file));
+                        var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
+                        compiled_csfilenames_new.Add(name_withoutext);
+                        var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
+                        if (compile_newprotos.Length + appendcmd.Length 
+                            >= OuterInvokeConfig.maximum_createproc_length)
+                        {
+                            compile_newproto_cmds.Add(compile_newprotos.ToString());
+                            compile_newprotos = new();
+                        }
+                        compile_newprotos.Append(appendcmd);
                     }
                 }
+                if (compile_newprotos.Length > 0) compile_newproto_cmds.Add(compile_newprotos.ToString());
                 #endregion
             }
             await OuterInvoke.RunMultiple((
@@ -396,7 +440,7 @@ internal class Program
             // they won't need to be compiled again by the Generator.
             // Just leave the task to dotnet publish.
             #region Compile Protos (C#)
-            await OuterInvoke.RunMultiple(new OuterInvokeInfo
+            var runres = await OuterInvoke.RunMultiple(new OuterInvokeInfo
             {
                 ProcessPath = OuterInvokeConfig.dotnet_path,
 #if DEBUG
@@ -470,7 +514,6 @@ internal class Program
             {
                 Log.Erro($"Unsupported OS detected! OS: {Environment.OSVersion.Platform} x{arch}. Please report this to Issues of this project.", "OuterInvoke");
                 Log.Erro("Process terminated for unsupported OS. Exit code is 100.", "OuterInvoke");
-                Console.ReadLine();
                 Environment.Exit(100);
             }
             #endregion
@@ -498,7 +541,6 @@ internal class Program
         if (Tools.DirNonExistsOrEmpty(newoutputdir) || Tools.DirNonExistsOrEmpty(oldoutputdir))
         {
             Log.Erro("Process terminated for proto2json output directories not found. Exit code is 245.", "OuterInvoke");
-            Console.ReadLine();
             Environment.Exit(245);
         }
         #endregion
@@ -547,26 +589,6 @@ internal class Program
             CollectionHelper.GetCompareResult(oldmessages, newmessages, MessageResult.NameComparer);
         CollectionResult<EnumResult> enumResults =
             CollectionHelper.GetCompareResult(oldenums, newenums, EnumResult.NameComparer);
-        #region Generate String Pool
-        ProtocStringPoolManager compiledStringPool = new();
-        foreach (var oldProtoMessage in oldmessages) compiledStringPool.PushMessageResult(oldProtoMessage);
-        foreach (var newProtoMessage in newmessages) compiledStringPool.PushMessageResult(newProtoMessage);
-        await compiledStringPool.Compile();
-        #endregion
-        #region Debug Output (no prod!!!)
-        // var newProtosOutputNames = newProto_compiledStringPool.GetAllNames();
-        // Log.Verb($"NewProtos names(verb): {newProtosOutputNames.Count} records.");
-        // foreach (var record in newProtosOutputNames)
-        // {
-        //     Log.Verb($"    [ {record.Key} -> {record.Value} ]; ");
-        // }
-        // var oldProtosOutputNames = oldProto_compiledStringPool.GetAllNames();
-        // Log.Verb($"OldProtos names(verb): {oldProtosOutputNames.Count} records.");
-        // foreach (var record in oldProtosOutputNames)
-        // {
-        //     Log.Verb($"    [ {record.Key} -> {record.Value} ]; ");
-        // }
-        #endregion
         #region Generate Message Handlers
         if (Directory.Exists($"./../ProtoshiftHandlers/Generated"))
         {
@@ -618,8 +640,9 @@ internal class Program
             fi.WriteLine();
             fi.WriteLine("namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode");
             fi.EnterCodeRegion();
-            HandlerCodeWriter.GenerateMessageHandler(ref fi, msgName, shiftpair.LeftItem, shiftpair.RightItem,
-                compiledStringPool, oldenumCollections, newenumCollections);
+            HandlerCodeWriter.GenerateMessageHandler(ref fi, msgName, 
+                shiftpair.LeftItem, shiftpair.RightItem,
+                oldenumCollections, newenumCollections);
             fi.ExitCodeRegion();
             fi.WriteLine("#nullable disable");
             fi.WriteLine("#endregion Designer generated code");

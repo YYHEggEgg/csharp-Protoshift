@@ -1,6 +1,5 @@
 using csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput;
 using System.Collections.Concurrent;
-using System.Linq.Expressions;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator.ProtobufManage;
@@ -31,6 +30,8 @@ internal class GitProtobufPromptCLI
 
     public async Task MainAsync(RunUpdateProtobufConfig o)
     {
+        if (o.ClearWorkspace) File.Delete("last_build_record.json");
+
         if (!o.RequestUpdate)
         {
             _ = Task.Run(() =>
@@ -45,10 +46,10 @@ internal class GitProtobufPromptCLI
         }
 
         bool res = true;
-        res &= _oldprotos.IsDMCAProofBranch 
-            ? await TryRestoreDMCAProofProtos(_oldprotos, SourceRepo, 
+        res &= _oldprotos.IsDMCAProofBranch
+            ? await TryRestoreDMCAProofProtos(_oldprotos, SourceRepo,
                 o.OldProtosBranch, DefaultBranchOld, DateTime.MinValue)
-            : await TryRestoreProtos(_oldprotos, SourceRepo, 
+            : await TryRestoreProtos(_oldprotos, SourceRepo,
                 o.OldProtosBranch, DefaultBranchOld);
         res &= _newprotos.IsDMCAProofBranch
             ? await TryRestoreDMCAProofProtos(_newprotos, SourceRepo,
@@ -108,9 +109,10 @@ internal class GitProtobufPromptCLI
 
         if (protostat.CurrentStat == ProtoStat.Deprecated)
         {
-            if (cloned_recently && !manager.DifferentFromRemote())
+            if (cloned_recently)
             {
-                Directory.Delete(manager.BaseGitDirectory, true);
+                manager.CreateBackup("Backup_ForDeprecated");
+                manager.Destroy();
             }
 
             if (Tools.DirNonExistsOrEmpty(manager.BaseGitDirectory))
@@ -154,7 +156,7 @@ internal class GitProtobufPromptCLI
         if (redirect_url != null)
         {
             _logger.LogInfo($"Protos have been DMCA taken down, redirect to backup channel handler.");
-            return await TryRestoreDMCAProofProtos(manager, redirect_url, 
+            return await TryRestoreDMCAProofProtos(manager, redirect_url,
                 branch, default_fallback_branch, protostat.ReleaseTime);
         }
         else
@@ -203,7 +205,7 @@ internal class GitProtobufPromptCLI
             //
             // Or ask yourself a question: if you're forced to move out from
             // GitHub, then why bother maintain a json version? Why not raw protos?
-            if (protostat.ReleaseTime == release_time)
+            if (protostat.ReleaseTime <= release_time)
             {
                 _logger.LogInfo($"Local version is up-to-date with remote backup channel.");
                 return true;
@@ -215,24 +217,35 @@ internal class GitProtobufPromptCLI
             var protostat_path = Path.Combine(manager.BaseGitDirectory, "protostat.json");
             if (!Tools.DirNonExistsOrEmpty(manager.BaseGitDirectory))
             {
-                if (QueryIfAllowSwitch(_logger))
+                if (!manager.IsDMCAProofBranch)
                 {
-                    if (!manager.DifferentFromRemote()) manager.CreateBackup("BackupBeforeDMCA");
-                    manager.Destroy();
-                }
-                else
-                {
-                    _logger.LogWarn($"User cancelled update channel change.");
-                    return true;
+                    if (QueryIfAllowSwitch(_logger))
+                    {
+                        /*if (!manager.DifferentFromRemote())*/
+                        manager.CreateBackup("BackupBeforeDMCA");
+                        manager.Destroy();
+                    }
+                    else
+                    {
+                        _logger.LogWarn($"User cancelled update channel change.");
+                        return true;
+                    }
+
+                    // local Git repo does not exist, clone one and get protostat.json
+                    if (!manager.TryCloneHere(remoteUrl_git, branch))
+                    {
+                        _mainlogger.LogErro($"Protobuf clone of branch: {branch} failed.");
+                        return false;
+                    }
+                    else
+                    {
+                        GenerateProtosFromBroken(_logger,
+                            Path.Combine(manager.BaseGitDirectory, "Proto2json_Output"),
+                            Path.Combine(manager.BaseGitDirectory, "Protos"));
+                    }
                 }
             }
-            // local Git repo does not exist, clone one and get protostat.json
-            else if (!manager.TryCloneHere(remoteUrl_git, branch))
-            {
-                _mainlogger.LogErro($"Protobuf clone of branch: {branch} failed.");
-                return false;
-            }
-            // else
+            
             cloned_recently = true;
             protostat = await Tools.DeserializeFileAsync<ProtoStatInfo>(protostat_path);
             if (protostat == null)
@@ -244,9 +257,10 @@ internal class GitProtobufPromptCLI
 
         if (protostat.CurrentStat == ProtoStat.Deprecated)
         {
-            if (cloned_recently && !manager.DifferentFromRemote())
+            if (cloned_recently)
             {
-                Directory.Delete(manager.BaseGitDirectory, true);
+                manager.CreateBackup("Backup_ForDeprecated");
+                manager.Destroy();
             }
 
             if (Tools.DirNonExistsOrEmpty(manager.BaseGitDirectory))
@@ -313,7 +327,7 @@ internal class GitProtobufPromptCLI
         if (redirect_url != null)
         {
             _logger.LogInfo($"Protos have been DMCA taken down, redirect to another channel handler.");
-            return await TryRestoreDMCAProofProtos(manager, redirect_url, branch, 
+            return await TryRestoreDMCAProofProtos(manager, redirect_url, branch,
                 default_fallback_branch, protostat.ReleaseTime);
         }
         else

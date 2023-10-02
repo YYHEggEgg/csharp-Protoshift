@@ -15,6 +15,7 @@ internal class GitProtosManager
     public const string DefaultSource = "https://github.com/YYHEggEgg/mihomo-protos.git";
     public string BaseGitDirectory => _gitInvoke.BaseGitDirectory;
     public bool IsValidGitRepository => _gitInvoke.IsValidGitRepository;
+    [Obsolete("The whole program sometimes get stuck and this bug cannot be fixed.", true)]
     public bool DifferentFromRemote() => _gitInvoke.DifferentFromRemote();
 
     public bool IsDMCAProofBranch => !Tools.DirNonExistsOrEmpty(Path.Combine(BaseGitDirectory, "Proto2json_Output"));
@@ -133,8 +134,28 @@ internal class GitProtosManager
         Tools.CopyDir(BaseGitDirectory, 
             Tools.AddNumberedSuffixToPath($"{BaseGitDirectory}.{backupsuffix}"));
 
-    public void Destroy() =>
-        Directory.Delete(BaseGitDirectory, true);
+    public void Destroy()
+    {
+        try
+        {
+            Directory.Delete(BaseGitDirectory, true);
+        }
+        catch (Exception ex)
+        {
+            if (!Directory.Exists(BaseGitDirectory)) return;
+            Log.Erro(ex.ToString(), nameof(GitProtosManager));
+            Log.Erro($"Can't delete old directory. Please manually close " +
+                $"programs using '{BaseGitDirectory}' and type 'y' to retry.");
+            var rsp = Console.ReadLine();
+            if (rsp?.ToLower() == "y") Destroy();
+            else
+            {
+                Log.Erro($"Program terminated because the git clone target " +
+                    $"directory is occupied. Exit code is 43211.");
+                Environment.Exit(43211);
+            }
+        }
+    }
 
     private async Task<ProtoStatInfo?> DownloadProtoStatJson(string protostatUrl)
     {

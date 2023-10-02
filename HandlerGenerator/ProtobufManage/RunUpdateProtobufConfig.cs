@@ -10,11 +10,13 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator.ProtobufManage
 {
     internal class RunUpdateProtobufConfig
     {
-        [Option('u', "update", Required = false, Default = false)]
+        [Option('c', "clear", Required = false, Default = false, HelpText = "Clear the smart build record to get rid of related issues.")]
+        public bool ClearWorkspace { get; set; }
+        [Option('u', "update", Required = false, Default = false, HelpText = "Fetch the newest protobuf.")]
         public bool RequestUpdate { get; set; }
-        [Option("branch-oldprotos", Required = false, Default = null)]
+        [Option("branch-oldprotos", Required = false, Default = null, HelpText = "The branch you would like to choose.")]
         public string? OldProtosBranch { get; set; }
-        [Option("branch-newprotos", Required = false, Default = null)]
+        [Option("branch-newprotos", Required = false, Default = null, HelpText = "The branch you would like to choose.")]
         public string? NewProtosBranch { get; set; }
 
         [Usage(ApplicationAlias = "csharp-Protoshift.HandlerGenerator")]

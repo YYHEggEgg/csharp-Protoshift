@@ -16,9 +16,6 @@ namespace csharp_Protoshift.resLoader
             "            /2.pem, ..., 5.pem -- PEM format RSA keys with key_id\n" +
             "        /ServerPri -- Server Private Keys, SPri\n" +
             "            /2-pri.pem, ..., 5-pri.pem -- PEM format RSA keys with key_id\n" +
-            "    /protobuf\n" +
-            "        /newcmdid.csv -- New Protos CmdIds\n" +
-            "        /oldcmdid.csv -- Old Protos CmdIds\n" +
             "    /config-schemas\n" +
             "        /config_schema_{version}.json -- schema json, DO NOT delete\n" +
             "    /luac_bins -- windy compilers, DO NOT delete";
@@ -43,8 +40,9 @@ namespace csharp_Protoshift.resLoader
             else
             {
                 bool resourcesComplete = true;
-                CheckFileResource("protobuf/newcmdid.csv", resPath, ref resourcesComplete);
-                CheckFileResource("protobuf/oldcmdid.csv", resPath, ref resourcesComplete);
+                // Will be provided from remote
+                // CheckFileResource("protobuf/newcmdid.csv", resPath, ref resourcesComplete);
+                // CheckFileResource("protobuf/oldcmdid.csv", resPath, ref resourcesComplete);
                 CheckFileResource("xor/dispatchKey.bin", resPath, ref resourcesComplete);
                 CheckDirectoryResource("rsakeys/ClientPri", resPath, ref resourcesComplete);
                 CheckDirectoryResource("rsakeys/ServerPri", resPath, ref resourcesComplete, 

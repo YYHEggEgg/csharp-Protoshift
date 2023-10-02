@@ -12,7 +12,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="oldmessage">The analyzed old message.</param>
         /// <param name="newmessage">The analyzed new message.</param>
         public static void GenerateMessageHandler(ref BasicCodeWriter fi, string messageName,
-            MessageResult oldmessage, MessageResult newmessage, ProtocStringPoolManager stringPool, 
+            MessageResult oldmessage, MessageResult newmessage, 
             CompiledEnumsStringPoolCollection oldenumPool, CompiledEnumsStringPoolCollection newenumPool)
         {
             string friendly_messageName = messageName.Substring(
@@ -55,9 +55,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.EnterCodeRegion();
             fi.WriteLine($"if (newprotocol == null) return null;");
             fi.WriteLine($"OldProtos.{messageName} oldprotocol = new();");
-            GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, true, allimports, stringPool, ref newskillIssues);
-            GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, true, allimports, stringPool, ref newskillIssues);
-            GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, true, allimports, stringPool, ref newskillIssues);
+            GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, true, allimports, ref newskillIssues);
+            GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, true, allimports, ref newskillIssues);
+            GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, true, allimports, ref newskillIssues);
             if (newskillIssues.HasSkillIssue)
             {
                 #region Skill issue Middleware
@@ -82,9 +82,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.EnterCodeRegion();
             fi.WriteLine("if (oldprotocol == null) return null;");
             fi.WriteLine($"NewProtos.{messageName} newprotocol = new();");
-            GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, false, allimports, stringPool, ref oldskillIssues);
-            GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, false, allimports, stringPool, ref oldskillIssues);
-            GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, false, allimports, stringPool, ref oldskillIssues);
+            GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, false, allimports, ref oldskillIssues);
+            GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, false, allimports, ref oldskillIssues);
+            GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, false, allimports, ref oldskillIssues);
             if (oldskillIssues.HasSkillIssue)
             {
                 #region Skill issue Middleware
@@ -112,12 +112,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.WriteLine("#region Skill issue APIs");
                 if (oldskillIssues.HasSkillIssue)
                 {
-                    GenerateSkillIssueList(ref fi, false, oldskillIssues, allimports, stringPool,
+                    GenerateSkillIssueList(ref fi, false, oldskillIssues, allimports,
                         messageName, friendly_messageName);
                 }
                 if (newskillIssues.HasSkillIssue)
                 {
-                    GenerateSkillIssueList(ref fi, true, newskillIssues, allimports, stringPool,
+                    GenerateSkillIssueList(ref fi, true, newskillIssues, allimports,
                         messageName, friendly_messageName);
                 }
                 fi.WriteLine("#endregion");
@@ -177,7 +177,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 string inner_message_name = inner_message.LeftItem.messageName;
                 GenerateMessageHandler(ref fi, $"{messageName}.Types.{inner_message_name}",
-                    inner_message.LeftItem, inner_message.RightItem, stringPool, oldenumPool, newenumPool);
+                    inner_message.LeftItem, inner_message.RightItem, oldenumPool, newenumPool);
             }
             fi.WriteLine("#endregion");
             #endregion
@@ -228,7 +228,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.EnterCodeRegion();
             foreach (var newOnly in enumNodes_newOnly)
             {
-                fi.WriteLine($"// Not found match enum node in old: [ {newOnly} ]");
+                fi.WriteLine($"// Not found match enum node in old (only in new): [ {newOnly} ]");
             }
             foreach (var tuple in enumNodes_both)
             {
@@ -249,9 +249,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.EnterCodeRegion();
             fi.WriteLine("switch (oldprotocol)");
             fi.EnterCodeRegion();
-            foreach (var newOnly in enumNodes_newOnly)
+            foreach (var oldOnly in enumNodes_oldOnly)
             {
-                fi.WriteLine($"// Not found match enum node in new: [ {newOnly} ]");
+                fi.WriteLine($"// Not found match enum node in new (only in old): [ {oldOnly} ]");
             }
             foreach (var tuple in enumNodes_both)
             {
@@ -274,7 +274,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
 
         private static void GenerateSkillIssueList(ref BasicCodeWriter fi, bool generateForNew, 
             SkillIssueCollection skillIssues, ImportTypesCollection importInfo, 
-            ProtocStringPoolManager stringPool, string messageName,
+            string messageName,
             string? baseMessage_friendlyName = null)
         {
             WriteGeneratedCodeAttribute(ref fi);
@@ -288,7 +288,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 bool isSupportedType = !commonField.isImportType ? true
                     : importInfo.ContainsKey(commonField.fieldType);
                 fi.WriteLine($"(\"{commonField.fieldType}\", \"{commonField.fieldName}\", " +
-                    $"\"{stringPool.GetCompiledName(commonField.fieldName)}\", {isSupportedType.ToString().ToLower()}),");
+                    $"\"{Tools.GetProtocCompiledName(commonField.fieldName)}\", {isSupportedType.ToString().ToLower()}),");
             }
             foreach (var mapField in skillIssues.MapFields)
             {
@@ -296,7 +296,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     (mapField.keyIsImportType ? importInfo.ContainsKey(mapField.keyType) : true) && 
                     (mapField.valueIsImportType ? importInfo.ContainsKey(mapField.valueType) : true);
                 fi.WriteLine($"(\"map<{mapField.keyType}, {mapField.valueType}>\", " +
-                    $"\"{mapField.fieldName}\", \"{stringPool.GetCompiledName(mapField.fieldName)}\", " +
+                    $"\"{mapField.fieldName}\", \"{Tools.GetProtocCompiledName(mapField.fieldName)}\", " +
                     $"{isSupportedType.ToString().ToLower()}),");
             }
             foreach (var oneofField in skillIssues.OneofFields)
@@ -306,7 +306,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     bool isSupportedType = !oneofInnerField.isImportType ? true
                         : importInfo.ContainsKey(oneofInnerField.fieldType);
                     fi.WriteLine($"(\"{oneofInnerField.fieldType}\", \"{oneofInnerField.fieldName}\", " +
-                        $"\"{stringPool.GetCompiledName(oneofInnerField.fieldName)}\", {isSupportedType.ToString().ToLower()}),");
+                        $"\"{Tools.GetProtocCompiledName(oneofInnerField.fieldName)}\", {isSupportedType.ToString().ToLower()}),");
                 }
             }
             fi.RemoveIndent();
@@ -315,17 +315,17 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             foreach (var commonField in skillIssues.CommonFields)
             {
                 GenerateCommonFieldOnewayAPI(ref fi, commonField.fieldName, commonField,
-                    generateForNew, importInfo, stringPool, messageName, baseMessage_friendlyName);
+                    generateForNew, importInfo, messageName, baseMessage_friendlyName);
             }
             foreach (var mapField in skillIssues.MapFields)
             {
                 GenerateMapFieldOnewayAPI(ref fi, mapField.fieldName, mapField,
-                    generateForNew, importInfo, stringPool, messageName, baseMessage_friendlyName);
+                    generateForNew, importInfo, messageName, baseMessage_friendlyName);
             }
             foreach (var oneofField in skillIssues.OneofFields)
             {
                 GenerateOneofFieldOnewayAPI(ref fi, messageName, oneofField,
-                    generateForNew, importInfo, stringPool, baseMessage_friendlyName);
+                    generateForNew, importInfo, baseMessage_friendlyName);
             }
         }
 

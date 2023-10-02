@@ -56,8 +56,6 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             if (exitcode != 0 && invokeInfo.AutoTerminateReason != null)
             {
                 Log.Erro($"{invokeInfo.AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
-                Log.Info("Press any key to exit...");
-                Console.ReadLine();
                 Environment.Exit(autoTerminateCode);
             }
             return exitcode;
@@ -91,8 +89,6 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (exiting)
             {
-                Log.Info("Press any key to exit...");
-                Console.ReadLine();
                 Environment.Exit(autoTerminateCode);
             }
             return rtn;
@@ -133,8 +129,6 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (exiting)
             {
-                Log.Info("Press any key to exit...");
-                Console.ReadLine();
                 Environment.Exit(autoTerminateCode);
             }
             return rtn;
@@ -166,8 +160,6 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (exiting)
             {
-                Log.Info("Press any key to exit...");
-                Console.ReadLine();
                 Environment.Exit(autoTerminateCode);
             }
             return rtn;
@@ -199,8 +191,6 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (exiting)
             {
-                Log.Info("Press any key to exit...");
-                Console.ReadLine();
                 Environment.Exit(autoTerminateCode);
             }
             return rtn;
@@ -232,8 +222,6 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (exiting)
             {
-                Log.Info("Press any key to exit...");
-                Console.ReadLine();
                 Environment.Exit(autoTerminateCode);
             }
             return rtn;
@@ -265,8 +253,6 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             if (exiting)
             {
-                Log.Info("Press any key to exit...");
-                Console.ReadLine();
                 Environment.Exit(autoTerminateCode);
             }
             return rtn;

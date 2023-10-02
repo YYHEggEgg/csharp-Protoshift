@@ -24,19 +24,20 @@
 /NewProtoHandlers/obj
 /NewProtoHandlers/Backup
 /NewProtoHandlers/Google.Protobuf
+/NewProtoHandlers/Google.Protobuf.*
 /NewProtoHandlers/AskCmdId.cs
 /OldProtoHandlers/bin
 /OldProtoHandlers/obj
 /OldProtoHandlers/Backup
 /OldProtoHandlers/Google.Protobuf
+/OldProtoHandlers/Google.Protobuf.*
 /OldProtoHandlers/AskCmdId.cs
-/OldProtoHandlers/Google.Protobuf.3.4
 
 # protoshift-ex Handlers & Generator
 /ProtoshiftHandlers/bin
 /ProtoshiftHandlers/obj
 /ProtoshiftHandlers/Generated
-/ProtoshiftHandlers/ProtoDispatch/Backup
+/ProtoshiftHandlers/ProtoDispatch
 /HandlerGenerator/.vscode
 /HandlerGenerator/bin
 /HandlerGenerator/obj

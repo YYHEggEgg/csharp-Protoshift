@@ -160,7 +160,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             fi.WriteLine($"/// <returns>The protobuf with {protocol}Protos, can be sent to {packetTo}.</returns>");
             fi.WriteLine("/// <exception cref=\"ArgumentNullException\">The <paramref name=\"head\"/> is not null, but provided null for <paramref name=\"head_length\"/> or <paramref name=\"head_offset\"/>.</exception>");
-            fi.WriteLine("/// <exception cref=\"ArgumentException\">Provided offset & length exceeded the readable length.</exception>");
+            fi.WriteLine("/// <exception cref=\"ArgumentException\">Provided offset and length exceeded the readable length.</exception>");
             fi.WriteLine("/// <exception cref=\"NotSupportedException\">The input <paramref name=\"cmdid\"/> is not supported to be Protoshifted.</exception>");
             switch (paramType)
             {

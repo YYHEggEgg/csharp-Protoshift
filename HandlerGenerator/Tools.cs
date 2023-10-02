@@ -1,5 +1,7 @@
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Reflection;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using YYHEggEgg.Logger;
@@ -23,8 +25,8 @@ internal static class Tools
         {
             var p = Process.Start(startInfo);
             string? rtnvalue = null;
-            p.WaitForExit();
-            if (p.ExitCode != 0) return null;
+            p?.WaitForExit();
+            if (p?.ExitCode != 0) return null;
             rtnvalue = p.StandardOutput.ReadToEnd();
             if (rtnvalue == string.Empty) return null;
             return rtnvalue?.Trim();
@@ -137,5 +139,28 @@ internal static class Tools
             await File.WriteAllTextAsync(file, content);
         }
         Log.Info($"Rewrite of updated files finished.", newNamespace);
+    }
+
+    private static ConcurrentDictionary<string, string> _compilednames = new();
+    public static string GetProtocCompiledName(string name)
+    {
+        if (name.Length == 0) return string.Empty;
+        if (_compilednames.TryGetValue(name, out var compiledName)) return compiledName;
+
+        StringBuilder sb = new StringBuilder();
+        bool forceUpper = true;
+        for (int i = 0; i < name.Length; i++)
+        {
+            if (name[i] == '_')
+            {
+                forceUpper = true;
+                continue;
+            }
+            sb.Append(forceUpper ? char.ToUpper(name[i]) : name[i]);
+            if (name[i] >= '0' && name[i] <= '9') forceUpper = true;
+            else forceUpper = false;
+        }
+        _compilednames[name] = sb.ToString();
+        return sb.ToString();
     }
 }
