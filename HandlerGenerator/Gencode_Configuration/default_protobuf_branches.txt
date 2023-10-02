@@ -1,0 +1,8 @@
+# This file is used to configure the default branches
+# of protobuf when there's no protobuf.
+# 
+# The file should only contain two lines that
+# indicates the default old / new protobuf branch.
+
+3.4_gio
+3.4_live

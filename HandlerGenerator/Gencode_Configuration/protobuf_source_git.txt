@@ -1,0 +1,11 @@
+# This file is used to configure the git source
+# of protobuf. 
+# 
+# The file should only contain one line that directs
+# the git repository (contains '.git' suffix). e.g.:
+# https://github.com/YYHEggEgg/mihomo-protos.git
+# Only the first line takes effect.
+# 
+# Notice that it does not need to be enabled if you
+# don't have problem accessing GitHub; it'll probably
+# affect the build interval.

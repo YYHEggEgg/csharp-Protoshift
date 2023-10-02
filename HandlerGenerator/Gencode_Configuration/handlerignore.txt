@@ -2,7 +2,6 @@
 # 
 # If some proto need special work, please add
 # them to the file, one name per line.
-# Add '#' to make a comment. 
 # 
 # e.g. Write like this:
 # UnionCmd

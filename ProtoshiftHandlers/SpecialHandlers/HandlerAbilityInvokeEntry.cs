@@ -55,7 +55,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         HandlerAbilityActionServerMonsterLog handler_AbilityActionServerMonsterLog = HandlerAbilityActionServerMonsterLog.GlobalInstance;
         HandlerAbilityActionCreateTile handler_AbilityActionCreateTile = HandlerAbilityActionCreateTile.GlobalInstance;
         HandlerAbilityActionDestroyTile handler_AbilityActionDestroyTile = HandlerAbilityActionDestroyTile.GlobalInstance;
-        HandlerAbilityActionFireAfterImage handler_AbilityActionFireAfterImage = HandlerAbilityActionFireAfterImage.GlobalInstance;
+        // HandlerAbilityActionFireAfterImage handler_AbilityActionFireAfterImage = HandlerAbilityActionFireAfterImage.GlobalInstance;
+        HandlerAbilityActionFireAfterImgae handler_AbilityActionFireAfterImage = HandlerAbilityActionFireAfterImgae.GlobalInstance;
         HandlerAbilityActionDeductStamina handler_AbilityActionDeductStamina = HandlerAbilityActionDeductStamina.GlobalInstance;
         HandlerAbilityActionHitEffect handler_AbilityActionHitEffect = HandlerAbilityActionHitEffect.GlobalInstance;
         HandlerAbilityActionSetBulletTrackTarget handler_AbilityActionSetBulletTrackTarget = HandlerAbilityActionSetBulletTrackTarget.GlobalInstance;
@@ -130,7 +131,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                 case NewProtos.AbilityInvokeArgument.MetaAddOrGetAbilityAndTrigger:
                     oldprotocol.AbilityData = handler_AbilityMetaAddOrGetAbilityAndTrigger.NewShiftToOld(newprotocol.AbilityData);
                     break;
-                case NewProtos.AbilityInvokeArgument.MetaSetKilledState:
+                case NewProtos.AbilityInvokeArgument.MetaSetKilledSetate:
                     oldprotocol.AbilityData = handler_AbilityMetaSetKilledState.NewShiftToOld(newprotocol.AbilityData);
                     break;
                 case NewProtos.AbilityInvokeArgument.MetaSetAbilityTrigger:
@@ -331,7 +332,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                 case OldProtos.AbilityInvokeArgument.MetaAddOrGetAbilityAndTrigger:
                     newprotocol.AbilityData = handler_AbilityMetaAddOrGetAbilityAndTrigger.OldShiftToNew(oldprotocol.AbilityData);
                     break;
-                case OldProtos.AbilityInvokeArgument.MetaSetKilledState:
+                case OldProtos.AbilityInvokeArgument.MetaSetKilledSetate:
                     newprotocol.AbilityData = handler_AbilityMetaSetKilledState.OldShiftToNew(oldprotocol.AbilityData);
                     break;
                 case OldProtos.AbilityInvokeArgument.MetaSetAbilityTrigger:

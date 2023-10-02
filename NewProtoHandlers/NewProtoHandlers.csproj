@@ -9,10 +9,13 @@
   <ItemGroup>
     <Compile Remove="Backup\**" />
     <Compile Remove="Obsoleted\**" />
+	<Compile Remove="Google.Protobuf.*\**" />
     <EmbeddedResource Remove="Backup\**" />
     <EmbeddedResource Remove="Obsoleted\**" />
-    <None Remove="Backup\**" />
-    <None Remove="Obsoleted\**" />
+	<EmbeddedResource Remove="Google.Protobuf.*\**" />
+	<None Remove="Backup\**" />
+	<None Remove="Obsoleted\**" />
+	<None Remove="Google.Protobuf.*\**" />
   </ItemGroup>
 
   <ItemGroup>

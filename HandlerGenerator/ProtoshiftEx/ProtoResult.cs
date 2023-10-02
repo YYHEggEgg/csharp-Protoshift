@@ -8,12 +8,13 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
     {
         public string fieldType { get; set; } = "";
         public string fieldName { get; set; } = "";
+        public int fieldNumber { get; set; }
         public bool IsRepeatedField { get; set; } = false;
         public bool isImportType { get; set; } = false;
 
         public override string ToString()
         {
-            return $"Field Type: {fieldType}, Field Name: {fieldName}, Is Repeated: {IsRepeatedField}, Is Import Type: {isImportType}";
+            return $"Field Type: {fieldType}, Field Name: {fieldName}, Number: {fieldNumber}, Is Repeated: {IsRepeatedField}, Is Import Type: {isImportType}";
         }
     
         // override object.Equals
@@ -74,10 +75,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         public string valueType { get; set; } = "";
         public bool valueIsImportType { get; set; } = false;
         public string fieldName { get; set; } = "";
+        public int fieldNumber { get; set; }
 
         public override string ToString()
         {
-            return $"Map Field Name: {fieldName}, Key Type: {keyType}, Is Import Type: {keyIsImportType}, Value Type: {valueType}, Is Import Type: {valueIsImportType}";
+            return $"Map Field Name: {fieldName}, Number: {fieldNumber}, Key Type: {keyType}, Is Import Type: {keyIsImportType}, Value Type: {valueType}, Is Import Type: {valueIsImportType}";
         }
     
         // override object.Equals
@@ -214,15 +216,20 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
     public class EnumResult
     {
         public string enumName { get; set; } = "";
-        public List<string> enumNodes { get; set; } = new();
+        public List<(string name, int number)> enumNodes { get; set; } = new();
+        public List<(string name, string constant)> enumOptions { get; set; } = new();
 
         public override string ToString()
         {
             string result = "";
             result += $"Enum: {enumName}";
-            foreach (string node in enumNodes)
+            foreach (var tuple in enumOptions)
             {
-                result += $"\nField Name: {node}";
+                result += $"\nOption: {tuple.name} = {tuple.constant}";
+            }
+            foreach (var tuple in enumNodes)
+            {
+                result += $"\nField Name: {tuple.name} = {tuple.number}";
             }
             return result;
         }
@@ -231,10 +238,14 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         {
             if (!single_line_output) return ToString();
             string result = "";
-            result += $"Enum: {enumName}; Field Names: ";
-            foreach (string node in enumNodes)
+            result += $"Enum: {enumName}; ";
+            foreach (var tuple in enumOptions)
             {
-                result += $"{node}; ";
+                result += $"Option: {tuple.name} = {tuple.constant}; ";
+            }
+            foreach (var tuple in enumNodes)
+            {
+                result += $"Node: {tuple.name}; ";
             }
             return result;
         }
@@ -285,6 +296,19 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             public override int GetHashCode([DisallowNull] EnumResult obj)
             {
                 return obj.enumName.GetHashCode();
+            }
+        }
+
+        public class EnumNodeNumberEqualityComparer : EqualityComparer<(string name, int number)>
+        {
+            public override bool Equals((string name, int number) x, (string name, int number) y)
+            {
+                return x.number.Equals(y.number);
+            }
+
+            public override int GetHashCode([DisallowNull] (string name, int number) obj)
+            {
+                return obj.number;
             }
         }
         #endregion
