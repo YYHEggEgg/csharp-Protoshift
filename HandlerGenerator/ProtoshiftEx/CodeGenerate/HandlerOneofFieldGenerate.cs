@@ -14,10 +14,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="baseMessage_friendlyName">Give the param can let the code cope with the case that the message name == field name (compiled field name will add _)</param>
         private static void GenerateOneofFieldHandler(ref BasicCodeWriter fi, string oneofFieldName, string belongToMessageCompileName,
             OneofResult oldoneofField, OneofResult newoneofField, bool generateForNewShiftToOld,
-            ImportTypesCollection importInfo, ProtocStringPoolManager stringPool,
+            ImportTypesCollection importInfo, 
             string? baseMessage_friendlyName = null)
         {
-            string fieldName = stringPool.GetCompiledName(oneofFieldName) ?? "";
+            string fieldName = Tools.GetProtocCompiledName(oneofFieldName) ?? "";
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string oldcaller = $"oldprotocol.{fieldName}";
             string newcaller = $"newprotocol.{fieldName}";
@@ -27,7 +27,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 fi.WriteLine($"switch ({newcaller}Case)");
                 fi.EnterCodeRegion();
-                var oneofCaseType = $"NewProtos.{belongToMessageCompileName}.{stringPool.GetCompiledName(oneofFieldName)}OneofCase";
+                var oneofCaseType = $"NewProtos.{belongToMessageCompileName}.{Tools.GetProtocCompiledName(oneofFieldName)}OneofCase";
                 foreach (var oneof_newOnly in oneofInnerFieldsCollection.RightOnlys)
                 {
                     fi.WriteLine($"// Not found match oneof case field: [ {oneof_newOnly} ]");
@@ -35,10 +35,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 foreach (var oneof_pair in oneofInnerFieldsCollection.IntersectItems)
                 {
                     var commonFieldName = oneof_pair.LeftItem.fieldName;
-                    fi.WriteLine($"case {oneofCaseType}.{stringPool.GetCompiledName(commonFieldName)}:");
+                    fi.WriteLine($"case {oneofCaseType}.{Tools.GetProtocCompiledName(commonFieldName)}:");
                     fi.AddIndent();
                     GenerateCommonFieldHandler(ref fi, commonFieldName, oneof_pair.LeftItem, oneof_pair.RightItem,
-                        generateForNewShiftToOld, importInfo, stringPool);
+                        generateForNewShiftToOld, importInfo);
                     fi.WriteLine("break;");
                     fi.RemoveIndent();
                 }
@@ -49,7 +49,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 fi.WriteLine($"switch ({oldcaller}Case)");
                 fi.EnterCodeRegion();
-                var oneofCaseType = $"OldProtos.{belongToMessageCompileName}.{stringPool.GetCompiledName(oneofFieldName)}OneofCase";
+                var oneofCaseType = $"OldProtos.{belongToMessageCompileName}.{Tools.GetProtocCompiledName(oneofFieldName)}OneofCase";
                 foreach (var oneof_oldOnly in oneofInnerFieldsCollection.LeftOnlys)
                 {
                     fi.WriteLine($"// Not found match oneof case field: [ {oneof_oldOnly} ]");
@@ -57,10 +57,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 foreach (var oneof_pair in oneofInnerFieldsCollection.IntersectItems)
                 {
                     var commonFieldName = oneof_pair.LeftItem.fieldName;
-                    fi.WriteLine($"case {oneofCaseType}.{stringPool.GetCompiledName(commonFieldName)}:");
+                    fi.WriteLine($"case {oneofCaseType}.{Tools.GetProtocCompiledName(commonFieldName)}:");
                     fi.AddIndent();
                     GenerateCommonFieldHandler(ref fi, commonFieldName, oneof_pair.LeftItem, oneof_pair.RightItem,
-                        generateForNewShiftToOld, importInfo, stringPool);
+                        generateForNewShiftToOld, importInfo);
                     fi.WriteLine("break;");
                     fi.RemoveIndent();
                 }
@@ -78,7 +78,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="generateForNewShiftToOld">Whether generate code for NewShiftToOld or OldShiftToNew.</param>
         private static void GenerateOneofFieldsHandler(ref BasicCodeWriter fi,
             MessageResult oldmessage, MessageResult newmessage, bool generateForNewShiftToOld,
-            ImportTypesCollection importInfo, ProtocStringPoolManager stringPool,
+            ImportTypesCollection importInfo, 
             ref SkillIssueCollection skillIssues)
         {
             var oneofFieldsCollection = CollectionHelper.GetCompareResult(
@@ -105,7 +105,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 GenerateOneofFieldHandler(ref fi, oneof_pair.LeftItem.oneofEntryName, oldmessage.messageName,
                     oneof_pair.LeftItem, oneof_pair.RightItem, generateForNewShiftToOld,
-                    importInfo, stringPool, oldmessage.messageName);
+                    importInfo, oldmessage.messageName);
             }
         }
 
@@ -120,14 +120,14 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="baseMessage_friendlyName">Give the param can let the code cope with the case that the message name == field name (compiled field name will add _)</param>
         private static void GenerateOneofFieldOnewayAPI(ref BasicCodeWriter fi,
             string belongToMessageCompileName, OneofResult oneofField, bool generateForNewShiftToOld,
-            ImportTypesCollection importInfo, ProtocStringPoolManager stringPool,
+            ImportTypesCollection importInfo, 
             string? baseMessage_friendlyName = null)
         {
             foreach (var oneof_single in oneofField.oneofInnerFields)
             {
                 var commonFieldName = oneof_single.fieldName;
                 GenerateCommonFieldOnewayAPI(ref fi, commonFieldName, oneof_single,
-                    generateForNewShiftToOld, importInfo, stringPool,
+                    generateForNewShiftToOld, importInfo,
                     belongToMessageCompileName, baseMessage_friendlyName);
             }
         }

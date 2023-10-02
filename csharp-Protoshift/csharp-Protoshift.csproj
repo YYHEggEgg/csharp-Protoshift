@@ -6,6 +6,9 @@
     <RootNamespace>csharp_Protoshift</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Version>1.0.1</Version>
+    <Authors>YYHEggEgg</Authors>
+    <Copyright>Copyright (c) 2023 EggEgg</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

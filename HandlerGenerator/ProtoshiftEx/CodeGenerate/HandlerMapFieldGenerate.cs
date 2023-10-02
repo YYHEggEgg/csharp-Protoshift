@@ -13,7 +13,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="baseMessage_friendlyName">Give the param can let the code cope with the case that the message name == field name (compiled field name will add _)</param>
         private static void GenerateMapFieldHandler(ref BasicCodeWriter fi, string mapFieldName,
             MapResult oldmapField, MapResult newmapField, bool generateForNewShiftToOld,
-            ImportTypesCollection importInfo, ProtocStringPoolManager stringPool, 
+            ImportTypesCollection importInfo, 
             string? baseMessage_friendlyName = null)
         {
             if (oldmapField.keyType != newmapField.keyType 
@@ -22,7 +22,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.WriteLine($"// Two field with name equal but don't actual match: old: [ {oldmapField} ], new: [ {newmapField} ]");
                 return;
             }
-            string fieldName = stringPool.GetCompiledName(mapFieldName) ?? "";
+            string fieldName = Tools.GetProtocCompiledName(mapFieldName) ?? "";
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string oldcaller = $"oldprotocol.{fieldName}";
             string newcaller = $"newprotocol.{fieldName}";
@@ -63,7 +63,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="generateForNewShiftToOld">Whether generate code for NewShiftToOld or OldShiftToNew.</param>
         private static void GenerateMapFieldsHandler(ref BasicCodeWriter fi,
             MessageResult oldmessage, MessageResult newmessage, bool generateForNewShiftToOld,
-            ImportTypesCollection importInfo, ProtocStringPoolManager stringPool,
+            ImportTypesCollection importInfo, 
             ref SkillIssueCollection skillIssues)
         {
             var mapFieldsCollection = CollectionHelper.GetCompareResult(
@@ -90,7 +90,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 GenerateMapFieldHandler(ref fi, map_pair.LeftItem.fieldName,
                     map_pair.LeftItem, map_pair.RightItem, generateForNewShiftToOld,
-                    importInfo, stringPool, oldmessage.messageName);
+                    importInfo, oldmessage.messageName);
             }
         }
 
@@ -105,10 +105,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="baseMessage_friendlyName">Give the param can let the code cope with the case that the message name == field name (compiled field name will add _)</param>
         private static void GenerateMapFieldOnewayAPI(ref BasicCodeWriter fi, string mapFieldName,
             MapResult mapField, bool generateForNewShiftToOld,
-            ImportTypesCollection importInfo, ProtocStringPoolManager stringPool,
+            ImportTypesCollection importInfo,
             string messageName, string? baseMessage_friendlyName = null)
         {
-            string fieldName = stringPool.GetCompiledName(mapFieldName) ?? "";
+            string fieldName = Tools.GetProtocCompiledName(mapFieldName) ?? "";
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string caller = $"{(generateForNewShiftToOld ? "new" : "old")}protocol.{fieldName}";
             string keyImportPrefix = $"Handler{mapField.keyType}.GlobalInstance";

@@ -1,4 +1,5 @@
-﻿using YYHEggEgg.Logger;
+﻿using csharp_Protoshift.Enhanced.Handlers.Generator;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.resLoader
 {
@@ -15,9 +16,6 @@ namespace csharp_Protoshift.resLoader
             "            /2.pem, ..., 5.pem -- PEM format RSA keys with key_id\n" +
             "        /ServerPri -- Server Private Keys, SPri\n" +
             "            /2-pri.pem, ..., 5-pri.pem -- PEM format RSA keys with key_id\n" +
-            "    /protobuf\n" +
-            "        /newcmdid.csv -- New Protos CmdIds\n" +
-            "        /oldcmdid.csv -- Old Protos CmdIds\n" +
             "    /config-schemas\n" +
             "        /config_schema_{version}.json -- schema json, DO NOT delete\n" +
             "    /luac_bins -- windy compilers, DO NOT delete";
@@ -33,17 +31,18 @@ namespace csharp_Protoshift.resLoader
             _checklogger = Log.GetChannel("ResourcesCheck");
             bool passcheck = true;
             // Resources
-            if (!Directory.Exists(resPath))
+            if (Tools.DirNonExistsOrEmpty(resPath))
             {
-                _checklogger.LogErro("resources dir missing! Please copy it from \"/resources\"!");
+                _checklogger.LogErro("resources dir missing or empty! ");
                 _checklogger.LogInfo(StructureDescription);
                 passcheck = false;
             }
             else
             {
                 bool resourcesComplete = true;
-                CheckFileResource("protobuf/newcmdid.csv", resPath, ref resourcesComplete);
-                CheckFileResource("protobuf/oldcmdid.csv", resPath, ref resourcesComplete);
+                // Will be provided from remote
+                // CheckFileResource("protobuf/newcmdid.csv", resPath, ref resourcesComplete);
+                // CheckFileResource("protobuf/oldcmdid.csv", resPath, ref resourcesComplete);
                 CheckFileResource("xor/dispatchKey.bin", resPath, ref resourcesComplete);
                 CheckDirectoryResource("rsakeys/ClientPri", resPath, ref resourcesComplete);
                 CheckDirectoryResource("rsakeys/ServerPri", resPath, ref resourcesComplete, 
@@ -90,9 +89,9 @@ namespace csharp_Protoshift.resLoader
             ref bool isResComplete, Action? continueOnSuccess = null, Action? continueOnFailure = null)
         {
             var dirPath = Path.Combine(resBasePath, path);
-            if (!Directory.Exists(dirPath))
+            if (Tools.DirNonExistsOrEmpty(dirPath))
             {
-                _checklogger?.LogErro($"{dirPath} not found!");
+                _checklogger?.LogErro($"{dirPath} not found or empty!");
                 isResComplete = false;
                 continueOnFailure?.Invoke();
             }

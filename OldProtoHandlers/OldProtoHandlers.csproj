@@ -7,15 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Backup\**" />
-    <Compile Remove="Google.Protobuf.3.4\**" />
-    <Compile Remove="Obsoleted\**" />
-    <EmbeddedResource Remove="Backup\**" />
-    <EmbeddedResource Remove="Google.Protobuf.3.4\**" />
-    <EmbeddedResource Remove="Obsoleted\**" />
-    <None Remove="Backup\**" />
-    <None Remove="Google.Protobuf.3.4\**" />
-    <None Remove="Obsoleted\**" />
+	<Compile Remove="Backup\**" />
+	<Compile Remove="Obsoleted\**" />
+	<Compile Remove="Google.Protobuf.*\**" />
+	<EmbeddedResource Remove="Backup\**" />
+	<EmbeddedResource Remove="Obsoleted\**" />
+	<EmbeddedResource Remove="Google.Protobuf.*\**" />
+	<None Remove="Backup\**" />
+	<None Remove="Obsoleted\**" />
+	<None Remove="Google.Protobuf.*\**" />
   </ItemGroup>
 
   <ItemGroup>

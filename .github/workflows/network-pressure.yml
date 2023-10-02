@@ -4,11 +4,7 @@ on:
   pull_request:
     branches:
       - main
-      - protoshift-ex
-      - protoshift-ex-network-improve
-  push:
-    branches:
-      - protoshift-ex-network-improve
+      - development
 
 jobs:
   network-pressure-10-clients-ubuntu-rel:

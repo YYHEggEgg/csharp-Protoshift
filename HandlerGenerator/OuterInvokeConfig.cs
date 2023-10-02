@@ -24,5 +24,11 @@
         /// Not recommend a relative path because the working directory will be changed by the program at the startup. 
         /// </summary>
         public const string git_path = "git";
+        /// <summary>
+        /// The maximum length of creating a process's command line
+        /// string. The minimum value ever searched is Windows
+        /// cmd.exe's 8191, but here use 7 * 1024.
+        /// </summary>
+        public static int maximum_createproc_length => 7 * 1024;
     }
 }
