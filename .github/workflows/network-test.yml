@@ -4,19 +4,8 @@ name: Network Test
 on:
   pull_request:
     branches:
-      - network-performance-test
-      - packet-protocol-audit
-      - network-pressure-test
       - main
-      - protoshift-ex
-      - protoshift-ex-hotpatch-support
-      - protoshift-ex-network-improve
-  push:
-    branches:
-      - network-performance-test
-      - packet-protocol-audit
-      - network-pressure-test
-      - protoshift-ex-network-improve
+      - development
 
 jobs:
   network-proxy-benchmark-windows-rel:

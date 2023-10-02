@@ -1,16 +1,10 @@
 name: Normal Build
 
 on:
-  push:
-    branches:
-      - protoshift-ex-config-json-read
-      - protoshift-ex-hotpatch-support
   pull_request:
     branches:
       - main
-      - protoshift-ex
-      - protoshift-ex-config-json-read
-      - protoshift-ex-hotpatch-support
+      - development
 
 jobs:
   protoshift-ex-rel:
@@ -39,6 +33,15 @@ jobs:
 
     - name: Restore Project NuGet packages
       run: dotnet restore csharp-Protoshift/csharp-Protoshift.csproj
+
+    # Temporary -- start
+    - name: Delete deprecated protobuf files
+      run: |
+        rm -rf OldProtoHandlers/Google.Protobuf
+        rm -rf NewProtoHandlers/Google.Protobuf
+        rm -rf csharp-Protoshift/resources/protobuf
+        rm -rf ProtoshiftHandlers/ProtoDispatch
+    # Temporary -- end
 
     - name: Run Generator
       run: cd HandlerGenerator ; dotnet run --configuration Release
