@@ -81,6 +81,6 @@
         /// <summary>
         /// Error PSHP020: rule 包含多个标识符 `->`。
         /// </summary>
-        public const string PSHP020 = "<color=Red>Error</color> PSHP021: rule contains multiple `->` identifiers.";
+        public const string PSHP020 = "<color=Red>Error</color> PSHP020: rule contains multiple `->` identifiers.";
     }
 }

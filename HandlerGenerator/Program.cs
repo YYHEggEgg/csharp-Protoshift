@@ -11,6 +11,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator;
 internal class Program
 {
     public static bool AlwaysPassChoices;
+    public static bool PublishFailOnAfterBuildTasksFailure;
 
     private static async Task Main(string[] args)
     {
@@ -329,7 +330,7 @@ internal class Program
                         compiled_csfilenames_old.Add(name_withoutext);
                         var appendcmd = $" \"OldProtoHandlers/Google.Protobuf/{proto_file}\"";
                         if (compile_oldprotos.Length + appendcmd.Length
-                            >= OuterInvokeConfig.maximum_createproc_length)
+                            >= OuterInvokeGlobalConfig.maximum_createproc_length)
                         {
                             compile_oldproto_cmds.Add(compile_oldprotos.ToString());
                             compile_oldprotos = new();
@@ -349,7 +350,7 @@ internal class Program
                         compiled_csfilenames_new.Add(name_withoutext);
                         var appendcmd = $" \"NewProtoHandlers/Google.Protobuf/{proto_file}\"";
                         if (compile_newprotos.Length + appendcmd.Length
-                            >= OuterInvokeConfig.maximum_createproc_length)
+                            >= OuterInvokeGlobalConfig.maximum_createproc_length)
                         {
                             compile_newproto_cmds.Add(compile_newprotos.ToString());
                             compile_newprotos = new();
@@ -374,7 +375,7 @@ internal class Program
                         compiled_csfilenames_old.Add(name_withoutext);
                         var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
                         if (compile_oldprotos.Length + appendcmd.Length
-                            >= OuterInvokeConfig.maximum_createproc_length)
+                            >= OuterInvokeGlobalConfig.maximum_createproc_length)
                         {
                             compile_oldproto_cmds.Add(compile_oldprotos.ToString());
                             compile_oldprotos = new();
@@ -396,7 +397,7 @@ internal class Program
                         compiled_csfilenames_new.Add(name_withoutext);
                         var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
                         if (compile_newprotos.Length + appendcmd.Length
-                            >= OuterInvokeConfig.maximum_createproc_length)
+                            >= OuterInvokeGlobalConfig.maximum_createproc_length)
                         {
                             compile_newproto_cmds.Add(compile_newprotos.ToString());
                             compile_newprotos = new();
@@ -411,7 +412,7 @@ internal class Program
                 from oldproto_files in compile_oldproto_cmds
                 select new OuterInvokeInfo
                 {
-                    ProcessPath = OuterInvokeConfig.protoc_path,
+                    ProcessPath = OuterInvokeGlobalConfig.protoc_path,
                     WorkingDir = "./..",
                     AutoTerminateReason = $"OldProtos compiling (protoc) failed.",
                     CmdLine = $"--proto_path=\"OldProtoHandlers/Google.Protobuf/Protos\" " +
@@ -421,7 +422,7 @@ internal class Program
                 from newproto_files in compile_newproto_cmds
                 select new OuterInvokeInfo
                 {
-                    ProcessPath = OuterInvokeConfig.protoc_path,
+                    ProcessPath = OuterInvokeGlobalConfig.protoc_path,
                     WorkingDir = "./..",
                     AutoTerminateReason = $"NewProtos compiling (protoc) failed.",
                     CmdLine = $"--proto_path=\"NewProtoHandlers/Google.Protobuf/Protos\" " +
@@ -445,7 +446,7 @@ internal class Program
             #region Compile Protos (C#)
             var runres = await OuterInvoke.RunMultiple(new OuterInvokeInfo
             {
-                ProcessPath = OuterInvokeConfig.dotnet_path,
+                ProcessPath = OuterInvokeGlobalConfig.dotnet_path,
 #if DEBUG
                 CmdLine = "build",
 #else
@@ -456,7 +457,7 @@ internal class Program
                 WorkingDir = "./../OldProtoHandlers"
             }, new OuterInvokeInfo
             {
-                ProcessPath = OuterInvokeConfig.dotnet_path,
+                ProcessPath = OuterInvokeGlobalConfig.dotnet_path,
 #if DEBUG
                 CmdLine = "build",
 #else
@@ -760,7 +761,7 @@ internal class Program
             }
             if (pullUp_for_unrecogized_proto)
             {
-                if (Program.AlwaysPassChoices)
+                if (AlwaysPassChoices)
                 {
                     Log.Warn($"Detected unmergable changes. Continue because -y option is enabled.");
                 }
@@ -794,7 +795,7 @@ internal class Program
 
         Log.Info("Protoshift enhanced handlers generated! ");
 #if DEBUG
-        if (!Program.AlwaysPassChoices)
+        if (!AlwaysPassChoices)
         {
             Log.Info("Press any key to exit.");
             Console.ReadLine();
@@ -806,7 +807,7 @@ internal class Program
         #region Get output Path
         if (gitinfos.IsValidGitRepository)
         {
-            ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
+            ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
             {
                 WorkingDirectory = "./..",
                 Arguments = "rev-parse HEAD",
@@ -830,7 +831,7 @@ internal class Program
                     }
                     else
                     {
-                        output_path += $"output_{DateTime.Today:yyyyMMdd}_{shavalue.Substring(0, 7)}";
+                        output_path += $"output_{DateTime.Today:yyyyMMdd}_{shavalue.Substring(0, 10)}";
                     }
                 }
             }
@@ -888,36 +889,74 @@ internal class Program
         string dotnet_publish_cmd = $"publish --no-build --configuration=Release -o {output_bin_path}";
         await OuterInvoke.RunMultiple(new OuterInvokeInfo
         {
-            ProcessPath = OuterInvokeConfig.dotnet_path,
+            ProcessPath = OuterInvokeGlobalConfig.dotnet_path,
             StartingNotice = $"Start building: dotnet {dotnet_build_cmd}",
             CmdLine = dotnet_build_cmd,
             AutoTerminateReason = $"dotnet pre-publish build failed. ",
             WorkingDir = "./../csharp-Protoshift"
         }, new OuterInvokeInfo
         {
-            ProcessPath = OuterInvokeConfig.dotnet_path,
+            ProcessPath = OuterInvokeGlobalConfig.dotnet_path,
             StartingNotice = $"Start publishing: dotnet {dotnet_publish_cmd}",
             CmdLine = dotnet_publish_cmd,
             AutoTerminateReason = $"dotnet after-build publish failed. ",
             WorkingDir = "./../csharp-Protoshift"
         }, 2910);
-        #region Generate After-builds
+        #region After-builds tasks
         Log.Info($"dotnet build & publish succeeded. Now copying resources...");
         File.Copy($"./../csharp-Protoshift/config.json", $"{output_path}/config.json");
         string output_res_dir = $"{output_path}/resources";
         Tools.CopyDir("./../csharp-Protoshift/resources", output_res_dir);
 
         Log.Info($"Create launch file...");
-        await File.WriteAllTextAsync($"{output_path}/run.sh", "dotnet ./bin/csharp-Protoshift.dll");
-        await File.WriteAllTextAsync($"{output_path}/run-win.bat", "dotnet ./bin/csharp-Protoshift.dll");
-        if (OperatingSystem.IsLinux())
+        await File.WriteAllTextAsync($"{output_path}/run", 
+            "#!/bin/bash\ndotnet ./bin/csharp-Protoshift.dll $*");
+        await File.WriteAllTextAsync($"{output_path}/run.bat", "dotnet ./bin/csharp-Protoshift.dll %*");
+        if (!OperatingSystem.IsWindows())
         {
             await OuterInvoke.Run(new OuterInvokeInfo
             {
                 ProcessPath = "chmod",
-                CmdLine = $"+x {output_path}/run.sh",
+                CmdLine = $"+x {output_path}/run",
             });
+
+            // After-build tasks
+            var afterbuild_shell = Path.GetFullPath("Gencode_Configuration/afterbuild_task_unix.sh");
+            if (File.Exists(afterbuild_shell))
+            {
+                #region Read running target
+                string run_program = "/bin/bash"; // default
+                var readres = File.ReadLines(afterbuild_shell).First();
+                if (readres != null && readres.StartsWith("#!")) 
+                    run_program = readres["#!".Length..].Trim();
+                #endregion
+                await OuterInvoke.Run(new OuterInvokeInfo
+                {
+                    ProcessPath = run_program,
+                    StartingNotice = $"The custom after-build task ({run_program}) is starting...",
+                    CmdLine = $"\"{afterbuild_shell}\" \"{Path.GetFullPath(output_path)}\"",
+                    AutoTerminateReason = PublishFailOnAfterBuildTasksFailure
+                        ? "The custom after-build task (Unix) failed. " : null,
+                }, 3400);
+                }
         }
+        else 
+        {
+            // After-build tasks
+            var afterbuild_shell = Path.GetFullPath("Gencode_Configuration/afterbuild_task_win.ps1");
+            if (File.Exists(afterbuild_shell))
+            {
+                await OuterInvoke.Run(new OuterInvokeInfo
+                {
+                    ProcessPath = OuterInvokeGlobalConfig.windows_powershell_path,
+                    StartingNotice = $"The custom after-build task (powershell.exe) is starting...",
+                    CmdLine = $"\"{afterbuild_shell}\" \"{Path.GetFullPath(output_path)}\"",
+                    AutoTerminateReason = PublishFailOnAfterBuildTasksFailure
+                        ? "The custom after-build task (Windows) failed. " : null,
+                }, 3400);
+            }
+        }
+
         #endregion
         Log.Info($"Publish completed! Process will terminate in 3s.");
         await Task.Delay(3000);

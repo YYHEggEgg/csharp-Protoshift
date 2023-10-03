@@ -32,6 +32,7 @@ internal class GitProtobufPromptCLI
     public async Task MainAsync(RunUpdateProtobufConfig o)
     {
         Program.AlwaysPassChoices = o.AlwaysPassChoices;
+        Program.PublishFailOnAfterBuildTasksFailure = o.PublishFailOnAfterBuildTasksFailure;
         if (o.ClearWorkspace) File.Delete("last_build_record.json");
 
         if (!o.RequestUpdate)

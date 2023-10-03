@@ -59,7 +59,7 @@ internal class GitProtosManager
     public bool TryGitPullUpdate()
     {
         if (!IsValidGitRepository) return false;
-        ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
+        ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
         {
             WorkingDirectory = BaseGitDirectory,
             Arguments = "pull"
@@ -89,7 +89,7 @@ internal class GitProtosManager
         if (branch != null) cloneargs += $"--branch {branch} ";
         cloneargs += $"{remoteUrl_git} {Path.GetFullPath(BaseGitDirectory)}";
 
-        ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
+        ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
         {
             Arguments = cloneargs
         };
@@ -116,7 +116,7 @@ internal class GitProtosManager
     {
         if (!IsValidGitRepository) return false;
         _gitInvoke.Fetch();
-        ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
+        ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
         {
             WorkingDirectory = BaseGitDirectory,
             Arguments = $"checkout {branchname}"

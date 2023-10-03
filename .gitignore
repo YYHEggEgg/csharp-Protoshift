@@ -46,6 +46,8 @@
 /HandlerGenerator/Proto2json_Output
 /HandlerGenerator/ProtoFieldNameAnalyze/Compiled
 /HandlerGenerator/ProtoFieldNameAnalyze/GeneratedProtos
+/HandlerGenerator/Gencode_Configuration/afterbuild_task_unix.sh
+/HandlerGenerator/Gencode_Configuration/afterbuild_task_win.ps1
 /HandlerGenerator/last_build_record.json
 
 # Benchmark

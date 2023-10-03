@@ -23,7 +23,7 @@ internal class GitInvoke
 
     public static bool CheckGitInstallation()
     {
-        var versionInfo = Tools.GetContentFromExecute(OuterInvokeConfig.git_path,
+        var versionInfo = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path,
             Environment.CurrentDirectory, "--version");
         if (versionInfo == null) return false;
         else
@@ -41,37 +41,37 @@ internal class GitInvoke
     /// The <c>user.name</c> git config on the current computer.
     /// </summary>
     public string? GetGlobalAuthor() =>
-        Tools.GetContentFromExecute(OuterInvokeConfig.git_path, _baseGitDir, "config --global --get user.name");
+        Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "config --global --get user.name");
     /// <summary>
     /// The <c>user.email</c> git config on the current computer.
     /// </summary>
     public string? GetGlobalEmail() =>
-        Tools.GetContentFromExecute(OuterInvokeConfig.git_path, _baseGitDir, "config --global --get user.email");
+        Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "config --global --get user.email");
     /// <summary>
     /// The current branch name working on. 
     /// </summary>
     /// <returns></returns>
     public string? GetCurrentBranch() =>
-        Tools.GetContentFromExecute(OuterInvokeConfig.git_path, _baseGitDir, "rev-parse --abbrev-ref HEAD");
+        Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "rev-parse --abbrev-ref HEAD");
     /// <summary>
     /// Get the author of the last made commit.
     /// </summary>
     public string? GetLastCommitAuthor() =>
-        Tools.GetContentFromExecute(OuterInvokeConfig.git_path, _baseGitDir, "log --pretty=format:\"%an\" HEAD -1");
+        Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%an\" HEAD -1");
     /// <summary>
     /// Get the email of the last made commit.
     /// </summary>
     public string? GetLastCommitEmail() =>
-        Tools.GetContentFromExecute(OuterInvokeConfig.git_path, _baseGitDir, "log --pretty=format:\"%ae\" HEAD -1");
+        Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%ae\" HEAD -1");
     /// <summary>
     /// Get the time of the last made commit.
     /// </summary>
     public string? GetLastCommitTime() =>
-        Tools.GetContentFromExecute(OuterInvokeConfig.git_path, _baseGitDir, "log --pretty=format:\"%cd\" HEAD -1");
+        Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%cd\" HEAD -1");
 
     public void Fetch()
     {
-        ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
+        ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
         {
             WorkingDirectory = _baseGitDir,
             Arguments = "fetch",
@@ -92,7 +92,7 @@ internal class GitInvoke
 
     public List<string> GetLocalBranches()
     {
-        var content = Tools.GetContentFromExecute(OuterInvokeConfig.git_path, 
+        var content = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, 
             _baseGitDir, "branch --list --format \"%(refname)\"");
         if (content == null) return new();
         var branches = content.Split("refs/heads/");
@@ -102,7 +102,7 @@ internal class GitInvoke
     
     public List<string> GetRemoteBranches()
     {
-        var content = Tools.GetContentFromExecute(OuterInvokeConfig.git_path, 
+        var content = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, 
             _baseGitDir, "branch --list --remote --format \"%(refname)\"");
         if (content == null) return new();
         var branches = content.Split("refs/remotes/");
@@ -112,20 +112,20 @@ internal class GitInvoke
 
     public string? GetRemote()
     {
-        var remotes = Tools.GetContentFromExecute(OuterInvokeConfig.git_path, _baseGitDir, "remote")?.Split('\n');
+        var remotes = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "remote")?.Split('\n');
         if (remotes == null) return null;
         if (remotes.Length == 0) return null;
         var remote = remotes[0];
-        return Tools.GetContentFromExecute(OuterInvokeConfig.git_path, _baseGitDir, $"remote get-url {remote}");
+        return Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, $"remote get-url {remote}");
     }
 
     public bool TrySetRemote(string newurl)
     {
-        var remotes = Tools.GetContentFromExecute(OuterInvokeConfig.git_path, _baseGitDir, "remote")?.Split('\n');
+        var remotes = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "remote")?.Split('\n');
         if (remotes == null) return false;
         if (remotes.Length == 0) return false;
         var remote = remotes[0];
-        ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
+        ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
         {
             WorkingDirectory = _baseGitDir,
             Arguments = $"remote set-url {remote} {newurl}"
@@ -147,7 +147,7 @@ internal class GitInvoke
         {
             throw new EntryPointNotFoundException("The current local branch is not found in remote.");
         }
-        var content = Tools.GetContentFromExecute(OuterInvokeConfig.git_path,
+        var content = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path,
             _baseGitDir, $"rev-list --count {remote_branch}..HEAD");
         if (content == null)
             throw new ApplicationException("git rev-list parse got empty message.");
@@ -166,7 +166,7 @@ internal class GitInvoke
         {
             throw new EntryPointNotFoundException("The current local branch is not found in remote.");
         }
-        var content = Tools.GetContentFromExecute(OuterInvokeConfig.git_path,
+        var content = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path,
             _baseGitDir, $"rev-list --count HEAD..{remote_branch}");
         if (content == null)
             throw new ApplicationException("git rev-list parse got empty message.");
@@ -183,14 +183,14 @@ internal class GitInvoke
     {
         if (GetAheadCommits() > 0) return true;
         else if (!string.IsNullOrEmpty(Tools.GetContentFromExecute(
-            OuterInvokeConfig.git_path, _baseGitDir, "diff --staged --shortstat")?.Trim()))
+            OuterInvokeGlobalConfig.git_path, _baseGitDir, "diff --staged --shortstat")?.Trim()))
             return true;
         else if (!string.IsNullOrEmpty(Tools.GetContentFromExecute(
-            OuterInvokeConfig.git_path, _baseGitDir,
+            OuterInvokeGlobalConfig.git_path, _baseGitDir,
             "ls-files --deleted --modified --others --unmerged --exclude-standard")?.Trim()))
             return true;
         else if (!string.IsNullOrEmpty(Tools.GetContentFromExecute(
-            OuterInvokeConfig.git_path, _baseGitDir, "stash list")?.Trim()))
+            OuterInvokeGlobalConfig.git_path, _baseGitDir, "stash list")?.Trim()))
             return true;
         else return false;
     }
