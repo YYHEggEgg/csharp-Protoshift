@@ -2,6 +2,9 @@
 // Because the proto handlers rebuild is very slow, it's suggested to 
 // use HotPatch to fix skill issue, and watch the result instantly.
 //
+// To apply the configuration, change its name to
+// protoshift_hotpatch_config.tmpl.json before starting.
+//
 // Notice that HotPatch should only be applied in test environment! 
 // Once the outcome is expected, you should cancel the HotPatch, apply 
 // the changes to protos and run HandlerGenerator. 
