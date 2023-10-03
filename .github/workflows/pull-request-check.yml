@@ -35,10 +35,10 @@ jobs:
       run: dotnet restore csharp-Protoshift/csharp-Protoshift.csproj
 
     - name: Copy script to test after-build-task template
-      run: cp HandlerGenerator\Gencode_Configuration\afterbuild_task_unix.tmpl.sh HandlerGenerator\Gencode_Configuration\afterbuild_task_unix.sh
+      run: cp HandlerGenerator/Gencode_Configuration/afterbuild_task_unix.tmpl.sh HandlerGenerator/Gencode_Configuration/afterbuild_task_unix.sh
 
     - name: Run Generator
-      run: cd HandlerGenerator ; dotnet run --configuration Release -- --update
+      run: cd HandlerGenerator ; dotnet run --configuration Release -- --update -y
 
     - name: Archive build
       uses: actions/upload-artifact@v2
