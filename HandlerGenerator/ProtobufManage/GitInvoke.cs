@@ -110,6 +110,31 @@ internal class GitInvoke
                    select branchname.Trim());
     }
 
+    public string? GetRemote()
+    {
+        var remotes = Tools.GetContentFromExecute(OuterInvokeConfig.git_path, _baseGitDir, "remote")?.Split('\n');
+        if (remotes == null) return null;
+        if (remotes.Length == 0) return null;
+        var remote = remotes[0];
+        return Tools.GetContentFromExecute(OuterInvokeConfig.git_path, _baseGitDir, $"remote get-url {remote}");
+    }
+
+    public bool TrySetRemote(string newurl)
+    {
+        var remotes = Tools.GetContentFromExecute(OuterInvokeConfig.git_path, _baseGitDir, "remote")?.Split('\n');
+        if (remotes == null) return false;
+        if (remotes.Length == 0) return false;
+        var remote = remotes[0];
+        ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
+        {
+            WorkingDirectory = _baseGitDir,
+            Arguments = $"remote set-url {remote} {newurl}"
+        };
+        var p = Process.Start(startInfo);
+        p?.WaitForExit();
+        return p?.ExitCode == 0;
+    }
+
     /// <summary>
     /// Get how many commits local is ahead of remote.
     /// </summary>

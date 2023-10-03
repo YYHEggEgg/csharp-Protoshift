@@ -26,6 +26,20 @@ internal class GitProtosManager
         Logger = Log.GetChannel(protocol_friendlyname);
     }
 
+    /// <summary>
+    /// Ensure the repo's remote url equals to the given url.
+    /// If not, try to switch it.
+    /// </summary>
+    /// <param name="remoteUrl"></param>
+    /// <returns></returns>
+    public bool EnsureRemote(string remoteUrl)
+    {
+        var local_using_remote = _gitInvoke.GetRemote();
+        if (local_using_remote == null) return false;
+        if (local_using_remote == remoteUrl.Trim()) return true;
+        return _gitInvoke.TrySetRemote(remoteUrl);
+    }
+
     public bool HasUpdateAvaliable()
     {
         if (!IsValidGitRepository) return false;

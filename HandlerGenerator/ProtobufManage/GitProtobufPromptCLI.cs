@@ -1,5 +1,6 @@
 using csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput;
 using System.Collections.Concurrent;
+using System.Transactions;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator.ProtobufManage;
@@ -46,6 +47,12 @@ internal class GitProtobufPromptCLI
             return;
         }
 
+        if (!GitInvoke.CheckGitInstallation())
+        {
+            _mainlogger.LogErro($"Git hasn't been installed properly. Exit code is 146.");
+            Environment.Exit(146);
+        }
+
         bool res = true;
         res &= _oldprotos.IsDMCAProofBranch
             ? await TryRestoreDMCAProofProtos(_oldprotos, SourceRepo,
@@ -70,6 +77,13 @@ internal class GitProtobufPromptCLI
     {
         var _logger = manager.Logger;
         string? current_branch = manager.GetCurrentBranch();
+        #region Set remote
+        if (manager.IsValidGitRepository && !manager.EnsureRemote(remoteUrl_git))
+        {
+            _logger.LogWarn($"Failed to set git remote to '{remoteUrl_git}'.");
+            return false;
+        }
+        #endregion
         if (branch == null)
         {
             if (current_branch == null)
@@ -191,6 +205,13 @@ internal class GitProtobufPromptCLI
     {
         var _logger = Log.GetChannel($"{manager.Logger.LogSender}:DMCA");
         string? current_branch = manager.GetCurrentBranch();
+        #region Set remote
+        if (manager.IsValidGitRepository && !manager.EnsureRemote(remoteUrl_git))
+        {
+            _logger.LogWarn($"Failed to set git remote to '{remoteUrl_git}'.");
+            return false;
+        }
+        #endregion
         if (branch == null)
         {
             if (current_branch == null)
