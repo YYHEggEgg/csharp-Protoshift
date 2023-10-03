@@ -26,6 +26,20 @@ internal class GitProtosManager
         Logger = Log.GetChannel(protocol_friendlyname);
     }
 
+    /// <summary>
+    /// Ensure the repo's remote url equals to the given url.
+    /// If not, try to switch it.
+    /// </summary>
+    /// <param name="remoteUrl"></param>
+    /// <returns></returns>
+    public bool EnsureRemote(string remoteUrl)
+    {
+        var local_using_remote = _gitInvoke.GetRemote();
+        if (local_using_remote == null) return false;
+        if (local_using_remote == remoteUrl.Trim()) return true;
+        return _gitInvoke.TrySetRemote(remoteUrl);
+    }
+
     public bool HasUpdateAvaliable()
     {
         if (!IsValidGitRepository) return false;
@@ -45,7 +59,7 @@ internal class GitProtosManager
     public bool TryGitPullUpdate()
     {
         if (!IsValidGitRepository) return false;
-        ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
+        ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
         {
             WorkingDirectory = BaseGitDirectory,
             Arguments = "pull"
@@ -75,7 +89,7 @@ internal class GitProtosManager
         if (branch != null) cloneargs += $"--branch {branch} ";
         cloneargs += $"{remoteUrl_git} {Path.GetFullPath(BaseGitDirectory)}";
 
-        ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
+        ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
         {
             Arguments = cloneargs
         };
@@ -102,7 +116,7 @@ internal class GitProtosManager
     {
         if (!IsValidGitRepository) return false;
         _gitInvoke.Fetch();
-        ProcessStartInfo startInfo = new(OuterInvokeConfig.git_path)
+        ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
         {
             WorkingDirectory = BaseGitDirectory,
             Arguments = $"checkout {branchname}"
@@ -131,7 +145,7 @@ internal class GitProtosManager
     /// <see cref="BaseGitDirectory"/>.<paramref name="backupsuffix"/> .
     /// </summary>
     public void CreateBackup(string backupsuffix) =>
-        Tools.CopyDir(BaseGitDirectory, 
+        Tools.CopyDir(BaseGitDirectory,
             Tools.AddNumberedSuffixToPath($"{BaseGitDirectory}.{backupsuffix}"));
 
     public void Destroy()
@@ -144,6 +158,11 @@ internal class GitProtosManager
         {
             if (!Directory.Exists(BaseGitDirectory)) return;
             Log.Erro(ex.ToString(), nameof(GitProtosManager));
+            if (Program.AlwaysPassChoices)
+            {
+                Log.Erro($"Can't delete old directory. Terminated because -y option is enabled. Exit code is 2745.");
+                Environment.Exit(2745);
+            }
             Log.Erro($"Can't delete old directory. Please manually close " +
                 $"programs using '{BaseGitDirectory}' and type 'y' to retry.");
             var rsp = Console.ReadLine();
@@ -157,6 +176,12 @@ internal class GitProtosManager
         }
     }
 
+    /// <summary>
+    /// Get the protostat.json from GitHub raw.
+    /// </summary>
+    /// <param name="protostatUrl"></param>
+    /// <returns></returns>
+    /// <exception cref="DMCATakenDownException"></exception>
     private async Task<ProtoStatInfo?> DownloadProtoStatJson(string protostatUrl)
     {
         try
@@ -171,6 +196,18 @@ internal class GitProtosManager
                         new JsonStringEnumConverter(JsonNamingPolicy.CamelCase)
                     }
                 });
+        }
+        catch (HttpRequestException hrex)
+        {
+            if (hrex.StatusCode == System.Net.HttpStatusCode.UnavailableForLegalReasons)
+            {
+                throw new DMCATakenDownException("Repository taken down for legal reasons.", hrex);
+            }
+            else
+            {
+                Logger.LogWarn($"Fetch protostat.json failed: {hrex}");
+                return null;
+            }
         }
         catch (Exception ex)
         {
@@ -196,7 +233,8 @@ internal class GitProtosManager
     /// when succeeded.
     /// </param>
     /// <returns></returns>
-    public async Task<ProtoStatInfo?> GetProtoStatInfo(string repoUrl_git, 
+    /// <exception cref="DMCATakenDownException"></exception>
+    public async Task<ProtoStatInfo?> GetProtoStatInfo(string repoUrl_git,
         string branch, string relative_path, Func<bool> localUpdateCallback)
     {
         // Confirm the remote repo status.

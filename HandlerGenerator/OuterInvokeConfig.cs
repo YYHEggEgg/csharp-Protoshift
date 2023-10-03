@@ -4,7 +4,7 @@
     /// This class is used for configuring the invoke path of some apps. 
     /// It's useful if you don't add them to the environment PATH. 
     /// </summary>
-    internal class OuterInvokeConfig
+    internal class OuterInvokeGlobalConfig
     {
         /// <summary>
         /// The protobuf compiler from https://github.com/protocolbuffers/protobuf/releases. 
@@ -24,6 +24,10 @@
         /// Not recommend a relative path because the working directory will be changed by the program at the startup. 
         /// </summary>
         public const string git_path = "git";
+        /// <summary>
+        /// The powershell path in Windows. This constant is here just because it can be here.
+        /// </summary>
+        public const string windows_powershell_path = "powershell.exe";
         /// <summary>
         /// The maximum length of creating a process's command line
         /// string. The minimum value ever searched is Windows
