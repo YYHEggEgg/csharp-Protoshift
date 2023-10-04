@@ -5,7 +5,6 @@ on:
   pull_request:
     branches:
       - main
-      - development
 
 jobs:
   network-proxy-benchmark-windows-rel:
