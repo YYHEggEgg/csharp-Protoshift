@@ -17,3 +17,8 @@
 UnionCmd
 AbilityInvokeEntry
 CombatInvokeEntry
+GCGAttackCostInfo
+GCGMsgPhaseChange
+GCGMsgUpdateController
+GCGPlayCardCostInfo
+GCGSelectOnStageCostInfo

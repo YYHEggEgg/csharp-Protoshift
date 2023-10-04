@@ -318,94 +318,69 @@ internal class Program
             }
             #endregion
 
-            if (rebuildWatcher_past != null)
+            if (rebuildWatcher_past == null || rebuildWatcher_past.NeedRebuild)
             {
+                // Removed partly rebuild code (only compile the changed protos),
+                // because not only the changed protos need to recompile, but
+                // those referring to them also need to be recompiled.
+                //
+                // Maybe there's a solution:
+                // proto2json first -> analyze -> smart compile, but im lazy
+                // and don't want to add bricks to code with a maintainability
+                // index of zero any more.
+                //
+                // For code in the past, see pull request: branch='gcg-optimize',
+                // name='Optimize GCG proto handling & Building Process'.
                 #region OldProtos
-                foreach (var proto_file in rebuildWatcher_past.rebuild_files_relative_list[targetpath_old])
+                // true = Need Rebuild, false = Not Need Rebuild, null = Brand New
+                if (rebuildWatcher_past?.rebuild_files_relative_list[targetpath_old].Any() != false)
                 {
-                    if (proto_file.StartsWith("Protos") && Path.GetExtension(proto_file) == ".proto")
+                    var oldproto_files = Directory.EnumerateFiles(
+                        "./../OldProtoHandlers/Google.Protobuf/Protos",
+                        "*.proto", SearchOption.AllDirectories);
+                    foreach (var proto_file in oldproto_files)
                     {
-                        var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
-                        if (compiled_csfilenames_old.Contains(name_withoutext)) continue;
-                        compiled_csfilenames_old.Add(name_withoutext);
-                        var appendcmd = $" \"OldProtoHandlers/Google.Protobuf/{proto_file}\"";
-                        if (compile_oldprotos.Length + appendcmd.Length
-                            >= OuterInvokeGlobalConfig.maximum_createproc_length)
+                        if (Path.GetExtension(proto_file) == ".proto")
                         {
-                            compile_oldproto_cmds.Add(compile_oldprotos.ToString());
-                            compile_oldprotos = new();
+                            var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
+                            compiled_csfilenames_old.Add(name_withoutext);
+                            var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
+                            if (compile_oldprotos.Length + appendcmd.Length
+                                >= OuterInvokeGlobalConfig.maximum_createproc_length)
+                            {
+                                compile_oldproto_cmds.Add(compile_oldprotos.ToString());
+                                compile_oldprotos = new();
+                            }
+                            compile_oldprotos.Append(appendcmd);
                         }
-                        compile_oldprotos.Append(appendcmd);
                     }
+                    if (compile_oldprotos.Length > 0) compile_oldproto_cmds.Add(compile_oldprotos.ToString());
                 }
-                if (compile_oldprotos.Length > 0) compile_oldproto_cmds.Add(compile_oldprotos.ToString());
                 #endregion
                 #region NewProtos
-                foreach (var proto_file in rebuildWatcher_past.rebuild_files_relative_list[targetpath_new])
+                if (rebuildWatcher_past?.rebuild_files_relative_list[targetpath_new].Any() != false)
                 {
-                    if (proto_file.StartsWith("Protos") && Path.GetExtension(proto_file) == ".proto")
-                    {
-                        var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
-                        if (compiled_csfilenames_new.Contains(name_withoutext)) continue;
-                        compiled_csfilenames_new.Add(name_withoutext);
-                        var appendcmd = $" \"NewProtoHandlers/Google.Protobuf/{proto_file}\"";
-                        if (compile_newprotos.Length + appendcmd.Length
-                            >= OuterInvokeGlobalConfig.maximum_createproc_length)
-                        {
-                            compile_newproto_cmds.Add(compile_newprotos.ToString());
-                            compile_newprotos = new();
-                        }
-                        compile_newprotos.Append(appendcmd);
-                    }
-                }
-                if (compile_newprotos.Length > 0) compile_newproto_cmds.Add(compile_newprotos.ToString());
-                #endregion
-            }
-            else
-            {
-                #region OldProtos
-                var oldproto_files = Directory.EnumerateFiles(
-                    "./../OldProtoHandlers/Google.Protobuf/Protos",
-                    "*.proto", SearchOption.AllDirectories);
-                foreach (var proto_file in oldproto_files)
-                {
-                    if (Path.GetExtension(proto_file) == ".proto")
-                    {
-                        var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
-                        compiled_csfilenames_old.Add(name_withoutext);
-                        var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
-                        if (compile_oldprotos.Length + appendcmd.Length
-                            >= OuterInvokeGlobalConfig.maximum_createproc_length)
-                        {
-                            compile_oldproto_cmds.Add(compile_oldprotos.ToString());
-                            compile_oldprotos = new();
-                        }
-                        compile_oldprotos.Append(appendcmd);
-                    }
-                }
-                if (compile_oldprotos.Length > 0) compile_oldproto_cmds.Add(compile_oldprotos.ToString());
-                #endregion
-                #region NewProtos
-                var newproto_files = Directory.EnumerateFiles(
+                    var newproto_files = Directory.EnumerateFiles(
                     "./../NewProtoHandlers/Google.Protobuf/Protos",
                     "*.proto", SearchOption.AllDirectories);
-                foreach (var proto_file in newproto_files)
-                {
-                    if (Path.GetExtension(proto_file) == ".proto")
+                    foreach (var proto_file in newproto_files)
                     {
-                        var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
-                        compiled_csfilenames_new.Add(name_withoutext);
-                        var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
-                        if (compile_newprotos.Length + appendcmd.Length
-                            >= OuterInvokeGlobalConfig.maximum_createproc_length)
+                        if (Path.GetExtension(proto_file) == ".proto")
                         {
-                            compile_newproto_cmds.Add(compile_newprotos.ToString());
-                            compile_newprotos = new();
+                            var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
+                            compiled_csfilenames_new.Add(name_withoutext);
+                            var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
+                            if (compile_newprotos.Length + appendcmd.Length
+                                >= OuterInvokeGlobalConfig.maximum_createproc_length)
+                            {
+                                compile_newproto_cmds.Add(compile_newprotos.ToString());
+                                compile_newprotos = new();
+                            }
+                            compile_newprotos.Append(appendcmd);
                         }
-                        compile_newprotos.Append(appendcmd);
                     }
+                    if (compile_newprotos.Length > 0) compile_newproto_cmds.Add(compile_newprotos.ToString());
                 }
-                if (compile_newprotos.Length > 0) compile_newproto_cmds.Add(compile_newprotos.ToString());
                 #endregion
             }
             await OuterInvoke.RunMultiple((

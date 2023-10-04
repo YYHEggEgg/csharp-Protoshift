@@ -42,6 +42,7 @@
 /HandlerGenerator/bin
 /HandlerGenerator/obj
 /HandlerGenerator/logs
+/HandlerGenerator/Properties
 /HandlerGenerator/proto2json/proto2json_output
 /HandlerGenerator/Proto2json_Output
 /HandlerGenerator/ProtoFieldNameAnalyze/Compiled
