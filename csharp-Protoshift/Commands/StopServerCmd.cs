@@ -8,8 +8,7 @@ namespace csharp_Protoshift.Commands
     {
         public override string CommandName => "stop";
 
-        public override string Description => $"Invoke to stop the server and SAVE ENTIRE PACKET RECORDS. {Environment.NewLine}" +
-            $"DON'T USE Ctrl+C! Not supported now.";
+        public override string Description => $"Invoke to stop the server.";
 
         public override string Usage => "stop";
 

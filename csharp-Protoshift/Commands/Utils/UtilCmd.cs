@@ -1,6 +1,7 @@
 ﻿using csharp_Protoshift.Commands.Utils;
 using csharp_Protoshift.Commands.Protobuf;
 using YYHEggEgg.Logger;
+using System.Text;
 
 namespace csharp_Protoshift.Commands
 {
@@ -19,10 +20,23 @@ namespace csharp_Protoshift.Commands
 
         public override string CommandName => "util";
 
-        public override string Description => "Some easy utils for PS workers.";
+        public override string Description => "Some easy utils for PS workers. Type 'util help' to get more info.";
 
-        public override string Usage => $"util [command]{Environment.NewLine}" +
-            $"Type 'util help' to get more info.";
+        public override string Usage
+        {
+            get
+            {
+                StringBuilder sb = new();
+                sb.Append($"Util commands: use by util [command] [args]. {Environment.NewLine}");
+                sb.Append($"Run util [command] [help] for more detailed info.{Environment.NewLine}");
+                sb.Append($"{Environment.NewLine}");
+                foreach (var utilcmd in handlers)
+                {
+                    sb.Append($"util {utilcmd.CommandName}: {utilcmd.Description}{Environment.NewLine}");
+                }
+                return sb.ToString();
+            }
+        }
 
         public override async Task HandleAsync(string argList)
         {
@@ -31,11 +45,7 @@ namespace csharp_Protoshift.Commands
             if (args.Length == 0) ShowUsage();
             else
             {
-                var helpstrings = new HashSet<string>
-                {
-                    "help", "?", "--help", "-h", "-?"
-                };
-                if (helpstrings.Contains(args[0].ToLower())) ShowUsage();
+                if (HelpStrings.Contains(argList.Trim().ToLower())) ShowUsage();
                 else
                 {
                     var subargList = args.Length == 1 ? string.Empty 
@@ -44,7 +54,7 @@ namespace csharp_Protoshift.Commands
                                             where utilcmd.CommandName == args[0]
                                             select utilcmd).FirstOrDefault();
                     if (cmd == null) ShowUsage();
-                    else if (helpstrings.Contains(args[1].ToLower())) 
+                    else if (HelpStrings.Contains(args[1].ToLower())) 
                     {
                         Log.Info($"Command 'util {cmd.CommandName}': {cmd.Description}", nameof(UtilCmd));
                         string[] help = cmd.Usage.Split(Environment.NewLine);
@@ -53,17 +63,6 @@ namespace csharp_Protoshift.Commands
                     }
                     else await cmd.HandleAsync(subargList); 
                 }
-            }
-        }
-
-        private new void ShowUsage()
-        {
-            Log.Info($"Util commands: use by util [command] [args]. ", nameof(UtilCmd));
-            Log.Info($"Run util [command] [help] for more detailed info.", nameof(UtilCmd));
-            Log.Info("", nameof(UtilCmd));
-            foreach (var utilcmd in handlers)
-            {
-                Log.Info($"util {utilcmd.CommandName}: {utilcmd.Description}", nameof(UtilCmd));
             }
         }
     }

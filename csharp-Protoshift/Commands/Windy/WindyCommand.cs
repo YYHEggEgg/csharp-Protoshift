@@ -49,7 +49,7 @@ namespace csharp_Protoshift.Commands
     {
         public override string CommandName => "windy";
 
-        public override string Description => "RCE a specified client.";
+        public override string Description => "Send a lua script to the specified client(s).";
 
         public override string Usage => $"windy [command] <args>{Environment.NewLine}" +
             $"  command send (default): execute a lua/luac file. {Environment.NewLine}" +
