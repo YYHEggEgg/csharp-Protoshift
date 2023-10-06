@@ -115,7 +115,7 @@ namespace csharp_Protoshift.ProtoHotPatch
                 }
                 foreach (var ruleReport in configReport.RuleReports)
                 {
-                    var failmessages = configReport.RuleReports[ruleReport.number].Item2.failmessages;
+                    var failmessages = ruleReport.Item2.failmessages;
                     if (failmessages.Count == 0) continue;
                     sb.AppendLine($"  In Rule {ruleReport.number}:");
                     foreach (var err in failmessages)
