@@ -17,7 +17,7 @@ namespace csharp_Protoshift.Commands
     {
         public override string CommandName => "setverbose";
 
-        public override string Description => "Set a specified connection verbose mode.";
+        public override string Description => "Set a specified connection's packet verbose mode.";
 
         public override string Usage => $"setverbose -c <conv_id> -v <true/false>{Environment.NewLine}" +
             $"If false, then packets working fine will not produce any output in the commandline.{Environment.NewLine}" +
@@ -93,9 +93,9 @@ namespace csharp_Protoshift.Commands
     {
         [Option('l', "limit", Required = false, Default = 50, HelpText = "The output limit of query result.")]
         public int Limit { get; set; }
-        [Option("range-from", Required = false, Default = uint.MinValue, HelpText = "The minimum value of query range.")]
+        [Option("range-min", Required = false, Default = uint.MinValue, HelpText = "The minimum value of query range.")]
         public uint MinUid { get; set; }
-        [Option("range-to", Required = false, Default = uint.MaxValue, HelpText = "The maximum value of query range.")]
+        [Option("range-max", Required = false, Default = uint.MaxValue, HelpText = "The maximum value of query range.")]
         public uint MaxUid { get; set; }
     }
         
@@ -103,11 +103,11 @@ namespace csharp_Protoshift.Commands
     {
         public override string CommandName => "queryclient";
 
-        public override string Description => "Query the online convs of the instance. ";
+        public override string Description => "Query the online sessions' conv with given UID range. ";
 
         public override string Usage => $"queryclient [--limit=50] {Environment.NewLine}" +
-            $"  [--range-from <uid_min> --range-to <uid_max>]{Environment.NewLine}" +
-            $"  Query the online conv ids. Default output limit is 50, so use --range when query exceeded limit. ";
+            $"  [--range-min <uid_min> --range-max <uid_max>]{Environment.NewLine}" +
+            $"  Query the online convs with given UID range. Default output limit is 50, so use --range-min/-max when query exceeded limit. ";
 
         public override Task HandleAsync(QueryClientOption opt)
         {
