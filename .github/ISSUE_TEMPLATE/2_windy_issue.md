@@ -9,9 +9,9 @@ Note: Asking in English can make your problem more widely known by the community
 
 ## Basic Information
 
-Protoshift version:
-Server OS:
-Client OS:
+- Protoshift version:
+- Server OS:
+- Client OS:
 
 ## Problem Encountered
 
@@ -41,9 +41,9 @@ Client OS:
 
 ## 基本信息
 
-Protoshift 版本号：
-服务器使用 OS：
-客户端 OS：
+- Protoshift 版本号：
+- 服务器使用 OS：
+- 客户端 OS：
 
 ## 遇到的问题
 

@@ -12,11 +12,11 @@ Note: Asking in English can make your problem more widely known by the community
 
 ## Basic Information
 
-Protoshift version number:
-Server OS in use:
-Client OS:
-Server Protobuf version (branch of OldProtos):
-Client Protobuf version (branch of NewProtos):
+- Protoshift version number:
+- Server OS:
+- Client OS:
+- Server Protobuf version (branch of OldProtos):
+- Client Protobuf version (branch of NewProtos):
 
 ## Requested Optimization Scheme
 
@@ -43,11 +43,11 @@ Client Protobuf version (branch of NewProtos):
 
 ## 基本信息
 
-Protoshift 版本号：
-服务器使用 OS：
-客户端 OS：
-服务器 Protobuf 版本（OldProtos 的分支）：
-客户端 Protobuf 版本（NewProtos 的分支）：
+- Protoshift 版本号：
+- 服务器使用 OS：
+- 客户端 OS：
+- 服务器 Protobuf 版本（OldProtos 的分支）：
+- 客户端 Protobuf 版本（NewProtos 的分支）：
 
 ## 请求的优化方案
 

@@ -12,7 +12,7 @@ Note: Asking in English can make your problem more widely known by the community
 
 ## Basic Information
 
-Protoshift version:
+- Protoshift version:
 
 ## Problem Encountered
 
@@ -39,7 +39,7 @@ Protoshift version:
 
 ## 基本信息
 
-Protoshift 版本号：
+- Protoshift 版本号：
 
 ## 遇到的问题
 
