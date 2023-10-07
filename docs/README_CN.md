@@ -44,8 +44,6 @@
 ```sh
 git clone --branch main https://github.com/YYHEggEgg/csharp-Protoshift
 cd csharp-Protoshift
-chmod +x ./update
-chmod +x ./run
 ./update
 ```
 
