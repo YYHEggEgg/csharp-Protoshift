@@ -37,7 +37,6 @@ namespace csharp_Protoshift.Commands
             foreach (var handler in handlers)
             {
                 handler.ShowDescription();
-                Log.Info("", nameof(ServerCommandLine));
             }
             Log.Info("Type [command] help to get more detailed usage.", nameof(ServerCommandLine));
         }

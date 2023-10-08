@@ -26,7 +26,7 @@ namespace csharp_Protoshift.Commands.Utils
             var args = ParseAsArgs(argList);
             if (args.Count <= 1)
             {
-                Log.Erro($"Too few params! Usage: {Usage}", nameof(Ec2bCmd));
+                _logger.LogErro($"Too few params! Usage: {Usage}");
                 return;
             }
             switch (args[0])
@@ -36,15 +36,15 @@ namespace csharp_Protoshift.Commands.Utils
                     if (read.InputType != EasyInputType.Base64 
                         && read.InputType != EasyInputType.Hex)
                     {
-                        Log.Erro($"The input type isn't supported!", nameof(Ec2bCmd));
+                        _logger.LogErro($"The input type isn't supported!");
                         return;
                     }
                     var hexkey = Convert.ToHexString(Ec2b.Decrypt(read.ToByteArray()));
-                    Log.Info(hexkey, nameof(Ec2bCmd));
+                    _logger.LogInfo(hexkey);
                     await Tools.SetClipBoardAsync(hexkey);
                     break;
                 default:
-                    Log.Erro($"Usage: {Usage}", nameof(Ec2bCmd));
+                    _logger.LogErro($"Usage: {Usage}");
                     break;
             }
         }

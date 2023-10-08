@@ -25,8 +25,6 @@ namespace csharp_Protoshift.Commands
             $"     [--client-reason <ENetReason_id>] The disconnect reason that will be sent to client. Default is ENET_SERVER_KICK (The connection to the server has been lost). {Environment.NewLine}" +
             $"     [--server-reason <ENetReason_id>] The disconnect reason that will be sent to server. Default is ENET_CLIENT_CLOSE.";
 
-        private LoggerChannel _logger = Log.GetChannel(nameof(KickPlayerCmd));
-
         public override Task HandleAsync(KickPlayerOption o)
         {
             if (!GameSessionDispatch.sessions.ContainsKey(o.Conv))

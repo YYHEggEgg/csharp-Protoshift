@@ -44,12 +44,12 @@ namespace csharp_Protoshift.Commands
             uint conv = opt.Conv;
             if (!GameSessionDispatch.sessions.ContainsKey(conv))
             {
-                Log.Erro($"Please give a correct conv number by \"queryclient\" command!", nameof(ForceInjectPacketCmd));
+                _logger.LogErro($"Please give a correct conv number by \"queryclient\" command!");
                 return Task.CompletedTask;
             }
             if (!opt.IsClient && !opt.IsServer)
             {
-                Log.Erro("Please specify whether to send the packet to client or server!", nameof(ForceInjectPacketCmd));
+                _logger.LogErro("Please specify whether to send the packet to client or server!");
                 return Task.CompletedTask;
             }
             string protoname = opt.Protoname;
@@ -59,7 +59,7 @@ namespace csharp_Protoshift.Commands
             if (opt.Head != null) body = EasyInput.TryPreProcess(opt.Body).ToByteArray();
             if (protoname == null)
             {
-                Log.Erro($"Please give at least protoname (--cmd)!", nameof(ForceInjectPacketCmd));
+                _logger.LogErro($"Please give at least protoname (--cmd)!");
 
                 return Task.CompletedTask;
             }
@@ -73,6 +73,7 @@ namespace csharp_Protoshift.Commands
             {
                 GameSessionDispatch.InjectPacketToServer(conv, protoname, head, body);
             }
+            _logger.LogInfo("ok.");
             return Task.CompletedTask;
         }
     }

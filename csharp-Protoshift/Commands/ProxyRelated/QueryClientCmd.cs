@@ -40,17 +40,17 @@ namespace csharp_Protoshift.Commands
                     select pair));
             if (search_res.Count == 0)
             {
-                Log.Info($"No match sessions found.", nameof(QueryClientCmd));
+                _logger.LogInfo($"No match sessions found.");
             }
             else for (int i = 0; i < search_res.Count; i++)
                 {
                     if (i >= limit)
                     {
-                        Log.Warn($"Session counts exceeded limit {limit} (total: {search_res.Count}).", nameof(QueryClientCmd));
-                        Log.Warn("You may use --range <uid_min> <uid_max> or change the limit, and run the command again.", nameof(QueryClientCmd));
+                        _logger.LogWarn($"Session counts exceeded limit {limit} (total: {search_res.Count}).");
+                        _logger.LogWarn("You may use --range <uid_min> <uid_max> or change the limit, and run the command again.");
                         break;
                     }
-                    Log.Info($"Found uid: {search_res[i].Value.Uid}, conv: {search_res[i].Key}, IP address: {search_res[i].Value.remoteIp}", nameof(QueryClientCmd));
+                    _logger.LogInfo($"Found uid: {search_res[i].Value.Uid}, conv: {search_res[i].Key}, IP address: {search_res[i].Value.remoteIp}");
                 }
             return Task.CompletedTask;
         }

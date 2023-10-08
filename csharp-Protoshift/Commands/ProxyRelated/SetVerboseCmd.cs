@@ -28,7 +28,7 @@ namespace csharp_Protoshift.Commands
 #pragma warning restore CS1998 // 异步方法缺少 "await" 运算符，将以同步方式运行
         {
             GameSessionDispatch.sessions[opt.Conv].Verbose = opt.Verbose;
-            Log.Info($"Succeed set Conv:{opt.Conv} Verbose Mode to {opt.Verbose}.", nameof(SetVerboseCmd));
+            _logger.LogInfo($"Succeed set Conv:{opt.Conv} Verbose Mode to {opt.Verbose}.");
         }
     }
 }

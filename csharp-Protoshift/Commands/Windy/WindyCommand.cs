@@ -72,7 +72,6 @@ namespace csharp_Protoshift.Commands
             $"  command set-temp-path: Set the temp folder where compiled .luac files are stored.{Environment.NewLine}" +
             $"    windy set-temp-path <temp-path>";
 
-        private LoggerChannel _logger = Log.GetChannel(nameof(WindyCommand));
         private WindyLuacManager windyExecute;
         private bool _initFinished = false;
         public const string WindyManagerPath = "windy_config.json";
@@ -172,7 +171,7 @@ namespace csharp_Protoshift.Commands
                     async (WindySetTempPathConfig o) => await HandleSetTempPathAsync(o),
                     error =>
                     {
-                        _logger.LogErro("Unrecognized command or args detected. Please check your input.");
+                        OutputInvalidUsage(error);
                         ShowUsage();
                         return Task.CompletedTask;
                     });
@@ -181,7 +180,6 @@ namespace csharp_Protoshift.Commands
         #region Commands
         private async Task HandleSendAsync(WindySendConfig opt)
         {
-            var _logger = Log.GetChannel(nameof(WindyCommand));
             #region Read param
             uint specifiedconv = opt.Target;
             bool everyonewindy = opt.IsEveryone;

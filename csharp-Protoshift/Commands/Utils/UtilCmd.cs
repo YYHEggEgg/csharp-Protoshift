@@ -56,10 +56,10 @@ namespace csharp_Protoshift.Commands
                     if (cmd == null) ShowUsage();
                     else if (HelpStrings.Contains(args[1].ToLower())) 
                     {
-                        Log.Info($"Command 'util {cmd.CommandName}': {cmd.Description}", nameof(UtilCmd));
+                        _logger.LogInfo($"Command 'util {cmd.CommandName}': {cmd.Description}");
                         string[] help = cmd.Usage.Split(Environment.NewLine);
-                        foreach (var line in help) Log.Info(line, nameof(UtilCmd));
-                        Log.Info("", nameof(UtilCmd));
+                        foreach (var line in help) _logger.LogInfo(line);
+                        _logger.LogInfo("");
                     }
                     else await cmd.HandleAsync(subargList); 
                 }

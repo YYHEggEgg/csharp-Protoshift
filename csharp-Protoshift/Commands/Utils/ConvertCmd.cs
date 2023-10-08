@@ -24,16 +24,16 @@ namespace csharp_Protoshift.Commands.Utils
             {
                 case EasyInputType.Base64:
                     bytes = res.ToByteArray();
-                    Log.Info($"Converted to HEX format, handled {bytes.Length} bytes.", nameof(ConvertCmd));
+                    _logger.LogInfo($"Converted to HEX format, handled {bytes.Length} bytes.");
                     await Tools.SetClipBoardAsync(Convert.ToHexString(bytes));
                     break;
                 case EasyInputType.Hex:
                     bytes = res.ToByteArray();
-                    Log.Info($"Converted to Base64 format, handled {bytes.Length} bytes.", nameof(ConvertCmd));
+                    _logger.LogInfo($"Converted to Base64 format, handled {bytes.Length} bytes.");
                     await Tools.SetClipBoardAsync(Convert.ToBase64String(bytes));
                     break;
                 default:
-                    Log.Erro($"Input type is not supported!", nameof(ConvertCmd));
+                    _logger.LogErro($"Input type is not supported!");
                     break;
             }
         }
