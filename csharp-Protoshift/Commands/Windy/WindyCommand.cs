@@ -9,10 +9,8 @@ namespace csharp_Protoshift.Commands
 {
 #pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
     [Verb("send", true, HelpText = "execute a lua/luac file.")]
-    internal class WindySendConfig
+    internal class WindySendConfig : TargetOptionBase
     {
-        [Option('t', "target", Default = 0u, Required = false, HelpText = "Specify the target session of sending windy.")]
-        public uint Target { get; set; }
         [Option("everyone", Default = false, Required = false, HelpText = "Whether to send the windy to everyone online.")]
         public bool IsEveryone { get; set; }
         [Value(0, Required = false, Default = null, HelpText = "The .lua file name/path.")]
@@ -53,7 +51,7 @@ namespace csharp_Protoshift.Commands
 
         public override string Usage => $"windy [command] <args>{Environment.NewLine}" +
             $"  command send (default): execute a lua/luac file. {Environment.NewLine}" +
-            $"    windy [-t, --target <conv>] | [--everyone] {Environment.NewLine}" +
+            $"    windy <player_uid> | --target <conv_id> | --everyone {Environment.NewLine}" +
             $"          <lua_file_path> | -c, --compiled <compiled_luac_path>{Environment.NewLine}" +
             $"      In most cases, you just need to give the path of .lua and windy command will compile it for you. {Environment.NewLine}" +
             $"      If use --compiled, the program will treat it as compiled lua, {Environment.NewLine}" +
@@ -181,26 +179,18 @@ namespace csharp_Protoshift.Commands
         private async Task HandleSendAsync(WindySendConfig opt)
         {
             #region Read param
-            uint specifiedconv = opt.Target;
+            uint specifiedconv = 0;
             bool everyonewindy = opt.IsEveryone;
-            if (specifiedconv == 0 && !everyonewindy)
-            {
-                _logger.LogErro($"Please use a correct windy command!");
-                return;
-            }
             if (!everyonewindy)
             {
-                if (!GameSessionDispatch.sessions.ContainsKey(specifiedconv))
+                specifiedconv = opt.GetConv(_logger);
+                if (specifiedconv == 0)
                 {
-                    _logger.LogErro($"The specified conv: {specifiedconv} is not online!");
+                    _logger.LogErro($"Please use a correct windy command!");
                     return;
                 }
             }
-            else if (GameSessionDispatch.sessions.Count <= 0)
-            {
-                _logger.LogErro($"There are no sessions online.");
-                return;
-            }
+
             if (opt.LuaFile == null && opt.ForceCompiled == null)
             {
                 _logger.LogErro($"Please provide a .lua or .luac file to send windy!");
@@ -286,7 +276,7 @@ namespace csharp_Protoshift.Commands
         {
             windyExecute.EnvPath = opt.DirectoryPath;
             _logger.LogInfo($"OK, " +
-                Directory.EnumerateFiles(opt.DirectoryPath, "*.lua", 
+                Directory.EnumerateFiles(opt.DirectoryPath, "*.lua",
                 SearchOption.TopDirectoryOnly).Count() +
                 " lua files detected in the directory. This will be sync to config.json on exit.");
             return Task.CompletedTask;

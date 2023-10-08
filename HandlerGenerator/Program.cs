@@ -32,7 +32,7 @@ internal class Program
 
         GitInvoke gitinfos = new("./..");
         Log.Info("It is recommended to invoke this program with dotnet run.", "HandlerGenerator");
-        Log.PushLog("PLEASE USE THIS PROGRAM ALONG WITH <color=yellow>CLONED</color> FULL SOURCE CODE!",
+        Log.PushLog("PLEASE USE THIS PROGRAM ALONG WITH <color=Yellow>CLONED</color> FULL SOURCE CODE!",
             gitinfos.IsValidGitRepository ? LogLevel.Information : LogLevel.Warning, "HandlerGenerator");
 #if DEBUG
         Log.Warn("The server publish won't execute as the Generator is running on DEBUG. If that's not expected, rerun it with -c=Release.");

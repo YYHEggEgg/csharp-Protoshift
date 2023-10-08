@@ -5,10 +5,8 @@ using YYHEggEgg.Logger;
 namespace csharp_Protoshift.Commands
 {
 #pragma warning disable CS8618
-    internal class ForceInjectPacketOption
+    internal class ForceInjectPacketOption : TargetOptionBase
     {
-        [Option('c', "conv", Required = true, HelpText = "The target client session id.")]
-        public uint Conv { get; set; }
         [Option("client", Required = false, Default = false, HelpText = "Whether to sent the packet to client.")]
         public bool IsClient { get; set; }
         [Option("server", Required = false, Default = false, HelpText = "Whether to sent the packet to server.")]
@@ -29,7 +27,7 @@ namespace csharp_Protoshift.Commands
         public override string Description => "Send a packet to the specified connection's client/server.";
 
         public override string Usage => $"injectpkt [options] {Environment.NewLine}" +
-            $"   -c, --conv <conv_id>         The target client session id. {Environment.NewLine}" +
+            $"   <player_uid> | -c <conv_id>  The target client session id or player UID. {Environment.NewLine}" +
             $"   [--client]                   Whether to sent the packet to client. {Environment.NewLine}" +
             $"   [--server]                   Whether to sent the packet to server. {Environment.NewLine}" +
             $"   -p, --proto <protoname>    The protocol the packet body using. {Environment.NewLine}" +
@@ -41,10 +39,9 @@ namespace csharp_Protoshift.Commands
         public override Task HandleAsync(ForceInjectPacketOption opt)
         {
             #region REad param
-            uint conv = opt.Conv;
-            if (!GameSessionDispatch.sessions.ContainsKey(conv))
+            uint conv = opt.GetConv(_logger);
+            if (conv == 0)
             {
-                _logger.LogErro($"Please give a correct conv number by \"queryclient\" command!");
                 return Task.CompletedTask;
             }
             if (!opt.IsClient && !opt.IsServer)
