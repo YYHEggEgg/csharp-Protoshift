@@ -27,7 +27,7 @@ namespace csharp_Protoshift.SkillIssue
         #endregion
 
         #region Background Handle
-        private static ConcurrentQueue<DelayHandleInfo> reqs;
+        private static ConcurrentQueue<DelayHandleInfo> reqs = new();
         private static bool _initialized = false;
 
         public static string Initialize()

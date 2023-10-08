@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kcp", "KCP\Kcp\Kcp.csproj",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HandlerGenerator", "HandlerGenerator\HandlerGenerator.csproj", "{8A26A749-A2FE-45DD-BF47-27F1588CA891}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProtoshiftHandlers", "Tests\ProtoshiftHandlers\ProtoshiftHandlers.csproj", "{F020F342-5B42-4095-BDC1-480E09C4D4CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProtoshiftHandlers", "ProtoshiftHandlers\ProtoshiftHandlers.csproj", "{F020F342-5B42-4095-BDC1-480E09C4D4CA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProtoshiftBenchmark", "ProtoshiftBenchmark\ProtoshiftBenchmark.csproj", "{18EA78AE-E3DD-4250-A27E-9FE302F4BC7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProtoshiftBenchmark", "Tests\ProtoshiftBenchmark\ProtoshiftBenchmark.csproj", "{18EA78AE-E3DD-4250-A27E-9FE302F4BC7A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csharp-Protoshift-Replay", "Tests\csharp-Protoshift-Replay\csharp-Protoshift-Replay.csproj", "{CBBCD3B1-0082-43E2-8D2B-13674BF84226}"
 EndProject
