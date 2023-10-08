@@ -85,9 +85,14 @@ namespace csharp_Protoshift.Commands
         public abstract Task HandleAsync(string argList);
         public virtual void CleanUp() { }
 
-        public virtual void ShowUsage()
+        public virtual void ShowDescription()
         {
             Log.Info($"Command '{CommandName}': {Description}", CommandName);
+        }
+
+        public virtual void ShowUsage()
+        {
+            ShowDescription();
             string[] help = Usage.Split(Environment.NewLine);
             foreach (var line in help) Log.Info(line, CommandName);
         }
@@ -97,6 +102,11 @@ namespace csharp_Protoshift.Commands
             // 在构建时设置自定义 ConsoleWriter
             config.HelpWriter = TextWriter.Synchronized(new LogTextWriter("CmdHandler"));
         });
+
+        public static readonly HashSet<string> HelpStrings = new()
+            {
+                "help", "?", "--help", "-h", "-?", "/h", "/?"
+            };
     }
 
     /// <summary>

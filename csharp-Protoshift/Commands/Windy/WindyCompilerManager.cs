@@ -20,7 +20,23 @@ namespace csharp_Protoshift.Commands.Windy
 
     internal partial class WindyLuacManager
     {
-        private static LoggerChannel _logger = Log.GetChannel("WindyCompilers");
+        static WindyLuacManager()
+        {
+            _logger = Log.GetChannel("WindyCompilers");
+            LuaCompilersDefault = new(new Dictionary<OSType, string>
+            {
+                { OSType.win32, "resources/luac_bins/luac_win32.exe" },
+                { OSType.win64, "resources/luac_bins/luac_win64.exe" },
+                // { OSType.mac32, "resources/luac_bins/luac_mac32" },
+                { OSType.mac64, "resources/luac_bins/luac_unix64" },
+                // { OSType.linux32, "resources/luac_bins/luac_linux32" },
+                { OSType.linux64, "resources/luac_bins/luac_unix64" },
+            });
+            ChmodAddX();
+            Instance = new();
+        }
+
+        private static LoggerChannel _logger;
 
         /// <summary>
         /// Get OS Suffix in combination of "win", "mac", "linux" and "32", "64".
@@ -35,15 +51,24 @@ namespace csharp_Protoshift.Commands.Windy
             else return OSType.Unsupported;
         }
 
-        public static readonly ReadOnlyDictionary<OSType, string> LuaCompilersDefault = new(new Dictionary<OSType, string>
+        public static readonly ReadOnlyDictionary<OSType, string> LuaCompilersDefault;
+
+        private static void ChmodAddX(string? target = null)
         {
-            { OSType.win32, "resources/luac_bins/luac_win32.exe" },
-            { OSType.win64, "resources/luac_bins/luac_win64.exe" },
-            // { OSType.mac32, "resources/luac_bins/luac_mac32" },
-            { OSType.mac64, "resources/luac_bins/luac_unix64" },
-            // { OSType.linux32, "resources/luac_bins/luac_linux32" },
-            { OSType.linux64, "resources/luac_bins/luac_unix64" },
-        });
+            if (OperatingSystem.IsMacOS() || OperatingSystem.IsLinux())
+            {
+                target ??= LuaCompilersDefault[GetOSSuffix()];
+                try
+                {
+                    Process.Start("chmod", $"+x {target}")?.WaitForExit();
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogWarnTrace(ex, $"chmod +x for luac executable failed. " +
+                        $"You may encounter problem for Windy operations.");
+                }
+            }
+        }
 
         private static bool CanRuntimeValidate(OSType targetOS)
         {
@@ -85,6 +110,8 @@ namespace csharp_Protoshift.Commands.Windy
             if (paths?.Path_mac64 != null) _lua_compilers_path[OSType.mac64] = paths.Path_mac64;
             if (paths?.Path_linux32 != null) _lua_compilers_path[OSType.linux32] = paths.Path_linux32;
             if (paths?.Path_linux64 != null) _lua_compilers_path[OSType.linux64] = paths.Path_linux64;
+
+            ChmodAddX(_lua_compilers_path[GetOSSuffix()]);
         }
 
         [JsonIgnore] private Dictionary<OSType, string> _lua_compilers_path = new(LuaCompilersDefault);
@@ -103,6 +130,7 @@ namespace csharp_Protoshift.Commands.Windy
             if (!slient) _logger.LogInfo($"Verifying luac_{targetOS} at: {luacFullPath}");
             if (CanRuntimeValidate(targetOS))
             {
+                ChmodAddX(luacFullPath);
                 try
                 {
                     var versionInfo = await new WindyOuterInvoke(luacFullPath, "-v").RunAsync();
@@ -163,11 +191,11 @@ namespace csharp_Protoshift.Commands.Windy
 
         public bool TryGetExecutable(OSType targetOS, [NotNullWhen(true)] out string? str)
             => _lua_compilers_path.TryGetValue(targetOS, out str);
-        public bool TryGetExecutable([NotNullWhen(true)] out string? str) 
+        public bool TryGetExecutable([NotNullWhen(true)] out string? str)
             => TryGetExecutable(GetOSSuffix(), out str);
-        public static bool TryGetExecutableGlobal([NotNullWhen(true)] out string? str) 
+        public static bool TryGetExecutableGlobal([NotNullWhen(true)] out string? str)
             => Instance.TryGetExecutable(out str);
-        public static bool TryGetExecutableGlobal(OSType targetOS, [NotNullWhen(true)] out string? str) 
+        public static bool TryGetExecutableGlobal(OSType targetOS, [NotNullWhen(true)] out string? str)
             => Instance.TryGetExecutable(targetOS, out str);
     }
 }
