@@ -9,13 +9,13 @@ namespace csharp_Protoshift.Commands
 {
 #pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
     [Verb("send", true, HelpText = "execute a lua/luac file.")]
-    internal class WindySendConfig : TargetOptionBase
+    internal class WindySendConfig : StrictTargetOptionBase
     {
         [Option("everyone", Default = false, Required = false, HelpText = "Whether to send the windy to everyone online.")]
         public bool IsEveryone { get; set; }
         [Value(0, Required = false, Default = null, HelpText = "The .lua file name/path.")]
         public string? LuaFile { get; set; }
-        [Option('c', "compiled", Default = null, Required = false, HelpText = "The compiled .luac file path.")]
+        [Option("compiled", Default = null, Required = false, HelpText = "The compiled .luac file path.")]
         public string? ForceCompiled { get; set; }
     }
 
@@ -51,8 +51,8 @@ namespace csharp_Protoshift.Commands
 
         public override string Usage => $"windy [command] <args>{Environment.NewLine}" +
             $"  command send (default): execute a lua/luac file. {Environment.NewLine}" +
-            $"    windy <player_uid> | --target <conv_id> | --everyone {Environment.NewLine}" +
-            $"          <lua_file_path> | -c, --compiled <compiled_luac_path>{Environment.NewLine}" +
+            $"    windy -u <player_uid> | -c <conv_id> | --everyone {Environment.NewLine}" +
+            $"          <lua_file_path> | --compiled <compiled_luac_path>{Environment.NewLine}" +
             $"      In most cases, you just need to give the path of .lua and windy command will compile it for you. {Environment.NewLine}" +
             $"      If use --compiled, the program will treat it as compiled lua, {Environment.NewLine}" +
             $"      or the behaviour depends on the extension is either .lua or .luac.{Environment.NewLine}" +

@@ -4,14 +4,6 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
-    internal class TargetOptionBase
-    {
-        [Value(0, Required = false, Default = 0u, HelpText = "The target uid of the command.")]
-        public uint Uid { get; set; }
-        [Option('c', "conv", Required = false, Default = 0u, HelpText = "The target conv of the command.")]
-        public uint Conv { get; set; }
-    }
-
     internal static class TargetManager
     {
         public static uint TargetUid = 0;
@@ -86,7 +78,7 @@ namespace csharp_Protoshift.Commands
         /// </summary>
         /// <param name="o">The commandline options. Treat param = 0 as not given.</param>
         /// <returns>The final session. Treat null as failure.</returns>
-        public static HandlerSession? GetSession(this TargetOptionBase o, LoggerChannel logger) =>
+        public static HandlerSession? GetSession(this TargetOptionAbstract o, LoggerChannel logger) =>
             GetSession(logger, o.Conv, o.Uid);
 
         /// <summary>
@@ -103,7 +95,7 @@ namespace csharp_Protoshift.Commands
         /// </summary>
         /// <param name="o">The commandline options. Treat param = 0 as not given.</param>
         /// <returns>The final conv id. Treat 0 as failure.</returns>
-        public static uint GetConv(this TargetOptionBase o, LoggerChannel logger) =>
+        public static uint GetConv(this TargetOptionAbstract o, LoggerChannel logger) =>
             o.GetSession(logger)?.SessionId ?? 0;
     }
 }
