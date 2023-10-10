@@ -14,9 +14,9 @@
 ## 目前支持的功能
 
 - 基础 Protoshift 功能
-- 中间人抓包
+- 代理服务器简单管理
 - Windy (lua) 脚本自动编译执行
-- Protobuf / `query_cur_region` 工具命令、
+- Protobuf / `query_cur_region` / Ec2b 等工具命令
 
 ## 快速安装指南
 
@@ -26,8 +26,8 @@
 
 - [.NET 6.0 Runtime](https://dotnet.microsoft.com/en-us/download)。它用于生成与运行软件。
 - [Git](https://git-scm.com/downloads)。它用于克隆源代码以及收取本软件的更新。
-- [Protocol Buffers 编译器（protoc）](https://github.com/protocolbuffers/protobuf/releases/tag/v21.12)，并添加到您的系统的 PATH 环境变量。它用于实时编译必要文件。为保持一致性，我们建议使用版本 21.12。
-  **注意请根据您的系统下载下方以 `protoc` 开头的压缩包。** [v21.12 Windows x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-win64.zip) | [v21.12 Linux x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip)
+- [Protocol Buffers 编译器（protoc）](https://github.com/protocolbuffers/protobuf/releases/tag/v21.12)，并添加到您的系统的 PATH 环境变量。它用于实时编译必要文件。为保持一致性，我们建议使用版本 21.12。  
+  **注意请根据您的系统下载发行页下方以 `protoc` 开头的压缩包。**此处同样提供下载链接：[v21.12 Windows x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-win64.zip) | [v21.12 Linux x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip)
 - 一个真正的服务器。
 
 除此之外，我个人强烈建议您：
@@ -35,7 +35,7 @@
 - 在运行构建（`./update`）时保证对 GitHub 的**稳定**访问。
 - 使用 VS Code 以获得路径快捷跳转、JSON Schema 等支持。
 
-如果您由于某些原因无法将以上软件添加到系统环境变量，也可以参照 FAQs 中的内容进行 [特殊配置]() 以临时解决问题。
+如果您由于某些原因无法将以上软件添加到系统环境变量，可以指示程序调用其绝对路径。有关进行这种特殊配置的细节，请参见 [Wiki - Building - 前置环境需求](wiki/CN_Building.md#前置环境需求) 指南。
 
 ### 构建并运行
 
@@ -71,10 +71,10 @@ cd csharp-Protoshift
 ./run
 ```
 
-就可以立刻启动服务器。您以后也可以随时使用 `./run` 启动 Protoshift 服务器，使用 `./update` 来获取更新。
+就可以立刻启动服务器。您以后也可以随时使用 `./run` 启动 Protoshift 服务器，使用 `./update` 来获取更新。当然如果您想要以 Release 运行（可达到更高的性能），可以使用 `./scripts/run-rel`.
 
 ## 高级用法
 
-- 有关导出稳定的发布版本，您可以参见 [Wiki - Building]() 指南。
-- 有关指令更具体的用法，您可以参见 [Wiki - Commands]() 指南。
-- 构建时使用 [默认行为文件](../HandlerGenerator/Gencode_Configuration/default_protobuf_branches.txt) 中定义的 Proto 分支。有关使用其他 Proto 分支或更换仓库源，您可以参见 [Wiki - Building]() 指南。
+- 有关导出稳定的发布版本，您可以参见 [Wiki - Building - 导出单个发布版本](wiki/CN_Building.md#导出单个发布版本) 指南。
+- 有关指令更具体的用法，您可以参见 [Wiki - Commands](wiki/CN_Commands.md) 指南。
+- 构建时使用 [默认行为文件](../HandlerGenerator/Gencode_Configuration/default_protobuf_branches.txt) 中定义的 Proto 分支。有关使用其他 Proto 分支或更换仓库源，您可以参见 [Wiki - Building - Proto 远程抓取管理](wiki/CN_Building.md#proto-远程抓取管理) 指南。

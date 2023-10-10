@@ -1,3 +1,5 @@
+[EN](README.md) | 中文
+
 # Protoshift HotPatch
 
 本文主要介绍为何要设计这个功能，基本的使用方法以及查错文档。
@@ -26,9 +28,14 @@
 6. `HotPatchMiddleware` 检查到有针对 `PlayerLoginRsp` 的规则启用，从 `oldprotocol` 中查找规定字段，并将内容复制到 `newprotocol` 中，并返回 `newprotocol`。如果无规则启用则 `newprotocol` 原路返回。
 7. `OldShiftToNew` 向上一路返回，直至 `HandlerSession`，其使用 `newprotocol` 重新组装新的包并传向客户端。
 
-注意，`HotPatchMiddleware` 完全使用反射工作，性能开销较大。
+注意，`HotPatchMiddleware` 完全使用反射工作，性能开销较大。因此（也有实现上的原因），Proto HotPatch 目前限制：
+
+- 只允许在 Debug 配置下运行。
+- 只可以应用于 Protobuf message 中无法正常 Protoshift 的字段。注意，只要另一套 Proto 中存在名称相同且类型相同的字段，则视为字段已可以正常 Protoshift。程序并无能力判断 Proto 中的 field number 是否实际正确。
 
 ## Config 基本语法
+
+在初次使用时，您需要将 `csharp-Protoshift/protoshift_hotpatch_config.tmpl.json` 复制到同目录下，并重命名为 `protoshift_hotpatch_config.json`，然后开始修改其内容。
 
 config 采用 json 格式。它包含：
 
@@ -78,8 +85,8 @@ config 采用 json 格式。它包含：
 Config 支持最基础的检查。例如：
 
 - 如果 json 不符合格式，所有的 Config 完全不会加载。  
-  值得注意的是，如果已有成功加载的 config，其会被立即禁用。可以使用 `kskillissue revert` 命令覆写还原文件更改并进行重载，但是如果不运行 `revert` 命令，关闭服务器时以前版本的 config 内容会被丢弃。
-- json 支持注释。
+  值得注意的是，如果已有成功加载的 config，其会被立即禁用。
+- json 支持注释与尾随逗号。
 - 如果某个规则没有通过可行性检查，其不会加载，已有规则也会被禁用。不会影响其他规则。
 
 ## Config 编译错误总览
