@@ -6,6 +6,9 @@ using XC.RSAUtil;
 using TextCopy;
 using YYHEggEgg.Logger;
 using CommandLine;
+using System.Reflection;
+using System.Net.Http.Json;
+using Newtonsoft.Json.Linq;
 
 namespace csharp_Protoshift
 {
@@ -222,6 +225,50 @@ namespace csharp_Protoshift
             catch (Exception ex)
             {
                 LogTrace.WarnTrace(ex, nameof(SetClipBoard), $"Copy to clipboard failed. ");
+            }
+        }
+
+        public static void RunBackgroundUpdateCheck()
+        {
+            _ = Task.Run(UpdateCheck);
+        }
+
+        private class VersionInfo
+        {
+            public string? CurrentVersion;
+            /// <summary>
+            /// Only when the current version is earlier
+            /// than this will the update notice be raised
+            /// as a warning.
+            /// </summary>
+            public string? EarliestStableVersion;
+        }
+
+        private static async Task UpdateCheck()
+        {
+            var client = new HttpClient();
+            var logger = Log.GetChannel(nameof(UpdateCheck));
+            var json = JObject.Parse(await client.GetStringAsync(
+                $"https://api.github.com/repos/YYHEggEgg/csharp-Protoshift/releases/latest"));
+            
+            if (!Version.TryParse(((string?)json["tag_name"])?.Substring(1), out var version_latest)) return;
+            var version_current = Assembly.GetExecutingAssembly().GetName().Version;
+            if (version_current?.CompareTo(version_current) >= 0) return;
+
+            logger.LogInfo($"The new version v{version_latest} of csharp-Protoshift is avaliable!");
+            // Not a Git repository
+            if (!Directory.Exists("./../.git")) return;
+                
+            foreach (var jtoken in json["assets"] ?? Enumerable.Empty<JToken>())
+            {
+                if ((string?)jtoken["name"] != "versioninfo.json") continue;
+                var remoteinfo = await client.GetFromJsonAsync<VersionInfo>((string?)jtoken["browser_download_url"]);
+                if (!Version.TryParse(remoteinfo?.EarliestStableVersion, out var version_stable)) return;
+                
+                if (version_stable.CompareTo(version_current) > 0) // Later
+                {
+                    logger.LogWarn($"You are recommended to update to this version. Just run 'update' script.");
+                }
             }
         }
 
