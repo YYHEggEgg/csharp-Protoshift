@@ -21,7 +21,7 @@ namespace csharp_Protoshift.Commands
                     catch (NotImplementedException) { }
                     catch (Exception ex)
                     {
-                        LogTrace.ErroTrace(ex, nameof(ServerCommandLine), 
+                        LogTrace.ErroTrace(ex, nameof(ServerCommandLine),
                             $"Cleanup of command {cmd.GetType()} failed: {ex}");
                     }
                 }
@@ -36,9 +36,9 @@ namespace csharp_Protoshift.Commands
         {
             foreach (var handler in handlers)
             {
-                handler.ShowUsage();
-                Log.Info("", nameof(ServerCommandLine));
+                handler.ShowDescription();
             }
+            Log.Info("Type [command] help to get more detailed usage.", nameof(ServerCommandLine));
         }
 
         private static void RefuseCommand(string commandName)
@@ -48,8 +48,15 @@ namespace csharp_Protoshift.Commands
 
         public static async Task Start()
         {
-            ConsoleWrapper.ShutDownRequest += (_, _) => Environment.Exit(0);
-            while (true)
+            bool running = true;
+            ConsoleWrapper.ShutDownRequest += async (_, _) =>
+            {
+                running = false;
+                ConsoleWrapper.InputPrefix = string.Empty;
+                await stopServer.HandleAsync(string.Empty);
+            };
+            var helpstrings = CommandHandlerBase.HelpStrings;
+            while (running)
             {
                 ConsoleWrapper.InputPrefix = "> ";
                 string cmd = await ConsoleWrapper.ReadLineAsync();
@@ -57,35 +64,42 @@ namespace csharp_Protoshift.Commands
                 int sepindex = cmd.IndexOf(' ');
                 if (sepindex == -1) sepindex = cmd.Length;
                 string commandName = cmd.Substring(0, sepindex);
-                if (commandName.ToLower() == "help" || commandName == "?")
+                if (helpstrings.Contains(commandName))
                 {
                     ShowHelps();
                     continue;
                 }
-                else
+
+                string argList = cmd.Substring(Math.Min(cmd.Length, sepindex + 1));
+                bool handled = false;
+                foreach (var cmdhandle in handlers)
                 {
-                    string argList = cmd.Substring(Math.Min(cmd.Length, sepindex + 1));
-                    bool handled = false;
-                    foreach (var cmdhandle in handlers)
+                    if (cmdhandle.CommandName != commandName) continue;
+
+                    handled = true;
+                    try
                     {
-                        if (cmdhandle.CommandName == commandName)
+                        if (helpstrings.Contains(argList.Trim().ToLower()))
                         {
-                            handled = true;
-                            try
-                            {
-                                await cmdhandle.HandleAsync(argList);
-                            }
-                            catch (Exception ex)
-                            {
-                                LogTrace.ErroTrace(ex, nameof(ServerCommandLine), 
-                                    $"Encountered error when handling command {commandName}. Please check your input. ");
-                            }
-                            break;
+                            cmdhandle.ShowUsage();
+                        }
+                        else
+                        {
+                            await cmdhandle.HandleAsync(argList);
                         }
                     }
-                    if (!handled) RefuseCommand(commandName);
+                    catch (Exception ex)
+                    {
+                        LogTrace.ErroTrace(ex, nameof(ServerCommandLine),
+                            $"Encountered error when handling command {commandName}. Please check your input. ");
+                    }
+                    break;
+
                 }
+                if (!handled) RefuseCommand(commandName);
+
             }
+            await Task.Delay(10000);
         }
     }
 }

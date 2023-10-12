@@ -5,6 +5,7 @@ using System.Text.Json;
 using XC.RSAUtil;
 using TextCopy;
 using YYHEggEgg.Logger;
+using CommandLine;
 
 namespace csharp_Protoshift
 {
@@ -71,7 +72,7 @@ namespace csharp_Protoshift
         }
 
         #region GetFullFilePath
-        public static bool TryGetFullFilePath(string? filePath, string? basePath, 
+        public static bool TryGetFullFilePath(string? filePath, string? basePath,
             string allowed_extension, [NotNullWhen(true)] out string? result)
         {
             if (filePath == null || basePath == null)
@@ -80,25 +81,25 @@ namespace csharp_Protoshift
                 return false;
             }
             var normal_relative = Path.GetFullPath($"./{filePath}", basePath);
-            if (File.Exists(normal_relative)) 
+            if (File.Exists(normal_relative))
             {
                 result = normal_relative;
                 return true;
             }
             var normal_relative_addext = Path.GetFullPath($"./{filePath}.{allowed_extension}", basePath);
-            if (File.Exists(normal_relative_addext)) 
+            if (File.Exists(normal_relative_addext))
             {
                 result = normal_relative_addext;
                 return true;
             }
             var normal_full = filePath;
-            if (File.Exists(normal_full)) 
+            if (File.Exists(normal_full))
             {
                 result = Path.GetFullPath(normal_full);
                 return true;
             }
             var normal_full_addext = $"{filePath}.{allowed_extension}";
-            if (File.Exists(normal_full_addext)) 
+            if (File.Exists(normal_full_addext))
             {
                 result = Path.GetFullPath(normal_full_addext);
                 return true;
@@ -106,8 +107,8 @@ namespace csharp_Protoshift
             result = null;
             return false;
         }
-        
-        public static bool TryGetFullFilePath(string? filePath, string? basePath, 
+
+        public static bool TryGetFullFilePath(string? filePath, string? basePath,
             string allowed_extension, string allowed_extension2, [NotNullWhen(true)] out string? result)
         {
             if (filePath == null || basePath == null)
@@ -116,37 +117,37 @@ namespace csharp_Protoshift
                 return false;
             }
             var normal_relative = Path.GetFullPath($"./{filePath}", basePath);
-            if (File.Exists(normal_relative)) 
+            if (File.Exists(normal_relative))
             {
                 result = normal_relative;
                 return true;
             }
             var normal_relative_addext = Path.GetFullPath($"./{filePath}.{allowed_extension}", basePath);
-            if (File.Exists(normal_relative_addext)) 
+            if (File.Exists(normal_relative_addext))
             {
                 result = normal_relative_addext;
                 return true;
             }
             var normal_relative_addext2 = Path.GetFullPath($"./{filePath}.{allowed_extension2}", basePath);
-            if (File.Exists(normal_relative_addext2)) 
+            if (File.Exists(normal_relative_addext2))
             {
                 result = normal_relative_addext2;
                 return true;
             }
             var normal_full = filePath;
-            if (File.Exists(normal_full)) 
+            if (File.Exists(normal_full))
             {
                 result = Path.GetFullPath(normal_full);
                 return true;
             }
             var normal_full_addext = $"{filePath}.{allowed_extension}";
-            if (File.Exists(normal_full_addext)) 
+            if (File.Exists(normal_full_addext))
             {
                 result = Path.GetFullPath(normal_full_addext);
                 return true;
             }
             var normal_full_addext2 = $"{filePath}.{allowed_extension2}";
-            if (File.Exists(normal_full_addext2)) 
+            if (File.Exists(normal_full_addext2))
             {
                 result = Path.GetFullPath(normal_full_addext2);
                 return true;
@@ -154,8 +155,8 @@ namespace csharp_Protoshift
             result = null;
             return false;
         }
-        
-        public static bool TryGetFullFilePath(string? filePath, string? basePath, 
+
+        public static bool TryGetFullFilePath(string? filePath, string? basePath,
             [NotNullWhen(true)] out string? result, params string[] allowed_extensions)
         {
             if (filePath == null || basePath == null)
@@ -164,7 +165,7 @@ namespace csharp_Protoshift
                 return false;
             }
             var normal_relative = Path.GetFullPath($"./{filePath}", basePath);
-            if (File.Exists(normal_relative)) 
+            if (File.Exists(normal_relative))
             {
                 result = normal_relative;
                 return true;
@@ -172,14 +173,14 @@ namespace csharp_Protoshift
             foreach (var allowed_extension in allowed_extensions)
             {
                 var normal_relative_addext = Path.GetFullPath($"./{filePath}.{allowed_extension}", basePath);
-                if (File.Exists(normal_relative_addext)) 
+                if (File.Exists(normal_relative_addext))
                 {
                     result = normal_relative_addext;
                     return true;
                 }
             }
             var normal_full = filePath;
-            if (File.Exists(normal_full)) 
+            if (File.Exists(normal_full))
             {
                 result = Path.GetFullPath(normal_full);
                 return true;
@@ -187,7 +188,7 @@ namespace csharp_Protoshift
             foreach (var allowed_extension in allowed_extensions)
             {
                 var normal_full_addext = $"{filePath}.{allowed_extension}";
-                if (File.Exists(normal_full_addext)) 
+                if (File.Exists(normal_full_addext))
                 {
                     result = Path.GetFullPath(normal_full_addext);
                     return true;
@@ -244,7 +245,7 @@ namespace csharp_Protoshift
              */
             if (File.Exists(filePath))
             {
-                string directory = Path.GetDirectoryName(filePath);
+                string directory = Path.GetDirectoryName(filePath) ?? string.Empty;
                 string fileName = Path.GetFileNameWithoutExtension(filePath);
                 string extension = Path.GetExtension(filePath);
                 string newFilePath = filePath;
@@ -260,7 +261,7 @@ namespace csharp_Protoshift
             }
             else if (Directory.Exists(filePath))
             {
-                string directoryName = Path.GetDirectoryName(filePath);
+                string directoryName = Path.GetDirectoryName(filePath) ?? string.Empty;
                 string directory = Path.Combine(directoryName, Path.GetFileName(filePath));
                 string newDirectory = directory;
                 int suffix = 1;
@@ -289,6 +290,46 @@ namespace csharp_Protoshift
                     return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
                 }
             }
+        }
+
+        public static string ParseCommandLineError(Error error)
+        {
+            if (error is BadFormatTokenError)
+            {
+                return "The provided param is in bad format.";
+            }
+            else if (error is BadVerbSelectedError)
+            {
+                return "An invalid verb (sub-command) is selected.";
+            }
+            else if (error is MissingRequiredOptionError)
+            {
+                var missingRequiredOptionError = (MissingRequiredOptionError)error;
+                return $"Required Option is missing: {missingRequiredOptionError.NameInfo.NameText}.";
+            }
+            else if (error is NoVerbSelectedError)
+            {
+                return "No verb (sub-command) is selected.";
+            }
+            else if (error is SequenceOutOfRangeError)
+            {
+                var sequenceOutOfRangeError = (SequenceOutOfRangeError)error;
+                return $"The value of sequence option '{sequenceOutOfRangeError.NameInfo.NameText}' is out of range.";
+            }
+            else
+            {
+                return "Unknown CommandLine error.";
+            }
+        }
+
+        public static IEnumerable<string> ReportCommandLineErrors(IEnumerable<Error> errors)
+        {
+            // foreach (var error in errors)
+            // {
+            //     yield return ParseCommandLineError(error);
+            // }
+            // yield break;
+            yield return "Unknown command line args detected.";
         }
         #endregion
     }

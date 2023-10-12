@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ../csharp-Protoshift
+dotnet run --configuration Release -- $@

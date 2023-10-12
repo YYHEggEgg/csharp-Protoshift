@@ -13,13 +13,8 @@ namespace csharp_Protoshift.Debug.Replay
                 max_Output_Char_Count: 16 * 1024,
                 use_Console_Wrapper: false,
                 use_Working_Directory: true,
-#if DEBUG
                 global_Minimum_LogLevel: LogLevel.Verbose,
                 console_Minimum_LogLevel: LogLevel.Information,
-#else
-                global_Minimum_LogLevel: LogLevel.Information,
-                console_Minimum_LogLevel: LogLevel.Warning,
-#endif
                 debug_LogWriter_AutoFlush: true
                 ));
 

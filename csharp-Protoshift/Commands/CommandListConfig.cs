@@ -18,6 +18,7 @@ namespace csharp_Protoshift.Commands
             handlers.Add(new WindyCommand());
             handlers.Add(new ForceInjectPacketCmd());
             handlers.Add(new KickPlayerCmd());
+            handlers.Add(new TargetCmd());
             return handlers;
         }
     }

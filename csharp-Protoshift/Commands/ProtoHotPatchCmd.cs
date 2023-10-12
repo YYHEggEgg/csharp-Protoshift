@@ -13,9 +13,10 @@ namespace csharp_Protoshift.Commands
     {
         public override string CommandName => "kskillissue";
 
-        public override string Description => "Skill issue fix HotPatch";
+        public override string Description => "Skill issue fix HotPatch. ";
 
-        public override string Usage => "kskillissue load/reload - load and compile the config.";
+        public override string Usage => $"kskillissue load/reload - load and compile the config.{Environment.NewLine}" +
+            $"View csharp-Protoshift/protoshift_hotpatch_config.tmpl.json for more information.";
 
         public override async Task HandleAsync(string argList)
         {
@@ -23,9 +24,9 @@ namespace csharp_Protoshift.Commands
             await DefaultCommandsParser.ParseArguments<ProtoHotPatchLoadConfig>(args)
                 .MapResult(
                     async (ProtoHotPatchLoadConfig o) => await HandleReloadAsync(o),
-                    error =>
+                    errors =>
                     {
-                        Log.Erro("Unrecognized args detected. Please check your input.", nameof(ProtoHotPatchCmd));
+                        OutputInvalidUsage(errors);
                         ShowUsage();
                         return Task.CompletedTask;
                     });

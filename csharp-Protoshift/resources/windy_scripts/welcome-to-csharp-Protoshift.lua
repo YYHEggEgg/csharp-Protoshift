@@ -8,10 +8,10 @@ local function main()
     local curuid = CS.UnityEngine.GameObject.Find("/BetaWatermarkCanvas(Clone)/Panel/TxtUID"):GetComponent("Text").text
     if #curuid > 3 then
         if string.sub(curuid, 1, 3) ~= "UID" then
-            curuid = ""
+            curuid = "<color=#73c0da>Furina</color>"
         end
     end
-    local newuid = curuid .. "  <i><color=#11edb1>❤️ from miHomoTech</color></i>"
+    local newuid = "<i><color=#11edb1>miHomoTech</color></i> <color=#ff4500>❤️</color> " .. curuid
     CS.UnityEngine.GameObject.Find("/BetaWatermarkCanvas(Clone)/Panel/TxtUID"):GetComponent("Text").text = newuid
     success = true
 end

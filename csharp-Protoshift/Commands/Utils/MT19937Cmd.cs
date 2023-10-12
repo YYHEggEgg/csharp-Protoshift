@@ -27,7 +27,7 @@ namespace csharp_Protoshift.Commands
             var args = ParseAsArgs(argList);
             if (args.Count == 0)
             {
-                Log.Erro($"Too few arguments! Usage: {Usage}", nameof(MT19937Cmd));
+                _logger.LogErro($"Too few arguments! Usage: {Usage}");
                 return;
             }
             else if (!ulong.TryParse(args[0], out seed))
@@ -50,13 +50,13 @@ namespace csharp_Protoshift.Commands
                 }
                 else
                 {
-                    Log.Erro($"Unknown option {args[0]}! Usage: {Usage}", nameof(MT19937Cmd));
+                    _logger.LogErro($"Unknown option {args[0]}! Usage: {Usage}");
                     return;
                 }
             }
-            Log.Info($"MT64 result:{Environment.NewLine}-----BEGIN HEX 4096 Xor Key-----{Environment.NewLine}" +
+            _logger.LogInfo($"MT64 result:{Environment.NewLine}-----BEGIN HEX 4096 Xor Key-----{Environment.NewLine}" +
                 Convert.ToHexString(HandlerSession.Generate4096KeyByMT19937(seed)) +
-                $"{Environment.NewLine}-----END HEX 4096 Xor Key-----", nameof(MT19937Cmd));
+                $"{Environment.NewLine}-----END HEX 4096 Xor Key-----");
             await Task.CompletedTask;
         }
     }

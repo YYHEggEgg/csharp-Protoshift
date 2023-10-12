@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ../HandlerGenerator
+dotnet run --configuration Release -- --update $@

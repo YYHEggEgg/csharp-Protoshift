@@ -16,10 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\csharp-Protoshift\csharp-Protoshift.csproj" />
-    <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
-    <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />
-    <ProjectReference Include="..\ProtoshiftBenchmark\ProtoshiftBenchmark.csproj" />
+    <ProjectReference Include="..\..\csharp-Protoshift\csharp-Protoshift.csproj" />
+    <ProjectReference Include="..\..\NewProtoHandlers\NewProtoHandlers.csproj" />
+    <ProjectReference Include="..\..\OldProtoHandlers\OldProtoHandlers.csproj" />
   </ItemGroup>
 
 </Project>

@@ -17,7 +17,7 @@ namespace csharp_Protoshift.Commands.Windy
             var settmpPathRes = SetCompiledTempPath("windy_temp");
             Debug.Assert(settmpPathRes);
         }
-        public readonly static WindyLuacManager Instance = new();
+        public readonly static WindyLuacManager Instance;
 
         [JsonIgnore]
         private Dictionary<string, (string luaHash, byte[] luacContent, string outputHash)> compiled_luacs = new();

@@ -1,3 +1,5 @@
+EN | [中文](README_CN.md)
+
 # Protoshift HotPatch
 
 This document mainly introduces why this feature is designed, the basic usage method, and the error checking document.
@@ -26,7 +28,10 @@ Explain the time when the middleware takes effect with an example:
 6. `HotPatchMiddleware` notices that there are rules for `PlayerLoginRsp` enabled, so finds the specified fields from `oldprotocol`, and copies the content to `newprotocol`, and returns `newprotocol`. If no rules are enabled, `newprotocol` will be returned the same way.
 7. `OldShiftToNew` returns all the way up to `HandlerSession`, which uses `newprotocol` to reassemble a new package and send it to the client.
 
-Note that `HotPatchMiddleware` works entirely by reflection, so the performance overhead is large.
+Note that `HotPatchMiddleware` works entirely by reflection, so the performance overhead is large. Therefore (but not only this reason), Proto HotPatch restricts that:
+
+- It can only be applied when running in Debug.
+- It can only be applied to the fields in Protobuf message that cannot be normally Protoshifted. Notice that once a field has another field in the other protocol whose name and type equal to itself, it is treated as can be normally Protoshifted already. The program doesn't necessarily has the ability to judge whether the field number is actually correct.
 
 ## Basic Syntax of Config
 
@@ -78,9 +83,9 @@ The following mainly explains the naming method of rule:
 Config supports the most basic checks. For example:
 
 - If the json does not conform to the format, all Configs will not load.  
-  It is worth noting that if there is a successfully loaded config, it will be immediately disabled. You can use the `kskillissue revert` command to overwrite and restore file changes and reload, but if you do not run the `revert` command, the content of the previous version of the config will be discarded when the server is closed.
-- json supports comments.
-- If a rule does not pass the feasibility check, it will not load, and existing rules will be disabled. Will not affect other rules.
+  Notice that if there is a successfully loaded config, it will be immediately disabled. 
+- json supports comments and trailing commas.
+- If a rule does not pass the feasibility check, it will not load, and the existing rule of this proto will be disabled. Will not affect other rules.
 
 ## Overview of Config Compilation Errors
 

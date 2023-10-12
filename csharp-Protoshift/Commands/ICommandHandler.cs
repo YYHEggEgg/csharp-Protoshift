@@ -70,6 +70,14 @@ namespace csharp_Protoshift.Commands
         }
 
         public abstract string CommandName { get; }
+        private LoggerChannel? _preserve_logger;
+        protected virtual LoggerChannel _logger
+        {
+            get
+            {
+                return _preserve_logger ??= Log.GetChannel(CommandName);
+            }
+        }
         /// <summary>
         /// A brief and one-line description of this command.
         /// </summary>
@@ -85,9 +93,14 @@ namespace csharp_Protoshift.Commands
         public abstract Task HandleAsync(string argList);
         public virtual void CleanUp() { }
 
-        public virtual void ShowUsage()
+        public virtual void ShowDescription()
         {
             Log.Info($"Command '{CommandName}': {Description}", CommandName);
+        }
+
+        public virtual void ShowUsage()
+        {
+            ShowDescription();
             string[] help = Usage.Split(Environment.NewLine);
             foreach (var line in help) Log.Info(line, CommandName);
         }
@@ -97,6 +110,18 @@ namespace csharp_Protoshift.Commands
             // 在构建时设置自定义 ConsoleWriter
             config.HelpWriter = TextWriter.Synchronized(new LogTextWriter("CmdHandler"));
         });
+
+        public static readonly HashSet<string> HelpStrings = new()
+            {
+                "help", "?", "--help", "-h", "-?", "/h", "/?"
+            };
+
+        protected void OutputInvalidUsage(IEnumerable<Error> errors)
+        {
+            foreach (var line in Tools.ReportCommandLineErrors(errors))
+                _logger.LogWarn(line);
+            _logger.LogErro("Invalid input for param. Please view the errors and check your input.");
+        }
     }
 
     /// <summary>
@@ -118,7 +143,7 @@ namespace csharp_Protoshift.Commands
         /// <param name="errors"></param>
         public virtual void HandleInvalidUsage(IEnumerable<Error> errors)
         {
-            Log.Erro("Unrecognized args detected. Please check your input.", nameof(StandardCommandHandler<TCmdOption>));
+            OutputInvalidUsage(errors);
             ShowUsage();
             throw new AccessViolationException();
         }
