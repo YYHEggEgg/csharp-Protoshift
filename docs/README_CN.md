@@ -9,14 +9,14 @@
 
 [EN](../README.md) | 中文
 
-**注意**: 我们始终欢迎项目的贡献者。但在做贡献之前，请仔细阅读我们的 [代码规范](https://github.com/YYHEggEgg/csharp-Protoshift/blob/main/CONTRIBUTING.md)。
+**注意**: 我们始终欢迎项目的贡献者。但在做贡献之前，请仔细阅读我们的 [代码规范](../CONTRIBUTING.md)。
 
 ## 目前支持的功能
 
-- 基础 Protoshift 功能
-- 代理服务器简单管理
-- Windy (lua) 脚本自动编译执行
-- Protobuf / `query_cur_region` / Ec2b 等工具命令
+- 基础 Protoshift 功能。其可以增强某二游服务器的兼容性。
+- 代理服务器简单管理命令。
+- Windy (lua) 脚本自动编译执行。下图显示的是在 `config_example.json` 中默认启用的 `welcome-to-csharp-Protoshift.lua` 配置，您可以通过将 `#/WindyConfig/OnlineExecWindyMode` 设为 `Disabled` 来将其关闭。
+- Protobuf / `query_cur_region` / Ec2b 等工具命令。
 
 ## 快速安装指南
 
@@ -27,7 +27,7 @@
 - [.NET 6.0 Runtime](https://dotnet.microsoft.com/en-us/download)。它用于生成与运行软件。
 - [Git](https://git-scm.com/downloads)。它用于克隆源代码以及收取本软件的更新。
 - [Protocol Buffers 编译器（protoc）](https://github.com/protocolbuffers/protobuf/releases/tag/v21.12)，并添加到您的系统的 PATH 环境变量。它用于实时编译必要文件。为保持一致性，我们建议使用版本 21.12。  
-  **注意请根据您的系统下载发行页下方以 `protoc` 开头的压缩包。**此处同样提供下载链接：[v21.12 Windows x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-win64.zip) | [v21.12 Linux x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip)
+  **注意请根据您的系统下载发行页下方以 `protoc` 开头的压缩包**。此处同样提供下载链接：[v21.12 Windows x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-win64.zip) | [v21.12 Linux x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip)
 - 一个真正的服务器。
 
 除此之外，我个人强烈建议您：
@@ -65,13 +65,15 @@ cd csharp-Protoshift
 }
 ```
 
-取消注释并以您的真实服务器地址替换，再运行以下命令：
+取消注释并以您的真实服务器地址替换，就可以完成 `config.json` 的最小配置。配置完 `config.json` 后，应确认 `resources` 是否正确配置。有关如何对 `resources` 进行正确配置，请参阅 [Wiki - Resources](CN_Resources.md).
+
+最后运行以下命令即可立刻启动服务器：
 
 ```sh
 ./run
 ```
 
-就可以立刻启动服务器。您以后也可以随时使用 `./run` 启动 Protoshift 服务器，使用 `./update` 来获取更新。当然如果您想要以 Release 运行（可达到更高的性能），可以使用 `./scripts/run-rel`.
+您以后也可以随时使用 `./run` 启动 Protoshift 服务器，使用 `./update` 来获取更新。当然如果您想要以 Release 运行（可达到更高的性能），可以使用 `./scripts/run-rel`.
 
 ## 高级用法
 
