@@ -14,7 +14,7 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.GameSession
 {
-    public class HandlerSession
+    public partial class HandlerSession
     {
         protected byte[] _xorKey;
         /// <summary>
@@ -59,6 +59,8 @@ namespace csharp_Protoshift.GameSession
             client_seed = server_seed = Array.Empty<byte>();
             // Verbose = true;
             Verbose = false;
+
+            ConfigureInitialNotifyList();
         }
 
         public byte[] HandlePacket(byte[] packet, bool isNewCmdid)
@@ -174,52 +176,7 @@ namespace csharp_Protoshift.GameSession
                 return packet;
             }
             string protoname = oldserializer.Protoname;
-
-            if (protoname == "GetPlayerTokenReq" || protoname == "GetPlayerTokenRsp")
-            {
-                string oldjson;
-                try
-                {
-                    oldjson = oldserializer.DeserializeToJson(packet, body_offset, (int)body_length);
-                }
-                catch
-                {
-                    Log.Warn($"Invalid protocol packet: proto={protoname}, cmd={cmdid}, len={(int)body_length}, pkt={Convert.ToHexString(packet)}");
-                    throw;
-                }
-                if (Verbose)
-                {
-                    Log.Info($"Recv packet with CmdId:{cmdid} from " +
-                        $"Server:---{Convert.ToHexString(packet)}",
-                        $"PacketHandler({_sessionId})");
-                }
-                if (protoname == "GetPlayerTokenReq")
-                {
-                    try
-                    {
-                        // string oldjson = oldserializer.DeserializeToJson(bodyfrom);
-                        GetPlayerTokenReqNotify(oldjson);
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Erro($"GetPlayerTokenReqNotify failed, cmd={cmdid}, json_content={oldjson}, body={Convert.ToBase64String(packet, body_offset, (int)body_length)}");
-                        throw;
-                    }
-                }
-                if (protoname == "GetPlayerTokenRsp")
-                {
-                    try
-                    {
-                        // string oldjson = oldserializer.DeserializeToJson(bodyfrom);
-                        GetPlayerTokenRspNotify(oldjson);
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Erro($"GetPlayerTokenRspNotify failed, cmd={cmdid}, json_content={oldjson}, body={Convert.ToBase64String(packet, body_offset, (int)body_length)}");
-                        throw;
-                    }
-                }
-            }
+            InvokeNotifyMiddleware(packet, protoname, cmdid, isNewCmdid, body_offset, body_length);
             #endregion
 
 #if !PROTOSHIFT_BENCHMARK
@@ -238,68 +195,6 @@ namespace csharp_Protoshift.GameSession
 #endif
             return packet;
         }
-
-        protected byte[] client_seed;
-        protected byte[] server_seed;
-
-#pragma warning disable CS8604 // 引用类型参数可能为 null。
-        private void GetPlayerTokenReqNotify(string messageJson)
-        {
-            uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
-            try
-            {
-                client_seed = Resources.SPri[key_id].RsaDecrypt(
-                    Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "clientRandKey").GetString()),
-                    RSAEncryptionPadding.Pkcs1)
-                    .Fill0(8);
-            }
-            catch
-            {
-                OldProtos.GetPlayerTokenRsp rsaFatalRsp = new();
-                rsaFatalRsp.Retcode = 42;
-                rsaFatalRsp.Msg = "Crypto failure. Please confirm that your program is the right version.";
-                GameSessionDispatch.InjectPacketToClient(_sessionId, 
-                    nameof(OldProtos.GetPlayerTokenRsp), null, rsaFatalRsp.ToByteArray());
-                Program.ProxyServer.KickSession(_sessionId, client_reason: 5);
-                return;
-            }
-        }
-
-        private void GetPlayerTokenRspNotify(string messageJson)
-        {
-            uint key_id = (uint)Tools.GetFieldFromJson(messageJson, "keyId").GetInt32();
-            server_seed = Resources.CPri[key_id].RsaDecrypt(
-                Convert.FromBase64String(Tools.GetFieldFromJson(messageJson, "serverRandKey").GetString()),
-                RSAEncryptionPadding.Pkcs1)
-                .Fill0(8);
-            ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
-            _xorKey = Generate4096KeyByMT19937(encrypt_seed);
-            _uid = (uint)Tools.GetFieldFromJson(messageJson, "uid").GetInt32();
-            Log.Info($"IMPORTANT: New XOR Key built{Environment.NewLine}" +
-                $"-----BEGIN HEX New 4096 XOR Key-----{Environment.NewLine}" +
-                Convert.ToHexString(_xorKey) +
-                $"{Environment.NewLine}-----END HEX New 4096 XOR Key-----", $"HandlerSession({_sessionId})");
-            if (GameSessionDispatch.OnlineExecWindyMode == OnlineExecWindyMode_v1_0_0.OnGetPlayerTokenFinish)
-            {
-                _ = Task.Run(async () =>
-                {
-                    // GetPlayerTokenRsp MUST BE earlier than WindSeedClientNotify
-                    await Task.Delay(1500);
-                    try
-                    {
-                        await GameSessionDispatch.InjectOnlineExecuteWindy(_sessionId);
-                        Log.Info($"Successfully sent windy lua: " +
-                            Path.GetFileNameWithoutExtension(Config.Global.WindyConfig.OnlineExecWindyLua) +
-                            $" to session id: {_sessionId}, IP: {remoteIp}.", "windyOnGetPlayerTokenFinish_AsyncTask");
-                    }
-                    catch (Exception ex)
-                    {
-                        LogTrace.WarnTrace(ex, "windyOnGetPlayerTokenFinish_AsyncTask", $"Windy auto-execute failed. ");
-                    }
-                });
-            }
-        }
-#pragma warning restore CS8604 // 引用类型参数可能为 null。
         #endregion
 
         #region Packet Create
@@ -373,43 +268,7 @@ namespace csharp_Protoshift.GameSession
                 return str;
             }
         }
-
-        public static byte[] Generate4096KeyByMT19937(ulong seed)
-        {
-            MT19937_64 mt1 = new(seed);
-            ulong mt2seed = mt1.Int64();
-            MT19937_64 mt2 = new(mt2seed);
-            mt2.Int64();
-            byte[] key = new byte[4096];
-            for (int i = 0; i < key.Length; i += 8)
-            {
-                ulong newui64 = mt2.Int64();
-                key.SetUInt64(i, newui64);
-            }
-            return key;
-        }
         #endregion
-#if !PROXY_ONLY_SERVER
-        public List<PacketRecord> QueryPacketRecords(string protoname)
-        {
-            var query = from record in records
-                        where record?.PacketName == protoname
-                        orderby record.Id
-                        select record;
-            return query.ToList();
-        }
-
-        public List<int> QueryPacketRecordIds(string protoname)
-        {
-            var query = from record in records
-                        where record.PacketName == protoname
-                        orderby record.Id
-                        select record.Id;
-            return query.ToList();
-        }
-
-        public PacketRecord QueryPacketRecordById(int id) => records[id % PacketRecordLimits];
-#endif
     }
 }
 #endif
