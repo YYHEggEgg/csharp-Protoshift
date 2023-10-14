@@ -45,7 +45,6 @@ namespace csharp_Protoshift.Commands.Protobuf
         /// null = no target, true = new, false = old
         /// </summary>
         private bool? targetingoldornew = null;
-        private LoggerChannel log = Log.GetChannel(nameof(ProtobufCmd));
 
         public override void CleanUp() { }
 
@@ -58,7 +57,7 @@ namespace csharp_Protoshift.Commands.Protobuf
                     async (ProtobufTargetConfig o) => await HandleTargetAsync(o),
                     error =>
                     {
-                        log.LogErro("Unrecognized command or args detected. Please check your input.");
+                        OutputInvalidUsage(error);
                         ShowUsage();
                         return Task.CompletedTask;
                     });
@@ -69,29 +68,29 @@ namespace csharp_Protoshift.Commands.Protobuf
             if (opt.OldOrNew.ToLower() == "old")
             {
                 targetingoldornew = false;
-                log.LogInfo("Successfully set the default target protocol to OldProtos.");
+                _logger.LogInfo("Successfully set the default target protocol to OldProtos.");
             }
             else if (opt.OldOrNew.ToLower() == "new")
             {
                 targetingoldornew = true;
-                log.LogInfo("Successfully set the default target protocol to NewProtos.");
+                _logger.LogInfo("Successfully set the default target protocol to NewProtos.");
             }
             else
             {
-                log.LogErro("Unrecognized target protocol! Please give either 'old' or 'new'.");
+                _logger.LogErro("Unrecognized target protocol! Please give either 'old' or 'new'.");
             }
             return Task.CompletedTask;
         }
 
         private async Task<EasyInputResult> GetUserInput()
         {
-            log.LogInfo("Well done! The proto exists.\n");
+            _logger.LogInfo("Well done! The proto exists.\n");
 
-            log.LogInfo("Please type base64 encoded, HEX or JSON protobuf bin data (auto detect):");
-            log.LogInfo("You can also paste json data to get its serialized data.");
-            log.LogInfo(EasyInput.MultipleInputNotice);
+            _logger.LogInfo("Please type base64 encoded, HEX or JSON protobuf bin data (auto detect):");
+            _logger.LogInfo("You can also paste json data to get its serialized data.");
+            _logger.LogInfo(EasyInput.MultipleInputNotice);
 
-            log.LogInfo("\nIf you're using Windows Terminal, press <color=Yellow>Ctrl+Alt+V</color> " +
+            _logger.LogInfo("\nIf you're using Windows Terminal, press <color=Yellow>Ctrl+Alt+V</color> " +
                 $"to paste any text (especially formatted json data).");
 
             var raw_text = await ConsoleWrapper.ReadLineAsync(false);
@@ -110,7 +109,7 @@ namespace csharp_Protoshift.Commands.Protobuf
             #region Assert target protocol
             if (opt.IsOldProtos && opt.IsNewProtos)
             {
-                log.LogErro("Please select only one target protocol!");
+                _logger.LogErro("Please select only one target protocol!");
                 return;
             }
             else if (!opt.IsOldProtos && !opt.IsNewProtos)
@@ -118,7 +117,7 @@ namespace csharp_Protoshift.Commands.Protobuf
                 if (targetingoldornew != null) targetprotocol_tmp = targetingoldornew;
                 else
                 {
-                    log.LogErro("Please select a target protocol or set a default " +
+                    _logger.LogErro("Please select a target protocol or set a default " +
                         "one by command 'util protobuf target <old|new>'!");
                     return;
                 }
@@ -127,7 +126,7 @@ namespace csharp_Protoshift.Commands.Protobuf
             #endregion
             bool targetprotocolIsNew = (bool)targetprotocol_tmp;
             string target_namespace = $"{(targetprotocolIsNew ? "New" : "Old")}Protos";
-            log.LogInfo($"Got target protocol: {target_namespace}");
+            _logger.LogInfo($"Got target protocol: {target_namespace}");
 
             string? res = null;
 
@@ -135,46 +134,46 @@ namespace csharp_Protoshift.Commands.Protobuf
             {
                 if (!NewProtos.QueryJsonSerializer.TryGetJsonSerializer(opt.Protoname, out var serializer))
                 {
-                    log.LogErro("Proto type not found!");
+                    _logger.LogErro("Proto type not found!");
                     return;
                 }
                 var identify_res = await GetUserInput();
                 if (identify_res.InputType == EasyInputType.Json)
                 {
                     res = Convert.ToBase64String(serializer.SerializeFromJson(identify_res.ProcessedString ?? string.Empty));
-                    log.LogInfo($"Serialized Base64:{Environment.NewLine}{res}");
+                    _logger.LogInfo($"Serialized Base64:{Environment.NewLine}{res}");
                 }
                 else
                 {
                     var bytes_protobuf = identify_res.ToByteArray();
                     res = serializer.DeserializeToJson(bytes_protobuf);
-                    log.LogInfo($"Converted JSON:{Environment.NewLine}{res}");
+                    _logger.LogInfo($"Converted JSON:{Environment.NewLine}{res}");
                 }
             }
             else
             {
                 if (!OldProtos.QueryJsonSerializer.TryGetJsonSerializer(opt.Protoname, out var serializer))
                 {
-                    log.LogErro("Proto type not found!");
+                    _logger.LogErro("Proto type not found!");
                     return;
                 }
                 var identify_res = await GetUserInput();
                 if (identify_res.InputType == EasyInputType.Json)
                 {
                     res = Convert.ToBase64String(serializer.SerializeFromJson(identify_res.ProcessedString ?? string.Empty));
-                    log.LogInfo($"Serialized Base64:{Environment.NewLine}{res}");
+                    _logger.LogInfo($"Serialized Base64:{Environment.NewLine}{res}");
                 }
                 else
                 {
                     var bytes_protobuf = identify_res.ToByteArray();
                     res = serializer.DeserializeToJson(bytes_protobuf);
-                    log.LogInfo($"Converted JSON:{Environment.NewLine}{res}");
+                    _logger.LogInfo($"Converted JSON:{Environment.NewLine}{res}");
                 }
             }
 
             if (res == null)
             {
-                log.LogWarn("Serialization/Deserialization probably failed!");
+                _logger.LogWarn("Serialization/Deserialization probably failed!");
             }
             else
             {

@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: CLI commands input issue
+    about: Submit a issue to our collaborated repo
+    url: https://github.com/YYHEggEgg/csharp-logger/issues
+  - name: Fix Proto skill issue
+    about: Create a pull request to the outer protos repo
+    url: https://github.com/YYHEggEgg/mihomo-protos/pulls
+  - name: Basic FAQs
+    about: View the Wiki
+    url: https://github.com/YYHEggEgg/csharp-Protoshift/wiki
+  - name: Get Help and Using Practices
+    about: Join Discord to get more information
+    url: https://discord.gg/3XkT93zsNy

@@ -70,6 +70,14 @@ namespace csharp_Protoshift.Commands
         }
 
         public abstract string CommandName { get; }
+        private LoggerChannel? _preserve_logger;
+        protected virtual LoggerChannel _logger
+        {
+            get
+            {
+                return _preserve_logger ??= Log.GetChannel(CommandName);
+            }
+        }
         /// <summary>
         /// A brief and one-line description of this command.
         /// </summary>
@@ -107,6 +115,13 @@ namespace csharp_Protoshift.Commands
             {
                 "help", "?", "--help", "-h", "-?", "/h", "/?"
             };
+
+        protected void OutputInvalidUsage(IEnumerable<Error> errors)
+        {
+            foreach (var line in Tools.ReportCommandLineErrors(errors))
+                _logger.LogWarn(line);
+            _logger.LogErro("Invalid input for param. Please view the errors and check your input.");
+        }
     }
 
     /// <summary>
@@ -128,7 +143,7 @@ namespace csharp_Protoshift.Commands
         /// <param name="errors"></param>
         public virtual void HandleInvalidUsage(IEnumerable<Error> errors)
         {
-            Log.Erro("Unrecognized args detected. Please check your input.", nameof(StandardCommandHandler<TCmdOption>));
+            OutputInvalidUsage(errors);
             ShowUsage();
             throw new AccessViolationException();
         }

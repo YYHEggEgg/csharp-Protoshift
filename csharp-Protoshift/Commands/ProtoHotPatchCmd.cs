@@ -24,9 +24,9 @@ namespace csharp_Protoshift.Commands
             await DefaultCommandsParser.ParseArguments<ProtoHotPatchLoadConfig>(args)
                 .MapResult(
                     async (ProtoHotPatchLoadConfig o) => await HandleReloadAsync(o),
-                    error =>
+                    errors =>
                     {
-                        Log.Erro("Unrecognized args detected. Please check your input.", nameof(ProtoHotPatchCmd));
+                        OutputInvalidUsage(errors);
                         ShowUsage();
                         return Task.CompletedTask;
                     });

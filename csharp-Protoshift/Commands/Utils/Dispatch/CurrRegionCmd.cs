@@ -25,7 +25,7 @@ namespace csharp_Protoshift.Commands.Utils
             var read = EasyInput.TryPreProcess(args, 1);
             if (read.InputType != EasyInputType.Json)
             {
-                Log.Erro($"Input param 2 should be a valid json!", nameof(DecryptCurrRegionCmd));
+                _logger.LogErro($"Input param 2 should be a valid json!");
             }
             (OldProtos.QueryCurrRegionHttpRsp currres, bool? verificationOK) = (new(), null);
             try
@@ -35,34 +35,34 @@ namespace csharp_Protoshift.Commands.Utils
             }
             catch (JsonReaderException jex)
             {
-                Log.Erro($"Decryption failed: {jex}", nameof(DecryptCurrRegionCmd));
-                Log.Warn($"It may because you provided false query_cur_region json.", nameof(DecryptCurrRegionCmd));
+                _logger.LogErro($"Decryption failed: {jex}");
+                _logger.LogWarn($"It may because you provided false query_cur_region json.");
                 return;
             }
             catch (KeyNotFoundException kex)
             {
-                Log.Erro($"Decryption failed: {kex}", nameof(DecryptCurrRegionCmd));
-                Log.Warn($"It may because you provided false query_cur_region json.", nameof(DecryptCurrRegionCmd));
+                _logger.LogErro($"Decryption failed: {kex}");
+                _logger.LogWarn($"It may because you provided false query_cur_region json.");
                 return;
             }
             catch (Exception ex)
             {
-                LogTrace.ErroTrace(ex, nameof(DecryptCurrRegionCmd), $"Decryption failed. ");
-                Log.Warn($"It may because the RSA key doesn't match " +
-                    $"or you provided false query_cur_region json.", nameof(DecryptCurrRegionCmd));
+                LogTrace.ErroTrace(ex, $"Decryption failed. ");
+                _logger.LogWarn($"It may because the RSA key doesn't match " +
+                    $"or you provided false query_cur_region json.");
                 return;
             }
             var res = JsonFormatter.Default.Format(currres);
             if (string.IsNullOrWhiteSpace(res)) res = "<empty content or json/protobuf format failure>";
-            Log.Info($"Decrypted json content: \n{res}", nameof(DecryptCurrRegionCmd));
+            _logger.LogInfo($"Decrypted json content: \n{res}");
             if (verificationOK == true)
             {
-                Log.Info($"Sign Verified OK!", nameof(DecryptCurrRegionCmd));
+                _logger.LogInfo($"Sign Verified OK!");
             }
             else if (verificationOK == false)
             {
-                Log.Warn($"RSA Verification failed. " +
-                    $"You may check whether a correct RSA key is configured.", nameof(DecryptCurrRegionCmd));
+                _logger.LogWarn($"RSA Verification failed. " +
+                    $"You may check whether a correct RSA key is configured.");
             }
             await Tools.SetClipBoardAsync(res);
         }
@@ -84,7 +84,7 @@ namespace csharp_Protoshift.Commands.Utils
             var read = EasyInput.TryPreProcess(args, 1);
             if (read.InputType != EasyInputType.Json)
             {
-                Log.Erro($"Input param 2 should be a valid json!", nameof(GenerateCurrRegionCmd));
+                _logger.LogErro($"Input param 2 should be a valid json!");
             }
             OldProtos.QueryCurrRegionHttpRsp curr = new();
             try
@@ -93,25 +93,25 @@ namespace csharp_Protoshift.Commands.Utils
             }
             catch (Exception ex)
             {
-                LogTrace.ErroTrace(ex, nameof(GenerateCurrRegionCmd), 
+                LogTrace.ErroTrace(ex, 
                     $"Protobuf serialization failed. ");
-                Log.Warn($"It may because the json isn't valid." +
+                _logger.LogWarn($"It may because the json isn't valid." +
                     $"It's recommended to modify based on the result" +
-                    $"from json protobuf from 'util dcurr' command.", nameof(GenerateCurrRegionCmd));
+                    $"from json protobuf from 'util dcurr' command.");
                 return;
             }
             try
             {
                 var res = curr.GetCurrJson(Resources.CPri[key_id], Resources.SPri[key_id]);
-                Log.Info($"Result: \n{res}", nameof(GenerateCurrRegionCmd));
+                _logger.LogInfo($"Result: \n{res}");
                 await Tools.SetClipBoardAsync(res);
             }
             catch (Exception ex)
             {
-                LogTrace.ErroTrace(ex, nameof(GenerateCurrRegionCmd), 
+                LogTrace.ErroTrace(ex, 
                     $"RSA encryption failed. ");
-                Log.Warn($"It may because you don't provide match key" +
-                    $"in resources/ClientPri and resources/ServerPri.", nameof(GenerateCurrRegionCmd));
+                _logger.LogWarn($"It may because you don't provide match key" +
+                    $"in resources/ClientPri and resources/ServerPri.");
                 return;
             }
         }

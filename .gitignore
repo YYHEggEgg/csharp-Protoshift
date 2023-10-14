@@ -10,34 +10,12 @@
 /csharp-Protoshift/windy_temp
 /csharp-Protoshift/config.json
 /csharp-Protoshift/protoshift_hotpatch_config.json
+/csharp-Protoshift/resources/protobuf
 /csharp-Protoshift/resources/windy_scripts
 /csharp-Protoshift/skillissue_fix_config.json
 /csharp-Protoshift/windy_config.json
 
-# Replay Debugger
-/csharp-Protoshift-Replay/bin
-/csharp-Protoshift-Replay/obj
-/csharp-Protoshift-Replay/logs
-
-# Protos
-/NewProtoHandlers/bin
-/NewProtoHandlers/obj
-/NewProtoHandlers/Backup
-/NewProtoHandlers/Google.Protobuf
-/NewProtoHandlers/Google.Protobuf.*
-/NewProtoHandlers/AskCmdId.cs
-/OldProtoHandlers/bin
-/OldProtoHandlers/obj
-/OldProtoHandlers/Backup
-/OldProtoHandlers/Google.Protobuf
-/OldProtoHandlers/Google.Protobuf.*
-/OldProtoHandlers/AskCmdId.cs
-
-# protoshift-ex Handlers & Generator
-/ProtoshiftHandlers/bin
-/ProtoshiftHandlers/obj
-/ProtoshiftHandlers/Generated
-/ProtoshiftHandlers/ProtoDispatch
+# Builder
 /HandlerGenerator/.vscode
 /HandlerGenerator/bin
 /HandlerGenerator/obj
@@ -51,18 +29,31 @@
 /HandlerGenerator/Gencode_Configuration/afterbuild_task_win.ps1
 /HandlerGenerator/last_build_record.json
 
-# Benchmark
-/ProtoshiftBenchmark/bin
-/ProtoshiftBenchmark/BenchmarkDotNet.Artifacts
-/ProtoshiftBenchmark/obj
-/ProtoshiftBenchmark/output_benchmark
-/ProtoshiftBenchmark/logs
-/ProtoshiftBenchmark/Properties
+# Protos
+## NewProtos
+/NewProtoHandlers/bin
+/NewProtoHandlers/obj
+/NewProtoHandlers/Backup
+/NewProtoHandlers/Google.Protobuf
+/NewProtoHandlers/Google.Protobuf.*
+/NewProtoHandlers/AskCmdId.cs
+## OldProtos
+/OldProtoHandlers/bin
+/OldProtoHandlers/obj
+/OldProtoHandlers/Backup
+/OldProtoHandlers/Google.Protobuf
+/OldProtoHandlers/Google.Protobuf.*
+/OldProtoHandlers/AskCmdId.cs
+## protoshift-ex Handlers
+/ProtoshiftHandlers/bin
+/ProtoshiftHandlers/obj
+/ProtoshiftHandlers/Generated
+/ProtoshiftHandlers/ProtoDispatch
 
 # Other Projects
-/XC.RSAUtil/bin
 /CSharp-Logger/bin
 /CSharp-Logger/obj
+/XC.RSAUtil/bin
 /XC.RSAUtil/obj
 
 # Kcp Implement
@@ -76,18 +67,32 @@
 /KCP/KCP.sln
 /KCP/OpenSource.snk
 
-# Kcp Tests Projects
-/KcpCsharpTest
-/KcpTestClient
-/KcpTests/.vs
-/KcpTests/.vscode
-/KcpTests/KcpPerformanceTest/bin
-/KcpTests/KcpPerformanceTest/obj
-/KcpTests/KcpPerformanceTest/logs
-/KcpTests/SharedLib/bin
-/KcpTests/SharedLib/obj
-/KcpTests/SharedLib/logs
-/KcpTestServer
+# Tests Projects
+# Replay Debugger
+/Tests/csharp-Protoshift-Replay/bin
+/Tests/csharp-Protoshift-Replay/obj
+/Tests/csharp-Protoshift-Replay/logs
+
+## KCP Tests
+/Tests/KcpCsharpTest
+/Tests/KcpTestClient
+/Tests/KcpTests/.vs
+/Tests/KcpTests/.vscode
+/Tests/KcpTests/KcpPerformanceTest/bin
+/Tests/KcpTests/KcpPerformanceTest/obj
+/Tests/KcpTests/KcpPerformanceTest/logs
+/Tests/KcpTests/SharedLib/bin
+/Tests/KcpTests/SharedLib/obj
+/Tests/KcpTests/SharedLib/logs
+/Tests/KcpTestServer
+
+## Benchmark
+/Tests/ProtoshiftBenchmark/bin
+/Tests/ProtoshiftBenchmark/BenchmarkDotNet.Artifacts
+/Tests/ProtoshiftBenchmark/obj
+/Tests/ProtoshiftBenchmark/output_benchmark
+/Tests/ProtoshiftBenchmark/logs
+/Tests/ProtoshiftBenchmark/Properties
 
 # etc
 /.config
@@ -95,4 +100,3 @@
 /.vscode
 /Builds
 /YSFreedomServer-v2
-/csharp-Protoshift/resources/protobuf

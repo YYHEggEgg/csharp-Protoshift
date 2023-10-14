@@ -20,7 +20,7 @@ namespace csharp_Protoshift.Commands
             {
                 if (_closingInovked)
                 {
-                    Log.Erro("Server is closing and can't override cleanup!", nameof(StopServerCmd));
+                    _logger.LogErro("Server is closing and can't override cleanup!");
                     return;
                 }
                 else _closingInovked = true;
@@ -29,7 +29,7 @@ namespace csharp_Protoshift.Commands
             GameSessionDispatch.CloseServer();
             if (!CleanUpCompleted)
             {
-                Log.Info($"Waiting for cmds cleanup...", nameof(StopServerCmd));
+                _logger.LogInfo($"Waiting for cmds cleanup...");
                 while (!CleanUpCompleted) await Task.Delay(1000);
             }
             Config.FlushTo("config.json");

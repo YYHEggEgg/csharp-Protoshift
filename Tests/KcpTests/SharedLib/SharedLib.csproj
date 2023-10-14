@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\KCP\Kcp\Kcp.csproj" />
+    <ProjectReference Include="..\..\..\KCP\Kcp\Kcp.csproj" />
   </ItemGroup>
 
 </Project>
