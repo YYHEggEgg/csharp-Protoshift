@@ -18,7 +18,7 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.GameSession
 {
-    public class HandlerSession
+    public partial class HandlerSession
     {
         protected byte[] _xorKey;
         /// <summary>
@@ -93,6 +93,8 @@ namespace csharp_Protoshift.GameSession
             client_seed = server_seed = Array.Empty<byte>();
             // Verbose = true;
             Verbose = false;
+
+            ConfigureInitialNotifyList();
         }
 
         public byte[] HandlePacket(byte[] packet, bool isNewCmdid)
@@ -246,11 +248,9 @@ namespace csharp_Protoshift.GameSession
                 packet, head_offset, head_length, packet, body_offset, (int)body_length);
             else shifted_body = ProtoshiftDispatch.OldShiftToNew(cmdid, 
                 packet, head_offset, head_length, packet, body_offset, (int)body_length);
-            if (isNewCmdid && cmdid == NewProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenReq"))
-                GetPlayerTokenReqNotify(shifted_body);
-            if (!isNewCmdid && cmdid == OldProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
-                GetPlayerTokenRspNotify(shifted_body);
 
+            InvokeNotifyMiddleware(packet, protoname, cmdid, isNewCmdid, body_offset, body_length);
+            
             #region Push to Skill issue detect
 #if !PROTOSHIFT_BENCHMARK
             if (isNewCmdid)
@@ -291,68 +291,6 @@ namespace csharp_Protoshift.GameSession
             }
 #endif
             return rtn;
-        }
-
-        protected byte[] client_seed;
-        protected byte[] server_seed;
-
-        private void GetPlayerTokenReqNotify(byte[] message_oldprotocol)
-        {
-            var message = OldProtos.GetPlayerTokenReq.Parser.ParseFrom(message_oldprotocol);
-            uint key_id = message.KeyId;
-            try
-            {
-                client_seed = Resources.SPri[key_id].RsaDecrypt(
-                    Convert.FromBase64String(message.ClientRandKey),
-                    RSAEncryptionPadding.Pkcs1)
-                    .Fill0(8);
-            }
-            catch
-            {
-                NewProtos.GetPlayerTokenRsp rsaFatalRsp = new();
-                rsaFatalRsp.Retcode = 42;
-                rsaFatalRsp.Msg = "Crypto failure. Please confirm that your program is the right version.";
-                GameSessionDispatch.InjectPacketToClient(_sessionId, 
-                    nameof(OldProtos.GetPlayerTokenRsp), null, rsaFatalRsp.ToByteArray());
-                Program.ProxyServer.KickSession(_sessionId, client_reason: 5);
-                return;
-            }
-        }
-
-        private void GetPlayerTokenRspNotify(byte[] message_newprotocol)
-        {
-            var message = NewProtos.GetPlayerTokenRsp.Parser.ParseFrom(message_newprotocol);
-            uint key_id = message.KeyId;
-            server_seed = Resources.CPri[key_id].RsaDecrypt(
-                Convert.FromBase64String(message.ServerRandKey),
-                RSAEncryptionPadding.Pkcs1)
-                .Fill0(8);
-            ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
-            _xorKey = Generate4096KeyByMT19937(encrypt_seed);
-            _uid = message.Uid;
-            Log.Info($"IMPORTANT: New XOR Key built{Environment.NewLine}" +
-                $"-----BEGIN HEX New 4096 XOR Key-----{Environment.NewLine}" +
-                Convert.ToHexString(_xorKey) +
-                $"{Environment.NewLine}-----END HEX New 4096 XOR Key-----", $"HandlerSession({_sessionId})");
-            if (GameSessionDispatch.OnlineExecWindyMode == OnlineExecWindyMode_v1_0_0.OnGetPlayerTokenFinish)
-            {
-                _ = Task.Run(async () =>
-                {
-                    // GetPlayerTokenRsp MUST BE earlier than WindSeedClientNotify
-                    await Task.Delay(1500);
-                    try
-                    {
-                        await GameSessionDispatch.InjectOnlineExecuteWindy(_sessionId);
-                        Log.Info($"Successfully sent windy lua: " +
-                            Path.GetFileNameWithoutExtension(Config.Global.WindyConfig.OnlineExecWindyLua) +
-                            $" to session id: {_sessionId}, IP: {remoteIp}.", "windyOnGetPlayerTokenFinish_AsyncTask");
-                    }
-                    catch (Exception ex)
-                    {
-                        LogTrace.WarnTrace(ex, "windyOnGetPlayerTokenFinish_AsyncTask", $"Windy auto-execute failed. ");
-                    }
-                });
-            }
         }
         #endregion
 
@@ -428,21 +366,6 @@ namespace csharp_Protoshift.GameSession
             {
                 return str;
             }
-        }
-
-        public static byte[] Generate4096KeyByMT19937(ulong seed)
-        {
-            MT19937_64 mt1 = new(seed);
-            ulong mt2seed = mt1.Int64();
-            MT19937_64 mt2 = new(mt2seed);
-            mt2.Int64();
-            byte[] key = new byte[4096];
-            for (int i = 0; i < key.Length; i += 8)
-            {
-                ulong newui64 = mt2.Int64();
-                key.SetUInt64(i, newui64);
-            }
-            return key;
         }
         #endregion
     }
