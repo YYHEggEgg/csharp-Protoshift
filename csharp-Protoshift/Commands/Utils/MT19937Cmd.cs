@@ -3,7 +3,6 @@ using csharp_Protoshift.resLoader;
 using System.Buffers.Binary;
 using System.Security.Cryptography;
 using YSFreedom.Common.Util;
-using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {

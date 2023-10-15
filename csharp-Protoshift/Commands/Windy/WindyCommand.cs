@@ -1,6 +1,5 @@
 ﻿using CommandLine;
 using csharp_Protoshift.Commands.Windy;
-using csharp_Protoshift.Configuration;
 using csharp_Protoshift.GameSession;
 using System.Text.Json;
 using YYHEggEgg.Logger;

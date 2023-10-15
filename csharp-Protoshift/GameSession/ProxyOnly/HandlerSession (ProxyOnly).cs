@@ -1,14 +1,10 @@
 ﻿#if PROXY_ONLY_SERVER
 
-using AssetLib.Utils;
 using csharp_Protoshift.Configuration;
 using csharp_Protoshift.resLoader;
-using Google.Protobuf;
 using Newtonsoft.Json;
-using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Net;
-using System.Security.Cryptography;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
 
@@ -175,7 +171,6 @@ namespace csharp_Protoshift.GameSession
                         $"UnkCMD_{cmdid}", cmdid, isNewCmdid, packet, head_offset, head_length, 
                         body_offset, (int)body_length, DateTime.Now).ToString(), _uid.ToString());
                 }
-                SubmitTimeRecord($"UnkCMD_{cmdid}", false, ProtoshiftWatch.ElapsedMilliseconds, packet.Length);
 #endif
                 // return Array.Empty<byte>();
                 return packet;

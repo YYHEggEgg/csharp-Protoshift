@@ -1,6 +1,5 @@
 ﻿using csharp_Protoshift.GameSession;
 using csharp_Protoshift.Configuration;
-using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {
