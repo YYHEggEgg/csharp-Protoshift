@@ -23,7 +23,7 @@
 
 通常而言，您不需要更改 `ClientPri` 中的文件。而如果您生成过自己的 `server_private_key`，应该也知道如何配置 `ServerPri` 文件夹中的内容，故此处省略这些内容。大部分情况下，您使用的 `server_private_key` 都是 GC Key，因此不需进行任何操作。
 
-您可以配置专用于 [util `dcurr` 命令](CN_Commands.md#dcurr-命令) 的 `ServerPub` 密钥，用于在解密 `query_cur_region` 时对内容进行签名验证。**您仍需要 `ServerPri` 密钥运行服务器**，这也就意味着，您不能将该 Protoshift 实现作为任意服务器的代理抓包软件。
+您可以配置专用于 [util `dcurr` 命令](CN_Commands.md#dcurr-命令) 的 `ServerPub` 密钥，用于在解密 `query_cur_region` 时对内容进行签名验证。**您仍需要 `ServerPri` 密钥运行服务器**，这也就意味着，您不能将该 Protoshift 实现作为那些您不具有控制权的服务器的代理抓包软件。
 
 ## `luac_bins` 文件夹
 

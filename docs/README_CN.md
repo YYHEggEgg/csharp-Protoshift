@@ -27,7 +27,7 @@
 
 您首先需要确认您已经安装了以下软件：
 
-- [.NET 6.0 Runtime](https://dotnet.microsoft.com/en-us/download)。它用于生成与运行软件。
+- [.NET 6.0 Runtime](https://dotnet.microsoft.com/zh-cn/download/dotnet/6.0)。它用于生成与运行软件。
 - [Git](https://git-scm.com/downloads)。它用于克隆源代码以及收取本软件的更新。
 - [Protocol Buffers 编译器（protoc）](https://github.com/protocolbuffers/protobuf/releases/tag/v21.12)，并添加到您的系统的 PATH 环境变量。它用于实时编译必要文件。为保持一致性，我们建议使用版本 21.12。  
   **注意请根据您的系统下载发行页下方以 `protoc` 开头的压缩包**。此处同样提供部分下载链接：[v21.12 Windows x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-win64.zip) | [v21.12 Linux x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip)
@@ -68,7 +68,7 @@ cd csharp-Protoshift
 }
 ```
 
-取消注释并以您的真实服务器地址替换，就可以完成 `config.json` 的最小配置。配置完 `config.json` 后，应确认 `resources` 是否正确配置。有关如何对 `resources` 进行正确配置，请参阅 [Wiki - Resources](CN_Resources.md).
+取消注释并以您的真实服务器地址替换，就可以完成 `config.json` 的最小配置。配置完 `config.json` 后，应确认 `resources` 是否正确配置。有关如何对 `resources` 进行正确配置，请参阅 [Wiki - Resources](wiki/CN_Resources.md).
 
 最后运行以下命令即可立刻启动服务器：
 
@@ -78,7 +78,7 @@ cd csharp-Protoshift
 
 您以后也可以随时使用 `./run` 启动 Protoshift 服务器，使用 `./update` 来获取更新。当然如果您想要以 Release 运行（可达到更高的性能），可以使用 `./scripts/run-rel`.
 
-## 高级用法
+## 更多用法
 
 - 有关导出稳定的发布版本，您可以参见 [Wiki - Building - 导出单个发布版本](wiki/CN_Building.md#导出单个发布版本) 指南。
 - 有关指令更具体的用法，您可以参见 [Wiki - Commands](wiki/CN_Commands.md) 指南。
