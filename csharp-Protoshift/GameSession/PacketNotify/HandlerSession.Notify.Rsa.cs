@@ -71,25 +71,9 @@ namespace csharp_Protoshift.GameSession
             
             _xorKey = Generate4096KeyByMT19937(encrypt_seed);
             PushPlayerStatLog("rsa_seed_exchange", "new_xorkey", Convert.ToHexString(_xorKey));
-            if (GameSessionDispatch.OnlineExecWindyMode == OnlineExecWindyMode_v1_0_0.OnGetPlayerTokenFinish)
-            {
-                _ = Task.Run(async () =>
-                {
-                    // GetPlayerTokenRsp SHOULD BE earlier than WindSeedClientNotify
-                    await Task.Delay(1500);
-                    try
-                    {
-                        await GameSessionDispatch.InjectOnlineExecuteWindy(_sessionId);
-                        Log.Info($"Successfully sent windy lua: " +
-                            Path.GetFileNameWithoutExtension(Config.Global.WindyConfig.OnlineExecWindyLua) +
-                            $" to uid: {_uid}, session id: {_sessionId}, IP: {remoteIp}.", "windyOnGetPlayerTokenFinish_AsyncTask");
-                    }
-                    catch (Exception ex)
-                    {
-                        LogTrace.WarnTrace(ex, "windyOnGetPlayerTokenFinish_AsyncTask", $"Windy auto-execute failed. ");
-                    }
-                });
-            }
+
+            GameSessionDispatch.BackgroundInjectOnlineExecuteWindys(_sessionId,
+                OnlineExecWindyMode_v1_0_0.OnGetPlayerTokenFinish, "windyOnGetPlayerTokenFinish");
         }
 
         public static byte[] Generate4096KeyByMT19937(ulong seed)

@@ -116,14 +116,44 @@
           "default": "windy_temp",
           "description": "The path for windy command to store temp .luac files. It's recommended to change it with 'windy set-tmpdir' runtime because it can automatically move the generated temp files. "
         },
-        "OnlineExecWindyMode": {
-          "type": "string",
-          "enum": [ "OnKcpConnect", "OnGetPlayerTokenFinish", "Disabled" ],
-          "description": "When to execute a windy script automatically. OnGetPlayerTokenFinish is the most common configuration, because the user's uid shows up at this time; OnKcpConnect is usually used for developers doing nothing but windy debugging (because it can work when gateserver running without gameserver). "
-        },
-        "OnlineExecWindyLua": {
-          "type": "string",
-          "description": "The single .lua script path/name you want to execute when a player is logining in. It's demanded to set WindyEnvironmentPath and provide a relative path for it! "
+        "OnlineExecWindys": {
+          "description": "Configure lua scripts you want to execute automatically.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "LuaFileName": {
+                "description": "The single .lua script path/name you want to execute when a player is logining in. It's demanded to set WindyEnvironmentPath and provide a relative path for it! ",
+                "type": "string"
+              },
+              "OnlineExecMode": {
+                "description": "When to execute a windy script automatically. \nOnGetPlayerTokenFinish is the most common configuration, because the user's uid shows up at this time; \nOnKcpConnect is usually used for developers doing nothing but windy debugging (because it can work when gateserver running without gameserver). ",
+                "type": "string",
+                "enum": [ "OnKcpConnect", "OnGetPlayerTokenFinish", "Disabled" ]
+              }
+            },
+            "dependencies": {
+              "OnlineExecMode": {
+                "oneOf": [
+                  {
+                    "properties": {
+                      "OnlineExecMode": {
+                        "enum": [ "OnKcpConnect", "OnGetPlayerTokenFinish" ]
+                      }
+                    },
+                    "required": [ "LuaFileName" ]
+                  },
+                  {
+                    "properties": {
+                      "OnlineExecMode": {
+                        "const": "Disabled"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
         },
         "StripDebugInformation": {
           "type": "boolean",
@@ -131,29 +161,8 @@
           "description": "Whether to enable strip debug information ('-s') in lua compiling. It's recommended to enable this in production environment. "
         }
       },
-      "required": [ "WindyEnvironmentPath", "WindyCompiledTempPath", "OnlineExecWindyMode" ],
-      "dependencies": {
-        "OnlineExecWindyMode": {
-          "oneOf": [
-            {
-              "properties": {
-                "OnlineExecWindyMode": {
-                  "enum": [ "OnKcpConnect", "OnGetPlayerTokenFinish" ]
-                }
-              },
-              "required": [ "OnlineExecWindyLua" ]
-            },
-            {
-              "properties": {
-                "OnlineExecWindyMode": {
-                  "const": "Disabled"
-                }
-              }
-            }
-          ]
-        }
-      }
+      "required": [ "WindyEnvironmentPath", "WindyCompiledTempPath" ]
     }
   },
-  "required": ["ConfigVersion", "EnableFullPacketLog", "NetConfig", "WindyConfig"]
+  "required": ["ConfigVersion", "EnableFullPacketLog", "EnablePlayerStatLog", "NetConfig", "WindyConfig"]
 }
