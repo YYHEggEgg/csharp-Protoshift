@@ -9,6 +9,8 @@ using CommandLine;
 using System.Reflection;
 using System.Net.Http.Json;
 using Newtonsoft.Json.Linq;
+using CommandLine.Text;
+using System.Text;
 
 namespace csharp_Protoshift
 {
@@ -202,6 +204,7 @@ namespace csharp_Protoshift
         }
         #endregion // GetFullFilePath
 
+        #region Clipboard (TextCopy)
         public static void SetClipBoard(string text)
         {
             try
@@ -227,6 +230,7 @@ namespace csharp_Protoshift
                 LogTrace.WarnTrace(ex, nameof(SetClipBoard), $"Copy to clipboard failed. ");
             }
         }
+        #endregion
 
         #region Update Check
         public static void RunBackgroundUpdateCheck()
@@ -245,8 +249,8 @@ namespace csharp_Protoshift
             public string? EarliestStableVersion;
         }
 
-        private string GitHubRestApiUserAgent =>
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.46"
+        private static string GitHubRestApiUserAgent =>
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.46";
 
         private static async Task UpdateCheck()
         {
@@ -344,45 +348,70 @@ namespace csharp_Protoshift
                 }
             }
         }
+        #endregion
 
-        public static string ParseCommandLineError(Error error)
+        #region CommandLineParser
+        private static SentenceBuilder _defaultFormatError = SentenceBuilder.Create();
+
+        public static IEnumerable<string?> ReportCommandLineErrors(IEnumerable<Error> errors)
         {
-            if (error is BadFormatTokenError)
+            foreach (var error in errors)
             {
-                return "The provided param is in bad format.";
+                yield return _defaultFormatError.FormatError(error);
             }
-            else if (error is BadVerbSelectedError)
-            {
-                return "An invalid verb (sub-command) is selected.";
-            }
-            else if (error is MissingRequiredOptionError)
-            {
-                var missingRequiredOptionError = (MissingRequiredOptionError)error;
-                return $"Required Option is missing: {missingRequiredOptionError.NameInfo.NameText}.";
-            }
-            else if (error is NoVerbSelectedError)
-            {
-                return "No verb (sub-command) is selected.";
-            }
-            else if (error is SequenceOutOfRangeError)
-            {
-                var sequenceOutOfRangeError = (SequenceOutOfRangeError)error;
-                return $"The value of sequence option '{sequenceOutOfRangeError.NameInfo.NameText}' is out of range.";
-            }
-            else
-            {
-                return "Unknown CommandLine error.";
-            }
+            yield break;
+            // yield return "Unknown command line args detected.";
         }
 
-        public static IEnumerable<string> ReportCommandLineErrors(IEnumerable<Error> errors)
+        public static TextWriter NothingWriter => DropTextWriter.Instance;
+
+        private class DropTextWriter : TextWriter
         {
-            // foreach (var error in errors)
-            // {
-            //     yield return ParseCommandLineError(error);
-            // }
-            // yield break;
-            yield return "Unknown command line args detected.";
+            public static DropTextWriter Instance = new DropTextWriter();
+
+            public override Encoding Encoding => Encoding.Default;
+
+            public override void Close() { }
+            public override void Flush() { }
+            public override void Write(bool para_bool) { }
+            public override void Write(char para_char) { }
+            public override void Write(char[]? para_chars) { }
+            public override void Write(char[] para_chars, int para_int1, int para_int2) { }
+            public override void Write(decimal para_decimal) { }
+            public override void Write(double para_double) { }
+            public override void Write(int para_int) { }
+            public override void Write(long para_long) { }
+            public override void Write(object? para_obj1) { }
+            public override void Write(ReadOnlySpan<Char> para_span_char) { }
+            public override void Write(Single para_single) { }
+            public override void Write(string? para_str) { }
+            public override void Write(string? para_str, object? para_obj1) { }
+            public override void Write(string? para_str, object? para_obj1, object? para_obj2) { }
+            public override void Write(string? para_str, object? para_obj1, object? para_obj2, object? para_obj3) { }
+            public override void Write(string? para_str, Object?[] para_objs) { }
+            public override void Write(StringBuilder? para_stringBuilder) { }
+            public override void Write(uint para_int) { }
+            public override void Write(ulong para_long) { }
+            public override void WriteLine() { }
+            public override void WriteLine(bool para_bool) { }
+            public override void WriteLine(char para_char) { }
+            public override void WriteLine(char[]? para_chars) { }
+            public override void WriteLine(char[] para_chars, int para_int1, int para_int2) { }
+            public override void WriteLine(decimal para_decimal) { }
+            public override void WriteLine(double para_double) { }
+            public override void WriteLine(int para_int) { }
+            public override void WriteLine(long para_long) { }
+            public override void WriteLine(object? para_obj1) { }
+            public override void WriteLine(ReadOnlySpan<Char> para_span_char) { }
+            public override void WriteLine(Single para_single) { }
+            public override void WriteLine(string? para_str) { }
+            public override void WriteLine(string? para_str, object? para_obj1) { }
+            public override void WriteLine(string? para_str, object? para_obj1, object? para_obj2) { }
+            public override void WriteLine(string? para_str, object? para_obj1, object? para_obj2, object? para_obj3) { }
+            public override void WriteLine(string? para_str, Object?[] para_objs) { }
+            public override void WriteLine(StringBuilder? para_stringBuilder) { }
+            public override void WriteLine(uint para_int) { }
+            public override void WriteLine(ulong para_long) { }
         }
         #endregion
     }
