@@ -7,9 +7,15 @@
     <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/YYHEggEgg/csharp-Protoshift/pull-request-check.yml?branch=development&logo=github&style=for-the-badge">
 </div>
 
+<div align="center">
+  <a href="https://discord.gg/NcAjuCSFvZ">
+    <img alt="Discord - miHomo Software" src="https://img.shields.io/discord/1144970607616860171?label=Discord&logo=discord&style=for-the-badge">
+  </a>
+</div>
+
 EN | [中文](docs/README_CN.md)
 
-**Note**: We always welcome contributors to the project. But before making contributions, please read our [Code of Conduct](CONTRIBUTING.md) carefully.
+**Note**: We always welcome contributors to the project. But before making contributions, please read our [Contributing note](CONTRIBUTING.md) carefully.
 
 ## Current Features
 
