@@ -93,6 +93,11 @@ namespace csharp_Protoshift.GameSession
             client_seed = server_seed = Array.Empty<byte>();
             // Verbose = true;
             Verbose = false;
+            if (GameSessionDispatch.PlayerStatLogger != null)
+            {
+                _player_statlog = GameSessionDispatch.PlayerStatLogger
+                    .GetChannel(sessionId.ToString());
+            }
 
             ConfigureInitialNotifyList();
         }
@@ -278,7 +283,7 @@ namespace csharp_Protoshift.GameSession
             ProtoshiftWatch.Stop();
             if (ProtoshiftWatch.ElapsedMilliseconds >= Recommended_Protoshift_maximum_time_ms && !unordered_cmds_old.Contains(cmdid))
             {
-                Log.Info($"Handling packet: {protoname} ({packet.Length} bytes) exceeded ordered packet required time ({ProtoshiftWatch.ElapsedMilliseconds}ms > {Recommended_Protoshift_maximum_time_ms}ms)", $"PacketHandler({_sessionId})");
+                PushPlayerStatLog($"handler", "too_long_timecost", $"{protoname}|{ProtoshiftWatch.ElapsedMilliseconds}ms");
             }
             if (_globalEnableFullPacketLog && excludeLogPackets?.Contains(protoname) != true)
             {
@@ -327,6 +332,18 @@ namespace csharp_Protoshift.GameSession
 
             XorDecrypt(ref rtn);
             return rtn;
+        }
+        #endregion
+
+        #region Player Stat log method
+        private LoggerChannel? _player_statlog;
+
+        public void PushPlayerStatLog(string category, string? description, string? data,
+            LogLevel logLevel = LogLevel.Information)
+        {
+            if (_player_statlog == null) return;
+
+            _player_statlog.LogPush($"{_uid}|{category}|{description}|{data}", logLevel);
         }
         #endregion
 

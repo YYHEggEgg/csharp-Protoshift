@@ -30,6 +30,7 @@ namespace csharp_Protoshift.Configuration
 
         public string ConfigVersion { get; set; }
         public bool EnableFullPacketLog { get; set; }
+        public bool EnablePlayerStatLog { get; set; } = true;
         public string[]? PacketLogExcluding { get; set; }
         public NetConfig_v1_0_0 NetConfig { get; set; }
         public WindyConfig_v1_0_1 WindyConfig { get; set; }

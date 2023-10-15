@@ -73,7 +73,7 @@ namespace csharp_Protoshift.GameSession
 
             if (!notifyInvokes.TryGetValue(protoname, out var callback))
             {
-                Log.Warn("Error: A packet is intended to invoke notify but cannot find target callback.", $"PacketHandler({SessionId}):Notify");
+                Log.Warn("Error: A packet is intended to invoke notify but cannot find target callback.", $"PacketHandler({_sessionId}):Notify");
                 return;
             }
 

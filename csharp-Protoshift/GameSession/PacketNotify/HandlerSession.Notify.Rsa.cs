@@ -32,9 +32,11 @@ namespace csharp_Protoshift.GameSession
                     Convert.FromBase64String(message.ClientRandKey),
                     RSAEncryptionPadding.Pkcs1)
                     .Fill0(8);
+                PushPlayerStatLog("rsa_seed_exchange", "client_seed", $"succ|{Convert.ToHexString(client_seed)}", LogLevel.Debug);
             }
             catch
             {
+                PushPlayerStatLog("rsa_seed_exchange", "client_seed", $"fail", LogLevel.Warning);
 #if PROXY_ONLY_SERVER
                 OldProtos.GetPlayerTokenRsp rsaFatalRsp = new();
 #else
@@ -53,29 +55,39 @@ namespace csharp_Protoshift.GameSession
         {
             var message = OldProtos.GetPlayerTokenRsp.Parser.ParseFrom(packet, offset, length);
             uint key_id = message.KeyId;
-            server_seed = Resources.CPri[key_id].RsaDecrypt(
-                Convert.FromBase64String(message.ServerRandKey),
-                RSAEncryptionPadding.Pkcs1)
-                .Fill0(8);
-            ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
-            _xorKey = Generate4096KeyByMT19937(encrypt_seed);
+            try
+            {
+                server_seed = Resources.CPri[key_id].RsaDecrypt(
+                    Convert.FromBase64String(message.ServerRandKey),
+                    RSAEncryptionPadding.Pkcs1)
+                    .Fill0(8);
+            }
+            catch (Exception ex)
+            {
+                LogTrace.ErroTrace(ex, $"PacketHandler({_sessionId})",
+                    $"Decrypt server_seed failure. Please check resources/rsakeys/ClientPri.");
+                PushPlayerStatLog("rsa_seed_exchange", "server_seed", $"fail", LogLevel.Error);
+            }
             _uid = message.Uid;
-            Log.Info($"IMPORTANT: New XOR Key built{Environment.NewLine}" +
-                $"-----BEGIN HEX New 4096 XOR Key-----{Environment.NewLine}" +
-                Convert.ToHexString(_xorKey) +
-                $"{Environment.NewLine}-----END HEX New 4096 XOR Key-----", $"HandlerSession({_sessionId})");
+            PushPlayerStatLog("rsa_seed_exchange", "server_seed", $"succ|{Convert.ToHexString(server_seed)}", LogLevel.Debug);
+            
+            ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
+            PushPlayerStatLog("rsa_seed_exchange", "final_seed", $"succ|{Convert.ToHexString(server_seed)}", LogLevel.Debug); 
+            
+            _xorKey = Generate4096KeyByMT19937(encrypt_seed);
+            PushPlayerStatLog("rsa_seed_exchange", "new_xorkey", Convert.ToHexString(_xorKey));
             if (GameSessionDispatch.OnlineExecWindyMode == OnlineExecWindyMode_v1_0_0.OnGetPlayerTokenFinish)
             {
                 _ = Task.Run(async () =>
                 {
-                    // GetPlayerTokenRsp MUST BE earlier than WindSeedClientNotify
+                    // GetPlayerTokenRsp SHOULD BE earlier than WindSeedClientNotify
                     await Task.Delay(1500);
                     try
                     {
                         await GameSessionDispatch.InjectOnlineExecuteWindy(_sessionId);
                         Log.Info($"Successfully sent windy lua: " +
                             Path.GetFileNameWithoutExtension(Config.Global.WindyConfig.OnlineExecWindyLua) +
-                            $" to session id: {_sessionId}, IP: {remoteIp}.", "windyOnGetPlayerTokenFinish_AsyncTask");
+                            $" to uid: {_uid}, session id: {_sessionId}, IP: {remoteIp}.", "windyOnGetPlayerTokenFinish_AsyncTask");
                     }
                     catch (Exception ex)
                     {

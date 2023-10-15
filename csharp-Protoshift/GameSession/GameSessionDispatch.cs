@@ -1,5 +1,4 @@
-﻿#if PROXY_ONLY_SERVER
-using csharp_Protoshift.Commands.Windy;
+﻿using csharp_Protoshift.Commands.Windy;
 using csharp_Protoshift.Configuration;
 using System.Collections.Concurrent;
 using System.Net;
@@ -44,7 +43,8 @@ namespace csharp_Protoshift.GameSession
                     }
                     catch (Exception ex)
                     {
-                        LogTrace.WarnTrace(ex, "windyOnKcpConnect_AsyncTask", $"Windy auto-execute failed. ");
+                        LogTrace.WarnTrace(ex, "windyOnKcpConnect_AsyncTask", 
+                            $"Windy auto-execute failed. ");
                     }
                 });
             }
@@ -68,7 +68,7 @@ namespace csharp_Protoshift.GameSession
             catch (Exception ex)
             {
                 LogTrace.ErroTrace(ex, "GameSessionDispatch:Server", 
-                    $"Exception when handling packets. ");
+                    $"Exception happened when handling packets. ");
                 return null;
             }
 #else
@@ -94,7 +94,7 @@ namespace csharp_Protoshift.GameSession
             catch (Exception ex)
             {
                 LogTrace.ErroTrace(ex, "GameSessionDispatch:Server", 
-                    $"Exception when handling packets. ");
+                    $"Exception happened when handling packets. ");
                 return null;
             }
 #else
@@ -150,6 +150,7 @@ namespace csharp_Protoshift.GameSession
 
         #region Packet Record Saver
 #if !PROTOSHIFT_BENCHMARK
+        internal static BaseLogger? PlayerStatLogger;
         internal static BaseLogger? PacketLogger;
         static GameSessionDispatch()
         {
@@ -170,6 +171,33 @@ namespace csharp_Protoshift.GameSession
                         MinimumLogLevel = LogLevel.Information,
                         FileIdentifier = "packet"
                     });
+            }
+            if (Config.Global.EnablePlayerStatLog)
+            {
+                PlayerStatLogger = new BaseLogger(new LoggerConfig(
+                    max_Output_Char_Count: 16 * 1024,
+                    use_Console_Wrapper: true,
+                    use_Working_Directory: true,
+#if DEBUG
+                    global_Minimum_LogLevel: LogLevel.Debug,
+#else
+                    global_Minimum_LogLevel: LogLevel.Information,
+#endif
+                    console_Minimum_LogLevel: LogLevel.None,
+                    debug_LogWriter_AutoFlush: false,
+                    enable_Detailed_Time: true), new LogFileConfig
+                    {
+                        AutoFlushWriter = true,
+                        IsPipeSeparatedFile = true,
+                        MaximumLogLevel = LogLevel.Error,
+#if DEBUG
+                        MinimumLogLevel = LogLevel.Debug,
+#else
+                        MinimumLogLevel = LogLevel.Information,
+#endif
+                        FileIdentifier = "player.stat"
+                    });
+                PlayerStatLogger.Info($"UID|Status category|Description|--[Any other Data]--", "Conv ID");
             }
         }
 #endif
@@ -241,4 +269,3 @@ namespace csharp_Protoshift.GameSession
         }
     }
 }
-#endif
