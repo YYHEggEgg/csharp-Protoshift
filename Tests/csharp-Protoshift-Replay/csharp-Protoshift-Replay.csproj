@@ -19,6 +19,7 @@
     <ProjectReference Include="..\..\csharp-Protoshift\csharp-Protoshift.csproj" />
     <ProjectReference Include="..\..\NewProtoHandlers\NewProtoHandlers.csproj" />
     <ProjectReference Include="..\..\OldProtoHandlers\OldProtoHandlers.csproj" />
+    <ProjectReference Include="..\..\ProtoshiftHandlers\ProtoshiftHandlers.csproj" />
   </ItemGroup>
 
 </Project>

@@ -38,6 +38,8 @@ namespace csharp_Protoshift
             ResourcesLoader.CheckForRequiredResources();
             await ResourcesLoader.Load();
 
+            Tools.RunBackgroundUpdateCheck();
+
             #region Config
             bool configLoadSucc = true;
             var _conflog = Log.GetChannel("Configuration");
