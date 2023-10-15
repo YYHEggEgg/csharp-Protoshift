@@ -1,5 +1,4 @@
 using CommandLine;
-using TextCopy;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands.Protobuf

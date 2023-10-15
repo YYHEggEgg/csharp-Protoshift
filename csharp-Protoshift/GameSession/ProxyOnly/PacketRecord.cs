@@ -63,7 +63,7 @@ namespace csharp_Protoshift.GameSession
         // old read format:
         // [time]|[PacketName]|[CmdId]|[sentByClient]|[head]|[body]
         // new read format:
-        // [time]|Info|[uid]|[PacketName]|[CmdId]|[sentByClient]|[head]|[body]|[shiftedData]|[handleNanoseconds]
+        // [time]|Info|[uid]|[PacketName]|[CmdId]|[sentByClient]|[head]|[body]|[handleNanoseconds]|[shiftedData]
         public static PacketRecord Parse(string line)
         {
             var values = line.Split(separateChar);

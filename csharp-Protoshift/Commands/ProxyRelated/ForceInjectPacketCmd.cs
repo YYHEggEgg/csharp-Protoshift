@@ -1,6 +1,5 @@
 using CommandLine;
 using csharp_Protoshift.GameSession;
-using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands
 {

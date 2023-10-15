@@ -1,5 +1,4 @@
 using System.Net;
-using YYHEggEgg.Logger;
 using csharp_Protoshift.SpecialUdp;
 
 namespace csharp_Protoshift.MhyKCP
