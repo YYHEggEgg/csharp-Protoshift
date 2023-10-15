@@ -13,9 +13,10 @@
 
 您首先需要确认您已经安装了以下软件：
 
-- [.NET 6.0 Runtime](https://dotnet.microsoft.com/en-us/download)。它用于生成与运行软件。
+- [.NET 6.0 Runtime](https://dotnet.microsoft.com/zh-cn/download/dotnet/6.0)。它用于生成与运行软件。
 - [Git](https://git-scm.com/downloads)。它用于克隆源代码以及收取本软件的更新。
-- [Protocol Buffers 编译器（protoc）](https://github.com/protocolbuffers/protobuf/releases/tag/v21.12)，并添加到您的系统的 PATH 环境变量。它用于实时编译必要文件。为保持一致性，我们建议使用版本 21.12。
+- [Protocol Buffers 编译器（protoc）](https://github.com/protocolbuffers/protobuf/releases/tag/v21.12)，并添加到您的系统的 PATH 环境变量。它用于实时编译必要文件。为保持一致性，我们建议使用版本 21.12。  
+  **注意请根据您的系统下载发行页下方以 `protoc` 开头的压缩包**。此处同样提供部分下载链接：[v21.12 Windows x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-win64.zip) | [v21.12 Linux x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip)
 - 一个真正的服务器。
 
 除此之外，我个人强烈建议您：
@@ -66,6 +67,10 @@ public const string git_path = "git";
 在生成 Protoshift Handlers 后，应修改 `config.json` 以进行有效配置。如果您使用支持 JSON Schema 的编辑器编辑 `config.json`，应可以看到字段的注释并使用自动填充特性。  
 配置完 `config.json` 后，应确认 `resources` 是否正确配置。有关如何对 `resources` 进行正确配置，请参阅 [Wiki - Resources](CN_Resources.md).
 
+另外，在您进入游戏时，应可以看到如下效果。如果您想要禁用此特性，您可以通过在 `config.json` 中将 `#/WindyConfig/OnlineExecWindyMode` 设为 `Disabled` 来将其关闭。
+
+  ![Windy Preview](../../csharp-Protoshift/Images/windy_welcome-to-csharp-Protoshift.jpg)
+
 ## 导出单个发布版本
 
 有些时候，您可能希望脱离代码而导出单个发布版本以供长期使用，或将其移动到其他设备。
@@ -77,6 +82,8 @@ public const string git_path = "git";
 ```
 
 这将会在成功还原 Proto 与生成 Handlers 后，以 Release 配置生成至 `Builds` 文件夹中，其文件夹名为 `output_[今天的日期]_[本地存储库最新的 Git Hash]`，例如 `output_20231007_505e671421`。
+
+如果您的真实服务器在 Unix 平台上运行，**强烈建议您将 Protoshift 服务器与真实服务器在同一台机器上运行**（对于容器化的服务器可能可以使用其他类似的方法），因为此时 Protoshift 服务器与真实服务器间的本地网络通信将直接使用内存拷贝。[网络测试](https://github.com/YYHEggEgg/csharp-Protoshift/actions/workflows/network-test.yml) 的相关数据表明，这样做可以使网络速度提升 $45\%$ 以上。
 
 ### 生成后任务
 

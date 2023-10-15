@@ -61,6 +61,13 @@ kick <player_uid> | -c, --conv <conv_id>
 
 `kick` 命令会向服务器与客户端分别发送断开连接的请求，`ENetReason_id` 则为使用的参数。有关其可用数值与具体意义，可以参见您本地目录下的 `OldProtoHandlers/Google.Protobuf/Protos/ENetReason.proto` 或 [其在线版本](https://github.com/YYHEggEgg/mihomo-protos/blob/3.4_live/Protos/ENetReason.proto)。
 
+以下是本命令的一个使用例，您可以执行它并查看结果：
+
+```sh
+target [你的在线UID]
+kick
+```
+
 ### `injectpkt` 命令
 
 `injectpkt` 命令支持您向指定的会话发送特定的包内容。
@@ -87,7 +94,7 @@ queryclient -l, --limit <query_limit=50>
             --range-to <uid_maximum>
 ```
 
-三个参数均为可选参数。`--range-from` 与 `--range-to` 用于
+三个参数均为可选参数。`--range-from` 与 `--range-to` 用于限定查找到的用户的 UID 范围，而 `--limit` 用于限制输出的用户数量。值得注意的是当在线会话未收到 `GetPlayerTokenRsp` 时，他们的 UID 均为 0.
 
 `queryclient` 将以给定的 UID 范围查找在线的玩家信息（如果未指定范围参数则不作限制）。命令将会在控制台输出查找到玩家的 Conv ID，UID 以及连接 IP 等信息。以下是一个示例输出：
 
@@ -96,6 +103,12 @@ queryclient -l, --limit <query_limit=50>
 ```
 
 获取到目标会话的 Conv ID 后，便可以通过其他代理控制命令对其进行操作。
+
+以下是本命令的一个使用例，您可以执行它并查看结果：
+
+```sh
+queryclient -l 1
+```
 
 ### `windy` 命令
 
@@ -117,6 +130,13 @@ windy [send] -u <player_uid> | -c, --conv <conv_id> | --everyone
 - `-u <player_uid>`、`-c <conv_id>`、`--everyone` 都是指定执行目标的选项。  
   在指定 `--everyone` 时，如果在线客户端 >= 2 个，则会发出警告并指示您确认是否要执行操作。如果在线客户端 >= 5 个，则会指示您输入执行的 lua 脚本名称以继续。
 - 可以直接填写文件路径来执行指定的 lua 脚本，也可以使用 `--compiled` 参数来指定直接运行编译后的文件。程序将在 lua 环境路径查找指定的文件（如果扩展名为 `.lua` 则可以省略），但仍接受绝对路径。
+
+以下是本命令的一个使用例，您可以执行它并查看结果：
+
+```sh
+target [你的在线UID]
+windy welcome-to-csharp-Protoshift
+```
 
 #### `set-env` 子命令
 
