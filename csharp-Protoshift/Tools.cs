@@ -414,5 +414,8 @@ namespace csharp_Protoshift
             public override void WriteLine(ulong para_long) { }
         }
         #endregion
+
+        public static void ExitOnLaunching(object? sender, EventArgs? args) =>
+            Environment.Exit(6);
     }
 }
