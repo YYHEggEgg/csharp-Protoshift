@@ -1,4 +1,5 @@
 #!/bin/bash
 
 cd csharp-Protoshift
-dotnet run -- $@
+dotnet build
+dotnet run --no-build -- $@

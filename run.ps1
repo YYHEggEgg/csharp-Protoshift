@@ -1,2 +1,3 @@
 cd csharp-Protoshift
-dotnet run -- $args
+dotnet build
+dotnet run --no-build -- $args
