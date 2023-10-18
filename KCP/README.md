@@ -2,7 +2,7 @@
 
 Commit: [b478eed on master (Jul 12, 2023, 8:59 AM GMT+8)](https://github.com/KumoKyaku/KCP/commit/b478eed599b09481f5030dd3ba1c6c5fa3058a7a)
 
-该存储库使用 MIT 许可证。
+该存储库使用 [MIT 许可证](https://github.com/KumoKyaku/KCP/blob/master/LICENSE)。可以在 [此处](../csharp-Protoshift/ThirdPartyLicenses/KCP/LICENSE) 找到本存储库中分发的版本。
 
 -------------------------
 
