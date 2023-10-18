@@ -238,7 +238,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             var name_first = oldenum.enumNodes.First().name;
             fi.WriteLine("default:",
-                $"return OldProtos.{enumName}.{oldstringPool.GetCompiledName(name_first)};");
+                $"return (OldProtos.{enumName})((int)newprotocol);");
             fi.ExitCodeRegion();
             fi.ExitCodeRegion();
             #endregion
@@ -261,7 +261,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             name_first = newenum.enumNodes.First().name;
             fi.WriteLine("default:",
-                $"return NewProtos.{enumName}.{newstringPool.GetCompiledName(name_first)};");
+                $"return (NewProtos.{enumName})((int)oldprotocol);");
             fi.ExitCodeRegion();
             fi.ExitCodeRegion();
             #endregion
