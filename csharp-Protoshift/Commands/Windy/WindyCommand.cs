@@ -71,7 +71,7 @@ namespace csharp_Protoshift.Commands
 
         private WindyLuacManager windyExecute;
         private bool _initFinished = false;
-        public const string WindyManagerPath = "windy_config.json";
+        public const string WindyManagerPath = "windy_compile_cache_manager.json";
 #pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
         public WindyCommand()
 #pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。

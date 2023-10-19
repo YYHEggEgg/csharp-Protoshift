@@ -1,2 +1,14 @@
 cd ../csharp-Protoshift
-dotnet run --configuration Release -- $args
+dotnet build
+$build_exitcode = $LastExitCode
+if ($build_exitcode == 0)
+{
+    Write-Host MSBuild finished. Running...
+    dotnet run --no-build --configuration Release -- $args
+    exit $LastExitCode
+}
+else
+{
+    Write-Host MSBuild failed with exitcode $build_exitcode.
+    exit $build_exitcode
+}

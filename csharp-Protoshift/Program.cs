@@ -35,6 +35,7 @@ namespace csharp_Protoshift
                 ));
             Log.Info("csharp-Protoshift v1.0.0", "Entry");
             Log.Info("Written by YYHEggEgg#6167, https://github.com/YYHEggEgg.", "Entry");
+            ConsoleWrapper.ShutDownRequest += Tools.ExitOnLaunching;
             ResourcesLoader.CheckForRequiredResources();
             await ResourcesLoader.Load();
 

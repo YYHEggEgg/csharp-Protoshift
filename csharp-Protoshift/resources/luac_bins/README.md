@@ -2,6 +2,8 @@
 
 All the binarys here are targeting lua `5.3.5` from the fork [YYHEggEgg/xLua](https://github.com/YYHEggEgg/xLua) of [Tencent/xLua](https://github.com/Tencent/xLua).
 
+Repository [Tencent/xLua](https://github.com/Tencent/xLua) is licensed under [MIT License](https://github.com/Tencent/xLua/blob/master/LICENSE.TXT). It can be viewed [here](../../ThirdPartyLicenses/xlua/LICENSE.TXT).
+
 ## Files Source / Properties
 
 The files are all from `luac.exe` or `luac` file in the downloaded `luac_[arch]_rel.zip` archive.

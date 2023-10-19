@@ -13,7 +13,9 @@
 /csharp-Protoshift/resources/protobuf
 /csharp-Protoshift/resources/windy_scripts
 /csharp-Protoshift/skillissue_fix_config.json
-/csharp-Protoshift/windy_config.json
+/csharp-Protoshift/windy_compile_cache_manager.json
+/csharp-Protoshift/XC.RSAUtil/bin
+/csharp-Protoshift/XC.RSAUtil/obj
 
 # Builder
 /HandlerGenerator/.vscode
@@ -50,11 +52,13 @@
 /ProtoshiftHandlers/Generated
 /ProtoshiftHandlers/ProtoDispatch
 
-# Other Projects
-/CSharp-Logger/bin
-/CSharp-Logger/obj
-/XC.RSAUtil/bin
-/XC.RSAUtil/obj
+# Other Deprecated Projects
+/CSharp-Logger
+/csharp-Protoshift-Replay
+/KcpCsharpTest
+/KcpTests
+/ProtoshiftBenchmark
+/XC.RSAUtil
 
 # Kcp Implement
 /KCP/Image
@@ -68,11 +72,10 @@
 /KCP/OpenSource.snk
 
 # Tests Projects
-# Replay Debugger
+## Replay Debugger
 /Tests/csharp-Protoshift-Replay/bin
 /Tests/csharp-Protoshift-Replay/obj
 /Tests/csharp-Protoshift-Replay/logs
-
 ## KCP Tests
 /Tests/KcpCsharpTest
 /Tests/KcpTestClient
@@ -85,7 +88,6 @@
 /Tests/KcpTests/SharedLib/obj
 /Tests/KcpTests/SharedLib/logs
 /Tests/KcpTestServer
-
 ## Benchmark
 /Tests/ProtoshiftBenchmark/bin
 /Tests/ProtoshiftBenchmark/BenchmarkDotNet.Artifacts

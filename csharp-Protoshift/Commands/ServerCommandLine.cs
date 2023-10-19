@@ -49,6 +49,7 @@ namespace csharp_Protoshift.Commands
         public static async Task Start()
         {
             bool running = true;
+            ConsoleWrapper.ShutDownRequest -= Tools.ExitOnLaunching;
             ConsoleWrapper.ShutDownRequest += async (_, _) =>
             {
                 running = false;

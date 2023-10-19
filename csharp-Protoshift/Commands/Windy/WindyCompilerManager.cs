@@ -65,7 +65,7 @@ namespace csharp_Protoshift.Commands.Windy
                 catch (Exception ex)
                 {
                     _logger.LogWarnTrace(ex, $"chmod +x for luac executable failed. " +
-                        $"You may encounter problem for Windy operations.");
+                        $"You will probably encounter problem for Windy operations.");
                 }
             }
         }
