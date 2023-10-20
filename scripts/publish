@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ../HandlerGenerator
+cd HandlerGenerator
 dotnet build
 build_exitcode=$?
 if [ $build_exitcode == 0 ]; then
