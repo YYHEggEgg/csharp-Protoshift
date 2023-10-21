@@ -147,8 +147,11 @@ namespace csharp_Protoshift.GameSession
 
         public static void BackgroundInjectOnlineExecuteWindys(uint conv, OnlineExecWindyMode_v1_0_0 condition, string? sender)
         {
-            _ = Task.Run(async () => await InjectOnlineExecuteWindys(
-                conv, condition, $"{sender}_AsyncTask"));
+            _ = Task.Run(async () => 
+            {
+                await Task.Delay(1500);
+                await InjectOnlineExecuteWindys(conv, condition, $"{sender}_AsyncTask");
+            });
         }
         #endregion
 
