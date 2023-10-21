@@ -42,11 +42,13 @@ namespace csharp_Protoshift.GameSession
             client_seed = server_seed = Array.Empty<byte>();
             // Verbose = true;
             Verbose = false;
+#if !PROTOSHIFT_BENCHMARK
             if (GameSessionDispatch.PlayerStatLogger != null)
             {
                 _player_statlog = GameSessionDispatch.PlayerStatLogger
                     .GetChannel(sessionId.ToString());
             }
+#endif
 
             ConfigureInitialNotifyList();
         }
