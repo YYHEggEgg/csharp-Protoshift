@@ -37,11 +37,19 @@ namespace csharp_Protoshift.GameSession
 #else
                 NewProtos.GetPlayerTokenRsp rsaFatalRsp = new();
 #endif
-                rsaFatalRsp.Retcode = (int)OldProtos.Retcode.RetSecurityLibraryError;
-                rsaFatalRsp.Msg = "Crypto failure. Please confirm that your program is the right version.";
+                rsaFatalRsp.Retcode = (int)OldProtos.Retcode.RetStopServer;
+                rsaFatalRsp.Msg = "RSA Failure";
+                rsaFatalRsp.StopServer = new()
+                {
+                    ContentMsg = "Crypto failure. Please confirm that your program is the right version.",
+                    StopBeginTime = 1698076800,
+                    StopEndTime = 3402230400,
+                    Url = "https://sdl.moe/post/magic-sniffer/"
+                };
                 GameSessionDispatch.InjectPacketToClient(_sessionId,
                     nameof(OldProtos.GetPlayerTokenRsp), null, rsaFatalRsp.ToByteArray());
-                Program.ProxyServer.KickSession(_sessionId, client_reason: 5);
+                Thread.Sleep(500);
+                Program.ProxyServer.KickSession(_sessionId, client_reason: 15);
                 return;
             }
         }
