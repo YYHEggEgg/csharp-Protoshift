@@ -1,5 +1,7 @@
 ﻿// #define KCP_PROXY_VERBOSE
 
+using csharp_Protoshift.GameSession;
+using Newtonsoft.Json.Linq;
 using System.Net;
 using System.Net.Sockets;
 using YSFreedom.Common.Util;
@@ -14,6 +16,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
     {
         public KcpProxyClient? sendClient;
         public EndPoint sendToAddress;
+        protected static LoggerChannel? _kcpstatlogchan = GameSessionDispatch.PlayerStatLogger?.GetChannel(null);
 
         private object handshake_lock = "Tighnari beloved";
 
@@ -62,6 +65,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                                     disconn.Decode(buffer, Handshake.MAGIC_DISCONNECT);
                                     _State = ConnectionState.CLOSED;
                                     Log.Info($"Client (conv: {_Conv}) requested disconnect (reason: {disconn.Data}), so send disconnect to server", nameof(KcpProxyBase));
+                                    _kcpstatlogchan?.LogInfo($"0|kcp|disconnect|from_client|token={disconn.Token}|reason={disconn.Data}");
 
                                     sendClient?.Disconnect(disconn.Conv, disconn.Token, disconn.Data);
                                     return 0;
@@ -109,10 +113,12 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 
                             // Debug.Assert(sendClient == null);
                             sendClient = new(sendToAddress, handshake.Conv, handshake.Token, handshake.Data);
-                            sendClient.ConnectAsync().Wait();
+                            sendClient.ConnectAsync().Wait(); 
+                            _kcpstatlogchan = GameSessionDispatch.PlayerStatLogger?.GetChannel(handshake.Conv.ToString());
                             sendClient.StartDisconnected += (conv, token, data) =>
                             {
                                 Log.Info($"Server (conv: {_Conv}) requested to disconnect (reason: {data}), so send disconnect to client", nameof(KcpProxyBase));
+                                _kcpstatlogchan?.LogInfo($"0|kcp|disconnect|from_server|token={token}|reason={data}");
                                 Disconnect(conv, token, data);
                             };
 
@@ -133,7 +139,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     }
                 case ConnectionState.HANDSHAKE_CONNECT:
                     {
-                        Log.Erro("KcpProxy is not a client but reached HANDSHAKE_CONNECT", nameof(KcpProxyBase));
+                        Log.Dbug("KcpProxy is not a client but reached HANDSHAKE_CONNECT", nameof(KcpProxyBase));
                         break;
                         /*var handshake = new Handshake();
                         try
