@@ -26,7 +26,7 @@ namespace csharp_Protoshift.Commands
             var conv = o.GetConv(_logger);
             if (conv != 0)
             {
-                Program.ProxyServer.KickSession(o.Conv, o.ClientReason, o.ServerReason);
+                Program.ProxyServer.KickSession(conv, o.ClientReason, o.ServerReason);
                 _logger.LogInfo("Session kick succeeded.");
             }
             return Task.CompletedTask;
