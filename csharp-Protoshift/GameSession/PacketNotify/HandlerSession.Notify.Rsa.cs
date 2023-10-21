@@ -67,7 +67,7 @@ namespace csharp_Protoshift.GameSession
             PushPlayerStatLog("rsa_seed_exchange", "server_seed", $"succ|{Convert.ToHexString(server_seed)}", LogLevel.Debug);
             
             ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
-            PushPlayerStatLog("rsa_seed_exchange", "final_seed", $"succ|{Convert.ToHexString(server_seed)}", LogLevel.Debug); 
+            PushPlayerStatLog("rsa_seed_exchange", "final_seed", $"succ|{encrypt_seed}", LogLevel.Debug); 
             
             _xorKey = Generate4096KeyByMT19937(encrypt_seed);
             PushPlayerStatLog("rsa_seed_exchange", "new_xorkey", Convert.ToHexString(_xorKey));
