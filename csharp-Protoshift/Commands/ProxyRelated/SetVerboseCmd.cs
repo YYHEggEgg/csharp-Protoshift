@@ -5,10 +5,8 @@ using csharp_Protoshift.GameSession;
 
 namespace csharp_Protoshift.Commands
 {
-    internal class SetVerboseOption
+    internal class SetVerboseOption : TargetOptionBase
     {
-        [Option('c', "conv", Required = true, HelpText = "The target conv id.")]
-        public uint Conv { get; set; }
         [Value(0, Required = true, HelpText = "Whether to show packet info of this session.")]
         public bool Verbose { get; set; }
     }
@@ -26,7 +24,9 @@ namespace csharp_Protoshift.Commands
         public override async Task HandleAsync(SetVerboseOption opt)
 #pragma warning restore CS1998 // 异步方法缺少 "await" 运算符，将以同步方式运行
         {
-            GameSessionDispatch.sessions[opt.Conv].Verbose = opt.Verbose;
+            var session = opt.GetSession(_logger);
+            if (session == null) return;
+            session.Verbose = opt.Verbose;
             _logger.LogInfo($"Succeed set Conv:{opt.Conv} Verbose Mode to {opt.Verbose}.");
         }
     }

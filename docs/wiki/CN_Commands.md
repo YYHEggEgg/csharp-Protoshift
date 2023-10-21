@@ -29,7 +29,7 @@ Protoshift 服务器可用的命令主要是代理服务控制命令和一些工
 - Conv ID 是客户端与服务端间进行网络通信的唯一会话 ID，其与下层 KCP 网络协议有关。其应随着会话结束而失效（例如退出游戏、断线重连等）。
 - UID 则是一个在线玩家的有意义标识，可以长期保证有效。
 
-目前，大部分命令已经同时支持使用 UID 与 Conv ID 作为参数来标识其目标，同时也支持使用 `target` 命令来指定默认情况下使用的目标 UID. 除 `queryclient` 和 `setverbose` 命令以外，所有代理服务控制命令均支持以下参数：
+目前，大部分命令已经同时支持使用 UID 与 Conv ID 作为参数来标识其目标，同时也支持使用 `target` 命令来指定默认情况下使用的目标 UID. 除 `queryclient` 命令以外，所有代理服务控制命令均支持以下参数：_(*)_
 
 ```sh
 [command] <player_uid> | -c, --conv <conv_id>
@@ -38,6 +38,8 @@ Protoshift 服务器可用的命令主要是代理服务控制命令和一些工
 其中，`player_uid` 为目标玩家的 UID，而 `conv_id` 为网络会话 ID。
 
 如果都提供，则会优先使用 `conv_id` 并发出警告。如果都不提供，则之前使用 `target` 命令设定的默认玩家 UID 会生效。
+
+(*: 由于参数冲突，`windy` 命令需使用 `-u` 选项指定 UID. 有关更多信息，请参阅 [`windy` 命令](#windy-命令)。)
 
 ### `target` 命令
 
@@ -61,7 +63,7 @@ kick <player_uid> | -c, --conv <conv_id>
 
 `kick` 命令会向服务器与客户端分别发送断开连接的请求，`ENetReason_id` 则为使用的参数。有关其可用数值与具体意义，可以参见您本地目录下的 `OldProtoHandlers/Google.Protobuf/Protos/ENetReason.proto` 或 [其在线版本](https://github.com/YYHEggEgg/mihomo-protos/blob/3.4_live/Protos/ENetReason.proto)。
 
-以下是本命令的一个使用例，您可以执行它并查看结果：
+以下是本命令的一个使用例，您可以执行它并查看效果：
 
 ```sh
 target [你的在线UID]
@@ -118,7 +120,7 @@ queryclient -l 1
 
 #### `send` 子命令
 
-`send` 为默认的子命令。它可以向指定客户端（或所有在线客户端）立刻发送 `WindSeedClientNotify`
+`send` 为默认的子命令。它可以向指定客户端（或所有在线客户端）立刻发送 `WindSeedClientNotify`. 
 
 ```sh
 windy [send] -u <player_uid> | -c, --conv <conv_id> | --everyone
@@ -131,7 +133,7 @@ windy [send] -u <player_uid> | -c, --conv <conv_id> | --everyone
   在指定 `--everyone` 时，如果在线客户端 >= 2 个，则会发出警告并指示您确认是否要执行操作。如果在线客户端 >= 5 个，则会指示您输入执行的 lua 脚本名称以继续。
 - 可以直接填写文件路径来执行指定的 lua 脚本，也可以使用 `--compiled` 参数来指定直接运行编译后的文件。程序将在 lua 环境路径查找指定的文件（如果扩展名为 `.lua` 则可以省略），但仍接受绝对路径。
 
-以下是本命令的一个使用例，您可以执行它并查看结果：
+以下是本命令的一个使用例，您可以执行它并查看效果：
 
 ```sh
 target [你的在线UID]

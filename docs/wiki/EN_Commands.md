@@ -29,7 +29,7 @@ Firstly, for an online session, there are two attributes that need to be disting
 - Conv ID is the unique session ID for network communication between the client and the server, which is related to the underlying KCP network protocol. It should become invalid as the session ends (for example, exit the game, reconnect, etc.).
 - UID is a meaningful identifier for an online player, which can be guaranteed to be valid for a long time.
 
-Currently, most commands support using UID and Conv ID as parameters to identify their targets, and also support using the `target` command to specify the default target UID used. Except for the `queryclient` and `setverbose` commands, all proxy service control commands support the following parameters:
+Currently, most commands support using UID and Conv ID as parameters to identify their targets, and also support using the `target` command to specify the default target UID used. Except for the `queryclient` commands, all proxy service control commands support the following parameters: _(*)_
 
 ```sh
 [command] <player_uid> | -c, --conv <conv_id>
@@ -38,6 +38,8 @@ Currently, most commands support using UID and Conv ID as parameters to identify
 Here, `player_uid` is the UID of the target player, and `conv_id` is the network session ID.
 
 If both are provided, `conv_id` will be used preferentially and a warning will be issued. If neither is provided, the default player UID set by the `target` command will take effect.
+
+(*: Due to a value conflict, `windy` command should use option `-u` to specify a UID. For more information, see [`windy` command](#windy-command). )
 
 ### `target` Command
 
@@ -61,10 +63,10 @@ kick <player_uid> | -c, --conv <conv_id>
 
 The `kick` command will send requests to disconnect to the server and client respectively, and `ENetReason_id` is the parameter used. For its available values and specific meanings, you can refer to `OldProtoHandlers/Google.Protobuf/Protos/ENetReason.proto` in your local directory or [its online version](https://github.com/YYHEggEgg/mihomo-protos/blob/3.4_live/Protos/ENetReason.proto).
 
-Here is an example of using this command, you can execute it and see the result:
+Here is an example of using this command, you can execute it and see the effect:
 
 ```sh
-target [your online UID]
+target [your_online_UID]
 kick
 ```
 
@@ -118,7 +120,7 @@ Unlike most existing Windy implementations, this `windy` command allows you to d
 
 #### `send` Subcommand
 
-`send` is the default subcommand. It can immediately send `WindSeedClientNotify` to the specified client (or all online clients)
+`send` is the default subcommand. It can immediately send `WindSeedClientNotify` to the specified client (or all online clients).
 
 ```sh
 windy [send] -u <player_uid> | -c, --conv <conv_id> | --everyone
@@ -131,10 +133,10 @@ Among these parameters:
   When specifying `--everyone`, if the online client >= 2, a warning will be issued and you will be asked to confirm whether to execute the operation. If the online client >= 5, you will be asked to enter the name of the lua script to continue.
 - You can directly fill in the file path to execute the specified lua script, or you can use the `--compiled` parameter to specify to run the compiled file directly. The program will look for the specified file in the lua environment path (if the extension is `.lua` it can be omitted), but still accepts absolute paths.
 
-Here is an example of using this command, you can execute it and see the result:
+Here is an example of using this command, you can execute it and see the effect:
 
 ```sh
-target [your online UID]
+target [your_online_UID]
 windy welcome-to-csharp-Protoshift
 ```
 
