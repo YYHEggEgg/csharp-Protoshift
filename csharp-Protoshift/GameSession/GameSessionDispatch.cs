@@ -136,7 +136,7 @@ namespace csharp_Protoshift.GameSession
                 try
                 {
                     InjectPacketToClient(conv, nameof(OldProtos.WindSeedClientNotify), null,
-                        await WindyLuacManager.Instance.CompileSendableWindyProtobuf(item.LuaFileName));
+                        await WindyLuacManager.CompileSendableWindyProtobuf(item.LuaFileName));
                 }
                 catch (Exception ex)
                 {
@@ -286,7 +286,7 @@ namespace csharp_Protoshift.GameSession
             {
                 try
                 {
-                    await WindyLuacManager.Instance.CompileSendableWindyProtobuf(windyfile);
+                    await WindyLuacManager.CompileSendableWindyProtobuf(windyfile);
                 }
                 catch (Exception ex)
                 {

@@ -124,7 +124,6 @@ namespace csharp_Protoshift
                 };
                 _ = Task.Run(() => ProxyServer.StartProxy(handlers));
                 Log.Info($"Protoshift server started on {bindIp}, real server at {remoteIp}.", "Entry");
-                await GameSessionDispatch.ValidateWindyAutoExecute();
                 Log.Info("Ready! Type 'help' to get command help.", "Entry");
             }
 
