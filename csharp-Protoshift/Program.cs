@@ -82,8 +82,6 @@ namespace csharp_Protoshift
             else
             {
                 Log.Info("Start loading all protos, it will take some time...", "Entry");
-                Log.Info(OldProtos.QueryJsonSerializer.Initialize(), "OldProtos");
-                Log.Info(NewProtos.QueryJsonSerializer.Initialize(), "NewProtos");
                 Log.Info(ProtoshiftDispatch.Initialize(), "Entry");
 
 #if !PROXY_ONLY_SERVER
@@ -123,8 +121,12 @@ namespace csharp_Protoshift
                     ClientPacketOrdered = GameSessionDispatch.OrderedClientPacket
                 };
                 _ = Task.Run(() => ProxyServer.StartProxy(handlers));
+                _ = Task.Run(() =>
+                {
+                    Log.Info(OldProtos.QueryJsonSerializer.Initialize(), "OldProtos_AsyncLoad");
+                    Log.Info(NewProtos.QueryJsonSerializer.Initialize(), "NewProtos_AsyncLoad");
+                });
                 Log.Info($"Protoshift server started on {bindIp}, real server at {remoteIp}.", "Entry");
-                await GameSessionDispatch.ValidateWindyAutoExecute();
                 Log.Info("Ready! Type 'help' to get command help.", "Entry");
             }
 
