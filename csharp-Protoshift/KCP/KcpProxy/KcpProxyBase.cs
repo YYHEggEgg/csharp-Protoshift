@@ -114,15 +114,16 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             // Debug.Assert(sendClient == null);
                             sendClient = new(sendToAddress, handshake.Conv, handshake.Token, handshake.Data);
                             sendClient.ConnectAsync().Wait(); 
-                            _kcpstatlogchan = GameSessionDispatch.PlayerStatLogger?.GetChannel(handshake.Conv.ToString());
+
+                            var sendBackConv = sendClient.GetSendbackHandshake();
+                            _kcpstatlogchan = GameSessionDispatch.PlayerStatLogger?.GetChannel(sendBackConv.Conv.ToString());
                             sendClient.StartDisconnected += (conv, token, data) =>
                             {
                                 Log.Info($"Server (conv: {_Conv}) requested to disconnect (reason: {data}), so send disconnect to client", nameof(KcpProxyBase));
                                 _kcpstatlogchan?.LogInfo($"0|kcp|disconnect|from_server|token={token}|reason={data}");
                                 Disconnect(conv, token, data);
                             };
-
-                            var sendBackConv = sendClient.GetSendbackHandshake();
+                            
                             var sendBackData = sendBackConv.AsBytes();
                             OutputCallback?.Output(new KcpInnerBuffer(sendBackData), sendBackData.Length, false);
                             _Conv = sendBackConv.Conv;
