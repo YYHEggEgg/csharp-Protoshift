@@ -46,7 +46,7 @@ namespace csharp_Protoshift.GameSession
             if (GameSessionDispatch.PlayerStatLogger != null)
             {
                 _player_statlog = GameSessionDispatch.PlayerStatLogger
-                    .GetChannel(sessionId.ToString());
+                    .GetChannel($"{_sessionId}|0");
             }
 #endif
 
@@ -126,7 +126,7 @@ namespace csharp_Protoshift.GameSession
         {
             if (_player_statlog == null) return;
 
-            _player_statlog.LogPush($"{_uid}|{category}|{description}|{data}", logLevel);
+            _player_statlog.LogPush($"{category}|{description}|{data}", logLevel);
         }
         #endregion
 

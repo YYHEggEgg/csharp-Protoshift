@@ -57,6 +57,9 @@ namespace csharp_Protoshift.GameSession
         private void GetPlayerTokenRspNotify(byte[] packet, int offset, int length)
         {
             var message = OldProtos.GetPlayerTokenRsp.Parser.ParseFrom(packet, offset, length);
+            _uid = message.Uid;
+            _player_statlog.LogSender = $"{_sessionId}|{_uid}";
+
             uint key_id = message.KeyId;
             try
             {
@@ -71,7 +74,6 @@ namespace csharp_Protoshift.GameSession
                     $"Decrypt server_seed failure. Please check resources/rsakeys/ClientPri.");
                 PushPlayerStatLog("rsa_seed_exchange", "server_seed", $"fail", LogLevel.Error);
             }
-            _uid = message.Uid;
             PushPlayerStatLog("rsa_seed_exchange", "server_seed", $"succ|{Convert.ToHexString(server_seed)}", LogLevel.Debug);
             
             ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
