@@ -6,9 +6,9 @@ contact_links:
   - name: Fix Proto skill issue
     about: Create a pull request to the outer protos repo
     url: https://github.com/YYHEggEgg/mihomo-protos/pulls
-  - name: FAQs and help
+  - name: Get basic FAQs and Using Practices
+    about: Visit our official blog
+    url: https://yyheggegg.github.io/mihomo-gio-blogs/
+  - name: Ask for help
     about: Join Discord to get more information
     url: https://discord.gg/3XkT93zsNy
-  - name: Get Using Practices
-    about: Join Discord to get more information
-    url: https://discord.gg/NcAjuCSFvZ
