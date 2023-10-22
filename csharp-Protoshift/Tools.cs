@@ -2,12 +2,14 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Security.Cryptography;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using XC.RSAUtil;
 using TextCopy;
 using YYHEggEgg.Logger;
 using CommandLine;
 using System.Reflection;
 using System.Net.Http.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using CommandLine.Text;
 using System.Text;
@@ -347,6 +349,50 @@ namespace csharp_Protoshift
                     return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
                 }
             }
+        }
+
+        public static JToken SortJson(JToken token)
+        {
+            switch (token.Type)
+            {
+                case JTokenType.Object:
+                    return new JObject(
+                        token.Children<JProperty>()
+                             .OrderBy(prop => prop.Name)
+                             .Select(prop => new JProperty(prop.Name, SortJson(prop.Value))));
+
+                case JTokenType.Array:
+                    return new JArray(
+                        token.Select(SortJson)
+                             .OrderBy(item => item.ToString()));
+
+                default:
+                    return token;
+            }
+        }
+
+        public static string SortJsonIndented(string json) =>
+            SortJson(JObject.Parse(json)).ToString(Newtonsoft.Json.Formatting.Indented);
+
+        public static string SortJsonUnindented(string json) =>
+            SortJson(JObject.Parse(json)).ToString(Newtonsoft.Json.Formatting.None);
+
+        public static string SortJsonSingleLine(string json)
+        {
+            var jobj = JObject.Parse(json);
+            var token = SortJson(jobj);
+            using var stringWriter = new StringWriter();
+
+            using (var jsonWriter = new JsonTextWriter(stringWriter))
+            {
+                jsonWriter.Formatting = Formatting.Indented;
+                jsonWriter.IndentChar = ' ';
+                jsonWriter.Indentation = 0;
+
+                token.WriteTo(jsonWriter);
+            }
+
+            return stringWriter.ToString().ReplaceLineEndings(" ");
         }
         #endregion
 

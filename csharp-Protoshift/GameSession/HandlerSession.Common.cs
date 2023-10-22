@@ -42,11 +42,13 @@ namespace csharp_Protoshift.GameSession
             client_seed = server_seed = Array.Empty<byte>();
             // Verbose = true;
             Verbose = false;
+#if !PROTOSHIFT_BENCHMARK
             if (GameSessionDispatch.PlayerStatLogger != null)
             {
                 _player_statlog = GameSessionDispatch.PlayerStatLogger
-                    .GetChannel(sessionId.ToString());
+                    .GetChannel($"{_sessionId}|0");
             }
+#endif
 
             ConfigureInitialNotifyList();
         }
@@ -124,7 +126,7 @@ namespace csharp_Protoshift.GameSession
         {
             if (_player_statlog == null) return;
 
-            _player_statlog.LogPush($"{_uid}|{category}|{description}|{data}", logLevel);
+            _player_statlog.LogPush($"{category}|{description}|{data}", logLevel);
         }
         #endregion
 

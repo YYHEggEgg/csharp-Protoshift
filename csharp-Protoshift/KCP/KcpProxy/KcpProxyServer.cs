@@ -5,12 +5,14 @@ using YYHEggEgg.Logger;
 using csharp_Protoshift.SpecialUdp;
 using System.Buffers.Binary;
 using System.Net.Sockets.Kcp;
+using csharp_Protoshift.GameSession;
 
 namespace csharp_Protoshift.MhyKCP.Proxy
 {
     public class KcpProxyServer : KCPServer
     {
         public EndPoint SendToEndpoint { get; }
+        protected static BaseLogger? _kcpstatlogger = GameSessionDispatch.PlayerStatLogger;
 
         public KcpProxyServer(IPEndPoint bindToAddress, EndPoint sendToAddress)
         {
@@ -144,6 +146,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 {
                     var ret = Accept();
                     Log.Info($"New connection (conv={ret.Connection.Conv}, token={ret.Connection.Token}) from {ret.RemoteEndpoint}.", nameof(KcpProxyServer));
+                    _kcpstatlogger?.Info($"0|kcp|connect|token={ret.Connection.Token}|ip={ret.RemoteEndpoint}", ret.Connection.Conv.ToString());
 
                     handlers.SessionCreated?.Invoke(ret.Connection.Conv, ret.RemoteEndpoint);
                     _ = Task.Run(() => HandleServer((KcpProxyBase)ret.Connection, handlers));
@@ -317,6 +320,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
             var conn_client = (KcpProxyBase)connected_clients[conv];
             var conn_server = conn_client.sendClient;
 
+            _kcpstatlogger?.Info($"0|kcp|disconnect|proxy_kick(client)|reason={client_reason}", conv.ToString());
+            _kcpstatlogger?.Info($"0|kcp|disconnect|proxy_kick(server)|reason={server_reason}", conv.ToString());
             conn_client.Disconnect(data: client_reason);
             conn_server?.Disconnect(data: server_reason);
         }

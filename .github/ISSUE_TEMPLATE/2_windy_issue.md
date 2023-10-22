@@ -32,7 +32,7 @@ Note: Asking in English can make your problem more widely known by the community
 - [ ] I have browsed various Issue templates and confirmed that the current template is suitable for my problem
 - [ ] I confirm that the issue I raised is related to Windy (and not dependent on other factors)
 - [ ] I have attached necessary log records in the issue (you can also send them to `mihomo-technology@outlook.com`, making it disclosed after removing sensitive information). I also attached the necessary content of `latest.errtrace.log` (if an exception occurs).
-- [ ] I used [the luac compiler provided in the repository](https://github.com/YYHEggEgg/csharp-Protoshift/tree/main/csharp-Protoshift/resources/luac_bins) or a compiler that can be proven to be compatible with the anime     game
+- [ ] I used [the luac compiler provided in the repository](https://github.com/YYHEggEgg/csharp-Protoshift/tree/main/csharp-Protoshift/resources/luac_bins) or another compiler that can be proven to be compatible with the anime game
 - [ ] I confirm that the lua script itself complies with `Lua 5.3.5` syntax, and does not include operations that `xlua` may prohibit, such as reading files (required by import modules)
 - [ ] **I am not running the server on any version of macOS, nor am I running the game client on iOS**
 
@@ -64,6 +64,6 @@ Note: Asking in English can make your problem more widely known by the community
 - [ ] 我已浏览过多种 Issue 模板并确认当前模板适合我的问题
 - [ ] 我确认提出的 issue 与 Windy 有关（而不取决于其他因素）
 - [ ] 我已在 issue 中附带必要的日志记录（也可发送至 `mihomo-technology@outlook.com`，去除敏感信息后的部分将被公开）。我还附带了 `latest.errtrace.log` 的必要内容（如果有发生异常）。
-- [ ] 我使用 [存储库中打包提供的 luac 编译器](https://github.com/YYHEggEgg/csharp-Protoshift/tree/main/csharp-Protoshift/resources/luac_bins) 或可证明与某二游相兼容的编译器
+- [ ] 我使用 [存储库中打包提供的 luac 编译器](https://github.com/YYHEggEgg/csharp-Protoshift/tree/main/csharp-Protoshift/resources/luac_bins) 或可证明与某二游相兼容的其他编译器
 - [ ] 我确认 lua 脚本本身符合 `Lua 5.3.5` 的语法，并且不包含读取文件（如 import 模块）等 `xlua` 可能禁止的操作
 - [ ] **我并非在 macOS 的任何版本上运行服务器，也并非在 iOS 上运行游戏客户端**

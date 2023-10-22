@@ -145,11 +145,11 @@ namespace csharp_Protoshift.GameSession
             if (isNewCmdid)
                 SkillIssueDetect.StartHandlePacket(protoname,
                     shifted_body, 0, shifted_body.Length,
-                    packet, body_offset, (int)body_length);
+                    packet, body_offset, (int)body_length, _player_statlog);
             else
                 SkillIssueDetect.StartHandlePacket(protoname,
                     packet, body_offset, (int)body_length,
-                    shifted_body, 0, shifted_body.Length);
+                    shifted_body, 0, shifted_body.Length, _player_statlog);
 #endif
             #endregion
 

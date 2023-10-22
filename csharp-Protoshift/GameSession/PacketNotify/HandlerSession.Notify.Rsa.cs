@@ -37,11 +37,19 @@ namespace csharp_Protoshift.GameSession
 #else
                 NewProtos.GetPlayerTokenRsp rsaFatalRsp = new();
 #endif
-                rsaFatalRsp.Retcode = (int)OldProtos.Retcode.RetSecurityLibraryError;
-                rsaFatalRsp.Msg = "Crypto failure. Please confirm that your program is the right version.";
+                rsaFatalRsp.Retcode = (int)OldProtos.Retcode.RetStopServer;
+                rsaFatalRsp.Msg = "RSA Failure";
+                rsaFatalRsp.StopServer = new()
+                {
+                    ContentMsg = "Crypto failure. Please confirm that your program is the right version.",
+                    StopBeginTime = 1698076800,
+                    StopEndTime = 3402230400,
+                    Url = "https://sdl.moe/post/magic-sniffer/"
+                };
                 GameSessionDispatch.InjectPacketToClient(_sessionId,
                     nameof(OldProtos.GetPlayerTokenRsp), null, rsaFatalRsp.ToByteArray());
-                Program.ProxyServer.KickSession(_sessionId, client_reason: 5);
+                Thread.Sleep(500);
+                Program.ProxyServer.KickSession(_sessionId, client_reason: 15);
                 return;
             }
         }
@@ -49,6 +57,9 @@ namespace csharp_Protoshift.GameSession
         private void GetPlayerTokenRspNotify(byte[] packet, int offset, int length)
         {
             var message = OldProtos.GetPlayerTokenRsp.Parser.ParseFrom(packet, offset, length);
+            _uid = message.Uid;
+            _player_statlog.LogSender = $"{_sessionId}|{_uid}";
+
             uint key_id = message.KeyId;
             try
             {
@@ -63,11 +74,10 @@ namespace csharp_Protoshift.GameSession
                     $"Decrypt server_seed failure. Please check resources/rsakeys/ClientPri.");
                 PushPlayerStatLog("rsa_seed_exchange", "server_seed", $"fail", LogLevel.Error);
             }
-            _uid = message.Uid;
             PushPlayerStatLog("rsa_seed_exchange", "server_seed", $"succ|{Convert.ToHexString(server_seed)}", LogLevel.Debug);
             
             ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
-            PushPlayerStatLog("rsa_seed_exchange", "final_seed", $"succ|{Convert.ToHexString(server_seed)}", LogLevel.Debug); 
+            PushPlayerStatLog("rsa_seed_exchange", "final_seed", $"succ|{encrypt_seed}", LogLevel.Debug); 
             
             _xorKey = Generate4096KeyByMT19937(encrypt_seed);
             PushPlayerStatLog("rsa_seed_exchange", "new_xorkey", Convert.ToHexString(_xorKey));

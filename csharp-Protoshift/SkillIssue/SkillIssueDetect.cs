@@ -19,10 +19,11 @@ namespace csharp_Protoshift.SkillIssue
         /// <param name="oldserializer">The protobuf serializer for Older Protocol from Server.</param>
         public static void StartHandlePacket(string protoname,
             byte[] oldbody, int oldbody_offset, int oldbody_length, 
-            byte[] newbody, int newbody_offset, int newbody_length)
+            byte[] newbody, int newbody_offset, int newbody_length,
+            LoggerChannel? reportTarget)
         {
-            if (!_initialized) return;
-            reqs.Enqueue(new(protoname, oldbody, oldbody_offset, oldbody_length, newbody, newbody_offset, newbody_length));
+            if (!_initialized || reportTarget == null) return;
+            reqs.Enqueue(new(protoname, oldbody, oldbody_offset, oldbody_length, newbody, newbody_offset, newbody_length, reportTarget));
         }
         #endregion
 
@@ -70,6 +71,7 @@ namespace csharp_Protoshift.SkillIssue
 #if !PROXY_ONLY_SERVER
             try
             {
+                var logger = handle.reportTarget;
                 string protoname = handle.protoname;
                 if (!NewProtos.QueryJsonSerializer.TryGetJsonSerializer(protoname, out var newserializer)
                     || !OldProtos.QueryJsonSerializer.TryGetJsonSerializer(protoname, out var oldserializer))
@@ -78,13 +80,15 @@ namespace csharp_Protoshift.SkillIssue
                 }
                 string oldjson = oldserializer.DeserializeToJson(handle.oldbody, handle.oldbody_offset, handle.oldbody_length);
                 string newjson = newserializer.DeserializeToJson(handle.newbody, handle.newbody_offset, handle.newbody_length);
-                var oldlines = ConvertJsonString(oldjson).Split('\n');
-                var newlines = ConvertJsonString(newjson).Split('\n');
+                var oldlines = ConvertJsonString(oldjson).Split(Environment.NewLine);
+                var newlines = ConvertJsonString(newjson).Split(Environment.NewLine);
 
                 if (newlines.Length != oldlines.Length)
                 {
-                    Log.Warn($"Packet {protoname} has an information lost in Protoshift:\n" +
-                        $"new: {newjson}\nold: {oldjson}", "SkillIssue-AsyncDetect");
+                    var output_oldjson = Tools.SortJsonUnindented(oldjson);
+                    var output_newjson = Tools.SortJsonUnindented(newjson);
+                    logger.LogWarn($"skill_issue_detect(async)|{protoname}|old|{output_oldjson}");
+                    logger.LogWarn($"skill_issue_detect(async)|{protoname}|new|{output_newjson}");
                 }
             }
             catch (Exception ex)
@@ -112,7 +116,7 @@ namespace csharp_Protoshift.SkillIssue
                 JsonTextWriter jsonWriter = new(textWriter)
                 {
                     Formatting = Formatting.Indented,
-                    Indentation = 4,
+                    Indentation = 0,
                     IndentChar = ' '
                 };
                 serializer.Serialize(jsonWriter, obj);
@@ -134,8 +138,9 @@ namespace csharp_Protoshift.SkillIssue
             public readonly byte[] newbody;
             public readonly int newbody_offset;
             public readonly int newbody_length;
+            public readonly LoggerChannel reportTarget;
 
-            public DelayHandleInfo(string protoname, byte[] oldbody, int oldbody_offset, int oldbody_length, byte[] newbody, int newbody_offset, int newbody_length)
+            public DelayHandleInfo(string protoname, byte[] oldbody, int oldbody_offset, int oldbody_length, byte[] newbody, int newbody_offset, int newbody_length, LoggerChannel reportTarget)
             {
                 this.protoname = protoname;
                 this.oldbody = oldbody;
@@ -144,6 +149,7 @@ namespace csharp_Protoshift.SkillIssue
                 this.newbody = newbody;
                 this.newbody_offset = newbody_offset;
                 this.newbody_length = newbody_length;
+                this.reportTarget = reportTarget;
             }
         }
     }
