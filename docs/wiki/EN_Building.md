@@ -65,7 +65,7 @@ If no parameters are specified and there is no local Proto, the program will clo
 ## Performing Personalized Configuration
 
 After generating Protoshift Handlers, you should modify `config.json` for effective configuration. If you edit `config.json` with an editor that supports JSON Schema, you should be able to see field comments and use the auto-fill feature.  
-After configuring `config.json`, you should check whether `resources` is correctly configured. For how to correctly configure `resources`, please refer to [Wiki - Resources](EN_Resources.md).
+After configuring `config.json`, you should check whether `resources` is correctly configured. For how to correctly configure `resources`, please refer to [Wiki - Resources](EN_Resources).
 
 Also, when you enter the game, you should see the following effect. If you want to disable this feature, you can turn it off by setting `#/WindyConfig/OnlineExecWindyMode` to `Disabled` in `config.json`.
 

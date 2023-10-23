@@ -68,9 +68,9 @@ private void ConfigureInitialNotifyList()
 
 ProxyOnly 的具体逻辑在 `csharp-Protoshift/GameSession/ProxyOnly` 中实现。它的作用是，并不进行 Protoshift 流程，将包按原样在服务端与客户端间传递，并将信息记录到日志中。
 
-综上所述，在使用 ProxyOnly 模式时，**服务端与客户端必须使用完全相同的 Protocol**。它不需要手动指定两套相同的 Protocol 分支；它以供服务端使用的 Protocol 分支（`OldProtos`）为准。
+综上所述，在使用 ProxyOnly 模式时，**服务端与客户端必须使用完全相同的 Protocol**。它不需要手动在构建时指定两套相同的 Protocol 分支；它以供服务端使用的 Protocol 分支（`OldProtos`）为准。
 
-它的设计本意是测定网络协议栈在实践场景下的表现。但正如 [Wiki - Resources - `rsakeys` 文件夹](CN_Resources.md#rsakeys-文件夹) 中所提到的，由于您需要服务端私钥才能运行本代理服务器，您不能使用 ProxyOnly 实现作为那些您不具有控制权的服务器的代理抓包软件。
+它的设计本意是观测网络协议栈在实践场景下的表现。但正如 [Wiki - Resources - `rsakeys` 文件夹](CN_Resources#rsakeys-文件夹) 中所提到的，由于您需要服务端私钥才能运行本代理服务器，您不能使用 ProxyOnly 实现作为那些您不具有控制权的服务器的代理抓包软件。
 
 在 ProxyOnly 模式下，`latest.packet.log` 的格式有所不同。有关详细信息，请参阅 [`latest.packet.log` 注解](#latestpacketlog-注解)。
 
@@ -78,7 +78,7 @@ ProxyOnly 的具体逻辑在 `csharp-Protoshift/GameSession/ProxyOnly` 中实现
 
 该日志文件记录了曾经过 Protoshift 代理服务器的所有包 - 除非它们被排除。您可以在 `config.json` 中定义 `PacketLogExcluding` 来在 `latest.packet.log` 中进行排除。
 
-该日志文件没有表头。通常情况下，其是一个竖线分隔符文件，格式如下：
+该日志文件没有表头。通常情况下，其是一个竖线分隔值文件，格式如下：
 
 ```log
 [time]|Info|[uid]|[PacketName]|[CmdId]|[sentByClient]|[head]|[body]|[handleNanoseconds]|[shiftedData]
@@ -88,11 +88,11 @@ ProxyOnly 的具体逻辑在 `csharp-Protoshift/GameSession/ProxyOnly` 中实现
 
 - `time` 为包被记录的时间。
 - 第二项为日志的级别。在 `latest.packet.log` 中，它固定为 `Info`；`GameSessionDispatch.PacketLogger` 同样丢弃级别非 `Information` 的所有日志。
-- 第三项为 UID. 特别的，在 UID 未确认的情况下（如 `GetPlayerTokenReq`），它的值固定为 0.
+- 第三项为 UID. 特别的，在 UID 未确认的情况下（如刚刚收到 `GetPlayerTokenReq`），它的值固定为 0.
 - `PacketName` 为从 `CmdId` 翻译而来的 Proto Message 名称。
 - `CmdId` 为传入包的 `cmdid`。
 - `sentByClient` 指示它由客户端（`true`）或服务端（`false`）发出。
-- `head` 是 Proto 为 `PacketHead` 的包头。
+- `head` 是 Proto 为 `PacketHead.proto` 的包头。
 - `body` 是包的主体。
 - `handleNanoseconds` 为使用 `Stopwatch` 记录的，从包被传入到返回可供发送的完整包所用的全部时间。
 - `shiftedData` 为经过 Protoshift 后的 **`body` 结果**。
@@ -111,7 +111,7 @@ ProxyOnly 的具体逻辑在 `csharp-Protoshift/GameSession/ProxyOnly` 中实现
 [time]|Info|Conv ID|UID|Status category|Description|--[Any other Data]--
 ```
 
-注意到此处同时输出 `Conv ID` 与 `UID`. 有关其区别，请参见 [Wiki - Commands - 代理服务控制命令](CN_Commands.md#代理服务控制命令).
+注意到此处同时输出 `Conv ID` 与 `UID`. 有关其区别，请参见 [Wiki - Commands - 代理服务控制命令](CN_Commands#代理服务控制命令).
 
 接下来将会根据 `Status category` 列出输出的主要格式。
 
@@ -241,4 +241,4 @@ Warn|1001|10000|skill_issue_detect(async)|PingRsp|new|{}
 
 - 分支名就是 Proto 版本的标识。如果您像 `mihomo-protos` 一样有一个作为基而不存放实际 Proto 的主分支，建议您将其 `protostat.json` 中 `CurrentStat` 设为 `Deprecated`.
 
-搭建自己的 Proto Git 远程存储库后，您可能需要使您的合作者使用新的源或变更分支。有关详细信息，请参阅 [Wiki - Building - Proto 远程抓取管理](CN_Building.md#proto-远程抓取管理)。
+搭建自己的 Proto Git 远程存储库后，您可能需要使您的合作者使用新的源或变更分支。有关详细信息，请参阅 [Wiki - Building - Proto 远程抓取管理](CN_Building#proto-远程抓取管理)。

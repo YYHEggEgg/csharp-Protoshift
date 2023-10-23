@@ -70,7 +70,7 @@ If you split out `_DISABLED` to make `PROXY_ONLY_SERVER` defined, the ProxyOnly 
 
 In conclusion, when using ProxyOnly Mode, **the server should be using the same Protocol as the client**. It don't need to manually specify two equal Protocol branch in building with HandlerGenerator; it uses the Protocol branch for the server, or the `OldProtos`.
 
-It was designed to observe the implemention of the Network Protocol Stack in practice. But as is mentioned in [Wiki - Resources - `rsakeys` Folder](EN_Resources.md#rsakeys-folder),  because you need the `ServerPri` key to run the proxy server, you cannot use this Protoshift implementation as a proxy capture software for servers that you do not control.
+It was designed to observe the implemention of the Network Protocol Stack in practice. But as is mentioned in [Wiki - Resources - `rsakeys` Folder](EN_Resources#rsakeys-folder),  because you need the `ServerPri` key to run the proxy server, you cannot use this Protoshift implementation as a proxy capture software for servers that you do not control.
 
 The format of `latest.packet.log` is different if you're in the ProxyOnly Mode. For more information, please refer to [`latest.packet.log` Annoations](#latestpacketlog-annoations).
 
@@ -110,7 +110,7 @@ It has a header:
 [time]|Info|Conv ID|UID|Status category|Description|--[Any other Data]--
 ```
 
-Notice that `Conv ID` and `UID` are both output here. For information about their difference, please refer to [Wiki - Commands - Proxy Service Control Commands](EN_Commands.md#proxy-service-control-commands).
+Notice that `Conv ID` and `UID` are both output here. For information about their difference, please refer to [Wiki - Commands - Proxy Service Control Commands](EN_Commands#proxy-service-control-commands).
 
 The main output formats will be listed below according to their `Status category`:
 
@@ -240,4 +240,4 @@ Next, let's introduce the Proto repository format for use with csharp-Protoshift
 
 - The branch name is the identifier of the Proto version. If you have a main branch like `mihomo-protos` which serves as a base but does not contain actual Protos, it is recommended to set its `CurrentStat` to `Deprecated` in its `protostat.json` file.
 
-After setting up your own Proto Git remote repository, you may need to instruct your collaborators to use the new source or change branches. For more detailed information, please refer to [Wiki - Building - Managing Proto Remote Fetch](EN_Building.md#proto-remote-fetch-management).
+After setting up your own Proto Git remote repository, you may need to instruct your collaborators to use the new source or change branches. For more detailed information, please refer to [Wiki - Building - Managing Proto Remote Fetch](EN_Building#proto-remote-fetch-management).

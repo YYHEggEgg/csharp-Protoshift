@@ -65,7 +65,7 @@ public const string git_path = "git";
 ## 进行个性化配置
 
 在生成 Protoshift Handlers 后，应修改 `config.json` 以进行有效配置。如果您使用支持 JSON Schema 的编辑器编辑 `config.json`，应可以看到字段的注释并使用自动填充特性。  
-配置完 `config.json` 后，应确认 `resources` 是否正确配置。有关如何对 `resources` 进行正确配置，请参阅 [Wiki - Resources](CN_Resources.md).
+配置完 `config.json` 后，应确认 `resources` 是否正确配置。有关如何对 `resources` 进行正确配置，请参阅 [Wiki - Resources](CN_Resources).
 
 另外，在您进入游戏时，应可以看到如下效果。如果您想要禁用此特性，您可以通过在 `config.json` 中将 `#/WindyConfig/OnlineExecWindyMode` 设为 `Disabled` 来将其关闭。
 
