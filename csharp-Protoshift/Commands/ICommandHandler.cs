@@ -108,7 +108,7 @@ namespace csharp_Protoshift.Commands
         public readonly static Parser DefaultCommandsParser = new Parser(config =>
         {
             // 在构建时设置自定义 ConsoleWriter
-            config.HelpWriter = TextWriter.Synchronized(new LogTextWriter("CmdHandler"));
+            config.HelpWriter = Tools.NothingWriter;
         });
 
         public static readonly HashSet<string> HelpStrings = new()

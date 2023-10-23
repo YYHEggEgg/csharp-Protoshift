@@ -7,23 +7,12 @@ using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands.Windy
 {
-    internal partial class WindyLuacManager : IJsonOnDeserialized, IJsonOnSerializing
+    internal static partial class WindyLuacManager
     {
-        /// <summary>
-        /// This constructor is used for <see cref="JsonSerializer"/>. Use <see cref="Instance"/> instead.
-        /// </summary>
-        public WindyLuacManager()
-        {
-            var settmpPathRes = SetCompiledTempPath("windy_temp");
-            Debug.Assert(settmpPathRes);
-        }
-        public readonly static WindyLuacManager Instance;
-
-        [JsonIgnore]
-        private Dictionary<string, (string luaHash, byte[] luacContent, string outputHash)> compiled_luacs = new();
+        private static Dictionary<string, (string luaHash, byte[] luacContent, string outputHash)> compiled_luacs = new();
 
         #region Compile lua
-        public async Task<byte[]> CompileLua(string luaPathInput)
+        public static async Task<byte[]> CompileLua(string luaPathInput)
         {
             if (!Tools.TryGetFullFilePath(luaPathInput, EnvFullPath, "lua", "luac", out var luaFullPath))
                 throw new FileNotFoundException("The specified file does not exist.", 
@@ -33,7 +22,7 @@ namespace csharp_Protoshift.Commands.Windy
             else return await CompileLuaCore(luaFullPath);
         }
 
-        private async Task<byte[]> CompileLuaCore(string luaFullPath)
+        private static async Task<byte[]> CompileLuaCore(string luaFullPath)
         {
             FileInfo luaFile = new(luaFullPath);
             var luaFileHash = GetFileHash(luaFile);
@@ -57,7 +46,7 @@ namespace csharp_Protoshift.Commands.Windy
         #endregion
 
         #region Windseed Construct
-        private byte[] ConstructSendableWindyProtobufFrom(
+        private static byte[] ConstructSendableWindyProtobufFrom(
             byte[] lua_compiled)
         {
 #if !PROXY_ONLY_SERVER
@@ -74,12 +63,12 @@ namespace csharp_Protoshift.Commands.Windy
             return rce_warning.ToByteArray();
         }
 
-        public async Task<byte[]> CompileSendableWindyProtobuf(string luaPath)
+        public static async Task<byte[]> CompileSendableWindyProtobuf(string luaPath)
         {
             return ConstructSendableWindyProtobufFrom(await CompileLua(luaPath));
         }
 
-        public async Task<byte[]> GetSendableWindyProtobufFromFile(string filePath)
+        public static async Task<byte[]> GetSendableWindyProtobufFromFile(string filePath)
         {
             return ConstructSendableWindyProtobufFrom(
                 await File.ReadAllBytesAsync(filePath));
@@ -87,12 +76,11 @@ namespace csharp_Protoshift.Commands.Windy
         #endregion
 
         #region EnvPath
-        private string _envPath = "resources/windy_scripts";
+        private static string _envPath = "resources/windy_scripts";
         /// <summary>
         /// Get the windy env path. 
         /// </summary>
-        [JsonIgnore]
-        public string EnvPath
+        public static string EnvPath
         {
             get { return _envPath; }
             set
@@ -102,10 +90,9 @@ namespace csharp_Protoshift.Commands.Windy
             }
         }
 
-        private string? _envFullPath;
-        private bool _envPathChanged = true;
-        [JsonIgnore]
-        public string EnvFullPath
+        private static string? _envFullPath;
+        private static bool _envPathChanged = true;
+        public static string EnvFullPath
         {
             get
             {
@@ -119,9 +106,8 @@ namespace csharp_Protoshift.Commands.Windy
         /// <summary>
         /// Get the compiled .luac temp path. Notice that don't use the setter, it's only used for <see cref="JsonSerializer"/>.
         /// </summary>
-        [JsonIgnore]
-        public string? CompiledPath { get; set; } = null;
-        public bool SetCompiledTempPath(string? newTempPath)
+        public static string? CompiledPath { get; set; } = null;
+        public static bool SetCompiledTempPath(string? newTempPath)
         {
             if (newTempPath == null) return false;
             Directory.CreateDirectory(newTempPath);
@@ -191,64 +177,6 @@ namespace csharp_Protoshift.Commands.Windy
             }
         }
 
-        #region Json serialization
-        public void OnDeserialized()
-        {
-            if (Config.Global.WindyConfig?.WindyCompiledTempPath != null && 
-                !SetCompiledTempPath(Config.Global.WindyConfig?.WindyCompiledTempPath))
-            {
-                Log.Warn($"The past temp path is deprecated. Use default (./windy_temp) instead now.", nameof(WindyLuacManager));
-            }
-#pragma warning disable CS8601 // 引用类型赋值可能为 null。
-            if (Config.Global.WindyConfig?.WindyEnvironmentPath != null)
-            {
-                EnvPath = Config.Global.WindyConfig?.WindyEnvironmentPath;
-            }
-#pragma warning restore CS8601 // 引用类型赋值可能为 null。
-            else if (list_compiled_luacs != null)
-            {
-                foreach (var pair in list_compiled_luacs)
-                {
-                    var (luaHash, outputHash) = pair.Value;
-                    string fileName = outputHash.Substring(0, outputHash.IndexOf('|'));
-                    string outputPath = $"{CompiledPath}/{fileName}";
-                    if (File.Exists(pair.Key) && luaHash == GetFileHash(new(pair.Key)) &&
-                        File.Exists(outputPath) && outputHash == GetFileHash(new(outputPath)))
-                    {
-                        compiled_luacs.Add(pair.Key, (luaHash, File.ReadAllBytes(outputPath), outputHash));
-                    }
-                }
-            }
-
-            if (list_lua_compilers_path != null)
-            {
-                _lua_compilers_path = new(list_lua_compilers_path);
-                InitCompilerFromConfig();
-            }
-        }
-
-        public void OnSerializing()
-        {
-            lock (lua_dict_lck)
-            {
-                list_compiled_luacs = new();
-                foreach (var pair in compiled_luacs)
-                {
-                    list_compiled_luacs.Add(new(pair.Key, new(pair.Value.luaHash, pair.Value.outputHash)));
-                }
-            }
-            list_lua_compilers_path = new(_lua_compilers_path);
-            Config.Global.WindyConfig ??= new();
-            Config.Global.WindyConfig.WindyEnvironmentPath = EnvPath;
-#pragma warning disable CS8601 // 引用类型赋值可能为 null。
-            Config.Global.WindyConfig.WindyCompiledTempPath = CompiledPath;
-#pragma warning restore CS8601 // 引用类型赋值可能为 null。
-        }
-
-        public List<KeyValuePair<string, Tuple<string, string>>>? list_compiled_luacs { get; set; }
-        public List<KeyValuePair<OSType, string>>? list_lua_compilers_path { get; set; }
-        #endregion
-
         #region README content
         private const string WINDY_COMPILED_README =
 @"This directory is created by csharp-Protoshift, storing .luac compiled results.
@@ -260,10 +188,8 @@ and don't place your files here as they will probably be lost.";
 
         #endregion
 
-        #region Save locks
-        private object luac_exe_lck = "kinda"; // Unused
-        private object env_path_lck = "windy"; // Unused
-        private object lua_dict_lck = "today";
+        #region Locks
+        private static object lua_dict_lck = "kinda windy today";
         #endregion
     }
 

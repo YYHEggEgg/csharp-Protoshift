@@ -5,6 +5,7 @@ using BenchmarkDotNet.Order;
 using BenchmarkDotNet.Reports;
 using BenchmarkDotNet.Running;
 using CommandLine;
+using csharp_Protoshift.Configuration;
 using csharp_Protoshift.GameSession;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Text;
@@ -33,11 +34,12 @@ namespace csharp_Protoshift.Enhanced.Benchmark
                 File.Move(benchmark_source_file_shared,
                     $"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.{benchmark_source_file_suffix}");
             }
-            var parser_args = new Parser(config =>
-            {
+            var parser_args = Parser.Default;
+            //new Parser(config =>
+            // {
                 // Set custom ConsoleWriter during construction
-                config.HelpWriter = TextWriter.Synchronized(new LogTextWriter("CommandLineParser"));
-            });
+            //     config.HelpWriter = TextWriter.Synchronized(new LogTextWriter("CommandLineParser"));
+            // });
             BenchmarkOptions global_opt = new BenchmarkOptions();
             parser_args.ParseArguments<BenchmarkOptions>(args)
                 .WithNotParsed(errs =>
@@ -55,7 +57,12 @@ namespace csharp_Protoshift.Enhanced.Benchmark
             }
             if (sourcefile == null) throw new Exception("im tired plz give a file ok?");
             SetUpBenchmarkSource(sourcefile, global_opt);
-            new Program().GetBenchmarkArguments();
+
+            // Set up and test-run
+            var instance = new Program();
+            var runs = instance.GetBenchmarkArguments();
+            if (runs.Any()) 
+                instance.ProtoshiftBenchmark(runs.First());
 
             BenchmarkRunner.Run<Program>(
                 ManualConfig
@@ -86,6 +93,9 @@ namespace csharp_Protoshift.Enhanced.Benchmark
                 }
                 curdir = Directory.GetParent(curdir)?.FullName ?? throw new FileNotFoundException("csproj file not found!");
             }
+
+            Config.InitializeAsync($"{curdir}/../../csharp-Protoshift/config.json").Wait();
+            worker = new(1001);
         }
 
         public const char separateChar = PacketRecord.separateChar;
@@ -96,9 +106,9 @@ namespace csharp_Protoshift.Enhanced.Benchmark
             [Option("minimum-packet-length", Required = false, Default = 1, HelpText =
                 "The minimum packet length that can be included in the benchmark.")]
             public int MinimumPacketLength { get; set; }
-            [Option("single-proto", Required = false, Default = null, HelpText =
-                "Give this param to benchmark on only one specified packet proto.")]
-            public string? TestSingleProto { get; set; }
+            [Option("proto-filters", Required = false, Default = null, HelpText =
+                "Give the params to benchmark on only the specified packet protos.")]
+            public IEnumerable<string>? ProtoFilters { get; set; }
             [Option("each-proto-packet-limit", Required = false, Default = 1, HelpText =
                 "How many packets that will be selected for each proto. " +
                 "If running without --single-proto, just leave it default.")]
@@ -144,11 +154,12 @@ namespace csharp_Protoshift.Enhanced.Benchmark
                     ushort cmdid = ushort.Parse(values[4]);
                     bool sentByClient = bool.Parse(values[5]);
                     byte[] data = Convert.FromBase64String(values[7]);
-                    Int64 handlenanosec = Int64.Parse(values[9]);
+                    Int64 handlenanosec = Int64.Parse(values[8]);
                     readres.Add((protoname, cmdid, sentByClient, data, i, handlenanosec));
                 }
             }
 
+            HashSet<string> proto_filters = new(opt.ProtoFilters ?? Enumerable.Empty<string>());
             IEnumerable<IGrouping<string, (string protoname, ushort cmdid, bool sentByClient, byte[] body, int line_id, Int64 handlenanosec)>> select_res;
 
             select_res = 
@@ -156,7 +167,7 @@ namespace csharp_Protoshift.Enhanced.Benchmark
                 orderby (opt.OrderByPacketTime ? record.handlenanosec : record.body.Length) descending
                 orderby record.body.Length descending
                 group record by record.protoname into gr
-                where opt.TestSingleProto == null || gr.Key == opt.TestSingleProto
+                where opt.ProtoFilters == null || proto_filters.Contains(gr.Key)
                 select gr;
             StringBuilder sb = new();
             foreach (var proto_gr in select_res)
@@ -216,7 +227,7 @@ namespace csharp_Protoshift.Enhanced.Benchmark
             }
         }
 
-        public static HandlerSession worker = new(1001);
+        public static HandlerSession worker;
 
         [Benchmark]
         [ArgumentsSource(nameof(GetBenchmarkArguments))]

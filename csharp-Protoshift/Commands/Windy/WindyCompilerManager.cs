@@ -18,7 +18,7 @@ namespace csharp_Protoshift.Commands.Windy
         linux64,
     }
 
-    internal partial class WindyLuacManager
+    internal static partial class WindyLuacManager
     {
         static WindyLuacManager()
         {
@@ -33,7 +33,11 @@ namespace csharp_Protoshift.Commands.Windy
                 { OSType.linux64, "resources/luac_bins/luac_unix64" },
             });
             ChmodAddX();
-            Instance = new();
+            _lua_compilers_path = new(LuaCompilersDefault);
+
+            Directory.Delete("windy_temp", true);
+            var settmpPathRes = SetCompiledTempPath("windy_temp");
+            Debug.Assert(settmpPathRes);
         }
 
         private static LoggerChannel _logger;
@@ -65,7 +69,7 @@ namespace csharp_Protoshift.Commands.Windy
                 catch (Exception ex)
                 {
                     _logger.LogWarnTrace(ex, $"chmod +x for luac executable failed. " +
-                        $"You may encounter problem for Windy operations.");
+                        $"You will probably encounter problem for Windy operations.");
                 }
             }
         }
@@ -93,30 +97,9 @@ namespace csharp_Protoshift.Commands.Windy
         }
 
         #region OS Compilers manage
-        private void InitCompilerFromConfig()
-        {
-            var paths = Config.Global.WindyConfig.WindyLuacOverridePaths;
-            if ((paths?.Path_win32 != null && GetOSSuffix() == OSType.win32 && paths.Path_win32 != _lua_compilers_path[OSType.win32]) ||
-                (paths?.Path_win64 != null && GetOSSuffix() == OSType.win64 && paths.Path_win64 != _lua_compilers_path[OSType.win64]) ||
-                (paths?.Path_mac32 != null && GetOSSuffix() == OSType.mac32 && paths.Path_mac32 != _lua_compilers_path[OSType.mac32]) ||
-                (paths?.Path_mac64 != null && GetOSSuffix() == OSType.mac64 && paths.Path_mac64 != _lua_compilers_path[OSType.mac64]) ||
-                (paths?.Path_linux32 != null && GetOSSuffix() == OSType.linux32 && paths.Path_linux32 != _lua_compilers_path[OSType.linux32]) ||
-                (paths?.Path_linux64 != null && GetOSSuffix() == OSType.linux64 && paths.Path_linux64 != _lua_compilers_path[OSType.linux64]))
-                ClearCompiled();
+        private static Dictionary<OSType, string> _lua_compilers_path;
 
-            if (paths?.Path_win32 != null) _lua_compilers_path[OSType.win32] = paths.Path_win32;
-            if (paths?.Path_win64 != null) _lua_compilers_path[OSType.win64] = paths.Path_win64;
-            if (paths?.Path_mac32 != null) _lua_compilers_path[OSType.mac32] = paths.Path_mac32;
-            if (paths?.Path_mac64 != null) _lua_compilers_path[OSType.mac64] = paths.Path_mac64;
-            if (paths?.Path_linux32 != null) _lua_compilers_path[OSType.linux32] = paths.Path_linux32;
-            if (paths?.Path_linux64 != null) _lua_compilers_path[OSType.linux64] = paths.Path_linux64;
-
-            ChmodAddX(_lua_compilers_path[GetOSSuffix()]);
-        }
-
-        [JsonIgnore] private Dictionary<OSType, string> _lua_compilers_path = new(LuaCompilersDefault);
-
-        public async Task<bool> TryModifyLuacExecutablePath(
+        public static async Task<bool> TryModifyLuacExecutablePath(
             string luacFullPath, OSType targetOS, bool slient = false)
         {
             if (targetOS == OSType.Unsupported)
@@ -157,26 +140,13 @@ namespace csharp_Protoshift.Commands.Windy
         }
         #endregion
 
-        public void ClearCompiled()
+        public static void ClearCompiled()
         {
             if (CompiledPath != null)
             {
                 lock (lua_dict_lck)
                 {
-                    foreach (var pair in compiled_luacs)
-                    {
-                        var (luaHash, luacContent, outputHash) = pair.Value;
-                        string fileName = outputHash.Substring(0, outputHash.IndexOf('|'));
-                        if (File.Exists($"{CompiledPath}/{fileName}") &&
-                            GetFileHash(new($"{CompiledPath}/{fileName}")) == outputHash)
-                        {
-                            try
-                            {
-                                File.Delete($"{CompiledPath}/{fileName}");
-                            }
-                            catch { }
-                        }
-                    }
+                    Directory.Delete(CompiledPath, true);  
                     compiled_luacs.Clear();
                 }
             }
@@ -184,18 +154,12 @@ namespace csharp_Protoshift.Commands.Windy
                 $"for the working Luac executable changed.");
         }
 
-        public string GetExecutable(OSType targetOS) => _lua_compilers_path[targetOS];
-        public string GetExecutable() => GetExecutable(GetOSSuffix());
-        public static string GetExecutableGlobal() => Instance.GetExecutable();
-        public static string GetExecutableGlobal(OSType targetOS) => Instance.GetExecutable(targetOS);
-
-        public bool TryGetExecutable(OSType targetOS, [NotNullWhen(true)] out string? str)
+        public static string GetExecutable(OSType targetOS) => _lua_compilers_path[targetOS];
+        public static string GetExecutable() => GetExecutable(GetOSSuffix());
+        
+        public static bool TryGetExecutable(OSType targetOS, [NotNullWhen(true)] out string? str)
             => _lua_compilers_path.TryGetValue(targetOS, out str);
-        public bool TryGetExecutable([NotNullWhen(true)] out string? str)
+        public static bool TryGetExecutable([NotNullWhen(true)] out string? str)
             => TryGetExecutable(GetOSSuffix(), out str);
-        public static bool TryGetExecutableGlobal([NotNullWhen(true)] out string? str)
-            => Instance.TryGetExecutable(out str);
-        public static bool TryGetExecutableGlobal(OSType targetOS, [NotNullWhen(true)] out string? str)
-            => Instance.TryGetExecutable(targetOS, out str);
     }
 }

@@ -2,6 +2,7 @@
   "$schema": "resources/config-schemas/config_schema_latest.json",
   "ConfigVersion": "1.0.1",
   "EnableFullPacketLog": true,
+  "EnablePlayerStatLog": true,
   "PacketLogExcluding": [
     "PingReq",
     "PingRsp"
@@ -16,16 +17,14 @@
     // }
   },
   "WindyConfig": {
-    "WindyLuacOverridePaths": {
-      "Path_win32": "resources/luac_bins/luac_win32.exe",
-      "Path_win64": "resources/luac_bins/luac_win64.exe",
-      "Path_mac64": "resources/luac_bins/luac_unix64",
-      "Path_linux64": "resources/luac_bins/luac_unix64"
-    },
     "WindyEnvironmentPath": "resources/windy_scripts",
     "WindyCompiledTempPath": "windy_temp",
-    "OnlineExecWindyMode": "OnGetPlayerTokenFinish",
-    "OnlineExecWindyLua": "welcome-to-csharp-Protoshift",
+    "OnlineExecWindys": [
+      {
+        "OnlineExecMode": "OnGetPlayerTokenFinish",
+        "LuaFileName": "welcome-to-csharp-Protoshift"
+      }
+    ],
     "StripDebugInformation": false
   }
 }

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KcpPerformanceTest", "KcpPe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedLib", "SharedLib\SharedLib.csproj", "{DC06B44E-C725-42E4-8C23-CFF1A38E0605}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kcp", "..\KCP\Kcp\Kcp.csproj", "{61EC0345-6AF7-488F-9C6A-77470A67F07A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kcp", "..\..\KCP\Kcp\Kcp.csproj", "{61EC0345-6AF7-488F-9C6A-77470A67F07A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

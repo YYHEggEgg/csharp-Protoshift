@@ -1,5 +1,4 @@
 using CommandLine;
-using TextCopy;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands.Protobuf
@@ -146,7 +145,7 @@ namespace csharp_Protoshift.Commands.Protobuf
                 else
                 {
                     var bytes_protobuf = identify_res.ToByteArray();
-                    res = serializer.DeserializeToJson(bytes_protobuf);
+                    res = Tools.SortJsonSingleLine(serializer.DeserializeToJson(bytes_protobuf));
                     _logger.LogInfo($"Converted JSON:{Environment.NewLine}{res}");
                 }
             }
@@ -166,7 +165,7 @@ namespace csharp_Protoshift.Commands.Protobuf
                 else
                 {
                     var bytes_protobuf = identify_res.ToByteArray();
-                    res = serializer.DeserializeToJson(bytes_protobuf);
+                    res = Tools.SortJsonSingleLine(serializer.DeserializeToJson(bytes_protobuf));
                     _logger.LogInfo($"Converted JSON:{Environment.NewLine}{res}");
                 }
             }

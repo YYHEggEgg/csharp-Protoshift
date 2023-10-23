@@ -1,6 +1,5 @@
 ﻿using CommandLine;
 using csharp_Protoshift.Commands.Windy;
-using csharp_Protoshift.Configuration;
 using csharp_Protoshift.GameSession;
 using System.Text.Json;
 using YYHEggEgg.Logger;
@@ -70,96 +69,13 @@ namespace csharp_Protoshift.Commands
             $"  command set-temp-path: Set the temp folder where compiled .luac files are stored.{Environment.NewLine}" +
             $"    windy set-temp-path <temp-path>";
 
-        private WindyLuacManager windyExecute;
-        private bool _initFinished = false;
-        public const string WindyManagerPath = "windy_config.json";
-#pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
         public WindyCommand()
-#pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
         {
-            if (File.Exists(WindyManagerPath))
-            {
-                try
-                {
-                    var windy = JsonSerializer.Deserialize<WindyLuacManager>(
-                        File.ReadAllText(WindyManagerPath));
-                    if (windy == null)
-                    {
-                        _logger.LogErro($"Read windy config from file: {WindyManagerPath} failed. Using a new instance.");
-                        InitNewWindyManager();
-                        AutoSave = false;
-                    }
-                    else
-                    {
-                        windyExecute = windy;
-                        _logger.LogInfo($"Successfully loaded windy config.");
-                        AutoSave = true;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogErroTrace(ex, $"Read windy config from file: " +
-                        $"{WindyManagerPath} failed. Using a new instance.");
-                    InitNewWindyManager();
-                    AutoSave = false;
-                }
-                finally
-                {
-                    _initFinished = true;
-                }
-            }
-            else
-            {
-                InitNewWindyManager();
-                AutoSave = true;
-            }
-            savetimer = new((_) =>
-            {
-                if (AutoSave) SaveChanges();
-            }, null, 0, 60000);
+            _ = Task.Run(GameSessionDispatch.ValidateWindyAutoExecute);
         }
-
-        private void InitNewWindyManager()
-        {
-            windyExecute = WindyLuacManager.Instance;
-            _initFinished = true;
-        }
-
-        #region Save
-        public override void CleanUp()
-        {
-            savetimer.Dispose();
-            SaveChanges();
-        }
-
-        private Timer savetimer;
-        private object save_lck = new object();
-        public void SaveChanges()
-        {
-            lock (save_lck)
-                File.WriteAllText(WindyManagerPath, JsonSerializer.Serialize(windyExecute));
-        }
-
-        public bool AutoSave { get; set; }
-        #endregion
 
         public override async Task HandleAsync(string argList)
         {
-            if (!_initFinished)
-            {
-                _logger.LogInfo($"Windy luac manager initializing, please wait...");
-                int elapsed_ms = 0;
-                while (!_initFinished && elapsed_ms < 10000)
-                {
-                    await Task.Delay(500);
-                    elapsed_ms += 500;
-                }
-                if (elapsed_ms >= 10000)
-                {
-                    _logger.LogErro($"Waiting initializaing timeout of 10s, please try again later or restart.");
-                    return;
-                }
-            }
             var args = ParseAsArgs(argList);
             await DefaultCommandsParser.ParseArguments<WindySendConfig, WindySetEnvConfig, WindySetLuacConfig>(args)
                 .MapResult(
@@ -203,15 +119,15 @@ namespace csharp_Protoshift.Commands
             }
             string? filePath = opt.LuaFile ?? opt.ForceCompiled;
             bool compiled = opt.ForceCompiled != null;
-            if (!Tools.TryGetFullFilePath(filePath, windyExecute.EnvFullPath, "lua", "luac", out filePath))
+            if (!Tools.TryGetFullFilePath(filePath, WindyLuacManager.EnvFullPath, "lua", "luac", out filePath))
             {
                 _logger.LogErro($"File: {filePath} found in neither windy env path nor working directory!");
                 return;
             }
             #endregion
             byte[] sendres = compiled
-                ? await windyExecute.GetSendableWindyProtobufFromFile(filePath)
-                : await windyExecute.CompileSendableWindyProtobuf(filePath);
+                ? await WindyLuacManager.GetSendableWindyProtobufFromFile(filePath)
+                : await WindyLuacManager.CompileSendableWindyProtobuf(filePath);
             #region Confirm
             bool permitted = false;
             FileInfo luafileInfo = new(filePath);
@@ -274,7 +190,7 @@ namespace csharp_Protoshift.Commands
 
         private Task HandleSetEnvAsync(WindySetEnvConfig opt)
         {
-            windyExecute.EnvPath = opt.DirectoryPath;
+            WindyLuacManager.EnvPath = opt.DirectoryPath;
             _logger.LogInfo($"OK, " +
                 Directory.EnumerateFiles(opt.DirectoryPath, "*.lua",
                 SearchOption.TopDirectoryOnly).Count() +
@@ -284,7 +200,7 @@ namespace csharp_Protoshift.Commands
 
         private async Task HandleSetLuacAsync(WindySetLuacConfig opt)
         {
-            if (await windyExecute.TryModifyLuacExecutablePath(opt.FilePath, opt.TargetOS))
+            if (await WindyLuacManager.TryModifyLuacExecutablePath(opt.FilePath, opt.TargetOS))
             {
                 _logger.LogInfo($"Successfully modified lua compiler path for {opt.TargetOS}. This will be sync to config.json on exit.");
             }
@@ -296,7 +212,7 @@ namespace csharp_Protoshift.Commands
 
         private Task HandleSetTempPathAsync(WindySetTempPathConfig opt)
         {
-            if (windyExecute.SetCompiledTempPath(opt.TempPath))
+            if (WindyLuacManager.SetCompiledTempPath(opt.TempPath))
             {
                 _logger.LogInfo($"Successfully modified luac temp path, temp files are moved successfully. This will be sync to config.json on exit.");
             }

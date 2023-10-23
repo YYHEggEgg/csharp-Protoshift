@@ -20,6 +20,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Images\**" />
+    <EmbeddedResource Remove="Images\**" />
+    <None Remove="Images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="XC.RSAUtil\**" />
+    <EmbeddedResource Remove="XC.RSAUtil\**" />
+    <None Remove="XC.RSAUtil\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
     <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.0" />
@@ -36,7 +48,7 @@
     <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
     <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />
     <ProjectReference Include="..\ProtoshiftHandlers\ProtoshiftHandlers.csproj" />
-    <ProjectReference Include="..\XC.RSAUtil\XC.RSAUtil.csproj" />
+    <ProjectReference Include="XC.RSAUtil\XC.RSAUtil.csproj" />
   </ItemGroup>
 
 </Project>

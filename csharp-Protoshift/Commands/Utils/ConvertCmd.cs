@@ -1,7 +1,4 @@
-﻿using TextCopy;
-using YYHEggEgg.Logger;
-
-namespace csharp_Protoshift.Commands.Utils
+﻿namespace csharp_Protoshift.Commands.Utils
 {
     internal class ConvertCmd : CommandHandlerBase
     {

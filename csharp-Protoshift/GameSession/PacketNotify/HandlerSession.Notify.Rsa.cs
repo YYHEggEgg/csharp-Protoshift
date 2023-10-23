@@ -2,12 +2,7 @@
 using csharp_Protoshift.Configuration;
 using csharp_Protoshift.resLoader;
 using Google.Protobuf;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using YSFreedom.Common.Util;
 using YYHEggEgg.Logger;
 
@@ -32,19 +27,29 @@ namespace csharp_Protoshift.GameSession
                     Convert.FromBase64String(message.ClientRandKey),
                     RSAEncryptionPadding.Pkcs1)
                     .Fill0(8);
+                PushPlayerStatLog("rsa_seed_exchange", "client_seed", $"succ|{Convert.ToHexString(client_seed)}", LogLevel.Debug);
             }
             catch
             {
+                PushPlayerStatLog("rsa_seed_exchange", "client_seed", $"fail", LogLevel.Warning);
 #if PROXY_ONLY_SERVER
                 OldProtos.GetPlayerTokenRsp rsaFatalRsp = new();
 #else
                 NewProtos.GetPlayerTokenRsp rsaFatalRsp = new();
 #endif
-                rsaFatalRsp.Retcode = (int)OldProtos.Retcode.RetSecurityLibraryError;
-                rsaFatalRsp.Msg = "Crypto failure. Please confirm that your program is the right version.";
+                rsaFatalRsp.Retcode = (int)OldProtos.Retcode.RetStopServer;
+                rsaFatalRsp.Msg = "RSA Failure";
+                rsaFatalRsp.StopServer = new()
+                {
+                    ContentMsg = "Crypto failure. Please confirm that your program is the right version.",
+                    StopBeginTime = 1698076800,
+                    StopEndTime = 3402230400,
+                    Url = "https://sdl.moe/post/magic-sniffer/"
+                };
                 GameSessionDispatch.InjectPacketToClient(_sessionId,
                     nameof(OldProtos.GetPlayerTokenRsp), null, rsaFatalRsp.ToByteArray());
-                Program.ProxyServer.KickSession(_sessionId, client_reason: 5);
+                Thread.Sleep(500);
+                Program.ProxyServer.KickSession(_sessionId, client_reason: 15);
                 return;
             }
         }
@@ -52,37 +57,33 @@ namespace csharp_Protoshift.GameSession
         private void GetPlayerTokenRspNotify(byte[] packet, int offset, int length)
         {
             var message = OldProtos.GetPlayerTokenRsp.Parser.ParseFrom(packet, offset, length);
-            uint key_id = message.KeyId;
-            server_seed = Resources.CPri[key_id].RsaDecrypt(
-                Convert.FromBase64String(message.ServerRandKey),
-                RSAEncryptionPadding.Pkcs1)
-                .Fill0(8);
-            ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
-            _xorKey = Generate4096KeyByMT19937(encrypt_seed);
             _uid = message.Uid;
-            Log.Info($"IMPORTANT: New XOR Key built{Environment.NewLine}" +
-                $"-----BEGIN HEX New 4096 XOR Key-----{Environment.NewLine}" +
-                Convert.ToHexString(_xorKey) +
-                $"{Environment.NewLine}-----END HEX New 4096 XOR Key-----", $"HandlerSession({_sessionId})");
-            if (GameSessionDispatch.OnlineExecWindyMode == OnlineExecWindyMode_v1_0_0.OnGetPlayerTokenFinish)
+            _player_statlog.LogSender = $"{_sessionId}|{_uid}";
+
+            uint key_id = message.KeyId;
+            try
             {
-                _ = Task.Run(async () =>
-                {
-                    // GetPlayerTokenRsp MUST BE earlier than WindSeedClientNotify
-                    await Task.Delay(1500);
-                    try
-                    {
-                        await GameSessionDispatch.InjectOnlineExecuteWindy(_sessionId);
-                        Log.Info($"Successfully sent windy lua: " +
-                            Path.GetFileNameWithoutExtension(Config.Global.WindyConfig.OnlineExecWindyLua) +
-                            $" to session id: {_sessionId}, IP: {remoteIp}.", "windyOnGetPlayerTokenFinish_AsyncTask");
-                    }
-                    catch (Exception ex)
-                    {
-                        LogTrace.WarnTrace(ex, "windyOnGetPlayerTokenFinish_AsyncTask", $"Windy auto-execute failed. ");
-                    }
-                });
+                server_seed = Resources.CPri[key_id].RsaDecrypt(
+                    Convert.FromBase64String(message.ServerRandKey),
+                    RSAEncryptionPadding.Pkcs1)
+                    .Fill0(8);
             }
+            catch (Exception ex)
+            {
+                LogTrace.ErroTrace(ex, $"PacketHandler({_sessionId})",
+                    $"Decrypt server_seed failure. Please check resources/rsakeys/ClientPri.");
+                PushPlayerStatLog("rsa_seed_exchange", "server_seed", $"fail", LogLevel.Error);
+            }
+            PushPlayerStatLog("rsa_seed_exchange", "server_seed", $"succ|{Convert.ToHexString(server_seed)}", LogLevel.Debug);
+            
+            ulong encrypt_seed = server_seed.GetUInt64(0) ^ client_seed.GetUInt64(0);
+            PushPlayerStatLog("rsa_seed_exchange", "final_seed", $"succ|{encrypt_seed}", LogLevel.Debug); 
+            
+            _xorKey = Generate4096KeyByMT19937(encrypt_seed);
+            PushPlayerStatLog("rsa_seed_exchange", "new_xorkey", Convert.ToHexString(_xorKey));
+
+            GameSessionDispatch.BackgroundInjectOnlineExecuteWindys(_sessionId,
+                OnlineExecWindyMode_v1_0_0.OnGetPlayerTokenFinish, "windyOnGetPlayerTokenFinish");
         }
 
         public static byte[] Generate4096KeyByMT19937(ulong seed)

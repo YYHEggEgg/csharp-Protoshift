@@ -14,13 +14,18 @@ namespace csharp_Protoshift.Configuration
         public string? Path_linux64 { get; set; }
     }
 
+    public class OnlineExecWindyInfo_v1_0_1
+    {
+        public string LuaFileName { get; set; }
+        public OnlineExecWindyMode_v1_0_0 OnlineExecMode { get; set; }
+    }
+
     public class WindyConfig_v1_0_1
     {
         public WindyLuacOverridePaths_v1_0_1? WindyLuacOverridePaths { get; set; }
         public string WindyEnvironmentPath { get; set; }
         public string WindyCompiledTempPath { get; set; }
-        public OnlineExecWindyMode_v1_0_0 OnlineExecWindyMode { get; set; }
-        public string? OnlineExecWindyLua { get; set; }
+        public List<OnlineExecWindyInfo_v1_0_1> OnlineExecWindys { get; set; }
         public bool? StripDebugInformation { get; set; }
     }
 
@@ -30,6 +35,7 @@ namespace csharp_Protoshift.Configuration
 
         public string ConfigVersion { get; set; }
         public bool EnableFullPacketLog { get; set; }
+        public bool EnablePlayerStatLog { get; set; } = true;
         public string[]? PacketLogExcluding { get; set; }
         public NetConfig_v1_0_0 NetConfig { get; set; }
         public WindyConfig_v1_0_1 WindyConfig { get; set; }
@@ -76,11 +82,20 @@ namespace csharp_Protoshift.Configuration
                 var olderwindyconf = olderconfig.WindyConfig;
                 rtn.WindyConfig = new WindyConfig_v1_0_1
                 {
-                    OnlineExecWindyMode = olderwindyconf.OnlineExecWindyMode,
-                    OnlineExecWindyLua = olderwindyconf.OnlineExecWindyLua,
                     WindyCompiledTempPath = olderwindyconf.WindyCompiledTempPath ?? "windy_temp",
                     WindyEnvironmentPath = olderwindyconf.WindyEnvironmentPath ?? "resources/windy_scripts",
                 };
+                if (olderwindyconf.OnlineExecWindyLua != null)
+                {
+                    rtn.WindyConfig.OnlineExecWindys = new()
+                    {
+                        new OnlineExecWindyInfo_v1_0_1
+                        {
+                            LuaFileName = olderwindyconf.OnlineExecWindyLua,
+                            OnlineExecMode = olderwindyconf.OnlineExecWindyMode
+                        }
+                    };
+                }
             }
 
             return rtn;
