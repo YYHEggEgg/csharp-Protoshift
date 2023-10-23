@@ -15,13 +15,15 @@
 
 EN | [中文](docs/README_CN.md)
 
+csharp-Protoshift is an advanced, manageable compatibility layer for a certain anime game.
+
 **Note**: We always welcome contributors to the project. But before making contributions, please read our [Contributing note](CONTRIBUTING.md) carefully.
 
 ## Current Features
 
 - Basic Protoshift functionality. It can enhance the compatibility of certain secondary game servers.
 - Simple proxy server management commands.
-- Automatic compilation and execution of Windy (lua) scripts. The image below shows the `welcome-to-csharp-Protoshift.lua` configuration that is enabled by default in `config_example.json`. You can disable it by setting `#/WindyConfig/OnlineExecWindyMode` to `Disabled`.
+- Automatic compilation and execution of Windy (lua) scripts. The image below shows the `welcome-to-csharp-Protoshift.lua` configuration that is enabled by default in `config_example.json`. You can disable it by setting `#/WindyConfig/OnlineExecWindys/[0]/OnlineExecMode` to `Disabled`.
 
   ![Windy Preview](csharp-Protoshift/Images/windy_welcome-to-csharp-Protoshift.jpg)
 
