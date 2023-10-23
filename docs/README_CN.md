@@ -7,7 +7,15 @@
     <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/YYHEggEgg/csharp-Protoshift/pull-request-check.yml?branch=development&logo=github&style=for-the-badge">
 </div>
 
+<div align="center">
+  <a href="https://discord.gg/NcAjuCSFvZ">
+    <img alt="Discord - miHomo Software" src="https://img.shields.io/discord/1144970607616860171?label=Discord&logo=discord&style=for-the-badge">
+  </a>
+</div>
+
 [EN](../README.md) | 中文
+
+csharp-Protoshift 可为某二游提供先进、易管理的兼容性扩展。
 
 **注意**: 我们始终欢迎项目的贡献者。但在做贡献之前，请仔细阅读我们的 [贡献规则](../CONTRIBUTING.md)。
 
@@ -15,7 +23,7 @@
 
 - 基础 Protoshift 功能。其可以增强某二游服务器的兼容性。
 - 代理服务器简单管理命令。
-- Windy (lua) 脚本自动编译执行。下图显示的是在 `config_example.json` 中默认启用的 `welcome-to-csharp-Protoshift.lua` 配置，您可以通过将 `#/WindyConfig/OnlineExecWindyMode` 设为 `Disabled` 来将其关闭。
+- Windy (lua) 脚本自动编译执行。下图显示的是在 `config_example.json` 中默认启用的 `welcome-to-csharp-Protoshift.lua` 配置，您可以通过将 `#/WindyConfig/OnlineExecWindys/[0]/OnlineExecMode` 设为 `Disabled` 来将其关闭。
 
   ![Windy Preview](../csharp-Protoshift/Images/windy_welcome-to-csharp-Protoshift.jpg)
 
