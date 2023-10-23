@@ -46,7 +46,7 @@ In addition, I strongly recommend that you:
 - Ensure **stable** access to GitHub when running the build (`./update`).
 - Use VS Code for path shortcut jumps, JSON Schema support, etc.
 
-If for some reason you cannot add the above software to the system environment variables, you can instruct the program to call their absolute paths. For details on this special configuration, please refer to the [Wiki - Building - Prerequisites](docs/wiki/EN_Building.md#prerequisites) guide.
+If for some reason you cannot add the above software to the system environment variables, you can instruct the program to call their absolute paths. For details on this special configuration, please refer to the [Wiki - Building - Prerequisites](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/EN_Building#prerequisites) guide.
 
 ### Build and Run
 
@@ -76,7 +76,7 @@ After that, you need to do some configuration. Open [csharp-Protoshift/config.js
 }
 ```
 
-Uncomment and replace with your real server address to complete the minimum configuration of `config.json`. After configuring `config.json`, you should confirm whether `resources` is correctly configured. For how to correctly configure `resources`, please refer to [Wiki - Resources](docs/wiki/EN_Resources.md).
+Uncomment and replace with your real server address to complete the minimum configuration of `config.json`. After configuring `config.json`, you should confirm whether `resources` is correctly configured. For how to correctly configure `resources`, please refer to [Wiki - Resources](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/EN_Resources).
 
 Finally, run the following command to start the server immediately:
 
@@ -88,6 +88,6 @@ You can also use `./run` to start the Protoshift server at any time, and use `./
 
 ## More Usage
 
-- For exporting stable release versions, you can refer to the [Wiki - Building - Exporting a Single Release Version](docs/wiki/EN_Building.md#exporting-a-single-release-version) guide.
-- For more specific command usage, you can refer to the [Wiki - Commands](docs/wiki/EN_Commands.md) guide.
-- The build uses the Proto branches defined in the [default behavior file](HandlerGenerator/Gencode_Configuration/default_protobuf_branches.txt). For using other Proto branches or changing the repository source, you can refer to the [Wiki - Building - Proto Remote Fetch Management](docs/wiki/EN_Building.md#proto-remote-fetch-management) guide.
+- For exporting stable release versions, you can refer to the [Wiki - Building - Exporting a Single Release Version](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/EN_Building#exporting-a-single-release-version) guide.
+- For more specific command usage, you can refer to the [Wiki - Commands](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/EN_Commands) guide.
+- The build uses the Proto branches defined in the [default behavior file](HandlerGenerator/Gencode_Configuration/default_protobuf_branches.txt). For using other Proto branches or changing the repository source, you can refer to the [Wiki - Building - Proto Remote Fetch Management](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/EN_Building#proto-remote-fetch-management) guide.

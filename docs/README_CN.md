@@ -46,7 +46,7 @@ csharp-Protoshift 可为某二游提供先进、易管理的兼容性扩展。
 - 在运行构建（`./update`）时保证对 GitHub 的**稳定**访问。
 - 使用 VS Code 以获得路径快捷跳转、JSON Schema 等支持。
 
-如果您由于某些原因无法将以上软件添加到系统环境变量，可以指示程序调用其绝对路径。有关进行这种特殊配置的细节，请参见 [Wiki - Building - 前置环境需求](wiki/CN_Building.md#前置环境需求) 指南。
+如果您由于某些原因无法将以上软件添加到系统环境变量，可以指示程序调用其绝对路径。有关进行这种特殊配置的细节，请参见 [Wiki - Building - 前置环境需求](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/CN_Building#前置环境需求) 指南。
 
 ### 构建并运行
 
@@ -76,7 +76,7 @@ cd csharp-Protoshift
 }
 ```
 
-取消注释并以您的真实服务器地址替换，就可以完成 `config.json` 的最小配置。配置完 `config.json` 后，应确认 `resources` 是否正确配置。有关如何对 `resources` 进行正确配置，请参阅 [Wiki - Resources](wiki/CN_Resources.md).
+取消注释并以您的真实服务器地址替换，就可以完成 `config.json` 的最小配置。配置完 `config.json` 后，应确认 `resources` 是否正确配置。有关如何对 `resources` 进行正确配置，请参阅 [Wiki - Resources](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/CN_Resources).
 
 最后运行以下命令即可立刻启动服务器：
 
@@ -88,6 +88,6 @@ cd csharp-Protoshift
 
 ## 更多用法
 
-- 有关导出稳定的发布版本，您可以参见 [Wiki - Building - 导出单个发布版本](wiki/CN_Building.md#导出单个发布版本) 指南。
-- 有关指令更具体的用法，您可以参见 [Wiki - Commands](wiki/CN_Commands.md) 指南。
-- 构建时使用 [默认行为文件](../HandlerGenerator/Gencode_Configuration/default_protobuf_branches.txt) 中定义的 Proto 分支。有关使用其他 Proto 分支或更换仓库源，您可以参见 [Wiki - Building - Proto 远程抓取管理](wiki/CN_Building.md#proto-远程抓取管理) 指南。
+- 有关导出稳定的发布版本，您可以参见 [Wiki - Building - 导出单个发布版本](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/CN_Building#导出单个发布版本) 指南。
+- 有关指令更具体的用法，您可以参见 [Wiki - Commands](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/CN_Commands) 指南。
+- 构建时使用 [默认行为文件](../HandlerGenerator/Gencode_Configuration/default_protobuf_branches.txt) 中定义的 Proto 分支。有关使用其他 Proto 分支或更换仓库源，您可以参见 [Wiki - Building - Proto 远程抓取管理](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/CN_Building#proto-远程抓取管理) 指南。
