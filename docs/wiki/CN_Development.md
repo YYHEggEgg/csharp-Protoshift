@@ -7,6 +7,7 @@
 - [`latest.packet.log` 注解](#latestpacketlog-注解)
 - [`latest.player.stat.log` 注解](#latestplayerstatlog-注解)
 - [OrderedPacket 策略](#orderedpacket-策略)
+- [自行搭建 Protos 远程存储库](#自行搭建-protos-远程存储库)
 
 ## Packet Notify 中间件
 
@@ -208,3 +209,36 @@ Warn|1001|10000|skill_issue_detect(async)|PingRsp|new|{}
 在本 Protoshift 的开发过程中，早期处理该问题时采用过异步处理、队列同步的模式，但由于实践中较差的性能而被放弃。现在，对于强有序的包而言，**必须等上一个处理完并发出后才会开始处理下一个**。
 
 目前 Protoshift 采用的是 `unordered` 策略，即除了小部分包其他包都是强有序处理的。你可以通过更改 `csharp-Protoshift/GameSession/Protoshift/HandlerSession.Protoshift.cs` 中的 `List<string> unordered_messages` 来改变哪些包允许在后台进行处理并无序传输。
+
+## 自行搭建 Protos 远程 Git 存储库
+
+目前供一般用户使用的 Proto 存储库是我们的 [mihomo-protos](https://github.com/YYHEggEgg/mihomo-protos). 
+
+显然，最简单的方式便是直接复刻该仓库，并在此基础上进行修改。如果这样，你只需要注意 `protostat.json` 的格式：
+
+```json
+{
+    "$schema": "protostat_schema.json",
+    "CurrentStat": "Valid",
+    "ReleaseTime": "2023-10-23T06:12:00+00:00"
+}
+```
+
+`ReleaseTime` 用于标明 `Proto` 的版本，其实际上仅用于与其他分发版本进行同步，Proto 更新本身仅取决于 Git 拉取。如果该仓库永不设置 `RedirectUrl`，则可以不更改任何值。
+
+接下来介绍可供 csharp-Protoshift 使用的 Proto 仓库格式：
+
+- `Protos` 内包含所有目标 Proto. 尽量保证其中不存在子目录，否则可能引发未知问题。
+- `cmdid.csv` 中包含 Proto 名称与 CmdId 的对应关系。不存在表头，仅有两列，分别为名称与数字。
+- 如果供您或您的组织内部使用，`ThirdPartyLicenses` 不是必需的。`compileprotos` 等脚本同理。
+- 至少保留一个 `protostat.json`，其中须指明 `CurrentStat` 为 `Valid`。
+- 采用以下 `.gitignore` 文件：
+
+  ```ignore
+  /Compiled
+  /Proto2json_Output
+  ```
+
+- 分支名就是 Proto 版本的标识。如果您像 `mihomo-protos` 一样有一个作为基而不存放实际 Proto 的主分支，建议您将其 `protostat.json` 中 `CurrentStat` 设为 `Deprecated`.
+
+搭建自己的 Proto Git 远程存储库后，您可能需要使您的合作者使用新的源或变更分支。有关详细信息，请参阅 [Wiki - Building - Proto 远程抓取管理](CN_Building.md#proto-远程抓取管理)。
