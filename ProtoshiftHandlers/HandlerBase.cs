@@ -8,6 +8,13 @@ namespace csharp_Protoshift.Enhanced.Handlers
     {
         public abstract TOldProtocol? NewShiftToOld(TNewProtocol? newprotocol);
         public abstract TNewProtocol? OldShiftToNew(TOldProtocol? oldprotocol);
+
+        public abstract TNewProtocol GetNewShiftToOldJitInstance();
+        public virtual void RunJit()
+        {
+            var instance = NewShiftToOld(GetNewShiftToOldJitInstance());
+            OldShiftToNew(instance);
+        }
     }
 
     public abstract class HandlerBase
@@ -25,10 +32,17 @@ namespace csharp_Protoshift.Enhanced.Handlers
     }
 
     public abstract class HandlerEnumBase<TNewProtocol, TOldProtocol>
-        where TNewProtocol : System.Enum
-        where TOldProtocol : System.Enum
+        where TNewProtocol : struct, System.Enum
+        where TOldProtocol : struct, System.Enum
     {
         public abstract TOldProtocol NewShiftToOld(TNewProtocol newprotocol);
         public abstract TNewProtocol OldShiftToNew(TOldProtocol oldprotocol);
+
+        public virtual TNewProtocol GetNewShiftToOldJitInstance() => Enum.GetValues<TNewProtocol>()[0];
+        public virtual void RunJit()
+        {
+            var instance = NewShiftToOld(GetNewShiftToOldJitInstance());
+            OldShiftToNew(instance);
+        }
     }
 }

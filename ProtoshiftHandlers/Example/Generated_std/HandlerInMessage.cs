@@ -48,6 +48,18 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             newprotocol.Code = oldprotocol.Code;
             return newprotocol;
         }
+
+        #region JIT API
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
+        public override NewProtos.InMessage GetNewShiftToOldJitInstance()
+        {
+            NewProtos.InMessage newprotocol = new();
+            newprotocol.InStr = "miHomo Technology Presents";
+            newprotocol.Code = 20231024;
+            return newprotocol;
+        }
+        #endregion
         #endregion
 
         #region Outer bytes invoke

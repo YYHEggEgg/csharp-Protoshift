@@ -74,6 +74,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             return oldprotocol;
         }
 
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
         public override NewProtos.ExampleProto? OldShiftToNew(OldProtos.ExampleProto? oldprotocol)
         {
             if (oldprotocol == null) return null;
@@ -109,6 +111,20 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             #endregion
             return newprotocol;
         }
+
+        #region JIT API
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
+        public override NewProtos.ExampleProto GetNewShiftToOldJitInstance()
+        {
+            NewProtos.ExampleProto newprotocol = new();
+            newprotocol.EgEnum = handler_ExampleEnum.GetNewShiftToOldJitInstance();
+            newprotocol.EgStr = "miHomo Technology Presents";
+            newprotocol.EgProto2.Add("miHomo Technology Presents", handler_ExampleProto2.GetNewShiftToOldJitInstance());
+            newprotocol.AEnum = handler_ExampleEnum.GetNewShiftToOldJitInstance();
+            return newprotocol;
+        }
+        #endregion
         #endregion
 
         public bool HasSkillIssue = true;

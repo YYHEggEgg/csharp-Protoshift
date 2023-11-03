@@ -63,6 +63,18 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             newprotocol.ListStr.AddRange(oldprotocol.ListStr);
             return newprotocol;
         }
+
+        #region JIT API
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
+        public override NewProtos.ExampleProto2 GetNewShiftToOldJitInstance()
+        {
+            NewProtos.ExampleProto2 newprotocol = new();
+            newprotocol.ExBytes = ByteString.CopyFrom("Masquerade of the GIO", System.Text.Encoding.Default);
+            newprotocol.ListStr.Add("miHomo Technology Presents");
+            return newprotocol;
+        }
+        #endregion
         #endregion
 
         public bool HasSkillIssue = true;
@@ -151,6 +163,17 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                 newprotocol.InnerCode = oldprotocol.InnerCode;
                 return newprotocol;
             }
+
+            #region JIT API
+            [System.Diagnostics.DebuggerNonUserCode]
+            [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
+            public override NewProtos.ExampleProto2.Types.ExampleInnerProto GetNewShiftToOldJitInstance()
+            {
+                NewProtos.ExampleProto2.Types.ExampleInnerProto newprotocol = new();
+                newprotocol.InnerCode = 20231024;
+                return newprotocol;
+            }
+            #endregion
             #endregion
 
             public bool HasSkillIssue = true;
