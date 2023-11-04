@@ -3,7 +3,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
     public partial class HandlerCodeWriter
     {
         /// <summary>
-        /// Generate a line of code that shift the Map Field.
+        /// Generate a line of code that shift the Oneof Field.
         /// </summary>
         /// <param name="fi">The BasicCodeWriter (Generated outside).</param>
         /// <param name="oneofFieldName">The oneof Entry name, the original name from the proto file.</param>
@@ -70,7 +70,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         }
 
         /// <summary>
-        /// Generate a line of code that shift the Map Field.
+        /// Generate a series of code that shift the Oneof Fields.
         /// </summary>
         /// <param name="fi">The BasicCodeWriter (Generated outside).</param>
         /// <param name="oldmessage">The analyzed old message.</param>
@@ -110,7 +110,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         }
 
         /// <summary>
-        /// Generate a line of code that shift the skill issued Map Field, but return the object.
+        /// Generate a line of code that shift the skill issued Oneof Field, but return the object.
         /// </summary>
         /// <param name="fi">The BasicCodeWriter (Generated outside).</param>
         /// <param name="oneofFieldName">The oneof Entry name, the original name from the proto file.</param>
@@ -131,5 +131,54 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     belongToMessageCompileName, baseMessage_friendlyName);
             }
         }
+
+        #region JIT API
+        /// <summary>
+        /// Generate a series of code that assign an value for
+        /// the Protoshift example instance, which is used to
+        /// trigger the JIT process.
+        /// </summary>
+        /// <param name="fi">The BasicCodeWriter (Generated outside).</param>
+        /// <param name="oldmessage">The analyzed old message.</param>
+        /// <param name="newmessage">The analyzed new message.</param>
+        private static void GenerateOneofFieldsJitAPI(ref BasicCodeWriter fi,
+            MessageResult oldmessage, MessageResult newmessage)
+        {
+            var oneofFieldsCollection = CollectionHelper.GetCompareResult(
+                oldmessage.oneofFields, newmessage.oneofFields, OneofResult.NameComparer);
+            foreach (var oneof_pair in oneofFieldsCollection.IntersectItems)
+            {
+                GenerateOneofFieldJitAPI(ref fi, oneof_pair.LeftItem.oneofEntryName, oldmessage.messageName,
+                    oneof_pair.LeftItem, oneof_pair.RightItem,
+                    oldmessage.messageName);
+            }
+        }
+
+        /// <summary>
+        /// Generate a line of code that assign a Oneof Field
+        /// for the Protoshift example instance, which is used
+        /// to trigger the JIT process.
+        /// </summary>
+        /// <param name="fi">The BasicCodeWriter (Generated outside).</param>
+        /// <param name="oneofFieldName">The oneof Entry name, the original name from the proto file.</param>
+        /// <param name="belongToMessageCompileName">The compiled name of the message whom the oneof field belongs to, which can be identified with the compiler.</param>
+        /// <param name="oldoneofField">The analyzed old oneofField.</param>
+        /// <param name="newoneofField">The analyzed new oneofField.</param>
+        /// <param name="baseMessage_friendlyName">Give the param can let the code cope with the case that the message name == field name (compiled field name will add _)</param>
+        private static void GenerateOneofFieldJitAPI(ref BasicCodeWriter fi, string oneofFieldName, string belongToMessageCompileName,
+            OneofResult oldoneofField, OneofResult newoneofField, 
+            string? baseMessage_friendlyName = null)
+        {
+            string fieldName = Tools.GetProtocCompiledName(oneofFieldName) ?? "";
+            if (fieldName == baseMessage_friendlyName) fieldName += '_';
+            var oneofInnerFieldsCollection = CollectionHelper.GetCompareResult(
+                oldoneofField.oneofInnerFields, newoneofField.oneofInnerFields, CommonResult.NameComparer);
+            var oneof_pair = oneofInnerFieldsCollection.IntersectItems.First();
+                    var commonFieldName = oneof_pair.LeftItem.fieldName;
+            GenerateCommonFieldJitAPI(ref fi, commonFieldName,
+                oneof_pair.LeftItem, oneof_pair.RightItem,
+                baseMessage_friendlyName);
+        }
+        #endregion
     }
 }

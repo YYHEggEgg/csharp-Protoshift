@@ -15,7 +15,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="baseMessage_friendlyName">Give the param can let the code cope with the case that the message name == field name (compiled field name will add _)</param>
         private static void GenerateCommonFieldHandler(ref BasicCodeWriter fi, string commonFieldName,
             CommonResult oldcommonField, CommonResult newcommonField, bool generateForNewShiftToOld,
-            ImportTypesCollection importInfo, 
+            ImportTypesCollection importInfo,
             string? baseMessage_friendlyName = null)
         {
             if (oldcommonField.fieldType != newcommonField.fieldType
@@ -51,7 +51,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// </summary>
         private static void GenerateRepeatedCommonFieldHandler(ref BasicCodeWriter fi, string commonFieldName,
             CommonResult oldcommonField, CommonResult newcommonField, bool generateForNewShiftToOld,
-            ImportTypesCollection importInfo, 
+            ImportTypesCollection importInfo,
             string? baseMessage_friendlyName = null)
         {
             Debug.Assert(oldcommonField.IsRepeatedField);
@@ -86,7 +86,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="generateForNewShiftToOld">Whether generate code for NewShiftToOld or OldShiftToNew.</param>
         private static void GenerateCommonFieldsHandler(ref BasicCodeWriter fi,
             MessageResult oldmessage, MessageResult newmessage, bool generateForNewShiftToOld,
-            ImportTypesCollection importInfo, 
+            ImportTypesCollection importInfo,
             ref SkillIssueCollection skillIssues)
         {
             var commonFieldsCollection = CollectionHelper.GetCompareResult(
@@ -128,13 +128,13 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <param name="baseMessage_friendlyName">Give the param can let the code cope with the case that the message name == field name (compiled field name will add _)</param>
         private static void GenerateCommonFieldOnewayAPI(ref BasicCodeWriter fi, string commonFieldName,
             CommonResult commonField, bool generateForNewShiftToOld,
-            ImportTypesCollection importInfo, 
+            ImportTypesCollection importInfo,
             string messageName, string? baseMessage_friendlyName = null)
         {
             if (commonField.IsRepeatedField)
             {
                 GenerateRepeatedCommonFieldOnewayAPI(ref fi, commonFieldName,
-                    commonField, generateForNewShiftToOld, importInfo, 
+                    commonField, generateForNewShiftToOld, importInfo,
                     messageName, baseMessage_friendlyName);
                 return;
             }
@@ -165,7 +165,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// </summary>
         private static void GenerateRepeatedCommonFieldOnewayAPI(ref BasicCodeWriter fi, string commonFieldName,
             CommonResult commonField, bool generateForNewShiftToOld,
-            ImportTypesCollection importInfo, 
+            ImportTypesCollection importInfo,
             string messageName, string? baseMessage_friendlyName = null)
         {
             Debug.Assert(commonField.IsRepeatedField);
@@ -203,5 +203,75 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.ExitCodeRegion();
             }
         }
+
+        #region JIT API
+        /// <summary>
+        /// Generate a series of code that assign an value for
+        /// the Protoshift example instance, which is used to
+        /// trigger the JIT process.
+        /// </summary>
+        /// <param name="fi">The BasicCodeWriter (Generated outside).</param>
+        /// <param name="oldmessage">The analyzed old message.</param>
+        /// <param name="newmessage">The analyzed new message.</param>
+        private static void GenerateCommonFieldsJitAPI(ref BasicCodeWriter fi,
+            MessageResult oldmessage, MessageResult newmessage)
+        {
+            var commonFieldsCollection = CollectionHelper.GetCompareResult(
+                oldmessage.commonFields, newmessage.commonFields, CommonResult.NameComparer);
+            foreach (var common_pair in commonFieldsCollection.IntersectItems)
+            {
+                GenerateCommonFieldJitAPI(ref fi, common_pair.LeftItem.fieldName,
+                    common_pair.LeftItem, common_pair.RightItem, 
+                    oldmessage.messageName);
+            }
+        }
+
+        /// <summary>
+        /// Generate a line of code that assign a Common Field
+        /// for the Protoshift example instance, which is used
+        /// to trigger the JIT process.
+        /// </summary>
+        /// <param name="fi">The BasicCodeWriter (Generated outside).</param>
+        /// <param name="commonFieldName">The commonField name, the original name from the proto file.</param>
+        /// <param name="oldcommonField">The analyzed old commonField.</param>
+        /// <param name="newcommonField">The analyzed new commonField.</param>
+        /// <param name="baseMessage_friendlyName">Give the param can let the code cope with the case that the message name == field name (compiled field name will add _)</param>
+        private static void GenerateCommonFieldJitAPI(ref BasicCodeWriter fi, string commonFieldName,
+            CommonResult oldcommonField, CommonResult newcommonField,
+            string? baseMessage_friendlyName = null)
+        {
+            if (oldcommonField.fieldType != newcommonField.fieldType
+                || oldcommonField.IsRepeatedField != newcommonField.IsRepeatedField)
+            {
+                return;
+            }
+            if (oldcommonField.IsRepeatedField)
+            {
+                GenerateRepeatedCommonFieldJitAPI(ref fi, commonFieldName,
+                    oldcommonField, newcommonField, 
+                    baseMessage_friendlyName);
+                return;
+            }
+            string fieldName = Tools.GetProtocCompiledName(commonFieldName) ?? "";
+            if (fieldName == baseMessage_friendlyName) fieldName += '_';
+            string newcaller = $"newprotocol.{fieldName}";
+            fi.WriteLine($"{newcaller} = {GetTypeJitParamter(oldcommonField.fieldType)};");
+        }
+
+        /// <summary>
+        /// Inner method -- should not be invoked out of this code file.
+        /// </summary>
+        private static void GenerateRepeatedCommonFieldJitAPI(ref BasicCodeWriter fi, string commonFieldName, 
+            CommonResult oldcommonField, CommonResult newcommonField,
+            string? baseMessage_friendlyName)
+        {
+            Debug.Assert(oldcommonField.IsRepeatedField);
+            Debug.Assert(newcommonField.IsRepeatedField);
+            string fieldName = Tools.GetProtocCompiledName(commonFieldName) ?? "";
+            if (fieldName == baseMessage_friendlyName) fieldName += '_';
+            string newcaller = $"newprotocol.{fieldName}";
+            fi.WriteLine($"{newcaller}.Add({GetTypeJitParamter(oldcommonField.fieldType)});");
+        }
+        #endregion
     }
 }

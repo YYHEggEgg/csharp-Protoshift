@@ -43,6 +43,19 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             handler_fuck.OldShiftToNew(oldprotocol.AllowControllerMap, newprotocol.AllowControllerList);
             return newprotocol;
         }
+
+        #region JIT API
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.1.0")]
+        public override NewProtos.GCGMsgPhaseChange GetNewShiftToOldJitInstance()
+        {
+            NewProtos.GCGMsgPhaseChange newprotocol = new();
+            newprotocol.AfterPhase = handler_GCGPhaseType.GetNewShiftToOldJitInstance();
+            newprotocol.AllowControllerList.Add(handler_fuck.GetNewShiftToOldJitInstance());
+            newprotocol.BeforePhase = handler_GCGPhaseType.GetNewShiftToOldJitInstance();
+            return newprotocol;
+        }
+        #endregion
         #endregion
 
         [System.Diagnostics.DebuggerNonUserCode]

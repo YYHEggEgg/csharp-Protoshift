@@ -764,7 +764,8 @@ internal class Program
             for (int i = 0; i < 6; i++) mergeChanges.Add(new());
         }
         #endregion
-        GenProtoshiftDispatch.Run(cmdData, protoshiftDispatch_filePath, mergeChanges);
+        GenProtoshiftDispatch.Run(cmdData, protoshiftDispatch_filePath, 
+            messageResults, enumResults, mergeChanges);
         recoverbackups.Remove(protoshiftDispatch_filePath);
         #endregion
 

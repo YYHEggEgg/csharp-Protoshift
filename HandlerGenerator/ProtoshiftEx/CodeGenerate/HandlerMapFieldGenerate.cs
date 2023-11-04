@@ -167,5 +167,55 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.ExitCodeRegion();
             }
         }
+
+        #region JIT API
+        /// <summary>
+        /// Generate a series of code that assign an value for
+        /// the Protoshift example instance, which is used to
+        /// trigger the JIT process.
+        /// </summary>
+        /// <param name="fi">The BasicCodeWriter (Generated outside).</param>
+        /// <param name="oldmessage">The analyzed old message.</param>
+        /// <param name="newmessage">The analyzed new message.</param>
+        private static void GenerateMapFieldsJitAPI(ref BasicCodeWriter fi,
+            MessageResult oldmessage, MessageResult newmessage)
+        {
+            var mapFieldsCollection = CollectionHelper.GetCompareResult(
+                oldmessage.mapFields, newmessage.mapFields, MapResult.NameComparer);
+            foreach (var map_pair in mapFieldsCollection.IntersectItems)
+            {
+                GenerateMapFieldJitAPI(ref fi, map_pair.LeftItem.fieldName,
+                    map_pair.LeftItem, map_pair.RightItem, 
+                    oldmessage.messageName);
+            }
+        }
+
+        /// <summary>
+        /// Generate a line of code that assign a Map Field
+        /// for the Protoshift example instance, which is used
+        /// to trigger the JIT process.
+        /// </summary>
+        /// <param name="fi">The BasicCodeWriter (Generated outside).</param>
+        /// <param name="mapFieldName">The mapField name, the original name from the proto file.</param>
+        /// <param name="oldmapField">The analyzed old mapField.</param>
+        /// <param name="newmapField">The analyzed new mapField.</param>
+        /// <param name="baseMessage_friendlyName">Give the param can let the code cope with the case that the message name == field name (compiled field name will add _)</param>
+        private static void GenerateMapFieldJitAPI(ref BasicCodeWriter fi, string mapFieldName,
+            MapResult oldmapField, MapResult newmapField,
+            string? baseMessage_friendlyName = null)
+        {
+            if (oldmapField.keyType != newmapField.keyType
+                || oldmapField.valueType != newmapField.valueType)
+            {
+                return;
+            }
+            string fieldName = Tools.GetProtocCompiledName(mapFieldName) ?? "";
+            if (fieldName == baseMessage_friendlyName) fieldName += '_';
+            string newcaller = $"newprotocol.{fieldName}";
+            fi.WriteLine($"{newcaller}.Add(" +
+                $"{GetTypeJitParamter(oldmapField.keyType)}, " +
+                $"{GetTypeJitParamter(oldmapField.valueType)});");
+        }
+        #endregion
     }
 }

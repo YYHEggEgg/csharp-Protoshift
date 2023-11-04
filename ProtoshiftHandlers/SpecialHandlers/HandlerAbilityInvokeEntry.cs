@@ -496,6 +496,22 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             }
             return newprotocol;
         }
+
+        #region JIT API
+        public override NewProtos.AbilityInvokeEntry GetNewShiftToOldJitInstance()
+        {
+            NewProtos.AbilityInvokeEntry newprotocol = new();
+            newprotocol.ArgumentType = NewProtos.AbilityInvokeArgument.None;
+            newprotocol.EntityId = 20231024;
+            newprotocol.EventId = 20231024;
+            newprotocol.ForwardPeer = 20231024;
+            newprotocol.ForwardType = handler_ForwardType.GetNewShiftToOldJitInstance();
+            newprotocol.Head = handler_AbilityInvokeEntryHead.GetNewShiftToOldJitInstance();
+            newprotocol.IsIgnoreAuth = true;
+            newprotocol.TotalTickTime = 4.25;
+            return newprotocol;
+        }
+        #endregion
         #endregion
 
         public override byte[] NewShiftToOld(byte[] arr, int offset, int length)

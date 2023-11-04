@@ -40,6 +40,18 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             handler_fuck.OldShiftToNew(oldprotocol.CostMap, newprotocol.CostList);
             return newprotocol;
         }
+
+        #region JIT API
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.1.0")]
+        public override NewProtos.GCGSelectOnStageCostInfo GetNewShiftToOldJitInstance()
+        {
+            NewProtos.GCGSelectOnStageCostInfo newprotocol = new();
+            newprotocol.CardGuid = 20231024;
+            newprotocol.CostList.Add(handler_fuck.GetNewShiftToOldJitInstance());
+            return newprotocol;
+        }
+        #endregion
         #endregion
 
         [System.Diagnostics.DebuggerNonUserCode]

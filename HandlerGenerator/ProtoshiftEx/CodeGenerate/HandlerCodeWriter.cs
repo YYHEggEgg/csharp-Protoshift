@@ -101,6 +101,20 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine($"return newprotocol;");
             fi.ExitCodeRegion();
             #endregion
+            fi.WriteLine();
+            #region JIT API
+            fi.WriteLine("#region JIT API");
+            WriteNonUserCodeSign(ref fi);
+            fi.WriteLine($"public override NewProtos.{messageName} GetNewShiftToOldJitInstance()");
+            fi.EnterCodeRegion();
+            fi.WriteLine($"NewProtos.{messageName} newprotocol = new();");
+            GenerateCommonFieldsJitAPI(ref fi, oldmessage, newmessage);
+            GenerateMapFieldsJitAPI(ref fi, oldmessage, newmessage);
+            GenerateOneofFieldsJitAPI(ref fi, oldmessage, newmessage);
+            fi.WriteLine($"return newprotocol;");
+            fi.ExitCodeRegion();
+            fi.WriteLine("#endregion");
+            #endregion
             fi.WriteLine("#endregion");
             #endregion
             fi.WriteLine();

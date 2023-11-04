@@ -187,6 +187,16 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             }
             return newprotocol;
         }
+
+        #region JIT API
+        public override NewProtos.CombatInvokeEntry GetNewShiftToOldJitInstance()
+        {
+            NewProtos.CombatInvokeEntry newprotocol = new();
+            newprotocol.ArgumentType = NewProtos.CombatTypeArgument.None;
+            newprotocol.ForwardType = handler_ForwardType.GetNewShiftToOldJitInstance();
+            return newprotocol;
+        }
+        #endregion
         #endregion
 
         public override byte[] NewShiftToOld(byte[] arr, int offset, int length)

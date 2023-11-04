@@ -5,6 +5,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
     internal static class GenProtoshiftDispatch
     {
         public static void Run(CmdIdDataStructure cmdData, string genFilePath,
+            CollectionResult<MessageResult> messageResults,
+            CollectionResult<EnumResult> enumResults,
             List<Dictionary<string, MergeChange>> mergeChanges)
         {
             using (BasicCodeWriter fi = new(genFilePath))
@@ -96,27 +98,55 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.WriteLine();
                 #endregion
                 #region Other Code (Handlers)
-                var importhandlers = from importhandler in cmdData.supportedMessages
-                                     orderby importhandler
-                                     select importhandler;
+                var cmdhandlers = from cmdhandler in cmdData.supportedMessages
+                                     orderby cmdhandler
+                                     select cmdhandler;
                 fi.WriteLine("#region Handlers");
-                foreach (var importhandler in importhandlers)
+                foreach (var cmdhandler in cmdhandlers)
                 {
-                    fi.WriteLine($"private static Handler{importhandler} handler_{importhandler} = Handler{importhandler}.GlobalInstance;");
+                    fi.WriteLine($"private static Handler{cmdhandler} handler_{cmdhandler} = Handler{cmdhandler}.GlobalInstance;");
                 }
                 fi.WriteLine("#endregion");
+                fi.WriteLine();
                 #endregion
                 #region Other Code (Initialize)
-                fi.WriteLine();
                 fi.WriteLine("#region Initialize");
-                fi.WriteLine($"static ProtoshiftDispatch()");
-                fi.EnterCodeRegion();
-                foreach (var importhandler in importhandlers)
-                {
-                    fi.WriteLine($"handler_{importhandler}.NewShiftToOld(ReadOnlySpan<byte>.Empty);");
-                }
-                fi.ExitCodeRegion();
                 fi.WriteLine($"public static string Initialize() => \"ProtoshiftDispatch initialized, {cmdData.supportedMessages.Count} handlers (cmds).\";");
+                fi.WriteLine("#endregion");
+                fi.WriteLine();
+                #endregion
+                #region Other Code (JIT API)
+                var allvalidhandlernames = from validhandlername in 
+                    (from messageResultTuple in messageResults.IntersectItems
+                    select messageResultTuple.Item1.messageName).Concat(
+                        from enumResultTuple in enumResults.IntersectItems
+                        select enumResultTuple.Item1.enumName)
+                    orderby validhandlername
+                    select validhandlername;
+                fi.WriteLine("#region JIT API");
+                fi.WriteLine("/// <summary>");
+                fi.WriteLine("/// Run some methods to trigger JIT compile instantly");
+                fi.WriteLine("/// for handlers of all top level messages and enums.");
+                fi.WriteLine("/// </summary>");
+                fi.WriteLine("/// <remarks>");
+                fi.WriteLine("/// This is expected to be able to run Background,");
+                fi.WriteLine("/// and it's OK to use handlers when this is running");
+                fi.WriteLine("/// (though speed will probably be affected for JIT");
+                fi.WriteLine("/// compile process not reaching it).");
+                fi.WriteLine("/// </remarks>");
+                fi.WriteLine("public static void RunHandlersJit()");
+                fi.EnterCodeRegion();
+                fi.WriteLine($"Parallel.Invoke(");
+                fi.AddIndent();
+                foreach (var typename in allvalidhandlernames)
+                {
+                    fi.WriteLine($"Handler{typename}.GlobalInstance.RunJit,");
+                }
+                fi.WriteLine($"() => System.Diagnostics.Debug.Assert(true, \"miHomoTech <3 GIO Community\"));");
+                fi.RemoveIndent();
+                fi.WriteLine($"YYHEggEgg.Logger.Log.Info($\"Successfully finished JIT compile of " +
+                    $"{allvalidhandlernames.Count()} handlers.\", nameof(RunHandlersJit));");
+                fi.ExitCodeRegion();
                 fi.WriteLine("#endregion");
                 #endregion
                 #region Code file End

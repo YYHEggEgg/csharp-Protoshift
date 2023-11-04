@@ -126,6 +126,21 @@ namespace csharp_Protoshift
                     Log.Info(OldProtos.QueryJsonSerializer.Initialize(), "OldProtos_AsyncLoad");
                     Log.Info(NewProtos.QueryJsonSerializer.Initialize(), "NewProtos_AsyncLoad");
                 });
+                _ = Task.Run(() =>
+                {
+                    var log = Log.GetChannel($"{nameof(ProtoshiftDispatch.RunHandlersJit)}_AsyncTask");
+                    log.LogInfo($"Start running initiated Protoshift Handlers JIT in Background..");
+                    try
+                    {
+                        ProtoshiftDispatch.RunHandlersJit();
+                    }
+                    catch (Exception ex)
+                    {
+                        log.LogErroTrace(ex, "Protoshift Handlers JIT failed. " +
+                            "Please check your custom Handlers (ProtoshiftHandlers/SpecialHandlers) " +
+                            "or open an issue related to this in our repository.");
+                    }
+                });
                 Log.Info($"Protoshift server started on {bindIp}, real server at {remoteIp}.", "Entry");
                 Log.Info("Ready! Type 'help' to get command help.", "Entry");
             }
