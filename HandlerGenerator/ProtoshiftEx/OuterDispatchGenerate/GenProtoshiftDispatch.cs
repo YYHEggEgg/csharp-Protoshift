@@ -200,7 +200,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                         "byte[] body, int body_offset, int body_length)");
                     break;
                 case ShiftDataType.ReadOnlySpan:
-                    fi.WriteLine($"public static byte[] {method_identifier}(uint cmdid, ReadOnlySpan<byte> head, ReadOnlySpan<byte> body)");
+                    fi.WriteLine($"public static IMessage? {method_identifier}(uint cmdid, ReadOnlySpan<byte> head, ReadOnlySpan<byte> body)");
                     break;
                 case ShiftDataType.ByteString:
                     fi.WriteLine($"public static ByteString {method_identifier}(uint cmdid, ByteString? head, ByteString body)");

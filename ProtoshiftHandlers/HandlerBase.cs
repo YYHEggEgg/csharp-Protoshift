@@ -14,6 +14,17 @@ namespace csharp_Protoshift.Enhanced.Handlers
         {
             var instance = NewShiftToOld(GetNewShiftToOldJitInstance());
             OldShiftToNew(instance);
+            
+            var byteArray = Array.Empty<byte>();
+            var span = ReadOnlySpan<byte>.Empty;
+            var byteString = ByteString.Empty;
+            
+            NewShiftToOld(byteArray);
+            OldShiftToNew(byteArray);
+            NewShiftToOld(span);
+            OldShiftToNew(span);
+            NewShiftToOld(byteString);
+            OldShiftToNew(byteString);
         }
     }
 
@@ -22,12 +33,12 @@ namespace csharp_Protoshift.Enhanced.Handlers
         public virtual byte[] NewShiftToOld(byte[] arr)
             => NewShiftToOld(arr, 0, arr.Length);
         public abstract byte[] NewShiftToOld(byte[] arr, int offset, int length);
-        public abstract byte[] NewShiftToOld(ReadOnlySpan<byte> span);
+        public abstract IMessage? NewShiftToOld(ReadOnlySpan<byte> span);
         public abstract ByteString NewShiftToOld(ByteString bytes);
         public virtual byte[] OldShiftToNew(byte[] arr)
             => OldShiftToNew(arr, 0, arr.Length);
         public abstract byte[] OldShiftToNew(byte[] arr, int offset, int length);
-        public abstract byte[] OldShiftToNew(ReadOnlySpan<byte> span);
+        public abstract IMessage? OldShiftToNew(ReadOnlySpan<byte> span);
         public abstract ByteString OldShiftToNew(ByteString bytes);
     }
 

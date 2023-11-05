@@ -27,7 +27,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                         newprotocol.MessageId, null, newprotocol.Body);
                 }
             }
-            catch (NotSupportedException ex)
+            catch (NotSupportedException)
             {
                 Log.Warn($"HandlerUnionCmd meets error so dropped a packet: Cmd {newprotocol.MessageId} (new) not supported.", nameof(HandlerUnionCmd));
                 return new OldProtos.UnionCmd();
@@ -76,18 +76,48 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         #endregion
         #endregion
 
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
         public override byte[] NewShiftToOld(byte[] arr, int offset, int length)
-            => NewShiftToOld(newproto_parser_base.ParseFrom(arr, offset, length)).ToByteArray();
-        public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)
-            => NewShiftToOld(newproto_parser_base.ParseFrom(span)).ToByteArray();
+        {
+            var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(arr, offset, length));
+            return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+        }
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
+        public override IMessage? NewShiftToOld(ReadOnlySpan<byte> span)
+        {
+            var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(span));
+            return rtn;
+        }
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
         public override ByteString NewShiftToOld(ByteString bytes)
-            => NewShiftToOld(newproto_parser_base.ParseFrom(bytes)).ToByteString();
+        {
+            var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(bytes));
+            return rtn == null ? ByteString.Empty : rtn.ToByteString();
+        }
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
         public override byte[] OldShiftToNew(byte[] arr, int offset, int length)
-            => OldShiftToNew(oldproto_parser_base.ParseFrom(arr, offset, length)).ToByteArray();
-        public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)
-            => OldShiftToNew(oldproto_parser_base.ParseFrom(span)).ToByteArray();
+        {
+            var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(arr, offset, length));
+            return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+        }
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
+        public override IMessage? OldShiftToNew(ReadOnlySpan<byte> span)
+        {
+            var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(span));
+            return rtn;
+        }
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
         public override ByteString OldShiftToNew(ByteString bytes)
-            => OldShiftToNew(oldproto_parser_base.ParseFrom(bytes)).ToByteString();
+        {
+            var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(bytes));
+            return rtn == null ? ByteString.Empty : rtn.ToByteString();
+        }
 
         private static HandlerUnionCmd _globalOnlyInstance = new HandlerUnionCmd();
         public static HandlerUnionCmd GlobalInstance => _globalOnlyInstance;

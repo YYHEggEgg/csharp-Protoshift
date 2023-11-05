@@ -20,6 +20,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine($"public class Handler{friendly_messageName} ",
                 $": HandlerBase<NewProtos.{messageName}, OldProtos.{messageName}>");
             fi.EnterCodeRegion();
+            var innermessage_collection = CollectionHelper.GetCompareResult(
+                oldmessage.messageFields, newmessage.messageFields, MessageResult.NameComparer);
+            var innerenum_collection = CollectionHelper.GetCompareResult(
+                oldmessage.enumFields, newmessage.enumFields, EnumResult.NameComparer);
 
             #region Base Type
             fi.WriteLine("#region Base Type");
@@ -113,6 +117,32 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             GenerateOneofFieldsJitAPI(ref fi, oldmessage, newmessage);
             fi.WriteLine($"return newprotocol;");
             fi.ExitCodeRegion();
+
+            var subtypes = from name in 
+                (from innerMessage in innermessage_collection.IntersectItems
+                select innerMessage.LeftItem.messageName).Concat(
+                    from innerEnum in innerenum_collection.IntersectItems
+                    select innerEnum.LeftItem.enumName)
+                orderby name
+                select name;
+            fi.WriteLine();
+            WriteNonUserCodeSign(ref fi);
+            fi.WriteLine($"public override void RunJit()");
+            fi.EnterCodeRegion();
+            fi.WriteLine("var instance = GetNewShiftToOldJitInstance();");
+            fi.WriteLine("OldShiftToNew(NewShiftToOld(instance.ToByteArray()));");
+            fi.WriteLine("OldShiftToNew(new Span<byte>(NewShiftToOld(new Span<byte>(instance.ToByteArray())).ToByteArray()));");
+            fi.WriteLine("OldShiftToNew(NewShiftToOld(instance.ToByteString()));");
+            if (subtypes.Any())
+            {
+                fi.WriteLine();
+                foreach (var subname in subtypes)
+                {
+                    fi.WriteLine($"Handler{subname}.GlobalInstance.RunJit();");
+                }
+            }
+            fi.ExitCodeRegion();
+            
             fi.WriteLine("#endregion");
             #endregion
             fi.WriteLine("#endregion");
@@ -148,10 +178,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();");
             fi.ExitCodeRegion();
             WriteNonUserCodeSign(ref fi);
-            fi.WriteLine("public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)");
+            fi.WriteLine("public override IMessage? NewShiftToOld(ReadOnlySpan<byte> span)");
             fi.EnterCodeRegion();
             fi.WriteLine("var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(span));");
-            fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();");
+            fi.WriteLine("return rtn;");
             fi.ExitCodeRegion();
             WriteNonUserCodeSign(ref fi);
             fi.WriteLine("public override ByteString NewShiftToOld(ByteString bytes)");
@@ -166,10 +196,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();");
             fi.ExitCodeRegion();
             WriteNonUserCodeSign(ref fi);
-            fi.WriteLine("public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)");
+            fi.WriteLine("public override IMessage? OldShiftToNew(ReadOnlySpan<byte> span)");
             fi.EnterCodeRegion();
             fi.WriteLine("var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(span));");
-            fi.WriteLine("return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();");
+            fi.WriteLine("return rtn;");
             fi.ExitCodeRegion();
             WriteNonUserCodeSign(ref fi);
             fi.WriteLine("public override ByteString OldShiftToNew(ByteString bytes)");
@@ -185,8 +215,6 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #region Inner Messages
             fi.WriteLine();
             fi.WriteLine("#region Inner Messages");
-            var innermessage_collection = CollectionHelper.GetCompareResult(
-                oldmessage.messageFields, newmessage.messageFields, MessageResult.NameComparer);
             foreach (var inner_message in innermessage_collection.IntersectItems)
             {
                 string inner_message_name = inner_message.LeftItem.messageName;
@@ -198,8 +226,6 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #region Inner Enums
             fi.WriteLine();
             fi.WriteLine("#region Inner Enums");
-            var innerenum_collection = CollectionHelper.GetCompareResult(
-                oldmessage.enumFields, newmessage.enumFields, EnumResult.NameComparer);
             foreach (var inner_enum in innerenum_collection.IntersectItems)
             {
                 string inner_enum_name = inner_enum.LeftItem.enumName;
