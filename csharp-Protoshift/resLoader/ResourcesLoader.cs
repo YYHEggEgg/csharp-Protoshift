@@ -208,6 +208,8 @@ namespace csharp_Protoshift.resLoader
                 }
             }
             #endregion
+        
+            Resources.BasePath = resPath;
         }
         
         

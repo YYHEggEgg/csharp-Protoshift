@@ -162,13 +162,24 @@ namespace csharp_Protoshift.Enhanced.Benchmark
             HashSet<string> proto_filters = new(opt.ProtoFilters ?? Enumerable.Empty<string>());
             IEnumerable<IGrouping<string, (string protoname, ushort cmdid, bool sentByClient, byte[] body, int line_id, Int64 handlenanosec)>> select_res;
 
-            select_res = 
-                from record in readres
-                orderby (opt.OrderByPacketTime ? record.handlenanosec : record.body.Length) descending
-                orderby record.body.Length descending
-                group record by record.protoname into gr
-                where opt.ProtoFilters == null || proto_filters.Contains(gr.Key)
-                select gr;
+            if (opt.OrderByPacketTime)
+            {
+                select_res =
+                    from record in readres
+                    orderby record.handlenanosec descending
+                    group record by record.protoname into gr
+                    where opt.ProtoFilters == null || proto_filters.Contains(gr.Key)
+                    select gr;
+            }
+            else
+            {
+                select_res =
+                    from record in readres
+                    orderby record.body.Length descending
+                    group record by record.protoname into gr
+                    where opt.ProtoFilters == null || proto_filters.Contains(gr.Key)
+                    select gr;
+            }
             StringBuilder sb = new();
             foreach (var proto_gr in select_res)
             {
