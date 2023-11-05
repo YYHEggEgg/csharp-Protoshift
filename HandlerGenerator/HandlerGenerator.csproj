@@ -6,7 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>csharp_Protoshift.Enhanced.Handlers.Generator</RootNamespace>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>YYHEggEgg</Authors>
     <Product>csharp-Protoshift.$(AssemblyName)</Product>
     <Copyright>Copyright (c) 2023 EggEgg</Copyright>
