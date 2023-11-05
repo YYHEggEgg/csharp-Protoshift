@@ -69,7 +69,7 @@ namespace csharp_Protoshift.Debug.Replay
                 }
                 // See Remarks of
                 // https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.delay?view=net-7.0#system-threading-tasks-task-delay(system-timespan)
-                if (replay.offset > TimeSpan.FromMilliseconds(15))
+                if (replay.offset > TimeSpan.FromMilliseconds(15) && !Program.FullyReplayPacketTime)
                     await Task.Delay(replay.offset);
                 try
                 {
