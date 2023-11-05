@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd HandlerGenerator
+dotnet build
+build_exitcode=$?
+if [ $build_exitcode == 0 ]; then
+    echo MSBuild finished. Running...
+    dotnet run --no-build -- --update $@
+    exit $?
+else
+    echo MSBuild failed with exitcode $build_exitcode.
+    exit $build_exitcode
+fi

@@ -21,6 +21,19 @@ namespace csharp_Protoshift.Enhanced.Benchmark
 
         private static void Main(string[] args)
         {
+            var parser_args = Parser.Default;
+            //new Parser(config =>
+            // {
+                // Set custom ConsoleWriter during construction
+            //     config.HelpWriter = TextWriter.Synchronized(new LogTextWriter("CommandLineParser"));
+            // });
+            BenchmarkOptions global_opt = new BenchmarkOptions();
+            parser_args.ParseArguments<BenchmarkOptions>(args)
+                .WithNotParsed(errs =>
+                {
+                    Environment.Exit(1);
+                })
+                .WithParsed(o => global_opt = o);
             StartupWorkingDirChanger.ChangeToDotNetRunPath(new LoggerConfig(
                 max_Output_Char_Count: 16 * 1024,
                 use_Console_Wrapper: false,
@@ -34,20 +47,6 @@ namespace csharp_Protoshift.Enhanced.Benchmark
                 File.Move(benchmark_source_file_shared,
                     $"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.{benchmark_source_file_suffix}");
             }
-            var parser_args = Parser.Default;
-            //new Parser(config =>
-            // {
-                // Set custom ConsoleWriter during construction
-            //     config.HelpWriter = TextWriter.Synchronized(new LogTextWriter("CommandLineParser"));
-            // });
-            BenchmarkOptions global_opt = new BenchmarkOptions();
-            parser_args.ParseArguments<BenchmarkOptions>(args)
-                .WithNotParsed(errs =>
-                {
-                    Log.Erro("Unrecognized args detected. Please check your input.");
-                    Environment.Exit(0);
-                })
-                .WithParsed(o => global_opt = o);
 
             string? sourcefile = global_opt.FilePath;
             if (sourcefile == null)
