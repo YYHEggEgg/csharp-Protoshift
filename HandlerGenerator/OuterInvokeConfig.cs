@@ -11,7 +11,7 @@
         /// If protoc isn't in the PATH, you can change it to a definitive path.
         /// Not recommend a relative path because the working directory will be changed by the program at the startup. 
         /// </summary>
-        public const string protoc_path = "E:\\Program Files\\Google.Protobuf\\protoc\\bin\\protoc.exe";
+        public const string protoc_path = "protoc";
         /// <summary>
         /// The dotnet runtime CLI from Microsoft. 
         /// If dotnet isn't in the PATH, you can change it to a definitive path.

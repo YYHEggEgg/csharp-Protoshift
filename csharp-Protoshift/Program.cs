@@ -109,6 +109,7 @@ namespace csharp_Protoshift
                     Config.Global.NetConfig.BindPort);
                 var remoteIp = new IPEndPoint(remoteaddr, Config.Global.NetConfig.RemoteAddress.AddressPort);
 
+                GameSessionDispatch.InitializeLogFiles();
                 ProxyServer = new KcpProxyServer(bindIp, remoteIp);
 
                 ProxyHandlers handlers = new ProxyHandlers
