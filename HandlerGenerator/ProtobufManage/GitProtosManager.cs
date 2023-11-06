@@ -24,6 +24,7 @@ internal class GitProtosManager
     {
         _gitInvoke = new(path);
         Logger = Log.GetChannel(protocol_friendlyname);
+        _gitInvoke.SetSafeDirectory();
     }
 
     /// <summary>
