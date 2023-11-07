@@ -29,6 +29,16 @@ csharp-Protoshift is an advanced, manageable compatibility layer for a certain a
 
 - Protobuf / `query_cur_region` / Ec2b and other utility commands.
 
+## Update
+
+- Support initiated JIT compiling for Protoshift Handlers. For information, please view [PR #36](https://github.com/YYHEggEgg/csharp-Protoshift/pull/36).
+- Fixed the issue where `csharp-Protoshift-Replay` could not start due to the inability to find the resource folder.
+- Fixed the problem where the command line option `--orderby-packet-speed` of `ProtoshiftBenchmark` did not actually take effect.
+- Added support for proactive JIT compilation to `csharp-Protoshift-Replay`.
+- Fixed the issue where `ProtoshiftBenchmark` and `csharp-Protoshift-Replay` prompted error due to syntax errors during compilation.
+- Added `-f, --source-file` and `--fully-replay-packet-time` command line options to `csharp-Protoshift-Replay`.
+- Fixed the running issues of the "run-benchmark" series scripts.
+
 ## Quick Installation Guide
 
 ### Prerequisites

@@ -29,6 +29,18 @@ csharp-Protoshift 可为某二游提供先进、易管理的兼容性扩展。
 
 - Protobuf / `query_cur_region` / Ec2b 等工具命令。
 
+## 更新
+
+### v1.0.2
+
+- 支持对于 Protoshift Handlers 主动进行提前 JIT 编译。有关详细信息，请参阅 [PR #36](https://github.com/YYHEggEgg/csharp-Protoshift/pull/36).
+- 修复了 `csharp-Protoshift-Replay` 因无法找到资源文件夹而无法启动的问题。
+- 修复了 `ProtoshiftBenchmark` 的命令行选项 `--orderby-packet-speed` 实际未生效的问题。
+- 为 `csharp-Protoshift-Replay` 添加了主动 JIT 编译支持。
+- 修复了 `ProtoshiftBenchmark` 和 `csharp-Protoshift-Replay` 提示因语法错误无法编译的问题。
+- 为 `csharp-Protoshift-Replay` 添加了 `-f, --source-file` 与 `--fully-replay-packet-time` 命令行选项。
+- 修复了 `run-benchmark` 系列脚本的运行问题。
+
 ## 快速安装指南
 
 ### 前置环境需求
