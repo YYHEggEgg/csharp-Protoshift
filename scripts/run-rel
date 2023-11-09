@@ -11,4 +11,3 @@ else
     echo MSBuild failed with exitcode $build_exitcode.
     exit $build_exitcode
 fi
-

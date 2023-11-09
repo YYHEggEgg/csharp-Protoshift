@@ -40,6 +40,7 @@ csharp-Protoshift 可为某二游提供先进、易管理的兼容性扩展。
 - 修复了 `ProtoshiftBenchmark` 和 `csharp-Protoshift-Replay` 提示因语法错误无法编译的问题。
 - 为 `csharp-Protoshift-Replay` 添加了 `-f, --source-file` 与 `--fully-replay-packet-time` 命令行选项。
 - 修复了 `run-benchmark` 系列脚本的运行问题。
+- 添加了更多快捷脚本。有关详细信息，请参阅 [Wiki - Development - 内置脚本](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/CN_Development#内置脚本)。
 
 ## 快速安装指南
 

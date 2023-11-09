@@ -38,6 +38,7 @@ csharp-Protoshift is an advanced, manageable compatibility layer for a certain a
 - Fixed the issue where `ProtoshiftBenchmark` and `csharp-Protoshift-Replay` prompted error due to syntax errors during compilation.
 - Added `-f, --source-file` and `--fully-replay-packet-time` command line options to `csharp-Protoshift-Replay`.
 - Fixed the running issues of the "run-benchmark" series scripts.
+- Added more built-in scripts. For more information, please refer to [Wiki - Development - Built-in Scripts](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/WN_Development#built-in-scripts).
 
 ## Quick Installation Guide
 
