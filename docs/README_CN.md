@@ -73,6 +73,7 @@ csharp-Protoshift 可为某二游提供先进、易管理的兼容性扩展。
 ```sh
 git clone --branch main https://github.com/YYHEggEgg/csharp-Protoshift
 cd csharp-Protoshift
+git submodule update --init --recursive
 ./update
 ```
 
@@ -103,6 +104,8 @@ cd csharp-Protoshift
 ```
 
 您以后也可以随时使用 `./run` 启动 Protoshift 服务器，使用 `./update` 来获取更新。当然如果您想要以 Release 运行（可达到更高的性能），可以使用 `./scripts/run-rel`.
+
+另外，Protoshift 并不能自动对客户端生效；它类似一个反向代理，因此您必须使他们连接至 Protoshift 服务器开放的端口。如果您不知道如何做到这一点，请与您的 SDK 服务器开发者联系。
 
 ## 更多用法
 

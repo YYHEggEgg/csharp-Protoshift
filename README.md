@@ -32,9 +32,11 @@ csharp-Protoshift is an advanced, manageable compatibility layer for a certain a
 ## Update - v1.0.2
 
 - Support initiated JIT compiling for Protoshift Handlers. For information, please view [PR #36](https://github.com/YYHEggEgg/csharp-Protoshift/pull/36).
-- 修复了 `HandlerGenerator` 由于 Git `safe.directory` 配置而在某些环境下无法完成 Protos 抓取与还原的问题。
-- 修复了 `HandlerGenerator` 在工程目录中存在空格的情况下无法完成 Protos 抓取与还原的问题。
-- 修复了 `csharp-Protoshift` 在工程目录中存在空格的情况下无法调用 `luac` 编译 Windy lua 脚本的问题。
+- Fixed the issue whereby `HandlerGenerator` being unable to fetch and restore Protos due to the Git `safe.directory` configuration in certain environments.
+- Fixed the issue whereby `HandlerGenerator` being unable to fetch and restore Protos when there are spaces in the project directory.
+- Fixed the issue whereby `csharp-Protoshift` being unable to invoke `luac` to compile Windy lua scripts when there are spaces in the project directory.
+- Fixed the issue whereby `HandlerGenerator` displaying abnormal exit prompt text when the external application invocation fails.
+- Fixed the issue whereby `HandlerGenerator` being unable to correctly invoke Powershell in Windows to execute post-generation scripts when there are spaces in the project directory.
 - Fixed the issue where `csharp-Protoshift-Replay` could not start due to the inability to find the resource folder.
 - Fixed the problem where the command line option `--orderby-packet-speed` of `ProtoshiftBenchmark` did not actually take effect.
 - Added support for proactive JIT compilation to `csharp-Protoshift-Replay`.
@@ -69,6 +71,7 @@ Once the prerequisites are met, just run the following commands:
 ```sh
 git clone --branch main https://github.com/YYHEggEgg/csharp-Protoshift
 cd csharp-Protoshift
+git submodule update --init --recursive
 ./update
 ```
 
@@ -99,6 +102,8 @@ Finally, run the following command to start the server immediately:
 ```
 
 You can also use `./run` to start the Protoshift server at any time, and use `./update` to get updates. Of course, if you want to run in Release mode (for higher performance), you can use `./scripts/run-rel`.
+
+Additionally, Protoshift does not take effect automatically on the client side; it acts as a reverse proxy, so you need to have them connect to the port opened by Protoshift server. If you are unsure how to do this, please contact your SDK server developer.
 
 ## More Usage
 
