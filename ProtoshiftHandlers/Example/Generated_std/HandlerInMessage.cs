@@ -48,6 +48,28 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             newprotocol.Code = oldprotocol.Code;
             return newprotocol;
         }
+
+        #region JIT API
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
+        public override NewProtos.InMessage GetNewShiftToOldJitInstance()
+        {
+            NewProtos.InMessage newprotocol = new();
+            newprotocol.InStr = "miHomo Technology Presents";
+            newprotocol.Code = 20231024;
+            return newprotocol;
+        }
+            
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
+        public override void RunJit()
+        {
+            var instance = GetNewShiftToOldJitInstance();
+            OldShiftToNew(NewShiftToOld(instance.ToByteArray()));
+            OldShiftToNew(new Span<byte>(NewShiftToOld(new Span<byte>(instance.ToByteArray())).ToByteArray()));
+            OldShiftToNew(NewShiftToOld(instance.ToByteString()));
+        }
+        #endregion
         #endregion
 
         #region Outer bytes invoke
@@ -56,10 +78,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(arr, offset, length));
             return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
         }
-        public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)
+        public override IMessage? NewShiftToOld(ReadOnlySpan<byte> span)
         {
             var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(span));
-            return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+            return rtn;
         }
         public override ByteString NewShiftToOld(ByteString bytes)
         {
@@ -71,10 +93,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(arr, offset, length));
             return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
         }
-        public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)
+        public override IMessage? OldShiftToNew(ReadOnlySpan<byte> span)
         {
             var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(span));
-            return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+            return rtn;
         }
         public override ByteString OldShiftToNew(ByteString bytes)
         {

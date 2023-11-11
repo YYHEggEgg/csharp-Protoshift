@@ -1,10 +1,10 @@
 cd HandlerGenerator
-dotnet build --configuration Release
+dotnet build
 $build_exitcode = $LastExitCode
 if ($build_exitcode -eq 0)
 {
     Write-Host MSBuild finished. Running...
-    dotnet run --no-build --configuration Release -- --update $args
+    dotnet run --no-build -- --update $args
     cd ..
     exit $LastExitCode
 }

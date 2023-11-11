@@ -1,4 +1,5 @@
 ﻿using csharp_Protoshift.Configuration;
+using csharp_Protoshift.resLoader;
 using Google.Protobuf;
 using System.Diagnostics;
 using System.Text.Json;
@@ -76,7 +77,7 @@ namespace csharp_Protoshift.Commands.Windy
         #endregion
 
         #region EnvPath
-        private static string _envPath = "resources/windy_scripts";
+        private static string _envPath = Path.Combine(Resources.BasePath, "windy_scripts");
         /// <summary>
         /// Get the windy env path. 
         /// </summary>
@@ -253,8 +254,8 @@ and don't place your files here as they will probably be lost.";
             string res = string.Empty;
             if (Config.Global.WindyConfig.StripDebugInformation == true)
                 res += "-s ";
-            res += $"-o {outputPath} ";
-            res += fileSource.FullName;
+            res += $"-o \"{outputPath}\" ";
+            res += $"\"{fileSource.FullName}\"";
             return res;
         }
     }

@@ -263,6 +263,11 @@ namespace csharp_Protoshift.GameSession
         }
 #endif
 
+        /// <summary>
+        /// Invoke the static initializer and create latest.packet.log and latest.player.stat.log.
+        /// </summary>
+        public static void InitializeLogFiles() {  }
+
         private static void AssertSessionExists(uint conv)
         {
             if (Closed) throw new OperationCanceledException("The server is closing.");

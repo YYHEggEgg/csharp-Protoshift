@@ -12,7 +12,25 @@ namespace csharp_Protoshift.MhyKCP.Proxy
     public class KcpProxyServer : KCPServer
     {
         public EndPoint SendToEndpoint { get; }
-        protected static BaseLogger? _kcpstatlogger = GameSessionDispatch.PlayerStatLogger;
+        internal static BaseLogger? _kcpstatlogger;
+
+#if !PROTOSHIFT_BENCHMARK
+        static KcpProxyServer()
+        {
+            _kcpstatlogger = new BaseLogger(new LoggerConfig(
+                max_Output_Char_Count: 16 * 1024,
+                use_Console_Wrapper: true,
+                use_Working_Directory: true,
+#if DEBUG
+                global_Minimum_LogLevel: LogLevel.Debug,
+#else
+                global_Minimum_LogLevel: LogLevel.Information,
+#endif
+                console_Minimum_LogLevel: LogLevel.None,
+                debug_LogWriter_AutoFlush: false,
+                enable_Detailed_Time: true), "player.stat");
+        }
+#endif
 
         public KcpProxyServer(IPEndPoint bindToAddress, EndPoint sendToAddress)
         {

@@ -29,6 +29,22 @@ csharp-Protoshift is an advanced, manageable compatibility layer for a certain a
 
 - Protobuf / `query_cur_region` / Ec2b and other utility commands.
 
+## Update - v1.0.2
+
+- Support initiated JIT compiling for Protoshift Handlers. For information, please view [PR #36](https://github.com/YYHEggEgg/csharp-Protoshift/pull/36).
+- Fixed the issue whereby `HandlerGenerator` being unable to fetch and restore Protos due to the Git `safe.directory` configuration in certain environments.
+- Fixed the issue whereby `HandlerGenerator` being unable to fetch and restore Protos when there are spaces in the project directory.
+- Fixed the issue whereby `csharp-Protoshift` being unable to invoke `luac` to compile Windy lua scripts when there are spaces in the project directory.
+- Fixed the issue whereby `HandlerGenerator` displaying abnormal exit prompt text when the external application invocation fails.
+- Fixed the issue whereby `HandlerGenerator` being unable to correctly invoke Powershell in Windows to execute post-generation scripts when there are spaces in the project directory.
+- Fixed the issue where `csharp-Protoshift-Replay` could not start due to the inability to find the resource folder.
+- Fixed the problem where the command line option `--orderby-packet-speed` of `ProtoshiftBenchmark` did not actually take effect.
+- Added support for proactive JIT compilation to `csharp-Protoshift-Replay`.
+- Fixed the issue where `ProtoshiftBenchmark` and `csharp-Protoshift-Replay` prompted error due to syntax errors during compilation.
+- Added `-f, --source-file` and `--fully-replay-packet-time` command line options to `csharp-Protoshift-Replay`.
+- Fixed the running issues of the "run-benchmark" series scripts.
+- Added more built-in scripts. For more information, please refer to [Wiki - Development - Built-in Scripts](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/WN_Development#built-in-scripts).
+
 ## Quick Installation Guide
 
 ### Prerequisites
@@ -46,7 +62,7 @@ In addition, I strongly recommend that you:
 - Ensure **stable** access to GitHub when running the build (`./update`).
 - Use VS Code for path shortcut jumps, JSON Schema support, etc.
 
-If for some reason you cannot add the above software to the system environment variables, you can instruct the program to call their absolute paths. For details on this special configuration, please refer to the [Wiki - Building - Prerequisites](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/EN_Building#prerequisites) guide.
+If for some reason you cannot add the above software to the system environment variables, you can instruct the program to call their absolute paths. For details on this special configuration, please refer to the [Wiki - Building - Prerequisite Environment Requirements](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/EN_Building#prerequisite-environment-requirements) guide.
 
 ### Build and Run
 
@@ -55,6 +71,7 @@ Once the prerequisites are met, just run the following commands:
 ```sh
 git clone --branch main https://github.com/YYHEggEgg/csharp-Protoshift
 cd csharp-Protoshift
+git submodule update --init --recursive
 ./update
 ```
 
@@ -85,6 +102,8 @@ Finally, run the following command to start the server immediately:
 ```
 
 You can also use `./run` to start the Protoshift server at any time, and use `./update` to get updates. Of course, if you want to run in Release mode (for higher performance), you can use `./scripts/run-rel`.
+
+Additionally, Protoshift does not take effect automatically on the client side; it acts as a reverse proxy, so you need to have them connect to the port opened by Protoshift server. If you are unsure how to do this, please contact your SDK server developer.
 
 ## More Usage
 

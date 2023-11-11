@@ -10,7 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.0" />
+    <PackageReference Include="CommandLineParser" Version="2.9.1" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.1" />
     <PackageReference Include="EPPlus" Version="6.2.9" />
     <PackageReference Include="Google.Protobuf" Version="3.24.0" />
   </ItemGroup>

@@ -21,6 +21,19 @@ namespace csharp_Protoshift.Enhanced.Benchmark
 
         private static void Main(string[] args)
         {
+            var parser_args = Parser.Default;
+            //new Parser(config =>
+            // {
+                // Set custom ConsoleWriter during construction
+            //     config.HelpWriter = TextWriter.Synchronized(new LogTextWriter("CommandLineParser"));
+            // });
+            BenchmarkOptions global_opt = new BenchmarkOptions();
+            parser_args.ParseArguments<BenchmarkOptions>(args)
+                .WithNotParsed(errs =>
+                {
+                    Environment.Exit(1);
+                })
+                .WithParsed(o => global_opt = o);
             StartupWorkingDirChanger.ChangeToDotNetRunPath(new LoggerConfig(
                 max_Output_Char_Count: 16 * 1024,
                 use_Console_Wrapper: false,
@@ -34,20 +47,6 @@ namespace csharp_Protoshift.Enhanced.Benchmark
                 File.Move(benchmark_source_file_shared,
                     $"logs/{DateTime.Now:yyyy-MM-dd_HH-mm-ss}.{benchmark_source_file_suffix}");
             }
-            var parser_args = Parser.Default;
-            //new Parser(config =>
-            // {
-                // Set custom ConsoleWriter during construction
-            //     config.HelpWriter = TextWriter.Synchronized(new LogTextWriter("CommandLineParser"));
-            // });
-            BenchmarkOptions global_opt = new BenchmarkOptions();
-            parser_args.ParseArguments<BenchmarkOptions>(args)
-                .WithNotParsed(errs =>
-                {
-                    Log.Erro("Unrecognized args detected. Please check your input.");
-                    Environment.Exit(0);
-                })
-                .WithParsed(o => global_opt = o);
 
             string? sourcefile = global_opt.FilePath;
             if (sourcefile == null)
@@ -55,7 +54,12 @@ namespace csharp_Protoshift.Enhanced.Benchmark
                 Log.Info("Please drag in the latest.packet.log file:");
                 sourcefile = Console.ReadLine();
             }
-            if (sourcefile == null) throw new Exception("im tired plz give a file ok?");
+            if (string.IsNullOrEmpty(sourcefile)) throw new Exception("im tired plz give a file ok?");
+            if (!File.Exists(sourcefile))
+            {
+                Log.Erro($"Please provide a valid file! Program read: '{sourcefile}'");
+                Environment.Exit(1);
+            }
             SetUpBenchmarkSource(sourcefile, global_opt);
 
             // Set up and test-run
@@ -162,13 +166,24 @@ namespace csharp_Protoshift.Enhanced.Benchmark
             HashSet<string> proto_filters = new(opt.ProtoFilters ?? Enumerable.Empty<string>());
             IEnumerable<IGrouping<string, (string protoname, ushort cmdid, bool sentByClient, byte[] body, int line_id, Int64 handlenanosec)>> select_res;
 
-            select_res = 
-                from record in readres
-                orderby (opt.OrderByPacketTime ? record.handlenanosec : record.body.Length) descending
-                orderby record.body.Length descending
-                group record by record.protoname into gr
-                where opt.ProtoFilters == null || proto_filters.Contains(gr.Key)
-                select gr;
+            if (opt.OrderByPacketTime)
+            {
+                select_res =
+                    from record in readres
+                    orderby record.handlenanosec descending
+                    group record by record.protoname into gr
+                    where opt.ProtoFilters == null || proto_filters.Contains(gr.Key)
+                    select gr;
+            }
+            else
+            {
+                select_res =
+                    from record in readres
+                    orderby record.body.Length descending
+                    group record by record.protoname into gr
+                    where opt.ProtoFilters == null || proto_filters.Contains(gr.Key)
+                    select gr;
+            }
             StringBuilder sb = new();
             foreach (var proto_gr in select_res)
             {

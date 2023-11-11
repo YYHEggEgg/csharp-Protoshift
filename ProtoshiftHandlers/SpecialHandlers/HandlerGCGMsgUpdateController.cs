@@ -38,6 +38,25 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             handler_fuck.OldShiftToNew(oldprotocol.AllowControllerMap, newprotocol.AllowControllerList);
             return newprotocol;
         }
+
+        #region JIT API
+        public override NewProtos.GCGMsgUpdateController GetNewShiftToOldJitInstance()
+        {
+            NewProtos.GCGMsgUpdateController newprotocol = new();
+            newprotocol.AllowControllerList.Add(handler_fuck.GetNewShiftToOldJitInstance());
+            return newprotocol;
+        }
+            
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
+        public override void RunJit()
+        {
+            var instance = GetNewShiftToOldJitInstance();
+            OldShiftToNew(NewShiftToOld(instance.ToByteArray()));
+            OldShiftToNew(new Span<byte>(NewShiftToOld(new Span<byte>(instance.ToByteArray())).ToByteArray()));
+            OldShiftToNew(NewShiftToOld(instance.ToByteString()));
+        }
+        #endregion
         #endregion
 
         [System.Diagnostics.DebuggerNonUserCode]
@@ -49,10 +68,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         }
         [System.Diagnostics.DebuggerNonUserCode]
         [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.1.0")]
-        public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)
+        public override IMessage? NewShiftToOld(ReadOnlySpan<byte> span)
         {
             var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(span));
-            return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+            return rtn;
         }
         [System.Diagnostics.DebuggerNonUserCode]
         [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.1.0")]
@@ -70,10 +89,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         }
         [System.Diagnostics.DebuggerNonUserCode]
         [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.1.0")]
-        public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)
+        public override IMessage? OldShiftToNew(ReadOnlySpan<byte> span)
         {
             var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(span));
-            return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+            return rtn;
         }
         [System.Diagnostics.DebuggerNonUserCode]
         [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.1.0")]

@@ -3,24 +3,49 @@ using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
 using csharp_Protoshift.resLoader;
 using OfficeOpenXml;
 using YYHEggEgg.Logger;
+using CommandLine;
+using CommandLine.Text;
 
 namespace csharp_Protoshift.Debug.Replay
 {
     internal class Program
     {
+        public static bool FullyReplayPacketTime;
+
         static async Task Main(string[] args)
         {
+            string? path = null;
+            Parser.Default.ParseArguments<ReplayOptions>(args)
+                .WithNotParsed(errs =>
+                {
+                    Environment.Exit(1);
+                })
+                .WithParsed(o => 
+                {
+                    path = o.ReplaySourceFile;
+                    FullyReplayPacketTime = o.FullyReplayPacketTime;
+                });
+
             StartupWorkingDirChanger.ChangeToDotNetRunPath(new LoggerConfig(
                 max_Output_Char_Count: 16 * 1024,
-                use_Console_Wrapper: false,
+                use_Console_Wrapper: true,
                 use_Working_Directory: true,
+#if DEBUG
                 global_Minimum_LogLevel: LogLevel.Verbose,
                 console_Minimum_LogLevel: LogLevel.Information,
-                debug_LogWriter_AutoFlush: true
-                ));
+#else
+                global_Minimum_LogLevel: LogLevel.Information,
+                console_Minimum_LogLevel: LogLevel.Information,
+#endif
+                debug_LogWriter_AutoFlush: false,
+                is_PipeSeparated_Format: false,
+                enable_Detailed_Time: true
+            ));
+            ConsoleWrapper.ShutDownRequest += (_, _) => Environment.Exit(0x3fffffff);
 
-            ResourcesLoader.CheckForRequiredResources();
-            await ResourcesLoader.Load();
+            var resPath = "./../../csharp-Protoshift/resources";
+            ResourcesLoader.CheckForRequiredResources(resPath);
+            await ResourcesLoader.Load(resPath);
 
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
@@ -61,10 +86,34 @@ namespace csharp_Protoshift.Debug.Replay
             Log.Info(NewProtos.QueryJsonSerializer.Initialize(), "NewProtos");
             Log.Info(ProtoshiftDispatch.Initialize(), "Entry");
 
-            PacketRecordCollection replays = new("./../csharp-Protoshift/logs/latest.packet.log");
+            Log.Info($"Start running initiated Protoshift Handlers JIT, please wait..", "RunHandlersJit");
+            try
+            {
+                ProtoshiftDispatch.RunHandlersJit();
+            }
+            catch (Exception ex)
+            {
+                LogTrace.ErroTrace(ex, "RunHandlersJit", "Protoshift Handlers JIT failed. " +
+                    "Please check your custom Handlers (ProtoshiftHandlers/SpecialHandlers) " +
+                    "or open an issue related to this in our repository.");
+                Environment.Exit(1);
+            }
+
+            Log.Info($"Please drag in the packet.log for replaying (default is latest.packet.log):");
+            path = ConsoleWrapper.ReadLine();
+            if (string.IsNullOrEmpty(path)) path = "./../csharp-Protoshift/logs/latest.packet.log";
+            PacketRecordCollection replays = new(path);
             await replays.Replay();
             Log.Info("Replay completed.");
             Console.ReadLine();
         }
+    }
+
+    public class ReplayOptions
+    {
+        [Option('f', "source-file", Default = null, Required = false, HelpText = "The source packet.log for replaying.")]
+        public string? ReplaySourceFile { get; set; }
+        [Option('t', "fully-repeat-packet-time", Default = false, Required = false, HelpText = "If Enabled, the replay process will fully replay the packet arrival time (and their interval) when they're captured. By default, they are just handled one after another without delay.")]
+        public bool FullyReplayPacketTime { get; set; }
     }
 }

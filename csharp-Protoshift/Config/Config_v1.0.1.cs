@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using csharp_Protoshift.resLoader;
+using Newtonsoft.Json;
 using YYHEggEgg.Logger;
 
 #pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
@@ -83,7 +84,7 @@ namespace csharp_Protoshift.Configuration
                 rtn.WindyConfig = new WindyConfig_v1_0_1
                 {
                     WindyCompiledTempPath = olderwindyconf.WindyCompiledTempPath ?? "windy_temp",
-                    WindyEnvironmentPath = olderwindyconf.WindyEnvironmentPath ?? "resources/windy_scripts",
+                    WindyEnvironmentPath = olderwindyconf.WindyEnvironmentPath ?? Path.Combine(Resources.BasePath, "windy_scripts"),
                 };
                 if (olderwindyconf.OnlineExecWindyLua != null)
                 {
