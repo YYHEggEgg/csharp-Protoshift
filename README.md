@@ -29,9 +29,12 @@ csharp-Protoshift is an advanced, manageable compatibility layer for a certain a
 
 - Protobuf / `query_cur_region` / Ec2b and other utility commands.
 
-## Update
+## Update - v1.0.2
 
 - Support initiated JIT compiling for Protoshift Handlers. For information, please view [PR #36](https://github.com/YYHEggEgg/csharp-Protoshift/pull/36).
+- 修复了 `HandlerGenerator` 由于 Git `safe.directory` 配置而在某些环境下无法完成 Protos 抓取与还原的问题。
+- 修复了 `HandlerGenerator` 在工程目录中存在空格的情况下无法完成 Protos 抓取与还原的问题。
+- 修复了 `csharp-Protoshift` 在工程目录中存在空格的情况下无法调用 `luac` 编译 Windy lua 脚本的问题。
 - Fixed the issue where `csharp-Protoshift-Replay` could not start due to the inability to find the resource folder.
 - Fixed the problem where the command line option `--orderby-packet-speed` of `ProtoshiftBenchmark` did not actually take effect.
 - Added support for proactive JIT compilation to `csharp-Protoshift-Replay`.
@@ -57,7 +60,7 @@ In addition, I strongly recommend that you:
 - Ensure **stable** access to GitHub when running the build (`./update`).
 - Use VS Code for path shortcut jumps, JSON Schema support, etc.
 
-If for some reason you cannot add the above software to the system environment variables, you can instruct the program to call their absolute paths. For details on this special configuration, please refer to the [Wiki - Building - Prerequisites](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/EN_Building#prerequisites) guide.
+If for some reason you cannot add the above software to the system environment variables, you can instruct the program to call their absolute paths. For details on this special configuration, please refer to the [Wiki - Building - Prerequisite Environment Requirements](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/EN_Building#prerequisite-environment-requirements) guide.
 
 ### Build and Run
 

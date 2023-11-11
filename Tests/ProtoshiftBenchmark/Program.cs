@@ -52,7 +52,16 @@ namespace csharp_Protoshift.Enhanced.Benchmark
             if (sourcefile == null)
             {
                 Log.Info("Please drag in the latest.packet.log file:");
-                sourcefile = Console.ReadLine();
+                try
+                {
+                    sourcefile = Console.ReadLine();
+                }
+                catch (Exception ex)
+                {
+                    Log.Erro(ex.ToString());
+                    Log.Erro($"Please provide a valid file!");
+                    Environment.Exit(1);
+                }
             }
             if (sourcefile == null) throw new Exception("im tired plz give a file ok?");
             SetUpBenchmarkSource(sourcefile, global_opt);

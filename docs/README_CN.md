@@ -34,6 +34,11 @@ csharp-Protoshift 可为某二游提供先进、易管理的兼容性扩展。
 ### v1.0.2
 
 - 支持对于 Protoshift Handlers 主动进行提前 JIT 编译。有关详细信息，请参阅 [PR #36](https://github.com/YYHEggEgg/csharp-Protoshift/pull/36).
+- 修复了 `HandlerGenerator` 由于 Git `safe.directory` 配置而在某些环境下无法完成 Protos 抓取与还原的问题。
+- 修复了 `HandlerGenerator` 在工程目录中存在空格的情况下无法完成 Protos 抓取与还原的问题。
+- 修复了 `csharp-Protoshift` 在工程目录中存在空格的情况下无法调用 `luac` 编译 Windy lua 脚本的问题。
+- 修复了 `HandlerGenerator` 调用外部应用失败时退出提示文本异常的问题。
+- 修复了 `HandlerGenerator` 在工程目录中存在空格的情况下无法正确调用 Windows 下的 Powershell 执行生成后任务脚本的问题。
 - 修复了 `csharp-Protoshift-Replay` 因无法找到资源文件夹而无法启动的问题。
 - 修复了 `ProtoshiftBenchmark` 的命令行选项 `--orderby-packet-speed` 实际未生效的问题。
 - 为 `csharp-Protoshift-Replay` 添加了主动 JIT 编译支持。

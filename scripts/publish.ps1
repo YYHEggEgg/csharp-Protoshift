@@ -1,5 +1,5 @@
 cd HandlerGenerator
-dotnet build
+dotnet build --configuration Release
 $build_exitcode = $LastExitCode
 if ($build_exitcode -eq 0)
 {

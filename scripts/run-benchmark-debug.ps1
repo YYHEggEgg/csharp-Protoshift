@@ -6,7 +6,8 @@ if ($build_exitcode -eq 0)
 {
     Write-Host MSBuild finished. Running...
     Write-Host "Please, attach a debugger now. Project is named as 'ProtoshiftBenchmark'."
-    dotnet run --no-build --configuration Debug --property:DefineConstants=TRACE%3bDEBUG%3bNET%3bNET6_0%3bNETCOREAPP%3bMIHOMO_KCP%3bPROTOSHIFT_BENCHMARK -- --extra-property "DefineConstants=TRACE%3bDEBUG%3bNET%3bNET6_0%3bNETCOREAPP%3bMIHOMO_KCP%3bPROTOSHIFT_BENCHMARK" $args
+    $env:COMPLUS_ForceENC=1
+    dotnet run --no-build --configuration Debug --property:DefineConstants=TRACE%3bDEBUG%3bNET%3bNET6_0%3bNETCOREAPP%3bMIHOMO_KCP%3bPROTOSHIFT_BENCHMARK -- $args
     cd ..\..
     exit $LastExitCode
 }

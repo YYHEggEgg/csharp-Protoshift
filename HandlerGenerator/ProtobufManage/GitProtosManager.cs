@@ -88,7 +88,7 @@ internal class GitProtosManager
     {
         var cloneargs = "clone ";
         if (branch != null) cloneargs += $"--branch {branch} ";
-        cloneargs += $"{remoteUrl_git} {Path.GetFullPath(BaseGitDirectory)}";
+        cloneargs += $"{remoteUrl_git} \"{Path.GetFullPath(BaseGitDirectory)}\"";
 
         ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
         {

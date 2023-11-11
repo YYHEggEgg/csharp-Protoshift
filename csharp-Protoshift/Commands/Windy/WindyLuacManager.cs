@@ -254,8 +254,8 @@ and don't place your files here as they will probably be lost.";
             string res = string.Empty;
             if (Config.Global.WindyConfig.StripDebugInformation == true)
                 res += "-s ";
-            res += $"-o {outputPath} ";
-            res += fileSource.FullName;
+            res += $"-o \"{outputPath}\" ";
+            res += $"\"{fileSource.FullName}\"";
             return res;
         }
     }
