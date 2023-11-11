@@ -1,4 +1,5 @@
-﻿using Google.Protobuf.Collections;
+﻿using csharp_Protoshift.Enhanced.Handlers.GeneratedCode;
+using Google.Protobuf.Collections;
 
 namespace csharp_Protoshift.Enhanced.Handlers.CustomHandlers
 {
@@ -52,5 +53,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.CustomHandlers
 
         private static HandlerUint32PairAndMap _globalOnlyInstance = new HandlerUint32PairAndMap();
         public static HandlerUint32PairAndMap GlobalInstance => _globalOnlyInstance;
+
+        private HandlerUint32Pair handler_Uint32Pair = HandlerUint32Pair.GlobalInstance;
+        public NewProtos.Uint32Pair GetNewShiftToOldJitInstance() =>
+            handler_Uint32Pair.GetNewShiftToOldJitInstance();
     }
 }

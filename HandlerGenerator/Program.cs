@@ -764,7 +764,8 @@ internal class Program
             for (int i = 0; i < 6; i++) mergeChanges.Add(new());
         }
         #endregion
-        GenProtoshiftDispatch.Run(cmdData, protoshiftDispatch_filePath, mergeChanges);
+        GenProtoshiftDispatch.Run(cmdData, protoshiftDispatch_filePath, 
+            messageResults, enumResults, mergeChanges);
         recoverbackups.Remove(protoshiftDispatch_filePath);
         #endregion
 
@@ -879,7 +880,7 @@ internal class Program
         }, 2910);
         #region After-builds tasks
         Log.Info($"dotnet build & publish succeeded. Now copying resources...");
-        File.Copy($"./../csharp-Protoshift/config.json", $"{output_path}/config.json");
+        File.Copy($"./../csharp-Protoshift/config.json", $"{output_path}/config.json", true);
         string output_res_dir = $"{output_path}/resources";
         Tools.CopyDir("./../csharp-Protoshift/resources", output_res_dir);
 
@@ -925,7 +926,7 @@ internal class Program
                 {
                     ProcessPath = OuterInvokeGlobalConfig.windows_powershell_path,
                     StartingNotice = $"The custom after-build task (powershell.exe) is starting...",
-                    CmdLine = $"\"{afterbuild_shell}\" \"{Path.GetFullPath(output_path)}\"",
+                    CmdLine = $"-File \"{afterbuild_shell}\" \"{Path.GetFullPath(output_path)}\"",
                     AutoTerminateReason = PublishFailOnAfterBuildTasksFailure
                         ? "The custom after-build task (Windows) failed. " : null,
                 }, 3400);

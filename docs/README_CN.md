@@ -29,6 +29,24 @@ csharp-Protoshift 可为某二游提供先进、易管理的兼容性扩展。
 
 - Protobuf / `query_cur_region` / Ec2b 等工具命令。
 
+## 更新
+
+### v1.0.2
+
+- 支持对于 Protoshift Handlers 主动进行提前 JIT 编译。有关详细信息，请参阅 [PR #36](https://github.com/YYHEggEgg/csharp-Protoshift/pull/36).
+- 修复了 `HandlerGenerator` 由于 Git `safe.directory` 配置而在某些环境下无法完成 Protos 抓取与还原的问题。
+- 修复了 `HandlerGenerator` 在工程目录中存在空格的情况下无法完成 Protos 抓取与还原的问题。
+- 修复了 `csharp-Protoshift` 在工程目录中存在空格的情况下无法调用 `luac` 编译 Windy lua 脚本的问题。
+- 修复了 `HandlerGenerator` 调用外部应用失败时退出提示文本异常的问题。
+- 修复了 `HandlerGenerator` 在工程目录中存在空格的情况下无法正确调用 Windows 下的 Powershell 执行生成后任务脚本的问题。
+- 修复了 `csharp-Protoshift-Replay` 因无法找到资源文件夹而无法启动的问题。
+- 修复了 `ProtoshiftBenchmark` 的命令行选项 `--orderby-packet-speed` 实际未生效的问题。
+- 为 `csharp-Protoshift-Replay` 添加了主动 JIT 编译支持。
+- 修复了 `ProtoshiftBenchmark` 和 `csharp-Protoshift-Replay` 提示因语法错误无法编译的问题。
+- 为 `csharp-Protoshift-Replay` 添加了 `-f, --source-file` 与 `--fully-replay-packet-time` 命令行选项。
+- 修复了 `run-benchmark` 系列脚本的运行问题。
+- 添加了更多快捷脚本。有关详细信息，请参阅 [Wiki - Development - 内置脚本](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/CN_Development#内置脚本)。
+
 ## 快速安装指南
 
 ### 前置环境需求
@@ -55,6 +73,7 @@ csharp-Protoshift 可为某二游提供先进、易管理的兼容性扩展。
 ```sh
 git clone --branch main https://github.com/YYHEggEgg/csharp-Protoshift
 cd csharp-Protoshift
+git submodule update --init --recursive
 ./update
 ```
 
@@ -85,6 +104,8 @@ cd csharp-Protoshift
 ```
 
 您以后也可以随时使用 `./run` 启动 Protoshift 服务器，使用 `./update` 来获取更新。当然如果您想要以 Release 运行（可达到更高的性能），可以使用 `./scripts/run-rel`.
+
+另外，Protoshift 并不能自动对客户端生效；它类似一个反向代理，因此您必须使他们连接至 Protoshift 服务器开放的端口。如果您不知道如何做到这一点，请与您的 SDK 服务器开发者联系。
 
 ## 更多用法
 

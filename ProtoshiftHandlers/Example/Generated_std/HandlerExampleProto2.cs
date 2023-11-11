@@ -63,6 +63,29 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             newprotocol.ListStr.AddRange(oldprotocol.ListStr);
             return newprotocol;
         }
+
+        #region JIT API
+        [System.Diagnostics.DebuggerNonUserCode]
+        [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
+        public override NewProtos.ExampleProto2 GetNewShiftToOldJitInstance()
+        {
+            NewProtos.ExampleProto2 newprotocol = new();
+            newprotocol.ExBytes = ByteString.CopyFrom("Masquerade of the GIO", System.Text.Encoding.Default);
+            newprotocol.ListStr.Add("miHomo Technology Presents");
+            return newprotocol;
+        }
+
+        public override void RunJit()
+        {
+            var instance = GetNewShiftToOldJitInstance();
+            OldShiftToNew(NewShiftToOld(instance.ToByteArray()));
+            OldShiftToNew(new Span<byte>(NewShiftToOld(new Span<byte>(instance.ToByteArray())).ToByteArray()));
+            OldShiftToNew(NewShiftToOld(instance.ToByteString()));
+
+            HandlerExampleInnerProto.GlobalInstance.RunJit();
+            HandlerExampleInnerEnum.GlobalInstance.RunJit();
+        }
+        #endregion
         #endregion
 
         public bool HasSkillIssue = true;
@@ -77,10 +100,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         }
         [System.Diagnostics.DebuggerNonUserCode]
         [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
-        public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)
+        public override IMessage? NewShiftToOld(ReadOnlySpan<byte> span)
         {
             var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(span));
-            return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+            return rtn;
         }
         [System.Diagnostics.DebuggerNonUserCode]
         [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
@@ -98,10 +121,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
         }
         [System.Diagnostics.DebuggerNonUserCode]
         [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
-        public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)
+        public override IMessage? OldShiftToNew(ReadOnlySpan<byte> span)
         {
             var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(span));
-            return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+            return rtn;
         }
         [System.Diagnostics.DebuggerNonUserCode]
         [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
@@ -151,6 +174,27 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
                 newprotocol.InnerCode = oldprotocol.InnerCode;
                 return newprotocol;
             }
+
+            #region JIT API
+            [System.Diagnostics.DebuggerNonUserCode]
+            [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
+            public override NewProtos.ExampleProto2.Types.ExampleInnerProto GetNewShiftToOldJitInstance()
+            {
+                NewProtos.ExampleProto2.Types.ExampleInnerProto newprotocol = new();
+                newprotocol.InnerCode = 20231024;
+                return newprotocol;
+            }
+            
+            [System.Diagnostics.DebuggerNonUserCode]
+            [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
+            public override void RunJit()
+            {
+                var instance = GetNewShiftToOldJitInstance();
+                OldShiftToNew(NewShiftToOld(instance.ToByteArray()));
+                OldShiftToNew(new Span<byte>(NewShiftToOld(new Span<byte>(instance.ToByteArray())).ToByteArray()));
+                OldShiftToNew(NewShiftToOld(instance.ToByteString()));
+            }
+            #endregion
             #endregion
 
             public bool HasSkillIssue = true;
@@ -165,10 +209,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             }
             [System.Diagnostics.DebuggerNonUserCode]
             [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
-            public override byte[] NewShiftToOld(ReadOnlySpan<byte> span)
+            public override IMessage? NewShiftToOld(ReadOnlySpan<byte> span)
             {
                 var rtn = NewShiftToOld(newproto_parser_base.ParseFrom(span));
-                return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+                return rtn;
             }
             [System.Diagnostics.DebuggerNonUserCode]
             [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
@@ -186,10 +230,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.GeneratedCode
             }
             [System.Diagnostics.DebuggerNonUserCode]
             [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]
-            public override byte[] OldShiftToNew(ReadOnlySpan<byte> span)
+            public override IMessage? OldShiftToNew(ReadOnlySpan<byte> span)
             {
                 var rtn = OldShiftToNew(oldproto_parser_base.ParseFrom(span));
-                return rtn == null ? Array.Empty<byte>() : rtn.ToByteArray();
+                return rtn;
             }
             [System.Diagnostics.DebuggerNonUserCode]
             [System.CodeDom.Compiler.GeneratedCode("YYHEggEgg/csharp_Protoshift.HandlerGenerator", "1.0.0.0")]

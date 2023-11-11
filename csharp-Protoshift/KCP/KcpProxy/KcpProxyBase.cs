@@ -16,7 +16,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
     {
         public KcpProxyClient? sendClient;
         public EndPoint sendToAddress;
-        protected static LoggerChannel? _kcpstatlogchan = GameSessionDispatch.PlayerStatLogger?.GetChannel(null);
+        protected static LoggerChannel? _kcpstatlogchan = KcpProxyServer._kcpstatlogger?.GetChannel(null);
 
         private object handshake_lock = "Tighnari beloved";
 
@@ -116,7 +116,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             sendClient.ConnectAsync().Wait(); 
 
                             var sendBackConv = sendClient.GetSendbackHandshake();
-                            _kcpstatlogchan = GameSessionDispatch.PlayerStatLogger?.GetChannel(sendBackConv.Conv.ToString());
+                            if (_kcpstatlogchan != null)
+                                _kcpstatlogchan.LogSender = sendBackConv.Conv.ToString();
                             sendClient.StartDisconnected += (conv, token, data) =>
                             {
                                 Log.Info($"Server (conv: {_Conv}) requested to disconnect (reason: {data}), so send disconnect to client", nameof(KcpProxyBase));

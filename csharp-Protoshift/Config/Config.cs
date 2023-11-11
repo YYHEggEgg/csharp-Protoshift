@@ -1,4 +1,5 @@
 using csharp_Protoshift.Commands.Windy;
+using csharp_Protoshift.resLoader;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NJsonSchema;
@@ -51,7 +52,8 @@ namespace csharp_Protoshift.Configuration
                 return null;
             }
             var schema_cur_version = await JsonSchema.FromJsonAsync(
-                await File.ReadAllTextAsync($"resources/config-schemas/config_schema_v{configVersion}.json"));
+                await File.ReadAllTextAsync(Path.Combine(
+                    Resources.BasePath, $"config-schemas/config_schema_v{configVersion}.json")));
             Debug.Assert(schema_cur_version != null);
             schema_cur_version.AllowAdditionalItems = true;
             schema_cur_version.AllowAdditionalProperties = true;

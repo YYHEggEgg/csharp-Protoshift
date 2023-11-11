@@ -40,6 +40,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             if (invokeInfo.StartingNotice != null) Log.Info(invokeInfo.StartingNotice, nameof(OuterInvoke));
             Process? p = Process.Start(startInfo);
             await (p?.WaitForExitAsync() ?? Task.CompletedTask);
+            Log.Verb($"Actual: invoke '{invokeInfo.ProcessPath}'; exitCode={p?.ExitCode}; args='{invokeInfo.CmdLine}'; env='{invokeInfo.WorkingDir}'", nameof(OuterInvoke));
             return p?.ExitCode ?? int.MinValue;
         }
 
@@ -55,7 +56,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             var exitcode = await InnerRun(invokeInfo);
             if (exitcode != 0 && invokeInfo.AutoTerminateReason != null)
             {
-                Log.Erro($"{invokeInfo.AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
+                Log.Erro($"{invokeInfo.AutoTerminateReason} Exit code is {autoTerminateCode}. ", "OuterInvoke");
                 Environment.Exit(autoTerminateCode);
             }
             return exitcode;
@@ -80,12 +81,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             if (rtn[0] != 0 && invokeInfo1.AutoTerminateReason != null)
             {
                 exiting = true;
-                Log.Erro($"{invokeInfo1.AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
+                Log.Erro($"{invokeInfo1.AutoTerminateReason} Exit code is {autoTerminateCode}. ", "OuterInvoke");
             }
             if (rtn[1] != 0 && invokeInfo2.AutoTerminateReason != null)
             {
                 exiting = true;
-                Log.Erro($"{invokeInfo2.AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
+                Log.Erro($"{invokeInfo2.AutoTerminateReason} Exit code is {autoTerminateCode}. ", "OuterInvoke");
             }
             if (exiting)
             {
@@ -115,17 +116,17 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             if (rtn[0] != 0 && invokeInfo1.AutoTerminateReason != null)
             {
                 exiting = true;
-                Log.Erro($"{invokeInfo1.AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
+                Log.Erro($"{invokeInfo1.AutoTerminateReason} Exit code is {autoTerminateCode}. ", "OuterInvoke");
             }
             if (rtn[1] != 0 && invokeInfo2.AutoTerminateReason != null)
             {
                 exiting = true;
-                Log.Erro($"{invokeInfo2.AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
+                Log.Erro($"{invokeInfo2.AutoTerminateReason} Exit code is {autoTerminateCode}. ", "OuterInvoke");
             }
             if (rtn[2] != 0 && invokeInfo3.AutoTerminateReason != null)
             {
                 exiting = true;
-                Log.Erro($"{invokeInfo3.AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
+                Log.Erro($"{invokeInfo3.AutoTerminateReason} Exit code is {autoTerminateCode}. ", "OuterInvoke");
             }
             if (exiting)
             {
@@ -155,7 +156,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 if (rtn[i] != 0 && invokeInfos[i].AutoTerminateReason != null)
                 {
                     exiting = true;
-                    Log.Erro($"{invokeInfos[i].AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
+                    Log.Erro($"{invokeInfos[i].AutoTerminateReason} Exit code is {autoTerminateCode}. ", "OuterInvoke");
                 }
             }
             if (exiting)
@@ -186,7 +187,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 if (rtn[i] != 0 && invokeInfos[i].AutoTerminateReason != null)
                 {
                     exiting = true;
-                    Log.Erro($"{invokeInfos[i].AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
+                    Log.Erro($"{invokeInfos[i].AutoTerminateReason} Exit code is {autoTerminateCode}. ", "OuterInvoke");
                 }
             }
             if (exiting)
@@ -217,7 +218,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 if (rtn[i] != 0 && invokeInfos[i].AutoTerminateReason != null)
                 {
                     exiting = true;
-                    Log.Erro($"{invokeInfos[i].AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
+                    Log.Erro($"{invokeInfos[i].AutoTerminateReason} Exit code is {autoTerminateCode}. ", "OuterInvoke");
                 }
             }
             if (exiting)
@@ -248,7 +249,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 if (rtn[i] != 0 && invokeInfos[i].AutoTerminateReason != null)
                 {
                     exiting = true;
-                    Log.Erro($"{invokeInfos[i].AutoTerminateReason} failed. Exit code is {autoTerminateCode}. ", "OuterInvoke");
+                    Log.Erro($"{invokeInfos[i].AutoTerminateReason} Exit code is {autoTerminateCode}. ", "OuterInvoke");
                 }
             }
             if (exiting)

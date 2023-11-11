@@ -24,6 +24,7 @@ internal class GitProtosManager
     {
         _gitInvoke = new(path);
         Logger = Log.GetChannel(protocol_friendlyname);
+        _gitInvoke.SetSafeDirectory();
     }
 
     /// <summary>
@@ -87,7 +88,7 @@ internal class GitProtosManager
     {
         var cloneargs = "clone ";
         if (branch != null) cloneargs += $"--branch {branch} ";
-        cloneargs += $"{remoteUrl_git} {Path.GetFullPath(BaseGitDirectory)}";
+        cloneargs += $"{remoteUrl_git} \"{Path.GetFullPath(BaseGitDirectory)}\"";
 
         ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
         {

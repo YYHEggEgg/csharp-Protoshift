@@ -44,7 +44,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 {
                     fi.WriteLine($"case \"{cmdPair.messageName}\": return {cmdPair.cmdId};");
                 }
-                fi.WriteLine($"default: throw new NotSupportedException(\"Unknown message name or it doesn't have cmd_id.\");");
+                fi.WriteLine($"default: throw new NotSupportedException($\"Unknown message name: {{protoname}} or it doesn't have cmd_id.\");");
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
                 fi.WriteLine("// DON'T INSERT ANY CODE HERE");
@@ -107,7 +107,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                         #endregion
                     }
                 }
-                fi.WriteLine($"default: throw new NotSupportedException(\"The input {identifier} CmdId is unknown.\");");
+                fi.WriteLine($"default: throw new NotSupportedException($\"The input {identifier} CmdId: {{cmdid}} is unknown.\");");
                 fi.ExitCodeRegion();
                 fi.ExitCodeRegion();
                 fi.WriteLine();

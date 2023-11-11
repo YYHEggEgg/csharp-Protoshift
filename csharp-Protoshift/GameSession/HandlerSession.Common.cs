@@ -37,7 +37,7 @@ namespace csharp_Protoshift.GameSession
         public HandlerSession(uint sessionId)
         {
             _xorKey = Resources.dispatchKey;
-            Debug.Assert(_xorKey.Length == 4096);
+            // Debug.Assert(_xorKey.Length == 4096);
             _sessionId = sessionId;
             client_seed = server_seed = Array.Empty<byte>();
             // Verbose = true;

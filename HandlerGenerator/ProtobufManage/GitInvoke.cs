@@ -69,6 +69,25 @@ internal class GitInvoke
     public string? GetLastCommitTime() =>
         Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%cd\" HEAD -1");
 
+    public void SetSafeDirectory()
+    {
+        var targetPath = Path.GetFullPath(_baseGitDir).Replace('\\', '/');
+        ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
+        {
+            Arguments = $"config --global --add safe.directory \"{targetPath}\"",
+        };
+        var p = Process.Start(startInfo);
+        p?.WaitForExit();
+        if (p?.ExitCode != 0)
+        {
+            Log.Warn($"Failed: git config --global --add safe.directory \"{targetPath}\" (exited with {p?.ExitCode}).", nameof(SetSafeDirectory));
+        }
+        else
+        {
+            Log.Info($"Successfully set \"{targetPath}\" as global safe directory.", nameof(SetSafeDirectory));
+        }
+    }
+
     public void Fetch()
     {
         ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)

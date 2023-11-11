@@ -4,6 +4,7 @@ using csharp_Protoshift.Configuration;
 using System.Diagnostics;
 using System.Text.Json.Serialization;
 using System.Diagnostics.CodeAnalysis;
+using csharp_Protoshift.resLoader;
 
 namespace csharp_Protoshift.Commands.Windy
 {
@@ -25,17 +26,17 @@ namespace csharp_Protoshift.Commands.Windy
             _logger = Log.GetChannel("WindyCompilers");
             LuaCompilersDefault = new(new Dictionary<OSType, string>
             {
-                { OSType.win32, "resources/luac_bins/luac_win32.exe" },
-                { OSType.win64, "resources/luac_bins/luac_win64.exe" },
-                // { OSType.mac32, "resources/luac_bins/luac_mac32" },
-                { OSType.mac64, "resources/luac_bins/luac_unix64" },
-                // { OSType.linux32, "resources/luac_bins/luac_linux32" },
-                { OSType.linux64, "resources/luac_bins/luac_unix64" },
+                { OSType.win32, Path.Combine(Resources.BasePath, "luac_bins/luac_win32.exe") },
+                { OSType.win64, Path.Combine(Resources.BasePath, "luac_bins/luac_win64.exe") },
+                // { OSType.mac32, Path.Combine(Resources.BasePath, "luac_bins/luac_mac32") },
+                { OSType.mac64, Path.Combine(Resources.BasePath, "luac_bins/luac_unix64") },
+                // { OSType.linux32, Path.Combine(Resources.BasePath, "luac_bins/luac_linux32") },
+                { OSType.linux64, Path.Combine(Resources.BasePath, "luac_bins/luac_unix64") },
             });
             ChmodAddX();
             _lua_compilers_path = new(LuaCompilersDefault);
 
-            Directory.Delete("windy_temp", true);
+            try { Directory.Delete("windy_temp", true); } catch {  }
             var settmpPathRes = SetCompiledTempPath("windy_temp");
             Debug.Assert(settmpPathRes);
         }

@@ -39,7 +39,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             /// </summary>
             // public bool importIsMessage;
             /// <summary>
-            /// The name can be identified by the compilier in the global context <para/>
+            /// The name can be identified by the compilier in the global context
             /// (but without NewProtos/OldProtos prefix), <para/>
             /// e.g. ExampleProto2, ExampleProto2.Types.ExampleInnerProto
             /// </summary>

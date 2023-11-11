@@ -1,11 +1,11 @@
 #!/bin/bash
 
-cd csharp-Protoshift
-dotnet build --configuration Release
+cd HandlerGenerator
+dotnet build
 build_exitcode=$?
 if [ $build_exitcode == 0 ]; then
     echo MSBuild finished. Running...
-    dotnet run --no-build --configuration Release -- $@
+    dotnet run --no-build -- --update $@
     exit $?
 else
     echo MSBuild failed with exitcode $build_exitcode.
