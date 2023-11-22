@@ -37,6 +37,11 @@ internal class GitInvoke
         Regex.IsMatch(gitPath, "^https:\\/\\/github\\.com\\/[0-9A-Za-z]+\\/[0-9A-Za-z-_\\.]{1,100}\\.git$");
 
     public bool IsValidGitRepository => !Tools.DirNonExistsOrEmpty($"{_baseGitDir}/.git");
+    public void AssertGitDirectory()
+    {
+        if (!IsValidGitRepository)
+            throw new InvalidOperationException($"Git operation failed because the directory is not a Git repository.");
+    }
     /// <summary>
     /// The <c>user.name</c> git config on the current computer.
     /// </summary>
@@ -52,22 +57,26 @@ internal class GitInvoke
     /// </summary>
     /// <returns></returns>
     public string? GetCurrentBranch() =>
-        Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "rev-parse --abbrev-ref HEAD");
+        IsValidGitRepository ? null
+        : Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "rev-parse --abbrev-ref HEAD");
     /// <summary>
     /// Get the author of the last made commit.
     /// </summary>
     public string? GetLastCommitAuthor() =>
-        Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%an\" HEAD -1");
+        IsValidGitRepository ? null
+        : Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%an\" HEAD -1");
     /// <summary>
     /// Get the email of the last made commit.
     /// </summary>
     public string? GetLastCommitEmail() =>
-        Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%ae\" HEAD -1");
+        IsValidGitRepository ? null
+        : Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%ae\" HEAD -1");
     /// <summary>
     /// Get the time of the last made commit.
     /// </summary>
     public string? GetLastCommitTime() =>
-        Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%cd\" HEAD -1");
+        IsValidGitRepository ? null
+        : Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%cd\" HEAD -1");
 
     public void SetSafeDirectory()
     {
@@ -90,6 +99,7 @@ internal class GitInvoke
 
     public void Fetch()
     {
+        AssertGitDirectory();
         ProcessStartInfo startInfo = new(OuterInvokeGlobalConfig.git_path)
         {
             WorkingDirectory = _baseGitDir,
@@ -111,6 +121,7 @@ internal class GitInvoke
 
     public List<string> GetLocalBranches()
     {
+        if (!IsValidGitRepository) return new();
         var content = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, 
             _baseGitDir, "branch --list --format \"%(refname)\"");
         if (content == null) return new();
@@ -121,6 +132,7 @@ internal class GitInvoke
     
     public List<string> GetRemoteBranches()
     {
+        if (!IsValidGitRepository) return new();
         var content = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, 
             _baseGitDir, "branch --list --remote --format \"%(refname)\"");
         if (content == null) return new();
@@ -131,6 +143,7 @@ internal class GitInvoke
 
     public string? GetRemote()
     {
+        if (!IsValidGitRepository) return null;
         var remotes = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "remote")?.Split('\n');
         if (remotes == null) return null;
         if (remotes.Length == 0) return null;
@@ -140,6 +153,7 @@ internal class GitInvoke
 
     public bool TrySetRemote(string newurl)
     {
+        if (!IsValidGitRepository) return false;
         var remotes = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "remote")?.Split('\n');
         if (remotes == null) return false;
         if (remotes.Length == 0) return false;
@@ -160,6 +174,7 @@ internal class GitInvoke
     /// <returns></returns>
     public int GetAheadCommits()
     {
+        AssertGitDirectory();
         var remote_all_branches = GetRemoteBranches();
         var remote_branch = $"origin/{GetCurrentBranch()}";
         if (!remote_all_branches.Contains(remote_branch))
@@ -179,6 +194,7 @@ internal class GitInvoke
     /// <returns></returns>
     public int GetBehindCommits()
     {
+        AssertGitDirectory();
         var remote_all_branches = GetRemoteBranches();
         var remote_branch = $"origin/{GetCurrentBranch()}";
         if (!remote_all_branches.Contains(remote_branch))
@@ -200,6 +216,7 @@ internal class GitInvoke
     /// <returns></returns>
     public bool DifferentFromRemote()
     {
+        AssertGitDirectory();
         if (GetAheadCommits() > 0) return true;
         else if (!string.IsNullOrEmpty(Tools.GetContentFromExecute(
             OuterInvokeGlobalConfig.git_path, _baseGitDir, "diff --staged --shortstat")?.Trim()))

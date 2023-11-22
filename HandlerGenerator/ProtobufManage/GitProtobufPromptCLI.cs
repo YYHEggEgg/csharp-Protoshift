@@ -23,6 +23,7 @@ internal class GitProtobufPromptCLI
         var branchlist = TxtReader.ReadSpecifiedCount($"./Gencode_Configuration/default_protobuf_branches.txt", 2);
         DefaultBranchOld = branchlist[0];
         DefaultBranchNew = branchlist[1];
+        _mainlogger.LogVerb($"Default branches: old={DefaultBranchOld}; new={DefaultBranchNew};");
 
         SourceRepo = TxtReader.ReadSpecifiedCount($"./Gencode_Configuration/protobuf_source_git.txt", 0, 1)[0]
             ?? GitProtosManager.DefaultSource;
@@ -78,6 +79,8 @@ internal class GitProtobufPromptCLI
     {
         var _logger = manager.Logger;
         string? current_branch = manager.GetCurrentBranch();
+        _logger.LogVerb($"TryRestoreProtos: from={remoteUrl_git}; given_branch={branch}; default_branch={default_fallback_branch};");
+        _logger.LogVerb($"Using GitProtosManager: manager.Dir={manager.BaseGitDirectory}; current_branch(from git invoke)={current_branch};");
         #region Set remote
         if (manager.IsValidGitRepository && !manager.EnsureRemote(remoteUrl_git))
         {

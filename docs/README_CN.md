@@ -31,6 +31,11 @@ csharp-Protoshift 可为某二游提供先进、易管理的兼容性扩展。
 
 ## 更新
 
+### v1.1.0
+
+- 修复了在 Protobuf 存放文件夹已经存在（但为空）的情况下，Proto 还原会异常指向主仓库分支的问题。
+- 修复了在 Protobuf 存放文件夹已经存在（但为空）的情况下，Proto 还原产生异常影响主仓库 Git 配置的问题。
+
 ### v1.0.2
 
 - 支持对于 Protoshift Handlers 主动进行提前 JIT 编译。有关详细信息，请参阅 [PR #36](https://github.com/YYHEggEgg/csharp-Protoshift/pull/36).
