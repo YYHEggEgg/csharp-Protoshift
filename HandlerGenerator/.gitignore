@@ -1,0 +1,7 @@
+Gencode_Configuration/afterbuild_task_unix.sh
+Gencode_Configuration/afterbuild_task_win.ps1
+last_build_record.json
+proto2json/proto2json_output
+Proto2json_Output
+ProtoFieldNameAnalyze/Compiled
+ProtoFieldNameAnalyze/GeneratedProtos
