@@ -3,6 +3,7 @@ using csharp_Protoshift.Enhanced.Handlers.Generator.ProtobufManage;
 using csharp_Protoshift.resLoader;
 using System.Collections.Concurrent;
 using System.Diagnostics;
+using System.Net;
 using System.Text;
 using YYHEggEgg.Logger;
 
@@ -383,26 +384,57 @@ internal class Program
                 }
                 #endregion
             }
-            await OuterInvoke.RunMultiple((
-                from oldproto_files in compile_oldproto_cmds
-                select new OuterInvokeInfo
-                {
-                    ProcessPath = OuterInvokeGlobalConfig.protoc_path,
-                    WorkingDir = "./..",
-                    AutoTerminateReason = $"OldProtos compiling (protoc) failed.",
-                    CmdLine = $"--proto_path=\"OldProtoHandlers/Google.Protobuf/Protos\" " +
-                           $"--csharp_out=\"OldProtoHandlers/Google.Protobuf/Compiled\"{oldproto_files}"
-                }
-                ).Concat(
-                from newproto_files in compile_newproto_cmds
-                select new OuterInvokeInfo
-                {
-                    ProcessPath = OuterInvokeGlobalConfig.protoc_path,
-                    WorkingDir = "./..",
-                    AutoTerminateReason = $"NewProtos compiling (protoc) failed.",
-                    CmdLine = $"--proto_path=\"NewProtoHandlers/Google.Protobuf/Protos\" " +
-                           $"--csharp_out=\"NewProtoHandlers/Google.Protobuf/Compiled\"{newproto_files}"
-                }).ToList(), 20041);
+
+#pragma warning disable CS0162
+            if (OuterInvokeGlobalConfig.protoc_path != null)
+            {
+                Log.Info($"Defined protoc path: Using native protoc invoke from: '{OuterInvokeGlobalConfig.protoc_path}'.");
+                await OuterInvoke.RunMultiple((
+                    from oldproto_files in compile_oldproto_cmds
+                    select new OuterInvokeInfo
+                    {
+                        ProcessPath = OuterInvokeGlobalConfig.protoc_path,
+                        WorkingDir = "./..",
+                        AutoTerminateReason = $"OldProtos compiling (protoc) failed.",
+                        CmdLine = $"--proto_path=\"OldProtoHandlers/Google.Protobuf/Protos\" " +
+                               $"--csharp_out=\"OldProtoHandlers/Google.Protobuf/Compiled\"{oldproto_files}"
+                    }
+                    ).Concat(
+                    from newproto_files in compile_newproto_cmds
+                    select new OuterInvokeInfo
+                    {
+                        ProcessPath = OuterInvokeGlobalConfig.protoc_path,
+                        WorkingDir = "./..",
+                        AutoTerminateReason = $"NewProtos compiling (protoc) failed.",
+                        CmdLine = $"--proto_path=\"NewProtoHandlers/Google.Protobuf/Protos\" " +
+                               $"--csharp_out=\"NewProtoHandlers/Google.Protobuf/Compiled\"{newproto_files}"
+                    }).ToList(), 20041);
+            }
+            else
+            {
+                Log.Info($"Not defined protoc path: Using Grpc compiliation.");
+                await OuterInvoke.RunMultiple(
+                    new OuterInvokeInfo
+                    {
+                        ProcessPath = OuterInvokeGlobalConfig.dotnet_path,
+                        WorkingDir = "./EasyGrpcProtoc",
+                        AutoTerminateReason = $"OldProtos compiling (protoc-gRPC) failed.",
+                        CmdLine = $"build --configuration Release " +
+                            $"-p:protobuf_from_proto_dir=\"{Path.GetRelativePath("./EasyGrpcProtoc", "../OldProtoHandlers/Google.Protobuf/Protos")}\" " +
+                            $"-p:protobuf_output_cs_dir=\"{Path.GetRelativePath("./EasyGrpcProtoc", "../OldProtoHandlers/Google.Protobuf/Compiled")}\""
+                    },
+                    new OuterInvokeInfo
+                    {
+                        ProcessPath = OuterInvokeGlobalConfig.dotnet_path,
+                        WorkingDir = "./EasyGrpcProtoc",
+                        AutoTerminateReason = $"NewProtos compiling (protoc-gRPC) failed.",
+                        CmdLine = $"build --configuration Release " +
+                            $"-p:protobuf_from_proto_dir=\"{Path.GetRelativePath("./EasyGrpcProtoc", "../NewProtoHandlers/Google.Protobuf/Protos")}\" " +
+                            $"-p:protobuf_output_cs_dir=\"{Path.GetRelativePath("./EasyGrpcProtoc", "../NewProtoHandlers/Google.Protobuf/Compiled")}\""
+                    }, 20041);
+            }
+#pragma warning restore CS0162
+
             protocWatch.Stop();
             Log.Info($"Protoc compiling finished, elapsed {protocWatch.Elapsed}.");
             await Tools.RewriteProtoNamespaceAsync("OldProtos",
@@ -764,7 +796,7 @@ internal class Program
             for (int i = 0; i < 6; i++) mergeChanges.Add(new());
         }
         #endregion
-        GenProtoshiftDispatch.Run(cmdData, protoshiftDispatch_filePath, 
+        GenProtoshiftDispatch.Run(cmdData, protoshiftDispatch_filePath,
             messageResults, enumResults, mergeChanges);
         recoverbackups.Remove(protoshiftDispatch_filePath);
         #endregion
