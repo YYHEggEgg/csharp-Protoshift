@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.Net;
+using System.Text;
 using System.Text.RegularExpressions;
 using YYHEggEgg.Logger;
 
@@ -57,25 +58,25 @@ internal class GitInvoke
     /// </summary>
     /// <returns></returns>
     public string? GetCurrentBranch() =>
-        IsValidGitRepository ? null
+        !IsValidGitRepository ? null
         : Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "rev-parse --abbrev-ref HEAD");
     /// <summary>
     /// Get the author of the last made commit.
     /// </summary>
     public string? GetLastCommitAuthor() =>
-        IsValidGitRepository ? null
+        !IsValidGitRepository ? null
         : Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%an\" HEAD -1");
     /// <summary>
     /// Get the email of the last made commit.
     /// </summary>
     public string? GetLastCommitEmail() =>
-        IsValidGitRepository ? null
+        !IsValidGitRepository ? null
         : Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%ae\" HEAD -1");
     /// <summary>
     /// Get the time of the last made commit.
     /// </summary>
     public string? GetLastCommitTime() =>
-        IsValidGitRepository ? null
+        !IsValidGitRepository ? null
         : Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path, _baseGitDir, "log --pretty=format:\"%cd\" HEAD -1");
 
     public void SetSafeDirectory()
@@ -179,6 +180,9 @@ internal class GitInvoke
         var remote_branch = $"origin/{GetCurrentBranch()}";
         if (!remote_all_branches.Contains(remote_branch))
         {
+            StringBuilder output = new($"Current branch: '{remote_branch}'; Remote Branches: ");
+            foreach (var branch in remote_all_branches) output.Append($"{branch}; ");
+            Log.Verb(output.ToString(), $"{nameof(GitInvoke)}:{nameof(GetAheadCommits)}");
             throw new EntryPointNotFoundException("The current local branch is not found in remote.");
         }
         var content = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path,
@@ -199,6 +203,9 @@ internal class GitInvoke
         var remote_branch = $"origin/{GetCurrentBranch()}";
         if (!remote_all_branches.Contains(remote_branch))
         {
+            StringBuilder output = new($"Current branch: '{remote_branch}'; Remote Branches: ");
+            foreach (var branch in remote_all_branches) output.Append($"{branch}; ");
+            Log.Verb(output.ToString(), $"{nameof(GitInvoke)}:{nameof(GetBehindCommits)}");
             throw new EntryPointNotFoundException("The current local branch is not found in remote.");
         }
         var content = Tools.GetContentFromExecute(OuterInvokeGlobalConfig.git_path,

@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using CommandLine.Text;
 using System.Text;
+using Google.Protobuf;
 
 namespace csharp_Protoshift
 {
@@ -261,7 +262,7 @@ namespace csharp_Protoshift
             var logger = Log.GetChannel(nameof(UpdateCheck));
             var json = JObject.Parse(await client.GetStringAsync(
                 $"https://api.github.com/repos/YYHEggEgg/csharp-Protoshift/releases/latest"));
-            
+
             if (!Version.TryParse(((string?)json["tag_name"])?.Substring(1), out var version_latest)) return;
             var version_current = Assembly.GetExecutingAssembly().GetName().Version;
             if (version_latest.CompareTo(version_current) <= 0) return;
@@ -269,13 +270,13 @@ namespace csharp_Protoshift
             logger.LogInfo($"The new version: v{version_latest} of csharp-Protoshift is avaliable!");
             // Not a Git repository
             if (!Directory.Exists("./../.git")) return;
-                
+
             foreach (var jtoken in json["assets"] ?? Enumerable.Empty<JToken>())
             {
                 if ((string?)jtoken["name"] != "versioninfo.json") continue;
                 var remoteinfo = await client.GetFromJsonAsync<VersionInfo>((string?)jtoken["browser_download_url"]);
                 if (!Version.TryParse(remoteinfo?.EarliestStableVersion, out var version_stable)) return;
-                
+
                 if (version_stable.CompareTo(version_current) > 0) // Later
                 {
                     logger.LogWarn($"You are recommended to update to this version. Just run 'update' script.");
@@ -463,5 +464,25 @@ namespace csharp_Protoshift
 
         public static void ExitOnLaunching(object? sender, EventArgs? args) =>
             Environment.Exit(6);
+
+        #region Protobuf
+        public static int GetUnknownFieldsSize(object message, Type prototype)
+        {
+            var log = Log.GetChannel(nameof(GetUnknownFieldsSize));
+            var unkFieldSet_field = prototype.GetField("_unknownFields", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (unkFieldSet_field == null)
+            {
+                log.LogVerb($"Warn: unkFieldSet_field == null");
+                return 0;
+            }
+            var unkFieldSet = (UnknownFieldSet?)unkFieldSet_field.GetValue(message);
+            if (unkFieldSet == null)
+            {
+                log.LogVerb($"Warn: unkFieldSet == null");
+                return 0;
+            }
+            return unkFieldSet.CalculateSize();
+        }
+        #endregion
     }
 }
