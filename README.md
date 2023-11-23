@@ -36,6 +36,12 @@ csharp-Protoshift is an advanced, manageable compatibility layer for a certain a
 - Fixed an issue with Proto restoration pointing to the main repository (`csharp-Protoshift`) branch when the Protobuf storage folder exists but is empty.
 - Fixed an issue with Proto restoration causing exceptions that affect the main repository (`csharp-Protoshift`) Git configuration when the Protobuf storage folder exists but is empty.
 - Added support for completing the Proto restoration process without installing protoc.
+- When running the `util protobuf` and `util dcurr` commands, if unknown fields are detected that are not defined in your Proto during the deserialization process from binary, a warning will be issued to you. You can use Protobuf decode-raw tools such as [Protobuf decoder](https://protobuf-decoder.netlify.app) to inspect the actual content carried in the data.
+- The generation version of xLua has been updated for the Unix x64 version, which is now compiled on Ubuntu 20.04 to reduce the version requirement for libc.  
+  The minimum Ubuntu version currently supported by GitHub Actions is `20.04`. If you are using a lower version and encounter similar format errors as below, consider forking [YYHEggEgg/xLua](https://github.com/YYHEggEgg/xLua) and run `build/luac/make_unix.sh` yourself.
+  > ```
+  > ./resources/luac_bins/luac_unix64: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.34' not found (required by ./resources/luac_bins/luac_unix64)
+  > ```
 
 ### v1.0.2
 
