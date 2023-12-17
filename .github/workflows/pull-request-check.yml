@@ -36,7 +36,7 @@ jobs:
         run: cp HandlerGenerator/Gencode_Configuration/afterbuild_task_unix.tmpl.sh HandlerGenerator/Gencode_Configuration/afterbuild_task_unix.sh
 
       - name: Run Generator
-        run: update -y
+        run: ./update -y
 
       - name: Archive build
         uses: actions/upload-artifact@v2
@@ -80,7 +80,7 @@ jobs:
         run: cp HandlerGenerator/Gencode_Configuration/afterbuild_task_win.tmpl.ps1 HandlerGenerator/Gencode_Configuration/afterbuild_task_win.ps1
 
       - name: Run Generator
-        run: update.ps1 -y
+        run: .\update.ps1 -y
 
       - name: Archive build
         uses: actions/upload-artifact@v2
