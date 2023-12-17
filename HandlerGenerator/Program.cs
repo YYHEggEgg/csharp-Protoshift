@@ -105,7 +105,7 @@ internal class Program
         #region Analyze Past file
         // key is source file (will be compiled), value is backup file
         Dictionary<string, string> recoverbackups = new();
-        ConsoleWrapper.ShutDownRequest += RecoverBackupAndExit;
+        Console.CancelKeyPress += RecoverBackupAndExit;
         #region OldProtos.AskCmdId
         string askoldcmdid_filePath = "./../OldProtoHandlers/AskCmdId.cs";
         Dictionary<int, List<string>> cmd_askoldcmdid_specialHandles = new();
