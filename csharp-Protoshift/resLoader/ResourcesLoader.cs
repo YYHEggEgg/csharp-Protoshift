@@ -1,5 +1,6 @@
 ﻿using AssetLib.Formats;
 using csharp_Protoshift.Configuration;
+using XC.RSAUtil;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.resLoader
@@ -156,7 +157,7 @@ namespace csharp_Protoshift.resLoader
                     try
                     {
                         string pemKey = await File.ReadAllTextAsync(file);
-                        Resources.CPri.Add(id, Tools.LoadRSAKey(pemKey));
+                        Resources.CPri.Add(id, RSAUtilBase.LoadRSAKey(pemKey));
                     }
                     catch (Exception ex)
                     {
@@ -174,7 +175,7 @@ namespace csharp_Protoshift.resLoader
                     try
                     {
                         string pemKey = await File.ReadAllTextAsync(file);
-                        Resources.SPub.Add(id, Tools.LoadRSAKey(pemKey));
+                        Resources.SPub.Add(id, RSAUtilBase.LoadRSAKey(pemKey));
                         Log.Warn($"Loaded Server public key (id: {id}). ServerPub keys " +
                             $"are only used for some utils in the program, and ServerPri keys " +
                             $"are REQUIRED for you to run an actual Protoshift server.",
@@ -197,8 +198,8 @@ namespace csharp_Protoshift.resLoader
                     try
                     {
                         string pemKey = await File.ReadAllTextAsync(file);
-                        Resources.SPri.Add(id, Tools.LoadRSAKey(pemKey));
-                        Resources.SPub.TryAdd(id, Tools.LoadRSAKey(pemKey));
+                        Resources.SPri.Add(id, RSAUtilBase.LoadRSAKey(pemKey));
+                        Resources.SPub.TryAdd(id, RSAUtilBase.LoadRSAKey(pemKey));
                     }
                     catch (Exception ex)
                     {
