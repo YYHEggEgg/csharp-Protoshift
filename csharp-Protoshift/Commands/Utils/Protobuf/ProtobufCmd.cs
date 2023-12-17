@@ -1,4 +1,5 @@
 using CommandLine;
+using Google.Protobuf;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands.Protobuf
@@ -128,6 +129,8 @@ namespace csharp_Protoshift.Commands.Protobuf
             _logger.LogInfo($"Got target protocol: {target_namespace}");
 
             string? res = null;
+            IMessage? msg = null;
+            Type? prototype = null;
 
             if (targetprotocolIsNew)
             {
@@ -136,16 +139,19 @@ namespace csharp_Protoshift.Commands.Protobuf
                     _logger.LogErro("Proto type not found!");
                     return;
                 }
+                prototype = serializer.Prototype;
                 var identify_res = await GetUserInput();
                 if (identify_res.InputType == EasyInputType.Json)
                 {
-                    res = Convert.ToBase64String(serializer.SerializeFromJson(identify_res.ProcessedString ?? string.Empty));
+                    msg = serializer.Serialize(identify_res.ProcessedString ?? string.Empty);
+                    res = Convert.ToBase64String(msg.ToByteArray());
                     _logger.LogInfo($"Serialized Base64:{Environment.NewLine}{res}");
                 }
                 else
                 {
                     var bytes_protobuf = identify_res.ToByteArray();
-                    res = Tools.SortJsonSingleLine(serializer.DeserializeToJson(bytes_protobuf));
+                    msg = serializer.Deserialize(bytes_protobuf);
+                    res = Tools.SortJsonSingleLine(JsonFormatter.Default.Format(msg));
                     _logger.LogInfo($"Converted JSON:{Environment.NewLine}{res}");
                 }
             }
@@ -156,27 +162,36 @@ namespace csharp_Protoshift.Commands.Protobuf
                     _logger.LogErro("Proto type not found!");
                     return;
                 }
+                prototype = serializer.Prototype;
                 var identify_res = await GetUserInput();
                 if (identify_res.InputType == EasyInputType.Json)
                 {
-                    res = Convert.ToBase64String(serializer.SerializeFromJson(identify_res.ProcessedString ?? string.Empty));
+                    msg = serializer.Serialize(identify_res.ProcessedString ?? string.Empty);
+                    res = Convert.ToBase64String(msg.ToByteArray());
                     _logger.LogInfo($"Serialized Base64:{Environment.NewLine}{res}");
                 }
                 else
                 {
                     var bytes_protobuf = identify_res.ToByteArray();
-                    res = Tools.SortJsonSingleLine(serializer.DeserializeToJson(bytes_protobuf));
+                    msg = serializer.Deserialize(bytes_protobuf);
+                    res = Tools.SortJsonSingleLine(JsonFormatter.Default.Format(msg));
                     _logger.LogInfo($"Converted JSON:{Environment.NewLine}{res}");
                 }
             }
 
-            if (res == null)
+            if (res == null || msg == null || prototype == null)
             {
                 _logger.LogWarn("Serialization/Deserialization probably failed!");
             }
             else
             {
                 await Tools.SetClipBoardAsync(res);
+
+                var unksize = Tools.GetUnknownFieldsSize(msg, prototype);
+                if (unksize != 0)
+                {
+                    _logger.LogWarn($"Message has unknown fields that aren't defined in your proto: {unksize}/{msg.CalculateSize()} bytes. Please go to protobuf decode-raw tools for more information.");
+                }
             }
         }
     }

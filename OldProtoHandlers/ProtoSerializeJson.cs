@@ -48,42 +48,33 @@ namespace OldProtos
         public readonly bool isNull;
         public static ProtoSerializeJson Empty { get => new(); }
 
+        public IMessage Deserialize(byte[] protobin) =>
+            Parser.ParseFrom(protobin);
+
+        public IMessage Deserialize(byte[] protobin, int offset, int length) =>
+            Parser.ParseFrom(protobin, offset, length);
+
         public string DeserializeToJson(byte[] protobin)
         {
             if (isNull) throw new InvalidOperationException("Trying to use an invalid instance.");
-            return JsonFormatter.Default.Format(Parser.ParseFrom(protobin));
+            return JsonFormatter.Default.Format(Deserialize(protobin));
         }
 
         public string DeserializeToJson(byte[] protobin, int offset, int length)
         {
             if (isNull) throw new InvalidOperationException("Trying to use an invalid instance.");
-            return JsonFormatter.Default.Format(Parser.ParseFrom(protobin, offset, length));
+            return JsonFormatter.Default.Format(Deserialize(protobin, offset, length));
         }
 
-        public string DeserializeFromProto<T>(T protocol) where T : IMessage<T>
-        {
-            return JsonFormatter.Default.Format(protocol);
-        }
-
-        private IMessage SerializeToIMessage(string protojson)
-        {
-            return Parser.ParseJson(protojson);
-        }
-        
-        /// <summary>
-        /// No any checks. Use it at your own risk.
-        /// </summary>
-        public T SerializeToProto<T>(string protojson) where T : IMessage<T>
-        {
-            return (T)SerializeToIMessage(protojson);
-        }
+        public IMessage Serialize(string protojson) =>
+            Parser.ParseJson(protojson);
 
         public byte[] SerializeFromJson(string protojson)
         {
             if (isNull) throw new InvalidOperationException("Trying to use an invalid instance.");
             try
             {
-                return MessageExtensions.ToByteArray(SerializeToIMessage(protojson));
+                return Serialize(protojson).ToByteArray();
             }
             catch (InvalidProtocolBufferException)
             {

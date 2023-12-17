@@ -63,6 +63,11 @@ namespace csharp_Protoshift.Commands.Utils
                     $"You may check whether a correct RSA key is configured.");
             }
             await Tools.SetClipBoardAsync(res);
+            var unksize = Tools.GetUnknownFieldsSize(currres, typeof(OldProtos.QueryCurrRegionHttpRsp));
+            if (unksize != 0)
+            {
+                _logger.LogWarn($"Message has unknown fields that aren't defined in your proto: {unksize}/{currres.CalculateSize()} bytes. Please go to protobuf decode-raw tools for more information.");
+            }
         }
     }
 
@@ -91,7 +96,7 @@ namespace csharp_Protoshift.Commands.Utils
             }
             catch (Exception ex)
             {
-                LogTrace.ErroTrace(ex, 
+                LogTrace.ErroTrace(ex,
                     $"Protobuf serialization failed. ");
                 _logger.LogWarn($"It may because the json isn't valid." +
                     $"It's recommended to modify based on the result" +
@@ -106,7 +111,7 @@ namespace csharp_Protoshift.Commands.Utils
             }
             catch (Exception ex)
             {
-                LogTrace.ErroTrace(ex, 
+                LogTrace.ErroTrace(ex,
                     $"RSA encryption failed. ");
                 _logger.LogWarn($"It may because you don't provide match key" +
                     $"in resources/ClientPri and resources/ServerPri.");

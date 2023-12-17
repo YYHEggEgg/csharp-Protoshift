@@ -29,7 +29,21 @@ csharp-Protoshift is an advanced, manageable compatibility layer for a certain a
 
 - Protobuf / `query_cur_region` / Ec2b and other utility commands.
 
-## Update - v1.0.2
+## Update 
+
+### v1.1.0
+
+- Fixed an issue with Proto restoration pointing to the main repository (`csharp-Protoshift`) branch when the Protobuf storage folder exists but is empty.
+- Fixed an issue with Proto restoration causing exceptions that affect the main repository (`csharp-Protoshift`) Git configuration when the Protobuf storage folder exists but is empty.
+- Added support for completing the Proto restoration process without installing protoc.
+- When running the `util protobuf` and `util dcurr` commands, if unknown fields are detected that are not defined in your Proto during the deserialization process from binary, a warning will be issued to you. You can use Protobuf decode-raw tools such as [Protobuf decoder](https://protobuf-decoder.netlify.app) to inspect the actual content carried in the data.
+- The generation version of xLua has been updated for the Unix x64 version, which is now compiled on Ubuntu 20.04 to reduce the version requirement for libc.  
+  The minimum Ubuntu version currently supported by GitHub Actions is `20.04`. If you are using a lower version and encounter similar format errors as below, consider forking [YYHEggEgg/xLua](https://github.com/YYHEggEgg/xLua) and run `build/luac/make_unix.sh` yourself.
+  > ```
+  > ./resources/luac_bins/luac_unix64: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.34' not found (required by ./resources/luac_bins/luac_unix64)
+  > ```
+
+### v1.0.2
 
 - Support initiated JIT compiling for Protoshift Handlers. For information, please view [PR #36](https://github.com/YYHEggEgg/csharp-Protoshift/pull/36).
 - Fixed the issue whereby `HandlerGenerator` being unable to fetch and restore Protos due to the Git `safe.directory` configuration in certain environments.
@@ -53,8 +67,6 @@ First, you need to make sure you have installed the following software:
 
 - [.NET 6.0 Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0). It is used to generate and run the software.
 - [Git](https://git-scm.com/downloads). It is used to clone the source code and receive updates for this software.
-- [Protocol Buffers Compiler (protoc)](https://github.com/protocolbuffers/protobuf/releases/tag/v21.12), and add it to your system's PATH environment variable. It is used for real-time compilation of necessary files. For consistency, we recommend using version 21.12.  
-  **Please download the zip package starting with `protoc` at the bottom of the release page according to your system**. Here are some download links: [v21.12 Windows x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-win64.zip) | [v21.12 Linux x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip)
 - A real server.
 
 In addition, I strongly recommend that you:

@@ -31,6 +31,20 @@ csharp-Protoshift 可为某二游提供先进、易管理的兼容性扩展。
 
 ## 更新
 
+### v1.1.0
+
+- 修复了在 Protobuf 存放文件夹已经存在（但为空）的情况下，Proto 还原会异常指向主仓库（`csharp-Protoshift`）分支的问题。
+- 修复了在 Protobuf 存放文件夹已经存在（但为空）的情况下，Proto 还原产生异常影响主仓库（`csharp-Protoshift`）Git 配置的问题。
+- 支持在不安装 protoc 的情况下，完成 Proto 还原过程。
+- 在运行 `util protobuf` 与 `util dcurr` 命令时，如果从二进制反序列化过程中检测到存在未在您的 Proto 中定义的未知字段，将会向您发出警告。  
+  您可以寻找类似 [Protobuf decoder](https://protobuf-decoder.netlify.app) 的 Protobuf decode-raw 工具来检查数据中实际携带的内容。
+- 更新了 xLua 的生成版本，将 Unix x64 版本在 Ubuntu 20.04 版本上编译，以
+降低对于 libc 的版本需求。  
+  GitHub Actions 目前支持的最低 Ubuntu 版本即为 `20.04`. 如果您使用更低版本且遇到格式类似下示内容的错误，请考虑复刻 [YYHEggEgg/xLua](https://github.com/YYHEggEgg/xLua) 并自行运行 `build/luac/make_unix.sh`.
+  > ```
+  > ./resources/luac_bins/luac_unix64: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.34' not found (required by ./resources/luac_bins/luac_unix64)
+  > ```
+
 ### v1.0.2
 
 - 支持对于 Protoshift Handlers 主动进行提前 JIT 编译。有关详细信息，请参阅 [PR #36](https://github.com/YYHEggEgg/csharp-Protoshift/pull/36).
@@ -55,8 +69,6 @@ csharp-Protoshift 可为某二游提供先进、易管理的兼容性扩展。
 
 - [.NET 6.0 Runtime](https://dotnet.microsoft.com/zh-cn/download/dotnet/6.0)。它用于生成与运行软件。
 - [Git](https://git-scm.com/downloads)。它用于克隆源代码以及收取本软件的更新。
-- [Protocol Buffers 编译器（protoc）](https://github.com/protocolbuffers/protobuf/releases/tag/v21.12)，并添加到您的系统的 PATH 环境变量。它用于实时编译必要文件。为保持一致性，我们建议使用版本 21.12。  
-  **注意请根据您的系统下载发行页下方以 `protoc` 开头的压缩包**。此处同样提供部分下载链接：[v21.12 Windows x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-win64.zip) | [v21.12 Linux x64](https://github.com/protocolbuffers/protobuf/releases/download/v21.12/protoc-21.12-linux-x86_64.zip)
 - 一个真正的服务器。
 
 除此之外，我个人强烈建议您：

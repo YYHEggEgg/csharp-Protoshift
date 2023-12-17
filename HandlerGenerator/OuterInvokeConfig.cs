@@ -11,7 +11,8 @@
         /// If protoc isn't in the PATH, you can change it to a definitive path.
         /// Not recommend a relative path because the working directory will be changed by the program at the startup. 
         /// </summary>
-        public const string protoc_path = "protoc";
+        /// <remarks>Set the value to not null to specify the path of protobuf compiler.</remarks>
+        public const string? protoc_path = null;
         /// <summary>
         /// The dotnet runtime CLI from Microsoft. 
         /// If dotnet isn't in the PATH, you can change it to a definitive path.
