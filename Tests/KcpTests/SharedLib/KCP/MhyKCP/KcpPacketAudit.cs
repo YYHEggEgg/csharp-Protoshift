@@ -4,6 +4,7 @@ using System.Buffers;
 using System.Buffers.Binary;
 using System.Collections.Concurrent;
 using System.Diagnostics;
+using System.IO.Hashing;
 using System.Net.Sockets.Kcp;
 using System.Text;
 using YYHEggEgg.Logger;
@@ -99,7 +100,7 @@ namespace csharp_Protoshift.MhyKCP
                             uint len = BinaryPrimitives.ReadUInt32LittleEndian(segment.Slice(offset));
                             offset += sizeof(uint);
 #if BYTE_CHECK_MODE
-                            // TODO: Byte Check Mode
+                            uint byteCheckCode = BinaryPrimitives.ReadUInt32LittleEndian(segment.Slice(offset));
                             offset += sizeof(uint);
 #endif
                             Debug.Assert(offset == KcpConst.IKCP_OVERHEAD);
@@ -119,6 +120,16 @@ namespace csharp_Protoshift.MhyKCP
                                     Convert.ToHexString(segment.Slice(
                                         (int)(offset + len), (int)(contentLen - len))));
                             }
+#if BYTE_CHECK_MODE
+                            else
+                            {
+                                var checksum = Crc32.HashToUInt32(segment.Slice(offset));
+                                if (byteCheckCode != checksum)
+                                {
+                                    exceptions.Add($"Segment {i} byte check (CRC32) failed, expected: {byteCheckCode}, actual: {checksum}.");
+                                }
+                            }
+#endif
                             #endregion
                         }
                     }
@@ -153,7 +164,7 @@ namespace csharp_Protoshift.MhyKCP
 #if MIHOMO_KCP
                         offset += sizeof(uint) * 2;
 #else
-                    offset += sizeof(uint);
+                        offset += sizeof(uint);
 #endif
                         byte cmd = segment[offset];
                         offset += sizeof(byte);
@@ -169,6 +180,10 @@ namespace csharp_Protoshift.MhyKCP
                         offset += sizeof(uint);
                         uint len = BinaryPrimitives.ReadUInt32LittleEndian(segment.Slice(offset));
                         offset += sizeof(uint);
+#if BYTE_CHECK_MODE
+                        uint byteCheckCode = BinaryPrimitives.ReadUInt32LittleEndian(segment.Slice(offset));
+                        offset += sizeof(uint);
+#endif
                         Debug.Assert(offset == KcpConst.IKCP_OVERHEAD);
                         #endregion
                         #region Output segment

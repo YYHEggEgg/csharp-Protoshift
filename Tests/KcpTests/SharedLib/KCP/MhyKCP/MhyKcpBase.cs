@@ -76,7 +76,12 @@ namespace csharp_Protoshift.MhyKCP
             _State = ConnectionState.CONNECTED;
 
 #if BYTE_CHECK_MODE
-            cskcpHandle.SetByteCheck(1, true);
+#if CORRUPT_PACKET
+            bool corrupt = true;
+#else
+            bool corrupt = false;
+#endif
+            cskcpHandle.SetByteCheck(1, corrupt);
 #endif
 
             // Added

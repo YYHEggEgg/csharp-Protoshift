@@ -18,6 +18,7 @@
     <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.2-beta51" />
     <PackageReference Include="Google.Protobuf" Version="3.23.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.IO.Hashing" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
