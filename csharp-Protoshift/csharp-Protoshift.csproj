@@ -26,15 +26,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="XC.RSAUtil\**" />
-    <EmbeddedResource Remove="XC.RSAUtil\**" />
-    <None Remove="XC.RSAUtil\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
     <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.1" />
+    <PackageReference Include="EggEgg.XC.RSAUtil" Version="136.0.0" />
     <PackageReference Include="Google.Protobuf" Version="3.24.0" />
     <PackageReference Include="K4os.Compression.LZ4" Version="1.3.5" />
     <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.3.2" />
@@ -48,7 +43,6 @@
     <ProjectReference Include="..\NewProtoHandlers\NewProtoHandlers.csproj" />
     <ProjectReference Include="..\OldProtoHandlers\OldProtoHandlers.csproj" />
     <ProjectReference Include="..\ProtoshiftHandlers\ProtoshiftHandlers.csproj" />
-    <ProjectReference Include="XC.RSAUtil\XC.RSAUtil.csproj" />
   </ItemGroup>
 
 </Project>
