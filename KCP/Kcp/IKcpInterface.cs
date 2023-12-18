@@ -76,6 +76,9 @@ namespace System.Net.Sockets.Kcp
         /// 如果没有必要请不要修改。注意确保接收窗口必须大于最大分片数。
         /// </remarks>
         int WndSize(int sndwnd = 32, int rcvwnd = 128);
+#if BYTE_CHECK_MODE
+        int SetByteCheck(uint byteCheckMode, bool corrupt);
+#endif
     }
 
     public interface IKcpUpdate

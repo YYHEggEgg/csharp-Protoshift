@@ -98,6 +98,10 @@ namespace csharp_Protoshift.MhyKCP
                             offset += sizeof(byte) + sizeof(ushort) + sizeof(uint) * 3;
                             uint len = BinaryPrimitives.ReadUInt32LittleEndian(segment.Slice(offset));
                             offset += sizeof(uint);
+#if BYTE_CHECK_MODE
+                            // TODO: Byte Check Mode
+                            offset += sizeof(uint);
+#endif
                             Debug.Assert(offset == KcpConst.IKCP_OVERHEAD);
                             #endregion
                             #region Content Length Check

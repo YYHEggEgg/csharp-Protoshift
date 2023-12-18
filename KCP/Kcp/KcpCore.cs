@@ -3,6 +3,7 @@ using System.Buffers.Binary;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO.Hashing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static System.Math;
@@ -94,13 +95,16 @@ namespace System.Net.Sockets.Kcp
         public const int IKCP_MTU_DEF = 1400;
         public const int IKCP_ACK_FAST = 3;
         public const int IKCP_INTERVAL = 100;
+        public const int IKCP_OVERHEAD = 24
+#if MIHOMO_KCP
         // miHoMo KCP modify: IKCP_OVERHEAD = 28
         // Change line(s) in file compare: ikcp.c, -40 +40
-#if !MIHOMO_KCP
-        public const int IKCP_OVERHEAD = 24;
-#else
-        public const int IKCP_OVERHEAD = 28;
+            + 4
 #endif
+#if BYTE_CHECK_MODE
+            + 4
+#endif
+        ;
         public const int IKCP_DEADLINK = 20;
         public const int IKCP_THRESH_INIT = 2;
         public const int IKCP_THRESH_MIN = 2;
@@ -269,6 +273,17 @@ namespace System.Net.Sockets.Kcp
         public int stream;
         protected BufferOwner buffer;
 
+#if BYTE_CHECK_MODE
+        /// <summary>
+        /// 应使用的 checksum 算法。1 使用 CRC32；2 使用 xxHash.
+        /// </summary>
+        protected uint byteCheckMode;
+        /// <summary>
+        /// 是否对包进行随机损坏。2B 功能。
+        /// </summary>
+        protected bool corrupt;
+#endif
+
         #endregion
 
         #region 锁和容器
@@ -356,6 +371,11 @@ namespace System.Net.Sockets.Kcp
 #else
             _updateassert = new($"{nameof(KcpCore<Segment>)}_{nameof(Update)}(conv:{conv}, token:{token})");
 #endif
+#endif
+
+#if BYTE_CHECK_MODE
+            byteCheckMode = 1;
+            corrupt = false;
 #endif
         }
 
@@ -920,6 +940,10 @@ namespace System.Net.Sockets.Kcp
                 //seg.len = 0;
                 //seg.sn = 0;
                 //seg.ts = 0;
+#if BYTE_CHECK_MODE
+                seg.byteCheckMode = byteCheckMode;
+                seg.corrupt = corrupt;
+#endif
 
                 #region flush acknowledges
 
@@ -1059,6 +1083,10 @@ namespace System.Net.Sockets.Kcp
                         newseg.rto = rx_rto;
                         newseg.fastack = 0;
                         newseg.xmit = 0;
+#if BYTE_CHECK_MODE
+                        newseg.byteCheckMode = byteCheckMode;
+                        newseg.corrupt = corrupt;
+#endif
                         lock (snd_bufLock)
                         {
                             snd_buf.AddLast(newseg);
@@ -1222,6 +1250,7 @@ namespace System.Net.Sockets.Kcp
         /// Test OutputWriter
         /// <para/>Unuseable now for not applied miHoMo KCP modify.
         /// </summary>
+        [Obsolete("Unuseable now for not applied miHoMo KCP modify.", true)]
         protected void Flush2()
         {
             var current_ = current;
@@ -1649,6 +1678,28 @@ namespace System.Net.Sockets.Kcp
             return 0;
         }
 
+#if BYTE_CHECK_MODE
+        public int SetByteCheck(uint byteCheckMode, bool corrupt)
+        {
+            switch (byteCheckMode)
+            {
+                case 1:
+                case 2:
+                    break;
+                case 0:
+                    byteCheckMode = 0;
+                    break;
+                default:
+                    return -1;
+            }
+            
+            this.byteCheckMode = byteCheckMode;
+            this.corrupt = corrupt;
+
+            return 0;
+        }
+#endif
+
         #endregion
 
 
@@ -1864,6 +1915,9 @@ namespace System.Net.Sockets.Kcp
                 ushort wnd = 0;
                 byte cmd = 0;
                 byte frg = 0;
+#if BYTE_CHECK_MODE
+                uint byteCheckCode = 0;
+#endif
 
                 if (span.Length - offset < IKCP_OVERHEAD)
                 {
@@ -1872,13 +1926,8 @@ namespace System.Net.Sockets.Kcp
 
                 // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
                 // Change line(s) in file compare: ikcp.c, +773
-#if !MIHOMO_KCP
-                Span<byte> header = stackalloc byte[24];
-                span.Slice(offset, 24).CopyTo(header);
-#else
-                Span<byte> header = stackalloc byte[28];
-                span.Slice(offset, 28).CopyTo(header);
-#endif
+                Span<byte> header = stackalloc byte[IKCP_OVERHEAD];
+                span.Slice(offset, IKCP_OVERHEAD).CopyTo(header);
                 offset += ReadHeader(header,
                                      ref conv_,
                 // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
@@ -1892,7 +1941,11 @@ namespace System.Net.Sockets.Kcp
                                      ref ts,
                                      ref sn,
                                      ref una,
-                                     ref length);
+                                     ref length
+#if BYTE_CHECK_MODE
+                                     ,ref byteCheckCode
+#endif
+                                    );
 
                 if (conv != conv_)
                 {
@@ -1984,6 +2037,11 @@ namespace System.Net.Sockets.Kcp
 
                     if (Itimediff(sn, rcv_nxt + rcv_wnd) < 0)
                     {
+#if BYTE_CHECK_MODE
+                        if (!byteCheck(span.Slice(offset, (int)length), byteCheckMode, byteCheckCode))
+                            return -6;
+#endif
+
                         ///instead of ikcp_ack_push
                         acklist.Enqueue((sn, ts));
 
@@ -2124,6 +2182,9 @@ namespace System.Net.Sockets.Kcp
                 ushort wnd = 0;
                 byte cmd = 0;
                 byte frg = 0;
+#if BYTE_CHECK_MODE
+                uint byteCheckCode = 0;
+#endif
 
                 if (span.Length - offset < IKCP_OVERHEAD)
                 {
@@ -2132,13 +2193,8 @@ namespace System.Net.Sockets.Kcp
 
                 // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
                 // Change line(s) in file compare: ikcp.c, +773
-#if !MIHOMO_KCP
-                Span<byte> header = stackalloc byte[24];
-                span.Slice(offset, 24).CopyTo(header);
-#else
-                Span<byte> header = stackalloc byte[28];
-                span.Slice(offset, 28).CopyTo(header);
-#endif
+                Span<byte> header = stackalloc byte[IKCP_OVERHEAD];
+                span.Slice(offset, IKCP_OVERHEAD).CopyTo(header);
                 offset += ReadHeader(header,
                                      ref conv_,
                 // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
@@ -2152,7 +2208,11 @@ namespace System.Net.Sockets.Kcp
                                      ref ts,
                                      ref sn,
                                      ref una,
-                                     ref length);
+                                     ref length
+#if BYTE_CHECK_MODE
+                                     ,ref byteCheckCode
+#endif
+                                    );
 
                 if (conv != conv_)
                 {
@@ -2246,6 +2306,11 @@ namespace System.Net.Sockets.Kcp
 
                     if (Itimediff(sn, rcv_nxt + rcv_wnd) < 0)
                     {
+#if BYTE_CHECK_MODE
+                        if (!byteCheck(span.Slice(offset, (int)length), byteCheckMode, byteCheckCode))
+                            return -6;
+#endif
+
                         ///instead of ikcp_ack_push
                         acklist.Enqueue((sn, ts));
 
@@ -2356,7 +2421,11 @@ namespace System.Net.Sockets.Kcp
                               ref uint ts,
                               ref uint sn,
                               ref uint una,
-                              ref uint length)
+                              ref uint length
+#if BYTE_CHECK_MODE
+                              ,ref uint byteCheckCode
+#endif
+                              )
         {
             var offset = 0;
             if (IsLittleEndian)
@@ -2385,6 +2454,10 @@ namespace System.Net.Sockets.Kcp
                 offset += 4;
                 length = BinaryPrimitives.ReadUInt32LittleEndian(header.Slice(offset));
                 offset += 4;
+#if BYTE_CHECK_MODE
+                byteCheckCode = BinaryPrimitives.ReadUInt32LittleEndian(header.Slice(offset));
+                offset += 4;
+#endif
             }
             else
             {
@@ -2412,10 +2485,62 @@ namespace System.Net.Sockets.Kcp
                 offset += 4;
                 length = BinaryPrimitives.ReadUInt32BigEndian(header.Slice(offset));
                 offset += 4;
+#if BYTE_CHECK_MODE
+                byteCheckCode = BinaryPrimitives.ReadUInt32BigEndian(header.Slice(offset));
+                offset += 4;
+#endif
             }
 
 
             return offset;
         }
+
+#if BYTE_CHECK_MODE
+        public static bool byteCheck(ReadOnlySpan<byte> data, uint byteCheckMode, uint byteCheckCode)
+        {
+            uint newByteCheckCode = 0;
+            switch (byteCheckMode)
+            {
+                case 1:
+                    newByteCheckCode = Crc32.HashToUInt32(data);
+                    break;
+                case 2:
+                    newByteCheckCode = (uint)XxHash64.HashToUInt64(data);
+                    break;
+                default:
+                    newByteCheckCode = 0;
+                    break;
+            }
+            return byteCheckCode == newByteCheckCode;
+        }
+        
+        public static bool byteCheck(ReadOnlySequence<byte> data, uint byteCheckMode, uint byteCheckCode)
+        {
+            uint newByteCheckCode;
+            switch (byteCheckMode)
+            {
+                case 1:
+                    var crc = new Crc32();
+                    foreach (var mem in data)
+                    {
+                        crc.Append(mem.Span);
+                    }
+                    newByteCheckCode = crc.GetCurrentHashAsUInt32();
+                    break;
+                case 2:
+                    var xxhash64 = new XxHash64();
+                    foreach (var mem in data)
+                    {
+                        xxhash64.Append(mem.Span);
+                    }
+                    newByteCheckCode = (uint)xxhash64.GetCurrentHashAsUInt64();
+                    break;
+                default:
+                    newByteCheckCode = 0;
+                    break;
+            }
+            return byteCheckCode == newByteCheckCode;
+        }
+#endif
     }
 }

@@ -51,6 +51,16 @@
         /// 数据内容长度
         /// </summary>
         uint len { get; }
+#if BYTE_CHECK_MODE
+        /// <summary>
+        /// 用于对包 data 进行完整性校验的数据。可能为 CRC32 或 xxHash 结果。
+        /// </summary>
+        uint byteCheckCode { get; }
+        /// <summary>
+        /// 用以供外部写入 <see cref="IKcpSegment.data"/> 后手动更新 byteCheckCode.
+        /// </summary>
+        void ComputeByteCheckCodeFromData();
+#endif
     }
     public interface IKcpSegment : IKcpHeader
     {
@@ -70,6 +80,16 @@
         /// 重传次数
         /// </summary>
         uint xmit { get; set; }
+#if BYTE_CHECK_MODE
+        /// <summary>
+        /// 应使用的 checksum 算法。1 使用 CRC32；2 使用 xxHash.
+        /// </summary>
+        uint byteCheckMode { get; set; }
+        /// <summary>
+        /// 是否对包进行随机损坏。2B 功能。
+        /// </summary>
+        bool corrupt { get; set; }
+#endif
 
         /// <summary>
         /// 数据内容

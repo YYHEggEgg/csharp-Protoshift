@@ -75,6 +75,10 @@ namespace csharp_Protoshift.MhyKCP
             cskcpHandle = new(_Conv, _Token, OutputCallback);
             _State = ConnectionState.CONNECTED;
 
+#if BYTE_CHECK_MODE
+            cskcpHandle.SetByteCheck(1, true);
+#endif
+
             // Added
             // IKCP.ikcp_nodelay(ikcpHandle, 1, 10, 2, 1);
             // modified because mhy is using far more aggressive code, or 力大砖飞 mode
