@@ -35,15 +35,15 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Debug 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Debug
         --property:DefineConstants=TRACE%3bDEBUG%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bCONNECT_SERVERONLY -- 
-        --packet-size 3500 
-        --packet-repeat-time 200 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        MIHOMO_KCP%3bCONNECT_SERVERONLY --
+        --packet-size 3500
+        --packet-repeat-time 200
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
     - name: Archive logs
@@ -72,13 +72,13 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Debug -- 
-        --packet-size 3500 
-        --packet-repeat-time 200 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Debug --
+        --packet-size 3500
+        --packet-repeat-time 200
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
     - name: Archive logs
@@ -107,15 +107,15 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Debug 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Debug
         --property:DefineConstants=TRACE%3bDEBUG%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bBYTE_CHECK_MODE -- 
-        --packet-size 3500 
-        --packet-repeat-time 200 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        MIHOMO_KCP%3bBYTE_CHECK_MODE --
+        --packet-size 3500
+        --packet-repeat-time 200
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
     - name: Archive logs
@@ -130,7 +130,7 @@ jobs:
   network-directly-connect-ubuntu-rel:
     runs-on: ubuntu-latest
 
-    needs: 
+    needs:
       - network-directly-connect-ubuntu-debug
       - network-proxy-ubuntu-debug
       - network-proxy-bytecheck-ubuntu-debug
@@ -151,15 +151,15 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release
         --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bCONNECT_SERVERONLY -- 
-        --packet-size 3500 
-        --packet-repeat-time 5000 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        MIHOMO_KCP%3bCONNECT_SERVERONLY --
+        --packet-size 3500
+        --packet-repeat-time 5000
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
     - name: Archive logs
@@ -172,7 +172,7 @@ jobs:
   network-directly-connect-windows-rel:
     runs-on: windows-latest
 
-    needs: 
+    needs:
       - network-directly-connect-ubuntu-debug
       - network-proxy-ubuntu-debug
       - network-proxy-bytecheck-ubuntu-debug
@@ -193,15 +193,15 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release
         --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bCONNECT_SERVERONLY -- 
-        --packet-size 3500 
-        --packet-repeat-time 5000 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        MIHOMO_KCP%3bCONNECT_SERVERONLY --
+        --packet-size 3500
+        --packet-repeat-time 5000
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
     - name: Archive logs
@@ -214,7 +214,7 @@ jobs:
   network-proxy-ubuntu-rel:
     runs-on: ubuntu-latest
 
-    needs: 
+    needs:
       - network-directly-connect-ubuntu-debug
       - network-proxy-ubuntu-debug
       - network-proxy-bytecheck-ubuntu-debug
@@ -235,13 +235,13 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release -- 
-        --packet-size 3500 
-        --packet-repeat-time 5000 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release --
+        --packet-size 3500
+        --packet-repeat-time 5000
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
     - name: Archive logs
@@ -254,7 +254,7 @@ jobs:
   network-proxy-windows-rel:
     runs-on: windows-latest
 
-    needs: 
+    needs:
       - network-directly-connect-ubuntu-debug
       - network-proxy-ubuntu-debug
       - network-proxy-bytecheck-ubuntu-debug
@@ -275,13 +275,13 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release -- 
-        --packet-size 3500 
-        --packet-repeat-time 5000 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release --
+        --packet-size 3500
+        --packet-repeat-time 5000
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
     - name: Archive logs
@@ -296,7 +296,7 @@ jobs:
   network-directly-connect-bytecheck-ubuntu-rel:
     runs-on: ubuntu-latest
 
-    needs: 
+    needs:
       - network-directly-connect-ubuntu-debug
       - network-proxy-ubuntu-debug
       - network-proxy-bytecheck-ubuntu-debug
@@ -317,15 +317,15 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release
         --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bCONNECT_SERVERONLY%3bBYTE_CHECK_MODE -- 
-        --packet-size 3500 
-        --packet-repeat-time 5000 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        MIHOMO_KCP%3bCONNECT_SERVERONLY%3bBYTE_CHECK_MODE --
+        --packet-size 3500
+        --packet-repeat-time 5000
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
     - name: Archive logs
@@ -338,7 +338,7 @@ jobs:
   network-directly-connect-bytecheck-windows-rel:
     runs-on: windows-latest
 
-    needs: 
+    needs:
       - network-directly-connect-ubuntu-debug
       - network-proxy-ubuntu-debug
       - network-proxy-bytecheck-ubuntu-debug
@@ -359,15 +359,15 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release
         --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bCONNECT_SERVERONLY%3bBYTE_CHECK_MODE -- 
-        --packet-size 3500 
-        --packet-repeat-time 5000 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        MIHOMO_KCP%3bCONNECT_SERVERONLY%3bBYTE_CHECK_MODE --
+        --packet-size 3500
+        --packet-repeat-time 5000
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
     - name: Archive logs
@@ -380,7 +380,7 @@ jobs:
   network-proxy-bytecheck-ubuntu-rel:
     runs-on: ubuntu-latest
 
-    needs: 
+    needs:
       - network-directly-connect-ubuntu-debug
       - network-proxy-ubuntu-debug
       - network-proxy-bytecheck-ubuntu-debug
@@ -401,15 +401,15 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release
         --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bBYTE_CHECK_MODE -- 
-        --packet-size 3500 
-        --packet-repeat-time 5000 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        MIHOMO_KCP%3bBYTE_CHECK_MODE --
+        --packet-size 3500
+        --packet-repeat-time 5000
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
     - name: Archive logs
@@ -422,7 +422,7 @@ jobs:
   network-proxy-bytecheck-windows-rel:
     runs-on: windows-latest
 
-    needs: 
+    needs:
       - network-directly-connect-ubuntu-debug
       - network-proxy-ubuntu-debug
       - network-proxy-bytecheck-ubuntu-debug
@@ -443,15 +443,15 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release
         --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bBYTE_CHECK_MODE -- 
-        --packet-size 3500 
-        --packet-repeat-time 5000 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        MIHOMO_KCP%3bBYTE_CHECK_MODE --
+        --packet-size 3500
+        --packet-repeat-time 5000
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
     - name: Archive logs
@@ -488,15 +488,15 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release
         --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bCONNECT_SERVERONLY%3bBYTE_CHECK_MODE -- 
-        --packet-size 30000 
-        --packet-repeat-time 5000 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        MIHOMO_KCP%3bCONNECT_SERVERONLY%3bBYTE_CHECK_MODE --
+        --packet-size 30000
+        --packet-repeat-time 5000
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
   network-directly-connect-bytecheck-bigdata-windows-rel:
@@ -524,15 +524,15 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release
         --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bCONNECT_SERVERONLY%3bBYTE_CHECK_MODE -- 
-        --packet-size 30000 
-        --packet-repeat-time 5000 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        MIHOMO_KCP%3bCONNECT_SERVERONLY%3bBYTE_CHECK_MODE --
+        --packet-size 30000
+        --packet-repeat-time 5000
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
   network-proxy-bytecheck-bigdata-ubuntu-rel:
@@ -560,15 +560,15 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release
         --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bBYTE_CHECK_MODE -- 
-        --packet-size 30000 
-        --packet-repeat-time 5000 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        MIHOMO_KCP%3bBYTE_CHECK_MODE --
+        --packet-size 30000
+        --packet-repeat-time 5000
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
   network-proxy-bytecheck-bigdata-windows-rel:
@@ -596,15 +596,15 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release
         --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bBYTE_CHECK_MODE -- 
-        --packet-size 30000 
-        --packet-repeat-time 5000 
-        --packet-interval 40 
-        --github-actions 
-        --clients-count 2 
+        MIHOMO_KCP%3bBYTE_CHECK_MODE --
+        --packet-size 30000
+        --packet-repeat-time 5000
+        --packet-interval 40
+        --github-actions
+        --clients-count 2
         --packet-delay-log
 
   # Pressure Test
@@ -631,15 +631,15 @@ jobs:
       run: |
         dotnet nuget add source https://apiint.nugettest.org/v3/index.json -n "nuget.org (Integration)"
         dotnet restore Tests/KcpTests/KcpPerformanceTest/KcpPerformanceTest.csproj
-     
+    
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release -- 
-        --packet-size 3500 
-        --packet-repeat-time 5000 
-        --packet-interval 50 
-        --github-actions 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release --
+        --packet-size 3500
+        --packet-repeat-time 5000
+        --packet-interval 50
+        --github-actions
         --clients-count 10
 
     - name: Archive logs
@@ -674,12 +674,12 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release -- 
-        --packet-size 3500 
-        --packet-repeat-time 5000 
-        --packet-interval 50 
-        --github-actions 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release --
+        --packet-size 3500
+        --packet-repeat-time 5000
+        --packet-interval 50
+        --github-actions
         --clients-count 10
 
     - name: Archive logs
@@ -719,17 +719,17 @@ jobs:
       run: |
         dotnet nuget add source https://apiint.nugettest.org/v3/index.json -n "nuget.org (Integration)"
         dotnet restore Tests/KcpTests/KcpPerformanceTest/KcpPerformanceTest.csproj
-     
+    
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release
         --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bBYTE_CHECK_MODE -- 
-        --packet-size 3500 
-        --packet-repeat-time 5000 
-        --packet-interval 50 
-        --github-actions 
+        MIHOMO_KCP%3bBYTE_CHECK_MODE --
+        --packet-size 3500
+        --packet-repeat-time 5000
+        --packet-interval 50
+        --github-actions
         --clients-count 10
 
     - name: Archive logs
@@ -772,14 +772,14 @@ jobs:
 
     - name: Run tests
       run: >
-        cd Tests/KcpTests/KcpPerformanceTest ; 
-        dotnet run --configuration Release 
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Release
         --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3b
-        MIHOMO_KCP%3bBYTE_CHECK_MODE -- 
-        --packet-size 3500 
-        --packet-repeat-time 5000 
-        --packet-interval 50 
-        --github-actions 
+        MIHOMO_KCP%3bBYTE_CHECK_MODE --
+        --packet-size 3500
+        --packet-repeat-time 5000
+        --packet-interval 50
+        --github-actions
         --clients-count 10
 
     - name: Archive logs
