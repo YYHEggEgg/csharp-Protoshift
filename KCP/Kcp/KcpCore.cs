@@ -1979,6 +1979,7 @@ namespace System.Net.Sockets.Kcp
                             offset += (int)length;
                             continue;
                         }
+                        break;
 #endif
                     case IKCP_CMD_ACK:
                     case IKCP_CMD_WASK:
