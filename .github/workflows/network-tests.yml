@@ -16,7 +16,7 @@ jobs:
 
   # Quick Check
 
-  network-directly-connect-ubuntu-debug:
+  net-debug-direct-ubuntu:
     runs-on: ubuntu-latest
 
     steps:
@@ -52,7 +52,7 @@ jobs:
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
-  network-proxy-ubuntu-debug:
+  net-debug-proxy-ubuntu:
     runs-on: ubuntu-latest
 
     steps:
@@ -87,7 +87,7 @@ jobs:
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
-  network-proxy-bytecheck-ubuntu-debug:
+  net-debug-proxy-bytecheck-ubuntu:
     runs-on: ubuntu-latest
 
     steps:
@@ -125,13 +125,13 @@ jobs:
 
   # Basic (rel)
 
-  network-directly-connect-ubuntu-rel:
+  net-rel-direct-ubuntu:
     runs-on: ubuntu-latest
 
     needs:
-      - network-directly-connect-ubuntu-debug
-      - network-proxy-ubuntu-debug
-      - network-proxy-bytecheck-ubuntu-debug
+      - net-debug-direct-ubuntu
+      - net-debug-proxy-ubuntu
+      - net-debug-proxy-bytecheck-ubuntu
 
     steps:
     - name: Checkout code
@@ -166,13 +166,13 @@ jobs:
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
-  network-directly-connect-windows-rel:
+  net-rel-direct-windows:
     runs-on: windows-latest
 
     needs:
-      - network-directly-connect-ubuntu-debug
-      - network-proxy-ubuntu-debug
-      - network-proxy-bytecheck-ubuntu-debug
+      - net-debug-direct-ubuntu
+      - net-debug-proxy-ubuntu
+      - net-debug-proxy-bytecheck-ubuntu
 
     steps:
     - name: Checkout code
@@ -207,13 +207,13 @@ jobs:
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
-  network-proxy-ubuntu-rel:
+  net-rel-proxy-ubuntu:
     runs-on: ubuntu-latest
 
     needs:
-      - network-directly-connect-ubuntu-debug
-      - network-proxy-ubuntu-debug
-      - network-proxy-bytecheck-ubuntu-debug
+      - net-debug-direct-ubuntu
+      - net-debug-proxy-ubuntu
+      - net-debug-proxy-bytecheck-ubuntu
 
     steps:
     - name: Checkout code
@@ -247,13 +247,13 @@ jobs:
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
-  network-proxy-windows-rel:
+  net-rel-proxy-windows:
     runs-on: windows-latest
 
     needs:
-      - network-directly-connect-ubuntu-debug
-      - network-proxy-ubuntu-debug
-      - network-proxy-bytecheck-ubuntu-debug
+      - net-debug-direct-ubuntu
+      - net-debug-proxy-ubuntu
+      - net-debug-proxy-bytecheck-ubuntu
 
     steps:
     - name: Checkout code
@@ -289,13 +289,13 @@ jobs:
 
   # Byte Check Mode (rel)
 
-  network-directly-connect-bytecheck-ubuntu-rel:
+  net-rel-direct-bytecheck-ubuntu:
     runs-on: ubuntu-latest
 
     needs:
-      - network-directly-connect-ubuntu-debug
-      - network-proxy-ubuntu-debug
-      - network-proxy-bytecheck-ubuntu-debug
+      - net-debug-direct-ubuntu
+      - net-debug-proxy-ubuntu
+      - net-debug-proxy-bytecheck-ubuntu
 
     steps:
     - name: Checkout code
@@ -330,13 +330,13 @@ jobs:
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
-  network-directly-connect-bytecheck-windows-rel:
+  net-rel-direct-bytecheck-windows:
     runs-on: windows-latest
 
     needs:
-      - network-directly-connect-ubuntu-debug
-      - network-proxy-ubuntu-debug
-      - network-proxy-bytecheck-ubuntu-debug
+      - net-debug-direct-ubuntu
+      - net-debug-proxy-ubuntu
+      - net-debug-proxy-bytecheck-ubuntu
 
     steps:
     - name: Checkout code
@@ -371,13 +371,13 @@ jobs:
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
-  network-proxy-bytecheck-ubuntu-rel:
+  net-rel-proxy-bytecheck-ubuntu:
     runs-on: ubuntu-latest
 
     needs:
-      - network-directly-connect-ubuntu-debug
-      - network-proxy-ubuntu-debug
-      - network-proxy-bytecheck-ubuntu-debug
+      - net-debug-direct-ubuntu
+      - net-debug-proxy-ubuntu
+      - net-debug-proxy-bytecheck-ubuntu
 
     steps:
     - name: Checkout code
@@ -412,13 +412,13 @@ jobs:
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
-  network-proxy-bytecheck-windows-rel:
+  net-rel-proxy-bytecheck-windows:
     runs-on: windows-latest
 
     needs:
-      - network-directly-connect-ubuntu-debug
-      - network-proxy-ubuntu-debug
-      - network-proxy-bytecheck-ubuntu-debug
+      - net-debug-direct-ubuntu
+      - net-debug-proxy-ubuntu
+      - net-debug-proxy-bytecheck-ubuntu
 
     steps:
     - name: Checkout code
@@ -455,14 +455,14 @@ jobs:
 
   # Byte Check Mode Extended Test
 
-  network-directly-connect-bytecheck-bigdata-ubuntu-rel:
+  net-rel-direct-bigdata-bytecheck-ubuntu:
     runs-on: ubuntu-latest
 
     needs:
-      - network-directly-connect-bytecheck-ubuntu-rel
-      - network-directly-connect-bytecheck-windows-rel
-      - network-proxy-bytecheck-ubuntu-rel
-      - network-proxy-bytecheck-windows-rel
+      - net-rel-direct-bytecheck-ubuntu
+      - net-rel-direct-bytecheck-windows
+      - net-rel-proxy-bytecheck-ubuntu
+      - net-rel-proxy-bytecheck-windows
 
     steps:
     - name: Checkout code
@@ -490,14 +490,14 @@ jobs:
         --clients-count 2
         --packet-delay-log
 
-  network-directly-connect-bytecheck-bigdata-windows-rel:
+  net-rel-direct-bigdata-bytecheck-windows:
     runs-on: windows-latest
 
     needs:
-      - network-directly-connect-bytecheck-ubuntu-rel
-      - network-directly-connect-bytecheck-windows-rel
-      - network-proxy-bytecheck-ubuntu-rel
-      - network-proxy-bytecheck-windows-rel
+      - net-rel-direct-bytecheck-ubuntu
+      - net-rel-direct-bytecheck-windows
+      - net-rel-proxy-bytecheck-ubuntu
+      - net-rel-proxy-bytecheck-windows
 
     steps:
     - name: Checkout code
@@ -525,14 +525,14 @@ jobs:
         --clients-count 2
         --packet-delay-log
 
-  network-proxy-bytecheck-bigdata-ubuntu-rel:
+  net-rel-proxy-bigdata-bytecheck-ubuntu:
     runs-on: ubuntu-latest
 
     needs:
-      - network-directly-connect-bytecheck-ubuntu-rel
-      - network-directly-connect-bytecheck-windows-rel
-      - network-proxy-bytecheck-ubuntu-rel
-      - network-proxy-bytecheck-windows-rel
+      - net-rel-direct-bytecheck-ubuntu
+      - net-rel-direct-bytecheck-windows
+      - net-rel-proxy-bytecheck-ubuntu
+      - net-rel-proxy-bytecheck-windows
 
     steps:
     - name: Checkout code
@@ -560,14 +560,14 @@ jobs:
         --clients-count 2
         --packet-delay-log
 
-  network-proxy-bytecheck-bigdata-windows-rel:
+  net-rel-proxy-bigdata-bytecheck-windows:
     runs-on: windows-latest
 
     needs:
-      - network-directly-connect-bytecheck-ubuntu-rel
-      - network-directly-connect-bytecheck-windows-rel
-      - network-proxy-bytecheck-ubuntu-rel
-      - network-proxy-bytecheck-windows-rel
+      - net-rel-direct-bytecheck-ubuntu
+      - net-rel-direct-bytecheck-windows
+      - net-rel-proxy-bytecheck-ubuntu
+      - net-rel-proxy-bytecheck-windows
 
     steps:
     - name: Checkout code
@@ -597,14 +597,14 @@ jobs:
 
   # Pressure Test
 
-  network-pressure-10-clients-ubuntu-rel:
+  net-rel-pressure-10-clients-ubuntu:
     runs-on: ubuntu-latest
 
     needs:
-      - network-directly-connect-ubuntu-rel
-      - network-directly-connect-windows-rel
-      - network-proxy-ubuntu-rel
-      - network-proxy-windows-rel
+      - net-rel-direct-ubuntu
+      - net-rel-direct-windows
+      - net-rel-proxy-ubuntu
+      - net-rel-proxy-windows
 
     steps:
     - name: Checkout code
@@ -637,14 +637,14 @@ jobs:
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
-  network-pressure-20-clients-ubuntu-rel:
+  net-rel-pressure-20-clients-ubuntu:
     runs-on: ubuntu-latest
 
     needs:
-      - network-directly-connect-ubuntu-rel
-      - network-directly-connect-windows-rel
-      - network-proxy-ubuntu-rel
-      - network-proxy-windows-rel
+      - net-rel-direct-ubuntu
+      - net-rel-direct-windows
+      - net-rel-proxy-ubuntu
+      - net-rel-proxy-windows
 
     steps:
     - name: Checkout code
@@ -677,22 +677,22 @@ jobs:
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
-  network-pressure-10-clients-bytecheck-ubuntu-rel:
+  net-rel-pressure-bytecheck-10-clients-ubuntu:
     runs-on: ubuntu-latest
 
     needs:
-      - network-directly-connect-ubuntu-rel
-      - network-directly-connect-windows-rel
-      - network-proxy-ubuntu-rel
-      - network-proxy-windows-rel
-      - network-directly-connect-bytecheck-ubuntu-rel
-      - network-directly-connect-bytecheck-windows-rel
-      - network-proxy-bytecheck-ubuntu-rel
-      - network-proxy-bytecheck-windows-rel
-      - network-directly-connect-bytecheck-bigdata-ubuntu-rel
-      - network-directly-connect-bytecheck-bigdata-windows-rel
-      - network-proxy-bytecheck-bigdata-ubuntu-rel
-      - network-proxy-bytecheck-bigdata-windows-rel
+      - net-rel-direct-ubuntu
+      - net-rel-direct-windows
+      - net-rel-proxy-ubuntu
+      - net-rel-proxy-windows
+      - net-rel-direct-bytecheck-ubuntu
+      - net-rel-direct-bytecheck-windows
+      - net-rel-proxy-bytecheck-ubuntu
+      - net-rel-proxy-bytecheck-windows
+      - net-rel-direct-bigdata-bytecheck-ubuntu
+      - net-rel-direct-bigdata-bytecheck-windows
+      - net-rel-proxy-bigdata-bytecheck-ubuntu
+      - net-rel-proxy-bigdata-bytecheck-windows
 
     steps:
     - name: Checkout code
@@ -726,22 +726,22 @@ jobs:
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
-  network-pressure-20-clients-bytecheck-ubuntu-rel:
+  net-rel-pressure-bytecheck-20-clients-ubuntu:
     runs-on: ubuntu-latest
 
     needs:
-      - network-directly-connect-ubuntu-rel
-      - network-directly-connect-windows-rel
-      - network-proxy-ubuntu-rel
-      - network-proxy-windows-rel
-      - network-directly-connect-bytecheck-ubuntu-rel
-      - network-directly-connect-bytecheck-windows-rel
-      - network-proxy-bytecheck-ubuntu-rel
-      - network-proxy-bytecheck-windows-rel
-      - network-directly-connect-bytecheck-bigdata-ubuntu-rel
-      - network-directly-connect-bytecheck-bigdata-windows-rel
-      - network-proxy-bytecheck-bigdata-ubuntu-rel
-      - network-proxy-bytecheck-bigdata-windows-rel
+      - net-rel-direct-ubuntu
+      - net-rel-direct-windows
+      - net-rel-proxy-ubuntu
+      - net-rel-proxy-windows
+      - net-rel-direct-bytecheck-ubuntu
+      - net-rel-direct-bytecheck-windows
+      - net-rel-proxy-bytecheck-ubuntu
+      - net-rel-proxy-bytecheck-windows
+      - net-rel-direct-bigdata-bytecheck-ubuntu
+      - net-rel-direct-bigdata-bytecheck-windows
+      - net-rel-proxy-bigdata-bytecheck-ubuntu
+      - net-rel-proxy-bigdata-bytecheck-windows
 
     steps:
     - name: Checkout code
