@@ -12,7 +12,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
             KCPServer kcpServer = new(new(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
             Log.Info($"KCPServer listening on localhost:{Constants.UDP_SERVER_PORT}.", nameof(ServerApp));
 
-            Tools.RunBackground(() =>
+            Util.RunBackground(() =>
             {
                 while (true)
                 {

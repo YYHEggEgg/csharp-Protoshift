@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.MhyKCP.Test
 {
@@ -56,7 +57,7 @@ namespace csharp_Protoshift.MhyKCP.Test
             {
                 if (t.IsFaulted)
                 {
-                    LogTrace.ErroTrace(t.Exception, log_sender, fatal_notice);
+                    Log.Erro($"{fatal_notice} {t.Exception}", log_sender);
                 }
             }, TaskContinuationOptions.OnlyOnFaulted);
         }

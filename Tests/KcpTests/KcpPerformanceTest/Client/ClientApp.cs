@@ -31,7 +31,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
 #else
             Log.Info($"KCPClient connected to localhost:{Constants.UDP_PROXY_PORT}.", nameof(ClientApp));
 #endif
-            Tools.RunBackground(async () =>
+            Util.RunBackground(async () =>
             {
                 int sum_wait_ms = 0;
                 uint ack = (uint)(Constants.packet_repeat_time * 2 * clientId + 1);
@@ -72,7 +72,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                 _finished = true;
             }, $"The sender of Client {clientId} has met a fatal error. ", "ClientSender");
 
-            Tools.RunBackground(() =>
+            Util.RunBackground(() =>
             {
                 while (true)
                 {
