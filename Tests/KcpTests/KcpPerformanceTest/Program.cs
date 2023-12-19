@@ -60,13 +60,13 @@ internal class Program
             while (true)
             {
                 if (!MainAnalysis.TestsFinished) await Task.Delay(10000);
-                else Environment.Exit(0);
+                else Environment.Exit(MainAnalysis.ProgramExitCode);
             }
         }
         else
         {
             Console.ReadLine();
-            Environment.Exit(0);
+            Environment.Exit(MainAnalysis.ProgramExitCode);
         }
     }
 
