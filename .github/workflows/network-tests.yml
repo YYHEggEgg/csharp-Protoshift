@@ -800,6 +800,14 @@ jobs:
         --clients-count 2
         --packet-delay-log
 
+    - name: Archive logs
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Report & logs (directly-ubuntu-rel, BYTE_CHECK_MODE, big packet)
+        path: Tests/KcpTests/KcpPerformanceTest/logs
+        retention-days: 21
+
   net-rel-direct-bigdata-bytecheck-windows:
     runs-on: windows-latest
 
@@ -834,6 +842,14 @@ jobs:
         --github-actions
         --clients-count 2
         --packet-delay-log
+
+    - name: Archive logs
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Report & logs (directly-windows-rel, BYTE_CHECK_MODE, big packet)
+        path: Tests/KcpTests/KcpPerformanceTest/logs
+        retention-days: 21
 
   net-rel-proxy-bigdata-bytecheck-ubuntu:
     runs-on: ubuntu-latest
@@ -870,6 +886,14 @@ jobs:
         --clients-count 2
         --packet-delay-log
 
+    - name: Archive logs
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Report & logs (proxy-ubuntu-rel, BYTE_CHECK_MODE, big packet)
+        path: Tests/KcpTests/KcpPerformanceTest/logs
+        retention-days: 21
+
   net-rel-proxy-bigdata-bytecheck-windows:
     runs-on: windows-latest
 
@@ -904,6 +928,14 @@ jobs:
         --github-actions
         --clients-count 2
         --packet-delay-log
+
+    - name: Archive logs
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Report & logs (proxy-windows-rel, BYTE_CHECK_MODE, big packet)
+        path: Tests/KcpTests/KcpPerformanceTest/logs
+        retention-days: 21
 
   net-rel-direct-corrupt-bigdata-bytecheck-ubuntu:
     runs-on: ubuntu-latest
@@ -944,6 +976,14 @@ jobs:
         --clients-count 2
         --packet-delay-log
 
+    - name: Archive logs
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Report & logs (directly-ubuntu-rel, BYTE_CHECK_MODE, CORRUPT_PACKET, big packet)
+        path: Tests/KcpTests/KcpPerformanceTest/logs
+        retention-days: 21
+
   net-rel-direct-corrupt-bigdata-bytecheck-windows:
     runs-on: windows-latest
 
@@ -982,6 +1022,14 @@ jobs:
         --github-actions
         --clients-count 2
         --packet-delay-log
+
+    - name: Archive logs
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Report & logs (directly-windows-rel, BYTE_CHECK_MODE, CORRUPT_PACKET, big packet)
+        path: Tests/KcpTests/KcpPerformanceTest/logs
+        retention-days: 21
 
   net-rel-proxy-corrupt-bigdata-bytecheck-ubuntu:
     runs-on: ubuntu-latest
@@ -1022,6 +1070,14 @@ jobs:
         --clients-count 2
         --packet-delay-log
 
+    - name: Archive logs
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Report & logs (proxy-ubuntu-rel, BYTE_CHECK_MODE, CORRUPT_PACKET, big packet)
+        path: Tests/KcpTests/KcpPerformanceTest/logs
+        retention-days: 21
+
   net-rel-proxy-corrupt-bigdata-bytecheck-windows:
     runs-on: windows-latest
 
@@ -1060,6 +1116,14 @@ jobs:
         --github-actions
         --clients-count 2
         --packet-delay-log
+
+    - name: Archive logs
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Report & logs (proxy-windows-rel, BYTE_CHECK_MODE, CORRUPT_PACKET, big packet)
+        path: Tests/KcpTests/KcpPerformanceTest/logs
+        retention-days: 21
 
   # Pressure Test
 
