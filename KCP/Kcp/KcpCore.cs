@@ -1969,6 +1969,17 @@ namespace System.Net.Sockets.Kcp
                 switch (cmd)
                 {
                     case IKCP_CMD_PUSH:
+#if BYTE_CHECK_MODE
+                        if (!byteCheck(span.Slice(offset, (int)length), byteCheckMode, byteCheckCode))
+                        {
+                            if (CanLog(KcpLogMask.IKCP_LOG_IN_DATA))
+                            {
+                                LogWriteLine($"input psh dropped (checksum failed): sn={sn} ts={ts}", KcpLogMask.IKCP_LOG_IN_DATA.ToString());
+                            }
+                            offset += (int)length;
+                            continue;
+                        }
+#endif
                     case IKCP_CMD_ACK:
                     case IKCP_CMD_WASK:
                     case IKCP_CMD_WINS:
@@ -2037,18 +2048,6 @@ namespace System.Net.Sockets.Kcp
 
                     if (Itimediff(sn, rcv_nxt + rcv_wnd) < 0)
                     {
-#if BYTE_CHECK_MODE
-                        if (!byteCheck(span.Slice(offset, (int)length), byteCheckMode, byteCheckCode))
-                        {
-                            if (CanLog(KcpLogMask.IKCP_LOG_IN_DATA))
-                            {
-                                LogWriteLine($"input psh dropped (checksum failed): sn={sn} ts={ts}", KcpLogMask.IKCP_LOG_IN_DATA.ToString());
-                            }
-                            offset += (int)length;
-                            continue;
-                        }
-#endif
-
                         ///instead of ikcp_ack_push
                         acklist.Enqueue((sn, ts));
 
