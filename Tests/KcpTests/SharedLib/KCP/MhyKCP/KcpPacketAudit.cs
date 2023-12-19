@@ -120,7 +120,7 @@ namespace csharp_Protoshift.MhyKCP
                                     Convert.ToHexString(segment.Slice(
                                         (int)(offset + len), (int)(contentLen - len))));
                             }
-#if BYTE_CHECK_MODE
+#if BYTE_CHECK_MODE && !CORRUPT_PACKET
                             else
                             {
                                 var checksum = Crc32.HashToUInt32(segment.Slice(offset));

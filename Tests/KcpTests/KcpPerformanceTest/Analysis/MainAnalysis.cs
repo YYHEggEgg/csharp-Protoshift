@@ -10,6 +10,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
     internal static class MainAnalysis
     {
         public static bool TestsFinished { get; private set; } = false;
+        public static int ProgramExitCode { get; private set; } = 0;
 
         /// <summary>
         /// 客户端发出全部包后调用，在10s后锁定<see cref="ClientDataChannel"/>，并停止Proxy与Server的数据收集并创建副本
@@ -204,6 +205,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 acklist += $"{loss}; ";
             }
             acklist += "]";
+            if (Cs_proxy_failed.lost_ack.Any())
+                ProgramExitCode = 114514;
             Output(stringRes, acklist);
             #endregion
             Output(stringRes);
@@ -216,6 +219,8 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
                 acklist += $"{loss}; ";
             }
             acklist += "]";
+            if (Sc_proxy_failed.lost_ack.Any())
+                ProgramExitCode = 114514;
             Output(stringRes, acklist);
             #endregion
             Output(stringRes);
@@ -333,6 +338,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             }
             else
             {
+                ProgramExitCode = 114514;
                 Output(target, $"{from_friendlyName} -> {to_friendlyName} 丢包情况：");
                 Output(target, $"  出现了 {lossResult.lost_ack.Length} 个包丢失。ack 列表：");
                 #region Lost packet
@@ -365,6 +371,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
         {
             if (delay.inverted_ack_list.Length != 0)
             {
+                ProgramExitCode = 114514;
                 Output(target, $"{from_friendlyName} -> {to_friendlyName}: 出现了 {delay.inverted_ack_list.Length} 次乱序现象。");
                 foreach (var inverted_pkt in delay.inverted_ack_list)
                 {
