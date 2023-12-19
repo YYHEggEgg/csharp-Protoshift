@@ -123,7 +123,7 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v2
       with:
-        name: Report & logs (proxy-ubuntu-debug, BYTE_CHECK_MODE, CORRUPT_PACKET)
+        name: Report & logs (direct-ubuntu-debug, BYTE_CHECK_MODE, CORRUPT_PACKET)
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
