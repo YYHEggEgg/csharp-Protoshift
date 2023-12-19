@@ -173,6 +173,10 @@ namespace System.Net.Sockets.Kcp
         }
 
 #if BYTE_CHECK_MODE
+
+        /// <summary>
+        /// offset = 16
+        /// </summary>
         public uint byteCheckMode
         {
             get
@@ -190,29 +194,11 @@ namespace System.Net.Sockets.Kcp
                 }
             }
         }
-
-        public bool corrupt
-        {
-            get
-            {
-                unsafe
-                {
-                    return *(bool*)(ptr + 20);
-                }
-            }
-            set
-            {
-                unsafe
-                {
-                    *(bool*)(ptr + 20) = value;
-                }
-            }
-        }
 #endif
 
         ///以下为需要网络传输的参数
 #if BYTE_CHECK_MODE
-        public const int LocalOffset = 4 * 5 + sizeof(bool);
+        public const int LocalOffset = 4 * 5;
 #else
         public const int LocalOffset = 4 * 4;
 #endif
@@ -620,24 +606,6 @@ namespace System.Net.Sockets.Kcp
         }
 
 #if BYTE_CHECK_MODE
-        private void CorruptData(Span<byte> buffer)
-        {
-            if (buffer.Length == 0 || !corrupt) return;
-            if (sn <= 500) return;
-            if (xmit < 2)
-            {
-                Log.Verb($"Packet sn={sn}: corrupted packet", nameof(KcpSegment));
-            }
-            else
-            {
-                Log.Verb($"Packet sn={sn}: normal packet", nameof(KcpSegment));
-            }
-            lock (Random.Shared)
-            {
-                buffer[Random.Shared.Next(0, buffer.Length)] = 0;
-            }
-        }
-
         public void ComputeByteCheckCodeFromData()
         {
             switch (byteCheckMode)
@@ -645,12 +613,10 @@ namespace System.Net.Sockets.Kcp
                 case 1:
                     var buffer = data;
                     byteCheckCode = Crc32.HashToUInt32(buffer);
-                    CorruptData(buffer);
                     break;
                 case 2:
                     var buffer2 = data;
                     byteCheckCode = (uint)XxHash64.HashToUInt64(buffer2);
-                    CorruptData(buffer2);
                     break;
                 default:
                     byteCheckCode = 0;

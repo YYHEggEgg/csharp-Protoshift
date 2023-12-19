@@ -85,10 +85,6 @@
         /// 应使用的 checksum 算法。1 使用 CRC32；2 使用 xxHash.
         /// </summary>
         uint byteCheckMode { get; set; }
-        /// <summary>
-        /// 是否对包进行随机损坏。2B 功能。
-        /// </summary>
-        bool corrupt { get; set; }
 #endif
 
         /// <summary>

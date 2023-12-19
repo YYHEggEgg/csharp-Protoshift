@@ -220,17 +220,6 @@ namespace System.Net.Sockets.Kcp
 #if BYTE_CHECK_MODE
             public uint byteCheckMode { get; set; }
             public uint byteCheckCode { get; internal set; }
-            public bool corrupt { get; set; }
-
-            private void CorruptData(Span<byte> buffer)
-            {
-                if (buffer.Length == 0 || !corrupt) return;
-                if (xmit >= 2 || sn <= 500) return;
-                lock (Random.Shared)
-                {
-                    buffer[Random.Shared.Next(0, buffer.Length)] = 0;
-                }
-            }
 
             public void ComputeByteCheckCodeFromData()
             {
@@ -239,12 +228,10 @@ namespace System.Net.Sockets.Kcp
                     case 1:
                         var buffer = data;
                         byteCheckCode = Crc32.HashToUInt32(buffer);
-                        CorruptData(buffer);
                         break;
                     case 2:
                         var buffer2 = data;
                         byteCheckCode = (uint)XxHash64.HashToUInt64(buffer2);
-                        CorruptData(buffer2);
                         break;
                     default:
                         byteCheckCode = 0;
@@ -257,20 +244,7 @@ namespace System.Net.Sockets.Kcp
             {
                 var datelen = (int)(HeadOffset + len);
 #if BYTE_CHECK_MODE
-                switch (byteCheckMode)
-                {
-                    case 1:
-                        byteCheckCode = Crc32.HashToUInt32(buffer);
-                        CorruptData(buffer);
-                        break;
-                    case 2:
-                        byteCheckCode = (uint)XxHash64.HashToUInt64(buffer);
-                        CorruptData(buffer);
-                        break;
-                    default:
-                        byteCheckCode = 0;
-                        break;
-                }
+                if (byteCheckCode == 0) ComputeByteCheckCodeFromData();
 #endif
 
                 ///备用偏移值 现阶段没有使用
@@ -387,7 +361,6 @@ namespace System.Net.Sockets.Kcp
 #if BYTE_CHECK_MODE
             seg.byteCheckMode = 0;
             seg.byteCheckCode = 0;
-            seg.corrupt = false;
 #endif
             Pool.Push(seg);
         }

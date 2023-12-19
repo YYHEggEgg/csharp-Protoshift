@@ -942,7 +942,6 @@ namespace System.Net.Sockets.Kcp
                 //seg.ts = 0;
 #if BYTE_CHECK_MODE
                 seg.byteCheckMode = byteCheckMode;
-                seg.corrupt = corrupt;
 #endif
 
                 #region flush acknowledges
@@ -1085,7 +1084,6 @@ namespace System.Net.Sockets.Kcp
                         newseg.xmit = 0;
 #if BYTE_CHECK_MODE
                         newseg.byteCheckMode = byteCheckMode;
-                        newseg.corrupt = corrupt;
 #endif
                         lock (snd_bufLock)
                         {
@@ -1172,6 +1170,30 @@ namespace System.Net.Sockets.Kcp
                         }
 
                         offset += segment.Encode(buffer.Memory.Span.Slice(offset));
+#if BYTE_CHECK_MODE
+                        if (corrupt && segment.cmd == IKCP_CMD_PUSH && segment.len > 0 && segment.sn > 500)
+                        {
+                            if (xmit < 2)
+                            {
+                                lock (Random.Shared)
+                                {
+                                    var segmem = buffer.Memory.Span.Slice(offset - (int)segment.len);
+                                    segmem[Random.Shared.Next(0, (int)segment.len)] = 0;
+                                }
+                                if (CanLog(KcpLogMask.IKCP_LOG_OUT_DATA))
+                                {
+                                    LogWriteLine($"Segment sn={segment.sn}: corrupted packet", KcpLogMask.IKCP_LOG_OUT_DATA.ToString());
+                                }
+                            }
+                            else
+                            {
+                                if (CanLog(KcpLogMask.IKCP_LOG_OUT_DATA))
+                                {
+                                    LogWriteLine($"Segment sn={segment.sn}: skip corrupt", KcpLogMask.IKCP_LOG_OUT_DATA.ToString());
+                                }
+                            }
+                        }
+#endif
 
                         if (CanLog(KcpLogMask.IKCP_LOG_NEED_SEND))
                         {
