@@ -50,7 +50,7 @@ namespace csharp_Protoshift.MhyKCP.Test
         /// <param name="action">要运行的无参委托。</param>
         /// <param name="fatal_notice">当委托出现未处理的异常时，传递给 <see cref="Log.Erro(string, string?)"/> 信息的一部分。一般是一个完整的句子，其后接异常信息。</param>
         /// <param name="log_sender">当委托出现未处理的异常时，传递给 <see cref="Log.Erro(string, string?)"/> 信息的日志 sender。</param>
-        public static void RunBackground(Action action, string fatal_notice, string log_sender = $"{nameof(Tools)}_{nameof(RunBackground)}")
+        public static void RunBackground(Action action, string fatal_notice, string log_sender = $"{nameof(Util)}_{nameof(RunBackground)}")
         {
             _ = Task.Run(action).ContinueWith(t =>
             {
@@ -67,7 +67,7 @@ namespace csharp_Protoshift.MhyKCP.Test
         /// <param name="action">要运行的无参委托。</param>
         /// <param name="fatal_notice">当委托出现未处理的异常时，传递给 <see cref="Log.Erro(string, string?)"/> 信息的一部分。一般是一个完整的句子，其后接异常信息。</param>
         /// <param name="log_sender">当委托出现未处理的异常时，传递给 <see cref="Log.Erro(string, string?)"/> 信息的日志 sender。</param>
-        public static void RunBackground(Func<Task> action, string fatal_notice, string log_sender = $"{nameof(Tools)}_{nameof(RunBackground)}")
+        public static void RunBackground(Func<Task> action, string fatal_notice, string log_sender = $"{nameof(Util)}_{nameof(RunBackground)}")
         {
             _ = Task.Run(action).ContinueWith(t =>
             {
