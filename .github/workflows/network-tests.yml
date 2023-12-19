@@ -42,13 +42,85 @@ jobs:
         --packet-repeat-time 200
         --packet-interval 40
         --github-actions
-        --clients-count 2
+        --clients-count 1
         --packet-delay-log
 
     - name: Archive logs
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (directly-ubuntu-debug)
+        path: Tests/KcpTests/KcpPerformanceTest/logs
+        retention-days: 21
+
+  net-debug-direct-bytecheck-ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Restore NuGet packages
+      run: |
+        dotnet nuget add source https://apiint.nugettest.org/v3/index.json -n "nuget.org (Integration)"
+        dotnet restore Tests/KcpTests/KcpPerformanceTest/KcpPerformanceTest.csproj
+
+    - name: Run tests
+      run: >
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Debug
+        --property:DefineConstants=TRACE%3bDEBUG%3bNET%3bNET6_0%3bNETCOREAPP%3bMIHOMO_KC%3bCONNECT_SERVERONLYP%3bBYTE_CHECK_MODE --
+        --packet-size 3500
+        --packet-repeat-time 200
+        --packet-interval 40
+        --github-actions
+        --clients-count 1
+        --packet-delay-log
+
+    - name: Archive logs
+      uses: actions/upload-artifact@v2
+      with:
+        name: Report & logs (direct-ubuntu-debug, BYTE_CHECK_MODE)
+        path: Tests/KcpTests/KcpPerformanceTest/logs
+        retention-days: 21
+
+  net-debug-direct-corrupt-bytecheck-ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Restore NuGet packages
+      run: |
+        dotnet nuget add source https://apiint.nugettest.org/v3/index.json -n "nuget.org (Integration)"
+        dotnet restore Tests/KcpTests/KcpPerformanceTest/KcpPerformanceTest.csproj
+
+    - name: Run tests
+      run: >
+        cd Tests/KcpTests/KcpPerformanceTest ;
+        dotnet run --configuration Debug
+        --property:DefineConstants=TRACE%3bDEBUG%3bNET%3bNET6_0%3bNETCOREAPP%3bMIHOMO_KCP%3bBYTE_CHECK_MODE%3bCONNECT_SERVERONLY%3bCORRUPT_PACKET --
+        --packet-size 3500
+        --packet-repeat-time 200
+        --packet-interval 40
+        --github-actions
+        --clients-count 1
+        --packet-delay-log
+
+    - name: Archive logs
+      uses: actions/upload-artifact@v2
+      with:
+        name: Report & logs (proxy-ubuntu-debug, BYTE_CHECK_MODE, CORRUPT_PACKET)
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
@@ -77,7 +149,7 @@ jobs:
         --packet-repeat-time 200
         --packet-interval 40
         --github-actions
-        --clients-count 2
+        --clients-count 1
         --packet-delay-log
 
     - name: Archive logs
@@ -113,7 +185,7 @@ jobs:
         --packet-repeat-time 200
         --packet-interval 40
         --github-actions
-        --clients-count 2
+        --clients-count 1
         --packet-delay-log
 
     - name: Archive logs
@@ -149,13 +221,13 @@ jobs:
         --packet-repeat-time 200
         --packet-interval 40
         --github-actions
-        --clients-count 2
+        --clients-count 1
         --packet-delay-log
 
     - name: Archive logs
       uses: actions/upload-artifact@v2
       with:
-        name: Report & logs (proxy-ubuntu-debug, BYTE_CHECK_MODE)
+        name: Report & logs (proxy-ubuntu-debug, BYTE_CHECK_MODE, CORRUPT_PACKET)
         path: Tests/KcpTests/KcpPerformanceTest/logs
         retention-days: 21
 
@@ -166,6 +238,7 @@ jobs:
 
     needs:
       - net-debug-direct-ubuntu
+      - net-debug-direct-bytecheck-ubuntu
       - net-debug-proxy-ubuntu
       - net-debug-proxy-bytecheck-ubuntu
 
@@ -207,6 +280,7 @@ jobs:
 
     needs:
       - net-debug-direct-ubuntu
+      - net-debug-direct-bytecheck-ubuntu
       - net-debug-proxy-ubuntu
       - net-debug-proxy-bytecheck-ubuntu
 
@@ -248,6 +322,7 @@ jobs:
 
     needs:
       - net-debug-direct-ubuntu
+      - net-debug-direct-bytecheck-ubuntu
       - net-debug-proxy-ubuntu
       - net-debug-proxy-bytecheck-ubuntu
 
@@ -288,6 +363,7 @@ jobs:
 
     needs:
       - net-debug-direct-ubuntu
+      - net-debug-direct-bytecheck-ubuntu
       - net-debug-proxy-ubuntu
       - net-debug-proxy-bytecheck-ubuntu
 
@@ -330,6 +406,7 @@ jobs:
 
     needs:
       - net-debug-direct-ubuntu
+      - net-debug-direct-bytecheck-ubuntu
       - net-debug-proxy-ubuntu
       - net-debug-proxy-bytecheck-ubuntu
 
@@ -371,6 +448,7 @@ jobs:
 
     needs:
       - net-debug-direct-ubuntu
+      - net-debug-direct-bytecheck-ubuntu
       - net-debug-proxy-ubuntu
       - net-debug-proxy-bytecheck-ubuntu
 
@@ -412,6 +490,7 @@ jobs:
 
     needs:
       - net-debug-direct-ubuntu
+      - net-debug-direct-bytecheck-ubuntu
       - net-debug-proxy-ubuntu
       - net-debug-proxy-bytecheck-ubuntu
 
@@ -453,6 +532,7 @@ jobs:
 
     needs:
       - net-debug-direct-ubuntu
+      - net-debug-direct-bytecheck-ubuntu
       - net-debug-proxy-ubuntu
       - net-debug-proxy-bytecheck-ubuntu
 
@@ -494,6 +574,8 @@ jobs:
 
     needs:
       - net-debug-direct-ubuntu
+      - net-debug-direct-bytecheck-ubuntu
+      - net-debug-direct-corrupt-bytecheck-ubuntu
       - net-debug-proxy-ubuntu
       - net-debug-proxy-bytecheck-ubuntu
       - net-debug-proxy-corrupt-bytecheck-ubuntu
@@ -536,6 +618,8 @@ jobs:
 
     needs:
       - net-debug-direct-ubuntu
+      - net-debug-direct-bytecheck-ubuntu
+      - net-debug-direct-corrupt-bytecheck-ubuntu
       - net-debug-proxy-ubuntu
       - net-debug-proxy-bytecheck-ubuntu
       - net-debug-proxy-corrupt-bytecheck-ubuntu
@@ -578,6 +662,8 @@ jobs:
 
     needs:
       - net-debug-direct-ubuntu
+      - net-debug-direct-bytecheck-ubuntu
+      - net-debug-direct-corrupt-bytecheck-ubuntu
       - net-debug-proxy-ubuntu
       - net-debug-proxy-bytecheck-ubuntu
       - net-debug-proxy-corrupt-bytecheck-ubuntu
@@ -620,6 +706,8 @@ jobs:
 
     needs:
       - net-debug-direct-ubuntu
+      - net-debug-direct-bytecheck-ubuntu
+      - net-debug-direct-corrupt-bytecheck-ubuntu
       - net-debug-proxy-ubuntu
       - net-debug-proxy-bytecheck-ubuntu
       - net-debug-proxy-corrupt-bytecheck-ubuntu

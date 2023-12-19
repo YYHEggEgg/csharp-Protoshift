@@ -623,7 +623,15 @@ namespace System.Net.Sockets.Kcp
         private void CorruptData(Span<byte> buffer)
         {
             if (buffer.Length == 0 || !corrupt) return;
-            if (xmit >= 2 || sn <= 500) return;
+            if (sn <= 500) return;
+            if (xmit < 2)
+            {
+                Log.Verb($"Packet sn={sn}: corrupted packet", nameof(KcpSegment));
+            }
+            else
+            {
+                Log.Verb($"Packet sn={sn}: normal packet", nameof(KcpSegment));
+            }
             lock (Random.Shared)
             {
                 buffer[Random.Shared.Next(0, buffer.Length)] = 0;
