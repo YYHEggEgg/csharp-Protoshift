@@ -13,8 +13,9 @@ namespace System.Net.Sockets.Kcp
         /// <summary>
         /// kcp 发送方向输出
         /// </summary>
-        /// <param name="buffer">kcp 交出发送缓冲区控制权，缓冲区来自<see cref="RentBuffer(int)"/></param>
+        /// <param name="buffer">kcp 交出发送缓冲区控制权，缓冲区来自<see cref="IRentable.RentBuffer(int)"/></param>
         /// <param name="avalidLength">数据的有效长度</param>
+        /// <param name="isKcpPacket">是否为 KCP 协议发出的包</param>
         /// <returns>不需要返回值</returns>
         /// <remarks>通过增加 avalidLength 能够在协议栈中有效的减少数据拷贝</remarks>
         void Output(BufferOwner buffer, int avalidLength, bool isKcpPacket = true);

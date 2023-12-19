@@ -2039,7 +2039,13 @@ namespace System.Net.Sockets.Kcp
                     {
 #if BYTE_CHECK_MODE
                         if (!byteCheck(span.Slice(offset, (int)length), byteCheckMode, byteCheckCode))
-                            return -6;
+                        {
+                            if (CanLog(KcpLogMask.IKCP_LOG_IN_DATA))
+                            {
+                                LogWriteLine($"input psh dropped (checksum failed): sn={sn} ts={ts}", KcpLogMask.IKCP_LOG_IN_DATA.ToString());
+                            }
+                            continue;
+                        }
 #endif
 
                         ///instead of ikcp_ack_push
@@ -2308,7 +2314,13 @@ namespace System.Net.Sockets.Kcp
                     {
 #if BYTE_CHECK_MODE
                         if (!byteCheck(span.Slice(offset, (int)length), byteCheckMode, byteCheckCode))
-                            return -6;
+                        {
+                            if (CanLog(KcpLogMask.IKCP_LOG_IN_DATA))
+                            {
+                                LogWriteLine($"input psh dropped (checksum failed): sn={sn} ts={ts}", KcpLogMask.IKCP_LOG_IN_DATA.ToString());
+                            }
+                            continue;
+                        }
 #endif
 
                         ///instead of ikcp_ack_push
