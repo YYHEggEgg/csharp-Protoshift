@@ -12,7 +12,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
             KCPServer kcpServer = new(new(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
             Log.Info($"KCPServer listening on localhost:{Constants.UDP_SERVER_PORT}.", nameof(ServerApp));
 
-            _ = Task.Run(() =>
+            Tools.RunBackground(() =>
             {
                 while (true)
                 {
@@ -66,7 +66,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                         }
                     });
                 }
-            });
+            }, "ServerApp has met a fatal error. ", nameof(ServerApp));
         }
     }
 }

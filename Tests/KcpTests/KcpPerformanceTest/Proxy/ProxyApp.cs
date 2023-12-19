@@ -21,7 +21,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                 ServerPacketOrdered = GameSessionDispatch.ServerPacketOrdered,
                 ClientPacketOrdered = GameSessionDispatch.ClientPacketOrdered
             };
-            _ = Task.Run(() => proxy.StartProxy(handlers));
+            Tools.RunBackground(() => proxy.StartProxy(handlers), "ProxyApp has met a fatal error. ", nameof(ProxyApp));
             Log.Info($"KcpProxyServer started on 127.0.0.1:{Constants.UDP_PROXY_PORT}", nameof(ProxyApp));
 #endif
         }

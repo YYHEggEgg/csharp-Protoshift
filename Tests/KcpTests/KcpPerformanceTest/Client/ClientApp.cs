@@ -31,7 +31,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
 #else
             Log.Info($"KCPClient connected to localhost:{Constants.UDP_PROXY_PORT}.", nameof(ClientApp));
 #endif
-            _ = Task.Run(async () =>
+            Tools.RunBackground(async () =>
             {
                 int sum_wait_ms = 0;
                 uint ack = (uint)(Constants.packet_repeat_time * 2 * clientId + 1);
@@ -70,9 +70,9 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                     ack += 2;
                 }
                 _finished = true;
-            });
+            }, $"The sender of Client {clientId} has met a fatal error. ", "ClientSender");
 
-            _ = Task.Run(() =>
+            Tools.RunBackground(() =>
             {
                 while (true)
                 {
@@ -89,7 +89,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                         Log.Erro($"Client receiving packet meets exception: {ex}", "ClientReceiver_AsyncTask");
                     }
                 }
-            });
+            }, $"The receiver of Client {clientId} has met a fatal error. ", "ClientReceiver");
         }
 
         internal static async Task WaitForAllClients()

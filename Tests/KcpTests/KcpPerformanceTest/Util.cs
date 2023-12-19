@@ -45,6 +45,40 @@ namespace csharp_Protoshift.MhyKCP.Test
         }
 
         /// <summary>
+        /// 创建一个任务，将指定委托置于后台运行。
+        /// </summary>
+        /// <param name="action">要运行的无参委托。</param>
+        /// <param name="fatal_notice">当委托出现未处理的异常时，传递给 <see cref="Log.Erro(string, string?)"/> 信息的一部分。一般是一个完整的句子，其后接异常信息。</param>
+        /// <param name="log_sender">当委托出现未处理的异常时，传递给 <see cref="Log.Erro(string, string?)"/> 信息的日志 sender。</param>
+        public static void RunBackground(Action action, string fatal_notice, string log_sender = $"{nameof(Tools)}_{nameof(RunBackground)}")
+        {
+            _ = Task.Run(action).ContinueWith(t =>
+            {
+                if (t.IsFaulted)
+                {
+                    LogTrace.ErroTrace(t.Exception, log_sender, fatal_notice);
+                }
+            }, TaskContinuationOptions.OnlyOnFaulted);
+        }
+
+        /// <summary>
+        /// 创建一个任务，将指定委托置于后台运行。
+        /// </summary>
+        /// <param name="action">要运行的无参委托。</param>
+        /// <param name="fatal_notice">当委托出现未处理的异常时，传递给 <see cref="Log.Erro(string, string?)"/> 信息的一部分。一般是一个完整的句子，其后接异常信息。</param>
+        /// <param name="log_sender">当委托出现未处理的异常时，传递给 <see cref="Log.Erro(string, string?)"/> 信息的日志 sender。</param>
+        public static void RunBackground(Func<Task> action, string fatal_notice, string log_sender = $"{nameof(Tools)}_{nameof(RunBackground)}")
+        {
+            _ = Task.Run(action).ContinueWith(t =>
+            {
+                if (t.IsFaulted)
+                {
+                    Log.Erro($"{fatal_notice} {t.Exception}", log_sender);
+                }
+            }, TaskContinuationOptions.OnlyOnFaulted);
+        }
+
+        /// <summary>
         /// Can be applied to both file and directory. Generate suffix like (1), (2) for the <paramref name="path"/> when the file/directory already exists.
         /// </summary>
         public static string AddNumberedSuffixToPath(string filePath)
