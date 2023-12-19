@@ -2044,6 +2044,7 @@ namespace System.Net.Sockets.Kcp
                             {
                                 LogWriteLine($"input psh dropped (checksum failed): sn={sn} ts={ts}", KcpLogMask.IKCP_LOG_IN_DATA.ToString());
                             }
+                            offset += (int)length;
                             continue;
                         }
 #endif
