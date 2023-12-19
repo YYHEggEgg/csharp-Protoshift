@@ -46,6 +46,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (directly-ubuntu-debug)
@@ -82,6 +83,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (direct-ubuntu-debug, BYTE_CHECK_MODE)
@@ -118,6 +120,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (proxy-ubuntu-debug, BYTE_CHECK_MODE, CORRUPT_PACKET)
@@ -153,6 +156,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (proxy-ubuntu-debug)
@@ -189,6 +193,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (proxy-ubuntu-debug, BYTE_CHECK_MODE)
@@ -225,6 +230,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (proxy-ubuntu-debug, BYTE_CHECK_MODE, CORRUPT_PACKET)
@@ -269,6 +275,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (directly-ubuntu-rel)
@@ -311,6 +318,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (directly-windows-rel)
@@ -352,6 +360,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (proxy-ubuntu-rel)
@@ -393,6 +402,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (proxy-windows-rel)
@@ -437,6 +447,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (directly-ubuntu-rel, BYTE_CHECK_MODE)
@@ -479,6 +490,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (directly-windows-rel, BYTE_CHECK_MODE)
@@ -521,6 +533,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (proxy-ubuntu-rel, BYTE_CHECK_MODE)
@@ -563,6 +576,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (proxy-windows-rel, BYTE_CHECK_MODE)
@@ -607,6 +621,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (directly-ubuntu-rel, BYTE_CHECK_MODE, CORRUPT_PACKET)
@@ -651,6 +666,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (directly-windows-rel, BYTE_CHECK_MODE, CORRUPT_PACKET)
@@ -695,6 +711,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (proxy-ubuntu-rel, BYTE_CHECK_MODE, CORRUPT_PACKET)
@@ -739,6 +756,7 @@ jobs:
         --packet-delay-log
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (proxy-windows-rel, BYTE_CHECK_MODE, CORRUPT_PACKET)
@@ -1079,6 +1097,7 @@ jobs:
         --clients-count 10
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (ubuntu-rel-pressure-x10)
@@ -1119,6 +1138,7 @@ jobs:
         --clients-count 10
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (ubuntu-rel-pressure-x20)
@@ -1172,6 +1192,7 @@ jobs:
         --clients-count 10
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (ubuntu-rel-pressure-x10, BYTE_CHECK_MODE)
@@ -1217,6 +1238,7 @@ jobs:
         --clients-count 10
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: Report & logs (ubuntu-rel-pressure-x20, BYTE_CHECK_MODE)
