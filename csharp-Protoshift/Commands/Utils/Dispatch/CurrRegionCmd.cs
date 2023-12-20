@@ -2,6 +2,7 @@
 using csharp_Protoshift.resLoader;
 using Google.Protobuf;
 using Newtonsoft.Json;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.Commands.Utils
 {
