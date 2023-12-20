@@ -1,6 +1,5 @@
 ﻿// #define KCP_PACKET_AUDIT
 
-using csharp_Protoshift.Obsoleted.SpecialUdp;
 using csharp_Protoshift.SpecialUdp;
 using System.Buffers;
 using System.Diagnostics;
@@ -27,25 +26,6 @@ namespace csharp_Protoshift.MhyKCP
         {
             if (ipEp != null) udpSock.Send(buffer.Memory.Slice(0, avalidLength).Span, ipEp);
             else udpSock.Send(buffer.Memory.Slice(0, avalidLength).Span);
-            buffer.Dispose();
-        }
-    }
-
-    [Obsolete]
-    public class ConcurrentUdpKcpCallback : IKcpCallback
-    {
-        private readonly ConcurrentUdpClient udpSock;
-        private readonly IPEndPoint? ipEp;
-
-        public ConcurrentUdpKcpCallback(ConcurrentUdpClient udpSock, IPEndPoint? ipEp = null)
-        {
-            this.udpSock = udpSock;
-            this.ipEp = ipEp;
-        }
-
-        public async void Output(IMemoryOwner<byte> buffer, int avalidLength, bool isKcpPacket = true)
-        {
-            await udpSock.SendAsync(buffer.Memory.Slice(0, avalidLength), ipEp);
             buffer.Dispose();
         }
     }

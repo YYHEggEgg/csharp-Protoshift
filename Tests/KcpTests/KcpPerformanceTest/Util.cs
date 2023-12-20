@@ -96,7 +96,7 @@ namespace csharp_Protoshift.MhyKCP.Test
              */
             if (File.Exists(filePath))
             {
-                string directory = Path.GetDirectoryName(filePath);
+                string directory = Path.GetDirectoryName(filePath) ?? string.Empty;
                 string fileName = Path.GetFileNameWithoutExtension(filePath);
                 string extension = Path.GetExtension(filePath);
                 string newFilePath = filePath;
@@ -112,7 +112,7 @@ namespace csharp_Protoshift.MhyKCP.Test
             }
             else if (Directory.Exists(filePath))
             {
-                string directoryName = Path.GetDirectoryName(filePath);
+                string directoryName = Path.GetDirectoryName(filePath) ?? string.Empty;
                 string directory = Path.Combine(directoryName, Path.GetFileName(filePath));
                 string newDirectory = directory;
                 int suffix = 1;

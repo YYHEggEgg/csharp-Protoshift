@@ -72,7 +72,9 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
         }
 
         #region 发送端 造包相关代码
+#pragma warning disable CS8618 // InitBuffer
         private BasePacket(int length)
+#pragma warning restore CS8618
         {
             lock (increasing_id_lock) Unique_ID = increasing_id++;
             InitBuffer(length, $"{nameof(BasePacket)}({Unique_ID})_Ctor(len)");
@@ -134,7 +136,9 @@ namespace csharp_Protoshift.MhyKCP.Test.Protocol
                     return;
                 }
                 InitBuffer(packet.Length, $"{nameof(BasePacket)}({Unique_ID})_Ctor(arr)");
+#pragma warning disable CS8604 // InitBuffer
                 Buffer.BlockCopy(packet, 0, _baseBuffer, 0, packet.Length);
+#pragma warning restore CS8604
                 XorDecrypt(ref _baseBuffer);
 #if DEBUG
                 Log.Verb($"Created BasePacket from array (decrypted): {Convert.ToHexString(_baseBuffer, 0, Math.Min(_baseBuffer.Length, (int)CalculateLength((uint)Constants.each_packet_size)))}", $"{nameof(BasePacket)}({Unique_ID})_Ctor(arr)");
