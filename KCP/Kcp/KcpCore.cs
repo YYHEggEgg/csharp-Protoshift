@@ -1173,7 +1173,7 @@ namespace System.Net.Sockets.Kcp
 #if BYTE_CHECK_MODE
                         if (corrupt && segment.cmd == IKCP_CMD_PUSH && segment.len > 0 && segment.sn > 500)
                         {
-                            if (xmit < 2)
+                            if (segment.xmit < 2)
                             {
                                 lock (Random.Shared)
                                 {
