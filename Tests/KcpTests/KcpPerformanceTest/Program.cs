@@ -16,13 +16,8 @@ internal class Program
             max_Output_Char_Count: 16 * 1024,
             use_Console_Wrapper: false,
             use_Working_Directory: true,
-#if DEBUG
             global_Minimum_LogLevel: LogLevel.Verbose,
             console_Minimum_LogLevel: LogLevel.Information,
-#else
-            global_Minimum_LogLevel: LogLevel.Information,
-            console_Minimum_LogLevel: LogLevel.Information,
-#endif
             debug_LogWriter_AutoFlush: true
         ));
         ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -46,7 +41,7 @@ internal class Program
                 Environment.Exit(1);
             });
 
-        await ServerApp.Start();
+        ServerApp.Start();
 #if !CONNECT_SERVERONLY
         ProxyApp.Start();
 #endif

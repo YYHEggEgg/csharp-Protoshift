@@ -42,7 +42,7 @@ namespace csharp_Protoshift.MhyKCP.Test
         {
             StackTrace stackTrace = new StackTrace();
             StackFrame? frame = stackTrace.GetFrame(2);
-            return frame.ToString();
+            return frame?.ToString() ?? "<unknown>";
         }
 
         /// <summary>

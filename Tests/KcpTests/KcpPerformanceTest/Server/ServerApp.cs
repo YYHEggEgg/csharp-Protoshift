@@ -7,7 +7,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
 {
     public static class ServerApp
     {
-        public static async Task Start()
+        public static void Start()
         {
             KCPServer kcpServer = new(new(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
             Log.Info($"KCPServer listening on localhost:{Constants.UDP_SERVER_PORT}.", nameof(ServerApp));
