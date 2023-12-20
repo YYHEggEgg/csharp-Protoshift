@@ -81,7 +81,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                         var data = kcpClient.Receive();
                         var packet = new BasePacket(data);
                         ClientDataChannel.PushReceivedPacket(packet);
-                        Log.Verb($"Client recved packet: isStructureValid:{packet.isStructureValid}, isBodyValid:{packet.isBodyValid}, ack:{packet.ack}, id:{pkt.Unique_ID}, bodyLen:{packet.bodyLen}", "ClientReceiver");
+                        Log.Verb($"Client recved packet: isStructureValid:{packet.isStructureValid}, isBodyValid:{packet.isBodyValid}, ack:{packet.ack}, id:{packet.Unique_ID}, bodyLen:{packet.bodyLen}", "ClientReceiver");
                         packet.Dispose();
                     }
                     catch (Exception ex)
