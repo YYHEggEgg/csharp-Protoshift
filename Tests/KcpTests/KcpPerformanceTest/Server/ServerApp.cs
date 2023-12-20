@@ -47,7 +47,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                                 continue;
                             }
                             ServerDataChannel.PushReceivedPacket(pkt);
-                            Log.Verb($"Server received packet: length:{data?.Length}, isStructureValid:{pkt.isStructureValid}, isBodyValid:{pkt.isBodyValid}, ack:{pkt.ack}, bodyLen:{pkt.bodyLen}", "ServerReceiver");
+                            Log.Verb($"Server received packet: length:{data?.Length}, isStructureValid:{pkt.isStructureValid}, isBodyValid:{pkt.isBodyValid}, ack:{pkt.ack}, id:{pkt.Unique_ID}, bodyLen:{pkt.bodyLen}", "ServerReceiver");
                             if (pkt.isStructureValid)
                             {
                                 try

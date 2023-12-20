@@ -52,7 +52,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                         {
                             BasePacket pkt = BasePacket.Generate(ack, (uint)Constants.each_packet_size);
                             kcpClient.Send(pkt.GetBytes());
-                            Log.Verb($"Client sent ack: {ack}", "ClientSender");
+                            Log.Verb($"Client sent ack: {ack} (id: {pkt.Unique_ID})", "ClientSender");
                             ClientDataChannel.PushSentPacket(pkt);
                             pkt.Dispose();
                             sum_wait_ms += Constants.packet_interval_ms;
@@ -81,7 +81,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                         var data = kcpClient.Receive();
                         var packet = new BasePacket(data);
                         ClientDataChannel.PushReceivedPacket(packet);
-                        Log.Verb($"Client recved packet: isStructureValid:{packet.isStructureValid}, isBodyValid:{packet.isBodyValid}, ack:{packet.ack}, bodyLen:{packet.bodyLen}");
+                        Log.Verb($"Client recved packet: isStructureValid:{packet.isStructureValid}, isBodyValid:{packet.isBodyValid}, ack:{packet.ack}, id:{pkt.Unique_ID}, bodyLen:{packet.bodyLen}", "ClientReceiver");
                         packet.Dispose();
                     }
                     catch (Exception ex)
