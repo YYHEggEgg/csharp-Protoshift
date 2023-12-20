@@ -20,7 +20,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                     Log.Info($"New connection from {accepted.RemoteEndpoint}.", "ServerListening_AsyncTask");
                     var conn = accepted.Connection;
                     // TODO: Push state to analysis
-                    _ = Task.Run(() =>
+                    Util.RunBackground(() =>
                     {
                         while (true)
                         {
@@ -64,9 +64,9 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                                 }
                             }
                         }
-                    });
+                    }, $"The receiver of packet from {accepted.RemoteEndpoint} has met a fatal error.", nameof(ServerApp));
                 }
-            }, "ServerApp has met a fatal error. ", nameof(ServerApp));
+            }, "ServerApp (Accept) has met a fatal error.", nameof(ServerApp));
         }
     }
 }
