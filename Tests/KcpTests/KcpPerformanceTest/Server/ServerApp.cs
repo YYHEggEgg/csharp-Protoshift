@@ -63,6 +63,11 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                                     continue;
                                 }
                             }
+                            else
+                            {
+                                Log.Warn($"致命错误：服务端收到包（ID：{pkt.Unique_ID}）结构错误。", "BasePacket");
+                                Log.Warn($"BasePacket ID：{pkt.Unique_ID}'s Hexdump: {Convert.ToHexString(data)}");
+                            }
                         }
                     }, $"The receiver of packet from {accepted.RemoteEndpoint} has met a fatal error.", nameof(ServerApp));
                 }
