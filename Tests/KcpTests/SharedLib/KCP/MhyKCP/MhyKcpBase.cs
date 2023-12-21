@@ -58,7 +58,7 @@ namespace csharp_Protoshift.MhyKCP
         /// Used for assigning conv for new connections.
         /// Use <see cref="Interlocked.Increment(ref uint)"/> to operate with it.
         /// </summary>
-        protected uint _currentConv = 1000;
+        protected static uint _currentConv = 1000;
 
         public uint ConnectData { get; protected set; }
         public OuterCode.UniqueIDManager _uniqueID = new(nameof(MhyKcpBase));
