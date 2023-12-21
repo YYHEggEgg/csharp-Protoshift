@@ -21,9 +21,9 @@ namespace csharp_Protoshift.MhyKCP.Test.App
         public async Task Start()
         {
 #if CONNECT_SERVERONLY
-            KCPClient kcpClient = new(new(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
+            KCPClient kcpClient = new(new IPEndPoint(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
 #else
-            KCPClient kcpClient = new(new(IPAddress.Loopback, Constants.UDP_PROXY_PORT));
+            KCPClient kcpClient = new(new IPEndPoint(IPAddress.Loopback, Constants.UDP_PROXY_PORT));
 #endif
             await kcpClient.ConnectAsync();
 #if CONNECT_SERVERONLY
