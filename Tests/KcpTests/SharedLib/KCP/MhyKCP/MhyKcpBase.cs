@@ -54,6 +54,11 @@ namespace csharp_Protoshift.MhyKCP
         protected object cskcp_recvLock = "R.I.P YSFreedom";
         protected object cskcp_sndLock = "Yolmiya";
         protected long startTime;
+        /// <summary>
+        /// Used for assigning conv for new connections.
+        /// Use <see cref="Interlocked.Increment(ref uint)"/> to operate with it.
+        /// </summary>
+        protected uint _currentConv = 1000;
 
         public uint ConnectData { get; protected set; }
         public OuterCode.UniqueIDManager _uniqueID = new(nameof(MhyKcpBase));
@@ -196,7 +201,7 @@ namespace csharp_Protoshift.MhyKCP
                         {
                             // Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
                             handshake.Decode(buffer, Handshake.MAGIC_CONNECT);
-                            _Conv = (uint)(MonotonicTime.Now & 0xFFFFFFFF);
+                            _Conv = Interlocked.Increment(ref _currentConv);
                             _Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
 
                             var sendBackConv = new Handshake(Handshake.MAGIC_SEND_BACK_CONV, _Conv, _Token).AsBytes();

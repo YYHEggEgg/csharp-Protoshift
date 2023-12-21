@@ -1922,6 +1922,7 @@ namespace System.Net.Sockets.Kcp
             int flag = 0;
             uint maxack = 0;
             uint latest_ts = 0;
+            Span<byte> header = stackalloc byte[IKCP_OVERHEAD];
             while (true)
             {
                 uint ts = 0;
@@ -1948,7 +1949,6 @@ namespace System.Net.Sockets.Kcp
 
                 // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
                 // Change line(s) in file compare: ikcp.c, +773
-                Span<byte> header = stackalloc byte[IKCP_OVERHEAD];
                 span.Slice(offset, IKCP_OVERHEAD).CopyTo(header);
                 offset += ReadHeader(header,
                                      ref conv_,
@@ -2195,6 +2195,7 @@ namespace System.Net.Sockets.Kcp
             int flag = 0;
             uint maxack = 0;
             uint latest_ts = 0;
+            Span<byte> header = stackalloc byte[IKCP_OVERHEAD];
             while (true)
             {
                 uint ts = 0;
@@ -2221,7 +2222,6 @@ namespace System.Net.Sockets.Kcp
 
                 // miHoMo KCP modify: data = ikcp_decode32u(data, &token);
                 // Change line(s) in file compare: ikcp.c, +773
-                Span<byte> header = stackalloc byte[IKCP_OVERHEAD];
                 span.Slice(offset, IKCP_OVERHEAD).CopyTo(header);
                 offset += ReadHeader(header,
                                      ref conv_,

@@ -53,6 +53,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             TestsFinished = true;
         }
 
+#pragma warning disable CS0168
         static ReadOnlyBasePacketRecord[]?
             client_sent, client_recved,
 #if CONNECT_SERVERONLY
@@ -62,6 +63,7 @@ namespace csharp_Protoshift.MhyKCP.Test.Analysis
             server_recved, server_sent,
             proxy_server_recved, proxy_server_sent;
 #endif
+#pragma warning restore CS0168
 
         private static async Task HandleData()
         {
