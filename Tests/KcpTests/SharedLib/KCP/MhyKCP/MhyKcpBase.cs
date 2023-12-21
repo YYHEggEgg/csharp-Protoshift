@@ -1,4 +1,4 @@
-﻿// #define KCP_INNER_LOG
+// #define KCP_INNER_LOG
 // #define KCP_EXPORT_PACKET_RECORD
 
 using System.Net.Sockets;
@@ -380,7 +380,8 @@ namespace csharp_Protoshift.MhyKCP
             catch (Exception ex)
             {
                 _updatelock.Exit();
-                Log.Erro($"MhyKcpBase Background Check/Update exception and restart: {ex}", nameof(MhyKcpBase));
+                LogTrace.ErroTrace(ex, nameof(MhyKcpBase), 
+                    $"MhyKcpBase Background Check/Update exception and restart. ");
                 _ = Task.Run(BackgroundUpdate);
             }
         }

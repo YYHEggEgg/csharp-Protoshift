@@ -1,4 +1,4 @@
-﻿// #define SOCKET_UDP_VERBOSE
+// #define SOCKET_UDP_VERBOSE
 // #define SOCKET_UDP_PACKET_CONTENT_VERBOSE
 // #define SOCKET_UDP_PACKET_CONTENT_VERBOSE_SYNCRONOUS
 
@@ -13,7 +13,7 @@ namespace csharp_Protoshift.SpecialUdp
     public class SocketUdpClient : IDisposable
     {
         private readonly Socket _socket;
-        private IPEndPoint? _defaultEndpoint;
+        private EndPoint? _defaultEndpoint;
         private string? _defaultEndpointString;
 
         public const int UDP_MAX_PACKET_SIZE = 65507;
@@ -23,14 +23,17 @@ namespace csharp_Protoshift.SpecialUdp
         private byte[]? STABuffer;
         private SingleThreadAssert? _rcvSTAAssert;
 
+        private readonly bool isIpv6Socket;
+
         /// <summary>
         /// Initializer.
         /// </summary>
         /// <param name="singlethread_receiving"><see cref="true"/> means you confirm that you're invoking the <see cref="ReceiveFrom"/> in only one thread. If you give it true but not ensure that, terrible thing will happen.</param>
-        public SocketUdpClient(bool singlethread_receiving = false)
+        public SocketUdpClient(bool singlethread_receiving = false, bool isIpv6Socket = false)
         {
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-            _socket.Bind(new IPEndPoint(IPAddress.Any, 0));
+            this.isIpv6Socket = isIpv6Socket;
+            _socket.Bind(DefaultEndPoint);
             _arrayPool = ArrayPool<byte>.Shared;
             _isSTABuffer = singlethread_receiving;
             if (_isSTABuffer)
@@ -38,16 +41,23 @@ namespace csharp_Protoshift.SpecialUdp
                 STABuffer = new byte[UDP_MAX_PACKET_SIZE];
                 _rcvSTAAssert = new($"{nameof(SocketUdpClient)}_{ReceiveFrom}");
             }
+
         }
 
         public SocketUdpClient(IPEndPoint ipEndPoint, bool singlethread_receiving = false)
         {
             if (ipEndPoint.AddressFamily == AddressFamily.InterNetwork)
+            {
                 _socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+                isIpv6Socket = false;
+            }
             else if (ipEndPoint.AddressFamily == AddressFamily.InterNetworkV6)
+            {
                 _socket = new Socket(AddressFamily.InterNetworkV6, SocketType.Dgram, ProtocolType.Udp);
+                isIpv6Socket = true;
+            }
             else throw new ArgumentException(
-                "IPEndPoint is probably not a valid IP address or used, please check the input", 
+                "IPEndPoint is probably not a valid IP address or used, please check the input",
                 nameof(ipEndPoint));
             _socket.Bind(ipEndPoint);
             _arrayPool = ArrayPool<byte>.Shared;
@@ -59,9 +69,11 @@ namespace csharp_Protoshift.SpecialUdp
             }
         }
 
-        public void Connect(IPEndPoint ipEndPoint)
+        private IPEndPoint DefaultEndPoint => new IPEndPoint(isIpv6Socket ? IPAddress.IPv6Any : IPAddress.Any, 0);
+
+        public void Connect(EndPoint endPoint)
         {
-            _defaultEndpoint = ipEndPoint;
+            _defaultEndpoint = endPoint;
             _defaultEndpointString = _defaultEndpoint.ToString();
         }
 
@@ -85,7 +97,7 @@ namespace csharp_Protoshift.SpecialUdp
                 var stopwatch = new System.Diagnostics.Stopwatch();
                 stopwatch.Start();
 #endif
-                EndPoint _tmpendp = new IPEndPoint(IPAddress.Any, 0);
+                EndPoint _tmpendp = DefaultEndPoint;
                 var avalidlength = _socket.ReceiveFrom(buffer, SocketFlags.None, 
                     ref _tmpendp);
 
@@ -132,7 +144,7 @@ namespace csharp_Protoshift.SpecialUdp
             }
             catch (Exception ex)
             {
-                Log.Warn($"Failed to receive packet: {ex}", nameof(SocketUdpClient));
+                LogTrace.WarnTrace(ex, nameof(SocketUdpClient), $"Failed to receive packet. ");
                 throw;
             }
             finally
@@ -155,7 +167,7 @@ namespace csharp_Protoshift.SpecialUdp
 #pragma warning restore CS8600, CS8602
             }
             else buffer = _arrayPool.Rent(UDP_MAX_PACKET_SIZE);
-            SocketUdpReceiveResult receiveResult = new();
+            SocketUdpReceiveResult receiveResult = new() { RemoteEndPoint = DefaultEndPoint };
 
             try
             {
@@ -210,7 +222,7 @@ namespace csharp_Protoshift.SpecialUdp
             }
             catch (Exception ex)
             {
-                Log.Warn($"Failed to receive packet: {ex}", nameof(SocketUdpClient));
+                LogTrace.WarnTrace(ex, nameof(SocketUdpClient), $"Failed to receive packet. ");
                 throw;
             }
             finally
@@ -224,7 +236,7 @@ namespace csharp_Protoshift.SpecialUdp
         #endregion
 
         #region SendTo
-        public int SendTo(byte[] buffer, IPEndPoint? ipEndPoint = null)
+        public int SendTo(byte[] buffer, EndPoint? ipEndPoint = null)
         {
             if (ipEndPoint == null && _defaultEndpoint == null)
             {
@@ -264,12 +276,12 @@ namespace csharp_Protoshift.SpecialUdp
             }
             catch (Exception ex)
             {
-                Log.Erro($"Failed to send packet: {ex.Message}", nameof(SocketUdpClient));
+                LogTrace.InfoTrace(ex, nameof(SocketUdpClient), $"Failed to send packet. ");
                 throw;
             }
         }
         
-        public int SendTo(ReadOnlySpan<byte> buffer, IPEndPoint? ipEndPoint = null)
+        public int SendTo(ReadOnlySpan<byte> buffer, EndPoint? ipEndPoint = null)
         {
             if (ipEndPoint == null && _defaultEndpoint == null)
             {
@@ -304,14 +316,14 @@ namespace csharp_Protoshift.SpecialUdp
             }
             catch (Exception ex)
             {
-                Log.Erro($"Failed to send packet: {ex.Message}", nameof(SocketUdpClient));
+                LogTrace.InfoTrace(ex, nameof(SocketUdpClient), $"Failed to send packet. ");
                 throw;
             }
         }
         #endregion
 
         #region SendToAsync
-        public async Task<int> SendToAsync(ReadOnlyMemory<byte> buffer, IPEndPoint? ipEndPoint = null)
+        public async Task<int> SendToAsync(ReadOnlyMemory<byte> buffer, EndPoint? ipEndPoint = null)
         {
             if (ipEndPoint == null && _defaultEndpoint == null)
             {
@@ -351,12 +363,12 @@ namespace csharp_Protoshift.SpecialUdp
             }
             catch (Exception ex)
             {
-                Log.Erro($"Failed to send packet: {ex.Message}", nameof(SocketUdpClient));
+                LogTrace.InfoTrace(ex, nameof(SocketUdpClient), $"Failed to send packet. ");
                 throw;
             }
         }
 
-        public async Task<int> SendToAsync(byte[] buffer, IPEndPoint? ipEndPoint = null)
+        public async Task<int> SendToAsync(byte[] buffer, EndPoint? ipEndPoint = null)
         {
             if (ipEndPoint == null && _defaultEndpoint == null)
             {
@@ -396,7 +408,7 @@ namespace csharp_Protoshift.SpecialUdp
             }
             catch (Exception ex)
             {
-                Log.Erro($"Failed to send packet: {ex.Message}", nameof(SocketUdpClient));
+                LogTrace.InfoTrace(ex, nameof(SocketUdpClient), $"Failed to send packet. ");
                 throw;
             }
         }
@@ -429,12 +441,10 @@ namespace csharp_Protoshift.SpecialUdp
 
     public class SocketUdpReceiveResult
     {
-        private static IPEndPoint defaultIpEp = new IPEndPoint(IPAddress.Any, 0);
-
 #pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
         public byte[] Buffer;
-#pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
         public int ReceivedBytes;
-        public IPEndPoint RemoteEndPoint = defaultIpEp;
+        public IPEndPoint RemoteEndPoint;
+#pragma warning restore CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
     }
 }

@@ -1,4 +1,4 @@
-﻿// #define KCP_PROXY_VERBOSE // not avaliable currently
+// #define KCP_PROXY_VERBOSE // not avaliable currently
 
 using System.Net;
 using YYHEggEgg.Logger;
@@ -10,9 +10,40 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 {
     public class KcpProxyServer : KCPServer
     {
-        public IPEndPoint SendToEndpoint { get; }
+        public EndPoint SendToEndpoint { get; }
+        internal static BaseLogger? _kcpstatlogger;
 
-        public KcpProxyServer(IPEndPoint bindToAddress, IPEndPoint sendToAddress)
+#if !PROTOSHIFT_BENCHMARK
+        static KcpProxyServer()
+        {
+            _kcpstatlogger = new BaseLogger(new LoggerConfig(
+                max_Output_Char_Count: 16 * 1024,
+                use_Console_Wrapper: true,
+                use_Working_Directory: true,
+#if DEBUG
+                global_Minimum_LogLevel: LogLevel.Debug,
+#else
+                global_Minimum_LogLevel: LogLevel.Information,
+#endif
+                console_Minimum_LogLevel: LogLevel.None,
+                debug_LogWriter_AutoFlush: false,
+                enable_Detailed_Time: true), new LogFileConfig
+                    {
+                        AutoFlushWriter = true,
+                        IsPipeSeparatedFile = true,
+                        MaximumLogLevel = LogLevel.Error,
+#if DEBUG
+                        MinimumLogLevel = LogLevel.Debug,
+#else
+                        MinimumLogLevel = LogLevel.Information,
+#endif
+                        FileIdentifier = "player.stat",
+                        AllowAutoFallback = true,
+                    });
+        }
+#endif
+
+        public KcpProxyServer(IPEndPoint bindToAddress, EndPoint sendToAddress)
         {
             udpSock = new SocketUdpClient(bindToAddress, true);
             SendToEndpoint = sendToAddress;
@@ -33,7 +64,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 }
                 catch (Exception ex)
                 {
-                    Log.Dbug($"BackgroundUpdate receiving packet meets error and restart: {ex}", nameof(KcpProxyServer));
+                    LogTrace.DbugTrace(ex, nameof(KcpProxyServer), $"BackgroundUpdate receiving packet meets error and restart. ");
                     continue;
                 }
                 if (packet.Buffer.Length == Handshake.LEN)
@@ -52,7 +83,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         }
                         catch (Exception ex)
                         {
-                            Log.Dbug($"BackgroundUpdate:Connected reached exception {ex}", nameof(KcpProxyServer));
+                            LogTrace.DbugTrace(ex, nameof(KcpProxyServer), 
+                                $"BackgroundUpdate:Connected reached exception. ");
                             if (connected_conn.State != MhyKcpBase.ConnectionState.CONNECTED)
                             {
                                 connected_clients.TryRemove(connected_conn.Conv, out _);
@@ -106,7 +138,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                     }
                     catch (Exception ex)
                     {
-                        Log.Dbug($"BackgroundUpdate:NewConnection reached exception {ex}", nameof(KcpProxyServer));
+                        LogTrace.DbugTrace(ex, nameof(KcpProxyServer), 
+                            $"BackgroundUpdate:NewConnection reached exception. ");
                     }
                 }
                 else if (packet.Buffer.Length >= KcpConst.IKCP_OVERHEAD) // conv dispatch
@@ -141,6 +174,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 {
                     var ret = Accept();
                     Log.Info($"New connection (conv={ret.Connection.Conv}, token={ret.Connection.Token}) from {ret.RemoteEndpoint}.", nameof(KcpProxyServer));
+                    _kcpstatlogger?.Info($"0|kcp|connect|token={ret.Connection.Token}|ip={ret.RemoteEndpoint}", ret.Connection.Conv.ToString());
 
                     handlers.SessionCreated?.Invoke(ret.Connection.Conv, ret.RemoteEndpoint);
                     _ = Task.Run(() => HandleServer((KcpProxyBase)ret.Connection, handlers));
@@ -148,7 +182,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 }
                 catch (Exception ex)
                 {
-                    Log.Erro($"Internal error: {ex}", nameof(StartProxy));
+                    LogTrace.ErroTrace(ex, nameof(StartProxy), $"Internal error. ");
                 }
             }
         }
@@ -296,6 +330,28 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 #pragma warning disable CS8602 // 解引用可能出现空引用。
             conn.sendClient.Send(content);
 #pragma warning restore CS8602 // 解引用可能出现空引用。
+        }
+
+        /// <summary>
+        /// Kick a specified session and send disconnect packet to client & server.
+        /// </summary>
+        /// <param name="conv"></param>
+        /// <param name="client_reason">The disconnect reason that will be sent to client. Default is ENET_SERVER_KICK (The connection to the server has been lost).</param>
+        /// <param name="server_reason">The disconnect reason that will be sent to server. Default is ENET_CLIENT_CLOSE.</param>
+        /// <exception cref="KeyNotFoundException"></exception>
+        public void KickSession(uint conv, uint client_reason = 5, uint server_reason = 1)
+        {
+            if (!connected_clients.ContainsKey(conv))
+            {
+                throw new KeyNotFoundException($"The specified session (conv: {conv}) does not exist.");
+            }
+            var conn_client = (KcpProxyBase)connected_clients[conv];
+            var conn_server = conn_client.sendClient;
+
+            _kcpstatlogger?.Info($"0|kcp|disconnect|proxy_kick(client)|reason={client_reason}", conv.ToString());
+            _kcpstatlogger?.Info($"0|kcp|disconnect|proxy_kick(server)|reason={server_reason}", conv.ToString());
+            conn_client.Disconnect(data: client_reason);
+            conn_server?.Disconnect(data: server_reason);
         }
         #endregion
     }

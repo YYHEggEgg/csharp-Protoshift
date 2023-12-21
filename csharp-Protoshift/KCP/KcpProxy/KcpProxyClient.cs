@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Net;
 
 namespace csharp_Protoshift.MhyKCP.Proxy

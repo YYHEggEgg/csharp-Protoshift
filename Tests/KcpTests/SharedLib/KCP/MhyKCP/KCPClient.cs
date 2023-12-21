@@ -1,6 +1,6 @@
 using System.Net;
-using YYHEggEgg.Logger;
 using csharp_Protoshift.SpecialUdp;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.MhyKCP
 {
@@ -11,12 +11,12 @@ namespace csharp_Protoshift.MhyKCP
         protected SocketUdpClient udpSock;
         private bool _Closed = false;
         protected MhyKcpBase server;
-        protected IPEndPoint remoteAddress;
+        protected EndPoint remoteAddress;
 
         protected SingleThreadAssert _recvlock = new($"{nameof(KCPClient)}_{nameof(Receive)}"), 
             _updatelock = new($"{nameof(KCPClient)}_{nameof(BackgroundUpdate)}");
 
-        public KCPClient(IPEndPoint ipEp)
+        public KCPClient(EndPoint ipEp)
         {
             udpSock = new SocketUdpClient(true);
             //udpSock = new();
@@ -76,7 +76,7 @@ namespace csharp_Protoshift.MhyKCP
                 }
                 catch (Exception ex)
                 {
-                    Log.Erro($"Update fail: {ex}", nameof(KCPClient));
+                    LogTrace.ErroTrace(ex, nameof(KCPClient), $"Update fail. ");
                     _Closed = true;
                     server.Dispose();
                 }

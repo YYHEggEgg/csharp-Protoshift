@@ -216,7 +216,8 @@ namespace csharp_Protoshift.GameSession
                         IsPipeSeparatedFile = true,
                         MaximumLogLevel = LogLevel.Information,
                         MinimumLogLevel = LogLevel.Information,
-                        FileIdentifier = "packet"
+                        FileIdentifier = "packet",
+                        AllowAutoFallback = true,
                     });
             }
             if (Config.Global.EnablePlayerStatLog)
@@ -242,7 +243,8 @@ namespace csharp_Protoshift.GameSession
 #else
                         MinimumLogLevel = LogLevel.Information,
 #endif
-                        FileIdentifier = "player.stat"
+                        FileIdentifier = "player.stat",
+                        AllowAutoFallback = true,
                     });
                 PlayerStatLogger.Info($"UID|Status category|Description|--[Any other Data]--", "Conv ID");
             }

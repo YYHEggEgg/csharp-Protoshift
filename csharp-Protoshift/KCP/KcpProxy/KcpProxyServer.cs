@@ -1,11 +1,10 @@
-﻿// #define KCP_PROXY_VERBOSE // not avaliable currently
+// #define KCP_PROXY_VERBOSE // not avaliable currently
 
 using System.Net;
 using YYHEggEgg.Logger;
 using csharp_Protoshift.SpecialUdp;
 using System.Buffers.Binary;
 using System.Net.Sockets.Kcp;
-using csharp_Protoshift.GameSession;
 
 namespace csharp_Protoshift.MhyKCP.Proxy
 {
@@ -28,7 +27,19 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 #endif
                 console_Minimum_LogLevel: LogLevel.None,
                 debug_LogWriter_AutoFlush: false,
-                enable_Detailed_Time: true), "player.stat");
+                enable_Detailed_Time: true), new LogFileConfig
+                    {
+                        AutoFlushWriter = true,
+                        IsPipeSeparatedFile = true,
+                        MaximumLogLevel = LogLevel.Error,
+#if DEBUG
+                        MinimumLogLevel = LogLevel.Debug,
+#else
+                        MinimumLogLevel = LogLevel.Information,
+#endif
+                        FileIdentifier = "player.stat",
+                        AllowAutoFallback = true,
+                    });
         }
 #endif
 
@@ -89,9 +100,8 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         continue;
                     }
                     // ip dispatch
-                    string remoteIpString = packet.RemoteEndPoint.ToString();
                     KcpProxyBase conn;
-                    if (!connecting_clients.TryGetValue(remoteIpString, out var _outconn))
+                    if (!connecting_clients.TryGetValue(packet.RemoteEndPoint, out var _outconn))
                     {
                         // Don't allow a disconnected session
                         if (removed_sessions.Contains(handshake.Conv)) 
@@ -102,9 +112,9 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                         // Oh boy! A new connection!
                         conn = new KcpProxyBase(sendToAddress: SendToEndpoint);
                         conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
-                        Log.Dbug($"New connection established, remote endpoint={remoteIpString}");
+                        Log.Dbug($"New connection established, remote endpoint={packet.RemoteEndPoint}", nameof(KcpProxyServer));
                         conn.AcceptNonblock();
-                        connecting_clients[remoteIpString] = conn;
+                        connecting_clients[packet.RemoteEndPoint] = conn;
                         _ = Task.Run(async () =>
                         {
                             try
@@ -113,7 +123,7 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                             }
                             catch
                             {
-                                connecting_clients.TryRemove(remoteIpString, out _);
+                                connecting_clients.TryRemove(packet.RemoteEndPoint, out _);
                             }
                         });
                     }

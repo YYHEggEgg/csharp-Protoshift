@@ -1,6 +1,5 @@
-﻿// #define KCP_PROXY_VERBOSE
+// #define KCP_PROXY_VERBOSE
 
-using csharp_Protoshift.GameSession;
 using Newtonsoft.Json.Linq;
 using System.Net;
 using System.Net.Sockets;

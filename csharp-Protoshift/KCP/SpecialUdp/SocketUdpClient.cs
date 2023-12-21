@@ -1,4 +1,4 @@
-﻿// #define SOCKET_UDP_VERBOSE
+// #define SOCKET_UDP_VERBOSE
 // #define SOCKET_UDP_PACKET_CONTENT_VERBOSE
 // #define SOCKET_UDP_PACKET_CONTENT_VERBOSE_SYNCRONOUS
 
@@ -175,7 +175,7 @@ namespace csharp_Protoshift.SpecialUdp
                 var stopwatch = new System.Diagnostics.Stopwatch();
                 stopwatch.Start();
 #endif
-                
+
                 var result = await _socket.ReceiveFromAsync(buffer, SocketFlags.None, 
                     receiveResult.RemoteEndPoint);
 
@@ -441,7 +441,6 @@ namespace csharp_Protoshift.SpecialUdp
 
     public class SocketUdpReceiveResult
     {
-
 #pragma warning disable CS8618 // 在退出构造函数时，不可为 null 的字段必须包含非 null 值。请考虑声明为可以为 null。
         public byte[] Buffer;
         public int ReceivedBytes;

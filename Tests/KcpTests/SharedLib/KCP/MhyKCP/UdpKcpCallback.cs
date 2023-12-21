@@ -1,4 +1,4 @@
-﻿// #define KCP_PACKET_AUDIT
+// #define KCP_PACKET_AUDIT
 
 using csharp_Protoshift.SpecialUdp;
 using System.Buffers;
