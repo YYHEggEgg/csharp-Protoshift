@@ -12,8 +12,8 @@ namespace csharp_Protoshift.MhyKCP.Test.App
 #if CONNECT_SERVERONLY
             throw new NotImplementedException("Proxy should not be launched in CONNECT_SERVERONLY mode.");
 #else
-            KcpProxyServer proxy = new(new(IPAddress.Loopback, Constants.UDP_PROXY_PORT),
-                new(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
+            KcpProxyServer proxy = new(new IPEndPoint(IPAddress.Loopback, Constants.UDP_PROXY_PORT),
+                new IPEndPoint(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
             ProxyHandlers handlers = new ProxyHandlers
             {
                 OnServerPacketArrival = GameSessionDispatch.HandleServerPacket,
