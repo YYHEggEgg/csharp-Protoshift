@@ -313,7 +313,7 @@ namespace System.Net.Sockets.Kcp
         /// 正在等待触发接收回调函数消息列表
         /// <para>需要执行的操作  添加 遍历 删除</para>
         /// </summary>
-#if !KCP_PERFORMANCE_TEST
+#if true
         internal List<Segment> rcv_queue = new List<Segment>();
 #else
         internal OuterCode.SegmentTraceList<Segment> rcv_queue = new();
@@ -648,12 +648,12 @@ namespace System.Net.Sockets.Kcp
                 while (rcv_buf.Count > 0)
                 {
                     var seg = rcv_buf.First.Value;
-#if KCP_PERFORMANCE_TEST
+#if false
                     LogWriteLine($"rcv_nxt Trace: {rcv_nxt}", KcpLogMask.IKCP_LOG_INPUT.ToString());
 #endif
                     if (seg.sn == rcv_nxt && rcv_queue.Count < rcv_wnd)
                     {
-#if KCP_PERFORMANCE_TEST
+#if false
                         LogWriteLine($"moved to rcv_queue, rcv_nxt: {rcv_nxt}, seg: {seg.ToLogString(false)}", KcpLogMask.IKCP_LOG_INPUT.ToString());
 #endif
                         rcv_buf.RemoveFirst();
@@ -1054,17 +1054,10 @@ namespace System.Net.Sockets.Kcp
             lock (snd_queueLock)
             {
 #endif
-#if KCP_PERFORMANCE_TEST
-                byte pre_frg = 255;
-#endif
                 while (Itimediff(snd_nxt, snd_una + cwnd_) < 0)
                 {
                     if (snd_queue.TryDequeue(out var newseg))
                     {
-#if KCP_PERFORMANCE_TEST
-                        if (pre_frg != 255) Debug.Assert(((newseg.frg - pre_frg + 1) % 3) == 0);
-                        pre_frg = newseg.frg;
-#endif
                         newseg.conv = conv;
 #if MIHOMO_KCP
                         // miHoMo KCP modify: IUINT32 token
@@ -1773,10 +1766,6 @@ namespace System.Net.Sockets.Kcp
             {
                 count = (int)(span.Length + mss - 1) / (int)mss;
             }
-
-#if KCP_PERFORMANCE_TEST
-            Debug.Assert(count == (int)Ceiling((double)(3500 + 16) / mss));
-#endif
 
             if (count > IKCP_WND_RCV)
             {

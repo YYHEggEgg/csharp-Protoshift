@@ -16,28 +16,34 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 #if !PROTOSHIFT_BENCHMARK
         static KcpProxyServer()
         {
-            var customconf = Log.GlobalConfig;
-#if DEBUG
-            customconf.Global_Minimum_LogLevel = LogLevel.Debug;
-#else
-            customconf.Global_Minimum_LogLevel = LogLevel.Information;
+#if !KCP_PERFORMANCE_TEST
+            if (BaseLogger.LogFileExists("player.stat"))
+            {
 #endif
-            customconf.Console_Minimum_LogLevel = LogLevel.None;
-            customconf.Enable_Detailed_Time = true;
-            
-            _kcpstatlogger = new BaseLogger(customconf, new LogFileConfig
-                {
-                    AutoFlushWriter = true,
-                    IsPipeSeparatedFile = true,
-                    MaximumLogLevel = LogLevel.Error,
+                var customconf = Log.GlobalConfig;
 #if DEBUG
-                    MinimumLogLevel = LogLevel.Debug,
+                customconf.Global_Minimum_LogLevel = LogLevel.Debug;
 #else
-                    MinimumLogLevel = LogLevel.Information,
+                customconf.Global_Minimum_LogLevel = LogLevel.Information;
 #endif
-                    FileIdentifier = "player.stat",
-                    AllowAutoFallback = true,
-                });
+                customconf.Console_Minimum_LogLevel = LogLevel.None;
+                customconf.Enable_Detailed_Time = true;
+                _kcpstatlogger = new BaseLogger(customconf, new LogFileConfig
+                    {
+                        AutoFlushWriter = true,
+                        IsPipeSeparatedFile = true,
+                        MaximumLogLevel = LogLevel.Error,
+#if DEBUG
+                        MinimumLogLevel = LogLevel.Debug,
+#else
+                        MinimumLogLevel = LogLevel.Information,
+#endif
+                        FileIdentifier = "player.stat",
+                        AllowAutoFallback = true,
+                    });
+#if !KCP_PERFORMANCE_TEST
+            }
+#endif
         }
 #endif
 

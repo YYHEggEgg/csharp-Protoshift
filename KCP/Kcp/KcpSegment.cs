@@ -16,7 +16,7 @@ namespace System.Net.Sockets.Kcp
     /// </summary>
     public struct KcpSegment : IKcpSegment
     {
-#if KCP_PERFORMANCE_TEST
+#if false
         private string Invoker()
         {
             StackTrace stackTrace = new StackTrace();
@@ -52,7 +52,7 @@ namespace System.Net.Sockets.Kcp
 #else
             IntPtr intPtr = Marshal.AllocHGlobal(total);
 #endif
-#if KCP_PERFORMANCE_TEST
+#if false
             Log.Verb($"KcpSegment memory alloc: 0x{intPtr:x}", nameof(KcpSegment));
 #endif
             unsafe
@@ -81,7 +81,7 @@ namespace System.Net.Sockets.Kcp
 #if BUGFIX_TRIAL_20230611_001
                 }
 #endif
-#if KCP_PERFORMANCE_TEST
+#if false
                 Log.Verb($"KcpSegment memory free: 0x{(IntPtr)seg.ptr:x}", nameof(KcpSegment));
 #endif
             }
@@ -320,7 +320,7 @@ namespace System.Net.Sockets.Kcp
             }
             set
             {
-#if KCP_PERFORMANCE_TEST
+#if false
                 Log.Verb($"Invoker: [{Invoker()}] assigned frg:{value} for KcpSegment: {this.ToLogString(false)}", nameof(KcpSegment));
 #endif
                 unsafe
@@ -447,7 +447,7 @@ namespace System.Net.Sockets.Kcp
             }
             set
             {
-#if KCP_PERFORMANCE_TEST
+#if false
                 Log.Verb($"Invoker: [{Invoker()}] assigned sn:{value} for KcpSegment: {this.ToLogString(false)}", nameof(KcpSegment));
 #endif
                 unsafe
