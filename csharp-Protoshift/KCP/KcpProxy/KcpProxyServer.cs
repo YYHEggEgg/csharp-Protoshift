@@ -27,7 +27,6 @@ namespace csharp_Protoshift.MhyKCP.Proxy
                 customconf.Global_Minimum_LogLevel = LogLevel.Information;
 #endif
                 customconf.Console_Minimum_LogLevel = LogLevel.None;
-                customconf.Enable_Detailed_Time = true;
                 _kcpstatlogger = new BaseLogger(customconf, new LogFileConfig
                     {
                         AutoFlushWriter = true,

@@ -206,7 +206,6 @@ namespace csharp_Protoshift.GameSession
                 var customconf = Log.GlobalConfig;
                 customconf.Global_Minimum_LogLevel = LogLevel.Information;
                 customconf.Console_Minimum_LogLevel = LogLevel.None;
-                customconf.Enable_Detailed_Time = true;
                 PacketLogger = new BaseLogger(customconf, new LogFileConfig
                 {
                     AutoFlushWriter = true,
@@ -226,7 +225,6 @@ namespace csharp_Protoshift.GameSession
                 customconf.Global_Minimum_LogLevel = LogLevel.Information;
 #endif
                 customconf.Console_Minimum_LogLevel = LogLevel.None;
-                customconf.Enable_Detailed_Time = true;
                 PlayerStatLogger = new BaseLogger(customconf, new LogFileConfig
                 {
                     AutoFlushWriter = true,
