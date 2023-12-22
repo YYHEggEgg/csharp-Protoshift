@@ -16,30 +16,28 @@ namespace csharp_Protoshift.MhyKCP.Proxy
 #if !PROTOSHIFT_BENCHMARK
         static KcpProxyServer()
         {
-            _kcpstatlogger = new BaseLogger(new LoggerConfig(
-                max_Output_Char_Count: 16 * 1024,
-                use_Console_Wrapper: true,
-                use_Working_Directory: true,
+            var customconf = Log.GlobalConfig;
 #if DEBUG
-                global_Minimum_LogLevel: LogLevel.Debug,
+            customconf.Global_Minimum_LogLevel = LogLevel.Debug;
 #else
-                global_Minimum_LogLevel: LogLevel.Information,
+            customconf.Global_Minimum_LogLevel = LogLevel.Information;
 #endif
-                console_Minimum_LogLevel: LogLevel.None,
-                debug_LogWriter_AutoFlush: false,
-                enable_Detailed_Time: true), new LogFileConfig
-                    {
-                        AutoFlushWriter = true,
-                        IsPipeSeparatedFile = true,
-                        MaximumLogLevel = LogLevel.Error,
+            customconf.Console_Minimum_LogLevel = LogLevel.None;
+            customconf.Enable_Detailed_Time = true;
+            
+            _kcpstatlogger = new BaseLogger(customconf, new LogFileConfig
+                {
+                    AutoFlushWriter = true,
+                    IsPipeSeparatedFile = true,
+                    MaximumLogLevel = LogLevel.Error,
 #if DEBUG
-                        MinimumLogLevel = LogLevel.Debug,
+                    MinimumLogLevel = LogLevel.Debug,
 #else
-                        MinimumLogLevel = LogLevel.Information,
+                    MinimumLogLevel = LogLevel.Information,
 #endif
-                        FileIdentifier = "player.stat",
-                        AllowAutoFallback = true,
-                    });
+                    FileIdentifier = "player.stat",
+                    AllowAutoFallback = true,
+                });
         }
 #endif
 

@@ -147,7 +147,8 @@ jobs:
     - name: Run tests
       run: >
         cd Tests/KcpTests/KcpPerformanceTest ;
-        dotnet run --configuration Debug --
+        dotnet run --configuration Debug
+        --property:DefineConstants=TRACE%3bDEBUG%3bNET%3bNET6_0%3bNETCOREAPP%3bMIHOMO_KCP%3bKCP_INNER_LOG --
         --packet-size 3500
         --packet-repeat-time 200
         --packet-interval 40
@@ -351,7 +352,8 @@ jobs:
     - name: Run tests
       run: >
         cd Tests/KcpTests/KcpPerformanceTest ;
-        dotnet run --configuration Release --
+        dotnet run --configuration Release
+        --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3bMIHOMO_KCP%3bKCP_INNER_LOG --
         --packet-size 3500
         --packet-repeat-time 5000
         --packet-interval 40
@@ -393,7 +395,8 @@ jobs:
     - name: Run tests
       run: >
         cd Tests/KcpTests/KcpPerformanceTest ;
-        dotnet run --configuration Release --
+        dotnet run --configuration Release
+        --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3bMIHOMO_KCP%3bKCP_INNER_LOG --
         --packet-size 3500
         --packet-repeat-time 5000
         --packet-interval 40
@@ -1153,7 +1156,8 @@ jobs:
     - name: Run tests
       run: >
         cd Tests/KcpTests/KcpPerformanceTest ;
-        dotnet run --configuration Release --
+        dotnet run --configuration Release
+        --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3bMIHOMO_KCP%3bKCP_INNER_LOG --
         --packet-size 3500
         --packet-repeat-time 5000
         --packet-interval 50
@@ -1194,7 +1198,8 @@ jobs:
     - name: Run tests
       run: >
         cd Tests/KcpTests/KcpPerformanceTest ;
-        dotnet run --configuration Release --
+        dotnet run --configuration Release
+        --property:DefineConstants=TRACE%3bRELEASE%3bNET%3bNET6_0%3bNETCOREAPP%3bMIHOMO_KCP%3bKCP_INNER_LOG --
         --packet-size 3500
         --packet-repeat-time 5000
         --packet-interval 50

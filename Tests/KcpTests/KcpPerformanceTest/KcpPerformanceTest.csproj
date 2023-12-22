@@ -21,7 +21,7 @@
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.9.1" />
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.2-rc52" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.2-rc53" />
     <PackageReference Include="EPPlus" Version="6.2.7" />
     <PackageReference Include="Google.Protobuf" Version="3.23.4" />
   </ItemGroup>

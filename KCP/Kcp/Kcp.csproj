@@ -79,7 +79,7 @@
 	</None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.2-rc52" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.2-rc53" />
     <PackageReference Include="System.IO.Hashing" Version="8.0.0" />
   </ItemGroup>
 
