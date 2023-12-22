@@ -7,12 +7,12 @@ namespace csharp_Protoshift.MhyKCP.Test.App
 {
     public static class ServerApp
     {
-        public static async Task Start()
+        public static void Start()
         {
-            KCPServer kcpServer = new(new(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
+            KCPServer kcpServer = new(new IPEndPoint(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
             Log.Info($"KCPServer listening on localhost:{Constants.UDP_SERVER_PORT}.", nameof(ServerApp));
 
-            _ = Task.Run(() =>
+            Util.RunBackground(() =>
             {
                 while (true)
                 {
@@ -20,7 +20,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                     Log.Info($"New connection from {accepted.RemoteEndpoint}.", "ServerListening_AsyncTask");
                     var conn = accepted.Connection;
                     // TODO: Push state to analysis
-                    _ = Task.Run(() =>
+                    Util.RunBackground(() =>
                     {
                         while (true)
                         {
@@ -47,7 +47,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                                 continue;
                             }
                             ServerDataChannel.PushReceivedPacket(pkt);
-                            Log.Verb($"Server received packet: length:{data?.Length}, isStructureValid:{pkt.isStructureValid}, isBodyValid:{pkt.isBodyValid}, ack:{pkt.ack}, bodyLen:{pkt.bodyLen}", "ServerReceiver");
+                            Log.Verb($"Server received packet: length:{data?.Length}, isStructureValid:{pkt.isStructureValid}, isBodyValid:{pkt.isBodyValid}, ack:{pkt.ack}, id:{pkt.Unique_ID}, bodyLen:{pkt.bodyLen}", "ServerReceiver");
                             if (pkt.isStructureValid)
                             {
                                 try
@@ -63,10 +63,15 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                                     continue;
                                 }
                             }
+                            else
+                            {
+                                Log.Warn($"致命错误：服务端收到包（ID：{pkt.Unique_ID}）结构错误。", "BasePacket");
+                                Log.Warn($"BasePacket ID：{pkt.Unique_ID}'s Hexdump: {Convert.ToHexString(data ?? Array.Empty<byte>())}");
+                            }
                         }
-                    });
+                    }, $"The receiver of packet from {accepted.RemoteEndpoint} has met a fatal error.", nameof(ServerApp));
                 }
-            });
+            }, "ServerApp (Accept) has met a fatal error.", nameof(ServerApp));
         }
     }
 }

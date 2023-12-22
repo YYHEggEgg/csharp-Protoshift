@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift.MhyKCP.Test
 {
@@ -41,7 +42,41 @@ namespace csharp_Protoshift.MhyKCP.Test
         {
             StackTrace stackTrace = new StackTrace();
             StackFrame? frame = stackTrace.GetFrame(2);
-            return frame.ToString();
+            return frame?.ToString() ?? "<unknown>";
+        }
+
+        /// <summary>
+        /// 创建一个任务，将指定委托置于后台运行。
+        /// </summary>
+        /// <param name="action">要运行的无参委托。</param>
+        /// <param name="fatal_notice">当委托出现未处理的异常时，传递给 <see cref="Log.Erro(string, string?)"/> 信息的一部分。一般是一个完整的句子，其后接异常信息。</param>
+        /// <param name="log_sender">当委托出现未处理的异常时，传递给 <see cref="Log.Erro(string, string?)"/> 信息的日志 sender。</param>
+        public static void RunBackground(Action action, string fatal_notice, string log_sender = $"{nameof(Util)}_{nameof(RunBackground)}")
+        {
+            _ = Task.Run(action).ContinueWith(t =>
+            {
+                if (t.IsFaulted)
+                {
+                    Log.Erro($"{fatal_notice} {t.Exception}", log_sender);
+                }
+            }, TaskContinuationOptions.OnlyOnFaulted);
+        }
+
+        /// <summary>
+        /// 创建一个任务，将指定委托置于后台运行。
+        /// </summary>
+        /// <param name="action">要运行的无参委托。</param>
+        /// <param name="fatal_notice">当委托出现未处理的异常时，传递给 <see cref="Log.Erro(string, string?)"/> 信息的一部分。一般是一个完整的句子，其后接异常信息。</param>
+        /// <param name="log_sender">当委托出现未处理的异常时，传递给 <see cref="Log.Erro(string, string?)"/> 信息的日志 sender。</param>
+        public static void RunBackground(Func<Task> action, string fatal_notice, string log_sender = $"{nameof(Util)}_{nameof(RunBackground)}")
+        {
+            _ = Task.Run(action).ContinueWith(t =>
+            {
+                if (t.IsFaulted)
+                {
+                    Log.Erro($"{fatal_notice} {t.Exception}", log_sender);
+                }
+            }, TaskContinuationOptions.OnlyOnFaulted);
         }
 
         /// <summary>
@@ -61,7 +96,7 @@ namespace csharp_Protoshift.MhyKCP.Test
              */
             if (File.Exists(filePath))
             {
-                string directory = Path.GetDirectoryName(filePath);
+                string directory = Path.GetDirectoryName(filePath) ?? string.Empty;
                 string fileName = Path.GetFileNameWithoutExtension(filePath);
                 string extension = Path.GetExtension(filePath);
                 string newFilePath = filePath;
@@ -77,7 +112,7 @@ namespace csharp_Protoshift.MhyKCP.Test
             }
             else if (Directory.Exists(filePath))
             {
-                string directoryName = Path.GetDirectoryName(filePath);
+                string directoryName = Path.GetDirectoryName(filePath) ?? string.Empty;
                 string directory = Path.Combine(directoryName, Path.GetFileName(filePath));
                 string newDirectory = directory;
                 int suffix = 1;

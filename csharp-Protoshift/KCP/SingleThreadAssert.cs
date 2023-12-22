@@ -1,4 +1,5 @@
-﻿using YYHEggEgg.Logger;
+using YYHEggEgg.Logger;
+
 namespace csharp_Protoshift
 {
     /// <summary>

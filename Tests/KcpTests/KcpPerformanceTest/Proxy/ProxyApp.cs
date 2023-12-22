@@ -12,8 +12,8 @@ namespace csharp_Protoshift.MhyKCP.Test.App
 #if CONNECT_SERVERONLY
             throw new NotImplementedException("Proxy should not be launched in CONNECT_SERVERONLY mode.");
 #else
-            KcpProxyServer proxy = new(new(IPAddress.Loopback, Constants.UDP_PROXY_PORT),
-                new(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
+            KcpProxyServer proxy = new(new IPEndPoint(IPAddress.Loopback, Constants.UDP_PROXY_PORT),
+                new IPEndPoint(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
             ProxyHandlers handlers = new ProxyHandlers
             {
                 OnServerPacketArrival = GameSessionDispatch.HandleServerPacket,
@@ -21,7 +21,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                 ServerPacketOrdered = GameSessionDispatch.ServerPacketOrdered,
                 ClientPacketOrdered = GameSessionDispatch.ClientPacketOrdered
             };
-            _ = Task.Run(() => proxy.StartProxy(handlers));
+            Util.RunBackground(() => proxy.StartProxy(handlers), "ProxyApp has met a fatal error. ", nameof(ProxyApp));
             Log.Info($"KcpProxyServer started on 127.0.0.1:{Constants.UDP_PROXY_PORT}", nameof(ProxyApp));
 #endif
         }

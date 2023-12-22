@@ -21,9 +21,9 @@ namespace csharp_Protoshift.MhyKCP.Test.App
         public async Task Start()
         {
 #if CONNECT_SERVERONLY
-            KCPClient kcpClient = new(new(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
+            KCPClient kcpClient = new(new IPEndPoint(IPAddress.Loopback, Constants.UDP_SERVER_PORT));
 #else
-            KCPClient kcpClient = new(new(IPAddress.Loopback, Constants.UDP_PROXY_PORT));
+            KCPClient kcpClient = new(new IPEndPoint(IPAddress.Loopback, Constants.UDP_PROXY_PORT));
 #endif
             await kcpClient.ConnectAsync();
 #if CONNECT_SERVERONLY
@@ -31,7 +31,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
 #else
             Log.Info($"KCPClient connected to localhost:{Constants.UDP_PROXY_PORT}.", nameof(ClientApp));
 #endif
-            _ = Task.Run(async () =>
+            Util.RunBackground(async () =>
             {
                 int sum_wait_ms = 0;
                 uint ack = (uint)(Constants.packet_repeat_time * 2 * clientId + 1);
@@ -52,7 +52,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                         {
                             BasePacket pkt = BasePacket.Generate(ack, (uint)Constants.each_packet_size);
                             kcpClient.Send(pkt.GetBytes());
-                            Log.Verb($"Client sent ack: {ack}", "ClientSender");
+                            Log.Verb($"Client sent ack: {ack} (id: {pkt.Unique_ID})", "ClientSender");
                             ClientDataChannel.PushSentPacket(pkt);
                             pkt.Dispose();
                             sum_wait_ms += Constants.packet_interval_ms;
@@ -70,9 +70,9 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                     ack += 2;
                 }
                 _finished = true;
-            });
+            }, $"The sender of Client {clientId} has met a fatal error. ", "ClientSender");
 
-            _ = Task.Run(() =>
+            Util.RunBackground(() =>
             {
                 while (true)
                 {
@@ -81,7 +81,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                         var data = kcpClient.Receive();
                         var packet = new BasePacket(data);
                         ClientDataChannel.PushReceivedPacket(packet);
-                        Log.Verb($"Client recved packet: isStructureValid:{packet.isStructureValid}, isBodyValid:{packet.isBodyValid}, ack:{packet.ack}, bodyLen:{packet.bodyLen}");
+                        Log.Verb($"Client recved packet: isStructureValid:{packet.isStructureValid}, isBodyValid:{packet.isBodyValid}, ack:{packet.ack}, id:{packet.Unique_ID}, bodyLen:{packet.bodyLen}", "ClientReceiver");
                         packet.Dispose();
                     }
                     catch (Exception ex)
@@ -89,7 +89,7 @@ namespace csharp_Protoshift.MhyKCP.Test.App
                         Log.Erro($"Client receiving packet meets exception: {ex}", "ClientReceiver_AsyncTask");
                     }
                 }
-            });
+            }, $"The receiver of Client {clientId} has met a fatal error. ", "ClientReceiver");
         }
 
         internal static async Task WaitForAllClients()

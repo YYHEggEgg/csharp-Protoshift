@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Concurrent;
 using System.Buffers.Binary;
+using System.IO.Hashing;
 
 namespace System.Net.Sockets.Kcp
 {
@@ -216,10 +217,35 @@ namespace System.Net.Sockets.Kcp
             public uint una { get; set; }
             public ushort wnd { get; set; }
             public uint xmit { get; set; }
+#if BYTE_CHECK_MODE
+            public uint byteCheckMode { get; set; }
+            public uint byteCheckCode { get; internal set; }
+
+            public void ComputeByteCheckCodeFromData()
+            {
+                switch (byteCheckMode)
+                {
+                    case 1:
+                        var buffer = data;
+                        byteCheckCode = Crc32.HashToUInt32(buffer);
+                        break;
+                    case 2:
+                        var buffer2 = data;
+                        byteCheckCode = (uint)XxHash64.HashToUInt64(buffer2);
+                        break;
+                    default:
+                        byteCheckCode = 0;
+                        break;
+                }
+            }
+#endif
 
             public int Encode(Span<byte> buffer)
             {
                 var datelen = (int)(HeadOffset + len);
+#if BYTE_CHECK_MODE
+                if (byteCheckCode == 0) ComputeByteCheckCodeFromData();
+#endif
 
                 ///备用偏移值 现阶段没有使用
                 const int offset = 0;
@@ -238,6 +264,9 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 12), sn);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 16), una);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 20), len);
+#if BYTE_CHECK_MODE
+                    BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 24), byteCheckCode);
+#endif
 #else
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset), conv);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset), token);
@@ -249,6 +278,9 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 16), sn);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 20), una);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 24), len);
+#if BYTE_CHECK_MODE
+                    BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 28), byteCheckCode);
+#endif
 #endif
                     data.CopyTo(buffer.Slice(HeadOffset));
                 }
@@ -266,6 +298,9 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 12), sn);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 16), una);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 20), len);
+#if BYTE_CHECK_MODE
+                    BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 24), byteCheckCode);
+#endif
 #else
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset), conv);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset), token);
@@ -277,6 +312,9 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 16), sn);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 20), una);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 24), len);
+#if BYTE_CHECK_MODE
+                    BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 28), byteCheckCode);
+#endif
 #endif
 
                     data.CopyTo(buffer.Slice(HeadOffset));
@@ -307,6 +345,9 @@ namespace System.Net.Sockets.Kcp
         {
             seg.cmd = 0;
             seg.conv = 0;
+#if MIHOMO_KCP
+            seg.token = 0;
+#endif
             seg.fastack = 0;
             seg.frg = 0;
             seg.len = 0;
@@ -317,6 +358,10 @@ namespace System.Net.Sockets.Kcp
             seg.una = 0;
             seg.wnd = 0;
             seg.xmit = 0;
+#if BYTE_CHECK_MODE
+            seg.byteCheckMode = 0;
+            seg.byteCheckCode = 0;
+#endif
             Pool.Push(seg);
         }
 

@@ -1,4 +1,4 @@
-﻿// #define KCP_INNER_LOG
+// #define KCP_INNER_LOG
 // #define KCP_EXPORT_PACKET_RECORD
 
 using System.Net.Sockets;
@@ -54,6 +54,11 @@ namespace csharp_Protoshift.MhyKCP
         protected object cskcp_recvLock = "R.I.P YSFreedom";
         protected object cskcp_sndLock = "Yolmiya";
         protected long startTime;
+        /// <summary>
+        /// Used for assigning conv for new connections.
+        /// Use <see cref="Interlocked.Increment(ref uint)"/> to operate with it.
+        /// </summary>
+        protected static uint _currentConv = 1000;
 
         public uint ConnectData { get; protected set; }
         public OuterCode.UniqueIDManager _uniqueID = new(nameof(MhyKcpBase));
@@ -74,6 +79,15 @@ namespace csharp_Protoshift.MhyKCP
             // ikcpHandle = IKCP.ikcp_create(_Conv, _Token, UIntPtr.Zero);
             cskcpHandle = new(_Conv, _Token, OutputCallback);
             _State = ConnectionState.CONNECTED;
+
+#if BYTE_CHECK_MODE
+#if CORRUPT_PACKET
+            bool corrupt = true;
+#else
+            bool corrupt = false;
+#endif
+            cskcpHandle.SetByteCheck(1, corrupt);
+#endif
 
             // Added
             // IKCP.ikcp_nodelay(ikcpHandle, 1, 10, 2, 1);
@@ -187,7 +201,7 @@ namespace csharp_Protoshift.MhyKCP
                         {
                             // Log.Dbug($"HandShakeWaitNotify, buf = {Convert.ToHexString(buffer)}", nameof(MhyKcpBase));
                             handshake.Decode(buffer, Handshake.MAGIC_CONNECT);
-                            _Conv = (uint)(MonotonicTime.Now & 0xFFFFFFFF);
+                            _Conv = Interlocked.Increment(ref _currentConv);
                             _Token = 0xFFCCEEBB ^ (uint)((MonotonicTime.Now >> 32) & 0xFFFFFFFF);
 
                             var sendBackConv = new Handshake(Handshake.MAGIC_SEND_BACK_CONV, _Conv, _Token).AsBytes();

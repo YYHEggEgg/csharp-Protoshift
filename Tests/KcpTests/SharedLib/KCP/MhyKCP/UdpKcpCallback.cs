@@ -1,6 +1,5 @@
-﻿#define KCP_PACKET_AUDIT
+// #define KCP_PACKET_AUDIT
 
-using csharp_Protoshift.Obsoleted.SpecialUdp;
 using csharp_Protoshift.SpecialUdp;
 using System.Buffers;
 using System.Diagnostics;
@@ -31,25 +30,6 @@ namespace csharp_Protoshift.MhyKCP
         }
     }
 
-    [Obsolete]
-    public class ConcurrentUdpKcpCallback : IKcpCallback
-    {
-        private readonly ConcurrentUdpClient udpSock;
-        private readonly IPEndPoint? ipEp;
-
-        public ConcurrentUdpKcpCallback(ConcurrentUdpClient udpSock, IPEndPoint? ipEp = null)
-        {
-            this.udpSock = udpSock;
-            this.ipEp = ipEp;
-        }
-
-        public async void Output(IMemoryOwner<byte> buffer, int avalidLength, bool isKcpPacket = true)
-        {
-            await udpSock.SendAsync(buffer.Memory.Slice(0, avalidLength), ipEp);
-            buffer.Dispose();
-        }
-    }
-
     public class SocketUdpKcpCallback : IKcpCallback
     {
         private readonly SocketUdpClient udpSock;
@@ -64,11 +44,15 @@ namespace csharp_Protoshift.MhyKCP
         public void Output(IMemoryOwner<byte> buffer, int avalidLength, bool isKcpPacket = true)
         {
             // Stopwatch udpwatch = Stopwatch.StartNew();
-            // DateTime req_SendTime = DateTime.Now;
+#if KCP_PACKET_AUDIT
+            DateTime req_SendTime = DateTime.Now;
+#endif
             // udpSock.SendToAsync(buffer.Memory.Slice(0, avalidLength), ipEp).Wait();
             udpSock.SendTo(buffer.Memory.Span.Slice(0, avalidLength), ipEp);
-            // if (isKcpPacket) 
-                // KcpPacketAudit.PushPacket(req_SendTime, buffer.Memory, avalidLength);
+#if KCP_PACKET_AUDIT
+            if (isKcpPacket) 
+                KcpPacketAudit.PushPacket(req_SendTime, buffer.Memory, avalidLength);
+#endif
             buffer.Dispose();
             // udpwatch.Stop();
             // Log.Dbug($"SocketUdpKcpCallback output elapsed {udpwatch.Elapsed.TotalMilliseconds}ms.");

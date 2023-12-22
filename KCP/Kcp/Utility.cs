@@ -50,7 +50,7 @@ namespace System.Net.Sockets.Kcp
         public static string ToLogString<T>(this T segment, bool local = false)
             where T : IKcpSegment
         {
-#if !KCP_PERFORMANCE_TEST
+#if true
             if (local)
             {
                 return $"sn:{segment.sn,2} una:{segment.una,2} frg:{segment.frg,2} cmd:{segment.cmd,2} len:{segment.len,2} wnd:{segment.wnd}    [ LocalValue: xmit:{segment.xmit} fastack:{segment.fastack}  rto:{segment.rto} ]";

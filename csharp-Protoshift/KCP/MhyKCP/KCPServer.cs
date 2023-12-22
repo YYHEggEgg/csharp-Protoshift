@@ -12,8 +12,7 @@ namespace csharp_Protoshift.MhyKCP
 
         protected SocketUdpClient udpSock;
         protected bool _Closed = false;
-        // string is the ToString() form of IPEndPoint
-        protected ConcurrentDictionary<string, MhyKcpBase> connecting_clients;
+        protected ConcurrentDictionary<IPEndPoint, MhyKcpBase> connecting_clients;
         protected ConcurrentDictionary<uint, MhyKcpBase> connected_clients;
         protected ConcurrentQueue<AcceptAsyncReturn> newConnections;
         protected ConcurrentBag<uint> removed_sessions;
@@ -83,9 +82,8 @@ namespace csharp_Protoshift.MhyKCP
                         continue;
                     }
                     // ip dispatch
-                    string remoteIpString = packet.RemoteEndPoint.ToString();
                     MhyKcpBase conn;
-                    if (!connecting_clients.TryGetValue(remoteIpString, out var _outconn))
+                    if (!connecting_clients.TryGetValue(packet.RemoteEndPoint, out var _outconn))
                     {
                         // Don't allow a disconnected session
                         if (removed_sessions.Contains(handshake.Conv)) continue;
@@ -93,7 +91,7 @@ namespace csharp_Protoshift.MhyKCP
                         conn = new MhyKcpBase();
                         conn.OutputCallback = new SocketUdpKcpCallback(udpSock, packet.RemoteEndPoint);
                         conn.AcceptNonblock();
-                        connecting_clients[remoteIpString] = conn;
+                        connecting_clients[packet.RemoteEndPoint] = conn;
                         _ = Task.Run(async () =>
                         {
                             try
@@ -102,7 +100,7 @@ namespace csharp_Protoshift.MhyKCP
                             }
                             catch
                             {
-                                connecting_clients.TryRemove(remoteIpString, out _);
+                                connecting_clients.TryRemove(packet.RemoteEndPoint, out _);
                             }
                         });
                     }

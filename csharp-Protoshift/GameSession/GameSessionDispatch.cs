@@ -28,7 +28,7 @@ namespace csharp_Protoshift.GameSession
                 }
                 else sessions[conv].remoteIp = ipEp;
             }
-            BackgroundInjectOnlineExecuteWindys(conv, 
+            BackgroundInjectOnlineExecuteWindys(conv,
                 OnlineExecWindyMode_v1_0_0.OnKcpConnect, "windyOnKcpConnect");
         }
 
@@ -147,7 +147,7 @@ namespace csharp_Protoshift.GameSession
 
         public static void BackgroundInjectOnlineExecuteWindys(uint conv, OnlineExecWindyMode_v1_0_0 condition, string? sender)
         {
-            _ = Task.Run(async () => 
+            _ = Task.Run(async () =>
             {
                 await Task.Delay(1500);
                 await InjectOnlineExecuteWindys(conv, condition, $"{sender}_AsyncTask");
@@ -203,47 +203,41 @@ namespace csharp_Protoshift.GameSession
         {
             if (Config.Global.EnableFullPacketLog)
             {
-                PacketLogger = new BaseLogger(new LoggerConfig(
-                    max_Output_Char_Count: 16 * 1024,
-                    use_Console_Wrapper: true,
-                    use_Working_Directory: true,
-                    global_Minimum_LogLevel: LogLevel.Information,
-                    console_Minimum_LogLevel: LogLevel.None,
-                    debug_LogWriter_AutoFlush: false,
-                    enable_Detailed_Time: true), new LogFileConfig
-                    {
-                        AutoFlushWriter = true,
-                        IsPipeSeparatedFile = true,
-                        MaximumLogLevel = LogLevel.Information,
-                        MinimumLogLevel = LogLevel.Information,
-                        FileIdentifier = "packet"
-                    });
+                var customconf = Log.GlobalConfig;
+                customconf.Global_Minimum_LogLevel = LogLevel.Information;
+                customconf.Console_Minimum_LogLevel = LogLevel.None;
+                PacketLogger = new BaseLogger(customconf, new LogFileConfig
+                {
+                    AutoFlushWriter = true,
+                    IsPipeSeparatedFile = true,
+                    MaximumLogLevel = LogLevel.Information,
+                    MinimumLogLevel = LogLevel.Information,
+                    FileIdentifier = "packet",
+                    AllowAutoFallback = true,
+                });
             }
             if (Config.Global.EnablePlayerStatLog)
             {
-                PlayerStatLogger = new BaseLogger(new LoggerConfig(
-                    max_Output_Char_Count: 16 * 1024,
-                    use_Console_Wrapper: true,
-                    use_Working_Directory: true,
+                var customconf = Log.GlobalConfig;
 #if DEBUG
-                    global_Minimum_LogLevel: LogLevel.Debug,
+                customconf.Global_Minimum_LogLevel = LogLevel.Debug;
 #else
-                    global_Minimum_LogLevel: LogLevel.Information,
+                customconf.Global_Minimum_LogLevel = LogLevel.Information;
 #endif
-                    console_Minimum_LogLevel: LogLevel.None,
-                    debug_LogWriter_AutoFlush: false,
-                    enable_Detailed_Time: true), new LogFileConfig
-                    {
-                        AutoFlushWriter = true,
-                        IsPipeSeparatedFile = true,
-                        MaximumLogLevel = LogLevel.Error,
+                customconf.Console_Minimum_LogLevel = LogLevel.None;
+                PlayerStatLogger = new BaseLogger(customconf, new LogFileConfig
+                {
+                    AutoFlushWriter = true,
+                    IsPipeSeparatedFile = true,
+                    MaximumLogLevel = LogLevel.Error,
 #if DEBUG
-                        MinimumLogLevel = LogLevel.Debug,
+                    MinimumLogLevel = LogLevel.Debug,
 #else
-                        MinimumLogLevel = LogLevel.Information,
+                    MinimumLogLevel = LogLevel.Information,
 #endif
-                        FileIdentifier = "player.stat"
-                    });
+                    FileIdentifier = "player.stat",
+                    AllowAutoFallback = true,
+                });
                 PlayerStatLogger.Info($"UID|Status category|Description|--[Any other Data]--", "Conv ID");
             }
 
@@ -266,7 +260,7 @@ namespace csharp_Protoshift.GameSession
         /// <summary>
         /// Invoke the static initializer and create latest.packet.log and latest.player.stat.log.
         /// </summary>
-        public static void InitializeLogFiles() {  }
+        public static void InitializeLogFiles() { }
 
         private static void AssertSessionExists(uint conv)
         {
@@ -285,7 +279,7 @@ namespace csharp_Protoshift.GameSession
                 return;
             foreach (var windyfile in from list in ExecuteWindyMap.Values
                                       from item in list
-                                      where item.OnlineExecMode != OnlineExecWindyMode_v1_0_0.Disabled 
+                                      where item.OnlineExecMode != OnlineExecWindyMode_v1_0_0.Disabled
                                         && item.OnlineExecMode != OnlineExecWindyMode_v1_0_0.None
                                       select item.LuaFileName)
             {

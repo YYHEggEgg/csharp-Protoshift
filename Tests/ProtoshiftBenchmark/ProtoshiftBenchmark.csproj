@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" Version="0.13.7" />
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.1" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.2-rc53" />
     <PackageReference Include="Google.Protobuf" Version="3.24.0" />
   </ItemGroup>
 

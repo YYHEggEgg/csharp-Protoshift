@@ -79,18 +79,19 @@
 	</None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.1" />
+    <PackageReference Include="EggEgg.CSharp-Logger" Version="4.0.2-rc53" />
+    <PackageReference Include="System.IO.Hashing" Version="8.0.0" />
   </ItemGroup>
 
   <!--调试符号配置-->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;DEBUG;MIHOMO_KCP;ASSERT_STAINVOKE_DISABLE;KCP_PERFORMANCE_TEST_DISABLE;BUGFIX_TRIAL_20230609_001_DISABLE;BUGFIX_TRIAL_20230610_001_DISABLE;BUGFIX_TRIAL_20230610_002_DISABLE;BUGFIX_TRIAL_20230611_001_DISABLE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;MIHOMO_KCP;DISABLED_BYTE_CHECK_MODE;ASSERT_STAINVOKE_DISABLE;BUGFIX_TRIAL_20230609_001_DISABLE;BUGFIX_TRIAL_20230610_001_DISABLE;BUGFIX_TRIAL_20230610_002_DISABLE;BUGFIX_TRIAL_20230611_001_DISABLE</DefineConstants>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>false</Optimize>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>TRACE;MIHOMO_KCP</DefineConstants>
+    <DefineConstants>TRACE;MIHOMO_KCP;DISABLED_BYTE_CHECK_MODE</DefineConstants>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>true</Optimize>
   </PropertyGroup>

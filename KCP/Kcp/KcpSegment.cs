@@ -1,6 +1,7 @@
 ﻿using System.Buffers;
 using System.Buffers.Binary;
 using System.Diagnostics;
+using System.IO.Hashing;
 using System.Runtime.InteropServices;
 using YYHEggEgg.Logger;
 
@@ -15,7 +16,7 @@ namespace System.Net.Sockets.Kcp
     /// </summary>
     public struct KcpSegment : IKcpSegment
     {
-#if KCP_PERFORMANCE_TEST
+#if false
         private string Invoker()
         {
             StackTrace stackTrace = new StackTrace();
@@ -51,7 +52,7 @@ namespace System.Net.Sockets.Kcp
 #else
             IntPtr intPtr = Marshal.AllocHGlobal(total);
 #endif
-#if KCP_PERFORMANCE_TEST
+#if false
             Log.Verb($"KcpSegment memory alloc: 0x{intPtr:x}", nameof(KcpSegment));
 #endif
             unsafe
@@ -80,7 +81,7 @@ namespace System.Net.Sockets.Kcp
 #if BUGFIX_TRIAL_20230611_001
                 }
 #endif
-#if KCP_PERFORMANCE_TEST
+#if false
                 Log.Verb($"KcpSegment memory free: 0x{(IntPtr)seg.ptr:x}", nameof(KcpSegment));
 #endif
             }
@@ -171,8 +172,36 @@ namespace System.Net.Sockets.Kcp
             }
         }
 
+#if BYTE_CHECK_MODE
+
+        /// <summary>
+        /// offset = 16
+        /// </summary>
+        public uint byteCheckMode
+        {
+            get
+            {
+                unsafe
+                {
+                    return *(uint*)(ptr + 16);
+                }
+            }
+            set
+            {
+                unsafe
+                {
+                    *(uint*)(ptr + 16) = value;
+                }
+            }
+        }
+#endif
+
         ///以下为需要网络传输的参数
+#if BYTE_CHECK_MODE
+        public const int LocalOffset = 4 * 5;
+#else
         public const int LocalOffset = 4 * 4;
+#endif
         public const int HeadOffset = KcpConst.IKCP_OVERHEAD;
 
         /// <summary>
@@ -291,7 +320,7 @@ namespace System.Net.Sockets.Kcp
             }
             set
             {
-#if KCP_PERFORMANCE_TEST
+#if false
                 Log.Verb($"Invoker: [{Invoker()}] assigned frg:{value} for KcpSegment: {this.ToLogString(false)}", nameof(KcpSegment));
 #endif
                 unsafe
@@ -418,7 +447,7 @@ namespace System.Net.Sockets.Kcp
             }
             set
             {
-#if KCP_PERFORMANCE_TEST
+#if false
                 Log.Verb($"Invoker: [{Invoker()}] assigned sn:{value} for KcpSegment: {this.ToLogString(false)}", nameof(KcpSegment));
 #endif
                 unsafe
@@ -517,6 +546,50 @@ namespace System.Net.Sockets.Kcp
             }
         }
 
+#if BYTE_CHECK_MODE
+        // miHoMo KCP modify: IUINT32 token
+        // Change line(s) in file compare: ikcp.h, +271
+#if !MIHOMO_KCP
+        /// <summary>
+        /// <para> AppendDateSize </para>
+        /// offset = <see cref="LocalOffset"/> + 24
+        /// </summary>
+#else
+        /// <summary>
+        /// offset = <see cref="LocalOffset"/> + 28
+        /// </summary>
+#endif
+        public uint byteCheckCode
+        {
+            get
+            {
+                unsafe
+                {
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+#if !MIHOMO_KCP
+                    return *(uint*)(LocalOffset + 24 + ptr);
+#else
+                    return *(uint*)(LocalOffset + 28 + ptr);
+#endif
+                }
+            }
+            private set
+            {
+                unsafe
+                {
+                    // miHoMo KCP modify: IUINT32 token
+                    // Change line(s) in file compare: ikcp.h, +271
+#if !MIHOMO_KCP
+                    *(uint*)(LocalOffset + 24 + ptr) = value;
+#else
+                    *(uint*)(LocalOffset + 28 + ptr) = value;
+#endif
+                }
+            }
+        }
+#endif
+
         /// <summary>
         /// 
         /// </summary>
@@ -532,7 +605,25 @@ namespace System.Net.Sockets.Kcp
             }
         }
 
-
+#if BYTE_CHECK_MODE
+        public void ComputeByteCheckCodeFromData()
+        {
+            switch (byteCheckMode)
+            {
+                case 1:
+                    var buffer = data;
+                    byteCheckCode = Crc32.HashToUInt32(buffer);
+                    break;
+                case 2:
+                    var buffer2 = data;
+                    byteCheckCode = (uint)XxHash64.HashToUInt64(buffer2);
+                    break;
+                default:
+                    byteCheckCode = 0;
+                    break;
+            }
+        }
+#endif
 
         /// <summary>
         /// 将片段中的要发送的数据拷贝到指定缓冲区
@@ -542,6 +633,9 @@ namespace System.Net.Sockets.Kcp
         public int Encode(Span<byte> buffer)
         {
             var datelen = (int)(HeadOffset + len);
+#if BYTE_CHECK_MODE
+            if (byteCheckCode == 0) ComputeByteCheckCodeFromData();
+#endif
 
             ///备用偏移值 现阶段没有使用
             const int offset = 0;
@@ -573,6 +667,9 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 12), sn);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 16), una);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 20), len);
+#if BYTE_CHECK_MODE
+                    BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 24), byteCheckCode);
+#endif
 #else
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset), conv);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset), token);
@@ -584,6 +681,9 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 16), sn);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 20), una);
                     BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 24), len);
+#if BYTE_CHECK_MODE
+                    BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(offset + 28), byteCheckCode);
+#endif
 #endif
                     data.CopyTo(buffer.Slice(HeadOffset));
                 }
@@ -604,6 +704,9 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 12), sn);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 16), una);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 20), len);
+#if BYTE_CHECK_MODE
+                    BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 24), byteCheckCode);
+#endif
 #else
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset), conv);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset), token);
@@ -615,6 +718,9 @@ namespace System.Net.Sockets.Kcp
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 16), sn);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 20), una);
                     BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 24), len);
+#if BYTE_CHECK_MODE
+                    BinaryPrimitives.WriteUInt32BigEndian(buffer.Slice(offset + 28), byteCheckCode);
+#endif
 #endif
                     data.CopyTo(buffer.Slice(HeadOffset));
                 }

@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using YYHEggEgg.Logger;
 
@@ -91,7 +92,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
 
     public class CompiledEnumsStringPoolCollection
     {
-        private Dictionary<string, CompiledEnumStringPoolManager> collection = new();
+        private ConcurrentDictionary<string, CompiledEnumStringPoolManager> collection = new();
 
         /// <summary>
         /// Query a string pool with compiled enum name.
@@ -113,7 +114,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             var enumCodes = fullTree.GetPathsByType(CodeTreeQueryType.Enum);
             foreach (var enumCode in enumCodes)
             {
-                collection.Add(enumCode.FullPath,
+                collection.TryAdd(enumCode.FullPath,
                     new(lines, enumCode.StartLine, enumCode.EndLine));
             }
         }

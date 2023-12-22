@@ -47,6 +47,7 @@ namespace System.Net.Sockets.Kcp.Simple
         public async void SendAsync(byte[] datagram, int bytes)
         {
             kcp.Send(datagram.AsSpan().Slice(0, bytes));
+            await Task.CompletedTask;
         }
 
         public async ValueTask<byte[]> ReceiveAsync()

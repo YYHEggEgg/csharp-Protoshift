@@ -96,28 +96,30 @@ namespace csharp_Protoshift.GameSession
         #endregion
     
         #region Packet Record Saver
-        public static async Task DestroySession(uint conv)
+        private static object clearup_running_lck = "miHomo Save The World";
+        public static void DestroySession(uint conv)
         {
-            if (!sessions.ContainsKey(conv)) return;
-            sessions.TryRemove(conv, out HandlerSession? session);
-            cancelledSessions.Add(conv);
-
-            if (session == null)
+            lock (clearup_running_lck)
             {
-                Log.Erro($"Session {conv} destroyed but null, probably not recorded!", "GameSessionDispatch");
-                return;
+                if (!sessions.ContainsKey(conv)) return;
+                sessions.TryRemove(conv, out HandlerSession? session);
+                cancelledSessions.Add(conv);
+
+                if (session == null)
+                {
+                    Log.Erro($"Session {conv} destroyed but null, probably not recorded!", "GameSessionDispatch");
+                    return;
+                }
             }
         }
 
         public static void CloseServer()
         {
             Closed = true;
-            List<Task> tasks = new();
             foreach (var conv in sessions.Keys)
             {
-                tasks.Add(DestroySession(conv));
+                DestroySession(conv);
             }
-            Task.WaitAll(tasks.ToArray());
         }
         #endregion
     

@@ -1,11 +1,11 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Net;
 
 namespace csharp_Protoshift.MhyKCP.Proxy
 {
     public class KcpProxyClient : KCPClient
     {
-        public KcpProxyClient(IPEndPoint ipEp, uint conv = 0, uint token = 0, uint connectData = 0x499602D2)
+        public KcpProxyClient(EndPoint ipEp, uint conv = 0, uint token = 0, uint connectData = 0x499602D2)
             : base(ipEp)
         {
             server = new(conv, token, connectData);
