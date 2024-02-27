@@ -47,14 +47,6 @@ internal class Program
         string workingdir = Environment.CurrentDirectory;
         DirectoryInfo _workingdirinfo = new(workingdir);
         bool passcheck = true;
-        #region Find proto2json
-        string proto2jsondir = $"{workingdir}/proto2json";
-        if (!File.Exists($"{proto2jsondir}/go-proto2json_win32.exe"))
-        {
-            Log.Erro("Proto2json not found! Please make sure you're running program with dotnet run and have comiled Executable!", "ResourcesCheck");
-            passcheck = false;
-        }
-        #endregion
         #region Check Protos
         var parser = new Parser(config =>
         {
@@ -92,7 +84,7 @@ internal class Program
         #endregion
         if (!passcheck)
         {
-            Log.Erro("Process terminated for protos/proto2json executable lost. Exit code is 272574.", "ResourcesCheck");
+            Log.Erro("Process terminated for protos lost. Exit code is 272574.", "ResourcesCheck");
             Environment.Exit(272574);
         }
         ResourcesLoader.CheckForRequiredResources(res_dir);
