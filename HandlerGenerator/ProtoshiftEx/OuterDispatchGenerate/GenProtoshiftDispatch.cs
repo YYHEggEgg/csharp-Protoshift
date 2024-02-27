@@ -1,4 +1,5 @@
 using YYHEggEgg.Logger;
+using YYHEggEgg.ProtoParser;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
@@ -118,9 +119,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 #region Other Code (JIT API)
                 var allvalidhandlernames = from validhandlername in 
                     (from messageResultTuple in messageResults.IntersectItems
-                    select messageResultTuple.Item1.messageName).Concat(
+                    select messageResultTuple.Item1.MessageName).Concat(
                         from enumResultTuple in enumResults.IntersectItems
-                        select enumResultTuple.Item1.enumName)
+                        select enumResultTuple.Item1.EnumName)
                     orderby validhandlername
                     select validhandlername;
                 fi.WriteLine("#region JIT API");

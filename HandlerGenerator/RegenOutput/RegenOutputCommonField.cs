@@ -1,3 +1,5 @@
+using YYHEggEgg.ProtoParser;
+
 namespace csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput
 {
     static class RegenOutputCommonField
@@ -5,8 +7,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput
         public static void OutputCommonField(ref BasicCodeWriter fi, 
             ref SortedSet<string> imports, CommonResult commonResult)
         {
-            fi.WriteLine($"{(commonResult.IsRepeatedField ? "repeated " : "")}{commonResult.fieldType} {commonResult.fieldName} = {commonResult.fieldNumber};");
-            if (commonResult.isImportType) imports.Add(commonResult.fieldType);
+            fi.WriteLine($"{(commonResult.IsRepeatedField ? "repeated " : "")}{commonResult.FieldType} {commonResult.FieldName} = {commonResult.FieldNumber};");
+            if (commonResult.IsImportType) imports.Add(commonResult.FieldType);
         }
     }
 }

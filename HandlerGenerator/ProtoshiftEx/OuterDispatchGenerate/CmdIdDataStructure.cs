@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using YYHEggEgg.Logger;
+using YYHEggEgg.ProtoParser;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
@@ -49,7 +50,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             newcmdids = ReadCmdIdFromCsv(newcmdid_path, ref messages_havecmdid);
             supportedMessages = new(new List<string>(
                 from pair in messageResults.IntersectItems
-                select pair.LeftItem.messageName));
+                select pair.LeftItem.MessageName));
             supportedCmdIds = from old in oldcmdids
                               join @new in newcmdids
                               on old.messageName equals @new.messageName

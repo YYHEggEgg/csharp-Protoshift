@@ -1,4 +1,6 @@
-﻿namespace csharp_Protoshift.Enhanced.Handlers.Generator
+﻿using YYHEggEgg.ProtoParser;
+
+namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
     internal class SkillIssueCollection
     {

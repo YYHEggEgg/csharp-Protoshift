@@ -1,3 +1,5 @@
+using YYHEggEgg.ProtoParser;
+
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
     public partial class HandlerCodeWriter
@@ -16,8 +18,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             ImportTypesCollection importInfo, 
             string? baseMessage_friendlyName = null)
         {
-            if (oldmapField.keyType != newmapField.keyType 
-                || oldmapField.valueType != newmapField.valueType)
+            if (oldmapField.KeyType != newmapField.KeyType 
+                || oldmapField.ValueType != newmapField.ValueType)
             {
                 fi.WriteLine($"// Two field with name equal but don't actual match: old: [ {oldmapField} ], new: [ {newmapField} ]");
                 return;
@@ -26,18 +28,18 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string oldcaller = $"oldprotocol.{fieldName}";
             string newcaller = $"newprotocol.{fieldName}";
-            string keyImportPrefix = $"handler_{oldmapField.keyType}";
-            string valueImportPrefix = $"handler_{oldmapField.valueType}";
+            string keyImportPrefix = $"handler_{oldmapField.KeyType}";
+            string valueImportPrefix = $"handler_{oldmapField.ValueType}";
             if (generateForNewShiftToOld)
             {
                 var enumerate_caller = $"eachmap_newprotocol_{mapFieldName}";
                 fi.WriteLine($"foreach (var {enumerate_caller} in {newcaller})");
                 fi.EnterCodeRegion();
                 fi.WriteLine($"{oldcaller}.Add(" +
-                    (newmapField.keyIsImportType ? $"{keyImportPrefix}.NewShiftToOld(" : "") +
-                    $"{enumerate_caller}.Key{(newmapField.keyIsImportType ? ")" : "")}, " +
-                    (newmapField.valueIsImportType ? $"{valueImportPrefix}.NewShiftToOld(" : "") +
-                    $"{enumerate_caller}.Value{(newmapField.valueIsImportType ? ")" : "")});");
+                    (newmapField.KeyIsImportType ? $"{keyImportPrefix}.NewShiftToOld(" : "") +
+                    $"{enumerate_caller}.Key{(newmapField.KeyIsImportType ? ")" : "")}, " +
+                    (newmapField.ValueIsImportType ? $"{valueImportPrefix}.NewShiftToOld(" : "") +
+                    $"{enumerate_caller}.Value{(newmapField.ValueIsImportType ? ")" : "")});");
                 fi.ExitCodeRegion();
             }
             else
@@ -46,10 +48,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.WriteLine($"foreach (var {enumerate_caller} in {oldcaller})");
                 fi.EnterCodeRegion();
                 fi.WriteLine($"{newcaller}.Add(" +
-                    (oldmapField.keyIsImportType ? $"{keyImportPrefix}.OldShiftToNew(" : "") +
-                    $"{enumerate_caller}.Key{(oldmapField.keyIsImportType ? ")" : "")}, " +
-                    (oldmapField.valueIsImportType ? $"{valueImportPrefix}.OldShiftToNew(" : "") +
-                    $"{enumerate_caller}.Value{(oldmapField.valueIsImportType ? ")" : "")});");
+                    (oldmapField.KeyIsImportType ? $"{keyImportPrefix}.OldShiftToNew(" : "") +
+                    $"{enumerate_caller}.Key{(oldmapField.KeyIsImportType ? ")" : "")}, " +
+                    (oldmapField.ValueIsImportType ? $"{valueImportPrefix}.OldShiftToNew(" : "") +
+                    $"{enumerate_caller}.Value{(oldmapField.ValueIsImportType ? ")" : "")});");
                 fi.ExitCodeRegion();
             }
         }
@@ -67,7 +69,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             ref SkillIssueCollection skillIssues)
         {
             var mapFieldsCollection = CollectionHelper.GetCompareResult(
-                oldmessage.mapFields, newmessage.mapFields, MapResult.NameComparer);
+                oldmessage.MapFields, newmessage.MapFields, MapResult.NameComparer);
             if (generateForNewShiftToOld)
             {
                 foreach (var map_newOnly in mapFieldsCollection.RightOnlys)
@@ -88,9 +90,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             foreach (var map_pair in mapFieldsCollection.IntersectItems)
             {
-                GenerateMapFieldHandler(ref fi, map_pair.LeftItem.fieldName,
+                GenerateMapFieldHandler(ref fi, map_pair.LeftItem.FieldName,
                     map_pair.LeftItem, map_pair.RightItem, generateForNewShiftToOld,
-                    importInfo, oldmessage.messageName);
+                    importInfo, oldmessage.MessageName);
             }
         }
 
@@ -111,10 +113,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             string fieldName = Tools.GetProtocCompiledName(mapFieldName) ?? "";
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string caller = $"{(generateForNewShiftToOld ? "new" : "old")}protocol.{fieldName}";
-            string keyImportPrefix = $"Handler{mapField.keyType}.GlobalInstance";
-            string valueImportPrefix = $"Handler{mapField.valueType}.GlobalInstance";
-            if ((mapField.keyIsImportType && !importInfo.ContainsKey(mapField.keyType))
-                || (mapField.valueIsImportType && !importInfo.ContainsKey(mapField.valueType)))
+            string keyImportPrefix = $"Handler{mapField.KeyType}.GlobalInstance";
+            string valueImportPrefix = $"Handler{mapField.ValueType}.GlobalInstance";
+            if ((mapField.KeyIsImportType && !importInfo.ContainsKey(mapField.KeyType))
+                || (mapField.ValueIsImportType && !importInfo.ContainsKey(mapField.ValueType)))
             {
                 return;
             }
@@ -123,21 +125,21 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 WriteNonUserCodeSign(ref fi);
                 fi.WriteLine($"public static object GetOld{fieldName}(NewProtos.{messageName} newprotocol)");
                 fi.EnterCodeRegion();
-                var keyCompiledType = mapField.keyIsImportType 
-                    ? $"OldProtos.{importInfo[mapField.keyType].compileTypeName}"
-                    : ImportTypesCollection.QueryProtobufNativeTypes[mapField.keyType];
-                var valueCompiledType = mapField.valueIsImportType
-                    ? $"OldProtos.{importInfo[mapField.valueType].compileTypeName}"
-                    : ImportTypesCollection.QueryProtobufNativeTypes[mapField.valueType];
+                var keyCompiledType = mapField.KeyIsImportType 
+                    ? $"OldProtos.{importInfo[mapField.KeyType].compileTypeName}"
+                    : ImportTypesCollection.QueryProtobufNativeTypes[mapField.KeyType];
+                var valueCompiledType = mapField.ValueIsImportType
+                    ? $"OldProtos.{importInfo[mapField.ValueType].compileTypeName}"
+                    : ImportTypesCollection.QueryProtobufNativeTypes[mapField.ValueType];
                 fi.WriteLine($"Dictionary<{keyCompiledType}, {valueCompiledType}> res = new();");
                 var enumerate_caller = $"eachmap_newprotocol_{mapFieldName}";
                 fi.WriteLine($"foreach (var {enumerate_caller} in {caller})");
                 fi.EnterCodeRegion();
                 fi.WriteLine($"res.Add(" +
-                    (mapField.keyIsImportType ? $"{keyImportPrefix}.NewShiftToOld(" : "") +
-                    $"{enumerate_caller}.Key{(mapField.keyIsImportType ? ")" : "")}, " +
-                    (mapField.valueIsImportType ? $"{valueImportPrefix}.NewShiftToOld(" : "") +
-                    $"{enumerate_caller}.Value{(mapField.valueIsImportType ? ")" : "")});");
+                    (mapField.KeyIsImportType ? $"{keyImportPrefix}.NewShiftToOld(" : "") +
+                    $"{enumerate_caller}.Key{(mapField.KeyIsImportType ? ")" : "")}, " +
+                    (mapField.ValueIsImportType ? $"{valueImportPrefix}.NewShiftToOld(" : "") +
+                    $"{enumerate_caller}.Value{(mapField.ValueIsImportType ? ")" : "")});");
                 fi.ExitCodeRegion();
                 fi.WriteLine("return res;");
                 fi.ExitCodeRegion();
@@ -147,21 +149,21 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 WriteNonUserCodeSign(ref fi);
                 fi.WriteLine($"public static object GetNew{fieldName}(OldProtos.{messageName} oldprotocol)");
                 fi.EnterCodeRegion();
-                var keyCompiledType = mapField.keyIsImportType 
-                    ? $"NewProtos.{importInfo[mapField.keyType].compileTypeName}"
-                    : ImportTypesCollection.QueryProtobufNativeTypes[mapField.keyType];
-                var valueCompiledType = mapField.valueIsImportType 
-                    ? $"NewProtos.{importInfo[mapField.valueType].compileTypeName}"
-                    : ImportTypesCollection.QueryProtobufNativeTypes[mapField.valueType];
+                var keyCompiledType = mapField.KeyIsImportType 
+                    ? $"NewProtos.{importInfo[mapField.KeyType].compileTypeName}"
+                    : ImportTypesCollection.QueryProtobufNativeTypes[mapField.KeyType];
+                var valueCompiledType = mapField.ValueIsImportType 
+                    ? $"NewProtos.{importInfo[mapField.ValueType].compileTypeName}"
+                    : ImportTypesCollection.QueryProtobufNativeTypes[mapField.ValueType];
                 fi.WriteLine($"Dictionary<{keyCompiledType}, {valueCompiledType}> res = new();");
                 var enumerate_caller = $"eachmap_oldprotocol_{mapFieldName}";
                 fi.WriteLine($"foreach (var {enumerate_caller} in {caller})");
                 fi.EnterCodeRegion();
                 fi.WriteLine($"res.Add(" +
-                    (mapField.keyIsImportType ? $"{keyImportPrefix}.OldShiftToNew(" : "") +
-                    $"{enumerate_caller}.Key{(mapField.keyIsImportType ? ")" : "")}, " +
-                    (mapField.valueIsImportType ? $"{valueImportPrefix}.OldShiftToNew(" : "") +
-                    $"{enumerate_caller}.Value{(mapField.valueIsImportType ? ")" : "")});");
+                    (mapField.KeyIsImportType ? $"{keyImportPrefix}.OldShiftToNew(" : "") +
+                    $"{enumerate_caller}.Key{(mapField.KeyIsImportType ? ")" : "")}, " +
+                    (mapField.ValueIsImportType ? $"{valueImportPrefix}.OldShiftToNew(" : "") +
+                    $"{enumerate_caller}.Value{(mapField.ValueIsImportType ? ")" : "")});");
                 fi.ExitCodeRegion();
                 fi.WriteLine("return res;");
                 fi.ExitCodeRegion();
@@ -181,12 +183,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             MessageResult oldmessage, MessageResult newmessage)
         {
             var mapFieldsCollection = CollectionHelper.GetCompareResult(
-                oldmessage.mapFields, newmessage.mapFields, MapResult.NameComparer);
+                oldmessage.MapFields, newmessage.MapFields, MapResult.NameComparer);
             foreach (var map_pair in mapFieldsCollection.IntersectItems)
             {
-                GenerateMapFieldJitAPI(ref fi, map_pair.LeftItem.fieldName,
+                GenerateMapFieldJitAPI(ref fi, map_pair.LeftItem.FieldName,
                     map_pair.LeftItem, map_pair.RightItem, 
-                    oldmessage.messageName);
+                    oldmessage.MessageName);
             }
         }
 
@@ -204,8 +206,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             MapResult oldmapField, MapResult newmapField,
             string? baseMessage_friendlyName = null)
         {
-            if (oldmapField.keyType != newmapField.keyType
-                || oldmapField.valueType != newmapField.valueType)
+            if (oldmapField.KeyType != newmapField.KeyType
+                || oldmapField.ValueType != newmapField.ValueType)
             {
                 return;
             }
@@ -213,8 +215,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string newcaller = $"newprotocol.{fieldName}";
             fi.WriteLine($"{newcaller}.Add(" +
-                $"{GetTypeJitParamter(oldmapField.keyType)}, " +
-                $"{GetTypeJitParamter(oldmapField.valueType)});");
+                $"{GetTypeJitParamter(oldmapField.KeyType)}, " +
+                $"{GetTypeJitParamter(oldmapField.ValueType)});");
         }
         #endregion
     }

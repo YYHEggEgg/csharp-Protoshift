@@ -1,3 +1,5 @@
+using YYHEggEgg.ProtoParser;
+
 namespace csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput
 {
     static class RegenOutputMessage
@@ -5,11 +7,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput
         public static void OutputMessage(ref BasicCodeWriter fi, 
             ref SortedSet<string> imports, MessageResult messageResult)
         {
-            fi.WriteLine($"message {messageResult.messageName}");
+            fi.WriteLine($"message {messageResult.MessageName}");
             fi.EnterCodeRegion();
             bool qiangpozhen_fix_firstline = false;
-            var commonFields = from commonField in messageResult.commonFields
-                               orderby commonField.fieldName
+            var commonFields = from commonField in messageResult.CommonFields
+                               orderby commonField.FieldName
                                select commonField;
             if (commonFields.Any()) qiangpozhen_fix_firstline = true;
             foreach (var commonField in commonFields)
@@ -17,8 +19,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput
                 RegenOutputCommonField.OutputCommonField(ref fi, ref imports, commonField);
             }
             
-            var mapFields = from mapField in messageResult.mapFields
-                            orderby mapField.fieldName
+            var mapFields = from mapField in messageResult.MapFields
+                            orderby mapField.FieldName
                             select mapField;
             if (mapFields.Any()) 
             {
@@ -30,8 +32,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput
                 RegenOutputMapField.OutputMapField(ref fi, ref imports, mapField);
             }
             
-            var oneofFields = from oneofField in messageResult.oneofFields
-                              orderby oneofField.oneofEntryName
+            var oneofFields = from oneofField in messageResult.OneofFields
+                              orderby oneofField.OneofEntryName
                               select oneofField;
             if (oneofFields.Any()) 
             {
@@ -43,11 +45,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput
                 RegenOutputOneofField.OutputOneofField(ref fi, ref imports, oneofField);
             }
             
-            var enumFields = from enumField in messageResult.enumFields
+            var enumFields = from enumField in messageResult.EnumFields
 #if FORBID_ENUM_CMDID
                              where enumField.enumName.ToLower() != "cmdid"
 #endif
-                             orderby enumField.enumName
+                             orderby enumField.EnumName
                              select enumField;
             if (enumFields.Any())
             {
@@ -59,8 +61,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput
                 RegenOutputEnum.OutputEnum(ref fi, enumField);
             }
             
-            var messageFields = from messageField in messageResult.messageFields
-                              orderby messageField.messageName
+            var messageFields = from messageField in messageResult.MessageFields
+                              orderby messageField.MessageName
                               select messageField;
             if (messageFields.Any())
             {

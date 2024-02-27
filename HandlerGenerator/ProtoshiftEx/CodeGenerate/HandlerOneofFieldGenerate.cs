@@ -1,3 +1,5 @@
+using YYHEggEgg.ProtoParser;
+
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
     public partial class HandlerCodeWriter
@@ -22,7 +24,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             string oldcaller = $"oldprotocol.{fieldName}";
             string newcaller = $"newprotocol.{fieldName}";
             var oneofInnerFieldsCollection = CollectionHelper.GetCompareResult(
-                oldoneofField.oneofInnerFields, newoneofField.oneofInnerFields, CommonResult.NameComparer);
+                oldoneofField.OneofInnerFields, newoneofField.OneofInnerFields, CommonResult.NameComparer);
             if (generateForNewShiftToOld)
             {
                 fi.WriteLine($"switch ({newcaller}Case)");
@@ -34,7 +36,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 }
                 foreach (var oneof_pair in oneofInnerFieldsCollection.IntersectItems)
                 {
-                    var commonFieldName = oneof_pair.LeftItem.fieldName;
+                    var commonFieldName = oneof_pair.LeftItem.FieldName;
                     fi.WriteLine($"case {oneofCaseType}.{Tools.GetProtocCompiledName(commonFieldName)}:");
                     fi.AddIndent();
                     GenerateCommonFieldHandler(ref fi, commonFieldName, oneof_pair.LeftItem, oneof_pair.RightItem,
@@ -56,7 +58,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 }
                 foreach (var oneof_pair in oneofInnerFieldsCollection.IntersectItems)
                 {
-                    var commonFieldName = oneof_pair.LeftItem.fieldName;
+                    var commonFieldName = oneof_pair.LeftItem.FieldName;
                     fi.WriteLine($"case {oneofCaseType}.{Tools.GetProtocCompiledName(commonFieldName)}:");
                     fi.AddIndent();
                     GenerateCommonFieldHandler(ref fi, commonFieldName, oneof_pair.LeftItem, oneof_pair.RightItem,
@@ -82,7 +84,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             ref SkillIssueCollection skillIssues)
         {
             var oneofFieldsCollection = CollectionHelper.GetCompareResult(
-                oldmessage.oneofFields, newmessage.oneofFields, OneofResult.NameComparer);
+                oldmessage.OneofFields, newmessage.OneofFields, OneofResult.NameComparer);
             if (generateForNewShiftToOld)
             {
                 foreach (var oneof_newOnly in oneofFieldsCollection.RightOnlys)
@@ -103,9 +105,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             foreach (var oneof_pair in oneofFieldsCollection.IntersectItems)
             {
-                GenerateOneofFieldHandler(ref fi, oneof_pair.LeftItem.oneofEntryName, oldmessage.messageName,
+                GenerateOneofFieldHandler(ref fi, oneof_pair.LeftItem.OneofEntryName, oldmessage.MessageName,
                     oneof_pair.LeftItem, oneof_pair.RightItem, generateForNewShiftToOld,
-                    importInfo, oldmessage.messageName);
+                    importInfo, oldmessage.MessageName);
             }
         }
 
@@ -123,9 +125,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             ImportTypesCollection importInfo, 
             string? baseMessage_friendlyName = null)
         {
-            foreach (var oneof_single in oneofField.oneofInnerFields)
+            foreach (var oneof_single in oneofField.OneofInnerFields)
             {
-                var commonFieldName = oneof_single.fieldName;
+                var commonFieldName = oneof_single.FieldName;
                 GenerateCommonFieldOnewayAPI(ref fi, commonFieldName, oneof_single,
                     generateForNewShiftToOld, importInfo,
                     belongToMessageCompileName, baseMessage_friendlyName);
@@ -145,12 +147,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             MessageResult oldmessage, MessageResult newmessage)
         {
             var oneofFieldsCollection = CollectionHelper.GetCompareResult(
-                oldmessage.oneofFields, newmessage.oneofFields, OneofResult.NameComparer);
+                oldmessage.OneofFields, newmessage.OneofFields, OneofResult.NameComparer);
             foreach (var oneof_pair in oneofFieldsCollection.IntersectItems)
             {
-                GenerateOneofFieldJitAPI(ref fi, oneof_pair.LeftItem.oneofEntryName, oldmessage.messageName,
+                GenerateOneofFieldJitAPI(ref fi, oneof_pair.LeftItem.OneofEntryName, oldmessage.MessageName,
                     oneof_pair.LeftItem, oneof_pair.RightItem,
-                    oldmessage.messageName);
+                    oldmessage.MessageName);
             }
         }
 
@@ -172,9 +174,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             string fieldName = Tools.GetProtocCompiledName(oneofFieldName) ?? "";
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             var oneofInnerFieldsCollection = CollectionHelper.GetCompareResult(
-                oldoneofField.oneofInnerFields, newoneofField.oneofInnerFields, CommonResult.NameComparer);
+                oldoneofField.OneofInnerFields, newoneofField.OneofInnerFields, CommonResult.NameComparer);
             var oneof_pair = oneofInnerFieldsCollection.IntersectItems.First();
-                    var commonFieldName = oneof_pair.LeftItem.fieldName;
+                    var commonFieldName = oneof_pair.LeftItem.FieldName;
             GenerateCommonFieldJitAPI(ref fi, commonFieldName,
                 oneof_pair.LeftItem, oneof_pair.RightItem,
                 baseMessage_friendlyName);
