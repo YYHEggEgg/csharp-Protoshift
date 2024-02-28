@@ -38,12 +38,12 @@ csharp-Protoshift 可为某二游提供先进、易管理的兼容性扩展。
 - 支持在不安装 protoc 的情况下，完成 Proto 还原过程。
 - 在运行 `util protobuf` 与 `util dcurr` 命令时，如果从二进制反序列化过程中检测到存在未在您的 Proto 中定义的未知字段，将会向您发出警告。  
   您可以寻找类似 [Protobuf decoder](https://protobuf-decoder.netlify.app) 的 Protobuf decode-raw 工具来检查数据中实际携带的内容。
-- 更新了 xLua 的生成版本，将 Unix x64 版本在 Ubuntu 20.04 版本上编译，以
-降低对于 libc 的版本需求。  
+- 更新了 xLua 的生成版本，将 Unix x64 版本在 Ubuntu 20.04 版本上编译，以降低对于 libc 的版本需求。  
   GitHub Actions 目前支持的最低 Ubuntu 版本即为 `20.04`. 如果您使用更低版本且遇到格式类似下示内容的错误，请考虑复刻 [YYHEggEgg/xLua](https://github.com/YYHEggEgg/xLua) 并自行运行 `build/luac/make_unix.sh`.
   > ```
   > ./resources/luac_bins/luac_unix64: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.34' not found (required by ./resources/luac_bins/luac_unix64)
   > ```
+- 通过更改 `go-proto2json` 程序的提供源，使得 `arm64` CPU 架构的设备得以运行构建过程。
 
 ### v1.0.2
 
