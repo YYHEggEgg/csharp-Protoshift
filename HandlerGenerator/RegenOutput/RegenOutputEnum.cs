@@ -1,21 +1,23 @@
+using YYHEggEgg.ProtoParser;
+
 namespace csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput
 {
     static class RegenOutputEnum
     {
         public static void OutputEnum(ref BasicCodeWriter fi, EnumResult enumResult)
         {
-            var options = from tuple in enumResult.enumOptions
+            var options = from tuple in enumResult.EnumOptions
                           orderby tuple.name
                           select tuple;
-            var positive_nodes = from tuple in enumResult.enumNodes
+            var positive_nodes = from tuple in enumResult.EnumNodes
                                  where tuple.number > 0
                                  orderby tuple.number
                                  select tuple;
-            var non_positive_nodes = from tuple in enumResult.enumNodes
+            var non_positive_nodes = from tuple in enumResult.EnumNodes
                                      where tuple.number <= 0
                                      orderby tuple.number descending
                                      select tuple;
-            fi.WriteLine($"enum {enumResult.enumName}");
+            fi.WriteLine($"enum {enumResult.EnumName}");
             fi.EnterCodeRegion();
             var non_duplicate_nodes_count = 
                 positive_nodes.Concat(non_positive_nodes)

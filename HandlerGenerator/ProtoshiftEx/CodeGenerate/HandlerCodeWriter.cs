@@ -1,4 +1,5 @@
 using System.Reflection;
+using YYHEggEgg.ProtoParser;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
@@ -8,27 +9,27 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// Generate a Message Handler class. Only handle the class body part, starting with <c>public class</c>.
         /// </summary>
         /// <param name="fi">The BasicCodeWriter (Generated outside).</param>
-        /// <param name="messageName">The message name, can be identified by the c# compiler but without NewProtos/OldProtos prefix.</param>
+        /// <param name="MessageName">The message name, can be identified by the c# compiler but without NewProtos/OldProtos prefix.</param>
         /// <param name="oldmessage">The analyzed old message.</param>
         /// <param name="newmessage">The analyzed new message.</param>
-        public static void GenerateMessageHandler(ref BasicCodeWriter fi, string messageName,
+        public static void GenerateMessageHandler(ref BasicCodeWriter fi, string MessageName,
             MessageResult oldmessage, MessageResult newmessage, 
             CompiledEnumsStringPoolCollection oldenumPool, CompiledEnumsStringPoolCollection newenumPool)
         {
-            string friendly_messageName = messageName.Substring(
-                messageName.Contains('.') ? messageName.LastIndexOf('.') + 1 : 0);
-            fi.WriteLine($"public class Handler{friendly_messageName} ",
-                $": HandlerBase<NewProtos.{messageName}, OldProtos.{messageName}>");
+            string friendly_MessageName = MessageName.Substring(
+                MessageName.Contains('.') ? MessageName.LastIndexOf('.') + 1 : 0);
+            fi.WriteLine($"public class Handler{friendly_MessageName} ",
+                $": HandlerBase<NewProtos.{MessageName}, OldProtos.{MessageName}>");
             fi.EnterCodeRegion();
             var innermessage_collection = CollectionHelper.GetCompareResult(
-                oldmessage.messageFields, newmessage.messageFields, MessageResult.NameComparer);
+                oldmessage.MessageFields, newmessage.MessageFields, MessageResult.NameComparer);
             var innerenum_collection = CollectionHelper.GetCompareResult(
-                oldmessage.enumFields, newmessage.enumFields, EnumResult.NameComparer);
+                oldmessage.EnumFields, newmessage.EnumFields, EnumResult.NameComparer);
 
             #region Base Type
             fi.WriteLine("#region Base Type");
-            fi.WriteLine($"MessageParser<NewProtos.{messageName}> newproto_parser_base = NewProtos.{messageName}.Parser;");
-            fi.WriteLine($"MessageParser<OldProtos.{messageName}> oldproto_parser_base = OldProtos.{messageName}.Parser;");
+            fi.WriteLine($"MessageParser<NewProtos.{MessageName}> newproto_parser_base = NewProtos.{MessageName}.Parser;");
+            fi.WriteLine($"MessageParser<OldProtos.{MessageName}> oldproto_parser_base = OldProtos.{MessageName}.Parser;");
             fi.WriteLine("#endregion");
             #endregion
             #region Import Types
@@ -55,10 +56,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #region NewShiftToOld
             SkillIssueCollection newskillIssues = new();
             WriteNonUserCodeSign(ref fi);
-            fi.WriteLine($"public override OldProtos.{messageName}? NewShiftToOld(NewProtos.{messageName}? newprotocol)");
+            fi.WriteLine($"public override OldProtos.{MessageName}? NewShiftToOld(NewProtos.{MessageName}? newprotocol)");
             fi.EnterCodeRegion();
             fi.WriteLine($"if (newprotocol == null) return null;");
-            fi.WriteLine($"OldProtos.{messageName} oldprotocol = new();");
+            fi.WriteLine($"OldProtos.{MessageName} oldprotocol = new();");
             GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, true, allimports, ref newskillIssues);
             GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, true, allimports, ref newskillIssues);
             GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, true, allimports, ref newskillIssues);
@@ -67,10 +68,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 #region Skill issue Middleware
                 fi.WriteLine("#if DEBUG");
                 fi.WriteLine("var __worker = HotPatchMiddleware.Worker;");
-                fi.WriteLine($"if (__worker.HasNewShiftToOldMiddleare(typeof(NewProtos.{messageName}).Name))");
+                fi.WriteLine($"if (__worker.HasNewShiftToOldMiddleare(typeof(NewProtos.{MessageName}).Name))");
                 fi.EnterCodeRegion();
-                fi.WriteLine($"oldprotocol = (OldProtos.{messageName})__worker.ExecuteNewShiftToOldMiddleware(",
-                    $"typeof(NewProtos.{messageName}).Name, newprotocol, oldprotocol);");
+                fi.WriteLine($"oldprotocol = (OldProtos.{MessageName})__worker.ExecuteNewShiftToOldMiddleware(",
+                    $"typeof(NewProtos.{MessageName}).Name, newprotocol, oldprotocol);");
                 fi.ExitCodeRegion();
                 fi.WriteLine("#endif");
                 #endregion
@@ -82,10 +83,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #region OldShiftToNew
             SkillIssueCollection oldskillIssues = new();
             WriteNonUserCodeSign(ref fi);
-            fi.WriteLine($"public override NewProtos.{messageName}? OldShiftToNew(OldProtos.{messageName}? oldprotocol)");
+            fi.WriteLine($"public override NewProtos.{MessageName}? OldShiftToNew(OldProtos.{MessageName}? oldprotocol)");
             fi.EnterCodeRegion();
             fi.WriteLine("if (oldprotocol == null) return null;");
-            fi.WriteLine($"NewProtos.{messageName} newprotocol = new();");
+            fi.WriteLine($"NewProtos.{MessageName} newprotocol = new();");
             GenerateCommonFieldsHandler(ref fi, oldmessage, newmessage, false, allimports, ref oldskillIssues);
             GenerateMapFieldsHandler(ref fi, oldmessage, newmessage, false, allimports, ref oldskillIssues);
             GenerateOneofFieldsHandler(ref fi, oldmessage, newmessage, false, allimports, ref oldskillIssues);
@@ -94,10 +95,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 #region Skill issue Middleware
                 fi.WriteLine("#if DEBUG");
                 fi.WriteLine("var __worker = HotPatchMiddleware.Worker;");
-                fi.WriteLine($"if (__worker.HasOldShiftToNewMiddleare(typeof(OldProtos.{messageName}).Name))");
+                fi.WriteLine($"if (__worker.HasOldShiftToNewMiddleare(typeof(OldProtos.{MessageName}).Name))");
                 fi.EnterCodeRegion();
-                fi.WriteLine($"newprotocol = (NewProtos.{messageName})__worker.ExecuteOldShiftToNewMiddleware(",
-                    $"typeof(OldProtos.{messageName}).Name, oldprotocol, newprotocol);");
+                fi.WriteLine($"newprotocol = (NewProtos.{MessageName})__worker.ExecuteOldShiftToNewMiddleware(",
+                    $"typeof(OldProtos.{MessageName}).Name, oldprotocol, newprotocol);");
                 fi.ExitCodeRegion();
                 fi.WriteLine("#endif");
                 #endregion
@@ -109,9 +110,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             #region JIT API
             fi.WriteLine("#region JIT API");
             WriteNonUserCodeSign(ref fi);
-            fi.WriteLine($"public override NewProtos.{messageName} GetNewShiftToOldJitInstance()");
+            fi.WriteLine($"public override NewProtos.{MessageName} GetNewShiftToOldJitInstance()");
             fi.EnterCodeRegion();
-            fi.WriteLine($"NewProtos.{messageName} newprotocol = new();");
+            fi.WriteLine($"NewProtos.{MessageName} newprotocol = new();");
             GenerateCommonFieldsJitAPI(ref fi, oldmessage, newmessage);
             GenerateMapFieldsJitAPI(ref fi, oldmessage, newmessage);
             GenerateOneofFieldsJitAPI(ref fi, oldmessage, newmessage);
@@ -120,9 +121,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
 
             var subtypes = from name in 
                 (from innerMessage in innermessage_collection.IntersectItems
-                select innerMessage.LeftItem.messageName).Concat(
+                select innerMessage.LeftItem.MessageName).Concat(
                     from innerEnum in innerenum_collection.IntersectItems
-                    select innerEnum.LeftItem.enumName)
+                    select innerEnum.LeftItem.EnumName)
                 orderby name
                 select name;
             fi.WriteLine();
@@ -157,12 +158,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 if (oldskillIssues.HasSkillIssue)
                 {
                     GenerateSkillIssueList(ref fi, false, oldskillIssues, allimports,
-                        messageName, friendly_messageName);
+                        MessageName, friendly_MessageName);
                 }
                 if (newskillIssues.HasSkillIssue)
                 {
                     GenerateSkillIssueList(ref fi, true, newskillIssues, allimports,
-                        messageName, friendly_messageName);
+                        MessageName, friendly_MessageName);
                 }
                 fi.WriteLine("#endregion");
                 fi.WriteLine("#pragma warning restore CS8603");
@@ -209,16 +210,16 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.ExitCodeRegion();
             #endregion
             fi.WriteLine();
-            fi.WriteLine($"private static Handler{friendly_messageName} _globalOnlyInstance = new Handler{friendly_messageName}();");
+            fi.WriteLine($"private static Handler{friendly_MessageName} _globalOnlyInstance = new Handler{friendly_MessageName}();");
             WriteNonUserCodeSign(ref fi);
-            fi.WriteLine($"public static Handler{friendly_messageName} GlobalInstance => _globalOnlyInstance;");
+            fi.WriteLine($"public static Handler{friendly_MessageName} GlobalInstance => _globalOnlyInstance;");
             #region Inner Messages
             fi.WriteLine();
             fi.WriteLine("#region Inner Messages");
             foreach (var inner_message in innermessage_collection.IntersectItems)
             {
-                string inner_message_name = inner_message.LeftItem.messageName;
-                GenerateMessageHandler(ref fi, $"{messageName}.Types.{inner_message_name}",
+                string inner_message_name = inner_message.LeftItem.MessageName;
+                GenerateMessageHandler(ref fi, $"{MessageName}.Types.{inner_message_name}",
                     inner_message.LeftItem, inner_message.RightItem, oldenumPool, newenumPool);
             }
             fi.WriteLine("#endregion");
@@ -228,8 +229,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.WriteLine("#region Inner Enums");
             foreach (var inner_enum in innerenum_collection.IntersectItems)
             {
-                string inner_enum_name = inner_enum.LeftItem.enumName;
-                string inner_enum_compiled_name = $"{messageName}.Types.{inner_enum_name}";
+                string inner_enum_name = inner_enum.LeftItem.EnumName;
+                string inner_enum_compiled_name = $"{MessageName}.Types.{inner_enum_name}";
                 GenerateEnumHandler(ref fi, inner_enum_compiled_name, 
                     inner_enum.LeftItem, inner_enum.RightItem, 
                     oldenumPool.Query(inner_enum_compiled_name), newenumPool.Query(inner_enum_compiled_name));
@@ -243,26 +244,26 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// Generate a Enum Handler class. Only handle the class body part, starting with <c>public class</c>.
         /// </summary>
         /// <param name="fi">The BasicCodeWriter (Generated outside).</param>
-        /// <param name="enumName">The enum name, can be identified by the c# compiler but without NewProtos/OldProtos prefix.</param>
+        /// <param name="EnumName">The enum name, can be identified by the c# compiler but without NewProtos/OldProtos prefix.</param>
         /// <param name="oldenum">The analyzed old enum.</param>
         /// <param name="newenum">The analyzed new enum.</param>
-        public static void GenerateEnumHandler(ref BasicCodeWriter fi, string enumName,
+        public static void GenerateEnumHandler(ref BasicCodeWriter fi, string EnumName,
             EnumResult oldenum, EnumResult newenum, 
             CompiledEnumStringPoolManager oldstringPool, CompiledEnumStringPoolManager newstringPool)
         {
-            string friendly_enumName = enumName.Substring(
-                enumName.Contains('.') ? enumName.LastIndexOf('.') + 1 : 0);
-            fi.WriteLine($"public class Handler{friendly_enumName} ",
-                $": HandlerEnumBase<NewProtos.{enumName}, OldProtos.{enumName}>");
+            string friendly_EnumName = EnumName.Substring(
+                EnumName.Contains('.') ? EnumName.LastIndexOf('.') + 1 : 0);
+            fi.WriteLine($"public class Handler{friendly_EnumName} ",
+                $": HandlerEnumBase<NewProtos.{EnumName}, OldProtos.{EnumName}>");
             fi.EnterCodeRegion();
             #region Prepare 
-            var enumNodes_both = oldenum.enumNodes.Intersect(newenum.enumNodes);
-            var enumNodes_oldOnly = oldenum.enumNodes.Except(newenum.enumNodes);
-            var enumNodes_newOnly = newenum.enumNodes.Except(oldenum.enumNodes);
+            var enumNodes_both = oldenum.EnumNodes.Intersect(newenum.EnumNodes);
+            var enumNodes_oldOnly = oldenum.EnumNodes.Except(newenum.EnumNodes);
+            var enumNodes_newOnly = newenum.EnumNodes.Except(oldenum.EnumNodes);
             #endregion
             #region NewShiftToOld
             WriteNonUserCodeSign(ref fi);
-            fi.WriteLine($"public override OldProtos.{enumName} NewShiftToOld(NewProtos.{enumName} newprotocol)");
+            fi.WriteLine($"public override OldProtos.{EnumName} NewShiftToOld(NewProtos.{EnumName} newprotocol)");
             fi.EnterCodeRegion();
             fi.WriteLine("switch (newprotocol)");
             fi.EnterCodeRegion();
@@ -273,19 +274,19 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             foreach (var tuple in enumNodes_both)
             {
                 var name = tuple.name;
-                fi.WriteLine($"case NewProtos.{enumName}.{newstringPool.GetCompiledName(name)}:",
-                    $"return OldProtos.{enumName}.{oldstringPool.GetCompiledName(name)};");
+                fi.WriteLine($"case NewProtos.{EnumName}.{newstringPool.GetCompiledName(name)}:",
+                    $"return OldProtos.{EnumName}.{oldstringPool.GetCompiledName(name)};");
             }
-            var name_first = oldenum.enumNodes.First().name;
+            var name_first = oldenum.EnumNodes.First().name;
             fi.WriteLine("default:",
-                $"return (OldProtos.{enumName})((int)newprotocol);");
+                $"return (OldProtos.{EnumName})((int)newprotocol);");
             fi.ExitCodeRegion();
             fi.ExitCodeRegion();
             #endregion
             fi.WriteLine();
             #region OldShiftToNew
             WriteNonUserCodeSign(ref fi);
-            fi.WriteLine($"public override NewProtos.{enumName} OldShiftToNew(OldProtos.{enumName} oldprotocol)");
+            fi.WriteLine($"public override NewProtos.{EnumName} OldShiftToNew(OldProtos.{EnumName} oldprotocol)");
             fi.EnterCodeRegion();
             fi.WriteLine("switch (oldprotocol)");
             fi.EnterCodeRegion();
@@ -296,25 +297,25 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             foreach (var tuple in enumNodes_both)
             {
                 var name = tuple.name;
-                fi.WriteLine($"case OldProtos.{enumName}.{oldstringPool.GetCompiledName(name)}:",
-                    $"return NewProtos.{enumName}.{newstringPool.GetCompiledName(name)};");
+                fi.WriteLine($"case OldProtos.{EnumName}.{oldstringPool.GetCompiledName(name)}:",
+                    $"return NewProtos.{EnumName}.{newstringPool.GetCompiledName(name)};");
             }
-            name_first = newenum.enumNodes.First().name;
+            name_first = newenum.EnumNodes.First().name;
             fi.WriteLine("default:",
-                $"return (NewProtos.{enumName})((int)oldprotocol);");
+                $"return (NewProtos.{EnumName})((int)oldprotocol);");
             fi.ExitCodeRegion();
             fi.ExitCodeRegion();
             #endregion
             fi.WriteLine();
-            fi.WriteLine($"private static Handler{friendly_enumName} _globalOnlyInstance = new Handler{friendly_enumName}();");
+            fi.WriteLine($"private static Handler{friendly_EnumName} _globalOnlyInstance = new Handler{friendly_EnumName}();");
             WriteNonUserCodeSign(ref fi);
-            fi.WriteLine($"public static Handler{friendly_enumName} GlobalInstance => _globalOnlyInstance;");
+            fi.WriteLine($"public static Handler{friendly_EnumName} GlobalInstance => _globalOnlyInstance;");
             fi.ExitCodeRegion();
         }
 
         private static void GenerateSkillIssueList(ref BasicCodeWriter fi, bool generateForNew, 
             SkillIssueCollection skillIssues, ImportTypesCollection importInfo, 
-            string messageName,
+            string MessageName,
             string? baseMessage_friendlyName = null)
         {
             WriteGeneratedCodeAttribute(ref fi);
@@ -325,28 +326,28 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.AddIndent();
             foreach (var commonField in skillIssues.CommonFields)
             {
-                bool isSupportedType = !commonField.isImportType ? true
-                    : importInfo.ContainsKey(commonField.fieldType);
-                fi.WriteLine($"(\"{commonField.fieldType}\", \"{commonField.fieldName}\", " +
-                    $"\"{Tools.GetProtocCompiledName(commonField.fieldName)}\", {isSupportedType.ToString().ToLower()}),");
+                bool isSupportedType = !commonField.IsImportType ? true
+                    : importInfo.ContainsKey(commonField.FieldType);
+                fi.WriteLine($"(\"{commonField.FieldType}\", \"{commonField.FieldName}\", " +
+                    $"\"{Tools.GetProtocCompiledName(commonField.FieldName)}\", {isSupportedType.ToString().ToLower()}),");
             }
             foreach (var mapField in skillIssues.MapFields)
             {
                 bool isSupportedType =
-                    (mapField.keyIsImportType ? importInfo.ContainsKey(mapField.keyType) : true) && 
-                    (mapField.valueIsImportType ? importInfo.ContainsKey(mapField.valueType) : true);
-                fi.WriteLine($"(\"map<{mapField.keyType}, {mapField.valueType}>\", " +
-                    $"\"{mapField.fieldName}\", \"{Tools.GetProtocCompiledName(mapField.fieldName)}\", " +
+                    (mapField.KeyIsImportType ? importInfo.ContainsKey(mapField.KeyType) : true) && 
+                    (mapField.ValueIsImportType ? importInfo.ContainsKey(mapField.ValueType) : true);
+                fi.WriteLine($"(\"map<{mapField.KeyType}, {mapField.ValueType}>\", " +
+                    $"\"{mapField.FieldName}\", \"{Tools.GetProtocCompiledName(mapField.FieldName)}\", " +
                     $"{isSupportedType.ToString().ToLower()}),");
             }
             foreach (var oneofField in skillIssues.OneofFields)
             {
-                foreach (var oneofInnerField in oneofField.oneofInnerFields)
+                foreach (var oneofInnerField in oneofField.OneofInnerFields)
                 {
-                    bool isSupportedType = !oneofInnerField.isImportType ? true
-                        : importInfo.ContainsKey(oneofInnerField.fieldType);
-                    fi.WriteLine($"(\"{oneofInnerField.fieldType}\", \"{oneofInnerField.fieldName}\", " +
-                        $"\"{Tools.GetProtocCompiledName(oneofInnerField.fieldName)}\", {isSupportedType.ToString().ToLower()}),");
+                    bool isSupportedType = !oneofInnerField.IsImportType ? true
+                        : importInfo.ContainsKey(oneofInnerField.FieldType);
+                    fi.WriteLine($"(\"{oneofInnerField.FieldType}\", \"{oneofInnerField.FieldName}\", " +
+                        $"\"{Tools.GetProtocCompiledName(oneofInnerField.FieldName)}\", {isSupportedType.ToString().ToLower()}),");
                 }
             }
             fi.RemoveIndent();
@@ -354,17 +355,17 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             fi.RemoveIndent();
             foreach (var commonField in skillIssues.CommonFields)
             {
-                GenerateCommonFieldOnewayAPI(ref fi, commonField.fieldName, commonField,
-                    generateForNew, importInfo, messageName, baseMessage_friendlyName);
+                GenerateCommonFieldOnewayAPI(ref fi, commonField.FieldName, commonField,
+                    generateForNew, importInfo, MessageName, baseMessage_friendlyName);
             }
             foreach (var mapField in skillIssues.MapFields)
             {
-                GenerateMapFieldOnewayAPI(ref fi, mapField.fieldName, mapField,
-                    generateForNew, importInfo, messageName, baseMessage_friendlyName);
+                GenerateMapFieldOnewayAPI(ref fi, mapField.FieldName, mapField,
+                    generateForNew, importInfo, MessageName, baseMessage_friendlyName);
             }
             foreach (var oneofField in skillIssues.OneofFields)
             {
-                GenerateOneofFieldOnewayAPI(ref fi, messageName, oneofField,
+                GenerateOneofFieldOnewayAPI(ref fi, MessageName, oneofField,
                     generateForNew, importInfo, baseMessage_friendlyName);
             }
         }

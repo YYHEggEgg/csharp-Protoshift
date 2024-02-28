@@ -22,6 +22,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using YYHEggEgg.Logger;
+using YYHEggEgg.ProtoParser;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
@@ -67,8 +68,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     if (friendlyToCompileNameList.ContainsKey(
                         compileMessageName.Substring(compileMessageName.LastIndexOf('.') + 1)))
                     {
-                        Log.Erro($"Protocol invalid: {oldmessage.messageName}'s sub protos have the same name with the other.", nameof(ImportTypesCollection));
-                        Debug.Assert(false, $"Protocol invalid: {oldmessage.messageName}'s sub protos have the same name with the other.");
+                        Log.Erro($"Protocol invalid: {oldmessage.MessageName}'s sub protos have the same name with the other.", nameof(ImportTypesCollection));
+                        Debug.Assert(false, $"Protocol invalid: {oldmessage.MessageName}'s sub protos have the same name with the other.");
                     }
                     friendlyToCompileNameList.Add(compileMessageName.Substring(compileMessageName.LastIndexOf('.')), (compileMessageName, true));
                 }
@@ -77,8 +78,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     if (friendlyToCompileNameList.ContainsKey(
                         compileEnumName.Substring(compileEnumName.LastIndexOf('.') + 1)))
                     {
-                        Log.Erro($"Protocol invalid: {oldmessage.messageName}'s sub protos (enum) have the same name with the other.", nameof(ImportTypesCollection));
-                        Debug.Assert(false, $"Protocol invalid: {oldmessage.messageName}'s sub protos (enum) have the same name with the other.");
+                        Log.Erro($"Protocol invalid: {oldmessage.MessageName}'s sub protos (enum) have the same name with the other.", nameof(ImportTypesCollection));
+                        Debug.Assert(false, $"Protocol invalid: {oldmessage.MessageName}'s sub protos (enum) have the same name with the other.");
                     }
                     friendlyToCompileNameList.Add(compileEnumName.Substring(compileEnumName.LastIndexOf('.')), (compileEnumName, false));
                 }
@@ -115,27 +116,27 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             public static SortedSet<string> GetMessageImportTypesAsFrieldlyName(MessageResult messageResult)
             {
                 SortedSet<string> res = new();
-                foreach (var commonField in messageResult.commonFields)
+                foreach (var commonField in messageResult.CommonFields)
                 {
-                    if (commonField.isImportType) res.Add(commonField.fieldType);
+                    if (commonField.IsImportType) res.Add(commonField.FieldType);
                 }
-                foreach (var mapField in messageResult.mapFields)
+                foreach (var mapField in messageResult.MapFields)
                 {
-                    if (mapField.keyIsImportType) res.Add(mapField.keyType);
-                    if (mapField.valueIsImportType) res.Add(mapField.valueType);
+                    if (mapField.KeyIsImportType) res.Add(mapField.KeyType);
+                    if (mapField.ValueIsImportType) res.Add(mapField.ValueType);
                 }
-                foreach (var oneofField in messageResult.oneofFields)
+                foreach (var oneofField in messageResult.OneofFields)
                 {
-                    foreach (var oneofInnerField in oneofField.oneofInnerFields)
+                    foreach (var oneofInnerField in oneofField.OneofInnerFields)
                     {
-                        if (oneofInnerField.isImportType) res.Add(oneofInnerField.fieldType);
+                        if (oneofInnerField.IsImportType) res.Add(oneofInnerField.FieldType);
                     }
                 }
-                foreach (var enumField in messageResult.enumFields)
+                foreach (var enumField in messageResult.EnumFields)
                 {
-                    res.Add(enumField.enumName);
+                    res.Add(enumField.EnumName);
                 }
-                foreach (var messageField in messageResult.messageFields)
+                foreach (var messageField in messageResult.MessageFields)
                 {
                     foreach (var addrange_single in GetMessageImportTypesAsFrieldlyName(messageField))
                     {
@@ -150,9 +151,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 SortedSet<string> messages = new();
                 SortedSet<string> enums = new();
-                foreach (var messageField in messageResult.messageFields)
+                foreach (var messageField in messageResult.MessageFields)
                 {
-                    var inner_message_field_name = $"{messageResult.messageName}.Types.{messageField.messageName}";
+                    var inner_message_field_name = $"{messageResult.MessageName}.Types.{messageField.MessageName}";
                     messages.Add(inner_message_field_name);
                     var innerTypePair = GetInnerMessageTypesAsCompileName(messageField);
                     foreach (var innerMessageFieldName in innerTypePair.messages)
@@ -164,9 +165,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                         enums.Add($"{inner_message_field_name}.Types.{innerEnumFieldName}");
                     }
                 }
-                foreach (var enumField in messageResult.enumFields)
+                foreach (var enumField in messageResult.EnumFields)
                 {
-                    enums.Add($"{messageResult.messageName}.Types.{enumField.enumName}");
+                    enums.Add($"{messageResult.MessageName}.Types.{enumField.EnumName}");
                 }
                 return (messages, enums);
             }

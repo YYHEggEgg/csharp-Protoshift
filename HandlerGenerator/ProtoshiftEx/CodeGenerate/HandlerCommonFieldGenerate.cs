@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using YYHEggEgg.ProtoParser;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator
 {
@@ -18,7 +19,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             ImportTypesCollection importInfo,
             string? baseMessage_friendlyName = null)
         {
-            if (oldcommonField.fieldType != newcommonField.fieldType
+            if (oldcommonField.FieldType != newcommonField.FieldType
                 || oldcommonField.IsRepeatedField != newcommonField.IsRepeatedField)
             {
                 fi.WriteLine($"// Two field with name equal but don't actual match: old: [ {oldcommonField} ], new: [ {newcommonField} ]");
@@ -35,14 +36,14 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string oldcaller = $"oldprotocol.{fieldName}";
             string newcaller = $"newprotocol.{fieldName}";
-            string importPrefix = $"handler_{oldcommonField.fieldType}";
+            string importPrefix = $"handler_{oldcommonField.FieldType}";
             if (generateForNewShiftToOld)
             {
-                fi.WriteLine($"{oldcaller} = {(oldcommonField.isImportType ? $"{importPrefix}.NewShiftToOld({newcaller})" : newcaller)};");
+                fi.WriteLine($"{oldcaller} = {(oldcommonField.IsImportType ? $"{importPrefix}.NewShiftToOld({newcaller})" : newcaller)};");
             }
             else
             {
-                fi.WriteLine($"{newcaller} = {(oldcommonField.isImportType ? $"{importPrefix}.OldShiftToNew({oldcaller})" : oldcaller)};");
+                fi.WriteLine($"{newcaller} = {(oldcommonField.IsImportType ? $"{importPrefix}.OldShiftToNew({oldcaller})" : oldcaller)};");
             }
         }
 
@@ -60,7 +61,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string oldcaller = $"oldprotocol.{fieldName}";
             string newcaller = $"newprotocol.{fieldName}";
-            if (!oldcommonField.isImportType)
+            if (!oldcommonField.IsImportType)
             {
                 if (generateForNewShiftToOld) fi.WriteLine($"{oldcaller}.AddRange({newcaller});");
                 else fi.WriteLine($"{newcaller}.AddRange({oldcaller});");
@@ -69,7 +70,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 fi.WriteLine($"foreach (var element_{commonFieldName} in {(generateForNewShiftToOld ? newcaller : oldcaller)})");
                 fi.EnterCodeRegion();
-                string importPrefix = $"handler_{oldcommonField.fieldType}";
+                string importPrefix = $"handler_{oldcommonField.FieldType}";
                 if (generateForNewShiftToOld)
                     fi.WriteLine($"{oldcaller}.Add({importPrefix}.NewShiftToOld(element_{commonFieldName}));");
                 else fi.WriteLine($"{newcaller}.Add({importPrefix}.OldShiftToNew(element_{commonFieldName}));");
@@ -90,7 +91,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             ref SkillIssueCollection skillIssues)
         {
             var commonFieldsCollection = CollectionHelper.GetCompareResult(
-                oldmessage.commonFields, newmessage.commonFields, CommonResult.NameComparer);
+                oldmessage.CommonFields, newmessage.CommonFields, CommonResult.NameComparer);
             if (generateForNewShiftToOld)
             {
                 foreach (var common_newOnly in commonFieldsCollection.RightOnlys)
@@ -111,9 +112,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             }
             foreach (var common_pair in commonFieldsCollection.IntersectItems)
             {
-                GenerateCommonFieldHandler(ref fi, common_pair.LeftItem.fieldName,
+                GenerateCommonFieldHandler(ref fi, common_pair.LeftItem.FieldName,
                     common_pair.LeftItem, common_pair.RightItem, generateForNewShiftToOld,
-                    importInfo, oldmessage.messageName);
+                    importInfo, oldmessage.MessageName);
             }
         }
 
@@ -141,8 +142,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             string fieldName = Tools.GetProtocCompiledName(commonFieldName) ?? "";
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string caller = $"{(generateForNewShiftToOld ? "new" : "old")}protocol.{fieldName}";
-            string importPrefix = $"Handler{commonField.fieldType}.GlobalInstance";
-            if (commonField.isImportType && !importInfo.ContainsKey(commonField.fieldType))
+            string importPrefix = $"Handler{commonField.FieldType}.GlobalInstance";
+            if (commonField.IsImportType && !importInfo.ContainsKey(commonField.FieldType))
             {
                 return;
             }
@@ -150,13 +151,13 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             {
                 WriteNonUserCodeSign(ref fi);
                 fi.WriteLine($"public static object GetOld{fieldName}(NewProtos.{messageName} newprotocol)",
-                    $"=> {(commonField.isImportType ? $"{importPrefix}.NewShiftToOld({caller})" : caller)};");
+                    $"=> {(commonField.IsImportType ? $"{importPrefix}.NewShiftToOld({caller})" : caller)};");
             }
             else
             {
                 WriteNonUserCodeSign(ref fi);
                 fi.WriteLine($"public static object GetNew{fieldName}(OldProtos.{messageName} oldprotocol)",
-                    $"=> {(commonField.isImportType ? $"{importPrefix}.OldShiftToNew({caller})" : caller)};");
+                    $"=> {(commonField.IsImportType ? $"{importPrefix}.OldShiftToNew({caller})" : caller)};");
             }
         }
 
@@ -172,11 +173,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             string fieldName = Tools.GetProtocCompiledName(commonFieldName) ?? "";
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string caller = $"{(generateForNewShiftToOld ? "new" : "old")}protocol.{fieldName}";
-            if (commonField.isImportType && !importInfo.ContainsKey(commonField.fieldType))
+            if (commonField.IsImportType && !importInfo.ContainsKey(commonField.FieldType))
             {
                 return;
             }
-            if (!commonField.isImportType)
+            if (!commonField.IsImportType)
             {
                 WriteNonUserCodeSign(ref fi);
                 fi.WriteLine($"public static object Get{(generateForNewShiftToOld ? "Old" : "New")}{fieldName}" +
@@ -191,10 +192,10 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     $"({(generateForNewShiftToOld ? "New" : "Old")}Protos.{messageName} " +
                     $"{(generateForNewShiftToOld ? "new" : "old")}protocol)");
                 fi.EnterCodeRegion();
-                fi.WriteLine($"List<{(generateForNewShiftToOld ? "Old" : "New")}Protos.{importInfo[commonField.fieldType].compileTypeName}> res = new();");
+                fi.WriteLine($"List<{(generateForNewShiftToOld ? "Old" : "New")}Protos.{importInfo[commonField.FieldType].compileTypeName}> res = new();");
                 fi.WriteLine($"foreach (var element_{commonFieldName} in {caller})");
                 fi.EnterCodeRegion();
-                string importPrefix = $"Handler{commonField.fieldType}.GlobalInstance";
+                string importPrefix = $"Handler{commonField.FieldType}.GlobalInstance";
                 fi.WriteLine($"res.Add({importPrefix}." +
                     (generateForNewShiftToOld ? "NewShiftToOld" : "OldShiftToNew") +
                     $"(element_{commonFieldName}));");
@@ -217,12 +218,12 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             MessageResult oldmessage, MessageResult newmessage)
         {
             var commonFieldsCollection = CollectionHelper.GetCompareResult(
-                oldmessage.commonFields, newmessage.commonFields, CommonResult.NameComparer);
+                oldmessage.CommonFields, newmessage.CommonFields, CommonResult.NameComparer);
             foreach (var common_pair in commonFieldsCollection.IntersectItems)
             {
-                GenerateCommonFieldJitAPI(ref fi, common_pair.LeftItem.fieldName,
+                GenerateCommonFieldJitAPI(ref fi, common_pair.LeftItem.FieldName,
                     common_pair.LeftItem, common_pair.RightItem, 
-                    oldmessage.messageName);
+                    oldmessage.MessageName);
             }
         }
 
@@ -240,7 +241,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             CommonResult oldcommonField, CommonResult newcommonField,
             string? baseMessage_friendlyName = null)
         {
-            if (oldcommonField.fieldType != newcommonField.fieldType
+            if (oldcommonField.FieldType != newcommonField.FieldType
                 || oldcommonField.IsRepeatedField != newcommonField.IsRepeatedField)
             {
                 return;
@@ -255,7 +256,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             string fieldName = Tools.GetProtocCompiledName(commonFieldName) ?? "";
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string newcaller = $"newprotocol.{fieldName}";
-            fi.WriteLine($"{newcaller} = {GetTypeJitParamter(oldcommonField.fieldType)};");
+            fi.WriteLine($"{newcaller} = {GetTypeJitParamter(oldcommonField.FieldType)};");
         }
 
         /// <summary>
@@ -270,7 +271,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             string fieldName = Tools.GetProtocCompiledName(commonFieldName) ?? "";
             if (fieldName == baseMessage_friendlyName) fieldName += '_';
             string newcaller = $"newprotocol.{fieldName}";
-            fi.WriteLine($"{newcaller}.Add({GetTypeJitParamter(oldcommonField.fieldType)});");
+            fi.WriteLine($"{newcaller}.Add({GetTypeJitParamter(oldcommonField.FieldType)});");
         }
         #endregion
     }

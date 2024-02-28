@@ -1,7 +1,11 @@
 using csharp_Protoshift.Enhanced.Handlers.Generator.RegenOutput;
 using System.Collections.Concurrent;
+using System.Text.Json;
 using System.Transactions;
 using YYHEggEgg.Logger;
+using YYHEggEgg.ProtoParser;
+using YYHEggEgg.ProtoParser.RawData;
+using YYHEggEgg.ProtoParser.RawProtoHandler;
 
 namespace csharp_Protoshift.Enhanced.Handlers.Generator.ProtobufManage;
 
@@ -427,10 +431,11 @@ internal class GitProtobufPromptCLI
         ConcurrentDictionary<string, int> cmdidlist = new();
         Parallel.ForEach(protojsons, path =>
         {
-            ProtoJsonResult analyzeResult = JsonAnalyzer.AnalyzeProtoJson(File.ReadAllText(path));
-            foreach (var message in analyzeResult.messageBodys)
+            ProtoJsonResult analyzeResult = ProtoJsonRawDataAnalyzer.AnalyzeRawProto(
+                JsonSerializer.Deserialize<Proto>(File.ReadAllText(path)));
+            foreach (var message in analyzeResult.MessageBodys)
             {
-                BasicCodeWriter fi = PreGenerate(outputPath, $"{message.messageName}.proto");
+                BasicCodeWriter fi = PreGenerate(outputPath, $"{message.MessageName}.proto");
                 SortedSet<string> imports = new();
                 RegenOutputMessage.OutputMessage(ref fi, ref imports, message);
                 var external_imports = from importorigin in imports
@@ -438,9 +443,9 @@ internal class GitProtobufPromptCLI
                                        let importfile = (nestedIdentifier < 0)
                                            ? importorigin
                                            : importorigin.Substring(0, nestedIdentifier)
-                                       where importfile != message.messageName
-                                       where !message.messageFields.Any(field => field.messageName == importfile)
-                                       where !message.enumFields.Any(field => field.enumName == importfile)
+                                       where importfile != message.MessageName
+                                       where !message.MessageFields.Any(field => field.MessageName == importfile)
+                                       where !message.EnumFields.Any(field => field.EnumName == importfile)
                                        orderby importfile
                                        select importfile;
                 if (external_imports.Any()) fi.WriteLine();
@@ -449,16 +454,16 @@ internal class GitProtobufPromptCLI
                     fi.WriteLine($"import \"{importfile}.proto\";");
                 }
                 fi.Dispose();
-                var cmdidenum = message.enumFields.Find(enumResult => enumResult.enumName == "CmdId");
+                var cmdidenum = message.EnumFields.Find(enumResult => enumResult.EnumName == "CmdId");
                 if (cmdidenum != null)
                 {
-                    var cmdid_tuple = cmdidenum.enumNodes.Find(enumNodeTuple => enumNodeTuple.name == "CMD_ID");
-                    if (cmdid_tuple.name == "CMD_ID") cmdidlist.TryAdd(message.messageName, cmdid_tuple.number);
+                    var cmdid_tuple = cmdidenum.EnumNodes.Find(enumNodeTuple => enumNodeTuple.name == "CMD_ID");
+                    if (cmdid_tuple.name == "CMD_ID") cmdidlist.TryAdd(message.MessageName, cmdid_tuple.number);
                 }
             }
-            foreach (var enumResult in analyzeResult.enumBodys)
+            foreach (var enumResult in analyzeResult.EnumBodys)
             {
-                BasicCodeWriter fi = PreGenerate(outputPath, $"{enumResult.enumName}.proto");
+                BasicCodeWriter fi = PreGenerate(outputPath, $"{enumResult.EnumName}.proto");
                 RegenOutputEnum.OutputEnum(ref fi, enumResult);
                 fi.Dispose();
             }
