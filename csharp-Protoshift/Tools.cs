@@ -21,22 +21,6 @@ namespace csharp_Protoshift
     {
         public static string ProgramPath => AppDomain.CurrentDomain.BaseDirectory;
 
-        static Random ran = new Random();
-
-        /// <summary>
-        /// Generate a random string with length of [len]. 
-        /// </summary>
-        public static string RandomStr(int len)
-        {
-            string charset = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
-            string res = "";
-            while (len-- > 0)
-            {
-                res += charset[ran.Next(0, 61)];
-            }
-            return res;
-        }
-
         public async static Task ExecuteProcess(string path, string args)
         {
             var p = Process.Start(path, args);
@@ -215,13 +199,13 @@ namespace csharp_Protoshift
 
         private class VersionInfo
         {
-            public string? CurrentVersion;
+            public string? CurrentVersion { get; set; }
             /// <summary>
             /// Only when the current version is earlier
             /// than this will the update notice be raised
             /// as a warning.
             /// </summary>
-            public string? EarliestStableVersion;
+            public string? EarliestStableVersion { get; set; }
         }
 
         private static string GitHubRestApiUserAgent =>

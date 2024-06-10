@@ -6,6 +6,7 @@ using csharp_Protoshift.MhyKCP.Proxy;
 using csharp_Protoshift.resLoader;
 using csharp_Protoshift.SkillIssue;
 using System.Net;
+using System.Reflection;
 using YYHEggEgg.Logger;
 
 namespace csharp_Protoshift
@@ -33,7 +34,8 @@ namespace csharp_Protoshift
                 is_PipeSeparated_Format: false,
                 enable_Detailed_Time: true
                 ));
-            Log.Info("csharp-Protoshift v1.0.0", "Entry");
+            string? version = Assembly.GetExecutingAssembly().GetName().Version?.ToString(3);
+            Log.Info($"csharp-Protoshift v{version ?? "<unknown>"}", "Entry");
             Log.Info("Written by YYHEggEgg#6167, https://github.com/YYHEggEgg.", "Entry");
             ConsoleWrapper.ShutDownRequest += Tools.ExitOnLaunching;
             ResourcesLoader.CheckForRequiredResources();
