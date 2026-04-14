@@ -5,6 +5,7 @@ using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Net;
 using System.Text;
+using System.Text.Json;
 using YYHEggEgg.Logger;
 using YYHEggEgg.ProtoParser;
 using YYHEggEgg.ProtoParser.RawProtoHandler;
@@ -54,6 +55,7 @@ internal class Program
             config.HelpWriter = TextWriter.Synchronized(new LogTextWriter("CommandLineParser"));
         });
         var updatecli = new GitProtobufPromptCLI();
+        var protoConfig = updatecli.Config;
         await parser.ParseArguments<RunUpdateProtobufConfig>(args)
             .WithNotParsed(errs =>
             {
@@ -328,51 +330,37 @@ internal class Program
                 // name='Optimize GCG proto handling & Building Process'.
                 #region OldProtos
                 // true = Need Rebuild, false = Not Need Rebuild, null = Brand New
-                if (rebuildWatcher_past?.rebuild_files_relative_list[targetpath_old].Any() != false)
+                if (rebuildWatcher_past?.rebuild_files_relative_list[RebuildWatcher.GetDirectoryKey("./../OldProtoHandlers/Google.Protobuf")].Any() != false)
                 {
-                    var oldproto_files = Directory.EnumerateFiles(
-                        "./../OldProtoHandlers/Google.Protobuf/Protos",
-                        "*.proto", SearchOption.AllDirectories);
-                    foreach (var proto_file in oldproto_files)
+                    foreach ((var proto_file, var compiled_name) in EnumerateProtoFiles("./../OldProtoHandlers/Google.Protobuf/Protos"))
                     {
-                        if (Path.GetExtension(proto_file) == ".proto")
+                        compiled_csfilenames_old.Add(compiled_name);
+                        var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
+                        if (compile_oldprotos.Length + appendcmd.Length
+                            >= OuterInvokeGlobalConfig.maximum_createproc_length)
                         {
-                            var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
-                            compiled_csfilenames_old.Add(name_withoutext);
-                            var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
-                            if (compile_oldprotos.Length + appendcmd.Length
-                                >= OuterInvokeGlobalConfig.maximum_createproc_length)
-                            {
-                                compile_oldproto_cmds.Add(compile_oldprotos.ToString());
-                                compile_oldprotos = new();
-                            }
-                            compile_oldprotos.Append(appendcmd);
+                            compile_oldproto_cmds.Add(compile_oldprotos.ToString());
+                            compile_oldprotos = new();
                         }
+                        compile_oldprotos.Append(appendcmd);
                     }
                     if (compile_oldprotos.Length > 0) compile_oldproto_cmds.Add(compile_oldprotos.ToString());
                 }
                 #endregion
                 #region NewProtos
-                if (rebuildWatcher_past?.rebuild_files_relative_list[targetpath_new].Any() != false)
+                if (rebuildWatcher_past?.rebuild_files_relative_list[RebuildWatcher.GetDirectoryKey("./../NewProtoHandlers/Google.Protobuf")].Any() != false)
                 {
-                    var newproto_files = Directory.EnumerateFiles(
-                    "./../NewProtoHandlers/Google.Protobuf/Protos",
-                    "*.proto", SearchOption.AllDirectories);
-                    foreach (var proto_file in newproto_files)
+                    foreach ((var proto_file, var compiled_name) in EnumerateProtoFiles("./../NewProtoHandlers/Google.Protobuf/Protos"))
                     {
-                        if (Path.GetExtension(proto_file) == ".proto")
+                        compiled_csfilenames_new.Add(compiled_name);
+                        var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
+                        if (compile_newprotos.Length + appendcmd.Length
+                            >= OuterInvokeGlobalConfig.maximum_createproc_length)
                         {
-                            var name_withoutext = Path.GetFileNameWithoutExtension(proto_file);
-                            compiled_csfilenames_new.Add(name_withoutext);
-                            var appendcmd = $" \"{Path.GetRelativePath("./..", proto_file)}\"";
-                            if (compile_newprotos.Length + appendcmd.Length
-                                >= OuterInvokeGlobalConfig.maximum_createproc_length)
-                            {
-                                compile_newproto_cmds.Add(compile_newprotos.ToString());
-                                compile_newprotos = new();
-                            }
-                            compile_newprotos.Append(appendcmd);
+                            compile_newproto_cmds.Add(compile_newprotos.ToString());
+                            compile_newprotos = new();
                         }
+                        compile_newprotos.Append(appendcmd);
                     }
                     if (compile_newprotos.Length > 0) compile_newproto_cmds.Add(compile_newprotos.ToString());
                 }
@@ -380,6 +368,8 @@ internal class Program
             }
 
 #pragma warning disable CS0162
+            try { Directory.Delete("./../OldProtoHandlers/Google.Protobuf/Compiled", true); } catch { }
+            try { Directory.Delete("./../NewProtoHandlers/Google.Protobuf/Compiled", true); } catch { }
             if (OuterInvokeGlobalConfig.protoc_path != null)
             {
                 Log.Info($"Defined protoc path: Using native protoc invoke from: '{OuterInvokeGlobalConfig.protoc_path}'.");
@@ -431,14 +421,14 @@ internal class Program
 
             protocWatch.Stop();
             Log.Info($"Protoc compiling finished, elapsed {protocWatch.Elapsed}.");
-            await Tools.RewriteProtoNamespaceAsync("OldProtos",
+            await Tools.RewriteProtoNamespaceAsync(protoConfig.OldProtosCSharpNamespace, "OldProtos",
                 (from compiledfile in compiled_csfilenames_old
                  select Path.Combine("./../OldProtoHandlers/Google.Protobuf/Compiled",
-                    $"{compiledfile.Replace("_", "")}.cs")).ToList());
-            await Tools.RewriteProtoNamespaceAsync("NewProtos",
+                    compiledfile)).ToList());
+            await Tools.RewriteProtoNamespaceAsync(protoConfig.NewProtosCSharpNamespace, "NewProtos",
                 (from compiledfile in compiled_csfilenames_new
                  select Path.Combine("./../NewProtoHandlers/Google.Protobuf/Compiled",
-                    $"{compiledfile.Replace("_", "")}.cs")).ToList());
+                    compiledfile)).ToList());
             #endregion
             // The protos compiled here is just for checking,
             // so though there's a switch from Debug to Release,
@@ -479,7 +469,7 @@ internal class Program
             await File.WriteAllTextAsync("last_build_record.json", rebuildWatcher.SerializeToJson());
         }
         #endregion
-        
+
         #region Invoke proto2json
         Log.Info("Start invoking go-proto2json (Wrapped by EggEgg.CSharp-ProtoParser). Please wait patiently...", "Go-Proto2json");
         Stopwatch pinvokewatch = Stopwatch.StartNew();
@@ -499,8 +489,10 @@ internal class Program
         Parallel.ForEach(oldprotojsons, tuple =>
         {
             var path = tuple.Key;
-            oldenumCollections.AddCodeFile($"./../OldProtoHandlers/Google.Protobuf/Compiled/" +
-                $"{Path.GetFileNameWithoutExtension(path).Replace("_", "")}.cs");
+            var compiledName = GetCompiledPathFromProtoPath(path,
+                "./../OldProtoHandlers/Google.Protobuf/Protos");
+            var compiledPath = Path.Combine($"./../OldProtoHandlers/Google.Protobuf/Compiled/", compiledName);
+            oldenumCollections.AddCodeFile(compiledPath);
             ProtoJsonResult analyzeResult = tuple.Value;
             foreach (var message in analyzeResult.MessageBodys)
             {
@@ -515,8 +507,10 @@ internal class Program
         Parallel.ForEach(newprotojsons, tuple =>
         {
             var path = tuple.Key;
-            newenumCollections.AddCodeFile($"./../NewProtoHandlers/Google.Protobuf/Compiled/" +
-                $"{Path.GetFileNameWithoutExtension(path).Replace("_", "")}.cs");
+            var compiledName = GetCompiledPathFromProtoPath(path,
+                "./../NewProtoHandlers/Google.Protobuf/Protos");
+            var compiledPath = Path.Combine($"./../NewProtoHandlers/Google.Protobuf/Compiled/", compiledName);
+            newenumCollections.AddCodeFile(compiledPath);
             ProtoJsonResult analyzeResult = tuple.Value;
             foreach (var message in analyzeResult.MessageBodys)
             {
@@ -918,6 +912,39 @@ internal class Program
             }
             Environment.Exit(0);
         }
+    }
+
+    /// <summary>
+    /// Enumerate all proto files in the given directory and its subdirectories,
+    /// and return their relative path as a compiled file.
+    /// </summary>
+    private static IEnumerable<(string ProtoFile, string CompiledRelativePath)> EnumerateProtoFiles(string dir)
+    {
+        var fullPath = Path.GetFullPath(dir);
+        foreach (var file in Directory.EnumerateFiles(dir,
+            "*.proto", SearchOption.AllDirectories))
+        {
+            if (Path.GetExtension(file) != ".proto") continue;
+            yield return (file, GetCompiledPathFromProtoPath(file, fullPath));
+        }
+    }
+
+    private static string GetCompiledPathFromProtoPath(string filePath, string protoDir)
+    {
+        var relativePath = Path.GetRelativePath(protoDir, filePath);
+        var relativeDir = Path.GetDirectoryName(relativePath);
+        if (string.IsNullOrEmpty(relativeDir)) relativeDir = ".";
+        var protoName = Path.GetFileNameWithoutExtension(filePath);
+        var compiledName = SnakeCaseNameToPascalCase(protoName);
+        return $"{relativeDir}/{compiledName}.cs";
+    }
+
+    private static string SnakeCaseNameToPascalCase(string input)
+    {
+        var parts = input.Split(new char[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
+        var pascalCaseName = string.Concat(parts.Select(part =>
+            char.ToUpper(part[0]) + part.Substring(1).ToLower()));
+        return pascalCaseName;
     }
 }
 

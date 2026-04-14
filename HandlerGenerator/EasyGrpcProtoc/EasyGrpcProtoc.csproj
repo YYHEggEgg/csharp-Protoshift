@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="$(protobuf_from_proto_dir)/*.proto"
+    <Protobuf Include="$(protobuf_from_proto_dir)/**/*.proto"
               ProtoRoot="$(protobuf_from_proto_dir)"
               GrpcServices="None"
               OutputDir="$(protobuf_output_cs_dir)" />

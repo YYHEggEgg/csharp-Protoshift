@@ -21,16 +21,16 @@ internal class GitProtobufPromptCLI
     /// The license for generated protos (from proto2json outputs, only valid in DMCA situations).
     /// </summary>
     public readonly string PreLicense;
+    public readonly ProtobufConfig Config;
 
     public GitProtobufPromptCLI()
     {
-        var branchlist = TxtReader.ReadSpecifiedCount($"./Gencode_Configuration/default_protobuf_branches.txt", 2);
-        DefaultBranchOld = branchlist[0];
-        DefaultBranchNew = branchlist[1];
+        Config = ProtobufConfig.Load();
+        DefaultBranchOld = Config.DefaultBranchOldProtos;
+        DefaultBranchNew = Config.DefaultBranchNewProtos;
         _mainlogger.LogVerb($"Default branches: old={DefaultBranchOld}; new={DefaultBranchNew};");
 
-        SourceRepo = TxtReader.ReadSpecifiedCount($"./Gencode_Configuration/protobuf_source_git.txt", 0, 1)[0]
-            ?? GitProtosManager.DefaultSource;
+        SourceRepo = Config.GitSource;
         PreLicense = File.ReadAllText($"./Gencode_Configuration/protobuf_general_license.txt");
     }
 
@@ -39,6 +39,12 @@ internal class GitProtobufPromptCLI
         Program.AlwaysPassChoices = o.AlwaysPassChoices;
         Program.PublishFailOnAfterBuildTasksFailure = o.PublishFailOnAfterBuildTasksFailure;
         if (o.ClearWorkspace) File.Delete("last_build_record.json");
+
+        if (Config.SkipGitUpdate)
+        {
+            _mainlogger.LogInfo($"skip_git_update is enabled. All git operations are skipped.");
+            return;
+        }
 
         if (!o.RequestUpdate)
         {

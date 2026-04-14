@@ -130,12 +130,16 @@ internal static class Tools
     /// </summary>
     /// <param name="fullPaths"></param>
     /// <returns></returns>
-    public static async Task RewriteProtoNamespaceAsync(string newNamespace, List<string> fullPaths)
+    public static async Task RewriteProtoNamespaceAsync(string oldNamespace, string newNamespace, List<string> fullPaths)
     {
         Log.Info($"Starting rewriting updated protos' ({fullPaths.Count} files) namespace, please wait...", newNamespace);
         foreach (var file in fullPaths) 
         {
-            var content = (await File.ReadAllTextAsync(file)).Replace("MiHomo.Protos", newNamespace);
+            var content = (await File.ReadAllTextAsync(file))
+                // namespace MiHomo.Protos {
+                .Replace($" {oldNamespace} ", $" {newNamespace} ")
+                // global::MiHomo.Protos.*
+                .Replace($"{oldNamespace}.", $"{newNamespace}.");
             await File.WriteAllTextAsync(file, content);
         }
         Log.Info($"Rewrite of updated files finished.", newNamespace);

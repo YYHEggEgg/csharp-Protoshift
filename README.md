@@ -43,6 +43,7 @@ csharp-Protoshift is an advanced, manageable compatibility layer for a certain a
   > ./resources/luac_bins/luac_unix64: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.34' not found (required by ./resources/luac_bins/luac_unix64)
   > ```
 - Enable `arm64` CPU architectures to build by changing `go-proto2json`'s executable source.
+- Support providing Protobuf sources locally rather than Git Repository only. For more information, please refer to the [Wiki - Building - Skipping Git (offline mode)](https://github.com/YYHEggEgg/csharp-Protoshift/wiki/EN_Building#skipping-git-offline-mode).
 
 ### v1.0.2
 

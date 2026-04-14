@@ -1,0 +1,44 @@
+# Proto source configuration for HandlerGenerator
+# This file controls where HandlerGenerator fetches proto definitions from.
+# (Replaces protobuf_source_git.txt and default_protobuf_branches.txt)
+#
+# Syntax: key = "value"  (double or single quotes)
+#         Lines starting with # are comments.
+#         Inline comments after a value are NOT supported — use a separate line.
+
+# ── Git source ───────────────────────────────────────────────────────────────
+# The git repository URL for fetching proto files.
+# The URL must end with ".git".
+# Leave commented out or set to an empty string to fall back to the
+# built-in default: https://github.com/YYHEggEgg/mihomo-protos.git
+# Note: using a repository other than GitHub may change certain program
+# behaviors (e.g. the pre-build version check via GitHub raw API will be
+# skipped). This code path has not been thoroughly tested.
+# git_source = "https://github.com/YYHEggEgg/mihomo-protos.git"
+
+# Default branches to use when fetching proto files for the first time,
+# or when no --branch-oldprotos / --branch-newprotos argument is passed on the
+# command line. These must be valid branch names in the git_source repository.
+default_branch_oldprotos = "3.4_gio"
+default_branch_newprotos = "3.4_live"
+
+# ── Skip git entirely ────────────────────────────────────────────────────────
+# Set to true to bypass all git operations (clone / pull / protostat checks).
+# HandlerGenerator will do nothing with proto files and assume they are already
+# present in the hardcoded build directories:
+#   OldProtoHandlers/Google.Protobuf/Protos/   ← OldProtos .proto files
+#   OldProtoHandlers/Google.Protobuf/cmdid.csv ← command-ID mapping (optional)
+#   NewProtoHandlers/Google.Protobuf/Protos/   ← NewProtos .proto files
+#   NewProtoHandlers/Google.Protobuf/cmdid.csv ← command-ID mapping (optional)
+# Default is false (git mode).
+# 
+# skip_git_update = true
+
+# If your proto files have a different 'package' declaration
+# (from 'package miHomo.Protos'), you need to set this value
+# to the PascalCase version of that declaration.
+# Protos without any 'package' declaration or a shared 'package'
+# definition are NOT accepted.
+# 
+# oldprotos_csharp_namespace = "Proto"
+# newprotos_csharp_namespace = "MiHomo.Protos"

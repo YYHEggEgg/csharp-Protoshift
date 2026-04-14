@@ -9,9 +9,22 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         private bool _needRebuild = true;
 
         /// <summary>
-        /// The key of dictionary is not relative, but the value in list is relative.
+        /// Key: normalized working-directory-relative path with forward-slash separators
+        /// (see <see cref="GetDirectoryKey"/>). Value: list of relative file paths that
+        /// changed since the last captured snapshot.
         /// </summary>
         public readonly Dictionary<string, List<string>> rebuild_files_relative_list = new();
+
+        /// <summary>
+        /// Returns the canonical key used in <see cref="rebuild_files_relative_list"/>:
+        /// a path relative to the current working directory with forward-slash separators.
+        /// Accepts both absolute paths and relative paths in any format.
+        /// </summary>
+        public static string GetDirectoryKey(string dirPath)
+        {
+            return Path.GetRelativePath(Environment.CurrentDirectory, Path.GetFullPath(dirPath))
+                       .Replace(Path.DirectorySeparatorChar, '/');
+        }
 
         /// <summary>
         /// 无参构造器
@@ -34,6 +47,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
 
             _directories.Add(dir);
 
+            var key = GetDirectoryKey(dir.FullName);
             var dirData = new Dictionary<string, string>();
             foreach (var file in dir.EnumerateFiles("*", SearchOption.AllDirectories))
             {
@@ -41,7 +55,7 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 var relativePath = GetRelativePath(file.FullName, dir.FullName);
                 dirData[relativePath] = GetFileHash(file.FullName);
             }
-            _fileHashes[dir.FullName] = dirData;
+            _fileHashes[key] = dirData;
         }
 
         /// <summary>
@@ -53,7 +67,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             var data = new Dictionary<string, Dictionary<string, string>>();
             foreach (var dir in _directories)
             {
-                data[dir.FullName] = _fileHashes[dir.FullName];
+                var key = GetDirectoryKey(dir.FullName);
+                data[key] = _fileHashes[key];
             }
 
             return JsonConvert.SerializeObject(data);
@@ -66,36 +81,41 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// <returns>RebuildWatcher 实例</returns>
         public static RebuildWatcher DeserializeFromJson(string json)
         {
-            var data = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(json);
+            var rawData = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(json)!;
             var watcher = new RebuildWatcher();
 
-            foreach (var dirPath in data.Keys)
-            {
-                watcher.CaptureDirectory(dirPath);
-            }
+            // Normalize all keys from the JSON snapshot: transparently handles both
+            // the legacy format (absolute paths) and the current format (CWD-relative
+            // paths with forward slashes). GetDirectoryKey accepts either form.
+            var data = new Dictionary<string, Dictionary<string, string>>();
+            foreach (var kvp in rawData)
+                data[GetDirectoryKey(kvp.Key)] = kvp.Value;
+
+            foreach (var key in data.Keys)
+                watcher.CaptureDirectory(key);
 
             watcher._needRebuild = false;
 
             foreach (var dir in watcher._directories)
             {
-                watcher.rebuild_files_relative_list.Add(dir.FullName, new());
+                var key = GetDirectoryKey(dir.FullName);
+                watcher.rebuild_files_relative_list.Add(key, new());
                 foreach (var file in dir.GetFiles("*", SearchOption.AllDirectories))
                 {
                     if (file.FullName.Contains($".git{Path.DirectorySeparatorChar}")) continue;
                     var relativePath = GetRelativePath(file.FullName, dir.FullName);
-                    if (data[dir.FullName].ContainsKey(relativePath))
+                    if (data[key].TryGetValue(relativePath, out var storedHash))
                     {
-                        var hash = GetFileHash(file.FullName);
-                        if (hash != data[dir.FullName][relativePath])
+                        if (GetFileHash(file.FullName) != storedHash)
                         {
                             watcher._needRebuild = true;
-                            watcher.rebuild_files_relative_list[dir.FullName].Add(relativePath);
+                            watcher.rebuild_files_relative_list[key].Add(relativePath);
                         }
                     }
                     else
                     {
                         watcher._needRebuild = true;
-                        watcher.rebuild_files_relative_list[dir.FullName].Add(relativePath);
+                        watcher.rebuild_files_relative_list[key].Add(relativePath);
                     }
                 }
             }
