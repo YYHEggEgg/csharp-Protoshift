@@ -38,36 +38,36 @@ public class FileController : ControllerBase
     /// Returns a directory listing for the virtual file browser.
     /// When <paramref name="path"/> is omitted, returns drives on Windows or "/" on Unix.
     /// Only directories and *.log files are listed.
+    /// Error responses include a <c>parentPath</c> field so the client can offer a "go up" action.
     /// </summary>
     [HttpGet("ls")]
     public IActionResult ListDirectory([FromQuery] string? path)
     {
+        // No path → root listing (always succeeds)
+        if (string.IsNullOrWhiteSpace(path))
+        {
+            if (OperatingSystem.IsWindows())
+            {
+                var drives = DriveInfo.GetDrives()
+                    .Where(d => d.IsReady)
+                    .Select(d => new FsEntry(d.Name, d.RootDirectory.FullName, "dir", null))
+                    .ToList();
+                return Ok(new DirectoryListingDto(null, null, true, drives));
+            }
+            path = "/";
+        }
+
+        if (!Directory.Exists(path))
+            return NotFound(new { error = $"目录不存在: {path}" });
+
+        var dirInfo = new DirectoryInfo(path);
+        string? parentPath = dirInfo.Parent?.FullName; // null when already at fs root
+
+        var entries = new List<FsEntry>();
+
+        // Subdirectories — wrapped individually so one bad dir doesn't abort the whole listing
         try
         {
-            // No path → root listing
-            if (string.IsNullOrWhiteSpace(path))
-            {
-                if (OperatingSystem.IsWindows())
-                {
-                    var drives = DriveInfo.GetDrives()
-                        .Where(d => d.IsReady)
-                        .Select(d => new FsEntry(d.Name, d.RootDirectory.FullName, "dir", null))
-                        .ToList();
-                    return Ok(new DirectoryListingDto(null, null, true, drives));
-                }
-                // Unix: start at filesystem root
-                path = "/";
-            }
-
-            if (!Directory.Exists(path))
-                return NotFound(new { error = $"目录不存在: {path}" });
-
-            var dirInfo = new DirectoryInfo(path);
-            var parentPath = dirInfo.Parent?.FullName; // null when already at fs root
-
-            var entries = new List<FsEntry>();
-
-            // Subdirectories (exclude hidden/system on Windows)
             foreach (var d in dirInfo.GetDirectories().OrderBy(d => d.Name))
             {
                 if (d.Attributes.HasFlag(FileAttributes.Hidden) ||
@@ -75,20 +75,41 @@ public class FileController : ControllerBase
                     continue;
                 entries.Add(new FsEntry(d.Name, d.FullName, "dir", null));
             }
-
-            // *.log files only
-            foreach (var f in dirInfo.GetFiles("*.log").OrderBy(f => f.Name))
-                entries.Add(new FsEntry(f.Name, f.FullName, "file", f.Length));
-
-            return Ok(new DirectoryListingDto(dirInfo.FullName, parentPath, false, entries));
         }
         catch (UnauthorizedAccessException)
         {
-            return StatusCode(403, new { error = "访问被拒绝" });
+            // Can't enumerate subdirectories — return 403 with parentPath so client can go up
+            return StatusCode(403, new { error = "访问被拒绝", parentPath });
         }
         catch (Exception ex)
         {
-            return StatusCode(500, new { error = ex.Message });
+            return StatusCode(500, new { error = ex.Message, parentPath });
         }
+
+        // *.log files
+        try
+        {
+            foreach (var f in dirInfo.GetFiles("*.log").OrderBy(f => f.Name))
+                entries.Add(new FsEntry(f.Name, f.FullName, "file", f.Length));
+        }
+        catch (UnauthorizedAccessException) { /* skip — directories already listed */ }
+        catch (Exception) { /* skip */ }
+
+        return Ok(new DirectoryListingDto(dirInfo.FullName, parentPath, false, entries));
+    }
+
+    /// <summary>
+    /// Returns server-side paths useful as navigation fallbacks: home directory and application base directory.
+    /// </summary>
+    [HttpGet("suggested-dirs")]
+    public IActionResult GetSuggestedDirs()
+    {
+        var home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        var appDir = AppContext.BaseDirectory;
+        return Ok(new
+        {
+            home = string.IsNullOrEmpty(home) ? null : home,
+            appDir
+        });
     }
 }

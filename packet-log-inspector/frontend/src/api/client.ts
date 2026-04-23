@@ -36,6 +36,10 @@ export async function listDirectory(path?: string): Promise<DirectoryListing> {
   return api.get<DirectoryListing>('/file/ls', path ? { params: { path } } : {}).then(r => r.data)
 }
 
+export async function getSuggestedDirs(): Promise<{ home: string | null; appDir: string }> {
+  return api.get<{ home: string | null; appDir: string }>('/file/suggested-dirs').then(r => r.data)
+}
+
 export async function getHistogram(buckets = 60): Promise<HistogramData> {
   return api.get<HistogramData>('/packets/histogram', { params: { buckets } }).then(r => r.data)
 }

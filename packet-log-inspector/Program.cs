@@ -44,15 +44,21 @@ app.MapHub<PacketLogHub>("/packetHub");
 // SPA fallback: serve index.html for all unmatched routes so Vue Router works
 app.MapFallbackToFile("index.html");
 
-// Auto-load default log file if present at ../csharp-Protoshift/Logs/latest.packet.log
+// Auto-load default log file: check candidate paths in order
 var logService = app.Services.GetRequiredService<PacketLogService>();
-var defaultLogPath = Path.GetFullPath(
-    Path.Combine(app.Environment.ContentRootPath, "../csharp-Protoshift/Logs/latest.packet.log"));
-
-if (File.Exists(defaultLogPath))
+var defaultLogCandidates = new[]
 {
-    app.Logger.LogInformation("Auto-loading default log file: {Path}", defaultLogPath);
-    await logService.LoadFileAsync(defaultLogPath);
+    Path.GetFullPath(Path.Combine(app.Environment.ContentRootPath, "../csharp-Protoshift/Logs/latest.packet.log")),
+    Path.GetFullPath(Path.Combine(app.Environment.ContentRootPath, "../bin/logs/latest.packet.log")),
+};
+foreach (var candidate in defaultLogCandidates)
+{
+    if (File.Exists(candidate))
+    {
+        app.Logger.LogInformation("Auto-loading default log file: {Path}", candidate);
+        await logService.LoadFileAsync(candidate);
+        break;
+    }
 }
 
 await app.RunAsync();

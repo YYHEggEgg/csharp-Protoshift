@@ -27,7 +27,7 @@ namespace csharp_Protoshift
                 global_Minimum_LogLevel: LogLevel.Verbose,
                 console_Minimum_LogLevel: LogLevel.Information,
 #else
-                global_Minimum_LogLevel: LogLevel.Information,
+                global_Minimum_LogLevel: LogLevel.Debug,
                 console_Minimum_LogLevel: LogLevel.Information,
 #endif
                 debug_LogWriter_AutoFlush: false,

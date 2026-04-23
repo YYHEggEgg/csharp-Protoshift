@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { usePacketStore } from '../stores/packetStore'
 import { changeFile } from '../api/client'
@@ -23,6 +23,14 @@ const changeFileDialogVisible = ref(false)
 const changeBrowserVisible = ref(false)
 const newFilePath = ref('')
 const changeFileLoading = ref(false)
+
+// Open file browser at the directory of the currently monitored file (if any)
+const browserInitialDir = computed(() => {
+  const p = store.logStatus?.filePath
+  if (!p) return undefined
+  const last = Math.max(p.lastIndexOf('/'), p.lastIndexOf('\\'))
+  return last > 0 ? p.substring(0, last) : undefined
+})
 
 function onRowClick(row: PacketSummary) {
   selectedPacketId.value = row.id
@@ -104,6 +112,7 @@ function goWelcome() {
       </div>
       <FileBrowserDialog
         v-model:visible="changeBrowserVisible"
+        :initial-dir="browserInitialDir"
         @select="newFilePath = $event"
       />
       <template #footer>

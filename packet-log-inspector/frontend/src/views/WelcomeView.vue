@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { changeFile } from '../api/client'
 import { usePacketStore } from '../stores/packetStore'
@@ -13,6 +13,14 @@ const filePath = ref('')
 const loading = ref(false)
 const fileBrowserVisible = ref(false)
 const errorMsg = ref('')
+
+// Open file browser at the directory of the currently monitored file (if any)
+const browserInitialDir = computed(() => {
+  const p = store.logStatus?.filePath
+  if (!p) return undefined
+  const last = Math.max(p.lastIndexOf('/'), p.lastIndexOf('\\'))
+  return last > 0 ? p.substring(0, last) : undefined
+})
 
 const RECENT_KEY = 'pli_recent_files'
 function getRecentFiles(): string[] {
@@ -71,6 +79,7 @@ function onBrowse() {
         <!-- File browser dialog -->
         <FileBrowserDialog
           v-model:visible="fileBrowserVisible"
+          :initial-dir="browserInitialDir"
           @select="path => { filePath = path; openFile(path) }"
         />
 

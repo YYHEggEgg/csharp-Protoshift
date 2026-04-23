@@ -762,11 +762,11 @@ internal class Program
                     if (p.ExitCode != 0 || string.IsNullOrEmpty(shavalue = p.StandardOutput.ReadToEnd().Trim()))
                     {
                         Log.Warn($"git rev-parse HEAD exited with code {p.ExitCode}, using time to identify build.", "Release-Publish");
-                        output_path += $"output_{DateTime.Now:yyyyMMdd_HH-mm-ss}";
+                        output_path += $"output_{DateTime.Now:yyyyMMdd_HHmmss}";
                     }
                     else
                     {
-                        output_path += $"output_{DateTime.Today:yyyyMMdd}_{shavalue.Substring(0, 10)}";
+                        output_path += $"output_{DateTime.Now:yyyyMMdd_HHmmss}_{shavalue.Substring(0, 10)}";
                     }
                 }
             }
@@ -774,13 +774,13 @@ internal class Program
             {
                 Log.Erro(ex.ToString(), "Release-Publish");
                 Log.Warn($"git rev-parse HEAD invoke failed, using time to identify build.", "Release-Publish");
-                output_path += $"output_{DateTime.Now:yyyyMMdd_HH-mm-ss}";
+                output_path += $"output_{DateTime.Now:yyyyMMdd_HHmmss}";
             }
         }
         else
         {
             Log.Warn($"Not a git repository. Using time to identify build.", "Release-Publish");
-            output_path += $"output_{DateTime.Now:yyyyMMdd_HH-mm-ss}";
+            output_path += $"output_{DateTime.Now:yyyyMMdd_HHmmss}";
         }
         #endregion
 
@@ -822,6 +822,9 @@ internal class Program
         #endregion
         string dotnet_build_cmd = $"build --configuration=Release";
         string dotnet_publish_cmd = $"publish --no-build --configuration=Release -o {output_bin_path}";
+        string inspector_path = $"{output_path}/packet-log-inspector";
+        string inspector_build_cmd = $"build --configuration=Release";
+        string inspector_publish_cmd = $"publish --no-build --configuration=Release -o {inspector_path}";
         await OuterInvoke.RunMultiple(new OuterInvokeInfo
         {
             ProcessPath = OuterInvokeGlobalConfig.dotnet_path,
@@ -837,6 +840,24 @@ internal class Program
             AutoTerminateReason = $"dotnet after-build publish failed. ",
             WorkingDir = "./../csharp-Protoshift"
         }, 2910);
+        // Build Vue frontend for packet-log-inspector, then build & publish the ASP.NET Core project.
+        // wwwroot/ is handled automatically by dotnet publish (Microsoft.NET.Sdk.Web).
+        Directory.CreateDirectory(inspector_path);
+        await OuterInvoke.RunMultiple(new OuterInvokeInfo
+        {
+            ProcessPath = OuterInvokeGlobalConfig.dotnet_path,
+            StartingNotice = $"Start building packet-log-inspector: dotnet {inspector_build_cmd}",
+            CmdLine = inspector_build_cmd,
+            AutoTerminateReason = $"packet-log-inspector pre-publish build failed. ",
+            WorkingDir = "./../packet-log-inspector"
+        }, new OuterInvokeInfo
+        {
+            ProcessPath = OuterInvokeGlobalConfig.dotnet_path,
+            StartingNotice = $"Start publishing packet-log-inspector: dotnet {inspector_publish_cmd}",
+            CmdLine = inspector_publish_cmd,
+            AutoTerminateReason = $"packet-log-inspector after-build publish failed. ",
+            WorkingDir = "./../packet-log-inspector"
+        }, 2911);
         #region After-builds tasks
         Log.Info($"dotnet build & publish succeeded. Now copying resources...");
         File.Copy($"./../csharp-Protoshift/config.json", $"{output_path}/config.json", true);
@@ -847,12 +868,22 @@ internal class Program
         await File.WriteAllTextAsync($"{output_path}/run", 
             "#!/bin/bash\ndotnet ./bin/csharp-Protoshift.dll $*");
         await File.WriteAllTextAsync($"{output_path}/run.bat", "dotnet ./bin/csharp-Protoshift.dll %*");
+        // Inspector launch scripts: cd into packet-log-inspector/ first, then run the DLL.
+        await File.WriteAllTextAsync($"{output_path}/run-inspector-server",
+            "#!/bin/bash\ncd \"$(dirname \"$0\")/packet-log-inspector\"\ndotnet ./PacketLogInspector.dll $*");
+        await File.WriteAllTextAsync($"{output_path}/run-inspector-server.bat",
+            "@echo off\r\npushd \"%~dp0packet-log-inspector\"\r\ndotnet .\\PacketLogInspector.dll %*\r\npopd");
         if (!OperatingSystem.IsWindows())
         {
             await OuterInvoke.Run(new OuterInvokeInfo
             {
                 ProcessPath = "chmod",
                 CmdLine = $"+x {output_path}/run",
+            });
+            await OuterInvoke.Run(new OuterInvokeInfo
+            {
+                ProcessPath = "chmod",
+                CmdLine = $"+x {output_path}/run-inspector-server",
             });
 
             // After-build tasks
