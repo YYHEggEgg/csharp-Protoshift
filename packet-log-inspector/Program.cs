@@ -3,8 +3,11 @@ using PacketLogInspector.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Configuration.AddJsonFile("appsettings.Secrets.json", optional: true, reloadOnChange: true);
+
 // Listen on fixed port 18880 (> 10000, avoids common service conflicts)
-builder.WebHost.UseUrls("http://localhost:18880");
+var customUrls = builder.Configuration.GetValue<string>("HostUrls");
+builder.WebHost.UseUrls(customUrls ?? "http://localhost:18880");
 
 builder.Services.AddControllers();
 builder.Services.AddSignalR();
@@ -17,15 +20,14 @@ builder.Services.AddSingleton<JsonDiffService>();
 // File watcher as a hosted background service
 builder.Services.AddHostedService<FileWatcherService>();
 
-// CORS for Vite dev server (development only)
+// CORS for any origin
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        policy.AllowAnyOrigin()
               .AllowAnyMethod()
-              .AllowAnyHeader()
-              .AllowCredentials(); // Required for SignalR WebSocket
+              .AllowAnyHeader();
     });
 });
 

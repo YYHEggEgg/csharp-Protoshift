@@ -9,3 +9,6 @@ logs/
 wwwroot/assets/
 wwwroot/index.html
 wwwroot/monacoeditorwork/
+
+# Custom configuration
+appsettings.Secrets.json
