@@ -1,0 +1,11 @@
+# .NET build outputs
+bin/
+obj/
+
+# ASP.NET runtime logs
+logs/
+
+# Vue / Vite frontend build output (auto-generated into wwwroot/)
+wwwroot/assets/
+wwwroot/index.html
+wwwroot/monacoeditorwork/

@@ -1,0 +1,29 @@
+{
+  "name": "packet-log-inspector-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@microsoft/signalr": "^8.0.7",
+    "axios": "^1.7.9",
+    "element-plus": "^2.9.7",
+    "monaco-editor": "^0.52.2",
+    "pinia": "^2.3.1",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "@types/node": "^22.13.5",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1",
+    "vite-plugin-monaco-editor": "^1.1.0",
+    "vue-tsc": "^2.2.0"
+  }
+}
