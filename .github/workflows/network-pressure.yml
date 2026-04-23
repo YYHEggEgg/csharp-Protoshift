@@ -11,10 +11,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v6
 
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: '6.0.x'
 
@@ -27,7 +27,7 @@ jobs:
       run: cd Tests/KcpTests/KcpPerformanceTest ; dotnet run --configuration Release -- --packet-size 3500 --packet-repeat-time 5000 --packet-interval 50 --github-actions --clients-count 10
 
     - name: Archive logs
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v7
       with:
         name: Report & logs (ubuntu-rel-pressure-x10) - ${{ github.sha }}
         path: Tests/KcpTests/KcpPerformanceTest/logs
@@ -38,10 +38,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v6
 
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: '6.0.x'
 
@@ -54,7 +54,7 @@ jobs:
       run: cd Tests/KcpTests/KcpPerformanceTest ; dotnet run --configuration Release -- --packet-size 3500 --packet-repeat-time 5000 --packet-interval 50 --github-actions --clients-count 20
 
     - name: Archive logs
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v7
       with:
         name: Report & logs (ubuntu-rel-pressure-x20) - ${{ github.sha }}
         path: Tests/KcpTests/KcpPerformanceTest/logs

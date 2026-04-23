@@ -117,76 +117,89 @@ namespace csharp_Protoshift.GameSession
             int head_offset, int head_length, int body_offset, uint body_length)
 #endif
         {
+            string? protoname = null;
+            byte[] shifted_body = Array.Empty<byte>();
+            try
+            {
 #if !PROTOSHIFT_BENCHMARK
-            Stopwatch ProtoshiftWatch = new();
-            ProtoshiftWatch.Start();
+                Stopwatch ProtoshiftWatch = new();
+                ProtoshiftWatch.Start();
 #endif
-
-            byte[] shifted_body;
-            string protoname = isNewCmdid
+                protoname = isNewCmdid
                     ? NewProtos.AskCmdId.GetProtonameFromCmdId(cmdid)
                     : OldProtos.AskCmdId.GetProtonameFromCmdId(cmdid);
-            if (Verbose)
-            {
-                Log.Info($"Received packet {protoname} ({packet.Length} bytes) with CmdId: {cmdid} from" +
-                    (isNewCmdid ? "Client." : "Server."), $"PacketHandler({_sessionId})");
-            }
-            ushort shifted_cmdid = (ushort)(isNewCmdid ? ShiftCmdId.NewShiftToOld(cmdid) : ShiftCmdId.OldShiftToNew(cmdid));
+                if (Verbose)
+                {
+                    Log.Info($"Received packet {protoname} ({packet.Length} bytes) with CmdId: {cmdid} from" +
+                        (isNewCmdid ? "Client." : "Server."), $"PacketHandler({_sessionId})");
+                }
+                ushort shifted_cmdid = (ushort)(isNewCmdid ? ShiftCmdId.NewShiftToOld(cmdid) : ShiftCmdId.OldShiftToNew(cmdid));
 
-            if (isNewCmdid) shifted_body = ProtoshiftDispatch.NewShiftToOld(cmdid, 
-                packet, head_offset, head_length, packet, body_offset, (int)body_length);
-            else shifted_body = ProtoshiftDispatch.OldShiftToNew(cmdid, 
-                packet, head_offset, head_length, packet, body_offset, (int)body_length);
+                if (isNewCmdid) shifted_body = ProtoshiftDispatch.NewShiftToOld(cmdid,
+                    packet, head_offset, head_length, packet, body_offset, (int)body_length);
+                else shifted_body = ProtoshiftDispatch.OldShiftToNew(cmdid,
+                    packet, head_offset, head_length, packet, body_offset, (int)body_length);
 
-            InvokeNotifyMiddleware(packet, protoname, cmdid, isNewCmdid, body_offset, body_length);
-            
-            #region Push to Skill issue detect
+                InvokeNotifyMiddleware(packet, protoname, cmdid, isNewCmdid, body_offset, body_length);
+
+                #region Push to Skill issue detect
 #if !PROTOSHIFT_BENCHMARK
-            if (isNewCmdid)
-                SkillIssueDetect.StartHandlePacket(protoname,
-                    shifted_body, 0, shifted_body.Length,
-                    packet, body_offset, (int)body_length, _player_statlog);
-            else
-                SkillIssueDetect.StartHandlePacket(protoname,
-                    packet, body_offset, (int)body_length,
-                    shifted_body, 0, shifted_body.Length, _player_statlog);
+                if (isNewCmdid)
+                    SkillIssueDetect.StartHandlePacket(protoname,
+                        shifted_body, 0, shifted_body.Length,
+                        packet, body_offset, (int)body_length, _player_statlog);
+                else
+                    SkillIssueDetect.StartHandlePacket(protoname,
+                        packet, body_offset, (int)body_length,
+                        shifted_body, 0, shifted_body.Length, _player_statlog);
 #endif
-            #endregion
+                #endregion
 
-            #region Build New Packet
-            int rtnpacketLength = body_offset + shifted_body.Length + 2;
-            byte[] rtn = new byte[rtnpacketLength];
-            if (body_offset > 0) Array.Copy(packet, 0, rtn, 0, body_offset);
-            rtn.SetUInt16(2, shifted_cmdid);
-            rtn.SetUInt32(2 + 2 + 2, (uint)shifted_body.Length);
-            Array.Copy(shifted_body, 0, rtn, body_offset, shifted_body.Length);
-            rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
-            #endregion
+                #region Build New Packet
+                int rtnpacketLength = body_offset + shifted_body.Length + 2;
+                byte[] rtn = new byte[rtnpacketLength];
+                if (body_offset > 0) Array.Copy(packet, 0, rtn, 0, body_offset);
+                rtn.SetUInt16(2, shifted_cmdid);
+                rtn.SetUInt32(2 + 2 + 2, (uint)shifted_body.Length);
+                Array.Copy(shifted_body, 0, rtn, body_offset, shifted_body.Length);
+                rtn.SetUInt16(rtnpacketLength - 2, 0x89AB);
+                #endregion
 
 #if !PROTOSHIFT_BENCHMARK
-            ProtoshiftWatch.Stop();
-            if (ProtoshiftWatch.ElapsedMilliseconds >= Recommended_Protoshift_maximum_time_ms && !unordered_cmds_old.Contains(cmdid))
-            {
-                PushPlayerStatLog($"handler", "too_long_timecost", $"{protoname}|{ProtoshiftWatch.ElapsedMilliseconds}ms");
-            }
-            if (_globalEnableFullPacketLog && excludeLogPackets?.Contains(protoname) != true)
-            {
-                Debug.Assert(GameSessionDispatch.PacketLogger != null);
-                GameSessionDispatch.PacketLogger.Info(() =>
-                    new PacketRecord(Uid, protoname, cmdid, isNewCmdid,
-                    packet, head_offset, head_length, body_offset, (int)body_length,
-                    CalcNanosecFromStopwatchTicks(ProtoshiftWatch.ElapsedTicks),
-                    shifted_body, DateTime.MinValue).ToString(), Uid.ToString());
-            }
+                ProtoshiftWatch.Stop();
+                if (ProtoshiftWatch.ElapsedMilliseconds >= Recommended_Protoshift_maximum_time_ms && !unordered_cmds_old.Contains(cmdid))
+                {
+                    PushPlayerStatLog($"handler", "too_long_timecost", $"{protoname}|{ProtoshiftWatch.ElapsedMilliseconds}ms");
+                }
+                if (_globalEnableFullPacketLog && excludeLogPackets?.Contains(protoname) != true)
+                {
+                    Debug.Assert(GameSessionDispatch.PacketLogger != null);
+                    GameSessionDispatch.PacketLogger.Info(() =>
+                        new PacketRecord(Uid, protoname, cmdid, isNewCmdid,
+                        packet, head_offset, head_length, body_offset, (int)body_length,
+                        CalcNanosecFromStopwatchTicks(ProtoshiftWatch.ElapsedTicks),
+                        shifted_body, DateTime.MinValue).ToString(), Uid.ToString());
+                }
 #endif
-            return rtn;
+                return rtn;
+            }
+            catch
+            {
+                protoname ??= $"Unknown_{(isNewCmdid ? "Client" : "Server")}_{cmdid}";
+                if (_globalEnableFullPacketLog)
+                    GameSessionDispatch.PacketLogger?.Info(() =>
+                        new PacketRecord(Uid, protoname, cmdid, isNewCmdid,
+                        packet, head_offset, head_length, body_offset, (int)body_length,
+                        -1, shifted_body, DateTime.MinValue).ToString(), Uid.ToString());
+                throw;
+            }
         }
         #endregion
 
         #region Packet Create
         public byte[] ConstructPacket(bool isNewCmdid, string protoname, byte[]? packetHead, byte[] packetBody)
         {
-            var cmdid = isNewCmdid 
+            var cmdid = isNewCmdid
                 ? NewProtos.AskCmdId.GetCmdIdFromProtoname(protoname)
                 : OldProtos.AskCmdId.GetCmdIdFromProtoname(protoname);
             var head_length = packetHead?.Length ?? 0;

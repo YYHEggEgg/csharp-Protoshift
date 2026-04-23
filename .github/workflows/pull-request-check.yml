@@ -16,10 +16,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: "6.0.x"
 
@@ -39,7 +39,7 @@ jobs:
         run: ./scripts/publish -y
 
       - name: Archive build
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v7
         with:
           name: csharp-Protoshift_ubuntu-executable_output
           path: Builds
@@ -49,7 +49,7 @@ jobs:
         run: rm -rf ProtoshiftHandlers/bin ; rm -rf ProtoshiftHandlers/obj ; rm -rf ProtoshiftHandlers/ProtoDispatch/Backup
 
       - name: Archive custom handlers
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v7
         with:
           name: Handlers_protoshift-ex_output
           path: ProtoshiftHandlers
@@ -60,10 +60,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
       - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: "6.0.x"
 
@@ -83,7 +83,7 @@ jobs:
         run: .\scripts\publish.ps1 -y
 
       - name: Archive build
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v7
         with:
           name: csharp-Protoshift_windows-executable_output
           path: Builds
