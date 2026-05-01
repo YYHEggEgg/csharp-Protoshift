@@ -133,29 +133,9 @@ namespace csharp_Protoshift.GameSession
                     Log.Info($"Received packet {protoname} ({packet.Length} bytes) with CmdId: {cmdid} from" +
                         (isNewCmdid ? "Client." : "Server."), $"PacketHandler({_sessionId})");
                 }
-                ushort shifted_cmdid = (ushort)(isNewCmdid ? ShiftCmdId.NewShiftToOld(cmdid) : ShiftCmdId.OldShiftToNew(cmdid));
 
-                if (isNewCmdid) shifted_body = ProtoshiftDispatch.NewShiftToOld(cmdid,
-                    packet, head_offset, head_length, packet, body_offset, (int)body_length);
-                else shifted_body = ProtoshiftDispatch.OldShiftToNew(cmdid,
-                    packet, head_offset, head_length, packet, body_offset, (int)body_length);
-
+                #region Cancellation if managed by middleware
                 bool shouldContinue = InvokeNotifyMiddleware(packet, protoname, cmdid, isNewCmdid, body_offset, body_length);
-
-                #region Push to Skill issue detect
-#if !PROTOSHIFT_BENCHMARK
-                if (isNewCmdid)
-                    SkillIssueDetect.StartHandlePacket(protoname,
-                        shifted_body, 0, shifted_body.Length,
-                        packet, body_offset, (int)body_length, _player_statlog);
-                else
-                    SkillIssueDetect.StartHandlePacket(protoname,
-                        packet, body_offset, (int)body_length,
-                        shifted_body, 0, shifted_body.Length, _player_statlog);
-#endif
-                #endregion
-
-                #region Cancellation
                 if (!shouldContinue)
                 {
 #if !PROTOSHIFT_BENCHMARK
@@ -174,12 +154,31 @@ namespace csharp_Protoshift.GameSession
                             PacketSpecialOp.Cancelled, null, DateTime.MinValue).ToString(), Uid.ToString());
                     }
 #endif
-
+                    return null;
                 }
-                #endregion // Cancellation
+                #endregion // Cancellation if managed by middleware
+    
+                ushort shifted_cmdid = (ushort)(isNewCmdid ? ShiftCmdId.NewShiftToOld(cmdid) : ShiftCmdId.OldShiftToNew(cmdid));
+                if (isNewCmdid) shifted_body = ProtoshiftDispatch.NewShiftToOld(cmdid,
+                    packet, head_offset, head_length, packet, body_offset, (int)body_length);
+                else shifted_body = ProtoshiftDispatch.OldShiftToNew(cmdid,
+                    packet, head_offset, head_length, packet, body_offset, (int)body_length);
 
-                    #region Build New Packet
-                    int rtnpacketLength = body_offset + shifted_body.Length + 2;
+                #region Push to Skill issue detect
+#if !PROTOSHIFT_BENCHMARK
+                if (isNewCmdid)
+                    SkillIssueDetect.StartHandlePacket(protoname,
+                        shifted_body, 0, shifted_body.Length,
+                        packet, body_offset, (int)body_length, _player_statlog);
+                else
+                    SkillIssueDetect.StartHandlePacket(protoname,
+                        packet, body_offset, (int)body_length,
+                        shifted_body, 0, shifted_body.Length, _player_statlog);
+#endif
+                #endregion
+
+                #region Build New Packet
+                int rtnpacketLength = body_offset + shifted_body.Length + 2;
                 byte[] rtn = new byte[rtnpacketLength];
                 if (body_offset > 0) Array.Copy(packet, 0, rtn, 0, body_offset);
                 rtn.SetUInt16(2, shifted_cmdid);

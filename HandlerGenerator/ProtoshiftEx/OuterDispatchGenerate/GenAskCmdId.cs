@@ -10,15 +10,15 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
             Dictionary<int, List<string>> cmd_asknewcmdid_specialHandles)
         {
             InnerGen(oldAskCmdIdPath, false, cmdData.oldcmdids, 
-                cmd_askoldcmdid_specialHandles, cmdData.cmdlist_order_old);
+                cmd_askoldcmdid_specialHandles, cmdData.cmdlist_old);
             InnerGen(newAskCmdIdPath, true, cmdData.newcmdids, 
-                cmd_asknewcmdid_specialHandles, cmdData.cmdlist_order_new);
+                cmd_asknewcmdid_specialHandles, cmdData.cmdlist_new);
         }
 
         private static void InnerGen(string genFilePath, bool isGenForNewProtos,
             List<(string messageName, int cmdId)> cmdids,
             Dictionary<int, List<string>> cmd_askcmdid_specialHandles,
-            IOrderedEnumerable<IGrouping<int, (string messageName, int oldcmdid, int newcmdid)>> cmdlist_order)
+            IOrderedEnumerable<IGrouping<int, string>> cmdlist_order)
         {
             string identifier = isGenForNewProtos ? "New" : "Old";
 
@@ -57,8 +57,8 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                     if (grp.Count() == 1)
                     {
                         #region 1. No conflict
-                        var tuple = grp.First();
-                        fi.WriteLine($"case {grp.Key}: return \"{tuple.messageName}\";");
+                        var messageName = grp.First();
+                        fi.WriteLine($"case {grp.Key}: return \"{messageName}\";");
                         #endregion
                     }
                     else if (grp.Count() == 0)
@@ -94,9 +94,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                                 "//    And don't delete 'request special handle' line, ",
                                 "//    or your changes will be overwritten during the next build!"
                             };
-                            foreach (var tuple in grp)
+                            foreach (var messageName in grp)
                             {
-                                writing_list.Add($"// return \"{tuple.messageName}\";");
+                                writing_list.Add($"// return \"{messageName}\";");
                             }
                             writing_list.Add($"return \"<unknown cmdid conflicted proto, cmdid: {grp.Key}>\";");
                             writing_list.Add("// DON'T MODIFY THIS LINE - end special handle");

@@ -27,15 +27,27 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         /// </summary>
         public readonly IEnumerable<(string messageName, int oldcmdid, int newcmdid)> supportedCmdIds;
         /// <summary>
-        /// The tuple list of messages that have cmdid, but: <para/>
-        /// grouped by their oldcmdid, and ordered by their oldcmdid.
+        /// The tuple list of messages that have cmdid, but grouped by
+        /// their oldcmdid, and ordered by their oldcmdid.<para/>
+        /// This only contains 'supported' cmds that exist on both sides.
         /// </summary>
-        public readonly IOrderedEnumerable<IGrouping<int, (string messageName, int oldcmdid, int newcmdid)>> cmdlist_order_old;
+        public readonly IOrderedEnumerable<IGrouping<int, (string messageName, int oldcmdid, int newcmdid)>> supportedCmdlist_orderByold;
         /// <summary>
-        /// The tuple list of messages that have cmdid, but: <para/>
-        /// grouped by their newcmdid, and ordered by their newcmdid.
+        /// The tuple list of messages that have cmdid, but grouped by
+        /// their newcmdid, and ordered by their newcmdid.<para/>
+        /// This only contains 'supported' cmds that exist on both sides.
         /// </summary>
-        public readonly IOrderedEnumerable<IGrouping<int, (string messageName, int oldcmdid, int newcmdid)>> cmdlist_order_new;
+        public readonly IOrderedEnumerable<IGrouping<int, (string messageName, int oldcmdid, int newcmdid)>> supportedCmdlist_orderByNew;
+        /// <summary>
+        /// The list of messages that are grouped by cmdid for potential conflicts.
+        /// Only applies to OldProtos.
+        /// </summary>
+        public readonly IOrderedEnumerable<IGrouping<int, string>> cmdlist_old;
+        /// <summary>
+        /// The list of messages that are grouped by cmdid for potential conflicts.
+        /// Only applies to NewProtos.
+        /// </summary>
+        public readonly IOrderedEnumerable<IGrouping<int, string>> cmdlist_new;
 
         /// <summary>
         /// The data structure ctor.
@@ -48,6 +60,14 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
         {
             oldcmdids = ReadCmdIdFromCsv(oldcmdid_path, ref messages_havecmdid);
             newcmdids = ReadCmdIdFromCsv(newcmdid_path, ref messages_havecmdid);
+            cmdlist_old = from pair in oldcmdids
+                          group pair.messageName by pair.cmdId into gr
+                          orderby gr.Key
+                          select gr;
+            cmdlist_new = from pair in newcmdids
+                          group pair.messageName by pair.cmdId into gr
+                          orderby gr.Key
+                          select gr;
             supportedMessages = new(new List<string>(
                 from pair in messageResults.IntersectItems
                 select pair.LeftItem.MessageName));
@@ -55,11 +75,11 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                               join @new in newcmdids
                               on old.messageName equals @new.messageName
                               select (old.messageName, old.cmdId, @new.cmdId);
-            cmdlist_order_new = from tuple in supportedCmdIds
+            supportedCmdlist_orderByNew = from tuple in supportedCmdIds
                                 group tuple by tuple.newcmdid into gr
                                 orderby gr.Key
                                 select gr;
-            cmdlist_order_old = from tuple in supportedCmdIds
+            supportedCmdlist_orderByold = from tuple in supportedCmdIds
                                 group tuple by tuple.oldcmdid into gr
                                 orderby gr.Key
                                 select gr;

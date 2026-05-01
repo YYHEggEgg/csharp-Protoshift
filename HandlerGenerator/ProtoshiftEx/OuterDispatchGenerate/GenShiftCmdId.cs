@@ -19,9 +19,9 @@ namespace csharp_Protoshift.Enhanced.Handlers.Generator
                 fi.EnterCodeRegion();
                 fi.WriteLine("public static class ShiftCmdId");
                 fi.EnterCodeRegion();
-                InnerWork(fi, true, cmdData.cmdlist_order_new, cmd_newshiftold_specialHandles);
+                InnerWork(fi, true, cmdData.supportedCmdlist_orderByNew, cmd_newshiftold_specialHandles);
                 fi.WriteLine("// DON'T INSERT ANY CODE HERE");
-                InnerWork(fi, false, cmdData.cmdlist_order_old, cmd_oldshiftnew_specialHandles);
+                InnerWork(fi, false, cmdData.supportedCmdlist_orderByold, cmd_oldshiftnew_specialHandles);
                 fi.WriteLine();
                 fi.WriteLine("public static uint NewShiftToOld(uint newCmdId)",
                     "=> NewShiftToOld(newCmdId, ReadOnlySpan<byte>.Empty);");
