@@ -2,6 +2,13 @@ using System.Globalization;
 
 namespace PacketLogInspector.Models;
 
+public enum PacketSpecialOp
+{
+    None,
+    Cancelled,
+    Injected,
+}
+
 /// <summary>
 /// A simplified, self-contained version of PacketRecord from csharp-Protoshift.
 /// Stores body and shifted data as raw byte arrays instead of constructing overhead packets.
@@ -15,9 +22,13 @@ public class PacketRecord
     public bool SentByClient { get; set; }
     public byte[] HeadBytes { get; set; } = Array.Empty<byte>();
     public byte[] BodyBytes { get; set; } = Array.Empty<byte>();
+    public PacketSpecialOp ShiftOp { get; set; } = PacketSpecialOp.None;
     public byte[] ShiftedDataBytes { get; set; } = Array.Empty<byte>();
     public DateTime PacketTime { get; set; }
     public long HandleIntervalNanoseconds { get; set; }
+
+    private const string CancellationNotice = "[shifting_cancelled]";
+    private const string InjectionNotice = "[injected]";
 
     public static PacketRecord? TryParse(string line, int id)
     {
@@ -40,7 +51,8 @@ public class PacketRecord
         byte[] head;
         byte[] body;
         long handleNanoseconds;
-        byte[] shiftedData;
+        PacketSpecialOp shiftOp = PacketSpecialOp.None;
+        byte[] shiftedData = Array.Empty<byte>();
 
         // Old format: [time]|[PacketName]|[CmdId]|[sentByClient]|[head]|[body]
         // New format: [time]|Info|[uid]|[PacketName]|[CmdId]|[sentByClient]|[head]|[body]|[handleNanoseconds]|[shiftedData]
@@ -53,7 +65,21 @@ public class PacketRecord
             sentByClient = bool.Parse(values[3]);
             head = Convert.FromBase64String(values[4]);
             body = Convert.FromBase64String(values[5]);
-            shiftedData = values.Length >= 7 ? Convert.FromBase64String(values[6]) : Array.Empty<byte>();
+            if (values.Length >= 7)
+            {
+                switch (values[6])
+                {
+                    case CancellationNotice:
+                        shiftOp = PacketSpecialOp.Cancelled;
+                        break;
+                    case InjectionNotice:
+                        shiftOp = PacketSpecialOp.Injected;
+                        break;
+                    default:
+                        shiftedData = Convert.FromBase64String(values[6]);
+                        break;
+                }
+            }
             handleNanoseconds = -1;
         }
         else
@@ -76,7 +102,18 @@ public class PacketRecord
             if (values.Length >= 10)
             {
                 handleNanoseconds = long.Parse(values[8]);
-                shiftedData = Convert.FromBase64String(values[9]);
+                switch (values[9])
+                {
+                    case CancellationNotice:
+                        shiftOp = PacketSpecialOp.Cancelled;
+                        break;
+                    case InjectionNotice:
+                        shiftOp = PacketSpecialOp.Injected;
+                        break;
+                    default:
+                        shiftedData = Convert.FromBase64String(values[9]);
+                        break;
+                }
             }
             else
             {
@@ -94,6 +131,7 @@ public class PacketRecord
             SentByClient = sentByClient,
             HeadBytes = head,
             BodyBytes = body,
+            ShiftOp = shiftOp,
             ShiftedDataBytes = shiftedData,
             PacketTime = packetTime,
             HandleIntervalNanoseconds = handleNanoseconds

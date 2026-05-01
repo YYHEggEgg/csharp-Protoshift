@@ -1,11 +1,25 @@
 ﻿#if !PROXY_ONLY_SERVER
 
-
 using System.Diagnostics;
 using YSFreedom.Common.Util;
 
 namespace csharp_Protoshift.GameSession
 {
+    public enum PacketSpecialOp
+    {
+        None,
+        /// <summary>
+        /// This packet has been fully managed by an external middleware
+        /// and the shifting of itself is totally cancelled.
+        /// </summary>
+        Cancelled,
+        /// <summary>
+        /// This packet is injected by the proxy instead of being captured
+        /// from the network.
+        /// </summary>
+        Injected,
+    }
+
     public class PacketRecord
     {
         public uint Uid;
@@ -23,6 +37,7 @@ namespace csharp_Protoshift.GameSession
         public int head_length;
         public int body_offset;
         public int body_length;
+        public PacketSpecialOp ShiftOp;
         /// <summary>
         /// Another version of body bin data (Proto shifted)
         /// </summary>
@@ -33,9 +48,13 @@ namespace csharp_Protoshift.GameSession
         public DateTime packetTime;
         public long handleIntervalNanoseconds;
 
+        private const string CancellationNotice = "[shifting_cancelled]";
+        private const string InjectionNotice = "[injected]";
+
         public PacketRecord(uint uid, string packetName, int cmdId, bool sentByClient, 
             byte[] data, int head_offset, int head_length, int body_offset, int body_length, 
-            long handleIntervalNanoseconds, byte[] shiftedData, DateTime packetTime)
+            long handleIntervalNanoseconds,
+            PacketSpecialOp shiftOp, byte[]? shiftedData, DateTime packetTime)
         {
             Uid = uid;
             PacketName = packetName ?? throw new ArgumentNullException(nameof(packetName));
@@ -47,7 +66,8 @@ namespace csharp_Protoshift.GameSession
             this.body_offset = body_offset;
             this.body_length = body_length;
             this.handleIntervalNanoseconds = handleIntervalNanoseconds;
-            this.shiftedData = shiftedData ?? throw new ArgumentNullException(nameof(shiftedData));
+            ShiftOp = shiftOp;
+            this.shiftedData = shiftedData ?? Array.Empty<byte>();
             this.packetTime = packetTime;
         }
 
@@ -59,6 +79,12 @@ namespace csharp_Protoshift.GameSession
 
         public override string ToString()
         {
+            string shiftedString = ShiftOp switch
+            {
+                PacketSpecialOp.Cancelled => CancellationNotice,
+                PacketSpecialOp.Injected => InjectionNotice,
+                _ => Convert.ToBase64String(shiftedData),
+            };
             return string.Join(separateChar,
                 // packetTime.ToString("yyyy/MM/dd HH:mm:ss.fffffff"),
                 PacketName,
@@ -67,7 +93,7 @@ namespace csharp_Protoshift.GameSession
                 Convert.ToBase64String(data, head_offset, head_length),
                 Convert.ToBase64String(data, body_offset, body_length),
                 handleIntervalNanoseconds,
-                Convert.ToBase64String(shiftedData));
+                shiftedString);
         }
 
         // old read format:
@@ -85,7 +111,8 @@ namespace csharp_Protoshift.GameSession
             byte[] head;
             byte[] body;
             Int64 handle_interval_nanoseconds;
-            byte[] shifted_data;
+            PacketSpecialOp shiftOp = PacketSpecialOp.None;
+            byte[] shifted_data = Array.Empty<byte>();
 
             if (DateTime.TryParse(values[0], out packetTime)) // support old packet.log protocol
             {
@@ -95,8 +122,20 @@ namespace csharp_Protoshift.GameSession
                 head = Convert.FromBase64String(values[4]);
                 body = Convert.FromBase64String(values[5]);
                 if (values.Length >= 7)
-                    shifted_data = Convert.FromBase64String(values[6]);
-                else shifted_data = Array.Empty<byte>();
+                {
+                    switch (values[6])
+                    {
+                        case CancellationNotice:
+                            shiftOp = PacketSpecialOp.Cancelled;
+                            break;
+                        case InjectionNotice:
+                            shiftOp = PacketSpecialOp.Injected;
+                            break;
+                        default:
+                            shifted_data = Convert.FromBase64String(values[6]);
+                            break;
+                    }
+                }
                 handle_interval_nanoseconds = -1;
             }
             else // new protocol with EggEgg.CSharp-Logger v4.0.0
@@ -119,12 +158,22 @@ namespace csharp_Protoshift.GameSession
                 if (values.Length >= 10) 
                 {
                     handle_interval_nanoseconds = int.Parse(values[8]);
-                    shifted_data = Convert.FromBase64String(values[9]);
+                    switch (values[9])
+                    {
+                        case CancellationNotice:
+                            shiftOp = PacketSpecialOp.Cancelled;
+                            break;
+                        case InjectionNotice:
+                            shiftOp = PacketSpecialOp.Injected;
+                            break;
+                        default:
+                            shifted_data = Convert.FromBase64String(values[9]);
+                            break;
+                    }
                 }
                 else
                 {
                     handle_interval_nanoseconds = -1;
-                    shifted_data = Array.Empty<byte>();
                 }
             }
 
@@ -143,7 +192,7 @@ namespace csharp_Protoshift.GameSession
             packet.SetUInt16(body_offset + body.Length, MagicEnd);
 
             return new(uid, protoname, cmdid, sentByClient, packet, head_offset, head.Length,
-                body_offset, body.Length, handle_interval_nanoseconds, shifted_data, packetTime);
+                body_offset, body.Length, handle_interval_nanoseconds, shiftOp, shifted_data, packetTime);
         }
     }
 }

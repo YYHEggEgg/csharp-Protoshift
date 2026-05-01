@@ -142,9 +142,9 @@ public class PacketLogService
                     r.CmdId,
                     r.SentByClient,
                     r.HandleIntervalNanoseconds,
-                    r.ShiftedDataBytes.Length > 0,
+                    r.ShiftedDataBytes?.Length > 0,
                     r.BodyBytes.Length,
-                    r.ShiftedDataBytes.Length))
+                    r.ShiftedDataBytes?.Length ?? 0))
                 .ToList();
 
             return (items, total);

@@ -64,7 +64,7 @@ public class PacketsController : ControllerBase
             record.CmdId,
             record.SentByClient,
             record.HandleIntervalNanoseconds,
-            record.ShiftedDataBytes.Length > 0,
+            record.ShiftedDataBytes?.Length > 0,
             bodyJson));
     }
 
@@ -73,7 +73,7 @@ public class PacketsController : ControllerBase
     {
         var record = _logService.GetById(id);
         if (record == null) return NotFound();
-        if (record.ShiftedDataBytes.Length == 0)
+        if (record.ShiftedDataBytes == null || record.ShiftedDataBytes.Length == 0)
             return BadRequest(new { error = "This record has no shifted data." });
 
         var (original, modified) = _diffService.GetDiff(record);

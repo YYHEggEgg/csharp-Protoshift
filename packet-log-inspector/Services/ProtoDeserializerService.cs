@@ -104,6 +104,10 @@ public class ProtoDeserializerService
     /// </summary>
     public string DeserializeShifted(PacketRecord record)
     {
+        if (record.ShiftOp == PacketSpecialOp.Cancelled)
+            return "{ \"error\": \"This packet's shifting was cancelled by an external middleware.\" }";
+        if (record.ShiftOp == PacketSpecialOp.Injected)
+            return "{ \"error\": \"This packet was injected by the proxy and already provided as-is.\" }";
         if (record.ShiftedDataBytes.Length == 0) return "{}";
         try
         {
@@ -120,7 +124,10 @@ public class ProtoDeserializerService
                     return FormatBytes(s, record.ShiftedDataBytes);
             }
         }
-        catch { /* fall through to default */ }
-        return "{}";
+        catch (Exception ex)
+        {
+            return JsonSerializer.Serialize(new { error = $"Deserialization failed: {ex.Message}", fullInfo = ex.ToString() }, _prettyOptions);
+        }
+        return "{ \"error\": \"No matching proto serializer found for this packet's name and direction.\" }";
     }
 }

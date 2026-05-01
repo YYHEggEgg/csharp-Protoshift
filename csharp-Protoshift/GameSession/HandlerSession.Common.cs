@@ -53,7 +53,7 @@ namespace csharp_Protoshift.GameSession
             ConfigureInitialNotifyList();
         }
 
-        public byte[] HandlePacket(byte[] packet, bool isNewCmdid)
+        public byte[]? HandlePacket(byte[] packet, bool isNewCmdid)
         {
             if (packet == null) throw new ArgumentNullException(nameof(packet));
             bool fallback = false; // Whether use dispatchKey
@@ -110,6 +110,7 @@ namespace csharp_Protoshift.GameSession
 
             var rtn = GetPacketResult(packet, cmdid, isNewCmdid, 
                 head_offset, head_length, body_offset, body_length);
+            if (rtn == null) return null;
             Debug.Assert(rtn.GetUInt16(rtn.Length - 2) == 0x89AB);
 
             if (!isNewCmdid && cmdid == OldProtos.AskCmdId.GetCmdIdFromProtoname("GetPlayerTokenRsp"))
@@ -126,6 +127,7 @@ namespace csharp_Protoshift.GameSession
         {
             if (_player_statlog == null) return;
 
+            _player_statlog.LogSender = $"{_sessionId}|{_uid}";
             _player_statlog.LogPush($"{category}|{description}|{data}", logLevel);
         }
         #endregion

@@ -11,14 +11,20 @@ namespace csharp_Protoshift.GameSession
         private bool[] _newpacket_notifylist = new bool[ushort.MaxValue];
         /// <summary>
         /// The list of actual notify methods. Param is packet (same as
-        /// the proto), offset and length.
+        /// the proto), offset and length.<para/>
+        /// The return value specifies whether the regular packet shifting
+        /// and sending should be cancelled.
+        /// If <see langword="false"/> is returned, the shifted packet
+        /// will not be sent to the other side.
         /// </summary>
-        private ConcurrentDictionary<string, Action<byte[], int, int>> notifyInvokes = new();
+        private ConcurrentDictionary<string, Func<byte[], int, int, bool>> notifyInvokes = new();
 
         private void ConfigureInitialNotifyList()
         {
             PushNotifyStatus("GetPlayerTokenReq", false, true, GetPlayerTokenReqNotify);
             PushNotifyStatus("GetPlayerTokenRsp", true, false, GetPlayerTokenRspNotify);
+            PushNotifyStatus("ClientSetGameTimeReq", false, true, ClientSetGameTimeReqNotify);
+            PushNotifyStatus("ChangeGameTimeRsp", true, false, ChangeGameTimeRspNotify);
         }
 
         /// <summary>
@@ -28,10 +34,12 @@ namespace csharp_Protoshift.GameSession
         /// <param name="applyToOld">Whether to apply to packets sent by server.</param>
         /// <param name="applyToNew">Whether to apply to packets sent by client.</param>
         /// <param name="callback">The actual notify callback. Param is packet (same as
-        /// the proto), offset and length.</param>
+        /// the proto), offset and length. The return value specifies whether the regular packet shifting
+        /// and sending should be cancelled. If <see langword="false"/> is returned, the shifted packet
+        /// will not be sent to the other side.</param>
         /// <exception cref="InvalidOperationException"></exception>
         public void PushNotifyStatus(string protoname, bool applyToOld, bool applyToNew,
-            Action<byte[], int, int> callback)
+            Func<byte[], int, int, bool> callback)
         {
             if (!applyToOld && !applyToNew)
                 throw new ArgumentException("Can't add a rule but apply it to none side of the proxy!");
@@ -58,21 +66,24 @@ namespace csharp_Protoshift.GameSession
 
         /// <summary>
         /// Invoke the actual notify when Protoshift completed
-        /// (but the packet has not been sent).
+        /// (but the packet has not been sent).<para/>
+        /// The return value specifies whether the regular packet shifting
+        /// should be cancelled. If <see langword="false"/> is returned,
+        /// the shifted packet will not be sent to the other side.
         /// </summary>
-        protected void InvokeNotifyMiddleware(byte[] packet, string protoname,
+        protected bool InvokeNotifyMiddleware(byte[] packet, string protoname,
             ushort cmdid, bool isNewCmdid, int body_offset, uint body_length)
         {
-            if (isNewCmdid && !_newpacket_notifylist[cmdid]) return;
-            else if (!isNewCmdid && !_oldpacket_notifylist[cmdid]) return;
+            if (isNewCmdid && !_newpacket_notifylist[cmdid]) return true;
+            else if (!isNewCmdid && !_oldpacket_notifylist[cmdid]) return true;
 
             if (!notifyInvokes.TryGetValue(protoname, out var callback))
             {
                 Log.Warn("Error: A packet is intended to invoke notify but cannot find target callback.", $"PacketHandler({_sessionId}):Notify");
-                return;
+                return true;
             }
 
-            callback(packet, body_offset, (int)body_length);
+            return callback(packet, body_offset, (int)body_length);
         }
     }
 }

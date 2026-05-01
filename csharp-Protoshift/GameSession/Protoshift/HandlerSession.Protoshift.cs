@@ -110,10 +110,10 @@ namespace csharp_Protoshift.GameSession
 
         #region Packet Handle
 #if DEBUG || PROTOSHIFT_BENCHMARK
-        public byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
+        public byte[]? GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
             int head_offset, int head_length, int body_offset, uint body_length)
 #else
-        private byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
+        private byte[]? GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
             int head_offset, int head_length, int body_offset, uint body_length)
 #endif
         {
@@ -140,7 +140,7 @@ namespace csharp_Protoshift.GameSession
                 else shifted_body = ProtoshiftDispatch.OldShiftToNew(cmdid,
                     packet, head_offset, head_length, packet, body_offset, (int)body_length);
 
-                InvokeNotifyMiddleware(packet, protoname, cmdid, isNewCmdid, body_offset, body_length);
+                bool shouldContinue = InvokeNotifyMiddleware(packet, protoname, cmdid, isNewCmdid, body_offset, body_length);
 
                 #region Push to Skill issue detect
 #if !PROTOSHIFT_BENCHMARK
@@ -155,8 +155,31 @@ namespace csharp_Protoshift.GameSession
 #endif
                 #endregion
 
-                #region Build New Packet
-                int rtnpacketLength = body_offset + shifted_body.Length + 2;
+                #region Cancellation
+                if (!shouldContinue)
+                {
+#if !PROTOSHIFT_BENCHMARK
+                    ProtoshiftWatch.Stop();
+                    if (ProtoshiftWatch.ElapsedMilliseconds >= Recommended_Protoshift_maximum_time_ms && !unordered_cmds_old.Contains(cmdid))
+                    {
+                        PushPlayerStatLog($"handler", "too_long_timecost", $"{protoname}|{ProtoshiftWatch.ElapsedMilliseconds}ms");
+                    }
+                    if (_globalEnableFullPacketLog && excludeLogPackets?.Contains(protoname) != true)
+                    {
+                        Debug.Assert(GameSessionDispatch.PacketLogger != null);
+                        GameSessionDispatch.PacketLogger.Info(() =>
+                            new PacketRecord(Uid, protoname, cmdid, isNewCmdid,
+                            packet, head_offset, head_length, body_offset, (int)body_length,
+                            CalcNanosecFromStopwatchTicks(ProtoshiftWatch.ElapsedTicks),
+                            PacketSpecialOp.Cancelled, null, DateTime.MinValue).ToString(), Uid.ToString());
+                    }
+#endif
+
+                }
+                #endregion // Cancellation
+
+                    #region Build New Packet
+                    int rtnpacketLength = body_offset + shifted_body.Length + 2;
                 byte[] rtn = new byte[rtnpacketLength];
                 if (body_offset > 0) Array.Copy(packet, 0, rtn, 0, body_offset);
                 rtn.SetUInt16(2, shifted_cmdid);
@@ -178,7 +201,7 @@ namespace csharp_Protoshift.GameSession
                         new PacketRecord(Uid, protoname, cmdid, isNewCmdid,
                         packet, head_offset, head_length, body_offset, (int)body_length,
                         CalcNanosecFromStopwatchTicks(ProtoshiftWatch.ElapsedTicks),
-                        shifted_body, DateTime.MinValue).ToString(), Uid.ToString());
+                        PacketSpecialOp.None, shifted_body, DateTime.MinValue).ToString(), Uid.ToString());
                 }
 #endif
                 return rtn;
@@ -190,7 +213,7 @@ namespace csharp_Protoshift.GameSession
                     GameSessionDispatch.PacketLogger?.Info(() =>
                         new PacketRecord(Uid, protoname, cmdid, isNewCmdid,
                         packet, head_offset, head_length, body_offset, (int)body_length,
-                        -1, shifted_body, DateTime.MinValue).ToString(), Uid.ToString());
+                        -1, PacketSpecialOp.None, shifted_body, DateTime.MinValue).ToString(), Uid.ToString());
                 throw;
             }
         }

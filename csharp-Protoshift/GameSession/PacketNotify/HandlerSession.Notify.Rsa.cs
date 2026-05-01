@@ -13,7 +13,7 @@ namespace csharp_Protoshift.GameSession
         protected byte[] client_seed;
         protected byte[] server_seed;
 
-        private void GetPlayerTokenReqNotify(byte[] packet, int offset, int length)
+        private bool GetPlayerTokenReqNotify(byte[] packet, int offset, int length)
         {
 #if PROXY_ONLY_SERVER
             var message = OldProtos.GetPlayerTokenReq.Parser.ParseFrom(packet, offset, length);
@@ -28,6 +28,7 @@ namespace csharp_Protoshift.GameSession
                     RSAEncryptionPadding.Pkcs1)
                     .Fill0(8);
                 PushPlayerStatLog("rsa_seed_exchange", "client_seed", $"succ|{Convert.ToHexString(client_seed)}", LogLevel.Debug);
+                return true;
             }
             catch
             {
@@ -50,15 +51,14 @@ namespace csharp_Protoshift.GameSession
                     nameof(OldProtos.GetPlayerTokenRsp), null, rsaFatalRsp.ToByteArray());
                 Thread.Sleep(500);
                 Program.ProxyServer.KickSession(_sessionId, client_reason: 15);
-                return;
+                return false;
             }
         }
 
-        private void GetPlayerTokenRspNotify(byte[] packet, int offset, int length)
+        private bool GetPlayerTokenRspNotify(byte[] packet, int offset, int length)
         {
             var message = OldProtos.GetPlayerTokenRsp.Parser.ParseFrom(packet, offset, length);
             _uid = message.Uid;
-            _player_statlog.LogSender = $"{_sessionId}|{_uid}";
 
             uint key_id = message.KeyId;
             try
@@ -84,6 +84,8 @@ namespace csharp_Protoshift.GameSession
 
             GameSessionDispatch.BackgroundInjectOnlineExecuteWindys(_sessionId,
                 OnlineExecWindyMode_v1_0_0.OnGetPlayerTokenFinish, "windyOnGetPlayerTokenFinish");
+
+            return true;
         }
 
         public static byte[] Generate4096KeyByMT19937(ulong seed)

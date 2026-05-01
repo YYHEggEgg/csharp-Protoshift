@@ -25,10 +25,10 @@ namespace csharp_Protoshift.GameSession
 
         #region Packet Handle
 #if DEBUG || PROTOSHIFT_BENCHMARK
-        public byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
+        public byte[]? GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
             int head_offset, int head_length, int body_offset, uint body_length)
 #else
-        private byte[] GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
+        private byte[]? GetPacketResult(byte[] packet, ushort cmdid, bool isNewCmdid,
             int head_offset, int head_length, int body_offset, uint body_length)
 #endif
         {
